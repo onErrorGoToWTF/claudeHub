@@ -230,6 +230,40 @@
 
   load();
   renderTimeline();
+  renderCompare();
+
+  // ======================================================================
+  // Competitor comparison — context windows
+  // ======================================================================
+  function renderCompare() {
+    const host = document.getElementById("cbars");
+    if (!host) return;
+    // Electric palette — deliberately distinct from the Claude blue/purple.
+    const rows = [
+      { name: "Gemini 2.5 Pro",    tokens: 2_000_000, label: "2M", color: "#22d3ee" }, // cyan
+      { name: "Grok 4",            tokens: 2_000_000, label: "2M", color: "#e879f9" }, // magenta
+      { name: "Claude Opus 4.6",   tokens: 1_000_000, label: "1M", color: "#a684ff", hero: true },
+      { name: "GPT-4.1",           tokens: 1_000_000, label: "1M", color: "#4ade80" }, // electric green
+    ];
+    const max = Math.max(...rows.map(r => r.tokens));
+    host.innerHTML = "";
+    rows.forEach((r, i) => {
+      const pct = (r.tokens / max) * 100;
+      const el = document.createElement("div");
+      el.className = "cbar" + (r.hero ? " is-hero" : "");
+      el.innerHTML = `
+        <div class="cbar-label">${r.name}</div>
+        <div class="cbar-val">${r.label}</div>
+        <div class="cbar-track">
+          <div class="cbar-fill"
+               style="--cbar-pct: ${pct.toFixed(1)}%; --cbar-col: ${r.color}; --cbar-delay: ${0.25 + i * 0.18}s;">
+            <div class="cbar-electron"
+                 style="--cbar-col: ${r.color}; --cbar-delay: ${0.25 + i * 0.18 + 1.45}s;"></div>
+          </div>
+        </div>`;
+      host.appendChild(el);
+    });
+  }
 
   // ======================================================================
   // Timeline chart (context window growth)
