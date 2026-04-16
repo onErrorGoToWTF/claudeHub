@@ -2,8 +2,14 @@
   "use strict";
 
   const DATA_URL = "data/latest.json?v=" + Date.now();
+  const LISA_URL = "data/lisa.json?v=" + Date.now();
   const THEME_KEY = "cdih-theme";
   const SECTIONS = ["updates", "news", "status", "youtube", "tutorials"];
+
+  // TODO: set this to your deployed Cloudflare Worker URL after `wrangler deploy`.
+  // While unset, the form shows a friendly "not wired up yet" message.
+  const WORKER_URL = "https://claudehub-lisa.alanyoungjr.workers.dev/submit";
+  const WORKER_PLACEHOLDER = /YOUR-SUBDOMAIN/.test(WORKER_URL);
 
   // ---------- Theme ----------
   const root = document.documentElement;
@@ -25,16 +31,23 @@
 
   // ---------- Filters ----------
   const chips = document.querySelectorAll(".chip");
+  const lisaSection = document.querySelector('[data-section="lisa"]');
   chips.forEach(chip => {
     chip.addEventListener("click", () => {
       chips.forEach(c => c.classList.remove("is-active"));
       chip.classList.add("is-active");
       const f = chip.dataset.filter;
+
+      // Lisa is a distinct view — only visible when explicitly selected.
+      if (lisaSection) lisaSection.dataset.hidden = f === "lisa" ? "false" : "true";
+
       SECTIONS.forEach(s => {
         const el = document.querySelector(`.section[data-section="${s}"]`);
         if (!el) return;
-        el.dataset.hidden = f !== "all" && f !== s ? "true" : "false";
+        el.dataset.hidden = (f === "all" || f === s) ? "false" : "true";
       });
+
+      if (f === "lisa") loadLisa();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
@@ -82,7 +95,7 @@
     });
   }
 
-  // ---------- Rendering ----------
+  // ---------- Card rendering (main feed) ----------
   function renderCard(item, videoLike) {
     const tpl = document.getElementById(videoLike ? "tpl-video" : "tpl-card");
     const node = tpl.content.firstElementChild.cloneNode(true);
@@ -129,7 +142,7 @@
     el.textContent = iso ? "Updated " + relTime(iso) : "";
   }
 
-  // ---------- Load ----------
+  // ---------- Main feed load ----------
   async function load() {
     showSkeletons();
     try {
@@ -156,4 +169,248 @@
   }
 
   load();
+
+  // ======================================================================
+  // Lisa tab
+  // ======================================================================
+  let lisaLoaded = false;
+  const tutorialCache = new Map();
+
+  function escHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  // Minimal markdown renderer covering: headings, paragraphs, bold/italic,
+  // inline code, links, ul/ol, blockquotes, hr. No code blocks (tutorials
+  // are plain English).
+  function renderMarkdown(md) {
+    const lines = md.replace(/\r\n/g, "\n").split("\n");
+    const out = [];
+    let i = 0;
+
+    function renderInline(text) {
+      let s = escHtml(text);
+      s = s.replace(/`([^`]+)`/g, (_, c) => `<code>${c}</code>`);
+      s = s.replace(/\*\*([^*]+)\*\*/g, (_, c) => `<strong>${c}</strong>`);
+      s = s.replace(/(^|[^*])\*([^*\n]+)\*/g, (_, p, c) => `${p}<em>${c}</em>`);
+      s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, t, u) =>
+        `<a href="${escHtml(u)}" target="_blank" rel="noopener">${t}</a>`);
+      return s;
+    }
+
+    while (i < lines.length) {
+      const line = lines[i];
+
+      if (/^\s*$/.test(line)) { i++; continue; }
+
+      let m;
+      if ((m = line.match(/^(#{1,6})\s+(.*)$/))) {
+        const lvl = Math.min(m[1].length, 3);
+        out.push(`<h${lvl}>${renderInline(m[2])}</h${lvl}>`);
+        i++;
+        continue;
+      }
+
+      if (/^---+$/.test(line.trim())) { out.push("<hr>"); i++; continue; }
+
+      if (/^>\s?/.test(line)) {
+        const buf = [];
+        while (i < lines.length && /^>\s?/.test(lines[i])) {
+          buf.push(lines[i].replace(/^>\s?/, ""));
+          i++;
+        }
+        out.push(`<blockquote>${renderInline(buf.join(" "))}</blockquote>`);
+        continue;
+      }
+
+      if (/^\s*[-*]\s+/.test(line)) {
+        const items = [];
+        while (i < lines.length && /^\s*[-*]\s+/.test(lines[i])) {
+          items.push(renderInline(lines[i].replace(/^\s*[-*]\s+/, "")));
+          i++;
+        }
+        out.push("<ul>" + items.map(x => `<li>${x}</li>`).join("") + "</ul>");
+        continue;
+      }
+
+      if (/^\s*\d+\.\s+/.test(line)) {
+        const items = [];
+        while (i < lines.length && /^\s*\d+\.\s+/.test(lines[i])) {
+          items.push(renderInline(lines[i].replace(/^\s*\d+\.\s+/, "")));
+          i++;
+        }
+        out.push("<ol>" + items.map(x => `<li>${x}</li>`).join("") + "</ol>");
+        continue;
+      }
+
+      // paragraph: join consecutive non-blank, non-block lines
+      const buf = [line];
+      i++;
+      while (i < lines.length &&
+             !/^\s*$/.test(lines[i]) &&
+             !/^(#{1,6})\s+/.test(lines[i]) &&
+             !/^\s*[-*]\s+/.test(lines[i]) &&
+             !/^\s*\d+\.\s+/.test(lines[i]) &&
+             !/^>\s?/.test(lines[i]) &&
+             !/^---+$/.test(lines[i].trim())) {
+        buf.push(lines[i]);
+        i++;
+      }
+      out.push(`<p>${renderInline(buf.join(" "))}</p>`);
+    }
+    return out.join("\n");
+  }
+
+  function renderLisaCard(item) {
+    const tpl = document.getElementById("tpl-card");
+    const node = tpl.content.firstElementChild.cloneNode(true);
+    node.href = item.url;
+    node.querySelector(".card-title").textContent = item.title;
+    node.querySelector(".card-source").textContent = item.source || "";
+    const time = node.querySelector(".card-time");
+    time.textContent = relTime(item.published) || prettyDate(item.published) || "";
+    const sum = node.querySelector(".card-summary");
+    sum.textContent = item.summary || "";
+    if (!item.summary) sum.remove();
+    return node;
+  }
+
+  function renderLisaCards(name, items) {
+    const container = document.querySelector(`[data-cards="${name}"]`);
+    if (!container) return;
+    container.innerHTML = "";
+    if (!items || !items.length) {
+      container.innerHTML = '<div class="empty">Nothing here yet.</div>';
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    items.forEach(i => frag.appendChild(renderLisaCard(i)));
+    container.appendChild(frag);
+  }
+
+  function renderTutorials(tutorials) {
+    const container = document.querySelector('[data-cards="lisa-tutorials"]');
+    if (!container) return;
+    container.innerHTML = "";
+    if (!tutorials || !tutorials.length) {
+      container.innerHTML = '<div class="empty">Tutorials coming soon.</div>';
+      return;
+    }
+    const tpl = document.getElementById("tpl-tutorial");
+    for (const t of tutorials) {
+      const node = tpl.content.firstElementChild.cloneNode(true);
+      node.querySelector(".tutorial-title").textContent = t.title;
+      node.querySelector(".tutorial-blurb").textContent = t.blurb || "";
+      const time = node.querySelector(".tutorial-time");
+      time.textContent = t.minutes ? `${t.minutes} min read` : "";
+      const head = node.querySelector(".tutorial-head");
+      const body = node.querySelector(".tutorial-body");
+
+      head.addEventListener("click", async () => {
+        const expanded = node.dataset.expanded === "true";
+        if (expanded) {
+          node.dataset.expanded = "false";
+          body.hidden = true;
+          return;
+        }
+        node.dataset.expanded = "true";
+        body.hidden = false;
+        if (!tutorialCache.has(t.slug)) {
+          body.innerHTML = '<p class="empty">Loading…</p>';
+          try {
+            const res = await fetch(t.file + "?v=" + Date.now(), { cache: "no-cache" });
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            const md = await res.text();
+            tutorialCache.set(t.slug, renderMarkdown(md));
+          } catch (err) {
+            tutorialCache.set(t.slug, `<p class="empty">Couldn't load tutorial. ${escHtml(err.message || err)}</p>`);
+          }
+        }
+        body.innerHTML = tutorialCache.get(t.slug);
+      });
+
+      container.appendChild(node);
+    }
+  }
+
+  async function loadLisa() {
+    if (lisaLoaded) return;
+    lisaLoaded = true;
+    try {
+      const res = await fetch(LISA_URL, { cache: "no-cache" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      const g = data.greeting || {};
+      document.querySelector('[data-lisa="headline"]').textContent = g.headline || "Hi Lisa";
+      document.querySelector('[data-lisa="subline"]').textContent  = g.subline || "";
+      renderTutorials(data.tutorials);
+      renderLisaCards("lisa-news",  data.news);
+      renderLisaCards("lisa-pitch", data.pitch_deck);
+    } catch (err) {
+      const body = document.querySelector('[data-section="lisa"]');
+      const note = document.createElement("div");
+      note.className = "empty";
+      note.textContent = "Couldn't load Lisa content: " + (err.message || err);
+      body.appendChild(note);
+    }
+  }
+
+  // ---------- Request form ----------
+  const form = document.getElementById("lisa-form");
+  const msg = document.getElementById("lisa-message");
+  const counter = document.getElementById("lisa-counter");
+  const submitBtn = document.getElementById("lisa-submit");
+  const statusEl = document.getElementById("lisa-status");
+
+  if (form && msg) {
+    msg.addEventListener("input", () => {
+      const n = msg.value.length;
+      counter.textContent = `${n} / 2000`;
+      counter.classList.toggle("is-near", n > 1800);
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const text = msg.value.trim();
+      if (!text) {
+        statusEl.dataset.kind = "error";
+        statusEl.textContent = "Write something first.";
+        return;
+      }
+      if (WORKER_PLACEHOLDER) {
+        statusEl.dataset.kind = "error";
+        statusEl.textContent = "Form not wired up yet — Alan still needs to deploy the Worker.";
+        console.info("Lisa request (not sent, Worker URL unset):", text);
+        return;
+      }
+      submitBtn.disabled = true;
+      statusEl.dataset.kind = "";
+      statusEl.textContent = "Sending…";
+      try {
+        const res = await fetch(WORKER_URL, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            message: text,
+            website: form.website.value || "",
+          }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || ("HTTP " + res.status));
+        statusEl.dataset.kind = "ok";
+        statusEl.textContent = "Got it — Alan will review tomorrow.";
+        msg.value = "";
+        counter.textContent = "0 / 2000";
+      } catch (err) {
+        statusEl.dataset.kind = "error";
+        statusEl.textContent = "Couldn't send: " + (err.message || err);
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  }
 })();
