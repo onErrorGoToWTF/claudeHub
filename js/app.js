@@ -87,6 +87,22 @@
       el.dataset.hidden = (f === "all" || f === s) ? "false" : "true";
     });
     if (f === "lisa") loadLisa();
+    if (f === "home") replayHomeAnimations();
+  }
+
+  // Replay Home-tab animations whenever the tab is activated.
+  function replayHomeAnimations() {
+    const css = document.querySelectorAll(
+      ".section-home, .section-home .home-hero, .section-home .stat-grid, .section-home .home-cta, .section-home .hero"
+    );
+    css.forEach(el => {
+      el.style.animation = "none";
+      void el.offsetHeight;      // force reflow
+      el.style.animation = "";
+    });
+    // SVG + bar charts: re-render gives us fresh SMIL / CSS animations.
+    renderTimeline();
+    renderCompare();
   }
 
   chips.forEach(chip => {
