@@ -791,7 +791,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .cbar-track {
   grid-column: 1 / -1;
   position: relative;
-  height: 4px;
+  height: 2px;
   border-radius: 999px;
   background: color-mix(in srgb, var(--bg-3) 65%, transparent);
   overflow: visible;
@@ -809,18 +809,18 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .cbar-electron {
   position: absolute;
   right: 0; top: 50%;
-  width: 22px; height: 22px;
+  width: 14px; height: 14px;
   border-radius: 50%;
   background: radial-gradient(circle at center,
     #ffffff 0%,
-    #ffffff 14%,
-    color-mix(in srgb, var(--cbar-col) 85%, transparent) 30%,
-    color-mix(in srgb, var(--cbar-col) 35%, transparent) 55%,
-    transparent 72%);
+    #ffffff 20%,
+    color-mix(in srgb, var(--cbar-col) 80%, transparent) 38%,
+    color-mix(in srgb, var(--cbar-col) 30%, transparent) 60%,
+    transparent 75%);
   transform: translate(50%, -50%);
   opacity: 0;
   animation:
-    cbarShow 0.2s var(--ease) var(--cbar-delay, 0.3s) forwards,
+    cbarShow 0.01s linear var(--cbar-delay, 0.3s) forwards,
     cbarPulse 1.6s var(--ease) calc(var(--cbar-delay, 0.3s) + 1.6s) infinite;
   pointer-events: none;
 }
