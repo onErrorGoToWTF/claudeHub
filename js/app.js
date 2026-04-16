@@ -579,8 +579,7 @@
     if (tryHash === LISA_PW_HASH) {
       localStorage.setItem(LISA_UNLOCK_KEY, LISA_PW_HASH);
       closeLisaModal();
-      activateLisaChip();
-      loadLisa();
+      applyFilter("lisa");
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       gateErr.textContent = "Wrong password.";
