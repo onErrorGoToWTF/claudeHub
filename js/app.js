@@ -169,7 +169,7 @@
       return { label: "Warning", cls: "warning" };
     if (/resolved|fixed|restored|recovered/.test(t))
       return { label: "Resolved", cls: "resolved" };
-    if (/launch|announc|new |releas|improv|upgrad|partner|expand|growth|ship|introduc|available/.test(t))
+    if (/launch|announc|releas|introduc|now available|new (feature|model|version|tool|capability)|ships?\b/.test(t))
       return { label: "New", cls: "positive" };
     return { label: "Info", cls: "info" };
   }
