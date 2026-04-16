@@ -215,6 +215,106 @@
   }
 
   load();
+  renderTimeline();
+
+  // ======================================================================
+  // Timeline chart (context window growth)
+  // ======================================================================
+  function renderTimeline() {
+    const svg = document.getElementById("timeline-svg");
+    if (!svg) return;
+
+    const data = [
+      { date: "2023-03-14", model: "Claude 1",      ctx:  100_000 },
+      { date: "2023-07-11", model: "Claude 2",      ctx:  100_000 },
+      { date: "2023-11-21", model: "Claude 2.1",    ctx:  200_000 },
+      { date: "2024-03-04", model: "Claude 3",      ctx:  200_000 },
+      { date: "2024-06-20", model: "3.5 Sonnet",    ctx:  200_000 },
+      { date: "2024-10-22", model: "3.5 Sonnet v2", ctx:  200_000 },
+      { date: "2025-02-24", model: "3.7 Sonnet",    ctx:  200_000 },
+      { date: "2025-05-22", model: "Sonnet 4",      ctx:  200_000 },
+      { date: "2025-09-29", model: "Sonnet 4.5",    ctx: 1_000_000 },
+      { date: "2026-01-15", model: "Opus 4.6 (1M)", ctx: 1_000_000 },
+    ];
+
+    const W = 800, H = 240;
+    const padL = 44, padR = 20, padT = 20, padB = 36;
+    const innerW = W - padL - padR;
+    const innerH = H - padT - padB;
+
+    const t0 = Date.parse(data[0].date);
+    const t1 = Date.parse(data[data.length - 1].date);
+    const yMin = Math.log10(80_000);
+    const yMax = Math.log10(1_500_000);
+
+    const xOf = (d) => padL + ((Date.parse(d) - t0) / (t1 - t0)) * innerW;
+    const yOf = (ctx) => padT + innerH - ((Math.log10(ctx) - yMin) / (yMax - yMin)) * innerH;
+
+    // Build path
+    let d = "";
+    data.forEach((p, i) => {
+      const x = xOf(p.date).toFixed(1);
+      const y = yOf(p.ctx).toFixed(1);
+      d += (i === 0 ? "M" : "L") + x + " " + y + " ";
+    });
+    const areaD = d + `L${xOf(data[data.length-1].date).toFixed(1)} ${padT + innerH} L${xOf(data[0].date).toFixed(1)} ${padT + innerH} Z`;
+
+    // Y-axis reference ticks (100K, 200K, 1M)
+    const yTicks = [100_000, 200_000, 1_000_000];
+
+    const fmtK = (n) => n >= 1_000_000 ? (n / 1_000_000) + "M" : (n / 1000) + "K";
+
+    let defs = `
+      <defs>
+        <linearGradient id="line-grad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#3b82f6"/>
+          <stop offset="65%"  stop-color="#60a5fa"/>
+          <stop offset="100%" stop-color="#a684ff"/>
+        </linearGradient>
+        <linearGradient id="area-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#3b82f6" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+        </linearGradient>
+      </defs>`;
+
+    let grid = "";
+    yTicks.forEach(t => {
+      const y = yOf(t).toFixed(1);
+      grid += `<line class="grid-line" x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}"/>`;
+      grid += `<text class="y-axis" x="${padL - 8}" y="${+y + 3}" text-anchor="end">${fmtK(t)}</text>`;
+    });
+
+    let dots = "";
+    data.forEach((p, i) => {
+      const x = xOf(p.date).toFixed(1);
+      const y = yOf(p.ctx).toFixed(1);
+      const cls = i === data.length - 1 ? "dot dot-last" : "dot";
+      const r = i === data.length - 1 ? 5.5 : 3.8;
+      const delay = 0.4 + i * 0.12;
+      dots += `<circle class="${cls}" cx="${x}" cy="${y}" r="${r}" style="animation-delay:${delay}s; transform-origin:${x}px ${y}px;"/>`;
+    });
+
+    // Label only the last (endpoint) to keep it clean
+    const lastX = xOf(data[data.length-1].date);
+    const lastY = yOf(data[data.length-1].ctx);
+    const labels = `
+      <text class="label" x="${lastX - 8}" y="${lastY - 14}" text-anchor="end"
+            style="animation-delay: 1.5s; font-weight: 600; fill: var(--lisa-hi);">${data[data.length-1].model}</text>
+    `;
+
+    svg.innerHTML = defs + grid +
+      `<path class="area" d="${areaD}"/>` +
+      `<path class="line" d="${d.trim()}"/>` +
+      dots + labels;
+
+    // Legend
+    const legend = document.getElementById("timeline-legend");
+    if (legend) {
+      legend.innerHTML =
+        `<span>${data[0].date.slice(0,4)} · ${data[0].model}</span>` +
+        `<span>${data[data.length-1].date.slice(0,4)} · ${data[data.length-1].model}</span>`;
+    }
+  }
 
   // ======================================================================
   // Lisa tab
