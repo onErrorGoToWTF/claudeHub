@@ -791,7 +791,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .cbar-track {
   grid-column: 1 / -1;
   position: relative;
-  height: 8px;
+  height: 4px;
   border-radius: 999px;
   background: color-mix(in srgb, var(--bg-3) 65%, transparent);
   overflow: visible;
