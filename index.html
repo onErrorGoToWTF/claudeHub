@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#f0eee6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Daily-updated feed of Claude news, product updates, outages, safety, and Claude Code tutorials.">
+<title>Claude Daily Intelligence Hub</title>
+<link rel="preload" href="data/latest.json" as="fetch" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="ambient" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+</div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <h1 class="brand-title">Claude<span class="brand-sep"> · </span><span class="brand-sub">Daily Intelligence</span></h1>
+    </div>
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle theme">
+      <svg class="icon icon-sun"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+  <nav class="chips" id="filters" aria-label="Sections">
+    <button class="chip is-active" data-filter="all">All</button>
+    <button class="chip" data-filter="updates">Updates</button>
+    <button class="chip" data-filter="news">News</button>
+    <button class="chip" data-filter="status">Status</button>
+    <button class="chip" data-filter="youtube">YouTube</button>
+    <button class="chip" data-filter="tutorials">Tutorials</button>
+  </nav>
+</header>
+
+<main class="app" id="app">
+  <section class="section" data-section="updates" id="section-updates">
+    <div class="section-head">
+      <h2>Official Updates</h2>
+      <span class="updated" data-updated="updates">—</span>
+    </div>
+    <div class="cards" data-cards="updates"></div>
+  </section>
+
+  <section class="section" data-section="news" id="section-news">
+    <div class="section-head">
+      <h2>In the News</h2>
+      <span class="updated" data-updated="news">—</span>
+    </div>
+    <div class="cards" data-cards="news"></div>
+  </section>
+
+  <section class="section" data-section="status" id="section-status">
+    <div class="section-head">
+      <h2>Status & Incidents</h2>
+      <span class="updated" data-updated="status">—</span>
+    </div>
+    <div class="cards" data-cards="status"></div>
+  </section>
+
+  <section class="section" data-section="youtube" id="section-youtube">
+    <div class="section-head">
+      <h2>YouTube Tutorials</h2>
+      <span class="updated" data-updated="youtube">—</span>
+    </div>
+    <div class="cards cards-video" data-cards="youtube"></div>
+  </section>
+
+  <section class="section" data-section="tutorials" id="section-tutorials">
+    <div class="section-head">
+      <h2>Guides & Tips</h2>
+      <span class="updated" data-updated="tutorials">—</span>
+    </div>
+    <div class="cards" data-cards="tutorials"></div>
+  </section>
+
+  <footer class="foot">
+    <span>Generated <span id="generated">—</span></span>
+    <span class="dot">·</span>
+    <a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener">Claude Code</a>
+  </footer>
+</main>
+
+<template id="tpl-card">
+  <a class="card glass" target="_blank" rel="noopener">
+    <div class="card-meta">
+      <span class="card-source"></span>
+      <span class="card-time"></span>
+    </div>
+    <h3 class="card-title"></h3>
+    <p class="card-summary"></p>
+  </a>
+</template>
+
+<template id="tpl-video">
+  <a class="card video glass" target="_blank" rel="noopener">
+    <div class="thumb"><img loading="lazy" alt=""></div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="card-source"></span>
+        <span class="card-time"></span>
+      </div>
+      <h3 class="card-title"></h3>
+    </div>
+  </a>
+</template>
+
+<template id="tpl-skeleton">
+  <div class="card glass skeleton-card" aria-hidden="true">
+    <div class="sk sk-meta"></div>
+    <div class="sk sk-title"></div>
+    <div class="sk sk-line"></div>
+    <div class="sk sk-line sk-short"></div>
+  </div>
+</template>
+
+<script src="js/app.js" defer></script>
+</body>
+</html>

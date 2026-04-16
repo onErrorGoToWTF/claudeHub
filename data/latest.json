@@ -1,0 +1,885 @@
+{
+  "generated_at": "2026-04-16T12:44:11.989Z",
+  "version": 1,
+  "sections": {
+    "updates": [
+      {
+        "title": "Equipping Agents for the Real World with Agent Skills",
+        "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+        "source": "Anthropic Eng",
+        "published": "2026-04-15T14:39:01.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Automated Alignment Researchers",
+        "url": "https://www.anthropic.com/research/automated-alignment-researchers",
+        "source": "Anthropic Research",
+        "published": "2026-04-14T19:00:21.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Narasimhan Board",
+        "url": "https://www.anthropic.com/news/narasimhan-board",
+        "source": "Anthropic",
+        "published": "2026-04-14T14:00:04.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Building Effective Agents",
+        "url": "https://www.anthropic.com/engineering/building-effective-agents",
+        "source": "Anthropic Eng",
+        "published": "2026-04-13T17:46:47.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Managed Agents",
+        "url": "https://www.anthropic.com/engineering/managed-agents",
+        "source": "Anthropic Eng",
+        "published": "2026-04-10T19:17:30.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude for Financial Services",
+        "url": "https://www.anthropic.com/news/claude-for-financial-services",
+        "source": "Anthropic",
+        "published": "2026-04-10T12:11:09.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Healthcare Life Sciences",
+        "url": "https://www.anthropic.com/news/healthcare-life-sciences",
+        "source": "Anthropic",
+        "published": "2026-04-09T20:25:31.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Trustworthy Agents",
+        "url": "https://www.anthropic.com/research/trustworthy-agents",
+        "source": "Anthropic Research",
+        "published": "2026-04-09T17:00:08.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Labor Market Impacts",
+        "url": "https://www.anthropic.com/research/labor-market-impacts",
+        "source": "Anthropic Research",
+        "published": "2026-04-08T14:10:47.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Emotion Concepts Function",
+        "url": "https://www.anthropic.com/research/emotion-concepts-function",
+        "source": "Anthropic Research",
+        "published": "2026-04-08T13:02:50.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Google Broadcom Partnership Compute",
+        "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+        "source": "Anthropic",
+        "published": "2026-04-06T21:43:38.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Diff Tool",
+        "url": "https://www.anthropic.com/research/diff-tool",
+        "source": "Anthropic Research",
+        "published": "2026-04-03T21:02:41.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Australia Mou",
+        "url": "https://www.anthropic.com/news/australia-MOU",
+        "source": "Anthropic",
+        "published": "2026-03-31T23:16:54.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How Australia Uses Claude",
+        "url": "https://www.anthropic.com/research/how-australia-uses-claude",
+        "source": "Anthropic Research",
+        "published": "2026-03-31T22:35:47.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Project Fetch Robot Dog",
+        "url": "https://www.anthropic.com/research/project-fetch-robot-dog",
+        "source": "Anthropic Research",
+        "published": "2026-03-26T11:07:12.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Project Vend 2",
+        "url": "https://www.anthropic.com/research/project-vend-2",
+        "source": "Anthropic Research",
+        "published": "2026-03-26T11:07:02.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Mozilla Firefox Security",
+        "url": "https://www.anthropic.com/news/mozilla-firefox-security",
+        "source": "Anthropic",
+        "published": "2026-03-26T11:05:56.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Project Vend 1",
+        "url": "https://www.anthropic.com/research/project-vend-1",
+        "source": "Anthropic Research",
+        "published": "2026-03-26T11:03:57.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code Auto Mode",
+        "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
+        "source": "Anthropic Eng",
+        "published": "2026-03-25T23:13:37.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Introducing Anthropic Science",
+        "url": "https://www.anthropic.com/research/introducing-anthropic-science",
+        "source": "Anthropic Research",
+        "published": "2026-03-25T13:20:42.000Z",
+        "summary": ""
+      }
+    ],
+    "news": [
+      {
+        "title": "Anthropic Expands U.K. Operations as Claude Demand Grows - WSJ",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQVklJQkRVaFR6dTQ4Zmw0ellHaVlsb3BLU3dOY2g3SkVRQnc1bG9RWHBYaFcydUJFSGtTbEFNR1c5SFZHSkxGeHd3czB1WkkxQzdfYlJmZ1lMbTRESTFUakkzWklyOU5WcHJqdkJGRkZDR09oakZURlIxZ3ZFMzVjZEgtYXBYUGItUXloQkhrNmhsUnJnS2RV?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T12:10:00.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Experts flag potentially critical security issues at heart of Anthropic MCP - techradar.com",
+        "url": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxQNk5UR1Y3WXAxOEZNYlJkWHZRZXNUQnc4dEd3ajhPbGRKVk1NTl9PVWVxZGhPUjFhNkNlNGxQeGxVWkNyZlpfNE9lYmhlOW1GdVRDMjVaWFRYZ0JoNWJMTkJFTGFMMnZRa1pfejlmM2FBZko0S0NQUGhBOVFfOE9oNE5Nd2gtYTNjZ0pBYV8yc196WERuM05DTlFzMVN4LWlRSFMzYWVxZzRSU1RwejBXbGF1a3owNmVNdV9XcF9vM0VJRUVhVldmQThkNjFhcGk1TzVadXp1a0k0X1lzc1BzNmtpZUFJYjRBOWtYamRQMnlQOXdpcG44Y2h4XzJxQUZIb1BTMWptOGJtS0xaMUpSVGFlZTA1VEtvTUNmSDVNOERWREtQQjN4RG5OUFVTMWprQmh5ZGpTS2xJX0syX0JTWHNnQ1ZiVGxuNEl6TlVtT0pOVFE2?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T12:05:00.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Black market workarounds scale up for Claude as Anthropic tightens ID checks - South China Morning Post",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQUXg2MGtoc19UWWgtWV9OMEFYeHRMcjV1Wl8xeEEzRzdCa2F1dGY0UFBST3ZXTnRDckNrUk9XY1dMdDR1MWxvLTdXRUhSZ1BVMXpKZnFlSFlBOElfMER1bzQ1NWZHa216VTZQd2JVX1JNUnVMOEh3YjZySndsRkdYNzNhcENLSHA5QkNDVXI4TGNIQUZHUzNIM1ZWTUc3TWNkYnI5SzVNSDNZY0RW0gGsAUFVX3lxTE1aakFzRm9MemRQWjR6dXJ2S09fTHdzV1IxdTZVd25HRGFjcnVfc2dYSmNZWXhISmczX2hHTlRMSHM5MUM5UDlGNTVKLURxVjNmNGJvcm9BNXhBRl9mVTVsR2Q4bTB1dmJITFBhR2I3eVd6b2hkUDlSUHFRX3pTbWVfcXluRFNFdmhwWW1qOWhEem5aWGQtZjNVMUVOMldpRXJzeDlBb3E2SU1TaDc?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T12:00:10.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic will ask Claude users to verify their identities 'for a few use cases' - Yahoo News Singapore",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBmbXdMa2g0M3hmeFg3MEU2dWNiVjNDWEtIRTRjMDBzVl9MSEhKV0pwOWdfbmtVTW9hN3c0TjlZQi1TUUYxQkNkUnVmWnNkcVBRWU1yYkNfdmowYXpOUk8tV24xbnpPQkNyS0Z4ZFRVdkpTOThPV3Q4dExHZG9VQ2s?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T11:57:54.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic will ask Claude users to verify their identities 'for a few use cases' - Engadget",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNN2FzYy1Ud2dDRTB4S1JXdHNDMXlzVTlWQU05aV9mSXNKUUpSdHh5T0JxeWhoMXFUR2wzMUxGNWFWTXRQbk9JNENMXzBoRlRmc1k0MTBvNUpfRnVxUC1mMHE2LWNnY1NuSFhDLWZpMWpzaTRTaGJVSTJITXJyclVObkpwZ3JuWFhUdUNaX0RHSUlBeW5jVWl5a240YkVUTml3QU1Edzc1LWRQVDAtT0JuN1E2VThySFdjY0h4SllB?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T11:57:54.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "ECB to Scrutinize Anthropic’s Mythos on Call With Executives",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-16/ecb-to-scrutinize-anthropic-s-mythos-on-call-with-executives",
+        "source": "Bloomberg",
+        "published": "2026-04-16T10:50:35.000Z",
+        "summary": "The European Central Bank is convening a call with the chief risk officers of eurozone lenders to discuss the potential threats from Anthropic’s new artificial intelligence model, as officials look…"
+      },
+      {
+        "title": "“Developers are not engineers:” Why Anthropic’s Mythos and other AI tools expose gaps in vulnerability reporting - Cybernews",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPdGFhdHpueFJhSlBNRkdkZ0twZ3pkVUpjR0Q0UTRxUjczMGFOTUxvMm83RjhadUZ0dHVtV3hwNnVTVkFhZ3R5WGJXQW9udUE2bUNZTGNrRDZYTGtoSm44NWxiemdaYVI2a0hPZ0NjOVNwY1RtdFlxR1hRV1BvSktVLVZaR1BOZVowRXJXR3FLcVBrM2c?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T10:28:25.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "OpenAI unveils model with limited rollout days after Anthropic - Euronews.com",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOLTBTQVdvaExyb1RNSGEzZm1STWp2QnNGLUtiSTZTSDU1VGZKMFNpWS16Y2ljckxhVi1rUlFTVEJwZnh6NnN4UTRoUXY3dm5uWlJWVUU4TnpXQnd3bDFXY1NiY0xnVjhnSThDYUZrNmJXT3NDUWZjMWluYTNCVHZrUWl1NmprZGdvMzRaN1NTYjZxVEtKMkloV1cydXo3OHV6dlRNUHZIcFFSNlMtaGY4Q2lqQmtiYnVucU9mekE5QXdydw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T10:07:56.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic unveils plans for major UK expansion after OpenAI announces first permanent London office - CNBC",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPT0c1eVNSWEpnUy02bjdZMzBpNEk5aGdrY2FXa0NfakZFVGR2cGVGMFhKeTU2M0FkclB4MWR6YmFMRTZVYkJwellnQ18zOVRKQ2JuNHlnWkxvb3d5bW9LeTR0UE5mbXNqUkJrN1U1RFp5SlJjdkk3YXJaZzhTY1pUcU1oaWtEdlFUN2ZzeGMxVVXSAZYBQVVfeXFMT2F5TXVWQzVVbzN1bWJFeXp0OEJGVHdFYjZpV2pDR1hNZmpaQVk2dzZGY2w0djhENWtkQjNMY1Vqbkt3X0NxVjdLemRoemV2dWp4OE1US3FlZHA4WmpvR01qb2tGYl9pZUFONDJTMVdPR05hYVlHN1hmdW5FUnlXOFFoV3BsQm94T3RxV0pVWlVBQ0JIbTN3?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T09:34:03.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic Plans to Bring Mythos to UK Banks Within the Next Week",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-16/anthropic-plans-to-bring-mythos-to-uk-banks-within-the-next-week",
+        "source": "Bloomberg",
+        "published": "2026-04-16T09:27:25.000Z",
+        "summary": "Anthropic PBC is planning to release its closely watched Mythos artificial intelligence model to UK financial institutions in the coming week."
+      },
+      {
+        "title": "Anthropic's AI downgrade stings power users - Axios",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1JbFRqWmlMcUM0aGRRalo2N2VTSDJKTHVEUkdQV1RieW5xRVhzM0tUMFAzU2NLWUVOaXhJTmFIT0tmT2lvNkhmU3V5bUlxZUJCeHB2VnYyaE55bjJ2T0x6M3lZZDEteVpodE91WnA2RUlBRlJxRnc1MHBKSQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T09:00:59.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "“Claude, How Can I Get 8.3% Dividends From AI?” A $30-Billion Question - Contrarian Outlook",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOb0RBcGpjaG9CTHoxME9FSTNSS3YyRDJnTXNWN0hUeUxsZWFOMzN6UW9mV1FMS0pUVTlqS0VhNDZOZGFyUzVrU1o3SFdQekpwMnFmbGJQcGxTZGNpdzlZNEFHYlRxWk1Fdk84R09SVnc4OEU5eGh3M2ItZGJxSm9JQ1BBWjAzancwMTlGY29FUEdLN3NnQVpYWk9abw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T09:00:42.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic's Mythos to Be Available to UK Banks Within 'Next Week'",
+        "url": "https://www.bloomberg.com/news/videos/2026-04-16/anthropic-s-mythos-available-to-uk-banks-in-next-week-video",
+        "source": "Bloomberg",
+        "published": "2026-04-16T08:31:56.000Z",
+        "summary": "Pip White, Anthropic's head of UK, Ireland and northern Europe, says the firm is planning to release its new Mythos model to UK financial institutions in the coming week. The artificial intelligence…"
+      },
+      {
+        "title": "Anthropic’s Nuclear Bomb - War on the Rocks",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9VYWV5MW9IN2t6STZSUnJfTFJ2Zjc0cUltb3VxSXgwLWNab296NjZHREM1dXdBNzhSM0NwUGVzbEFaZVBxZkhOQndkZnhHUjZ6TG4yYWlkUC1FQk41Z19V?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T08:16:24.000Z",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE9VYWV5MW9IN2t6STZSUnJfTFJ2Zjc0cUltb3VxSXgwLWNab296NjZHREM1dXdBNzhSM0NwUGVzbEFaZVBxZkhOQndkZnhHUjZ6TG4yYWlkUC1FQk41Z19V?oc=5\"…"
+      },
+      {
+        "title": "Anthropic tests user trust with ID and selfie checks for Claude - Help Net Security",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPNlZIQTRlQ3lENnpzdkEtV1BYMTV2YXhVQ0F1NEs3SlFoekQ4OHVObkVBZTFSbnM5XzNvbm1pS3BTM0MyM2ZFeTZHamVrZzhuN0VQRkRIZGd6UHlIa3ZQUFlfMU1EWUZiM3QzR2tOdktkc0RTaC1QSUpuZnRoTmFXcm1TdmZHU2F2TEVyQ1FjYVV2QjB5U014M2JaZVM?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T08:07:11.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Claude Takes a Breather; Anthropic Confirms Outage and Immediate Fixes - CXOToday.com",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOdEsxZUR5SGQ2cFpxV2JYOGVaMVMtZTdRSnZRWHVRc1VaT1VtMGFNVFRGc1VKUGJGZXJkaWlHV3dfeHpTb3RZUkU5VWhaN0JPNlpCM0c5U0pfb2ZBWU9CQVMySExQRlNVMnlwYmpEdHUzOXFJUXpKWUw2cDJBUVhuRm1hMmFtZURlNzczMUFnSDJMYW5fOGdrc0pB?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T07:24:56.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Is Anthropic about to launch a design tool that could shake up the creative software market? - Yahoo Finance UK",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPLWpXQTgtczAwMmpNS2liTXZ3RV8xTklIcmVVOFBROHlqQ0FvZC1lUlBwclVOUGhfOUxfQ3Z6cS1SVFliMkotSXNkbVFyc2JuSkhucE5wdHJOQTVwLWxJdXF0c3FWemJBU0tWUkRGUzUtbE5lSUFXYWNHNGN5OVVhODF1M2FSQ1J4bVZn?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T07:06:00.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Scaling Managed Agents: Decoupling the brain from the hands - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5LY3VWakFxdE02bVBBdDNrSEJaY2NqV1ZkZ3hfNUxBeWFXZDdrU21vTTdnSFdNUGNPRVpSMWVyVGp6MWlQWTFYU2JIcVZDdDcwMXcwRlpYNExMeWZBMGxXOWJ3?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T06:35:47.000Z",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE5LY3VWakFxdE02bVBBdDNrSEJaY2NqV1ZkZ3hfNUxBeWFXZDdrU21vTTdnSFdNUGNPRVpSMWVyVGp6MWlQWTFYU2JIcVZDdDcwMXcwRlpYNExMeWZBMGxXOWJ3?oc=5\"…"
+      },
+      {
+        "title": "One Cabinet Wants Claude Banned. Another Just Asked for Access. - thetechpencil.com",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNU0FIRDdiSGZ1STg4dGQ2MzYta0lSTWpQRGtjbHFKRlJSRHRPMU44aHNjeUJXekJNNG9iam1wd0hTZnVsa001VWpId19IdUJBNHo2OGVpOTFwcHQ1R1NncVFCXzdkaWlmbS1ObzNGZzJMUk1FcEl6RnJnM2E1c3k2M0hWV09nZGdoVlVRZlcyOVFxRWh2aS1BZGxGNA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T05:01:00.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic Requires ID Verification for Claude Capabilities - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNckpvMmNHUTRXN2k0S3NyQzdCNVhPU1hXS2x0dzVUZjVicjNKTG1tRUFxMHRGMEFRS2Y0NkhEWnphcGVjdUNjc18zMXg3c1ZwQzJCY0UxcVVEZ3FvOUVxQkFOYXJKODRWYm03aHlJcVl2aEJ3N3paanh0cU1lREV6UFljZkJBY0s2ZDl3T2h6NHlyNFhmMGdTWGRHby0tVXB0TEE?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T03:42:17.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "TrendAI Expands AI Security Capabilities Through Strategic Collaboration with Anthropic - The Fast Mode",
+        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQUGpCM0J5YldxcmR1bzRoRG82MmEzOVU0Z3R6LVY3ZWE1UkJUVEJvTm9YNlg1bUhOT0JuTXY2djRNREc3end3eG5zcnppY21wSlhpRWlNaTFUTHZmTWFwdjE4NlpFTnBrQnpGSUVqN2ptSHBrSlZjTHdrZ0JBR2dselAtQmRVbGdDaTdJX0ZCc2ROcmZITTM5M1VlWW84YWRGZ2tWYU1LbUI0SFRadlByU3dQYzF1NnZlbEc3WVpjTHB0ZVdpcWQ1Tzd1ekZ6Nlgyc2d6UlZtSy15UQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T02:10:49.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic’s Next AI Model Could Disrupt Design Tools Like Adobe, Figma - eWeek",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPQ1hpRG91SHBoQm1fZUFHVFJlLVpPTFNlaGcwTGcxdFFXNmtST1F4YlVoTXJ3N0dBX1BZZFhuZVFFS2tzWjEya2hFREtRY3ViRHNidmFwdjN5b2hZQUdYOVpwYmRQcTJYdkRCbDJXREladTM4MEJBUXlmdmRtX2hQanlfRQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T01:45:25.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "TrendAI partners Anthropic to embed Claude in security ops - SecurityBrief Australia",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPdzdiUmNLTm9fcFBGdUFXcThNdms1U2cwMXlkMXNCaVRSZ3ZxMFdlS0txVDZfblBxXzhJbnNuSng0c3R5Mmx2RDduSXRlRGk2SUQteXlYS2kwSk9DMFU4NHd0XzUwbDRGN3o4WXlzS2xGbFA3aVNHcEhvaHF6Qjl4clBNR2JPUHpyMndxcUZOOTU0ejNPVjUwWA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T01:20:00.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "How Anthropic Learned Mythos Was Too Dangerous for the Wild - Bloomberg.com",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTkJWYUFCVktsRlNjSTVBbEF4NW1Ia282ZUlpWFFhcWRjeWY2UjN4RGlGMUV5MHpjZjZGbFYxaEFhcndLY3ZCaVYyX3Q1dnFnMWs0bDUydk1MWmluaXBjUXVUaFA1SGRfekl2RzJtcFJEZldoWmtkcGZpM1JfRHUxRWFkOGs3UGFYMi1zdlNsLVYzYUJjcDNMSTk2Y29veklfS1RWYktnNHVhc3hfQ21JRkxaejl4UQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T00:20:00.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Users report sharp performance drop in Claude Opus 4.6 as Anthropic allegedly redirects compute toward next model - Startup Fortune",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxORGVMdGMxbUF5X09Hc2VqR0hHcTRXUTQ5Q0hhQXd5dVE0a1o1U1NVTzlMTVR0U1RRaFNZVGZBX2RMMXVSazQ0bndWVGxHbDVBQTRxS2pQRkZnWGN4ckVoRjF4MFN0MnQwNF9GZEJIWVRhYldfUUw1RUlySUQ4TGZsVExvWXA2b1c1dmhpUDY5TERPSlJZWTNhc1dRNC1INDM3cldPRlhwcHpMMVhpY2hMd3pwNG9QZzRzMGJMUGRPRWo2T1dWbTV4cUx5OWhmV1JyY0paRGo0SQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T00:09:25.000Z",
+        "summary": "<a…"
+      }
+    ],
+    "status": [
+      {
+        "title": "Opus 4.6 elevated rate of errors",
+        "url": "https://status.claude.com/incidents/7jbzthbc1dwr",
+        "source": "Claude Status",
+        "published": "2026-04-16T07:43:32.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;>16</var>, <var data-var=&apos;time&apos;>07:43</var> UTC</small><br><strong>Resolved</strong> - Earlier today we had an outage on Opus 4.6 that started…"
+      },
+      {
+        "title": "Elevated errors on Claude.ai, API, Claude Code",
+        "url": "https://status.claude.com/incidents/f00h6l76tsjs",
+        "source": "Claude Status",
+        "published": "2026-04-15T17:42:57.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;>15</var>, <var data-var=&apos;time&apos;>17:42</var> UTC</small><br><strong>Resolved</strong> - This incident has been resolved.</p><p><small>Apr <var…"
+      },
+      {
+        "title": "Degraded service on usage and analytics admin API endpoints",
+        "url": "https://status.claude.com/incidents/w3389p5qg7kp",
+        "source": "Claude Status",
+        "published": "2026-04-14T15:21:03.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;>14</var>, <var data-var=&apos;time&apos;>15:21</var> UTC</small><br><strong>Resolved</strong> - This incident has been resolved.</p><p><small>Apr <var…"
+      },
+      {
+        "title": "Claude.ai down",
+        "url": "https://status.claude.com/incidents/6jd2m42f8mld",
+        "source": "Claude Status",
+        "published": "2026-04-13T16:35:58.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;>13</var>, <var data-var=&apos;time&apos;>16:35</var> UTC</small><br><strong>Resolved</strong> - We have resolved the issue resulting in elevated errors…"
+      },
+      {
+        "title": "Email login down",
+        "url": "https://status.claude.com/incidents/qcfvv041lb1k",
+        "source": "Claude Status",
+        "published": "2026-04-11T00:00:20.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;>11</var>, <var data-var=&apos;time&apos;>00:00</var> UTC</small><br><strong>Resolved</strong> - Email login was broken between approximately 3:46 PM and…"
+      },
+      {
+        "title": "Elevated errors on requests to Claude models",
+        "url": "https://status.claude.com/incidents/411xbc51v608",
+        "source": "Claude Status",
+        "published": "2026-04-10T16:51:44.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;>10</var>, <var data-var=&apos;time&apos;>16:51</var> UTC</small><br><strong>Resolved</strong> - The issue affecting requests to non-Opus models has been…"
+      },
+      {
+        "title": "Some Claude.ai share links were inaccessible",
+        "url": "https://status.claude.com/incidents/ccm8hy0pld48",
+        "source": "Claude Status",
+        "published": "2026-04-10T14:00:00.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;>10</var>, <var data-var=&apos;time&apos;>14:00</var> UTC</small><br><strong>Resolved</strong> - Between April 2 and April 10, some users who were not…"
+      },
+      {
+        "title": "Degraded Performance on Vaults",
+        "url": "https://status.claude.com/incidents/2z4mf00ffcwd",
+        "source": "Claude Status",
+        "published": "2026-04-10T04:38:02.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;>10</var>, <var data-var=&apos;time&apos;>04:38</var> UTC</small><br><strong>Resolved</strong> - This incident has been resolved.</p><p><small>Apr <var…"
+      },
+      {
+        "title": "Elevated Connector Error Rates",
+        "url": "https://status.claude.com/incidents/cb0h2zyzl0kd",
+        "source": "Claude Status",
+        "published": "2026-04-09T17:34:00.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;> 9</var>, <var data-var=&apos;time&apos;>17:34</var> UTC</small><br><strong>Resolved</strong> - This incident has been resolved.</p><p><small>Apr <var…"
+      },
+      {
+        "title": "Sonnet 4.6 elevated rate of errors",
+        "url": "https://status.claude.com/incidents/v0t3z924dbhg",
+        "source": "Claude Status",
+        "published": "2026-04-09T08:53:20.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;> 9</var>, <var data-var=&apos;time&apos;>08:53</var> UTC</small><br><strong>Resolved</strong> - This incident has been resolved.</p><p><small>Apr <var…"
+      },
+      {
+        "title": "Errors when connecting to Claude.ai",
+        "url": "https://status.claude.com/incidents/hsgj6gh6rlck",
+        "source": "Claude Status",
+        "published": "2026-04-08T23:57:07.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;> 8</var>, <var data-var=&apos;time&apos;>23:57</var> UTC</small><br><strong>Resolved</strong> - Some users experienced an error when trying to access…"
+      },
+      {
+        "title": "Outage affecting Workspace Creation",
+        "url": "https://status.claude.com/incidents/z0bqmftj68dr",
+        "source": "Claude Status",
+        "published": "2026-04-08T19:40:06.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;> 8</var>, <var data-var=&apos;time&apos;>19:40</var> UTC</small><br><strong>Resolved</strong> - The issue affecting API workspace creation has been…"
+      }
+    ],
+    "youtube": [
+      {
+        "title": "LIVE: You NEED to be using OpenClaw and Claude Code together",
+        "url": "https://www.youtube.com/watch?v=DzH0U-JBems",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "DzH0U-JBems",
+        "thumbnail": "https://i.ytimg.com/vi/DzH0U-JBems/hqdefault.jpg",
+        "published": "2026-04-15T20:21:57.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code Won't Replace You. A User Will.",
+        "url": "https://www.youtube.com/watch?v=7T9rWSKqkdE",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "7T9rWSKqkdE",
+        "thumbnail": "https://i.ytimg.com/vi/7T9rWSKqkdE/hqdefault.jpg",
+        "published": "2026-04-15T17:30:06.000Z",
+        "summary": ""
+      },
+      {
+        "title": "The NEW Claude Desktop App is here (First Look)",
+        "url": "https://www.youtube.com/watch?v=cY5ElqYKVdY",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "cY5ElqYKVdY",
+        "thumbnail": "https://i.ytimg.com/vi/cY5ElqYKVdY/hqdefault.jpg",
+        "published": "2026-04-15T15:00:53.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code for Desktop is the BEST way to build apps with AI EVER (full tutorial)",
+        "url": "https://www.youtube.com/watch?v=pHr1O_Af5NA",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "pHr1O_Af5NA",
+        "thumbnail": "https://i.ytimg.com/vi/pHr1O_Af5NA/hqdefault.jpg",
+        "published": "2026-04-15T02:13:41.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Routines Just Dropped, And It's Perfect",
+        "url": "https://www.youtube.com/watch?v=j3aXJNu9804",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "j3aXJNu9804",
+        "thumbnail": "https://i.ytimg.com/vi/j3aXJNu9804/hqdefault.jpg",
+        "published": "2026-04-14T19:08:20.000Z",
+        "summary": ""
+      },
+      {
+        "title": "What Is Claude Cowork? The Only Explainer You Need",
+        "url": "https://www.youtube.com/watch?v=M-1kJqRAuus",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "M-1kJqRAuus",
+        "thumbnail": "https://i.ytimg.com/vi/M-1kJqRAuus/hqdefault.jpg",
+        "published": "2026-04-14T17:30:05.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Cowork Can NOW Automate Your Documents! (Full Walkthrough)",
+        "url": "https://www.youtube.com/watch?v=L_-l9yjHxFs",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "L_-l9yjHxFs",
+        "thumbnail": "https://i.ytimg.com/vi/L_-l9yjHxFs/hqdefault.jpg",
+        "published": "2026-04-14T14:12:41.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code Channels = Your Own OpenClaw",
+        "url": "https://www.youtube.com/watch?v=HN6Zd6sZT-A",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "HN6Zd6sZT-A",
+        "thumbnail": "https://i.ytimg.com/vi/HN6Zd6sZT-A/hqdefault.jpg",
+        "published": "2026-04-14T13:00:27.000Z",
+        "summary": ""
+      },
+      {
+        "title": "FULL Claude Tutorial For Beginners in 2026! (FULL COURSE)",
+        "url": "https://www.youtube.com/watch?v=Xg55nTrbYYY",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "Xg55nTrbYYY",
+        "thumbnail": "https://i.ytimg.com/vi/Xg55nTrbYYY/hqdefault.jpg",
+        "published": "2026-04-13T13:01:03.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code Skills: Build Your First One in 5 Min",
+        "url": "https://www.youtube.com/watch?v=F_BqouCB2H4",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "F_BqouCB2H4",
+        "thumbnail": "https://i.ytimg.com/vi/F_BqouCB2H4/hqdefault.jpg",
+        "published": "2026-04-13T12:30:32.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic Just Built an AI They Refuse to Release #claudemythos",
+        "url": "https://www.youtube.com/shorts/7Sy5ko4Jo60",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "7Sy5ko4Jo60",
+        "thumbnail": "https://i.ytimg.com/vi/7Sy5ko4Jo60/hqdefault.jpg",
+        "published": "2026-04-11T17:41:13.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code Skills Killed Vibe Coding. Here's What's Next.",
+        "url": "https://www.youtube.com/watch?v=JeqBWUDX4mI",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "JeqBWUDX4mI",
+        "thumbnail": "https://i.ytimg.com/vi/JeqBWUDX4mI/hqdefault.jpg",
+        "published": "2026-04-11T13:00:38.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I Built Alex Hormozi's AI Workflow Framework in Claude Cowork",
+        "url": "https://www.youtube.com/watch?v=RXhEScTBBqs",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "RXhEScTBBqs",
+        "thumbnail": "https://i.ytimg.com/vi/RXhEScTBBqs/hqdefault.jpg",
+        "published": "2026-04-10T12:52:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code for Non-Coders: Start Here (Step by Step)",
+        "url": "https://www.youtube.com/watch?v=-o3aiNFaMCI",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "-o3aiNFaMCI",
+        "thumbnail": "https://i.ytimg.com/vi/-o3aiNFaMCI/hqdefault.jpg",
+        "published": "2026-04-10T12:30:02.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Welcome to Pragati Kunwer | Claude Code Skills for Non-Coders",
+        "url": "https://www.youtube.com/watch?v=hvdSm5IjjX0",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "hvdSm5IjjX0",
+        "thumbnail": "https://i.ytimg.com/vi/hvdSm5IjjX0/hqdefault.jpg",
+        "published": "2026-04-10T05:48:30.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I'm an AI Engineer and Claude Mythos Surprised Me",
+        "url": "https://www.youtube.com/watch?v=Kyk4FUVQV5s",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "Kyk4FUVQV5s",
+        "thumbnail": "https://i.ytimg.com/vi/Kyk4FUVQV5s/hqdefault.jpg",
+        "published": "2026-04-09T17:58:33.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Managed Agents: Deploy AI Agents That Run for Hours",
+        "url": "https://www.youtube.com/watch?v=DpfLbBuhHOg",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "DpfLbBuhHOg",
+        "thumbnail": "https://i.ytimg.com/vi/DpfLbBuhHOg/hqdefault.jpg",
+        "published": "2026-04-09T14:05:29.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code Tutorial for Beginners (2026)",
+        "url": "https://www.youtube.com/watch?v=yYHQkMc2BP8",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "yYHQkMc2BP8",
+        "thumbnail": "https://i.ytimg.com/vi/yYHQkMc2BP8/hqdefault.jpg",
+        "published": "2026-04-09T12:31:28.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Managed Agents Just Dropped, And It Kills n8n",
+        "url": "https://www.youtube.com/watch?v=Ob5Vu-gD3mo",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "Ob5Vu-gD3mo",
+        "thumbnail": "https://i.ytimg.com/vi/Ob5Vu-gD3mo/hqdefault.jpg",
+        "published": "2026-04-08T18:42:51.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Learn Claude Code INSIDE Claude Code (Hidden Feature)",
+        "url": "https://www.youtube.com/shorts/DwiXdPg__6g",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "DwiXdPg__6g",
+        "thumbnail": "https://i.ytimg.com/vi/DwiXdPg__6g/hqdefault.jpg",
+        "published": "2026-04-08T13:43:10.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How to Use Claude Computer Use (Step-by-Step Tutorial)",
+        "url": "https://www.youtube.com/watch?v=_gYthLMXlsA",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "_gYthLMXlsA",
+        "thumbnail": "https://i.ytimg.com/vi/_gYthLMXlsA/hqdefault.jpg",
+        "published": "2026-04-08T13:04:37.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How to Install Claude Code - Complete Setup Guide",
+        "url": "https://www.youtube.com/watch?v=Uqn-_S5k4LE",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "Uqn-_S5k4LE",
+        "thumbnail": "https://i.ytimg.com/vi/Uqn-_S5k4LE/hqdefault.jpg",
+        "published": "2026-04-08T04:20:24.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Mythos Preview: Everything You Need to Know",
+        "url": "https://www.youtube.com/watch?v=oCuttuCQmZg",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "oCuttuCQmZg",
+        "thumbnail": "https://i.ytimg.com/vi/oCuttuCQmZg/hqdefault.jpg",
+        "published": "2026-04-07T21:24:19.000Z",
+        "summary": ""
+      },
+      {
+        "title": "An initiative to secure the world's software | Project Glasswing",
+        "url": "https://www.youtube.com/watch?v=INGOC6-LLv0",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "INGOC6-LLv0",
+        "thumbnail": "https://i.ytimg.com/vi/INGOC6-LLv0/hqdefault.jpg",
+        "published": "2026-04-07T18:03:51.000Z",
+        "summary": ""
+      },
+      {
+        "title": "7 Habits of Top 1% Claude Cowork Users (10h/week saved)",
+        "url": "https://www.youtube.com/watch?v=cA6mE6JgfK0",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "cA6mE6JgfK0",
+        "thumbnail": "https://i.ytimg.com/vi/cA6mE6JgfK0/hqdefault.jpg",
+        "published": "2026-04-07T14:10:56.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Cowork Tutorial - Skills, Tasks & Automation",
+        "url": "https://www.youtube.com/watch?v=YGP706Fcggo",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "YGP706Fcggo",
+        "thumbnail": "https://i.ytimg.com/vi/YGP706Fcggo/hqdefault.jpg",
+        "published": "2026-04-07T13:01:04.000Z",
+        "summary": ""
+      },
+      {
+        "title": "What Is Claude Code? The Only Explainer You Need",
+        "url": "https://www.youtube.com/watch?v=dQAxMucQlNQ",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "dQAxMucQlNQ",
+        "thumbnail": "https://i.ytimg.com/vi/dQAxMucQlNQ/hqdefault.jpg",
+        "published": "2026-04-06T22:30:09.000Z",
+        "summary": ""
+      },
+      {
+        "title": "LIVE: ANTHROPIC BANNED OPENCLAW. DO THIS NOW!! plus: MASSIVE ANNOUNCEMENT",
+        "url": "https://www.youtube.com/watch?v=Pe_wvdV2E6c",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "Pe_wvdV2E6c",
+        "thumbnail": "https://i.ytimg.com/vi/Pe_wvdV2E6c/hqdefault.jpg",
+        "published": "2026-04-06T20:32:55.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How I Use Claude Code as a Data Scientist (10 Real Use Cases)",
+        "url": "https://www.youtube.com/watch?v=w2vRlfDEhyE",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "w2vRlfDEhyE",
+        "thumbnail": "https://i.ytimg.com/vi/w2vRlfDEhyE/hqdefault.jpg",
+        "published": "2026-04-06T14:01:31.000Z",
+        "summary": ""
+      },
+      {
+        "title": "What Is a Claude Code Skill File? (12 Lines That Change Everything)",
+        "url": "https://www.youtube.com/shorts/dUuDAg0a_IM",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "dUuDAg0a_IM",
+        "thumbnail": "https://i.ytimg.com/vi/dUuDAg0a_IM/hqdefault.jpg",
+        "published": "2026-04-06T04:20:17.000Z",
+        "summary": ""
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "v2.1.110",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.110",
+        "source": "Claude Code Releases",
+        "published": "2026-04-15T23:21:43.000Z",
+        "summary": "<h2>What's changed</h2> <ul> <li>Added <code>/tui</code> command and <code>tui</code> setting — run <code>/tui fullscreen</code> to switch to flicker-free rendering in the same conversation</li>…"
+      },
+      {
+        "title": "v2.1.109",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.109",
+        "source": "Claude Code Releases",
+        "published": "2026-04-15T04:02:13.000Z",
+        "summary": "<h2>What's changed</h2> <ul> <li>Improved the extended-thinking indicator with a rotating progress hint</li> </ul>"
+      },
+      {
+        "title": "v2.1.108",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.108",
+        "source": "Claude Code Releases",
+        "published": "2026-04-14T19:12:01.000Z",
+        "summary": "<h2>What's changed</h2> <ul> <li>Added <code>ENABLE_PROMPT_CACHING_1H</code> env var to opt into 1-hour prompt cache TTL on API key, Bedrock, Vertex, and Foundry…"
+      },
+      {
+        "title": "v2.1.107",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.107",
+        "source": "Claude Code Releases",
+        "published": "2026-04-14T06:11:20.000Z",
+        "summary": "<h2>What's changed</h2> <ul> <li>Show thinking hints sooner during long operations</li> </ul>"
+      },
+      {
+        "title": "v2.1.105",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.105",
+        "source": "Claude Code Releases",
+        "published": "2026-04-13T21:53:13.000Z",
+        "summary": "<h2>What's changed</h2> <ul> <li>Added <code>path</code> parameter to the <code>EnterWorktree</code> tool to switch into an existing worktree of the current repository</li> <li>Added PreCompact hook…"
+      },
+      {
+        "title": "v2.1.104",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.104",
+        "source": "Claude Code Releases",
+        "published": "2026-04-13T01:45:26.000Z",
+        "summary": "No content."
+      },
+      {
+        "title": "Merge pull request #526 from anthropics/sre-incident-response-agent-f…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/753ddfe35fdc7e310a45cadcfe314ba6809672f8",
+        "source": "Anthropic Cookbook",
+        "published": "2026-04-11T00:33:35.000Z",
+        "summary": "<pre style='white-space:pre-wrap;width:81ex'>Merge pull request #526 from anthropics/sre-incident-response-agent-fixes fix(managed_agents): Fix console image, missing fixture, and summary blurb</pre>"
+      },
+      {
+        "title": "chore(registry): bump SRE incident responder date to 2026-04-10",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/355d2011d91a3d37e7d9999ec275732e26dcd439",
+        "source": "Anthropic Cookbook",
+        "published": "2026-04-11T00:12:21.000Z",
+        "summary": "<pre style='white-space:pre-wrap;width:81ex'>chore(registry): bump SRE incident responder date to 2026-04-10</pre>"
+      },
+      {
+        "title": "fix(managed_agents): add missing checkout-svc.log fixture for SRE coo…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/2aae6112fbb5a1fc1a5544cfd9906aa54a8313aa",
+        "source": "Anthropic Cookbook",
+        "published": "2026-04-11T00:09:44.000Z",
+        "summary": "<pre style='white-space:pre-wrap;width:81ex'>fix(managed_agents): add missing checkout-svc.log fixture for SRE cookbook The SRE incident responder notebook mounts logs/checkout-svc.log as a session…"
+      },
+      {
+        "title": "fix(managed_agents): SRE registry summary + use raw URL for console i…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/11be1356d0f9e0716abfe4d92d9a09849bc0c3c1",
+        "source": "Anthropic Cookbook",
+        "published": "2026-04-10T23:46:27.000Z",
+        "summary": "<pre style='white-space:pre-wrap;width:81ex'>fix(managed_agents): SRE registry summary + use raw URL for console image - registry.yaml: rewrite SRE incident responder description with the…"
+      },
+      {
+        "title": "v2.1.101",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.101",
+        "source": "Claude Code Releases",
+        "published": "2026-04-10T19:03:41.000Z",
+        "summary": "<h2>What's changed</h2> <ul> <li>Added <code>/team-onboarding</code> command to generate a teammate ramp-up guide from your local Claude Code usage</li> <li>Added OS CA certificate store trust by…"
+      },
+      {
+        "title": "v2.1.100",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.100",
+        "source": "Claude Code Releases",
+        "published": "2026-04-10T05:16:35.000Z",
+        "summary": "No content."
+      },
+      {
+        "title": "v2.1.98",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.98",
+        "source": "Claude Code Releases",
+        "published": "2026-04-09T19:18:28.000Z",
+        "summary": "<h2>What's changed</h2> <ul> <li>Added interactive Google Vertex AI setup wizard accessible from the login screen when selecting \"3rd-party platform\", guiding you through GCP authentication, project…"
+      },
+      {
+        "title": "Merge pull request #516 from anthropics/mnowicki/cma-versioning-heade…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/b96dc048794747788e5479079c3116a976e9cece",
+        "source": "Anthropic Cookbook",
+        "published": "2026-04-09T01:57:10.000Z",
+        "summary": "<pre style='white-space:pre-wrap;width:81ex'>Merge pull request #516 from anthropics/mnowicki/cma-versioning-header-fix Print 'v1 results:' header before score loop</pre>"
+      },
+      {
+        "title": "Print 'v1 results:' header before score loop",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/9164000ad1bba2feb0b67af686f1b2a3f39df561",
+        "source": "Anthropic Cookbook",
+        "published": "2026-04-09T01:53:05.000Z",
+        "summary": "<pre style='white-space:pre-wrap;width:81ex'>Print 'v1 results:' header before score loop VS Code's notebook output renderer strips leading whitespace from the first line of stdout, so the…"
+      },
+      {
+        "title": "Merge pull request #511 from anthropics/charmaine/fix-managed-agents-…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/8f6e61acf266c1f036ca7691a32b226ddef1a0f7",
+        "source": "Anthropic Cookbook",
+        "published": "2026-04-08T22:41:01.000Z",
+        "summary": "<pre style='white-space:pre-wrap;width:81ex'>Merge pull request #511 from anthropics/charmaine/fix-managed-agents-mdx-formatting fix(managed_agents): unwrap markdown paragraphs for MDX rendering</pre>"
+      },
+      {
+        "title": "fix(registry): correct SRE incident responder published date to 2026-…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/370c1f5d24d05603ecfa648d2d40369413dd3f40",
+        "source": "Anthropic Cookbook",
+        "published": "2026-04-08T22:39:13.000Z",
+        "summary": "<pre style='white-space:pre-wrap;width:81ex'>fix(registry): correct SRE incident responder published date to 2026-04-08</pre>"
+      },
+      {
+        "title": "fix(managed_agents): address review — blockquotes, source normalization",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/65da848d7632a11c3ee692ef2e39c23f088d2729",
+        "source": "Anthropic Cookbook",
+        "published": "2026-04-08T22:07:08.000Z",
+        "summary": "<pre style='white-space:pre-wrap;width:81ex'>fix(managed_agents): address review — blockquotes, source normalization - Join multi-line blockquotes in sre_incident_responder (Next steps) and…"
+      },
+      {
+        "title": "fix(managed_agents): unwrap markdown paragraphs for MDX rendering",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/09b89727477b38b14bf2007a73d2d0c4d8eb2450",
+        "source": "Anthropic Cookbook",
+        "published": "2026-04-08T21:58:24.000Z",
+        "summary": "<pre style='white-space:pre-wrap;width:81ex'>fix(managed_agents): unwrap markdown paragraphs for MDX rendering The docs site's MDX renderer treats single newlines as hard breaks, so hard-wrapped…"
+      },
+      {
+        "title": "v2.1.97",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.97",
+        "source": "Claude Code Releases",
+        "published": "2026-04-08T21:52:34.000Z",
+        "summary": "<h2>What's changed</h2> <ul> <li>Added focus view toggle (<code>Ctrl+O</code>) in <code>NO_FLICKER</code> mode showing prompt, one-line tool summary with edit diffstats, and final response</li>…"
+      }
+    ]
+  }
+}

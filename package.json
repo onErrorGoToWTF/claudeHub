@@ -1,0 +1,18 @@
+{
+  "name": "claude-daily-intelligence-hub",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build_latest_json.js",
+    "fetch:anthropic": "node scripts/fetch_anthropic.js",
+    "fetch:status": "node scripts/fetch_status.js",
+    "fetch:news": "node scripts/fetch_news.js",
+    "fetch:youtube": "node scripts/fetch_youtube.js",
+    "fetch:hn": "node scripts/fetch_hn.js",
+    "fetch:tutorials": "node scripts/fetch_tutorials.js"
+  }
+}
