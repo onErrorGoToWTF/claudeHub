@@ -400,32 +400,47 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .section-lisa { gap: 14px; display: flex; flex-direction: column; }
-.lisa-content { display: flex; flex-direction: column; gap: 14px; }
 
-.lisa-gate {
-  padding: 56px 24px 40px;
-  display: flex; flex-direction: column; align-items: stretch;
-  gap: 14px; text-align: center;
-  margin: 24px auto 0;
-  max-width: 360px;
+/* Modal */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center;
+  padding: 24px;
+  background: color-mix(in srgb, #000 55%, transparent);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  animation: fade 0.22s var(--ease);
 }
-.lisa-gate input[type="password"] {
+.modal-backdrop[hidden] { display: none; }
+.modal-card {
+  width: 100%; max-width: 340px;
+  padding: 28px 22px 22px;
+  display: flex; flex-direction: column; gap: 12px;
+  border-radius: 22px;
+  animation: pop 0.28s var(--ease-spring);
+  position: relative;
+}
+.modal-label {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--text-2);
+  text-align: center;
+}
+.modal-card input[type="password"] {
   padding: 12px 14px;
   border-radius: 12px;
   background: color-mix(in srgb, var(--surface) 60%, transparent);
   border: 1px solid color-mix(in srgb, var(--edge-lo) 120%, transparent);
   color: var(--text-1);
-  font: inherit; font-size: 15px;
-  letter-spacing: 0.04em;
+  font: inherit; font-size: 16px;
+  letter-spacing: 0.06em;
   text-align: center;
   transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
-.lisa-gate input[type="password"]:focus {
+.modal-card input[type="password"]:focus {
   outline: none;
   border-color: color-mix(in srgb, var(--lisa) 70%, transparent);
   box-shadow: 0 0 0 3px var(--lisa-soft);
 }
-.lisa-gate-submit {
+.modal-submit {
   padding: 11px 18px;
   border-radius: 999px;
   background: var(--lisa);
@@ -434,12 +449,28 @@ h1, h2, h3, p { margin: 0; }
   transition: transform 0.18s var(--ease);
   box-shadow: 0 8px 20px -8px var(--lisa-soft);
 }
-.lisa-gate-submit:active { transform: scale(0.96); }
-.lisa-gate-error {
+.modal-submit:active { transform: scale(0.96); }
+.modal-error {
   min-height: 1em;
   font-size: 13px;
   color: #c23b3b;
+  text-align: center;
 }
+.modal-close {
+  position: absolute; top: 10px; right: 12px;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  font-size: 20px; line-height: 1;
+  color: var(--text-3);
+  display: grid; place-items: center;
+  transition: color 0.2s var(--ease), transform 0.18s var(--ease);
+}
+.modal-close:hover { color: var(--text-1); }
+.modal-close:active { transform: scale(0.9); }
+
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pop  { from { opacity: 0; transform: translateY(8px) scale(0.96); }
+                  to   { opacity: 1; transform: translateY(0)   scale(1);    } }
 
 .lisa-lock-btn {
   margin: 12px auto 0;

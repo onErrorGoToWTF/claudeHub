@@ -32,7 +32,7 @@
   </div>
   <nav class="chips" id="filters" aria-label="Sections">
     <button class="chip is-active" data-filter="all">All</button>
-    <button class="chip chip-lisa" data-filter="lisa">Lisa</button>
+    <button class="chip chip-lisa" data-filter="lisa">365</button>
     <button class="chip" data-filter="updates">Updates</button>
     <button class="chip" data-filter="news">News</button>
     <button class="chip" data-filter="status">Status</button>
@@ -43,13 +43,6 @@
 
 <main class="app" id="app">
   <section class="section section-lisa" data-section="lisa" id="section-lisa" data-hidden="true">
-    <div class="lisa-gate glass" id="lisa-gate">
-      <input id="lisa-pw" type="password" autocomplete="off" placeholder="Password" spellcheck="false" autocapitalize="off">
-      <button type="button" id="lisa-gate-btn" class="lisa-gate-submit">Submit</button>
-      <div class="lisa-gate-error" id="lisa-gate-error" role="alert" aria-live="polite"></div>
-    </div>
-
-    <div class="lisa-content" id="lisa-content" hidden>
     <div class="lisa-greeting glass">
       <h2 class="lisa-headline" data-lisa="headline">Hi Lisa</h2>
       <p class="lisa-subline" data-lisa="subline"></p>
@@ -83,7 +76,6 @@
     </div>
 
     <button class="lisa-lock-btn" id="lisa-lock" type="button">Lock this tab</button>
-    </div>
   </section>
 
   <section class="section" data-section="updates" id="section-updates">
@@ -180,6 +172,16 @@
     <div class="sk sk-line sk-short"></div>
   </div>
 </template>
+
+<div class="modal-backdrop" id="lisa-modal" hidden>
+  <div class="modal-card glass" role="dialog" aria-modal="true" aria-labelledby="lisa-modal-label">
+    <button class="modal-close" id="lisa-modal-close" type="button" aria-label="Close">×</button>
+    <label class="modal-label" id="lisa-modal-label" for="lisa-pw">Enter password</label>
+    <input id="lisa-pw" type="password" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="••••••••">
+    <button type="button" id="lisa-gate-btn" class="modal-submit">Submit</button>
+    <div class="modal-error" id="lisa-gate-error" role="alert" aria-live="polite"></div>
+  </div>
+</div>
 
 <script src="js/app.js" defer></script>
 </body>

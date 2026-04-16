@@ -25,16 +25,31 @@
     return localStorage.getItem(LISA_UNLOCK_KEY) === LISA_PW_HASH;
   }
 
-  function showLisaContent() {
-    document.getElementById("lisa-gate").hidden = true;
-    document.getElementById("lisa-content").hidden = false;
+  function openLisaModal() {
+    const m = document.getElementById("lisa-modal");
+    if (!m) return;
+    m.hidden = false;
+    const pw = document.getElementById("lisa-pw");
+    if (pw) { pw.value = ""; setTimeout(() => pw.focus(), 60); }
+    const err = document.getElementById("lisa-gate-error");
+    if (err) err.textContent = "";
   }
 
-  function showLisaGate() {
-    document.getElementById("lisa-gate").hidden = false;
-    document.getElementById("lisa-content").hidden = true;
-    const pw = document.getElementById("lisa-pw");
-    if (pw) pw.value = "";
+  function closeLisaModal() {
+    const m = document.getElementById("lisa-modal");
+    if (m) m.hidden = true;
+  }
+
+  function activateLisaChip() {
+    document.querySelectorAll(".chip").forEach(c => c.classList.remove("is-active"));
+    const c = document.querySelector('[data-filter="lisa"]');
+    if (c) c.classList.add("is-active");
+    const lisaEl = document.querySelector('[data-section="lisa"]');
+    if (lisaEl) lisaEl.dataset.hidden = "false";
+    ["updates","news","status","youtube","tutorials"].forEach(s => {
+      const el = document.querySelector(`.section[data-section="${s}"]`);
+      if (el) el.dataset.hidden = "true";
+    });
   }
 
   // ---------- Theme ----------
@@ -60,11 +75,17 @@
   const lisaSection = document.querySelector('[data-section="lisa"]');
   chips.forEach(chip => {
     chip.addEventListener("click", () => {
-      chips.forEach(c => c.classList.remove("is-active"));
-      chip.classList.add("is-active");
       const f = chip.dataset.filter;
 
-      // Lisa is a distinct view — only visible when explicitly selected.
+      // 365 gate: if locked, open modal without switching tabs.
+      if (f === "lisa" && !isLisaUnlocked()) {
+        openLisaModal();
+        return;
+      }
+
+      chips.forEach(c => c.classList.remove("is-active"));
+      chip.classList.add("is-active");
+
       if (lisaSection) lisaSection.dataset.hidden = f === "lisa" ? "false" : "true";
 
       SECTIONS.forEach(s => {
@@ -73,10 +94,7 @@
         el.dataset.hidden = (f === "all" || f === s) ? "false" : "true";
       });
 
-      if (f === "lisa") {
-        if (isLisaUnlocked()) { showLisaContent(); loadLisa(); }
-        else { showLisaGate(); }
-      }
+      if (f === "lisa") loadLisa();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
@@ -400,10 +418,12 @@
     const tryHash = await sha256Hex((gatePw.value || "").trim());
     if (tryHash === LISA_PW_HASH) {
       localStorage.setItem(LISA_UNLOCK_KEY, LISA_PW_HASH);
-      showLisaContent();
+      closeLisaModal();
+      activateLisaChip();
       loadLisa();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      gateErr.textContent = "Wrong password. Ask Alan.";
+      gateErr.textContent = "Wrong password.";
       gatePw.select();
     }
   }
@@ -414,10 +434,22 @@
       if (e.key === "Enter") { e.preventDefault(); tryUnlock(); }
     });
   }
+  const modalClose = document.getElementById("lisa-modal-close");
+  if (modalClose) modalClose.addEventListener("click", closeLisaModal);
+  const modalBackdrop = document.getElementById("lisa-modal");
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener("click", (e) => {
+      if (e.target === modalBackdrop) closeLisaModal();
+    });
+  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modalBackdrop && !modalBackdrop.hidden) closeLisaModal();
+  });
   if (lockBtn) {
     lockBtn.addEventListener("click", () => {
       localStorage.removeItem(LISA_UNLOCK_KEY);
-      showLisaGate();
+      const all = document.querySelector('[data-filter="all"]');
+      if (all) all.click();
     });
   }
 
