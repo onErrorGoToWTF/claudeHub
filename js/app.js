@@ -209,13 +209,14 @@
     // Pill + favicon (non-video cards only)
     if (!videoLike) {
       const pill = node.querySelector(".card-pill");
+      const sent = item._severity
+        ? { label: item._severity.charAt(0).toUpperCase() + item._severity.slice(1), cls: item._severity }
+        : detectSentiment(item);
       if (pill) {
-        const sent = item._severity
-          ? { label: item._severity.charAt(0).toUpperCase() + item._severity.slice(1), cls: item._severity }
-          : detectSentiment(item);
         pill.textContent = sent.label;
         pill.dataset.pill = sent.cls;
       }
+      node.dataset.sent = sent.cls;
       const icon = node.querySelector(".card-icon");
       if (icon && item.url) {
         icon.src = faviconUrl(item.url);
