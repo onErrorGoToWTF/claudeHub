@@ -389,24 +389,29 @@
   }
 
   // ---------- Gate (password) ----------
-  const gateForm = document.getElementById("lisa-gate");
   const gatePw = document.getElementById("lisa-pw");
+  const gateBtn = document.getElementById("lisa-gate-btn");
   const gateErr = document.getElementById("lisa-gate-error");
   const lockBtn = document.getElementById("lisa-lock");
 
-  if (gateForm) {
-    gateForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      gateErr.textContent = "";
-      const tryHash = await sha256Hex((gatePw.value || "").trim());
-      if (tryHash === LISA_PW_HASH) {
-        localStorage.setItem(LISA_UNLOCK_KEY, LISA_PW_HASH);
-        showLisaContent();
-        loadLisa();
-      } else {
-        gateErr.textContent = "Wrong password. Ask Alan.";
-        gatePw.select();
-      }
+  async function tryUnlock() {
+    if (!gatePw) return;
+    gateErr.textContent = "";
+    const tryHash = await sha256Hex((gatePw.value || "").trim());
+    if (tryHash === LISA_PW_HASH) {
+      localStorage.setItem(LISA_UNLOCK_KEY, LISA_PW_HASH);
+      showLisaContent();
+      loadLisa();
+    } else {
+      gateErr.textContent = "Wrong password. Ask Alan.";
+      gatePw.select();
+    }
+  }
+
+  if (gateBtn) gateBtn.addEventListener("click", tryUnlock);
+  if (gatePw) {
+    gatePw.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") { e.preventDefault(); tryUnlock(); }
     });
   }
   if (lockBtn) {
