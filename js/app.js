@@ -74,31 +74,29 @@
   // ---------- Filters ----------
   const chips = document.querySelectorAll(".chip");
   const lisaSection = document.querySelector('[data-section="lisa"]');
+  function applyFilter(f) {
+    chips.forEach(c => c.classList.toggle("is-active", c.dataset.filter === f));
+    if (lisaSection) lisaSection.dataset.hidden = f === "lisa" ? "false" : "true";
+    SECTIONS.forEach(s => {
+      const el = document.querySelector(`.section[data-section="${s}"]`);
+      if (!el) return;
+      el.dataset.hidden = (f === "all" || f === s) ? "false" : "true";
+    });
+    if (f === "lisa") loadLisa();
+  }
+
   chips.forEach(chip => {
     chip.addEventListener("click", () => {
       const f = chip.dataset.filter;
-
-      // 365 gate: if locked, open modal without switching tabs.
-      if (f === "lisa" && !isLisaUnlocked()) {
-        openLisaModal();
-        return;
-      }
-
-      chips.forEach(c => c.classList.remove("is-active"));
-      chip.classList.add("is-active");
-
-      if (lisaSection) lisaSection.dataset.hidden = f === "lisa" ? "false" : "true";
-
-      SECTIONS.forEach(s => {
-        const el = document.querySelector(`.section[data-section="${s}"]`);
-        if (!el) return;
-        el.dataset.hidden = (f === "all" || f === s) ? "false" : "true";
-      });
-
-      if (f === "lisa") loadLisa();
+      if (f === "lisa" && !isLisaUnlocked()) { openLisaModal(); return; }
+      applyFilter(f);
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
+
+  // Initial filter (respects the chip that was marked .is-active in the HTML)
+  const initial = document.querySelector(".chip.is-active");
+  if (initial) applyFilter(initial.dataset.filter);
 
   // ---------- Time formatting ----------
   const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });
