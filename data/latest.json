@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T22:38:29.967Z",
+  "generated_at": "2026-04-16T22:48:59.969Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -326,8 +326,8 @@
         "title": "Failures to add Credentials to Vaults",
         "url": "https://status.claude.com/incidents/fkltkq8kgjkh",
         "source": "Claude Status",
-        "published": "2026-04-16T22:33:41.000Z",
-        "summary": "<p><small>Apr <var data-var=&apos;date&apos;>16</var>, <var data-var=&apos;time&apos;>22:33</var> UTC</small><br><strong>Monitoring</strong> - A fix has been implemented and we are monitoring the…"
+        "published": "2026-04-16T22:41:12.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;>16</var>, <var data-var=&apos;time&apos;>22:41</var> UTC</small><br><strong>Resolved</strong> - This incident has been resolved.</p><p><small>Apr <var…"
       },
       {
         "title": "Claude Cowork not starting for some users",
@@ -409,14 +409,36 @@
     ],
     "youtube": [
       {
-        "title": "Claude Code Skills Explained for Normal People",
-        "url": "https://www.youtube.com/watch?v=AY_uYtwLc0I",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "AY_uYtwLc0I",
-        "thumbnail": "https://i.ytimg.com/vi/AY_uYtwLc0I/hqdefault.jpg",
-        "published": "2026-04-16T17:30:02.000Z",
+        "title": "Claude Opus 4.7 Just Dropped... (Everything you need to know)",
+        "url": "https://www.youtube.com/watch?v=3EWyQkaSIq0",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "3EWyQkaSIq0",
+        "thumbnail": "https://i.ytimg.com/vi/3EWyQkaSIq0/hqdefault.jpg",
+        "published": "2026-04-16T19:53:08.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus-4.7 Just Dropped, And...",
+        "url": "https://www.youtube.com/watch?v=WVQ0lPiWsHQ",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "WVQ0lPiWsHQ",
+        "thumbnail": "https://i.ytimg.com/vi/WVQ0lPiWsHQ/hqdefault.jpg",
+        "published": "2026-04-16T14:52:01.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code + Obsidian is INSANE! (Claude Ai Tutorial)",
+        "url": "https://www.youtube.com/watch?v=DoRQo3aGaPY",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "DoRQo3aGaPY",
+        "thumbnail": "https://i.ytimg.com/vi/DoRQo3aGaPY/hqdefault.jpg",
+        "published": "2026-04-16T13:00:22.000Z",
         "summary": ""
       },
       {
@@ -431,25 +453,36 @@
         "summary": ""
       },
       {
-        "title": "Claude Code Won't Replace You. A User Will.",
-        "url": "https://www.youtube.com/watch?v=7T9rWSKqkdE",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "7T9rWSKqkdE",
-        "thumbnail": "https://i.ytimg.com/vi/7T9rWSKqkdE/hqdefault.jpg",
-        "published": "2026-04-15T17:30:06.000Z",
+        "title": "LIVE: You NEED to be using OpenClaw and Claude Code together",
+        "url": "https://www.youtube.com/watch?v=DzH0U-JBems",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "DzH0U-JBems",
+        "thumbnail": "https://i.ytimg.com/vi/DzH0U-JBems/hqdefault.jpg",
+        "published": "2026-04-15T20:21:57.000Z",
         "summary": ""
       },
       {
-        "title": "What Is Claude Cowork? The Only Explainer You Need",
-        "url": "https://www.youtube.com/watch?v=M-1kJqRAuus",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "M-1kJqRAuus",
-        "thumbnail": "https://i.ytimg.com/vi/M-1kJqRAuus/hqdefault.jpg",
-        "published": "2026-04-14T17:30:05.000Z",
+        "title": "Claude Code for Desktop is the BEST way to build apps with AI EVER (full tutorial)",
+        "url": "https://www.youtube.com/watch?v=pHr1O_Af5NA",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "pHr1O_Af5NA",
+        "thumbnail": "https://i.ytimg.com/vi/pHr1O_Af5NA/hqdefault.jpg",
+        "published": "2026-04-15T02:13:41.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Routines Just Dropped, And It's Perfect",
+        "url": "https://www.youtube.com/watch?v=j3aXJNu9804",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "j3aXJNu9804",
+        "thumbnail": "https://i.ytimg.com/vi/j3aXJNu9804/hqdefault.jpg",
+        "published": "2026-04-14T19:08:20.000Z",
         "summary": ""
       },
       {
@@ -464,58 +497,14 @@
         "summary": ""
       },
       {
-        "title": "Claude Code Skills: Build Your First One in 5 Min",
-        "url": "https://www.youtube.com/watch?v=F_BqouCB2H4",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "F_BqouCB2H4",
-        "thumbnail": "https://i.ytimg.com/vi/F_BqouCB2H4/hqdefault.jpg",
-        "published": "2026-04-13T12:30:32.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Just Built an AI They Refuse to Release #claudemythos",
-        "url": "https://www.youtube.com/shorts/7Sy5ko4Jo60",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "7Sy5ko4Jo60",
-        "thumbnail": "https://i.ytimg.com/vi/7Sy5ko4Jo60/hqdefault.jpg",
-        "published": "2026-04-11T17:41:13.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code Skills Killed Vibe Coding. Here's What's Next.",
-        "url": "https://www.youtube.com/watch?v=JeqBWUDX4mI",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "JeqBWUDX4mI",
-        "thumbnail": "https://i.ytimg.com/vi/JeqBWUDX4mI/hqdefault.jpg",
-        "published": "2026-04-11T13:00:38.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code for Non-Coders: Start Here (Step by Step)",
-        "url": "https://www.youtube.com/watch?v=-o3aiNFaMCI",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "-o3aiNFaMCI",
-        "thumbnail": "https://i.ytimg.com/vi/-o3aiNFaMCI/hqdefault.jpg",
-        "published": "2026-04-10T12:30:02.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Welcome to Pragati Kunwer | Claude Code Skills for Non-Coders",
-        "url": "https://www.youtube.com/watch?v=hvdSm5IjjX0",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "hvdSm5IjjX0",
-        "thumbnail": "https://i.ytimg.com/vi/hvdSm5IjjX0/hqdefault.jpg",
-        "published": "2026-04-10T05:48:30.000Z",
+        "title": "FULL Claude Tutorial For Beginners in 2026! (FULL COURSE)",
+        "url": "https://www.youtube.com/watch?v=Xg55nTrbYYY",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "Xg55nTrbYYY",
+        "thumbnail": "https://i.ytimg.com/vi/Xg55nTrbYYY/hqdefault.jpg",
+        "published": "2026-04-13T13:01:03.000Z",
         "summary": ""
       },
       {
@@ -530,14 +519,14 @@
         "summary": ""
       },
       {
-        "title": "Claude Code Tutorial for Beginners (2026)",
-        "url": "https://www.youtube.com/watch?v=yYHQkMc2BP8",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "yYHQkMc2BP8",
-        "thumbnail": "https://i.ytimg.com/vi/yYHQkMc2BP8/hqdefault.jpg",
-        "published": "2026-04-09T12:31:28.000Z",
+        "title": "Claude Managed Agents Just Dropped, And It Kills n8n",
+        "url": "https://www.youtube.com/watch?v=Ob5Vu-gD3mo",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "Ob5Vu-gD3mo",
+        "thumbnail": "https://i.ytimg.com/vi/Ob5Vu-gD3mo/hqdefault.jpg",
+        "published": "2026-04-08T18:42:51.000Z",
         "summary": ""
       },
       {
@@ -552,25 +541,14 @@
         "summary": ""
       },
       {
-        "title": "How to Install Claude Code - Complete Setup Guide",
-        "url": "https://www.youtube.com/watch?v=Uqn-_S5k4LE",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "Uqn-_S5k4LE",
-        "thumbnail": "https://i.ytimg.com/vi/Uqn-_S5k4LE/hqdefault.jpg",
-        "published": "2026-04-08T04:20:24.000Z",
-        "summary": ""
-      },
-      {
-        "title": "An initiative to secure the world's software | Project Glasswing",
-        "url": "https://www.youtube.com/watch?v=INGOC6-LLv0",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "INGOC6-LLv0",
-        "thumbnail": "https://i.ytimg.com/vi/INGOC6-LLv0/hqdefault.jpg",
-        "published": "2026-04-07T18:03:51.000Z",
+        "title": "Claude Mythos Preview: Everything You Need to Know",
+        "url": "https://www.youtube.com/watch?v=oCuttuCQmZg",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "oCuttuCQmZg",
+        "thumbnail": "https://i.ytimg.com/vi/oCuttuCQmZg/hqdefault.jpg",
+        "published": "2026-04-07T21:24:19.000Z",
         "summary": ""
       },
       {
@@ -585,25 +563,14 @@
         "summary": ""
       },
       {
-        "title": "What Is Claude Code? The Only Explainer You Need",
-        "url": "https://www.youtube.com/watch?v=dQAxMucQlNQ",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "dQAxMucQlNQ",
-        "thumbnail": "https://i.ytimg.com/vi/dQAxMucQlNQ/hqdefault.jpg",
-        "published": "2026-04-06T22:30:09.000Z",
-        "summary": ""
-      },
-      {
-        "title": "What Is a Claude Code Skill File? (12 Lines That Change Everything)",
-        "url": "https://www.youtube.com/shorts/dUuDAg0a_IM",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "dUuDAg0a_IM",
-        "thumbnail": "https://i.ytimg.com/vi/dUuDAg0a_IM/hqdefault.jpg",
-        "published": "2026-04-06T04:20:17.000Z",
+        "title": "LIVE: ANTHROPIC BANNED OPENCLAW. DO THIS NOW!! plus: MASSIVE ANNOUNCEMENT",
+        "url": "https://www.youtube.com/watch?v=Pe_wvdV2E6c",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "Pe_wvdV2E6c",
+        "thumbnail": "https://i.ytimg.com/vi/Pe_wvdV2E6c/hqdefault.jpg",
+        "published": "2026-04-06T20:32:55.000Z",
         "summary": ""
       },
       {
@@ -618,25 +585,25 @@
         "summary": ""
       },
       {
-        "title": "When AIs act emotional",
-        "url": "https://www.youtube.com/watch?v=D4XTefP3Lsc",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "D4XTefP3Lsc",
-        "thumbnail": "https://i.ytimg.com/vi/D4XTefP3Lsc/hqdefault.jpg",
-        "published": "2026-04-02T16:06:59.000Z",
+        "title": "Anthropic just blocked OpenClaw. Here’s what you need to do immediately",
+        "url": "https://www.youtube.com/watch?v=cNALFf9R4t4",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "cNALFf9R4t4",
+        "thumbnail": "https://i.ytimg.com/vi/cNALFf9R4t4/hqdefault.jpg",
+        "published": "2026-04-05T21:15:01.000Z",
         "summary": ""
       },
       {
-        "title": "Claude Code Just Got 5 Major Upgrades. Most People Missed Them.",
-        "url": "https://www.youtube.com/shorts/GWOg--4uEJg",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "GWOg--4uEJg",
-        "thumbnail": "https://i.ytimg.com/vi/GWOg--4uEJg/hqdefault.jpg",
-        "published": "2026-04-02T09:26:15.000Z",
+        "title": "LIVE: MASSIVE Claude Code leak fallout. + Hermes agent workflows",
+        "url": "https://www.youtube.com/watch?v=Lp9CVrKFZe8",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "Lp9CVrKFZe8",
+        "thumbnail": "https://i.ytimg.com/vi/Lp9CVrKFZe8/hqdefault.jpg",
+        "published": "2026-04-01T20:28:53.000Z",
         "summary": ""
       },
       {
@@ -651,6 +618,17 @@
         "summary": ""
       },
       {
+        "title": "MASSIVE CLAUDE CODE LEAK! THIS CHANGES EVERYTHING!",
+        "url": "https://www.youtube.com/watch?v=FRjmzUGEpHo",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "FRjmzUGEpHo",
+        "thumbnail": "https://i.ytimg.com/vi/FRjmzUGEpHo/hqdefault.jpg",
+        "published": "2026-03-31T19:32:23.000Z",
+        "summary": ""
+      },
+      {
         "title": "I Built an App That Spies on ChatGPT (With Claude Code)",
         "url": "https://www.youtube.com/watch?v=sZPG0weEjw8",
         "source": "Leon van Zyl",
@@ -659,6 +637,28 @@
         "video_id": "sZPG0weEjw8",
         "thumbnail": "https://i.ytimg.com/vi/sZPG0weEjw8/hqdefault.jpg",
         "published": "2026-03-30T13:01:05.000Z",
+        "summary": ""
+      },
+      {
+        "title": "CLAUDE CODE ADVANCED COURSE — 3 HOURS",
+        "url": "https://www.youtube.com/watch?v=UPtmKh1vMN8",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "UPtmKh1vMN8",
+        "thumbnail": "https://i.ytimg.com/vi/UPtmKh1vMN8/hqdefault.jpg",
+        "published": "2026-03-28T18:59:16.000Z",
+        "summary": ""
+      },
+      {
+        "title": "LIVE: CLAUDE MYTHOS (OPUS 5) REVEALED!!!",
+        "url": "https://www.youtube.com/watch?v=-XQshH4zJkk",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "-XQshH4zJkk",
+        "thumbnail": "https://i.ytimg.com/vi/-XQshH4zJkk/hqdefault.jpg",
+        "published": "2026-03-27T20:10:49.000Z",
         "summary": ""
       },
       {
@@ -673,6 +673,17 @@
         "summary": ""
       },
       {
+        "title": "Claude Computer Use Just Dropped, Here's How to Hack It",
+        "url": "https://www.youtube.com/watch?v=2u93VTYvG5U",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "2u93VTYvG5U",
+        "thumbnail": "https://i.ytimg.com/vi/2u93VTYvG5U/hqdefault.jpg",
+        "published": "2026-03-24T17:51:10.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Code Skills Changed Everything (And Nobody Noticed)",
         "url": "https://www.youtube.com/watch?v=epZy_NajGnA",
         "source": "Leon van Zyl",
@@ -681,6 +692,17 @@
         "video_id": "epZy_NajGnA",
         "thumbnail": "https://i.ytimg.com/vi/epZy_NajGnA/hqdefault.jpg",
         "published": "2026-03-24T13:26:45.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Channels Just Dropped, And It Kills OpenClaw (Again)",
+        "url": "https://www.youtube.com/watch?v=ot3NM5OVFmc",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "ot3NM5OVFmc",
+        "thumbnail": "https://i.ytimg.com/vi/ot3NM5OVFmc/hqdefault.jpg",
+        "published": "2026-03-20T16:49:29.000Z",
         "summary": ""
       },
       {
@@ -695,47 +717,25 @@
         "summary": ""
       },
       {
-        "title": "Your Computer Doesn't Matter Anymore - Claude Code SSH",
-        "url": "https://www.youtube.com/watch?v=HIaRu-_Gmno",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "HIaRu-_Gmno",
-        "thumbnail": "https://i.ytimg.com/vi/HIaRu-_Gmno/hqdefault.jpg",
-        "published": "2026-03-16T13:00:35.000Z",
+        "title": "Claude Dispatch Just Dropped, And It Kills OpenClaw",
+        "url": "https://www.youtube.com/watch?v=NF10evwkefM",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "NF10evwkefM",
+        "thumbnail": "https://i.ytimg.com/vi/NF10evwkefM/hqdefault.jpg",
+        "published": "2026-03-18T16:58:57.000Z",
         "summary": ""
       },
       {
-        "title": "Introducing Claude Opus 4.6",
-        "url": "https://www.youtube.com/watch?v=dPn3GBI8lII",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "dPn3GBI8lII",
-        "thumbnail": "https://i.ytimg.com/vi/dPn3GBI8lII/hqdefault.jpg",
-        "published": "2026-02-05T17:45:22.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Can I get a six pack quickly?",
-        "url": "https://www.youtube.com/watch?v=kQRu7DdTTVA",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "kQRu7DdTTVA",
-        "thumbnail": "https://i.ytimg.com/vi/kQRu7DdTTVA/hqdefault.jpg",
-        "published": "2026-02-04T12:44:01.000Z",
-        "summary": ""
-      },
-      {
-        "title": "How can I communicate better with my mom?",
-        "url": "https://www.youtube.com/watch?v=FBSam25u8O4",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "FBSam25u8O4",
-        "thumbnail": "https://i.ytimg.com/vi/FBSam25u8O4/hqdefault.jpg",
-        "published": "2026-02-04T12:43:54.000Z",
+        "title": "Claude Code + Nano Banana 2 + Kling = $15K Animated Sites",
+        "url": "https://www.youtube.com/watch?v=ZfYvv-0l9NA",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "ZfYvv-0l9NA",
+        "thumbnail": "https://i.ytimg.com/vi/ZfYvv-0l9NA/hqdefault.jpg",
+        "published": "2026-03-16T19:20:45.000Z",
         "summary": ""
       }
     ],
