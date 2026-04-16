@@ -368,6 +368,13 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   margin-bottom: 8px;
   letter-spacing: 0.02em;
 }
+.card-icon {
+  width: 14px; height: 14px;
+  border-radius: 3px;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+.card-icon[src=""] { display: none; }
 .card-source {
   font-weight: 600;
   color: var(--sec, var(--text-2));
@@ -376,6 +383,31 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   letter-spacing: 0.1em;
 }
 .card-time::before { content: "·"; margin-right: 8px; color: var(--text-3); }
+
+/* Sentiment pills */
+.card-pill {
+  display: inline-flex;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.45;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.card-pill:empty { display: none; }
+.card-pill[data-pill="positive"]  { background: rgba(52,211,153,0.18); color: #34d399; }
+.card-pill[data-pill="warning"]   { background: rgba(251,191,36,0.18); color: #fbbf24; }
+.card-pill[data-pill="critical"]  { background: rgba(244,63,94,0.22);  color: #f43f5e; }
+.card-pill[data-pill="resolved"]  { background: rgba(52,211,153,0.18); color: #34d399; }
+.card-pill[data-pill="info"]      { background: rgba(59,130,246,0.16); color: #60a5fa; }
+:root[data-theme="light"] .card-pill[data-pill="positive"]  { background: rgba(16,185,129,0.14); color: #059669; }
+:root[data-theme="light"] .card-pill[data-pill="warning"]   { background: rgba(245,158,11,0.14); color: #b45309; }
+:root[data-theme="light"] .card-pill[data-pill="critical"]  { background: rgba(239,68,68,0.14);  color: #dc2626; }
+:root[data-theme="light"] .card-pill[data-pill="resolved"]  { background: rgba(16,185,129,0.14); color: #059669; }
+:root[data-theme="light"] .card-pill[data-pill="info"]      { background: rgba(37,99,235,0.12);  color: #2563eb; }
 .card-title {
   font-size: 16px; font-weight: 500; letter-spacing: -0.012em;
   line-height: 1.4;

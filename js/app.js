@@ -160,6 +160,27 @@
     return d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
   }
 
+  // ---------- Sentiment detection ----------
+  function detectSentiment(item) {
+    const t = ((item.title || "") + " " + (item.summary || "")).toLowerCase();
+    if (/outage|critical|failure|vulnerabilit|breach|exploit|hack|sued|lawsuit|security issue/.test(t))
+      return { label: "Critical", cls: "critical" };
+    if (/error|issue|degraded|regression|downgrade|ban|blocked|broke[n]?|bug|limit|restrict/.test(t))
+      return { label: "Warning", cls: "warning" };
+    if (/resolved|fixed|restored|recovered/.test(t))
+      return { label: "Resolved", cls: "resolved" };
+    if (/launch|announc|new |releas|improv|upgrad|partner|expand|growth|ship|introduc|available/.test(t))
+      return { label: "New", cls: "positive" };
+    return { label: "Info", cls: "info" };
+  }
+
+  function faviconUrl(url) {
+    try {
+      const host = new URL(url).hostname;
+      return `https://www.google.com/s2/favicons?domain=${host}&sz=32`;
+    } catch { return ""; }
+  }
+
   // ---------- Skeletons ----------
   function showSkeletons() {
     const tpl = document.getElementById("tpl-skeleton");
@@ -184,16 +205,31 @@
     source.textContent = item.source || item.channel || "";
     time.textContent = relTime(item.published) || prettyDate(item.published) || "";
     if (item._severity) node.dataset.severity = item._severity;
-    if (videoLike) {
+
+    // Pill + favicon (non-video cards only)
+    if (!videoLike) {
+      const pill = node.querySelector(".card-pill");
+      if (pill) {
+        const sent = item._severity
+          ? { label: item._severity.charAt(0).toUpperCase() + item._severity.slice(1), cls: item._severity }
+          : detectSentiment(item);
+        pill.textContent = sent.label;
+        pill.dataset.pill = sent.cls;
+      }
+      const icon = node.querySelector(".card-icon");
+      if (icon && item.url) {
+        icon.src = faviconUrl(item.url);
+        icon.onerror = () => { icon.style.display = "none"; };
+      }
+      const sum = node.querySelector(".card-summary");
+      sum.textContent = item.summary || "";
+      if (!item.summary) sum.remove();
+    } else {
       const img = node.querySelector("img");
       if (item.thumbnail) {
         img.src = item.thumbnail;
         img.alt = item.title || "";
       }
-    } else {
-      const sum = node.querySelector(".card-summary");
-      sum.textContent = item.summary || "";
-      if (!item.summary) sum.remove();
     }
     return node;
   }
