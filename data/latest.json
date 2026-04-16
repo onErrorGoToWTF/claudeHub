@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T22:22:57.759Z",
+  "generated_at": "2026-04-16T22:27:56.544Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -145,6 +145,13 @@
       }
     ],
     "news": [
+      {
+        "title": "Announcing Claude Opus 4.7 on Snowflake Cortex AI - Snowflake",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5qR0JNMF91OFkxTVozVXZ0Z0hkQUFlckFyRmIwYXY4TGZTU2FXUnZxOEFrYmpWbEt0Z1NMRllSNXdRWjdKMGtGeHRwc3hjUWFtbmZvWUlpWjRmMG5udFdsS21OVDB1elUxUFc3QXZpYmE2QUlQWE93bXJ3?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T22:22:42.000Z",
+        "summary": "<a…"
+      },
       {
         "title": "White House grants US agencies access to Anthropic’s Claude Mythos AI model - Crypto Briefing",
         "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPdXVvTFFncXFSZzZnWHh4eXRfaHhaMmRFZl9JYm1fSjJpalhrYjhLMDRZNExDNHF0bmJyXzNSWllRNzJNUTdVemNMNERGVVptQ0F4U1NKRnY4c0VLTnBJNVFhT2xtRlpSVVJaek9nRGJKajNYRy1hcDVmZzNiaVYxQWVSdUtENURBWnptaUNWSEtsaEZjYlJIdTZiWE5sNjZnaHI0RQ?oc=5",
@@ -312,16 +319,16 @@
         "source": "Google News",
         "published": "2026-04-16T18:14:00.000Z",
         "summary": "<a…"
-      },
-      {
-        "title": "Anthropic Requires ID Verification for Claude Capabilities - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNckpvMmNHUTRXN2k0S3NyQzdCNVhPU1hXS2x0dzVUZjVicjNKTG1tRUFxMHRGMEFRS2Y0NkhEWnphcGVjdUNjc18zMXg3c1ZwQzJCY0UxcVVEZ3FvOUVxQkFOYXJKODRWYm03aHlJcVl2aEJ3N3paanh0cU1lREV6UFljZkJBY0s2ZDl3T2h6NHlyNFhmMGdTWGRHby0tVXB0TEE?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T17:58:13.000Z",
-        "summary": "<a…"
       }
     ],
     "status": [
+      {
+        "title": "Failures to add Credentials to Vaults",
+        "url": "https://status.claude.com/incidents/fkltkq8kgjkh",
+        "source": "Claude Status",
+        "published": "2026-04-16T22:26:00.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;>16</var>, <var data-var=&apos;time&apos;>22:26</var> UTC</small><br><strong>Investigating</strong> - We are currently investigating this issue.</p>"
+      },
       {
         "title": "Claude Cowork not starting for some users",
         "url": "https://status.claude.com/incidents/qj05p69fff9h",
@@ -398,13 +405,6 @@
         "source": "Claude Status",
         "published": "2026-04-09T08:53:20.000Z",
         "summary": "<p><small>Apr <var data-var=&apos;date&apos;> 9</var>, <var data-var=&apos;time&apos;>08:53</var> UTC</small><br><strong>Resolved</strong> - This incident has been resolved.</p><p><small>Apr <var…"
-      },
-      {
-        "title": "Errors when connecting to Claude.ai",
-        "url": "https://status.claude.com/incidents/hsgj6gh6rlck",
-        "source": "Claude Status",
-        "published": "2026-04-08T23:57:07.000Z",
-        "summary": "<p><small>Apr <var data-var=&apos;date&apos;> 8</var>, <var data-var=&apos;time&apos;>23:57</var> UTC</small><br><strong>Resolved</strong> - Some users experienced an error when trying to access…"
       }
     ],
     "youtube": [
