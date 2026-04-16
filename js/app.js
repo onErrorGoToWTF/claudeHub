@@ -5,6 +5,7 @@
   const LISA_URL = "data/lisa.json?v=" + Date.now();
   const THEME_KEY = "cdih-theme";
   const SECTIONS = ["updates", "news", "status", "youtube", "tutorials"];
+  const DISTINCT_SECTIONS = ["home", "lisa"]; // only visible when their chip is picked
 
   // TODO: set this to your deployed Cloudflare Worker URL after `wrangler deploy`.
   // While unset, the form shows a friendly "not wired up yet" message.
@@ -76,7 +77,10 @@
   const lisaSection = document.querySelector('[data-section="lisa"]');
   function applyFilter(f) {
     chips.forEach(c => c.classList.toggle("is-active", c.dataset.filter === f));
-    if (lisaSection) lisaSection.dataset.hidden = f === "lisa" ? "false" : "true";
+    DISTINCT_SECTIONS.forEach(name => {
+      const el = document.querySelector(`.section[data-section="${name}"]`);
+      if (el) el.dataset.hidden = f === name ? "false" : "true";
+    });
     SECTIONS.forEach(s => {
       const el = document.querySelector(`.section[data-section="${s}"]`);
       if (!el) return;
@@ -97,6 +101,16 @@
   // Initial filter (respects the chip that was marked .is-active in the HTML)
   const initial = document.querySelector(".chip.is-active");
   if (initial) applyFilter(initial.dataset.filter);
+
+  // Home CTA — jump to another chip
+  const cta = document.querySelector(".home-cta-btn");
+  if (cta) {
+    cta.addEventListener("click", () => {
+      const target = cta.dataset.chip;
+      const chip = document.querySelector(`[data-filter="${target}"]`);
+      if (chip) chip.click();
+    });
+  }
 
   // ---------- Time formatting ----------
   const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });
@@ -302,10 +316,23 @@
             style="animation-delay: 1.5s; font-weight: 600; fill: var(--lisa-hi);">${data[data.length-1].model}</text>
     `;
 
+    // Electron — particle that travels the path and lands at the endpoint
+    const electron = `
+      <g>
+        <animateMotion dur="1.6s" begin="0.35s" fill="freeze" path="${d.trim()}" rotate="auto"/>
+        <circle class="electron-halo" r="10">
+          <animate attributeName="r" values="10;14;10" dur="1.6s" begin="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.55;0.12;0.55" dur="1.6s" begin="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle class="electron-core" r="3.2">
+          <animate attributeName="r" values="3.2;4.2;3.2" dur="1.6s" begin="2s" repeatCount="indefinite"/>
+        </circle>
+      </g>`;
+
     svg.innerHTML = defs + grid +
       `<path class="area" d="${areaD}"/>` +
       `<path class="line" d="${d.trim()}"/>` +
-      dots + labels;
+      dots + labels + electron;
 
     // Legend
     const legend = document.getElementById("timeline-legend");
