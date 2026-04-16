@@ -32,6 +32,7 @@
   </div>
   <nav class="chips" id="filters" aria-label="Sections">
     <button class="chip is-active" data-filter="all">All</button>
+    <button class="chip chip-lisa" data-filter="lisa">Lisa</button>
     <button class="chip" data-filter="updates">Updates</button>
     <button class="chip" data-filter="news">News</button>
     <button class="chip" data-filter="status">Status</button>
@@ -41,6 +42,40 @@
 </header>
 
 <main class="app" id="app">
+  <section class="section section-lisa" data-section="lisa" id="section-lisa" data-hidden="true">
+    <div class="lisa-greeting glass">
+      <h2 class="lisa-headline" data-lisa="headline">Hi Lisa</h2>
+      <p class="lisa-subline" data-lisa="subline"></p>
+    </div>
+
+    <form class="request-box glass" id="lisa-form" novalidate>
+      <label class="request-label" for="lisa-message">Tell Alan what you want to see next</label>
+      <textarea id="lisa-message" name="message" rows="3" maxlength="2000"
+        placeholder="e.g. show me how to connect Claude to my Notion, or write a better prompt for weekly deal-desk reports"></textarea>
+      <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="request-foot">
+        <span class="request-counter" id="lisa-counter">0 / 2000</span>
+        <button class="request-submit" type="submit" id="lisa-submit">Send</button>
+      </div>
+      <div class="request-status" id="lisa-status" role="status" aria-live="polite"></div>
+    </form>
+
+    <div class="lisa-group">
+      <h3 class="lisa-group-head">Start here</h3>
+      <div class="cards" data-cards="lisa-tutorials"></div>
+    </div>
+
+    <div class="lisa-group">
+      <h3 class="lisa-group-head">Claude news for RevOps</h3>
+      <div class="cards" data-cards="lisa-news"></div>
+    </div>
+
+    <div class="lisa-group">
+      <h3 class="lisa-group-head">For your pitch deck</h3>
+      <div class="cards" data-cards="lisa-pitch"></div>
+    </div>
+  </section>
+
   <section class="section" data-section="updates" id="section-updates">
     <div class="section-head">
       <h2>Official Updates</h2>
@@ -110,6 +145,21 @@
       <h3 class="card-title"></h3>
     </div>
   </a>
+</template>
+
+<template id="tpl-tutorial">
+  <article class="card tutorial glass" data-expanded="false">
+    <button class="tutorial-head" type="button">
+      <div class="card-meta">
+        <span class="card-source tutorial-source">Tutorial</span>
+        <span class="card-time tutorial-time"></span>
+      </div>
+      <h3 class="card-title tutorial-title"></h3>
+      <p class="card-summary tutorial-blurb"></p>
+      <span class="tutorial-toggle">Read</span>
+    </button>
+    <div class="tutorial-body" hidden></div>
+  </article>
 </template>
 
 <template id="tpl-skeleton">

@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-04-16T00:00:00Z",
+  "version": 1,
+  "greeting": {
+    "headline": "Hi Lisa 👋",
+    "subline": "Curated by Alan · updated whenever you ask for something new."
+  },
+  "tutorials": [
+    {
+      "slug": "01-phone-setup",
+      "title": "Your Claude phone — what's set up, and how to use it",
+      "blurb": "Alan signed into your Claude account on his machine and connected the basics. Here's what's there and how to actually use it from your phone.",
+      "minutes": 6,
+      "file": "data/lisa/tutorials/01-phone-setup.md"
+    }
+  ],
+  "news": [
+    {
+      "title": "Salesforce + Claude — native MCP integration",
+      "url": "https://www.salesforce.com/news/press-releases/2025/09/23/anthropic-partnership-expansion/",
+      "source": "Salesforce",
+      "published": "2025-09-23T00:00:00Z",
+      "summary": "Claude becomes a native option for Agentforce and internal tooling at Salesforce. Direct RevOps relevance."
+    },
+    {
+      "title": "Claude for Work: Slack + Drive + Jira connectors",
+      "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
+      "source": "Anthropic",
+      "published": "2026-02-10T00:00:00Z",
+      "summary": "Official list of connectors you can turn on from Claude Desktop. Set up on desktop → works on your phone."
+    }
+  ],
+  "pitch_deck": [
+    {
+      "title": "Anthropic Trust Center — SOC 2, ISO 27001 & 42001",
+      "url": "https://trust.anthropic.com/",
+      "source": "Anthropic",
+      "summary": "One-page proof pack for your IT/security team. SOC 2 Type II, ISO 27001:2022, ISO 42001:2023, HIPAA BAA."
+    },
+    {
+      "title": "Privacy: how Claude handles your data",
+      "url": "https://privacy.anthropic.com/",
+      "source": "Anthropic",
+      "summary": "Default 7-day API retention; zero-data-retention (ZDR) available for enterprise. No training on customer data."
+    },
+    {
+      "title": "Anthropic for Enterprise — SSO, SCIM, audit logs",
+      "url": "https://www.anthropic.com/enterprise",
+      "source": "Anthropic",
+      "summary": "Enterprise plan feature list. Answers most objections your IT team will raise in the first meeting."
+    },
+    {
+      "title": "Claude Code — for the engineers (so they don't block you)",
+      "url": "https://code.claude.com/",
+      "source": "Anthropic",
+      "summary": "Developer-facing pitch. Comply365 eng already uses GitHub Copilot; Claude Code is the natural upgrade conversation."
+    }
+  ]
+}
