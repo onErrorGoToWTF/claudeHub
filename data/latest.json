@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-04-16T12:44:11.989Z",
+  "generated_at": "2026-04-16T18:32:26.703Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Claude Opus 4 7",
+        "url": "https://www.anthropic.com/news/claude-opus-4-7",
+        "source": "Anthropic",
+        "published": "2026-04-16T14:53:34.000Z",
+        "summary": ""
+      },
       {
         "title": "Equipping Agents for the Real World with Agent Skills",
         "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
@@ -135,189 +142,182 @@
         "source": "Anthropic Eng",
         "published": "2026-03-25T23:13:37.000Z",
         "summary": ""
-      },
-      {
-        "title": "Introducing Anthropic Science",
-        "url": "https://www.anthropic.com/research/introducing-anthropic-science",
-        "source": "Anthropic Research",
-        "published": "2026-03-25T13:20:42.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Anthropic Expands U.K. Operations as Claude Demand Grows - WSJ",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQVklJQkRVaFR6dTQ4Zmw0ellHaVlsb3BLU3dOY2g3SkVRQnc1bG9RWHBYaFcydUJFSGtTbEFNR1c5SFZHSkxGeHd3czB1WkkxQzdfYlJmZ1lMbTRESTFUakkzWklyOU5WcHJqdkJGRkZDR09oakZURlIxZ3ZFMzVjZEgtYXBYUGItUXloQkhrNmhsUnJnS2RV?oc=5",
+        "title": "Anthropic CPO leaves Figma’s board after reports he will offer a competing product",
+        "url": "https://techcrunch.com/2026/04/16/anthropic-cpo-leaves-figmas-board-after-reports-he-will-offer-a-competing-product/",
+        "source": "TechCrunch",
+        "published": "2026-04-16T18:28:42.000Z",
+        "summary": "A herald of the SAASpocalypse?"
+      },
+      {
+        "title": "OpenAI Codex Gets Desktop Control to Challenge Anthropic - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOTF9iOE5oNDJXQmZ2UmY4QnZMZWxxV0JCdHo5cnUtd1NCYkxxM3REOFNMeTFFSW1iWi1uZUJZOEhxMjl6WnNaM3RxZlYxbjcyTGlTOEJydUNkR29vN1ZEYU1lWXVsZWE0amIxVW9OT2xpTmc5ZEJvQ25vWEt5empDdU5IeWJSVzB2bGxGWmIza1hXOW8?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T12:10:00.000Z",
+        "published": "2026-04-16T18:14:00.000Z",
         "summary": "<a…"
       },
       {
-        "title": "Experts flag potentially critical security issues at heart of Anthropic MCP - techradar.com",
-        "url": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxQNk5UR1Y3WXAxOEZNYlJkWHZRZXNUQnc4dEd3ajhPbGRKVk1NTl9PVWVxZGhPUjFhNkNlNGxQeGxVWkNyZlpfNE9lYmhlOW1GdVRDMjVaWFRYZ0JoNWJMTkJFTGFMMnZRa1pfejlmM2FBZko0S0NQUGhBOVFfOE9oNE5Nd2gtYTNjZ0pBYV8yc196WERuM05DTlFzMVN4LWlRSFMzYWVxZzRSU1RwejBXbGF1a3owNmVNdV9XcF9vM0VJRUVhVldmQThkNjFhcGk1TzVadXp1a0k0X1lzc1BzNmtpZUFJYjRBOWtYamRQMnlQOXdpcG44Y2h4XzJxQUZIb1BTMWptOGJtS0xaMUpSVGFlZTA1VEtvTUNmSDVNOERWREtQQjN4RG5OUFVTMWprQmh5ZGpTS2xJX0syX0JTWHNnQ1ZiVGxuNEl6TlVtT0pOVFE2?oc=5",
+        "title": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBoQkkwMnB2b0tyeFllX3Iwa2FrRXNZbW5Dem5ERGlLVzFkbGNycUN1UXVEMnhYVlVmaGNTNDZuSTVWZ3d3alpjN29LbkprZV9qTjg1QVFKdURnYk9FYlFTQWFReVRNdEJPaHdTWlhGUTM?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T12:05:00.000Z",
+        "published": "2026-04-16T18:08:55.000Z",
         "summary": "<a…"
       },
       {
-        "title": "Black market workarounds scale up for Claude as Anthropic tightens ID checks - South China Morning Post",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQUXg2MGtoc19UWWgtWV9OMEFYeHRMcjV1Wl8xeEEzRzdCa2F1dGY0UFBST3ZXTnRDckNrUk9XY1dMdDR1MWxvLTdXRUhSZ1BVMXpKZnFlSFlBOElfMER1bzQ1NWZHa216VTZQd2JVX1JNUnVMOEh3YjZySndsRkdYNzNhcENLSHA5QkNDVXI4TGNIQUZHUzNIM1ZWTUc3TWNkYnI5SzVNSDNZY0RW0gGsAUFVX3lxTE1aakFzRm9MemRQWjR6dXJ2S09fTHdzV1IxdTZVd25HRGFjcnVfc2dYSmNZWXhISmczX2hHTlRMSHM5MUM5UDlGNTVKLURxVjNmNGJvcm9BNXhBRl9mVTVsR2Q4bTB1dmJITFBhR2I3eVd6b2hkUDlSUHFRX3pTbWVfcXluRFNFdmhwWW1qOWhEem5aWGQtZjNVMUVOMldpRXJzeDlBb3E2SU1TaDc?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T12:00:10.000Z",
-        "summary": "<a…"
-      },
-      {
-        "title": "Anthropic will ask Claude users to verify their identities 'for a few use cases' - Yahoo News Singapore",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBmbXdMa2g0M3hmeFg3MEU2dWNiVjNDWEtIRTRjMDBzVl9MSEhKV0pwOWdfbmtVTW9hN3c0TjlZQi1TUUYxQkNkUnVmWnNkcVBRWU1yYkNfdmowYXpOUk8tV24xbnpPQkNyS0Z4ZFRVdkpTOThPV3Q4dExHZG9VQ2s?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T11:57:54.000Z",
-        "summary": "<a…"
-      },
-      {
-        "title": "Anthropic will ask Claude users to verify their identities 'for a few use cases' - Engadget",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNN2FzYy1Ud2dDRTB4S1JXdHNDMXlzVTlWQU05aV9mSXNKUUpSdHh5T0JxeWhoMXFUR2wzMUxGNWFWTXRQbk9JNENMXzBoRlRmc1k0MTBvNUpfRnVxUC1mMHE2LWNnY1NuSFhDLWZpMWpzaTRTaGJVSTJITXJyclVObkpwZ3JuWFhUdUNaX0RHSUlBeW5jVWl5a240YkVUTml3QU1Edzc1LWRQVDAtT0JuN1E2VThySFdjY0h4SllB?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T11:57:54.000Z",
-        "summary": "<a…"
-      },
-      {
-        "title": "ECB to Scrutinize Anthropic’s Mythos on Call With Executives",
-        "url": "https://www.bloomberg.com/news/articles/2026-04-16/ecb-to-scrutinize-anthropic-s-mythos-on-call-with-executives",
+        "title": "White House Moves to Give US Agencies Anthropic Mythos Access",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-16/white-house-moves-to-give-us-agencies-anthropic-mythos-access",
         "source": "Bloomberg",
-        "published": "2026-04-16T10:50:35.000Z",
-        "summary": "The European Central Bank is convening a call with the chief risk officers of eurozone lenders to discuss the potential threats from Anthropic’s new artificial intelligence model, as officials look…"
+        "published": "2026-04-16T17:54:11.000Z",
+        "summary": "The US government is preparing to make a version of Anthropic PBC’s powerful new artificial intelligence model available to major federal agencies amid concerns that the tool could sharply increase…"
       },
       {
-        "title": "“Developers are not engineers:” Why Anthropic’s Mythos and other AI tools expose gaps in vulnerability reporting - Cybernews",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPdGFhdHpueFJhSlBNRkdkZ0twZ3pkVUpjR0Q0UTRxUjczMGFOTUxvMm83RjhadUZ0dHVtV3hwNnVTVkFhZ3R5WGJXQW9udUE2bUNZTGNrRDZYTGtoSm44NWxiemdaYVI2a0hPZ0NjOVNwY1RtdFlxR1hRV1BvSktVLVZaR1BOZVowRXJXR3FLcVBrM2c?oc=5",
+        "title": "OpenAI Codex gains desktop control to rival Claude Code - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQWWZpOEhQNmtuNU5IbHg2b2JQOXB5c0JYRTdJNlNmeUFJeGhkcG04akhZSWtyTmh0b3JrTVlienAwNVBpdWJESkJZQWNyRjJnaVFTdVRsMktzdHMyM19BMU96cVMtSk52eURwR0xraTNCdEU5cnMwN0w3MWdkNHVWTmV4NTl5RlpmLUlnZzV0ekpTdw?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T10:28:25.000Z",
+        "published": "2026-04-16T17:53:00.000Z",
         "summary": "<a…"
       },
       {
-        "title": "OpenAI unveils model with limited rollout days after Anthropic - Euronews.com",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOLTBTQVdvaExyb1RNSGEzZm1STWp2QnNGLUtiSTZTSDU1VGZKMFNpWS16Y2ljckxhVi1rUlFTVEJwZnh6NnN4UTRoUXY3dm5uWlJWVUU4TnpXQnd3bDFXY1NiY0xnVjhnSThDYUZrNmJXT3NDUWZjMWluYTNCVHZrUWl1NmprZGdvMzRaN1NTYjZxVEtKMkloV1cydXo3OHV6dlRNUHZIcFFSNlMtaGY4Q2lqQmtiYnVucU9mekE5QXdydw?oc=5",
+        "title": "Anthropic’s new ID and facial scan requirement for Claude is pushing privacy-conscious users toward local AI models - Startup Fortune",
+        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQdVVHTHpyZE52eF8tMzBhZ2pCRi1oRkdZckcwdWJyUWxtR0ozdXU2bFFadEFXcC1zMmVnNkZ0UmJiYm5uZ1ZrUE0tQzB3bGhNT1BaWkhsRVlnNndSYVViajJ5RThOb1FmM1hEQjFOY0VkTlNFUHM2UlNGZ0ktZjhMdFBsR1loWnVTNmg3US14YkVXY1g1WDVKbzVEQWlwU2pFcjBZRjYyNVdqUXpYNGR3bU44dUI0RXJRMjY2QmpuQXJCZnZGdXc5WXZDZnFEWVpTM1NrbVFDXzItZw?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T10:07:56.000Z",
+        "published": "2026-04-16T17:51:03.000Z",
         "summary": "<a…"
       },
       {
-        "title": "Anthropic unveils plans for major UK expansion after OpenAI announces first permanent London office - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPT0c1eVNSWEpnUy02bjdZMzBpNEk5aGdrY2FXa0NfakZFVGR2cGVGMFhKeTU2M0FkclB4MWR6YmFMRTZVYkJwellnQ18zOVRKQ2JuNHlnWkxvb3d5bW9LeTR0UE5mbXNqUkJrN1U1RFp5SlJjdkk3YXJaZzhTY1pUcU1oaWtEdlFUN2ZzeGMxVVXSAZYBQVVfeXFMT2F5TXVWQzVVbzN1bWJFeXp0OEJGVHdFYjZpV2pDR1hNZmpaQVk2dzZGY2w0djhENWtkQjNMY1Vqbkt3X0NxVjdLemRoemV2dWp4OE1US3FlZHA4WmpvR01qb2tGYl9pZUFONDJTMVdPR05hYVlHN1hmdW5FUnlXOFFoV3BsQm94T3RxV0pVWlVBQ0JIbTN3?oc=5",
+        "title": "Claude Opus 4.7 Is Here: Anthropic’s Latest Model Delivers, But It’s a Token Eating Machine - Decrypt",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBlbnpuUmp6S04tVEFIemN0NUU2VDNaQlpUV1UyNkNuTTNkM2Z5blFzZzg3S09ndGhoaFQxNFRUR2tmR2lnVlNUSmdpemZlUG5NTV9rUm03RFZMODVSeUhQMkVqQUw4UmJ0WDhLdEk5N0xVbXF2c2xHWVpB0gGCAUFVX3lxTFBvN0xtTkQ5YjUtSkVYNVhHQ3FqT0Vydk1mOUZfbnVqRGo0QXBpa1hTRWl3ODBiZTRjT3VPLXM0Q091cENZSV9DNnZ6UUxUaURJZ3ZQaTZadWIxZEJDSDVYV0tiZkRoTXBHR0JlQXhXTGszSFlYZjhuTzZfcGxsQlRoTnc?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T09:34:03.000Z",
+        "published": "2026-04-16T17:42:43.000Z",
         "summary": "<a…"
       },
       {
-        "title": "Anthropic Plans to Bring Mythos to UK Banks Within the Next Week",
-        "url": "https://www.bloomberg.com/news/articles/2026-04-16/anthropic-plans-to-bring-mythos-to-uk-banks-within-the-next-week",
-        "source": "Bloomberg",
-        "published": "2026-04-16T09:27:25.000Z",
-        "summary": "Anthropic PBC is planning to release its closely watched Mythos artificial intelligence model to UK financial institutions in the coming week."
-      },
-      {
-        "title": "Anthropic's AI downgrade stings power users - Axios",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1JbFRqWmlMcUM0aGRRalo2N2VTSDJKTHVEUkdQV1RieW5xRVhzM0tUMFAzU2NLWUVOaXhJTmFIT0tmT2lvNkhmU3V5bUlxZUJCeHB2VnYyaE55bjJ2T0x6M3lZZDEteVpodE91WnA2RUlBRlJxRnc1MHBKSQ?oc=5",
+        "title": "Claude is requiring some of its users to verify their identity. Here's Anthropic's explanation. - Business Insider",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPd1VRV2xxdl82c01oNVllRE83Ym9lUm5ILVBsNkVLc1FMMFlDeERWYUdqTDJTamdUUlNhdVFqdGd2cUpIZ0lNMGFuLWNJQnl5T0VDSE14SVp0cXIyNDY1eW5sVm5UcWozdE9aR004R1IzQ20xSlFYYzMtdUZHWFROYjVSUnRIUWFUb2dKWHJpQ3c5NjQ?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T09:00:59.000Z",
+        "published": "2026-04-16T17:42:00.000Z",
         "summary": "<a…"
       },
       {
-        "title": "“Claude, How Can I Get 8.3% Dividends From AI?” A $30-Billion Question - Contrarian Outlook",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOb0RBcGpjaG9CTHoxME9FSTNSS3YyRDJnTXNWN0hUeUxsZWFOMzN6UW9mV1FMS0pUVTlqS0VhNDZOZGFyUzVrU1o3SFdQekpwMnFmbGJQcGxTZGNpdzlZNEFHYlRxWk1Fdk84R09SVnc4OEU5eGh3M2ItZGJxSm9JQ1BBWjAzancwMTlGY29FUEdLN3NnQVpYWk9abw?oc=5",
+        "title": "Anthropic releases Claude Opus 4.7 and makes its strongest case yet for owning the enterprise AI market - Startup Fortune",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPSjlOWk0wZXo1UGlZNDRuNGJsOGtyeUpqQjBMNEg5U2JMbkVFd2VyZUdzOTZDSTF5XzB3MjIwX0lZcVA1NHloa1lQQ3NLa1pHRjVrUlhuanMxUGduSjNsbEplMVFxcWMybW1NWFRkVzVZYnZzMURUVmJ0eFlhMGZSS0RIOUNSaHRiWjFRV20wbzVyd0ZsbEJTREQ3MlM1T241MllYdmF1QWt6c0tJbWh1RUZfU3Bqa3k1V1ljMGpGbkpIbUFkNUhFRnF3?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T09:00:42.000Z",
+        "published": "2026-04-16T17:31:22.000Z",
         "summary": "<a…"
       },
       {
-        "title": "Anthropic's Mythos to Be Available to UK Banks Within 'Next Week'",
-        "url": "https://www.bloomberg.com/news/videos/2026-04-16/anthropic-s-mythos-available-to-uk-banks-in-next-week-video",
-        "source": "Bloomberg",
-        "published": "2026-04-16T08:31:56.000Z",
-        "summary": "Pip White, Anthropic's head of UK, Ireland and northern Europe, says the firm is planning to release its new Mythos model to UK financial institutions in the coming week. The artificial intelligence…"
-      },
-      {
-        "title": "Anthropic’s Nuclear Bomb - War on the Rocks",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9VYWV5MW9IN2t6STZSUnJfTFJ2Zjc0cUltb3VxSXgwLWNab296NjZHREM1dXdBNzhSM0NwUGVzbEFaZVBxZkhOQndkZnhHUjZ6TG4yYWlkUC1FQk41Z19V?oc=5",
+        "title": "Anthropic's new Claude Opus 4.7 is its best public AI model — but not its most powerful - qz.com",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE12VDlIR1NFNjkzOUZCN2hwSmU1d0RmazF2M2tfZGN3SzJabE1XdWRyUm4zVncwdE56WnVybWp3blJwVzRlOW5tcFpSb3lYbVZOQkNiRU5QWmZXRGl6aFVkNU40NHlscWVLOWdWb1J0bw?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T08:16:24.000Z",
-        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE9VYWV5MW9IN2t6STZSUnJfTFJ2Zjc0cUltb3VxSXgwLWNab296NjZHREM1dXdBNzhSM0NwUGVzbEFaZVBxZkhOQndkZnhHUjZ6TG4yYWlkUC1FQk41Z19V?oc=5\"…"
-      },
-      {
-        "title": "Anthropic tests user trust with ID and selfie checks for Claude - Help Net Security",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPNlZIQTRlQ3lENnpzdkEtV1BYMTV2YXhVQ0F1NEs3SlFoekQ4OHVObkVBZTFSbnM5XzNvbm1pS3BTM0MyM2ZFeTZHamVrZzhuN0VQRkRIZGd6UHlIa3ZQUFlfMU1EWUZiM3QzR2tOdktkc0RTaC1QSUpuZnRoTmFXcm1TdmZHU2F2TEVyQ1FjYVV2QjB5U014M2JaZVM?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T08:07:11.000Z",
+        "published": "2026-04-16T17:23:06.000Z",
         "summary": "<a…"
       },
       {
-        "title": "Claude Takes a Breather; Anthropic Confirms Outage and Immediate Fixes - CXOToday.com",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOdEsxZUR5SGQ2cFpxV2JYOGVaMVMtZTdRSnZRWHVRc1VaT1VtMGFNVFRGc1VKUGJGZXJkaWlHV3dfeHpTb3RZUkU5VWhaN0JPNlpCM0c5U0pfb2ZBWU9CQVMySExQRlNVMnlwYmpEdHUzOXFJUXpKWUw2cDJBUVhuRm1hMmFtZURlNzczMUFnSDJMYW5fOGdrc0pB?oc=5",
+        "title": "Anthropic Announces Claude Opus 4.7 - Thurrott.com",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOLWstYmdWSWMwZ2pwVU5aWmstdWVjUm4zYVBfS0NaZkl5MmJuZG1iTnYtVHNsZkR3c2FBMXRBWGt1LWJNc25yUlE2OFVDbTc2MER4WDNtb2lYTWpESlhuS3dpSWZaSk9DeG5WR1piV3hkZkdXYmFuLUF5QVlLMHBySE5iWHlwU2Rx?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T07:24:56.000Z",
+        "published": "2026-04-16T17:20:28.000Z",
         "summary": "<a…"
       },
       {
-        "title": "Is Anthropic about to launch a design tool that could shake up the creative software market? - Yahoo Finance UK",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPLWpXQTgtczAwMmpNS2liTXZ3RV8xTklIcmVVOFBROHlqQ0FvZC1lUlBwclVOUGhfOUxfQ3Z6cS1SVFliMkotSXNkbVFyc2JuSkhucE5wdHJOQTVwLWxJdXF0c3FWemJBU0tWUkRGUzUtbE5lSUFXYWNHNGN5OVVhODF1M2FSQ1J4bVZn?oc=5",
+        "title": "Top Security Experts Alarmed by Power of Anthropic’s New Hacker AI - Futurism",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOX0lXcWk0aVprS3FvNTl4NlNYLVF1UUFpOFFVbzBfZzhlNjYxMXdMWnRIaDkzTGxVaGVSaHpUY1VfZWRjYXZNOVVxQkZQM2RZZE9HM2hDWEo1NEx5aERiNVNqMUNBZzB4NDMxcExJbXRYcEVZSmJSaHJMSENaTjdTYWE4NE9pZ2dsOTFET1l3bw?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T07:06:00.000Z",
+        "published": "2026-04-16T17:13:42.000Z",
         "summary": "<a…"
       },
       {
-        "title": "Scaling Managed Agents: Decoupling the brain from the hands - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5LY3VWakFxdE02bVBBdDNrSEJaY2NqV1ZkZ3hfNUxBeWFXZDdrU21vTTdnSFdNUGNPRVpSMWVyVGp6MWlQWTFYU2JIcVZDdDcwMXcwRlpYNExMeWZBMGxXOWJ3?oc=5",
+        "title": "Claude Opus 4.7 launched as ‘less powerful’ version of Mythos: 4 ways it is better than Anthropic’s Opus - The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNeG02Zk54d0YwZXVqcHZwSWhuMHRfLUZHd0I1MTQyeDVZT2VEQTB3U2ktUlc5dldUVEFXb1VQQV9lQXdZY21la0I4cjFOVW1LSEhWZDhFMHI0RGNxXzE4elY0ZHNsdHZWV3VUazBrazZHaDloTVBpUnZZLWZLRUxZWlV5akFVSW1JemsweER0ZzRpTlpTVVZhNW82Y1pkeUxFS1NsZ0hwVjlBN2NXRkYxU2h1anp1b09oRjJTdVczRzF4YUlOV0ZwaHdOckJYNmZUWXNHbmM4dGdvQkIwSjZoVG1nQUctdUs0ai0ydWZSa0N2TmNSUk1tTXQ2WnViTUFYdUwwNVFyUWs5MUo3TWtqTGp3NjZRZ9IBmwJBVV95cUxPVEF2NkpTRXhobzl6eVBFNFpoRHFHbkRGT3BtczJkS0M4Vk1SRkl3aWNhckhQaHJydkhaNGRWYVhEeENmak1MOGRuT0hQV242LWEtRTVlMnFValM2VUlJS19uYVRlQmluMENReWtwNE1MNmhITFQtOEhZTWlaTXZOTm5VN1MxdXRmUURoM1g2R3gwUUdFNkRLN2xGdTM5YjRTVjdlVDNXSUItd3pnbzZrNVNSSVJhbGRtb1Q1WkJ5QVp1NmNwYXpSbHZ1bDhhU1VORGZQSWt5X2oyYlVhc0lLOU9VTE41eGQ4bGRGQVBwNUU2eks4b1JWVVhrN0RVbTk2RnBBUEtubkVJXy1kYk5LUHdaZ0RLYU5KbzZR?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T06:35:47.000Z",
-        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE5LY3VWakFxdE02bVBBdDNrSEJaY2NqV1ZkZ3hfNUxBeWFXZDdrU21vTTdnSFdNUGNPRVpSMWVyVGp6MWlQWTFYU2JIcVZDdDcwMXcwRlpYNExMeWZBMGxXOWJ3?oc=5\"…"
-      },
-      {
-        "title": "One Cabinet Wants Claude Banned. Another Just Asked for Access. - thetechpencil.com",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNU0FIRDdiSGZ1STg4dGQ2MzYta0lSTWpQRGtjbHFKRlJSRHRPMU44aHNjeUJXekJNNG9iam1wd0hTZnVsa001VWpId19IdUJBNHo2OGVpOTFwcHQ1R1NncVFCXzdkaWlmbS1ObzNGZzJMUk1FcEl6RnJnM2E1c3k2M0hWV09nZGdoVlVRZlcyOVFxRWh2aS1BZGxGNA?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T05:01:00.000Z",
+        "published": "2026-04-16T17:13:00.000Z",
         "summary": "<a…"
       },
       {
-        "title": "Anthropic Requires ID Verification for Claude Capabilities - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNckpvMmNHUTRXN2k0S3NyQzdCNVhPU1hXS2x0dzVUZjVicjNKTG1tRUFxMHRGMEFRS2Y0NkhEWnphcGVjdUNjc18zMXg3c1ZwQzJCY0UxcVVEZ3FvOUVxQkFOYXJKODRWYm03aHlJcVl2aEJ3N3paanh0cU1lREV6UFljZkJBY0s2ZDl3T2h6NHlyNFhmMGdTWGRHby0tVXB0TEE?oc=5",
+        "title": "Anthropic releases Claude Opus 4.7, with better coding, better vision, and occasional doom loops - Sherwood News",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQV1VBQWk0aFJGNU5UQUR1UktUODFHektYRFIzZTc4OWR2aTBCVEJ0UnRCaUp0dG1pa3hkZWVJTjI2RmlrRFFLWHRRdVZZLWNqNXI0elpCam1oZzNsWldwSXZRRUtXV0tPWnpTRTVpcm05Z2FvWkxEMm11Z1hkZy1ma2x1ZVlrODBWOW8tQW91cXprSFA2YkJ6NkFjcDRjeUpELTN6X194MDQzTEJwcHlFYnJXYklzRG5EXzZfVXB3?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T03:42:17.000Z",
+        "published": "2026-04-16T17:11:44.000Z",
         "summary": "<a…"
       },
       {
-        "title": "TrendAI Expands AI Security Capabilities Through Strategic Collaboration with Anthropic - The Fast Mode",
-        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQUGpCM0J5YldxcmR1bzRoRG82MmEzOVU0Z3R6LVY3ZWE1UkJUVEJvTm9YNlg1bUhOT0JuTXY2djRNREc3end3eG5zcnppY21wSlhpRWlNaTFUTHZmTWFwdjE4NlpFTnBrQnpGSUVqN2ptSHBrSlZjTHdrZ0JBR2dselAtQmRVbGdDaTdJX0ZCc2ROcmZITTM5M1VlWW84YWRGZ2tWYU1LbUI0SFRadlByU3dQYzF1NnZlbEc3WVpjTHB0ZVdpcWQ1Tzd1ekZ6Nlgyc2d6UlZtSy15UQ?oc=5",
+        "title": "Anthropic releases Claude Opus 4.7 with safeguards - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNcXdCdGJDZTdJSklWWENsYVBaTjNmc2tQbUtmV1BodGFyMHBLTVhoU3RRb0owZWREQ2RySkZHYnZmWnlJckpHMlVScks5U2FHblpfYXpuRmppa1pBT2ExbmJoN19ub0hGVkxRYU1pQnUzSk5HRHBEaWhMWUlhWnZUOFVldUk5dkV1STZKSTFKWTh3U2J0TkE?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T02:10:49.000Z",
+        "published": "2026-04-16T17:07:15.000Z",
         "summary": "<a…"
       },
       {
-        "title": "Anthropic’s Next AI Model Could Disrupt Design Tools Like Adobe, Figma - eWeek",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPQ1hpRG91SHBoQm1fZUFHVFJlLVpPTFNlaGcwTGcxdFFXNmtST1F4YlVoTXJ3N0dBX1BZZFhuZVFFS2tzWjEya2hFREtRY3ViRHNidmFwdjN5b2hZQUdYOVpwYmRQcTJYdkRCbDJXREladTM4MEJBUXlmdmRtX2hQanlfRQ?oc=5",
+        "title": "OpenAI’s big Codex update is a direct shot at Claude Code",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/913034/openai-codex-updates-use-macos",
+        "source": "The Verge",
+        "published": "2026-04-16T17:00:00.000Z",
+        "summary": "OpenAI is beefing up its agentic coding and development system, Codex, with a suite of updates that let it use your computer, generate images, and remember from past experiences. The package of…"
+      },
+      {
+        "title": "OpenAI’s big Codex update is a direct shot at Anthropic’s Claude Code - theverge.com",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNSVdtWkRoRllVMVdKbDh5LUVRbGMzb3ZxeUhucWZnM0JKOUxfMFROdlgxa2FYS3BxUGRZOTBJcmlTaWlzY3g3a2djNXRfeWU0dldvNFlmLVRSeXlkUGtWR0k5S3lQcXp0eEFKV1NPZHpEX1BYSUNJdkswQkZqbkpkSjJYRmNveF9XeXY0X1l3MmYzVVE?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T01:45:25.000Z",
+        "published": "2026-04-16T17:00:00.000Z",
         "summary": "<a…"
       },
       {
-        "title": "TrendAI partners Anthropic to embed Claude in security ops - SecurityBrief Australia",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPdzdiUmNLTm9fcFBGdUFXcThNdms1U2cwMXlkMXNCaVRSZ3ZxMFdlS0txVDZfblBxXzhJbnNuSng0c3R5Mmx2RDduSXRlRGk2SUQteXlYS2kwSk9DMFU4NHd0XzUwbDRGN3o4WXlzS2xGbFA3aVNHcEhvaHF6Qjl4clBNR2JPUHpyMndxcUZOOTU0ejNPVjUwWA?oc=5",
+        "title": "😺 LIVE NOW: Claude Opus 4.7 Just Dropped. Let's Break It. - The Neuron",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOdm9jeGxuT21LTTBqbUdDRDNyWjdQTUJ6b1V5aDI2Z21Od1dvYkxEVFhfYkZNZHktdnlPVFFjYmxFUHV2VnlyQnhEajZMdkJUdkNLVjE0SmFuZjhKUEdBZEZMbDZ3OUdkd2VmMExjZG03TnpRM1RuSzNXVXJ3dkFEVnpYQWJHWk1YOXc2Qjh3?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T01:20:00.000Z",
+        "published": "2026-04-16T16:55:55.000Z",
         "summary": "<a…"
       },
       {
-        "title": "How Anthropic Learned Mythos Was Too Dangerous for the Wild - Bloomberg.com",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTkJWYUFCVktsRlNjSTVBbEF4NW1Ia282ZUlpWFFhcWRjeWY2UjN4RGlGMUV5MHpjZjZGbFYxaEFhcndLY3ZCaVYyX3Q1dnFnMWs0bDUydk1MWmluaXBjUXVUaFA1SGRfekl2RzJtcFJEZldoWmtkcGZpM1JfRHUxRWFkOGs3UGFYMi1zdlNsLVYzYUJjcDNMSTk2Y29veklfS1RWYktnNHVhc3hfQ21JRkxaejl4UQ?oc=5",
+        "title": "Claude Opus 4.7 launches with stronger coding and AI vision | ETIH EdTech News - EdTech Innovation Hub",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPNGhIakdneG4zNUhOTUJTd0sxQkZ3RFRGUXg2NGRyNV82blBQc01PeEpHLWhOZDBPdlBoRF95UEhvaVlDb2lpWlZ6UlVYZERHZ0xvVHVmWHdET0lTcHNxYXhYX2N6UnZGSUZzZFhSLWh1eTdRRGxaemppTVpPMWpRMXV3b2gwOTRPWlFtYmVqc0VkenZJNV9jSVRRY21LM0pDeW9UZENnN0tfaDg4RWxjVXE3TTVGTU0?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T00:20:00.000Z",
+        "published": "2026-04-16T16:53:09.000Z",
         "summary": "<a…"
       },
       {
-        "title": "Users report sharp performance drop in Claude Opus 4.6 as Anthropic allegedly redirects compute toward next model - Startup Fortune",
-        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxORGVMdGMxbUF5X09Hc2VqR0hHcTRXUTQ5Q0hhQXd5dVE0a1o1U1NVTzlMTVR0U1RRaFNZVGZBX2RMMXVSazQ0bndWVGxHbDVBQTRxS2pQRkZnWGN4ckVoRjF4MFN0MnQwNF9GZEJIWVRhYldfUUw1RUlySUQ4TGZsVExvWXA2b1c1dmhpUDY5TERPSlJZWTNhc1dRNC1INDM3cldPRlhwcHpMMVhpY2hMd3pwNG9QZzRzMGJMUGRPRWo2T1dWbTV4cUx5OWhmV1JyY0paRGo0SQ?oc=5",
+        "title": "Anthropic Withholds Mythos After Zero-Day Breakthrough - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPdkhHR0ctX3piOHY3M2lsODBfajhycWhwSW43TDJHcmIwYVhxWmk4bk9kZzAwQ3MwX0RRNG92YmlWUUJLazQ1MVd0eEN2MUw2eUJZSkxOdzZCTUlHc1RMQk44VXQxc0FDa3RRWUIwUkJIWi03TXM3YlVSVzVKeU9RYzVMRTBjYnNZR054NnhINjJMOTc4SUthSnlseFc?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T00:09:25.000Z",
+        "published": "2026-04-16T16:48:28.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic launches new Claude Opus 4.7 model with stronger coding and vision capabilities - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1sN05hOWdUbU44R0ZNQXlyckNIVkg4X0VZb0RzTUF0eDA5bDhPZmVwMjA0YkNMNWdMWVdsQnJlX1YySzVWOUQ5dHl0RG51NmFPdmU2a3Jwa0JPSS1zRm9LWWtURzNFRFNqYi02SA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T16:45:54.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic unveils Claude Opus 4.7 model with new cyber safeguards - CNBC",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPQkdNR0NSbkR0eGFwTDRWekM2d2JKc2s4UFEyY1VTdjczeXlDeVNYNzItRDhZV0Y4OWlVdk84RUNITkJ5S3kwaW1nSGtOSWQ5RFhkd242ZXQtcENlMUtvcmQ5Sk1ZQ25FdThmdjZuZ2hoZkdOLVcwZ3AwczlFWFl4OFJmSFNTMW1NRzA3RW9DaDVZRXB2NXZ5Ym94RHVMcFFlX0dZcmd2c3NBQ0NYUDNrRXE4bFA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T16:33:53.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic Ships Claude Opus 4.7 Alongside Security-Focused Mythos - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRG9rRXQtQzJFbDlydUphR0ZVa2VKem9lNmxVTlNMeWVXbWdYMVFJblRVUFFEMWFIcmF4T0dtdFdCeFZCZF91Z3Bqc1ZmX081aGhveGQ2YzFLbGdNQlhUYXY3UU9fVXJlYkhkOHNvTVZkVXhyMHNOYXdvbWpuZ3FTQWJhamQ0TnB3cFpVeW14alREZDNJVUhrWm1McVFHV3M?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T16:33:00.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic Drops Claude Opus 4.7 With Beefed-Up Coding Muscle - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQY3J3UTFDbWtkclN6bFRLM0lEamVIdUhGZ0dkMFF5Z1ZRMW0tekpFd1RRdFJTcHhRMXZRbGwxUWlfbDJVOTdKZnNtY2hIRTg3dXBMaWZla3hjeHJzb1A4dHo3TzkzN3NWcFNGQnd4UnduTHNSV2duM25abEgwcmlzUzQzRFdLQTdnU1JDX3ZpenN5ZHBQNk83OQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T16:32:00.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Claude Opus 4.7 launched: Smarter, safer AI - but why isn’t it more powerful than Anthropic's Claude Mytho - The Economic Times",
+        "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNUFQwaldrOHRQMWRVdkFOT1hrcUJWYU1rR0FGVVJXLUlDSnZ4RE9ud2ZKdWg4alZ2TF9qZ19kMlRpeEpXZVNaWHYwZTB1aVBVZmYxUk80a2FGQTNtazNlVzk5Q1BlV2dPYktlY3piVmVsVWctSXRrTlR4NXNsRTcyQmg2UTNuVkIyVXRUcWdGc2RYT0hyVWMwcUtUbnprc0hWY1dJV20yTFNqQnFTYUFPWUdrV1pBWGN1bXpiYnlwa2xWX0hfRDhHMDhXS0VEcHZKMDdYWG9UaTNfdC1fQ1BQQUMwY2hvQVB4U1ZLeDkzYWRoV0I1alV0bFRTaUZVdHU3cHE0aHpJZjZiWUdzWFhEZHpKbW5PZ9IBmwJBVV95cUxOUnVGZWRhUXpVNElNbl9iblRIUG93aXJLaDU3dTVEZE92M2stYWJoUlVZZ3dNQnUtR05tdU95RFBnZndWNVFYNkVzN3E1dXVIOGJFaWVLSU9sLUhab3dDd1lOSVFpTmJQbXV6U0hVUGhaaktUaDhIMGR6VldOSnZqWWc2RGNVQnRESHFNM0hvZjBjU1U5ZVg2QmYxX3haa3Z5MHgxaFdxNEg0NWlsTUhvdzNtOWVPR3lDVFRQY0NHckRKcWZ5a0FRS3M5eDhPS1lmaFFNVzZiNTNBTVpWVDJ2TXVJTjJtNjZ3OG9oS2NZTTBVWjBhRlQxbks5YzA0RHBCaXU5aGFuZ0JFcG9WYTlnd3pCZWU3WDQ5bmVR?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T16:28:51.000Z",
         "summary": "<a…"
       }
     ],
@@ -408,6 +408,61 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Claude Code Skills Explained for Normal People",
+        "url": "https://www.youtube.com/watch?v=AY_uYtwLc0I",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "AY_uYtwLc0I",
+        "thumbnail": "https://i.ytimg.com/vi/AY_uYtwLc0I/hqdefault.jpg",
+        "published": "2026-04-16T17:30:02.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus-4.7 Just Dropped, And...",
+        "url": "https://www.youtube.com/watch?v=WVQ0lPiWsHQ",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "WVQ0lPiWsHQ",
+        "thumbnail": "https://i.ytimg.com/vi/WVQ0lPiWsHQ/hqdefault.jpg",
+        "published": "2026-04-16T14:52:01.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code + GitHub: Step by Step for Complete Beginners",
+        "url": "https://www.youtube.com/watch?v=nFMGnHdpoXY",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "nFMGnHdpoXY",
+        "thumbnail": "https://i.ytimg.com/vi/nFMGnHdpoXY/hqdefault.jpg",
+        "published": "2026-04-16T13:29:03.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code + Obsidian is INSANE! (Claude Ai Tutorial)",
+        "url": "https://www.youtube.com/watch?v=DoRQo3aGaPY",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "DoRQo3aGaPY",
+        "thumbnail": "https://i.ytimg.com/vi/DoRQo3aGaPY/hqdefault.jpg",
+        "published": "2026-04-16T13:00:22.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Gemma 4 Makes Claude Code 100% FREE",
+        "url": "https://www.youtube.com/watch?v=-kA-8QJXY1g",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "-kA-8QJXY1g",
+        "thumbnail": "https://i.ytimg.com/vi/-kA-8QJXY1g/hqdefault.jpg",
+        "published": "2026-04-16T13:00:00.000Z",
+        "summary": ""
+      },
       {
         "title": "LIVE: You NEED to be using OpenClaw and Claude Code together",
         "url": "https://www.youtube.com/watch?v=DzH0U-JBems",
@@ -682,64 +737,16 @@
         "thumbnail": "https://i.ytimg.com/vi/cA6mE6JgfK0/hqdefault.jpg",
         "published": "2026-04-07T14:10:56.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Cowork Tutorial - Skills, Tasks & Automation",
-        "url": "https://www.youtube.com/watch?v=YGP706Fcggo",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "YGP706Fcggo",
-        "thumbnail": "https://i.ytimg.com/vi/YGP706Fcggo/hqdefault.jpg",
-        "published": "2026-04-07T13:01:04.000Z",
-        "summary": ""
-      },
-      {
-        "title": "What Is Claude Code? The Only Explainer You Need",
-        "url": "https://www.youtube.com/watch?v=dQAxMucQlNQ",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "dQAxMucQlNQ",
-        "thumbnail": "https://i.ytimg.com/vi/dQAxMucQlNQ/hqdefault.jpg",
-        "published": "2026-04-06T22:30:09.000Z",
-        "summary": ""
-      },
-      {
-        "title": "LIVE: ANTHROPIC BANNED OPENCLAW. DO THIS NOW!! plus: MASSIVE ANNOUNCEMENT",
-        "url": "https://www.youtube.com/watch?v=Pe_wvdV2E6c",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "Pe_wvdV2E6c",
-        "thumbnail": "https://i.ytimg.com/vi/Pe_wvdV2E6c/hqdefault.jpg",
-        "published": "2026-04-06T20:32:55.000Z",
-        "summary": ""
-      },
-      {
-        "title": "How I Use Claude Code as a Data Scientist (10 Real Use Cases)",
-        "url": "https://www.youtube.com/watch?v=w2vRlfDEhyE",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "w2vRlfDEhyE",
-        "thumbnail": "https://i.ytimg.com/vi/w2vRlfDEhyE/hqdefault.jpg",
-        "published": "2026-04-06T14:01:31.000Z",
-        "summary": ""
-      },
-      {
-        "title": "What Is a Claude Code Skill File? (12 Lines That Change Everything)",
-        "url": "https://www.youtube.com/shorts/dUuDAg0a_IM",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "dUuDAg0a_IM",
-        "thumbnail": "https://i.ytimg.com/vi/dUuDAg0a_IM/hqdefault.jpg",
-        "published": "2026-04-06T04:20:17.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "v2.1.111",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.111",
+        "source": "Claude Code Releases",
+        "published": "2026-04-16T15:18:45.000Z",
+        "summary": "<h2>What's changed</h2> <ul> <li>Claude Opus 4.7 xhigh is now available! Use /effort to tune speed vs. intelligence</li> <li>Auto mode is now available for Max subscribers when using Opus 4.7</li>…"
+      },
       {
         "title": "v2.1.110",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.110",
@@ -872,13 +879,6 @@
         "source": "Anthropic Cookbook",
         "published": "2026-04-08T21:58:24.000Z",
         "summary": "<pre style='white-space:pre-wrap;width:81ex'>fix(managed_agents): unwrap markdown paragraphs for MDX rendering The docs site's MDX renderer treats single newlines as hard breaks, so hard-wrapped…"
-      },
-      {
-        "title": "v2.1.97",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.97",
-        "source": "Claude Code Releases",
-        "published": "2026-04-08T21:52:34.000Z",
-        "summary": "<h2>What's changed</h2> <ul> <li>Added focus view toggle (<code>Ctrl+O</code>) in <code>NO_FLICKER</code> mode showing prompt, one-line tool summary with edit diffstats, and final response</li>…"
       }
     ]
   }
