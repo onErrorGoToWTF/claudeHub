@@ -52,22 +52,23 @@
     });
   }
 
-  // ---------- Theme ----------
+  // ---------- Theme (dark-first; opt-in to light) ----------
   const root = document.documentElement;
   const stored = localStorage.getItem(THEME_KEY);
-  if (stored === "dark" || stored === "light") {
-    root.setAttribute("data-theme", stored);
-  } else if (matchMedia("(prefers-color-scheme: dark)").matches) {
-    root.setAttribute("data-theme", "dark");
-  }
+  if (stored === "light") root.setAttribute("data-theme", "light");
+  // else: dark is the CSS default
 
   document.getElementById("theme-toggle").addEventListener("click", () => {
-    const current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
-    const next = current === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    localStorage.setItem(THEME_KEY, next);
-    const meta = document.querySelector('meta[name="theme-color"]:not([media])');
-    if (meta) meta.setAttribute("content", next === "dark" ? "#0b0b0d" : "#f0eee6");
+    const isLight = root.getAttribute("data-theme") === "light";
+    if (isLight) {
+      root.removeAttribute("data-theme");
+      localStorage.setItem(THEME_KEY, "dark");
+    } else {
+      root.setAttribute("data-theme", "light");
+      localStorage.setItem(THEME_KEY, "light");
+    }
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", isLight ? "#050507" : "#f7f7f8");
   });
 
   // ---------- Filters ----------

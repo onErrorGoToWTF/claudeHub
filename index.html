@@ -3,27 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
-<meta name="theme-color" content="#f0eee6" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#050507">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="description" content="Daily-updated feed of Claude news, product updates, outages, safety, and Claude Code tutorials.">
 <title>Claude Daily Intelligence Hub</title>
 <link rel="preload" href="data/latest.json" as="fetch" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="ambient" aria-hidden="true">
-  <span class="blob b1"></span>
-  <span class="blob b2"></span>
-  <span class="blob b3"></span>
-</div>
-
 <header class="topbar">
   <div class="topbar-inner">
     <div class="brand">
       <span class="brand-dot" aria-hidden="true"></span>
-      <h1 class="brand-title">Claude<span class="brand-sep"> · </span><span class="brand-sub">Daily Intelligence</span></h1>
+      <h1 class="brand-title">claude<span class="brand-sep">.</span><span class="brand-sub">hub</span></h1>
     </div>
     <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle theme">
       <svg class="icon icon-sun"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -32,11 +28,11 @@
   </div>
   <nav class="chips" id="filters" aria-label="Sections">
     <button class="chip is-active" data-filter="all">All</button>
+    <button class="chip" data-filter="youtube">YouTube</button>
     <button class="chip chip-lisa" data-filter="lisa">365</button>
     <button class="chip" data-filter="updates">Updates</button>
     <button class="chip" data-filter="news">News</button>
     <button class="chip" data-filter="status">Status</button>
-    <button class="chip" data-filter="youtube">YouTube</button>
     <button class="chip" data-filter="tutorials">Tutorials</button>
   </nav>
 </header>
