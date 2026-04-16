@@ -172,16 +172,18 @@
   }
 
   // ---------- Card rendering (main feed) ----------
-  function renderCard(item, videoLike) {
+  function renderCard(item, videoLike, index) {
     const tpl = document.getElementById(videoLike ? "tpl-video" : "tpl-card");
     const node = tpl.content.firstElementChild.cloneNode(true);
     node.href = item.url;
+    node.style.setProperty("--card-delay", (0.04 * (index || 0)) + "s");
     const title = node.querySelector(".card-title");
     const source = node.querySelector(".card-source");
     const time = node.querySelector(".card-time");
     title.textContent = item.title || "(untitled)";
     source.textContent = item.source || item.channel || "";
     time.textContent = relTime(item.published) || prettyDate(item.published) || "";
+    if (item._severity) node.dataset.severity = item._severity;
     if (videoLike) {
       const img = node.querySelector("img");
       if (item.thumbnail) {
@@ -208,7 +210,7 @@
       return;
     }
     const frag = document.createDocumentFragment();
-    items.slice(0, 12).forEach(i => frag.appendChild(renderCard(i, videoLike)));
+    items.slice(0, 12).forEach((i, idx) => frag.appendChild(renderCard(i, videoLike, idx)));
     container.appendChild(frag);
   }
 
@@ -229,6 +231,16 @@
       const s = data.sections || {};
       renderSection("updates",   s.updates,   false);
       renderSection("news",      s.news,      false);
+      // Detect status severity from summary text
+      if (s.status) {
+        s.status.forEach(item => {
+          const t = ((item.summary || "") + " " + (item.title || "")).toLowerCase();
+          if (t.includes("resolved"))       item._severity = "resolved";
+          else if (t.includes("monitoring")) item._severity = "monitoring";
+          else if (t.includes("identified")) item._severity = "identified";
+          else                               item._severity = "investigating";
+        });
+      }
       renderSection("status",    s.status,    false);
       renderSection("youtube",   s.youtube,   true);
       renderSection("tutorials", s.tutorials, false);

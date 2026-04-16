@@ -47,7 +47,10 @@ export function decodeEntities(s) {
 
 export function stripTags(html) {
   if (!html) return "";
-  return decodeEntities(html.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+  return decodeEntities(html)
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 export function clampText(s, n = 220) {
