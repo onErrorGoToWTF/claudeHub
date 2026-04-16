@@ -809,17 +809,19 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .cbar-electron {
   position: absolute;
   right: 0; top: 50%;
-  width: 5px; height: 5px;
+  width: 22px; height: 22px;
   border-radius: 50%;
-  background: #ffffff;
+  background: radial-gradient(circle at center,
+    #ffffff 0%,
+    #ffffff 14%,
+    color-mix(in srgb, var(--cbar-col) 85%, transparent) 30%,
+    color-mix(in srgb, var(--cbar-col) 35%, transparent) 55%,
+    transparent 72%);
   transform: translate(50%, -50%);
   opacity: 0;
   animation:
     cbarShow 0.2s var(--ease) var(--cbar-delay, 0.3s) forwards,
     cbarPulse 1.6s var(--ease) calc(var(--cbar-delay, 0.3s) + 1.6s) infinite;
-  box-shadow:
-    0 0 6px 1px var(--cbar-col),
-    0 0 14px 3px color-mix(in srgb, var(--cbar-col) 55%, transparent);
   pointer-events: none;
 }
 .cbar.is-hero .cbar-label {
@@ -838,14 +840,8 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 @keyframes cbarShow { to { opacity: 1; } }
 @keyframes cbarPulse {
-  0%, 100% {
-    transform: translate(50%, -50%) scale(1);
-    box-shadow: 0 0 6px 1px var(--cbar-col), 0 0 14px 3px color-mix(in srgb, var(--cbar-col) 55%, transparent);
-  }
-  50% {
-    transform: translate(50%, -50%) scale(1.15);
-    box-shadow: 0 0 10px 2px var(--cbar-col), 0 0 22px 5px color-mix(in srgb, var(--cbar-col) 40%, transparent);
-  }
+  0%, 100% { transform: translate(50%, -50%) scale(1);    opacity: 1; }
+  50%      { transform: translate(50%, -50%) scale(1.25); opacity: 0.75; }
 }
 
 /* ===== Hero timeline card ===== */
