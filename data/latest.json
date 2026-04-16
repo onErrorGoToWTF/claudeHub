@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T20:37:05.807Z",
+  "generated_at": "2026-04-16T21:28:48.746Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,10 +146,80 @@
     ],
     "news": [
       {
+        "title": "Anthropic’s Claude Opus 4.7 Is Here, and It’s Already Outperforming Gemini 3.1 Pro and GPT 5 - inc.com",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPMTRLSFh4eklnM0tBWGUwckpWVkhRb3RQSUhlaFN2S2NPRGRHMEpJTTduaFFtSFN2M3dRdUdKVUdCQ1JIUWRZMllhWXNfSHpZekZUYlpQZTc1eW5YQ2Y3bElFeldiRDY5YWRmY0wwVnJBQWN0MTZaT0t0SXctUVdkTzNNLUhWR1pIREUtSjhMdlBvc25WcFNacDN6cld6RnRuc0d6czFXX0RoZHZISW9WRHZ6TFczQmNTWlNPam9hLU9lN3psX00zcDdHb04?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T21:01:07.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "llm-anthropic 0.25 Opens Access to Claude Models - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPMHdrSnVHREttUTllb1BPNWVEV2ZRUjQ2MnZTOWJ6ZmhpY1N2Z1RqZTJWTGl4VHZQX0lqSXpQZjM2ak9hd2tPZnBuVlVIVTdBT2E1ejNRb1RCTDc5TXBNUnFoQUFXYkJONUtuSFpXbnh6RWVmUXZ3MS1sdW5BMl9uSGlmNjdjeWxlQmM4MkNxbDA4Rmc?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T20:54:44.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic Releases Good but not Great Claude Opus 4.7 - AI Business",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOS3NZd3NxcXRvR0taWXJQTm1qd0taeDN0UHFYOVVFaDNuWjNyMHBoUWNuWTdLQTV6eS1rTVNOSTMyeE5UMERFaHFzQk1LWDNjaVIxTVdjN0ZWRWZ3enY1UFNqbkQydmZBUnA4c3hhdGdmQm56M0c2aXVaazU5aEZPQzJZS0MxRWpEX3c0dlltTQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T20:53:42.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic Unveils Updated Opus 4.7 Model | Bloomberg Tech 4/16/2026",
+        "url": "https://www.bloomberg.com/news/videos/2026-04-16/bloomberg-tech-4-16-2026-video",
+        "source": "Bloomberg",
+        "published": "2026-04-16T20:51:21.000Z",
+        "summary": "Bloomberg’s Caroline Hyde and Ed Ludlow discuss Anthropic's updated version of its AI model, Opus 4.7, released just a week after its limited release of Mythos. Plus, Elon Musk is kicking his…"
+      },
+      {
+        "title": "Mozilla launches Thunderbolt AI client with focus on self-hosted infrastructure",
+        "url": "https://arstechnica.com/ai/2026/04/mozilla-launches-thunderbolt-ai-client-with-focus-on-self-hosted-infrastructure/",
+        "source": "Ars Technica",
+        "published": "2026-04-16T20:43:46.000Z",
+        "summary": "Mozilla is the latest legacy tech brand to make a play for the enterprise AI market. But the company behind Firefox and Thunderbird isn’t releasing its own standalone AI model or agentic browser.…"
+      },
+      {
+        "title": "Anthropic’s Mythos a ‘Potent’ Tool for Cyber, Early Testers Say",
+        "url": "https://www.bloomberg.com/news/newsletters/2026-04-16/anthropic-s-mythos-a-potent-tool-for-cyber-early-testers-say",
+        "source": "Bloomberg",
+        "published": "2026-04-16T20:38:19.000Z",
+        "summary": "The new AI model represents a sharp improvement from prior offerings, according to people who’ve tried it."
+      },
+      {
+        "title": "Anthropic Debuts ‘Repeatable Routines’ in Major Claude Code Automation Update - eWeek",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQdEsxakhIMXpURldBekQweUxkVUZfWTgyZXFYNTBCdWx3emk1dHQtR3ZUbk1RSFh1RS13WmhleTN6Z0Z5Y2NjR05MUkxRN1dHM3JWSFhCdzg4U0ZRa0VKNEE2Q1RxX0FNbHdrNWFZYWo2UGNEdno2YTlaTy1xcDBtN0Rn?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T20:36:39.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Is Claude down? Anthropic confirms Claude outage, problems with Cowork. - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAzYjd3cFVvOTVTblYtRXRTVTVQMHpzdE5aeTFkU0tiVURDak1LTTdnUGFTSWRTQ2lYNlQyN3MzbWdudmxobEpMdWNYWWxSZlJob1JzZzFkWm9IS1RmTjd1alRCRnY3NjVPYy1WYWFR?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T20:32:55.000Z",
+        "summary": "<a…"
+      },
+      {
         "title": "Anthropic squeezes enterprises by ejecting bundled tokens from seat deal - theregister.com",
         "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQSWNCTGd4M1VhVV9kbHRRMnlZeko5cDB1VFR1aWxib1B1bXg2enduNmdIWEotRDAxb0p1bEV5Mjl1WnVoS0NudndTUFkzbXY4SDV1R1NQM1Y1eG05SEdKR1FqSmtVUHdaUFlCcXNFSU4ycDAtcjRsUmY3RHZYSUJZTGhEdDhNNVZRT3c?oc=5",
         "source": "Google News",
         "published": "2026-04-16T20:25:00.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic Ships Claude Opus 4.7 as Mythos Stays Under Lock and Key - Brave New Coin",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPeXBLUkFZSXJ2WG9TYWJnYkNtYVFCUU9uelVSQS1temxKR3lkVVlNNks0ZWVnaUFjU09McnJYeTI2OG9UUUhVcWVTVnJhb1I3ekNMNU1BQXg5RzFCR1RoeHFBdHhVNWcta2Rsb2Q3UzJSb1Jqcm1LR2llekV2MFhJcWxxMFVLc3FRR0gxRGZBUXNEM3EwcnFIcDlaZF9zWXV1YlE?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T20:19:37.000Z",
+        "summary": "<a…"
+      },
+      {
+        "title": "Anthropic releases Claude Opus 4.7, April 16 contract certainty - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZWI5eEFCZV92SGpfNEJuMk1uWXYyNWk0RXJaWTE4Zi1FVTJvSnZ6VURGeXJSd3c2SGRCWHVzYnVQWXdYUmpMU3FTeDJwUDRoS0t4UVJGeExJbmgxeXEwQWpuajlmZzNtOVA1MWs2OFRyZzdzU0lXcXk3T3FOdl85c0pjOU9GdkxOM1JuX2Jzd3BSMkU?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T20:04:03.000Z",
         "summary": "<a…"
       },
       {
@@ -158,13 +228,6 @@
         "source": "Google News",
         "published": "2026-04-16T19:59:48.000Z",
         "summary": "<a…"
-      },
-      {
-        "title": "Claude Opus 4.7 Is Here: Anthropic’s Latest Model Delivers, But It’s a Token Eating Machine - Cryptonews.net",
-        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5OSTAwdDR2WG9qQVJUMXZoZ05oLW9VUEtYNl9WbWJBVW1WQTk3QlpUYnpXa01mX1ZQWHRiRU1XZWxreVhrcG9QYncwelJ6U0FpQlhUM0pn?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T19:41:30.000Z",
-        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiVkFVX3lxTE5OSTAwdDR2WG9qQVJUMXZoZ05oLW9VUEtYNl9WbWJBVW1WQTk3QlpUYnpXa01mX1ZQWHRiRU1XZWxreVhrcG9QYncwelJ6U0FpQlhUM0pn?oc=5\" target=\"_blank\">Claude…"
       },
       {
         "title": "Anthropic’s Claude Opus 4.7 benchmarks confirm the company’s most capable model yet and pile pressure on OpenAI and Google - Startup Fortune",
@@ -256,70 +319,6 @@
         "source": "Bloomberg",
         "published": "2026-04-16T17:54:11.000Z",
         "summary": "The US government is preparing to make a version of Anthropic PBC’s powerful new artificial intelligence model available to major federal agencies amid concerns that the tool could sharply increase…"
-      },
-      {
-        "title": "OpenAI Codex gains desktop control to rival Claude Code - The Tech Buzz",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQWWZpOEhQNmtuNU5IbHg2b2JQOXB5c0JYRTdJNlNmeUFJeGhkcG04akhZSWtyTmh0b3JrTVlienAwNVBpdWJESkJZQWNyRjJnaVFTdVRsMktzdHMyM19BMU96cVMtSk52eURwR0xraTNCdEU5cnMwN0w3MWdkNHVWTmV4NTl5RlpmLUlnZzV0ekpTdw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T17:53:00.000Z",
-        "summary": "<a…"
-      },
-      {
-        "title": "Anthropic's new Claude Opus 4.7 is its best public AI model — but not its most powerful - qz.com",
-        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE12VDlIR1NFNjkzOUZCN2hwSmU1d0RmazF2M2tfZGN3SzJabE1XdWRyUm4zVncwdE56WnVybWp3blJwVzRlOW5tcFpSb3lYbVZOQkNiRU5QWmZXRGl6aFVkNU40NHlscWVLOWdWb1J0bw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T17:48:52.000Z",
-        "summary": "<a…"
-      },
-      {
-        "title": "Claude is requiring some of its users to verify their identity. Here's Anthropic's explanation. - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPd1VRV2xxdl82c01oNVllRE83Ym9lUm5ILVBsNkVLc1FMMFlDeERWYUdqTDJTamdUUlNhdVFqdGd2cUpIZ0lNMGFuLWNJQnl5T0VDSE14SVp0cXIyNDY1eW5sVm5UcWozdE9aR004R1IzQ20xSlFYYzMtdUZHWFROYjVSUnRIUWFUb2dKWHJpQ3c5NjQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T17:42:00.000Z",
-        "summary": "<a…"
-      },
-      {
-        "title": "Qwen3.6-35B-A3B on my laptop drew me a better pelican than Claude Opus 4.7",
-        "url": "https://simonwillison.net/2026/Apr/16/qwen-beats-opus/",
-        "source": "HN · 118↑",
-        "hn_id": "47796830",
-        "published": "2026-04-16T17:37:20.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic releases Claude Opus 4.7 and makes its strongest case yet for owning the enterprise AI market - Startup Fortune",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPSjlOWk0wZXo1UGlZNDRuNGJsOGtyeUpqQjBMNEg5U2JMbkVFd2VyZUdzOTZDSTF5XzB3MjIwX0lZcVA1NHloa1lQQ3NLa1pHRjVrUlhuanMxUGduSjNsbEplMVFxcWMybW1NWFRkVzVZYnZzMURUVmJ0eFlhMGZSS0RIOUNSaHRiWjFRV20wbzVyd0ZsbEJTREQ3MlM1T241MllYdmF1QWt6c0tJbWh1RUZfU3Bqa3k1V1ljMGpGbkpIbUFkNUhFRnF3?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T17:31:22.000Z",
-        "summary": "<a…"
-      },
-      {
-        "title": "Anthropic Releases Claude Opus 4.7 to Remind Everyone How Great Mythos Is - Gizmodo",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNZ2RCQmpNY050SGxVNGtyN3B4aXo1Wk5XQjZNWkJFc0QwS1FpWTdDM2tOYTgwVWNLcGFpRDBqUFFfZFc3c2hFZW5RVjNNNXE3OU8wcjJuVXdvNnhRU0RsQ0VPcnpGcGdaTE5PVWltR1N2MVNvWGZuYzlfalprX0t1QU96d01QcWNFdUtINGpBd1ZPaHh0X2dVR3pGUEFjWTB3b3FOdHd1TQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T17:30:56.000Z",
-        "summary": "<a…"
-      },
-      {
-        "title": "Anthropic Announces Claude Opus 4.7 - Thurrott.com",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOLWstYmdWSWMwZ2pwVU5aWmstdWVjUm4zYVBfS0NaZkl5MmJuZG1iTnYtVHNsZkR3c2FBMXRBWGt1LWJNc25yUlE2OFVDbTc2MER4WDNtb2lYTWpESlhuS3dpSWZaSk9DeG5WR1piV3hkZkdXYmFuLUF5QVlLMHBySE5iWHlwU2Rx?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T17:20:28.000Z",
-        "summary": "<a…"
-      },
-      {
-        "title": "Top Security Experts Alarmed by Power of Anthropic’s New Hacker AI - Futurism",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOX0lXcWk0aVprS3FvNTl4NlNYLVF1UUFpOFFVbzBfZzhlNjYxMXdMWnRIaDkzTGxVaGVSaHpUY1VfZWRjYXZNOVVxQkZQM2RZZE9HM2hDWEo1NEx5aERiNVNqMUNBZzB4NDMxcExJbXRYcEVZSmJSaHJMSENaTjdTYWE4NE9pZ2dsOTFET1l3bw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T17:13:42.000Z",
-        "summary": "<a…"
-      },
-      {
-        "title": "Claude Opus 4.7 launched as ‘less powerful’ version of Mythos: 4 ways it is better than Anthropic’s Opus - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNeG02Zk54d0YwZXVqcHZwSWhuMHRfLUZHd0I1MTQyeDVZT2VEQTB3U2ktUlc5dldUVEFXb1VQQV9lQXdZY21la0I4cjFOVW1LSEhWZDhFMHI0RGNxXzE4elY0ZHNsdHZWV3VUazBrazZHaDloTVBpUnZZLWZLRUxZWlV5akFVSW1JemsweER0ZzRpTlpTVVZhNW82Y1pkeUxFS1NsZ0hwVjlBN2NXRkYxU2h1anp1b09oRjJTdVczRzF4YUlOV0ZwaHdOckJYNmZUWXNHbmM4dGdvQkIwSjZoVG1nQUctdUs0ai0ydWZSa0N2TmNSUk1tTXQ2WnViTUFYdUwwNVFyUWs5MUo3TWtqTGp3NjZRZ9IBmwJBVV95cUxPVEF2NkpTRXhobzl6eVBFNFpoRHFHbkRGT3BtczJkS0M4Vk1SRkl3aWNhckhQaHJydkhaNGRWYVhEeENmak1MOGRuT0hQV242LWEtRTVlMnFValM2VUlJS19uYVRlQmluMENReWtwNE1MNmhITFQtOEhZTWlaTXZOTm5VN1MxdXRmUURoM1g2R3gwUUdFNkRLN2xGdTM5YjRTVjdlVDNXSUItd3pnbzZrNVNSSVJhbGRtb1Q1WkJ5QVp1NmNwYXpSbHZ1bDhhU1VORGZQSWt5X2oyYlVhc0lLOU9VTE41eGQ4bGRGQVBwNUU2eks4b1JWVVhrN0RVbTk2RnBBUEtubkVJXy1kYk5LUHdaZ0RLYU5KbzZR?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T17:13:00.000Z",
-        "summary": "<a…"
       }
     ],
     "status": [
@@ -327,8 +326,8 @@
         "title": "Claude Cowork not starting for some users",
         "url": "https://status.claude.com/incidents/qj05p69fff9h",
         "source": "Claude Status",
-        "published": "2026-04-16T19:24:38.000Z",
-        "summary": "<p><small>Apr <var data-var=&apos;date&apos;>16</var>, <var data-var=&apos;time&apos;>19:24</var> UTC</small><br><strong>Investigating</strong> - We are currently investigating this issue on the…"
+        "published": "2026-04-16T20:47:32.000Z",
+        "summary": "<p><small>Apr <var data-var=&apos;date&apos;>16</var>, <var data-var=&apos;time&apos;>20:47</var> UTC</small><br><strong>Identified</strong> - The issue has been identified and a fix is being…"
       },
       {
         "title": "Opus 4.6 elevated rate of errors",
