@@ -265,20 +265,26 @@
     host.innerHTML = "";
     rows.forEach((r, i) => {
       const pct = (r.tokens / max) * 100;
+      const delay = 0.25 + i * 0.18;
       const el = document.createElement("div");
       el.className = "cbar" + (r.hero ? " is-hero" : "");
+      el.style.setProperty("--cbar-pct", pct.toFixed(1) + "%");
+      el.style.setProperty("--cbar-col", r.color);
+      el.style.setProperty("--cbar-delay", delay + "s");
       el.innerHTML = `
         <div class="cbar-label">${r.name}</div>
         <div class="cbar-val">${r.label}</div>
         <div class="cbar-track">
-          <div class="cbar-fill"
-               style="--cbar-pct: ${pct.toFixed(1)}%; --cbar-col: ${r.color}; --cbar-delay: ${0.25 + i * 0.18}s;">
-            <div class="cbar-electron"
-                 style="--cbar-col: ${r.color}; --cbar-delay: ${0.25 + i * 0.18 + 1.45}s;"></div>
+          <div class="cbar-fill">
+            <div class="cbar-electron"></div>
           </div>
         </div>`;
       host.appendChild(el);
     });
+    // Kick off transitions on the next frame.
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      host.querySelectorAll(".cbar").forEach(el => el.classList.add("is-go"));
+    }));
   }
 
   // ======================================================================

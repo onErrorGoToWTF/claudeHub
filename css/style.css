@@ -803,9 +803,11 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   background: linear-gradient(90deg,
     color-mix(in srgb, var(--cbar-col) 22%, transparent),
     var(--cbar-col));
-  animation: cbarGrow 1.5s var(--ease) var(--cbar-delay, 0.3s) forwards;
-  box-shadow: 0 0 12px color-mix(in srgb, var(--cbar-col) 60%, transparent);
+  transition: width 1.5s var(--ease);
+  transition-delay: var(--cbar-delay, 0.3s);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--cbar-col) 55%, transparent);
 }
+.cbar.is-go .cbar-fill { width: var(--cbar-pct); }
 .cbar-electron {
   position: absolute;
   right: 0; top: 50%;
@@ -813,16 +815,19 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   border-radius: 50%;
   background: radial-gradient(circle at center,
     #ffffff 0%,
-    #ffffff 20%,
-    color-mix(in srgb, var(--cbar-col) 80%, transparent) 38%,
-    color-mix(in srgb, var(--cbar-col) 30%, transparent) 60%,
-    transparent 75%);
+    #ffffff 22%,
+    color-mix(in srgb, var(--cbar-col) 80%, transparent) 40%,
+    color-mix(in srgb, var(--cbar-col) 28%, transparent) 62%,
+    transparent 76%);
   transform: translate(50%, -50%);
   opacity: 0;
-  animation:
-    cbarShow 0.01s linear var(--cbar-delay, 0.3s) forwards,
-    cbarPulse 1.6s var(--ease) calc(var(--cbar-delay, 0.3s) + 1.6s) infinite;
+  transition: opacity 0.15s var(--ease);
+  transition-delay: var(--cbar-delay, 0.3s);
   pointer-events: none;
+}
+.cbar.is-go .cbar-electron {
+  opacity: 1;
+  animation: cbarPulse 1.6s var(--ease) calc(var(--cbar-delay, 0.3s) + 1.55s) infinite;
 }
 .cbar.is-hero .cbar-label {
   background: linear-gradient(135deg, var(--accent-hi), var(--lisa-hi));
@@ -834,11 +839,6 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   -webkit-background-clip: text; background-clip: text; color: transparent;
   font-weight: 700;
 }
-@keyframes cbarGrow {
-  from { width: 0; }
-  to   { width: var(--cbar-pct); }
-}
-@keyframes cbarShow { to { opacity: 1; } }
 @keyframes cbarPulse {
   0%, 100% { transform: translate(50%, -50%) scale(1);    opacity: 1; }
   50%      { transform: translate(50%, -50%) scale(1.25); opacity: 0.75; }
