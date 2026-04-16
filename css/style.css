@@ -400,6 +400,67 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .section-lisa { gap: 14px; display: flex; flex-direction: column; }
+.lisa-content { display: flex; flex-direction: column; gap: 14px; }
+
+.lisa-gate {
+  padding: 32px 20px 24px;
+  display: flex; flex-direction: column; align-items: stretch;
+  gap: 10px; text-align: center;
+}
+.lisa-gate-lock {
+  font-size: 36px; line-height: 1; margin-bottom: 4px;
+  filter: drop-shadow(0 4px 12px var(--lisa-soft));
+}
+.lisa-gate-title {
+  font-size: 20px; font-weight: 700; letter-spacing: -0.015em;
+  background: linear-gradient(135deg, var(--lisa), #d99bff);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.lisa-gate-sub { font-size: 13px; color: var(--text-2); margin-bottom: 8px; }
+.lisa-gate input[type="password"] {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface) 60%, transparent);
+  border: 1px solid color-mix(in srgb, var(--edge-lo) 120%, transparent);
+  color: var(--text-1);
+  font: inherit; font-size: 15px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.lisa-gate input[type="password"]:focus {
+  outline: none;
+  border-color: color-mix(in srgb, var(--lisa) 70%, transparent);
+  box-shadow: 0 0 0 3px var(--lisa-soft);
+}
+.lisa-gate-submit {
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: var(--lisa);
+  color: var(--lisa-ink);
+  font-weight: 600; font-size: 14px;
+  transition: transform 0.18s var(--ease);
+  box-shadow: 0 8px 20px -8px var(--lisa-soft);
+}
+.lisa-gate-submit:active { transform: scale(0.96); }
+.lisa-gate-error {
+  min-height: 1em;
+  font-size: 13px;
+  color: #c23b3b;
+}
+
+.lisa-lock-btn {
+  margin: 12px auto 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px; color: var(--text-3);
+  background: color-mix(in srgb, var(--surface) 50%, transparent);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in srgb, var(--edge-lo) 120%, transparent);
+  transition: color 0.2s var(--ease);
+}
+.lisa-lock-btn:hover { color: var(--text-2); }
+.lisa-lock-btn:active { transform: scale(0.96); }
 
 .lisa-greeting {
   padding: 18px 18px 16px;

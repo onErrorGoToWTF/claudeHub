@@ -43,6 +43,16 @@
 
 <main class="app" id="app">
   <section class="section section-lisa" data-section="lisa" id="section-lisa" data-hidden="true">
+    <form class="lisa-gate glass" id="lisa-gate" novalidate>
+      <div class="lisa-gate-lock" aria-hidden="true">🔒</div>
+      <h2 class="lisa-gate-title">Lisa's tab</h2>
+      <p class="lisa-gate-sub">Private. Ask Alan for the password.</p>
+      <input id="lisa-pw" type="password" autocomplete="current-password" placeholder="Password" spellcheck="false">
+      <button type="submit" class="lisa-gate-submit">Unlock</button>
+      <div class="lisa-gate-error" id="lisa-gate-error" role="alert" aria-live="polite"></div>
+    </form>
+
+    <div class="lisa-content" id="lisa-content" hidden>
     <div class="lisa-greeting glass">
       <h2 class="lisa-headline" data-lisa="headline">Hi Lisa</h2>
       <p class="lisa-subline" data-lisa="subline"></p>
@@ -73,6 +83,9 @@
     <div class="lisa-group">
       <h3 class="lisa-group-head">For your pitch deck</h3>
       <div class="cards" data-cards="lisa-pitch"></div>
+    </div>
+
+    <button class="lisa-lock-btn" id="lisa-lock" type="button">Lock this tab</button>
     </div>
   </section>
 

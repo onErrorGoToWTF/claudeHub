@@ -11,6 +11,32 @@
   const WORKER_URL = "https://claudehub-lisa.alanyoungjr.workers.dev/submit";
   const WORKER_PLACEHOLDER = /YOUR-SUBDOMAIN/.test(WORKER_URL);
 
+  // SHA-256 of the Lisa-tab password. Plaintext lives on Alan's and Lisa's phones only.
+  // To rotate: regenerate with `node -e "..."` (see chat), replace this hash, commit.
+  const LISA_PW_HASH = "bbd2915e8e9e0e54d1b210501ebd8ed391957692016af2e409ebcb4951d796e1";
+  const LISA_UNLOCK_KEY = "cdih-lisa-unlocked";
+
+  async function sha256Hex(s) {
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
+    return Array.from(new Uint8Array(buf), b => b.toString(16).padStart(2, "0")).join("");
+  }
+
+  function isLisaUnlocked() {
+    return localStorage.getItem(LISA_UNLOCK_KEY) === LISA_PW_HASH;
+  }
+
+  function showLisaContent() {
+    document.getElementById("lisa-gate").hidden = true;
+    document.getElementById("lisa-content").hidden = false;
+  }
+
+  function showLisaGate() {
+    document.getElementById("lisa-gate").hidden = false;
+    document.getElementById("lisa-content").hidden = true;
+    const pw = document.getElementById("lisa-pw");
+    if (pw) pw.value = "";
+  }
+
   // ---------- Theme ----------
   const root = document.documentElement;
   const stored = localStorage.getItem(THEME_KEY);
@@ -47,7 +73,10 @@
         el.dataset.hidden = (f === "all" || f === s) ? "false" : "true";
       });
 
-      if (f === "lisa") loadLisa();
+      if (f === "lisa") {
+        if (isLisaUnlocked()) { showLisaContent(); loadLisa(); }
+        else { showLisaGate(); }
+      }
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
@@ -357,6 +386,34 @@
       note.textContent = "Couldn't load Lisa content: " + (err.message || err);
       body.appendChild(note);
     }
+  }
+
+  // ---------- Gate (password) ----------
+  const gateForm = document.getElementById("lisa-gate");
+  const gatePw = document.getElementById("lisa-pw");
+  const gateErr = document.getElementById("lisa-gate-error");
+  const lockBtn = document.getElementById("lisa-lock");
+
+  if (gateForm) {
+    gateForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      gateErr.textContent = "";
+      const tryHash = await sha256Hex((gatePw.value || "").trim());
+      if (tryHash === LISA_PW_HASH) {
+        localStorage.setItem(LISA_UNLOCK_KEY, LISA_PW_HASH);
+        showLisaContent();
+        loadLisa();
+      } else {
+        gateErr.textContent = "Wrong password. Ask Alan.";
+        gatePw.select();
+      }
+    });
+  }
+  if (lockBtn) {
+    lockBtn.addEventListener("click", () => {
+      localStorage.removeItem(LISA_UNLOCK_KEY);
+      showLisaGate();
+    });
   }
 
   // ---------- Request form ----------
