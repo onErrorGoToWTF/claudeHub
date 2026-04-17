@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T23:23:47.918Z",
+  "generated_at": "2026-04-17T00:33:18.720Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "Anthropic taking responsible approach with Claude Mythos software rollout, TD CEO says - The Globe and Mail",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPa2VWemM1M0pVMnM4SFdlcEFOUXNYa3FnZVRnVUhpOFM4M0pwNnF4aUlJY3laX1dZUndneWM4T1BtSm1LZ2t4SUVjSm1Fc2NmMF9WVkgwbC1JcDlOZHN1U1J2WDByd3NJelhwNERDblZIeDNXMU1fdVgtUWJqM1MtQ3RuWC02SDNQUnNHTDB1QjNfM3FuS0JZcHY5cFJ3Zw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T23:29:12.000Z",
+        "summary": "Anthropic taking responsible approach with Claude Mythos software rollout, TD CEO says The Globe and Mail"
+      },
+      {
         "title": "Anthropic launches Claude Opus 4.7 with coding, visual reasoning improvements - SiliconANGLE",
         "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPQ241TjF4RE1MLXNtYTM1VkwtZThxeVJZSC0zRlhOdF9rcExCVWE2elM2V1RiRndQcXpybnNQSmRndjhFRUJZQUtmcGdRZEFjOURwcjd0cUdESlBvRWNpbnVjR09tY0FmaVhHR0pFQ1d0ZFdhOGJpdzRXNFctbG5UM1BxRnBSbS1uWE5oN2tlc3EwbHR4UkNjM2UxV21tb1NWclp3M0xrekEwOHNR?oc=5",
         "source": "Google News",
@@ -156,7 +163,7 @@
         "title": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety - Mashable",
         "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBoQkkwMnB2b0tyeFllX3Iwa2FrRXNZbW5Dem5ERGlLVzFkbGNycUN1UXVEMnhYVlVmaGNTNDZuSTVWZ3d3alpjN29LbkprZV9qTjg1QVFKdURnYk9FYlFTQWFReVRNdEJPaHdTWlhGUTM?oc=5",
         "source": "Google News",
-        "published": "2026-04-16T22:30:00.000Z",
+        "published": "2026-04-16T22:37:26.000Z",
         "summary": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety Mashable"
       },
       {
@@ -228,13 +235,6 @@
         "source": "Google News",
         "published": "2026-04-16T20:33:53.000Z",
         "summary": "Anthropic's Claude Code hits 115K GitHub stars: why developers are skipping the IDE Augment Code"
-      },
-      {
-        "title": "Is Claude down? Anthropic confirms Claude outage, problems with Cowork. - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAzYjd3cFVvOTVTblYtRXRTVTVQMHpzdE5aeTFkU0tiVURDak1LTTdnUGFTSWRTQ2lYNlQyN3MzbWdudmxobEpMdWNYWWxSZlJob1JzZzFkWm9IS1RmTjd1alRCRnY3NjVPYy1WYWFR?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T20:32:55.000Z",
-        "summary": "Is Claude down? Anthropic confirms Claude outage, problems with Cowork. Mashable"
       },
       {
         "title": "Anthropic squeezes enterprises by ejecting bundled tokens from seat deal - theregister.com",
@@ -668,140 +668,652 @@
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.112",
         "source": "Claude Code Releases",
         "published": "2026-04-16T19:55:41.000Z",
-        "summary": "What's changed Fixed \"claude-opus-4-7 is temporarily unavailable\" for auto mode"
+        "summary": "What's changed Fixed \"claude-opus-4-7 is temporarily unavailable\" for auto mode",
+        "tutorial_kind": "official"
       },
       {
         "title": "v2.1.111",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.111",
         "source": "Claude Code Releases",
         "published": "2026-04-16T15:18:45.000Z",
-        "summary": "What's changed Claude Opus 4.7 xhigh is now available! Use /effort to tune speed vs. intelligence Auto mode is now available for Max subscribers when using Opus 4.7 Added xhigh effort level for Opus…"
+        "summary": "What's changed Claude Opus 4.7 xhigh is now available! Use /effort to tune speed vs. intelligence Auto mode is now available for Max subscribers when using Opus 4.7 Added xhigh effort level for Opus…",
+        "tutorial_kind": "official"
       },
       {
         "title": "v2.1.110",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.110",
         "source": "Claude Code Releases",
         "published": "2026-04-15T23:21:43.000Z",
-        "summary": "What's changed Added /tui command and tui setting — run /tui fullscreen to switch to flicker-free rendering in the same conversation Changed Ctrl+O to toggle between normal and verbose transcript…"
+        "summary": "What's changed Added /tui command and tui setting — run /tui fullscreen to switch to flicker-free rendering in the same conversation Changed Ctrl+O to toggle between normal and verbose transcript…",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Equipping Agents for the Real World with Agent Skills",
+        "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+        "source": "Anthropic Eng",
+        "published": "2026-04-15T14:39:01.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
       },
       {
         "title": "v2.1.109",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.109",
         "source": "Claude Code Releases",
         "published": "2026-04-15T04:02:13.000Z",
-        "summary": "What's changed Improved the extended-thinking indicator with a rotating progress hint"
+        "summary": "What's changed Improved the extended-thinking indicator with a rotating progress hint",
+        "tutorial_kind": "official"
       },
       {
         "title": "v2.1.108",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.108",
         "source": "Claude Code Releases",
         "published": "2026-04-14T19:12:01.000Z",
-        "summary": "What's changed Added ENABLE_PROMPT_CACHING_1H env var to opt into 1-hour prompt cache TTL on API key, Bedrock, Vertex, and Foundry ( ENABLE_PROMPT_CACHING_1H_BEDROCK is deprecated but still…"
+        "summary": "What's changed Added ENABLE_PROMPT_CACHING_1H env var to opt into 1-hour prompt cache TTL on API key, Bedrock, Vertex, and Foundry ( ENABLE_PROMPT_CACHING_1H_BEDROCK is deprecated but still…",
+        "tutorial_kind": "official"
       },
       {
         "title": "v2.1.107",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.107",
         "source": "Claude Code Releases",
         "published": "2026-04-14T06:11:20.000Z",
-        "summary": "What's changed Show thinking hints sooner during long operations"
+        "summary": "What's changed Show thinking hints sooner during long operations",
+        "tutorial_kind": "official"
       },
       {
         "title": "v2.1.105",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.105",
         "source": "Claude Code Releases",
         "published": "2026-04-13T21:53:13.000Z",
-        "summary": "What's changed Added path parameter to the EnterWorktree tool to switch into an existing worktree of the current repository Added PreCompact hook support: hooks can now block compaction by exiting…"
+        "summary": "What's changed Added path parameter to the EnterWorktree tool to switch into an existing worktree of the current repository Added PreCompact hook support: hooks can now block compaction by exiting…",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Building Effective Agents",
+        "url": "https://www.anthropic.com/engineering/building-effective-agents",
+        "source": "Anthropic Eng",
+        "published": "2026-04-13T17:46:47.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
       },
       {
         "title": "v2.1.104",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.104",
         "source": "Claude Code Releases",
         "published": "2026-04-13T01:45:26.000Z",
-        "summary": "No content."
+        "summary": "No content.",
+        "tutorial_kind": "official"
       },
       {
         "title": "Merge pull request #526 from anthropics/sre-incident-response-agent-f…",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/753ddfe35fdc7e310a45cadcfe314ba6809672f8",
         "source": "Anthropic Cookbook",
         "published": "2026-04-11T00:33:35.000Z",
-        "summary": "Merge pull request #526 from anthropics/sre-incident-response-agent-fixes fix(managed_agents): Fix console image, missing fixture, and summary blurb"
+        "summary": "Merge pull request #526 from anthropics/sre-incident-response-agent-fixes fix(managed_agents): Fix console image, missing fixture, and summary blurb",
+        "tutorial_kind": "official"
       },
       {
         "title": "chore(registry): bump SRE incident responder date to 2026-04-10",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/355d2011d91a3d37e7d9999ec275732e26dcd439",
         "source": "Anthropic Cookbook",
         "published": "2026-04-11T00:12:21.000Z",
-        "summary": "chore(registry): bump SRE incident responder date to 2026-04-10"
+        "summary": "chore(registry): bump SRE incident responder date to 2026-04-10",
+        "tutorial_kind": "official"
       },
       {
         "title": "fix(managed_agents): add missing checkout-svc.log fixture for SRE coo…",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/2aae6112fbb5a1fc1a5544cfd9906aa54a8313aa",
         "source": "Anthropic Cookbook",
         "published": "2026-04-11T00:09:44.000Z",
-        "summary": "fix(managed_agents): add missing checkout-svc.log fixture for SRE cookbook The SRE incident responder notebook mounts logs/checkout-svc.log as a session resource, but the fixture didn't make it into…"
+        "summary": "fix(managed_agents): add missing checkout-svc.log fixture for SRE cookbook The SRE incident responder notebook mounts logs/checkout-svc.log as a session resource, but the fixture didn't make it into…",
+        "tutorial_kind": "official"
       },
       {
         "title": "fix(managed_agents): SRE registry summary + use raw URL for console i…",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/11be1356d0f9e0716abfe4d92d9a09849bc0c3c1",
         "source": "Anthropic Cookbook",
         "published": "2026-04-10T23:46:27.000Z",
-        "summary": "fix(managed_agents): SRE registry summary + use raw URL for console image - registry.yaml: rewrite SRE incident responder description with the on-call-flow framing. - sre_incident_responder.ipynb:…"
+        "summary": "fix(managed_agents): SRE registry summary + use raw URL for console image - registry.yaml: rewrite SRE incident responder description with the on-call-flow framing. - sre_incident_responder.ipynb:…",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Managed Agents",
+        "url": "https://www.anthropic.com/engineering/managed-agents",
+        "source": "Anthropic Eng",
+        "published": "2026-04-10T19:17:30.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
       },
       {
         "title": "v2.1.101",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.101",
         "source": "Claude Code Releases",
         "published": "2026-04-10T19:03:41.000Z",
-        "summary": "What's changed Added /team-onboarding command to generate a teammate ramp-up guide from your local Claude Code usage Added OS CA certificate store trust by default, so enterprise TLS proxies work…"
+        "summary": "What's changed Added /team-onboarding command to generate a teammate ramp-up guide from your local Claude Code usage Added OS CA certificate store trust by default, so enterprise TLS proxies work…",
+        "tutorial_kind": "official"
       },
       {
         "title": "v2.1.100",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.100",
         "source": "Claude Code Releases",
         "published": "2026-04-10T05:16:35.000Z",
-        "summary": "No content."
+        "summary": "No content.",
+        "tutorial_kind": "official"
       },
       {
         "title": "Merge pull request #516 from anthropics/mnowicki/cma-versioning-heade…",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/b96dc048794747788e5479079c3116a976e9cece",
         "source": "Anthropic Cookbook",
         "published": "2026-04-09T01:57:10.000Z",
-        "summary": "Merge pull request #516 from anthropics/mnowicki/cma-versioning-header-fix Print 'v1 results:' header before score loop"
+        "summary": "Merge pull request #516 from anthropics/mnowicki/cma-versioning-header-fix Print 'v1 results:' header before score loop",
+        "tutorial_kind": "official"
       },
       {
         "title": "Print 'v1 results:' header before score loop",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/9164000ad1bba2feb0b67af686f1b2a3f39df561",
         "source": "Anthropic Cookbook",
         "published": "2026-04-09T01:53:05.000Z",
-        "summary": "Print 'v1 results:' header before score loop VS Code's notebook output renderer strips leading whitespace from the first line of stdout, so the api-platform row rendered two columns left of the…"
+        "summary": "Print 'v1 results:' header before score loop VS Code's notebook output renderer strips leading whitespace from the first line of stdout, so the api-platform row rendered two columns left of the…",
+        "tutorial_kind": "official"
       },
       {
         "title": "Merge pull request #511 from anthropics/charmaine/fix-managed-agents-…",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/8f6e61acf266c1f036ca7691a32b226ddef1a0f7",
         "source": "Anthropic Cookbook",
         "published": "2026-04-08T22:41:01.000Z",
-        "summary": "Merge pull request #511 from anthropics/charmaine/fix-managed-agents-mdx-formatting fix(managed_agents): unwrap markdown paragraphs for MDX rendering"
+        "summary": "Merge pull request #511 from anthropics/charmaine/fix-managed-agents-mdx-formatting fix(managed_agents): unwrap markdown paragraphs for MDX rendering",
+        "tutorial_kind": "official"
       },
       {
         "title": "fix(registry): correct SRE incident responder published date to 2026-…",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/370c1f5d24d05603ecfa648d2d40369413dd3f40",
         "source": "Anthropic Cookbook",
         "published": "2026-04-08T22:39:13.000Z",
-        "summary": "fix(registry): correct SRE incident responder published date to 2026-04-08"
+        "summary": "fix(registry): correct SRE incident responder published date to 2026-04-08",
+        "tutorial_kind": "official"
       },
       {
         "title": "fix(managed_agents): address review — blockquotes, source normalization",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/65da848d7632a11c3ee692ef2e39c23f088d2729",
         "source": "Anthropic Cookbook",
         "published": "2026-04-08T22:07:08.000Z",
-        "summary": "fix(managed_agents): address review — blockquotes, source normalization - Join multi-line blockquotes in sre_incident_responder (Next steps) and data_analyst_agent (Warning) onto single lines so…"
+        "summary": "fix(managed_agents): address review — blockquotes, source normalization - Join multi-line blockquotes in sre_incident_responder (Next steps) and data_analyst_agent (Warning) onto single lines so…",
+        "tutorial_kind": "official"
       },
       {
         "title": "fix(managed_agents): unwrap markdown paragraphs for MDX rendering",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/09b89727477b38b14bf2007a73d2d0c4d8eb2450",
         "source": "Anthropic Cookbook",
         "published": "2026-04-08T21:58:24.000Z",
-        "summary": "fix(managed_agents): unwrap markdown paragraphs for MDX rendering The docs site's MDX renderer treats single newlines as hard breaks, so hard-wrapped source paragraphs rendered with mid-sentence…"
+        "summary": "fix(managed_agents): unwrap markdown paragraphs for MDX rendering The docs site's MDX renderer treats single newlines as hard breaks, so hard-wrapped source paragraphs rendered with mid-sentence…",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Claude Code Auto Mode",
+        "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
+        "source": "Anthropic Eng",
+        "published": "2026-03-25T23:13:37.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Claude Computer Use Just Dropped, Here's How to Hack It",
+        "url": "https://www.youtube.com/watch?v=2u93VTYvG5U",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "2u93VTYvG5U",
+        "thumbnail": "https://i.ytimg.com/vi/2u93VTYvG5U/hqdefault.jpg",
+        "published": "2026-03-24T17:51:10.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
+        "title": "Harness Design Long Running Apps",
+        "url": "https://www.anthropic.com/engineering/harness-design-long-running-apps",
+        "source": "Anthropic Eng",
+        "published": "2026-03-24T16:23:08.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Build with Claude",
+        "url": "https://www.anthropic.com/learn/build-with-claude",
+        "source": "Anthropic Learn",
+        "published": "2026-03-20T22:44:51.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Claude for Work",
+        "url": "https://www.anthropic.com/learn/claude-for-work",
+        "source": "Anthropic Learn",
+        "published": "2026-03-20T22:44:03.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Eval Awareness Browsecomp",
+        "url": "https://www.anthropic.com/engineering/eval-awareness-browsecomp",
+        "source": "Anthropic Eng",
+        "published": "2026-03-18T20:16:12.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Demystifying Evals for AI Agents",
+        "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+        "source": "Anthropic Eng",
+        "published": "2026-03-18T18:48:35.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Advanced Tool Use",
+        "url": "https://www.anthropic.com/engineering/advanced-tool-use",
+        "source": "Anthropic Eng",
+        "published": "2026-03-16T16:09:03.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Claude for You",
+        "url": "https://www.anthropic.com/learn/claude-for-you",
+        "source": "Anthropic Learn",
+        "published": "2026-02-12T18:49:16.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Building C Compiler",
+        "url": "https://www.anthropic.com/engineering/building-c-compiler",
+        "source": "Anthropic Eng",
+        "published": "2026-02-05T19:38:29.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Infrastructure Noise",
+        "url": "https://www.anthropic.com/engineering/infrastructure-noise",
+        "source": "Anthropic Eng",
+        "published": "2026-02-05T17:42:29.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Claude Code Best Practices",
+        "url": "https://www.anthropic.com/engineering/claude-code-best-practices",
+        "source": "Anthropic Eng",
+        "published": "2026-01-26T23:24:56.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "AI Resistant Technical Evaluations",
+        "url": "https://www.anthropic.com/engineering/AI-resistant-technical-evaluations",
+        "source": "Anthropic Eng",
+        "published": "2026-01-22T01:16:20.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Contextual Retrieval",
+        "url": "https://www.anthropic.com/engineering/contextual-retrieval",
+        "source": "Anthropic Eng",
+        "published": "2026-01-07T15:00:44.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Effective Context Engineering for AI Agents",
+        "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+        "source": "Anthropic Eng",
+        "published": "2026-01-06T15:31:12.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Multi Agent Research System",
+        "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+        "source": "Anthropic Eng",
+        "published": "2026-01-06T15:09:32.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Writing Tools for Agents",
+        "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+        "source": "Anthropic Eng",
+        "published": "2026-01-06T15:05:23.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Claude Think Tool",
+        "url": "https://www.anthropic.com/engineering/claude-think-tool",
+        "source": "Anthropic Eng",
+        "published": "2025-12-15T18:02:25.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Build with Claude — Overview",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/overview",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Working with Messages",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/working-with-messages",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Claude API Skill",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/claude-api-skill",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Handling Stop Reasons",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Extended Thinking",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/extended-thinking",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Adaptive Thinking",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Effort",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/effort",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Task Budgets",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/task-budgets",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Fast Mode",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Structured Outputs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Citations",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/citations",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Streaming",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/streaming",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Batch Processing",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/batch-processing",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Search Results",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/search-results",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Handle Streaming Refusals",
+        "url": "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Multilingual Support",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/multilingual-support",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Embeddings",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/embeddings",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Tool Use — Overview",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "How Tool Use Works",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Web Search Tool",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Web Fetch Tool",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-fetch-tool",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Code Execution Tool",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Advisor Tool",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Memory Tool",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Bash Tool",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/bash-tool",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Computer Use Tool",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Text Editor Tool",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/text-editor-tool",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Tool Reference",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Tool Search Tool",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Programmatic Tool Calling",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Fine Grained Tool Streaming",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Context Windows",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/context-windows",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Compaction",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/compaction",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Context Editing",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/context-editing",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Prompt Caching",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Token Counting",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/token-counting",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Files",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/files",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "PDF Support",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/pdf-support",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Vision",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/vision",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Agent Skills — Overview",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
       }
     ]
   }
