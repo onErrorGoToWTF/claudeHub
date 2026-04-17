@@ -305,6 +305,9 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 
 .cards { display: flex; flex-direction: column; gap: 12px; }
 .cards[hidden] { display: none; }
+.pane[hidden] { display: none; }
+.subpills-nested { margin-top: 4px; }
+.subpills-nested .subpill { font-size: 12.5px; padding: 5px 10px; }
 
 /* Section accents */
 [data-section="365"]       { --sec: var(--accent-365); }

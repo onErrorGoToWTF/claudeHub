@@ -84,7 +84,7 @@
     });
   });
 
-  // 365 sub-pills: Resources / News
+  // 365 sub-pills: Tutorials / Resources / News
   document.querySelectorAll(".subpill[data-s365]").forEach((pill) => {
     pill.addEventListener("click", () => {
       const kind = pill.dataset.s365;
@@ -93,10 +93,25 @@
         p.classList.toggle("is-active", on);
         p.setAttribute("aria-selected", on ? "true" : "false");
       });
-      const resources = document.querySelector('[data-cards="365-resources"]');
-      const news      = document.querySelector('[data-cards="365-news"]');
-      if (resources) resources.hidden = kind !== "resources";
-      if (news)      news.hidden      = kind !== "news";
+      document.querySelectorAll('.pane[data-pane^="365-"]').forEach((pane) => {
+        pane.hidden = pane.dataset.pane !== `365-${kind}`;
+      });
+    });
+  });
+
+  // 365 Resources sub-sub-pills: Videos / Official
+  document.querySelectorAll(".subpill[data-s365res]").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const kind = pill.dataset.s365res;
+      document.querySelectorAll(".subpill[data-s365res]").forEach((p) => {
+        const on = p === pill;
+        p.classList.toggle("is-active", on);
+        p.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      const videos   = document.querySelector('[data-cards="365-resources-videos"]');
+      const official = document.querySelector('[data-cards="365-resources-official"]');
+      if (videos)   videos.hidden   = kind !== "videos";
+      if (official) official.hidden = kind !== "official";
     });
   });
 
@@ -180,7 +195,7 @@
   }
 
   const CARD_CONTAINERS = [
-    "365-resources", "365-news",
+    "365-tutorials", "365-resources-videos", "365-resources-official", "365-news",
     "resources-videos", "resources-official",
     "news",
   ];
@@ -806,8 +821,7 @@
     if (loaded365) return;
     loaded365 = true;
 
-    // Ensure latest data is loaded (needed for both news sub-pill and the
-    // video pick below).
+    // Ensure latest data is loaded (needed for Resources + News sub-pills).
     if (!latestData) {
       try {
         const res = await fetch(DATA_URL, { cache: "no-cache" });
@@ -815,33 +829,26 @@
       } catch {}
     }
 
-    // Resources (tutorials) — fetch the 365 index, then append top-3 videos.
+    // Tutorials sub-pill — hand-authored markdown from data/365/tutorials.json.
     try {
       const res = await fetch(TUTORIALS_365_URL, { cache: "no-cache" });
       if (!res.ok) throw new Error("HTTP " + res.status);
       const data = await res.json();
-      renderTutorials('[data-cards="365-resources"]', data.tutorials || []);
-
-      const videos = (latestData?.sections?.tutorials || [])
-        .filter((t) => t.tutorial_kind === "video")
-        .slice(0, 3);
-      const container = document.querySelector('[data-cards="365-resources"]');
-      if (container && videos.length) {
-        if (!data.tutorials?.length) container.innerHTML = "";
-        const frag = document.createDocumentFragment();
-        videos.forEach((v, idx) => {
-          const node = renderCard(v, true, idx);
-          registerReveal(node, idx);
-          frag.appendChild(node);
-        });
-        container.appendChild(frag);
-      }
+      renderTutorials('[data-cards="365-tutorials"]', data.tutorials || []);
     } catch (err) {
-      const c = document.querySelector('[data-cards="365-resources"]');
+      const c = document.querySelector('[data-cards="365-tutorials"]');
       if (c) c.innerHTML = `<div class="empty">Couldn't load tutorials. ${escHtml(err.message || err)}</div>`;
     }
 
-    // News — pull from latest.json sections.comply365_news.
+    // Resources sub-pill — newest Claude videos + official docs from the main
+    // tutorials pool, sliced to keep it tight and curated-feeling.
+    const allTuts = latestData?.sections?.tutorials || [];
+    const videos   = allTuts.filter((t) => t.tutorial_kind === "video").slice(0, 6);
+    const official = allTuts.filter((t) => t.tutorial_kind !== "video").slice(0, 6);
+    renderSection("365-resources-videos",   videos,   true);
+    renderSection("365-resources-official", official, false);
+
+    // News sub-pill — Comply365 + competitor scraped items.
     renderSection("365-news", sortByDateDesc(latestData?.sections?.comply365_news || []), false);
   }
 })();
