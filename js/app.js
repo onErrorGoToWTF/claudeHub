@@ -143,7 +143,8 @@
     // SVG + bar charts: re-render gives us fresh SMIL / CSS animations.
     renderTimeline();
     renderCompare();
-    renderLeap();
+    renderIndex();
+    renderScorecard();
   }
 
   chips.forEach(chip => {
@@ -464,48 +465,76 @@
   }
 
   // ======================================================================
-  // Opus 4.7 vs 4.6 — the "leap" chart.
-  // Numbers sourced from anthropic.com/news/claude-opus-4-7 (customer quotes).
+  // Intelligence Index v4.0 — composite of 10 benchmarks (Artificial Analysis).
+  // Scores verified from artificialanalysis.ai (Apr 2026). Opus 4.7 pending.
   // ======================================================================
-  function renderLeap() {
-    const host = document.getElementById("leap-rows");
+  function renderIndex() {
+    const host = document.getElementById("vbars");
     if (!host) return;
     const rows = [
-      { name: "CursorBench",          prev: 58,   next: 70,   source: "Cursor" },
-      { name: "Visual acuity",        prev: 54.5, next: 98.5, source: "XBOW" },
+      { name: "Opus 4.6",       maker: "Claude",  score: 53, color: "#a684ff", hero: true },
+      { name: "GPT-5.3 Codex",  maker: "OpenAI",  score: 54, color: "#4ade80" },
+      { name: "GPT-5.4",        maker: "OpenAI",  score: 57, color: "#4ade80" },
+      { name: "Gemini 3.1 Pro", maker: "Google",  score: 57, color: "#22d3ee" },
+    ];
+    const max = 70;
+    host.innerHTML = "";
+    rows.forEach((r, i) => {
+      const h = (r.score / max) * 100;
+      const delay = 0.25 + i * 0.12;
+      const el = document.createElement("div");
+      el.className = "vbar" + (r.hero ? " is-hero" : "");
+      el.style.setProperty("--vbar-h", h.toFixed(1) + "%");
+      el.style.setProperty("--vbar-col", r.color);
+      el.style.setProperty("--vbar-delay", delay + "s");
+      el.innerHTML = `
+        <div class="vbar-val">${r.score}</div>
+        <div class="vbar-track"><div class="vbar-fill"></div></div>
+        <div class="vbar-name">${r.name}</div>
+        <div class="vbar-lbl">${r.maker}</div>
+      `;
+      host.appendChild(el);
+    });
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      host.querySelectorAll(".vbar").forEach((el) => el.classList.add("is-go"));
+    }));
+  }
+
+  // ======================================================================
+  // Opus 4.7 scorecard — horizontal bars for each benchmark from launch.
+  // Verified quotes from anthropic.com/news/claude-opus-4-7.
+  // ======================================================================
+  function renderScorecard() {
+    const host = document.getElementById("hbars");
+    if (!host) return;
+    const rows = [
+      { name: "XBOW · visual acuity",   score: 98.5, prev: 54.5 },
+      { name: "Harvey · BigLaw Bench",  score: 90.9, prev: null, note: "high effort" },
+      { name: "Cursor · CursorBench",   score: 70,   prev: 58   },
     ];
     host.innerHTML = "";
     rows.forEach((r, i) => {
-      const delta = +(r.next - r.prev).toFixed(1);
-      const delay = 0.3 + i * 0.25;
+      const delay = 0.25 + i * 0.18;
       const el = document.createElement("div");
-      el.className = "leap-row";
-      el.style.setProperty("--leap-delay", delay + "s");
-      el.style.setProperty("--prev-w", r.prev + "%");
-      el.style.setProperty("--next-w", r.next + "%");
+      el.className = "hbar";
+      el.style.setProperty("--hbar-w", r.score + "%");
+      el.style.setProperty("--hbar-delay", delay + "s");
+      if (r.prev != null) el.style.setProperty("--hbar-prev", r.prev + "%");
+      const delta = r.prev != null ? "+" + (+(r.score - r.prev).toFixed(1)) + "pt" : (r.note || "");
       el.innerHTML = `
-        <div class="leap-head">
-          <span class="leap-name">${r.name}</span>
-          <span class="leap-src">${r.source}</span>
-          <span class="leap-delta">+${delta}pt</span>
+        <div class="hbar-head">
+          <span class="hbar-name">${r.name}</span>
+          <span class="hbar-delta">${delta}</span>
         </div>
-        <div class="leap-track">
-          <div class="leap-guide"></div>
-          <div class="leap-bar leap-prev">
-            <span class="leap-lbl">4.6</span>
-            <span class="leap-val">${r.prev}%</span>
-          </div>
-          <div class="leap-bar leap-next">
-            <span class="leap-lbl">4.7</span>
-            <span class="leap-val">${r.next}%</span>
-          </div>
-          <div class="leap-electron"></div>
+        <div class="hbar-track">
+          ${r.prev != null ? '<div class="hbar-prev-tick" aria-hidden="true"></div>' : ''}
+          <div class="hbar-fill"><span class="hbar-val">${r.score}%</span></div>
         </div>
       `;
       host.appendChild(el);
     });
     requestAnimationFrame(() => requestAnimationFrame(() => {
-      host.querySelectorAll(".leap-row").forEach(el => el.classList.add("is-go"));
+      host.querySelectorAll(".hbar").forEach((el) => el.classList.add("is-go"));
     }));
   }
 
