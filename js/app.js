@@ -806,32 +806,42 @@
     if (loaded365) return;
     loaded365 = true;
 
-    // Resources (tutorials) — fetch the 365 index.
+    // Ensure latest data is loaded (needed for both news sub-pill and the
+    // video pick below).
+    if (!latestData) {
+      try {
+        const res = await fetch(DATA_URL, { cache: "no-cache" });
+        if (res.ok) latestData = await res.json();
+      } catch {}
+    }
+
+    // Resources (tutorials) — fetch the 365 index, then append top-3 videos.
     try {
       const res = await fetch(TUTORIALS_365_URL, { cache: "no-cache" });
       if (!res.ok) throw new Error("HTTP " + res.status);
       const data = await res.json();
       renderTutorials('[data-cards="365-resources"]', data.tutorials || []);
+
+      const videos = (latestData?.sections?.tutorials || [])
+        .filter((t) => t.tutorial_kind === "video")
+        .slice(0, 3);
+      const container = document.querySelector('[data-cards="365-resources"]');
+      if (container && videos.length) {
+        if (!data.tutorials?.length) container.innerHTML = "";
+        const frag = document.createDocumentFragment();
+        videos.forEach((v, idx) => {
+          const node = renderCard(v, true, idx);
+          registerReveal(node, idx);
+          frag.appendChild(node);
+        });
+        container.appendChild(frag);
+      }
     } catch (err) {
       const c = document.querySelector('[data-cards="365-resources"]');
       if (c) c.innerHTML = `<div class="empty">Couldn't load tutorials. ${escHtml(err.message || err)}</div>`;
     }
 
-    // News — pull from latest.json sections.comply365_news (already loaded
-    // by load(), or re-fetch if not yet available).
-    let items = latestData?.sections?.comply365_news;
-    if (!items) {
-      try {
-        const res = await fetch(DATA_URL, { cache: "no-cache" });
-        if (res.ok) {
-          const data = await res.json();
-          latestData = data;
-          items = data?.sections?.comply365_news || [];
-        }
-      } catch {
-        items = [];
-      }
-    }
-    renderSection("365-news", sortByDateDesc(items || []), false);
+    // News — pull from latest.json sections.comply365_news.
+    renderSection("365-news", sortByDateDesc(latestData?.sections?.comply365_news || []), false);
   }
 })();
