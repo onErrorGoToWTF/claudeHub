@@ -1216,81 +1216,98 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   letter-spacing: 0.06em;
 }
 
-/* ===== Horizontal bars (Opus 4.7 scorecard) ===== */
+/* ===== Horizontal bars (Opus 4.7 scorecard) — matches .cbar style ===== */
 .hbars {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin-top: 12px;
+  margin-top: 8px;
 }
-.hbar { --hbar-w: 0%; --hbar-prev: 0%; --hbar-delay: 0s; }
-.hbar-head {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin-bottom: 6px;
+.hbar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  row-gap: 5px;
+  align-items: center;
+  --hbar-w: 0%;
+  --hbar-prev: 0%;
+  --hbar-delay: 0s;
 }
 .hbar-name {
-  font-size: 13px; font-weight: 600; color: var(--text-1);
+  font-size: 13px; font-weight: 500; color: var(--text-1);
+  letter-spacing: -0.005em;
+}
+.hbar-val {
+  font-size: 12.5px; font-weight: 600; color: var(--text-2);
+  letter-spacing: -0.005em;
+  font-variant-numeric: tabular-nums;
 }
 .hbar-delta {
-  margin-left: auto;
-  font-size: 11px; font-weight: 600;
+  font-size: 10.5px; font-weight: 600;
   color: var(--lisa-hi);
-  padding: 2px 9px;
+  padding: 2px 8px;
   border-radius: 999px;
   background: color-mix(in srgb, var(--lisa) 14%, transparent);
   border: 1px solid color-mix(in srgb, var(--lisa) 28%, transparent);
   opacity: 0;
   transition: opacity 0.4s var(--ease);
-  transition-delay: calc(var(--hbar-delay) + 0.85s);
+  transition-delay: calc(var(--hbar-delay) + 0.9s);
 }
 .hbar.is-go .hbar-delta { opacity: 1; }
 .hbar-track {
+  grid-column: 1 / -1;
   position: relative;
-  height: 22px;
+  height: 2px;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--bg-2) 60%, transparent);
-  border: 1px solid var(--border);
-  overflow: hidden;
+  background: color-mix(in srgb, var(--bg-3) 65%, transparent);
+  overflow: visible;
 }
 .hbar-prev-tick {
   position: absolute;
   left: var(--hbar-prev);
-  top: 0; bottom: 0;
+  top: -6px; bottom: -6px;
   width: 0;
-  border-left: 1.5px dashed color-mix(in srgb, var(--accent) 65%, transparent);
+  border-left: 1.5px dashed color-mix(in srgb, var(--accent) 60%, transparent);
   opacity: 0;
   transition: opacity 0.4s var(--ease);
   transition-delay: calc(var(--hbar-delay) + 0.4s);
-  z-index: 2;
+  z-index: 1;
 }
-.hbar.is-go .hbar-prev-tick { opacity: 0.9; }
+.hbar.is-go .hbar-prev-tick { opacity: 0.7; }
 .hbar-fill {
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
+  position: absolute; left: 0; top: 0; bottom: 0;
   width: 0;
   border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 10px;
-  background: linear-gradient(90deg, var(--lisa), var(--lisa-hi));
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.06) inset;
-  transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1) var(--hbar-delay);
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--lisa) 22%, transparent),
+    var(--lisa-hi));
+  box-shadow: 0 0 10px color-mix(in srgb, var(--lisa) 55%, transparent);
+  transition: width 1.5s var(--ease);
+  transition-delay: var(--hbar-delay);
 }
 .hbar.is-go .hbar-fill { width: var(--hbar-w); }
-.hbar-val {
-  color: var(--lisa-ink);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
+.hbar-electron {
+  position: absolute;
+  right: 0; top: 50%;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center,
+    #ffffff 0%,
+    #ffffff 22%,
+    color-mix(in srgb, var(--lisa) 80%, transparent) 40%,
+    color-mix(in srgb, var(--lisa) 28%, transparent) 62%,
+    transparent 76%);
+  transform: translate(50%, -50%);
   opacity: 0;
-  transition: opacity 0.4s var(--ease);
-  transition-delay: calc(var(--hbar-delay) + 0.9s);
+  transition: opacity 0.15s var(--ease);
+  transition-delay: var(--hbar-delay);
+  pointer-events: none;
 }
-.hbar.is-go .hbar-val { opacity: 1; }
+.hbar.is-go .hbar-electron {
+  opacity: 1;
+  animation: cbarPulse 1.6s var(--ease) calc(var(--hbar-delay) + 1.55s) infinite;
+}
 
 /* ===== Toast ===== */
 .toast {

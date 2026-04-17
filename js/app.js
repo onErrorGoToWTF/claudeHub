@@ -562,13 +562,14 @@
       if (r.prev != null) el.style.setProperty("--hbar-prev", r.prev + "%");
       const delta = r.prev != null ? "+" + (+(r.score - r.prev).toFixed(1)) + "pt" : (r.note || "");
       el.innerHTML = `
-        <div class="hbar-head">
-          <span class="hbar-name">${r.name}</span>
-          <span class="hbar-delta">${delta}</span>
-        </div>
+        <div class="hbar-name">${r.name}</div>
+        <div class="hbar-val">${r.score}%</div>
+        <div class="hbar-delta">${delta}</div>
         <div class="hbar-track">
           ${r.prev != null ? '<div class="hbar-prev-tick" aria-hidden="true"></div>' : ''}
-          <div class="hbar-fill"><span class="hbar-val">${r.score}%</span></div>
+          <div class="hbar-fill">
+            <div class="hbar-electron" aria-hidden="true"></div>
+          </div>
         </div>
       `;
       host.appendChild(el);
