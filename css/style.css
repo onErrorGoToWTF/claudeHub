@@ -1219,8 +1219,8 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 
 /* ===== Restrained rounding (sub-pills, chips, cards) ===== */
-.subpill { border-radius: var(--radius-pill); }
-.subpills { border-radius: var(--radius-pill); }
+.subpill { border-radius: var(--radius-sm); }
+.subpills { border-radius: var(--radius-md); }
 .card { border-radius: var(--radius-md); }
 .card.video { border-radius: var(--radius-md); }
 
