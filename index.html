@@ -129,6 +129,11 @@
       <div class="cards" data-cards="lisa-tutorials"></div>
     </div>
 
+    <div class="lisa-group" data-group="lisa-pinned" hidden>
+      <h3 class="lisa-group-head">More tutorials Alan pinned for you</h3>
+      <div class="cards" data-cards="lisa-pinned"></div>
+    </div>
+
     <div class="lisa-group">
       <h3 class="lisa-group-head">Claude news for RevOps</h3>
       <div class="cards" data-cards="lisa-news"></div>
@@ -179,7 +184,12 @@
       <h2>Guides & Tips</h2>
       <span class="updated" data-updated="tutorials">—</span>
     </div>
-    <div class="cards" data-cards="tutorials"></div>
+    <div class="subpills" role="tablist" aria-label="Tutorial kind">
+      <button class="subpill is-active" data-tutkind="video"    type="button" role="tab" aria-selected="true">Videos</button>
+      <button class="subpill"           data-tutkind="official" type="button" role="tab" aria-selected="false">Official</button>
+    </div>
+    <div class="cards cards-video" data-cards="tutorials-videos"></div>
+    <div class="cards" data-cards="tutorials-official" hidden></div>
   </section>
 
   <footer class="foot">
@@ -191,6 +201,9 @@
 
 <template id="tpl-card">
   <a class="card glass" target="_blank" rel="noopener">
+    <button class="card-pin" type="button" aria-label="Pin for Lisa" hidden>
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.7 1.5 6.8L12 17.3 5.9 20.5l1.5-6.8L2.2 9l6.9-.7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    </button>
     <div class="card-meta">
       <img class="card-icon" width="14" height="14" loading="lazy" alt="">
       <span class="card-source"></span>
@@ -204,6 +217,9 @@
 
 <template id="tpl-video">
   <a class="card video glass" target="_blank" rel="noopener">
+    <button class="card-pin" type="button" aria-label="Pin for Lisa" hidden>
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.7 1.5 6.8L12 17.3 5.9 20.5l1.5-6.8L2.2 9l6.9-.7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    </button>
     <div class="thumb"><img loading="lazy" alt=""></div>
     <div class="card-body">
       <div class="card-meta">

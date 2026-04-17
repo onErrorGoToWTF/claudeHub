@@ -9,11 +9,22 @@ import { fetchNews } from "./fetch_news.js";
 import { fetchYouTube } from "./fetch_youtube.js";
 import { fetchHN } from "./fetch_hn.js";
 import { fetchTutorials } from "./fetch_tutorials.js";
+import { fetchDocs } from "./fetch_docs.js";
 import { logSection } from "./lib/util.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const OUT = path.join(ROOT, "data", "latest.json");
+
+// How-to intent on YouTube titles. Keep high-signal — this pulls videos into
+// the Tutorials > Videos sub-tab. Main YouTube tab stays unfiltered.
+const TUT_VIDEO_RE = /\b(tutorial|guide|how[- ]?to|walkthrough|build(ing)?|set[- ]?up|getting started|intro|introducing|beginner|step[- ]by[- ]step|new in|what'?s new|explained|deep dive|crash course|masterclass|quickstart|lesson|feature[sd]?)\b/i;
+
+function filterYouTubeTutorials(videos) {
+  return videos
+    .filter((v) => TUT_VIDEO_RE.test(v.title || ""))
+    .map((v) => ({ ...v, tutorial_kind: "video" }));
+}
 
 async function readExisting() {
   try {
@@ -32,6 +43,18 @@ function merge(existing, fresh) {
   return fresh;
 }
 
+function dedupeByUrl(items) {
+  const seen = new Set();
+  const out = [];
+  for (const it of items) {
+    const key = (it.url || "").toLowerCase();
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    out.push(it);
+  }
+  return out;
+}
+
 async function main() {
   console.log("Claude Daily Intelligence Hub \u2014 building feed\u2026");
 
@@ -48,14 +71,26 @@ async function main() {
   const youtube = await fetchYouTube().catch((e) => (console.warn(e.message), []));
   logSection("hackernews (merged into news)");
   const hn = await fetchHN().catch((e) => (console.warn(e.message), []));
-  logSection("tutorials");
-  const tutorials = await fetchTutorials().catch((e) => (console.warn(e.message), []));
+  logSection("tutorials (official)");
+  const officialTuts = await fetchTutorials().catch((e) => (console.warn(e.message), []));
+  logSection("docs (platform.claude.com)");
+  const docs = await fetchDocs().catch((e) => (console.warn(e.message), []));
 
   // Combine HN into news, sort by date
   const mergedNews = [...news, ...hn]
     .filter((v, i, a) => a.findIndex((x) => x.url === v.url) === i)
     .sort((a, b) => Date.parse(b.published || 0) - Date.parse(a.published || 0))
     .slice(0, 25);
+
+  // Merge sections first so tutorial-videos can be derived from the merged
+  // (possibly prior) YouTube list if this run's YT fetch failed.
+  const mergedYouTube = merge(priorSections.youtube, youtube);
+
+  // Tutorials section = Official (docs + cookbook/courses/releases + eng/learn)
+  //                   + Videos (how-to filtered YouTube).
+  const videoTuts = filterYouTubeTutorials(mergedYouTube);
+  const tutorials = dedupeByUrl([...docs, ...officialTuts, ...videoTuts])
+    .sort((a, b) => Date.parse(b.published || 0) - Date.parse(a.published || 0));
 
   const payload = {
     generated_at: new Date().toISOString(),
@@ -64,7 +99,7 @@ async function main() {
       updates:   merge(priorSections.updates,   updates),
       news:      merge(priorSections.news,      mergedNews),
       status:    merge(priorSections.status,    status),
-      youtube:   merge(priorSections.youtube,   youtube),
+      youtube:   mergedYouTube,
       tutorials: merge(priorSections.tutorials, tutorials),
     },
   };
@@ -75,7 +110,9 @@ async function main() {
   const counts = Object.fromEntries(
     Object.entries(payload.sections).map(([k, v]) => [k, v.length])
   );
+  const tutKinds = tutorials.reduce((a, t) => (a[t.tutorial_kind || "none"] = (a[t.tutorial_kind || "none"] || 0) + 1, a), {});
   console.log("\nDone. Counts:", counts);
+  console.log("Tutorial kinds:", tutKinds);
 }
 
 main().catch((err) => {

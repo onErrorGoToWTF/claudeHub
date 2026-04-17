@@ -1017,3 +1017,108 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   .app { padding-top: 28px; gap: 34px; }
   .section-head h2 { font-size: 22px; }
 }
+
+/* ===== Tutorials sub-pills ===== */
+.subpills {
+  display: flex;
+  gap: 6px;
+  margin: -6px 0 14px;
+  padding: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg-2) 65%, transparent);
+  border: 1px solid var(--border);
+  width: fit-content;
+}
+.subpill {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--text-3);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: -0.003em;
+  cursor: pointer;
+  transition: color 0.2s var(--ease), background 0.2s var(--ease);
+  touch-action: manipulation;
+}
+.subpill:hover { color: var(--text-2); }
+.subpill.is-active {
+  color: var(--text-1);
+  background: var(--surface-strong);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset,
+              0 4px 14px -8px rgba(0,0,0,0.6);
+}
+
+/* ===== Card pin button ===== */
+.card { position: relative; }
+.card-pin {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-2) 72%, transparent);
+  color: var(--text-3);
+  cursor: pointer;
+  z-index: 3;
+  transition: color 0.18s var(--ease), background 0.18s var(--ease), border-color 0.18s var(--ease), transform 0.16s var(--ease);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+}
+.card-pin:hover {
+  color: var(--lisa-hi);
+  border-color: var(--lisa-soft);
+}
+.card-pin:active { transform: scale(0.92); }
+.card-pin.is-on {
+  color: var(--lisa-ink);
+  background: linear-gradient(135deg, var(--lisa), var(--lisa-hi));
+  border-color: transparent;
+  box-shadow: 0 6px 18px -8px var(--lisa-soft),
+              0 0 0 1px rgba(255,255,255,0.05);
+}
+.card-pin.is-on svg path { fill: currentColor; }
+.card-pin[data-busy="1"] { opacity: 0.55; pointer-events: none; }
+
+/* Keep the card-meta row clear of the pin button */
+.card .card-meta { padding-right: 38px; }
+.card.video .card-pin { top: 10px; right: 10px; }
+
+/* ===== Toast ===== */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(22px + var(--safe-b));
+  transform: translateX(-50%) translateY(20px);
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--surface-elev);
+  border: 1px solid var(--border-strong);
+  color: var(--text-1);
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 18px 40px -18px rgba(0,0,0,0.8),
+              0 6px 18px -8px rgba(0,0,0,0.45);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 200;
+  transition: opacity 0.25s var(--ease), transform 0.3s var(--ease);
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+}
+.toast.is-show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.toast[data-kind="err"] {
+  border-color: color-mix(in srgb, var(--danger) 50%, var(--border-strong));
+  color: var(--danger);
+}

@@ -9,13 +9,17 @@
 
   // TODO: set this to your deployed Cloudflare Worker URL after `wrangler deploy`.
   // While unset, the form shows a friendly "not wired up yet" message.
-  const WORKER_URL = "https://claudehub-lisa.alanyoungjr.workers.dev/submit";
+  const WORKER_BASE = "https://claudehub-lisa.alanyoungjr.workers.dev";
+  const WORKER_URL = WORKER_BASE + "/submit";
+  const WORKER_PIN_URL = WORKER_BASE + "/pin";
   const WORKER_PLACEHOLDER = /YOUR-SUBDOMAIN/.test(WORKER_URL);
 
   // SHA-256 of the Lisa-tab password. Plaintext lives on Alan's and Lisa's phones only.
   // To rotate: regenerate with `node -e "..."` (see chat), replace this hash, commit.
   const LISA_PW_HASH = "bbd2915e8e9e0e54d1b210501ebd8ed391957692016af2e409ebcb4951d796e1";
   const LISA_UNLOCK_KEY = "cdih-lisa-unlocked";
+  const LISA_SECRET_KEY = "cdih-lisa-secret";
+  const PIN_LOCAL_KEY   = "cdih-pinned";
 
   async function sha256Hex(s) {
     const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
@@ -24,6 +28,42 @@
 
   function isLisaUnlocked() {
     return localStorage.getItem(LISA_UNLOCK_KEY) === LISA_PW_HASH;
+  }
+
+  function getLisaSecret() {
+    return localStorage.getItem(LISA_SECRET_KEY) || "";
+  }
+
+  function loadPinnedMap() {
+    try { return JSON.parse(localStorage.getItem(PIN_LOCAL_KEY) || "{}") || {}; }
+    catch { return {}; }
+  }
+
+  function savePinnedMap(map) {
+    localStorage.setItem(PIN_LOCAL_KEY, JSON.stringify(map));
+  }
+
+  function isPinned(url) {
+    return !!loadPinnedMap()[url];
+  }
+
+  function setPinnedLocal(url, pinned) {
+    const map = loadPinnedMap();
+    if (pinned) map[url] = true; else delete map[url];
+    savePinnedMap(map);
+  }
+
+  async function sendPin(action, item) {
+    const secret = getLisaSecret();
+    if (!secret) throw new Error("Unlock the 365 tab first to pin.");
+    const res = await fetch(WORKER_PIN_URL, {
+      method: "POST",
+      headers: { "content-type": "application/json", "x-lisa-gate": secret },
+      body: JSON.stringify({ action, item }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.error || ("HTTP " + res.status));
+    return data;
   }
 
   function openLisaModal() {
@@ -109,8 +149,27 @@
     chip.addEventListener("click", () => {
       const f = chip.dataset.filter;
       if (f === "lisa" && !isLisaUnlocked()) { openLisaModal(); return; }
+      // Previously-unlocked sessions may lack the plaintext secret needed for
+      // /pin. Prompt once so pinning works without forcing a lock-out first.
+      if (f === "lisa" && isLisaUnlocked() && !getLisaSecret()) { openLisaModal(); return; }
       applyFilter(f);
       window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  // Tutorials sub-pills: Videos / Official
+  document.querySelectorAll(".subpill[data-tutkind]").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const kind = pill.dataset.tutkind;
+      document.querySelectorAll(".subpill[data-tutkind]").forEach((p) => {
+        const on = p === pill;
+        p.classList.toggle("is-active", on);
+        p.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      const videos   = document.querySelector('[data-cards="tutorials-videos"]');
+      const official = document.querySelector('[data-cards="tutorials-official"]');
+      if (videos)   videos.hidden   = kind !== "video";
+      if (official) official.hidden = kind !== "official";
     });
   });
 
@@ -181,10 +240,12 @@
     } catch { return ""; }
   }
 
+  const CARD_CONTAINERS = ["updates","news","status","youtube","tutorials-videos","tutorials-official"];
+
   // ---------- Skeletons ----------
   function showSkeletons() {
     const tpl = document.getElementById("tpl-skeleton");
-    SECTIONS.forEach(s => {
+    CARD_CONTAINERS.forEach(s => {
       const container = document.querySelector(`[data-cards="${s}"]`);
       if (!container) return;
       container.innerHTML = "";
@@ -193,7 +254,7 @@
   }
 
   // ---------- Card rendering (main feed) ----------
-  function renderCard(item, videoLike, index) {
+  function renderCard(item, videoLike, index, opts = {}) {
     const tpl = document.getElementById(videoLike ? "tpl-video" : "tpl-card");
     const node = tpl.content.firstElementChild.cloneNode(true);
     node.href = item.url;
@@ -232,10 +293,69 @@
         img.alt = item.title || "";
       }
     }
+
+    // Pin button — only on tutorial cards, only when user has Lisa secret.
+    if (opts.pinnable) {
+      const btn = node.querySelector(".card-pin");
+      if (btn) {
+        btn.hidden = !getLisaSecret();
+        if (isPinned(item.url)) btn.classList.add("is-on");
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          handlePinClick(btn, item, videoLike);
+        });
+      }
+    }
     return node;
   }
 
-  function renderSection(name, items, videoLike) {
+  async function handlePinClick(btn, item, videoLike) {
+    if (btn.dataset.busy === "1") return;
+    btn.dataset.busy = "1";
+    const currentlyPinned = btn.classList.contains("is-on");
+    const action = currentlyPinned ? "remove" : "add";
+    // Optimistic toggle
+    btn.classList.toggle("is-on", !currentlyPinned);
+    setPinnedLocal(item.url, !currentlyPinned);
+    try {
+      await sendPin(action, {
+        title: item.title,
+        url: item.url,
+        source: item.source || item.channel || "",
+        summary: item.summary || "",
+        thumbnail: item.thumbnail || "",
+        kind: videoLike ? "video" : "official",
+      });
+      showToast(action === "add" ? "Pinned for Lisa" : "Unpinned");
+      // Force next 365 tab visit to re-fetch lisa.json so pin appears live.
+      lisaLoaded = false;
+    } catch (err) {
+      // Roll back on failure
+      btn.classList.toggle("is-on", currentlyPinned);
+      setPinnedLocal(item.url, currentlyPinned);
+      showToast("Pin failed: " + (err.message || err), true);
+    } finally {
+      btn.dataset.busy = "";
+    }
+  }
+
+  function showToast(text, isError) {
+    let el = document.getElementById("cdih-toast");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "cdih-toast";
+      el.className = "toast";
+      document.body.appendChild(el);
+    }
+    el.textContent = text;
+    el.dataset.kind = isError ? "err" : "ok";
+    el.classList.add("is-show");
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => el.classList.remove("is-show"), 2200);
+  }
+
+  function renderSection(name, items, videoLike, opts = {}) {
     const container = document.querySelector(`[data-cards="${name}"]`);
     if (!container) return;
     container.innerHTML = "";
@@ -247,7 +367,7 @@
       return;
     }
     const frag = document.createDocumentFragment();
-    items.slice(0, 12).forEach((i, idx) => frag.appendChild(renderCard(i, videoLike, idx)));
+    items.slice(0, 18).forEach((i, idx) => frag.appendChild(renderCard(i, videoLike, idx, opts)));
     container.appendChild(frag);
   }
 
@@ -280,12 +400,17 @@
       }
       renderSection("status",    s.status,    false);
       renderSection("youtube",   s.youtube,   true);
-      renderSection("tutorials", s.tutorials, false);
+      // Tutorials split by tutorial_kind into Videos and Official sub-tabs.
+      const tuts = Array.isArray(s.tutorials) ? s.tutorials : [];
+      const tutVideos   = tuts.filter((t) => t.tutorial_kind === "video");
+      const tutOfficial = tuts.filter((t) => t.tutorial_kind !== "video");
+      renderSection("tutorials-videos",   tutVideos,   true,  { pinnable: true });
+      renderSection("tutorials-official", tutOfficial, false, { pinnable: true });
 
       SECTIONS.forEach(sec => setUpdated(sec, data.generated_at));
       document.getElementById("generated").textContent = prettyDate(data.generated_at);
     } catch (err) {
-      SECTIONS.forEach(name => {
+      CARD_CONTAINERS.forEach(name => {
         const container = document.querySelector(`[data-cards="${name}"]`);
         if (!container) return;
         container.innerHTML = `<div class="empty">Couldn't load feed. ${String(err.message || err)}</div>`;
@@ -619,7 +744,8 @@
     if (lisaLoaded) return;
     lisaLoaded = true;
     try {
-      const res = await fetch(LISA_URL, { cache: "no-cache" });
+      // Always bust cache so freshly pinned items appear without a hard reload.
+      const res = await fetch("data/lisa.json?v=" + Date.now(), { cache: "no-cache" });
       if (!res.ok) throw new Error("HTTP " + res.status);
       const data = await res.json();
       const g = data.greeting || {};
@@ -628,6 +754,7 @@
       renderTutorials(data.tutorials);
       renderLisaCards("lisa-news",  data.news);
       renderLisaCards("lisa-pitch", data.pitch_deck);
+      renderLisaPinned(Array.isArray(data.tutorials_pinned) ? data.tutorials_pinned : []);
     } catch (err) {
       const body = document.querySelector('[data-section="lisa"]');
       const note = document.createElement("div");
@@ -635,6 +762,42 @@
       note.textContent = "Couldn't load Lisa content: " + (err.message || err);
       body.appendChild(note);
     }
+  }
+
+  function renderLisaPinned(items) {
+    const group = document.querySelector('[data-group="lisa-pinned"]');
+    const container = document.querySelector('[data-cards="lisa-pinned"]');
+    if (!group || !container) return;
+    if (!items.length) { group.hidden = true; return; }
+    group.hidden = false;
+    container.innerHTML = "";
+    const frag = document.createDocumentFragment();
+    items.forEach((p) => {
+      const videoLike = p.kind === "video" && !!p.thumbnail;
+      const tpl = document.getElementById(videoLike ? "tpl-video" : "tpl-card");
+      const node = tpl.content.firstElementChild.cloneNode(true);
+      node.href = p.url;
+      node.querySelector(".card-title").textContent = p.title;
+      const src = node.querySelector(".card-source");
+      if (src) src.textContent = p.source || "";
+      const time = node.querySelector(".card-time");
+      if (time) time.textContent = relTime(p.pinned_at) || "";
+      if (videoLike) {
+        const img = node.querySelector("img");
+        if (img && p.thumbnail) { img.src = p.thumbnail; img.alt = p.title || ""; }
+      } else {
+        const sum = node.querySelector(".card-summary");
+        if (sum) { sum.textContent = p.summary || ""; if (!p.summary) sum.remove(); }
+        const icon = node.querySelector(".card-icon");
+        if (icon && p.url) { icon.src = faviconUrl(p.url); icon.onerror = () => (icon.style.display = "none"); }
+        const pill = node.querySelector(".card-pill");
+        if (pill) pill.remove();
+      }
+      const btn = node.querySelector(".card-pin");
+      if (btn) btn.remove();
+      frag.appendChild(node);
+    });
+    container.appendChild(frag);
   }
 
   // ---------- Gate (password) ----------
@@ -646,12 +809,17 @@
   async function tryUnlock() {
     if (!gatePw) return;
     gateErr.textContent = "";
-    const tryHash = await sha256Hex((gatePw.value || "").trim());
+    const plain = (gatePw.value || "").trim();
+    const tryHash = await sha256Hex(plain);
     if (tryHash === LISA_PW_HASH) {
       localStorage.setItem(LISA_UNLOCK_KEY, LISA_PW_HASH);
+      localStorage.setItem(LISA_SECRET_KEY, plain);
       closeLisaModal();
       applyFilter("lisa");
       window.scrollTo({ top: 0, behavior: "smooth" });
+      // Reveal pin buttons on tutorial cards only (tpl-card/tpl-video also
+      // live on news/updates/status, where pins aren't wired).
+      document.querySelectorAll('[data-cards^="tutorials"] .card-pin').forEach((b) => (b.hidden = false));
     } else {
       gateErr.textContent = "Wrong password.";
       gatePw.select();
@@ -678,8 +846,10 @@
   if (lockBtn) {
     lockBtn.addEventListener("click", () => {
       localStorage.removeItem(LISA_UNLOCK_KEY);
-      const all = document.querySelector('[data-filter="all"]');
-      if (all) all.click();
+      localStorage.removeItem(LISA_SECRET_KEY);
+      document.querySelectorAll('[data-cards^="tutorials"] .card-pin').forEach((b) => (b.hidden = true));
+      const home = document.querySelector('[data-filter="home"]');
+      if (home) home.click();
     });
   }
 

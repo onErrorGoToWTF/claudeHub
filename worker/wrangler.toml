@@ -24,3 +24,4 @@ RATE_MAX_REQUESTS = "3"
 # Secrets (set with `wrangler secret put NAME`):
 #   GITHUB_TOKEN      — fine-grained PAT, Contents: Read+Write on this repo only
 #   TURNSTILE_SECRET  — optional; if unset, Turnstile is skipped
+#   LISA_GATE_HASH    — sha256 hex of the 365 password; required for /pin endpoint
