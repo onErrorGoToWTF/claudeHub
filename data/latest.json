@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T01:41:07.570Z",
+  "generated_at": "2026-04-17T01:47:51.001Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -307,18 +307,18 @@
         "summary": "Google in talks with Pentagon to deploy Gemini AI after Claude limits dispute Interesting Engineering"
       },
       {
-        "title": "Anthropic's latest model & big tech earnings preview - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOemw4REZUUExWcjlHZW8yZDd0SWpPVWJQX0twMHFWQjNCaWFteExZMVRLYlBTeXdjazhfaTdNbEpITE9nRHd3Zkw0REc0MjAxd1c4SldTUHluRUtxd3FWQmRFcjZGZjRNU1pkUDFwTHd0VE5NUl9WcmhSOTNxXzNXR0VRMFFpaGRyalA1SDA4UFR4R1NHcFdR?oc=5",
-        "source": "Google News",
-        "published": "2026-04-16T19:23:15.000Z",
-        "summary": "Anthropic's latest model & big tech earnings preview CNBC"
-      },
-      {
         "title": "OpenAI takes aim at Anthropic with beefed-up Codex that gives it more power over your desktop",
         "url": "https://techcrunch.com/2026/04/16/openai-takes-aim-at-anthropic-with-beefed-up-codex-that-gives-it-more-power-over-your-desktop/",
         "source": "TechCrunch",
         "published": "2026-04-16T19:18:41.000Z",
         "summary": "OpenAI's agentic coding tool has gotten a major makeover, with a variety of new powers and abilities."
+      },
+      {
+        "title": "OpenAI takes aim at Anthropic with beefed-up Codex that gives it more power over your desktop - TechCrunch",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPZVJqa08wVGRRcUZuVy1DWVBfY3VSVnB3YzI1dHNtWnVMa09YVWdnTUlUd3hTR01kS3luakl5NlBoXzNRUEdORVR5RDdKai1GZC1XemRpU3YyTkY3NmRObS1QdXZaWE9xMDF2VGVybTJ4VE85LUZONVJOWUE3bkloa0IxN004Yk9PWUpxaXA3eHJFX3B1QzhMLUFOMVU4VzA3ZFRwWlpBZWtjNjAyV29fWGpxcV9WU1lhQk5VY0JxUjJTZkpJUEhV?oc=5",
+        "source": "Google News",
+        "published": "2026-04-16T19:18:41.000Z",
+        "summary": "OpenAI takes aim at Anthropic with beefed-up Codex that gives it more power over your desktop TechCrunch"
       }
     ],
     "status": [
@@ -409,6 +409,50 @@
     ],
     "youtube": [
       {
+        "title": "Claude Opus-4.7 Just Dropped, And...",
+        "url": "https://www.youtube.com/watch?v=WVQ0lPiWsHQ",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "WVQ0lPiWsHQ",
+        "thumbnail": "https://i.ytimg.com/vi/WVQ0lPiWsHQ/hqdefault.jpg",
+        "published": "2026-04-16T14:52:01.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Routines Just Dropped, And It's Perfect",
+        "url": "https://www.youtube.com/watch?v=j3aXJNu9804",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "j3aXJNu9804",
+        "thumbnail": "https://i.ytimg.com/vi/j3aXJNu9804/hqdefault.jpg",
+        "published": "2026-04-14T19:08:20.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Managed Agents Just Dropped, And It Kills n8n",
+        "url": "https://www.youtube.com/watch?v=Ob5Vu-gD3mo",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "Ob5Vu-gD3mo",
+        "thumbnail": "https://i.ytimg.com/vi/Ob5Vu-gD3mo/hqdefault.jpg",
+        "published": "2026-04-08T18:42:51.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Mythos Preview: Everything You Need to Know",
+        "url": "https://www.youtube.com/watch?v=oCuttuCQmZg",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "oCuttuCQmZg",
+        "thumbnail": "https://i.ytimg.com/vi/oCuttuCQmZg/hqdefault.jpg",
+        "published": "2026-04-07T21:24:19.000Z",
+        "summary": ""
+      },
+      {
         "title": "An initiative to secure the world's software | Project Glasswing",
         "url": "https://www.youtube.com/watch?v=INGOC6-LLv0",
         "source": "Anthropic",
@@ -428,6 +472,105 @@
         "video_id": "D4XTefP3Lsc",
         "thumbnail": "https://i.ytimg.com/vi/D4XTefP3Lsc/hqdefault.jpg",
         "published": "2026-04-02T16:06:59.000Z",
+        "summary": ""
+      },
+      {
+        "title": "CLAUDE CODE ADVANCED COURSE — 3 HOURS",
+        "url": "https://www.youtube.com/watch?v=UPtmKh1vMN8",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "UPtmKh1vMN8",
+        "thumbnail": "https://i.ytimg.com/vi/UPtmKh1vMN8/hqdefault.jpg",
+        "published": "2026-03-28T18:59:16.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Computer Use Just Dropped, Here's How to Hack It",
+        "url": "https://www.youtube.com/watch?v=2u93VTYvG5U",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "2u93VTYvG5U",
+        "thumbnail": "https://i.ytimg.com/vi/2u93VTYvG5U/hqdefault.jpg",
+        "published": "2026-03-24T17:51:10.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Channels Just Dropped, And It Kills OpenClaw (Again)",
+        "url": "https://www.youtube.com/watch?v=ot3NM5OVFmc",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "ot3NM5OVFmc",
+        "thumbnail": "https://i.ytimg.com/vi/ot3NM5OVFmc/hqdefault.jpg",
+        "published": "2026-03-20T16:49:29.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Dispatch Just Dropped, And It Kills OpenClaw",
+        "url": "https://www.youtube.com/watch?v=NF10evwkefM",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "NF10evwkefM",
+        "thumbnail": "https://i.ytimg.com/vi/NF10evwkefM/hqdefault.jpg",
+        "published": "2026-03-18T16:58:57.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code + Nano Banana 2 + Kling = $15K Animated Sites",
+        "url": "https://www.youtube.com/watch?v=ZfYvv-0l9NA",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "ZfYvv-0l9NA",
+        "thumbnail": "https://i.ytimg.com/vi/ZfYvv-0l9NA/hqdefault.jpg",
+        "published": "2026-03-16T19:20:45.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Stop Fixing Your Claude Skills. Autoresearch Does It For You",
+        "url": "https://www.youtube.com/watch?v=qKU-e0x2EmE",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "qKU-e0x2EmE",
+        "thumbnail": "https://i.ytimg.com/vi/qKU-e0x2EmE/hqdefault.jpg",
+        "published": "2026-03-13T23:50:39.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code + Karpathy's Autoresearch = The New Meta",
+        "url": "https://www.youtube.com/watch?v=4Cb_l2LJAW8",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "4Cb_l2LJAW8",
+        "thumbnail": "https://i.ytimg.com/vi/4Cb_l2LJAW8/hqdefault.jpg",
+        "published": "2026-03-12T19:31:32.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code's New Upgrade: /btw",
+        "url": "https://www.youtube.com/watch?v=ZbKNpn0woDY",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "ZbKNpn0woDY",
+        "thumbnail": "https://i.ytimg.com/vi/ZbKNpn0woDY/hqdefault.jpg",
+        "published": "2026-03-11T19:51:12.000Z",
+        "summary": ""
+      },
+      {
+        "title": "AI Agents Full Course 2026: Master Agentic AI (2 Hours)",
+        "url": "https://www.youtube.com/watch?v=EsTrWCV0Ph4",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "EsTrWCV0Ph4",
+        "thumbnail": "https://i.ytimg.com/vi/EsTrWCV0Ph4/hqdefault.jpg",
+        "published": "2026-03-08T05:01:31.000Z",
         "summary": ""
       },
       {
@@ -766,6 +909,18 @@
         "published": "2026-03-25T23:13:37.000Z",
         "summary": "",
         "tutorial_kind": "official"
+      },
+      {
+        "title": "Claude Computer Use Just Dropped, Here's How to Hack It",
+        "url": "https://www.youtube.com/watch?v=2u93VTYvG5U",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "2u93VTYvG5U",
+        "thumbnail": "https://i.ytimg.com/vi/2u93VTYvG5U/hqdefault.jpg",
+        "published": "2026-03-24T17:51:10.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
       },
       {
         "title": "Harness Design Long Running Apps",
