@@ -27,13 +27,10 @@
     </button>
   </div>
   <nav class="chips" id="filters" aria-label="Sections">
-    <button class="chip is-active" data-filter="home">Home</button>
-    <button class="chip" data-filter="youtube">YouTube</button>
-    <button class="chip chip-lisa" data-filter="lisa"><span class="chip-lisa-inner">365</span></button>
-    <button class="chip" data-filter="tutorials">Tutorials</button>
-    <button class="chip" data-filter="updates">Updates</button>
-    <button class="chip" data-filter="news">News</button>
-    <button class="chip" data-filter="status">Status</button>
+    <button class="chip glass-pill is-active" data-filter="home">Home</button>
+    <button class="chip glass-pill chip-365" data-filter="365">365</button>
+    <button class="chip glass-pill chip-resources" data-filter="resources">Resources</button>
+    <button class="chip glass-pill chip-news" data-filter="news">News</button>
   </nav>
 </header>
 
@@ -129,97 +126,46 @@
       <div class="home-cta-row">
         <div>
           <div class="home-cta-title">Want more?</div>
-          <div class="home-cta-sub">Tap any chip above — news, YouTube tutorials, live status.</div>
+          <div class="home-cta-sub">Tap any chip above — 365, resources, news.</div>
         </div>
-        <button class="home-cta-btn" data-chip="youtube" type="button">Explore →</button>
+        <button class="home-cta-btn" data-chip="news" type="button">Explore →</button>
       </div>
     </div>
   </section>
 
-  <section class="section section-lisa" data-section="lisa" id="section-lisa" data-hidden="true">
-    <div class="lisa-greeting glass">
-      <h2 class="lisa-headline" data-lisa="headline">Hi Lisa</h2>
-      <p class="lisa-subline" data-lisa="subline"></p>
-    </div>
-
-    <form class="request-box glass" id="lisa-form" novalidate>
-      <label class="request-label" for="lisa-message">Tell Alan what you want to see next</label>
-      <textarea id="lisa-message" name="message" rows="3" maxlength="2000"
-        placeholder="e.g. show me how to connect Claude to my Notion, or write a better prompt for weekly deal-desk reports"></textarea>
-      <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <div class="request-foot">
-        <span class="request-counter" id="lisa-counter">0 / 2000</span>
-        <button class="request-submit" type="submit" id="lisa-submit">Send</button>
-      </div>
-      <div class="request-status" id="lisa-status" role="status" aria-live="polite"></div>
-    </form>
-
-    <div class="lisa-group">
-      <h3 class="lisa-group-head">Start here</h3>
-      <div class="cards" data-cards="lisa-tutorials"></div>
-    </div>
-
-    <div class="lisa-group" data-group="lisa-pinned" hidden>
-      <h3 class="lisa-group-head">More tutorials Alan pinned for you</h3>
-      <div class="cards" data-cards="lisa-pinned"></div>
-    </div>
-
-    <div class="lisa-group">
-      <h3 class="lisa-group-head">Claude news for RevOps</h3>
-      <div class="cards" data-cards="lisa-news"></div>
-    </div>
-
-    <div class="lisa-group">
-      <h3 class="lisa-group-head">For your pitch deck</h3>
-      <div class="cards" data-cards="lisa-pitch"></div>
-    </div>
-
-    <button class="lisa-lock-btn" id="lisa-lock" type="button">Lock this tab</button>
-  </section>
-
-  <section class="section" data-section="updates" id="section-updates">
+  <section class="section" data-section="365" id="section-365">
     <div class="section-head">
-      <h2>Official Updates</h2>
-      <span class="updated" data-updated="updates">—</span>
+      <h2>365</h2>
+      <span class="updated" data-updated="365">—</span>
     </div>
-    <div class="cards" data-cards="updates"></div>
+    <div class="subpills" role="tablist" aria-label="365 content kind">
+      <button class="subpill is-active" data-s365="resources" type="button" role="tab" aria-selected="true">Resources</button>
+      <button class="subpill"           data-s365="news"      type="button" role="tab" aria-selected="false">News</button>
+    </div>
+    <div class="cards" data-cards="365-resources"></div>
+    <div class="cards" data-cards="365-news" hidden></div>
+  </section>
+
+  <section class="section" data-section="resources" id="section-resources">
+    <div class="section-head">
+      <h2>Resources</h2>
+      <span class="updated" data-updated="resources">—</span>
+    </div>
+    <div class="subpills" role="tablist" aria-label="Resources kind">
+      <button class="subpill is-active" data-tutkind="video"    type="button" role="tab" aria-selected="true">Videos</button>
+      <button class="subpill"           data-tutkind="official" type="button" role="tab" aria-selected="false">Official</button>
+    </div>
+    <div class="cards cards-video" data-cards="resources-videos"></div>
+    <div class="cards" data-cards="resources-official" hidden></div>
   </section>
 
   <section class="section" data-section="news" id="section-news">
     <div class="section-head">
-      <h2>In the News</h2>
+      <h2>News</h2>
       <span class="updated" data-updated="news">—</span>
     </div>
-    <div class="cards" data-cards="news"></div>
-  </section>
-
-  <section class="section" data-section="status" id="section-status">
-    <div class="section-head">
-      <h2>Status & Incidents</h2>
-      <span class="updated" data-updated="status">—</span>
-    </div>
-    <div class="cards" data-cards="status"></div>
-  </section>
-
-  <section class="section" data-section="youtube" id="section-youtube">
-    <div class="section-head">
-      <h2>YouTube Tutorials</h2>
-      <span class="updated" data-updated="youtube">—</span>
-    </div>
-    <div class="cards cards-video" data-cards="youtube"></div>
-  </section>
-
-  <section class="section" data-section="tutorials" id="section-tutorials">
-    <div class="section-head">
-      <h2>Guides & Tips</h2>
-      <span class="updated" data-updated="tutorials">—</span>
-    </div>
-    <div class="subpills" role="tablist" aria-label="Tutorial kind">
-      <button class="subpill is-active" data-tutkind="video"    type="button" role="tab" aria-selected="true">Videos</button>
-      <button class="subpill"           data-tutkind="official" type="button" role="tab" aria-selected="false">Official</button>
-    </div>
-    <div class="cards cards-video" data-cards="tutorials-videos"></div>
-    <div class="cards" data-cards="tutorials-official" hidden></div>
+    <div class="status-strip" data-strip="status"></div>
+    <div class="cards cards-mixed" data-cards="news"></div>
   </section>
 
   <footer class="foot">
@@ -231,9 +177,6 @@
 
 <template id="tpl-card">
   <a class="card glass" target="_blank" rel="noopener">
-    <button class="card-pin" type="button" aria-label="Pin for Lisa" hidden>
-      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.7 1.5 6.8L12 17.3 5.9 20.5l1.5-6.8L2.2 9l6.9-.7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-    </button>
     <div class="card-meta">
       <img class="card-icon" width="14" height="14" loading="lazy" alt="">
       <span class="card-source"></span>
@@ -247,9 +190,6 @@
 
 <template id="tpl-video">
   <a class="card video glass" target="_blank" rel="noopener">
-    <button class="card-pin" type="button" aria-label="Pin for Lisa" hidden>
-      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.7 1.5 6.8L12 17.3 5.9 20.5l1.5-6.8L2.2 9l6.9-.7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-    </button>
     <div class="thumb"><img loading="lazy" alt=""></div>
     <div class="card-body">
       <div class="card-meta">
@@ -284,16 +224,6 @@
     <div class="sk sk-line sk-short"></div>
   </div>
 </template>
-
-<div class="modal-backdrop" id="lisa-modal" hidden>
-  <div class="modal-card glass" role="dialog" aria-modal="true" aria-labelledby="lisa-modal-label">
-    <button class="modal-close" id="lisa-modal-close" type="button" aria-label="Close">×</button>
-    <label class="modal-label" id="lisa-modal-label" for="lisa-pw">Enter password</label>
-    <input id="lisa-pw" type="password" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="••••••••">
-    <button type="button" id="lisa-gate-btn" class="modal-submit">Submit</button>
-    <div class="modal-error" id="lisa-gate-error" role="alert" aria-live="polite"></div>
-  </div>
-</div>
 
 <script src="js/app.js" defer></script>
 </body>

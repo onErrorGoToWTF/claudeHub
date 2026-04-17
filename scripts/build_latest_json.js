@@ -10,6 +10,7 @@ import { fetchYouTube } from "./fetch_youtube.js";
 import { fetchHN } from "./fetch_hn.js";
 import { fetchTutorials } from "./fetch_tutorials.js";
 import { fetchDocs } from "./fetch_docs.js";
+import { fetch365 } from "./fetch_365.js";
 import { logSection } from "./lib/util.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -75,6 +76,8 @@ async function main() {
   const officialTuts = await fetchTutorials().catch((e) => (console.warn(e.message), []));
   logSection("docs (platform.claude.com)");
   const docs = await fetchDocs().catch((e) => (console.warn(e.message), []));
+  logSection("365 (comply365 + competitors)");
+  const comply365News = await fetch365().catch((e) => (console.warn(e.message), []));
 
   // Combine HN into news, sort by date
   const mergedNews = [...news, ...hn]
@@ -92,15 +95,25 @@ async function main() {
   const tutorials = dedupeByUrl([...docs, ...officialTuts, ...videoTuts])
     .sort((a, b) => Date.parse(b.published || 0) - Date.parse(a.published || 0));
 
+  // Non-tutorial YouTube videos get tagged and merged into the NEWS section.
+  // The frontend NEWS renderer splits news_video items (tpl-video) from
+  // ordinary articles and always renders videos first, then articles.
+  const newsVideos = mergedYouTube
+    .filter((v) => !TUT_VIDEO_RE.test(v.title || ""))
+    .map((v) => ({ ...v, _kind: "news_video" }));
+  const newsCombined = dedupeByUrl([...mergedNews, ...newsVideos])
+    .sort((a, b) => Date.parse(b.published || 0) - Date.parse(a.published || 0));
+
   const payload = {
     generated_at: new Date().toISOString(),
     version: 1,
     sections: {
       updates:   merge(priorSections.updates,   updates),
-      news:      merge(priorSections.news,      mergedNews),
+      news:      merge(priorSections.news,      newsCombined),
       status:    merge(priorSections.status,    status),
       youtube:   mergedYouTube,
       tutorials: merge(priorSections.tutorials, tutorials),
+      comply365_news: merge(priorSections.comply365_news, comply365News),
     },
   };
 

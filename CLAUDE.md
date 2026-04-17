@@ -3,7 +3,7 @@
 > **Before writing any code:** do not make any changes until you have 95% confidence in what you need to build. Ask follow-up questions until you reach that confidence.
 
 
-Personal, public-facing Claude intelligence dashboard. Pulls news, YouTube videos, status, tutorials, and Anthropic docs into a static site auto-refreshed every 2h via GitHub Actions. One password-gated tab ("365") hosts curated content for a non-technical family member; the homepage shows charts tracking the Claude model trajectory.
+Public-facing Claude intelligence dashboard. Pulls news, YouTube videos, status, tutorials, and Anthropic docs into a static site auto-refreshed every 2h via GitHub Actions. The homepage shows charts tracking the Claude model trajectory; a "365" tab hosts hand-curated Claude-usage tutorials and scraped news about compliance-software vendors (Comply365 and competitors Web Manuals / Flydocs / Ideagen).
 
 ## Stack
 
@@ -11,7 +11,6 @@ Personal, public-facing Claude intelligence dashboard. Pulls news, YouTube video
 - **Scrapers:** zero-dependency Node 20 modules in `scripts/`. Each pulls an RSS/Atom feed or sitemap and returns a normalized item shape.
 - **Orchestrator:** `scripts/build_latest_json.js` runs all scrapers in parallel, merges results, writes `data/latest.json`.
 - **Automation:** GitHub Actions workflow runs the orchestrator every 2h and commits `data/latest.json` with `[skip ci]` to avoid loops.
-- **Backend:** Cloudflare Worker at `worker/` handles 365-tab form submissions and the pin-for-Lisa endpoint. Uses a GitHub fine-grained PAT to write into the repo.
 
 ## Layout
 
@@ -25,19 +24,18 @@ scripts/
   fetch_news.js           # TechCrunch, Ars, Verge, Bloomberg, Google News RSS
   fetch_hn.js             # HN Algolia API
   fetch_status.js         # status.anthropic.com RSS
+  fetch_365.js            # Comply365 + Web Manuals / Flydocs / Ideagen news
   lib/
     util.js               # httpGet, dedupe, runAll, sortByDateDesc
     xml.js                # tolerant RSS/Atom/sitemap parser (regex-based)
 data/
   latest.json             # auto-generated feed consumed by js/app.js
-  lisa.json               # hand-curated content for the 365 tab
-  lisa/tutorials/*.md     # inline-rendered markdown tutorials for 365 tab
+  365/
+    tutorials.json        # index of hand-authored 365 tutorials
+    tutorials/            # inline-rendered markdown tutorials (co-authored over time)
 css/style.css
-js/app.js                 # single-file frontend; chips, charts, Lisa gate, pin
+js/app.js                 # single-file frontend; chips, charts, renderers
 index.html
-worker/
-  src/index.js            # /submit (form) + /pin (tutorial pin) endpoints
-  wrangler.toml
 .github/workflows/        # cron rebuild + Pages deploy
 ```
 
@@ -55,31 +53,39 @@ python -m http.server 8765
 ## Deploying
 
 - **Site:** merge to `main`. GitHub Pages redeploys within ~1 minute.
-- **Worker:** `cd worker && npx wrangler deploy`. Secrets (set via `npx wrangler secret put NAME`):
-  - `GITHUB_TOKEN` — fine-grained PAT, Contents: Read+Write on this repo only
-  - `LISA_GATE_HASH` — sha256 hex of the 365 password (must match `LISA_PW_HASH` baked into `js/app.js`)
-  - `TURNSTILE_SECRET` — optional
 
 ## Tabs (`index.html` chips)
 
-Home · YouTube · 365 · Tutorials · Updates · News · Status
+Home · 365 · Resources · News
 
 - **Home** — charts: frontier context windows, context-window timeline, Intelligence Index v4.0, Opus 4.7 scorecard. Chart bars animate via `IntersectionObserver` when entering the middle 75% of the viewport; they reset on exit.
-- **365** — password-gated (`HkBHOY0zDdV7`, sha256 baked into `LISA_PW_HASH`). Rendered from `data/lisa.json`. Includes a request form (posts to Worker `/submit`) and pinned tutorials group.
-- **Tutorials** — sub-pills: `Videos` (how-to filtered YouTube) + `Official` (Anthropic docs/cookbook/courses/releases). Pin button on each card posts to Worker `/pin`, which edits `data/lisa.json#tutorials_pinned`.
-- Other tabs render from sections of `data/latest.json`.
+- **365** — no gate, no form. Two sub-pills:
+  - `Resources` — hand-curated Claude-usage tutorials rendered from `data/365/tutorials.json` and inline markdown under `data/365/tutorials/`. Content is co-authored over time and is fully generic (no insider info).
+  - `News` — scraped items from `sections.comply365_news` in `latest.json`: Comply365 company news plus AI-related coverage of competitors Web Manuals, Flydocs, and Ideagen.
+- **Resources** — sub-pills: `Videos` (YouTube how-tos / setup / walkthroughs) + `Official` (Anthropic docs, cookbook, courses, Claude Code releases).
+- **News** — status strip at the top (severity pills from `status.anthropic.com`), then videos block, then articles block. Videos and articles are never interleaved.
 
 ## Conventions
 
 - **Commits:** conventional prefixes (`feat:`, `fix:`, `style:`, `chore:`). Feed-refresh commits get `[skip ci]`.
 - **Dates:** build scripts preserve prior data when a fetch returns empty — the site never goes blank on transient fetch failures.
-- **Tutorial items:** tagged `tutorial_kind: "video" | "official"` at fetch time; the Tutorials tab filters the combined list by kind.
-- **Styling:** dark-first design tokens in `:root`; `[data-theme="light"]` opts into light. Cards use `.glass` for backdrop blur. Accent = Claude blue; `--lisa-*` = purple (365 tab).
+- **Tutorial items:** tagged `tutorial_kind: "video" | "official"` at fetch time; the Resources tab filters the combined list by kind.
+- **News ordering:** videos always render above articles in any mixed list. Within each block, `sortByDateDesc`. Load-bearing for the News renderer — do not interleave.
+- **Styling:** dark-first design tokens in `:root`; `[data-theme="light"]` opts into light. Cards use `.glass` for backdrop blur. Accent = Claude blue; `--accent-365-*` = purple (365 tab).
 
 ## Gotchas
 
 - **Cache aggressiveness:** hard-refresh after deploys. `data/*.json` is fetched with `?v=<timestamp>` to bust the browser cache but service workers / PWA caching can still lag.
-- **Rate limit buckets:** Worker `/submit` = 3/min per IP, `/pin` = 20/min per IP (separate KV keys).
-- **Pin flow requires plaintext password in memory:** after a successful 365 unlock the plaintext is stored in `localStorage.cdih-lisa-secret` (reset when "Lock this tab" is clicked). Without it, the pin button stays hidden.
-- **YouTube Atom feeds are flaky:** channels return 500/404 intermittently. `merge()` in the orchestrator preserves prior data rather than emptying the section.
+- **YouTube Atom feeds are flaky:** channels return 500/404 intermittently. `merge()` in the orchestrator preserves prior data rather than emptying the section. Same pattern protects `sections.comply365_news` when Google News RSS hiccups.
 - **GitHub Pages base path:** live URL is `/claudeHub/`, not `/`. Keep all in-page links relative.
+
+## Design language
+
+- **Dark-first, premium.** Deep blacks, tinted hairlines (≤14% white alpha), no pure-white borders.
+- **Restrained rounding.** `--radius-sm: 6px` / `--radius-md: 10px` / `--radius-pill: 9999px` for true pills only. No rogue square edges, no over-rounded bubbles.
+- **Premium easing.** All transitions use `--ease-premium: cubic-bezier(0.22, 0.61, 0.36, 1)` (or `--ease-lensing` for reveals). No bounce curves.
+- **Soft glows, not neon.** Accent glows via low-alpha `box-shadow` on hover / active — background-tier, never foreground-dominant. The `body::before` ambient glow stays.
+- **Glassmorphism with top-edge specular.** `.glass` cards get `inset 0 1px 0 rgba(255,255,255,0.06)` as a top-edge highlight — the single most "Apple" trick for depth. Cool-hue gradient (`#101218 → #0a0c10`), not neutral gray.
+- **Sub-pill cross-fades.** Switching sub-pills (365 Resources/News, Resources Videos/Official) cross-fades the card grid with ~30ms stagger per card — no snap, no flicker.
+- **Videos-above-articles.** News tab and any mixed list render videos block first, then articles block.
+- **Reduced-motion honored.** Motion wrapped in `@media (prefers-reduced-motion: no-preference)`; reduced state = final state, data-critical reveals still paint.

@@ -2,102 +2,18 @@
   "use strict";
 
   const DATA_URL = "data/latest.json?v=" + Date.now();
-  const LISA_URL = "data/lisa.json?v=" + Date.now();
+  const TUTORIALS_365_URL = "data/365/tutorials.json?v=" + Date.now();
   const THEME_KEY = "cdih-theme";
-  const SECTIONS = ["updates", "news", "status", "youtube", "tutorials"];
-  const DISTINCT_SECTIONS = ["home", "lisa"]; // only visible when their chip is picked
 
-  // TODO: set this to your deployed Cloudflare Worker URL after `wrangler deploy`.
-  // While unset, the form shows a friendly "not wired up yet" message.
-  const WORKER_BASE = "https://claudehub-lisa.alanyoungjr.workers.dev";
-  const WORKER_URL = WORKER_BASE + "/submit";
-  const WORKER_PIN_URL = WORKER_BASE + "/pin";
-  const WORKER_PLACEHOLDER = /YOUR-SUBDOMAIN/.test(WORKER_URL);
-
-  // SHA-256 of the Lisa-tab password. Plaintext lives on Alan's and Lisa's phones only.
-  // To rotate: regenerate with `node -e "..."` (see chat), replace this hash, commit.
-  const LISA_PW_HASH = "bbd2915e8e9e0e54d1b210501ebd8ed391957692016af2e409ebcb4951d796e1";
-  const LISA_UNLOCK_KEY = "cdih-lisa-unlocked";
-  const LISA_SECRET_KEY = "cdih-lisa-secret";
-  const PIN_LOCAL_KEY   = "cdih-pinned";
-
-  async function sha256Hex(s) {
-    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
-    return Array.from(new Uint8Array(buf), b => b.toString(16).padStart(2, "0")).join("");
-  }
-
-  function isLisaUnlocked() {
-    return localStorage.getItem(LISA_UNLOCK_KEY) === LISA_PW_HASH;
-  }
-
-  function getLisaSecret() {
-    return localStorage.getItem(LISA_SECRET_KEY) || "";
-  }
-
-  function loadPinnedMap() {
-    try { return JSON.parse(localStorage.getItem(PIN_LOCAL_KEY) || "{}") || {}; }
-    catch { return {}; }
-  }
-
-  function savePinnedMap(map) {
-    localStorage.setItem(PIN_LOCAL_KEY, JSON.stringify(map));
-  }
-
-  function isPinned(url) {
-    return !!loadPinnedMap()[url];
-  }
-
-  function setPinnedLocal(url, pinned) {
-    const map = loadPinnedMap();
-    if (pinned) map[url] = true; else delete map[url];
-    savePinnedMap(map);
-  }
-
-  async function sendPin(action, item) {
-    const secret = getLisaSecret();
-    if (!secret) throw new Error("Unlock the 365 tab first to pin.");
-    const res = await fetch(WORKER_PIN_URL, {
-      method: "POST",
-      headers: { "content-type": "application/json", "x-lisa-gate": secret },
-      body: JSON.stringify({ action, item }),
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(data.error || ("HTTP " + res.status));
-    return data;
-  }
-
-  function openLisaModal() {
-    const m = document.getElementById("lisa-modal");
-    if (!m) return;
-    m.hidden = false;
-    const pw = document.getElementById("lisa-pw");
-    if (pw) { pw.value = ""; setTimeout(() => pw.focus(), 60); }
-    const err = document.getElementById("lisa-gate-error");
-    if (err) err.textContent = "";
-  }
-
-  function closeLisaModal() {
-    const m = document.getElementById("lisa-modal");
-    if (m) m.hidden = true;
-  }
-
-  function activateLisaChip() {
-    document.querySelectorAll(".chip").forEach(c => c.classList.remove("is-active"));
-    const c = document.querySelector('[data-filter="lisa"]');
-    if (c) c.classList.add("is-active");
-    const lisaEl = document.querySelector('[data-section="lisa"]');
-    if (lisaEl) lisaEl.dataset.hidden = "false";
-    ["updates","news","status","youtube","tutorials"].forEach(s => {
-      const el = document.querySelector(`.section[data-section="${s}"]`);
-      if (el) el.dataset.hidden = "true";
-    });
-  }
+  // Sections that render from latest.json and share the filter machinery.
+  const SECTIONS = ["365", "resources", "news"];
+  // Sections that are exclusive (only visible when their chip is picked).
+  const DISTINCT_SECTIONS = ["home"];
 
   // ---------- Theme (dark-first; opt-in to light) ----------
   const root = document.documentElement;
   const stored = localStorage.getItem(THEME_KEY);
   if (stored === "light") root.setAttribute("data-theme", "light");
-  // else: dark is the CSS default
 
   document.getElementById("theme-toggle").addEventListener("click", () => {
     const isLight = root.getAttribute("data-theme") === "light";
@@ -114,7 +30,6 @@
 
   // ---------- Filters ----------
   const chips = document.querySelectorAll(".chip");
-  const lisaSection = document.querySelector('[data-section="lisa"]');
   function applyFilter(f) {
     chips.forEach(c => c.classList.toggle("is-active", c.dataset.filter === f));
     DISTINCT_SECTIONS.forEach(name => {
@@ -124,9 +39,9 @@
     SECTIONS.forEach(s => {
       const el = document.querySelector(`.section[data-section="${s}"]`);
       if (!el) return;
-      el.dataset.hidden = (f === "all" || f === s) ? "false" : "true";
+      el.dataset.hidden = f === s ? "false" : "true";
     });
-    if (f === "lisa") loadLisa();
+    if (f === "365") load365();
     if (f === "home") replayHomeAnimations();
   }
 
@@ -140,7 +55,6 @@
       void el.offsetHeight;      // force reflow
       el.style.animation = "";
     });
-    // SVG + bar charts: re-render gives us fresh SMIL / CSS animations.
     renderTimeline();
     renderCompare();
     renderIndex();
@@ -149,17 +63,12 @@
 
   chips.forEach(chip => {
     chip.addEventListener("click", () => {
-      const f = chip.dataset.filter;
-      if (f === "lisa" && !isLisaUnlocked()) { openLisaModal(); return; }
-      // Previously-unlocked sessions may lack the plaintext secret needed for
-      // /pin. Prompt once so pinning works without forcing a lock-out first.
-      if (f === "lisa" && isLisaUnlocked() && !getLisaSecret()) { openLisaModal(); return; }
-      applyFilter(f);
+      applyFilter(chip.dataset.filter);
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
 
-  // Tutorials sub-pills: Videos / Official
+  // Resources sub-pills: Videos / Official
   document.querySelectorAll(".subpill[data-tutkind]").forEach((pill) => {
     pill.addEventListener("click", () => {
       const kind = pill.dataset.tutkind;
@@ -168,10 +77,26 @@
         p.classList.toggle("is-active", on);
         p.setAttribute("aria-selected", on ? "true" : "false");
       });
-      const videos   = document.querySelector('[data-cards="tutorials-videos"]');
-      const official = document.querySelector('[data-cards="tutorials-official"]');
+      const videos   = document.querySelector('[data-cards="resources-videos"]');
+      const official = document.querySelector('[data-cards="resources-official"]');
       if (videos)   videos.hidden   = kind !== "video";
       if (official) official.hidden = kind !== "official";
+    });
+  });
+
+  // 365 sub-pills: Resources / News
+  document.querySelectorAll(".subpill[data-s365]").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const kind = pill.dataset.s365;
+      document.querySelectorAll(".subpill[data-s365]").forEach((p) => {
+        const on = p === pill;
+        p.classList.toggle("is-active", on);
+        p.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      const resources = document.querySelector('[data-cards="365-resources"]');
+      const news      = document.querySelector('[data-cards="365-news"]');
+      if (resources) resources.hidden = kind !== "resources";
+      if (news)      news.hidden      = kind !== "news";
     });
   });
 
@@ -221,6 +146,10 @@
     return d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
   }
 
+  function sortByDateDesc(items) {
+    return [...items].sort((a, b) => Date.parse(b.published || 0) - Date.parse(a.published || 0));
+  }
+
   // ---------- Sentiment detection ----------
   function detectSentiment(item) {
     const t = ((item.title || "") + " " + (item.summary || "")).toLowerCase();
@@ -235,6 +164,14 @@
     return { label: "Info", cls: "info" };
   }
 
+  function detectStatusSeverity(item) {
+    const t = ((item.summary || "") + " " + (item.title || "")).toLowerCase();
+    if (t.includes("resolved"))       return "resolved";
+    if (t.includes("monitoring"))     return "monitoring";
+    if (t.includes("identified"))     return "identified";
+    return "investigating";
+  }
+
   function faviconUrl(url) {
     try {
       const host = new URL(url).hostname;
@@ -242,7 +179,46 @@
     } catch { return ""; }
   }
 
-  const CARD_CONTAINERS = ["updates","news","status","youtube","tutorials-videos","tutorials-official"];
+  const CARD_CONTAINERS = [
+    "365-resources", "365-news",
+    "resources-videos", "resources-official",
+    "news",
+  ];
+
+  // ---------- Scroll-activation IntersectionObserver (universal) ----------
+  // Cards/sections get .reveal on render; .in-view is added when they enter
+  // the middle ~76% band. Sticky: unobserve on first enter so content cards
+  // don't retrigger while scrolling. Home chart bars still reset-on-exit via
+  // setupChartObservers below — they do NOT use this observer.
+  const revealIO = ("IntersectionObserver" in window)
+    ? new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          const el = e.target;
+          el.style.willChange = "opacity, transform";
+          el.classList.add("in-view");
+          const onEnd = () => {
+            el.style.willChange = "";
+            el.removeEventListener("transitionend", onEnd);
+          };
+          el.addEventListener("transitionend", onEnd);
+          revealIO.unobserve(el);
+        }
+      }, { root: null, rootMargin: "-12% 0px -12% 0px", threshold: [0, 0.15] })
+    : null;
+
+  function registerReveal(el, index) {
+    if (!el) return;
+    el.classList.add("reveal");
+    const i = Math.min(index || 0, 4);
+    el.style.setProperty("--i", String(i));
+    el.style.setProperty("--d", `calc(min(var(--i), 4) * 70ms)`);
+    if (revealIO) {
+      revealIO.observe(el);
+    } else {
+      el.classList.add("in-view");
+    }
+  }
 
   // ---------- Skeletons ----------
   function showSkeletons() {
@@ -256,7 +232,7 @@
   }
 
   // ---------- Card rendering (main feed) ----------
-  function renderCard(item, videoLike, index, opts = {}) {
+  function renderCard(item, videoLike, index) {
     const tpl = document.getElementById(videoLike ? "tpl-video" : "tpl-card");
     const node = tpl.content.firstElementChild.cloneNode(true);
     node.href = item.url;
@@ -269,7 +245,6 @@
     time.textContent = relTime(item.published) || prettyDate(item.published) || "";
     if (item._severity) node.dataset.severity = item._severity;
 
-    // Pill + favicon (non-video cards only)
     if (!videoLike) {
       const pill = node.querySelector(".card-pill");
       const sent = item._severity
@@ -295,69 +270,10 @@
         img.alt = item.title || "";
       }
     }
-
-    // Pin button — only on tutorial cards, only when user has Lisa secret.
-    if (opts.pinnable) {
-      const btn = node.querySelector(".card-pin");
-      if (btn) {
-        btn.hidden = !getLisaSecret();
-        if (isPinned(item.url)) btn.classList.add("is-on");
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          handlePinClick(btn, item, videoLike);
-        });
-      }
-    }
     return node;
   }
 
-  async function handlePinClick(btn, item, videoLike) {
-    if (btn.dataset.busy === "1") return;
-    btn.dataset.busy = "1";
-    const currentlyPinned = btn.classList.contains("is-on");
-    const action = currentlyPinned ? "remove" : "add";
-    // Optimistic toggle
-    btn.classList.toggle("is-on", !currentlyPinned);
-    setPinnedLocal(item.url, !currentlyPinned);
-    try {
-      await sendPin(action, {
-        title: item.title,
-        url: item.url,
-        source: item.source || item.channel || "",
-        summary: item.summary || "",
-        thumbnail: item.thumbnail || "",
-        kind: videoLike ? "video" : "official",
-      });
-      showToast(action === "add" ? "Pinned for Lisa" : "Unpinned");
-      // Force next 365 tab visit to re-fetch lisa.json so pin appears live.
-      lisaLoaded = false;
-    } catch (err) {
-      // Roll back on failure
-      btn.classList.toggle("is-on", currentlyPinned);
-      setPinnedLocal(item.url, currentlyPinned);
-      showToast("Pin failed: " + (err.message || err), true);
-    } finally {
-      btn.dataset.busy = "";
-    }
-  }
-
-  function showToast(text, isError) {
-    let el = document.getElementById("cdih-toast");
-    if (!el) {
-      el = document.createElement("div");
-      el.id = "cdih-toast";
-      el.className = "toast";
-      document.body.appendChild(el);
-    }
-    el.textContent = text;
-    el.dataset.kind = isError ? "err" : "ok";
-    el.classList.add("is-show");
-    clearTimeout(showToast._t);
-    showToast._t = setTimeout(() => el.classList.remove("is-show"), 2200);
-  }
-
-  function renderSection(name, items, videoLike, opts = {}) {
+  function renderSection(name, items, videoLike) {
     const container = document.querySelector(`[data-cards="${name}"]`);
     if (!container) return;
     container.innerHTML = "";
@@ -369,8 +285,76 @@
       return;
     }
     const frag = document.createDocumentFragment();
-    items.slice(0, 18).forEach((i, idx) => frag.appendChild(renderCard(i, videoLike, idx, opts)));
+    items.slice(0, 18).forEach((i, idx) => {
+      const node = renderCard(i, videoLike, idx);
+      registerReveal(node, idx);
+      frag.appendChild(node);
+    });
     container.appendChild(frag);
+  }
+
+  // NEWS: split by _kind. Videos first (tpl-video), then articles (tpl-card).
+  // Each group sorted by date desc internally. Never interleave.
+  function renderNews(items) {
+    const container = document.querySelector('[data-cards="news"]');
+    if (!container) return;
+    container.innerHTML = "";
+    if (!items || items.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "empty";
+      empty.textContent = "No items yet — check back soon.";
+      container.appendChild(empty);
+      return;
+    }
+    const videos   = sortByDateDesc(items.filter((i) => i._kind === "news_video"));
+    const articles = sortByDateDesc(items.filter((i) => i._kind !== "news_video"));
+    const frag = document.createDocumentFragment();
+    let idx = 0;
+    videos.slice(0, 8).forEach((v) => {
+      const node = renderCard(v, true, idx);
+      registerReveal(node, idx);
+      frag.appendChild(node);
+      idx++;
+    });
+    articles.slice(0, 18).forEach((a) => {
+      const node = renderCard(a, false, idx);
+      registerReveal(node, idx);
+      frag.appendChild(node);
+      idx++;
+    });
+    container.appendChild(frag);
+  }
+
+  // NEWS status strip — compact severity indicators from sections.status.
+  function renderStatusStrip(statusItems) {
+    const strip = document.querySelector('[data-strip="status"]');
+    if (!strip) return;
+    strip.innerHTML = "";
+    const items = (statusItems || []).slice(0, 4);
+    if (!items.length) {
+      strip.hidden = true;
+      return;
+    }
+    strip.hidden = false;
+    const frag = document.createDocumentFragment();
+    items.forEach((s, idx) => {
+      const sev = s._severity || detectStatusSeverity(s);
+      const pill = document.createElement("a");
+      pill.className = "status-pill glass";
+      pill.href = s.url || "#";
+      pill.target = "_blank";
+      pill.rel = "noopener";
+      pill.dataset.severity = sev;
+      pill.innerHTML = `
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-label">${sev}</span>
+        <span class="status-title"></span>
+      `;
+      pill.querySelector(".status-title").textContent = s.title || "";
+      registerReveal(pill, idx);
+      frag.appendChild(pill);
+    });
+    strip.appendChild(frag);
   }
 
   function setUpdated(name, iso) {
@@ -380,37 +364,42 @@
   }
 
   // ---------- Main feed load ----------
+  let latestData = null;
   async function load() {
     showSkeletons();
     try {
       const res = await fetch(DATA_URL, { cache: "no-cache" });
       if (!res.ok) throw new Error("HTTP " + res.status);
       const data = await res.json();
+      latestData = data;
 
       const s = data.sections || {};
-      renderSection("updates",   s.updates,   false);
-      renderSection("news",      s.news,      false);
-      // Detect status severity from summary text
+
+      // Status items pick up severity for the strip AND any card rendering.
       if (s.status) {
-        s.status.forEach(item => {
-          const t = ((item.summary || "") + " " + (item.title || "")).toLowerCase();
-          if (t.includes("resolved"))       item._severity = "resolved";
-          else if (t.includes("monitoring")) item._severity = "monitoring";
-          else if (t.includes("identified")) item._severity = "identified";
-          else                               item._severity = "investigating";
-        });
+        s.status.forEach(item => { item._severity = detectStatusSeverity(item); });
       }
-      renderSection("status",    s.status,    false);
-      renderSection("youtube",   s.youtube,   true);
-      // Tutorials split by tutorial_kind into Videos and Official sub-tabs.
+
+      // RESOURCES tab: split tutorials by tutorial_kind.
       const tuts = Array.isArray(s.tutorials) ? s.tutorials : [];
       const tutVideos   = tuts.filter((t) => t.tutorial_kind === "video");
       const tutOfficial = tuts.filter((t) => t.tutorial_kind !== "video");
-      renderSection("tutorials-videos",   tutVideos,   true,  { pinnable: true });
-      renderSection("tutorials-official", tutOfficial, false, { pinnable: true });
+      renderSection("resources-videos",   tutVideos,   true);
+      renderSection("resources-official", tutOfficial, false);
 
-      SECTIONS.forEach(sec => setUpdated(sec, data.generated_at));
+      // NEWS tab: status strip + mixed grid (videos first, then articles).
+      renderStatusStrip(s.status);
+      renderNews(s.news || []);
+
+      setUpdated("resources", data.generated_at);
+      setUpdated("news",      data.generated_at);
+      setUpdated("365",       data.generated_at);
       document.getElementById("generated").textContent = prettyDate(data.generated_at);
+
+      // If the 365 tab is currently selected, render it now that latest is in.
+      if (document.querySelector('.chip.is-active')?.dataset.filter === "365") {
+        load365();
+      }
     } catch (err) {
       CARD_CONTAINERS.forEach(name => {
         const container = document.querySelector(`[data-cards="${name}"]`);
@@ -428,16 +417,16 @@
   setupChartObservers();
 
   // ======================================================================
-  // Scroll-triggered chart animation.
-  // Cards animate in when they enter the middle ~75% of the viewport.
-  // Reset to zero state when they leave so re-entry replays the animation.
+  // Scroll-triggered chart animation (HOME only).
+  // Bars reset-on-exit and replay on re-entry — distinct from the universal
+  // card reveal observer above (which is sticky).
   // ======================================================================
   function setupChartObservers() {
     if (!("IntersectionObserver" in window)) {
       document.querySelectorAll(".cbar, .vbar, .hbar").forEach((el) => el.classList.add("is-go"));
       return;
     }
-    const ACTIVATION_MARGIN = "-12.5% 0px -12.5% 0px"; // middle 75% band
+    const ACTIVATION_MARGIN = "-12.5% 0px -12.5% 0px";
     const groups = [
       { host: "#cbars", childSel: ".cbar" },
       { host: "#vbars", childSel: ".vbar" },
@@ -460,7 +449,6 @@
       io.observe(el);
     });
 
-    // Timeline uses SMIL animateMotion — re-render on re-entry to replay it.
     const tl = document.getElementById("timeline-card");
     if (tl) {
       const tlIo = new IntersectionObserver((entries) => {
@@ -476,12 +464,11 @@
   function renderCompare() {
     const host = document.getElementById("cbars");
     if (!host) return;
-    // Electric palette — deliberately distinct from the Claude blue/purple.
     const rows = [
-      { name: "Gemini 2.5 Pro",    tokens: 2_000_000, label: "2M", color: "#22d3ee" }, // cyan
-      { name: "Grok 4",            tokens: 2_000_000, label: "2M", color: "#e879f9" }, // magenta
+      { name: "Gemini 2.5 Pro",    tokens: 2_000_000, label: "2M", color: "#22d3ee" },
+      { name: "Grok 4",            tokens: 2_000_000, label: "2M", color: "#e879f9" },
       { name: "Claude Opus 4.7",   tokens: 1_000_000, label: "1M", color: "#a684ff", hero: true },
-      { name: "GPT-4.1",           tokens: 1_000_000, label: "1M", color: "#4ade80" }, // electric green
+      { name: "GPT-4.1",           tokens: 1_000_000, label: "1M", color: "#4ade80" },
     ];
     const max = Math.max(...rows.map(r => r.tokens));
     host.innerHTML = "";
@@ -503,12 +490,10 @@
         </div>`;
       host.appendChild(el);
     });
-    // .is-go added by IntersectionObserver when card enters activation zone.
   }
 
   // ======================================================================
-  // Intelligence Index v4.0 — composite of 10 benchmarks (Artificial Analysis).
-  // Scores verified from artificialanalysis.ai (Apr 2026). Opus 4.7 pending.
+  // Intelligence Index v4.0 — composite of 10 benchmarks.
   // ======================================================================
   function renderIndex() {
     const host = document.getElementById("vbars");
@@ -537,12 +522,10 @@
       `;
       host.appendChild(el);
     });
-    // .is-go added by IntersectionObserver when card enters activation zone.
   }
 
   // ======================================================================
-  // Opus 4.7 scorecard — horizontal bars for each benchmark from launch.
-  // Verified quotes from anthropic.com/news/claude-opus-4-7.
+  // Opus 4.7 scorecard
   // ======================================================================
   function renderScorecard() {
     const host = document.getElementById("hbars");
@@ -574,7 +557,6 @@
       `;
       host.appendChild(el);
     });
-    // .is-go added by IntersectionObserver when card enters activation zone.
   }
 
   // ======================================================================
@@ -611,7 +593,6 @@
     const xOf = (d) => padL + ((Date.parse(d) - t0) / (t1 - t0)) * innerW;
     const yOf = (ctx) => padT + innerH - ((Math.log10(ctx) - yMin) / (yMax - yMin)) * innerH;
 
-    // Build path
     let d = "";
     data.forEach((p, i) => {
       const x = xOf(p.date).toFixed(1);
@@ -620,9 +601,7 @@
     });
     const areaD = d + `L${xOf(data[data.length-1].date).toFixed(1)} ${padT + innerH} L${xOf(data[0].date).toFixed(1)} ${padT + innerH} Z`;
 
-    // Y-axis reference ticks (100K, 200K, 1M)
     const yTicks = [100_000, 200_000, 1_000_000];
-
     const fmtK = (n) => n >= 1_000_000 ? (n / 1_000_000) + "M" : (n / 1000) + "K";
 
     let defs = `
@@ -655,15 +634,13 @@
       dots += `<circle class="${cls}" cx="${x}" cy="${y}" r="${r}" style="animation-delay:${delay}s; transform-origin:${x}px ${y}px;"/>`;
     });
 
-    // Label only the last (endpoint) to keep it clean
     const lastX = xOf(data[data.length-1].date);
     const lastY = yOf(data[data.length-1].ctx);
     const labels = `
       <text class="label" x="${lastX - 8}" y="${lastY - 14}" text-anchor="end"
-            style="animation-delay: 1.5s; font-weight: 600; fill: var(--lisa-hi);">${data[data.length-1].model}</text>
+            style="animation-delay: 1.5s; font-weight: 600; fill: var(--accent-365-hi);">${data[data.length-1].model}</text>
     `;
 
-    // Electron — particle that travels the path and lands at the endpoint
     const electron = `
       <g>
         <animateMotion dur="1.6s" begin="0.35s" fill="freeze" path="${d.trim()}" rotate="auto"/>
@@ -681,7 +658,6 @@
       `<path class="line" d="${d.trim()}"/>` +
       dots + labels + electron;
 
-    // Legend
     const legend = document.getElementById("timeline-legend");
     if (legend) {
       legend.innerHTML =
@@ -691,9 +667,9 @@
   }
 
   // ======================================================================
-  // Lisa tab
+  // 365 tab
   // ======================================================================
-  let lisaLoaded = false;
+  let loaded365 = false;
   const tutorialCache = new Map();
 
   function escHtml(s) {
@@ -704,9 +680,6 @@
       .replace(/"/g, "&quot;");
   }
 
-  // Minimal markdown renderer covering: headings, paragraphs, bold/italic,
-  // inline code, links, ul/ol, blockquotes, hr. No code blocks (tutorials
-  // are plain English).
   function renderMarkdown(md) {
     const lines = md.replace(/\r\n/g, "\n").split("\n");
     const out = [];
@@ -724,7 +697,6 @@
 
     while (i < lines.length) {
       const line = lines[i];
-
       if (/^\s*$/.test(line)) { i++; continue; }
 
       let m;
@@ -767,7 +739,6 @@
         continue;
       }
 
-      // paragraph: join consecutive non-blank, non-block lines
       const buf = [line];
       i++;
       while (i < lines.length &&
@@ -785,35 +756,8 @@
     return out.join("\n");
   }
 
-  function renderLisaCard(item) {
-    const tpl = document.getElementById("tpl-card");
-    const node = tpl.content.firstElementChild.cloneNode(true);
-    node.href = item.url;
-    node.querySelector(".card-title").textContent = item.title;
-    node.querySelector(".card-source").textContent = item.source || "";
-    const time = node.querySelector(".card-time");
-    time.textContent = relTime(item.published) || prettyDate(item.published) || "";
-    const sum = node.querySelector(".card-summary");
-    sum.textContent = item.summary || "";
-    if (!item.summary) sum.remove();
-    return node;
-  }
-
-  function renderLisaCards(name, items) {
-    const container = document.querySelector(`[data-cards="${name}"]`);
-    if (!container) return;
-    container.innerHTML = "";
-    if (!items || !items.length) {
-      container.innerHTML = '<div class="empty">Nothing here yet.</div>';
-      return;
-    }
-    const frag = document.createDocumentFragment();
-    items.forEach(i => frag.appendChild(renderLisaCard(i)));
-    container.appendChild(frag);
-  }
-
-  function renderTutorials(tutorials) {
-    const container = document.querySelector('[data-cards="lisa-tutorials"]');
+  function renderTutorials(containerSel, tutorials) {
+    const container = document.querySelector(containerSel);
     if (!container) return;
     container.innerHTML = "";
     if (!tutorials || !tutorials.length) {
@@ -821,7 +765,7 @@
       return;
     }
     const tpl = document.getElementById("tpl-tutorial");
-    for (const t of tutorials) {
+    tutorials.forEach((t, idx) => {
       const node = tpl.content.firstElementChild.cloneNode(true);
       node.querySelector(".tutorial-title").textContent = t.title;
       node.querySelector(".tutorial-blurb").textContent = t.blurb || "";
@@ -853,175 +797,41 @@
         body.innerHTML = tutorialCache.get(t.slug);
       });
 
+      registerReveal(node, idx);
       container.appendChild(node);
-    }
+    });
   }
 
-  async function loadLisa() {
-    if (lisaLoaded) return;
-    lisaLoaded = true;
+  async function load365() {
+    if (loaded365) return;
+    loaded365 = true;
+
+    // Resources (tutorials) — fetch the 365 index.
     try {
-      // Always bust cache so freshly pinned items appear without a hard reload.
-      const res = await fetch("data/lisa.json?v=" + Date.now(), { cache: "no-cache" });
+      const res = await fetch(TUTORIALS_365_URL, { cache: "no-cache" });
       if (!res.ok) throw new Error("HTTP " + res.status);
       const data = await res.json();
-      const g = data.greeting || {};
-      document.querySelector('[data-lisa="headline"]').textContent = g.headline || "Hi Lisa";
-      document.querySelector('[data-lisa="subline"]').textContent  = g.subline || "";
-      renderTutorials(data.tutorials);
-      renderLisaCards("lisa-news",  data.news);
-      renderLisaCards("lisa-pitch", data.pitch_deck);
-      renderLisaPinned(Array.isArray(data.tutorials_pinned) ? data.tutorials_pinned : []);
+      renderTutorials('[data-cards="365-resources"]', data.tutorials || []);
     } catch (err) {
-      const body = document.querySelector('[data-section="lisa"]');
-      const note = document.createElement("div");
-      note.className = "empty";
-      note.textContent = "Couldn't load Lisa content: " + (err.message || err);
-      body.appendChild(note);
+      const c = document.querySelector('[data-cards="365-resources"]');
+      if (c) c.innerHTML = `<div class="empty">Couldn't load tutorials. ${escHtml(err.message || err)}</div>`;
     }
-  }
 
-  function renderLisaPinned(items) {
-    const group = document.querySelector('[data-group="lisa-pinned"]');
-    const container = document.querySelector('[data-cards="lisa-pinned"]');
-    if (!group || !container) return;
-    if (!items.length) { group.hidden = true; return; }
-    group.hidden = false;
-    container.innerHTML = "";
-    const frag = document.createDocumentFragment();
-    items.forEach((p) => {
-      const videoLike = p.kind === "video" && !!p.thumbnail;
-      const tpl = document.getElementById(videoLike ? "tpl-video" : "tpl-card");
-      const node = tpl.content.firstElementChild.cloneNode(true);
-      node.href = p.url;
-      node.querySelector(".card-title").textContent = p.title;
-      const src = node.querySelector(".card-source");
-      if (src) src.textContent = p.source || "";
-      const time = node.querySelector(".card-time");
-      if (time) time.textContent = relTime(p.pinned_at) || "";
-      if (videoLike) {
-        const img = node.querySelector("img");
-        if (img && p.thumbnail) { img.src = p.thumbnail; img.alt = p.title || ""; }
-      } else {
-        const sum = node.querySelector(".card-summary");
-        if (sum) { sum.textContent = p.summary || ""; if (!p.summary) sum.remove(); }
-        const icon = node.querySelector(".card-icon");
-        if (icon && p.url) { icon.src = faviconUrl(p.url); icon.onerror = () => (icon.style.display = "none"); }
-        const pill = node.querySelector(".card-pill");
-        if (pill) pill.remove();
-      }
-      const btn = node.querySelector(".card-pin");
-      if (btn) btn.remove();
-      frag.appendChild(node);
-    });
-    container.appendChild(frag);
-  }
-
-  // ---------- Gate (password) ----------
-  const gatePw = document.getElementById("lisa-pw");
-  const gateBtn = document.getElementById("lisa-gate-btn");
-  const gateErr = document.getElementById("lisa-gate-error");
-  const lockBtn = document.getElementById("lisa-lock");
-
-  async function tryUnlock() {
-    if (!gatePw) return;
-    gateErr.textContent = "";
-    const plain = (gatePw.value || "").trim();
-    const tryHash = await sha256Hex(plain);
-    if (tryHash === LISA_PW_HASH) {
-      localStorage.setItem(LISA_UNLOCK_KEY, LISA_PW_HASH);
-      localStorage.setItem(LISA_SECRET_KEY, plain);
-      closeLisaModal();
-      applyFilter("lisa");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      // Reveal pin buttons on tutorial cards only (tpl-card/tpl-video also
-      // live on news/updates/status, where pins aren't wired).
-      document.querySelectorAll('[data-cards^="tutorials"] .card-pin').forEach((b) => (b.hidden = false));
-    } else {
-      gateErr.textContent = "Wrong password.";
-      gatePw.select();
-    }
-  }
-
-  if (gateBtn) gateBtn.addEventListener("click", tryUnlock);
-  if (gatePw) {
-    gatePw.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") { e.preventDefault(); tryUnlock(); }
-    });
-  }
-  const modalClose = document.getElementById("lisa-modal-close");
-  if (modalClose) modalClose.addEventListener("click", closeLisaModal);
-  const modalBackdrop = document.getElementById("lisa-modal");
-  if (modalBackdrop) {
-    modalBackdrop.addEventListener("click", (e) => {
-      if (e.target === modalBackdrop) closeLisaModal();
-    });
-  }
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modalBackdrop && !modalBackdrop.hidden) closeLisaModal();
-  });
-  if (lockBtn) {
-    lockBtn.addEventListener("click", () => {
-      localStorage.removeItem(LISA_UNLOCK_KEY);
-      localStorage.removeItem(LISA_SECRET_KEY);
-      document.querySelectorAll('[data-cards^="tutorials"] .card-pin').forEach((b) => (b.hidden = true));
-      const home = document.querySelector('[data-filter="home"]');
-      if (home) home.click();
-    });
-  }
-
-  // ---------- Request form ----------
-  const form = document.getElementById("lisa-form");
-  const msg = document.getElementById("lisa-message");
-  const counter = document.getElementById("lisa-counter");
-  const submitBtn = document.getElementById("lisa-submit");
-  const statusEl = document.getElementById("lisa-status");
-
-  if (form && msg) {
-    msg.addEventListener("input", () => {
-      const n = msg.value.length;
-      counter.textContent = `${n} / 2000`;
-      counter.classList.toggle("is-near", n > 1800);
-    });
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const text = msg.value.trim();
-      if (!text) {
-        statusEl.dataset.kind = "error";
-        statusEl.textContent = "Write something first.";
-        return;
-      }
-      if (WORKER_PLACEHOLDER) {
-        statusEl.dataset.kind = "error";
-        statusEl.textContent = "Form not wired up yet — Alan still needs to deploy the Worker.";
-        console.info("Lisa request (not sent, Worker URL unset):", text);
-        return;
-      }
-      submitBtn.disabled = true;
-      statusEl.dataset.kind = "";
-      statusEl.textContent = "Sending…";
+    // News — pull from latest.json sections.comply365_news (already loaded
+    // by load(), or re-fetch if not yet available).
+    let items = latestData?.sections?.comply365_news;
+    if (!items) {
       try {
-        const res = await fetch(WORKER_URL, {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({
-            message: text,
-            website: form.website.value || "",
-          }),
-        });
-        const data = await res.json().catch(() => ({}));
-        if (!res.ok) throw new Error(data.error || ("HTTP " + res.status));
-        statusEl.dataset.kind = "ok";
-        statusEl.textContent = "Got it — Alan will review tomorrow.";
-        msg.value = "";
-        counter.textContent = "0 / 2000";
-      } catch (err) {
-        statusEl.dataset.kind = "error";
-        statusEl.textContent = "Couldn't send: " + (err.message || err);
-      } finally {
-        submitBtn.disabled = false;
+        const res = await fetch(DATA_URL, { cache: "no-cache" });
+        if (res.ok) {
+          const data = await res.json();
+          latestData = data;
+          items = data?.sections?.comply365_news || [];
+        }
+      } catch {
+        items = [];
       }
-    });
+    }
+    renderSection("365-news", sortByDateDesc(items || []), false);
   }
 })();
