@@ -143,6 +143,7 @@
     // SVG + bar charts: re-render gives us fresh SMIL / CSS animations.
     renderTimeline();
     renderCompare();
+    renderLeap();
   }
 
   chips.forEach(chip => {
@@ -421,6 +422,7 @@
   load();
   renderTimeline();
   renderCompare();
+  renderLeap();
 
   // ======================================================================
   // Competitor comparison — context windows
@@ -432,7 +434,7 @@
     const rows = [
       { name: "Gemini 2.5 Pro",    tokens: 2_000_000, label: "2M", color: "#22d3ee" }, // cyan
       { name: "Grok 4",            tokens: 2_000_000, label: "2M", color: "#e879f9" }, // magenta
-      { name: "Claude Opus 4.6",   tokens: 1_000_000, label: "1M", color: "#a684ff", hero: true },
+      { name: "Claude Opus 4.7",   tokens: 1_000_000, label: "1M", color: "#a684ff", hero: true },
       { name: "GPT-4.1",           tokens: 1_000_000, label: "1M", color: "#4ade80" }, // electric green
     ];
     const max = Math.max(...rows.map(r => r.tokens));
@@ -462,6 +464,52 @@
   }
 
   // ======================================================================
+  // Opus 4.7 vs 4.6 — the "leap" chart.
+  // Numbers sourced from anthropic.com/news/claude-opus-4-7 (customer quotes).
+  // ======================================================================
+  function renderLeap() {
+    const host = document.getElementById("leap-rows");
+    if (!host) return;
+    const rows = [
+      { name: "CursorBench",          prev: 58,   next: 70,   source: "Cursor" },
+      { name: "Visual acuity",        prev: 54.5, next: 98.5, source: "XBOW" },
+    ];
+    host.innerHTML = "";
+    rows.forEach((r, i) => {
+      const delta = +(r.next - r.prev).toFixed(1);
+      const delay = 0.3 + i * 0.25;
+      const el = document.createElement("div");
+      el.className = "leap-row";
+      el.style.setProperty("--leap-delay", delay + "s");
+      el.style.setProperty("--prev-w", r.prev + "%");
+      el.style.setProperty("--next-w", r.next + "%");
+      el.innerHTML = `
+        <div class="leap-head">
+          <span class="leap-name">${r.name}</span>
+          <span class="leap-src">${r.source}</span>
+          <span class="leap-delta">+${delta}pt</span>
+        </div>
+        <div class="leap-track">
+          <div class="leap-guide"></div>
+          <div class="leap-bar leap-prev">
+            <span class="leap-lbl">4.6</span>
+            <span class="leap-val">${r.prev}%</span>
+          </div>
+          <div class="leap-bar leap-next">
+            <span class="leap-lbl">4.7</span>
+            <span class="leap-val">${r.next}%</span>
+          </div>
+          <div class="leap-electron"></div>
+        </div>
+      `;
+      host.appendChild(el);
+    });
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      host.querySelectorAll(".leap-row").forEach(el => el.classList.add("is-go"));
+    }));
+  }
+
+  // ======================================================================
   // Timeline chart (context window growth)
   // ======================================================================
   function renderTimeline() {
@@ -479,6 +527,7 @@
       { date: "2025-05-22", model: "Sonnet 4",      ctx:  200_000 },
       { date: "2025-09-29", model: "Sonnet 4.5",    ctx: 1_000_000 },
       { date: "2026-01-15", model: "Opus 4.6 (1M)", ctx: 1_000_000 },
+      { date: "2026-04-16", model: "Opus 4.7 (1M)", ctx: 1_000_000 },
     ];
 
     const W = 800, H = 240;
