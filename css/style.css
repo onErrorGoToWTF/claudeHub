@@ -881,7 +881,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .cbar-electron {
   position: absolute;
   right: 0; top: 50%;
-  width: 14px; height: 14px;
+  width: 9px; height: 9px;
   border-radius: 50%;
   background: radial-gradient(circle at center,
     #ffffff 0%,
