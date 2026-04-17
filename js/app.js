@@ -423,7 +423,52 @@
   load();
   renderTimeline();
   renderCompare();
-  renderLeap();
+  renderIndex();
+  renderScorecard();
+  setupChartObservers();
+
+  // ======================================================================
+  // Scroll-triggered chart animation.
+  // Cards animate in when they enter the middle ~75% of the viewport.
+  // Reset to zero state when they leave so re-entry replays the animation.
+  // ======================================================================
+  function setupChartObservers() {
+    if (!("IntersectionObserver" in window)) {
+      document.querySelectorAll(".cbar, .vbar, .hbar").forEach((el) => el.classList.add("is-go"));
+      return;
+    }
+    const ACTIVATION_MARGIN = "-12.5% 0px -12.5% 0px"; // middle 75% band
+    const groups = [
+      { host: "#cbars", childSel: ".cbar" },
+      { host: "#vbars", childSel: ".vbar" },
+      { host: "#hbars", childSel: ".hbar" },
+    ];
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        const sel = e.target.dataset.chartChildren;
+        if (!sel) continue;
+        e.target.querySelectorAll(sel).forEach((k) =>
+          k.classList.toggle("is-go", e.isIntersecting)
+        );
+      }
+    }, { root: null, rootMargin: ACTIVATION_MARGIN, threshold: 0 });
+
+    groups.forEach(({ host, childSel }) => {
+      const el = document.querySelector(host);
+      if (!el) return;
+      el.dataset.chartChildren = childSel;
+      io.observe(el);
+    });
+
+    // Timeline uses SMIL animateMotion — re-render on re-entry to replay it.
+    const tl = document.getElementById("timeline-card");
+    if (tl) {
+      const tlIo = new IntersectionObserver((entries) => {
+        for (const e of entries) if (e.isIntersecting) renderTimeline();
+      }, { root: null, rootMargin: ACTIVATION_MARGIN, threshold: 0 });
+      tlIo.observe(tl);
+    }
+  }
 
   // ======================================================================
   // Competitor comparison — context windows
@@ -458,10 +503,7 @@
         </div>`;
       host.appendChild(el);
     });
-    // Kick off transitions on the next frame.
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      host.querySelectorAll(".cbar").forEach(el => el.classList.add("is-go"));
-    }));
+    // .is-go added by IntersectionObserver when card enters activation zone.
   }
 
   // ======================================================================
@@ -495,9 +537,7 @@
       `;
       host.appendChild(el);
     });
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      host.querySelectorAll(".vbar").forEach((el) => el.classList.add("is-go"));
-    }));
+    // .is-go added by IntersectionObserver when card enters activation zone.
   }
 
   // ======================================================================
@@ -533,9 +573,7 @@
       `;
       host.appendChild(el);
     });
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      host.querySelectorAll(".hbar").forEach((el) => el.classList.add("is-go"));
-    }));
+    // .is-go added by IntersectionObserver when card enters activation zone.
   }
 
   // ======================================================================
