@@ -1,5 +1,8 @@
 # claudeHub
 
+> **Before writing any code:** do not make any changes until you have 95% confidence in what you need to build. Ask follow-up questions until you reach that confidence.
+
+
 Personal, public-facing Claude intelligence dashboard. Pulls news, YouTube videos, status, tutorials, and Anthropic docs into a static site auto-refreshed every 2h via GitHub Actions. One password-gated tab ("365") hosts curated content for a non-technical family member; the homepage shows charts tracking the Claude model trajectory.
 
 ## Stack
