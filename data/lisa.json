@@ -14,7 +14,16 @@
       "file": "data/lisa/tutorials/01-phone-setup.md"
     }
   ],
-  "tutorials_pinned": [],
+  "tutorials_pinned": [
+    {
+      "title": "v2.1.107",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.107",
+      "source": "Claude Code Releases",
+      "summary": "What's changed Show thinking hints sooner during long operations",
+      "kind": "official",
+      "pinned_at": "2026-04-17T00:44:38.416Z"
+    }
+  ],
   "news": [
     {
       "title": "Salesforce + Claude — native MCP integration",
