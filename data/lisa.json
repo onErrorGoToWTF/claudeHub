@@ -14,7 +14,16 @@
       "file": "data/lisa/tutorials/01-phone-setup.md"
     }
   ],
-  "tutorials_pinned": [],
+  "tutorials_pinned": [
+    {
+      "title": "v2.1.112",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.112",
+      "source": "Claude Code Releases",
+      "summary": "What's changed Fixed \"claude-opus-4-7 is temporarily unavailable\" for auto mode",
+      "kind": "official",
+      "pinned_at": "2026-04-17T00:44:04.884Z"
+    }
+  ],
   "news": [
     {
       "title": "Salesforce + Claude — native MCP integration",
