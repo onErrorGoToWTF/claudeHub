@@ -54,10 +54,13 @@ async function verifyTurnstile(token, secret, ip) {
   return !!data.success;
 }
 
-async function rateLimit(env, ip) {
+async function rateLimit(env, ip, scope = "submit") {
   const win = parseInt(env.RATE_WINDOW_SECONDS || "60", 10);
-  const max = parseInt(env.RATE_MAX_REQUESTS || "3", 10);
-  const key = `rl:${ip}`;
+  // /pin is password-gated, so allow a burst; /submit stays tight.
+  const max = scope === "pin"
+    ? parseInt(env.PIN_RATE_MAX || "20", 10)
+    : parseInt(env.RATE_MAX_REQUESTS || "3", 10);
+  const key = `rl:${scope}:${ip}`;
   const current = parseInt((await env.RATE_LIMIT.get(key)) || "0", 10);
   if (current >= max) return false;
   await env.RATE_LIMIT.put(key, String(current + 1), { expirationTtl: win });
@@ -132,7 +135,7 @@ function sanitizePinItem(raw) {
 
 async function handlePin(request, env, corsHeaders) {
   const ip = request.headers.get("cf-connecting-ip") || "unknown";
-  if (!(await rateLimit(env, ip))) {
+  if (!(await rateLimit(env, ip, "pin"))) {
     return json({ error: "rate limited" }, 429, corsHeaders);
   }
 
