@@ -304,6 +304,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 
 .cards { display: flex; flex-direction: column; gap: 12px; }
+.cards[hidden] { display: none; }
 
 /* Section accents */
 [data-section="365"]       { --sec: var(--accent-365); }
