@@ -28,6 +28,63 @@
     premium:  "Premium",
   };
 
+  // Capability taxonomy for the Finder checkbox grid.
+  // Each capability.matches lists the tools.json `provides` tags that
+  // satisfy that capability. Live counts = # tools whose provides set
+  // intersects the matches set.
+  const CAP_GROUPS = [
+    { id: "foundation", label: "Foundation Model", caps: [
+      { id: "cap-frontier-llm",  label: "Frontier reasoning",   matches: ["frontier-llm"] },
+      { id: "cap-agent-framework", label: "Agent framework",    matches: ["agent-framework"] },
+      { id: "cap-projects",      label: "Projects / Artifacts", matches: ["projects", "artifacts"] },
+    ]},
+    { id: "build", label: "Build Surface", caps: [
+      { id: "cap-ide",           label: "IDE / pair-coder",     matches: ["ide", "inline-edit"] },
+      { id: "cap-no-code",       label: "No-code app builder",  matches: ["no-code-frontend"] },
+      { id: "cap-terminal",      label: "Terminal agent",       matches: ["terminal-agent"] },
+    ]},
+    { id: "agent", label: "Agent & Orchestration", caps: [
+      { id: "cap-mcp",           label: "MCP client",           matches: ["mcp-client"] },
+      { id: "cap-workflow",      label: "Workflow automation",  matches: ["workflow-automation"] },
+      { id: "cap-scheduled",     label: "Scheduled / cron",     matches: ["cron-jobs"] },
+    ]},
+    { id: "voice", label: "Voice", caps: [
+      { id: "cap-tts",           label: "Text-to-speech",       matches: ["text-to-speech", "expressive-tts"] },
+      { id: "cap-voice-clone",   label: "Voice cloning",        matches: ["voice-cloning"] },
+      { id: "cap-realtime-voice", label: "Realtime voice",      matches: ["real-time-voice"] },
+    ]},
+    { id: "video", label: "Video", caps: [
+      { id: "cap-gen-video",     label: "Generative video",     matches: ["text-to-video"] },
+      { id: "cap-img-to-video",  label: "Image-to-video",       matches: ["image-to-video", "keyframe-video-animation"] },
+      { id: "cap-cinematic",     label: "4K / synced audio",    matches: ["4k-video", "synced-audio"] },
+    ]},
+    { id: "image", label: "Image", caps: [
+      { id: "cap-text-to-image", label: "Text-to-image",        matches: ["text-to-image"] },
+      { id: "cap-image-edit",    label: "Image edit / inpaint", matches: ["image-to-image"] },
+      { id: "cap-text-on-image", label: "Text on image",        matches: ["text-rendering"] },
+    ]},
+    { id: "data", label: "Data & Retrieval", caps: [
+      { id: "cap-postgres",      label: "Postgres DB",          matches: ["postgres-db"] },
+      { id: "cap-vector",        label: "Vector / RAG",         matches: ["vector-search"] },
+      { id: "cap-auth",          label: "Auth bundled",         matches: ["auth-included"] },
+    ]},
+    { id: "knowledge", label: "Knowledge & Research", caps: [
+      { id: "cap-file-upload",   label: "File uploads",         matches: ["file-upload"] },
+      { id: "cap-long-context",  label: "Long context",         matches: ["long-context"] },
+    ]},
+    { id: "deploy", label: "Deploy & Hosting", caps: [
+      { id: "cap-static",        label: "Static / edge hosting", matches: ["static-hosting", "edge-functions"] },
+      { id: "cap-preview",       label: "Preview deploys",       matches: ["preview-deploys"] },
+      { id: "cap-nextjs",        label: "Next.js native",        matches: ["next-js-native"] },
+    ]},
+    { id: "glue", label: "Glue & Ops", caps: [
+      { id: "cap-one-click",     label: "One-click deploy",     matches: ["one-click-deploy", "vercel-deploy"] },
+      { id: "cap-self-host",     label: "Self-hostable",        matches: ["self-hostable"] },
+    ]},
+  ];
+  const CAP_BY_ID = {};
+  CAP_GROUPS.forEach(g => g.caps.forEach(c => { CAP_BY_ID[c.id] = { ...c, groupLabel: g.label }; }));
+
   // Sections that render from latest.json and share the filter machinery.
   const SECTIONS = ["comply365", "news-media"];
   // Sections that are exclusive (only visible when their chip is picked).
@@ -521,6 +578,17 @@
   let toolsData = null;
   let toolsModality = "all";
 
+  // Finder capability-grid state (M1.8). Persisted per-device.
+  const FINDER_CAPS_KEY = "clhub.v1.finderCaps";
+  const capsSelected = new Set();
+  try {
+    const raw = localStorage.getItem(FINDER_CAPS_KEY);
+    if (raw) JSON.parse(raw).forEach((id) => capsSelected.add(id));
+  } catch {}
+  function persistCaps() {
+    try { localStorage.setItem(FINDER_CAPS_KEY, JSON.stringify([...capsSelected])); } catch {}
+  }
+
   async function loadTools() {
     try {
       const res = await fetch(TOOLS_URL, { cache: "no-cache" });
@@ -529,10 +597,104 @@
       toolsData = Array.isArray(data.tools) ? data.tools : [];
       renderModalityFilter();
       renderTools();
+      renderCapGrid();
+      renderCapFilterBar();
     } catch (err) {
       const host = document.getElementById("tool-grid");
       if (host) host.innerHTML = `<div class="empty">Couldn't load tools catalog. ${String(err.message || err)}</div>`;
     }
+  }
+
+  function countToolsForCap(cap) {
+    if (!toolsData || !cap) return 0;
+    const m = cap.matches || [];
+    return toolsData.filter((t) =>
+      (t.provides || []).some((p) => m.includes(p))
+    ).length;
+  }
+
+  function renderCapGrid() {
+    const host = document.getElementById("cap-grid");
+    if (!host || !toolsData) return;
+    host.innerHTML = "";
+    CAP_GROUPS.forEach((g) => {
+      const group = document.createElement("section");
+      group.className = "cap-group glass";
+      group.innerHTML = `<h5 class="cap-group-title">${g.label}</h5>`;
+      const list = document.createElement("div");
+      list.className = "cap-list";
+      g.caps.forEach((c) => {
+        const n = countToolsForCap(c);
+        const checked = capsSelected.has(c.id);
+        const row = document.createElement("label");
+        row.className = "cap-check" + (checked ? " is-checked" : "") + (n === 0 ? " is-empty" : "");
+        row.innerHTML = `
+          <input type="checkbox" class="cap-input" data-cap="${c.id}" ${checked ? "checked" : ""} ${n === 0 ? "disabled" : ""} />
+          <span class="cap-label">${c.label}</span>
+          <span class="cap-count">${n}</span>
+        `;
+        list.appendChild(row);
+      });
+      group.appendChild(list);
+      host.appendChild(group);
+    });
+    host.querySelectorAll(".cap-input").forEach((input) => {
+      input.addEventListener("change", () => {
+        const id = input.dataset.cap;
+        if (input.checked) capsSelected.add(id);
+        else capsSelected.delete(id);
+        input.closest(".cap-check").classList.toggle("is-checked", input.checked);
+        persistCaps();
+        renderCapFilterBar();
+      });
+    });
+  }
+
+  function renderCapFilterBar() {
+    const bar = document.getElementById("cap-filter-bar");
+    if (!bar) return;
+    if (capsSelected.size === 0) {
+      bar.innerHTML = "";
+      bar.hidden = true;
+      return;
+    }
+    bar.hidden = false;
+    bar.innerHTML = "";
+    [...capsSelected].forEach((id) => {
+      const cap = CAP_BY_ID[id];
+      if (!cap) return;
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "cap-filter-chip";
+      chip.setAttribute("aria-label", `Remove ${cap.label}`);
+      chip.innerHTML = `<span class="cap-filter-label">${cap.label}</span><span class="cap-filter-x" aria-hidden="true">×</span>`;
+      chip.addEventListener("click", () => {
+        capsSelected.delete(id);
+        persistCaps();
+        // Uncheck the matching input.
+        const input = document.querySelector(`.cap-input[data-cap="${id}"]`);
+        if (input) {
+          input.checked = false;
+          input.closest(".cap-check").classList.remove("is-checked");
+        }
+        renderCapFilterBar();
+      });
+      bar.appendChild(chip);
+    });
+    const clear = document.createElement("button");
+    clear.type = "button";
+    clear.className = "cap-filter-clear";
+    clear.textContent = "Clear all";
+    clear.addEventListener("click", () => {
+      capsSelected.clear();
+      persistCaps();
+      document.querySelectorAll(".cap-input").forEach((i) => {
+        i.checked = false;
+        i.closest(".cap-check").classList.remove("is-checked");
+      });
+      renderCapFilterBar();
+    });
+    bar.appendChild(clear);
   }
 
   function renderModalityFilter() {
@@ -676,11 +838,27 @@
       btn.addEventListener("click", () => {
         const fork = btn.dataset.fork;
         const msg = fork === "tools"
-          ? "Mode B (Pick tools) lands alongside the capability grid (M1.8)."
+          ? "Mode B (Pick tools) — multi-select in the catalog lands in a later milestone; for now pick capabilities below."
           : "Mode C (Browse by topic) ships in a later milestone.";
         setStatus(msg, "info");
       });
     });
+
+    // Capability grid "See the stack" CTA — wired to its own status line.
+    const capContinue = document.getElementById("cap-continue");
+    const capStatus   = document.getElementById("cap-status");
+    if (capContinue && capStatus) {
+      capContinue.addEventListener("click", () => {
+        if (capsSelected.size === 0) {
+          capStatus.textContent = "Pick at least one capability first.";
+          capStatus.dataset.kind = "warn";
+          return;
+        }
+        const list = [...capsSelected].map((id) => (CAP_BY_ID[id] || {}).label).filter(Boolean).join(", ");
+        capStatus.textContent = `Ready with ${capsSelected.size} capabilities (${list}). Easy-path recommendation ships in M1.9.`;
+        capStatus.dataset.kind = "ok";
+      });
+    }
   }
   initFinder();
 
