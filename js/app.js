@@ -760,8 +760,11 @@
 
   // ======================================================================
   // Workflow recipes — clickable cards that open a modal with full detail.
+  // Using a function declaration (hoisted) instead of a const so the TDZ
+  // doesn't fire if applyFilter("home") → replayHomeAnimations() runs at
+  // init before this module position is reached.
   // ======================================================================
-  const RECIPES = [
+  function getRecipes() { return [
     {
       chips: [{n:"Claude Code", t:"LLM"}, {n:"Cursor", t:"tool-app"}],
       title: "Agentic refactor loop",
@@ -951,7 +954,7 @@
         ]
       }
     }
-  ];
+  ]; }
 
   function openRecipeModal(recipe) {
     const tpl = document.getElementById("tpl-recipe-modal");
@@ -1020,7 +1023,7 @@
     const host = document.getElementById("recipes");
     if (!host) return;
     host.innerHTML = "";
-    RECIPES.forEach((r, i) => {
+    getRecipes().forEach((r, i) => {
       const delay = 0.2 + i * 0.08;
       const el = document.createElement("div");
       el.className = "recipe";
