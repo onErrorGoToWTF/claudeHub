@@ -445,7 +445,7 @@ M2.7   ✅ Priority 7               Lovable / Bolt starter prompts. [v0.3.6]
 M2.8   ✅ Priority 8               Python / JS SDK snippets;
                                   ACCPAC fixed-width parser for the commission calc use case. [v0.3.7]
 M2.9   ✅ Snippet rows UI          per-tool snippet sections on tool pages. [v0.3.8]
-M2.10  ▢ Global cmd-K search      topbar search over title + tags; copy-to-clipboard.
+M2.10  ✅ Global cmd-K search      topbar search over title + tags; copy-to-clipboard. [v0.3.9]
 ```
 
 **Phase 3 — My Projects depth:**

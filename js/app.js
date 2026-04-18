@@ -1536,6 +1536,83 @@
     if (m && !m.hidden) closeToolModal();
   });
 
+  // ---------- Snippet search — cmd-K / ctrl-K (M2.10) ----------
+  function openSnippetSearch() {
+    const modal = document.getElementById("snippet-search-modal");
+    if (!modal) return;
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+    const input = document.getElementById("snippet-search-input");
+    if (input) {
+      input.value = "";
+      runSnippetSearch("");
+      // iOS: delay focus slightly so the modal is visible before the keyboard pops.
+      setTimeout(() => input.focus({ preventScroll: true }), 30);
+    }
+  }
+  function closeSnippetSearch() {
+    const modal = document.getElementById("snippet-search-modal");
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden])")) {
+      document.body.classList.remove("modal-open");
+    }
+  }
+  function runSnippetSearch(raw) {
+    const host   = document.getElementById("snippet-search-results");
+    const status = document.getElementById("snippet-search-status");
+    if (!host) return;
+    const q = (raw || "").trim().toLowerCase();
+    const haystack = snippetsData || [];
+    let matches;
+    if (q === "") {
+      matches = haystack.slice(0, 40);
+    } else {
+      const terms = q.split(/\s+/).filter(Boolean);
+      matches = haystack.filter((s) => {
+        const fields = [
+          s.title || "",
+          s.summary || "",
+          (s.tags || []).join(" "),
+          (s.snippetTags || []).join(" "),
+          s.language || "",
+        ].join(" ").toLowerCase();
+        return terms.every((t) => fields.includes(t));
+      });
+    }
+    host.innerHTML = matches.map((s) => renderSnippetRow(s)).join("");
+    if (status) {
+      if (q === "") {
+        status.textContent = `${haystack.length} snippets — type to filter`;
+      } else {
+        status.textContent = `${matches.length} match${matches.length === 1 ? "" : "es"} for "${raw.trim()}"`;
+      }
+    }
+    wireSnippetCopyButtons(host);
+  }
+  document.addEventListener("keydown", (e) => {
+    // cmd-K / ctrl-K opens snippet search; works anywhere on the page.
+    if ((e.metaKey || e.ctrlKey) && !e.shiftKey && !e.altKey && (e.key === "k" || e.key === "K")) {
+      e.preventDefault();
+      openSnippetSearch();
+      return;
+    }
+    // Escape closes search.
+    if (e.key === "Escape") {
+      const m = document.getElementById("snippet-search-modal");
+      if (m && !m.hidden) closeSnippetSearch();
+    }
+  });
+  {
+    const openBtn = document.getElementById("snippet-search-open");
+    if (openBtn) openBtn.addEventListener("click", (e) => { e.preventDefault(); openSnippetSearch(); });
+    document.querySelectorAll("#snippet-search-modal [data-close]").forEach((el) => {
+      el.addEventListener("click", (e) => { e.preventDefault(); closeSnippetSearch(); });
+    });
+    const input = document.getElementById("snippet-search-input");
+    if (input) input.addEventListener("input", () => runSnippetSearch(input.value));
+  }
+
   // ---------- Version footer — proves which build is rendered ----------
   async function loadVersion() {
     // Always stamp "Loaded at" on mount, even if the fetch fails.
