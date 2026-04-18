@@ -655,8 +655,8 @@
     });
   }
 
-  // ----- Finder output — Easiest path (M1.9) -----
-  // Sort key per the plan: (+setupComplexity, -priorityScore, price-asc,
+  // ----- Finder output — dual Easiest / Best path (M1.9–M1.10) -----
+  // Easy sort per plan: (+setupComplexity, -priorityScore, price-asc,
   // Claude-native-first, id). Claude-native wins ties.
   function cmpEasy(a, b) {
     const pairs = [
@@ -669,7 +669,21 @@
     return (a.id || "").localeCompare(b.id || "");
   }
 
-  function pickEasiestStack(capIds) {
+  // Best sort per plan: (-priorityScore, quality-hints from tags, id) with
+  // Claude-native ties preferred. priceTier DESC stands in for a
+  // quality hint — premium-tier tools tend to be best-in-class.
+  function cmpBest(a, b) {
+    const pairs = [
+      [-(a.priorityScore ?? 3),       -(b.priorityScore ?? 3)],
+      [(a.claudeNative ? 0 : 1),      (b.claudeNative ? 0 : 1)],
+      [-(PRICE_RANK[a.priceTier] ?? 0), -(PRICE_RANK[b.priceTier] ?? 0)],
+      [(a.setupComplexity ?? 3),      (b.setupComplexity ?? 3)],
+    ];
+    for (const [x, y] of pairs) if (x !== y) return x - y;
+    return (a.id || "").localeCompare(b.id || "");
+  }
+
+  function pickStack(capIds, cmp) {
     const picks = new Map(); // tool.id -> { tool, caps: [capLabel] }
     const unmet = [];
     capIds.forEach((id) => {
@@ -682,12 +696,12 @@
         unmet.push(cap.label);
         return;
       }
-      const primary = [...candidates].sort(cmpEasy)[0];
+      const primary = [...candidates].sort(cmp)[0];
       const entry = picks.get(primary.id) || { tool: primary, caps: [] };
       entry.caps.push(cap.label);
       picks.set(primary.id, entry);
     });
-    const ordered = [...picks.values()].sort((a, b) => cmpEasy(a.tool, b.tool));
+    const ordered = [...picks.values()].sort((a, b) => cmp(a.tool, b.tool));
     return { ordered, unmet };
   }
 
@@ -698,15 +712,18 @@
       host.hidden = true;
       return;
     }
-    const { ordered, unmet } = pickEasiestStack([...capsSelected]);
-    renderEasiestColumn(ordered, unmet);
+    const caps = [...capsSelected];
+    const easy = pickStack(caps, cmpEasy);
+    const best = pickStack(caps, cmpBest);
+    renderColumn(easy.ordered, easy.unmet, "stack-easy-list", "stack-easy-summary");
+    renderColumn(best.ordered, best.unmet, "stack-best-list", "stack-best-summary");
     host.hidden = false;
     if (scroll) host.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  function renderEasiestColumn(picked, unmet) {
-    const ol      = document.getElementById("stack-easy-list");
-    const summary = document.getElementById("stack-easy-summary");
+  function renderColumn(picked, unmet, listId, summaryId) {
+    const ol      = document.getElementById(listId);
+    const summary = document.getElementById(summaryId);
     if (!ol || !summary) return;
     summary.textContent = picked.length === 1 ? "1 tool" : `${picked.length} tools`;
     ol.innerHTML = "";

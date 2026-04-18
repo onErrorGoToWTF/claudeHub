@@ -1346,7 +1346,6 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   text-transform: uppercase; color: var(--accent-claude-hi);
   margin-bottom: 2px;
 }
-.stack-column-placeholder .stack-eyebrow { color: var(--text-3); }
 .stack-lede {
   margin: 0;
   color: var(--text-2);
@@ -1365,12 +1364,6 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   border: 1px solid color-mix(in srgb, var(--accent-claude) 35%, var(--border));
   background: color-mix(in srgb, var(--accent-claude-soft) 35%, transparent);
 }
-.stack-summary-muted {
-  color: var(--text-3);
-  border-color: var(--border);
-  background: color-mix(in srgb, var(--text-1) 4%, transparent);
-}
-
 .stack-list {
   list-style: none;
   margin: 0;
@@ -1574,11 +1567,42 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   line-height: 1.5;
 }
 
-.stack-column-placeholder .empty {
-  border: 1px dashed var(--border);
-  border-radius: var(--radius-md);
-  padding: 28px 16px;
+/* Best path column — blue accent to distinguish from Easy's orange. */
+.stack-column-best .stack-head .stack-summary {
+  background: color-mix(in srgb, var(--accent-soft) 45%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  color: var(--accent-hi);
 }
+.stack-column-best .stack-step-num {
+  color: var(--accent-hi);
+  background: color-mix(in srgb, var(--accent-soft) 45%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border-strong));
+}
+.stack-column-best .stack-step-first .stack-step-num {
+  background: var(--accent);
+  color: var(--bg-1);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px -4px var(--accent-glow);
+}
+.stack-column-best .stack-step::before {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+.stack-column-best .stack-start-chip {
+  color: var(--accent-hi);
+  background: color-mix(in srgb, var(--accent-soft) 50%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+.stack-column-best .stack-card {
+  border-left-color: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.stack-column-best .stack-card-claude {
+  border-left-color: color-mix(in srgb, var(--accent-claude) 60%, transparent);
+}
+.stack-column-best .stack-eyebrow { color: var(--accent-hi); }
+.stack-column-best .stack-why {
+  border-left-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.stack-column-best .stack-why-label { color: var(--accent-hi); }
 
 /* ===== Version pill (footer) — visible proof of the current build ===== */
 .version-pill {
