@@ -606,8 +606,16 @@
       return;
     }
     const frag = document.createDocumentFragment();
+    const BUCKET_LABEL = { code: "Claude Code", api: "Claude API", mcp: "MCP", videos: "Video", academy: "Academy" };
     sortByDateDesc(filtered).slice(0, 24).forEach((it, idx) => {
       const node = renderCard(it, false, idx);
+      const bucket = sourceBucket(it.source);
+      node.dataset.learnBucket = bucket;
+      const pill = node.querySelector(".card-pill");
+      if (pill && BUCKET_LABEL[bucket]) {
+        pill.textContent = BUCKET_LABEL[bucket];
+        pill.dataset.pill = bucket;
+      }
       registerReveal(node, idx);
       frag.appendChild(node);
     });

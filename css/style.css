@@ -490,6 +490,14 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .card[data-sent="critical"]  { --pill-col: #f43f5e; }
 .card[data-sent="resolved"]  { --pill-col: #34d399; }
 .card[data-sent="info"]      { --pill-col: #60a5fa; }
+
+/* Claude hub → What's new: override card border + pill colors by source bucket
+   instead of sentiment. Sentiment doesn't read on release/changelog cards. */
+[data-cards="claude-whats-new"] .card[data-learn-bucket="code"]    { --pill-col: #34d399; }
+[data-cards="claude-whats-new"] .card[data-learn-bucket="api"]     { --pill-col: #ff7a3d; }
+[data-cards="claude-whats-new"] .card[data-learn-bucket="mcp"]     { --pill-col: #a78bfa; }
+[data-cards="claude-whats-new"] .card[data-learn-bucket="videos"]  { --pill-col: #f43f5e; }
+[data-cards="claude-whats-new"] .card[data-learn-bucket="academy"] { --pill-col: #60a5fa; }
 .card:hover {
   border-left-color: var(--pill-col);
   transform: translateY(-2px);
@@ -540,6 +548,11 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .card-pill[data-pill="positive"]  { background: rgba(52,211,153,0.18); color: #34d399; }
 .card-pill[data-pill="warning"]   { background: rgba(251,191,36,0.18); color: #fbbf24; }
 .card-pill[data-pill="critical"]  { background: rgba(244,63,94,0.22);  color: #f43f5e; }
+.card-pill[data-pill="code"]      { background: rgba(52,211,153,0.18); color: #34d399; }
+.card-pill[data-pill="api"]       { background: rgba(255,122,61,0.22); color: #ff9d6b; }
+.card-pill[data-pill="mcp"]       { background: rgba(167,139,250,0.22); color: #c4b5fd; }
+.card-pill[data-pill="videos"]    { background: rgba(244,63,94,0.22);  color: #fb7185; }
+.card-pill[data-pill="academy"]   { background: rgba(96,165,250,0.22); color: #93c5fd; }
 .card-pill[data-pill="resolved"]  { background: rgba(52,211,153,0.18); color: #34d399; }
 .card-pill[data-pill="info"]      { background: rgba(59,130,246,0.16); color: #60a5fa; }
 :root[data-theme="light"] .card-pill[data-pill="positive"]  { background: rgba(16,185,129,0.14); color: #059669; }
