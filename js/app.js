@@ -8,7 +8,7 @@
   // Sections that render from latest.json and share the filter machinery.
   const SECTIONS = ["365", "resources", "news"];
   // Sections that are exclusive (only visible when their chip is picked).
-  const DISTINCT_SECTIONS = ["home"];
+  const DISTINCT_SECTIONS = ["home", "apply"];
 
   // Per-model brand-aligned electric palette, used by every chart so
   // colors match across the site.
@@ -74,6 +74,34 @@
     });
     if (f === "365") load365();
     if (f === "home") replayHomeAnimations();
+    if (f === "apply") replayApplyAnimations();
+  }
+
+  // If a host's bounding rect overlaps the activation zone (middle ~75%
+  // of the viewport), re-toggle .is-go on its children. This protects
+  // against the edge case where the user re-clicks the same tab: the
+  // IntersectionObserver won't fire (no visibility change) but render*()
+  // has wiped the children's .is-go class, so bars stay invisible.
+  function chartHostInView(host) {
+    const rect = host.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const top = vh * 0.125;
+    const bottom = vh * 0.875;
+    return rect.bottom > top && rect.top < bottom;
+  }
+  function replayChartObservers(hostSelectors) {
+    requestAnimationFrame(() => {
+      hostSelectors.forEach((sel) => {
+        const host = document.querySelector(sel);
+        if (!host) return;
+        const childSel = host.dataset.chartChildren;
+        if (!childSel) return;
+        const on = chartHostInView(host);
+        host.querySelectorAll(childSel).forEach((k) =>
+          k.classList.toggle("is-go", on)
+        );
+      });
+    });
   }
 
   // Replay Home-tab animations whenever the tab is activated.
@@ -90,9 +118,21 @@
     renderCompare();
     renderIndex();
     renderScorecard();
-    renderTaskGrid();
     renderLlmFaceoff();
+    replayChartObservers(["#cbars", "#vbars", "#hbars", "#faceoff"]);
+  }
+
+  // Replay Apply-AI-tab animations whenever the tab is activated.
+  function replayApplyAnimations() {
+    const css = document.querySelectorAll(".section-apply, .section-apply .hero");
+    css.forEach(el => {
+      el.style.animation = "none";
+      void el.offsetHeight;
+      el.style.animation = "";
+    });
+    renderTaskGrid();
     renderRecipes();
+    replayChartObservers(["#taskgrid", "#recipes"]);
   }
 
   chips.forEach(chip => {

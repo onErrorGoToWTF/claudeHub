@@ -28,6 +28,7 @@
   </div>
   <nav class="chips" id="filters" aria-label="Sections">
     <button class="chip glass-pill is-active" data-filter="home">Home</button>
+    <button class="chip glass-pill chip-apply" data-filter="apply">Apply AI</button>
     <button class="chip glass-pill chip-365" data-filter="365">365</button>
     <button class="chip glass-pill chip-resources" data-filter="resources">Resources</button>
     <button class="chip glass-pill chip-news" data-filter="news">News</button>
@@ -104,22 +105,6 @@
       <p class="leap-foot">Source: anthropic.com/news/claude-opus-4-7</p>
     </section>
 
-    <section class="hero glass" id="tasks-card">
-      <div class="hero-head">
-        <div>
-          <h2 class="hero-title">Best tool per task</h2>
-          <p class="hero-sub">Frontier winners across the AI stack · Apr 2026</p>
-        </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">11</div>
-          <div class="hero-kpi-lbl">tasks ranked</div>
-        </div>
-      </div>
-      <div class="type-legend" id="type-legend"></div>
-      <div class="taskgrid" id="taskgrid"></div>
-      <p class="leap-foot">Sources: Artificial Analysis · LMArena · vendor announcements</p>
-    </section>
-
     <section class="hero glass" id="faceoff-card">
       <div class="hero-head">
         <div>
@@ -133,20 +118,6 @@
       </div>
       <div id="faceoff"></div>
       <p class="leap-foot">Source: Artificial Analysis · LMArena · vendor pages</p>
-    </section>
-
-    <section class="hero glass" id="recipes-card">
-      <div class="hero-head">
-        <div>
-          <h2 class="hero-title">Workflow recipes</h2>
-          <p class="hero-sub">Multi-tool combos people actually use — and why they pair</p>
-        </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">7</div>
-          <div class="hero-kpi-lbl">pipelines</div>
-        </div>
-      </div>
-      <div class="recipes" id="recipes"></div>
     </section>
 
     <div class="stat-grid">
@@ -171,11 +142,47 @@
       <div class="home-cta-row">
         <div>
           <div class="home-cta-title">Want more?</div>
-          <div class="home-cta-sub">Tap any chip above — 365, resources, news.</div>
+          <div class="home-cta-sub">Tap any chip above — apply AI, 365, resources, news.</div>
         </div>
-        <button class="home-cta-btn" data-chip="news" type="button">Explore →</button>
+        <button class="home-cta-btn" data-chip="apply" type="button">Explore →</button>
       </div>
     </div>
+  </section>
+
+  <section class="section section-apply" data-section="apply" id="section-apply">
+    <div class="section-head">
+      <h2>Apply AI</h2>
+    </div>
+
+    <section class="hero glass" id="tasks-card">
+      <div class="hero-head">
+        <div>
+          <h2 class="hero-title">Best tool per task</h2>
+          <p class="hero-sub">Frontier winners across the AI stack · Apr 2026</p>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-num">11</div>
+          <div class="hero-kpi-lbl">tasks ranked</div>
+        </div>
+      </div>
+      <div class="type-legend" id="type-legend"></div>
+      <div class="taskgrid" id="taskgrid"></div>
+      <p class="leap-foot">Sources: Artificial Analysis · LMArena · vendor announcements</p>
+    </section>
+
+    <section class="hero glass" id="recipes-card">
+      <div class="hero-head">
+        <div>
+          <h2 class="hero-title">Workflow recipes</h2>
+          <p class="hero-sub">Multi-tool combos people actually use — tap any to expand.</p>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-num">7</div>
+          <div class="hero-kpi-lbl">pipelines</div>
+        </div>
+      </div>
+      <div class="recipes" id="recipes"></div>
+    </section>
   </section>
 
   <section class="section" data-section="365" id="section-365">

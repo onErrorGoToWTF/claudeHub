@@ -27,6 +27,11 @@
   --accent-365-soft:   rgba(166,132,255,0.22);
   --accent-365-glow:   rgba(166,132,255,0.14);
 
+  --accent-claude:      #ff7a3d;
+  --accent-claude-hi:   #ffb27a;
+  --accent-claude-soft: rgba(255,122,61,0.20);
+  --accent-claude-glow: rgba(255,122,61,0.16);
+
   --danger:        #f87171;
   --success:       #34d399;
 
@@ -310,9 +315,17 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .subpills-nested .subpill { font-size: 12.5px; padding: 5px 10px; }
 
 /* Section accents */
+[data-section="apply"]     { --sec: var(--accent-claude); }
 [data-section="365"]       { --sec: var(--accent-365); }
 [data-section="resources"] { --sec: #4ade80; }
 [data-section="news"]      { --sec: #22d3ee; }
+
+/* Apply AI section layout — mirrors .section-home spacing */
+.section-apply {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
 
 /* ===== Card ===== */
 .card {
@@ -1072,6 +1085,17 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 
 /* ===== Chip accent treatments ===== */
+/* Apply AI chip — orange (Claude) glow on hover / active. */
+.chip-apply.is-active {
+  color: var(--accent-claude-hi);
+  background: color-mix(in srgb, var(--accent-claude-soft) 60%, transparent);
+  border-color: color-mix(in srgb, var(--accent-claude) 40%, var(--border-strong));
+  box-shadow: 0 0 24px -4px var(--accent-claude-glow);
+}
+.chip-apply:hover:not(.is-active) {
+  color: var(--accent-claude-hi);
+  box-shadow: 0 0 18px -6px var(--accent-claude-glow);
+}
 /* 365 chip — purple glow only on hover / active. */
 .chip-365.is-active {
   color: var(--accent-365-hi);
@@ -1309,7 +1333,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   letter-spacing: -0.01em;
 }
 .trow.is-hero .trow-winner {
-  background: linear-gradient(135deg, #ffb27a, #ff7a3d);
+  background: linear-gradient(135deg, var(--accent-claude-hi), var(--accent-claude));
   -webkit-background-clip: text; background-clip: text; color: transparent;
   font-weight: 700;
 }
