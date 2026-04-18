@@ -231,11 +231,12 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .brand-sub { color: var(--text-2); font-weight: 500; }
 
 .icon-btn {
-  width: 34px; height: 34px; border-radius: 10px;
+  width: 40px; height: 40px; border-radius: 10px;
   display: grid; place-items: center;
   color: var(--text-2);
   border: 1px solid var(--border);
   transition: color 0.2s var(--ease), border-color 0.2s var(--ease), transform 0.18s var(--ease);
+  touch-action: manipulation;
 }
 .icon-btn:hover { color: var(--text-1); border-color: var(--border-strong); }
 .icon-btn:active { transform: scale(0.94); }
@@ -255,6 +256,9 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .chips::-webkit-scrollbar { display: none; }
 .chip {
   flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   padding: 8px 14px;
   border-radius: var(--radius-sm);
   font-size: 13.5px; font-weight: 500;
@@ -318,7 +322,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   scrollbar-width: none;
 }
 .subpills-nested::-webkit-scrollbar { display: none; }
-.subpills-nested .subpill { font-size: 12.5px; padding: 5px 10px; flex-shrink: 0; }
+.subpills-nested .subpill { font-size: 12.5px; padding: 5px 10px; flex-shrink: 0; min-height: 36px; }
 
 /* Section accents */
 [data-section="learn"]      { --sec: var(--accent-claude); }
@@ -735,18 +739,19 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 12px;
-  min-height: 36px;
+  padding: 8px 14px;
+  min-height: 44px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border);
   background: transparent;
   color: var(--text-2);
   font-family: inherit;
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: -0.005em;
   white-space: nowrap;
   cursor: pointer;
+  touch-action: manipulation;
   transition: color 0.2s var(--ease-premium),
               border-color 0.2s var(--ease-premium),
               background 0.2s var(--ease-premium);
@@ -980,13 +985,16 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .concept-link {
   margin-top: auto;
   align-self: flex-start;
-  min-height: 32px;
-  padding: 6px 0 2px;
-  font-size: 12.5px;
+  min-height: 40px;
+  padding: 10px 0 4px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--accent-hi);
   text-decoration: none;
   letter-spacing: -0.005em;
+  touch-action: manipulation;
+  display: inline-flex;
+  align-items: center;
   transition: color 0.2s var(--ease-premium), transform 0.2s var(--ease-premium);
 }
 .concept-link:hover {
@@ -1170,17 +1178,18 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 8px 4px 10px;
+  padding: 6px 10px 6px 12px;
   border-radius: var(--radius-pill);
   border: 1px solid color-mix(in srgb, var(--accent-claude) 35%, var(--border));
   background: color-mix(in srgb, var(--bg-2) 60%, transparent);
   color: var(--text-1);
   font-family: inherit;
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 500;
   cursor: pointer;
+  touch-action: manipulation;
   transition: background 0.2s var(--ease-premium), border-color 0.2s var(--ease-premium);
-  min-height: 28px;
+  min-height: 36px;
 }
 .cap-filter-chip:hover {
   background: color-mix(in srgb, var(--accent-claude-soft) 45%, transparent);
@@ -1194,17 +1203,18 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 .cap-filter-clear {
   margin-left: 4px;
-  padding: 4px 10px;
+  padding: 6px 12px;
   border: 0;
   background: transparent;
   color: var(--text-3);
   font-family: inherit;
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   letter-spacing: 0.02em;
+  touch-action: manipulation;
   transition: color 0.2s var(--ease-premium);
-  min-height: 28px;
+  min-height: 36px;
 }
 .cap-filter-clear:hover { color: var(--accent-claude-hi); }
 
@@ -1239,10 +1249,11 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 6px;
-  min-height: 40px;
+  padding: 10px 8px;
+  min-height: 44px;
   border-radius: var(--radius-sm);
   cursor: pointer;
+  touch-action: manipulation;
   transition: background 0.2s var(--ease-premium), color 0.2s var(--ease-premium);
 }
 .cap-check:hover:not(.is-empty) {
@@ -1534,16 +1545,17 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 .stack-link {
   margin-left: auto;
-  min-height: 32px;
+  min-height: 40px;
   display: inline-flex;
   align-items: center;
-  padding: 6px 10px;
-  font-size: 12px;
+  padding: 8px 14px;
+  font-size: 12.5px;
   font-weight: 600;
   color: var(--text-2);
   text-decoration: none;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
+  touch-action: manipulation;
   transition: color 0.2s var(--ease-premium),
               border-color 0.2s var(--ease-premium),
               background 0.2s var(--ease-premium);
@@ -1671,10 +1683,11 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 10px;
-  min-height: 40px;
+  padding: 10px;
+  min-height: 44px;
   border-radius: var(--radius-sm);
   cursor: pointer;
+  touch-action: manipulation;
   transition: background 0.2s var(--ease-premium);
 }
 .save-radio:hover { background: color-mix(in srgb, var(--text-1) 4%, transparent); }
@@ -1823,16 +1836,17 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   padding-top: 4px;
 }
 .project-delete {
-  padding: 6px 12px;
-  min-height: 32px;
+  padding: 8px 14px;
+  min-height: 40px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: transparent;
   color: var(--text-3);
   font-family: inherit;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 500;
   cursor: pointer;
+  touch-action: manipulation;
   transition: color 0.2s var(--ease-premium),
               border-color 0.2s var(--ease-premium),
               background 0.2s var(--ease-premium);
@@ -2073,6 +2087,9 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   border: 0;
   background: transparent;
   color: var(--text-3);
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
   padding: 6px 14px;
   border-radius: 999px;
   font-size: 12.5px;
