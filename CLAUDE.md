@@ -56,11 +56,14 @@ python -m http.server 8765
 
 ## Tabs (`index.html` chips)
 
-Home · 365 · Resources · News
+Home · Apply AI · 365 · Resources · News
 
-- **Home** — charts: frontier context windows, context-window timeline, Intelligence Index v4.0, Opus 4.7 scorecard. Chart bars animate via `IntersectionObserver` when entering the middle 75% of the viewport; they reset on exit.
-- **365** — no gate, no form. Two sub-pills:
-  - `Resources` — hand-curated Claude-usage tutorials rendered from `data/365/tutorials.json` and inline markdown under `data/365/tutorials/`. Content is co-authored over time and is fully generic (no insider info).
+- **Home** — "state of AI" dashboard: frontier context windows, context-window timeline, Intelligence Index v4.0, Opus 4.7 scorecard, Top 4 LLM face-off (grouped bars across GPQA / SWE-bench / LMArena × 4 models). Chart bars animate via `IntersectionObserver` when entering the middle 75% of the viewport; they reset on exit.
+- **Apply AI** — "how to use Claude" surface, orange (Claude) accent. Two sections:
+  - Best tool per task: 11-row taskgrid with type legend explaining LLM / Image / Video / Voice / Tool categories.
+  - Workflow recipes: 7 clickable cards; tapping a card opens a modal with Overview / Steps / When-to-use / Gotchas / Est. cost / Learn-more links. Expected to grow with prompts / templates / guides.
+- **365** — Comply365-focused; will be tailored for that audience. Two sub-pills:
+  - `Resources` — hand-curated Claude-usage tutorials rendered from `data/365/tutorials.json` and inline markdown under `data/365/tutorials/`. Fully generic content (no insider info).
   - `News` — scraped items from `sections.comply365_news` in `latest.json`: Comply365 company news plus AI-related coverage of competitors Web Manuals, Flydocs, and Ideagen.
 - **Resources** — sub-pills: `Videos` (YouTube how-tos / setup / walkthroughs) + `Official` (Anthropic docs, cookbook, courses, Claude Code releases).
 - **News** — status strip at the top (severity pills from `status.anthropic.com`), then videos block, then articles block. Videos and articles are never interleaved.
@@ -71,7 +74,8 @@ Home · 365 · Resources · News
 - **Dates:** build scripts preserve prior data when a fetch returns empty — the site never goes blank on transient fetch failures.
 - **Tutorial items:** tagged `tutorial_kind: "video" | "official"` at fetch time; the Resources tab filters the combined list by kind.
 - **News ordering:** videos always render above articles in any mixed list. Within each block, `sortByDateDesc`. Load-bearing for the News renderer — do not interleave.
-- **Styling:** dark-first design tokens in `:root`; `[data-theme="light"]` opts into light. Cards use `.glass` for backdrop blur. Accent = Claude blue; `--accent-365-*` = purple (365 tab).
+- **Styling:** dark-first design tokens in `:root`; `[data-theme="light"]` opts into light. Cards use `.glass` for backdrop blur. Section accents: `--accent` (blue) = generic, `--accent-365-*` (purple) = 365 tab, `--accent-claude-*` (orange) = Apply AI tab.
+- **Model colors (shared across all charts):** Claude/Opus/Anthropic = `#ff7a3d` (orange), OpenAI/GPT = `#14b8a6` (teal), Google/Gemini/Nano Banana/NotebookLM = `#4a90ff` (blue), xAI/Grok = `#e879f9` (magenta). `MODEL_COL` in `js/app.js` is the source of truth; `chipColorFor(name)` auto-applies brand color to any chip whose name matches a known model.
 
 ## Gotchas
 
