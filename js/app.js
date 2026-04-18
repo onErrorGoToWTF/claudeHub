@@ -484,7 +484,7 @@
       { host: "#vbars",    childSel: ".vbar" },
       { host: "#hbars",    childSel: ".hbar" },
       { host: "#taskgrid", childSel: ".trow" },
-      { host: "#faceoff",  childSel: ".vbar" },
+      { host: "#faceoff",  childSel: ".gbar" },
       { host: "#recipes",  childSel: ".recipe" },
     ];
     const io = new IntersectionObserver((entries) => {
@@ -665,44 +665,56 @@
   }
 
   // ======================================================================
-  // Top 4 LLM face-off — one grouped chart: 4 benchmark rows, each with
-  // a mini vertical-bar cluster (4 models per bench), compact stats below.
+  // Top 4 LLM face-off — single grouped chart. 4 category clusters along
+  // the x-axis; within each cluster, 4 thin model bars. Legend on top for
+  // color→model mapping, category labels under each cluster, stats table
+  // below for context window + price.
   // ======================================================================
   function renderLlmFaceoff() {
     const host = document.getElementById("faceoff");
     if (!host) return;
     const models = [
-      { short: "Opus 4.7",   maker: "Anthropic", col: MODEL_COL.claude, hero: true, ctx: "1M",   price: "$5"   },
-      { short: "GPT-5.4",    maker: "OpenAI",    col: MODEL_COL.openai,             ctx: "400K", price: "~$10" },
-      { short: "Gemini 3.1", maker: "Google",    col: MODEL_COL.google,             ctx: "1M",   price: "$2"   },
-      { short: "Grok 4.20",  maker: "xAI",       col: MODEL_COL.xai,                ctx: "2M",   price: "$2"   },
+      { short: "Opus 4.7",   col: MODEL_COL.claude, ctx: "1M",   price: "$5"   },
+      { short: "GPT-5.4",    col: MODEL_COL.openai, ctx: "400K", price: "~$10" },
+      { short: "Gemini 3.1", col: MODEL_COL.google, ctx: "1M",   price: "$2"   },
+      { short: "Grok 4.20",  col: MODEL_COL.xai,    ctx: "2M",   price: "$2"   },
     ];
+    // Raw values are compressed to 2–3 chars so they fit above thin bars.
     const benches = [
-      { label: "GPQA Diamond",       vals: [94.2, 94.4, 94.3, null], raws: ["94.2%",  "94.4%", "94.3%", "—"] },
-      { label: "SWE-bench Verified", vals: [87.6, 80.0, 68.5, null], raws: ["87.6%",  "80.0%", "68.5%*", "—"] },
-      { label: "AIME 2025",          vals: [99,   100,  100,  100],  raws: ["~100%",  "100%",  "100%",  "100%"] },
-      { label: "LMArena (norm)",     vals: [88,   85,   82,   81],   raws: ["~1500",  "#2",    "1493",  "1491"] },
+      { label: "GPQA",       vals: [94.2, 94.4, 94.3, null], raws: ["94",  "94", "94", "—"]   },
+      { label: "SWE-bench",  vals: [87.6, 80.0, 68.5, null], raws: ["88",  "80", "69", "—"]   },
+      { label: "AIME",       vals: [99,   100,  100,  100],  raws: ["99",  "100","100","100"] },
+      { label: "LMArena",    vals: [88,   85,   82,   81],   raws: ["88",  "85", "82", "81"]  },
     ];
 
-    let bgroupsHtml = "";
+    const legendHtml = `
+      <div class="gf-legend">
+        ${models.map(m => `
+          <span class="gf-li" style="--col:${m.col}">
+            <span class="gf-dot" aria-hidden="true"></span>${m.short}
+          </span>
+        `).join("")}
+      </div>
+    `;
+
+    let clustersHtml = "";
     benches.forEach((b, bi) => {
       const barsHtml = b.vals.map((v, mi) => {
         const m = models[mi];
         const nodata = v === null || v === undefined;
         const h = nodata ? 0 : v;
-        const delay = 0.2 + bi * 0.18 + mi * 0.08;
+        const delay = 0.2 + bi * 0.15 + mi * 0.07;
         return `
-          <div class="vbar${nodata ? " is-nodata" : ""}${m.hero ? " is-hero" : ""}" style="--vbar-col:${m.col}; --vbar-h:${h}%; --vbar-delay:${delay}s;">
-            <div class="vbar-val">${b.raws[mi]}</div>
-            <div class="vbar-track"><div class="vbar-fill"></div></div>
-            <div class="vbar-name">${m.short}</div>
+          <div class="gbar${nodata ? " is-nodata" : ""}" style="--col:${m.col}; --h:${h}%; --gd:${delay}s;">
+            <div class="gbar-val">${b.raws[mi]}</div>
+            <div class="gbar-track"><div class="gbar-fill"></div></div>
           </div>
         `;
       }).join("");
-      bgroupsHtml += `
-        <div class="bgroup">
-          <div class="bgroup-label">${b.label}</div>
-          <div class="vbars">${barsHtml}</div>
+      clustersHtml += `
+        <div class="gf-cluster">
+          <div class="gf-bars">${barsHtml}</div>
+          <div class="gf-label">${b.label}</div>
         </div>
       `;
     });
@@ -724,7 +736,7 @@
       </div>
     `;
 
-    host.innerHTML = `<div class="bench-groups">${bgroupsHtml}</div>` + statsHtml;
+    host.innerHTML = legendHtml + `<div class="gf-chart">${clustersHtml}</div>` + statsHtml;
   }
 
   // ======================================================================
