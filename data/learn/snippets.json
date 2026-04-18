@@ -93,6 +93,51 @@
       "body": "---\nname: prepare-release\ndescription: Prepare a release — version bump, changelog, tag\ndisable-model-invocation: true\nargument-hint: \"[version]\"\nallowed-tools: Bash(git *) Bash(npm version *)\n---\n\nPrepare version $ARGUMENTS for release:\n\n1. Update version in package.json and CHANGELOG.md.\n2. Run the test suite and lint.\n3. Commit with \"chore(release): v$ARGUMENTS\".\n4. Tag with `git tag v$ARGUMENTS`.\n5. Verify no uncommitted changes remain.\n6. Display release notes for review."
     },
     {
+      "id": "mcp-claude-desktop-stdio",
+      "title": "Claude Desktop config — stdio server",
+      "summary": "Minimal claude_desktop_config.json with one stdio server. Path: ~/Library/Application Support/Claude (macOS) or %APPDATA%/Claude (Windows).",
+      "tags": ["mcp", "configuration", "stdio", "claude-desktop"],
+      "snippetTags": ["mcp-config"],
+      "language": "json",
+      "body": "{\n  \"mcpServers\": {\n    \"my-server\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@my-org/mcp-server\", \"--config\", \"/path/to/config\"],\n      \"env\": {\n        \"API_KEY\": \"your-key-here\"\n      }\n    }\n  }\n}\n"
+    },
+    {
+      "id": "mcp-claude-desktop-http-note",
+      "title": "Claude Desktop config — remote HTTP server note",
+      "summary": "Claude Desktop's JSON config only supports stdio. Remote HTTP/SSE servers go through Custom Connectors (web) or `claude mcp add` (CLI).",
+      "tags": ["mcp", "http", "remote-server", "connectors"],
+      "snippetTags": ["mcp-config"],
+      "language": "bash",
+      "body": "# Remote HTTP/SSE MCP servers are NOT configured in claude_desktop_config.json.\n# Use one of:\n\n# 1) Claude web (Custom Connectors):\n#    Settings → Connectors → Add custom connector → enter server URL.\n\n# 2) Claude Code CLI:\nclaude mcp add --transport http myserver https://mcp.example.com/mcp\n\n# 3) SSE transport (if the server supports it):\nclaude mcp add --transport sse myserver https://mcp.example.com/sse"
+    },
+    {
+      "id": "mcp-python-fastmcp-scaffold",
+      "title": "Python MCP server scaffold (stdio)",
+      "summary": "Minimal Python MCP server using the FastMCP high-level API. One tool, stdio transport.",
+      "tags": ["mcp", "python", "fastmcp", "stdio"],
+      "snippetTags": ["mcp-config"],
+      "language": "python",
+      "body": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"my-server\")\n\n@mcp.tool()\nasync def my_tool(query: str) -> str:\n    \"\"\"Execute a query.\n\n    Args:\n        query: The query string.\n    \"\"\"\n    return f\"Result for: {query}\"\n\nif __name__ == \"__main__\":\n    mcp.run(transport=\"stdio\")\n"
+    },
+    {
+      "id": "mcp-typescript-sdk-scaffold",
+      "title": "TypeScript MCP server scaffold (stdio)",
+      "summary": "Minimal TS server with @modelcontextprotocol/sdk's McpServer high-level API + zod validation.",
+      "tags": ["mcp", "typescript", "sdk", "stdio", "zod"],
+      "snippetTags": ["mcp-config"],
+      "language": "typescript",
+      "body": "import { McpServer } from \"@modelcontextprotocol/sdk/server/mcp.js\";\nimport { StdioServerTransport } from \"@modelcontextprotocol/sdk/server/stdio.js\";\nimport { z } from \"zod\";\n\nconst server = new McpServer({\n  name: \"my-server\",\n  version: \"1.0.0\",\n});\n\nserver.registerTool(\n  \"my_tool\",\n  {\n    description: \"Execute a query.\",\n    inputSchema: { query: z.string() },\n  },\n  async ({ query }) => ({\n    content: [{ type: \"text\", text: `Result for: ${query}` }],\n  })\n);\n\nconst transport = new StdioServerTransport();\nawait server.connect(transport);\n"
+    },
+    {
+      "id": "mcp-claude-code-add-cli",
+      "title": "claude mcp add — CLI registration",
+      "summary": "One-liners for registering local stdio or remote HTTP MCP servers via the claude CLI.",
+      "tags": ["mcp", "cli", "claude-code"],
+      "snippetTags": ["mcp-config"],
+      "language": "bash",
+      "body": "# Local stdio server (default scope: local)\nclaude mcp add --transport stdio myserver -- npx -y @my-org/mcp-server\n\n# Project-scoped stdio server with env var (writes to .mcp.json at repo root)\nclaude mcp add --transport stdio --scope project --env API_KEY=secret myserver -- python server.py\n\n# Remote HTTP server (user scope = available in all Claude Code sessions)\nclaude mcp add --transport http --scope user myserver https://mcp.example.com/mcp\n\n# List registered servers\nclaude mcp list\n\n# Remove a server\nclaude mcp remove myserver\n"
+    },
+    {
       "id": "skill-frontmatter-reference",
       "title": "Skill frontmatter — documented fields",
       "summary": "YAML frontmatter showing the currently documented SKILL.md keys with inline explanations.",
