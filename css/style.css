@@ -386,6 +386,27 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   background: color-mix(in srgb, var(--accent-claude-soft) 35%, transparent);
   border-color: color-mix(in srgb, var(--accent-claude) 30%, var(--border));
 }
+.learn-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  margin-left: 7px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--text-1) 9%, transparent);
+  color: var(--text-3);
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.learn-filter-count:empty { display: none; }
+.learn-filter.is-active .learn-filter-count {
+  background: color-mix(in srgb, var(--accent-claude) 25%, transparent);
+  color: var(--accent-claude-hi);
+}
 
 /* Claude hub — Anthropic Academy course cards, grouped under each subpill.
    Same premium dark language: Claude-accent chip + glass card + top-edge

@@ -586,6 +586,20 @@
     claudeLearningItems = Array.isArray(items) ? items : [];
     paintClaudeLearning();
     updateClaudeWhatsNewBadge();
+    updateLearnFilterCounts();
+  }
+
+  function updateLearnFilterCounts() {
+    const counts = { all: claudeLearningItems.length, code: 0, api: 0, mcp: 0, videos: 0, academy: 0 };
+    for (const it of claudeLearningItems) {
+      const b = sourceBucket(it.source);
+      if (counts[b] !== undefined) counts[b]++;
+    }
+    document.querySelectorAll("[data-filter-count]").forEach((el) => {
+      const key = el.dataset.filterCount;
+      const n = counts[key];
+      el.textContent = n > 0 ? String(n) : "";
+    });
   }
 
   function paintClaudeLearning() {
