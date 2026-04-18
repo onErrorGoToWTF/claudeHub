@@ -14,13 +14,41 @@
       "claudeNative": true,
       "setupComplexity": 2,
       "priorityScore": 5,
-      "provides": ["code-generation", "terminal-agent", "mcp-client", "long-context", "agentic-tool-use"],
-      "requires": ["node", "paid-plan"],
+      "provides": [
+        "code-generation",
+        "terminal-agent",
+        "mcp-client",
+        "long-context",
+        "agentic-tool-use"
+      ],
+      "requires": [
+        "node",
+        "paid-plan"
+      ],
       "officialUrl": "https://claude.com/claude-code",
       "docsUrl": "https://docs.claude.com/en/docs/claude-code",
-      "topics": ["claude", "coding", "mcp", "skills", "terminal", "hooks"],
-      "newsKeywords": ["claude code", "claude-code"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "claude",
+        "coding",
+        "mcp",
+        "skills",
+        "terminal",
+        "hooks"
+      ],
+      "newsKeywords": [
+        "claude code",
+        "claude-code"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": [
+        "claude-md",
+        "slash-command",
+        "hook",
+        "output-style",
+        "skill-yaml",
+        "mcp-config",
+        "sdk-anthropic"
+      ]
     },
     {
       "id": "claude-ai",
@@ -35,13 +63,30 @@
       "claudeNative": true,
       "setupComplexity": 1,
       "priorityScore": 5,
-      "provides": ["frontier-llm", "long-context", "projects", "artifacts", "file-upload"],
+      "provides": [
+        "frontier-llm",
+        "long-context",
+        "projects",
+        "artifacts",
+        "file-upload"
+      ],
       "requires": [],
       "officialUrl": "https://claude.ai",
       "docsUrl": "https://docs.claude.com",
-      "topics": ["claude", "projects", "artifacts", "basics"],
-      "newsKeywords": ["claude.ai", "anthropic"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "claude",
+        "projects",
+        "artifacts",
+        "basics"
+      ],
+      "newsKeywords": [
+        "claude.ai",
+        "anthropic"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": [
+        "prompt-system"
+      ]
     },
     {
       "id": "claude-agent-sdk",
@@ -56,13 +101,32 @@
       "claudeNative": true,
       "setupComplexity": 3,
       "priorityScore": 5,
-      "provides": ["agent-framework", "tool-use", "mcp-client", "streaming"],
-      "requires": ["api-key"],
+      "provides": [
+        "agent-framework",
+        "tool-use",
+        "mcp-client",
+        "streaming"
+      ],
+      "requires": [
+        "api-key"
+      ],
       "officialUrl": "https://docs.claude.com/en/api/agent-sdk",
       "docsUrl": "https://docs.claude.com/en/api/agent-sdk",
-      "topics": ["claude", "agent-sdk", "mcp", "tool-use"],
-      "newsKeywords": ["agent sdk", "anthropic sdk"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "claude",
+        "agent-sdk",
+        "mcp",
+        "tool-use"
+      ],
+      "newsKeywords": [
+        "agent sdk",
+        "anthropic sdk"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": [
+        "sdk-anthropic",
+        "mcp-config"
+      ]
     },
     {
       "id": "cursor",
@@ -77,13 +141,26 @@
       "claudeNative": false,
       "setupComplexity": 1,
       "priorityScore": 5,
-      "provides": ["code-generation", "ide", "inline-edit", "repo-chat"],
+      "provides": [
+        "code-generation",
+        "ide",
+        "inline-edit",
+        "repo-chat"
+      ],
       "requires": [],
       "officialUrl": "https://cursor.com",
       "docsUrl": "https://docs.cursor.com",
-      "topics": ["coding", "ide", "pair-programming"],
-      "newsKeywords": ["cursor ide", "cursor editor"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "coding",
+        "ide",
+        "pair-programming"
+      ],
+      "newsKeywords": [
+        "cursor ide",
+        "cursor editor"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": []
     },
     {
       "id": "lovable",
@@ -98,13 +175,28 @@
       "claudeNative": false,
       "setupComplexity": 1,
       "priorityScore": 4,
-      "provides": ["no-code-frontend", "auth-included", "db-included", "one-click-deploy"],
+      "provides": [
+        "no-code-frontend",
+        "auth-included",
+        "db-included",
+        "one-click-deploy"
+      ],
       "requires": [],
       "officialUrl": "https://lovable.dev",
       "docsUrl": "https://docs.lovable.dev",
-      "topics": ["no-code", "prototyping", "web-apps"],
-      "newsKeywords": ["lovable.dev", "lovable app"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "no-code",
+        "prototyping",
+        "web-apps"
+      ],
+      "newsKeywords": [
+        "lovable.dev",
+        "lovable app"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": [
+        "prompt-nocode"
+      ]
     },
     {
       "id": "v0",
@@ -119,13 +211,28 @@
       "claudeNative": false,
       "setupComplexity": 1,
       "priorityScore": 3,
-      "provides": ["no-code-frontend", "react-components", "shadcn-ui", "vercel-deploy"],
+      "provides": [
+        "no-code-frontend",
+        "react-components",
+        "shadcn-ui",
+        "vercel-deploy"
+      ],
       "requires": [],
       "officialUrl": "https://v0.app",
       "docsUrl": "https://v0.app/docs",
-      "topics": ["no-code", "react", "ui-components"],
-      "newsKeywords": ["v0.app", "vercel v0"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "no-code",
+        "react",
+        "ui-components"
+      ],
+      "newsKeywords": [
+        "v0.app",
+        "vercel v0"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": [
+        "prompt-nocode"
+      ]
     },
     {
       "id": "n8n",
@@ -140,13 +247,30 @@
       "claudeNative": false,
       "setupComplexity": 3,
       "priorityScore": 5,
-      "provides": ["workflow-automation", "llm-integration", "self-hostable", "cron-jobs"],
-      "requires": ["vps-or-docker"],
+      "provides": [
+        "workflow-automation",
+        "llm-integration",
+        "self-hostable",
+        "cron-jobs"
+      ],
+      "requires": [
+        "vps-or-docker"
+      ],
       "officialUrl": "https://n8n.io",
       "docsUrl": "https://docs.n8n.io",
-      "topics": ["automation", "workflows", "self-host"],
-      "newsKeywords": ["n8n", "n8n workflow"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "automation",
+        "workflows",
+        "self-host"
+      ],
+      "newsKeywords": [
+        "n8n",
+        "n8n workflow"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": [
+        "n8n-workflow"
+      ]
     },
     {
       "id": "nano-banana",
@@ -161,13 +285,27 @@
       "claudeNative": false,
       "setupComplexity": 1,
       "priorityScore": 4,
-      "provides": ["text-to-image", "text-rendering", "image-to-image", "keyframe-generation"],
+      "provides": [
+        "text-to-image",
+        "text-rendering",
+        "image-to-image",
+        "keyframe-generation"
+      ],
       "requires": [],
       "officialUrl": "https://gemini.google.com",
       "docsUrl": "https://ai.google.dev/gemini-api/docs/image-generation",
-      "topics": ["image", "gemini"],
-      "newsKeywords": ["nano banana", "gemini image"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "image",
+        "gemini"
+      ],
+      "newsKeywords": [
+        "nano banana",
+        "gemini image"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": [
+        "prompt-image"
+      ]
     },
     {
       "id": "midjourney",
@@ -182,13 +320,26 @@
       "claudeNative": false,
       "setupComplexity": 1,
       "priorityScore": 4,
-      "provides": ["text-to-image", "cinematic-image", "style-references"],
+      "provides": [
+        "text-to-image",
+        "cinematic-image",
+        "style-references"
+      ],
       "requires": [],
       "officialUrl": "https://midjourney.com",
       "docsUrl": "https://docs.midjourney.com",
-      "topics": ["image", "cinematic"],
-      "newsKeywords": ["midjourney", "mj v7"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "image",
+        "cinematic"
+      ],
+      "newsKeywords": [
+        "midjourney",
+        "mj v7"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": [
+        "prompt-image"
+      ]
     },
     {
       "id": "veo-3-1",
@@ -203,13 +354,29 @@
       "claudeNative": false,
       "setupComplexity": 2,
       "priorityScore": 5,
-      "provides": ["text-to-video", "image-to-video", "first-last-frame", "synced-audio", "4k-video"],
+      "provides": [
+        "text-to-video",
+        "image-to-video",
+        "first-last-frame",
+        "synced-audio",
+        "4k-video"
+      ],
       "requires": [],
       "officialUrl": "https://deepmind.google/models/veo",
       "docsUrl": "https://cloud.google.com/vertex-ai/generative-ai/docs/video/veo",
-      "topics": ["video", "generative-video"],
-      "newsKeywords": ["veo 3", "veo 3.1", "google veo"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "video",
+        "generative-video"
+      ],
+      "newsKeywords": [
+        "veo 3",
+        "veo 3.1",
+        "google veo"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": [
+        "prompt-video"
+      ]
     },
     {
       "id": "google-flow",
@@ -224,13 +391,29 @@
       "claudeNative": false,
       "setupComplexity": 1,
       "priorityScore": 4,
-      "provides": ["keyframe-video-animation", "image-to-video", "multi-keyframe-chain"],
-      "requires": ["gemini-account"],
+      "provides": [
+        "keyframe-video-animation",
+        "image-to-video",
+        "multi-keyframe-chain"
+      ],
+      "requires": [
+        "gemini-account"
+      ],
       "officialUrl": "https://labs.google/flow",
       "docsUrl": "https://blog.google/technology/google-labs/flow",
-      "topics": ["video", "keyframe", "creative-tools"],
-      "newsKeywords": ["google flow", "flow video"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "video",
+        "keyframe",
+        "creative-tools"
+      ],
+      "newsKeywords": [
+        "google flow",
+        "flow video"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": [
+        "prompt-video"
+      ]
     },
     {
       "id": "elevenlabs",
@@ -245,13 +428,25 @@
       "claudeNative": false,
       "setupComplexity": 1,
       "priorityScore": 5,
-      "provides": ["text-to-speech", "voice-cloning", "expressive-tts", "real-time-voice"],
+      "provides": [
+        "text-to-speech",
+        "voice-cloning",
+        "expressive-tts",
+        "real-time-voice"
+      ],
       "requires": [],
       "officialUrl": "https://elevenlabs.io",
       "docsUrl": "https://elevenlabs.io/docs",
-      "topics": ["voice", "tts"],
-      "newsKeywords": ["elevenlabs", "eleven labs"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "voice",
+        "tts"
+      ],
+      "newsKeywords": [
+        "elevenlabs",
+        "eleven labs"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": []
     },
     {
       "id": "vercel",
@@ -266,13 +461,28 @@
       "claudeNative": false,
       "setupComplexity": 1,
       "priorityScore": 5,
-      "provides": ["static-hosting", "edge-functions", "preview-deploys", "next-js-native"],
-      "requires": ["git-repo"],
+      "provides": [
+        "static-hosting",
+        "edge-functions",
+        "preview-deploys",
+        "next-js-native"
+      ],
+      "requires": [
+        "git-repo"
+      ],
       "officialUrl": "https://vercel.com",
       "docsUrl": "https://vercel.com/docs",
-      "topics": ["deploy", "hosting", "nextjs"],
-      "newsKeywords": ["vercel", "vercel deploy"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "deploy",
+        "hosting",
+        "nextjs"
+      ],
+      "newsKeywords": [
+        "vercel",
+        "vercel deploy"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": []
     },
     {
       "id": "supabase",
@@ -287,13 +497,27 @@
       "claudeNative": false,
       "setupComplexity": 2,
       "priorityScore": 5,
-      "provides": ["postgres-db", "auth-included", "storage", "realtime", "vector-search"],
+      "provides": [
+        "postgres-db",
+        "auth-included",
+        "storage",
+        "realtime",
+        "vector-search"
+      ],
       "requires": [],
       "officialUrl": "https://supabase.com",
       "docsUrl": "https://supabase.com/docs",
-      "topics": ["data", "db", "auth"],
-      "newsKeywords": ["supabase", "supabase postgres"],
-      "verifiedAt": "2026-04-18"
+      "topics": [
+        "data",
+        "db",
+        "auth"
+      ],
+      "newsKeywords": [
+        "supabase",
+        "supabase postgres"
+      ],
+      "verifiedAt": "2026-04-18",
+      "snippetTags": []
     }
   ]
 }

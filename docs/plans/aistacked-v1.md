@@ -1,27 +1,26 @@
 # aiStacked — the claudeHub rebuild plan
 
-> **Resume-here for a fresh Claude Code session (updated 2026-04-18, v0.3.2):**
+> **Resume-here for a fresh Claude Code session (updated 2026-04-18, v0.3.9):**
 >
 > 1. **First thing — restart the dev server.** The previous session's background server died when that session ended. Run `python scripts/dev_server.py 8765` from the repo root before any code work so the user's phone review path stays live. Phone URL: `http://10.0.0.214:8765/`. Run it in the background so it keeps serving while you work.
-> 2. **Branch state:** feat/aistacked-rebuild has been **MERGED TO `main`** at v0.3.2. Phase 1 MVP, Phase 1.5 (scraper + UX pass), and Phase 2.1–2.3 (Snippets library: CLAUDE.md, Skills YAML, MCP) are all live at `https://onerrorgotowtf.github.io/claudeHub/`. Start new work on `feat/aistacked-rebuild` again (push it forward), or cut a fresh feature branch off `main`. Release tag for this state: `v0.3.2`.
-> 3. Rollback anchor: tag `pre-learning-path` at commit `ce457f9`. `git reset --hard pre-learning-path` restores pre-rebuild state on `main` (rarely needed now).
-> 4. **Milestones shipped (Phase 1 + 1.5 + 2.1-2.3):**
->    - M1.1 → M1.12  ✅  Phase 1 MVP (v0.1.x)
->    - M1.5.1  ✅  Claude learning scraper — GH releases for claude-code + MCP repos
->    - M1.5.2  ✅  Anthropic release-notes HTML scrape (overview page, stable anchors)
->    - M1.5.3  ✅  Anthropic Academy diff scraper (cold-start seeded, emits only new courses)
->    - M1.5.4  ✅  Academy catalog placed into Claude hub subpill panes via claude_hub_map.json
->    - M1.5.5a ✅  YouTube routed into claude_learning; Academy + Videos filter pills (Academy pill later dropped — always empty by design)
->    - M1.5.6a-e ✅  UX pass: "N new" badge, bucket-colored cards, pill counts, pin CTA, scrape-resistant pins
->    - fix/video-modal ✅ In-app YouTube embed modal (keeps users inside the app on iOS)
->    - M2.1  ✅  Snippets library — 6 CLAUDE.md / slash-command / hook / output-style / MCP config patterns + collapsible snippet row viewer w/ copy button
->    - M2.2  ✅  Skills YAML snippets (5 more — minimal, allowed-tools, bundled files, prepare-release workflow, frontmatter reference)
->    - M2.3  ✅  MCP snippets (5 more — Claude Desktop stdio config, HTTP-config note, Python FastMCP scaffold, TS McpServer scaffold, `claude mcp add` CLI)
-> 5. **Continue from Phase 2 — M2.4 (prompt templates, image/video).** Scope:
->    - Author 5-7 ready-to-paste prompt templates for image/video generation tools — Nano Banana, Veo 3.1, Midjourney. Focus on real user intents (marketing hero, product shot, product video, UGC-style clip, stylized explainer).
->    - Add new snippetTag: `"prompt-image"` and `"prompt-video"`. Add them to the fixed set in the schema note; extend claude_hub_map.json snippetTagsByBucket only if the user wants them surfaced under a specific Claude subpill (probably not — these belong to the Finder / Tools surface later). For M2.4 they land in `data/learn/snippets.json` as a data asset; UI surface them in M2.9.
->    - User priority order (from plan): Priority 4 = image/video prompts (Nano Banana, Veo 3.1, Midjourney); Priority 5 = agent/LLM prompts; Priority 6 = n8n; Priority 7 = Lovable/Bolt; Priority 8 = Python/JS SDK snippets + ACCPAC fixed-width parser.
-> 6. **Known catalog gap.** Tools catalog is still a 14-tool stub at `data/learn/tools.json`. Grow in place — same schema — before Phase 5 tuning.
+> 2. **Branch state:** feat/aistacked-rebuild is **ahead of `main`** with Phase 2 complete at v0.3.9 (M2.10). Last merge to main was v0.3.2 (Phase 2.1–2.3). The branch now carries M2.4–M2.10. Merge/tag when user approves after phone review. Rollback anchor still at tag `pre-learning-path` (commit `ce457f9`).
+> 3. **Phase 2 complete — all Snippets library milestones shipped:**
+>    - M2.1  ✅  CLAUDE.md / slash-command / hook / output-style / MCP config patterns + inline snippet viewer [v0.3.0]
+>    - M2.2  ✅  Skills YAML snippets — 5 patterns including frontmatter reference [v0.3.1]
+>    - M2.3  ✅  MCP snippets — Claude Desktop config, Python FastMCP, TS SDK, CLI [v0.3.2]
+>    - M2.4  ✅  Image/video prompt templates — Nano Banana / Midjourney / Veo / Flow keyframe chain [v0.3.3]
+>    - M2.5  ✅  Agent / LLM system prompts — code reviewer, JSON, tool-use, personas, loop control [v0.3.4]
+>    - M2.6  ✅  n8n workflow JSON — import howto + 3 starter workflows (schema verified against n8n-io/n8n) [v0.3.5]
+>    - M2.7  ✅  Lovable / Bolt starter prompts — structure guide, landing, dashboard, internal-tool CRUD [v0.3.6]
+>    - M2.8  ✅  Anthropic Python + TS SDK snippets (verified) + ACCPAC fixed-width parser [v0.3.7]
+>    - M2.9  ✅  Tool-detail modal — click any tool card, see tagline + pricing + Official/Docs links + filtered snippets [v0.3.8]
+>    - M2.10 ✅  Global cmd-K / ctrl-K snippet search — topbar magnifier + keyboard shortcut [v0.3.9]
+> 4. **Phase 1 + 1.5 carry-over milestones (all ✅ — no change):** M1.1–M1.12 Phase 1 MVP · M1.5.1–M1.5.6e scraper + UX pass · fix/video-modal.
+> 5. **Fixed snippetTags** (in snippets.json schema note): claude-md, slash-command, hook, output-style, mcp-config, skill-yaml, prompt-image, prompt-video, prompt-system, n8n-workflow, prompt-nocode, sdk-anthropic, code-python.
+> 6. **Tools catalog:** 14 tools in `data/learn/tools.json`, now each carrying `snippetTags: []` to drive the M2.9 per-tool snippet filter. Still a stub — extend when the Finder starts recommending broader stacks (Phase 5).
+> 7. **Next up — Phase 3 (My Projects depth):**
+>    - M3.1 Project notes pad (markdown) · M3.2 Pin button on tool pages + snippet rows · M3.3 JSON export/import · M3.4 localStorage monitor · M3.5 Multi-collection pinning (Comply365) · M3.6 "Continue where you left off" on Home.
+>    - Before starting: confirm with user whether to merge v0.3.9 to `main` + tag first, or keep stacking on `feat/aistacked-rebuild`.
 > 7. **Known taxonomy gap.** Capability grid doesn't cover 3D / motion (Blender, Meshy) or premium-motion UI (Apple-glass). Flagged for Phase 5 (M5.4). Descriptions mentioning those won't resolve to tools until the taxonomy grows.
 > 8. **Known Finder gap.** Textarea doesn't auto-check capability boxes yet (hybrid wizard deferred, M5.5). Continue scrolls to grid; caps are manual.
 > 9. **Dev-server details:** serves with `Cache-Control: no-store` so iOS Safari respects it. Windows Firewall inbound rule for TCP 8765 persists. Footer pill proves freshness — if `deployedAt` doesn't change after a push, the phone is stuck on cache.
@@ -437,15 +436,15 @@ fix/video-modal ✅                  in-app YouTube iframe modal (iOS PWA friend
 M2.1   ✅ data/learn/snippets.json  Priority 1: CLAUDE.md patterns + inline viewer [v0.3.0]
 M2.2   ✅ Priority 2               Skills YAML frontmatter + examples [v0.3.1]
 M2.3   ✅ Priority 3               MCP server configs + scaffolds [v0.3.2]
-M2.4   ▢ Priority 4               Image/video prompt templates
-                                  (Nano Banana, Veo 3.1, Midjourney).
-M2.5   ▢ Priority 5               Agent / LLM prompts (system prompts, personas).
-M2.6   ▢ Priority 6               n8n workflow JSON exports.
-M2.7   ▢ Priority 7               Lovable / Bolt starter prompts.
-M2.8   ▢ Priority 8               Python / JS SDK snippets;
-                                  ACCPAC fixed-width parser for the commission calc use case.
-M2.9   ▢ Snippet rows UI          per-tool snippet sections on tool pages.
-M2.10  ▢ Global cmd-K search      topbar search over title + tags; copy-to-clipboard.
+M2.4   ✅ Priority 4               Image/video prompt templates
+                                  (Nano Banana, Veo 3.1, Midjourney). [v0.3.3]
+M2.5   ✅ Priority 5               Agent / LLM prompts (system prompts, personas). [v0.3.4]
+M2.6   ✅ Priority 6               n8n workflow JSON exports. [v0.3.5]
+M2.7   ✅ Priority 7               Lovable / Bolt starter prompts. [v0.3.6]
+M2.8   ✅ Priority 8               Python / JS SDK snippets;
+                                  ACCPAC fixed-width parser for the commission calc use case. [v0.3.7]
+M2.9   ✅ Snippet rows UI          per-tool snippet sections on tool pages. [v0.3.8]
+M2.10  ✅ Global cmd-K search      topbar search over title + tags; copy-to-clipboard. [v0.3.9]
 ```
 
 **Phase 3 — My Projects depth:**

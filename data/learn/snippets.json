@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Snippets library. M2.1 = CLAUDE.md patterns (Priority 1). Extended in M2.2+.",
+  "note": "Snippets library. Fixed snippetTags: claude-md, slash-command, hook, output-style, mcp-config, skill-yaml, prompt-image, prompt-video, prompt-system, n8n-workflow, prompt-nocode, sdk-anthropic, code-python. M2.1=CLAUDE.md, M2.2=Skills YAML, M2.3=MCP, M2.4=image/video prompts, M2.5=agent/LLM system prompts, M2.6=n8n workflow JSON, M2.7=Lovable/Bolt starters, M2.8=Anthropic SDK + ACCPAC parser.",
   "snippets": [
     {
       "id": "claudemd-minimal",
@@ -145,6 +145,258 @@
       "snippetTags": ["skill-yaml"],
       "language": "yaml",
       "body": "---\n# Display name for the skill (defaults to directory name)\nname: example-skill\n\n# What the skill does; Claude uses this to decide when to invoke\ndescription: Performs a focused task when conditions are met\n\n# Extra guidance on when Claude should trigger the skill automatically\nwhen_to_use: Use when the user mentions specific keywords or scenarios\n\n# Hint shown in autocomplete (e.g., \"[issue-number]\" or \"[file] [format]\")\nargument-hint: \"[input]\"\n\n# Prevent Claude from auto-invoking; only the user can run it via /\ndisable-model-invocation: false\n\n# Hide from the /slash menu; Claude can still invoke when relevant\nuser-invocable: true\n\n# Space-separated tool grants that skip the per-use permission prompt\nallowed-tools: Bash(ls *) Read Grep\n\n# Model to use while this skill is active (e.g. opus, sonnet, haiku)\nmodel: sonnet\n\n# Effort level: low, medium, high, xhigh, max\neffort: medium\n\n# Execution context: inline or fork (fork runs in a subagent)\ncontext: fork\n\n# Subagent type when context: fork (e.g., Explore, Plan)\nagent: Explore\n\n# Glob patterns — skill only activates when working with matching files\npaths: src/**/*.ts,tests/**/*.test.ts\n\n# Shell used for command blocks: bash (default) or powershell\nshell: bash\n---\n\nYour skill instructions go here as markdown."
+    },
+    {
+      "id": "prompt-nano-banana-marketing-hero",
+      "title": "Nano Banana — marketing hero image",
+      "summary": "Structured prompt for a brand hero shot. Model: Gemini image gen (Nano Banana). Replace bracketed slots.",
+      "tags": ["prompt", "image", "nano-banana", "gemini", "marketing", "hero"],
+      "snippetTags": ["prompt-image"],
+      "language": "text",
+      "body": "Subject: [one product or brand object, e.g. \"a single premium leather wallet, tan colour, stitched edges\"]\n\nScene: [setting, e.g. \"matte black stone surface, soft morning window light from the left\"]\n\nComposition: centred hero shot, subject fills ~60% of frame, shallow depth of field, eye-level camera, 16:9 aspect.\n\nLighting: soft directional key + low-intensity fill; gentle specular highlight on the top edge of the subject; no harsh shadows.\n\nStyle: editorial product photography, clean and restrained. No text, no logos, no watermarks, no people in frame.\n\nColour palette: muted neutrals with one warm accent pulled from the subject.\n\nRender quality: photoreal, sharp focus on the subject, subtle lens vignetting.\n\nNegative: no clutter, no props competing with the subject, no over-saturation, no AI-typical extra fingers/objects."
+    },
+    {
+      "id": "prompt-nano-banana-product-shot",
+      "title": "Nano Banana — product shot on clean background",
+      "summary": "E-commerce style product image prompt. Catalogue-ready, background-removable. Model: Gemini image gen.",
+      "tags": ["prompt", "image", "nano-banana", "gemini", "product", "ecommerce"],
+      "snippetTags": ["prompt-image"],
+      "language": "text",
+      "body": "Subject: [product, e.g. \"a ceramic pour-over coffee dripper, matte white\"]\n\nBackground: seamless light-grey cyclorama, evenly lit, no gradient banding. Pure enough that a background-removal tool can mask cleanly.\n\nCamera: three-quarter angle, slight upward tilt, 50mm lens look, subject fully in frame with ~10% padding on every side.\n\nLighting: large softbox key from upper-left; white bounce card on the right; subtle rim light on the back edge; no visible shadows under the product — float-style presentation.\n\nDetail: every surface texture resolved — ceramic grain, stitched seams, metallic brush marks, whichever applies.\n\nStyle: catalogue-neutral, commercial photography. Zero stylisation, zero filters.\n\nNegative: no text, no labels, no logos, no props, no people, no reflections of studio equipment."
+    },
+    {
+      "id": "prompt-midjourney-stylized-explainer",
+      "title": "Midjourney — stylized explainer illustration",
+      "summary": "Flat-illustration prompt for a blog-post or slide hero. Uses Midjourney parameter syntax (--ar, --stylize).",
+      "tags": ["prompt", "image", "midjourney", "illustration", "explainer"],
+      "snippetTags": ["prompt-image"],
+      "language": "text",
+      "body": "flat vector illustration of [concept — e.g. \"a developer handing a glowing API key to a small friendly robot\"], modern editorial style, limited palette of navy / warm orange / off-white, soft geometric shapes, subtle grain texture, gentle highlight on the key element, isometric-ish perspective but not strict, friendly and approachable mood, Figma-community aesthetic, centred composition with breathing room around the subject --ar 16:9 --stylize 300 --no text, letters, words, watermark, logo, photorealism, gradients-overload"
+    },
+    {
+      "id": "prompt-midjourney-cinematic-hero",
+      "title": "Midjourney — cinematic brand hero",
+      "summary": "Photoreal cinematic hero image. Midjourney parameter syntax. Aim: landing-page above-the-fold.",
+      "tags": ["prompt", "image", "midjourney", "cinematic", "hero"],
+      "snippetTags": ["prompt-image"],
+      "language": "text",
+      "body": "[hero subject — e.g. \"a lone architect walking across an empty concrete atrium at golden hour\"], cinematic wide shot, anamorphic lens flare on the left edge, volumetric sunlight raking across the floor, dust motes in the air, very subtle film grain, muted teal-and-amber colour grade, Roger Deakins inspired lighting, ultra-detailed architecture with sharp geometry, rule-of-thirds composition with the subject on the right third, shallow depth of field on the midground only --ar 21:9 --stylize 250 --no text, words, letters, watermark, lens-distortion artifacts, AI-blurry faces"
+    },
+    {
+      "id": "prompt-veo-product-video",
+      "title": "Veo — product video (cinematic b-roll)",
+      "summary": "Single-shot product b-roll prompt for Google Veo. ~8 seconds. Describes camera move, lighting, mood; no audio cue.",
+      "tags": ["prompt", "video", "veo", "google", "product", "b-roll"],
+      "snippetTags": ["prompt-video"],
+      "language": "text",
+      "body": "A slow cinematic push-in on [product — e.g. \"a matte black espresso machine sitting on a dark marble counter\"]. The camera starts two metres back at waist height and glides forward until it is half a metre from the product. Soft warm morning light rakes in from the left, catching the steam rising gently from the portafilter. Shallow depth of field; background kitchen softly out of focus throughout. Subtle film grain, muted teal-amber colour grade, 24fps cinematic feel. Duration: 8 seconds. No on-screen text, no logos, no people in frame. Camera move ends on a static frame with the product perfectly centred. No audio."
+    },
+    {
+      "id": "prompt-veo-ugc-clip",
+      "title": "Veo — UGC-style phone clip",
+      "summary": "Handheld, phone-shot aesthetic for social. Veo video prompt. ~8 seconds, vertical 9:16.",
+      "tags": ["prompt", "video", "veo", "ugc", "social", "vertical"],
+      "snippetTags": ["prompt-video"],
+      "language": "text",
+      "body": "Vertical 9:16 handheld phone clip, 8 seconds. A twenty-something [user persona — e.g. \"young woman in a cosy apartment\"] holds up [product] to the camera at arm's length, turns it once to show it off, then smiles naturally. Imperfect handheld motion — micro-shakes, a tiny reframe mid-clip as she adjusts her grip. Natural window daylight, slightly overcast, no studio lighting. Colour feels like an iPhone default, not graded. Apartment background softly visible but not sharp. Authentic UGC mood — not polished, not staged. No captions, no text overlays, no music. Camera: front-facing phone camera feel, slight wide-angle distortion at the edges."
+    },
+    {
+      "id": "prompt-veo-keyframe-chain",
+      "title": "Veo — first/last-frame keyframe interpolation",
+      "summary": "Chain Nano Banana stills into a Veo clip via first/last-frame conditioning (Google Flow workflow pattern).",
+      "tags": ["prompt", "video", "veo", "keyframe", "flow", "nano-banana"],
+      "snippetTags": ["prompt-video"],
+      "language": "text",
+      "body": "Workflow: generate two stills in Nano Banana (first frame + last frame), then feed both into Veo via Google Flow with first-frame/last-frame conditioning. Veo interpolates the motion between them.\n\nFirst frame prompt (Nano Banana):\n  [Scene A — e.g. \"wide exterior shot of a modern office building at dusk, glass facade glowing warm from inside, camera at street level\"]. Photoreal, cinematic, 16:9.\n\nLast frame prompt (Nano Banana):\n  [Scene B — same world, later moment — e.g. \"close-up interior shot of a single desk on the top floor seen through the window, warm lamp light, camera framed as if looking in from outside\"]. Photoreal, cinematic, 16:9. Match lighting temperature and colour grade to the first frame.\n\nVeo interpolation prompt:\n  Smooth cinematic camera push from the establishing exterior wide to the interior close-up. Camera travels forward and rises slightly; never cuts. Motion is steady, no handheld shake. Maintain the warm dusk colour grade throughout. 8 seconds, 24fps, no on-screen text, no audio."
+    },
+    {
+      "id": "prompt-system-terse-code-reviewer",
+      "title": "System prompt — terse code reviewer",
+      "summary": "Persona + output contract for a no-fluff code review agent. Drop into API system field or a custom output style.",
+      "tags": ["prompt", "system", "persona", "code-review"],
+      "snippetTags": ["prompt-system"],
+      "language": "text",
+      "body": "You are a senior staff engineer reviewing a diff. You have no social obligations — no greetings, no praise, no sign-offs. Your only job is to surface issues the author may have missed.\n\nFor each file in the diff, emit findings in this exact order:\n  1. Bugs — wrong behaviour, off-by-one, null/undefined handling, race conditions.\n  2. Security — injection, auth bypass, secret leakage, unsafe defaults.\n  3. Performance — N+1 queries, hot-path allocations, sync I/O in a loop.\n  4. Tests — missing coverage on the changed lines, brittle assertions.\n  5. Style — only if it violates this repo's existing patterns; never taste-only.\n\nRules:\n  - One finding per bullet. Max 20 words per bullet.\n  - Cite the file and line number for every finding.\n  - If a category has zero findings, omit it entirely (do not write \"none\").\n  - Do not suggest rewrites unless the bug is not fixable in-place.\n  - Do not summarise the diff at the end."
+    },
+    {
+      "id": "prompt-system-strict-json",
+      "title": "System prompt — strict JSON output",
+      "summary": "Constrains a model to emit only valid JSON matching a provided schema. Works with any modern LLM.",
+      "tags": ["prompt", "system", "json", "structured-output"],
+      "snippetTags": ["prompt-system"],
+      "language": "text",
+      "body": "You are a JSON extraction service. You return only a single JSON object that conforms to the schema below. You never emit prose, markdown fences, explanations, or trailing commentary.\n\nSchema:\n{\n  \"title\": string,\n  \"summary\": string (<= 240 chars),\n  \"tags\": string[] (max 6, lowercase-kebab),\n  \"confidence\": number (0.0 - 1.0)\n}\n\nRules:\n  - Output begins with `{` and ends with `}`. Nothing outside those braces.\n  - If the input is insufficient to fill a required field, return {\"error\": \"<short reason>\"} instead of guessing.\n  - Strings are UTF-8, no smart quotes, no control characters.\n  - `confidence` reflects how sure you are the extraction is faithful to the input."
+    },
+    {
+      "id": "prompt-system-tool-use-router",
+      "title": "System prompt — tool-use router",
+      "summary": "Instructs a tool-calling model when to call tools, when to answer directly, and how to handle tool errors.",
+      "tags": ["prompt", "system", "tool-use", "agent"],
+      "snippetTags": ["prompt-system"],
+      "language": "text",
+      "body": "You are an agent with access to the tools listed by the runtime. Follow this decision loop on every turn:\n\n1. Read the user's latest message and the conversation so far.\n2. If the answer is already in context and does not need fresh data — answer directly.\n3. Otherwise, pick the single tool whose description most directly serves the next sub-goal. Call it with the minimum arguments needed.\n4. If multiple independent tool calls are needed and none depends on another's output — issue them in parallel in a single turn.\n5. When a tool returns an error: do not retry the same call with the same arguments. Diagnose from the error, adjust, or tell the user what blocked progress.\n6. Stop calling tools as soon as you have enough to answer. Do not over-gather.\n\nNever fabricate tool outputs. Never invent a tool that was not listed. If the user asks for something no tool can do, say so plainly."
+    },
+    {
+      "id": "prompt-system-senior-engineer-persona",
+      "title": "Persona — senior engineer collaborator",
+      "summary": "Concise technical-peer persona. No sycophancy, one recommendation per question, verifies before asserting.",
+      "tags": ["prompt", "persona", "engineer", "collaborator"],
+      "snippetTags": ["prompt-system"],
+      "language": "text",
+      "body": "You are a senior engineer pair-programming with a peer. Default response length: 1-3 sentences. Detail goes in files, not chat.\n\nVoice:\n  - No greetings, no praise, no \"happy to help\", no trailing summaries.\n  - Neutral tone even when the user is frustrated. Respond to substance.\n  - One recommendation per question with a one-line reason. Compare only if asked.\n  - One question at a time when clarifying. Never stack questions.\n\nStandards:\n  - Every factual claim is grounded in code you've read, docs you've fetched, or a tool result. Flag uncertainty as uncertainty — never as \"probably\".\n  - If asked for a list: names only, no annotations, unless annotations are requested.\n  - If two of your fixes have failed, stop patching and reassess root cause from first principles.\n  - Match depth to the question. Short questions get short answers."
+    },
+    {
+      "id": "prompt-system-compliance-domain-expert",
+      "title": "Persona — aviation-compliance domain expert",
+      "summary": "End-user-tone assistant for aviation-compliance document workflows (ops manuals, regulator filings). Claude.ai-flavoured.",
+      "tags": ["prompt", "persona", "compliance", "aviation", "domain-expert"],
+      "snippetTags": ["prompt-system"],
+      "language": "text",
+      "body": "You are a compliance documentation assistant for an aviation operator. Your user is a compliance manager or ops author — not a developer. They work in Claude.ai Projects with uploaded manuals, regulator bulletins, and internal SOPs.\n\nKnowledge posture:\n  - You ground every regulatory claim in the documents the user has uploaded. If the user asks about a rule that is not in the project files, say so and ask which authority applies (EASA, FAA, CAA, TCCA, CASA, etc.) before answering.\n  - When you summarise a manual section, always cite the section/paragraph identifier.\n  - You never invent a regulator reference. No made-up CFR numbers, no made-up EASA AMC citations.\n\nVoice:\n  - Plain English. No jargon the user did not use first.\n  - No code, no CLI commands, no terminal instructions — the user does not use a terminal.\n  - Short paragraphs. Lists only when the source document uses a list.\n\nWhen drafting compliance text, mirror the tone of the uploaded manual — not your own voice."
+    },
+    {
+      "id": "prompt-system-loop-controller",
+      "title": "System prompt — long-running agent with stop conditions",
+      "summary": "Keeps a multi-turn agent from looping forever: explicit success criteria, budget, and abort conditions.",
+      "tags": ["prompt", "system", "agent", "loop-control"],
+      "snippetTags": ["prompt-system"],
+      "language": "text",
+      "body": "You are a long-running agent working on a goal over multiple turns. Before each action, re-read this contract.\n\nGoal: [concrete success description — e.g. \"all CI checks pass on PR #412 and the PR is marked ready for review\"].\n\nBudget:\n  - Hard stop after [N] tool calls total.\n  - Hard stop after [M] minutes of wall time.\n  - If you have made 2 consecutive tool calls that produced the same error — stop and report.\n\nStop conditions (any one ends the loop):\n  1. Success criteria met — report the evidence (URLs, commit SHAs, test output snippet).\n  2. Budget exceeded — report what you did, what remains, and why you stopped.\n  3. Blocked on a human decision — report the decision needed and the tradeoffs.\n  4. Blocked on missing credentials / permissions — report which scope is missing.\n\nOn every turn you emit exactly one of: (a) a tool call that moves toward the goal, (b) a final report ending the loop. Never emit filler turns."
+    },
+    {
+      "id": "n8n-import-howto",
+      "title": "n8n — how to import these workflow JSONs",
+      "summary": "Three ways to get a workflow JSON into n8n. Regenerate node IDs / versionId on paste — n8n does this automatically.",
+      "tags": ["n8n", "import", "workflow", "howto"],
+      "snippetTags": ["n8n-workflow"],
+      "language": "text",
+      "body": "Importing a workflow JSON into n8n:\n\n1) Paste in the editor\n   - Open any n8n workflow canvas.\n   - Ctrl/Cmd-V a workflow JSON from your clipboard directly onto the canvas.\n   - n8n pastes the nodes and rewires connections; it also regenerates every node `id` and the top-level `versionId` so nothing collides with your existing workflows.\n\n2) From the UI menu\n   - Workflows list → kebab menu on a workflow → \"Import from file\" (local JSON) or \"Import from URL\" (raw JSON URL).\n\n3) CLI (self-hosted)\n   - n8n import:workflow --input=./workflow.json\n   - n8n import:workflow --separate --input=./workflows-dir/\n\nGotchas:\n  - Credentials never travel inside the workflow JSON. After import, every node that had credentials will show a red \"Select Credential\" badge — reconnect each one manually.\n  - `webhookId` values import as-is but n8n will re-mint them the first time you save if there is a collision.\n  - `typeVersion` on each node is pinned at export time. If your n8n version only ships a newer/older major of that node, open the node once to let the migration run before executing."
+    },
+    {
+      "id": "n8n-workflow-manual-http-set",
+      "title": "n8n workflow — Manual trigger → HTTP → Set",
+      "summary": "Smallest useful workflow: click Execute, fetch JSON, pluck one field. Starter template for any API-to-record pattern.",
+      "tags": ["n8n", "workflow", "http", "manual-trigger"],
+      "snippetTags": ["n8n-workflow"],
+      "language": "json",
+      "body": "{\n  \"name\": \"Manual → HTTP → Set\",\n  \"nodes\": [\n    {\n      \"parameters\": {},\n      \"type\": \"n8n-nodes-base.manualTrigger\",\n      \"typeVersion\": 1,\n      \"position\": [0, 0],\n      \"id\": \"00000000-0000-0000-0000-000000000001\",\n      \"name\": \"When clicking 'Execute workflow'\"\n    },\n    {\n      \"parameters\": {\n        \"url\": \"https://api.example.com/v1/status\",\n        \"options\": {}\n      },\n      \"type\": \"n8n-nodes-base.httpRequest\",\n      \"typeVersion\": 4.2,\n      \"position\": [260, 0],\n      \"id\": \"00000000-0000-0000-0000-000000000002\",\n      \"name\": \"Fetch status\"\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"11111111-1111-1111-1111-111111111111\",\n              \"name\": \"isHealthy\",\n              \"value\": \"={{ $json.status === 'ok' }}\",\n              \"type\": \"boolean\"\n            }\n          ]\n        },\n        \"options\": {}\n      },\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.4,\n      \"position\": [520, 0],\n      \"id\": \"00000000-0000-0000-0000-000000000003\",\n      \"name\": \"Extract isHealthy\"\n    }\n  ],\n  \"connections\": {\n    \"When clicking 'Execute workflow'\": {\n      \"main\": [[{ \"node\": \"Fetch status\", \"type\": \"main\", \"index\": 0 }]]\n    },\n    \"Fetch status\": {\n      \"main\": [[{ \"node\": \"Extract isHealthy\", \"type\": \"main\", \"index\": 0 }]]\n    }\n  },\n  \"pinData\": {},\n  \"settings\": { \"executionOrder\": \"v1\" },\n  \"active\": false\n}\n"
+    },
+    {
+      "id": "n8n-workflow-webhook-proxy",
+      "title": "n8n workflow — Webhook proxy (in → HTTP → respond)",
+      "summary": "Expose an n8n webhook that forwards the incoming payload to an upstream API and returns the response. Useful as a no-code reverse proxy.",
+      "tags": ["n8n", "workflow", "webhook", "proxy", "http"],
+      "snippetTags": ["n8n-workflow"],
+      "language": "json",
+      "body": "{\n  \"name\": \"Webhook → HTTP → Respond\",\n  \"nodes\": [\n    {\n      \"parameters\": {\n        \"httpMethod\": \"POST\",\n        \"path\": \"my-proxy\",\n        \"responseMode\": \"responseNode\",\n        \"options\": {}\n      },\n      \"type\": \"n8n-nodes-base.webhook\",\n      \"typeVersion\": 2,\n      \"position\": [0, 0],\n      \"id\": \"00000000-0000-0000-0000-00000000000a\",\n      \"name\": \"Webhook\",\n      \"webhookId\": \"00000000-0000-0000-0000-00000000000w\"\n    },\n    {\n      \"parameters\": {\n        \"method\": \"POST\",\n        \"url\": \"https://upstream.example.com/v1/ingest\",\n        \"sendBody\": true,\n        \"bodyParameters\": {\n          \"parameters\": [\n            { \"name\": \"payload\", \"value\": \"={{ $json.body }}\" }\n          ]\n        },\n        \"options\": {}\n      },\n      \"type\": \"n8n-nodes-base.httpRequest\",\n      \"typeVersion\": 4.2,\n      \"position\": [260, 0],\n      \"id\": \"00000000-0000-0000-0000-00000000000b\",\n      \"name\": \"Forward to upstream\"\n    },\n    {\n      \"parameters\": {\n        \"respondWith\": \"allIncomingItems\",\n        \"options\": {}\n      },\n      \"type\": \"n8n-nodes-base.respondToWebhook\",\n      \"typeVersion\": 1.1,\n      \"position\": [520, 0],\n      \"id\": \"00000000-0000-0000-0000-00000000000c\",\n      \"name\": \"Respond\"\n    }\n  ],\n  \"connections\": {\n    \"Webhook\": {\n      \"main\": [[{ \"node\": \"Forward to upstream\", \"type\": \"main\", \"index\": 0 }]]\n    },\n    \"Forward to upstream\": {\n      \"main\": [[{ \"node\": \"Respond\", \"type\": \"main\", \"index\": 0 }]]\n    }\n  },\n  \"pinData\": {},\n  \"settings\": { \"executionOrder\": \"v1\" },\n  \"active\": false\n}\n"
+    },
+    {
+      "id": "n8n-workflow-schedule-fetch",
+      "title": "n8n workflow — Schedule trigger → HTTP → Set",
+      "summary": "Cron-style daily fetch. Demonstrates scheduleTrigger interval config + pluck one field from the response.",
+      "tags": ["n8n", "workflow", "schedule", "cron", "http"],
+      "snippetTags": ["n8n-workflow"],
+      "language": "json",
+      "body": "{\n  \"name\": \"Schedule → HTTP → Set\",\n  \"nodes\": [\n    {\n      \"parameters\": {\n        \"rule\": {\n          \"interval\": [\n            { \"field\": \"hours\", \"hoursInterval\": 6 }\n          ]\n        }\n      },\n      \"type\": \"n8n-nodes-base.scheduleTrigger\",\n      \"typeVersion\": 1.2,\n      \"position\": [0, 0],\n      \"id\": \"00000000-0000-0000-0000-000000000010\",\n      \"name\": \"Every 6 hours\"\n    },\n    {\n      \"parameters\": {\n        \"url\": \"https://api.example.com/v1/metrics\",\n        \"options\": {}\n      },\n      \"type\": \"n8n-nodes-base.httpRequest\",\n      \"typeVersion\": 4.2,\n      \"position\": [260, 0],\n      \"id\": \"00000000-0000-0000-0000-000000000011\",\n      \"name\": \"Fetch metrics\"\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"22222222-2222-2222-2222-222222222222\",\n              \"name\": \"activeUsers\",\n              \"value\": \"={{ $json.metrics.activeUsers }}\",\n              \"type\": \"number\"\n            },\n            {\n              \"id\": \"33333333-3333-3333-3333-333333333333\",\n              \"name\": \"fetchedAt\",\n              \"value\": \"={{ $now.toISO() }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"options\": {}\n      },\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.4,\n      \"position\": [520, 0],\n      \"id\": \"00000000-0000-0000-0000-000000000012\",\n      \"name\": \"Extract metrics\"\n    }\n  ],\n  \"connections\": {\n    \"Every 6 hours\": {\n      \"main\": [[{ \"node\": \"Fetch metrics\", \"type\": \"main\", \"index\": 0 }]]\n    },\n    \"Fetch metrics\": {\n      \"main\": [[{ \"node\": \"Extract metrics\", \"type\": \"main\", \"index\": 0 }]]\n    }\n  },\n  \"pinData\": {},\n  \"settings\": { \"executionOrder\": \"v1\" },\n  \"active\": false\n}\n"
+    },
+    {
+      "id": "prompt-nocode-structure-guide",
+      "title": "No-code builder — prompt structure guide",
+      "summary": "Six-section template that gets better output from Lovable / Bolt / v0 than a paragraph-style ask. Paste-in prompt skeleton.",
+      "tags": ["prompt", "nocode", "lovable", "bolt", "v0", "structure"],
+      "snippetTags": ["prompt-nocode"],
+      "language": "text",
+      "body": "Use this skeleton as the first message to a no-code builder. The prompt produces fewer re-rolls than a freeform description because the builder has all six decisions up front.\n\n## What I'm building\n[one sentence — the product, the audience, the job it does]\n\n## Pages / screens\n- [route] — [purpose, one line]\n- [route] — [purpose, one line]\n- ...\n\n## Data model\n- [entity]: [field, field, field]\n- [entity]: [field, field, field]\n- Relationships: [entity] has many [entity]; ...\n\n## Auth / roles\n[\"No auth\" OR \"Email-link auth, single role\" OR \"Email+password, admin vs. user, admin sees /admin only\"]\n\n## Visual direction\n[one reference site + three adjectives — e.g. \"like Linear, dense, monochrome, precise\"]\nPrimary colour: [hex]; Font pairing: [sans for UI, serif for headings only]\n\n## Tech constraints (if any)\n[e.g. \"Deploy to Vercel; Supabase for data + auth; no serverless fn for PDF export — do it client-side\"]\n\n## Out of scope for v1\n- [thing you'll add later]\n- [thing you'll add later]\n\nStart with the landing/home page. Ship a click-through prototype first; we'll wire up the backend in a follow-up message."
+    },
+    {
+      "id": "prompt-lovable-marketing-landing",
+      "title": "Lovable — marketing landing starter",
+      "summary": "One-shot prompt for a premium SaaS-style landing page. Replaces paragraph-style asks; gets production-close output in one generation.",
+      "tags": ["prompt", "lovable", "landing-page", "marketing"],
+      "snippetTags": ["prompt-nocode"],
+      "language": "text",
+      "body": "Build a marketing landing page for [product, one-liner — e.g. \"an AI calendar that blocks focus time automatically\"].\n\nSections, in order:\n  1. Sticky top nav — product logo (text only), 3 anchor links (Features, Pricing, FAQ), primary \"Start free\" CTA on the right.\n  2. Hero — one bold headline (max 9 words), one subhead (max 18 words), two CTAs (\"Start free\" primary, \"See how it works\" ghost), product screenshot mock on the right (desktop + phone collage).\n  3. Logo strip — \"Trusted by teams at\" + 6 monochrome placeholder logos.\n  4. Three-up feature grid — three cards, each with an icon, a 3-word title, a 12-word description.\n  5. Long-form \"How it works\" — three horizontal steps, each with a screenshot mock and a short caption.\n  6. Pricing — 3 tiers (Free / Pro / Team). Middle tier highlighted with a \"Most popular\" ribbon.\n  7. FAQ — 6 questions in an accordion.\n  8. Footer — logo, 4 column link list, social icons, copyright line.\n\nStyle: dark-first with light-mode toggle. Deep near-black background (#0a0c10), tinted hairline borders (white at 8% alpha), soft accent glow. Radius: 10px on cards, 6px on inputs, 9999px on pill CTAs only. Transitions: cubic-bezier(0.22, 0.61, 0.36, 1), 200ms. No neon, no bounce curves. One accent colour pulled from the product — pick a restrained hue, not saturated.\n\nTypography: Inter for UI, Fraunces for headlines only.\n\nMobile: stack sections, 44px minimum tap targets, hide the hero collage, keep the CTA above the fold.\n\nShip only this page for now. Don't create /pricing, /features, etc. as separate routes — all content lives on this single page with anchor links."
+    },
+    {
+      "id": "prompt-lovable-saas-dashboard",
+      "title": "Lovable — SaaS dashboard with auth",
+      "summary": "Prompt scaffolds a dashboard app with email-link auth, sidebar nav, and two data routes. Supabase-backed.",
+      "tags": ["prompt", "lovable", "dashboard", "saas", "auth", "supabase"],
+      "snippetTags": ["prompt-nocode"],
+      "language": "text",
+      "body": "Build a SaaS dashboard for [target user — e.g. \"freelance designers tracking client projects\"].\n\nAuth:\n  - Supabase auth, magic-link email only (no passwords).\n  - Signed-out users on any /app/* route redirect to /login.\n  - Logged-in users land on /app/dashboard.\n\nLayout (authed shell):\n  - Left sidebar (collapsible on mobile): brand mark, 4 nav links (Dashboard, Projects, Clients, Settings), user avatar + sign-out at the bottom.\n  - Top bar inside content area: page title on the left, primary action button on the right (contextual per route).\n  - Content area uses a 12-column grid with 24px gutter.\n\nRoutes (authed):\n  - /app/dashboard — 4 stat cards across the top (Active projects, Hours this week, Open invoices, Clients), then a 7-day activity chart, then a \"Recent activity\" list.\n  - /app/projects — filterable table (Name, Client, Status chip, Last update, …) with \"New project\" button top-right opening a side-sheet form.\n  - /app/clients — list of cards, each with avatar + name + project count; click → /app/clients/[id] detail page.\n  - /app/settings — profile fields + account delete (two-tap confirm, no native confirm() dialog).\n\nData (Supabase tables):\n  - users (managed by Supabase auth)\n  - projects: id, user_id (fk), name, client_id, status (enum: active, paused, done), created_at\n  - clients: id, user_id (fk), name, email, avatar_url, created_at\n  - RLS: users can only read/write rows where user_id = auth.uid().\n\nStyle: dark-first. Cards use a subtle top-edge specular highlight (inset 0 1px 0 rgba(255,255,255,0.06)). Tabular numerics in all stat cards. No emoji icons — use Lucide.\n\nOut of scope for v1: billing, team invites, email notifications. Leave stubs only."
+    },
+    {
+      "id": "prompt-bolt-crud-quote-invoice",
+      "title": "Bolt — small CRUD app (quote + invoice)",
+      "summary": "Internal-tool prompt: customer list, quote builder, invoice export. Mirrors Young Carpets employee portal use case.",
+      "tags": ["prompt", "bolt", "crud", "internal-tool", "invoicing"],
+      "snippetTags": ["prompt-nocode"],
+      "language": "text",
+      "body": "Build a small internal tool for a flooring company's sales team. Not a public site — a private web app behind a single-tenant login.\n\nEntities:\n  - Customer: id, company_name, contact_name, email, phone, address, created_at\n  - Product: id, sku, name, unit_price, unit (e.g. sq ft, roll, each)\n  - Quote: id, customer_id, status (draft / sent / accepted / declined), created_at, line_items[]\n  - LineItem (embedded in Quote): product_id, quantity, unit_price_at_time, description_override\n  - Invoice: id, quote_id, invoice_number, issued_at, paid_at (nullable), total\n\nScreens:\n  - /login — single shared-password or Supabase email-link (pick the simpler path).\n  - /customers — list + search; row click opens side-sheet detail with \"New quote for this customer\" button.\n  - /products — editable table; add/remove rows inline.\n  - /quotes — list, filter by status chip; \"New quote\" button opens a two-pane editor (customer picker on the left, line-items table on the right with live subtotal + tax + total).\n  - /quotes/[id] — read-only view with \"Convert to invoice\" primary action when status = accepted.\n  - /invoices — list; row click opens the invoice preview with a \"Download PDF\" button (client-side PDF generation — use jsPDF, not a serverless fn).\n\nBehaviour:\n  - Line-item unit_price_at_time is a frozen copy of Product.unit_price at the moment of add — changing the product later does NOT retroactively change old quotes.\n  - Invoice numbers auto-increment per calendar year: INV-2026-0001, INV-2026-0002, …\n  - Destructive actions (delete customer, delete quote) use an in-UI two-tap confirm with a 3-second disarm — do NOT use the browser's confirm() dialog.\n  - All timestamps stored as ISO 8601 UTC; display in the user's local timezone.\n\nStyle: clean and dense. Zero marketing fluff — this is an internal tool. Tabular numbers everywhere, no rounded \"hero\" cards. Light mode by default; dark-mode toggle present.\n\nOut of scope for v1: email sending, Stripe payments, multi-tenant auth."
+    },
+    {
+      "id": "sdk-anthropic-python-basic",
+      "title": "Anthropic Python SDK — basic messages.create",
+      "summary": "Smallest synchronous call. Verified against anthropics/anthropic-sdk-python README.",
+      "tags": ["sdk", "anthropic", "python", "messages"],
+      "snippetTags": ["sdk-anthropic"],
+      "language": "python",
+      "body": "import os\nfrom anthropic import Anthropic\n\nclient = Anthropic(\n    api_key=os.environ.get(\"ANTHROPIC_API_KEY\"),\n)\n\nmessage = client.messages.create(\n    max_tokens=1024,\n    messages=[\n        {\n            \"role\": \"user\",\n            \"content\": \"Hello, Claude\",\n        }\n    ],\n    model=\"claude-opus-4-6\",\n)\nprint(message.content)\n"
+    },
+    {
+      "id": "sdk-anthropic-python-stream",
+      "title": "Anthropic Python SDK — streaming",
+      "summary": "Async streaming with client.messages.stream context manager. Verified against repo examples/messages_stream.py.",
+      "tags": ["sdk", "anthropic", "python", "streaming", "async"],
+      "snippetTags": ["sdk-anthropic"],
+      "language": "python",
+      "body": "import asyncio\n\nfrom anthropic import AsyncAnthropic\n\nclient = AsyncAnthropic()\n\n\nasync def main() -> None:\n    async with client.messages.stream(\n        max_tokens=1024,\n        messages=[\n            {\n                \"role\": \"user\",\n                \"content\": \"Say hello there!\",\n            }\n        ],\n        model=\"claude-sonnet-4-5-20250929\",\n    ) as stream:\n        async for event in stream:\n            if event.type == \"text\":\n                print(event.text, end=\"\", flush=True)\n            elif event.type == \"content_block_stop\":\n                print()\n                print(\"\\ncontent block finished:\", event.content_block)\n\n    # accumulated final message is available after the stream is fully consumed\n    accumulated = await stream.get_final_message()\n    print(\"accumulated message:\", accumulated.to_json())\n\n\nasyncio.run(main())\n"
+    },
+    {
+      "id": "sdk-anthropic-python-tools",
+      "title": "Anthropic Python SDK — tool use",
+      "summary": "Two-turn tool-use flow: model requests tool → you execute → you return tool_result. Verified against repo examples/tools.py.",
+      "tags": ["sdk", "anthropic", "python", "tool-use", "function-calling"],
+      "snippetTags": ["sdk-anthropic"],
+      "language": "python",
+      "body": "from anthropic import Anthropic\nfrom anthropic.types import ToolParam, MessageParam\n\nclient = Anthropic()\n\nuser_message: MessageParam = {\n    \"role\": \"user\",\n    \"content\": \"What is the weather in SF?\",\n}\ntools: list[ToolParam] = [\n    {\n        \"name\": \"get_weather\",\n        \"description\": \"Get the weather for a specific location\",\n        \"input_schema\": {\n            \"type\": \"object\",\n            \"properties\": {\"location\": {\"type\": \"string\"}},\n        },\n    }\n]\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-5-20250929\",\n    max_tokens=1024,\n    messages=[user_message],\n    tools=tools,\n)\n\nassert message.stop_reason == \"tool_use\"\n\ntool = next(c for c in message.content if c.type == \"tool_use\")\nresponse = client.messages.create(\n    model=\"claude-sonnet-4-5-20250929\",\n    max_tokens=1024,\n    messages=[\n        user_message,\n        {\"role\": message.role, \"content\": message.content},\n        {\n            \"role\": \"user\",\n            \"content\": [\n                {\n                    \"type\": \"tool_result\",\n                    \"tool_use_id\": tool.id,\n                    \"content\": [{\"type\": \"text\", \"text\": \"The weather is 73f\"}],\n                }\n            ],\n        },\n    ],\n    tools=tools,\n)\nprint(response.model_dump_json(indent=2))\n"
+    },
+    {
+      "id": "sdk-anthropic-ts-basic",
+      "title": "Anthropic TS SDK — basic messages.create",
+      "summary": "Smallest TS call. Verified against anthropics/anthropic-sdk-typescript README.",
+      "tags": ["sdk", "anthropic", "typescript", "messages"],
+      "snippetTags": ["sdk-anthropic"],
+      "language": "typescript",
+      "body": "import Anthropic from '@anthropic-ai/sdk';\n\nconst client = new Anthropic({\n  apiKey: process.env['ANTHROPIC_API_KEY'],\n});\n\nconst message = await client.messages.create({\n  max_tokens: 1024,\n  messages: [{ role: 'user', content: 'Hello, Claude' }],\n  model: 'claude-opus-4-6',\n});\n\nconsole.log(message.content);\n"
+    },
+    {
+      "id": "sdk-anthropic-ts-stream",
+      "title": "Anthropic TS SDK — streaming",
+      "summary": "Event-based streaming with .on('contentBlock') / .on('message'). Verified against repo examples/streaming.ts.",
+      "tags": ["sdk", "anthropic", "typescript", "streaming"],
+      "snippetTags": ["sdk-anthropic"],
+      "language": "typescript",
+      "body": "import Anthropic from '@anthropic-ai/sdk';\n\nconst client = new Anthropic();\n\nasync function main() {\n  const stream = client.messages\n    .stream({\n      messages: [\n        {\n          role: 'user',\n          content: 'Hey Claude! How can I recursively list all files in a directory in Rust?',\n        },\n      ],\n      model: 'claude-sonnet-4-5-20250929',\n      max_tokens: 1024,\n    })\n    .on('contentBlock', (content) => console.log('contentBlock', content))\n    .on('message', (message) => console.log('message', message));\n\n  for await (const event of stream) {\n    console.log('event', event);\n  }\n\n  const message = await stream.finalMessage();\n  console.log('finalMessage', message);\n}\n\nmain().catch((err) => {\n  console.error(err);\n  process.exit(1);\n});\n"
+    },
+    {
+      "id": "sdk-anthropic-ts-tools",
+      "title": "Anthropic TS SDK — tool use",
+      "summary": "Two-turn tool-use flow in TypeScript. Verified against repo examples/tools.ts.",
+      "tags": ["sdk", "anthropic", "typescript", "tool-use", "function-calling"],
+      "snippetTags": ["sdk-anthropic"],
+      "language": "typescript",
+      "body": "import Anthropic from '@anthropic-ai/sdk';\nimport assert from 'node:assert';\n\nconst client = new Anthropic();\n\nasync function main() {\n  const userMessage: Anthropic.MessageParam = {\n    role: 'user',\n    content: 'What is the weather in SF?',\n  };\n  const tools: Anthropic.Tool[] = [\n    {\n      name: 'get_weather',\n      description: 'Get the weather for a specific location',\n      input_schema: {\n        type: 'object',\n        properties: { location: { type: 'string' } },\n      },\n    },\n  ];\n\n  const message = await client.messages.create({\n    model: 'claude-sonnet-4-5-20250929',\n    max_tokens: 1024,\n    messages: [userMessage],\n    tools,\n  });\n\n  assert(message.stop_reason === 'tool_use');\n\n  const tool = message.content.find(\n    (content): content is Anthropic.ToolUseBlock => content.type === 'tool_use',\n  );\n  assert(tool);\n\n  const result = await client.messages.create({\n    model: 'claude-sonnet-4-5-20250929',\n    max_tokens: 1024,\n    messages: [\n      userMessage,\n      { role: message.role, content: message.content },\n      {\n        role: 'user',\n        content: [\n          {\n            type: 'tool_result',\n            tool_use_id: tool.id,\n            content: 'The weather is 73f',\n          },\n        ],\n      },\n    ],\n    tools,\n  });\n  console.dir(result, { depth: 4 });\n}\n\nmain();\n"
+    },
+    {
+      "id": "code-accpac-fixed-width-parser",
+      "title": "ACCPAC Plus — fixed-width print-to-file parser",
+      "summary": "Python parser for ACCPAC Plus for DOS report files. Configurable column spec; yields one dict per detail row. Starter for the commission-calculator use case.",
+      "tags": ["python", "parser", "accpac", "fixed-width", "legacy", "dos"],
+      "snippetTags": ["code-python"],
+      "language": "python",
+      "body": "\"\"\"Parse an ACCPAC Plus for DOS print-to-file report.\n\nACCPAC's F2-print-to-file dumps a plain-text report file (typically .TXT\nor .PRN) that mirrors the screen layout: page header, column banner,\ndetail rows, page footer, then the next page. Detail rows are fixed-width;\ncolumn positions come from the report definition.\n\nTweak COLUMNS to match your report. Run once with `--dump-first-page` to\nsee where the characters land, then fill in the (start, end) slices.\n\"\"\"\nfrom __future__ import annotations\nfrom dataclasses import dataclass\nfrom decimal import Decimal, InvalidOperation\nimport argparse\nimport sys\nfrom pathlib import Path\n\n\n@dataclass\nclass Column:\n    name: str\n    start: int           # 0-based inclusive\n    end: int             # 0-based exclusive\n    kind: str = \"text\"   # \"text\" | \"decimal\" | \"int\" | \"date_mdy\"\n\n\n# Example layout — replace with the real one for your report.\n# Use `--dump-first-page` to find column positions.\nCOLUMNS = [\n    Column(\"doc_no\",   0,  8,  \"text\"),\n    Column(\"date\",     9,  19, \"date_mdy\"),\n    Column(\"cust_id\",  20, 30, \"text\"),\n    Column(\"rep_code\", 31, 35, \"text\"),\n    Column(\"desc\",     36, 66, \"text\"),\n    Column(\"amount\",   67, 80, \"decimal\"),\n]\n\nPAGE_HEADER_MARKERS = (\"DATE:\", \"PAGE:\", \"REPORT:\")  # lines that mean \"skip\"\nBANNER_MARKERS = (\"DOC NO\", \"CUST ID\", \"AMOUNT\")      # column headers\nFOOTER_MARKERS = (\"TOTAL\", \"GRAND TOTAL\", \"END OF REPORT\")\n\n\ndef coerce(value: str, kind: str):\n    v = value.strip()\n    if not v:\n        return None\n    if kind == \"decimal\":\n        try:\n            return Decimal(v.replace(\",\", \"\").replace(\"$\", \"\"))\n        except InvalidOperation:\n            return None\n    if kind == \"int\":\n        try:\n            return int(v.replace(\",\", \"\"))\n        except ValueError:\n            return None\n    if kind == \"date_mdy\":\n        # ACCPAC DOS typical: MM/DD/YY or MM/DD/YYYY — caller can normalize.\n        return v\n    return v\n\n\ndef is_skippable(line: str) -> bool:\n    stripped = line.strip()\n    if not stripped:\n        return True\n    u = stripped.upper()\n    if any(m in u for m in PAGE_HEADER_MARKERS):\n        return True\n    if any(m in u for m in BANNER_MARKERS):\n        return True\n    if any(m in u for m in FOOTER_MARKERS):\n        return True\n    if stripped.startswith((\"-\", \"=\", \"_\")) and len(set(stripped)) <= 2:\n        return True\n    return False\n\n\ndef parse_row(line: str, columns) -> dict | None:\n    row = {}\n    for col in columns:\n        raw = line[col.start:col.end] if col.end <= len(line) else line[col.start:]\n        row[col.name] = coerce(raw, col.kind)\n    if all(v is None for v in row.values()):\n        return None\n    return row\n\n\ndef parse_file(path: Path, columns=COLUMNS, encoding: str = \"cp437\"):\n    with path.open(\"r\", encoding=encoding, errors=\"replace\") as f:\n        for line in f:\n            line = line.rstrip(\"\\r\\n\")\n            if is_skippable(line):\n                continue\n            row = parse_row(line, columns)\n            if row is not None:\n                yield row\n\n\ndef dump_first_page(path: Path, encoding: str = \"cp437\", max_lines: int = 70):\n    \"\"\"Print a column ruler + the first N lines so you can eyeball the layout.\"\"\"\n    with path.open(\"r\", encoding=encoding, errors=\"replace\") as f:\n        lines = [line.rstrip(\"\\r\\n\") for _, line in zip(range(max_lines), f)]\n    width = max((len(l) for l in lines), default=80)\n    tens = \"\".join(str((i // 10) % 10) if i % 10 == 0 else \" \" for i in range(width))\n    ones = \"\".join(str(i % 10) for i in range(width))\n    print(tens)\n    print(ones)\n    for l in lines:\n        print(l)\n\n\ndef main(argv=None):\n    ap = argparse.ArgumentParser(description=\"Parse an ACCPAC Plus print-to-file report.\")\n    ap.add_argument(\"file\", type=Path)\n    ap.add_argument(\"--encoding\", default=\"cp437\")\n    ap.add_argument(\"--dump-first-page\", action=\"store_true\")\n    args = ap.parse_args(argv)\n\n    if args.dump_first_page:\n        dump_first_page(args.file, args.encoding)\n        return 0\n\n    for row in parse_file(args.file, encoding=args.encoding):\n        print(row)\n    return 0\n\n\nif __name__ == \"__main__\":\n    sys.exit(main())\n"
     }
   ]
 }
