@@ -738,13 +738,11 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   opacity: 1;
   animation: cbarPulse 1.6s var(--ease) calc(var(--cbar-delay, 0.3s) + 1.55s) infinite;
 }
-.cbar.is-hero .cbar-label {
-  background: linear-gradient(135deg, var(--accent-hi), var(--accent-365-hi));
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  font-weight: 700;
-}
+.cbar.is-hero .cbar-label,
 .cbar.is-hero .cbar-val {
-  background: linear-gradient(135deg, var(--accent-hi), var(--accent-365-hi));
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--cbar-col) 55%, #ffffff),
+    var(--cbar-col));
   -webkit-background-clip: text; background-clip: text; color: transparent;
   font-weight: 700;
 }
@@ -1311,7 +1309,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   letter-spacing: -0.01em;
 }
 .trow.is-hero .trow-winner {
-  background: linear-gradient(135deg, var(--accent-hi), var(--accent-365-hi));
+  background: linear-gradient(135deg, #ffb27a, #ff7a3d);
   -webkit-background-clip: text; background-clip: text; color: transparent;
   font-weight: 700;
 }

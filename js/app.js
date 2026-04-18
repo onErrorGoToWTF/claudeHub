@@ -10,6 +10,19 @@
   // Sections that are exclusive (only visible when their chip is picked).
   const DISTINCT_SECTIONS = ["home"];
 
+  // Per-model brand-aligned electric palette, used by every chart so
+  // colors match across the site.
+  //   Claude (Anthropic)  → electric orange
+  //   OpenAI / GPT        → electric teal/mint
+  //   Google / Gemini     → electric blue
+  //   xAI / Grok          → electric magenta
+  const MODEL_COL = {
+    claude: "#ff7a3d",
+    openai: "#14b8a6",
+    google: "#4a90ff",
+    xai:    "#e879f9",
+  };
+
   // Type tokens — declared early so any hoisted render function that reads
   // them (e.g. via replayHomeAnimations fired during initial applyFilter)
   // doesn't hit a TDZ error.
@@ -507,10 +520,10 @@
     const host = document.getElementById("cbars");
     if (!host) return;
     const rows = [
-      { name: "Gemini 2.5 Pro",    tokens: 2_000_000, label: "2M", color: "#22d3ee" },
-      { name: "Grok 4",            tokens: 2_000_000, label: "2M", color: "#e879f9" },
-      { name: "Claude Opus 4.7",   tokens: 1_000_000, label: "1M", color: "#a684ff", hero: true },
-      { name: "GPT-4.1",           tokens: 1_000_000, label: "1M", color: "#4ade80" },
+      { name: "Gemini 2.5 Pro",    tokens: 2_000_000, label: "2M", color: MODEL_COL.google },
+      { name: "Grok 4",            tokens: 2_000_000, label: "2M", color: MODEL_COL.xai    },
+      { name: "Claude Opus 4.7",   tokens: 1_000_000, label: "1M", color: MODEL_COL.claude, hero: true },
+      { name: "GPT-4.1",           tokens: 1_000_000, label: "1M", color: MODEL_COL.openai },
     ];
     const max = Math.max(...rows.map(r => r.tokens));
     host.innerHTML = "";
@@ -541,10 +554,10 @@
     const host = document.getElementById("vbars");
     if (!host) return;
     const rows = [
-      { name: "Opus 4.6",       maker: "Claude",  score: 53, color: "#a684ff", hero: true },
-      { name: "GPT-5.3 Codex",  maker: "OpenAI",  score: 54, color: "#4ade80" },
-      { name: "GPT-5.4",        maker: "OpenAI",  score: 57, color: "#4ade80" },
-      { name: "Gemini 3.1 Pro", maker: "Google",  score: 57, color: "#22d3ee" },
+      { name: "Opus 4.6",       maker: "Claude",  score: 53, color: MODEL_COL.claude, hero: true },
+      { name: "GPT-5.3 Codex",  maker: "OpenAI",  score: 54, color: MODEL_COL.openai },
+      { name: "GPT-5.4",        maker: "OpenAI",  score: 57, color: MODEL_COL.openai },
+      { name: "Gemini 3.1 Pro", maker: "Google",  score: 57, color: MODEL_COL.google },
     ];
     const max = 70;
     host.innerHTML = "";
@@ -659,10 +672,10 @@
     const host = document.getElementById("faceoff");
     if (!host) return;
     const models = [
-      { short: "Opus 4.7",   maker: "Anthropic", col: "#a684ff", hero: true, ctx: "1M",   price: "$5"   },
-      { short: "GPT-5.4",    maker: "OpenAI",    col: "#4ade80",             ctx: "400K", price: "~$10" },
-      { short: "Gemini 3.1", maker: "Google",    col: "#22d3ee",             ctx: "1M",   price: "$2"   },
-      { short: "Grok 4.20",  maker: "xAI",       col: "#e879f9",             ctx: "2M",   price: "$2"   },
+      { short: "Opus 4.7",   maker: "Anthropic", col: MODEL_COL.claude, hero: true, ctx: "1M",   price: "$5"   },
+      { short: "GPT-5.4",    maker: "OpenAI",    col: MODEL_COL.openai,             ctx: "400K", price: "~$10" },
+      { short: "Gemini 3.1", maker: "Google",    col: MODEL_COL.google,             ctx: "1M",   price: "$2"   },
+      { short: "Grok 4.20",  maker: "xAI",       col: MODEL_COL.xai,                ctx: "2M",   price: "$2"   },
     ];
     const benches = [
       { label: "GPQA Diamond",       vals: [94.2, 94.4, 94.3, null], raws: ["94.2%",  "94.4%", "94.3%", "—"] },
