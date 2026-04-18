@@ -55,6 +55,51 @@
       "snippetTags": ["mcp-config"],
       "language": "json",
       "body": "{\n  \"mcpServers\": {\n    \"my-local-tool\": {\n      \"type\": \"stdio\",\n      \"command\": \"node\",\n      \"args\": [\"./mcp-server.js\"],\n      \"env\": {\n        \"LOG_LEVEL\": \"info\"\n      }\n    }\n  }\n}\n"
+    },
+    {
+      "id": "skill-minimal-task",
+      "title": "Minimal SKILL.md — basic task",
+      "summary": "Smallest viable skill file with frontmatter and a single clear directive.",
+      "tags": ["skill", "template", "minimal", "frontmatter"],
+      "snippetTags": ["skill-yaml"],
+      "language": "markdown",
+      "body": "---\nname: commit-work\ndescription: Stage and commit current changes\n---\n\nStage all changed files and create a descriptive commit:\n\n1. Run `git status` to see what changed.\n2. Stage files with `git add`.\n3. Write a commit message following conventional format.\n4. Commit with `git commit`."
+    },
+    {
+      "id": "skill-allowed-tools",
+      "title": "Skill with allowed-tools restriction",
+      "summary": "SKILL.md that grants permission to a narrow tool set and blocks model auto-invocation.",
+      "tags": ["skill", "permissions", "tools", "security"],
+      "snippetTags": ["skill-yaml"],
+      "language": "markdown",
+      "body": "---\nname: deploy-release\ndescription: Deploy the application to production\ndisable-model-invocation: true\nallowed-tools: Bash(git tag *) Bash(npm run build) Bash(npm run deploy)\n---\n\nDeploy the release to production:\n\n1. Verify tests pass.\n2. Tag the commit with the version.\n3. Build the application.\n4. Deploy to the production endpoint.\n5. Verify deployment health."
+    },
+    {
+      "id": "skill-bundled-resources",
+      "title": "Skill referencing bundled files",
+      "summary": "SKILL.md linking to templates, examples, and scripts bundled inside the skill folder.",
+      "tags": ["skill", "resources", "templates", "reference"],
+      "snippetTags": ["skill-yaml"],
+      "language": "markdown",
+      "body": "---\nname: generate-docs\ndescription: Generate API documentation from code comments\nallowed-tools: Bash(python scripts/docgen.py *)\n---\n\nGenerate formatted API documentation:\n\n1. Review [template.md](template.md) for required sections.\n2. Check [examples/](examples/) for output format.\n3. Run `python ${CLAUDE_SKILL_DIR}/scripts/docgen.py`.\n4. Review generated output in `docs/api/`.\n\nSee [reference.md](reference.md) for detailed guidelines."
+    },
+    {
+      "id": "skill-prepare-release",
+      "title": "Skill for prepare-release workflow",
+      "summary": "Realistic SKILL.md for a multi-step release process with argument-hint and allowed-tools.",
+      "tags": ["skill", "workflow", "release"],
+      "snippetTags": ["skill-yaml"],
+      "language": "markdown",
+      "body": "---\nname: prepare-release\ndescription: Prepare a release — version bump, changelog, tag\ndisable-model-invocation: true\nargument-hint: \"[version]\"\nallowed-tools: Bash(git *) Bash(npm version *)\n---\n\nPrepare version $ARGUMENTS for release:\n\n1. Update version in package.json and CHANGELOG.md.\n2. Run the test suite and lint.\n3. Commit with \"chore(release): v$ARGUMENTS\".\n4. Tag with `git tag v$ARGUMENTS`.\n5. Verify no uncommitted changes remain.\n6. Display release notes for review."
+    },
+    {
+      "id": "skill-frontmatter-reference",
+      "title": "Skill frontmatter — documented fields",
+      "summary": "YAML frontmatter showing the currently documented SKILL.md keys with inline explanations.",
+      "tags": ["skill", "reference", "frontmatter", "yaml"],
+      "snippetTags": ["skill-yaml"],
+      "language": "yaml",
+      "body": "---\n# Display name for the skill (defaults to directory name)\nname: example-skill\n\n# What the skill does; Claude uses this to decide when to invoke\ndescription: Performs a focused task when conditions are met\n\n# Extra guidance on when Claude should trigger the skill automatically\nwhen_to_use: Use when the user mentions specific keywords or scenarios\n\n# Hint shown in autocomplete (e.g., \"[issue-number]\" or \"[file] [format]\")\nargument-hint: \"[input]\"\n\n# Prevent Claude from auto-invoking; only the user can run it via /\ndisable-model-invocation: false\n\n# Hide from the /slash menu; Claude can still invoke when relevant\nuser-invocable: true\n\n# Space-separated tool grants that skip the per-use permission prompt\nallowed-tools: Bash(ls *) Read Grep\n\n# Model to use while this skill is active (e.g. opus, sonnet, haiku)\nmodel: sonnet\n\n# Effort level: low, medium, high, xhigh, max\neffort: medium\n\n# Execution context: inline or fork (fork runs in a subagent)\ncontext: fork\n\n# Subagent type when context: fork (e.g., Explore, Plan)\nagent: Explore\n\n# Glob patterns — skill only activates when working with matching files\npaths: src/**/*.ts,tests/**/*.test.ts\n\n# Shell used for command blocks: bash (default) or powershell\nshell: bash\n---\n\nYour skill instructions go here as markdown."
     }
   ]
 }
