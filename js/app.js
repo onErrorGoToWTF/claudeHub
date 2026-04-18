@@ -521,25 +521,61 @@
   // NEWS: split by _kind. Videos first (tpl-video), then articles (tpl-card).
   // Each group sorted by date desc internally. Never interleave.
   // LEARN → Claude → What's new: unified release feed from Claude Code + MCP repos.
+  let claudeLearningItems = [];
+  let claudeLearningFilter = "all";
+
+  function sourceBucket(source) {
+    const s = source || "";
+    if (s === "Claude Code") return "code";
+    if (s === "Claude API Release Notes") return "api";
+    if (s.startsWith("MCP")) return "mcp";
+    return "other";
+  }
+
   function renderClaudeLearning(items) {
+    claudeLearningItems = Array.isArray(items) ? items : [];
+    paintClaudeLearning();
+  }
+
+  function paintClaudeLearning() {
     const container = document.querySelector('[data-cards="claude-whats-new"]');
     if (!container) return;
     container.innerHTML = "";
-    if (!items || items.length === 0) {
+    const filter = claudeLearningFilter;
+    const filtered = filter === "all"
+      ? claudeLearningItems
+      : claudeLearningItems.filter((it) => sourceBucket(it.source) === filter);
+    if (!filtered.length) {
       const empty = document.createElement("div");
       empty.className = "empty";
-      empty.textContent = "No items yet — check back soon.";
+      empty.textContent = filter === "all"
+        ? "No items yet — check back soon."
+        : "No items in this category yet.";
       container.appendChild(empty);
       return;
     }
     const frag = document.createDocumentFragment();
-    sortByDateDesc(items).slice(0, 24).forEach((it, idx) => {
+    sortByDateDesc(filtered).slice(0, 24).forEach((it, idx) => {
       const node = renderCard(it, false, idx);
       registerReveal(node, idx);
       frag.appendChild(node);
     });
     container.appendChild(frag);
   }
+
+  document.querySelectorAll(".learn-filter[data-learn-filter]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const key = btn.dataset.learnFilter || "all";
+      if (key === claudeLearningFilter) return;
+      claudeLearningFilter = key;
+      document.querySelectorAll(".learn-filter[data-learn-filter]").forEach((b) => {
+        const active = b === btn;
+        b.classList.toggle("is-active", active);
+        b.setAttribute("aria-selected", active ? "true" : "false");
+      });
+      paintClaudeLearning();
+    });
+  });
 
   function renderNews(items) {
     const container = document.querySelector('[data-cards="news"]');

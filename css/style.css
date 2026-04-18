@@ -324,6 +324,47 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .subpills-nested::-webkit-scrollbar { display: none; }
 .subpills-nested .subpill { font-size: 12.5px; padding: 5px 10px; flex-shrink: 0; min-height: 36px; }
 
+/* Learn → Claude → What's new: source filter bar. Lower-weight than subpills,
+   matches the premium dark design language (tinted hairlines, soft glass). */
+.learn-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--text-1) 3%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.learn-filter-bar::-webkit-scrollbar { display: none; }
+.learn-filter {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  min-height: 34px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 0.2s var(--ease-premium),
+              border-color 0.2s var(--ease-premium),
+              background 0.2s var(--ease-premium);
+}
+.learn-filter:hover { color: var(--text-1); }
+.learn-filter.is-active {
+  color: var(--accent-claude-hi);
+  background: color-mix(in srgb, var(--accent-claude-soft) 35%, transparent);
+  border-color: color-mix(in srgb, var(--accent-claude) 30%, var(--border));
+}
+
 /* Section accents */
 [data-section="learn"]      { --sec: var(--accent-claude); }
 [data-section="comply365"]  { --sec: var(--accent-365); }
