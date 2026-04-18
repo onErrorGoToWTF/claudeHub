@@ -476,6 +476,29 @@
   </div>
 </template>
 
+<div class="backup-modal" id="backup-modal" role="dialog" aria-modal="true" aria-labelledby="backup-modal-title" hidden>
+  <div class="backup-modal-backdrop" data-close></div>
+  <div class="backup-modal-frame glass">
+    <div class="backup-modal-head">
+      <div class="backup-modal-titles">
+        <div class="backup-modal-title" id="backup-modal-title">Backup</div>
+        <div class="backup-modal-sub"></div>
+      </div>
+      <button type="button" class="backup-modal-close" aria-label="Close" data-close title="Close">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <div class="backup-modal-body">
+      <textarea class="backup-modal-json" readonly spellcheck="false"></textarea>
+    </div>
+    <div class="backup-modal-actions">
+      <button type="button" class="backup-modal-copy">Copy</button>
+      <button type="button" class="backup-modal-laptop">Save to laptop</button>
+      <button type="button" class="backup-modal-done" data-close>Close</button>
+    </div>
+  </div>
+</div>
+
 <div class="pin-picker-modal" id="pin-picker-modal" role="dialog" aria-modal="true" aria-labelledby="pin-picker-title" hidden>
   <div class="pin-picker-backdrop" data-close></div>
   <div class="pin-picker-frame glass">

@@ -1327,40 +1327,69 @@
       }, 3000);
     }
   }
-  async function downloadBackup() {
+  function openBackupModal() {
     const payload = collectBackup();
     const text = JSON.stringify(payload, null, 2);
     const n = Object.keys(payload.keys).length;
-    // Preferred path: POST to the dev server so the backup lands on the
-    // laptop's disk, bypassing iOS Safari download quirks over http.
+    const modal = document.getElementById("backup-modal");
+    if (!modal) return;
+    const ta  = modal.querySelector(".backup-modal-json");
+    const sub = modal.querySelector(".backup-modal-sub");
+    if (ta)  ta.value = text;
+    if (sub) sub.textContent = `${n} key${n === 1 ? "" : "s"} · ${(new Blob([text]).size / 1024).toFixed(1)} KB`;
+    // Reset transient button labels.
+    const copyBtn   = modal.querySelector(".backup-modal-copy");
+    const laptopBtn = modal.querySelector(".backup-modal-laptop");
+    if (copyBtn)   { copyBtn.textContent   = "Copy";          copyBtn.dataset.state   = ""; }
+    if (laptopBtn) { laptopBtn.textContent = "Save to laptop"; laptopBtn.dataset.state = ""; }
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function closeBackupModal() {
+    const modal = document.getElementById("backup-modal");
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden])")) {
+      document.body.classList.remove("modal-open");
+    }
+  }
+  async function copyBackupJson() {
+    const modal = document.getElementById("backup-modal");
+    const ta = modal?.querySelector(".backup-modal-json");
+    const btn = modal?.querySelector(".backup-modal-copy");
+    if (!ta || !btn) return;
     try {
-      setBackupStatus("Saving to laptop…", "");
+      await navigator.clipboard.writeText(ta.value);
+      btn.textContent = "Copied"; btn.dataset.state = "ok";
+    } catch {
+      // Fallback for iOS if clipboard API is blocked: select + execCommand.
+      ta.focus(); ta.select();
+      try { document.execCommand("copy"); btn.textContent = "Copied"; btn.dataset.state = "ok"; }
+      catch { btn.textContent = "Copy failed"; btn.dataset.state = "err"; }
+    }
+    setTimeout(() => { btn.textContent = "Copy"; btn.dataset.state = ""; }, 1600);
+  }
+  async function saveBackupToLaptop() {
+    const modal = document.getElementById("backup-modal");
+    const ta  = modal?.querySelector(".backup-modal-json");
+    const btn = modal?.querySelector(".backup-modal-laptop");
+    if (!ta || !btn) return;
+    btn.textContent = "Saving…"; btn.dataset.state = "";
+    try {
       const res = await fetch("/__save_backup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: text,
+        body: ta.value,
       });
-      if (res.ok) {
-        const data = await res.json().catch(() => ({}));
-        setBackupStatus(`Saved to laptop: ${data.path || "backups/"} (${n} key${n === 1 ? "" : "s"})`, "ok");
-        return;
-      }
-      // 404 etc. → fall through to browser-download fallback.
-    } catch {
-      // Network unreachable or server doesn't support the endpoint — fall back.
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json().catch(() => ({}));
+      btn.textContent = data.path ? `Saved → ${data.path}` : "Saved";
+      btn.dataset.state = "ok";
+    } catch (err) {
+      btn.textContent = "Save failed";
+      btn.dataset.state = "err";
     }
-    // Fallback: browser download via Blob. Works on desktop; iffy on iOS Safari.
-    const blob = new Blob([text], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    const stamp = new Date().toISOString().replace(/[:T]/g, "-").slice(0, 19);
-    a.href = url;
-    a.download = `aistacked-backup-${stamp}.json`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-    setBackupStatus(`Exported ${n} key${n === 1 ? "" : "s"} (browser download)`, "ok");
+    setTimeout(() => { btn.textContent = "Save to laptop"; btn.dataset.state = ""; }, 2400);
   }
   async function handleImportFile(file) {
     if (!file) return;
@@ -1378,7 +1407,7 @@
     const exportBtn = document.getElementById("backup-export");
     const importBtn = document.getElementById("backup-import-trigger");
     const fileInput = document.getElementById("backup-import-file");
-    if (exportBtn) exportBtn.addEventListener("click", (e) => { e.preventDefault(); downloadBackup(); });
+    if (exportBtn) exportBtn.addEventListener("click", (e) => { e.preventDefault(); openBackupModal(); });
     if (importBtn && fileInput) {
       importBtn.addEventListener("click", (e) => { e.preventDefault(); fileInput.click(); });
       fileInput.addEventListener("change", () => {
@@ -1387,6 +1416,19 @@
         fileInput.value = "";
       });
     }
+    // Backup modal wiring.
+    document.querySelectorAll("#backup-modal [data-close]").forEach((el) => {
+      el.addEventListener("click", (ev) => { ev.preventDefault(); closeBackupModal(); });
+    });
+    const copyBtn   = document.querySelector("#backup-modal .backup-modal-copy");
+    const laptopBtn = document.querySelector("#backup-modal .backup-modal-laptop");
+    if (copyBtn)   copyBtn.addEventListener("click", (e) => { e.preventDefault(); copyBackupJson(); });
+    if (laptopBtn) laptopBtn.addEventListener("click", (e) => { e.preventDefault(); saveBackupToLaptop(); });
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      const m = document.getElementById("backup-modal");
+      if (m && !m.hidden) closeBackupModal();
+    });
   }
 
   // ---------- Project-scoped pinning (M3.2) ----------
