@@ -529,6 +529,7 @@
     if (s === "Claude Code") return "code";
     if (s === "Claude API Release Notes") return "api";
     if (s.startsWith("MCP")) return "mcp";
+    if (s === "Anthropic Academy") return "academy";
     return "other";
   }
 
