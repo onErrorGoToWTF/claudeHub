@@ -437,8 +437,8 @@ fix/video-modal ✅                  in-app YouTube iframe modal (iOS PWA friend
 M2.1   ✅ data/learn/snippets.json  Priority 1: CLAUDE.md patterns + inline viewer [v0.3.0]
 M2.2   ✅ Priority 2               Skills YAML frontmatter + examples [v0.3.1]
 M2.3   ✅ Priority 3               MCP server configs + scaffolds [v0.3.2]
-M2.4   ▢ Priority 4               Image/video prompt templates
-                                  (Nano Banana, Veo 3.1, Midjourney).
+M2.4   ✅ Priority 4               Image/video prompt templates
+                                  (Nano Banana, Veo 3.1, Midjourney). [v0.3.3]
 M2.5   ▢ Priority 5               Agent / LLM prompts (system prompts, personas).
 M2.6   ▢ Priority 6               n8n workflow JSON exports.
 M2.7   ▢ Priority 7               Lovable / Bolt starter prompts.

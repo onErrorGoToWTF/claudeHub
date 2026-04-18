@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Snippets library. M2.1 = CLAUDE.md patterns (Priority 1). Extended in M2.2+.",
+  "note": "Snippets library. Fixed snippetTags: claude-md, slash-command, hook, output-style, mcp-config, skill-yaml, prompt-image, prompt-video. M2.1=CLAUDE.md, M2.2=Skills YAML, M2.3=MCP, M2.4=image/video prompts.",
   "snippets": [
     {
       "id": "claudemd-minimal",
@@ -145,6 +145,69 @@
       "snippetTags": ["skill-yaml"],
       "language": "yaml",
       "body": "---\n# Display name for the skill (defaults to directory name)\nname: example-skill\n\n# What the skill does; Claude uses this to decide when to invoke\ndescription: Performs a focused task when conditions are met\n\n# Extra guidance on when Claude should trigger the skill automatically\nwhen_to_use: Use when the user mentions specific keywords or scenarios\n\n# Hint shown in autocomplete (e.g., \"[issue-number]\" or \"[file] [format]\")\nargument-hint: \"[input]\"\n\n# Prevent Claude from auto-invoking; only the user can run it via /\ndisable-model-invocation: false\n\n# Hide from the /slash menu; Claude can still invoke when relevant\nuser-invocable: true\n\n# Space-separated tool grants that skip the per-use permission prompt\nallowed-tools: Bash(ls *) Read Grep\n\n# Model to use while this skill is active (e.g. opus, sonnet, haiku)\nmodel: sonnet\n\n# Effort level: low, medium, high, xhigh, max\neffort: medium\n\n# Execution context: inline or fork (fork runs in a subagent)\ncontext: fork\n\n# Subagent type when context: fork (e.g., Explore, Plan)\nagent: Explore\n\n# Glob patterns — skill only activates when working with matching files\npaths: src/**/*.ts,tests/**/*.test.ts\n\n# Shell used for command blocks: bash (default) or powershell\nshell: bash\n---\n\nYour skill instructions go here as markdown."
+    },
+    {
+      "id": "prompt-nano-banana-marketing-hero",
+      "title": "Nano Banana — marketing hero image",
+      "summary": "Structured prompt for a brand hero shot. Model: Gemini image gen (Nano Banana). Replace bracketed slots.",
+      "tags": ["prompt", "image", "nano-banana", "gemini", "marketing", "hero"],
+      "snippetTags": ["prompt-image"],
+      "language": "text",
+      "body": "Subject: [one product or brand object, e.g. \"a single premium leather wallet, tan colour, stitched edges\"]\n\nScene: [setting, e.g. \"matte black stone surface, soft morning window light from the left\"]\n\nComposition: centred hero shot, subject fills ~60% of frame, shallow depth of field, eye-level camera, 16:9 aspect.\n\nLighting: soft directional key + low-intensity fill; gentle specular highlight on the top edge of the subject; no harsh shadows.\n\nStyle: editorial product photography, clean and restrained. No text, no logos, no watermarks, no people in frame.\n\nColour palette: muted neutrals with one warm accent pulled from the subject.\n\nRender quality: photoreal, sharp focus on the subject, subtle lens vignetting.\n\nNegative: no clutter, no props competing with the subject, no over-saturation, no AI-typical extra fingers/objects."
+    },
+    {
+      "id": "prompt-nano-banana-product-shot",
+      "title": "Nano Banana — product shot on clean background",
+      "summary": "E-commerce style product image prompt. Catalogue-ready, background-removable. Model: Gemini image gen.",
+      "tags": ["prompt", "image", "nano-banana", "gemini", "product", "ecommerce"],
+      "snippetTags": ["prompt-image"],
+      "language": "text",
+      "body": "Subject: [product, e.g. \"a ceramic pour-over coffee dripper, matte white\"]\n\nBackground: seamless light-grey cyclorama, evenly lit, no gradient banding. Pure enough that a background-removal tool can mask cleanly.\n\nCamera: three-quarter angle, slight upward tilt, 50mm lens look, subject fully in frame with ~10% padding on every side.\n\nLighting: large softbox key from upper-left; white bounce card on the right; subtle rim light on the back edge; no visible shadows under the product — float-style presentation.\n\nDetail: every surface texture resolved — ceramic grain, stitched seams, metallic brush marks, whichever applies.\n\nStyle: catalogue-neutral, commercial photography. Zero stylisation, zero filters.\n\nNegative: no text, no labels, no logos, no props, no people, no reflections of studio equipment."
+    },
+    {
+      "id": "prompt-midjourney-stylized-explainer",
+      "title": "Midjourney — stylized explainer illustration",
+      "summary": "Flat-illustration prompt for a blog-post or slide hero. Uses Midjourney parameter syntax (--ar, --stylize).",
+      "tags": ["prompt", "image", "midjourney", "illustration", "explainer"],
+      "snippetTags": ["prompt-image"],
+      "language": "text",
+      "body": "flat vector illustration of [concept — e.g. \"a developer handing a glowing API key to a small friendly robot\"], modern editorial style, limited palette of navy / warm orange / off-white, soft geometric shapes, subtle grain texture, gentle highlight on the key element, isometric-ish perspective but not strict, friendly and approachable mood, Figma-community aesthetic, centred composition with breathing room around the subject --ar 16:9 --stylize 300 --no text, letters, words, watermark, logo, photorealism, gradients-overload"
+    },
+    {
+      "id": "prompt-midjourney-cinematic-hero",
+      "title": "Midjourney — cinematic brand hero",
+      "summary": "Photoreal cinematic hero image. Midjourney parameter syntax. Aim: landing-page above-the-fold.",
+      "tags": ["prompt", "image", "midjourney", "cinematic", "hero"],
+      "snippetTags": ["prompt-image"],
+      "language": "text",
+      "body": "[hero subject — e.g. \"a lone architect walking across an empty concrete atrium at golden hour\"], cinematic wide shot, anamorphic lens flare on the left edge, volumetric sunlight raking across the floor, dust motes in the air, very subtle film grain, muted teal-and-amber colour grade, Roger Deakins inspired lighting, ultra-detailed architecture with sharp geometry, rule-of-thirds composition with the subject on the right third, shallow depth of field on the midground only --ar 21:9 --stylize 250 --no text, words, letters, watermark, lens-distortion artifacts, AI-blurry faces"
+    },
+    {
+      "id": "prompt-veo-product-video",
+      "title": "Veo — product video (cinematic b-roll)",
+      "summary": "Single-shot product b-roll prompt for Google Veo. ~8 seconds. Describes camera move, lighting, mood; no audio cue.",
+      "tags": ["prompt", "video", "veo", "google", "product", "b-roll"],
+      "snippetTags": ["prompt-video"],
+      "language": "text",
+      "body": "A slow cinematic push-in on [product — e.g. \"a matte black espresso machine sitting on a dark marble counter\"]. The camera starts two metres back at waist height and glides forward until it is half a metre from the product. Soft warm morning light rakes in from the left, catching the steam rising gently from the portafilter. Shallow depth of field; background kitchen softly out of focus throughout. Subtle film grain, muted teal-amber colour grade, 24fps cinematic feel. Duration: 8 seconds. No on-screen text, no logos, no people in frame. Camera move ends on a static frame with the product perfectly centred. No audio."
+    },
+    {
+      "id": "prompt-veo-ugc-clip",
+      "title": "Veo — UGC-style phone clip",
+      "summary": "Handheld, phone-shot aesthetic for social. Veo video prompt. ~8 seconds, vertical 9:16.",
+      "tags": ["prompt", "video", "veo", "ugc", "social", "vertical"],
+      "snippetTags": ["prompt-video"],
+      "language": "text",
+      "body": "Vertical 9:16 handheld phone clip, 8 seconds. A twenty-something [user persona — e.g. \"young woman in a cosy apartment\"] holds up [product] to the camera at arm's length, turns it once to show it off, then smiles naturally. Imperfect handheld motion — micro-shakes, a tiny reframe mid-clip as she adjusts her grip. Natural window daylight, slightly overcast, no studio lighting. Colour feels like an iPhone default, not graded. Apartment background softly visible but not sharp. Authentic UGC mood — not polished, not staged. No captions, no text overlays, no music. Camera: front-facing phone camera feel, slight wide-angle distortion at the edges."
+    },
+    {
+      "id": "prompt-veo-keyframe-chain",
+      "title": "Veo — first/last-frame keyframe interpolation",
+      "summary": "Chain Nano Banana stills into a Veo clip via first/last-frame conditioning (Google Flow workflow pattern).",
+      "tags": ["prompt", "video", "veo", "keyframe", "flow", "nano-banana"],
+      "snippetTags": ["prompt-video"],
+      "language": "text",
+      "body": "Workflow: generate two stills in Nano Banana (first frame + last frame), then feed both into Veo via Google Flow with first-frame/last-frame conditioning. Veo interpolates the motion between them.\n\nFirst frame prompt (Nano Banana):\n  [Scene A — e.g. \"wide exterior shot of a modern office building at dusk, glass facade glowing warm from inside, camera at street level\"]. Photoreal, cinematic, 16:9.\n\nLast frame prompt (Nano Banana):\n  [Scene B — same world, later moment — e.g. \"close-up interior shot of a single desk on the top floor seen through the window, warm lamp light, camera framed as if looking in from outside\"]. Photoreal, cinematic, 16:9. Match lighting temperature and colour grade to the first frame.\n\nVeo interpolation prompt:\n  Smooth cinematic camera push from the establishing exterior wide to the interior close-up. Camera travels forward and rises slightly; never cuts. Motion is steady, no handheld shake. Maintain the warm dusk colour grade throughout. 8 seconds, 24fps, no on-screen text, no audio."
     }
   ]
 }

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p C:/dev/claudeHub/docs/plans)",
+      "Bash(git -C C:/dev/claudeHub checkout -b feat/aistacked-rebuild)",
+      "Bash(git -C C:/dev/claudeHub status)",
+      "Bash(git -C C:/dev/claudeHub add docs/plans/aistacked-v1.md)",
+      "Bash(git *)"
+    ]
+  }
+}
