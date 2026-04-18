@@ -742,58 +742,307 @@
     host.innerHTML = `<div class="gf-chart">${clustersHtml}</div>` + legendHtml + statsHtml;
   }
 
+  // Map a tool chip name to its brand color when we recognize a model /
+  // vendor; otherwise return null so the chip falls back to type color.
+  function chipColorFor(name) {
+    const n = String(name).toLowerCase();
+    if (/claude|opus|sonnet|haiku|anthropic/.test(n)) return MODEL_COL.claude;
+    if (/gpt|openai|chatgpt|\bo1\b|\bo3\b/.test(n))   return MODEL_COL.openai;
+    if (/gemini|nano banana|notebooklm|\bveo\b|google/.test(n)) return MODEL_COL.google;
+    if (/grok|xai/.test(n)) return MODEL_COL.xai;
+    return null;
+  }
+  function chipMarkup(c) {
+    const col = chipColorFor(c.n);
+    const style = col ? ` style="--type-col:${col}"` : "";
+    return `<span class="tool-chip" data-type="${c.t}"${style}>${c.n}</span>`;
+  }
+
   // ======================================================================
-  // Workflow recipes — multi-tool combos with rationale for each pairing.
+  // Workflow recipes — clickable cards that open a modal with full detail.
   // ======================================================================
+  const RECIPES = [
+    {
+      chips: [{n:"Claude Code", t:"LLM"}, {n:"Cursor", t:"tool-app"}],
+      title: "Agentic refactor loop",
+      description: "Claude Code runs as a background agent that plans, edits across many files, and runs tests autonomously. Cursor stays open on the same repo for inline-diff review and last-mile polish — you get agentic scale plus IDE ergonomics without picking one tool.",
+      detail: {
+        overview: "The dominant 'two-IDE' pattern on r/ClaudeAI. Claude Code operates on a feature branch — it reads the repo, plans, executes multi-file edits, runs tests, iterates. Cursor is kept open on the same working tree for anything that needs human judgement: selection-based rewrites, tab-complete, quick tweaks. You commit from whichever tool feels right for the moment.",
+        steps: [
+          "Install Claude Code CLI and point it at the repo root; add a CLAUDE.md with conventions.",
+          "Open the same folder in Cursor so both tools share the working tree.",
+          "Kick off the refactor in Claude Code with a clear plan and test command.",
+          "Let Claude Code iterate (plan → edit → test → fix) until green.",
+          "Review the diff in Cursor; use Cursor's inline edit for the last 10% polish.",
+          "Commit from whichever tool you prefer."
+        ],
+        when_to_use: "Multi-file refactor, migration, or feature spanning 5+ files where a single IDE prompt is too small.",
+        gotchas: [
+          "Don't let both agents edit the same file concurrently — stage your work.",
+          "Claude Code's autonomy is bounded by CLAUDE.md; vague conventions = drift.",
+          "Commit often; agentic edits are hard to cherry-pick after the fact."
+        ],
+        est_cost: "$40–60/mo (Claude Pro/Max $20–40 + Cursor Pro $20)",
+        links: [
+          { label: "Claude Code workflows", url: "https://code.claude.com/docs/en/common-workflows" },
+          { label: "Multi-AI workflow guide", url: "https://claude-world.com/articles/multi-ai-workflow/" }
+        ]
+      }
+    },
+    {
+      chips: [{n:"Nano Banana 2", t:"image"}, {n:"Claude (MCP)", t:"LLM"}],
+      title: "On-brand hero art",
+      description: "Claude reads your brand system (voice, palette, references) and drafts Nano Banana 2 prompts that keep characters and objects consistent across a set. Best for thumbnails, landing-page heroes, and product shots when you need 4–10 on-palette images in one pass.",
+      detail: {
+        overview: "Nano Banana 2 (Gemini 3.1 Pro Image) keeps up to 5 characters and 14 objects consistent across a batch, renders at 4K, and can target any aspect ratio. Claude sits in front as the art director — it ingests brand guidelines, decides composition, and emits prompt sets. Configured as a Claude Code skill or via the Gemini image API through MCP, the pipeline produces a batch (1:1, 16:9, 9:16) in one run.",
+        steps: [
+          "Write a brand skill in Claude: palette, typography, subject rules, forbidden motifs.",
+          "Wire Nano Banana 2 via Claude Code skill or Gemini API MCP server.",
+          "Prompt Claude with the artifact you need (e.g. 'hero + 3 social crops').",
+          "Let Claude generate the prompt batch and call Nano Banana 2.",
+          "Review outputs in a contact sheet; request edits in natural language.",
+          "Export final frames at target aspect ratios."
+        ],
+        when_to_use: "You need a visually consistent image set (3+ images) tied to a brand.",
+        gotchas: [
+          "Character consistency drops past ~5 subjects — split into sub-batches.",
+          "Nano Banana 2 still hallucinates text; render copy in post where possible.",
+          "Costs stack fast at 4K — generate at 1K first, upscale only winners."
+        ],
+        est_cost: "$20–60/mo (Claude Pro + Gemini API usage)",
+        links: [
+          { label: "Connect Nano Banana via MCP", url: "https://aimaker.substack.com/p/how-to-connect-image-generation-claude-mcp-nano-banana" },
+          { label: "Claude + Nano Banana walkthrough", url: "https://ryandoser.com/nano-banana-claude-code/" }
+        ]
+      }
+    },
+    {
+      chips: [{n:"NotebookLM", t:"tool-app"}, {n:"Claude (MCP)", t:"LLM"}],
+      title: "Cited research synthesis",
+      description: "Drop PDFs, transcripts, and links into NotebookLM for citation-locked summaries and Q&A over the exact sources. Hand the grounded notes to Claude via MCP to turn them into briefs, memos, or literature reviews — without losing a single citation.",
+      detail: {
+        overview: "NotebookLM refuses to answer outside the corpus you give it; Claude has the long-form writing chops. Put them in series: load 10–50 sources into a NotebookLM notebook, use it to extract citation-tagged key points, then pipe the briefing to Claude (via MCP or paste) to assemble the deliverable. Citations survive the handoff because Claude only rewrites what NotebookLM produced.",
+        steps: [
+          "Create a NotebookLM notebook; upload PDFs, YouTube links, Google Docs.",
+          "Ask NotebookLM for a briefing doc with inline citations.",
+          "Copy or MCP-pipe the briefing into Claude.",
+          "Prompt Claude to restructure into the target artifact (memo, article, deck outline).",
+          "Tell Claude to preserve citation anchors verbatim.",
+          "Spot-check 3–5 citations against the originals before shipping."
+        ],
+        when_to_use: "You have a fixed corpus and cannot afford invented facts.",
+        gotchas: [
+          "Claude will 'improve' citation wording unless told to preserve verbatim.",
+          "NotebookLM caps ~50 sources per notebook — split by theme.",
+          "The audio-overview feature is off-topic here; don't get sidetracked."
+        ],
+        est_cost: "$0–20/mo (NotebookLM free tier + Claude Pro)",
+        links: [
+          { label: "NotebookLM", url: "https://notebooklm.google.com" },
+          { label: "Claude + NotebookLM guide", url: "https://popularaitools.ai/blog/claude-code-notebooklm-guide-2026" }
+        ]
+      }
+    },
+    {
+      chips: [{n:"Nano Banana 2", t:"image"}, {n:"Claude Opus 4.7", t:"LLM"}],
+      title: "Image → 3D \"explode\" site",
+      description: "Generate a hero image in Nano Banana 2, then have Claude Opus 4.7 segment it and scaffold a Three.js scene that 'explodes' the image into separate meshes on scroll. Portfolio-quality interactive landing pages without a 3D artist.",
+      detail: {
+        overview: "A newer creative-dev pattern. Nano Banana 2 produces a crisp hero (product, character, abstract composition). Claude Opus 4.7 treats the image as a spec — it proposes a parts breakdown, generates the per-part renders (green-screen mode), and writes the Three.js scroll-driven explode animation with physics-ish easing. Output is a single Vite + Three.js page you can deploy to Vercel.",
+        steps: [
+          "Generate one clean hero in Nano Banana 2 on a flat or transparent background.",
+          "Ask Claude Opus 4.7 to propose a 6–12 part segmentation.",
+          "Generate each part as a separate Nano Banana 2 render (green-screen mode).",
+          "Have Claude scaffold a Vite + Three.js project with scroll-linked explode.",
+          "Tune easing and camera in-browser via Claude-suggested params.",
+          "Deploy to Vercel or GitHub Pages."
+        ],
+        when_to_use: "Portfolio, launch page, or social-viral demo where motion sells the story.",
+        gotchas: [
+          "Transparent-bg parts require Nano Banana 2's green-screen skill.",
+          "Three.js asset loading on mobile is fragile — compress textures to KTX2.",
+          "Keep part count ≤12 or FPS tanks on mid-tier phones."
+        ],
+        est_cost: "$20–60/mo (Claude Pro/Max + Gemini API image credits)",
+        links: [
+          { label: "Nano Banana 2 Claude skill", url: "https://github.com/kingbootoshi/nano-banana-2-skill" },
+          { label: "Three.js docs", url: "https://threejs.org/docs/" }
+        ]
+      }
+    },
+    {
+      chips: [{n:"Gemini 3.1 (BrowseComp)", t:"LLM"}, {n:"Claude Opus 4.7", t:"LLM"}],
+      title: "Deep web → long-form finish",
+      description: "Use Gemini's BrowseComp-style deep crawl to gather fresh, cited evidence on a topic, then hand the dossier to Claude Opus 4.7 for structured reasoning and publication-ready writing. Best when currency-of-information matters as much as writing quality.",
+      detail: {
+        overview: "Gemini 3.1 leads on live-web retrieval breadth (BrowseComp benchmark); Claude Opus 4.7 leads on editorial output, tone control, and extended reasoning in a single pass. Run them in series: Gemini produces a 2–5K word cited research dossier, Claude restructures into the target format (report, article, exec memo). A popular Reddit pattern that sidesteps Claude's web-search limits while keeping writing quality high.",
+        steps: [
+          "Prompt Gemini 3.1 with a research brief and desired depth.",
+          "Ask for inline citations and a source table at the end.",
+          "Paste or MCP-pipe the dossier into Claude Opus 4.7.",
+          "Ask Claude for an outline first; approve before it writes.",
+          "Have Claude draft in target voice, preserving citations.",
+          "Final fact-check pass: sample 5 citations from the source table."
+        ],
+        when_to_use: "Topic requires current-day evidence beyond Claude's training cutoff.",
+        gotchas: [
+          "Gemini occasionally invents secondary-source URLs — spot-check.",
+          "Ask Claude to flag claims lacking a citation rather than smooth them over.",
+          "Don't let Claude 'refresh' Gemini's quotes; keep them verbatim."
+        ],
+        est_cost: "$20–40/mo (Claude Pro + Gemini Advanced)",
+        links: [
+          { label: "Gemini 3.1 Pro model card", url: "https://deepmind.google/models/model-cards/gemini-3-1-pro" },
+          { label: "Claude Opus 4.7 release", url: "https://www.anthropic.com/news/claude-opus-4-7" }
+        ]
+      }
+    },
+    {
+      chips: [{n:"Figma", t:"tool-app"}, {n:"Claude Code (MCP)", t:"LLM"}],
+      title: "Design-to-code bridge",
+      description: "Figma's official MCP server lets Claude Code read clean, token-aware design data from a selected frame and emit production React — with an optional bidirectional mode that pushes rendered UIs back as editable Figma layers. Design and code stop diverging.",
+      detail: {
+        overview: "Figma rebuilt their MCP server to filter raw API noise into something LLMs can actually act on: pixel positions become 'centered in parent', hex values become design tokens, deep nesting flattens. Claude Code pulls that structured context, writes components using your existing codebase conventions, and can push the result back as editable Figma layers. Fastest-growing design-dev workflow of 2026.",
+        steps: [
+          "Enable Figma's MCP server (requires a Dev Mode seat).",
+          "Add the Figma MCP to Claude Code's mcp_servers.json.",
+          "In Figma, select a frame and copy its URL.",
+          "Prompt Claude Code: 'Implement this frame using our component library.'",
+          "Review the diff; iterate with natural-language tweaks.",
+          "Optional: push the rendered UI back to Figma for designer review."
+        ],
+        when_to_use: "Handing a finished Figma frame off to implementation, or keeping design and code in sync over iterations.",
+        gotchas: [
+          "Design tokens must exist in both Figma and code or names drift.",
+          "Deeply nested auto-layout still produces odd flex trees — review.",
+          "Bidirectional push overwrites Figma layers; branch first."
+        ],
+        est_cost: "$45–60/mo (Figma Dev Mode + Claude Pro)",
+        links: [
+          { label: "Figma + Claude Code announcement", url: "https://www.figma.com/blog/introducing-claude-code-to-figma/" },
+          { label: "Figma MCP setup guide", url: "https://www.builder.io/blog/claude-code-figma-mcp-server" }
+        ]
+      }
+    },
+    {
+      chips: [{n:"Claude Code", t:"LLM"}, {n:"Playwright MCP", t:"tool-app"}],
+      title: "AI QA engineer",
+      description: "Wire Microsoft's Playwright MCP into Claude Code and let it drive a real browser, read the accessibility tree, and write E2E tests grounded in the actual DOM. Kills brittle selectors and gives you a real smoke-test suite without a dedicated QA role.",
+      detail: {
+        overview: "Instead of hallucinating selectors, Claude Code with Playwright MCP navigates your running app through structured accessibility data (not screenshots) and grounds each test in what the app actually renders. It handles clicks, forms, uploads, dialogs, screenshots, and custom Playwright scripts. Microsoft maintains the MCP server; workflows documented by Builder.io and in Anthropic's plugins directory.",
+        steps: [
+          "Run `npx @playwright/mcp@latest` and register the server in Claude Code.",
+          "Start your app locally.",
+          "Ask Claude Code to 'explore the signup flow and list failure modes.'",
+          "Review the exploratory report; pick scenarios to lock in as tests.",
+          "Have Claude write Playwright test files using real selectors from the MCP session.",
+          "Wire the suite into CI (GitHub Actions) for headless runs."
+        ],
+        when_to_use: "Your app has critical flows and no meaningful end-to-end coverage.",
+        gotchas: [
+          "Tests generated against dev data break in CI — seed consistently.",
+          "Accessibility tree is only as good as your ARIA; fix it along the way.",
+          "Don't commit screenshots from MCP sessions — they balloon repo size."
+        ],
+        est_cost: "$20–40/mo (Claude Pro/Max); Playwright itself is free",
+        links: [
+          { label: "Playwright MCP (GitHub)", url: "https://github.com/microsoft/playwright-mcp" },
+          { label: "Building an AI QA engineer", url: "https://alexop.dev/posts/building_ai_qa_engineer_claude_code_playwright/" }
+        ]
+      }
+    }
+  ];
+
+  function openRecipeModal(recipe) {
+    const tpl = document.getElementById("tpl-recipe-modal");
+    const modal = tpl.content.firstElementChild.cloneNode(true);
+
+    const chipsEl = modal.querySelector(".recipe-modal-chips");
+    chipsEl.innerHTML = recipe.chips.map((c, i) => {
+      const chip = chipMarkup(c);
+      return i === 0 ? chip : `<span class="recipe-arrow" aria-hidden="true">→</span>${chip}`;
+    }).join("");
+
+    modal.querySelector(".recipe-modal-title").textContent = recipe.title || "Workflow recipe";
+    const d = recipe.detail || {};
+    modal.querySelector(".recipe-modal-overview").textContent = d.overview || recipe.description || "";
+
+    const sectionsEl = modal.querySelector(".recipe-modal-sections");
+    let html = "";
+    if (d.steps && d.steps.length) {
+      html += `<div class="rm-section">
+        <div class="rm-section-title">Steps</div>
+        <ol class="rm-section-body">${d.steps.map(s => `<li>${s}</li>`).join("")}</ol>
+      </div>`;
+    }
+    if (d.when_to_use) {
+      html += `<div class="rm-section">
+        <div class="rm-section-title">When to use</div>
+        <div class="rm-section-body">${d.when_to_use}</div>
+      </div>`;
+    }
+    if (d.gotchas && d.gotchas.length) {
+      html += `<div class="rm-section">
+        <div class="rm-section-title">Gotchas</div>
+        <ul class="rm-section-body">${d.gotchas.map(g => `<li>${g}</li>`).join("")}</ul>
+      </div>`;
+    }
+    if (d.est_cost) {
+      html += `<div class="rm-section">
+        <div class="rm-section-title">Estimated cost</div>
+        <div class="rm-section-body">${d.est_cost}</div>
+      </div>`;
+    }
+    if (d.links && d.links.length) {
+      html += `<div class="rm-section">
+        <div class="rm-section-title">Learn more</div>
+        <ul class="rm-section-body">${d.links.map(l => `<li><a href="${l.url}" target="_blank" rel="noopener">${l.label}</a></li>`).join("")}</ul>
+      </div>`;
+    }
+    sectionsEl.innerHTML = html;
+
+    document.body.appendChild(modal);
+    document.body.classList.add("is-modal-open");
+    requestAnimationFrame(() => modal.classList.add("is-open"));
+
+    const close = () => {
+      modal.classList.remove("is-open");
+      document.body.classList.remove("is-modal-open");
+      document.removeEventListener("keydown", escHandler);
+      setTimeout(() => modal.remove(), 300);
+    };
+    const escHandler = (e) => { if (e.key === "Escape") close(); };
+    modal.querySelectorAll("[data-close]").forEach(el => el.addEventListener("click", close));
+    document.addEventListener("keydown", escHandler);
+  }
+
   function renderRecipes() {
     const host = document.getElementById("recipes");
     if (!host) return;
-    const rows = [
-      {
-        chips: [{n:"Claude Code", t:"LLM"}, {n:"Cursor", t:"tool-app"}],
-        use: "Agentic refactors in a fluid IDE.",
-        why: "Claude does the multi-file edits; Cursor keeps you in flow with inline diffs.",
-      },
-      {
-        chips: [{n:"Nano Banana 2", t:"image"}, {n:"Claude (MCP)", t:"LLM"}],
-        use: "On-brand thumbnails, hero art, product shots.",
-        why: "Claude handles the prompt-engineering + brand rules; Nano Banana renders 4K with best-in-class text.",
-      },
-      {
-        chips: [{n:"NotebookLM", t:"tool-app"}, {n:"Claude (MCP)", t:"LLM"}],
-        use: "Source-grounded research synthesis.",
-        why: "NotebookLM pins every claim to a citation; Claude reasons over the retrieved set.",
-      },
-      {
-        chips: [{n:"Nano Banana 2", t:"image"}, {n:"Claude Opus 4.7", t:"LLM"}],
-        use: "Image → Three.js \"explode-to-parts\" 3D effect on a website.",
-        why: "Nano Banana makes the hero art; Claude writes the WebGL code to animate it apart on scroll.",
-      },
-      {
-        chips: [{n:"Claude Opus 4.7", t:"LLM"}, {n:"ElevenLabs v3", t:"voice"}],
-        use: "Long-form script + expressive voiceover pipeline.",
-        why: "Claude drafts + revises; ElevenLabs v3 delivers the emotive read Claude alone can't.",
-      },
-      {
-        chips: [{n:"Gemini 3.1 (BrowseComp)", t:"LLM"}, {n:"Claude Opus 4.7", t:"LLM"}],
-        use: "Deep-web research → reasoning + writing finish.",
-        why: "Gemini crawls faster and deeper on the open web; Claude finishes with stronger structure.",
-      },
-    ];
     host.innerHTML = "";
-    rows.forEach((r, i) => {
+    RECIPES.forEach((r, i) => {
       const delay = 0.2 + i * 0.08;
       const el = document.createElement("div");
       el.className = "recipe";
       el.style.setProperty("--recipe-delay", delay + "s");
-      const chipsHtml = r.chips.map(c =>
-        `<span class="tool-chip" data-type="${c.t}">${c.n}</span>`
-      ).join('<span class="recipe-arrow" aria-hidden="true">→</span>');
+      el.setAttribute("role", "button");
+      el.setAttribute("tabindex", "0");
+      const chipsHtml = r.chips.map((c, ci) => {
+        const chip = chipMarkup(c);
+        return ci === 0 ? chip : `<span class="recipe-arrow" aria-hidden="true">→</span>${chip}`;
+      }).join("");
       el.innerHTML = `
         <div class="recipe-chips">${chipsHtml}</div>
-        <div class="recipe-use">${r.use}</div>
-        <div class="recipe-why"><span class="recipe-why-lbl">Why</span>${r.why}</div>
+        <div class="recipe-desc">${r.description}</div>
+        <div class="recipe-more">Tap for details →</div>
       `;
+      el.addEventListener("click", () => openRecipeModal(r));
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openRecipeModal(r);
+        }
+      });
       host.appendChild(el);
     });
   }
