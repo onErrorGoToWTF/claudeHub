@@ -1604,6 +1604,245 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 .stack-column-best .stack-why-label { color: var(--accent-hi); }
 
+/* ===== Save-as-project form (M1.11) ===== */
+.stack-save {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-start;
+}
+.save-form {
+  margin-top: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-left: 2px solid color-mix(in srgb, var(--accent-claude) 55%, transparent);
+}
+.save-head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.save-lede {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.save-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.save-field-label {
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-3);
+}
+.save-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-2) 55%, transparent);
+  color: var(--text-1);
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: -0.005em;
+  transition: border-color 0.2s var(--ease-premium),
+              background 0.2s var(--ease-premium),
+              box-shadow 0.25s var(--ease-premium);
+}
+.save-input::placeholder { color: var(--text-3); opacity: 0.75; }
+.save-input:focus {
+  outline: none;
+  border-color: color-mix(in srgb, var(--accent-claude) 55%, var(--border-strong));
+  background: color-mix(in srgb, var(--bg-2) 75%, transparent);
+  box-shadow: 0 0 20px -8px var(--accent-claude-glow);
+}
+.save-path {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.save-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  min-height: 40px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.2s var(--ease-premium);
+}
+.save-radio:hover { background: color-mix(in srgb, var(--text-1) 4%, transparent); }
+.save-radio input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-strong);
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  transition: border-color 0.2s var(--ease-premium);
+}
+.save-radio input[type="radio"]:checked {
+  border-color: var(--accent-claude);
+}
+.save-radio input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--accent-claude);
+}
+.save-radio input[type="radio"]:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent-claude) 55%, transparent);
+  outline-offset: 2px;
+}
+.save-radio span {
+  color: var(--text-1);
+  font-size: 13.5px;
+  font-weight: 500;
+}
+.save-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.save-cancel {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  padding: 10px 18px;
+  min-height: 44px;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s var(--ease-premium),
+              border-color 0.2s var(--ease-premium);
+}
+.save-cancel:hover {
+  color: var(--text-1);
+  border-color: var(--text-1);
+}
+
+/* ===== My Projects (Learn → My Projects) ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 720px)  { .projects-grid { grid-template-columns: 1fr 1fr; gap: 14px; } }
+@media (min-width: 1100px) { .projects-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 18px 16px;
+  border-left: 2px solid color-mix(in srgb, var(--accent-claude) 50%, transparent);
+}
+.project-card-best {
+  border-left-color: color-mix(in srgb, var(--accent) 50%, transparent);
+}
+.project-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  font-weight: 600;
+}
+.project-path {
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--accent-claude-soft) 45%, transparent);
+  color: var(--accent-claude-hi);
+  border: 1px solid color-mix(in srgb, var(--accent-claude) 30%, var(--border));
+}
+.project-card-best .project-path {
+  background: color-mix(in srgb, var(--accent-soft) 45%, transparent);
+  color: var(--accent-hi);
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+}
+.project-date {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-3);
+}
+.project-title {
+  margin: 0;
+  font-size: 17px; font-weight: 600; letter-spacing: -0.01em;
+  color: var(--text-1);
+}
+.project-goal {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.project-stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+.project-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--text-1) 4%, transparent);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-2);
+  letter-spacing: -0.005em;
+}
+.project-chip-claude {
+  color: var(--accent-claude-hi);
+  border-color: color-mix(in srgb, var(--accent-claude) 30%, var(--border));
+  background: color-mix(in srgb, var(--accent-claude-soft) 30%, transparent);
+}
+.project-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+.project-delete {
+  padding: 6px 12px;
+  min-height: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-3);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s var(--ease-premium),
+              border-color 0.2s var(--ease-premium),
+              background 0.2s var(--ease-premium);
+}
+.project-delete:hover {
+  color: #f43f5e;
+  border-color: color-mix(in srgb, #f43f5e 40%, var(--border-strong));
+  background: color-mix(in srgb, #f43f5e 8%, transparent);
+}
+
 /* ===== Version pill (footer) — visible proof of the current build ===== */
 .version-pill {
   display: inline-flex;

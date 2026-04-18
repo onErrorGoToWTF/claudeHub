@@ -205,6 +205,37 @@
             <ol class="stack-list" id="stack-best-list"></ol>
           </div>
         </section>
+
+        <div class="stack-save" id="stack-save" hidden>
+          <button class="dash-action dash-action-primary" type="button" id="stack-save-open">Save as project →</button>
+        </div>
+
+        <form class="save-form glass" id="save-form" hidden>
+          <div class="save-head">
+            <div class="hub-eyebrow">Save as project</div>
+            <p class="save-lede">Keep this stack in My Projects. You can have as many as you like.</p>
+          </div>
+          <label class="save-field">
+            <span class="save-field-label">Project title</span>
+            <input class="save-input" id="save-title" type="text" maxlength="80" placeholder="e.g. Young Carpets marketing site" autocomplete="off">
+          </label>
+          <fieldset class="save-path">
+            <legend class="save-field-label">Which path?</legend>
+            <label class="save-radio">
+              <input type="radio" name="save-path-radio" value="easy" checked>
+              <span>Easiest</span>
+            </label>
+            <label class="save-radio">
+              <input type="radio" name="save-path-radio" value="best">
+              <span>Best</span>
+            </label>
+          </fieldset>
+          <div class="save-actions">
+            <button class="dash-action dash-action-primary" type="submit">Save</button>
+            <button class="save-cancel" type="button" id="save-cancel">Cancel</button>
+            <span class="finder-status" id="save-status" role="status" aria-live="polite"></span>
+          </div>
+        </form>
       </div>
     </div>
     <div class="pane" data-pane="learn-tools" hidden>
@@ -212,7 +243,12 @@
       <div class="tool-grid" id="tool-grid"></div>
     </div>
     <div class="pane" data-pane="learn-projects" hidden>
-      <div class="empty">My Projects — saved Finder outputs, pinned tutorials, progress. Ships in M1.11.</div>
+      <div class="hub-intro">
+        <div class="hub-eyebrow">My Projects</div>
+        <h3 class="hub-title">Your saved builds.</h3>
+        <p class="hub-lede">Every save from the Finder lands here. Each project keeps its capabilities, its chosen path, and the recommended tool stack.</p>
+      </div>
+      <div class="projects-grid" id="projects-grid"></div>
     </div>
   </section>
 

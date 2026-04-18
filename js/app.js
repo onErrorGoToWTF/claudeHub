@@ -30,6 +30,18 @@
   // Ordinal for price-ascending sort. Unknown tiers go last.
   const PRICE_RANK = { free: 0, lte20: 1, lte50: 2, premium: 3 };
 
+  // Projects localStorage key (M1.11).
+  const PROJECTS_KEY = "clhub.v1.projects";
+
+  function escapeHtml(s) {
+    return String(s ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
   // Capability taxonomy for the Finder checkbox grid.
   // Each capability.matches lists the tools.json `provides` tags that
   // satisfy that capability. Live counts = # tools whose provides set
@@ -601,6 +613,7 @@
       renderTools();
       renderCapGrid();
       renderCapFilterBar();
+      renderProjects(); // re-render so chips show real tool names
     } catch (err) {
       const host = document.getElementById("tool-grid");
       if (host) host.innerHTML = `<div class="empty">Couldn't load tools catalog. ${String(err.message || err)}</div>`;
@@ -710,6 +723,7 @@
     if (!host || !toolsData) return;
     if (capsSelected.size === 0) {
       host.hidden = true;
+      updateSaveCtaVisibility();
       return;
     }
     const caps = [...capsSelected];
@@ -718,7 +732,21 @@
     renderColumn(easy.ordered, easy.unmet, "stack-easy-list", "stack-easy-summary");
     renderColumn(best.ordered, best.unmet, "stack-best-list", "stack-best-summary");
     host.hidden = false;
+    updateSaveCtaVisibility();
     if (scroll) host.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function updateSaveCtaVisibility() {
+    const stack = document.getElementById("stack-output");
+    const saveBlock = document.getElementById("stack-save");
+    const saveForm = document.getElementById("save-form");
+    if (!saveBlock) return;
+    const stackVisible = stack && !stack.hidden;
+    const formOpen = saveForm && !saveForm.hidden;
+    saveBlock.hidden = !stackVisible || formOpen;
+    if (!stackVisible && saveForm && !saveForm.hidden) {
+      saveForm.hidden = true;
+    }
   }
 
   function renderColumn(picked, unmet, listId, summaryId) {
@@ -776,6 +804,98 @@
       `;
       ol.appendChild(li);
     }
+  }
+
+  // ----- My Projects (M1.11) -----
+  function getProjects() {
+    try {
+      const raw = localStorage.getItem(PROJECTS_KEY);
+      if (!raw) return {};
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === "object" ? parsed : {};
+    } catch { return {}; }
+  }
+  function putProjects(obj) {
+    try { localStorage.setItem(PROJECTS_KEY, JSON.stringify(obj)); } catch {}
+  }
+  function saveProject({ title, path }) {
+    if (!toolsData || capsSelected.size === 0) return null;
+    const caps = [...capsSelected];
+    const cmp = path === "best" ? cmpBest : cmpEasy;
+    const { ordered, unmet } = pickStack(caps, cmp);
+    const id = "prj_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 6);
+    const goal = document.getElementById("finder-input")?.value?.trim() || "";
+    const finalTitle = (title || "").trim()
+      || goal.slice(0, 60)
+      || `Project ${new Date().toLocaleDateString()}`;
+    const project = {
+      id,
+      title: finalTitle,
+      goal,
+      path: path === "best" ? "best" : "easy",
+      capsSelected: caps,
+      stack: ordered.map((e) => ({ toolId: e.tool.id, caps: e.caps })),
+      unmet,
+      createdAt: new Date().toISOString(),
+    };
+    const projects = getProjects();
+    projects[id] = project;
+    putProjects(projects);
+    renderProjects();
+    return project;
+  }
+  function deleteProject(id) {
+    const projects = getProjects();
+    if (!projects[id]) return;
+    delete projects[id];
+    putProjects(projects);
+    renderProjects();
+  }
+  function renderProjects() {
+    const host = document.getElementById("projects-grid");
+    if (!host) return;
+    const projects = Object.values(getProjects()).sort((a, b) =>
+      (b.createdAt || "").localeCompare(a.createdAt || "")
+    );
+    if (projects.length === 0) {
+      host.innerHTML = `<div class="empty">No saved projects yet — run the Finder and tap "Save as project" to seed one here.</div>`;
+      return;
+    }
+    host.innerHTML = "";
+    projects.forEach((p) => {
+      const card = document.createElement("article");
+      card.className = "project-card glass" + (p.path === "best" ? " project-card-best" : " project-card-easy");
+      const pathLabel = p.path === "best" ? "Best path" : "Easiest path";
+      const stackChips = (p.stack || []).map((s) => {
+        const tool = toolsData?.find((t) => t.id === s.toolId);
+        const claudeCls = tool?.claudeNative ? " project-chip-claude" : "";
+        return `<span class="project-chip${claudeCls}">${escapeHtml(tool ? tool.name : s.toolId)}</span>`;
+      }).join("");
+      const date = p.createdAt
+        ? new Date(p.createdAt).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })
+        : "";
+      card.innerHTML = `
+        <div class="project-head">
+          <span class="project-path">${pathLabel}</span>
+          <span class="project-date">${escapeHtml(date)}</span>
+        </div>
+        <h4 class="project-title">${escapeHtml(p.title)}</h4>
+        ${p.goal ? `<p class="project-goal">${escapeHtml(p.goal)}</p>` : ""}
+        <div class="project-stack-chips">${stackChips}</div>
+        <div class="project-actions">
+          <button class="project-delete" type="button" data-project-id="${escapeHtml(p.id)}">Delete</button>
+        </div>
+      `;
+      host.appendChild(card);
+    });
+    host.querySelectorAll(".project-delete").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.projectId;
+        if (!id) return;
+        if (!confirm("Delete this project? This can't be undone.")) return;
+        deleteProject(id);
+      });
+    });
   }
 
   function renderCapFilterBar() {
@@ -963,7 +1083,9 @@
         input.focus();
         return;
       }
-      setStatus("Saved. The capability grid lands in M1.8 — continuing from your description.", "ok");
+      setStatus("Saved. Pick the capabilities your project needs ↓", "ok");
+      const capWrap = document.querySelector(".cap-wrap");
+      if (capWrap) capWrap.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
     document.querySelectorAll(".finder-fork[data-fork]").forEach(btn => {
@@ -991,6 +1113,60 @@
         renderStack({ scroll: true });
       });
     }
+
+    // Save-as-project form wiring (M1.11).
+    const saveOpen   = document.getElementById("stack-save-open");
+    const saveForm   = document.getElementById("save-form");
+    const saveTitle  = document.getElementById("save-title");
+    const saveCancel = document.getElementById("save-cancel");
+    const saveStatus = document.getElementById("save-status");
+    if (saveOpen && saveForm && saveTitle && saveStatus) {
+      saveOpen.addEventListener("click", () => {
+        if (!saveTitle.value) {
+          const desc = (input && input.value) ? input.value.trim() : "";
+          if (desc) saveTitle.value = desc.slice(0, 60);
+        }
+        saveStatus.textContent = "";
+        saveStatus.dataset.kind = "";
+        saveForm.hidden = false;
+        updateSaveCtaVisibility();
+        saveTitle.focus();
+        saveTitle.select();
+      });
+      if (saveCancel) {
+        saveCancel.addEventListener("click", () => {
+          saveForm.hidden = true;
+          saveStatus.textContent = "";
+          saveStatus.dataset.kind = "";
+          updateSaveCtaVisibility();
+        });
+      }
+      saveForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const path = saveForm.querySelector('input[name="save-path-radio"]:checked')?.value || "easy";
+        const project = saveProject({ title: saveTitle.value, path });
+        if (!project) {
+          saveStatus.textContent = "Couldn't save — pick at least one capability first.";
+          saveStatus.dataset.kind = "warn";
+          return;
+        }
+        saveStatus.textContent = "Saved. Opening My Projects…";
+        saveStatus.dataset.kind = "ok";
+        setTimeout(() => {
+          saveForm.hidden = true;
+          saveTitle.value = "";
+          saveStatus.textContent = "";
+          saveStatus.dataset.kind = "";
+          updateSaveCtaVisibility();
+          const pill = document.querySelector('.subpill[data-learn="projects"]');
+          if (pill) pill.click();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 650);
+      });
+    }
+
+    // Seed My Projects pane with any previously-saved projects.
+    renderProjects();
   }
   initFinder();
 
