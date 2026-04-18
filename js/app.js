@@ -27,6 +27,8 @@
     lte50:    "≤$50/mo",
     premium:  "Premium",
   };
+  // Ordinal for price-ascending sort. Unknown tiers go last.
+  const PRICE_RANK = { free: 0, lte20: 1, lte50: 2, premium: 3 };
 
   // Capability taxonomy for the Finder checkbox grid.
   // Each capability.matches lists the tools.json `provides` tags that
@@ -646,8 +648,117 @@
         input.closest(".cap-check").classList.toggle("is-checked", input.checked);
         persistCaps();
         renderCapFilterBar();
+        // Live-update the stack if the output is already revealed.
+        const stackOutput = document.getElementById("stack-output");
+        if (stackOutput && !stackOutput.hidden) renderStack();
       });
     });
+  }
+
+  // ----- Finder output — Easiest path (M1.9) -----
+  // Sort key per the plan: (+setupComplexity, -priorityScore, price-asc,
+  // Claude-native-first, id). Claude-native wins ties.
+  function cmpEasy(a, b) {
+    const pairs = [
+      [(a.setupComplexity ?? 3),      (b.setupComplexity ?? 3)],
+      [-(a.priorityScore ?? 3),       -(b.priorityScore ?? 3)],
+      [(PRICE_RANK[a.priceTier] ?? 99), (PRICE_RANK[b.priceTier] ?? 99)],
+      [(a.claudeNative ? 0 : 1),      (b.claudeNative ? 0 : 1)],
+    ];
+    for (const [x, y] of pairs) if (x !== y) return x - y;
+    return (a.id || "").localeCompare(b.id || "");
+  }
+
+  function pickEasiestStack(capIds) {
+    const picks = new Map(); // tool.id -> { tool, caps: [capLabel] }
+    const unmet = [];
+    capIds.forEach((id) => {
+      const cap = CAP_BY_ID[id];
+      if (!cap) return;
+      const candidates = toolsData.filter((t) =>
+        (t.provides || []).some((p) => (cap.matches || []).includes(p))
+      );
+      if (candidates.length === 0) {
+        unmet.push(cap.label);
+        return;
+      }
+      const primary = [...candidates].sort(cmpEasy)[0];
+      const entry = picks.get(primary.id) || { tool: primary, caps: [] };
+      entry.caps.push(cap.label);
+      picks.set(primary.id, entry);
+    });
+    const ordered = [...picks.values()].sort((a, b) => cmpEasy(a.tool, b.tool));
+    return { ordered, unmet };
+  }
+
+  function renderStack({ scroll } = {}) {
+    const host = document.getElementById("stack-output");
+    if (!host || !toolsData) return;
+    if (capsSelected.size === 0) {
+      host.hidden = true;
+      return;
+    }
+    const { ordered, unmet } = pickEasiestStack([...capsSelected]);
+    renderEasiestColumn(ordered, unmet);
+    host.hidden = false;
+    if (scroll) host.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function renderEasiestColumn(picked, unmet) {
+    const ol      = document.getElementById("stack-easy-list");
+    const summary = document.getElementById("stack-easy-summary");
+    if (!ol || !summary) return;
+    summary.textContent = picked.length === 1 ? "1 tool" : `${picked.length} tools`;
+    ol.innerHTML = "";
+    picked.forEach((entry, i) => {
+      const { tool, caps } = entry;
+      const complexity = Math.max(0, Math.min(5, tool.setupComplexity || 0));
+      const stars = "★".repeat(complexity) + "☆".repeat(5 - complexity);
+      const priceLabel = PRICE_BADGE[tool.priceTier] || "";
+      const priceBadge = priceLabel
+        ? `<span class="tool-badge tool-badge-price" data-tier="${tool.priceTier}">${priceLabel}</span>`
+        : "";
+      const claudeBadge = tool.claudeNative
+        ? `<span class="tool-badge tool-badge-claude">Claude-native</span>`
+        : "";
+      const modalityLabel = (MODALITIES.find((m) => m.id === tool.modality) || {}).label || tool.modality || "";
+      const li = document.createElement("li");
+      li.className = "stack-step" + (i === 0 ? " stack-step-first" : "");
+      li.innerHTML = `
+        <div class="stack-step-num" aria-hidden="true">${i + 1}</div>
+        <article class="stack-card glass${tool.claudeNative ? " stack-card-claude" : ""}">
+          <div class="stack-card-head">
+            <span class="stack-vendor">${tool.vendor || ""}</span>
+            <span class="stack-modality">${modalityLabel}</span>
+          </div>
+          <h4 class="stack-name">${tool.name}</h4>
+          <p class="stack-tagline">${tool.tagline || ""}</p>
+          <p class="stack-why"><span class="stack-why-label">Picked because:</span> covers ${caps.join(", ")}.</p>
+          <div class="stack-meta">
+            <span class="stack-complexity" title="Setup complexity ${complexity}/5">Setup <span class="stack-stars">${stars}</span></span>
+            ${priceBadge}
+            ${claudeBadge}
+          </div>
+          <div class="stack-actions">
+            ${i === 0 ? '<span class="stack-start-chip">Start here</span>' : '<span class="stack-next-chip">Next step</span>'}
+            <a class="stack-link" href="${tool.docsUrl || tool.officialUrl || "#"}" target="_blank" rel="noopener">Docs →</a>
+          </div>
+        </article>
+      `;
+      ol.appendChild(li);
+    });
+    if (unmet && unmet.length) {
+      const li = document.createElement("li");
+      li.className = "stack-unmet";
+      li.innerHTML = `
+        <div class="stack-step-num stack-step-num-warn" aria-hidden="true">!</div>
+        <div class="stack-unmet-body">
+          <strong>Nothing in the catalog covers:</strong> ${unmet.join(", ")}.
+          The stub catalog is 14 tools — these capabilities fill in as the catalog grows.
+        </div>
+      `;
+      ol.appendChild(li);
+    }
   }
 
   function renderCapFilterBar() {
@@ -678,6 +789,8 @@
           input.closest(".cap-check").classList.remove("is-checked");
         }
         renderCapFilterBar();
+        const stackOutput = document.getElementById("stack-output");
+        if (stackOutput && !stackOutput.hidden) renderStack();
       });
       bar.appendChild(chip);
     });
@@ -693,6 +806,8 @@
         i.closest(".cap-check").classList.remove("is-checked");
       });
       renderCapFilterBar();
+      const stackOutput = document.getElementById("stack-output");
+      if (stackOutput) stackOutput.hidden = true;
     });
     bar.appendChild(clear);
   }
@@ -854,9 +969,9 @@
           capStatus.dataset.kind = "warn";
           return;
         }
-        const list = [...capsSelected].map((id) => (CAP_BY_ID[id] || {}).label).filter(Boolean).join(", ");
-        capStatus.textContent = `Ready with ${capsSelected.size} capabilities (${list}). Easy-path recommendation ships in M1.9.`;
-        capStatus.dataset.kind = "ok";
+        capStatus.textContent = "";
+        capStatus.dataset.kind = "";
+        renderStack({ scroll: true });
       });
     }
   }
