@@ -74,6 +74,7 @@
     });
     if (f === "comply365") load365();
     if (f === "home") replayHomeAnimations();
+    if (f === "news-media") replayNewsMediaAnimations();
   }
 
   // If a host's bounding rect overlaps the activation zone (middle ~75%
@@ -104,13 +105,28 @@
   }
 
   // Replay Home-tab animations whenever the tab is activated.
+  // Charts moved to News & Media in M1.3 — Home only animates its hero,
+  // stat-grid, and CTA.
   function replayHomeAnimations() {
     const css = document.querySelectorAll(
-      ".section-home, .section-home .home-hero, .section-home .stat-grid, .section-home .home-cta, .section-home .hero"
+      ".section-home, .section-home .home-hero, .section-home .stat-grid, .section-home .home-cta"
     );
     css.forEach(el => {
       el.style.animation = "none";
       void el.offsetHeight;      // force reflow
+      el.style.animation = "";
+    });
+  }
+
+  // Replay News & Media chart animations when the tab is activated and the
+  // State-of-AI sub-pill pane is visible (default on tab load).
+  function replayNewsMediaAnimations() {
+    const statePane = document.querySelector('[data-pane="news-media-state"]');
+    if (!statePane || statePane.hidden) return;
+    const css = statePane.querySelectorAll(".hero");
+    css.forEach(el => {
+      el.style.animation = "none";
+      void el.offsetHeight;
       el.style.animation = "";
     });
     renderTimeline();
@@ -140,6 +156,22 @@
       document.querySelectorAll('.pane[data-pane^="learn-"]').forEach((pane) => {
         pane.hidden = pane.dataset.pane !== `learn-${kind}`;
       });
+    });
+  });
+
+  // News & Media sub-pills: State of AI / News
+  document.querySelectorAll(".subpill[data-newsmedia]").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const kind = pill.dataset.newsmedia;
+      document.querySelectorAll(".subpill[data-newsmedia]").forEach((p) => {
+        const on = p === pill;
+        p.classList.toggle("is-active", on);
+        p.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      document.querySelectorAll('.pane[data-pane^="news-media-"]').forEach((pane) => {
+        pane.hidden = pane.dataset.pane !== `news-media-${kind}`;
+      });
+      if (kind === "state") replayNewsMediaAnimations();
     });
   });
 

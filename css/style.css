@@ -319,8 +319,9 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 [data-section="comply365"]  { --sec: var(--accent-365); }
 [data-section="news-media"] { --sec: #22d3ee; }
 
-/* Learn section layout — mirrors .section-home spacing */
-.section-learn {
+/* Learn + News-Media section layout — mirrors .section-home spacing */
+.section-learn,
+.section-news-media {
   display: flex;
   flex-direction: column;
   gap: 22px;
@@ -330,6 +331,13 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   color: var(--text-2);
   font-size: 14px;
   letter-spacing: 0.01em;
+}
+/* Stacked hero cards inside a News & Media State-of-AI pane need the
+   same breathing room the old Home gave them. */
+.pane[data-pane="news-media-state"] {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 /* ===== Card ===== */
