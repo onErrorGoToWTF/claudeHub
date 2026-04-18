@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-18T14:32:35.830Z",
+  "generated_at": "2026-04-18T16:25:23.173Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,32 @@
     ],
     "news": [
       {
+        "title": "Anthropic introduces Claude Design by Anthropic Labs - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPM0N3MjZWaUgyTEtHSGdZbW1pVXZ3YlBEeUk5R0d6VEtFY0RDMjdqUndwWWw0M2tQdWFMbm1EXy1hTnVYdHYyWEVUbS1qMU9tVFVQUlR1OUxQYVk4OHVXNko1NHlOemhJRzBWU216OHZTVWlyVGF1Zl93UnBGRWEzeVVtcHhETjJSamM3V0dPb2ZhSVhVVW0xTDVDMzdyWDBpNkRV?oc=5",
+        "source": "Google News",
+        "published": "2026-04-18T15:19:04.000Z",
+        "summary": "Anthropic introduces Claude Design by Anthropic Labs Yahoo Tech"
+      },
+      {
+        "title": "The creator of Claude Code just revealed 7 secrets to using Claude Code (Opus 4.7)",
+        "url": "https://www.youtube.com/watch?v=8YhYtIF9PYI",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "8YhYtIF9PYI",
+        "thumbnail": "https://i.ytimg.com/vi/8YhYtIF9PYI/hqdefault.jpg",
+        "published": "2026-04-18T15:05:22.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic’s relationship with the Trump administration seems to be thawing",
+        "url": "https://techcrunch.com/2026/04/18/anthropics-relationship-with-the-trump-administration-seems-to-be-thawing/",
+        "source": "TechCrunch",
+        "published": "2026-04-18T14:56:48.000Z",
+        "summary": "Despite recently being designated a supply-chain risk by the Pentagon, Anthropic is still talking to high-level members of the Trump administration."
+      },
+      {
         "title": "Curious About Claude? Try These 8 Beginner-Friendly Tasks First - PCMag UK",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPamNCbGU3WTI2Z1dtX1hXMEpfQl82VnlZUUpKRjNpWjBmTHVBanBmbXdCWUxfUjVELXJvX0pMWFJheXpEYnlEQ0dQMUdPZXdBTmpiQWxPVExTYzhFalBqNWp5cEwwTERhR2tLakNIYm5BX183NXd5VTRXVEdCVFhJZU55ZVY4ODhTV1g5SHhNeE9aVHc0TUFBNw?oc=5",
         "source": "Google News",
@@ -160,11 +186,11 @@
         "summary": "U.S. Agencies Test Anthropic Models Despite Pentagon Blacklist Let's Data Science"
       },
       {
-        "title": "Anthropic Launches Claude Design for Visual Prototyping and Presentations - Unite.AI",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3ZkT0RJVEZZeGNLM0pjYUkydVZUaVRLa2g5RmIwNDZYZE8wa1ZDSjBqMF81SnFxSGxCUF9DYzhGODJpcEJEMGx2NUpHbUZnNTRZLXJ2UGd3U0x5eHRINFVPeFViZlhwc3ZjbjE0ODBXRENHcDBHQnNNS0M4bGhHQUFiS0xycnBVVllKV2JqOXplTEdRUkpDNjJuQQ?oc=5",
+        "title": "Anthropic says Claude Opus 4.7 has a 92% honesty rate, less sycophancy - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9wN1RNSlBKcVFUWVpqVDFVV0YtU2NPajNHbWhKcnczRm56RS1qZk9pODFNRXRZTzhMU3F5UzJuV19LWE5FcWgtM0U4RWs0UnhkWmZyV0JNS21fZVVTNGFHRmZRRTIyUF8ybU91aGdTSngzX184V2puMTZWeGVRdw?oc=5",
         "source": "Google News",
-        "published": "2026-04-18T12:38:36.000Z",
-        "summary": "Anthropic Launches Claude Design for Visual Prototyping and Presentations Unite.AI"
+        "published": "2026-04-18T12:22:30.000Z",
+        "summary": "Anthropic says Claude Opus 4.7 has a 92% honesty rate, less sycophancy Mashable"
       },
       {
         "title": "A new era of AI crime has arrived with Anthropic’s Mythos - MarketWatch",
@@ -190,7 +216,7 @@
       {
         "title": "Claude Opus 4.7 Intelligence, Performance and Price Analysis",
         "url": "https://artificialanalysis.ai/models/claude-opus-4-7",
-        "source": "HN · 30↑",
+        "source": "HN · 31↑",
         "hn_id": "47814695",
         "published": "2026-04-18T10:19:30.000Z",
         "summary": ""
@@ -201,6 +227,20 @@
         "source": "Google News",
         "published": "2026-04-18T10:11:00.000Z",
         "summary": "Anthropic Reverses U.S. Block with Security Model Let's Data Science"
+      },
+      {
+        "title": "Google and OpenAI are making a run at Claude's desktop moat, and Anthropic is making it easy - The New Stack",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNall2amhpYW5TcTdOM1laY1VDM29FcXMwc2t0NE5nWmp3OW1pdk1zMmlvNWhSbXRacWQyako4eDBiVkdMSU12SFZPZ3BBUnpXZHQtYzBLbnQyQnFib0hIMTZNdW5PS0hFd1lUTUkwaTlIMmdVUlhvdXZNZDd4SmVjNzhkdVlWY1BtZ2FlTF9xREdmUHRCR0VQVXFnc085c0NNZzNzd3RCMFI1VElMMC0xdW9UN2w?oc=5",
+        "source": "Google News",
+        "published": "2026-04-18T10:07:43.000Z",
+        "summary": "Google and OpenAI are making a run at Claude's desktop moat, and Anthropic is making it easy The New Stack"
+      },
+      {
+        "title": "Anthropic is launching an AI design tool for building slides and prototypes - qz.com",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9LN3J1MGhzNGd6UE5LbTl2Rm9QOW53TU1LU1dTWEF0ZFdNT1hMR0JGUE9HZzNIRzZnZE94Yjh1ajNVd1dPcXlDYnpKZXEtM0xhZzluRUFHdWN0dHJuM05OOHQ5R0NMaU9CRTVIalExMzg?oc=5",
+        "source": "Google News",
+        "published": "2026-04-18T08:54:10.000Z",
+        "summary": "Anthropic is launching an AI design tool for building slides and prototypes qz.com"
       },
       {
         "title": "Anthropic launches Claude Design: New AI tool sent Figma stock tumbling 7%: Here’s why - The News International",
@@ -215,20 +255,6 @@
         "source": "Google News",
         "published": "2026-04-18T08:30:35.000Z",
         "summary": "Trump administration holds discussions over AI model of blacklisted Anthropic Cybernews"
-      },
-      {
-        "title": "Anthropic launches Claude Design, but why did Adobe and Figma stocks fall - India Today",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQZjlJX3F6LXdGOE9qNkRlRGVBZW5tNGhqZTgyVl96VzJlSDBSM3JsUjMtSE5jS19ELUUyWml6Q2QzSlJtcWtxcjB1LUdEMUttQmhWV19MYmZBWjg5VXVTcVZpQTl2Z01qZFk2a1R1ZEMwTGw0ZGc1QjNYR0VWMDlKZ2I4RmxBMldiQy1mLXFzTzg3aEg1aG5DQnlDdlY5Q0h6cUlOaTlKZ2FhbXZPX05Baks2TjBXOWx2MXpITThhN01ob1hFOHQ1d1BPdGU5cjkwWHlUc1VB0gHbAUFVX3lxTE55dzJIbGhtMUR5ZmhsOWhTUHMtVEJLTEhrZVduLUxLby02d1c2VWhYNkdWQkR3WXZPbDBzb2V4U2dnNE81R1BBZy1fSU4zY01wLWViVENEVVNxa1BvUWF0RmRLMkg0VGFxLW12cVpjUXFIOGRlZGh3VC12N0VORjc3MFlCSWtIUmxyTWVpSjdaQmtwUUhQYzNaX1lwZWtpaG9samJLdGtyNzFCeTJxX1JMWVpRVDlYcmVocXhuZUMtYVhhTl9EY0hDRVpRX0syeDFrUzV3ckJfd0Riaw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-18T07:57:46.000Z",
-        "summary": "Anthropic launches Claude Design, but why did Adobe and Figma stocks fall India Today"
-      },
-      {
-        "title": "Anthropic Launches Claude Design to Generate Visual Assets From Text Prompts - gHacks",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNYTl5NUQxZEtEaTFkVU5BQ1J5ejN2eXc3QkZLdGcxLWJwSkN6eG1zd1Vfa01rVktWSnRxY1B4OWxjSkg1ZjR4ZXRZM0NpUjE1YkIzbjVzRUh5Z2VkdElaYksxdFZLLWx3NlBmTmR0TVZvOWNjNmpWUTk3U21TN2tYNTFQN3oyck9pMWl6V1g3VUFsdHlNdVpicWN2U1hIRE5xd0s3cDdsRlNTZlpyNEVPUw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-18T06:02:23.000Z",
-        "summary": "Anthropic Launches Claude Design to Generate Visual Assets From Text Prompts gHacks"
       },
       {
         "title": "Anthropic CEO visits White House amid hacking fears over new AI model - The Washington Post",
@@ -252,11 +278,18 @@
         "summary": "What is Anthropic’s Claude Design, and why are Figma and Adobe stocks dropping The Times of India"
       },
       {
-        "title": "Scoop: Anthropic to have peace talks at White House - Axios",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1OTklBbDVwWXBNcGNLN0JMSlRyTW01YUMwZkdjMEFMdndQd2V0TTQtd243bHBKT0hJZHdSbjNYdkZ6MmV3aHNuMEFQVlVZdXZQU0tRbGFiVGYxNnNERUo3Z3dEdEdkSTJZYWc1NUZ3UE1KLWtjaWZTNHJR?oc=5",
+        "title": "Anthropic's Claude Opus 4.7 is here: Check improvements, safety features, and what's new - MSN",
+        "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOOWx6RWxQdlpQeTNKLTZ6NmpRSmwwLXJwZ0hhSkZqc0lZR0h3ZXd0Y3d6YmlRNHNQbGxmVTZZZDlhdVZ5LXl6SGZzM0kwWndrT01NOVBKYVNKRnI2NnJrYlhiVkxsLURGVWJRVnpBcVNSY1hZcmhUOXJJdlRCalgwci1aazBUT0pQdFdVTnZESVFvbXBTQmstVXRzQzFKOG9kVVpLY0xlV2NEMG43bk1qODNPTlBQWkM3V3UyVEhNS1FwaVVkalRFVDBtODBtZXFWY1ZEMWg0TmJORV9aSGc2X3hVLUdQOG9tc0VwdmhQRmtTRzFSc1A5R1M3LUN5R0pTeGdDQmgwMGI5c1daSTlfZVhmYXQ?oc=5",
         "source": "Google News",
-        "published": "2026-04-18T00:28:06.000Z",
-        "summary": "Scoop: Anthropic to have peace talks at White House Axios"
+        "published": "2026-04-18T00:18:19.000Z",
+        "summary": "Anthropic's Claude Opus 4.7 is here: Check improvements, safety features, and what's new MSN"
+      },
+      {
+        "title": "Anthropic Launches Claude Design, Figma Stock Immediately Nosedives - Gizmodo",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPUFVsLWlSOUdIQmtMUC16NVNxdVRzQnZJYzNzYy13cG83NlNWU2s4eVR5ZWNkME1LNjY4bU9GaE14Y3hROE1xUHJHVThRVHJVdUhJeVAzSkhoYmpzNE9TVmJwQmJ6S0VQWWRpdFIxY1NndzF6a3NOWi10T2FUa1h0UzEyUkhOZ21keE9jWlV1RV9EN2o3TzFBMTg5RU9GZw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-17T21:35:18.000Z",
+        "summary": "Anthropic Launches Claude Design, Figma Stock Immediately Nosedives Gizmodo"
       },
       {
         "title": "Anthropic Labs launches Claude Design to challenge Figma - Let's Data Science",
@@ -313,13 +346,6 @@
         "summary": "Anthropic debuts Claude Design, because who needs designers? theregister.com"
       },
       {
-        "title": "The Claude-lash is here: Opus 4.7 is burning through tokens — and some people's patience - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPbEQ3LWxBektJd1VIVG5FN2RWMV9ISzIyZ1ZBd1hkXzYxQnY3SDg4WXd2c3NOZWlPNl9Eeld2cWlMcjluTTlsOVp2ejQtR2Z1X1M4cEx4YjI4MHpLWUpDR1dPbWtNRDdRZ2M1RHh0Y0NhTUJIS0ZQVUN4WTNPQUE4QlVzX1JXV1k?oc=5",
-        "source": "Google News",
-        "published": "2026-04-17T20:29:00.000Z",
-        "summary": "The Claude-lash is here: Opus 4.7 is burning through tokens — and some people's patience Business Insider"
-      },
-      {
         "title": "LIVE: Opus 4.7 is incredible, new Codex automated my life, Claude Design is MWAH",
         "url": "https://www.youtube.com/watch?v=q1atPRjtTtA",
         "source": "Alex Finn",
@@ -330,20 +356,6 @@
         "published": "2026-04-17T20:28:19.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Anthropic’s new cybersecurity model could get it back in the government’s good graces",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/914229/tides-turning-anthropic-trump-administration-cybersecurity-mythos-preview",
-        "source": "The Verge",
-        "published": "2026-04-17T20:14:21.000Z",
-        "summary": "The Trump administration has spent nearly two months fighting with AI company Anthropic. It's dubbed the company a \"RADICAL LEFT, WOKE COMPANY\" full of \"Leftwing nut jobs\" and a menace to national…"
-      },
-      {
-        "title": "Anthropic launches Claude Design, and it's trying to work with Canva, not compete with it - TweakTown",
-        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPWHdyc2JPekx6bFVwNDJudC11alY0NzR2dDJza05tSE1DbW1CY3diRnc4aWY4LVpNb3ZXcU41MW12STlNdnplT1JfeElBVW1zZHlXRWpoMkE3dVVCdU83MHdmaXZmNy1vWlBKZ1ZBeldKWGNVYkxGN3hoUVYxV2o1V1NGM21FYVdQZjAtc2VuQXcyVUM2Mk4zVU5scmZuM25VcUFCZUhjbWVRTUlaaHpaMTJmcHpQcHNyR0RudWtmZ3Z5TmYwSU5XcExwVHQ4aVlJ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-17T20:08:04.000Z",
-        "summary": "Anthropic launches Claude Design, and it's trying to work with Canva, not compete with it TweakTown"
       },
       {
         "title": "Claude Design Just Dropped (First Look)",
@@ -548,18 +560,6 @@
         "published": "2026-04-09T17:58:33.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Managed Agents: Deploy AI Agents That Run for Hours",
-        "url": "https://www.youtube.com/watch?v=DpfLbBuhHOg",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "DpfLbBuhHOg",
-        "thumbnail": "https://i.ytimg.com/vi/DpfLbBuhHOg/hqdefault.jpg",
-        "published": "2026-04-09T14:05:29.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -649,6 +649,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "The creator of Claude Code just revealed 7 secrets to using Claude Code (Opus 4.7)",
+        "url": "https://www.youtube.com/watch?v=8YhYtIF9PYI",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "8YhYtIF9PYI",
+        "thumbnail": "https://i.ytimg.com/vi/8YhYtIF9PYI/hqdefault.jpg",
+        "published": "2026-04-18T15:05:22.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Code: Build an AI Agent That Finds Vulnerabilities",
         "url": "https://www.youtube.com/watch?v=VFLieg8JjLA",
@@ -966,17 +977,6 @@
         "video_id": "Kyk4FUVQV5s",
         "thumbnail": "https://i.ytimg.com/vi/Kyk4FUVQV5s/hqdefault.jpg",
         "published": "2026-04-09T17:58:33.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Managed Agents: Deploy AI Agents That Run for Hours",
-        "url": "https://www.youtube.com/watch?v=DpfLbBuhHOg",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "DpfLbBuhHOg",
-        "thumbnail": "https://i.ytimg.com/vi/DpfLbBuhHOg/hqdefault.jpg",
-        "published": "2026-04-09T14:05:29.000Z",
         "summary": ""
       }
     ],
