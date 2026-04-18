@@ -407,7 +407,7 @@
 
   const CARD_CONTAINERS = [
     "365-tutorials", "365-resources-videos", "365-resources-official", "365-news",
-    "news",
+    "news", "claude-whats-new",
   ];
 
   // ---------- Scroll-activation IntersectionObserver (universal) ----------
@@ -520,6 +520,27 @@
 
   // NEWS: split by _kind. Videos first (tpl-video), then articles (tpl-card).
   // Each group sorted by date desc internally. Never interleave.
+  // LEARN → Claude → What's new: unified release feed from Claude Code + MCP repos.
+  function renderClaudeLearning(items) {
+    const container = document.querySelector('[data-cards="claude-whats-new"]');
+    if (!container) return;
+    container.innerHTML = "";
+    if (!items || items.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "empty";
+      empty.textContent = "No items yet — check back soon.";
+      container.appendChild(empty);
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    sortByDateDesc(items).slice(0, 24).forEach((it, idx) => {
+      const node = renderCard(it, false, idx);
+      registerReveal(node, idx);
+      frag.appendChild(node);
+    });
+    container.appendChild(frag);
+  }
+
   function renderNews(items) {
     const container = document.querySelector('[data-cards="news"]');
     if (!container) return;
@@ -1190,6 +1211,7 @@
       // NEWS & MEDIA tab: status strip + mixed grid (videos first, then articles).
       renderStatusStrip(s.status);
       renderNews(s.news || []);
+      renderClaudeLearning(s.claude_learning || []);
 
       setUpdated("news", data.generated_at);
       setUpdated("365",  data.generated_at);

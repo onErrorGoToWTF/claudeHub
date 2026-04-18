@@ -11,6 +11,7 @@ import { fetchHN } from "./fetch_hn.js";
 import { fetchTutorials } from "./fetch_tutorials.js";
 import { fetchDocs } from "./fetch_docs.js";
 import { fetch365 } from "./fetch_365.js";
+import { fetchClaudeLearning } from "./fetch_claude_learning.js";
 import { logSection } from "./lib/util.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -78,6 +79,8 @@ async function main() {
   const docs = await fetchDocs().catch((e) => (console.warn(e.message), []));
   logSection("365 (comply365 + competitors)");
   const comply365News = await fetch365().catch((e) => (console.warn(e.message), []));
+  logSection("claude_learning (Claude Code + MCP releases)");
+  const claudeLearning = await fetchClaudeLearning().catch((e) => (console.warn(e.message), []));
 
   // Combine HN into news, sort by date
   const mergedNews = [...news, ...hn]
@@ -114,6 +117,7 @@ async function main() {
       youtube:   mergedYouTube,
       tutorials: merge(priorSections.tutorials, tutorials),
       comply365_news: merge(priorSections.comply365_news, comply365News),
+      claude_learning: merge(priorSections.claude_learning, claudeLearning),
     },
   };
 
