@@ -16,6 +16,7 @@ import { httpGet, clampText, stripTags, sortByDateDesc } from "./lib/util.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SNAPSHOT = path.resolve(__dirname, "..", "data", "learn", "academy_snapshot.json");
+const COURSES  = path.resolve(__dirname, "..", "data", "learn", "academy_courses.json");
 const BASE = "https://anthropic.skilljar.com";
 const SOURCE = "Anthropic Academy";
 
@@ -44,6 +45,26 @@ async function loadSnapshot() {
 async function saveSnapshot(snap) {
   await fs.mkdir(path.dirname(SNAPSHOT), { recursive: true });
   await fs.writeFile(SNAPSHOT, JSON.stringify(snap, null, 2) + "\n", "utf8");
+}
+
+async function saveCourses(cards) {
+  await fs.mkdir(path.dirname(COURSES), { recursive: true });
+  const payload = {
+    generated_at: new Date().toISOString(),
+    source: SOURCE,
+    base: BASE,
+    // Homepage order is preserved — Anthropic places 101s first, then
+    // intermediate, then specialized. The Claude hub renders courses in
+    // this order within each bucket.
+    courses: cards.map((c, i) => ({
+      slug: c.slug,
+      title: c.title,
+      url: `${BASE}/${c.slug}`,
+      summary: clampText(c.desc, 260),
+      order: i,
+    })),
+  };
+  await fs.writeFile(COURSES, JSON.stringify(payload, null, 2) + "\n", "utf8");
 }
 
 function parseCards(html) {
@@ -90,6 +111,7 @@ export async function fetchAcademy() {
   }
 
   await saveSnapshot(snap);
+  await saveCourses(cards);
   if (isColdStart) console.log(`    academy cold-start: seeded ${cards.length} courses, emitted 0`);
   return sortByDateDesc(items);
 }

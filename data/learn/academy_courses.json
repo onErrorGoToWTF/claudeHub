@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-04-18T19:59:06.192Z",
+  "source": "Anthropic Academy",
+  "base": "https://anthropic.skilljar.com",
+  "courses": [
+    {
+      "slug": "claude-101",
+      "title": "Claude 101",
+      "url": "https://anthropic.skilljar.com/claude-101",
+      "summary": "Learn how to use Claude for everyday work tasks, understand core features, and explore resources for more advanced learning on other topics.",
+      "order": 0
+    },
+    {
+      "slug": "claude-code-101",
+      "title": "Claude Code 101",
+      "url": "https://anthropic.skilljar.com/claude-code-101",
+      "summary": "Learn how to use Claude Code effectively in your daily development workflow.",
+      "order": 1
+    },
+    {
+      "slug": "introduction-to-claude-cowork",
+      "title": "Introduction to Claude Cowork",
+      "url": "https://anthropic.skilljar.com/introduction-to-claude-cowork",
+      "summary": "Learn to work alongside Claude on your real files and projects. This hands-on course covers the Cowork task loop, plugins and skills, file and research workflows, and how to steer multi-step work responsibly — so you're productive in your first week.",
+      "order": 2
+    },
+    {
+      "slug": "claude-code-in-action",
+      "title": "Claude Code in Action",
+      "url": "https://anthropic.skilljar.com/claude-code-in-action",
+      "summary": "Integrate Claude Code into your development workflow",
+      "order": 3
+    },
+    {
+      "slug": "ai-fluency-framework-foundations",
+      "title": "AI Fluency: Framework & Foundations",
+      "url": "https://anthropic.skilljar.com/ai-fluency-framework-foundations",
+      "summary": "Learn to collaborate with AI systems effectively, efficiently, ethically, and safely",
+      "order": 4
+    },
+    {
+      "slug": "claude-with-the-anthropic-api",
+      "title": "Building with the Claude API",
+      "url": "https://anthropic.skilljar.com/claude-with-the-anthropic-api",
+      "summary": "This comprehensive course covers the full spectrum of working with Anthropic models using the Claude API",
+      "order": 5
+    },
+    {
+      "slug": "introduction-to-model-context-protocol",
+      "title": "Introduction to Model Context Protocol",
+      "url": "https://anthropic.skilljar.com/introduction-to-model-context-protocol",
+      "summary": "Learn to build Model Context Protocol servers and clients from scratch using Python. Master MCP's three core primitives—tools, resources, and prompts—to connect Claude with external services",
+      "order": 6
+    },
+    {
+      "slug": "ai-fluency-for-educators",
+      "title": "AI Fluency for educators",
+      "url": "https://anthropic.skilljar.com/ai-fluency-for-educators",
+      "summary": "This course empowers faculty, instructional designers, and educational leaders to apply AI Fluency into their own teaching practice and institutional strategy.",
+      "order": 7
+    },
+    {
+      "slug": "ai-fluency-for-students",
+      "title": "AI Fluency for students",
+      "url": "https://anthropic.skilljar.com/ai-fluency-for-students",
+      "summary": "This course empowers students to develop AI Fluency skills that enhance learning, career planning, and academic success through responsible AI collaboration.",
+      "order": 8
+    },
+    {
+      "slug": "model-context-protocol-advanced-topics",
+      "title": "Model Context Protocol: Advanced Topics",
+      "url": "https://anthropic.skilljar.com/model-context-protocol-advanced-topics",
+      "summary": "Discover advanced Model Context Protocol implementation patterns including sampling, notifications, file system access, and transport mechanisms for production MCP server development.",
+      "order": 9
+    },
+    {
+      "slug": "claude-in-amazon-bedrock",
+      "title": "Claude with Amazon Bedrock",
+      "url": "https://anthropic.skilljar.com/claude-in-amazon-bedrock",
+      "summary": "As part of an accreditation program created for AWS, Anthropic launched a first-of-its-kind training for AWS employees. Here's the full course so you can follow along.",
+      "order": 10
+    },
+    {
+      "slug": "claude-with-google-vertex",
+      "title": "Claude with Google Cloud's Vertex AI",
+      "url": "https://anthropic.skilljar.com/claude-with-google-vertex",
+      "summary": "This comprehensive course covers the full spectrum of working with Anthropic models through Google Cloud's Vertex AI.",
+      "order": 11
+    },
+    {
+      "slug": "teaching-ai-fluency",
+      "title": "Teaching AI Fluency",
+      "url": "https://anthropic.skilljar.com/teaching-ai-fluency",
+      "summary": "This course empowers academic faculty, instructional designers, and others to teach and assess AI Fluency in instructor-led settings.",
+      "order": 12
+    },
+    {
+      "slug": "ai-fluency-for-nonprofits",
+      "title": "AI Fluency for nonprofits",
+      "url": "https://anthropic.skilljar.com/ai-fluency-for-nonprofits",
+      "summary": "This course empowers nonprofit professionals to develop AI fluency in order to increase organizational impact and efficiency while staying true to their mission and values.",
+      "order": 13
+    },
+    {
+      "slug": "introduction-to-agent-skills",
+      "title": "Introduction to agent skills",
+      "url": "https://anthropic.skilljar.com/introduction-to-agent-skills",
+      "summary": "Learn how to build, configure, and share Skills in Claude Code — reusable markdown instructions that Claude automatically applies to the right tasks at the right time. This course takes you from creating your first Skill to distributing them across teams and…",
+      "order": 14
+    },
+    {
+      "slug": "introduction-to-subagents",
+      "title": "Introduction to subagents",
+      "url": "https://anthropic.skilljar.com/introduction-to-subagents",
+      "summary": "Learn how to use and create sub-agents in Claude Code to manage context, delegate tasks, and build specialized workflows that keep your main conversation clean and focused.",
+      "order": 15
+    },
+    {
+      "slug": "ai-capabilities-and-limitations",
+      "title": "AI Capabilities and Limitations",
+      "url": "https://anthropic.skilljar.com/ai-capabilities-and-limitations",
+      "summary": "An introductory course about how AI works",
+      "order": 16
+    }
+  ]
+}

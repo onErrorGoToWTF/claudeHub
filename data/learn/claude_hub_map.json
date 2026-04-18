@@ -1,0 +1,32 @@
+{
+  "note": "Curated mapping of Anthropic Academy course slugs → Claude hub subpill buckets. Order within each bucket follows Anthropic's homepage order unless overridden by the 'order' array. Edit this file when new courses appear.",
+  "buckets": {
+    "basics": [
+      "claude-101",
+      "ai-capabilities-and-limitations",
+      "ai-fluency-framework-foundations",
+      "introduction-to-claude-cowork",
+      "ai-fluency-for-students",
+      "ai-fluency-for-educators",
+      "ai-fluency-for-nonprofits",
+      "teaching-ai-fluency"
+    ],
+    "code": [
+      "claude-code-101",
+      "claude-code-in-action",
+      "introduction-to-subagents"
+    ],
+    "skills": [
+      "introduction-to-agent-skills"
+    ],
+    "mcp": [
+      "introduction-to-model-context-protocol",
+      "model-context-protocol-advanced-topics"
+    ],
+    "agent-sdk": [
+      "claude-with-the-anthropic-api",
+      "claude-in-amazon-bedrock",
+      "claude-with-google-vertex"
+    ]
+  }
+}

@@ -365,6 +365,66 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   border-color: color-mix(in srgb, var(--accent-claude) 30%, var(--border));
 }
 
+/* Claude hub — Anthropic Academy course cards, grouped under each subpill.
+   Same premium dark language: Claude-accent chip + glass card + top-edge
+   specular. Click-through opens the course on Anthropic's site. */
+.academy-host { margin-top: 22px; }
+.academy-host:empty { display: none; }
+.academy-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  margin-bottom: 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid color-mix(in srgb, var(--accent-claude) 30%, var(--border));
+  background: color-mix(in srgb, var(--accent-claude-soft) 45%, transparent);
+  color: var(--accent-claude-hi);
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.academy-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+@media (min-width: 720px)  { .academy-grid { grid-template-columns: 1fr 1fr; gap: 14px; } }
+@media (min-width: 1100px) { .academy-grid { grid-template-columns: 1fr 1fr 1fr; } }
+.academy-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 16px 14px;
+  border-left: 2px solid color-mix(in srgb, var(--accent-claude) 50%, transparent);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s var(--ease-premium),
+              border-color 0.25s var(--ease-premium),
+              background 0.25s var(--ease-premium);
+}
+.academy-card:hover {
+  transform: translateY(-1px);
+  border-left-color: color-mix(in srgb, var(--accent-claude) 80%, transparent);
+  background: color-mix(in srgb, var(--accent-claude-soft) 10%, transparent);
+}
+.academy-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-1);
+}
+.academy-card-summary {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.academy-card-cta {
+  margin-top: auto;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-claude-hi);
+  letter-spacing: -0.005em;
+}
+
 /* Section accents */
 [data-section="learn"]      { --sec: var(--accent-claude); }
 [data-section="comply365"]  { --sec: var(--accent-365); }

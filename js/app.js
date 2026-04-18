@@ -3,7 +3,9 @@
 
   const DATA_URL = "data/latest.json?v=" + Date.now();
   const TUTORIALS_365_URL = "data/365/tutorials.json?v=" + Date.now();
-  const TOOLS_URL = "data/learn/tools.json?v=" + Date.now();
+  const TOOLS_URL   = "data/learn/tools.json?v=" + Date.now();
+  const ACADEMY_URL = "data/learn/academy_courses.json?v=" + Date.now();
+  const HUB_MAP_URL = "data/learn/claude_hub_map.json?v=" + Date.now();
   const VERSION_URL = "data/version.json?v=" + Date.now();
   const THEME_KEY = "cdih-theme";
 
@@ -562,6 +564,46 @@
       frag.appendChild(node);
     });
     container.appendChild(frag);
+  }
+
+  // Claude hub — render Anthropic Academy course grids in each subpill pane.
+  // Two files: academy_courses.json (full metadata from the scraper) and
+  // claude_hub_map.json (hand-curated slug → bucket mapping). Rendered once
+  // on load; no cache-bust needed within a session.
+  async function loadAcademyHub() {
+    try {
+      const [coursesRes, mapRes] = await Promise.all([
+        fetch(ACADEMY_URL, { cache: "no-cache" }),
+        fetch(HUB_MAP_URL, { cache: "no-cache" }),
+      ]);
+      if (!coursesRes.ok || !mapRes.ok) return;
+      const coursesPayload = await coursesRes.json();
+      const mapPayload = await mapRes.json();
+      const bySlug = Object.fromEntries(
+        (coursesPayload.courses || []).map((c) => [c.slug, c])
+      );
+      const buckets = mapPayload.buckets || {};
+      for (const [bucket, slugs] of Object.entries(buckets)) {
+        const host = document.querySelector(`.academy-host[data-academy-bucket="${bucket}"]`);
+        if (!host) continue;
+        const courses = (slugs || []).map((s) => bySlug[s]).filter(Boolean);
+        if (courses.length === 0) {
+          host.innerHTML = "";
+          continue;
+        }
+        const cards = courses.map((c) => `
+          <a class="academy-card glass" href="${c.url}" target="_blank" rel="noopener">
+            <div class="academy-card-title">${escapeHtml(c.title)}</div>
+            <div class="academy-card-summary">${escapeHtml(c.summary || "")}</div>
+            <div class="academy-card-cta">Start course →</div>
+          </a>
+        `).join("");
+        host.innerHTML = `
+          <div class="academy-eyebrow">Anthropic Academy · ${courses.length} course${courses.length === 1 ? "" : "s"}</div>
+          <div class="academy-grid">${cards}</div>
+        `;
+      }
+    } catch {}
   }
 
   document.querySelectorAll(".learn-filter[data-learn-filter]").forEach((btn) => {
@@ -1286,6 +1328,7 @@
 
   load();
   loadTools();
+  loadAcademyHub();
   renderTimeline();
   renderCompare();
   renderIndex();
