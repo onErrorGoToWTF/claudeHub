@@ -340,7 +340,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 /* Stacked hero cards inside a News & Media State-of-AI pane need the
    same breathing room the old Home gave them. */
-.pane[data-pane="news-media-state"] {
+.pane[data-pane="news-media-state"]:not([hidden]) {
   display: flex;
   flex-direction: column;
   gap: 22px;
@@ -920,7 +920,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 
 /* Claude hub container — stacks intro, sub-pills, and active pane with breathing room. */
-.pane[data-pane="learn-claude"] {
+.pane[data-pane="learn-claude"]:not([hidden]) {
   display: flex;
   flex-direction: column;
   gap: 14px;
