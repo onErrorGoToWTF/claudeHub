@@ -2563,6 +2563,78 @@ body.modal-open { overflow: hidden; }
   border-color: color-mix(in srgb, var(--accent-claude) 30%, var(--border));
   background: color-mix(in srgb, var(--accent-claude-soft) 30%, transparent);
 }
+/* ===== Project notes pad (M3.1) — per-project markdown scratchpad ===== */
+.project-notes {
+  margin-top: 10px;
+  border-top: 1px dashed var(--border);
+  padding-top: 10px;
+}
+.project-notes-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  padding: 4px 2px;
+  min-height: 32px;
+  transition: color 0.2s var(--ease-premium);
+}
+.project-notes-summary::-webkit-details-marker { display: none; }
+.project-notes-summary::before {
+  content: "›";
+  display: inline-block;
+  width: 14px;
+  text-align: center;
+  color: var(--text-3, var(--text-2));
+  font-size: 15px;
+  transition: transform 0.22s var(--ease-premium);
+}
+.project-notes[open] .project-notes-summary::before { transform: rotate(90deg); }
+.project-notes-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-2);
+  font-weight: 600;
+}
+.project-notes-meta {
+  font-size: 11px;
+  color: var(--text-3, var(--text-2));
+  font-variant-numeric: tabular-nums;
+}
+.project-notes-status {
+  margin-left: auto;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: color-mix(in srgb, #34d399 85%, var(--text-2));
+  min-height: 1em;
+}
+.project-notes-status:empty { visibility: hidden; }
+.project-notes-body { padding: 8px 0 4px; }
+.project-notes-input {
+  width: 100%;
+  resize: vertical;
+  min-height: 96px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--text-1) 3%, transparent);
+  color: var(--text-1);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  line-height: 1.55;
+  outline: none;
+  transition: border-color 0.2s var(--ease-premium),
+              background 0.2s var(--ease-premium);
+}
+.project-notes-input::placeholder { color: var(--text-3, var(--text-2)); }
+.project-notes-input:focus {
+  border-color: color-mix(in srgb, var(--accent) 60%, var(--border-strong));
+  background: color-mix(in srgb, var(--text-1) 5%, transparent);
+}
+
 .project-actions {
   display: flex;
   align-items: center;

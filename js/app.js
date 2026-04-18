@@ -1291,6 +1291,9 @@
       const date = p.createdAt
         ? new Date(p.createdAt).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })
         : "";
+      const notesVal = typeof p.notes === "string" ? p.notes : "";
+      const notesOpenAttr = notesVal.trim() ? " open" : "";
+      const notesLen = notesVal.length;
       card.innerHTML = `
         <div class="project-head">
           <span class="project-path">${pathLabel}</span>
@@ -1299,11 +1302,52 @@
         <h4 class="project-title">${escapeHtml(p.title)}</h4>
         ${p.goal ? `<p class="project-goal">${escapeHtml(p.goal)}</p>` : ""}
         <div class="project-stack-chips">${stackChips}</div>
+        <details class="project-notes"${notesOpenAttr}>
+          <summary class="project-notes-summary">
+            <span class="project-notes-label">Notes</span>
+            <span class="project-notes-meta" data-count>${notesLen ? notesLen + " chars" : "empty"}</span>
+            <span class="project-notes-status" data-status></span>
+          </summary>
+          <div class="project-notes-body">
+            <textarea class="project-notes-input"
+                      data-project-id="${escapeHtml(p.id)}"
+                      placeholder="Markdown scratchpad — links, todos, what you learned. Saves as you type."
+                      rows="5"
+                      spellcheck="false">${escapeHtml(notesVal)}</textarea>
+          </div>
+        </details>
         <div class="project-actions">
           <button class="project-delete" type="button" data-project-id="${escapeHtml(p.id)}">Delete</button>
         </div>
       `;
       host.appendChild(card);
+    });
+    // Wire notes textareas: debounced save to localStorage, transient "Saved" status.
+    host.querySelectorAll(".project-notes-input").forEach((ta) => {
+      let saveTimer = null;
+      let statusTimer = null;
+      const details = ta.closest(".project-notes");
+      const status = details?.querySelector("[data-status]");
+      const count  = details?.querySelector("[data-count]");
+      ta.addEventListener("input", () => {
+        if (status) status.textContent = "Saving…";
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(() => {
+          const id = ta.dataset.projectId;
+          if (!id) return;
+          const projects = getProjects();
+          if (!projects[id]) return;
+          projects[id].notes = ta.value;
+          projects[id].updatedAt = new Date().toISOString();
+          putProjects(projects);
+          if (count) count.textContent = ta.value.length ? ta.value.length + " chars" : "empty";
+          if (status) {
+            status.textContent = "Saved";
+            clearTimeout(statusTimer);
+            statusTimer = setTimeout(() => { if (status.textContent === "Saved") status.textContent = ""; }, 1400);
+          }
+        }, 320);
+      });
     });
     // Two-tap confirm: first tap arms the button, second tap deletes.
     // Avoids confirm(), which iOS standalone PWAs silently suppress.
