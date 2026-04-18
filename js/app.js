@@ -3,7 +3,29 @@
 
   const DATA_URL = "data/latest.json?v=" + Date.now();
   const TUTORIALS_365_URL = "data/365/tutorials.json?v=" + Date.now();
+  const TOOLS_URL = "data/learn/tools.json?v=" + Date.now();
   const THEME_KEY = "cdih-theme";
+
+  // Tool-catalog modality vocabulary. "all" is the default filter.
+  // Order here drives the filter-pill order in the UI.
+  const MODALITIES = [
+    { id: "all",        label: "All"        },
+    { id: "llm",        label: "LLM"        },
+    { id: "coding",     label: "Coding"     },
+    { id: "agent",      label: "Agent"      },
+    { id: "image",      label: "Image"      },
+    { id: "video",      label: "Video"      },
+    { id: "voice",      label: "Voice"      },
+    { id: "automation", label: "Automation" },
+    { id: "deploy",     label: "Deploy"     },
+    { id: "data",       label: "Data"       },
+  ];
+  const PRICE_BADGE = {
+    free:     "Free",
+    lte20:    "≤$20/mo",
+    lte50:    "≤$50/mo",
+    premium:  "Premium",
+  };
 
   // Sections that render from latest.json and share the filter machinery.
   const SECTIONS = ["comply365", "news-media"];
@@ -479,6 +501,103 @@
     el.textContent = iso ? "Updated " + relTime(iso) : "";
   }
 
+  // ---------- Tools catalog (Learn → Tools) ----------
+  let toolsData = null;
+  let toolsModality = "all";
+
+  async function loadTools() {
+    try {
+      const res = await fetch(TOOLS_URL, { cache: "no-cache" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      toolsData = Array.isArray(data.tools) ? data.tools : [];
+      renderModalityFilter();
+      renderTools();
+    } catch (err) {
+      const host = document.getElementById("tool-grid");
+      if (host) host.innerHTML = `<div class="empty">Couldn't load tools catalog. ${String(err.message || err)}</div>`;
+    }
+  }
+
+  function renderModalityFilter() {
+    const host = document.getElementById("modality-filter");
+    if (!host || !toolsData) return;
+    // Count tools per modality for live counts on each pill.
+    const counts = toolsData.reduce((acc, t) => {
+      acc[t.modality] = (acc[t.modality] || 0) + 1;
+      return acc;
+    }, {});
+    host.innerHTML = "";
+    MODALITIES.forEach((m) => {
+      const n = m.id === "all" ? toolsData.length : (counts[m.id] || 0);
+      if (m.id !== "all" && n === 0) return;   // hide empty modalities
+      const pill = document.createElement("button");
+      pill.type = "button";
+      pill.className = "modality-pill" + (m.id === toolsModality ? " is-active" : "");
+      pill.dataset.modality = m.id;
+      pill.setAttribute("role", "tab");
+      pill.setAttribute("aria-selected", m.id === toolsModality ? "true" : "false");
+      pill.innerHTML = `<span class="modality-label">${m.label}</span><span class="modality-count">${n}</span>`;
+      pill.addEventListener("click", () => {
+        toolsModality = m.id;
+        renderModalityFilter();
+        renderTools();
+      });
+      host.appendChild(pill);
+    });
+  }
+
+  function renderTools() {
+    const host = document.getElementById("tool-grid");
+    if (!host || !toolsData) return;
+    const filtered = toolsModality === "all"
+      ? toolsData
+      : toolsData.filter((t) => t.modality === toolsModality);
+    host.innerHTML = "";
+    if (filtered.length === 0) {
+      host.innerHTML = `<div class="empty">No tools in this modality yet.</div>`;
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    filtered.forEach((t, i) => {
+      const card = document.createElement("a");
+      card.className = "tool-card glass" + (t.claudeNative ? " tool-card-claude" : "");
+      card.href = t.officialUrl || "#";
+      card.target = "_blank";
+      card.rel = "noopener";
+      card.style.setProperty("--card-delay", (0.05 + i * 0.04) + "s");
+      const verified = t.verifiedAt
+        ? `<span class="tool-verified">Verified ${t.verifiedAt}</span>`
+        : "";
+      const priceLabel = PRICE_BADGE[t.priceTier] || "";
+      const priceBadge = priceLabel
+        ? `<span class="tool-badge tool-badge-price" data-tier="${t.priceTier}">${priceLabel}</span>`
+        : "";
+      const claudeBadge = t.claudeNative
+        ? `<span class="tool-badge tool-badge-claude">Claude-native</span>`
+        : "";
+      card.innerHTML = `
+        <div class="tool-card-head">
+          <span class="tool-vendor">${t.vendor || ""}</span>
+          <span class="tool-modality" data-modality="${t.modality}">${(MODALITIES.find(m => m.id === t.modality) || {}).label || t.modality}</span>
+        </div>
+        <h3 class="tool-name">${t.name}</h3>
+        <p class="tool-tagline">${t.tagline || ""}</p>
+        <div class="tool-badges">
+          ${claudeBadge}
+          ${priceBadge}
+        </div>
+        <div class="tool-foot">
+          <span class="tool-version">${t.currentVersion || ""}</span>
+          ${verified}
+        </div>
+      `;
+      registerReveal(card, i);
+      frag.appendChild(card);
+    });
+    host.appendChild(frag);
+  }
+
   // ---------- Main feed load ----------
   let latestData = null;
   async function load() {
@@ -518,6 +637,7 @@
   }
 
   load();
+  loadTools();
   renderTimeline();
   renderCompare();
   renderIndex();
