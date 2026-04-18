@@ -266,6 +266,12 @@
         <h3 class="hub-title">Your saved builds.</h3>
         <p class="hub-lede">Every save from the Finder lands here. Each project keeps its capabilities, its chosen path, and the recommended tool stack.</p>
       </div>
+      <div class="projects-backup" id="projects-backup">
+        <button type="button" class="backup-btn" id="backup-export">Export backup</button>
+        <button type="button" class="backup-btn" id="backup-import-trigger">Import backup…</button>
+        <input type="file" id="backup-import-file" accept="application/json,.json" hidden>
+        <span class="backup-status" id="backup-status"></span>
+      </div>
       <div class="projects-grid" id="projects-grid"></div>
     </div>
   </section>

@@ -1271,6 +1271,104 @@
     renderProjects();
   }
 
+  // ---------- Backup export / import (M3.3) ----------
+  // Dumps every clhub.v1.* + cdih-theme localStorage key into a single JSON
+  // file the user can stash somewhere safe. Re-import merges by default,
+  // replacing each included key. Never touches non-backup keys.
+  const BACKUP_KEY_PREFIXES = ["clhub.v1.", "cdih-"];
+  function isBackupKey(k) {
+    return BACKUP_KEY_PREFIXES.some((p) => k.startsWith(p));
+  }
+  function collectBackup() {
+    const data = {};
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && isBackupKey(k)) data[k] = localStorage.getItem(k);
+      }
+    } catch {}
+    return {
+      schema: "aistacked-backup",
+      schemaVersion: 1,
+      exportedAt: new Date().toISOString(),
+      appVersion: (document.getElementById("version-num")?.textContent || "").replace(/^v/, "") || null,
+      keys: data,
+    };
+  }
+  function applyBackup(payload, { mode = "merge" } = {}) {
+    if (!payload || typeof payload !== "object") throw new Error("invalid: not an object");
+    if (payload.schema !== "aistacked-backup") throw new Error("invalid: wrong schema");
+    const keys = payload.keys;
+    if (!keys || typeof keys !== "object") throw new Error("invalid: missing keys");
+    // Only accept backup-prefix keys — never overwrite anything else.
+    const accepted = Object.keys(keys).filter(isBackupKey);
+    if (accepted.length === 0) throw new Error("invalid: no backup keys found");
+    if (mode === "replace") {
+      for (let i = localStorage.length - 1; i >= 0; i--) {
+        const k = localStorage.key(i);
+        if (k && isBackupKey(k)) localStorage.removeItem(k);
+      }
+    }
+    accepted.forEach((k) => {
+      const v = keys[k];
+      if (typeof v === "string") localStorage.setItem(k, v);
+    });
+    return accepted.length;
+  }
+  function setBackupStatus(msg, tone) {
+    const el = document.getElementById("backup-status");
+    if (!el) return;
+    el.textContent = msg || "";
+    el.dataset.tone = tone || "";
+    if (msg) {
+      clearTimeout(setBackupStatus._t);
+      setBackupStatus._t = setTimeout(() => {
+        if (el.textContent === msg) { el.textContent = ""; el.dataset.tone = ""; }
+      }, 3000);
+    }
+  }
+  function downloadBackup() {
+    const payload = collectBackup();
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    const stamp = new Date().toISOString().replace(/[:T]/g, "-").slice(0, 19);
+    a.href = url;
+    a.download = `aistacked-backup-${stamp}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    const n = Object.keys(payload.keys).length;
+    setBackupStatus(`Exported ${n} key${n === 1 ? "" : "s"}`, "ok");
+  }
+  async function handleImportFile(file) {
+    if (!file) return;
+    try {
+      const text = await file.text();
+      const payload = JSON.parse(text);
+      const n = applyBackup(payload, { mode: "merge" });
+      setBackupStatus(`Imported ${n} key${n === 1 ? "" : "s"} — reloading…`, "ok");
+      setTimeout(() => location.reload(), 700);
+    } catch (err) {
+      setBackupStatus(`Import failed: ${err.message || err}`, "err");
+    }
+  }
+  {
+    const exportBtn = document.getElementById("backup-export");
+    const importBtn = document.getElementById("backup-import-trigger");
+    const fileInput = document.getElementById("backup-import-file");
+    if (exportBtn) exportBtn.addEventListener("click", (e) => { e.preventDefault(); downloadBackup(); });
+    if (importBtn && fileInput) {
+      importBtn.addEventListener("click", (e) => { e.preventDefault(); fileInput.click(); });
+      fileInput.addEventListener("change", () => {
+        const f = fileInput.files?.[0];
+        if (f) handleImportFile(f);
+        fileInput.value = "";
+      });
+    }
+  }
+
   // ---------- Project-scoped pinning (M3.2) ----------
   // Pin a tool (toolId) or snippet (snippetId) into one or more projects.
   // Stored on the project object under pinnedTools[] / pinnedSnippets[].

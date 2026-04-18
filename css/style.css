@@ -2563,6 +2563,42 @@ body.modal-open { overflow: hidden; }
   border-color: color-mix(in srgb, var(--accent-claude) 30%, var(--border));
   background: color-mix(in srgb, var(--accent-claude-soft) 30%, transparent);
 }
+/* ===== Projects backup export/import (M3.3) ===== */
+.projects-backup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+}
+.backup-btn {
+  padding: 8px 14px;
+  min-height: 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--text-1) 3%, transparent);
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 12.5px;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 0.2s var(--ease-premium),
+              border-color 0.2s var(--ease-premium),
+              background 0.2s var(--ease-premium);
+}
+.backup-btn:hover {
+  color: var(--text-1);
+  border-color: var(--border-strong);
+  background: color-mix(in srgb, var(--text-1) 6%, transparent);
+}
+.backup-status {
+  font-size: 11.5px;
+  color: var(--text-2);
+  letter-spacing: 0.02em;
+}
+.backup-status[data-tone="ok"]  { color: color-mix(in srgb, #34d399 85%, var(--text-2)); }
+.backup-status[data-tone="err"] { color: #f87171; }
+
 /* ===== Pin-to-project button (M3.2) — shared across snippet rows + tool modal ===== */
 .pin-btn {
   display: inline-flex;
