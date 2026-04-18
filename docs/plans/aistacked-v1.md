@@ -440,7 +440,7 @@ M2.3   ✅ Priority 3               MCP server configs + scaffolds [v0.3.2]
 M2.4   ✅ Priority 4               Image/video prompt templates
                                   (Nano Banana, Veo 3.1, Midjourney). [v0.3.3]
 M2.5   ✅ Priority 5               Agent / LLM prompts (system prompts, personas). [v0.3.4]
-M2.6   ▢ Priority 6               n8n workflow JSON exports.
+M2.6   ✅ Priority 6               n8n workflow JSON exports. [v0.3.5]
 M2.7   ▢ Priority 7               Lovable / Bolt starter prompts.
 M2.8   ▢ Priority 8               Python / JS SDK snippets;
                                   ACCPAC fixed-width parser for the commission calc use case.
