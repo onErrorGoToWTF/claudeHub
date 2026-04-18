@@ -36,6 +36,10 @@
   // Projects localStorage key (M1.11).
   const PROJECTS_KEY = "clhub.v1.projects";
 
+  // Module-scope snippet cache populated by loadSnippets(); consumed by the
+  // tool-detail modal (M2.9) and the cmd-K search (M2.10).
+  let snippetsData = [];
+
   function escapeHtml(s) {
     return String(s ?? "")
       .replace(/&/g, "&amp;")
@@ -815,6 +819,7 @@
       const snipPayload = await snipRes.json();
       const mapPayload  = await mapRes.json();
       const snippets = Array.isArray(snipPayload.snippets) ? snipPayload.snippets : [];
+      snippetsData = snippets;
       const tagsByBucket = (mapPayload && mapPayload.snippetTagsByBucket) || {};
       document.querySelectorAll(".snippets-host[data-snippet-bucket]").forEach((host) => {
         const bucket = host.dataset.snippetBucket;
@@ -829,28 +834,32 @@
           <div class="snippet-list">${rows}</div>
         `;
       });
-      // Wire copy buttons once they're in the DOM.
-      document.querySelectorAll(".snippet-copy").forEach((btn) => {
-        if (btn.dataset.wired === "1") return;
-        btn.dataset.wired = "1";
-        btn.addEventListener("click", async (e) => {
-          e.preventDefault();
-          const row = btn.closest(".snippet-row");
-          const code = row && row.querySelector(".snippet-code");
-          if (!code) return;
-          try {
-            await navigator.clipboard.writeText(code.textContent || "");
-            btn.dataset.state = "ok";
-            btn.textContent = "Copied";
-            setTimeout(() => { btn.dataset.state = ""; btn.textContent = "Copy"; }, 1800);
-          } catch {
-            btn.dataset.state = "err";
-            btn.textContent = "Copy failed";
-            setTimeout(() => { btn.dataset.state = ""; btn.textContent = "Copy"; }, 1800);
-          }
-        });
-      });
+      wireSnippetCopyButtons(document);
     } catch {}
+  }
+
+  // Wire .snippet-copy click handlers inside `root`. Idempotent via dataset flag.
+  function wireSnippetCopyButtons(root) {
+    (root || document).querySelectorAll(".snippet-copy").forEach((btn) => {
+      if (btn.dataset.wired === "1") return;
+      btn.dataset.wired = "1";
+      btn.addEventListener("click", async (e) => {
+        e.preventDefault();
+        const row = btn.closest(".snippet-row");
+        const code = row && row.querySelector(".snippet-code");
+        if (!code) return;
+        try {
+          await navigator.clipboard.writeText(code.textContent || "");
+          btn.dataset.state = "ok";
+          btn.textContent = "Copied";
+          setTimeout(() => { btn.dataset.state = ""; btn.textContent = "Copy"; }, 1800);
+        } catch {
+          btn.dataset.state = "err";
+          btn.textContent = "Copy failed";
+          setTimeout(() => { btn.dataset.state = ""; btn.textContent = "Copy"; }, 1800);
+        }
+      });
+    });
   }
 
   function renderSnippetRow(s) {
@@ -1415,11 +1424,14 @@
     }
     const frag = document.createDocumentFragment();
     filtered.forEach((t, i) => {
-      const card = document.createElement("a");
+      const card = document.createElement("button");
+      card.type = "button";
       card.className = "tool-card glass" + (t.claudeNative ? " tool-card-claude" : "");
-      card.href = t.officialUrl || "#";
-      card.target = "_blank";
-      card.rel = "noopener";
+      card.dataset.toolId = t.id;
+      card.addEventListener("click", (e) => {
+        e.preventDefault();
+        openToolModal(t);
+      });
       card.style.setProperty("--card-delay", (0.05 + i * 0.04) + "s");
       const verified = t.verifiedAt
         ? `<span class="tool-verified">Verified ${t.verifiedAt}</span>`
@@ -1452,6 +1464,77 @@
     });
     host.appendChild(frag);
   }
+
+  // ---------- Tool detail modal (M2.9) ----------
+  function openToolModal(tool) {
+    const modal = document.getElementById("tool-modal");
+    if (!modal || !tool) return;
+    const q = (sel) => modal.querySelector(sel);
+    const modalityLabel = (MODALITIES.find((m) => m.id === tool.modality) || {}).label || tool.modality || "";
+    q(".tool-modal-vendor").textContent   = tool.vendor || "";
+    q(".tool-modal-modality").textContent = modalityLabel;
+    q(".tool-modal-title").textContent    = tool.name || "";
+    q(".tool-modal-tagline").textContent  = tool.tagline || "";
+    q(".tool-modal-when").textContent     = tool.whenToUse || "";
+    q(".tool-modal-version").textContent  = tool.currentVersion || "";
+    q(".tool-modal-pricing").textContent  = tool.pricing || "";
+
+    // Badges
+    const priceLabel = PRICE_BADGE[tool.priceTier] || "";
+    const badges = [];
+    if (tool.claudeNative) badges.push(`<span class="tool-badge tool-badge-claude">Claude-native</span>`);
+    if (priceLabel)        badges.push(`<span class="tool-badge tool-badge-price" data-tier="${tool.priceTier}">${priceLabel}</span>`);
+    q(".tool-modal-badges").innerHTML = badges.join("");
+
+    // Links
+    const links = [];
+    if (tool.officialUrl) {
+      links.push(`<a class="tool-modal-link" data-primary href="${escapeHtml(tool.officialUrl)}" target="_blank" rel="noopener">Official ↗</a>`);
+    }
+    if (tool.docsUrl && tool.docsUrl !== tool.officialUrl) {
+      links.push(`<a class="tool-modal-link" href="${escapeHtml(tool.docsUrl)}" target="_blank" rel="noopener">Docs ↗</a>`);
+    }
+    q(".tool-modal-links").innerHTML = links.join("");
+
+    // Snippets filtered by this tool's snippetTags
+    const tagSet = new Set(tool.snippetTags || []);
+    const matching = tagSet.size
+      ? snippetsData.filter((s) => (s.snippetTags || []).some((t) => tagSet.has(t)))
+      : [];
+    const snippetHost = q(".tool-modal-snippets");
+    const listHost = q(".tool-modal-snippet-list");
+    const titleEl = q(".tool-modal-snippets-title");
+    titleEl.textContent = matching.length > 0
+      ? `Snippets · ${matching.length}`
+      : "Snippets";
+    listHost.innerHTML = matching.map((s) => renderSnippetRow(s)).join("");
+    snippetHost.dataset.empty = matching.length === 0 ? "1" : "";
+    wireSnippetCopyButtons(modal);
+
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+    const closeBtn = q(".tool-modal-close");
+    if (closeBtn) closeBtn.focus({ preventScroll: true });
+  }
+
+  function closeToolModal() {
+    const modal = document.getElementById("tool-modal");
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    // Also clear body scroll lock unless another modal is open.
+    if (!document.querySelector(".video-modal:not([hidden])")) {
+      document.body.classList.remove("modal-open");
+    }
+  }
+
+  document.querySelectorAll("#tool-modal [data-close]").forEach((el) => {
+    el.addEventListener("click", (e) => { e.preventDefault(); closeToolModal(); });
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const m = document.getElementById("tool-modal");
+    if (m && !m.hidden) closeToolModal();
+  });
 
   // ---------- Version footer — proves which build is rendered ----------
   async function loadVersion() {
