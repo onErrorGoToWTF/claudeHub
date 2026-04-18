@@ -210,15 +210,26 @@
   const initial = document.querySelector(".chip.is-active");
   if (initial) applyFilter(initial.dataset.filter);
 
-  // Home CTA — jump to another chip
-  const cta = document.querySelector(".home-cta-btn");
-  if (cta) {
-    cta.addEventListener("click", () => {
-      const target = cta.dataset.chip;
-      const chip = document.querySelector(`[data-filter="${target}"]`);
+  // Chip shortcut buttons — any element with data-chip jumps to that tab,
+  // and optional data-subpill activates a named sub-pill inside it.
+  const SUBPILL_ATTR = {
+    "learn":      "learn",
+    "comply365":  "s365",
+    "news-media": "newsmedia",
+  };
+  document.querySelectorAll("[data-chip]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const chipName = btn.dataset.chip;
+      const chip = document.querySelector(`[data-filter="${chipName}"]`);
       if (chip) chip.click();
+      const sub = btn.dataset.subpill;
+      const attr = SUBPILL_ATTR[chipName];
+      if (sub && attr) {
+        const pill = document.querySelector(`[data-${attr}="${sub}"]`);
+        if (pill) pill.click();
+      }
     });
-  }
+  });
 
   // ---------- Time formatting ----------
   const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });

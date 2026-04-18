@@ -37,40 +37,27 @@
 <main class="app" id="app">
   <section class="section section-home" data-section="home" id="section-home">
     <div class="home-hero">
-      <div class="home-eyebrow">aiStacked</div>
+      <div class="home-eyebrow">Dashboard</div>
       <h1 class="home-title">
         <span class="home-title-grad">Find the stack.</span>
         <br><span class="home-title-sub">Ship the project.</span>
       </h1>
-      <p class="home-lede">The personal dashboard lands in M1.4 — for now, jump into Learn, scan the State of AI in News &amp; Media, or dip into Comply365.</p>
+      <p class="home-lede">Pick up where you left off, or start something new.</p>
     </div>
 
-    <div class="stat-grid">
-      <div class="stat glass">
-        <div class="stat-num">10<span class="stat-x">×</span></div>
-        <div class="stat-lbl">Context growth</div>
-        <div class="stat-sub">100K → 1M tokens</div>
-      </div>
-      <div class="stat glass">
-        <div class="stat-num">10</div>
-        <div class="stat-lbl">Major releases</div>
-        <div class="stat-sub">since Mar 2023</div>
-      </div>
-      <div class="stat glass">
-        <div class="stat-num">~1<span class="stat-x">/q</span></div>
-        <div class="stat-lbl">Release cadence</div>
-        <div class="stat-sub">frontier model per quarter</div>
-      </div>
-    </div>
+    <div class="dash-grid">
+      <article class="dash-card glass">
+        <div class="dash-eyebrow">Continue</div>
+        <h2 class="dash-title">Where you left off</h2>
+        <p class="dash-empty">No projects in flight yet — start one and your progress lands here.</p>
+      </article>
 
-    <div class="home-cta glass" id="home-cta">
-      <div class="home-cta-row">
-        <div>
-          <div class="home-cta-title">Want more?</div>
-          <div class="home-cta-sub">Jump into Learn — or skim News &amp; Media and Comply365.</div>
-        </div>
-        <button class="home-cta-btn" data-chip="learn" type="button">Explore →</button>
-      </div>
+      <article class="dash-card glass dash-card-primary">
+        <div class="dash-eyebrow">Start</div>
+        <h2 class="dash-title">A new project</h2>
+        <p class="dash-sub">Pick the pieces you want. Finder recommends a tool stack, a learning path, and setup per tool.</p>
+        <button class="dash-action dash-action-primary" data-chip="learn" data-subpill="finder" type="button">Open the Finder →</button>
+      </article>
     </div>
   </section>
 
