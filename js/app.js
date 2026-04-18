@@ -532,6 +532,30 @@
   let claudeLearningItems = [];
   let claudeLearningFilter = "all";
 
+  // Pinned items — a small set of URLs the user wants floated to the top of
+  // their What's new view regardless of date. Stored as { "<url>": isoStamp }
+  // so we can reconstruct pin order if needed later.
+  const PINS_KEY = "clhub.v1.learningPins";
+  function getPins() {
+    try {
+      const raw = localStorage.getItem(PINS_KEY);
+      if (!raw) return {};
+      const obj = JSON.parse(raw);
+      return obj && typeof obj === "object" ? obj : {};
+    } catch { return {}; }
+  }
+  function putPins(obj) {
+    try { localStorage.setItem(PINS_KEY, JSON.stringify(obj)); } catch {}
+  }
+  function togglePin(url) {
+    if (!url) return;
+    const pins = getPins();
+    if (pins[url]) delete pins[url];
+    else pins[url] = new Date().toISOString();
+    putPins(pins);
+  }
+  function isPinned(url) { return !!getPins()[url]; }
+
   // Unread badge — tracks last time the user viewed What's new. First visit
   // silently seeds "now" so the badge doesn't light up with 70 items on a
   // brand-new device. Subsequent visits count items newer than that stamp.
@@ -619,21 +643,58 @@
       container.appendChild(empty);
       return;
     }
+    // Sort pinned first (within the filtered set), then by date desc. Pins
+    // float to the top of whatever view the user has — "All", any bucket,
+    // doesn't matter. Non-pinned fall back to date-desc.
+    const pins = getPins();
+    const sorted = filtered.slice().sort((a, b) => {
+      const pa = pins[a.url] ? 1 : 0;
+      const pb = pins[b.url] ? 1 : 0;
+      if (pa !== pb) return pb - pa;
+      const ta = a.published ? Date.parse(a.published) : 0;
+      const tb = b.published ? Date.parse(b.published) : 0;
+      return tb - ta;
+    });
     const frag = document.createDocumentFragment();
     const BUCKET_LABEL = { code: "Claude Code", api: "Claude API", mcp: "MCP", videos: "Video", academy: "Academy" };
-    sortByDateDesc(filtered).slice(0, 24).forEach((it, idx) => {
+    sorted.slice(0, 24).forEach((it, idx) => {
       const node = renderCard(it, false, idx);
       const bucket = sourceBucket(it.source);
       node.dataset.learnBucket = bucket;
+      if (pins[it.url]) node.dataset.pinned = "1";
       const pill = node.querySelector(".card-pill");
       if (pill && BUCKET_LABEL[bucket]) {
         pill.textContent = BUCKET_LABEL[bucket];
         pill.dataset.pill = bucket;
       }
+      attachPinButton(node, it.url);
       registerReveal(node, idx);
       frag.appendChild(node);
     });
     container.appendChild(frag);
+  }
+
+  // SVG pin glyphs — outline when unpinned, filled when pinned.
+  const PIN_SVG_OUTLINE = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><path d="M12 12v8"/></svg>';
+  const PIN_SVG_FILLED  = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><rect x="11.2" y="12" width="1.6" height="8" rx="0.6"/></svg>';
+
+  function attachPinButton(node, url) {
+    if (!url || node.querySelector(".card-pin")) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "card-pin";
+    const pinned = isPinned(url);
+    btn.dataset.pinned = pinned ? "1" : "";
+    btn.innerHTML = pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE;
+    btn.setAttribute("aria-label", pinned ? "Unpin" : "Pin");
+    btn.setAttribute("aria-pressed", pinned ? "true" : "false");
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      togglePin(url);
+      paintClaudeLearning();
+    });
+    node.appendChild(btn);
   }
 
   // Claude hub — render Anthropic Academy course grids in each subpill pane.
