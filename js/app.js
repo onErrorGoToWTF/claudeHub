@@ -1522,7 +1522,7 @@
     if (!modal || modal.hidden) return;
     modal.hidden = true;
     // Also clear body scroll lock unless another modal is open.
-    if (!document.querySelector(".video-modal:not([hidden])")) {
+    if (!document.querySelector(".video-modal:not([hidden]), .search-modal:not([hidden])")) {
       document.body.classList.remove("modal-open");
     }
   }
