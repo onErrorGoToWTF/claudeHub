@@ -679,23 +679,12 @@
       { short: "Gemini 3.1", col: MODEL_COL.google, ctx: "1M",   price: "$2"   },
       { short: "Grok 4.20",  col: MODEL_COL.xai,    ctx: "2M",   price: "$2"   },
     ];
-    // Raw values are compressed to 2–3 chars so they fit above thin bars.
+    // AIME dropped — every model maxes at ~100%, no useful signal.
     const benches = [
-      { label: "GPQA",       vals: [94.2, 94.4, 94.3, null], raws: ["94",  "94", "94", "—"]   },
-      { label: "SWE-bench",  vals: [87.6, 80.0, 68.5, null], raws: ["88",  "80", "69", "—"]   },
-      { label: "AIME",       vals: [99,   100,  100,  100],  raws: ["99",  "100","100","100"] },
-      { label: "LMArena",    vals: [88,   85,   82,   81],   raws: ["88",  "85", "82", "81"]  },
+      { label: "GPQA",    vals: [94.2, 94.4, 94.3, null], display: ["94.2",  "94.4", "94.3",  "—"]    },
+      { label: "SWE-b",   vals: [87.6, 80.0, 68.5, null], display: ["87.6",  "80.0", "68.5*", "—"]    },
+      { label: "LMArena", vals: [88,   85,   82,   81],   display: ["~1500", "#2",   "1493",  "1491"] },
     ];
-
-    const legendHtml = `
-      <div class="gf-legend">
-        ${models.map(m => `
-          <span class="gf-li" style="--col:${m.col}">
-            <span class="gf-dot" aria-hidden="true"></span>${m.short}
-          </span>
-        `).join("")}
-      </div>
-    `;
 
     let clustersHtml = "";
     benches.forEach((b, bi) => {
@@ -706,7 +695,6 @@
         const delay = 0.2 + bi * 0.15 + mi * 0.07;
         return `
           <div class="gbar${nodata ? " is-nodata" : ""}" style="--col:${m.col}; --h:${h}%; --gd:${delay}s;">
-            <div class="gbar-val">${b.raws[mi]}</div>
             <div class="gbar-track"><div class="gbar-fill"></div></div>
           </div>
         `;
@@ -719,24 +707,39 @@
       `;
     });
 
-    const statsHtml = `
-      <div class="faceoff-mini-stats">
-        <div class="fms-row fms-head">
-          <div class="fms-model">Model</div>
-          <div class="fms-val">Ctx</div>
-          <div class="fms-val">$/1M in</div>
-        </div>
+    const legendHtml = `
+      <div class="gf-legend">
         ${models.map(m => `
-          <div class="fms-row" style="--fms-col:${m.col}">
-            <div class="fms-model"><span class="fms-dot" aria-hidden="true"></span>${m.short}</div>
-            <div class="fms-val">${m.ctx}</div>
-            <div class="fms-val">${m.price}</div>
-          </div>
+          <span class="gf-li" style="--col:${m.col}">
+            <span class="gf-dot" aria-hidden="true"></span>${m.short}
+          </span>
         `).join("")}
       </div>
     `;
 
-    host.innerHTML = legendHtml + `<div class="gf-chart">${clustersHtml}</div>` + statsHtml;
+    const headCells = `
+      <div class="fms-model">Model</div>
+      <div class="fms-val">Ctx</div>
+      <div class="fms-val">$/1M</div>
+      ${benches.map(b => `<div class="fms-val">${b.label}</div>`).join("")}
+    `;
+    const modelRows = models.map((m, mi) => `
+      <div class="fms-row" style="--fms-col:${m.col}">
+        <div class="fms-model"><span class="fms-dot" aria-hidden="true"></span>${m.short}</div>
+        <div class="fms-val">${m.ctx}</div>
+        <div class="fms-val">${m.price}</div>
+        ${benches.map(b => `<div class="fms-val">${b.display[mi]}</div>`).join("")}
+      </div>
+    `).join("");
+
+    const statsHtml = `
+      <div class="faceoff-mini-stats">
+        <div class="fms-row fms-head">${headCells}</div>
+        ${modelRows}
+      </div>
+    `;
+
+    host.innerHTML = `<div class="gf-chart">${clustersHtml}</div>` + legendHtml + statsHtml;
   }
 
   // ======================================================================
