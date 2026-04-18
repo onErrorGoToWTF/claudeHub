@@ -267,6 +267,12 @@
       document.querySelectorAll('.pane[data-pane^="claude-"]').forEach((pane) => {
         pane.hidden = pane.dataset.pane !== `claude-${kind}`;
       });
+      // Mark What's new as seen the moment it's opened — count resets on
+      // next render. Any items that arrive AFTER this moment will re-light it.
+      if (kind === "whats-new") {
+        setClaudeWhatsNewLastSeen(new Date().toISOString());
+        updateClaudeWhatsNewBadge();
+      }
     });
   });
 
@@ -526,6 +532,46 @@
   let claudeLearningItems = [];
   let claudeLearningFilter = "all";
 
+  // Unread badge — tracks last time the user viewed What's new. First visit
+  // silently seeds "now" so the badge doesn't light up with 70 items on a
+  // brand-new device. Subsequent visits count items newer than that stamp.
+  const CLAUDE_WHATS_NEW_KEY = "clhub.v1.claudeWhatsNewLastSeen";
+  function getClaudeWhatsNewLastSeen() {
+    try {
+      const raw = localStorage.getItem(CLAUDE_WHATS_NEW_KEY);
+      if (!raw) return null;
+      const t = Date.parse(raw);
+      return isNaN(t) ? null : t;
+    } catch { return null; }
+  }
+  function setClaudeWhatsNewLastSeen(iso) {
+    try { localStorage.setItem(CLAUDE_WHATS_NEW_KEY, iso); } catch {}
+  }
+  function updateClaudeWhatsNewBadge() {
+    const badge = document.querySelector('[data-subpill-badge="whats-new"]');
+    if (!badge) return;
+    let lastSeen = getClaudeWhatsNewLastSeen();
+    if (lastSeen === null) {
+      // First visit on this device — seed silently, no badge.
+      setClaudeWhatsNewLastSeen(new Date().toISOString());
+      badge.hidden = true;
+      badge.textContent = "";
+      return;
+    }
+    const count = claudeLearningItems.reduce((n, it) => {
+      const t = it.published ? Date.parse(it.published) : NaN;
+      return !isNaN(t) && t > lastSeen ? n + 1 : n;
+    }, 0);
+    if (count > 0) {
+      badge.hidden = false;
+      badge.textContent = String(count);
+      badge.setAttribute("aria-label", `${count} new since last visit`);
+    } else {
+      badge.hidden = true;
+      badge.textContent = "";
+    }
+  }
+
   function sourceBucket(source) {
     const s = source || "";
     if (s === "Claude Code") return "code";
@@ -539,6 +585,7 @@
   function renderClaudeLearning(items) {
     claudeLearningItems = Array.isArray(items) ? items : [];
     paintClaudeLearning();
+    updateClaudeWhatsNewBadge();
   }
 
   function paintClaudeLearning() {

@@ -324,6 +324,28 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .subpills-nested::-webkit-scrollbar { display: none; }
 .subpills-nested .subpill { font-size: 12.5px; padding: 5px 10px; flex-shrink: 0; min-height: 36px; }
 
+/* Subpill "N new" badge — e.g. Claude → What's new unread count. Hidden via
+   [hidden] until populated; keeps its space when visible. */
+.subpill-badge[hidden] { display: none !important; }
+.subpill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  margin-left: 6px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-claude);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-claude) 40%, transparent),
+              0 2px 8px color-mix(in srgb, var(--accent-claude) 30%, transparent);
+}
+
 /* Learn → Claude → What's new: source filter bar. Lower-weight than subpills,
    matches the premium dark design language (tinted hairlines, soft glass). */
 .learn-filter-bar {
