@@ -122,8 +122,21 @@ async function main() {
       comply365_news: merge(priorSections.comply365_news, comply365News),
       claude_learning: merge(
         priorSections.claude_learning,
-        dedupeByUrl([...claudeLearning, ...academy])
-          .sort((a, b) => Date.parse(b.published || 0) - Date.parse(a.published || 0))
+        dedupeByUrl([
+          ...claudeLearning,
+          ...academy,
+          // YouTube videos are already Claude-filtered in fetch_youtube.js
+          // (CLAUDE_RE; Anthropic channel always included). Route them into
+          // claude_learning with a "YouTube · <channel>" source so they
+          // surface in the Claude hub's What's new feed.
+          ...mergedYouTube.map((v) => ({
+            title: v.title,
+            url: v.url,
+            source: `YouTube · ${v.source || v.channel || "YouTube"}`,
+            published: v.published,
+            summary: v.summary,
+          })),
+        ]).sort((a, b) => Date.parse(b.published || 0) - Date.parse(a.published || 0))
       ),
     },
   };

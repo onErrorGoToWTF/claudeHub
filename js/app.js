@@ -532,6 +532,7 @@
     if (s === "Claude API Release Notes") return "api";
     if (s.startsWith("MCP")) return "mcp";
     if (s === "Anthropic Academy") return "academy";
+    if (s.startsWith("YouTube")) return "videos";
     return "other";
   }
 
