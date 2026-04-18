@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Snippets library. Fixed snippetTags: claude-md, slash-command, hook, output-style, mcp-config, skill-yaml, prompt-image, prompt-video, prompt-system, n8n-workflow, prompt-nocode. M2.1=CLAUDE.md, M2.2=Skills YAML, M2.3=MCP, M2.4=image/video prompts, M2.5=agent/LLM system prompts, M2.6=n8n workflow JSON, M2.7=Lovable/Bolt starters.",
+  "note": "Snippets library. Fixed snippetTags: claude-md, slash-command, hook, output-style, mcp-config, skill-yaml, prompt-image, prompt-video, prompt-system, n8n-workflow, prompt-nocode, sdk-anthropic, code-python. M2.1=CLAUDE.md, M2.2=Skills YAML, M2.3=MCP, M2.4=image/video prompts, M2.5=agent/LLM system prompts, M2.6=n8n workflow JSON, M2.7=Lovable/Bolt starters, M2.8=Anthropic SDK + ACCPAC parser.",
   "snippets": [
     {
       "id": "claudemd-minimal",
@@ -334,6 +334,69 @@
       "snippetTags": ["prompt-nocode"],
       "language": "text",
       "body": "Build a small internal tool for a flooring company's sales team. Not a public site — a private web app behind a single-tenant login.\n\nEntities:\n  - Customer: id, company_name, contact_name, email, phone, address, created_at\n  - Product: id, sku, name, unit_price, unit (e.g. sq ft, roll, each)\n  - Quote: id, customer_id, status (draft / sent / accepted / declined), created_at, line_items[]\n  - LineItem (embedded in Quote): product_id, quantity, unit_price_at_time, description_override\n  - Invoice: id, quote_id, invoice_number, issued_at, paid_at (nullable), total\n\nScreens:\n  - /login — single shared-password or Supabase email-link (pick the simpler path).\n  - /customers — list + search; row click opens side-sheet detail with \"New quote for this customer\" button.\n  - /products — editable table; add/remove rows inline.\n  - /quotes — list, filter by status chip; \"New quote\" button opens a two-pane editor (customer picker on the left, line-items table on the right with live subtotal + tax + total).\n  - /quotes/[id] — read-only view with \"Convert to invoice\" primary action when status = accepted.\n  - /invoices — list; row click opens the invoice preview with a \"Download PDF\" button (client-side PDF generation — use jsPDF, not a serverless fn).\n\nBehaviour:\n  - Line-item unit_price_at_time is a frozen copy of Product.unit_price at the moment of add — changing the product later does NOT retroactively change old quotes.\n  - Invoice numbers auto-increment per calendar year: INV-2026-0001, INV-2026-0002, …\n  - Destructive actions (delete customer, delete quote) use an in-UI two-tap confirm with a 3-second disarm — do NOT use the browser's confirm() dialog.\n  - All timestamps stored as ISO 8601 UTC; display in the user's local timezone.\n\nStyle: clean and dense. Zero marketing fluff — this is an internal tool. Tabular numbers everywhere, no rounded \"hero\" cards. Light mode by default; dark-mode toggle present.\n\nOut of scope for v1: email sending, Stripe payments, multi-tenant auth."
+    },
+    {
+      "id": "sdk-anthropic-python-basic",
+      "title": "Anthropic Python SDK — basic messages.create",
+      "summary": "Smallest synchronous call. Verified against anthropics/anthropic-sdk-python README.",
+      "tags": ["sdk", "anthropic", "python", "messages"],
+      "snippetTags": ["sdk-anthropic"],
+      "language": "python",
+      "body": "import os\nfrom anthropic import Anthropic\n\nclient = Anthropic(\n    api_key=os.environ.get(\"ANTHROPIC_API_KEY\"),\n)\n\nmessage = client.messages.create(\n    max_tokens=1024,\n    messages=[\n        {\n            \"role\": \"user\",\n            \"content\": \"Hello, Claude\",\n        }\n    ],\n    model=\"claude-opus-4-6\",\n)\nprint(message.content)\n"
+    },
+    {
+      "id": "sdk-anthropic-python-stream",
+      "title": "Anthropic Python SDK — streaming",
+      "summary": "Async streaming with client.messages.stream context manager. Verified against repo examples/messages_stream.py.",
+      "tags": ["sdk", "anthropic", "python", "streaming", "async"],
+      "snippetTags": ["sdk-anthropic"],
+      "language": "python",
+      "body": "import asyncio\n\nfrom anthropic import AsyncAnthropic\n\nclient = AsyncAnthropic()\n\n\nasync def main() -> None:\n    async with client.messages.stream(\n        max_tokens=1024,\n        messages=[\n            {\n                \"role\": \"user\",\n                \"content\": \"Say hello there!\",\n            }\n        ],\n        model=\"claude-sonnet-4-5-20250929\",\n    ) as stream:\n        async for event in stream:\n            if event.type == \"text\":\n                print(event.text, end=\"\", flush=True)\n            elif event.type == \"content_block_stop\":\n                print()\n                print(\"\\ncontent block finished:\", event.content_block)\n\n    # accumulated final message is available after the stream is fully consumed\n    accumulated = await stream.get_final_message()\n    print(\"accumulated message:\", accumulated.to_json())\n\n\nasyncio.run(main())\n"
+    },
+    {
+      "id": "sdk-anthropic-python-tools",
+      "title": "Anthropic Python SDK — tool use",
+      "summary": "Two-turn tool-use flow: model requests tool → you execute → you return tool_result. Verified against repo examples/tools.py.",
+      "tags": ["sdk", "anthropic", "python", "tool-use", "function-calling"],
+      "snippetTags": ["sdk-anthropic"],
+      "language": "python",
+      "body": "from anthropic import Anthropic\nfrom anthropic.types import ToolParam, MessageParam\n\nclient = Anthropic()\n\nuser_message: MessageParam = {\n    \"role\": \"user\",\n    \"content\": \"What is the weather in SF?\",\n}\ntools: list[ToolParam] = [\n    {\n        \"name\": \"get_weather\",\n        \"description\": \"Get the weather for a specific location\",\n        \"input_schema\": {\n            \"type\": \"object\",\n            \"properties\": {\"location\": {\"type\": \"string\"}},\n        },\n    }\n]\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-5-20250929\",\n    max_tokens=1024,\n    messages=[user_message],\n    tools=tools,\n)\n\nassert message.stop_reason == \"tool_use\"\n\ntool = next(c for c in message.content if c.type == \"tool_use\")\nresponse = client.messages.create(\n    model=\"claude-sonnet-4-5-20250929\",\n    max_tokens=1024,\n    messages=[\n        user_message,\n        {\"role\": message.role, \"content\": message.content},\n        {\n            \"role\": \"user\",\n            \"content\": [\n                {\n                    \"type\": \"tool_result\",\n                    \"tool_use_id\": tool.id,\n                    \"content\": [{\"type\": \"text\", \"text\": \"The weather is 73f\"}],\n                }\n            ],\n        },\n    ],\n    tools=tools,\n)\nprint(response.model_dump_json(indent=2))\n"
+    },
+    {
+      "id": "sdk-anthropic-ts-basic",
+      "title": "Anthropic TS SDK — basic messages.create",
+      "summary": "Smallest TS call. Verified against anthropics/anthropic-sdk-typescript README.",
+      "tags": ["sdk", "anthropic", "typescript", "messages"],
+      "snippetTags": ["sdk-anthropic"],
+      "language": "typescript",
+      "body": "import Anthropic from '@anthropic-ai/sdk';\n\nconst client = new Anthropic({\n  apiKey: process.env['ANTHROPIC_API_KEY'],\n});\n\nconst message = await client.messages.create({\n  max_tokens: 1024,\n  messages: [{ role: 'user', content: 'Hello, Claude' }],\n  model: 'claude-opus-4-6',\n});\n\nconsole.log(message.content);\n"
+    },
+    {
+      "id": "sdk-anthropic-ts-stream",
+      "title": "Anthropic TS SDK — streaming",
+      "summary": "Event-based streaming with .on('contentBlock') / .on('message'). Verified against repo examples/streaming.ts.",
+      "tags": ["sdk", "anthropic", "typescript", "streaming"],
+      "snippetTags": ["sdk-anthropic"],
+      "language": "typescript",
+      "body": "import Anthropic from '@anthropic-ai/sdk';\n\nconst client = new Anthropic();\n\nasync function main() {\n  const stream = client.messages\n    .stream({\n      messages: [\n        {\n          role: 'user',\n          content: 'Hey Claude! How can I recursively list all files in a directory in Rust?',\n        },\n      ],\n      model: 'claude-sonnet-4-5-20250929',\n      max_tokens: 1024,\n    })\n    .on('contentBlock', (content) => console.log('contentBlock', content))\n    .on('message', (message) => console.log('message', message));\n\n  for await (const event of stream) {\n    console.log('event', event);\n  }\n\n  const message = await stream.finalMessage();\n  console.log('finalMessage', message);\n}\n\nmain().catch((err) => {\n  console.error(err);\n  process.exit(1);\n});\n"
+    },
+    {
+      "id": "sdk-anthropic-ts-tools",
+      "title": "Anthropic TS SDK — tool use",
+      "summary": "Two-turn tool-use flow in TypeScript. Verified against repo examples/tools.ts.",
+      "tags": ["sdk", "anthropic", "typescript", "tool-use", "function-calling"],
+      "snippetTags": ["sdk-anthropic"],
+      "language": "typescript",
+      "body": "import Anthropic from '@anthropic-ai/sdk';\nimport assert from 'node:assert';\n\nconst client = new Anthropic();\n\nasync function main() {\n  const userMessage: Anthropic.MessageParam = {\n    role: 'user',\n    content: 'What is the weather in SF?',\n  };\n  const tools: Anthropic.Tool[] = [\n    {\n      name: 'get_weather',\n      description: 'Get the weather for a specific location',\n      input_schema: {\n        type: 'object',\n        properties: { location: { type: 'string' } },\n      },\n    },\n  ];\n\n  const message = await client.messages.create({\n    model: 'claude-sonnet-4-5-20250929',\n    max_tokens: 1024,\n    messages: [userMessage],\n    tools,\n  });\n\n  assert(message.stop_reason === 'tool_use');\n\n  const tool = message.content.find(\n    (content): content is Anthropic.ToolUseBlock => content.type === 'tool_use',\n  );\n  assert(tool);\n\n  const result = await client.messages.create({\n    model: 'claude-sonnet-4-5-20250929',\n    max_tokens: 1024,\n    messages: [\n      userMessage,\n      { role: message.role, content: message.content },\n      {\n        role: 'user',\n        content: [\n          {\n            type: 'tool_result',\n            tool_use_id: tool.id,\n            content: 'The weather is 73f',\n          },\n        ],\n      },\n    ],\n    tools,\n  });\n  console.dir(result, { depth: 4 });\n}\n\nmain();\n"
+    },
+    {
+      "id": "code-accpac-fixed-width-parser",
+      "title": "ACCPAC Plus — fixed-width print-to-file parser",
+      "summary": "Python parser for ACCPAC Plus for DOS report files. Configurable column spec; yields one dict per detail row. Starter for the commission-calculator use case.",
+      "tags": ["python", "parser", "accpac", "fixed-width", "legacy", "dos"],
+      "snippetTags": ["code-python"],
+      "language": "python",
+      "body": "\"\"\"Parse an ACCPAC Plus for DOS print-to-file report.\n\nACCPAC's F2-print-to-file dumps a plain-text report file (typically .TXT\nor .PRN) that mirrors the screen layout: page header, column banner,\ndetail rows, page footer, then the next page. Detail rows are fixed-width;\ncolumn positions come from the report definition.\n\nTweak COLUMNS to match your report. Run once with `--dump-first-page` to\nsee where the characters land, then fill in the (start, end) slices.\n\"\"\"\nfrom __future__ import annotations\nfrom dataclasses import dataclass\nfrom decimal import Decimal, InvalidOperation\nimport argparse\nimport sys\nfrom pathlib import Path\n\n\n@dataclass\nclass Column:\n    name: str\n    start: int           # 0-based inclusive\n    end: int             # 0-based exclusive\n    kind: str = \"text\"   # \"text\" | \"decimal\" | \"int\" | \"date_mdy\"\n\n\n# Example layout — replace with the real one for your report.\n# Use `--dump-first-page` to find column positions.\nCOLUMNS = [\n    Column(\"doc_no\",   0,  8,  \"text\"),\n    Column(\"date\",     9,  19, \"date_mdy\"),\n    Column(\"cust_id\",  20, 30, \"text\"),\n    Column(\"rep_code\", 31, 35, \"text\"),\n    Column(\"desc\",     36, 66, \"text\"),\n    Column(\"amount\",   67, 80, \"decimal\"),\n]\n\nPAGE_HEADER_MARKERS = (\"DATE:\", \"PAGE:\", \"REPORT:\")  # lines that mean \"skip\"\nBANNER_MARKERS = (\"DOC NO\", \"CUST ID\", \"AMOUNT\")      # column headers\nFOOTER_MARKERS = (\"TOTAL\", \"GRAND TOTAL\", \"END OF REPORT\")\n\n\ndef coerce(value: str, kind: str):\n    v = value.strip()\n    if not v:\n        return None\n    if kind == \"decimal\":\n        try:\n            return Decimal(v.replace(\",\", \"\").replace(\"$\", \"\"))\n        except InvalidOperation:\n            return None\n    if kind == \"int\":\n        try:\n            return int(v.replace(\",\", \"\"))\n        except ValueError:\n            return None\n    if kind == \"date_mdy\":\n        # ACCPAC DOS typical: MM/DD/YY or MM/DD/YYYY — caller can normalize.\n        return v\n    return v\n\n\ndef is_skippable(line: str) -> bool:\n    stripped = line.strip()\n    if not stripped:\n        return True\n    u = stripped.upper()\n    if any(m in u for m in PAGE_HEADER_MARKERS):\n        return True\n    if any(m in u for m in BANNER_MARKERS):\n        return True\n    if any(m in u for m in FOOTER_MARKERS):\n        return True\n    if stripped.startswith((\"-\", \"=\", \"_\")) and len(set(stripped)) <= 2:\n        return True\n    return False\n\n\ndef parse_row(line: str, columns) -> dict | None:\n    row = {}\n    for col in columns:\n        raw = line[col.start:col.end] if col.end <= len(line) else line[col.start:]\n        row[col.name] = coerce(raw, col.kind)\n    if all(v is None for v in row.values()):\n        return None\n    return row\n\n\ndef parse_file(path: Path, columns=COLUMNS, encoding: str = \"cp437\"):\n    with path.open(\"r\", encoding=encoding, errors=\"replace\") as f:\n        for line in f:\n            line = line.rstrip(\"\\r\\n\")\n            if is_skippable(line):\n                continue\n            row = parse_row(line, columns)\n            if row is not None:\n                yield row\n\n\ndef dump_first_page(path: Path, encoding: str = \"cp437\", max_lines: int = 70):\n    \"\"\"Print a column ruler + the first N lines so you can eyeball the layout.\"\"\"\n    with path.open(\"r\", encoding=encoding, errors=\"replace\") as f:\n        lines = [line.rstrip(\"\\r\\n\") for _, line in zip(range(max_lines), f)]\n    width = max((len(l) for l in lines), default=80)\n    tens = \"\".join(str((i // 10) % 10) if i % 10 == 0 else \" \" for i in range(width))\n    ones = \"\".join(str(i % 10) for i in range(width))\n    print(tens)\n    print(ones)\n    for l in lines:\n        print(l)\n\n\ndef main(argv=None):\n    ap = argparse.ArgumentParser(description=\"Parse an ACCPAC Plus print-to-file report.\")\n    ap.add_argument(\"file\", type=Path)\n    ap.add_argument(\"--encoding\", default=\"cp437\")\n    ap.add_argument(\"--dump-first-page\", action=\"store_true\")\n    args = ap.parse_args(argv)\n\n    if args.dump_first_page:\n        dump_first_page(args.file, args.encoding)\n        return 0\n\n    for row in parse_file(args.file, encoding=args.encoding):\n        print(row)\n    return 0\n\n\nif __name__ == \"__main__\":\n    sys.exit(main())\n"
     }
   ]
 }
