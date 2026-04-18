@@ -324,6 +324,150 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .subpills-nested::-webkit-scrollbar { display: none; }
 .subpills-nested .subpill { font-size: 12.5px; padding: 5px 10px; flex-shrink: 0; min-height: 36px; }
 
+/* Subpill "N new" badge — e.g. Claude → What's new unread count. Hidden via
+   [hidden] until populated; keeps its space when visible. */
+.subpill-badge[hidden] { display: none !important; }
+.subpill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  margin-left: 6px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-claude);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-claude) 40%, transparent),
+              0 2px 8px color-mix(in srgb, var(--accent-claude) 30%, transparent);
+}
+
+/* Learn → Claude → What's new: source filter bar. Lower-weight than subpills,
+   matches the premium dark design language (tinted hairlines, soft glass). */
+.learn-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--text-1) 3%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.learn-filter-bar::-webkit-scrollbar { display: none; }
+.learn-filter {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  min-height: 34px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 0.2s var(--ease-premium),
+              border-color 0.2s var(--ease-premium),
+              background 0.2s var(--ease-premium);
+}
+.learn-filter:hover { color: var(--text-1); }
+.learn-filter.is-active {
+  color: var(--accent-claude-hi);
+  background: color-mix(in srgb, var(--accent-claude-soft) 35%, transparent);
+  border-color: color-mix(in srgb, var(--accent-claude) 30%, var(--border));
+}
+.learn-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  margin-left: 7px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--text-1) 9%, transparent);
+  color: var(--text-3);
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.learn-filter-count:empty { display: none; }
+.learn-filter.is-active .learn-filter-count {
+  background: color-mix(in srgb, var(--accent-claude) 25%, transparent);
+  color: var(--accent-claude-hi);
+}
+
+/* Claude hub — Anthropic Academy course cards, grouped under each subpill.
+   Same premium dark language: Claude-accent chip + glass card + top-edge
+   specular. Click-through opens the course on Anthropic's site. */
+.academy-host { margin-top: 22px; }
+.academy-host:empty { display: none; }
+.academy-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  margin-bottom: 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid color-mix(in srgb, var(--accent-claude) 30%, var(--border));
+  background: color-mix(in srgb, var(--accent-claude-soft) 45%, transparent);
+  color: var(--accent-claude-hi);
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.academy-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+@media (min-width: 720px)  { .academy-grid { grid-template-columns: 1fr 1fr; gap: 14px; } }
+@media (min-width: 1100px) { .academy-grid { grid-template-columns: 1fr 1fr 1fr; } }
+.academy-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 16px 14px;
+  border-left: 2px solid color-mix(in srgb, var(--accent-claude) 50%, transparent);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s var(--ease-premium),
+              border-color 0.25s var(--ease-premium),
+              background 0.25s var(--ease-premium);
+}
+.academy-card:hover {
+  transform: translateY(-1px);
+  border-left-color: color-mix(in srgb, var(--accent-claude) 80%, transparent);
+  background: color-mix(in srgb, var(--accent-claude-soft) 10%, transparent);
+}
+.academy-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-1);
+}
+.academy-card-summary {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.academy-card-cta {
+  margin-top: auto;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-claude-hi);
+  letter-spacing: -0.005em;
+}
+
 /* Section accents */
 [data-section="learn"]      { --sec: var(--accent-claude); }
 [data-section="comply365"]  { --sec: var(--accent-365); }
@@ -367,6 +511,14 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .card[data-sent="critical"]  { --pill-col: #f43f5e; }
 .card[data-sent="resolved"]  { --pill-col: #34d399; }
 .card[data-sent="info"]      { --pill-col: #60a5fa; }
+
+/* Claude hub → What's new: override card border + pill colors by source bucket
+   instead of sentiment. Sentiment doesn't read on release/changelog cards. */
+[data-cards="claude-whats-new"] .card[data-learn-bucket="code"]    { --pill-col: #34d399; }
+[data-cards="claude-whats-new"] .card[data-learn-bucket="api"]     { --pill-col: #ff7a3d; }
+[data-cards="claude-whats-new"] .card[data-learn-bucket="mcp"]     { --pill-col: #a78bfa; }
+[data-cards="claude-whats-new"] .card[data-learn-bucket="videos"]  { --pill-col: #f43f5e; }
+[data-cards="claude-whats-new"] .card[data-learn-bucket="academy"] { --pill-col: #60a5fa; }
 .card:hover {
   border-left-color: var(--pill-col);
   transform: translateY(-2px);
@@ -417,6 +569,281 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .card-pill[data-pill="positive"]  { background: rgba(52,211,153,0.18); color: #34d399; }
 .card-pill[data-pill="warning"]   { background: rgba(251,191,36,0.18); color: #fbbf24; }
 .card-pill[data-pill="critical"]  { background: rgba(244,63,94,0.22);  color: #f43f5e; }
+.card-pill[data-pill="code"]      { background: rgba(52,211,153,0.18); color: #34d399; }
+.card-pill[data-pill="api"]       { background: rgba(255,122,61,0.22); color: #ff9d6b; }
+.card-pill[data-pill="mcp"]       { background: rgba(167,139,250,0.22); color: #c4b5fd; }
+.card-pill[data-pill="videos"]    { background: rgba(244,63,94,0.22);  color: #fb7185; }
+.card-pill[data-pill="academy"]   { background: rgba(96,165,250,0.22); color: #93c5fd; }
+
+/* Pin button on What's new cards — hairline outline when idle, Claude-accent
+   fill when pinned. Sits in the top-right corner, above the normal card flow
+   so it doesn't shift layout. preventDefault + stopPropagation in JS keeps the
+   card anchor navigation separate from the pin toggle. */
+.card-pin {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bg-1) 60%, transparent);
+  color: var(--text-3);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 0.2s var(--ease-premium),
+              border-color 0.2s var(--ease-premium),
+              background 0.2s var(--ease-premium),
+              transform 0.2s var(--ease-premium);
+}
+.card-pin:hover {
+  color: var(--accent-claude-hi);
+  border-color: color-mix(in srgb, var(--accent-claude) 40%, var(--border));
+  transform: translateY(-1px);
+}
+.card-pin[data-pinned="1"] {
+  color: var(--accent-claude-hi);
+  border-color: color-mix(in srgb, var(--accent-claude) 50%, transparent);
+  background: color-mix(in srgb, var(--accent-claude-soft) 45%, transparent);
+}
+/* Host card marker when pinned — subtle top-edge inner glow */
+[data-cards="claude-whats-new"] .card[data-pinned="1"] {
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--accent-claude) 30%, transparent);
+}
+/* Reserve room on the right edge so the pin button doesn't collide with
+   the card-pill (bucket label) or the title. Applies only to What's new. */
+[data-cards="claude-whats-new"] .card {
+  padding-right: 48px;
+}
+
+/* ===== Snippets — Phase 2 Claude hub snippet rows ===== */
+.snippets-host { margin-top: 22px; }
+.snippets-host:empty { display: none; }
+.snippet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.snippet-row {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--text-1) 2%, transparent);
+  overflow: hidden;
+  transition: border-color 0.25s var(--ease-premium),
+              background 0.25s var(--ease-premium);
+}
+.snippet-row[open] {
+  border-color: color-mix(in srgb, var(--accent-claude) 30%, var(--border-strong));
+}
+.snippet-summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.snippet-summary::-webkit-details-marker { display: none; }
+.snippet-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.snippet-lang {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--text-1) 5%, transparent);
+  color: var(--text-3);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.snippet-title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--text-1);
+}
+.snippet-lede {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.snippet-body {
+  padding: 0 14px 12px;
+  border-top: 1px dashed var(--border);
+}
+.snippet-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 0 6px;
+}
+.snippet-copy {
+  padding: 6px 12px;
+  min-height: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--text-1) 4%, transparent);
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 0.2s var(--ease-premium),
+              border-color 0.2s var(--ease-premium),
+              background 0.2s var(--ease-premium);
+}
+.snippet-copy:hover {
+  color: var(--accent-claude-hi);
+  border-color: color-mix(in srgb, var(--accent-claude) 40%, var(--border-strong));
+}
+.snippet-copy[data-state="ok"] {
+  color: #34d399;
+  border-color: color-mix(in srgb, #34d399 40%, var(--border-strong));
+  background: color-mix(in srgb, #34d399 10%, transparent);
+}
+.snippet-copy[data-state="err"] {
+  color: #f43f5e;
+  border-color: color-mix(in srgb, #f43f5e 40%, var(--border-strong));
+  background: color-mix(in srgb, #f43f5e 10%, transparent);
+}
+.snippet-pre {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: #05070b;
+  overflow-x: auto;
+  max-height: 420px;
+}
+.snippet-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #d1d5db;
+  white-space: pre;
+  tab-size: 2;
+}
+
+/* ===== Video modal — YouTube embed, in-app ===== */
+/* Intercepts clicks on YouTube cards so users stay inside aiStacked
+   instead of being pushed into Safari/YouTube app. */
+.video-modal[hidden] { display: none !important; }
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.video-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, #000 72%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .video-modal-backdrop { animation: vmFade 0.25s var(--ease-premium) both; }
+  .video-modal-frame    { animation: vmLift 0.32s var(--ease-premium) both; }
+}
+@keyframes vmFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes vmLift { from { opacity: 0; transform: translateY(14px) scale(0.98); } to { opacity: 1; transform: none; } }
+.video-modal-frame {
+  position: relative;
+  width: min(960px, 100%);
+  max-height: calc(100vh - 32px);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #101218 0%, #0a0c10 100%);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset,
+              0 36px 80px -24px rgba(0,0,0,0.9);
+  overflow: hidden;
+}
+.video-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px 10px 14px;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--text-1) 3%, transparent);
+}
+.video-modal-title {
+  flex: 1;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--text-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.video-modal-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.video-modal-expand,
+.video-modal-close,
+.video-modal-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-2);
+  cursor: pointer;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: color 0.2s var(--ease-premium),
+              border-color 0.2s var(--ease-premium),
+              background 0.2s var(--ease-premium);
+}
+.video-modal-expand:hover,
+.video-modal-close:hover,
+.video-modal-open:hover {
+  color: var(--text-1);
+  border-color: var(--border-strong);
+  background: color-mix(in srgb, var(--text-1) 5%, transparent);
+}
+.video-modal-body {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.video-modal-body:fullscreen,
+.video-modal-frame:fullscreen {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+.video-modal-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Lock body scroll while modal is open. Class toggled by JS. */
+body.modal-open { overflow: hidden; }
 .card-pill[data-pill="resolved"]  { background: rgba(52,211,153,0.18); color: #34d399; }
 .card-pill[data-pill="info"]      { background: rgba(59,130,246,0.16); color: #60a5fa; }
 :root[data-theme="light"] .card-pill[data-pill="positive"]  { background: rgba(16,185,129,0.14); color: #059669; }
@@ -1855,6 +2282,12 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   color: #f43f5e;
   border-color: color-mix(in srgb, #f43f5e 40%, var(--border-strong));
   background: color-mix(in srgb, #f43f5e 8%, transparent);
+}
+.project-delete[data-armed="1"] {
+  color: #fff;
+  border-color: color-mix(in srgb, #f43f5e 70%, transparent);
+  background: color-mix(in srgb, #f43f5e 55%, transparent);
+  font-weight: 600;
 }
 
 /* ===== Version pill (footer) — visible proof of the current build ===== */

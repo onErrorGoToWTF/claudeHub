@@ -3,7 +3,10 @@
 
   const DATA_URL = "data/latest.json?v=" + Date.now();
   const TUTORIALS_365_URL = "data/365/tutorials.json?v=" + Date.now();
-  const TOOLS_URL = "data/learn/tools.json?v=" + Date.now();
+  const TOOLS_URL    = "data/learn/tools.json?v=" + Date.now();
+  const ACADEMY_URL  = "data/learn/academy_courses.json?v=" + Date.now();
+  const HUB_MAP_URL  = "data/learn/claude_hub_map.json?v=" + Date.now();
+  const SNIPPETS_URL = "data/learn/snippets.json?v=" + Date.now();
   const VERSION_URL = "data/version.json?v=" + Date.now();
   const THEME_KEY = "cdih-theme";
 
@@ -265,6 +268,12 @@
       document.querySelectorAll('.pane[data-pane^="claude-"]').forEach((pane) => {
         pane.hidden = pane.dataset.pane !== `claude-${kind}`;
       });
+      // Mark What's new as seen the moment it's opened — count resets on
+      // next render. Any items that arrive AFTER this moment will re-light it.
+      if (kind === "whats-new") {
+        setClaudeWhatsNewLastSeen(new Date().toISOString());
+        updateClaudeWhatsNewBadge();
+      }
     });
   });
 
@@ -407,7 +416,7 @@
 
   const CARD_CONTAINERS = [
     "365-tutorials", "365-resources-videos", "365-resources-official", "365-news",
-    "news",
+    "news", "claude-whats-new",
   ];
 
   // ---------- Scroll-activation IntersectionObserver (universal) ----------
@@ -520,6 +529,405 @@
 
   // NEWS: split by _kind. Videos first (tpl-video), then articles (tpl-card).
   // Each group sorted by date desc internally. Never interleave.
+  // LEARN → Claude → What's new: unified release feed from Claude Code + MCP repos.
+  let claudeLearningItems = [];
+  let claudeLearningFilter = "all";
+
+  // Pinned items — URLs the user wants to keep regardless of feed churn.
+  // Pins are SCRAPE-RESISTANT: each pin stores the full item snapshot
+  // (title, url, source, published, summary) so the card can be rerendered
+  // even if the scraper later cycles the item off the live feed.
+  // Stored as { "<url>": { pinnedAt, ...itemSnapshot } }.
+  const PINS_KEY = "clhub.v1.learningPins";
+  function getPins() {
+    try {
+      const raw = localStorage.getItem(PINS_KEY);
+      if (!raw) return {};
+      const obj = JSON.parse(raw);
+      return obj && typeof obj === "object" ? obj : {};
+    } catch { return {}; }
+  }
+  function putPins(obj) {
+    try { localStorage.setItem(PINS_KEY, JSON.stringify(obj)); } catch {}
+  }
+  function togglePin(item) {
+    const url = typeof item === "string" ? item : item && item.url;
+    if (!url) return;
+    const pins = getPins();
+    if (pins[url]) {
+      delete pins[url];
+    } else {
+      // Prefer the fresh item from the feed if given; fall back to whatever
+      // was already cached under that URL (should rarely happen).
+      const src = (typeof item === "object" && item) || {};
+      pins[url] = {
+        pinnedAt: new Date().toISOString(),
+        title:     src.title     || "",
+        url,
+        source:    src.source    || "",
+        published: src.published || null,
+        summary:   src.summary   || "",
+      };
+    }
+    putPins(pins);
+  }
+  function isPinned(url) { return !!getPins()[url]; }
+  // Merge live feed + pinned snapshots so pinned items survive scrape churn.
+  // A pinned URL already present in the feed wins (fresh metadata); one that
+  // dropped off resurfaces from the pin snapshot.
+  function resurrectPinnedItems(liveItems) {
+    const pins = getPins();
+    const live = new Map(liveItems.map((it) => [it.url, it]));
+    for (const [url, snap] of Object.entries(pins)) {
+      if (!live.has(url)) {
+        const { pinnedAt, ...rest } = snap;
+        if (rest.url) live.set(url, rest);
+      }
+    }
+    return Array.from(live.values());
+  }
+
+  // Unread badge — tracks last time the user viewed What's new. First visit
+  // silently seeds "now" so the badge doesn't light up with 70 items on a
+  // brand-new device. Subsequent visits count items newer than that stamp.
+  const CLAUDE_WHATS_NEW_KEY = "clhub.v1.claudeWhatsNewLastSeen";
+  function getClaudeWhatsNewLastSeen() {
+    try {
+      const raw = localStorage.getItem(CLAUDE_WHATS_NEW_KEY);
+      if (!raw) return null;
+      const t = Date.parse(raw);
+      return isNaN(t) ? null : t;
+    } catch { return null; }
+  }
+  function setClaudeWhatsNewLastSeen(iso) {
+    try { localStorage.setItem(CLAUDE_WHATS_NEW_KEY, iso); } catch {}
+  }
+  function updateClaudeWhatsNewBadge() {
+    const badge = document.querySelector('[data-subpill-badge="whats-new"]');
+    if (!badge) return;
+    let lastSeen = getClaudeWhatsNewLastSeen();
+    if (lastSeen === null) {
+      // First visit on this device — seed silently, no badge.
+      setClaudeWhatsNewLastSeen(new Date().toISOString());
+      badge.hidden = true;
+      badge.textContent = "";
+      return;
+    }
+    const count = claudeLearningItems.reduce((n, it) => {
+      const t = it.published ? Date.parse(it.published) : NaN;
+      return !isNaN(t) && t > lastSeen ? n + 1 : n;
+    }, 0);
+    if (count > 0) {
+      badge.hidden = false;
+      badge.textContent = String(count);
+      badge.setAttribute("aria-label", `${count} new since last visit`);
+    } else {
+      badge.hidden = true;
+      badge.textContent = "";
+    }
+  }
+
+  function sourceBucket(source) {
+    const s = source || "";
+    if (s === "Claude Code") return "code";
+    if (s === "Claude API Release Notes") return "api";
+    if (s.startsWith("MCP")) return "mcp";
+    if (s === "Anthropic Academy") return "academy";
+    if (s.startsWith("YouTube")) return "videos";
+    return "other";
+  }
+
+  function renderClaudeLearning(items) {
+    claudeLearningItems = Array.isArray(items) ? items : [];
+    paintClaudeLearning();
+    updateClaudeWhatsNewBadge();
+    updateLearnFilterCounts();
+  }
+
+  function updateLearnFilterCounts() {
+    const merged = resurrectPinnedItems(claudeLearningItems);
+    const counts = { all: merged.length, code: 0, api: 0, mcp: 0, videos: 0, academy: 0 };
+    for (const it of merged) {
+      const b = sourceBucket(it.source);
+      if (counts[b] !== undefined) counts[b]++;
+    }
+    document.querySelectorAll("[data-filter-count]").forEach((el) => {
+      const key = el.dataset.filterCount;
+      const n = counts[key];
+      el.textContent = n > 0 ? String(n) : "";
+    });
+  }
+
+  function paintClaudeLearning() {
+    const container = document.querySelector('[data-cards="claude-whats-new"]');
+    if (!container) return;
+    container.innerHTML = "";
+    const filter = claudeLearningFilter;
+    const merged = resurrectPinnedItems(claudeLearningItems);
+    const filtered = filter === "all"
+      ? merged
+      : merged.filter((it) => sourceBucket(it.source) === filter);
+    if (!filtered.length) {
+      const empty = document.createElement("div");
+      empty.className = "empty";
+      empty.textContent = filter === "all"
+        ? "No items yet — check back soon."
+        : "No items in this category yet.";
+      container.appendChild(empty);
+      return;
+    }
+    // Sort pinned first (within the filtered set), then by date desc. Pins
+    // float to the top of whatever view the user has — "All", any bucket,
+    // doesn't matter. Non-pinned fall back to date-desc.
+    const pins = getPins();
+    const sorted = filtered.slice().sort((a, b) => {
+      const pa = pins[a.url] ? 1 : 0;
+      const pb = pins[b.url] ? 1 : 0;
+      if (pa !== pb) return pb - pa;
+      const ta = a.published ? Date.parse(a.published) : 0;
+      const tb = b.published ? Date.parse(b.published) : 0;
+      return tb - ta;
+    });
+    const frag = document.createDocumentFragment();
+    const BUCKET_LABEL = { code: "Claude Code", api: "Claude API", mcp: "MCP", videos: "Video", academy: "Academy" };
+    sorted.slice(0, 24).forEach((it, idx) => {
+      const node = renderCard(it, false, idx);
+      const bucket = sourceBucket(it.source);
+      node.dataset.learnBucket = bucket;
+      if (pins[it.url]) node.dataset.pinned = "1";
+      const pill = node.querySelector(".card-pill");
+      if (pill && BUCKET_LABEL[bucket]) {
+        pill.textContent = BUCKET_LABEL[bucket];
+        pill.dataset.pill = bucket;
+      }
+      attachPinButton(node, it.url);
+      // For YouTube cards, open in-app modal instead of navigating out.
+      if (bucket === "videos") {
+        const vid = extractYouTubeId(it.url);
+        if (vid) {
+          node.addEventListener("click", (e) => {
+            // Let pin taps through; don't hijack them.
+            if (e.target.closest(".card-pin")) return;
+            e.preventDefault();
+            openVideoModal(vid, it.title, it.url);
+          });
+        }
+      }
+      registerReveal(node, idx);
+      frag.appendChild(node);
+    });
+    container.appendChild(frag);
+  }
+
+  // YouTube in-app modal — keeps users from being pushed out of the web app
+  // when they tap a video card. Opens the official youtube.com/embed iframe
+  // so there's no third-party JS dependency and no cookie/identity handoff.
+  function extractYouTubeId(url) {
+    try {
+      const u = new URL(url);
+      if (u.hostname === "youtu.be") return u.pathname.slice(1).split("/")[0] || null;
+      if (/(^|\.)youtube\.com$/.test(u.hostname)) {
+        if (u.pathname === "/watch") return u.searchParams.get("v");
+        const parts = u.pathname.split("/").filter(Boolean);
+        if (parts[0] === "shorts" || parts[0] === "embed") return parts[1] || null;
+      }
+    } catch {}
+    return null;
+  }
+  function openVideoModal(videoId, title, externalUrl) {
+    const modal = document.getElementById("video-modal");
+    if (!modal) return;
+    const iframe = modal.querySelector(".video-modal-iframe");
+    const titleEl = modal.querySelector(".video-modal-title");
+    const openLink = modal.querySelector(".video-modal-open");
+    iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+    if (titleEl) titleEl.textContent = title || "";
+    if (openLink) openLink.href = externalUrl || `https://www.youtube.com/watch?v=${videoId}`;
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function closeVideoModal() {
+    const modal = document.getElementById("video-modal");
+    if (!modal || modal.hidden) return;
+    const iframe = modal.querySelector(".video-modal-iframe");
+    iframe.src = "";
+    modal.hidden = true;
+    document.body.classList.remove("modal-open");
+    if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
+  }
+  document.querySelectorAll("#video-modal [data-close]").forEach((el) => {
+    el.addEventListener("click", (e) => { e.preventDefault(); closeVideoModal(); });
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeVideoModal();
+  });
+  const expandBtn = document.querySelector("#video-modal .video-modal-expand");
+  if (expandBtn) {
+    expandBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const frame = document.querySelector("#video-modal .video-modal-frame");
+      if (!frame) return;
+      if (document.fullscreenElement) {
+        document.exitFullscreen?.();
+      } else {
+        (frame.requestFullscreen || frame.webkitRequestFullscreen)?.call(frame);
+      }
+    });
+  }
+
+  // SVG pin glyphs — outline when unpinned, filled when pinned.
+  const PIN_SVG_OUTLINE = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><path d="M12 12v8"/></svg>';
+  const PIN_SVG_FILLED  = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><rect x="11.2" y="12" width="1.6" height="8" rx="0.6"/></svg>';
+
+  function attachPinButton(node, url) {
+    if (!url || node.querySelector(".card-pin")) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "card-pin";
+    const pinned = isPinned(url);
+    btn.dataset.pinned = pinned ? "1" : "";
+    btn.innerHTML = pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE;
+    btn.setAttribute("aria-label", pinned ? "Unpin" : "Pin");
+    btn.setAttribute("aria-pressed", pinned ? "true" : "false");
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      // Pass the live item so its full snapshot is captured. Look it up by
+      // URL in claudeLearningItems (or in the existing pin, as a fallback).
+      const live = claudeLearningItems.find((it) => it.url === url);
+      togglePin(live || url);
+      paintClaudeLearning();
+      updateLearnFilterCounts();
+    });
+    node.appendChild(btn);
+  }
+
+  // Claude hub — render snippet rows inside each subpill pane (Phase 2 M2.1+).
+  // Source: data/learn/snippets.json (authored) + claude_hub_map.json's
+  // snippetTagsByBucket (which tags belong under which pane).
+  async function loadSnippets() {
+    try {
+      const [snipRes, mapRes] = await Promise.all([
+        fetch(SNIPPETS_URL, { cache: "no-cache" }),
+        fetch(HUB_MAP_URL,  { cache: "no-cache" }),
+      ]);
+      if (!snipRes.ok || !mapRes.ok) return;
+      const snipPayload = await snipRes.json();
+      const mapPayload  = await mapRes.json();
+      const snippets = Array.isArray(snipPayload.snippets) ? snipPayload.snippets : [];
+      const tagsByBucket = (mapPayload && mapPayload.snippetTagsByBucket) || {};
+      document.querySelectorAll(".snippets-host[data-snippet-bucket]").forEach((host) => {
+        const bucket = host.dataset.snippetBucket;
+        const allowed = new Set(tagsByBucket[bucket] || []);
+        const matching = snippets.filter((s) =>
+          (s.snippetTags || []).some((t) => allowed.has(t))
+        );
+        if (matching.length === 0) { host.innerHTML = ""; return; }
+        const rows = matching.map((s) => renderSnippetRow(s)).join("");
+        host.innerHTML = `
+          <div class="academy-eyebrow">Snippets · ${matching.length}</div>
+          <div class="snippet-list">${rows}</div>
+        `;
+      });
+      // Wire copy buttons once they're in the DOM.
+      document.querySelectorAll(".snippet-copy").forEach((btn) => {
+        if (btn.dataset.wired === "1") return;
+        btn.dataset.wired = "1";
+        btn.addEventListener("click", async (e) => {
+          e.preventDefault();
+          const row = btn.closest(".snippet-row");
+          const code = row && row.querySelector(".snippet-code");
+          if (!code) return;
+          try {
+            await navigator.clipboard.writeText(code.textContent || "");
+            btn.dataset.state = "ok";
+            btn.textContent = "Copied";
+            setTimeout(() => { btn.dataset.state = ""; btn.textContent = "Copy"; }, 1800);
+          } catch {
+            btn.dataset.state = "err";
+            btn.textContent = "Copy failed";
+            setTimeout(() => { btn.dataset.state = ""; btn.textContent = "Copy"; }, 1800);
+          }
+        });
+      });
+    } catch {}
+  }
+
+  function renderSnippetRow(s) {
+    const lang = (s.language || "text").toLowerCase();
+    return `
+      <details class="snippet-row glass" data-lang="${escapeHtml(lang)}">
+        <summary class="snippet-summary">
+          <div class="snippet-head">
+            <div class="snippet-lang">${escapeHtml(lang)}</div>
+            <div class="snippet-title">${escapeHtml(s.title || s.id)}</div>
+          </div>
+          <div class="snippet-lede">${escapeHtml(s.summary || "")}</div>
+        </summary>
+        <div class="snippet-body">
+          <div class="snippet-actions">
+            <button type="button" class="snippet-copy">Copy</button>
+          </div>
+          <pre class="snippet-pre"><code class="snippet-code">${escapeHtml(s.body || "")}</code></pre>
+        </div>
+      </details>
+    `;
+  }
+
+  // Claude hub — render Anthropic Academy course grids in each subpill pane.
+  // Two files: academy_courses.json (full metadata from the scraper) and
+  // claude_hub_map.json (hand-curated slug → bucket mapping). Rendered once
+  // on load; no cache-bust needed within a session.
+  async function loadAcademyHub() {
+    try {
+      const [coursesRes, mapRes] = await Promise.all([
+        fetch(ACADEMY_URL, { cache: "no-cache" }),
+        fetch(HUB_MAP_URL, { cache: "no-cache" }),
+      ]);
+      if (!coursesRes.ok || !mapRes.ok) return;
+      const coursesPayload = await coursesRes.json();
+      const mapPayload = await mapRes.json();
+      const bySlug = Object.fromEntries(
+        (coursesPayload.courses || []).map((c) => [c.slug, c])
+      );
+      const buckets = mapPayload.buckets || {};
+      for (const [bucket, slugs] of Object.entries(buckets)) {
+        const host = document.querySelector(`.academy-host[data-academy-bucket="${bucket}"]`);
+        if (!host) continue;
+        const courses = (slugs || []).map((s) => bySlug[s]).filter(Boolean);
+        if (courses.length === 0) {
+          host.innerHTML = "";
+          continue;
+        }
+        const cards = courses.map((c) => `
+          <a class="academy-card glass" href="${c.url}" target="_blank" rel="noopener">
+            <div class="academy-card-title">${escapeHtml(c.title)}</div>
+            <div class="academy-card-summary">${escapeHtml(c.summary || "")}</div>
+            <div class="academy-card-cta">Start course →</div>
+          </a>
+        `).join("");
+        host.innerHTML = `
+          <div class="academy-eyebrow">Anthropic Academy · ${courses.length} course${courses.length === 1 ? "" : "s"}</div>
+          <div class="academy-grid">${cards}</div>
+        `;
+      }
+    } catch {}
+  }
+
+  document.querySelectorAll(".learn-filter[data-learn-filter]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const key = btn.dataset.learnFilter || "all";
+      if (key === claudeLearningFilter) return;
+      claudeLearningFilter = key;
+      document.querySelectorAll(".learn-filter[data-learn-filter]").forEach((b) => {
+        const active = b === btn;
+        b.classList.toggle("is-active", active);
+        b.setAttribute("aria-selected", active ? "true" : "false");
+      });
+      paintClaudeLearning();
+    });
+  });
+
   function renderNews(items) {
     const container = document.querySelector('[data-cards="news"]');
     if (!container) return;
@@ -888,12 +1296,29 @@
       `;
       host.appendChild(card);
     });
+    // Two-tap confirm: first tap arms the button, second tap deletes.
+    // Avoids confirm(), which iOS standalone PWAs silently suppress.
     host.querySelectorAll(".project-delete").forEach((btn) => {
-      btn.addEventListener("click", () => {
+      let armTimer = null;
+      const disarm = () => {
+        btn.dataset.armed = "";
+        btn.textContent = "Delete";
+        clearTimeout(armTimer);
+        armTimer = null;
+      };
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
         const id = btn.dataset.projectId;
         if (!id) return;
-        if (!confirm("Delete this project? This can't be undone.")) return;
-        deleteProject(id);
+        if (btn.dataset.armed === "1") {
+          disarm();
+          deleteProject(id);
+          return;
+        }
+        btn.dataset.armed = "1";
+        btn.textContent = "Tap again to delete";
+        clearTimeout(armTimer);
+        armTimer = setTimeout(disarm, 3000);
       });
     });
   }
@@ -1190,6 +1615,7 @@
       // NEWS & MEDIA tab: status strip + mixed grid (videos first, then articles).
       renderStatusStrip(s.status);
       renderNews(s.news || []);
+      renderClaudeLearning(s.claude_learning || []);
 
       setUpdated("news", data.generated_at);
       setUpdated("365",  data.generated_at);
@@ -1210,6 +1636,8 @@
 
   load();
   loadTools();
+  loadAcademyHub();
+  loadSnippets();
   renderTimeline();
   renderCompare();
   renderIndex();

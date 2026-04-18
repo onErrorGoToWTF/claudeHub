@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "note": "Snippets library. M2.1 = CLAUDE.md patterns (Priority 1). Extended in M2.2+.",
+  "snippets": [
+    {
+      "id": "claudemd-minimal",
+      "title": "Minimal CLAUDE.md for personal repo",
+      "summary": "Smallest viable CLAUDE.md with project overview and build commands for solo developers.",
+      "tags": ["claude-md", "setup", "personal", "minimal"],
+      "snippetTags": ["claude-md"],
+      "language": "markdown",
+      "body": "# Project Overview\n\nBuild and develop with the following commands.\n\n## Building\n\n```bash\nmake build\n```\n\n## Testing\n\n```bash\nmake test\n```\n\n## Development\n\n- Use 2-space indentation\n- Commit with conventional prefixes: `feat:`, `fix:`, `chore:`\n- Run tests before pushing"
+    },
+    {
+      "id": "claudemd-team-template",
+      "title": "CLAUDE.md template for team projects",
+      "summary": "Fuller CLAUDE.md with Stack, Layout, Running locally, Conventions, Gotchas for shared repos.",
+      "tags": ["claude-md", "team", "template", "structure"],
+      "snippetTags": ["claude-md"],
+      "language": "markdown",
+      "body": "# Project Name\n\nBrief description of what this project does.\n\n## Stack\n\n- **Language**: TypeScript\n- **Framework**: React\n- **Package Manager**: npm\n- **Database**: PostgreSQL\n\n## Layout\n\n```\nsrc/\n  components/\n  pages/\n  utils/\ntests/\nREADME.md\npackage.json\n```\n\n## Running locally\n\n```bash\nnpm install\nnpm run dev\n```\n\n## Conventions\n\n- Components use PascalCase filenames\n- Test files end with `.test.ts`\n- Run `npm test` before committing\n- Use 2-space indentation\n\n## Gotchas\n\n- PostgreSQL must be running locally\n- Environment variables in `.env.local` are gitignored"
+    },
+    {
+      "id": "slash-command-test-suite",
+      "title": "Custom slash command for test suite",
+      "summary": "Example .claude/commands/runtests.md that runs the test suite with optional arguments.",
+      "tags": ["slash-command", "testing", "automation"],
+      "snippetTags": ["slash-command"],
+      "language": "markdown",
+      "body": "---\ndescription: Run the test suite with optional filters.\nargument-hint: \"[pattern] [--watch]\"\n---\n\nRun the project's tests. Arguments the user passed are in $ARGUMENTS.\n\n- No args: run all tests with `npm test`.\n- Pattern (first arg, not starting with `--`): forward as `npm test -- --testNamePattern=<pattern>`.\n- Flag `--watch` anywhere: append `--watch` to the command.\n\nAfter the run, summarize failures and suggest one focused follow-up command."
+    },
+    {
+      "id": "pretooluse-hook-bash-guardrail",
+      "title": "PreToolUse hook blocking destructive Bash patterns",
+      "summary": "Hook entry in .claude/settings.json that blocks rm -rf and similar commands before they run.",
+      "tags": ["hook", "bash", "safety", "guardrail"],
+      "snippetTags": ["hook"],
+      "language": "jsonc",
+      "body": "{\n  \"hooks\": {\n    \"PreToolUse\": [\n      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"bash -c 'INPUT=$(cat); CMD=$(echo \\\"$INPUT\\\" | jq -r \\\".tool_input.command\\\"); if echo \\\"$CMD\\\" | grep -qE \\\"rm -rf|rm -f /|: > /|truncate -s 0\\\"; then echo \\\"Blocked: destructive command\\\" >&2; exit 2; fi'\"\n          }\n        ]\n      }\n    ]\n  }\n}\n"
+    },
+    {
+      "id": "output-style-terse-review",
+      "title": "Output style — terse code review",
+      "summary": "Custom .claude/output-styles file that switches Claude to concise code-review voice.",
+      "tags": ["output-style", "code-review", "terse"],
+      "snippetTags": ["output-style"],
+      "language": "markdown",
+      "body": "---\nname: Code Review\ndescription: Terse code review — concise feedback only.\n---\n\nYou are a concise code reviewer. For each diff or file reviewed, analyze:\n\n1. Logic errors — bugs, edge cases, off-by-one.\n2. Performance — unnecessary loops, N+1 queries, hot-path allocations.\n3. Testing gaps — uncovered branches, missing tests.\n4. Style violations — naming, structure, pattern mismatches with the rest of the repo.\n\nRespond with 1-3 bullet points per issue. No praise, no lengthy explanations. Output: findings only, one short section per file."
+    },
+    {
+      "id": "mcp-local-stdio-config",
+      "title": "Local stdio MCP server in .mcp.json",
+      "summary": "Minimal .mcp.json at the repo root registering one stdio MCP server for the whole team.",
+      "tags": ["mcp", "config", "stdio"],
+      "snippetTags": ["mcp-config"],
+      "language": "json",
+      "body": "{\n  \"mcpServers\": {\n    \"my-local-tool\": {\n      \"type\": \"stdio\",\n      \"command\": \"node\",\n      \"args\": [\"./mcp-server.js\"],\n      \"env\": {\n        \"LOG_LEVEL\": \"info\"\n      }\n    }\n  }\n}\n"
+    },
+    {
+      "id": "skill-minimal-task",
+      "title": "Minimal SKILL.md — basic task",
+      "summary": "Smallest viable skill file with frontmatter and a single clear directive.",
+      "tags": ["skill", "template", "minimal", "frontmatter"],
+      "snippetTags": ["skill-yaml"],
+      "language": "markdown",
+      "body": "---\nname: commit-work\ndescription: Stage and commit current changes\n---\n\nStage all changed files and create a descriptive commit:\n\n1. Run `git status` to see what changed.\n2. Stage files with `git add`.\n3. Write a commit message following conventional format.\n4. Commit with `git commit`."
+    },
+    {
+      "id": "skill-allowed-tools",
+      "title": "Skill with allowed-tools restriction",
+      "summary": "SKILL.md that grants permission to a narrow tool set and blocks model auto-invocation.",
+      "tags": ["skill", "permissions", "tools", "security"],
+      "snippetTags": ["skill-yaml"],
+      "language": "markdown",
+      "body": "---\nname: deploy-release\ndescription: Deploy the application to production\ndisable-model-invocation: true\nallowed-tools: Bash(git tag *) Bash(npm run build) Bash(npm run deploy)\n---\n\nDeploy the release to production:\n\n1. Verify tests pass.\n2. Tag the commit with the version.\n3. Build the application.\n4. Deploy to the production endpoint.\n5. Verify deployment health."
+    },
+    {
+      "id": "skill-bundled-resources",
+      "title": "Skill referencing bundled files",
+      "summary": "SKILL.md linking to templates, examples, and scripts bundled inside the skill folder.",
+      "tags": ["skill", "resources", "templates", "reference"],
+      "snippetTags": ["skill-yaml"],
+      "language": "markdown",
+      "body": "---\nname: generate-docs\ndescription: Generate API documentation from code comments\nallowed-tools: Bash(python scripts/docgen.py *)\n---\n\nGenerate formatted API documentation:\n\n1. Review [template.md](template.md) for required sections.\n2. Check [examples/](examples/) for output format.\n3. Run `python ${CLAUDE_SKILL_DIR}/scripts/docgen.py`.\n4. Review generated output in `docs/api/`.\n\nSee [reference.md](reference.md) for detailed guidelines."
+    },
+    {
+      "id": "skill-prepare-release",
+      "title": "Skill for prepare-release workflow",
+      "summary": "Realistic SKILL.md for a multi-step release process with argument-hint and allowed-tools.",
+      "tags": ["skill", "workflow", "release"],
+      "snippetTags": ["skill-yaml"],
+      "language": "markdown",
+      "body": "---\nname: prepare-release\ndescription: Prepare a release — version bump, changelog, tag\ndisable-model-invocation: true\nargument-hint: \"[version]\"\nallowed-tools: Bash(git *) Bash(npm version *)\n---\n\nPrepare version $ARGUMENTS for release:\n\n1. Update version in package.json and CHANGELOG.md.\n2. Run the test suite and lint.\n3. Commit with \"chore(release): v$ARGUMENTS\".\n4. Tag with `git tag v$ARGUMENTS`.\n5. Verify no uncommitted changes remain.\n6. Display release notes for review."
+    },
+    {
+      "id": "mcp-claude-desktop-stdio",
+      "title": "Claude Desktop config — stdio server",
+      "summary": "Minimal claude_desktop_config.json with one stdio server. Path: ~/Library/Application Support/Claude (macOS) or %APPDATA%/Claude (Windows).",
+      "tags": ["mcp", "configuration", "stdio", "claude-desktop"],
+      "snippetTags": ["mcp-config"],
+      "language": "json",
+      "body": "{\n  \"mcpServers\": {\n    \"my-server\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@my-org/mcp-server\", \"--config\", \"/path/to/config\"],\n      \"env\": {\n        \"API_KEY\": \"your-key-here\"\n      }\n    }\n  }\n}\n"
+    },
+    {
+      "id": "mcp-claude-desktop-http-note",
+      "title": "Claude Desktop config — remote HTTP server note",
+      "summary": "Claude Desktop's JSON config only supports stdio. Remote HTTP/SSE servers go through Custom Connectors (web) or `claude mcp add` (CLI).",
+      "tags": ["mcp", "http", "remote-server", "connectors"],
+      "snippetTags": ["mcp-config"],
+      "language": "bash",
+      "body": "# Remote HTTP/SSE MCP servers are NOT configured in claude_desktop_config.json.\n# Use one of:\n\n# 1) Claude web (Custom Connectors):\n#    Settings → Connectors → Add custom connector → enter server URL.\n\n# 2) Claude Code CLI:\nclaude mcp add --transport http myserver https://mcp.example.com/mcp\n\n# 3) SSE transport (if the server supports it):\nclaude mcp add --transport sse myserver https://mcp.example.com/sse"
+    },
+    {
+      "id": "mcp-python-fastmcp-scaffold",
+      "title": "Python MCP server scaffold (stdio)",
+      "summary": "Minimal Python MCP server using the FastMCP high-level API. One tool, stdio transport.",
+      "tags": ["mcp", "python", "fastmcp", "stdio"],
+      "snippetTags": ["mcp-config"],
+      "language": "python",
+      "body": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"my-server\")\n\n@mcp.tool()\nasync def my_tool(query: str) -> str:\n    \"\"\"Execute a query.\n\n    Args:\n        query: The query string.\n    \"\"\"\n    return f\"Result for: {query}\"\n\nif __name__ == \"__main__\":\n    mcp.run(transport=\"stdio\")\n"
+    },
+    {
+      "id": "mcp-typescript-sdk-scaffold",
+      "title": "TypeScript MCP server scaffold (stdio)",
+      "summary": "Minimal TS server with @modelcontextprotocol/sdk's McpServer high-level API + zod validation.",
+      "tags": ["mcp", "typescript", "sdk", "stdio", "zod"],
+      "snippetTags": ["mcp-config"],
+      "language": "typescript",
+      "body": "import { McpServer } from \"@modelcontextprotocol/sdk/server/mcp.js\";\nimport { StdioServerTransport } from \"@modelcontextprotocol/sdk/server/stdio.js\";\nimport { z } from \"zod\";\n\nconst server = new McpServer({\n  name: \"my-server\",\n  version: \"1.0.0\",\n});\n\nserver.registerTool(\n  \"my_tool\",\n  {\n    description: \"Execute a query.\",\n    inputSchema: { query: z.string() },\n  },\n  async ({ query }) => ({\n    content: [{ type: \"text\", text: `Result for: ${query}` }],\n  })\n);\n\nconst transport = new StdioServerTransport();\nawait server.connect(transport);\n"
+    },
+    {
+      "id": "mcp-claude-code-add-cli",
+      "title": "claude mcp add — CLI registration",
+      "summary": "One-liners for registering local stdio or remote HTTP MCP servers via the claude CLI.",
+      "tags": ["mcp", "cli", "claude-code"],
+      "snippetTags": ["mcp-config"],
+      "language": "bash",
+      "body": "# Local stdio server (default scope: local)\nclaude mcp add --transport stdio myserver -- npx -y @my-org/mcp-server\n\n# Project-scoped stdio server with env var (writes to .mcp.json at repo root)\nclaude mcp add --transport stdio --scope project --env API_KEY=secret myserver -- python server.py\n\n# Remote HTTP server (user scope = available in all Claude Code sessions)\nclaude mcp add --transport http --scope user myserver https://mcp.example.com/mcp\n\n# List registered servers\nclaude mcp list\n\n# Remove a server\nclaude mcp remove myserver\n"
+    },
+    {
+      "id": "skill-frontmatter-reference",
+      "title": "Skill frontmatter — documented fields",
+      "summary": "YAML frontmatter showing the currently documented SKILL.md keys with inline explanations.",
+      "tags": ["skill", "reference", "frontmatter", "yaml"],
+      "snippetTags": ["skill-yaml"],
+      "language": "yaml",
+      "body": "---\n# Display name for the skill (defaults to directory name)\nname: example-skill\n\n# What the skill does; Claude uses this to decide when to invoke\ndescription: Performs a focused task when conditions are met\n\n# Extra guidance on when Claude should trigger the skill automatically\nwhen_to_use: Use when the user mentions specific keywords or scenarios\n\n# Hint shown in autocomplete (e.g., \"[issue-number]\" or \"[file] [format]\")\nargument-hint: \"[input]\"\n\n# Prevent Claude from auto-invoking; only the user can run it via /\ndisable-model-invocation: false\n\n# Hide from the /slash menu; Claude can still invoke when relevant\nuser-invocable: true\n\n# Space-separated tool grants that skip the per-use permission prompt\nallowed-tools: Bash(ls *) Read Grep\n\n# Model to use while this skill is active (e.g. opus, sonnet, haiku)\nmodel: sonnet\n\n# Effort level: low, medium, high, xhigh, max\neffort: medium\n\n# Execution context: inline or fork (fork runs in a subagent)\ncontext: fork\n\n# Subagent type when context: fork (e.g., Explore, Plan)\nagent: Explore\n\n# Glob patterns — skill only activates when working with matching files\npaths: src/**/*.ts,tests/**/*.test.ts\n\n# Shell used for command blocks: bash (default) or powershell\nshell: bash\n---\n\nYour skill instructions go here as markdown."
+    }
+  ]
+}
