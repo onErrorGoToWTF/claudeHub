@@ -1327,9 +1327,30 @@
       }, 3000);
     }
   }
-  function downloadBackup() {
+  async function downloadBackup() {
     const payload = collectBackup();
-    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+    const text = JSON.stringify(payload, null, 2);
+    const n = Object.keys(payload.keys).length;
+    // Preferred path: POST to the dev server so the backup lands on the
+    // laptop's disk, bypassing iOS Safari download quirks over http.
+    try {
+      setBackupStatus("Saving to laptop…", "");
+      const res = await fetch("/__save_backup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: text,
+      });
+      if (res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setBackupStatus(`Saved to laptop: ${data.path || "backups/"} (${n} key${n === 1 ? "" : "s"})`, "ok");
+        return;
+      }
+      // 404 etc. → fall through to browser-download fallback.
+    } catch {
+      // Network unreachable or server doesn't support the endpoint — fall back.
+    }
+    // Fallback: browser download via Blob. Works on desktop; iffy on iOS Safari.
+    const blob = new Blob([text], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     const stamp = new Date().toISOString().replace(/[:T]/g, "-").slice(0, 19);
@@ -1339,8 +1360,7 @@
     a.click();
     a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
-    const n = Object.keys(payload.keys).length;
-    setBackupStatus(`Exported ${n} key${n === 1 ? "" : "s"}`, "ok");
+    setBackupStatus(`Exported ${n} key${n === 1 ? "" : "s"} (browser download)`, "ok");
   }
   async function handleImportFile(file) {
     if (!file) return;

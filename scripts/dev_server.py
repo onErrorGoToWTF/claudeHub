@@ -162,6 +162,55 @@ class DevHandler(http.server.SimpleHTTPRequestHandler):
     def log_message(self, fmt, *args):
         sys.stderr.write(f"[dev] {self.address_string()} - {fmt % args}\n")
 
+    def do_POST(self):
+        # /__save_backup — phone ships a backup JSON; we write it to
+        # REPO_ROOT/backups/ so it lands on the laptop instantly.
+        if self.path == "/__save_backup":
+            return self._save_backup()
+        self.send_error(404)
+
+    def _save_backup(self):
+        length = int(self.headers.get("Content-Length", "0") or 0)
+        if length <= 0 or length > 5 * 1024 * 1024:  # 5 MB sanity cap
+            self.send_error(400, "invalid length")
+            return
+        try:
+            body = self.rfile.read(length)
+        except Exception:
+            self.send_error(400, "read failed")
+            return
+        # Decode + minimal validation: must parse as JSON and carry the schema tag.
+        try:
+            import json as _json
+            payload = _json.loads(body.decode("utf-8"))
+        except Exception:
+            self.send_error(400, "not json")
+            return
+        if not isinstance(payload, dict) or payload.get("schema") != "aistacked-backup":
+            self.send_error(400, "wrong schema")
+            return
+        backups_dir = REPO_ROOT / "backups"
+        backups_dir.mkdir(exist_ok=True)
+        stamp = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
+        out_path = backups_dir / f"aistacked-backup-{stamp}.json"
+        try:
+            with out_path.open("wb") as f:
+                f.write(body)
+        except OSError as e:
+            self.send_error(500, f"write failed: {e}")
+            return
+        rel = str(out_path.relative_to(REPO_ROOT)).replace("\\", "/")
+        resp = f'{{"ok":true,"path":"{rel}"}}'.encode("utf-8")
+        self.send_response(200)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(resp)))
+        self.end_headers()
+        try:
+            self.wfile.write(resp)
+        except (BrokenPipeError, ConnectionResetError):
+            pass
+        print(f"[dev] backup saved: {rel}")
+
     def do_GET(self):
         if self.path.startswith("/__reload"):
             return self._serve_sse()
