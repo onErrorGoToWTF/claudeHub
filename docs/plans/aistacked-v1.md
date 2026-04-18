@@ -451,7 +451,7 @@ M2.10  ✅ Global cmd-K search      topbar search over title + tags; copy-to-cli
 
 ```
 M3.1   ✅ Project notes pad          markdown pad per project. [v0.4.0]
-M3.2   ▢ Pin button on tool pages   + pin button on snippet rows; project-scoped picker.
+M3.2   ✅ Pin button on tool pages   + pin button on snippet rows; project-scoped picker. [v0.4.1]
 M3.3   ▢ JSON export / import       device backup.
 M3.4   ▢ localStorage monitor       usage bar, per-category breakdown, purge actions.
 M3.5   ▢ Multi-collection pinning   clhub.v1.collections model; Comply365 collection.

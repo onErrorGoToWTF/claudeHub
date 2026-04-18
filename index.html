@@ -470,6 +470,31 @@
   </div>
 </template>
 
+<div class="pin-picker-modal" id="pin-picker-modal" role="dialog" aria-modal="true" aria-labelledby="pin-picker-title" hidden>
+  <div class="pin-picker-backdrop" data-close></div>
+  <div class="pin-picker-frame glass">
+    <div class="pin-picker-head">
+      <div class="pin-picker-titles">
+        <div class="pin-picker-title" id="pin-picker-title">Pin to projects</div>
+        <div class="pin-picker-sub"></div>
+      </div>
+      <button type="button" class="pin-picker-close" aria-label="Close" data-close title="Close">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <div class="pin-picker-body">
+      <div class="pin-picker-list" role="list"></div>
+      <div class="pin-picker-empty" hidden>
+        No projects yet. Run the Finder and save a project first, then come back to pin items into it.
+      </div>
+    </div>
+    <div class="pin-picker-actions">
+      <button type="button" class="pin-picker-cancel" data-close>Cancel</button>
+      <button type="button" class="pin-picker-save">Save</button>
+    </div>
+  </div>
+</div>
+
 <div class="search-modal" id="snippet-search-modal" role="dialog" aria-modal="true" aria-labelledby="snippet-search-title" hidden>
   <div class="search-modal-backdrop" data-close></div>
   <div class="search-modal-frame glass">
@@ -499,7 +524,10 @@
       </button>
     </div>
     <div class="tool-modal-body">
-      <h2 class="tool-modal-title" id="tool-modal-title"></h2>
+      <div class="tool-modal-titlerow">
+        <h2 class="tool-modal-title" id="tool-modal-title"></h2>
+        <div class="tool-modal-pin"></div>
+      </div>
       <p class="tool-modal-tagline"></p>
       <div class="tool-modal-badges"></div>
       <dl class="tool-modal-meta">

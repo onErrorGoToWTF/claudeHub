@@ -864,6 +864,7 @@
 
   function renderSnippetRow(s) {
     const lang = (s.language || "text").toLowerCase();
+    const pinned = isPinnedToAnyProject("snippet", s.id);
     return `
       <details class="snippet-row glass" data-lang="${escapeHtml(lang)}">
         <summary class="snippet-summary">
@@ -875,6 +876,7 @@
         </summary>
         <div class="snippet-body">
           <div class="snippet-actions">
+            <button type="button" class="pin-btn" data-pin-kind="snippet" data-pin-id="${escapeHtml(s.id)}" data-pin-label="${escapeHtml(s.title || s.id)}" data-pinned="${pinned ? "1" : ""}" aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinned ? "Edit pinned projects" : "Pin to project"}">${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}<span class="pin-btn-label">Pin</span></button>
             <button type="button" class="snippet-copy">Copy</button>
           </div>
           <pre class="snippet-pre"><code class="snippet-code">${escapeHtml(s.body || "")}</code></pre>
@@ -1268,6 +1270,146 @@
     putProjects(projects);
     renderProjects();
   }
+
+  // ---------- Project-scoped pinning (M3.2) ----------
+  // Pin a tool (toolId) or snippet (snippetId) into one or more projects.
+  // Stored on the project object under pinnedTools[] / pinnedSnippets[].
+  function pinKeyForKind(kind) {
+    return kind === "tool" ? "pinnedTools" : "pinnedSnippets";
+  }
+  function isPinnedToAnyProject(kind, id) {
+    if (!id) return false;
+    const key = pinKeyForKind(kind);
+    const projects = getProjects();
+    return Object.values(projects).some((p) => Array.isArray(p[key]) && p[key].includes(id));
+  }
+  function getProjectsPinning(kind, id) {
+    const key = pinKeyForKind(kind);
+    const projects = getProjects();
+    return Object.values(projects)
+      .filter((p) => Array.isArray(p[key]) && p[key].includes(id))
+      .map((p) => p.id);
+  }
+  function setProjectPins(kind, id, projectIdSet) {
+    const key = pinKeyForKind(kind);
+    const projects = getProjects();
+    Object.values(projects).forEach((p) => {
+      const has = Array.isArray(p[key]) ? p[key].includes(id) : false;
+      const shouldHave = projectIdSet.has(p.id);
+      if (shouldHave && !has) {
+        p[key] = Array.isArray(p[key]) ? p[key].concat(id) : [id];
+        p.updatedAt = new Date().toISOString();
+      } else if (!shouldHave && has) {
+        p[key] = p[key].filter((x) => x !== id);
+        p.updatedAt = new Date().toISOString();
+      }
+    });
+    putProjects(projects);
+  }
+  // Paint all pin buttons matching kind/id (there may be many — search results,
+  // tool modal, snippet rows reused across panes).
+  function repaintPinButtons(kind, id) {
+    const pinned = isPinnedToAnyProject(kind, id);
+    document.querySelectorAll(
+      `.pin-btn[data-pin-kind="${kind}"][data-pin-id="${CSS.escape(id)}"]`
+    ).forEach((btn) => {
+      btn.dataset.pinned = pinned ? "1" : "";
+      btn.setAttribute("aria-pressed", pinned ? "true" : "false");
+      const label = btn.querySelector(".pin-btn-label");
+      btn.innerHTML = (pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE) +
+        (label ? `<span class="pin-btn-label">Pin</span>` : "");
+    });
+  }
+  // Delegated click handler for every .pin-btn on the page.
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest?.(".pin-btn");
+    if (!btn) return;
+    const kind = btn.dataset.pinKind;
+    const id   = btn.dataset.pinId;
+    const label = btn.dataset.pinLabel || id;
+    if (!kind || !id) return;
+    e.preventDefault();
+    e.stopPropagation();
+    openPinPicker({ kind, id, label });
+  });
+
+  function openPinPicker({ kind, id, label }) {
+    const modal = document.getElementById("pin-picker-modal");
+    if (!modal) return;
+    modal.dataset.kind = kind;
+    modal.dataset.id   = id;
+    const titleEl = modal.querySelector(".pin-picker-title");
+    const subEl   = modal.querySelector(".pin-picker-sub");
+    const listEl  = modal.querySelector(".pin-picker-list");
+    const emptyEl = modal.querySelector(".pin-picker-empty");
+    const saveBtn = modal.querySelector(".pin-picker-save");
+    if (titleEl) titleEl.textContent = kind === "tool" ? "Pin tool to projects" : "Pin snippet to projects";
+    if (subEl)   subEl.textContent   = label || "";
+    const projects = Object.values(getProjects()).sort((a, b) =>
+      (b.createdAt || "").localeCompare(a.createdAt || "")
+    );
+    const alreadyPinned = new Set(getProjectsPinning(kind, id));
+    if (projects.length === 0) {
+      if (listEl)  listEl.innerHTML = "";
+      if (emptyEl) emptyEl.hidden = false;
+      if (saveBtn) saveBtn.disabled = true;
+    } else {
+      if (emptyEl) emptyEl.hidden = true;
+      if (saveBtn) saveBtn.disabled = false;
+      if (listEl) {
+        listEl.innerHTML = projects.map((p) => {
+          const checked = alreadyPinned.has(p.id) ? "checked" : "";
+          return `
+            <label class="pin-picker-row">
+              <input type="checkbox" class="pin-picker-check" value="${escapeHtml(p.id)}" ${checked}>
+              <span class="pin-picker-row-title">${escapeHtml(p.title)}</span>
+              <span class="pin-picker-row-path">${p.path === "best" ? "Best" : "Easy"}</span>
+            </label>
+          `;
+        }).join("");
+      }
+    }
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function closePinPicker() {
+    const modal = document.getElementById("pin-picker-modal");
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden])")) {
+      document.body.classList.remove("modal-open");
+    }
+  }
+  function commitPinPicker() {
+    const modal = document.getElementById("pin-picker-modal");
+    if (!modal) return;
+    const kind = modal.dataset.kind;
+    const id   = modal.dataset.id;
+    if (!kind || !id) { closePinPicker(); return; }
+    const checks = modal.querySelectorAll(".pin-picker-check");
+    const nextSet = new Set();
+    checks.forEach((c) => { if (c.checked) nextSet.add(c.value); });
+    setProjectPins(kind, id, nextSet);
+    repaintPinButtons(kind, id);
+    renderProjects();
+    closePinPicker();
+  }
+  // Wire close + save.
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const m = document.getElementById("pin-picker-modal");
+    if (m && !m.hidden) closePinPicker();
+  });
+  document.querySelectorAll("#pin-picker-modal [data-close]").forEach((el) => {
+    el.addEventListener("click", (ev) => { ev.preventDefault(); closePinPicker(); });
+  });
+  {
+    const saveBtn = document.querySelector("#pin-picker-modal .pin-picker-save");
+    if (saveBtn) saveBtn.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      commitPinPicker();
+    });
+  }
   function renderProjects() {
     const host = document.getElementById("projects-grid");
     if (!host) return;
@@ -1291,6 +1433,14 @@
       const date = p.createdAt
         ? new Date(p.createdAt).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })
         : "";
+      const pinnedToolsCount    = Array.isArray(p.pinnedTools)    ? p.pinnedTools.length    : 0;
+      const pinnedSnippetsCount = Array.isArray(p.pinnedSnippets) ? p.pinnedSnippets.length : 0;
+      const pinsRow = (pinnedToolsCount + pinnedSnippetsCount > 0)
+        ? `<div class="project-pins-row">
+             <span class="project-pins-chip">${pinnedToolsCount} tool${pinnedToolsCount === 1 ? "" : "s"}</span>
+             <span class="project-pins-chip">${pinnedSnippetsCount} snippet${pinnedSnippetsCount === 1 ? "" : "s"}</span>
+           </div>`
+        : "";
       const notesVal = typeof p.notes === "string" ? p.notes : "";
       const notesOpenAttr = notesVal.trim() ? " open" : "";
       const notesLen = notesVal.length;
@@ -1302,6 +1452,7 @@
         <h4 class="project-title">${escapeHtml(p.title)}</h4>
         ${p.goal ? `<p class="project-goal">${escapeHtml(p.goal)}</p>` : ""}
         <div class="project-stack-chips">${stackChips}</div>
+        ${pinsRow}
         <details class="project-notes"${notesOpenAttr}>
           <summary class="project-notes-summary">
             <span class="project-notes-label">Notes</span>
@@ -1519,6 +1670,16 @@
     q(".tool-modal-modality").textContent = modalityLabel;
     q(".tool-modal-title").textContent    = tool.name || "";
     q(".tool-modal-tagline").textContent  = tool.tagline || "";
+    // Pin button (M3.2) — shows filled when pinned into any project.
+    const pinHost = q(".tool-modal-pin");
+    if (pinHost) {
+      const pinned = isPinnedToAnyProject("tool", tool.id);
+      pinHost.innerHTML = `
+        <button type="button" class="pin-btn" data-pin-kind="tool" data-pin-id="${escapeHtml(tool.id)}" data-pin-label="${escapeHtml(tool.name || tool.id)}" data-pinned="${pinned ? "1" : ""}" aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinned ? "Edit pinned projects" : "Pin to project"}">
+          ${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}<span class="pin-btn-label">${pinned ? "Pinned" : "Pin"}</span>
+        </button>
+      `;
+    }
     q(".tool-modal-when").textContent     = tool.whenToUse || "";
     q(".tool-modal-version").textContent  = tool.currentVersion || "";
     q(".tool-modal-pricing").textContent  = tool.pricing || "";
