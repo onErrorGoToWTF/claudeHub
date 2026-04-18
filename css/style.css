@@ -312,7 +312,13 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .cards[hidden] { display: none; }
 .pane[hidden] { display: none; }
 .subpills-nested { margin-top: 4px; }
-.subpills-nested .subpill { font-size: 12.5px; padding: 5px 10px; }
+.subpills-nested {
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.subpills-nested::-webkit-scrollbar { display: none; }
+.subpills-nested .subpill { font-size: 12.5px; padding: 5px 10px; flex-shrink: 0; }
 
 /* Section accents */
 [data-section="learn"]      { --sec: var(--accent-claude); }
@@ -887,6 +893,107 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 .tool-version { font-weight: 500; }
 .tool-verified { font-variant-numeric: tabular-nums; }
+
+/* ===== Claude hub (Learn → Claude) ===== */
+.hub-intro {
+  padding: 4px 2px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hub-eyebrow {
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--accent-claude-hi);
+}
+.hub-title {
+  margin: 0;
+  font-size: 22px; font-weight: 600; letter-spacing: -0.01em;
+  color: var(--text-1);
+}
+.hub-lede {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 13.5px;
+  line-height: 1.5;
+  max-width: 60ch;
+}
+
+/* Claude hub container — stacks intro, sub-pills, and active pane with breathing room. */
+.pane[data-pane="learn-claude"] {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 640px)  { .concept-grid { grid-template-columns: 1fr 1fr; gap: 14px; } }
+@media (min-width: 1000px) { .concept-grid { grid-template-columns: 1fr 1fr; gap: 16px; } }
+
+.concept-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 18px 16px;
+  min-height: 160px;
+  border-left: 2px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  transition: border-color 0.25s var(--ease-premium),
+              box-shadow 0.3s var(--ease-premium);
+  animation: cardIn 0.45s var(--ease-premium) both;
+}
+.concept-card:hover {
+  border-left-color: color-mix(in srgb, var(--accent) 75%, transparent);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.05) inset,
+    0 -1px 0 rgba(0,0,0,0.35) inset,
+    0 18px 36px -20px rgba(0,0,0,0.7);
+}
+.concept-card-claude {
+  border-left-color: color-mix(in srgb, var(--accent-claude) 55%, transparent);
+}
+.concept-card-claude:hover {
+  border-left-color: var(--accent-claude);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.05) inset,
+    0 -1px 0 rgba(0,0,0,0.35) inset,
+    0 0 22px -8px var(--accent-claude-glow);
+}
+.concept-eyebrow {
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-3);
+}
+.concept-title {
+  margin: 0;
+  font-size: 17px; font-weight: 600; letter-spacing: -0.01em;
+  color: var(--text-1);
+}
+.concept-body {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.concept-link {
+  margin-top: auto;
+  align-self: flex-start;
+  min-height: 32px;
+  padding: 6px 0 2px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent-hi);
+  text-decoration: none;
+  letter-spacing: -0.005em;
+  transition: color 0.2s var(--ease-premium), transform 0.2s var(--ease-premium);
+}
+.concept-link:hover {
+  color: var(--text-1);
+  transform: translateX(2px);
+}
+.concept-card-claude .concept-link { color: var(--accent-claude-hi); }
+.concept-card-claude .concept-link:hover { color: var(--text-1); }
 
 /* ===== Competitor comparison bars ===== */
 .cbars {

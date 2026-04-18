@@ -181,6 +181,21 @@
     });
   });
 
+  // Claude hub sub-sub-pills: Basics / Claude Code / Skills / MCP / Agent SDK / What's new
+  document.querySelectorAll(".subpill[data-claude]").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const kind = pill.dataset.claude;
+      document.querySelectorAll(".subpill[data-claude]").forEach((p) => {
+        const on = p === pill;
+        p.classList.toggle("is-active", on);
+        p.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      document.querySelectorAll('.pane[data-pane^="claude-"]').forEach((pane) => {
+        pane.hidden = pane.dataset.pane !== `claude-${kind}`;
+      });
+    });
+  });
+
   // News & Media sub-pills: State of AI / News
   document.querySelectorAll(".subpill[data-newsmedia]").forEach((pill) => {
     pill.addEventListener("click", () => {
