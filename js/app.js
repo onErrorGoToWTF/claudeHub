@@ -909,12 +909,29 @@
       `;
       host.appendChild(card);
     });
+    // Two-tap confirm: first tap arms the button, second tap deletes.
+    // Avoids confirm(), which iOS standalone PWAs silently suppress.
     host.querySelectorAll(".project-delete").forEach((btn) => {
-      btn.addEventListener("click", () => {
+      let armTimer = null;
+      const disarm = () => {
+        btn.dataset.armed = "";
+        btn.textContent = "Delete";
+        clearTimeout(armTimer);
+        armTimer = null;
+      };
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
         const id = btn.dataset.projectId;
         if (!id) return;
-        if (!confirm("Delete this project? This can't be undone.")) return;
-        deleteProject(id);
+        if (btn.dataset.armed === "1") {
+          disarm();
+          deleteProject(id);
+          return;
+        }
+        btn.dataset.armed = "1";
+        btn.textContent = "Tap again to delete";
+        clearTimeout(armTimer);
+        armTimer = setTimeout(disarm, 3000);
       });
     });
   }

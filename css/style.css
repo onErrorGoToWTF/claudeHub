@@ -1856,6 +1856,12 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   border-color: color-mix(in srgb, #f43f5e 40%, var(--border-strong));
   background: color-mix(in srgb, #f43f5e 8%, transparent);
 }
+.project-delete[data-armed="1"] {
+  color: #fff;
+  border-color: color-mix(in srgb, #f43f5e 70%, transparent);
+  background: color-mix(in srgb, #f43f5e 55%, transparent);
+  font-weight: 600;
+}
 
 /* ===== Version pill (footer) — visible proof of the current build ===== */
 .version-pill {
