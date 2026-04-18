@@ -471,7 +471,7 @@
       { host: "#vbars",    childSel: ".vbar" },
       { host: "#hbars",    childSel: ".hbar" },
       { host: "#taskgrid", childSel: ".trow" },
-      { host: "#faceoff",  childSel: ".hbar" },
+      { host: "#faceoff",  childSel: ".vbar" },
       { host: "#recipes",  childSel: ".recipe" },
     ];
     const io = new IntersectionObserver((entries) => {
@@ -652,55 +652,44 @@
   }
 
   // ======================================================================
-  // Top 5 LLM face-off — one grouped chart: 4 benchmark rows × 5 model
-  // bars each, legend at top, compact stats table below.
+  // Top 4 LLM face-off — one grouped chart: 4 benchmark rows, each with
+  // a mini vertical-bar cluster (4 models per bench), compact stats below.
   // ======================================================================
   function renderLlmFaceoff() {
     const host = document.getElementById("faceoff");
     if (!host) return;
     const models = [
-      { name: "Claude Opus 4.7", short: "Opus 4.7",   maker: "Anthropic", col: "#a684ff", ctx: "1M",   price: "$5"    },
-      { name: "GPT-5.4",         short: "GPT-5.4",    maker: "OpenAI",    col: "#4ade80", ctx: "400K", price: "~$10"  },
-      { name: "Gemini 3.1 Pro",  short: "Gemini 3.1", maker: "Google",    col: "#22d3ee", ctx: "1M",   price: "$2"    },
-      { name: "Grok 4.20 Beta",  short: "Grok 4.20",  maker: "xAI",       col: "#e879f9", ctx: "2M",   price: "$2"    },
-      { name: "DeepSeek V3.2",   short: "DeepSeek",   maker: "DeepSeek",  col: "#fbbf24", ctx: "128K", price: "$0.28" },
+      { short: "Opus 4.7",   maker: "Anthropic", col: "#a684ff", hero: true, ctx: "1M",   price: "$5"   },
+      { short: "GPT-5.4",    maker: "OpenAI",    col: "#4ade80",             ctx: "400K", price: "~$10" },
+      { short: "Gemini 3.1", maker: "Google",    col: "#22d3ee",             ctx: "1M",   price: "$2"   },
+      { short: "Grok 4.20",  maker: "xAI",       col: "#e879f9",             ctx: "2M",   price: "$2"   },
     ];
     const benches = [
-      { label: "GPQA Diamond",       vals: [94.2, 94.4, 94.3, null, null], raws: ["94.2%", "94.4%", "94.3%", "—", "—"] },
-      { label: "SWE-bench Verified", vals: [87.6, 80.0, 68.5, null, null], raws: ["87.6%", "80.0%", "68.5%*", "—", "—"] },
-      { label: "AIME 2025",          vals: [99,   100,  100,  100,  null], raws: ["~100%", "100%", "100%", "100%", "—"] },
-      { label: "LMArena (norm)",     vals: [88,   85,   82,   81,   null], raws: ["~1500", "#2", "1493", "1491", "—"] },
+      { label: "GPQA Diamond",       vals: [94.2, 94.4, 94.3, null], raws: ["94.2%",  "94.4%", "94.3%", "—"] },
+      { label: "SWE-bench Verified", vals: [87.6, 80.0, 68.5, null], raws: ["87.6%",  "80.0%", "68.5%*", "—"] },
+      { label: "AIME 2025",          vals: [99,   100,  100,  100],  raws: ["~100%",  "100%",  "100%",  "100%"] },
+      { label: "LMArena (norm)",     vals: [88,   85,   82,   81],   raws: ["~1500",  "#2",    "1493",  "1491"] },
     ];
-
-    const legendHtml = `
-      <div class="faceoff-legend">
-        ${models.map(m => `
-          <span class="fl-item" style="--fl-col:${m.col}">
-            <span class="fl-dot" aria-hidden="true"></span>${m.short}
-          </span>
-        `).join("")}
-      </div>
-    `;
 
     let bgroupsHtml = "";
     benches.forEach((b, bi) => {
       const barsHtml = b.vals.map((v, mi) => {
         const m = models[mi];
         const nodata = v === null || v === undefined;
-        const w = nodata ? 0 : v;
-        const delay = 0.2 + bi * 0.18 + mi * 0.06;
+        const h = nodata ? 0 : v;
+        const delay = 0.2 + bi * 0.18 + mi * 0.08;
         return `
-          <div class="hbar${nodata ? " is-nodata" : ""}" style="--hbar-col:${m.col}; --hbar-w:${w}%; --hbar-delay:${delay}s;">
-            <div class="hbar-name">${m.short}</div>
-            <div class="hbar-val">${b.raws[mi]}</div>
-            <div class="hbar-track"><div class="hbar-fill"><div class="hbar-electron" aria-hidden="true"></div></div></div>
+          <div class="vbar${nodata ? " is-nodata" : ""}${m.hero ? " is-hero" : ""}" style="--vbar-col:${m.col}; --vbar-h:${h}%; --vbar-delay:${delay}s;">
+            <div class="vbar-val">${b.raws[mi]}</div>
+            <div class="vbar-track"><div class="vbar-fill"></div></div>
+            <div class="vbar-name">${m.short}</div>
           </div>
         `;
       }).join("");
       bgroupsHtml += `
         <div class="bgroup">
           <div class="bgroup-label">${b.label}</div>
-          <div class="hbars">${barsHtml}</div>
+          <div class="vbars">${barsHtml}</div>
         </div>
       `;
     });
@@ -722,7 +711,7 @@
       </div>
     `;
 
-    host.innerHTML = legendHtml + `<div class="bench-groups">${bgroupsHtml}</div>` + statsHtml;
+    host.innerHTML = `<div class="bench-groups">${bgroupsHtml}</div>` + statsHtml;
   }
 
   // ======================================================================
