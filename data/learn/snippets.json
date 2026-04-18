@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "note": "Snippets library. M2.1 = CLAUDE.md patterns (Priority 1). Extended in M2.2+.",
+  "snippets": [
+    {
+      "id": "claudemd-minimal",
+      "title": "Minimal CLAUDE.md for personal repo",
+      "summary": "Smallest viable CLAUDE.md with project overview and build commands for solo developers.",
+      "tags": ["claude-md", "setup", "personal", "minimal"],
+      "snippetTags": ["claude-md"],
+      "language": "markdown",
+      "body": "# Project Overview\n\nBuild and develop with the following commands.\n\n## Building\n\n```bash\nmake build\n```\n\n## Testing\n\n```bash\nmake test\n```\n\n## Development\n\n- Use 2-space indentation\n- Commit with conventional prefixes: `feat:`, `fix:`, `chore:`\n- Run tests before pushing"
+    },
+    {
+      "id": "claudemd-team-template",
+      "title": "CLAUDE.md template for team projects",
+      "summary": "Fuller CLAUDE.md with Stack, Layout, Running locally, Conventions, Gotchas for shared repos.",
+      "tags": ["claude-md", "team", "template", "structure"],
+      "snippetTags": ["claude-md"],
+      "language": "markdown",
+      "body": "# Project Name\n\nBrief description of what this project does.\n\n## Stack\n\n- **Language**: TypeScript\n- **Framework**: React\n- **Package Manager**: npm\n- **Database**: PostgreSQL\n\n## Layout\n\n```\nsrc/\n  components/\n  pages/\n  utils/\ntests/\nREADME.md\npackage.json\n```\n\n## Running locally\n\n```bash\nnpm install\nnpm run dev\n```\n\n## Conventions\n\n- Components use PascalCase filenames\n- Test files end with `.test.ts`\n- Run `npm test` before committing\n- Use 2-space indentation\n\n## Gotchas\n\n- PostgreSQL must be running locally\n- Environment variables in `.env.local` are gitignored"
+    },
+    {
+      "id": "slash-command-test-suite",
+      "title": "Custom slash command for test suite",
+      "summary": "Example .claude/commands/runtests.md that runs the test suite with optional arguments.",
+      "tags": ["slash-command", "testing", "automation"],
+      "snippetTags": ["slash-command"],
+      "language": "markdown",
+      "body": "---\ndescription: Run the test suite with optional filters.\nargument-hint: \"[pattern] [--watch]\"\n---\n\nRun the project's tests. Arguments the user passed are in $ARGUMENTS.\n\n- No args: run all tests with `npm test`.\n- Pattern (first arg, not starting with `--`): forward as `npm test -- --testNamePattern=<pattern>`.\n- Flag `--watch` anywhere: append `--watch` to the command.\n\nAfter the run, summarize failures and suggest one focused follow-up command."
+    },
+    {
+      "id": "pretooluse-hook-bash-guardrail",
+      "title": "PreToolUse hook blocking destructive Bash patterns",
+      "summary": "Hook entry in .claude/settings.json that blocks rm -rf and similar commands before they run.",
+      "tags": ["hook", "bash", "safety", "guardrail"],
+      "snippetTags": ["hook"],
+      "language": "jsonc",
+      "body": "{\n  \"hooks\": {\n    \"PreToolUse\": [\n      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"bash -c 'INPUT=$(cat); CMD=$(echo \\\"$INPUT\\\" | jq -r \\\".tool_input.command\\\"); if echo \\\"$CMD\\\" | grep -qE \\\"rm -rf|rm -f /|: > /|truncate -s 0\\\"; then echo \\\"Blocked: destructive command\\\" >&2; exit 2; fi'\"\n          }\n        ]\n      }\n    ]\n  }\n}\n"
+    },
+    {
+      "id": "output-style-terse-review",
+      "title": "Output style — terse code review",
+      "summary": "Custom .claude/output-styles file that switches Claude to concise code-review voice.",
+      "tags": ["output-style", "code-review", "terse"],
+      "snippetTags": ["output-style"],
+      "language": "markdown",
+      "body": "---\nname: Code Review\ndescription: Terse code review — concise feedback only.\n---\n\nYou are a concise code reviewer. For each diff or file reviewed, analyze:\n\n1. Logic errors — bugs, edge cases, off-by-one.\n2. Performance — unnecessary loops, N+1 queries, hot-path allocations.\n3. Testing gaps — uncovered branches, missing tests.\n4. Style violations — naming, structure, pattern mismatches with the rest of the repo.\n\nRespond with 1-3 bullet points per issue. No praise, no lengthy explanations. Output: findings only, one short section per file."
+    },
+    {
+      "id": "mcp-local-stdio-config",
+      "title": "Local stdio MCP server in .mcp.json",
+      "summary": "Minimal .mcp.json at the repo root registering one stdio MCP server for the whole team.",
+      "tags": ["mcp", "config", "stdio"],
+      "snippetTags": ["mcp-config"],
+      "language": "json",
+      "body": "{\n  \"mcpServers\": {\n    \"my-local-tool\": {\n      \"type\": \"stdio\",\n      \"command\": \"node\",\n      \"args\": [\"./mcp-server.js\"],\n      \"env\": {\n        \"LOG_LEVEL\": \"info\"\n      }\n    }\n  }\n}\n"
+    }
+  ]
+}

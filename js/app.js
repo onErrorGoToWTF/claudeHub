@@ -3,9 +3,10 @@
 
   const DATA_URL = "data/latest.json?v=" + Date.now();
   const TUTORIALS_365_URL = "data/365/tutorials.json?v=" + Date.now();
-  const TOOLS_URL   = "data/learn/tools.json?v=" + Date.now();
-  const ACADEMY_URL = "data/learn/academy_courses.json?v=" + Date.now();
-  const HUB_MAP_URL = "data/learn/claude_hub_map.json?v=" + Date.now();
+  const TOOLS_URL    = "data/learn/tools.json?v=" + Date.now();
+  const ACADEMY_URL  = "data/learn/academy_courses.json?v=" + Date.now();
+  const HUB_MAP_URL  = "data/learn/claude_hub_map.json?v=" + Date.now();
+  const SNIPPETS_URL = "data/learn/snippets.json?v=" + Date.now();
   const VERSION_URL = "data/version.json?v=" + Date.now();
   const THEME_KEY = "cdih-theme";
 
@@ -801,6 +802,78 @@
     node.appendChild(btn);
   }
 
+  // Claude hub — render snippet rows inside each subpill pane (Phase 2 M2.1+).
+  // Source: data/learn/snippets.json (authored) + claude_hub_map.json's
+  // snippetTagsByBucket (which tags belong under which pane).
+  async function loadSnippets() {
+    try {
+      const [snipRes, mapRes] = await Promise.all([
+        fetch(SNIPPETS_URL, { cache: "no-cache" }),
+        fetch(HUB_MAP_URL,  { cache: "no-cache" }),
+      ]);
+      if (!snipRes.ok || !mapRes.ok) return;
+      const snipPayload = await snipRes.json();
+      const mapPayload  = await mapRes.json();
+      const snippets = Array.isArray(snipPayload.snippets) ? snipPayload.snippets : [];
+      const tagsByBucket = (mapPayload && mapPayload.snippetTagsByBucket) || {};
+      document.querySelectorAll(".snippets-host[data-snippet-bucket]").forEach((host) => {
+        const bucket = host.dataset.snippetBucket;
+        const allowed = new Set(tagsByBucket[bucket] || []);
+        const matching = snippets.filter((s) =>
+          (s.snippetTags || []).some((t) => allowed.has(t))
+        );
+        if (matching.length === 0) { host.innerHTML = ""; return; }
+        const rows = matching.map((s) => renderSnippetRow(s)).join("");
+        host.innerHTML = `
+          <div class="academy-eyebrow">Snippets · ${matching.length}</div>
+          <div class="snippet-list">${rows}</div>
+        `;
+      });
+      // Wire copy buttons once they're in the DOM.
+      document.querySelectorAll(".snippet-copy").forEach((btn) => {
+        if (btn.dataset.wired === "1") return;
+        btn.dataset.wired = "1";
+        btn.addEventListener("click", async (e) => {
+          e.preventDefault();
+          const row = btn.closest(".snippet-row");
+          const code = row && row.querySelector(".snippet-code");
+          if (!code) return;
+          try {
+            await navigator.clipboard.writeText(code.textContent || "");
+            btn.dataset.state = "ok";
+            btn.textContent = "Copied";
+            setTimeout(() => { btn.dataset.state = ""; btn.textContent = "Copy"; }, 1800);
+          } catch {
+            btn.dataset.state = "err";
+            btn.textContent = "Copy failed";
+            setTimeout(() => { btn.dataset.state = ""; btn.textContent = "Copy"; }, 1800);
+          }
+        });
+      });
+    } catch {}
+  }
+
+  function renderSnippetRow(s) {
+    const lang = (s.language || "text").toLowerCase();
+    return `
+      <details class="snippet-row glass" data-lang="${escapeHtml(lang)}">
+        <summary class="snippet-summary">
+          <div class="snippet-head">
+            <div class="snippet-lang">${escapeHtml(lang)}</div>
+            <div class="snippet-title">${escapeHtml(s.title || s.id)}</div>
+          </div>
+          <div class="snippet-lede">${escapeHtml(s.summary || "")}</div>
+        </summary>
+        <div class="snippet-body">
+          <div class="snippet-actions">
+            <button type="button" class="snippet-copy">Copy</button>
+          </div>
+          <pre class="snippet-pre"><code class="snippet-code">${escapeHtml(s.body || "")}</code></pre>
+        </div>
+      </details>
+    `;
+  }
+
   // Claude hub — render Anthropic Academy course grids in each subpill pane.
   // Two files: academy_courses.json (full metadata from the scraper) and
   // claude_hub_map.json (hand-curated slug → bucket mapping). Rendered once
@@ -1564,6 +1637,7 @@
   load();
   loadTools();
   loadAcademyHub();
+  loadSnippets();
   renderTimeline();
   renderCompare();
   renderIndex();

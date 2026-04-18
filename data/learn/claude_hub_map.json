@@ -1,5 +1,10 @@
 {
   "note": "Curated mapping of Anthropic Academy course slugs → Claude hub subpill buckets. Order within each bucket follows Anthropic's homepage order unless overridden by the 'order' array. Edit this file when new courses appear.",
+  "snippetTagsByBucket": {
+    "code":   ["claude-md", "slash-command", "hook", "output-style", "thinking-mode"],
+    "mcp":    ["mcp-config"],
+    "skills": ["skill-yaml"]
+  },
   "buckets": {
     "basics": [
       "claude-101",

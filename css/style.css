@@ -620,6 +620,120 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   padding-right: 48px;
 }
 
+/* ===== Snippets — Phase 2 Claude hub snippet rows ===== */
+.snippets-host { margin-top: 22px; }
+.snippets-host:empty { display: none; }
+.snippet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.snippet-row {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--text-1) 2%, transparent);
+  overflow: hidden;
+  transition: border-color 0.25s var(--ease-premium),
+              background 0.25s var(--ease-premium);
+}
+.snippet-row[open] {
+  border-color: color-mix(in srgb, var(--accent-claude) 30%, var(--border-strong));
+}
+.snippet-summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.snippet-summary::-webkit-details-marker { display: none; }
+.snippet-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.snippet-lang {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--text-1) 5%, transparent);
+  color: var(--text-3);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.snippet-title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--text-1);
+}
+.snippet-lede {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.snippet-body {
+  padding: 0 14px 12px;
+  border-top: 1px dashed var(--border);
+}
+.snippet-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 0 6px;
+}
+.snippet-copy {
+  padding: 6px 12px;
+  min-height: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--text-1) 4%, transparent);
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 0.2s var(--ease-premium),
+              border-color 0.2s var(--ease-premium),
+              background 0.2s var(--ease-premium);
+}
+.snippet-copy:hover {
+  color: var(--accent-claude-hi);
+  border-color: color-mix(in srgb, var(--accent-claude) 40%, var(--border-strong));
+}
+.snippet-copy[data-state="ok"] {
+  color: #34d399;
+  border-color: color-mix(in srgb, #34d399 40%, var(--border-strong));
+  background: color-mix(in srgb, #34d399 10%, transparent);
+}
+.snippet-copy[data-state="err"] {
+  color: #f43f5e;
+  border-color: color-mix(in srgb, #f43f5e 40%, var(--border-strong));
+  background: color-mix(in srgb, #f43f5e 10%, transparent);
+}
+.snippet-pre {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: #05070b;
+  overflow-x: auto;
+  max-height: 420px;
+}
+.snippet-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #d1d5db;
+  white-space: pre;
+  tab-size: 2;
+}
+
 /* ===== Video modal — YouTube embed, in-app ===== */
 /* Intercepts clicks on YouTube cards so users stay inside aiStacked
    instead of being pushed into Safari/YouTube app. */
