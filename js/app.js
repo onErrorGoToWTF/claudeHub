@@ -700,10 +700,78 @@
         pill.dataset.pill = bucket;
       }
       attachPinButton(node, it.url);
+      // For YouTube cards, open in-app modal instead of navigating out.
+      if (bucket === "videos") {
+        const vid = extractYouTubeId(it.url);
+        if (vid) {
+          node.addEventListener("click", (e) => {
+            // Let pin taps through; don't hijack them.
+            if (e.target.closest(".card-pin")) return;
+            e.preventDefault();
+            openVideoModal(vid, it.title, it.url);
+          });
+        }
+      }
       registerReveal(node, idx);
       frag.appendChild(node);
     });
     container.appendChild(frag);
+  }
+
+  // YouTube in-app modal — keeps users from being pushed out of the web app
+  // when they tap a video card. Opens the official youtube.com/embed iframe
+  // so there's no third-party JS dependency and no cookie/identity handoff.
+  function extractYouTubeId(url) {
+    try {
+      const u = new URL(url);
+      if (u.hostname === "youtu.be") return u.pathname.slice(1).split("/")[0] || null;
+      if (/(^|\.)youtube\.com$/.test(u.hostname)) {
+        if (u.pathname === "/watch") return u.searchParams.get("v");
+        const parts = u.pathname.split("/").filter(Boolean);
+        if (parts[0] === "shorts" || parts[0] === "embed") return parts[1] || null;
+      }
+    } catch {}
+    return null;
+  }
+  function openVideoModal(videoId, title, externalUrl) {
+    const modal = document.getElementById("video-modal");
+    if (!modal) return;
+    const iframe = modal.querySelector(".video-modal-iframe");
+    const titleEl = modal.querySelector(".video-modal-title");
+    const openLink = modal.querySelector(".video-modal-open");
+    iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+    if (titleEl) titleEl.textContent = title || "";
+    if (openLink) openLink.href = externalUrl || `https://www.youtube.com/watch?v=${videoId}`;
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function closeVideoModal() {
+    const modal = document.getElementById("video-modal");
+    if (!modal || modal.hidden) return;
+    const iframe = modal.querySelector(".video-modal-iframe");
+    iframe.src = "";
+    modal.hidden = true;
+    document.body.classList.remove("modal-open");
+    if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
+  }
+  document.querySelectorAll("#video-modal [data-close]").forEach((el) => {
+    el.addEventListener("click", (e) => { e.preventDefault(); closeVideoModal(); });
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeVideoModal();
+  });
+  const expandBtn = document.querySelector("#video-modal .video-modal-expand");
+  if (expandBtn) {
+    expandBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const frame = document.querySelector("#video-modal .video-modal-frame");
+      if (!frame) return;
+      if (document.fullscreenElement) {
+        document.exitFullscreen?.();
+      } else {
+        (frame.requestFullscreen || frame.webkitRequestFullscreen)?.call(frame);
+      }
+    });
   }
 
   // SVG pin glyphs — outline when unpinned, filled when pinned.
