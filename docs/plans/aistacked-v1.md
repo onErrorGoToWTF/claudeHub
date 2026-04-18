@@ -1,15 +1,22 @@
 # aiStacked — the claudeHub rebuild plan
 
-> **Resume-here for a fresh Claude Code session:**
+> **Resume-here for a fresh Claude Code session (updated 2026-04-18, v0.2.0):**
 >
-> 1. You are on branch `feat/aistacked-rebuild`. `main` holds the old live site untouched.
+> 1. You are on branch `feat/aistacked-rebuild`. `main` still holds the old live claudeHub site untouched.
 > 2. Rollback anchor: tag `pre-learning-path` at commit `ce457f9` (local + origin). `git reset --hard pre-learning-path` restores pre-rebuild state.
-> 3. Read this full plan before editing any code. Follow the **Setup protocol** and **Shipping cadence** sections strictly.
-> 4. Start with **Milestone M1.1** (brand flip: title + header → "aiStacked"; meta desc). Each milestone ends with commit → push → phone review → `data/version.json` bump before the next begins.
-> 5. The 31-tool seed catalog lives at `C:\Users\alany\.claude\plans\can-we-organize-more-fluffy-koala-agent-a4566e4473d5aa0c2.md` — copy into `data/learn/tools.json` when you reach M1.5.
-> 6. User preferences to honor (also in memory system): terse replies, one question at a time, no guessing UI / keybindings / flags, 95% confidence before code, phone-first responsive design.
+> 3. **Phase 1 MVP is COMPLETE.** All twelve M1.x milestones shipped (v0.1.1 → v0.1.12). Footer pill renders `aiStacked v<ver> · M<milestone> · <deployedAt>` — it's the authoritative proof of which build is on the phone. See the checked list in the **Phased rollout** section below.
+> 4. **Continue from Phase 1.5 — M1.5.1 (Claude learning scraper, first source).** Scope:
+>    - Create `scripts/fetch_claude_learning.js` modeled on the other `scripts/fetch_*.js` scrapers. Start with GitHub Releases feeds (Atom) for `anthropics/claude-code` and the `modelcontextprotocol/*` repos — zero-dependency, no API key needed.
+>    - Normalize to `{ title, url, source, published, summary }` and sort by date desc.
+>    - Register in `scripts/build_latest_json.js` as a new `sections.claude_learning` key. Follow the existing empty-fetch-preserves-prior-data pattern.
+>    - Wire the Claude hub's `data-pane="claude-whats-new"` placeholder to render this section as a feed. Other Phase-1.5 sources (Anthropic docs changelog, Academy diff, curated YouTube channels) land in follow-on milestones M1.5.2+.
+> 5. **Known catalog gap.** The 31-tool seed file the original plan referenced (`can-we-organize-more-fluffy-koala-agent-a4566e4473d5aa0c2.md`) is NOT on disk — the hash doesn't match anything under `~/.claude/plans`. `data/learn/tools.json` currently holds a **14-tool stub** curated from `can-we-organize-more-fluffy-koala-agent-a48085f84719ef815.md` (the April-2026 landscape scan). Grow the stub in place; the shape matches the plan's Tool schema.
+> 6. **Known taxonomy gap.** The capability grid doesn't cover 3D / motion (Blender, Meshy, camera-path control) or premium-motion UI (Apple-glass effects) — noted in "Capability-taxonomy gaps to fix" below. Project descriptions mentioning those won't resolve to any tool until the taxonomy grows.
+> 7. **Known Finder gap.** The description textarea doesn't auto-populate capability checkboxes yet — the "hybrid wizard + pre-checked grid" mechanic is deferred. Continue just scrolls to the grid; caps are manual. User is OK leaving for later.
+> 8. **Dev loop:** `python scripts/dev_server.py 8765` from repo root serves with `Cache-Control: no-store` (iOS Safari respects it). Phone: `http://10.0.0.214:8765/`. Windows Firewall inbound rule for TCP 8765 is already added. Footer pill proves freshness — if `deployedAt` doesn't change after a push, the phone is stuck on cache.
+> 9. **User preferences** (also in auto-memory at `~/.claude/projects/C--dev-claudeHub/memory/`): terse replies, one question at a time, no guessing UI / keybindings / flags, 95% confidence before code, phone-first responsive design, milestone-size commits with `data/version.json` bump, Claude-native tools preferred in Finder ties.
 >
-> **Do not** merge this branch to main without user approval per milestone. **Do not** start the next milestone without user phone-review of the previous.
+> **Do not** merge this branch to main without user approval. **Do not** start the next milestone without user phone-review of the previous. **Do not** swap the no-cache dev server without first round-tripping a `localStorage` write/read — see auto-memory `feedback_localstorage_cache.md`.
 
 ---
 
@@ -365,32 +372,124 @@ Each phase ships independently behind feature detection — if a phase's JSON is
 
 Phases are too coarse for weekly review. Inside every phase, break into **milestones**: the smallest shippable unit that shows visible UI progress. After every milestone: commit, push, GitHub Pages auto-deploys, user reviews on phone, we iterate before the next chunk.
 
-**Phase 1 MVP chunked:**
+**Phase 1 MVP chunked — ✅ SHIPPED (v0.1.1 → v0.1.12, complete 2026-04-18):**
 
 ```
-M1.1  Brand flip             title + header logo → "aiStacked"; meta desc
-M1.2  4-tab nav structure    Home / Learn / News-Media / Comply365 shells
-M1.3  Home → News move       migrate the 5 chart cards out of Home
-M1.4  Home dashboard shell   empty-state cards (progress, finder CTA)
-M1.5  Tools catalog grid     read tools.json stub, render modality filter
-M1.6  Claude hub (Basics)    static page, first section only
-M1.7  Finder — wizard step   project description input + forks
-M1.8  Finder — capability grid  checkbox grid, live counts
-M1.9  Finder output — Easy   single ordered path, reasoning sidecar
-M1.10 Finder output — Best   dual column on desktop, stacked on mobile
-M1.11 Save as project        writes localStorage, shows in My Projects
-M1.12 Mobile polish pass     touch targets, sheet pickers, text sizing
+M1.1  ✅ Brand flip             title + header → "aiStacked"; meta desc         [v0.1.1]
+M1.2  ✅ 4-tab nav structure    Home / Learn / News-Media / Comply365 shells    [v0.1.2]
+M1.3  ✅ Home → News move       migrate the 5 chart cards out of Home           [v0.1.3]
+M1.4  ✅ Home dashboard shell   empty-state cards (progress, finder CTA)        [v0.1.4]
+M1.5  ✅ Tools catalog grid     14-tool stub (not 31), modality filter + counts [v0.1.5]
+M1.6  ✅ Claude hub (Basics)    nested sub-sub-pills; 4 concept cards in Basics [v0.1.6]
+M1.7  ✅ Finder — wizard step   description textarea + 2 fork cards + status    [v0.1.7]
+M1.8  ✅ Finder — capability grid  10 groups × 2-3 caps, live counts, filter bar [v0.1.8]
+M1.9  ✅ Finder output — Easy   numbered stepper + reasoning sidecar             [v0.1.9]
+M1.10 ✅ Finder output — Best   dual-column (blue) alongside Easy (orange)       [v0.1.10]
+M1.11 ✅ Save as project        save form → localStorage → My Projects pane      [v0.1.11]
+M1.12 ✅ Mobile polish pass     44px touch targets, viewport a11y, a-delay kill  [v0.1.12]
 ```
 
-Each milestone ends with `git commit && git push` from the feature branch **merged to main** (or deployed from branch via GH Pages preview). User opens the live URL on phone, reports back, next milestone begins. No batching milestones without review.
+**Also shipped alongside Phase 1 (chore commits, not milestone bumps):**
+- `chore(dev)`: `scripts/dev_server.py` — no-cache dev server + visible `aiStacked v…` footer pill.
+- `fix(learn)`: pane `:not([hidden])` — CSS specificity bug where `display:flex` rules beat the UA `[hidden]` rule.
 
-**Rules:**
+**Phase 1 → v0.2.0 tag commit** marks MVP complete; Phase 1.5 (scraper) opens the next version series.
+
+---
+
+**Phase 1.5 — Claude learning scraper (NEXT — start here):**
+
+```
+M1.5.1  ▢ Scraper skeleton        scripts/fetch_claude_learning.js; GitHub releases
+                                  for anthropics/claude-code + modelcontextprotocol/*;
+                                  register in build_latest_json.js as
+                                  sections.claude_learning; render feed in the
+                                  Claude hub "What's new" pane (currently a stub).
+M1.5.2  ▢ Anthropic docs changelog  docs.claude.com changelog/RSS if exposed,
+                                    otherwise sitemap-diff against a cached snapshot.
+M1.5.3  ▢ Anthropic Academy diff    anthropic.skilljar.com course list diff.
+M1.5.4  ▢ MCP spec bumps            github.com/modelcontextprotocol releases
+                                    (if not already absorbed by M1.5.1).
+M1.5.5  ▢ Curated YouTube channels  extend scripts/fetch_youtube.js with 3-5
+                                    Claude-centric channels (Skill Leap, Matt Wolfe,
+                                    etc.); filter the results into claude_learning.
+M1.5.6  ▢ What's new UX pass        polish the hub's feed — per-item source chip,
+                                    "N new since you last visited" badge, pin CTA.
+```
+
+**Phase 2 — Snippets library (after Phase 1.5):**
+
+```
+M2.1   ▢ data/learn/snippets.json  starter set, Priority 1: CLAUDE.md patterns.
+M2.2   ▢ Priority 2               Skills YAML frontmatter + examples.
+M2.3   ▢ Priority 3               MCP server configs + scaffolds.
+M2.4   ▢ Priority 4               Image/video prompt templates
+                                  (Nano Banana, Veo 3.1, Midjourney).
+M2.5   ▢ Priority 5               Agent / LLM prompts (system prompts, personas).
+M2.6   ▢ Priority 6               n8n workflow JSON exports.
+M2.7   ▢ Priority 7               Lovable / Bolt starter prompts.
+M2.8   ▢ Priority 8               Python / JS SDK snippets;
+                                  ACCPAC fixed-width parser for the commission calc use case.
+M2.9   ▢ Snippet rows UI          per-tool snippet sections on tool pages.
+M2.10  ▢ Global cmd-K search      topbar search over title + tags; copy-to-clipboard.
+```
+
+**Phase 3 — My Projects depth:**
+
+```
+M3.1   ▢ Project notes pad          markdown pad per project.
+M3.2   ▢ Pin button on tool pages   + pin button on snippet rows; project-scoped picker.
+M3.3   ▢ JSON export / import       device backup.
+M3.4   ▢ localStorage monitor       usage bar, per-category breakdown, purge actions.
+M3.5   ▢ Multi-collection pinning   clhub.v1.collections model; Comply365 collection.
+M3.6   ▢ "Continue where you left off"  Home dashboard populates from in-progress state.
+```
+
+**Phase 4 — Authored tutorials + MCQ quizzes:**
+
+```
+M4.1   ▢ Lesson frontmatter parser  title, track, order, minutes, quiz[] array.
+M4.2   ▢ MCQ renderer               reveal-on-answer, explanations.
+M4.3   ▢ Progress tracking          per-tool + per-use-case progress bar.
+M4.4   ▢ First lessons (Claude Code)  install + CLAUDE.md conventions + slash commands.
+M4.5   ▢ First lessons (MCP/Skills)   what they are, when to author one.
+M4.6   ▢ First lesson (Blender-AI hybrid)  for the Young Carpets 3D video use case.
+```
+
+**Phase 5 — Finder tuning from real use:**
+
+```
+M5.1   ▢ priorityScore / setupComplexity  recalibrate against the 3 seed use cases.
+M5.2   ▢ Concrete setup snippets per tool  Finder output becomes copy-paste-runnable.
+M5.3   ▢ "Browse example projects" in Finder  load a pre-filled wizard (Young Carpets etc.).
+M5.4   ▢ Capability taxonomy v2      fix the 3D/motion and premium-motion UI gaps
+                                     flagged in Resume-here #6.
+M5.5   ▢ Hybrid wizard auto-check    parse description text → pre-check capability
+                                     boxes (Resume-here #7). Starts as keyword
+                                     heuristic; can upgrade to Claude API later.
+```
+
+**Phase 6 — User-authored workflows with on-demand research:**
+
+```
+M6.1   ▢ "Add workflow" button        writes to clhub.v1.userWorkflows.
+M6.2   ▢ Claude API key handling      localStorage-only, never transmitted off-origin
+                                      except to api.anthropic.com.
+M6.3   ▢ "Research this" button       web-search call → guessed stack + notes + links.
+M6.4   ▢ No-key fallback              "Copy research prompt" → user runs in Claude.ai,
+                                      pastes result back.
+M6.5   ▢ Author-only promotion flow   promote researched workflows into
+                                      data/learn/usecases.json.
+```
+
+**Shipping rules (unchanged — still apply to every future milestone):**
 - One milestone per session of work, roughly. If a milestone balloons, split it.
-- Verify before ship: dev-server check + mobile viewport test in browser.
+- Each milestone ends with `git commit && git push` from the feature branch. User reviews on phone via `http://10.0.0.214:8765/`. No batching milestones without review.
+- Verify before ship: `node --check js/app.js`, dev-server check, mobile viewport test.
 - Never ship a broken tab — feature-detect and hide incomplete UI until the milestone that completes it.
-- Commit message: `feat(M1.X): <short>` so the milestone number is searchable in history.
-
-Same chunking applies to later phases (M2.x for Snippets, M3.x for Projects depth, etc.).
+- Commit message: `feat(M<phase>.<n>): <short> [v<ver>]` so both milestone and version are searchable.
+- Every milestone commit updates `data/version.json` — `deployedAt` must move forward so the phone footer pill proves the deploy.
+- Chore commits (no user-facing change): `chore(dev/fix/release): …`, no version bump required.
 
 ## Flexibility & freshness — handling the AI-tools churn
 
