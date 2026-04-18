@@ -1,23 +1,34 @@
 # aiStacked — the claudeHub rebuild plan
 
-> **Resume-here for a fresh Claude Code session (updated 2026-04-18, v0.2.0):**
+> **Resume-here for a fresh Claude Code session (updated 2026-04-18, v0.3.2):**
 >
 > 1. **First thing — restart the dev server.** The previous session's background server died when that session ended. Run `python scripts/dev_server.py 8765` from the repo root before any code work so the user's phone review path stays live. Phone URL: `http://10.0.0.214:8765/`. Run it in the background so it keeps serving while you work.
-> 2. You are on branch `feat/aistacked-rebuild`. `main` holds the live deployed aiStacked (merged at `f746cc1`, Phase 1 MVP); GitHub Pages serves it at `https://onerrorgotowtf.github.io/claudeHub/`.
-> 3. Rollback anchor: tag `pre-learning-path` at commit `ce457f9` (local + origin). `git reset --hard pre-learning-path` restores pre-rebuild state on `main`.
-> 4. **Phase 1 MVP is COMPLETE.** All twelve M1.x milestones shipped (v0.1.1 → v0.1.12). Footer pill renders `aiStacked v<ver> · M<milestone> · <deployedAt>` — it's the authoritative proof of which build is on the phone. See the checked list in the **Phased rollout** section below.
-> 5. **Continue from Phase 1.5 — M1.5.1 (Claude learning scraper, first source).** Scope:
->    - Create `scripts/fetch_claude_learning.js` modeled on the other `scripts/fetch_*.js` scrapers. Start with GitHub Releases feeds (Atom) for `anthropics/claude-code` and the `modelcontextprotocol/*` repos — zero-dependency, no API key needed.
->    - Normalize to `{ title, url, source, published, summary }` and sort by date desc.
->    - Register in `scripts/build_latest_json.js` as a new `sections.claude_learning` key. Follow the existing empty-fetch-preserves-prior-data pattern.
->    - Wire the Claude hub's `data-pane="claude-whats-new"` placeholder to render this section as a feed. Other Phase-1.5 sources (Anthropic docs changelog, Academy diff, curated YouTube channels) land in follow-on milestones M1.5.2+.
-> 6. **Known catalog gap.** The 31-tool seed file the original plan referenced (`can-we-organize-more-fluffy-koala-agent-a4566e4473d5aa0c2.md`) is NOT on disk — the hash doesn't match anything under `~/.claude/plans`. `data/learn/tools.json` currently holds a **14-tool stub** curated from `can-we-organize-more-fluffy-koala-agent-a48085f84719ef815.md` (the April-2026 landscape scan). Grow the stub in place; the shape matches the plan's Tool schema.
-> 7. **Known taxonomy gap.** The capability grid doesn't cover 3D / motion (Blender, Meshy, camera-path control) or premium-motion UI (Apple-glass effects) — noted in "Capability-taxonomy gaps to fix" below. Project descriptions mentioning those won't resolve to any tool until the taxonomy grows.
-> 8. **Known Finder gap.** The description textarea doesn't auto-populate capability checkboxes yet — the "hybrid wizard + pre-checked grid" mechanic is deferred. Continue just scrolls to the grid; caps are manual. User is OK leaving for later.
-> 9. **Dev-server details** (see #1 for the imperative): serves with `Cache-Control: no-store` so iOS Safari respects it. Windows Firewall inbound rule for TCP 8765 is already added (persists across reboots). Footer pill proves freshness — if `deployedAt` doesn't change after a push, the phone is stuck on cache.
-> 10. **User preferences** (also in auto-memory at `~/.claude/projects/C--dev-claudeHub/memory/`): terse replies, one question at a time, no guessing UI / keybindings / flags, 95% confidence before code, phone-first responsive design, milestone-size commits with `data/version.json` bump, Claude-native tools preferred in Finder ties.
+> 2. **Branch state:** feat/aistacked-rebuild has been **MERGED TO `main`** at v0.3.2. Phase 1 MVP, Phase 1.5 (scraper + UX pass), and Phase 2.1–2.3 (Snippets library: CLAUDE.md, Skills YAML, MCP) are all live at `https://onerrorgotowtf.github.io/claudeHub/`. Start new work on `feat/aistacked-rebuild` again (push it forward), or cut a fresh feature branch off `main`. Release tag for this state: `v0.3.2`.
+> 3. Rollback anchor: tag `pre-learning-path` at commit `ce457f9`. `git reset --hard pre-learning-path` restores pre-rebuild state on `main` (rarely needed now).
+> 4. **Milestones shipped (Phase 1 + 1.5 + 2.1-2.3):**
+>    - M1.1 → M1.12  ✅  Phase 1 MVP (v0.1.x)
+>    - M1.5.1  ✅  Claude learning scraper — GH releases for claude-code + MCP repos
+>    - M1.5.2  ✅  Anthropic release-notes HTML scrape (overview page, stable anchors)
+>    - M1.5.3  ✅  Anthropic Academy diff scraper (cold-start seeded, emits only new courses)
+>    - M1.5.4  ✅  Academy catalog placed into Claude hub subpill panes via claude_hub_map.json
+>    - M1.5.5a ✅  YouTube routed into claude_learning; Academy + Videos filter pills (Academy pill later dropped — always empty by design)
+>    - M1.5.6a-e ✅  UX pass: "N new" badge, bucket-colored cards, pill counts, pin CTA, scrape-resistant pins
+>    - fix/video-modal ✅ In-app YouTube embed modal (keeps users inside the app on iOS)
+>    - M2.1  ✅  Snippets library — 6 CLAUDE.md / slash-command / hook / output-style / MCP config patterns + collapsible snippet row viewer w/ copy button
+>    - M2.2  ✅  Skills YAML snippets (5 more — minimal, allowed-tools, bundled files, prepare-release workflow, frontmatter reference)
+>    - M2.3  ✅  MCP snippets (5 more — Claude Desktop stdio config, HTTP-config note, Python FastMCP scaffold, TS McpServer scaffold, `claude mcp add` CLI)
+> 5. **Continue from Phase 2 — M2.4 (prompt templates, image/video).** Scope:
+>    - Author 5-7 ready-to-paste prompt templates for image/video generation tools — Nano Banana, Veo 3.1, Midjourney. Focus on real user intents (marketing hero, product shot, product video, UGC-style clip, stylized explainer).
+>    - Add new snippetTag: `"prompt-image"` and `"prompt-video"`. Add them to the fixed set in the schema note; extend claude_hub_map.json snippetTagsByBucket only if the user wants them surfaced under a specific Claude subpill (probably not — these belong to the Finder / Tools surface later). For M2.4 they land in `data/learn/snippets.json` as a data asset; UI surface them in M2.9.
+>    - User priority order (from plan): Priority 4 = image/video prompts (Nano Banana, Veo 3.1, Midjourney); Priority 5 = agent/LLM prompts; Priority 6 = n8n; Priority 7 = Lovable/Bolt; Priority 8 = Python/JS SDK snippets + ACCPAC fixed-width parser.
+> 6. **Known catalog gap.** Tools catalog is still a 14-tool stub at `data/learn/tools.json`. Grow in place — same schema — before Phase 5 tuning.
+> 7. **Known taxonomy gap.** Capability grid doesn't cover 3D / motion (Blender, Meshy) or premium-motion UI (Apple-glass). Flagged for Phase 5 (M5.4). Descriptions mentioning those won't resolve to tools until the taxonomy grows.
+> 8. **Known Finder gap.** Textarea doesn't auto-check capability boxes yet (hybrid wizard deferred, M5.5). Continue scrolls to grid; caps are manual.
+> 9. **Dev-server details:** serves with `Cache-Control: no-store` so iOS Safari respects it. Windows Firewall inbound rule for TCP 8765 persists. Footer pill proves freshness — if `deployedAt` doesn't change after a push, the phone is stuck on cache.
+> 10. **User preferences** (also in auto-memory at `~/.claude/projects/C--dev-claudeHub/memory/`): terse replies, one question at a time, no guessing UI / keybindings / flags, 95% confidence before code, phone-first responsive design, milestone-size commits with `data/version.json` bump, two-tap confirm for destructive actions (iOS PWA suppresses `confirm()`), pin pattern on every new feed/list (float-to-top + persistent + scrape-resistant).
+> 11. **Verify SDK snippets before shipping.** Agent-produced SDK code has hallucinated API shapes (caught in M2.3 — TS MCP SDK). Spot-check against real SDK source or README before committing snippet content.
 >
-> **Do not** merge this branch to main without user approval. **Do not** start the next milestone without user phone-review of the previous. **Do not** swap the no-cache dev server without first round-tripping a `localStorage` write/read — see auto-memory `feedback_localstorage_cache.md`.
+> **Do not** start the next milestone without user phone-review of the previous. **Do not** swap the no-cache dev server without first round-tripping a `localStorage` write/read. **Do not** introduce `confirm()` / `alert()` / `prompt()` in this codebase — use the two-tap in-UI pattern. **Do not** ship a new feed/list without a pin CTA.
 
 ---
 
@@ -398,32 +409,34 @@ M1.12 ✅ Mobile polish pass     44px touch targets, viewport a11y, a-delay kill
 
 ---
 
-**Phase 1.5 — Claude learning scraper (NEXT — start here):**
+**Phase 1.5 — Claude learning scraper (COMPLETE):**
 
 ```
-M1.5.1  ▢ Scraper skeleton        scripts/fetch_claude_learning.js; GitHub releases
-                                  for anthropics/claude-code + modelcontextprotocol/*;
-                                  register in build_latest_json.js as
-                                  sections.claude_learning; render feed in the
-                                  Claude hub "What's new" pane (currently a stub).
-M1.5.2  ▢ Anthropic docs changelog  docs.claude.com changelog/RSS if exposed,
-                                    otherwise sitemap-diff against a cached snapshot.
-M1.5.3  ▢ Anthropic Academy diff    anthropic.skilljar.com course list diff.
-M1.5.4  ▢ MCP spec bumps            github.com/modelcontextprotocol releases
-                                    (if not already absorbed by M1.5.1).
-M1.5.5  ▢ Curated YouTube channels  extend scripts/fetch_youtube.js with 3-5
-                                    Claude-centric channels (Skill Leap, Matt Wolfe,
-                                    etc.); filter the results into claude_learning.
-M1.5.6  ▢ What's new UX pass        polish the hub's feed — per-item source chip,
-                                    "N new since you last visited" badge, pin CTA.
+M1.5.1  ✅ Scraper skeleton        GH releases for claude-code + MCP repos [v0.2.1]
+M1.5.2  ✅ Anthropic docs changelog  release-notes HTML scrape, stable anchors [v0.2.3]
+                                     (deliberate deviation from plan: HTML > sitemap-diff;
+                                      system-prompts page deferred — Radix hydrates client-side)
+M1.5.3  ✅ Anthropic Academy diff    cold-start seeds 17 courses; diff-only thereafter [v0.2.5]
+M1.5.4  ✅ Academy catalog placed     Basics/Code/Skills/MCP/Agent SDK via claude_hub_map.json [v0.2.6]
+                                     (replaced original MCP-spec-bumps plan — already absorbed by M1.5.1)
+M1.5.5a ✅ YouTube + filter pills   routed into claude_learning; Academy/Videos pills [v0.2.7]
+                                     (v0.2.8 dropped always-empty Academy pill)
+M1.5.5b ▢ Curated YT channels       add 3-5 more Claude-focused creators after verifying
+                                     channel IDs (IndyDevDan, AI Jason, AICodeKing, etc.)
+M1.5.6a ✅ "N new" badge            since-last-visit count on What's new subpill [v0.2.9]
+M1.5.6b ✅ Bucket-colored cards     left border + pill label per source bucket [v0.2.10]
+M1.5.6c ✅ Filter-pill counts       tabular-numeric counts per bucket [v0.2.11]
+M1.5.6d ✅ Pin CTA                  pins float to top; persisted in localStorage [v0.2.12]
+M1.5.6e ✅ Scrape-resistant pins    full item snapshot cached; survives feed churn [v0.2.13]
+fix/video-modal ✅                  in-app YouTube iframe modal (iOS PWA friendly) [v0.2.14]
 ```
 
 **Phase 2 — Snippets library (after Phase 1.5):**
 
 ```
-M2.1   ▢ data/learn/snippets.json  starter set, Priority 1: CLAUDE.md patterns.
-M2.2   ▢ Priority 2               Skills YAML frontmatter + examples.
-M2.3   ▢ Priority 3               MCP server configs + scaffolds.
+M2.1   ✅ data/learn/snippets.json  Priority 1: CLAUDE.md patterns + inline viewer [v0.3.0]
+M2.2   ✅ Priority 2               Skills YAML frontmatter + examples [v0.3.1]
+M2.3   ✅ Priority 3               MCP server configs + scaffolds [v0.3.2]
 M2.4   ▢ Priority 4               Image/video prompt templates
                                   (Nano Banana, Veo 3.1, Midjourney).
 M2.5   ▢ Priority 5               Agent / LLM prompts (system prompts, personas).
