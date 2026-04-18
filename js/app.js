@@ -4,6 +4,7 @@
   const DATA_URL = "data/latest.json?v=" + Date.now();
   const TUTORIALS_365_URL = "data/365/tutorials.json?v=" + Date.now();
   const TOOLS_URL = "data/learn/tools.json?v=" + Date.now();
+  const VERSION_URL = "data/version.json?v=" + Date.now();
   const THEME_KEY = "cdih-theme";
 
   // Tool-catalog modality vocabulary. "all" is the default filter.
@@ -612,6 +613,29 @@
     });
     host.appendChild(frag);
   }
+
+  // ---------- Version footer — proves which build is rendered ----------
+  async function loadVersion() {
+    // Always stamp "Loaded at" on mount, even if the fetch fails.
+    const loadedEl = document.getElementById("loaded-at");
+    if (loadedEl) {
+      loadedEl.textContent = new Date().toLocaleTimeString(undefined, {
+        hour: "numeric", minute: "2-digit", second: "2-digit",
+      });
+    }
+    try {
+      const res = await fetch(VERSION_URL, { cache: "no-store" });
+      if (!res.ok) return;
+      const v = await res.json();
+      const num = document.getElementById("version-num");
+      const ms  = document.getElementById("version-milestone");
+      const dt  = document.getElementById("version-date");
+      if (num) num.textContent = "v" + v.version;
+      if (ms)  ms.textContent  = v.milestone || "";
+      if (dt)  dt.textContent  = v.deployedAt || "";
+    } catch {}
+  }
+  loadVersion();
 
   // ---------- Finder wizard (Learn → Finder) ----------
   const FINDER_DRAFT_KEY = "clhub.v1.finderDraft";
