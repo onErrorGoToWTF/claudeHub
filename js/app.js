@@ -3,12 +3,106 @@
 
   const DATA_URL = "data/latest.json?v=" + Date.now();
   const TUTORIALS_365_URL = "data/365/tutorials.json?v=" + Date.now();
+  const TOOLS_URL = "data/learn/tools.json?v=" + Date.now();
+  const VERSION_URL = "data/version.json?v=" + Date.now();
   const THEME_KEY = "cdih-theme";
 
+  // Tool-catalog modality vocabulary. "all" is the default filter.
+  // Order here drives the filter-pill order in the UI.
+  const MODALITIES = [
+    { id: "all",        label: "All"        },
+    { id: "llm",        label: "LLM"        },
+    { id: "coding",     label: "Coding"     },
+    { id: "agent",      label: "Agent"      },
+    { id: "image",      label: "Image"      },
+    { id: "video",      label: "Video"      },
+    { id: "voice",      label: "Voice"      },
+    { id: "automation", label: "Automation" },
+    { id: "deploy",     label: "Deploy"     },
+    { id: "data",       label: "Data"       },
+  ];
+  const PRICE_BADGE = {
+    free:     "Free",
+    lte20:    "≤$20/mo",
+    lte50:    "≤$50/mo",
+    premium:  "Premium",
+  };
+  // Ordinal for price-ascending sort. Unknown tiers go last.
+  const PRICE_RANK = { free: 0, lte20: 1, lte50: 2, premium: 3 };
+
+  // Projects localStorage key (M1.11).
+  const PROJECTS_KEY = "clhub.v1.projects";
+
+  function escapeHtml(s) {
+    return String(s ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  // Capability taxonomy for the Finder checkbox grid.
+  // Each capability.matches lists the tools.json `provides` tags that
+  // satisfy that capability. Live counts = # tools whose provides set
+  // intersects the matches set.
+  const CAP_GROUPS = [
+    { id: "foundation", label: "Foundation Model", caps: [
+      { id: "cap-frontier-llm",  label: "Frontier reasoning",   matches: ["frontier-llm"] },
+      { id: "cap-agent-framework", label: "Agent framework",    matches: ["agent-framework"] },
+      { id: "cap-projects",      label: "Projects / Artifacts", matches: ["projects", "artifacts"] },
+    ]},
+    { id: "build", label: "Build Surface", caps: [
+      { id: "cap-ide",           label: "IDE / pair-coder",     matches: ["ide", "inline-edit"] },
+      { id: "cap-no-code",       label: "No-code app builder",  matches: ["no-code-frontend"] },
+      { id: "cap-terminal",      label: "Terminal agent",       matches: ["terminal-agent"] },
+    ]},
+    { id: "agent", label: "Agent & Orchestration", caps: [
+      { id: "cap-mcp",           label: "MCP client",           matches: ["mcp-client"] },
+      { id: "cap-workflow",      label: "Workflow automation",  matches: ["workflow-automation"] },
+      { id: "cap-scheduled",     label: "Scheduled / cron",     matches: ["cron-jobs"] },
+    ]},
+    { id: "voice", label: "Voice", caps: [
+      { id: "cap-tts",           label: "Text-to-speech",       matches: ["text-to-speech", "expressive-tts"] },
+      { id: "cap-voice-clone",   label: "Voice cloning",        matches: ["voice-cloning"] },
+      { id: "cap-realtime-voice", label: "Realtime voice",      matches: ["real-time-voice"] },
+    ]},
+    { id: "video", label: "Video", caps: [
+      { id: "cap-gen-video",     label: "Generative video",     matches: ["text-to-video"] },
+      { id: "cap-img-to-video",  label: "Image-to-video",       matches: ["image-to-video", "keyframe-video-animation"] },
+      { id: "cap-cinematic",     label: "4K / synced audio",    matches: ["4k-video", "synced-audio"] },
+    ]},
+    { id: "image", label: "Image", caps: [
+      { id: "cap-text-to-image", label: "Text-to-image",        matches: ["text-to-image"] },
+      { id: "cap-image-edit",    label: "Image edit / inpaint", matches: ["image-to-image"] },
+      { id: "cap-text-on-image", label: "Text on image",        matches: ["text-rendering"] },
+    ]},
+    { id: "data", label: "Data & Retrieval", caps: [
+      { id: "cap-postgres",      label: "Postgres DB",          matches: ["postgres-db"] },
+      { id: "cap-vector",        label: "Vector / RAG",         matches: ["vector-search"] },
+      { id: "cap-auth",          label: "Auth bundled",         matches: ["auth-included"] },
+    ]},
+    { id: "knowledge", label: "Knowledge & Research", caps: [
+      { id: "cap-file-upload",   label: "File uploads",         matches: ["file-upload"] },
+      { id: "cap-long-context",  label: "Long context",         matches: ["long-context"] },
+    ]},
+    { id: "deploy", label: "Deploy & Hosting", caps: [
+      { id: "cap-static",        label: "Static / edge hosting", matches: ["static-hosting", "edge-functions"] },
+      { id: "cap-preview",       label: "Preview deploys",       matches: ["preview-deploys"] },
+      { id: "cap-nextjs",        label: "Next.js native",        matches: ["next-js-native"] },
+    ]},
+    { id: "glue", label: "Glue & Ops", caps: [
+      { id: "cap-one-click",     label: "One-click deploy",     matches: ["one-click-deploy", "vercel-deploy"] },
+      { id: "cap-self-host",     label: "Self-hostable",        matches: ["self-hostable"] },
+    ]},
+  ];
+  const CAP_BY_ID = {};
+  CAP_GROUPS.forEach(g => g.caps.forEach(c => { CAP_BY_ID[c.id] = { ...c, groupLabel: g.label }; }));
+
   // Sections that render from latest.json and share the filter machinery.
-  const SECTIONS = ["365", "resources", "news"];
+  const SECTIONS = ["comply365", "news-media"];
   // Sections that are exclusive (only visible when their chip is picked).
-  const DISTINCT_SECTIONS = ["home", "apply"];
+  const DISTINCT_SECTIONS = ["home", "learn"];
 
   // Per-model brand-aligned electric palette, used by every chart so
   // colors match across the site.
@@ -72,9 +166,9 @@
       if (!el) return;
       el.dataset.hidden = f === s ? "false" : "true";
     });
-    if (f === "365") load365();
+    if (f === "comply365") load365();
     if (f === "home") replayHomeAnimations();
-    if (f === "apply") replayApplyAnimations();
+    if (f === "news-media") replayNewsMediaAnimations();
   }
 
   // If a host's bounding rect overlaps the activation zone (middle ~75%
@@ -105,13 +199,28 @@
   }
 
   // Replay Home-tab animations whenever the tab is activated.
+  // Charts moved to News & Media in M1.3 — Home only animates its hero,
+  // stat-grid, and CTA.
   function replayHomeAnimations() {
     const css = document.querySelectorAll(
-      ".section-home, .section-home .home-hero, .section-home .stat-grid, .section-home .home-cta, .section-home .hero"
+      ".section-home, .section-home .home-hero, .section-home .stat-grid, .section-home .home-cta"
     );
     css.forEach(el => {
       el.style.animation = "none";
       void el.offsetHeight;      // force reflow
+      el.style.animation = "";
+    });
+  }
+
+  // Replay News & Media chart animations when the tab is activated and the
+  // State-of-AI sub-pill pane is visible (default on tab load).
+  function replayNewsMediaAnimations() {
+    const statePane = document.querySelector('[data-pane="news-media-state"]');
+    if (!statePane || statePane.hidden) return;
+    const css = statePane.querySelectorAll(".hero");
+    css.forEach(el => {
+      el.style.animation = "none";
+      void el.offsetHeight;
       el.style.animation = "";
     });
     renderTimeline();
@@ -122,19 +231,6 @@
     replayChartObservers(["#cbars", "#vbars", "#hbars", "#faceoff"]);
   }
 
-  // Replay Apply-AI-tab animations whenever the tab is activated.
-  function replayApplyAnimations() {
-    const css = document.querySelectorAll(".section-apply, .section-apply .hero");
-    css.forEach(el => {
-      el.style.animation = "none";
-      void el.offsetHeight;
-      el.style.animation = "";
-    });
-    renderTaskGrid();
-    renderRecipes();
-    replayChartObservers(["#taskgrid", "#recipes"]);
-  }
-
   chips.forEach(chip => {
     chip.addEventListener("click", () => {
       applyFilter(chip.dataset.filter);
@@ -142,23 +238,53 @@
     });
   });
 
-  // Resources sub-pills: Videos / Official
-  document.querySelectorAll(".subpill[data-tutkind]").forEach((pill) => {
+  // Learn sub-pills: Claude / Finder / Tools / My Projects
+  document.querySelectorAll(".subpill[data-learn]").forEach((pill) => {
     pill.addEventListener("click", () => {
-      const kind = pill.dataset.tutkind;
-      document.querySelectorAll(".subpill[data-tutkind]").forEach((p) => {
+      const kind = pill.dataset.learn;
+      document.querySelectorAll(".subpill[data-learn]").forEach((p) => {
         const on = p === pill;
         p.classList.toggle("is-active", on);
         p.setAttribute("aria-selected", on ? "true" : "false");
       });
-      const videos   = document.querySelector('[data-cards="resources-videos"]');
-      const official = document.querySelector('[data-cards="resources-official"]');
-      if (videos)   videos.hidden   = kind !== "video";
-      if (official) official.hidden = kind !== "official";
+      document.querySelectorAll('.pane[data-pane^="learn-"]').forEach((pane) => {
+        pane.hidden = pane.dataset.pane !== `learn-${kind}`;
+      });
     });
   });
 
-  // 365 sub-pills: Tutorials / Resources / News
+  // Claude hub sub-sub-pills: Basics / Claude Code / Skills / MCP / Agent SDK / What's new
+  document.querySelectorAll(".subpill[data-claude]").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const kind = pill.dataset.claude;
+      document.querySelectorAll(".subpill[data-claude]").forEach((p) => {
+        const on = p === pill;
+        p.classList.toggle("is-active", on);
+        p.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      document.querySelectorAll('.pane[data-pane^="claude-"]').forEach((pane) => {
+        pane.hidden = pane.dataset.pane !== `claude-${kind}`;
+      });
+    });
+  });
+
+  // News & Media sub-pills: State of AI / News
+  document.querySelectorAll(".subpill[data-newsmedia]").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const kind = pill.dataset.newsmedia;
+      document.querySelectorAll(".subpill[data-newsmedia]").forEach((p) => {
+        const on = p === pill;
+        p.classList.toggle("is-active", on);
+        p.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      document.querySelectorAll('.pane[data-pane^="news-media-"]').forEach((pane) => {
+        pane.hidden = pane.dataset.pane !== `news-media-${kind}`;
+      });
+      if (kind === "state") replayNewsMediaAnimations();
+    });
+  });
+
+  // Comply365 sub-pills: Tutorials / Resources / News
   document.querySelectorAll(".subpill[data-s365]").forEach((pill) => {
     pill.addEventListener("click", () => {
       const kind = pill.dataset.s365;
@@ -193,15 +319,26 @@
   const initial = document.querySelector(".chip.is-active");
   if (initial) applyFilter(initial.dataset.filter);
 
-  // Home CTA — jump to another chip
-  const cta = document.querySelector(".home-cta-btn");
-  if (cta) {
-    cta.addEventListener("click", () => {
-      const target = cta.dataset.chip;
-      const chip = document.querySelector(`[data-filter="${target}"]`);
+  // Chip shortcut buttons — any element with data-chip jumps to that tab,
+  // and optional data-subpill activates a named sub-pill inside it.
+  const SUBPILL_ATTR = {
+    "learn":      "learn",
+    "comply365":  "s365",
+    "news-media": "newsmedia",
+  };
+  document.querySelectorAll("[data-chip]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const chipName = btn.dataset.chip;
+      const chip = document.querySelector(`[data-filter="${chipName}"]`);
       if (chip) chip.click();
+      const sub = btn.dataset.subpill;
+      const attr = SUBPILL_ATTR[chipName];
+      if (sub && attr) {
+        const pill = document.querySelector(`[data-${attr}="${sub}"]`);
+        if (pill) pill.click();
+      }
     });
-  }
+  });
 
   // ---------- Time formatting ----------
   const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });
@@ -270,7 +407,6 @@
 
   const CARD_CONTAINERS = [
     "365-tutorials", "365-resources-videos", "365-resources-official", "365-news",
-    "resources-videos", "resources-official",
     "news",
   ];
 
@@ -452,6 +588,588 @@
     el.textContent = iso ? "Updated " + relTime(iso) : "";
   }
 
+  // ---------- Tools catalog (Learn → Tools) ----------
+  let toolsData = null;
+  let toolsModality = "all";
+
+  // Finder capability-grid state (M1.8). Persisted per-device.
+  const FINDER_CAPS_KEY = "clhub.v1.finderCaps";
+  const capsSelected = new Set();
+  try {
+    const raw = localStorage.getItem(FINDER_CAPS_KEY);
+    if (raw) JSON.parse(raw).forEach((id) => capsSelected.add(id));
+  } catch {}
+  function persistCaps() {
+    try { localStorage.setItem(FINDER_CAPS_KEY, JSON.stringify([...capsSelected])); } catch {}
+  }
+
+  async function loadTools() {
+    try {
+      const res = await fetch(TOOLS_URL, { cache: "no-cache" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      toolsData = Array.isArray(data.tools) ? data.tools : [];
+      renderModalityFilter();
+      renderTools();
+      renderCapGrid();
+      renderCapFilterBar();
+      renderProjects(); // re-render so chips show real tool names
+    } catch (err) {
+      const host = document.getElementById("tool-grid");
+      if (host) host.innerHTML = `<div class="empty">Couldn't load tools catalog. ${String(err.message || err)}</div>`;
+    }
+  }
+
+  function countToolsForCap(cap) {
+    if (!toolsData || !cap) return 0;
+    const m = cap.matches || [];
+    return toolsData.filter((t) =>
+      (t.provides || []).some((p) => m.includes(p))
+    ).length;
+  }
+
+  function renderCapGrid() {
+    const host = document.getElementById("cap-grid");
+    if (!host || !toolsData) return;
+    host.innerHTML = "";
+    CAP_GROUPS.forEach((g) => {
+      const group = document.createElement("section");
+      group.className = "cap-group glass";
+      group.innerHTML = `<h5 class="cap-group-title">${g.label}</h5>`;
+      const list = document.createElement("div");
+      list.className = "cap-list";
+      g.caps.forEach((c) => {
+        const n = countToolsForCap(c);
+        const checked = capsSelected.has(c.id);
+        const row = document.createElement("label");
+        row.className = "cap-check" + (checked ? " is-checked" : "") + (n === 0 ? " is-empty" : "");
+        row.innerHTML = `
+          <input type="checkbox" class="cap-input" data-cap="${c.id}" ${checked ? "checked" : ""} ${n === 0 ? "disabled" : ""} />
+          <span class="cap-label">${c.label}</span>
+          <span class="cap-count">${n}</span>
+        `;
+        list.appendChild(row);
+      });
+      group.appendChild(list);
+      host.appendChild(group);
+    });
+    host.querySelectorAll(".cap-input").forEach((input) => {
+      input.addEventListener("change", () => {
+        const id = input.dataset.cap;
+        if (input.checked) capsSelected.add(id);
+        else capsSelected.delete(id);
+        input.closest(".cap-check").classList.toggle("is-checked", input.checked);
+        persistCaps();
+        renderCapFilterBar();
+        // Live-update the stack if the output is already revealed.
+        const stackOutput = document.getElementById("stack-output");
+        if (stackOutput && !stackOutput.hidden) renderStack();
+      });
+    });
+  }
+
+  // ----- Finder output — dual Easiest / Best path (M1.9–M1.10) -----
+  // Easy sort per plan: (+setupComplexity, -priorityScore, price-asc,
+  // Claude-native-first, id). Claude-native wins ties.
+  function cmpEasy(a, b) {
+    const pairs = [
+      [(a.setupComplexity ?? 3),      (b.setupComplexity ?? 3)],
+      [-(a.priorityScore ?? 3),       -(b.priorityScore ?? 3)],
+      [(PRICE_RANK[a.priceTier] ?? 99), (PRICE_RANK[b.priceTier] ?? 99)],
+      [(a.claudeNative ? 0 : 1),      (b.claudeNative ? 0 : 1)],
+    ];
+    for (const [x, y] of pairs) if (x !== y) return x - y;
+    return (a.id || "").localeCompare(b.id || "");
+  }
+
+  // Best sort per plan: (-priorityScore, quality-hints from tags, id) with
+  // Claude-native ties preferred. priceTier DESC stands in for a
+  // quality hint — premium-tier tools tend to be best-in-class.
+  function cmpBest(a, b) {
+    const pairs = [
+      [-(a.priorityScore ?? 3),       -(b.priorityScore ?? 3)],
+      [(a.claudeNative ? 0 : 1),      (b.claudeNative ? 0 : 1)],
+      [-(PRICE_RANK[a.priceTier] ?? 0), -(PRICE_RANK[b.priceTier] ?? 0)],
+      [(a.setupComplexity ?? 3),      (b.setupComplexity ?? 3)],
+    ];
+    for (const [x, y] of pairs) if (x !== y) return x - y;
+    return (a.id || "").localeCompare(b.id || "");
+  }
+
+  function pickStack(capIds, cmp) {
+    const picks = new Map(); // tool.id -> { tool, caps: [capLabel] }
+    const unmet = [];
+    capIds.forEach((id) => {
+      const cap = CAP_BY_ID[id];
+      if (!cap) return;
+      const candidates = toolsData.filter((t) =>
+        (t.provides || []).some((p) => (cap.matches || []).includes(p))
+      );
+      if (candidates.length === 0) {
+        unmet.push(cap.label);
+        return;
+      }
+      const primary = [...candidates].sort(cmp)[0];
+      const entry = picks.get(primary.id) || { tool: primary, caps: [] };
+      entry.caps.push(cap.label);
+      picks.set(primary.id, entry);
+    });
+    const ordered = [...picks.values()].sort((a, b) => cmp(a.tool, b.tool));
+    return { ordered, unmet };
+  }
+
+  function renderStack({ scroll } = {}) {
+    const host = document.getElementById("stack-output");
+    if (!host || !toolsData) return;
+    if (capsSelected.size === 0) {
+      host.hidden = true;
+      updateSaveCtaVisibility();
+      return;
+    }
+    const caps = [...capsSelected];
+    const easy = pickStack(caps, cmpEasy);
+    const best = pickStack(caps, cmpBest);
+    renderColumn(easy.ordered, easy.unmet, "stack-easy-list", "stack-easy-summary");
+    renderColumn(best.ordered, best.unmet, "stack-best-list", "stack-best-summary");
+    host.hidden = false;
+    updateSaveCtaVisibility();
+    if (scroll) host.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function updateSaveCtaVisibility() {
+    const stack = document.getElementById("stack-output");
+    const saveBlock = document.getElementById("stack-save");
+    const saveForm = document.getElementById("save-form");
+    if (!saveBlock) return;
+    const stackVisible = stack && !stack.hidden;
+    const formOpen = saveForm && !saveForm.hidden;
+    saveBlock.hidden = !stackVisible || formOpen;
+    if (!stackVisible && saveForm && !saveForm.hidden) {
+      saveForm.hidden = true;
+    }
+  }
+
+  function renderColumn(picked, unmet, listId, summaryId) {
+    const ol      = document.getElementById(listId);
+    const summary = document.getElementById(summaryId);
+    if (!ol || !summary) return;
+    summary.textContent = picked.length === 1 ? "1 tool" : `${picked.length} tools`;
+    ol.innerHTML = "";
+    picked.forEach((entry, i) => {
+      const { tool, caps } = entry;
+      const complexity = Math.max(0, Math.min(5, tool.setupComplexity || 0));
+      const stars = "★".repeat(complexity) + "☆".repeat(5 - complexity);
+      const priceLabel = PRICE_BADGE[tool.priceTier] || "";
+      const priceBadge = priceLabel
+        ? `<span class="tool-badge tool-badge-price" data-tier="${tool.priceTier}">${priceLabel}</span>`
+        : "";
+      const claudeBadge = tool.claudeNative
+        ? `<span class="tool-badge tool-badge-claude">Claude-native</span>`
+        : "";
+      const modalityLabel = (MODALITIES.find((m) => m.id === tool.modality) || {}).label || tool.modality || "";
+      const li = document.createElement("li");
+      li.className = "stack-step" + (i === 0 ? " stack-step-first" : "");
+      li.innerHTML = `
+        <div class="stack-step-num" aria-hidden="true">${i + 1}</div>
+        <article class="stack-card glass${tool.claudeNative ? " stack-card-claude" : ""}">
+          <div class="stack-card-head">
+            <span class="stack-vendor">${tool.vendor || ""}</span>
+            <span class="stack-modality">${modalityLabel}</span>
+          </div>
+          <h4 class="stack-name">${tool.name}</h4>
+          <p class="stack-tagline">${tool.tagline || ""}</p>
+          <p class="stack-why"><span class="stack-why-label">Picked because:</span> covers ${caps.join(", ")}.</p>
+          <div class="stack-meta">
+            <span class="stack-complexity" title="Setup complexity ${complexity}/5">Setup <span class="stack-stars">${stars}</span></span>
+            ${priceBadge}
+            ${claudeBadge}
+          </div>
+          <div class="stack-actions">
+            ${i === 0 ? '<span class="stack-start-chip">Start here</span>' : '<span class="stack-next-chip">Next step</span>'}
+            <a class="stack-link" href="${tool.docsUrl || tool.officialUrl || "#"}" target="_blank" rel="noopener">Docs →</a>
+          </div>
+        </article>
+      `;
+      ol.appendChild(li);
+    });
+    if (unmet && unmet.length) {
+      const li = document.createElement("li");
+      li.className = "stack-unmet";
+      li.innerHTML = `
+        <div class="stack-step-num stack-step-num-warn" aria-hidden="true">!</div>
+        <div class="stack-unmet-body">
+          <strong>Nothing in the catalog covers:</strong> ${unmet.join(", ")}.
+          The stub catalog is 14 tools — these capabilities fill in as the catalog grows.
+        </div>
+      `;
+      ol.appendChild(li);
+    }
+  }
+
+  // ----- My Projects (M1.11) -----
+  function getProjects() {
+    try {
+      const raw = localStorage.getItem(PROJECTS_KEY);
+      if (!raw) return {};
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === "object" ? parsed : {};
+    } catch { return {}; }
+  }
+  function putProjects(obj) {
+    try { localStorage.setItem(PROJECTS_KEY, JSON.stringify(obj)); } catch {}
+  }
+  function saveProject({ title, path }) {
+    if (!toolsData || capsSelected.size === 0) return null;
+    const caps = [...capsSelected];
+    const cmp = path === "best" ? cmpBest : cmpEasy;
+    const { ordered, unmet } = pickStack(caps, cmp);
+    const id = "prj_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 6);
+    const goal = document.getElementById("finder-input")?.value?.trim() || "";
+    const finalTitle = (title || "").trim()
+      || goal.slice(0, 60)
+      || `Project ${new Date().toLocaleDateString()}`;
+    const project = {
+      id,
+      title: finalTitle,
+      goal,
+      path: path === "best" ? "best" : "easy",
+      capsSelected: caps,
+      stack: ordered.map((e) => ({ toolId: e.tool.id, caps: e.caps })),
+      unmet,
+      createdAt: new Date().toISOString(),
+    };
+    const projects = getProjects();
+    projects[id] = project;
+    putProjects(projects);
+    renderProjects();
+    return project;
+  }
+  function deleteProject(id) {
+    const projects = getProjects();
+    if (!projects[id]) return;
+    delete projects[id];
+    putProjects(projects);
+    renderProjects();
+  }
+  function renderProjects() {
+    const host = document.getElementById("projects-grid");
+    if (!host) return;
+    const projects = Object.values(getProjects()).sort((a, b) =>
+      (b.createdAt || "").localeCompare(a.createdAt || "")
+    );
+    if (projects.length === 0) {
+      host.innerHTML = `<div class="empty">No saved projects yet — run the Finder and tap "Save as project" to seed one here.</div>`;
+      return;
+    }
+    host.innerHTML = "";
+    projects.forEach((p) => {
+      const card = document.createElement("article");
+      card.className = "project-card glass" + (p.path === "best" ? " project-card-best" : " project-card-easy");
+      const pathLabel = p.path === "best" ? "Best path" : "Easiest path";
+      const stackChips = (p.stack || []).map((s) => {
+        const tool = toolsData?.find((t) => t.id === s.toolId);
+        const claudeCls = tool?.claudeNative ? " project-chip-claude" : "";
+        return `<span class="project-chip${claudeCls}">${escapeHtml(tool ? tool.name : s.toolId)}</span>`;
+      }).join("");
+      const date = p.createdAt
+        ? new Date(p.createdAt).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })
+        : "";
+      card.innerHTML = `
+        <div class="project-head">
+          <span class="project-path">${pathLabel}</span>
+          <span class="project-date">${escapeHtml(date)}</span>
+        </div>
+        <h4 class="project-title">${escapeHtml(p.title)}</h4>
+        ${p.goal ? `<p class="project-goal">${escapeHtml(p.goal)}</p>` : ""}
+        <div class="project-stack-chips">${stackChips}</div>
+        <div class="project-actions">
+          <button class="project-delete" type="button" data-project-id="${escapeHtml(p.id)}">Delete</button>
+        </div>
+      `;
+      host.appendChild(card);
+    });
+    host.querySelectorAll(".project-delete").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.projectId;
+        if (!id) return;
+        if (!confirm("Delete this project? This can't be undone.")) return;
+        deleteProject(id);
+      });
+    });
+  }
+
+  function renderCapFilterBar() {
+    const bar = document.getElementById("cap-filter-bar");
+    if (!bar) return;
+    if (capsSelected.size === 0) {
+      bar.innerHTML = "";
+      bar.hidden = true;
+      return;
+    }
+    bar.hidden = false;
+    bar.innerHTML = "";
+    [...capsSelected].forEach((id) => {
+      const cap = CAP_BY_ID[id];
+      if (!cap) return;
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "cap-filter-chip";
+      chip.setAttribute("aria-label", `Remove ${cap.label}`);
+      chip.innerHTML = `<span class="cap-filter-label">${cap.label}</span><span class="cap-filter-x" aria-hidden="true">×</span>`;
+      chip.addEventListener("click", () => {
+        capsSelected.delete(id);
+        persistCaps();
+        // Uncheck the matching input.
+        const input = document.querySelector(`.cap-input[data-cap="${id}"]`);
+        if (input) {
+          input.checked = false;
+          input.closest(".cap-check").classList.remove("is-checked");
+        }
+        renderCapFilterBar();
+        const stackOutput = document.getElementById("stack-output");
+        if (stackOutput && !stackOutput.hidden) renderStack();
+      });
+      bar.appendChild(chip);
+    });
+    const clear = document.createElement("button");
+    clear.type = "button";
+    clear.className = "cap-filter-clear";
+    clear.textContent = "Clear all";
+    clear.addEventListener("click", () => {
+      capsSelected.clear();
+      persistCaps();
+      document.querySelectorAll(".cap-input").forEach((i) => {
+        i.checked = false;
+        i.closest(".cap-check").classList.remove("is-checked");
+      });
+      renderCapFilterBar();
+      const stackOutput = document.getElementById("stack-output");
+      if (stackOutput) stackOutput.hidden = true;
+    });
+    bar.appendChild(clear);
+  }
+
+  function renderModalityFilter() {
+    const host = document.getElementById("modality-filter");
+    if (!host || !toolsData) return;
+    // Count tools per modality for live counts on each pill.
+    const counts = toolsData.reduce((acc, t) => {
+      acc[t.modality] = (acc[t.modality] || 0) + 1;
+      return acc;
+    }, {});
+    host.innerHTML = "";
+    MODALITIES.forEach((m) => {
+      const n = m.id === "all" ? toolsData.length : (counts[m.id] || 0);
+      if (m.id !== "all" && n === 0) return;   // hide empty modalities
+      const pill = document.createElement("button");
+      pill.type = "button";
+      pill.className = "modality-pill" + (m.id === toolsModality ? " is-active" : "");
+      pill.dataset.modality = m.id;
+      pill.setAttribute("role", "tab");
+      pill.setAttribute("aria-selected", m.id === toolsModality ? "true" : "false");
+      pill.innerHTML = `<span class="modality-label">${m.label}</span><span class="modality-count">${n}</span>`;
+      pill.addEventListener("click", () => {
+        toolsModality = m.id;
+        renderModalityFilter();
+        renderTools();
+      });
+      host.appendChild(pill);
+    });
+  }
+
+  function renderTools() {
+    const host = document.getElementById("tool-grid");
+    if (!host || !toolsData) return;
+    const filtered = toolsModality === "all"
+      ? toolsData
+      : toolsData.filter((t) => t.modality === toolsModality);
+    host.innerHTML = "";
+    if (filtered.length === 0) {
+      host.innerHTML = `<div class="empty">No tools in this modality yet.</div>`;
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    filtered.forEach((t, i) => {
+      const card = document.createElement("a");
+      card.className = "tool-card glass" + (t.claudeNative ? " tool-card-claude" : "");
+      card.href = t.officialUrl || "#";
+      card.target = "_blank";
+      card.rel = "noopener";
+      card.style.setProperty("--card-delay", (0.05 + i * 0.04) + "s");
+      const verified = t.verifiedAt
+        ? `<span class="tool-verified">Verified ${t.verifiedAt}</span>`
+        : "";
+      const priceLabel = PRICE_BADGE[t.priceTier] || "";
+      const priceBadge = priceLabel
+        ? `<span class="tool-badge tool-badge-price" data-tier="${t.priceTier}">${priceLabel}</span>`
+        : "";
+      const claudeBadge = t.claudeNative
+        ? `<span class="tool-badge tool-badge-claude">Claude-native</span>`
+        : "";
+      card.innerHTML = `
+        <div class="tool-card-head">
+          <span class="tool-vendor">${t.vendor || ""}</span>
+          <span class="tool-modality" data-modality="${t.modality}">${(MODALITIES.find(m => m.id === t.modality) || {}).label || t.modality}</span>
+        </div>
+        <h3 class="tool-name">${t.name}</h3>
+        <p class="tool-tagline">${t.tagline || ""}</p>
+        <div class="tool-badges">
+          ${claudeBadge}
+          ${priceBadge}
+        </div>
+        <div class="tool-foot">
+          <span class="tool-version">${t.currentVersion || ""}</span>
+          ${verified}
+        </div>
+      `;
+      registerReveal(card, i);
+      frag.appendChild(card);
+    });
+    host.appendChild(frag);
+  }
+
+  // ---------- Version footer — proves which build is rendered ----------
+  async function loadVersion() {
+    // Always stamp "Loaded at" on mount, even if the fetch fails.
+    const loadedEl = document.getElementById("loaded-at");
+    if (loadedEl) {
+      loadedEl.textContent = new Date().toLocaleTimeString(undefined, {
+        hour: "numeric", minute: "2-digit", second: "2-digit",
+      });
+    }
+    try {
+      const res = await fetch(VERSION_URL, { cache: "no-store" });
+      if (!res.ok) return;
+      const v = await res.json();
+      const num = document.getElementById("version-num");
+      const ms  = document.getElementById("version-milestone");
+      const dt  = document.getElementById("version-date");
+      if (num) num.textContent = "v" + v.version;
+      if (ms)  ms.textContent  = v.milestone || "";
+      if (dt)  dt.textContent  = v.deployedAt || "";
+    } catch {}
+  }
+  loadVersion();
+
+  // ---------- Finder wizard (Learn → Finder) ----------
+  const FINDER_DRAFT_KEY = "clhub.v1.finderDraft";
+
+  function initFinder() {
+    const input    = document.getElementById("finder-input");
+    const cont     = document.getElementById("finder-continue");
+    const status   = document.getElementById("finder-status");
+    if (!input || !cont || !status) return;
+
+    function setStatus(text, kind) {
+      status.textContent = text;
+      status.dataset.kind = kind || "";
+    }
+
+    // Restore any draft text the user typed last time.
+    try {
+      const saved = localStorage.getItem(FINDER_DRAFT_KEY);
+      if (saved) input.value = saved;
+    } catch {}
+
+    input.addEventListener("input", () => {
+      try { localStorage.setItem(FINDER_DRAFT_KEY, input.value); } catch {}
+      if (status.dataset.kind) setStatus("", "");
+    });
+
+    cont.addEventListener("click", () => {
+      const text = input.value.trim();
+      if (!text) {
+        setStatus("Add a short description first.", "warn");
+        input.focus();
+        return;
+      }
+      setStatus("Saved. Pick the capabilities your project needs ↓", "ok");
+      const capWrap = document.querySelector(".cap-wrap");
+      if (capWrap) capWrap.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    document.querySelectorAll(".finder-fork[data-fork]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const fork = btn.dataset.fork;
+        const msg = fork === "tools"
+          ? "Mode B (Pick tools) — multi-select in the catalog lands in a later milestone; for now pick capabilities below."
+          : "Mode C (Browse by topic) ships in a later milestone.";
+        setStatus(msg, "info");
+      });
+    });
+
+    // Capability grid "See the stack" CTA — wired to its own status line.
+    const capContinue = document.getElementById("cap-continue");
+    const capStatus   = document.getElementById("cap-status");
+    if (capContinue && capStatus) {
+      capContinue.addEventListener("click", () => {
+        if (capsSelected.size === 0) {
+          capStatus.textContent = "Pick at least one capability first.";
+          capStatus.dataset.kind = "warn";
+          return;
+        }
+        capStatus.textContent = "";
+        capStatus.dataset.kind = "";
+        renderStack({ scroll: true });
+      });
+    }
+
+    // Save-as-project form wiring (M1.11).
+    const saveOpen   = document.getElementById("stack-save-open");
+    const saveForm   = document.getElementById("save-form");
+    const saveTitle  = document.getElementById("save-title");
+    const saveCancel = document.getElementById("save-cancel");
+    const saveStatus = document.getElementById("save-status");
+    if (saveOpen && saveForm && saveTitle && saveStatus) {
+      saveOpen.addEventListener("click", () => {
+        if (!saveTitle.value) {
+          const desc = (input && input.value) ? input.value.trim() : "";
+          if (desc) saveTitle.value = desc.slice(0, 60);
+        }
+        saveStatus.textContent = "";
+        saveStatus.dataset.kind = "";
+        saveForm.hidden = false;
+        updateSaveCtaVisibility();
+        saveTitle.focus();
+        saveTitle.select();
+      });
+      if (saveCancel) {
+        saveCancel.addEventListener("click", () => {
+          saveForm.hidden = true;
+          saveStatus.textContent = "";
+          saveStatus.dataset.kind = "";
+          updateSaveCtaVisibility();
+        });
+      }
+      saveForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const path = saveForm.querySelector('input[name="save-path-radio"]:checked')?.value || "easy";
+        const project = saveProject({ title: saveTitle.value, path });
+        if (!project) {
+          saveStatus.textContent = "Couldn't save — pick at least one capability first.";
+          saveStatus.dataset.kind = "warn";
+          return;
+        }
+        saveStatus.textContent = "Saved. Opening My Projects…";
+        saveStatus.dataset.kind = "ok";
+        setTimeout(() => {
+          saveForm.hidden = true;
+          saveTitle.value = "";
+          saveStatus.textContent = "";
+          saveStatus.dataset.kind = "";
+          updateSaveCtaVisibility();
+          const pill = document.querySelector('.subpill[data-learn="projects"]');
+          if (pill) pill.click();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 650);
+      });
+    }
+
+    // Seed My Projects pane with any previously-saved projects.
+    renderProjects();
+  }
+  initFinder();
+
   // ---------- Main feed load ----------
   let latestData = null;
   async function load() {
@@ -469,24 +1187,16 @@
         s.status.forEach(item => { item._severity = detectStatusSeverity(item); });
       }
 
-      // RESOURCES tab: split tutorials by tutorial_kind.
-      const tuts = Array.isArray(s.tutorials) ? s.tutorials : [];
-      const tutVideos   = tuts.filter((t) => t.tutorial_kind === "video");
-      const tutOfficial = tuts.filter((t) => t.tutorial_kind !== "video");
-      renderSection("resources-videos",   tutVideos,   true);
-      renderSection("resources-official", tutOfficial, false);
-
-      // NEWS tab: status strip + mixed grid (videos first, then articles).
+      // NEWS & MEDIA tab: status strip + mixed grid (videos first, then articles).
       renderStatusStrip(s.status);
       renderNews(s.news || []);
 
-      setUpdated("resources", data.generated_at);
-      setUpdated("news",      data.generated_at);
-      setUpdated("365",       data.generated_at);
+      setUpdated("news", data.generated_at);
+      setUpdated("365",  data.generated_at);
       document.getElementById("generated").textContent = prettyDate(data.generated_at);
 
-      // If the 365 tab is currently selected, render it now that latest is in.
-      if (document.querySelector('.chip.is-active')?.dataset.filter === "365") {
+      // If Comply365 is currently selected, render it now that latest is in.
+      if (document.querySelector('.chip.is-active')?.dataset.filter === "comply365") {
         load365();
       }
     } catch (err) {
@@ -499,13 +1209,12 @@
   }
 
   load();
+  loadTools();
   renderTimeline();
   renderCompare();
   renderIndex();
   renderScorecard();
-  renderTaskGrid();
   renderLlmFaceoff();
-  renderRecipes();
   setupChartObservers();
 
   // ======================================================================

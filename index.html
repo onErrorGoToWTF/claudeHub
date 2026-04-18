@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#050507">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="Daily-updated feed of Claude news, product updates, outages, safety, and Claude Code tutorials.">
-<title>Claude Daily Intelligence Hub</title>
+<meta name="description" content="aiStacked — find the stack, learn the stack, ship the project. A learning-first hub for building with Claude and the modern AI tool stack.">
+<title>aiStacked</title>
 <link rel="preload" href="data/latest.json" as="fetch" crossorigin="anonymous">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
   <div class="topbar-inner">
     <div class="brand">
       <span class="brand-dot" aria-hidden="true"></span>
-      <h1 class="brand-title">claude<span class="brand-sep">.</span><span class="brand-sub">hub</span></h1>
+      <h1 class="brand-title">ai<span class="brand-sub">Stacked</span></h1>
     </div>
     <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle theme">
       <svg class="icon icon-sun"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -28,169 +28,329 @@
   </div>
   <nav class="chips" id="filters" aria-label="Sections">
     <button class="chip glass-pill is-active" data-filter="home">Home</button>
-    <button class="chip glass-pill chip-apply" data-filter="apply">Apply AI</button>
-    <button class="chip glass-pill chip-365" data-filter="365">365</button>
-    <button class="chip glass-pill chip-resources" data-filter="resources">Resources</button>
-    <button class="chip glass-pill chip-news" data-filter="news">News</button>
+    <button class="chip glass-pill chip-learn" data-filter="learn">Learn</button>
+    <button class="chip glass-pill chip-news-media" data-filter="news-media">News &amp; Media</button>
+    <button class="chip glass-pill chip-comply365" data-filter="comply365">Comply365</button>
   </nav>
 </header>
 
 <main class="app" id="app">
   <section class="section section-home" data-section="home" id="section-home">
     <div class="home-hero">
-      <div class="home-eyebrow">Claude intelligence hub</div>
+      <div class="home-eyebrow">Dashboard</div>
       <h1 class="home-title">
-        <span class="home-title-grad">Smarter, bigger, faster.</span>
-        <br><span class="home-title-sub">Every quarter.</span>
+        <span class="home-title-grad">Find the stack.</span>
+        <br><span class="home-title-sub">Ship the project.</span>
       </h1>
-      <p class="home-lede">A live snapshot of how Claude is evolving — model releases, context growth, and what's shipping now.</p>
+      <p class="home-lede">Pick up where you left off, or start something new.</p>
     </div>
 
-    <section class="hero glass" id="compare-card">
-      <div class="hero-head">
-        <div>
-          <h2 class="hero-title">Frontier context windows</h2>
-          <p class="hero-sub">Verified max input tokens, April 2026.</p>
-        </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num" id="compare-lead">1M</div>
-          <div class="hero-kpi-lbl">Claude · Opus 4.7</div>
-        </div>
-      </div>
-      <div class="cbars" id="cbars"></div>
-    </section>
+    <div class="dash-grid">
+      <article class="dash-card glass">
+        <div class="dash-eyebrow">Continue</div>
+        <h2 class="dash-title">Where you left off</h2>
+        <p class="dash-empty">No projects in flight yet — start one and your progress lands here.</p>
+      </article>
 
-    <section class="hero glass" id="timeline-card">
-      <div class="hero-head">
-        <div>
-          <h2 class="hero-title">Context window, 2023 → 2026</h2>
-          <p class="hero-sub">Public model releases. Log scale.</p>
-        </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num" id="kpi-num">10×</div>
-          <div class="hero-kpi-lbl">in 36 months</div>
-        </div>
-      </div>
-      <svg class="timeline" id="timeline-svg" viewBox="0 0 800 240" preserveAspectRatio="none" aria-hidden="true"></svg>
-      <div class="timeline-legend" id="timeline-legend"></div>
-    </section>
-
-    <section class="hero glass" id="leap-card">
-      <div class="hero-head">
-        <div>
-          <h2 class="hero-title">Intelligence Index v4.0</h2>
-          <p class="hero-sub">10-benchmark composite · Artificial Analysis · Apr 2026</p>
-        </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num" id="vbar-top">57</div>
-          <div class="hero-kpi-lbl">current SOTA</div>
-        </div>
-      </div>
-      <div class="vbars" id="vbars"></div>
-      <p class="leap-foot">Source: artificialanalysis.ai · Opus 4.7 scoring pending (launched today)</p>
-    </section>
-
-    <section class="hero glass" id="scorecard-card">
-      <div class="hero-head">
-        <div>
-          <h2 class="hero-title">Opus 4.7 scorecard</h2>
-          <p class="hero-sub">Benchmarks from today's launch · Apr 16, 2026</p>
-        </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">98.5<span class="stat-x">%</span></div>
-          <div class="hero-kpi-lbl">XBOW top</div>
-        </div>
-      </div>
-      <div class="hbars" id="hbars"></div>
-      <p class="leap-foot">Source: anthropic.com/news/claude-opus-4-7</p>
-    </section>
-
-    <section class="hero glass" id="faceoff-card">
-      <div class="hero-head">
-        <div>
-          <h2 class="hero-title">Top 4 LLM face-off</h2>
-          <p class="hero-sub">Flagship chat models · benchmarks as of Apr 17, 2026</p>
-        </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">4</div>
-          <div class="hero-kpi-lbl">models</div>
-        </div>
-      </div>
-      <div id="faceoff"></div>
-      <p class="leap-foot">Source: Artificial Analysis · LMArena · vendor pages</p>
-    </section>
-
-    <div class="stat-grid">
-      <div class="stat glass">
-        <div class="stat-num">10<span class="stat-x">×</span></div>
-        <div class="stat-lbl">Context growth</div>
-        <div class="stat-sub">100K → 1M tokens</div>
-      </div>
-      <div class="stat glass">
-        <div class="stat-num">10</div>
-        <div class="stat-lbl">Major releases</div>
-        <div class="stat-sub">since Mar 2023</div>
-      </div>
-      <div class="stat glass">
-        <div class="stat-num">~1<span class="stat-x">/q</span></div>
-        <div class="stat-lbl">Release cadence</div>
-        <div class="stat-sub">frontier model per quarter</div>
-      </div>
-    </div>
-
-    <div class="home-cta glass" id="home-cta">
-      <div class="home-cta-row">
-        <div>
-          <div class="home-cta-title">Want more?</div>
-          <div class="home-cta-sub">Tap any chip above — apply AI, 365, resources, news.</div>
-        </div>
-        <button class="home-cta-btn" data-chip="apply" type="button">Explore →</button>
-      </div>
+      <article class="dash-card glass dash-card-primary">
+        <div class="dash-eyebrow">Start</div>
+        <h2 class="dash-title">A new project</h2>
+        <p class="dash-sub">Pick the pieces you want. Finder recommends a tool stack, a learning path, and setup per tool.</p>
+        <button class="dash-action dash-action-primary" data-chip="learn" data-subpill="finder" type="button">Open the Finder →</button>
+      </article>
     </div>
   </section>
 
-  <section class="section section-apply" data-section="apply" id="section-apply">
+  <section class="section section-learn" data-section="learn" id="section-learn" data-hidden="true">
     <div class="section-head">
-      <h2>Apply AI</h2>
+      <h2>Learn</h2>
     </div>
+    <p class="section-lede">Find the stack. Learn the stack. Ship the project.</p>
+    <div class="subpills" role="tablist" aria-label="Learn content">
+      <button class="subpill is-active" data-learn="claude"   type="button" role="tab" aria-selected="true">Claude</button>
+      <button class="subpill"           data-learn="finder"   type="button" role="tab" aria-selected="false">Finder</button>
+      <button class="subpill"           data-learn="tools"    type="button" role="tab" aria-selected="false">Tools</button>
+      <button class="subpill"           data-learn="projects" type="button" role="tab" aria-selected="false">My Projects</button>
+    </div>
+    <div class="pane" data-pane="learn-claude">
+      <div class="hub-intro">
+        <div class="hub-eyebrow">Claude-first focus</div>
+        <h3 class="hub-title">The Claude hub</h3>
+        <p class="hub-lede">How to use Claude well — from Claude.ai basics to Claude Code, Skills, MCP, and the Agent SDK.</p>
+      </div>
 
-    <section class="hero glass" id="tasks-card">
-      <div class="hero-head">
-        <div>
-          <h2 class="hero-title">Best tool per task</h2>
-          <p class="hero-sub">Frontier winners across the AI stack · Apr 2026</p>
-        </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">11</div>
-          <div class="hero-kpi-lbl">tasks ranked</div>
+      <div class="subpills subpills-nested" role="tablist" aria-label="Claude hub sections">
+        <button class="subpill is-active" data-claude="basics"    type="button" role="tab" aria-selected="true">Basics</button>
+        <button class="subpill"           data-claude="code"      type="button" role="tab" aria-selected="false">Claude Code</button>
+        <button class="subpill"           data-claude="skills"    type="button" role="tab" aria-selected="false">Skills</button>
+        <button class="subpill"           data-claude="mcp"       type="button" role="tab" aria-selected="false">MCP</button>
+        <button class="subpill"           data-claude="agent-sdk" type="button" role="tab" aria-selected="false">Agent SDK</button>
+        <button class="subpill"           data-claude="whats-new" type="button" role="tab" aria-selected="false">What's new</button>
+      </div>
+
+      <div class="pane" data-pane="claude-basics">
+        <div class="concept-grid">
+          <article class="concept-card glass">
+            <div class="concept-eyebrow">Web app</div>
+            <h4 class="concept-title">Claude.ai</h4>
+            <p class="concept-body">The easiest on-ramp. Long chats, file uploads, voice, desktop + mobile clients. Free tier covers the basics; Pro and Max unlock the deeper usage.</p>
+            <a class="concept-link" href="https://claude.ai" target="_blank" rel="noopener">Open Claude.ai →</a>
+          </article>
+
+          <article class="concept-card glass">
+            <div class="concept-eyebrow">Persistent context</div>
+            <h4 class="concept-title">Projects</h4>
+            <p class="concept-body">Workspaces scoped to a goal. Drop in instructions + a knowledge base once; every conversation inside the project inherits them. Keeps long-running work coherent.</p>
+            <a class="concept-link" href="https://docs.claude.com/en/docs/claude-code/overview" target="_blank" rel="noopener">How Projects work →</a>
+          </article>
+
+          <article class="concept-card glass">
+            <div class="concept-eyebrow">Structured output</div>
+            <h4 class="concept-title">Artifacts</h4>
+            <p class="concept-body">Code, docs, HTML previews, diagrams rendered in a side panel. Iterate in place, share standalone. The "show, don't just tell" side of Claude's output surface.</p>
+            <a class="concept-link" href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank" rel="noopener">Artifacts guide →</a>
+          </article>
+
+          <article class="concept-card glass concept-card-claude">
+            <div class="concept-eyebrow">Plans</div>
+            <h4 class="concept-title">Pro vs Max</h4>
+            <p class="concept-body">Pro $20/mo for the basics. Max 5× $100/mo gives ~5× the usage plus priority at peak. Max 20× $200/mo is the power-user tier — includes everything and the highest quotas.</p>
+            <a class="concept-link" href="https://claude.com/pricing" target="_blank" rel="noopener">Compare plans →</a>
+          </article>
         </div>
       </div>
-      <div class="type-legend" id="type-legend"></div>
-      <div class="taskgrid" id="taskgrid"></div>
-      <p class="leap-foot">Sources: Artificial Analysis · LMArena · vendor announcements</p>
-    </section>
 
-    <section class="hero glass" id="recipes-card">
-      <div class="hero-head">
-        <div>
-          <h2 class="hero-title">Workflow recipes</h2>
-          <p class="hero-sub">Multi-tool combos people actually use — tap any to expand.</p>
-        </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">7</div>
-          <div class="hero-kpi-lbl">pipelines</div>
-        </div>
+      <div class="pane" data-pane="claude-code" hidden>
+        <div class="empty">Claude Code — install, login, CLAUDE.md conventions, slash commands, hooks, output-styles, thinking modes. Ships in a later milestone.</div>
       </div>
-      <div class="recipes" id="recipes"></div>
-    </section>
+      <div class="pane" data-pane="claude-skills" hidden>
+        <div class="empty">Skills — YAML frontmatter, invocation patterns, when to author one. Ships in a later milestone.</div>
+      </div>
+      <div class="pane" data-pane="claude-mcp" hidden>
+        <div class="empty">MCP — Claude's MCP client, writing an MCP server, config locations, community servers. Ships in a later milestone.</div>
+      </div>
+      <div class="pane" data-pane="claude-agent-sdk" hidden>
+        <div class="empty">Agent SDK — TS / Python SDKs, when to build custom vs use Claude Code. Ships in a later milestone.</div>
+      </div>
+      <div class="pane" data-pane="claude-whats-new" hidden>
+        <div class="empty">What's new — live feed from Anthropic docs, Claude Code releases, MCP spec bumps. Scraper ships in Phase 1.5.</div>
+      </div>
+    </div>
+    <div class="pane" data-pane="learn-finder" hidden>
+      <div class="hub-intro">
+        <div class="hub-eyebrow">The Finder</div>
+        <h3 class="hub-title">Find the stack for your next project.</h3>
+        <p class="hub-lede">Pick the pieces you want to build with — the Finder outputs a tool stack, an ordered learning path, and setup per tool.</p>
+      </div>
+
+      <div class="finder-wizard">
+        <div class="finder-step glass">
+          <label class="finder-step-label" for="finder-input">Describe your project</label>
+          <p class="finder-step-hint" id="finder-input-hint">e.g. "A marketing site with AI-generated 3D video and voiceover" or "A local script that parses DOS-era reports."</p>
+          <textarea class="finder-input" id="finder-input" rows="3" placeholder="I'm building…" aria-describedby="finder-input-hint"></textarea>
+          <div class="finder-step-actions">
+            <button class="finder-continue dash-action dash-action-primary" type="button" id="finder-continue">Continue →</button>
+            <span class="finder-status" id="finder-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <div class="finder-divider"><span>or start from…</span></div>
+
+        <div class="finder-forks">
+          <button class="finder-fork glass" type="button" data-fork="tools">
+            <div class="finder-fork-eyebrow">Mode B</div>
+            <h4 class="finder-fork-title">Pick tools</h4>
+            <p class="finder-fork-body">You already know the tools. Multi-select from the catalog; get setup + how-to for that exact stack.</p>
+          </button>
+          <button class="finder-fork glass" type="button" data-fork="topic">
+            <div class="finder-fork-eyebrow">Mode C</div>
+            <h4 class="finder-fork-title">Browse by topic</h4>
+            <p class="finder-fork-body">Lessons, snippets, videos, and news filtered by a single topic — Skills, MCP, LoRA, and so on.</p>
+          </button>
+        </div>
+
+        <div class="cap-wrap">
+          <div class="cap-head">
+            <div class="cap-eyebrow">Capabilities</div>
+            <h4 class="cap-title">Pick what your project needs</h4>
+            <p class="cap-lede">Check the capabilities you want. Counts show how many tools in the catalog can satisfy each one.</p>
+          </div>
+          <div class="cap-filter-bar" id="cap-filter-bar" aria-live="polite"></div>
+          <div class="cap-grid" id="cap-grid"></div>
+          <div class="cap-cta-row">
+            <button class="dash-action dash-action-primary" type="button" id="cap-continue">See the stack →</button>
+            <span class="finder-status" id="cap-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <section class="stack-output" id="stack-output" hidden aria-live="polite">
+          <div class="stack-column stack-column-easy">
+            <header class="stack-head">
+              <div>
+                <div class="stack-eyebrow">Easiest path</div>
+                <p class="stack-lede">Lowest-effort route — bundled tooling, gentlest setup curve, Claude-native ties win.</p>
+              </div>
+              <div class="stack-summary" id="stack-easy-summary">—</div>
+            </header>
+            <ol class="stack-list" id="stack-easy-list"></ol>
+          </div>
+          <div class="stack-column stack-column-best">
+            <header class="stack-head">
+              <div>
+                <div class="stack-eyebrow">Best path</div>
+                <p class="stack-lede">Highest-quality outcome — best-in-class per capability, even if premium.</p>
+              </div>
+              <div class="stack-summary" id="stack-best-summary">—</div>
+            </header>
+            <ol class="stack-list" id="stack-best-list"></ol>
+          </div>
+        </section>
+
+        <div class="stack-save" id="stack-save" hidden>
+          <button class="dash-action dash-action-primary" type="button" id="stack-save-open">Save as project →</button>
+        </div>
+
+        <form class="save-form glass" id="save-form" hidden>
+          <div class="save-head">
+            <div class="hub-eyebrow">Save as project</div>
+            <p class="save-lede">Keep this stack in My Projects. You can have as many as you like.</p>
+          </div>
+          <label class="save-field">
+            <span class="save-field-label">Project title</span>
+            <input class="save-input" id="save-title" type="text" maxlength="80" placeholder="e.g. Young Carpets marketing site" autocomplete="off">
+          </label>
+          <fieldset class="save-path">
+            <legend class="save-field-label">Which path?</legend>
+            <label class="save-radio">
+              <input type="radio" name="save-path-radio" value="easy" checked>
+              <span>Easiest</span>
+            </label>
+            <label class="save-radio">
+              <input type="radio" name="save-path-radio" value="best">
+              <span>Best</span>
+            </label>
+          </fieldset>
+          <div class="save-actions">
+            <button class="dash-action dash-action-primary" type="submit">Save</button>
+            <button class="save-cancel" type="button" id="save-cancel">Cancel</button>
+            <span class="finder-status" id="save-status" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="pane" data-pane="learn-tools" hidden>
+      <div class="modality-filter" id="modality-filter" role="tablist" aria-label="Filter by modality"></div>
+      <div class="tool-grid" id="tool-grid"></div>
+    </div>
+    <div class="pane" data-pane="learn-projects" hidden>
+      <div class="hub-intro">
+        <div class="hub-eyebrow">My Projects</div>
+        <h3 class="hub-title">Your saved builds.</h3>
+        <p class="hub-lede">Every save from the Finder lands here. Each project keeps its capabilities, its chosen path, and the recommended tool stack.</p>
+      </div>
+      <div class="projects-grid" id="projects-grid"></div>
+    </div>
   </section>
 
-  <section class="section" data-section="365" id="section-365">
+  <section class="section section-news-media" data-section="news-media" id="section-news-media">
     <div class="section-head">
-      <h2>365</h2>
+      <h2>News &amp; Media</h2>
+      <span class="updated" data-updated="news">—</span>
+    </div>
+    <p class="section-lede">Signal layer — which models are advancing where, plus what shipped today.</p>
+    <div class="subpills" role="tablist" aria-label="News &amp; Media view">
+      <button class="subpill is-active" data-newsmedia="state" type="button" role="tab" aria-selected="true">State of AI</button>
+      <button class="subpill"           data-newsmedia="news"  type="button" role="tab" aria-selected="false">News</button>
+    </div>
+
+    <div class="pane" data-pane="news-media-state">
+      <section class="hero glass" id="compare-card">
+        <div class="hero-head">
+          <div>
+            <h2 class="hero-title">Frontier context windows</h2>
+            <p class="hero-sub">Verified max input tokens, April 2026.</p>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num" id="compare-lead">1M</div>
+            <div class="hero-kpi-lbl">Claude · Opus 4.7</div>
+          </div>
+        </div>
+        <div class="cbars" id="cbars"></div>
+      </section>
+
+      <section class="hero glass" id="timeline-card">
+        <div class="hero-head">
+          <div>
+            <h2 class="hero-title">Context window, 2023 → 2026</h2>
+            <p class="hero-sub">Public model releases. Log scale.</p>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num" id="kpi-num">10×</div>
+            <div class="hero-kpi-lbl">in 36 months</div>
+          </div>
+        </div>
+        <svg class="timeline" id="timeline-svg" viewBox="0 0 800 240" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="timeline-legend" id="timeline-legend"></div>
+      </section>
+
+      <section class="hero glass" id="leap-card">
+        <div class="hero-head">
+          <div>
+            <h2 class="hero-title">Intelligence Index v4.0</h2>
+            <p class="hero-sub">10-benchmark composite · Artificial Analysis · Apr 2026</p>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num" id="vbar-top">57</div>
+            <div class="hero-kpi-lbl">current SOTA</div>
+          </div>
+        </div>
+        <div class="vbars" id="vbars"></div>
+        <p class="leap-foot">Source: artificialanalysis.ai · Opus 4.7 scoring pending (launched today)</p>
+      </section>
+
+      <section class="hero glass" id="scorecard-card">
+        <div class="hero-head">
+          <div>
+            <h2 class="hero-title">Opus 4.7 scorecard</h2>
+            <p class="hero-sub">Benchmarks from today's launch · Apr 16, 2026</p>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num">98.5<span class="stat-x">%</span></div>
+            <div class="hero-kpi-lbl">XBOW top</div>
+          </div>
+        </div>
+        <div class="hbars" id="hbars"></div>
+        <p class="leap-foot">Source: anthropic.com/news/claude-opus-4-7</p>
+      </section>
+
+      <section class="hero glass" id="faceoff-card">
+        <div class="hero-head">
+          <div>
+            <h2 class="hero-title">Top 4 LLM face-off</h2>
+            <p class="hero-sub">Flagship chat models · benchmarks as of Apr 17, 2026</p>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num">4</div>
+            <div class="hero-kpi-lbl">models</div>
+          </div>
+        </div>
+        <div id="faceoff"></div>
+        <p class="leap-foot">Source: Artificial Analysis · LMArena · vendor pages</p>
+      </section>
+    </div>
+
+    <div class="pane" data-pane="news-media-news" hidden>
+      <div class="status-strip" data-strip="status"></div>
+      <div class="cards cards-mixed" data-cards="news"></div>
+    </div>
+  </section>
+
+  <section class="section" data-section="comply365" id="section-comply365">
+    <div class="section-head">
+      <h2>Comply365</h2>
       <span class="updated" data-updated="365">—</span>
     </div>
-    <div class="subpills" role="tablist" aria-label="365 content kind">
+    <div class="subpills" role="tablist" aria-label="Comply365 content kind">
       <button class="subpill is-active" data-s365="tutorials" type="button" role="tab" aria-selected="true">Tutorials</button>
       <button class="subpill"           data-s365="resources" type="button" role="tab" aria-selected="false">Resources</button>
       <button class="subpill"           data-s365="news"      type="button" role="tab" aria-selected="false">News</button>
@@ -199,7 +359,7 @@
       <div class="cards" data-cards="365-tutorials"></div>
     </div>
     <div class="pane" data-pane="365-resources" hidden>
-      <div class="subpills subpills-nested" role="tablist" aria-label="365 resources kind">
+      <div class="subpills subpills-nested" role="tablist" aria-label="Comply365 resources kind">
         <button class="subpill is-active" data-s365res="videos"   type="button" role="tab" aria-selected="true">Videos</button>
         <button class="subpill"           data-s365res="official" type="button" role="tab" aria-selected="false">Official</button>
       </div>
@@ -211,32 +371,19 @@
     </div>
   </section>
 
-  <section class="section" data-section="resources" id="section-resources">
-    <div class="section-head">
-      <h2>Resources</h2>
-      <span class="updated" data-updated="resources">—</span>
-    </div>
-    <div class="subpills" role="tablist" aria-label="Resources kind">
-      <button class="subpill is-active" data-tutkind="video"    type="button" role="tab" aria-selected="true">Videos</button>
-      <button class="subpill"           data-tutkind="official" type="button" role="tab" aria-selected="false">Official</button>
-    </div>
-    <div class="cards cards-video" data-cards="resources-videos"></div>
-    <div class="cards" data-cards="resources-official" hidden></div>
-  </section>
-
-  <section class="section" data-section="news" id="section-news">
-    <div class="section-head">
-      <h2>News</h2>
-      <span class="updated" data-updated="news">—</span>
-    </div>
-    <div class="status-strip" data-strip="status"></div>
-    <div class="cards cards-mixed" data-cards="news"></div>
-  </section>
-
   <footer class="foot">
-    <span>Generated <span id="generated">—</span></span>
-    <span class="dot">·</span>
-    <a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener">Claude Code</a>
+    <span class="version-pill" id="version-pill" title="Deployed build — refresh to see it update after each milestone commit.">
+      <span class="version-lbl">aiStacked</span>
+      <span class="version-num" id="version-num">—</span>
+      <span class="version-sep">·</span>
+      <span class="version-milestone" id="version-milestone">—</span>
+      <span class="version-sep">·</span>
+      <span class="version-date" id="version-date">—</span>
+    </span>
+    <span class="foot-sep">·</span>
+    <span>Loaded <span id="loaded-at">—</span></span>
+    <span class="foot-sep">·</span>
+    <span>Feed generated <span id="generated">—</span></span>
   </footer>
 </main>
 
