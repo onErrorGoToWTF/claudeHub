@@ -532,9 +532,11 @@
   let claudeLearningItems = [];
   let claudeLearningFilter = "all";
 
-  // Pinned items — a small set of URLs the user wants floated to the top of
-  // their What's new view regardless of date. Stored as { "<url>": isoStamp }
-  // so we can reconstruct pin order if needed later.
+  // Pinned items — URLs the user wants to keep regardless of feed churn.
+  // Pins are SCRAPE-RESISTANT: each pin stores the full item snapshot
+  // (title, url, source, published, summary) so the card can be rerendered
+  // even if the scraper later cycles the item off the live feed.
+  // Stored as { "<url>": { pinnedAt, ...itemSnapshot } }.
   const PINS_KEY = "clhub.v1.learningPins";
   function getPins() {
     try {
@@ -547,14 +549,42 @@
   function putPins(obj) {
     try { localStorage.setItem(PINS_KEY, JSON.stringify(obj)); } catch {}
   }
-  function togglePin(url) {
+  function togglePin(item) {
+    const url = typeof item === "string" ? item : item && item.url;
     if (!url) return;
     const pins = getPins();
-    if (pins[url]) delete pins[url];
-    else pins[url] = new Date().toISOString();
+    if (pins[url]) {
+      delete pins[url];
+    } else {
+      // Prefer the fresh item from the feed if given; fall back to whatever
+      // was already cached under that URL (should rarely happen).
+      const src = (typeof item === "object" && item) || {};
+      pins[url] = {
+        pinnedAt: new Date().toISOString(),
+        title:     src.title     || "",
+        url,
+        source:    src.source    || "",
+        published: src.published || null,
+        summary:   src.summary   || "",
+      };
+    }
     putPins(pins);
   }
   function isPinned(url) { return !!getPins()[url]; }
+  // Merge live feed + pinned snapshots so pinned items survive scrape churn.
+  // A pinned URL already present in the feed wins (fresh metadata); one that
+  // dropped off resurfaces from the pin snapshot.
+  function resurrectPinnedItems(liveItems) {
+    const pins = getPins();
+    const live = new Map(liveItems.map((it) => [it.url, it]));
+    for (const [url, snap] of Object.entries(pins)) {
+      if (!live.has(url)) {
+        const { pinnedAt, ...rest } = snap;
+        if (rest.url) live.set(url, rest);
+      }
+    }
+    return Array.from(live.values());
+  }
 
   // Unread badge — tracks last time the user viewed What's new. First visit
   // silently seeds "now" so the badge doesn't light up with 70 items on a
@@ -614,8 +644,9 @@
   }
 
   function updateLearnFilterCounts() {
-    const counts = { all: claudeLearningItems.length, code: 0, api: 0, mcp: 0, videos: 0, academy: 0 };
-    for (const it of claudeLearningItems) {
+    const merged = resurrectPinnedItems(claudeLearningItems);
+    const counts = { all: merged.length, code: 0, api: 0, mcp: 0, videos: 0, academy: 0 };
+    for (const it of merged) {
       const b = sourceBucket(it.source);
       if (counts[b] !== undefined) counts[b]++;
     }
@@ -631,9 +662,10 @@
     if (!container) return;
     container.innerHTML = "";
     const filter = claudeLearningFilter;
+    const merged = resurrectPinnedItems(claudeLearningItems);
     const filtered = filter === "all"
-      ? claudeLearningItems
-      : claudeLearningItems.filter((it) => sourceBucket(it.source) === filter);
+      ? merged
+      : merged.filter((it) => sourceBucket(it.source) === filter);
     if (!filtered.length) {
       const empty = document.createElement("div");
       empty.className = "empty";
@@ -691,8 +723,12 @@
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      togglePin(url);
+      // Pass the live item so its full snapshot is captured. Look it up by
+      // URL in claudeLearningItems (or in the existing pin, as a fallback).
+      const live = claudeLearningItems.find((it) => it.url === url);
+      togglePin(live || url);
       paintClaudeLearning();
+      updateLearnFilterCounts();
     });
     node.appendChild(btn);
   }
