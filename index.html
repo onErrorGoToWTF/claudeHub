@@ -137,7 +137,38 @@
       </div>
     </div>
     <div class="pane" data-pane="learn-finder" hidden>
-      <div class="empty">Finder — guided pathway picker; tool stack + ordered learning path. Ships in M1.7–M1.10.</div>
+      <div class="hub-intro">
+        <div class="hub-eyebrow">The Finder</div>
+        <h3 class="hub-title">Find the stack for your next project.</h3>
+        <p class="hub-lede">Pick the pieces you want to build with — the Finder outputs a tool stack, an ordered learning path, and setup per tool.</p>
+      </div>
+
+      <div class="finder-wizard">
+        <div class="finder-step glass">
+          <label class="finder-step-label" for="finder-input">Describe your project</label>
+          <p class="finder-step-hint" id="finder-input-hint">e.g. "A marketing site with AI-generated 3D video and voiceover" or "A local script that parses DOS-era reports."</p>
+          <textarea class="finder-input" id="finder-input" rows="3" placeholder="I'm building…" aria-describedby="finder-input-hint"></textarea>
+          <div class="finder-step-actions">
+            <button class="finder-continue dash-action dash-action-primary" type="button" id="finder-continue">Continue →</button>
+            <span class="finder-status" id="finder-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <div class="finder-divider"><span>or start from…</span></div>
+
+        <div class="finder-forks">
+          <button class="finder-fork glass" type="button" data-fork="tools">
+            <div class="finder-fork-eyebrow">Mode B</div>
+            <h4 class="finder-fork-title">Pick tools</h4>
+            <p class="finder-fork-body">You already know the tools. Multi-select from the catalog; get setup + how-to for that exact stack.</p>
+          </button>
+          <button class="finder-fork glass" type="button" data-fork="topic">
+            <div class="finder-fork-eyebrow">Mode C</div>
+            <h4 class="finder-fork-title">Browse by topic</h4>
+            <p class="finder-fork-body">Lessons, snippets, videos, and news filtered by a single topic — Skills, MCP, LoRA, and so on.</p>
+          </button>
+        </div>
+      </div>
     </div>
     <div class="pane" data-pane="learn-tools" hidden>
       <div class="modality-filter" id="modality-filter" role="tablist" aria-label="Filter by modality"></div>

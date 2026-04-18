@@ -613,6 +613,53 @@
     host.appendChild(frag);
   }
 
+  // ---------- Finder wizard (Learn → Finder) ----------
+  const FINDER_DRAFT_KEY = "clhub.v1.finderDraft";
+
+  function initFinder() {
+    const input    = document.getElementById("finder-input");
+    const cont     = document.getElementById("finder-continue");
+    const status   = document.getElementById("finder-status");
+    if (!input || !cont || !status) return;
+
+    function setStatus(text, kind) {
+      status.textContent = text;
+      status.dataset.kind = kind || "";
+    }
+
+    // Restore any draft text the user typed last time.
+    try {
+      const saved = localStorage.getItem(FINDER_DRAFT_KEY);
+      if (saved) input.value = saved;
+    } catch {}
+
+    input.addEventListener("input", () => {
+      try { localStorage.setItem(FINDER_DRAFT_KEY, input.value); } catch {}
+      if (status.dataset.kind) setStatus("", "");
+    });
+
+    cont.addEventListener("click", () => {
+      const text = input.value.trim();
+      if (!text) {
+        setStatus("Add a short description first.", "warn");
+        input.focus();
+        return;
+      }
+      setStatus("Saved. The capability grid lands in M1.8 — continuing from your description.", "ok");
+    });
+
+    document.querySelectorAll(".finder-fork[data-fork]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const fork = btn.dataset.fork;
+        const msg = fork === "tools"
+          ? "Mode B (Pick tools) lands alongside the capability grid (M1.8)."
+          : "Mode C (Browse by topic) ships in a later milestone.";
+        setStatus(msg, "info");
+      });
+    });
+  }
+  initFinder();
+
   // ---------- Main feed load ----------
   let latestData = null;
   async function load() {
