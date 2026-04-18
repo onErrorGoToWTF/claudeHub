@@ -10,6 +10,24 @@
   // Sections that are exclusive (only visible when their chip is picked).
   const DISTINCT_SECTIONS = ["home"];
 
+  // Type tokens — declared early so any hoisted render function that reads
+  // them (e.g. via replayHomeAnimations fired during initial applyFilter)
+  // doesn't hit a TDZ error.
+  const TYPE_LABEL = {
+    "LLM":      "LLM",
+    "image":    "Image",
+    "video":    "Video",
+    "voice":    "Voice",
+    "tool-app": "Tool",
+  };
+  const TYPE_DESC = {
+    "LLM":      "Text & code reasoning",
+    "image":    "Image generation",
+    "video":    "Video generation",
+    "voice":    "Voice / speech",
+    "tool-app": "App built on a model",
+  };
+
   // ---------- Theme (dark-first; opt-in to light) ----------
   const root = document.documentElement;
   const stored = localStorage.getItem(THEME_KEY);
@@ -59,6 +77,9 @@
     renderCompare();
     renderIndex();
     renderScorecard();
+    renderTaskGrid();
+    renderLlmFaceoff();
+    renderRecipes();
   }
 
   chips.forEach(chip => {
@@ -429,6 +450,9 @@
   renderCompare();
   renderIndex();
   renderScorecard();
+  renderTaskGrid();
+  renderLlmFaceoff();
+  renderRecipes();
   setupChartObservers();
 
   // ======================================================================
@@ -443,9 +467,12 @@
     }
     const ACTIVATION_MARGIN = "-12.5% 0px -12.5% 0px";
     const groups = [
-      { host: "#cbars", childSel: ".cbar" },
-      { host: "#vbars", childSel: ".vbar" },
-      { host: "#hbars", childSel: ".hbar" },
+      { host: "#cbars",    childSel: ".cbar" },
+      { host: "#vbars",    childSel: ".vbar" },
+      { host: "#hbars",    childSel: ".hbar" },
+      { host: "#taskgrid", childSel: ".trow" },
+      { host: "#faceoff",  childSel: ".faceoff-card, .hbar" },
+      { host: "#recipes",  childSel: ".recipe" },
     ];
     const io = new IntersectionObserver((entries) => {
       for (const e of entries) {
@@ -569,6 +596,203 @@
             <div class="hbar-electron" aria-hidden="true"></div>
           </div>
         </div>
+      `;
+      host.appendChild(el);
+    });
+  }
+
+  // ======================================================================
+  // Best tool per task — heterogeneous "winner" grid with type badges.
+  // (TYPE_LABEL / TYPE_DESC are declared at the top of the IIFE.)
+  // ======================================================================
+  function renderTypeLegend() {
+    const host = document.getElementById("type-legend");
+    if (!host) return;
+    const order = ["LLM", "image", "video", "voice", "tool-app"];
+    host.innerHTML = order.map(k => `
+      <div class="type-legend-item" data-type="${k}">
+        <span class="type-legend-dot" aria-hidden="true"></span>
+        <span class="type-legend-name">${TYPE_LABEL[k]}</span>
+        <span class="type-legend-desc">${TYPE_DESC[k]}</span>
+      </div>
+    `).join("");
+  }
+
+  function renderTaskGrid() {
+    renderTypeLegend();
+    const host = document.getElementById("taskgrid");
+    if (!host) return;
+    const rows = [
+      { task: "Agentic coding",          winner: "Claude Opus 4.7",     type: "LLM",      runner: "GPT-5.3 Codex",    hero: true },
+      { task: "Long-form writing",       winner: "Claude Opus 4.7",     type: "LLM",      runner: "GPT-5.4",          hero: true },
+      { task: "Research / notebook",     winner: "NotebookLM",          type: "tool-app", runner: "Claude + MCP"                 },
+      { task: "Reasoning / math",        winner: "Gemini 3.1 Pro",      type: "LLM",      runner: "GPT-5.4 Pro"                  },
+      { task: "Image generation",        winner: "Nano Banana 2",       type: "image",    runner: "Nano Banana Pro"              },
+      { task: "Video generation",        winner: "Sora 2",              type: "video",    runner: "Veo 3.1"                      },
+      { task: "Vision / multimodal",     winner: "Gemini 3.1 Pro",      type: "LLM",      runner: "GPT-5.4"                      },
+      { task: "Long-context (1M+)",      winner: "Claude Opus 4.7",     type: "LLM",      runner: "Gemini 3.1 Pro",   hero: true },
+      { task: "Voice · expressive TTS",  winner: "ElevenLabs v3",       type: "voice",    runner: "Inworld TTS-1.5"              },
+      { task: "Voice · real-time",       winner: "Inworld TTS-1.5 Max", type: "voice",    runner: "ElevenLabs Flash"             },
+      { task: "Web research agent",      winner: "Gemini 3.1 Pro",      type: "LLM",      runner: "GPT-5.4"                      },
+    ];
+    host.innerHTML = "";
+    rows.forEach((r, i) => {
+      const delay = 0.2 + i * 0.06;
+      const el = document.createElement("div");
+      el.className = "trow" + (r.hero ? " is-hero" : "");
+      el.style.setProperty("--trow-delay", delay + "s");
+      el.innerHTML = `
+        <div class="trow-task">${r.task}</div>
+        <div class="trow-winner">${r.winner}</div>
+        <div class="trow-type" data-type="${r.type}">${TYPE_LABEL[r.type]}</div>
+        <div class="trow-runner">vs ${r.runner}</div>
+      `;
+      host.appendChild(el);
+    });
+  }
+
+  // ======================================================================
+  // Top 5 LLM face-off — small-multiples, per-model .hbars cards.
+  // ======================================================================
+  function renderLlmFaceoff() {
+    const host = document.getElementById("faceoff");
+    if (!host) return;
+    const models = [
+      {
+        name: "Claude Opus 4.7", maker: "Anthropic", color: "#a684ff", hero: true,
+        ctx: "1M", price: "$5",
+        bars: [
+          { b: "GPQA Diamond",       v: 94.2, raw: "94.2%" },
+          { b: "SWE-bench Verified", v: 87.6, raw: "87.6%" },
+          { b: "AIME 2025",          v: 99,   raw: "~100%" },
+          { b: "LMArena (norm)",     v: 88,   raw: "~1500" },
+        ],
+      },
+      {
+        name: "GPT-5.4", maker: "OpenAI", color: "#4ade80",
+        ctx: "400K", price: "~$10",
+        bars: [
+          { b: "GPQA Diamond",       v: 94.4, raw: "94.4%" },
+          { b: "SWE-bench Verified", v: 80.0, raw: "80.0%" },
+          { b: "AIME 2025",          v: 100,  raw: "100%" },
+          { b: "LMArena (norm)",     v: 85,   raw: "#2" },
+        ],
+      },
+      {
+        name: "Gemini 3.1 Pro", maker: "Google", color: "#22d3ee",
+        ctx: "1M", price: "$2",
+        bars: [
+          { b: "GPQA Diamond",       v: 94.3, raw: "94.3%" },
+          { b: "SWE-bench Verified", v: 68.5, raw: "68.5%*" },
+          { b: "AIME 2025",          v: 100,  raw: "100%" },
+          { b: "LMArena (norm)",     v: 82,   raw: "1493" },
+        ],
+      },
+      {
+        name: "Grok 4.20 Beta", maker: "xAI", color: "#e879f9",
+        ctx: "2M", price: "$2",
+        bars: [
+          { b: "GPQA Diamond",       v: 0,    raw: "—", nodata: true },
+          { b: "SWE-bench Verified", v: 0,    raw: "—", nodata: true },
+          { b: "AIME 2025",          v: 100,  raw: "100%" },
+          { b: "LMArena (norm)",     v: 81,   raw: "1491" },
+        ],
+      },
+      {
+        name: "DeepSeek V3.2", maker: "DeepSeek", color: "#fbbf24",
+        ctx: "128K", price: "$0.28",
+        bars: [
+          { b: "GPQA Diamond",       v: 0,    raw: "—", nodata: true },
+          { b: "SWE-bench Verified", v: 0,    raw: "—", nodata: true },
+          { b: "AIME 2025",          v: 0,    raw: "—", nodata: true },
+          { b: "LMArena (norm)",     v: 0,    raw: "—", nodata: true },
+        ],
+      },
+    ];
+    host.innerHTML = "";
+    models.forEach((m, mi) => {
+      const cardDelay = 0.2 + mi * 0.1;
+      const card = document.createElement("div");
+      card.className = "faceoff-card" + (m.hero ? " is-hero" : "");
+      card.style.setProperty("--mcol", m.color);
+      card.style.setProperty("--faceoff-delay", cardDelay + "s");
+      const barsHtml = m.bars.map((bar, bi) => {
+        const barDelay = cardDelay + 0.15 + bi * 0.08;
+        const nodata = bar.nodata === true;
+        return `
+          <div class="hbar${nodata ? " is-nodata" : ""}" style="--hbar-w:${bar.v}%; --hbar-delay:${barDelay}s;">
+            <div class="hbar-name">${bar.b}</div>
+            <div class="hbar-val">${bar.raw}</div>
+            <div class="hbar-track"><div class="hbar-fill"><div class="hbar-electron" aria-hidden="true"></div></div></div>
+          </div>
+        `;
+      }).join("");
+      card.innerHTML = `
+        <div class="faceoff-head">
+          <div class="faceoff-name">${m.name}</div>
+          <div class="faceoff-maker">${m.maker}</div>
+        </div>
+        <div class="hbars">${barsHtml}</div>
+        <div class="faceoff-stats">
+          <div class="faceoff-stat"><span class="faceoff-stat-lbl">Ctx</span><span class="faceoff-stat-val">${m.ctx}</span></div>
+          <div class="faceoff-stat"><span class="faceoff-stat-lbl">$/1M in</span><span class="faceoff-stat-val">${m.price}</span></div>
+        </div>
+      `;
+      host.appendChild(card);
+    });
+  }
+
+  // ======================================================================
+  // Workflow recipes — multi-tool combos with rationale for each pairing.
+  // ======================================================================
+  function renderRecipes() {
+    const host = document.getElementById("recipes");
+    if (!host) return;
+    const rows = [
+      {
+        chips: [{n:"Claude Code", t:"LLM"}, {n:"Cursor", t:"tool-app"}],
+        use: "Agentic refactors in a fluid IDE.",
+        why: "Claude does the multi-file edits; Cursor keeps you in flow with inline diffs.",
+      },
+      {
+        chips: [{n:"Nano Banana 2", t:"image"}, {n:"Claude (MCP)", t:"LLM"}],
+        use: "On-brand thumbnails, hero art, product shots.",
+        why: "Claude handles the prompt-engineering + brand rules; Nano Banana renders 4K with best-in-class text.",
+      },
+      {
+        chips: [{n:"NotebookLM", t:"tool-app"}, {n:"Claude (MCP)", t:"LLM"}],
+        use: "Source-grounded research synthesis.",
+        why: "NotebookLM pins every claim to a citation; Claude reasons over the retrieved set.",
+      },
+      {
+        chips: [{n:"Nano Banana 2", t:"image"}, {n:"Claude Opus 4.7", t:"LLM"}],
+        use: "Image → Three.js \"explode-to-parts\" 3D effect on a website.",
+        why: "Nano Banana makes the hero art; Claude writes the WebGL code to animate it apart on scroll.",
+      },
+      {
+        chips: [{n:"Claude Opus 4.7", t:"LLM"}, {n:"ElevenLabs v3", t:"voice"}],
+        use: "Long-form script + expressive voiceover pipeline.",
+        why: "Claude drafts + revises; ElevenLabs v3 delivers the emotive read Claude alone can't.",
+      },
+      {
+        chips: [{n:"Gemini 3.1 (BrowseComp)", t:"LLM"}, {n:"Claude Opus 4.7", t:"LLM"}],
+        use: "Deep-web research → reasoning + writing finish.",
+        why: "Gemini crawls faster and deeper on the open web; Claude finishes with stronger structure.",
+      },
+    ];
+    host.innerHTML = "";
+    rows.forEach((r, i) => {
+      const delay = 0.2 + i * 0.08;
+      const el = document.createElement("div");
+      el.className = "recipe";
+      el.style.setProperty("--recipe-delay", delay + "s");
+      const chipsHtml = r.chips.map(c =>
+        `<span class="tool-chip" data-type="${c.t}">${c.n}</span>`
+      ).join('<span class="recipe-arrow" aria-hidden="true">→</span>');
+      el.innerHTML = `
+        <div class="recipe-chips">${chipsHtml}</div>
+        <div class="recipe-use">${r.use}</div>
+        <div class="recipe-why"><span class="recipe-why-lbl">Why</span>${r.why}</div>
       `;
       host.appendChild(el);
     });
