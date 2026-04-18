@@ -315,16 +315,21 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .subpills-nested .subpill { font-size: 12.5px; padding: 5px 10px; }
 
 /* Section accents */
-[data-section="apply"]     { --sec: var(--accent-claude); }
-[data-section="365"]       { --sec: var(--accent-365); }
-[data-section="resources"] { --sec: #4ade80; }
-[data-section="news"]      { --sec: #22d3ee; }
+[data-section="learn"]      { --sec: var(--accent-claude); }
+[data-section="comply365"]  { --sec: var(--accent-365); }
+[data-section="news-media"] { --sec: #22d3ee; }
 
-/* Apply AI section layout — mirrors .section-home spacing */
-.section-apply {
+/* Learn section layout — mirrors .section-home spacing */
+.section-learn {
   display: flex;
   flex-direction: column;
   gap: 22px;
+}
+.section-lede {
+  margin: -4px 0 2px;
+  color: var(--text-2);
+  font-size: 14px;
+  letter-spacing: 0.01em;
 }
 
 /* ===== Card ===== */
@@ -1085,35 +1090,33 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 
 /* ===== Chip accent treatments ===== */
-/* Apply AI chip — orange (Claude) glow on hover / active. */
-.chip-apply.is-active {
+/* Learn chip — orange (Claude) glow on hover / active. Learn is Claude-first. */
+.chip-learn.is-active {
   color: var(--accent-claude-hi);
   background: color-mix(in srgb, var(--accent-claude-soft) 60%, transparent);
   border-color: color-mix(in srgb, var(--accent-claude) 40%, var(--border-strong));
   box-shadow: 0 0 24px -4px var(--accent-claude-glow);
 }
-.chip-apply:hover:not(.is-active) {
+.chip-learn:hover:not(.is-active) {
   color: var(--accent-claude-hi);
   box-shadow: 0 0 18px -6px var(--accent-claude-glow);
 }
-/* 365 chip — purple glow only on hover / active. */
-.chip-365.is-active {
+/* Comply365 chip — purple glow. */
+.chip-comply365.is-active {
   color: var(--accent-365-hi);
   background: color-mix(in srgb, var(--accent-365-soft) 60%, transparent);
   border-color: color-mix(in srgb, var(--accent-365) 40%, var(--border-strong));
   box-shadow: 0 0 24px -4px var(--accent-365-glow);
 }
-.chip-365:hover:not(.is-active) {
+.chip-comply365:hover:not(.is-active) {
   color: var(--accent-365-hi);
   box-shadow: 0 0 18px -6px var(--accent-365-glow);
 }
-/* Resources + News chips — blue glow when active. */
-.chip-resources.is-active,
-.chip-news.is-active {
+/* News & Media chip — blue glow. */
+.chip-news-media.is-active {
   box-shadow: 0 0 24px -4px var(--accent-glow);
 }
-.chip-resources:hover:not(.is-active),
-.chip-news:hover:not(.is-active) {
+.chip-news-media:hover:not(.is-active) {
   box-shadow: 0 0 18px -6px var(--accent-glow);
 }
 /* One-shot specular sweep on chip hover (600ms, not continuous). */

@@ -6,9 +6,9 @@
   const THEME_KEY = "cdih-theme";
 
   // Sections that render from latest.json and share the filter machinery.
-  const SECTIONS = ["365", "resources", "news"];
+  const SECTIONS = ["comply365", "news-media"];
   // Sections that are exclusive (only visible when their chip is picked).
-  const DISTINCT_SECTIONS = ["home", "apply"];
+  const DISTINCT_SECTIONS = ["home", "learn"];
 
   // Per-model brand-aligned electric palette, used by every chart so
   // colors match across the site.
@@ -72,9 +72,8 @@
       if (!el) return;
       el.dataset.hidden = f === s ? "false" : "true";
     });
-    if (f === "365") load365();
+    if (f === "comply365") load365();
     if (f === "home") replayHomeAnimations();
-    if (f === "apply") replayApplyAnimations();
   }
 
   // If a host's bounding rect overlaps the activation zone (middle ~75%
@@ -122,19 +121,6 @@
     replayChartObservers(["#cbars", "#vbars", "#hbars", "#faceoff"]);
   }
 
-  // Replay Apply-AI-tab animations whenever the tab is activated.
-  function replayApplyAnimations() {
-    const css = document.querySelectorAll(".section-apply, .section-apply .hero");
-    css.forEach(el => {
-      el.style.animation = "none";
-      void el.offsetHeight;
-      el.style.animation = "";
-    });
-    renderTaskGrid();
-    renderRecipes();
-    replayChartObservers(["#taskgrid", "#recipes"]);
-  }
-
   chips.forEach(chip => {
     chip.addEventListener("click", () => {
       applyFilter(chip.dataset.filter);
@@ -142,23 +128,22 @@
     });
   });
 
-  // Resources sub-pills: Videos / Official
-  document.querySelectorAll(".subpill[data-tutkind]").forEach((pill) => {
+  // Learn sub-pills: Claude / Finder / Tools / My Projects
+  document.querySelectorAll(".subpill[data-learn]").forEach((pill) => {
     pill.addEventListener("click", () => {
-      const kind = pill.dataset.tutkind;
-      document.querySelectorAll(".subpill[data-tutkind]").forEach((p) => {
+      const kind = pill.dataset.learn;
+      document.querySelectorAll(".subpill[data-learn]").forEach((p) => {
         const on = p === pill;
         p.classList.toggle("is-active", on);
         p.setAttribute("aria-selected", on ? "true" : "false");
       });
-      const videos   = document.querySelector('[data-cards="resources-videos"]');
-      const official = document.querySelector('[data-cards="resources-official"]');
-      if (videos)   videos.hidden   = kind !== "video";
-      if (official) official.hidden = kind !== "official";
+      document.querySelectorAll('.pane[data-pane^="learn-"]').forEach((pane) => {
+        pane.hidden = pane.dataset.pane !== `learn-${kind}`;
+      });
     });
   });
 
-  // 365 sub-pills: Tutorials / Resources / News
+  // Comply365 sub-pills: Tutorials / Resources / News
   document.querySelectorAll(".subpill[data-s365]").forEach((pill) => {
     pill.addEventListener("click", () => {
       const kind = pill.dataset.s365;
@@ -270,7 +255,6 @@
 
   const CARD_CONTAINERS = [
     "365-tutorials", "365-resources-videos", "365-resources-official", "365-news",
-    "resources-videos", "resources-official",
     "news",
   ];
 
@@ -469,24 +453,16 @@
         s.status.forEach(item => { item._severity = detectStatusSeverity(item); });
       }
 
-      // RESOURCES tab: split tutorials by tutorial_kind.
-      const tuts = Array.isArray(s.tutorials) ? s.tutorials : [];
-      const tutVideos   = tuts.filter((t) => t.tutorial_kind === "video");
-      const tutOfficial = tuts.filter((t) => t.tutorial_kind !== "video");
-      renderSection("resources-videos",   tutVideos,   true);
-      renderSection("resources-official", tutOfficial, false);
-
-      // NEWS tab: status strip + mixed grid (videos first, then articles).
+      // NEWS & MEDIA tab: status strip + mixed grid (videos first, then articles).
       renderStatusStrip(s.status);
       renderNews(s.news || []);
 
-      setUpdated("resources", data.generated_at);
-      setUpdated("news",      data.generated_at);
-      setUpdated("365",       data.generated_at);
+      setUpdated("news", data.generated_at);
+      setUpdated("365",  data.generated_at);
       document.getElementById("generated").textContent = prettyDate(data.generated_at);
 
-      // If the 365 tab is currently selected, render it now that latest is in.
-      if (document.querySelector('.chip.is-active')?.dataset.filter === "365") {
+      // If Comply365 is currently selected, render it now that latest is in.
+      if (document.querySelector('.chip.is-active')?.dataset.filter === "comply365") {
         load365();
       }
     } catch (err) {
@@ -503,9 +479,7 @@
   renderCompare();
   renderIndex();
   renderScorecard();
-  renderTaskGrid();
   renderLlmFaceoff();
-  renderRecipes();
   setupChartObservers();
 
   // ======================================================================
