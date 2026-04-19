@@ -2134,7 +2134,7 @@ body.modal-open { overflow: hidden; }
     rgba(255,120,150,0.22) 100%);
   border-color: rgba(255,130,155,0.45);
   color: var(--color-youtube-solid);
-  box-shadow: 0 0 22px -6px color-mix(in srgb, var(--color-youtube-solid) 50%, transparent);
+  box-shadow: 0 0 22px -6px var(--color-youtube-glow);
 }
 .dash-action-youtube svg { flex: 0 0 auto; }
 .dash-action-youtube:hover {
@@ -2142,7 +2142,7 @@ body.modal-open { overflow: hidden; }
     rgba(255,170,195,0.38) 0%,
     rgba(255,120,150,0.32) 100%);
   border-color: rgba(255,100,130,0.60);
-  box-shadow: 0 0 26px -4px color-mix(in srgb, var(--color-youtube-solid) 55%, transparent);
+  box-shadow: 0 0 26px -4px var(--color-youtube-glow);
 }
 
 /* ===== YouTube modal (M5.2) ===== */
