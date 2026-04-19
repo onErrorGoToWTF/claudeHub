@@ -82,13 +82,16 @@
   <section class="section section-learn" data-section="learn" id="section-learn" data-hidden="true">
     <div class="section-head">
       <h2>Learn</h2>
-    </div>
-    <p class="section-lede">Courses, quizzes, and what shipped this week.</p>
-
-    <div class="subpills" role="tablist" aria-label="Learn content">
-      <button class="subpill"           data-learn="whats-new" type="button" role="tab" aria-selected="false"><span class="subpill-label">What's new</span><span class="subpill-badge" data-subpill-badge="whats-new" hidden></span></button>
-      <button class="subpill is-active" data-learn="courses"   type="button" role="tab" aria-selected="true">Courses</button>
-      <button class="subpill"           data-learn="tutorials" type="button" role="tab" aria-selected="false">Tutorials &amp; quizzes</button>
+      <div class="section-head-actions">
+        <div class="subpills" role="tablist" aria-label="Learn content">
+          <button class="subpill"           data-learn="whats-new" type="button" role="tab" aria-selected="false"><span class="subpill-label">What's new</span><span class="subpill-badge" data-subpill-badge="whats-new" hidden></span></button>
+          <button class="subpill is-active" data-learn="courses"   type="button" role="tab" aria-selected="true">Courses</button>
+          <button class="subpill"           data-learn="tutorials" type="button" role="tab" aria-selected="false">Tutorials &amp; quizzes</button>
+        </div>
+        <button class="section-info" type="button" aria-label="About Learn" data-info="Courses, quizzes, and what shipped this week.">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        </button>
+      </div>
     </div>
 
     <div class="pane" data-pane="learn-whats-new" hidden>
@@ -140,8 +143,12 @@
   <section class="section section-tools" data-section="tools" id="section-tools" data-hidden="true">
     <div class="section-head">
       <h2>Tools</h2>
+      <div class="section-head-actions">
+        <button class="section-info" type="button" aria-label="About Tools" data-info="The catalog. Filter by modality; tap a card for tagline, pricing, links, and the snippets tied to each tool.">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        </button>
+      </div>
     </div>
-    <p class="section-lede">The catalog. Filter by modality; tap a card for tagline, pricing, links, and the snippets tied to each tool.</p>
     <div class="modality-filter" id="modality-filter" role="tablist" aria-label="Filter by modality"></div>
     <div class="tool-grid" id="tool-grid"></div>
   </section>
@@ -149,8 +156,12 @@
   <section class="section section-youtube" data-section="youtube" id="section-youtube" data-hidden="true">
     <div class="section-head">
       <h2>YouTube</h2>
+      <div class="section-head-actions">
+        <button class="section-info" type="button" aria-label="About YouTube" data-info="Every scraped video, one feed. Save what's worth coming back to; tap any card to watch in-app.">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        </button>
+      </div>
     </div>
-    <p class="section-lede">Every scraped video, one feed. Save what's worth coming back to; tap any card to watch in-app.</p>
     <div class="cards cards-video" id="youtube-grid">
       <div class="empty">Loading videos…</div>
     </div>
@@ -159,11 +170,15 @@
   <section class="section section-projects" data-section="projects" id="section-projects" data-hidden="true">
     <div class="section-head">
       <h2>Projects</h2>
-    </div>
-    <p class="section-lede">Your saved builds. Switch to <em>+ New project</em> to run the Finder and stash a fresh stack.</p>
-    <div class="subpills projects-toggle" role="tablist" aria-label="Projects view">
-      <button class="subpill is-active" data-projects-view="saved" type="button" role="tab" aria-selected="true">Saved</button>
-      <button class="subpill"           data-projects-view="new"   type="button" role="tab" aria-selected="false">+ New project</button>
+      <div class="section-head-actions">
+        <div class="subpills projects-toggle" role="tablist" aria-label="Projects view">
+          <button class="subpill is-active" data-projects-view="saved" type="button" role="tab" aria-selected="true">Saved</button>
+          <button class="subpill"           data-projects-view="new"   type="button" role="tab" aria-selected="false">+ New project</button>
+        </div>
+        <button class="section-info" type="button" aria-label="About Projects" data-info="Your saved builds. Switch to + New project to run the Finder and stash a fresh stack.">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        </button>
+      </div>
     </div>
 
     <div class="pane" data-pane="projects-saved">
@@ -288,9 +303,13 @@
   <section class="section section-news-media" data-section="news-media" id="section-news-media" data-hidden="true">
     <div class="section-head">
       <h2>State of AI</h2>
-      <span class="updated" data-updated="news">—</span>
+      <div class="section-head-actions">
+        <span class="updated" data-updated="news">—</span>
+        <button class="section-info" type="button" aria-label="About State of AI" data-info="Reference charts — which models are advancing where.">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        </button>
+      </div>
     </div>
-    <p class="section-lede">Reference charts — which models are advancing where.</p>
 
     <div class="pane" data-pane="news-media-state">
       <section class="hero glass" id="compare-card">
@@ -373,12 +392,17 @@
   <section class="section" data-section="comply365" id="section-comply365">
     <div class="section-head">
       <h2>Comply365</h2>
-      <span class="updated" data-updated="365">—</span>
-    </div>
-    <div class="subpills" role="tablist" aria-label="Comply365 content kind">
-      <button class="subpill is-active" data-s365="tutorials" type="button" role="tab" aria-selected="true">Tutorials</button>
-      <button class="subpill"           data-s365="resources" type="button" role="tab" aria-selected="false">Resources</button>
-      <button class="subpill"           data-s365="news"      type="button" role="tab" aria-selected="false">News</button>
+      <div class="section-head-actions">
+        <div class="subpills" role="tablist" aria-label="Comply365 content kind">
+          <button class="subpill is-active" data-s365="tutorials" type="button" role="tab" aria-selected="true">Tutorials</button>
+          <button class="subpill"           data-s365="resources" type="button" role="tab" aria-selected="false">Resources</button>
+          <button class="subpill"           data-s365="news"      type="button" role="tab" aria-selected="false">News</button>
+        </div>
+        <span class="updated" data-updated="365">—</span>
+        <button class="section-info" type="button" aria-label="About Comply365" data-info="Comply365 tutorials, Claude resources for compliance workflows, and scraped industry news.">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        </button>
+      </div>
     </div>
     <div class="pane" data-pane="365-tutorials">
       <div class="cards" data-cards="365-tutorials"></div>
