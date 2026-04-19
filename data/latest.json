@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T16:56:24.250Z",
+  "generated_at": "2026-04-19T18:31:17.818Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "Anthropic’s Claude Mythos Escapes Sandbox in Alarming Cybersecurity Test 2026 - teleSUR English",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBjXzVJOVdVd1RaZ2dEa0xQQWdHVXI3bTRfd1dPV1hIcjJlVm00U0R1TWpaUmJWbmxBaHE2U181Zi11d1J0SEw2ZVhDNWV1VmtRank5S1EzVUIwbU9JWTlXY1FYdzlBMDNDdGltNQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-19T18:21:40.000Z",
+        "summary": "Anthropic’s Claude Mythos Escapes Sandbox in Alarming Cybersecurity Test 2026 teleSUR English"
+      },
+      {
         "title": "Anthropic's Claude Shut Down Firm Without Explanation, Claims CTO And Issues Warning - NDTV",
         "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQOGFqRHJWSTFQTm1Bd0VkSERBTXN1eDNncGdmUWtyc2JPemc4bGRtbkRoY3FVaXlDQXF6bDdHckFpYVJoeF91OHJMbmtTQjctUVhXUTcyRjg0VGpRanlaV0tXeXRzSFVrczZaRDZIZE1lTUNNckIwOVg2MzFWaC13eEY0X01PcFUxU3hpMXJheVFQbzQ5anRTaTdDdk4yRUdfbmtpa292RURsQ1pBb2F4bGlHSGkteFU3eW9BUNIBxAFBVV95cUxNNDR3dXZ1R2J0bWxWczRZNkJfa3JBQVdKMzItYXhhOEZZakk0Q1g1VWxTMkoxb3V3cFRXcVFqUUpFb2FtRnBxM2k3aUVzQUJsZ3hsMVhQVXVhMGNHdG5XNkhSMndzRDF4QTE1Mnk4THJDU1dUczY4SjdPMjVnU0tEYzdrYkJBY1pmclF0bzhOS0hqcEFnOHg1T0JWNVROVFJTYzlDbk9pNUxjOWxtdkZqRDBlNjI0S3hEdmNXNkNEdm8zejZB?oc=5",
         "source": "Google News",
@@ -183,7 +190,7 @@
       {
         "title": "Changes in the system prompt between Claude Opus 4.6 and 4.7",
         "url": "https://simonwillison.net/2026/Apr/18/opus-system-prompt/",
-        "source": "HN · 74↑",
+        "source": "HN · 76↑",
         "hn_id": "47823270",
         "published": "2026-04-19T10:36:29.000Z",
         "summary": ""
@@ -238,13 +245,6 @@
         "summary": "After calling software engineering 'dead,' Anthropic’s Claude Code creator Boris Cherny says coding tools The Times of India"
       },
       {
-        "title": "TrendAI partners with Anthropic on AI security - Vietnam Investment Review - VIR",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOTVFMeE9WcUZUSGc1UjRwYWFwQVBGQ090MWozZWFhdVpOTW0tQ3F0NklFVGlwS2FPUXFCclRNZ2dycnU5SEVTNmNtNHhkTmpWYmExTGZTaFU4OW1jT3R5MlF3ZVZQY3lZZVJmNDdMYndkNFRjVkJNN1FSWEdWbDMyRjNvOA?oc=5",
-        "source": "Google News",
-        "published": "2026-04-19T03:08:51.000Z",
-        "summary": "TrendAI partners with Anthropic on AI security Vietnam Investment Review - VIR"
-      },
-      {
         "title": "Anthropic Leak Exposes Claude Code Command Injection - Let's Data Science",
         "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOYTBKb1p0cC1wNXVCRlFYb1AxRExkbU5FdzJHcHNCNGNpUHdmLXhqd3NMOFhUQkRncmNpV2pqaVNzVVpsbjUtR2RfUWdZd2NLUDRoMGhPcVVqYURIX1NRbzItcmc0TGFYeWYtWmJtVTc2Y2VPUmdmUEs4R2F6Sm1EQzlDTjVpSjhvYU1lS1pyS0UwZi1EZWpyazRn?oc=5",
         "source": "Google News",
@@ -261,7 +261,7 @@
       {
         "title": "Thoughts and feelings around Claude Design",
         "url": "https://samhenri.gold/blog/20260418-claude-design/",
-        "source": "HN · 346↑",
+        "source": "HN · 350↑",
         "hn_id": "47818700",
         "published": "2026-04-18T19:19:24.000Z",
         "summary": ""
@@ -996,22 +996,6 @@
         "tutorial_kind": "video"
       },
       {
-        "title": "v2.1.114",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.114",
-        "source": "Claude Code Releases",
-        "published": "2026-04-18T01:34:30.000Z",
-        "summary": "What's changed Fixed a crash in the permission dialog when an agent teams teammate requested tool permission",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "v2.1.113",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.113",
-        "source": "Claude Code Releases",
-        "published": "2026-04-17T19:34:41.000Z",
-        "summary": "What's changed Changed the CLI to spawn a native Claude Code binary (via a per-platform optional dependency) instead of bundled JavaScript Added sandbox.network.deniedDomains setting to block…",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "FULL Claude Code Tutorial For Beginners in 2026! (FULL COURSE)",
         "url": "https://www.youtube.com/watch?v=9pniXngp8kk",
         "source": "Productive Dude",
@@ -1024,14 +1008,6 @@
         "tutorial_kind": "video"
       },
       {
-        "title": "v2.1.112",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.112",
-        "source": "Claude Code Releases",
-        "published": "2026-04-16T19:55:41.000Z",
-        "summary": "What's changed Fixed \"claude-opus-4-7 is temporarily unavailable\" for auto mode",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "Claude Code Skills Explained for Normal People",
         "url": "https://www.youtube.com/watch?v=AY_uYtwLc0I",
         "source": "Pragati Kunwer",
@@ -1042,14 +1018,6 @@
         "published": "2026-04-16T17:30:02.000Z",
         "summary": "",
         "tutorial_kind": "video"
-      },
-      {
-        "title": "v2.1.111",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.111",
-        "source": "Claude Code Releases",
-        "published": "2026-04-16T15:18:45.000Z",
-        "summary": "What's changed Claude Opus 4.7 xhigh is now available! Use /effort to tune speed vs. intelligence Auto mode is now available for Max subscribers when using Opus 4.7 Added xhigh effort level for Opus…",
-        "tutorial_kind": "official"
       },
       {
         "title": "Claude Code + GitHub: Step by Step for Complete Beginners",
@@ -1076,27 +1044,11 @@
         "tutorial_kind": "video"
       },
       {
-        "title": "v2.1.110",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.110",
-        "source": "Claude Code Releases",
-        "published": "2026-04-15T23:21:43.000Z",
-        "summary": "What's changed Added /tui command and tui setting — run /tui fullscreen to switch to flicker-free rendering in the same conversation Changed Ctrl+O to toggle between normal and verbose transcript…",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "Equipping Agents for the Real World with Agent Skills",
         "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
         "source": "Anthropic Eng",
         "published": "2026-04-15T14:39:01.000Z",
         "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "v2.1.109",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.109",
-        "source": "Claude Code Releases",
-        "published": "2026-04-15T04:02:13.000Z",
-        "summary": "What's changed Improved the extended-thinking indicator with a rotating progress hint",
         "tutorial_kind": "official"
       },
       {
@@ -1112,14 +1064,6 @@
         "tutorial_kind": "video"
       },
       {
-        "title": "v2.1.108",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.108",
-        "source": "Claude Code Releases",
-        "published": "2026-04-14T19:12:01.000Z",
-        "summary": "What's changed Added ENABLE_PROMPT_CACHING_1H env var to opt into 1-hour prompt cache TTL on API key, Bedrock, Vertex, and Foundry ( ENABLE_PROMPT_CACHING_1H_BEDROCK is deprecated but still…",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "Claude Cowork Can NOW Automate Your Documents! (Full Walkthrough)",
         "url": "https://www.youtube.com/watch?v=L_-l9yjHxFs",
         "source": "Ryan & Matt Data Science",
@@ -1130,22 +1074,6 @@
         "published": "2026-04-14T14:12:41.000Z",
         "summary": "",
         "tutorial_kind": "video"
-      },
-      {
-        "title": "v2.1.107",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.107",
-        "source": "Claude Code Releases",
-        "published": "2026-04-14T06:11:20.000Z",
-        "summary": "What's changed Show thinking hints sooner during long operations",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "v2.1.105",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.105",
-        "source": "Claude Code Releases",
-        "published": "2026-04-13T21:53:13.000Z",
-        "summary": "What's changed Added path parameter to the EnterWorktree tool to switch into an existing worktree of the current repository Added PreCompact hook support: hooks can now block compaction by exiting…",
-        "tutorial_kind": "official"
       },
       {
         "title": "Building Effective Agents",
@@ -1178,14 +1106,6 @@
         "published": "2026-04-13T12:30:32.000Z",
         "summary": "",
         "tutorial_kind": "video"
-      },
-      {
-        "title": "v2.1.104",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.104",
-        "source": "Claude Code Releases",
-        "published": "2026-04-13T01:45:26.000Z",
-        "summary": "No content.",
-        "tutorial_kind": "official"
       },
       {
         "title": "Merge pull request #526 from anthropics/sre-incident-response-agent-f…",
@@ -1421,6 +1341,86 @@
         "source": "Anthropic Eng",
         "published": "2025-12-15T18:02:25.000Z",
         "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "A Postmortem of Three Recent Issues",
+        "url": "https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues",
+        "source": "Anthropic Eng",
+        "published": "2025-12-14T20:27:33.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Effective Harnesses for Long Running Agents",
+        "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+        "source": "Anthropic Eng",
+        "published": "2025-11-26T18:07:21.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Merge pull request #45 from emmanuel-ferdman/master",
+        "url": "https://github.com/anthropics/courses/commit/f4dbb137d7b02dddaf3cc73e32e20a702d3b5e77",
+        "source": "Anthropic Courses",
+        "published": "2025-11-13T20:40:50.000Z",
+        "summary": "Merge pull request #45 from emmanuel-ferdman/master update structured outputs notebook reference",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Code Execution with MCP",
+        "url": "https://www.anthropic.com/engineering/code-execution-with-mcp",
+        "source": "Anthropic Eng",
+        "published": "2025-11-04T22:06:04.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Claude Code Sandboxing",
+        "url": "https://www.anthropic.com/engineering/claude-code-sandboxing",
+        "source": "Anthropic Eng",
+        "published": "2025-11-03T21:01:45.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Merge pull request #97 from jennarbates/patch-1",
+        "url": "https://github.com/anthropics/courses/commit/8523fca1beeae9c1db390393f1a48e8767e967ec",
+        "source": "Anthropic Courses",
+        "published": "2025-10-09T18:04:20.000Z",
+        "summary": "Merge pull request #97 from jennarbates/patch-1 Update 01_prompting_recap.ipynb - fixed broken link",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Merge pull request #101 from padickinson/patch-1",
+        "url": "https://github.com/anthropics/courses/commit/458eeda6048bd184a40d57ff66279c406f213635",
+        "source": "Anthropic Courses",
+        "published": "2025-10-09T18:02:53.000Z",
+        "summary": "Merge pull request #101 from padickinson/patch-1 Update 02_messages_format.ipynb",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Update 02_messages_format.ipynb",
+        "url": "https://github.com/anthropics/courses/commit/6541de94cb325fcb0d97b839cc187f760c3bc03d",
+        "source": "Anthropic Courses",
+        "published": "2025-09-27T19:27:02.000Z",
+        "summary": "Update 02_messages_format.ipynb fix typo in intro",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Desktop Extensions",
+        "url": "https://www.anthropic.com/engineering/desktop-extensions",
+        "source": "Anthropic Eng",
+        "published": "2025-09-12T00:43:28.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Update 01_prompting_recap.ipynb -fixed broken link",
+        "url": "https://github.com/anthropics/courses/commit/f8c420f78029ea17b315ca62d9e04b4123def426",
+        "source": "Anthropic Courses",
+        "published": "2025-07-20T00:41:41.000Z",
+        "summary": "Update 01_prompting_recap.ipynb -fixed broken link fixed broken link to prompt_engineering_interactive_tutorial/README.md",
         "tutorial_kind": "official"
       },
       {
