@@ -505,9 +505,17 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   display: inline-block;
   width: 4px; height: 18px;
   border-radius: 4px;
-  background: var(--sec, var(--accent));
+  background: var(--sec, var(--text-3));
   flex-shrink: 0;
 }
+/* Section-head accent matches the tab's rainbow color. */
+.section[data-section="home"]      .section-head h2::before { background: var(--text-3); }
+.section[data-section="learn"]     .section-head h2::before { background: var(--color-learn-solid); }
+.section[data-section="tools"]     .section-head h2::before { background: var(--color-tools-solid); }
+.section[data-section="projects"]  .section-head h2::before { background: var(--color-projects-solid); }
+.section[data-section="youtube"]   .section-head h2::before { background: var(--color-youtube-solid); }
+.section[data-section="comply365"] .section-head h2::before { background: var(--color-365-solid); }
+.section[data-section="news-media"] .section-head h2::before { background: var(--text-3); }
 .section-head-actions {
   display: flex; align-items: center; gap: 10px;
   flex-wrap: wrap;
@@ -1866,10 +1874,12 @@ body.modal-open { overflow: hidden; }
 }
 .continue-row-title {
   flex: 1;
+  min-width: 0;
   font-size: 13.5px;
   font-weight: 600;
   color: var(--text-1);
   letter-spacing: -0.005em;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1920,15 +1930,15 @@ body.modal-open { overflow: hidden; }
 }
 .dash-action:active { transform: scale(0.98); }
 .dash-action-primary {
-  background: color-mix(in srgb, var(--accent-claude-soft) 55%, transparent);
-  border-color: color-mix(in srgb, var(--accent-claude) 40%, var(--border-strong));
-  color: var(--accent-claude-hi);
-  box-shadow: 0 0 22px -6px var(--accent-claude-glow);
+  background: var(--color-projects-surface);
+  border-color: var(--color-projects-border);
+  color: var(--color-projects-solid);
+  box-shadow: 0 0 22px -6px var(--color-projects-glow);
 }
 .dash-action-primary:hover {
-  background: color-mix(in srgb, var(--accent-claude-soft) 80%, transparent);
-  border-color: color-mix(in srgb, var(--accent-claude) 60%, var(--border-strong));
-  box-shadow: 0 0 26px -4px var(--accent-claude-glow);
+  background: color-mix(in srgb, var(--color-projects-solid) 18%, transparent);
+  border-color: color-mix(in srgb, var(--color-projects-solid) 65%, var(--border-strong));
+  box-shadow: 0 0 26px -4px var(--color-projects-glow);
 }
 
 /* ===== Tools catalog (Learn → Tools) ===== */
