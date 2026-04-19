@@ -447,37 +447,40 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 :root:not([data-theme="light"]) .icon-sun  { display: none; }
 :root:not([data-theme="light"]) .icon-moon { display: block; }
 
-/* Floating nav — brand tag above the glass nav bar; the wrap is sticky
-   so the whole unit stays pinned at the top of the viewport while the
-   page scrolls underneath it. */
+/* Floating nav — logo tag above the glass nav bar; the wrap is fixed
+   to the top of the viewport and layered above everything so the page
+   flows underneath it. */
 .nav-wrap {
-  position: sticky;
+  position: fixed;
   top: calc(var(--safe-t, 0px) + 4px);
-  z-index: 30;
+  left: 0; right: 0;
+  z-index: 100;
   max-width: 640px;
-  margin: 6px auto 10px;
+  margin: 0 auto;
   padding: 0 max(12px, var(--safe-l)) 0 max(12px, var(--safe-r));
+  pointer-events: none; /* children re-enable */
 }
+.nav-wrap > * { pointer-events: auto; }
 .nav-brand {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 3px 10px 5px;
   margin: 0 0 -1px 12px;
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-2);
-  background: color-mix(in srgb, var(--bg-1) 60%, transparent);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-          backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid var(--glass-hairline);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
   border-bottom: 0;
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset,
+              0 -1px 0 rgba(0,0,0,0.04) inset;
   position: relative;
-  z-index: 31;
+  z-index: 101;
   user-select: none;
 }
-.nav-brand-sub { font-weight: 500; color: var(--text-1); }
+.nav-brand-ai  { color: #9a9a9a; font-weight: 600; }
+.nav-brand-sub { color: #0a0a0a; font-weight: 700; letter-spacing: -0.01em; }
 
 .chips {
   display: flex; gap: 2px;
@@ -546,28 +549,29 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .app {
   position: relative; z-index: 1;
   max-width: 640px; margin: 0 auto;
-  padding: 20px max(16px, var(--safe-l)) calc(40px + var(--safe-b)) max(16px, var(--safe-r));
+  /* padding-top clears the fixed nav: safe-t + ~4 top + nav_height (brand 24 + chips ~46 - 1 overlap) + breathing */
+  padding: calc(var(--safe-t, 0px) + 86px) max(16px, var(--safe-l)) calc(40px + var(--safe-b)) max(16px, var(--safe-r));
   display: flex; flex-direction: column; gap: 28px;
 }
 
 .section { animation: rise 0.55s var(--ease) both; }
 .section[data-hidden="true"] { display: none; }
 .section-head {
-  display: flex; align-items: end; justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between;
   column-gap: 10px; row-gap: 8px;
   flex-wrap: wrap;
   padding: 0 2px 12px;
 }
 .section-head h2 {
   margin: 0;
-  font-size: 24px; font-weight: 600; line-height: 32px; letter-spacing: -0.025em;
+  font-size: 28px; font-weight: 600; line-height: 1.15; letter-spacing: -0.025em;
   color: var(--text-1);
   display: flex; align-items: center; gap: 10px;
 }
 .section-head h2::before {
   content: "";
   display: inline-block;
-  width: 4px; height: 18px;
+  width: 4px; height: 20px;
   border-radius: 4px;
   background: var(--sec, var(--text-3));
   flex-shrink: 0;
@@ -599,8 +603,8 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   .section-head {
     flex-wrap: nowrap;
   }
-  .section-head h2 { font-size: 20px; line-height: 28px; letter-spacing: -0.02em; }
-  .section-head h2::before { height: 16px; }
+  .section-head h2 { font-size: 23px; line-height: 1.15; letter-spacing: -0.02em; }
+  .section-head h2::before { height: 18px; }
   .section-head-actions { gap: 4px; flex-wrap: nowrap; }
   .section-head-actions .subpills { gap: 1px; padding: 1px; }
   .section-head-actions .subpill { padding: 5px 8px; font-size: 11.5px; min-height: 28px; }
