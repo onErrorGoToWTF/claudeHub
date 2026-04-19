@@ -4600,14 +4600,18 @@ body.modal-open { overflow: hidden; }
   opacity: 1;
   animation: cbarPulse 1.6s var(--ease) calc(var(--cbar-delay, 0.3s) + 1.55s) infinite;
 }
-.cbar.is-hero .cbar-label,
-.cbar.is-hero .cbar-val {
-  background: linear-gradient(135deg,
-    color-mix(in srgb, var(--cbar-col) 55%, #ffffff),
-    var(--cbar-col));
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  font-weight: 700;
+/* No-data rows: dashed static line, muted label + value. */
+.cbar.is-nodata .cbar-fill {
+  width: 100%;
+  background: repeating-linear-gradient(90deg,
+    color-mix(in srgb, var(--text-3) 55%, transparent) 0 4px,
+    transparent 4px 8px);
+  box-shadow: none;
+  transition: none;
 }
+.cbar.is-nodata .cbar-electron { display: none; }
+.cbar.is-nodata .cbar-label,
+.cbar.is-nodata .cbar-val { color: var(--text-3); }
 @keyframes cbarPulse {
   0%, 100% { transform: translate(50%, -50%) scale(1);    opacity: 1; }
   50%      { transform: translate(50%, -50%) scale(1.25); opacity: 0.75; }
@@ -5250,9 +5254,11 @@ body.modal-open { overflow: hidden; }
   .type-legend-desc { display: none; }
 }
 
-/* ===== LLM face-off — swipe carousel (horizontal electron lines per bench) ===== */
-/* Each benchmark is a full-width slide; native scroll-snap picks one at a
-   time. Pager dots jump the scroller. */
+/* ===== LLM face-off — swipe carousel of cbars charts =====
+   Each slide renders an identical .cbars block (same component as the
+   Frontier Context Windows chart), so any cbar styling change cascades
+   here automatically. Arrows live in a separate nav row under the
+   carousel to avoid overlapping the chart lines. */
 .faceoff-carousel {
   display: flex;
   overflow-x: auto;
@@ -5260,8 +5266,6 @@ body.modal-open { overflow: hidden; }
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   scroll-behavior: smooth;
-  /* Negative inline margins let the slides bleed to the card's padding
-     edges so the swipe feel covers the whole card interior. */
   margin: 0;
 }
 .faceoff-carousel::-webkit-scrollbar { display: none; }
@@ -5269,7 +5273,26 @@ body.modal-open { overflow: hidden; }
   flex: 0 0 100%;
   min-width: 0;
   scroll-snap-align: start;
-  padding: 2px;
+  padding: 2px 2px 0;
+}
+.faceoff-slide .cbars { margin-top: 6px; }
+.faceoff-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.faceoff-nav-label {
+  flex: 1;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-3);
 }
 .fo-face-head {
   display: flex;
@@ -5386,16 +5409,12 @@ body.modal-open { overflow: hidden; }
   text-transform: uppercase;
   text-align: center;
 }
-/* Carousel wrap holds the slides + the left/right glass arrows. */
-.faceoff-carousel-wrap {
-  position: relative;
-}
+/* Prev / next arrows in the nav row below the carousel. Glass pill
+   buttons with a backdrop blur — consistent with the Apple-glass
+   language elsewhere. */
 .faceoff-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   padding: 0;
   display: grid;
   place-items: center;
@@ -5407,21 +5426,15 @@ body.modal-open { overflow: hidden; }
   color: var(--text-2);
   cursor: pointer;
   touch-action: manipulation;
-  z-index: 2;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset,
-              0 6px 18px -8px rgba(0,0,0,0.55);
+  flex: 0 0 auto;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset;
   transition: color 0.2s var(--ease-premium), border-color 0.2s var(--ease-premium), opacity 0.25s var(--ease-premium), transform 0.18s var(--ease-premium);
 }
-/* Arrows peek past the chart card's inner padding so they sit on the
-   card's outer edge, not over the chart content. The negative offset is
-   tuned against the hero card's default padding (~18px). */
-.faceoff-arrow-prev { left: -20px; }
-.faceoff-arrow-next { right: -20px; }
 .faceoff-arrow:hover {
   color: var(--text-1);
   border-color: var(--border-strong);
 }
-.faceoff-arrow:active { transform: translateY(-50%) scale(0.93); }
+.faceoff-arrow:active { transform: scale(0.93); }
 .faceoff-arrow[disabled] {
   opacity: 0.28;
   cursor: default;

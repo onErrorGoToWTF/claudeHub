@@ -254,8 +254,10 @@
 
   // ---------- Theme (dark-first; opt-in to light) ----------
   const root = document.documentElement;
+  // Default to LIGHT mode — user is iterating on it and prefers it.
+  // Dark is opt-in via the toggle (persists in localStorage).
   const stored = localStorage.getItem(THEME_KEY);
-  if (stored === "light") root.setAttribute("data-theme", "light");
+  if (stored !== "dark") root.setAttribute("data-theme", "light");
 
   document.getElementById("theme-toggle").addEventListener("click", () => {
     const isLight = root.getAttribute("data-theme") === "light";
@@ -3159,28 +3161,31 @@
   // ======================================================================
   // Competitor comparison — context windows
   // ======================================================================
-  function renderCompare() {
-    const host = document.getElementById("cbars");
+  // Shared horizontal-bar chart component. Both Compare (context windows)
+  // and the LLM Face-off carousel render their data through this so any
+  // styling change cascades to all.
+  //   host: DOM element with class .cbars
+  //   rows: [{ name, value, displayValue, color, max?, nodata? }, …]
+  //         (when max is set per row it scales vs that; otherwise the
+  //         max of non-null values is used)
+  function renderCbarChart(host, rows) {
     if (!host) return;
-    const rows = [
-      { name: "Gemini 2.5 Pro",    tokens: 2_000_000, label: "2M", color: MODEL_COL.google },
-      { name: "Grok 4",            tokens: 2_000_000, label: "2M", color: MODEL_COL.xai    },
-      { name: "Claude Opus 4.7",   tokens: 1_000_000, label: "1M", color: MODEL_COL.claude, hero: true },
-      { name: "GPT-4.1",           tokens: 1_000_000, label: "1M", color: MODEL_COL.openai },
-    ];
-    const max = Math.max(...rows.map(r => r.tokens));
     host.innerHTML = "";
+    const defined = rows.filter(r => !(r.nodata || r.value == null));
+    const globalMax = defined.length ? Math.max(...defined.map(r => r.value)) : 1;
     rows.forEach((r, i) => {
-      const pct = (r.tokens / max) * 100;
+      const nodata = r.nodata || r.value == null;
+      const max = r.max || globalMax;
+      const pct = nodata ? 0 : Math.max(0, Math.min(100, (r.value / max) * 100));
       const delay = 0.25 + i * 0.18;
       const el = document.createElement("div");
-      el.className = "cbar" + (r.hero ? " is-hero" : "");
+      el.className = "cbar" + (nodata ? " is-nodata" : "");
       el.style.setProperty("--cbar-pct", pct.toFixed(1) + "%");
-      el.style.setProperty("--cbar-col", r.color);
+      if (r.color) el.style.setProperty("--cbar-col", r.color);
       el.style.setProperty("--cbar-delay", delay + "s");
       el.innerHTML = `
-        <div class="cbar-label">${r.name}</div>
-        <div class="cbar-val">${r.label}</div>
+        <div class="cbar-label">${escapeHtml(r.name || "")}</div>
+        <div class="cbar-val">${escapeHtml(r.displayValue != null ? String(r.displayValue) : "")}</div>
         <div class="cbar-track">
           <div class="cbar-fill">
             <div class="cbar-electron"></div>
@@ -3188,6 +3193,17 @@
         </div>`;
       host.appendChild(el);
     });
+  }
+
+  function renderCompare() {
+    const host = document.getElementById("cbars");
+    if (!host) return;
+    renderCbarChart(host, [
+      { name: "Gemini 2.5 Pro",  value: 2_000_000, displayValue: "2M", color: MODEL_COL.google },
+      { name: "Grok 4",          value: 2_000_000, displayValue: "2M", color: MODEL_COL.xai    },
+      { name: "Claude Opus 4.7", value: 1_000_000, displayValue: "1M", color: MODEL_COL.claude },
+      { name: "GPT-4.1",         value: 1_000_000, displayValue: "1M", color: MODEL_COL.openai },
+    ]);
   }
 
   // ======================================================================
@@ -3318,56 +3334,77 @@
   function renderLlmFaceoff() {
     const host = document.getElementById("faceoff");
     if (!host) return;
-    // All bench faces rendered into the carousel at once; scroll-snap
-    // picks one. Each face is a full-width slide. Each slide's own
-    // header labels the benchmark — no separate selector needed.
-    const facesHtml = FACEOFF_BENCHES.map((b, i) => {
-      const rowsHtml = FACEOFF_MODELS.map((m, mi) => {
-        const v = b.vals[mi];
-        const nodata = v === null || v === undefined;
-        const pct = nodata ? 0 : Math.max(0, Math.min(100, (v / b.max) * 100));
-        const delay = 0.08 + mi * 0.06;
-        return `
-          <div class="fo-row${nodata ? " is-nodata" : ""}" style="--col:${m.col}; --w:${pct}%; --gd:${delay}s;">
-            <span class="fo-name">${m.short}</span>
-            <span class="fo-track">
-              <span class="fo-line"></span>
-              <span class="fo-electron" aria-hidden="true"></span>
-            </span>
-            <span class="fo-val">${b.display[mi]}</span>
-          </div>
-        `;
-      }).join("");
-      return `
-        <div class="faceoff-slide" data-bench-idx="${i}">
-          <header class="fo-face-head">
-            <span class="fo-face-eyebrow">Benchmark</span>
-            <span class="fo-face-label">${escapeHtml(b.label)}</span>
-            <span class="fo-face-desc">${escapeHtml(b.desc)}</span>
-          </header>
-          <div class="fo-rows">${rowsHtml}</div>
-        </div>
-      `;
-    }).join("");
+    // Each slide is a header + a .cbars chart identical to the Frontier
+    // Compare chart. Same component, different data — any styling change
+    // to .cbar cascades here automatically.
+    const slidesHtml = FACEOFF_BENCHES.map((b, i) => `
+      <div class="faceoff-slide" data-bench-idx="${i}">
+        <header class="fo-face-head">
+          <span class="fo-face-eyebrow">Benchmark</span>
+          <span class="fo-face-label">${escapeHtml(b.label)}</span>
+          <span class="fo-face-desc">${escapeHtml(b.desc)}</span>
+        </header>
+        <div class="cbars" data-cbars-for-bench="${i}"></div>
+      </div>
+    `).join("");
     host.innerHTML = `
-      <div class="faceoff-carousel-wrap">
+      <div class="faceoff-carousel" id="faceoff-carousel" role="region" aria-label="Benchmark carousel">
+        ${slidesHtml}
+      </div>
+      <div class="faceoff-nav">
         <button type="button" class="faceoff-arrow faceoff-arrow-prev" aria-label="Previous benchmark">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
-        <div class="faceoff-carousel" id="faceoff-carousel" role="region" aria-label="Benchmark carousel">
-          ${facesHtml}
-        </div>
+        <span class="faceoff-nav-label" id="faceoff-nav-label"></span>
         <button type="button" class="faceoff-arrow faceoff-arrow-next" aria-label="Next benchmark">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
       </div>
     `;
+    // Fill each slide's .cbars using the shared chart component.
+    host.querySelectorAll("[data-cbars-for-bench]").forEach((el) => {
+      const bi = Number(el.dataset.cbarsForBench);
+      const b = FACEOFF_BENCHES[bi];
+      const rows = FACEOFF_MODELS.map((m, mi) => ({
+        name: m.short,
+        value: b.vals[mi],
+        displayValue: b.display[mi],
+        color: m.col,
+        max: b.max,
+        nodata: b.vals[mi] == null,
+      }));
+      renderCbarChart(el, rows);
+    });
+
     const scroller = document.getElementById("faceoff-carousel");
     const prevBtn  = host.querySelector(".faceoff-arrow-prev");
     const nextBtn  = host.querySelector(".faceoff-arrow-next");
-    const updateArrows = () => {
+    const navLabel = host.querySelector("#faceoff-nav-label");
+    const updateNav = () => {
       if (prevBtn) prevBtn.disabled = faceoffBenchIdx <= 0;
       if (nextBtn) nextBtn.disabled = faceoffBenchIdx >= FACEOFF_BENCHES.length - 1;
+      if (navLabel) {
+        const b = FACEOFF_BENCHES[faceoffBenchIdx];
+        navLabel.textContent = `${b.label} · ${faceoffBenchIdx + 1} / ${FACEOFF_BENCHES.length}`;
+      }
+    };
+    // Re-fire the electron animation on the active slide whenever the
+    // scroll settles — removes .is-go, re-adds it on a frame.
+    const replayActiveSlide = () => {
+      const slides = host.querySelectorAll(".faceoff-slide");
+      slides.forEach((s, i) => {
+        const cbars = s.querySelectorAll(".cbar");
+        if (i === faceoffBenchIdx) {
+          cbars.forEach(c => c.classList.remove("is-go"));
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              cbars.forEach(c => c.classList.add("is-go"));
+            });
+          });
+        } else {
+          cbars.forEach(c => c.classList.remove("is-go"));
+        }
+      });
     };
     if (prevBtn) prevBtn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -3377,9 +3414,8 @@
       e.preventDefault();
       scrollFaceoffTo(faceoffBenchIdx + 1);
     });
-    // Keep arrow disabled-state in sync with scroll position.
     if (scroller) {
-      let scrollRaf;
+      let scrollRaf, settleTO;
       scroller.addEventListener("scroll", () => {
         if (scrollRaf) cancelAnimationFrame(scrollRaf);
         scrollRaf = requestAnimationFrame(() => {
@@ -3387,15 +3423,22 @@
           const idx = Math.round(scroller.scrollLeft / w);
           if (idx !== faceoffBenchIdx) {
             faceoffBenchIdx = idx;
-            updateArrows();
+            updateNav();
           }
         });
+        // Debounced scroll-end: once the user stops, replay the electron
+        // animation on the active slide so it reads as "static until it
+        // lands, then runs".
+        if (settleTO) clearTimeout(settleTO);
+        settleTO = setTimeout(replayActiveSlide, 140);
       }, { passive: true });
       if (faceoffBenchIdx !== 0) {
         scroller.scrollTo({ left: scroller.clientWidth * faceoffBenchIdx, behavior: "auto" });
       }
     }
-    updateArrows();
+    updateNav();
+    // First render: kick off the active slide's electrons.
+    setTimeout(replayActiveSlide, 40);
   }
 
   function scrollFaceoffTo(idx) {
