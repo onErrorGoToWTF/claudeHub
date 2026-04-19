@@ -445,23 +445,33 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 :root:not([data-theme="light"]) .icon-sun  { display: none; }
 :root:not([data-theme="light"]) .icon-moon { display: block; }
 
-/* Chips — Linear-style minimal pills */
+/* Chips — floating Apple-glass nav bar.
+   The container .chips itself is the glass pill; individual chips ride inside
+   as minimal text tabs. .glass on the element supplies blur/saturate/specular;
+   the rules below give it nav-bar shape (radius-pill, centered, padded). */
 .chips {
-  display: flex; gap: 4px;
-  padding: 2px max(14px, var(--safe-l)) 10px max(14px, var(--safe-r));
+  display: flex; gap: 2px;
+  padding: 4px;
+  margin: 4px max(14px, var(--safe-l)) 10px max(14px, var(--safe-r));
+  border-radius: var(--radius-pill);
   overflow-x: auto;
   scrollbar-width: none;
   scroll-snap-type: x proximity;
+  width: fit-content;
+  max-width: calc(100% - (max(14px, var(--safe-l)) + max(14px, var(--safe-r))));
+  margin-left: auto; margin-right: auto;
+  --glass-blur: 20px;
+  --glass-saturate: 170%;
 }
 .chips::-webkit-scrollbar { display: none; }
 .chip {
   flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
-  padding: 8px 14px;
-  border-radius: var(--radius-sm);
-  font-size: 13.5px; font-weight: 500;
+  min-height: 36px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px; font-weight: 500;
   letter-spacing: -0.003em;
   color: var(--text-3);
   background: transparent;
@@ -469,6 +479,8 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   transition: color 0.2s var(--ease), background 0.2s var(--ease), border-color 0.2s var(--ease), transform 0.16s var(--ease);
   scroll-snap-align: start;
   touch-action: manipulation;
+  position: relative;
+  z-index: 1;
 }
 .chip:hover { color: var(--text-2); }
 .chip.is-active {
