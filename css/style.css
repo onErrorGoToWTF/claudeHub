@@ -468,6 +468,146 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   letter-spacing: -0.005em;
 }
 
+/* ===== Flat Academy list (M3.8) — courses grouped by bucket, expandable ===== */
+.academy-flat { display: grid; gap: 24px; }
+.academy-bucket { display: grid; gap: 10px; }
+.academy-bucket-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 0 2px 4px;
+  border-bottom: 1px solid var(--border);
+}
+.academy-bucket-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--accent-claude-hi);
+}
+.academy-bucket-count {
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+}
+.academy-bucket-list { display: grid; gap: 8px; }
+
+.academy-course {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #101218 0%, #0a0c10 100%);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset;
+  overflow: hidden;
+  transition: border-color 0.2s var(--ease-premium);
+}
+.academy-course[open] {
+  border-color: color-mix(in srgb, var(--accent-claude) 40%, var(--border-strong));
+}
+.academy-course-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  min-height: 48px;
+}
+.academy-course-summary::-webkit-details-marker { display: none; }
+.academy-course-summary::before {
+  content: "›";
+  display: inline-block;
+  width: 14px;
+  text-align: center;
+  color: var(--text-3, var(--text-2));
+  font-size: 16px;
+  transition: transform 0.22s var(--ease-premium);
+  flex: 0 0 auto;
+}
+.academy-course[open] .academy-course-summary::before { transform: rotate(90deg); }
+.academy-course-bucket {
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--accent-claude) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-claude) 30%, var(--border));
+  color: var(--accent-claude-hi);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  flex: 0 0 auto;
+}
+.academy-course-title {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-1);
+  letter-spacing: -0.005em;
+}
+.academy-course-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--text-1) 6%, transparent);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  flex: 0 0 auto;
+}
+.academy-course-body {
+  padding: 4px 16px 16px 40px;
+  display: grid;
+  gap: 12px;
+  border-top: 1px dashed var(--border);
+}
+.academy-course-body-lede {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+.academy-course-cta {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid color-mix(in srgb, var(--accent-claude) 40%, transparent);
+  background: color-mix(in srgb, var(--accent-claude) 14%, transparent);
+  color: var(--accent-claude-hi);
+  font-size: 12.5px;
+  text-decoration: none;
+  transition: background 0.2s var(--ease-premium);
+}
+.academy-course-cta:hover {
+  background: color-mix(in srgb, var(--accent-claude) 22%, transparent);
+}
+.academy-course-snippets-head {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-3, var(--text-2));
+  font-weight: 600;
+  margin-top: 4px;
+}
+.academy-empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-2);
+  font-size: 13px;
+}
+
+@media (max-width: 540px) {
+  .academy-course-summary { padding: 12px 14px; gap: 8px; }
+  .academy-course-title   { font-size: 13.5px; }
+  .academy-course-bucket  { display: none; } /* bucket label shown above via .academy-bucket-head */
+  .academy-course-body    { padding-left: 28px; padding-right: 14px; }
+}
+
 /* Section accents */
 [data-section="learn"]      { --sec: var(--accent-claude); }
 [data-section="comply365"]  { --sec: var(--accent-365); }

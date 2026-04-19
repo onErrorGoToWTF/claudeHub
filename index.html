@@ -72,83 +72,59 @@
     <div class="section-head">
       <h2>Learn</h2>
     </div>
-    <p class="section-lede">Find the stack. Learn the stack. Ship the project.</p>
-    <div class="pane" data-pane="learn-claude">
+    <p class="section-lede">Courses, quizzes, and what shipped this week.</p>
+
+    <div class="subpills" role="tablist" aria-label="Learn content">
+      <button class="subpill"           data-learn="whats-new" type="button" role="tab" aria-selected="false"><span class="subpill-label">What's new</span><span class="subpill-badge" data-subpill-badge="whats-new" hidden></span></button>
+      <button class="subpill is-active" data-learn="courses"   type="button" role="tab" aria-selected="true">Courses</button>
+      <button class="subpill"           data-learn="tutorials" type="button" role="tab" aria-selected="false">Tutorials &amp; quizzes</button>
+    </div>
+
+    <div class="pane" data-pane="learn-whats-new" hidden>
+      <div class="learn-filter-bar" role="tablist" aria-label="Filter What's new by source">
+        <button class="learn-filter is-active" type="button" role="tab" aria-selected="true"  data-learn-filter="all"><span class="learn-filter-label">All</span><span class="learn-filter-count" data-filter-count="all"></span></button>
+        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="code"><span class="learn-filter-label">Claude Code</span><span class="learn-filter-count" data-filter-count="code"></span></button>
+        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="api"><span class="learn-filter-label">Claude API</span><span class="learn-filter-count" data-filter-count="api"></span></button>
+        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="mcp"><span class="learn-filter-label">MCP</span><span class="learn-filter-count" data-filter-count="mcp"></span></button>
+        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="videos"><span class="learn-filter-label">Videos</span><span class="learn-filter-count" data-filter-count="videos"></span></button>
+      </div>
+      <div class="cards" data-cards="claude-whats-new">
+        <div class="empty">Loading latest releases…</div>
+      </div>
+    </div>
+
+    <div class="pane" data-pane="learn-courses">
+      <div class="subpills subpills-nested" role="tablist" aria-label="Course source">
+        <button class="subpill is-active" data-courses="academy"   type="button" role="tab" aria-selected="true">Anthropic Academy</button>
+        <button class="subpill"           data-courses="originals" type="button" role="tab" aria-selected="false">aiStacked Originals</button>
+      </div>
+
+      <div class="pane" data-pane="courses-academy">
+        <div class="hub-intro">
+          <div class="hub-eyebrow">Anthropic Academy</div>
+          <h3 class="hub-title">Official courses, snippets inline.</h3>
+          <p class="hub-lede">The full Academy catalog. Open any course card to reveal the snippets that belong to its topic — CLAUDE.md patterns under Claude Code, YAML frontmatter under Skills, and so on.</p>
+        </div>
+        <div class="academy-flat" id="academy-flat-host"></div>
+      </div>
+
+      <div class="pane" data-pane="courses-originals" hidden>
+        <div class="hub-intro">
+          <div class="hub-eyebrow">aiStacked Originals</div>
+          <h3 class="hub-title">Custom courses, authored here.</h3>
+          <p class="hub-lede">Deeper dives we write ourselves — CLAUDE.md done right, writing Skills, Claude Design launch notes, and more. Coming soon.</p>
+        </div>
+        <div class="empty glass academy-empty">No Originals yet. First one drops in M4.</div>
+      </div>
+    </div>
+
+    <div class="pane" data-pane="learn-tutorials" hidden>
       <div class="hub-intro">
-        <div class="hub-eyebrow">Claude-first focus</div>
-        <h3 class="hub-title">The Claude hub</h3>
-        <p class="hub-lede">How to use Claude well — from Claude.ai basics to Claude Code, Skills, MCP, and the Agent SDK.</p>
+        <div class="hub-eyebrow">Tutorials &amp; quizzes</div>
+        <h3 class="hub-title">Hands-on lessons with MCQ checks.</h3>
+        <p class="hub-lede">Short authored lessons per tool and track, each with a multiple-choice quiz at the end. Progress persists locally. Shipping in Phase 4.</p>
       </div>
-
-      <div class="subpills subpills-nested" role="tablist" aria-label="Claude hub sections">
-        <button class="subpill is-active" data-claude="basics"    type="button" role="tab" aria-selected="true">Basics</button>
-        <button class="subpill"           data-claude="code"      type="button" role="tab" aria-selected="false">Claude Code</button>
-        <button class="subpill"           data-claude="skills"    type="button" role="tab" aria-selected="false">Skills</button>
-        <button class="subpill"           data-claude="mcp"       type="button" role="tab" aria-selected="false">MCP</button>
-        <button class="subpill"           data-claude="agent-sdk" type="button" role="tab" aria-selected="false">Agent SDK</button>
-        <button class="subpill"           data-claude="whats-new" type="button" role="tab" aria-selected="false"><span class="subpill-label">What's new</span><span class="subpill-badge" data-subpill-badge="whats-new" hidden></span></button>
-      </div>
-
-      <div class="pane" data-pane="claude-basics">
-        <div class="concept-grid">
-          <article class="concept-card glass">
-            <div class="concept-eyebrow">Web app</div>
-            <h4 class="concept-title">Claude.ai</h4>
-            <p class="concept-body">The easiest on-ramp. Long chats, file uploads, voice, desktop + mobile clients. Free tier covers the basics; Pro and Max unlock the deeper usage.</p>
-            <a class="concept-link" href="https://claude.ai" target="_blank" rel="noopener">Open Claude.ai →</a>
-          </article>
-
-          <article class="concept-card glass">
-            <div class="concept-eyebrow">Persistent context</div>
-            <h4 class="concept-title">Projects</h4>
-            <p class="concept-body">Workspaces scoped to a goal. Drop in instructions + a knowledge base once; every conversation inside the project inherits them. Keeps long-running work coherent.</p>
-            <a class="concept-link" href="https://docs.claude.com/en/docs/claude-code/overview" target="_blank" rel="noopener">How Projects work →</a>
-          </article>
-
-          <article class="concept-card glass">
-            <div class="concept-eyebrow">Structured output</div>
-            <h4 class="concept-title">Artifacts</h4>
-            <p class="concept-body">Code, docs, HTML previews, diagrams rendered in a side panel. Iterate in place, share standalone. The "show, don't just tell" side of Claude's output surface.</p>
-            <a class="concept-link" href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank" rel="noopener">Artifacts guide →</a>
-          </article>
-
-          <article class="concept-card glass concept-card-claude">
-            <div class="concept-eyebrow">Plans</div>
-            <h4 class="concept-title">Pro vs Max</h4>
-            <p class="concept-body">Pro $20/mo for the basics. Max 5× $100/mo gives ~5× the usage plus priority at peak. Max 20× $200/mo is the power-user tier — includes everything and the highest quotas.</p>
-            <a class="concept-link" href="https://claude.com/pricing" target="_blank" rel="noopener">Compare plans →</a>
-          </article>
-        </div>
-        <div class="academy-host" data-academy-bucket="basics"></div>
-      </div>
-
-      <div class="pane" data-pane="claude-code" hidden>
-        <div class="academy-host" data-academy-bucket="code"></div>
-        <div class="snippets-host" data-snippet-bucket="code"></div>
-      </div>
-      <div class="pane" data-pane="claude-skills" hidden>
-        <div class="academy-host" data-academy-bucket="skills"></div>
-        <div class="snippets-host" data-snippet-bucket="skills"></div>
-      </div>
-      <div class="pane" data-pane="claude-mcp" hidden>
-        <div class="academy-host" data-academy-bucket="mcp"></div>
-        <div class="snippets-host" data-snippet-bucket="mcp"></div>
-      </div>
-      <div class="pane" data-pane="claude-agent-sdk" hidden>
-        <div class="academy-host" data-academy-bucket="agent-sdk"></div>
-      </div>
-      <div class="pane" data-pane="claude-whats-new" hidden>
-        <div class="learn-filter-bar" role="tablist" aria-label="Filter What's new by source">
-          <button class="learn-filter is-active" type="button" role="tab" aria-selected="true"  data-learn-filter="all"><span class="learn-filter-label">All</span><span class="learn-filter-count" data-filter-count="all"></span></button>
-          <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="code"><span class="learn-filter-label">Claude Code</span><span class="learn-filter-count" data-filter-count="code"></span></button>
-          <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="api"><span class="learn-filter-label">Claude API</span><span class="learn-filter-count" data-filter-count="api"></span></button>
-          <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="mcp"><span class="learn-filter-label">MCP</span><span class="learn-filter-count" data-filter-count="mcp"></span></button>
-          <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="videos"><span class="learn-filter-label">Videos</span><span class="learn-filter-count" data-filter-count="videos"></span></button>
-        </div>
-        <div class="cards" data-cards="claude-whats-new">
-          <div class="empty">Loading latest releases…</div>
-        </div>
-      </div>
+      <div class="empty glass academy-empty">Nothing here yet — the first lesson lands with M4.1.</div>
     </div>
   </section>
 

@@ -278,7 +278,23 @@
     });
   });
 
-  // Claude hub sub-sub-pills: Basics / Claude Code / Skills / MCP / Agent SDK / What's new
+  // Courses tab: Anthropic Academy / aiStacked Originals (M3.8).
+  document.querySelectorAll(".subpill[data-courses]").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const kind = pill.dataset.courses;
+      document.querySelectorAll(".subpill[data-courses]").forEach((p) => {
+        const on = p === pill;
+        p.classList.toggle("is-active", on);
+        p.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      document.querySelectorAll('.pane[data-pane^="courses-"]').forEach((pane) => {
+        pane.hidden = pane.dataset.pane !== `courses-${kind}`;
+      });
+    });
+  });
+
+  // Legacy Claude hub sub-sub-pills (removed in M3.8) — this block is a
+  // no-op guard in case old markup resurfaces during a partial deploy.
   document.querySelectorAll(".subpill[data-claude]").forEach((pill) => {
     pill.addEventListener("click", () => {
       const kind = pill.dataset.claude;
@@ -825,35 +841,16 @@
     node.appendChild(btn);
   }
 
-  // Claude hub — render snippet rows inside each subpill pane (Phase 2 M2.1+).
-  // Source: data/learn/snippets.json (authored) + claude_hub_map.json's
-  // snippetTagsByBucket (which tags belong under which pane).
+  // Snippet loader (M3.8): populates the module-scope snippetsData cache
+  // used by the tool-detail modal, cmd-K search, and the new flat Academy
+  // course renderer. Per-bucket .snippets-host rendering removed — snippets
+  // now surface INSIDE each Academy course card (see renderAcademyFlat).
   async function loadSnippets() {
     try {
-      const [snipRes, mapRes] = await Promise.all([
-        fetch(SNIPPETS_URL, { cache: "no-cache" }),
-        fetch(HUB_MAP_URL,  { cache: "no-cache" }),
-      ]);
-      if (!snipRes.ok || !mapRes.ok) return;
-      const snipPayload = await snipRes.json();
-      const mapPayload  = await mapRes.json();
-      const snippets = Array.isArray(snipPayload.snippets) ? snipPayload.snippets : [];
-      snippetsData = snippets;
-      const tagsByBucket = (mapPayload && mapPayload.snippetTagsByBucket) || {};
-      document.querySelectorAll(".snippets-host[data-snippet-bucket]").forEach((host) => {
-        const bucket = host.dataset.snippetBucket;
-        const allowed = new Set(tagsByBucket[bucket] || []);
-        const matching = snippets.filter((s) =>
-          (s.snippetTags || []).some((t) => allowed.has(t))
-        );
-        if (matching.length === 0) { host.innerHTML = ""; return; }
-        const rows = matching.map((s) => renderSnippetRow(s)).join("");
-        host.innerHTML = `
-          <div class="academy-eyebrow">Snippets · ${matching.length}</div>
-          <div class="snippet-list">${rows}</div>
-        `;
-      });
-      wireSnippetCopyButtons(document);
+      const res = await fetch(SNIPPETS_URL, { cache: "no-cache" });
+      if (!res.ok) return;
+      const payload = await res.json();
+      snippetsData = Array.isArray(payload.snippets) ? payload.snippets : [];
     } catch {}
   }
 
@@ -908,7 +905,21 @@
   // Two files: academy_courses.json (full metadata from the scraper) and
   // claude_hub_map.json (hand-curated slug → bucket mapping). Rendered once
   // on load; no cache-bust needed within a session.
+  // Flat Academy renderer (M3.8). One list, grouped by bucket label
+  // (Basics → Claude Code → Skills → MCP → Agent SDK), with each course
+  // as a <details> element whose body contains the course description,
+  // the official link, and every snippet whose tags belong to the
+  // course's bucket.
+  const BUCKET_LABEL = {
+    "basics":    "Basics",
+    "code":      "Claude Code",
+    "skills":    "Skills",
+    "mcp":       "MCP",
+    "agent-sdk": "Agent SDK",
+  };
   async function loadAcademyHub() {
+    const host = document.getElementById("academy-flat-host");
+    if (!host) return;
     try {
       const [coursesRes, mapRes] = await Promise.all([
         fetch(ACADEMY_URL, { cache: "no-cache" }),
@@ -921,26 +932,52 @@
         (coursesPayload.courses || []).map((c) => [c.slug, c])
       );
       const buckets = mapPayload.buckets || {};
+      const snippetTagsByBucket = mapPayload.snippetTagsByBucket || {};
+      const parts = [];
       for (const [bucket, slugs] of Object.entries(buckets)) {
-        const host = document.querySelector(`.academy-host[data-academy-bucket="${bucket}"]`);
-        if (!host) continue;
         const courses = (slugs || []).map((s) => bySlug[s]).filter(Boolean);
-        if (courses.length === 0) {
-          host.innerHTML = "";
-          continue;
-        }
-        const cards = courses.map((c) => `
-          <a class="academy-card glass" href="${c.url}" target="_blank" rel="noopener">
-            <div class="academy-card-title">${escapeHtml(c.title)}</div>
-            <div class="academy-card-summary">${escapeHtml(c.summary || "")}</div>
-            <div class="academy-card-cta">Start course →</div>
-          </a>
-        `).join("");
-        host.innerHTML = `
-          <div class="academy-eyebrow">Anthropic Academy · ${courses.length} course${courses.length === 1 ? "" : "s"}</div>
-          <div class="academy-grid">${cards}</div>
-        `;
+        if (courses.length === 0) continue;
+        const tagSet = new Set(snippetTagsByBucket[bucket] || []);
+        const bucketSnippets = tagSet.size
+          ? snippetsData.filter((s) => (s.snippetTags || []).some((t) => tagSet.has(t)))
+          : [];
+        const label = BUCKET_LABEL[bucket] || bucket;
+        const courseRows = courses.map((c) => {
+          const snipCount = bucketSnippets.length;
+          const snipRows = bucketSnippets.map((s) => renderSnippetRow(s)).join("");
+          const snipBlock = snipCount > 0
+            ? `<div class="academy-course-snippets">
+                 <div class="academy-course-snippets-head">Snippets · ${snipCount}</div>
+                 <div class="snippet-list">${snipRows}</div>
+               </div>`
+            : "";
+          return `
+            <details class="academy-course glass">
+              <summary class="academy-course-summary">
+                <span class="academy-course-bucket" data-bucket="${escapeHtml(bucket)}">${escapeHtml(label)}</span>
+                <span class="academy-course-title">${escapeHtml(c.title)}</span>
+                ${snipCount > 0 ? `<span class="academy-course-badge">${snipCount} snippet${snipCount === 1 ? "" : "s"}</span>` : ""}
+              </summary>
+              <div class="academy-course-body">
+                ${c.summary ? `<p class="academy-course-body-lede">${escapeHtml(c.summary)}</p>` : ""}
+                <a class="academy-course-cta" href="${escapeHtml(c.url)}" target="_blank" rel="noopener">Start course on Anthropic Academy ↗</a>
+                ${snipBlock}
+              </div>
+            </details>
+          `;
+        }).join("");
+        parts.push(`
+          <div class="academy-bucket" data-bucket="${escapeHtml(bucket)}">
+            <div class="academy-bucket-head">
+              <span class="academy-bucket-label">${escapeHtml(label)}</span>
+              <span class="academy-bucket-count">${courses.length} course${courses.length === 1 ? "" : "s"}</span>
+            </div>
+            <div class="academy-bucket-list">${courseRows}</div>
+          </div>
+        `);
       }
+      host.innerHTML = parts.join("");
+      wireSnippetCopyButtons(host);
     } catch {}
   }
 
@@ -2183,8 +2220,9 @@
 
   load();
   loadTools();
-  loadAcademyHub();
-  loadSnippets();
+  // M3.8: loadSnippets populates snippetsData which loadAcademyHub reads
+  // when attaching snippets under each course. Chain them.
+  loadSnippets().then(() => loadAcademyHub());
   renderTimeline();
   renderCompare();
   renderIndex();
