@@ -1,7 +1,7 @@
 {
-  "version": "0.6.113",
-  "milestone": "M8.12.43",
-  "milestoneTitle": "Phase 8.12.43 — added subtle dark radial gradients to body::before: 9%-alpha bloom at top-left (makes the nav chips pop on load) and 7%-alpha bloom at bottom-center (consistency). Removed the old top-left brightener that was fighting the darkening. Other brighteners softened a hair",
-  "deployedAt": "2026-04-19T22:50Z",
+  "version": "0.6.114",
+  "milestone": "M8.12.44",
+  "milestoneTitle": "Phase 8.12.44 — top-left + bottom ambient darkening switched from neutral black to a warm darker-greige tint rgba(80,72,58) at 0.22/0.16α. Stays in the page's warm-neutral family",
+  "deployedAt": "2026-04-19T23:00Z",
   "commitSha": ""
 }
