@@ -1723,14 +1723,14 @@ body.modal-open { overflow: hidden; }
   filter:
     drop-shadow(0 0 1.5px var(--color-learn-solid))
     drop-shadow(0 0 3px var(--color-learn-glow));
-  transform: translateY(10px);
+  transform: translateY(6px);
 }
 .dash-panel-icon--projects {
   stroke: var(--color-projects-border);
   filter:
     drop-shadow(0 0 1.5px var(--color-projects-solid))
     drop-shadow(0 0 3px var(--color-projects-glow));
-  transform: translateY(10px);
+  transform: translateY(6px);
 }
 .dash-panel-icon--tools {
   stroke: var(--color-tools-border);
