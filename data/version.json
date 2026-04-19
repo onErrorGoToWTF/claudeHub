@@ -1,7 +1,7 @@
 {
-  "version": "0.6.79",
-  "milestone": "M8.12.9",
-  "milestoneTitle": "Phase 8.12.9 — YouTube tile reverts to default .glass hairline (red border + halo dropped); SVG logo keeps the red identity + stacked drop-shadow and grows 16→20px (~25%) for a stronger read",
-  "deployedAt": "2026-04-19T15:50Z",
+  "version": "0.6.80",
+  "milestone": "M8.12.10",
+  "milestoneTitle": "Phase 8.12.10 — YouTube logo grows 20→25px (+25%); stroke-widths trimmed 2.2→1.8 (outer) and 1.4→1.1 (triangle) so visual line weight stays in line with other dashboard icons",
+  "deployedAt": "2026-04-19T16:00Z",
   "commitSha": ""
 }
