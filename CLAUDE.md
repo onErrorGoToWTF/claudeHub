@@ -3,7 +3,7 @@
 > **Before writing any code:** do not make any changes until you have 95% confidence in what you need to build. Ask follow-up questions until you reach that confidence.
 
 
-Public-facing Claude intelligence dashboard. Pulls news, YouTube videos, status, tutorials, and Anthropic docs into a static site auto-refreshed every 2h via GitHub Actions. The homepage shows charts tracking the Claude model trajectory; a "365" tab hosts hand-curated Claude-usage tutorials and scraped news about compliance-software vendors (Comply365 and competitors Web Manuals / Flydocs / Ideagen).
+Personal Claude intelligence + training dashboard. Pulls news, YouTube videos, status, tutorials, and Anthropic docs into a static site auto-refreshed every 2h via GitHub Actions. Also hosts hand-authored lessons, quizzes, and saved projects. May one day be reworked into a public tool ("aiUniversity").
 
 ## Stack
 
@@ -26,7 +26,6 @@ scripts/
   fetch_news.js                # TechCrunch, Ars, Verge, Bloomberg, Google News RSS
   fetch_hn.js                  # HN Algolia API
   fetch_status.js              # status.anthropic.com RSS
-  fetch_365.js                 # Comply365 + Web Manuals / Flydocs / Ideagen news
   dev_server.py                # local UTF-8-safe static server (python -m http.server replacement)
   lib/
     util.js                    # httpGet, dedupe, runAll, sortByDateDesc
@@ -43,9 +42,6 @@ data/
     snippets.json              # reusable code/config snippets
     usecases.json              # "what can I do with Claude" catalog
     claude_hub_map.json        # cross-link map between lessons / academy / snippets
-  365/
-    tutorials.json             # index of hand-authored 365 tutorials
-    tutorials/                 # inline-rendered markdown tutorials
 css/style.css                  # single-file stylesheet, light-only (M8.11.1 purged dark tokens)
 js/app.js                      # single-file frontend IIFE; chips, charts, renderers, modals
 index.html
@@ -69,7 +65,7 @@ python -m http.server 8765
 
 ## Tabs (`index.html` chips)
 
-**Dashboard · Learn · Projects · Tools · 365** — in that order, inside the fixed floating glass nav pill (`.nav-wrap > .chips.glass`). Active chip: white surface bg + `--text-1` text + tab-identity edge (inset 1px ring + tight outer glow + drop shadow). Inactive chips still have a subtle border + drop shadow for depth.
+**Dashboard · Learn · Projects · Tools** — in that order, inside the fixed floating glass nav pill (`.nav-wrap > .chips.glass`). Active chip: white surface bg + `--text-1` text + tab-identity edge (inset 1px ring + tight outer glow + drop shadow). Inactive chips still have a subtle border + drop shadow for depth.
 
 - **Dashboard** (neutral accent) — personal home:
   - Section-head "Dashboard" with a square YouTube tile (`.dash-action-quiet .glass`, icon + "YouTube" label stacked vertically) top-right. Clicking opens the `.yt-modal` dialog — the old `section-youtube` is gone.
@@ -87,7 +83,6 @@ Each Dashboard panel carries an `<svg class="dash-panel-icon dash-panel-icon--{l
   - `Quizzes` pane → renders one card per lesson whose `quiz[]` is non-empty. Click opens the same modal in `mode="quiz"` (quiz only + "← Read the tutorial" back-link).
 - **Projects** (vibrant ocean cyan `#0891b2` accent — blue/green sea) — `Saved` (projects list) and `+ New project` (Finder wizard) sub-pills.
 - **Tools** (vibrant tangerine `#ff7a1a` accent) — the catalog from `data/learn/tools.json`. Section-head right slot carries filter + sort `<select class="subpill-select">` dropdowns (no more pill bar).
-- **365** (purple `#7c3aed` accent) — Comply365-focused. Sub-pills: `Tutorials` (hand-authored markdown under `data/365/tutorials/`) · `Resources` (Videos + Official sub-sub-pills) · `News` (scraped Comply365 + competitor coverage from `sections.comply365_news`).
 
 ### State of AI chart stack
 
@@ -115,7 +110,7 @@ Bars/lines animate when the chart enters the middle ~76% of the viewport. Chart-
 ## Gotchas
 
 - **Cache aggressiveness:** hard-refresh after deploys. `data/*.json` is fetched with `?v=<timestamp>` to bust the browser cache but service workers / PWA caching can still lag.
-- **YouTube Atom feeds are flaky:** channels return 500/404 intermittently. `merge()` in the orchestrator preserves prior data rather than emptying the section. Same pattern protects `sections.comply365_news` when Google News RSS hiccups.
+- **YouTube Atom feeds are flaky:** channels return 500/404 intermittently. `merge()` in the orchestrator preserves prior data rather than emptying the section.
 - **GitHub Pages base path:** live URL is `/claudeHub/`, not `/`. Keep all in-page links relative.
 
 ## Design language
@@ -126,6 +121,6 @@ Bars/lines animate when the chart enters the middle ~76% of the viewport. Chart-
 - **Premium easing.** All transitions use `--ease-premium: cubic-bezier(0.22, 0.61, 0.36, 1)` (or `--ease-lensing` / `--ease`). No bounce curves.
 - **Soft glows, not neon.** Identity glows via low-alpha `box-shadow` hugging the border; background-tier, never foreground-dominant. The `body::before` ambient layers `--ambient-warm` top-left + `--ambient-plasma` bottom-right at 4–6% alpha.
 - **Apple-glass with top-edge specular.** `.glass` cards use a warm-white gradient via `--glass-top → --glass-bottom`, with an inset `0 1px 0 rgba(255,255,255,0.7)` specular highlight (the "single most Apple trick" for depth). Backdrop blur + saturate. `.glass-elevated` variant cranks blur and adds a deeper drop for modals.
-- **Sub-pill cross-fades.** Switching sub-pills (365 Tutorials/Resources/News, Courses sub-sub-pills, Projects Saved/New) cross-fades the card grid with ~30ms stagger per card — no snap, no flicker.
+- **Sub-pill cross-fades.** Switching sub-pills (Courses sub-sub-pills, Projects Saved/New) cross-fades the card grid with ~30ms stagger per card — no snap, no flicker.
 - **Videos-above-articles.** Any mixed list renders videos block first, then articles block (locked rule, do not interleave).
 - **Reduced-motion honored.** Motion wrapped in `@media (prefers-reduced-motion: no-preference)`; reduced state = final state, data-critical reveals still paint.

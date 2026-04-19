@@ -2,7 +2,6 @@
   "use strict";
 
   const DATA_URL = "data/latest.json?v=" + Date.now();
-  const TUTORIALS_365_URL = "data/365/tutorials.json?v=" + Date.now();
   const TOOLS_URL    = "data/learn/tools.json?v=" + Date.now();
   const ACADEMY_URL  = "data/learn/academy_courses.json?v=" + Date.now();
   const HUB_MAP_URL  = "data/learn/claude_hub_map.json?v=" + Date.now();
@@ -176,7 +175,7 @@
   }
 
   // Sections that render from latest.json and share the filter machinery.
-  const SECTIONS = ["comply365"];
+  const SECTIONS = [];
   // Sections that are exclusive (only visible when their chip is picked).
   const DISTINCT_SECTIONS = ["home", "learn", "tools", "projects"];
 
@@ -269,7 +268,6 @@
       if (!el) return;
       el.dataset.hidden = f === s ? "false" : "true";
     });
-    if (f === "comply365") load365();
     if (f === "home") replayHomeAnimations();
   }
 
@@ -392,37 +390,6 @@
     });
   });
 
-  // Comply365 sub-pills: Tutorials / Resources / News
-  document.querySelectorAll(".subpill[data-s365]").forEach((pill) => {
-    pill.addEventListener("click", () => {
-      const kind = pill.dataset.s365;
-      document.querySelectorAll(".subpill[data-s365]").forEach((p) => {
-        const on = p === pill;
-        p.classList.toggle("is-active", on);
-        p.setAttribute("aria-selected", on ? "true" : "false");
-      });
-      document.querySelectorAll('.pane[data-pane^="365-"]').forEach((pane) => {
-        pane.hidden = pane.dataset.pane !== `365-${kind}`;
-      });
-    });
-  });
-
-  // 365 Resources sub-sub-pills: Videos / Official
-  document.querySelectorAll(".subpill[data-s365res]").forEach((pill) => {
-    pill.addEventListener("click", () => {
-      const kind = pill.dataset.s365res;
-      document.querySelectorAll(".subpill[data-s365res]").forEach((p) => {
-        const on = p === pill;
-        p.classList.toggle("is-active", on);
-        p.setAttribute("aria-selected", on ? "true" : "false");
-      });
-      const videos   = document.querySelector('[data-cards="365-resources-videos"]');
-      const official = document.querySelector('[data-cards="365-resources-official"]');
-      if (videos)   videos.hidden   = kind !== "videos";
-      if (official) official.hidden = kind !== "official";
-    });
-  });
-
   // Initial filter (respects the chip that was marked .is-active in the HTML)
   const initial = document.querySelector("[data-filter].is-active");
   if (initial) applyFilter(initial.dataset.filter);
@@ -431,7 +398,6 @@
   // and optional data-subpill activates a named sub-pill inside it.
   const SUBPILL_ATTR = {
     "learn":      "learn",
-    "comply365":  "s365",
     "projects":   "projects-view",
   };
   document.querySelectorAll("[data-chip]").forEach(btn => {
@@ -514,7 +480,6 @@
   }
 
   const CARD_CONTAINERS = [
-    "365-tutorials", "365-resources-videos", "365-resources-official", "365-news",
     "news",
   ];
 
@@ -3062,13 +3027,7 @@
       renderClaudeLearning(mergedLearn);
 
       setUpdated("news", data.generated_at);
-      setUpdated("365",  data.generated_at);
       document.getElementById("generated").textContent = prettyDate(data.generated_at);
-
-      // If Comply365 is currently selected, render it now that latest is in.
-      if (document.querySelector('.chip.is-active')?.dataset.filter === "comply365") {
-        load365();
-      }
     } catch (err) {
       CARD_CONTAINERS.forEach(name => {
         const container = document.querySelector(`[data-cards="${name}"]`);
@@ -3843,11 +3802,8 @@
   }
 
   // ======================================================================
-  // 365 tab
+  // Markdown renderer (used by lesson bodies)
   // ======================================================================
-  let loaded365 = false;
-  const tutorialCache = new Map();
-
   function escHtml(s) {
     return String(s)
       .replace(/&/g, "&amp;")
@@ -3949,84 +3905,4 @@
     return out.join("\n");
   }
 
-  function renderTutorials(containerSel, tutorials) {
-    const container = document.querySelector(containerSel);
-    if (!container) return;
-    container.innerHTML = "";
-    if (!tutorials || !tutorials.length) {
-      container.innerHTML = '<div class="empty">Tutorials coming soon.</div>';
-      return;
-    }
-    const tpl = document.getElementById("tpl-tutorial");
-    tutorials.forEach((t, idx) => {
-      const node = tpl.content.firstElementChild.cloneNode(true);
-      node.querySelector(".tutorial-title").textContent = t.title;
-      node.querySelector(".tutorial-blurb").textContent = t.blurb || "";
-      const time = node.querySelector(".tutorial-time");
-      time.textContent = t.minutes ? `${t.minutes} min read` : "";
-      const head = node.querySelector(".tutorial-head");
-      const body = node.querySelector(".tutorial-body");
-
-      head.addEventListener("click", async () => {
-        const expanded = node.dataset.expanded === "true";
-        if (expanded) {
-          node.dataset.expanded = "false";
-          body.hidden = true;
-          return;
-        }
-        node.dataset.expanded = "true";
-        body.hidden = false;
-        if (!tutorialCache.has(t.slug)) {
-          body.innerHTML = '<p class="empty">Loading…</p>';
-          try {
-            const res = await fetch(t.file + "?v=" + Date.now(), { cache: "no-cache" });
-            if (!res.ok) throw new Error("HTTP " + res.status);
-            const md = await res.text();
-            tutorialCache.set(t.slug, renderMarkdown(md));
-          } catch (err) {
-            tutorialCache.set(t.slug, `<p class="empty">Couldn't load tutorial. ${escHtml(err.message || err)}</p>`);
-          }
-        }
-        body.innerHTML = tutorialCache.get(t.slug);
-      });
-
-      registerReveal(node, idx);
-      container.appendChild(node);
-    });
-  }
-
-  async function load365() {
-    if (loaded365) return;
-    loaded365 = true;
-
-    // Ensure latest data is loaded (needed for Resources + News sub-pills).
-    if (!latestData) {
-      try {
-        const res = await fetch(DATA_URL, { cache: "no-cache" });
-        if (res.ok) latestData = await res.json();
-      } catch {}
-    }
-
-    // Tutorials sub-pill — hand-authored markdown from data/365/tutorials.json.
-    try {
-      const res = await fetch(TUTORIALS_365_URL, { cache: "no-cache" });
-      if (!res.ok) throw new Error("HTTP " + res.status);
-      const data = await res.json();
-      renderTutorials('[data-cards="365-tutorials"]', data.tutorials || []);
-    } catch (err) {
-      const c = document.querySelector('[data-cards="365-tutorials"]');
-      if (c) c.innerHTML = `<div class="empty">Couldn't load tutorials. ${escHtml(err.message || err)}</div>`;
-    }
-
-    // Resources sub-pill — newest Claude videos + official docs from the main
-    // tutorials pool, sliced to keep it tight and curated-feeling.
-    const allTuts = latestData?.sections?.tutorials || [];
-    const videos   = allTuts.filter((t) => t.tutorial_kind === "video").slice(0, 6);
-    const official = allTuts.filter((t) => t.tutorial_kind !== "video").slice(0, 6);
-    renderSection("365-resources-videos",   videos,   true);
-    renderSection("365-resources-official", official, false);
-
-    // News sub-pill — Comply365 + competitor scraped items.
-    renderSection("365-news", sortByDateDesc(latestData?.sections?.comply365_news || []), false);
-  }
 })();

@@ -1,7 +1,7 @@
 {
-  "version": "0.6.73",
-  "milestone": "M8.12.3",
-  "milestoneTitle": "Phase 8.12.3 — Learn/Projects item tiles lightened to #f3f0e9 (closer to panel bg), softer inset shadow + hairline; subtler recessed-slot read",
-  "deployedAt": "2026-04-19T14:35Z",
+  "version": "0.6.74",
+  "milestone": "M8.12.4",
+  "milestoneTitle": "Phase 8.12.4 — 365 tab decommissioned: chip, section markup, sub-pill handlers, load365(), renderTutorials, and fetch_365.js all removed; data/365/ directory deleted; latest.json no longer carries comply365_news. Orphaned --accent-365-* color tokens retained (still referenced by unrelated gradients)",
+  "deployedAt": "2026-04-19T14:55Z",
   "commitSha": ""
 }

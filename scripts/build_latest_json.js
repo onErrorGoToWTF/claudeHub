@@ -10,7 +10,6 @@ import { fetchYouTube } from "./fetch_youtube.js";
 import { fetchHN } from "./fetch_hn.js";
 import { fetchTutorials } from "./fetch_tutorials.js";
 import { fetchDocs } from "./fetch_docs.js";
-import { fetch365 } from "./fetch_365.js";
 import { fetchClaudeLearning } from "./fetch_claude_learning.js";
 import { fetchAcademy } from "./fetch_academy.js";
 import { logSection } from "./lib/util.js";
@@ -78,8 +77,6 @@ async function main() {
   const officialTuts = await fetchTutorials().catch((e) => (console.warn(e.message), []));
   logSection("docs (platform.claude.com)");
   const docs = await fetchDocs().catch((e) => (console.warn(e.message), []));
-  logSection("365 (comply365 + competitors)");
-  const comply365News = await fetch365().catch((e) => (console.warn(e.message), []));
   logSection("claude_learning (Claude Code + MCP releases + docs changelog)");
   const claudeLearning = await fetchClaudeLearning().catch((e) => (console.warn(e.message), []));
   logSection("academy (new Anthropic Academy courses)");
@@ -119,7 +116,6 @@ async function main() {
       status:    merge(priorSections.status,    status),
       youtube:   mergedYouTube,
       tutorials: merge(priorSections.tutorials, tutorials),
-      comply365_news: merge(priorSections.comply365_news, comply365News),
       claude_learning: merge(
         priorSections.claude_learning,
         dedupeByUrl([
