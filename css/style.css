@@ -2122,15 +2122,19 @@ body.modal-open { overflow: hidden; }
 }
 .dash-panel-actions .dash-action { margin-top: 0; }
 /* YouTube inline button — compact, light pink fill with YouTube glyph. */
-/* Quiet neutral dash-action variant — icon + short label, section-head sized. */
+/* Quiet neutral dash-action variant — icon stacked ABOVE label, tile-y. */
 .dash-action-quiet {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  min-height: 36px;
-  font-size: 12px;
-  font-weight: 600;
+  justify-content: center;
+  gap: 2px;
+  padding: 4px 10px 6px;
+  min-height: 44px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
   color: var(--text-2);
   border: 1px solid var(--border);
   background: transparent;
