@@ -9,6 +9,7 @@
       "order": 1,
       "minutes": 8,
       "summary": "Install, sign in, open a repo, make the first edit. The CLI walk-through.",
+      "status": "authored",
       "quiz": [
         {
           "q": "Where does CLAUDE.md live for a project?",
@@ -49,6 +50,7 @@
       "order": 2,
       "minutes": 7,
       "summary": "The five sections every CLAUDE.md should have — Stack, Layout, Conventions, Running locally, Gotchas.",
+      "status": "authored",
       "quiz": [
         {
           "q": "What's the target length for a working CLAUDE.md?",
@@ -89,6 +91,7 @@
       "order": 3,
       "minutes": 6,
       "summary": "Where slash commands live, how arguments work, which ones to author first.",
+      "status": "authored",
       "quiz": [
         {
           "q": "Where do project-scoped custom slash commands live?",
@@ -129,6 +132,7 @@
       "order": 1,
       "minutes": 7,
       "summary": "Skills auto-invoke when Claude notices a matching situation. How they differ from slash commands and CLAUDE.md.",
+      "status": "authored",
       "quiz": [
         {
           "q": "What's the core behavioral difference between a slash command and a skill?",
@@ -169,6 +173,7 @@
       "order": 1,
       "minutes": 10,
       "summary": "A one-tool weather server in Python or TypeScript, wired into Claude Code via stdio.",
+      "status": "authored",
       "quiz": [
         {
           "q": "Which MCP transport should you pick for a local, per-user server you're building first?",
@@ -209,6 +214,7 @@
       "order": 1,
       "minutes": 12,
       "summary": "A pure-AI pipeline can't yet deliver an accurate explode-view shot. The hybrid pipeline: Blender for geometry, AI for texture + exterior-to-interior motion.",
+      "status": "authored",
       "quiz": [
         {
           "q": "Why can't Veo alone handle the 'carpet explodes into its three layers' shot reliably?",

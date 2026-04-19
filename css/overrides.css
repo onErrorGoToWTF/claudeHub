@@ -1,0 +1,13 @@
+/* =============================================================================
+   aiUniversity — css/overrides.css
+   Home for intentional per-component deviations from the --accent-* token
+   system defined in css/style.css (M9.1+). Each override MUST carry a
+   one-line comment naming the reason (e.g. "chart text stays violet per
+   MODEL_COL contract", "compliance warning needs fixed #d97706, not --base").
+
+   If you find yourself writing an override without a rationale, rewrite the
+   component so it doesn't need one.
+
+   Loaded AFTER style.css — see index.html <link> order.
+   Empty at M9.1 by design.
+   ============================================================================= */

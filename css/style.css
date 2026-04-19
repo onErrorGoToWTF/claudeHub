@@ -209,12 +209,29 @@
   --glow-hero:  0 0 24px -4px rgba(48,176,199,0.28);
   --glow-focus: 0 0 0 3px rgba(48,176,199,0.22);
 
+  /* ===== M9.1 — --base + --accent-* token system =====
+     Per-page identity color lives in --base, set via [data-section="X"]
+     (below) and per-panel overrides inside Dashboard. Derived --accent-*
+     resolve lazily at the consumption site, so the same component picks
+     up whatever --base it's rendered under. Border / glow / surface use
+     color-mix(in srgb, …, transparent N%) so output is byte-for-byte
+     equivalent to the legacy rgba(R,G,B,0.55/0.34/0.14) values. Hover /
+     soft / warm / cool use oklch for perceptual tint math. Plan:
+     docs/plans/v0.7-design-system-refactor.md. */
+  --base:           #30b0c7;                                           /* fallback — electric teal; overridden per [data-section] */
+  --accent-solid:   var(--base);
+  --accent-border:  color-mix(in srgb, var(--base), transparent 45%);  /* 0.55 alpha */
+  --accent-glow:    color-mix(in srgb, var(--base), transparent 66%);  /* 0.34 alpha */
+  --accent-surface: color-mix(in srgb, var(--base), transparent 86%);  /* 0.14 alpha */
+  --accent-ink:     #ffffff;
+  --accent-hover:   color-mix(in oklch, var(--base) 85%, black);
+  --accent-soft:    color-mix(in oklch, var(--base) 12%, white);
+  --accent-warm:    color-mix(in oklch, var(--base) 82%, #ffc400);
+  --accent-cool:    color-mix(in oklch, var(--base) 82%, #5ab8ff);
+
   /* Legacy compat — aliases kept so older selectors don't break. */
   --accent:             var(--color-electric-solid);
   --accent-hi:          var(--color-electric-solid-hover);
-  --accent-ink:         #ffffff;
-  --accent-soft:        var(--color-electric-surface);
-  --accent-glow:        rgba(48,176,199,0.10);
 
   --accent-violet:         var(--color-violet-solid);
   --accent-violet-hi:      var(--color-violet-solid-hover);
@@ -253,6 +270,19 @@
   --safe-l: env(safe-area-inset-left);
   --safe-r: env(safe-area-inset-right);
 }
+
+/* ===== M9.1 — Per-section --base overrides =====
+   Each section wrapper owns its identity color. --accent-* (defined at
+   :root) resolve lazily through cascade, so every descendant reads the
+   right accent without per-rule coloring. Dashboard panels further
+   override --base per-panel (see .dash-panel:has(...) rules below) so
+   all three identity tiles coexist on the home surface. Body-level
+   chrome outside these wrappers (floating nav chips, modals) sets --base
+   on its own element. */
+[data-section="home"]     { --base: #9a938a; }                         /* Dashboard — neutral greige per Q1 (revisit at M9.3) */
+[data-section="learn"]    { --base: #84cc16; }                         /* chartreuse-lime */
+[data-section="projects"] { --base: #0891b2; }                         /* ocean cyan */
+[data-section="tools"]    { --base: #ff7a1a; }                         /* tangerine */
 
 /* ===== Reset ===== */
 *, *::before, *::after { box-sizing: border-box; }
@@ -565,9 +595,9 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   flex-shrink: 0;
 }
 .section[data-section="home"]     .section-head h2::before { background: var(--text-3); }
-.section[data-section="learn"]    .section-head h2::before { background: var(--color-learn-solid); }
-.section[data-section="tools"]    .section-head h2::before { background: var(--color-tools-solid); }
-.section[data-section="projects"] .section-head h2::before { background: var(--color-projects-solid); }
+.section[data-section="learn"]    .section-head h2::before { background: var(--accent-solid); }
+.section[data-section="tools"]    .section-head h2::before { background: var(--accent-solid); }
+.section[data-section="projects"] .section-head h2::before { background: var(--accent-solid); }
 .section-head-actions {
   display: flex; align-items: flex-end; gap: 6px;
   flex-wrap: wrap;
@@ -1804,24 +1834,24 @@ body.modal-open { overflow: hidden; }
    (the "concentrated near border" pop), then a wider 3px at the
    glow-token alpha for ambient fade. */
 .dash-panel-icon--learn {
-  stroke: var(--color-learn-border);
+  stroke: var(--accent-border);
   filter:
-    drop-shadow(0 0 1.5px var(--color-learn-solid))
-    drop-shadow(0 0 3px var(--color-learn-glow));
+    drop-shadow(0 0 1.5px var(--accent-solid))
+    drop-shadow(0 0 3px var(--accent-glow));
   transform: translateY(6px);
 }
 .dash-panel-icon--projects {
-  stroke: var(--color-projects-border);
+  stroke: var(--accent-border);
   filter:
-    drop-shadow(0 0 1.5px var(--color-projects-solid))
-    drop-shadow(0 0 3px var(--color-projects-glow));
+    drop-shadow(0 0 1.5px var(--accent-solid))
+    drop-shadow(0 0 3px var(--accent-glow));
   transform: translateY(6px);
 }
 .dash-panel-icon--tools {
-  stroke: var(--color-tools-border);
+  stroke: var(--accent-border);
   filter:
-    drop-shadow(0 0 1.5px var(--color-tools-solid))
-    drop-shadow(0 0 3px var(--color-tools-glow));
+    drop-shadow(0 0 1.5px var(--accent-solid))
+    drop-shadow(0 0 3px var(--accent-glow));
 }
 .dash-panel-body { display: grid; gap: 6px; }
 .dash-charts-panel {
@@ -1893,9 +1923,12 @@ body.modal-open { overflow: hidden; }
    affordance reads as "I am a slot you can tap into". Hover tints the
    tile border + glow to the panel's identity color, same edge-identity
    idiom as active tab chips + CTAs. */
-.dash-panel:has(.dash-panel-icon--learn)    { --panel-accent-border: var(--color-learn-border);    --panel-accent-glow: var(--color-learn-glow); }
-.dash-panel:has(.dash-panel-icon--projects) { --panel-accent-border: var(--color-projects-border); --panel-accent-glow: var(--color-projects-glow); }
-.dash-panel:has(.dash-panel-icon--tools)    { --panel-accent-border: var(--color-tools-border);    --panel-accent-glow: var(--color-tools-glow); }
+/* M9.1 — override --base per panel so the three identity tiles keep their
+   colors inside the neutral Dashboard (home) section. Replaces the old
+   --panel-accent-* indirection; all downstream rules read --accent-* now. */
+.dash-panel:has(.dash-panel-icon--learn)    { --base: #84cc16; }
+.dash-panel:has(.dash-panel-icon--projects) { --base: #0891b2; }
+.dash-panel:has(.dash-panel-icon--tools)    { --base: #ff7a1a; }
 .dash-panel:has(.dash-panel-icon--learn) > .dash-panel-body,
 .dash-panel:has(.dash-panel-icon--projects) > .dash-panel-body,
 .dash-panel:has(.dash-panel-icon--tools) > .dash-panel-body {
@@ -1927,11 +1960,11 @@ body.modal-open { overflow: hidden; }
 .dash-panel-body .continue-row:hover {
   opacity: 1;
   background: color-mix(in srgb, var(--bg-0) 88%, #ffffff);
-  border-color: var(--panel-accent-border, rgba(0,0,0,0.12));
+  border-color: var(--accent-border, rgba(0,0,0,0.12));
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.65),
     0 2px 6px rgba(0,0,0,0.05),
-    0 0 0 3px var(--panel-accent-glow, transparent);
+    0 0 0 3px var(--accent-glow, transparent);
 }
 .dash-panel-body .continue-row:active {
   background: color-mix(in srgb, var(--bg-0) 88%, #000000);
@@ -2035,18 +2068,18 @@ body.modal-open { overflow: hidden; }
     rgba(255,255,255,0.22) 100%);
   -webkit-backdrop-filter: blur(10px) saturate(1.25);
           backdrop-filter: blur(10px) saturate(1.25);
-  border-color: var(--color-projects-border);
+  border-color: var(--accent-border);
   color: var(--text-1);
   box-shadow:
-    inset 0 0 0 1px var(--color-projects-border),
-    0 0 12px 0 var(--color-projects-glow),
+    inset 0 0 0 1px var(--accent-border),
+    0 0 12px 0 var(--accent-glow),
     0 8px 20px -6px rgba(0,0,0,0.18);
 }
 .dash-action-primary:hover {
-  border-color: color-mix(in srgb, var(--color-projects-solid) 65%, var(--border-strong));
+  border-color: color-mix(in srgb, var(--accent-solid) 65%, var(--border-strong));
   box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--color-projects-solid) 55%, var(--border-strong)),
-    0 0 18px 0 var(--color-projects-glow),
+    inset 0 0 0 1px color-mix(in srgb, var(--accent-solid) 55%, var(--border-strong)),
+    0 0 18px 0 var(--accent-glow),
     0 10px 24px -6px rgba(0,0,0,0.22);
 }
 /* Matches the nav chip active pattern: solid surface bg, theme text
@@ -2058,18 +2091,18 @@ body.modal-open { overflow: hidden; }
     rgba(255,255,255,0.22) 100%);
   -webkit-backdrop-filter: blur(10px) saturate(1.25);
           backdrop-filter: blur(10px) saturate(1.25);
-  border-color: var(--color-learn-border);
+  border-color: var(--accent-border);
   color: var(--text-1);
   box-shadow:
-    inset 0 0 0 1px var(--color-learn-border),
-    0 0 12px 0 var(--color-learn-glow),
+    inset 0 0 0 1px var(--accent-border),
+    0 0 12px 0 var(--accent-glow),
     0 8px 20px -6px rgba(0,0,0,0.18);
 }
 .dash-action-learn:hover {
-  border-color: color-mix(in srgb, var(--color-learn-solid) 65%, var(--border-strong));
+  border-color: color-mix(in srgb, var(--accent-solid) 65%, var(--border-strong));
   box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--color-learn-solid) 55%, var(--border-strong)),
-    0 0 18px 0 var(--color-learn-glow),
+    inset 0 0 0 1px color-mix(in srgb, var(--accent-solid) 55%, var(--border-strong)),
+    0 0 18px 0 var(--accent-glow),
     0 10px 24px -6px rgba(0,0,0,0.22);
 }
 /* Tools dashboard CTA — matches the same edge + glow + drop pattern as
@@ -2080,18 +2113,18 @@ body.modal-open { overflow: hidden; }
     rgba(255,255,255,0.22) 100%);
   -webkit-backdrop-filter: blur(10px) saturate(1.25);
           backdrop-filter: blur(10px) saturate(1.25);
-  border-color: var(--color-tools-border);
+  border-color: var(--accent-border);
   color: var(--text-1);
   box-shadow:
-    inset 0 0 0 1px var(--color-tools-border),
-    0 0 12px 0 var(--color-tools-glow),
+    inset 0 0 0 1px var(--accent-border),
+    0 0 12px 0 var(--accent-glow),
     0 8px 20px -6px rgba(0,0,0,0.18);
 }
 .dash-action-tools:hover {
-  border-color: color-mix(in srgb, var(--color-tools-solid) 65%, var(--border-strong));
+  border-color: color-mix(in srgb, var(--accent-solid) 65%, var(--border-strong));
   box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--color-tools-solid) 55%, var(--border-strong)),
-    0 0 18px 0 var(--color-tools-glow),
+    inset 0 0 0 1px color-mix(in srgb, var(--accent-solid) 55%, var(--border-strong)),
+    0 0 18px 0 var(--accent-glow),
     0 10px 24px -6px rgba(0,0,0,0.22);
 }
 /* Panel action row — Start CTA on the left, inline YouTube on the right. */
@@ -3126,7 +3159,7 @@ body.modal-open { overflow: hidden; }
 }
 .stack-column-best .stack-start-chip {
   color: var(--accent-hi);
-  background: color-mix(in srgb, var(--accent-soft) 50%, transparent);
+  background: color-mix(in srgb, var(--color-electric-surface) 50%, transparent);
   border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
 }
 .stack-column-best .stack-card {
@@ -5005,46 +5038,53 @@ body.modal-open { overflow: hidden; }
   color: var(--text-2);
 }
 
+/* M9.1 — chips sit in the floating nav outside any [data-section] wrapper,
+   so each chip carries its own --base. Active + hover rules then read
+   --accent-* with the right identity resolved locally. */
+.chip-learn    { --base: #84cc16; }
+.chip-tools    { --base: #ff7a1a; }
+.chip-projects { --base: #0891b2; }
+
 .chip-learn.is-active {
   color: var(--text-1);
   background: var(--bg-2);
-  border-color: var(--color-learn-border);
+  border-color: var(--accent-border);
   box-shadow:
-    inset 0 0 0 1px var(--color-learn-border),
-    0 0 10px 0 var(--color-learn-glow),
+    inset 0 0 0 1px var(--accent-border),
+    0 0 10px 0 var(--accent-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-learn:hover:not(.is-active) {
-  color: var(--color-learn-solid);
-  box-shadow: 0 0 16px -4px var(--color-learn-glow);
+  color: var(--accent-solid);
+  box-shadow: 0 0 16px -4px var(--accent-glow);
 }
 
 .chip-tools.is-active {
   color: var(--text-1);
   background: var(--bg-2);
-  border-color: var(--color-tools-border);
+  border-color: var(--accent-border);
   box-shadow:
-    inset 0 0 0 1px var(--color-tools-border),
-    0 0 10px 0 var(--color-tools-glow),
+    inset 0 0 0 1px var(--accent-border),
+    0 0 10px 0 var(--accent-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-tools:hover:not(.is-active) {
-  color: var(--color-tools-solid);
-  box-shadow: 0 0 16px -4px var(--color-tools-glow);
+  color: var(--accent-solid);
+  box-shadow: 0 0 16px -4px var(--accent-glow);
 }
 
 .chip-projects.is-active {
   color: var(--text-1);
   background: var(--bg-2);
-  border-color: var(--color-projects-border);
+  border-color: var(--accent-border);
   box-shadow:
-    inset 0 0 0 1px var(--color-projects-border),
-    0 0 10px 0 var(--color-projects-glow),
+    inset 0 0 0 1px var(--accent-border),
+    0 0 10px 0 var(--accent-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-projects:hover:not(.is-active) {
-  color: var(--color-projects-solid);
-  box-shadow: 0 0 16px -4px var(--color-projects-glow);
+  color: var(--accent-solid);
+  box-shadow: 0 0 16px -4px var(--accent-glow);
 }
 
 /* Projects Saved / + New subpill spacing. */

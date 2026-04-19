@@ -1,7 +1,7 @@
 {
-  "version": "0.6.117",
-  "milestone": "M8.12.47",
-  "milestoneTitle": "Phase 8.12.47 — full Comply365 scrub: removed all references from index.html, palette-preview.html, CLAUDE.md, docs/status.md, docs/plans/aistacked-v1.md, data/schema.md, js/app.js, and the debug-feed-failure + design-review skills. Also brought design-review skill up to current design language (light-only, 6px pill rule, impressed labels, --base/--accent-* notes).",
-  "deployedAt": "2026-04-20T00:10Z",
+  "version": "0.7.0-dev.1",
+  "milestone": "M9.1",
+  "milestoneTitle": "Phase M9.1 — Token system foundation: introduced --base + --accent-* derivations via color-mix, per-section overrides on [data-section] and per-panel overrides inside Dashboard, and self-scoped --base on .chip-learn/.chip-projects/.chip-tools so the floating nav carries its own identity. Migrated ~46 identity references (section-head bars, dash-panel-icons, dash-panel :has() indirection + its continue-row consumers, dash-action CTAs, nav chip active/hover) from --color-{learn,projects,tools}-* to --accent-*. Created css/overrides.css (empty, linked after style.css). Added status:\"authored\" to every lesson in lessons.json. YouTube tile (body chrome) and lesson-modal-xbtn (body-level modal) intentionally left on legacy tokens; they migrate when their parent scopes land in later milestones. Zero visible delta — border/glow/surface recipes use color-mix(in srgb, transparent N%) for byte-for-byte parity with the legacy rgba values.",
+  "deployedAt": "2026-04-19T23:48Z",
   "commitSha": ""
 }
