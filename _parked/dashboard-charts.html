@@ -1,0 +1,98 @@
+<!--
+  PARKED — State of AI charts panel (M5 charts block)
+
+  Removed from the Dashboard view in v0.6.70 (M8.11.4). The chart code is
+  intact: js/app.js still defines renderTimeline/renderCompare/renderIndex/
+  renderScorecard/renderLlmFaceoff (each early-returns when its host id is
+  absent), and css/style.css keeps every .dash-charts-panel / .hero / .cbars
+  / .vbars / .hbars / .timeline rule. Only the markup hosts were removed.
+
+  To revive: paste the <article>…</article> block below back into the spot
+  it came from (inside <section class="section section-home"> in index.html,
+  after the Projects panel article), or into a different section entirely —
+  the renderers find their hosts by id wherever they live.
+
+  Original location: index.html (between the Projects panel and the closing
+  </section> of section-home).
+-->
+
+<article class="dash-panel dash-charts-panel">
+  <header class="dash-panel-head">
+    <h3 class="dash-panel-title">State of AI</h3>
+    <span class="dash-panel-hint">Frontier snapshots</span>
+  </header>
+
+  <section class="hero glass" id="faceoff-card">
+    <div class="hero-head">
+      <div>
+        <h2 class="hero-title">Top 5 LLM face-off</h2>
+        <p class="hero-sub">Flagship chat models</p>
+      </div>
+      <div class="hero-kpi">
+        <div class="hero-kpi-num">5</div>
+        <div class="hero-kpi-lbl">models</div>
+      </div>
+    </div>
+    <div id="faceoff"></div>
+  </section>
+
+  <section class="hero glass" id="compare-card">
+    <div class="hero-head">
+      <div>
+        <h2 class="hero-title">Frontier context windows</h2>
+        <p class="hero-sub">Verified max input tokens, April 2026.</p>
+      </div>
+      <div class="hero-kpi">
+        <div class="hero-kpi-num" id="compare-lead">1M</div>
+        <div class="hero-kpi-lbl">Claude · Opus 4.7</div>
+      </div>
+    </div>
+    <div class="cbars" id="cbars"></div>
+  </section>
+
+  <section class="hero glass" id="timeline-card">
+    <div class="hero-head">
+      <div>
+        <h2 class="hero-title">Context window, 2023 → 2026</h2>
+        <p class="hero-sub">Public model releases. Log scale.</p>
+      </div>
+      <div class="hero-kpi">
+        <div class="hero-kpi-num" id="kpi-num">10×</div>
+        <div class="hero-kpi-lbl">in 36 months</div>
+      </div>
+    </div>
+    <svg class="timeline" id="timeline-svg" viewBox="0 0 800 240" preserveAspectRatio="none" aria-hidden="true"></svg>
+    <div class="timeline-legend" id="timeline-legend"></div>
+  </section>
+
+  <section class="hero glass" id="leap-card">
+    <div class="hero-head">
+      <div>
+        <h2 class="hero-title">Intelligence Index v4.0</h2>
+        <p class="hero-sub">10-benchmark composite · Artificial Analysis · Apr 2026</p>
+      </div>
+      <div class="hero-kpi">
+        <div class="hero-kpi-num" id="vbar-top">57</div>
+        <div class="hero-kpi-lbl">current SOTA</div>
+      </div>
+    </div>
+    <div class="vbars" id="vbars"></div>
+    <p class="leap-foot">Source: artificialanalysis.ai · Opus 4.7 scoring pending (launched today)</p>
+  </section>
+
+  <section class="hero glass" id="scorecard-card">
+    <div class="hero-head">
+      <div>
+        <h2 class="hero-title">Opus 4.7 scorecard</h2>
+        <p class="hero-sub">Benchmarks from today's launch · Apr 16, 2026</p>
+      </div>
+      <div class="hero-kpi">
+        <div class="hero-kpi-num">98.5<span class="stat-x">%</span></div>
+        <div class="hero-kpi-lbl">XBOW top</div>
+      </div>
+    </div>
+    <div class="hbars" id="hbars"></div>
+    <p class="leap-foot">Source: anthropic.com/news/claude-opus-4-7</p>
+  </section>
+
+</article>

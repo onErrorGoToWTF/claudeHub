@@ -3,8 +3,8 @@
    single warm ambient. Page is light neutral-gray; panel cards sit
    a hair darker than the page; charts stay pure white for max pop. */
 :root {
-  --bg-0: #eeece7;    /* page base — light neutral gray, minimal warm */
-  --bg-1: #e7e4dd;    /* card base — just a touch darker than page */
+  --bg-0: #eeece7;    /* page base — light neutral gray, minimal warm (LOCKED) */
+  --bg-1: #ece9e2;    /* card base — nudged toward white, still a hair below page-elevated cards */
   --bg-2: #ffffff;    /* chip / CTA elevated — pure white (top of stack) */
   --bg-3: #ffffff;    /* second elevation */
   --surface:        rgba(255,255,255,0.86);
@@ -20,11 +20,11 @@
 
   /* Glass: panel cards hover just above the page — small tonal step,
      defined more by border + shadow than by background contrast. */
-  --glass-top:        rgba(246,243,236,0.88);
-  --glass-bottom:     rgba(232,228,219,0.76);
-  --glass-fallback:   rgba(246,243,236,0.94);
-  --chips-glass-top:    rgba(255,253,246,0.78);
-  --chips-glass-bottom: rgba(238,235,227,0.62);
+  --glass-top:        rgba(252,250,246,0.92);
+  --glass-bottom:     rgba(244,241,233,0.82);
+  --glass-fallback:   rgba(252,250,246,0.96);
+  --chips-glass-top:    rgba(255,254,250,0.84);
+  --chips-glass-bottom: rgba(248,246,240,0.72);
   --ambient-warm:    rgba(240,170,70,0.05);
   --ambient-plasma:  rgba(130,150,180,0.04);
   --bloom-warm:      rgba(240,170,70,0.10);
@@ -69,8 +69,8 @@
   --color-claude-solid-hover:     #c2490a;
   --color-claude-text:            #c2410c;
 
-  --color-365-surface:            rgba(124,58,237,0.12);
-  --color-365-border:             rgba(124,58,237,0.40);
+  --color-365-surface:            rgba(124,58,237,0.14);
+  --color-365-border:             rgba(124,58,237,0.55);
   --color-365-solid:              #7c3aed;
   --color-365-solid-hover:        #6528d1;
   --color-365-text:               #6528d1;
@@ -94,33 +94,35 @@
   --color-model-xai-solid-hover:  #a61fb5;
   --color-model-xai-text:         #a61fb5;
 
-  /* ===== Tab identity colors ===== */
-  --color-learn-solid:       #16a34a;                  /* True green, deeper for contrast on warm-white */
-  --color-learn-surface:     rgba(22,163,74,0.12);
-  --color-learn-border:      rgba(22,163,74,0.40);
-  --color-learn-glow:        rgba(22,163,74,0.22);
+  /* ===== Tab identity colors — four-corner electric palette =====
+     Learn lime-green, Projects deep orange, Tools deep electric blue,
+     365 purple. Borders + glows pumped for the electric halo. */
+  --color-learn-solid:       #84cc16;                  /* lime — vibrant green with a yellow tint */
+  --color-learn-surface:     rgba(132,204,22,0.14);
+  --color-learn-border:      rgba(132,204,22,0.55);
+  --color-learn-glow:        rgba(132,204,22,0.34);
 
   --color-youtube-solid:     #ff3b30;                  /* Apple systemRed */
-  --color-youtube-surface:   rgba(255,59,48,0.12);
-  --color-youtube-border:    rgba(255,59,48,0.40);
-  --color-youtube-glow:      rgba(255,59,48,0.22);
+  --color-youtube-surface:   rgba(255,59,48,0.14);
+  --color-youtube-border:    rgba(255,59,48,0.55);
+  --color-youtube-glow:      rgba(255,59,48,0.34);
 
-  --color-tools-solid:       #a16207;                  /* yellow → brown for readability */
-  --color-tools-surface:     rgba(161,98,7,0.10);
-  --color-tools-border:      rgba(161,98,7,0.40);
-  --color-tools-glow:        rgba(161,98,7,0.22);
+  --color-tools-solid:       #ff7a1a;                  /* vibrant tangerine — juicy peel orange */
+  --color-tools-surface:     rgba(255,122,26,0.14);
+  --color-tools-border:      rgba(255,122,26,0.55);
+  --color-tools-glow:        rgba(255,122,26,0.34);
 
-  --color-projects-solid:    #007aff;                  /* Apple systemBlue */
-  --color-projects-surface:  rgba(0,122,255,0.12);
-  --color-projects-border:   rgba(0,122,255,0.40);
-  --color-projects-glow:     rgba(0,122,255,0.22);
+  --color-projects-solid:    #0891b2;                  /* vibrant ocean — cyan-600, blue/green sea */
+  --color-projects-surface:  rgba(8,145,178,0.14);
+  --color-projects-border:   rgba(8,145,178,0.55);
+  --color-projects-glow:     rgba(8,145,178,0.34);
 
   --color-path-best-solid:   #248a3d;                  /* deep green — readable on white */
   --color-path-best-surface: rgba(52,199,89,0.12);
   --color-path-best-border:  rgba(52,199,89,0.45);
   --color-path-best-glow:    rgba(52,199,89,0.22);
 
-  --color-365-glow:          rgba(124,58,237,0.22);
+  --color-365-glow:          rgba(124,58,237,0.34);
 
   /* Reserved glow tokens (no component uses them after M6.6). */
   --glow-soft:  0 0 18px -6px rgba(48,176,199,0.12);
@@ -193,15 +195,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ambient glow — "electrons emitting photons" on the warm charcoal page.
-   Colors flow through --ambient-warm / --ambient-plasma tokens (retuned
-   per-theme in the :root blocks above). */
+/* Ambient glow + blotchy white wash — three soft white radial blobs at
+   off-balance positions lift the page in patches without going uniform.
+   The smaller warm + plasma stops underneath keep the page from reading
+   as flat-white; combined effect is a cloud-like dimensional wash. */
 body::before {
   content: "";
   position: fixed; inset: 0;
   background:
-    radial-gradient(72% 44% at 46% -8%,  var(--ambient-warm)   0%, transparent 60%),
-    radial-gradient(52% 42% at 86% 110%, var(--ambient-plasma) 0%, transparent 65%);
+    radial-gradient(46% 36% at 18% 14%,  rgba(255,255,255,0.55) 0%, transparent 72%),
+    radial-gradient(40% 32% at 82% 58%,  rgba(255,255,255,0.42) 0%, transparent 74%),
+    radial-gradient(54% 40% at 48% 96%,  rgba(255,255,255,0.30) 0%, transparent 78%),
+    radial-gradient(72% 44% at 46% -8%,  var(--ambient-warm)    0%, transparent 60%),
+    radial-gradient(52% 42% at 86% 110%, var(--ambient-plasma)  0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
   transition: background 0.4s var(--ease);
@@ -386,9 +392,11 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 .chips::-webkit-scrollbar { display: none; }
 .chip {
-  flex: 0 0 auto;
+  flex: 1 1 0;
+  min-width: 0;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 36px;
   padding: 6px 14px;
   border-radius: var(--radius-sm);
@@ -404,6 +412,13 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   position: relative;
   z-index: 1;
 }
+/* 365 label is just 3 chars — let it size to content so the four
+   word-labels above (Dashboard/Learn/Projects/Tools) split the
+   remaining row evenly and read with more breathing room. */
+.chip[data-filter="comply365"] {
+  flex: 0 0 auto;
+  padding: 6px 12px;
+}
 .chip:hover { color: var(--text-2); }
 .chip.is-active {
   color: var(--text-1);
@@ -416,6 +431,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 /* Icon-only chip variant — theme toggle lives in the nav as a .chip-icon.
    Sits at the trailing edge of the row via margin-left: auto. */
 .chip-icon {
+  flex: 0 0 36px;
   margin-left: auto;
   width: 36px;
   padding: 6px 0;
@@ -1630,15 +1646,45 @@ body.modal-open { overflow: hidden; }
   flex-direction: column;
   gap: 18px;
 }
+/* M8.11.5 — 2x2 quadrant grid: title + CTA stack on the left, large
+   accent-outlined icon anchors the right column spanning rows 1-2,
+   body row spans both columns at the bottom. */
 .dash-panel {
   padding: 18px 18px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  column-gap: 14px;
+  row-gap: 10px;
+  align-items: start;
+}
+.dash-panel > .dash-panel-head { grid-column: 1; grid-row: 1; }
+.dash-panel > .dash-action     { grid-column: 1; grid-row: 2; align-self: start; justify-self: start; }
+.dash-panel > .dash-panel-icon { grid-column: 2; grid-row: 1 / span 2; align-self: center; justify-self: end; }
+.dash-panel > .dash-panel-body { grid-column: 1 / -1; grid-row: 3; }
+/* Learn + Projects panels and the YouTube tile share one glass tone —
+   nearly white so they pop against the greige page. Linked via a single
+   selector so any future retune updates both together. The explicit
+   background re-application is needed because .dash-action sets
+   background: transparent later in the cascade. */
+.dash-panel.glass,
+.dash-action.dash-action-quiet.glass {
+  --glass-top:    rgba(255,255,255,0.97);
+  --glass-bottom: rgba(254,253,251,0.90);
+  --glass-fallback: rgba(255,255,255,0.98);
+  background: linear-gradient(180deg,
+    var(--glass-top) 0%,
+    var(--glass-bottom) 100%);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .dash-panel.glass,
+  .dash-action.dash-action-quiet.glass {
+    background: var(--glass-fallback);
+  }
 }
 .dash-panel-head {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 10px;
 }
@@ -1649,13 +1695,47 @@ body.modal-open { overflow: hidden; }
   letter-spacing: -0.015em;
   color: var(--text-1);
 }
+/* Kept for the parked dashboard-charts.html snippet; no live consumer. */
 .dash-panel-hint {
   font-size: 11.5px;
   color: var(--text-3);
   letter-spacing: 0.02em;
 }
+/* Panel identity icon (M8.11.5) — large outline drawing in the section's
+   accent color, anchoring the right quadrant of the panel grid. Stroke
+   uses the same --color-X-border (0.55α) and glow uses --color-X-glow
+   (0.34α) as the matching CTA button border, so the icon and the CTA
+   read as visually linked. Reusable: change width/height anywhere. */
+.dash-panel-icon {
+  width: 72px;
+  height: 72px;
+  fill: none;
+  stroke-width: 0.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* Stacked drop-shadows: tight 1.5px at full saturation hugs the line
+   (the "concentrated near border" pop), then a wider 3px at the
+   glow-token alpha for ambient fade. */
+.dash-panel-icon--learn {
+  stroke: var(--color-learn-border);
+  filter:
+    drop-shadow(0 0 1.5px var(--color-learn-solid))
+    drop-shadow(0 0 3px var(--color-learn-glow));
+}
+.dash-panel-icon--projects {
+  stroke: var(--color-projects-border);
+  filter:
+    drop-shadow(0 0 1.5px var(--color-projects-solid))
+    drop-shadow(0 0 3px var(--color-projects-glow));
+}
+.dash-panel-icon--tools {
+  stroke: var(--color-tools-border);
+  filter:
+    drop-shadow(0 0 1.5px var(--color-tools-solid))
+    drop-shadow(0 0 3px var(--color-tools-glow));
+}
 .dash-panel-body { display: grid; gap: 6px; }
-.dash-panel .dash-action { margin-top: 4px; }
 .dash-charts-panel {
   display: flex;
   flex-direction: column;
@@ -1836,6 +1916,24 @@ body.modal-open { overflow: hidden; }
   box-shadow:
     inset 0 0 0 1px color-mix(in srgb, var(--color-learn-solid) 55%, var(--border-strong)),
     0 0 18px 0 var(--color-learn-glow),
+    0 10px 24px -6px rgba(0,0,0,0.22);
+}
+/* Tools dashboard CTA — matches the same edge + glow + drop pattern as
+   .dash-action-learn / .dash-action-primary, themed to the Tools cyan. */
+.dash-action-tools {
+  background: var(--bg-2);
+  border-color: var(--color-tools-border);
+  color: var(--text-1);
+  box-shadow:
+    inset 0 0 0 1px var(--color-tools-border),
+    0 0 12px 0 var(--color-tools-glow),
+    0 8px 20px -6px rgba(0,0,0,0.18);
+}
+.dash-action-tools:hover {
+  border-color: color-mix(in srgb, var(--color-tools-solid) 65%, var(--border-strong));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--color-tools-solid) 55%, var(--border-strong)),
+    0 0 18px 0 var(--color-tools-glow),
     0 10px 24px -6px rgba(0,0,0,0.22);
 }
 /* Panel action row — Start CTA on the left, inline YouTube on the right. */
@@ -4287,25 +4385,6 @@ body.modal-open { overflow: hidden; }
   font-weight: 600;
 }
 
-/* ===== Version pill (footer) — visible proof of the current build ===== */
-.version-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  border: 1px solid color-mix(in srgb, var(--accent-claude) 25%, var(--border));
-  background: color-mix(in srgb, var(--accent-claude-soft) 25%, transparent);
-  font-size: 11.5px;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.005em;
-  white-space: nowrap;
-}
-.version-lbl      { color: var(--accent-claude-hi); font-weight: 700; letter-spacing: 0.02em; }
-.version-num      { color: var(--text-1); font-weight: 600; }
-.version-milestone{ color: var(--text-2); font-weight: 500; }
-.version-date     { color: var(--text-3); }
-.version-sep      { color: var(--text-3); opacity: 0.6; }
 .foot .foot-sep   { color: var(--text-3); opacity: 0.6; margin: 0 2px; }
 
 /* ===== Competitor comparison bars ===== */

@@ -41,9 +41,22 @@
     <article class="dash-panel glass">
       <header class="dash-panel-head">
         <h3 class="dash-panel-title">Learn</h3>
-        <span class="dash-panel-hint">Courses &amp; quizzes</span>
       </header>
       <button class="dash-action dash-action-learn" data-chip="learn" data-subpill="courses" type="button">Start new course or quiz →</button>
+      <svg class="dash-panel-icon dash-panel-icon--learn" viewBox="0 0 24 24" role="img" aria-label="Courses and quizzes">
+        <title>Courses &amp; quizzes</title>
+        <rect x="3" y="4" width="5" height="17" rx="0.5"/>
+        <line x1="3" y1="7" x2="8" y2="7"/>
+        <line x1="3" y1="18" x2="8" y2="18"/>
+        <rect x="8" y="3" width="4.5" height="18" rx="0.5"/>
+        <line x1="8" y1="6" x2="12.5" y2="6"/>
+        <line x1="8" y1="18" x2="12.5" y2="18"/>
+        <g transform="rotate(-10 15.5 21)">
+          <rect x="15.5" y="4" width="4.5" height="17" rx="0.5"/>
+          <line x1="15.5" y1="7" x2="20" y2="7"/>
+          <line x1="15.5" y1="18" x2="20" y2="18"/>
+        </g>
+      </svg>
       <div class="dash-panel-body" id="dash-learn-body">
         <p class="dash-empty">Loading lessons…</p>
       </div>
@@ -52,94 +65,39 @@
     <article class="dash-panel glass">
       <header class="dash-panel-head">
         <h3 class="dash-panel-title">Projects</h3>
-        <span class="dash-panel-hint">Your saved setups</span>
       </header>
       <button class="dash-action dash-action-primary" data-chip="projects" data-subpill="new" type="button">Start a new project →</button>
+      <svg class="dash-panel-icon dash-panel-icon--projects" viewBox="0 0 24 24" role="img" aria-label="Your saved setups">
+        <title>Your saved setups</title>
+        <path d="M4 5 H10 a1 1 0 0 1 1 .55 L12 7 H20 a1 1 0 0 1 1 1 V18 a1 1 0 0 1 -1 1 H4 a1 1 0 0 1 -1 -1 V6 a1 1 0 0 1 1 -1 Z"/>
+        <line x1="7" y1="10.5" x2="17" y2="10.5"/>
+        <line x1="7" y1="13.5" x2="17" y2="13.5"/>
+        <line x1="7" y1="16.5" x2="13" y2="16.5"/>
+      </svg>
       <div class="dash-panel-body" id="dash-projects-body">
         <p class="dash-empty">No projects in flight yet — start one and your progress lands here.</p>
       </div>
     </article>
 
-    <article class="dash-panel dash-charts-panel">
+    <article class="dash-panel glass">
       <header class="dash-panel-head">
-        <h3 class="dash-panel-title">State of AI</h3>
-        <span class="dash-panel-hint">Frontier snapshots</span>
+        <h3 class="dash-panel-title">Tools</h3>
       </header>
-
-      <section class="hero glass" id="faceoff-card">
-        <div class="hero-head">
-          <div>
-            <h2 class="hero-title">Top 5 LLM face-off</h2>
-            <p class="hero-sub">Flagship chat models</p>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-num">5</div>
-            <div class="hero-kpi-lbl">models</div>
-          </div>
-        </div>
-        <div id="faceoff"></div>
-      </section>
-
-      <section class="hero glass" id="compare-card">
-        <div class="hero-head">
-          <div>
-            <h2 class="hero-title">Frontier context windows</h2>
-            <p class="hero-sub">Verified max input tokens, April 2026.</p>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-num" id="compare-lead">1M</div>
-            <div class="hero-kpi-lbl">Claude · Opus 4.7</div>
-          </div>
-        </div>
-        <div class="cbars" id="cbars"></div>
-      </section>
-
-      <section class="hero glass" id="timeline-card">
-        <div class="hero-head">
-          <div>
-            <h2 class="hero-title">Context window, 2023 → 2026</h2>
-            <p class="hero-sub">Public model releases. Log scale.</p>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-num" id="kpi-num">10×</div>
-            <div class="hero-kpi-lbl">in 36 months</div>
-          </div>
-        </div>
-        <svg class="timeline" id="timeline-svg" viewBox="0 0 800 240" preserveAspectRatio="none" aria-hidden="true"></svg>
-        <div class="timeline-legend" id="timeline-legend"></div>
-      </section>
-
-      <section class="hero glass" id="leap-card">
-        <div class="hero-head">
-          <div>
-            <h2 class="hero-title">Intelligence Index v4.0</h2>
-            <p class="hero-sub">10-benchmark composite · Artificial Analysis · Apr 2026</p>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-num" id="vbar-top">57</div>
-            <div class="hero-kpi-lbl">current SOTA</div>
-          </div>
-        </div>
-        <div class="vbars" id="vbars"></div>
-        <p class="leap-foot">Source: artificialanalysis.ai · Opus 4.7 scoring pending (launched today)</p>
-      </section>
-
-      <section class="hero glass" id="scorecard-card">
-        <div class="hero-head">
-          <div>
-            <h2 class="hero-title">Opus 4.7 scorecard</h2>
-            <p class="hero-sub">Benchmarks from today's launch · Apr 16, 2026</p>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-num">98.5<span class="stat-x">%</span></div>
-            <div class="hero-kpi-lbl">XBOW top</div>
-          </div>
-        </div>
-        <div class="hbars" id="hbars"></div>
-        <p class="leap-foot">Source: anthropic.com/news/claude-opus-4-7</p>
-      </section>
-
+      <button class="dash-action dash-action-tools" data-chip="tools" type="button">Browse the tools →</button>
+      <svg class="dash-panel-icon dash-panel-icon--tools" viewBox="0 0 24 24" role="img" aria-label="The full catalog">
+        <title>The full catalog</title>
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a3 3 0 1 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+        <path d="M4.52 20.38 L4.07 21.16 L3.17 21.16 L2.72 20.38 L3.17 19.60 L4.07 19.60 Z"/>
+      </svg>
+      <div class="dash-panel-body" id="dash-tools-body">
+        <p class="dash-empty">Filter by modality, sort by recency or name.</p>
+      </div>
     </article>
+
+    <!-- State of AI charts panel removed from Dashboard in M8.11.4.
+         Markup parked verbatim in _parked/dashboard-charts.html.
+         CSS + JS render functions remain intact (renderers null-guard
+         on missing hosts), ready to be wired into a different surface. -->
   </section>
 
   <section class="section section-learn" data-section="learn" id="section-learn" data-hidden="true">
@@ -375,14 +333,11 @@
   </section>
 
   <footer class="foot">
-    <span class="version-pill" id="version-pill" title="Deployed build — refresh to see it update after each milestone commit.">
-      <span class="version-lbl">aiStacked</span>
-      <span class="version-num" id="version-num">—</span>
-      <span class="version-sep">·</span>
-      <span class="version-milestone" id="version-milestone">—</span>
-      <span class="version-sep">·</span>
-      <span class="version-date" id="version-date">—</span>
-    </span>
+    <span id="version-num">—</span>
+    <span class="foot-sep">·</span>
+    <span id="version-milestone">—</span>
+    <span class="foot-sep">·</span>
+    <span id="version-date">—</span>
     <span class="foot-sep">·</span>
     <span>Loaded <span id="loaded-at">—</span></span>
     <span class="foot-sep">·</span>
