@@ -1661,7 +1661,7 @@ body.modal-open { overflow: hidden; }
 }
 .dash-panel > .dash-panel-head { grid-column: 1; grid-row: 1; }
 .dash-panel > .dash-action     { grid-column: 1; grid-row: 2; align-self: start; justify-self: start; }
-.dash-panel > .dash-panel-icon { grid-column: 2; grid-row: 1 / span 2; align-self: center; justify-self: end; }
+.dash-panel > .dash-panel-icon { grid-column: 2; grid-row: 1 / span 2; align-self: end; justify-self: end; }
 .dash-panel > .dash-panel-body { grid-column: 1 / -1; grid-row: 3; }
 /* Learn + Projects panels and the YouTube tile share one glass tone —
    nearly white so they pop against the greige page. Linked via a single
