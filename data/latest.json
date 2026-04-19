@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T21:33:56.946Z",
+  "generated_at": "2026-04-19T21:42:59.141Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -169,7 +169,7 @@
       {
         "title": "Uber's AI Push Hits a Wall–CTO Says Budget Struggles Despite $3.4B Spend",
         "url": "https://finance.yahoo.com/sectors/technology/articles/ubers-anthropic-ai-push-hits-223109852.html",
-        "source": "HN · 45↑",
+        "source": "HN · 46↑",
         "hn_id": "47826328",
         "published": "2026-04-19T18:13:32.000Z",
         "summary": ""
@@ -177,7 +177,7 @@
       {
         "title": "Show HN: Faceoff – A terminal UI for following NHL games",
         "url": "https://www.vincentgregoire.com/faceoff/",
-        "source": "HN · 60↑",
+        "source": "HN · 63↑",
         "hn_id": "47826104",
         "published": "2026-04-19T17:44:44.000Z",
         "summary": "Faceoff is a TUI app written in Python to follow live NHL games and browse standings and stats. I got the inspiration from Playball, a similar TUI app for MLB games that was…"
@@ -228,7 +228,7 @@
       {
         "title": "Changes in the system prompt between Claude Opus 4.6 and 4.7",
         "url": "https://simonwillison.net/2026/Apr/18/opus-system-prompt/",
-        "source": "HN · 109↑",
+        "source": "HN · 114↑",
         "hn_id": "47823270",
         "published": "2026-04-19T10:36:29.000Z",
         "summary": ""
@@ -327,6 +327,150 @@
         "summary": "White House and Anthropic hold 'productive' meeting amid fears over Mythos model BBC"
       },
       {
+        "title": "Claude Design just dropped... (Everything you need to know!)",
+        "url": "https://www.youtube.com/watch?v=1YAc1f4v-WU",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "1YAc1f4v-WU",
+        "thumbnail": "https://i.ytimg.com/vi/1YAc1f4v-WU/hqdefault.jpg",
+        "published": "2026-04-17T20:42:54.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "How Good is Opus 4.7 Really? (New Claude Code Desktop Test)",
+        "url": "https://www.youtube.com/watch?v=BV9Bnj3l8pk",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "BV9Bnj3l8pk",
+        "thumbnail": "https://i.ytimg.com/vi/BV9Bnj3l8pk/hqdefault.jpg",
+        "published": "2026-04-17T13:00:21.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Opus 4.7 Just Dropped... (Everything you need to know)",
+        "url": "https://www.youtube.com/watch?v=3EWyQkaSIq0",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "3EWyQkaSIq0",
+        "thumbnail": "https://i.ytimg.com/vi/3EWyQkaSIq0/hqdefault.jpg",
+        "published": "2026-04-16T19:53:08.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Opus-4.7 Just Dropped, And...",
+        "url": "https://www.youtube.com/watch?v=WVQ0lPiWsHQ",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "WVQ0lPiWsHQ",
+        "thumbnail": "https://i.ytimg.com/vi/WVQ0lPiWsHQ/hqdefault.jpg",
+        "published": "2026-04-16T14:52:01.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Gemma 4 Makes Claude Code 100% FREE",
+        "url": "https://www.youtube.com/watch?v=-kA-8QJXY1g",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "-kA-8QJXY1g",
+        "thumbnail": "https://i.ytimg.com/vi/-kA-8QJXY1g/hqdefault.jpg",
+        "published": "2026-04-16T13:00:00.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Routines Just Dropped, And It's Perfect",
+        "url": "https://www.youtube.com/watch?v=j3aXJNu9804",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "j3aXJNu9804",
+        "thumbnail": "https://i.ytimg.com/vi/j3aXJNu9804/hqdefault.jpg",
+        "published": "2026-04-14T19:08:20.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Code Channels = Your Own OpenClaw",
+        "url": "https://www.youtube.com/watch?v=HN6Zd6sZT-A",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "HN6Zd6sZT-A",
+        "thumbnail": "https://i.ytimg.com/vi/HN6Zd6sZT-A/hqdefault.jpg",
+        "published": "2026-04-14T13:00:27.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Managed Agents: Deploy AI Agents That Run for Hours",
+        "url": "https://www.youtube.com/watch?v=DpfLbBuhHOg",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "DpfLbBuhHOg",
+        "thumbnail": "https://i.ytimg.com/vi/DpfLbBuhHOg/hqdefault.jpg",
+        "published": "2026-04-09T14:05:29.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Managed Agents Just Dropped, And It Kills n8n",
+        "url": "https://www.youtube.com/watch?v=Ob5Vu-gD3mo",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "Ob5Vu-gD3mo",
+        "thumbnail": "https://i.ytimg.com/vi/Ob5Vu-gD3mo/hqdefault.jpg",
+        "published": "2026-04-08T18:42:51.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Mythos Preview: Everything You Need to Know",
+        "url": "https://www.youtube.com/watch?v=oCuttuCQmZg",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "oCuttuCQmZg",
+        "thumbnail": "https://i.ytimg.com/vi/oCuttuCQmZg/hqdefault.jpg",
+        "published": "2026-04-07T21:24:19.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "An initiative to secure the world's software | Project Glasswing",
+        "url": "https://www.youtube.com/watch?v=INGOC6-LLv0",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "INGOC6-LLv0",
+        "thumbnail": "https://i.ytimg.com/vi/INGOC6-LLv0/hqdefault.jpg",
+        "published": "2026-04-07T18:03:51.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "I Built an AI Second Brain Using Claude Code",
+        "url": "https://www.youtube.com/watch?v=zq3q_k8aU-k",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "zq3q_k8aU-k",
+        "thumbnail": "https://i.ytimg.com/vi/zq3q_k8aU-k/hqdefault.jpg",
+        "published": "2026-04-06T00:26:33.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
         "title": "I Downloaded Claude Code’s Leak (The Results are INSANE)",
         "url": "https://www.youtube.com/watch?v=67Cbb3DyIxA",
         "source": "Riley Brown",
@@ -339,26 +483,50 @@
         "_kind": "news_video"
       },
       {
-        "title": "Claude Code can Design Now (Figma is officially in trouble)",
-        "url": "https://www.youtube.com/watch?v=KAX0cWk1fJE",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "KAX0cWk1fJE",
-        "thumbnail": "https://i.ytimg.com/vi/KAX0cWk1fJE/hqdefault.jpg",
-        "published": "2026-03-09T16:00:28.000Z",
+        "title": "When AIs act emotional",
+        "url": "https://www.youtube.com/watch?v=D4XTefP3Lsc",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "D4XTefP3Lsc",
+        "thumbnail": "https://i.ytimg.com/vi/D4XTefP3Lsc/hqdefault.jpg",
+        "published": "2026-04-02T16:06:59.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "Claude Opus 4.6 just built Tinder for Short People(under 4 ft 10) In 3 prompts",
-        "url": "https://www.youtube.com/shorts/uScSzTBTh2s",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "uScSzTBTh2s",
-        "thumbnail": "https://i.ytimg.com/vi/uScSzTBTh2s/hqdefault.jpg",
-        "published": "2026-02-14T03:08:29.000Z",
+        "title": "I Built an App That Spies on ChatGPT (With Claude Code)",
+        "url": "https://www.youtube.com/watch?v=sZPG0weEjw8",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "sZPG0weEjw8",
+        "thumbnail": "https://i.ytimg.com/vi/sZPG0weEjw8/hqdefault.jpg",
+        "published": "2026-03-30T13:01:05.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "CLAUDE CODE ADVANCED COURSE — 3 HOURS",
+        "url": "https://www.youtube.com/watch?v=UPtmKh1vMN8",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "UPtmKh1vMN8",
+        "thumbnail": "https://i.ytimg.com/vi/UPtmKh1vMN8/hqdefault.jpg",
+        "published": "2026-03-28T18:59:16.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Code Skills Changed Everything (And Nobody Noticed)",
+        "url": "https://www.youtube.com/watch?v=epZy_NajGnA",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "epZy_NajGnA",
+        "thumbnail": "https://i.ytimg.com/vi/epZy_NajGnA/hqdefault.jpg",
+        "published": "2026-03-24T13:26:45.000Z",
         "summary": "",
         "_kind": "news_video"
       }
@@ -451,6 +619,226 @@
     ],
     "youtube": [
       {
+        "title": "Claude + Heygen: INSANE Automated Videos! (easy tutorial)",
+        "url": "https://www.youtube.com/watch?v=GnoJaaIHXWU",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "GnoJaaIHXWU",
+        "thumbnail": "https://i.ytimg.com/vi/GnoJaaIHXWU/hqdefault.jpg",
+        "published": "2026-04-19T12:00:22.000Z",
+        "summary": ""
+      },
+      {
+        "title": "23 INSANE Claude Code Skills... to build your SaaS! (from Gary Tan)",
+        "url": "https://www.youtube.com/watch?v=-o73ECZyjqk",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "-o73ECZyjqk",
+        "thumbnail": "https://i.ytimg.com/vi/-o73ECZyjqk/hqdefault.jpg",
+        "published": "2026-04-19T00:11:31.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code: Build an AI Agent That Finds Vulnerabilities",
+        "url": "https://www.youtube.com/watch?v=VFLieg8JjLA",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "VFLieg8JjLA",
+        "thumbnail": "https://i.ytimg.com/vi/VFLieg8JjLA/hqdefault.jpg",
+        "published": "2026-04-18T12:04:55.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Design just dropped... (Everything you need to know!)",
+        "url": "https://www.youtube.com/watch?v=1YAc1f4v-WU",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "1YAc1f4v-WU",
+        "thumbnail": "https://i.ytimg.com/vi/1YAc1f4v-WU/hqdefault.jpg",
+        "published": "2026-04-17T20:42:54.000Z",
+        "summary": ""
+      },
+      {
+        "title": "FULL Claude Code Tutorial For Beginners in 2026! (FULL COURSE)",
+        "url": "https://www.youtube.com/watch?v=9pniXngp8kk",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "9pniXngp8kk",
+        "thumbnail": "https://i.ytimg.com/vi/9pniXngp8kk/hqdefault.jpg",
+        "published": "2026-04-17T13:00:31.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How Good is Opus 4.7 Really? (New Claude Code Desktop Test)",
+        "url": "https://www.youtube.com/watch?v=BV9Bnj3l8pk",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "BV9Bnj3l8pk",
+        "thumbnail": "https://i.ytimg.com/vi/BV9Bnj3l8pk/hqdefault.jpg",
+        "published": "2026-04-17T13:00:21.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus 4.7 Just Dropped... (Everything you need to know)",
+        "url": "https://www.youtube.com/watch?v=3EWyQkaSIq0",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "3EWyQkaSIq0",
+        "thumbnail": "https://i.ytimg.com/vi/3EWyQkaSIq0/hqdefault.jpg",
+        "published": "2026-04-16T19:53:08.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus-4.7 Just Dropped, And...",
+        "url": "https://www.youtube.com/watch?v=WVQ0lPiWsHQ",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "WVQ0lPiWsHQ",
+        "thumbnail": "https://i.ytimg.com/vi/WVQ0lPiWsHQ/hqdefault.jpg",
+        "published": "2026-04-16T14:52:01.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code + Obsidian is INSANE! (Claude Ai Tutorial)",
+        "url": "https://www.youtube.com/watch?v=DoRQo3aGaPY",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "DoRQo3aGaPY",
+        "thumbnail": "https://i.ytimg.com/vi/DoRQo3aGaPY/hqdefault.jpg",
+        "published": "2026-04-16T13:00:22.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Gemma 4 Makes Claude Code 100% FREE",
+        "url": "https://www.youtube.com/watch?v=-kA-8QJXY1g",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "-kA-8QJXY1g",
+        "thumbnail": "https://i.ytimg.com/vi/-kA-8QJXY1g/hqdefault.jpg",
+        "published": "2026-04-16T13:00:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Routines Just Dropped, And It's Perfect",
+        "url": "https://www.youtube.com/watch?v=j3aXJNu9804",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "j3aXJNu9804",
+        "thumbnail": "https://i.ytimg.com/vi/j3aXJNu9804/hqdefault.jpg",
+        "published": "2026-04-14T19:08:20.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code Channels = Your Own OpenClaw",
+        "url": "https://www.youtube.com/watch?v=HN6Zd6sZT-A",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "HN6Zd6sZT-A",
+        "thumbnail": "https://i.ytimg.com/vi/HN6Zd6sZT-A/hqdefault.jpg",
+        "published": "2026-04-14T13:00:27.000Z",
+        "summary": ""
+      },
+      {
+        "title": "FULL Claude Tutorial For Beginners in 2026! (FULL COURSE)",
+        "url": "https://www.youtube.com/watch?v=Xg55nTrbYYY",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "Xg55nTrbYYY",
+        "thumbnail": "https://i.ytimg.com/vi/Xg55nTrbYYY/hqdefault.jpg",
+        "published": "2026-04-13T13:01:03.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Managed Agents: Deploy AI Agents That Run for Hours",
+        "url": "https://www.youtube.com/watch?v=DpfLbBuhHOg",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "DpfLbBuhHOg",
+        "thumbnail": "https://i.ytimg.com/vi/DpfLbBuhHOg/hqdefault.jpg",
+        "published": "2026-04-09T14:05:29.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Managed Agents Just Dropped, And It Kills n8n",
+        "url": "https://www.youtube.com/watch?v=Ob5Vu-gD3mo",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "Ob5Vu-gD3mo",
+        "thumbnail": "https://i.ytimg.com/vi/Ob5Vu-gD3mo/hqdefault.jpg",
+        "published": "2026-04-08T18:42:51.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Learn Claude Code INSIDE Claude Code (Hidden Feature)",
+        "url": "https://www.youtube.com/shorts/DwiXdPg__6g",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "DwiXdPg__6g",
+        "thumbnail": "https://i.ytimg.com/vi/DwiXdPg__6g/hqdefault.jpg",
+        "published": "2026-04-08T13:43:10.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Mythos Preview: Everything You Need to Know",
+        "url": "https://www.youtube.com/watch?v=oCuttuCQmZg",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "oCuttuCQmZg",
+        "thumbnail": "https://i.ytimg.com/vi/oCuttuCQmZg/hqdefault.jpg",
+        "published": "2026-04-07T21:24:19.000Z",
+        "summary": ""
+      },
+      {
+        "title": "An initiative to secure the world's software | Project Glasswing",
+        "url": "https://www.youtube.com/watch?v=INGOC6-LLv0",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "INGOC6-LLv0",
+        "thumbnail": "https://i.ytimg.com/vi/INGOC6-LLv0/hqdefault.jpg",
+        "published": "2026-04-07T18:03:51.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Cowork Tutorial - Skills, Tasks & Automation",
+        "url": "https://www.youtube.com/watch?v=YGP706Fcggo",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "YGP706Fcggo",
+        "thumbnail": "https://i.ytimg.com/vi/YGP706Fcggo/hqdefault.jpg",
+        "published": "2026-04-07T13:01:04.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I Built an AI Second Brain Using Claude Code",
+        "url": "https://www.youtube.com/watch?v=zq3q_k8aU-k",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "zq3q_k8aU-k",
+        "thumbnail": "https://i.ytimg.com/vi/zq3q_k8aU-k/hqdefault.jpg",
+        "published": "2026-04-06T00:26:33.000Z",
+        "summary": ""
+      },
+      {
         "title": "I Downloaded Claude Code’s Leak (The Results are INSANE)",
         "url": "https://www.youtube.com/watch?v=67Cbb3DyIxA",
         "source": "Riley Brown",
@@ -459,6 +847,50 @@
         "video_id": "67Cbb3DyIxA",
         "thumbnail": "https://i.ytimg.com/vi/67Cbb3DyIxA/hqdefault.jpg",
         "published": "2026-04-04T00:34:59.000Z",
+        "summary": ""
+      },
+      {
+        "title": "When AIs act emotional",
+        "url": "https://www.youtube.com/watch?v=D4XTefP3Lsc",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "D4XTefP3Lsc",
+        "thumbnail": "https://i.ytimg.com/vi/D4XTefP3Lsc/hqdefault.jpg",
+        "published": "2026-04-02T16:06:59.000Z",
+        "summary": ""
+      },
+      {
+        "title": "The Only Claude Code Tutorial You Need (2026 Update)",
+        "url": "https://www.youtube.com/watch?v=Q0bsphUTLtw",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "Q0bsphUTLtw",
+        "thumbnail": "https://i.ytimg.com/vi/Q0bsphUTLtw/hqdefault.jpg",
+        "published": "2026-04-01T14:01:14.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I Built an App That Spies on ChatGPT (With Claude Code)",
+        "url": "https://www.youtube.com/watch?v=sZPG0weEjw8",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "sZPG0weEjw8",
+        "thumbnail": "https://i.ytimg.com/vi/sZPG0weEjw8/hqdefault.jpg",
+        "published": "2026-03-30T13:01:05.000Z",
+        "summary": ""
+      },
+      {
+        "title": "CLAUDE CODE ADVANCED COURSE — 3 HOURS",
+        "url": "https://www.youtube.com/watch?v=UPtmKh1vMN8",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "UPtmKh1vMN8",
+        "thumbnail": "https://i.ytimg.com/vi/UPtmKh1vMN8/hqdefault.jpg",
+        "published": "2026-03-28T18:59:16.000Z",
         "summary": ""
       },
       {
@@ -473,6 +905,17 @@
         "summary": ""
       },
       {
+        "title": "Building Beautiful UIs in Minutes with Claude Code and Stitch",
+        "url": "https://www.youtube.com/watch?v=gfmbH7aU3TU",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "gfmbH7aU3TU",
+        "thumbnail": "https://i.ytimg.com/vi/gfmbH7aU3TU/hqdefault.jpg",
+        "published": "2026-03-26T13:01:17.000Z",
+        "summary": ""
+      },
+      {
         "title": "Building a Mobile App with OpenAI Codex (Better than Claude Code)",
         "url": "https://www.youtube.com/watch?v=eoEsVQJruow",
         "source": "Riley Brown",
@@ -484,29 +927,65 @@
         "summary": ""
       },
       {
-        "title": "Claude Code can Design Now (Figma is officially in trouble)",
-        "url": "https://www.youtube.com/watch?v=KAX0cWk1fJE",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "KAX0cWk1fJE",
-        "thumbnail": "https://i.ytimg.com/vi/KAX0cWk1fJE/hqdefault.jpg",
-        "published": "2026-03-09T16:00:28.000Z",
+        "title": "Claude Computer Use Just Dropped, Here's How to Hack It",
+        "url": "https://www.youtube.com/watch?v=2u93VTYvG5U",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "2u93VTYvG5U",
+        "thumbnail": "https://i.ytimg.com/vi/2u93VTYvG5U/hqdefault.jpg",
+        "published": "2026-03-24T17:51:10.000Z",
         "summary": ""
       },
       {
-        "title": "Claude Opus 4.6 just built Tinder for Short People(under 4 ft 10) In 3 prompts",
-        "url": "https://www.youtube.com/shorts/uScSzTBTh2s",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "uScSzTBTh2s",
-        "thumbnail": "https://i.ytimg.com/vi/uScSzTBTh2s/hqdefault.jpg",
-        "published": "2026-02-14T03:08:29.000Z",
+        "title": "Claude Code Skills Changed Everything (And Nobody Noticed)",
+        "url": "https://www.youtube.com/watch?v=epZy_NajGnA",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "epZy_NajGnA",
+        "thumbnail": "https://i.ytimg.com/vi/epZy_NajGnA/hqdefault.jpg",
+        "published": "2026-03-24T13:26:45.000Z",
         "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "Claude + Heygen: INSANE Automated Videos! (easy tutorial)",
+        "url": "https://www.youtube.com/watch?v=GnoJaaIHXWU",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "GnoJaaIHXWU",
+        "thumbnail": "https://i.ytimg.com/vi/GnoJaaIHXWU/hqdefault.jpg",
+        "published": "2026-04-19T12:00:22.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
+        "title": "23 INSANE Claude Code Skills... to build your SaaS! (from Gary Tan)",
+        "url": "https://www.youtube.com/watch?v=-o73ECZyjqk",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "-o73ECZyjqk",
+        "thumbnail": "https://i.ytimg.com/vi/-o73ECZyjqk/hqdefault.jpg",
+        "published": "2026-04-19T00:11:31.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
+        "title": "Claude Code: Build an AI Agent That Finds Vulnerabilities",
+        "url": "https://www.youtube.com/watch?v=VFLieg8JjLA",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "VFLieg8JjLA",
+        "thumbnail": "https://i.ytimg.com/vi/VFLieg8JjLA/hqdefault.jpg",
+        "published": "2026-04-18T12:04:55.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
       {
         "title": "v2.1.114",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.114",
@@ -524,6 +1003,18 @@
         "tutorial_kind": "official"
       },
       {
+        "title": "FULL Claude Code Tutorial For Beginners in 2026! (FULL COURSE)",
+        "url": "https://www.youtube.com/watch?v=9pniXngp8kk",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "9pniXngp8kk",
+        "thumbnail": "https://i.ytimg.com/vi/9pniXngp8kk/hqdefault.jpg",
+        "published": "2026-04-17T13:00:31.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
         "title": "v2.1.112",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.112",
         "source": "Claude Code Releases",
@@ -538,6 +1029,18 @@
         "published": "2026-04-16T15:18:45.000Z",
         "summary": "What's changed Claude Opus 4.7 xhigh is now available! Use /effort to tune speed vs. intelligence Auto mode is now available for Max subscribers when using Opus 4.7 Added xhigh effort level for Opus…",
         "tutorial_kind": "official"
+      },
+      {
+        "title": "Claude Code + Obsidian is INSANE! (Claude Ai Tutorial)",
+        "url": "https://www.youtube.com/watch?v=DoRQo3aGaPY",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "DoRQo3aGaPY",
+        "thumbnail": "https://i.ytimg.com/vi/DoRQo3aGaPY/hqdefault.jpg",
+        "published": "2026-04-16T13:00:22.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
       },
       {
         "title": "v2.1.110",
@@ -594,6 +1097,18 @@
         "published": "2026-04-13T17:46:47.000Z",
         "summary": "",
         "tutorial_kind": "official"
+      },
+      {
+        "title": "FULL Claude Tutorial For Beginners in 2026! (FULL COURSE)",
+        "url": "https://www.youtube.com/watch?v=Xg55nTrbYYY",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "Xg55nTrbYYY",
+        "thumbnail": "https://i.ytimg.com/vi/Xg55nTrbYYY/hqdefault.jpg",
+        "published": "2026-04-13T13:01:03.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
       },
       {
         "title": "v2.1.104",
@@ -692,6 +1207,42 @@
         "tutorial_kind": "official"
       },
       {
+        "title": "Learn Claude Code INSIDE Claude Code (Hidden Feature)",
+        "url": "https://www.youtube.com/shorts/DwiXdPg__6g",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "DwiXdPg__6g",
+        "thumbnail": "https://i.ytimg.com/vi/DwiXdPg__6g/hqdefault.jpg",
+        "published": "2026-04-08T13:43:10.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
+        "title": "Claude Cowork Tutorial - Skills, Tasks & Automation",
+        "url": "https://www.youtube.com/watch?v=YGP706Fcggo",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "YGP706Fcggo",
+        "thumbnail": "https://i.ytimg.com/vi/YGP706Fcggo/hqdefault.jpg",
+        "published": "2026-04-07T13:01:04.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
+        "title": "The Only Claude Code Tutorial You Need (2026 Update)",
+        "url": "https://www.youtube.com/watch?v=Q0bsphUTLtw",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "Q0bsphUTLtw",
+        "thumbnail": "https://i.ytimg.com/vi/Q0bsphUTLtw/hqdefault.jpg",
+        "published": "2026-04-01T14:01:14.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
         "title": "Claude is Taking Over: Every New Feature Explained (Full Guide)",
         "url": "https://www.youtube.com/watch?v=_5xDx_lL9fQ",
         "source": "Riley Brown",
@@ -700,6 +1251,18 @@
         "video_id": "_5xDx_lL9fQ",
         "thumbnail": "https://i.ytimg.com/vi/_5xDx_lL9fQ/hqdefault.jpg",
         "published": "2026-03-26T22:45:49.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
+        "title": "Building Beautiful UIs in Minutes with Claude Code and Stitch",
+        "url": "https://www.youtube.com/watch?v=gfmbH7aU3TU",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "gfmbH7aU3TU",
+        "thumbnail": "https://i.ytimg.com/vi/gfmbH7aU3TU/hqdefault.jpg",
+        "published": "2026-03-26T13:01:17.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -720,6 +1283,18 @@
         "video_id": "eoEsVQJruow",
         "thumbnail": "https://i.ytimg.com/vi/eoEsVQJruow/hqdefault.jpg",
         "published": "2026-03-24T19:42:23.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
+        "title": "Claude Computer Use Just Dropped, Here's How to Hack It",
+        "url": "https://www.youtube.com/watch?v=2u93VTYvG5U",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "2u93VTYvG5U",
+        "thumbnail": "https://i.ytimg.com/vi/2u93VTYvG5U/hqdefault.jpg",
+        "published": "2026-03-24T17:51:10.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1174,11 +1749,39 @@
     ],
     "claude_learning": [
       {
+        "title": "Claude + Heygen: INSANE Automated Videos! (easy tutorial)",
+        "url": "https://www.youtube.com/watch?v=GnoJaaIHXWU",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-04-19T12:00:22.000Z",
+        "summary": ""
+      },
+      {
+        "title": "23 INSANE Claude Code Skills... to build your SaaS! (from Gary Tan)",
+        "url": "https://www.youtube.com/watch?v=-o73ECZyjqk",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-04-19T00:11:31.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code: Build an AI Agent That Finds Vulnerabilities",
+        "url": "https://www.youtube.com/watch?v=VFLieg8JjLA",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-04-18T12:04:55.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.114",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.114",
         "source": "Claude Code",
         "published": "2026-04-18T01:34:30.000Z",
         "summary": "What's changed Fixed a crash in the permission dialog when an agent teams teammate requested tool permission"
+      },
+      {
+        "title": "Claude Design just dropped... (Everything you need to know!)",
+        "url": "https://www.youtube.com/watch?v=1YAc1f4v-WU",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-04-17T20:42:54.000Z",
+        "summary": ""
       },
       {
         "title": "v2.1.113",
@@ -1188,6 +1791,20 @@
         "summary": "What's changed Changed the CLI to spawn a native Claude Code binary (via a per-platform optional dependency) instead of bundled JavaScript Added sandbox.network.deniedDomains setting to block specific domains even when…"
       },
       {
+        "title": "FULL Claude Code Tutorial For Beginners in 2026! (FULL COURSE)",
+        "url": "https://www.youtube.com/watch?v=9pniXngp8kk",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-04-17T13:00:31.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How Good is Opus 4.7 Really? (New Claude Code Desktop Test)",
+        "url": "https://www.youtube.com/watch?v=BV9Bnj3l8pk",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-04-17T13:00:21.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.112",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.112",
         "source": "Claude Code",
@@ -1195,11 +1812,39 @@
         "summary": "What's changed Fixed \"claude-opus-4-7 is temporarily unavailable\" for auto mode"
       },
       {
+        "title": "Claude Opus 4.7 Just Dropped... (Everything you need to know)",
+        "url": "https://www.youtube.com/watch?v=3EWyQkaSIq0",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-04-16T19:53:08.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.111",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.111",
         "source": "Claude Code",
         "published": "2026-04-16T15:18:45.000Z",
         "summary": "What's changed Claude Opus 4.7 xhigh is now available! Use /effort to tune speed vs. intelligence Auto mode is now available for Max subscribers when using Opus 4.7 Added xhigh effort level for Opus 4.7, sitting…"
+      },
+      {
+        "title": "Claude Opus-4.7 Just Dropped, And...",
+        "url": "https://www.youtube.com/watch?v=WVQ0lPiWsHQ",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-04-16T14:52:01.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code + Obsidian is INSANE! (Claude Ai Tutorial)",
+        "url": "https://www.youtube.com/watch?v=DoRQo3aGaPY",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-04-16T13:00:22.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Gemma 4 Makes Claude Code 100% FREE",
+        "url": "https://www.youtube.com/watch?v=-kA-8QJXY1g",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-04-16T13:00:00.000Z",
+        "summary": ""
       },
       {
         "title": "We've launched Claude Opus 4.7 , our most capable generally available model for complex reasoning and agentic coding,…",
@@ -1237,6 +1882,13 @@
         "summary": "What's changed Added ENABLE_PROMPT_CACHING_1H env var to opt into 1-hour prompt cache TTL on API key, Bedrock, Vertex, and Foundry ( ENABLE_PROMPT_CACHING_1H_BEDROCK is deprecated but still honored), and…"
       },
       {
+        "title": "Claude Routines Just Dropped, And It's Perfect",
+        "url": "https://www.youtube.com/watch?v=j3aXJNu9804",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-04-14T19:08:20.000Z",
+        "summary": ""
+      },
+      {
         "title": "0.21.2-hotfix-2",
         "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/0.21.2-hotfix-2",
         "source": "MCP Inspector",
@@ -1249,6 +1901,13 @@
         "source": "MCP Inspector",
         "published": "2026-04-14T14:14:11.000Z",
         "summary": "Merge pull request #1199 from modelcontextprotocol/paulc/npm-trusted-…"
+      },
+      {
+        "title": "Claude Code Channels = Your Own OpenClaw",
+        "url": "https://www.youtube.com/watch?v=HN6Zd6sZT-A",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-04-14T13:00:27.000Z",
+        "summary": ""
       },
       {
         "title": "v2.1.107",
@@ -1279,6 +1938,13 @@
         "summary": "chore: bump version to 0.21.2"
       },
       {
+        "title": "FULL Claude Tutorial For Beginners in 2026! (FULL COURSE)",
+        "url": "https://www.youtube.com/watch?v=Xg55nTrbYYY",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-04-13T13:01:03.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.104",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.104",
         "source": "Claude Code",
@@ -1286,10 +1952,31 @@
         "summary": "No content."
       },
       {
+        "title": "Claude Managed Agents: Deploy AI Agents That Run for Hours",
+        "url": "https://www.youtube.com/watch?v=DpfLbBuhHOg",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-04-09T14:05:29.000Z",
+        "summary": ""
+      },
+      {
         "title": "We've launched the advisor tool in public beta. Pair a faster executor model with a higher-intelligence advisor model…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#april-9-2026",
         "source": "Claude API Release Notes",
         "published": "2026-04-09T00:00:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Managed Agents Just Dropped, And It Kills n8n",
+        "url": "https://www.youtube.com/watch?v=Ob5Vu-gD3mo",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-04-08T18:42:51.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Learn Claude Code INSIDE Claude Code (Hidden Feature)",
+        "url": "https://www.youtube.com/shorts/DwiXdPg__6g",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-04-08T13:43:10.000Z",
         "summary": ""
       },
       {
@@ -1300,6 +1987,27 @@
         "summary": "We've launched the ant CLI , a command-line client for the Claude API that enables faster interaction with the Claude API, native integration with Claude Code, and versioning of API resources in YAML files. Learn more in the CLI reference ."
       },
       {
+        "title": "Claude Mythos Preview: Everything You Need to Know",
+        "url": "https://www.youtube.com/watch?v=oCuttuCQmZg",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-04-07T21:24:19.000Z",
+        "summary": ""
+      },
+      {
+        "title": "An initiative to secure the world's software | Project Glasswing",
+        "url": "https://www.youtube.com/watch?v=INGOC6-LLv0",
+        "source": "YouTube · Anthropic",
+        "published": "2026-04-07T18:03:51.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Cowork Tutorial - Skills, Tasks & Automation",
+        "url": "https://www.youtube.com/watch?v=YGP706Fcggo",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-04-07T13:01:04.000Z",
+        "summary": ""
+      },
+      {
         "title": "We announced Claude Mythos Preview is available as a gated research preview for defensive cybersecurity work as part…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#april-7-2026",
         "source": "Claude API Release Notes",
@@ -1307,10 +2015,24 @@
         "summary": "The Messages API is now available on Amazon Bedrock as a research preview. The new Claude in Amazon Bedrock endpoint at /anthropic/v1/messages uses the same request shape as the first-party Claude API and runs on AWS-managed…"
       },
       {
+        "title": "I Built an AI Second Brain Using Claude Code",
+        "url": "https://www.youtube.com/watch?v=zq3q_k8aU-k",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-04-06T00:26:33.000Z",
+        "summary": ""
+      },
+      {
         "title": "I Downloaded Claude Code’s Leak (The Results are INSANE)",
         "url": "https://www.youtube.com/watch?v=67Cbb3DyIxA",
         "source": "YouTube · Riley Brown",
         "published": "2026-04-04T00:34:59.000Z",
+        "summary": ""
+      },
+      {
+        "title": "When AIs act emotional",
+        "url": "https://www.youtube.com/watch?v=D4XTefP3Lsc",
+        "source": "YouTube · Anthropic",
+        "published": "2026-04-02T16:06:59.000Z",
         "summary": ""
       },
       {
@@ -1391,11 +2113,32 @@
         "summary": "Patch Changes #1504 327243c Thanks @corvid-agent ! - Add missing hono peer dependency to @modelcontextprotocol/node . The package already depends on @hono/node-server which requires hono at runtime, but hono was only…"
       },
       {
+        "title": "The Only Claude Code Tutorial You Need (2026 Update)",
+        "url": "https://www.youtube.com/watch?v=Q0bsphUTLtw",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-04-01T14:01:14.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I Built an App That Spies on ChatGPT (With Claude Code)",
+        "url": "https://www.youtube.com/watch?v=sZPG0weEjw8",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-03-30T13:01:05.000Z",
+        "summary": ""
+      },
+      {
         "title": "We've raised the max_tokens cap to 300k on the Message Batches API for Claude Opus 4.6 and Sonnet 4.6. Include the…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#march-30-2026",
         "source": "Claude API Release Notes",
         "published": "2026-03-30T00:00:00.000Z",
         "summary": "We're retiring the 1M token context window beta for Claude Sonnet 4.5 and Claude Sonnet 4 on April 30, 2026 . After that date, the context-1m-2025-08-07 beta header will have no effect on these models, and requests that exceed the…"
+      },
+      {
+        "title": "CLAUDE CODE ADVANCED COURSE — 3 HOURS",
+        "url": "https://www.youtube.com/watch?v=UPtmKh1vMN8",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-03-28T18:59:16.000Z",
+        "summary": ""
       },
       {
         "title": "Claude is Taking Over: Every New Feature Explained (Full Guide)",
@@ -1405,10 +2148,31 @@
         "summary": ""
       },
       {
+        "title": "Building Beautiful UIs in Minutes with Claude Code and Stitch",
+        "url": "https://www.youtube.com/watch?v=gfmbH7aU3TU",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-03-26T13:01:17.000Z",
+        "summary": ""
+      },
+      {
         "title": "Building a Mobile App with OpenAI Codex (Better than Claude Code)",
         "url": "https://www.youtube.com/watch?v=eoEsVQJruow",
         "source": "YouTube · Riley Brown",
         "published": "2026-03-24T19:42:23.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Computer Use Just Dropped, Here's How to Hack It",
+        "url": "https://www.youtube.com/watch?v=2u93VTYvG5U",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-03-24T17:51:10.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code Skills Changed Everything (And Nobody Noticed)",
+        "url": "https://www.youtube.com/watch?v=epZy_NajGnA",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-03-24T13:26:45.000Z",
         "summary": ""
       },
       {
@@ -1431,13 +2195,6 @@
         "source": "Claude API Release Notes",
         "published": "2026-03-13T00:00:00.000Z",
         "summary": "We've removed the dedicated 1M rate limits for all supported models. Your standard account limits now apply across every context length. • We've raised the media limit from 100 to 600 images or PDF pages per request when using the 1M…"
-      },
-      {
-        "title": "Claude Code can Design Now (Figma is officially in trouble)",
-        "url": "https://www.youtube.com/watch?v=KAX0cWk1fJE",
-        "source": "YouTube · Riley Brown",
-        "published": "2026-03-09T16:00:28.000Z",
-        "summary": ""
       },
       {
         "title": "0.21.1",
@@ -1466,13 +2223,6 @@
         "source": "Claude API Release Notes",
         "published": "2026-02-17T00:00:00.000Z",
         "summary": "API code execution is now free when used with web search or web fetch . Sandboxed code execution improves model capability and token efficiency. See the pricing details for standalone usage. • The web search tool and programmatic tool…"
-      },
-      {
-        "title": "Claude Opus 4.6 just built Tinder for Short People(under 4 ft 10) In 3 prompts",
-        "url": "https://www.youtube.com/shorts/uScSzTBTh2s",
-        "source": "YouTube · Riley Brown",
-        "published": "2026-02-14T03:08:29.000Z",
-        "summary": ""
       },
       {
         "title": "We've launched fast mode in research preview for Opus 4.6, providing significantly faster output token generation via…",
