@@ -610,9 +610,9 @@ M4.1   ✅ Lesson schema + loader      title, track, order, minutes, quiz[] (in 
 M4.2   ✅ MCQ renderer               reveal-on-answer, inline explanations. [v0.5.0]
 M4.3   ✅ Progress tracking          per-lesson state in clhub.v1.lessonProgress; track-level
                                      completed/total counts in the Tutorials list. [v0.5.0]
-M4.4   ▢ First lessons (Claude Code)  install + CLAUDE.md conventions + slash commands.
-M4.5   ▢ First lessons (MCP/Skills)   what they are, when to author one.
-M4.6   ▢ First lesson (Blender-AI hybrid)  for the Young Carpets 3D video use case.
+M4.4   ✅ First lessons (Claude Code)  install (M4.1) + CLAUDE.md conventions + slash commands. [v0.5.1]
+M4.5   ✅ First lessons (MCP/Skills)   first-MCP-server + when-to-author-a-skill. [v0.5.1]
+M4.6   ✅ First lesson (Blender-AI hybrid)  for the Young Carpets 3D video use case. [v0.5.1]
 ```
 
 **Phase 5 — Finder tuning from real use:**
@@ -628,15 +628,18 @@ M5.5   ▢ Hybrid wizard auto-check    parse description text → pre-check capa
                                      heuristic; can upgrade to Claude API later.
 ```
 
+> **⚠ HARD CONSTRAINT (locked 2026-04-19):** aiStacked must NEVER make a Claude API call at runtime. All content — lessons, quizzes, snippets, Finder output — is authored statically and checked into the repo. The Phase 6 plan below is superseded by this rule; see M6.x reshape notes.
+
 **Phase 6 — User-authored workflows with on-demand research:**
 
 ```
 M6.1   ▢ "Add workflow" button        writes to clhub.v1.userWorkflows.
-M6.2   ▢ Claude API key handling      localStorage-only, never transmitted off-origin
-                                      except to api.anthropic.com.
-M6.3   ▢ "Research this" button       web-search call → guessed stack + notes + links.
-M6.4   ▢ No-key fallback              "Copy research prompt" → user runs in Claude.ai,
-                                      pastes result back.
+M6.2   ✖ Claude API key handling      REMOVED — no runtime API calls allowed.
+M6.3   ✖ "Research this" button       REMOVED — no runtime API calls allowed.
+M6.4   ▢ Copy research prompt flow   Renamed from "no-key fallback" — this is the ONLY
+                                      research path: generate a ready-to-paste prompt the
+                                      user runs in their own Claude.ai session; paste the
+                                      result back into the workflow card as plain text.
 M6.5   ▢ Author-only promotion flow   promote researched workflows into
                                       data/learn/usecases.json.
 ```

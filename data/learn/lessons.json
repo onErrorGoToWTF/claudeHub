@@ -41,6 +41,206 @@
           "why": "A one-line fix is faster to type than to describe. Reach for Claude Code when the work spans files or needs real context."
         }
       ]
+    },
+    {
+      "slug": "claude-md-conventions",
+      "title": "CLAUDE.md conventions that move the needle",
+      "track": "claude-code",
+      "order": 2,
+      "minutes": 7,
+      "summary": "The five sections every CLAUDE.md should have — Stack, Layout, Conventions, Running locally, Gotchas.",
+      "quiz": [
+        {
+          "q": "What's the target length for a working CLAUDE.md?",
+          "choices": [
+            "10 lines — any more is overkill",
+            "Roughly 50–150 lines, shorter than your README",
+            "As long as needed to cover every architectural decision"
+          ],
+          "answer": 1,
+          "why": "Five focused sections, typically 50–150 lines. Longer than that is noise Claude reads every session; shorter usually misses important rules."
+        },
+        {
+          "q": "Which section belongs in CLAUDE.md?",
+          "choices": [
+            "The complete history of architectural changes",
+            "A tree of the directories Claude should know about with one-liners",
+            "An essay about your team's hiring philosophy"
+          ],
+          "answer": 1,
+          "why": "Layout — the directory tree with terse notes — is one of the five load-bearing sections. History and culture stay in the README or elsewhere."
+        },
+        {
+          "q": "What should you do about a line in CLAUDE.md that never actually changes Claude's behavior?",
+          "choices": [
+            "Leave it — every bit of context helps",
+            "Move it to a longer 'background' section at the bottom",
+            "Delete it — if it doesn't change behavior, it's noise"
+          ],
+          "answer": 2,
+          "why": "CLAUDE.md is load-bearing text Claude re-reads every session. Anything that doesn't change output is just cost. Delete aggressively."
+        }
+      ]
+    },
+    {
+      "slug": "slash-commands-essentials",
+      "title": "Custom slash commands — the real leverage",
+      "track": "claude-code",
+      "order": 3,
+      "minutes": 6,
+      "summary": "Where slash commands live, how arguments work, which ones to author first.",
+      "quiz": [
+        {
+          "q": "Where do project-scoped custom slash commands live?",
+          "choices": [
+            "~/.claude/commands/",
+            "The repo's .claude/commands/ directory",
+            "Inside CLAUDE.md"
+          ],
+          "answer": 1,
+          "why": "Project commands ship with the repo at .claude/commands/<name>.md. ~/.claude/commands/ is for user-scope commands that work across every repo on your machine."
+        },
+        {
+          "q": "How do you pass arguments into a slash command's body?",
+          "choices": [
+            "Use {{args}} — it's the only supported syntax",
+            "Use $ARGUMENTS — it expands to whatever follows the command name",
+            "Arguments aren't supported; author a new command per variant"
+          ],
+          "answer": 1,
+          "why": "$ARGUMENTS is replaced with the full argument string when the command runs. Pair it with an argument-hint in the frontmatter so users know what to type."
+        },
+        {
+          "q": "When is it worth turning a chat prompt into a slash command?",
+          "choices": [
+            "Immediately — every prompt should become a command",
+            "Once you find yourself re-writing the same multi-paragraph prompt for the third time",
+            "Never — commands are for advanced users only"
+          ],
+          "answer": 1,
+          "why": "The repeatability test. If you've typed essentially the same prompt three times, the command pays for its authoring cost inside a week."
+        }
+      ]
+    },
+    {
+      "slug": "when-to-author-a-skill",
+      "title": "When to author a Skill (and when not to)",
+      "track": "skills",
+      "order": 1,
+      "minutes": 7,
+      "summary": "Skills auto-invoke when Claude notices a matching situation. How they differ from slash commands and CLAUDE.md.",
+      "quiz": [
+        {
+          "q": "What's the core behavioral difference between a slash command and a skill?",
+          "choices": [
+            "Slash commands run Bash; skills run Python",
+            "You trigger slash commands; Claude auto-triggers skills when their description matches",
+            "There is no difference — they're two names for the same thing"
+          ],
+          "answer": 1,
+          "why": "Slash = user-triggered. Skill = model-triggered. Same-shaped file; different invocation model."
+        },
+        {
+          "q": "Which YAML frontmatter field tells Claude NOT to auto-invoke a skill?",
+          "choices": [
+            "auto-invoke: false",
+            "disable-model-invocation: true",
+            "manual: true"
+          ],
+          "answer": 1,
+          "why": "disable-model-invocation: true keeps the skill model-invisible. The user can still run it via the /skills menu, but Claude won't trigger it on its own. Right default for destructive work."
+        },
+        {
+          "q": "Which of these is a BAD candidate for a skill?",
+          "choices": [
+            "Scaffolding a new database migration with project-specific naming",
+            "A one-off cleanup task you'll do exactly once this quarter",
+            "Creating a new React component type with bundled templates"
+          ],
+          "answer": 1,
+          "why": "Skills scale badly if every one-off becomes one. The skill you write today for a one-time task rots before you need it again. Use inline instructions instead."
+        }
+      ]
+    },
+    {
+      "slug": "mcp-first-server",
+      "title": "Build your first MCP server",
+      "track": "mcp",
+      "order": 1,
+      "minutes": 10,
+      "summary": "A one-tool weather server in Python or TypeScript, wired into Claude Code via stdio.",
+      "quiz": [
+        {
+          "q": "Which MCP transport should you pick for a local, per-user server you're building first?",
+          "choices": [
+            "HTTP",
+            "SSE",
+            "stdio"
+          ],
+          "answer": 2,
+          "why": "stdio is the simplest transport — Claude spawns the server as a subprocess and talks over stdin/stdout. Graduate to HTTP/SSE only when you need to share the server or host it remotely."
+        },
+        {
+          "q": "What governs whether Claude picks a given MCP tool when it's relevant?",
+          "choices": [
+            "The tool's name",
+            "The tool's description — what it does, on what, with what constraint",
+            "The order the tools were registered"
+          ],
+          "answer": 1,
+          "why": "Claude reads tool descriptions to decide. Vague descriptions mean Claude never uses the tool; specific ones (verb + subject + constraint) get invoked at the right moments."
+        },
+        {
+          "q": "When should you NOT build an MCP server?",
+          "choices": [
+            "When a first-party Claude tool (Bash, Read, Edit, WebFetch) already covers what you need",
+            "When you want Claude to search internal docs that aren't on the public internet",
+            "When you're exposing a new data source that changes frequently"
+          ],
+          "answer": 0,
+          "why": "If Bash/Read/Edit/WebFetch already cover the job, an MCP server adds cost and no value. Internal docs + frequently-changing data sources are classic good-fit cases."
+        }
+      ]
+    },
+    {
+      "slug": "blender-ai-hybrid-hero",
+      "title": "Blender + AI hybrid — the Young Carpets hero shot",
+      "track": "image-video",
+      "order": 1,
+      "minutes": 12,
+      "summary": "A pure-AI pipeline can't yet deliver an accurate explode-view shot. The hybrid pipeline: Blender for geometry, AI for texture + exterior-to-interior motion.",
+      "quiz": [
+        {
+          "q": "Why can't Veo alone handle the 'carpet explodes into its three layers' shot reliably?",
+          "choices": [
+            "Veo can't do camera movement at all",
+            "Veo is great at plausible motion but fudges structurally specific geometry like accurate layered materials",
+            "Veo doesn't support 4K output"
+          ],
+          "answer": 1,
+          "why": "Generative video models blur structure. For a shot where accuracy matters commercially (customers will ask about the pad), owning the geometry in Blender is essential."
+        },
+        {
+          "q": "In the hybrid pipeline, what does Flux or Nano Banana handle?",
+          "choices": [
+            "The final rendered video",
+            "The exterior-to-interior camera push",
+            "Generating photoreal seamless textures used as materials in the Blender scene"
+          ],
+          "answer": 2,
+          "why": "Flux/Nano Banana generate 2K seamless textures for the carpet weave, foam pad, and subfloor — wired into Blender's Principled BSDF. Saves you hours of manual shader authoring."
+        },
+        {
+          "q": "Which part of the shot IS a good fit for pure-AI generation via Veo?",
+          "choices": [
+            "The mid-air separation of the three material layers",
+            "The exterior-to-interior camera push with both keyframes fixed (Nano Banana exterior still → Nano Banana interior still → Veo interpolates)",
+            "Any shot that requires accurate representation of real products"
+          ],
+          "answer": 1,
+          "why": "First/last-frame conditioning on fixed stills plays to Veo's strength — coherent motion between endpoints Veo doesn't have to invent. Structural accuracy stays in Blender."
+        }
+      ]
     }
   ]
 }
