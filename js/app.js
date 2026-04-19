@@ -3328,14 +3328,12 @@
       <div class="fms-model">Model</div>
       <div class="fms-val">Ctx</div>
       <div class="fms-val">$/1M</div>
-      ${benches.map(b => `<div class="fms-val">${b.label}</div>`).join("")}
     `;
     const modelRows = models.map((m, mi) => `
       <div class="fms-row" style="--fms-col:${m.col}">
         <div class="fms-model"><span class="fms-dot" aria-hidden="true"></span>${m.short}</div>
         <div class="fms-val">${m.ctx}</div>
         <div class="fms-val">${m.price}</div>
-        ${benches.map(b => `<div class="fms-val">${b.display[mi]}</div>`).join("")}
       </div>
     `).join("");
 
