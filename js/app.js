@@ -1050,6 +1050,7 @@
   // ---------- Tools catalog (Learn → Tools) ----------
   let toolsData = null;
   let toolsModality = "all";
+  let toolsSort = "default";
 
   // Finder capability-grid state (M1.8). Persisted per-device.
   const FINDER_CAPS_KEY = "clhub.v1.finderCaps";
@@ -1068,7 +1069,7 @@
       if (!res.ok) throw new Error("HTTP " + res.status);
       const data = await res.json();
       toolsData = Array.isArray(data.tools) ? data.tools : [];
-      renderModalityFilter();
+      wireToolsControls();
       renderTools();
       renderCapGrid();
       renderCapFilterBar();
@@ -2486,47 +2487,63 @@
     bar.appendChild(clear);
   }
 
-  function renderModalityFilter() {
-    const host = document.getElementById("modality-filter");
-    if (!host || !toolsData) return;
-    // Count tools per modality for live counts on each pill.
-    const counts = toolsData.reduce((acc, t) => {
-      acc[t.modality] = (acc[t.modality] || 0) + 1;
-      return acc;
-    }, {});
-    host.innerHTML = "";
-    MODALITIES.forEach((m) => {
-      const n = m.id === "all" ? toolsData.length : (counts[m.id] || 0);
-      if (m.id !== "all" && n === 0) return;   // hide empty modalities
-      const pill = document.createElement("button");
-      pill.type = "button";
-      pill.className = "modality-pill" + (m.id === toolsModality ? " is-active" : "");
-      pill.dataset.modality = m.id;
-      pill.setAttribute("role", "tab");
-      pill.setAttribute("aria-selected", m.id === toolsModality ? "true" : "false");
-      pill.innerHTML = `<span class="modality-label">${m.label}</span><span class="modality-count">${n}</span>`;
-      pill.addEventListener("click", () => {
-        toolsModality = m.id;
-        renderModalityFilter();
+  function wireToolsControls() {
+    if (!toolsData) return;
+    const filterEl = document.getElementById("tools-filter");
+    const sortEl   = document.getElementById("tools-sort");
+    if (filterEl) {
+      const counts = toolsData.reduce((acc, t) => {
+        acc[t.modality] = (acc[t.modality] || 0) + 1;
+        return acc;
+      }, {});
+      const opts = MODALITIES
+        .filter((m) => m.id === "all" || (counts[m.id] || 0) > 0)
+        .map((m) => {
+          const n = m.id === "all" ? toolsData.length : counts[m.id];
+          return `<option value="${m.id}">${m.label} (${n})</option>`;
+        }).join("");
+      filterEl.innerHTML = opts;
+      filterEl.value = toolsModality;
+      if (!filterEl.dataset.wired) {
+        filterEl.dataset.wired = "1";
+        filterEl.addEventListener("change", () => {
+          toolsModality = filterEl.value;
+          renderTools();
+        });
+      }
+    }
+    if (sortEl && !sortEl.dataset.wired) {
+      sortEl.dataset.wired = "1";
+      sortEl.value = toolsSort;
+      sortEl.addEventListener("change", () => {
+        toolsSort = sortEl.value;
         renderTools();
       });
-      host.appendChild(pill);
-    });
+    }
   }
 
   function renderTools() {
     const host = document.getElementById("tool-grid");
     if (!host || !toolsData) return;
-    const filtered = toolsModality === "all"
-      ? toolsData
+    let list = toolsModality === "all"
+      ? toolsData.slice()
       : toolsData.filter((t) => t.modality === toolsModality);
+    if (toolsSort === "az") {
+      list.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
+    } else if (toolsSort === "recent") {
+      list.sort((a, b) => {
+        const ta = a.verifiedAt ? Date.parse(a.verifiedAt) : 0;
+        const tb = b.verifiedAt ? Date.parse(b.verifiedAt) : 0;
+        return tb - ta;
+      });
+    }
     host.innerHTML = "";
-    if (filtered.length === 0) {
+    if (list.length === 0) {
       host.innerHTML = `<div class="empty">No tools in this modality yet.</div>`;
       return;
     }
     const frag = document.createDocumentFragment();
-    filtered.forEach((t, i) => {
+    list.forEach((t, i) => {
       const card = document.createElement("button");
       card.type = "button";
       card.className = "tool-card glass" + (t.claudeNative ? " tool-card-claude" : "");

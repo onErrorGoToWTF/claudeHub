@@ -464,9 +464,9 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .nav-brand {
   display: inline-flex;
   align-items: center;
-  padding: 5px 13px 7px;
+  padding: 3px 10px 5px;
   margin: 0 0 -1px 12px;
-  font-size: 14px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.005em;
   background: linear-gradient(180deg, #ffffff 0%, #ececec 100%);
@@ -1913,56 +1913,32 @@ body.modal-open { overflow: hidden; }
 }
 
 /* ===== Tools catalog (Learn → Tools) ===== */
-.modality-filter {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 8px;
-  overflow-x: auto;
-  padding: 2px 0 6px;
-  margin: 0 -4px 4px;
-  scrollbar-width: none;
-}
-.modality-filter::-webkit-scrollbar { display: none; }
-.modality-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  min-height: 44px;
-  border-radius: var(--radius-pill);
+/* Filter + sort dropdowns live in the section-head right slot. Styled to
+   match the subpill visual (same height, radius, border) so they bottom-
+   align with the h2 the same way sub-pills do. */
+.subpill-select {
+  appearance: none;
+  -webkit-appearance: none;
   border: 1px solid var(--border);
-  background: transparent;
+  background:
+    color-mix(in srgb, var(--bg-2) 65%, transparent)
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'><path fill='none' stroke='%23888' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round' d='M1 1l4 4 4-4'/></svg>")
+    no-repeat right 8px center / 10px 6px;
   color: var(--text-2);
+  padding: 6px 26px 6px 10px;
   font-family: inherit;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: -0.005em;
-  white-space: nowrap;
+  min-height: 32px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   touch-action: manipulation;
-  transition: color 0.2s var(--ease-premium),
-              border-color 0.2s var(--ease-premium),
-              background 0.2s var(--ease-premium);
+  transition: color 0.2s var(--ease-premium), border-color 0.2s var(--ease-premium);
 }
-.modality-pill:hover:not(.is-active) {
-  color: var(--text-1);
-  border-color: var(--border-strong);
-}
-.modality-pill.is-active {
-  color: var(--text-1);
-  background: color-mix(in srgb, var(--text-1) 6%, transparent);
-  border-color: var(--border-strong);
-}
-.modality-count {
-  font-variant-numeric: tabular-nums;
-  font-size: 11px;
-  color: var(--text-3);
-  padding: 1px 6px;
-  border-radius: var(--radius-pill);
-  background: color-mix(in srgb, var(--text-1) 5%, transparent);
-}
-.modality-pill.is-active .modality-count {
-  color: var(--text-2);
+.subpill-select:hover  { color: var(--text-1); border-color: var(--border-strong); }
+.subpill-select:focus  { outline: none; color: var(--text-1); border-color: var(--border-strong); }
+@media (max-width: 560px) {
+  .subpill-select { padding: 5px 22px 5px 8px; font-size: 11.5px; min-height: 28px; }
 }
 
 .tool-grid {
