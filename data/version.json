@@ -1,7 +1,7 @@
 {
-  "version": "0.6.76",
-  "milestone": "M8.12.6",
-  "milestoneTitle": "Phase 8.12.6 — YouTube tile gets pink halo identity (border + outer glow via new --color-youtube-pink-border / --color-youtube-pink-glow tokens) and the SVG logo paints YouTube red with a concentrated red-pink drop-shadow glow mirroring the .dash-panel-icon treatment",
-  "deployedAt": "2026-04-19T15:20Z",
+  "version": "0.6.77",
+  "milestone": "M8.12.7",
+  "milestoneTitle": "Phase 8.12.7 — YouTube tile halo repointed to match the logo: border + glow now use --color-youtube-border / --color-youtube-glow (Apple systemRed) instead of the separate pink tokens; pink tokens removed",
+  "deployedAt": "2026-04-19T15:30Z",
   "commitSha": ""
 }

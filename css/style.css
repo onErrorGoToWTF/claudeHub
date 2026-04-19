@@ -106,10 +106,6 @@
   --color-youtube-surface:   rgba(255,59,48,0.14);
   --color-youtube-border:    rgba(255,59,48,0.55);
   --color-youtube-glow:      rgba(255,59,48,0.34);
-  /* Pink halo paired with the red logo — like the chip identity glows but
-     shifted toward magenta so it reads as a distinct pink tile. */
-  --color-youtube-pink-border: rgba(255,92,160,0.62);
-  --color-youtube-pink-glow:   rgba(255,92,160,0.38);
 
   --color-tools-solid:       #ff7a1a;                  /* vibrant tangerine — juicy peel orange */
   --color-tools-surface:     rgba(255,122,26,0.14);
@@ -2011,27 +2007,27 @@ body.modal-open { overflow: hidden; }
    YouTube red with a concentrated red-pink drop-shadow glow that mirrors
    the .dash-panel-icon treatment used by Learn/Projects/Tools. */
 #youtube-open.dash-action-quiet.glass {
-  border-color: var(--color-youtube-pink-border);
+  border-color: var(--color-youtube-border);
   box-shadow:
-    inset 0 0 0 1px var(--color-youtube-pink-border),
-    0 0 12px 0 var(--color-youtube-pink-glow),
+    inset 0 0 0 1px var(--color-youtube-border),
+    0 0 12px 0 var(--color-youtube-glow),
     0 6px 16px -6px rgba(0,0,0,0.14);
   transition:
     box-shadow  0.2s var(--ease-premium),
     border-color 0.2s var(--ease-premium);
 }
 #youtube-open.dash-action-quiet.glass:hover {
-  border-color: var(--color-youtube-pink-border);
+  border-color: var(--color-youtube-border);
   box-shadow:
-    inset 0 0 0 1px var(--color-youtube-pink-border),
-    0 0 18px 0 var(--color-youtube-pink-glow),
+    inset 0 0 0 1px var(--color-youtube-border),
+    0 0 18px 0 var(--color-youtube-glow),
     0 8px 20px -8px rgba(0,0,0,0.18);
 }
 #youtube-open.dash-action-quiet.glass svg {
   color: var(--color-youtube-solid);
   filter:
     drop-shadow(0 0 1.5px var(--color-youtube-solid))
-    drop-shadow(0 0 4px var(--color-youtube-pink-glow));
+    drop-shadow(0 0 4px var(--color-youtube-glow));
 }
 
 /* ===== YouTube modal (M5.2) ===== */
