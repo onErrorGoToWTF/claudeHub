@@ -187,6 +187,7 @@
   //   OpenAI / GPT        → electric teal/mint
   //   Google / Gemini     → electric blue
   //   xAI / Grok          → electric magenta
+  // Brand-locked colors used ONLY in model-comparison charts — do not repurpose for UI chrome.
   const MODEL_COL = {
     claude: "#ff7a3d",
     openai: "#14b8a6",
@@ -3791,13 +3792,13 @@
     let defs = `
       <defs>
         <linearGradient id="line-grad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%"   stop-color="#3b82f6"/>
-          <stop offset="65%"  stop-color="#60a5fa"/>
-          <stop offset="100%" stop-color="#a684ff"/>
+          <stop offset="0%"   stop-color="#40c8e0"/>
+          <stop offset="65%"  stop-color="#64dff5"/>
+          <stop offset="100%" stop-color="#2a9aad"/>
         </linearGradient>
         <linearGradient id="area-grad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="#3b82f6" stop-opacity="0.35"/>
-          <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+          <stop offset="0%"   stop-color="#40c8e0" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#40c8e0" stop-opacity="0"/>
         </linearGradient>
       </defs>`;
 
