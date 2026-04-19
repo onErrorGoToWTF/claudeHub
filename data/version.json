@@ -1,7 +1,7 @@
 {
-  "version": "0.6.104",
-  "milestone": "M8.12.34",
-  "milestoneTitle": "Phase 8.12.34 — all three dash-panel icons reshaped/repositioned to occupy the same ~18×18 bbox inside viewBox 0 0 24 24: Projects folder path redrawn to fill vertical span 3→21, Learn book-stack rotated-book shifted right +1 so right edge lands near x=21, Tools wrench wrapped in scale(0.92) centered at (12,12) so its naturally-wider shape shrinks to match. No preserveAspectRatio tricks",
-  "deployedAt": "2026-04-19T21:00Z",
+  "version": "0.6.105",
+  "milestone": "M8.12.35",
+  "milestoneTitle": "Phase 8.12.35 — YouTube logo restyled as an impression pressed into the glass: neutral dark stroke (0.28α) + white highlight 1px below + soft dark shadow 1px above simulates an inset recess. No more red tint; noticeable but quiet",
+  "deployedAt": "2026-04-19T21:10Z",
   "commitSha": ""
 }

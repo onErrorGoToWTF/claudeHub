@@ -2045,9 +2045,16 @@ body.modal-open { overflow: hidden; }
     background: var(--glass-fallback);
   }
 }
+/* M8.12.35 — logo reads as an "impression" pressed into the glass:
+   neutral dark stroke + stacked drop-shadows that fake an inset: a
+   crisp white highlight 1px below (light catching the bottom rim of
+   the recess) and a soft dark shadow 1px above (shadow at the top
+   rim). Noticeable but quiet — no red tint. */
 #youtube-open.dash-action-quiet.glass svg {
-  color: var(--color-youtube-solid);
-  filter: drop-shadow(0 0 1.2px var(--color-youtube-glow));
+  color: rgba(0,0,0,0.28);
+  filter:
+    drop-shadow(0 1px 0 rgba(255,255,255,0.80))
+    drop-shadow(0 -0.5px 0.5px rgba(0,0,0,0.22));
 }
 
 /* ===== YouTube modal (M5.2) ===== */
