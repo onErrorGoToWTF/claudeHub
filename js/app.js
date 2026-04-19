@@ -619,9 +619,21 @@
       if (!item.summary) sum.remove();
     } else {
       const img = node.querySelector("img");
-      if (item.thumbnail) {
-        img.src = item.thumbnail;
+      // Prefer the scraped thumbnail; fall back to a YouTube-derived thumb
+      // when the URL is a YouTube link but the feed skipped media:thumbnail
+      // (some sources strip it). Last resort: drop the .thumb container so
+      // the card doesn't render a broken image.
+      let thumbUrl = item.thumbnail;
+      if (!thumbUrl) {
+        const vid = extractYouTubeId(item.url);
+        if (vid) thumbUrl = `https://i.ytimg.com/vi/${vid}/hqdefault.jpg`;
+      }
+      if (thumbUrl) {
+        img.src = thumbUrl;
         img.alt = item.title || "";
+      } else {
+        const thumbBox = node.querySelector(".thumb");
+        if (thumbBox) thumbBox.remove();
       }
     }
     return node;
