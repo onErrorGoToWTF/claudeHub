@@ -183,11 +183,12 @@
 }
 
 :root[data-theme="light"] {
-  /* Klack-inspired: warm off-white page (#f8f6f3), greige for cards
-     (#ede9e4) so cards have natural depth against the page. */
-  --bg-0: #f8f6f3;    /* page base — warm off-white */
-  --bg-1: #ede9e4;    /* card base — greige */
-  --bg-2: #ffffff;    /* card elevated — pure white */
+  /* Lighter, more neutral-gray page (M8.10.6). Panel cards sit just
+     a hair darker than the page so the bg/card contrast is subtle.
+     Charts stay pure white — max contrast vs the page, maximum pop. */
+  --bg-0: #eeece7;    /* page base — light neutral gray, minimal warm */
+  --bg-1: #e7e4dd;    /* card base — just a touch darker than page */
+  --bg-2: #ffffff;    /* chip / CTA elevated — pure white (top of stack) */
   --bg-3: #ffffff;    /* second elevation */
   --surface:        rgba(255,255,255,0.86);
   --surface-strong: rgba(255,255,255,0.96);
@@ -197,20 +198,20 @@
   --text-2: rgba(26,24,22,0.64);
   --text-3: rgba(26,24,22,0.36);
 
-  --border:        rgba(30,24,16,0.08);
+  --border:        rgba(30,24,16,0.09);
   --border-strong: rgba(30,24,16,0.16);
 
-  /* Light-mode glass + ambient (tokens). Glass reads as very-pale warm
-     white with the greige/white base behind it. Ambient alphas drop. */
-  --glass-top:        rgba(255,255,255,0.82);
-  --glass-bottom:     rgba(245,242,236,0.70);
-  --glass-fallback:   rgba(255,255,255,0.94);
-  --chips-glass-top:    rgba(255,255,255,0.72);
-  --chips-glass-bottom: rgba(245,242,236,0.56);
+  /* Glass: panel cards hover just above the page — small tonal step,
+     defined more by border + shadow than by background contrast. */
+  --glass-top:        rgba(246,243,236,0.88);
+  --glass-bottom:     rgba(232,228,219,0.76);
+  --glass-fallback:   rgba(246,243,236,0.94);
+  --chips-glass-top:    rgba(255,253,246,0.78);
+  --chips-glass-bottom: rgba(238,235,227,0.62);
   --ambient-warm:    rgba(240,170,70,0.05);
   --ambient-plasma:  rgba(130,150,180,0.04);
-  --bloom-warm:      rgba(240,170,70,0.09);
-  /* Chart cards pop against the warm-white page: pure white cards. */
+  --bloom-warm:      rgba(240,170,70,0.10);
+  /* Charts always max-contrast — pure white card on the neutral page. */
   --chart-card-bg:     #ffffff;
   --chart-card-border: rgba(30,24,16,0.10);
 
