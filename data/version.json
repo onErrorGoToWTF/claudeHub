@@ -1,7 +1,7 @@
 {
-  "version": "0.6.67",
-  "milestone": "M8.11.1",
-  "milestoneTitle": "Phase 8.11.1 — CSS dark-mode purge: :root block is now light-only; every :root[data-theme=\"light\"] override merged into base; cameo utility removed; data-theme attribute dropped from <html>",
-  "deployedAt": "2026-04-19T12:15Z",
+  "version": "0.6.68",
+  "milestone": "M8.11.2",
+  "milestoneTitle": "Phase 8.11.2 — dead-code cleanup: .topbar/.topbar-inner/.brand*, .glass-pill, .glass-strong, .topbar-actions removed; yt-modal backdrop lightened for light mode",
+  "deployedAt": "2026-04-19T12:30Z",
   "commitSha": ""
 }

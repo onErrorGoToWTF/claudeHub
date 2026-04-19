@@ -243,11 +243,6 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
     background 0.3s var(--ease-premium),
     box-shadow 0.3s var(--ease-premium);
 }
-.glass-strong {
-  --glass-blur: 32px;
-  --glass-saturate: 180%;
-  --glass-alpha: 0.62;
-}
 /* Elevated glass — modals/popovers that rise above page content. */
 .glass-elevated {
   --glass-blur: 36px;
@@ -257,7 +252,6 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
     0 24px 60px -16px rgba(30,20,10,0.22),
     0 4px 14px -6px rgba(30,20,10,0.12);
 }
-.glass-pill { border-radius: var(--radius-sm); }
 @supports not (backdrop-filter: blur(1px)) {
   .glass { background: var(--glass-fallback); }
 }
@@ -306,33 +300,9 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 
 /* ===== Top bar ===== */
-/* Brand + icon actions row scrolls away normally; the .chips nav
-   (below the topbar-inner) is the piece that stays pinned — see
-   .chips sticky rule. */
-.topbar {
-  padding-top: var(--safe-t);
-  background: color-mix(in srgb, var(--bg-0) 70%, transparent);
-  -webkit-backdrop-filter: var(--blur-strong);
-          backdrop-filter: var(--blur-strong);
-  border-bottom: 1px solid var(--border);
-}
-.topbar-inner {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 10px max(18px, var(--safe-l)) 10px max(18px, var(--safe-r));
-}
-.brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
-.brand-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--text-1);
-  box-shadow: 0 0 0 3px var(--accent-soft), 0 0 14px var(--accent-glow);
-}
-.brand-title {
-  font-size: 15px; font-weight: 600; letter-spacing: -0.015em;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  color: var(--text-1);
-}
-.brand-sep { color: var(--text-3); font-weight: 400; }
-.brand-sub { color: var(--text-2); font-weight: 500; }
+/* (.topbar / .topbar-inner / .brand* rules removed in M8.11.2 — the
+   topbar container was retired when the nav-wrap became the fixed
+   top bar; those classes no longer appear in the rendered DOM.) */
 
 .icon-btn {
   width: 40px; height: 40px; border-radius: 10px;
@@ -1423,13 +1393,6 @@ body.modal-open { overflow: hidden; }
   .tool-modal-title { font-size: 20px; }
 }
 
-/* ===== Topbar actions cluster ===== */
-.topbar-actions {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
 .card-pill[data-pill="resolved"]  { background: rgba(16,185,129,0.14); color: #059669; }
 .card-pill[data-pill="info"]      { background: rgba(37,99,235,0.12);  color: #2563eb; }
 .card-title {
@@ -1917,7 +1880,7 @@ body.modal-open { overflow: hidden; }
 }
 .yt-modal-backdrop {
   position: absolute; inset: 0;
-  background: color-mix(in srgb, #000 68%, transparent);
+  background: color-mix(in srgb, #201c14 42%, transparent);
   -webkit-backdrop-filter: blur(14px);
           backdrop-filter: blur(14px);
 }
