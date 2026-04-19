@@ -458,24 +458,23 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   color: var(--text-1);
   display: flex; align-items: center; gap: 10px;
 }
-/* M8.12.12 — section-head accent renders as 6 halving bands: widths
-   4 / 2 / 1 / 0.5 / 0.25 / 0.125 px, alphas 100% → 50% → 25% → 13% →
-   6% → 3%, gaps 3 / 1.5 / 0.75 / 0.375 / 0.1875 px. Each successive
-   band is half as thick, half as visible, and half-spaced from the
-   last — visual echo fading to nothing. Color source: --band (set
+/* M8.12.13 — section-head accent: 6-band halving echo tuned for a
+   70s-marketing vibe. Widths halve 8 / 4 / 2 / 1 / 0.5 / 0.25 px,
+   alphas halve 100 / 50 / 25 / 13 / 6 / 3 %, gaps stay uniform at
+   1px so the stripes read as a tight set. Color source: --band (set
    per-section below), falling back to --sec / --text-3. */
 .section-head h2::before {
   content: "";
   display: inline-block;
-  width: 14px; height: 20px;
+  width: 21px; height: 20px;
   --band: var(--sec, var(--text-3));
   background:
-    linear-gradient(var(--band) 0 0)                                                   0        50% / 4px     100%,
-    linear-gradient(color-mix(in srgb, var(--band) 50%, transparent) 0 0)              7px      50% / 2px     100%,
-    linear-gradient(color-mix(in srgb, var(--band) 25%, transparent) 0 0)              10.5px   50% / 1px     100%,
-    linear-gradient(color-mix(in srgb, var(--band) 13%, transparent) 0 0)              12.25px  50% / 0.5px   100%,
-    linear-gradient(color-mix(in srgb, var(--band)  6%, transparent) 0 0)              13.125px 50% / 0.25px  100%,
-    linear-gradient(color-mix(in srgb, var(--band)  3%, transparent) 0 0)              13.5625px 50% / 0.125px 100%;
+    linear-gradient(var(--band) 0 0)                                      0      50% / 8px   100%,
+    linear-gradient(color-mix(in srgb, var(--band) 50%, transparent) 0 0) 9px    50% / 4px   100%,
+    linear-gradient(color-mix(in srgb, var(--band) 25%, transparent) 0 0) 14px   50% / 2px   100%,
+    linear-gradient(color-mix(in srgb, var(--band) 13%, transparent) 0 0) 17px   50% / 1px   100%,
+    linear-gradient(color-mix(in srgb, var(--band)  6%, transparent) 0 0) 19px   50% / 0.5px 100%,
+    linear-gradient(color-mix(in srgb, var(--band)  3%, transparent) 0 0) 20.5px 50% / 0.25px 100%;
   background-repeat: no-repeat;
   background-color: transparent;
   flex-shrink: 0;

@@ -1,7 +1,7 @@
 {
-  "version": "0.6.82",
-  "milestone": "M8.12.12",
-  "milestoneTitle": "Phase 8.12.12 — section-head accent goes from single pill to 6-band halving echo: widths 4→0.125px, alphas 100→3%, gaps 3→0.1875px. Visual echo of the section color fading to nothing. Per-section --band custom prop replaces the prior background overrides",
-  "deployedAt": "2026-04-19T16:20Z",
+  "version": "0.6.83",
+  "milestone": "M8.12.13",
+  "milestoneTitle": "Phase 8.12.13 — section-head accent retuned for 70s marketing vibe: starts thicker (8px), stripes halve width (8→0.25px), uniform 1px gap between bands, alphas halve (100→3%) — tight set reading as one graphic unit",
+  "deployedAt": "2026-04-19T16:30Z",
   "commitSha": ""
 }
