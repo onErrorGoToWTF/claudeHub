@@ -1,7 +1,7 @@
 {
-  "version": "0.6.106",
-  "milestone": "M8.12.36",
-  "milestoneTitle": "Phase 8.12.36 — \"YouTube\" wordmark inside the tile also rendered as a glass impression: neutral-dark fill + stacked text-shadow highlight-below / shadow-above, matching the logo treatment",
-  "deployedAt": "2026-04-19T21:20Z",
+  "version": "0.6.107",
+  "milestone": "M8.12.37",
+  "milestoneTitle": "Phase 8.12.37 — nav goes transparent Apple glass with impressed labels. --chips-glass-top/bottom dropped to rgba(255,255,255,0.32→0.14); each chip bg becomes 0.22→0.08 white gradient + backdrop blur+saturate. Chip labels render as debossed text: rgba(0,0,0,0.42) + stacked text-shadow (white highlight below, dark above). Active chip stays solid white for prominence and clears the text-shadow",
+  "deployedAt": "2026-04-19T21:35Z",
   "commitSha": ""
 }
