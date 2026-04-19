@@ -673,7 +673,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .chip:hover { color: var(--text-2); }
 .chip.is-active {
   color: var(--text-1);
-  background: color-mix(in srgb, var(--bg-3) 85%, transparent);
+  background: var(--bg-2);
   border-color: var(--border-strong);
 }
 
@@ -4992,60 +4992,58 @@ body.modal-open { overflow: hidden; }
   animation: cbarPulse 1.6s var(--ease) calc(var(--hbar-delay) + 1.55s) infinite;
 }
 
-/* ===== Chip accent treatments — per-tab rainbow ===== */
-/* Home (no modifier class) — neutral. Tools & Projects also neutral until
-   the user assigns rainbow colors for them. */
+/* ===== Chip accent treatments — per-tab rainbow =====
+   Active chip: solid surface background (white in light / near-black
+   in dark), text in the theme's primary color, colored edge + slight
+   glow per tab. The tab color lives on the border, not the fill. */
 .chip.is-active {
   color: var(--text-1);
-  background: color-mix(in srgb, var(--bg-3) 85%, transparent);
+  background: var(--bg-2);
   border-color: var(--border-strong);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 .chip:hover:not(.is-active) {
   color: var(--text-2);
 }
 
-/* Learn — orange */
 .chip-learn.is-active {
-  color: var(--color-learn-solid);
-  background: var(--color-learn-surface);
+  color: var(--text-1);
+  background: var(--bg-2);
   border-color: var(--color-learn-border);
-  box-shadow: 0 0 24px -4px var(--color-learn-glow);
+  box-shadow: 0 0 14px -4px var(--color-learn-glow), 0 1px 2px rgba(0,0,0,0.05);
 }
 .chip-learn:hover:not(.is-active) {
   color: var(--color-learn-solid);
   box-shadow: 0 0 18px -6px var(--color-learn-glow);
 }
 
-/* Tools — yellow (dark) / brown (light) */
 .chip-tools.is-active {
-  color: var(--color-tools-solid);
-  background: var(--color-tools-surface);
+  color: var(--text-1);
+  background: var(--bg-2);
   border-color: var(--color-tools-border);
-  box-shadow: 0 0 24px -4px var(--color-tools-glow);
+  box-shadow: 0 0 14px -4px var(--color-tools-glow), 0 1px 2px rgba(0,0,0,0.05);
 }
 .chip-tools:hover:not(.is-active) {
   color: var(--color-tools-solid);
   box-shadow: 0 0 18px -6px var(--color-tools-glow);
 }
 
-/* Projects — blue */
 .chip-projects.is-active {
-  color: var(--color-projects-solid);
-  background: var(--color-projects-surface);
+  color: var(--text-1);
+  background: var(--bg-2);
   border-color: var(--color-projects-border);
-  box-shadow: 0 0 24px -4px var(--color-projects-glow);
+  box-shadow: 0 0 14px -4px var(--color-projects-glow), 0 1px 2px rgba(0,0,0,0.05);
 }
 .chip-projects:hover:not(.is-active) {
   color: var(--color-projects-solid);
   box-shadow: 0 0 18px -6px var(--color-projects-glow);
 }
 
-/* Comply365 — purple */
 .chip-comply365.is-active {
-  color: var(--color-365-solid);
-  background: var(--color-365-surface);
+  color: var(--text-1);
+  background: var(--bg-2);
   border-color: var(--color-365-border);
-  box-shadow: 0 0 24px -4px var(--color-365-glow);
+  box-shadow: 0 0 14px -4px var(--color-365-glow), 0 1px 2px rgba(0,0,0,0.05);
 }
 .chip-comply365:hover:not(.is-active) {
   color: var(--color-365-solid);
