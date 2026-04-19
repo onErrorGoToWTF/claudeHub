@@ -1,6 +1,29 @@
 # aiStacked — the claudeHub rebuild plan
 
-> **Resume-here for a fresh Claude Code session (updated 2026-04-18, v0.3.9):**
+> **Resume-here for a fresh Claude Code session (updated 2026-04-18, v0.4.2 — IA rewrite locked):**
+>
+> **⚠ STRUCTURAL REWRITE IN FLIGHT.** The user locked a new IA on 2026-04-18 (see "IA rewrite — locked 2026-04-18" block below). M3.4–M3.6 from the original Phase 3 plan are deferred; the next milestones are **M3.7 → M3.10** which restructure the site. Read the locked-decisions block before writing any code. Do not extend the old IA.
+>
+> **Top-level tabs (new, final — 6 chips):** Home · Learn · Tools · Projects · YouTube · Comply365. Resources tab is gone. Finder is no longer a subpill — it's the "New project" wizard inside Projects.
+>
+> **Locked answers to the four IA decisions** (from advisor review 2026-04-18):
+>   1. Finder → Projects (as the New-project wizard). Tools → top-level chip. Resources tab removed.
+>   2. Pin + "Add to learning" collapse into one **Save** button (project-scoped + optional note).
+>   3. Tutorials/quizzes subpill stays visible even when empty (user override vs advisor).
+>   4. YouTube = its own top-level chip (not a Home toggle, not a Learn subpill).
+>
+> **Next milestones (sequenced, each phone-reviewed before the next):**
+>   - **M3.7** — Finder → Projects. Move the Finder wizard into Projects as the "New project" flow; drop Finder subpill from Learn; promote Tools to a top-level chip; delete Resources. State-of-AI charts stay on Home behind a `State of AI →` link card (per scope-creep note). News & Media → folded in M3.9.
+>   - **M3.8** — Claude hub collapse. Replace the 5 sub-subpills (Basics/Code/Skills/MCP/Agent SDK) with a single Anthropic Academy pane. Snippets attach to courses at topic-level (not per-course) — opening e.g. "Claude Code 101" reveals every `claude-md` / `hook` / `output-style` / `slash-command` snippet grouped together. Keep What's new and add Tutorials/quizzes shell (empty for now; filled in M4).
+>   - **M3.9** — News fold-in. Charts render on Home behind a `State of AI →` card link (one tap out of Home). News articles feed into Learn → What's new with source filter pills (Anthropic only / All). No mixed video/article list in What's new — videos live on YouTube tab.
+>   - **M3.10** — YouTube top-level + unified Save. Promote video feed to its own top-level chip. Replace existing `.pin-btn` and the planned "Add to learning" with one **Save** button that opens a picker (optional project + optional note). `clhub.v1.pins` and `clhub.v1.learningList` merge into a single `clhub.v1.saves` map. Migration: one-time read-old-keys-and-rewrite on load.
+>
+> **Original Phase 3 leftovers (re-scheduled AFTER M3.10):**
+>   - M3.4 localStorage monitor · M3.5 Multi-collection pinning · M3.6 "Continue where you left off" (Home). These now depend on the new IA so they shift right.
+>
+> **Dev-server live-reload shipped** (chore, 2026-04-18). `scripts/dev_server.py` watches index.html / css / js / data/learn and pushes reloads via SSE. Also exposes `POST /__save_backup` for phone→laptop backup (writes to `backups/`, gitignored). Hard-refresh once after any dev_server.py edit; it doesn't reload itself.
+>
+> **Phase 2 shipped (carry-over, unchanged from previous Resume-here):**
 >
 > 1. **First thing — restart the dev server.** The previous session's background server died when that session ended. Run `python scripts/dev_server.py 8765` from the repo root before any code work so the user's phone review path stays live. Phone URL: `http://10.0.0.214:8765/`. Run it in the background so it keeps serving while you work.
 > 2. **Branch state:** feat/aistacked-rebuild is **ahead of `main`** with Phase 2 complete at v0.3.9 (M2.10). Last merge to main was v0.3.2 (Phase 2.1–2.3). The branch now carries M2.4–M2.10. Merge/tag when user approves after phone review. Rollback anchor still at tag `pre-learning-path` (commit `ce457f9`).
@@ -28,6 +51,100 @@
 > 11. **Verify SDK snippets before shipping.** Agent-produced SDK code has hallucinated API shapes (caught in M2.3 — TS MCP SDK). Spot-check against real SDK source or README before committing snippet content.
 >
 > **Do not** start the next milestone without user phone-review of the previous. **Do not** swap the no-cache dev server without first round-tripping a `localStorage` write/read. **Do not** introduce `confirm()` / `alert()` / `prompt()` in this codebase — use the two-tap in-UI pattern. **Do not** ship a new feed/list without a pin CTA.
+
+---
+
+# IA rewrite — locked 2026-04-18 (between M3.3 and M3.7)
+
+**Trigger.** After shipping M3.3 the user pushed back on the Claude-hub subpill
+sprawl (Basics / Code / Skills / MCP / Agent SDK / What's new — 6 sub-subpills,
+horizontally scrolling on phone) and on the overall Learn tab framing. Over a
+back-and-forth (full log in chat transcript), we converged on a new IA. After
+the final recap the user requested an advisor review; advisor flagged four
+decisions as still-open. User answered them. Those answers are now load-bearing.
+
+## Top-level tabs (final)
+
+```
+Home · Learn · Tools · Projects · YouTube · Comply365
+```
+
+Six chips. Each earns its slot — no bundling, no hidden modes.
+
+- **Home** — dashboards only. "Continue where you left off" (in-progress
+  projects), learn progress, a `State of AI →` card that links out to the
+  existing charts (charts themselves no longer render on Home). Top news
+  headlines **do NOT** appear on Home — they live in Learn → What's new.
+- **Learn** — 3 subpills: *What's new* · *Courses* · *Tutorials/quizzes*.
+  - *What's new*: text feed only — Anthropic docs changelog, GH releases,
+    Academy diffs, news articles (TechCrunch/Verge/Ars). Source filter pills
+    (Anthropic only / All).
+  - *Courses*: two tabs — *Anthropic Academy* (scraped catalog) · *aiStacked
+    Originals* (custom authored: CLAUDE.md, Skills, Claude Design, etc.).
+    Each course expands to reveal snippets whose topic tags match the
+    course's track (topic-level grouping, not per-course mapping).
+  - *Tutorials/quizzes*: empty shell until M4 ships authored lessons. Kept
+    visible per user override (advisor recommended hiding until content
+    lands).
+- **Tools** — the per-tool catalog (old Learn → Tools). Tool-detail modal
+  (M2.9) already built — no change. Promoted out of Learn to top-level.
+- **Projects** — project list + "New project" button that opens the Finder
+  wizard inline. The Finder no longer has its own subpill; its only entry
+  point is the Projects tab.
+- **YouTube** — video feed, scraped from the same YT channels used today.
+  Every video card carries the unified Save button.
+- **Comply365** — unchanged (data-wise). Design pass only.
+
+## The four load-bearing decisions
+
+These came out of the advisor review. Losing any of them means re-rewriting.
+
+1. **Finder → Projects.** The Finder is the "new project" wizard. It has one
+   home: Projects. (Rejected alternative: keep Finder inside a "Resources"
+   tab. Rejected reason: Resources bundled a task (Finder) with a reference
+   catalog (Tools) — category error.)
+
+2. **One Save, not two.** Pin and "Add to learning" collapse into a single
+   **Save** action on every card. The Save picker takes an optional project
+   and an optional one-line note. Storage:
+   ```
+   clhub.v1.saves = {
+     [id]: { kind: "video" | "article" | "tool" | "snippet",
+             url?, title, thumb?, note?, projectId?, addedAt }
+   }
+   ```
+   Migration on first load after M3.10: read `clhub.v1.pins` +
+   `clhub.v1.learningPins` (Claude learning pins) + any `pinnedTools[]` /
+   `pinnedSnippets[]` on project objects → normalize into `clhub.v1.saves`.
+   Keep old keys readable but stop writing to them.
+
+3. **Tutorials/quizzes stays visible.** User override of advisor's
+   "hide-until-content" recommendation. Ship the subpill with an empty-state
+   message; it'll populate in Phase 4 (M4.1+). If the empty pane starts
+   teaching users to distrust the UI, revisit.
+
+4. **YouTube = top-level chip.** Not a Home toggle, not a Learn subpill.
+   Video consumption is frequent enough to earn a top-level slot.
+
+## Sequencing — one small milestone at a time
+
+Big-bang rewrites cause re-rewrites. The advisor pushed for four independent,
+phone-reviewed milestones. Hold that line:
+
+- **M3.7** — nav restructure + Resources deletion. Smallest possible diff that
+  makes the new top-level real. Finder moves inside Projects. No Claude-hub
+  changes yet; Learn → Claude subpill stays exactly as it is. Ship. Review
+  on phone. Tag.
+- **M3.8** — Claude hub collapse. Only after M3.7 ships clean. Academy pane
+  replaces the 5 sub-subpills; snippets attach at topic level.
+- **M3.9** — News fold-in. Charts → Home link card; news feed → Learn →
+  What's new with source filter.
+- **M3.10** — YouTube promotion + unified Save. Last step because the Save
+  migration touches every prior pin-based surface.
+
+**Do NOT batch these.** Each one must round-trip through phone review before
+the next starts. Exception: if the user explicitly says "finish the whole IA
+rewrite in one session" (like they did at the end of Phase 2).
 
 ---
 
@@ -453,8 +570,34 @@ M2.10  ✅ Global cmd-K search      topbar search over title + tags; copy-to-cli
 M3.1   ✅ Project notes pad          markdown pad per project. [v0.4.0]
 M3.2   ✅ Pin button on tool pages   + pin button on snippet rows; project-scoped picker. [v0.4.1]
 M3.3   ✅ JSON export / import       device backup. [v0.4.2]
+
+--- IA rewrite locked 2026-04-18 — M3.4–M3.6 deferred ---
+
+M3.7   ▢ Finder → Projects          Move Finder wizard into Projects as "New project" flow.
+                                    Drop Finder subpill from Learn. Promote Tools to top-level.
+                                    Delete Resources tab. State-of-AI charts move behind a
+                                    "State of AI →" card on Home.
+M3.8   ▢ Claude hub collapse        Replace 5 sub-subpills (Basics/Code/Skills/MCP/Agent SDK)
+                                    with a single Anthropic Academy pane. Snippets attach to
+                                    courses at topic-level: opening a course reveals every
+                                    snippet whose topic matches the course's track.
+                                    Learn subpills after this step: What's new · Courses ·
+                                    Tutorials/quizzes (Tutorials empty shell, filled in M4).
+M3.9   ▢ News fold-in               Charts linked-to from Home (not inline). News articles
+                                    feed into Learn → What's new with source filter pills
+                                    (Anthropic only / All). No video/article mixed list.
+M3.10  ▢ YouTube + unified Save     Promote video feed to its own top-level chip.
+                                    Collapse Pin + "Add to learning" into ONE Save button
+                                    (optional project + optional note). Migrate
+                                    clhub.v1.pins + clhub.v1.learningList → clhub.v1.saves
+                                    on first load after M3.10 ships.
+
+--- Re-scheduled after M3.10 (originally Phase 3 earlier) ---
+
 M3.4   ▢ localStorage monitor       usage bar, per-category breakdown, purge actions.
 M3.5   ▢ Multi-collection pinning   clhub.v1.collections model; Comply365 collection.
+                                    Note: overlaps heavily with M3.10 unified Save — revisit
+                                    scope after M3.10 ships; may be partially subsumed.
 M3.6   ▢ "Continue where you left off"  Home dashboard populates from in-progress state.
 ```
 
