@@ -1,10 +1,12 @@
-# aiStacked — the claudeHub rebuild plan
+# aiStacked — the claudeHub rebuild plan (HISTORICAL)
+
+> **⚠ HISTORICAL DOCUMENT — superseded by `docs/plans/v0.7-design-system-refactor.md`.** This plan documented the aiStacked rebuild through v0.4–v0.6. Project has since rebranded to **aiUniversity**. Content below is preserved for history only and should not drive new implementation.
 
 > **Resume-here for a fresh Claude Code session (updated 2026-04-18, v0.4.2 — IA rewrite locked):**
 >
 > **⚠ STRUCTURAL REWRITE IN FLIGHT.** The user locked a new IA on 2026-04-18 (see "IA rewrite — locked 2026-04-18" block below). M3.4–M3.6 from the original Phase 3 plan are deferred; the next milestones are **M3.7 → M3.10** which restructure the site. Read the locked-decisions block before writing any code. Do not extend the old IA.
 >
-> **Top-level tabs (new, final — 6 chips):** Home · Learn · Tools · Projects · YouTube · Comply365. Resources tab is gone. Finder is no longer a subpill — it's the "New project" wizard inside Projects.
+> **Top-level tabs (new, final — 6 chips):** Home · Learn · Tools · Projects · YouTube. Resources tab is gone. Finder is no longer a subpill — it's the "New project" wizard inside Projects.
 >
 > **Locked answers to the four IA decisions** (from advisor review 2026-04-18):
 >   1. Finder → Projects (as the New-project wizard). Tools → top-level chip. Resources tab removed.
@@ -42,7 +44,7 @@
 > 5. **Fixed snippetTags** (in snippets.json schema note): claude-md, slash-command, hook, output-style, mcp-config, skill-yaml, prompt-image, prompt-video, prompt-system, n8n-workflow, prompt-nocode, sdk-anthropic, code-python.
 > 6. **Tools catalog:** 14 tools in `data/learn/tools.json`, now each carrying `snippetTags: []` to drive the M2.9 per-tool snippet filter. Still a stub — extend when the Finder starts recommending broader stacks (Phase 5).
 > 7. **Next up — Phase 3 (My Projects depth):**
->    - M3.1 Project notes pad (markdown) · M3.2 Pin button on tool pages + snippet rows · M3.3 JSON export/import · M3.4 localStorage monitor · M3.5 Multi-collection pinning (Comply365) · M3.6 "Continue where you left off" on Home.
+>    - M3.1 Project notes pad (markdown) · M3.2 Pin button on tool pages + snippet rows · M3.3 JSON export/import · M3.4 localStorage monitor · M3.5 Multi-collection pinning · M3.6 "Continue where you left off" on Home.
 >    - Before starting: confirm with user whether to merge v0.3.9 to `main` + tag first, or keep stacking on `feat/aistacked-rebuild`.
 > 7. **Known taxonomy gap.** Capability grid doesn't cover 3D / motion (Blender, Meshy) or premium-motion UI (Apple-glass). Flagged for Phase 5 (M5.4). Descriptions mentioning those won't resolve to tools until the taxonomy grows.
 > 8. **Known Finder gap.** Textarea doesn't auto-check capability boxes yet (hybrid wizard deferred, M5.5). Continue scrolls to grid; caps are manual.
@@ -66,7 +68,7 @@ decisions as still-open. User answered them. Those answers are now load-bearing.
 ## Top-level tabs (final)
 
 ```
-Home · Learn · Tools · Projects · YouTube · Comply365
+Home · Learn · Tools · Projects · YouTube
 ```
 
 Six chips. Each earns its slot — no bundling, no hidden modes.
@@ -93,7 +95,6 @@ Six chips. Each earns its slot — no bundling, no hidden modes.
   point is the Projects tab.
 - **YouTube** — video feed, scraped from the same YT channels used today.
   Every video card carries the unified Save button.
-- **Comply365** — unchanged (data-wise). Design pass only.
 
 ## The four load-bearing decisions
 
@@ -160,7 +161,7 @@ claudeHub today is a news/dashboard site. The user wants to repivot to **learnin
 4. **Projects** — the user's in-flight builds. A project is a saved Finder output + pinned tutorials + saved snippets + notes.
 5. **Snippet / reference lookup** — searchable code snippets, JSON configs (MCP configs, Cursor rules, n8n workflow JSON), prompt templates. Each tool's setup instructions pull from here.
 
-Authored long-form tutorials with end-of-lesson MCQ quizzes remain, but they are content that hangs off Tools and the Finder — not the backbone. News / status / 365 stay, demoted from headline to background service. Staying-current flows into each Tool page's own "what's new" feed.
+Authored long-form tutorials with end-of-lesson MCQ quizzes remain, but they are content that hangs off Tools and the Finder — not the backbone. News and status feeds stay, demoted from headline to background service. Staying-current flows into each Tool page's own "what's new" feed.
 
 Rollback anchor already in place: tag `pre-learning-path` at commit `ce457f9` (local + origin).
 
@@ -211,19 +212,6 @@ News / Media       (merged — "what should I learn next" signal layer)
 ├── Status strip          status.anthropic.com severity pills
 ├── Videos                YouTube how-tos + news videos
 └── Articles              news articles (videos render above articles)
-
-Comply365          (renamed from "365" — purple accent)
-├── News / Media          scraped news + videos specific to aviation
-│                         compliance AI, Comply365, and competitors
-│                         (Web Manuals · Flydocs · Ideagen). Videos
-│                         above articles. New: YouTube channel
-│                         scraping for aviation-compliance content.
-└── Learning Paths        user-pinned tutorials + future authored
-                          end-user lessons (non-developer tone:
-                          Claude.ai web UI, Projects, Artifacts —
-                          not Claude Code CLI). Empty in Phase 1;
-                          user pins content from elsewhere on the site
-                          to curate a Comply365 path.
 ```
 
 ## Progress & multi-collection pinning (cross-cutting)
@@ -234,13 +222,11 @@ A pin model that spans all tutorials/lessons/snippets across the site, not just 
 // localStorage
 clhub.v1.collections = {
   "my-projects": { type: "project-group", title: "My Projects" },
-  "comply365":   { type: "audience", title: "Comply365 training",
-                    tone: "end-user", audience: "aviation-compliance" },
   // user may create more collections later
 }
 clhub.v1.pins = {
   [itemId]: {
-    collections: ["my-projects:prj_3dvideo","comply365"],  // multi-pin
+    collections: ["my-projects:prj_3dvideo"],  // multi-pin
     state: "not_started" | "in_progress" | "completed",
     startedAt: ISO, completedAt: ISO
   }
@@ -248,15 +234,10 @@ clhub.v1.pins = {
 ```
 
 **UX:**
-- Every tutorial / lesson / video card across the site has a **pin button** → picker listing available collections (My Projects children + Comply365 + custom). Multi-select allowed.
+- Every tutorial / lesson / video card across the site has a **pin button** → picker listing available collections (My Projects children + custom). Multi-select allowed.
 - Every such card also has a **state selector** (`Not started · In progress · Completed`) rendered as a subtle three-dot control. State shows as a small chip on the card.
 - Home dashboard shows "Continue where you left off" = all `in_progress` items across collections.
-- Comply365 → Learning Paths pane renders every item pinned with `collections` including `"comply365"`, grouped by state.
 - My Projects pane filters to items where `collections` starts with `"my-projects:"`.
-
-**Audience tone for Comply365 (when authored lessons arrive):**
-- End-user focus: Claude.ai web app, Projects feature, Artifacts, file uploads, Claude for compliance docs workflow.
-- Skip: Claude Code CLI, MCP server authoring, Agent SDK, anything requiring a terminal.
 
 Drops standalone **Resources** tab. The old Resources content (videos + official docs) is folded INSIDE each relevant Tool page — so e.g. the "Claude Code" tool page shows its own videos + official docs + recent news. No separate Library pane is needed once Tools becomes the primary axis.
 
@@ -364,7 +345,7 @@ Full seed catalog of **31 tools** with this exact shape was produced by the rese
 }
 ```
 
-### Lesson markdown frontmatter (extends existing `data/365/tutorials/` pattern)
+### Lesson markdown frontmatter
 
 ```md
 ---
@@ -426,7 +407,7 @@ The research-produced 10-group taxonomy assumes web projects. To support the use
 - **`tpl-tutorial`** template + `renderMarkdown()` + `renderTutorials()` in `js/app.js` — extend for lessons + quizzes
 - **`tpl-card`, `tpl-video`** — reuse inside tool pages (tool page includes a mini-feed of its scraped videos + official docs)
 - **`registerReveal()`** stagger animation — reuse on all new card grids
-- **Sub-pill cross-fade pattern** from 365/Resources — reuse for Learn sub-tabs
+- **Sub-pill cross-fade pattern** — reuse for Learn sub-tabs
 - **Scraped YouTube/official items** — already have `tutorial_kind`; tool pages filter `sections.tutorials` + `sections.news` by each tool's `newsKeywords` — no new scrapers needed
 
 ## New code (minimum)
@@ -443,7 +424,7 @@ No new scrapers. No backend. Static site preserved.
 ## Phased rollout (Finder + Claude hub as MVP)
 
 **Phase 1 (MVP — the thing that makes the pivot feel real on day one)**
-Fresh rewrite on a feature branch. 4 top-level tabs: Home · Learn · News/Media · Comply365. Inside Learn: 4 sub-pills (Claude · Finder · Tools · My Projects) all scaffolded.
+Fresh rewrite on a feature branch. 3 top-level tabs: Home · Learn · News/Media. Inside Learn: 4 sub-pills (Claude · Finder · Tools · My Projects) all scaffolded.
 
 Functional in Phase 1:
 - **Claude hub** — static first pass: Basics, Claude Code, Skills, CLAUDE.md, MCP, Agent SDK sections. Stay-current feed uses existing scraped YouTube + news filtered by `claude` keywords (new scraper comes in Phase 1.5).
@@ -451,7 +432,6 @@ Functional in Phase 1:
 - **Tools** — browsable grid filtered by modality. Tool pages render tagline/pricing/links + filtered videos from `sections.tutorials` + news from `sections.news`.
 - **My Projects** — Save-from-Finder writes localStorage entry. Project cards on the sub-pill show saved finder output + chosen path. No notes pad or pin buttons yet.
 - **News/Media tab** — merge of old Status + Videos + Articles. Reuses existing render logic.
-- **Comply365 tab** — rename from "365" only. Scope unchanged.
 
 **Phase 1.5 — Claude learning scraper**
 `scripts/fetch_claude_learning.js`: Anthropic docs changelog, Claude Code releases, Anthropic Academy diff, MCP spec bumps, curated YouTube channels. Output under `sections.claude_learning`. Claude hub's "Recently updated" section lights up.
@@ -504,7 +484,7 @@ Phases are too coarse for weekly review. Inside every phase, break into **milest
 
 ```
 M1.1  ✅ Brand flip             title + header → "aiStacked"; meta desc         [v0.1.1]
-M1.2  ✅ 4-tab nav structure    Home / Learn / News-Media / Comply365 shells    [v0.1.2]
+M1.2  ✅ 4-tab nav structure    Home / Learn / News-Media shells               [v0.1.2]
 M1.3  ✅ Home → News move       migrate the 5 chart cards out of Home           [v0.1.3]
 M1.4  ✅ Home dashboard shell   empty-state cards (progress, finder CTA)        [v0.1.4]
 M1.5  ✅ Tools catalog grid     14-tool stub (not 31), modality filter + counts [v0.1.5]
@@ -596,7 +576,7 @@ M3.10  ▢ YouTube + unified Save     Promote video feed to its own top-level ch
 --- Re-scheduled after M3.10 (originally Phase 3 earlier) ---
 
 M3.4   ✅ localStorage monitor       usage bar, per-key breakdown, per-key delete (two-tap). [v0.4.7]
-M3.5   ▢ Multi-collection pinning   clhub.v1.collections model; Comply365 collection.
+M3.5   ▢ Multi-collection pinning   clhub.v1.collections model.
                                     Note: overlaps heavily with M3.10 unified Save — revisit
                                     scope after M3.10 ships; may be partially subsumed.
 M3.6   ✅ "Continue where you left off"  Home dashboard populates from in-progress state. [v0.4.7]
@@ -726,7 +706,7 @@ Browsers cap `localStorage` at ~5-10MB per origin. Projects + pins stay small, b
   - Snippet favourites — `N items · X KB`
   - Research cache — `N entries · X KB` (usually the biggest)
   - Lesson progress — `N items · X KB`
-  - Collections (Comply365 etc.) — `N items · X KB`
+  - Collections — `N items · X KB`
 - **Item-level list per category** with last-accessed timestamp, size, delete button. Sortable by size or age.
 - **Bulk actions per category**:
   - `Clear all research cache (oldest first)`
@@ -834,7 +814,7 @@ The Finder's recommendation is a *starting point*, never a final answer. At ever
 
 - **Brand: `aiStacked`** (locked). Replaces "Claude Daily Intelligence Hub" in `<title>`, header logo, and meta description. Tagline candidate: "Find the stack. Learn the stack. Ship the project."
 - **Responsive MVP, phone priority today.** Design the Finder wizard + checkbox grid + dual-path output to work cleanly on phone AND desktop from day one. Where desktop and mobile fight for space (e.g. dual-column Easy/Best), phone layout wins; desktop gets a wider variant layered on top. Touch targets ≥44px, no hover-only states, sheet-based collection pickers on mobile.
-- **Apply AI tab: merged into Learn.** Drops to 4 top-level tabs (Home · Learn · News/Media · Comply365). Old `Best tool per task` taskgrid becomes a compact view inside Learn → Tools. Old `Workflow recipes` become outputs of the Finder, saveable as Use cases in My Projects. No Apply AI tab remains.
+- **Apply AI tab: merged into Learn.** Drops to 3 top-level tabs (Home · Learn · News/Media). Old `Best tool per task` taskgrid becomes a compact view inside Learn → Tools. Old `Workflow recipes` become outputs of the Finder, saveable as Use cases in My Projects. No Apply AI tab remains.
 - **Build strategy: fresh rewrite on a feature branch.** Keep scrapers (`scripts/`), data pipeline, CLAUDE.md design tokens, rollback tag. Rewrite `index.html`, `css/style.css`, `js/app.js` from scratch around the new IA rather than retrofit. Reason: existing `js/app.js` (1370 lines) is tangled around the old 5-tab model; absorbing a Finder wizard + tool pages + project workspace would churn most of it anyway.
 
 ## Claude hub (first-class inside Learn → Tools)
@@ -866,7 +846,6 @@ Output written to `data/latest.json` under a new `sections.claude_learning` key.
 
 ## Open questions (flag, don't block)
 
-- **Do 365 tutorials unify with Learn tutorials, or stay siloed?** Default: siloed. 365 is audience-filtered; Learn is the owner's general curriculum.
 - **Import/export of localStorage state** so the user can back up projects across devices? Default: JSON download/upload added in Phase 4.
 - **Auth-gated author-only mode?** Default: no. All content is public; learner state is local.
 - **Tool catalog curation burden** — tools.json is the spine and will drift as the field moves. Default: author once in Phase 1, then revise quarterly alongside the Home charts; each tool's `currentVersion` field is the main thing that rots. A future `data/tools/versions.json` could be auto-refreshed by a scraper if maintenance becomes painful.

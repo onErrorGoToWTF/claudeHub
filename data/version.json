@@ -1,7 +1,7 @@
 {
-  "version": "0.6.116",
-  "milestone": "M8.12.46",
-  "milestoneTitle": "Phase 8.12.46 — v0.7 refactor pre-flight: schema.md contract doc, TOC blocks on css/style.css + js/app.js, CLAUDE.md tree refresh, 365-token rename to violet, milestone-deploy skill, v0.7 execution plan + open-questions doc. Tag target: v0.6.115-pre-refactor ",
-  "deployedAt": "2026-04-19T23:55Z",
+  "version": "0.6.117",
+  "milestone": "M8.12.47",
+  "milestoneTitle": "Phase 8.12.47 — full Comply365 scrub: removed all references from index.html, palette-preview.html, CLAUDE.md, docs/status.md, docs/plans/aistacked-v1.md, data/schema.md, js/app.js, and the debug-feed-failure + design-review skills. Also brought design-review skill up to current design language (light-only, 6px pill rule, impressed labels, --base/--accent-* notes).",
+  "deployedAt": "2026-04-20T00:10Z",
   "commitSha": ""
 }

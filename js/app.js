@@ -49,7 +49,7 @@
      - Videos render before articles in mixed lists; never interleave.
      - Data fetched with ?v=<timestamp> cache-buster (see constants below).
      - DISTINCT_SECTIONS: home, learn, tools, projects — exclusive visibility.
-       SECTIONS: []    (empty post-M8.12.4; 365 tab decommissioned)
+       SECTIONS: []    (non-exclusive feed sections; empty today)
    =============================================================================*/
 
 (() => {

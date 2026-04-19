@@ -174,8 +174,9 @@
   --color-model-xai-text:         #a61fb5;
 
   /* ===== Tab identity colors — four-corner electric palette =====
-     Learn lime-green, Projects deep orange, Tools deep electric blue,
-     365 purple. Borders + glows pumped for the electric halo. */
+     Learn lime-green, Projects ocean cyan, Tools tangerine,
+     plus a violet accent retained for unrelated gradients.
+     Borders + glows pumped for the electric halo. */
   --color-learn-solid:       #84cc16;                  /* lime — vibrant green with a yellow tint */
   --color-learn-surface:     rgba(132,204,22,0.14);
   --color-learn-border:      rgba(132,204,22,0.55);

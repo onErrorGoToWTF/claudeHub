@@ -65,7 +65,6 @@ News items may carry `_kind: "news_video"` when a YouTube clip is routed into ne
 
 **Gotchas**:
 - `merge()` in the orchestrator preserves prior values when a fetch returns empty; the site never blanks on transient fetch failure.
-- `sections.comply365_news` was removed in M8.12.4 — do not reintroduce.
 
 ---
 

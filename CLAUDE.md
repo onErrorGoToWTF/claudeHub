@@ -87,7 +87,7 @@ python -m http.server 8765
 
 ## Tabs (`index.html` chips)
 
-**Dashboard · Learn · Projects · Tools** — in that order, inside the fixed floating glass nav pill (`.nav-wrap > .chips.glass`). The 365 tab was decommissioned in M8.12.4. Nav chips are translucent glass with impressed/debossed labels (M8.12.37); active chip stays solid white for prominence.
+**Dashboard · Learn · Projects · Tools** — in that order, inside the fixed floating glass nav pill (`.nav-wrap > .chips.glass`). Nav chips are translucent glass with impressed/debossed labels (M8.12.37); active chip stays solid white for prominence.
 
 - **Dashboard** (neutral grey placeholder `#9a938a` — may be retuned):
   - Section head carries a square **YouTube tile** (`#youtube-open.dash-action.dash-action-quiet.glass`) top-right. Tile is transparent Apple glass; logo + wordmark render as a glass impression (neutral dark stroke + stacked highlight/shadow text-shadow, M8.12.35/36). Tapping opens the YouTube modal.
@@ -128,7 +128,7 @@ Charts were removed from the Dashboard in M8.11.4 (parked at `_parked/dashboard-
 - **Cache aggressiveness:** hard-refresh after deploys. `data/*.json` is fetched with `?v=<timestamp>` but service workers / PWA caching can still lag.
 - **YouTube Atom feeds are flaky:** channels return 500/404 intermittently. `merge()` in the orchestrator preserves prior data rather than emptying the section.
 - **GitHub Pages base path:** live URL is `/claudeHub/`, not `/`. Keep all in-page links relative.
-- **`--color-violet-*` / `--accent-violet-*` tokens** are the renamed 365-purple tokens (rename in M8.12.46 pre-refactor). Still referenced by unrelated gradients (chart text, hero mix, etc.) — don't delete.
+- **`--color-violet-*` / `--accent-violet-*` tokens** are still referenced by unrelated gradients (chart text, hero mix, etc.) — don't delete.
 
 ## Design language
 

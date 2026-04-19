@@ -1,6 +1,6 @@
 ---
 name: debug-feed-failure
-description: Diagnoses and recovers from broken claudeHub scrapers. Use when a section of data/latest.json looks stale, empty, or wrong — for example "the videos tab hasn't updated", "news is empty", "comply365_news is stuck", or after a GitHub Actions feed-refresh run fails. Walks through section-level anomaly detection, isolates the failing fetcher, re-runs it locally with visible errors, identifies the root cause (moved feed URL, new XML shape, rate limit, SSL), and produces a minimal fix.
+description: Diagnoses and recovers from broken claudeHub scrapers. Use when a section of data/latest.json looks stale, empty, or wrong — for example "the videos tab hasn't updated", "news is empty", or after a GitHub Actions feed-refresh run fails. Walks through section-level anomaly detection, isolates the failing fetcher, re-runs it locally with visible errors, identifies the root cause (moved feed URL, new XML shape, rate limit, SSL), and produces a minimal fix.
 allowed-tools: Read, Edit, Grep, Glob, Bash
 argument-hint: [section-name]
 ---
@@ -18,7 +18,7 @@ A claudeHub section is stale or empty. Your job: identify which scraper failed, 
 
 ## Isolate the failing fetcher
 
-Given `$ARGUMENTS` (section name like `news`, `videos`, `comply365_news`), map to the fetcher(s) that feed it — read `scripts/build_latest_json.js` to confirm. Then run standalone with real errors surfaced:
+Given `$ARGUMENTS` (section name like `news`, `youtube`, `tutorials`, `claude_learning`, `updates`, `status`), map to the fetcher(s) that feed it — read `scripts/build_latest_json.js` to confirm. Then run standalone with real errors surfaced:
 
 ```bash
 node --stack-trace-limit=50 scripts/fetch_<name>.js
