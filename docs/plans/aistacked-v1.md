@@ -618,8 +618,11 @@ M4.6   ✅ First lesson (Blender-AI hybrid)  for the Young Carpets 3D video use 
 **Phase 5 — Finder tuning from real use:**
 
 ```
-M5.1   ▢ priorityScore / setupComplexity  recalibrate against the 3 seed use cases.
-M5.2   ▢ Concrete setup snippets per tool  Finder output becomes copy-paste-runnable.
+M5.1   ✅ priorityScore / setupComplexity  Cursor 5→4 (user: "don't expect to use Cursor
+                                             much"). Others held — no user-data yet to
+                                             justify blind retuning. Revisit after usage. [v0.5.6]
+M5.2   ✅ Concrete setup snippets per tool  setupSnippet on each of 18 tools. Tool modal
+                                             shows it below the Links row with Copy. [v0.5.6]
 M5.3   ✅ "Browse example projects" in Finder  load a pre-filled wizard (Young Carpets etc.). [v0.5.4]
 M5.4   ✅ Capability taxonomy v2      3D/motion, local/desktop, premium-motion UI added
                                      + Blender, Meshy, DaVinci Resolve, Framer Motion. [v0.5.3]

@@ -1149,6 +1149,52 @@ body.modal-open { overflow: hidden; }
 .tool-modal-snippets-title {
   margin-bottom: 8px;
 }
+
+/* ===== Tool modal setup snippet (M5.2) ===== */
+.tool-modal-setup { margin-bottom: 18px; }
+.tool-modal-setup[hidden] { display: none !important; }
+.tool-modal-setup-head {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-3, var(--text-2));
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.tool-modal-setup-pre {
+  margin: 0 0 6px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, #000 35%, transparent);
+  overflow: auto;
+}
+.tool-modal-setup-pre code {
+  color: var(--text-1);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre;
+}
+.tool-modal-setup-copy {
+  padding: 6px 12px;
+  min-height: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 11.5px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.tool-modal-setup-copy:hover {
+  color: var(--text-1);
+  border-color: var(--border-strong);
+  background: color-mix(in srgb, var(--text-1) 5%, transparent);
+}
+.tool-modal-setup-copy[data-state="ok"]  { color: color-mix(in srgb, #34d399 85%, var(--text-2)); }
+.tool-modal-setup-copy[data-state="err"] { color: #f87171; }
 .tool-modal-snippets:empty { display: none; }
 .tool-modal-snippets[data-empty="1"] .tool-modal-snippet-list::after {
   content: "No snippets for this tool yet.";

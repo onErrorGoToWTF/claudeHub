@@ -2756,6 +2756,32 @@
     }
     q(".tool-modal-links").innerHTML = links.join("");
 
+    // M5.2: setup snippet — shown right below the links when present.
+    const setupHost = q(".tool-modal-setup");
+    if (setupHost) {
+      if (tool.setupSnippet) {
+        const body = String(tool.setupSnippet);
+        setupHost.hidden = false;
+        setupHost.innerHTML = `
+          <div class="tool-modal-setup-head">Setup</div>
+          <pre class="tool-modal-setup-pre"><code>${escapeHtml(body)}</code></pre>
+          <button type="button" class="tool-modal-setup-copy" data-setup-body="${escapeHtml(body)}">Copy</button>
+        `;
+        const copyBtn = setupHost.querySelector(".tool-modal-setup-copy");
+        if (copyBtn) copyBtn.addEventListener("click", async (ev) => {
+          ev.preventDefault();
+          try {
+            await navigator.clipboard.writeText(body);
+            copyBtn.textContent = "Copied"; copyBtn.dataset.state = "ok";
+          } catch { copyBtn.textContent = "Copy failed"; copyBtn.dataset.state = "err"; }
+          setTimeout(() => { copyBtn.textContent = "Copy"; copyBtn.dataset.state = ""; }, 1600);
+        });
+      } else {
+        setupHost.hidden = true;
+        setupHost.innerHTML = "";
+      }
+    }
+
     // Snippets filtered by this tool's snippetTags
     const tagSet = new Set(tool.snippetTags || []);
     const matching = tagSet.size

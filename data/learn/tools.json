@@ -48,7 +48,8 @@
         "skill-yaml",
         "mcp-config",
         "sdk-anthropic"
-      ]
+      ],
+      "setupSnippet": "npm install -g @anthropic-ai/claude-code\nclaude       # sign in on first run\ncd your/repo && claude"
     },
     {
       "id": "claude-ai",
@@ -86,7 +87,8 @@
       "verifiedAt": "2026-04-18",
       "snippetTags": [
         "prompt-system"
-      ]
+      ],
+      "setupSnippet": "Open https://claude.ai and sign in. Pro or Max plan unlocks the deeper usage. No install."
     },
     {
       "id": "claude-agent-sdk",
@@ -126,7 +128,8 @@
       "snippetTags": [
         "sdk-anthropic",
         "mcp-config"
-      ]
+      ],
+      "setupSnippet": "npm i @anthropic-ai/sdk       # TS / JS\n# or\npip install anthropic          # Python\nexport ANTHROPIC_API_KEY=sk-..."
     },
     {
       "id": "cursor",
@@ -140,7 +143,7 @@
       "priceTier": "lte20",
       "claudeNative": false,
       "setupComplexity": 1,
-      "priorityScore": 5,
+      "priorityScore": 4,
       "provides": [
         "code-generation",
         "ide",
@@ -160,7 +163,8 @@
         "cursor editor"
       ],
       "verifiedAt": "2026-04-18",
-      "snippetTags": []
+      "snippetTags": [],
+      "setupSnippet": "Download from https://cursor.com. Sign in on first launch. Free tier or Pro $20/mo."
     },
     {
       "id": "lovable",
@@ -196,7 +200,8 @@
       "verifiedAt": "2026-04-18",
       "snippetTags": [
         "prompt-nocode"
-      ]
+      ],
+      "setupSnippet": "Sign up at https://lovable.dev. Click \"New project\", type what you want, iterate in-browser. No install."
     },
     {
       "id": "v0",
@@ -232,7 +237,8 @@
       "verifiedAt": "2026-04-18",
       "snippetTags": [
         "prompt-nocode"
-      ]
+      ],
+      "setupSnippet": "Sign up at https://v0.app. Type a UI description, copy the generated React component into your repo."
     },
     {
       "id": "n8n",
@@ -270,7 +276,8 @@
       "verifiedAt": "2026-04-18",
       "snippetTags": [
         "n8n-workflow"
-      ]
+      ],
+      "setupSnippet": "# Local via Docker\ndocker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n n8nio/n8n\n# Open http://localhost:5678"
     },
     {
       "id": "nano-banana",
@@ -305,7 +312,8 @@
       "verifiedAt": "2026-04-18",
       "snippetTags": [
         "prompt-image"
-      ]
+      ],
+      "setupSnippet": "Open https://gemini.google.com. Use image generation in-chat or via the Gemini API (Vertex AI) for programmatic access."
     },
     {
       "id": "midjourney",
@@ -339,7 +347,8 @@
       "verifiedAt": "2026-04-18",
       "snippetTags": [
         "prompt-image"
-      ]
+      ],
+      "setupSnippet": "Sign up at https://midjourney.com. Pick a plan (Basic $10/mo and up). Generate via the web app or Discord bot."
     },
     {
       "id": "veo-3-1",
@@ -376,7 +385,8 @@
       "verifiedAt": "2026-04-18",
       "snippetTags": [
         "prompt-video"
-      ]
+      ],
+      "setupSnippet": "Web: via Google Flow at https://labs.google/flow (Gemini Pro tier).\nAPI: Vertex AI Veo endpoints — see cloud.google.com/vertex-ai/generative-ai/docs/video/veo"
     },
     {
       "id": "google-flow",
@@ -413,7 +423,8 @@
       "verifiedAt": "2026-04-18",
       "snippetTags": [
         "prompt-video"
-      ]
+      ],
+      "setupSnippet": "Open https://labs.google/flow. Google account with Gemini Pro access required. Load keyframes, prompt the interpolation, export."
     },
     {
       "id": "elevenlabs",
@@ -446,7 +457,8 @@
         "eleven labs"
       ],
       "verifiedAt": "2026-04-18",
-      "snippetTags": []
+      "snippetTags": [],
+      "setupSnippet": "Sign up at https://elevenlabs.io. Free tier for testing; Creator $22/mo for real use. SDKs: npm i elevenlabs, pip install elevenlabs."
     },
     {
       "id": "vercel",
@@ -482,7 +494,8 @@
         "vercel deploy"
       ],
       "verifiedAt": "2026-04-18",
-      "snippetTags": []
+      "snippetTags": [],
+      "setupSnippet": "# From the repo root\nnpm i -g vercel\nvercel login\nvercel            # preview deploy\nvercel --prod     # ship"
     },
     {
       "id": "supabase",
@@ -517,7 +530,8 @@
         "supabase postgres"
       ],
       "verifiedAt": "2026-04-18",
-      "snippetTags": []
+      "snippetTags": [],
+      "setupSnippet": "1. Create a project at https://supabase.com\n2. Get the project URL + anon key from Settings → API\n3. npm i @supabase/supabase-js\n4. Paste URL + key into your .env.local"
     },
     {
       "id": "blender",
@@ -554,7 +568,8 @@
         "blender.org"
       ],
       "snippetTags": [],
-      "verifiedAt": "2026-04-19"
+      "verifiedAt": "2026-04-19",
+      "setupSnippet": "Download from https://blender.org (free). Run once. Follow a Blender 4.x fundamentals series (1–2 hours) before any real 3D work."
     },
     {
       "id": "meshy",
@@ -585,7 +600,8 @@
         "meshy.ai"
       ],
       "snippetTags": [],
-      "verifiedAt": "2026-04-19"
+      "verifiedAt": "2026-04-19",
+      "setupSnippet": "Sign up at https://meshy.ai. Upload a reference image or type a prompt. Export .glb or .fbx. Free tier for testing."
     },
     {
       "id": "davinci-resolve",
@@ -617,7 +633,8 @@
         "blackmagic"
       ],
       "snippetTags": [],
-      "verifiedAt": "2026-04-19"
+      "verifiedAt": "2026-04-19",
+      "setupSnippet": "Download from https://blackmagicdesign.com/products/davinciresolve (free). Launch, create a project, import your AI clips, grade them to match, export."
     },
     {
       "id": "framer-motion",
@@ -650,7 +667,8 @@
         "motion.dev"
       ],
       "snippetTags": [],
-      "verifiedAt": "2026-04-19"
+      "verifiedAt": "2026-04-19",
+      "setupSnippet": "npm i motion         # in a React app\nimport { motion } from \"motion/react\"\n<motion.div animate={{ x: 100 }} transition={{ type: \"spring\" }} />"
     }
   ]
 }
