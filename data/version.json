@@ -1,7 +1,7 @@
 {
-  "version": "0.6.103",
-  "milestone": "M8.12.33",
-  "milestoneTitle": "Phase 8.12.33 — reverted the icon-uniformity work (M8.12.23→32). Back to original viewBox=\"0 0 24 24\" on all three dash-panel icons, no preserveAspectRatio override, no vector-effect, stroke-width back to 0.5. 54px render size from M8.12.28 retained. Icons will again look mildly inconsistent in size but render at their natural proportions — cleaner than the stretch+compensation approach",
-  "deployedAt": "2026-04-19T20:50Z",
+  "version": "0.6.104",
+  "milestone": "M8.12.34",
+  "milestoneTitle": "Phase 8.12.34 — all three dash-panel icons reshaped/repositioned to occupy the same ~18×18 bbox inside viewBox 0 0 24 24: Projects folder path redrawn to fill vertical span 3→21, Learn book-stack rotated-book shifted right +1 so right edge lands near x=21, Tools wrench wrapped in scale(0.92) centered at (12,12) so its naturally-wider shape shrinks to match. No preserveAspectRatio tricks",
+  "deployedAt": "2026-04-19T21:00Z",
   "commitSha": ""
 }
