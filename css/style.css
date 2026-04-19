@@ -2100,16 +2100,18 @@ body.modal-open { overflow: hidden; }
   border-color: color-mix(in srgb, var(--color-projects-solid) 65%, var(--border-strong));
   box-shadow: 0 0 26px -4px var(--color-projects-glow);
 }
+/* Matches the nav chip active pattern: solid surface bg, theme text
+   color, tab-identity edge + slight glow. The emerald lives on the
+   border, not the fill. */
 .dash-action-learn {
-  background: var(--color-learn-surface);
+  background: var(--bg-2);
   border-color: var(--color-learn-border);
-  color: var(--color-learn-solid);
-  box-shadow: 0 0 22px -6px var(--color-learn-glow);
+  color: var(--text-1);
+  box-shadow: 0 0 14px -4px var(--color-learn-glow), 0 1px 2px rgba(0,0,0,0.05);
 }
 .dash-action-learn:hover {
-  background: color-mix(in srgb, var(--color-learn-solid) 18%, transparent);
   border-color: color-mix(in srgb, var(--color-learn-solid) 65%, var(--border-strong));
-  box-shadow: 0 0 26px -4px var(--color-learn-glow);
+  box-shadow: 0 0 18px -4px var(--color-learn-glow), 0 1px 2px rgba(0,0,0,0.08);
 }
 /* Panel action row — Start CTA on the left, inline YouTube on the right. */
 .dash-panel-actions {
