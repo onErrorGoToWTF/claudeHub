@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T12:32:47.919Z",
+  "generated_at": "2026-04-19T13:58:19.308Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -155,7 +155,7 @@
       {
         "title": "Changes in the system prompt between Claude Opus 4.6 and 4.7",
         "url": "https://simonwillison.net/2026/Apr/18/opus-system-prompt/",
-        "source": "HN · 34↑",
+        "source": "HN · 58↑",
         "hn_id": "47823270",
         "published": "2026-04-19T10:36:29.000Z",
         "summary": ""
@@ -205,7 +205,7 @@
       {
         "title": "Thoughts and feelings around Claude Design",
         "url": "https://samhenri.gold/blog/20260418-claude-design/",
-        "source": "HN · 336↑",
+        "source": "HN · 340↑",
         "hn_id": "47818700",
         "published": "2026-04-18T19:19:24.000Z",
         "summary": ""
@@ -237,13 +237,6 @@
         "summary": "Despite recently being designated a supply-chain risk by the Pentagon, Anthropic is still talking to high-level members of the Trump administration."
       },
       {
-        "title": "Anthropic’s relationship with the Trump administration seems to be thawing - TechCrunch",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNMWZrZTRFaEgyLVpEamUwdVZsOHVLdUhtRFdvWFdwZnhrNU5iM0tScEV3Rm5kdUsyZlFQWG9lQy1WcC1PYWlTNWdXRVVlNkJ4MzJxd2wyVkp3MUNJcEVSZkJUY0VVNUFId1phMzZUU3ZHNFFXSzZzMm5nQUd4Xzg1bW9aUVhqNXZ1YThoU1lNb3pFajNRM0RrMWROSjdaOWxrRUNVOHprTjZONFJU?oc=5",
-        "source": "Google News",
-        "published": "2026-04-18T14:56:48.000Z",
-        "summary": "Anthropic’s relationship with the Trump administration seems to be thawing TechCrunch"
-      },
-      {
         "title": "Claude Opus 4.7 Intelligence, Performance and Price Analysis",
         "url": "https://artificialanalysis.ai/models/claude-opus-4-7",
         "source": "HN · 33↑",
@@ -271,6 +264,13 @@
         "source": "Google News",
         "published": "2026-04-18T00:30:00.000Z",
         "summary": "What is Anthropic’s Claude Design, and why are Figma and Adobe stocks dropping The Times of India"
+      },
+      {
+        "title": "Anthropic CEO met White House chief of staff as US seeks access to Mythos model - Financial Times",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQd2VaSkFYeTFtaUtIdjZDQ1VLalUyckNzLXpvVDFxb0Z4dkk0ZnFiYU42RXpPRThseHFhbWNUUWZBeUUyNjNXdmNFUF8weTh5Q2JqOFowV0ZXU3lPMms3bDVPbEtKQVlYeHJjRDhFQXBkWnVfLVp6MWMxUHNOUUQ0T1pXY0o?oc=5",
+        "source": "Google News",
+        "published": "2026-04-17T22:10:14.000Z",
+        "summary": "Anthropic CEO met White House chief of staff as US seeks access to Mythos model Financial Times"
       },
       {
         "title": "Anthropic Launches Claude Design, Figma Stock Immediately Nosedives - Gizmodo",
@@ -1844,11 +1844,11 @@
         "summary": "Ideagen Achieves Market-Leading AI Scores, Leading the EHSQ Software Revolution Business Wire"
       },
       {
-        "title": "Ideagen Sets New Benchmark With Record 85 G2 Winter 2026 Badges and 25 Number One Rankings - 01net",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPN2R3RG9GV2UwRUU0bXJGRUJFYndmUlVwSnBMMFlSVUp3amxfREhISHRJT1Qtam9WeGdCR2J6cWJqQmpzUW1wak1yaVlsZXFIU1hsZVlVemRiMTN0b0pueG9XaXVLZVVJWEV4c0ZGb25xVXVUdFdnMkptMkFsdXY0ZW1YMGdqekpXR2ZMRjdYbGd4ekJMNnhScUNkOGh1ZEdxTkRQdjhWdzdGVmlfbmNOYjB3?oc=5",
+        "title": "Ideagen Sets New Benchmark With Record 85 G2 Winter 2026 Badges and 25 Number One Rankings - Business Wire",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPRG5RYVlBNzZQNXZOeUxESG9xcndCdnlZSV95Z3hQS1pxMWRjNVZhNHZHa0YzRERJeU04YlRHTGI2a1o4TDJRUVR2WFBBNVZQVDdnX2M4cEVOc054eDRNUm9SZjBLb183SFRieDN3TkpBWW1HRDJLTWJsRlAxZmdwMVFFUk92bnUtZ2oyeGZscmFjUU8yYjdUNk1mOWFJMDVGamR0cElnU3VGMUdSWVZZZFJvZlJ6VHczbk1xUnpaQnlyOVcteU1HcmUtMUdFMV85UFVRdkt6ZjNub2l4UEszSg?oc=5",
         "source": "Google News",
         "published": "2025-12-04T08:00:00.000Z",
-        "summary": "Ideagen Sets New Benchmark With Record 85 G2 Winter 2026 Badges and 25 Number One Rankings 01net"
+        "summary": "Ideagen Sets New Benchmark With Record 85 G2 Winter 2026 Badges and 25 Number One Rankings Business Wire"
       },
       {
         "title": "ICAO Amendment Is Transforming Safety Documentation in APAC",
@@ -2005,13 +2005,6 @@
         "summary": "Comply365 acquires Rolls-Royce Safety Management Business AviTrader Aviation News"
       },
       {
-        "title": "Ideagen and MHG partner on healthcare for maritime - Smart Maritime Network",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNNFk1ZEZqQmRQOExDWjAtcTBIUlhHODlIbzZ5U1pqR2NLd2lsZ0hCeE5UMEFRMG53aEp0clRxUEV1MldhX1R3YWowRVJHNVlfY0RCR3phTWE1eGJqdTgtbjY3cjBJMDBxR19fMzA3SUpVaS0wSXlDeW9mZkRWVUppVWdqQmNpLXJLWEJtMmNsQ0dFeEQtRm5yTHdDRQ?oc=5",
-        "source": "Google News",
-        "published": "2025-04-10T07:00:00.000Z",
-        "summary": "Ideagen and MHG partner on healthcare for maritime Smart Maritime Network"
-      },
-      {
         "title": "Maritime and Healthcare Group Partners with Ideagen to Launch Innovative Safety Solution for the Maritime Industry - Business Wire",
         "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQZWRBcjdZU2dVZThqT3hGWExkb0JKQXVIMGtFczJhd0xNVTVQVm54YlJzVS1rSEp6dkFBTGtCZmUzUjdmdkRxLUI2MXZvVkJqRG5XaGJna2E3NEhJa2pDbGJIZml1NmNBWmxhampzTG0yOHBSeGgwd2RhUGFVdzdmVGdnTmw4UFhWclBHejhBS2txQmVoaG9hSWt1RnhwNDRYUGZ3RzNLdXMzaTZucFhZenp1NTRxWXhzUkNtM1RZckVtYTFHR0NVSXk2c1hKUjFKTkw3VFBWbWpKeWtsblN4b3E0ekQxLVptS2ttVTBRVmNsSGdfYU5fb0FBRFZSX2pl?oc=5",
         "source": "Google News",
@@ -2024,6 +2017,13 @@
         "source": "Google News",
         "published": "2025-01-28T08:00:00.000Z",
         "summary": "Comply365 takes over Aviation Safety & Quality Solutions (ASQS) AviTrader Aviation News"
+      },
+      {
+        "title": "Comply365 Announces Acquisition of ASQS - PR Newswire",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQakh0bEVWOEtLTnlOUUNSeHRvNXFPSGFfeEE3OEpqNnNSY2VxMWZWRFZfTEswQXg0TC11czVvQVZYbjJfYW9XdXFuYnNRdjZtd1YwZmNULTRmNU95cklQSENwWDdaelFpcjJfZW9oc0V4LU5aQmhMamIyMXFQMHJud2w1YnJoUDZ2aldzU3Y0Z1FBcmlyT0RKZnVuZw?oc=5",
+        "source": "Google News",
+        "published": "2025-01-27T08:00:00.000Z",
+        "summary": "Comply365 Announces Acquisition of ASQS PR Newswire"
       }
     ],
     "claude_learning": [
