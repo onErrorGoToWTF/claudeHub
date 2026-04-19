@@ -788,7 +788,7 @@
       const node = renderCard(it, false, idx);
       const bucket = sourceBucket(it.source, it._bucket);
       node.dataset.learnBucket = bucket;
-      if (pins[it.url]) node.dataset.pinned = "1";
+      if (isSavedAny("learning", it.url)) node.dataset.pinned = "1";
       const pill = node.querySelector(".card-pill");
       if (pill && BUCKET_LABEL[bucket]) {
         pill.textContent = BUCKET_LABEL[bucket];
