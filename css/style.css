@@ -1770,29 +1770,55 @@ body.modal-open { overflow: hidden; }
   max-width: 48ch;
 }
 
-/* Home dashboard grid — phone stacks, desktop goes 2-col. */
-.dash-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  animation: rise 0.55s var(--ease) 0.1s both;
-}
-@media (min-width: 720px) {
-  .dash-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
-}
-.dash-card {
-  padding: 20px 20px 18px;
+/* Dashboard panels (M5) — Learn + Projects + Charts stacked, each is its
+   own full-width glass card with a heading, body, and trailing CTA. */
+.section-home {
   display: flex;
   flex-direction: column;
+  gap: 18px;
+}
+.dash-panel {
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.dash-panel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
   gap: 10px;
-  min-height: 172px;
 }
-.dash-card-primary {
-  /* Chrome stays neutral — the primary CTA inside carries the visual weight. */
+.dash-panel-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-1);
 }
-.dash-card-link {
-  /* Chrome stays neutral. */
+.dash-panel-hint {
+  font-size: 11.5px;
+  color: var(--text-3);
+  letter-spacing: 0.02em;
 }
+.dash-panel-body { display: grid; gap: 6px; }
+.dash-panel .dash-action { margin-top: 4px; }
+.dash-charts-panel {
+  padding: 4px 0 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.dash-charts-panel::before { display: none; }
+.dash-charts-panel > .dash-panel-head {
+  padding: 0 2px 4px;
+}
+.dash-charts-panel > .hero { margin: 0; }
+/* Legacy dash-card kept as alias while any remaining references resolve. */
+.dash-card { padding: 20px 20px 18px; display: flex; flex-direction: column; gap: 10px; }
 
 /* ===== Continue where you left off (M3.6) — recent-projects list on Home ===== */
 .continue-body { display: grid; gap: 6px; }

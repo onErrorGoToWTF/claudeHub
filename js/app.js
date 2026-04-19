@@ -177,7 +177,7 @@
   }
 
   // Sections that render from latest.json and share the filter machinery.
-  const SECTIONS = ["comply365", "news-media"];
+  const SECTIONS = ["comply365"];
   // Sections that are exclusive (only visible when their chip is picked).
   const DISTINCT_SECTIONS = ["home", "learn", "tools", "projects", "youtube"];
 
@@ -247,7 +247,6 @@
     });
     if (f === "comply365") load365();
     if (f === "home") replayHomeAnimations();
-    if (f === "news-media") replayNewsMediaAnimations();
   }
 
   // If a host's bounding rect overlaps the activation zone (middle ~75%
@@ -278,32 +277,18 @@
   }
 
   // Replay Home-tab animations whenever the tab is activated.
-  // Charts moved to News & Media in M1.3 — Home only animates its hero,
-  // stat-grid, and CTA.
+  // M5: charts now live inline on Home; replay them too.
   function replayHomeAnimations() {
     const css = document.querySelectorAll(
-      ".section-home, .section-home .home-hero, .section-home .stat-grid, .section-home .home-cta"
+      ".section-home, .section-home .dash-panel, .section-home .hero"
     );
     css.forEach(el => {
       el.style.animation = "none";
       void el.offsetHeight;      // force reflow
       el.style.animation = "";
     });
-    // M3.6: refresh "Continue where you left off" each time Home is activated.
+    renderDashLearn();
     renderContinueCard();
-  }
-
-  // Replay News & Media chart animations when the tab is activated and the
-  // State-of-AI sub-pill pane is visible (default on tab load).
-  function replayNewsMediaAnimations() {
-    const statePane = document.querySelector('[data-pane="news-media-state"]');
-    if (!statePane || statePane.hidden) return;
-    const css = statePane.querySelectorAll(".hero");
-    css.forEach(el => {
-      el.style.animation = "none";
-      void el.offsetHeight;
-      el.style.animation = "";
-    });
     renderTimeline();
     renderCompare();
     renderIndex();
@@ -423,21 +408,13 @@
   const SUBPILL_ATTR = {
     "learn":      "learn",
     "comply365":  "s365",
-    "news-media": "newsmedia",
     "projects":   "projects-view",
   };
   document.querySelectorAll("[data-chip]").forEach(btn => {
     btn.addEventListener("click", () => {
       const chipName = btn.dataset.chip;
       const chip = document.querySelector(`[data-filter="${chipName}"]`);
-      if (chip) {
-        chip.click();
-      } else {
-        // M3.9: news-media has no chip but its section still exists.
-        // Hit applyFilter directly so the Home "State of AI" card still works.
-        applyFilter(chipName);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      if (chip) chip.click();
       const sub = btn.dataset.subpill;
       const attr = SUBPILL_ATTR[chipName];
       if (sub && attr) {
@@ -1515,6 +1492,7 @@
       lessonsData = Array.isArray(payload.lessons) ? payload.lessons : [];
     } catch { lessonsData = []; }
     renderLessonsList();
+    if (typeof renderDashLearn === "function") renderDashLearn();
   }
   function renderLessonsList() {
     const host = document.getElementById("lessons-list");
@@ -2267,11 +2245,10 @@
       removeCurrentSave();
     });
   }
-  // M3.6: Home "Continue where you left off" — up to 3 most-recently-updated
-  // projects, plus a count of their pinned tools/snippets as a read-at-a-glance
-  // progress hint. Tapping a card jumps to Projects → Saved.
+  // Home → Projects panel body: up to 3 most-recently-updated projects.
+  // Tapping a row jumps to Projects → Saved.
   function renderContinueCard() {
-    const host = document.getElementById("continue-body");
+    const host = document.getElementById("dash-projects-body");
     if (!host) return;
     const all = Object.values(getProjects());
     if (all.length === 0) {
@@ -2315,6 +2292,49 @@
         const savedPill = document.querySelector('.subpill[data-projects-view="saved"]');
         if (savedPill) savedPill.click();
         window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  }
+
+  // M5.1: Dashboard Learn panel — up to 3 in-progress or upcoming lessons.
+  function renderDashLearn() {
+    const host = document.getElementById("dash-learn-body");
+    if (!host) return;
+    if (!lessonsData || lessonsData.length === 0) {
+      host.innerHTML = `<p class="dash-empty">Lessons load on the Learn tab — tap "Start new course or quiz" to open them.</p>`;
+      return;
+    }
+    const progress = getLessonProgress ? getLessonProgress() : {};
+    const sorted = lessonsData.slice().sort((a, b) => {
+      const sa = progress[a.slug]?.state || "new";
+      const sb = progress[b.slug]?.state || "new";
+      const rank = { in_progress: 0, new: 1, completed: 2 };
+      const ra = rank[sa] ?? 1;
+      const rb = rank[sb] ?? 1;
+      if (ra !== rb) return ra - rb;
+      return (a.order || 0) - (b.order || 0);
+    });
+    const slice = sorted.slice(0, 3);
+    host.innerHTML = slice.map((l) => {
+      const state = progress[l.slug]?.state || "new";
+      const stateLabel = state === "completed" ? "Completed"
+                      : state === "in_progress" ? "In progress"
+                      : "Start";
+      return `
+        <button type="button" class="continue-row" data-dash-lesson-slug="${escapeHtml(l.slug)}">
+          <div class="continue-row-head">
+            <span class="continue-row-path" data-state="${escapeHtml(state)}">${stateLabel}</span>
+            <span class="continue-row-title">${escapeHtml(l.title)}</span>
+          </div>
+          <div class="continue-row-meta">${l.minutes ? l.minutes + " min · " : ""}${escapeHtml(l.summary || "")}</div>
+        </button>
+      `;
+    }).join("");
+    host.querySelectorAll(".continue-row").forEach((row) => {
+      row.addEventListener("click", (e) => {
+        e.preventDefault();
+        const slug = row.dataset.dashLessonSlug;
+        if (slug && typeof openLesson === "function") openLesson(slug);
       });
     });
   }

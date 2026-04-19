@@ -41,29 +41,108 @@
       </div>
     </div>
 
-    <div class="dash-grid">
-      <article class="dash-card glass" id="continue-card">
-        <div class="dash-eyebrow">Continue</div>
-        <h2 class="dash-title">Where you left off</h2>
-        <div class="continue-body" id="continue-body">
-          <p class="dash-empty">No projects in flight yet — start one and your progress lands here.</p>
+    <article class="dash-panel glass">
+      <header class="dash-panel-head">
+        <h3 class="dash-panel-title">Learn</h3>
+        <span class="dash-panel-hint">Courses &amp; quizzes</span>
+      </header>
+      <div class="dash-panel-body" id="dash-learn-body">
+        <p class="dash-empty">Loading lessons…</p>
+      </div>
+      <button class="dash-action" data-chip="learn" data-subpill="courses" type="button">Start new course or quiz →</button>
+    </article>
+
+    <article class="dash-panel glass">
+      <header class="dash-panel-head">
+        <h3 class="dash-panel-title">Projects</h3>
+        <span class="dash-panel-hint">Your saved setups</span>
+      </header>
+      <div class="dash-panel-body" id="dash-projects-body">
+        <p class="dash-empty">No projects in flight yet — start one and your progress lands here.</p>
+      </div>
+      <button class="dash-action dash-action-primary" data-chip="projects" data-subpill="new" type="button">Start a new project →</button>
+    </article>
+
+    <article class="dash-panel dash-charts-panel">
+      <header class="dash-panel-head">
+        <h3 class="dash-panel-title">State of AI</h3>
+        <span class="dash-panel-hint">Frontier snapshots</span>
+      </header>
+
+      <section class="hero glass" id="compare-card">
+        <div class="hero-head">
+          <div>
+            <h2 class="hero-title">Frontier context windows</h2>
+            <p class="hero-sub">Verified max input tokens, April 2026.</p>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num" id="compare-lead">1M</div>
+            <div class="hero-kpi-lbl">Claude · Opus 4.7</div>
+          </div>
         </div>
-      </article>
+        <div class="cbars" id="cbars"></div>
+      </section>
 
-      <article class="dash-card glass dash-card-primary">
-        <div class="dash-eyebrow">Start</div>
-        <h2 class="dash-title">A new project</h2>
-        <p class="dash-sub">Pick the pieces you want. Finder recommends a tool stack, a learning path, and setup per tool.</p>
-        <button class="dash-action dash-action-primary" data-chip="projects" data-subpill="new" type="button">Start a new project →</button>
-      </article>
+      <section class="hero glass" id="timeline-card">
+        <div class="hero-head">
+          <div>
+            <h2 class="hero-title">Context window, 2023 → 2026</h2>
+            <p class="hero-sub">Public model releases. Log scale.</p>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num" id="kpi-num">10×</div>
+            <div class="hero-kpi-lbl">in 36 months</div>
+          </div>
+        </div>
+        <svg class="timeline" id="timeline-svg" viewBox="0 0 800 240" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="timeline-legend" id="timeline-legend"></div>
+      </section>
 
-      <article class="dash-card glass dash-card-link">
-        <div class="dash-eyebrow">Reference</div>
-        <h2 class="dash-title">State of AI</h2>
-        <p class="dash-sub">Frontier context windows, Intelligence Index, Opus 4.7 scorecard, Top-4 LLM face-off — the charts that frame the field.</p>
-        <button class="dash-action" data-chip="news-media" type="button">Open the charts →</button>
-      </article>
-    </div>
+      <section class="hero glass" id="leap-card">
+        <div class="hero-head">
+          <div>
+            <h2 class="hero-title">Intelligence Index v4.0</h2>
+            <p class="hero-sub">10-benchmark composite · Artificial Analysis · Apr 2026</p>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num" id="vbar-top">57</div>
+            <div class="hero-kpi-lbl">current SOTA</div>
+          </div>
+        </div>
+        <div class="vbars" id="vbars"></div>
+        <p class="leap-foot">Source: artificialanalysis.ai · Opus 4.7 scoring pending (launched today)</p>
+      </section>
+
+      <section class="hero glass" id="scorecard-card">
+        <div class="hero-head">
+          <div>
+            <h2 class="hero-title">Opus 4.7 scorecard</h2>
+            <p class="hero-sub">Benchmarks from today's launch · Apr 16, 2026</p>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num">98.5<span class="stat-x">%</span></div>
+            <div class="hero-kpi-lbl">XBOW top</div>
+          </div>
+        </div>
+        <div class="hbars" id="hbars"></div>
+        <p class="leap-foot">Source: anthropic.com/news/claude-opus-4-7</p>
+      </section>
+
+      <section class="hero glass" id="faceoff-card">
+        <div class="hero-head">
+          <div>
+            <h2 class="hero-title">Top 4 LLM face-off</h2>
+            <p class="hero-sub">Flagship chat models · benchmarks as of Apr 17, 2026</p>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num">4</div>
+            <div class="hero-kpi-lbl">models</div>
+          </div>
+        </div>
+        <div id="faceoff"></div>
+        <p class="leap-foot">Source: Artificial Analysis · LMArena · vendor pages</p>
+      </section>
+    </article>
   </section>
 
   <section class="section section-learn" data-section="learn" id="section-learn" data-hidden="true">
@@ -260,91 +339,7 @@
     </div>
   </section>
 
-  <section class="section section-news-media" data-section="news-media" id="section-news-media" data-hidden="true">
-    <div class="section-head">
-      <h2>State of AI</h2>
-      <div class="section-head-actions">
-        <span class="updated" data-updated="news">—</span>
-      </div>
-    </div>
-
-    <div class="pane" data-pane="news-media-state">
-      <section class="hero glass" id="compare-card">
-        <div class="hero-head">
-          <div>
-            <h2 class="hero-title">Frontier context windows</h2>
-            <p class="hero-sub">Verified max input tokens, April 2026.</p>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-num" id="compare-lead">1M</div>
-            <div class="hero-kpi-lbl">Claude · Opus 4.7</div>
-          </div>
-        </div>
-        <div class="cbars" id="cbars"></div>
-      </section>
-
-      <section class="hero glass" id="timeline-card">
-        <div class="hero-head">
-          <div>
-            <h2 class="hero-title">Context window, 2023 → 2026</h2>
-            <p class="hero-sub">Public model releases. Log scale.</p>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-num" id="kpi-num">10×</div>
-            <div class="hero-kpi-lbl">in 36 months</div>
-          </div>
-        </div>
-        <svg class="timeline" id="timeline-svg" viewBox="0 0 800 240" preserveAspectRatio="none" aria-hidden="true"></svg>
-        <div class="timeline-legend" id="timeline-legend"></div>
-      </section>
-
-      <section class="hero glass" id="leap-card">
-        <div class="hero-head">
-          <div>
-            <h2 class="hero-title">Intelligence Index v4.0</h2>
-            <p class="hero-sub">10-benchmark composite · Artificial Analysis · Apr 2026</p>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-num" id="vbar-top">57</div>
-            <div class="hero-kpi-lbl">current SOTA</div>
-          </div>
-        </div>
-        <div class="vbars" id="vbars"></div>
-        <p class="leap-foot">Source: artificialanalysis.ai · Opus 4.7 scoring pending (launched today)</p>
-      </section>
-
-      <section class="hero glass" id="scorecard-card">
-        <div class="hero-head">
-          <div>
-            <h2 class="hero-title">Opus 4.7 scorecard</h2>
-            <p class="hero-sub">Benchmarks from today's launch · Apr 16, 2026</p>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-num">98.5<span class="stat-x">%</span></div>
-            <div class="hero-kpi-lbl">XBOW top</div>
-          </div>
-        </div>
-        <div class="hbars" id="hbars"></div>
-        <p class="leap-foot">Source: anthropic.com/news/claude-opus-4-7</p>
-      </section>
-
-      <section class="hero glass" id="faceoff-card">
-        <div class="hero-head">
-          <div>
-            <h2 class="hero-title">Top 4 LLM face-off</h2>
-            <p class="hero-sub">Flagship chat models · benchmarks as of Apr 17, 2026</p>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-num">4</div>
-            <div class="hero-kpi-lbl">models</div>
-          </div>
-        </div>
-        <div id="faceoff"></div>
-        <p class="leap-foot">Source: Artificial Analysis · LMArena · vendor pages</p>
-      </section>
-    </div>
-
-  </section>
+  <!-- section-news-media removed in M5.1 — charts moved inline into Dashboard. -->
 
   <section class="section" data-section="comply365" id="section-comply365">
     <div class="section-head">
