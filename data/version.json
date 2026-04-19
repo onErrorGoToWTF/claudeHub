@@ -1,7 +1,7 @@
 {
-  "version": "0.6.101",
-  "milestone": "M8.12.31",
-  "milestoneTitle": "Phase 8.12.31 — dash-panel icon stroke bumped to 3px and glow filter retuned to mirror the CTA buttons' 12px soft halo + subtle dark drop. Icons and buttons now read at matched line weight and matched glow intensity",
-  "deployedAt": "2026-04-19T20:30Z",
+  "version": "0.6.102",
+  "milestone": "M8.12.32",
+  "milestoneTitle": "Phase 8.12.32 — reverted M8.12.31: icon stroke back to 2.5 and glow back to the tight 1.5/3px stacked drop-shadow (matched-to-CTA version was too much)",
+  "deployedAt": "2026-04-19T20:40Z",
   "commitSha": ""
 }
