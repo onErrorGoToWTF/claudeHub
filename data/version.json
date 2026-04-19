@@ -1,7 +1,7 @@
 {
-  "version": "0.6.75",
-  "milestone": "M8.12.5",
-  "milestoneTitle": "Phase 8.12.5 — visible brand flipped from aiStacked to aiUniversity: nav wordmark, <title>, and meta description updated. Internal/docs references to aiStacked left intact (locked sticker design note + historical plan files)",
-  "deployedAt": "2026-04-19T15:05Z",
+  "version": "0.6.76",
+  "milestone": "M8.12.6",
+  "milestoneTitle": "Phase 8.12.6 — YouTube tile gets pink halo identity (border + outer glow via new --color-youtube-pink-border / --color-youtube-pink-glow tokens) and the SVG logo paints YouTube red with a concentrated red-pink drop-shadow glow mirroring the .dash-panel-icon treatment",
+  "deployedAt": "2026-04-19T15:20Z",
   "commitSha": ""
 }
