@@ -193,6 +193,7 @@
     openai: "#14b8a6",
     google: "#4a90ff",
     xai:    "#e879f9",
+    meta:   "#6366f1",   // Llama — indigo, distinct from Google blue + xAI magenta
   };
 
   // Hoisted module state read by render fns during initial applyFilter.
@@ -3277,74 +3278,148 @@
   // color→model mapping, category labels under each cluster, stats table
   // below for context window + price.
   // ======================================================================
+  // Benchmark views for the 5-model face-off. The card flips between these
+  // on tap; each face shows horizontal "electron" lines (matching the
+  // Frontier Context Windows chart style) for one benchmark at a time.
+  const FACEOFF_MODELS = [
+    { short: "Opus 4.7",   col: MODEL_COL.claude, ctx: "1M",   price: "$5"   },
+    { short: "GPT-5.4",    col: MODEL_COL.openai, ctx: "400K", price: "~$10" },
+    { short: "Gemini 3.1", col: MODEL_COL.google, ctx: "1M",   price: "$2"   },
+    { short: "Grok 4.20",  col: MODEL_COL.xai,    ctx: "2M",   price: "$2"   },
+    { short: "Llama 4",    col: MODEL_COL.meta,   ctx: "1M",   price: "Free" },
+  ];
+  const FACEOFF_BENCHES = [
+    {
+      label: "GPQA",
+      desc: "Graduate-level physics, bio, and chem questions. Higher = better.",
+      vals:    [94.2, 94.4, 94.3, null, null],
+      display: ["94.2", "94.4", "94.3", "—", "—"],
+      max: 100,
+    },
+    {
+      label: "SWE-bench",
+      desc: "Resolves real-world GitHub issues. Higher = better.",
+      vals:    [87.6, 80.0, 68.5, null, null],
+      display: ["87.6", "80.0", "68.5*", "—", "—"],
+      max: 100,
+    },
+    {
+      label: "LMArena",
+      desc: "Pairwise human-vote ELO across chat battles. Higher = better.",
+      vals:    [1500, 1497, 1493, 1491, 1420],
+      display: ["~1500", "1497", "1493", "1491", "1420"],
+      max: 1500,
+    },
+  ];
+  let faceoffBenchIdx = 0;
+
   function renderLlmFaceoff() {
     const host = document.getElementById("faceoff");
     if (!host) return;
-    const models = [
-      { short: "Opus 4.7",   col: MODEL_COL.claude, ctx: "1M",   price: "$5"   },
-      { short: "GPT-5.4",    col: MODEL_COL.openai, ctx: "400K", price: "~$10" },
-      { short: "Gemini 3.1", col: MODEL_COL.google, ctx: "1M",   price: "$2"   },
-      { short: "Grok 4.20",  col: MODEL_COL.xai,    ctx: "2M",   price: "$2"   },
-    ];
-    // AIME dropped — every model maxes at ~100%, no useful signal.
-    const benches = [
-      { label: "GPQA",    vals: [94.2, 94.4, 94.3, null], display: ["94.2",  "94.4", "94.3",  "—"]    },
-      { label: "SWE-b",   vals: [87.6, 80.0, 68.5, null], display: ["87.6",  "80.0", "68.5*", "—"]    },
-      { label: "LMArena", vals: [88,   85,   82,   81],   display: ["~1500", "#2",   "1493",  "1491"] },
-    ];
-
-    let clustersHtml = "";
-    benches.forEach((b, bi) => {
-      const barsHtml = b.vals.map((v, mi) => {
-        const m = models[mi];
-        const nodata = v === null || v === undefined;
-        const h = nodata ? 0 : v;
-        const delay = 0.2 + bi * 0.15 + mi * 0.07;
-        return `
-          <div class="gbar${nodata ? " is-nodata" : ""}" style="--col:${m.col}; --h:${h}%; --gd:${delay}s;">
-            <div class="gbar-track"><div class="gbar-fill"></div></div>
-          </div>
-        `;
-      }).join("");
-      clustersHtml += `
-        <div class="gf-cluster">
-          <div class="gf-bars">${barsHtml}</div>
-          <div class="gf-label">${b.label}</div>
-        </div>
-      `;
-    });
-
+    // Legend stays the same across all benchmarks.
     const legendHtml = `
       <div class="gf-legend">
-        ${models.map(m => `
+        ${FACEOFF_MODELS.map(m => `
           <span class="gf-li" style="--col:${m.col}">
             <span class="gf-dot" aria-hidden="true"></span>${m.short}
           </span>
         `).join("")}
       </div>
     `;
-
+    // Compact stats table below — Model · Ctx · $/1M only.
     const headCells = `
       <div class="fms-model">Model</div>
       <div class="fms-val">Ctx</div>
       <div class="fms-val">$/1M</div>
     `;
-    const modelRows = models.map((m, mi) => `
+    const modelRows = FACEOFF_MODELS.map((m) => `
       <div class="fms-row" style="--fms-col:${m.col}">
         <div class="fms-model"><span class="fms-dot" aria-hidden="true"></span>${m.short}</div>
         <div class="fms-val">${m.ctx}</div>
         <div class="fms-val">${m.price}</div>
       </div>
     `).join("");
-
     const statsHtml = `
       <div class="faceoff-mini-stats">
         <div class="fms-row fms-head">${headCells}</div>
         ${modelRows}
       </div>
     `;
+    const pagerDots = FACEOFF_BENCHES.map((_, i) =>
+      `<button type="button" class="faceoff-pg-dot${i === faceoffBenchIdx ? " is-active" : ""}" data-bench-idx="${i}" aria-label="Show ${FACEOFF_BENCHES[i].label}"></button>`
+    ).join("");
+    host.innerHTML = `
+      <button type="button" class="faceoff-flipper" id="faceoff-flipper" aria-label="Tap to flip benchmark">
+        <div class="faceoff-face" id="faceoff-face"></div>
+      </button>
+      <div class="faceoff-pager">${pagerDots}</div>
+      ${legendHtml}
+      ${statsHtml}
+    `;
+    paintFaceoffFace();
+    // Wire interactions.
+    const flipper = document.getElementById("faceoff-flipper");
+    if (flipper) flipper.addEventListener("click", (e) => {
+      e.preventDefault();
+      faceoffBenchIdx = (faceoffBenchIdx + 1) % FACEOFF_BENCHES.length;
+      flipFaceoff();
+    });
+    host.querySelectorAll(".faceoff-pg-dot").forEach((d) => {
+      d.addEventListener("click", (e) => {
+        e.preventDefault(); e.stopPropagation();
+        const idx = Number(d.dataset.benchIdx);
+        if (idx === faceoffBenchIdx) return;
+        faceoffBenchIdx = idx;
+        flipFaceoff();
+      });
+    });
+  }
 
-    host.innerHTML = `<div class="gf-chart">${clustersHtml}</div>` + legendHtml + statsHtml;
+  function flipFaceoff() {
+    const flipper = document.getElementById("faceoff-flipper");
+    const host = document.getElementById("faceoff");
+    if (!flipper || !host) return;
+    flipper.classList.add("is-flipping");
+    // At mid-flip (half the 600ms duration), swap content so it appears as
+    // the back face coming around.
+    setTimeout(() => paintFaceoffFace(), 280);
+    setTimeout(() => {
+      flipper.classList.remove("is-flipping");
+      // Update pager active state.
+      host.querySelectorAll(".faceoff-pg-dot").forEach((d, i) => {
+        d.classList.toggle("is-active", i === faceoffBenchIdx);
+      });
+    }, 600);
+  }
+
+  function paintFaceoffFace() {
+    const face = document.getElementById("faceoff-face");
+    if (!face) return;
+    const b = FACEOFF_BENCHES[faceoffBenchIdx];
+    const rowsHtml = FACEOFF_MODELS.map((m, mi) => {
+      const v = b.vals[mi];
+      const nodata = v === null || v === undefined;
+      const pct = nodata ? 0 : Math.max(0, Math.min(100, (v / b.max) * 100));
+      const delay = 0.08 + mi * 0.06;
+      return `
+        <div class="fo-row${nodata ? " is-nodata" : ""}" style="--col:${m.col}; --w:${pct}%; --gd:${delay}s;">
+          <span class="fo-name">${m.short}</span>
+          <span class="fo-track">
+            <span class="fo-line"></span>
+            <span class="fo-electron" aria-hidden="true"></span>
+          </span>
+          <span class="fo-val">${b.display[mi]}</span>
+        </div>
+      `;
+    }).join("");
+    face.innerHTML = `
+      <header class="fo-face-head">
+        <span class="fo-face-label">${escapeHtml(b.label)}</span>
+        <span class="fo-face-desc">${escapeHtml(b.desc)}</span>
+      </header>
+      <div class="fo-rows">${rowsHtml}</div>
+      <footer class="fo-face-hint">Tap to flip · ${faceoffBenchIdx + 1}/${FACEOFF_BENCHES.length}</footer>
+    `;
   }
 
   // Map a tool chip name to its brand color when we recognize a model /

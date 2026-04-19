@@ -5250,7 +5250,152 @@ body.modal-open { overflow: hidden; }
   .type-legend-desc { display: none; }
 }
 
-/* ===== LLM face-off — single grouped chart, 4 clusters x 4 bars ===== */
+/* ===== LLM face-off — flip card (horizontal electron lines per bench) ===== */
+/* Flipper: 3D-rotates Y on click. Content swaps at mid-flip so the back
+   reads as a different face. */
+.faceoff-flipper {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  perspective: 1200px;
+  touch-action: manipulation;
+}
+.faceoff-face {
+  transform-style: preserve-3d;
+  transition: transform 0.6s var(--ease-premium);
+}
+.faceoff-flipper.is-flipping .faceoff-face { transform: rotateY(180deg); }
+.fo-face-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 12px;
+}
+.fo-face-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.01em;
+}
+.fo-face-desc {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+.fo-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fo-row {
+  display: grid;
+  grid-template-columns: 86px 1fr 56px;
+  align-items: center;
+  column-gap: 10px;
+  min-height: 22px;
+}
+.fo-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--col);
+  letter-spacing: -0.003em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fo-track {
+  position: relative;
+  height: 2px;
+  display: block;
+}
+.fo-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--col) 20%, transparent) 0%,
+    var(--col) 100%);
+  box-shadow: 0 0 8px -2px color-mix(in srgb, var(--col) 60%, transparent);
+  transition: width 0.9s var(--ease-premium) var(--gd);
+  border-radius: 1px;
+}
+.fo-electron {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  /* Dot core matches line color but nudged slightly toward yellow so it
+     reads as hotter/brighter than the line. Glow + pulse do the rest. */
+  background: color-mix(in srgb, var(--col) 82%, #facc15 18%);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--col) 70%, transparent);
+  opacity: 0;
+  transition: left 0.9s var(--ease-premium) var(--gd), opacity 0.4s var(--ease-premium) calc(var(--gd) + 0.5s);
+}
+.fo-row .fo-line,
+.fo-row .fo-electron {
+  /* is-go state is applied via the reveal IO on the parent hero card;
+     we animate straight from the render call via the delay instead. */
+}
+.fo-row:not(.is-nodata) .fo-line { width: var(--w); }
+.fo-row:not(.is-nodata) .fo-electron { left: var(--w); opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .fo-row:not(.is-nodata) .fo-electron {
+    animation: fo-electron-pulse 2.2s var(--ease-premium) infinite calc(var(--gd) + 1s);
+  }
+}
+@keyframes fo-electron-pulse {
+  0%, 100% { box-shadow: 0 0 10px color-mix(in srgb, var(--col) 70%, transparent); }
+  50%      { box-shadow: 0 0 18px color-mix(in srgb, var(--col) 95%, transparent); }
+}
+.fo-val {
+  font-size: 12px;
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  letter-spacing: -0.003em;
+}
+.fo-row.is-nodata .fo-name { color: var(--text-3); }
+.fo-row.is-nodata .fo-val  { color: var(--text-3); }
+.fo-row.is-nodata .fo-line { width: 100%; background: repeating-linear-gradient(90deg, color-mix(in srgb, var(--text-3) 40%, transparent) 0 4px, transparent 4px 8px); box-shadow: none; }
+.fo-row.is-nodata .fo-electron { display: none; }
+
+.fo-face-hint {
+  margin-top: 14px;
+  font-size: 10px;
+  color: var(--text-3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.faceoff-pager {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 10px 0 2px;
+}
+.faceoff-pg-dot {
+  width: 6px; height: 6px; padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--text-3);
+  opacity: 0.35;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: opacity 0.2s var(--ease-premium), background 0.2s var(--ease-premium);
+}
+.faceoff-pg-dot.is-active { opacity: 1; background: var(--text-1); }
+.faceoff-pg-dot:hover:not(.is-active) { opacity: 0.7; }
+
+/* ===== (Legacy grouped-bars face-off kept for now, unused) ===== */
 .gf-legend {
   display: flex;
   flex-wrap: wrap;
