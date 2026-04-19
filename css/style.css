@@ -95,6 +95,11 @@
   --color-youtube-border:    rgba(255,69,58,0.40);
   --color-youtube-glow:      rgba(255,69,58,0.28);
 
+  --color-tools-solid:       #ffd60a;                  /* Apple systemYellow dark */
+  --color-tools-surface:     rgba(255,214,10,0.10);
+  --color-tools-border:      rgba(255,214,10,0.40);
+  --color-tools-glow:        rgba(255,214,10,0.28);
+
   --color-365-glow:          rgba(166,132,255,0.28);   /* purple — Comply365 tab */
 
   /* ===== Glow tokens (reserved; no component uses them after M6.6) ===== */
@@ -234,6 +239,11 @@
   --color-youtube-surface:   rgba(255,59,48,0.12);
   --color-youtube-border:    rgba(255,59,48,0.40);
   --color-youtube-glow:      rgba(255,59,48,0.22);
+
+  --color-tools-solid:       #a16207;                  /* yellow → brown for readability on white */
+  --color-tools-surface:     rgba(161,98,7,0.10);
+  --color-tools-border:      rgba(161,98,7,0.40);
+  --color-tools-glow:        rgba(161,98,7,0.22);
 
   --color-365-glow:          rgba(124,58,237,0.22);
 
@@ -4684,6 +4694,18 @@ body.modal-open { overflow: hidden; }
 .chip-learn:hover:not(.is-active) {
   color: var(--color-learn-solid);
   box-shadow: 0 0 18px -6px var(--color-learn-glow);
+}
+
+/* Tools — yellow (dark) / brown (light) */
+.chip-tools.is-active {
+  color: var(--color-tools-solid);
+  background: var(--color-tools-surface);
+  border-color: var(--color-tools-border);
+  box-shadow: 0 0 24px -4px var(--color-tools-glow);
+}
+.chip-tools:hover:not(.is-active) {
+  color: var(--color-tools-solid);
+  box-shadow: 0 0 18px -6px var(--color-tools-glow);
 }
 
 /* Comply365 — purple */
