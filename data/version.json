@@ -1,7 +1,7 @@
 {
-  "version": "0.6.77",
-  "milestone": "M8.12.7",
-  "milestoneTitle": "Phase 8.12.7 — YouTube tile halo repointed to match the logo: border + glow now use --color-youtube-border / --color-youtube-glow (Apple systemRed) instead of the separate pink tokens; pink tokens removed",
-  "deployedAt": "2026-04-19T15:30Z",
+  "version": "0.6.78",
+  "milestone": "M8.12.8",
+  "milestoneTitle": "Phase 8.12.8 — YouTube tile border glow tightened: stacked 3px solid-red + 6px soft-glow (hover: 4/9) hug the border edge, replacing the prior wider 12/18px halo. Concentrated-near-border pop mirroring the dash-panel-icon stroke treatment",
+  "deployedAt": "2026-04-19T15:40Z",
   "commitSha": ""
 }
