@@ -1,7 +1,7 @@
 {
-  "version": "0.6.71",
-  "milestone": "M8.12.1",
-  "milestoneTitle": "Phase 8.12.1 — Learn/Projects dashboard panels: unified greige tone edge-to-edge (specular overlay killed), hairline divider between header quadrant and body, items become slightly-darker recessed tiles with inset shadow; hover tints tile border + glow to section identity color",
-  "deployedAt": "2026-04-19T14:10Z",
+  "version": "0.6.72",
+  "milestone": "M8.12.2",
+  "milestoneTitle": "Phase 8.12.2 — Learn/Projects panels revert to default near-white glass bg (matches Tools); item tiles drop to greige for recessed-slot contrast; divider + inset-shadow + identity hover retained",
+  "deployedAt": "2026-04-19T14:25Z",
   "commitSha": ""
 }

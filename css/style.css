@@ -1807,15 +1807,6 @@ body.modal-open { overflow: hidden; }
    idiom as active tab chips + CTAs. */
 .dash-panel:has(.dash-panel-icon--learn)    { --panel-accent-border: var(--color-learn-border);    --panel-accent-glow: var(--color-learn-glow); }
 .dash-panel:has(.dash-panel-icon--projects) { --panel-accent-border: var(--color-projects-border); --panel-accent-glow: var(--color-projects-glow); }
-.dash-panel.glass:has(.dash-panel-icon--learn),
-.dash-panel.glass:has(.dash-panel-icon--projects) {
-  --glass-top:      #e8e5de;
-  --glass-bottom:   #e8e5de;
-  --glass-fallback: #e8e5de;
-  background: #e8e5de !important;
-}
-.dash-panel.glass:has(.dash-panel-icon--learn)::before,
-.dash-panel.glass:has(.dash-panel-icon--projects)::before { display: none; }
 .dash-panel:has(.dash-panel-icon--learn) > .dash-panel-body,
 .dash-panel:has(.dash-panel-icon--projects) > .dash-panel-body {
   margin-top: 6px;
@@ -1825,10 +1816,10 @@ body.modal-open { overflow: hidden; }
 }
 .dash-panel-body .continue-row {
   padding: 12px 12px;
-  background: #dfdbd1;
+  background: #e8e5de;
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: var(--radius-sm);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.07);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
   opacity: 1;
   transition:
     background-color 0.18s var(--ease-premium),
@@ -1838,15 +1829,15 @@ body.modal-open { overflow: hidden; }
 .dash-panel-body .continue-row + .continue-row { border-top: 1px solid rgba(0,0,0,0.08); }
 .dash-panel-body .continue-row:hover {
   opacity: 1;
-  background: #e3dfd5;
+  background: #ece9e2;
   border-color: var(--panel-accent-border, var(--border));
   box-shadow:
-    inset 0 1px 2px rgba(0,0,0,0.05),
+    inset 0 1px 2px rgba(0,0,0,0.04),
     0 0 0 3px var(--panel-accent-glow, transparent);
 }
 .dash-panel-body .continue-row:active {
-  background: #dad6cb;
-  box-shadow: inset 0 2px 3px rgba(0,0,0,0.10);
+  background: #dfdbd1;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,0.09);
 }
 .continue-row-path {
   grid-column: 2;
