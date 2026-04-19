@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>claudeHub — palette preview</title>
+<style>
+  :root {
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
+    --mono: "SF Mono", Menlo, Consolas, monospace;
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font);
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+  }
+  @media (max-width: 960px) { body { grid-template-columns: 1fr; } }
+
+  .panel {
+    padding: 56px 44px 112px;
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .panel-dark  { background: #0a0a0d; color: #eeeef0; }
+  .panel-light { background: #f2f2f7; color: #000; }
+
+  .panel h1 {
+    margin: 0 0 4px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.012em;
+  }
+  .panel-subtitle {
+    margin: 0 0 40px;
+    font-size: 13px;
+    opacity: 0.55;
+  }
+  .panel h2 {
+    margin: 44px 0 14px;
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    opacity: 0.55;
+  }
+  .panel h2:first-of-type { margin-top: 0; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+    gap: 10px;
+  }
+  .grid-2 { grid-template-columns: 1fr 2fr; }
+  @media (max-width: 520px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+
+  .swatch {
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .swatch-face {
+    aspect-ratio: 16 / 10;
+    position: relative;
+  }
+  .panel-dark  .swatch-face { border: 1px solid rgba(255,255,255,0.05); border-bottom: none; border-radius: 10px 10px 0 0; }
+  .panel-light .swatch-face { border: 1px solid rgba(0,0,0,0.08);      border-bottom: none; border-radius: 10px 10px 0 0; }
+
+  .swatch-meta {
+    padding: 9px 12px 11px;
+    border-radius: 0 0 10px 10px;
+  }
+  .panel-dark  .swatch-meta { background: #111113; border: 1px solid rgba(255,255,255,0.05); border-top: none; }
+  .panel-light .swatch-meta { background: #ffffff; border: 1px solid rgba(0,0,0,0.08);      border-top: none; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+
+  .swatch-name { font-size: 12px; font-weight: 500; margin-bottom: 2px; }
+  .swatch-hex  { font-family: var(--mono); font-size: 10.5px; opacity: 0.55; }
+
+  .text-face { display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 600; }
+
+  /* Demo card (glass approximation) */
+  .demo-card {
+    padding: 16px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .panel-dark .demo-card {
+    background: linear-gradient(180deg, #18191b, #111113);
+    border: 1px solid rgba(255,255,255,0.07);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.06),
+      0 8px 24px -10px rgba(0,0,0,0.55);
+  }
+  .panel-light .demo-card {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.07);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.9),
+      0 1px 2px rgba(0,0,0,0.04),
+      0 10px 30px -18px rgba(10,10,20,0.10);
+  }
+  .demo-card .title { font-weight: 600; margin-bottom: 4px; }
+  .panel-dark  .demo-card .title { color: #eeeef0; }
+  .panel-light .demo-card .title { color: #000; }
+  .panel-dark  .demo-card .sub   { color: #b0b4ba; font-size: 12px; }
+  .panel-light .demo-card .sub   { color: rgba(0,0,0,0.6); font-size: 12px; }
+
+  .panel-dark .demo-card.active {
+    border-color: rgba(64,200,224,0.32);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      0 0 0 1px rgba(64,200,224,0.22),
+      0 0 34px -6px rgba(64,200,224,0.45),
+      0 8px 24px -10px rgba(0,0,0,0.55);
+  }
+  .panel-light .demo-card.active {
+    border-color: rgba(48,176,199,0.48);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.9),
+      0 0 0 1px rgba(48,176,199,0.30),
+      0 0 28px -6px rgba(48,176,199,0.40),
+      0 10px 30px -18px rgba(10,10,20,0.15);
+  }
+
+  .glow-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: none;
+  }
+  .panel-dark  .glow-stage { background: #111113; border: 1px solid rgba(255,255,255,0.05); }
+  .panel-light .glow-stage { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); }
+  .glow-stage .demo-card { width: 100%; }
+
+  /* Pill */
+  .pill {
+    border: 1px solid transparent;
+    background: transparent;
+    padding: 8px 18px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s var(--ease);
+  }
+  .panel-dark  .pill { color: #777b84; }
+  .panel-light .pill { color: rgba(0,0,0,0.55); }
+  .panel-dark  .pill:hover { color: #b0b4ba; }
+  .panel-light .pill:hover { color: rgba(0,0,0,0.8); }
+
+  .panel-dark .pill.active {
+    color: #40c8e0;
+    background: rgba(64,200,224,0.12);
+    border-color: rgba(64,200,224,0.38);
+    box-shadow: 0 0 22px -6px rgba(64,200,224,0.40);
+  }
+  .panel-light .pill.active {
+    color: #0891a3;
+    background: rgba(48,176,199,0.10);
+    border-color: rgba(48,176,199,0.45);
+    box-shadow: 0 0 22px -6px rgba(48,176,199,0.30);
+  }
+
+  /* Badge */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 11px 4px 9px;
+    border-radius: 9999px;
+    font-size: 11.5px;
+    font-weight: 500;
+    border: 1px solid;
+  }
+  .badge::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .panel-dark .b-info     { color: #0a84ff; background: rgba(10,132,255,0.10); border-color: rgba(10,132,255,0.30); }
+  .panel-dark .b-success  { color: #30d158; background: rgba(48,209,88,0.10); border-color: rgba(48,209,88,0.30); }
+  .panel-dark .b-warning  { color: #fbbf24; background: rgba(251,191,36,0.10); border-color: rgba(251,191,36,0.30); }
+  .panel-dark .b-critical { color: #ff453a; background: rgba(255,69,58,0.10); border-color: rgba(255,69,58,0.30); }
+
+  .panel-light .b-info     { color: #0051d5; background: rgba(0,122,255,0.08);   border-color: rgba(0,122,255,0.30); }
+  .panel-light .b-success  { color: #248a3d; background: rgba(52,199,89,0.10);   border-color: rgba(52,199,89,0.35); }
+  .panel-light .b-warning  { color: #b45309; background: rgba(217,119,6,0.10);   border-color: rgba(217,119,6,0.35); }
+  .panel-light .b-critical { color: #d0322d; background: rgba(255,59,48,0.08);   border-color: rgba(255,59,48,0.30); }
+
+  /* Bar chart demo */
+  .bars {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    height: 84px;
+    padding: 14px;
+    border-radius: 10px;
+  }
+  .panel-dark  .bars { background: #111113; border: 1px solid rgba(255,255,255,0.05); }
+  .panel-light .bars { background: #ffffff; border: 1px solid rgba(0,0,0,0.07); box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+  .bar { flex: 1; border-radius: 4px 4px 2px 2px; min-height: 16px; }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .note {
+    margin-top: 10px;
+    font-size: 11.5px;
+    opacity: 0.55;
+    line-height: 1.5;
+  }
+
+  .foot {
+    margin-top: 60px;
+    padding-top: 24px;
+    font-size: 11px;
+    line-height: 1.6;
+    opacity: 0.42;
+  }
+  .panel-dark  .foot { border-top: 1px solid rgba(255,255,255,0.05); }
+  .panel-light .foot { border-top: 1px solid rgba(0,0,0,0.08); }
+</style>
+</head>
+<body>
+
+<!-- ─────────────────────────── DARK ─────────────────────────── -->
+<section class="panel panel-dark">
+  <h1>Dark</h1>
+  <p class="panel-subtitle">Radix-Slate-inspired cool near-black — Apple-style lifted accents.</p>
+
+  <h2>Neutral surfaces</h2>
+  <div class="grid">
+    <div class="swatch"><div class="swatch-face" style="background:#0a0a0d"></div><div class="swatch-meta"><div class="swatch-name">bg-0 · page</div><div class="swatch-hex">#0a0a0d</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#111113"></div><div class="swatch-meta"><div class="swatch-name">bg-1 · low card</div><div class="swatch-hex">#111113</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#18191b"></div><div class="swatch-meta"><div class="swatch-name">bg-2 · raised</div><div class="swatch-hex">#18191b</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#212225"></div><div class="swatch-meta"><div class="swatch-name">bg-3 · modal</div><div class="swatch-hex">#212225</div></div></div>
+  </div>
+
+  <h2>Text</h2>
+  <div class="grid">
+    <div class="swatch"><div class="swatch-face text-face" style="background:#18191b;color:#eeeef0">Aa</div><div class="swatch-meta"><div class="swatch-name">text-1 · primary</div><div class="swatch-hex">#eeeef0</div></div></div>
+    <div class="swatch"><div class="swatch-face text-face" style="background:#18191b;color:#b0b4ba">Aa</div><div class="swatch-meta"><div class="swatch-name">text-2 · secondary</div><div class="swatch-hex">#b0b4ba</div></div></div>
+    <div class="swatch"><div class="swatch-face text-face" style="background:#18191b;color:#777b84">Aa</div><div class="swatch-meta"><div class="swatch-name">text-3 · tertiary</div><div class="swatch-hex">#777b84</div></div></div>
+  </div>
+
+  <h2>Electric cyan — hero accent (every active / hover / focus)</h2>
+  <div class="grid grid-2">
+    <div class="swatch">
+      <div class="swatch-face" style="background:#40c8e0"></div>
+      <div class="swatch-meta"><div class="swatch-name">cyan-solid</div><div class="swatch-hex">#40c8e0</div></div>
+    </div>
+    <div class="swatch">
+      <div class="glow-stage">
+        <div class="demo-card active">
+          <div class="title">Active card</div>
+          <div class="sub">Cyan glow on hover · focus · selected</div>
+        </div>
+      </div>
+      <div class="swatch-meta"><div class="swatch-name">glow in context</div><div class="swatch-hex">Apple systemTeal (dark)</div></div>
+    </div>
+  </div>
+
+  <h2>Semantic state</h2>
+  <div class="grid">
+    <div class="swatch"><div class="swatch-face" style="background:#0a84ff"></div><div class="swatch-meta"><div class="swatch-name">info</div><div class="swatch-hex">#0a84ff</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#30d158"></div><div class="swatch-meta"><div class="swatch-name">success</div><div class="swatch-hex">#30d158</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#fbbf24"></div><div class="swatch-meta"><div class="swatch-name">warning</div><div class="swatch-hex">#fbbf24</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#ff453a"></div><div class="swatch-meta"><div class="swatch-name">critical</div><div class="swatch-hex">#ff453a</div></div></div>
+  </div>
+  <div class="row" style="margin-top:14px">
+    <span class="badge b-info">Info</span>
+    <span class="badge b-success">Saved</span>
+    <span class="badge b-warning">Stale feed</span>
+    <span class="badge b-critical">Fetch failed</span>
+  </div>
+
+  <h2>Brand (content only — never chrome)</h2>
+  <div class="grid">
+    <div class="swatch"><div class="swatch-face" style="background:#ff7a3d"></div><div class="swatch-meta"><div class="swatch-name">claude</div><div class="swatch-hex">#ff7a3d</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#a684ff"></div><div class="swatch-meta"><div class="swatch-name">365</div><div class="swatch-hex">#a684ff</div></div></div>
+  </div>
+  <p class="note">Claude orange shows up on chart bars for Claude models, "Built with Claude" markers — not on the Learn chip. 365 purple lives inside the Comply365 section — not on the chip itself.</p>
+
+  <h2>Model compare (charts only)</h2>
+  <div class="grid">
+    <div class="swatch"><div class="swatch-face" style="background:#14b8a6"></div><div class="swatch-meta"><div class="swatch-name">openai</div><div class="swatch-hex">#14b8a6</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#4a90ff"></div><div class="swatch-meta"><div class="swatch-name">google</div><div class="swatch-hex">#4a90ff</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#e879f9"></div><div class="swatch-meta"><div class="swatch-name">xai</div><div class="swatch-hex">#e879f9</div></div></div>
+  </div>
+  <div class="bars" style="margin-top:14px">
+    <div class="bar" style="background:#ff7a3d; height:100%"></div>
+    <div class="bar" style="background:#14b8a6; height:72%"></div>
+    <div class="bar" style="background:#4a90ff; height:58%"></div>
+    <div class="bar" style="background:#e879f9; height:46%"></div>
+  </div>
+
+  <h2>Section chips — consistency demo</h2>
+  <div class="row">
+    <button class="pill">Home</button>
+    <button class="pill active">Learn</button>
+    <button class="pill">Tools</button>
+    <button class="pill">Projects</button>
+    <button class="pill">Comply365</button>
+  </div>
+  <p class="note">Every active chip uses the same cyan glow. No section carries brand color in the chrome.</p>
+
+  <div class="foot">
+    Neutrals · Radix Slate-inspired cool (R&lt;G&lt;B).<br>
+    Accents · Apple system pairs (systemTeal, systemBlue, systemGreen, systemRed).<br>
+    Warning · amber, not orange — keeps Claude-brand orange free for Claude-subject content.
+  </div>
+</section>
+
+<!-- ─────────────────────────── LIGHT ─────────────────────────── -->
+<section class="panel panel-light">
+  <h1>Light</h1>
+  <p class="panel-subtitle">Apple-style grouped canvas — cool gray with pure-white cards floating above.</p>
+
+  <h2>Neutral surfaces</h2>
+  <div class="grid">
+    <div class="swatch"><div class="swatch-face" style="background:#f2f2f7"></div><div class="swatch-meta"><div class="swatch-name">bg-0 · page</div><div class="swatch-hex">#f2f2f7</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#f7f7fa"></div><div class="swatch-meta"><div class="swatch-name">bg-1 · low card</div><div class="swatch-hex">#f7f7fa</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#ffffff"></div><div class="swatch-meta"><div class="swatch-name">bg-2 · raised</div><div class="swatch-hex">#ffffff</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#ffffff"></div><div class="swatch-meta"><div class="swatch-name">bg-3 · modal</div><div class="swatch-hex">#ffffff</div></div></div>
+  </div>
+
+  <h2>Text</h2>
+  <div class="grid">
+    <div class="swatch"><div class="swatch-face text-face" style="background:#ffffff;color:#000">Aa</div><div class="swatch-meta"><div class="swatch-name">text-1 · primary</div><div class="swatch-hex">rgba(0,0,0,1)</div></div></div>
+    <div class="swatch"><div class="swatch-face text-face" style="background:#ffffff;color:rgba(0,0,0,0.6)">Aa</div><div class="swatch-meta"><div class="swatch-name">text-2 · secondary</div><div class="swatch-hex">rgba(0,0,0,0.6)</div></div></div>
+    <div class="swatch"><div class="swatch-face text-face" style="background:#ffffff;color:rgba(0,0,0,0.3)">Aa</div><div class="swatch-meta"><div class="swatch-name">text-3 · tertiary</div><div class="swatch-hex">rgba(0,0,0,0.3)</div></div></div>
+  </div>
+
+  <h2>Electric cyan — hero accent (every active / hover / focus)</h2>
+  <div class="grid grid-2">
+    <div class="swatch">
+      <div class="swatch-face" style="background:#30b0c7"></div>
+      <div class="swatch-meta"><div class="swatch-name">cyan-solid</div><div class="swatch-hex">#30b0c7</div></div>
+    </div>
+    <div class="swatch">
+      <div class="glow-stage">
+        <div class="demo-card active">
+          <div class="title">Active card</div>
+          <div class="sub">Cyan glow on hover · focus · selected</div>
+        </div>
+      </div>
+      <div class="swatch-meta"><div class="swatch-name">glow in context</div><div class="swatch-hex">Apple systemTeal (light)</div></div>
+    </div>
+  </div>
+
+  <h2>Semantic state</h2>
+  <div class="grid">
+    <div class="swatch"><div class="swatch-face" style="background:#007aff"></div><div class="swatch-meta"><div class="swatch-name">info</div><div class="swatch-hex">#007aff</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#34c759"></div><div class="swatch-meta"><div class="swatch-name">success</div><div class="swatch-hex">#34c759</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#d97706"></div><div class="swatch-meta"><div class="swatch-name">warning</div><div class="swatch-hex">#d97706</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#ff3b30"></div><div class="swatch-meta"><div class="swatch-name">critical</div><div class="swatch-hex">#ff3b30</div></div></div>
+  </div>
+  <div class="row" style="margin-top:14px">
+    <span class="badge b-info">Info</span>
+    <span class="badge b-success">Saved</span>
+    <span class="badge b-warning">Stale feed</span>
+    <span class="badge b-critical">Fetch failed</span>
+  </div>
+
+  <h2>Brand (content only — never chrome)</h2>
+  <div class="grid">
+    <div class="swatch"><div class="swatch-face" style="background:#ea580c"></div><div class="swatch-meta"><div class="swatch-name">claude</div><div class="swatch-hex">#ea580c</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#7c3aed"></div><div class="swatch-meta"><div class="swatch-name">365</div><div class="swatch-hex">#7c3aed</div></div></div>
+  </div>
+  <p class="note">Claude orange shows up on chart bars for Claude models, "Built with Claude" markers — not on the Learn chip. 365 purple lives inside the Comply365 section — not on the chip itself.</p>
+
+  <h2>Model compare (charts only)</h2>
+  <div class="grid">
+    <div class="swatch"><div class="swatch-face" style="background:#0d9488"></div><div class="swatch-meta"><div class="swatch-name">openai</div><div class="swatch-hex">#0d9488</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#2563eb"></div><div class="swatch-meta"><div class="swatch-name">google</div><div class="swatch-hex">#2563eb</div></div></div>
+    <div class="swatch"><div class="swatch-face" style="background:#c026d3"></div><div class="swatch-meta"><div class="swatch-name">xai</div><div class="swatch-hex">#c026d3</div></div></div>
+  </div>
+  <div class="bars" style="margin-top:14px">
+    <div class="bar" style="background:#ea580c; height:100%"></div>
+    <div class="bar" style="background:#0d9488; height:72%"></div>
+    <div class="bar" style="background:#2563eb; height:58%"></div>
+    <div class="bar" style="background:#c026d3; height:46%"></div>
+  </div>
+
+  <h2>Section chips — consistency demo</h2>
+  <div class="row">
+    <button class="pill">Home</button>
+    <button class="pill active">Learn</button>
+    <button class="pill">Tools</button>
+    <button class="pill">Projects</button>
+    <button class="pill">Comply365</button>
+  </div>
+  <p class="note">Every active chip uses the same cyan glow. No section carries brand color in the chrome.</p>
+
+  <div class="foot">
+    Canvas · Apple <code>systemGroupedBackground</code> (#f2f2f7) with pure-white cards floating on top.<br>
+    Accents · darker variants for contrast on white (Apple's rule — darks brighten, lights deepen).<br>
+    Warning · amber deep enough to read as warning text on white, distinct from Claude orange.
+  </div>
+</section>
+
+</body>
+</html>

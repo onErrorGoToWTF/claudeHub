@@ -227,7 +227,7 @@
       localStorage.setItem(THEME_KEY, "light");
     }
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", isLight ? "#050507" : "#f7f7f8");
+    if (meta) meta.setAttribute("content", isLight ? "#0a0a0d" : "#f2f2f7");
   });
 
   // ---------- Filters ----------

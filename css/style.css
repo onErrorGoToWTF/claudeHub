@@ -1,19 +1,19 @@
 /* ===== Tokens (dark-first) ===== */
 :root {
-  --bg-0: #050507;
-  --bg-1: #0a0a0d;
-  --bg-2: #101014;
-  --bg-3: #16161b;
-  --surface:         rgba(22,22,27,0.6);
-  --surface-strong:  rgba(30,30,36,0.78);
-  --surface-elev:    rgba(34,34,40,0.82);
+  --bg-0: #0a0a0d;
+  --bg-1: #111113;
+  --bg-2: #18191b;
+  --bg-3: #212225;
+  --surface:         rgba(24,25,27,0.60);
+  --surface-strong:  rgba(33,34,37,0.78);
+  --surface-elev:    rgba(40,42,46,0.82);
 
-  --text-1: #f4f4f6;
-  --text-2: #8a8a92;
-  --text-3: #5a5a62;
+  --text-1: #eeeef0;
+  --text-2: #b0b4ba;
+  --text-3: #777b84;
 
-  --border:        rgba(255,255,255,0.07);
-  --border-strong: rgba(255,255,255,0.12);
+  --border:        rgba(255,255,255,0.05);
+  --border-strong: rgba(255,255,255,0.11);
 
   --accent:        #3b82f6;
   --accent-hi:     #60a5fa;
@@ -60,17 +60,17 @@
 }
 
 :root[data-theme="light"] {
-  --bg-0: #f7f7f8;
-  --bg-1: #fbfbfc;
+  --bg-0: #f2f2f7;
+  --bg-1: #f7f7fa;
   --bg-2: #ffffff;
   --bg-3: #ffffff;
-  --surface:        rgba(255,255,255,0.7);
+  --surface:        rgba(255,255,255,0.72);
   --surface-strong: rgba(255,255,255,0.88);
   --surface-elev:   #ffffff;
 
-  --text-1: #0a0a0e;
-  --text-2: #5f5f68;
-  --text-3: #92929a;
+  --text-1: #000000;
+  --text-2: rgba(0,0,0,0.60);
+  --text-3: rgba(0,0,0,0.30);
 
   --border:        rgba(0,0,0,0.07);
   --border-strong: rgba(0,0,0,0.14);
