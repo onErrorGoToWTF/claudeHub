@@ -1,7 +1,7 @@
 {
-  "version": "0.6.85",
-  "milestone": "M8.12.15",
-  "milestoneTitle": "Phase 8.12.15 — section-head stripes replaced with a single soft radial bloom of the identity color behind the first ~90px of the heading. No chrome, no shapes — ambient tint that fades to transparent before the title ends; neutral dominance preserved",
-  "deployedAt": "2026-04-19T17:00Z",
+  "version": "0.6.86",
+  "milestone": "M8.12.16",
+  "milestoneTitle": "Phase 8.12.16 — radial bloom removed; inline section-head identity icons added to the LEFT of each heading, sized 1em (matches cap height), stroked in the section color. Dashboard gets a new 2×2-grid icon in grey (--text-3) as placeholder",
+  "deployedAt": "2026-04-19T17:15Z",
   "commitSha": ""
 }

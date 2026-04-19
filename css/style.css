@@ -456,41 +456,24 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   margin: 0;
   font-size: 28px; font-weight: 600; line-height: 1.15; letter-spacing: -0.025em;
   color: var(--text-1);
-  position: relative;
-  isolation: isolate;
+  display: flex; align-items: center; gap: 10px;
 }
-/* M8.12.15 — section-head accent: a single soft radial bloom of the
-   section's identity color behind the first ~90px of the heading.
-   No hard shapes, no stripes — reads as ambient tint under the letters
-   that fades to transparent well before the end of the title. Keeps the
-   neutral-dominant design language while still giving each section a
-   subtle colored presence. Color source: --band (set per-section). */
-.section-head h2::before {
-  content: "";
-  position: absolute;
-  left: -24px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 140px;
-  height: 72px;
-  z-index: -1;
-  pointer-events: none;
-  --band: var(--sec, var(--text-3));
-  background: radial-gradient(
-    ellipse 70px 30px at 42px 50%,
-    color-mix(in srgb, var(--band) 26%, transparent) 0%,
-    color-mix(in srgb, var(--band) 14%, transparent) 35%,
-    color-mix(in srgb, var(--band)  6%, transparent) 60%,
-    transparent 78%
-  );
+/* M8.12.16 — inline section-identity icon to the left of each heading.
+   Sized to match the cap height of the title (1em), stroke-only, tinted
+   in the section's identity color. Reuses the same shapes as the
+   dashboard panel icons but rendered small + in-flow. */
+.section-head-icon {
+  width: 1em; height: 1em;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
 }
-/* Section-head accent matches the tab's rainbow color. */
-.section[data-section="home"]      .section-head h2::before { --band: var(--text-3); }
-.section[data-section="learn"]     .section-head h2::before { --band: var(--color-learn-solid); }
-.section[data-section="tools"]     .section-head h2::before { --band: var(--color-tools-solid); }
-.section[data-section="projects"]  .section-head h2::before { --band: var(--color-projects-solid); }
-.section[data-section="youtube"]   .section-head h2::before { --band: var(--color-youtube-solid); }
-.section[data-section="news-media"] .section-head h2::before { --band: var(--text-3); }
+.section-head-icon--home     { stroke: var(--text-3); }
+.section-head-icon--learn    { stroke: var(--color-learn-solid); }
+.section-head-icon--projects { stroke: var(--color-projects-solid); }
+.section-head-icon--tools    { stroke: var(--color-tools-solid); }
 .section-head-actions {
   display: flex; align-items: flex-end; gap: 6px;
   flex-wrap: wrap;
@@ -511,7 +494,6 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
     flex-wrap: nowrap;
   }
   .section-head h2 { font-size: 23px; line-height: 1.15; letter-spacing: -0.02em; }
-  .section-head h2::before { height: 60px; }
   .section-head-actions { gap: 4px; flex-wrap: nowrap; }
   .section-head-actions .subpills { gap: 2px; padding: 2px; }
   .section-head-actions .subpill { padding: 6px 11px; font-size: 13px; min-height: 32px; }
