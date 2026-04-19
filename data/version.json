@@ -1,7 +1,7 @@
 {
-  "version": "0.6.92",
-  "milestone": "M8.12.22",
-  "milestoneTitle": "Phase 8.12.22 — item tiles fake a cut-through to the page: bg = solid --bg-0 (page color), topped with a thin hairline, inset top-edge specular highlight, and faint drop shadow. No real backdrop-filter; pure optical trick so the tile interior matches the page while the panel around it stays white",
-  "deployedAt": "2026-04-19T18:40Z",
+  "version": "0.6.93",
+  "milestone": "M8.12.23",
+  "milestoneTitle": "Phase 8.12.23 — dash-panel icons now fill the same 72×72 render box: each SVG's viewBox clipped to its content bbox and preserveAspectRatio=\"none\" stretches it to fill. vector-effect:non-scaling-stroke keeps line weight uniform despite the asymmetric stretch. Slight shape distortion on the Projects folder (stretched vertically) by design",
+  "deployedAt": "2026-04-19T18:55Z",
   "commitSha": ""
 }

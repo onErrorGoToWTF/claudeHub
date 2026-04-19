@@ -1705,6 +1705,9 @@ body.modal-open { overflow: hidden; }
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+/* Keep stroke thickness uniform even when preserveAspectRatio="none"
+   stretches the viewBox asymmetrically (M8.12.23). */
+.dash-panel-icon * { vector-effect: non-scaling-stroke; }
 /* Stacked drop-shadows: tight 1.5px at full saturation hugs the line
    (the "concentrated near border" pop), then a wider 3px at the
    glow-token alpha for ambient fade. */
