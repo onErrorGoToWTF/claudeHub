@@ -5378,24 +5378,36 @@ body.modal-open { overflow: hidden; }
   text-transform: uppercase;
   text-align: center;
 }
-.faceoff-pager {
+/* Benchmark selector pills — double as carousel pager. */
+.faceoff-bench-pills {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   gap: 6px;
-  margin: 10px 0 2px;
+  margin: 0 0 14px;
 }
-.faceoff-pg-dot {
-  width: 6px; height: 6px; padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: var(--text-3);
-  opacity: 0.35;
+.faceoff-bench-pill {
+  appearance: none;
+  padding: 6px 12px;
+  min-height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.003em;
   cursor: pointer;
   touch-action: manipulation;
-  transition: opacity 0.2s var(--ease-premium), background 0.2s var(--ease-premium);
+  transition: color 0.2s var(--ease-premium), border-color 0.2s var(--ease-premium), background 0.2s var(--ease-premium);
+  white-space: nowrap;
 }
-.faceoff-pg-dot.is-active { opacity: 1; background: var(--text-1); }
-.faceoff-pg-dot:hover:not(.is-active) { opacity: 0.7; }
+.faceoff-bench-pill:hover { color: var(--text-1); border-color: var(--border-strong); }
+.faceoff-bench-pill.is-active {
+  color: var(--text-1);
+  background: color-mix(in srgb, var(--text-1) 7%, transparent);
+  border-color: var(--border-strong);
+}
 
 /* ===== (Legacy grouped-bars face-off kept for now, unused) ===== */
 .gf-legend {

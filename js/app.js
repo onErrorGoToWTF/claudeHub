@@ -3318,13 +3318,14 @@
   function renderLlmFaceoff() {
     const host = document.getElementById("faceoff");
     if (!host) return;
-    // Legend stays static above the carousel.
-    const legendHtml = `
-      <div class="gf-legend">
-        ${FACEOFF_MODELS.map(m => `
-          <span class="gf-li" style="--col:${m.col}">
-            <span class="gf-dot" aria-hidden="true"></span>${m.short}
-          </span>
+    // Benchmark pills double as the carousel selector — tap a pill to
+    // jump to that slide, active pill mirrors scroll position. Model
+    // legend is dropped because each carousel row already labels its
+    // model in its own brand color.
+    const pillsHtml = `
+      <div class="faceoff-bench-pills" role="tablist" aria-label="Select benchmark">
+        ${FACEOFF_BENCHES.map((b, i) => `
+          <button type="button" class="faceoff-bench-pill${i === faceoffBenchIdx ? " is-active" : ""}" data-bench-idx="${i}" role="tab" aria-selected="${i === faceoffBenchIdx ? "true" : "false"}">${escapeHtml(b.label)}</button>
         `).join("")}
       </div>
     `;
@@ -3357,26 +3358,22 @@
         </div>
       `;
     }).join("");
-    const pagerDots = FACEOFF_BENCHES.map((_, i) =>
-      `<button type="button" class="faceoff-pg-dot${i === faceoffBenchIdx ? " is-active" : ""}" data-bench-idx="${i}" aria-label="Show ${FACEOFF_BENCHES[i].label}"></button>`
-    ).join("");
     host.innerHTML = `
-      ${legendHtml}
+      ${pillsHtml}
       <div class="faceoff-carousel" id="faceoff-carousel" role="region" aria-label="Benchmark carousel">
         ${facesHtml}
       </div>
-      <div class="faceoff-pager">${pagerDots}</div>
     `;
     const scroller = document.getElementById("faceoff-carousel");
-    // Pager dots jump the scroller to a slide.
-    host.querySelectorAll(".faceoff-pg-dot").forEach((d) => {
-      d.addEventListener("click", (e) => {
+    // Pills jump the scroller to a slide.
+    host.querySelectorAll(".faceoff-bench-pill").forEach((p) => {
+      p.addEventListener("click", (e) => {
         e.preventDefault();
-        const idx = Number(d.dataset.benchIdx);
+        const idx = Number(p.dataset.benchIdx);
         scrollFaceoffTo(idx);
       });
     });
-    // Keep pager in sync with scroll position.
+    // Keep pill selection in sync with scroll position.
     if (scroller) {
       let scrollRaf;
       scroller.addEventListener("scroll", () => {
@@ -3386,8 +3383,9 @@
           const idx = Math.round(scroller.scrollLeft / w);
           if (idx !== faceoffBenchIdx) {
             faceoffBenchIdx = idx;
-            host.querySelectorAll(".faceoff-pg-dot").forEach((d, i) => {
-              d.classList.toggle("is-active", i === faceoffBenchIdx);
+            host.querySelectorAll(".faceoff-bench-pill").forEach((p, i) => {
+              p.classList.toggle("is-active", i === faceoffBenchIdx);
+              p.setAttribute("aria-selected", i === faceoffBenchIdx ? "true" : "false");
             });
           }
         });
