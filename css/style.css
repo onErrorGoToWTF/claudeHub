@@ -89,10 +89,10 @@
   --color-model-xai-text:         #e879f9;
 
   /* ===== Tab identity colors (chip/topbar active states) ===== */
-  --color-learn-solid:       #ff9f0a;                  /* Apple systemOrange dark */
-  --color-learn-surface:     rgba(255,159,10,0.10);
-  --color-learn-border:      rgba(255,159,10,0.40);
-  --color-learn-glow:        rgba(255,159,10,0.28);
+  --color-learn-solid:       #10b981;                  /* Emerald with a hint of blue (dark) */
+  --color-learn-surface:     rgba(16,185,129,0.10);
+  --color-learn-border:      rgba(16,185,129,0.40);
+  --color-learn-glow:        rgba(16,185,129,0.28);
 
   --color-youtube-solid:     #ff453a;                  /* Apple systemRed dark */
   --color-youtube-surface:   rgba(255,69,58,0.10);
@@ -276,10 +276,10 @@
   --color-model-xai-text:         #a61fb5;
 
   /* Tab identity colors — light */
-  --color-learn-solid:       #ff9500;                  /* Apple systemOrange light */
-  --color-learn-surface:     rgba(255,149,0,0.12);
-  --color-learn-border:      rgba(255,149,0,0.40);
-  --color-learn-glow:        rgba(255,149,0,0.22);
+  --color-learn-solid:       #0d9d6e;                  /* Emerald with blue hint (light, darker for contrast on greige) */
+  --color-learn-surface:     rgba(13,157,110,0.12);
+  --color-learn-border:      rgba(13,157,110,0.40);
+  --color-learn-glow:        rgba(13,157,110,0.22);
 
   --color-youtube-solid:     #ff3b30;                  /* Apple systemRed light */
   --color-youtube-surface:   rgba(255,59,48,0.12);
