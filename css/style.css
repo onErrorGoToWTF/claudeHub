@@ -447,25 +447,59 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 :root:not([data-theme="light"]) .icon-sun  { display: none; }
 :root:not([data-theme="light"]) .icon-moon { display: block; }
 
-/* Chips — floating Apple-glass nav bar.
-   The container .chips itself is the glass pill; individual chips ride inside
-   as minimal text tabs. .glass on the element supplies blur/saturate/specular;
-   the rules below give it nav-bar shape (radius-pill, centered, padded). */
-.chips {
+/* Floating nav — brand tag above the glass nav bar; the wrap is sticky
+   so the whole unit stays pinned at the top of the viewport while the
+   page scrolls underneath it. */
+.nav-wrap {
   position: sticky;
-  top: calc(var(--safe-t, 0px) + 8px);
+  top: calc(var(--safe-t, 0px) + 4px);
   z-index: 30;
+  max-width: 640px;
+  margin: 6px auto 10px;
+  padding: 0 max(12px, var(--safe-l)) 0 max(12px, var(--safe-r));
+}
+.nav-brand {
+  display: inline-block;
+  padding: 3px 10px 5px;
+  margin: 0 0 -1px 12px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  background: color-mix(in srgb, var(--bg-1) 60%, transparent);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+          backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid var(--glass-hairline);
+  border-bottom: 0;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  position: relative;
+  z-index: 31;
+  user-select: none;
+}
+.nav-brand-sub { font-weight: 500; color: var(--text-1); }
+
+.chips {
   display: flex; gap: 2px;
   padding: 4px;
-  margin: 6px auto 10px;
+  margin: 0;
   border-radius: var(--radius-md);
   overflow-x: auto;
   scrollbar-width: none;
   scroll-snap-type: x proximity;
-  width: fit-content;
-  max-width: calc(100% - (max(14px, var(--safe-l)) + max(14px, var(--safe-r))));
-  --glass-blur: 20px;
-  --glass-saturate: 170%;
+  width: 100%;
+  --glass-blur: 24px;
+  --glass-saturate: 180%;
+}
+/* More-transparent glass override — the nav wants to feel lighter than
+   the generic glass primitive so underlying content blurs through. */
+.chips.glass {
+  background: linear-gradient(180deg,
+    rgba(16,18,24,0.38) 0%,
+    rgba(10,12,16,0.26) 100%);
+}
+:root[data-theme="light"] .chips.glass {
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
 }
 .chips::-webkit-scrollbar { display: none; }
 .chip {
@@ -494,6 +528,19 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 
 .chip:active { transform: scale(0.96); }
+
+/* Icon-only chip variant — theme toggle lives in the nav as a .chip-icon.
+   Sits at the trailing edge of the row via margin-left: auto. */
+.chip-icon {
+  margin-left: auto;
+  width: 36px;
+  padding: 6px 0;
+  justify-content: center;
+  color: var(--text-2);
+}
+.chip-icon + .chip-icon { margin-left: 0; }
+.chip-icon .icon { width: 16px; height: 16px; }
+.chip-icon:hover { color: var(--text-1); }
 
 /* ===== App ===== */
 .app {
