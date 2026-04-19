@@ -2125,10 +2125,13 @@ body.modal-open { overflow: hidden; }
 .dash-action-youtube {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 12px;
+  justify-content: center;
+  gap: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   min-height: 44px;
-  font-size: 13px;
+  border-radius: var(--radius-sm);
   background: linear-gradient(135deg,
     rgba(255,170,195,0.28) 0%,
     rgba(255,120,150,0.22) 100%);
