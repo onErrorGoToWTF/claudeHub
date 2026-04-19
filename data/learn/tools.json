@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-18",
+  "updated_at": "2026-04-19",
   "tools": [
     {
       "id": "claude-code",
@@ -518,6 +518,139 @@
       ],
       "verifiedAt": "2026-04-18",
       "snippetTags": []
+    },
+    {
+      "id": "blender",
+      "name": "Blender",
+      "vendor": "Blender Foundation",
+      "modality": "video",
+      "tagline": "Free open-source 3D suite — modelling, animation, Cycles rendering.",
+      "whenToUse": "Any shot that needs accurate geometry, explode-views, or precise camera paths that AI video models fudge.",
+      "currentVersion": "Blender 4.x",
+      "pricing": "Free. GPL.",
+      "priceTier": "free",
+      "claudeNative": false,
+      "setupComplexity": 3,
+      "priorityScore": 4,
+      "provides": [
+        "3d-scene-composition",
+        "camera-path-control",
+        "explode-view-animation",
+        "particle-effect"
+      ],
+      "requires": [
+        "gpu-helpful"
+      ],
+      "officialUrl": "https://www.blender.org",
+      "docsUrl": "https://docs.blender.org",
+      "topics": [
+        "3d",
+        "modelling",
+        "animation",
+        "rendering"
+      ],
+      "newsKeywords": [
+        "blender",
+        "blender.org"
+      ],
+      "snippetTags": [],
+      "verifiedAt": "2026-04-19"
+    },
+    {
+      "id": "meshy",
+      "name": "Meshy",
+      "vendor": "Meshy",
+      "modality": "image",
+      "tagline": "AI 3D model generation — text or image to a rigged mesh in minutes.",
+      "whenToUse": "Need a rough 3D asset fast. Pair with Blender for the polish pass.",
+      "currentVersion": "Meshy 4 · 2026",
+      "pricing": "Free tier; Pro $20/mo; Max $60/mo.",
+      "priceTier": "lte50",
+      "claudeNative": false,
+      "setupComplexity": 1,
+      "priorityScore": 3,
+      "provides": [
+        "ai-3d-model-gen",
+        "text-to-image"
+      ],
+      "requires": [],
+      "officialUrl": "https://meshy.ai",
+      "docsUrl": "https://docs.meshy.ai",
+      "topics": [
+        "3d",
+        "generative-3d"
+      ],
+      "newsKeywords": [
+        "meshy",
+        "meshy.ai"
+      ],
+      "snippetTags": [],
+      "verifiedAt": "2026-04-19"
+    },
+    {
+      "id": "davinci-resolve",
+      "name": "DaVinci Resolve",
+      "vendor": "Blackmagic Design",
+      "modality": "video",
+      "tagline": "Free pro-grade editor + color grading — industry standard for post.",
+      "whenToUse": "Stitch AI clips with live footage, grade them to match, export final. Free tier covers everything most sites need.",
+      "currentVersion": "Resolve 19",
+      "pricing": "Free. Studio tier $295 one-time.",
+      "priceTier": "free",
+      "claudeNative": false,
+      "setupComplexity": 2,
+      "priorityScore": 4,
+      "provides": [
+        "video-editor",
+        "color-grading"
+      ],
+      "requires": [],
+      "officialUrl": "https://www.blackmagicdesign.com/products/davinciresolve",
+      "docsUrl": "https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion",
+      "topics": [
+        "video",
+        "edit",
+        "color"
+      ],
+      "newsKeywords": [
+        "davinci resolve",
+        "blackmagic"
+      ],
+      "snippetTags": [],
+      "verifiedAt": "2026-04-19"
+    },
+    {
+      "id": "framer-motion",
+      "name": "Framer Motion",
+      "vendor": "Framer",
+      "modality": "coding",
+      "tagline": "React animation library — premium UI motion, spring physics, layout transitions.",
+      "whenToUse": "Premium-feeling web UI — hero transforms, sheet animations, shared-element morphs. Reach for it when CSS transitions hit their ceiling.",
+      "currentVersion": "Motion 11",
+      "pricing": "Free. MIT.",
+      "priceTier": "free",
+      "claudeNative": false,
+      "setupComplexity": 1,
+      "priorityScore": 4,
+      "provides": [
+        "premium-motion-ui"
+      ],
+      "requires": [
+        "react"
+      ],
+      "officialUrl": "https://motion.dev",
+      "docsUrl": "https://motion.dev/docs",
+      "topics": [
+        "react",
+        "animation",
+        "ui"
+      ],
+      "newsKeywords": [
+        "framer motion",
+        "motion.dev"
+      ],
+      "snippetTags": [],
+      "verifiedAt": "2026-04-19"
     }
   ]
 }

@@ -64,6 +64,7 @@
       { id: "cap-ide",           label: "IDE / pair-coder",     matches: ["ide", "inline-edit"] },
       { id: "cap-no-code",       label: "No-code app builder",  matches: ["no-code-frontend"] },
       { id: "cap-terminal",      label: "Terminal agent",       matches: ["terminal-agent"] },
+      { id: "cap-premium-motion", label: "Premium-motion UI",   matches: ["premium-motion-ui"] },
     ]},
     { id: "agent", label: "Agent & Orchestration", caps: [
       { id: "cap-mcp",           label: "MCP client",           matches: ["mcp-client"] },
@@ -79,6 +80,13 @@
       { id: "cap-gen-video",     label: "Generative video",     matches: ["text-to-video"] },
       { id: "cap-img-to-video",  label: "Image-to-video",       matches: ["image-to-video", "keyframe-video-animation"] },
       { id: "cap-cinematic",     label: "4K / synced audio",    matches: ["4k-video", "synced-audio"] },
+      { id: "cap-video-edit",    label: "Edit / color grade",   matches: ["video-editor", "color-grading"] },
+    ]},
+    { id: "3d-motion", label: "3D / Motion", caps: [
+      { id: "cap-3d-scene",      label: "3D scene / modelling", matches: ["3d-scene-composition"] },
+      { id: "cap-ai-3d-model",   label: "AI 3D model gen",      matches: ["ai-3d-model-gen"] },
+      { id: "cap-explode-view",  label: "Explode-view / particles", matches: ["explode-view-animation", "particle-effect"] },
+      { id: "cap-camera-path",   label: "Camera path control",  matches: ["camera-path-control"] },
     ]},
     { id: "image", label: "Image", caps: [
       { id: "cap-text-to-image", label: "Text-to-image",        matches: ["text-to-image"] },
@@ -102,6 +110,11 @@
     { id: "glue", label: "Glue & Ops", caps: [
       { id: "cap-one-click",     label: "One-click deploy",     matches: ["one-click-deploy", "vercel-deploy"] },
       { id: "cap-self-host",     label: "Self-hostable",        matches: ["self-hostable"] },
+    ]},
+    { id: "local", label: "Local / Desktop", caps: [
+      { id: "cap-local-script",  label: "Local script / CLI",   matches: ["local-script", "cli-tool"] },
+      { id: "cap-desktop-ui",    label: "Desktop UI",           matches: ["desktop-ui"] },
+      { id: "cap-file-parsing",  label: "File / legacy parsing", matches: ["file-parsing", "legacy-format-ingest"] },
     ]},
   ];
   const CAP_BY_ID = {};
