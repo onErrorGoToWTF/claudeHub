@@ -79,9 +79,9 @@
       <h2>Learn</h2>
       <div class="section-head-actions">
         <div class="subpills" role="tablist" aria-label="Learn content">
-          <button class="subpill"           data-learn="whats-new" type="button" role="tab" aria-selected="false"><span class="subpill-label">What's new</span><span class="subpill-badge" data-subpill-badge="whats-new" hidden></span></button>
           <button class="subpill is-active" data-learn="courses"   type="button" role="tab" aria-selected="true">Courses</button>
-          <button class="subpill"           data-learn="tutorials" type="button" role="tab" aria-selected="false">Tutorials &amp; quizzes</button>
+          <button class="subpill"           data-learn="tutorials" type="button" role="tab" aria-selected="false">Quizzes</button>
+          <button class="subpill"           data-learn="whats-new" type="button" role="tab" aria-selected="false"><span class="subpill-label">New</span><span class="subpill-badge" data-subpill-badge="whats-new" hidden></span></button>
         </div>
         <button class="section-info" type="button" aria-label="About Learn" data-info="Courses, quizzes, and what shipped this week.">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
@@ -103,7 +103,7 @@
     <div class="pane" data-pane="learn-courses">
       <div class="subpills subpills-nested" role="tablist" aria-label="Course source">
         <button class="subpill is-active" data-courses="academy"   type="button" role="tab" aria-selected="true">Anthropic Academy</button>
-        <button class="subpill"           data-courses="originals" type="button" role="tab" aria-selected="false">aiStacked Originals</button>
+        <button class="subpill"           data-courses="originals" type="button" role="tab" aria-selected="false">Tutorials</button>
       </div>
 
       <div class="pane" data-pane="courses-academy">
@@ -116,21 +116,11 @@
       </div>
 
       <div class="pane" data-pane="courses-originals" hidden>
-        <div class="hub-intro">
-          <div class="hub-eyebrow">aiStacked Originals</div>
-          <h3 class="hub-title">Custom courses, authored here.</h3>
-          <p class="hub-lede">Deeper dives we write ourselves — CLAUDE.md done right, writing Skills, Claude Design launch notes, and more. Coming soon.</p>
-        </div>
-        <div class="empty glass academy-empty">No Originals yet. First one drops in M4.</div>
+        <div class="empty glass">Custom tutorials — coming soon.</div>
       </div>
     </div>
 
     <div class="pane" data-pane="learn-tutorials" hidden>
-      <div class="hub-intro">
-        <div class="hub-eyebrow">Tutorials &amp; quizzes</div>
-        <h3 class="hub-title">Short lessons with MCQ checks.</h3>
-        <p class="hub-lede">A few minutes each. Read, take the quiz, mark complete. Progress stays on this device.</p>
-      </div>
       <div class="lessons-list" id="lessons-list"></div>
     </div>
   </section>
@@ -386,15 +376,15 @@
 
   <section class="section" data-section="comply365" id="section-comply365">
     <div class="section-head">
-      <h2>Comply365</h2>
+      <h2>365</h2>
       <div class="section-head-actions">
-        <div class="subpills" role="tablist" aria-label="Comply365 content kind">
+        <div class="subpills" role="tablist" aria-label="365 content kind">
           <button class="subpill is-active" data-s365="tutorials" type="button" role="tab" aria-selected="true">Tutorials</button>
           <button class="subpill"           data-s365="resources" type="button" role="tab" aria-selected="false">Resources</button>
           <button class="subpill"           data-s365="news"      type="button" role="tab" aria-selected="false">News</button>
         </div>
         <span class="updated" data-updated="365">—</span>
-        <button class="section-info" type="button" aria-label="About Comply365" data-info="Comply365 tutorials, Claude resources for compliance workflows, and scraped industry news.">
+        <button class="section-info" type="button" aria-label="About 365" data-info="Comply365 tutorials, Claude resources for compliance workflows, and scraped industry news.">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         </button>
       </div>
