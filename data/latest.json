@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T23:08:17.845Z",
+  "generated_at": "2026-04-19T23:19:54.089Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,9 +146,16 @@
     ],
     "news": [
       {
+        "title": "Anthropic Releases Claude Opus 4.7 With Enhanced Agent Coding Capabilities - thelec.net",
+        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFB6dEtiTjd3c2lhWl8wb1c3bGQ2dnBRQm43VEx5OG4zVWh4cVRsN1h2RDJjY2YwR3RBemZ6WDJhMVVLTVNnTS1iYW9RN3J6S1pTRmNSVWUtNlNnS1FMU2V5WkZLeXI2QQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-19T23:07:57.000Z",
+        "summary": "Anthropic Releases Claude Opus 4.7 With Enhanced Agent Coding Capabilities thelec.net"
+      },
+      {
         "title": "Banned by Anthropic?",
         "url": "https://bannedbyanthropic.com/",
-        "source": "HN · 79↑",
+        "source": "HN · 81↑",
         "hn_id": "47828249",
         "published": "2026-04-19T22:33:31.000Z",
         "summary": ""
@@ -192,7 +199,7 @@
       {
         "title": "Show HN: Faceoff – A terminal UI for following NHL games",
         "url": "https://www.vincentgregoire.com/faceoff/",
-        "source": "HN · 81↑",
+        "source": "HN · 84↑",
         "hn_id": "47826104",
         "published": "2026-04-19T17:44:44.000Z",
         "summary": "Faceoff is a TUI app written in Python to follow live NHL games and browse standings and stats. I got the inspiration from Playball, a similar TUI app for MLB games that was…"
@@ -236,7 +243,7 @@
       {
         "title": "Changes in the system prompt between Claude Opus 4.6 and 4.7",
         "url": "https://simonwillison.net/2026/Apr/18/opus-system-prompt/",
-        "source": "HN · 156↑",
+        "source": "HN · 159↑",
         "hn_id": "47823270",
         "published": "2026-04-19T10:36:29.000Z",
         "summary": ""
@@ -333,13 +340,6 @@
         "summary": "Google and OpenAI are making a run at Claude's desktop moat, and Anthropic is making it easy The New Stack"
       },
       {
-        "title": "White House and Anthropic hold 'productive' meeting amid fears over Mythos model - BBC",
-        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1rTWNaaDlVRVRKRF9fRnZIX2FaLU1SZ2NLRDNDdzBVdUQwZ29uNlgzVDBDc29SbU4zMDFPc1R4NXc2dTRRdGF3RlNWZ05aNWphaFpUaEFUSm9zdw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-18T00:37:06.000Z",
-        "summary": "White House and Anthropic hold 'productive' meeting amid fears over Mythos model BBC"
-      },
-      {
         "title": "Claude Design just dropped... (Everything you need to know!)",
         "url": "https://www.youtube.com/watch?v=1YAc1f4v-WU",
         "source": "Productive Dude",
@@ -412,6 +412,18 @@
         "_kind": "news_video"
       },
       {
+        "title": "Claude Opus-4.7 Just Dropped, And...",
+        "url": "https://www.youtube.com/watch?v=WVQ0lPiWsHQ",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "WVQ0lPiWsHQ",
+        "thumbnail": "https://i.ytimg.com/vi/WVQ0lPiWsHQ/hqdefault.jpg",
+        "published": "2026-04-16T14:52:01.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
         "title": "Gemma 4 Makes Claude Code 100% FREE",
         "url": "https://www.youtube.com/watch?v=-kA-8QJXY1g",
         "source": "Leon van Zyl",
@@ -456,6 +468,18 @@
         "video_id": "cY5ElqYKVdY",
         "thumbnail": "https://i.ytimg.com/vi/cY5ElqYKVdY/hqdefault.jpg",
         "published": "2026-04-15T15:00:53.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Routines Just Dropped, And It's Perfect",
+        "url": "https://www.youtube.com/watch?v=j3aXJNu9804",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "j3aXJNu9804",
+        "thumbnail": "https://i.ytimg.com/vi/j3aXJNu9804/hqdefault.jpg",
+        "published": "2026-04-14T19:08:20.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -516,30 +540,6 @@
         "video_id": "RXhEScTBBqs",
         "thumbnail": "https://i.ytimg.com/vi/RXhEScTBBqs/hqdefault.jpg",
         "published": "2026-04-10T12:52:00.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Welcome to Pragati Kunwer | Claude Code Skills for Non-Coders",
-        "url": "https://www.youtube.com/watch?v=hvdSm5IjjX0",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "hvdSm5IjjX0",
-        "thumbnail": "https://i.ytimg.com/vi/hvdSm5IjjX0/hqdefault.jpg",
-        "published": "2026-04-10T05:48:30.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "I'm an AI Engineer and Claude Mythos Surprised Me",
-        "url": "https://www.youtube.com/watch?v=Kyk4FUVQV5s",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "Kyk4FUVQV5s",
-        "thumbnail": "https://i.ytimg.com/vi/Kyk4FUVQV5s/hqdefault.jpg",
-        "published": "2026-04-09T17:58:33.000Z",
         "summary": "",
         "_kind": "news_video"
       }
@@ -764,6 +764,17 @@
         "summary": ""
       },
       {
+        "title": "Claude Opus-4.7 Just Dropped, And...",
+        "url": "https://www.youtube.com/watch?v=WVQ0lPiWsHQ",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "WVQ0lPiWsHQ",
+        "thumbnail": "https://i.ytimg.com/vi/WVQ0lPiWsHQ/hqdefault.jpg",
+        "published": "2026-04-16T14:52:01.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Code + GitHub: Step by Step for Complete Beginners",
         "url": "https://www.youtube.com/watch?v=nFMGnHdpoXY",
         "source": "Ryan & Matt Data Science",
@@ -838,6 +849,17 @@
         "video_id": "pHr1O_Af5NA",
         "thumbnail": "https://i.ytimg.com/vi/pHr1O_Af5NA/hqdefault.jpg",
         "published": "2026-04-15T02:13:41.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Routines Just Dropped, And It's Perfect",
+        "url": "https://www.youtube.com/watch?v=j3aXJNu9804",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "j3aXJNu9804",
+        "thumbnail": "https://i.ytimg.com/vi/j3aXJNu9804/hqdefault.jpg",
+        "published": "2026-04-14T19:08:20.000Z",
         "summary": ""
       },
       {
@@ -937,28 +959,6 @@
         "video_id": "-o3aiNFaMCI",
         "thumbnail": "https://i.ytimg.com/vi/-o3aiNFaMCI/hqdefault.jpg",
         "published": "2026-04-10T12:30:02.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Welcome to Pragati Kunwer | Claude Code Skills for Non-Coders",
-        "url": "https://www.youtube.com/watch?v=hvdSm5IjjX0",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "hvdSm5IjjX0",
-        "thumbnail": "https://i.ytimg.com/vi/hvdSm5IjjX0/hqdefault.jpg",
-        "published": "2026-04-10T05:48:30.000Z",
-        "summary": ""
-      },
-      {
-        "title": "I'm an AI Engineer and Claude Mythos Surprised Me",
-        "url": "https://www.youtube.com/watch?v=Kyk4FUVQV5s",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "Kyk4FUVQV5s",
-        "thumbnail": "https://i.ytimg.com/vi/Kyk4FUVQV5s/hqdefault.jpg",
-        "published": "2026-04-09T17:58:33.000Z",
         "summary": ""
       }
     ],
@@ -1862,6 +1862,13 @@
         "summary": "What's changed Claude Opus 4.7 xhigh is now available! Use /effort to tune speed vs. intelligence Auto mode is now available for Max subscribers when using Opus 4.7 Added xhigh effort level for Opus 4.7, sitting…"
       },
       {
+        "title": "Claude Opus-4.7 Just Dropped, And...",
+        "url": "https://www.youtube.com/watch?v=WVQ0lPiWsHQ",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-04-16T14:52:01.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Code + GitHub: Step by Step for Complete Beginners",
         "url": "https://www.youtube.com/watch?v=nFMGnHdpoXY",
         "source": "YouTube · Ryan & Matt Data Science",
@@ -1944,6 +1951,13 @@
         "source": "Claude Code",
         "published": "2026-04-14T19:12:01.000Z",
         "summary": "What's changed Added ENABLE_PROMPT_CACHING_1H env var to opt into 1-hour prompt cache TTL on API key, Bedrock, Vertex, and Foundry ( ENABLE_PROMPT_CACHING_1H_BEDROCK is deprecated but still honored), and…"
+      },
+      {
+        "title": "Claude Routines Just Dropped, And It's Perfect",
+        "url": "https://www.youtube.com/watch?v=j3aXJNu9804",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-04-14T19:08:20.000Z",
+        "summary": ""
       },
       {
         "title": "What Is Claude Cowork? The Only Explainer You Need",
@@ -2055,20 +2069,6 @@
         "url": "https://www.youtube.com/watch?v=-o3aiNFaMCI",
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-04-10T12:30:02.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Welcome to Pragati Kunwer | Claude Code Skills for Non-Coders",
-        "url": "https://www.youtube.com/watch?v=hvdSm5IjjX0",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-04-10T05:48:30.000Z",
-        "summary": ""
-      },
-      {
-        "title": "I'm an AI Engineer and Claude Mythos Surprised Me",
-        "url": "https://www.youtube.com/watch?v=Kyk4FUVQV5s",
-        "source": "YouTube · Ryan & Matt Data Science",
-        "published": "2026-04-09T17:58:33.000Z",
         "summary": ""
       },
       {
