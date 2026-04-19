@@ -8,6 +8,7 @@
   const HUB_MAP_URL  = "data/learn/claude_hub_map.json?v=" + Date.now();
   const SNIPPETS_URL = "data/learn/snippets.json?v=" + Date.now();
   const LESSONS_URL  = "data/learn/lessons.json?v="  + Date.now();
+  const USECASES_URL = "data/learn/usecases.json?v=" + Date.now();
   const VERSION_URL = "data/version.json?v=" + Date.now();
   const THEME_KEY = "cdih-theme";
 
@@ -2842,6 +2843,55 @@
 
   // ---------- Finder wizard (Learn → Finder) ----------
   const FINDER_DRAFT_KEY = "clhub.v1.finderDraft";
+
+  // ---------- Finder example projects (M5.3) ----------
+  async function loadFinderExamples() {
+    const host = document.getElementById("finder-examples");
+    if (!host) return;
+    try {
+      const res = await fetch(USECASES_URL, { cache: "no-cache" });
+      if (!res.ok) { host.innerHTML = ""; return; }
+      const payload = await res.json();
+      const examples = Array.isArray(payload.examples) ? payload.examples : [];
+      if (examples.length === 0) { host.innerHTML = ""; return; }
+      host.innerHTML = examples.map((ex) => `
+        <button type="button" class="finder-example glass" data-example-id="${escapeHtml(ex.id)}">
+          <div class="finder-example-eyebrow">Example</div>
+          <div class="finder-example-title">${escapeHtml(ex.title)}</div>
+          <div class="finder-example-body">${escapeHtml(ex.oneLine || "")}</div>
+          <div class="finder-example-cta">Load into Finder →</div>
+        </button>
+      `).join("");
+      host.querySelectorAll(".finder-example").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const id = btn.dataset.exampleId;
+          const ex = examples.find((x) => x.id === id);
+          if (!ex) return;
+          applyFinderExample(ex);
+        });
+      });
+    } catch { host.innerHTML = ""; }
+  }
+  function applyFinderExample(ex) {
+    // Fill the description textarea.
+    const input = document.getElementById("finder-input");
+    if (input) {
+      input.value = ex.goal || "";
+      try { localStorage.setItem(FINDER_DRAFT_KEY, input.value); } catch {}
+    }
+    // Pre-check the example's capabilities and persist + re-render the grid.
+    capsSelected.clear();
+    (ex.caps || []).forEach((id) => capsSelected.add(id));
+    try { localStorage.setItem(FINDER_CAPS_KEY, JSON.stringify([...capsSelected])); } catch {}
+    renderCapGrid();
+    renderCapFilterBar();
+    renderStack({ scroll: false });
+    // Scroll the capability grid into view so the user sees what got picked.
+    const grid = document.getElementById("cap-grid");
+    if (grid) grid.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  loadFinderExamples();
 
   function initFinder() {
     const input    = document.getElementById("finder-input");

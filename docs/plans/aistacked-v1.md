@@ -620,7 +620,7 @@ M4.6   ✅ First lesson (Blender-AI hybrid)  for the Young Carpets 3D video use 
 ```
 M5.1   ▢ priorityScore / setupComplexity  recalibrate against the 3 seed use cases.
 M5.2   ▢ Concrete setup snippets per tool  Finder output becomes copy-paste-runnable.
-M5.3   ▢ "Browse example projects" in Finder  load a pre-filled wizard (Young Carpets etc.).
+M5.3   ✅ "Browse example projects" in Finder  load a pre-filled wizard (Young Carpets etc.). [v0.5.4]
 M5.4   ✅ Capability taxonomy v2      3D/motion, local/desktop, premium-motion UI added
                                      + Blender, Meshy, DaVinci Resolve, Framer Motion. [v0.5.3]
 M5.5   ▢ Hybrid wizard auto-check    parse description text → pre-check capability

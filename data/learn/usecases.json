@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "note": "Seed example projects the user can load into the Finder with one tap. Each entry carries the textarea description and the capability IDs (from CAP_GROUPS in app.js) that should be pre-checked.",
+  "examples": [
+    {
+      "id": "young-carpets-site",
+      "title": "Young Carpets marketing site",
+      "oneLine": "3D explode-view hero video + clean modern product site.",
+      "goal": "A marketing site for Young Carpets Inc whose hero shot pushes from outside the office building through a window, then explodes a carpet sample into its three layers (carpet, pad, subfloor) before reassembling. Clean modern design, premium motion on scroll and section transitions.",
+      "caps": [
+        "cap-3d-scene",
+        "cap-explode-view",
+        "cap-camera-path",
+        "cap-gen-video",
+        "cap-img-to-video",
+        "cap-text-to-image",
+        "cap-video-edit",
+        "cap-no-code",
+        "cap-premium-motion",
+        "cap-static"
+      ]
+    },
+    {
+      "id": "young-carpets-portal",
+      "title": "Young Carpets employee portal",
+      "oneLine": "Internal web app — customers, products, quotes, invoices (PDF).",
+      "goal": "An internal web app for the Young Carpets sales team. Customers + products databases, quote builder with live totals, invoice PDF export. Single-tenant login, not public. Clean and dense UI — zero marketing fluff.",
+      "caps": [
+        "cap-no-code",
+        "cap-ide",
+        "cap-postgres",
+        "cap-auth",
+        "cap-static",
+        "cap-preview"
+      ]
+    },
+    {
+      "id": "commission-calculator",
+      "title": "Commission calculator (ACCPAC Plus DOS)",
+      "oneLine": "Local Python/Node script that parses a DOS-era print-to-file report.",
+      "goal": "A local program (not a website) that reads ACCPAC Plus for DOS print-to-file reports — fixed-width, cp437-encoded — computes per-rep commissions, and exports a summary report. Optional small desktop UI later.",
+      "caps": [
+        "cap-local-script",
+        "cap-file-parsing",
+        "cap-terminal"
+      ]
+    }
+  ]
+}
