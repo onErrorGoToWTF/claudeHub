@@ -1,7 +1,7 @@
 {
-  "version": "0.6.74",
-  "milestone": "M8.12.4",
-  "milestoneTitle": "Phase 8.12.4 — 365 tab decommissioned: chip, section markup, sub-pill handlers, load365(), renderTutorials, and fetch_365.js all removed; data/365/ directory deleted; latest.json no longer carries comply365_news. Orphaned --accent-365-* color tokens retained (still referenced by unrelated gradients)",
-  "deployedAt": "2026-04-19T14:55Z",
+  "version": "0.6.75",
+  "milestone": "M8.12.5",
+  "milestoneTitle": "Phase 8.12.5 — visible brand flipped from aiStacked to aiUniversity: nav wordmark, <title>, and meta description updated. Internal/docs references to aiStacked left intact (locked sticker design note + historical plan files)",
+  "deployedAt": "2026-04-19T15:05Z",
   "commitSha": ""
 }
