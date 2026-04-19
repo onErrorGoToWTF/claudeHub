@@ -226,7 +226,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 * { -webkit-tap-highlight-color: transparent; }
 html, body { margin: 0; padding: 0; }
-html { height: 100%; -webkit-text-size-adjust: 100%; }
+html { height: 100%; -webkit-text-size-adjust: 100%; overflow-x: hidden; max-width: 100vw; }
 
 body {
   min-height: 100dvh;
@@ -374,6 +374,16 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 .icon-btn:hover { color: var(--text-1); border-color: var(--border-strong); }
 .icon-btn:active { transform: scale(0.94); }
+.icon-btn[data-filter].is-active {
+  color: var(--color-electric-solid);
+  border-color: var(--color-electric-border);
+  background: var(--color-electric-surface);
+  box-shadow: var(--glow-hero);
+}
+.icon-btn[data-filter]:hover:not(.is-active) {
+  color: var(--color-electric-text);
+  box-shadow: var(--glow-soft);
+}
 .icon { width: 16px; height: 16px; }
 .icon-moon { display: none; }
 :root:not([data-theme="light"]) .icon-sun  { display: none; }

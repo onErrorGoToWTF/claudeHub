@@ -232,7 +232,8 @@
   });
 
   // ---------- Filters ----------
-  const chips = document.querySelectorAll(".chip");
+  // Matches main section chips AND the topbar YouTube button (both carry data-filter).
+  const chips = document.querySelectorAll("[data-filter]");
   function applyFilter(f) {
     chips.forEach(c => c.classList.toggle("is-active", c.dataset.filter === f));
     DISTINCT_SECTIONS.forEach(name => {
@@ -436,7 +437,7 @@
   });
 
   // Initial filter (respects the chip that was marked .is-active in the HTML)
-  const initial = document.querySelector(".chip.is-active");
+  const initial = document.querySelector("[data-filter].is-active");
   if (initial) applyFilter(initial.dataset.filter);
 
   // Chip shortcut buttons — any element with data-chip jumps to that tab,
