@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T21:21:43.049Z",
+  "generated_at": "2026-04-19T21:25:05.733Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "OpenAI’s existential questions",
+        "url": "https://techcrunch.com/2026/04/19/openais-existential-questions/",
+        "source": "TechCrunch",
+        "published": "2026-04-19T21:24:06.000Z",
+        "summary": "On the latest episode of Equity, we discuss OpenAI's latest acquisitions and whether they address \"two big existential problems\" for the company."
+      },
+      {
         "title": "NSA Already Uses Anthropic’s Most Powerful AI Model “Myhtos” Despite Pentagon Ban - trendingtopics.eu",
         "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObWVOU1U2NlJ1QVg1ZXduaXl6cmI4SFNGdTRLMHY5SlB6bDY4OWdmTDBwR1FOa05Pc0FObUxveGM0N0lXbERnRG5TRXZfdl9NdXE1eVFSNk1xU3Q0eFNoZjg4NkFmWVdCZV9EU0JsNE9UbTZkVDRLVVFMa2ZmTl9kZkVMeGtqUjlNaFFBeTBpTkY4cG1taC1LeVJRa2ZPQm52WUhhZVRLVVpFUGxZeVE?oc=5",
         "source": "Google News",
@@ -221,7 +228,7 @@
       {
         "title": "Changes in the system prompt between Claude Opus 4.6 and 4.7",
         "url": "https://simonwillison.net/2026/Apr/18/opus-system-prompt/",
-        "source": "HN · 106↑",
+        "source": "HN · 107↑",
         "hn_id": "47823270",
         "published": "2026-04-19T10:36:29.000Z",
         "summary": ""
@@ -269,9 +276,16 @@
         "summary": "Anthropic Leak Exposes Claude Code Command Injection Let's Data Science"
       },
       {
+        "title": "Biggest AI leak of 2026?: Anthropic's Claude Code exposed in packaging mistake - MSN",
+        "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNWWJLZ1VnQUxJNi15M1ZMdzNYOEktT01CSW43bjhwcVJnLTB0Y1p5SnNnUVNubEJ4WGc2ZEQ4cVR2QUpVaGNCcFVsMzNoMDZDaVdMRWpGS0U4S0NxckNoVUtpQzNvQ2hRS3dJRVZLcUxaYkJtdUhBcy1CS3B5M2w0QVFuSmtqeExoaTNWeEZBOE1NczdfZ2ZZS0dzMVZaWE5nUUZFSXVpMzVlNnpSZXFaN0ZlM1ktck5SbEcwZW9fU1RQb0luNThYN1l1U0Rqdi1hZ3pIWGJ2Q1AzQnl4MXVBaUJzTXlUc1hZWUJpX0xnT0Q3bjBrRUdocjBjRWlGb1dMbXhGa1JrRC16ZTg?oc=5",
+        "source": "Google News",
+        "published": "2026-04-18T20:38:58.000Z",
+        "summary": "Biggest AI leak of 2026?: Anthropic's Claude Code exposed in packaging mistake MSN"
+      },
+      {
         "title": "Thoughts and feelings around Claude Design",
         "url": "https://samhenri.gold/blog/20260418-claude-design/",
-        "source": "HN · 357↑",
+        "source": "HN · 358↑",
         "hn_id": "47818700",
         "published": "2026-04-18T19:19:24.000Z",
         "summary": ""
@@ -313,20 +327,6 @@
         "summary": "Google and OpenAI are making a run at Claude's desktop moat, and Anthropic is making it easy The New Stack"
       },
       {
-        "title": "White House and Anthropic hold 'productive' meeting amid fears over Mythos model - BBC",
-        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1rTWNaaDlVRVRKRF9fRnZIX2FaLU1SZ2NLRDNDdzBVdUQwZ29uNlgzVDBDc29SbU4zMDFPc1R4NXc2dTRRdGF3RlNWZ05aNWphaFpUaEFUSm9zdw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-18T00:37:06.000Z",
-        "summary": "White House and Anthropic hold 'productive' meeting amid fears over Mythos model BBC"
-      },
-      {
-        "title": "What is Anthropic’s Claude Design, and why are Figma and Adobe stocks dropping - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPME9vaFgwVGpZN0MyQmIxWUVTQjhqTWlZYmpGemtXV0EycnRlRkJVNjJUWVVJeXVwZlpXTEVOcVYycnZpTEVDbDlHTWpQNURJVGM4Y0xmZUc3TTdST1dDX0JQQ01tV1hjZjdMeE1xOTZISC1WdXRKX2RxMWx3a0VyWUhqdzZUOV9NRWZ4eWpBT1dKd2JKU1NxZlE4cEVwTDYyc0E1SXlrbG9BNDRFbFR2V3VLTmRPY1B5Y3FSYXJ3ODQtcEE1RGhwQjJFUDRqOU1mNS1QLUNJX2xNb0d5cnBZbTlMa0t2RmJBZlBhLUdndHrSAfYBQVVfeXFMT1ZJNjRNZXJGU25tYWJSaWE4OFhyUTltTWVfalBNQ0RieURHQ08xOHRrRFRvZDJoR2x2MEQ5S3hOTmpKVEp4LVZZMmhSVTVGSk9Wdi1xMlJDdEtoOWNpM0tXdHFKNkFYRlp0SVZMbVc1V0FEbFlvel82STVHalVVcWFCY2dsTHAyYlpkcGRvdzJ6bl9qVkhTYTJfdGN4c1JFWDNDa3F1SXotRlF6UjBhOTFoTlJnM2IzMTNNQ2ptSVpobTRBS0sxdG9sdllSSDhOMkNrZWZFVm5aVml4RFhKR1EzbFI5QS1YNXlCWklsTVNVckpQUDdR?oc=5",
-        "source": "Google News",
-        "published": "2026-04-18T00:30:00.000Z",
-        "summary": "What is Anthropic’s Claude Design, and why are Figma and Adobe stocks dropping The Times of India"
-      },
-      {
         "title": "I Downloaded Claude Code’s Leak (The Results are INSANE)",
         "url": "https://www.youtube.com/watch?v=67Cbb3DyIxA",
         "source": "Riley Brown",
@@ -359,126 +359,6 @@
         "video_id": "uScSzTBTh2s",
         "thumbnail": "https://i.ytimg.com/vi/uScSzTBTh2s/hqdefault.jpg",
         "published": "2026-02-14T03:08:29.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Claude Code Web #claude #aicoding #ai",
-        "url": "https://www.youtube.com/shorts/ldwfInobBik",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "ldwfInobBik",
-        "thumbnail": "https://i.ytimg.com/vi/ldwfInobBik/hqdefault.jpg",
-        "published": "2025-11-07T10:43:49.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Code FASTER with the CLI Version of the Claude Code VSCode Extension! #claude #programming",
-        "url": "https://www.youtube.com/shorts/-OP9OaXPFbE",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "-OP9OaXPFbE",
-        "thumbnail": "https://i.ytimg.com/vi/-OP9OaXPFbE/hqdefault.jpg",
-        "published": "2025-10-29T13:30:52.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Claude Code + Codex: The GitHub Flow That Saves Me Hours",
-        "url": "https://www.youtube.com/watch?v=bcXxke-iBQY",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "bcXxke-iBQY",
-        "thumbnail": "https://i.ytimg.com/vi/bcXxke-iBQY/hqdefault.jpg",
-        "published": "2025-10-23T14:21:12.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "I Built the Same App with Claude Code and Codex - Here's What Happened",
-        "url": "https://www.youtube.com/watch?v=63eX6I_vFqQ",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "63eX6I_vFqQ",
-        "thumbnail": "https://i.ytimg.com/vi/63eX6I_vFqQ/hqdefault.jpg",
-        "published": "2025-10-16T16:09:44.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Claude Code VSCode Extension 2.0 is amazing! #coding #claude",
-        "url": "https://www.youtube.com/shorts/1DbGrTw2RXA",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "1DbGrTw2RXA",
-        "thumbnail": "https://i.ytimg.com/vi/1DbGrTw2RXA/hqdefault.jpg",
-        "published": "2025-09-30T20:15:45.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Why Claude Code VSCode Extension 2.0 Changes Everything for AI-Assisted Development",
-        "url": "https://www.youtube.com/watch?v=EZZ7VTAzSFI",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "EZZ7VTAzSFI",
-        "thumbnail": "https://i.ytimg.com/vi/EZZ7VTAzSFI/hqdefault.jpg",
-        "published": "2025-09-30T08:43:27.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Using Claude Code to Re-Design an old app of mine #claude #coding",
-        "url": "https://www.youtube.com/shorts/uyPRrYgJot0",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "uyPRrYgJot0",
-        "thumbnail": "https://i.ytimg.com/vi/uyPRrYgJot0/hqdefault.jpg",
-        "published": "2025-08-23T06:51:51.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Watch Me Rebuild My App's Frontend: Claude Code Agents + Shadcn Integration (Live Refactor)",
-        "url": "https://www.youtube.com/watch?v=8BbKt2CXB_Y",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "8BbKt2CXB_Y",
-        "thumbnail": "https://i.ytimg.com/vi/8BbKt2CXB_Y/hqdefault.jpg",
-        "published": "2025-08-22T10:37:07.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Our Experience System is working! #gamedev #claude",
-        "url": "https://www.youtube.com/shorts/umT1ZrhjeLo",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "umT1ZrhjeLo",
-        "thumbnail": "https://i.ytimg.com/vi/umT1ZrhjeLo/hqdefault.jpg",
-        "published": "2025-08-21T18:16:40.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Creating a Steam game using Claude Code. Check out the full video.",
-        "url": "https://www.youtube.com/shorts/DY53jzRgvt4",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "DY53jzRgvt4",
-        "thumbnail": "https://i.ytimg.com/vi/DY53jzRgvt4/hqdefault.jpg",
-        "published": "2025-08-11T21:04:51.000Z",
         "summary": "",
         "_kind": "news_video"
       }
@@ -623,116 +503,6 @@
         "video_id": "uScSzTBTh2s",
         "thumbnail": "https://i.ytimg.com/vi/uScSzTBTh2s/hqdefault.jpg",
         "published": "2026-02-14T03:08:29.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code Web #claude #aicoding #ai",
-        "url": "https://www.youtube.com/shorts/ldwfInobBik",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "ldwfInobBik",
-        "thumbnail": "https://i.ytimg.com/vi/ldwfInobBik/hqdefault.jpg",
-        "published": "2025-11-07T10:43:49.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Code FASTER with the CLI Version of the Claude Code VSCode Extension! #claude #programming",
-        "url": "https://www.youtube.com/shorts/-OP9OaXPFbE",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "-OP9OaXPFbE",
-        "thumbnail": "https://i.ytimg.com/vi/-OP9OaXPFbE/hqdefault.jpg",
-        "published": "2025-10-29T13:30:52.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code + Codex: The GitHub Flow That Saves Me Hours",
-        "url": "https://www.youtube.com/watch?v=bcXxke-iBQY",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "bcXxke-iBQY",
-        "thumbnail": "https://i.ytimg.com/vi/bcXxke-iBQY/hqdefault.jpg",
-        "published": "2025-10-23T14:21:12.000Z",
-        "summary": ""
-      },
-      {
-        "title": "I Built the Same App with Claude Code and Codex - Here's What Happened",
-        "url": "https://www.youtube.com/watch?v=63eX6I_vFqQ",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "63eX6I_vFqQ",
-        "thumbnail": "https://i.ytimg.com/vi/63eX6I_vFqQ/hqdefault.jpg",
-        "published": "2025-10-16T16:09:44.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code VSCode Extension 2.0 is amazing! #coding #claude",
-        "url": "https://www.youtube.com/shorts/1DbGrTw2RXA",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "1DbGrTw2RXA",
-        "thumbnail": "https://i.ytimg.com/vi/1DbGrTw2RXA/hqdefault.jpg",
-        "published": "2025-09-30T20:15:45.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Why Claude Code VSCode Extension 2.0 Changes Everything for AI-Assisted Development",
-        "url": "https://www.youtube.com/watch?v=EZZ7VTAzSFI",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "EZZ7VTAzSFI",
-        "thumbnail": "https://i.ytimg.com/vi/EZZ7VTAzSFI/hqdefault.jpg",
-        "published": "2025-09-30T08:43:27.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Using Claude Code to Re-Design an old app of mine #claude #coding",
-        "url": "https://www.youtube.com/shorts/uyPRrYgJot0",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "uyPRrYgJot0",
-        "thumbnail": "https://i.ytimg.com/vi/uyPRrYgJot0/hqdefault.jpg",
-        "published": "2025-08-23T06:51:51.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Watch Me Rebuild My App's Frontend: Claude Code Agents + Shadcn Integration (Live Refactor)",
-        "url": "https://www.youtube.com/watch?v=8BbKt2CXB_Y",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "8BbKt2CXB_Y",
-        "thumbnail": "https://i.ytimg.com/vi/8BbKt2CXB_Y/hqdefault.jpg",
-        "published": "2025-08-22T10:37:07.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Our Experience System is working! #gamedev #claude",
-        "url": "https://www.youtube.com/shorts/umT1ZrhjeLo",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "umT1ZrhjeLo",
-        "thumbnail": "https://i.ytimg.com/vi/umT1ZrhjeLo/hqdefault.jpg",
-        "published": "2025-08-21T18:16:40.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Creating a Steam game using Claude Code. Check out the full video.",
-        "url": "https://www.youtube.com/shorts/DY53jzRgvt4",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "DY53jzRgvt4",
-        "thumbnail": "https://i.ytimg.com/vi/DY53jzRgvt4/hqdefault.jpg",
-        "published": "2025-08-11T21:04:51.000Z",
         "summary": ""
       }
     ],
@@ -1717,76 +1487,6 @@
         "source": "MCP Inspector",
         "published": "2026-02-06T17:52:31.000Z",
         "summary": "What's Changed Fix async sampling test by @cliffhall in #1035 fix(client): fix dev mode hanging on Windows by @olaservo in #1051 fix(client): circular function calls leads to memory leak by @dzhulk in #1049 Enable…"
-      },
-      {
-        "title": "Claude Code Web #claude #aicoding #ai",
-        "url": "https://www.youtube.com/shorts/ldwfInobBik",
-        "source": "YouTube · Stefan Rows",
-        "published": "2025-11-07T10:43:49.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Code FASTER with the CLI Version of the Claude Code VSCode Extension! #claude #programming",
-        "url": "https://www.youtube.com/shorts/-OP9OaXPFbE",
-        "source": "YouTube · Stefan Rows",
-        "published": "2025-10-29T13:30:52.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code + Codex: The GitHub Flow That Saves Me Hours",
-        "url": "https://www.youtube.com/watch?v=bcXxke-iBQY",
-        "source": "YouTube · Stefan Rows",
-        "published": "2025-10-23T14:21:12.000Z",
-        "summary": ""
-      },
-      {
-        "title": "I Built the Same App with Claude Code and Codex - Here's What Happened",
-        "url": "https://www.youtube.com/watch?v=63eX6I_vFqQ",
-        "source": "YouTube · Stefan Rows",
-        "published": "2025-10-16T16:09:44.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code VSCode Extension 2.0 is amazing! #coding #claude",
-        "url": "https://www.youtube.com/shorts/1DbGrTw2RXA",
-        "source": "YouTube · Stefan Rows",
-        "published": "2025-09-30T20:15:45.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Why Claude Code VSCode Extension 2.0 Changes Everything for AI-Assisted Development",
-        "url": "https://www.youtube.com/watch?v=EZZ7VTAzSFI",
-        "source": "YouTube · Stefan Rows",
-        "published": "2025-09-30T08:43:27.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Using Claude Code to Re-Design an old app of mine #claude #coding",
-        "url": "https://www.youtube.com/shorts/uyPRrYgJot0",
-        "source": "YouTube · Stefan Rows",
-        "published": "2025-08-23T06:51:51.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Watch Me Rebuild My App's Frontend: Claude Code Agents + Shadcn Integration (Live Refactor)",
-        "url": "https://www.youtube.com/watch?v=8BbKt2CXB_Y",
-        "source": "YouTube · Stefan Rows",
-        "published": "2025-08-22T10:37:07.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Our Experience System is working! #gamedev #claude",
-        "url": "https://www.youtube.com/shorts/umT1ZrhjeLo",
-        "source": "YouTube · Stefan Rows",
-        "published": "2025-08-21T18:16:40.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Creating a Steam game using Claude Code. Check out the full video.",
-        "url": "https://www.youtube.com/shorts/DY53jzRgvt4",
-        "source": "YouTube · Stefan Rows",
-        "published": "2025-08-11T21:04:51.000Z",
-        "summary": ""
       }
     ]
   }
