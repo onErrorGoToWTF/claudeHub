@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.1",
-  "milestone": "M9.1",
-  "milestoneTitle": "Phase M9.1 — Token system foundation: introduced --base + --accent-* derivations via color-mix, per-section overrides on [data-section] and per-panel overrides inside Dashboard, and self-scoped --base on .chip-learn/.chip-projects/.chip-tools so the floating nav carries its own identity. Migrated ~46 identity references (section-head bars, dash-panel-icons, dash-panel :has() indirection + its continue-row consumers, dash-action CTAs, nav chip active/hover) from --color-{learn,projects,tools}-* to --accent-*. Created css/overrides.css (empty, linked after style.css). Added status:\"authored\" to every lesson in lessons.json. YouTube tile (body chrome) and lesson-modal-xbtn (body-level modal) intentionally left on legacy tokens; they migrate when their parent scopes land in later milestones. Zero visible delta — border/glow/surface recipes use color-mix(in srgb, transparent N%) for byte-for-byte parity with the legacy rgba values.",
-  "deployedAt": "2026-04-19T23:48Z",
+  "version": "0.7.0-dev.2",
+  "milestone": "M9.2",
+  "milestoneTitle": "Phase M9.2 — Pill-radius global purge: replaced 25 non-circle border-radius: var(--radius-pill) declarations with var(--radius-sm) (6px), converted the sole circular button (.faceoff-arrow) to border-radius: 50%, and deleted the --radius-pill token from :root. Also updated palette-preview.html inline pill/badge radii, bumped the design-review skill rule to past tense, and refreshed CLAUDE.md's restrained-rounding note to document the deletion + explicit circle rule. snippets.json content left untouched (user-authored prompt payload). First visible delta of the v0.7 refactor — pills across Learn/Tools/Projects/Dashboard are now squared-off to 6px.",
+  "deployedAt": "2026-04-19T23:53Z",
   "commitSha": ""
 }
