@@ -1,7 +1,7 @@
 {
-  "version": "0.6.27",
-  "milestone": "M7.7",
-  "milestoneTitle": "Phase 7.7 — glass-elevated variant on modals + scroll activation (warm photon bloom on dash panels + hero charts)",
-  "deployedAt": "2026-04-19T03:15Z",
+  "version": "0.6.28",
+  "milestone": "M7.7.1",
+  "milestoneTitle": "Phase 7.7.1 — fix TDZ on lessonsData that halted the IIFE (renderDashLearn read it before its let declaration during initial applyFilter)",
+  "deployedAt": "2026-04-19T03:30Z",
   "commitSha": ""
 }

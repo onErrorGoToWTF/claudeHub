@@ -195,6 +195,9 @@
     xai:    "#e879f9",
   };
 
+  // Hoisted module state read by render fns during initial applyFilter.
+  let lessonsData = [];
+
   // Type tokens — declared early so any hoisted render function that reads
   // them (e.g. via replayHomeAnimations fired during initial applyFilter)
   // doesn't hit a TDZ error.
@@ -1468,7 +1471,10 @@
   }
 
   // ---------- Authored lessons + MCQ quizzes (M4.1 / M4.2 / M4.3) ----------
-  let lessonsData = [];
+  // NOTE: lessonsData is hoisted to the top of the IIFE (near other module
+  // state) because renderDashLearn reads it via replayHomeAnimations during
+  // the initial applyFilter — if it were declared only here, that read would
+  // hit a TDZ ReferenceError and halt the entire IIFE.
   const lessonBodyCache = new Map();
   const LESSON_PROGRESS_KEY = "clhub.v1.lessonProgress";
   const TRACK_LABEL = {
