@@ -1759,11 +1759,10 @@ body.modal-open { overflow: hidden; }
   min-height: 172px;
 }
 .dash-card-primary {
-  --pill-col: var(--accent-claude);
-  border-left: 2px solid color-mix(in srgb, var(--accent-claude) 55%, transparent);
+  /* Chrome stays neutral — the primary CTA inside carries the visual weight. */
 }
 .dash-card-link {
-  border-left: 2px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  /* Chrome stays neutral. */
 }
 
 /* ===== Continue where you left off (M3.6) — recent-projects list on Home ===== */
