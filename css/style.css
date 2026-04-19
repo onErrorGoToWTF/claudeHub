@@ -456,28 +456,34 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   margin: 0;
   font-size: 28px; font-weight: 600; line-height: 1.15; letter-spacing: -0.025em;
   color: var(--text-1);
-  display: flex; align-items: center; gap: 10px;
+  position: relative;
+  isolation: isolate;
+  padding-left: 14px;
 }
-/* M8.12.13 — section-head accent: 6-band halving echo tuned for a
-   70s-marketing vibe. Widths halve 8 / 4 / 2 / 1 / 0.5 / 0.25 px,
-   alphas halve 100 / 50 / 25 / 13 / 6 / 3 %, gaps stay uniform at
-   1px so the stripes read as a tight set. Color source: --band (set
-   per-section below), falling back to --sec / --text-3. */
+/* M8.12.14 — section-head accent: 6-band halving echo, wider first
+   stripe (16px), uniform 1px gaps. Absolutely positioned so the
+   title text stays anchored at its original 14px indent and the
+   stripes BLEED BEHIND it — first stripe overlaps the title by ~2px,
+   subsequent fading stripes lie fully behind the letters. Color
+   source: --band (set per-section below). */
 .section-head h2::before {
   content: "";
-  display: inline-block;
-  width: 21px; height: 20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36.5px; height: 22px;
+  z-index: -1;
   --band: var(--sec, var(--text-3));
   background:
-    linear-gradient(var(--band) 0 0)                                      0      50% / 8px   100%,
-    linear-gradient(color-mix(in srgb, var(--band) 50%, transparent) 0 0) 9px    50% / 4px   100%,
-    linear-gradient(color-mix(in srgb, var(--band) 25%, transparent) 0 0) 14px   50% / 2px   100%,
-    linear-gradient(color-mix(in srgb, var(--band) 13%, transparent) 0 0) 17px   50% / 1px   100%,
-    linear-gradient(color-mix(in srgb, var(--band)  6%, transparent) 0 0) 19px   50% / 0.5px 100%,
-    linear-gradient(color-mix(in srgb, var(--band)  3%, transparent) 0 0) 20.5px 50% / 0.25px 100%;
+    linear-gradient(var(--band) 0 0)                                      0    50% / 16px  100%,
+    linear-gradient(color-mix(in srgb, var(--band) 50%, transparent) 0 0) 17px 50% / 8px   100%,
+    linear-gradient(color-mix(in srgb, var(--band) 25%, transparent) 0 0) 26px 50% / 4px   100%,
+    linear-gradient(color-mix(in srgb, var(--band) 13%, transparent) 0 0) 31px 50% / 2px   100%,
+    linear-gradient(color-mix(in srgb, var(--band)  6%, transparent) 0 0) 34px 50% / 1px   100%,
+    linear-gradient(color-mix(in srgb, var(--band)  3%, transparent) 0 0) 36px 50% / 0.5px 100%;
   background-repeat: no-repeat;
   background-color: transparent;
-  flex-shrink: 0;
 }
 /* Section-head accent matches the tab's rainbow color. */
 .section[data-section="home"]      .section-head h2::before { --band: var(--text-3); }

@@ -1,7 +1,7 @@
 {
-  "version": "0.6.83",
-  "milestone": "M8.12.13",
-  "milestoneTitle": "Phase 8.12.13 — section-head accent retuned for 70s marketing vibe: starts thicker (8px), stripes halve width (8→0.25px), uniform 1px gap between bands, alphas halve (100→3%) — tight set reading as one graphic unit",
-  "deployedAt": "2026-04-19T16:30Z",
+  "version": "0.6.84",
+  "milestone": "M8.12.14",
+  "milestoneTitle": "Phase 8.12.14 — section-head stripes go absolute + bleed under title. First stripe widens 8→16px; h2 padding-left 14px keeps title anchored at original indent while stripes extend to 36.5px, overlapping the title letters (behind, via z-index -1 in an isolated stacking context)",
+  "deployedAt": "2026-04-19T16:45Z",
   "commitSha": ""
 }
