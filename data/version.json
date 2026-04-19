@@ -1,7 +1,7 @@
 {
-  "version": "0.6.115",
-  "milestone": "M8.12.45",
-  "milestoneTitle": "Phase 8.12.45 — top + bottom ambient darkening stretched to span full width with only a gentle diagonal bias (top = darker-left, bottom = darker-right). Radial ellipse 180% wide × 50-60% tall with two color stops for smoother falloff; tint stays warm greige rgba(80,72,58)",
-  "deployedAt": "2026-04-19T23:15Z",
+  "version": "0.6.116",
+  "milestone": "M8.12.46",
+  "milestoneTitle": "Phase 8.12.46 — v0.7 refactor pre-flight: schema.md contract doc, TOC blocks on css/style.css + js/app.js, CLAUDE.md tree refresh, 365-token rename to violet, milestone-deploy skill, v0.7 execution plan + open-questions doc. Tag target: v0.6.115-pre-refactor ",
+  "deployedAt": "2026-04-19T23:55Z",
   "commitSha": ""
 }

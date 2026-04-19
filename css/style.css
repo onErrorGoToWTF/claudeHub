@@ -1,3 +1,82 @@
+/* =============================================================================
+   aiUniversity — css/style.css
+   Table of contents (line anchors; grep `===== <section> =====` to jump).
+
+   FOUNDATIONS
+     L1    Tokens (root vars — colors, radii, easings, glass, ambient)
+     L181  Reset
+     L239  Glass primitive (Apple Liquid Glass)
+     L274  Scroll activation — electrons/photons reveal (M7.7)
+
+   CHROME
+     L317  Top bar
+     L457  App shell
+     L681  Flat Academy list (courses by bucket)
+
+   PRIMITIVES
+     L846  Card
+     L970  Snippets (Claude hub)
+     L1084 Video modal (YouTube embed)
+     L1195 Tool detail modal
+     L1360 Tool modal setup snippet
+     L1448 Scroll-activation reveal
+     L1511 Skeleton
+
+   DASHBOARD + HOME
+     L1626 Home / Dashboard panels
+     L1786 Continue-row (Dashboard item tile)
+     L2089 YouTube modal
+
+   TAB-SPECIFIC
+     L2151 Tools catalog
+     L2305 Claude hub
+     L2405 Finder wizard (Projects → + New)
+     L2590 Finder capability grid
+     L2785 Finder output (Easiest / Best paths)
+     L3065 Save-as-project form
+     L3195 My Projects (Projects → Saved)
+     L3273 Projects backup export/import
+     L3309 Lessons + MCQ quizzes
+
+   MODALS + UTILITIES
+     L3722 Storage monitor
+     L3935 Backup modal (JSON export)
+     L4086 Unified Save button
+     L4185 Pin-to-project (legacy)
+     L4244 Pin-picker modal
+     L4398 Project notes pad
+
+   CHARTS (Dashboard — parked in _parked/, renderers null-guard)
+     L4508 Competitor comparison bars
+     L4592 Hero timeline card
+     L4708 Tutorials sub-pills
+     L4755 Vertical bars (Intelligence Index)
+     L4822 Horizontal bars (Opus 4.7 scorecard)
+
+   CHIPS + NAV
+     L4915 Chip accent treatments (per-tab rainbow)
+     L5002 Status strip (NEWS tab)
+     L5067 Per-content-type activation effects
+     L5103 Restrained rounding
+     L5109 Type-color tokens
+     L5116 Type legend
+     L5156 Taskgrid (best tool per task)
+     L5229 LLM face-off carousel
+
+   MISC
+     L5416 Legacy grouped-bars face-off (unused)
+     L5588 Recipes ribbon
+     L5664 Recipe modal
+
+   Conventions
+     - Pill-shaped elements use var(--radius-sm) (6px), not 9999px (M9.2).
+     - Accent colors derive from --base via --accent-* tokens (post-M9.1).
+       Legacy --color-{learn,projects,tools,youtube,violet}-* still referenced
+       during migration; see docs/plans/v0.7-design-system-refactor.md.
+     - Charts opt OUT of glass — solid --chart-card-bg (#fff) for contrast.
+     - Videos render before articles in mixed lists; never interleave.
+   =============================================================================*/
+
 /* ===== Tokens (light-only — M8.11.1 after dark-mode purge) =====
    60-30-10: neutral bg/surfaces, accents only via tab colors + a
    single warm ambient. Page is light neutral-gray; panel cards sit
@@ -69,11 +148,11 @@
   --color-claude-solid-hover:     #c2490a;
   --color-claude-text:            #c2410c;
 
-  --color-365-surface:            rgba(124,58,237,0.14);
-  --color-365-border:             rgba(124,58,237,0.55);
-  --color-365-solid:              #7c3aed;
-  --color-365-solid-hover:        #6528d1;
-  --color-365-text:               #6528d1;
+  --color-violet-surface:            rgba(124,58,237,0.14);
+  --color-violet-border:             rgba(124,58,237,0.55);
+  --color-violet-solid:              #7c3aed;
+  --color-violet-solid-hover:        #6528d1;
+  --color-violet-text:               #6528d1;
 
   /* Model-compare charts only — do NOT repurpose for UI chrome. */
   --color-model-openai-surface:   rgba(13,148,136,0.12);
@@ -122,7 +201,7 @@
   --color-path-best-border:  rgba(52,199,89,0.45);
   --color-path-best-glow:    rgba(52,199,89,0.22);
 
-  --color-365-glow:          rgba(124,58,237,0.34);
+  --color-violet-glow:          rgba(124,58,237,0.34);
 
   /* Reserved glow tokens (no component uses them after M6.6). */
   --glow-soft:  0 0 18px -6px rgba(48,176,199,0.12);
@@ -136,11 +215,11 @@
   --accent-soft:        var(--color-electric-surface);
   --accent-glow:        rgba(48,176,199,0.10);
 
-  --accent-365:         var(--color-365-solid);
-  --accent-365-hi:      var(--color-365-solid-hover);
-  --accent-365-ink:     #1a0d2d;
-  --accent-365-soft:    var(--color-365-surface);
-  --accent-365-glow:    rgba(124,58,237,0.10);
+  --accent-violet:         var(--color-violet-solid);
+  --accent-violet-hi:      var(--color-violet-solid-hover);
+  --accent-violet-ink:     #1a0d2d;
+  --accent-violet-soft:    var(--color-violet-surface);
+  --accent-violet-glow:    rgba(124,58,237,0.10);
 
   --accent-claude:      var(--color-claude-solid);
   --accent-claude-hi:   var(--color-claude-solid-hover);
@@ -1569,14 +1648,14 @@ body.modal-open { overflow: hidden; }
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 10.5px; font-weight: 500;
-  background: var(--accent-365-soft);
-  color: var(--accent-365-hi);
+  background: var(--accent-violet-soft);
+  color: var(--accent-violet-hi);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 .card.tutorial[data-expanded="true"]  .tutorial-toggle::after { content: " ↑"; }
 .card.tutorial[data-expanded="false"] .tutorial-toggle::after { content: " ↓"; }
-.card.tutorial .tutorial-source { color: var(--accent-365-hi); }
+.card.tutorial .tutorial-source { color: var(--accent-violet-hi); }
 
 .tutorial-body {
   padding: 0 18px 20px;
@@ -1611,10 +1690,10 @@ body.modal-open { overflow: hidden; }
 .tutorial-body strong { font-weight: 600; color: var(--text-1); }
 .tutorial-body em { font-style: italic; }
 .tutorial-body blockquote {
-  border-left: 2px solid var(--accent-365);
+  border-left: 2px solid var(--accent-violet);
   padding: 6px 14px; margin: 10px 0;
   color: var(--text-2);
-  background: var(--accent-365-soft);
+  background: var(--accent-violet-soft);
   border-radius: 0 8px 8px 0;
 }
 
@@ -4607,7 +4686,7 @@ body.modal-open { overflow: hidden; }
 .hero-kpi { text-align: right; flex-shrink: 0; }
 .hero-kpi-num {
   font-size: 32px; font-weight: 700; letter-spacing: -0.04em;
-  background: linear-gradient(135deg, var(--accent-hi), var(--accent-365-hi));
+  background: linear-gradient(135deg, var(--accent-hi), var(--accent-violet-hi));
   -webkit-background-clip: text; background-clip: text; color: transparent;
   line-height: 1;
 }
@@ -4655,10 +4734,10 @@ body.modal-open { overflow: hidden; }
   animation: popIn 0.35s var(--ease-spring) forwards;
 }
 .timeline .dot-last {
-  fill: var(--accent-365-hi);
-  stroke: var(--accent-365);
+  fill: var(--accent-violet-hi);
+  stroke: var(--accent-violet);
   stroke-width: 2;
-  filter: drop-shadow(0 0 8px var(--accent-365-glow));
+  filter: drop-shadow(0 0 8px var(--accent-violet-glow));
 }
 .timeline .electron-core {
   fill: #ffffff;
@@ -4844,11 +4923,11 @@ body.modal-open { overflow: hidden; }
 }
 .hbar-delta {
   font-size: 10.5px; font-weight: 600;
-  color: var(--accent-365-hi);
+  color: var(--accent-violet-hi);
   padding: 2px 8px;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--accent-365) 14%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent-365) 28%, transparent);
+  background: color-mix(in srgb, var(--accent-violet) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-violet) 28%, transparent);
   opacity: 0;
   transition: opacity 0.4s var(--ease);
   transition-delay: calc(var(--hbar-delay) + 0.9s);
@@ -4879,9 +4958,9 @@ body.modal-open { overflow: hidden; }
   width: 0;
   border-radius: 999px;
   background: linear-gradient(90deg,
-    color-mix(in srgb, var(--accent-365) 22%, transparent),
-    var(--accent-365-hi));
-  box-shadow: 0 0 10px color-mix(in srgb, var(--accent-365) 55%, transparent);
+    color-mix(in srgb, var(--accent-violet) 22%, transparent),
+    var(--accent-violet-hi));
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent-violet) 55%, transparent);
   transition: width 1.5s var(--ease);
   transition-delay: var(--hbar-delay);
 }
@@ -4894,8 +4973,8 @@ body.modal-open { overflow: hidden; }
   background: radial-gradient(circle at center,
     #ffffff 0%,
     #ffffff 22%,
-    color-mix(in srgb, var(--accent-365) 80%, transparent) 40%,
-    color-mix(in srgb, var(--accent-365) 28%, transparent) 62%,
+    color-mix(in srgb, var(--accent-violet) 80%, transparent) 40%,
+    color-mix(in srgb, var(--accent-violet) 28%, transparent) 62%,
     transparent 76%);
   transform: translate(50%, -50%);
   opacity: 0;
@@ -5089,7 +5168,7 @@ body.modal-open { overflow: hidden; }
     position: absolute; left: 0; right: 0; bottom: -2px;
     height: 1.5px;
     width: 0;
-    background: var(--accent-365-hi);
+    background: var(--accent-violet-hi);
     transition: width 600ms var(--ease-premium) 120ms;
     border-radius: 1px;
   }
@@ -5634,7 +5713,7 @@ body.modal-open { overflow: hidden; }
 .recipe-more {
   font-size: 9.5px;
   font-weight: 700;
-  color: var(--accent-365-hi);
+  color: var(--accent-violet-hi);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   opacity: 0.75;
@@ -5647,7 +5726,7 @@ body.modal-open { overflow: hidden; }
   transform: translateX(2px);
 }
 .recipe:focus-visible {
-  outline: 2px solid var(--accent-365-hi);
+  outline: 2px solid var(--accent-violet-hi);
   outline-offset: 2px;
 }
 
@@ -5744,7 +5823,7 @@ body.is-modal-open { overflow: hidden; }
 .rm-section-title {
   font-size: 9.5px;
   font-weight: 700;
-  color: var(--accent-365-hi);
+  color: var(--accent-violet-hi);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -5768,5 +5847,5 @@ body.is-modal-open { overflow: hidden; }
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.rm-section-body a:hover { color: var(--accent-365-hi); }
+.rm-section-body a:hover { color: var(--accent-violet-hi); }
 

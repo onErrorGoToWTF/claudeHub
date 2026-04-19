@@ -1,9 +1,8 @@
-# claudeHub
+# aiUniversity (repo: `claudeHub`)
 
 > **Before writing any code:** do not make any changes until you have 95% confidence in what you need to build. Ask follow-up questions until you reach that confidence.
 
-
-Personal Claude intelligence + training dashboard. Pulls news, YouTube videos, status, tutorials, and Anthropic docs into a static site auto-refreshed every 2h via GitHub Actions. Also hosts hand-authored lessons, quizzes, and saved projects. May one day be reworked into a public tool ("aiUniversity").
+Personal Claude intelligence + training dashboard. Visible brand is **aiUniversity** (flipped from `aiStacked` in M8.12.5; internal identifiers kept). Pulls news, YouTube videos, status, tutorials, and Anthropic docs into a static site auto-refreshed every 2h via GitHub Actions. Also hosts hand-authored lessons, quizzes, and saved projects. v0.7 design-system refactor is in flight — see `docs/plans/v0.7-design-system-refactor.md`.
 
 ## Stack
 
@@ -11,6 +10,7 @@ Personal Claude intelligence + training dashboard. Pulls news, YouTube videos, s
 - **Scrapers:** zero-dependency Node 20 modules in `scripts/`. Each pulls an RSS/Atom feed or sitemap and returns a normalized item shape.
 - **Orchestrator:** `scripts/build_latest_json.js` runs all scrapers in parallel, merges results, writes `data/latest.json`.
 - **Automation:** GitHub Actions workflow runs the orchestrator every 2h and commits `data/latest.json` with `[skip ci]` to avoid loops.
+- **No backend.** All user state (projects, lesson progress, mastery) lives in `localStorage` under the `clhub.v1.*` namespace. See `data/schema.md`.
 
 ## Layout
 
@@ -30,9 +30,11 @@ scripts/
   lib/
     util.js                    # httpGet, dedupe, runAll, sortByDateDesc
     xml.js                     # tolerant RSS/Atom/sitemap parser (regex-based)
+
 data/
   latest.json                  # auto-generated feed consumed by js/app.js
-  version.json                 # milestone cursor — bumped on every deploy (data/version.json)
+  version.json                 # milestone cursor — bumped on every deploy
+  schema.md                    # full JSON + localStorage contract reference
   learn/
     lessons.json               # hand-authored lessons with inlined MCQ quiz arrays
     lessons/                   # markdown bodies (one file per lesson slug)
@@ -40,11 +42,30 @@ data/
     academy_snapshot.json      # raw Academy response cache
     tools.json                 # Tools tab catalog
     snippets.json              # reusable code/config snippets
-    usecases.json              # "what can I do with Claude" catalog
-    claude_hub_map.json        # cross-link map between lessons / academy / snippets
-css/style.css                  # single-file stylesheet, light-only (M8.11.1 purged dark tokens)
-js/app.js                      # single-file frontend IIFE; chips, charts, renderers, modals
-index.html
+    usecases.json              # seed example projects for the Finder
+    claude_hub_map.json        # Academy course slugs → Claude hub buckets
+
+css/style.css                  # single-file stylesheet, light-only (TOC at top)
+js/app.js                      # single-file frontend IIFE (TOC at top)
+index.html                     # one page, section-per-tab toggled via data-hidden
+_parked/                       # markup parked during refactors (renderers null-guard)
+  dashboard-charts.html        # State-of-AI chart stack (parked in M8.11.4)
+
+docs/
+  status.md                    # release + phase summary
+  plans/
+    aistacked-v1.md                      # original rebuild plan (historical reference)
+    v0.7-design-system-refactor.md       # current refactor recipe (M9.1–M9.11)
+    v0.7-open-questions.md               # defaults + user approvals for v0.7
+
+.claude/
+  skills/
+    add-scraper/                         # scaffolds a new feed scraper
+    debug-feed-failure/                  # diagnoses stale/broken sections
+    design-review/                       # reviews CSS/HTML/JS against design language
+    milestone-deploy/                    # commits + bumps version + pushes a milestone
+  settings.local.json                    # local permissions / allowlist
+
 .github/workflows/             # cron rebuild + Pages deploy
 ```
 
@@ -62,65 +83,63 @@ python -m http.server 8765
 ## Deploying
 
 - **Site:** merge to `main`. GitHub Pages redeploys within ~1 minute.
+- **Milestone commits** bump `data/version.json`. For the v0.7 refactor, invoke `/milestone-deploy` after finishing a milestone's code.
 
 ## Tabs (`index.html` chips)
 
-**Dashboard · Learn · Projects · Tools** — in that order, inside the fixed floating glass nav pill (`.nav-wrap > .chips.glass`). Active chip: white surface bg + `--text-1` text + tab-identity edge (inset 1px ring + tight outer glow + drop shadow). Inactive chips still have a subtle border + drop shadow for depth.
+**Dashboard · Learn · Projects · Tools** — in that order, inside the fixed floating glass nav pill (`.nav-wrap > .chips.glass`). The 365 tab was decommissioned in M8.12.4. Nav chips are translucent glass with impressed/debossed labels (M8.12.37); active chip stays solid white for prominence.
 
-- **Dashboard** (neutral accent) — personal home:
-  - Section-head "Dashboard" with a square YouTube tile (`.dash-action-quiet .glass`, icon + "YouTube" label stacked vertically) top-right. Clicking opens the `.yt-modal` dialog — the old `section-youtube` is gone.
-  - Each panel uses a 2×2 quadrant grid (M8.11.5): title + CTA stack in the left column rows 1+2, a large outline icon (`.dash-panel-icon`) anchors the right column spanning rows 1-2, and the body row (lessons / projects / static caption) spans both columns at the bottom. See the "Panel identity icons" subsection below.
-  - **Learn panel** (glass card): title "Learn" + CTA "Start new course or quiz →" (lime-green edge via `.dash-action-learn`) stacked top-left. Right quadrant: closed-book icon outlined in lime border-tone with a lime glow halo. Below: up to 2 resume rows from `data/learn/lessons.json` (in-progress first, then upcoming). Row layout: title left w/ ellipsis · state pill (`Start` / `In progress` / `Completed`) top-right · meta row full-width below.
-  - **Projects panel** (glass card): title "Projects" + CTA "Start a new project →" (vibrant ocean cyan edge via `.dash-action-primary`) stacked top-left. Right quadrant: folder-with-docs icon outlined in cyan border-tone with a cyan glow halo. Below: up to 2 most-recently-updated saved projects, same row layout (path pill replaces state pill).
-  - **Tools panel** (glass card): title "Tools" + CTA "Browse the tools →" (vibrant tangerine edge via `.dash-action-tools`) stacked top-left. Right quadrant: single Lucide-style wrench outlined in tangerine border-tone with a tangerine glow halo. Body holds a static caption — Tools has no recents/in-progress concept yet, so the bottom row is shorter than Learn/Projects.
+- **Dashboard** (neutral grey placeholder `#9a938a` — may be retuned):
+  - Section head carries a square **YouTube tile** (`#youtube-open.dash-action.dash-action-quiet.glass`) top-right. Tile is transparent Apple glass; logo + wordmark render as a glass impression (neutral dark stroke + stacked highlight/shadow text-shadow, M8.12.35/36). Tapping opens the YouTube modal.
+  - Each panel uses a **2×2 quadrant grid** (M8.11.5 + M8.12 polish): title + CTA stack in the left column rows 1-2, identity icon anchors the right column spanning rows 1-2 aligned to bottom (+6px nudge for Learn/Projects icons so they sit lower near the CTA).
+  - **Learn panel** — CTA `Start new course or quiz →` (lime-green edge via `.dash-action-learn`). Right quadrant: stylized book-stack icon, lime stroke + halo. Body: hairline divider, then up to 2 in-progress-or-upcoming lessons as glass tiles (see "Tile idiom").
+  - **Projects panel** — CTA `Start a new project →` (ocean-cyan edge via `.dash-action-primary`). Right quadrant: folder-with-docs icon, cyan stroke + halo. Body: hairline divider, then up to 2 most-recently-updated saved projects as glass tiles.
+  - **Tools panel** — CTA `Browse the tools →` (tangerine edge via `.dash-action-tools`). Right quadrant: wrench icon, tangerine stroke + halo. Body: hairline divider, then three currently-in-use tools as glass tiles with `USING` pills (M8.12.41). These feed future project-stack recommendations.
+- **Learn** (chartreuse-lime `#84cc16`) — current nested toggle (Courses/Quizzes → Academy/Tutorials) will be replaced in M9.4 with a flat 3-zone layout (Up Next / Everything else / Done) + filter chips + sort select. See refactor plan.
+- **Projects** (ocean-cyan `#0891b2`) — current `Saved | + New project` toggle will be replaced in M9.5 with a single surface: saved list as home, CTA routes to `#projects/new` (full-page Finder with step indicator + draft resume).
+- **Tools** (tangerine `#ff7a1a`) — current catalog with filter/sort dropdowns. M9.7 adds a top "Your stack" strip for mastered tools + pinned tools-in-use; `●ᴹ` mastery badge as title suffix on each tool card.
 
 ### Panel identity icons
 
-Each Dashboard panel carries an `<svg class="dash-panel-icon dash-panel-icon--{learn|projects|tools}">` as a direct child of `.dash-panel` (sibling of `.dash-panel-head` / `.dash-action` / `.dash-panel-body`). 24×24 viewBox, 72px rendered into the right quadrant of the 2×2 grid (anchors visually). Stroke-only — `fill: none`, `stroke-width: 2`, round caps + joins. The whole icon stroke uses `var(--color-{section}-border)` (0.55α) so it literally matches the same border color as the panel's matching CTA button; drop-shadow glow uses `var(--color-{section}-glow)` (0.34α) to mirror the CTA glow halo. Net effect: icon and CTA button read as visually linked. Reusable — change width/height to scale anywhere; the border + glow tokens auto-track palette changes.
-  - **State of AI charts** were removed from the Dashboard in M8.11.4. Markup parked verbatim at `_parked/dashboard-charts.html`; CSS + render functions in `js/app.js` remain intact (each `renderTimeline`/`renderCompare`/`renderIndex`/`renderScorecard`/`renderLlmFaceoff` early-returns when its host id is absent), ready to be wired into a different surface later.
-- **Learn** (lime-green `#84cc16` accent) — Courses · Quizzes sub-pills:
-  - `Courses` pane → nested sub-pills `Anthropic Academy` (catalog from `data/learn/academy_courses.json`) and `Tutorials` (hand-authored lessons from `data/learn/lessons.json`). Tutorial click opens the lesson modal in `mode="tutorial"` (body + "Take the quiz →" CTA at the end).
-  - `Quizzes` pane → renders one card per lesson whose `quiz[]` is non-empty. Click opens the same modal in `mode="quiz"` (quiz only + "← Read the tutorial" back-link).
-- **Projects** (vibrant ocean cyan `#0891b2` accent — blue/green sea) — `Saved` (projects list) and `+ New project` (Finder wizard) sub-pills.
-- **Tools** (vibrant tangerine `#ff7a1a` accent) — the catalog from `data/learn/tools.json`. Section-head right slot carries filter + sort `<select class="subpill-select">` dropdowns (no more pill bar).
+Each Dashboard panel carries an `<svg class="dash-panel-icon dash-panel-icon--{learn|projects|tools}">`. Native viewBox `0 0 24 24`, rendered 54×54 (M8.12.28). Stroke-only — stroke width 0.5 in viewBox units; color uses `var(--color-{section}-border)` (0.55α) to match the CTA border; stacked drop-shadow glow uses `var(--color-{section}-solid)` + `var(--color-{section}-glow)` for the "concentrated near the line" pop. Icon + CTA read as visually linked. During M9.1 these `--color-{section}-*` references migrate to `--accent-*` derived from `--base`.
+
+### Tile idiom (shared component)
+
+Every "item row under a panel header" uses `.continue-row` (M3.6, retuned M8.12.22). Anatomy: title + right-side pill (status / path / USING) + meta row below. Visual recipe: solid `--bg-0` background (fakes a cut-through to the page), thin hairline border, inset top-edge specular highlight, faint drop shadow. Hover lightens + tints border/glow to the panel's identity color. Active darkens with inset shadow. CSS backdrop-filter can't literally cut holes through an opaque parent per-tile; this is pure optical chrome matching the page tone.
 
 ### State of AI chart stack
 
-Inlined inside the Dashboard (no more separate `section-news-media`). Order:
-
-1. **Top 5 LLM face-off** — swipe carousel, 3 benchmark slides (GPQA / SWE-bench / LMArena). Glass prev/next arrows in a `.faceoff-nav` row below the carousel. Each slide renders a `.cbars` chart via the shared `renderCbarChart()` helper so any chart-primitive change cascades. Grok 4.20 + Llama 4 show as `.is-nodata` dashed lines on GPQA/SWE.
-2. **Frontier context windows** — `renderCompare()` through the same `renderCbarChart()` helper.
-3. **Context window timeline** (SVG log-scale area chart, IntersectionObserver-triggered).
-4. **Intelligence Index v4.0** (vertical bars).
-5. **Opus 4.7 scorecard** (horizontal bars).
-
-Bars/lines animate when the chart enters the middle ~76% of the viewport. Chart-card observer adds `.is-go` to `.cbar` children; carousel slides re-trigger `.is-go` on scroll-end so electrons re-run each landing.
+Charts were removed from the Dashboard in M8.11.4 (parked at `_parked/dashboard-charts.html`). CSS + render functions in `js/app.js` remain intact (each `renderTimeline`/`renderCompare`/`renderIndex`/`renderScorecard`/`renderLlmFaceoff` early-returns when its host id is absent), ready to be wired into a different surface.
 
 ## Conventions
 
-- **Commits:** conventional prefixes (`feat:`, `fix:`, `style:`, `chore:`). Feed-refresh commits get `[skip ci]`. Every milestone commit bumps `data/version.json`.
-- **Dates:** build scripts preserve prior data when a fetch returns empty — the site never goes blank on transient fetch failures.
-- **Tutorial items:** tagged `tutorial_kind: "video" | "official"` at fetch time; the Resources tab filters the combined list by kind.
+- **Commits:** conventional prefixes (`feat:`, `fix:`, `style:`, `chore:`, `refactor:`). Feed-refresh commits get `[skip ci]`. Every milestone commit bumps `data/version.json`.
+- **Feed safety:** build scripts preserve prior data when a fetch returns empty — the site never goes blank on transient fetch failures.
+- **Tutorial items:** tagged `tutorial_kind: "video" | "official"` at fetch time.
 - **News ordering:** videos always render above articles in any mixed list. Within each block, `sortByDateDesc`. Load-bearing — do not interleave.
-- **Styling:** **light mode only.** `:root {}` is a single light-only token block (dark-mode tokens + `[data-theme]` scoping were purged in M8.11.1). Cards use `.glass` for backdrop blur via `--glass-top / --glass-bottom / --glass-fallback` tokens. Charts opt OUT of the glass gradient and use solid `--chart-card-bg: #ffffff` for max contrast.
-- **Shared chart primitive:** both Frontier Compare and every LLM face-off slide render through `renderCbarChart(host, rows)` in `js/app.js`. Change `.cbar` CSS once and it cascades to both.
-- **TDZ trap:** any module-level `let`/`const` read from a render fn during the initial `applyFilter("home")` must be hoisted above that call (top of IIFE, near `MODEL_COL`). Hoisted block currently: `lessonsData`, `faceoffBenchIdx`, `FACEOFF_MODELS`, `FACEOFF_BENCHES`. Do not add lazy state at the bottom; hoist it.
-- **Model colors (locked, shared across all charts):** Claude/Opus/Anthropic = `#ff7a3d` (orange), OpenAI/GPT = `#14b8a6` (teal), Google/Gemini/Nano Banana/NotebookLM = `#4a90ff` (blue), xAI/Grok = `#e879f9` (magenta), Meta/Llama = `#6366f1` (indigo). `MODEL_COL` in `js/app.js` is the source of truth; do not retune without coordinating both Compare and face-off chart renders.
+- **Styling:** **light mode only.** `:root {}` is a single light-only token block (dark-mode tokens purged in M8.11.1). Cards use `.glass` for backdrop blur via `--glass-top / --glass-bottom / --glass-fallback`. Charts opt OUT of glass (solid `--chart-card-bg: #ffffff`).
+- **Shared chart primitive:** `renderCbarChart(host, rows)` in `js/app.js` — used by Frontier Compare + every LLM face-off slide.
+- **TDZ trap:** any module-level `let`/`const` read from a render fn during the initial `applyFilter("home")` must be hoisted above that call. See the TOC at the top of `js/app.js` for currently-hoisted state.
+- **Model colors (locked):** Claude/Opus/Anthropic `#ff7a3d`, OpenAI/GPT `#14b8a6`, Google/Gemini `#4a90ff`, xAI/Grok `#e879f9`, Meta/Llama `#6366f1`. `MODEL_COL` in `js/app.js` is the source of truth; keep independent of page `--accent-*`.
+- **File TOCs:** `css/style.css` and `js/app.js` carry a table-of-contents comment block at the top listing line anchors. Grep the section banner (`===== section =====` or `// ======`) to jump.
 
 ## Gotchas
 
-- **Cache aggressiveness:** hard-refresh after deploys. `data/*.json` is fetched with `?v=<timestamp>` to bust the browser cache but service workers / PWA caching can still lag.
+- **Cache aggressiveness:** hard-refresh after deploys. `data/*.json` is fetched with `?v=<timestamp>` but service workers / PWA caching can still lag.
 - **YouTube Atom feeds are flaky:** channels return 500/404 intermittently. `merge()` in the orchestrator preserves prior data rather than emptying the section.
 - **GitHub Pages base path:** live URL is `/claudeHub/`, not `/`. Keep all in-page links relative.
+- **`--color-violet-*` / `--accent-violet-*` tokens** are the renamed 365-purple tokens (rename in M8.12.46 pre-refactor). Still referenced by unrelated gradients (chart text, hero mix, etc.) — don't delete.
 
 ## Design language
 
-- **Light-only.** Page base `#eeece7` (neutral light-gray, minimal warm — LOCKED), card-base solid `#ece9e2`, default glass `~92% white over greige`, panels (Learn/Projects/YouTube tile) `~97% white`, chips/CTAs/charts pure `#ffffff`. Text stack `#1a1816 → text-2(0.64α) → text-3(0.36α)`. Hairlines ≤16% black alpha.
-- **60-30-10 four-corner electric accents.** Neutrals dominate. Identity colors only on tab chip active states + matching CTA edges, four corners of the wheel: Learn chartreuse-lime `#84cc16`, Projects vibrant ocean cyan `#0891b2` (blue/green sea), Tools vibrant tangerine `#ff7a1a`, 365 purple `#7c3aed`. Borders sit at 0.55α, glows at 0.34α for the electric halo. No full-color fills — the tab color lives on the EDGE (inset 1px ring + tight outer glow) plus a drop shadow. `<nav-brand>` "aiStacked" sticker stays dark-on-light as a deliberately locked wordmark.
-- **Restrained rounding.** `--radius-sm: 6px` / `--radius-md: 10px` / `--radius-lg: 14px` / `--radius-pill: 9999px` for true pills only. Chip/CTA rounding is `radius-sm`, card rounding is `radius-md`.
+- **Light-only.** Page base `#eeece7` (locked), card-base `#ece9e2`, default glass near-white, chips/CTAs/charts pure `#ffffff`. Text stack `#1a1816 → text-2(0.64α) → text-3(0.36α)`. Hairlines ≤16% black alpha.
+- **Ambient darkening:** body::before carries wide warm-greige radial gradients at top-left and bottom-right (rgba(80,72,58) at 0.07-0.16α) so the nav chips pop on load and the page has a subtle diagonal bias.
+- **60-30-10 four-corner electric accents.** Neutrals dominate. Identity colors only on active chips + matching CTA edges. Learn chartreuse-lime `#84cc16`, Projects ocean cyan `#0891b2`, Tools tangerine `#ff7a1a`, (violet `#7c3aed` retained as `--accent-violet-*` for residual gradients). Borders 0.55α, glows 0.34α. No full-color fills — tab color lives on the EDGE (inset 1px ring + tight outer glow + drop shadow).
+- **One `--base` per page (post-M9.1):** derived `--accent-{solid,border,glow,surface,ink,hover,soft,warm,cool}` via `color-mix(in oklch, …)`. Components reference `--accent-*` only. Per-component overrides live in `css/overrides.css`.
+- **Restrained rounding.** `--radius-sm: 6px` / `--radius-md: 10px` / `--radius-lg: 14px`. Pill-shaped elements use `radius-sm`, not `9999px` (M9.2 will purge remaining `--radius-pill` usage). Cards use `radius-md`.
 - **Premium easing.** All transitions use `--ease-premium: cubic-bezier(0.22, 0.61, 0.36, 1)` (or `--ease-lensing` / `--ease`). No bounce curves.
-- **Soft glows, not neon.** Identity glows via low-alpha `box-shadow` hugging the border; background-tier, never foreground-dominant. The `body::before` ambient layers `--ambient-warm` top-left + `--ambient-plasma` bottom-right at 4–6% alpha.
-- **Apple-glass with top-edge specular.** `.glass` cards use a warm-white gradient via `--glass-top → --glass-bottom`, with an inset `0 1px 0 rgba(255,255,255,0.7)` specular highlight (the "single most Apple trick" for depth). Backdrop blur + saturate. `.glass-elevated` variant cranks blur and adds a deeper drop for modals.
-- **Sub-pill cross-fades.** Switching sub-pills (Courses sub-sub-pills, Projects Saved/New) cross-fades the card grid with ~30ms stagger per card — no snap, no flicker.
+- **Soft glows, not neon.** Identity glows via low-alpha `box-shadow` hugging the border; background-tier, never foreground-dominant.
+- **Apple-glass with top-edge specular.** `.glass` cards use a warm-white gradient via `--glass-top → --glass-bottom`, with an inset `0 1px 0 rgba(255,255,255,0.55)` specular highlight. Backdrop blur + saturate. `.glass-elevated` variant cranks blur for modals.
+- **Impressed labels.** Debossed text on glass (nav chips, YouTube tile, others post-M9.3) — color `rgba(0,0,0,0.35)` + text-shadow `0 1px 0 rgba(255,255,255,0.80), 0 -0.5px 0.5px rgba(0,0,0,0.20)`. Unified under `.label-debossed` utility class in M9.3.
 - **Videos-above-articles.** Any mixed list renders videos block first, then articles block (locked rule, do not interleave).
 - **Reduced-motion honored.** Motion wrapped in `@media (prefers-reduced-motion: no-preference)`; reduced state = final state, data-critical reveals still paint.

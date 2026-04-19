@@ -1,3 +1,57 @@
+/* =============================================================================
+   aiUniversity — js/app.js  (single-file IIFE by project convention)
+   Table of contents (line anchors; grep the section banner to jump).
+
+   TOP-OF-FILE
+     L24    Constants (DATA_URL, TOOLS_URL, …, MODALITIES, MODEL_COL)
+     L257   Filters + applyFilter
+     L417   Time formatting helpers
+     L453   Sentiment detection
+     L486   Scroll-activation IntersectionObserver (universal reveal)
+     L537   Skeletons
+
+   FEED RENDERERS
+     L548   Card rendering (main feed: news/videos/status/tutorials)
+     L1032  Tools catalog (catalog grid + filter/sort)
+     L1113  Finder output — Easiest / Best path
+     L1251  My Projects list
+     L1299  Backup export / import
+     L1459  Authored lessons + MCQ quizzes
+     L1754  Storage monitor
+     L1875  Unified Save button
+     L2161  Project-scoped pinning (legacy read path)
+
+   MODALS + MISC
+     L2662  Tool detail modal
+     L2769  YouTube modal
+     L2798  Version footer
+     L2821  Finder wizard (textarea + caps + path + stack)
+     L2824  Finder example projects
+
+   MAIN + CHART RENDERERS
+     L3004  Main feed load (fetch latest.json, fan out renderers)
+     L3054  Scroll-triggered chart animation (HOME only)
+     L3099  Competitor comparison — context windows (renderCbarChart)
+     L3147  Frontier compare
+     L3179  Hero timeline card
+     L3214  Intelligence Index (vertical bars)
+     L3264  Opus 4.7 scorecard (horizontal bars)
+     L3405  LLM face-off carousel (swipe between 3 benchmark slides)
+     L3697  Taskgrid (best tool per task)
+     L3804  Markdown renderer + escHtml (used by lesson bodies)
+
+   CONVENTIONS (see CLAUDE.md for full rules)
+     - Single IIFE; all state lives on module-level `let`s.
+     - TDZ trap: any module-level `let`/`const` read by a render fn during
+       the initial applyFilter("home") MUST be hoisted above that call.
+       Currently hoisted: lessonsData, faceoffBenchIdx, FACEOFF_MODELS,
+       FACEOFF_BENCHES.
+     - Videos render before articles in mixed lists; never interleave.
+     - Data fetched with ?v=<timestamp> cache-buster (see constants below).
+     - DISTINCT_SECTIONS: home, learn, tools, projects — exclusive visibility.
+       SECTIONS: []    (empty post-M8.12.4; 365 tab decommissioned)
+   =============================================================================*/
+
 (() => {
   "use strict";
 
@@ -3773,7 +3827,7 @@
     const lastY = yOf(data[data.length-1].ctx);
     const labels = `
       <text class="label" x="${lastX - 8}" y="${lastY - 14}" text-anchor="end"
-            style="animation-delay: 1.5s; font-weight: 600; fill: var(--accent-365-hi);">${data[data.length-1].model}</text>
+            style="animation-delay: 1.5s; font-weight: 600; fill: var(--accent-violet-hi);">${data[data.length-1].model}</text>
     `;
 
     const electron = `
