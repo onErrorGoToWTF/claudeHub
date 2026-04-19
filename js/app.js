@@ -2372,7 +2372,7 @@
         const tb = Date.parse(b.updatedAt || b.createdAt || 0) || 0;
         return tb - ta;
       })
-      .slice(0, 3);
+      .slice(0, 2);
     host.innerHTML = recent.map((p) => {
       const pinTools    = Array.isArray(p.pinnedTools)    ? p.pinnedTools.length    : 0;
       const pinSnippets = Array.isArray(p.pinnedSnippets) ? p.pinnedSnippets.length : 0;
@@ -2385,10 +2385,8 @@
       const pathLabel = p.path === "best" ? "Best" : "Easy";
       return `
         <button type="button" class="continue-row" data-project-id="${escapeHtml(p.id)}">
-          <div class="continue-row-head">
-            <span class="continue-row-path" data-path="${escapeHtml(p.path || "easy")}">${pathLabel}</span>
-            <span class="continue-row-title">${escapeHtml(p.title)}</span>
-          </div>
+          <span class="continue-row-title">${escapeHtml(p.title)}</span>
+          <span class="continue-row-path" data-path="${escapeHtml(p.path || "easy")}">${pathLabel}</span>
           <div class="continue-row-meta">${escapeHtml(meta)}</div>
         </button>
       `;
@@ -2424,7 +2422,7 @@
       if (ra !== rb) return ra - rb;
       return (a.order || 0) - (b.order || 0);
     });
-    const slice = sorted.slice(0, 3);
+    const slice = sorted.slice(0, 2);
     host.innerHTML = slice.map((l) => {
       const state = progress[l.slug]?.state || "new";
       const stateLabel = state === "completed" ? "Completed"
@@ -2432,10 +2430,8 @@
                       : "Start";
       return `
         <button type="button" class="continue-row" data-dash-lesson-slug="${escapeHtml(l.slug)}">
-          <div class="continue-row-head">
-            <span class="continue-row-path" data-state="${escapeHtml(state)}">${stateLabel}</span>
-            <span class="continue-row-title">${escapeHtml(l.title)}</span>
-          </div>
+          <span class="continue-row-title">${escapeHtml(l.title)}</span>
+          <span class="continue-row-path" data-state="${escapeHtml(state)}">${stateLabel}</span>
           <div class="continue-row-meta">${l.minutes ? l.minutes + " min · " : ""}${escapeHtml(l.summary || "")}</div>
         </button>
       `;
