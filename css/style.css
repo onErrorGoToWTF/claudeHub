@@ -1810,8 +1810,10 @@ body.modal-open { overflow: hidden; }
    idiom as active tab chips + CTAs. */
 .dash-panel:has(.dash-panel-icon--learn)    { --panel-accent-border: var(--color-learn-border);    --panel-accent-glow: var(--color-learn-glow); }
 .dash-panel:has(.dash-panel-icon--projects) { --panel-accent-border: var(--color-projects-border); --panel-accent-glow: var(--color-projects-glow); }
+.dash-panel:has(.dash-panel-icon--tools)    { --panel-accent-border: var(--color-tools-border);    --panel-accent-glow: var(--color-tools-glow); }
 .dash-panel:has(.dash-panel-icon--learn) > .dash-panel-body,
-.dash-panel:has(.dash-panel-icon--projects) > .dash-panel-body {
+.dash-panel:has(.dash-panel-icon--projects) > .dash-panel-body,
+.dash-panel:has(.dash-panel-icon--tools) > .dash-panel-body {
   margin-top: 6px;
   padding-top: 12px;
   gap: 8px;
