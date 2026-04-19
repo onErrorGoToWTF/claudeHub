@@ -1,7 +1,7 @@
 {
-  "version": "0.6.95",
-  "milestone": "M8.12.25",
-  "milestoneTitle": "Phase 8.12.25 — Tools wrench viewBox widened to 1 1 22 22 so the large-radius arcs that bulge past the endpoint coordinates (and the lower-left diamond) all fit. Icon will render a hair smaller relative to Learn/Projects, but nothing clips",
-  "deployedAt": "2026-04-19T19:20Z",
+  "version": "0.6.96",
+  "milestone": "M8.12.26",
+  "milestoneTitle": "Phase 8.12.26 — Tools wrench viewBox opens to 0.5 0.5 23 23 so the lower-left diamond (y=21.16) + stroke width fit comfortably. Half-unit padding on every side",
+  "deployedAt": "2026-04-19T19:35Z",
   "commitSha": ""
 }
