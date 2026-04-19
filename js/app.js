@@ -3341,6 +3341,7 @@
       return `
         <div class="faceoff-slide" data-bench-idx="${i}">
           <header class="fo-face-head">
+            <span class="fo-face-eyebrow">Benchmark</span>
             <span class="fo-face-label">${escapeHtml(b.label)}</span>
             <span class="fo-face-desc">${escapeHtml(b.desc)}</span>
           </header>

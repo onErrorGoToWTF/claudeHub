@@ -5274,14 +5274,22 @@ body.modal-open { overflow: hidden; }
 .fo-face-head {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  margin-bottom: 12px;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+.fo-face-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-3);
 }
 .fo-face-label {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--text-1);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.012em;
+  line-height: 1.15;
 }
 .fo-face-desc {
   font-size: 12px;
@@ -5404,8 +5412,11 @@ body.modal-open { overflow: hidden; }
               0 6px 18px -8px rgba(0,0,0,0.55);
   transition: color 0.2s var(--ease-premium), border-color 0.2s var(--ease-premium), opacity 0.25s var(--ease-premium), transform 0.18s var(--ease-premium);
 }
-.faceoff-arrow-prev { left: -6px; }
-.faceoff-arrow-next { right: -6px; }
+/* Arrows peek past the chart card's inner padding so they sit on the
+   card's outer edge, not over the chart content. The negative offset is
+   tuned against the hero card's default padding (~18px). */
+.faceoff-arrow-prev { left: -20px; }
+.faceoff-arrow-next { right: -20px; }
 .faceoff-arrow:hover {
   color: var(--text-1);
   border-color: var(--border-strong);
