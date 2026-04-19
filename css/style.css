@@ -1798,16 +1798,12 @@ body.modal-open { overflow: hidden; }
    idiom as active tab chips + CTAs. */
 .dash-panel:has(.dash-panel-icon--learn)    { --panel-accent-border: var(--color-learn-border);    --panel-accent-glow: var(--color-learn-glow); }
 .dash-panel:has(.dash-panel-icon--projects) { --panel-accent-border: var(--color-projects-border); --panel-accent-glow: var(--color-projects-glow); }
-.dash-panel:has(.dash-panel-icon--learn),
-.dash-panel:has(.dash-panel-icon--projects) { overflow: hidden; }
 .dash-panel:has(.dash-panel-icon--learn) > .dash-panel-body,
 .dash-panel:has(.dash-panel-icon--projects) > .dash-panel-body {
-  margin: 6px -18px -16px;
-  padding: 12px 14px 14px;
+  margin-top: 6px;
+  padding-top: 12px;
   gap: 8px;
-  background: var(--bg-0);
   border-top: 1px solid rgba(0,0,0,0.10);
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
 }
 .dash-panel-body .continue-row {
   padding: 12px 12px;

@@ -1,7 +1,7 @@
 {
-  "version": "0.6.90",
-  "milestone": "M8.12.20",
-  "milestoneTitle": "Phase 8.12.20 — Learn/Projects panel body region now uses the page background (--bg-0, #eeece7) edge-to-edge within the panel, so the transparent glass tiles float over the page tone rather than over the panel's near-white. Panel clips via overflow:hidden; body extends into the bottom radius",
-  "deployedAt": "2026-04-19T18:15Z",
+  "version": "0.6.91",
+  "milestone": "M8.12.21",
+  "milestoneTitle": "Phase 8.12.21 — panel body reverts to inheriting the panel's near-white bg (the page-colored tray was too contrast-heavy); divider + glass tiles retained. Overflow clip + negative margins removed",
+  "deployedAt": "2026-04-19T18:25Z",
   "commitSha": ""
 }
