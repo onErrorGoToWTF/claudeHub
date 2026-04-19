@@ -1,7 +1,7 @@
 {
-  "version": "0.6.80",
-  "milestone": "M8.12.10",
-  "milestoneTitle": "Phase 8.12.10 — YouTube logo grows 20→25px (+25%); stroke-widths trimmed 2.2→1.8 (outer) and 1.4→1.1 (triangle) so visual line weight stays in line with other dashboard icons",
-  "deployedAt": "2026-04-19T16:00Z",
+  "version": "0.6.81",
+  "milestone": "M8.12.11",
+  "milestoneTitle": "Phase 8.12.11 — YouTube logo glow tightened: triple-stacked drop-shadows at 0.8/1.6/2.4px (two at full red + one at soft glow) hug the stroke, replacing the wider 1.5/4 pair",
+  "deployedAt": "2026-04-19T16:10Z",
   "commitSha": ""
 }

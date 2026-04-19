@@ -2008,8 +2008,9 @@ body.modal-open { overflow: hidden; }
 #youtube-open.dash-action-quiet.glass svg {
   color: var(--color-youtube-solid);
   filter:
-    drop-shadow(0 0 1.5px var(--color-youtube-solid))
-    drop-shadow(0 0 4px var(--color-youtube-glow));
+    drop-shadow(0 0 0.8px var(--color-youtube-solid))
+    drop-shadow(0 0 1.6px var(--color-youtube-solid))
+    drop-shadow(0 0 2.4px var(--color-youtube-glow));
 }
 
 /* ===== YouTube modal (M5.2) ===== */
