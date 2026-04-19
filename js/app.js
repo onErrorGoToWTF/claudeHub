@@ -378,7 +378,14 @@
     btn.addEventListener("click", () => {
       const chipName = btn.dataset.chip;
       const chip = document.querySelector(`[data-filter="${chipName}"]`);
-      if (chip) chip.click();
+      if (chip) {
+        chip.click();
+      } else {
+        // M3.9: news-media has no chip but its section still exists.
+        // Hit applyFilter directly so the Home "State of AI" card still works.
+        applyFilter(chipName);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
       const sub = btn.dataset.subpill;
       const attr = SUBPILL_ATTR[chipName];
       if (sub && attr) {
@@ -666,14 +673,19 @@
     }
   }
 
-  function sourceBucket(source) {
+  // M3.9: filter buckets collapse to All / Anthropic / Industry / Videos.
+  // Items can carry an explicit _bucket hint (set when merging s.news into
+  // the feed); otherwise we derive from source.
+  function sourceBucket(source, hintedBucket) {
+    if (hintedBucket) return hintedBucket;
     const s = source || "";
-    if (s === "Claude Code") return "code";
-    if (s === "Claude API Release Notes") return "api";
-    if (s.startsWith("MCP")) return "mcp";
-    if (s === "Anthropic Academy") return "academy";
     if (s.startsWith("YouTube")) return "videos";
-    return "other";
+    if (s === "Claude Code") return "anthropic";
+    if (s === "Claude API Release Notes") return "anthropic";
+    if (s.startsWith("MCP")) return "anthropic";
+    if (s === "Anthropic Academy") return "anthropic";
+    if (/anthropic/i.test(s)) return "anthropic";
+    return "industry";
   }
 
   function renderClaudeLearning(items) {
@@ -685,9 +697,9 @@
 
   function updateLearnFilterCounts() {
     const merged = resurrectPinnedItems(claudeLearningItems);
-    const counts = { all: merged.length, code: 0, api: 0, mcp: 0, videos: 0, academy: 0 };
+    const counts = { all: merged.length, anthropic: 0, industry: 0, videos: 0 };
     for (const it of merged) {
-      const b = sourceBucket(it.source);
+      const b = sourceBucket(it.source, it._bucket);
       if (counts[b] !== undefined) counts[b]++;
     }
     document.querySelectorAll("[data-filter-count]").forEach((el) => {
@@ -705,7 +717,7 @@
     const merged = resurrectPinnedItems(claudeLearningItems);
     const filtered = filter === "all"
       ? merged
-      : merged.filter((it) => sourceBucket(it.source) === filter);
+      : merged.filter((it) => sourceBucket(it.source, it._bucket) === filter);
     if (!filtered.length) {
       const empty = document.createElement("div");
       empty.className = "empty";
@@ -728,10 +740,10 @@
       return tb - ta;
     });
     const frag = document.createDocumentFragment();
-    const BUCKET_LABEL = { code: "Claude Code", api: "Claude API", mcp: "MCP", videos: "Video", academy: "Academy" };
+    const BUCKET_LABEL = { anthropic: "Anthropic", industry: "Industry", videos: "Video" };
     sorted.slice(0, 24).forEach((it, idx) => {
       const node = renderCard(it, false, idx);
-      const bucket = sourceBucket(it.source);
+      const bucket = sourceBucket(it.source, it._bucket);
       node.dataset.learnBucket = bucket;
       if (pins[it.url]) node.dataset.pinned = "1";
       const pill = node.querySelector(".card-pill");
@@ -2196,10 +2208,13 @@
         s.status.forEach(item => { item._severity = detectStatusSeverity(item); });
       }
 
-      // NEWS & MEDIA tab: status strip + mixed grid (videos first, then articles).
-      renderStatusStrip(s.status);
-      renderNews(s.news || []);
-      renderClaudeLearning(s.claude_learning || []);
+      // M3.9: News & Media tab retired as a chip; charts reached via Home's
+      // "State of AI" card. renderStatusStrip / renderNews kept callable but
+      // no longer invoked (their containers are gone). General-news items
+      // merge into the Learn → What's new feed with _bucket: "industry".
+      const industryNews = (s.news || []).map((it) => ({ ...it, _bucket: "industry" }));
+      const mergedLearn = (s.claude_learning || []).concat(industryNews);
+      renderClaudeLearning(mergedLearn);
 
       setUpdated("news", data.generated_at);
       setUpdated("365",  data.generated_at);

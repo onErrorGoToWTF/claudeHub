@@ -36,7 +36,6 @@
     <button class="chip glass-pill chip-learn" data-filter="learn">Learn</button>
     <button class="chip glass-pill chip-tools" data-filter="tools">Tools</button>
     <button class="chip glass-pill chip-projects" data-filter="projects">Projects</button>
-    <button class="chip glass-pill chip-news-media" data-filter="news-media">News &amp; Media</button>
     <button class="chip glass-pill chip-comply365" data-filter="comply365">Comply365</button>
   </nav>
 </header>
@@ -65,6 +64,13 @@
         <p class="dash-sub">Pick the pieces you want. Finder recommends a tool stack, a learning path, and setup per tool.</p>
         <button class="dash-action dash-action-primary" data-chip="projects" data-subpill="new" type="button">Start a new project →</button>
       </article>
+
+      <article class="dash-card glass dash-card-link">
+        <div class="dash-eyebrow">Reference</div>
+        <h2 class="dash-title">State of AI</h2>
+        <p class="dash-sub">Frontier context windows, Intelligence Index, Opus 4.7 scorecard, Top-4 LLM face-off — the charts that frame the field.</p>
+        <button class="dash-action" data-chip="news-media" type="button">Open the charts →</button>
+      </article>
     </div>
   </section>
 
@@ -83,9 +89,8 @@
     <div class="pane" data-pane="learn-whats-new" hidden>
       <div class="learn-filter-bar" role="tablist" aria-label="Filter What's new by source">
         <button class="learn-filter is-active" type="button" role="tab" aria-selected="true"  data-learn-filter="all"><span class="learn-filter-label">All</span><span class="learn-filter-count" data-filter-count="all"></span></button>
-        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="code"><span class="learn-filter-label">Claude Code</span><span class="learn-filter-count" data-filter-count="code"></span></button>
-        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="api"><span class="learn-filter-label">Claude API</span><span class="learn-filter-count" data-filter-count="api"></span></button>
-        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="mcp"><span class="learn-filter-label">MCP</span><span class="learn-filter-count" data-filter-count="mcp"></span></button>
+        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="anthropic"><span class="learn-filter-label">Anthropic</span><span class="learn-filter-count" data-filter-count="anthropic"></span></button>
+        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="industry"><span class="learn-filter-label">Industry</span><span class="learn-filter-count" data-filter-count="industry"></span></button>
         <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="videos"><span class="learn-filter-label">Videos</span><span class="learn-filter-count" data-filter-count="videos"></span></button>
       </div>
       <div class="cards" data-cards="claude-whats-new">
@@ -261,16 +266,12 @@
     </div>
   </section>
 
-  <section class="section section-news-media" data-section="news-media" id="section-news-media">
+  <section class="section section-news-media" data-section="news-media" id="section-news-media" data-hidden="true">
     <div class="section-head">
-      <h2>News &amp; Media</h2>
+      <h2>State of AI</h2>
       <span class="updated" data-updated="news">—</span>
     </div>
-    <p class="section-lede">Signal layer — which models are advancing where, plus what shipped today.</p>
-    <div class="subpills" role="tablist" aria-label="News &amp; Media view">
-      <button class="subpill is-active" data-newsmedia="state" type="button" role="tab" aria-selected="true">State of AI</button>
-      <button class="subpill"           data-newsmedia="news"  type="button" role="tab" aria-selected="false">News</button>
-    </div>
+    <p class="section-lede">Reference charts — which models are advancing where.</p>
 
     <div class="pane" data-pane="news-media-state">
       <section class="hero glass" id="compare-card">
@@ -348,10 +349,6 @@
       </section>
     </div>
 
-    <div class="pane" data-pane="news-media-news" hidden>
-      <div class="status-strip" data-strip="status"></div>
-      <div class="cards cards-mixed" data-cards="news"></div>
-    </div>
   </section>
 
   <section class="section" data-section="comply365" id="section-comply365">
