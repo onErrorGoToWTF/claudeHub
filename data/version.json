@@ -1,7 +1,7 @@
 {
-  "version": "0.6.87",
-  "milestone": "M8.12.17",
-  "milestoneTitle": "Phase 8.12.17 — reverted to a single 4×20px vertical identity stripe to the left of each section heading. Inline icons removed from h2 markup; section-head-icon CSS dropped. Dashboard stripe = grey, Learn lime, Tools tangerine, Projects cyan",
-  "deployedAt": "2026-04-19T17:30Z",
+  "version": "0.6.88",
+  "milestone": "M8.12.18",
+  "milestoneTitle": "Phase 8.12.18 — YouTube tile played down: Apple-style transparent glass (low-alpha white gradient 0.30→0.14 over backdrop blur) replaces the near-white surface; red logo glow softened to a single drop-shadow so the tile recedes",
+  "deployedAt": "2026-04-19T17:45Z",
   "commitSha": ""
 }

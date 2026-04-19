@@ -2002,15 +2002,27 @@ body.modal-open { overflow: hidden; }
 .dash-action-quiet svg { flex: 0 0 auto; }
 .dash-action-quiet:hover { color: var(--text-1); }
 
-/* M8.12.9 — YouTube tile border reverts to the default .glass hairline;
-   only the SVG logo carries the red identity (systemRed fill + stacked
-   drop-shadow glow, mirroring the .dash-panel-icon treatment). */
+/* M8.12.18 — YouTube tile played down with an Apple-style transparent
+   glass effect. Low-alpha white over the page (backdrop-blur inherited
+   from .glass) lets the page ambient show through so the tile recedes.
+   Red logo kept but glow softened to a single subtle drop-shadow — the
+   tile shouldn't compete with the headings. */
+#youtube-open.dash-action.dash-action-quiet.glass {
+  --glass-top:      rgba(255,255,255,0.30);
+  --glass-bottom:   rgba(255,255,255,0.14);
+  --glass-fallback: rgba(255,255,255,0.22);
+  background: linear-gradient(180deg,
+    var(--glass-top) 0%,
+    var(--glass-bottom) 100%);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  #youtube-open.dash-action.dash-action-quiet.glass {
+    background: var(--glass-fallback);
+  }
+}
 #youtube-open.dash-action-quiet.glass svg {
   color: var(--color-youtube-solid);
-  filter:
-    drop-shadow(0 0 0.8px var(--color-youtube-solid))
-    drop-shadow(0 0 1.6px var(--color-youtube-solid))
-    drop-shadow(0 0 2.4px var(--color-youtube-glow));
+  filter: drop-shadow(0 0 1.2px var(--color-youtube-glow));
 }
 
 /* ===== YouTube modal (M5.2) ===== */
