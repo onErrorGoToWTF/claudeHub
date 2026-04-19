@@ -2100,6 +2100,17 @@ body.modal-open { overflow: hidden; }
   border-color: color-mix(in srgb, var(--color-projects-solid) 65%, var(--border-strong));
   box-shadow: 0 0 26px -4px var(--color-projects-glow);
 }
+.dash-action-learn {
+  background: var(--color-learn-surface);
+  border-color: var(--color-learn-border);
+  color: var(--color-learn-solid);
+  box-shadow: 0 0 22px -6px var(--color-learn-glow);
+}
+.dash-action-learn:hover {
+  background: color-mix(in srgb, var(--color-learn-solid) 18%, transparent);
+  border-color: color-mix(in srgb, var(--color-learn-solid) 65%, var(--border-strong));
+  box-shadow: 0 0 26px -4px var(--color-learn-glow);
+}
 
 /* ===== YouTube modal (M5.2) ===== */
 .yt-modal[hidden] { display: none !important; }
