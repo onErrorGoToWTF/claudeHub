@@ -2122,32 +2122,25 @@ body.modal-open { overflow: hidden; }
 }
 .dash-panel-actions .dash-action { margin-top: 0; }
 /* YouTube inline button — compact, light pink fill with YouTube glyph. */
-/* Square pink-red YouTube pill — 44×44, icon-only. Matches the other
-   dash-action CTAs' height so it sits flush in the section-head row. */
-.dash-action-youtube {
+/* Quiet neutral dash-action variant — icon + short label, section-head sized. */
+.dash-action-quiet {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0;
-  width: 38px;
-  height: 38px;
-  padding: 0;
-  min-height: 38px;
-  border-radius: var(--radius-sm);
-  background: linear-gradient(135deg,
-    rgba(255,170,195,0.28) 0%,
-    rgba(255,120,150,0.22) 100%);
-  border-color: rgba(255,130,155,0.45);
-  color: var(--color-youtube-solid);
-  box-shadow: 0 0 22px -6px var(--color-youtube-glow);
+  gap: 6px;
+  padding: 6px 12px;
+  min-height: 36px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  border: 1px solid var(--border);
+  background: transparent;
+  box-shadow: none;
 }
-.dash-action-youtube svg { flex: 0 0 auto; }
-.dash-action-youtube:hover {
-  background: linear-gradient(135deg,
-    rgba(255,170,195,0.38) 0%,
-    rgba(255,120,150,0.32) 100%);
-  border-color: rgba(255,100,130,0.60);
-  box-shadow: 0 0 26px -4px var(--color-youtube-glow);
+.dash-action-quiet svg { flex: 0 0 auto; }
+.dash-action-quiet:hover {
+  color: var(--text-1);
+  border-color: var(--border-strong);
+  background: color-mix(in srgb, var(--text-1) 4%, transparent);
 }
 
 /* ===== YouTube modal (M5.2) ===== */
