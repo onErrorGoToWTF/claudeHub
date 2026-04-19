@@ -34,6 +34,8 @@
   <nav class="chips" id="filters" aria-label="Sections">
     <button class="chip glass-pill is-active" data-filter="home">Home</button>
     <button class="chip glass-pill chip-learn" data-filter="learn">Learn</button>
+    <button class="chip glass-pill chip-tools" data-filter="tools">Tools</button>
+    <button class="chip glass-pill chip-projects" data-filter="projects">Projects</button>
     <button class="chip glass-pill chip-news-media" data-filter="news-media">News &amp; Media</button>
     <button class="chip glass-pill chip-comply365" data-filter="comply365">Comply365</button>
   </nav>
@@ -61,7 +63,7 @@
         <div class="dash-eyebrow">Start</div>
         <h2 class="dash-title">A new project</h2>
         <p class="dash-sub">Pick the pieces you want. Finder recommends a tool stack, a learning path, and setup per tool.</p>
-        <button class="dash-action dash-action-primary" data-chip="learn" data-subpill="finder" type="button">Open the Finder →</button>
+        <button class="dash-action dash-action-primary" data-chip="projects" data-subpill="new" type="button">Start a new project →</button>
       </article>
     </div>
   </section>
@@ -71,12 +73,6 @@
       <h2>Learn</h2>
     </div>
     <p class="section-lede">Find the stack. Learn the stack. Ship the project.</p>
-    <div class="subpills" role="tablist" aria-label="Learn content">
-      <button class="subpill is-active" data-learn="claude"   type="button" role="tab" aria-selected="true">Claude</button>
-      <button class="subpill"           data-learn="finder"   type="button" role="tab" aria-selected="false">Finder</button>
-      <button class="subpill"           data-learn="tools"    type="button" role="tab" aria-selected="false">Tools</button>
-      <button class="subpill"           data-learn="projects" type="button" role="tab" aria-selected="false">My Projects</button>
-    </div>
     <div class="pane" data-pane="learn-claude">
       <div class="hub-intro">
         <div class="hub-eyebrow">Claude-first focus</div>
@@ -154,11 +150,42 @@
         </div>
       </div>
     </div>
-    <div class="pane" data-pane="learn-finder" hidden>
+  </section>
+
+  <section class="section section-tools" data-section="tools" id="section-tools" data-hidden="true">
+    <div class="section-head">
+      <h2>Tools</h2>
+    </div>
+    <p class="section-lede">The catalog. Filter by modality; tap a card for tagline, pricing, links, and the snippets tied to each tool.</p>
+    <div class="modality-filter" id="modality-filter" role="tablist" aria-label="Filter by modality"></div>
+    <div class="tool-grid" id="tool-grid"></div>
+  </section>
+
+  <section class="section section-projects" data-section="projects" id="section-projects" data-hidden="true">
+    <div class="section-head">
+      <h2>Projects</h2>
+    </div>
+    <p class="section-lede">Your saved builds. Switch to <em>+ New project</em> to run the Finder and stash a fresh stack.</p>
+    <div class="subpills projects-toggle" role="tablist" aria-label="Projects view">
+      <button class="subpill is-active" data-projects-view="saved" type="button" role="tab" aria-selected="true">Saved</button>
+      <button class="subpill"           data-projects-view="new"   type="button" role="tab" aria-selected="false">+ New project</button>
+    </div>
+
+    <div class="pane" data-pane="projects-saved">
+      <div class="projects-backup" id="projects-backup">
+        <button type="button" class="backup-btn" id="backup-export">Export backup</button>
+        <button type="button" class="backup-btn" id="backup-import-trigger">Import backup…</button>
+        <input type="file" id="backup-import-file" accept="application/json,.json" hidden>
+        <span class="backup-status" id="backup-status"></span>
+      </div>
+      <div class="projects-grid" id="projects-grid"></div>
+    </div>
+
+    <div class="pane" data-pane="projects-new" hidden>
       <div class="hub-intro">
-        <div class="hub-eyebrow">The Finder</div>
-        <h3 class="hub-title">Find the stack for your next project.</h3>
-        <p class="hub-lede">Pick the pieces you want to build with — the Finder outputs a tool stack, an ordered learning path, and setup per tool.</p>
+        <div class="hub-eyebrow">New project</div>
+        <h3 class="hub-title">Find the stack.</h3>
+        <p class="hub-lede">Describe the project, pick the capabilities, and save the recommended stack as a project.</p>
       </div>
 
       <div class="finder-wizard">
@@ -231,7 +258,7 @@
         <form class="save-form glass" id="save-form" hidden>
           <div class="save-head">
             <div class="hub-eyebrow">Save as project</div>
-            <p class="save-lede">Keep this stack in My Projects. You can have as many as you like.</p>
+            <p class="save-lede">Keep this stack in Saved projects. You can have as many as you like.</p>
           </div>
           <label class="save-field">
             <span class="save-field-label">Project title</span>
@@ -255,24 +282,6 @@
           </div>
         </form>
       </div>
-    </div>
-    <div class="pane" data-pane="learn-tools" hidden>
-      <div class="modality-filter" id="modality-filter" role="tablist" aria-label="Filter by modality"></div>
-      <div class="tool-grid" id="tool-grid"></div>
-    </div>
-    <div class="pane" data-pane="learn-projects" hidden>
-      <div class="hub-intro">
-        <div class="hub-eyebrow">My Projects</div>
-        <h3 class="hub-title">Your saved builds.</h3>
-        <p class="hub-lede">Every save from the Finder lands here. Each project keeps its capabilities, its chosen path, and the recommended tool stack.</p>
-      </div>
-      <div class="projects-backup" id="projects-backup">
-        <button type="button" class="backup-btn" id="backup-export">Export backup</button>
-        <button type="button" class="backup-btn" id="backup-import-trigger">Import backup…</button>
-        <input type="file" id="backup-import-file" accept="application/json,.json" hidden>
-        <span class="backup-status" id="backup-status"></span>
-      </div>
-      <div class="projects-grid" id="projects-grid"></div>
     </div>
   </section>
 

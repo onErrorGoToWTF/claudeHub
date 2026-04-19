@@ -109,7 +109,7 @@
   // Sections that render from latest.json and share the filter machinery.
   const SECTIONS = ["comply365", "news-media"];
   // Sections that are exclusive (only visible when their chip is picked).
-  const DISTINCT_SECTIONS = ["home", "learn"];
+  const DISTINCT_SECTIONS = ["home", "learn", "tools", "projects"];
 
   // Per-model brand-aligned electric palette, used by every chart so
   // colors match across the site.
@@ -245,7 +245,10 @@
     });
   });
 
-  // Learn sub-pills: Claude / Finder / Tools / My Projects
+  // Learn sub-pills (M3.7: only [data-learn="claude"] remains inside Learn;
+  // Finder / Tools / My Projects promoted to top-level sections. M3.8 will
+  // rebuild this with What's new / Courses / Tutorials). Guard for legacy
+  // markup; if no pills present this is a no-op.
   document.querySelectorAll(".subpill[data-learn]").forEach((pill) => {
     pill.addEventListener("click", () => {
       const kind = pill.dataset.learn;
@@ -256,6 +259,21 @@
       });
       document.querySelectorAll('.pane[data-pane^="learn-"]').forEach((pane) => {
         pane.hidden = pane.dataset.pane !== `learn-${kind}`;
+      });
+    });
+  });
+
+  // Projects sub-pills (M3.7): Saved list vs. + New project (Finder).
+  document.querySelectorAll(".subpill[data-projects-view]").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const kind = pill.dataset.projectsView;
+      document.querySelectorAll(".subpill[data-projects-view]").forEach((p) => {
+        const on = p === pill;
+        p.classList.toggle("is-active", on);
+        p.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      document.querySelectorAll('.pane[data-pane^="projects-"]').forEach((pane) => {
+        pane.hidden = pane.dataset.pane !== `projects-${kind}`;
       });
     });
   });
@@ -338,6 +356,7 @@
     "learn":      "learn",
     "comply365":  "s365",
     "news-media": "newsmedia",
+    "projects":   "projects-view",
   };
   document.querySelectorAll("[data-chip]").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -2100,7 +2119,7 @@
           saveStatus.dataset.kind = "warn";
           return;
         }
-        saveStatus.textContent = "Saved. Opening My Projects…";
+        saveStatus.textContent = "Saved. Opening Projects…";
         saveStatus.dataset.kind = "ok";
         setTimeout(() => {
           saveForm.hidden = true;
@@ -2108,8 +2127,11 @@
           saveStatus.textContent = "";
           saveStatus.dataset.kind = "";
           updateSaveCtaVisibility();
-          const pill = document.querySelector('.subpill[data-learn="projects"]');
-          if (pill) pill.click();
+          // M3.7: Projects is a top-level tab with Saved/New subpills.
+          const chip = document.querySelector('[data-filter="projects"]');
+          if (chip) chip.click();
+          const savedPill = document.querySelector('.subpill[data-projects-view="saved"]');
+          if (savedPill) savedPill.click();
           window.scrollTo({ top: 0, behavior: "smooth" });
         }, 650);
       });

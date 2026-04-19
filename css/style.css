@@ -3522,6 +3522,17 @@ body.modal-open { overflow: hidden; }
 .chip-news-media:hover:not(.is-active) {
   box-shadow: 0 0 18px -6px var(--accent-glow);
 }
+/* Tools / Projects chips — neutral accent; no color flood. */
+.chip-tools.is-active,
+.chip-projects.is-active {
+  box-shadow: 0 0 24px -4px var(--accent-glow);
+}
+.chip-tools:hover:not(.is-active),
+.chip-projects:hover:not(.is-active) {
+  box-shadow: 0 0 18px -6px var(--accent-glow);
+}
+/* Projects Saved / + New subpill spacing. */
+.projects-toggle { margin-bottom: 12px; }
 /* One-shot specular sweep on chip hover (600ms, not continuous). */
 .chip { position: relative; overflow: hidden; }
 .chip::after {
