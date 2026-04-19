@@ -3421,6 +3421,47 @@ body.modal-open { overflow: hidden; }
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
+/* Cross-link rows between tutorial and quiz modes. */
+.lesson-modal-xlink[hidden] { display: none; }
+.lesson-modal-xlink { margin: 0 0 12px; }
+.lesson-modal-xlink-end { margin: 20px 0 0; padding-top: 16px; border-top: 1px solid var(--border); }
+.lesson-modal-xbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  min-height: 40px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-learn-border);
+  background: var(--color-learn-surface);
+  color: var(--color-learn-solid);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background 0.2s var(--ease-premium), box-shadow 0.25s var(--ease-premium);
+}
+.lesson-modal-xbtn:hover {
+  background: color-mix(in srgb, var(--color-learn-solid) 18%, transparent);
+  box-shadow: 0 0 20px -6px var(--color-learn-glow);
+}
+.lesson-modal-xlink-back {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-2);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.lesson-modal-xlink-back:hover { color: var(--text-1); border-color: var(--border-strong); }
 .lesson-markdown h1 { font-size: 22px; margin: 0 0 12px; letter-spacing: -0.015em; }
 .lesson-markdown h2 { font-size: 17px; margin: 22px 0 8px; letter-spacing: -0.01em; }
 .lesson-markdown h3 { font-size: 14px; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-2); }

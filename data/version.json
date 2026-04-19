@@ -1,7 +1,7 @@
 {
-  "version": "0.6.28",
-  "milestone": "M7.7.1",
-  "milestoneTitle": "Phase 7.7.1 — fix TDZ on lessonsData that halted the IIFE (renderDashLearn read it before its let declaration during initial applyFilter)",
-  "deployedAt": "2026-04-19T03:30Z",
+  "version": "0.6.29",
+  "milestone": "M7.8",
+  "milestoneTitle": "Phase 7.8 — split tutorials and quizzes into separate surfaces; lesson modal has a mode (tutorial/quiz) with cross-link CTAs between them",
+  "deployedAt": "2026-04-19T03:45Z",
   "commitSha": ""
 }

@@ -172,12 +172,12 @@
       </div>
 
       <div class="pane" data-pane="courses-originals" hidden>
-        <div class="empty glass">Custom tutorials — coming soon.</div>
+        <div class="lessons-list" id="tutorials-list"></div>
       </div>
     </div>
 
     <div class="pane" data-pane="learn-tutorials" hidden>
-      <div class="lessons-list" id="lessons-list"></div>
+      <div class="lessons-list" id="quizzes-list"></div>
     </div>
   </section>
 
@@ -475,7 +475,19 @@
       </button>
     </div>
     <div class="lesson-modal-body">
+      <!-- Cross-link to quiz (shown only in tutorial mode) -->
+      <div class="lesson-modal-xlink" id="lesson-xlink-quiz" hidden>
+        <button type="button" class="lesson-modal-xbtn" id="lesson-xlink-quiz-btn">Take the quiz →</button>
+      </div>
+      <!-- Cross-link to tutorial (shown only in quiz mode) -->
+      <div class="lesson-modal-xlink" id="lesson-xlink-tut" hidden>
+        <button type="button" class="lesson-modal-xlink-back" id="lesson-xlink-tut-btn">← Read the tutorial</button>
+      </div>
       <div class="lesson-markdown" id="lesson-markdown"></div>
+      <!-- Tutorial-mode "Take the quiz" CTA at the end of the body -->
+      <div class="lesson-modal-xlink lesson-modal-xlink-end" id="lesson-xlink-quiz-end" hidden>
+        <button type="button" class="lesson-modal-xbtn" id="lesson-xlink-quiz-end-btn">Take the quiz for this tutorial →</button>
+      </div>
       <div class="lesson-quiz" id="lesson-quiz"></div>
     </div>
     <div class="lesson-modal-actions">

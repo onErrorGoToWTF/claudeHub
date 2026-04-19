@@ -1516,15 +1516,18 @@
     renderLessonsList();
     if (typeof renderDashLearn === "function") renderDashLearn();
   }
-  function renderLessonsList() {
-    const host = document.getElementById("lessons-list");
+  function renderLessonsInto(hostId, mode, lessonsFilter) {
+    const host = document.getElementById(hostId);
     if (!host) return;
-    if (lessonsData.length === 0) {
-      host.innerHTML = `<div class="empty glass academy-empty">No lessons yet. First one lands soon — check back, or hit the Academy tab for Anthropic's own catalog in the meantime.</div>`;
+    const items = (lessonsFilter ? lessonsData.filter(lessonsFilter) : lessonsData);
+    if (items.length === 0) {
+      host.innerHTML = mode === "quiz"
+        ? `<div class="empty glass academy-empty">No quizzes yet.</div>`
+        : `<div class="empty glass academy-empty">No tutorials yet. First one lands soon — check back.</div>`;
       return;
     }
     const byTrack = new Map();
-    lessonsData
+    items
       .slice()
       .sort((a, b) => (a.track || "").localeCompare(b.track || "") || (a.order || 0) - (b.order || 0))
       .forEach((l) => {
@@ -1542,10 +1545,13 @@
         const stateLabel = state === "completed" ? "Completed"
                         : state === "in_progress" ? "In progress"
                         : "Not started";
+        const meta = mode === "quiz"
+          ? (Array.isArray(l.quiz) ? l.quiz.length + " q" : "")
+          : (l.minutes ? l.minutes + " min" : "");
         return `
-          <button type="button" class="lesson-row" data-lesson-slug="${escapeHtml(l.slug)}">
+          <button type="button" class="lesson-row" data-lesson-slug="${escapeHtml(l.slug)}" data-mode="${mode}">
             <div class="lesson-row-head">
-              <span class="lesson-row-min">${l.minutes ? l.minutes + " min" : ""}</span>
+              <span class="lesson-row-min">${escapeHtml(meta)}</span>
               <span class="lesson-row-title">${escapeHtml(l.title)}</span>
               <span class="lesson-row-state" data-state="${escapeHtml(state)}">${stateLabel}</span>
             </div>
@@ -1567,15 +1573,30 @@
     host.querySelectorAll(".lesson-row").forEach((row) => {
       row.addEventListener("click", (e) => {
         e.preventDefault();
-        openLesson(row.dataset.lessonSlug);
+        openLesson(row.dataset.lessonSlug, row.dataset.mode || "tutorial");
       });
     });
   }
-  async function openLesson(slug) {
+  function renderTutorialsList() {
+    renderLessonsInto("tutorials-list", "tutorial", null);
+  }
+  function renderQuizzesList() {
+    renderLessonsInto("quizzes-list", "quiz",
+      (l) => Array.isArray(l.quiz) && l.quiz.length > 0);
+  }
+  function renderLessonsList() {
+    // Kept as a single entry point that refreshes both surfaces — modal
+    // close / progress updates call this.
+    renderTutorialsList();
+    renderQuizzesList();
+  }
+  async function openLesson(slug, mode) {
+    mode = mode === "quiz" ? "quiz" : "tutorial";
     const lesson = lessonsData.find((l) => l.slug === slug);
     const modal = document.getElementById("lesson-modal");
     if (!lesson || !modal) return;
     modal.dataset.slug = slug;
+    modal.dataset.mode = mode;
     const titleEl = modal.querySelector(".lesson-modal-title");
     const trackEl = modal.querySelector(".lesson-modal-track");
     const minEl   = modal.querySelector(".lesson-modal-min");
@@ -1584,9 +1605,17 @@
     const quizHost = modal.querySelector("#lesson-quiz");
     const completeBtn = modal.querySelector("#lesson-complete");
     const resetBtn    = modal.querySelector("#lesson-reset");
-    if (titleEl) titleEl.textContent = lesson.title || "";
+    // Cross-link elements (injected in M5.3 split).
+    const xlinkQuizTop  = modal.querySelector("#lesson-xlink-quiz");
+    const xlinkQuizEnd  = modal.querySelector("#lesson-xlink-quiz-end");
+    const xlinkTutBack  = modal.querySelector("#lesson-xlink-tut");
+    const hasQuiz = Array.isArray(lesson.quiz) && lesson.quiz.length > 0;
+
+    if (titleEl) titleEl.textContent = (mode === "quiz" ? "Quiz · " : "") + (lesson.title || "");
     if (trackEl) trackEl.textContent = TRACK_LABEL[lesson.track] || lesson.track || "";
-    if (minEl)   minEl.textContent   = lesson.minutes ? lesson.minutes + " min" : "";
+    if (minEl)   minEl.textContent   = mode === "quiz"
+      ? (hasQuiz ? lesson.quiz.length + " questions" : "")
+      : (lesson.minutes ? lesson.minutes + " min" : "");
     const progress = lessonState(slug);
     const isComplete = progress?.state === "completed";
     if (statusEl) {
@@ -1597,8 +1626,15 @@
     if (completeBtn) completeBtn.textContent = isComplete ? "Mark incomplete" : "Mark complete";
     if (resetBtn)    resetBtn.hidden = !progress;
 
-    // Load + render the markdown body (cached).
-    if (mdHost) {
+    // Visibility of body parts by mode.
+    if (mdHost)  mdHost.hidden  = mode === "quiz";
+    if (quizHost) quizHost.hidden = mode === "tutorial";
+    if (xlinkQuizTop) xlinkQuizTop.hidden = true; // top cross-link reserved; end one carries the CTA
+    if (xlinkQuizEnd) xlinkQuizEnd.hidden = !(mode === "tutorial" && hasQuiz);
+    if (xlinkTutBack) xlinkTutBack.hidden = !(mode === "quiz");
+
+    // Load + render the markdown body (tutorial mode only; cached).
+    if (mode === "tutorial" && mdHost) {
       if (lessonBodyCache.has(slug)) {
         mdHost.innerHTML = lessonBodyCache.get(slug);
       } else {
@@ -1618,8 +1654,8 @@
         }
       }
     }
-    // Render quiz.
-    if (quizHost) {
+    // Render quiz (quiz mode only).
+    if (mode === "quiz" && quizHost) {
       const quiz = Array.isArray(lesson.quiz) ? lesson.quiz : [];
       const savedAnswers = progress?.answers || {};
       quizHost.innerHTML = quiz.length === 0 ? "" : `
@@ -1661,7 +1697,7 @@
           state.answers[qi] = ci;
           state.state = state.state === "completed" ? "completed" : "in_progress";
           setLessonState(slug, state);
-          openLesson(slug); // re-render with the reveal
+          openLesson(slug, "quiz"); // re-render quiz with the reveal
         });
       });
     }
@@ -1680,6 +1716,7 @@
   {
     const completeBtn = document.getElementById("lesson-complete");
     const resetBtn    = document.getElementById("lesson-reset");
+    const currentMode = () => document.getElementById("lesson-modal")?.dataset.mode || "tutorial";
     if (completeBtn) completeBtn.addEventListener("click", (e) => {
       e.preventDefault();
       const modal = document.getElementById("lesson-modal");
@@ -1695,7 +1732,7 @@
           completedAt: new Date().toISOString(),
         });
       }
-      openLesson(slug);
+      openLesson(slug, currentMode());
     });
     if (resetBtn) resetBtn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -1703,7 +1740,20 @@
       const slug = modal?.dataset.slug;
       if (!slug) return;
       setLessonState(slug, null);
-      openLesson(slug);
+      openLesson(slug, currentMode());
+    });
+    // Cross-links between tutorial and quiz modes.
+    const xQuizBtn = document.getElementById("lesson-xlink-quiz-end-btn");
+    if (xQuizBtn) xQuizBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const slug = document.getElementById("lesson-modal")?.dataset.slug;
+      if (slug) openLesson(slug, "quiz");
+    });
+    const xTutBtn = document.getElementById("lesson-xlink-tut-btn");
+    if (xTutBtn) xTutBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const slug = document.getElementById("lesson-modal")?.dataset.slug;
+      if (slug) openLesson(slug, "tutorial");
     });
     document.querySelectorAll("#lesson-modal [data-close]").forEach((el) => {
       el.addEventListener("click", (ev) => { ev.preventDefault(); closeLessonModal(); });
