@@ -2111,6 +2111,32 @@ body.modal-open { overflow: hidden; }
   border-color: color-mix(in srgb, var(--color-learn-solid) 65%, var(--border-strong));
   box-shadow: 0 0 26px -4px var(--color-learn-glow);
 }
+/* Panel action row — Start CTA + inline YouTube button side-by-side. */
+.dash-panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.dash-panel-actions .dash-action { margin-top: 0; }
+/* YouTube inline button — pink-red fill with the YouTube glyph. */
+.dash-action-youtube {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--color-youtube-solid) 20%, transparent) 0%,
+    color-mix(in srgb, var(--color-youtube-solid) 32%, transparent) 100%);
+  border-color: var(--color-youtube-border);
+  color: var(--color-youtube-solid);
+  box-shadow: 0 0 22px -6px var(--color-youtube-glow);
+}
+.dash-action-youtube svg { flex: 0 0 auto; }
+.dash-action-youtube:hover {
+  background: color-mix(in srgb, var(--color-youtube-solid) 32%, transparent);
+  border-color: color-mix(in srgb, var(--color-youtube-solid) 65%, var(--border-strong));
+  box-shadow: 0 0 26px -4px var(--color-youtube-glow);
+}
 
 /* ===== YouTube modal (M5.2) ===== */
 .yt-modal[hidden] { display: none !important; }

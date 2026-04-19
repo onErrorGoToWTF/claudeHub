@@ -34,11 +34,6 @@
   <section class="section section-home" data-section="home" id="section-home">
     <div class="section-head">
       <h2>Dashboard</h2>
-      <div class="section-head-actions">
-        <button id="youtube-open" class="icon-btn icon-btn-youtube" type="button" aria-label="YouTube" title="YouTube">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
-        </button>
-      </div>
     </div>
 
     <article class="dash-panel glass">
@@ -46,7 +41,13 @@
         <h3 class="dash-panel-title">Learn</h3>
         <span class="dash-panel-hint">Courses &amp; quizzes</span>
       </header>
-      <button class="dash-action dash-action-learn" data-chip="learn" data-subpill="courses" type="button">Start new course or quiz →</button>
+      <div class="dash-panel-actions">
+        <button class="dash-action dash-action-learn" data-chip="learn" data-subpill="courses" type="button">Start new course or quiz →</button>
+        <button id="youtube-open" class="dash-action dash-action-youtube" type="button" aria-label="Open YouTube">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+          <span>YouTube</span>
+        </button>
+      </div>
       <div class="dash-panel-body" id="dash-learn-body">
         <p class="dash-empty">Loading lessons…</p>
       </div>
