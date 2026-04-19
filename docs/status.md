@@ -1,6 +1,26 @@
-# aiStacked — status + structure
+# aiUniversity — status + structure
 
-Current release: **v0.5.6** on `main` (tag `v0.5.6`). Live at https://onerrorgotowtf.github.io/claudeHub/. Phases 1, 1.5, 2, 3, 4, 5 shipped.
+Current release: **v0.6.111** on `main`. Live at https://onerrorgotowtf.github.io/claudeHub/. Phases 1, 1.5, 2, 3, 4, 5, 6, 7, 8 shipped. (Formerly "aiStacked" — visible brand flipped to **aiUniversity** in M8.12.5.)
+
+## Current state — 2026-04-19
+
+**Dashboard page: ~done.** Visual pass wraps up in M8.12.x:
+
+- aiUniversity wordmark in nav.
+- 365 tab fully decommissioned; four tabs remain: Dashboard · Learn · Projects · Tools.
+- Panel layout: 2×2 quadrant grid per panel; title + CTA stacked left, identity icon lower-right (Learn/Projects nudged +6px), divider + glass item tiles below.
+- Identity stripe marker restored left of each section heading (was experimenting with halving stripes / radial bloom / inline icons — all reverted in M8.12.17).
+- Item tiles: fake cut-through to page bg (solid --bg-0 + glass-edge chrome; no backdrop-filter — CSS can't cut holes through opaque parents per-tile).
+- CTAs converted to translucent Apple glass (M8.12.27).
+- Nav chips: translucent glass with debossed/impressed labels (M8.12.37). Active chip stays solid white for prominence.
+- YouTube tile: transparent glass; logo + wordmark read as a glass impression (M8.12.35/36).
+- Tools panel now mirrors Learn/Projects — divider + glass tiles; seeded with three currently-in-use tools (Claude Pro Max 20×, GitHub Copilot Pro, SuperGrok Heavy). These will later weight the project-stack recommendation formula.
+
+**Remaining dashboard polish (deferred):**
+- Dashboard placeholder grid icon — grey for now; may get its own identity color.
+- Orphaned --color-365-* / --accent-365-* tokens still referenced by unrelated gradients; cleanup when purple is retuned.
+
+**Next up:** other tabs. Learn / Projects / Tools pages still reflect the older IA and need a similar design pass to match the dashboard's transparent-glass language.
 
 ---
 

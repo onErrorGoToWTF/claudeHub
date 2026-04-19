@@ -1,7 +1,7 @@
 {
-  "version": "0.6.111",
-  "milestone": "M8.12.41",
-  "milestoneTitle": "Phase 8.12.41 — Tools panel matches Learn/Projects layout: thin hairline divider + glass item tiles beneath the CTA. Hardcoded three tools-in-use: Claude Pro Max 20×, GitHub Copilot Pro, SuperGrok Heavy. Each row is a continue-row button with title + USING pill + meta line. Future formula will weight these when recommending project stacks",
-  "deployedAt": "2026-04-19T22:20Z",
+  "version": "0.6.112",
+  "milestone": "M8.12.42",
+  "milestoneTitle": "Phase 8.12.42 — docs/status.md refreshed: renamed to aiUniversity, bumped current release to 0.6.111, added a dated 'Current state' block summarizing the dashboard visual pass + remaining polish + next-up (other tab pages)",
+  "deployedAt": "2026-04-19T22:35Z",
   "commitSha": ""
 }
