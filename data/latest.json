@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T14:58:27.926Z",
+  "generated_at": "2026-04-19T15:09:01.019Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -176,7 +176,7 @@
       {
         "title": "Changes in the system prompt between Claude Opus 4.6 and 4.7",
         "url": "https://simonwillison.net/2026/Apr/18/opus-system-prompt/",
-        "source": "HN · 67↑",
+        "source": "HN · 69↑",
         "hn_id": "47823270",
         "published": "2026-04-19T10:36:29.000Z",
         "summary": ""
@@ -194,6 +194,13 @@
         "source": "Google News",
         "published": "2026-04-19T10:05:23.000Z",
         "summary": "First token counts reveal Opus 4.7 costs significantly more than 4.6 despite Anthropic's flat pricing the-decoder.com"
+      },
+      {
+        "title": "Claude Design: Anthropic creates mockups and interactive prototypes on demand - Basic Tutorials",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOcHRXUzRQZjZ2QVJoTmpmaU43bm4tNmQ1TTc5Yk15RWZQSTV4YTRNQlJ6aHY2UHpHTDRYQlRXVWkySnlkV3hfMEhOUnZ4ZGRmcktwQTVRSXU2ZXZZRFhJaUMyWmEwSE1qWHB5a3VPMHZQcWJfdnJjZjl5ZTQtaFFOdEl5emxhLVY5ZnNXOWNYQWxlanVKaE5OS01RNlI2ZzhFWlZ5eFJ2MXVwc3JacWZF?oc=5",
+        "source": "Google News",
+        "published": "2026-04-19T09:03:43.000Z",
+        "summary": "Claude Design: Anthropic creates mockups and interactive prototypes on demand Basic Tutorials"
       },
       {
         "title": "Anthropic’s Claude suffers a widespread API outage just as enterprise procurement season heats up - Startup Fortune",
@@ -245,9 +252,16 @@
         "summary": "Anthropic Releases New Claude Design Tool, Internet Explodes InsideHook"
       },
       {
+        "title": "Anthropic’s Claude Mythos leak reveals powerful AI with cyber attack risks - MSN",
+        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOcW1JN05jWWFoQ3g3N1A3Wm5IY1U5U0lJei00VHhpYUt0QnExSDJaU0l0bzloMlBQZlpORC1ET0RoN0NCY2JsYlkxVU1FVm92ZHhXZGo2VlZOSjVXckphVVhfVDh4U1RhMzluc182NTBjZERMSE9hMERMdEVYMThaSTJMSHFUWW82SS12aU9xa1RZbi1GNkVfQVl3UncwSnJsOFFnYVRhbWZFYjBIeGZYZVpNZDBwWDdMWXYtNGJQV04tSWMtUmVmSjVOQUxGQklZRlRQRnpZaEV5Z20zbUk2bTdPUlpfak84MDhHSTRqWG1PMnViV1VQUzhtYUNoZlIzdXc?oc=5",
+        "source": "Google News",
+        "published": "2026-04-18T20:25:17.000Z",
+        "summary": "Anthropic’s Claude Mythos leak reveals powerful AI with cyber attack risks MSN"
+      },
+      {
         "title": "Thoughts and feelings around Claude Design",
         "url": "https://samhenri.gold/blog/20260418-claude-design/",
-        "source": "HN · 343↑",
+        "source": "HN · 344↑",
         "hn_id": "47818700",
         "published": "2026-04-18T19:19:24.000Z",
         "summary": ""
@@ -308,13 +322,6 @@
         "summary": "What is Anthropic’s Claude Design, and why are Figma and Adobe stocks dropping The Times of India"
       },
       {
-        "title": "Anthropic CEO met White House chief of staff as US seeks access to Mythos model - Financial Times",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQd2VaSkFYeTFtaUtIdjZDQ1VLalUyckNzLXpvVDFxb0Z4dkk0ZnFiYU42RXpPRThseHFhbWNUUWZBeUUyNjNXdmNFUF8weTh5Q2JqOFowV0ZXU3lPMms3bDVPbEtKQVlYeHJjRDhFQXBkWnVfLVp6MWMxUHNOUUQ0T1pXY0o?oc=5",
-        "source": "Google News",
-        "published": "2026-04-17T22:10:14.000Z",
-        "summary": "Anthropic CEO met White House chief of staff as US seeks access to Mythos model Financial Times"
-      },
-      {
         "title": "Anthropic Launches Claude Design, Figma Stock Immediately Nosedives - Gizmodo",
         "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPUFVsLWlSOUdIQmtMUC16NVNxdVRzQnZJYzNzYy13cG83NlNWU2s4eVR5ZWNkME1LNjY4bU9GaE14Y3hROE1xUHJHVThRVHJVdUhJeVAzSkhoYmpzNE9TVmJwQmJ6S0VQWWRpdFIxY1NndzF6a3NOWi10T2FUa1h0UzEyUkhOZ21keE9jWlV1RV9EN2o3TzFBMTg5RU9GZw?oc=5",
         "source": "Google News",
@@ -327,13 +334,6 @@
         "source": "Google News",
         "published": "2026-04-17T21:20:53.000Z",
         "summary": "Anthropic Takes Aim at Figma and Adobe With New Claude Design Platform inc.com"
-      },
-      {
-        "title": "Adobe Stock Drops. Why Anthropic’s New Claude Launch Is Rattling Investors. - Barron's",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNS2NkZFplRmJpT3RlRXhnbnJHZFYzbGxXSlBiVnFEMjJaMDNSNVpIQVN3Mzdhby1tU283blAzc3kyTHhHR2NsT25lT2dHWkFDQ1p4bzdRc2F5aFZVbFZXdEVrYzl1NzRjdmxSRzFXRmQ0bjk4M19qZ3pzTlBTMG9QWUZKWlpEalVUaG1jMkdSZC1VSWM?oc=5",
-        "source": "Google News",
-        "published": "2026-04-17T20:55:00.000Z",
-        "summary": "Adobe Stock Drops. Why Anthropic’s New Claude Launch Is Rattling Investors. Barron's"
       },
       {
         "title": "Claude Design just dropped... (Everything you need to know!)",
