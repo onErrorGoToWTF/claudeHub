@@ -2136,7 +2136,9 @@ body.modal-open { overflow: hidden; }
 }
 .dash-panel-actions .dash-action { margin-top: 0; }
 /* YouTube inline button — compact, light pink fill with YouTube glyph. */
-/* Quiet neutral dash-action variant — icon stacked ABOVE label, tile-y. */
+/* Quiet neutral dash-action variant — icon stacked ABOVE label, tile-y.
+   Background matches the Learn/Projects panel card (--bg-1) so the
+   YouTube tile reads as a miniature card sitting in the section-head. */
 .dash-action-quiet {
   display: inline-flex;
   flex-direction: column;
@@ -2151,14 +2153,13 @@ body.modal-open { overflow: hidden; }
   line-height: 1;
   color: var(--text-2);
   border: 1px solid var(--border);
-  background: transparent;
+  background: var(--bg-1);
   box-shadow: none;
 }
 .dash-action-quiet svg { flex: 0 0 auto; }
 .dash-action-quiet:hover {
   color: var(--text-1);
   border-color: var(--border-strong);
-  background: color-mix(in srgb, var(--text-1) 4%, transparent);
 }
 
 /* ===== YouTube modal (M5.2) ===== */
