@@ -1,7 +1,7 @@
 {
-  "version": "0.6.81",
-  "milestone": "M8.12.11",
-  "milestoneTitle": "Phase 8.12.11 — YouTube logo glow tightened: triple-stacked drop-shadows at 0.8/1.6/2.4px (two at full red + one at soft glow) hug the stroke, replacing the wider 1.5/4 pair",
-  "deployedAt": "2026-04-19T16:10Z",
+  "version": "0.6.82",
+  "milestone": "M8.12.12",
+  "milestoneTitle": "Phase 8.12.12 — section-head accent goes from single pill to 6-band halving echo: widths 4→0.125px, alphas 100→3%, gaps 3→0.1875px. Visual echo of the section color fading to nothing. Per-section --band custom prop replaces the prior background overrides",
+  "deployedAt": "2026-04-19T16:20Z",
   "commitSha": ""
 }
