@@ -179,7 +179,7 @@
   // Sections that render from latest.json and share the filter machinery.
   const SECTIONS = ["comply365"];
   // Sections that are exclusive (only visible when their chip is picked).
-  const DISTINCT_SECTIONS = ["home", "learn", "tools", "projects", "youtube"];
+  const DISTINCT_SECTIONS = ["home", "learn", "tools", "projects"];
 
   // Per-model brand-aligned electric palette, used by every chart so
   // colors match across the site.
@@ -2712,6 +2712,34 @@
     if (m && !m.hidden) closeToolModal();
   });
 
+  // ---------- YouTube modal (M5.2) ----------
+  function openYouTubeModal() {
+    const modal = document.getElementById("youtube-modal");
+    if (!modal) return;
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+    if (typeof renderYouTube === "function") renderYouTube();
+  }
+  function closeYouTubeModal() {
+    const modal = document.getElementById("youtube-modal");
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    if (!document.querySelector(".tool-modal:not([hidden]), .video-modal:not([hidden])")) {
+      document.body.classList.remove("modal-open");
+    }
+  }
+  {
+    const ytBtn = document.getElementById("youtube-open");
+    if (ytBtn) ytBtn.addEventListener("click", (e) => { e.preventDefault(); openYouTubeModal(); });
+    document.querySelectorAll("#youtube-modal [data-close]").forEach((el) => {
+      el.addEventListener("click", (e) => { e.preventDefault(); closeYouTubeModal(); });
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      const m = document.getElementById("youtube-modal");
+      if (m && !m.hidden) closeYouTubeModal();
+    });
+  }
 
   // ---------- Version footer — proves which build is rendered ----------
   async function loadVersion() {

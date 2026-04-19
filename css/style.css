@@ -1938,6 +1938,68 @@ body.modal-open { overflow: hidden; }
   box-shadow: 0 0 26px -4px var(--color-projects-glow);
 }
 
+/* ===== YouTube modal (M5.2) ===== */
+.yt-modal[hidden] { display: none !important; }
+.yt-modal {
+  position: fixed; inset: 0;
+  z-index: 150;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: calc(var(--safe-t, 0px) + 80px) max(12px, var(--safe-l)) 16px max(12px, var(--safe-r));
+}
+.yt-modal-backdrop {
+  position: absolute; inset: 0;
+  background: color-mix(in srgb, #000 68%, transparent);
+  -webkit-backdrop-filter: blur(14px);
+          backdrop-filter: blur(14px);
+}
+.yt-modal-frame {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  max-height: calc(100vh - (var(--safe-t, 0px) + 100px));
+  display: flex; flex-direction: column;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  --glass-blur: 28px;
+  --glass-saturate: 180%;
+}
+.yt-modal-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--glass-hairline);
+}
+.yt-modal-title {
+  margin: 0;
+  font-size: 17px; font-weight: 600; letter-spacing: -0.01em;
+  color: var(--text-1);
+}
+.yt-modal-close {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-2);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 0.2s var(--ease-premium), border-color 0.2s var(--ease-premium), background 0.2s var(--ease-premium);
+}
+.yt-modal-close:hover {
+  color: var(--text-1);
+  border-color: var(--border-strong);
+  background: color-mix(in srgb, var(--text-1) 5%, transparent);
+}
+.yt-modal-body {
+  padding: 14px 16px 18px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .yt-modal-backdrop { animation: vmFade 0.22s var(--ease-premium) both; }
+  .yt-modal-frame    { animation: vmLift 0.28s var(--ease-premium) both; }
+}
+
 /* ===== Tools catalog (Learn → Tools) ===== */
 /* Filter + sort dropdowns live in the section-head right slot. Styled to
    match the subpill visual (same height, radius, border) so they bottom-
