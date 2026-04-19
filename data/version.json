@@ -1,7 +1,7 @@
 {
-  "version": "0.6.34",
-  "milestone": "M8.4",
-  "milestoneTitle": "Phase 8.4 — face-off flip-card: horizontal electron lines, 5 LLMs (Llama 4 added), tap to flip benchmarks, no-data indicated, moved to top of charts",
-  "deployedAt": "2026-04-19T05:15Z",
+  "version": "0.6.35",
+  "milestone": "M8.4.1",
+  "milestoneTitle": "Phase 8.4.1 — fix TDZ on FACEOFF_MODELS/BENCHES that halted the IIFE (same bug class as v0.6.28, flagged in the tdz-init memory)",
+  "deployedAt": "2026-04-19T05:25Z",
   "commitSha": ""
 }

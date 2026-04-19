@@ -199,6 +199,41 @@
   // Hoisted module state read by render fns during initial applyFilter.
   let lessonsData = [];
 
+  // LLM face-off flip-card state (M8.4). Hoisted so renderLlmFaceoff —
+  // which fires from replayHomeAnimations during the initial applyFilter —
+  // can read them without hitting a TDZ ReferenceError.
+  let faceoffBenchIdx = 0;
+  const FACEOFF_MODELS = [
+    { short: "Opus 4.7",   col: MODEL_COL.claude, ctx: "1M",   price: "$5"   },
+    { short: "GPT-5.4",    col: MODEL_COL.openai, ctx: "400K", price: "~$10" },
+    { short: "Gemini 3.1", col: MODEL_COL.google, ctx: "1M",   price: "$2"   },
+    { short: "Grok 4.20",  col: MODEL_COL.xai,    ctx: "2M",   price: "$2"   },
+    { short: "Llama 4",    col: MODEL_COL.meta,   ctx: "1M",   price: "Free" },
+  ];
+  const FACEOFF_BENCHES = [
+    {
+      label: "GPQA",
+      desc: "Graduate-level physics, bio, and chem questions. Higher = better.",
+      vals:    [94.2, 94.4, 94.3, null, null],
+      display: ["94.2", "94.4", "94.3", "—", "—"],
+      max: 100,
+    },
+    {
+      label: "SWE-bench",
+      desc: "Resolves real-world GitHub issues. Higher = better.",
+      vals:    [87.6, 80.0, 68.5, null, null],
+      display: ["87.6", "80.0", "68.5*", "—", "—"],
+      max: 100,
+    },
+    {
+      label: "LMArena",
+      desc: "Pairwise human-vote ELO across chat battles. Higher = better.",
+      vals:    [1500, 1497, 1493, 1491, 1420],
+      display: ["~1500", "1497", "1493", "1491", "1420"],
+      max: 1500,
+    },
+  ];
+
   // Type tokens — declared early so any hoisted render function that reads
   // them (e.g. via replayHomeAnimations fired during initial applyFilter)
   // doesn't hit a TDZ error.
@@ -3278,41 +3313,8 @@
   // color→model mapping, category labels under each cluster, stats table
   // below for context window + price.
   // ======================================================================
-  // Benchmark views for the 5-model face-off. The card flips between these
-  // on tap; each face shows horizontal "electron" lines (matching the
-  // Frontier Context Windows chart style) for one benchmark at a time.
-  const FACEOFF_MODELS = [
-    { short: "Opus 4.7",   col: MODEL_COL.claude, ctx: "1M",   price: "$5"   },
-    { short: "GPT-5.4",    col: MODEL_COL.openai, ctx: "400K", price: "~$10" },
-    { short: "Gemini 3.1", col: MODEL_COL.google, ctx: "1M",   price: "$2"   },
-    { short: "Grok 4.20",  col: MODEL_COL.xai,    ctx: "2M",   price: "$2"   },
-    { short: "Llama 4",    col: MODEL_COL.meta,   ctx: "1M",   price: "Free" },
-  ];
-  const FACEOFF_BENCHES = [
-    {
-      label: "GPQA",
-      desc: "Graduate-level physics, bio, and chem questions. Higher = better.",
-      vals:    [94.2, 94.4, 94.3, null, null],
-      display: ["94.2", "94.4", "94.3", "—", "—"],
-      max: 100,
-    },
-    {
-      label: "SWE-bench",
-      desc: "Resolves real-world GitHub issues. Higher = better.",
-      vals:    [87.6, 80.0, 68.5, null, null],
-      display: ["87.6", "80.0", "68.5*", "—", "—"],
-      max: 100,
-    },
-    {
-      label: "LMArena",
-      desc: "Pairwise human-vote ELO across chat battles. Higher = better.",
-      vals:    [1500, 1497, 1493, 1491, 1420],
-      display: ["~1500", "1497", "1493", "1491", "1420"],
-      max: 1500,
-    },
-  ];
-  let faceoffBenchIdx = 0;
-
+  // (FACEOFF_MODELS / FACEOFF_BENCHES / faceoffBenchIdx are hoisted to the
+  // top of the IIFE — see the block near the other early module state.)
   function renderLlmFaceoff() {
     const host = document.getElementById("faceoff");
     if (!host) return;
