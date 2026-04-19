@@ -1,7 +1,7 @@
 {
-  "version": "0.6.93",
-  "milestone": "M8.12.23",
-  "milestoneTitle": "Phase 8.12.23 — dash-panel icons now fill the same 72×72 render box: each SVG's viewBox clipped to its content bbox and preserveAspectRatio=\"none\" stretches it to fill. vector-effect:non-scaling-stroke keeps line weight uniform despite the asymmetric stretch. Slight shape distortion on the Projects folder (stretched vertically) by design",
-  "deployedAt": "2026-04-19T18:55Z",
+  "version": "0.6.94",
+  "milestone": "M8.12.24",
+  "milestoneTitle": "Phase 8.12.24 — Tools wrench viewBox widened to 2.5 2.3 19.2 19 so the upper-right handle tip (~y=2.5) and the small diamond at the lower-left are all inside the frame. No more clipping",
+  "deployedAt": "2026-04-19T19:05Z",
   "commitSha": ""
 }
