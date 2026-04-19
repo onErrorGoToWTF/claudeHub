@@ -105,6 +105,11 @@
   --color-projects-border:   rgba(10,132,255,0.40);
   --color-projects-glow:     rgba(10,132,255,0.28);
 
+  --color-path-best-solid:   #30d158;                  /* Apple systemGreen dark — Best path */
+  --color-path-best-surface: rgba(48,209,88,0.10);
+  --color-path-best-border:  rgba(48,209,88,0.40);
+  --color-path-best-glow:    rgba(48,209,88,0.28);
+
   --color-365-glow:          rgba(166,132,255,0.28);   /* purple — Comply365 tab */
 
   /* ===== Glow tokens (reserved; no component uses them after M6.6) ===== */
@@ -254,6 +259,11 @@
   --color-projects-surface:  rgba(0,122,255,0.12);
   --color-projects-border:   rgba(0,122,255,0.40);
   --color-projects-glow:     rgba(0,122,255,0.22);
+
+  --color-path-best-solid:   #248a3d;                  /* deep green — readable on white */
+  --color-path-best-surface: rgba(52,199,89,0.12);
+  --color-path-best-border:  rgba(52,199,89,0.45);
+  --color-path-best-glow:    rgba(52,199,89,0.22);
 
   --color-365-glow:          rgba(124,58,237,0.22);
 
@@ -1835,7 +1845,7 @@ body.modal-open { overflow: hidden; }
 }
 .continue-row-path {
   padding: 2px 8px;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-sm);
   background: color-mix(in srgb, var(--text-1) 6%, transparent);
   border: 1px solid var(--border);
   color: var(--text-2);
@@ -1846,8 +1856,9 @@ body.modal-open { overflow: hidden; }
   flex: 0 0 auto;
 }
 .continue-row-path[data-path="best"] {
-  color: color-mix(in srgb, var(--accent, #4a90ff) 90%, var(--text-1));
-  border-color: color-mix(in srgb, var(--accent, #4a90ff) 35%, var(--border));
+  color: var(--color-path-best-solid);
+  background: var(--color-path-best-surface);
+  border-color: var(--color-path-best-border);
 }
 .continue-row-path[data-path="easy"] {
   color: color-mix(in srgb, var(--accent-claude) 90%, var(--text-1));
@@ -2824,25 +2835,25 @@ body.modal-open { overflow: hidden; }
   line-height: 1.5;
 }
 
-/* Best path column — blue accent to distinguish from Easy's orange. */
+/* Best path column — green to distinguish from Easy's orange. */
 .stack-column-best .stack-head .stack-summary {
-  background: color-mix(in srgb, var(--accent-soft) 45%, transparent);
-  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
-  color: var(--accent-hi);
+  background: var(--color-path-best-surface);
+  border-color: var(--color-path-best-border);
+  color: var(--color-path-best-solid);
 }
 .stack-column-best .stack-step-num {
-  color: var(--accent-hi);
-  background: color-mix(in srgb, var(--accent-soft) 45%, transparent);
-  border-color: color-mix(in srgb, var(--accent) 35%, var(--border-strong));
+  color: var(--color-path-best-solid);
+  background: var(--color-path-best-surface);
+  border-color: var(--color-path-best-border);
 }
 .stack-column-best .stack-step-first .stack-step-num {
-  background: var(--accent);
+  background: var(--color-path-best-solid);
   color: var(--bg-1);
-  border-color: var(--accent);
-  box-shadow: 0 0 20px -4px var(--accent-glow);
+  border-color: var(--color-path-best-solid);
+  box-shadow: 0 0 20px -4px var(--color-path-best-glow);
 }
 .stack-column-best .stack-step::before {
-  background: color-mix(in srgb, var(--accent) 22%, transparent);
+  background: color-mix(in srgb, var(--color-path-best-solid) 22%, transparent);
 }
 .stack-column-best .stack-start-chip {
   color: var(--accent-hi);
@@ -3018,15 +3029,15 @@ body.modal-open { overflow: hidden; }
 }
 .project-path {
   padding: 2px 8px;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-sm);
   background: color-mix(in srgb, var(--accent-claude-soft) 45%, transparent);
   color: var(--accent-claude-hi);
   border: 1px solid color-mix(in srgb, var(--accent-claude) 30%, var(--border));
 }
 .project-card-best .project-path {
-  background: color-mix(in srgb, var(--accent-soft) 45%, transparent);
-  color: var(--accent-hi);
-  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+  background: var(--color-path-best-surface);
+  color: var(--color-path-best-solid);
+  border-color: var(--color-path-best-border);
 }
 .project-date {
   font-variant-numeric: tabular-nums;
