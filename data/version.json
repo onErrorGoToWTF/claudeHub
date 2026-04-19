@@ -1,7 +1,7 @@
 {
-  "version": "0.6.88",
-  "milestone": "M8.12.18",
-  "milestoneTitle": "Phase 8.12.18 — YouTube tile played down: Apple-style transparent glass (low-alpha white gradient 0.30→0.14 over backdrop blur) replaces the near-white surface; red logo glow softened to a single drop-shadow so the tile recedes",
-  "deployedAt": "2026-04-19T17:45Z",
+  "version": "0.6.89",
+  "milestone": "M8.12.19",
+  "milestoneTitle": "Phase 8.12.19 — Learn/Projects item tiles converted to Apple-style transparent glass: low-alpha white gradient (0.32→0.14), backdrop-filter blur+saturate, top-edge specular inset highlight, white hairline. Hover pumps opacity and adds identity-tinted border + glow",
+  "deployedAt": "2026-04-19T18:00Z",
   "commitSha": ""
 }
