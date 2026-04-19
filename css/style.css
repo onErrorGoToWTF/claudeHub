@@ -89,10 +89,10 @@
   --color-model-xai-text:         #e879f9;
 
   /* ===== Tab identity colors (chip/topbar active states) ===== */
-  --color-learn-solid:       #10b981;                  /* Emerald with a hint of blue (dark) */
-  --color-learn-surface:     rgba(16,185,129,0.10);
-  --color-learn-border:      rgba(16,185,129,0.40);
-  --color-learn-glow:        rgba(16,185,129,0.28);
+  --color-learn-solid:       #22c55e;                  /* True green, no blue tint (dark) */
+  --color-learn-surface:     rgba(34,197,94,0.10);
+  --color-learn-border:      rgba(34,197,94,0.40);
+  --color-learn-glow:        rgba(34,197,94,0.28);
 
   --color-youtube-solid:     #ff453a;                  /* Apple systemRed dark */
   --color-youtube-surface:   rgba(255,69,58,0.10);
@@ -276,10 +276,10 @@
   --color-model-xai-text:         #a61fb5;
 
   /* Tab identity colors — light */
-  --color-learn-solid:       #0d9d6e;                  /* Emerald with blue hint (light, darker for contrast on greige) */
-  --color-learn-surface:     rgba(13,157,110,0.12);
-  --color-learn-border:      rgba(13,157,110,0.40);
-  --color-learn-glow:        rgba(13,157,110,0.22);
+  --color-learn-solid:       #16a34a;                  /* True green, deeper for contrast on warm-white (light) */
+  --color-learn-surface:     rgba(22,163,74,0.12);
+  --color-learn-border:      rgba(22,163,74,0.40);
+  --color-learn-glow:        rgba(22,163,74,0.22);
 
   --color-youtube-solid:     #ff3b30;                  /* Apple systemRed light */
   --color-youtube-surface:   rgba(255,59,48,0.12);
@@ -2018,14 +2018,13 @@ body.modal-open { overflow: hidden; }
   justify-self: end;
   white-space: nowrap;
 }
-.continue-row-path[data-path="best"] {
-  color: var(--color-path-best-solid);
-  background: var(--color-path-best-surface);
-  border-color: var(--color-path-best-border);
-}
+/* Easy / Best path badges — neutral for now (per M8.10.4). Color variants
+   kept above for later if we want to restore identity colors. */
+.continue-row-path[data-path="best"],
 .continue-row-path[data-path="easy"] {
-  color: color-mix(in srgb, var(--accent-claude) 90%, var(--text-1));
-  border-color: color-mix(in srgb, var(--accent-claude) 35%, var(--border));
+  color: var(--text-2);
+  background: color-mix(in srgb, var(--text-1) 6%, transparent);
+  border-color: var(--border);
 }
 .continue-row-title {
   grid-column: 1;
@@ -2089,36 +2088,40 @@ body.modal-open { overflow: hidden; }
   border-color: var(--text-1);
 }
 .dash-action:active { transform: scale(0.98); }
-/* Same pattern as .dash-action-learn + nav chip active — solid surface
-   bg, theme text color, tab-identity edge + glow + drop. */
+/* Same pattern as .dash-action-learn + nav chip active. */
 .dash-action-primary {
   background: var(--bg-2);
   border-color: var(--color-projects-border);
   color: var(--text-1);
   box-shadow:
-    0 0 22px -4px var(--color-projects-glow),
+    inset 0 0 0 1px var(--color-projects-border),
+    0 0 12px 0 var(--color-projects-glow),
     0 8px 20px -6px rgba(0,0,0,0.18);
 }
 .dash-action-primary:hover {
   border-color: color-mix(in srgb, var(--color-projects-solid) 65%, var(--border-strong));
   box-shadow:
-    0 0 28px -2px var(--color-projects-glow),
+    inset 0 0 0 1px color-mix(in srgb, var(--color-projects-solid) 55%, var(--border-strong)),
+    0 0 18px 0 var(--color-projects-glow),
     0 10px 24px -6px rgba(0,0,0,0.22);
 }
 /* Matches the nav chip active pattern: solid surface bg, theme text
-   color, tab-identity edge + glow + drop. Emerald lives on the edge. */
+   color, concentrated colored edge (border + inset) + tight glow
+   hugging the edge + drop shadow below. */
 .dash-action-learn {
   background: var(--bg-2);
   border-color: var(--color-learn-border);
   color: var(--text-1);
   box-shadow:
-    0 0 22px -4px var(--color-learn-glow),
+    inset 0 0 0 1px var(--color-learn-border),
+    0 0 12px 0 var(--color-learn-glow),
     0 8px 20px -6px rgba(0,0,0,0.18);
 }
 .dash-action-learn:hover {
   border-color: color-mix(in srgb, var(--color-learn-solid) 65%, var(--border-strong));
   box-shadow:
-    0 0 28px -2px var(--color-learn-glow),
+    inset 0 0 0 1px color-mix(in srgb, var(--color-learn-solid) 55%, var(--border-strong)),
+    0 0 18px 0 var(--color-learn-glow),
     0 10px 24px -6px rgba(0,0,0,0.22);
 }
 /* Panel action row — Start CTA on the left, inline YouTube on the right. */
@@ -5010,7 +5013,9 @@ body.modal-open { overflow: hidden; }
   color: var(--text-1);
   background: var(--bg-2);
   border-color: var(--border-strong);
-  box-shadow: 0 6px 14px -6px rgba(0,0,0,0.14);
+  box-shadow:
+    inset 0 0 0 1px var(--border-strong),
+    0 6px 14px -6px rgba(0,0,0,0.14);
 }
 .chip:hover:not(.is-active) {
   color: var(--text-2);
@@ -5021,12 +5026,13 @@ body.modal-open { overflow: hidden; }
   background: var(--bg-2);
   border-color: var(--color-learn-border);
   box-shadow:
-    0 0 22px -4px var(--color-learn-glow),
+    inset 0 0 0 1px var(--color-learn-border),
+    0 0 10px 0 var(--color-learn-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-learn:hover:not(.is-active) {
   color: var(--color-learn-solid);
-  box-shadow: 0 0 18px -6px var(--color-learn-glow);
+  box-shadow: 0 0 16px -4px var(--color-learn-glow);
 }
 
 .chip-tools.is-active {
@@ -5034,12 +5040,13 @@ body.modal-open { overflow: hidden; }
   background: var(--bg-2);
   border-color: var(--color-tools-border);
   box-shadow:
-    0 0 22px -4px var(--color-tools-glow),
+    inset 0 0 0 1px var(--color-tools-border),
+    0 0 10px 0 var(--color-tools-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-tools:hover:not(.is-active) {
   color: var(--color-tools-solid);
-  box-shadow: 0 0 18px -6px var(--color-tools-glow);
+  box-shadow: 0 0 16px -4px var(--color-tools-glow);
 }
 
 .chip-projects.is-active {
@@ -5047,12 +5054,13 @@ body.modal-open { overflow: hidden; }
   background: var(--bg-2);
   border-color: var(--color-projects-border);
   box-shadow:
-    0 0 22px -4px var(--color-projects-glow),
+    inset 0 0 0 1px var(--color-projects-border),
+    0 0 10px 0 var(--color-projects-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-projects:hover:not(.is-active) {
   color: var(--color-projects-solid);
-  box-shadow: 0 0 18px -6px var(--color-projects-glow);
+  box-shadow: 0 0 16px -4px var(--color-projects-glow);
 }
 
 .chip-comply365.is-active {
@@ -5060,12 +5068,13 @@ body.modal-open { overflow: hidden; }
   background: var(--bg-2);
   border-color: var(--color-365-border);
   box-shadow:
-    0 0 22px -4px var(--color-365-glow),
+    inset 0 0 0 1px var(--color-365-border),
+    0 0 10px 0 var(--color-365-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-comply365:hover:not(.is-active) {
   color: var(--color-365-solid);
-  box-shadow: 0 0 18px -6px var(--color-365-glow);
+  box-shadow: 0 0 16px -4px var(--color-365-glow);
 }
 /* Projects Saved / + New subpill spacing. */
 .projects-toggle { margin-bottom: 12px; }
