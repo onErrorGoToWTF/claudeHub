@@ -623,9 +623,9 @@ M5.2   ▢ Concrete setup snippets per tool  Finder output becomes copy-paste-ru
 M5.3   ✅ "Browse example projects" in Finder  load a pre-filled wizard (Young Carpets etc.). [v0.5.4]
 M5.4   ✅ Capability taxonomy v2      3D/motion, local/desktop, premium-motion UI added
                                      + Blender, Meshy, DaVinci Resolve, Framer Motion. [v0.5.3]
-M5.5   ▢ Hybrid wizard auto-check    parse description text → pre-check capability
-                                     boxes (Resume-here #7). Starts as keyword
-                                     heuristic; can upgrade to Claude API later.
+M5.5   ✅ Hybrid wizard auto-check    parse description text → pre-check capability boxes.
+                                     Conservative keyword heuristic (36 rules). [v0.5.5]
+                                     NO runtime API call — authored-only per hard constraint.
 ```
 
 > **⚠ HARD CONSTRAINT (locked 2026-04-19):** aiStacked must NEVER make a Claude API call at runtime. All content — lessons, quizzes, snippets, Finder output — is authored statically and checked into the repo. The Phase 6 plan below is superseded by this rule; see M6.x reshape notes.

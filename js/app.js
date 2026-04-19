@@ -121,6 +121,61 @@
   const CAP_BY_ID = {};
   CAP_GROUPS.forEach(g => g.caps.forEach(c => { CAP_BY_ID[c.id] = { ...c, groupLabel: g.label }; }));
 
+  // M5.5: keyword → cap-id heuristic. Deliberately conservative — better to
+  // add zero caps than wrong caps. Each entry: a regex run against the
+  // lower-cased description, and the list of cap IDs it implies.
+  const CAP_KEYWORD_RULES = [
+    { rx: /\b(3d|three\s*d|blender|mesh(?:y)?|depth\s*map|explode[- ]view|exploded)\b/, caps: ["cap-3d-scene", "cap-explode-view"] },
+    { rx: /\bcamera\s*(path|move|dolly|push|pull)\b/,                                   caps: ["cap-camera-path"] },
+    { rx: /\b(particle|particles|smoke|fire|sparks)\b/,                                 caps: ["cap-explode-view"] },
+    { rx: /\b(ai\s*(generated|gen)\s*video|generative\s*video|veo|runway\s*gen|kling|sora|text[- ]to[- ]video)\b/, caps: ["cap-gen-video"] },
+    { rx: /\b(keyframe|first[-\s]*last|nano\s*banana|google\s*flow|image[- ]to[- ]video)\b/, caps: ["cap-img-to-video"] },
+    { rx: /\b(4k|cinematic|synced\s*audio|narrat(?:ed|ion))\b/,                         caps: ["cap-cinematic"] },
+    { rx: /\b(edit|color\s*grade|davinci|resolve|premiere|final\s*cut|post[- ]production)\b/, caps: ["cap-video-edit"] },
+    { rx: /\b(text[- ]to[- ]image|midjourney|flux|stable\s*diffusion|nano\s*banana|gemini\s*image|image\s*gen(?:eration)?)\b/, caps: ["cap-text-to-image"] },
+    { rx: /\b(inpaint|outpaint|image\s*edit|image[- ]to[- ]image)\b/,                   caps: ["cap-image-edit"] },
+    { rx: /\btext\s*(on|in)\s*image\b/,                                                 caps: ["cap-text-on-image"] },
+    { rx: /\b(voice(\s*over| acting| clone| clon(?:ing|e))?|narration|tts|text[- ]to[- ]speech|elevenlabs)\b/, caps: ["cap-tts"] },
+    { rx: /\b(voice\s*clone|clone\s*voice)\b/,                                          caps: ["cap-voice-clone"] },
+    { rx: /\brealtime\s*voice\b|\blive\s*voice\b/,                                      caps: ["cap-realtime-voice"] },
+    { rx: /\b(no[- ]code|lovable|bolt|v0\b|vercel\s*v0|webflow|framer\s*site)\b/,        caps: ["cap-no-code"] },
+    { rx: /\b(ide|cursor|zed|copilot|pair[- ]?coder|inline\s*edit)\b/,                  caps: ["cap-ide"] },
+    { rx: /\b(terminal|cli|shell|claude\s*code)\b/,                                     caps: ["cap-terminal", "cap-local-script"] },
+    { rx: /\b(premium[- ]motion|framer\s*motion|spring\s*physics|layout\s*animation|shared[- ]element)\b/, caps: ["cap-premium-motion"] },
+    { rx: /\b(agent\s*sdk|claude\s*agent|agent\s*framework|langchain|langgraph)\b/,     caps: ["cap-agent-framework"] },
+    { rx: /\bmcp\b|\bmodel\s*context\s*protocol\b/,                                     caps: ["cap-mcp"] },
+    { rx: /\b(n8n|zapier|make\.com|workato|workflow\s*(automation|engine))\b/,          caps: ["cap-workflow"] },
+    { rx: /\b(cron|schedul(?:ed?|ing)|every\s*\d+\s*(min|hour|day))\b/,                 caps: ["cap-scheduled"] },
+    { rx: /\b(postgres|supabase|neon|planetscale|rds)\b/,                               caps: ["cap-postgres"] },
+    { rx: /\b(vector|rag|retrieval[- ]augmented|embedding(s)?|pgvector|pinecone)\b/,    caps: ["cap-vector"] },
+    { rx: /\b(auth|sign[- ]?in|login|clerk|auth0|magic\s*link)\b/,                      caps: ["cap-auth"] },
+    { rx: /\b(file\s*upload|drop\s*files?|attach\s*files?)\b/,                          caps: ["cap-file-upload"] },
+    { rx: /\b(long\s*context|large\s*context|million\s*tokens?)\b/,                     caps: ["cap-long-context"] },
+    { rx: /\b(vercel|cloudflare\s*pages|netlify|github\s*pages|static\s*hosting|edge\s*functions?)\b/, caps: ["cap-static"] },
+    { rx: /\bpreview\s*(deploy|url)\b/,                                                 caps: ["cap-preview"] },
+    { rx: /\bnext\.?js\b/,                                                              caps: ["cap-nextjs"] },
+    { rx: /\bone[- ]click\s*deploy\b|\bdeploy\s*button\b/,                              caps: ["cap-one-click"] },
+    { rx: /\bself[- ]host(?:ed|able)?\b|\bself[- ]hosted\b/,                            caps: ["cap-self-host"] },
+    { rx: /\b(local\s*(script|program|tool)|cli\s*tool|command\s*line\s*tool|python\s*script|node\s*script)\b/, caps: ["cap-local-script"] },
+    { rx: /\b(desktop\s*(app|ui)|electron|tauri)\b/,                                    caps: ["cap-desktop-ui"] },
+    { rx: /\b(file\s*pars(?:er|ing)|fixed[- ]width|cp437|accpac|dos\s*(report|output|file))\b/, caps: ["cap-file-parsing"] },
+    { rx: /\bfrontier\s*(llm|model|reasoning)\b|\b(gpt|opus|claude|gemini|grok)\b/,     caps: ["cap-frontier-llm"] },
+    { rx: /\b(artifacts?|claude\s*projects?|long\s*chat)\b/,                            caps: ["cap-projects"] },
+  ];
+  function autoCheckCapsFromText(text) {
+    const s = (text || "").toLowerCase();
+    const before = new Set(capsSelected);
+    for (const rule of CAP_KEYWORD_RULES) {
+      if (rule.rx.test(s)) rule.caps.forEach((c) => capsSelected.add(c));
+    }
+    let added = 0;
+    capsSelected.forEach((id) => { if (!before.has(id)) added++; });
+    if (added > 0) {
+      try { localStorage.setItem(FINDER_CAPS_KEY, JSON.stringify([...capsSelected])); } catch {}
+    }
+    return added;
+  }
+
   // Sections that render from latest.json and share the filter machinery.
   const SECTIONS = ["comply365", "news-media"];
   // Sections that are exclusive (only visible when their chip is picked).
@@ -2922,7 +2977,18 @@
         input.focus();
         return;
       }
-      setStatus("Saved. Pick the capabilities your project needs ↓", "ok");
+      // M5.5: keyword heuristic — scan the description for well-known terms
+      // and add matching capability IDs to whatever the user has already
+      // picked. Non-destructive: we never uncheck an existing pick.
+      const added = autoCheckCapsFromText(text);
+      if (added > 0) {
+        renderCapGrid();
+        renderCapFilterBar();
+        renderStack({ scroll: false });
+        setStatus(`Saved. Pre-checked ${added} cap${added === 1 ? "" : "s"} from your description — tweak below.`, "ok");
+      } else {
+        setStatus("Saved. Pick the capabilities your project needs ↓", "ok");
+      }
       const capWrap = document.querySelector(".cap-wrap");
       if (capWrap) capWrap.scrollIntoView({ behavior: "smooth", block: "start" });
     });
