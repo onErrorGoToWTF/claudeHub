@@ -3318,7 +3318,7 @@
   function renderLlmFaceoff() {
     const host = document.getElementById("faceoff");
     if (!host) return;
-    // Legend stays the same across all benchmarks.
+    // Legend stays static above the carousel.
     const legendHtml = `
       <div class="gf-legend">
         ${FACEOFF_MODELS.map(m => `
@@ -3328,100 +3328,82 @@
         `).join("")}
       </div>
     `;
-    // Compact stats table below — Model · Ctx · $/1M only.
-    const headCells = `
-      <div class="fms-model">Model</div>
-      <div class="fms-val">Ctx</div>
-      <div class="fms-val">$/1M</div>
-    `;
-    const modelRows = FACEOFF_MODELS.map((m) => `
-      <div class="fms-row" style="--fms-col:${m.col}">
-        <div class="fms-model"><span class="fms-dot" aria-hidden="true"></span>${m.short}</div>
-        <div class="fms-val">${m.ctx}</div>
-        <div class="fms-val">${m.price}</div>
-      </div>
-    `).join("");
-    const statsHtml = `
-      <div class="faceoff-mini-stats">
-        <div class="fms-row fms-head">${headCells}</div>
-        ${modelRows}
-      </div>
-    `;
+    // All bench faces rendered into the carousel at once; scroll-snap
+    // picks one. Each face is a full-width slide.
+    const facesHtml = FACEOFF_BENCHES.map((b, i) => {
+      const rowsHtml = FACEOFF_MODELS.map((m, mi) => {
+        const v = b.vals[mi];
+        const nodata = v === null || v === undefined;
+        const pct = nodata ? 0 : Math.max(0, Math.min(100, (v / b.max) * 100));
+        const delay = 0.08 + mi * 0.06;
+        return `
+          <div class="fo-row${nodata ? " is-nodata" : ""}" style="--col:${m.col}; --w:${pct}%; --gd:${delay}s;">
+            <span class="fo-name">${m.short}</span>
+            <span class="fo-track">
+              <span class="fo-line"></span>
+              <span class="fo-electron" aria-hidden="true"></span>
+            </span>
+            <span class="fo-val">${b.display[mi]}</span>
+          </div>
+        `;
+      }).join("");
+      return `
+        <div class="faceoff-slide" data-bench-idx="${i}">
+          <header class="fo-face-head">
+            <span class="fo-face-label">${escapeHtml(b.label)}</span>
+            <span class="fo-face-desc">${escapeHtml(b.desc)}</span>
+          </header>
+          <div class="fo-rows">${rowsHtml}</div>
+        </div>
+      `;
+    }).join("");
     const pagerDots = FACEOFF_BENCHES.map((_, i) =>
       `<button type="button" class="faceoff-pg-dot${i === faceoffBenchIdx ? " is-active" : ""}" data-bench-idx="${i}" aria-label="Show ${FACEOFF_BENCHES[i].label}"></button>`
     ).join("");
     host.innerHTML = `
-      <button type="button" class="faceoff-flipper" id="faceoff-flipper" aria-label="Tap to flip benchmark">
-        <div class="faceoff-face" id="faceoff-face"></div>
-      </button>
-      <div class="faceoff-pager">${pagerDots}</div>
       ${legendHtml}
-      ${statsHtml}
+      <div class="faceoff-carousel" id="faceoff-carousel" role="region" aria-label="Benchmark carousel">
+        ${facesHtml}
+      </div>
+      <div class="faceoff-pager">${pagerDots}</div>
     `;
-    paintFaceoffFace();
-    // Wire interactions.
-    const flipper = document.getElementById("faceoff-flipper");
-    if (flipper) flipper.addEventListener("click", (e) => {
-      e.preventDefault();
-      faceoffBenchIdx = (faceoffBenchIdx + 1) % FACEOFF_BENCHES.length;
-      flipFaceoff();
-    });
+    const scroller = document.getElementById("faceoff-carousel");
+    // Pager dots jump the scroller to a slide.
     host.querySelectorAll(".faceoff-pg-dot").forEach((d) => {
       d.addEventListener("click", (e) => {
-        e.preventDefault(); e.stopPropagation();
+        e.preventDefault();
         const idx = Number(d.dataset.benchIdx);
-        if (idx === faceoffBenchIdx) return;
-        faceoffBenchIdx = idx;
-        flipFaceoff();
+        scrollFaceoffTo(idx);
       });
     });
+    // Keep pager in sync with scroll position.
+    if (scroller) {
+      let scrollRaf;
+      scroller.addEventListener("scroll", () => {
+        if (scrollRaf) cancelAnimationFrame(scrollRaf);
+        scrollRaf = requestAnimationFrame(() => {
+          const w = scroller.clientWidth || 1;
+          const idx = Math.round(scroller.scrollLeft / w);
+          if (idx !== faceoffBenchIdx) {
+            faceoffBenchIdx = idx;
+            host.querySelectorAll(".faceoff-pg-dot").forEach((d, i) => {
+              d.classList.toggle("is-active", i === faceoffBenchIdx);
+            });
+          }
+        });
+      }, { passive: true });
+      // Initial scroll position reflects the persisted index.
+      if (faceoffBenchIdx !== 0) {
+        scroller.scrollTo({ left: scroller.clientWidth * faceoffBenchIdx, behavior: "auto" });
+      }
+    }
   }
 
-  function flipFaceoff() {
-    const flipper = document.getElementById("faceoff-flipper");
-    const host = document.getElementById("faceoff");
-    if (!flipper || !host) return;
-    flipper.classList.add("is-flipping");
-    // At mid-flip (half the 600ms duration), swap content so it appears as
-    // the back face coming around.
-    setTimeout(() => paintFaceoffFace(), 280);
-    setTimeout(() => {
-      flipper.classList.remove("is-flipping");
-      // Update pager active state.
-      host.querySelectorAll(".faceoff-pg-dot").forEach((d, i) => {
-        d.classList.toggle("is-active", i === faceoffBenchIdx);
-      });
-    }, 600);
-  }
-
-  function paintFaceoffFace() {
-    const face = document.getElementById("faceoff-face");
-    if (!face) return;
-    const b = FACEOFF_BENCHES[faceoffBenchIdx];
-    const rowsHtml = FACEOFF_MODELS.map((m, mi) => {
-      const v = b.vals[mi];
-      const nodata = v === null || v === undefined;
-      const pct = nodata ? 0 : Math.max(0, Math.min(100, (v / b.max) * 100));
-      const delay = 0.08 + mi * 0.06;
-      return `
-        <div class="fo-row${nodata ? " is-nodata" : ""}" style="--col:${m.col}; --w:${pct}%; --gd:${delay}s;">
-          <span class="fo-name">${m.short}</span>
-          <span class="fo-track">
-            <span class="fo-line"></span>
-            <span class="fo-electron" aria-hidden="true"></span>
-          </span>
-          <span class="fo-val">${b.display[mi]}</span>
-        </div>
-      `;
-    }).join("");
-    face.innerHTML = `
-      <header class="fo-face-head">
-        <span class="fo-face-label">${escapeHtml(b.label)}</span>
-        <span class="fo-face-desc">${escapeHtml(b.desc)}</span>
-      </header>
-      <div class="fo-rows">${rowsHtml}</div>
-      <footer class="fo-face-hint">Tap to flip · ${faceoffBenchIdx + 1}/${FACEOFF_BENCHES.length}</footer>
-    `;
+  function scrollFaceoffTo(idx) {
+    const scroller = document.getElementById("faceoff-carousel");
+    if (!scroller) return;
+    const clamped = Math.max(0, Math.min(FACEOFF_BENCHES.length - 1, idx));
+    scroller.scrollTo({ left: scroller.clientWidth * clamped, behavior: "smooth" });
   }
 
   // Map a tool chip name to its brand color when we recognize a model /

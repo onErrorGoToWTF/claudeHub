@@ -5250,25 +5250,27 @@ body.modal-open { overflow: hidden; }
   .type-legend-desc { display: none; }
 }
 
-/* ===== LLM face-off — flip card (horizontal electron lines per bench) ===== */
-/* Flipper: 3D-rotates Y on click. Content swaps at mid-flip so the back
-   reads as a different face. */
-.faceoff-flipper {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  perspective: 1200px;
-  touch-action: manipulation;
+/* ===== LLM face-off — swipe carousel (horizontal electron lines per bench) ===== */
+/* Each benchmark is a full-width slide; native scroll-snap picks one at a
+   time. Pager dots jump the scroller. */
+.faceoff-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  /* Negative inline margins let the slides bleed to the card's padding
+     edges so the swipe feel covers the whole card interior. */
+  margin: 0;
 }
-.faceoff-face {
-  transform-style: preserve-3d;
-  transition: transform 0.6s var(--ease-premium);
+.faceoff-carousel::-webkit-scrollbar { display: none; }
+.faceoff-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+  padding: 2px;
 }
-.faceoff-flipper.is-flipping .faceoff-face { transform: rotateY(180deg); }
 .fo-face-head {
   display: flex;
   flex-direction: column;
