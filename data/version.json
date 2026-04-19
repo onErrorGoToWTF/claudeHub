@@ -1,7 +1,7 @@
 {
-  "version": "0.6.112",
-  "milestone": "M8.12.42",
-  "milestoneTitle": "Phase 8.12.42 — docs/status.md refreshed: renamed to aiUniversity, bumped current release to 0.6.111, added a dated 'Current state' block summarizing the dashboard visual pass + remaining polish + next-up (other tab pages)",
-  "deployedAt": "2026-04-19T22:35Z",
+  "version": "0.6.113",
+  "milestone": "M8.12.43",
+  "milestoneTitle": "Phase 8.12.43 — added subtle dark radial gradients to body::before: 9%-alpha bloom at top-left (makes the nav chips pop on load) and 7%-alpha bloom at bottom-center (consistency). Removed the old top-left brightener that was fighting the darkening. Other brighteners softened a hair",
+  "deployedAt": "2026-04-19T22:50Z",
   "commitSha": ""
 }
