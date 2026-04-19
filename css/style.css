@@ -2090,29 +2090,36 @@ body.modal-open { overflow: hidden; }
 }
 .dash-action:active { transform: scale(0.98); }
 /* Same pattern as .dash-action-learn + nav chip active — solid surface
-   bg, theme text color, tab-identity edge + slight glow. */
+   bg, theme text color, tab-identity edge + glow + drop. */
 .dash-action-primary {
   background: var(--bg-2);
   border-color: var(--color-projects-border);
   color: var(--text-1);
-  box-shadow: 0 0 14px -4px var(--color-projects-glow), 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow:
+    0 0 22px -4px var(--color-projects-glow),
+    0 8px 20px -6px rgba(0,0,0,0.18);
 }
 .dash-action-primary:hover {
   border-color: color-mix(in srgb, var(--color-projects-solid) 65%, var(--border-strong));
-  box-shadow: 0 0 18px -4px var(--color-projects-glow), 0 1px 2px rgba(0,0,0,0.08);
+  box-shadow:
+    0 0 28px -2px var(--color-projects-glow),
+    0 10px 24px -6px rgba(0,0,0,0.22);
 }
 /* Matches the nav chip active pattern: solid surface bg, theme text
-   color, tab-identity edge + slight glow. The emerald lives on the
-   border, not the fill. */
+   color, tab-identity edge + glow + drop. Emerald lives on the edge. */
 .dash-action-learn {
   background: var(--bg-2);
   border-color: var(--color-learn-border);
   color: var(--text-1);
-  box-shadow: 0 0 14px -4px var(--color-learn-glow), 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow:
+    0 0 22px -4px var(--color-learn-glow),
+    0 8px 20px -6px rgba(0,0,0,0.18);
 }
 .dash-action-learn:hover {
   border-color: color-mix(in srgb, var(--color-learn-solid) 65%, var(--border-strong));
-  box-shadow: 0 0 18px -4px var(--color-learn-glow), 0 1px 2px rgba(0,0,0,0.08);
+  box-shadow:
+    0 0 28px -2px var(--color-learn-glow),
+    0 10px 24px -6px rgba(0,0,0,0.22);
 }
 /* Panel action row — Start CTA on the left, inline YouTube on the right. */
 .dash-panel-actions {
@@ -5003,7 +5010,7 @@ body.modal-open { overflow: hidden; }
   color: var(--text-1);
   background: var(--bg-2);
   border-color: var(--border-strong);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 14px -6px rgba(0,0,0,0.14);
 }
 .chip:hover:not(.is-active) {
   color: var(--text-2);
@@ -5013,7 +5020,9 @@ body.modal-open { overflow: hidden; }
   color: var(--text-1);
   background: var(--bg-2);
   border-color: var(--color-learn-border);
-  box-shadow: 0 0 14px -4px var(--color-learn-glow), 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow:
+    0 0 22px -4px var(--color-learn-glow),
+    0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-learn:hover:not(.is-active) {
   color: var(--color-learn-solid);
@@ -5024,7 +5033,9 @@ body.modal-open { overflow: hidden; }
   color: var(--text-1);
   background: var(--bg-2);
   border-color: var(--color-tools-border);
-  box-shadow: 0 0 14px -4px var(--color-tools-glow), 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow:
+    0 0 22px -4px var(--color-tools-glow),
+    0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-tools:hover:not(.is-active) {
   color: var(--color-tools-solid);
@@ -5035,7 +5046,9 @@ body.modal-open { overflow: hidden; }
   color: var(--text-1);
   background: var(--bg-2);
   border-color: var(--color-projects-border);
-  box-shadow: 0 0 14px -4px var(--color-projects-glow), 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow:
+    0 0 22px -4px var(--color-projects-glow),
+    0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-projects:hover:not(.is-active) {
   color: var(--color-projects-solid);
@@ -5046,7 +5059,9 @@ body.modal-open { overflow: hidden; }
   color: var(--text-1);
   background: var(--bg-2);
   border-color: var(--color-365-border);
-  box-shadow: 0 0 14px -4px var(--color-365-glow), 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow:
+    0 0 22px -4px var(--color-365-glow),
+    0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-comply365:hover:not(.is-active) {
   color: var(--color-365-solid);
