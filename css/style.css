@@ -394,8 +394,10 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 
 /* ===== Top bar ===== */
+/* Brand + icon actions row scrolls away normally; the .chips nav
+   (below the topbar-inner) is the piece that stays pinned — see
+   .chips sticky rule. */
 .topbar {
-  position: sticky; top: 0; z-index: 10;
   padding-top: var(--safe-t);
   background: color-mix(in srgb, var(--bg-0) 70%, transparent);
   -webkit-backdrop-filter: var(--blur-strong);
@@ -450,16 +452,18 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
    as minimal text tabs. .glass on the element supplies blur/saturate/specular;
    the rules below give it nav-bar shape (radius-pill, centered, padded). */
 .chips {
+  position: sticky;
+  top: calc(var(--safe-t, 0px) + 8px);
+  z-index: 30;
   display: flex; gap: 2px;
   padding: 4px;
-  margin: 4px max(14px, var(--safe-l)) 10px max(14px, var(--safe-r));
-  border-radius: var(--radius-pill);
+  margin: 6px auto 10px;
+  border-radius: var(--radius-md);
   overflow-x: auto;
   scrollbar-width: none;
   scroll-snap-type: x proximity;
   width: fit-content;
   max-width: calc(100% - (max(14px, var(--safe-l)) + max(14px, var(--safe-r))));
-  margin-left: auto; margin-right: auto;
   --glass-blur: 20px;
   --glass-saturate: 170%;
 }
@@ -470,7 +474,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   align-items: center;
   min-height: 36px;
   padding: 6px 14px;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-sm);
   font-size: 13px; font-weight: 500;
   letter-spacing: -0.003em;
   color: var(--text-3);
@@ -534,7 +538,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   flex-wrap: wrap;
   margin-left: auto;
 }
-.section-head-actions .subpills { gap: 2px; padding: 2px; flex-wrap: nowrap; }
+.section-head-actions .subpills { gap: 2px; padding: 2px; margin: 0; flex-wrap: nowrap; }
 .section-head-actions .subpill {
   padding: 6px 10px; font-size: 12px; min-height: 32px;
   white-space: nowrap; flex: 0 0 auto;

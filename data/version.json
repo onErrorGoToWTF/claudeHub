@@ -1,7 +1,7 @@
 {
-  "version": "0.6.16",
-  "milestone": "M7.3",
-  "milestoneTitle": "Phase 7.3 — tab reorder (Dashboard/Learn/Projects/Tools/365) + floating Apple-glass nav bar",
-  "deployedAt": "2026-04-19T00:30Z",
+  "version": "0.6.17",
+  "milestone": "M7.3.1",
+  "milestoneTitle": "Phase 7.3.1 — section-head alignment (real root cause: base .subpills margin -6/0/14 was leaking through to .section-head-actions; zeroed it)",
+  "deployedAt": "2026-04-19T00:45Z",
   "commitSha": ""
 }
