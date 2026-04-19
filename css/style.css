@@ -1927,9 +1927,18 @@ body.modal-open { overflow: hidden; }
   border-color: var(--text-1);
 }
 .dash-action:active { transform: scale(0.98); }
+@supports not (backdrop-filter: blur(1px)) {
+  .dash-action-primary,
+  .dash-action-learn,
+  .dash-action-tools { background: rgba(255,255,255,0.55); }
+}
 /* Same pattern as .dash-action-learn + nav chip active. */
 .dash-action-primary {
-  background: var(--bg-2);
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.50) 0%,
+    rgba(255,255,255,0.22) 100%);
+  -webkit-backdrop-filter: blur(10px) saturate(1.25);
+          backdrop-filter: blur(10px) saturate(1.25);
   border-color: var(--color-projects-border);
   color: var(--text-1);
   box-shadow:
@@ -1948,7 +1957,11 @@ body.modal-open { overflow: hidden; }
    color, concentrated colored edge (border + inset) + tight glow
    hugging the edge + drop shadow below. */
 .dash-action-learn {
-  background: var(--bg-2);
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.50) 0%,
+    rgba(255,255,255,0.22) 100%);
+  -webkit-backdrop-filter: blur(10px) saturate(1.25);
+          backdrop-filter: blur(10px) saturate(1.25);
   border-color: var(--color-learn-border);
   color: var(--text-1);
   box-shadow:
@@ -1966,7 +1979,11 @@ body.modal-open { overflow: hidden; }
 /* Tools dashboard CTA — matches the same edge + glow + drop pattern as
    .dash-action-learn / .dash-action-primary, themed to the Tools cyan. */
 .dash-action-tools {
-  background: var(--bg-2);
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.50) 0%,
+    rgba(255,255,255,0.22) 100%);
+  -webkit-backdrop-filter: blur(10px) saturate(1.25);
+          backdrop-filter: blur(10px) saturate(1.25);
   border-color: var(--color-tools-border);
   color: var(--text-1);
   box-shadow:
