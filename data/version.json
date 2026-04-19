@@ -1,7 +1,7 @@
 {
-  "version": "0.6.89",
-  "milestone": "M8.12.19",
-  "milestoneTitle": "Phase 8.12.19 — Learn/Projects item tiles converted to Apple-style transparent glass: low-alpha white gradient (0.32→0.14), backdrop-filter blur+saturate, top-edge specular inset highlight, white hairline. Hover pumps opacity and adds identity-tinted border + glow",
-  "deployedAt": "2026-04-19T18:00Z",
+  "version": "0.6.90",
+  "milestone": "M8.12.20",
+  "milestoneTitle": "Phase 8.12.20 — Learn/Projects panel body region now uses the page background (--bg-0, #eeece7) edge-to-edge within the panel, so the transparent glass tiles float over the page tone rather than over the panel's near-white. Panel clips via overflow:hidden; body extends into the bottom radius",
+  "deployedAt": "2026-04-19T18:15Z",
   "commitSha": ""
 }
