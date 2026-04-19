@@ -1,7 +1,7 @@
 {
-  "version": "0.6.91",
-  "milestone": "M8.12.21",
-  "milestoneTitle": "Phase 8.12.21 — panel body reverts to inheriting the panel's near-white bg (the page-colored tray was too contrast-heavy); divider + glass tiles retained. Overflow clip + negative margins removed",
-  "deployedAt": "2026-04-19T18:25Z",
+  "version": "0.6.92",
+  "milestone": "M8.12.22",
+  "milestoneTitle": "Phase 8.12.22 — item tiles fake a cut-through to the page: bg = solid --bg-0 (page color), topped with a thin hairline, inset top-edge specular highlight, and faint drop shadow. No real backdrop-filter; pure optical trick so the tile interior matches the page while the panel around it stays white",
+  "deployedAt": "2026-04-19T18:40Z",
   "commitSha": ""
 }
