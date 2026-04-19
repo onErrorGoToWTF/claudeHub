@@ -172,6 +172,9 @@
   --ambient-plasma:  rgba(150,170,200,0.06);
   /* Scroll-activation photon bloom — very subtle warm wash. */
   --bloom-warm:      rgba(240,180,100,0.11);
+  /* Chart cards pop against the page: darker-than-page in dark mode. */
+  --chart-card-bg:     #0a0a09;
+  --chart-card-border: rgba(255,250,240,0.08);
 
   --safe-t: env(safe-area-inset-top);
   --safe-b: env(safe-area-inset-bottom);
@@ -207,6 +210,9 @@
   --ambient-warm:    rgba(240,170,70,0.05);
   --ambient-plasma:  rgba(130,150,180,0.04);
   --bloom-warm:      rgba(240,170,70,0.09);
+  /* Chart cards pop against the warm-white page: pure white cards. */
+  --chart-card-bg:     #ffffff;
+  --chart-card-border: rgba(30,24,16,0.10);
 
   /* ===== Semantic color families (light) ===== */
   --color-electric-surface:       rgba(48,176,199,0.12);
@@ -1936,7 +1942,30 @@ body.modal-open { overflow: hidden; }
 .dash-charts-panel > .dash-panel-head {
   padding: 0 2px 4px;
 }
-.dash-charts-panel > .hero { margin: 0; }
+/* Chart cards override the glass gradient with solid chart-card-bg so they
+   read as near-white in light mode / near-black in dark mode — each pops
+   against its same-mode page (Klack-style depth via tone, not inversion). */
+.dash-charts-panel > .hero {
+  margin: 0;
+  background: var(--chart-card-bg);
+  border-color: var(--chart-card-border);
+}
+.dash-charts-panel > .hero::before {
+  background: linear-gradient(
+    150deg,
+    rgba(255,255,255,0.06) 0%,
+    rgba(255,255,255,0.02) 40%,
+    rgba(255,255,255,0)    70%,
+    rgba(255,255,255,0.04) 100%);
+}
+:root[data-theme="light"] .dash-charts-panel > .hero::before {
+  background: linear-gradient(
+    150deg,
+    rgba(255,255,255,0.9) 0%,
+    rgba(255,255,255,0.25) 30%,
+    rgba(0,0,0,0)          55%,
+    rgba(255,255,255,0.35) 100%);
+}
 /* Without cameo this panel is a quiet transparent container. */
 .dash-charts-panel:not([data-cameo]) {
   padding: 4px 0 0;
