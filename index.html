@@ -36,6 +36,7 @@
     <button class="chip glass-pill chip-learn" data-filter="learn">Learn</button>
     <button class="chip glass-pill chip-tools" data-filter="tools">Tools</button>
     <button class="chip glass-pill chip-projects" data-filter="projects">Projects</button>
+    <button class="chip glass-pill chip-youtube" data-filter="youtube">YouTube</button>
     <button class="chip glass-pill chip-comply365" data-filter="comply365">Comply365</button>
   </nav>
 </header>
@@ -91,7 +92,6 @@
         <button class="learn-filter is-active" type="button" role="tab" aria-selected="true"  data-learn-filter="all"><span class="learn-filter-label">All</span><span class="learn-filter-count" data-filter-count="all"></span></button>
         <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="anthropic"><span class="learn-filter-label">Anthropic</span><span class="learn-filter-count" data-filter-count="anthropic"></span></button>
         <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="industry"><span class="learn-filter-label">Industry</span><span class="learn-filter-count" data-filter-count="industry"></span></button>
-        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="videos"><span class="learn-filter-label">Videos</span><span class="learn-filter-count" data-filter-count="videos"></span></button>
       </div>
       <div class="cards" data-cards="claude-whats-new">
         <div class="empty">Loading latest releases…</div>
@@ -140,6 +140,16 @@
     <p class="section-lede">The catalog. Filter by modality; tap a card for tagline, pricing, links, and the snippets tied to each tool.</p>
     <div class="modality-filter" id="modality-filter" role="tablist" aria-label="Filter by modality"></div>
     <div class="tool-grid" id="tool-grid"></div>
+  </section>
+
+  <section class="section section-youtube" data-section="youtube" id="section-youtube" data-hidden="true">
+    <div class="section-head">
+      <h2>YouTube</h2>
+    </div>
+    <p class="section-lede">Every scraped video, one feed. Save what's worth coming back to; tap any card to watch in-app.</p>
+    <div class="cards cards-video" id="youtube-grid">
+      <div class="empty">Loading videos…</div>
+    </div>
   </section>
 
   <section class="section section-projects" data-section="projects" id="section-projects" data-hidden="true">
@@ -486,7 +496,7 @@
   <div class="pin-picker-frame glass">
     <div class="pin-picker-head">
       <div class="pin-picker-titles">
-        <div class="pin-picker-title" id="pin-picker-title">Pin to projects</div>
+        <div class="pin-picker-title" id="pin-picker-title">Save</div>
         <div class="pin-picker-sub"></div>
       </div>
       <button type="button" class="pin-picker-close" aria-label="Close" data-close title="Close">
@@ -494,12 +504,18 @@
       </button>
     </div>
     <div class="pin-picker-body">
+      <div class="pin-picker-section-label">Pin to project (optional)</div>
       <div class="pin-picker-list" role="list"></div>
       <div class="pin-picker-empty" hidden>
-        No projects yet. Run the Finder and save a project first, then come back to pin items into it.
+        No projects yet. You can still save this — add it to a project later.
       </div>
+      <label class="pin-picker-note-label">
+        <span>Note (optional)</span>
+        <textarea class="pin-picker-note" rows="2" placeholder="Why you saved this — one line is plenty." spellcheck="false"></textarea>
+      </label>
     </div>
     <div class="pin-picker-actions">
+      <button type="button" class="pin-picker-remove" hidden>Remove save</button>
       <button type="button" class="pin-picker-cancel" data-close>Cancel</button>
       <button type="button" class="pin-picker-save">Save</button>
     </div>

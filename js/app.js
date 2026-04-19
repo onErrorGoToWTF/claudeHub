@@ -109,7 +109,7 @@
   // Sections that render from latest.json and share the filter machinery.
   const SECTIONS = ["comply365", "news-media"];
   // Sections that are exclusive (only visible when their chip is picked).
-  const DISTINCT_SECTIONS = ["home", "learn", "tools", "projects"];
+  const DISTINCT_SECTIONS = ["home", "learn", "tools", "projects", "youtube"];
 
   // Per-model brand-aligned electric palette, used by every chart so
   // colors match across the site.
@@ -582,52 +582,31 @@
   // Pinned items — URLs the user wants to keep regardless of feed churn.
   // Pins are SCRAPE-RESISTANT: each pin stores the full item snapshot
   // (title, url, source, published, summary) so the card can be rerendered
-  // even if the scraper later cycles the item off the live feed.
-  // Stored as { "<url>": { pinnedAt, ...itemSnapshot } }.
-  const PINS_KEY = "clhub.v1.learningPins";
-  function getPins() {
-    try {
-      const raw = localStorage.getItem(PINS_KEY);
-      if (!raw) return {};
-      const obj = JSON.parse(raw);
-      return obj && typeof obj === "object" ? obj : {};
-    } catch { return {}; }
-  }
-  function putPins(obj) {
-    try { localStorage.setItem(PINS_KEY, JSON.stringify(obj)); } catch {}
-  }
-  function togglePin(item) {
-    const url = typeof item === "string" ? item : item && item.url;
-    if (!url) return;
-    const pins = getPins();
-    if (pins[url]) {
-      delete pins[url];
-    } else {
-      // Prefer the fresh item from the feed if given; fall back to whatever
-      // was already cached under that URL (should rarely happen).
-      const src = (typeof item === "object" && item) || {};
-      pins[url] = {
-        pinnedAt: new Date().toISOString(),
-        title:     src.title     || "",
-        url,
-        source:    src.source    || "",
-        published: src.published || null,
-        summary:   src.summary   || "",
-      };
-    }
-    putPins(pins);
-  }
-  function isPinned(url) { return !!getPins()[url]; }
-  // Merge live feed + pinned snapshots so pinned items survive scrape churn.
-  // A pinned URL already present in the feed wins (fresh metadata); one that
-  // dropped off resurfaces from the pin snapshot.
+  // M3.10: URL-based pin helpers now read from the unified clhub.v1.saves
+  // store. isPinned(url) = any save exists for kind="learning" with that
+  // URL. Resurrection of scraped-off items reads saves too.
+  function isPinned(url) { return isSavedAny("learning", url); }
   function resurrectPinnedItems(liveItems) {
-    const pins = getPins();
+    const saves = getSaves();
     const live = new Map(liveItems.map((it) => [it.url, it]));
-    for (const [url, snap] of Object.entries(pins)) {
+    // Collect every learning-kind save across all project scopes + unscoped.
+    const snapshots = new Map();
+    for (const [key, entry] of Object.entries(saves)) {
+      if (entry && entry.kind === "learning" && entry.url) {
+        // Use any variant; all share the same URL and card metadata.
+        if (!snapshots.has(entry.url)) snapshots.set(entry.url, entry);
+      }
+    }
+    for (const [url, snap] of snapshots) {
       if (!live.has(url)) {
-        const { pinnedAt, ...rest } = snap;
-        if (rest.url) live.set(url, rest);
+        live.set(url, {
+          url,
+          title:     snap.title     || "",
+          source:    snap.source    || "",
+          published: snap.published || null,
+          summary:   snap.summary   || "",
+          thumb:     snap.thumb     || null,
+        });
       }
     }
     return Array.from(live.values());
@@ -693,11 +672,72 @@
     paintClaudeLearning();
     updateClaudeWhatsNewBadge();
     updateLearnFilterCounts();
+    renderYouTube();
+  }
+
+  // M3.10: dedicated YouTube tab. Pulls every item in the merged feed whose
+  // sourceBucket is "videos" (source starts with "YouTube"); renders as
+  // cards-mixed with the in-app iframe modal click-through and unified Save.
+  function renderYouTube() {
+    const host = document.getElementById("youtube-grid");
+    if (!host) return;
+    const allSaves = getSaves();
+    // Rebuild from the live feed + any saved videos that have dropped off.
+    const liveVids = claudeLearningItems
+      .filter((it) => sourceBucket(it.source, it._bucket) === "videos");
+    const savedVids = [];
+    for (const entry of Object.values(allSaves)) {
+      if (entry && entry.kind === "learning" && entry.url &&
+          sourceBucket(entry.source || "", entry._bucket) === "videos" &&
+          !liveVids.some((it) => it.url === entry.url)) {
+        savedVids.push({
+          url: entry.url,
+          title: entry.title || "",
+          source: entry.source || "YouTube",
+          published: entry.published || null,
+          summary: "",
+          thumb: entry.thumb || null,
+        });
+      }
+    }
+    const items = liveVids.concat(savedVids).sort((a, b) => {
+      const pa = isSavedAny("learning", a.url) ? 1 : 0;
+      const pb = isSavedAny("learning", b.url) ? 1 : 0;
+      if (pa !== pb) return pb - pa;
+      const ta = a.published ? Date.parse(a.published) : 0;
+      const tb = b.published ? Date.parse(b.published) : 0;
+      return tb - ta;
+    });
+    host.innerHTML = "";
+    if (items.length === 0) {
+      host.innerHTML = `<div class="empty">No videos in the feed yet.</div>`;
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    items.slice(0, 60).forEach((it, idx) => {
+      const node = renderCard(it, false, idx);
+      node.dataset.learnBucket = "videos";
+      if (isSavedAny("learning", it.url)) node.dataset.pinned = "1";
+      const pill = node.querySelector(".card-pill");
+      if (pill) { pill.textContent = "Video"; pill.dataset.pill = "videos"; }
+      attachPinButton(node, it);
+      const vid = extractYouTubeId(it.url);
+      if (vid) {
+        node.addEventListener("click", (e) => {
+          if (e.target.closest(".save-btn")) return;
+          e.preventDefault();
+          openVideoModal(vid, it.title, it.url);
+        });
+      }
+      frag.appendChild(node);
+    });
+    host.appendChild(frag);
   }
 
   function updateLearnFilterCounts() {
-    const merged = resurrectPinnedItems(claudeLearningItems);
-    const counts = { all: merged.length, anthropic: 0, industry: 0, videos: 0 };
+    const merged = resurrectPinnedItems(claudeLearningItems)
+      .filter((it) => sourceBucket(it.source, it._bucket) !== "videos");
+    const counts = { all: merged.length, anthropic: 0, industry: 0 };
     for (const it of merged) {
       const b = sourceBucket(it.source, it._bucket);
       if (counts[b] !== undefined) counts[b]++;
@@ -714,7 +754,9 @@
     if (!container) return;
     container.innerHTML = "";
     const filter = claudeLearningFilter;
-    const merged = resurrectPinnedItems(claudeLearningItems);
+    // M3.10: videos live in the YouTube top-level tab now.
+    const merged = resurrectPinnedItems(claudeLearningItems)
+      .filter((it) => sourceBucket(it.source, it._bucket) !== "videos");
     const filtered = filter === "all"
       ? merged
       : merged.filter((it) => sourceBucket(it.source, it._bucket) === filter);
@@ -727,13 +769,11 @@
       container.appendChild(empty);
       return;
     }
-    // Sort pinned first (within the filtered set), then by date desc. Pins
-    // float to the top of whatever view the user has — "All", any bucket,
-    // doesn't matter. Non-pinned fall back to date-desc.
-    const pins = getPins();
+    // Sort saved items first (within the filtered set), then by date desc.
+    // Saves float to the top of whatever view the user has.
     const sorted = filtered.slice().sort((a, b) => {
-      const pa = pins[a.url] ? 1 : 0;
-      const pb = pins[b.url] ? 1 : 0;
+      const pa = isSavedAny("learning", a.url) ? 1 : 0;
+      const pb = isSavedAny("learning", b.url) ? 1 : 0;
       if (pa !== pb) return pb - pa;
       const ta = a.published ? Date.parse(a.published) : 0;
       const tb = b.published ? Date.parse(b.published) : 0;
@@ -830,26 +870,28 @@
   const PIN_SVG_OUTLINE = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><path d="M12 12v8"/></svg>';
   const PIN_SVG_FILLED  = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><rect x="11.2" y="12" width="1.6" height="8" rx="0.6"/></svg>';
 
-  function attachPinButton(node, url) {
-    if (!url || node.querySelector(".card-pin")) return;
+  // M3.10: card pin → unified Save button. Same glyphs, same affordance,
+  // but click opens the global save picker instead of toggling a pin.
+  function attachPinButton(node, urlOrItem) {
+    const item = typeof urlOrItem === "object" ? urlOrItem : null;
+    const url  = item ? item.url : urlOrItem;
+    if (!url || node.querySelector(".save-btn")) return;
+    const saved = isSavedAny("learning", url);
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "card-pin";
-    const pinned = isPinned(url);
-    btn.dataset.pinned = pinned ? "1" : "";
-    btn.innerHTML = pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE;
-    btn.setAttribute("aria-label", pinned ? "Unpin" : "Pin");
-    btn.setAttribute("aria-pressed", pinned ? "true" : "false");
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      // Pass the live item so its full snapshot is captured. Look it up by
-      // URL in claudeLearningItems (or in the existing pin, as a fallback).
-      const live = claudeLearningItems.find((it) => it.url === url);
-      togglePin(live || url);
-      paintClaudeLearning();
-      updateLearnFilterCounts();
-    });
+    btn.className = "save-btn save-btn-card";
+    btn.dataset.saveKind = "learning";
+    btn.dataset.saveId   = url;
+    btn.dataset.saveLabel = item?.title || url;
+    if (item?.thumb)     btn.dataset.saveThumb     = item.thumb;
+    if (item?.source)    btn.dataset.saveSource    = item.source;
+    if (item?.published) btn.dataset.savePublished = item.published;
+    btn.dataset.saveUrl = url;
+    btn.dataset.saved = saved ? "1" : "";
+    btn.innerHTML = saved ? PIN_SVG_FILLED : PIN_SVG_OUTLINE;
+    btn.setAttribute("aria-label", saved ? "Edit save" : "Save");
+    btn.setAttribute("aria-pressed", saved ? "true" : "false");
+    // Click handled by the delegated .save-btn listener; nothing else needed.
     node.appendChild(btn);
   }
 
@@ -892,7 +934,7 @@
 
   function renderSnippetRow(s) {
     const lang = (s.language || "text").toLowerCase();
-    const pinned = isPinnedToAnyProject("snippet", s.id);
+    const pinned = isSavedAny("snippet", s.id);
     return `
       <details class="snippet-row glass" data-lang="${escapeHtml(lang)}">
         <summary class="snippet-summary">
@@ -904,7 +946,7 @@
         </summary>
         <div class="snippet-body">
           <div class="snippet-actions">
-            <button type="button" class="pin-btn" data-pin-kind="snippet" data-pin-id="${escapeHtml(s.id)}" data-pin-label="${escapeHtml(s.title || s.id)}" data-pinned="${pinned ? "1" : ""}" aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinned ? "Edit pinned projects" : "Pin to project"}">${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}<span class="pin-btn-label">Pin</span></button>
+            <button type="button" class="save-btn save-btn-row" data-save-kind="snippet" data-save-id="${escapeHtml(s.id)}" data-save-label="${escapeHtml(s.title || s.id)}" data-saved="${pinned ? "1" : ""}" aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinned ? "Edit save" : "Save"}">${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}<span class="save-btn-label">${pinned ? "Saved" : "Save"}</span></button>
             <button type="button" class="snippet-copy">Copy</button>
           </div>
           <pre class="snippet-pre"><code class="snippet-code">${escapeHtml(s.body || "")}</code></pre>
@@ -1499,7 +1541,295 @@
     });
   }
 
-  // ---------- Project-scoped pinning (M3.2) ----------
+  // ---------- Unified Save (M3.10) ----------
+  // Single storage key replacing Pin + "Add to learning". Each entry:
+  //   { kind: "tool"|"snippet"|"learning"|"video"|"article",
+  //     targetId,  // for tools/snippets: the tool/snippet id
+  //     url,       // for learning/video/article: the URL
+  //     title, thumb, source, published,  // card-resurrection metadata
+  //     projectId, note, addedAt }
+  // Entry id is kind:targetId-or-url-hash[:projectId].
+  const SAVES_KEY = "clhub.v1.saves";
+  const SAVES_MIGRATED_KEY = "clhub.v1.savesMigrated";
+
+  function getSaves() {
+    try {
+      const raw = localStorage.getItem(SAVES_KEY);
+      if (!raw) return {};
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === "object" ? parsed : {};
+    } catch { return {}; }
+  }
+  function putSaves(obj) {
+    try { localStorage.setItem(SAVES_KEY, JSON.stringify(obj)); } catch {}
+  }
+  function saveKey(kind, targetOrUrl, projectId) {
+    return `${kind}:${targetOrUrl}${projectId ? ":" + projectId : ""}`;
+  }
+  function isSavedAny(kind, targetOrUrl) {
+    const saves = getSaves();
+    const prefix = `${kind}:${targetOrUrl}`;
+    return Object.keys(saves).some((k) => k === prefix || k.startsWith(prefix + ":"));
+  }
+  function getSavesFor(kind, targetOrUrl) {
+    const saves = getSaves();
+    const prefix = `${kind}:${targetOrUrl}`;
+    return Object.entries(saves)
+      .filter(([k]) => k === prefix || k.startsWith(prefix + ":"))
+      .map(([k, v]) => ({ id: k, ...v }));
+  }
+  function upsertSave(entry) {
+    const saves = getSaves();
+    const id = saveKey(entry.kind, entry.targetId || entry.url, entry.projectId);
+    saves[id] = { ...entry, addedAt: entry.addedAt || new Date().toISOString() };
+    putSaves(saves);
+    return id;
+  }
+  function removeSave(id) {
+    const saves = getSaves();
+    if (id in saves) {
+      delete saves[id];
+      putSaves(saves);
+    }
+  }
+  // One-time migration from the pre-M3.10 stores. Idempotent; flag-guarded.
+  function migrateSavesOnce() {
+    try {
+      if (localStorage.getItem(SAVES_MIGRATED_KEY) === "1") return;
+    } catch { return; }
+    const saves = getSaves();
+    // Old URL-based Claude learning pins.
+    try {
+      const raw = localStorage.getItem("clhub.v1.learningPins");
+      const oldPins = raw ? JSON.parse(raw) : {};
+      if (oldPins && typeof oldPins === "object") {
+        for (const [url, meta] of Object.entries(oldPins)) {
+          if (!url || typeof meta !== "object") continue;
+          const id = saveKey("learning", url);
+          if (!saves[id]) {
+            saves[id] = {
+              kind: "learning",
+              url,
+              title: meta.title || "",
+              thumb: meta.thumb || null,
+              source: meta.source || "",
+              published: meta.published || null,
+              note: "",
+              addedAt: meta.pinnedAt || new Date().toISOString(),
+            };
+          }
+        }
+      }
+    } catch {}
+    // Project-scoped pins (tool + snippet).
+    try {
+      const projects = getProjects();
+      Object.values(projects).forEach((p) => {
+        (p.pinnedTools || []).forEach((toolId) => {
+          const id = saveKey("tool", toolId, p.id);
+          if (!saves[id]) saves[id] = {
+            kind: "tool", targetId: toolId, projectId: p.id,
+            note: "",
+            addedAt: p.updatedAt || p.createdAt || new Date().toISOString(),
+          };
+        });
+        (p.pinnedSnippets || []).forEach((snipId) => {
+          const id = saveKey("snippet", snipId, p.id);
+          if (!saves[id]) saves[id] = {
+            kind: "snippet", targetId: snipId, projectId: p.id,
+            note: "",
+            addedAt: p.updatedAt || p.createdAt || new Date().toISOString(),
+          };
+        });
+      });
+    } catch {}
+    putSaves(saves);
+    try { localStorage.setItem(SAVES_MIGRATED_KEY, "1"); } catch {}
+  }
+  migrateSavesOnce();
+
+  // Unified save button painter. All .save-btn elements carry
+  //   data-save-kind, data-save-id (targetId-or-url), data-save-label,
+  //   optionally data-save-thumb, data-save-source, data-save-published.
+  function repaintSaveButtons(kind, id) {
+    const saved = isSavedAny(kind, id);
+    document.querySelectorAll(
+      `.save-btn[data-save-kind="${kind}"][data-save-id="${CSS.escape(id)}"]`
+    ).forEach((btn) => {
+      btn.dataset.saved = saved ? "1" : "";
+      btn.setAttribute("aria-pressed", saved ? "true" : "false");
+      const hasLabel = !!btn.querySelector(".save-btn-label");
+      btn.innerHTML = (saved ? PIN_SVG_FILLED : PIN_SVG_OUTLINE) +
+        (hasLabel ? `<span class="save-btn-label">${saved ? "Saved" : "Save"}</span>` : "");
+    });
+  }
+  // Delegated click handler. Every .save-btn opens the save picker.
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest?.(".save-btn");
+    if (!btn) return;
+    const kind = btn.dataset.saveKind;
+    const id   = btn.dataset.saveId;
+    if (!kind || !id) return;
+    e.preventDefault();
+    e.stopPropagation();
+    openSavePicker({
+      kind,
+      id,
+      label: btn.dataset.saveLabel || id,
+      extras: {
+        url:       btn.dataset.saveUrl || undefined,
+        thumb:     btn.dataset.saveThumb || undefined,
+        source:    btn.dataset.saveSource || undefined,
+        published: btn.dataset.savePublished || undefined,
+      },
+    });
+  });
+  function openSavePicker({ kind, id, label, extras }) {
+    const modal = document.getElementById("pin-picker-modal");
+    if (!modal) return;
+    modal.dataset.kind = kind;
+    modal.dataset.id   = id;
+    modal.dataset.url       = extras.url       || "";
+    modal.dataset.thumb     = extras.thumb     || "";
+    modal.dataset.source    = extras.source    || "";
+    modal.dataset.published = extras.published || "";
+    modal.dataset.label     = label || "";
+    const titleEl = modal.querySelector(".pin-picker-title");
+    const subEl   = modal.querySelector(".pin-picker-sub");
+    const listEl  = modal.querySelector(".pin-picker-list");
+    const emptyEl = modal.querySelector(".pin-picker-empty");
+    const noteEl  = modal.querySelector(".pin-picker-note");
+    const saveBtn = modal.querySelector(".pin-picker-save");
+    const removeBtn = modal.querySelector(".pin-picker-remove");
+    if (titleEl) titleEl.textContent = "Save";
+    if (subEl)   subEl.textContent   = label || "";
+    const projects = Object.values(getProjects()).sort((a, b) =>
+      (b.createdAt || "").localeCompare(a.createdAt || "")
+    );
+    const existingSaves = getSavesFor(kind, id);
+    const pinnedProjectIds = new Set(existingSaves.map((s) => s.projectId).filter(Boolean));
+    const existingNote = existingSaves.find((s) => s.note)?.note || "";
+    if (noteEl) noteEl.value = existingNote;
+    if (projects.length === 0) {
+      if (listEl)  listEl.innerHTML = "";
+      if (emptyEl) emptyEl.hidden = false;
+    } else {
+      if (emptyEl) emptyEl.hidden = true;
+      if (listEl) {
+        listEl.innerHTML = projects.map((p) => {
+          const checked = pinnedProjectIds.has(p.id) ? "checked" : "";
+          return `
+            <label class="pin-picker-row">
+              <input type="checkbox" class="pin-picker-check" value="${escapeHtml(p.id)}" ${checked}>
+              <span class="pin-picker-row-title">${escapeHtml(p.title)}</span>
+              <span class="pin-picker-row-path">${p.path === "best" ? "Best" : "Easy"}</span>
+            </label>
+          `;
+        }).join("");
+      }
+    }
+    // "Remove save" shown only if this item is saved anywhere.
+    if (removeBtn) removeBtn.hidden = existingSaves.length === 0;
+    if (saveBtn) saveBtn.disabled = false;
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function commitSavePicker() {
+    const modal = document.getElementById("pin-picker-modal");
+    if (!modal) return;
+    const kind = modal.dataset.kind;
+    const id   = modal.dataset.id;
+    if (!kind || !id) { closePinPicker(); return; }
+    const note = (modal.querySelector(".pin-picker-note")?.value || "").trim();
+    const checks = modal.querySelectorAll(".pin-picker-check");
+    const selectedProjectIds = new Set();
+    checks.forEach((c) => { if (c.checked) selectedProjectIds.add(c.value); });
+
+    // Remove existing saves for this item that are no longer desired.
+    const existing = getSavesFor(kind, id);
+    existing.forEach((entry) => {
+      if (entry.projectId && !selectedProjectIds.has(entry.projectId)) {
+        removeSave(entry.id);
+      }
+    });
+
+    // Figure out an always-write base payload with metadata from the trigger.
+    const baseExtras = {
+      url:       modal.dataset.url       || undefined,
+      thumb:     modal.dataset.thumb     || undefined,
+      source:    modal.dataset.source    || undefined,
+      published: modal.dataset.published || undefined,
+      title:     modal.dataset.label     || id,
+    };
+    // No projects selected → store one unscoped save. If no projects exist yet
+    // and the user didn't uncheck anything, keep/create an unscoped save too.
+    if (selectedProjectIds.size === 0) {
+      upsertSave({ kind, targetId: id, ...baseExtras, note });
+    } else {
+      // Remove the unscoped save (projectId undefined) if the user picked projects.
+      existing.forEach((entry) => {
+        if (!entry.projectId) removeSave(entry.id);
+      });
+      selectedProjectIds.forEach((pid) => {
+        upsertSave({ kind, targetId: id, projectId: pid, ...baseExtras, note });
+      });
+    }
+
+    // Mirror pinnedTools/pinnedSnippets onto the project objects for the
+    // existing renderProjects chip row (shows tool/snippet counts).
+    if (kind === "tool" || kind === "snippet") {
+      const projects = getProjects();
+      const listKey = kind === "tool" ? "pinnedTools" : "pinnedSnippets";
+      Object.values(projects).forEach((p) => {
+        const shouldHave = selectedProjectIds.has(p.id);
+        const has = Array.isArray(p[listKey]) && p[listKey].includes(id);
+        if (shouldHave && !has) {
+          p[listKey] = Array.isArray(p[listKey]) ? p[listKey].concat(id) : [id];
+          p.updatedAt = new Date().toISOString();
+        } else if (!shouldHave && has) {
+          p[listKey] = p[listKey].filter((x) => x !== id);
+          p.updatedAt = new Date().toISOString();
+        }
+      });
+      putProjects(projects);
+    }
+
+    repaintSaveButtons(kind, id);
+    renderProjects();
+    renderYouTube();
+    paintClaudeLearning();
+    updateLearnFilterCounts();
+    closePinPicker();
+  }
+  function removeCurrentSave() {
+    const modal = document.getElementById("pin-picker-modal");
+    if (!modal) return;
+    const kind = modal.dataset.kind;
+    const id   = modal.dataset.id;
+    if (!kind || !id) return;
+    const entries = getSavesFor(kind, id);
+    entries.forEach((e) => removeSave(e.id));
+    // Also scrub project pin arrays.
+    if (kind === "tool" || kind === "snippet") {
+      const projects = getProjects();
+      const listKey = kind === "tool" ? "pinnedTools" : "pinnedSnippets";
+      Object.values(projects).forEach((p) => {
+        if (Array.isArray(p[listKey]) && p[listKey].includes(id)) {
+          p[listKey] = p[listKey].filter((x) => x !== id);
+          p.updatedAt = new Date().toISOString();
+        }
+      });
+      putProjects(projects);
+    }
+    repaintSaveButtons(kind, id);
+    renderProjects();
+    renderYouTube();
+    paintClaudeLearning();
+    updateLearnFilterCounts();
+    closePinPicker();
+  }
+
+  // ---------- Project-scoped pinning (M3.2) — retained as read-path ----------
   // Pin a tool (toolId) or snippet (snippetId) into one or more projects.
   // Stored on the project object under pinnedTools[] / pinnedSnippets[].
   function pinKeyForKind(kind) {
@@ -1633,9 +1963,15 @@
   });
   {
     const saveBtn = document.querySelector("#pin-picker-modal .pin-picker-save");
+    // M3.10: the picker commit path is commitSavePicker (unified Save).
     if (saveBtn) saveBtn.addEventListener("click", (ev) => {
       ev.preventDefault();
-      commitPinPicker();
+      commitSavePicker();
+    });
+    const removeBtn = document.querySelector("#pin-picker-modal .pin-picker-remove");
+    if (removeBtn) removeBtn.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      removeCurrentSave();
     });
   }
   function renderProjects() {
@@ -1901,10 +2237,10 @@
     // Pin button (M3.2) — shows filled when pinned into any project.
     const pinHost = q(".tool-modal-pin");
     if (pinHost) {
-      const pinned = isPinnedToAnyProject("tool", tool.id);
+      const saved = isSavedAny("tool", tool.id);
       pinHost.innerHTML = `
-        <button type="button" class="pin-btn" data-pin-kind="tool" data-pin-id="${escapeHtml(tool.id)}" data-pin-label="${escapeHtml(tool.name || tool.id)}" data-pinned="${pinned ? "1" : ""}" aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinned ? "Edit pinned projects" : "Pin to project"}">
-          ${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}<span class="pin-btn-label">${pinned ? "Pinned" : "Pin"}</span>
+        <button type="button" class="save-btn save-btn-tool" data-save-kind="tool" data-save-id="${escapeHtml(tool.id)}" data-save-label="${escapeHtml(tool.name || tool.id)}" data-saved="${saved ? "1" : ""}" aria-pressed="${saved ? "true" : "false"}" aria-label="${saved ? "Edit save" : "Save"}">
+          ${saved ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}<span class="save-btn-label">${saved ? "Saved" : "Save"}</span>
         </button>
       `;
     }

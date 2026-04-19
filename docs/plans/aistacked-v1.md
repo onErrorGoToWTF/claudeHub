@@ -573,7 +573,8 @@ M3.3   ✅ JSON export / import       device backup. [v0.4.2]
 
 --- IA rewrite locked 2026-04-18 — M3.4–M3.6 deferred ---
 
-M3.7   ▢ Finder → Projects          Move Finder wizard into Projects as "New project" flow.
+M3.7   ✅ Finder → Projects          Move Finder wizard into Projects as "New project" flow. [v0.4.3]
+(orig)  ▢ Finder → Projects         (original text — retained for audit:)
                                     Drop Finder subpill from Learn. Promote Tools to top-level.
                                     Delete Resources tab. State-of-AI charts move behind a
                                     "State of AI →" card on Home.

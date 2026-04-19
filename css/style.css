@@ -2893,7 +2893,106 @@ body.modal-open { overflow: hidden; }
   .backup-modal-json { font-size: 11px; }
 }
 
-/* ===== Pin-to-project button (M3.2) — shared across snippet rows + tool modal ===== */
+/* ===== Unified Save button (M3.10) — replaces .pin-btn + .card-pin ===== */
+.save-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  min-height: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 0.2s var(--ease-premium),
+              border-color 0.2s var(--ease-premium),
+              background 0.2s var(--ease-premium);
+}
+.save-btn svg { width: 14px; height: 14px; }
+.save-btn:hover {
+  color: var(--text-1);
+  border-color: var(--border-strong);
+  background: color-mix(in srgb, var(--text-1) 5%, transparent);
+}
+.save-btn[data-saved="1"] {
+  color: var(--accent, #4a90ff);
+  border-color: color-mix(in srgb, var(--accent, #4a90ff) 45%, var(--border));
+  background: color-mix(in srgb, var(--accent, #4a90ff) 10%, transparent);
+}
+.save-btn-label { font-weight: 500; letter-spacing: 0.005em; }
+/* Card-variant: smaller, pinned to the card corner, no label text. */
+.save-btn-card {
+  position: absolute;
+  top: 8px; right: 8px;
+  width: 28px; height: 28px;
+  padding: 0;
+  min-height: 0;
+  border-radius: 6px;
+  background: color-mix(in srgb, #000 50%, transparent);
+  z-index: 2;
+}
+.save-btn-card svg { width: 12px; height: 12px; }
+
+/* Save-picker additions (M3.10). */
+.pin-picker-section-label {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-3, var(--text-2));
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.pin-picker-note-label {
+  display: grid;
+  gap: 4px;
+  margin-top: 12px;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-3, var(--text-2));
+  font-weight: 600;
+}
+.pin-picker-note {
+  width: 100%;
+  resize: vertical;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--text-1) 3%, transparent);
+  color: var(--text-1);
+  font-family: inherit;
+  font-size: 12.5px;
+  line-height: 1.5;
+  outline: none;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.pin-picker-note:focus {
+  border-color: color-mix(in srgb, var(--accent, #4a90ff) 50%, var(--border-strong));
+}
+.pin-picker-remove {
+  margin-right: auto;
+  padding: 8px 14px;
+  min-height: 40px;
+  border: 1px solid color-mix(in srgb, #f43f5e 40%, var(--border));
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: #f87171;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.pin-picker-remove:hover {
+  background: color-mix(in srgb, #f43f5e 12%, transparent);
+  border-color: color-mix(in srgb, #f43f5e 70%, transparent);
+}
+
+/* ===== Pin-to-project button (M3.2) — retained for legacy markup ===== */
 .pin-btn {
   display: inline-flex;
   align-items: center;
@@ -3673,6 +3772,15 @@ body.modal-open { overflow: hidden; }
 .chip-tools:hover:not(.is-active),
 .chip-projects:hover:not(.is-active) {
   box-shadow: 0 0 18px -6px var(--accent-glow);
+}
+/* YouTube chip — warm magenta glow, nods to the video-first intent. */
+.chip-youtube.is-active {
+  box-shadow: 0 0 24px -4px color-mix(in srgb, #e879f9 40%, transparent);
+  border-color: color-mix(in srgb, #e879f9 35%, var(--border-strong));
+  color: color-mix(in srgb, #e879f9 95%, var(--text-1));
+}
+.chip-youtube:hover:not(.is-active) {
+  box-shadow: 0 0 18px -6px color-mix(in srgb, #e879f9 30%, transparent);
 }
 /* Projects Saved / + New subpill spacing. */
 .projects-toggle { margin-bottom: 12px; }
