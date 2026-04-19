@@ -100,6 +100,11 @@
   --color-tools-border:      rgba(255,214,10,0.40);
   --color-tools-glow:        rgba(255,214,10,0.28);
 
+  --color-projects-solid:    #0a84ff;                  /* Apple systemBlue dark */
+  --color-projects-surface:  rgba(10,132,255,0.10);
+  --color-projects-border:   rgba(10,132,255,0.40);
+  --color-projects-glow:     rgba(10,132,255,0.28);
+
   --color-365-glow:          rgba(166,132,255,0.28);   /* purple — Comply365 tab */
 
   /* ===== Glow tokens (reserved; no component uses them after M6.6) ===== */
@@ -244,6 +249,11 @@
   --color-tools-surface:     rgba(161,98,7,0.10);
   --color-tools-border:      rgba(161,98,7,0.40);
   --color-tools-glow:        rgba(161,98,7,0.22);
+
+  --color-projects-solid:    #007aff;                  /* Apple systemBlue light */
+  --color-projects-surface:  rgba(0,122,255,0.12);
+  --color-projects-border:   rgba(0,122,255,0.40);
+  --color-projects-glow:     rgba(0,122,255,0.22);
 
   --color-365-glow:          rgba(124,58,237,0.22);
 
@@ -4706,6 +4716,18 @@ body.modal-open { overflow: hidden; }
 .chip-tools:hover:not(.is-active) {
   color: var(--color-tools-solid);
   box-shadow: 0 0 18px -6px var(--color-tools-glow);
+}
+
+/* Projects — blue */
+.chip-projects.is-active {
+  color: var(--color-projects-solid);
+  background: var(--color-projects-surface);
+  border-color: var(--color-projects-border);
+  box-shadow: 0 0 24px -4px var(--color-projects-glow);
+}
+.chip-projects:hover:not(.is-active) {
+  color: var(--color-projects-solid);
+  box-shadow: 0 0 18px -6px var(--color-projects-glow);
 }
 
 /* Comply365 — purple */
