@@ -14,16 +14,16 @@ Review the current diff (or files named by the user) against the project's desig
 
 - **Radius:** only `var(--radius-sm)` (6px), `var(--radius-md)` (10px), `var(--radius-lg)` (14px), `var(--radius-pill)` (9999px). Any raw `border-radius: Npx` with N ∉ {6,10,14} or N < 9999 is a violation. Pills must be 9999px, not 999px or 100px.
 - **Easing:** only `var(--ease-premium)` or `var(--ease-lensing)`. No `ease-in-out`, no `cubic-bezier(...)` literals, no bounce curves (`cubic-bezier(.34,1.56,...)`-style overshoots).
-- **Color:** accent usage goes through `--accent`, `--accent-365-*`. Pure-white borders (`#fff`, `rgba(255,255,255,1)`) are banned. Hairlines must stay ≤14% white alpha.
+- **Color:** accent usage goes through `--accent`, `--accent-365-*`. Glass surface gradients go through `--glass-top` / `--glass-bottom` / `--glass-fallback` (and `--chips-glass-top` / `--chips-glass-bottom` for the floating nav). Ambient body glow goes through `--ambient-warm` / `--ambient-plasma`. Inline rgba literals for glass gradients / ambient glow are a violation. Pure-white borders (`#fff`, `rgba(255,255,255,1)`) are banned. Hairlines (borders, not insets) must stay ≤14% white alpha in dark mode. Hex literals for the branded `.nav-brand*` logo sticker are permitted — that's a deliberately locked wordmark, not chrome.
 
 ### 2. Glass primitive integrity
 
 Any element using `.glass` or a glass-like backdrop must preserve:
 - `backdrop-filter: blur(...)`
-- Cool-hue gradient (`#101218 → #0a0c10`), not neutral gray
-- Top-edge specular highlight: `inset 0 1px 0 rgba(255,255,255,0.06)`
+- Warm-charcoal gradient driven by `--glass-top` / `--glass-bottom` tokens (dark mode reads as warm charcoal; light mode overrides resolve to warm off-white against the greige page). Cool neutral-gray gradients, raw `#101218 → #0a0c10`, or any inline hex/rgba literal for the gradient stops is a regression.
+- Top-edge specular highlight via `.glass::before` or `inset 0 1px 0 rgba(255,255,255,α)`. Dark mode α sits at ~0.06–0.10; light mode α sits at ~0.5–0.7 — light-mode insets are *specular highlights*, not hairlines, and do not count against the 14% ceiling.
 
-Flag any `.glass` override that drops the inset highlight or swaps to a neutral gradient.
+Flag any `.glass` override that drops the inset highlight, hard-codes a non-token gradient, or swaps to a neutral gray.
 
 ### 3. Videos-above-articles (load-bearing)
 

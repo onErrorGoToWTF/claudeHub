@@ -157,6 +157,18 @@
   --glass-saturate: 170%;
   --glass-alpha:    0.52;
   --glass-hairline: rgba(255,244,224,0.12);
+  /* Warm-charcoal gradient stops for .glass (dark). Light-mode overrides below. */
+  --glass-top:        rgba(30,27,22,0.62);
+  --glass-bottom:     rgba(18,16,12,0.48);
+  --glass-fallback:   rgba(30,27,22,0.88);
+  /* Nav bar uses the same family but more transparent so content blurs through. */
+  --chips-glass-top:    rgba(30,27,22,0.42);
+  --chips-glass-bottom: rgba(18,16,12,0.28);
+  /* Ambient body glow — amber top-left, plasma bottom-right. */
+  --ambient-warm:    rgba(255,180,90,0.13);
+  --ambient-plasma:  rgba(190,140,255,0.10);
+  /* Scroll-activation photon bloom — warm amber wash applied to in-view panels. */
+  --bloom-warm:      rgba(255,180,90,0.18);
 
   --safe-t: env(safe-area-inset-top);
   --safe-b: env(safe-area-inset-bottom);
@@ -180,6 +192,17 @@
 
   --border:        rgba(40,30,16,0.08);
   --border-strong: rgba(40,30,16,0.16);
+
+  /* Light-mode glass + ambient overrides (tokens). Greige page → the
+     glass gradient is a very-pale warm white; ambient alphas drop. */
+  --glass-top:        rgba(255,251,242,0.80);
+  --glass-bottom:     rgba(250,244,230,0.68);
+  --glass-fallback:   rgba(255,251,242,0.92);
+  --chips-glass-top:    rgba(255,251,242,0.68);
+  --chips-glass-bottom: rgba(250,244,230,0.54);
+  --ambient-warm:    rgba(255,160,70,0.08);
+  --ambient-plasma:  rgba(170,110,230,0.06);
+  --bloom-warm:      rgba(255,160,70,0.12);
 
   /* ===== Semantic color families (light) ===== */
   --color-electric-surface:       rgba(48,176,199,0.12);
@@ -302,22 +325,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ambient glow (dark) + grid (both) — warm amber top-left, plasma purple
-   bottom-right. Reads as "electrons emitting photons" on the warm charcoal. */
+/* Ambient glow — "electrons emitting photons" on the warm charcoal page.
+   Colors flow through --ambient-warm / --ambient-plasma tokens (retuned
+   per-theme in the :root blocks above). */
 body::before {
   content: "";
   position: fixed; inset: 0;
   background:
-    radial-gradient(72% 44% at 46% -8%,  rgba(255,180,90,0.13)  0%, transparent 60%),
-    radial-gradient(52% 42% at 86% 110%, rgba(190,140,255,0.10) 0%, transparent 65%);
+    radial-gradient(72% 44% at 46% -8%,  var(--ambient-warm)   0%, transparent 60%),
+    radial-gradient(52% 42% at 86% 110%, var(--ambient-plasma) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
   transition: background 0.4s var(--ease);
-}
-:root[data-theme="light"] body::before {
-  background:
-    radial-gradient(72% 44% at 46% -8%,  rgba(255,160,70,0.08)  0%, transparent 60%),
-    radial-gradient(52% 42% at 86% 110%, rgba(170,110,230,0.06) 0%, transparent 65%);
 }
 body::after {
   content: "";
@@ -338,12 +357,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 
-/* ===== Glass primitive (Apple Liquid Glass-ish, dark-first) ===== */
+/* ===== Glass primitive (Apple Liquid Glass-ish, dark-first) =====
+   Gradient stops come from --glass-top / --glass-bottom tokens so theme
+   switches and palette retunes happen in one place. */
 .glass {
   position: relative;
   background: linear-gradient(180deg,
-    rgba(30,27,22,0.62) 0%,
-    rgba(18,16,12,0.48) 100%);
+    var(--glass-top) 0%,
+    var(--glass-bottom) 100%);
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
           backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
   border-radius: var(--radius-md);
@@ -368,8 +389,6 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .glass-elevated {
   --glass-blur: 36px;
   --glass-saturate: 190%;
-}
-.glass-elevated {
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.10),
     0 24px 60px -16px rgba(0,0,0,0.72),
@@ -383,7 +402,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 }
 .glass-pill { border-radius: var(--radius-sm); }
 @supports not (backdrop-filter: blur(1px)) {
-  .glass { background: rgba(30,27,22,0.88); }
+  .glass { background: var(--glass-fallback); }
 }
 
 /* ===== Scroll activation — "electrons emitting photons" (M7.7) =====
@@ -402,20 +421,20 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.07),
     0 10px 28px -10px rgba(0,0,0,0.55),
-    0 0 44px -14px rgba(255,180,90,0.18);
+    0 0 44px -14px var(--bloom-warm);
 }
 .hero.in-view {
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.07),
     0 12px 32px -12px rgba(0,0,0,0.55),
-    0 0 52px -16px rgba(255,180,90,0.16);
+    0 0 52px -16px var(--bloom-warm);
 }
 :root[data-theme="light"] .dash-panel.in-view,
 :root[data-theme="light"] .hero.in-view {
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.7),
     0 10px 28px -12px rgba(40,30,16,0.16),
-    0 0 44px -14px rgba(255,160,70,0.12);
+    0 0 44px -14px var(--bloom-warm);
 }
 @media (prefers-reduced-motion: reduce) {
   .dash-panel, .hero { transition: none; }
@@ -576,11 +595,8 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
    the generic glass primitive so underlying content blurs through. */
 .chips.glass {
   background: linear-gradient(180deg,
-    rgba(30,27,22,0.42) 0%,
-    rgba(18,16,12,0.28) 100%);
-}
-:root[data-theme="light"] .chips.glass {
-  background: color-mix(in srgb, var(--surface) 74%, transparent);
+    var(--chips-glass-top) 0%,
+    var(--chips-glass-bottom) 100%);
 }
 .chips::-webkit-scrollbar { display: none; }
 .chip {
