@@ -217,6 +217,8 @@
       void el.offsetHeight;      // force reflow
       el.style.animation = "";
     });
+    // M3.6: refresh "Continue where you left off" each time Home is activated.
+    renderContinueCard();
   }
 
   // Replay News & Media chart animations when the tab is activated and the
@@ -1371,6 +1373,7 @@
     projects[id] = project;
     putProjects(projects);
     renderProjects();
+    renderContinueCard();
     return project;
   }
   function deleteProject(id) {
@@ -1379,6 +1382,7 @@
     delete projects[id];
     putProjects(projects);
     renderProjects();
+    renderContinueCard();
   }
 
   // ---------- Backup export / import (M3.3) ----------
@@ -1538,6 +1542,128 @@
       if (e.key !== "Escape") return;
       const m = document.getElementById("backup-modal");
       if (m && !m.hidden) closeBackupModal();
+    });
+  }
+
+  // ---------- Storage monitor (M3.4) ----------
+  // Shows localStorage usage for aiStacked's namespace and gives the user
+  // an escape hatch if they want to drop a single key. Browsers give us
+  // 5-10 MB per origin; 5 MB is the safe lowest-common-denominator budget.
+  const STORAGE_BUDGET_BYTES = 5 * 1024 * 1024;
+  // Friendlier labels for known keys.
+  const STORAGE_KEY_LABEL = {
+    "clhub.v1.projects":             "Projects",
+    "clhub.v1.saves":                "Saves (pinned tools / snippets / learning items)",
+    "clhub.v1.learningPins":         "Legacy learning pins (pre-M3.10, safe to delete after migration)",
+    "clhub.v1.savesMigrated":        "Migration flag",
+    "clhub.v1.finderCaps":           "Finder — selected capabilities",
+    "clhub.v1.finderDraft":          "Finder — textarea draft",
+    "clhub.v1.claudeWhatsNewLastSeen": "What's new — last-seen timestamp",
+    "cdih-theme":                    "Theme (dark / light)",
+  };
+  function byteSize(s) {
+    try { return new Blob([s || ""]).size; } catch { return (s || "").length; }
+  }
+  function collectStorageKeys() {
+    const rows = [];
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (!k || !isBackupKey(k)) continue;
+        const v = localStorage.getItem(k);
+        rows.push({ key: k, size: byteSize(v), length: (v || "").length });
+      }
+    } catch {}
+    rows.sort((a, b) => b.size - a.size);
+    return rows;
+  }
+  function formatBytes(n) {
+    if (n < 1024)       return n + " B";
+    if (n < 1024 * 1024) return (n / 1024).toFixed(1) + " KB";
+    return (n / (1024 * 1024)).toFixed(2) + " MB";
+  }
+  function openStorageModal() {
+    const modal = document.getElementById("storage-modal");
+    if (!modal) return;
+    renderStorageBody();
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function closeStorageModal() {
+    const modal = document.getElementById("storage-modal");
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .backup-modal:not([hidden])")) {
+      document.body.classList.remove("modal-open");
+    }
+  }
+  function renderStorageBody() {
+    const bar     = document.getElementById("storage-usage-bar");
+    const caption = document.getElementById("storage-usage-caption");
+    const list    = document.getElementById("storage-key-list");
+    const sub     = document.querySelector("#storage-modal .storage-modal-sub");
+    if (!bar || !caption || !list) return;
+    const rows = collectStorageKeys();
+    const total = rows.reduce((n, r) => n + r.size, 0);
+    const pct = Math.min(100, Math.round((total / STORAGE_BUDGET_BYTES) * 100));
+    const tone = pct >= 90 ? "red" : pct >= 70 ? "amber" : "ok";
+    bar.dataset.tone = tone;
+    bar.innerHTML = `
+      <div class="storage-usage-fill" style="width:${pct}%"></div>
+      <div class="storage-usage-pct">${pct}%</div>
+    `;
+    caption.textContent = `${formatBytes(total)} / ${formatBytes(STORAGE_BUDGET_BYTES)} (${rows.length} key${rows.length === 1 ? "" : "s"})`;
+    if (sub) sub.textContent = "Tap Delete to drop a single key. Nothing outside the aiStacked namespace is touched.";
+    if (rows.length === 0) {
+      list.innerHTML = `<div class="empty">No aiStacked keys in localStorage yet.</div>`;
+      return;
+    }
+    list.innerHTML = rows.map((r) => {
+      const label = STORAGE_KEY_LABEL[r.key] || "";
+      return `
+        <div class="storage-key-row" data-key="${escapeHtml(r.key)}">
+          <div class="storage-key-head">
+            <code class="storage-key-name">${escapeHtml(r.key)}</code>
+            <span class="storage-key-size">${formatBytes(r.size)}</span>
+          </div>
+          ${label ? `<div class="storage-key-label">${escapeHtml(label)}</div>` : ""}
+          <button type="button" class="storage-key-delete" data-delete-key="${escapeHtml(r.key)}">Delete</button>
+        </div>
+      `;
+    }).join("");
+    // Two-tap confirm (same pattern as project delete).
+    list.querySelectorAll(".storage-key-delete").forEach((btn) => {
+      let timer = null;
+      const disarm = () => {
+        btn.dataset.armed = "";
+        btn.textContent = "Delete";
+        clearTimeout(timer);
+        timer = null;
+      };
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        if (btn.dataset.armed !== "1") {
+          btn.dataset.armed = "1";
+          btn.textContent = "Tap again to remove";
+          timer = setTimeout(disarm, 3000);
+          return;
+        }
+        const key = btn.dataset.deleteKey;
+        try { localStorage.removeItem(key); } catch {}
+        renderStorageBody();
+      });
+    });
+  }
+  {
+    const openBtn = document.getElementById("storage-open");
+    if (openBtn) openBtn.addEventListener("click", (e) => { e.preventDefault(); openStorageModal(); });
+    document.querySelectorAll("#storage-modal [data-close]").forEach((el) => {
+      el.addEventListener("click", (ev) => { ev.preventDefault(); closeStorageModal(); });
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      const m = document.getElementById("storage-modal");
+      if (m && !m.hidden) closeStorageModal();
     });
   }
 
@@ -1796,6 +1922,7 @@
 
     repaintSaveButtons(kind, id);
     renderProjects();
+    renderContinueCard();
     renderYouTube();
     paintClaudeLearning();
     updateLearnFilterCounts();
@@ -1823,6 +1950,7 @@
     }
     repaintSaveButtons(kind, id);
     renderProjects();
+    renderContinueCard();
     renderYouTube();
     paintClaudeLearning();
     updateLearnFilterCounts();
@@ -1974,6 +2102,58 @@
       removeCurrentSave();
     });
   }
+  // M3.6: Home "Continue where you left off" — up to 3 most-recently-updated
+  // projects, plus a count of their pinned tools/snippets as a read-at-a-glance
+  // progress hint. Tapping a card jumps to Projects → Saved.
+  function renderContinueCard() {
+    const host = document.getElementById("continue-body");
+    if (!host) return;
+    const all = Object.values(getProjects());
+    if (all.length === 0) {
+      host.innerHTML = `<p class="dash-empty">No projects in flight yet — start one and your progress lands here.</p>`;
+      return;
+    }
+    const recent = all
+      .slice()
+      .sort((a, b) => {
+        const ta = Date.parse(a.updatedAt || a.createdAt || 0) || 0;
+        const tb = Date.parse(b.updatedAt || b.createdAt || 0) || 0;
+        return tb - ta;
+      })
+      .slice(0, 3);
+    host.innerHTML = recent.map((p) => {
+      const pinTools    = Array.isArray(p.pinnedTools)    ? p.pinnedTools.length    : 0;
+      const pinSnippets = Array.isArray(p.pinnedSnippets) ? p.pinnedSnippets.length : 0;
+      const notes = (p.notes || "").trim().length;
+      const parts = [];
+      if (pinTools)    parts.push(`${pinTools} tool${pinTools === 1 ? "" : "s"}`);
+      if (pinSnippets) parts.push(`${pinSnippets} snippet${pinSnippets === 1 ? "" : "s"}`);
+      if (notes)       parts.push(`${notes} chars note`);
+      const meta = parts.length ? parts.join(" · ") : "Just saved";
+      const pathLabel = p.path === "best" ? "Best" : "Easy";
+      return `
+        <button type="button" class="continue-row" data-project-id="${escapeHtml(p.id)}">
+          <div class="continue-row-head">
+            <span class="continue-row-path" data-path="${escapeHtml(p.path || "easy")}">${pathLabel}</span>
+            <span class="continue-row-title">${escapeHtml(p.title)}</span>
+          </div>
+          <div class="continue-row-meta">${escapeHtml(meta)}</div>
+        </button>
+      `;
+    }).join("");
+    // Each row jumps to Projects → Saved.
+    host.querySelectorAll(".continue-row").forEach((row) => {
+      row.addEventListener("click", (e) => {
+        e.preventDefault();
+        const chip = document.querySelector('[data-filter="projects"]');
+        if (chip) chip.click();
+        const savedPill = document.querySelector('.subpill[data-projects-view="saved"]');
+        if (savedPill) savedPill.click();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  }
+
   function renderProjects() {
     const host = document.getElementById("projects-grid");
     if (!host) return;
@@ -2524,6 +2704,7 @@
 
     // Seed My Projects pane with any previously-saved projects.
     renderProjects();
+    renderContinueCard();
   }
   initFinder();
 

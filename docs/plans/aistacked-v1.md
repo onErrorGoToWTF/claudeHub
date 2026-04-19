@@ -595,11 +595,11 @@ M3.10  ▢ YouTube + unified Save     Promote video feed to its own top-level ch
 
 --- Re-scheduled after M3.10 (originally Phase 3 earlier) ---
 
-M3.4   ▢ localStorage monitor       usage bar, per-category breakdown, purge actions.
+M3.4   ✅ localStorage monitor       usage bar, per-key breakdown, per-key delete (two-tap). [v0.4.7]
 M3.5   ▢ Multi-collection pinning   clhub.v1.collections model; Comply365 collection.
                                     Note: overlaps heavily with M3.10 unified Save — revisit
                                     scope after M3.10 ships; may be partially subsumed.
-M3.6   ▢ "Continue where you left off"  Home dashboard populates from in-progress state.
+M3.6   ✅ "Continue where you left off"  Home dashboard populates from in-progress state. [v0.4.7]
 ```
 
 **Phase 4 — Authored tutorials + MCQ quizzes:**

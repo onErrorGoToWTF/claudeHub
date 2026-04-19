@@ -1547,6 +1547,71 @@ body.modal-open { overflow: hidden; }
 .dash-card-link {
   border-left: 2px solid color-mix(in srgb, var(--accent) 40%, transparent);
 }
+
+/* ===== Continue where you left off (M3.6) — recent-projects list on Home ===== */
+.continue-body { display: grid; gap: 6px; }
+.continue-row {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  min-height: 56px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--text-1) 3%, transparent);
+  color: var(--text-1);
+  font-family: inherit;
+  font-size: inherit;
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: border-color 0.2s var(--ease-premium),
+              background 0.2s var(--ease-premium);
+}
+.continue-row:hover {
+  border-color: var(--border-strong);
+  background: color-mix(in srgb, var(--text-1) 6%, transparent);
+}
+.continue-row-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.continue-row-path {
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--text-1) 6%, transparent);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  flex: 0 0 auto;
+}
+.continue-row-path[data-path="best"] {
+  color: color-mix(in srgb, var(--accent, #4a90ff) 90%, var(--text-1));
+  border-color: color-mix(in srgb, var(--accent, #4a90ff) 35%, var(--border));
+}
+.continue-row-path[data-path="easy"] {
+  color: color-mix(in srgb, var(--accent-claude) 90%, var(--text-1));
+  border-color: color-mix(in srgb, var(--accent-claude) 35%, var(--border));
+}
+.continue-row-title {
+  flex: 1;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-1);
+  letter-spacing: -0.005em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.continue-row-meta {
+  font-size: 11px;
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
 .dash-eyebrow {
   font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--text-3);
@@ -2741,6 +2806,219 @@ body.modal-open { overflow: hidden; }
 }
 .backup-status[data-tone="ok"]  { color: color-mix(in srgb, #34d399 85%, var(--text-2)); }
 .backup-status[data-tone="err"] { color: #f87171; }
+
+/* ===== Storage monitor (M3.4) — usage bar + per-key list + delete ===== */
+.storage-modal[hidden] { display: none !important; }
+.storage-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.storage-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, #000 72%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .storage-modal-backdrop { animation: vmFade 0.22s var(--ease-premium) both; }
+  .storage-modal-frame    { animation: vmLift 0.28s var(--ease-premium) both; }
+}
+.storage-modal-frame {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: calc(100vh - 32px);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #101218 0%, #0a0c10 100%);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset,
+              0 36px 80px -24px rgba(0,0,0,0.9);
+  overflow: hidden;
+}
+.storage-modal-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.storage-modal-titles { flex: 1; min-width: 0; }
+.storage-modal-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-1);
+  letter-spacing: -0.005em;
+}
+.storage-modal-sub {
+  font-size: 11px;
+  color: var(--text-2);
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+}
+.storage-modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-2);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.storage-modal-close:hover {
+  color: var(--text-1);
+  border-color: var(--border-strong);
+  background: color-mix(in srgb, var(--text-1) 5%, transparent);
+}
+.storage-modal-body {
+  padding: 14px 16px 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: grid;
+  gap: 12px;
+}
+.storage-usage-bar {
+  position: relative;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--text-1) 6%, transparent);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.storage-usage-fill {
+  height: 100%;
+  background: color-mix(in srgb, #34d399 80%, var(--accent));
+  transition: width 0.3s var(--ease-premium);
+}
+.storage-usage-bar[data-tone="amber"] .storage-usage-fill { background: color-mix(in srgb, #fbbf24 80%, transparent); }
+.storage-usage-bar[data-tone="red"]   .storage-usage-fill { background: color-mix(in srgb, #f87171 80%, transparent); }
+.storage-usage-pct {
+  position: absolute;
+  top: 50%; right: 8px;
+  transform: translateY(-50%);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-1);
+  mix-blend-mode: difference;
+}
+.storage-usage-caption {
+  font-size: 11.5px;
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+}
+.storage-key-list { display: grid; gap: 6px; }
+.storage-key-row {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--text-1) 3%, transparent);
+}
+.storage-key-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.storage-key-name {
+  flex: 1;
+  font-size: 11.5px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--text-1);
+  background: transparent;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.storage-key-size {
+  font-size: 10.5px;
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  flex: 0 0 auto;
+}
+.storage-key-label {
+  font-size: 11.5px;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+.storage-key-delete {
+  justify-self: flex-end;
+  padding: 6px 12px;
+  min-height: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-3);
+  font-family: inherit;
+  font-size: 11.5px;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 0.2s var(--ease-premium),
+              border-color 0.2s var(--ease-premium),
+              background 0.2s var(--ease-premium);
+}
+.storage-key-delete:hover {
+  color: #f87171;
+  border-color: color-mix(in srgb, #f87171 40%, var(--border-strong));
+  background: color-mix(in srgb, #f87171 8%, transparent);
+}
+.storage-key-delete[data-armed="1"] {
+  color: #fff;
+  background: color-mix(in srgb, #f43f5e 55%, transparent);
+  border-color: color-mix(in srgb, #f43f5e 70%, transparent);
+  font-weight: 600;
+}
+.storage-modal-foot {
+  margin: 4px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-3, var(--text-2));
+}
+.storage-modal-foot code {
+  padding: 0 4px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--text-1) 6%, transparent);
+  font-size: 10.5px;
+}
+.storage-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 12px;
+  border-top: 1px solid var(--border);
+}
+.storage-modal-done {
+  padding: 8px 14px;
+  min-height: 36px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--text-1) 4%, transparent);
+  color: var(--text-1);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.storage-modal-done:hover {
+  background: color-mix(in srgb, var(--text-1) 8%, transparent);
+  border-color: var(--border-strong);
+}
+@media (max-width: 540px) {
+  .storage-modal { padding: 0; }
+  .storage-modal-frame { border-radius: 0; max-height: 100vh; width: 100%; }
+}
 
 /* ===== Backup modal (M3.3) — view/copy/save JSON export ===== */
 .backup-modal[hidden] { display: none !important; }
