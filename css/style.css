@@ -1698,8 +1698,8 @@ body.modal-open { overflow: hidden; }
    (0.34α) as the matching CTA button border, so the icon and the CTA
    read as visually linked. Reusable: change width/height anywhere. */
 .dash-panel-icon {
-  width: 72px;
-  height: 72px;
+  width: 54px;
+  height: 54px;
   fill: none;
   stroke-width: 0.5;
   stroke-linecap: round;
