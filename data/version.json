@@ -1,7 +1,7 @@
 {
-  "version": "0.6.100",
-  "milestone": "M8.12.30",
-  "milestoneTitle": "Phase 8.12.30 — icon stroke bumped 1.5→2.5 to visually match the CTA's stacked 1px border + 1px inset ring; drop-shadow glow softens the perceived edge so stroke needs to be chunkier to read equal",
-  "deployedAt": "2026-04-19T20:20Z",
+  "version": "0.6.101",
+  "milestone": "M8.12.31",
+  "milestoneTitle": "Phase 8.12.31 — dash-panel icon stroke bumped to 3px and glow filter retuned to mirror the CTA buttons' 12px soft halo + subtle dark drop. Icons and buttons now read at matched line weight and matched glow intensity",
+  "deployedAt": "2026-04-19T20:30Z",
   "commitSha": ""
 }

@@ -1701,7 +1701,7 @@ body.modal-open { overflow: hidden; }
   width: 54px;
   height: 54px;
   fill: none;
-  stroke-width: 2.5;
+  stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -1711,23 +1711,25 @@ body.modal-open { overflow: hidden; }
 /* Stacked drop-shadows: tight 1.5px at full saturation hugs the line
    (the "concentrated near border" pop), then a wider 3px at the
    glow-token alpha for ambient fade. */
+/* Glow mirrors the CTA buttons — 12px soft outer halo at the glow
+   token, plus a subtle dark drop so the icon anchors to its panel. */
 .dash-panel-icon--learn {
   stroke: var(--color-learn-border);
   filter:
-    drop-shadow(0 0 1.5px var(--color-learn-solid))
-    drop-shadow(0 0 3px var(--color-learn-glow));
+    drop-shadow(0 0 12px var(--color-learn-glow))
+    drop-shadow(0 4px 10px rgba(0,0,0,0.10));
 }
 .dash-panel-icon--projects {
   stroke: var(--color-projects-border);
   filter:
-    drop-shadow(0 0 1.5px var(--color-projects-solid))
-    drop-shadow(0 0 3px var(--color-projects-glow));
+    drop-shadow(0 0 12px var(--color-projects-glow))
+    drop-shadow(0 4px 10px rgba(0,0,0,0.10));
 }
 .dash-panel-icon--tools {
   stroke: var(--color-tools-border);
   filter:
-    drop-shadow(0 0 1.5px var(--color-tools-solid))
-    drop-shadow(0 0 3px var(--color-tools-glow));
+    drop-shadow(0 0 12px var(--color-tools-glow))
+    drop-shadow(0 4px 10px rgba(0,0,0,0.10));
 }
 .dash-panel-body { display: grid; gap: 6px; }
 .dash-charts-panel {
