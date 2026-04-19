@@ -458,22 +458,21 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   color: var(--text-1);
   display: flex; align-items: center; gap: 10px;
 }
-/* M8.12.16 — inline section-identity icon to the left of each heading.
-   Sized to match the cap height of the title (1em), stroke-only, tinted
-   in the section's identity color. Reuses the same shapes as the
-   dashboard panel icons but rendered small + in-flow. */
-.section-head-icon {
-  width: 1em; height: 1em;
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+/* M8.12.17 — single vertical identity stripe to the left of each heading.
+   4px wide, 20px tall, pill-rounded, painted in the section's identity
+   color. Restored after experiments with stripes / bloom / inline icons. */
+.section-head h2::before {
+  content: "";
+  display: inline-block;
+  width: 4px; height: 20px;
+  border-radius: 4px;
+  background: var(--sec, var(--text-3));
   flex-shrink: 0;
 }
-.section-head-icon--home     { stroke: var(--text-3); }
-.section-head-icon--learn    { stroke: var(--color-learn-solid); }
-.section-head-icon--projects { stroke: var(--color-projects-solid); }
-.section-head-icon--tools    { stroke: var(--color-tools-solid); }
+.section[data-section="home"]     .section-head h2::before { background: var(--text-3); }
+.section[data-section="learn"]    .section-head h2::before { background: var(--color-learn-solid); }
+.section[data-section="tools"]    .section-head h2::before { background: var(--color-tools-solid); }
+.section[data-section="projects"] .section-head h2::before { background: var(--color-projects-solid); }
 .section-head-actions {
   display: flex; align-items: flex-end; gap: 6px;
   flex-wrap: wrap;
@@ -494,6 +493,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
     flex-wrap: nowrap;
   }
   .section-head h2 { font-size: 23px; line-height: 1.15; letter-spacing: -0.02em; }
+  .section-head h2::before { height: 18px; }
   .section-head-actions { gap: 4px; flex-wrap: nowrap; }
   .section-head-actions .subpills { gap: 2px; padding: 2px; }
   .section-head-actions .subpill { padding: 6px 11px; font-size: 13px; min-height: 32px; }

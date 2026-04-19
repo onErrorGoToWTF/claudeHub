@@ -1,7 +1,7 @@
 {
-  "version": "0.6.86",
-  "milestone": "M8.12.16",
-  "milestoneTitle": "Phase 8.12.16 — radial bloom removed; inline section-head identity icons added to the LEFT of each heading, sized 1em (matches cap height), stroked in the section color. Dashboard gets a new 2×2-grid icon in grey (--text-3) as placeholder",
-  "deployedAt": "2026-04-19T17:15Z",
+  "version": "0.6.87",
+  "milestone": "M8.12.17",
+  "milestoneTitle": "Phase 8.12.17 — reverted to a single 4×20px vertical identity stripe to the left of each section heading. Inline icons removed from h2 markup; section-head-icon CSS dropped. Dashboard stripe = grey, Learn lime, Tools tangerine, Projects cyan",
+  "deployedAt": "2026-04-19T17:30Z",
   "commitSha": ""
 }
