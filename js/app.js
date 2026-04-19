@@ -7,6 +7,7 @@
   const ACADEMY_URL  = "data/learn/academy_courses.json?v=" + Date.now();
   const HUB_MAP_URL  = "data/learn/claude_hub_map.json?v=" + Date.now();
   const SNIPPETS_URL = "data/learn/snippets.json?v=" + Date.now();
+  const LESSONS_URL  = "data/learn/lessons.json?v="  + Date.now();
   const VERSION_URL = "data/version.json?v=" + Date.now();
   const THEME_KEY = "cdih-theme";
 
@@ -1545,6 +1546,247 @@
     });
   }
 
+  // ---------- Authored lessons + MCQ quizzes (M4.1 / M4.2 / M4.3) ----------
+  let lessonsData = [];
+  const lessonBodyCache = new Map();
+  const LESSON_PROGRESS_KEY = "clhub.v1.lessonProgress";
+  const TRACK_LABEL = {
+    "claude-code":  "Claude Code",
+    "skills":       "Skills",
+    "mcp":          "MCP",
+    "finder":       "Finder",
+    "image-video":  "Image / Video",
+    "nocode":       "No-code",
+    "local":        "Local / Desktop",
+  };
+  function getLessonProgress() {
+    try {
+      const raw = localStorage.getItem(LESSON_PROGRESS_KEY);
+      if (!raw) return {};
+      const obj = JSON.parse(raw);
+      return obj && typeof obj === "object" ? obj : {};
+    } catch { return {}; }
+  }
+  function putLessonProgress(obj) {
+    try { localStorage.setItem(LESSON_PROGRESS_KEY, JSON.stringify(obj)); } catch {}
+  }
+  function lessonState(slug) {
+    const p = getLessonProgress();
+    return p[slug] || null;
+  }
+  function setLessonState(slug, state) {
+    const p = getLessonProgress();
+    if (state === null) delete p[slug]; else p[slug] = state;
+    putLessonProgress(p);
+  }
+  async function loadLessons() {
+    try {
+      const res = await fetch(LESSONS_URL, { cache: "no-cache" });
+      if (!res.ok) return;
+      const payload = await res.json();
+      lessonsData = Array.isArray(payload.lessons) ? payload.lessons : [];
+    } catch { lessonsData = []; }
+    renderLessonsList();
+  }
+  function renderLessonsList() {
+    const host = document.getElementById("lessons-list");
+    if (!host) return;
+    if (lessonsData.length === 0) {
+      host.innerHTML = `<div class="empty glass academy-empty">No lessons yet. First one lands soon — check back, or hit the Academy tab for Anthropic's own catalog in the meantime.</div>`;
+      return;
+    }
+    const byTrack = new Map();
+    lessonsData
+      .slice()
+      .sort((a, b) => (a.track || "").localeCompare(b.track || "") || (a.order || 0) - (b.order || 0))
+      .forEach((l) => {
+        const k = l.track || "misc";
+        if (!byTrack.has(k)) byTrack.set(k, []);
+        byTrack.get(k).push(l);
+      });
+    const progress = getLessonProgress();
+    const sections = [];
+    for (const [track, list] of byTrack) {
+      const label = TRACK_LABEL[track] || track;
+      const completed = list.filter((l) => progress[l.slug]?.state === "completed").length;
+      const rows = list.map((l) => {
+        const state = progress[l.slug]?.state || "new";
+        const stateLabel = state === "completed" ? "Completed"
+                        : state === "in_progress" ? "In progress"
+                        : "Not started";
+        return `
+          <button type="button" class="lesson-row" data-lesson-slug="${escapeHtml(l.slug)}">
+            <div class="lesson-row-head">
+              <span class="lesson-row-min">${l.minutes ? l.minutes + " min" : ""}</span>
+              <span class="lesson-row-title">${escapeHtml(l.title)}</span>
+              <span class="lesson-row-state" data-state="${escapeHtml(state)}">${stateLabel}</span>
+            </div>
+            <div class="lesson-row-summary">${escapeHtml(l.summary || "")}</div>
+          </button>
+        `;
+      }).join("");
+      sections.push(`
+        <div class="lessons-track">
+          <div class="lessons-track-head">
+            <span class="lessons-track-label">${escapeHtml(label)}</span>
+            <span class="lessons-track-count">${completed}/${list.length}</span>
+          </div>
+          <div class="lessons-track-rows">${rows}</div>
+        </div>
+      `);
+    }
+    host.innerHTML = sections.join("");
+    host.querySelectorAll(".lesson-row").forEach((row) => {
+      row.addEventListener("click", (e) => {
+        e.preventDefault();
+        openLesson(row.dataset.lessonSlug);
+      });
+    });
+  }
+  async function openLesson(slug) {
+    const lesson = lessonsData.find((l) => l.slug === slug);
+    const modal = document.getElementById("lesson-modal");
+    if (!lesson || !modal) return;
+    modal.dataset.slug = slug;
+    const titleEl = modal.querySelector(".lesson-modal-title");
+    const trackEl = modal.querySelector(".lesson-modal-track");
+    const minEl   = modal.querySelector(".lesson-modal-min");
+    const statusEl = modal.querySelector(".lesson-modal-status");
+    const mdHost  = modal.querySelector("#lesson-markdown");
+    const quizHost = modal.querySelector("#lesson-quiz");
+    const completeBtn = modal.querySelector("#lesson-complete");
+    const resetBtn    = modal.querySelector("#lesson-reset");
+    if (titleEl) titleEl.textContent = lesson.title || "";
+    if (trackEl) trackEl.textContent = TRACK_LABEL[lesson.track] || lesson.track || "";
+    if (minEl)   minEl.textContent   = lesson.minutes ? lesson.minutes + " min" : "";
+    const progress = lessonState(slug);
+    const isComplete = progress?.state === "completed";
+    if (statusEl) {
+      statusEl.textContent = isComplete ? "Completed" :
+                              progress ? "In progress" : "";
+      statusEl.dataset.state = isComplete ? "completed" : progress ? "in_progress" : "";
+    }
+    if (completeBtn) completeBtn.textContent = isComplete ? "Mark incomplete" : "Mark complete";
+    if (resetBtn)    resetBtn.hidden = !progress;
+
+    // Load + render the markdown body (cached).
+    if (mdHost) {
+      if (lessonBodyCache.has(slug)) {
+        mdHost.innerHTML = lessonBodyCache.get(slug);
+      } else {
+        mdHost.innerHTML = `<div class="empty">Loading lesson…</div>`;
+        try {
+          const res = await fetch(`data/learn/lessons/${slug}.md?v=${Date.now()}`, { cache: "no-cache" });
+          if (res.ok) {
+            const md = await res.text();
+            const html = renderMarkdown(md);
+            lessonBodyCache.set(slug, html);
+            mdHost.innerHTML = html;
+          } else {
+            mdHost.innerHTML = `<div class="empty">Couldn't load lesson body.</div>`;
+          }
+        } catch {
+          mdHost.innerHTML = `<div class="empty">Couldn't load lesson body.</div>`;
+        }
+      }
+    }
+    // Render quiz.
+    if (quizHost) {
+      const quiz = Array.isArray(lesson.quiz) ? lesson.quiz : [];
+      const savedAnswers = progress?.answers || {};
+      quizHost.innerHTML = quiz.length === 0 ? "" : `
+        <div class="lesson-quiz-head">Check your understanding</div>
+        ${quiz.map((q, qi) => {
+          const chosen = savedAnswers[qi];
+          const hasAnswered = Number.isInteger(chosen);
+          return `
+            <div class="lesson-q" data-q-idx="${qi}">
+              <div class="lesson-q-text">${escapeHtml(q.q)}</div>
+              <div class="lesson-q-choices">
+                ${q.choices.map((c, ci) => {
+                  const correct = ci === q.answer;
+                  const picked = hasAnswered && ci === chosen;
+                  let cls = "lesson-q-choice";
+                  if (hasAnswered) {
+                    if (picked && correct)   cls += " is-correct is-picked";
+                    else if (picked)         cls += " is-wrong is-picked";
+                    else if (correct)        cls += " is-correct";
+                  }
+                  return `<button type="button" class="${cls}" data-choice-idx="${ci}" ${hasAnswered ? "disabled" : ""}>${escapeHtml(c)}</button>`;
+                }).join("")}
+              </div>
+              ${hasAnswered && q.why ? `<div class="lesson-q-why">${escapeHtml(q.why)}</div>` : ""}
+            </div>
+          `;
+        }).join("")}
+      `;
+      // Click handlers on choices.
+      quizHost.querySelectorAll(".lesson-q-choice").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (btn.disabled) return;
+          const q = btn.closest(".lesson-q");
+          const qi = Number(q?.dataset.qIdx);
+          const ci = Number(btn.dataset.choiceIdx);
+          const state = lessonState(slug) || { state: "in_progress", answers: {}, startedAt: new Date().toISOString() };
+          state.answers = state.answers || {};
+          state.answers[qi] = ci;
+          state.state = state.state === "completed" ? "completed" : "in_progress";
+          setLessonState(slug, state);
+          openLesson(slug); // re-render with the reveal
+        });
+      });
+    }
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function closeLessonModal() {
+    const modal = document.getElementById("lesson-modal");
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .backup-modal:not([hidden]), .storage-modal:not([hidden])")) {
+      document.body.classList.remove("modal-open");
+    }
+    renderLessonsList(); // refresh status chips
+  }
+  {
+    const completeBtn = document.getElementById("lesson-complete");
+    const resetBtn    = document.getElementById("lesson-reset");
+    if (completeBtn) completeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const modal = document.getElementById("lesson-modal");
+      const slug = modal?.dataset.slug;
+      if (!slug) return;
+      const cur = lessonState(slug);
+      if (cur?.state === "completed") {
+        setLessonState(slug, { ...cur, state: "in_progress", completedAt: null });
+      } else {
+        setLessonState(slug, {
+          ...(cur || { answers: {}, startedAt: new Date().toISOString() }),
+          state: "completed",
+          completedAt: new Date().toISOString(),
+        });
+      }
+      openLesson(slug);
+    });
+    if (resetBtn) resetBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const modal = document.getElementById("lesson-modal");
+      const slug = modal?.dataset.slug;
+      if (!slug) return;
+      setLessonState(slug, null);
+      openLesson(slug);
+    });
+    document.querySelectorAll("#lesson-modal [data-close]").forEach((el) => {
+      el.addEventListener("click", (ev) => { ev.preventDefault(); closeLessonModal(); });
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      const m = document.getElementById("lesson-modal");
+      if (m && !m.hidden) closeLessonModal();
+    });
+  }
+
   // ---------- Storage monitor (M3.4) ----------
   // Shows localStorage usage for aiStacked's namespace and gives the user
   // an escape hatch if they want to drop a single key. Browsers give us
@@ -2755,6 +2997,8 @@
   // M3.8: loadSnippets populates snippetsData which loadAcademyHub reads
   // when attaching snippets under each course. Chain them.
   loadSnippets().then(() => loadAcademyHub());
+  // M4.1: authored lessons for Learn → Tutorials & quizzes.
+  loadLessons();
   renderTimeline();
   renderCompare();
   renderIndex();
@@ -3484,6 +3728,22 @@
       const line = lines[i];
       if (/^\s*$/.test(line)) { i++; continue; }
 
+      // Fenced code blocks — ```lang ... ```
+      let fence;
+      if ((fence = line.match(/^\s*```\s*([\w-]*)\s*$/))) {
+        const lang = fence[1] || "";
+        i++;
+        const buf = [];
+        while (i < lines.length && !/^\s*```\s*$/.test(lines[i])) {
+          buf.push(lines[i]);
+          i++;
+        }
+        if (i < lines.length) i++; // skip closing fence
+        const code = escHtml(buf.join("\n"));
+        out.push(`<pre><code class="lang-${escHtml(lang)}">${code}</code></pre>`);
+        continue;
+      }
+
       let m;
       if ((m = line.match(/^(#{1,6})\s+(.*)$/))) {
         const lvl = Math.min(m[1].length, 3);
@@ -3532,6 +3792,7 @@
              !/^\s*[-*]\s+/.test(lines[i]) &&
              !/^\s*\d+\.\s+/.test(lines[i]) &&
              !/^>\s?/.test(lines[i]) &&
+             !/^\s*```/.test(lines[i]) &&
              !/^---+$/.test(lines[i].trim())) {
         buf.push(lines[i]);
         i++;

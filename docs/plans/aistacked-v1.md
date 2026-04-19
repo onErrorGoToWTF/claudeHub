@@ -605,9 +605,11 @@ M3.6   ✅ "Continue where you left off"  Home dashboard populates from in-progr
 **Phase 4 — Authored tutorials + MCQ quizzes:**
 
 ```
-M4.1   ▢ Lesson frontmatter parser  title, track, order, minutes, quiz[] array.
-M4.2   ▢ MCQ renderer               reveal-on-answer, explanations.
-M4.3   ▢ Progress tracking          per-tool + per-use-case progress bar.
+M4.1   ✅ Lesson schema + loader      title, track, order, minutes, quiz[] (in lessons.json,
+                                     not YAML frontmatter — simpler parse). [v0.5.0]
+M4.2   ✅ MCQ renderer               reveal-on-answer, inline explanations. [v0.5.0]
+M4.3   ✅ Progress tracking          per-lesson state in clhub.v1.lessonProgress; track-level
+                                     completed/total counts in the Tutorials list. [v0.5.0]
 M4.4   ▢ First lessons (Claude Code)  install + CLAUDE.md conventions + slash commands.
 M4.5   ▢ First lessons (MCP/Skills)   what they are, when to author one.
 M4.6   ▢ First lesson (Blender-AI hybrid)  for the Young Carpets 3D video use case.

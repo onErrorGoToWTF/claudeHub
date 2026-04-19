@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "note": "Authored lessons. Each lesson's body lives at data/learn/lessons/<slug>.md. Quiz is inlined here so we don't need a YAML frontmatter parser. Tracks: claude-code, skills, mcp, finder, image-video, nocode, local.",
+  "lessons": [
+    {
+      "slug": "claude-code-getting-started",
+      "title": "Claude Code: zero to your first session",
+      "track": "claude-code",
+      "order": 1,
+      "minutes": 8,
+      "summary": "Install, sign in, open a repo, make the first edit. The CLI walk-through.",
+      "quiz": [
+        {
+          "q": "Where does CLAUDE.md live for a project?",
+          "choices": [
+            "In the project root, committed to git",
+            "In your home directory",
+            "Inside .claude/settings.json"
+          ],
+          "answer": 0,
+          "why": "Project-scoped CLAUDE.md sits in the repo root and ships with the codebase. .claude/settings.json is for settings/permissions, not instructions."
+        },
+        {
+          "q": "What does /compact do in an active Claude Code session?",
+          "choices": [
+            "Deletes the message history",
+            "Summarizes prior context so the session can continue past its token budget",
+            "Exits the session"
+          ],
+          "answer": 1,
+          "why": "/compact rolls the earlier conversation into a summary — you keep working in the same session without hitting the token ceiling."
+        },
+        {
+          "q": "Which of these is NOT a good candidate for Claude Code vs. a chat UI?",
+          "choices": [
+            "A multi-file refactor across 20 files",
+            "A one-line typo fix you already know the location of",
+            "Adding a new feature that touches the router, the UI, and the test suite"
+          ],
+          "answer": 1,
+          "why": "A one-line fix is faster to type than to describe. Reach for Claude Code when the work spans files or needs real context."
+        }
+      ]
+    }
+  ]
+}
