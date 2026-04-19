@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T10:29:02.794Z",
+  "generated_at": "2026-04-19T12:32:47.919Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,28 @@
     ],
     "news": [
       {
+        "title": "Anthropic Launches Claude Design. Adobe and Figma Shares Dip After the Launch - waya.media",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQQTdmX25nZXhmTFFXRUlFMnduV0JLWl8wekdEYy1jcF9Xb0FnZ3RoZU5FNS1BZVAwQ0dMTThHbWUtZC00eDZ6MjBrcTZHNktmaEJSODNpcVdneUhFZnN3SHJGZGFDUlRoWFpBOVFMWnJ5aXM2TzhSWkVnVHQtak9FWTZ0ZC02ZXUxUXg1Q2pQWEFCa3ZYSVZpQTByY3I?oc=5",
+        "source": "Google News",
+        "published": "2026-04-19T11:22:20.000Z",
+        "summary": "Anthropic Launches Claude Design. Adobe and Figma Shares Dip After the Launch waya.media"
+      },
+      {
+        "title": "Changes in the system prompt between Claude Opus 4.6 and 4.7",
+        "url": "https://simonwillison.net/2026/Apr/18/opus-system-prompt/",
+        "source": "HN · 34↑",
+        "hn_id": "47823270",
+        "published": "2026-04-19T10:36:29.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic’s New Launch, Claude Design: What It Is and How It Impacted Adobe and Figma Stocks - The Bridge Chronicle",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPYlFoT3lDd2pHeU5Yd1ozeVZNWGcyRE81N3lrWFpHU0tJSl8wTm80VXpOUVN0UUVVU282RDlQaDliLXFmSzY2YjVxOWp3ZjZYNnN2VG9DbnFQd3VzRUxSUlJrZ2FUZmQzeUdUMzFQZ2I5T3U3LVR4aVo1WUhFNXZVNmxLZUdSVFgwVmxBTFJlbGFqNXFjVzBLdG40T3Bpb0pUS0I00gGwAUFVX3lxTE1KejhjZE42VUttLW83MzNQaDN2NkJHeU9VdUJ2QjVWN0JoRlFOVXIzRW5EQXlUSlNMU3NXYzNmcE5tc0VkRjZxNy1jM1V3QzN0eGVadjRFRVhRT0VLVmp5U0d1ZlJNcEFqWVBxVmJ4N0RaRVNjUkxHQzhTWU9HQTIyNkdTUEg0MW5Wd2lvV0pZTWR3c2E2dk52X3NuQWFEWFNvTEhVUlY0S0ozdEl3MzBD?oc=5",
+        "source": "Google News",
+        "published": "2026-04-19T10:05:55.000Z",
+        "summary": "Anthropic’s New Launch, Claude Design: What It Is and How It Impacted Adobe and Figma Stocks The Bridge Chronicle"
+      },
+      {
         "title": "Anthropic’s Claude suffers a widespread API outage just as enterprise procurement season heats up - Startup Fortune",
         "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOU1ZRcDdFRVdIMWNmQjJoWVMxX1hQOG5jSElGM0ZoSjZSRUlFRFFpM2NHaDBmaDJvZWxXV21idmhIeUNfVm9VQ3BlVVBUS2pNZndKamFuenhkdVZSYS1PaGlxelc2T0wyZEpqcTViZnp1aVVPUkw4cG5nWFBnTDEwTmRmU2NvY2ZFbU03U2hCbDBveVBYVVgySEc5bzhXdnRackM3blJwV3MzalduZV9fYWxQZkhiaVhBX0N0M0lveXp4QQ?oc=5",
         "source": "Google News",
@@ -167,25 +189,11 @@
         "summary": "Anthropic's Valuation Rivals Competitor Amid Corporate AI Shift | 2026 - News and Statistics IndexBox"
       },
       {
-        "title": "What is Claude Design? Anthropic's new AI tool that tanked Adobe and Figma stocks - Mint",
-        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOajZRdkxxRzJnX3ppS3dLZXl0M2pOQWVocENaVm9IVVJKUDRoem5DcGh4RTJNdXVPMEpqdG1NblJlZUVaX002Qm1XZ3hPRGhFZG9QUUVpMmdwU194aHhBYmhxaWpsVHVSc21QaFpHS2R1SlE5MTY5N0h6WDJ4ZThqeXUtUmNNckpDbkV5djExd3BCX19pLU8zdVRDMlBOem5jSVFTam90UlJCVE1Ud2pVY2RlTEhxMzRTTHdqdEF4OXNROUI5TlJKVGR1akJJQng3ZC13MTFkdFkweEw4ZHfSAeMBQVVfeXFMUEszbHJCbHBfR0JUZzFvem1xU1hpckViVGlYWjhUMHhzOE8zeDlwLW9oUzJiRVBUUHd4bjF0UWI3SEU4cC1wWFRydkU3UVBHeW5zekJ5emhESEtFM0JuekdZVWdra0tvSV9iZWxjTGpJVF8zWW0wMUl5YlRHWkNlUzl0TTVndWJEcGcwd0ZhVk1xbDZRLV9QdlZkUTRUMDFBdF9zVjRiRU9uRnV1Q3U5YnBYQ3ZpaGlwTkR6cnNsZDBXS2RiNDBxVF9LcjQ2V1AtcEdUd05NUlV4WnkzQ1hXWnB0WEE?oc=5",
-        "source": "Google News",
-        "published": "2026-04-19T03:33:29.000Z",
-        "summary": "What is Claude Design? Anthropic's new AI tool that tanked Adobe and Figma stocks Mint"
-      },
-      {
         "title": "TrendAI partners with Anthropic on AI security - Vietnam Investment Review - VIR",
         "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOTVFMeE9WcUZUSGc1UjRwYWFwQVBGQ090MWozZWFhdVpOTW0tQ3F0NklFVGlwS2FPUXFCclRNZ2dycnU5SEVTNmNtNHhkTmpWYmExTGZTaFU4OW1jT3R5MlF3ZVZQY3lZZVJmNDdMYndkNFRjVkJNN1FSWEdWbDMyRjNvOA?oc=5",
         "source": "Google News",
         "published": "2026-04-19T03:08:51.000Z",
         "summary": "TrendAI partners with Anthropic on AI security Vietnam Investment Review - VIR"
-      },
-      {
-        "title": "Anthropic’s Claude Opus 4.7, explained; Steep decline in VC funding - YourStory.com",
-        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5kZU5NNzJmOEF4cWhibms5SWNEVXR1Y05QakI4Q3RBLWVORWNDZ1pDRGhRekxGQ3RCeFJTM3BPdFI1dTc3b0lrdXVVR09zNk5NUUlsLUlwQ2psbGM3LXYtR2tCOUVjZ201R19CTm5LcnVPSWs?oc=5",
-        "source": "Google News",
-        "published": "2026-04-19T02:19:56.000Z",
-        "summary": "Anthropic’s Claude Opus 4.7, explained; Steep decline in VC funding YourStory.com"
       },
       {
         "title": "Anthropic Leak Exposes Claude Code Command Injection - Let's Data Science",
@@ -195,26 +203,12 @@
         "summary": "Anthropic Leak Exposes Claude Code Command Injection Let's Data Science"
       },
       {
-        "title": "Anthropic Releases New Claude Design Tool, Internet Explodes - InsideHook",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBrczJFc1hnVGc3LTd6RVoyZ1FiQ21qVHMyQTdqdmJJWkpkODBzU2lZdlJKYnlIUm5XZk5XRjNNenZaVjB1TUtfMUo3bzEtUEJKLWVRWmhQVUZFcWxNMzVmZnh1N25jLTBsclZCYzVtNFZvMGQwTTNXa0l3a9IBgAFBVV95cUxNSTZBeWYzb3VvUXE2WktkOFdIVS1RQ1M2cHpFQW1zdkF4VVdtNGRDUUp5QjlJaXcybzM4RG5vTkowZm0yeEdKb0h6MzlHN05YNVVfUVVhNFNSN2tGSnRnQ2xhdktIRkNaaFRfcDNxTXd3SS1MUXF4MW1vSl9yMXY4Tg?oc=5",
-        "source": "Google News",
-        "published": "2026-04-18T21:54:44.000Z",
-        "summary": "Anthropic Releases New Claude Design Tool, Internet Explodes InsideHook"
-      },
-      {
         "title": "Thoughts and feelings around Claude Design",
         "url": "https://samhenri.gold/blog/20260418-claude-design/",
-        "source": "HN · 311↑",
+        "source": "HN · 336↑",
         "hn_id": "47818700",
         "published": "2026-04-18T19:19:24.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic says Claude Opus 4.7 has a 92% honesty rate, less sycophancy - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9wN1RNSlBKcVFUWVpqVDFVV0YtU2NPajNHbWhKcnczRm56RS1qZk9pODFNRXRZTzhMU3F5UzJuV19LWE5FcWgtM0U4RWs0UnhkWmZyV0JNS21fZVVTNGFHRmZRRTIyUF8ybU91aGdTSngzX184V2puMTZWeGVRdw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-18T17:23:00.000Z",
-        "summary": "Anthropic says Claude Opus 4.7 has a 92% honesty rate, less sycophancy Mashable"
       },
       {
         "title": "Anthropic likely preparing Claude Security for broader release - TestingCatalog",
@@ -345,18 +339,18 @@
         "_kind": "news_video"
       },
       {
-        "title": "Anthropic’s new cybersecurity model could get it back in the government’s good graces",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/914229/tides-turning-anthropic-trump-administration-cybersecurity-mythos-preview",
-        "source": "The Verge",
-        "published": "2026-04-17T20:14:21.000Z",
-        "summary": "The Trump administration has spent nearly two months fighting with AI company Anthropic. It's dubbed the company a \"RADICAL LEFT, WOKE COMPANY\" full of \"Leftwing nut jobs\" and a menace to national…"
-      },
-      {
         "title": "Anthropic Debuts Claude Design for Creating Prototypes, Pitch Decks, and Mockups - MacRumors",
         "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE95bnpyLXQxdzQwZGx2QjA5OUtaUjk3U1FoMkUtcjZUamtyaWJCMzlBNG0tRDRmeFRSZHd5V3N0SVpENEJFcWVodk82OTZ4THI5eGhzaUFqYU9jVGFxdW1rRm1Ya2hUVnEzUUFhbk9R?oc=5",
         "source": "Google News",
         "published": "2026-04-17T20:01:35.000Z",
         "summary": "Anthropic Debuts Claude Design for Creating Prototypes, Pitch Decks, and Mockups MacRumors"
+      },
+      {
+        "title": "Netflix Drops After Forecast; Reed Hastings Exits | Bloomberg Tech 4/17/2026",
+        "url": "https://www.bloomberg.com/news/videos/2026-04-17/bloomberg-tech-4-17-2026-video",
+        "source": "Bloomberg",
+        "published": "2026-04-17T19:56:20.000Z",
+        "summary": "Bloomberg's Caroline Hyde and Ed Ludlow discuss Netflix's lackluster forecast for the second quarter and co-founder Reed Hastings stepping down after 29 years at the company. Plus, the US government…"
       },
       {
         "title": "Claude Design Just Dropped (First Look)",
@@ -369,6 +363,13 @@
         "published": "2026-04-17T18:32:38.000Z",
         "summary": "",
         "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic, Trump Officials Meet to Discuss Mythos Access",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-17/anthropic-s-amodei-to-meet-wiles-with-us-seeking-mythos-access",
+        "source": "Bloomberg",
+        "published": "2026-04-17T17:47:13.000Z",
+        "summary": "The White House said a meeting Friday with Anthropic PBC Chief Executive Officer Dario Amodei was “productive and constructive” as the Trump administration seeks wider access to the company’s…"
       },
       {
         "title": "How Good is Opus 4.7 Really? (New Claude Code Desktop Test)",
@@ -537,18 +538,6 @@
         "published": "2026-04-10T12:52:00.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Welcome to Pragati Kunwer | Claude Code Skills for Non-Coders",
-        "url": "https://www.youtube.com/watch?v=hvdSm5IjjX0",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "hvdSm5IjjX0",
-        "thumbnail": "https://i.ytimg.com/vi/hvdSm5IjjX0/hqdefault.jpg",
-        "published": "2026-04-10T05:48:30.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -638,6 +627,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Claude + Heygen: INSANE Automated Videos! (easy tutorial)",
+        "url": "https://www.youtube.com/watch?v=GnoJaaIHXWU",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "GnoJaaIHXWU",
+        "thumbnail": "https://i.ytimg.com/vi/GnoJaaIHXWU/hqdefault.jpg",
+        "published": "2026-04-19T12:00:22.000Z",
+        "summary": ""
+      },
       {
         "title": "23 INSANE Claude Code Skills... to build your SaaS! (from Gary Tan)",
         "url": "https://www.youtube.com/watch?v=-o73ECZyjqk",
@@ -956,20 +956,21 @@
         "thumbnail": "https://i.ytimg.com/vi/-o3aiNFaMCI/hqdefault.jpg",
         "published": "2026-04-10T12:30:02.000Z",
         "summary": ""
-      },
-      {
-        "title": "Welcome to Pragati Kunwer | Claude Code Skills for Non-Coders",
-        "url": "https://www.youtube.com/watch?v=hvdSm5IjjX0",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "hvdSm5IjjX0",
-        "thumbnail": "https://i.ytimg.com/vi/hvdSm5IjjX0/hqdefault.jpg",
-        "published": "2026-04-10T05:48:30.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "Claude + Heygen: INSANE Automated Videos! (easy tutorial)",
+        "url": "https://www.youtube.com/watch?v=GnoJaaIHXWU",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "GnoJaaIHXWU",
+        "thumbnail": "https://i.ytimg.com/vi/GnoJaaIHXWU/hqdefault.jpg",
+        "published": "2026-04-19T12:00:22.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
       {
         "title": "23 INSANE Claude Code Skills... to build your SaaS! (from Gary Tan)",
         "url": "https://www.youtube.com/watch?v=-o73ECZyjqk",
@@ -1843,11 +1844,11 @@
         "summary": "Ideagen Achieves Market-Leading AI Scores, Leading the EHSQ Software Revolution Business Wire"
       },
       {
-        "title": "Ideagen Sets New Benchmark With Record 85 G2 Winter 2026 Badges and 25 Number One Rankings - Business Wire",
-        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPRG5RYVlBNzZQNXZOeUxESG9xcndCdnlZSV95Z3hQS1pxMWRjNVZhNHZHa0YzRERJeU04YlRHTGI2a1o4TDJRUVR2WFBBNVZQVDdnX2M4cEVOc054eDRNUm9SZjBLb183SFRieDN3TkpBWW1HRDJLTWJsRlAxZmdwMVFFUk92bnUtZ2oyeGZscmFjUU8yYjdUNk1mOWFJMDVGamR0cElnU3VGMUdSWVZZZFJvZlJ6VHczbk1xUnpaQnlyOVcteU1HcmUtMUdFMV85UFVRdkt6ZjNub2l4UEszSg?oc=5",
+        "title": "Ideagen Sets New Benchmark With Record 85 G2 Winter 2026 Badges and 25 Number One Rankings - 01net",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPN2R3RG9GV2UwRUU0bXJGRUJFYndmUlVwSnBMMFlSVUp3amxfREhISHRJT1Qtam9WeGdCR2J6cWJqQmpzUW1wak1yaVlsZXFIU1hsZVlVemRiMTN0b0pueG9XaXVLZVVJWEV4c0ZGb25xVXVUdFdnMkptMkFsdXY0ZW1YMGdqekpXR2ZMRjdYbGd4ekJMNnhScUNkOGh1ZEdxTkRQdjhWdzdGVmlfbmNOYjB3?oc=5",
         "source": "Google News",
         "published": "2025-12-04T08:00:00.000Z",
-        "summary": "Ideagen Sets New Benchmark With Record 85 G2 Winter 2026 Badges and 25 Number One Rankings Business Wire"
+        "summary": "Ideagen Sets New Benchmark With Record 85 G2 Winter 2026 Badges and 25 Number One Rankings 01net"
       },
       {
         "title": "ICAO Amendment Is Transforming Safety Documentation in APAC",
@@ -2004,6 +2005,13 @@
         "summary": "Comply365 acquires Rolls-Royce Safety Management Business AviTrader Aviation News"
       },
       {
+        "title": "Ideagen and MHG partner on healthcare for maritime - Smart Maritime Network",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNNFk1ZEZqQmRQOExDWjAtcTBIUlhHODlIbzZ5U1pqR2NLd2lsZ0hCeE5UMEFRMG53aEp0clRxUEV1MldhX1R3YWowRVJHNVlfY0RCR3phTWE1eGJqdTgtbjY3cjBJMDBxR19fMzA3SUpVaS0wSXlDeW9mZkRWVUppVWdqQmNpLXJLWEJtMmNsQ0dFeEQtRm5yTHdDRQ?oc=5",
+        "source": "Google News",
+        "published": "2025-04-10T07:00:00.000Z",
+        "summary": "Ideagen and MHG partner on healthcare for maritime Smart Maritime Network"
+      },
+      {
         "title": "Maritime and Healthcare Group Partners with Ideagen to Launch Innovative Safety Solution for the Maritime Industry - Business Wire",
         "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQZWRBcjdZU2dVZThqT3hGWExkb0JKQXVIMGtFczJhd0xNVTVQVm54YlJzVS1rSEp6dkFBTGtCZmUzUjdmdkRxLUI2MXZvVkJqRG5XaGJna2E3NEhJa2pDbGJIZml1NmNBWmxhampzTG0yOHBSeGgwd2RhUGFVdzdmVGdnTmw4UFhWclBHejhBS2txQmVoaG9hSWt1RnhwNDRYUGZ3RzNLdXMzaTZucFhZenp1NTRxWXhzUkNtM1RZckVtYTFHR0NVSXk2c1hKUjFKTkw3VFBWbWpKeWtsblN4b3E0ekQxLVptS2ttVTBRVmNsSGdfYU5fb0FBRFZSX2pl?oc=5",
         "source": "Google News",
@@ -2016,16 +2024,16 @@
         "source": "Google News",
         "published": "2025-01-28T08:00:00.000Z",
         "summary": "Comply365 takes over Aviation Safety & Quality Solutions (ASQS) AviTrader Aviation News"
-      },
-      {
-        "title": "Comply365 Announces Acquisition of ASQS - PR Newswire",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQakh0bEVWOEtLTnlOUUNSeHRvNXFPSGFfeEE3OEpqNnNSY2VxMWZWRFZfTEswQXg0TC11czVvQVZYbjJfYW9XdXFuYnNRdjZtd1YwZmNULTRmNU95cklQSENwWDdaelFpcjJfZW9oc0V4LU5aQmhMamIyMXFQMHJud2w1YnJoUDZ2aldzU3Y0Z1FBcmlyT0RKZnVuZw?oc=5",
-        "source": "Google News",
-        "published": "2025-01-27T08:00:00.000Z",
-        "summary": "Comply365 Announces Acquisition of ASQS PR Newswire"
       }
     ],
     "claude_learning": [
+      {
+        "title": "Claude + Heygen: INSANE Automated Videos! (easy tutorial)",
+        "url": "https://www.youtube.com/watch?v=GnoJaaIHXWU",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-04-19T12:00:22.000Z",
+        "summary": ""
+      },
       {
         "title": "23 INSANE Claude Code Skills... to build your SaaS! (from Gary Tan)",
         "url": "https://www.youtube.com/watch?v=-o73ECZyjqk",
@@ -2339,13 +2347,6 @@
         "url": "https://www.youtube.com/watch?v=-o3aiNFaMCI",
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-04-10T12:30:02.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Welcome to Pragati Kunwer | Claude Code Skills for Non-Coders",
-        "url": "https://www.youtube.com/watch?v=hvdSm5IjjX0",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-04-10T05:48:30.000Z",
         "summary": ""
       },
       {
