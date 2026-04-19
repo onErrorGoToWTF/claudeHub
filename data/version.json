@@ -1,7 +1,7 @@
 {
-  "version": "0.6.94",
-  "milestone": "M8.12.24",
-  "milestoneTitle": "Phase 8.12.24 — Tools wrench viewBox widened to 2.5 2.3 19.2 19 so the upper-right handle tip (~y=2.5) and the small diamond at the lower-left are all inside the frame. No more clipping",
-  "deployedAt": "2026-04-19T19:05Z",
+  "version": "0.6.95",
+  "milestone": "M8.12.25",
+  "milestoneTitle": "Phase 8.12.25 — Tools wrench viewBox widened to 1 1 22 22 so the large-radius arcs that bulge past the endpoint coordinates (and the lower-left diamond) all fit. Icon will render a hair smaller relative to Learn/Projects, but nothing clips",
+  "deployedAt": "2026-04-19T19:20Z",
   "commitSha": ""
 }
