@@ -1,7 +1,7 @@
 {
-  "version": "0.6.114",
-  "milestone": "M8.12.44",
-  "milestoneTitle": "Phase 8.12.44 — top-left + bottom ambient darkening switched from neutral black to a warm darker-greige tint rgba(80,72,58) at 0.22/0.16α. Stays in the page's warm-neutral family",
-  "deployedAt": "2026-04-19T23:00Z",
+  "version": "0.6.115",
+  "milestone": "M8.12.45",
+  "milestoneTitle": "Phase 8.12.45 — top + bottom ambient darkening stretched to span full width with only a gentle diagonal bias (top = darker-left, bottom = darker-right). Radial ellipse 180% wide × 50-60% tall with two color stops for smoother falloff; tint stays warm greige rgba(80,72,58)",
+  "deployedAt": "2026-04-19T23:15Z",
   "commitSha": ""
 }

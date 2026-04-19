@@ -203,11 +203,12 @@ body::before {
   content: "";
   position: fixed; inset: 0;
   background:
-    /* M8.12.44 — darker greige bloom at top-left + bottom (not black).
-       Tint stays in the page's warm-neutral family so the composition
-       doesn't read cold. */
-    radial-gradient(58% 42% at 14% 4%,   rgba(80, 72, 58, 0.22) 0%, transparent 72%),
-    radial-gradient(65% 30% at 50% 104%, rgba(80, 72, 58, 0.16) 0%, transparent 74%),
+    /* M8.12.45 — wide, nearly-uniform warm-greige wash across the top
+       and bottom. Very large horizontal radius so the falloff reads
+       even across the width; off-center position points let top lean
+       darker-left and bottom darker-right for a subtle diagonal bias. */
+    radial-gradient(180% 60% at 25% -35%, rgba(80, 72, 58, 0.16) 0%, rgba(80, 72, 58, 0.08) 40%, transparent 85%),
+    radial-gradient(180% 55% at 75% 135%, rgba(80, 72, 58, 0.14) 0%, rgba(80, 72, 58, 0.07) 40%, transparent 85%),
     radial-gradient(40% 32% at 82% 58%,  rgba(255,255,255,0.42) 0%, transparent 74%),
     radial-gradient(54% 40% at 48% 96%,  rgba(255,255,255,0.22) 0%, transparent 78%),
     radial-gradient(72% 44% at 46% -8%,  var(--ambient-warm)    0%, transparent 60%),
