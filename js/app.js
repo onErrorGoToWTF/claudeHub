@@ -529,6 +529,22 @@
     }
   }
 
+  // M7.7: static dashboard panels + hero chart cards need activation too.
+  // They aren't rendered through render*() — register them on init so they
+  // pick up the .in-view photon-bloom when scrolled into the activation band.
+  function registerStaticActivations() {
+    document.querySelectorAll(".dash-panel, .hero").forEach((el, i) => {
+      if (!revealIO) { el.classList.add("in-view"); return; }
+      revealIO.observe(el);
+      el.addEventListener("transitionend", () => { el.style.willChange = ""; }, { once: true });
+    });
+  }
+  if (document.readyState !== "loading") {
+    registerStaticActivations();
+  } else {
+    document.addEventListener("DOMContentLoaded", registerStaticActivations, { once: true });
+  }
+
   // ---------- Skeletons ----------
   function showSkeletons() {
     const tpl = document.getElementById("tpl-skeleton");

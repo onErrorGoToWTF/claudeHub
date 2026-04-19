@@ -363,9 +363,62 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   --glass-saturate: 180%;
   --glass-alpha: 0.62;
 }
+/* Elevated glass — modals/popovers that rise above page content. Stronger
+   blur, heavier drop shadow, more pronounced top specular. */
+.glass-elevated {
+  --glass-blur: 36px;
+  --glass-saturate: 190%;
+}
+.glass-elevated {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 24px 60px -16px rgba(0,0,0,0.72),
+    0 4px 14px -6px rgba(0,0,0,0.4);
+}
+:root[data-theme="light"] .glass-elevated {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    0 24px 60px -16px rgba(30,20,10,0.22),
+    0 4px 14px -6px rgba(30,20,10,0.12);
+}
 .glass-pill { border-radius: var(--radius-sm); }
 @supports not (backdrop-filter: blur(1px)) {
   .glass { background: rgba(30,27,22,0.88); }
+}
+
+/* ===== Scroll activation — "electrons emitting photons" (M7.7) =====
+   Elevated panels pick up a subtle warm-amber photon bloom + lift when
+   they enter the viewport activation band. Reuses the existing
+   .reveal / .in-view machinery driven by revealIO. Honor reduced-motion:
+   the bloom jumps to final state with no transition. */
+.dash-panel,
+.hero {
+  transition:
+    transform 0.4s var(--ease-premium),
+    box-shadow 0.5s var(--ease-premium),
+    border-color 0.3s var(--ease-premium);
+}
+.dash-panel.in-view {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.07),
+    0 10px 28px -10px rgba(0,0,0,0.55),
+    0 0 44px -14px rgba(255,180,90,0.18);
+}
+.hero.in-view {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.07),
+    0 12px 32px -12px rgba(0,0,0,0.55),
+    0 0 52px -16px rgba(255,180,90,0.16);
+}
+:root[data-theme="light"] .dash-panel.in-view,
+:root[data-theme="light"] .hero.in-view {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    0 10px 28px -12px rgba(40,30,16,0.16),
+    0 0 44px -14px rgba(255,160,70,0.12);
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash-panel, .hero { transition: none; }
 }
 /* Specular edge light — fakes a thin lit border at the top-left */
 .glass::before {
