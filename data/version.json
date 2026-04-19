@@ -1,7 +1,7 @@
 {
-  "version": "0.6.84",
-  "milestone": "M8.12.14",
-  "milestoneTitle": "Phase 8.12.14 — section-head stripes go absolute + bleed under title. First stripe widens 8→16px; h2 padding-left 14px keeps title anchored at original indent while stripes extend to 36.5px, overlapping the title letters (behind, via z-index -1 in an isolated stacking context)",
-  "deployedAt": "2026-04-19T16:45Z",
+  "version": "0.6.85",
+  "milestone": "M8.12.15",
+  "milestoneTitle": "Phase 8.12.15 — section-head stripes replaced with a single soft radial bloom of the identity color behind the first ~90px of the heading. No chrome, no shapes — ambient tint that fades to transparent before the title ends; neutral dominance preserved",
+  "deployedAt": "2026-04-19T17:00Z",
   "commitSha": ""
 }

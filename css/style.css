@@ -458,32 +458,31 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   color: var(--text-1);
   position: relative;
   isolation: isolate;
-  padding-left: 14px;
 }
-/* M8.12.14 — section-head accent: 6-band halving echo, wider first
-   stripe (16px), uniform 1px gaps. Absolutely positioned so the
-   title text stays anchored at its original 14px indent and the
-   stripes BLEED BEHIND it — first stripe overlaps the title by ~2px,
-   subsequent fading stripes lie fully behind the letters. Color
-   source: --band (set per-section below). */
+/* M8.12.15 — section-head accent: a single soft radial bloom of the
+   section's identity color behind the first ~90px of the heading.
+   No hard shapes, no stripes — reads as ambient tint under the letters
+   that fades to transparent well before the end of the title. Keeps the
+   neutral-dominant design language while still giving each section a
+   subtle colored presence. Color source: --band (set per-section). */
 .section-head h2::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: -24px;
   top: 50%;
   transform: translateY(-50%);
-  width: 36.5px; height: 22px;
+  width: 140px;
+  height: 72px;
   z-index: -1;
+  pointer-events: none;
   --band: var(--sec, var(--text-3));
-  background:
-    linear-gradient(var(--band) 0 0)                                      0    50% / 16px  100%,
-    linear-gradient(color-mix(in srgb, var(--band) 50%, transparent) 0 0) 17px 50% / 8px   100%,
-    linear-gradient(color-mix(in srgb, var(--band) 25%, transparent) 0 0) 26px 50% / 4px   100%,
-    linear-gradient(color-mix(in srgb, var(--band) 13%, transparent) 0 0) 31px 50% / 2px   100%,
-    linear-gradient(color-mix(in srgb, var(--band)  6%, transparent) 0 0) 34px 50% / 1px   100%,
-    linear-gradient(color-mix(in srgb, var(--band)  3%, transparent) 0 0) 36px 50% / 0.5px 100%;
-  background-repeat: no-repeat;
-  background-color: transparent;
+  background: radial-gradient(
+    ellipse 70px 30px at 42px 50%,
+    color-mix(in srgb, var(--band) 26%, transparent) 0%,
+    color-mix(in srgb, var(--band) 14%, transparent) 35%,
+    color-mix(in srgb, var(--band)  6%, transparent) 60%,
+    transparent 78%
+  );
 }
 /* Section-head accent matches the tab's rainbow color. */
 .section[data-section="home"]      .section-head h2::before { --band: var(--text-3); }
@@ -512,7 +511,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
     flex-wrap: nowrap;
   }
   .section-head h2 { font-size: 23px; line-height: 1.15; letter-spacing: -0.02em; }
-  .section-head h2::before { height: 18px; }
+  .section-head h2::before { height: 60px; }
   .section-head-actions { gap: 4px; flex-wrap: nowrap; }
   .section-head-actions .subpills { gap: 2px; padding: 2px; }
   .section-head-actions .subpill { padding: 6px 11px; font-size: 13px; min-height: 32px; }
