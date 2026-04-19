@@ -5378,35 +5378,43 @@ body.modal-open { overflow: hidden; }
   text-transform: uppercase;
   text-align: center;
 }
-/* Benchmark selector pills — double as carousel pager. */
-.faceoff-bench-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 0 0 14px;
+/* Carousel wrap holds the slides + the left/right glass arrows. */
+.faceoff-carousel-wrap {
+  position: relative;
 }
-.faceoff-bench-pill {
-  appearance: none;
-  padding: 6px 12px;
-  min-height: 32px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: transparent;
+.faceoff-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--glass-hairline);
+  background: color-mix(in srgb, var(--bg-1) 72%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+          backdrop-filter: blur(18px) saturate(170%);
   color: var(--text-2);
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: -0.003em;
   cursor: pointer;
   touch-action: manipulation;
-  transition: color 0.2s var(--ease-premium), border-color 0.2s var(--ease-premium), background 0.2s var(--ease-premium);
-  white-space: nowrap;
+  z-index: 2;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset,
+              0 6px 18px -8px rgba(0,0,0,0.55);
+  transition: color 0.2s var(--ease-premium), border-color 0.2s var(--ease-premium), opacity 0.25s var(--ease-premium), transform 0.18s var(--ease-premium);
 }
-.faceoff-bench-pill:hover { color: var(--text-1); border-color: var(--border-strong); }
-.faceoff-bench-pill.is-active {
+.faceoff-arrow-prev { left: -6px; }
+.faceoff-arrow-next { right: -6px; }
+.faceoff-arrow:hover {
   color: var(--text-1);
-  background: color-mix(in srgb, var(--text-1) 7%, transparent);
   border-color: var(--border-strong);
+}
+.faceoff-arrow:active { transform: translateY(-50%) scale(0.93); }
+.faceoff-arrow[disabled] {
+  opacity: 0.28;
+  cursor: default;
+  pointer-events: none;
 }
 
 /* ===== (Legacy grouped-bars face-off kept for now, unused) ===== */

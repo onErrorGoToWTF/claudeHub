@@ -3318,19 +3318,9 @@
   function renderLlmFaceoff() {
     const host = document.getElementById("faceoff");
     if (!host) return;
-    // Benchmark pills double as the carousel selector — tap a pill to
-    // jump to that slide, active pill mirrors scroll position. Model
-    // legend is dropped because each carousel row already labels its
-    // model in its own brand color.
-    const pillsHtml = `
-      <div class="faceoff-bench-pills" role="tablist" aria-label="Select benchmark">
-        ${FACEOFF_BENCHES.map((b, i) => `
-          <button type="button" class="faceoff-bench-pill${i === faceoffBenchIdx ? " is-active" : ""}" data-bench-idx="${i}" role="tab" aria-selected="${i === faceoffBenchIdx ? "true" : "false"}">${escapeHtml(b.label)}</button>
-        `).join("")}
-      </div>
-    `;
     // All bench faces rendered into the carousel at once; scroll-snap
-    // picks one. Each face is a full-width slide.
+    // picks one. Each face is a full-width slide. Each slide's own
+    // header labels the benchmark — no separate selector needed.
     const facesHtml = FACEOFF_BENCHES.map((b, i) => {
       const rowsHtml = FACEOFF_MODELS.map((m, mi) => {
         const v = b.vals[mi];
@@ -3359,21 +3349,34 @@
       `;
     }).join("");
     host.innerHTML = `
-      ${pillsHtml}
-      <div class="faceoff-carousel" id="faceoff-carousel" role="region" aria-label="Benchmark carousel">
-        ${facesHtml}
+      <div class="faceoff-carousel-wrap">
+        <button type="button" class="faceoff-arrow faceoff-arrow-prev" aria-label="Previous benchmark">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="faceoff-carousel" id="faceoff-carousel" role="region" aria-label="Benchmark carousel">
+          ${facesHtml}
+        </div>
+        <button type="button" class="faceoff-arrow faceoff-arrow-next" aria-label="Next benchmark">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
     `;
     const scroller = document.getElementById("faceoff-carousel");
-    // Pills jump the scroller to a slide.
-    host.querySelectorAll(".faceoff-bench-pill").forEach((p) => {
-      p.addEventListener("click", (e) => {
-        e.preventDefault();
-        const idx = Number(p.dataset.benchIdx);
-        scrollFaceoffTo(idx);
-      });
+    const prevBtn  = host.querySelector(".faceoff-arrow-prev");
+    const nextBtn  = host.querySelector(".faceoff-arrow-next");
+    const updateArrows = () => {
+      if (prevBtn) prevBtn.disabled = faceoffBenchIdx <= 0;
+      if (nextBtn) nextBtn.disabled = faceoffBenchIdx >= FACEOFF_BENCHES.length - 1;
+    };
+    if (prevBtn) prevBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      scrollFaceoffTo(faceoffBenchIdx - 1);
     });
-    // Keep pill selection in sync with scroll position.
+    if (nextBtn) nextBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      scrollFaceoffTo(faceoffBenchIdx + 1);
+    });
+    // Keep arrow disabled-state in sync with scroll position.
     if (scroller) {
       let scrollRaf;
       scroller.addEventListener("scroll", () => {
@@ -3383,18 +3386,15 @@
           const idx = Math.round(scroller.scrollLeft / w);
           if (idx !== faceoffBenchIdx) {
             faceoffBenchIdx = idx;
-            host.querySelectorAll(".faceoff-bench-pill").forEach((p, i) => {
-              p.classList.toggle("is-active", i === faceoffBenchIdx);
-              p.setAttribute("aria-selected", i === faceoffBenchIdx ? "true" : "false");
-            });
+            updateArrows();
           }
         });
       }, { passive: true });
-      // Initial scroll position reflects the persisted index.
       if (faceoffBenchIdx !== 0) {
         scroller.scrollTo({ left: scroller.clientWidth * faceoffBenchIdx, behavior: "auto" });
       }
     }
+    updateArrows();
   }
 
   function scrollFaceoffTo(idx) {
