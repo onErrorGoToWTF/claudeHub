@@ -1,21 +1,23 @@
-/* ===== Tokens (dark-first) — M7.6 warmed toward charcoal, less neutral blue-black.
-   Bases carry a sliver of warm hue so the page reads as "charcoal" rather than
-   "pure black"; hairlines and text follow the same temperature shift. ===== */
+/* ===== Tokens (dark-first) — Klack-inspired neutral charcoal palette.
+   60-30-10 rule: bg/surfaces are neutral, accents come only via tab
+   colors and a single ambient warm glow. Not pure black — bg-0 sits at
+   #151513 so the page reads as "deep charcoal" with a barely-there warm
+   cast rather than blue-black or pure-black. ===== */
 :root {
-  --bg-0: #0c0b09;
-  --bg-1: #16140f;
-  --bg-2: #1f1c16;
-  --bg-3: #2a2620;
-  --surface:         rgba(31,28,22,0.62);
-  --surface-strong:  rgba(42,38,32,0.80);
-  --surface-elev:    rgba(52,47,40,0.84);
+  --bg-0: #151513;   /* page base — deep charcoal, minimal warm cast */
+  --bg-1: #1c1c1a;   /* card base */
+  --bg-2: #23231f;   /* card elevated */
+  --bg-3: #2e2e2a;   /* hover / second-elevation */
+  --surface:         rgba(28,28,26,0.62);
+  --surface-strong:  rgba(42,42,38,0.80);
+  --surface-elev:    rgba(52,52,48,0.84);
 
-  --text-1: #f1efea;
-  --text-2: #b4b0a6;
-  --text-3: #7b766b;
+  --text-1: #f2f0ec;
+  --text-2: #b0ada4;
+  --text-3: #78756c;
 
-  --border:        rgba(255,244,224,0.05);
-  --border-strong: rgba(255,244,224,0.12);
+  --border:        rgba(255,250,240,0.06);
+  --border-strong: rgba(255,250,240,0.12);
 
   /* ===== Semantic color families (dark) — 5 tokens per family ===== */
   /* Electric cyan — hero chrome accent (all generic UI activation) */
@@ -157,18 +159,19 @@
   --glass-saturate: 170%;
   --glass-alpha:    0.52;
   --glass-hairline: rgba(255,244,224,0.12);
-  /* Warm-charcoal gradient stops for .glass (dark). Light-mode overrides below. */
-  --glass-top:        rgba(30,27,22,0.62);
-  --glass-bottom:     rgba(18,16,12,0.48);
-  --glass-fallback:   rgba(30,27,22,0.88);
+  /* Glass gradient stops — deep charcoal (dark). Light-mode overrides below. */
+  --glass-top:        rgba(35,35,31,0.64);
+  --glass-bottom:     rgba(22,22,20,0.50);
+  --glass-fallback:   rgba(28,28,26,0.92);
   /* Nav bar uses the same family but more transparent so content blurs through. */
-  --chips-glass-top:    rgba(30,27,22,0.42);
-  --chips-glass-bottom: rgba(18,16,12,0.28);
-  /* Ambient body glow — amber top-left, plasma bottom-right. */
-  --ambient-warm:    rgba(255,180,90,0.13);
-  --ambient-plasma:  rgba(190,140,255,0.10);
-  /* Scroll-activation photon bloom — warm amber wash applied to in-view panels. */
-  --bloom-warm:      rgba(255,180,90,0.18);
+  --chips-glass-top:    rgba(35,35,31,0.44);
+  --chips-glass-bottom: rgba(22,22,20,0.30);
+  /* Ambient body glow — soft warm top-left, cool bottom-right. Kept low
+     alpha to stay in the "10%" accent budget of the 60-30-10 rule. */
+  --ambient-warm:    rgba(240,180,100,0.08);
+  --ambient-plasma:  rgba(150,170,200,0.06);
+  /* Scroll-activation photon bloom — very subtle warm wash. */
+  --bloom-warm:      rgba(240,180,100,0.11);
 
   --safe-t: env(safe-area-inset-top);
   --safe-b: env(safe-area-inset-bottom);
@@ -177,32 +180,33 @@
 }
 
 :root[data-theme="light"] {
-  /* M7.6 — greige: warm taupe-neutral off-white instead of cool gray. */
-  --bg-0: #ece8dd;
-  --bg-1: #f3efe5;
-  --bg-2: #fbf7ee;
-  --bg-3: #ffffff;
-  --surface:        rgba(255,251,242,0.82);
-  --surface-strong: rgba(255,251,242,0.94);
+  /* Klack-inspired: warm off-white page (#f8f6f3), greige for cards
+     (#ede9e4) so cards have natural depth against the page. */
+  --bg-0: #f8f6f3;    /* page base — warm off-white */
+  --bg-1: #ede9e4;    /* card base — greige */
+  --bg-2: #ffffff;    /* card elevated — pure white */
+  --bg-3: #ffffff;    /* second elevation */
+  --surface:        rgba(255,255,255,0.86);
+  --surface-strong: rgba(255,255,255,0.96);
   --surface-elev:   #ffffff;
 
-  --text-1: #141210;
-  --text-2: rgba(20,18,16,0.62);
-  --text-3: rgba(20,18,16,0.32);
+  --text-1: #1a1816;
+  --text-2: rgba(26,24,22,0.64);
+  --text-3: rgba(26,24,22,0.36);
 
-  --border:        rgba(40,30,16,0.08);
-  --border-strong: rgba(40,30,16,0.16);
+  --border:        rgba(30,24,16,0.08);
+  --border-strong: rgba(30,24,16,0.16);
 
-  /* Light-mode glass + ambient overrides (tokens). Greige page → the
-     glass gradient is a very-pale warm white; ambient alphas drop. */
-  --glass-top:        rgba(255,251,242,0.80);
-  --glass-bottom:     rgba(250,244,230,0.68);
-  --glass-fallback:   rgba(255,251,242,0.92);
-  --chips-glass-top:    rgba(255,251,242,0.68);
-  --chips-glass-bottom: rgba(250,244,230,0.54);
-  --ambient-warm:    rgba(255,160,70,0.08);
-  --ambient-plasma:  rgba(170,110,230,0.06);
-  --bloom-warm:      rgba(255,160,70,0.12);
+  /* Light-mode glass + ambient (tokens). Glass reads as very-pale warm
+     white with the greige/white base behind it. Ambient alphas drop. */
+  --glass-top:        rgba(255,255,255,0.82);
+  --glass-bottom:     rgba(245,242,236,0.70);
+  --glass-fallback:   rgba(255,255,255,0.94);
+  --chips-glass-top:    rgba(255,255,255,0.72);
+  --chips-glass-bottom: rgba(245,242,236,0.56);
+  --ambient-warm:    rgba(240,170,70,0.05);
+  --ambient-plasma:  rgba(130,150,180,0.04);
+  --bloom-warm:      rgba(240,170,70,0.09);
 
   /* ===== Semantic color families (light) ===== */
   --color-electric-surface:       rgba(48,176,199,0.12);
@@ -403,6 +407,49 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .glass-pill { border-radius: var(--radius-sm); }
 @supports not (backdrop-filter: blur(1px)) {
   .glass { background: var(--glass-fallback); }
+}
+
+/* ===== Contrast cameo — Klack-style inverted section =====
+   A panel marked data-cameo="invert" flips the neutrals against the
+   surrounding page: on a warm-white light page the cameo becomes a
+   deep-charcoal card; in dark mode the cameo turns into a warm-white
+   card. Glass/chart colors inside inherit the cameo tokens, so charts
+   sit on the inverted surface cleanly. Chart MODEL_COL stays locked. */
+[data-cameo="invert"] {
+  /* Default: we're in dark page → cameo reads as a light card. */
+  --bg-0: #f8f6f3;
+  --bg-1: #ede9e4;
+  --bg-2: #ffffff;
+  --bg-3: #ffffff;
+  --text-1: #1a1816;
+  --text-2: rgba(26,24,22,0.64);
+  --text-3: rgba(26,24,22,0.36);
+  --border:        rgba(30,24,16,0.10);
+  --border-strong: rgba(30,24,16,0.18);
+  --glass-top:    rgba(255,255,255,0.82);
+  --glass-bottom: rgba(245,242,236,0.70);
+  --glass-fallback: rgba(255,255,255,0.94);
+  color: var(--text-1);
+  background: var(--bg-1);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+:root[data-theme="light"] [data-cameo="invert"] {
+  /* Flipped: we're on a warm-white page → cameo reads as deep charcoal. */
+  --bg-0: #151513;
+  --bg-1: #1c1c1a;
+  --bg-2: #23231f;
+  --bg-3: #2e2e2a;
+  --text-1: #f2f0ec;
+  --text-2: #b0ada4;
+  --text-3: #78756c;
+  --border:        rgba(255,250,240,0.08);
+  --border-strong: rgba(255,250,240,0.14);
+  --glass-top:    rgba(35,35,31,0.64);
+  --glass-bottom: rgba(22,22,20,0.50);
+  --glass-fallback: rgba(28,28,26,0.92);
+  color: var(--text-1);
+  background: var(--bg-1);
 }
 
 /* ===== Scroll activation — "electrons emitting photons" (M7.7) =====
@@ -1882,19 +1929,22 @@ body.modal-open { overflow: hidden; }
 .dash-panel-body { display: grid; gap: 6px; }
 .dash-panel .dash-action { margin-top: 4px; }
 .dash-charts-panel {
-  padding: 4px 0 0;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
-.dash-charts-panel::before { display: none; }
 .dash-charts-panel > .dash-panel-head {
   padding: 0 2px 4px;
 }
 .dash-charts-panel > .hero { margin: 0; }
+/* Without cameo this panel is a quiet transparent container. */
+.dash-charts-panel:not([data-cameo]) {
+  padding: 4px 0 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.dash-charts-panel:not([data-cameo])::before { display: none; }
 /* Legacy dash-card kept as alias while any remaining references resolve. */
 .dash-card { padding: 20px 20px 18px; display: flex; flex-direction: column; gap: 10px; }
 
