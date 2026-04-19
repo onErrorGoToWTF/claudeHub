@@ -10,7 +10,6 @@
   const LESSONS_URL  = "data/learn/lessons.json?v="  + Date.now();
   const USECASES_URL = "data/learn/usecases.json?v=" + Date.now();
   const VERSION_URL = "data/version.json?v=" + Date.now();
-  const THEME_KEY = "cdih-theme";
 
   // Tool-catalog modality vocabulary. "all" is the default filter.
   // Order here drives the filter-pill order in the UI.
@@ -252,25 +251,9 @@
     "tool-app": "App built on a model",
   };
 
-  // ---------- Theme (dark-first; opt-in to light) ----------
-  const root = document.documentElement;
-  // Default to LIGHT mode — user is iterating on it and prefers it.
-  // Dark is opt-in via the toggle (persists in localStorage).
-  const stored = localStorage.getItem(THEME_KEY);
-  if (stored !== "dark") root.setAttribute("data-theme", "light");
-
-  document.getElementById("theme-toggle").addEventListener("click", () => {
-    const isLight = root.getAttribute("data-theme") === "light";
-    if (isLight) {
-      root.removeAttribute("data-theme");
-      localStorage.setItem(THEME_KEY, "dark");
-    } else {
-      root.setAttribute("data-theme", "light");
-      localStorage.setItem(THEME_KEY, "light");
-    }
-    const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", isLight ? "#0a0a0d" : "#f2f2f7");
-  });
+  // Light mode only (M8.11). Dark-mode toggle + persistence removed.
+  // The data-theme="light" attribute is hardcoded on <html> so all
+  // existing :root[data-theme="light"] CSS continues to apply.
 
   // ---------- Filters ----------
   // Matches main section chips AND the topbar YouTube button (both carry data-filter).

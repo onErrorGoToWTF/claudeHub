@@ -663,9 +663,10 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   font-size: 13px; font-weight: 500;
   letter-spacing: -0.003em;
   color: var(--text-3);
-  background: transparent;
-  border: 1px solid transparent;
-  transition: color 0.2s var(--ease), background 0.2s var(--ease), border-color 0.2s var(--ease), transform 0.16s var(--ease);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 6px -3px rgba(0,0,0,0.12);
+  transition: color 0.2s var(--ease), background 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.25s var(--ease), transform 0.16s var(--ease);
   scroll-snap-align: start;
   touch-action: manipulation;
   position: relative;
