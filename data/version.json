@@ -1,7 +1,7 @@
 {
-  "version": "0.6.66",
-  "milestone": "M8.11",
-  "milestoneTitle": "Phase 8.11 — light-mode only: theme toggle removed from nav; data-theme=\"light\" pinned on <html>; JS theme code gone",
-  "deployedAt": "2026-04-19T11:55Z",
+  "version": "0.6.67",
+  "milestone": "M8.11.1",
+  "milestoneTitle": "Phase 8.11.1 — CSS dark-mode purge: :root block is now light-only; every :root[data-theme=\"light\"] override merged into base; cameo utility removed; data-theme attribute dropped from <html>",
+  "deployedAt": "2026-04-19T12:15Z",
   "commitSha": ""
 }

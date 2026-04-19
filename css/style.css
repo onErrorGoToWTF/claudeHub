@@ -1,191 +1,8 @@
-/* ===== Tokens (dark-first) — Klack-inspired neutral charcoal palette.
-   60-30-10 rule: bg/surfaces are neutral, accents come only via tab
-   colors and a single ambient warm glow. Not pure black — bg-0 sits at
-   #151513 so the page reads as "deep charcoal" with a barely-there warm
-   cast rather than blue-black or pure-black. ===== */
+/* ===== Tokens (light-only — M8.11.1 after dark-mode purge) =====
+   60-30-10: neutral bg/surfaces, accents only via tab colors + a
+   single warm ambient. Page is light neutral-gray; panel cards sit
+   a hair darker than the page; charts stay pure white for max pop. */
 :root {
-  --bg-0: #151513;   /* page base — deep charcoal, minimal warm cast */
-  --bg-1: #1c1c1a;   /* card base */
-  --bg-2: #23231f;   /* card elevated */
-  --bg-3: #2e2e2a;   /* hover / second-elevation */
-  --surface:         rgba(28,28,26,0.62);
-  --surface-strong:  rgba(42,42,38,0.80);
-  --surface-elev:    rgba(52,52,48,0.84);
-
-  --text-1: #f2f0ec;
-  --text-2: #b0ada4;
-  --text-3: #78756c;
-
-  --border:        rgba(255,250,240,0.06);
-  --border-strong: rgba(255,250,240,0.12);
-
-  /* ===== Semantic color families (dark) — 5 tokens per family ===== */
-  /* Electric cyan — hero chrome accent (all generic UI activation) */
-  --color-electric-surface:       rgba(64,200,224,0.10);
-  --color-electric-border:        rgba(64,200,224,0.40);
-  --color-electric-solid:         #40c8e0;
-  --color-electric-solid-hover:   #64dff5;
-  --color-electric-text:          #40c8e0;
-
-  /* Info (systemBlue) */
-  --color-info-surface:           rgba(10,132,255,0.10);
-  --color-info-border:            rgba(10,132,255,0.40);
-  --color-info-solid:             #0a84ff;
-  --color-info-solid-hover:       #3aa0ff;
-  --color-info-text:              #0a84ff;
-
-  /* Success (systemGreen) */
-  --color-success-surface:        rgba(48,209,88,0.10);
-  --color-success-border:         rgba(48,209,88,0.40);
-  --color-success-solid:          #30d158;
-  --color-success-solid-hover:    #5ee07e;
-  --color-success-text:           #30d158;
-
-  /* Warning (systemAmber) */
-  --color-warning-surface:        rgba(251,191,36,0.10);
-  --color-warning-border:         rgba(251,191,36,0.40);
-  --color-warning-solid:          #fbbf24;
-  --color-warning-solid-hover:    #ffd35a;
-  --color-warning-text:           #fbbf24;
-
-  /* Critical (systemRed) */
-  --color-critical-surface:       rgba(255,69,58,0.10);
-  --color-critical-border:        rgba(255,69,58,0.40);
-  --color-critical-solid:         #ff453a;
-  --color-critical-solid-hover:   #ff6e65;
-  --color-critical-text:          #ff453a;
-
-  /* Claude brand (content only — never chrome) */
-  --color-claude-surface:         rgba(255,122,61,0.10);
-  --color-claude-border:          rgba(255,122,61,0.40);
-  --color-claude-solid:           #ff7a3d;
-  --color-claude-solid-hover:     #ffa06e;
-  --color-claude-text:            #ff7a3d;
-
-  /* 365 brand (content only — never chrome) */
-  --color-365-surface:            rgba(166,132,255,0.10);
-  --color-365-border:             rgba(166,132,255,0.40);
-  --color-365-solid:              #a684ff;
-  --color-365-solid-hover:        #c4a8ff;
-  --color-365-text:               #a684ff;
-
-  /* Model-compare charts only */
-  --color-model-openai-surface:   rgba(20,184,166,0.10);
-  --color-model-openai-border:    rgba(20,184,166,0.40);
-  --color-model-openai-solid:     #14b8a6;
-  --color-model-openai-solid-hover:#2ad1be;
-  --color-model-openai-text:      #14b8a6;
-
-  --color-model-google-surface:   rgba(74,144,255,0.10);
-  --color-model-google-border:    rgba(74,144,255,0.40);
-  --color-model-google-solid:     #4a90ff;
-  --color-model-google-solid-hover:#6ba6ff;
-  --color-model-google-text:      #4a90ff;
-
-  --color-model-xai-surface:      rgba(232,121,249,0.10);
-  --color-model-xai-border:       rgba(232,121,249,0.40);
-  --color-model-xai-solid:        #e879f9;
-  --color-model-xai-solid-hover:  #f098ff;
-  --color-model-xai-text:         #e879f9;
-
-  /* ===== Tab identity colors (chip/topbar active states) ===== */
-  --color-learn-solid:       #22c55e;                  /* True green, no blue tint (dark) */
-  --color-learn-surface:     rgba(34,197,94,0.10);
-  --color-learn-border:      rgba(34,197,94,0.40);
-  --color-learn-glow:        rgba(34,197,94,0.28);
-
-  --color-youtube-solid:     #ff453a;                  /* Apple systemRed dark */
-  --color-youtube-surface:   rgba(255,69,58,0.10);
-  --color-youtube-border:    rgba(255,69,58,0.40);
-  --color-youtube-glow:      rgba(255,69,58,0.28);
-
-  --color-tools-solid:       #ffd60a;                  /* Apple systemYellow dark */
-  --color-tools-surface:     rgba(255,214,10,0.10);
-  --color-tools-border:      rgba(255,214,10,0.40);
-  --color-tools-glow:        rgba(255,214,10,0.28);
-
-  --color-projects-solid:    #0a84ff;                  /* Apple systemBlue dark */
-  --color-projects-surface:  rgba(10,132,255,0.10);
-  --color-projects-border:   rgba(10,132,255,0.40);
-  --color-projects-glow:     rgba(10,132,255,0.28);
-
-  --color-path-best-solid:   #30d158;                  /* Apple systemGreen dark — Best path */
-  --color-path-best-surface: rgba(48,209,88,0.10);
-  --color-path-best-border:  rgba(48,209,88,0.40);
-  --color-path-best-glow:    rgba(48,209,88,0.28);
-
-  --color-365-glow:          rgba(166,132,255,0.28);   /* purple — Comply365 tab */
-
-  /* ===== Glow tokens (reserved; no component uses them after M6.6) ===== */
-  --glow-soft:  0 0 18px -6px rgba(64,200,224,0.12);
-  --glow-hero:  0 0 24px -4px rgba(64,200,224,0.28);
-  --glow-focus: 0 0 0 3px rgba(64,200,224,0.22);
-
-  /* ===== Legacy compat — aliases mapping old tokens onto new families ===== */
-  --accent:             var(--color-electric-solid);          /* legacy compat */
-  --accent-hi:          var(--color-electric-solid-hover);    /* legacy compat */
-  --accent-ink:         #ffffff;                              /* legacy compat */
-  --accent-soft:        var(--color-electric-surface);        /* legacy compat */
-  --accent-glow:        rgba(64,200,224,0.18);                /* legacy compat */
-
-  --accent-365:         var(--color-365-solid);               /* legacy compat */
-  --accent-365-hi:      var(--color-365-solid-hover);         /* legacy compat */
-  --accent-365-ink:     #1a0d2d;                              /* legacy compat */
-  --accent-365-soft:    var(--color-365-surface);             /* legacy compat */
-  --accent-365-glow:    rgba(166,132,255,0.14);               /* legacy compat */
-
-  --accent-claude:      var(--color-claude-solid);            /* legacy compat */
-  --accent-claude-hi:   var(--color-claude-solid-hover);      /* legacy compat */
-  --accent-claude-soft: var(--color-claude-surface);          /* legacy compat */
-  --accent-claude-glow: rgba(255,122,61,0.16);                /* legacy compat */
-
-  --danger:        var(--color-critical-solid);               /* legacy compat */
-  --success:       var(--color-success-solid);                /* legacy compat */
-
-  --radius-sm:   6px;
-  --radius-md:   10px;
-  --radius-lg:   14px;
-  --radius-pill: 9999px;
-
-  --ease:          cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-spring:   cubic-bezier(0.34, 1.2, 0.64, 1);
-  --ease-premium: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --ease-lensing: cubic-bezier(0.2, 0.7, 0.2, 1);
-
-  --blur:        blur(22px) saturate(140%);
-  --blur-strong: blur(30px) saturate(140%);
-
-  --glass-blur:     24px;
-  --glass-saturate: 170%;
-  --glass-alpha:    0.52;
-  --glass-hairline: rgba(255,244,224,0.12);
-  /* Glass gradient stops — deep charcoal (dark). Light-mode overrides below. */
-  --glass-top:        rgba(35,35,31,0.64);
-  --glass-bottom:     rgba(22,22,20,0.50);
-  --glass-fallback:   rgba(28,28,26,0.92);
-  /* Nav bar uses the same family but more transparent so content blurs through. */
-  --chips-glass-top:    rgba(35,35,31,0.44);
-  --chips-glass-bottom: rgba(22,22,20,0.30);
-  /* Ambient body glow — soft warm top-left, cool bottom-right. Kept low
-     alpha to stay in the "10%" accent budget of the 60-30-10 rule. */
-  --ambient-warm:    rgba(240,180,100,0.08);
-  --ambient-plasma:  rgba(150,170,200,0.06);
-  /* Scroll-activation photon bloom — very subtle warm wash. */
-  --bloom-warm:      rgba(240,180,100,0.11);
-  /* Chart cards pop against the page: darker-than-page in dark mode. */
-  --chart-card-bg:     #0a0a09;
-  --chart-card-border: rgba(255,250,240,0.08);
-
-  --safe-t: env(safe-area-inset-top);
-  --safe-b: env(safe-area-inset-bottom);
-  --safe-l: env(safe-area-inset-left);
-  --safe-r: env(safe-area-inset-right);
-}
-
-:root[data-theme="light"] {
-  /* Lighter, more neutral-gray page (M8.10.6). Panel cards sit just
-     a hair darker than the page so the bg/card contrast is subtle.
-     Charts stay pure white — max contrast vs the page, maximum pop. */
   --bg-0: #eeece7;    /* page base — light neutral gray, minimal warm */
   --bg-1: #e7e4dd;    /* card base — just a touch darker than page */
   --bg-2: #ffffff;    /* chip / CTA elevated — pure white (top of stack) */
@@ -215,7 +32,7 @@
   --chart-card-bg:     #ffffff;
   --chart-card-border: rgba(30,24,16,0.10);
 
-  /* ===== Semantic color families (light) ===== */
+  /* ===== Semantic color families ===== */
   --color-electric-surface:       rgba(48,176,199,0.12);
   --color-electric-border:        rgba(48,176,199,0.40);
   --color-electric-solid:         #30b0c7;
@@ -258,6 +75,7 @@
   --color-365-solid-hover:        #6528d1;
   --color-365-text:               #6528d1;
 
+  /* Model-compare charts only — do NOT repurpose for UI chrome. */
   --color-model-openai-surface:   rgba(13,148,136,0.12);
   --color-model-openai-border:    rgba(13,148,136,0.40);
   --color-model-openai-solid:     #0d9488;
@@ -276,23 +94,23 @@
   --color-model-xai-solid-hover:  #a61fb5;
   --color-model-xai-text:         #a61fb5;
 
-  /* Tab identity colors — light */
-  --color-learn-solid:       #16a34a;                  /* True green, deeper for contrast on warm-white (light) */
+  /* ===== Tab identity colors ===== */
+  --color-learn-solid:       #16a34a;                  /* True green, deeper for contrast on warm-white */
   --color-learn-surface:     rgba(22,163,74,0.12);
   --color-learn-border:      rgba(22,163,74,0.40);
   --color-learn-glow:        rgba(22,163,74,0.22);
 
-  --color-youtube-solid:     #ff3b30;                  /* Apple systemRed light */
+  --color-youtube-solid:     #ff3b30;                  /* Apple systemRed */
   --color-youtube-surface:   rgba(255,59,48,0.12);
   --color-youtube-border:    rgba(255,59,48,0.40);
   --color-youtube-glow:      rgba(255,59,48,0.22);
 
-  --color-tools-solid:       #a16207;                  /* yellow → brown for readability on white */
+  --color-tools-solid:       #a16207;                  /* yellow → brown for readability */
   --color-tools-surface:     rgba(161,98,7,0.10);
   --color-tools-border:      rgba(161,98,7,0.40);
   --color-tools-glow:        rgba(161,98,7,0.22);
 
-  --color-projects-solid:    #007aff;                  /* Apple systemBlue light */
+  --color-projects-solid:    #007aff;                  /* Apple systemBlue */
   --color-projects-surface:  rgba(0,122,255,0.12);
   --color-projects-border:   rgba(0,122,255,0.40);
   --color-projects-glow:     rgba(0,122,255,0.22);
@@ -304,15 +122,54 @@
 
   --color-365-glow:          rgba(124,58,237,0.22);
 
-  /* Light-mode glow tokens (reserved) */
+  /* Reserved glow tokens (no component uses them after M6.6). */
   --glow-soft:  0 0 18px -6px rgba(48,176,199,0.12);
   --glow-hero:  0 0 24px -4px rgba(48,176,199,0.28);
   --glow-focus: 0 0 0 3px rgba(48,176,199,0.22);
 
-  /* Legacy compat — light mode alpha-glows to match cyan */
-  --accent-glow:       rgba(48,176,199,0.10);  /* legacy compat */
-  --accent-365-glow:   rgba(124,58,237,0.10);  /* legacy compat */
-  --accent-claude-glow: rgba(234,88,12,0.10);  /* legacy compat */
+  /* Legacy compat — aliases kept so older selectors don't break. */
+  --accent:             var(--color-electric-solid);
+  --accent-hi:          var(--color-electric-solid-hover);
+  --accent-ink:         #ffffff;
+  --accent-soft:        var(--color-electric-surface);
+  --accent-glow:        rgba(48,176,199,0.10);
+
+  --accent-365:         var(--color-365-solid);
+  --accent-365-hi:      var(--color-365-solid-hover);
+  --accent-365-ink:     #1a0d2d;
+  --accent-365-soft:    var(--color-365-surface);
+  --accent-365-glow:    rgba(124,58,237,0.10);
+
+  --accent-claude:      var(--color-claude-solid);
+  --accent-claude-hi:   var(--color-claude-solid-hover);
+  --accent-claude-soft: var(--color-claude-surface);
+  --accent-claude-glow: rgba(234,88,12,0.10);
+
+  --danger:        var(--color-critical-solid);
+  --success:       var(--color-success-solid);
+
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-pill: 9999px;
+
+  --ease:          cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring:   cubic-bezier(0.34, 1.2, 0.64, 1);
+  --ease-premium: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-lensing: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --blur:        blur(22px) saturate(140%);
+  --blur-strong: blur(30px) saturate(140%);
+
+  --glass-blur:     24px;
+  --glass-saturate: 170%;
+  --glass-alpha:    0.52;
+  --glass-hairline: rgba(30,24,16,0.10);
+
+  --safe-t: env(safe-area-inset-top);
+  --safe-b: env(safe-area-inset-bottom);
+  --safe-l: env(safe-area-inset-left);
+  --safe-r: env(safe-area-inset-right);
 }
 
 /* ===== Reset ===== */
@@ -352,14 +209,10 @@ body::before {
 body::after {
   content: "";
   position: fixed; inset: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.025) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.025) 1px, transparent 0);
   background-size: 2px 2px;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.5;
-}
-:root[data-theme="light"] body::after {
-  background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.025) 1px, transparent 0);
   opacity: 0.7;
 }
 
@@ -368,9 +221,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 
-/* ===== Glass primitive (Apple Liquid Glass-ish, dark-first) =====
-   Gradient stops come from --glass-top / --glass-bottom tokens so theme
-   switches and palette retunes happen in one place. */
+/* ===== Glass primitive (Apple Liquid Glass-ish) =====
+   Gradient stops come from --glass-top / --glass-bottom tokens so any
+   palette retune happens in one place. */
 .glass {
   position: relative;
   background: linear-gradient(180deg,
@@ -381,8 +234,8 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   border-radius: var(--radius-md);
   border: 1px solid var(--glass-hairline);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    0 8px 24px -10px rgba(0,0,0,0.55);
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    0 10px 30px -18px rgba(10,10,20,0.18);
   isolation: isolate;
   transition:
     transform 0.3s var(--ease-premium),
@@ -395,17 +248,10 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   --glass-saturate: 180%;
   --glass-alpha: 0.62;
 }
-/* Elevated glass — modals/popovers that rise above page content. Stronger
-   blur, heavier drop shadow, more pronounced top specular. */
+/* Elevated glass — modals/popovers that rise above page content. */
 .glass-elevated {
   --glass-blur: 36px;
   --glass-saturate: 190%;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.10),
-    0 24px 60px -16px rgba(0,0,0,0.72),
-    0 4px 14px -6px rgba(0,0,0,0.4);
-}
-:root[data-theme="light"] .glass-elevated {
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.7),
     0 24px 60px -16px rgba(30,20,10,0.22),
@@ -414,49 +260,6 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .glass-pill { border-radius: var(--radius-sm); }
 @supports not (backdrop-filter: blur(1px)) {
   .glass { background: var(--glass-fallback); }
-}
-
-/* ===== Contrast cameo — Klack-style inverted section =====
-   A panel marked data-cameo="invert" flips the neutrals against the
-   surrounding page: on a warm-white light page the cameo becomes a
-   deep-charcoal card; in dark mode the cameo turns into a warm-white
-   card. Glass/chart colors inside inherit the cameo tokens, so charts
-   sit on the inverted surface cleanly. Chart MODEL_COL stays locked. */
-[data-cameo="invert"] {
-  /* Default: we're in dark page → cameo reads as a light card. */
-  --bg-0: #f8f6f3;
-  --bg-1: #ede9e4;
-  --bg-2: #ffffff;
-  --bg-3: #ffffff;
-  --text-1: #1a1816;
-  --text-2: rgba(26,24,22,0.64);
-  --text-3: rgba(26,24,22,0.36);
-  --border:        rgba(30,24,16,0.10);
-  --border-strong: rgba(30,24,16,0.18);
-  --glass-top:    rgba(255,255,255,0.82);
-  --glass-bottom: rgba(245,242,236,0.70);
-  --glass-fallback: rgba(255,255,255,0.94);
-  color: var(--text-1);
-  background: var(--bg-1);
-  border-radius: var(--radius-md);
-  padding: 18px;
-}
-:root[data-theme="light"] [data-cameo="invert"] {
-  /* Flipped: we're on a warm-white page → cameo reads as deep charcoal. */
-  --bg-0: #151513;
-  --bg-1: #1c1c1a;
-  --bg-2: #23231f;
-  --bg-3: #2e2e2a;
-  --text-1: #f2f0ec;
-  --text-2: #b0ada4;
-  --text-3: #78756c;
-  --border:        rgba(255,250,240,0.08);
-  --border-strong: rgba(255,250,240,0.14);
-  --glass-top:    rgba(35,35,31,0.64);
-  --glass-bottom: rgba(22,22,20,0.50);
-  --glass-fallback: rgba(28,28,26,0.92);
-  color: var(--text-1);
-  background: var(--bg-1);
 }
 
 /* ===== Scroll activation — "electrons emitting photons" (M7.7) =====
@@ -471,20 +274,8 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
     box-shadow 0.5s var(--ease-premium),
     border-color 0.3s var(--ease-premium);
 }
-.dash-panel.in-view {
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.07),
-    0 10px 28px -10px rgba(0,0,0,0.55),
-    0 0 44px -14px var(--bloom-warm);
-}
+.dash-panel.in-view,
 .hero.in-view {
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.07),
-    0 12px 32px -12px rgba(0,0,0,0.55),
-    0 0 52px -16px var(--bloom-warm);
-}
-:root[data-theme="light"] .dash-panel.in-view,
-:root[data-theme="light"] .hero.in-view {
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.7),
     0 10px 28px -12px rgba(40,30,16,0.16),
@@ -501,10 +292,10 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   padding: 1px;
   background: linear-gradient(
     150deg,
-    rgba(255,255,255,0.22) 0%,
-    rgba(255,255,255,0.04) 28%,
+    rgba(255,255,255,0.9) 0%,
+    rgba(255,255,255,0.25) 30%,
     rgba(255,255,255,0)    55%,
-    rgba(255,255,255,0.10) 100%);
+    rgba(255,255,255,0.35) 100%);
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
@@ -512,20 +303,6 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
           mask-composite: exclude;
   pointer-events: none;
   z-index: 2;
-}
-:root[data-theme="light"] .glass::before {
-  background: linear-gradient(
-    150deg,
-    rgba(255,255,255,0.9) 0%,
-    rgba(255,255,255,0.25) 30%,
-    rgba(255,255,255,0)    55%,
-    rgba(255,255,255,0.35) 100%);
-}
-:root[data-theme="light"] .glass {
-  background: var(--surface);
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.6) inset,
-    0 10px 30px -18px rgba(10,10,20,0.18);
 }
 
 /* ===== Top bar ===== */
@@ -578,9 +355,6 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   box-shadow: 0 0 18px -6px var(--color-youtube-glow);
 }
 .icon { width: 16px; height: 16px; }
-.icon-moon { display: none; }
-:root:not([data-theme="light"]) .icon-sun  { display: none; }
-:root:not([data-theme="light"]) .icon-moon { display: block; }
 
 /* Floating nav — logo tag above the glass nav bar; the wrap is fixed
    to the top of the viewport and layered above everything so the page
@@ -596,6 +370,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   pointer-events: none; /* children re-enable */
 }
 .nav-wrap > * { pointer-events: auto; }
+/* Logo sticker — dark gradient tile that pops against the greige page. */
 .nav-brand {
   display: inline-flex;
   align-items: center;
@@ -604,34 +379,21 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.005em;
-  background: linear-gradient(180deg, #ffffff 0%, #ececec 100%);
-  border: 1px solid rgba(0,0,0,0.12);
+  background: linear-gradient(180deg, #1a1a1e 0%, #07070a 100%);
+  border: 1px solid rgba(0,0,0,0.55);
   border-bottom: 0;
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.85) inset,
-    0 -2px 4px rgba(0,0,0,0.06) inset,
-    0 2px 6px -2px rgba(0,0,0,0.18),
-    0 1px 0 rgba(0,0,0,0.04);
-  position: relative;
-  z-index: 101;
-  user-select: none;
-}
-.nav-brand-ai  { color: #8a8a8a; font-weight: 600; text-shadow: 0 1px 0 rgba(255,255,255,0.6); }
-.nav-brand-sub { color: #0a0a0a; font-weight: 700; letter-spacing: -0.012em; text-shadow: 0 1px 0 rgba(255,255,255,0.6); }
-
-/* Light mode — reverse the tag so it pops against the greige page. */
-:root[data-theme="light"] .nav-brand {
-  background: linear-gradient(180deg, #1a1a1e 0%, #07070a 100%);
-  border-color: rgba(0,0,0,0.55);
   box-shadow:
     0 1px 0 rgba(255,255,255,0.14) inset,
     0 -2px 4px rgba(0,0,0,0.35) inset,
     0 2px 8px -2px rgba(0,0,0,0.25),
     0 1px 0 rgba(255,255,255,0.1);
+  position: relative;
+  z-index: 101;
+  user-select: none;
 }
-:root[data-theme="light"] .nav-brand-ai  { color: #9a9a9a; text-shadow: 0 -1px 0 rgba(0,0,0,0.45); }
-:root[data-theme="light"] .nav-brand-sub { color: #f5f5f5; text-shadow: 0 -1px 0 rgba(0,0,0,0.45); }
+.nav-brand-ai  { color: #9a9a9a; font-weight: 600; text-shadow: 0 -1px 0 rgba(0,0,0,0.45); }
+.nav-brand-sub { color: #f5f5f5; font-weight: 700; letter-spacing: -0.012em; text-shadow: 0 -1px 0 rgba(0,0,0,0.45); }
 
 .chips {
   display: flex; gap: 2px;
@@ -1155,14 +917,14 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   flex-shrink: 0;
 }
 .card-pill:empty { display: none; }
-.card-pill[data-pill="positive"]  { background: rgba(52,211,153,0.18); color: #34d399; }
-.card-pill[data-pill="warning"]   { background: rgba(251,191,36,0.18); color: #fbbf24; }
-.card-pill[data-pill="critical"]  { background: rgba(244,63,94,0.22);  color: #f43f5e; }
-.card-pill[data-pill="code"]      { background: rgba(52,211,153,0.18); color: #34d399; }
-.card-pill[data-pill="api"]       { background: rgba(255,122,61,0.22); color: #ff9d6b; }
-.card-pill[data-pill="mcp"]       { background: rgba(167,139,250,0.22); color: #c4b5fd; }
-.card-pill[data-pill="videos"]    { background: rgba(244,63,94,0.22);  color: #fb7185; }
-.card-pill[data-pill="academy"]   { background: rgba(96,165,250,0.22); color: #93c5fd; }
+.card-pill[data-pill="positive"]  { background: rgba(16,185,129,0.14); color: #059669; }
+.card-pill[data-pill="warning"]   { background: rgba(245,158,11,0.14); color: #b45309; }
+.card-pill[data-pill="critical"]  { background: rgba(239,68,68,0.14);  color: #dc2626; }
+.card-pill[data-pill="code"]      { background: rgba(16,185,129,0.14); color: #059669; }
+.card-pill[data-pill="api"]       { background: rgba(234,88,12,0.14);  color: #c2410c; }
+.card-pill[data-pill="mcp"]       { background: rgba(124,58,237,0.14); color: #6528d1; }
+.card-pill[data-pill="videos"]    { background: rgba(239,68,68,0.14);  color: #dc2626; }
+.card-pill[data-pill="academy"]   { background: rgba(37,99,235,0.12);  color: #2563eb; }
 
 /* Pin button on What's new cards — hairline outline when idle, Claude-accent
    fill when pinned. Sits in the top-right corner, above the normal card flow
@@ -1668,13 +1430,8 @@ body.modal-open { overflow: hidden; }
   gap: 6px;
 }
 
-.card-pill[data-pill="resolved"]  { background: rgba(52,211,153,0.18); color: #34d399; }
-.card-pill[data-pill="info"]      { background: rgba(59,130,246,0.16); color: #60a5fa; }
-:root[data-theme="light"] .card-pill[data-pill="positive"]  { background: rgba(16,185,129,0.14); color: #059669; }
-:root[data-theme="light"] .card-pill[data-pill="warning"]   { background: rgba(245,158,11,0.14); color: #b45309; }
-:root[data-theme="light"] .card-pill[data-pill="critical"]  { background: rgba(239,68,68,0.14);  color: #dc2626; }
-:root[data-theme="light"] .card-pill[data-pill="resolved"]  { background: rgba(16,185,129,0.14); color: #059669; }
-:root[data-theme="light"] .card-pill[data-pill="info"]      { background: rgba(37,99,235,0.12);  color: #2563eb; }
+.card-pill[data-pill="resolved"]  { background: rgba(16,185,129,0.14); color: #059669; }
+.card-pill[data-pill="info"]      { background: rgba(37,99,235,0.12);  color: #2563eb; }
 .card-title {
   font-size: 16px; font-weight: 500; letter-spacing: -0.012em;
   line-height: 1.4;
@@ -1955,27 +1712,19 @@ body.modal-open { overflow: hidden; }
 .dash-charts-panel > .hero::before {
   background: linear-gradient(
     150deg,
-    rgba(255,255,255,0.06) 0%,
-    rgba(255,255,255,0.02) 40%,
-    rgba(255,255,255,0)    70%,
-    rgba(255,255,255,0.04) 100%);
-}
-:root[data-theme="light"] .dash-charts-panel > .hero::before {
-  background: linear-gradient(
-    150deg,
     rgba(255,255,255,0.9) 0%,
     rgba(255,255,255,0.25) 30%,
     rgba(0,0,0,0)          55%,
     rgba(255,255,255,0.35) 100%);
 }
-/* Without cameo this panel is a quiet transparent container. */
-.dash-charts-panel:not([data-cameo]) {
+/* Charts panel is a quiet transparent container — no chrome. */
+.dash-charts-panel {
   padding: 4px 0 0;
   background: transparent;
   border: 0;
   box-shadow: none;
 }
-.dash-charts-panel:not([data-cameo])::before { display: none; }
+.dash-charts-panel::before { display: none; }
 /* Legacy dash-card kept as alias while any remaining references resolve. */
 .dash-card { padding: 20px 20px 18px; display: flex; flex-direction: column; gap: 10px; }
 
