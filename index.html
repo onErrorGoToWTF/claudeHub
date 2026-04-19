@@ -34,7 +34,9 @@
   <nav class="chips" id="filters" aria-label="Sections">
     <button class="chip glass-pill is-active" data-filter="home">Home</button>
     <button class="chip glass-pill chip-learn" data-filter="learn">Learn</button>
-    <button class="chip glass-pill chip-news-media" data-filter="news-media">News &amp; Media</button>
+    <button class="chip glass-pill chip-tools" data-filter="tools">Tools</button>
+    <button class="chip glass-pill chip-projects" data-filter="projects">Projects</button>
+    <button class="chip glass-pill chip-youtube" data-filter="youtube">YouTube</button>
     <button class="chip glass-pill chip-comply365" data-filter="comply365">Comply365</button>
   </nav>
 </header>
@@ -51,17 +53,26 @@
     </div>
 
     <div class="dash-grid">
-      <article class="dash-card glass">
+      <article class="dash-card glass" id="continue-card">
         <div class="dash-eyebrow">Continue</div>
         <h2 class="dash-title">Where you left off</h2>
-        <p class="dash-empty">No projects in flight yet — start one and your progress lands here.</p>
+        <div class="continue-body" id="continue-body">
+          <p class="dash-empty">No projects in flight yet — start one and your progress lands here.</p>
+        </div>
       </article>
 
       <article class="dash-card glass dash-card-primary">
         <div class="dash-eyebrow">Start</div>
         <h2 class="dash-title">A new project</h2>
         <p class="dash-sub">Pick the pieces you want. Finder recommends a tool stack, a learning path, and setup per tool.</p>
-        <button class="dash-action dash-action-primary" data-chip="learn" data-subpill="finder" type="button">Open the Finder →</button>
+        <button class="dash-action dash-action-primary" data-chip="projects" data-subpill="new" type="button">Start a new project →</button>
+      </article>
+
+      <article class="dash-card glass dash-card-link">
+        <div class="dash-eyebrow">Reference</div>
+        <h2 class="dash-title">State of AI</h2>
+        <p class="dash-sub">Frontier context windows, Intelligence Index, Opus 4.7 scorecard, Top-4 LLM face-off — the charts that frame the field.</p>
+        <button class="dash-action" data-chip="news-media" type="button">Open the charts →</button>
       </article>
     </div>
   </section>
@@ -70,95 +81,105 @@
     <div class="section-head">
       <h2>Learn</h2>
     </div>
-    <p class="section-lede">Find the stack. Learn the stack. Ship the project.</p>
+    <p class="section-lede">Courses, quizzes, and what shipped this week.</p>
+
     <div class="subpills" role="tablist" aria-label="Learn content">
-      <button class="subpill is-active" data-learn="claude"   type="button" role="tab" aria-selected="true">Claude</button>
-      <button class="subpill"           data-learn="finder"   type="button" role="tab" aria-selected="false">Finder</button>
-      <button class="subpill"           data-learn="tools"    type="button" role="tab" aria-selected="false">Tools</button>
-      <button class="subpill"           data-learn="projects" type="button" role="tab" aria-selected="false">My Projects</button>
+      <button class="subpill"           data-learn="whats-new" type="button" role="tab" aria-selected="false"><span class="subpill-label">What's new</span><span class="subpill-badge" data-subpill-badge="whats-new" hidden></span></button>
+      <button class="subpill is-active" data-learn="courses"   type="button" role="tab" aria-selected="true">Courses</button>
+      <button class="subpill"           data-learn="tutorials" type="button" role="tab" aria-selected="false">Tutorials &amp; quizzes</button>
     </div>
-    <div class="pane" data-pane="learn-claude">
-      <div class="hub-intro">
-        <div class="hub-eyebrow">Claude-first focus</div>
-        <h3 class="hub-title">The Claude hub</h3>
-        <p class="hub-lede">How to use Claude well — from Claude.ai basics to Claude Code, Skills, MCP, and the Agent SDK.</p>
-      </div>
 
-      <div class="subpills subpills-nested" role="tablist" aria-label="Claude hub sections">
-        <button class="subpill is-active" data-claude="basics"    type="button" role="tab" aria-selected="true">Basics</button>
-        <button class="subpill"           data-claude="code"      type="button" role="tab" aria-selected="false">Claude Code</button>
-        <button class="subpill"           data-claude="skills"    type="button" role="tab" aria-selected="false">Skills</button>
-        <button class="subpill"           data-claude="mcp"       type="button" role="tab" aria-selected="false">MCP</button>
-        <button class="subpill"           data-claude="agent-sdk" type="button" role="tab" aria-selected="false">Agent SDK</button>
-        <button class="subpill"           data-claude="whats-new" type="button" role="tab" aria-selected="false"><span class="subpill-label">What's new</span><span class="subpill-badge" data-subpill-badge="whats-new" hidden></span></button>
+    <div class="pane" data-pane="learn-whats-new" hidden>
+      <div class="learn-filter-bar" role="tablist" aria-label="Filter What's new by source">
+        <button class="learn-filter is-active" type="button" role="tab" aria-selected="true"  data-learn-filter="all"><span class="learn-filter-label">All</span><span class="learn-filter-count" data-filter-count="all"></span></button>
+        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="anthropic"><span class="learn-filter-label">Anthropic</span><span class="learn-filter-count" data-filter-count="anthropic"></span></button>
+        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="industry"><span class="learn-filter-label">Industry</span><span class="learn-filter-count" data-filter-count="industry"></span></button>
       </div>
-
-      <div class="pane" data-pane="claude-basics">
-        <div class="concept-grid">
-          <article class="concept-card glass">
-            <div class="concept-eyebrow">Web app</div>
-            <h4 class="concept-title">Claude.ai</h4>
-            <p class="concept-body">The easiest on-ramp. Long chats, file uploads, voice, desktop + mobile clients. Free tier covers the basics; Pro and Max unlock the deeper usage.</p>
-            <a class="concept-link" href="https://claude.ai" target="_blank" rel="noopener">Open Claude.ai →</a>
-          </article>
-
-          <article class="concept-card glass">
-            <div class="concept-eyebrow">Persistent context</div>
-            <h4 class="concept-title">Projects</h4>
-            <p class="concept-body">Workspaces scoped to a goal. Drop in instructions + a knowledge base once; every conversation inside the project inherits them. Keeps long-running work coherent.</p>
-            <a class="concept-link" href="https://docs.claude.com/en/docs/claude-code/overview" target="_blank" rel="noopener">How Projects work →</a>
-          </article>
-
-          <article class="concept-card glass">
-            <div class="concept-eyebrow">Structured output</div>
-            <h4 class="concept-title">Artifacts</h4>
-            <p class="concept-body">Code, docs, HTML previews, diagrams rendered in a side panel. Iterate in place, share standalone. The "show, don't just tell" side of Claude's output surface.</p>
-            <a class="concept-link" href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank" rel="noopener">Artifacts guide →</a>
-          </article>
-
-          <article class="concept-card glass concept-card-claude">
-            <div class="concept-eyebrow">Plans</div>
-            <h4 class="concept-title">Pro vs Max</h4>
-            <p class="concept-body">Pro $20/mo for the basics. Max 5× $100/mo gives ~5× the usage plus priority at peak. Max 20× $200/mo is the power-user tier — includes everything and the highest quotas.</p>
-            <a class="concept-link" href="https://claude.com/pricing" target="_blank" rel="noopener">Compare plans →</a>
-          </article>
-        </div>
-        <div class="academy-host" data-academy-bucket="basics"></div>
-      </div>
-
-      <div class="pane" data-pane="claude-code" hidden>
-        <div class="academy-host" data-academy-bucket="code"></div>
-        <div class="snippets-host" data-snippet-bucket="code"></div>
-      </div>
-      <div class="pane" data-pane="claude-skills" hidden>
-        <div class="academy-host" data-academy-bucket="skills"></div>
-        <div class="snippets-host" data-snippet-bucket="skills"></div>
-      </div>
-      <div class="pane" data-pane="claude-mcp" hidden>
-        <div class="academy-host" data-academy-bucket="mcp"></div>
-        <div class="snippets-host" data-snippet-bucket="mcp"></div>
-      </div>
-      <div class="pane" data-pane="claude-agent-sdk" hidden>
-        <div class="academy-host" data-academy-bucket="agent-sdk"></div>
-      </div>
-      <div class="pane" data-pane="claude-whats-new" hidden>
-        <div class="learn-filter-bar" role="tablist" aria-label="Filter What's new by source">
-          <button class="learn-filter is-active" type="button" role="tab" aria-selected="true"  data-learn-filter="all"><span class="learn-filter-label">All</span><span class="learn-filter-count" data-filter-count="all"></span></button>
-          <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="code"><span class="learn-filter-label">Claude Code</span><span class="learn-filter-count" data-filter-count="code"></span></button>
-          <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="api"><span class="learn-filter-label">Claude API</span><span class="learn-filter-count" data-filter-count="api"></span></button>
-          <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="mcp"><span class="learn-filter-label">MCP</span><span class="learn-filter-count" data-filter-count="mcp"></span></button>
-          <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="videos"><span class="learn-filter-label">Videos</span><span class="learn-filter-count" data-filter-count="videos"></span></button>
-        </div>
-        <div class="cards" data-cards="claude-whats-new">
-          <div class="empty">Loading latest releases…</div>
-        </div>
+      <div class="cards" data-cards="claude-whats-new">
+        <div class="empty">Loading latest releases…</div>
       </div>
     </div>
-    <div class="pane" data-pane="learn-finder" hidden>
+
+    <div class="pane" data-pane="learn-courses">
+      <div class="subpills subpills-nested" role="tablist" aria-label="Course source">
+        <button class="subpill is-active" data-courses="academy"   type="button" role="tab" aria-selected="true">Anthropic Academy</button>
+        <button class="subpill"           data-courses="originals" type="button" role="tab" aria-selected="false">aiStacked Originals</button>
+      </div>
+
+      <div class="pane" data-pane="courses-academy">
+        <div class="hub-intro">
+          <div class="hub-eyebrow">Anthropic Academy</div>
+          <h3 class="hub-title">Official courses, snippets inline.</h3>
+          <p class="hub-lede">The full Academy catalog. Open any course card to reveal the snippets that belong to its topic — CLAUDE.md patterns under Claude Code, YAML frontmatter under Skills, and so on.</p>
+        </div>
+        <div class="academy-flat" id="academy-flat-host"></div>
+      </div>
+
+      <div class="pane" data-pane="courses-originals" hidden>
+        <div class="hub-intro">
+          <div class="hub-eyebrow">aiStacked Originals</div>
+          <h3 class="hub-title">Custom courses, authored here.</h3>
+          <p class="hub-lede">Deeper dives we write ourselves — CLAUDE.md done right, writing Skills, Claude Design launch notes, and more. Coming soon.</p>
+        </div>
+        <div class="empty glass academy-empty">No Originals yet. First one drops in M4.</div>
+      </div>
+    </div>
+
+    <div class="pane" data-pane="learn-tutorials" hidden>
       <div class="hub-intro">
-        <div class="hub-eyebrow">The Finder</div>
-        <h3 class="hub-title">Find the stack for your next project.</h3>
-        <p class="hub-lede">Pick the pieces you want to build with — the Finder outputs a tool stack, an ordered learning path, and setup per tool.</p>
+        <div class="hub-eyebrow">Tutorials &amp; quizzes</div>
+        <h3 class="hub-title">Short lessons with MCQ checks.</h3>
+        <p class="hub-lede">A few minutes each. Read, take the quiz, mark complete. Progress stays on this device.</p>
+      </div>
+      <div class="lessons-list" id="lessons-list"></div>
+    </div>
+  </section>
+
+  <section class="section section-tools" data-section="tools" id="section-tools" data-hidden="true">
+    <div class="section-head">
+      <h2>Tools</h2>
+    </div>
+    <p class="section-lede">The catalog. Filter by modality; tap a card for tagline, pricing, links, and the snippets tied to each tool.</p>
+    <div class="modality-filter" id="modality-filter" role="tablist" aria-label="Filter by modality"></div>
+    <div class="tool-grid" id="tool-grid"></div>
+  </section>
+
+  <section class="section section-youtube" data-section="youtube" id="section-youtube" data-hidden="true">
+    <div class="section-head">
+      <h2>YouTube</h2>
+    </div>
+    <p class="section-lede">Every scraped video, one feed. Save what's worth coming back to; tap any card to watch in-app.</p>
+    <div class="cards cards-video" id="youtube-grid">
+      <div class="empty">Loading videos…</div>
+    </div>
+  </section>
+
+  <section class="section section-projects" data-section="projects" id="section-projects" data-hidden="true">
+    <div class="section-head">
+      <h2>Projects</h2>
+    </div>
+    <p class="section-lede">Your saved builds. Switch to <em>+ New project</em> to run the Finder and stash a fresh stack.</p>
+    <div class="subpills projects-toggle" role="tablist" aria-label="Projects view">
+      <button class="subpill is-active" data-projects-view="saved" type="button" role="tab" aria-selected="true">Saved</button>
+      <button class="subpill"           data-projects-view="new"   type="button" role="tab" aria-selected="false">+ New project</button>
+    </div>
+
+    <div class="pane" data-pane="projects-saved">
+      <div class="projects-backup" id="projects-backup">
+        <button type="button" class="backup-btn" id="backup-export">Export backup</button>
+        <button type="button" class="backup-btn" id="backup-import-trigger">Import backup…</button>
+        <button type="button" class="backup-btn" id="storage-open">Storage</button>
+        <input type="file" id="backup-import-file" accept="application/json,.json" hidden>
+        <span class="backup-status" id="backup-status"></span>
+      </div>
+      <div class="projects-grid" id="projects-grid"></div>
+    </div>
+
+    <div class="pane" data-pane="projects-new" hidden>
+      <div class="hub-intro">
+        <div class="hub-eyebrow">New project</div>
+        <h3 class="hub-title">Find the stack.</h3>
+        <p class="hub-lede">Describe the project, pick the capabilities, and save the recommended stack as a project.</p>
       </div>
 
       <div class="finder-wizard">
@@ -171,6 +192,10 @@
             <span class="finder-status" id="finder-status" role="status" aria-live="polite"></span>
           </div>
         </div>
+
+        <div class="finder-divider"><span>or load an example project</span></div>
+
+        <div class="finder-examples" id="finder-examples"></div>
 
         <div class="finder-divider"><span>or start from…</span></div>
 
@@ -231,7 +256,7 @@
         <form class="save-form glass" id="save-form" hidden>
           <div class="save-head">
             <div class="hub-eyebrow">Save as project</div>
-            <p class="save-lede">Keep this stack in My Projects. You can have as many as you like.</p>
+            <p class="save-lede">Keep this stack in Saved projects. You can have as many as you like.</p>
           </div>
           <label class="save-field">
             <span class="save-field-label">Project title</span>
@@ -256,30 +281,14 @@
         </form>
       </div>
     </div>
-    <div class="pane" data-pane="learn-tools" hidden>
-      <div class="modality-filter" id="modality-filter" role="tablist" aria-label="Filter by modality"></div>
-      <div class="tool-grid" id="tool-grid"></div>
-    </div>
-    <div class="pane" data-pane="learn-projects" hidden>
-      <div class="hub-intro">
-        <div class="hub-eyebrow">My Projects</div>
-        <h3 class="hub-title">Your saved builds.</h3>
-        <p class="hub-lede">Every save from the Finder lands here. Each project keeps its capabilities, its chosen path, and the recommended tool stack.</p>
-      </div>
-      <div class="projects-grid" id="projects-grid"></div>
-    </div>
   </section>
 
-  <section class="section section-news-media" data-section="news-media" id="section-news-media">
+  <section class="section section-news-media" data-section="news-media" id="section-news-media" data-hidden="true">
     <div class="section-head">
-      <h2>News &amp; Media</h2>
+      <h2>State of AI</h2>
       <span class="updated" data-updated="news">—</span>
     </div>
-    <p class="section-lede">Signal layer — which models are advancing where, plus what shipped today.</p>
-    <div class="subpills" role="tablist" aria-label="News &amp; Media view">
-      <button class="subpill is-active" data-newsmedia="state" type="button" role="tab" aria-selected="true">State of AI</button>
-      <button class="subpill"           data-newsmedia="news"  type="button" role="tab" aria-selected="false">News</button>
-    </div>
+    <p class="section-lede">Reference charts — which models are advancing where.</p>
 
     <div class="pane" data-pane="news-media-state">
       <section class="hero glass" id="compare-card">
@@ -357,10 +366,6 @@
       </section>
     </div>
 
-    <div class="pane" data-pane="news-media-news" hidden>
-      <div class="status-strip" data-strip="status"></div>
-      <div class="cards cards-mixed" data-cards="news"></div>
-    </div>
   </section>
 
   <section class="section" data-section="comply365" id="section-comply365">
@@ -470,6 +475,112 @@
   </div>
 </template>
 
+<div class="lesson-modal" id="lesson-modal" role="dialog" aria-modal="true" aria-labelledby="lesson-modal-title" hidden>
+  <div class="lesson-modal-backdrop" data-close></div>
+  <div class="lesson-modal-frame glass">
+    <div class="lesson-modal-head">
+      <div class="lesson-modal-titles">
+        <div class="lesson-modal-eyebrow">
+          <span class="lesson-modal-track"></span>
+          <span class="lesson-modal-min"></span>
+          <span class="lesson-modal-status" data-status></span>
+        </div>
+        <h2 class="lesson-modal-title" id="lesson-modal-title"></h2>
+      </div>
+      <button type="button" class="lesson-modal-close" aria-label="Close" data-close title="Close">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <div class="lesson-modal-body">
+      <div class="lesson-markdown" id="lesson-markdown"></div>
+      <div class="lesson-quiz" id="lesson-quiz"></div>
+    </div>
+    <div class="lesson-modal-actions">
+      <button type="button" class="lesson-modal-complete" id="lesson-complete">Mark complete</button>
+      <button type="button" class="lesson-modal-reset"    id="lesson-reset" hidden>Reset progress</button>
+      <button type="button" class="lesson-modal-done" data-close>Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="storage-modal" id="storage-modal" role="dialog" aria-modal="true" aria-labelledby="storage-modal-title" hidden>
+  <div class="storage-modal-backdrop" data-close></div>
+  <div class="storage-modal-frame glass">
+    <div class="storage-modal-head">
+      <div class="storage-modal-titles">
+        <div class="storage-modal-title" id="storage-modal-title">Local storage</div>
+        <div class="storage-modal-sub"></div>
+      </div>
+      <button type="button" class="storage-modal-close" aria-label="Close" data-close title="Close">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <div class="storage-modal-body">
+      <div class="storage-usage-bar" id="storage-usage-bar"></div>
+      <div class="storage-usage-caption" id="storage-usage-caption"></div>
+      <div class="storage-key-list" id="storage-key-list"></div>
+      <p class="storage-modal-foot">Export a backup before deleting if you want to restore later. Only keys under <code>clhub.v1.*</code> and the theme key are listed here — nothing else is touched.</p>
+    </div>
+    <div class="storage-modal-actions">
+      <button type="button" class="storage-modal-done" data-close>Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="backup-modal" id="backup-modal" role="dialog" aria-modal="true" aria-labelledby="backup-modal-title" hidden>
+  <div class="backup-modal-backdrop" data-close></div>
+  <div class="backup-modal-frame glass">
+    <div class="backup-modal-head">
+      <div class="backup-modal-titles">
+        <div class="backup-modal-title" id="backup-modal-title">Backup</div>
+        <div class="backup-modal-sub"></div>
+      </div>
+      <button type="button" class="backup-modal-close" aria-label="Close" data-close title="Close">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <div class="backup-modal-body">
+      <textarea class="backup-modal-json" readonly spellcheck="false"></textarea>
+    </div>
+    <div class="backup-modal-actions">
+      <button type="button" class="backup-modal-copy">Copy</button>
+      <button type="button" class="backup-modal-laptop">Save to laptop</button>
+      <button type="button" class="backup-modal-done" data-close>Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="pin-picker-modal" id="pin-picker-modal" role="dialog" aria-modal="true" aria-labelledby="pin-picker-title" hidden>
+  <div class="pin-picker-backdrop" data-close></div>
+  <div class="pin-picker-frame glass">
+    <div class="pin-picker-head">
+      <div class="pin-picker-titles">
+        <div class="pin-picker-title" id="pin-picker-title">Save</div>
+        <div class="pin-picker-sub"></div>
+      </div>
+      <button type="button" class="pin-picker-close" aria-label="Close" data-close title="Close">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <div class="pin-picker-body">
+      <div class="pin-picker-section-label">Pin to project (optional)</div>
+      <div class="pin-picker-list" role="list"></div>
+      <div class="pin-picker-empty" hidden>
+        No projects yet. You can still save this — add it to a project later.
+      </div>
+      <label class="pin-picker-note-label">
+        <span>Note (optional)</span>
+        <textarea class="pin-picker-note" rows="2" placeholder="Why you saved this — one line is plenty." spellcheck="false"></textarea>
+      </label>
+    </div>
+    <div class="pin-picker-actions">
+      <button type="button" class="pin-picker-remove" hidden>Remove save</button>
+      <button type="button" class="pin-picker-cancel" data-close>Cancel</button>
+      <button type="button" class="pin-picker-save">Save</button>
+    </div>
+  </div>
+</div>
+
 <div class="search-modal" id="snippet-search-modal" role="dialog" aria-modal="true" aria-labelledby="snippet-search-title" hidden>
   <div class="search-modal-backdrop" data-close></div>
   <div class="search-modal-frame glass">
@@ -499,7 +610,10 @@
       </button>
     </div>
     <div class="tool-modal-body">
-      <h2 class="tool-modal-title" id="tool-modal-title"></h2>
+      <div class="tool-modal-titlerow">
+        <h2 class="tool-modal-title" id="tool-modal-title"></h2>
+        <div class="tool-modal-pin"></div>
+      </div>
       <p class="tool-modal-tagline"></p>
       <div class="tool-modal-badges"></div>
       <dl class="tool-modal-meta">
@@ -508,6 +622,7 @@
         <div class="tool-modal-meta-row"><dt>Pricing</dt><dd class="tool-modal-pricing"></dd></div>
       </dl>
       <div class="tool-modal-links"></div>
+      <div class="tool-modal-setup" hidden></div>
       <div class="tool-modal-snippets">
         <div class="academy-eyebrow tool-modal-snippets-title">Snippets</div>
         <div class="tool-modal-snippet-list snippet-list"></div>

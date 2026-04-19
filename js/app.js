@@ -7,6 +7,8 @@
   const ACADEMY_URL  = "data/learn/academy_courses.json?v=" + Date.now();
   const HUB_MAP_URL  = "data/learn/claude_hub_map.json?v=" + Date.now();
   const SNIPPETS_URL = "data/learn/snippets.json?v=" + Date.now();
+  const LESSONS_URL  = "data/learn/lessons.json?v="  + Date.now();
+  const USECASES_URL = "data/learn/usecases.json?v=" + Date.now();
   const VERSION_URL = "data/version.json?v=" + Date.now();
   const THEME_KEY = "cdih-theme";
 
@@ -63,6 +65,7 @@
       { id: "cap-ide",           label: "IDE / pair-coder",     matches: ["ide", "inline-edit"] },
       { id: "cap-no-code",       label: "No-code app builder",  matches: ["no-code-frontend"] },
       { id: "cap-terminal",      label: "Terminal agent",       matches: ["terminal-agent"] },
+      { id: "cap-premium-motion", label: "Premium-motion UI",   matches: ["premium-motion-ui"] },
     ]},
     { id: "agent", label: "Agent & Orchestration", caps: [
       { id: "cap-mcp",           label: "MCP client",           matches: ["mcp-client"] },
@@ -78,6 +81,13 @@
       { id: "cap-gen-video",     label: "Generative video",     matches: ["text-to-video"] },
       { id: "cap-img-to-video",  label: "Image-to-video",       matches: ["image-to-video", "keyframe-video-animation"] },
       { id: "cap-cinematic",     label: "4K / synced audio",    matches: ["4k-video", "synced-audio"] },
+      { id: "cap-video-edit",    label: "Edit / color grade",   matches: ["video-editor", "color-grading"] },
+    ]},
+    { id: "3d-motion", label: "3D / Motion", caps: [
+      { id: "cap-3d-scene",      label: "3D scene / modelling", matches: ["3d-scene-composition"] },
+      { id: "cap-ai-3d-model",   label: "AI 3D model gen",      matches: ["ai-3d-model-gen"] },
+      { id: "cap-explode-view",  label: "Explode-view / particles", matches: ["explode-view-animation", "particle-effect"] },
+      { id: "cap-camera-path",   label: "Camera path control",  matches: ["camera-path-control"] },
     ]},
     { id: "image", label: "Image", caps: [
       { id: "cap-text-to-image", label: "Text-to-image",        matches: ["text-to-image"] },
@@ -102,14 +112,74 @@
       { id: "cap-one-click",     label: "One-click deploy",     matches: ["one-click-deploy", "vercel-deploy"] },
       { id: "cap-self-host",     label: "Self-hostable",        matches: ["self-hostable"] },
     ]},
+    { id: "local", label: "Local / Desktop", caps: [
+      { id: "cap-local-script",  label: "Local script / CLI",   matches: ["local-script", "cli-tool"] },
+      { id: "cap-desktop-ui",    label: "Desktop UI",           matches: ["desktop-ui"] },
+      { id: "cap-file-parsing",  label: "File / legacy parsing", matches: ["file-parsing", "legacy-format-ingest"] },
+    ]},
   ];
   const CAP_BY_ID = {};
   CAP_GROUPS.forEach(g => g.caps.forEach(c => { CAP_BY_ID[c.id] = { ...c, groupLabel: g.label }; }));
 
+  // M5.5: keyword → cap-id heuristic. Deliberately conservative — better to
+  // add zero caps than wrong caps. Each entry: a regex run against the
+  // lower-cased description, and the list of cap IDs it implies.
+  const CAP_KEYWORD_RULES = [
+    { rx: /\b(3d|three\s*d|blender|mesh(?:y)?|depth\s*map|explode[- ]view|exploded)\b/, caps: ["cap-3d-scene", "cap-explode-view"] },
+    { rx: /\bcamera\s*(path|move|dolly|push|pull)\b/,                                   caps: ["cap-camera-path"] },
+    { rx: /\b(particle|particles|smoke|fire|sparks)\b/,                                 caps: ["cap-explode-view"] },
+    { rx: /\b(ai\s*(generated|gen)\s*video|generative\s*video|veo|runway\s*gen|kling|sora|text[- ]to[- ]video)\b/, caps: ["cap-gen-video"] },
+    { rx: /\b(keyframe|first[-\s]*last|nano\s*banana|google\s*flow|image[- ]to[- ]video)\b/, caps: ["cap-img-to-video"] },
+    { rx: /\b(4k|cinematic|synced\s*audio|narrat(?:ed|ion))\b/,                         caps: ["cap-cinematic"] },
+    { rx: /\b(edit|color\s*grade|davinci|resolve|premiere|final\s*cut|post[- ]production)\b/, caps: ["cap-video-edit"] },
+    { rx: /\b(text[- ]to[- ]image|midjourney|flux|stable\s*diffusion|nano\s*banana|gemini\s*image|image\s*gen(?:eration)?)\b/, caps: ["cap-text-to-image"] },
+    { rx: /\b(inpaint|outpaint|image\s*edit|image[- ]to[- ]image)\b/,                   caps: ["cap-image-edit"] },
+    { rx: /\btext\s*(on|in)\s*image\b/,                                                 caps: ["cap-text-on-image"] },
+    { rx: /\b(voice(\s*over| acting| clone| clon(?:ing|e))?|narration|tts|text[- ]to[- ]speech|elevenlabs)\b/, caps: ["cap-tts"] },
+    { rx: /\b(voice\s*clone|clone\s*voice)\b/,                                          caps: ["cap-voice-clone"] },
+    { rx: /\brealtime\s*voice\b|\blive\s*voice\b/,                                      caps: ["cap-realtime-voice"] },
+    { rx: /\b(no[- ]code|lovable|bolt|v0\b|vercel\s*v0|webflow|framer\s*site)\b/,        caps: ["cap-no-code"] },
+    { rx: /\b(ide|cursor|zed|copilot|pair[- ]?coder|inline\s*edit)\b/,                  caps: ["cap-ide"] },
+    { rx: /\b(terminal|cli|shell|claude\s*code)\b/,                                     caps: ["cap-terminal", "cap-local-script"] },
+    { rx: /\b(premium[- ]motion|framer\s*motion|spring\s*physics|layout\s*animation|shared[- ]element)\b/, caps: ["cap-premium-motion"] },
+    { rx: /\b(agent\s*sdk|claude\s*agent|agent\s*framework|langchain|langgraph)\b/,     caps: ["cap-agent-framework"] },
+    { rx: /\bmcp\b|\bmodel\s*context\s*protocol\b/,                                     caps: ["cap-mcp"] },
+    { rx: /\b(n8n|zapier|make\.com|workato|workflow\s*(automation|engine))\b/,          caps: ["cap-workflow"] },
+    { rx: /\b(cron|schedul(?:ed?|ing)|every\s*\d+\s*(min|hour|day))\b/,                 caps: ["cap-scheduled"] },
+    { rx: /\b(postgres|supabase|neon|planetscale|rds)\b/,                               caps: ["cap-postgres"] },
+    { rx: /\b(vector|rag|retrieval[- ]augmented|embedding(s)?|pgvector|pinecone)\b/,    caps: ["cap-vector"] },
+    { rx: /\b(auth|sign[- ]?in|login|clerk|auth0|magic\s*link)\b/,                      caps: ["cap-auth"] },
+    { rx: /\b(file\s*upload|drop\s*files?|attach\s*files?)\b/,                          caps: ["cap-file-upload"] },
+    { rx: /\b(long\s*context|large\s*context|million\s*tokens?)\b/,                     caps: ["cap-long-context"] },
+    { rx: /\b(vercel|cloudflare\s*pages|netlify|github\s*pages|static\s*hosting|edge\s*functions?)\b/, caps: ["cap-static"] },
+    { rx: /\bpreview\s*(deploy|url)\b/,                                                 caps: ["cap-preview"] },
+    { rx: /\bnext\.?js\b/,                                                              caps: ["cap-nextjs"] },
+    { rx: /\bone[- ]click\s*deploy\b|\bdeploy\s*button\b/,                              caps: ["cap-one-click"] },
+    { rx: /\bself[- ]host(?:ed|able)?\b|\bself[- ]hosted\b/,                            caps: ["cap-self-host"] },
+    { rx: /\b(local\s*(script|program|tool)|cli\s*tool|command\s*line\s*tool|python\s*script|node\s*script)\b/, caps: ["cap-local-script"] },
+    { rx: /\b(desktop\s*(app|ui)|electron|tauri)\b/,                                    caps: ["cap-desktop-ui"] },
+    { rx: /\b(file\s*pars(?:er|ing)|fixed[- ]width|cp437|accpac|dos\s*(report|output|file))\b/, caps: ["cap-file-parsing"] },
+    { rx: /\bfrontier\s*(llm|model|reasoning)\b|\b(gpt|opus|claude|gemini|grok)\b/,     caps: ["cap-frontier-llm"] },
+    { rx: /\b(artifacts?|claude\s*projects?|long\s*chat)\b/,                            caps: ["cap-projects"] },
+  ];
+  function autoCheckCapsFromText(text) {
+    const s = (text || "").toLowerCase();
+    const before = new Set(capsSelected);
+    for (const rule of CAP_KEYWORD_RULES) {
+      if (rule.rx.test(s)) rule.caps.forEach((c) => capsSelected.add(c));
+    }
+    let added = 0;
+    capsSelected.forEach((id) => { if (!before.has(id)) added++; });
+    if (added > 0) {
+      try { localStorage.setItem(FINDER_CAPS_KEY, JSON.stringify([...capsSelected])); } catch {}
+    }
+    return added;
+  }
+
   // Sections that render from latest.json and share the filter machinery.
   const SECTIONS = ["comply365", "news-media"];
   // Sections that are exclusive (only visible when their chip is picked).
-  const DISTINCT_SECTIONS = ["home", "learn"];
+  const DISTINCT_SECTIONS = ["home", "learn", "tools", "projects", "youtube"];
 
   // Per-model brand-aligned electric palette, used by every chart so
   // colors match across the site.
@@ -217,6 +287,8 @@
       void el.offsetHeight;      // force reflow
       el.style.animation = "";
     });
+    // M3.6: refresh "Continue where you left off" each time Home is activated.
+    renderContinueCard();
   }
 
   // Replay News & Media chart animations when the tab is activated and the
@@ -245,7 +317,10 @@
     });
   });
 
-  // Learn sub-pills: Claude / Finder / Tools / My Projects
+  // Learn sub-pills (M3.7: only [data-learn="claude"] remains inside Learn;
+  // Finder / Tools / My Projects promoted to top-level sections. M3.8 will
+  // rebuild this with What's new / Courses / Tutorials). Guard for legacy
+  // markup; if no pills present this is a no-op.
   document.querySelectorAll(".subpill[data-learn]").forEach((pill) => {
     pill.addEventListener("click", () => {
       const kind = pill.dataset.learn;
@@ -260,7 +335,38 @@
     });
   });
 
-  // Claude hub sub-sub-pills: Basics / Claude Code / Skills / MCP / Agent SDK / What's new
+  // Projects sub-pills (M3.7): Saved list vs. + New project (Finder).
+  document.querySelectorAll(".subpill[data-projects-view]").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const kind = pill.dataset.projectsView;
+      document.querySelectorAll(".subpill[data-projects-view]").forEach((p) => {
+        const on = p === pill;
+        p.classList.toggle("is-active", on);
+        p.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      document.querySelectorAll('.pane[data-pane^="projects-"]').forEach((pane) => {
+        pane.hidden = pane.dataset.pane !== `projects-${kind}`;
+      });
+    });
+  });
+
+  // Courses tab: Anthropic Academy / aiStacked Originals (M3.8).
+  document.querySelectorAll(".subpill[data-courses]").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const kind = pill.dataset.courses;
+      document.querySelectorAll(".subpill[data-courses]").forEach((p) => {
+        const on = p === pill;
+        p.classList.toggle("is-active", on);
+        p.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      document.querySelectorAll('.pane[data-pane^="courses-"]').forEach((pane) => {
+        pane.hidden = pane.dataset.pane !== `courses-${kind}`;
+      });
+    });
+  });
+
+  // Legacy Claude hub sub-sub-pills (removed in M3.8) — this block is a
+  // no-op guard in case old markup resurfaces during a partial deploy.
   document.querySelectorAll(".subpill[data-claude]").forEach((pill) => {
     pill.addEventListener("click", () => {
       const kind = pill.dataset.claude;
@@ -338,12 +444,20 @@
     "learn":      "learn",
     "comply365":  "s365",
     "news-media": "newsmedia",
+    "projects":   "projects-view",
   };
   document.querySelectorAll("[data-chip]").forEach(btn => {
     btn.addEventListener("click", () => {
       const chipName = btn.dataset.chip;
       const chip = document.querySelector(`[data-filter="${chipName}"]`);
-      if (chip) chip.click();
+      if (chip) {
+        chip.click();
+      } else {
+        // M3.9: news-media has no chip but its section still exists.
+        // Hit applyFilter directly so the Home "State of AI" card still works.
+        applyFilter(chipName);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
       const sub = btn.dataset.subpill;
       const attr = SUBPILL_ATTR[chipName];
       if (sub && attr) {
@@ -540,52 +654,31 @@
   // Pinned items — URLs the user wants to keep regardless of feed churn.
   // Pins are SCRAPE-RESISTANT: each pin stores the full item snapshot
   // (title, url, source, published, summary) so the card can be rerendered
-  // even if the scraper later cycles the item off the live feed.
-  // Stored as { "<url>": { pinnedAt, ...itemSnapshot } }.
-  const PINS_KEY = "clhub.v1.learningPins";
-  function getPins() {
-    try {
-      const raw = localStorage.getItem(PINS_KEY);
-      if (!raw) return {};
-      const obj = JSON.parse(raw);
-      return obj && typeof obj === "object" ? obj : {};
-    } catch { return {}; }
-  }
-  function putPins(obj) {
-    try { localStorage.setItem(PINS_KEY, JSON.stringify(obj)); } catch {}
-  }
-  function togglePin(item) {
-    const url = typeof item === "string" ? item : item && item.url;
-    if (!url) return;
-    const pins = getPins();
-    if (pins[url]) {
-      delete pins[url];
-    } else {
-      // Prefer the fresh item from the feed if given; fall back to whatever
-      // was already cached under that URL (should rarely happen).
-      const src = (typeof item === "object" && item) || {};
-      pins[url] = {
-        pinnedAt: new Date().toISOString(),
-        title:     src.title     || "",
-        url,
-        source:    src.source    || "",
-        published: src.published || null,
-        summary:   src.summary   || "",
-      };
-    }
-    putPins(pins);
-  }
-  function isPinned(url) { return !!getPins()[url]; }
-  // Merge live feed + pinned snapshots so pinned items survive scrape churn.
-  // A pinned URL already present in the feed wins (fresh metadata); one that
-  // dropped off resurfaces from the pin snapshot.
+  // M3.10: URL-based pin helpers now read from the unified clhub.v1.saves
+  // store. isPinned(url) = any save exists for kind="learning" with that
+  // URL. Resurrection of scraped-off items reads saves too.
+  function isPinned(url) { return isSavedAny("learning", url); }
   function resurrectPinnedItems(liveItems) {
-    const pins = getPins();
+    const saves = getSaves();
     const live = new Map(liveItems.map((it) => [it.url, it]));
-    for (const [url, snap] of Object.entries(pins)) {
+    // Collect every learning-kind save across all project scopes + unscoped.
+    const snapshots = new Map();
+    for (const [key, entry] of Object.entries(saves)) {
+      if (entry && entry.kind === "learning" && entry.url) {
+        // Use any variant; all share the same URL and card metadata.
+        if (!snapshots.has(entry.url)) snapshots.set(entry.url, entry);
+      }
+    }
+    for (const [url, snap] of snapshots) {
       if (!live.has(url)) {
-        const { pinnedAt, ...rest } = snap;
-        if (rest.url) live.set(url, rest);
+        live.set(url, {
+          url,
+          title:     snap.title     || "",
+          source:    snap.source    || "",
+          published: snap.published || null,
+          summary:   snap.summary   || "",
+          thumb:     snap.thumb     || null,
+        });
       }
     }
     return Array.from(live.values());
@@ -631,14 +724,19 @@
     }
   }
 
-  function sourceBucket(source) {
+  // M3.9: filter buckets collapse to All / Anthropic / Industry / Videos.
+  // Items can carry an explicit _bucket hint (set when merging s.news into
+  // the feed); otherwise we derive from source.
+  function sourceBucket(source, hintedBucket) {
+    if (hintedBucket) return hintedBucket;
     const s = source || "";
-    if (s === "Claude Code") return "code";
-    if (s === "Claude API Release Notes") return "api";
-    if (s.startsWith("MCP")) return "mcp";
-    if (s === "Anthropic Academy") return "academy";
     if (s.startsWith("YouTube")) return "videos";
-    return "other";
+    if (s === "Claude Code") return "anthropic";
+    if (s === "Claude API Release Notes") return "anthropic";
+    if (s.startsWith("MCP")) return "anthropic";
+    if (s === "Anthropic Academy") return "anthropic";
+    if (/anthropic/i.test(s)) return "anthropic";
+    return "industry";
   }
 
   function renderClaudeLearning(items) {
@@ -646,13 +744,74 @@
     paintClaudeLearning();
     updateClaudeWhatsNewBadge();
     updateLearnFilterCounts();
+    renderYouTube();
+  }
+
+  // M3.10: dedicated YouTube tab. Pulls every item in the merged feed whose
+  // sourceBucket is "videos" (source starts with "YouTube"); renders as
+  // cards-mixed with the in-app iframe modal click-through and unified Save.
+  function renderYouTube() {
+    const host = document.getElementById("youtube-grid");
+    if (!host) return;
+    const allSaves = getSaves();
+    // Rebuild from the live feed + any saved videos that have dropped off.
+    const liveVids = claudeLearningItems
+      .filter((it) => sourceBucket(it.source, it._bucket) === "videos");
+    const savedVids = [];
+    for (const entry of Object.values(allSaves)) {
+      if (entry && entry.kind === "learning" && entry.url &&
+          sourceBucket(entry.source || "", entry._bucket) === "videos" &&
+          !liveVids.some((it) => it.url === entry.url)) {
+        savedVids.push({
+          url: entry.url,
+          title: entry.title || "",
+          source: entry.source || "YouTube",
+          published: entry.published || null,
+          summary: "",
+          thumb: entry.thumb || null,
+        });
+      }
+    }
+    const items = liveVids.concat(savedVids).sort((a, b) => {
+      const pa = isSavedAny("learning", a.url) ? 1 : 0;
+      const pb = isSavedAny("learning", b.url) ? 1 : 0;
+      if (pa !== pb) return pb - pa;
+      const ta = a.published ? Date.parse(a.published) : 0;
+      const tb = b.published ? Date.parse(b.published) : 0;
+      return tb - ta;
+    });
+    host.innerHTML = "";
+    if (items.length === 0) {
+      host.innerHTML = `<div class="empty">No videos in the feed yet.</div>`;
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    items.slice(0, 60).forEach((it, idx) => {
+      const node = renderCard(it, false, idx);
+      node.dataset.learnBucket = "videos";
+      if (isSavedAny("learning", it.url)) node.dataset.pinned = "1";
+      const pill = node.querySelector(".card-pill");
+      if (pill) { pill.textContent = "Video"; pill.dataset.pill = "videos"; }
+      attachPinButton(node, it);
+      const vid = extractYouTubeId(it.url);
+      if (vid) {
+        node.addEventListener("click", (e) => {
+          if (e.target.closest(".save-btn")) return;
+          e.preventDefault();
+          openVideoModal(vid, it.title, it.url);
+        });
+      }
+      frag.appendChild(node);
+    });
+    host.appendChild(frag);
   }
 
   function updateLearnFilterCounts() {
-    const merged = resurrectPinnedItems(claudeLearningItems);
-    const counts = { all: merged.length, code: 0, api: 0, mcp: 0, videos: 0, academy: 0 };
+    const merged = resurrectPinnedItems(claudeLearningItems)
+      .filter((it) => sourceBucket(it.source, it._bucket) !== "videos");
+    const counts = { all: merged.length, anthropic: 0, industry: 0 };
     for (const it of merged) {
-      const b = sourceBucket(it.source);
+      const b = sourceBucket(it.source, it._bucket);
       if (counts[b] !== undefined) counts[b]++;
     }
     document.querySelectorAll("[data-filter-count]").forEach((el) => {
@@ -667,10 +826,12 @@
     if (!container) return;
     container.innerHTML = "";
     const filter = claudeLearningFilter;
-    const merged = resurrectPinnedItems(claudeLearningItems);
+    // M3.10: videos live in the YouTube top-level tab now.
+    const merged = resurrectPinnedItems(claudeLearningItems)
+      .filter((it) => sourceBucket(it.source, it._bucket) !== "videos");
     const filtered = filter === "all"
       ? merged
-      : merged.filter((it) => sourceBucket(it.source) === filter);
+      : merged.filter((it) => sourceBucket(it.source, it._bucket) === filter);
     if (!filtered.length) {
       const empty = document.createElement("div");
       empty.className = "empty";
@@ -680,25 +841,23 @@
       container.appendChild(empty);
       return;
     }
-    // Sort pinned first (within the filtered set), then by date desc. Pins
-    // float to the top of whatever view the user has — "All", any bucket,
-    // doesn't matter. Non-pinned fall back to date-desc.
-    const pins = getPins();
+    // Sort saved items first (within the filtered set), then by date desc.
+    // Saves float to the top of whatever view the user has.
     const sorted = filtered.slice().sort((a, b) => {
-      const pa = pins[a.url] ? 1 : 0;
-      const pb = pins[b.url] ? 1 : 0;
+      const pa = isSavedAny("learning", a.url) ? 1 : 0;
+      const pb = isSavedAny("learning", b.url) ? 1 : 0;
       if (pa !== pb) return pb - pa;
       const ta = a.published ? Date.parse(a.published) : 0;
       const tb = b.published ? Date.parse(b.published) : 0;
       return tb - ta;
     });
     const frag = document.createDocumentFragment();
-    const BUCKET_LABEL = { code: "Claude Code", api: "Claude API", mcp: "MCP", videos: "Video", academy: "Academy" };
+    const BUCKET_LABEL = { anthropic: "Anthropic", industry: "Industry", videos: "Video" };
     sorted.slice(0, 24).forEach((it, idx) => {
       const node = renderCard(it, false, idx);
-      const bucket = sourceBucket(it.source);
+      const bucket = sourceBucket(it.source, it._bucket);
       node.dataset.learnBucket = bucket;
-      if (pins[it.url]) node.dataset.pinned = "1";
+      if (isSavedAny("learning", it.url)) node.dataset.pinned = "1";
       const pill = node.querySelector(".card-pill");
       if (pill && BUCKET_LABEL[bucket]) {
         pill.textContent = BUCKET_LABEL[bucket];
@@ -783,58 +942,41 @@
   const PIN_SVG_OUTLINE = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><path d="M12 12v8"/></svg>';
   const PIN_SVG_FILLED  = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><rect x="11.2" y="12" width="1.6" height="8" rx="0.6"/></svg>';
 
-  function attachPinButton(node, url) {
-    if (!url || node.querySelector(".card-pin")) return;
+  // M3.10: card pin → unified Save button. Same glyphs, same affordance,
+  // but click opens the global save picker instead of toggling a pin.
+  function attachPinButton(node, urlOrItem) {
+    const item = typeof urlOrItem === "object" ? urlOrItem : null;
+    const url  = item ? item.url : urlOrItem;
+    if (!url || node.querySelector(".save-btn")) return;
+    const saved = isSavedAny("learning", url);
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "card-pin";
-    const pinned = isPinned(url);
-    btn.dataset.pinned = pinned ? "1" : "";
-    btn.innerHTML = pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE;
-    btn.setAttribute("aria-label", pinned ? "Unpin" : "Pin");
-    btn.setAttribute("aria-pressed", pinned ? "true" : "false");
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      // Pass the live item so its full snapshot is captured. Look it up by
-      // URL in claudeLearningItems (or in the existing pin, as a fallback).
-      const live = claudeLearningItems.find((it) => it.url === url);
-      togglePin(live || url);
-      paintClaudeLearning();
-      updateLearnFilterCounts();
-    });
+    btn.className = "save-btn save-btn-card";
+    btn.dataset.saveKind = "learning";
+    btn.dataset.saveId   = url;
+    btn.dataset.saveLabel = item?.title || url;
+    if (item?.thumb)     btn.dataset.saveThumb     = item.thumb;
+    if (item?.source)    btn.dataset.saveSource    = item.source;
+    if (item?.published) btn.dataset.savePublished = item.published;
+    btn.dataset.saveUrl = url;
+    btn.dataset.saved = saved ? "1" : "";
+    btn.innerHTML = saved ? PIN_SVG_FILLED : PIN_SVG_OUTLINE;
+    btn.setAttribute("aria-label", saved ? "Edit save" : "Save");
+    btn.setAttribute("aria-pressed", saved ? "true" : "false");
+    // Click handled by the delegated .save-btn listener; nothing else needed.
     node.appendChild(btn);
   }
 
-  // Claude hub — render snippet rows inside each subpill pane (Phase 2 M2.1+).
-  // Source: data/learn/snippets.json (authored) + claude_hub_map.json's
-  // snippetTagsByBucket (which tags belong under which pane).
+  // Snippet loader (M3.8): populates the module-scope snippetsData cache
+  // used by the tool-detail modal, cmd-K search, and the new flat Academy
+  // course renderer. Per-bucket .snippets-host rendering removed — snippets
+  // now surface INSIDE each Academy course card (see renderAcademyFlat).
   async function loadSnippets() {
     try {
-      const [snipRes, mapRes] = await Promise.all([
-        fetch(SNIPPETS_URL, { cache: "no-cache" }),
-        fetch(HUB_MAP_URL,  { cache: "no-cache" }),
-      ]);
-      if (!snipRes.ok || !mapRes.ok) return;
-      const snipPayload = await snipRes.json();
-      const mapPayload  = await mapRes.json();
-      const snippets = Array.isArray(snipPayload.snippets) ? snipPayload.snippets : [];
-      snippetsData = snippets;
-      const tagsByBucket = (mapPayload && mapPayload.snippetTagsByBucket) || {};
-      document.querySelectorAll(".snippets-host[data-snippet-bucket]").forEach((host) => {
-        const bucket = host.dataset.snippetBucket;
-        const allowed = new Set(tagsByBucket[bucket] || []);
-        const matching = snippets.filter((s) =>
-          (s.snippetTags || []).some((t) => allowed.has(t))
-        );
-        if (matching.length === 0) { host.innerHTML = ""; return; }
-        const rows = matching.map((s) => renderSnippetRow(s)).join("");
-        host.innerHTML = `
-          <div class="academy-eyebrow">Snippets · ${matching.length}</div>
-          <div class="snippet-list">${rows}</div>
-        `;
-      });
-      wireSnippetCopyButtons(document);
+      const res = await fetch(SNIPPETS_URL, { cache: "no-cache" });
+      if (!res.ok) return;
+      const payload = await res.json();
+      snippetsData = Array.isArray(payload.snippets) ? payload.snippets : [];
     } catch {}
   }
 
@@ -864,6 +1006,7 @@
 
   function renderSnippetRow(s) {
     const lang = (s.language || "text").toLowerCase();
+    const pinned = isSavedAny("snippet", s.id);
     return `
       <details class="snippet-row glass" data-lang="${escapeHtml(lang)}">
         <summary class="snippet-summary">
@@ -875,6 +1018,7 @@
         </summary>
         <div class="snippet-body">
           <div class="snippet-actions">
+            <button type="button" class="save-btn save-btn-row" data-save-kind="snippet" data-save-id="${escapeHtml(s.id)}" data-save-label="${escapeHtml(s.title || s.id)}" data-saved="${pinned ? "1" : ""}" aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinned ? "Edit save" : "Save"}">${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}<span class="save-btn-label">${pinned ? "Saved" : "Save"}</span></button>
             <button type="button" class="snippet-copy">Copy</button>
           </div>
           <pre class="snippet-pre"><code class="snippet-code">${escapeHtml(s.body || "")}</code></pre>
@@ -887,7 +1031,21 @@
   // Two files: academy_courses.json (full metadata from the scraper) and
   // claude_hub_map.json (hand-curated slug → bucket mapping). Rendered once
   // on load; no cache-bust needed within a session.
+  // Flat Academy renderer (M3.8). One list, grouped by bucket label
+  // (Basics → Claude Code → Skills → MCP → Agent SDK), with each course
+  // as a <details> element whose body contains the course description,
+  // the official link, and every snippet whose tags belong to the
+  // course's bucket.
+  const BUCKET_LABEL = {
+    "basics":    "Basics",
+    "code":      "Claude Code",
+    "skills":    "Skills",
+    "mcp":       "MCP",
+    "agent-sdk": "Agent SDK",
+  };
   async function loadAcademyHub() {
+    const host = document.getElementById("academy-flat-host");
+    if (!host) return;
     try {
       const [coursesRes, mapRes] = await Promise.all([
         fetch(ACADEMY_URL, { cache: "no-cache" }),
@@ -900,26 +1058,52 @@
         (coursesPayload.courses || []).map((c) => [c.slug, c])
       );
       const buckets = mapPayload.buckets || {};
+      const snippetTagsByBucket = mapPayload.snippetTagsByBucket || {};
+      const parts = [];
       for (const [bucket, slugs] of Object.entries(buckets)) {
-        const host = document.querySelector(`.academy-host[data-academy-bucket="${bucket}"]`);
-        if (!host) continue;
         const courses = (slugs || []).map((s) => bySlug[s]).filter(Boolean);
-        if (courses.length === 0) {
-          host.innerHTML = "";
-          continue;
-        }
-        const cards = courses.map((c) => `
-          <a class="academy-card glass" href="${c.url}" target="_blank" rel="noopener">
-            <div class="academy-card-title">${escapeHtml(c.title)}</div>
-            <div class="academy-card-summary">${escapeHtml(c.summary || "")}</div>
-            <div class="academy-card-cta">Start course →</div>
-          </a>
-        `).join("");
-        host.innerHTML = `
-          <div class="academy-eyebrow">Anthropic Academy · ${courses.length} course${courses.length === 1 ? "" : "s"}</div>
-          <div class="academy-grid">${cards}</div>
-        `;
+        if (courses.length === 0) continue;
+        const tagSet = new Set(snippetTagsByBucket[bucket] || []);
+        const bucketSnippets = tagSet.size
+          ? snippetsData.filter((s) => (s.snippetTags || []).some((t) => tagSet.has(t)))
+          : [];
+        const label = BUCKET_LABEL[bucket] || bucket;
+        const courseRows = courses.map((c) => {
+          const snipCount = bucketSnippets.length;
+          const snipRows = bucketSnippets.map((s) => renderSnippetRow(s)).join("");
+          const snipBlock = snipCount > 0
+            ? `<div class="academy-course-snippets">
+                 <div class="academy-course-snippets-head">Snippets · ${snipCount}</div>
+                 <div class="snippet-list">${snipRows}</div>
+               </div>`
+            : "";
+          return `
+            <details class="academy-course glass">
+              <summary class="academy-course-summary">
+                <span class="academy-course-bucket" data-bucket="${escapeHtml(bucket)}">${escapeHtml(label)}</span>
+                <span class="academy-course-title">${escapeHtml(c.title)}</span>
+                ${snipCount > 0 ? `<span class="academy-course-badge">${snipCount} snippet${snipCount === 1 ? "" : "s"}</span>` : ""}
+              </summary>
+              <div class="academy-course-body">
+                ${c.summary ? `<p class="academy-course-body-lede">${escapeHtml(c.summary)}</p>` : ""}
+                <a class="academy-course-cta" href="${escapeHtml(c.url)}" target="_blank" rel="noopener">Start course on Anthropic Academy ↗</a>
+                ${snipBlock}
+              </div>
+            </details>
+          `;
+        }).join("");
+        parts.push(`
+          <div class="academy-bucket" data-bucket="${escapeHtml(bucket)}">
+            <div class="academy-bucket-head">
+              <span class="academy-bucket-label">${escapeHtml(label)}</span>
+              <span class="academy-bucket-count">${courses.length} course${courses.length === 1 ? "" : "s"}</span>
+            </div>
+            <div class="academy-bucket-list">${courseRows}</div>
+          </div>
+        `);
       }
+      host.innerHTML = parts.join("");
+      wireSnippetCopyButtons(host);
     } catch {}
   }
 
@@ -1259,6 +1443,7 @@
     projects[id] = project;
     putProjects(projects);
     renderProjects();
+    renderContinueCard();
     return project;
   }
   function deleteProject(id) {
@@ -1267,7 +1452,1019 @@
     delete projects[id];
     putProjects(projects);
     renderProjects();
+    renderContinueCard();
   }
+
+  // ---------- Backup export / import (M3.3) ----------
+  // Dumps every clhub.v1.* + cdih-theme localStorage key into a single JSON
+  // file the user can stash somewhere safe. Re-import merges by default,
+  // replacing each included key. Never touches non-backup keys.
+  const BACKUP_KEY_PREFIXES = ["clhub.v1.", "cdih-"];
+  function isBackupKey(k) {
+    return BACKUP_KEY_PREFIXES.some((p) => k.startsWith(p));
+  }
+  function collectBackup() {
+    const data = {};
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && isBackupKey(k)) data[k] = localStorage.getItem(k);
+      }
+    } catch {}
+    return {
+      schema: "aistacked-backup",
+      schemaVersion: 1,
+      exportedAt: new Date().toISOString(),
+      appVersion: (document.getElementById("version-num")?.textContent || "").replace(/^v/, "") || null,
+      keys: data,
+    };
+  }
+  function applyBackup(payload, { mode = "merge" } = {}) {
+    if (!payload || typeof payload !== "object") throw new Error("invalid: not an object");
+    if (payload.schema !== "aistacked-backup") throw new Error("invalid: wrong schema");
+    const keys = payload.keys;
+    if (!keys || typeof keys !== "object") throw new Error("invalid: missing keys");
+    // Only accept backup-prefix keys — never overwrite anything else.
+    const accepted = Object.keys(keys).filter(isBackupKey);
+    if (accepted.length === 0) throw new Error("invalid: no backup keys found");
+    if (mode === "replace") {
+      for (let i = localStorage.length - 1; i >= 0; i--) {
+        const k = localStorage.key(i);
+        if (k && isBackupKey(k)) localStorage.removeItem(k);
+      }
+    }
+    accepted.forEach((k) => {
+      const v = keys[k];
+      if (typeof v === "string") localStorage.setItem(k, v);
+    });
+    return accepted.length;
+  }
+  function setBackupStatus(msg, tone) {
+    const el = document.getElementById("backup-status");
+    if (!el) return;
+    el.textContent = msg || "";
+    el.dataset.tone = tone || "";
+    if (msg) {
+      clearTimeout(setBackupStatus._t);
+      setBackupStatus._t = setTimeout(() => {
+        if (el.textContent === msg) { el.textContent = ""; el.dataset.tone = ""; }
+      }, 3000);
+    }
+  }
+  function openBackupModal() {
+    const payload = collectBackup();
+    const text = JSON.stringify(payload, null, 2);
+    const n = Object.keys(payload.keys).length;
+    const modal = document.getElementById("backup-modal");
+    if (!modal) return;
+    const ta  = modal.querySelector(".backup-modal-json");
+    const sub = modal.querySelector(".backup-modal-sub");
+    if (ta)  ta.value = text;
+    if (sub) sub.textContent = `${n} key${n === 1 ? "" : "s"} · ${(new Blob([text]).size / 1024).toFixed(1)} KB`;
+    // Reset transient button labels.
+    const copyBtn   = modal.querySelector(".backup-modal-copy");
+    const laptopBtn = modal.querySelector(".backup-modal-laptop");
+    if (copyBtn)   { copyBtn.textContent   = "Copy";          copyBtn.dataset.state   = ""; }
+    if (laptopBtn) { laptopBtn.textContent = "Save to laptop"; laptopBtn.dataset.state = ""; }
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function closeBackupModal() {
+    const modal = document.getElementById("backup-modal");
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden])")) {
+      document.body.classList.remove("modal-open");
+    }
+  }
+  async function copyBackupJson() {
+    const modal = document.getElementById("backup-modal");
+    const ta = modal?.querySelector(".backup-modal-json");
+    const btn = modal?.querySelector(".backup-modal-copy");
+    if (!ta || !btn) return;
+    try {
+      await navigator.clipboard.writeText(ta.value);
+      btn.textContent = "Copied"; btn.dataset.state = "ok";
+    } catch {
+      // Fallback for iOS if clipboard API is blocked: select + execCommand.
+      ta.focus(); ta.select();
+      try { document.execCommand("copy"); btn.textContent = "Copied"; btn.dataset.state = "ok"; }
+      catch { btn.textContent = "Copy failed"; btn.dataset.state = "err"; }
+    }
+    setTimeout(() => { btn.textContent = "Copy"; btn.dataset.state = ""; }, 1600);
+  }
+  async function saveBackupToLaptop() {
+    const modal = document.getElementById("backup-modal");
+    const ta  = modal?.querySelector(".backup-modal-json");
+    const btn = modal?.querySelector(".backup-modal-laptop");
+    if (!ta || !btn) return;
+    btn.textContent = "Saving…"; btn.dataset.state = "";
+    try {
+      const res = await fetch("/__save_backup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: ta.value,
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json().catch(() => ({}));
+      btn.textContent = data.path ? `Saved → ${data.path}` : "Saved";
+      btn.dataset.state = "ok";
+    } catch (err) {
+      btn.textContent = "Save failed";
+      btn.dataset.state = "err";
+    }
+    setTimeout(() => { btn.textContent = "Save to laptop"; btn.dataset.state = ""; }, 2400);
+  }
+  async function handleImportFile(file) {
+    if (!file) return;
+    try {
+      const text = await file.text();
+      const payload = JSON.parse(text);
+      const n = applyBackup(payload, { mode: "merge" });
+      setBackupStatus(`Imported ${n} key${n === 1 ? "" : "s"} — reloading…`, "ok");
+      setTimeout(() => location.reload(), 700);
+    } catch (err) {
+      setBackupStatus(`Import failed: ${err.message || err}`, "err");
+    }
+  }
+  {
+    const exportBtn = document.getElementById("backup-export");
+    const importBtn = document.getElementById("backup-import-trigger");
+    const fileInput = document.getElementById("backup-import-file");
+    if (exportBtn) exportBtn.addEventListener("click", (e) => { e.preventDefault(); openBackupModal(); });
+    if (importBtn && fileInput) {
+      importBtn.addEventListener("click", (e) => { e.preventDefault(); fileInput.click(); });
+      fileInput.addEventListener("change", () => {
+        const f = fileInput.files?.[0];
+        if (f) handleImportFile(f);
+        fileInput.value = "";
+      });
+    }
+    // Backup modal wiring.
+    document.querySelectorAll("#backup-modal [data-close]").forEach((el) => {
+      el.addEventListener("click", (ev) => { ev.preventDefault(); closeBackupModal(); });
+    });
+    const copyBtn   = document.querySelector("#backup-modal .backup-modal-copy");
+    const laptopBtn = document.querySelector("#backup-modal .backup-modal-laptop");
+    if (copyBtn)   copyBtn.addEventListener("click", (e) => { e.preventDefault(); copyBackupJson(); });
+    if (laptopBtn) laptopBtn.addEventListener("click", (e) => { e.preventDefault(); saveBackupToLaptop(); });
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      const m = document.getElementById("backup-modal");
+      if (m && !m.hidden) closeBackupModal();
+    });
+  }
+
+  // ---------- Authored lessons + MCQ quizzes (M4.1 / M4.2 / M4.3) ----------
+  let lessonsData = [];
+  const lessonBodyCache = new Map();
+  const LESSON_PROGRESS_KEY = "clhub.v1.lessonProgress";
+  const TRACK_LABEL = {
+    "claude-code":  "Claude Code",
+    "skills":       "Skills",
+    "mcp":          "MCP",
+    "finder":       "Finder",
+    "image-video":  "Image / Video",
+    "nocode":       "No-code",
+    "local":        "Local / Desktop",
+  };
+  function getLessonProgress() {
+    try {
+      const raw = localStorage.getItem(LESSON_PROGRESS_KEY);
+      if (!raw) return {};
+      const obj = JSON.parse(raw);
+      return obj && typeof obj === "object" ? obj : {};
+    } catch { return {}; }
+  }
+  function putLessonProgress(obj) {
+    try { localStorage.setItem(LESSON_PROGRESS_KEY, JSON.stringify(obj)); } catch {}
+  }
+  function lessonState(slug) {
+    const p = getLessonProgress();
+    return p[slug] || null;
+  }
+  function setLessonState(slug, state) {
+    const p = getLessonProgress();
+    if (state === null) delete p[slug]; else p[slug] = state;
+    putLessonProgress(p);
+  }
+  async function loadLessons() {
+    try {
+      const res = await fetch(LESSONS_URL, { cache: "no-cache" });
+      if (!res.ok) return;
+      const payload = await res.json();
+      lessonsData = Array.isArray(payload.lessons) ? payload.lessons : [];
+    } catch { lessonsData = []; }
+    renderLessonsList();
+  }
+  function renderLessonsList() {
+    const host = document.getElementById("lessons-list");
+    if (!host) return;
+    if (lessonsData.length === 0) {
+      host.innerHTML = `<div class="empty glass academy-empty">No lessons yet. First one lands soon — check back, or hit the Academy tab for Anthropic's own catalog in the meantime.</div>`;
+      return;
+    }
+    const byTrack = new Map();
+    lessonsData
+      .slice()
+      .sort((a, b) => (a.track || "").localeCompare(b.track || "") || (a.order || 0) - (b.order || 0))
+      .forEach((l) => {
+        const k = l.track || "misc";
+        if (!byTrack.has(k)) byTrack.set(k, []);
+        byTrack.get(k).push(l);
+      });
+    const progress = getLessonProgress();
+    const sections = [];
+    for (const [track, list] of byTrack) {
+      const label = TRACK_LABEL[track] || track;
+      const completed = list.filter((l) => progress[l.slug]?.state === "completed").length;
+      const rows = list.map((l) => {
+        const state = progress[l.slug]?.state || "new";
+        const stateLabel = state === "completed" ? "Completed"
+                        : state === "in_progress" ? "In progress"
+                        : "Not started";
+        return `
+          <button type="button" class="lesson-row" data-lesson-slug="${escapeHtml(l.slug)}">
+            <div class="lesson-row-head">
+              <span class="lesson-row-min">${l.minutes ? l.minutes + " min" : ""}</span>
+              <span class="lesson-row-title">${escapeHtml(l.title)}</span>
+              <span class="lesson-row-state" data-state="${escapeHtml(state)}">${stateLabel}</span>
+            </div>
+            <div class="lesson-row-summary">${escapeHtml(l.summary || "")}</div>
+          </button>
+        `;
+      }).join("");
+      sections.push(`
+        <div class="lessons-track">
+          <div class="lessons-track-head">
+            <span class="lessons-track-label">${escapeHtml(label)}</span>
+            <span class="lessons-track-count">${completed}/${list.length}</span>
+          </div>
+          <div class="lessons-track-rows">${rows}</div>
+        </div>
+      `);
+    }
+    host.innerHTML = sections.join("");
+    host.querySelectorAll(".lesson-row").forEach((row) => {
+      row.addEventListener("click", (e) => {
+        e.preventDefault();
+        openLesson(row.dataset.lessonSlug);
+      });
+    });
+  }
+  async function openLesson(slug) {
+    const lesson = lessonsData.find((l) => l.slug === slug);
+    const modal = document.getElementById("lesson-modal");
+    if (!lesson || !modal) return;
+    modal.dataset.slug = slug;
+    const titleEl = modal.querySelector(".lesson-modal-title");
+    const trackEl = modal.querySelector(".lesson-modal-track");
+    const minEl   = modal.querySelector(".lesson-modal-min");
+    const statusEl = modal.querySelector(".lesson-modal-status");
+    const mdHost  = modal.querySelector("#lesson-markdown");
+    const quizHost = modal.querySelector("#lesson-quiz");
+    const completeBtn = modal.querySelector("#lesson-complete");
+    const resetBtn    = modal.querySelector("#lesson-reset");
+    if (titleEl) titleEl.textContent = lesson.title || "";
+    if (trackEl) trackEl.textContent = TRACK_LABEL[lesson.track] || lesson.track || "";
+    if (minEl)   minEl.textContent   = lesson.minutes ? lesson.minutes + " min" : "";
+    const progress = lessonState(slug);
+    const isComplete = progress?.state === "completed";
+    if (statusEl) {
+      statusEl.textContent = isComplete ? "Completed" :
+                              progress ? "In progress" : "";
+      statusEl.dataset.state = isComplete ? "completed" : progress ? "in_progress" : "";
+    }
+    if (completeBtn) completeBtn.textContent = isComplete ? "Mark incomplete" : "Mark complete";
+    if (resetBtn)    resetBtn.hidden = !progress;
+
+    // Load + render the markdown body (cached).
+    if (mdHost) {
+      if (lessonBodyCache.has(slug)) {
+        mdHost.innerHTML = lessonBodyCache.get(slug);
+      } else {
+        mdHost.innerHTML = `<div class="empty">Loading lesson…</div>`;
+        try {
+          const res = await fetch(`data/learn/lessons/${slug}.md?v=${Date.now()}`, { cache: "no-cache" });
+          if (res.ok) {
+            const md = await res.text();
+            const html = renderMarkdown(md);
+            lessonBodyCache.set(slug, html);
+            mdHost.innerHTML = html;
+          } else {
+            mdHost.innerHTML = `<div class="empty">Couldn't load lesson body.</div>`;
+          }
+        } catch {
+          mdHost.innerHTML = `<div class="empty">Couldn't load lesson body.</div>`;
+        }
+      }
+    }
+    // Render quiz.
+    if (quizHost) {
+      const quiz = Array.isArray(lesson.quiz) ? lesson.quiz : [];
+      const savedAnswers = progress?.answers || {};
+      quizHost.innerHTML = quiz.length === 0 ? "" : `
+        <div class="lesson-quiz-head">Check your understanding</div>
+        ${quiz.map((q, qi) => {
+          const chosen = savedAnswers[qi];
+          const hasAnswered = Number.isInteger(chosen);
+          return `
+            <div class="lesson-q" data-q-idx="${qi}">
+              <div class="lesson-q-text">${escapeHtml(q.q)}</div>
+              <div class="lesson-q-choices">
+                ${q.choices.map((c, ci) => {
+                  const correct = ci === q.answer;
+                  const picked = hasAnswered && ci === chosen;
+                  let cls = "lesson-q-choice";
+                  if (hasAnswered) {
+                    if (picked && correct)   cls += " is-correct is-picked";
+                    else if (picked)         cls += " is-wrong is-picked";
+                    else if (correct)        cls += " is-correct";
+                  }
+                  return `<button type="button" class="${cls}" data-choice-idx="${ci}" ${hasAnswered ? "disabled" : ""}>${escapeHtml(c)}</button>`;
+                }).join("")}
+              </div>
+              ${hasAnswered && q.why ? `<div class="lesson-q-why">${escapeHtml(q.why)}</div>` : ""}
+            </div>
+          `;
+        }).join("")}
+      `;
+      // Click handlers on choices.
+      quizHost.querySelectorAll(".lesson-q-choice").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (btn.disabled) return;
+          const q = btn.closest(".lesson-q");
+          const qi = Number(q?.dataset.qIdx);
+          const ci = Number(btn.dataset.choiceIdx);
+          const state = lessonState(slug) || { state: "in_progress", answers: {}, startedAt: new Date().toISOString() };
+          state.answers = state.answers || {};
+          state.answers[qi] = ci;
+          state.state = state.state === "completed" ? "completed" : "in_progress";
+          setLessonState(slug, state);
+          openLesson(slug); // re-render with the reveal
+        });
+      });
+    }
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function closeLessonModal() {
+    const modal = document.getElementById("lesson-modal");
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .backup-modal:not([hidden]), .storage-modal:not([hidden])")) {
+      document.body.classList.remove("modal-open");
+    }
+    renderLessonsList(); // refresh status chips
+  }
+  {
+    const completeBtn = document.getElementById("lesson-complete");
+    const resetBtn    = document.getElementById("lesson-reset");
+    if (completeBtn) completeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const modal = document.getElementById("lesson-modal");
+      const slug = modal?.dataset.slug;
+      if (!slug) return;
+      const cur = lessonState(slug);
+      if (cur?.state === "completed") {
+        setLessonState(slug, { ...cur, state: "in_progress", completedAt: null });
+      } else {
+        setLessonState(slug, {
+          ...(cur || { answers: {}, startedAt: new Date().toISOString() }),
+          state: "completed",
+          completedAt: new Date().toISOString(),
+        });
+      }
+      openLesson(slug);
+    });
+    if (resetBtn) resetBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const modal = document.getElementById("lesson-modal");
+      const slug = modal?.dataset.slug;
+      if (!slug) return;
+      setLessonState(slug, null);
+      openLesson(slug);
+    });
+    document.querySelectorAll("#lesson-modal [data-close]").forEach((el) => {
+      el.addEventListener("click", (ev) => { ev.preventDefault(); closeLessonModal(); });
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      const m = document.getElementById("lesson-modal");
+      if (m && !m.hidden) closeLessonModal();
+    });
+  }
+
+  // ---------- Storage monitor (M3.4) ----------
+  // Shows localStorage usage for aiStacked's namespace and gives the user
+  // an escape hatch if they want to drop a single key. Browsers give us
+  // 5-10 MB per origin; 5 MB is the safe lowest-common-denominator budget.
+  const STORAGE_BUDGET_BYTES = 5 * 1024 * 1024;
+  // Friendlier labels for known keys.
+  const STORAGE_KEY_LABEL = {
+    "clhub.v1.projects":             "Projects",
+    "clhub.v1.saves":                "Saves (pinned tools / snippets / learning items)",
+    "clhub.v1.learningPins":         "Legacy learning pins (pre-M3.10, safe to delete after migration)",
+    "clhub.v1.savesMigrated":        "Migration flag",
+    "clhub.v1.finderCaps":           "Finder — selected capabilities",
+    "clhub.v1.finderDraft":          "Finder — textarea draft",
+    "clhub.v1.claudeWhatsNewLastSeen": "What's new — last-seen timestamp",
+    "cdih-theme":                    "Theme (dark / light)",
+  };
+  function byteSize(s) {
+    try { return new Blob([s || ""]).size; } catch { return (s || "").length; }
+  }
+  function collectStorageKeys() {
+    const rows = [];
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (!k || !isBackupKey(k)) continue;
+        const v = localStorage.getItem(k);
+        rows.push({ key: k, size: byteSize(v), length: (v || "").length });
+      }
+    } catch {}
+    rows.sort((a, b) => b.size - a.size);
+    return rows;
+  }
+  function formatBytes(n) {
+    if (n < 1024)       return n + " B";
+    if (n < 1024 * 1024) return (n / 1024).toFixed(1) + " KB";
+    return (n / (1024 * 1024)).toFixed(2) + " MB";
+  }
+  function openStorageModal() {
+    const modal = document.getElementById("storage-modal");
+    if (!modal) return;
+    renderStorageBody();
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function closeStorageModal() {
+    const modal = document.getElementById("storage-modal");
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .backup-modal:not([hidden])")) {
+      document.body.classList.remove("modal-open");
+    }
+  }
+  function renderStorageBody() {
+    const bar     = document.getElementById("storage-usage-bar");
+    const caption = document.getElementById("storage-usage-caption");
+    const list    = document.getElementById("storage-key-list");
+    const sub     = document.querySelector("#storage-modal .storage-modal-sub");
+    if (!bar || !caption || !list) return;
+    const rows = collectStorageKeys();
+    const total = rows.reduce((n, r) => n + r.size, 0);
+    const pct = Math.min(100, Math.round((total / STORAGE_BUDGET_BYTES) * 100));
+    const tone = pct >= 90 ? "red" : pct >= 70 ? "amber" : "ok";
+    bar.dataset.tone = tone;
+    bar.innerHTML = `
+      <div class="storage-usage-fill" style="width:${pct}%"></div>
+      <div class="storage-usage-pct">${pct}%</div>
+    `;
+    caption.textContent = `${formatBytes(total)} / ${formatBytes(STORAGE_BUDGET_BYTES)} (${rows.length} key${rows.length === 1 ? "" : "s"})`;
+    if (sub) sub.textContent = "Tap Delete to drop a single key. Nothing outside the aiStacked namespace is touched.";
+    if (rows.length === 0) {
+      list.innerHTML = `<div class="empty">No aiStacked keys in localStorage yet.</div>`;
+      return;
+    }
+    list.innerHTML = rows.map((r) => {
+      const label = STORAGE_KEY_LABEL[r.key] || "";
+      return `
+        <div class="storage-key-row" data-key="${escapeHtml(r.key)}">
+          <div class="storage-key-head">
+            <code class="storage-key-name">${escapeHtml(r.key)}</code>
+            <span class="storage-key-size">${formatBytes(r.size)}</span>
+          </div>
+          ${label ? `<div class="storage-key-label">${escapeHtml(label)}</div>` : ""}
+          <button type="button" class="storage-key-delete" data-delete-key="${escapeHtml(r.key)}">Delete</button>
+        </div>
+      `;
+    }).join("");
+    // Two-tap confirm (same pattern as project delete).
+    list.querySelectorAll(".storage-key-delete").forEach((btn) => {
+      let timer = null;
+      const disarm = () => {
+        btn.dataset.armed = "";
+        btn.textContent = "Delete";
+        clearTimeout(timer);
+        timer = null;
+      };
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        if (btn.dataset.armed !== "1") {
+          btn.dataset.armed = "1";
+          btn.textContent = "Tap again to remove";
+          timer = setTimeout(disarm, 3000);
+          return;
+        }
+        const key = btn.dataset.deleteKey;
+        try { localStorage.removeItem(key); } catch {}
+        renderStorageBody();
+      });
+    });
+  }
+  {
+    const openBtn = document.getElementById("storage-open");
+    if (openBtn) openBtn.addEventListener("click", (e) => { e.preventDefault(); openStorageModal(); });
+    document.querySelectorAll("#storage-modal [data-close]").forEach((el) => {
+      el.addEventListener("click", (ev) => { ev.preventDefault(); closeStorageModal(); });
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      const m = document.getElementById("storage-modal");
+      if (m && !m.hidden) closeStorageModal();
+    });
+  }
+
+  // ---------- Unified Save (M3.10) ----------
+  // Single storage key replacing Pin + "Add to learning". Each entry:
+  //   { kind: "tool"|"snippet"|"learning"|"video"|"article",
+  //     targetId,  // for tools/snippets: the tool/snippet id
+  //     url,       // for learning/video/article: the URL
+  //     title, thumb, source, published,  // card-resurrection metadata
+  //     projectId, note, addedAt }
+  // Entry id is kind:targetId-or-url-hash[:projectId].
+  const SAVES_KEY = "clhub.v1.saves";
+  const SAVES_MIGRATED_KEY = "clhub.v1.savesMigrated";
+
+  function getSaves() {
+    try {
+      const raw = localStorage.getItem(SAVES_KEY);
+      if (!raw) return {};
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === "object" ? parsed : {};
+    } catch { return {}; }
+  }
+  function putSaves(obj) {
+    try { localStorage.setItem(SAVES_KEY, JSON.stringify(obj)); } catch {}
+  }
+  function saveKey(kind, targetOrUrl, projectId) {
+    return `${kind}:${targetOrUrl}${projectId ? ":" + projectId : ""}`;
+  }
+  function isSavedAny(kind, targetOrUrl) {
+    const saves = getSaves();
+    const prefix = `${kind}:${targetOrUrl}`;
+    return Object.keys(saves).some((k) => k === prefix || k.startsWith(prefix + ":"));
+  }
+  function getSavesFor(kind, targetOrUrl) {
+    const saves = getSaves();
+    const prefix = `${kind}:${targetOrUrl}`;
+    return Object.entries(saves)
+      .filter(([k]) => k === prefix || k.startsWith(prefix + ":"))
+      .map(([k, v]) => ({ id: k, ...v }));
+  }
+  function upsertSave(entry) {
+    const saves = getSaves();
+    const id = saveKey(entry.kind, entry.targetId || entry.url, entry.projectId);
+    saves[id] = { ...entry, addedAt: entry.addedAt || new Date().toISOString() };
+    putSaves(saves);
+    return id;
+  }
+  function removeSave(id) {
+    const saves = getSaves();
+    if (id in saves) {
+      delete saves[id];
+      putSaves(saves);
+    }
+  }
+  // One-time migration from the pre-M3.10 stores. Idempotent; flag-guarded.
+  function migrateSavesOnce() {
+    try {
+      if (localStorage.getItem(SAVES_MIGRATED_KEY) === "1") return;
+    } catch { return; }
+    const saves = getSaves();
+    // Old URL-based Claude learning pins.
+    try {
+      const raw = localStorage.getItem("clhub.v1.learningPins");
+      const oldPins = raw ? JSON.parse(raw) : {};
+      if (oldPins && typeof oldPins === "object") {
+        for (const [url, meta] of Object.entries(oldPins)) {
+          if (!url || typeof meta !== "object") continue;
+          const id = saveKey("learning", url);
+          if (!saves[id]) {
+            saves[id] = {
+              kind: "learning",
+              url,
+              title: meta.title || "",
+              thumb: meta.thumb || null,
+              source: meta.source || "",
+              published: meta.published || null,
+              note: "",
+              addedAt: meta.pinnedAt || new Date().toISOString(),
+            };
+          }
+        }
+      }
+    } catch {}
+    // Project-scoped pins (tool + snippet).
+    try {
+      const projects = getProjects();
+      Object.values(projects).forEach((p) => {
+        (p.pinnedTools || []).forEach((toolId) => {
+          const id = saveKey("tool", toolId, p.id);
+          if (!saves[id]) saves[id] = {
+            kind: "tool", targetId: toolId, projectId: p.id,
+            note: "",
+            addedAt: p.updatedAt || p.createdAt || new Date().toISOString(),
+          };
+        });
+        (p.pinnedSnippets || []).forEach((snipId) => {
+          const id = saveKey("snippet", snipId, p.id);
+          if (!saves[id]) saves[id] = {
+            kind: "snippet", targetId: snipId, projectId: p.id,
+            note: "",
+            addedAt: p.updatedAt || p.createdAt || new Date().toISOString(),
+          };
+        });
+      });
+    } catch {}
+    putSaves(saves);
+    try { localStorage.setItem(SAVES_MIGRATED_KEY, "1"); } catch {}
+  }
+  migrateSavesOnce();
+
+  // Unified save button painter. All .save-btn elements carry
+  //   data-save-kind, data-save-id (targetId-or-url), data-save-label,
+  //   optionally data-save-thumb, data-save-source, data-save-published.
+  function repaintSaveButtons(kind, id) {
+    const saved = isSavedAny(kind, id);
+    document.querySelectorAll(
+      `.save-btn[data-save-kind="${kind}"][data-save-id="${CSS.escape(id)}"]`
+    ).forEach((btn) => {
+      btn.dataset.saved = saved ? "1" : "";
+      btn.setAttribute("aria-pressed", saved ? "true" : "false");
+      const hasLabel = !!btn.querySelector(".save-btn-label");
+      btn.innerHTML = (saved ? PIN_SVG_FILLED : PIN_SVG_OUTLINE) +
+        (hasLabel ? `<span class="save-btn-label">${saved ? "Saved" : "Save"}</span>` : "");
+    });
+  }
+  // Delegated click handler. Every .save-btn opens the save picker.
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest?.(".save-btn");
+    if (!btn) return;
+    const kind = btn.dataset.saveKind;
+    const id   = btn.dataset.saveId;
+    if (!kind || !id) return;
+    e.preventDefault();
+    e.stopPropagation();
+    openSavePicker({
+      kind,
+      id,
+      label: btn.dataset.saveLabel || id,
+      extras: {
+        url:       btn.dataset.saveUrl || undefined,
+        thumb:     btn.dataset.saveThumb || undefined,
+        source:    btn.dataset.saveSource || undefined,
+        published: btn.dataset.savePublished || undefined,
+      },
+    });
+  });
+  function openSavePicker({ kind, id, label, extras }) {
+    const modal = document.getElementById("pin-picker-modal");
+    if (!modal) return;
+    modal.dataset.kind = kind;
+    modal.dataset.id   = id;
+    modal.dataset.url       = extras.url       || "";
+    modal.dataset.thumb     = extras.thumb     || "";
+    modal.dataset.source    = extras.source    || "";
+    modal.dataset.published = extras.published || "";
+    modal.dataset.label     = label || "";
+    const titleEl = modal.querySelector(".pin-picker-title");
+    const subEl   = modal.querySelector(".pin-picker-sub");
+    const listEl  = modal.querySelector(".pin-picker-list");
+    const emptyEl = modal.querySelector(".pin-picker-empty");
+    const noteEl  = modal.querySelector(".pin-picker-note");
+    const saveBtn = modal.querySelector(".pin-picker-save");
+    const removeBtn = modal.querySelector(".pin-picker-remove");
+    if (titleEl) titleEl.textContent = "Save";
+    if (subEl)   subEl.textContent   = label || "";
+    const projects = Object.values(getProjects()).sort((a, b) =>
+      (b.createdAt || "").localeCompare(a.createdAt || "")
+    );
+    const existingSaves = getSavesFor(kind, id);
+    const pinnedProjectIds = new Set(existingSaves.map((s) => s.projectId).filter(Boolean));
+    const existingNote = existingSaves.find((s) => s.note)?.note || "";
+    if (noteEl) noteEl.value = existingNote;
+    if (projects.length === 0) {
+      if (listEl)  listEl.innerHTML = "";
+      if (emptyEl) emptyEl.hidden = false;
+    } else {
+      if (emptyEl) emptyEl.hidden = true;
+      if (listEl) {
+        listEl.innerHTML = projects.map((p) => {
+          const checked = pinnedProjectIds.has(p.id) ? "checked" : "";
+          return `
+            <label class="pin-picker-row">
+              <input type="checkbox" class="pin-picker-check" value="${escapeHtml(p.id)}" ${checked}>
+              <span class="pin-picker-row-title">${escapeHtml(p.title)}</span>
+              <span class="pin-picker-row-path">${p.path === "best" ? "Best" : "Easy"}</span>
+            </label>
+          `;
+        }).join("");
+      }
+    }
+    // "Remove save" shown only if this item is saved anywhere.
+    if (removeBtn) removeBtn.hidden = existingSaves.length === 0;
+    if (saveBtn) saveBtn.disabled = false;
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function commitSavePicker() {
+    const modal = document.getElementById("pin-picker-modal");
+    if (!modal) return;
+    const kind = modal.dataset.kind;
+    const id   = modal.dataset.id;
+    if (!kind || !id) { closePinPicker(); return; }
+    const note = (modal.querySelector(".pin-picker-note")?.value || "").trim();
+    const checks = modal.querySelectorAll(".pin-picker-check");
+    const selectedProjectIds = new Set();
+    checks.forEach((c) => { if (c.checked) selectedProjectIds.add(c.value); });
+
+    // Remove existing saves for this item that are no longer desired.
+    const existing = getSavesFor(kind, id);
+    existing.forEach((entry) => {
+      if (entry.projectId && !selectedProjectIds.has(entry.projectId)) {
+        removeSave(entry.id);
+      }
+    });
+
+    // Figure out an always-write base payload with metadata from the trigger.
+    const baseExtras = {
+      url:       modal.dataset.url       || undefined,
+      thumb:     modal.dataset.thumb     || undefined,
+      source:    modal.dataset.source    || undefined,
+      published: modal.dataset.published || undefined,
+      title:     modal.dataset.label     || id,
+    };
+    // No projects selected → store one unscoped save. If no projects exist yet
+    // and the user didn't uncheck anything, keep/create an unscoped save too.
+    if (selectedProjectIds.size === 0) {
+      upsertSave({ kind, targetId: id, ...baseExtras, note });
+    } else {
+      // Remove the unscoped save (projectId undefined) if the user picked projects.
+      existing.forEach((entry) => {
+        if (!entry.projectId) removeSave(entry.id);
+      });
+      selectedProjectIds.forEach((pid) => {
+        upsertSave({ kind, targetId: id, projectId: pid, ...baseExtras, note });
+      });
+    }
+
+    // Mirror pinnedTools/pinnedSnippets onto the project objects for the
+    // existing renderProjects chip row (shows tool/snippet counts).
+    if (kind === "tool" || kind === "snippet") {
+      const projects = getProjects();
+      const listKey = kind === "tool" ? "pinnedTools" : "pinnedSnippets";
+      Object.values(projects).forEach((p) => {
+        const shouldHave = selectedProjectIds.has(p.id);
+        const has = Array.isArray(p[listKey]) && p[listKey].includes(id);
+        if (shouldHave && !has) {
+          p[listKey] = Array.isArray(p[listKey]) ? p[listKey].concat(id) : [id];
+          p.updatedAt = new Date().toISOString();
+        } else if (!shouldHave && has) {
+          p[listKey] = p[listKey].filter((x) => x !== id);
+          p.updatedAt = new Date().toISOString();
+        }
+      });
+      putProjects(projects);
+    }
+
+    repaintSaveButtons(kind, id);
+    renderProjects();
+    renderContinueCard();
+    renderYouTube();
+    paintClaudeLearning();
+    updateLearnFilterCounts();
+    closePinPicker();
+  }
+  function removeCurrentSave() {
+    const modal = document.getElementById("pin-picker-modal");
+    if (!modal) return;
+    const kind = modal.dataset.kind;
+    const id   = modal.dataset.id;
+    if (!kind || !id) return;
+    const entries = getSavesFor(kind, id);
+    entries.forEach((e) => removeSave(e.id));
+    // Also scrub project pin arrays.
+    if (kind === "tool" || kind === "snippet") {
+      const projects = getProjects();
+      const listKey = kind === "tool" ? "pinnedTools" : "pinnedSnippets";
+      Object.values(projects).forEach((p) => {
+        if (Array.isArray(p[listKey]) && p[listKey].includes(id)) {
+          p[listKey] = p[listKey].filter((x) => x !== id);
+          p.updatedAt = new Date().toISOString();
+        }
+      });
+      putProjects(projects);
+    }
+    repaintSaveButtons(kind, id);
+    renderProjects();
+    renderContinueCard();
+    renderYouTube();
+    paintClaudeLearning();
+    updateLearnFilterCounts();
+    closePinPicker();
+  }
+
+  // ---------- Project-scoped pinning (M3.2) — retained as read-path ----------
+  // Pin a tool (toolId) or snippet (snippetId) into one or more projects.
+  // Stored on the project object under pinnedTools[] / pinnedSnippets[].
+  function pinKeyForKind(kind) {
+    return kind === "tool" ? "pinnedTools" : "pinnedSnippets";
+  }
+  function isPinnedToAnyProject(kind, id) {
+    if (!id) return false;
+    const key = pinKeyForKind(kind);
+    const projects = getProjects();
+    return Object.values(projects).some((p) => Array.isArray(p[key]) && p[key].includes(id));
+  }
+  function getProjectsPinning(kind, id) {
+    const key = pinKeyForKind(kind);
+    const projects = getProjects();
+    return Object.values(projects)
+      .filter((p) => Array.isArray(p[key]) && p[key].includes(id))
+      .map((p) => p.id);
+  }
+  function setProjectPins(kind, id, projectIdSet) {
+    const key = pinKeyForKind(kind);
+    const projects = getProjects();
+    Object.values(projects).forEach((p) => {
+      const has = Array.isArray(p[key]) ? p[key].includes(id) : false;
+      const shouldHave = projectIdSet.has(p.id);
+      if (shouldHave && !has) {
+        p[key] = Array.isArray(p[key]) ? p[key].concat(id) : [id];
+        p.updatedAt = new Date().toISOString();
+      } else if (!shouldHave && has) {
+        p[key] = p[key].filter((x) => x !== id);
+        p.updatedAt = new Date().toISOString();
+      }
+    });
+    putProjects(projects);
+  }
+  // Paint all pin buttons matching kind/id (there may be many — search results,
+  // tool modal, snippet rows reused across panes).
+  function repaintPinButtons(kind, id) {
+    const pinned = isPinnedToAnyProject(kind, id);
+    document.querySelectorAll(
+      `.pin-btn[data-pin-kind="${kind}"][data-pin-id="${CSS.escape(id)}"]`
+    ).forEach((btn) => {
+      btn.dataset.pinned = pinned ? "1" : "";
+      btn.setAttribute("aria-pressed", pinned ? "true" : "false");
+      const label = btn.querySelector(".pin-btn-label");
+      btn.innerHTML = (pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE) +
+        (label ? `<span class="pin-btn-label">Pin</span>` : "");
+    });
+  }
+  // Delegated click handler for every .pin-btn on the page.
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest?.(".pin-btn");
+    if (!btn) return;
+    const kind = btn.dataset.pinKind;
+    const id   = btn.dataset.pinId;
+    const label = btn.dataset.pinLabel || id;
+    if (!kind || !id) return;
+    e.preventDefault();
+    e.stopPropagation();
+    openPinPicker({ kind, id, label });
+  });
+
+  function openPinPicker({ kind, id, label }) {
+    const modal = document.getElementById("pin-picker-modal");
+    if (!modal) return;
+    modal.dataset.kind = kind;
+    modal.dataset.id   = id;
+    const titleEl = modal.querySelector(".pin-picker-title");
+    const subEl   = modal.querySelector(".pin-picker-sub");
+    const listEl  = modal.querySelector(".pin-picker-list");
+    const emptyEl = modal.querySelector(".pin-picker-empty");
+    const saveBtn = modal.querySelector(".pin-picker-save");
+    if (titleEl) titleEl.textContent = kind === "tool" ? "Pin tool to projects" : "Pin snippet to projects";
+    if (subEl)   subEl.textContent   = label || "";
+    const projects = Object.values(getProjects()).sort((a, b) =>
+      (b.createdAt || "").localeCompare(a.createdAt || "")
+    );
+    const alreadyPinned = new Set(getProjectsPinning(kind, id));
+    if (projects.length === 0) {
+      if (listEl)  listEl.innerHTML = "";
+      if (emptyEl) emptyEl.hidden = false;
+      if (saveBtn) saveBtn.disabled = true;
+    } else {
+      if (emptyEl) emptyEl.hidden = true;
+      if (saveBtn) saveBtn.disabled = false;
+      if (listEl) {
+        listEl.innerHTML = projects.map((p) => {
+          const checked = alreadyPinned.has(p.id) ? "checked" : "";
+          return `
+            <label class="pin-picker-row">
+              <input type="checkbox" class="pin-picker-check" value="${escapeHtml(p.id)}" ${checked}>
+              <span class="pin-picker-row-title">${escapeHtml(p.title)}</span>
+              <span class="pin-picker-row-path">${p.path === "best" ? "Best" : "Easy"}</span>
+            </label>
+          `;
+        }).join("");
+      }
+    }
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function closePinPicker() {
+    const modal = document.getElementById("pin-picker-modal");
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden])")) {
+      document.body.classList.remove("modal-open");
+    }
+  }
+  function commitPinPicker() {
+    const modal = document.getElementById("pin-picker-modal");
+    if (!modal) return;
+    const kind = modal.dataset.kind;
+    const id   = modal.dataset.id;
+    if (!kind || !id) { closePinPicker(); return; }
+    const checks = modal.querySelectorAll(".pin-picker-check");
+    const nextSet = new Set();
+    checks.forEach((c) => { if (c.checked) nextSet.add(c.value); });
+    setProjectPins(kind, id, nextSet);
+    repaintPinButtons(kind, id);
+    renderProjects();
+    closePinPicker();
+  }
+  // Wire close + save.
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const m = document.getElementById("pin-picker-modal");
+    if (m && !m.hidden) closePinPicker();
+  });
+  document.querySelectorAll("#pin-picker-modal [data-close]").forEach((el) => {
+    el.addEventListener("click", (ev) => { ev.preventDefault(); closePinPicker(); });
+  });
+  {
+    const saveBtn = document.querySelector("#pin-picker-modal .pin-picker-save");
+    // M3.10: the picker commit path is commitSavePicker (unified Save).
+    if (saveBtn) saveBtn.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      commitSavePicker();
+    });
+    const removeBtn = document.querySelector("#pin-picker-modal .pin-picker-remove");
+    if (removeBtn) removeBtn.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      removeCurrentSave();
+    });
+  }
+  // M3.6: Home "Continue where you left off" — up to 3 most-recently-updated
+  // projects, plus a count of their pinned tools/snippets as a read-at-a-glance
+  // progress hint. Tapping a card jumps to Projects → Saved.
+  function renderContinueCard() {
+    const host = document.getElementById("continue-body");
+    if (!host) return;
+    const all = Object.values(getProjects());
+    if (all.length === 0) {
+      host.innerHTML = `<p class="dash-empty">No projects in flight yet — start one and your progress lands here.</p>`;
+      return;
+    }
+    const recent = all
+      .slice()
+      .sort((a, b) => {
+        const ta = Date.parse(a.updatedAt || a.createdAt || 0) || 0;
+        const tb = Date.parse(b.updatedAt || b.createdAt || 0) || 0;
+        return tb - ta;
+      })
+      .slice(0, 3);
+    host.innerHTML = recent.map((p) => {
+      const pinTools    = Array.isArray(p.pinnedTools)    ? p.pinnedTools.length    : 0;
+      const pinSnippets = Array.isArray(p.pinnedSnippets) ? p.pinnedSnippets.length : 0;
+      const notes = (p.notes || "").trim().length;
+      const parts = [];
+      if (pinTools)    parts.push(`${pinTools} tool${pinTools === 1 ? "" : "s"}`);
+      if (pinSnippets) parts.push(`${pinSnippets} snippet${pinSnippets === 1 ? "" : "s"}`);
+      if (notes)       parts.push(`${notes} chars note`);
+      const meta = parts.length ? parts.join(" · ") : "Just saved";
+      const pathLabel = p.path === "best" ? "Best" : "Easy";
+      return `
+        <button type="button" class="continue-row" data-project-id="${escapeHtml(p.id)}">
+          <div class="continue-row-head">
+            <span class="continue-row-path" data-path="${escapeHtml(p.path || "easy")}">${pathLabel}</span>
+            <span class="continue-row-title">${escapeHtml(p.title)}</span>
+          </div>
+          <div class="continue-row-meta">${escapeHtml(meta)}</div>
+        </button>
+      `;
+    }).join("");
+    // Each row jumps to Projects → Saved.
+    host.querySelectorAll(".continue-row").forEach((row) => {
+      row.addEventListener("click", (e) => {
+        e.preventDefault();
+        const chip = document.querySelector('[data-filter="projects"]');
+        if (chip) chip.click();
+        const savedPill = document.querySelector('.subpill[data-projects-view="saved"]');
+        if (savedPill) savedPill.click();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  }
+
   function renderProjects() {
     const host = document.getElementById("projects-grid");
     if (!host) return;
@@ -1291,6 +2488,17 @@
       const date = p.createdAt
         ? new Date(p.createdAt).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })
         : "";
+      const pinnedToolsCount    = Array.isArray(p.pinnedTools)    ? p.pinnedTools.length    : 0;
+      const pinnedSnippetsCount = Array.isArray(p.pinnedSnippets) ? p.pinnedSnippets.length : 0;
+      const pinsRow = (pinnedToolsCount + pinnedSnippetsCount > 0)
+        ? `<div class="project-pins-row">
+             <span class="project-pins-chip">${pinnedToolsCount} tool${pinnedToolsCount === 1 ? "" : "s"}</span>
+             <span class="project-pins-chip">${pinnedSnippetsCount} snippet${pinnedSnippetsCount === 1 ? "" : "s"}</span>
+           </div>`
+        : "";
+      const notesVal = typeof p.notes === "string" ? p.notes : "";
+      const notesOpenAttr = notesVal.trim() ? " open" : "";
+      const notesLen = notesVal.length;
       card.innerHTML = `
         <div class="project-head">
           <span class="project-path">${pathLabel}</span>
@@ -1299,11 +2507,53 @@
         <h4 class="project-title">${escapeHtml(p.title)}</h4>
         ${p.goal ? `<p class="project-goal">${escapeHtml(p.goal)}</p>` : ""}
         <div class="project-stack-chips">${stackChips}</div>
+        ${pinsRow}
+        <details class="project-notes"${notesOpenAttr}>
+          <summary class="project-notes-summary">
+            <span class="project-notes-label">Notes</span>
+            <span class="project-notes-meta" data-count>${notesLen ? notesLen + " chars" : "empty"}</span>
+            <span class="project-notes-status" data-status></span>
+          </summary>
+          <div class="project-notes-body">
+            <textarea class="project-notes-input"
+                      data-project-id="${escapeHtml(p.id)}"
+                      placeholder="Markdown scratchpad — links, todos, what you learned. Saves as you type."
+                      rows="5"
+                      spellcheck="false">${escapeHtml(notesVal)}</textarea>
+          </div>
+        </details>
         <div class="project-actions">
           <button class="project-delete" type="button" data-project-id="${escapeHtml(p.id)}">Delete</button>
         </div>
       `;
       host.appendChild(card);
+    });
+    // Wire notes textareas: debounced save to localStorage, transient "Saved" status.
+    host.querySelectorAll(".project-notes-input").forEach((ta) => {
+      let saveTimer = null;
+      let statusTimer = null;
+      const details = ta.closest(".project-notes");
+      const status = details?.querySelector("[data-status]");
+      const count  = details?.querySelector("[data-count]");
+      ta.addEventListener("input", () => {
+        if (status) status.textContent = "Saving…";
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(() => {
+          const id = ta.dataset.projectId;
+          if (!id) return;
+          const projects = getProjects();
+          if (!projects[id]) return;
+          projects[id].notes = ta.value;
+          projects[id].updatedAt = new Date().toISOString();
+          putProjects(projects);
+          if (count) count.textContent = ta.value.length ? ta.value.length + " chars" : "empty";
+          if (status) {
+            status.textContent = "Saved";
+            clearTimeout(statusTimer);
+            statusTimer = setTimeout(() => { if (status.textContent === "Saved") status.textContent = ""; }, 1400);
+          }
+        }, 320);
+      });
     });
     // Two-tap confirm: first tap arms the button, second tap deletes.
     // Avoids confirm(), which iOS standalone PWAs silently suppress.
@@ -1475,6 +2725,16 @@
     q(".tool-modal-modality").textContent = modalityLabel;
     q(".tool-modal-title").textContent    = tool.name || "";
     q(".tool-modal-tagline").textContent  = tool.tagline || "";
+    // Pin button (M3.2) — shows filled when pinned into any project.
+    const pinHost = q(".tool-modal-pin");
+    if (pinHost) {
+      const saved = isSavedAny("tool", tool.id);
+      pinHost.innerHTML = `
+        <button type="button" class="save-btn save-btn-tool" data-save-kind="tool" data-save-id="${escapeHtml(tool.id)}" data-save-label="${escapeHtml(tool.name || tool.id)}" data-saved="${saved ? "1" : ""}" aria-pressed="${saved ? "true" : "false"}" aria-label="${saved ? "Edit save" : "Save"}">
+          ${saved ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}<span class="save-btn-label">${saved ? "Saved" : "Save"}</span>
+        </button>
+      `;
+    }
     q(".tool-modal-when").textContent     = tool.whenToUse || "";
     q(".tool-modal-version").textContent  = tool.currentVersion || "";
     q(".tool-modal-pricing").textContent  = tool.pricing || "";
@@ -1495,6 +2755,32 @@
       links.push(`<a class="tool-modal-link" href="${escapeHtml(tool.docsUrl)}" target="_blank" rel="noopener">Docs ↗</a>`);
     }
     q(".tool-modal-links").innerHTML = links.join("");
+
+    // M5.2: setup snippet — shown right below the links when present.
+    const setupHost = q(".tool-modal-setup");
+    if (setupHost) {
+      if (tool.setupSnippet) {
+        const body = String(tool.setupSnippet);
+        setupHost.hidden = false;
+        setupHost.innerHTML = `
+          <div class="tool-modal-setup-head">Setup</div>
+          <pre class="tool-modal-setup-pre"><code>${escapeHtml(body)}</code></pre>
+          <button type="button" class="tool-modal-setup-copy" data-setup-body="${escapeHtml(body)}">Copy</button>
+        `;
+        const copyBtn = setupHost.querySelector(".tool-modal-setup-copy");
+        if (copyBtn) copyBtn.addEventListener("click", async (ev) => {
+          ev.preventDefault();
+          try {
+            await navigator.clipboard.writeText(body);
+            copyBtn.textContent = "Copied"; copyBtn.dataset.state = "ok";
+          } catch { copyBtn.textContent = "Copy failed"; copyBtn.dataset.state = "err"; }
+          setTimeout(() => { copyBtn.textContent = "Copy"; copyBtn.dataset.state = ""; }, 1600);
+        });
+      } else {
+        setupHost.hidden = true;
+        setupHost.innerHTML = "";
+      }
+    }
 
     // Snippets filtered by this tool's snippetTags
     const tagSet = new Set(tool.snippetTags || []);
@@ -1639,6 +2925,55 @@
   // ---------- Finder wizard (Learn → Finder) ----------
   const FINDER_DRAFT_KEY = "clhub.v1.finderDraft";
 
+  // ---------- Finder example projects (M5.3) ----------
+  async function loadFinderExamples() {
+    const host = document.getElementById("finder-examples");
+    if (!host) return;
+    try {
+      const res = await fetch(USECASES_URL, { cache: "no-cache" });
+      if (!res.ok) { host.innerHTML = ""; return; }
+      const payload = await res.json();
+      const examples = Array.isArray(payload.examples) ? payload.examples : [];
+      if (examples.length === 0) { host.innerHTML = ""; return; }
+      host.innerHTML = examples.map((ex) => `
+        <button type="button" class="finder-example glass" data-example-id="${escapeHtml(ex.id)}">
+          <div class="finder-example-eyebrow">Example</div>
+          <div class="finder-example-title">${escapeHtml(ex.title)}</div>
+          <div class="finder-example-body">${escapeHtml(ex.oneLine || "")}</div>
+          <div class="finder-example-cta">Load into Finder →</div>
+        </button>
+      `).join("");
+      host.querySelectorAll(".finder-example").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const id = btn.dataset.exampleId;
+          const ex = examples.find((x) => x.id === id);
+          if (!ex) return;
+          applyFinderExample(ex);
+        });
+      });
+    } catch { host.innerHTML = ""; }
+  }
+  function applyFinderExample(ex) {
+    // Fill the description textarea.
+    const input = document.getElementById("finder-input");
+    if (input) {
+      input.value = ex.goal || "";
+      try { localStorage.setItem(FINDER_DRAFT_KEY, input.value); } catch {}
+    }
+    // Pre-check the example's capabilities and persist + re-render the grid.
+    capsSelected.clear();
+    (ex.caps || []).forEach((id) => capsSelected.add(id));
+    try { localStorage.setItem(FINDER_CAPS_KEY, JSON.stringify([...capsSelected])); } catch {}
+    renderCapGrid();
+    renderCapFilterBar();
+    renderStack({ scroll: false });
+    // Scroll the capability grid into view so the user sees what got picked.
+    const grid = document.getElementById("cap-grid");
+    if (grid) grid.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  loadFinderExamples();
+
   function initFinder() {
     const input    = document.getElementById("finder-input");
     const cont     = document.getElementById("finder-continue");
@@ -1668,7 +3003,18 @@
         input.focus();
         return;
       }
-      setStatus("Saved. Pick the capabilities your project needs ↓", "ok");
+      // M5.5: keyword heuristic — scan the description for well-known terms
+      // and add matching capability IDs to whatever the user has already
+      // picked. Non-destructive: we never uncheck an existing pick.
+      const added = autoCheckCapsFromText(text);
+      if (added > 0) {
+        renderCapGrid();
+        renderCapFilterBar();
+        renderStack({ scroll: false });
+        setStatus(`Saved. Pre-checked ${added} cap${added === 1 ? "" : "s"} from your description — tweak below.`, "ok");
+      } else {
+        setStatus("Saved. Pick the capabilities your project needs ↓", "ok");
+      }
       const capWrap = document.querySelector(".cap-wrap");
       if (capWrap) capWrap.scrollIntoView({ behavior: "smooth", block: "start" });
     });
@@ -1735,7 +3081,7 @@
           saveStatus.dataset.kind = "warn";
           return;
         }
-        saveStatus.textContent = "Saved. Opening My Projects…";
+        saveStatus.textContent = "Saved. Opening Projects…";
         saveStatus.dataset.kind = "ok";
         setTimeout(() => {
           saveForm.hidden = true;
@@ -1743,8 +3089,11 @@
           saveStatus.textContent = "";
           saveStatus.dataset.kind = "";
           updateSaveCtaVisibility();
-          const pill = document.querySelector('.subpill[data-learn="projects"]');
-          if (pill) pill.click();
+          // M3.7: Projects is a top-level tab with Saved/New subpills.
+          const chip = document.querySelector('[data-filter="projects"]');
+          if (chip) chip.click();
+          const savedPill = document.querySelector('.subpill[data-projects-view="saved"]');
+          if (savedPill) savedPill.click();
           window.scrollTo({ top: 0, behavior: "smooth" });
         }, 650);
       });
@@ -1752,6 +3101,7 @@
 
     // Seed My Projects pane with any previously-saved projects.
     renderProjects();
+    renderContinueCard();
   }
   initFinder();
 
@@ -1772,10 +3122,13 @@
         s.status.forEach(item => { item._severity = detectStatusSeverity(item); });
       }
 
-      // NEWS & MEDIA tab: status strip + mixed grid (videos first, then articles).
-      renderStatusStrip(s.status);
-      renderNews(s.news || []);
-      renderClaudeLearning(s.claude_learning || []);
+      // M3.9: News & Media tab retired as a chip; charts reached via Home's
+      // "State of AI" card. renderStatusStrip / renderNews kept callable but
+      // no longer invoked (their containers are gone). General-news items
+      // merge into the Learn → What's new feed with _bucket: "industry".
+      const industryNews = (s.news || []).map((it) => ({ ...it, _bucket: "industry" }));
+      const mergedLearn = (s.claude_learning || []).concat(industryNews);
+      renderClaudeLearning(mergedLearn);
 
       setUpdated("news", data.generated_at);
       setUpdated("365",  data.generated_at);
@@ -1796,8 +3149,11 @@
 
   load();
   loadTools();
-  loadAcademyHub();
-  loadSnippets();
+  // M3.8: loadSnippets populates snippetsData which loadAcademyHub reads
+  // when attaching snippets under each course. Chain them.
+  loadSnippets().then(() => loadAcademyHub());
+  // M4.1: authored lessons for Learn → Tutorials & quizzes.
+  loadLessons();
   renderTimeline();
   renderCompare();
   renderIndex();
@@ -2527,6 +3883,22 @@
       const line = lines[i];
       if (/^\s*$/.test(line)) { i++; continue; }
 
+      // Fenced code blocks — ```lang ... ```
+      let fence;
+      if ((fence = line.match(/^\s*```\s*([\w-]*)\s*$/))) {
+        const lang = fence[1] || "";
+        i++;
+        const buf = [];
+        while (i < lines.length && !/^\s*```\s*$/.test(lines[i])) {
+          buf.push(lines[i]);
+          i++;
+        }
+        if (i < lines.length) i++; // skip closing fence
+        const code = escHtml(buf.join("\n"));
+        out.push(`<pre><code class="lang-${escHtml(lang)}">${code}</code></pre>`);
+        continue;
+      }
+
       let m;
       if ((m = line.match(/^(#{1,6})\s+(.*)$/))) {
         const lvl = Math.min(m[1].length, 3);
@@ -2575,6 +3947,7 @@
              !/^\s*[-*]\s+/.test(lines[i]) &&
              !/^\s*\d+\.\s+/.test(lines[i]) &&
              !/^>\s?/.test(lines[i]) &&
+             !/^\s*```/.test(lines[i]) &&
              !/^---+$/.test(lines[i].trim())) {
         buf.push(lines[i]);
         i++;
