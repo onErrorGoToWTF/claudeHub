@@ -367,28 +367,6 @@
     });
   });
 
-  // Legacy Claude hub sub-sub-pills (removed in M3.8) — this block is a
-  // no-op guard in case old markup resurfaces during a partial deploy.
-  document.querySelectorAll(".subpill[data-claude]").forEach((pill) => {
-    pill.addEventListener("click", () => {
-      const kind = pill.dataset.claude;
-      document.querySelectorAll(".subpill[data-claude]").forEach((p) => {
-        const on = p === pill;
-        p.classList.toggle("is-active", on);
-        p.setAttribute("aria-selected", on ? "true" : "false");
-      });
-      document.querySelectorAll('.pane[data-pane^="claude-"]').forEach((pane) => {
-        pane.hidden = pane.dataset.pane !== `claude-${kind}`;
-      });
-      // Mark What's new as seen the moment it's opened — count resets on
-      // next render. Any items that arrive AFTER this moment will re-light it.
-      if (kind === "whats-new") {
-        setClaudeWhatsNewLastSeen(new Date().toISOString());
-        updateClaudeWhatsNewBadge();
-      }
-    });
-  });
-
   // News & Media sub-pills: State of AI / News
   document.querySelectorAll(".subpill[data-newsmedia]").forEach((pill) => {
     pill.addEventListener("click", () => {
@@ -536,7 +514,7 @@
 
   const CARD_CONTAINERS = [
     "365-tutorials", "365-resources-videos", "365-resources-official", "365-news",
-    "news", "claude-whats-new",
+    "news",
   ];
 
   // ---------- Scroll-activation IntersectionObserver (universal) ----------
@@ -663,7 +641,6 @@
   // Each group sorted by date desc internally. Never interleave.
   // LEARN → Claude → What's new: unified release feed from Claude Code + MCP repos.
   let claudeLearningItems = [];
-  let claudeLearningFilter = "all";
 
   // Pinned items — URLs the user wants to keep regardless of feed churn.
   // Pins are SCRAPE-RESISTANT: each pin stores the full item snapshot
@@ -698,46 +675,6 @@
     return Array.from(live.values());
   }
 
-  // Unread badge — tracks last time the user viewed What's new. First visit
-  // silently seeds "now" so the badge doesn't light up with 70 items on a
-  // brand-new device. Subsequent visits count items newer than that stamp.
-  const CLAUDE_WHATS_NEW_KEY = "clhub.v1.claudeWhatsNewLastSeen";
-  function getClaudeWhatsNewLastSeen() {
-    try {
-      const raw = localStorage.getItem(CLAUDE_WHATS_NEW_KEY);
-      if (!raw) return null;
-      const t = Date.parse(raw);
-      return isNaN(t) ? null : t;
-    } catch { return null; }
-  }
-  function setClaudeWhatsNewLastSeen(iso) {
-    try { localStorage.setItem(CLAUDE_WHATS_NEW_KEY, iso); } catch {}
-  }
-  function updateClaudeWhatsNewBadge() {
-    const badge = document.querySelector('[data-subpill-badge="whats-new"]');
-    if (!badge) return;
-    let lastSeen = getClaudeWhatsNewLastSeen();
-    if (lastSeen === null) {
-      // First visit on this device — seed silently, no badge.
-      setClaudeWhatsNewLastSeen(new Date().toISOString());
-      badge.hidden = true;
-      badge.textContent = "";
-      return;
-    }
-    const count = claudeLearningItems.reduce((n, it) => {
-      const t = it.published ? Date.parse(it.published) : NaN;
-      return !isNaN(t) && t > lastSeen ? n + 1 : n;
-    }, 0);
-    if (count > 0) {
-      badge.hidden = false;
-      badge.textContent = String(count);
-      badge.setAttribute("aria-label", `${count} new since last visit`);
-    } else {
-      badge.hidden = true;
-      badge.textContent = "";
-    }
-  }
-
   // M3.9: filter buckets collapse to All / Anthropic / Industry / Videos.
   // Items can carry an explicit _bucket hint (set when merging s.news into
   // the feed); otherwise we derive from source.
@@ -755,9 +692,6 @@
 
   function renderClaudeLearning(items) {
     claudeLearningItems = Array.isArray(items) ? items : [];
-    paintClaudeLearning();
-    updateClaudeWhatsNewBadge();
-    updateLearnFilterCounts();
     renderYouTube();
   }
 
@@ -818,82 +752,6 @@
       frag.appendChild(node);
     });
     host.appendChild(frag);
-  }
-
-  function updateLearnFilterCounts() {
-    const merged = resurrectPinnedItems(claudeLearningItems)
-      .filter((it) => sourceBucket(it.source, it._bucket) !== "videos");
-    const counts = { all: merged.length, anthropic: 0, industry: 0 };
-    for (const it of merged) {
-      const b = sourceBucket(it.source, it._bucket);
-      if (counts[b] !== undefined) counts[b]++;
-    }
-    document.querySelectorAll("[data-filter-count]").forEach((el) => {
-      const key = el.dataset.filterCount;
-      const n = counts[key];
-      el.textContent = n > 0 ? String(n) : "";
-    });
-  }
-
-  function paintClaudeLearning() {
-    const container = document.querySelector('[data-cards="claude-whats-new"]');
-    if (!container) return;
-    container.innerHTML = "";
-    const filter = claudeLearningFilter;
-    // M3.10: videos live in the YouTube top-level tab now.
-    const merged = resurrectPinnedItems(claudeLearningItems)
-      .filter((it) => sourceBucket(it.source, it._bucket) !== "videos");
-    const filtered = filter === "all"
-      ? merged
-      : merged.filter((it) => sourceBucket(it.source, it._bucket) === filter);
-    if (!filtered.length) {
-      const empty = document.createElement("div");
-      empty.className = "empty";
-      empty.textContent = filter === "all"
-        ? "No items yet — check back soon."
-        : "No items in this category yet.";
-      container.appendChild(empty);
-      return;
-    }
-    // Sort saved items first (within the filtered set), then by date desc.
-    // Saves float to the top of whatever view the user has.
-    const sorted = filtered.slice().sort((a, b) => {
-      const pa = isSavedAny("learning", a.url) ? 1 : 0;
-      const pb = isSavedAny("learning", b.url) ? 1 : 0;
-      if (pa !== pb) return pb - pa;
-      const ta = a.published ? Date.parse(a.published) : 0;
-      const tb = b.published ? Date.parse(b.published) : 0;
-      return tb - ta;
-    });
-    const frag = document.createDocumentFragment();
-    const BUCKET_LABEL = { anthropic: "Anthropic", industry: "Industry", videos: "Video" };
-    sorted.slice(0, 24).forEach((it, idx) => {
-      const node = renderCard(it, false, idx);
-      const bucket = sourceBucket(it.source, it._bucket);
-      node.dataset.learnBucket = bucket;
-      if (isSavedAny("learning", it.url)) node.dataset.pinned = "1";
-      const pill = node.querySelector(".card-pill");
-      if (pill && BUCKET_LABEL[bucket]) {
-        pill.textContent = BUCKET_LABEL[bucket];
-        pill.dataset.pill = bucket;
-      }
-      attachPinButton(node, it.url);
-      // For YouTube cards, open in-app modal instead of navigating out.
-      if (bucket === "videos") {
-        const vid = extractYouTubeId(it.url);
-        if (vid) {
-          node.addEventListener("click", (e) => {
-            // Let pin taps through; don't hijack them.
-            if (e.target.closest(".card-pin")) return;
-            e.preventDefault();
-            openVideoModal(vid, it.title, it.url);
-          });
-        }
-      }
-      registerReveal(node, idx);
-      frag.appendChild(node);
-    });
-    container.appendChild(frag);
   }
 
   // YouTube in-app modal — keeps users from being pushed out of the web app
@@ -1120,20 +978,6 @@
       wireSnippetCopyButtons(host);
     } catch {}
   }
-
-  document.querySelectorAll(".learn-filter[data-learn-filter]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const key = btn.dataset.learnFilter || "all";
-      if (key === claudeLearningFilter) return;
-      claudeLearningFilter = key;
-      document.querySelectorAll(".learn-filter[data-learn-filter]").forEach((b) => {
-        const active = b === btn;
-        b.classList.toggle("is-active", active);
-        b.setAttribute("aria-selected", active ? "true" : "false");
-      });
-      paintClaudeLearning();
-    });
-  });
 
   function renderNews(items) {
     const container = document.querySelector('[data-cards="news"]');
@@ -1883,7 +1727,6 @@
     "clhub.v1.savesMigrated":        "Migration flag",
     "clhub.v1.finderCaps":           "Finder — selected capabilities",
     "clhub.v1.finderDraft":          "Finder — textarea draft",
-    "clhub.v1.claudeWhatsNewLastSeen": "What's new — last-seen timestamp",
     "cdih-theme":                    "Theme (dark / light)",
   };
   function byteSize(s) {
@@ -2249,8 +2092,6 @@
     renderProjects();
     renderContinueCard();
     renderYouTube();
-    paintClaudeLearning();
-    updateLearnFilterCounts();
     closePinPicker();
   }
   function removeCurrentSave() {
@@ -2277,8 +2118,6 @@
     renderProjects();
     renderContinueCard();
     renderYouTube();
-    paintClaudeLearning();
-    updateLearnFilterCounts();
     closePinPicker();
   }
 
@@ -2836,82 +2675,6 @@
     if (m && !m.hidden) closeToolModal();
   });
 
-  // ---------- Snippet search — cmd-K / ctrl-K (M2.10) ----------
-  function openSnippetSearch() {
-    const modal = document.getElementById("snippet-search-modal");
-    if (!modal) return;
-    modal.hidden = false;
-    document.body.classList.add("modal-open");
-    const input = document.getElementById("snippet-search-input");
-    if (input) {
-      input.value = "";
-      runSnippetSearch("");
-      // iOS: delay focus slightly so the modal is visible before the keyboard pops.
-      setTimeout(() => input.focus({ preventScroll: true }), 30);
-    }
-  }
-  function closeSnippetSearch() {
-    const modal = document.getElementById("snippet-search-modal");
-    if (!modal || modal.hidden) return;
-    modal.hidden = true;
-    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden])")) {
-      document.body.classList.remove("modal-open");
-    }
-  }
-  function runSnippetSearch(raw) {
-    const host   = document.getElementById("snippet-search-results");
-    const status = document.getElementById("snippet-search-status");
-    if (!host) return;
-    const q = (raw || "").trim().toLowerCase();
-    const haystack = snippetsData || [];
-    let matches;
-    if (q === "") {
-      matches = haystack.slice(0, 40);
-    } else {
-      const terms = q.split(/\s+/).filter(Boolean);
-      matches = haystack.filter((s) => {
-        const fields = [
-          s.title || "",
-          s.summary || "",
-          (s.tags || []).join(" "),
-          (s.snippetTags || []).join(" "),
-          s.language || "",
-        ].join(" ").toLowerCase();
-        return terms.every((t) => fields.includes(t));
-      });
-    }
-    host.innerHTML = matches.map((s) => renderSnippetRow(s)).join("");
-    if (status) {
-      if (q === "") {
-        status.textContent = `${haystack.length} snippets — type to filter`;
-      } else {
-        status.textContent = `${matches.length} match${matches.length === 1 ? "" : "es"} for "${raw.trim()}"`;
-      }
-    }
-    wireSnippetCopyButtons(host);
-  }
-  document.addEventListener("keydown", (e) => {
-    // cmd-K / ctrl-K opens snippet search; works anywhere on the page.
-    if ((e.metaKey || e.ctrlKey) && !e.shiftKey && !e.altKey && (e.key === "k" || e.key === "K")) {
-      e.preventDefault();
-      openSnippetSearch();
-      return;
-    }
-    // Escape closes search.
-    if (e.key === "Escape") {
-      const m = document.getElementById("snippet-search-modal");
-      if (m && !m.hidden) closeSnippetSearch();
-    }
-  });
-  {
-    const openBtn = document.getElementById("snippet-search-open");
-    if (openBtn) openBtn.addEventListener("click", (e) => { e.preventDefault(); openSnippetSearch(); });
-    document.querySelectorAll("#snippet-search-modal [data-close]").forEach((el) => {
-      el.addEventListener("click", (e) => { e.preventDefault(); closeSnippetSearch(); });
-    });
-    const input = document.getElementById("snippet-search-input");
-    if (input) input.addEventListener("input", () => runSnippetSearch(input.value));
-  }
 
   // ---------- Version footer — proves which build is rendered ----------
   async function loadVersion() {

@@ -22,9 +22,6 @@
       <h1 class="brand-title">ai<span class="brand-sub">Stacked</span></h1>
     </div>
     <div class="topbar-actions">
-      <button id="snippet-search-open" class="icon-btn" type="button" aria-label="Search snippets" title="Search snippets (Ctrl/⌘+K)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </button>
       <button id="youtube-open" class="icon-btn icon-btn-youtube" data-filter="youtube" type="button" aria-label="YouTube" title="YouTube">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
       </button>
@@ -81,19 +78,7 @@
         <div class="subpills" role="tablist" aria-label="Learn content">
           <button class="subpill is-active" data-learn="courses"   type="button" role="tab" aria-selected="true">Courses</button>
           <button class="subpill"           data-learn="tutorials" type="button" role="tab" aria-selected="false">Quizzes</button>
-          <button class="subpill"           data-learn="whats-new" type="button" role="tab" aria-selected="false"><span class="subpill-label">New</span><span class="subpill-badge" data-subpill-badge="whats-new" hidden></span></button>
         </div>
-      </div>
-    </div>
-
-    <div class="pane" data-pane="learn-whats-new" hidden>
-      <div class="learn-filter-bar" role="tablist" aria-label="Filter What's new by source">
-        <button class="learn-filter is-active" type="button" role="tab" aria-selected="true"  data-learn-filter="all"><span class="learn-filter-label">All</span><span class="learn-filter-count" data-filter-count="all"></span></button>
-        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="anthropic"><span class="learn-filter-label">Anthropic</span><span class="learn-filter-count" data-filter-count="anthropic"></span></button>
-        <button class="learn-filter"           type="button" role="tab" aria-selected="false" data-learn-filter="industry"><span class="learn-filter-label">Industry</span><span class="learn-filter-count" data-filter-count="industry"></span></button>
-      </div>
-      <div class="cards" data-cards="claude-whats-new">
-        <div class="empty">Loading latest releases…</div>
       </div>
     </div>
 
@@ -571,22 +556,6 @@
       <button type="button" class="pin-picker-cancel" data-close>Cancel</button>
       <button type="button" class="pin-picker-save">Save</button>
     </div>
-  </div>
-</div>
-
-<div class="search-modal" id="snippet-search-modal" role="dialog" aria-modal="true" aria-labelledby="snippet-search-title" hidden>
-  <div class="search-modal-backdrop" data-close></div>
-  <div class="search-modal-frame glass">
-    <div class="search-modal-head">
-      <svg class="search-modal-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="search" id="snippet-search-input" class="search-modal-input" placeholder="Search snippets by title, tag, or summary…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-      <kbd class="search-modal-kbd">Esc</kbd>
-      <button type="button" class="search-modal-close" aria-label="Close" data-close title="Close">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
-      </button>
-    </div>
-    <div class="search-modal-status" id="snippet-search-status"></div>
-    <div class="search-modal-results snippet-list" id="snippet-search-results"></div>
   </div>
 </div>
 
