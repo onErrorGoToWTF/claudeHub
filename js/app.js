@@ -2115,137 +2115,19 @@
       });
     });
   }
-  // ===== M9.4b swipe + M9.17b.b grab-handle drag =====
-  // Two independent gesture surfaces per row:
-  //   - swipe-left on the card body → mark mastered (M9.4b; will retire in
-  //     M9.17b.c once users have the inline ✓ button in muscle memory).
-  //   - pointerdown/touchstart on the grab handle → drag-to-reorder between
-  //     Up Next / Everything Else zones (M9.17b.b). Replaces the retired
-  //     long-press-to-drag — handle gives a discoverable affordance and
-  //     frees the row body for tap + swipe alone.
-  const LEARN_SWIPE_THRESHOLD     = 80;  // px dx to commit a mastered-swipe
-  const LEARN_SWIPE_VERTICAL_SLOP = 36;  // |dy| above this = treat as scroll
-  const LEARN_GESTURE_SLOP        = 14;  // direction-commit threshold (survives iPhone fingertip tremor)
+  // ===== M9.17b.d — simplified gesture surface =====
+  // Swipe-left-mastery (M9.4b) was retired in M9.17b.d now that the inline
+  // ✓ button (M9.17b.a) is the discoverable mastery path. Drag-to-reorder
+  // moved to the visible grab handle on the left in M9.17b.b (wireLearnGrabHandle).
+  // What remains on the row itself: capture-phase click-suppression so a
+  // drag initiated from the grab handle doesn't also fire the head-link's
+  // navigation on release. dataset.learnSwipeHandled is set to "1" by
+  // wireLearnGrabHandle's startDrag and consumed here.
   let learnToastTimer = null;
   function pointInRect(x, y, r) {
     return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
   }
   function wireLearnRowGestures(row) {
-    let startX = 0, startY = 0, dx = 0, dy = 0;
-    let mode = "idle";
-    let activePointerType = "";
-    const resetTransform = (animate) => {
-      row.style.transition = animate
-        ? "transform 0.2s var(--ease-premium), opacity 0.2s var(--ease-premium)"
-        : "none";
-      row.style.transform = "";
-      row.style.opacity = "";
-    };
-    // --- Touch path (iOS / Android) — swipe-left only. ---
-    row.addEventListener("touchstart", (e) => {
-      if (e.touches.length !== 1) return;
-      const t = e.touches[0];
-      startX = t.clientX; startY = t.clientY; dx = dy = 0;
-      mode = "pending";
-      activePointerType = "touch";
-      row.dataset.learnSwipeHandled = "0";
-      row.style.transition = "none";
-    }, { passive: true });
-    row.addEventListener("touchmove", (e) => {
-      if (mode === "idle") return;
-      if (e.touches.length !== 1) return;
-      const t = e.touches[0];
-      dx = t.clientX - startX;
-      dy = t.clientY - startY;
-      if (mode === "pending") {
-        // Direction-commit: horizontal dominant → swipe; vertical dominant
-        // → scroll; still-small movement stays pending.
-        const horizontalCommit = Math.abs(dx) > LEARN_GESTURE_SLOP && Math.abs(dx) > Math.abs(dy);
-        const verticalCommit   = Math.abs(dy) > LEARN_GESTURE_SLOP && Math.abs(dy) > Math.abs(dx);
-        if (horizontalCommit)     mode = dx < 0 ? "swiping" : "idle"; // right-swipe → release as tap
-        else if (verticalCommit)  mode = "idle";                      // vertical → let browser scroll
-      }
-      if (mode === "swiping") {
-        if (Math.abs(dy) > LEARN_SWIPE_VERTICAL_SLOP) {
-          mode = "idle";
-          resetTransform(true);
-          return;
-        }
-        if (dx < -6) {
-          row.style.transform = `translateX(${dx}px)`;
-          row.style.opacity = String(Math.max(0.35, 1 + dx / 260));
-          e.preventDefault();
-        }
-      }
-    }, { passive: false });
-    row.addEventListener("touchend", (e) => {
-      const t = e.changedTouches[0];
-      if (mode === "swiping" && dx < -LEARN_SWIPE_THRESHOLD && Math.abs(dy) < LEARN_SWIPE_VERTICAL_SLOP) {
-        row.style.transition = "transform 0.22s var(--ease-premium), opacity 0.22s var(--ease-premium)";
-        row.style.transform = "translateX(-115%)";
-        row.style.opacity = "0";
-        row.dataset.learnSwipeHandled = "1";
-        const type = row.dataset.learnType;
-        const id = row.dataset.learnId;
-        const title = row.querySelector(".learn-item-title")?.textContent || "";
-        setTimeout(() => handleLearnSwipeLeft(type, id, title), 200);
-      } else if (mode === "swiping") {
-        resetTransform(true);
-      } else {
-        resetTransform(false);
-      }
-      mode = "idle";
-    });
-    row.addEventListener("touchcancel", () => {
-      mode = "idle";
-      resetTransform(true);
-    });
-    // --- Mouse path (desktop) — swipe only. ---
-    row.addEventListener("pointerdown", (e) => {
-      if (e.pointerType !== "mouse" || e.button !== 0) return;
-      startX = e.clientX; startY = e.clientY; dx = dy = 0;
-      mode = "swiping";
-      activePointerType = "mouse";
-      row.dataset.learnSwipeHandled = "0";
-      row.style.transition = "none";
-    });
-    row.addEventListener("pointermove", (e) => {
-      if (mode !== "swiping" || activePointerType !== "mouse") return;
-      dx = e.clientX - startX;
-      dy = e.clientY - startY;
-      if (Math.abs(dy) > LEARN_SWIPE_VERTICAL_SLOP) {
-        mode = "idle";
-        resetTransform(true);
-        return;
-      }
-      if (dx < -6 && Math.abs(dx) > Math.abs(dy)) {
-        row.style.transform = `translateX(${dx}px)`;
-        row.style.opacity = String(Math.max(0.35, 1 + dx / 260));
-      }
-    });
-    row.addEventListener("pointerup", () => {
-      if (activePointerType !== "mouse") return;
-      if (mode === "swiping" && dx < -LEARN_SWIPE_THRESHOLD && Math.abs(dy) < LEARN_SWIPE_VERTICAL_SLOP) {
-        row.style.transition = "transform 0.22s var(--ease-premium), opacity 0.22s var(--ease-premium)";
-        row.style.transform = "translateX(-115%)";
-        row.style.opacity = "0";
-        row.dataset.learnSwipeHandled = "1";
-        const type = row.dataset.learnType;
-        const id = row.dataset.learnId;
-        const title = row.querySelector(".learn-item-title")?.textContent || "";
-        setTimeout(() => handleLearnSwipeLeft(type, id, title), 200);
-      } else {
-        resetTransform(true);
-      }
-      mode = "idle";
-    });
-    row.addEventListener("pointercancel", () => {
-      if (activePointerType !== "mouse") return;
-      mode = "idle";
-      resetTransform(true);
-    });
-    // Capture-phase click suppression so swipe / drag don't also fire
-    // openLesson (lessons) or anchor navigation (academy courses).
     row.addEventListener("click", (e) => {
       if (row.dataset.learnSwipeHandled === "1") {
         e.preventDefault();
@@ -2345,21 +2227,8 @@
     });
     handle.addEventListener("pointercancel", cancelDrag);
   }
-  function handleLearnSwipeLeft(type, id, title) {
-    const wasMastered = isMastered(type, id);
-    const wasPinned   = isLearnItemPinned(type, id);
-    setMastered(type, id);
-    unpinLearnItem(type, id);
-    renderLearn();
-    showLearnToast({
-      message: `Marked mastered: ${title || "item"}`,
-      onUndo: () => {
-        if (!wasMastered) unsetMastered(type, id);
-        if (wasPinned)    pinLearnItem(type, id, { title });
-        renderLearn();
-      },
-    });
-  }
+  // handleLearnSwipeLeft retired in M9.17b.d alongside swipe-left-mastery.
+  // Inline ✓ button (data-learn-action="master") now owns the mastery flow.
   function showLearnToast(opts) {
     const { message, onUndo } = opts || {};
     let toast = document.getElementById("learn-toast");

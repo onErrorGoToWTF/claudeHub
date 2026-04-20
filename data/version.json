@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.37",
-  "milestone": "M9.17d",
-  "milestoneTitle": "Phase M9.17d — No text selection on tappable surfaces. Added user-select:none + -webkit-user-select:none + -webkit-touch-callout:none to every tappable / draggable / clickable class (learn-item-head, learn-action-btn, learn-grab-handle, panel-tile, card, tool-card, stack-card, project-card, continue-row, filter-chip, chips.glass button, dash-action, youtube-open-btn, project-delete, storage-key-delete, pin-picker-remove, pin-btn, save-btn). Fixes iOS long-press popping the selection loupe and accidental drag-highlight behavior that distracted from tap / drag feedback. Informational-only surfaces below heads (summary, meta, coverage, long-form body copy) stay selectable so users can copy text. CLAUDE.md design-language section updated with the rule.",
-  "deployedAt": "2026-04-20T14:58Z",
+  "version": "0.7.1-dev.38",
+  "milestone": "M9.17b.d",
+  "milestoneTitle": "Phase M9.17b.d — Retired swipe-left-mastery. The inline ✓ button from M9.17b.a is now the discoverable mastery path, so the whole swipe state machine (pending/swiping, touch + pointer event listeners, direction-commit logic, LEARN_SWIPE_THRESHOLD / LEARN_SWIPE_VERTICAL_SLOP / LEARN_GESTURE_SLOP constants, handleLearnSwipeLeft function) was deleted. wireLearnRowGestures collapsed to just the capture-phase click-suppression that blocks a head-link click after a drag. ~120 lines removed from js/app.js. Drag-to-reorder (M9.17b.b grab handle) and inline mastery button are both independent and still work.",
+  "deployedAt": "2026-04-20T15:10Z",
   "commitSha": ""
 }
