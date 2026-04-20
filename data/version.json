@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.24",
-  "milestone": "M9.16p",
-  "milestoneTitle": "Phase M9.16p — Drop link-in-modal; external links go native. Doc-modal iframe preview removed in js/app.js (interceptor + openDocModal + detectDocBlocked + focus-trap + popstate wiring), index.html (doc-modal template), and css/style.css (.doc-modal* block + focus-ring entries). Header probe of the top 8 hosts in data/latest.json confirmed ~95% set X-Frame-Options or CSP frame-ancestors to forbid embedding, so the preview premise wasn't viable for this feed. External anchors now open natively via target=_blank; YouTube per-card handler still opens the in-app video modal.",
-  "deployedAt": "2026-04-20T11:19Z",
+  "version": "0.7.1-dev.25",
+  "milestone": "M9.16q",
+  "milestoneTitle": "Phase M9.16q — Docs hygiene. Plan doc gains M9.16o (session wrap) and M9.16p (link-in-modal removal) ledger entries, retires the 'known open after M9.16' doc-modal note. docs/status.md bumped to v0.7.1-dev.25 with M9.16o/p/q listed under the M9.16 section. Memory index + project_palette_overhaul.md refreshed to match.",
+  "deployedAt": "2026-04-20T11:30Z",
   "commitSha": ""
 }

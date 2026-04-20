@@ -1,10 +1,10 @@
 # aiUniversity — status + structure
 
-Current release: **v0.7.1-dev.22** on `main`. Live at https://onerrorgotowtf.github.io/claudeHub/. Phases 1, 1.5, 2, 3, 4, 5, 6, 7, 8 shipped plus v0.7 design-system refactor M9.1–M9.16n. (Formerly "aiStacked" — visible brand flipped to **aiUniversity** in M8.12.5.)
+Current release: **v0.7.1-dev.25** on `main`. Live at https://onerrorgotowtf.github.io/claudeHub/. Phases 1, 1.5, 2, 3, 4, 5, 6, 7, 8 shipped plus v0.7 design-system refactor M9.1–M9.16q. (Formerly "aiStacked" — visible brand flipped to **aiUniversity** in M8.12.5.)
 
 ## Current state — 2026-04-20
 
-**v0.7 design-system refactor: complete.** M9.1–M9.11 stamped the new token system + layouts; M9.12–M9.15a added scroll-center activation + vignette; M9.16a–n layered on a polish suite (see v0.7 plan doc for the full milestone ledger).
+**v0.7 design-system refactor: complete.** M9.1–M9.11 stamped the new token system + layouts; M9.12–M9.15a added scroll-center activation + vignette; M9.16a–q layered on a polish suite (see v0.7 plan doc for the full milestone ledger).
 
 **What shipped in M9.16 (newest work):**
 
@@ -16,8 +16,9 @@ Current release: **v0.7.1-dev.22** on `main`. Live at https://onerrorgotowtf.git
 - **M9.16l** — nine-item audit-driven polish chunk: nav chip easing parity + elevated active shadow; dashboard panel icons less muted; pill radii fixed to --radius-sm (card-pill, tutorial-toggle); card entrance animation reduced-motion-guarded; severity pulse uses --dot; your-stack-tool padding symmetric; tool-card active translateY(1px); save-btn-mastery gains explicit accent-forward hover.
 - **M9.16m** — js/app.js TOC regenerated (previous anchors drifted ~500 lines).
 - **M9.16n** — second audit wave: taskgrid type-pill + type-legend-item radii 999px → --radius-sm; unified :focus-visible ring (2px --accent-border, 2px offset) across 15 interactive elements in tool/doc/video/yt/backup/storage/lesson/recipe modals.
-
-**Known open:** doc-modal iframe loading — user reported "most sites not loading" pre-M9.16k; the detection-timing fix should significantly reduce false-positive blocked flags, but still untested end-to-end on phone.
+- **M9.16o** — session wrap hygiene: status.md + plan doc + CLAUDE.md tree comment + per-session memory files refreshed.
+- **M9.16p** — drop link-in-modal. Header probe of the top 8 feed hosts showed ~95% forbid iframe embedding via X-Frame-Options or CSP frame-ancestors, so the preview premise wasn't viable. Removed the #doc-modal template, the .doc-modal* CSS block, and the global `<a[href]>` click interceptor + openDocModal/detectDocBlocked/focus-trap/popstate wiring. Kept shared refreshModalOpenBodyClass helper. YouTube in-app modal still works via its per-card handler. External anchors now open natively via target="_blank".
+- **M9.16q** — docs hygiene: plan + status + memory catch up with M9.16o / M9.16p.
 
 ## Sources of truth
 
