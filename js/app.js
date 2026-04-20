@@ -3397,9 +3397,14 @@
         : "";
       const pinActionAttr    = l.__placeholder ? "" : ' data-learn-action="pin"';
       const masterActionAttr = l.__placeholder ? "" : ' data-learn-action="master"';
+      // M9.19a.3 — dashboard Learn tiles now render the grab visible
+      // (data-sortable="1") so the component reads consistently with
+      // the Learn list. Drop semantics on dashboard aren't wired yet —
+      // drag-trace follows the finger and eases back on release.
+      const dashSortable = !l.__placeholder;
       return `
-        <article class="dash-tile" data-learn-type="lesson" data-learn-id="${escapeHtml(l.slug)}" data-dash-lesson-slug="${escapeHtml(l.slug)}"${l.__placeholder ? ' data-placeholder="1"' : ""} role="button" tabindex="0">
-          <button type="button" class="dash-tile-grab" data-empty="1" aria-hidden="true" tabindex="-1">${GRAB_SVG}</button>
+        <article class="dash-tile"${dashSortable ? ' data-sortable="1"' : ""} data-learn-type="lesson" data-learn-id="${escapeHtml(l.slug)}" data-dash-lesson-slug="${escapeHtml(l.slug)}"${l.__placeholder ? ' data-placeholder="1"' : ""} role="button" tabindex="0">
+          <button type="button" class="dash-tile-grab"${dashSortable ? "" : ' data-empty="1"'} aria-label="Drag to reorder" title="Drag to reorder" tabindex="-1">${GRAB_SVG}</button>
           <div class="dash-tile-content">
             <div class="dash-tile-title">${escapeHtml(l.title)}</div>
             <div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>
@@ -3437,6 +3442,14 @@
       tile.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") { e.preventDefault(); navigate(e); }
       });
+    });
+    // M9.19a.3 — wire the grab on dashboard Learn tiles. No drop zones
+    // exist on the dashboard yet, so wireLearnGrabHandle's drag-trace
+    // still animates (finger-follow), but releasing anywhere eases the
+    // tile home — no pin/unpin fires. Proper dashboard-sort semantics
+    // land in a follow-up.
+    host.querySelectorAll(".dash-tile[data-sortable='1'] .dash-tile-grab").forEach((handle) => {
+      wireLearnGrabHandle(handle, handle.closest(".dash-tile"));
     });
   }
 

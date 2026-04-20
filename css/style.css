@@ -2424,6 +2424,13 @@ body.modal-open { overflow: hidden; }
 }
 .dash-tile-grab:hover { color: var(--text-2); background: rgba(0,0,0,0.04); }
 .dash-tile-grab[data-empty="1"] { visibility: hidden; pointer-events: none; }
+/* M9.19a.3 — bump inline grab SVG for readability at arm's length on
+   phone. The grab button stays 28x44; the glyph itself goes from 14x18
+   to 18x22 so the ⋮⋮ dots read clearly across the tile hierarchy. */
+.dash-tile-grab svg {
+  width: 18px;
+  height: 22px;
+}
 
 /* Content column — title + eyebrow + optional progress bar. Only column
    that flexes; title + eyebrow ellipsis on overflow so variable copy

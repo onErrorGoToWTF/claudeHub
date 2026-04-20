@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.50",
-  "milestone": "M9.19a.2",
-  "milestoneTitle": "Phase M9.19a.2 — Swipe-to-reveal delete for draft tiles. Frees up the trailing action slot: drafts no longer render an inline trash icon; instead a red Delete button lives absolutely-positioned behind the tile in a new .dash-tile-swipe-wrap clipping container. iOS Mail pattern: right-to-left swipe past 40px threshold translates the tile to translateX(-80px), revealing the action; tap the red commits delete; auto-closes after 4s of inactivity; tap-outside closes. Honors design-review Rule 10 (destructive actions reveal on right-to-left / trailing side). Does not interfere with grab-handle drag (touchstart bails when target is inside .dash-tile-grab or a data-learn-action button). Direction-lock at 10px vertical / 8px horizontal so vertical scroll stays responsive. Reduced-motion carve-out: tile translate transition disabled but swipe still functional. Wrapper only emitted for drafts; non-draft Learn tiles render bare as before.",
-  "deployedAt": "2026-04-20T18:55Z",
+  "version": "0.7.1-dev.51",
+  "milestone": "M9.19a.3",
+  "milestoneTitle": "Phase M9.19a.3 — Grab icon prominence + dashboard parity. The ⋮⋮ glyph inside .dash-tile-grab bumped 14x18 -> 18x22 via a new .dash-tile-grab svg CSS rule so it reads clearly at arm's length on phone; the 28x44 button dimensions stay the same, keeping the leading-column geometry locked. renderDashLearn now emits data-sortable='1' on real lesson tiles (placeholder dummy stays non-sortable — it's a CTA, not real content), and wireLearnGrabHandle is wired in the post-render loop so dashboard Learn tiles get the same drag-trace feedback as the Learn list. Drop semantics on dashboard aren't wired yet — no .learn-zone-upnext / .learn-zone-all containers exist on the dashboard surface, so releases ease the tile home via resetRowTransform — real dashboard-sort behavior lands in a follow-up once we decide whether drag should pin/unpin, swap positions, or promote from elsewhere. Projects dashboard tiles still keep their grab reserved-invisible (no well-defined sort semantics there yet either). Renders as user expected: consistent grab area across dashboard + Learn list, icon more noticeable, blank-space aesthetic preserved.",
+  "deployedAt": "2026-04-20T19:10Z",
   "commitSha": ""
 }
