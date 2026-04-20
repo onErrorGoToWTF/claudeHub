@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.51",
-  "milestone": "M9.19a.3",
-  "milestoneTitle": "Phase M9.19a.3 — Grab icon prominence + dashboard parity. The ⋮⋮ glyph inside .dash-tile-grab bumped 14x18 -> 18x22 via a new .dash-tile-grab svg CSS rule so it reads clearly at arm's length on phone; the 28x44 button dimensions stay the same, keeping the leading-column geometry locked. renderDashLearn now emits data-sortable='1' on real lesson tiles (placeholder dummy stays non-sortable — it's a CTA, not real content), and wireLearnGrabHandle is wired in the post-render loop so dashboard Learn tiles get the same drag-trace feedback as the Learn list. Drop semantics on dashboard aren't wired yet — no .learn-zone-upnext / .learn-zone-all containers exist on the dashboard surface, so releases ease the tile home via resetRowTransform — real dashboard-sort behavior lands in a follow-up once we decide whether drag should pin/unpin, swap positions, or promote from elsewhere. Projects dashboard tiles still keep their grab reserved-invisible (no well-defined sort semantics there yet either). Renders as user expected: consistent grab area across dashboard + Learn list, icon more noticeable, blank-space aesthetic preserved.",
-  "deployedAt": "2026-04-20T19:10Z",
+  "version": "0.7.1-dev.52",
+  "milestone": "M9.19a.4",
+  "milestoneTitle": "Phase M9.19a.4 — Drag lift goes brighter, not darker. Apple HIG gestures-and-drag.md §4 says lift = transform: scale(~1.05) + shadow increase; no mention of darkening. The previous drag visual inherited .dash-tile:active's 'color-mix(var(--bg-0) 88%, #000000)' darken because the finger stays held down during a drag — user correctly flagged the tile going darker instead of reading as lifted. Fix: gate the :active darken behind :not(.is-dragging), and give .is-dragging (plus .is-dragging:hover / :active to trump any sticky state) an explicit pure-white background so the lifted tile reads as the brightest and most opaque version of itself. Shadow kept as the elevation signal (24px -14 blur for the deep cast shadow, 8px -6 for the close shadow). Specular highlight bumped 0.70 -> 0.80 alpha to match the extra top-edge brightness a lifted page would have. border-color stays hairline so the page edge doesn't harden.",
+  "deployedAt": "2026-04-20T19:20Z",
   "commitSha": ""
 }
