@@ -1584,6 +1584,29 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 /* Lock body scroll while modal is open. Class toggled by JS. */
 body.modal-open { overflow: hidden; }
 
+/* M9.16n — Shared keyboard focus ring for interactive elements inside
+   any modal. Matches the recipe/cap-input `:focus-visible` pattern
+   already elsewhere in the file. Keep the list flat (no :is/:where)
+   so a grep-for-selector navigates here. */
+.tool-modal-close:focus-visible,
+.tool-modal-link:focus-visible,
+.tool-modal-setup-copy:focus-visible,
+.snippet-copy:focus-visible,
+.lesson-modal-close:focus-visible,
+.recipe-modal-close:focus-visible,
+.doc-modal-close:focus-visible,
+.doc-modal-open:focus-visible,
+.doc-modal-blocked-cta:focus-visible,
+.video-modal-close:focus-visible,
+.video-modal-open:focus-visible,
+.video-modal-expand:focus-visible,
+.yt-modal-close:focus-visible,
+.backup-modal-close:focus-visible,
+.storage-modal-close:focus-visible {
+  outline: 2px solid var(--accent-border);
+  outline-offset: 2px;
+}
+
 /* ===== Tool detail modal — per-tool page without leaving the site ===== */
 .tool-modal[hidden] { display: none !important; }
 .tool-modal {
@@ -6401,7 +6424,7 @@ body.modal-open { overflow: hidden; }
   align-items: center;
   gap: 6px;
   padding: 5px 10px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   background: color-mix(in srgb, var(--type-col) 10%, transparent);
   border: 1px solid color-mix(in srgb, var(--type-col) 28%, transparent);
   font-size: 11px;
@@ -6473,7 +6496,7 @@ body.modal-open { overflow: hidden; }
   font-size: 9.5px; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.08em;
   padding: 3px 8px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   background: color-mix(in srgb, var(--type-col) 16%, transparent);
   color: var(--type-col);
   border: 1px solid color-mix(in srgb, var(--type-col) 32%, transparent);
