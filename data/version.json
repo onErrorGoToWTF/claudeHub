@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.3",
-  "milestone": "M9.13a",
-  "milestoneTitle": "Phase M9.13a — Tighter activation, stronger edge vignette. Observer band tightens from ~50% (rootMargin -25% top/bottom) to ~35% (-32.5% top/bottom) so only content near the true vertical center of the viewport reaches the lifted state. The html::after vignette peak alpha bumps from 0.13 to 0.24 at the exact top/bottom edges with a 3-stop falloff (0.24 → 0.14 → 0.06 → transparent at 25%) instead of the softer 2-stop curve — near-edge dimming is now noticeably more impactful while the center 50% clear zone is unchanged. Purely parameter tuning on the same M9.13 architecture; no new rules, no new animation surfaces.",
-  "deployedAt": "2026-04-20T04:16Z",
+  "version": "0.7.1-dev.4",
+  "milestone": "M9.14",
+  "milestoneTitle": "Phase M9.14 — Unified active-highlight recipe + temporary shared orange accent. Every 'active' surface (nav chip, filter chip, dashboard panel + learn zone in the activation band) now uses the same visual language: a thin accent-colored border (--accent-border) with a tight glow (10px --accent-glow halo fading out), layered on the element's own background + warm shadow lift for activated panels. The three chip classes (.chip-learn/.chip-tools/.chip-projects), the four [data-section] overrides, and the three .dash-panel:has(...) rules all now resolve --base to a single --base-shared token at :root (currently #ff7a1a tangerine). Changing that one value retunes every highlight in the app at once; when per-section accent colors return later, the literals that were in place before M9.14 are recorded inline in /* was #XXX */ comments after each rule so restoration is a single find/replace. Activated panel transition now includes border-color so the accent ring fades in at the same 220ms rhythm as the glow.",
+  "deployedAt": "2026-04-20T04:32Z",
   "commitSha": ""
 }

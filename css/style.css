@@ -218,7 +218,14 @@
      equivalent to the legacy rgba(R,G,B,0.55/0.34/0.14) values. Hover /
      soft / warm / cool use oklch for perceptual tint math. Plan:
      docs/plans/v0.7-design-system-refactor.md. */
-  --base:           #30b0c7;                                           /* fallback — electric teal; overridden per [data-section] */
+  /* M9.14 — shared accent while the user settles on the unified
+     active-highlight recipe. Every per-section --base override below
+     (and in chip-* / dash-panel:has(...) rules) currently resolves
+     to this same orange so all highlights read identical. When
+     per-section colors return, restore the literals in each rule;
+     this token can stay as the fallback. */
+  --base-shared:    #ff7a1a;                                           /* unified orange (tangerine) — change this one value to tune all highlights at once */
+  --base:           var(--base-shared);                                /* fallback — now unified; overridden per [data-section] but still resolves to --base-shared for M9.14 */
   --accent-solid:   var(--base);
   --accent-border:  color-mix(in srgb, var(--base), transparent 45%);  /* 0.55 alpha */
   --accent-glow:    color-mix(in srgb, var(--base), transparent 66%);  /* 0.34 alpha */
@@ -278,10 +285,13 @@
    all three identity tiles coexist on the home surface. Body-level
    chrome outside these wrappers (floating nav chips, modals) sets --base
    on its own element. */
-[data-section="home"]     { --base: #9a938a; }                         /* Dashboard — neutral greige per Q1 (revisit at M9.3) */
-[data-section="learn"]    { --base: #84cc16; }                         /* chartreuse-lime */
-[data-section="projects"] { --base: #0891b2; }                         /* ocean cyan */
-[data-section="tools"]    { --base: #ff7a1a; }                         /* tangerine */
+/* M9.14 — all per-section --base currently resolve to --base-shared
+   so highlights are identical across tabs. Restore literals below
+   when per-section accents return (originals noted inline). */
+[data-section="home"]     { --base: var(--base-shared); } /* was #9a938a */
+[data-section="learn"]    { --base: var(--base-shared); } /* was #84cc16 */
+[data-section="projects"] { --base: var(--base-shared); } /* was #0891b2 */
+[data-section="tools"]    { --base: var(--base-shared); } /* was #ff7a1a */
 
 /* ===== Reset ===== */
 *, *::before, *::after { box-sizing: border-box; }
@@ -1933,13 +1943,24 @@ body.modal-open { overflow: hidden; }
      whatever scrolls under it. This keeps the activation transition
      single-property (box-shadow only), satisfying the "animations
      sequence, never stack" rule and the "prefer static approaches"
-     principle called out in CLAUDE.md design-language. */
-  transition: box-shadow 0.22s var(--ease-premium);
+     principle called out in CLAUDE.md design-language. M9.14 adds
+     border-color to the transition so the accent ring fades in at
+     the same rhythm as the glow on activation. */
+  transition:
+    box-shadow 0.22s var(--ease-premium),
+    border-color 0.22s var(--ease-premium);
 }
 .dash-panel.is-activated,
 .learn-zone.is-activated {
+  /* M9.14 — unified active-highlight recipe matching .chip.is-active /
+     .filter-chip.is-active: thin accent-border + tight accent glow
+     that fades out, layered on top of a warm shadow lift for
+     elevation. One color source (--accent-border / --accent-glow,
+     both derived from --base-shared) drives every active surface. */
+  border-color: var(--accent-border);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.75),
+    inset 0 0 0 1px var(--accent-border),
+    0 0 10px 0 var(--accent-glow),
     0 18px 34px -18px rgba(30,20,10,0.18),
     0 6px 14px -8px rgba(30,20,10,0.10);
 }
@@ -2108,9 +2129,10 @@ body.modal-open { overflow: hidden; }
 /* M9.1 — override --base per panel so the three identity tiles keep their
    colors inside the neutral Dashboard (home) section. Replaces the old
    --panel-accent-* indirection; all downstream rules read --accent-* now. */
-.dash-panel:has(.dash-panel-icon--learn)    { --base: #84cc16; }
-.dash-panel:has(.dash-panel-icon--projects) { --base: #0891b2; }
-.dash-panel:has(.dash-panel-icon--tools)    { --base: #ff7a1a; }
+/* M9.14 — originals noted inline; all collapse to --base-shared */
+.dash-panel:has(.dash-panel-icon--learn)    { --base: var(--base-shared); } /* was #84cc16 */
+.dash-panel:has(.dash-panel-icon--projects) { --base: var(--base-shared); } /* was #0891b2 */
+.dash-panel:has(.dash-panel-icon--tools)    { --base: var(--base-shared); } /* was #ff7a1a */
 .dash-panel:has(.dash-panel-icon--learn) > .dash-panel-body,
 .dash-panel:has(.dash-panel-icon--projects) > .dash-panel-body,
 .dash-panel:has(.dash-panel-icon--tools) > .dash-panel-body {
@@ -5937,9 +5959,10 @@ body.modal-open { overflow: hidden; }
 /* M9.1 — chips sit in the floating nav outside any [data-section] wrapper,
    so each chip carries its own --base. Active + hover rules then read
    --accent-* with the right identity resolved locally. */
-.chip-learn    { --base: #84cc16; }
-.chip-tools    { --base: #ff7a1a; }
-.chip-projects { --base: #0891b2; }
+/* M9.14 — originals noted inline; all collapse to --base-shared */
+.chip-learn    { --base: var(--base-shared); } /* was #84cc16 */
+.chip-tools    { --base: var(--base-shared); } /* was #ff7a1a */
+.chip-projects { --base: var(--base-shared); } /* was #0891b2 */
 
 .chip-learn.is-active {
   color: var(--text-1);
