@@ -2038,9 +2038,13 @@
     const stateRaw = item.state === "completed" ? "completed"
                   : item.state === "in_progress" ? "in_progress"
                   : "new";
+    // M9.19a.11c — "Not started" is the state pill's status label
+    // (purely status, matches the grammar of "Continue" / "Done").
+    // The action verb ("Start lesson →") lives on the expanded CTA
+    // button. State pill = status; CTA = action.
     const stateLabel = stateRaw === "completed" ? "Done"
                     : stateRaw === "in_progress" ? "Continue"
-                    : "Start";
+                    : "Not started";
     // M9.19a.6 — Pin + mastery icons retired from Learn tiles.
     // Pin is a universal "send to Learn" action that lives on
     // Tools/Projects/Snippets/News tiles only. Once an item is IN
@@ -2595,7 +2599,7 @@
     const minutesLabel = minutes ? `${minutes}m` : "? m";
     const stateLabel = state === "completed" ? "Done"
                     : state === "in_progress" ? "Continue"
-                    : "Start";
+                    : "Not started";
     let ctaLabel = "", ctaAction = () => {};
     if (type === "lesson") {
       ctaLabel = state === "completed" ? "Review lesson →"
@@ -3581,7 +3585,7 @@
       const state = progress[l.slug]?.state || "new";
       const stateLabel = state === "completed" ? "Done"
                       : state === "in_progress" ? "Continue"
-                      : "Start";
+                      : "Not started";
       const trackLabel = l.track ? (TRACK_LABEL[l.track] || l.track) : "";
       const eyebrowParts = [];
       if (l.__placeholder) eyebrowParts.push("Example");

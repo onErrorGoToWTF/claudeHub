@@ -2546,14 +2546,15 @@ body.modal-open { overflow: hidden; }
   visibility: hidden;
 }
 .dash-tile-state {
-  grid-row: 1;
-  grid-column: 2;
-  width: 84px;
+  /* M9.19a.11c — width bumped 84 -> 100px to accommodate "NOT STARTED"
+     (longest state label). Legacy grid-row/grid-column props removed
+     (the trailing cluster is inline-flex now, not a nested grid). */
+  width: 100px;
   height: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 0 4px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: color-mix(in srgb, var(--text-1) 5%, transparent);
@@ -2563,6 +2564,8 @@ body.modal-open { overflow: hidden; }
   text-transform: uppercase;
   letter-spacing: 0.06em;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .dash-tile-state[data-state="in_progress"],
 .dash-tile-state[data-state="resume"] {
