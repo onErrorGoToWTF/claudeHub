@@ -959,6 +959,97 @@
     });
   }
 
+  // ======================================================================
+  // Link-in-modal interceptor (M9.16b) — keeps external <a> clicks inside
+  // the app. YouTube links route to openVideoModal; everything else goes
+  // to a sandboxed doc-modal iframe. Modified clicks, same-origin links,
+  // non-http protocols, and data-no-modal anchors pass through unchanged.
+  // History state is pushed on open so the phone back gesture closes the
+  // modal instead of leaving the app. ESC runs in capture phase so it
+  // closes only the topmost modal (doc-modal when stacked over another).
+  // ======================================================================
+  function openDocModal(url, meta) {
+    const modal = document.getElementById("doc-modal");
+    if (!modal) return;
+    const iframe   = modal.querySelector(".doc-modal-iframe");
+    const srcEl    = modal.querySelector(".doc-modal-source");
+    const titleEl  = modal.querySelector(".doc-modal-title");
+    const openLink = modal.querySelector(".doc-modal-open");
+    iframe.src          = url;
+    srcEl.textContent   = (meta && meta.hostname) || "";
+    titleEl.textContent = (meta && meta.title)    || "";
+    openLink.href       = url;
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+    history.pushState({ clhubModal: "doc" }, "", location.href);
+  }
+  function hideDocModal() {
+    const modal = document.getElementById("doc-modal");
+    if (!modal || modal.hidden) return;
+    const iframe = modal.querySelector(".doc-modal-iframe");
+    iframe.src = "about:blank";
+    modal.hidden = true;
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .backup-modal:not([hidden]), .storage-modal:not([hidden]), .yt-modal:not([hidden])")) {
+      document.body.classList.remove("modal-open");
+    }
+  }
+  function closeDocModal() {
+    const modal = document.getElementById("doc-modal");
+    if (!modal || modal.hidden) return;
+    if (history.state && history.state.clhubModal === "doc") {
+      history.back();
+    } else {
+      hideDocModal();
+    }
+  }
+  window.addEventListener("popstate", () => {
+    const modal = document.getElementById("doc-modal");
+    if (modal && !modal.hidden) hideDocModal();
+  });
+  document.querySelectorAll("#doc-modal [data-close]").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      closeDocModal();
+    });
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const modal = document.getElementById("doc-modal");
+    if (!modal || modal.hidden) return;
+    e.stopImmediatePropagation();
+    closeDocModal();
+  }, true);
+  (function wireDocOpenLink() {
+    const openLink = document.querySelector("#doc-modal .doc-modal-open");
+    if (!openLink) return;
+    openLink.addEventListener("click", () => {
+      setTimeout(closeDocModal, 0);
+    });
+  })();
+
+  document.addEventListener("click", (e) => {
+    if (e.defaultPrevented) return;
+    if (e.button !== 0) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const a = e.target.closest && e.target.closest("a[href]");
+    if (!a) return;
+    if (a.hasAttribute("data-no-modal")) return;
+    let url;
+    try { url = new URL(a.href, location.href); } catch { return; }
+    if (!/^https?:$/.test(url.protocol)) return;
+    if (url.origin === location.origin) return;
+    e.preventDefault();
+    const ytId = extractYouTubeId(url.href);
+    if (ytId) {
+      openVideoModal(ytId, (a.textContent || "").trim(), url.href);
+    } else {
+      openDocModal(url.href, {
+        title: (a.getAttribute("title") || a.textContent || "").trim(),
+        hostname: url.hostname.replace(/^www\./, ""),
+      });
+    }
+  });
+
   // SVG pin glyphs — outline when unpinned, filled when pinned.
   const PIN_SVG_OUTLINE = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><path d="M12 12v8"/></svg>';
   const PIN_SVG_FILLED  = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><rect x="11.2" y="12" width="1.6" height="8" rx="0.6"/></svg>';
@@ -1490,7 +1581,7 @@
     const modal = document.getElementById("backup-modal");
     if (!modal || modal.hidden) return;
     modal.hidden = true;
-    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden])")) {
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .doc-modal:not([hidden])")) {
       document.body.classList.remove("modal-open");
     }
   }
@@ -2426,7 +2517,7 @@
     const modal = document.getElementById("lesson-modal");
     if (!modal || modal.hidden) return;
     modal.hidden = true;
-    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .backup-modal:not([hidden]), .storage-modal:not([hidden])")) {
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .backup-modal:not([hidden]), .storage-modal:not([hidden]), .doc-modal:not([hidden])")) {
       document.body.classList.remove("modal-open");
     }
     renderLessonsList(); // refresh status chips
@@ -2530,7 +2621,7 @@
     const modal = document.getElementById("storage-modal");
     if (!modal || modal.hidden) return;
     modal.hidden = true;
-    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .backup-modal:not([hidden])")) {
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .backup-modal:not([hidden]), .doc-modal:not([hidden])")) {
       document.body.classList.remove("modal-open");
     }
   }
@@ -2995,7 +3086,7 @@
     const modal = document.getElementById("pin-picker-modal");
     if (!modal || modal.hidden) return;
     modal.hidden = true;
-    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden])")) {
+    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .doc-modal:not([hidden])")) {
       document.body.classList.remove("modal-open");
     }
   }
@@ -3622,7 +3713,7 @@
     if (!modal || modal.hidden) return;
     modal.hidden = true;
     // Also clear body scroll lock unless another modal is open.
-    if (!document.querySelector(".video-modal:not([hidden]), .search-modal:not([hidden])")) {
+    if (!document.querySelector(".video-modal:not([hidden]), .search-modal:not([hidden]), .doc-modal:not([hidden])")) {
       document.body.classList.remove("modal-open");
     }
   }
@@ -3648,7 +3739,7 @@
     const modal = document.getElementById("youtube-modal");
     if (!modal || modal.hidden) return;
     modal.hidden = true;
-    if (!document.querySelector(".tool-modal:not([hidden]), .video-modal:not([hidden])")) {
+    if (!document.querySelector(".tool-modal:not([hidden]), .video-modal:not([hidden]), .doc-modal:not([hidden])")) {
       document.body.classList.remove("modal-open");
     }
   }

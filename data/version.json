@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.8",
-  "milestone": "M9.16a",
-  "milestoneTitle": "Phase M9.16a — Activation band vertical center raised 8% above viewport center. Band height unchanged at 20%; only the midpoint shifts from 50% → 42% of viewport height (rootMargin -40%/-40% → -32%/-48%), so the activation sweet spot sits slightly above the screen midline. Comment block above the observer refreshed to reflect the new off-center placement.",
-  "deployedAt": "2026-04-20T04:44Z",
+  "version": "0.7.1-dev.9",
+  "milestone": "M9.16b",
+  "milestoneTitle": "Phase M9.16b — Link-in-modal. External <a> clicks open inside a sandboxed doc-modal instead of navigating away; YouTube links route to the existing video modal. Back-gesture + ESC + backdrop + X all close cleanly and restore scroll position. Prominent 'Open in new tab ↗' escape hatch for sites that block iframe embedding. Focus trap + favicon + aria polish held for M9.16c.",
+  "deployedAt": "2026-04-20T04:58Z",
   "commitSha": ""
 }
