@@ -3397,10 +3397,11 @@ body.modal-open { overflow: hidden; }
 .dash-action-learn:hover,
 .dash-action-tools:hover {
   border-color: color-mix(in srgb, var(--accent-solid) 65%, var(--border-strong));
+  /* M10.14 — inset ring dropped; glow tightened toward the border so
+     the neon read concentrates at the edge instead of blooming. */
   box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--accent-solid) 55%, var(--border-strong)),
-    inset 0 0 12px 0 var(--accent-glow),
-    0 0 20px 0 var(--accent-glow),
+    inset 0 0 8px 0 var(--accent-glow),
+    0 0 12px 0 var(--accent-glow),
     0 10px 24px -6px rgba(0,0,0,0.22);
 }
 /* CTA accent only inside an activated panel.
@@ -3414,10 +3415,11 @@ body.modal-open { overflow: hidden; }
 .dash-panel.is-activated .dash-action-learn,
 .dash-panel.is-activated .dash-action-tools {
   border-color: var(--accent-border);
+  /* M10.14 — inset 1px ring dropped; glow pulled tight to the border so
+     the neon read concentrates at the edge rather than blooming outward. */
   box-shadow:
-    inset 0 0 0 1px var(--accent-border),
-    inset 0 0 10px 0 var(--accent-glow),
-    0 0 14px 0 var(--accent-glow),
+    inset 0 0 6px 0 var(--accent-glow),
+    0 0 8px 0 var(--accent-glow),
     0 8px 20px -6px rgba(0,0,0,0.18);
 }
 /* Panel action row — Start CTA on the left, inline YouTube on the right. */
