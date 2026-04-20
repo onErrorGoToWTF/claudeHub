@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.5",
-  "milestone": "M9.14a",
-  "milestoneTitle": "Phase M9.14a — Thinner active-highlight line. The inset 1px inner accent ring is removed from the five unified active-highlight recipes (nav chips: learn/tools/projects, .filter-chip.is-active, and .dash-panel.is-activated / .learn-zone.is-activated) so the line reads at roughly half its prior weight. What remains: the element's own 1px border in --accent-border plus the soft outer 10px --accent-glow halo; activated panels keep their warm shadow lift. Dashboard CTAs (.dash-action-*) and the learn-zone drag-drop drop-candidate hint keep their inner rings — different components, different punch signal.",
-  "deployedAt": "2026-04-20T04:42Z",
+  "version": "0.7.1-dev.6",
+  "milestone": "M9.15",
+  "milestoneTitle": "Phase M9.15 — Activation distributes to buttons + icons; rest state goes flat; accent flips to warm vibrant green. The activation band tightens from ~35% (rootMargin -32.5%) to ~25% (-37.5%). Panel surfaces no longer paint accent color — the unified active-highlight recipe is explicitly overridden on .dash-panel.is-activated / .learn-zone.is-activated so the big surface stays neutral (color on the whole surface read as too much). Accent now concentrates on the small interactive bits inside an activated panel: Dashboard CTAs (.dash-action-primary/learn/tools) flatten to neutral border + mild drop shadow at rest and only light up their accent border + inset ring + outer glow when a .dash-panel is in the band; Dashboard panel icons (.dash-panel-icon--*) go greyscale rgba(30,24,16,0.22) stroke with filter:none at rest and reclaim their --accent-border stroke + stacked accent drop-shadow glow when activated. Tiles / item containers inside activated panels also raise up with a coordinated shadow. The single --base-shared token at :root flips from tangerine #ff7a1a to chartreuse-lime #84cc16 so every accent across the app (buttons, icons, nav chip active, filter chip active) retunes to warm vibrant green in one line.",
+  "deployedAt": "2026-04-20T04:58Z",
   "commitSha": ""
 }

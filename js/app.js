@@ -685,7 +685,7 @@
         for (const e of entries) {
           e.target.classList.toggle("is-activated", e.isIntersecting);
         }
-      }, { root: null, rootMargin: "-32.5% 0px -32.5% 0px", threshold: 0 })
+      }, { root: null, rootMargin: "-37.5% 0px -37.5% 0px", threshold: 0 })
     : null;
   function registerCenterActivations() {
     if (!centerBandIO) return;

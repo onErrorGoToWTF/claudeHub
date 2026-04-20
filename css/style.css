@@ -224,7 +224,7 @@
      to this same orange so all highlights read identical. When
      per-section colors return, restore the literals in each rule;
      this token can stay as the fallback. */
-  --base-shared:    #ff7a1a;                                           /* unified orange (tangerine) — change this one value to tune all highlights at once */
+  --base-shared:    #84cc16;                                           /* unified warm vibrant green (chartreuse-lime) — change this one value to tune all highlights at once */
   --base:           var(--base-shared);                                /* fallback — now unified; overridden per [data-section] but still resolves to --base-shared for M9.14 */
   --accent-solid:   var(--base);
   --accent-border:  color-mix(in srgb, var(--base), transparent 45%);  /* 0.55 alpha */
@@ -1952,18 +1952,28 @@ body.modal-open { overflow: hidden; }
 }
 .dash-panel.is-activated,
 .learn-zone.is-activated {
-  /* M9.14 — unified active-highlight recipe matching .chip.is-active /
-     .filter-chip.is-active: thin accent-border + tight accent glow
-     that fades out, layered on top of a warm shadow lift for
-     elevation. One color source (--accent-border / --accent-glow,
-     both derived from --base-shared) drives every active surface. */
-  border-color: var(--accent-border);
-  /* M9.14a — inner ring dropped for a thinner line read; just the
-     element's own 1px border + the soft outer glow remains. */
+  /* M9.15 — explicit override of the unified active-highlight recipe:
+     panel surfaces stay neutral (no accent border, no accent glow)
+     because color on the big surface reads as "too much color". The
+     shared accent tokens still resolve here, but we only consume them
+     on the small interactive bits inside the activated panel (CTAs,
+     icons). Keep only the warm shadow lift for the elevation signal. */
   box-shadow:
-    0 0 10px 0 var(--accent-glow),
+    inset 0 1px 0 rgba(255,255,255,0.75),
     0 18px 34px -18px rgba(30,20,10,0.18),
     0 6px 14px -8px rgba(30,20,10,0.10);
+}
+/* M9.15 — tiles / item containers inside an activated panel raise up
+   so the whole interior reads as a coordinated elevation event. Still
+   no accent color here (reserved for CTAs + icons). */
+.dash-panel.is-activated .continue-row,
+.dash-panel.is-activated .panel-tile,
+.learn-zone.is-activated .continue-row,
+.learn-zone.is-activated .panel-tile {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.70),
+    0 2px 4px rgba(0,0,0,0.04),
+    0 6px 14px -6px rgba(30,20,10,0.14);
 }
 @media (prefers-reduced-motion: reduce) {
   .dash-panel,
@@ -2037,21 +2047,33 @@ body.modal-open { overflow: hidden; }
 /* Stacked drop-shadows: tight 1.5px at full saturation hugs the line
    (the "concentrated near border" pop), then a wider 3px at the
    glow-token alpha for ambient fade. */
+/* M9.15 — icons flat / greyscale at rest; accent stroke + drop-shadow
+   glow activate only when the parent .dash-panel is in the center
+   activation band. Transition stroke + filter so the color change
+   fades in at the same rhythm as the CTA accent + tile shadow lift. */
 .dash-panel-icon--learn {
-  stroke: var(--accent-border);
-  filter:
-    drop-shadow(0 0 1.5px var(--accent-solid))
-    drop-shadow(0 0 3px var(--accent-glow));
+  stroke: rgba(30,24,16,0.22);
+  filter: none;
   transform: translateY(6px);
+  transition: stroke 0.22s var(--ease-premium),
+              filter 0.22s var(--ease-premium);
 }
 .dash-panel-icon--projects {
-  stroke: var(--accent-border);
-  filter:
-    drop-shadow(0 0 1.5px var(--accent-solid))
-    drop-shadow(0 0 3px var(--accent-glow));
+  stroke: rgba(30,24,16,0.22);
+  filter: none;
   transform: translateY(6px);
+  transition: stroke 0.22s var(--ease-premium),
+              filter 0.22s var(--ease-premium);
 }
 .dash-panel-icon--tools {
+  stroke: rgba(30,24,16,0.22);
+  filter: none;
+  transition: stroke 0.22s var(--ease-premium),
+              filter 0.22s var(--ease-premium);
+}
+.dash-panel.is-activated .dash-panel-icon--learn,
+.dash-panel.is-activated .dash-panel-icon--projects,
+.dash-panel.is-activated .dash-panel-icon--tools {
   stroke: var(--accent-border);
   filter:
     drop-shadow(0 0 1.5px var(--accent-solid))
@@ -2282,71 +2304,45 @@ body.modal-open { overflow: hidden; }
   .dash-action-learn,
   .dash-action-tools { background: rgba(255,255,255,0.55); }
 }
-/* Same pattern as .dash-action-learn + nav chip active. */
-.dash-action-primary {
-  background: linear-gradient(180deg,
-    rgba(255,255,255,0.50) 0%,
-    rgba(255,255,255,0.22) 100%);
-  -webkit-backdrop-filter: blur(10px) saturate(1.25);
-          backdrop-filter: blur(10px) saturate(1.25);
-  border-color: var(--accent-border);
-  color: var(--text-1);
-  box-shadow:
-    inset 0 0 0 1px var(--accent-border),
-    0 0 12px 0 var(--accent-glow),
-    0 8px 20px -6px rgba(0,0,0,0.18);
-}
-.dash-action-primary:hover {
-  border-color: color-mix(in srgb, var(--accent-solid) 65%, var(--border-strong));
-  box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--accent-solid) 55%, var(--border-strong)),
-    0 0 18px 0 var(--accent-glow),
-    0 10px 24px -6px rgba(0,0,0,0.22);
-}
-/* Matches the nav chip active pattern: solid surface bg, theme text
-   color, concentrated colored edge (border + inset) + tight glow
-   hugging the edge + drop shadow below. */
-.dash-action-learn {
-  background: linear-gradient(180deg,
-    rgba(255,255,255,0.50) 0%,
-    rgba(255,255,255,0.22) 100%);
-  -webkit-backdrop-filter: blur(10px) saturate(1.25);
-          backdrop-filter: blur(10px) saturate(1.25);
-  border-color: var(--accent-border);
-  color: var(--text-1);
-  box-shadow:
-    inset 0 0 0 1px var(--accent-border),
-    0 0 12px 0 var(--accent-glow),
-    0 8px 20px -6px rgba(0,0,0,0.18);
-}
-.dash-action-learn:hover {
-  border-color: color-mix(in srgb, var(--accent-solid) 65%, var(--border-strong));
-  box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--accent-solid) 55%, var(--border-strong)),
-    0 0 18px 0 var(--accent-glow),
-    0 10px 24px -6px rgba(0,0,0,0.22);
-}
-/* Tools dashboard CTA — matches the same edge + glow + drop pattern as
-   .dash-action-learn / .dash-action-primary, themed to the Tools cyan. */
+/* M9.15 — CTAs are flat / neutral at rest: same glass surface + drop
+   shadow for shape, but no accent border + no accent glow. They come
+   alive (accent border + inset ring + outer glow) only when the parent
+   .dash-panel is in the center activation band. Transitions from the
+   .dash-action base (border-color + box-shadow) carry the 250ms fade
+   so the accent turns up as the panel rolls into the band. */
+.dash-action-primary,
+.dash-action-learn,
 .dash-action-tools {
   background: linear-gradient(180deg,
     rgba(255,255,255,0.50) 0%,
     rgba(255,255,255,0.22) 100%);
   -webkit-backdrop-filter: blur(10px) saturate(1.25);
           backdrop-filter: blur(10px) saturate(1.25);
-  border-color: var(--accent-border);
+  border-color: var(--border);
   color: var(--text-1);
-  box-shadow:
-    inset 0 0 0 1px var(--accent-border),
-    0 0 12px 0 var(--accent-glow),
-    0 8px 20px -6px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 10px -4px rgba(0,0,0,0.10);
 }
+/* Hover still lights accent even at rest so tap feedback is never
+   dead. Activation layers a stronger glow via the .is-activated
+   rule below. */
+.dash-action-primary:hover,
+.dash-action-learn:hover,
 .dash-action-tools:hover {
   border-color: color-mix(in srgb, var(--accent-solid) 65%, var(--border-strong));
   box-shadow:
     inset 0 0 0 1px color-mix(in srgb, var(--accent-solid) 55%, var(--border-strong)),
     0 0 18px 0 var(--accent-glow),
     0 10px 24px -6px rgba(0,0,0,0.22);
+}
+/* CTA accent only inside an activated panel. */
+.dash-panel.is-activated .dash-action-primary,
+.dash-panel.is-activated .dash-action-learn,
+.dash-panel.is-activated .dash-action-tools {
+  border-color: var(--accent-border);
+  box-shadow:
+    inset 0 0 0 1px var(--accent-border),
+    0 0 12px 0 var(--accent-glow),
+    0 8px 20px -6px rgba(0,0,0,0.18);
 }
 /* Panel action row — Start CTA on the left, inline YouTube on the right. */
 .dash-panel-actions {
