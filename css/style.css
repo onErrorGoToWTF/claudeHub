@@ -5394,6 +5394,51 @@ body.modal-open { overflow: hidden; }
   font-weight: 600;
 }
 
+/* ===== Bootstrap ghost (M9.8) =====
+   Full-width placeholder strip at the foot of each saved project card.
+   Dashed accent border at 0.25α reads as a reserved-slot affordance
+   without competing with the primary actions. Tapping shows a toast
+   acknowledging the feature is deferred — no state change, no telemetry.
+   Label uses the site-wide .label-debossed impressed text utility so it
+   feels set-aside rather than inert. */
+.project-bootstrap-ghost {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  min-height: 40px;
+  width: 100%;
+  border: 1px dashed color-mix(in srgb, var(--accent-solid) 25%, transparent);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent-solid) 3%, transparent);
+  color: var(--text-2);
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: border-color 0.18s var(--ease-premium),
+              background 0.18s var(--ease-premium),
+              transform 0.15s var(--ease-premium);
+}
+.project-bootstrap-ghost:hover {
+  border-color: color-mix(in srgb, var(--accent-solid) 45%, transparent);
+  background: color-mix(in srgb, var(--accent-solid) 6%, transparent);
+}
+.project-bootstrap-ghost:active { transform: translateY(1px); }
+.project-bootstrap-ghost-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+.project-bootstrap-ghost-hint {
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  font-style: italic;
+  font-weight: 500;
+}
+
 .foot .foot-sep   { color: var(--text-3); opacity: 0.6; margin: 0 2px; }
 
 /* ===== Competitor comparison bars ===== */

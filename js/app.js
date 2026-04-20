@@ -3150,6 +3150,10 @@
         <div class="project-actions">
           <button class="project-delete" type="button" data-project-id="${escapeHtml(p.id)}">Delete</button>
         </div>
+        <button type="button" class="project-bootstrap-ghost" aria-label="Bootstrap this project (coming later)">
+          <span class="label-debossed project-bootstrap-ghost-label">Bootstrap this project</span>
+          <span class="project-bootstrap-ghost-hint">coming later</span>
+        </button>
       `;
       host.appendChild(card);
     });
@@ -3203,6 +3207,17 @@
         btn.textContent = "Tap again to delete";
         clearTimeout(armTimer);
         armTimer = setTimeout(disarm, 3000);
+      });
+    });
+    // M9.8 — Bootstrap ghost: tap shows the toast placeholder. No
+    // telemetry, no state change. Reuses showLearnToast without an
+    // onUndo so the toast reads as plain confirmation.
+    host.querySelectorAll(".project-bootstrap-ghost").forEach((btn) => {
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        showLearnToast({
+          message: "Bootstrapper arrives in a later milestone — your stack + pins seed it.",
+        });
       });
     });
   }

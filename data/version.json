@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.10.1",
-  "milestone": "M9.7b",
-  "milestoneTitle": "Phase M9.7b — YouTube tile on every section head. The same glass YouTube button that sits top-right on Dashboard now appears on Learn, Projects, and Tools so each section-head has identical vertical footprint — the top-of-page spacing (nav-to-header and header-to-first-component) no longer shifts as you switch tabs. The id selector #youtube-open was generalized to a .youtube-open-btn class so multiple instances share styles, and the JS click handler switched from getElementById to a querySelectorAll loop. That top-right slot is now reserved as a quick-action area for modal shortcuts that don't belong in the nav pill.",
-  "deployedAt": "2026-04-20T02:28Z",
+  "version": "0.7.0-dev.11",
+  "milestone": "M9.8",
+  "milestoneTitle": "Phase M9.8 — Bootstrapper ghost state on saved project cards. Every saved project card now carries a dashed cyan-border strip at its foot reading 'Bootstrap this project' on the left (impressed glass-label style) with a right-aligned 'coming later' hint. Tapping the strip pops a toast — 'Bootstrapper arrives in a later milestone — your stack + pins seed it.' — so the slot reads as reserved rather than broken. No state change, no telemetry. The strip is sized + padded to match the existing Delete row's rhythm; the dashed border uses color-mix over the Projects --accent-solid token so it inherits the cyan automatically.",
+  "deployedAt": "2026-04-20T02:44Z",
   "commitSha": ""
 }
