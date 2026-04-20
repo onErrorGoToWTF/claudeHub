@@ -1475,6 +1475,104 @@ body.modal-open { overflow: hidden; }
   margin-bottom: 8px;
 }
 
+/* ===== M9.6b — Tool modal pin-to-learn form =====
+   Collapsed <details> beneath the setup snippet. Summary is the CTA;
+   opening it reveals two fields + Pin button. Submits write a draft
+   stub to clhub.v1.learnDrafts; the stub renders in the Learn surface
+   with a Draft pill and a ⋯ menu that can Remove it. */
+.tool-modal-learn {
+  margin: 0 0 18px;
+}
+.tool-modal-learn-summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  min-height: 40px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-1);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background 0.18s var(--ease-premium),
+              border-color 0.18s var(--ease-premium);
+}
+.tool-modal-learn-summary::-webkit-details-marker,
+.tool-modal-learn-summary::marker { display: none; }
+.tool-modal-learn-summary:hover {
+  background: color-mix(in srgb, var(--text-1) 4%, transparent);
+  border-color: var(--text-1);
+}
+.tool-modal-learn[open] .tool-modal-learn-summary {
+  border-color: var(--text-1);
+  background: color-mix(in srgb, var(--text-1) 3%, transparent);
+}
+.tool-modal-learn-body {
+  margin-top: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-0);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
+}
+.tool-modal-learn-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.tool-modal-learn-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.tool-modal-learn-body input,
+.tool-modal-learn-body textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-2);
+  color: var(--text-1);
+  font-family: inherit;
+  font-size: 13.5px;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  resize: vertical;
+  transition: border-color 0.2s var(--ease-premium),
+              box-shadow 0.25s var(--ease-premium);
+}
+.tool-modal-learn-body input:focus,
+.tool-modal-learn-body textarea:focus {
+  outline: none;
+  border-color: var(--text-1);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.tool-modal-learn-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+.tool-modal-learn-status {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+.tool-modal-learn-status[data-kind="warn"] { color: #c4791c; }
+.tool-modal-learn-status[data-kind="ok"]   { color: color-mix(in srgb, #34d399 80%, var(--text-2)); }
+
 /* ===== Tool modal setup snippet (M5.2) ===== */
 .tool-modal-setup { margin-bottom: 18px; }
 .tool-modal-setup[hidden] { display: none !important; }

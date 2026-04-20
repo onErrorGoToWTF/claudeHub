@@ -257,7 +257,8 @@ All under the `clhub.v1.*` namespace. Bumped only on breaking shape changes.
 - `clhub.v1.lessonProgress` — `{ [slug]: { state: "new"|"in_progress"|"completed", quizPassedAt?: ISO8601 } }`
 - `clhub.v1.finderDraft`    — current in-flight Finder state (single slot): `{ description: string, path?: "easy"|"best", updatedAt: ISO8601 }`. Pre-M9.5b entries stored just the description string; `getFinderDraft` migrates them transparently on read. A Resume banner appears at the top of `#projects/new` whenever `description.trim()` is non-empty; **Start fresh** clears the slot + the separate `finderCaps` store.
 - `clhub.v1.finderCaps`     — last capability-box selections
-- `clhub.v1.mastery`        — `{ [key]: ISO8601 }` where `key` is `lesson:<slug>`, `course:<slug>`, or `tool:<toolId>` *(M9.4b — unified "I've got this" signal; swipe-left on a Learn card sets it + unpins; Tools catalog renders ●ᴹ badge for mastered tools in M9.7)*
+- `clhub.v1.mastery`        — `{ [key]: ISO8601 }` where `key` is `lesson:<slug>`, `course:<slug>`, `tool:<toolId>`, or `draft:<draftId>` *(M9.4b — unified "I've got this" signal; swipe-left on a Learn card sets it + unpins; Tools catalog renders ●ᴹ badge for mastered tools in M9.7)*
+- `clhub.v1.learnDrafts`    — `[{ id, learnPrompt, notes, docsUrl, sourceToolId, createdAt }]`. *(M9.6b — user-created draft lesson stubs pinned from Tools cards; rendered in Learn's Everything else zone with a Draft pill. A future LLM hydrator could promote stubs into authored lessons; the schema is forward-compatible with Q13.)*
 - `clhub.v1.ui`             — misc UI prefs (selected filters, active sort)
 
 **SavedProject** (when M9 settles):

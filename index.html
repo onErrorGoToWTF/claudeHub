@@ -558,6 +558,27 @@
       </dl>
       <div class="tool-modal-links"></div>
       <div class="tool-modal-setup" hidden></div>
+      <!-- M9.6b — Pin-to-learn: native <details> form creates a draft
+           lesson stub in localStorage (clhub.v1.learnDrafts). The draft
+           shows up in Learn's "Everything else" zone with a Draft pill.
+           No separate modal chrome; the details body is the form. -->
+      <details class="tool-modal-learn" id="tool-modal-learn">
+        <summary class="tool-modal-learn-summary">Pin this tool to Learn →</summary>
+        <div class="tool-modal-learn-body">
+          <label class="tool-modal-learn-field">
+            <span class="tool-modal-learn-label">What do you want to learn?</span>
+            <input type="text" id="tool-modal-learn-prompt" required maxlength="120" placeholder="e.g. How to use the CLAUDE.md conventions effectively" autocomplete="off">
+          </label>
+          <label class="tool-modal-learn-field">
+            <span class="tool-modal-learn-label">Notes (optional)</span>
+            <textarea id="tool-modal-learn-notes" rows="2" maxlength="400" placeholder="Anything to remember — specific feature, context, or question."></textarea>
+          </label>
+          <div class="tool-modal-learn-actions">
+            <button type="button" class="dash-action dash-action-primary" id="tool-modal-learn-submit">Pin</button>
+            <span class="tool-modal-learn-status" id="tool-modal-learn-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </details>
       <div class="tool-modal-snippets">
         <div class="academy-eyebrow tool-modal-snippets-title">Snippets</div>
         <div class="tool-modal-snippet-list snippet-list"></div>

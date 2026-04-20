@@ -460,6 +460,13 @@
         if (isLearnItemPinned(type, id)) unpinLearnItem(type, id);
         else                              pinLearnItem(type, id, { title });
         renderLearn();
+      } else if (actionBtn.dataset.learnMenuAction === "remove-draft" && type === "draft") {
+        // M9.6b — drop the draft from storage + clear its pin / mastery
+        // side-state so storage stays clean.
+        removeLearnDraft(id);
+        unpinLearnItem("draft", id);
+        unsetMastered("draft", id);
+        renderLearn();
       }
       // Close the menu (renderLearn replaces the DOM anyway, but this
       // handles mouse/keyboard cases where the menu was toggled but
@@ -1589,6 +1596,7 @@
   function masteryKey(type, id) {
     if (type === "course") return `course:${id}`;
     if (type === "tool")   return `tool:${id}`;
+    if (type === "draft")  return `draft:${id}`;
     return `lesson:${id}`;
   }
   function isMastered(type, id) {
@@ -1603,6 +1611,43 @@
     const m = getMastery();
     delete m[masteryKey(type, id)];
     putMastery(m);
+  }
+  // ===== M9.6b — Learn draft stubs =====
+  // User pins a Tools card to Learn via the details form in the tool
+  // modal; we persist a stub in clhub.v1.learnDrafts (client-side only)
+  // and render it alongside authored lessons + academy courses. Shape:
+  //   { id, learnPrompt, notes, docsUrl, sourceToolId, createdAt }
+  // Forward-compatible with a future LLM hydrator that could turn the
+  // prompt into an authored lesson body + quiz. Per Q13 schema.
+  const LEARN_DRAFTS_KEY = "clhub.v1.learnDrafts";
+  function getLearnDrafts() {
+    try {
+      const raw = localStorage.getItem(LEARN_DRAFTS_KEY);
+      if (!raw) return [];
+      const arr = JSON.parse(raw);
+      return Array.isArray(arr) ? arr : [];
+    } catch { return []; }
+  }
+  function putLearnDrafts(arr) {
+    try { localStorage.setItem(LEARN_DRAFTS_KEY, JSON.stringify(arr || [])); } catch {}
+  }
+  function createLearnDraft({ learnPrompt, notes, docsUrl, sourceToolId }) {
+    const drafts = getLearnDrafts();
+    const id = `draft-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
+    drafts.push({
+      id,
+      learnPrompt: (learnPrompt || "").trim(),
+      notes: (notes || "").trim(),
+      docsUrl: docsUrl || "",
+      sourceToolId: sourceToolId || null,
+      createdAt: new Date().toISOString(),
+    });
+    putLearnDrafts(drafts);
+    return id;
+  }
+  function removeLearnDraft(id) {
+    const drafts = getLearnDrafts().filter((d) => d.id !== id);
+    putLearnDrafts(drafts);
   }
   async function loadLessons() {
     try {
@@ -1621,17 +1666,22 @@
   // else (default), and Done (collapsed). No per-track sub-grouping — the
   // flat sort wins. Pin state reads clhub.v1.saves under lesson:/academy:
   // keys; the write side ships in M9.6b.
+  function learnSavePrefix(type, id) {
+    if (type === "course") return `academy:${id}`;
+    if (type === "draft")  return `learndraft:${id}`;
+    return `lesson:${id}`;
+  }
   function isLearnItemPinned(type, id) {
     const saves = getSaves();
-    const prefix = type === "course" ? `academy:${id}` : `lesson:${id}`;
+    const prefix = learnSavePrefix(type, id);
     return Object.keys(saves).some((k) => k === prefix || k.startsWith(prefix + ":"));
   }
   function unpinLearnItem(type, id) {
-    // Removes any saves entry matching the lesson/academy prefix. Used by
-    // M9.4b swipe-left to drop a pin alongside the mastery write. Returns
-    // true if anything was removed (callers use this for undo-restore).
+    // Removes any saves entry matching the lesson/academy/draft prefix.
+    // Used by M9.4b swipe-left + M9.6a ⋯ menu + DnD-to-Everything-else.
+    // Returns true if anything was removed (for undo-restore).
     const saves = getSaves();
-    const prefix = type === "course" ? `academy:${id}` : `lesson:${id}`;
+    const prefix = learnSavePrefix(type, id);
     let changed = false;
     Object.keys(saves).forEach((k) => {
       if (k === prefix || k.startsWith(prefix + ":")) {
@@ -1643,12 +1693,15 @@
     return changed;
   }
   function pinLearnItem(type, id, meta) {
-    // Minimal pin writer for the Undo path in M9.4b. Full pin-to-learn UI
-    // lands in M9.6b; this is just enough to reverse a destructive swipe.
+    // Writer for the ⋯ menu "Move to Up Next" + drag-to-upnext + Undo
+    // restoration after swipe-left.
     const saves = getSaves();
-    const key = type === "course" ? `academy:${id}` : `lesson:${id}`;
+    const key = learnSavePrefix(type, id);
+    const kind = type === "course" ? "academy"
+               : type === "draft"  ? "learndraft"
+               : "lesson";
     saves[key] = {
-      kind: type === "course" ? "academy" : "lesson",
+      kind,
       targetId: id,
       title: (meta && meta.title) || "",
       addedAt: new Date().toISOString(),
@@ -1697,6 +1750,26 @@
         source: c,
       });
     });
+    // M9.6b — local learn drafts created via the tool-modal pin form.
+    // Rendered alongside authored lessons + academy courses; sort_date
+    // uses createdAt-negated-as-order so most-recent drafts bubble up.
+    getLearnDrafts().forEach((d) => {
+      items.push({
+        type: "draft",
+        id: d.id,
+        title: d.learnPrompt || "Untitled draft",
+        summary: d.notes || "",
+        trackLabel: "Draft",
+        minutes: 0,
+        order: -Date.parse(d.createdAt || 0),                    // newer first within the group
+        hasQuiz: false,
+        pinned: isLearnItemPinned("draft", d.id),
+        mastered: isMastered("draft", d.id),
+        state: "new",
+        kind: "Draft",
+        source: d,
+      });
+    });
     return items;
   }
   function applyLearnFilter(items, filter) {
@@ -1738,11 +1811,14 @@
     return copy;
   }
   function renderLearnItemRow(item) {
-    const tag = item.type === "course" ? "a" : "button";
-    const hrefAttr = item.type === "course"
-      ? ` href="${escapeHtml(item.source.url || "#")}" target="_blank" rel="noopener"`
-      : "";
-    const typeAttr = item.type === "course" ? "" : ` type="button"`;
+    const draftHasUrl = item.type === "draft" && !!item.source?.docsUrl;
+    const useAnchor   = item.type === "course" || draftHasUrl;
+    const tag         = useAnchor ? "a" : "button";
+    const hrefUrl     = item.type === "course" ? (item.source?.url     || "#")
+                      : draftHasUrl            ? (item.source.docsUrl || "#")
+                      : "";
+    const hrefAttr    = useAnchor ? ` href="${escapeHtml(hrefUrl)}" target="_blank" rel="noopener"` : "";
+    const typeAttr    = useAnchor ? "" : ` type="button"`;
     const stateLabel = item.state === "completed" ? "Done"
                     : item.state === "in_progress" ? "In progress"
                     : "";
@@ -1764,14 +1840,22 @@
     // a mastered item would leave it in Done but also "pinned," which
     // confuses the bucketing; un-master UI lives on M9.7's Your-stack
     // strip. Up Next + Everything else items get the menu as a fallback
-    // for mouse users who can't long-press.
+    // for mouse users who can't long-press. M9.6b — drafts additionally
+    // get a "Remove this draft" action (destructive — skips Done).
     const inDone = item.mastered || item.state === "completed";
-    const menuLabel = item.pinned ? "Remove from Up Next" : "Move to Up Next";
-    const menuMarkup = inDone ? "" : `
+    const menuItems = [];
+    if (!inDone) {
+      const pinLabel = item.pinned ? "Remove from Up Next" : "Move to Up Next";
+      menuItems.push(`<button type="button" data-learn-menu-action="toggle-pin" role="menuitem">${escapeHtml(pinLabel)}</button>`);
+      if (item.type === "draft") {
+        menuItems.push(`<button type="button" data-learn-menu-action="remove-draft" role="menuitem">Remove this draft</button>`);
+      }
+    }
+    const menuMarkup = menuItems.length === 0 ? "" : `
       <details class="learn-menu">
         <summary class="learn-menu-summary" aria-label="Actions" title="Actions">⋯</summary>
         <div class="learn-menu-body" role="menu">
-          <button type="button" data-learn-menu-action="toggle-pin" role="menuitem">${escapeHtml(menuLabel)}</button>
+          ${menuItems.join("\n")}
         </div>
       </details>
     `;
@@ -3282,6 +3366,22 @@
     snippetHost.dataset.empty = matching.length === 0 ? "1" : "";
     wireSnippetCopyButtons(modal);
 
+    // M9.6b — bind the current tool's id + docsUrl to the modal so the
+    // pin-to-learn submit handler (wired once below) can read them; reset
+    // form fields + close the details block so every modal open starts
+    // with a clean pin form.
+    modal.dataset.toolId      = tool.id || "";
+    modal.dataset.toolDocsUrl = tool.docsUrl || tool.officialUrl || "";
+    modal.dataset.toolName    = tool.name || tool.id || "";
+    const learnDetails = document.getElementById("tool-modal-learn");
+    if (learnDetails) learnDetails.removeAttribute("open");
+    const learnPromptInput = document.getElementById("tool-modal-learn-prompt");
+    const learnNotesInput  = document.getElementById("tool-modal-learn-notes");
+    const learnStatusEl    = document.getElementById("tool-modal-learn-status");
+    if (learnPromptInput) learnPromptInput.value = "";
+    if (learnNotesInput)  learnNotesInput.value  = "";
+    if (learnStatusEl)    { learnStatusEl.textContent = ""; learnStatusEl.dataset.kind = ""; }
+
     modal.hidden = false;
     document.body.classList.add("modal-open");
     const closeBtn = q(".tool-modal-close");
@@ -3640,6 +3740,62 @@
     renderContinueCard();
   }
   initFinder();
+
+  // M9.6b — pin-to-learn submit. Wired once; reads the current tool's
+  // context from data-* attrs set by openToolModal each time it opens.
+  // Submits create a draft stub in clhub.v1.learnDrafts and re-render
+  // the Learn surface; the tool modal stays open so the user can do
+  // multiple pins in one sitting or poke at snippets after pinning.
+  {
+    const submitBtn = document.getElementById("tool-modal-learn-submit");
+    const submitPinLearn = () => {
+      const modal  = document.getElementById("tool-modal");
+      const prompt = document.getElementById("tool-modal-learn-prompt");
+      const notes  = document.getElementById("tool-modal-learn-notes");
+      const status = document.getElementById("tool-modal-learn-status");
+      if (!modal || !prompt || !status) return;
+      const promptVal = (prompt.value || "").trim();
+      if (!promptVal) {
+        status.textContent = "Add a short question first.";
+        status.dataset.kind = "warn";
+        prompt.focus();
+        return;
+      }
+      createLearnDraft({
+        learnPrompt:  promptVal,
+        notes:        notes ? notes.value : "",
+        docsUrl:      modal.dataset.toolDocsUrl || "",
+        sourceToolId: modal.dataset.toolId || null,
+      });
+      status.textContent = "Pinned to Learn.";
+      status.dataset.kind = "ok";
+      prompt.value = "";
+      if (notes) notes.value = "";
+      const details = document.getElementById("tool-modal-learn");
+      if (details) details.removeAttribute("open");
+      setTimeout(() => {
+        if (status.textContent === "Pinned to Learn.") {
+          status.textContent = "";
+          status.dataset.kind = "";
+        }
+      }, 1800);
+      renderLearn();
+    };
+    if (submitBtn) submitBtn.addEventListener("click", submitPinLearn);
+    // Enter in the prompt input submits — iOS / mobile keyboards show
+    // a Go/Done key that expects this. Shift+Enter in the notes
+    // textarea still inserts a newline (only plain Enter submits from
+    // the single-line input).
+    const promptInput = document.getElementById("tool-modal-learn-prompt");
+    if (promptInput) {
+      promptInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          submitPinLearn();
+        }
+      });
+    }
+  }
 
   // ---------- Main feed load ----------
   let latestData = null;

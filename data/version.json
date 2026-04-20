@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.8",
-  "milestone": "M9.6a",
-  "milestoneTitle": "Phase M9.6a — Learn drag-and-drop between zones. Long-press 350ms on any Up Next / Everything else card lifts it (scale 1.02 + shadow), haptics fire via navigator.vibrate(10), and the two zones outline themselves as drop candidates. As the user drags, the zone under the pointer flips to an active highlight; release inside a zone commits — Up Next pins via pinLearnItem, Everything else unpins via unpinLearnItem. Done items opt out: no long-press arm, no ⋯ menu. Integrated into the existing swipe state machine (idle → pending → swiping|dragging) so one pointerdown handler dispatches both gestures — pending cancels on 8px movement and splits into swipe vs vertical-scroll. Fallback ⋯ menu renders as a native <details> sibling of each card; summary button toggles, one action inside (Move to Up Next / Remove from Up Next), document-level capture-phase delegate closes any open menu on outside click and dispatches action clicks through the same pin helpers.",
-  "deployedAt": "2026-04-20T01:19Z",
+  "version": "0.7.0-dev.9",
+  "milestone": "M9.6b",
+  "milestoneTitle": "Phase M9.6b — Pin-to-learn modal on Tools cards. Each tool's detail modal now carries a collapsed <details> \"Pin this tool to Learn →\" with two fields (What do you want to learn? — required, Notes — optional). Submit (or Enter on the prompt input) writes a draft stub to clhub.v1.learnDrafts — { id, learnPrompt, notes, docsUrl, sourceToolId, createdAt } — forward-compatible with Q13's future LLM hydrator. Drafts render in Learn's Everything else zone with a Draft pill, pickable by the same filter/sort/DnD machinery; click opens the tool's docs URL in a new tab. Draft-specific ⋯ menu adds \"Remove this draft\" alongside the pin toggle, which cascades through unpin + unset-mastery so stale state doesn't linger. Unified pin/mastery helpers gained a \"draft\" type (prefix learndraft: for saves, draft: for mastery). data/schema.md updated with the learnDrafts shape.",
+  "deployedAt": "2026-04-20T01:26Z",
   "commitSha": ""
 }
