@@ -2358,18 +2358,21 @@ body.modal-open { overflow: hidden; }
      full content width beneath the status quadrant so the description
      can breathe without competing with the trailing pills. Grab column
      (28px) stays leading on every row. */
-  grid-template-columns: 28px minmax(0, 1fr) auto;
-  /* M9.19a.10 — title now spans the full content width on its own
-     row. Summary retired from the condensed tile (the full summary
-     shows in the expanded view on tap). Status cluster lives on
-     row 1 beside the eyebrow; title breathes across the whole width
-     so long course titles stop getting cut off. */
+  grid-template-columns: 28px minmax(0, 1fr);
+  /* M9.19a.11 — Three stacked rows to the right of grab:
+     row 1: status cluster (duration + state), aligned right
+     row 2: eyebrow / category ("Course · Academy")
+     row 3: title (full width, most prominent — flexible room)
+     Rows 4+: optional flags / coverage / progress.
+     Removes the earlier "row 1 shared between eyebrow and status"
+     competition so the title lane never shrinks. */
   grid-template-areas:
-    "grab  eyebrow   trailing"
-    "grab  title     title"
-    "grab  flags     flags"
-    "grab  coverage  coverage"
-    "grab  progress  progress";
+    "grab  trailing"
+    "grab  eyebrow"
+    "grab  title"
+    "grab  flags"
+    "grab  coverage"
+    "grab  progress";
   column-gap: 12px;
   row-gap: 3px;
   align-items: start;
@@ -2457,10 +2460,13 @@ body.modal-open { overflow: hidden; }
    emitted collapse cleanly (grid auto). */
 .dash-tile-title {
   grid-area: title;
-  font-size: 14px;
+  /* M9.19a.11 — title bumped to 16px. It's now the prominent bottom
+     row of the stacked 3-row content column — the visual anchor
+     users scan to first. Still 1-line ellipsis. */
+  font-size: 16px;
   font-weight: 600;
   color: var(--text-1);
-  letter-spacing: -0.005em;
+  letter-spacing: -0.01em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2503,10 +2509,13 @@ body.modal-open { overflow: hidden; }
 .dash-tile-trailing {
   grid-area: trailing;
   align-self: center;
+  /* M9.19a.11 — status row sits alone at the top of the tile,
+     right-aligned within its own row. No longer shares a row with
+     eyebrow + title. */
+  justify-self: end;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  justify-self: end;
   white-space: nowrap;
 }
 .dash-tile-duration {
