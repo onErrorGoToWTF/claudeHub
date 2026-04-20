@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.3",
-  "milestone": "M9.3",
-  "milestoneTitle": "Phase M9.3 — Panel glass + tile idiom site-wide: lifted the Projects page (.projects-grid) and Finder wrappers (.finder-step, .finder-fork, .save-form) to the Dashboard's near-white glass tone. Hoisted the tile recipe out of .dash-panel-body scope into shared .panel-tile / .continue-row selectors so project cards and future item-rows adopt it with one class. Converted .project-card from .glass to .panel-tile — recessed tiles read as slots inside the new near-white projects panel instead of glass cards floating on the page. Added a canonical .label-debossed utility and migrated the YouTube wordmark to use it (inlined CSS rule deleted). Scope-limited per plan: tool cards stay on their current styling (M9.7 owns), lesson rows + academy course headers stay untouched (M9.4 rewrites the zones that contain them), and all modals remain on current glass (M9.9 parity pass). Dashboard's continue-row padding + inter-row hairline preserved at .dash-panel-body scope so the existing tiles render unchanged.",
-  "deployedAt": "2026-04-20T00:01Z",
+  "version": "0.7.0-dev.4",
+  "milestone": "M9.4a",
+  "milestoneTitle": "Phase M9.4a — Learn flatten: ripped Courses|Quizzes + Academy|Tutorials toggles, replaced with a single filter-chip row (All·Lessons·Courses·Pinned·Has quiz) + sort select (Recent·A–Z·Progress) stacked above three .learn-zone glass panels: Up Next (pinned + in-progress, max 3 with overflow hint), Everything else (unified lessons + Academy + future quiz-only stubs), and Done (collapsed <details>). Added buildLearnItems / applyLearnFilter / sortLearnItems / renderLearn pure functions; retired loadAcademyHub (expand-to-snippets dropped per user confirmation — snippets still live on Tools / Claude hub), renderLessonsInto, renderTutorialsList, renderQuizzesList. Single item row idiom: .learn-item.panel-tile with kind pill + title + state badge + meta + summary. Pin state reads clhub.v1.saves under lesson:/academy: keys; write side ships in M9.6b. Legacy .lesson-row / .academy-* / .lessons-track CSS preserved (dead but kept; cleanup after v0.7.0 stabilizes). Academy courses pill reads Course; lessons pill reads Lesson; Quiz pill reserved for future body-less draft stubs.",
+  "deployedAt": "2026-04-20T00:17Z",
   "commitSha": ""
 }

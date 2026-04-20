@@ -119,37 +119,40 @@
   <section class="section section-learn" data-section="learn" id="section-learn" data-hidden="true">
     <div class="section-head">
       <h2>Learn</h2>
-      <div class="section-head-actions">
-        <div class="subpills" role="tablist" aria-label="Learn content">
-          <button class="subpill is-active" data-learn="courses"   type="button" role="tab" aria-selected="true">Courses</button>
-          <button class="subpill"           data-learn="tutorials" type="button" role="tab" aria-selected="false">Quizzes</button>
-        </div>
-      </div>
     </div>
 
-    <div class="pane" data-pane="learn-courses">
-      <div class="subpills subpills-nested" role="tablist" aria-label="Course source">
-        <button class="subpill is-active" data-courses="academy"   type="button" role="tab" aria-selected="true">Anthropic Academy</button>
-        <button class="subpill"           data-courses="originals" type="button" role="tab" aria-selected="false">Tutorials</button>
+    <div class="learn-controls">
+      <div class="learn-filters" role="tablist" aria-label="Filter Learn items">
+        <button class="learn-filter-chip is-active" data-learn-filter="all"     role="tab" aria-selected="true"  type="button">All</button>
+        <button class="learn-filter-chip"           data-learn-filter="lessons" role="tab" aria-selected="false" type="button">Lessons</button>
+        <button class="learn-filter-chip"           data-learn-filter="courses" role="tab" aria-selected="false" type="button">Courses</button>
+        <button class="learn-filter-chip"           data-learn-filter="pinned"  role="tab" aria-selected="false" type="button">Pinned</button>
+        <button class="learn-filter-chip"           data-learn-filter="quiz"    role="tab" aria-selected="false" type="button">Has quiz</button>
       </div>
-
-      <div class="pane" data-pane="courses-academy">
-        <div class="hub-intro">
-          <div class="hub-eyebrow">Anthropic Academy</div>
-          <h3 class="hub-title">Official courses, snippets inline.</h3>
-          <p class="hub-lede">The full Academy catalog. Open any course card to reveal the snippets that belong to its topic — CLAUDE.md patterns under Claude Code, YAML frontmatter under Skills, and so on.</p>
-        </div>
-        <div class="academy-flat" id="academy-flat-host"></div>
-      </div>
-
-      <div class="pane" data-pane="courses-originals" hidden>
-        <div class="lessons-list" id="tutorials-list"></div>
-      </div>
+      <select class="learn-sort subpill-select" id="learn-sort" aria-label="Sort Learn items">
+        <option value="recent">Recent</option>
+        <option value="az">A–Z</option>
+        <option value="progress">Progress</option>
+      </select>
     </div>
 
-    <div class="pane" data-pane="learn-tutorials" hidden>
-      <div class="lessons-list" id="quizzes-list"></div>
+    <div class="learn-zone learn-zone-upnext glass">
+      <h3 class="learn-zone-title"><span class="label-debossed">Up Next</span></h3>
+      <div class="learn-zone-body" id="learn-upnext"></div>
     </div>
+
+    <div class="learn-zone learn-zone-all glass">
+      <h3 class="learn-zone-title"><span class="label-debossed">Everything else</span></h3>
+      <div class="learn-zone-body" id="learn-all"></div>
+    </div>
+
+    <details class="learn-zone learn-zone-done glass">
+      <summary class="learn-zone-done-summary">
+        <span class="learn-zone-title"><span class="label-debossed">Done</span></span>
+        <span class="learn-zone-count" id="learn-done-count"></span>
+      </summary>
+      <div class="learn-zone-body" id="learn-done"></div>
+    </details>
   </section>
 
   <section class="section section-tools" data-section="tools" id="section-tools" data-hidden="true">

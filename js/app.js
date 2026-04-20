@@ -250,6 +250,13 @@
 
   // Hoisted module state read by render fns during initial applyFilter.
   let lessonsData = [];
+  // Learn tab unified-list state (M9.4a). academyCourses is populated by
+  // loadAcademy(); filter/sort own the Learn section UI state. All three
+  // MUST stay hoisted — renderLearn() is called from loadLessons() /
+  // loadAcademy() and could fire before their declarations otherwise.
+  let academyCourses = [];
+  let currentLearnFilter = "all";
+  let currentLearnSort = "recent";
 
   // LLM face-off flip-card state (M8.4). Hoisted so renderLlmFaceoff —
   // which fires from replayHomeAnimations during the initial applyFilter —
@@ -380,23 +387,26 @@
     });
   });
 
-  // Learn sub-pills (M3.7: only [data-learn="claude"] remains inside Learn;
-  // Finder / Tools / My Projects promoted to top-level sections. M3.8 will
-  // rebuild this with What's new / Courses / Tutorials). Guard for legacy
-  // markup; if no pills present this is a no-op.
-  document.querySelectorAll(".subpill[data-learn]").forEach((pill) => {
-    pill.addEventListener("click", () => {
-      const kind = pill.dataset.learn;
-      document.querySelectorAll(".subpill[data-learn]").forEach((p) => {
-        const on = p === pill;
-        p.classList.toggle("is-active", on);
-        p.setAttribute("aria-selected", on ? "true" : "false");
+  // M9.4a — Learn filter chips (All · Lessons · Courses · Pinned · Has quiz).
+  document.querySelectorAll(".learn-filter-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      currentLearnFilter = chip.dataset.learnFilter || "all";
+      document.querySelectorAll(".learn-filter-chip").forEach((c) => {
+        const on = c === chip;
+        c.classList.toggle("is-active", on);
+        c.setAttribute("aria-selected", on ? "true" : "false");
       });
-      document.querySelectorAll('.pane[data-pane^="learn-"]').forEach((pane) => {
-        pane.hidden = pane.dataset.pane !== `learn-${kind}`;
-      });
+      renderLearn();
     });
   });
+  // M9.4a — Learn sort select (Recent · A–Z · Progress).
+  const learnSortEl = document.getElementById("learn-sort");
+  if (learnSortEl) {
+    learnSortEl.addEventListener("change", () => {
+      currentLearnSort = learnSortEl.value || "recent";
+      renderLearn();
+    });
+  }
 
   // Projects sub-pills (M3.7): Saved list vs. + New project (Finder).
   document.querySelectorAll(".subpill[data-projects-view]").forEach((pill) => {
@@ -413,20 +423,8 @@
     });
   });
 
-  // Courses tab: Anthropic Academy / aiStacked Originals (M3.8).
-  document.querySelectorAll(".subpill[data-courses]").forEach((pill) => {
-    pill.addEventListener("click", () => {
-      const kind = pill.dataset.courses;
-      document.querySelectorAll(".subpill[data-courses]").forEach((p) => {
-        const on = p === pill;
-        p.classList.toggle("is-active", on);
-        p.setAttribute("aria-selected", on ? "true" : "false");
-      });
-      document.querySelectorAll('.pane[data-pane^="courses-"]').forEach((pane) => {
-        pane.hidden = pane.dataset.pane !== `courses-${kind}`;
-      });
-    });
-  });
+  // (M9.4a retired the Courses | Tutorials nested toggle; Learn is now a
+  // single flat list with filter chips + sort select. See above.)
 
   // News & Media sub-pills: State of AI / News
   document.querySelectorAll(".subpill[data-newsmedia]").forEach((pill) => {
@@ -951,68 +949,17 @@
     "mcp":       "MCP",
     "agent-sdk": "Agent SDK",
   };
-  async function loadAcademyHub() {
-    const host = document.getElementById("academy-flat-host");
-    if (!host) return;
+  // M9.4a — populates academyCourses[] and re-renders the flat Learn
+  // surface. Expand-to-snippets dropped; snippets live on Tools / the
+  // Claude hub. Fetches courses only (hub-map no longer consumed here).
+  async function loadAcademy() {
     try {
-      const [coursesRes, mapRes] = await Promise.all([
-        fetch(ACADEMY_URL, { cache: "no-cache" }),
-        fetch(HUB_MAP_URL, { cache: "no-cache" }),
-      ]);
-      if (!coursesRes.ok || !mapRes.ok) return;
-      const coursesPayload = await coursesRes.json();
-      const mapPayload = await mapRes.json();
-      const bySlug = Object.fromEntries(
-        (coursesPayload.courses || []).map((c) => [c.slug, c])
-      );
-      const buckets = mapPayload.buckets || {};
-      const snippetTagsByBucket = mapPayload.snippetTagsByBucket || {};
-      const parts = [];
-      for (const [bucket, slugs] of Object.entries(buckets)) {
-        const courses = (slugs || []).map((s) => bySlug[s]).filter(Boolean);
-        if (courses.length === 0) continue;
-        const tagSet = new Set(snippetTagsByBucket[bucket] || []);
-        const bucketSnippets = tagSet.size
-          ? snippetsData.filter((s) => (s.snippetTags || []).some((t) => tagSet.has(t)))
-          : [];
-        const label = BUCKET_LABEL[bucket] || bucket;
-        const courseRows = courses.map((c) => {
-          const snipCount = bucketSnippets.length;
-          const snipRows = bucketSnippets.map((s) => renderSnippetRow(s)).join("");
-          const snipBlock = snipCount > 0
-            ? `<div class="academy-course-snippets">
-                 <div class="academy-course-snippets-head">Snippets · ${snipCount}</div>
-                 <div class="snippet-list">${snipRows}</div>
-               </div>`
-            : "";
-          return `
-            <details class="academy-course glass">
-              <summary class="academy-course-summary">
-                <span class="academy-course-bucket" data-bucket="${escapeHtml(bucket)}">${escapeHtml(label)}</span>
-                <span class="academy-course-title">${escapeHtml(c.title)}</span>
-                ${snipCount > 0 ? `<span class="academy-course-badge">${snipCount} snippet${snipCount === 1 ? "" : "s"}</span>` : ""}
-              </summary>
-              <div class="academy-course-body">
-                ${c.summary ? `<p class="academy-course-body-lede">${escapeHtml(c.summary)}</p>` : ""}
-                <a class="academy-course-cta" href="${escapeHtml(c.url)}" target="_blank" rel="noopener">Start course on Anthropic Academy ↗</a>
-                ${snipBlock}
-              </div>
-            </details>
-          `;
-        }).join("");
-        parts.push(`
-          <div class="academy-bucket" data-bucket="${escapeHtml(bucket)}">
-            <div class="academy-bucket-head">
-              <span class="academy-bucket-label">${escapeHtml(label)}</span>
-              <span class="academy-bucket-count">${courses.length} course${courses.length === 1 ? "" : "s"}</span>
-            </div>
-            <div class="academy-bucket-list">${courseRows}</div>
-          </div>
-        `);
-      }
-      host.innerHTML = parts.join("");
-      wireSnippetCopyButtons(host);
-    } catch {}
+      const res = await fetch(ACADEMY_URL, { cache: "no-cache" });
+      if (!res.ok) return;
+      const payload = await res.json();
+      academyCourses = Array.isArray(payload.courses) ? payload.courses : [];
+    } catch { academyCourses = []; }
+    renderLearn();
   }
 
   function renderNews(items) {
@@ -1556,79 +1503,196 @@
     renderLessonsList();
     if (typeof renderDashLearn === "function") renderDashLearn();
   }
-  function renderLessonsInto(hostId, mode, lessonsFilter) {
+  // ===== M9.4a — Unified Learn surface (flat 3-zone layout) =====
+  // Lessons + Academy courses + (future) quiz-only draft stubs all live in
+  // one list. Filter chips narrow by type/attribute. Sort select reorders.
+  // Items bucket into Up Next (pinned or in-progress, max 3), Everything
+  // else (default), and Done (collapsed). No per-track sub-grouping — the
+  // flat sort wins. Pin state reads clhub.v1.saves under lesson:/academy:
+  // keys; the write side ships in M9.6b.
+  function isLearnItemPinned(type, id) {
+    const saves = getSaves();
+    const prefix = type === "course" ? `academy:${id}` : `lesson:${id}`;
+    return Object.keys(saves).some((k) => k === prefix || k.startsWith(prefix + ":"));
+  }
+  function buildLearnItems() {
+    const items = [];
+    const progress = getLessonProgress();
+    (lessonsData || [])
+      .filter((l) => l.status !== "draft")                     // authored + legacy (no status) render; drafts land in M9.6b
+      .forEach((l) => {
+        const state = progress[l.slug]?.state || "new";
+        items.push({
+          type: "lesson",
+          id: l.slug,
+          title: l.title || "",
+          summary: l.summary || "",
+          trackLabel: l.track ? (TRACK_LABEL[l.track] || l.track) : "",
+          minutes: l.minutes || 0,
+          order: l.order || 0,
+          hasQuiz: Array.isArray(l.quiz) && l.quiz.length > 0,
+          pinned: isLearnItemPinned("lesson", l.slug),
+          state,
+          kind: (l.status === "draft" || !l.body) && Array.isArray(l.quiz) && l.quiz.length > 0
+                  ? "Quiz"
+                  : "Lesson",
+          source: l,
+        });
+      });
+    (academyCourses || []).forEach((c) => {
+      items.push({
+        type: "course",
+        id: c.slug,
+        title: c.title || "",
+        summary: c.summary || "",
+        trackLabel: "Academy",
+        minutes: 0,
+        order: c.order || 0,
+        hasQuiz: false,
+        pinned: isLearnItemPinned("course", c.slug),
+        state: "new",
+        kind: "Course",
+        source: c,
+      });
+    });
+    return items;
+  }
+  function applyLearnFilter(items, filter) {
+    switch (filter) {
+      case "lessons": return items.filter((i) => i.type === "lesson");
+      case "courses": return items.filter((i) => i.type === "course");
+      case "pinned":  return items.filter((i) => i.pinned);
+      case "quiz":    return items.filter((i) => i.hasQuiz);
+      case "all":
+      default:        return items;
+    }
+  }
+  function sortLearnItems(items, sort) {
+    const copy = items.slice();
+    const stateOrder = { in_progress: 0, new: 1, completed: 2 };
+    switch (sort) {
+      case "az":
+        copy.sort((a, b) => a.title.localeCompare(b.title));
+        break;
+      case "progress":
+        copy.sort((a, b) =>
+          (stateOrder[a.state] ?? 9) - (stateOrder[b.state] ?? 9) ||
+          a.title.localeCompare(b.title));
+        break;
+      case "recent":
+      default:
+        // Recent-ish: pinned first, then by track, then by authoring order.
+        // Honest label given no per-item lastTouched tracking yet; A–Z is
+        // one tap away if that matters more.
+        copy.sort((a, b) => {
+          if (a.pinned !== b.pinned) return a.pinned ? -1 : 1;
+          const tl = (a.trackLabel || "").localeCompare(b.trackLabel || "");
+          if (tl) return tl;
+          if (a.order !== b.order) return a.order - b.order;
+          return a.title.localeCompare(b.title);
+        });
+        break;
+    }
+    return copy;
+  }
+  function renderLearnItemRow(item) {
+    const tag = item.type === "course" ? "a" : "button";
+    const hrefAttr = item.type === "course"
+      ? ` href="${escapeHtml(item.source.url || "#")}" target="_blank" rel="noopener"`
+      : "";
+    const typeAttr = item.type === "course" ? "" : ` type="button"`;
+    const stateLabel = item.state === "completed" ? "Done"
+                    : item.state === "in_progress" ? "In progress"
+                    : "";
+    const metaParts = [];
+    if (item.trackLabel) metaParts.push(item.trackLabel);
+    if (item.minutes)    metaParts.push(item.minutes + " min");
+    if (item.hasQuiz)    metaParts.push("quiz");
+    const meta = metaParts.join(" · ");
+    const pinMark = item.pinned
+      ? `<span class="learn-item-pin" aria-label="Pinned" title="Pinned">●</span>`
+      : "";
+    const stateMarkup = stateLabel
+      ? `<span class="learn-item-state" data-state="${escapeHtml(item.state)}">${escapeHtml(stateLabel)}</span>`
+      : "";
+    return `
+      <${tag} class="learn-item panel-tile"${typeAttr}${hrefAttr} data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}">
+        <div class="learn-item-head">
+          <span class="learn-item-kind">${escapeHtml(item.kind)}</span>
+          ${pinMark}
+          <span class="learn-item-title">${escapeHtml(item.title)}</span>
+          ${stateMarkup}
+        </div>
+        ${meta ? `<div class="learn-item-meta">${escapeHtml(meta)}</div>` : ""}
+        ${item.summary ? `<div class="learn-item-summary">${escapeHtml(item.summary)}</div>` : ""}
+      </${tag}>
+    `;
+  }
+  function renderLearnZone(hostId, items, opts) {
     const host = document.getElementById(hostId);
     if (!host) return;
-    const items = (lessonsFilter ? lessonsData.filter(lessonsFilter) : lessonsData);
+    const { emptyMessage, overflowHint } = opts || {};
     if (items.length === 0) {
-      host.innerHTML = mode === "quiz"
-        ? `<div class="empty glass academy-empty">No quizzes yet.</div>`
-        : `<div class="empty glass academy-empty">No tutorials yet. First one lands soon — check back.</div>`;
+      host.innerHTML = `<div class="learn-zone-empty">${escapeHtml(emptyMessage || "")}</div>`;
       return;
     }
-    const byTrack = new Map();
-    items
-      .slice()
-      .sort((a, b) => (a.track || "").localeCompare(b.track || "") || (a.order || 0) - (b.order || 0))
-      .forEach((l) => {
-        const k = l.track || "misc";
-        if (!byTrack.has(k)) byTrack.set(k, []);
-        byTrack.get(k).push(l);
-      });
-    const progress = getLessonProgress();
-    const sections = [];
-    for (const [track, list] of byTrack) {
-      const label = TRACK_LABEL[track] || track;
-      const completed = list.filter((l) => progress[l.slug]?.state === "completed").length;
-      const rows = list.map((l) => {
-        const state = progress[l.slug]?.state || "new";
-        const stateLabel = state === "completed" ? "Completed"
-                        : state === "in_progress" ? "In progress"
-                        : "Not started";
-        const meta = mode === "quiz"
-          ? (Array.isArray(l.quiz) ? l.quiz.length + " q" : "")
-          : (l.minutes ? l.minutes + " min" : "");
-        return `
-          <button type="button" class="lesson-row" data-lesson-slug="${escapeHtml(l.slug)}" data-mode="${mode}">
-            <div class="lesson-row-head">
-              <span class="lesson-row-min">${escapeHtml(meta)}</span>
-              <span class="lesson-row-title">${escapeHtml(l.title)}</span>
-              <span class="lesson-row-state" data-state="${escapeHtml(state)}">${stateLabel}</span>
-            </div>
-            <div class="lesson-row-summary">${escapeHtml(l.summary || "")}</div>
-          </button>
-        `;
-      }).join("");
-      sections.push(`
-        <div class="lessons-track">
-          <div class="lessons-track-head">
-            <span class="lessons-track-label">${escapeHtml(label)}</span>
-            <span class="lessons-track-count">${completed}/${list.length}</span>
-          </div>
-          <div class="lessons-track-rows">${rows}</div>
-        </div>
-      `);
-    }
-    host.innerHTML = sections.join("");
-    host.querySelectorAll(".lesson-row").forEach((row) => {
+    const rows = items.map(renderLearnItemRow).join("");
+    const hint = overflowHint
+      ? `<div class="learn-zone-overflow">${escapeHtml(overflowHint)}</div>`
+      : "";
+    host.innerHTML = rows + hint;
+  }
+  function renderLearn() {
+    const upNextHost = document.getElementById("learn-upnext");
+    const allHost    = document.getElementById("learn-all");
+    const doneHost   = document.getElementById("learn-done");
+    if (!upNextHost || !allHost || !doneHost) return;
+    const all      = buildLearnItems();
+    const filtered = applyLearnFilter(all, currentLearnFilter);
+    const sorted   = sortLearnItems(filtered, currentLearnSort);
+    const upNext = [];
+    const everythingElse = [];
+    const done = [];
+    sorted.forEach((item) => {
+      if (item.state === "completed") done.push(item);
+      else if (item.pinned || item.state === "in_progress") upNext.push(item);
+      else everythingElse.push(item);
+    });
+    // Cap Up Next at 3; overflow pinned/in-progress rides at the top of
+    // Everything else so the user still sees them without fragmentation.
+    const upNextCapped = upNext.slice(0, 3);
+    const upNextOverflow = upNext.slice(3);
+    if (upNextOverflow.length > 0) everythingElse.unshift(...upNextOverflow);
+    renderLearnZone("learn-upnext", upNextCapped, {
+      emptyMessage: currentLearnFilter === "pinned"
+        ? "Nothing pinned yet."
+        : "Pin a lesson or start one to see it here.",
+      overflowHint: upNextOverflow.length > 0
+        ? `+${upNextOverflow.length} more pinned in Everything else`
+        : null,
+    });
+    renderLearnZone("learn-all", everythingElse, {
+      emptyMessage: currentLearnFilter === "all"
+        ? "Nothing to show yet."
+        : "Nothing matches this filter.",
+    });
+    renderLearnZone("learn-done", done, {
+      emptyMessage: "Nothing completed yet.",
+    });
+    const doneCount = document.getElementById("learn-done-count");
+    if (doneCount) doneCount.textContent = done.length ? `(${done.length})` : "";
+    // Wire lesson row clicks (buttons only; academy rows are <a target=_blank>).
+    document.querySelectorAll(".learn-item[data-learn-type='lesson']").forEach((row) => {
       row.addEventListener("click", (e) => {
         e.preventDefault();
-        openLesson(row.dataset.lessonSlug, row.dataset.mode || "tutorial");
+        openLesson(row.dataset.learnId, "tutorial");
       });
     });
   }
-  function renderTutorialsList() {
-    renderLessonsInto("tutorials-list", "tutorial", null);
-  }
-  function renderQuizzesList() {
-    renderLessonsInto("quizzes-list", "quiz",
-      (l) => Array.isArray(l.quiz) && l.quiz.length > 0);
-  }
   function renderLessonsList() {
-    // Kept as a single entry point that refreshes both surfaces — modal
-    // close / progress updates call this.
-    renderTutorialsList();
-    renderQuizzesList();
+    // Single entry point retained for callers that refresh after a modal
+    // close or progress update. Re-renders the whole Learn surface.
+    renderLearn();
   }
   async function openLesson(slug, mode) {
     mode = mode === "quiz" ? "quiz" : "tutorial";
@@ -3093,10 +3157,11 @@
 
   load();
   loadTools();
-  // M3.8: loadSnippets populates snippetsData which loadAcademyHub reads
-  // when attaching snippets under each course. Chain them.
-  loadSnippets().then(() => loadAcademyHub());
-  // M4.1: authored lessons for Learn → Tutorials & quizzes.
+  loadSnippets();
+  // M9.4a: Learn became a unified flat list. loadAcademy + loadLessons run
+  // independently; each calls renderLearn() which reads whichever data is
+  // available and paints. No more snippets-under-course coupling.
+  loadAcademy();
   loadLessons();
   renderTimeline();
   renderCompare();
