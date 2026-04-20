@@ -201,6 +201,7 @@ Split procedure:
 
 - `.claude/skills/_resources/liquid-glass/` — Apple Liquid Glass (2025 material language). 8 files. Primary external reference: conorluddy/LiquidGlassReference.
 - `.claude/skills/_resources/hig/` — older HIG foundations. 11 files. Primary external references: ehmo/platform-design-skills, sindresorhus/human-interface-guidelines-extras.
+- `.claude/skills/_resources/learning-ux/` — progress tracking + dashboard UX from Linear / Khan / Duolingo / Quizlet. 8 files. Primary: Linear docs `[verbatim]`; Khan blog `[verbatim]`; Duolingo + Quizlet mostly `[secondary]`.
 
 Future candidate topics (if the user invokes):
 - `claude-api/` — Anthropic SDK + API reference (already have a `claude-api` built-in skill from plugins, but a topic cache could complement it).
