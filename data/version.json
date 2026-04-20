@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.59",
-  "milestone": "M9.19a.11",
-  "milestoneTitle": "Phase M9.19a.11 — 3-row stacked content column. Layout flips to the user's preferred vertical order: row 1 holds the status cluster (duration + state) right-aligned, row 2 holds the eyebrow/category ('Course · Academy'), row 3 holds the title (bumped to 16px / 600 weight — the prominent bottom-row visual anchor). Subsequent optional rows (flags / coverage / progress) stack below as before. Grid simplifies from 3 columns to 2 (grab + content); trailing cluster is now inside the content column rather than its own rightmost track, so it justify-self: end within its row. No more title-vs-status horizontal competition — title always has the full content width. Drag-to-reorder within the Learn list ships next in M9.19a.12 (per user directive 'allow the ability to sort these items in the list by drag and drop if possible').",
-  "deployedAt": "2026-04-20T21:15Z",
+  "version": "0.7.1-dev.60",
+  "milestone": "M9.19a.11b",
+  "milestoneTitle": "Phase M9.19a.11b — Unknown duration shows '? m' instead of '10m'. User flagged that the 10m fallback looked like a real estimate; '? m' is an honest placeholder that signals 'duration not yet authored / unknown.' Applied across renderLearnItemRow (Learn list tiles), renderDashLearn (dashboard Learn panel), and buildLearnTileExpand (expanded card duration chip). Items with authored minutes still show the real value ('7m', '12m', etc.). Future authored content will require minutes at authoring time; the '? m' fallback just keeps the chip populated + honest until then.",
+  "deployedAt": "2026-04-20T21:25Z",
   "commitSha": ""
 }

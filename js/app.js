@@ -2025,13 +2025,13 @@
     if (item.kind) eyebrowParts.push(item.kind);
     if (item.trackLabel) eyebrowParts.push(item.trackLabel);
     const eyebrow = eyebrowParts.join(" · ");
-    // M9.19a.5 — Duration chip always has a value for Learn items.
-    // When lessons.json / drafts don't carry a minutes field yet, fall
-    // back to 10m as a "roughly a short tutorial" placeholder. Future
-    // authored content will require minutes at authoring time; defaulting
-    // here just keeps the chip from looking empty until then.
-    const minutes = item.minutes || 10;
-    const minutesLabel = `${minutes}m`;
+    // M9.19a.5 / .11b — Duration chip always has a value for Learn
+    // items. When lessons.json / drafts don't carry a minutes field
+    // yet, show "? m" so it's obvious this is an unknown placeholder,
+    // not an estimate. Future authored content will require minutes at
+    // authoring time; the "? m" fallback just keeps the chip populated
+    // and honest until then.
+    const minutesLabel = item.minutes ? `${item.minutes}m` : "? m";
     const durationEmpty = "";
     // State pill vocab: Start / Continue / Done (extensible to Retake /
     // Review / Locked / New — styling keyed off data-state).
@@ -2561,13 +2561,13 @@
     return null;
   }
   function buildLearnTileExpand(type, id, tile) {
-    let title = "", summary = "", link = "", minutes = 10, state = "new", eyebrow = "";
+    let title = "", summary = "", link = "", minutes = 0, state = "new", eyebrow = "";
     if (type === "lesson") {
       const l = (lessonsData || []).find((x) => x.slug === id);
       if (!l) return null;
       title = l.title || "";
       summary = l.summary || "";
-      minutes = l.minutes || 10;
+      minutes = l.minutes || 0;
       const trackLabel = l.track ? (TRACK_LABEL[l.track] || l.track) : "";
       eyebrow = trackLabel ? `${trackLabel} · Lesson` : "Lesson";
       state = (getLessonProgress()[id]?.state) || "new";
@@ -2577,7 +2577,7 @@
       title = c.title || "";
       summary = c.summary || "";
       link = c.url || "";
-      minutes = c.minutes || 10;
+      minutes = c.minutes || 0;
       eyebrow = "Course · Academy";
       state = "new";
     } else if (type === "draft") {
@@ -2590,6 +2590,9 @@
       eyebrow = `Draft · ${tool?.name || "—"}`;
       state = "new";
     }
+    // M9.19a.11b — "? m" when duration is unknown, same placeholder
+    // shown on the condensed tile.
+    const minutesLabel = minutes ? `${minutes}m` : "? m";
     const stateLabel = state === "completed" ? "Done"
                     : state === "in_progress" ? "Continue"
                     : "Start";
@@ -2619,7 +2622,7 @@
           <div class="dash-tile-expanded-eyebrow">${escapeHtml(eyebrow)}</div>
           <h3 class="dash-tile-expanded-title">${escapeHtml(title)}</h3>
           <div class="dash-tile-expanded-status">
-            <span class="dash-tile-duration">${minutes}m</span>
+            <span class="dash-tile-duration">${escapeHtml(minutesLabel)}</span>
             <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
           </div>
           ${summary ? `<div class="dash-tile-expanded-summary">${escapeHtml(summary)}</div>` : ""}
@@ -3585,8 +3588,10 @@
       if (trackLabel) eyebrowParts.push(trackLabel);
       eyebrowParts.push("Lesson");
       const eyebrow = eyebrowParts.join(" · ");
-      // M9.19a.5 — default 10m when lessons.json doesn't carry minutes.
-      const minutesLabel = `${l.minutes || 10}m`;
+      // M9.19a.11b — "? m" placeholder when lessons.json doesn't carry
+      // minutes (was "10m" default). Clearer signal that the number
+      // is unknown, not an estimate.
+      const minutesLabel = l.minutes ? `${l.minutes}m` : "? m";
       const durationEmpty = "";
       const pinned   = l.__placeholder ? false : isLearnItemPinned("lesson", l.slug);
       const mastered = l.__placeholder ? false : isMastered("lesson", l.slug);
