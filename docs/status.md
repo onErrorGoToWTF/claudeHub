@@ -1,10 +1,10 @@
 # aiUniversity — status + structure
 
-Current release: **v0.7.1-dev.25** on `main`. Live at https://onerrorgotowtf.github.io/claudeHub/. Phases 1, 1.5, 2, 3, 4, 5, 6, 7, 8 shipped plus v0.7 design-system refactor M9.1–M9.16q. (Formerly "aiStacked" — visible brand flipped to **aiUniversity** in M8.12.5.)
+Current release: **v0.7.1-dev.38** on `main`. Live at https://onerrorgotowtf.github.io/claudeHub/. Phases 1, 1.5, 2, 3, 4, 5, 6, 7, 8 shipped plus v0.7 design-system refactor M9.1–M9.17b.d. (Formerly "aiStacked" — visible brand flipped to **aiUniversity** in M8.12.5.)
 
 ## Current state — 2026-04-20
 
-**v0.7 design-system refactor: complete.** M9.1–M9.11 stamped the new token system + layouts; M9.12–M9.15a added scroll-center activation + vignette; M9.16a–q layered on a polish suite (see v0.7 plan doc for the full milestone ledger).
+**v0.7 design-system refactor: complete.** M9.1–M9.11 stamped the new token system + layouts; M9.12–M9.15a added scroll-center activation + vignette; M9.16a–q layered a polish suite; M9.17 suite added the `design-amend` skill + Learn-items overhaul (overflow fix → simplified wrap layout → inline action buttons → visible grab handle → shrunk tap target → unified danger color → no-select on tappables → swipe-mastery retired). See v0.7 plan doc for the full milestone ledger.
 
 **What shipped in M9.16 (newest work):**
 
@@ -19,6 +19,21 @@ Current release: **v0.7.1-dev.25** on `main`. Live at https://onerrorgotowtf.git
 - **M9.16o** — session wrap hygiene: status.md + plan doc + CLAUDE.md tree comment + per-session memory files refreshed.
 - **M9.16p** — drop link-in-modal. Header probe of the top 8 feed hosts showed ~95% forbid iframe embedding via X-Frame-Options or CSP frame-ancestors, so the preview premise wasn't viable. Removed the #doc-modal template, the .doc-modal* CSS block, and the global `<a[href]>` click interceptor + openDocModal/detectDocBlocked/focus-trap/popstate wiring. Kept shared refreshModalOpenBodyClass helper. YouTube in-app modal still works via its per-card handler. External anchors now open natively via target="_blank".
 - **M9.16q** — docs hygiene: plan + status + memory catch up with M9.16o / M9.16p.
+
+**What shipped in M9.17 (newest work):**
+
+- **M9.17.0** — scaffolded the `design-amend` project skill (systemic rule changes via impact-list → docs-first → chunked cascade).
+- **M9.17a / a.1 / a.2** — overflow fix on Up Next item titles. First pass was `min-width: 0` on the flex chain, then `:has(+ .learn-menu)` right gutter, then unconditional gutter + `overflow: hidden` on card body. All superseded by a.4.
+- **M9.17a.3** — cache-buster `?v=<version>` query on css/style.css, overrides.css, js/app.js in index.html. Bump alongside data/version.json every deploy.
+- **M9.17a.4** — simplified constraint recipe: .learn-item-wrap became a flex row; card is flex:1; ⋯ menu was a natural flex sibling (retired in b.a). Dropped all padding/overflow hacks.
+- **M9.17b.a** — inline pin + mastery + draft-delete buttons replacing the ⋯ collapsed menu. Draft delete uses red destructive button with two-tap confirm.
+- **M9.17b.b** — grab handle (⋮⋮ glyph) on the left of non-Done learn-items; replaces the retired long-press-to-drag.
+- **M9.17b.c** — shrunk the tap target: only `.learn-item-head` (kind + title + state pills) is the link. Meta / summary / coverage are passive. Fixes accidental opens.
+- **M9.17c** — `--danger` token family (solid, border, glow, surface, ink, hover) in :root. CLAUDE.md + design-review skill amended with the "one --danger for every destructive action" rule.
+- **M9.17c.a** — migrated all four destructive buttons (.learn-action-btn-danger, .project-delete, .storage-key-delete, .pin-picker-remove) to the shared token.
+- **M9.17d** — no text-selection on tappable/draggable surfaces (`user-select: none` + `-webkit-touch-callout: none` on card rows, action buttons, grab handles, filter chips, nav chrome, CTAs). Informational text (summary, meta, coverage, body copy) stays copyable.
+- **M9.17b.d** — retired swipe-left-mastery. Inline ✓ button is now the discoverable mastery path; ~120 lines of swipe state machine removed from wireLearnRowGestures.
+- **M9.17e** — TOC regenerated in js/app.js after the M9.17 wave drifted anchors ~100 lines.
 
 ## Sources of truth
 

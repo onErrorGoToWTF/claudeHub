@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.38",
-  "milestone": "M9.17b.d",
-  "milestoneTitle": "Phase M9.17b.d — Retired swipe-left-mastery. The inline ✓ button from M9.17b.a is now the discoverable mastery path, so the whole swipe state machine (pending/swiping, touch + pointer event listeners, direction-commit logic, LEARN_SWIPE_THRESHOLD / LEARN_SWIPE_VERTICAL_SLOP / LEARN_GESTURE_SLOP constants, handleLearnSwipeLeft function) was deleted. wireLearnRowGestures collapsed to just the capture-phase click-suppression that blocks a head-link click after a drag. ~120 lines removed from js/app.js. Drag-to-reorder (M9.17b.b grab handle) and inline mastery button are both independent and still work.",
-  "deployedAt": "2026-04-20T15:10Z",
+  "version": "0.7.1-dev.39",
+  "milestone": "M9.17e",
+  "milestoneTitle": "Phase M9.17e — Session-wrap hygiene. js/app.js TOC regenerated after the M9.17 wave drifted anchors ~100 lines (new entries for wireLearnGrabHandle, updated line numbers across every section). docs/status.md caught up with the full M9.17 ledger (M9.17.0 scaffold → M9.17b.d swipe-mastery retirement). Plan doc logged M9.17c.a, M9.17d, M9.17b.d, and this M9.17e.",
+  "deployedAt": "2026-04-20T15:25Z",
   "commitSha": ""
 }

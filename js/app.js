@@ -1,77 +1,80 @@
 /* =============================================================================
    aiUniversity — js/app.js  (single-file IIFE by project convention)
    Table of contents (line anchors; grep the section banner to jump).
-   Regenerated 2026-04-20 after M9.16 polish; previous entries were drifted
-   ~500 lines. Keep this in sync when you add or move a major section.
+   Regenerated 2026-04-20 at M9.17e — after the M9.17b retire/simplify wave
+   trimmed ~120 lines out of the Learn gesture stack. Keep this in sync when
+   you add or move a major section.
 
    TOP-OF-FILE + BOOT
-     L92    Constants (DATA_URL, TOOLS_URL, …, MODALITIES, MODEL_COL)
-     L285   Module-level state (hoisted before first applyFilter call)
-     L352   applyFilter (tab switcher)
-     L369   Hash routing (#<chip>[/<view>])
-     L400   applyRoute (main entry)
-     L571   Initial route load + chip shortcuts
+     L130   Utilities (escapeHtml + inline helpers)
+     L354   applyFilter (tab switcher)
+     L374   Hash routing (parseRoute / applyRoute / navigateTo)
+     L448   replayHomeAnimations
 
    UTILITIES
-     L586   Time formatting (relTime, prettyDate)
-     L622   Sentiment + severity detection
-     L655   Scroll-activation IntersectionObserver (universal reveal)
-     L1625  Backup export / import
-     L2692  Storage monitor modal
-     L2811  Unified Save state
-     L2954  openSavePicker
-     L3097  Project-scoped pinning
-     L3159  openPinPicker
+     L603   Time formatting (relTime, prettyDate)
+     L638   Sentiment + severity detection
+     L692   Scroll-activation IntersectionObserver (universal reveal)
+     L754   Skeleton placeholder
+     L1545  Backup export / import (openBackupModal)
+     L2482  Storage monitor modal
+     L2576  Unified Save state (getSaves → openSavePicker)
+     L2708  openSavePicker
+     L2854  Project-scoped pinning
+     L2913  openPinPicker
 
    MODALS
-     L955   openVideoModal (YouTube embed)
-     L996   refreshModalOpenBodyClass (shared scroll-lock bookkeeping)
-     L3697  openToolModal (tool detail page)
-     L3840  openYouTubeModal (dashboard YouTube tile)
-     L4839  openRecipeModal (currently unreachable — #recipes host parked)
+     L970   openVideoModal (YouTube embed)
+     L1015  refreshModalOpenBodyClass (shared scroll-lock bookkeeping)
+     L3451  openToolModal (tool detail page)
+     L3594  openYouTubeModal (dashboard YouTube tile)
+     L4593  openRecipeModal (currently unreachable — #recipes host parked)
 
    FEED RENDERERS
-     L749   Card rendering (news / videos / status / tutorials)
-     L803   Section container rendering
-     L876   Claude Learning feed
-     L884   YouTube section
-     L1290  News section
-     L1321  Status strip
+     L765   renderCard (news / videos / status / tutorials)
+     L818   renderSection (card container)
+     L891   renderClaudeLearning feed
+     L899   renderYouTube section
+     L1154  renderNews section
+     L1185  renderStatusStrip
 
    LEARN
-     L1783  Lessons + MCQ quizzes setup
-     L1819  Mastery signal state
-     L1857  Learn draft stubs
-     L1904  Unified Learn surface (M9.4a — flat 3-zone layout)
-     L2190  renderLearn (main)
-     L2243  Swipe-left + long-press-to-drag state machine
+     L1708  Mastery signal state (setMastered / unsetMastered)
+     L1729  Learn draft stubs
+     L1775  Learn pin state (pinLearnItem / unpinLearnItem)
+     L1817  buildLearnItems (unified Learn surface feeder)
+     L1954  renderLearnItemRow (head-link + actions + grab handle)
+     L2058  renderLearn (main entry)
+     L2130  wireLearnRowGestures (capture-phase click suppression)
+     L2142  wireLearnGrabHandle (drag-to-reorder state machine)
+     L2232  showLearnToast
 
    PROJECTS
-     L1489  renderStack (Finder output — Easiest / Best path)
-     L3327  renderProjects (home list)
+     L1353  renderStack (Finder output — Easiest / Best path)
+     L3081  renderProjects (home list)
 
    TOOLS
-     L1399  renderCapGrid (catalog)
-     L3585  renderYourStack
-     L3626  renderTools (main)
+     L1263  renderCapGrid (catalog)
+     L3339  renderYourStack
+     L3380  renderTools (main)
 
    FINDER
-     L3893  Finder wizard (textarea + caps + path + stack)
-     L3923  Finder example projects
-     L3972  initFinder
+     L3654  getFinderDraft / patchFinderDraft / clearFinderDraft
+     L3706  applyFinderExample
+     L3726  initFinder
 
    MAIN LOAD + CHARTS
-     L4239  Main feed load (fetch latest.json, fan out renderers)
-     L4295  setupChartObservers
-     L4345  renderCbarChart (shared cbar primitive)
-     L4372  renderCompare (frontier compare)
-     L4386  renderIndex (vertical bars)
-     L4418  renderScorecard (horizontal bars)
-     L4467  renderTaskGrid
-     L4508  renderLlmFaceoff (carousel)
-     L4902  renderRecipes (parked — host #recipes removed with charts)
-     L4936  renderTimeline (hero)
-     L5051  renderMarkdown
+     L4049  setupChartObservers
+     L4099  renderCbarChart (shared cbar primitive)
+     L4126  renderCompare (frontier compare)
+     L4140  renderIndex (vertical bars)
+     L4172  renderScorecard (horizontal bars)
+     L4208  renderTypeLegend
+     L4221  renderTaskGrid
+     L4262  renderLlmFaceoff (carousel)
+     L4656  renderRecipes (parked — host #recipes removed with charts)
+     L4690  renderTimeline (hero)
+     L4805  renderMarkdown
 
    CONVENTIONS (see CLAUDE.md for full rules)
      - Single IIFE; all state lives on module-level `let`s.
