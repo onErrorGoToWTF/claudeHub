@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.9",
-  "milestone": "M9.6b",
-  "milestoneTitle": "Phase M9.6b — Pin-to-learn modal on Tools cards. Each tool's detail modal now carries a collapsed <details> \"Pin this tool to Learn →\" with two fields (What do you want to learn? — required, Notes — optional). Submit (or Enter on the prompt input) writes a draft stub to clhub.v1.learnDrafts — { id, learnPrompt, notes, docsUrl, sourceToolId, createdAt } — forward-compatible with Q13's future LLM hydrator. Drafts render in Learn's Everything else zone with a Draft pill, pickable by the same filter/sort/DnD machinery; click opens the tool's docs URL in a new tab. Draft-specific ⋯ menu adds \"Remove this draft\" alongside the pin toggle, which cascades through unpin + unset-mastery so stale state doesn't linger. Unified pin/mastery helpers gained a \"draft\" type (prefix learndraft: for saves, draft: for mastery). data/schema.md updated with the learnDrafts shape.",
-  "deployedAt": "2026-04-20T01:26Z",
+  "version": "0.7.0-dev.9.1",
+  "milestone": "M9.6",
+  "milestoneTitle": "Phase M9.6 — fixes: (a) Learn DnD long-press wasn't firing on iPhone because the 8px slop was being consumed by natural finger tremor in the 350ms hold window. Bumped LEARN_LONG_PRESS_SLOP to 14px and switched cancellation to a direction-aware rule — only a clearly horizontal movement commits to swipe, only a clearly vertical one commits to scroll, anything ambiguous stays pending so the timer can still fire. Drag-in scale bumped to 1.04 with a stronger elevation shadow and a brief pulse keyframe so the state change reads at a glance. (b) Pin-to-learn submit looked like it did nothing because the inline \"Pinned ✓\" status was being hidden the instant the details panel closed. Details auto-close now waits 1.8s so the inline status is visible; a bottom-center learn-toast fires in parallel as a viewport-level confirmation (toast Undo button hides when no onUndo callback is passed).",
+  "deployedAt": "2026-04-20T01:42Z",
   "commitSha": ""
 }

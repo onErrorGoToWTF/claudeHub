@@ -3801,14 +3801,29 @@ body.modal-open { overflow: hidden; }
   will-change: transform, opacity;
   /* .panel-tile supplies bg / border / inset specular / hover tint. */
 }
+/* M9.6a fix — drag feedback needs to READ. Previous 1.02 scale was too
+   subtle; users couldn't tell the long-press had fired. Bumped to 1.04
+   with a stronger elevation shadow + a brief pulse on entry. */
 .learn-item.learn-item-is-dragging {
-  transform: scale(1.02);
-  transition: transform 0.18s var(--ease-premium), box-shadow 0.18s var(--ease-premium);
+  transform: scale(1.04);
+  transition: transform 0.18s var(--ease-premium),
+              box-shadow 0.18s var(--ease-premium);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.6),
-    0 16px 32px -10px rgba(0,0,0,0.28),
-    0 4px 12px -4px rgba(0,0,0,0.18);
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    0 24px 40px -14px rgba(0,0,0,0.35),
+    0 8px 18px -6px rgba(0,0,0,0.22);
   z-index: 2;
+  animation: learnItemDragIn 0.22s var(--ease-premium) both;
+}
+@keyframes learnItemDragIn {
+  0%   { transform: scale(1.00); }
+  55%  { transform: scale(1.06); }
+  100% { transform: scale(1.04); }
+}
+/* Honor reduced-motion: skip the pulse but keep the final scale so the
+   user still sees drag state. */
+@media (prefers-reduced-motion: reduce) {
+  .learn-item.learn-item-is-dragging { animation: none; }
 }
 
 /* ⋯ menu — native <details> as a sibling of the .learn-item. Absolute

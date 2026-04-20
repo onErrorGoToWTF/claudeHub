@@ -1956,7 +1956,11 @@
   const LEARN_SWIPE_THRESHOLD     = 80;                          // px dx to commit a mastered-swipe
   const LEARN_SWIPE_VERTICAL_SLOP = 36;                          // |dy| above this = treat as scroll
   const LEARN_LONG_PRESS_MS       = 350;                         // hold-and-wait to start a drag
-  const LEARN_LONG_PRESS_SLOP     = 8;                           // movement that cancels the long-press
+  // Fingertip tremor on iPhone accumulates 5–12px in 300ms even when the
+  // user thinks they're holding still. 14px is the sweet spot — large
+  // enough to survive normal tremor, small enough to still feel
+  // responsive for intentional swipes / scrolls.
+  const LEARN_LONG_PRESS_SLOP     = 14;
   let learnToastTimer = null;
   function pointInRect(x, y, r) {
     return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
@@ -2043,13 +2047,18 @@
       dx = t.clientX - startX;
       dy = t.clientY - startY;
       if (mode === "pending") {
-        if (Math.abs(dx) > LEARN_LONG_PRESS_SLOP || Math.abs(dy) > LEARN_LONG_PRESS_SLOP) {
+        // Direction-aware cancel: only commit to swipe if the horizontal
+        // movement both crosses the slop AND dominates vertical. Same for
+        // scroll. Movement that's small in both directions stays pending
+        // so the long-press timer can still fire through finger tremor.
+        const horizontalCommit = Math.abs(dx) > LEARN_LONG_PRESS_SLOP && Math.abs(dx) > Math.abs(dy);
+        const verticalCommit   = Math.abs(dy) > LEARN_LONG_PRESS_SLOP && Math.abs(dy) > Math.abs(dx);
+        if (horizontalCommit) {
           clearLongPress();
-          if (Math.abs(dx) > Math.abs(dy) && dx < 0) {
-            mode = "swiping";
-          } else {
-            mode = "idle";                                       // vertical scroll intent; release to the browser
-          }
+          mode = dx < 0 ? "swiping" : "idle";                   // right-swipe has no action; release to tap
+        } else if (verticalCommit) {
+          clearLongPress();
+          mode = "idle";                                         // vertical scroll — let the browser handle it
         }
       }
       if (mode === "swiping") {
@@ -2191,10 +2200,16 @@
       undoBtn.onclick = null;
       clearTimeout(learnToastTimer);
     };
-    undoBtn.onclick = () => {
-      if (typeof onUndo === "function") onUndo();
-      hide();
-    };
+    // M9.6b — pin-to-learn reuses this toast without an Undo action.
+    // Hide the button when no onUndo callback was passed so the toast
+    // reads as plain confirmation rather than "tap Undo to revert."
+    if (typeof onUndo === "function") {
+      undoBtn.hidden = false;
+      undoBtn.onclick = () => { onUndo(); hide(); };
+    } else {
+      undoBtn.hidden = true;
+      undoBtn.onclick = null;
+    }
     toast.classList.add("is-visible");
     clearTimeout(learnToastTimer);
     learnToastTimer = setTimeout(hide, 5000);
@@ -3767,14 +3782,22 @@
         docsUrl:      modal.dataset.toolDocsUrl || "",
         sourceToolId: modal.dataset.toolId || null,
       });
-      status.textContent = "Pinned to Learn.";
+      // M9.6b fix — show feedback in TWO places so the user can't miss
+      // it: (1) the inline status text stays visible for 1.8s inside
+      // the open details; (2) the bottom-center toast confirms across
+      // the whole viewport, useful when the tool modal is scrolled
+      // down past the pin form. The details only auto-closes after the
+      // status delay — closing immediately (as before) hid the inline
+      // message instantly and looked like "nothing happened."
+      status.textContent = "Pinned to Learn ✓";
       status.dataset.kind = "ok";
       prompt.value = "";
       if (notes) notes.value = "";
-      const details = document.getElementById("tool-modal-learn");
-      if (details) details.removeAttribute("open");
+      showLearnToast({ message: "Pinned to Learn." });
       setTimeout(() => {
-        if (status.textContent === "Pinned to Learn.") {
+        const details = document.getElementById("tool-modal-learn");
+        if (details) details.removeAttribute("open");
+        if (status.textContent === "Pinned to Learn ✓") {
           status.textContent = "";
           status.dataset.kind = "";
         }
