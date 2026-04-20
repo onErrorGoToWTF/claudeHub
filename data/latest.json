@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T18:58:19.623Z",
+  "generated_at": "2026-04-20T19:04:03.800Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "Anthropic quietly nerfed Claude Code's 1-hour cache, and your token budget is paying the price - XDA",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPa01vdm42LXZiMi1tc0l0MWY0bnJaTU93cWd0OXFaTWZ2dnE5aHBIcDYwMnJ5cS1mX19aaXgtN1RkZk9YN2xCc3hzR0JDSGFoYThaZEk5LWpTYmVZT296ZHpRR3UxNFZtZWdkTElFZFdZTGthaXowYnlQTUdfa3AtdzEzOXZ5UndwbkQzQmZ5RmpTXzNCVndJ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-20T19:00:21.000Z",
+        "summary": "Anthropic quietly nerfed Claude Code's 1-hour cache, and your token budget is paying the price XDA"
+      },
+      {
         "title": "IPO Market Revs Back Up Ahead of Mega Listings",
         "url": "https://www.bloomberg.com/news/videos/2026-04-20/ipo-market-revs-back-up-ahead-of-mega-listings-video",
         "source": "Bloomberg",
@@ -204,7 +211,7 @@
       {
         "title": "I prompted ChatGPT, Claude, Perplexity, and Gemini and watched my Nginx logs",
         "url": "https://surfacedby.com/blog/nginx-logs-ai-traffic-vs-referral-traffic",
-        "source": "HN · 106↑",
+        "source": "HN · 107↑",
         "hn_id": "47835646",
         "published": "2026-04-20T15:22:01.000Z",
         "summary": ""
@@ -215,6 +222,13 @@
         "source": "Google News",
         "published": "2026-04-20T15:00:13.000Z",
         "summary": "Opinion | Anthropic Wants Claude to Be Moral. Is Religion Really the Answer? The New York Times"
+      },
+      {
+        "title": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBoQkkwMnB2b0tyeFllX3Iwa2FrRXNZbW5Dem5ERGlLVzFkbGNycUN1UXVEMnhYVlVmaGNTNDZuSTVWZ3d3alpjN29LbkprZV9qTjg1QVFKdURnYk9FYlFTQWFReVRNdEJPaHdTWlhGUTM?oc=5",
+        "source": "Google News",
+        "published": "2026-04-20T14:37:48.000Z",
+        "summary": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety Mashable"
       },
       {
         "title": "Anthropic's Mythos AI model sparks fears of turbocharged hacking",
@@ -236,13 +250,6 @@
         "source": "Google News",
         "published": "2026-04-20T13:01:58.000Z",
         "summary": "What do we know about Anthropic's Mythos amid rising concerns? Reuters"
-      },
-      {
-        "title": "Scoop: NSA using Anthropic's Mythos despite Defense Department blacklist - Axios",
-        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5UUW9jYXVFV0RVZ2EzSk5IMjZ4b09JeHQ0THZRbnpLQ1FULUlENUk0YTkwSGhKRmkwaGdQaS11R29NSUszVDVZTlV3MUZ2cHI5U0lZNmlXT2UzWlRiSkUyZDJFSU9pRUtjTC1SaVdHTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-20T12:52:16.000Z",
-        "summary": "Scoop: NSA using Anthropic's Mythos despite Defense Department blacklist Axios"
       },
       {
         "title": "Anthropic Claude Design: AI tool for visual content creation - ContentGrip",
@@ -294,13 +301,6 @@
         "summary": "Mythos Showdown: Inside Dario Amodei's White House Talks Cyber Magazine"
       },
       {
-        "title": "NSA Uses Anthropic AI Despite Pentagon Risk Warning - SQ Magazine",
-        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9SUUJpS1hVUUpTNjRzZkJmQTE2eFVuMDBjUWs1bVBtZnRqaDBoNl93TTRnQ21tUkxNNGV4SHNoVUVaY2gxYWhVNXJyd002MC0wS3RSdEIxREtvLURVT3Y4TElyZGZ0YUVUdHVuWWFTdmJTQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-20T10:33:11.000Z",
-        "summary": "NSA Uses Anthropic AI Despite Pentagon Risk Warning SQ Magazine"
-      },
-      {
         "title": "Google Eyes New Chips to Speed Up AI Results, Challenging Nvidia",
         "url": "https://www.bloomberg.com/news/features/2026-04-20/google-eyes-new-chips-to-speed-up-ai-results-challenging-nvidia",
         "source": "Bloomberg",
@@ -318,7 +318,7 @@
       {
         "title": "NSA is using Anthropic's Mythos despite blacklist",
         "url": "https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon",
-        "source": "HN · 379↑",
+        "source": "HN · 381↑",
         "hn_id": "47832222",
         "published": "2026-04-20T10:00:35.000Z",
         "summary": ""
