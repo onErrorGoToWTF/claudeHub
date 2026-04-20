@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.41",
-  "milestone": "M9.18a",
-  "milestoneTitle": "Phase M9.18a — Dashboard fixed-slot tile grammar, Learn panel wired first. New .dash-tile component replaces .continue-row inside the Dashboard Learn panel (body #dash-learn-body). Fixed slots: leading grab (28px, invisible on dashboard), content (title + eyebrow), trailing cluster (duration chip 40px + state pill 84px top row, pin + mastery + delete 24px each bottom row). Duration \"7m\" finally has a permanent spot; state pill says Start/Continue/Done; pin + mastery toggles work inline and re-render both the dashboard panel and the Learn list through the shared [data-learn-action] delegation. Delete + grab slots are reserved (invisible) to keep geometry identical with future Projects/Tools tiles. Phase-1 step 1 of 3 — M9.18b wires Projects dashboard panel next, M9.18c Tools. Plan: ~\\.claude\\plans\\ok-lets-work-on-quiet-gadget.md.",
-  "deployedAt": "2026-04-20T16:10Z",
+  "version": "0.7.1-dev.42",
+  "milestone": "M9.18a.1",
+  "milestoneTitle": "Phase M9.18a.1 — Dash-tile icon sizing + mobile hover halo + soft-glow gradient. Three phone-review fixes to M9.18a: (1) pin / mastery / delete icons were unreadable at arm's length — each icon button bumped 24x24 -> 32x32, inline 14px SVGs forced up to 22x22 via .dash-tile-icon svg, trailing-cluster icon row widened 80 -> 104px, min-height bumped from 64 -> 76px; (2) iOS sticky-hover left a grey rounded-rect halo around each icon after tap — every :hover background rule now guarded behind @media (hover: hover), so touch devices never latch a background; (3) tile hover glow was cutting off sharply at tile edges because box-shadow used a 0-blur 3px spread ring — swapped to 20px blur + 0 spread so the accent halo gradients to zero with no hard edge.",
+  "deployedAt": "2026-04-20T16:30Z",
   "commitSha": ""
 }

@@ -2377,10 +2377,13 @@ body.modal-open { overflow: hidden; }
 .dash-tile:hover {
   background: color-mix(in srgb, var(--bg-0) 20%, #ffffff);
   border-color: var(--accent-border, rgba(0,0,0,0.12));
+  /* Soft blur-gradient glow (was a hard 3px spread ring that cut off
+     sharply at the tile edges on narrow viewports). 20px blur + 0
+     spread fades to transparent so the accent halo has no hard edge. */
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.70),
     0 2px 6px rgba(0,0,0,0.05),
-    0 0 0 3px var(--accent-glow, transparent);
+    0 0 20px 0 var(--accent-glow, transparent);
 }
 .dash-tile:active {
   background: color-mix(in srgb, var(--bg-0) 88%, #000000);
@@ -2459,10 +2462,10 @@ body.modal-open { overflow: hidden; }
 .dash-tile-trailing {
   grid-column: 3;
   display: grid;
-  grid-template-rows: 20px 24px;
+  grid-template-rows: 22px 32px;
   grid-template-columns: 40px 84px;
   column-gap: 6px;
-  row-gap: 4px;
+  row-gap: 6px;
   align-items: center;
   justify-items: end;
 }
@@ -2527,13 +2530,13 @@ body.modal-open { overflow: hidden; }
   grid-row: 2;
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 24px 24px 24px;
+  grid-template-columns: 32px 32px 32px;
   column-gap: 4px;
   justify-self: end;
 }
 .dash-tile-icon {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2547,9 +2550,19 @@ body.modal-open { overflow: hidden; }
     color 0.15s var(--ease-premium),
     background 0.15s var(--ease-premium);
 }
-.dash-tile-icon:hover {
-  color: var(--accent-solid, var(--text-1));
-  background: rgba(0,0,0,0.04);
+/* Force the inline SVG (14px hard-coded in the shared constants) up to
+   a size users can actually see at arm's length on a phone. */
+.dash-tile-icon svg {
+  width: 22px;
+  height: 22px;
+}
+/* Hover-bg only on real pointer devices. Mobile taps otherwise latch
+   :hover and leave a grey halo around the icon until the next tap. */
+@media (hover: hover) {
+  .dash-tile-icon:hover {
+    color: var(--accent-solid, var(--text-1));
+    background: rgba(0,0,0,0.04);
+  }
 }
 .dash-tile-icon[aria-pressed="true"] {
   color: var(--accent-solid, var(--text-1));
@@ -2561,9 +2574,11 @@ body.modal-open { overflow: hidden; }
 .dash-tile-icon.dash-tile-delete {
   color: color-mix(in srgb, var(--danger-solid) 75%, var(--text-3));
 }
-.dash-tile-icon.dash-tile-delete:hover {
-  color: var(--danger-solid);
-  background: var(--danger-surface);
+@media (hover: hover) {
+  .dash-tile-icon.dash-tile-delete:hover {
+    color: var(--danger-solid);
+    background: var(--danger-surface);
+  }
 }
 .dash-tile-icon.dash-tile-delete[data-armed="1"] {
   color: var(--danger-ink);
@@ -2572,9 +2587,9 @@ body.modal-open { overflow: hidden; }
 }
 
 /* Touch devices: expand hit area to 44x44 via padding + negative margin
-   so the visual icon stays 24x24 but the tap target meets Apple HIG. */
+   so the visual icon stays 32x32 but the tap target meets Apple HIG. */
 @media (hover: none) {
-  .dash-tile-icon { padding: 10px; margin: -10px; }
+  .dash-tile-icon { padding: 6px; margin: -6px; }
   .dash-tile-grab { width: 44px; margin: 0 -8px; }
 }
 
