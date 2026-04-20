@@ -2638,6 +2638,7 @@ body.modal-open { overflow: hidden; }
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 0;
   padding: 18px 18px 16px;
   text-decoration: none;
   color: var(--text-1);
@@ -3775,6 +3776,7 @@ body.modal-open { overflow: hidden; }
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-width: 0;
   padding: 18px 18px 16px;
 }
 .project-card-best {
@@ -3984,6 +3986,7 @@ body.modal-open { overflow: hidden; }
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-width: 0;
 }
 .learn-zone-empty {
   padding: 14px 8px;
@@ -4010,6 +4013,7 @@ body.modal-open { overflow: hidden; }
   display: flex;
   flex-direction: column;
   gap: 4px;
+  min-width: 0;
   padding: 12px 14px;
   text-align: left;
   color: inherit;
@@ -4143,6 +4147,7 @@ body.modal-open { overflow: hidden; }
   display: flex;
   align-items: center;
   gap: 8px;
+  min-width: 0;
 }
 .learn-item-kind {
   padding: 2px 7px;

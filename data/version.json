@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.26",
-  "milestone": "M9.17.0",
-  "milestoneTitle": "Phase M9.17.0 — Scaffold design-amend skill. New .claude/skills/design-amend/SKILL.md drives systemic design-language rule changes through a disciplined cascade: echo rule, produce plain-English impact list, amend CLAUDE.md first, chunk the cascade for phone review. Pairs with design-review (which gates individual diffs). CLAUDE.md skills tree + project_skills memory updated. Pre-flight for the M9.17 activation/rest design shift.",
-  "deployedAt": "2026-04-20T11:45Z",
+  "version": "0.7.1-dev.27",
+  "milestone": "M9.17a",
+  "milestoneTitle": "Phase M9.17a — Overflow fix on Up Next + parallel list surfaces. Lesson title 'Claude Code: zero to your first session' was bleeding out of its .learn-item container. Root cause: the flex-column chain (.learn-zone-body → .learn-item → .learn-item-head) lacked min-width: 0, so the title's min-content width forced ancestors wider than the panel despite the title's own ellipsis rule. Added min-width: 0 at each flex level. Same defensive fix applied to .tool-card and .project-card (parallel flex-column card classes that could exhibit the same class of bug). No overflow:hidden at card level — would clip the warm drop-shadow.",
+  "deployedAt": "2026-04-20T11:55Z",
   "commitSha": ""
 }
