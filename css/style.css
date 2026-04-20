@@ -2352,9 +2352,23 @@ body.modal-open { overflow: hidden; }
    in M9.18b / M9.18c once phone-reviewed. */
 .dash-tile {
   display: grid;
+  /* M9.19a.8 — 4-quadrant layout. Top row: eyebrow + status (top-right
+     holds all status signals). Second row: title + status continues.
+     Subsequent rows (summary / flags / coverage / progress) span the
+     full content width beneath the status quadrant so the description
+     can breathe without competing with the trailing pills. Grab column
+     (28px) stays leading on every row. */
   grid-template-columns: 28px minmax(0, 1fr) auto;
+  grid-template-areas:
+    "grab  eyebrow   trailing"
+    "grab  title     trailing"
+    "grab  summary   summary"
+    "grab  flags     flags"
+    "grab  coverage  coverage"
+    "grab  progress  progress";
   column-gap: 12px;
-  align-items: center;
+  row-gap: 3px;
+  align-items: start;
   padding: 10px 12px;
   min-height: 64px;
   border-radius: var(--radius-sm);
@@ -2408,7 +2422,8 @@ body.modal-open { overflow: hidden; }
 /* Leading column — 28px. Grab handle when sortable; invisible spacer
    otherwise. Width stays identical across surfaces so tiles line up. */
 .dash-tile-grab {
-  grid-column: 1;
+  grid-area: grab;
+  align-self: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2432,20 +2447,12 @@ body.modal-open { overflow: hidden; }
   height: 22px;
 }
 
-/* Content column — title + eyebrow + optional progress bar. Only column
-   that flexes; title + eyebrow ellipsis on overflow so variable copy
-   never pushes trailing pills. */
-.dash-tile-content {
-  grid-column: 2;
-  display: grid;
-  /* M9.19a — grid-auto-rows lets the renderer emit any combination of
-     eyebrow / title / summary / flags / coverage / progress rows; grid
-     doesn't care about the count. */
-  grid-auto-rows: auto;
-  row-gap: 3px;
-  min-width: 0;
-}
+/* M9.19a.8 — Children of .dash-tile are now flat (no .dash-tile-content
+   wrapper). Each element maps to its own named grid-area via the
+   parent's grid-template-areas declaration. Rows whose area isn't
+   emitted collapse cleanly (grid auto). */
 .dash-tile-title {
+  grid-area: title;
   font-size: 14px;
   font-weight: 600;
   color: var(--text-1);
@@ -2453,16 +2460,20 @@ body.modal-open { overflow: hidden; }
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
 }
 .dash-tile-eyebrow {
+  grid-area: eyebrow;
   font-size: 11.5px;
   color: var(--text-2);
   letter-spacing: 0.01em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
 }
 .dash-tile-progress {
+  grid-area: progress;
   height: 2px;
   background: var(--border);
   border-radius: 1px;
@@ -2478,19 +2489,21 @@ body.modal-open { overflow: hidden; }
   transition: width 400ms var(--ease-premium);
 }
 
-/* Trailing cluster — fixed inner grid. Top row: duration (40px) + state
-   pill (84px). Bottom row: three 24px action slots (pin / mastery /
-   delete). Width is 40 + 6 + 84 = 130px at all times, regardless of
-   which fills are populated. */
+/* Trailing cluster — top-right status quadrant. Horizontal row:
+   duration chip + state pill. Everything status-related lives here
+   per M9.19a.8 user directive ("keep all status stuff in top right
+   quadrant"). If the status gets busy, an overflow ⋯ glyph slots in
+   at the trailing edge of this cluster; the row itself stays a single
+   line. The old bottom-row icons (pin / mastery / delete) retired
+   in M9.19a.6 / M9.19a.7 — no longer a separate slot. */
 .dash-tile-trailing {
-  grid-column: 3;
-  display: grid;
-  grid-template-rows: 22px 32px;
-  grid-template-columns: 40px 84px;
-  column-gap: 6px;
-  row-gap: 6px;
+  grid-area: trailing;
+  align-self: center;
+  display: inline-flex;
   align-items: center;
-  justify-items: end;
+  gap: 6px;
+  justify-self: end;
+  white-space: nowrap;
 }
 .dash-tile-duration {
   grid-row: 1;
@@ -2659,13 +2672,19 @@ body.modal-open { overflow: hidden; }
    title in the content column. Absent on dashboard preview; always
    present on Learn-list tiles when the item has a summary. */
 .dash-tile-summary {
+  grid-area: summary;
   font-size: 12px;
   color: var(--text-2);
-  line-height: 1.35;
+  line-height: 1.4;
   letter-spacing: 0.005em;
-  white-space: nowrap;
+  /* M9.19a.8 — 2-line clamp. User wanted the description to have room
+     to breathe now that it spans the full width below the status
+     quadrant (was 1-line nowrap ellipsis). */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  margin-top: 2px;
 }
 
 /* Flag-icons row — informational status (warning / locked / new /
@@ -2673,11 +2692,13 @@ body.modal-open { overflow: hidden; }
    optional icon. Absent when no flags active; horizontal flex wraps
    if more flags than row width allows. */
 .dash-tile-flags {
+  grid-area: flags;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   align-items: center;
   min-height: 20px;
+  margin-top: 2px;
 }
 .dash-tile-flag {
   display: inline-flex;
@@ -2719,9 +2740,11 @@ body.modal-open { overflow: hidden; }
    the retired .learn-item-coverage. Blank state gets an italic
    "No existing material" pill. */
 .dash-tile-coverage {
+  grid-area: coverage;
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
+  margin-top: 2px;
 }
 .dash-tile-coverage-pill {
   display: inline-flex;

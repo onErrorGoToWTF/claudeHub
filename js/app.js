@@ -2052,12 +2052,9 @@
     // calls pinLearnItem / unpinLearnItem under the hood. Draft
     // deletion still fires via swipe (M9.19a.2). The row keeps its
     // 3×32px icon width reserved for future flags.
-    // M9.19a.2 — Drafts moved from inline trash button to swipe-to-reveal
-    // delete. The trailing action slot stays reserved-invisible to keep
-    // geometry identical with non-draft tiles; the destructive action
-    // lives behind the tile in .dash-tile-swipe-action and is revealed
-    // on right-to-left swipe (see wireLearnSwipeDelete below).
-    const deleteSlot = `<button type="button" class="dash-tile-icon dash-tile-delete" data-empty="1" aria-hidden="true" tabindex="-1">${TRASH_SVG}</button>`;
+    // M9.19a.2 — Drafts delete via swipe-to-reveal (.dash-tile-swipe-action
+    // behind the tile). No inline delete button — row-level icons are
+    // gone per M9.19a.6 / M9.19a.8.
     // Flag-icons row — reserved slot. Currently emits nothing; future
     // signals (warning / locked / new / recommended / has-notes) will
     // populate here without needing another layout change.
@@ -2088,27 +2085,24 @@
     // the tile. When data-sortable is absent, the grab renders invisible
     // (28px column reserved) per .dash-tile-grab[data-empty="1"].
     const grabEmpty = sortable ? "" : ' data-empty="1"';
-    // Summary — 1-line ellipsis, optional.
+    // M9.19a.8 — Flattened markup. No .dash-tile-content wrapper; each
+    // optional row is a direct child of .dash-tile so grid-template-areas
+    // can place it directly. No .dash-tile-icons row — retired per
+    // M9.19a.6 / M9.19a.7. Status lives in the top-right trailing
+    // quadrant; summary/flags/coverage/progress span full width below.
     const summary = (item.summary || "").trim();
     const tileMarkup = `
       <article class="dash-tile"${sortable ? ' data-sortable="1"' : ""} data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}" role="button" tabindex="0">
         <button type="button" class="dash-tile-grab"${grabEmpty} aria-label="Drag to reorder" title="Drag to reorder" tabindex="-1">${GRAB_SVG}</button>
-        <div class="dash-tile-content">
-          ${eyebrow ? `<div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>` : ""}
-          <div class="dash-tile-title">${escapeHtml(item.title)}</div>
-          ${summary ? `<div class="dash-tile-summary">${escapeHtml(summary)}</div>` : ""}
-          ${flagsMarkup}
-          ${coverageMarkup}
-        </div>
+        ${eyebrow ? `<div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>` : ""}
+        <div class="dash-tile-title">${escapeHtml(item.title)}</div>
         <div class="dash-tile-trailing">
           <span class="dash-tile-duration"${durationEmpty}>${escapeHtml(minutesLabel)}</span>
           <span class="dash-tile-state" data-state="${escapeHtml(stateRaw)}">${escapeHtml(stateLabel)}</span>
-          <div class="dash-tile-icons">
-            <button type="button" class="dash-tile-icon dash-tile-pin" data-empty="1" aria-hidden="true" tabindex="-1">${PIN_SVG_OUTLINE}</button>
-            <button type="button" class="dash-tile-icon dash-tile-mastery" data-empty="1" aria-hidden="true" tabindex="-1">${MASTERY_SVG_OUTLINE}</button>
-            ${deleteSlot}
-          </div>
         </div>
+        ${summary ? `<div class="dash-tile-summary">${escapeHtml(summary)}</div>` : ""}
+        ${flagsMarkup}
+        ${coverageMarkup}
       </article>
     `;
     // M9.19a.2 — Drafts get a swipe-to-reveal delete wrapper. Non-draft
@@ -3299,27 +3293,18 @@
       const flagsMarkup = inventoryFlags.length
         ? `<div class="dash-tile-flags">${inventoryFlags.map((f) => `<span class="dash-tile-flag" data-flag="${escapeHtml(f.key)}">${escapeHtml(f.label)}</span>`).join("")}</div>`
         : "";
+      // M9.19a.8 — flattened markup, 4-quadrant layout. Eyebrow
+      // precedes title (matches Learn tiles for consistent SR order).
       return `
         <article class="dash-tile" data-project-id="${escapeHtml(p.id)}"${p.__placeholder ? ' data-placeholder="1"' : ""} role="button" tabindex="0">
           <button type="button" class="dash-tile-grab" data-empty="1" aria-hidden="true" tabindex="-1">${GRAB_SVG}</button>
-          <div class="dash-tile-content">
-            <div class="dash-tile-title">${escapeHtml(p.title)}</div>
-            <div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>
-            ${flagsMarkup}
-          </div>
+          <div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>
+          <div class="dash-tile-title">${escapeHtml(p.title)}</div>
           <div class="dash-tile-trailing">
             <span class="dash-tile-duration" data-empty="1">—</span>
             <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
-            <div class="dash-tile-icons">
-              <!-- Pin retired from Projects tiles in M9.19a.7 —
-                   "has pinned inventory" rolled up to the flag row
-                   above so pin stays a single-meaning universal
-                   icon (send to Learn). -->
-              <button type="button" class="dash-tile-icon dash-tile-pin" data-empty="1" aria-hidden="true" tabindex="-1">${PIN_SVG_OUTLINE}</button>
-              <button type="button" class="dash-tile-icon dash-tile-mastery" data-empty="1" aria-hidden="true" tabindex="-1">${MASTERY_SVG_OUTLINE}</button>
-              <button type="button" class="dash-tile-icon dash-tile-delete" data-empty="1" aria-hidden="true" tabindex="-1">${TRASH_SVG}</button>
-            </div>
           </div>
+          ${flagsMarkup}
         </article>
       `;
     }).join("");
@@ -3422,25 +3407,16 @@
       // the Learn list. Drop semantics on dashboard aren't wired yet —
       // drag-trace follows the finger and eases back on release.
       const dashSortable = !l.__placeholder;
+      // M9.19a.8 — flattened markup, 4-quadrant layout (eyebrow + title
+      // left column, status quadrant top-right, grab leading).
       return `
         <article class="dash-tile"${dashSortable ? ' data-sortable="1"' : ""} data-learn-type="lesson" data-learn-id="${escapeHtml(l.slug)}" data-dash-lesson-slug="${escapeHtml(l.slug)}"${l.__placeholder ? ' data-placeholder="1"' : ""} role="button" tabindex="0">
           <button type="button" class="dash-tile-grab"${dashSortable ? "" : ' data-empty="1"'} aria-label="Drag to reorder" title="Drag to reorder" tabindex="-1">${GRAB_SVG}</button>
-          <div class="dash-tile-content">
-            <div class="dash-tile-title">${escapeHtml(l.title)}</div>
-            <div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>
-          </div>
+          <div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>
+          <div class="dash-tile-title">${escapeHtml(l.title)}</div>
           <div class="dash-tile-trailing">
             <span class="dash-tile-duration"${durationEmpty}>${escapeHtml(minutesLabel)}</span>
             <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
-            <div class="dash-tile-icons">
-              <!-- M9.19a.6 — pin + mastery retired from dashboard Learn
-                   tiles for cross-surface consistency with Learn list.
-                   Icon row keeps its reserved 3×32px width for future
-                   flags. All three slots invisible today. -->
-              <button type="button" class="dash-tile-icon dash-tile-pin" data-empty="1" aria-hidden="true" tabindex="-1">${PIN_SVG_OUTLINE}</button>
-              <button type="button" class="dash-tile-icon dash-tile-mastery" data-empty="1" aria-hidden="true" tabindex="-1">${MASTERY_SVG_OUTLINE}</button>
-              <button type="button" class="dash-tile-icon dash-tile-delete" data-empty="1" aria-hidden="true" tabindex="-1">${TRASH_SVG}</button>
-            </div>
           </div>
         </article>
       `;
