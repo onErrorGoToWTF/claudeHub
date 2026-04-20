@@ -24,18 +24,28 @@ _resources/
 │   ├── claudehub-roadmap.md       ← current mapping + evolution proposals
 │   └── resources.md               ← external links (Apple + GitHub + WWDC)
 │
-└── hig/                           ← older HIG foundations (gestures, layout, etc.)
+├── hig/                           ← older HIG foundations (gestures, layout, etc.)
+│   ├── README.md                  ← topic-level overview + file index
+│   ├── layout.md                  ← safe areas, tap targets (44×44), thumb zone
+│   ├── gestures-and-drag.md       ← gesture vocabulary + drag-and-drop + reorder
+│   ├── modality.md                ← sheets, popovers, action sheets
+│   ├── motion.md                  ← easing, durations, reduced-motion
+│   ├── typography.md              ← Dynamic Type, text styles
+│   ├── color.md                   ← system colors, Dark Mode, contrast
+│   ├── materials.md               ← system materials (thin/thick/ultra), vibrancy
+│   ├── accessibility.md           ← VoiceOver, Bold Text, Reduce Motion, semantic labels
+│   ├── community-extras.md        ← workarounds from sindresorhus + ehmo
+│   └── resources.md               ← external links
+│
+└── learning-ux/                   ← progress tracking + dashboard UX (Linear, Khan, Duolingo, Quizlet)
     ├── README.md                  ← topic-level overview + file index
-    ├── layout.md                  ← safe areas, tap targets (44×44), thumb zone
-    ├── gestures-and-drag.md       ← gesture vocabulary + drag-and-drop + reorder
-    ├── modality.md                ← sheets, popovers, action sheets
-    ├── motion.md                  ← easing, durations, reduced-motion
-    ├── typography.md              ← Dynamic Type, text styles
-    ├── color.md                   ← system colors, Dark Mode, contrast
-    ├── materials.md               ← system materials (thin/thick/ultra), vibrancy
-    ├── accessibility.md           ← VoiceOver, Bold Text, Reduce Motion, semantic labels
-    ├── community-extras.md        ← workarounds from sindresorhus + ehmo
-    └── resources.md               ← external links
+    ├── linear-workflow.md         ← Linear's state vocab + health + milestones + activity
+    ├── khan-academy.md            ← Learning Dashboard + Mastery cadence
+    ├── duolingo.md                ← streak / XP / path / mascot (mostly anti-port)
+    ├── quizlet.md                 ← tri-state completion + adaptive Learn
+    ├── minimal-patterns.md        ← synthesis: patterns surviving claudeHub constraints
+    ├── claudehub-recommendations.md ← per-surface proposal menu (reference-only)
+    └── resources.md               ← external links + citations
 ```
 
 ## Consumers

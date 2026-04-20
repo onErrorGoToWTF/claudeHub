@@ -45,6 +45,29 @@
 | Community workarounds (Settings window, drag-drop mixed content, undo button style) | `hig/community-extras.md` |
 | External links (Apple docs, community GitHub, community blogs) | `hig/resources.md` |
 
+## Quick retrieval — Learning UX (progress tracking, dashboards, activity feeds)
+
+| Question | File |
+|---|---|
+| How does Linear show project/issue state? (Backlog → Todo → In Progress → Done) | `learning-ux/linear-workflow.md` |
+| Linear health indicators (On track / At risk / Off track) | `learning-ux/linear-workflow.md` |
+| Linear milestones (diamond icon, yellow = active, completion %) | `learning-ux/linear-workflow.md` |
+| Linear project progress graph (scope + completion bars + projections) | `learning-ux/linear-workflow.md` |
+| Linear Inbox + activity-feed collapsing pattern | `learning-ux/linear-workflow.md` |
+| Khan Academy Learning Dashboard thesis + composition | `learning-ux/khan-academy.md` |
+| Khan Academy Mastery daily-cadence pattern (no streak) | `learning-ux/khan-academy.md` |
+| Duolingo streak / XP / path / mascot mechanics (mostly anti-port) | `learning-ux/duolingo.md` |
+| Quizlet tri-state set completion (not started / started / finished) | `learning-ux/quizlet.md` |
+| Quizlet adaptive Learn mode | `learning-ux/quizlet.md` |
+| Distilled minimal patterns surviving claudeHub constraints | `learning-ux/minimal-patterns.md` |
+| Non-goals (what we are NOT doing: Awards page / streak / XP / mascot) | `learning-ux/minimal-patterns.md` or `claudehub-recommendations.md` |
+| claudeHub Learn-surface proposals (eyebrow row, progress bar, recommended-next) | `learning-ux/claudehub-recommendations.md` |
+| claudeHub Projects-surface proposals (lifecycle badge on both tile surfaces) | `learning-ux/claudehub-recommendations.md` |
+| claudeHub Dashboard activity strip proposal | `learning-ux/claudehub-recommendations.md` |
+| External links + source-quality notes | `learning-ux/resources.md` |
+
+**Note:** none of the `claudehub-recommendations.md` proposals are in-flight. File is a reference menu; see its TOC for the non-goals list up front.
+
 ## Quick retrieval — claudeHub-specific
 
 | Question | File |
