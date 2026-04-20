@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.29",
-  "milestone": "M9.17a.2",
-  "milestoneTitle": "Phase M9.17a.2 — Stronger overflow fix after phone review still showed bleed on 'Custom slash commands — the real leverage' and 'Blender + AI hybrid — the Young Carpets hero shot'. M9.17a.1's :has(+ .learn-menu) rule was correctly deployed but either browser-cached or not firing in Brave iOS. Switched to belt-and-suspenders: unconditional right gutter via padding: 12px 44px 12px 14px on .learn-item, plus overflow:hidden on both .learn-item and .learn-item-head so text physically cannot escape the card regardless of flex-shrink behavior. panel-tile box-shadow renders outside the element and is unaffected.",
-  "deployedAt": "2026-04-20T12:28Z",
+  "version": "0.7.1-dev.30",
+  "milestone": "M9.17a.3",
+  "milestoneTitle": "Phase M9.17a.3 — Cache-buster on CSS + JS links. Phone review of M9.17a.2 was showing the same bleed despite deploy verification, which points at browser HTTP cache serving old css/style.css. Added ?v=<version> query to each <link rel=stylesheet> and to js/app.js so future milestone-deploy bumps force a fresh fetch. Future milestone-deploy steps should bump the version query alongside data/version.json.",
+  "deployedAt": "2026-04-20T12:40Z",
   "commitSha": ""
 }
