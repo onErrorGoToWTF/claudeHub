@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T13:25:45.600Z",
+  "generated_at": "2026-04-20T13:32:29.709Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -204,7 +204,7 @@
       {
         "title": "Figma's woes compound with Claude Design",
         "url": "https://martinalderson.com/posts/figmas-woes-compound-with-claude-design/",
-        "source": "HN · 57↑",
+        "source": "HN · 58↑",
         "hn_id": "47832366",
         "published": "2026-04-20T10:26:35.000Z",
         "summary": ""
@@ -219,7 +219,7 @@
       {
         "title": "NSA is using Anthropic's Mythos despite blacklist",
         "url": "https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon",
-        "source": "HN · 162↑",
+        "source": "HN · 166↑",
         "hn_id": "47832222",
         "published": "2026-04-20T10:00:35.000Z",
         "summary": ""
@@ -267,13 +267,6 @@
         "summary": "Claude Opus 4.7: What Changed for Developers SitePoint"
       },
       {
-        "title": "Scoop: NSA using Anthropic's Mythos despite Defense Department blacklist - Axios",
-        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5UUW9jYXVFV0RVZ2EzSk5IMjZ4b09JeHQ0THZRbnpLQ1FULUlENUk0YTkwSGhKRmkwaGdQaS11R29NSUszVDVZTlV3MUZ2cHI5U0lZNmlXT2UzWlRiSkUyZDJFSU9pRUtjTC1SaVdHTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-20T07:23:07.000Z",
-        "summary": "Scoop: NSA using Anthropic's Mythos despite Defense Department blacklist Axios"
-      },
-      {
         "title": "Anthropic Launches AI Visual Tool Claude Design - The Daily Star",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZzlTZHktTDJ3d19lR05BSU5ZRFpmcUFIMEFJU0l2MmRQdkdxamFxeUpQT3R0WThkTTVBSTRDX1RtVl9OaEJrWEVWLS1PMTFnSGZCRnRmbUN1azJZR2twQzNZVzYzT0ZGQVgzNkZkdlpDLW1JUGhXclNpZlZnajlTWFViZk0zZlFPd21BQk5IcUpSbWI1NTdvdWhsODlrZlNKUDk1TGZrbzRGTXM?oc=5",
         "source": "Google News",
@@ -302,6 +295,13 @@
         "summary": "60+ accounts removed: Anthropic face backlash over Claude performance dip Firstpost"
       },
       {
+        "title": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBoQkkwMnB2b0tyeFllX3Iwa2FrRXNZbW5Dem5ERGlLVzFkbGNycUN1UXVEMnhYVlVmaGNTNDZuSTVWZ3d3alpjN29LbkprZV9qTjg1QVFKdURnYk9FYlFTQWFReVRNdEJPaHdTWlhGUTM?oc=5",
+        "source": "Google News",
+        "published": "2026-04-20T04:02:31.000Z",
+        "summary": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety Mashable"
+      },
+      {
         "title": "Anthropic installed a spyware bridge on my machine?",
         "url": "https://www.thatprivacyguy.com/blog/anthropic-spyware/",
         "source": "HN · 60↑",
@@ -319,7 +319,7 @@
       {
         "title": "Claude Token Counter, now with model comparisons",
         "url": "https://simonwillison.net/2026/Apr/20/claude-token-counts/",
-        "source": "HN · 148↑",
+        "source": "HN · 150↑",
         "hn_id": "47829178",
         "published": "2026-04-20T00:56:40.000Z",
         "summary": ""
@@ -543,6 +543,13 @@
     ],
     "status": [
       {
+        "title": "Elevated errors for uploading files",
+        "url": "https://status.claude.com/incidents/8482mmb5n1n1",
+        "source": "Claude Status",
+        "published": "2026-04-20T13:31:05.000Z",
+        "summary": "Apr 20 , 13:31 UTC Investigating - We are currently investigating an issue related to uploading files on Claude.ai and Claude API. Some users will see their uploads failing and they are advised to…"
+      },
+      {
         "title": "Claude Sonnet 4.5 error spike",
         "url": "https://status.claude.com/incidents/8rg3l7v56ngc",
         "source": "Claude Status",
@@ -618,13 +625,6 @@
         "source": "Claude Status",
         "published": "2026-04-10T16:51:44.000Z",
         "summary": "Apr 10 , 16:51 UTC Resolved - The issue affecting requests to non-Opus models has been resolved. Apr 10 , 16:42 UTC Identified - We have identified the current issue as affecting requests to models…"
-      },
-      {
-        "title": "Some Claude.ai share links were inaccessible",
-        "url": "https://status.claude.com/incidents/ccm8hy0pld48",
-        "source": "Claude Status",
-        "published": "2026-04-10T14:00:00.000Z",
-        "summary": "Apr 10 , 14:00 UTC Resolved - Between April 2 and April 10, some users who were not signed in to Claude.ai (web, mobile, desktop) were not able to access some Claude.ai sharing links."
       }
     ],
     "youtube": [
