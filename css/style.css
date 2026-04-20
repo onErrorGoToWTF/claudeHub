@@ -181,25 +181,25 @@
      Learn greener than the prior lime, Projects true blue, Tools orange
      stays warm. Static identity pills (coverage-pill, etc.) read these
      directly; activation cascades go through --accent-* instead. */
-  --color-learn-solid:       #16d94a;                  /* electric neon green */
-  --color-learn-surface:     color-mix(in srgb, #16d94a, transparent 86%);
-  --color-learn-border:      color-mix(in srgb, #16d94a, transparent 45%);
-  --color-learn-glow:        color-mix(in srgb, #16d94a, transparent 66%);
+  --color-learn-solid:       #07678f;                  /* deep electric blue */
+  --color-learn-surface:     color-mix(in srgb, #07678f, transparent 86%);
+  --color-learn-border:      color-mix(in srgb, #07678f, transparent 45%);
+  --color-learn-glow:        color-mix(in srgb, #07678f, transparent 66%);
 
   --color-youtube-solid:     #ff3b30;                  /* Apple systemRed */
   --color-youtube-surface:   rgba(255,59,48,0.14);
   --color-youtube-border:    rgba(255,59,48,0.55);
   --color-youtube-glow:      rgba(255,59,48,0.34);
 
-  --color-tools-solid:       #ff6a1a;                  /* saturated warm orange */
-  --color-tools-surface:     color-mix(in srgb, #ff6a1a, transparent 86%);
-  --color-tools-border:      color-mix(in srgb, #ff6a1a, transparent 45%);
-  --color-tools-glow:        color-mix(in srgb, #ff6a1a, transparent 66%);
+  --color-tools-solid:       #c2410c;                  /* deep electric orange */
+  --color-tools-surface:     color-mix(in srgb, #c2410c, transparent 86%);
+  --color-tools-border:      color-mix(in srgb, #c2410c, transparent 45%);
+  --color-tools-glow:        color-mix(in srgb, #c2410c, transparent 66%);
 
-  --color-projects-solid:    #0cb8f7;                  /* electric cyan */
-  --color-projects-surface:  color-mix(in srgb, #0cb8f7, transparent 86%);
-  --color-projects-border:   color-mix(in srgb, #0cb8f7, transparent 45%);
-  --color-projects-glow:     color-mix(in srgb, #0cb8f7, transparent 66%);
+  --color-projects-solid:    #0d8c3f;                  /* deep neon green */
+  --color-projects-surface:  color-mix(in srgb, #0d8c3f, transparent 86%);
+  --color-projects-border:   color-mix(in srgb, #0d8c3f, transparent 45%);
+  --color-projects-glow:     color-mix(in srgb, #0d8c3f, transparent 66%);
 
   --color-path-best-solid:   #248a3d;                  /* deep green — readable on white */
   --color-path-best-surface: rgba(52,199,89,0.12);
@@ -243,32 +243,33 @@
      interpolate through green in oklch. Generated / retuned via
      /accent-retune. */
 
-  /* ---- Learn: electric neon green → pure yellow ---- */
-  --learn-solid:   color-mix(in oklch, #16d94a 78%, black);
-  --learn-border:  color-mix(in srgb, color-mix(in oklch, #16d94a 72%, #ffdc00), transparent 45%);
-  --learn-glow:    color-mix(in srgb, color-mix(in oklch, #16d94a 72%, #ffdc00), transparent 66%);
-  --learn-surface: color-mix(in srgb, color-mix(in oklch, #16d94a 45%, #ffdc00), transparent 86%);
-  --learn-warm:    color-mix(in oklch, #16d94a 45%, #ffdc00);
-  --learn-hover:   color-mix(in oklch, color-mix(in oklch, #16d94a 78%, black) 85%, black);
-  --learn-soft:    color-mix(in oklch, color-mix(in oklch, #16d94a 45%, #ffdc00) 40%, white);
+  /* ---- Learn: deep electric blue → pure yellow (overlap with Projects
+     green in mid-stops is acceptable per feedback_tint_overlap_ok) ---- */
+  --learn-solid:   color-mix(in oklch, #07678f 78%, black);
+  --learn-border:  color-mix(in srgb, color-mix(in oklch, #07678f 72%, #ffdc00), transparent 45%);
+  --learn-glow:    color-mix(in srgb, color-mix(in oklch, #07678f 72%, #ffdc00), transparent 66%);
+  --learn-surface: color-mix(in srgb, color-mix(in oklch, #07678f 45%, #ffdc00), transparent 86%);
+  --learn-warm:    color-mix(in oklch, #07678f 45%, #ffdc00);
+  --learn-hover:   color-mix(in oklch, color-mix(in oklch, #07678f 78%, black) 85%, black);
+  --learn-soft:    color-mix(in oklch, color-mix(in oklch, #07678f 45%, #ffdc00) 40%, white);
 
-  /* ---- Projects: electric cyan → amber (NOT pure yellow — interp thru green) ---- */
-  --projects-solid:   color-mix(in oklch, #0cb8f7 78%, black);
-  --projects-border:  color-mix(in srgb, color-mix(in oklch, #0cb8f7 72%, #ffbe0a), transparent 45%);
-  --projects-glow:    color-mix(in srgb, color-mix(in oklch, #0cb8f7 72%, #ffbe0a), transparent 66%);
-  --projects-surface: color-mix(in srgb, color-mix(in oklch, #0cb8f7 45%, #ffbe0a), transparent 86%);
-  --projects-warm:    color-mix(in oklch, #0cb8f7 45%, #ffbe0a);
-  --projects-hover:   color-mix(in oklch, color-mix(in oklch, #0cb8f7 78%, black) 85%, black);
-  --projects-soft:    color-mix(in oklch, color-mix(in oklch, #0cb8f7 45%, #ffbe0a) 40%, white);
+  /* ---- Projects: deep neon green → pure yellow ---- */
+  --projects-solid:   color-mix(in oklch, #0d8c3f 78%, black);
+  --projects-border:  color-mix(in srgb, color-mix(in oklch, #0d8c3f 72%, #ffdc00), transparent 45%);
+  --projects-glow:    color-mix(in srgb, color-mix(in oklch, #0d8c3f 72%, #ffdc00), transparent 66%);
+  --projects-surface: color-mix(in srgb, color-mix(in oklch, #0d8c3f 45%, #ffdc00), transparent 86%);
+  --projects-warm:    color-mix(in oklch, #0d8c3f 45%, #ffdc00);
+  --projects-hover:   color-mix(in oklch, color-mix(in oklch, #0d8c3f 78%, black) 85%, black);
+  --projects-soft:    color-mix(in oklch, color-mix(in oklch, #0d8c3f 45%, #ffdc00) 40%, white);
 
-  /* ---- Tools: saturated warm orange → warm yellow ---- */
-  --tools-solid:   color-mix(in oklch, #ff6a1a 78%, black);
-  --tools-border:  color-mix(in srgb, color-mix(in oklch, #ff6a1a 72%, #ffc200), transparent 45%);
-  --tools-glow:    color-mix(in srgb, color-mix(in oklch, #ff6a1a 72%, #ffc200), transparent 66%);
-  --tools-surface: color-mix(in srgb, color-mix(in oklch, #ff6a1a 45%, #ffc200), transparent 86%);
-  --tools-warm:    color-mix(in oklch, #ff6a1a 45%, #ffc200);
-  --tools-hover:   color-mix(in oklch, color-mix(in oklch, #ff6a1a 78%, black) 85%, black);
-  --tools-soft:    color-mix(in oklch, color-mix(in oklch, #ff6a1a 45%, #ffc200) 40%, white);
+  /* ---- Tools: deep electric orange → pure yellow ---- */
+  --tools-solid:   color-mix(in oklch, #c2410c 78%, black);
+  --tools-border:  color-mix(in srgb, color-mix(in oklch, #c2410c 72%, #ffdc00), transparent 45%);
+  --tools-glow:    color-mix(in srgb, color-mix(in oklch, #c2410c 72%, #ffdc00), transparent 66%);
+  --tools-surface: color-mix(in srgb, color-mix(in oklch, #c2410c 45%, #ffdc00), transparent 86%);
+  --tools-warm:    color-mix(in oklch, #c2410c 45%, #ffdc00);
+  --tools-hover:   color-mix(in oklch, color-mix(in oklch, #c2410c 78%, black) 85%, black);
+  --tools-soft:    color-mix(in oklch, color-mix(in oklch, #c2410c 45%, #ffdc00) 40%, white);
 
   /* Neutral --accent-* defaults. Consumers outside a section scope
      (toasts, modals, etc.) see greyscale at rest. Section / panel / chip
@@ -587,6 +588,26 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
     0 1px 0 rgba(255,255,255,0.80),
     0 -0.5px 0.5px rgba(0,0,0,0.20);
 }
+/* M10.13 — active / raised buttons inherit the same pressed-in text
+   recipe as inactive glass labels, so the text reads as carved into
+   the button surface regardless of state. Consistent button grammar.
+   Color stays var(--text-1) for legibility on the lit surfaces;
+   only the shadow direction carries the 3D pressed-in illusion.
+   Applied to: active nav chip, activated / hover Dashboard CTA,
+   active filter chip. */
+.chip.is-active,
+.dash-panel.is-activated .dash-action-primary,
+.dash-panel.is-activated .dash-action-learn,
+.dash-panel.is-activated .dash-action-tools,
+.dash-action-primary:hover,
+.dash-action-learn:hover,
+.dash-action-tools:hover,
+.filter-chip.is-active {
+  color: #050405;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.75),
+    0 -0.5px 0.5px rgba(0,0,0,0.18);
+}
 /* M9.9 — parity: every modal's sub-title/eyebrow leaf-text inherits the
    same impressed recipe so titles read as "etched into glass" across
    lesson/quiz, storage, backup, and pin-picker. Applied only to plain
@@ -781,10 +802,13 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   background: var(--sec, var(--text-3));
   flex-shrink: 0;
 }
+/* M10.13 — section-title accent bar reads the MAIN (raw base) color, not
+   the stop-1 dark legibility color. Uses the static identity tokens
+   (--color-{section}-solid) which hold the undarkened neon base hex. */
 .section[data-section="home"]     .section-head h2::before { background: var(--text-3); }
-.section[data-section="learn"]    .section-head h2::before { background: var(--accent-solid); }
-.section[data-section="tools"]    .section-head h2::before { background: var(--accent-solid); }
-.section[data-section="projects"] .section-head h2::before { background: var(--accent-solid); }
+.section[data-section="learn"]    .section-head h2::before { background: var(--color-learn-solid); }
+.section[data-section="tools"]    .section-head h2::before { background: var(--color-tools-solid); }
+.section[data-section="projects"] .section-head h2::before { background: var(--color-projects-solid); }
 .section-head-actions {
   display: flex; align-items: flex-end; gap: 6px;
   flex-wrap: wrap;
@@ -2580,10 +2604,13 @@ body.modal-open { overflow: hidden; }
     "grab  title";
   align-content: center;
   column-gap: 12px;
-  row-gap: 3px;
+  row-gap: 5px;
   align-items: start;
-  padding: 10px 12px;
-  min-height: 64px;
+  /* M10.19 — padding bumped 10/12 → 14/16 so content doesn't crowd
+     the edges. Row-gap 3 → 5 for more vertical breathing between
+     row 1 (breadcrumb + state pill) and row 2 (title). */
+  padding: 14px 16px;
+  min-height: 68px;
   border-radius: var(--radius-sm);
   /* M10.5 — subtle top-to-bottom gradient so tiles read as a distinct
      layer against the near-white panel. Was a flat 45% mix that blended
@@ -2663,7 +2690,11 @@ body.modal-open { overflow: hidden; }
   transition: color 0.18s var(--ease-premium), background 0.18s var(--ease-premium);
 }
 .dash-tile-grab:hover { color: var(--text-2); background: rgba(0,0,0,0.04); }
-.dash-tile-grab[data-empty="1"] { visibility: hidden; pointer-events: none; }
+/* M10.18 — grab handle full-opacity across every list-item tile, even
+   non-sortable ones. The affordance reads identically on Learn /
+   Projects / Tools; only pointer-events differ so a non-sortable
+   handle doesn't intercept taps meant for the tile body. */
+.dash-tile-grab[data-empty="1"] { pointer-events: none; }
 /* M9.19a.3 — bump inline grab SVG for readability at arm's length on
    phone. The grab button stays 28x44; the glyph itself goes from 14x18
    to 18x22 so the ⋮⋮ dots read clearly across the tile hierarchy. */
@@ -2684,7 +2715,14 @@ body.modal-open { overflow: hidden; }
      1-line ellipsis; still the content anchor, just quieter. */
   font-size: 14px;
   font-weight: 500;
+  /* M10.14 — title reads as debossed into the tile surface. Slightly
+     lighter text-shadow than the active-button pressed recipe so the
+     title doesn't shout; same direction (highlight below, shadow
+     above) so it feels carved into the tile, not floating. */
   color: var(--text-1);
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.60),
+    0 -0.5px 0.5px rgba(0,0,0,0.14);
   letter-spacing: -0.005em;
   white-space: nowrap;
   overflow: hidden;
@@ -2774,24 +2812,14 @@ body.modal-open { overflow: hidden; }
   white-space: nowrap;
   flex-shrink: 0;
 }
-.dash-tile-duration {
-  grid-row: 1;
-  grid-column: 1;
-  width: 40px;
-  height: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--text-1) 3%, transparent);
-  color: var(--text-2);
-  font-size: 10.5px;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0;
-  white-space: nowrap;
+/* M10.17 — duration removed from the CONDENSED tile only. The
+   expanded detail card (.dash-tile-expanded) renders its own copy
+   and keeps it visible — scoped hide via direct descendant of
+   .dash-tile so the expand card isn't affected. */
+.dash-tile > .dash-tile-duration,
+.dash-tile-row1 .dash-tile-duration,
+.dash-tile-trailing .dash-tile-duration {
+  display: none;
 }
 /* M9.19a.5 — empty duration slot hides entirely (was a muted em-dash).
    Learn items now default to 10m when minutes isn't set; only item
@@ -2802,15 +2830,15 @@ body.modal-open { overflow: hidden; }
   visibility: hidden;
 }
 .dash-tile-state {
-  /* M9.19a.11c — width bumped 84 -> 100px to accommodate "NOT STARTED"
-     (longest state label). Legacy grid-row/grid-column props removed
-     (the trailing cluster is inline-flex now, not a nested grid). */
-  width: 100px;
+  /* M10.15 — pill sizes to its label. Fixed width retired (was 100px
+     to fit "NOT STARTED"); "CONTINUE" / "DONE" were wasting padding.
+     Inline-flex + hug-content via padding; height stays fixed so the
+     row-1 cluster doesn't reflow vertically. */
   height: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 4px;
+  padding: 0 8px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: color-mix(in srgb, var(--text-1) 5%, transparent);
@@ -2820,11 +2848,14 @@ body.modal-open { overflow: hidden; }
   text-transform: uppercase;
   letter-spacing: 0.06em;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
+/* M10.20 — active / lifecycle states all inherit the section's accent
+   triad: CONTINUE (in_progress / resume) on Learn, OPEN / RESUME on
+   Projects, USING on Tools. Since --accent-* is already scoped per
+   panel via .dash-panel:has(...), one rule covers all three sections. */
 .dash-tile-state[data-state="in_progress"],
 .dash-tile-state[data-state="resume"],
+.dash-tile-state[data-state="open"],
 .dash-tile-state[data-state="using"] {
   color: var(--accent-solid, var(--text-1));
   border-color: var(--accent-border, var(--border));
@@ -7054,7 +7085,8 @@ body.modal-open { overflow: hidden; }
    glow per tab. The tab color lives on the border, not the fill. */
 .chip.is-active {
   color: var(--text-1);
-  text-shadow: none;
+  /* M10.13 — text-shadow now comes from the .label-embossed-grouping
+     rule above; don't reset it here. */
   background: var(--bg-2);
   border-color: var(--border-strong);
   box-shadow:
