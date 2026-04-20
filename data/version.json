@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.5",
+  "version": "0.7.0-dev.5.1",
   "milestone": "M9.4b",
-  "milestoneTitle": "Phase M9.4b — Learn swipe gestures + mastery signal: swipe-left on any .learn-item (lesson or academy course) marks it mastered in clhub.v1.mastery and drops any pin in one move. Items with mastered or completed state now bucket into the Done zone on the next render. A 5s bottom-center toast with an Undo button reverses the swipe — Undo clears the mastery write and (if it was pinned beforehand) restores the saves entry. Pointer-events-based swipe handler with touch-action: pan-y preserves iOS vertical scroll; dx < -80 with |dy| < 36 commits, anything smaller resets with a 200ms animation. Capture-phase click suppression keeps swipes from double-firing into openLesson or anchor navigation. Added ●ᴹ mastery badge to the card head for any item in Done by mastery. Unified mastery key scheme — lesson:<slug> / course:<slug> / tool:<toolId> — documented in data/schema.md so M9.7 Tools catalog (●ᴹ on tool cards + Your stack bucket) reads the same store. Mastery persists across reloads. Known gap: no un-master affordance outside the 5s Undo window; M9.7 Your-stack strip will likely surface that.",
-  "deployedAt": "2026-04-20T00:36Z",
+  "milestoneTitle": "Phase M9.4b — fix: swipe-left gesture wasn't firing on iOS because Safari cancels pointer events on a touch-action: pan-y element as soon as the gesture commits horizontal. Rewired wireLearnRowGestures with a dual-path handler: touchstart/touchmove/touchend (passive: false on move) calls preventDefault() the first frame we lock horizontal, which keeps the drag alive; pointerdown/move/up retained for desktop mouse. Shared state machine with a horizontalLocked flag so we only block vertical scroll once the user has clearly committed left.",
+  "deployedAt": "2026-04-20T00:47Z",
   "commitSha": ""
 }

@@ -1776,8 +1776,15 @@
   const LEARN_SWIPE_VERTICAL_SLOP = 36;                          // |dy| above this = treat as scroll
   let learnToastTimer = null;
   function wireLearnRowGestures(row) {
+    // iOS Safari cancels a pointer as soon as a gesture on
+    // touch-action: pan-y heads horizontal. So for touch we use touch*
+    // events + preventDefault on the horizontal-commit frame (requires
+    // passive: false) to keep the drag alive. For mouse we still use
+    // pointer events so desktop click-and-drag works.
     let startX = 0, startY = 0, dx = 0, dy = 0;
     let tracking = false;
+    let horizontalLocked = false;    // once true, we've claimed the gesture
+    let activePointerType = "";      // "touch" | "mouse"
     const reset = (animate) => {
       row.style.transition = animate
         ? "transform 0.2s var(--ease-premium), opacity 0.2s var(--ease-premium)"
@@ -1785,29 +1792,38 @@
       row.style.transform = "";
       row.style.opacity = "";
     };
-    row.addEventListener("pointerdown", (e) => {
-      if (e.pointerType === "mouse" && e.button !== 0) return;
-      startX = e.clientX;
-      startY = e.clientY;
+    const begin = (x, y, ptype) => {
+      startX = x;
+      startY = y;
       dx = dy = 0;
       tracking = true;
+      horizontalLocked = false;
+      activePointerType = ptype;
       row.dataset.learnSwipeHandled = "0";
       row.style.transition = "none";
-    });
-    row.addEventListener("pointermove", (e) => {
-      if (!tracking) return;
-      dx = e.clientX - startX;
-      dy = e.clientY - startY;
-      if (Math.abs(dy) > LEARN_SWIPE_VERTICAL_SLOP) {
-        tracking = false;
-        reset(true);
-        return;
+    };
+    const update = (x, y) => {
+      if (!tracking) return false;
+      dx = x - startX;
+      dy = y - startY;
+      if (!horizontalLocked) {
+        if (Math.abs(dy) > LEARN_SWIPE_VERTICAL_SLOP && Math.abs(dy) > Math.abs(dx)) {
+          // Gesture committed to vertical scroll — release and let the
+          // browser handle it. No reset animation; nothing was painted.
+          tracking = false;
+          return false;
+        }
+        if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) {
+          horizontalLocked = true;
+        }
       }
-      if (Math.abs(dx) > Math.abs(dy) && dx < -6) {
+      if (horizontalLocked && dx < 0) {
         row.style.transform = `translateX(${dx}px)`;
         row.style.opacity = String(Math.max(0.35, 1 + dx / 260));
+        return true;
       }
-    });
+      return false;
+    };
     const finish = () => {
       if (!tracking) return;
       tracking = false;
@@ -1820,17 +1836,53 @@
         const id = row.dataset.learnId;
         const title = row.querySelector(".learn-item-title")?.textContent || "";
         setTimeout(() => handleLearnSwipeLeft(type, id, title), 200);
-      } else {
+      } else if (horizontalLocked) {
         reset(true);
+      } else {
+        reset(false);
       }
     };
-    row.addEventListener("pointerup", finish);
-    row.addEventListener("pointercancel", () => {
+    // --- Touch path (iOS / Android) ---
+    row.addEventListener("touchstart", (e) => {
+      if (e.touches.length !== 1) return;
+      const t = e.touches[0];
+      begin(t.clientX, t.clientY, "touch");
+    }, { passive: true });
+    row.addEventListener("touchmove", (e) => {
+      if (!tracking || e.touches.length !== 1) return;
+      const t = e.touches[0];
+      const didPaint = update(t.clientX, t.clientY);
+      // Once we own the horizontal gesture, tell the browser to stop
+      // treating it as a scroll candidate. Without this, Safari commits
+      // to vertical scroll ~40px in and the swipe never fires.
+      if (horizontalLocked && didPaint) e.preventDefault();
+    }, { passive: false });
+    row.addEventListener("touchend", finish);
+    row.addEventListener("touchcancel", () => {
       tracking = false;
-      reset(true);
+      if (horizontalLocked) reset(true); else reset(false);
     });
-    // Capture-phase click suppression so swipe doesn't double-fire into
-    // openLesson (lessons) or anchor navigation (academy courses).
+    // --- Mouse path (desktop) ---
+    row.addEventListener("pointerdown", (e) => {
+      if (e.pointerType !== "mouse") return;
+      if (e.button !== 0) return;
+      begin(e.clientX, e.clientY, "mouse");
+    });
+    row.addEventListener("pointermove", (e) => {
+      if (!tracking || activePointerType !== "mouse") return;
+      update(e.clientX, e.clientY);
+    });
+    row.addEventListener("pointerup", (e) => {
+      if (activePointerType !== "mouse") return;
+      finish();
+    });
+    row.addEventListener("pointercancel", () => {
+      if (activePointerType !== "mouse") return;
+      tracking = false;
+      if (horizontalLocked) reset(true); else reset(false);
+    });
+    // Capture-phase click suppression so a committed swipe doesn't
+    // also fire openLesson (lessons) or anchor navigation (academy).
     row.addEventListener("click", (e) => {
       if (row.dataset.learnSwipeHandled === "1") {
         e.preventDefault();
