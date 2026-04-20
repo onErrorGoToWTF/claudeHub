@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.7",
-  "milestone": "M9.15a",
-  "milestoneTitle": "Phase M9.15a — Activation band tightens from ~25% to ~20% (rootMargin -37.5% → -40%). Same activation model as M9.15; only the observer window narrows. Fewer panels are lit at once, making the active panel read more clearly as the focus.",
-  "deployedAt": "2026-04-20T05:02Z",
+  "version": "0.7.1-dev.8",
+  "milestone": "M9.16a",
+  "milestoneTitle": "Phase M9.16a — Activation band vertical center raised 8% above viewport center. Band height unchanged at 20%; only the midpoint shifts from 50% → 42% of viewport height (rootMargin -40%/-40% → -32%/-48%), so the activation sweet spot sits slightly above the screen midline. Comment block above the observer refreshed to reflect the new off-center placement.",
+  "deployedAt": "2026-04-20T04:44Z",
   "commitSha": ""
 }

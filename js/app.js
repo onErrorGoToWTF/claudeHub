@@ -669,11 +669,13 @@
     document.addEventListener("DOMContentLoaded", registerStaticActivations, { once: true });
   }
 
-  // M9.12 → M9.13 — scroll-center activation for Dashboard panels +
-  // Learn zones. A bidirectional IntersectionObserver toggles
-  // .is-activated while the panel sits in the viewport's ~50% center
-  // band (rootMargin -25% top/bottom). CSS drives only the shadow
-  // lift on that class — tile bg stays at one baseline value, and
+  // M9.12 → M9.13 → M9.16a — scroll-center activation for Dashboard
+  // panels + Learn zones. A bidirectional IntersectionObserver toggles
+  // .is-activated while the panel sits in a 20%-tall band whose center
+  // is at 42% of viewport height (raised 8% above center in M9.16a so
+  // the sweet spot reads slightly above the screen midline). CSS drives
+  // only the shadow lift on that class — tile bg stays at one baseline
+  // value, and
   // the darker/faded look at the top/bottom edges is produced by
   // the fixed html::after vignette overlay (spatial, not animated).
   // That separation means the overlay can be tuned independently of
@@ -685,7 +687,7 @@
         for (const e of entries) {
           e.target.classList.toggle("is-activated", e.isIntersecting);
         }
-      }, { root: null, rootMargin: "-40% 0px -40% 0px", threshold: 0 })
+      }, { root: null, rootMargin: "-32% 0px -48% 0px", threshold: 0 })
     : null;
   function registerCenterActivations() {
     if (!centerBandIO) return;
