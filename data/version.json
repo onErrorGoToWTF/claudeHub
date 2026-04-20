@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.52",
-  "milestone": "M9.19a.4",
-  "milestoneTitle": "Phase M9.19a.4 — Drag lift goes brighter, not darker. Apple HIG gestures-and-drag.md §4 says lift = transform: scale(~1.05) + shadow increase; no mention of darkening. The previous drag visual inherited .dash-tile:active's 'color-mix(var(--bg-0) 88%, #000000)' darken because the finger stays held down during a drag — user correctly flagged the tile going darker instead of reading as lifted. Fix: gate the :active darken behind :not(.is-dragging), and give .is-dragging (plus .is-dragging:hover / :active to trump any sticky state) an explicit pure-white background so the lifted tile reads as the brightest and most opaque version of itself. Shadow kept as the elevation signal (24px -14 blur for the deep cast shadow, 8px -6 for the close shadow). Specular highlight bumped 0.70 -> 0.80 alpha to match the extra top-edge brightness a lifted page would have. border-color stays hairline so the page edge doesn't harden.",
-  "deployedAt": "2026-04-20T19:20Z",
+  "version": "0.7.1-dev.53",
+  "milestone": "M9.19a.5",
+  "milestoneTitle": "Phase M9.19a.5 — Duration chip always carries a time on task tiles. User flagged the em-dash '—' looking dumb when a Learn item has no authored minutes. renderLearnItemRow and renderDashLearn now default to 10m whenever minutes isn't set — 'roughly a short tutorial' placeholder. Future authored content will require minutes at authoring time (tutorial creation will enforce it); defaulting here keeps the chip populated in the meantime so every task tile reads as something actionable. Projects (no duration concept) keep data-empty='1'; the CSS rule .dash-tile-duration[data-empty='1'] now sets visibility: hidden instead of rendering a muted em-dash, so the 40px slot stays reserved for cross-surface alignment but no filler text appears on project tiles.",
+  "deployedAt": "2026-04-20T19:30Z",
   "commitSha": ""
 }

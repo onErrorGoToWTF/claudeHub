@@ -2511,10 +2511,13 @@ body.modal-open { overflow: hidden; }
   letter-spacing: 0;
   white-space: nowrap;
 }
+/* M9.19a.5 — empty duration slot hides entirely (was a muted em-dash).
+   Learn items now default to 10m when minutes isn't set; only item
+   types without a duration concept (projects, tools-in-use) set
+   data-empty="1" and the 40px slot stays reserved-but-invisible for
+   cross-surface alignment. */
 .dash-tile-duration[data-empty="1"] {
-  color: var(--text-3);
-  background: transparent;
-  border-color: rgba(0,0,0,0.05);
+  visibility: hidden;
 }
 .dash-tile-state {
   grid-row: 1;

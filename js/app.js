@@ -2025,9 +2025,14 @@
     if (item.kind) eyebrowParts.push(item.kind);
     if (item.trackLabel) eyebrowParts.push(item.trackLabel);
     const eyebrow = eyebrowParts.join(" · ");
-    // Duration chip — Learn items usually have minutes; em-dash fallback.
-    const minutesLabel = item.minutes ? `${item.minutes}m` : "—";
-    const durationEmpty = item.minutes ? "" : ' data-empty="1"';
+    // M9.19a.5 — Duration chip always has a value for Learn items.
+    // When lessons.json / drafts don't carry a minutes field yet, fall
+    // back to 10m as a "roughly a short tutorial" placeholder. Future
+    // authored content will require minutes at authoring time; defaulting
+    // here just keeps the chip from looking empty until then.
+    const minutes = item.minutes || 10;
+    const minutesLabel = `${minutes}m`;
+    const durationEmpty = "";
     // State pill vocab: Start / Continue / Done (extensible to Retake /
     // Review / Locked / New — styling keyed off data-state).
     const stateRaw = item.state === "completed" ? "completed"
@@ -3386,8 +3391,9 @@
       if (trackLabel) eyebrowParts.push(trackLabel);
       eyebrowParts.push("Lesson");
       const eyebrow = eyebrowParts.join(" · ");
-      const minutesLabel = l.minutes ? `${l.minutes}m` : "—";
-      const durationEmpty = l.minutes ? "" : ' data-empty="1"';
+      // M9.19a.5 — default 10m when lessons.json doesn't carry minutes.
+      const minutesLabel = `${l.minutes || 10}m`;
+      const durationEmpty = "";
       const pinned   = l.__placeholder ? false : isLearnItemPinned("lesson", l.slug);
       const mastered = l.__placeholder ? false : isMastered("lesson", l.slug);
       const pinLabel    = pinned   ? "Remove from Up Next" : "Move to Up Next";
