@@ -2792,7 +2792,7 @@ body.modal-open { overflow: hidden; }
 }
 .your-stack-empty {
   font-size: 13px;
-  color: var(--text-3);
+  color: color-mix(in srgb, var(--text-2) 50%, var(--text-3));
   font-style: italic;
 }
 

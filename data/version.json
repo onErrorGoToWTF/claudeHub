@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.15",
-  "milestone": "M9.16g",
-  "milestoneTitle": "Phase M9.16g — Bootstrap ghost strip slightly louder. Dashed border 25% → 35% accent-solid, background tint 3% → 5%. Keeps the reserved-slot feel but reads clearly on phone.",
-  "deployedAt": "2026-04-20T05:54Z",
+  "version": "0.7.1-dev.16",
+  "milestone": "M9.16h",
+  "milestoneTitle": "Phase M9.16h — Your stack empty-state text slightly darker. color went from var(--text-3) (0.36α) to a 50/50 mix of text-2 and text-3 (≈0.50α) so the italic sentence reads without being read-noise.",
+  "deployedAt": "2026-04-20T05:56Z",
   "commitSha": ""
 }
