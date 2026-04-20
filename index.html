@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="css/style.css?v=1.0.0">
+<link rel="stylesheet" href="css/style.css?v=1.0.1-dev.15">
 <link rel="stylesheet" href="css/overrides.css?v=1.0.0">
 </head>
 <body>
@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <article class="dash-panel glass">
+    <article class="dash-panel glass" data-panel-key="learn" data-collapsed="true" aria-expanded="false">
       <header class="dash-panel-head">
         <h3 class="dash-panel-title">Learn</h3>
       </header>
@@ -60,9 +60,13 @@
       <div class="dash-panel-body" id="dash-learn-body">
         <p class="dash-empty">Loading lessons…</p>
       </div>
+      <div class="dash-panel-footer" aria-hidden="true">
+        <span class="dash-panel-footer-label" data-collapsed-label="Tap for courses &amp; quizzes in progress" data-expanded-label="Tap to hide">Tap for courses &amp; quizzes in progress</span>
+        <span class="dash-panel-footer-chev"><svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.25L8 10.75L12.5 6.25"/></svg></span>
+      </div>
     </article>
 
-    <article class="dash-panel glass">
+    <article class="dash-panel glass" data-panel-key="projects" data-collapsed="true" aria-expanded="false">
       <header class="dash-panel-head">
         <h3 class="dash-panel-title">Projects</h3>
       </header>
@@ -77,9 +81,13 @@
       <div class="dash-panel-body" id="dash-projects-body">
         <p class="dash-empty">No projects in flight yet — start one and your progress lands here.</p>
       </div>
+      <div class="dash-panel-footer" aria-hidden="true">
+        <span class="dash-panel-footer-label" data-collapsed-label="Tap for saved projects" data-expanded-label="Tap to hide">Tap for saved projects</span>
+        <span class="dash-panel-footer-chev"><svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.25L8 10.75L12.5 6.25"/></svg></span>
+      </div>
     </article>
 
-    <article class="dash-panel glass">
+    <article class="dash-panel glass" data-panel-key="tools" data-collapsed="true" aria-expanded="false">
       <header class="dash-panel-head">
         <h3 class="dash-panel-title">Tools</h3>
       </header>
@@ -92,21 +100,43 @@
         </g>
       </svg>
       <div class="dash-panel-body" id="dash-tools-body">
-        <button type="button" class="continue-row" data-tool-id="claude-pro-max">
-          <span class="continue-row-title">Claude Pro Max 20×</span>
-          <span class="continue-row-path">USING</span>
-          <div class="continue-row-meta">Primary coding + reasoning agent · Anthropic</div>
-        </button>
-        <button type="button" class="continue-row" data-tool-id="copilot-pro">
-          <span class="continue-row-title">GitHub Copilot Pro</span>
-          <span class="continue-row-path">USING</span>
-          <div class="continue-row-meta">In-editor completions + inline chat · Microsoft</div>
-        </button>
-        <button type="button" class="continue-row" data-tool-id="super-grok">
-          <span class="continue-row-title">SuperGrok Heavy</span>
-          <span class="continue-row-path">USING</span>
-          <div class="continue-row-meta">Real-time reasoning + X context · xAI</div>
-        </button>
+        <article class="dash-tile" data-tool-id="claude-pro-max" data-tool-name="Claude Pro Max 20×" data-tool-vendor="Anthropic" data-tool-tagline="Primary coding + reasoning agent." role="button" tabindex="0">
+          <button type="button" class="dash-tile-grab" data-empty="1" aria-hidden="true" tabindex="-1"></button>
+          <div class="dash-tile-row1">
+            <span class="dash-tile-kind">Tool &rsaquo; Anthropic</span>
+            <div class="dash-tile-trailing">
+              <span class="dash-tile-duration" data-empty="1">—</span>
+              <span class="dash-tile-state" data-state="using">Using</span>
+            </div>
+          </div>
+          <div class="dash-tile-title">Claude Pro Max 20×</div>
+        </article>
+        <article class="dash-tile" data-tool-id="copilot-pro" data-tool-name="GitHub Copilot Pro" data-tool-vendor="Microsoft" data-tool-tagline="In-editor completions + inline chat." role="button" tabindex="0">
+          <button type="button" class="dash-tile-grab" data-empty="1" aria-hidden="true" tabindex="-1"></button>
+          <div class="dash-tile-row1">
+            <span class="dash-tile-kind">Tool &rsaquo; Microsoft</span>
+            <div class="dash-tile-trailing">
+              <span class="dash-tile-duration" data-empty="1">—</span>
+              <span class="dash-tile-state" data-state="using">Using</span>
+            </div>
+          </div>
+          <div class="dash-tile-title">GitHub Copilot Pro</div>
+        </article>
+        <article class="dash-tile" data-tool-id="super-grok" data-tool-name="SuperGrok Heavy" data-tool-vendor="xAI" data-tool-tagline="Real-time reasoning + X context." role="button" tabindex="0">
+          <button type="button" class="dash-tile-grab" data-empty="1" aria-hidden="true" tabindex="-1"></button>
+          <div class="dash-tile-row1">
+            <span class="dash-tile-kind">Tool &rsaquo; xAI</span>
+            <div class="dash-tile-trailing">
+              <span class="dash-tile-duration" data-empty="1">—</span>
+              <span class="dash-tile-state" data-state="using">Using</span>
+            </div>
+          </div>
+          <div class="dash-tile-title">SuperGrok Heavy</div>
+        </article>
+      </div>
+      <div class="dash-panel-footer" aria-hidden="true">
+        <span class="dash-panel-footer-label" data-collapsed-label="Tap for tools in use" data-expanded-label="Tap to hide">Tap for tools in use</span>
+        <span class="dash-panel-footer-chev"><svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.25L8 10.75L12.5 6.25"/></svg></span>
       </div>
     </article>
 
@@ -636,6 +666,6 @@
   </div>
 </div>
 
-<script src="js/app.js?v=1.0.0" defer></script>
+<script src="js/app.js?v=1.0.1-dev.15" defer></script>
 </body>
 </html>

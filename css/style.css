@@ -2002,13 +2002,22 @@ body.modal-open { overflow: hidden; }
    accent-outlined icon anchors the right column spanning rows 1-2,
    body row spans both columns at the bottom. */
 .dash-panel {
-  padding: 18px 18px 16px;
+  padding: 18px 18px 12px;
   display: grid;
+  /* M10.10 — back to the original column order (title+CTA left, icon
+     right-anchored). M10.9d swap reverted in favor of Layout B: an
+     explicit debossed footer row now carries the tap-to-expand
+     affordance instead of relying on silent card-level tap discovery. */
   grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto auto;
+  /* Row 1: title · Row 2: CTA · Row 3: body (hidden when collapsed)
+     · Row 4: footer affordance (always visible). */
+  grid-template-rows: auto auto auto auto;
   column-gap: 14px;
   row-gap: 10px;
   align-items: start;
+  /* M10.9 — collapsible panels. Chevron is absolute-positioned
+     bottom-right; relative ensures it anchors to the panel. */
+  position: relative;
   /* M9.13 — activation now ONLY lifts the panel's shadow. The
      darker/faded look outside the center band is handled by the fixed
      html::after vignette overlay above — a purely spatial effect, no
@@ -2037,15 +2046,13 @@ body.modal-open { overflow: hidden; }
     0 18px 34px -18px rgba(30,20,10,0.18),
     0 6px 14px -8px rgba(30,20,10,0.10);
 }
-/* M9.15 — tiles / item containers inside an activated panel raise up
-   so the whole interior reads as a coordinated elevation event. Still
-   no accent color here (reserved for CTAs + icons). */
-.dash-panel.is-activated .continue-row,
-.dash-panel.is-activated .panel-tile,
-.dash-panel.is-activated .dash-tile,
-.learn-zone.is-activated .continue-row,
-.learn-zone.is-activated .panel-tile,
-.learn-zone.is-activated .dash-tile {
+/* M10.2 — tile-level activation is now per-tile, not cascaded from the
+   parent panel. Each .dash-tile is observed individually by centerBandIO
+   and lights up as it crosses the activation band. Panel activation is
+   unchanged (chrome only); tile elevation is its own event keyed off
+   .dash-tile.is-activated. Still no accent color here (reserved for
+   CTAs + icons). */
+.dash-tile.is-activated {
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.70),
     0 2px 4px rgba(0,0,0,0.04),
@@ -2054,13 +2061,18 @@ body.modal-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .dash-panel,
   .learn-zone,
+  .dash-tile,
   .panel-tile,
   .continue-row { transition: none; }
 }
-.dash-panel > .dash-panel-head { grid-column: 1; grid-row: 1; }
-.dash-panel > .dash-action     { grid-column: 1; grid-row: 2; align-self: start; justify-self: start; }
-.dash-panel > .dash-panel-icon { grid-column: 2; grid-row: 1 / span 2; align-self: end; justify-self: end; }
-.dash-panel > .dash-panel-body { grid-column: 1 / -1; grid-row: 3; }
+/* M10.10 — back to original positions. Title col 1 row 1, CTA col 1
+   row 2, icon col 2 rows 1-2 bottom-right-anchored, body spans cols
+   on row 3, footer (M10.10 affordance) spans cols on row 4. */
+.dash-panel > .dash-panel-head   { grid-column: 1; grid-row: 1; }
+.dash-panel > .dash-action       { grid-column: 1; grid-row: 2; align-self: start; justify-self: start; }
+.dash-panel > .dash-panel-icon   { grid-column: 2; grid-row: 1 / span 2; align-self: end; justify-self: end; }
+.dash-panel > .dash-panel-body   { grid-column: 1 / -1; grid-row: 3; }
+.dash-panel > .dash-panel-footer { grid-column: 1 / -1; grid-row: 4; }
 /* Near-white glass tone — Dashboard panels, the YouTube tile, and
    (M9.3) the Projects page's panel + Finder wrappers share this tone
    so they pop against the greige page. Linked via a single selector so
@@ -2158,6 +2170,91 @@ body.modal-open { overflow: hidden; }
     drop-shadow(0 0 3px var(--accent-glow));
 }
 .dash-panel-body { display: grid; gap: 6px; }
+
+/* M10.9 + M10.10 — collapsible Dashboard panels. Default first-visit
+   state is collapsed for all three (learn / projects / tools); state
+   persists per-panel in localStorage (see dashPanelState in js/app.js).
+   Tap anywhere on the panel card except the CTA toggles it. The
+   primary tap affordance is the .dash-panel-footer row (M10.10) — a
+   labeled, debossed strip at the bottom of the card that reads as
+   intent ("Tap for courses & quizzes in progress ⌄") and rotates its
+   chevron on expand. Opacity-only fade on expand body (~180ms);
+   collapse is instant (display:none) — matches the 'fades in content'
+   user directive and avoids layout animation. */
+
+/* Debossed footer affordance. Top hairline separates it from the CTA
+   row above. Label sits left, chevron right. Label text swaps via
+   data-collapsed (CSS-driven — collapsed = "Tap for …", expanded =
+   "Hide …") using pseudo-element content so render-site JS stays
+   untouched. Chevron rotates on expand. */
+.dash-panel-footer {
+  margin-top: 4px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0,0,0,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  /* M10.10b — discreet, not debossed. Flat muted text, no text-shadow.
+     Lower font-weight; label reads as a quiet footer hint rather than
+     a design-element label. */
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-3);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+.dash-panel-footer-chev {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* M10.10c — switched from unicode char (U+2304) to inline SVG so
+     glyph height no longer affects the footer row's computed height
+     (font metrics varied by platform / font stack). SVG has fixed
+     18x18 viewport; wrapper stays tight. color inherits via
+     currentColor from the footer's --text-3. */
+  width: 18px;
+  height: 18px;
+  line-height: 0;
+  transition: transform 0.22s var(--ease-premium);
+}
+.dash-panel-footer-chev svg { display: block; }
+.dash-panel:not([data-collapsed="true"]) .dash-panel-footer-chev {
+  transform: rotate(180deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash-panel-footer-chev { transition: none; }
+}
+
+.dash-panel[data-collapsed="true"] > .dash-panel-body {
+  display: none;
+}
+/* M10.9c — removed the collapsed-state padding/row-gap tighten.
+   Panel spacing should stay constant across collapsed/expanded so
+   the CTA button doesn't shift vertically when the panel toggles.
+   display:none on the body already removes it from grid flow, so
+   no phantom row-gap appears between the CTA and the (absent) body. */
+.dash-panel:not([data-collapsed="true"]) > .dash-panel-body {
+  animation: dash-panel-body-in 180ms var(--ease-premium);
+}
+@keyframes dash-panel-body-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash-panel:not([data-collapsed="true"]) > .dash-panel-body {
+    animation: none;
+  }
+}
+/* Signal clickability on the panel body (minus the CTA). The CTA
+   itself keeps its own cursor via .dash-action rules. */
+.dash-panel { cursor: pointer; }
+.dash-panel > .dash-action,
+.dash-panel > .dash-panel-icon { cursor: default; }
+.dash-panel > .dash-action { cursor: pointer; }
 .dash-charts-panel {
   display: flex;
   flex-direction: column;
@@ -2366,24 +2463,40 @@ body.modal-open { overflow: hidden; }
      Rows 4+: optional flags / coverage / progress.
      Removes the earlier "row 1 shared between eyebrow and status"
      competition so the title lane never shrinks. */
+  /* M10.6 — eyebrow row retired. Its content ({kind} · {trackLabel})
+     migrates into the new .dash-tile-kind breadcrumb pill on the LEFT
+     of row 1, alongside the existing duration + state on the right.
+     Row 1 is now a flex container .dash-tile-row1 with space-between.
+     M10.7 — explicit template only covers the two always-present rows
+     (row1 + title). Optional extras (flags / coverage / progress) set
+     grid-column: 2 and auto-flow into implicit rows below, so when
+     they're absent the grid has just 2 rows and align-content: center
+     vertically centers them within the tile's min-height. Previous
+     5-row template reserved row-gaps even when rows were empty, which
+     pushed the title off-center on short tiles. */
   grid-template-areas:
-    "grab  trailing"
-    "grab  eyebrow"
-    "grab  title"
-    "grab  flags"
-    "grab  coverage"
-    "grab  progress";
+    "grab  row1"
+    "grab  title";
+  align-content: center;
   column-gap: 12px;
   row-gap: 3px;
   align-items: start;
   padding: 10px 12px;
   min-height: 64px;
   border-radius: var(--radius-sm);
-  background: color-mix(in srgb, var(--bg-0) 45%, #ffffff);
-  border: 1px solid rgba(0,0,0,0.07);
+  /* M10.5 — subtle top-to-bottom gradient so tiles read as a distinct
+     layer against the near-white panel. Was a flat 45% mix that blended
+     into the panel; now 58% → 72% page-tone top-to-bottom (slightly
+     darker overall + gentle depth gradient). Inset specular highlight
+     at the top preserves the Apple-glass feel. Stays subtle; text
+     stays on a light-enough field to remain fully readable. */
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--bg-0) 58%, #ffffff) 0%,
+    color-mix(in srgb, var(--bg-0) 72%, #ffffff) 100%);
+  border: 1px solid rgba(0,0,0,0.09);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.65),
-    0 1px 2px rgba(0,0,0,0.04);
+    inset 0 1px 0 rgba(255,255,255,0.70),
+    0 1px 2px rgba(0,0,0,0.05);
   color: var(--text-1);
   font-family: inherit;
   text-align: left;
@@ -2398,7 +2511,11 @@ body.modal-open { overflow: hidden; }
     box-shadow   0.18s var(--ease-premium);
 }
 .dash-tile:hover {
-  background: color-mix(in srgb, var(--bg-0) 20%, #ffffff);
+  /* M10.5 — hover goes brighter than the new darker rest so the lift
+     still reads. Flat fill on hover (no gradient) — the brighten is
+     the signal; layering a gradient on top of the existing gradient
+     creates a muddy mid-hover snap. */
+  background: color-mix(in srgb, var(--bg-0) 28%, #ffffff);
   border-color: var(--accent-border, rgba(0,0,0,0.12));
   /* Soft blur-gradient glow (was a hard 3px spread ring that cut off
      sharply at the tile edges on narrow viewports). 20px blur + 0
@@ -2460,30 +2577,58 @@ body.modal-open { overflow: hidden; }
    emitted collapse cleanly (grid auto). */
 .dash-tile-title {
   grid-area: title;
-  /* M9.19a.11 — title bumped to 16px. It's now the prominent bottom
-     row of the stacked 3-row content column — the visual anchor
-     users scan to first. Still 1-line ellipsis. */
-  font-size: 16px;
-  font-weight: 600;
+  /* M10.4 — title reduced to 14px / 500 weight (was 16px / 600).
+     The 16px anchor read as too dominant on phone list scroll,
+     pulling focus away from eyebrow + trailing status. Still
+     1-line ellipsis; still the content anchor, just quieter. */
+  font-size: 14px;
+  font-weight: 500;
   color: var(--text-1);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0;
 }
-.dash-tile-eyebrow {
-  grid-area: eyebrow;
-  font-size: 11.5px;
-  color: var(--text-2);
-  letter-spacing: 0.01em;
+/* M10.6 — .dash-tile-eyebrow is deprecated. Its content (kind + track
+   as dot-separated plain text) merged into .dash-tile-kind as a
+   breadcrumb-style pill on the top-left. Render sites no longer emit
+   .dash-tile-eyebrow; CSS removed to prevent stray styling if any
+   caller still emits one. */
+
+/* M10.6 / M10.8 — breadcrumb kind label. Top-left of row 1. Format:
+   "Kind › Subcategory" (e.g. "Lesson › Skills", "Tool › Anthropic").
+   Not a pill — it's a hierarchy marker, not a status, so it inherits
+   the .label-debossed impressed-into-glass recipe (rgba text + paired
+   highlight/shadow text-shadow) rather than carrying its own chrome.
+   Reads as embedded into the tile surface, leaving the right-side
+   duration + state pills as the only actual pill elements in the row.
+   Still flex-shrinks + caps at 65% row-width so long labels never
+   eat the trailing cluster's space. */
+.dash-tile-kind {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0;
+  color: rgba(0,0,0,0.35);
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.80),
+    0 -0.5px 0.5px rgba(0,0,0,0.20);
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0;
+  max-width: 65%;
+  flex-shrink: 1;
 }
 .dash-tile-progress {
-  grid-area: progress;
+  /* M10.7 — grid-column 2 + auto row. Collapses out of layout when
+     absent (no reserved row, no reserved row-gap). */
+  grid-column: 2;
   height: 2px;
   background: var(--border);
   border-radius: 1px;
@@ -2506,17 +2651,27 @@ body.modal-open { overflow: hidden; }
    at the trailing edge of this cluster; the row itself stays a single
    line. The old bottom-row icons (pin / mastery / delete) retired
    in M9.19a.6 / M9.19a.7 — no longer a separate slot. */
-.dash-tile-trailing {
-  grid-area: trailing;
+/* M10.6 — .dash-tile-row1 wraps kind pill (left) + trailing cluster
+   (right) in a space-between flex row. Grid area "row1" replaces the
+   old "trailing" area that right-aligned a lone cluster. */
+.dash-tile-row1 {
+  grid-area: row1;
   align-self: center;
-  /* M9.19a.11 — status row sits alone at the top of the tile,
-     right-aligned within its own row. No longer shares a row with
-     eyebrow + title. */
-  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+  white-space: nowrap;
+}
+.dash-tile-trailing {
+  /* Now a child of .dash-tile-row1 flex parent; alignment handled
+     by the parent's justify-content: space-between. */
   display: inline-flex;
   align-items: center;
   gap: 6px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .dash-tile-duration {
   grid-row: 1;
@@ -2568,7 +2723,8 @@ body.modal-open { overflow: hidden; }
   text-overflow: ellipsis;
 }
 .dash-tile-state[data-state="in_progress"],
-.dash-tile-state[data-state="resume"] {
+.dash-tile-state[data-state="resume"],
+.dash-tile-state[data-state="using"] {
   color: var(--accent-solid, var(--text-1));
   border-color: var(--accent-border, var(--border));
   background: var(--accent-surface, color-mix(in srgb, var(--text-1) 6%, transparent));
@@ -2708,7 +2864,8 @@ body.modal-open { overflow: hidden; }
    optional icon. Absent when no flags active; horizontal flex wraps
    if more flags than row width allows. */
 .dash-tile-flags {
-  grid-area: flags;
+  /* M10.7 — collapses out of layout when absent. See .dash-tile-progress. */
+  grid-column: 2;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -2756,7 +2913,8 @@ body.modal-open { overflow: hidden; }
    the retired .learn-item-coverage. Blank state gets an italic
    "No existing material" pill. */
 .dash-tile-coverage {
-  grid-area: coverage;
+  /* M10.7 — collapses out of layout when absent. See .dash-tile-progress. */
+  grid-column: 2;
   display: flex;
   flex-wrap: wrap;
   gap: 4px;

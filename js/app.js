@@ -345,6 +345,22 @@
   let currentLearnFilter = "all";
   let currentLearnSort = "recent";
 
+  // M10.2 — centerBandIO hoisted above the initial applyRoute() at L653.
+  // observeDashTiles is called from renderDashLearn / renderContinueCard /
+  // renderLearn via the initial applyFilter("home") → replayHomeAnimations
+  // chain, and it reads centerBandIO. Originally declared adjacent to
+  // registerCenterActivations (~L816), which sits in the TDZ at that
+  // initial call and would throw ReferenceError. Keep the hookup /
+  // registerCenterActivations function further down — only the const
+  // initialization has to live here.
+  const centerBandIO = ("IntersectionObserver" in window)
+    ? new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          e.target.classList.toggle("is-activated", e.isIntersecting);
+        }
+      }, { root: null, rootMargin: "-20% 0px -28% 0px", threshold: 0 })
+    : null;
+
   // LLM face-off flip-card state (M8.4). Hoisted so renderLlmFaceoff —
   // which fires from replayHomeAnimations during the initial applyFilter —
   // can read them without hitting a TDZ ReferenceError.
@@ -652,6 +668,86 @@
   // M9.5a — initial load: respect hash, else the .is-active chip's default.
   applyRoute();
 
+  // M10.1 — Dashboard Tools panel tiles are static .dash-tile markup in
+  // index.html (three USING aliases). Wire tap-to-expand once so they
+  // match the Learn/Projects panel grammar.
+  document.querySelectorAll('#dash-tools-body .dash-tile[data-tool-id]').forEach((tile) => {
+    const navigate = (e) => {
+      if (e.target.closest(".dash-tile-grab")) return;
+      e.preventDefault();
+      openTileExpand(tile);
+    };
+    tile.addEventListener("click", navigate);
+    tile.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); navigate(e); }
+    });
+  });
+
+  // M10.9 — Collapsible Dashboard panels (Learn / Projects / Tools).
+  // Default first-visit state: collapsed (HTML ships with
+  // data-collapsed="true"). Per-panel state persists in localStorage
+  // under clhub.v1.dashPanel.{key}. Tap anywhere on the panel card
+  // except the CTA button or a .dash-tile toggles the panel; the CTA
+  // and tiles keep their own behavior (navigate / open tile expand).
+  // Chevron rotation + opacity fade-in are CSS-driven.
+  const DASH_PANEL_STATE_KEY_PREFIX = "clhub.v1.dashPanel.";
+  function getDashPanelState(key) {
+    try {
+      const v = localStorage.getItem(DASH_PANEL_STATE_KEY_PREFIX + key);
+      return v === "expanded" ? "expanded" : "collapsed";
+    } catch { return "collapsed"; }
+  }
+  function setDashPanelState(key, state) {
+    try {
+      localStorage.setItem(DASH_PANEL_STATE_KEY_PREFIX + key, state);
+    } catch {}
+  }
+  function applyDashPanelStates() {
+    document.querySelectorAll(".dash-panel[data-panel-key]").forEach((panel) => {
+      const key = panel.dataset.panelKey;
+      const state = getDashPanelState(key);
+      const collapsed = state !== "expanded";
+      panel.dataset.collapsed = collapsed ? "true" : "false";
+      panel.setAttribute("aria-expanded", collapsed ? "false" : "true");
+      syncDashPanelFooterLabel(panel);
+    });
+  }
+  function toggleDashPanel(panel) {
+    if (!panel || !panel.dataset.panelKey) return;
+    const nowExpanded = panel.dataset.collapsed === "true";
+    panel.dataset.collapsed = nowExpanded ? "false" : "true";
+    panel.setAttribute("aria-expanded", nowExpanded ? "true" : "false");
+    setDashPanelState(panel.dataset.panelKey, nowExpanded ? "expanded" : "collapsed");
+    syncDashPanelFooterLabel(panel);
+  }
+  // M10.10 — footer label text mirrors collapsed state. Collapsed
+  // reads as intent ("Tap for courses & quizzes in progress");
+  // expanded reads as the inverse action ("Tap to hide"). Labels
+  // authored in index.html via data-collapsed-label / data-expanded-label
+  // so swapping copy stays markup-only.
+  function syncDashPanelFooterLabel(panel) {
+    const label = panel.querySelector(".dash-panel-footer-label");
+    if (!label) return;
+    const collapsed = panel.dataset.collapsed === "true";
+    const next = collapsed
+      ? (label.dataset.collapsedLabel || label.textContent)
+      : (label.dataset.expandedLabel  || label.textContent);
+    if (label.textContent !== next) label.textContent = next;
+  }
+  applyDashPanelStates();
+  document.querySelectorAll(".dash-panel[data-panel-key]").forEach((panel) => {
+    panel.addEventListener("click", (e) => {
+      // Ignore clicks on the CTA (navigates) or anywhere inside the
+      // body (tiles handle their own expand; gap-between-tiles shouldn't
+      // silently collapse the panel on an off-target tap). Everything
+      // else on the panel chrome — title, icon, chevron, padding —
+      // toggles the panel.
+      if (e.target.closest(".dash-action")) return;
+      if (e.target.closest(".dash-panel-body")) return;
+      toggleDashPanel(panel);
+    });
+  });
+
   // Chip shortcut buttons — any element with data-chip jumps to that tab.
   // Optional data-subpill carries a sub-view (currently only Projects has
   // one: data-subpill="new" → #projects/new). Unknown sub-views collapse
@@ -785,11 +881,12 @@
     document.addEventListener("DOMContentLoaded", registerStaticActivations, { once: true });
   }
 
-  // M9.12 → M9.13 → M9.16a — scroll-center activation for Dashboard
-  // panels + Learn zones. A bidirectional IntersectionObserver toggles
-  // .is-activated while the panel sits in a 20%-tall band whose center
-  // is at 42% of viewport height (raised 8% above center in M9.16a so
-  // the sweet spot reads slightly above the screen midline). CSS drives
+  // M9.12 → M9.13 → M9.16a → M10.3 — scroll-center activation for
+  // Dashboard panels + Learn zones + every .dash-tile site-wide (M10.2).
+  // A bidirectional IntersectionObserver toggles .is-activated while
+  // the target sits in a ~52%-tall band spanning 20%–72% of viewport
+  // height (widened from the M9.16a 20% band after phone review —
+  // the narrow band made tiles feel twitchy under normal scroll). CSS drives
   // only the shadow lift on that class — tile bg stays at one baseline
   // value, and
   // the darker/faded look at the top/bottom edges is produced by
@@ -798,16 +895,29 @@
   // the activation transition without risking stacked animations.
   // Independent of revealIO above because that one unobserves on
   // first enter; this one must keep tracking as the user scrolls.
-  const centerBandIO = ("IntersectionObserver" in window)
-    ? new IntersectionObserver((entries) => {
-        for (const e of entries) {
-          e.target.classList.toggle("is-activated", e.isIntersecting);
-        }
-      }, { root: null, rootMargin: "-32% 0px -48% 0px", threshold: 0 })
-    : null;
+  // M10.2 — centerBandIO const initialization moved up to the hoisted
+  // state region (~L348) so observeDashTiles can read it during the
+  // initial applyRoute() → replayHomeAnimations chain without TDZ.
   function registerCenterActivations() {
     if (!centerBandIO) return;
     document.querySelectorAll(".dash-panel, .learn-zone").forEach((el) => {
+      centerBandIO.observe(el);
+    });
+    observeDashTiles(document);
+  }
+  // M10.2 — per-tile activation. Every .dash-tile site-wide is observed
+  // individually by centerBandIO so it lights up as it crosses the
+  // activation band, independent of its parent panel. Idempotent via
+  // a one-shot flag on the element; safe to call after each render.
+  // Fallback when IO is missing: mark every tile activated so reduced-
+  // motion / legacy paths don't strand tiles in their resting state.
+  function observeDashTiles(scope) {
+    const root = scope || document;
+    const tiles = root.querySelectorAll(".dash-tile");
+    if (!centerBandIO) { tiles.forEach((el) => el.classList.add("is-activated")); return; }
+    tiles.forEach((el) => {
+      if (el.__centerObserved) return;
+      el.__centerObserved = true;
       centerBandIO.observe(el);
     });
   }
@@ -2020,11 +2130,14 @@
     const inDone = item.mastered || item.state === "completed";
     const sortable = !inDone;
     const isDraft = item.type === "draft";
-    // Eyebrow: {kind} · {track}. Future slot will add updated-ago.
-    const eyebrowParts = [];
-    if (item.kind) eyebrowParts.push(item.kind);
-    if (item.trackLabel) eyebrowParts.push(item.trackLabel);
-    const eyebrow = eyebrowParts.join(" · ");
+    // M10.6 — kind + track now render as a breadcrumb pill on the
+    // left of row 1 (".dash-tile-kind"), not as a plain-text eyebrow.
+    // Breadcrumb order: {kind} › {trackLabel}, matching the tab's
+    // subcategory hierarchy. Eyebrow is retired.
+    const kindParts = [];
+    if (item.kind) kindParts.push(item.kind);
+    if (item.trackLabel) kindParts.push(item.trackLabel);
+    const kindLabel = kindParts.join(" \u203A ");
     // M9.19a.5 / .11b — Duration chip always has a value for Learn
     // items. When lessons.json / drafts don't carry a minutes field
     // yet, show "? m" so it's obvious this is an unknown placeholder,
@@ -2098,12 +2211,14 @@
     const tileMarkup = `
       <article class="dash-tile"${sortable ? ' data-sortable="1"' : ""} data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}" role="button" tabindex="0">
         <button type="button" class="dash-tile-grab"${grabEmpty} aria-label="Drag to reorder" title="Drag to reorder" tabindex="-1">${GRAB_SVG}</button>
-        ${eyebrow ? `<div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>` : ""}
-        <div class="dash-tile-title">${escapeHtml(item.title)}</div>
-        <div class="dash-tile-trailing">
-          <span class="dash-tile-duration"${durationEmpty}>${escapeHtml(minutesLabel)}</span>
-          <span class="dash-tile-state" data-state="${escapeHtml(stateRaw)}">${escapeHtml(stateLabel)}</span>
+        <div class="dash-tile-row1">
+          ${kindLabel ? `<span class="dash-tile-kind">${escapeHtml(kindLabel)}</span>` : `<span class="dash-tile-kind" aria-hidden="true"></span>`}
+          <div class="dash-tile-trailing">
+            <span class="dash-tile-duration"${durationEmpty}>${escapeHtml(minutesLabel)}</span>
+            <span class="dash-tile-state" data-state="${escapeHtml(stateRaw)}">${escapeHtml(stateLabel)}</span>
+          </div>
         </div>
+        <div class="dash-tile-title">${escapeHtml(item.title)}</div>
         ${flagsMarkup}
         ${coverageMarkup}
       </article>
@@ -2227,6 +2342,7 @@
           if (e.key === "Enter" || e.key === " ") { e.preventDefault(); navigate(e); }
         });
       });
+      observeDashTiles(host);
     });
   }
   // ===== M9.17b.d — simplified gesture surface =====
@@ -2562,7 +2678,35 @@
     if (projectId) {
       return buildProjectTileExpand(projectId);
     }
+    if (tile && tile.dataset && tile.dataset.toolId) {
+      return buildToolTileExpand(tile);
+    }
     return null;
+  }
+  // M10.1 — Dashboard Tools tile expand. The three USING tiles are
+  // static aliases (claude-pro-max / copilot-pro / super-grok) — not
+  // in tools.json — so the expand card reads directly from tile
+  // dataset. CTA routes to the Tools tab.
+  function buildToolTileExpand(tile) {
+    const name    = tile.dataset.toolName    || "";
+    const vendor  = tile.dataset.toolVendor  || "";
+    const tagline = tile.dataset.toolTagline || "";
+    const eyebrow = vendor ? `${vendor} · Tool` : "Tool";
+    return {
+      html: `
+        <button type="button" class="dash-tile-expanded-close" aria-label="Close">&times;</button>
+        <div class="dash-tile-expanded-body">
+          <div class="dash-tile-expanded-eyebrow">${escapeHtml(eyebrow)}</div>
+          <h3 class="dash-tile-expanded-title">${escapeHtml(name)}</h3>
+          <div class="dash-tile-expanded-status">
+            <span class="dash-tile-state" data-state="using">Using</span>
+          </div>
+          ${tagline ? `<div class="dash-tile-expanded-summary">${escapeHtml(tagline)}</div>` : ""}
+        </div>
+        <button type="button" class="dash-tile-expanded-cta">Browse the tools →</button>
+      `,
+      cta: { label: "Browse the tools", action: () => { navigateTo("tools", ""); window.scrollTo({ top: 0, behavior: "smooth" }); } },
+    };
   }
   function buildLearnTileExpand(type, id, tile) {
     let title = "", summary = "", link = "", minutes = 0, state = "new", eyebrow = "";
@@ -3475,15 +3619,16 @@
       const pinTools    = Array.isArray(p.pinnedTools)    ? p.pinnedTools.length    : 0;
       const pinSnippets = Array.isArray(p.pinnedSnippets) ? p.pinnedSnippets.length : 0;
       const pathLabel = p.path === "best" ? "Best path" : "Easy path";
-      const eyebrowParts = [];
-      if (p.__placeholder) eyebrowParts.push("Example");
-      eyebrowParts.push(pathLabel);
+      // M10.6 — breadcrumb pill: "Project › Best path" (or
+      // "Example › Best path" on the placeholder). "updated Xh ago"
+      // retires from the condensed view — it was metadata, not
+      // hierarchy, and lives in the expand card now.
+      const kindParts = [];
+      kindParts.push(p.__placeholder ? "Example" : "Project");
+      kindParts.push(pathLabel);
+      const kindLabel = kindParts.join(" \u203A ");
       const updated = Date.parse(p.updatedAt || 0) || 0;
       const created = Date.parse(p.createdAt || 0) || 0;
-      if (updated && created && updated > created) {
-        eyebrowParts.push(`updated ${timeAgoShort(updated)}`);
-      }
-      const eyebrow = eyebrowParts.join(" · ");
       const state = (updated > created) ? "resume" : "open";
       const stateLabel = state === "resume" ? "Resume" : "Open";
       // M9.19a.7 — Inventory rollup moved from pin icon to flag pills.
@@ -3503,12 +3648,14 @@
       return `
         <article class="dash-tile" data-project-id="${escapeHtml(p.id)}"${p.__placeholder ? ' data-placeholder="1"' : ""} role="button" tabindex="0">
           <button type="button" class="dash-tile-grab" data-empty="1" aria-hidden="true" tabindex="-1">${GRAB_SVG}</button>
-          <div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>
-          <div class="dash-tile-title">${escapeHtml(p.title)}</div>
-          <div class="dash-tile-trailing">
-            <span class="dash-tile-duration" data-empty="1">—</span>
-            <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
+          <div class="dash-tile-row1">
+            <span class="dash-tile-kind">${escapeHtml(kindLabel)}</span>
+            <div class="dash-tile-trailing">
+              <span class="dash-tile-duration" data-empty="1">—</span>
+              <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
+            </div>
           </div>
+          <div class="dash-tile-title">${escapeHtml(p.title)}</div>
           ${flagsMarkup}
         </article>
       `;
@@ -3528,6 +3675,7 @@
         if (e.key === "Enter" || e.key === " ") { e.preventDefault(); navigate(e); }
       });
     });
+    observeDashTiles(host);
   }
   // Compact relative-time formatter for dashboard eyebrows. Keeps the
   // eyebrow short enough to fit the fixed slot without pushing the
@@ -3587,11 +3735,13 @@
                       : state === "in_progress" ? "Continue"
                       : "Not started";
       const trackLabel = l.track ? (TRACK_LABEL[l.track] || l.track) : "";
-      const eyebrowParts = [];
-      if (l.__placeholder) eyebrowParts.push("Example");
-      if (trackLabel) eyebrowParts.push(trackLabel);
-      eyebrowParts.push("Lesson");
-      const eyebrow = eyebrowParts.join(" · ");
+      // M10.6 — kind breadcrumb pill ("Lesson › Skills"). Placeholder
+      // prefix still uses the pill; breadcrumb becomes "Example › …"
+      // so the dummy tile reads as an example, not a real lesson.
+      const kindParts = [];
+      kindParts.push(l.__placeholder ? "Example" : "Lesson");
+      if (trackLabel) kindParts.push(trackLabel);
+      const kindLabel = kindParts.join(" \u203A ");
       // M9.19a.11b — "? m" placeholder when lessons.json doesn't carry
       // minutes (was "10m" default). Clearer signal that the number
       // is unknown, not an estimate.
@@ -3616,12 +3766,14 @@
       return `
         <article class="dash-tile"${dashSortable ? ' data-sortable="1"' : ""} data-learn-type="lesson" data-learn-id="${escapeHtml(l.slug)}" data-dash-lesson-slug="${escapeHtml(l.slug)}"${l.__placeholder ? ' data-placeholder="1"' : ""} role="button" tabindex="0">
           <button type="button" class="dash-tile-grab"${dashSortable ? "" : ' data-empty="1"'} aria-label="Drag to reorder" title="Drag to reorder" tabindex="-1">${GRAB_SVG}</button>
-          <div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>
-          <div class="dash-tile-title">${escapeHtml(l.title)}</div>
-          <div class="dash-tile-trailing">
-            <span class="dash-tile-duration"${durationEmpty}>${escapeHtml(minutesLabel)}</span>
-            <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
+          <div class="dash-tile-row1">
+            <span class="dash-tile-kind">${escapeHtml(kindLabel)}</span>
+            <div class="dash-tile-trailing">
+              <span class="dash-tile-duration"${durationEmpty}>${escapeHtml(minutesLabel)}</span>
+              <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
+            </div>
           </div>
+          <div class="dash-tile-title">${escapeHtml(l.title)}</div>
         </article>
       `;
     }).join("");
@@ -3654,6 +3806,7 @@
     host.querySelectorAll(".dash-tile[data-sortable='1'] .dash-tile-grab").forEach((handle) => {
       wireLearnGrabHandle(handle, handle.closest(".dash-tile"));
     });
+    observeDashTiles(host);
   }
 
   function renderProjects() {
