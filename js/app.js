@@ -1032,6 +1032,10 @@
   // M9.17b.a — inline destructive glyph for drafts (trash). Drawn in red via
   // the .learn-action-btn-danger variant; the glyph itself uses currentColor.
   const TRASH_SVG = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg>';
+  // M9.17b.b — grab handle glyph (two stacked pairs of dots, ⋮⋮). Placed on
+  // the left of each non-Done learn row. Touching it starts a drag-reorder
+  // immediately — no long-press arming, no gesture-direction inference.
+  const GRAB_SVG = '<svg viewBox="0 0 24 24" width="14" height="18" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.6"/><circle cx="15" cy="6" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="18" r="1.6"/><circle cx="15" cy="18" r="1.6"/></svg>';
 
   // M3.10: card pin → unified Save button. Same glyphs, same affordance,
   // but click opens the global save picker instead of toggling a pin.
@@ -2008,8 +2012,16 @@
         coverageMarkup = `<div class="learn-item-coverage">Existing: ${parts.join(" · ")}</div>`;
       }
     }
+    // M9.17b.b — Grab handle (visible drag affordance on the left). Non-Done
+    // items only; Done items don't reorder. Sits as a flex sibling of the
+    // card, so touches on the handle never bubble into the card's click
+    // navigation or the card's own swipe-mastery gesture.
+    const grabMarkup = inDone
+      ? ""
+      : `<button type="button" class="learn-grab-handle" data-learn-grab="1" aria-label="Drag to reorder" title="Drag to reorder">${GRAB_SVG}</button>`;
     return `
       <div class="learn-item-wrap">
+        ${grabMarkup}
         <${tag} class="learn-item panel-tile"${typeAttr}${hrefAttr} data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}">
           <div class="learn-item-head">
             <span class="learn-item-kind">${escapeHtml(item.kind)}</span>
@@ -2083,6 +2095,9 @@
     // Wire swipe-left + click on every rendered row. innerHTML was
     // replaced above so every attached listener here is fresh.
     document.querySelectorAll(".learn-item").forEach(wireLearnRowGestures);
+    document.querySelectorAll(".learn-grab-handle").forEach((handle) => {
+      wireLearnGrabHandle(handle, handle.nextElementSibling);
+    });
     document.querySelectorAll(".learn-item[data-learn-type='lesson']").forEach((row) => {
       row.addEventListener("click", (e) => {
         if (row.dataset.learnSwipeHandled === "1") return;  // suppressed by swipe path
@@ -2091,24 +2106,17 @@
       });
     });
   }
-  // ===== M9.4b swipe + M9.6a long-press-to-drag =====
-  // One state machine per row handles swipe-left (mastered) AND long-
-  // press (drag-between-zones). States:
-  //   idle      — nothing pending
-  //   pending   — pointerdown fired; long-press timer armed; no movement yet
-  //   swiping   — user moved past horizontal threshold; swipe-left visible
-  //   dragging  — long-press fired; zones highlighted, row pulses in place
-  // Transitions are driven by touchstart/move/end (passive: false on move
-  // so we can preventDefault once a gesture commits). Mouse path runs
-  // swipe-only; desktop users get the ⋯ menu as the drag fallback.
-  const LEARN_SWIPE_THRESHOLD     = 80;                          // px dx to commit a mastered-swipe
-  const LEARN_SWIPE_VERTICAL_SLOP = 36;                          // |dy| above this = treat as scroll
-  const LEARN_LONG_PRESS_MS       = 350;                         // hold-and-wait to start a drag
-  // Fingertip tremor on iPhone accumulates 5–12px in 300ms even when the
-  // user thinks they're holding still. 14px is the sweet spot — large
-  // enough to survive normal tremor, small enough to still feel
-  // responsive for intentional swipes / scrolls.
-  const LEARN_LONG_PRESS_SLOP     = 14;
+  // ===== M9.4b swipe + M9.17b.b grab-handle drag =====
+  // Two independent gesture surfaces per row:
+  //   - swipe-left on the card body → mark mastered (M9.4b; will retire in
+  //     M9.17b.c once users have the inline ✓ button in muscle memory).
+  //   - pointerdown/touchstart on the grab handle → drag-to-reorder between
+  //     Up Next / Everything Else zones (M9.17b.b). Replaces the retired
+  //     long-press-to-drag — handle gives a discoverable affordance and
+  //     frees the row body for tap + swipe alone.
+  const LEARN_SWIPE_THRESHOLD     = 80;  // px dx to commit a mastered-swipe
+  const LEARN_SWIPE_VERTICAL_SLOP = 36;  // |dy| above this = treat as scroll
+  const LEARN_GESTURE_SLOP        = 14;  // direction-commit threshold (survives iPhone fingertip tremor)
   let learnToastTimer = null;
   function pointInRect(x, y, r) {
     return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
@@ -2117,11 +2125,6 @@
     let startX = 0, startY = 0, dx = 0, dy = 0;
     let mode = "idle";
     let activePointerType = "";
-    let longPressTimer = null;
-    const isDoneItem = () => !!row.closest(".learn-zone-done");
-    const clearLongPress = () => {
-      if (longPressTimer) { clearTimeout(longPressTimer); longPressTimer = null; }
-    };
     const resetTransform = (animate) => {
       row.style.transition = animate
         ? "transform 0.2s var(--ease-premium), opacity 0.2s var(--ease-premium)"
@@ -2129,49 +2132,7 @@
       row.style.transform = "";
       row.style.opacity = "";
     };
-    const clearDropHighlights = () => {
-      document.querySelectorAll(".learn-zone-drop-candidate").forEach((el) => el.classList.remove("learn-zone-drop-candidate"));
-      document.querySelectorAll(".learn-zone-drop-active").forEach((el) => el.classList.remove("learn-zone-drop-active"));
-    };
-    const enterDrag = () => {
-      mode = "dragging";
-      row.classList.add("learn-item-is-dragging");
-      row.dataset.learnSwipeHandled = "1";
-      try { if (navigator.vibrate) navigator.vibrate(10); } catch {}
-      document.querySelectorAll(".learn-zone-upnext, .learn-zone-all").forEach((z) => {
-        z.classList.add("learn-zone-drop-candidate");
-      });
-    };
-    const updateDropHover = (x, y) => {
-      const upnext = document.querySelector(".learn-zone-upnext");
-      const all    = document.querySelector(".learn-zone-all");
-      let active = null;
-      if (upnext && pointInRect(x, y, upnext.getBoundingClientRect())) active = upnext;
-      else if (all && pointInRect(x, y, all.getBoundingClientRect())) active = all;
-      document.querySelectorAll(".learn-zone-drop-active").forEach((el) => {
-        if (el !== active) el.classList.remove("learn-zone-drop-active");
-      });
-      if (active) active.classList.add("learn-zone-drop-active");
-    };
-    const finishDrag = (x, y) => {
-      const upnext = document.querySelector(".learn-zone-upnext");
-      const all    = document.querySelector(".learn-zone-all");
-      const drop = upnext && pointInRect(x, y, upnext.getBoundingClientRect()) ? "upnext"
-                 : all    && pointInRect(x, y, all.getBoundingClientRect())    ? "all"
-                 : null;
-      row.classList.remove("learn-item-is-dragging");
-      clearDropHighlights();
-      if (drop) {
-        const type = row.dataset.learnType;
-        const id = row.dataset.learnId;
-        const title = row.querySelector(".learn-item-title")?.textContent || "";
-        if (drop === "upnext") pinLearnItem(type, id, { title });
-        else                   unpinLearnItem(type, id);
-        renderLearn();
-      }
-    };
-    // --- Touch path (iOS / Android). long-press arms in touchstart;
-    // touchmove cancels it if the user starts scrolling or swiping. ---
+    // --- Touch path (iOS / Android) — swipe-left only. ---
     row.addEventListener("touchstart", (e) => {
       if (e.touches.length !== 1) return;
       const t = e.touches[0];
@@ -2180,13 +2141,6 @@
       activePointerType = "touch";
       row.dataset.learnSwipeHandled = "0";
       row.style.transition = "none";
-      if (!isDoneItem()) {
-        longPressTimer = setTimeout(() => {
-          if (mode !== "pending") return;
-          enterDrag();
-          updateDropHover(startX, startY);
-        }, LEARN_LONG_PRESS_MS);
-      }
     }, { passive: true });
     row.addEventListener("touchmove", (e) => {
       if (mode === "idle") return;
@@ -2195,19 +2149,12 @@
       dx = t.clientX - startX;
       dy = t.clientY - startY;
       if (mode === "pending") {
-        // Direction-aware cancel: only commit to swipe if the horizontal
-        // movement both crosses the slop AND dominates vertical. Same for
-        // scroll. Movement that's small in both directions stays pending
-        // so the long-press timer can still fire through finger tremor.
-        const horizontalCommit = Math.abs(dx) > LEARN_LONG_PRESS_SLOP && Math.abs(dx) > Math.abs(dy);
-        const verticalCommit   = Math.abs(dy) > LEARN_LONG_PRESS_SLOP && Math.abs(dy) > Math.abs(dx);
-        if (horizontalCommit) {
-          clearLongPress();
-          mode = dx < 0 ? "swiping" : "idle";                   // right-swipe has no action; release to tap
-        } else if (verticalCommit) {
-          clearLongPress();
-          mode = "idle";                                         // vertical scroll — let the browser handle it
-        }
+        // Direction-commit: horizontal dominant → swipe; vertical dominant
+        // → scroll; still-small movement stays pending.
+        const horizontalCommit = Math.abs(dx) > LEARN_GESTURE_SLOP && Math.abs(dx) > Math.abs(dy);
+        const verticalCommit   = Math.abs(dy) > LEARN_GESTURE_SLOP && Math.abs(dy) > Math.abs(dx);
+        if (horizontalCommit)     mode = dx < 0 ? "swiping" : "idle"; // right-swipe → release as tap
+        else if (verticalCommit)  mode = "idle";                      // vertical → let browser scroll
       }
       if (mode === "swiping") {
         if (Math.abs(dy) > LEARN_SWIPE_VERTICAL_SLOP) {
@@ -2220,19 +2167,10 @@
           row.style.opacity = String(Math.max(0.35, 1 + dx / 260));
           e.preventDefault();
         }
-      } else if (mode === "dragging") {
-        updateDropHover(t.clientX, t.clientY);
-        e.preventDefault();
       }
     }, { passive: false });
     row.addEventListener("touchend", (e) => {
-      clearLongPress();
       const t = e.changedTouches[0];
-      if (mode === "dragging") {
-        finishDrag(t ? t.clientX : 0, t ? t.clientY : 0);
-        mode = "idle";
-        return;
-      }
       if (mode === "swiping" && dx < -LEARN_SWIPE_THRESHOLD && Math.abs(dy) < LEARN_SWIPE_VERTICAL_SLOP) {
         row.style.transition = "transform 0.22s var(--ease-premium), opacity 0.22s var(--ease-premium)";
         row.style.transform = "translateX(-115%)";
@@ -2250,15 +2188,10 @@
       mode = "idle";
     });
     row.addEventListener("touchcancel", () => {
-      clearLongPress();
-      if (mode === "dragging") {
-        row.classList.remove("learn-item-is-dragging");
-        clearDropHighlights();
-      }
       mode = "idle";
       resetTransform(true);
     });
-    // --- Mouse path (desktop) — swipe only. Drag lives in the ⋯ menu. ---
+    // --- Mouse path (desktop) — swipe only. ---
     row.addEventListener("pointerdown", (e) => {
       if (e.pointerType !== "mouse" || e.button !== 0) return;
       startX = e.clientX; startY = e.clientY; dx = dy = 0;
@@ -2310,6 +2243,98 @@
         e.stopPropagation();
       }
     }, true);
+  }
+  // M9.17b.b — Drag-to-reorder state machine attached to the grab handle.
+  // Replaces the retired long-press-to-drag path: touching the handle is
+  // an unambiguous drag signal, so no direction-inference or tremor budget
+  // is needed. The row itself keeps its own swipe gestures independent.
+  function wireLearnGrabHandle(handle, row) {
+    if (!handle || !row) return;
+    let dragging = false;
+    const clearDropHighlights = () => {
+      document.querySelectorAll(".learn-zone-drop-candidate").forEach((el) => el.classList.remove("learn-zone-drop-candidate"));
+      document.querySelectorAll(".learn-zone-drop-active").forEach((el) => el.classList.remove("learn-zone-drop-active"));
+    };
+    const startDrag = () => {
+      dragging = true;
+      row.classList.add("learn-item-is-dragging");
+      row.dataset.learnSwipeHandled = "1";
+      try { if (navigator.vibrate) navigator.vibrate(10); } catch {}
+      document.querySelectorAll(".learn-zone-upnext, .learn-zone-all").forEach((z) => {
+        z.classList.add("learn-zone-drop-candidate");
+      });
+    };
+    const updateHover = (x, y) => {
+      const upnext = document.querySelector(".learn-zone-upnext");
+      const all    = document.querySelector(".learn-zone-all");
+      let active = null;
+      if (upnext && pointInRect(x, y, upnext.getBoundingClientRect())) active = upnext;
+      else if (all && pointInRect(x, y, all.getBoundingClientRect())) active = all;
+      document.querySelectorAll(".learn-zone-drop-active").forEach((el) => {
+        if (el !== active) el.classList.remove("learn-zone-drop-active");
+      });
+      if (active) active.classList.add("learn-zone-drop-active");
+    };
+    const finishDrag = (x, y) => {
+      const upnext = document.querySelector(".learn-zone-upnext");
+      const all    = document.querySelector(".learn-zone-all");
+      const drop = upnext && pointInRect(x, y, upnext.getBoundingClientRect()) ? "upnext"
+                 : all    && pointInRect(x, y, all.getBoundingClientRect())    ? "all"
+                 : null;
+      row.classList.remove("learn-item-is-dragging");
+      clearDropHighlights();
+      if (drop) {
+        const type = row.dataset.learnType;
+        const id = row.dataset.learnId;
+        const title = row.querySelector(".learn-item-title")?.textContent || "";
+        if (drop === "upnext") pinLearnItem(type, id, { title });
+        else                   unpinLearnItem(type, id);
+        renderLearn();
+      }
+      dragging = false;
+    };
+    const cancelDrag = () => {
+      row.classList.remove("learn-item-is-dragging");
+      clearDropHighlights();
+      dragging = false;
+    };
+    // Touch path — handle-attached listeners receive moves/ends even after
+    // the finger leaves the element, per iOS touch-target persistence.
+    handle.addEventListener("touchstart", (e) => {
+      if (e.touches.length !== 1) return;
+      e.preventDefault();
+      startDrag();
+      updateHover(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: false });
+    handle.addEventListener("touchmove", (e) => {
+      if (!dragging || e.touches.length !== 1) return;
+      e.preventDefault();
+      updateHover(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: false });
+    handle.addEventListener("touchend", (e) => {
+      if (!dragging) return;
+      const t = e.changedTouches[0];
+      finishDrag(t ? t.clientX : 0, t ? t.clientY : 0);
+    });
+    handle.addEventListener("touchcancel", cancelDrag);
+    // Mouse path — pointer capture keeps moves flowing after the cursor
+    // leaves the handle bounds.
+    handle.addEventListener("pointerdown", (e) => {
+      if (e.pointerType !== "mouse" || e.button !== 0) return;
+      e.preventDefault();
+      try { handle.setPointerCapture(e.pointerId); } catch {}
+      startDrag();
+      updateHover(e.clientX, e.clientY);
+    });
+    handle.addEventListener("pointermove", (e) => {
+      if (!dragging || e.pointerType !== "mouse") return;
+      updateHover(e.clientX, e.clientY);
+    });
+    handle.addEventListener("pointerup", (e) => {
+      if (!dragging || e.pointerType !== "mouse") return;
+      finishDrag(e.clientX, e.clientY);
+    });
+    handle.addEventListener("pointercancel", cancelDrag);
   }
   function handleLearnSwipeLeft(type, id, title) {
     const wasMastered = isMastered(type, id);

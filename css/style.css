@@ -4069,6 +4069,35 @@ body.modal-open { overflow: hidden; }
   .learn-item.learn-item-is-dragging { animation: none; }
 }
 
+/* M9.17b.b — Grab handle on the left edge of each non-Done learn-item
+   wrap. Touch/click initiates drag-to-reorder. Replaces the retired
+   long-press-to-drag path (discoverable affordance instead of a hidden
+   timer). Flex sibling of the card; touch-action:none so iOS doesn't
+   steal the gesture for scrolling. Done items don't get a handle —
+   enforced at render time. */
+.learn-grab-handle {
+  width: 28px;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 0 0 0;
+  margin: 4px 2px 0 4px;
+  border: 0;
+  background: transparent;
+  color: var(--text-3);
+  cursor: grab;
+  flex-shrink: 0;
+  touch-action: none;
+  transition: color 0.18s var(--ease-premium),
+              background 0.18s var(--ease-premium);
+  border-radius: var(--radius-sm);
+}
+.learn-grab-handle:hover {
+  color: var(--text-1);
+  background: color-mix(in srgb, var(--text-1) 6%, transparent);
+}
+.learn-grab-handle:active { cursor: grabbing; }
+
 /* M9.17b.a — Inline action buttons on the right edge of the learn-item
    wrap (pin, mastery, and for drafts, destructive delete). Replaces the
    earlier ⋯ collapsed menu. Lives as a flex sibling of the .learn-item

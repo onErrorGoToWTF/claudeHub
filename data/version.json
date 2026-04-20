@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.32",
-  "milestone": "M9.17b.a",
-  "milestoneTitle": "Phase M9.17b.a — Inline action buttons on Learn items replacing the ⋯ collapsed menu. Pin + Mastery toggles are now always-visible icon buttons (28×28 tile) sitting as a flex sibling of the card; tapping either toggles its own state (data-pressed + aria-pressed) and re-renders. Draft items carry an additional red destructive Trash button with two-tap confirm (first tap arms with red fill + 3s disarm, second tap deletes). Matches the user's stored two-tap-destructive pattern; no native confirm() anywhere. Existing long-press-to-drag and swipe-left-for-mastery gestures remain active this milestone (gesture retirement comes in M9.17b.b/c). Static pin/mastery dots removed; .learn-item-pin / .learn-item-mastery CSS retired.",
-  "deployedAt": "2026-04-20T13:25Z",
+  "version": "0.7.1-dev.33",
+  "milestone": "M9.17b.b",
+  "milestoneTitle": "Phase M9.17b.b — Grab handle on the left of each non-Done learn-item replaces long-press-to-drag with a visible affordance. Touch or click the handle to immediately arm drag-reorder between Up Next / Everything Else. wireLearnRowGestures simplified: swipe-left-mastery state machine only (drag paths + long-press timer + dragging mode removed). New wireLearnGrabHandle attaches to each handle; touch/pointer events use handle-attached listeners (iOS keeps touch target persistence) + pointer capture on mouse. LEARN_LONG_PRESS_MS / LEARN_LONG_PRESS_SLOP constants retired in favor of LEARN_GESTURE_SLOP. Swipe-mastery still active this milestone — retires in M9.17b.c.",
+  "deployedAt": "2026-04-20T13:55Z",
   "commitSha": ""
 }
