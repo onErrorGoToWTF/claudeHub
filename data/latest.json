@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T04:47:58.555Z",
+  "generated_at": "2026-04-20T04:59:16.798Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,16 +146,9 @@
     ],
     "news": [
       {
-        "title": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBoQkkwMnB2b0tyeFllX3Iwa2FrRXNZbW5Dem5ERGlLVzFkbGNycUN1UXVEMnhYVlVmaGNTNDZuSTVWZ3d3alpjN29LbkprZV9qTjg1QVFKdURnYk9FYlFTQWFReVRNdEJPaHdTWlhGUTM?oc=5",
-        "source": "Google News",
-        "published": "2026-04-20T04:02:31.000Z",
-        "summary": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety Mashable"
-      },
-      {
         "title": "Anthropic installed a spyware bridge on my machine?",
         "url": "https://www.thatprivacyguy.com/blog/anthropic-spyware/",
-        "source": "HN · 45↑",
+        "source": "HN · 46↑",
         "hn_id": "47829800",
         "published": "2026-04-20T02:41:50.000Z",
         "summary": ""
@@ -166,6 +159,13 @@
         "source": "Bloomberg",
         "published": "2026-04-20T02:22:54.000Z",
         "summary": "Singapore’s financial regulator is urging banks to plug their cybersecurity holes, as concerns over Anthropic PBC’s latest AI model Mythos spread to Asia."
+      },
+      {
+        "title": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBoQkkwMnB2b0tyeFllX3Iwa2FrRXNZbW5Dem5ERGlLVzFkbGNycUN1UXVEMnhYVlVmaGNTNDZuSTVWZ3d3alpjN29LbkprZV9qTjg1QVFKdURnYk9FYlFTQWFReVRNdEJPaHdTWlhGUTM?oc=5",
+        "source": "Google News",
+        "published": "2026-04-20T01:16:02.000Z",
+        "summary": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety Mashable"
       },
       {
         "title": "Anthropic Releases Claude Opus 4.7 With Enhanced Agent Coding Capabilities - thelec.net",
@@ -220,7 +220,7 @@
       {
         "title": "Uber’s Anthropic AI push hits a wall",
         "url": "https://finance.yahoo.com/sectors/technology/articles/ubers-anthropic-ai-push-hits-223109852.html",
-        "source": "HN · 84↑",
+        "source": "HN · 85↑",
         "hn_id": "47826328",
         "published": "2026-04-19T18:13:32.000Z",
         "summary": ""
@@ -228,7 +228,7 @@
       {
         "title": "Show HN: Faceoff – A terminal UI for following NHL games",
         "url": "https://www.vincentgregoire.com/faceoff/",
-        "source": "HN · 106↑",
+        "source": "HN · 107↑",
         "hn_id": "47826104",
         "published": "2026-04-19T17:44:44.000Z",
         "summary": "Faceoff is a TUI app written in Python to follow live NHL games and browse standings and stats. I got the inspiration from Playball, a similar TUI app for MLB games that was…"
@@ -279,7 +279,7 @@
       {
         "title": "Changes in the system prompt between Claude Opus 4.6 and 4.7",
         "url": "https://simonwillison.net/2026/Apr/18/opus-system-prompt/",
-        "source": "HN · 251↑",
+        "source": "HN · 253↑",
         "hn_id": "47823270",
         "published": "2026-04-19T10:36:29.000Z",
         "summary": ""
