@@ -669,25 +669,27 @@
     document.addEventListener("DOMContentLoaded", registerStaticActivations, { once: true });
   }
 
-  // M9.12 — scroll-center activation for Dashboard panels.
-  // A second, narrower-band, bidirectional observer tracks each .dash-panel
-  // and toggles .is-activated while it sits in the viewport's ~20% center
-  // band. CSS drives the rest: panel shadow deepens + child tiles reach
-  // peak contrast white (single box-shadow + background transition, no
-  // transform, no sequenced chain — satisfies the animation-sequencing
-  // rule and avoids layout-flicker properties).
-  // Independent of revealIO above because that one unobserves on first
-  // enter; this one must keep tracking as the user scrolls.
+  // M9.12 → M9.13 — scroll-center activation for Dashboard panels +
+  // Learn zones. A bidirectional IntersectionObserver toggles
+  // .is-activated while the panel sits in the viewport's ~50% center
+  // band (rootMargin -25% top/bottom). CSS drives only the shadow
+  // lift on that class — tile bg stays at one baseline value, and
+  // the darker/faded look at the top/bottom edges is produced by
+  // the fixed html::after vignette overlay (spatial, not animated).
+  // That separation means the overlay can be tuned independently of
+  // the activation transition without risking stacked animations.
+  // Independent of revealIO above because that one unobserves on
+  // first enter; this one must keep tracking as the user scrolls.
   const centerBandIO = ("IntersectionObserver" in window)
     ? new IntersectionObserver((entries) => {
         for (const e of entries) {
           e.target.classList.toggle("is-activated", e.isIntersecting);
         }
-      }, { root: null, rootMargin: "-40% 0px -40% 0px", threshold: 0 })
+      }, { root: null, rootMargin: "-25% 0px -25% 0px", threshold: 0 })
     : null;
   function registerCenterActivations() {
     if (!centerBandIO) return;
-    document.querySelectorAll(".dash-panel").forEach((el) => {
+    document.querySelectorAll(".dash-panel, .learn-zone").forEach((el) => {
       centerBandIO.observe(el);
     });
   }

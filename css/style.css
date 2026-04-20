@@ -336,6 +336,30 @@ body::after {
   opacity: 0.7;
 }
 
+/* M9.13 — Scroll-activation vignette overlay. A single fixed layer
+   (no animations, nothing to synchronise with the per-panel shadow
+   lift). Darker warm-greige at top + bottom, fully transparent
+   through the middle ~50%. Panels scrolling past the top/bottom
+   quarters dim visually because they sit under this overlay; panels
+   in the center band read crisp. Sits above content (z:5) but below
+   the navbar (z:100) so the nav-wrap + future footer pop against
+   the dimmed backdrop. Tweak this overlay in isolation — the
+   activation transitions don't touch these values. */
+html::after {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  background: linear-gradient(180deg,
+    rgba(60, 54, 44, 0.13) 0%,
+    rgba(60, 54, 44, 0.07) 15%,
+    transparent 25%,
+    transparent 75%,
+    rgba(60, 54, 44, 0.07) 85%,
+    rgba(60, 54, 44, 0.13) 100%
+  );
+}
+
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 h1, h2, h3, p { margin: 0; }
@@ -1899,36 +1923,27 @@ body.modal-open { overflow: hidden; }
   column-gap: 14px;
   row-gap: 10px;
   align-items: start;
-  /* M9.12 — activation state layers a deeper shadow + child-tile bg
-     shift when the panel scrolls into the viewport's center band.
-     JS toggles .is-activated via IntersectionObserver with a narrow
-     center band (see js/app.js scroll-activation block). Both effects
-     share one transition window (box-shadow + background) — no
-     sequenced chain, no transform, so we stay inside the "animations
-     sequence, never stack" + "no flicker on resize" rules. Only
-     compositor-safe properties; no layout-touching changes. */
+  /* M9.13 — activation now ONLY lifts the panel's shadow. The
+     darker/faded look outside the center band is handled by the fixed
+     html::after vignette overlay above — a purely spatial effect, no
+     per-tile bg animation. Tiles keep one baseline bg value; the
+     overlay sits between content and navbar and visually dims
+     whatever scrolls under it. This keeps the activation transition
+     single-property (box-shadow only), satisfying the "animations
+     sequence, never stack" rule and the "prefer static approaches"
+     principle called out in CLAUDE.md design-language. */
   transition: box-shadow 0.22s var(--ease-premium);
 }
-.dash-panel.is-activated {
+.dash-panel.is-activated,
+.learn-zone.is-activated {
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.75),
     0 18px 34px -18px rgba(30,20,10,0.18),
     0 6px 14px -8px rgba(30,20,10,0.10);
 }
-.dash-panel.is-activated .continue-row,
-.dash-panel.is-activated .panel-tile {
-  background: #ffffff;
-  border-color: rgba(0,0,0,0.10);
-}
-/* Hover on an already-activated tile: keep bg at peak-white so the
-   finger press doesn't flip the tone backwards. Border + accent glow
-   from the base :hover rule still cascade through. */
-.dash-panel.is-activated .continue-row:hover,
-.dash-panel.is-activated .panel-tile:hover {
-  background: #ffffff;
-}
 @media (prefers-reduced-motion: reduce) {
   .dash-panel,
+  .learn-zone,
   .panel-tile,
   .continue-row { transition: none; }
 }
