@@ -5711,9 +5711,9 @@ body.modal-open { overflow: hidden; }
   padding: 10px 12px;
   min-height: 40px;
   width: 100%;
-  border: 1px dashed color-mix(in srgb, var(--accent-solid) 25%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--accent-solid) 35%, transparent);
   border-radius: var(--radius-sm);
-  background: color-mix(in srgb, var(--accent-solid) 3%, transparent);
+  background: color-mix(in srgb, var(--accent-solid) 5%, transparent);
   color: var(--text-2);
   font: inherit;
   cursor: pointer;

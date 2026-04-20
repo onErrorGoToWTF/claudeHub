@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.14",
-  "milestone": "M9.16f",
-  "milestoneTitle": "Phase M9.16f — Tool-modal header polish. Header padding now respects env(safe-area-inset-top) so the iOS notch/status bar no longer crowds the vendor label + close button on mobile full-bleed. Vendor label (.tool-modal-vendor, the 'ANTHROPIC' eyebrow) contrast bumped from rgba(0,0,0,0.35) → 0.50 for phone legibility; other .label-debossed uses left alone pending per-spot review.",
-  "deployedAt": "2026-04-20T05:44Z",
+  "version": "0.7.1-dev.15",
+  "milestone": "M9.16g",
+  "milestoneTitle": "Phase M9.16g — Bootstrap ghost strip slightly louder. Dashed border 25% → 35% accent-solid, background tint 3% → 5%. Keeps the reserved-slot feel but reads clearly on phone.",
+  "deployedAt": "2026-04-20T05:54Z",
   "commitSha": ""
 }
