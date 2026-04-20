@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.12",
-  "milestone": "M9.9",
-  "milestoneTitle": "Phase M9.9 — Modal glass parity site-wide. Every chrome-y modal (lesson/quiz, storage, backup, pin-picker, snippet-recipe) now carries .glass + .glass-elevated on its frame, giving them the same warm-white translucent gradient, deeper 36px blur, and soft warm drop shadow that the YouTube and tool modals already used. The four frames had been carrying a dark-mode legacy recipe — opaque white-card gradient plus a 0.9α black drop shadow — that clashed with the light-only palette; those properties are removed so the glass recipe actually applies. Video player modal is deliberately excluded (it needs its own dark chrome around the iframe). Sub-title / eyebrow leaf-text across modals now inherits the .label-debossed impressed recipe so titles read as etched into the glass rather than flat. Recipe snippet popover on Dashboard is also in scope — phone review worth a quick glance there.",
-  "deployedAt": "2026-04-20T02:58Z",
+  "version": "0.7.0",
+  "milestone": "M9.10",
+  "milestoneTitle": "Phase M9.10 — v0.7.0 stamp. The design-system refactor is code-complete. Every planned surface (Learn flat layout, Projects hash-routed Finder, Tools mastered bucket + chip filter, every-section YouTube tile, modal glass parity, bootstrapper ghost) shipped under the M9.* dev cadence. The body::before ambient overlay was inspected against the lighter M9.9 panels and held at current alphas (top 0.16 / bottom 0.14 warm-greige washes) pending a live phone sweep at M9.11 — bumping preemptively would be guessing. A separate deferred contrast/readability review is flagged in docs/plans/v0.7-design-system-refactor.md (7 specific candidates) for a dedicated pass after the sweep. Next: M9.11 live phone review; surgical fixes only if regressions surface.",
+  "deployedAt": "2026-04-20T03:08Z",
   "commitSha": ""
 }
