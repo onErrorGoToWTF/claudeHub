@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T22:09:35.509Z",
+  "generated_at": "2026-04-20T22:25:01.441Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -153,6 +153,13 @@
         "summary": "Amazon invests $100B to boost Anthropic partnership Latest news from Azerbaijan"
       },
       {
+        "title": "Amazon doubles down on Anthropic with $25B investment, mirroring its OpenAI cloud deal - GeekWire",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOTmx0YTZwMEx3OEgxcTBManZReUR0VXVhNWdVV0h6QkZsWTZKbDRQLXVCTHRwai0xSk94SXFsVkZxRjhtRXFSa0prY25aMHpEMVYtdExzOThJNVFpZ28wZ1FfSS1FLW5yWkJuaUVvN3dhMFBJV2VvQmVJcENGSG1pV2Flb1dDMmFlWUdaSnJER1NkQmtNSU05TXpMRG1vQTQyUWV4S1JPSWRYR2dPTkNmTFAyR085Zw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-20T21:49:56.000Z",
+        "summary": "Amazon doubles down on Anthropic with $25B investment, mirroring its OpenAI cloud deal GeekWire"
+      },
+      {
         "title": "Amazon and Anthropic announce new deal to provide up to 5 gigawatts of compute to Claude AI models - CNBC",
         "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQUEJyZ1ZHNFNnTFhvQURJRDV5TFl2bjVSZk81Z0U3aDhPRG8zT0dxcUFPeV9COHBDZi1tdEhDT2tLQ2FsMGJFZ19mclJuVjI3VV91MVUzRXhTcWZlYVMxYkZjWVB4TVRHRjd1d05iRU9aSy1uR1hjckxjN3VhRlpyXzBTRlR0WlNMZ1hYd1VuSFRJZ1dwRXVNaGI4ME02U2oyaHZvMjRiQVJqU3RNRndNSWlRem9FT25XbWxUY1RfdjVlRjFWSWx1VGZnb2hjOHV4ckwzWk8tdHQ?oc=5",
         "source": "Google News",
@@ -172,6 +179,13 @@
         "source": "Google News",
         "published": "2026-04-20T20:51:55.000Z",
         "summary": "Amazon (AMZN) Commits $25B More to Anthropic in Deepening AI Partnership TipRanks"
+      },
+      {
+        "title": "Anthropic and Amazon expand collaboration for up to 5 gigawatts of new compute - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5fdy1yMjdvS1NvTl9pS3h1ck56aG0wRERDMy0yeDJJNmdJdEd0Z3I4N0xYS3RlY3AxWmtBR25FSkpPUWNrM0M1U1RxT0lPTXhja1prTGw4RGNNOHIweHdvcXd3Nk1DUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-20T20:50:10.000Z",
+        "summary": "Anthropic and Amazon expand collaboration for up to 5 gigawatts of new compute Anthropic"
       },
       {
         "title": "Amazon to invest up to $25 billion more in Anthropic; Claude developer to spend more than $100 billion on AWS AI technology - Sherwood News",
@@ -305,21 +319,6 @@
         "source": "Google News",
         "published": "2026-04-20T15:46:08.000Z",
         "summary": "Why are Banks Hesitant About Anthropic's Claude Mythos? FinTech Magazine"
-      },
-      {
-        "title": "I prompted ChatGPT, Claude, Perplexity, and Gemini and watched my Nginx logs",
-        "url": "https://surfacedby.com/blog/nginx-logs-ai-traffic-vs-referral-traffic",
-        "source": "HN · 123↑",
-        "hn_id": "47835646",
-        "published": "2026-04-20T15:22:01.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Opinion | Anthropic Wants Claude to Be Moral. Is Religion Really the Answer? - The New York Times",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9IdjBjVFMzUkd6T0ZnM0N4NmRDV1dTcmFCOVlTdTBEUncwb3V5QWJpbS1IMEtDbXFpUnVIZ2MtUERLRnBXYjFLZFBkYUo1RldVSDR5R0ZLTnFtVU45M3dfMXZyTm9ucS1CR3dGS1FvX0hyd1pKeXh3?oc=5",
-        "source": "Google News",
-        "published": "2026-04-20T15:00:13.000Z",
-        "summary": "Opinion | Anthropic Wants Claude to Be Moral. Is Religion Really the Answer? The New York Times"
       },
       {
         "title": "The creator of Claude Code just revealed 7 secrets to using Claude Code (Opus 4.7)",
@@ -946,6 +945,14 @@
     ],
     "tutorials": [
       {
+        "title": "v2.1.116",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.116",
+        "source": "Claude Code Releases",
+        "published": "2026-04-20T22:18:28.000Z",
+        "summary": "What's changed /resume on large sessions is significantly faster (up to 67% on 40MB+ sessions) and handles sessions with many dead-fork entries more efficiently Faster MCP startup when multiple…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "How to Sell Claude Code Skills (What Clients Want)",
         "url": "https://www.youtube.com/watch?v=TxZhIMXnfi8",
         "source": "Pragati Kunwer",
@@ -1188,14 +1195,6 @@
         "published": "2026-04-13T12:30:32.000Z",
         "summary": "",
         "tutorial_kind": "video"
-      },
-      {
-        "title": "v2.1.104",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.104",
-        "source": "Claude Code Releases",
-        "published": "2026-04-13T01:45:26.000Z",
-        "summary": "No content.",
-        "tutorial_kind": "official"
       },
       {
         "title": "Merge pull request #526 from anthropics/sre-incident-response-agent-f…",
@@ -1744,6 +1743,13 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.116",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.116",
+        "source": "Claude Code",
+        "published": "2026-04-20T22:18:28.000Z",
+        "summary": "What's changed /resume on large sessions is significantly faster (up to 67% on 40MB+ sessions) and handles sessions with many dead-fork entries more efficiently Faster MCP startup when multiple stdio servers are…"
+      },
+      {
         "title": "How to Sell Claude Code Skills (What Clients Want)",
         "url": "https://www.youtube.com/watch?v=TxZhIMXnfi8",
         "source": "YouTube · Pragati Kunwer",
@@ -2043,13 +2049,6 @@
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-04-13T12:30:32.000Z",
         "summary": ""
-      },
-      {
-        "title": "v2.1.104",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.104",
-        "source": "Claude Code",
-        "published": "2026-04-13T01:45:26.000Z",
-        "summary": "No content."
       },
       {
         "title": "Anthropic Just Built an AI They Refuse to Release #claudemythos",
