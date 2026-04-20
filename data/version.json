@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.5.1",
-  "milestone": "M9.4b",
-  "milestoneTitle": "Phase M9.4b — fix: swipe-left gesture wasn't firing on iOS because Safari cancels pointer events on a touch-action: pan-y element as soon as the gesture commits horizontal. Rewired wireLearnRowGestures with a dual-path handler: touchstart/touchmove/touchend (passive: false on move) calls preventDefault() the first frame we lock horizontal, which keeps the drag alive; pointerdown/move/up retained for desktop mouse. Shared state machine with a horizontalLocked flag so we only block vertical scroll once the user has clearly committed left.",
-  "deployedAt": "2026-04-20T00:47Z",
+  "version": "0.7.0-dev.6",
+  "milestone": "M9.5a",
+  "milestoneTitle": "Phase M9.5a — Projects: killed the Saved | + New project sub-pills and moved Projects to hash-based sub-routes. #projects shows the saved list (home state); #projects/new shows the Finder. Added parseRoute / navigateTo / applyRoute + popstate/hashchange listeners so the nav chips, the new Start-a-new-project CTA, the Dashboard Projects panel CTA, the Finder Save handler, and the Dashboard continue-rows all drive the same route pipeline. Deep links (/#projects/new) work; browser back button is honored. Two stale .subpill[data-projects-view=\"saved\"].click() callsites replaced with navigateTo(\"projects\", \"\"). Dashboard Learn CTA lost its now-defunct data-subpill=\"courses\" (M9.4a retired those pills). Full-page Finder chrome (Back link, step indicator, draft-resume banner) lands in M9.5b; this commit only moves the routing.",
+  "deployedAt": "2026-04-20T00:55Z",
   "commitSha": ""
 }

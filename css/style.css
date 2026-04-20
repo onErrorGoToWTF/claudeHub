@@ -3417,7 +3417,7 @@ body.modal-open { overflow: hidden; }
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-  margin: 0 0 14px;
+  margin: 0;                                                   /* M9.5a — .projects-view flex-gap now handles vertical rhythm */
 }
 .backup-btn {
   padding: 8px 14px;
@@ -5399,8 +5399,22 @@ body.modal-open { overflow: hidden; }
   box-shadow: 0 0 16px -4px var(--accent-glow);
 }
 
-/* Projects Saved / + New subpill spacing. */
-.projects-toggle { margin-bottom: 12px; }
+/* M9.5a — Projects views + "Start a new project" CTA.
+   .projects-view wrappers toggle via data-projects-view + [hidden];
+   each owns its own internal stack. The saved-view CTA sits above
+   the backup row so the primary action reads before the utilities. */
+.projects-view[hidden] { display: none; }
+.projects-view { display: flex; flex-direction: column; gap: 14px; }
+.projects-cta {
+  align-self: stretch;
+  justify-self: stretch;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+@media (min-width: 640px) {
+  .projects-cta { align-self: flex-start; width: auto; }
+}
 /* One-shot specular sweep on chip hover (600ms, not continuous). */
 .chip { position: relative; overflow: hidden; }
 .chip::after {

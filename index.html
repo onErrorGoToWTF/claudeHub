@@ -42,7 +42,7 @@
       <header class="dash-panel-head">
         <h3 class="dash-panel-title">Learn</h3>
       </header>
-      <button class="dash-action dash-action-learn" data-chip="learn" data-subpill="courses" type="button">Start new course or quiz →</button>
+      <button class="dash-action dash-action-learn" data-chip="learn" type="button">Start new course or quiz →</button>
       <svg class="dash-panel-icon dash-panel-icon--learn" viewBox="0 0 24 24" role="img" aria-label="Courses and quizzes">
         <title>Courses &amp; quizzes</title>
         <rect x="3" y="4" width="5" height="17" rx="0.5"/>
@@ -194,15 +194,14 @@
   <section class="section section-projects" data-section="projects" id="section-projects" data-hidden="true">
     <div class="section-head">
       <h2>Projects</h2>
-      <div class="section-head-actions">
-        <div class="subpills projects-toggle" role="tablist" aria-label="Projects view">
-          <button class="subpill is-active" data-projects-view="saved" type="button" role="tab" aria-selected="true">Saved</button>
-          <button class="subpill"           data-projects-view="new"   type="button" role="tab" aria-selected="false">+ New project</button>
-        </div>
-      </div>
     </div>
 
-    <div class="pane" data-pane="projects-saved">
+    <!-- M9.5a: Saved | + New project sub-pills retired. Projects is now
+         driven by hash routing — #projects shows saved (home state),
+         #projects/new shows the Finder. Two .projects-view containers
+         toggle via data-hidden from applyRoute(). -->
+    <div class="projects-view" data-projects-view="saved">
+      <button class="projects-cta dash-action dash-action-primary" type="button" id="projects-new-cta">Start a new project →</button>
       <div class="projects-backup" id="projects-backup">
         <button type="button" class="backup-btn" id="backup-export">Export backup</button>
         <button type="button" class="backup-btn" id="backup-import-trigger">Import backup…</button>
@@ -213,7 +212,7 @@
       <div class="projects-grid glass" id="projects-grid"></div>
     </div>
 
-    <div class="pane" data-pane="projects-new" hidden>
+    <div class="projects-view" data-projects-view="new" hidden>
       <div class="hub-intro">
         <div class="hub-eyebrow">New project</div>
         <h3 class="hub-title">Find the stack.</h3>

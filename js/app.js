@@ -332,6 +332,43 @@
     if (f === "home") replayHomeAnimations();
   }
 
+  // ===== M9.5a — Hash routing (#<chip>[/<view>]) =====
+  // applyFilter switches the section; applyProjectsView handles the one
+  // chip that currently has a sub-view (Projects → saved | new). Future
+  // sub-routes can extend the same pattern without restructuring chips.
+  // Back button works because navigateTo goes through history.pushState
+  // and popstate re-applies the parsed hash.
+  function parseRoute() {
+    const raw = (location.hash || "").replace(/^#/, "");
+    const parts = raw.split("/").filter(Boolean);
+    return { chip: parts[0] || "", view: parts[1] || "" };
+  }
+  function applyProjectsView(view) {
+    const normalized = view === "new" ? "new" : "saved";
+    document.querySelectorAll('.projects-view[data-projects-view]').forEach((el) => {
+      el.hidden = el.dataset.projectsView !== normalized;
+    });
+  }
+  function applyRoute() {
+    const { chip, view } = parseRoute();
+    const validChip = DISTINCT_SECTIONS.includes(chip)
+      ? chip
+      : (document.querySelector("[data-filter].is-active")?.dataset.filter || "home");
+    applyFilter(validChip);
+    applyProjectsView(validChip === "projects" ? view : "saved");
+  }
+  function navigateTo(chip, view) {
+    const target = DISTINCT_SECTIONS.includes(chip) ? chip : "home";
+    const normalized = view || "";
+    const hash = normalized ? `#${target}/${normalized}` : `#${target}`;
+    if (location.hash !== hash) {
+      try { history.pushState({}, "", hash); } catch { location.hash = hash; }
+    }
+    applyRoute();
+  }
+  window.addEventListener("popstate", applyRoute);
+  window.addEventListener("hashchange", applyRoute);
+
   // If a host's bounding rect overlaps the activation zone (middle ~75%
   // of the viewport), re-toggle .is-go on its children. This protects
   // against the edge case where the user re-clicks the same tab: the
@@ -382,7 +419,10 @@
 
   chips.forEach(chip => {
     chip.addEventListener("click", () => {
-      applyFilter(chip.dataset.filter);
+      // M9.5a — chip click routes via hash so back-button / deep-linking
+      // work. Sub-views reset to default when the user taps the top-level
+      // chip (projects → saved, not projects/new).
+      navigateTo(chip.dataset.filter, "");
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
@@ -408,20 +448,16 @@
     });
   }
 
-  // Projects sub-pills (M3.7): Saved list vs. + New project (Finder).
-  document.querySelectorAll(".subpill[data-projects-view]").forEach((pill) => {
-    pill.addEventListener("click", () => {
-      const kind = pill.dataset.projectsView;
-      document.querySelectorAll(".subpill[data-projects-view]").forEach((p) => {
-        const on = p === pill;
-        p.classList.toggle("is-active", on);
-        p.setAttribute("aria-selected", on ? "true" : "false");
-      });
-      document.querySelectorAll('.pane[data-pane^="projects-"]').forEach((pane) => {
-        pane.hidden = pane.dataset.pane !== `projects-${kind}`;
-      });
+  // M9.5a — "Start a new project →" CTA (inside Projects → Saved view)
+  // and the Dashboard Projects panel CTA both route to #projects/new via
+  // navigateTo; the old Saved | + New sub-pills retired.
+  const projectsNewCta = document.getElementById("projects-new-cta");
+  if (projectsNewCta) {
+    projectsNewCta.addEventListener("click", () => {
+      navigateTo("projects", "new");
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
-  });
+  }
 
   // (M9.4a retired the Courses | Tutorials nested toggle; Learn is now a
   // single flat list with filter chips + sort select. See above.)
@@ -442,27 +478,19 @@
     });
   });
 
-  // Initial filter (respects the chip that was marked .is-active in the HTML)
-  const initial = document.querySelector("[data-filter].is-active");
-  if (initial) applyFilter(initial.dataset.filter);
+  // M9.5a — initial load: respect hash, else the .is-active chip's default.
+  applyRoute();
 
-  // Chip shortcut buttons — any element with data-chip jumps to that tab,
-  // and optional data-subpill activates a named sub-pill inside it.
-  const SUBPILL_ATTR = {
-    "learn":      "learn",
-    "projects":   "projects-view",
-  };
+  // Chip shortcut buttons — any element with data-chip jumps to that tab.
+  // Optional data-subpill carries a sub-view (currently only Projects has
+  // one: data-subpill="new" → #projects/new). Unknown sub-views collapse
+  // to the chip's default view inside applyRoute.
   document.querySelectorAll("[data-chip]").forEach(btn => {
     btn.addEventListener("click", () => {
       const chipName = btn.dataset.chip;
-      const chip = document.querySelector(`[data-filter="${chipName}"]`);
-      if (chip) chip.click();
-      const sub = btn.dataset.subpill;
-      const attr = SUBPILL_ATTR[chipName];
-      if (sub && attr) {
-        const pill = document.querySelector(`[data-${attr}="${sub}"]`);
-        if (pill) pill.click();
-      }
+      const sub = btn.dataset.subpill || "";
+      navigateTo(chipName, sub);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
 
@@ -2707,10 +2735,7 @@
     host.querySelectorAll(".continue-row").forEach((row) => {
       row.addEventListener("click", (e) => {
         e.preventDefault();
-        const chip = document.querySelector('[data-filter="projects"]');
-        if (chip) chip.click();
-        const savedPill = document.querySelector('.subpill[data-projects-view="saved"]');
-        if (savedPill) savedPill.click();
+        navigateTo("projects", "");                            // M9.5a — saved is the home view of #projects
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
     });
@@ -3349,11 +3374,9 @@
           saveStatus.textContent = "";
           saveStatus.dataset.kind = "";
           updateSaveCtaVisibility();
-          // M3.7: Projects is a top-level tab with Saved/New subpills.
-          const chip = document.querySelector('[data-filter="projects"]');
-          if (chip) chip.click();
-          const savedPill = document.querySelector('.subpill[data-projects-view="saved"]');
-          if (savedPill) savedPill.click();
+          // M9.5a — after save, navigate to #projects so the user lands
+          // on the saved list home state with their new project at top.
+          navigateTo("projects", "");
           window.scrollTo({ top: 0, behavior: "smooth" });
         }, 650);
       });
