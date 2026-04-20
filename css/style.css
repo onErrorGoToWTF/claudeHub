@@ -181,25 +181,25 @@
      Learn greener than the prior lime, Projects true blue, Tools orange
      stays warm. Static identity pills (coverage-pill, etc.) read these
      directly; activation cascades go through --accent-* instead. */
-  --color-learn-solid:       #5ea514;                  /* vibrant mid-green */
-  --color-learn-surface:     color-mix(in srgb, #5ea514, transparent 86%);
-  --color-learn-border:      color-mix(in srgb, #5ea514, transparent 45%);
-  --color-learn-glow:        color-mix(in srgb, #5ea514, transparent 66%);
+  --color-learn-solid:       #16d94a;                  /* electric neon green */
+  --color-learn-surface:     color-mix(in srgb, #16d94a, transparent 86%);
+  --color-learn-border:      color-mix(in srgb, #16d94a, transparent 45%);
+  --color-learn-glow:        color-mix(in srgb, #16d94a, transparent 66%);
 
   --color-youtube-solid:     #ff3b30;                  /* Apple systemRed */
   --color-youtube-surface:   rgba(255,59,48,0.14);
   --color-youtube-border:    rgba(255,59,48,0.55);
   --color-youtube-glow:      rgba(255,59,48,0.34);
 
-  --color-tools-solid:       #e8610d;                  /* vibrant tangerine */
-  --color-tools-surface:     color-mix(in srgb, #e8610d, transparent 86%);
-  --color-tools-border:      color-mix(in srgb, #e8610d, transparent 45%);
-  --color-tools-glow:        color-mix(in srgb, #e8610d, transparent 66%);
+  --color-tools-solid:       #ff6a1a;                  /* saturated warm orange */
+  --color-tools-surface:     color-mix(in srgb, #ff6a1a, transparent 86%);
+  --color-tools-border:      color-mix(in srgb, #ff6a1a, transparent 45%);
+  --color-tools-glow:        color-mix(in srgb, #ff6a1a, transparent 66%);
 
-  --color-projects-solid:    #0e7fc4;                  /* true ocean blue */
-  --color-projects-surface:  color-mix(in srgb, #0e7fc4, transparent 86%);
-  --color-projects-border:   color-mix(in srgb, #0e7fc4, transparent 45%);
-  --color-projects-glow:     color-mix(in srgb, #0e7fc4, transparent 66%);
+  --color-projects-solid:    #0cb8f7;                  /* electric cyan */
+  --color-projects-surface:  color-mix(in srgb, #0cb8f7, transparent 86%);
+  --color-projects-border:   color-mix(in srgb, #0cb8f7, transparent 45%);
+  --color-projects-glow:     color-mix(in srgb, #0cb8f7, transparent 66%);
 
   --color-path-best-solid:   #248a3d;                  /* deep green — readable on white */
   --color-path-best-surface: rgba(52,199,89,0.12);
@@ -243,32 +243,32 @@
      interpolate through green in oklch. Generated / retuned via
      /accent-retune. */
 
-  /* ---- Learn: green → yellow ---- */
-  --learn-solid:   color-mix(in oklch, #5ea514 78%, black);
-  --learn-border:  color-mix(in srgb, color-mix(in oklch, #5ea514 72%, #f5d90a), transparent 45%);
-  --learn-glow:    color-mix(in srgb, color-mix(in oklch, #5ea514 72%, #f5d90a), transparent 66%);
-  --learn-surface: color-mix(in srgb, color-mix(in oklch, #5ea514 45%, #f5d90a), transparent 86%);
-  --learn-warm:    color-mix(in oklch, #5ea514 45%, #f5d90a);
-  --learn-hover:   color-mix(in oklch, color-mix(in oklch, #5ea514 78%, black) 85%, black);
-  --learn-soft:    color-mix(in oklch, color-mix(in oklch, #5ea514 45%, #f5d90a) 40%, white);
+  /* ---- Learn: electric neon green → pure yellow ---- */
+  --learn-solid:   color-mix(in oklch, #16d94a 78%, black);
+  --learn-border:  color-mix(in srgb, color-mix(in oklch, #16d94a 72%, #ffdc00), transparent 45%);
+  --learn-glow:    color-mix(in srgb, color-mix(in oklch, #16d94a 72%, #ffdc00), transparent 66%);
+  --learn-surface: color-mix(in srgb, color-mix(in oklch, #16d94a 45%, #ffdc00), transparent 86%);
+  --learn-warm:    color-mix(in oklch, #16d94a 45%, #ffdc00);
+  --learn-hover:   color-mix(in oklch, color-mix(in oklch, #16d94a 78%, black) 85%, black);
+  --learn-soft:    color-mix(in oklch, color-mix(in oklch, #16d94a 45%, #ffdc00) 40%, white);
 
-  /* ---- Projects: blue → amber (NOT pure yellow — interp thru green) ---- */
-  --projects-solid:   color-mix(in oklch, #0e7fc4 78%, black);
-  --projects-border:  color-mix(in srgb, color-mix(in oklch, #0e7fc4 72%, #f0c23a), transparent 45%);
-  --projects-glow:    color-mix(in srgb, color-mix(in oklch, #0e7fc4 72%, #f0c23a), transparent 66%);
-  --projects-surface: color-mix(in srgb, color-mix(in oklch, #0e7fc4 45%, #f0c23a), transparent 86%);
-  --projects-warm:    color-mix(in oklch, #0e7fc4 45%, #f0c23a);
-  --projects-hover:   color-mix(in oklch, color-mix(in oklch, #0e7fc4 78%, black) 85%, black);
-  --projects-soft:    color-mix(in oklch, color-mix(in oklch, #0e7fc4 45%, #f0c23a) 40%, white);
+  /* ---- Projects: electric cyan → amber (NOT pure yellow — interp thru green) ---- */
+  --projects-solid:   color-mix(in oklch, #0cb8f7 78%, black);
+  --projects-border:  color-mix(in srgb, color-mix(in oklch, #0cb8f7 72%, #ffbe0a), transparent 45%);
+  --projects-glow:    color-mix(in srgb, color-mix(in oklch, #0cb8f7 72%, #ffbe0a), transparent 66%);
+  --projects-surface: color-mix(in srgb, color-mix(in oklch, #0cb8f7 45%, #ffbe0a), transparent 86%);
+  --projects-warm:    color-mix(in oklch, #0cb8f7 45%, #ffbe0a);
+  --projects-hover:   color-mix(in oklch, color-mix(in oklch, #0cb8f7 78%, black) 85%, black);
+  --projects-soft:    color-mix(in oklch, color-mix(in oklch, #0cb8f7 45%, #ffbe0a) 40%, white);
 
-  /* ---- Tools: orange → yellow ---- */
-  --tools-solid:   color-mix(in oklch, #e8610d 78%, black);
-  --tools-border:  color-mix(in srgb, color-mix(in oklch, #e8610d 72%, #f5c518), transparent 45%);
-  --tools-glow:    color-mix(in srgb, color-mix(in oklch, #e8610d 72%, #f5c518), transparent 66%);
-  --tools-surface: color-mix(in srgb, color-mix(in oklch, #e8610d 45%, #f5c518), transparent 86%);
-  --tools-warm:    color-mix(in oklch, #e8610d 45%, #f5c518);
-  --tools-hover:   color-mix(in oklch, color-mix(in oklch, #e8610d 78%, black) 85%, black);
-  --tools-soft:    color-mix(in oklch, color-mix(in oklch, #e8610d 45%, #f5c518) 40%, white);
+  /* ---- Tools: saturated warm orange → warm yellow ---- */
+  --tools-solid:   color-mix(in oklch, #ff6a1a 78%, black);
+  --tools-border:  color-mix(in srgb, color-mix(in oklch, #ff6a1a 72%, #ffc200), transparent 45%);
+  --tools-glow:    color-mix(in srgb, color-mix(in oklch, #ff6a1a 72%, #ffc200), transparent 66%);
+  --tools-surface: color-mix(in srgb, color-mix(in oklch, #ff6a1a 45%, #ffc200), transparent 86%);
+  --tools-warm:    color-mix(in oklch, #ff6a1a 45%, #ffc200);
+  --tools-hover:   color-mix(in oklch, color-mix(in oklch, #ff6a1a 78%, black) 85%, black);
+  --tools-soft:    color-mix(in oklch, color-mix(in oklch, #ff6a1a 45%, #ffc200) 40%, white);
 
   /* Neutral --accent-* defaults. Consumers outside a section scope
      (toasts, modals, etc.) see greyscale at rest. Section / panel / chip
@@ -3368,17 +3368,25 @@ body.modal-open { overflow: hidden; }
   border-color: color-mix(in srgb, var(--accent-solid) 65%, var(--border-strong));
   box-shadow:
     inset 0 0 0 1px color-mix(in srgb, var(--accent-solid) 55%, var(--border-strong)),
-    0 0 18px 0 var(--accent-glow),
+    inset 0 0 12px 0 var(--accent-glow),
+    0 0 20px 0 var(--accent-glow),
     0 10px 24px -6px rgba(0,0,0,0.22);
 }
-/* CTA accent only inside an activated panel. */
+/* CTA accent only inside an activated panel.
+   M10.12 — neon-tube treatment. The edge reads as a lit gas tube:
+     1px solid border carries the saturated edge color (--accent-border),
+     a blurred INSET glow bleeds the color inward ~10px for the "lit
+     from inside" read (was just a crisp 1px ring before),
+     a blurred OUTER glow blooms outward as before, and
+     a soft drop shadow for the floating-in-space effect. */
 .dash-panel.is-activated .dash-action-primary,
 .dash-panel.is-activated .dash-action-learn,
 .dash-panel.is-activated .dash-action-tools {
   border-color: var(--accent-border);
   box-shadow:
     inset 0 0 0 1px var(--accent-border),
-    0 0 12px 0 var(--accent-glow),
+    inset 0 0 10px 0 var(--accent-glow),
+    0 0 14px 0 var(--accent-glow),
     0 8px 20px -6px rgba(0,0,0,0.18);
 }
 /* Panel action row — Start CTA on the left, inline YouTube on the right. */
@@ -7091,46 +7099,56 @@ body.modal-open { overflow: hidden; }
   --accent-soft:    var(--tools-soft);
 }
 
+/* M10.12 — neon-tube treatment on active nav chips. Same recipe as
+   activated CTAs: 1px edge border + inset blurred glow (bleeds the
+   color inward so the chip reads as a lit tube) + outer glow + soft
+   drop shadow. */
 .chip-learn.is-active {
   color: var(--text-1);
   background: var(--bg-2);
   border-color: var(--accent-border);
-  /* M9.14a — inner ring dropped (thinner line). */
   box-shadow:
-    0 0 10px 0 var(--accent-glow),
+    inset 0 0 8px 0 var(--accent-glow),
+    0 0 12px 0 var(--accent-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-learn:hover:not(.is-active) {
   color: var(--accent-solid);
-  box-shadow: 0 0 16px -4px var(--accent-glow);
+  box-shadow:
+    inset 0 0 6px 0 var(--accent-glow),
+    0 0 16px -4px var(--accent-glow);
 }
 
 .chip-tools.is-active {
   color: var(--text-1);
   background: var(--bg-2);
   border-color: var(--accent-border);
-  /* M9.14a — inner ring dropped (thinner line). */
   box-shadow:
-    0 0 10px 0 var(--accent-glow),
+    inset 0 0 8px 0 var(--accent-glow),
+    0 0 12px 0 var(--accent-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-tools:hover:not(.is-active) {
   color: var(--accent-solid);
-  box-shadow: 0 0 16px -4px var(--accent-glow);
+  box-shadow:
+    inset 0 0 6px 0 var(--accent-glow),
+    0 0 16px -4px var(--accent-glow);
 }
 
 .chip-projects.is-active {
   color: var(--text-1);
   background: var(--bg-2);
   border-color: var(--accent-border);
-  /* M9.14a — inner ring dropped (thinner line). */
   box-shadow:
-    0 0 10px 0 var(--accent-glow),
+    inset 0 0 8px 0 var(--accent-glow),
+    0 0 12px 0 var(--accent-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }
 .chip-projects:hover:not(.is-active) {
   color: var(--accent-solid);
-  box-shadow: 0 0 16px -4px var(--accent-glow);
+  box-shadow:
+    inset 0 0 6px 0 var(--accent-glow),
+    0 0 16px -4px var(--accent-glow);
 }
 
 /* M9.5a — Projects views + "Start a new project" CTA.
