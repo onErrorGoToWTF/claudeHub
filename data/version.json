@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0",
-  "milestone": "M9.10",
-  "milestoneTitle": "Phase M9.10 — v0.7.0 stamp. The design-system refactor is code-complete. Every planned surface (Learn flat layout, Projects hash-routed Finder, Tools mastered bucket + chip filter, every-section YouTube tile, modal glass parity, bootstrapper ghost) shipped under the M9.* dev cadence. The body::before ambient overlay was inspected against the lighter M9.9 panels and held at current alphas (top 0.16 / bottom 0.14 warm-greige washes) pending a live phone sweep at M9.11 — bumping preemptively would be guessing. A separate deferred contrast/readability review is flagged in docs/plans/v0.7-design-system-refactor.md (7 specific candidates) for a dedicated pass after the sweep. Next: M9.11 live phone review; surgical fixes only if regressions surface.",
-  "deployedAt": "2026-04-20T03:08Z",
+  "version": "0.7.1-dev.1",
+  "milestone": "M9.12",
+  "milestoneTitle": "Phase M9.12 — Dashboard panels scroll-center activation + tile contrast lift. The recessed .continue-row / .panel-tile recipe no longer fakes a hole through to the page bg; baseline tile background now sits ~55% of the way toward pure white so text contrast is stronger at rest. A new bidirectional IntersectionObserver on every .dash-panel with a narrow center band (rootMargin -40% 0 -40% 0, ~20% of viewport height) toggles an .is-activated class as the panel scrolls through the band. When activated, the panel's box-shadow deepens (raised elevation) and each child tile's bg reaches peak-white — both in a single 0.22s / 0.18s box-shadow + background transition, no transform and no sequenced chain, so the activation stays inside the newly-recorded 'animations sequence, never stack' rule and the 'no flicker on resize/repaint' guard. Only compositor-safe properties touched. New animation-sequencing / transform-exclusivity / no-flicker rules also recorded in CLAUDE.md design-language for future activations that layer shimmer / glow / transform.",
+  "deployedAt": "2026-04-20T03:38Z",
   "commitSha": ""
 }

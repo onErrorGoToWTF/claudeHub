@@ -1899,6 +1899,38 @@ body.modal-open { overflow: hidden; }
   column-gap: 14px;
   row-gap: 10px;
   align-items: start;
+  /* M9.12 — activation state layers a deeper shadow + child-tile bg
+     shift when the panel scrolls into the viewport's center band.
+     JS toggles .is-activated via IntersectionObserver with a narrow
+     center band (see js/app.js scroll-activation block). Both effects
+     share one transition window (box-shadow + background) — no
+     sequenced chain, no transform, so we stay inside the "animations
+     sequence, never stack" + "no flicker on resize" rules. Only
+     compositor-safe properties; no layout-touching changes. */
+  transition: box-shadow 0.22s var(--ease-premium);
+}
+.dash-panel.is-activated {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.75),
+    0 18px 34px -18px rgba(30,20,10,0.18),
+    0 6px 14px -8px rgba(30,20,10,0.10);
+}
+.dash-panel.is-activated .continue-row,
+.dash-panel.is-activated .panel-tile {
+  background: #ffffff;
+  border-color: rgba(0,0,0,0.10);
+}
+/* Hover on an already-activated tile: keep bg at peak-white so the
+   finger press doesn't flip the tone backwards. Border + accent glow
+   from the base :hover rule still cascade through. */
+.dash-panel.is-activated .continue-row:hover,
+.dash-panel.is-activated .panel-tile:hover {
+  background: #ffffff;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash-panel,
+  .panel-tile,
+  .continue-row { transition: none; }
 }
 .dash-panel > .dash-panel-head { grid-column: 1; grid-row: 1; }
 .dash-panel > .dash-action     { grid-column: 1; grid-row: 2; align-self: start; justify-self: start; }
@@ -2083,11 +2115,15 @@ body.modal-open { overflow: hidden; }
    Dashboard-specific selector below so callers set their own spacing. */
 .panel-tile,
 .continue-row {
-  background: var(--bg-0);
+  /* M9.12 — baseline bg lifted off the page tone toward white so text
+     contrast is stronger at rest. Scroll-center activation (see
+     .dash-panel.is-activated rule below) drives it the rest of the way
+     to pure white. */
+  background: color-mix(in srgb, var(--bg-0) 45%, #ffffff);
   border: 1px solid rgba(0,0,0,0.07);
   border-radius: var(--radius-sm);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.65),
     0 1px 2px rgba(0,0,0,0.04);
   transition:
     background 0.18s var(--ease-premium),
@@ -2096,10 +2132,10 @@ body.modal-open { overflow: hidden; }
 }
 .panel-tile:hover,
 .continue-row:hover {
-  background: color-mix(in srgb, var(--bg-0) 88%, #ffffff);
+  background: color-mix(in srgb, var(--bg-0) 20%, #ffffff);
   border-color: var(--accent-border, rgba(0,0,0,0.12));
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.65),
+    inset 0 1px 0 rgba(255,255,255,0.70),
     0 2px 6px rgba(0,0,0,0.05),
     0 0 0 3px var(--accent-glow, transparent);
 }

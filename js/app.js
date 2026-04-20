@@ -669,6 +669,34 @@
     document.addEventListener("DOMContentLoaded", registerStaticActivations, { once: true });
   }
 
+  // M9.12 — scroll-center activation for Dashboard panels.
+  // A second, narrower-band, bidirectional observer tracks each .dash-panel
+  // and toggles .is-activated while it sits in the viewport's ~20% center
+  // band. CSS drives the rest: panel shadow deepens + child tiles reach
+  // peak contrast white (single box-shadow + background transition, no
+  // transform, no sequenced chain — satisfies the animation-sequencing
+  // rule and avoids layout-flicker properties).
+  // Independent of revealIO above because that one unobserves on first
+  // enter; this one must keep tracking as the user scrolls.
+  const centerBandIO = ("IntersectionObserver" in window)
+    ? new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          e.target.classList.toggle("is-activated", e.isIntersecting);
+        }
+      }, { root: null, rootMargin: "-40% 0px -40% 0px", threshold: 0 })
+    : null;
+  function registerCenterActivations() {
+    if (!centerBandIO) return;
+    document.querySelectorAll(".dash-panel").forEach((el) => {
+      centerBandIO.observe(el);
+    });
+  }
+  if (document.readyState !== "loading") {
+    registerCenterActivations();
+  } else {
+    document.addEventListener("DOMContentLoaded", registerCenterActivations, { once: true });
+  }
+
   // ---------- Skeletons ----------
   function showSkeletons() {
     const tpl = document.getElementById("tpl-skeleton");
