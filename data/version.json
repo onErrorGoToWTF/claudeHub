@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.35",
-  "milestone": "M9.17c",
-  "milestoneTitle": "Phase M9.17c — Destructive-action color standard (design-amend chunk 1 of 2). Introduced --danger token family (solid, border, glow, surface, ink, hover) in :root derived via color-mix from a single hue source — same pattern as --base-shared → --accent-*. CLAUDE.md design-language section gains the 'one --danger for every destructive action' rule; the design-review skill's color hard-rule updated to flag hardcoded reds in *-delete / *-danger / *-wipe / *-remove-* selectors. Plan doc ledger gets a new M9.17 suite section covering everything from M9.17.0 onward. No surface migrations yet; .learn-action-btn-danger + .project-delete cascade in M9.17c.a. Out of scope: sentiment / status pills (red = severity, not action).",
-  "deployedAt": "2026-04-20T14:35Z",
+  "version": "0.7.1-dev.36",
+  "milestone": "M9.17c.a",
+  "milestoneTitle": "Phase M9.17c.a — Destructive-color cascade. Migrated all four destructive-action buttons to the --danger-* token family introduced in M9.17c: .learn-action-btn-danger (was #c0392b brick), .project-delete (was #f43f5e rose), .storage-key-delete (was mixed #f87171/#f43f5e), .pin-picker-remove (was mixed #f87171/#f43f5e). All four now share the same red hue; future hue retuning is a one-line :root edit. Remaining reds in style.css are sentiment pills / error-state indicators / severity dots — out of scope per the rule (red = severity, not action).",
+  "deployedAt": "2026-04-20T14:48Z",
   "commitSha": ""
 }

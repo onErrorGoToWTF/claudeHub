@@ -4156,24 +4156,26 @@ body.modal-open { overflow: hidden; }
 .learn-action-btn[data-pressed="1"]:hover {
   background: color-mix(in srgb, var(--accent-solid) 16%, transparent);
 }
-/* Destructive variant — red outline at rest, red fill when armed. */
+/* Destructive variant — red outline at rest, red fill when armed.
+   M9.17c.a — migrated from hardcoded #c0392b to --danger-* tokens per
+   the design-language amendment. Hue retunes in one :root edit. */
 .learn-action-btn-danger {
-  color: color-mix(in srgb, #c0392b 80%, var(--text-3));
+  color: color-mix(in srgb, var(--danger-solid) 80%, var(--text-3));
 }
 .learn-action-btn-danger:hover {
-  color: #c0392b;
-  background: color-mix(in srgb, #c0392b 8%, transparent);
-  border-color: color-mix(in srgb, #c0392b 35%, transparent);
+  color: var(--danger-solid);
+  background: var(--danger-surface);
+  border-color: color-mix(in srgb, var(--danger-solid) 35%, transparent);
 }
 .learn-action-btn-danger[data-armed="1"] {
-  background: #c0392b;
-  border-color: #a0321f;
-  color: #fff;
-  box-shadow: 0 0 0 3px color-mix(in srgb, #c0392b 20%, transparent);
+  background: var(--danger-solid);
+  border-color: var(--danger-hover);
+  color: var(--danger-ink);
+  box-shadow: 0 0 0 3px var(--danger-glow);
 }
 .learn-action-btn-danger[data-armed="1"]:hover {
-  background: #a0321f;
-  color: #fff;
+  background: var(--danger-hover);
+  color: var(--danger-ink);
 }
 
 /* Drop-zone highlights during an active drag. The candidate state is
@@ -4951,15 +4953,16 @@ body.modal-open { overflow: hidden; }
               border-color 0.2s var(--ease-premium),
               background 0.2s var(--ease-premium);
 }
+/* M9.17c.a — migrated from mixed #f87171/#f43f5e to --danger-* tokens. */
 .storage-key-delete:hover {
-  color: #f87171;
-  border-color: color-mix(in srgb, #f87171 40%, var(--border-strong));
-  background: color-mix(in srgb, #f87171 8%, transparent);
+  color: var(--danger-solid);
+  border-color: color-mix(in srgb, var(--danger-solid) 40%, var(--border-strong));
+  background: var(--danger-surface);
 }
 .storage-key-delete[data-armed="1"] {
-  color: #fff;
-  background: color-mix(in srgb, #f43f5e 55%, transparent);
-  border-color: color-mix(in srgb, #f43f5e 70%, transparent);
+  color: var(--danger-ink);
+  background: color-mix(in srgb, var(--danger-solid) 55%, transparent);
+  border-color: color-mix(in srgb, var(--danger-solid) 70%, transparent);
   font-weight: 600;
 }
 .storage-modal-foot {
@@ -5233,21 +5236,22 @@ body.modal-open { overflow: hidden; }
 .pin-picker-note:focus {
   border-color: color-mix(in srgb, var(--accent, #4a90ff) 50%, var(--border-strong));
 }
+/* M9.17c.a — migrated from mixed #f87171/#f43f5e to --danger-* tokens. */
 .pin-picker-remove {
   margin-right: auto;
   padding: 8px 14px;
   min-height: 40px;
-  border: 1px solid color-mix(in srgb, #f43f5e 40%, var(--border));
+  border: 1px solid color-mix(in srgb, var(--danger-solid) 40%, var(--border));
   border-radius: var(--radius-sm);
   background: transparent;
-  color: #f87171;
+  color: var(--danger-solid);
   font-family: inherit;
   font-size: 13px;
   cursor: pointer;
 }
 .pin-picker-remove:hover {
-  background: color-mix(in srgb, #f43f5e 12%, transparent);
-  border-color: color-mix(in srgb, #f43f5e 70%, transparent);
+  background: color-mix(in srgb, var(--danger-solid) 12%, transparent);
+  border-color: color-mix(in srgb, var(--danger-solid) 70%, transparent);
 }
 
 /* ===== Pin-to-project button (M3.2) — retained for legacy markup ===== */
@@ -5577,15 +5581,17 @@ body.modal-open { overflow: hidden; }
               border-color 0.2s var(--ease-premium),
               background 0.2s var(--ease-premium);
 }
+/* M9.17c.a — migrated from hardcoded #f43f5e to --danger-* tokens so this
+   button uses the same red as every other destructive action in the app. */
 .project-delete:hover {
-  color: #f43f5e;
-  border-color: color-mix(in srgb, #f43f5e 40%, var(--border-strong));
-  background: color-mix(in srgb, #f43f5e 8%, transparent);
+  color: var(--danger-solid);
+  border-color: color-mix(in srgb, var(--danger-solid) 40%, var(--border-strong));
+  background: var(--danger-surface);
 }
 .project-delete[data-armed="1"] {
-  color: #fff;
-  border-color: color-mix(in srgb, #f43f5e 70%, transparent);
-  background: color-mix(in srgb, #f43f5e 55%, transparent);
+  color: var(--danger-ink);
+  border-color: color-mix(in srgb, var(--danger-solid) 70%, transparent);
+  background: color-mix(in srgb, var(--danger-solid) 55%, transparent);
   font-weight: 600;
 }
 
