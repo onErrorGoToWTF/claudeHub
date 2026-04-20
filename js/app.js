@@ -1493,6 +1493,43 @@
     if (state === null) delete p[slug]; else p[slug] = state;
     putLessonProgress(p);
   }
+  // ===== M9.4b — Mastery signal =====
+  // Cross-cutting "I've got this" state. Keys: "lesson:<slug>",
+  // "course:<slug>", "tool:<toolId>". Value: ISO8601 timestamp. Mastered
+  // items render in the Done zone of Learn; tools show ●ᴹ badge in M9.7.
+  // Separate from lessonProgress.state="completed" — mastery is a
+  // confidence signal the user sets explicitly; completion is the quiz
+  // outcome. Either routes the item to Done.
+  const MASTERY_KEY = "clhub.v1.mastery";
+  function getMastery() {
+    try {
+      const raw = localStorage.getItem(MASTERY_KEY);
+      if (!raw) return {};
+      const obj = JSON.parse(raw);
+      return obj && typeof obj === "object" ? obj : {};
+    } catch { return {}; }
+  }
+  function putMastery(obj) {
+    try { localStorage.setItem(MASTERY_KEY, JSON.stringify(obj)); } catch {}
+  }
+  function masteryKey(type, id) {
+    if (type === "course") return `course:${id}`;
+    if (type === "tool")   return `tool:${id}`;
+    return `lesson:${id}`;
+  }
+  function isMastered(type, id) {
+    return !!getMastery()[masteryKey(type, id)];
+  }
+  function setMastered(type, id) {
+    const m = getMastery();
+    m[masteryKey(type, id)] = new Date().toISOString();
+    putMastery(m);
+  }
+  function unsetMastered(type, id) {
+    const m = getMastery();
+    delete m[masteryKey(type, id)];
+    putMastery(m);
+  }
   async function loadLessons() {
     try {
       const res = await fetch(LESSONS_URL, { cache: "no-cache" });
@@ -1515,6 +1552,35 @@
     const prefix = type === "course" ? `academy:${id}` : `lesson:${id}`;
     return Object.keys(saves).some((k) => k === prefix || k.startsWith(prefix + ":"));
   }
+  function unpinLearnItem(type, id) {
+    // Removes any saves entry matching the lesson/academy prefix. Used by
+    // M9.4b swipe-left to drop a pin alongside the mastery write. Returns
+    // true if anything was removed (callers use this for undo-restore).
+    const saves = getSaves();
+    const prefix = type === "course" ? `academy:${id}` : `lesson:${id}`;
+    let changed = false;
+    Object.keys(saves).forEach((k) => {
+      if (k === prefix || k.startsWith(prefix + ":")) {
+        delete saves[k];
+        changed = true;
+      }
+    });
+    if (changed) putSaves(saves);
+    return changed;
+  }
+  function pinLearnItem(type, id, meta) {
+    // Minimal pin writer for the Undo path in M9.4b. Full pin-to-learn UI
+    // lands in M9.6b; this is just enough to reverse a destructive swipe.
+    const saves = getSaves();
+    const key = type === "course" ? `academy:${id}` : `lesson:${id}`;
+    saves[key] = {
+      kind: type === "course" ? "academy" : "lesson",
+      targetId: id,
+      title: (meta && meta.title) || "",
+      addedAt: new Date().toISOString(),
+    };
+    putSaves(saves);
+  }
   function buildLearnItems() {
     const items = [];
     const progress = getLessonProgress();
@@ -1532,6 +1598,7 @@
           order: l.order || 0,
           hasQuiz: Array.isArray(l.quiz) && l.quiz.length > 0,
           pinned: isLearnItemPinned("lesson", l.slug),
+          mastered: isMastered("lesson", l.slug),
           state,
           kind: (l.status === "draft" || !l.body) && Array.isArray(l.quiz) && l.quiz.length > 0
                   ? "Quiz"
@@ -1550,6 +1617,7 @@
         order: c.order || 0,
         hasQuiz: false,
         pinned: isLearnItemPinned("course", c.slug),
+        mastered: isMastered("course", c.slug),
         state: "new",
         kind: "Course",
         source: c,
@@ -1612,6 +1680,9 @@
     const pinMark = item.pinned
       ? `<span class="learn-item-pin" aria-label="Pinned" title="Pinned">●</span>`
       : "";
+    const masteryMark = item.mastered
+      ? `<span class="learn-item-mastery" aria-label="Mastered" title="Mastered">●ᴹ</span>`
+      : "";
     const stateMarkup = stateLabel
       ? `<span class="learn-item-state" data-state="${escapeHtml(item.state)}">${escapeHtml(stateLabel)}</span>`
       : "";
@@ -1620,6 +1691,7 @@
         <div class="learn-item-head">
           <span class="learn-item-kind">${escapeHtml(item.kind)}</span>
           ${pinMark}
+          ${masteryMark}
           <span class="learn-item-title">${escapeHtml(item.title)}</span>
           ${stateMarkup}
         </div>
@@ -1654,7 +1726,10 @@
     const everythingElse = [];
     const done = [];
     sorted.forEach((item) => {
-      if (item.state === "completed") done.push(item);
+      // Mastered OR completed → Done. Mastery is the "I've got this" gesture
+      // from a swipe-left; completion is the quiz-finish outcome. Either
+      // routes the item out of the active Up Next / Everything else bucket.
+      if (item.mastered || item.state === "completed") done.push(item);
       else if (item.pinned || item.state === "in_progress") upNext.push(item);
       else everythingElse.push(item);
     });
@@ -1681,13 +1756,132 @@
     });
     const doneCount = document.getElementById("learn-done-count");
     if (doneCount) doneCount.textContent = done.length ? `(${done.length})` : "";
-    // Wire lesson row clicks (buttons only; academy rows are <a target=_blank>).
+    // Wire swipe-left + click on every rendered row. innerHTML was
+    // replaced above so every attached listener here is fresh.
+    document.querySelectorAll(".learn-item").forEach(wireLearnRowGestures);
     document.querySelectorAll(".learn-item[data-learn-type='lesson']").forEach((row) => {
       row.addEventListener("click", (e) => {
+        if (row.dataset.learnSwipeHandled === "1") return;  // suppressed by swipe path
         e.preventDefault();
         openLesson(row.dataset.learnId, "tutorial");
       });
     });
+  }
+  // ===== M9.4b — Swipe gestures + toast with Undo =====
+  // Swipe-left on a .learn-item marks mastered + unpins. 5s toast offers
+  // Undo; tapping Undo restores the pre-swipe state. Works for both
+  // lessons (<button>) and academy courses (<a>). iOS safari honors
+  // touch-action: pan-y so vertical scroll still works.
+  const LEARN_SWIPE_THRESHOLD = 80;                              // px dx to commit
+  const LEARN_SWIPE_VERTICAL_SLOP = 36;                          // |dy| above this = treat as scroll
+  let learnToastTimer = null;
+  function wireLearnRowGestures(row) {
+    let startX = 0, startY = 0, dx = 0, dy = 0;
+    let tracking = false;
+    const reset = (animate) => {
+      row.style.transition = animate
+        ? "transform 0.2s var(--ease-premium), opacity 0.2s var(--ease-premium)"
+        : "none";
+      row.style.transform = "";
+      row.style.opacity = "";
+    };
+    row.addEventListener("pointerdown", (e) => {
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      startX = e.clientX;
+      startY = e.clientY;
+      dx = dy = 0;
+      tracking = true;
+      row.dataset.learnSwipeHandled = "0";
+      row.style.transition = "none";
+    });
+    row.addEventListener("pointermove", (e) => {
+      if (!tracking) return;
+      dx = e.clientX - startX;
+      dy = e.clientY - startY;
+      if (Math.abs(dy) > LEARN_SWIPE_VERTICAL_SLOP) {
+        tracking = false;
+        reset(true);
+        return;
+      }
+      if (Math.abs(dx) > Math.abs(dy) && dx < -6) {
+        row.style.transform = `translateX(${dx}px)`;
+        row.style.opacity = String(Math.max(0.35, 1 + dx / 260));
+      }
+    });
+    const finish = () => {
+      if (!tracking) return;
+      tracking = false;
+      if (dx < -LEARN_SWIPE_THRESHOLD && Math.abs(dy) < LEARN_SWIPE_VERTICAL_SLOP) {
+        row.style.transition = "transform 0.22s var(--ease-premium), opacity 0.22s var(--ease-premium)";
+        row.style.transform = "translateX(-115%)";
+        row.style.opacity = "0";
+        row.dataset.learnSwipeHandled = "1";
+        const type = row.dataset.learnType;
+        const id = row.dataset.learnId;
+        const title = row.querySelector(".learn-item-title")?.textContent || "";
+        setTimeout(() => handleLearnSwipeLeft(type, id, title), 200);
+      } else {
+        reset(true);
+      }
+    };
+    row.addEventListener("pointerup", finish);
+    row.addEventListener("pointercancel", () => {
+      tracking = false;
+      reset(true);
+    });
+    // Capture-phase click suppression so swipe doesn't double-fire into
+    // openLesson (lessons) or anchor navigation (academy courses).
+    row.addEventListener("click", (e) => {
+      if (row.dataset.learnSwipeHandled === "1") {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+  }
+  function handleLearnSwipeLeft(type, id, title) {
+    const wasMastered = isMastered(type, id);
+    const wasPinned   = isLearnItemPinned(type, id);
+    setMastered(type, id);
+    unpinLearnItem(type, id);
+    renderLearn();
+    showLearnToast({
+      message: `Marked mastered: ${title || "item"}`,
+      onUndo: () => {
+        if (!wasMastered) unsetMastered(type, id);
+        if (wasPinned)    pinLearnItem(type, id, { title });
+        renderLearn();
+      },
+    });
+  }
+  function showLearnToast(opts) {
+    const { message, onUndo } = opts || {};
+    let toast = document.getElementById("learn-toast");
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.id = "learn-toast";
+      toast.className = "learn-toast";
+      toast.setAttribute("role", "status");
+      toast.setAttribute("aria-live", "polite");
+      toast.innerHTML = `
+        <span class="learn-toast-text"></span>
+        <button class="learn-toast-undo" type="button">Undo</button>
+      `;
+      document.body.appendChild(toast);
+    }
+    toast.querySelector(".learn-toast-text").textContent = message || "";
+    const undoBtn = toast.querySelector(".learn-toast-undo");
+    const hide = () => {
+      toast.classList.remove("is-visible");
+      undoBtn.onclick = null;
+      clearTimeout(learnToastTimer);
+    };
+    undoBtn.onclick = () => {
+      if (typeof onUndo === "function") onUndo();
+      hide();
+    };
+    toast.classList.add("is-visible");
+    clearTimeout(learnToastTimer);
+    learnToastTimer = setTimeout(hide, 5000);
   }
   function renderLessonsList() {
     // Single entry point retained for callers that refresh after a modal

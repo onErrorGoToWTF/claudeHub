@@ -257,7 +257,7 @@ All under the `clhub.v1.*` namespace. Bumped only on breaking shape changes.
 - `clhub.v1.lessonProgress` — `{ [slug]: { state: "new"|"in_progress"|"completed", quizPassedAt?: ISO8601 } }`
 - `clhub.v1.finderDraft`    — current in-flight Finder state (single slot)
 - `clhub.v1.finderCaps`     — last capability-box selections
-- `clhub.v1.mastery`        — `{ [toolId]: ISO8601 }` *(M9 — Tools mastery signal)*
+- `clhub.v1.mastery`        — `{ [key]: ISO8601 }` where `key` is `lesson:<slug>`, `course:<slug>`, or `tool:<toolId>` *(M9.4b — unified "I've got this" signal; swipe-left on a Learn card sets it + unpins; Tools catalog renders ●ᴹ badge for mastered tools in M9.7)*
 - `clhub.v1.ui`             — misc UI prefs (selected filters, active sort)
 
 **SavedProject** (when M9 settles):
