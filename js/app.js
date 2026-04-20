@@ -25,8 +25,7 @@
 
    MODALS
      L955   openVideoModal (YouTube embed)
-     L996   Link-in-modal interceptor (M9.16b — global click router)
-     L1047  openDocModal + detectDocBlocked (doc viewer for external links)
+     L996   refreshModalOpenBodyClass (shared scroll-lock bookkeeping)
      L3697  openToolModal (tool detail page)
      L3840  openYouTubeModal (dashboard YouTube tile)
      L4839  openRecipeModal (currently unreachable — #recipes host parked)
@@ -993,181 +992,19 @@
     });
   }
 
-  // ======================================================================
-  // Link-in-modal interceptor (M9.16b/c) — keeps external <a> clicks
-  // inside the app. YouTube links route to openVideoModal; everything
-  // else goes to a sandboxed doc-modal iframe. Modified clicks, same-
-  // origin links, non-http protocols, and data-no-modal anchors pass
-  // through unchanged. History state is pushed on open so the phone
-  // back gesture closes the modal instead of leaving the app. ESC runs
-  // in capture phase so it closes only the topmost modal (doc-modal
-  // when stacked over another).
-  // ======================================================================
-
-  // M9.16c — shared scroll-lock bookkeeping. Each modal closer used to
-  // duplicate a :not([hidden]) selector list of every known modal class;
-  // the lists had drifted (some included .backup-modal, others didn't,
-  // and the video-modal closer removed the class unconditionally which
-  // unlocked scroll even while another modal remained open). Unifying
-  // here guarantees body.modal-open tracks "any modal visible" exactly.
+  // Shared scroll-lock bookkeeping. Every modal closer calls this after
+  // hiding itself so body.modal-open stays on while any other modal
+  // remains open. Consolidates what used to be drifted per-closer
+  // selector lists.
   function refreshModalOpenBodyClass() {
     const anyOpen = document.querySelector(
       ".video-modal:not([hidden]), .tool-modal:not([hidden]), " +
       ".search-modal:not([hidden]), .pin-picker-modal:not([hidden]), " +
       ".backup-modal:not([hidden]), .storage-modal:not([hidden]), " +
-      ".yt-modal:not([hidden]), .doc-modal:not([hidden])"
+      ".yt-modal:not([hidden])"
     );
     if (!anyOpen) document.body.classList.remove("modal-open");
   }
-
-  let docModalLastFocus = null;
-  // Generation counter — bumped on every open and close so pending timeouts
-  // from a previous open don't mutate the modal state after the user has
-  // moved on. Prevents stale "blocked" flags from racing a new iframe load.
-  let docModalGen = 0;
-
-  // Heuristic: is the iframe showing a blocked/empty state? Cross-origin
-  // pages that load successfully throw SecurityError on contentDocument
-  // access — we treat that as "loaded". A reachable same-origin body that
-  // is empty means the browser refused the embed and left us at about:blank.
-  function detectDocBlocked(iframe) {
-    try {
-      const doc = iframe.contentDocument;
-      if (!doc) return true;
-      if (!doc.body) return true;
-      if (doc.body.children.length === 0 && doc.body.textContent.trim() === "") {
-        return true;
-      }
-      return false;
-    } catch (_err) {
-      return false;
-    }
-  }
-
-  function openDocModal(url, meta) {
-    const modal = document.getElementById("doc-modal");
-    if (!modal) return;
-    const iframe    = modal.querySelector(".doc-modal-iframe");
-    const srcEl     = modal.querySelector(".doc-modal-source");
-    const titleEl   = modal.querySelector(".doc-modal-title");
-    const openLink  = modal.querySelector(".doc-modal-open");
-    const blockedCta   = modal.querySelector(".doc-modal-blocked-cta");
-    const blockedHost  = modal.querySelector(".doc-modal-blocked-host");
-    srcEl.textContent   = (meta && meta.hostname) || "";
-    titleEl.textContent = (meta && meta.title)    || "";
-    openLink.href       = url;
-    if (blockedCta)  blockedCta.href = url;
-    if (blockedHost) blockedHost.textContent = (meta && meta.hostname) || "site";
-    modal.dataset.loading = "1";
-    delete modal.dataset.blocked;
-    const myGen = ++docModalGen;
-    // Load handler clears the spinner but does NOT run detection —
-    // cross-origin pages can be briefly same-origin during navigation
-    // when load fires, which produced false-positive "blocked" flags.
-    // Detection runs only in the delayed timer below.
-    iframe.addEventListener("load", () => {
-      if (myGen !== docModalGen) return;
-      delete modal.dataset.loading;
-    }, { once: true });
-    // Detection: wait 3s after open so any cross-origin transition has
-    // completed. If the iframe is still same-origin with an empty body
-    // after that window, it's genuinely blocked or network-failed.
-    setTimeout(() => {
-      if (myGen !== docModalGen) return;
-      delete modal.dataset.loading;
-      if (detectDocBlocked(iframe)) modal.dataset.blocked = "1";
-    }, 3000);
-    iframe.src = url;
-    docModalLastFocus = document.activeElement;
-    modal.hidden = false;
-    document.body.classList.add("modal-open");
-    history.pushState({ clhubModal: "doc" }, "", location.href);
-    modal.querySelector(".doc-modal-close")?.focus();
-  }
-  function hideDocModal() {
-    const modal = document.getElementById("doc-modal");
-    if (!modal || modal.hidden) return;
-    const iframe = modal.querySelector(".doc-modal-iframe");
-    ++docModalGen;
-    iframe.src = "about:blank";
-    modal.hidden = true;
-    delete modal.dataset.loading;
-    delete modal.dataset.blocked;
-    refreshModalOpenBodyClass();
-    if (docModalLastFocus && typeof docModalLastFocus.focus === "function") {
-      docModalLastFocus.focus();
-    }
-    docModalLastFocus = null;
-  }
-  function closeDocModal() {
-    const modal = document.getElementById("doc-modal");
-    if (!modal || modal.hidden) return;
-    if (history.state && history.state.clhubModal === "doc") {
-      history.back();
-    } else {
-      hideDocModal();
-    }
-  }
-  window.addEventListener("popstate", () => {
-    const modal = document.getElementById("doc-modal");
-    if (modal && !modal.hidden) hideDocModal();
-  });
-  document.querySelectorAll("#doc-modal [data-close]").forEach((el) => {
-    el.addEventListener("click", (e) => {
-      e.preventDefault();
-      closeDocModal();
-    });
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key !== "Escape") return;
-    const modal = document.getElementById("doc-modal");
-    if (!modal || modal.hidden) return;
-    e.stopImmediatePropagation();
-    closeDocModal();
-  }, true);
-  // Focus trap — if focus escapes the open doc-modal (via Tab from outside
-  // the iframe's browsing context, or a stray programmatic focus), pull
-  // it back to the close button. focusin doesn't fire for focus changes
-  // inside a cross-origin iframe, so typing inside the iframe is safe.
-  document.addEventListener("focusin", (e) => {
-    const modal = document.getElementById("doc-modal");
-    if (!modal || modal.hidden) return;
-    if (modal.contains(e.target)) return;
-    modal.querySelector(".doc-modal-close")?.focus();
-  });
-  (function wireDocOpenLinks() {
-    // Both the header "Open ↗" and the blocked-state CTA close the modal
-    // after the new tab has been launched. data-no-modal on the anchors
-    // means the interceptor lets them through natively.
-    document.querySelectorAll("#doc-modal .doc-modal-open, #doc-modal .doc-modal-blocked-cta").forEach((el) => {
-      el.addEventListener("click", () => {
-        setTimeout(closeDocModal, 0);
-      });
-    });
-  })();
-
-  document.addEventListener("click", (e) => {
-    if (e.defaultPrevented) return;
-    if (e.button !== 0) return;
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    const a = e.target.closest && e.target.closest("a[href]");
-    if (!a) return;
-    if (a.hasAttribute("data-no-modal")) return;
-    let url;
-    try { url = new URL(a.href, location.href); } catch { return; }
-    if (!/^https?:$/.test(url.protocol)) return;
-    if (url.origin === location.origin) return;
-    e.preventDefault();
-    const ytId = extractYouTubeId(url.href);
-    if (ytId) {
-      openVideoModal(ytId, (a.textContent || "").trim(), url.href);
-    } else {
-      openDocModal(url.href, {
-        title: (a.getAttribute("title") || a.textContent || "").trim(),
-        hostname: url.hostname.replace(/^www\./, ""),
-      });
-    }
-  });
 
   // SVG pin glyphs — outline when unpinned, filled when pinned.
   const PIN_SVG_OUTLINE = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><path d="M12 12v8"/></svg>';
