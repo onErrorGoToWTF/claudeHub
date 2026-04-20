@@ -311,6 +311,31 @@
     summary: "Start here: structure, examples, and constraints.",
     __placeholder: true,
   };
+  // M9.18b.3 — SVG icon constants + TRACK_LABEL hoisted here (from their
+  // original sites at ~L1068-1080 and ~L1696). Reason: renderDashLearn
+  // and renderContinueCard reference these during the initial
+  // applyFilter("home") -> replayHomeAnimations at L602, which runs
+  // before the declarations evaluated at their original sites — TDZ
+  // ReferenceError aborts the whole IIFE (kills data-chip bindings,
+  // loadLessons, etc.). Rule (CLAUDE.md): any module-level const read
+  // from a render fn during initial applyFilter must be hoisted above
+  // that call. M9.18a's empty lessonsData masked this (slice.map over
+  // []); M9.18b's dummy-fallback tile made the reads fire first-load.
+  const PIN_SVG_OUTLINE = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><path d="M12 12v8"/></svg>';
+  const PIN_SVG_FILLED  = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><rect x="11.2" y="12" width="1.6" height="8" rx="0.6"/></svg>';
+  const MASTERY_SVG_OUTLINE = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4L19 7"/></svg>';
+  const MASTERY_SVG_FILLED  = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4" fill="currentColor" stroke="none"/><path d="M6.5 12.5l3.5 3.5L17.5 8.5" stroke="#fff"/></svg>';
+  const TRASH_SVG = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg>';
+  const GRAB_SVG = '<svg viewBox="0 0 24 24" width="14" height="18" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.6"/><circle cx="15" cy="6" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="18" r="1.6"/><circle cx="15" cy="18" r="1.6"/></svg>';
+  const TRACK_LABEL = {
+    "claude-code":  "Claude Code",
+    "skills":       "Skills",
+    "mcp":          "MCP",
+    "finder":       "Finder",
+    "image-video":  "Image / Video",
+    "nocode":       "No-code",
+    "local":        "Local / Desktop",
+  };
   let lessonsData = [];
   // Learn tab unified-list state (M9.4a). academyCourses is populated by
   // loadAcademy(); filter/sort own the Learn section UI state. All three
@@ -1064,20 +1089,10 @@
     if (!anyOpen) document.body.classList.remove("modal-open");
   }
 
-  // SVG pin glyphs — outline when unpinned, filled when pinned.
-  const PIN_SVG_OUTLINE = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><path d="M12 12v8"/></svg>';
-  const PIN_SVG_FILLED  = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><rect x="11.2" y="12" width="1.6" height="8" rx="0.6"/></svg>';
-  // M9.17b.a — inline mastery glyph (checkmark). Outline when not mastered,
-  // filled check on a rounded tile when mastered. Same 14px base as pin.
-  const MASTERY_SVG_OUTLINE = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4L19 7"/></svg>';
-  const MASTERY_SVG_FILLED  = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4" fill="currentColor" stroke="none"/><path d="M6.5 12.5l3.5 3.5L17.5 8.5" stroke="#fff"/></svg>';
-  // M9.17b.a — inline destructive glyph for drafts (trash). Drawn in red via
-  // the .learn-action-btn-danger variant; the glyph itself uses currentColor.
-  const TRASH_SVG = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg>';
-  // M9.17b.b — grab handle glyph (two stacked pairs of dots, ⋮⋮). Placed on
-  // the left of each non-Done learn row. Touching it starts a drag-reorder
-  // immediately — no long-press arming, no gesture-direction inference.
-  const GRAB_SVG = '<svg viewBox="0 0 24 24" width="14" height="18" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.6"/><circle cx="15" cy="6" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="18" r="1.6"/><circle cx="15" cy="18" r="1.6"/></svg>';
+  // SVG icon constants (PIN_SVG_*, MASTERY_SVG_*, TRASH_SVG, GRAB_SVG)
+  // are declared at the top of this IIFE (~L306-330) so render fns
+  // called during the initial applyFilter("home") don't hit a TDZ.
+  // M9.17b.a / M9.17b.b comments live there with the declarations.
 
   // M3.10: card pin → unified Save button. Same glyphs, same affordance,
   // but click opens the global save picker instead of toggling a pin.
@@ -1693,15 +1708,8 @@
   // hit a TDZ ReferenceError and halt the entire IIFE.
   const lessonBodyCache = new Map();
   const LESSON_PROGRESS_KEY = "clhub.v1.lessonProgress";
-  const TRACK_LABEL = {
-    "claude-code":  "Claude Code",
-    "skills":       "Skills",
-    "mcp":          "MCP",
-    "finder":       "Finder",
-    "image-video":  "Image / Video",
-    "nocode":       "No-code",
-    "local":        "Local / Desktop",
-  };
+  // TRACK_LABEL is hoisted to the top of the IIFE (~L322) so render fns
+  // called during the initial applyFilter("home") don't hit a TDZ.
   function getLessonProgress() {
     try {
       const raw = localStorage.getItem(LESSON_PROGRESS_KEY);
