@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.9.1",
-  "milestone": "M9.6",
-  "milestoneTitle": "Phase M9.6 — fixes: (a) Learn DnD long-press wasn't firing on iPhone because the 8px slop was being consumed by natural finger tremor in the 350ms hold window. Bumped LEARN_LONG_PRESS_SLOP to 14px and switched cancellation to a direction-aware rule — only a clearly horizontal movement commits to swipe, only a clearly vertical one commits to scroll, anything ambiguous stays pending so the timer can still fire. Drag-in scale bumped to 1.04 with a stronger elevation shadow and a brief pulse keyframe so the state change reads at a glance. (b) Pin-to-learn submit looked like it did nothing because the inline \"Pinned ✓\" status was being hidden the instant the details panel closed. Details auto-close now waits 1.8s so the inline status is visible; a bottom-center learn-toast fires in parallel as a viewport-level confirmation (toast Undo button hides when no onUndo callback is passed).",
-  "deployedAt": "2026-04-20T01:42Z",
+  "version": "0.7.0-dev.9.2",
+  "milestone": "M9.6c",
+  "milestoneTitle": "Phase M9.6c — Drafts filter + coverage matrix. The filter chip previously labeled Pinned now reads Drafts and narrows to type=\"draft\" items only — the user's explicit to-author list from Pin-to-learn on Tools. Pin-to-Up-Next (drag / ⋯ menu) stays as-is for any curated item. Each draft card now carries a fuzzy coverage matrix cross-referencing the source tool's name + snippetTags against authored lessons, Academy courses, snippets (by tag overlap + keyword), and YouTube videos from the loaded feed — so the user sees at a glance whether the topic is already covered or is a blank slate. All in-memory, no database (by design — matrix can be swapped for a structured toolIds field on content records in a later milestone without changing the UI).",
+  "deployedAt": "2026-04-20T02:02Z",
   "commitSha": ""
 }

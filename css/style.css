@@ -3984,6 +3984,31 @@ body.modal-open { overflow: hidden; }
   overflow: hidden;
 }
 
+/* M9.6c — coverage matrix on draft cards. Color-codes each content type
+   so the eye can pick out "do I already have videos on this?" in one
+   glance. Blank-slate state reads muted + italic. */
+.learn-item-coverage {
+  font-size: 11px;
+  color: var(--text-2);
+  letter-spacing: 0.02em;
+  padding-top: 2px;
+  font-weight: 500;
+}
+.learn-item-coverage[data-coverage="none"] {
+  color: var(--text-3);
+  font-style: italic;
+  font-weight: 400;
+}
+.coverage-pill {
+  display: inline;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.coverage-pill[data-kind="lessons"]  { color: var(--color-learn-solid); }
+.coverage-pill[data-kind="courses"]  { color: var(--accent-claude-hi); }
+.coverage-pill[data-kind="snippets"] { color: var(--color-electric-text); }
+.coverage-pill[data-kind="videos"]   { color: var(--color-youtube-solid); }
+
 /* M9.4b — toast with Undo. Appears bottom-center on every destructive
    Learn swipe; auto-dismisses after 5s. Dark sticker on light page for
    maximum contrast; safe-area aware so it doesn't sit under iOS home

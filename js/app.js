@@ -1776,11 +1776,46 @@
     switch (filter) {
       case "lessons": return items.filter((i) => i.type === "lesson");
       case "courses": return items.filter((i) => i.type === "course");
-      case "pinned":  return items.filter((i) => i.pinned);
+      // M9.6c — "Drafts" is the to-author list: only Pin-to-learn stubs
+      // created from Tools cards. Distinct from pin-to-Up-Next (any
+      // curated item sitting in that zone); the Up Next zone itself is
+      // the home of that concept.
+      case "drafts":  return items.filter((i) => i.type === "draft");
       case "quiz":    return items.filter((i) => i.hasQuiz);
       case "all":
       default:        return items;
     }
+  }
+  // M9.6c — coverage matrix. For a given draft, fuzzy-match the source
+  // tool's name + snippetTags against existing authored lessons, Academy
+  // courses, snippets, and YouTube videos from the data feed. Surfaces
+  // "how much material do I already have vs. have to author from
+  // scratch" inline on the card. No database — in-memory cross-ref
+  // against data already loaded at render time. If the draft has no
+  // sourceToolId we still fall back to a learnPrompt keyword scan.
+  function coverageFor(draft) {
+    const empty = { total: 0, lessons: 0, courses: 0, snippets: 0, videos: 0 };
+    if (!draft) return empty;
+    const tool = (toolsData || []).find((t) => t.id === draft.sourceToolId);
+    const needle = ((tool && tool.name) || draft.learnPrompt || "").toLowerCase().trim();
+    const tagSet = new Set((tool && tool.snippetTags) || []);
+    if (!needle && tagSet.size === 0) return empty;
+    const hit = (s) => !!(needle && s && s.toLowerCase().includes(needle));
+    const lessons  = (lessonsData || []).filter((l) => hit(l.title) || hit(l.summary));
+    const courses  = (academyCourses || []).filter((c) => hit(c.title) || hit(c.summary));
+    const snippets = (snippetsData || []).filter((s) => {
+      if (tagSet.size > 0 && (s.snippetTags || []).some((t) => tagSet.has(t))) return true;
+      return hit(s.title) || hit(s.body);
+    });
+    const videos = ((latestData && latestData.sections && latestData.sections.youtube) || [])
+      .filter((v) => hit(v.title));
+    return {
+      lessons:  lessons.length,
+      courses:  courses.length,
+      snippets: snippets.length,
+      videos:   videos.length,
+      total:    lessons.length + courses.length + snippets.length + videos.length,
+    };
   }
   function sortLearnItems(items, sort) {
     const copy = items.slice();
@@ -1859,6 +1894,25 @@
         </div>
       </details>
     `;
+    // M9.6c — draft cards carry a coverage matrix showing what material
+    // already exists elsewhere for the source tool. Helps decide whether
+    // the pinned topic is a blank slate ("author from scratch") or
+    // already partially covered ("review these first"). Fuzzy match;
+    // no database required.
+    let coverageMarkup = "";
+    if (item.type === "draft") {
+      const cov = coverageFor(item.source);
+      if (cov.total === 0) {
+        coverageMarkup = `<div class="learn-item-coverage" data-coverage="none">No existing material — blank slate.</div>`;
+      } else {
+        const parts = [];
+        if (cov.lessons)  parts.push(`<span class="coverage-pill" data-kind="lessons">${cov.lessons} lesson${cov.lessons === 1 ? "" : "s"}</span>`);
+        if (cov.courses)  parts.push(`<span class="coverage-pill" data-kind="courses">${cov.courses} course${cov.courses === 1 ? "" : "s"}</span>`);
+        if (cov.snippets) parts.push(`<span class="coverage-pill" data-kind="snippets">${cov.snippets} snippet${cov.snippets === 1 ? "" : "s"}</span>`);
+        if (cov.videos)   parts.push(`<span class="coverage-pill" data-kind="videos">${cov.videos} video${cov.videos === 1 ? "" : "s"}</span>`);
+        coverageMarkup = `<div class="learn-item-coverage">Existing: ${parts.join(" · ")}</div>`;
+      }
+    }
     return `
       <div class="learn-item-wrap">
         <${tag} class="learn-item panel-tile"${typeAttr}${hrefAttr} data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}">
@@ -1871,6 +1925,7 @@
           </div>
           ${meta ? `<div class="learn-item-meta">${escapeHtml(meta)}</div>` : ""}
           ${item.summary ? `<div class="learn-item-summary">${escapeHtml(item.summary)}</div>` : ""}
+          ${coverageMarkup}
         </${tag}>
         ${menuMarkup}
       </div>
