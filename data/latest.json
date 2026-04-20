@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T00:18:50.439Z",
+  "generated_at": "2026-04-20T00:37:46.328Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -196,6 +196,13 @@
         "summary": "Anthropic’s Claude Mythos Escapes Sandbox in Alarming Cybersecurity Test 2026 teleSUR English"
       },
       {
+        "title": "Scoop: NSA using Anthropic's Mythos despite blacklist - Axios",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5UUW9jYXVFV0RVZ2EzSk5IMjZ4b09JeHQ0THZRbnpLQ1FULUlENUk0YTkwSGhKRmkwaGdQaS11R29NSUszVDVZTlV3MUZ2cHI5U0lZNmlXT2UzWlRiSkUyZDJFSU9pRUtjTC1SaVdHTQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-19T18:18:46.000Z",
+        "summary": "Scoop: NSA using Anthropic's Mythos despite blacklist Axios"
+      },
+      {
         "title": "Uber's AI Push Hits a Wall–CTO Says Budget Struggles Despite $3.4B Spend",
         "url": "https://finance.yahoo.com/sectors/technology/articles/ubers-anthropic-ai-push-hits-223109852.html",
         "source": "HN · 51↑",
@@ -206,7 +213,7 @@
       {
         "title": "Show HN: Faceoff – A terminal UI for following NHL games",
         "url": "https://www.vincentgregoire.com/faceoff/",
-        "source": "HN · 90↑",
+        "source": "HN · 92↑",
         "hn_id": "47826104",
         "published": "2026-04-19T17:44:44.000Z",
         "summary": "Faceoff is a TUI app written in Python to follow live NHL games and browse standings and stats. I got the inspiration from Playball, a similar TUI app for MLB games that was…"
@@ -250,7 +257,7 @@
       {
         "title": "Changes in the system prompt between Claude Opus 4.6 and 4.7",
         "url": "https://simonwillison.net/2026/Apr/18/opus-system-prompt/",
-        "source": "HN · 174↑",
+        "source": "HN · 184↑",
         "hn_id": "47823270",
         "published": "2026-04-19T10:36:29.000Z",
         "summary": ""
@@ -291,13 +298,6 @@
         "summary": "After calling software engineering 'dead,' Anthropic’s Claude Code creator Boris Cherny says coding tools The Times of India"
       },
       {
-        "title": "Anthropic Leak Exposes Claude Code Command Injection - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOYTBKb1p0cC1wNXVCRlFYb1AxRExkbU5FdzJHcHNCNGNpUHdmLXhqd3NMOFhUQkRncmNpV2pqaVNzVVpsbjUtR2RfUWdZd2NLUDRoMGhPcVVqYURIX1NRbzItcmc0TGFYeWYtWmJtVTc2Y2VPUmdmUEs4R2F6Sm1EQzlDTjVpSjhvYU1lS1pyS0UwZi1EZWpyazRn?oc=5",
-        "source": "Google News",
-        "published": "2026-04-19T00:59:30.000Z",
-        "summary": "Anthropic Leak Exposes Claude Code Command Injection Let's Data Science"
-      },
-      {
         "title": "Anthropic Releases New Claude Design Tool, Internet Explodes - InsideHook",
         "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBrczJFc1hnVGc3LTd6RVoyZ1FiQ21qVHMyQTdqdmJJWkpkODBzU2lZdlJKYnlIUm5XZk5XRjNNenZaVjB1TUtfMUo3bzEtUEJKLWVRWmhQVUZFcWxNMzVmZnh1N25jLTBsclZCYzVtNFZvMGQwTTNXa0l3a9IBgAFBVV95cUxNSTZBeWYzb3VvUXE2WktkOFdIVS1RQ1M2cHpFQW1zdkF4VVdtNGRDUUp5QjlJaXcybzM4RG5vTkowZm0yeEdKb0h6MzlHN05YNVVfUVVhNFNSN2tGSnRnQ2xhdktIRkNaaFRfcDNxTXd3SS1MUXF4MW1vSl9yMXY4Tg?oc=5",
         "source": "Google News",
@@ -320,6 +320,18 @@
         "summary": "Anthropic Pitches New 'Claude Design' Tool As a Way to Hand Off Busy Work PCMag"
       },
       {
+        "title": "The creator of Claude Code just revealed 7 secrets to using Claude Code (Opus 4.7)",
+        "url": "https://www.youtube.com/watch?v=8YhYtIF9PYI",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "8YhYtIF9PYI",
+        "thumbnail": "https://i.ytimg.com/vi/8YhYtIF9PYI/hqdefault.jpg",
+        "published": "2026-04-18T15:05:22.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
         "title": "Anthropic’s relationship with the Trump administration seems to be thawing",
         "url": "https://techcrunch.com/2026/04/18/anthropics-relationship-with-the-trump-administration-seems-to-be-thawing/",
         "source": "TechCrunch",
@@ -327,158 +339,86 @@
         "summary": "Despite recently being designated a supply-chain risk by the Pentagon, Anthropic is still talking to high-level members of the Trump administration."
       },
       {
-        "title": "An initiative to secure the world's software | Project Glasswing",
-        "url": "https://www.youtube.com/watch?v=INGOC6-LLv0",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "INGOC6-LLv0",
-        "thumbnail": "https://i.ytimg.com/vi/INGOC6-LLv0/hqdefault.jpg",
-        "published": "2026-04-07T18:03:51.000Z",
+        "title": "LIVE: Opus 4.7 is incredible, new Codex automated my life, Claude Design is MWAH",
+        "url": "https://www.youtube.com/watch?v=q1atPRjtTtA",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "q1atPRjtTtA",
+        "thumbnail": "https://i.ytimg.com/vi/q1atPRjtTtA/hqdefault.jpg",
+        "published": "2026-04-17T20:28:19.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "When AIs act emotional",
-        "url": "https://www.youtube.com/watch?v=D4XTefP3Lsc",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "D4XTefP3Lsc",
-        "thumbnail": "https://i.ytimg.com/vi/D4XTefP3Lsc/hqdefault.jpg",
-        "published": "2026-04-02T16:06:59.000Z",
+        "title": "LIVE: You NEED to be using OpenClaw and Claude Code together",
+        "url": "https://www.youtube.com/watch?v=DzH0U-JBems",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "DzH0U-JBems",
+        "thumbnail": "https://i.ytimg.com/vi/DzH0U-JBems/hqdefault.jpg",
+        "published": "2026-04-15T20:21:57.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "Can I get a six pack quickly?",
-        "url": "https://www.youtube.com/watch?v=kQRu7DdTTVA",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "kQRu7DdTTVA",
-        "thumbnail": "https://i.ytimg.com/vi/kQRu7DdTTVA/hqdefault.jpg",
-        "published": "2026-02-04T12:44:01.000Z",
+        "title": "LIVE: ANTHROPIC BANNED OPENCLAW. DO THIS NOW!! plus: MASSIVE ANNOUNCEMENT",
+        "url": "https://www.youtube.com/watch?v=Pe_wvdV2E6c",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "Pe_wvdV2E6c",
+        "thumbnail": "https://i.ytimg.com/vi/Pe_wvdV2E6c/hqdefault.jpg",
+        "published": "2026-04-06T20:32:55.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "How can I communicate better with my mom?",
-        "url": "https://www.youtube.com/watch?v=FBSam25u8O4",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "FBSam25u8O4",
-        "thumbnail": "https://i.ytimg.com/vi/FBSam25u8O4/hqdefault.jpg",
-        "published": "2026-02-04T12:43:54.000Z",
+        "title": "Anthropic just blocked OpenClaw. Here’s what you need to do immediately",
+        "url": "https://www.youtube.com/watch?v=cNALFf9R4t4",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "cNALFf9R4t4",
+        "thumbnail": "https://i.ytimg.com/vi/cNALFf9R4t4/hqdefault.jpg",
+        "published": "2026-04-05T21:15:01.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "What do you think of my business idea?",
-        "url": "https://www.youtube.com/watch?v=De-_wQpKw0s",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "De-_wQpKw0s",
-        "thumbnail": "https://i.ytimg.com/vi/De-_wQpKw0s/hqdefault.jpg",
-        "published": "2026-02-04T12:43:50.000Z",
+        "title": "LIVE: MASSIVE Claude Code leak fallout. + Hermes agent workflows",
+        "url": "https://www.youtube.com/watch?v=Lp9CVrKFZe8",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "Lp9CVrKFZe8",
+        "thumbnail": "https://i.ytimg.com/vi/Lp9CVrKFZe8/hqdefault.jpg",
+        "published": "2026-04-01T20:28:53.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "Is my essay making a clear argument?",
-        "url": "https://www.youtube.com/watch?v=3sVD3aG_azw",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "3sVD3aG_azw",
-        "thumbnail": "https://i.ytimg.com/vi/3sVD3aG_azw/hqdefault.jpg",
-        "published": "2026-02-04T12:43:47.000Z",
+        "title": "MASSIVE CLAUDE CODE LEAK! THIS CHANGES EVERYTHING!",
+        "url": "https://www.youtube.com/watch?v=FRjmzUGEpHo",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "FRjmzUGEpHo",
+        "thumbnail": "https://i.ytimg.com/vi/FRjmzUGEpHo/hqdefault.jpg",
+        "published": "2026-03-31T19:32:23.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "Claude on Mars",
-        "url": "https://www.youtube.com/shorts/kYJO0y8fVTA",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "kYJO0y8fVTA",
-        "thumbnail": "https://i.ytimg.com/vi/kYJO0y8fVTA/hqdefault.jpg",
-        "published": "2026-01-30T19:09:11.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Your tools are now interactive in Claude",
-        "url": "https://www.youtube.com/watch?v=bluAmTHoEow",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "bluAmTHoEow",
-        "thumbnail": "https://i.ytimg.com/vi/bluAmTHoEow/hqdefault.jpg",
-        "published": "2026-01-26T19:06:25.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "AI on campus",
-        "url": "https://www.youtube.com/watch?v=N5yJJA0NCU0",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "N5yJJA0NCU0",
-        "thumbnail": "https://i.ytimg.com/vi/N5yJJA0NCU0/hqdefault.jpg",
-        "published": "2026-01-12T22:41:27.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "AI's limited self-knowledge",
-        "url": "https://www.youtube.com/shorts/mM9TY91FECI",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "mM9TY91FECI",
-        "thumbnail": "https://i.ytimg.com/vi/mM9TY91FECI/hqdefault.jpg",
-        "published": "2026-01-08T16:07:44.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "What is sycophancy in AI models?",
-        "url": "https://www.youtube.com/watch?v=nvbq39yVYRk",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "nvbq39yVYRk",
-        "thumbnail": "https://i.ytimg.com/vi/nvbq39yVYRk/hqdefault.jpg",
-        "published": "2025-12-18T20:30:14.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Let Claude handle work in your browser",
-        "url": "https://www.youtube.com/watch?v=rBJnWMD0Pho",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "rBJnWMD0Pho",
-        "thumbnail": "https://i.ytimg.com/vi/rBJnWMD0Pho/hqdefault.jpg",
-        "published": "2025-12-18T18:52:03.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Claude ran a business in our office",
-        "url": "https://www.youtube.com/watch?v=5KTHvKCrQ00",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "5KTHvKCrQ00",
-        "thumbnail": "https://i.ytimg.com/vi/5KTHvKCrQ00/hqdefault.jpg",
-        "published": "2025-12-18T12:04:53.000Z",
+        "title": "LIVE: CLAUDE MYTHOS (OPUS 5) REVEALED!!!",
+        "url": "https://www.youtube.com/watch?v=-XQshH4zJkk",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "-XQshH4zJkk",
+        "thumbnail": "https://i.ytimg.com/vi/-XQshH4zJkk/hqdefault.jpg",
+        "published": "2026-03-27T20:10:49.000Z",
         "summary": "",
         "_kind": "news_video"
       }
@@ -571,168 +511,102 @@
     ],
     "youtube": [
       {
-        "title": "An initiative to secure the world's software | Project Glasswing",
-        "url": "https://www.youtube.com/watch?v=INGOC6-LLv0",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "INGOC6-LLv0",
-        "thumbnail": "https://i.ytimg.com/vi/INGOC6-LLv0/hqdefault.jpg",
-        "published": "2026-04-07T18:03:51.000Z",
+        "title": "The creator of Claude Code just revealed 7 secrets to using Claude Code (Opus 4.7)",
+        "url": "https://www.youtube.com/watch?v=8YhYtIF9PYI",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "8YhYtIF9PYI",
+        "thumbnail": "https://i.ytimg.com/vi/8YhYtIF9PYI/hqdefault.jpg",
+        "published": "2026-04-18T15:05:22.000Z",
         "summary": ""
       },
       {
-        "title": "When AIs act emotional",
-        "url": "https://www.youtube.com/watch?v=D4XTefP3Lsc",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "D4XTefP3Lsc",
-        "thumbnail": "https://i.ytimg.com/vi/D4XTefP3Lsc/hqdefault.jpg",
-        "published": "2026-04-02T16:06:59.000Z",
+        "title": "LIVE: Opus 4.7 is incredible, new Codex automated my life, Claude Design is MWAH",
+        "url": "https://www.youtube.com/watch?v=q1atPRjtTtA",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "q1atPRjtTtA",
+        "thumbnail": "https://i.ytimg.com/vi/q1atPRjtTtA/hqdefault.jpg",
+        "published": "2026-04-17T20:28:19.000Z",
         "summary": ""
       },
       {
-        "title": "Introducing Claude Opus 4.6",
-        "url": "https://www.youtube.com/watch?v=dPn3GBI8lII",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "dPn3GBI8lII",
-        "thumbnail": "https://i.ytimg.com/vi/dPn3GBI8lII/hqdefault.jpg",
-        "published": "2026-02-05T17:45:22.000Z",
+        "title": "LIVE: You NEED to be using OpenClaw and Claude Code together",
+        "url": "https://www.youtube.com/watch?v=DzH0U-JBems",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "DzH0U-JBems",
+        "thumbnail": "https://i.ytimg.com/vi/DzH0U-JBems/hqdefault.jpg",
+        "published": "2026-04-15T20:21:57.000Z",
         "summary": ""
       },
       {
-        "title": "Can I get a six pack quickly?",
-        "url": "https://www.youtube.com/watch?v=kQRu7DdTTVA",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "kQRu7DdTTVA",
-        "thumbnail": "https://i.ytimg.com/vi/kQRu7DdTTVA/hqdefault.jpg",
-        "published": "2026-02-04T12:44:01.000Z",
+        "title": "Claude Code for Desktop is the BEST way to build apps with AI EVER (full tutorial)",
+        "url": "https://www.youtube.com/watch?v=pHr1O_Af5NA",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "pHr1O_Af5NA",
+        "thumbnail": "https://i.ytimg.com/vi/pHr1O_Af5NA/hqdefault.jpg",
+        "published": "2026-04-15T02:13:41.000Z",
         "summary": ""
       },
       {
-        "title": "How can I communicate better with my mom?",
-        "url": "https://www.youtube.com/watch?v=FBSam25u8O4",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "FBSam25u8O4",
-        "thumbnail": "https://i.ytimg.com/vi/FBSam25u8O4/hqdefault.jpg",
-        "published": "2026-02-04T12:43:54.000Z",
+        "title": "LIVE: ANTHROPIC BANNED OPENCLAW. DO THIS NOW!! plus: MASSIVE ANNOUNCEMENT",
+        "url": "https://www.youtube.com/watch?v=Pe_wvdV2E6c",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "Pe_wvdV2E6c",
+        "thumbnail": "https://i.ytimg.com/vi/Pe_wvdV2E6c/hqdefault.jpg",
+        "published": "2026-04-06T20:32:55.000Z",
         "summary": ""
       },
       {
-        "title": "What do you think of my business idea?",
-        "url": "https://www.youtube.com/watch?v=De-_wQpKw0s",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "De-_wQpKw0s",
-        "thumbnail": "https://i.ytimg.com/vi/De-_wQpKw0s/hqdefault.jpg",
-        "published": "2026-02-04T12:43:50.000Z",
+        "title": "Anthropic just blocked OpenClaw. Here’s what you need to do immediately",
+        "url": "https://www.youtube.com/watch?v=cNALFf9R4t4",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "cNALFf9R4t4",
+        "thumbnail": "https://i.ytimg.com/vi/cNALFf9R4t4/hqdefault.jpg",
+        "published": "2026-04-05T21:15:01.000Z",
         "summary": ""
       },
       {
-        "title": "Is my essay making a clear argument?",
-        "url": "https://www.youtube.com/watch?v=3sVD3aG_azw",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "3sVD3aG_azw",
-        "thumbnail": "https://i.ytimg.com/vi/3sVD3aG_azw/hqdefault.jpg",
-        "published": "2026-02-04T12:43:47.000Z",
+        "title": "LIVE: MASSIVE Claude Code leak fallout. + Hermes agent workflows",
+        "url": "https://www.youtube.com/watch?v=Lp9CVrKFZe8",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "Lp9CVrKFZe8",
+        "thumbnail": "https://i.ytimg.com/vi/Lp9CVrKFZe8/hqdefault.jpg",
+        "published": "2026-04-01T20:28:53.000Z",
         "summary": ""
       },
       {
-        "title": "Claude on Mars",
-        "url": "https://www.youtube.com/shorts/kYJO0y8fVTA",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "kYJO0y8fVTA",
-        "thumbnail": "https://i.ytimg.com/vi/kYJO0y8fVTA/hqdefault.jpg",
-        "published": "2026-01-30T19:09:11.000Z",
+        "title": "MASSIVE CLAUDE CODE LEAK! THIS CHANGES EVERYTHING!",
+        "url": "https://www.youtube.com/watch?v=FRjmzUGEpHo",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "FRjmzUGEpHo",
+        "thumbnail": "https://i.ytimg.com/vi/FRjmzUGEpHo/hqdefault.jpg",
+        "published": "2026-03-31T19:32:23.000Z",
         "summary": ""
       },
       {
-        "title": "Your tools are now interactive in Claude",
-        "url": "https://www.youtube.com/watch?v=bluAmTHoEow",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "bluAmTHoEow",
-        "thumbnail": "https://i.ytimg.com/vi/bluAmTHoEow/hqdefault.jpg",
-        "published": "2026-01-26T19:06:25.000Z",
-        "summary": ""
-      },
-      {
-        "title": "AI on campus",
-        "url": "https://www.youtube.com/watch?v=N5yJJA0NCU0",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "N5yJJA0NCU0",
-        "thumbnail": "https://i.ytimg.com/vi/N5yJJA0NCU0/hqdefault.jpg",
-        "published": "2026-01-12T22:41:27.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Introducing Cowork: Claude Code for the rest of your work",
-        "url": "https://www.youtube.com/watch?v=UAmKyyZ-b9E",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "UAmKyyZ-b9E",
-        "thumbnail": "https://i.ytimg.com/vi/UAmKyyZ-b9E/hqdefault.jpg",
-        "published": "2026-01-12T20:02:22.000Z",
-        "summary": ""
-      },
-      {
-        "title": "AI's limited self-knowledge",
-        "url": "https://www.youtube.com/shorts/mM9TY91FECI",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "mM9TY91FECI",
-        "thumbnail": "https://i.ytimg.com/vi/mM9TY91FECI/hqdefault.jpg",
-        "published": "2026-01-08T16:07:44.000Z",
-        "summary": ""
-      },
-      {
-        "title": "What is sycophancy in AI models?",
-        "url": "https://www.youtube.com/watch?v=nvbq39yVYRk",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "nvbq39yVYRk",
-        "thumbnail": "https://i.ytimg.com/vi/nvbq39yVYRk/hqdefault.jpg",
-        "published": "2025-12-18T20:30:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Let Claude handle work in your browser",
-        "url": "https://www.youtube.com/watch?v=rBJnWMD0Pho",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "rBJnWMD0Pho",
-        "thumbnail": "https://i.ytimg.com/vi/rBJnWMD0Pho/hqdefault.jpg",
-        "published": "2025-12-18T18:52:03.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude ran a business in our office",
-        "url": "https://www.youtube.com/watch?v=5KTHvKCrQ00",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "5KTHvKCrQ00",
-        "thumbnail": "https://i.ytimg.com/vi/5KTHvKCrQ00/hqdefault.jpg",
-        "published": "2025-12-18T12:04:53.000Z",
+        "title": "LIVE: CLAUDE MYTHOS (OPUS 5) REVEALED!!!",
+        "url": "https://www.youtube.com/watch?v=-XQshH4zJkk",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "-XQshH4zJkk",
+        "thumbnail": "https://i.ytimg.com/vi/-XQshH4zJkk/hqdefault.jpg",
+        "published": "2026-03-27T20:10:49.000Z",
         "summary": ""
       }
     ],
@@ -792,6 +666,18 @@
         "published": "2026-04-15T04:02:13.000Z",
         "summary": "What's changed Improved the extended-thinking indicator with a rotating progress hint",
         "tutorial_kind": "official"
+      },
+      {
+        "title": "Claude Code for Desktop is the BEST way to build apps with AI EVER (full tutorial)",
+        "url": "https://www.youtube.com/watch?v=pHr1O_Af5NA",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "pHr1O_Af5NA",
+        "thumbnail": "https://i.ytimg.com/vi/pHr1O_Af5NA/hqdefault.jpg",
+        "published": "2026-04-15T02:13:41.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
       },
       {
         "title": "v2.1.108",
@@ -994,18 +880,6 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "Introducing Claude Opus 4.6",
-        "url": "https://www.youtube.com/watch?v=dPn3GBI8lII",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "dPn3GBI8lII",
-        "thumbnail": "https://i.ytimg.com/vi/dPn3GBI8lII/hqdefault.jpg",
-        "published": "2026-02-05T17:45:22.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
-      },
-      {
         "title": "Infrastructure Noise",
         "url": "https://www.anthropic.com/engineering/infrastructure-noise",
         "source": "Anthropic Eng",
@@ -1028,18 +902,6 @@
         "published": "2026-01-22T01:16:20.000Z",
         "summary": "",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "Introducing Cowork: Claude Code for the rest of your work",
-        "url": "https://www.youtube.com/watch?v=UAmKyyZ-b9E",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "UAmKyyZ-b9E",
-        "thumbnail": "https://i.ytimg.com/vi/UAmKyyZ-b9E/hqdefault.jpg",
-        "published": "2026-01-12T20:02:22.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "Contextual Retrieval",
@@ -1404,11 +1266,25 @@
     ],
     "claude_learning": [
       {
+        "title": "The creator of Claude Code just revealed 7 secrets to using Claude Code (Opus 4.7)",
+        "url": "https://www.youtube.com/watch?v=8YhYtIF9PYI",
+        "source": "YouTube · Alex Finn",
+        "published": "2026-04-18T15:05:22.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.114",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.114",
         "source": "Claude Code",
         "published": "2026-04-18T01:34:30.000Z",
         "summary": "What's changed Fixed a crash in the permission dialog when an agent teams teammate requested tool permission"
+      },
+      {
+        "title": "LIVE: Opus 4.7 is incredible, new Codex automated my life, Claude Design is MWAH",
+        "url": "https://www.youtube.com/watch?v=q1atPRjtTtA",
+        "source": "YouTube · Alex Finn",
+        "published": "2026-04-17T20:28:19.000Z",
+        "summary": ""
       },
       {
         "title": "v2.1.113",
@@ -1446,11 +1322,25 @@
         "summary": "What's changed Added /tui command and tui setting — run /tui fullscreen to switch to flicker-free rendering in the same conversation Changed Ctrl+O to toggle between normal and verbose transcript only; focus view is…"
       },
       {
+        "title": "LIVE: You NEED to be using OpenClaw and Claude Code together",
+        "url": "https://www.youtube.com/watch?v=DzH0U-JBems",
+        "source": "YouTube · Alex Finn",
+        "published": "2026-04-15T20:21:57.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.109",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.109",
         "source": "Claude Code",
         "published": "2026-04-15T04:02:13.000Z",
         "summary": "What's changed Improved the extended-thinking indicator with a rotating progress hint"
+      },
+      {
+        "title": "Claude Code for Desktop is the BEST way to build apps with AI EVER (full tutorial)",
+        "url": "https://www.youtube.com/watch?v=pHr1O_Af5NA",
+        "source": "YouTube · Alex Finn",
+        "published": "2026-04-15T02:13:41.000Z",
+        "summary": ""
       },
       {
         "title": "0.21.2-hotfix-3",
@@ -1530,13 +1420,6 @@
         "summary": "We've launched the ant CLI , a command-line client for the Claude API that enables faster interaction with the Claude API, native integration with Claude Code, and versioning of API resources in YAML files. Learn more in the CLI reference ."
       },
       {
-        "title": "An initiative to secure the world's software | Project Glasswing",
-        "url": "https://www.youtube.com/watch?v=INGOC6-LLv0",
-        "source": "YouTube · Anthropic",
-        "published": "2026-04-07T18:03:51.000Z",
-        "summary": ""
-      },
-      {
         "title": "We announced Claude Mythos Preview is available as a gated research preview for defensive cybersecurity work as part…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#april-7-2026",
         "source": "Claude API Release Notes",
@@ -1544,10 +1427,17 @@
         "summary": "The Messages API is now available on Amazon Bedrock as a research preview. The new Claude in Amazon Bedrock endpoint at /anthropic/v1/messages uses the same request shape as the first-party Claude API and runs on AWS-managed…"
       },
       {
-        "title": "When AIs act emotional",
-        "url": "https://www.youtube.com/watch?v=D4XTefP3Lsc",
-        "source": "YouTube · Anthropic",
-        "published": "2026-04-02T16:06:59.000Z",
+        "title": "LIVE: ANTHROPIC BANNED OPENCLAW. DO THIS NOW!! plus: MASSIVE ANNOUNCEMENT",
+        "url": "https://www.youtube.com/watch?v=Pe_wvdV2E6c",
+        "source": "YouTube · Alex Finn",
+        "published": "2026-04-06T20:32:55.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic just blocked OpenClaw. Here’s what you need to do immediately",
+        "url": "https://www.youtube.com/watch?v=cNALFf9R4t4",
+        "source": "YouTube · Alex Finn",
+        "published": "2026-04-05T21:15:01.000Z",
         "summary": ""
       },
       {
@@ -1556,6 +1446,13 @@
         "source": "MCP Python SDK",
         "published": "2026-04-02T14:36:40.000Z",
         "summary": "What's Changed fix: remove unused requests dependency from simple-chatbot example by @maxisbey in #1959 ci: backport conformance tests from main to v1.x by @felixweinberger in #2068 fix: add RFC 8707 resource…"
+      },
+      {
+        "title": "LIVE: MASSIVE Claude Code leak fallout. + Hermes agent workflows",
+        "url": "https://www.youtube.com/watch?v=Lp9CVrKFZe8",
+        "source": "YouTube · Alex Finn",
+        "published": "2026-04-01T20:28:53.000Z",
+        "summary": ""
       },
       {
         "title": "@modelcontextprotocol/fastify@2.0.0-alpha.2",
@@ -1628,11 +1525,25 @@
         "summary": "Patch Changes #1504 327243c Thanks @corvid-agent ! - Add missing hono peer dependency to @modelcontextprotocol/node . The package already depends on @hono/node-server which requires hono at runtime, but hono was only…"
       },
       {
+        "title": "MASSIVE CLAUDE CODE LEAK! THIS CHANGES EVERYTHING!",
+        "url": "https://www.youtube.com/watch?v=FRjmzUGEpHo",
+        "source": "YouTube · Alex Finn",
+        "published": "2026-03-31T19:32:23.000Z",
+        "summary": ""
+      },
+      {
         "title": "We've raised the max_tokens cap to 300k on the Message Batches API for Claude Opus 4.6 and Sonnet 4.6. Include the…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#march-30-2026",
         "source": "Claude API Release Notes",
         "published": "2026-03-30T00:00:00.000Z",
         "summary": "We're retiring the 1M token context window beta for Claude Sonnet 4.5 and Claude Sonnet 4 on April 30, 2026 . After that date, the context-1m-2025-08-07 beta header will have no effect on these models, and requests that exceed the…"
+      },
+      {
+        "title": "LIVE: CLAUDE MYTHOS (OPUS 5) REVEALED!!!",
+        "url": "https://www.youtube.com/watch?v=-XQshH4zJkk",
+        "source": "YouTube · Alex Finn",
+        "published": "2026-03-27T20:10:49.000Z",
+        "summary": ""
       },
       {
         "title": "We've added model capability fields to the Models API . GET /v1/models and GET /v1/models/{model_id} now return…",
@@ -1696,97 +1607,6 @@
         "source": "MCP Inspector",
         "published": "2026-02-06T17:52:31.000Z",
         "summary": "What's Changed Fix async sampling test by @cliffhall in #1035 fix(client): fix dev mode hanging on Windows by @olaservo in #1051 fix(client): circular function calls leads to memory leak by @dzhulk in #1049 Enable…"
-      },
-      {
-        "title": "Introducing Claude Opus 4.6",
-        "url": "https://www.youtube.com/watch?v=dPn3GBI8lII",
-        "source": "YouTube · Anthropic",
-        "published": "2026-02-05T17:45:22.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Can I get a six pack quickly?",
-        "url": "https://www.youtube.com/watch?v=kQRu7DdTTVA",
-        "source": "YouTube · Anthropic",
-        "published": "2026-02-04T12:44:01.000Z",
-        "summary": ""
-      },
-      {
-        "title": "How can I communicate better with my mom?",
-        "url": "https://www.youtube.com/watch?v=FBSam25u8O4",
-        "source": "YouTube · Anthropic",
-        "published": "2026-02-04T12:43:54.000Z",
-        "summary": ""
-      },
-      {
-        "title": "What do you think of my business idea?",
-        "url": "https://www.youtube.com/watch?v=De-_wQpKw0s",
-        "source": "YouTube · Anthropic",
-        "published": "2026-02-04T12:43:50.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Is my essay making a clear argument?",
-        "url": "https://www.youtube.com/watch?v=3sVD3aG_azw",
-        "source": "YouTube · Anthropic",
-        "published": "2026-02-04T12:43:47.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude on Mars",
-        "url": "https://www.youtube.com/shorts/kYJO0y8fVTA",
-        "source": "YouTube · Anthropic",
-        "published": "2026-01-30T19:09:11.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Your tools are now interactive in Claude",
-        "url": "https://www.youtube.com/watch?v=bluAmTHoEow",
-        "source": "YouTube · Anthropic",
-        "published": "2026-01-26T19:06:25.000Z",
-        "summary": ""
-      },
-      {
-        "title": "AI on campus",
-        "url": "https://www.youtube.com/watch?v=N5yJJA0NCU0",
-        "source": "YouTube · Anthropic",
-        "published": "2026-01-12T22:41:27.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Introducing Cowork: Claude Code for the rest of your work",
-        "url": "https://www.youtube.com/watch?v=UAmKyyZ-b9E",
-        "source": "YouTube · Anthropic",
-        "published": "2026-01-12T20:02:22.000Z",
-        "summary": ""
-      },
-      {
-        "title": "AI's limited self-knowledge",
-        "url": "https://www.youtube.com/shorts/mM9TY91FECI",
-        "source": "YouTube · Anthropic",
-        "published": "2026-01-08T16:07:44.000Z",
-        "summary": ""
-      },
-      {
-        "title": "What is sycophancy in AI models?",
-        "url": "https://www.youtube.com/watch?v=nvbq39yVYRk",
-        "source": "YouTube · Anthropic",
-        "published": "2025-12-18T20:30:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Let Claude handle work in your browser",
-        "url": "https://www.youtube.com/watch?v=rBJnWMD0Pho",
-        "source": "YouTube · Anthropic",
-        "published": "2025-12-18T18:52:03.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude ran a business in our office",
-        "url": "https://www.youtube.com/watch?v=5KTHvKCrQ00",
-        "source": "YouTube · Anthropic",
-        "published": "2025-12-18T12:04:53.000Z",
-        "summary": ""
       }
     ]
   }
