@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.39",
-  "milestone": "M9.17e",
-  "milestoneTitle": "Phase M9.17e — Session-wrap hygiene. js/app.js TOC regenerated after the M9.17 wave drifted anchors ~100 lines (new entries for wireLearnGrabHandle, updated line numbers across every section). docs/status.md caught up with the full M9.17 ledger (M9.17.0 scaffold → M9.17b.d swipe-mastery retirement). Plan doc logged M9.17c.a, M9.17d, M9.17b.d, and this M9.17e.",
-  "deployedAt": "2026-04-20T15:25Z",
+  "version": "0.7.1-dev.40",
+  "milestone": "M9.17f",
+  "milestoneTitle": "Phase M9.17f — Drag trace + stronger active-zone highlight. During a grab-handle drag the row was pulsing in place, which made it hard to tell which drop zone you were about to land in. Now the row follows the finger via inline transform (scale(1.04) translate(dx, dy)); compositor-only, no layout churn. On release with no drop target, resetRowTransform eases back to origin over 0.22s; on successful drop, renderLearn replaces the DOM so inline styles are moot. Also bumped .learn-zone-drop-active to a more distinct state: subtle accent-tinted background, 2px inset ring (was 1px), 6px outer glow (was 4px), warmer drop shadow — unambiguous which zone will receive the drop.",
+  "deployedAt": "2026-04-20T15:40Z",
   "commitSha": ""
 }

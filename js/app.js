@@ -2145,20 +2145,30 @@
   function wireLearnGrabHandle(handle, row) {
     if (!handle || !row) return;
     let dragging = false;
+    let startX = 0, startY = 0;
     const clearDropHighlights = () => {
       document.querySelectorAll(".learn-zone-drop-candidate").forEach((el) => el.classList.remove("learn-zone-drop-candidate"));
       document.querySelectorAll(".learn-zone-drop-active").forEach((el) => el.classList.remove("learn-zone-drop-active"));
     };
-    const startDrag = () => {
+    const startDrag = (x, y) => {
       dragging = true;
+      startX = x; startY = y;
       row.classList.add("learn-item-is-dragging");
       row.dataset.learnSwipeHandled = "1";
+      row.style.transition = "none";           // inline translate must respond instantly; animation re-armed on release
       try { if (navigator.vibrate) navigator.vibrate(10); } catch {}
       document.querySelectorAll(".learn-zone-upnext, .learn-zone-all").forEach((z) => {
         z.classList.add("learn-zone-drop-candidate");
       });
     };
     const updateHover = (x, y) => {
+      // M9.17f — row follows finger during drag so the "trace" is visible
+      // (previously the row stayed in place, making it hard to tell which
+      // zone you were about to drop into). Compositor-only transform;
+      // scale(1.04) preserved from .learn-item-is-dragging pulse.
+      const dx = x - startX;
+      const dy = y - startY;
+      row.style.transform = `scale(1.04) translate(${dx}px, ${dy}px)`;
       const upnext = document.querySelector(".learn-zone-upnext");
       const all    = document.querySelector(".learn-zone-all");
       let active = null;
@@ -2168,6 +2178,13 @@
         if (el !== active) el.classList.remove("learn-zone-drop-active");
       });
       if (active) active.classList.add("learn-zone-drop-active");
+    };
+    const resetRowTransform = () => {
+      // Animate back to identity so a no-drop release eases home instead
+      // of snapping. Clearing happens on release + cancel; a successful
+      // drop re-renders the list (DOM replaced) so inline styles are moot.
+      row.style.transition = "transform 0.22s var(--ease-premium)";
+      row.style.transform = "";
     };
     const finishDrag = (x, y) => {
       const upnext = document.querySelector(".learn-zone-upnext");
@@ -2184,12 +2201,15 @@
         if (drop === "upnext") pinLearnItem(type, id, { title });
         else                   unpinLearnItem(type, id);
         renderLearn();
+      } else {
+        resetRowTransform();
       }
       dragging = false;
     };
     const cancelDrag = () => {
       row.classList.remove("learn-item-is-dragging");
       clearDropHighlights();
+      resetRowTransform();
       dragging = false;
     };
     // Touch path — handle-attached listeners receive moves/ends even after
@@ -2197,8 +2217,9 @@
     handle.addEventListener("touchstart", (e) => {
       if (e.touches.length !== 1) return;
       e.preventDefault();
-      startDrag();
-      updateHover(e.touches[0].clientX, e.touches[0].clientY);
+      const t = e.touches[0];
+      startDrag(t.clientX, t.clientY);
+      updateHover(t.clientX, t.clientY);
     }, { passive: false });
     handle.addEventListener("touchmove", (e) => {
       if (!dragging || e.touches.length !== 1) return;
@@ -2217,7 +2238,7 @@
       if (e.pointerType !== "mouse" || e.button !== 0) return;
       e.preventDefault();
       try { handle.setPointerCapture(e.pointerId); } catch {}
-      startDrag();
+      startDrag(e.clientX, e.clientY);
       updateHover(e.clientX, e.clientY);
     });
     handle.addEventListener("pointermove", (e) => {

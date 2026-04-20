@@ -4218,10 +4218,11 @@ body.modal-open { overflow: hidden; }
     0 0 0 3px var(--accent-glow);
 }
 .learn-zone-drop-active {
+  background: color-mix(in srgb, var(--accent-solid) 6%, transparent);
   box-shadow:
-    inset 0 0 0 1px var(--accent-solid),
-    0 0 0 4px var(--accent-glow),
-    0 10px 24px -10px rgba(0,0,0,0.2);
+    inset 0 0 0 2px var(--accent-solid),
+    0 0 0 6px var(--accent-glow),
+    0 14px 28px -10px color-mix(in srgb, var(--accent-solid) 35%, transparent);
 }
 /* M9.17b.c — head is the tap target. Rendered as <a> (courses /
    drafts-with-url) or <button> (lessons) — either way it must reset
