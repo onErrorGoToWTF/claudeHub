@@ -1,6 +1,6 @@
 # aiUniversity — status + structure
 
-Current release: **v0.7.1-dev.38** on `main`. Live at https://onerrorgotowtf.github.io/claudeHub/. Phases 1, 1.5, 2, 3, 4, 5, 6, 7, 8 shipped plus v0.7 design-system refactor M9.1–M9.17b.d. (Formerly "aiStacked" — visible brand flipped to **aiUniversity** in M8.12.5.)
+Current release: **v0.7.1-dev.40** on `main`. Live at https://onerrorgotowtf.github.io/claudeHub/. Phases 1, 1.5, 2, 3, 4, 5, 6, 7, 8 shipped plus v0.7 design-system refactor M9.1–M9.17f. (Formerly "aiStacked" — visible brand flipped to **aiUniversity** in M8.12.5.)
 
 ## Current state — 2026-04-20
 
@@ -34,6 +34,7 @@ Current release: **v0.7.1-dev.38** on `main`. Live at https://onerrorgotowtf.git
 - **M9.17d** — no text-selection on tappable/draggable surfaces (`user-select: none` + `-webkit-touch-callout: none` on card rows, action buttons, grab handles, filter chips, nav chrome, CTAs). Informational text (summary, meta, coverage, body copy) stays copyable.
 - **M9.17b.d** — retired swipe-left-mastery. Inline ✓ button is now the discoverable mastery path; ~120 lines of swipe state machine removed from wireLearnRowGestures.
 - **M9.17e** — TOC regenerated in js/app.js after the M9.17 wave drifted anchors ~100 lines.
+- **M9.17f** — row follows finger during grab-handle drag (inline compositor-only transform); drop-zone active state bumped to unambiguous accent-tint + stronger ring / glow / drop shadow.
 
 ## Sources of truth
 
