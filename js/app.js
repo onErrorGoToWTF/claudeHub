@@ -2041,18 +2041,17 @@
     const stateLabel = stateRaw === "completed" ? "Done"
                     : stateRaw === "in_progress" ? "Continue"
                     : "Start";
-    // Actions — pin + mastery always visible on non-Done items, delete
-    // only on drafts. Done items get invisible-reserved slots so the
-    // trailing cluster geometry stays identical across Up Next /
-    // Everything else / Done zones.
-    const pinned   = !!item.pinned;
-    const mastered = !!item.mastered;
-    const pinLabel    = pinned   ? "Remove from Up Next" : "Move to Up Next";
-    const masterLabel = mastered ? "Remove mastery"      : "Mark mastered";
-    const pinEmpty    = inDone ? ' data-empty="1"' : "";
-    const masterEmpty = inDone ? ' data-empty="1"' : "";
-    const pinAction    = inDone ? "" : ' data-learn-action="pin"';
-    const masterAction = inDone ? "" : ' data-learn-action="master"';
+    // M9.19a.6 — Pin + mastery icons retired from Learn tiles.
+    // Pin is a universal "send to Learn" action that lives on
+    // Tools/Projects/Snippets/News tiles only. Once an item is IN
+    // Learn, there's no pin affordance — it's already here. Mastery
+    // collapses into completion (the state pill carries "Done"; no
+    // separate manual-mastery flag needed on Learn).
+    // Zone placement (Up Next ↔ Everything else) stays driven by
+    // drag-to-zone on the grab handle — wireLearnGrabHandle still
+    // calls pinLearnItem / unpinLearnItem under the hood. Draft
+    // deletion still fires via swipe (M9.19a.2). The row keeps its
+    // 3×32px icon width reserved for future flags.
     // M9.19a.2 — Drafts moved from inline trash button to swipe-to-reveal
     // delete. The trailing action slot stays reserved-invisible to keep
     // geometry identical with non-draft tiles; the destructive action
@@ -2105,8 +2104,8 @@
           <span class="dash-tile-duration"${durationEmpty}>${escapeHtml(minutesLabel)}</span>
           <span class="dash-tile-state" data-state="${escapeHtml(stateRaw)}">${escapeHtml(stateLabel)}</span>
           <div class="dash-tile-icons">
-            <button type="button" class="dash-tile-icon dash-tile-pin"${pinAction}${pinEmpty} aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinLabel}" title="${pinLabel}">${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}</button>
-            <button type="button" class="dash-tile-icon dash-tile-mastery"${masterAction}${masterEmpty} aria-pressed="${mastered ? "true" : "false"}" aria-label="${masterLabel}" title="${masterLabel}">${mastered ? MASTERY_SVG_FILLED : MASTERY_SVG_OUTLINE}</button>
+            <button type="button" class="dash-tile-icon dash-tile-pin" data-empty="1" aria-hidden="true" tabindex="-1">${PIN_SVG_OUTLINE}</button>
+            <button type="button" class="dash-tile-icon dash-tile-mastery" data-empty="1" aria-hidden="true" tabindex="-1">${MASTERY_SVG_OUTLINE}</button>
             ${deleteSlot}
           </div>
         </div>
@@ -3419,8 +3418,12 @@
             <span class="dash-tile-duration"${durationEmpty}>${escapeHtml(minutesLabel)}</span>
             <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
             <div class="dash-tile-icons">
-              <button type="button" class="dash-tile-icon dash-tile-pin"${pinActionAttr} aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinLabel}" title="${pinLabel}"${actionAttrs}>${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}</button>
-              <button type="button" class="dash-tile-icon dash-tile-mastery"${masterActionAttr} aria-pressed="${mastered ? "true" : "false"}" aria-label="${masterLabel}" title="${masterLabel}"${actionAttrs}>${mastered ? MASTERY_SVG_FILLED : MASTERY_SVG_OUTLINE}</button>
+              <!-- M9.19a.6 — pin + mastery retired from dashboard Learn
+                   tiles for cross-surface consistency with Learn list.
+                   Icon row keeps its reserved 3×32px width for future
+                   flags. All three slots invisible today. -->
+              <button type="button" class="dash-tile-icon dash-tile-pin" data-empty="1" aria-hidden="true" tabindex="-1">${PIN_SVG_OUTLINE}</button>
+              <button type="button" class="dash-tile-icon dash-tile-mastery" data-empty="1" aria-hidden="true" tabindex="-1">${MASTERY_SVG_OUTLINE}</button>
               <button type="button" class="dash-tile-icon dash-tile-delete" data-empty="1" aria-hidden="true" tabindex="-1">${TRASH_SVG}</button>
             </div>
           </div>

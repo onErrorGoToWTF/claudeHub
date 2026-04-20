@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.53",
-  "milestone": "M9.19a.5",
-  "milestoneTitle": "Phase M9.19a.5 — Duration chip always carries a time on task tiles. User flagged the em-dash '—' looking dumb when a Learn item has no authored minutes. renderLearnItemRow and renderDashLearn now default to 10m whenever minutes isn't set — 'roughly a short tutorial' placeholder. Future authored content will require minutes at authoring time (tutorial creation will enforce it); defaulting here keeps the chip populated in the meantime so every task tile reads as something actionable. Projects (no duration concept) keep data-empty='1'; the CSS rule .dash-tile-duration[data-empty='1'] now sets visibility: hidden instead of rendering a muted em-dash, so the 40px slot stays reserved for cross-surface alignment but no filler text appears on project tiles.",
-  "deployedAt": "2026-04-20T19:30Z",
+  "version": "0.7.1-dev.54",
+  "milestone": "M9.19a.6",
+  "milestoneTitle": "Phase M9.19a.6 — Retire pin + mastery icons from Learn tiles. Pin becomes a strictly universal 'send to Learn' action that lives only on Tools/Projects/Snippets/News cards; once an item is IN Learn, there is no pin affordance (it's already here — pinning again was a semantic contradiction). Mastery collapses into completion: the state pill (Start/Continue/Done) carries the completion signal, no separate manual-mastery toggle on Learn. Both renderLearnItemRow (Learn list) and renderDashLearn (dashboard Learn panel) now render all three bottom-row icon slots invisible (data-empty='1'); the 3×32px row stays reserved for future flags (overflow / warning / locked / recommended / has-notes) per the locked-layout-now rule. Zone placement (Up Next ↔ Everything else) still wires through drag-to-zone — wireLearnGrabHandle continues to call pinLearnItem / unpinLearnItem under the hood, just no longer via a tap-button. Draft deletion still fires via the swipe wrap (M9.19a.2). buildLearnItems still reads isLearnItemPinned + isMastered to determine zone bucketing; only the TILE buttons are gone. Known follow-up (flagged, out of scope): Projects dashboard tile's pin semantic ('has pinned tools/snippets inside') still conflicts with the universal 'pin = send to Learn' rule — cleanup when Projects dashboard migration catches up.",
+  "deployedAt": "2026-04-20T19:45Z",
   "commitSha": ""
 }
