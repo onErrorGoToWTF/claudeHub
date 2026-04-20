@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.34",
-  "milestone": "M9.17b.c",
-  "milestoneTitle": "Phase M9.17b.c — Shrunk tap target for Learn items. The whole card was an anchor/button which made accidental opens easy on phones. Now only the .learn-item-head (kind pill + title + state pill) is the link — <a> for courses/drafts-with-url, <button> for lessons. Meta, summary, and coverage become passive siblings that do nothing when tapped. The outer .learn-item stays as a plain <div> carrying the card chrome. wireLearnRowGestures keeps swipe-left-mastery on the card container; its capture-phase click-suppression still blocks the head-link's default when a swipe was handled. Lesson click handler rebinds to .learn-item-head inside lesson rows. 48px tap-target height via 6px vertical padding on the head (Apple 44px minimum with comfort margin).",
-  "deployedAt": "2026-04-20T14:10Z",
+  "version": "0.7.1-dev.35",
+  "milestone": "M9.17c",
+  "milestoneTitle": "Phase M9.17c — Destructive-action color standard (design-amend chunk 1 of 2). Introduced --danger token family (solid, border, glow, surface, ink, hover) in :root derived via color-mix from a single hue source — same pattern as --base-shared → --accent-*. CLAUDE.md design-language section gains the 'one --danger for every destructive action' rule; the design-review skill's color hard-rule updated to flag hardcoded reds in *-delete / *-danger / *-wipe / *-remove-* selectors. Plan doc ledger gets a new M9.17 suite section covering everything from M9.17.0 onward. No surface migrations yet; .learn-action-btn-danger + .project-delete cascade in M9.17c.a. Out of scope: sentiment / status pills (red = severity, not action).",
+  "deployedAt": "2026-04-20T14:35Z",
   "commitSha": ""
 }

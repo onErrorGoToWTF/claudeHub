@@ -236,6 +236,20 @@
   --accent-warm:    color-mix(in oklch, var(--base) 82%, #ffc400);
   --accent-cool:    color-mix(in oklch, var(--base) 82%, #5ab8ff);
 
+  /* M9.17c — destructive-action color standard. All delete / wipe /
+     remove-permanent surfaces across the app derive from --danger so a
+     single hue edit retunes every destructive button at once. Matches
+     the --base-shared → --accent-* pattern; per-state variants derived
+     via color-mix. Out of scope: sentiment / status pills where red
+     means severity, not action. */
+  --danger:          #dc2626;                                           /* single hue source of truth for destructive actions */
+  --danger-solid:    var(--danger);
+  --danger-border:   color-mix(in srgb, var(--danger), transparent 45%); /* 0.55 alpha */
+  --danger-glow:     color-mix(in srgb, var(--danger), transparent 66%); /* 0.34 alpha */
+  --danger-surface:  color-mix(in srgb, var(--danger), transparent 92%); /* 0.08 alpha — subtle hover tint */
+  --danger-ink:      #ffffff;                                            /* on-danger text (armed state) */
+  --danger-hover:    color-mix(in oklch, var(--danger) 85%, black);
+
   /* Legacy compat — aliases kept so older selectors don't break.
      --accent (no suffix) had 0 consumers after M9.16i; removed. */
   --accent-hi:          var(--color-electric-solid-hover);
