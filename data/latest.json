@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T17:27:40.792Z",
+  "generated_at": "2026-04-20T17:43:30.247Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -7,7 +7,7 @@
         "title": "Claude Opus 4 7",
         "url": "https://www.anthropic.com/news/claude-opus-4-7",
         "source": "Anthropic",
-        "published": "2026-04-17T17:43:02.000Z",
+        "published": "2026-04-20T17:27:26.000Z",
         "summary": ""
       },
       {
@@ -197,7 +197,7 @@
       {
         "title": "I prompted ChatGPT, Claude, Perplexity, and Gemini and watched my Nginx logs",
         "url": "https://surfacedby.com/blog/nginx-logs-ai-traffic-vs-referral-traffic",
-        "source": "HN · 90↑",
+        "source": "HN · 95↑",
         "hn_id": "47835646",
         "published": "2026-04-20T15:22:01.000Z",
         "summary": ""
@@ -208,13 +208,6 @@
         "source": "Google News",
         "published": "2026-04-20T15:00:13.000Z",
         "summary": "Opinion | Anthropic Wants Claude to Be Moral. Is Religion Really the Answer? The New York Times"
-      },
-      {
-        "title": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBoQkkwMnB2b0tyeFllX3Iwa2FrRXNZbW5Dem5ERGlLVzFkbGNycUN1UXVEMnhYVlVmaGNTNDZuSTVWZ3d3alpjN29LbkprZV9qTjg1QVFKdURnYk9FYlFTQWFReVRNdEJPaHdTWlhGUTM?oc=5",
-        "source": "Google News",
-        "published": "2026-04-20T14:37:48.000Z",
-        "summary": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety Mashable"
       },
       {
         "title": "Anthropic's Mythos AI model sparks fears of turbocharged hacking",
@@ -243,6 +236,13 @@
         "source": "Google News",
         "published": "2026-04-20T12:04:24.000Z",
         "summary": "Anthropic Claude Design: AI tool for visual content creation ContentGrip"
+      },
+      {
+        "title": "Scoop: NSA using Anthropic's Mythos despite Defense Department blacklist - Axios",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5UUW9jYXVFV0RVZ2EzSk5IMjZ4b09JeHQ0THZRbnpLQ1FULUlENUk0YTkwSGhKRmkwaGdQaS11R29NSUszVDVZTlV3MUZ2cHI5U0lZNmlXT2UzWlRiSkUyZDJFSU9pRUtjTC1SaVdHTQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-20T11:40:01.000Z",
+        "summary": "Scoop: NSA using Anthropic's Mythos despite Defense Department blacklist Axios"
       },
       {
         "title": "How Anthropic’s Claude Design Has Already Saved Me 10 Hours of Work - inc.com",
@@ -311,7 +311,7 @@
       {
         "title": "NSA is using Anthropic's Mythos despite blacklist",
         "url": "https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon",
-        "source": "HN · 348↑",
+        "source": "HN · 353↑",
         "hn_id": "47832222",
         "published": "2026-04-20T10:00:35.000Z",
         "summary": ""
@@ -616,6 +616,17 @@
     ],
     "youtube": [
       {
+        "title": "How to Sell Claude Code Skills (What Clients Want)",
+        "url": "https://www.youtube.com/watch?v=TxZhIMXnfi8",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "TxZhIMXnfi8",
+        "thumbnail": "https://i.ytimg.com/vi/TxZhIMXnfi8/hqdefault.jpg",
+        "published": "2026-04-20T17:30:16.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Routines Tutorial: Automate Anything with Claude Ai!",
         "url": "https://www.youtube.com/watch?v=D3pxbkPg0KE",
         "source": "Productive Dude",
@@ -933,20 +944,21 @@
         "thumbnail": "https://i.ytimg.com/vi/RXhEScTBBqs/hqdefault.jpg",
         "published": "2026-04-10T12:52:00.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Code for Non-Coders: Start Here (Step by Step)",
-        "url": "https://www.youtube.com/watch?v=-o3aiNFaMCI",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "-o3aiNFaMCI",
-        "thumbnail": "https://i.ytimg.com/vi/-o3aiNFaMCI/hqdefault.jpg",
-        "published": "2026-04-10T12:30:02.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "How to Sell Claude Code Skills (What Clients Want)",
+        "url": "https://www.youtube.com/watch?v=TxZhIMXnfi8",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "TxZhIMXnfi8",
+        "thumbnail": "https://i.ytimg.com/vi/TxZhIMXnfi8/hqdefault.jpg",
+        "published": "2026-04-20T17:30:16.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
       {
         "title": "Claude Routines Tutorial: Automate Anything with Claude Ai!",
         "url": "https://www.youtube.com/watch?v=D3pxbkPg0KE",
@@ -1226,18 +1238,6 @@
         "published": "2026-04-10T19:17:30.000Z",
         "summary": "",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "Claude Code for Non-Coders: Start Here (Step by Step)",
-        "url": "https://www.youtube.com/watch?v=-o3aiNFaMCI",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "-o3aiNFaMCI",
-        "thumbnail": "https://i.ytimg.com/vi/-o3aiNFaMCI/hqdefault.jpg",
-        "published": "2026-04-10T12:30:02.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "Merge pull request #516 from anthropics/mnowicki/cma-versioning-heade…",
@@ -1746,6 +1746,13 @@
     ],
     "claude_learning": [
       {
+        "title": "How to Sell Claude Code Skills (What Clients Want)",
+        "url": "https://www.youtube.com/watch?v=TxZhIMXnfi8",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-04-20T17:30:16.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Routines Tutorial: Automate Anything with Claude Ai!",
         "url": "https://www.youtube.com/watch?v=D3pxbkPg0KE",
         "source": "YouTube · Productive Dude",
@@ -2058,13 +2065,6 @@
         "url": "https://www.youtube.com/watch?v=RXhEScTBBqs",
         "source": "YouTube · Ryan & Matt Data Science",
         "published": "2026-04-10T12:52:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code for Non-Coders: Start Here (Step by Step)",
-        "url": "https://www.youtube.com/watch?v=-o3aiNFaMCI",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-04-10T12:30:02.000Z",
         "summary": ""
       },
       {
