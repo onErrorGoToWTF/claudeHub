@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.31",
-  "milestone": "M9.17a.4",
-  "milestoneTitle": "Phase M9.17a.4 — Simplified constraint recipe for learn-item rows. Stopped stacking constraints (min-width:0 + overflow:hidden + padding-right:44px + :has() gates) and removed the underlying cause: the ⋯ menu was absolute-positioned OVER the card, which required all those padding and clipping hacks to keep the title from running under it. New recipe: .learn-item-wrap becomes a flex row, .learn-item is flex:1 (fills remaining width after menu), .learn-menu is a natural flex sibling at the right with margin 4px 6px 0 0 (preserves the previous visual inset). Title's own overflow:hidden + text-overflow:ellipsis handles truncation — no helpers needed. Cache-buster query bumped to dev.31 per the new memory protocol.",
-  "deployedAt": "2026-04-20T12:55Z",
+  "version": "0.7.1-dev.32",
+  "milestone": "M9.17b.a",
+  "milestoneTitle": "Phase M9.17b.a — Inline action buttons on Learn items replacing the ⋯ collapsed menu. Pin + Mastery toggles are now always-visible icon buttons (28×28 tile) sitting as a flex sibling of the card; tapping either toggles its own state (data-pressed + aria-pressed) and re-renders. Draft items carry an additional red destructive Trash button with two-tap confirm (first tap arms with red fill + 3s disarm, second tap deletes). Matches the user's stored two-tap-destructive pattern; no native confirm() anywhere. Existing long-press-to-drag and swipe-left-for-mastery gestures remain active this milestone (gesture retirement comes in M9.17b.b/c). Static pin/mastery dots removed; .learn-item-pin / .learn-item-mastery CSS retired.",
+  "deployedAt": "2026-04-20T13:25Z",
   "commitSha": ""
 }

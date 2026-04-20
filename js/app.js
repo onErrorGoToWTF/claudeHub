@@ -474,43 +474,59 @@
     });
   });
 
-  // M9.6a — Global delegation for the ⋯ menu on learn items. One listener
-  // covers every card past and future; native <details> gives us open /
-  // close for free and a second document-level click closes anything
-  // that's open when the user taps elsewhere.
+  // M9.17b.a — Global delegation for inline action buttons on learn items
+  // (pin toggle, mastery toggle, draft-delete). Replaces the M9.6a ⋯ menu
+  // handler: the menu was removed in M9.17b.a in favor of always-visible
+  // inline buttons sitting as siblings of the card anchor/button.
   document.addEventListener("click", (e) => {
-    const actionBtn = e.target.closest("[data-learn-menu-action]");
-    if (actionBtn) {
-      e.preventDefault();
-      e.stopPropagation();
-      const wrap = actionBtn.closest(".learn-item-wrap");
-      const row  = wrap?.querySelector(".learn-item");
-      if (!row) return;
-      const type  = row.dataset.learnType;
-      const id    = row.dataset.learnId;
-      const title = row.querySelector(".learn-item-title")?.textContent || "";
-      if (actionBtn.dataset.learnMenuAction === "toggle-pin") {
-        if (isLearnItemPinned(type, id)) unpinLearnItem(type, id);
-        else                              pinLearnItem(type, id, { title });
-        renderLearn();
-      } else if (actionBtn.dataset.learnMenuAction === "remove-draft" && type === "draft") {
-        // M9.6b — drop the draft from storage + clear its pin / mastery
-        // side-state so storage stays clean.
+    const actionBtn = e.target.closest("[data-learn-action]");
+    if (!actionBtn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const wrap = actionBtn.closest(".learn-item-wrap");
+    const row  = wrap?.querySelector(".learn-item");
+    if (!row) return;
+    const type   = row.dataset.learnType;
+    const id     = row.dataset.learnId;
+    const title  = row.querySelector(".learn-item-title")?.textContent || "";
+    const action = actionBtn.dataset.learnAction;
+    if (action === "pin") {
+      if (isLearnItemPinned(type, id)) unpinLearnItem(type, id);
+      else                              pinLearnItem(type, id, { title });
+      renderLearn();
+      return;
+    }
+    if (action === "master") {
+      if (isMastered(type, id)) unsetMastered(type, id);
+      else                       setMastered(type, id);
+      renderLearn();
+      return;
+    }
+    if (action === "remove-draft" && type === "draft") {
+      // Two-tap confirm (user memory: never native confirm(); iOS PWA
+      // suppresses it). First tap arms the button (red fill, "Tap again
+      // to delete" label, 3s disarm timer). Second tap within the window
+      // commits. Any other click clears the armed state via renderLearn.
+      if (actionBtn.dataset.armed === "1") {
         removeLearnDraft(id);
         unpinLearnItem("draft", id);
         unsetMastered("draft", id);
         renderLearn();
+        return;
       }
-      // Close the menu (renderLearn replaces the DOM anyway, but this
-      // handles mouse/keyboard cases where the menu was toggled but
-      // nothing changed).
-      wrap?.querySelector(".learn-menu[open]")?.removeAttribute("open");
+      // Arm the button in place — change dataset + label, start disarm timer.
+      actionBtn.dataset.armed = "1";
+      actionBtn.setAttribute("aria-label", "Tap again to delete");
+      actionBtn.setAttribute("title", "Tap again to delete");
+      clearTimeout(actionBtn._armTimer);
+      actionBtn._armTimer = setTimeout(() => {
+        if (!document.body.contains(actionBtn)) return;
+        actionBtn.dataset.armed = "";
+        actionBtn.setAttribute("aria-label", "Delete draft");
+        actionBtn.setAttribute("title", "Delete draft");
+      }, 3000);
       return;
     }
-    // Close any open learn-menu when the click landed outside it.
-    document.querySelectorAll(".learn-menu[open]").forEach((d) => {
-      if (!d.contains(e.target)) d.removeAttribute("open");
-    });
   }, true);
 
   // M9.4a — Learn filter chips (All · Lessons · Courses · Drafts · Has quiz).
@@ -1009,6 +1025,13 @@
   // SVG pin glyphs — outline when unpinned, filled when pinned.
   const PIN_SVG_OUTLINE = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><path d="M12 12v8"/></svg>';
   const PIN_SVG_FILLED  = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M9 4h6l-1 5 3 3H7l3-3-1-5z"/><rect x="11.2" y="12" width="1.6" height="8" rx="0.6"/></svg>';
+  // M9.17b.a — inline mastery glyph (checkmark). Outline when not mastered,
+  // filled check on a rounded tile when mastered. Same 14px base as pin.
+  const MASTERY_SVG_OUTLINE = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4L19 7"/></svg>';
+  const MASTERY_SVG_FILLED  = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4" fill="currentColor" stroke="none"/><path d="M6.5 12.5l3.5 3.5L17.5 8.5" stroke="#fff"/></svg>';
+  // M9.17b.a — inline destructive glyph for drafts (trash). Drawn in red via
+  // the .learn-action-btn-danger variant; the glyph itself uses currentColor.
+  const TRASH_SVG = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg>';
 
   // M3.10: card pin → unified Save button. Same glyphs, same affordance,
   // but click opens the global save picker instead of toggling a pin.
@@ -1941,38 +1964,31 @@
     if (item.minutes)    metaParts.push(item.minutes + " min");
     if (item.hasQuiz)    metaParts.push("quiz");
     const meta = metaParts.join(" · ");
-    const pinMark = item.pinned
-      ? `<span class="learn-item-pin" aria-label="Pinned" title="Pinned">●</span>`
-      : "";
-    const masteryMark = item.mastered
-      ? `<span class="learn-item-mastery" aria-label="Mastered" title="Mastered">●ᴹ</span>`
-      : "";
     const stateMarkup = stateLabel
       ? `<span class="learn-item-state" data-state="${escapeHtml(item.state)}">${escapeHtml(stateLabel)}</span>`
       : "";
-    // M9.6a — Done items (mastered or completed) skip the ⋯ menu. Pinning
-    // a mastered item would leave it in Done but also "pinned," which
-    // confuses the bucketing; un-master UI lives on M9.7's Your-stack
-    // strip. Up Next + Everything else items get the menu as a fallback
-    // for mouse users who can't long-press. M9.6b — drafts additionally
-    // get a "Remove this draft" action (destructive — skips Done).
+    // M9.17b.a — inline action buttons replacing the collapsed ⋯ menu.
+    // Pin + Mastery toggles live on every non-Done item; a red destructive
+    // Trash action lives only on drafts. Done items (mastered/completed)
+    // skip the whole block; un-master lives in Tools > Your Stack.
+    // Buttons are SIBLINGS of the card anchor/button so taps don't trigger
+    // card navigation — same structural reason the ⋯ menu was a sibling.
     const inDone = item.mastered || item.state === "completed";
-    const menuItems = [];
+    let actionsMarkup = "";
     if (!inDone) {
-      const pinLabel = item.pinned ? "Remove from Up Next" : "Move to Up Next";
-      menuItems.push(`<button type="button" data-learn-menu-action="toggle-pin" role="menuitem">${escapeHtml(pinLabel)}</button>`);
+      const pinLabel     = item.pinned   ? "Remove from Up Next" : "Move to Up Next";
+      const masterLabel  = item.mastered ? "Remove mastery"      : "Mark mastered";
+      const pinned       = item.pinned   ? "1" : "";
+      const mastered     = item.mastered ? "1" : "";
+      const buttons = [
+        `<button type="button" class="learn-action-btn learn-action-pin" data-learn-action="pin" data-pressed="${pinned}" aria-pressed="${item.pinned ? "true" : "false"}" aria-label="${pinLabel}" title="${pinLabel}">${item.pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}</button>`,
+        `<button type="button" class="learn-action-btn learn-action-master" data-learn-action="master" data-pressed="${mastered}" aria-pressed="${item.mastered ? "true" : "false"}" aria-label="${masterLabel}" title="${masterLabel}">${item.mastered ? MASTERY_SVG_FILLED : MASTERY_SVG_OUTLINE}</button>`,
+      ];
       if (item.type === "draft") {
-        menuItems.push(`<button type="button" data-learn-menu-action="remove-draft" role="menuitem">Remove this draft</button>`);
+        buttons.push(`<button type="button" class="learn-action-btn learn-action-btn-danger learn-action-delete" data-learn-action="remove-draft" data-armed="" aria-label="Delete draft" title="Delete draft">${TRASH_SVG}</button>`);
       }
+      actionsMarkup = `<div class="learn-item-actions" role="group" aria-label="Item actions">${buttons.join("")}</div>`;
     }
-    const menuMarkup = menuItems.length === 0 ? "" : `
-      <details class="learn-menu">
-        <summary class="learn-menu-summary" aria-label="Actions" title="Actions">⋯</summary>
-        <div class="learn-menu-body" role="menu">
-          ${menuItems.join("\n")}
-        </div>
-      </details>
-    `;
     // M9.6c — draft cards carry a coverage matrix showing what material
     // already exists elsewhere for the source tool. Helps decide whether
     // the pinned topic is a blank slate ("author from scratch") or
@@ -1997,8 +2013,6 @@
         <${tag} class="learn-item panel-tile"${typeAttr}${hrefAttr} data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}">
           <div class="learn-item-head">
             <span class="learn-item-kind">${escapeHtml(item.kind)}</span>
-            ${pinMark}
-            ${masteryMark}
             <span class="learn-item-title">${escapeHtml(item.title)}</span>
             ${stateMarkup}
           </div>
@@ -2006,7 +2020,7 @@
           ${item.summary ? `<div class="learn-item-summary">${escapeHtml(item.summary)}</div>` : ""}
           ${coverageMarkup}
         </${tag}>
-        ${menuMarkup}
+        ${actionsMarkup}
       </div>
     `;
   }
