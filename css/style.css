@@ -4018,10 +4018,12 @@ body.modal-open { overflow: hidden; }
   color: var(--text-2);
   letter-spacing: -0.005em;
 }
+/* .project-chip-claude — was an orange tint on Claude-native tool
+   chips. Removed in M9.16j at user request; chips render grayscale
+   like the base rule. JS still emits the class, so we can reintroduce
+   a color here later without touching the renderer. */
 .project-chip-claude {
-  color: var(--accent-claude-hi);
-  border-color: color-mix(in srgb, var(--accent-claude) 30%, var(--border));
-  background: color-mix(in srgb, var(--accent-claude-soft) 30%, transparent);
+  /* intentionally empty — inherits base .project-chip neutral tokens */
 }
 /* ===== Projects backup export/import (M3.3) ===== */
 .projects-backup {

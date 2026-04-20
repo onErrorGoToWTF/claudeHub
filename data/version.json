@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.17",
-  "milestone": "M9.16i",
-  "milestoneTitle": "Phase M9.16i — Tool cards adopt the brighter near-white Learn-panel glass recipe and the current accent tokens. Added .tool-card.glass to the 0.97α top / 0.90α bottom override list. Hover swapped the legacy --accent color-mix for the shared --accent-border + --accent-glow tokens and the heavy 0.75α black shadow for the subtle Learn-panel shadow (10px 24px -14px accent-glow + 4px 14px -6px 0.10 black). tool-card-claude hover keeps its orange --accent-claude-glow but the same lighter shadow recipe. Result: tool catalog reads as a lineage with Dashboard panels instead of a warmer sibling.",
-  "deployedAt": "2026-04-20T06:03Z",
+  "version": "0.7.1-dev.18",
+  "milestone": "M9.16j",
+  "milestoneTitle": "Phase M9.16j — Project-card chips drop the Claude-native orange tint. Chips for Claude-native tools now render grayscale like the rest; the .project-chip-claude rule is emptied (kept as a hook for a future color choice) and the JS still emits the class, so reintroducing a tint later is one rule edit away.",
+  "deployedAt": "2026-04-20T06:13Z",
   "commitSha": ""
 }
