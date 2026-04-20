@@ -1,44 +1,78 @@
 /* =============================================================================
    aiUniversity — js/app.js  (single-file IIFE by project convention)
    Table of contents (line anchors; grep the section banner to jump).
+   Regenerated 2026-04-20 after M9.16 polish; previous entries were drifted
+   ~500 lines. Keep this in sync when you add or move a major section.
 
-   TOP-OF-FILE
-     L24    Constants (DATA_URL, TOOLS_URL, …, MODALITIES, MODEL_COL)
-     L257   Filters + applyFilter
-     L417   Time formatting helpers
-     L453   Sentiment detection
-     L486   Scroll-activation IntersectionObserver (universal reveal)
-     L537   Skeletons
+   TOP-OF-FILE + BOOT
+     L92    Constants (DATA_URL, TOOLS_URL, …, MODALITIES, MODEL_COL)
+     L285   Module-level state (hoisted before first applyFilter call)
+     L352   applyFilter (tab switcher)
+     L369   Hash routing (#<chip>[/<view>])
+     L400   applyRoute (main entry)
+     L571   Initial route load + chip shortcuts
+
+   UTILITIES
+     L586   Time formatting (relTime, prettyDate)
+     L622   Sentiment + severity detection
+     L655   Scroll-activation IntersectionObserver (universal reveal)
+     L1625  Backup export / import
+     L2692  Storage monitor modal
+     L2811  Unified Save state
+     L2954  openSavePicker
+     L3097  Project-scoped pinning
+     L3159  openPinPicker
+
+   MODALS
+     L955   openVideoModal (YouTube embed)
+     L996   Link-in-modal interceptor (M9.16b — global click router)
+     L1047  openDocModal + detectDocBlocked (doc viewer for external links)
+     L3697  openToolModal (tool detail page)
+     L3840  openYouTubeModal (dashboard YouTube tile)
+     L4839  openRecipeModal (currently unreachable — #recipes host parked)
 
    FEED RENDERERS
-     L548   Card rendering (main feed: news/videos/status/tutorials)
-     L1032  Tools catalog (catalog grid + filter/sort)
-     L1113  Finder output — Easiest / Best path
-     L1251  My Projects list
-     L1299  Backup export / import
-     L1459  Authored lessons + MCQ quizzes
-     L1754  Storage monitor
-     L1875  Unified Save button
-     L2161  Project-scoped pinning (legacy read path)
+     L749   Card rendering (news / videos / status / tutorials)
+     L803   Section container rendering
+     L876   Claude Learning feed
+     L884   YouTube section
+     L1290  News section
+     L1321  Status strip
 
-   MODALS + MISC
-     L2662  Tool detail modal
-     L2769  YouTube modal
-     L2798  Version footer
-     L2821  Finder wizard (textarea + caps + path + stack)
-     L2824  Finder example projects
+   LEARN
+     L1783  Lessons + MCQ quizzes setup
+     L1819  Mastery signal state
+     L1857  Learn draft stubs
+     L1904  Unified Learn surface (M9.4a — flat 3-zone layout)
+     L2190  renderLearn (main)
+     L2243  Swipe-left + long-press-to-drag state machine
 
-   MAIN + CHART RENDERERS
-     L3004  Main feed load (fetch latest.json, fan out renderers)
-     L3054  Scroll-triggered chart animation (HOME only)
-     L3099  Competitor comparison — context windows (renderCbarChart)
-     L3147  Frontier compare
-     L3179  Hero timeline card
-     L3214  Intelligence Index (vertical bars)
-     L3264  Opus 4.7 scorecard (horizontal bars)
-     L3405  LLM face-off carousel (swipe between 3 benchmark slides)
-     L3697  Taskgrid (best tool per task)
-     L3804  Markdown renderer + escHtml (used by lesson bodies)
+   PROJECTS
+     L1489  renderStack (Finder output — Easiest / Best path)
+     L3327  renderProjects (home list)
+
+   TOOLS
+     L1399  renderCapGrid (catalog)
+     L3585  renderYourStack
+     L3626  renderTools (main)
+
+   FINDER
+     L3893  Finder wizard (textarea + caps + path + stack)
+     L3923  Finder example projects
+     L3972  initFinder
+
+   MAIN LOAD + CHARTS
+     L4239  Main feed load (fetch latest.json, fan out renderers)
+     L4295  setupChartObservers
+     L4345  renderCbarChart (shared cbar primitive)
+     L4372  renderCompare (frontier compare)
+     L4386  renderIndex (vertical bars)
+     L4418  renderScorecard (horizontal bars)
+     L4467  renderTaskGrid
+     L4508  renderLlmFaceoff (carousel)
+     L4902  renderRecipes (parked — host #recipes removed with charts)
+     L4936  renderTimeline (hero)
+     L5051  renderMarkdown
 
    CONVENTIONS (see CLAUDE.md for full rules)
      - Single IIFE; all state lives on module-level `let`s.

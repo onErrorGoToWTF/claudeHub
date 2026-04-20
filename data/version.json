@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.20",
-  "milestone": "M9.16l",
-  "milestoneTitle": "Phase M9.16l — Chunk polish from parallel site audit. Nav chips: transitions switched to --ease-premium (were --ease), active state gains a subtle elevated drop shadow. Dashboard panel icons: resting stroke 0.22α → 0.35α so they don't read too quiet outside the activation band. Feed cards: .card-pill + .tutorial-toggle radii 999px → var(--radius-sm) (fixes a stated design-language violation), cardIn entrance animation now wrapped in prefers-reduced-motion, legacy --accent fallback → --accent-solid, default opacity:1 so reduced-motion users see final state. Severity pulse keyframe: currentColor → var(--dot) so glow matches the dot's actual color instead of inheriting text color. Your-stack tool chip: asymmetric padding 7px 11px 7px 12px → symmetric 7px 11px. Tool-card active feedback: scale(0.99) → translateY(1px) to match your-stack-tool's active idiom. Save-btn-mastery: added explicit :hover with accent-forward tint (previously inherited base-button hover which didn't indicate the mastery affordance).",
-  "deployedAt": "2026-04-20T07:23Z",
+  "version": "0.7.1-dev.21",
+  "milestone": "M9.16m",
+  "milestoneTitle": "Phase M9.16m — Regenerated the stale TOC at the top of js/app.js. Previous anchors were drifted by ~500 lines across M9.1-M9.16 (e.g. 'Tool detail modal L2662' was actually L3697). New TOC has accurate line numbers for every load-bearing section; spot-checked 8 anchors — all exact. Strictly hygiene, no behavior change.",
+  "deployedAt": "2026-04-20T10:08Z",
   "commitSha": ""
 }
