@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.33",
-  "milestone": "M9.17b.b",
-  "milestoneTitle": "Phase M9.17b.b — Grab handle on the left of each non-Done learn-item replaces long-press-to-drag with a visible affordance. Touch or click the handle to immediately arm drag-reorder between Up Next / Everything Else. wireLearnRowGestures simplified: swipe-left-mastery state machine only (drag paths + long-press timer + dragging mode removed). New wireLearnGrabHandle attaches to each handle; touch/pointer events use handle-attached listeners (iOS keeps touch target persistence) + pointer capture on mouse. LEARN_LONG_PRESS_MS / LEARN_LONG_PRESS_SLOP constants retired in favor of LEARN_GESTURE_SLOP. Swipe-mastery still active this milestone — retires in M9.17b.c.",
-  "deployedAt": "2026-04-20T13:55Z",
+  "version": "0.7.1-dev.34",
+  "milestone": "M9.17b.c",
+  "milestoneTitle": "Phase M9.17b.c — Shrunk tap target for Learn items. The whole card was an anchor/button which made accidental opens easy on phones. Now only the .learn-item-head (kind pill + title + state pill) is the link — <a> for courses/drafts-with-url, <button> for lessons. Meta, summary, and coverage become passive siblings that do nothing when tapped. The outer .learn-item stays as a plain <div> carrying the card chrome. wireLearnRowGestures keeps swipe-left-mastery on the card container; its capture-phase click-suppression still blocks the head-link's default when a swipe was handled. Lesson click handler rebinds to .learn-item-head inside lesson rows. 48px tap-target height via 6px vertical padding on the head (Apple 44px minimum with comfort margin).",
+  "deployedAt": "2026-04-20T14:10Z",
   "commitSha": ""
 }

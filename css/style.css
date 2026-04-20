@@ -4178,11 +4178,32 @@ body.modal-open { overflow: hidden; }
     0 0 0 4px var(--accent-glow),
     0 10px 24px -10px rgba(0,0,0,0.2);
 }
+/* M9.17b.c — head is the tap target. Rendered as <a> (courses /
+   drafts-with-url) or <button> (lessons) — either way it must reset
+   native chrome so it visually reads as "the title line" inside the
+   card. Vertical padding widens the tap target to ~48px (Apple min 44px
+   with comfort margin). Meta/summary/coverage below are NOT clickable. */
 .learn-item-head {
   display: flex;
   align-items: center;
   gap: 8px;
   min-width: 0;
+  width: 100%;
+  padding: 6px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.learn-item-head:focus-visible {
+  outline: 2px solid var(--accent-border);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }
 .learn-item-kind {
   padding: 2px 7px;

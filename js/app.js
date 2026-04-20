@@ -2019,19 +2019,24 @@
     const grabMarkup = inDone
       ? ""
       : `<button type="button" class="learn-grab-handle" data-learn-grab="1" aria-label="Drag to reorder" title="Drag to reorder">${GRAB_SVG}</button>`;
+    // M9.17b.c — Only the head (kind + title + state) is the link.
+    // Meta / summary / coverage are passive siblings — tapping them does
+    // nothing. Fixes "I keep opening links by accident" without gating
+    // the primary action with a popup or a double-tap (iOS zoom collision).
+    // The .learn-item container stays as visual chrome, plain <div>.
     return `
       <div class="learn-item-wrap">
         ${grabMarkup}
-        <${tag} class="learn-item panel-tile"${typeAttr}${hrefAttr} data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}">
-          <div class="learn-item-head">
+        <div class="learn-item panel-tile" data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}">
+          <${tag} class="learn-item-head"${typeAttr}${hrefAttr}>
             <span class="learn-item-kind">${escapeHtml(item.kind)}</span>
             <span class="learn-item-title">${escapeHtml(item.title)}</span>
             ${stateMarkup}
-          </div>
+          </${tag}>
           ${meta ? `<div class="learn-item-meta">${escapeHtml(meta)}</div>` : ""}
           ${item.summary ? `<div class="learn-item-summary">${escapeHtml(item.summary)}</div>` : ""}
           ${coverageMarkup}
-        </${tag}>
+        </div>
         ${actionsMarkup}
       </div>
     `;
@@ -2098,9 +2103,13 @@
     document.querySelectorAll(".learn-grab-handle").forEach((handle) => {
       wireLearnGrabHandle(handle, handle.nextElementSibling);
     });
-    document.querySelectorAll(".learn-item[data-learn-type='lesson']").forEach((row) => {
-      row.addEventListener("click", (e) => {
-        if (row.dataset.learnSwipeHandled === "1") return;  // suppressed by swipe path
+    // M9.17b.c — lesson activation now fires from the head-link (a <button>
+    // for lessons). Walk up to .learn-item to read the dataset + honor the
+    // swipe-suppression flag set by wireLearnRowGestures.
+    document.querySelectorAll(".learn-item[data-learn-type='lesson'] > .learn-item-head").forEach((head) => {
+      head.addEventListener("click", (e) => {
+        const row = head.closest(".learn-item");
+        if (!row || row.dataset.learnSwipeHandled === "1") return;
         e.preventDefault();
         openLesson(row.dataset.learnId, "tutorial");
       });
