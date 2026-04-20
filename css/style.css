@@ -4008,22 +4008,25 @@ body.modal-open { overflow: hidden; }
 /* M9.6a — each learn-item renders inside a .learn-item-wrap that also
    hosts the ⋯ menu (native <details>) at top-right. The wrap is the
    positioning context; the item keeps all its own interaction state. */
-.learn-item-wrap { position: relative; }
+/* M9.17a.4 — simplified constraint recipe. The wrap is a flex row; the
+   card is flex:1 (takes all remaining width); the menu is a natural flex
+   sibling at the right (was absolute-positioned before, which required
+   padding-right hacks and overflow:hidden layers to keep titles from
+   running under the ⋯ icon). One constraint chain: wrap → card → menu,
+   laid out by flex, no overlap, no reservation. Title's own
+   overflow:hidden + text-overflow:ellipsis handles its truncation. */
+.learn-item-wrap {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
 .learn-item {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  min-width: 0;
-  overflow: hidden;
-  /* Right gutter reserves the 28+6px absolute-positioned ⋯ zone on the wrap
-     so the title's flex-row truncates before colliding with the menu.
-     Unconditional (not :has-gated) for broad browser compatibility;
-     Done/mastered items without a menu take the slightly-asymmetric gutter
-     as a minor aesthetic trade. overflow:hidden on the row is belt-and-
-     suspenders — even if flex-shrink ever fails on an unexpected surface,
-     text cannot escape the card's bounds. The panel-tile box-shadow renders
-     outside the element and is unaffected by overflow. */
-  padding: 12px 44px 12px 14px;
+  padding: 12px 14px;
   text-align: left;
   color: inherit;
   font: inherit;
@@ -4071,9 +4074,9 @@ body.modal-open { overflow: hidden; }
    the open body is a small in-flow dropdown below it. Closes on any
    outside click via the document-level delegate (see js/app.js). */
 .learn-menu {
-  position: absolute;
-  top: 4px;
-  right: 6px;
+  position: relative;   /* positioning context for .learn-menu-body dropdown */
+  flex-shrink: 0;
+  margin: 4px 6px 0 0;
   z-index: 3;
 }
 .learn-menu-summary {
@@ -4157,7 +4160,6 @@ body.modal-open { overflow: hidden; }
   align-items: center;
   gap: 8px;
   min-width: 0;
-  overflow: hidden;
 }
 .learn-item-kind {
   padding: 2px 7px;

@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.30",
-  "milestone": "M9.17a.3",
-  "milestoneTitle": "Phase M9.17a.3 — Cache-buster on CSS + JS links. Phone review of M9.17a.2 was showing the same bleed despite deploy verification, which points at browser HTTP cache serving old css/style.css. Added ?v=<version> query to each <link rel=stylesheet> and to js/app.js so future milestone-deploy bumps force a fresh fetch. Future milestone-deploy steps should bump the version query alongside data/version.json.",
-  "deployedAt": "2026-04-20T12:40Z",
+  "version": "0.7.1-dev.31",
+  "milestone": "M9.17a.4",
+  "milestoneTitle": "Phase M9.17a.4 — Simplified constraint recipe for learn-item rows. Stopped stacking constraints (min-width:0 + overflow:hidden + padding-right:44px + :has() gates) and removed the underlying cause: the ⋯ menu was absolute-positioned OVER the card, which required all those padding and clipping hacks to keep the title from running under it. New recipe: .learn-item-wrap becomes a flex row, .learn-item is flex:1 (fills remaining width after menu), .learn-menu is a natural flex sibling at the right with margin 4px 6px 0 0 (preserves the previous visual inset). Title's own overflow:hidden + text-overflow:ellipsis handles truncation — no helpers needed. Cache-buster query bumped to dev.31 per the new memory protocol.",
+  "deployedAt": "2026-04-20T12:55Z",
   "commitSha": ""
 }
