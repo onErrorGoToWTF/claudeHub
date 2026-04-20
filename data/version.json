@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.11",
-  "milestone": "M9.16c",
-  "milestoneTitle": "Phase M9.16c — Doc-modal polish. Focus trap + focus restore (close button grabs focus on open, previously-focused element regrabs on close, stray focus is pulled back while open). Loading spinner behind iframe fades out on load. Scroll-lock bookkeeping unified into one refreshModalOpenBodyClass() helper — replaces 7 drifted inline selector lists plus video-modal's unconditional unlock, so body.modal-open now tracks 'any modal visible' exactly.",
-  "deployedAt": "2026-04-20T05:20Z",
+  "version": "0.7.1-dev.12",
+  "milestone": "M9.16d",
+  "milestoneTitle": "Phase M9.16d — Doc-modal blocked-state. Sites that refuse iframe embedding (X-Frame-Options / CSP frame-ancestors) now render a clear 'can't preview' card with a circle-slash icon and a prominent 'Open on {hostname}' button, instead of blank white. Detection probes iframe.contentDocument after load — cross-origin successful loads throw SecurityError (treated as loaded), empty same-origin bodies indicate blocked. Generation counter protects against race conditions between rapid open/close cycles.",
+  "deployedAt": "2026-04-20T05:27Z",
   "commitSha": ""
 }

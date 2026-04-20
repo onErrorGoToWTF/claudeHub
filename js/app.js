@@ -987,21 +987,61 @@
   }
 
   let docModalLastFocus = null;
+  // Generation counter — bumped on every open and close so pending timeouts
+  // from a previous open don't mutate the modal state after the user has
+  // moved on. Prevents stale "blocked" flags from racing a new iframe load.
+  let docModalGen = 0;
+
+  // Heuristic: is the iframe showing a blocked/empty state? Cross-origin
+  // pages that load successfully throw SecurityError on contentDocument
+  // access — we treat that as "loaded". A reachable same-origin body that
+  // is empty means the browser refused the embed and left us at about:blank.
+  function detectDocBlocked(iframe) {
+    try {
+      const doc = iframe.contentDocument;
+      if (!doc) return true;
+      if (!doc.body) return true;
+      if (doc.body.children.length === 0 && doc.body.textContent.trim() === "") {
+        return true;
+      }
+      return false;
+    } catch (_err) {
+      return false;
+    }
+  }
 
   function openDocModal(url, meta) {
     const modal = document.getElementById("doc-modal");
     if (!modal) return;
-    const iframe   = modal.querySelector(".doc-modal-iframe");
-    const srcEl    = modal.querySelector(".doc-modal-source");
-    const titleEl  = modal.querySelector(".doc-modal-title");
-    const openLink = modal.querySelector(".doc-modal-open");
+    const iframe    = modal.querySelector(".doc-modal-iframe");
+    const srcEl     = modal.querySelector(".doc-modal-source");
+    const titleEl   = modal.querySelector(".doc-modal-title");
+    const openLink  = modal.querySelector(".doc-modal-open");
+    const blockedCta   = modal.querySelector(".doc-modal-blocked-cta");
+    const blockedHost  = modal.querySelector(".doc-modal-blocked-host");
     srcEl.textContent   = (meta && meta.hostname) || "";
     titleEl.textContent = (meta && meta.title)    || "";
     openLink.href       = url;
+    if (blockedCta)  blockedCta.href = url;
+    if (blockedHost) blockedHost.textContent = (meta && meta.hostname) || "site";
     modal.dataset.loading = "1";
+    delete modal.dataset.blocked;
+    const myGen = ++docModalGen;
     iframe.addEventListener("load", () => {
+      if (myGen !== docModalGen) return;
       delete modal.dataset.loading;
+      if (detectDocBlocked(iframe)) modal.dataset.blocked = "1";
     }, { once: true });
+    // Fallback: some browsers don't fire load consistently for blocked
+    // pages, and a network-level failure fires none at all. After 1.5s,
+    // force-clear the loading state and re-check blocked.
+    setTimeout(() => {
+      if (myGen !== docModalGen) return;
+      delete modal.dataset.loading;
+      if (!modal.dataset.blocked && detectDocBlocked(iframe)) {
+        modal.dataset.blocked = "1";
+      }
+    }, 1500);
     iframe.src = url;
     docModalLastFocus = document.activeElement;
     modal.hidden = false;
@@ -1013,9 +1053,11 @@
     const modal = document.getElementById("doc-modal");
     if (!modal || modal.hidden) return;
     const iframe = modal.querySelector(".doc-modal-iframe");
+    ++docModalGen;
     iframe.src = "about:blank";
     modal.hidden = true;
     delete modal.dataset.loading;
+    delete modal.dataset.blocked;
     refreshModalOpenBodyClass();
     if (docModalLastFocus && typeof docModalLastFocus.focus === "function") {
       docModalLastFocus.focus();
@@ -1058,11 +1100,14 @@
     if (modal.contains(e.target)) return;
     modal.querySelector(".doc-modal-close")?.focus();
   });
-  (function wireDocOpenLink() {
-    const openLink = document.querySelector("#doc-modal .doc-modal-open");
-    if (!openLink) return;
-    openLink.addEventListener("click", () => {
-      setTimeout(closeDocModal, 0);
+  (function wireDocOpenLinks() {
+    // Both the header "Open ↗" and the blocked-state CTA close the modal
+    // after the new tab has been launched. data-no-modal on the anchors
+    // means the interceptor lets them through natively.
+    document.querySelectorAll("#doc-modal .doc-modal-open, #doc-modal .doc-modal-blocked-cta").forEach((el) => {
+      el.addEventListener("click", () => {
+        setTimeout(closeDocModal, 0);
+      });
     });
   })();
 
