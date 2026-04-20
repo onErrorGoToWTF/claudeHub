@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.9",
+  "version": "0.7.1-dev.10",
   "milestone": "M9.16b",
-  "milestoneTitle": "Phase M9.16b — Link-in-modal. External <a> clicks open inside a sandboxed doc-modal instead of navigating away; YouTube links route to the existing video modal. Back-gesture + ESC + backdrop + X all close cleanly and restore scroll position. Prominent 'Open in new tab ↗' escape hatch for sites that block iframe embedding. Focus trap + favicon + aria polish held for M9.16c.",
-  "deployedAt": "2026-04-20T04:58Z",
+  "milestoneTitle": "Phase M9.16b (hotfix) — Doc-modal header now respects env(safe-area-inset-top) so the iOS status bar no longer covers the controls. 'Open in new tab' button promoted from icon-only to a labeled 'Open ↗' pill so the escape hatch is visible when a site blocks iframe embedding (e.g. anthropic.skilljar.com).",
+  "deployedAt": "2026-04-20T05:10Z",
   "commitSha": ""
 }
