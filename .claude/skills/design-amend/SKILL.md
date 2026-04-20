@@ -115,3 +115,11 @@ Some surfaces are legitimately exempt:
 - Collapse multiple rule changes into one amendment — each rule gets its own invocation.
 - Commit while the working tree has unrelated modifications (use `milestone-deploy`'s clean-tree check).
 - Amend rules the user hasn't stated explicitly — this skill is a disciplined executor, not a design reviewer. Design observations go through `design-review`.
+
+## Resources
+
+- **Start with `.claude/skills/_resources/INDEX.md`** — master retrieval dispatcher. Only `Read` the narrow topic files relevant to the amendment.
+- **Liquid Glass (2025):** `.claude/skills/_resources/liquid-glass/` — start here for glass / material / translucency / specular / layering / backdrop-blur amendments.
+- **HIG (older foundations):** `.claude/skills/_resources/hig/` — start here for gestures / drag-drop / modality / motion / typography / color / accessibility amendments.
+- This skill has WebFetch. If a cache file's `last_fetched` is older than `staleness_days`, attempt a refresh. Apple developer-docs SPA pages return title-only; use user-paste or `gh api` for GitHub community sources (see INDEX.md "Rehydration pattern"). Server-rendered pages (Apple newsroom, Wikipedia, blogs) WebFetch cleanly.
+- Per `CLAUDE.md` design-language scope: these caches inform *behavior* and serve as vocabulary alignment; the project design language is authoritative for *appearance*.

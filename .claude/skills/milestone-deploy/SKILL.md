@@ -26,7 +26,15 @@ Use this skill when you've just completed a milestone's code changes (e.g. M9.3)
      "commitSha": ""
    }
    ```
-3. **Stage only the milestone files + `data/version.json`.** Use explicit paths, not `git add -A`.
+2b. **Bump `?v=<version>` cache-bust queries in `index.html`.** (See `project_cache_bust_production_flag.md` — this is dev-era tooling; revisit at production cutover.)
+   - Scan `index.html` for local-asset `<link>` / `<script>` tags pointing at `css/*.css` or `js/*.js`. Current surface (confirmed 2026-04-20):
+     - `<link rel="stylesheet" href="css/style.css?v=<old>">`
+     - `<link rel="stylesheet" href="css/overrides.css?v=<old>">`
+     - `<script src="js/app.js?v=<old>" defer></script>`
+   - For each, rewrite the `?v=<old>` value to the full new version string `$3` (not a short hash). If a matched tag is missing the `?v=` query entirely, add `?v=$3`.
+   - **Out of scope:** `data/latest.json` and other `data/*.json` runtime fetches — those use `?v=<timestamp>` set at fetch time in `js/app.js` and stay timestamp-based (simpler; a stale-feed display after an unchanged-version deploy would be worse).
+   - **CSS `@import` chains:** if any `@import url("x.css")` exists inside `css/*.css` (none as of 2026-04-20), they'd also need `?v=$3` inlined at CSS level. Verify before committing.
+3. **Stage only the milestone files + `data/version.json` + `index.html`** (the cache-bust touch from step 2b). Use explicit paths, not `git add -A`.
 4. **Commit** with HEREDOC to preserve formatting:
    ```
    git commit -m "$(cat <<'EOF'
