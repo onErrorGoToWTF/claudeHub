@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.45",
-  "milestone": "M9.18b.1",
-  "milestoneTitle": "Phase M9.18b.1 — Fix TDZ crash on initial load. DASH_DUMMY_PROJECT and DASH_DUMMY_LESSON were declared as `const` adjacent to their renderers (~L3048, ~L3148), but renderContinueCard / renderDashLearn are hoisted function declarations fired by replayHomeAnimations during the initial applyFilter('home') at L602. That call reads the dummies from inside the TDZ, throws ReferenceError, and silently aborts the rest of the IIFE — which killed subsequent bindings (data-chip click handlers, etc.) and left the first-load Dashboard non-functional until the user navigated away and back (which triggered a re-render after the IIFE's module-level const lines had finally been evaluated). Hoist the two const dummies to the top-of-file 'Hoisted module state' block (~L288) per the CLAUDE.md TDZ rule.",
-  "deployedAt": "2026-04-20T17:20Z",
+  "version": "0.7.1-dev.46",
+  "milestone": "M9.18b.2",
+  "milestoneTitle": "Phase M9.18b.2 — Revert glow cascade + fix .dash-tile activation-elevation parity. User flagged the M9.18a.2 blur-gradient cascade as risky: unifying box-shadow across disparate components can shift compositor layers / stacking contexts / backdrop-filter interactions in ways that are hard to predict. Reverted: .panel-tile/.continue-row:hover, .tool-modal-learn-body focus, .dash-tile-icon delete armed, .learn-action-btn-danger armed, .learn-zone-drop-candidate/-active, --glow-focus token, CLAUDE.md 'soft glows' bullet, design-review SKILL.md Rule 11. Kept: .dash-tile:hover blur-gradient (M9.18a.1, the originally-complained-about glow cutoff on the new dash tile component — stays fixed per-component). New fix: added .dash-tile to the .dash-panel.is-activated / .learn-zone.is-activated child selector at style.css:2044-2052 so migrated Learn + Projects tiles visually lift on scroll activation the same way .continue-row / .panel-tile still do; that's the real reason activation looked broken — Tools tiles (still .continue-row) lifted while Learn + Projects tiles (now .dash-tile) stayed flat. Memory: feedback_unify_with_overrides.md saved — prefer unified classes with opt-in overrides, not sweeping cascades.",
+  "deployedAt": "2026-04-20T17:40Z",
   "commitSha": ""
 }
