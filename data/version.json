@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.42",
-  "milestone": "M9.18a.1",
-  "milestoneTitle": "Phase M9.18a.1 — Dash-tile icon sizing + mobile hover halo + soft-glow gradient. Three phone-review fixes to M9.18a: (1) pin / mastery / delete icons were unreadable at arm's length — each icon button bumped 24x24 -> 32x32, inline 14px SVGs forced up to 22x22 via .dash-tile-icon svg, trailing-cluster icon row widened 80 -> 104px, min-height bumped from 64 -> 76px; (2) iOS sticky-hover left a grey rounded-rect halo around each icon after tap — every :hover background rule now guarded behind @media (hover: hover), so touch devices never latch a background; (3) tile hover glow was cutting off sharply at tile edges because box-shadow used a 0-blur 3px spread ring — swapped to 20px blur + 0 spread so the accent halo gradients to zero with no hard edge.",
-  "deployedAt": "2026-04-20T16:30Z",
+  "version": "0.7.1-dev.43",
+  "milestone": "M9.18a.2",
+  "milestoneTitle": "Phase M9.18a.2 — Glow gradient amendment. User amendment to the design language: every outset color halo must be blur-gradient (blur > 0), never a hard spread-only ring (0 0 0 Npx color, blur=0). Hard rings cut off sharply at element edges and at any parent overflow clip, which is visually rejected. Cascade: (1) CLAUDE.md design-language bullet restates 'soft glows' as 'always blur-gradient' with a reach guide + carve-outs; (2) design-review SKILL.md gets a new Rule 11 'Glow gradient integrity' so the gate enforces it on future diffs; (3) 7 CSS selectors converted: --glow-focus token (unused, redefined to set standard), .tool-modal-learn-body input/textarea focus, .panel-tile/.continue-row hover, .dash-tile-icon.dash-tile-delete armed, .learn-action-btn-danger armed, .learn-zone-drop-candidate outer, .learn-zone-drop-active outer. Insets (highlight borders) and sub-2px hairline outlines are carve-outs — not glows.",
+  "deployedAt": "2026-04-20T16:50Z",
   "commitSha": ""
 }

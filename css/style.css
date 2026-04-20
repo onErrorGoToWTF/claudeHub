@@ -207,7 +207,7 @@
   /* Reserved glow tokens (no component uses them after M6.6). */
   --glow-soft:  0 0 18px -6px rgba(48,176,199,0.12);
   --glow-hero:  0 0 24px -4px rgba(48,176,199,0.28);
-  --glow-focus: 0 0 0 3px rgba(48,176,199,0.22);
+  --glow-focus: 0 0 12px 0 rgba(48,176,199,0.34); /* M9.18a.2 — blur-gradient (was hard 3px spread ring). */
 
   /* ===== M9.1 — --base + --accent-* token system =====
      Per-page identity color lives in --base, set via [data-section="X"]
@@ -1682,7 +1682,8 @@ body.modal-open { overflow: hidden; }
 .tool-modal-learn-body textarea:focus {
   outline: none;
   border-color: var(--text-1);
-  box-shadow: 0 0 0 3px var(--accent-glow);
+  /* M9.18a.2 — blur-gradient focus halo (was hard 3px spread ring). */
+  box-shadow: 0 0 12px 0 var(--accent-glow);
 }
 .tool-modal-learn-actions {
   display: flex;
@@ -2272,10 +2273,12 @@ body.modal-open { overflow: hidden; }
 .continue-row:hover {
   background: color-mix(in srgb, var(--bg-0) 20%, #ffffff);
   border-color: var(--accent-border, rgba(0,0,0,0.12));
+  /* M9.18a.2 — blur-gradient (was hard 3px spread ring that cut off
+     sharply at tile edges + at any parent overflow clip). */
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.70),
     0 2px 6px rgba(0,0,0,0.05),
-    0 0 0 3px var(--accent-glow, transparent);
+    0 0 20px 0 var(--accent-glow, transparent);
 }
 .panel-tile:active,
 .continue-row:active {
@@ -2583,7 +2586,8 @@ body.modal-open { overflow: hidden; }
 .dash-tile-icon.dash-tile-delete[data-armed="1"] {
   color: var(--danger-ink);
   background: var(--danger-solid);
-  box-shadow: 0 0 0 2px var(--danger-glow);
+  /* M9.18a.2 — blur-gradient danger halo (was hard 2px spread ring). */
+  box-shadow: 0 0 12px 0 var(--danger-glow);
 }
 
 /* Touch devices: expand hit area to 44x44 via padding + negative margin
@@ -4464,7 +4468,8 @@ body.modal-open { overflow: hidden; }
   background: var(--danger-solid);
   border-color: var(--danger-hover);
   color: var(--danger-ink);
-  box-shadow: 0 0 0 3px var(--danger-glow);
+  /* M9.18a.2 — blur-gradient danger halo (was hard 3px spread ring). */
+  box-shadow: 0 0 14px 0 var(--danger-glow);
 }
 .learn-action-btn-danger[data-armed="1"]:hover {
   background: var(--danger-hover);
@@ -4477,15 +4482,19 @@ body.modal-open { overflow: hidden; }
    is excluded — mastered items don't drag. */
 .learn-zone-drop-candidate {
   transition: box-shadow 0.2s var(--ease-premium);
+  /* M9.18a.2 — outer halo is blur-gradient (was hard 3px spread). Inner
+     inset stays a crisp 1px border — insets are not glows. */
   box-shadow:
     inset 0 0 0 1px var(--accent-border),
-    0 0 0 3px var(--accent-glow);
+    0 0 16px 0 var(--accent-glow);
 }
 .learn-zone-drop-active {
   background: color-mix(in srgb, var(--accent-solid) 6%, transparent);
+  /* M9.18a.2 — outer halo blur-gradient (was 6px spread ring). Inner
+     inset + drop shadow unchanged. */
   box-shadow:
     inset 0 0 0 2px var(--accent-solid),
-    0 0 0 6px var(--accent-glow),
+    0 0 24px 0 var(--accent-glow),
     0 14px 28px -10px color-mix(in srgb, var(--accent-solid) 35%, transparent);
 }
 /* M9.17b.c — head is the tap target. Rendered as <a> (courses /

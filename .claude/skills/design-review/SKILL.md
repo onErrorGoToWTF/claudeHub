@@ -75,6 +75,19 @@ Flag any new swipe-action handler in `js/app.js` that:
 
 **Sourcing.** Apple HIG lists-and-tables conventions + UIKit `tableView(_:trailingSwipeActionsConfigurationForRowAt:)` semantics. See `.claude/skills/_resources/apple-hig.md`.
 
+### 11. Glow gradient integrity (M9.18a.2)
+
+Every outset color halo expressed as `box-shadow` MUST use `blur > 0` so it gradients to transparent smoothly. Hard spread-only rings (`0 0 0 Npx <color>`, blur=0) are **banned as glows** — they cut off sharply at the element's edge and at any parent `overflow` clip, which the user has explicitly rejected.
+
+Flag any new outset `box-shadow` rule where the blur value is `0` (the third number in the shorthand) and the color is an accent / danger / identity token (`var(--accent-glow)`, `var(--danger-glow)`, `var(--color-*-glow)`, or a `color-mix(...)` expression of one). Compliant form: `0 0 <blur>px 0 <color>` or `0 0 <blur>px <spread>px <color>` with blur ≥ 8px.
+
+**Carve-outs (not violations):**
+- `inset 0 Npx 0 ...` — inset highlights / specular stacks are borders, not glows.
+- Outset rings with `blur ≥ 8px` — the halo is already soft.
+- Sub-2px outset `0 0 0 1px ...` hairline **outlines** on claude-native tiles and similar branding badges — treated as outlines, not halos, and kept as-is. Flag 2px+ spread-only rings with color.
+
+**Reach guide:** blur ≈ 3–6× the visual halo width you want. `.dash-tile:hover` uses `0 0 20px 0 var(--accent-glow)` for a ~16px-reaching halo.
+
 ## Review procedure
 
 1. Identify scope. If the user passed paths/arguments, use them. Otherwise run `git diff --name-only` and review every touched `css/*.css`, `index.html`, or `js/app.js` region.
