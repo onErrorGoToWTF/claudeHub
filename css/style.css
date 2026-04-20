@@ -431,6 +431,22 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
     0 1px 0 rgba(255,255,255,0.80),
     0 -0.5px 0.5px rgba(0,0,0,0.20);
 }
+/* M9.9 — parity: every modal's sub-title/eyebrow leaf-text inherits the
+   same impressed recipe so titles read as "etched into glass" across
+   lesson/quiz, storage, backup, and pin-picker. Applied only to plain
+   text nodes (no chip children) to avoid the text-shadow bleeding into
+   track/modality pills that have their own colored backgrounds. */
+.storage-modal-sub,
+.backup-modal-sub,
+.pin-picker-sub,
+.pin-picker-section-label,
+.lesson-modal-min,
+.tool-modal-vendor {
+  color: rgba(0,0,0,0.35);
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.80),
+    0 -0.5px 0.5px rgba(0,0,0,0.20);
+}
 
 /* ===== Top bar ===== */
 /* (.topbar / .topbar-inner / .brand* rules removed in M8.11.2 — the
@@ -1232,10 +1248,10 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset,
-              0 36px 80px -24px rgba(0,0,0,0.9);
+  /* M9.9 — background + box-shadow intentionally omitted so .glass + */
+  /* .glass-elevated (applied on the frame element) supply both. The */
+  /* prior opaque white-card gradient + 0.9α black drop shadow were */
+  /* dark-mode artifacts that clashed with the warm-white glass recipe. */
   overflow: hidden;
 }
 .video-modal-header {
@@ -1339,10 +1355,10 @@ body.modal-open { overflow: hidden; }
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset,
-              0 36px 80px -24px rgba(0,0,0,0.9);
+  /* M9.9 — background + box-shadow intentionally omitted so .glass + */
+  /* .glass-elevated (applied on the frame element) supply both. The */
+  /* prior opaque white-card gradient + 0.9α black drop shadow were */
+  /* dark-mode artifacts that clashed with the warm-white glass recipe. */
   overflow: hidden;
 }
 .tool-modal-header {
@@ -4305,10 +4321,10 @@ body.modal-open { overflow: hidden; }
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset,
-              0 36px 80px -24px rgba(0,0,0,0.9);
+  /* M9.9 — background + box-shadow intentionally omitted so .glass + */
+  /* .glass-elevated (applied on the frame element) supply both. The */
+  /* prior opaque white-card gradient + 0.9α black drop shadow were */
+  /* dark-mode artifacts that clashed with the warm-white glass recipe. */
   overflow: hidden;
 }
 .lesson-modal-head {
@@ -4626,10 +4642,10 @@ body.modal-open { overflow: hidden; }
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset,
-              0 36px 80px -24px rgba(0,0,0,0.9);
+  /* M9.9 — background + box-shadow intentionally omitted so .glass + */
+  /* .glass-elevated (applied on the frame element) supply both. The */
+  /* prior opaque white-card gradient + 0.9α black drop shadow were */
+  /* dark-mode artifacts that clashed with the warm-white glass recipe. */
   overflow: hidden;
 }
 .storage-modal-head {
@@ -4839,10 +4855,10 @@ body.modal-open { overflow: hidden; }
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset,
-              0 36px 80px -24px rgba(0,0,0,0.9);
+  /* M9.9 — background + box-shadow intentionally omitted so .glass + */
+  /* .glass-elevated (applied on the frame element) supply both. The */
+  /* prior opaque white-card gradient + 0.9α black drop shadow were */
+  /* dark-mode artifacts that clashed with the warm-white glass recipe. */
   overflow: hidden;
 }
 .backup-modal-head {
@@ -5161,10 +5177,10 @@ body.modal-open { overflow: hidden; }
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset,
-              0 36px 80px -24px rgba(0,0,0,0.9);
+  /* M9.9 — background + box-shadow intentionally omitted so .glass + */
+  /* .glass-elevated (applied on the frame element) supply both. The */
+  /* prior opaque white-card gradient + 0.9α black drop shadow were */
+  /* dark-mode artifacts that clashed with the warm-white glass recipe. */
   overflow: hidden;
 }
 .pin-picker-head {
