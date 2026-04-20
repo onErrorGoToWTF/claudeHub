@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.2",
-  "milestone": "M9.13",
-  "milestoneTitle": "Phase M9.13 — Fixed vignette overlay replaces per-tile activation fade. A new html::after fixed-position gradient (pointer-events:none, z-index:5, above content but below the z:100 navbar) darkens the top and bottom quarters of every viewport with warm-greige tones and stays fully transparent through the center ~50%. Panels sitting under that overlay visually dim; panels in the middle band read crisp. Because the effect is a spatial layer instead of a per-panel opacity / bg animation, it doesn't compete with the activation transition for budget, can be tuned in isolation, and satisfies the new 'prefer static / spatial solutions' rule recorded in CLAUDE.md (called out by the user after prior regressions stacking animations on glass). M9.12's per-tile bg flip on activation is removed — tiles now hold one baseline value and the overlay does the work. Activation itself is lighter-touch: only a single box-shadow lift on .dash-panel.is-activated / .learn-zone.is-activated. Observer band widens from the prior narrow 20% (-40% rootMargin) to 50% (-25% rootMargin) and extends to .learn-zone so Learn panels lift identically as they pass through. New CLAUDE.md bullet + memory entry added.",
-  "deployedAt": "2026-04-20T04:08Z",
+  "version": "0.7.1-dev.3",
+  "milestone": "M9.13a",
+  "milestoneTitle": "Phase M9.13a — Tighter activation, stronger edge vignette. Observer band tightens from ~50% (rootMargin -25% top/bottom) to ~35% (-32.5% top/bottom) so only content near the true vertical center of the viewport reaches the lifted state. The html::after vignette peak alpha bumps from 0.13 to 0.24 at the exact top/bottom edges with a 3-stop falloff (0.24 → 0.14 → 0.06 → transparent at 25%) instead of the softer 2-stop curve — near-edge dimming is now noticeably more impactful while the center 50% clear zone is unchanged. Purely parameter tuning on the same M9.13 architecture; no new rules, no new animation surfaces.",
+  "deployedAt": "2026-04-20T04:16Z",
   "commitSha": ""
 }
