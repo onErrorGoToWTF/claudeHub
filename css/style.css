@@ -311,6 +311,35 @@
 *, *::before, *::after { box-sizing: border-box; }
 * { -webkit-tap-highlight-color: transparent; }
 html, body { margin: 0; padding: 0; }
+
+/* M9.17d — Tappable / draggable / clickable surfaces suppress native text
+   selection so long-press doesn't pop the iOS selection loupe and an
+   accidental drag doesn't highlight content. Applies to card-class rows,
+   action buttons, grab handles, filter chips, and nav chrome. Informational
+   surfaces below an interactive head (summary, meta, coverage, long-form
+   body copy) stay selectable on purpose so users can copy text. */
+.learn-item-head,
+.learn-action-btn,
+.learn-grab-handle,
+.panel-tile,
+.card,
+.tool-card,
+.stack-card,
+.project-card,
+.continue-row,
+.filter-chip,
+.chips.glass button,
+.dash-action,
+.youtube-open-btn,
+.project-delete,
+.storage-key-delete,
+.pin-picker-remove,
+.pin-btn,
+.save-btn {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
 html { height: 100%; -webkit-text-size-adjust: 100%; overflow-x: hidden; max-width: 100vw; }
 
 body {

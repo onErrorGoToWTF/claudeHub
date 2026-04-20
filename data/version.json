@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.36",
-  "milestone": "M9.17c.a",
-  "milestoneTitle": "Phase M9.17c.a — Destructive-color cascade. Migrated all four destructive-action buttons to the --danger-* token family introduced in M9.17c: .learn-action-btn-danger (was #c0392b brick), .project-delete (was #f43f5e rose), .storage-key-delete (was mixed #f87171/#f43f5e), .pin-picker-remove (was mixed #f87171/#f43f5e). All four now share the same red hue; future hue retuning is a one-line :root edit. Remaining reds in style.css are sentiment pills / error-state indicators / severity dots — out of scope per the rule (red = severity, not action).",
-  "deployedAt": "2026-04-20T14:48Z",
+  "version": "0.7.1-dev.37",
+  "milestone": "M9.17d",
+  "milestoneTitle": "Phase M9.17d — No text selection on tappable surfaces. Added user-select:none + -webkit-user-select:none + -webkit-touch-callout:none to every tappable / draggable / clickable class (learn-item-head, learn-action-btn, learn-grab-handle, panel-tile, card, tool-card, stack-card, project-card, continue-row, filter-chip, chips.glass button, dash-action, youtube-open-btn, project-delete, storage-key-delete, pin-picker-remove, pin-btn, save-btn). Fixes iOS long-press popping the selection loupe and accidental drag-highlight behavior that distracted from tap / drag feedback. Informational-only surfaces below heads (summary, meta, coverage, long-form body copy) stay selectable so users can copy text. CLAUDE.md design-language section updated with the rule.",
+  "deployedAt": "2026-04-20T14:58Z",
   "commitSha": ""
 }
