@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.49",
-  "milestone": "M9.19a.1",
-  "milestoneTitle": "Phase M9.19a.1 — Draft eyebrow reads source tool name. Phone review of M9.19a showed drafts rendered 'Draft · Draft' in the eyebrow because buildLearnItems set both kind and trackLabel to the literal 'Draft'. Drafts are authored from a specific Tools-card pin, so the source tool IS the effective track for that draft. buildLearnItems now looks up the source tool via sourceToolId and uses its name (e.g. 'Claude Code', 'Cursor') as the trackLabel; falls back to 'Draft' if the lookup fails. Eyebrow now reads 'Draft · Claude Code' instead of the tautological 'Draft · Draft'. Drafts remain the stress-test tile type for the unified .dash-tile layout — they carry the densest slot load (kind + track + summary + coverage pills + grab + pin + mastery + delete), so future slot additions should be validated against draft tiles first.",
-  "deployedAt": "2026-04-20T18:30Z",
+  "version": "0.7.1-dev.50",
+  "milestone": "M9.19a.2",
+  "milestoneTitle": "Phase M9.19a.2 — Swipe-to-reveal delete for draft tiles. Frees up the trailing action slot: drafts no longer render an inline trash icon; instead a red Delete button lives absolutely-positioned behind the tile in a new .dash-tile-swipe-wrap clipping container. iOS Mail pattern: right-to-left swipe past 40px threshold translates the tile to translateX(-80px), revealing the action; tap the red commits delete; auto-closes after 4s of inactivity; tap-outside closes. Honors design-review Rule 10 (destructive actions reveal on right-to-left / trailing side). Does not interfere with grab-handle drag (touchstart bails when target is inside .dash-tile-grab or a data-learn-action button). Direction-lock at 10px vertical / 8px horizontal so vertical scroll stays responsive. Reduced-motion carve-out: tile translate transition disabled but swipe still functional. Wrapper only emitted for drafts; non-draft Learn tiles render bare as before.",
+  "deployedAt": "2026-04-20T18:55Z",
   "commitSha": ""
 }

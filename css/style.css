@@ -2754,6 +2754,66 @@ body.modal-open { overflow: hidden; }
   .dash-tile.is-dragging { animation: none; }
 }
 
+/* ===== M9.19a.2 — Swipe-to-reveal delete (drafts only) =====
+   iOS Mail pattern: swipe the tile left, a red Delete button slides
+   in from the trailing edge, tap the red to commit. Frees the action-
+   icon slot in the trailing cluster (drafts no longer need the inline
+   trash) and follows the destructive-swipe-direction rule in the
+   design-review skill (right-to-left reveals destructive).
+   Auto-closes after ~4s of inactivity, or on tap-outside. */
+.dash-tile-swipe-wrap {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  touch-action: pan-y;   /* vertical scroll still works; horizontal hijacked */
+}
+.dash-tile-swipe-action {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 0;
+  border: 0;
+  background: var(--danger-solid);
+  color: var(--danger-ink);
+  font-family: inherit;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+.dash-tile-swipe-action svg {
+  width: 18px;
+  height: 18px;
+}
+.dash-tile-swipe-wrap > .dash-tile {
+  position: relative;
+  z-index: 1;
+  transform: translateX(0);
+  transition: transform 0.22s var(--ease-premium);
+  will-change: transform;
+}
+.dash-tile-swipe-wrap[data-swipe-state="open"] > .dash-tile {
+  transform: translateX(-80px);
+}
+.dash-tile-swipe-wrap[data-swipe-state="peeking"] > .dash-tile {
+  transition: none;   /* follow finger instantly during swipe */
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash-tile-swipe-wrap > .dash-tile { transition: none; }
+}
+
 .dash-eyebrow {
   font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--text-3);

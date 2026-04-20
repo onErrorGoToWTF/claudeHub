@@ -2048,9 +2048,12 @@
     const masterEmpty = inDone ? ' data-empty="1"' : "";
     const pinAction    = inDone ? "" : ' data-learn-action="pin"';
     const masterAction = inDone ? "" : ' data-learn-action="master"';
-    const deleteSlot = isDraft && !inDone
-      ? `<button type="button" class="dash-tile-icon dash-tile-delete" data-learn-action="remove-draft" data-armed="" aria-label="Delete draft" title="Delete draft">${TRASH_SVG}</button>`
-      : `<button type="button" class="dash-tile-icon dash-tile-delete" data-empty="1" aria-hidden="true" tabindex="-1">${TRASH_SVG}</button>`;
+    // M9.19a.2 — Drafts moved from inline trash button to swipe-to-reveal
+    // delete. The trailing action slot stays reserved-invisible to keep
+    // geometry identical with non-draft tiles; the destructive action
+    // lives behind the tile in .dash-tile-swipe-action and is revealed
+    // on right-to-left swipe (see wireLearnSwipeDelete below).
+    const deleteSlot = `<button type="button" class="dash-tile-icon dash-tile-delete" data-empty="1" aria-hidden="true" tabindex="-1">${TRASH_SVG}</button>`;
     // Flag-icons row — reserved slot. Currently emits nothing; future
     // signals (warning / locked / new / recommended / has-notes) will
     // populate here without needing another layout change.
@@ -2083,7 +2086,7 @@
     const grabEmpty = sortable ? "" : ' data-empty="1"';
     // Summary — 1-line ellipsis, optional.
     const summary = (item.summary || "").trim();
-    return `
+    const tileMarkup = `
       <article class="dash-tile"${sortable ? ' data-sortable="1"' : ""} data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}" role="button" tabindex="0">
         <button type="button" class="dash-tile-grab"${grabEmpty} aria-label="Drag to reorder" title="Drag to reorder" tabindex="-1">${GRAB_SVG}</button>
         <div class="dash-tile-content">
@@ -2104,6 +2107,22 @@
         </div>
       </article>
     `;
+    // M9.19a.2 — Drafts get a swipe-to-reveal delete wrapper. Non-draft
+    // tiles render bare (no destructive action, no wrap). The wrapper
+    // clips the absolute-positioned .dash-tile-swipe-action behind the
+    // tile; horizontal swipe translates the tile left to reveal it.
+    if (isDraft && !inDone) {
+      return `
+        <div class="dash-tile-swipe-wrap" data-swipe-state="closed" data-draft-id="${escapeHtml(item.id)}">
+          <button type="button" class="dash-tile-swipe-action" aria-label="Delete draft" tabindex="-1">
+            ${TRASH_SVG}
+            <span>Delete</span>
+          </button>
+          ${tileMarkup}
+        </div>
+      `;
+    }
+    return tileMarkup;
   }
   function renderLearnZone(hostId, items, opts) {
     const host = document.getElementById(hostId);
@@ -2172,6 +2191,8 @@
       host.querySelectorAll(".dash-tile[data-sortable='1'] .dash-tile-grab").forEach((handle) => {
         wireLearnGrabHandle(handle, handle.closest(".dash-tile"));
       });
+      // M9.19a.2 — swipe-to-reveal delete on draft tiles.
+      host.querySelectorAll(".dash-tile-swipe-wrap").forEach(wireLearnSwipeDelete);
       // Tile-click: navigate. Lesson / draft with no docsUrl → openLesson
       // modal. Course / draft with docsUrl → open external URL in new
       // tab. Action-icon + grab-handle clicks opt out (action icons
@@ -2182,6 +2203,17 @@
           if (e.target.closest("[data-learn-action]")) return;
           if (e.target.closest(".dash-tile-grab")) return;
           if (tile.dataset.learnSwipeHandled === "1") return;
+          // M9.19a.2 — if the tile is inside an open swipe wrap, the tap
+          // closes the swipe instead of navigating. Prevents the user
+          // from jumping into a lesson/URL when they just wanted to
+          // dismiss the Delete reveal.
+          const swipeWrap = tile.closest(".dash-tile-swipe-wrap");
+          if (swipeWrap && swipeWrap.dataset.swipeState === "open") {
+            e.preventDefault();
+            swipeWrap.dataset.swipeState = "closed";
+            tile.style.transform = "";
+            return;
+          }
           const type = tile.dataset.learnType;
           const id   = tile.dataset.learnId;
           if (type === "lesson") {
@@ -2342,6 +2374,111 @@
       finishDrag(e.clientX, e.clientY);
     });
     handle.addEventListener("pointercancel", cancelDrag);
+  }
+  // M9.19a.2 — Swipe-to-reveal delete state machine for draft tiles.
+  // iOS Mail pattern: horizontal right-to-left swipe translates the tile
+  // left, revealing a red Delete button behind it (.dash-tile-swipe-action
+  // clipped by .dash-tile-swipe-wrap). Opens on swipe past threshold,
+  // closes on tap-outside / auto-timer / swipe-back. Destructive-direction
+  // rule (design-review Rule 10) honored: right-to-left = destructive.
+  // Does NOT interfere with the grab-handle drag (its touchstart bails
+  // when target is inside .dash-tile-grab or a data-learn-action button).
+  function wireLearnSwipeDelete(wrap) {
+    if (!wrap || wrap._swipeWired) return;
+    wrap._swipeWired = true;
+    const tile   = wrap.querySelector(".dash-tile");
+    const action = wrap.querySelector(".dash-tile-swipe-action");
+    if (!tile || !action) return;
+    const OPEN_OFFSET = 80;
+    const OPEN_THRESHOLD = 40;
+    const AUTOCLOSE_MS = 4000;
+    let startX = 0, startY = 0;
+    let dragging = false;
+    let direction = null;            // "h" once committed to horizontal
+    let isOpen = false;
+    let autoCloseTimer = null;
+    const close = () => {
+      isOpen = false;
+      wrap.dataset.swipeState = "closed";
+      tile.style.transform = "";
+      clearTimeout(autoCloseTimer);
+    };
+    const open = () => {
+      isOpen = true;
+      wrap.dataset.swipeState = "open";
+      tile.style.transform = "";     // CSS rule drives the -80px translate
+      clearTimeout(autoCloseTimer);
+      autoCloseTimer = setTimeout(close, AUTOCLOSE_MS);
+    };
+    const onTouchStart = (e) => {
+      if (e.touches.length !== 1) return;
+      if (e.target.closest(".dash-tile-grab")) return;
+      if (e.target.closest("[data-learn-action]")) return;
+      if (e.target.closest(".dash-tile-swipe-action")) return;
+      dragging = true;
+      direction = null;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    };
+    const onTouchMove = (e) => {
+      if (!dragging || e.touches.length !== 1) return;
+      const dx = e.touches[0].clientX - startX;
+      const dy = e.touches[0].clientY - startY;
+      if (direction === null) {
+        if (Math.abs(dy) > 10 && Math.abs(dy) > Math.abs(dx)) {
+          dragging = false;        // user is scrolling; abort
+          return;
+        }
+        if (Math.abs(dx) > 8) direction = "h";
+        else return;               // below dead zone; wait
+      }
+      if (direction !== "h") return;
+      e.preventDefault();
+      wrap.dataset.swipeState = "peeking";
+      const base = isOpen ? -OPEN_OFFSET : 0;
+      const next = base + dx;
+      const clamped = Math.max(-OPEN_OFFSET, Math.min(16, next));  // small overshoot allowed on close-drag
+      tile.style.transform = `translateX(${clamped}px)`;
+    };
+    const onTouchEnd = (e) => {
+      if (!dragging) return;
+      dragging = false;
+      if (direction !== "h") return;
+      const dx = (e.changedTouches[0]?.clientX ?? startX) - startX;
+      const base = isOpen ? -OPEN_OFFSET : 0;
+      const final = base + dx;
+      if (final < -OPEN_THRESHOLD) open();
+      else close();
+    };
+    const onTouchCancel = () => {
+      dragging = false;
+      close();
+    };
+    wrap.addEventListener("touchstart",  onTouchStart,  { passive: true  });
+    wrap.addEventListener("touchmove",   onTouchMove,   { passive: false });
+    wrap.addEventListener("touchend",    onTouchEnd);
+    wrap.addEventListener("touchcancel", onTouchCancel);
+    // Tap on the revealed red Delete → commit. Reuses the same remove /
+    // unpin / unmaster sequence the old inline action used.
+    action.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const id = wrap.dataset.draftId || tile.dataset.learnId;
+      if (!id) return;
+      removeLearnDraft(id);
+      unpinLearnItem("draft", id);
+      unsetMastered("draft", id);
+      if (typeof renderLearn === "function") renderLearn();
+    });
+    // Close this wrap's swipe on any outside tap. One listener per
+    // wrap — cheap, and re-installed only once due to the _swipeWired
+    // guard above.
+    document.addEventListener("click", (e) => {
+      if (!document.body.contains(wrap)) return;           // detached; let GC handle it
+      if (wrap.dataset.swipeState !== "open") return;
+      if (wrap.contains(e.target)) return;
+      close();
+    });
   }
   // handleLearnSwipeLeft retired in M9.17b.d alongside swipe-left-mastery.
   // Inline ✓ button (data-learn-action="master") now owns the mastery flow.
