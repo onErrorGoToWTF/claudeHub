@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T13:08:52.579Z",
+  "generated_at": "2026-04-20T13:15:41.658Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -204,7 +204,7 @@
       {
         "title": "Figma's woes compound with Claude Design",
         "url": "https://martinalderson.com/posts/figmas-woes-compound-with-claude-design/",
-        "source": "HN · 53↑",
+        "source": "HN · 54↑",
         "hn_id": "47832366",
         "published": "2026-04-20T10:26:35.000Z",
         "summary": ""
@@ -219,7 +219,7 @@
       {
         "title": "NSA is using Anthropic's Mythos despite blacklist",
         "url": "https://www.reuters.com/business/us-security-agency-is-using-anthropics-mythos-despite-blacklist-axios-reports-2026-04-19/",
-        "source": "HN · 146↑",
+        "source": "HN · 154↑",
         "hn_id": "47832222",
         "published": "2026-04-20T10:00:35.000Z",
         "summary": ""
@@ -297,7 +297,7 @@
       {
         "title": "Anthropic installed a spyware bridge on my machine?",
         "url": "https://www.thatprivacyguy.com/blog/anthropic-spyware/",
-        "source": "HN · 57↑",
+        "source": "HN · 58↑",
         "hn_id": "47829800",
         "published": "2026-04-20T02:41:50.000Z",
         "summary": ""
@@ -629,6 +629,17 @@
     ],
     "youtube": [
       {
+        "title": "Claude Routines Tutorial: Automate Anything with Claude Ai!",
+        "url": "https://www.youtube.com/watch?v=D3pxbkPg0KE",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "D3pxbkPg0KE",
+        "thumbnail": "https://i.ytimg.com/vi/D3pxbkPg0KE/hqdefault.jpg",
+        "published": "2026-04-20T13:00:19.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude + Heygen: INSANE Automated Videos! (easy tutorial)",
         "url": "https://www.youtube.com/watch?v=GnoJaaIHXWU",
         "source": "Productive Dude",
@@ -946,20 +957,21 @@
         "thumbnail": "https://i.ytimg.com/vi/RXhEScTBBqs/hqdefault.jpg",
         "published": "2026-04-10T12:52:00.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Code for Non-Coders: Start Here (Step by Step)",
-        "url": "https://www.youtube.com/watch?v=-o3aiNFaMCI",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "-o3aiNFaMCI",
-        "thumbnail": "https://i.ytimg.com/vi/-o3aiNFaMCI/hqdefault.jpg",
-        "published": "2026-04-10T12:30:02.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "Claude Routines Tutorial: Automate Anything with Claude Ai!",
+        "url": "https://www.youtube.com/watch?v=D3pxbkPg0KE",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "D3pxbkPg0KE",
+        "thumbnail": "https://i.ytimg.com/vi/D3pxbkPg0KE/hqdefault.jpg",
+        "published": "2026-04-20T13:00:19.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
       {
         "title": "Claude + Heygen: INSANE Automated Videos! (easy tutorial)",
         "url": "https://www.youtube.com/watch?v=GnoJaaIHXWU",
@@ -1227,18 +1239,6 @@
         "published": "2026-04-10T19:17:30.000Z",
         "summary": "",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "Claude Code for Non-Coders: Start Here (Step by Step)",
-        "url": "https://www.youtube.com/watch?v=-o3aiNFaMCI",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "-o3aiNFaMCI",
-        "thumbnail": "https://i.ytimg.com/vi/-o3aiNFaMCI/hqdefault.jpg",
-        "published": "2026-04-10T12:30:02.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "Merge pull request #516 from anthropics/mnowicki/cma-versioning-heade…",
@@ -1747,6 +1747,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Claude Routines Tutorial: Automate Anything with Claude Ai!",
+        "url": "https://www.youtube.com/watch?v=D3pxbkPg0KE",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-04-20T13:00:19.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude + Heygen: INSANE Automated Videos! (easy tutorial)",
         "url": "https://www.youtube.com/watch?v=GnoJaaIHXWU",
         "source": "YouTube · Productive Dude",
@@ -2059,13 +2066,6 @@
         "url": "https://www.youtube.com/watch?v=RXhEScTBBqs",
         "source": "YouTube · Ryan & Matt Data Science",
         "published": "2026-04-10T12:52:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code for Non-Coders: Start Here (Step by Step)",
-        "url": "https://www.youtube.com/watch?v=-o3aiNFaMCI",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-04-10T12:30:02.000Z",
         "summary": ""
       },
       {
