@@ -3275,7 +3275,6 @@
     host.innerHTML = recent.map((p) => {
       const pinTools    = Array.isArray(p.pinnedTools)    ? p.pinnedTools.length    : 0;
       const pinSnippets = Array.isArray(p.pinnedSnippets) ? p.pinnedSnippets.length : 0;
-      const pinned = (pinTools + pinSnippets) > 0;
       const pathLabel = p.path === "best" ? "Best path" : "Easy path";
       const eyebrowParts = [];
       if (p.__placeholder) eyebrowParts.push("Example");
@@ -3288,19 +3287,35 @@
       const eyebrow = eyebrowParts.join(" · ");
       const state = (updated > created) ? "resume" : "open";
       const stateLabel = state === "resume" ? "Resume" : "Open";
-      const pinLabel = pinned ? "Pins present" : "No pins";
+      // M9.19a.7 — Inventory rollup moved from pin icon to flag pills.
+      // Pin is reserved for the universal "send to Learn" action and
+      // doesn't appear on items already inside Learn-adjacent surfaces;
+      // the "this project has N tools / M snippets pinned inside it"
+      // information is a content signal, not an action, so it belongs
+      // in the flag row as read-only pills.
+      const inventoryFlags = [];
+      if (pinTools)    inventoryFlags.push({ key: "inventory-tools",    label: `${pinTools} tool${pinTools === 1 ? "" : "s"}` });
+      if (pinSnippets) inventoryFlags.push({ key: "inventory-snippets", label: `${pinSnippets} snippet${pinSnippets === 1 ? "" : "s"}` });
+      const flagsMarkup = inventoryFlags.length
+        ? `<div class="dash-tile-flags">${inventoryFlags.map((f) => `<span class="dash-tile-flag" data-flag="${escapeHtml(f.key)}">${escapeHtml(f.label)}</span>`).join("")}</div>`
+        : "";
       return `
         <article class="dash-tile" data-project-id="${escapeHtml(p.id)}"${p.__placeholder ? ' data-placeholder="1"' : ""} role="button" tabindex="0">
           <button type="button" class="dash-tile-grab" data-empty="1" aria-hidden="true" tabindex="-1">${GRAB_SVG}</button>
           <div class="dash-tile-content">
             <div class="dash-tile-title">${escapeHtml(p.title)}</div>
             <div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>
+            ${flagsMarkup}
           </div>
           <div class="dash-tile-trailing">
             <span class="dash-tile-duration" data-empty="1">—</span>
             <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
             <div class="dash-tile-icons">
-              <button type="button" class="dash-tile-icon dash-tile-pin" aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinLabel}" title="${pinLabel}" tabindex="-1" disabled>${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}</button>
+              <!-- Pin retired from Projects tiles in M9.19a.7 —
+                   "has pinned inventory" rolled up to the flag row
+                   above so pin stays a single-meaning universal
+                   icon (send to Learn). -->
+              <button type="button" class="dash-tile-icon dash-tile-pin" data-empty="1" aria-hidden="true" tabindex="-1">${PIN_SVG_OUTLINE}</button>
               <button type="button" class="dash-tile-icon dash-tile-mastery" data-empty="1" aria-hidden="true" tabindex="-1">${MASTERY_SVG_OUTLINE}</button>
               <button type="button" class="dash-tile-icon dash-tile-delete" data-empty="1" aria-hidden="true" tabindex="-1">${TRASH_SVG}</button>
             </div>
