@@ -62,6 +62,7 @@ docs/
   skills/
     add-scraper/                         # scaffolds a new feed scraper
     debug-feed-failure/                  # diagnoses stale/broken sections
+    design-amend/                        # cascades a systemic design-language rule change
     design-review/                       # reviews CSS/HTML/JS against design language
     milestone-deploy/                    # commits + bumps version + pushes a milestone
   settings.local.json                    # local permissions / allowlist

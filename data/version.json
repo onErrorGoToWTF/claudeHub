@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.25",
-  "milestone": "M9.16q",
-  "milestoneTitle": "Phase M9.16q — Docs hygiene. Plan doc gains M9.16o (session wrap) and M9.16p (link-in-modal removal) ledger entries, retires the 'known open after M9.16' doc-modal note. docs/status.md bumped to v0.7.1-dev.25 with M9.16o/p/q listed under the M9.16 section. Memory index + project_palette_overhaul.md refreshed to match.",
-  "deployedAt": "2026-04-20T11:30Z",
+  "version": "0.7.1-dev.26",
+  "milestone": "M9.17.0",
+  "milestoneTitle": "Phase M9.17.0 — Scaffold design-amend skill. New .claude/skills/design-amend/SKILL.md drives systemic design-language rule changes through a disciplined cascade: echo rule, produce plain-English impact list, amend CLAUDE.md first, chunk the cascade for phone review. Pairs with design-review (which gates individual diffs). CLAUDE.md skills tree + project_skills memory updated. Pre-flight for the M9.17 activation/rest design shift.",
+  "deployedAt": "2026-04-20T11:45Z",
   "commitSha": ""
 }
