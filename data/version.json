@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.9.2",
-  "milestone": "M9.6c",
-  "milestoneTitle": "Phase M9.6c — Drafts filter + coverage matrix. The filter chip previously labeled Pinned now reads Drafts and narrows to type=\"draft\" items only — the user's explicit to-author list from Pin-to-learn on Tools. Pin-to-Up-Next (drag / ⋯ menu) stays as-is for any curated item. Each draft card now carries a fuzzy coverage matrix cross-referencing the source tool's name + snippetTags against authored lessons, Academy courses, snippets (by tag overlap + keyword), and YouTube videos from the loaded feed — so the user sees at a glance whether the topic is already covered or is a blank slate. All in-memory, no database (by design — matrix can be swapped for a structured toolIds field on content records in a later milestone without changing the UI).",
-  "deployedAt": "2026-04-20T02:02Z",
+  "version": "0.7.0-dev.10",
+  "milestone": "M9.7",
+  "milestoneTitle": "Phase M9.7 — Tools redesign + mastered bucket. A new near-white-glass \"Your stack\" strip now sits above the Tools catalog, listing mastered tools first and the Dashboard's seed in-use tools after. Each strip entry opens the tool modal on tap. The modal itself gains a Mark mastered toggle next to Save so the user can populate the strip; flipping it re-renders the catalog so the ●ᴹ mastery badge on each card's title line reflects the new state instantly. The modality filter switched from a <select> to a .filter-chip row (Label (N) counts preserved) matching the Learn idiom — the original .learn-filter-chip class was generalized to .filter-chip and scoped per parent so the two surfaces' handlers don't cross-fire.",
+  "deployedAt": "2026-04-20T02:18Z",
   "commitSha": ""
 }

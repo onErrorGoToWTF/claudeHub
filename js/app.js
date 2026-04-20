@@ -480,11 +480,13 @@
     });
   }, true);
 
-  // M9.4a — Learn filter chips (All · Lessons · Courses · Pinned · Has quiz).
-  document.querySelectorAll(".learn-filter-chip").forEach((chip) => {
+  // M9.4a — Learn filter chips (All · Lessons · Courses · Drafts · Has quiz).
+  // M9.7: scoped to `.learn-filters .filter-chip` so Tools' modality chips
+  // (same visual class) don't pipe clicks into Learn's state.
+  document.querySelectorAll(".learn-filters .filter-chip").forEach((chip) => {
     chip.addEventListener("click", () => {
       currentLearnFilter = chip.dataset.learnFilter || "all";
-      document.querySelectorAll(".learn-filter-chip").forEach((c) => {
+      document.querySelectorAll(".learn-filters .filter-chip").forEach((c) => {
         const on = c === chip;
         c.classList.toggle("is-active", on);
         c.setAttribute("aria-selected", on ? "true" : "false");
@@ -3256,27 +3258,41 @@
     bar.appendChild(clear);
   }
 
+  // M9.7 — Tools modality chip row. Replaces the old <select id="tools-filter">
+  // with a .filter-chip row that mirrors Learn's chip idiom. Each chip shows
+  // "Label (N)" so the count signal from the old select is preserved. Only
+  // modalities with ≥1 tool render (plus the always-on "All" chip).
   function wireToolsControls() {
     if (!toolsData) return;
-    const filterEl = document.getElementById("tools-filter");
-    const sortEl   = document.getElementById("tools-sort");
-    if (filterEl) {
+    const filtersHost = document.getElementById("tools-filters");
+    const sortEl      = document.getElementById("tools-sort");
+    if (filtersHost) {
       const counts = toolsData.reduce((acc, t) => {
         acc[t.modality] = (acc[t.modality] || 0) + 1;
         return acc;
       }, {});
-      const opts = MODALITIES
+      const chips = MODALITIES
         .filter((m) => m.id === "all" || (counts[m.id] || 0) > 0)
         .map((m) => {
           const n = m.id === "all" ? toolsData.length : counts[m.id];
-          return `<option value="${m.id}">${m.label} (${n})</option>`;
+          const active = m.id === toolsModality;
+          return `<button type="button" class="filter-chip${active ? " is-active" : ""}" `
+               + `data-tools-modality="${m.id}" role="tab" `
+               + `aria-selected="${active ? "true" : "false"}">`
+               + `${m.label}<span class="filter-chip-count">${n}</span></button>`;
         }).join("");
-      filterEl.innerHTML = opts;
-      filterEl.value = toolsModality;
-      if (!filterEl.dataset.wired) {
-        filterEl.dataset.wired = "1";
-        filterEl.addEventListener("change", () => {
-          toolsModality = filterEl.value;
+      filtersHost.innerHTML = chips;
+      if (!filtersHost.dataset.wired) {
+        filtersHost.dataset.wired = "1";
+        filtersHost.addEventListener("click", (e) => {
+          const chip = e.target.closest(".filter-chip");
+          if (!chip || !filtersHost.contains(chip)) return;
+          toolsModality = chip.dataset.toolsModality || "all";
+          filtersHost.querySelectorAll(".filter-chip").forEach((c) => {
+            const on = c === chip;
+            c.classList.toggle("is-active", on);
+            c.setAttribute("aria-selected", on ? "true" : "false");
+          });
           renderTools();
         });
       }
@@ -3291,7 +3307,78 @@
     }
   }
 
+  // M9.7 — "Your stack" strip data sources.
+  // In-use ids come from the Dashboard Tools panel (hardcoded USING tiles
+  // in index.html, `data-tool-id` on each .continue-row). That lets us
+  // reuse the seed without duplicating state; when saves ever become the
+  // canonical source, swap this function only.
+  function getInUseToolIds() {
+    const ids = [];
+    document.querySelectorAll('#dash-tools-body [data-tool-id]').forEach((el) => {
+      const id = el.getAttribute('data-tool-id');
+      if (id) ids.push(id);
+    });
+    return ids;
+  }
+  function getMasteredToolIds() {
+    const m = getMastery();
+    const ids = [];
+    Object.keys(m).forEach((k) => {
+      if (k.startsWith("tool:")) ids.push(k.slice(5));
+    });
+    return ids;
+  }
+
+  // M9.7 — Your stack strip. Renders mastered tools + in-use seed ids
+  // as glass chips above the catalog. Click opens the tool modal. When
+  // both sets are empty (first-run default) we show a muted empty state
+  // instead of a blank glass pane.
+  function renderYourStack() {
+    const host = document.getElementById("your-stack-list");
+    const panel = document.getElementById("your-stack");
+    if (!host || !panel || !toolsData) return;
+    const masteredIds = new Set(getMasteredToolIds());
+    const inUseIds    = new Set(getInUseToolIds());
+    const seen = new Set();
+    const entries = [];
+    // Mastered first, then in-use that isn't already shown as mastered.
+    masteredIds.forEach((id) => {
+      if (seen.has(id)) return;
+      const tool = toolsData.find((t) => t.id === id);
+      if (tool) { entries.push({ tool, role: "Mastered" }); seen.add(id); }
+    });
+    inUseIds.forEach((id) => {
+      if (seen.has(id)) return;
+      const tool = toolsData.find((t) => t.id === id);
+      if (tool) { entries.push({ tool, role: "In use" }); seen.add(id); }
+    });
+    if (entries.length === 0) {
+      host.innerHTML = `<span class="your-stack-empty">Nothing here yet — open any tool below and tap "Mark mastered" to add it.</span>`;
+      return;
+    }
+    host.innerHTML = entries.map(({ tool, role }) =>
+      `<button type="button" class="your-stack-tool" data-tool-id="${tool.id}">`
+      + `${tool.name}`
+      + `<span class="your-stack-role">${role}</span>`
+      + `</button>`
+    ).join("");
+    if (!host.dataset.wired) {
+      host.dataset.wired = "1";
+      host.addEventListener("click", (e) => {
+        const btn = e.target.closest(".your-stack-tool");
+        if (!btn) return;
+        const id = btn.dataset.toolId;
+        const tool = toolsData.find((t) => t.id === id);
+        if (tool) openToolModal(tool);
+      });
+    }
+  }
+
   function renderTools() {
+    // M9.7 — Your stack strip reads the same toolsData; refresh it on
+    // every render so mastery flips (from the tool modal, eventually)
+    // show up without a reload.
+    renderYourStack();
     const host = document.getElementById("tool-grid");
     if (!host || !toolsData) return;
     let list = toolsModality === "all"
@@ -3332,12 +3419,15 @@
       const claudeBadge = t.claudeNative
         ? `<span class="tool-badge tool-badge-claude">Claude-native</span>`
         : "";
+      const masteryBadge = isMastered("tool", t.id)
+        ? `<span class="tool-mastery" title="Mastered" aria-label="Mastered">●ᴹ</span>`
+        : "";
       card.innerHTML = `
         <div class="tool-card-head">
           <span class="tool-vendor">${t.vendor || ""}</span>
           <span class="tool-modality" data-modality="${t.modality}">${(MODALITIES.find(m => m.id === t.modality) || {}).label || t.modality}</span>
         </div>
-        <h3 class="tool-name">${t.name}</h3>
+        <h3 class="tool-name">${t.name}${masteryBadge}</h3>
         <p class="tool-tagline">${t.tagline || ""}</p>
         <div class="tool-badges">
           ${claudeBadge}
@@ -3365,14 +3455,36 @@
     q(".tool-modal-title").textContent    = tool.name || "";
     q(".tool-modal-tagline").textContent  = tool.tagline || "";
     // Pin button (M3.2) — shows filled when pinned into any project.
+    // M9.7 — adjacent "Mastered" toggle reuses the .save-btn visual so the
+    // two controls sit together in the title row. Toggling flips
+    // clhub.v1.mastery and re-renders the Tools surface so the ●ᴹ badge
+    // + Your stack strip reflect the new state.
     const pinHost = q(".tool-modal-pin");
     if (pinHost) {
       const saved = isSavedAny("tool", tool.id);
+      const mastered = isMastered("tool", tool.id);
       pinHost.innerHTML = `
         <button type="button" class="save-btn save-btn-tool" data-save-kind="tool" data-save-id="${escapeHtml(tool.id)}" data-save-label="${escapeHtml(tool.name || tool.id)}" data-saved="${saved ? "1" : ""}" aria-pressed="${saved ? "true" : "false"}" aria-label="${saved ? "Edit save" : "Save"}">
           ${saved ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}<span class="save-btn-label">${saved ? "Saved" : "Save"}</span>
         </button>
+        <button type="button" class="save-btn save-btn-mastery" data-tool-id="${escapeHtml(tool.id)}" data-saved="${mastered ? "1" : ""}" aria-pressed="${mastered ? "true" : "false"}" aria-label="${mastered ? "Unset mastered" : "Mark mastered"}">
+          <span class="save-btn-label">${mastered ? "● Mastered" : "Mark mastered"}</span>
+        </button>
       `;
+      const masteryBtn = pinHost.querySelector(".save-btn-mastery");
+      if (masteryBtn) {
+        masteryBtn.addEventListener("click", (ev) => {
+          ev.preventDefault();
+          const id = masteryBtn.dataset.toolId;
+          if (!id) return;
+          if (isMastered("tool", id)) unsetMastered("tool", id);
+          else setMastered("tool", id);
+          // Re-open the modal in place so the button state refreshes, and
+          // re-render Tools so the catalog ●ᴹ badge + Your stack pick it up.
+          openToolModal(tool);
+          renderTools();
+        });
+      }
     }
     q(".tool-modal-when").textContent     = tool.whenToUse || "";
     q(".tool-modal-version").textContent  = tool.currentVersion || "";
