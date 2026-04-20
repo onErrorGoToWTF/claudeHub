@@ -2359,10 +2359,14 @@ body.modal-open { overflow: hidden; }
      can breathe without competing with the trailing pills. Grab column
      (28px) stays leading on every row. */
   grid-template-columns: 28px minmax(0, 1fr) auto;
+  /* M9.19a.10 — title now spans the full content width on its own
+     row. Summary retired from the condensed tile (the full summary
+     shows in the expanded view on tap). Status cluster lives on
+     row 1 beside the eyebrow; title breathes across the whole width
+     so long course titles stop getting cut off. */
   grid-template-areas:
     "grab  eyebrow   trailing"
-    "grab  title     trailing"
-    "grab  summary   summary"
+    "grab  title     title"
     "grab  flags     flags"
     "grab  coverage  coverage"
     "grab  progress  progress";

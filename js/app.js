@@ -2085,12 +2085,12 @@
     // the tile. When data-sortable is absent, the grab renders invisible
     // (28px column reserved) per .dash-tile-grab[data-empty="1"].
     const grabEmpty = sortable ? "" : ' data-empty="1"';
-    // M9.19a.8 — Flattened markup. No .dash-tile-content wrapper; each
-    // optional row is a direct child of .dash-tile so grid-template-areas
-    // can place it directly. No .dash-tile-icons row — retired per
-    // M9.19a.6 / M9.19a.7. Status lives in the top-right trailing
-    // quadrant; summary/flags/coverage/progress span full width below.
-    const summary = (item.summary || "").trim();
+    // M9.19a.10 — Condensed tile shows eyebrow + status + title + flags
+    // + coverage + progress only. Summary retired from the condensed
+    // view because title was competing with the trailing pills for
+    // horizontal space, cutting off long course titles. Full summary
+    // reads in the expanded view (buildLearnTileExpand pulls it from
+    // the source item directly).
     const tileMarkup = `
       <article class="dash-tile"${sortable ? ' data-sortable="1"' : ""} data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}" role="button" tabindex="0">
         <button type="button" class="dash-tile-grab"${grabEmpty} aria-label="Drag to reorder" title="Drag to reorder" tabindex="-1">${GRAB_SVG}</button>
@@ -2100,7 +2100,6 @@
           <span class="dash-tile-duration"${durationEmpty}>${escapeHtml(minutesLabel)}</span>
           <span class="dash-tile-state" data-state="${escapeHtml(stateRaw)}">${escapeHtml(stateLabel)}</span>
         </div>
-        ${summary ? `<div class="dash-tile-summary">${escapeHtml(summary)}</div>` : ""}
         ${flagsMarkup}
         ${coverageMarkup}
       </article>
