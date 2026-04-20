@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.13",
-  "milestone": "M9.16e",
-  "milestoneTitle": "Phase M9.16e — Vignette gradient more concentrated toward the edges. Peak alphas at 0% and 100% unchanged (0.24); the fade to transparent now finishes at 16% / 84% (was 25% / 75%), so the dark band lives in a tighter ~16% strip at each edge and the clear middle widens from 50% to 68% of viewport height.",
-  "deployedAt": "2026-04-20T05:40Z",
+  "version": "0.7.1-dev.14",
+  "milestone": "M9.16f",
+  "milestoneTitle": "Phase M9.16f — Tool-modal header polish. Header padding now respects env(safe-area-inset-top) so the iOS notch/status bar no longer crowds the vendor label + close button on mobile full-bleed. Vendor label (.tool-modal-vendor, the 'ANTHROPIC' eyebrow) contrast bumped from rgba(0,0,0,0.35) → 0.50 for phone legibility; other .label-debossed uses left alone pending per-spot review.",
+  "deployedAt": "2026-04-20T05:44Z",
   "commitSha": ""
 }
