@@ -177,25 +177,29 @@
      Learn lime-green, Projects ocean cyan, Tools tangerine,
      plus a violet accent retained for unrelated gradients.
      Borders + glows pumped for the electric halo. */
-  --color-learn-solid:       #84cc16;                  /* lime — vibrant green with a yellow tint */
-  --color-learn-surface:     rgba(132,204,22,0.14);
-  --color-learn-border:      rgba(132,204,22,0.55);
-  --color-learn-glow:        rgba(132,204,22,0.34);
+  /* M10.2 — section identity hex refreshed alongside the --base retune.
+     Learn greener than the prior lime, Projects true blue, Tools orange
+     stays warm. Static identity pills (coverage-pill, etc.) read these
+     directly; activation cascades go through --accent-* instead. */
+  --color-learn-solid:       #5ea514;                  /* vibrant mid-green */
+  --color-learn-surface:     color-mix(in srgb, #5ea514, transparent 86%);
+  --color-learn-border:      color-mix(in srgb, #5ea514, transparent 45%);
+  --color-learn-glow:        color-mix(in srgb, #5ea514, transparent 66%);
 
   --color-youtube-solid:     #ff3b30;                  /* Apple systemRed */
   --color-youtube-surface:   rgba(255,59,48,0.14);
   --color-youtube-border:    rgba(255,59,48,0.55);
   --color-youtube-glow:      rgba(255,59,48,0.34);
 
-  --color-tools-solid:       #ff7a1a;                  /* vibrant tangerine — juicy peel orange */
-  --color-tools-surface:     rgba(255,122,26,0.14);
-  --color-tools-border:      rgba(255,122,26,0.55);
-  --color-tools-glow:        rgba(255,122,26,0.34);
+  --color-tools-solid:       #e8610d;                  /* vibrant tangerine */
+  --color-tools-surface:     color-mix(in srgb, #e8610d, transparent 86%);
+  --color-tools-border:      color-mix(in srgb, #e8610d, transparent 45%);
+  --color-tools-glow:        color-mix(in srgb, #e8610d, transparent 66%);
 
-  --color-projects-solid:    #0891b2;                  /* vibrant ocean — cyan-600, blue/green sea */
-  --color-projects-surface:  rgba(8,145,178,0.14);
-  --color-projects-border:   rgba(8,145,178,0.55);
-  --color-projects-glow:     rgba(8,145,178,0.34);
+  --color-projects-solid:    #0e7fc4;                  /* true ocean blue */
+  --color-projects-surface:  color-mix(in srgb, #0e7fc4, transparent 86%);
+  --color-projects-border:   color-mix(in srgb, #0e7fc4, transparent 45%);
+  --color-projects-glow:     color-mix(in srgb, #0e7fc4, transparent 66%);
 
   --color-path-best-solid:   #248a3d;                  /* deep green — readable on white */
   --color-path-best-surface: rgba(52,199,89,0.12);
@@ -209,32 +213,76 @@
   --glow-hero:  0 0 24px -4px rgba(48,176,199,0.28);
   --glow-focus: 0 0 0 3px rgba(48,176,199,0.22);
 
-  /* ===== M9.1 — --base + --accent-* token system =====
-     Per-page identity color lives in --base, set via [data-section="X"]
-     (below) and per-panel overrides inside Dashboard. Derived --accent-*
-     resolve lazily at the consumption site, so the same component picks
-     up whatever --base it's rendered under. Border / glow / surface use
-     color-mix(in srgb, …, transparent N%) so output is byte-for-byte
-     equivalent to the legacy rgba(R,G,B,0.55/0.34/0.14) values. Hover /
-     soft / warm / cool use oklch for perceptual tint math. Plan:
-     docs/plans/v0.7-design-system-refactor.md. */
-  /* M9.14 — shared accent while the user settles on the unified
-     active-highlight recipe. Every per-section --base override below
-     (and in chip-* / dash-panel:has(...) rules) currently resolves
-     to this same orange so all highlights read identical. When
-     per-section colors return, restore the literals in each rule;
-     this token can stay as the fallback. */
-  --base-shared:    #84cc16;                                           /* unified warm vibrant green (chartreuse-lime) — change this one value to tune all highlights at once */
-  --base:           var(--base-shared);                                /* fallback — now unified; overridden per [data-section] but still resolves to --base-shared for M9.14 */
-  --accent-solid:   var(--base);
-  --accent-border:  color-mix(in srgb, var(--base), transparent 45%);  /* 0.55 alpha */
-  --accent-glow:    color-mix(in srgb, var(--base), transparent 66%);  /* 0.34 alpha */
-  --accent-surface: color-mix(in srgb, var(--base), transparent 86%);  /* 0.14 alpha */
+  /* ===== M10.11 — parallel per-section accent families =====
+     The M9.1 unified --base → --accent-* derivation was retired after
+     diagnosing a WebKit quirk: a custom property whose value wraps
+     another custom property in color-mix (e.g.
+     `--accent-border: color-mix(in srgb, var(--base), transparent 45%)`)
+     does NOT lazily re-resolve per descendant when an ancestor overrides
+     --base. The inner var() computes once at :root and inherits frozen,
+     so per-section --base overrides never reach the derived tokens.
+     Diagnosed with an outline test: `--base: red` on the Projects panel
+     turned the panel outline red (proving the override applied) but the
+     CTA border, icon stroke, and glow inside stayed Learn-green.
+
+     Fix: parallel per-section families. Each section owns a literal
+     color-mix triad at :root — NO var() inside the token definitions, so
+     the values are fully stable. Section / panel / chip scopes then
+     assign --accent-* from their matching --{section}-* family via a
+     single var() reference. One-level var indirection has always been
+     resolved correctly by WebKit; the failure mode was specifically
+     var-inside-color-mix-inside-a-custom-property.
+
+     Three stops per section, calibrated (78/72/45):
+       Stop 1 (dark)   — darker base. Legibility. --{sec}-solid.
+       Stop 2 (mid)    — base + modest tint-target. Activation edge.
+                         --{sec}-border + --{sec}-glow.
+       Stop 3 (bright) — base + heavy tint-target. Hover wash.
+                         --{sec}-surface + --{sec}-warm.
+     Projects biases tint-target to amber so blue + yellow don't
+     interpolate through green in oklch. Generated / retuned via
+     /accent-retune. */
+
+  /* ---- Learn: green → yellow ---- */
+  --learn-solid:   color-mix(in oklch, #5ea514 78%, black);
+  --learn-border:  color-mix(in srgb, color-mix(in oklch, #5ea514 72%, #f5d90a), transparent 45%);
+  --learn-glow:    color-mix(in srgb, color-mix(in oklch, #5ea514 72%, #f5d90a), transparent 66%);
+  --learn-surface: color-mix(in srgb, color-mix(in oklch, #5ea514 45%, #f5d90a), transparent 86%);
+  --learn-warm:    color-mix(in oklch, #5ea514 45%, #f5d90a);
+  --learn-hover:   color-mix(in oklch, color-mix(in oklch, #5ea514 78%, black) 85%, black);
+  --learn-soft:    color-mix(in oklch, color-mix(in oklch, #5ea514 45%, #f5d90a) 40%, white);
+
+  /* ---- Projects: blue → amber (NOT pure yellow — interp thru green) ---- */
+  --projects-solid:   color-mix(in oklch, #0e7fc4 78%, black);
+  --projects-border:  color-mix(in srgb, color-mix(in oklch, #0e7fc4 72%, #f0c23a), transparent 45%);
+  --projects-glow:    color-mix(in srgb, color-mix(in oklch, #0e7fc4 72%, #f0c23a), transparent 66%);
+  --projects-surface: color-mix(in srgb, color-mix(in oklch, #0e7fc4 45%, #f0c23a), transparent 86%);
+  --projects-warm:    color-mix(in oklch, #0e7fc4 45%, #f0c23a);
+  --projects-hover:   color-mix(in oklch, color-mix(in oklch, #0e7fc4 78%, black) 85%, black);
+  --projects-soft:    color-mix(in oklch, color-mix(in oklch, #0e7fc4 45%, #f0c23a) 40%, white);
+
+  /* ---- Tools: orange → yellow ---- */
+  --tools-solid:   color-mix(in oklch, #e8610d 78%, black);
+  --tools-border:  color-mix(in srgb, color-mix(in oklch, #e8610d 72%, #f5c518), transparent 45%);
+  --tools-glow:    color-mix(in srgb, color-mix(in oklch, #e8610d 72%, #f5c518), transparent 66%);
+  --tools-surface: color-mix(in srgb, color-mix(in oklch, #e8610d 45%, #f5c518), transparent 86%);
+  --tools-warm:    color-mix(in oklch, #e8610d 45%, #f5c518);
+  --tools-hover:   color-mix(in oklch, color-mix(in oklch, #e8610d 78%, black) 85%, black);
+  --tools-soft:    color-mix(in oklch, color-mix(in oklch, #e8610d 45%, #f5c518) 40%, white);
+
+  /* Neutral --accent-* defaults. Consumers outside a section scope
+     (toasts, modals, etc.) see greyscale at rest. Section / panel / chip
+     scopes reassign --accent-* to their --{section}-* family below via a
+     single var() reference — the one-level indirection that works. */
+  --accent-solid:   var(--text-1);
+  --accent-border:  var(--border);
+  --accent-glow:    transparent;
+  --accent-surface: transparent;
   --accent-ink:     #ffffff;
-  --accent-hover:   color-mix(in oklch, var(--base) 85%, black);
-  --accent-soft:    color-mix(in oklch, var(--base) 12%, white);
-  --accent-warm:    color-mix(in oklch, var(--base) 82%, #ffc400);
-  --accent-cool:    color-mix(in oklch, var(--base) 82%, #5ab8ff);
+  --accent-hover:   var(--text-1);
+  --accent-soft:    color-mix(in srgb, var(--text-1), transparent 94%);
+  --accent-warm:    var(--text-1);
+  --accent-cool:    color-mix(in oklch, #9a938a 82%, #5ab8ff);
 
   /* M9.17c — destructive-action color standard. All delete / wipe /
      remove-permanent surfaces across the app derive from --danger so a
@@ -299,13 +347,39 @@
    all three identity tiles coexist on the home surface. Body-level
    chrome outside these wrappers (floating nav chips, modals) sets --base
    on its own element. */
-/* M9.14 — all per-section --base currently resolve to --base-shared
-   so highlights are identical across tabs. Restore literals below
-   when per-section accents return (originals noted inline). */
-[data-section="home"]     { --base: var(--base-shared); } /* was #9a938a */
-[data-section="learn"]    { --base: var(--base-shared); } /* was #84cc16 */
-[data-section="projects"] { --base: var(--base-shared); } /* was #0891b2 */
-[data-section="tools"]    { --base: var(--base-shared); } /* was #ff7a1a */
+/* M10.11 — per-section --accent-* assignment from parallel families.
+   Each section-scope reassigns --accent-* to its --{section}-* family
+   via a single var() reference (the one-level indirection WebKit
+   resolves correctly). Home stays neutral — no reassignment — so the
+   main page reads greyscale at rest; color enters only once a panel
+   activates (which re-scopes via .dash-panel:has(...) below). */
+[data-section="learn"] {
+  --accent-solid:   var(--learn-solid);
+  --accent-border:  var(--learn-border);
+  --accent-glow:    var(--learn-glow);
+  --accent-surface: var(--learn-surface);
+  --accent-warm:    var(--learn-warm);
+  --accent-hover:   var(--learn-hover);
+  --accent-soft:    var(--learn-soft);
+}
+[data-section="projects"] {
+  --accent-solid:   var(--projects-solid);
+  --accent-border:  var(--projects-border);
+  --accent-glow:    var(--projects-glow);
+  --accent-surface: var(--projects-surface);
+  --accent-warm:    var(--projects-warm);
+  --accent-hover:   var(--projects-hover);
+  --accent-soft:    var(--projects-soft);
+}
+[data-section="tools"] {
+  --accent-solid:   var(--tools-solid);
+  --accent-border:  var(--tools-border);
+  --accent-glow:    var(--tools-glow);
+  --accent-surface: var(--tools-surface);
+  --accent-warm:    var(--tools-warm);
+  --accent-hover:   var(--tools-hover);
+  --accent-soft:    var(--tools-soft);
+}
 
 /* ===== Reset ===== */
 *, *::before, *::after { box-sizing: border-box; }
@@ -2327,10 +2401,37 @@ body.modal-open { overflow: hidden; }
 /* M9.1 — override --base per panel so the three identity tiles keep their
    colors inside the neutral Dashboard (home) section. Replaces the old
    --panel-accent-* indirection; all downstream rules read --accent-* now. */
-/* M9.14 — originals noted inline; all collapse to --base-shared */
-.dash-panel:has(.dash-panel-icon--learn)    { --base: var(--base-shared); } /* was #84cc16 */
-.dash-panel:has(.dash-panel-icon--projects) { --base: var(--base-shared); } /* was #0891b2 */
-.dash-panel:has(.dash-panel-icon--tools)    { --base: var(--base-shared); } /* was #ff7a1a */
+/* M10.11 — per-panel --accent-* assignment. Dashboard sits in the
+   neutral home scope; each panel narrows scope via :has() and pumps its
+   own section's --accent-* family, so activation glows / CTA edges /
+   icon stroke all pick up the destination color. */
+.dash-panel:has(.dash-panel-icon--learn) {
+  --accent-solid:   var(--learn-solid);
+  --accent-border:  var(--learn-border);
+  --accent-glow:    var(--learn-glow);
+  --accent-surface: var(--learn-surface);
+  --accent-warm:    var(--learn-warm);
+  --accent-hover:   var(--learn-hover);
+  --accent-soft:    var(--learn-soft);
+}
+.dash-panel:has(.dash-panel-icon--projects) {
+  --accent-solid:   var(--projects-solid);
+  --accent-border:  var(--projects-border);
+  --accent-glow:    var(--projects-glow);
+  --accent-surface: var(--projects-surface);
+  --accent-warm:    var(--projects-warm);
+  --accent-hover:   var(--projects-hover);
+  --accent-soft:    var(--projects-soft);
+}
+.dash-panel:has(.dash-panel-icon--tools) {
+  --accent-solid:   var(--tools-solid);
+  --accent-border:  var(--tools-border);
+  --accent-glow:    var(--tools-glow);
+  --accent-surface: var(--tools-surface);
+  --accent-warm:    var(--tools-warm);
+  --accent-hover:   var(--tools-hover);
+  --accent-soft:    var(--tools-soft);
+}
 .dash-panel:has(.dash-panel-icon--learn) > .dash-panel-body,
 .dash-panel:has(.dash-panel-icon--projects) > .dash-panel-body,
 .dash-panel:has(.dash-panel-icon--tools) > .dash-panel-body {
@@ -6959,10 +7060,36 @@ body.modal-open { overflow: hidden; }
 /* M9.1 — chips sit in the floating nav outside any [data-section] wrapper,
    so each chip carries its own --base. Active + hover rules then read
    --accent-* with the right identity resolved locally. */
-/* M9.14 — originals noted inline; all collapse to --base-shared */
-.chip-learn    { --base: var(--base-shared); } /* was #84cc16 */
-.chip-tools    { --base: var(--base-shared); } /* was #ff7a1a */
-.chip-projects { --base: var(--base-shared); } /* was #0891b2 */
+/* M10.11 — per-chip --accent-* assignment. Nav chips sit outside any
+   section scope; each chip owns its section's --accent-* family so
+   active / hover read the right identity. */
+.chip-learn {
+  --accent-solid:   var(--learn-solid);
+  --accent-border:  var(--learn-border);
+  --accent-glow:    var(--learn-glow);
+  --accent-surface: var(--learn-surface);
+  --accent-warm:    var(--learn-warm);
+  --accent-hover:   var(--learn-hover);
+  --accent-soft:    var(--learn-soft);
+}
+.chip-projects {
+  --accent-solid:   var(--projects-solid);
+  --accent-border:  var(--projects-border);
+  --accent-glow:    var(--projects-glow);
+  --accent-surface: var(--projects-surface);
+  --accent-warm:    var(--projects-warm);
+  --accent-hover:   var(--projects-hover);
+  --accent-soft:    var(--projects-soft);
+}
+.chip-tools {
+  --accent-solid:   var(--tools-solid);
+  --accent-border:  var(--tools-border);
+  --accent-glow:    var(--tools-glow);
+  --accent-surface: var(--tools-surface);
+  --accent-warm:    var(--tools-warm);
+  --accent-hover:   var(--tools-hover);
+  --accent-soft:    var(--tools-soft);
+}
 
 .chip-learn.is-active {
   color: var(--text-1);
