@@ -1958,8 +1958,9 @@ body.modal-open { overflow: hidden; }
      elevation. One color source (--accent-border / --accent-glow,
      both derived from --base-shared) drives every active surface. */
   border-color: var(--accent-border);
+  /* M9.14a — inner ring dropped for a thinner line read; just the
+     element's own 1px border + the soft outer glow remains. */
   box-shadow:
-    inset 0 0 0 1px var(--accent-border),
     0 0 10px 0 var(--accent-glow),
     0 18px 34px -18px rgba(30,20,10,0.18),
     0 6px 14px -8px rgba(30,20,10,0.10);
@@ -3900,8 +3901,8 @@ body.modal-open { overflow: hidden; }
   background: var(--bg-2);
   border-color: var(--accent-border);
   color: var(--text-1);
+  /* M9.14a — inner ring dropped (thinner line). */
   box-shadow:
-    inset 0 0 0 1px var(--accent-border),
     0 0 10px 0 var(--accent-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }
@@ -5968,8 +5969,8 @@ body.modal-open { overflow: hidden; }
   color: var(--text-1);
   background: var(--bg-2);
   border-color: var(--accent-border);
+  /* M9.14a — inner ring dropped (thinner line). */
   box-shadow:
-    inset 0 0 0 1px var(--accent-border),
     0 0 10px 0 var(--accent-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }
@@ -5982,8 +5983,8 @@ body.modal-open { overflow: hidden; }
   color: var(--text-1);
   background: var(--bg-2);
   border-color: var(--accent-border);
+  /* M9.14a — inner ring dropped (thinner line). */
   box-shadow:
-    inset 0 0 0 1px var(--accent-border),
     0 0 10px 0 var(--accent-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }
@@ -5996,8 +5997,8 @@ body.modal-open { overflow: hidden; }
   color: var(--text-1);
   background: var(--bg-2);
   border-color: var(--accent-border);
+  /* M9.14a — inner ring dropped (thinner line). */
   box-shadow:
-    inset 0 0 0 1px var(--accent-border),
     0 0 10px 0 var(--accent-glow),
     0 6px 16px -6px rgba(0,0,0,0.16);
 }

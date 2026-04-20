@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.4",
-  "milestone": "M9.14",
-  "milestoneTitle": "Phase M9.14 — Unified active-highlight recipe + temporary shared orange accent. Every 'active' surface (nav chip, filter chip, dashboard panel + learn zone in the activation band) now uses the same visual language: a thin accent-colored border (--accent-border) with a tight glow (10px --accent-glow halo fading out), layered on the element's own background + warm shadow lift for activated panels. The three chip classes (.chip-learn/.chip-tools/.chip-projects), the four [data-section] overrides, and the three .dash-panel:has(...) rules all now resolve --base to a single --base-shared token at :root (currently #ff7a1a tangerine). Changing that one value retunes every highlight in the app at once; when per-section accent colors return later, the literals that were in place before M9.14 are recorded inline in /* was #XXX */ comments after each rule so restoration is a single find/replace. Activated panel transition now includes border-color so the accent ring fades in at the same 220ms rhythm as the glow.",
-  "deployedAt": "2026-04-20T04:32Z",
+  "version": "0.7.1-dev.5",
+  "milestone": "M9.14a",
+  "milestoneTitle": "Phase M9.14a — Thinner active-highlight line. The inset 1px inner accent ring is removed from the five unified active-highlight recipes (nav chips: learn/tools/projects, .filter-chip.is-active, and .dash-panel.is-activated / .learn-zone.is-activated) so the line reads at roughly half its prior weight. What remains: the element's own 1px border in --accent-border plus the soft outer 10px --accent-glow halo; activated panels keep their warm shadow lift. Dashboard CTAs (.dash-action-*) and the learn-zone drag-drop drop-candidate hint keep their inner rings — different components, different punch signal.",
+  "deployedAt": "2026-04-20T04:42Z",
   "commitSha": ""
 }
