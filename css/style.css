@@ -2212,7 +2212,8 @@ body.modal-open { overflow: hidden; }
 .finder-fork.glass,
 .save-form.glass,
 .learn-zone.glass,
-.your-stack.glass {
+.your-stack.glass,
+.tool-card.glass {
   --glass-top:    rgba(255,255,255,0.97);
   --glass-bottom: rgba(254,253,251,0.90);
   --glass-fallback: rgba(255,255,255,0.98);
@@ -2222,7 +2223,8 @@ body.modal-open { overflow: hidden; }
 }
 @supports not (backdrop-filter: blur(1px)) {
   .dash-panel.glass,
-  .dash-action.dash-action-quiet.glass {
+  .dash-action.dash-action-quiet.glass,
+  .tool-card.glass {
     background: var(--glass-fallback);
   }
 }
@@ -2836,12 +2838,11 @@ body.modal-open { overflow: hidden; }
 }
 .tool-card:hover {
   transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--accent) 80%, transparent);
+  border-color: var(--accent-border);
   box-shadow:
-    0 1px 0 rgba(255,255,255,0.05) inset,
-    0 -1px 0 rgba(0,0,0,0.35) inset,
-    0 20px 42px -22px rgba(0,0,0,0.75),
-    0 6px 18px -10px rgba(0,0,0,0.45);
+    inset 0 1px 0 rgba(255,255,255,0.65),
+    0 10px 24px -14px var(--accent-glow),
+    0 4px 14px -6px rgba(0,0,0,0.10);
 }
 .tool-card:active { transform: scale(0.99); }
 
@@ -2849,10 +2850,9 @@ body.modal-open { overflow: hidden; }
 }
 .tool-card-claude:hover {
   box-shadow:
-    0 1px 0 rgba(255,255,255,0.05) inset,
-    0 -1px 0 rgba(0,0,0,0.35) inset,
-    0 20px 42px -22px rgba(0,0,0,0.75),
-    0 0 22px -8px var(--accent-claude-glow);
+    inset 0 1px 0 rgba(255,255,255,0.65),
+    0 10px 24px -14px var(--accent-claude-glow),
+    0 4px 14px -6px rgba(0,0,0,0.10);
 }
 
 .tool-card-head {
