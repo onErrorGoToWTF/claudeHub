@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.61",
-  "milestone": "M9.19a.11c",
-  "milestoneTitle": "Phase M9.19a.11c — State pill reads 'Not started' instead of 'Start'. User flagged 'Start' as ambiguous (reads as action 'tap me to start' instead of pure status 'hasn't been started yet'). Matches the grammar of 'Continue' and 'Done' — all three are status labels, not action verbs. The action verb ('Start lesson →') lives on the expanded-tile CTA button, so clear separation: condensed state pill = status, expanded CTA = action. Pill width bumped 84 -> 100px to fit the longer 'NOT STARTED' label; legacy grid-row/grid-column props removed (trailing cluster is inline-flex now, not a nested grid). Applied to all three renderers (renderLearnItemRow / buildLearnTileExpand / renderDashLearn).",
-  "deployedAt": "2026-04-20T21:35Z",
+  "version": "1.0.0",
+  "milestone": "v1.0.0",
+  "milestoneTitle": "v1.0.0 — Version 0 complete. v0.7 design-system refactor shipped in full: unified .dash-tile grammar, 4-quadrant condensed layout (status top / eyebrow / title), progressive-disclosure tap-to-expand with origin-from-tile animation + dimmed backdrop, swipe-to-reveal delete for drafts, universal 'pin = send to Learn' rule, state pill as status label vs. CTA as action verb, drag lift goes brighter not darker per HIG, '? m' placeholder for unknown durations. v0 completion tag 'v0-complete' points at v0.7.1-dev.61. Docs swept — CLAUDE.md design-language section gains a new 'Tile grammar' block, status.md carries the full M9.16 → M9.19a ledger, plan doc marked complete. v1.0.0 is the new baseline; subsequent work tracked in a fresh plan doc.",
+  "deployedAt": "2026-04-20T22:00Z",
   "commitSha": ""
 }
