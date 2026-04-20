@@ -55,7 +55,7 @@ docs/
   status.md                    # release + phase summary
   plans/
     aistacked-v1.md                      # original rebuild plan (historical reference)
-    v0.7-design-system-refactor.md       # current refactor recipe (M9.1–M9.11)
+    v0.7-design-system-refactor.md       # milestone ledger (M9.1–M9.16n) + deferred-items tracker
     v0.7-open-questions.md               # defaults + user approvals for v0.7
 
 .claude/

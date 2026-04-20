@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.22",
-  "milestone": "M9.16n",
-  "milestoneTitle": "Phase M9.16n — Second-wave audit chunk. (1) Taskgrid type pills and type-legend items migrated from border-radius 999px to var(--radius-sm) — same design-language fix applied to card-pill and tutorial-toggle in M9.16l. (2) Added a shared :focus-visible ring (2px var(--accent-border) outline + 2px offset) across 15 interactive elements inside modals (tool/doc/video/yt/backup/storage/lesson/recipe close buttons + tool-modal-link + snippet-copy + setup-copy + doc-modal-open + doc-modal-blocked-cta + video-modal-open + video-modal-expand). Keyboard users now get a clear focus indicator matching the existing .recipe:focus-visible / .cap-input:focus-visible pattern. No other audit items shipped — timeline SVG would have changed colors, backup-modal-json dark bg is judgement-call code-block convention, focus-missing-transition on subpill-select is trivial.",
-  "deployedAt": "2026-04-20T10:48Z",
+  "version": "0.7.1-dev.23",
+  "milestone": "M9.16o",
+  "milestoneTitle": "Phase M9.16o — Session wrap hygiene. docs/status.md rewritten from v0.6.116 reference to v0.7.1-dev.22 with the full M9.16 ledger. v0.7-design-system-refactor.md gains a 'M9.16 polish suite — shipped' section + converts the deferred contrast review to a completed outcome table. CLAUDE.md tree comment updated (plan file covers M9.1–M9.16n now, not M9.1–M9.11). Per-session memory files + MEMORY.md index refreshed for a clean next-session resume.",
+  "deployedAt": "2026-04-20T10:59Z",
   "commitSha": ""
 }
