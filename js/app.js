@@ -3028,50 +3028,114 @@
       removeCurrentSave();
     });
   }
-  // Home → Projects panel body: up to 3 most-recently-updated projects.
-  // Tapping a row jumps to Projects → Saved.
+  // M9.18b — Dashboard Projects panel migrated to the .dash-tile
+  // fixed-slot grammar (see M9.18a). When no real projects exist,
+  // render a single dummy example tile so the panel keeps its shape
+  // instead of collapsing to an empty-state paragraph. Tapping the
+  // dummy routes to #projects/new (start-a-project flow); tapping any
+  // real tile jumps to Projects → Saved.
+  const DASH_DUMMY_PROJECT = {
+    id: "__example__",
+    title: "Build an MCP-powered knowledge agent",
+    path: "best",
+    pinnedTools: ["claude-code", "mcp-server"],
+    pinnedSnippets: [],
+    notes: "",
+    createdAt: "2026-04-01T00:00:00Z",
+    updatedAt: "2026-04-10T00:00:00Z",
+    __placeholder: true,
+  };
   function renderContinueCard() {
     const host = document.getElementById("dash-projects-body");
     if (!host) return;
     const all = Object.values(getProjects());
+    let recent;
     if (all.length === 0) {
-      host.innerHTML = `<p class="dash-empty">No projects in flight yet — start one and your progress lands here.</p>`;
-      return;
+      recent = [DASH_DUMMY_PROJECT];
+    } else {
+      recent = all
+        .slice()
+        .sort((a, b) => {
+          const ta = Date.parse(a.updatedAt || a.createdAt || 0) || 0;
+          const tb = Date.parse(b.updatedAt || b.createdAt || 0) || 0;
+          return tb - ta;
+        })
+        .slice(0, 2);
     }
-    const recent = all
-      .slice()
-      .sort((a, b) => {
-        const ta = Date.parse(a.updatedAt || a.createdAt || 0) || 0;
-        const tb = Date.parse(b.updatedAt || b.createdAt || 0) || 0;
-        return tb - ta;
-      })
-      .slice(0, 2);
     host.innerHTML = recent.map((p) => {
       const pinTools    = Array.isArray(p.pinnedTools)    ? p.pinnedTools.length    : 0;
       const pinSnippets = Array.isArray(p.pinnedSnippets) ? p.pinnedSnippets.length : 0;
-      const notes = (p.notes || "").trim().length;
-      const parts = [];
-      if (pinTools)    parts.push(`${pinTools} tool${pinTools === 1 ? "" : "s"}`);
-      if (pinSnippets) parts.push(`${pinSnippets} snippet${pinSnippets === 1 ? "" : "s"}`);
-      if (notes)       parts.push(`${notes} chars note`);
-      const meta = parts.length ? parts.join(" · ") : "Just saved";
-      const pathLabel = p.path === "best" ? "Best" : "Easy";
+      const pinned = (pinTools + pinSnippets) > 0;
+      const pathLabel = p.path === "best" ? "Best path" : "Easy path";
+      const eyebrowParts = [];
+      if (p.__placeholder) eyebrowParts.push("Example");
+      eyebrowParts.push(pathLabel);
+      const updated = Date.parse(p.updatedAt || 0) || 0;
+      const created = Date.parse(p.createdAt || 0) || 0;
+      if (updated && created && updated > created) {
+        eyebrowParts.push(`updated ${timeAgoShort(updated)}`);
+      }
+      const eyebrow = eyebrowParts.join(" · ");
+      const state = (updated > created) ? "resume" : "open";
+      const stateLabel = state === "resume" ? "Resume" : "Open";
+      const pinLabel = pinned ? "Pins present" : "No pins";
       return `
-        <button type="button" class="continue-row" data-project-id="${escapeHtml(p.id)}">
-          <span class="continue-row-title">${escapeHtml(p.title)}</span>
-          <span class="continue-row-path" data-path="${escapeHtml(p.path || "easy")}">${pathLabel}</span>
-          <div class="continue-row-meta">${escapeHtml(meta)}</div>
-        </button>
+        <article class="dash-tile" data-project-id="${escapeHtml(p.id)}"${p.__placeholder ? ' data-placeholder="1"' : ""} role="button" tabindex="0">
+          <button type="button" class="dash-tile-grab" data-empty="1" aria-hidden="true" tabindex="-1">${GRAB_SVG}</button>
+          <div class="dash-tile-content">
+            <div class="dash-tile-title">${escapeHtml(p.title)}</div>
+            <div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>
+          </div>
+          <div class="dash-tile-trailing">
+            <span class="dash-tile-duration" data-empty="1">—</span>
+            <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
+            <div class="dash-tile-icons">
+              <button type="button" class="dash-tile-icon dash-tile-pin" aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinLabel}" title="${pinLabel}" tabindex="-1" disabled>${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}</button>
+              <button type="button" class="dash-tile-icon dash-tile-mastery" data-empty="1" aria-hidden="true" tabindex="-1">${MASTERY_SVG_OUTLINE}</button>
+              <button type="button" class="dash-tile-icon dash-tile-delete" data-empty="1" aria-hidden="true" tabindex="-1">${TRASH_SVG}</button>
+            </div>
+          </div>
+        </article>
       `;
     }).join("");
-    // Each row jumps to Projects → Saved.
-    host.querySelectorAll(".continue-row").forEach((row) => {
-      row.addEventListener("click", (e) => {
+    host.querySelectorAll(".dash-tile").forEach((tile) => {
+      const navigate = (e) => {
+        if (e.target.closest(".dash-tile-icon")) return;
+        if (e.target.closest(".dash-tile-grab")) return;
         e.preventDefault();
-        navigateTo("projects", "");                            // M9.5a — saved is the home view of #projects
+        const id = tile.dataset.projectId;
+        if (id === "__example__") {
+          navigateTo("projects", "new");
+        } else {
+          navigateTo("projects", "");
+        }
         window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+      tile.addEventListener("click", navigate);
+      tile.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); navigate(e); }
       });
     });
+  }
+  // Compact relative-time formatter for dashboard eyebrows. Keeps the
+  // eyebrow short enough to fit the fixed slot without pushing the
+  // title's ellipsis.
+  function timeAgoShort(ts) {
+    const diff = Date.now() - ts;
+    if (diff < 0) return "just now";
+    const min = Math.floor(diff / 60000);
+    if (min < 1)   return "just now";
+    if (min < 60)  return `${min}m ago`;
+    const hr = Math.floor(min / 60);
+    if (hr < 24)   return `${hr}h ago`;
+    const d = Math.floor(hr / 24);
+    if (d < 7)     return `${d}d ago`;
+    const w = Math.floor(d / 7);
+    if (w < 5)     return `${w}w ago`;
+    const mo = Math.floor(d / 30);
+    if (mo < 12)   return `${mo}mo ago`;
+    const y = Math.floor(d / 365);
+    return `${y}y ago`;
   }
 
   // M5.1: Dashboard Learn panel — up to 2 in-progress or upcoming lessons.
@@ -3081,24 +3145,37 @@
   // Grab + delete render invisible on the dashboard preview (slot width
   // reserved for cross-panel alignment). Pin + mastery are live and
   // route through the existing [data-learn-action] delegation (~L484).
+  // M9.18b: when no lessons exist (defensive — lessonsData is normally
+  // populated), render a single dummy example tile instead of the text
+  // empty state so the panel keeps its shape.
+  const DASH_DUMMY_LESSON = {
+    slug: "__example__",
+    title: "Prompt Engineering Basics",
+    track: "prompting",
+    minutes: 8,
+    summary: "Start here: structure, examples, and constraints.",
+    __placeholder: true,
+  };
   function renderDashLearn() {
     const host = document.getElementById("dash-learn-body");
     if (!host) return;
-    if (!lessonsData || lessonsData.length === 0) {
-      host.innerHTML = `<p class="dash-empty">Lessons load on the Learn tab — tap "Start new course or quiz" to open them.</p>`;
-      return;
-    }
     const progress = getLessonProgress ? getLessonProgress() : {};
-    const sorted = lessonsData.slice().sort((a, b) => {
-      const sa = progress[a.slug]?.state || "new";
-      const sb = progress[b.slug]?.state || "new";
-      const rank = { in_progress: 0, new: 1, completed: 2 };
-      const ra = rank[sa] ?? 1;
-      const rb = rank[sb] ?? 1;
-      if (ra !== rb) return ra - rb;
-      return (a.order || 0) - (b.order || 0);
-    });
-    const slice = sorted.slice(0, 2);
+    const hasLessons = !!(lessonsData && lessonsData.length);
+    let slice;
+    if (!hasLessons) {
+      slice = [DASH_DUMMY_LESSON];
+    } else {
+      const sorted = lessonsData.slice().sort((a, b) => {
+        const sa = progress[a.slug]?.state || "new";
+        const sb = progress[b.slug]?.state || "new";
+        const rank = { in_progress: 0, new: 1, completed: 2 };
+        const ra = rank[sa] ?? 1;
+        const rb = rank[sb] ?? 1;
+        if (ra !== rb) return ra - rb;
+        return (a.order || 0) - (b.order || 0);
+      });
+      slice = sorted.slice(0, 2);
+    }
     host.innerHTML = slice.map((l) => {
       const state = progress[l.slug]?.state || "new";
       const stateLabel = state === "completed" ? "Done"
@@ -3106,17 +3183,23 @@
                       : "Start";
       const trackLabel = l.track ? (TRACK_LABEL[l.track] || l.track) : "";
       const eyebrowParts = [];
+      if (l.__placeholder) eyebrowParts.push("Example");
       if (trackLabel) eyebrowParts.push(trackLabel);
       eyebrowParts.push("Lesson");
       const eyebrow = eyebrowParts.join(" · ");
       const minutesLabel = l.minutes ? `${l.minutes}m` : "—";
       const durationEmpty = l.minutes ? "" : ' data-empty="1"';
-      const pinned   = isLearnItemPinned("lesson", l.slug);
-      const mastered = isMastered("lesson", l.slug);
+      const pinned   = l.__placeholder ? false : isLearnItemPinned("lesson", l.slug);
+      const mastered = l.__placeholder ? false : isMastered("lesson", l.slug);
       const pinLabel    = pinned   ? "Remove from Up Next" : "Move to Up Next";
       const masterLabel = mastered ? "Remove mastery"      : "Mark mastered";
+      const actionAttrs = l.__placeholder
+        ? ' tabindex="-1" disabled'
+        : "";
+      const pinActionAttr    = l.__placeholder ? "" : ' data-learn-action="pin"';
+      const masterActionAttr = l.__placeholder ? "" : ' data-learn-action="master"';
       return `
-        <article class="dash-tile" data-learn-type="lesson" data-learn-id="${escapeHtml(l.slug)}" data-dash-lesson-slug="${escapeHtml(l.slug)}" role="button" tabindex="0">
+        <article class="dash-tile" data-learn-type="lesson" data-learn-id="${escapeHtml(l.slug)}" data-dash-lesson-slug="${escapeHtml(l.slug)}"${l.__placeholder ? ' data-placeholder="1"' : ""} role="button" tabindex="0">
           <button type="button" class="dash-tile-grab" data-empty="1" aria-hidden="true" tabindex="-1">${GRAB_SVG}</button>
           <div class="dash-tile-content">
             <div class="dash-tile-title">${escapeHtml(l.title)}</div>
@@ -3126,8 +3209,8 @@
             <span class="dash-tile-duration"${durationEmpty}>${escapeHtml(minutesLabel)}</span>
             <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
             <div class="dash-tile-icons">
-              <button type="button" class="dash-tile-icon dash-tile-pin" data-learn-action="pin" aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinLabel}" title="${pinLabel}">${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}</button>
-              <button type="button" class="dash-tile-icon dash-tile-mastery" data-learn-action="master" aria-pressed="${mastered ? "true" : "false"}" aria-label="${masterLabel}" title="${masterLabel}">${mastered ? MASTERY_SVG_FILLED : MASTERY_SVG_OUTLINE}</button>
+              <button type="button" class="dash-tile-icon dash-tile-pin"${pinActionAttr} aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinLabel}" title="${pinLabel}"${actionAttrs}>${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}</button>
+              <button type="button" class="dash-tile-icon dash-tile-mastery"${masterActionAttr} aria-pressed="${mastered ? "true" : "false"}" aria-label="${masterLabel}" title="${masterLabel}"${actionAttrs}>${mastered ? MASTERY_SVG_FILLED : MASTERY_SVG_OUTLINE}</button>
               <button type="button" class="dash-tile-icon dash-tile-delete" data-empty="1" aria-hidden="true" tabindex="-1">${TRASH_SVG}</button>
             </div>
           </div>
@@ -3141,6 +3224,13 @@
         if (e.target.closest("[data-learn-action]")) return;
         if (e.target.closest(".dash-tile-grab")) return;
         e.preventDefault();
+        // Placeholder tile routes to the Learn tab instead of trying to
+        // openLesson on a non-existent slug.
+        if (tile.dataset.placeholder === "1") {
+          navigateTo("learn", "");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          return;
+        }
         const slug = tile.dataset.dashLessonSlug;
         if (slug && typeof openLesson === "function") openLesson(slug);
       };

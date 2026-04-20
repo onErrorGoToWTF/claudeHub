@@ -2395,6 +2395,17 @@ body.modal-open { overflow: hidden; }
 /* Tile-to-tile spacing is inherited from the parent .dash-panel-body
    grid (gap: 8px under Learn/Projects/Tools identity). No margin here. */
 
+/* M9.18b — placeholder tile (dummy data rendered when a list is empty,
+   so the panel keeps its shape instead of collapsing to a text-only
+   empty state). Geometry identical; just reads as a slightly muted
+   example so the user doesn't mistake it for their own content. */
+.dash-tile[data-placeholder="1"] {
+  opacity: 0.82;
+}
+.dash-tile[data-placeholder="1"] .dash-tile-eyebrow {
+  color: var(--text-3);
+}
+
 /* Leading column — 28px. Grab handle when sortable; invisible spacer
    otherwise. Width stays identical across surfaces so tiles line up. */
 .dash-tile-grab {

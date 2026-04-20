@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.43",
-  "milestone": "M9.18a.2",
-  "milestoneTitle": "Phase M9.18a.2 — Glow gradient amendment. User amendment to the design language: every outset color halo must be blur-gradient (blur > 0), never a hard spread-only ring (0 0 0 Npx color, blur=0). Hard rings cut off sharply at element edges and at any parent overflow clip, which is visually rejected. Cascade: (1) CLAUDE.md design-language bullet restates 'soft glows' as 'always blur-gradient' with a reach guide + carve-outs; (2) design-review SKILL.md gets a new Rule 11 'Glow gradient integrity' so the gate enforces it on future diffs; (3) 7 CSS selectors converted: --glow-focus token (unused, redefined to set standard), .tool-modal-learn-body input/textarea focus, .panel-tile/.continue-row hover, .dash-tile-icon.dash-tile-delete armed, .learn-action-btn-danger armed, .learn-zone-drop-candidate outer, .learn-zone-drop-active outer. Insets (highlight borders) and sub-2px hairline outlines are carve-outs — not glows.",
-  "deployedAt": "2026-04-20T16:50Z",
+  "version": "0.7.1-dev.44",
+  "milestone": "M9.18b",
+  "milestoneTitle": "Phase M9.18b — Dashboard Projects panel migrated to .dash-tile + dummy-fallback so the panel keeps its shape when the list is empty. renderContinueCard rewritten to emit the new fixed-slot markup: eyebrow carries 'Best/Easy path' + updated-ago relative timestamp (new timeAgoShort helper); duration slot reserved as em-dash (Projects have no duration); state pill resolves to Resume (updated > created) or Open; pin icon rolls up pinnedTools + pinnedSnippets count into a single filled/outline state; mastery + delete slots invisible-but-reserved so the Projects panel lines up pixel-for-pixel with the Learn panel. When getProjects() is empty, DASH_DUMMY_PROJECT renders a single example tile titled 'Build an MCP-powered knowledge agent' that routes to #projects/new on tap — keeps the shape visible and gives the user a clear starting action. Same dummy-fallback pattern added to renderDashLearn for defensive parity: DASH_DUMMY_LESSON 'Prompt Engineering Basics' routes to the Learn tab when tapped. Placeholder tiles carry data-placeholder=1 and get a subtle 0.82 opacity muting so they read as examples without losing slot geometry. Tools panel migration is the next step (M9.18c).",
+  "deployedAt": "2026-04-20T17:05Z",
   "commitSha": ""
 }
