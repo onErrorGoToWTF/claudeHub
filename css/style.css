@@ -595,7 +595,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
           backdrop-filter: blur(10px) saturate(1.25);
   border: 1px solid rgba(255,255,255,0.45);
   box-shadow: 0 2px 6px -3px rgba(0,0,0,0.10);
-  transition: color 0.2s var(--ease), background 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.25s var(--ease), transform 0.16s var(--ease);
+  transition: color 0.2s var(--ease-premium), background 0.2s var(--ease-premium), border-color 0.2s var(--ease-premium), box-shadow 0.25s var(--ease-premium), transform 0.16s var(--ease-premium);
   scroll-snap-align: start;
   touch-action: manipulation;
   position: relative;
@@ -609,6 +609,9 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   color: var(--text-1);
   background: var(--bg-2);
   border-color: var(--border-strong);
+  box-shadow:
+    0 2px 6px -3px rgba(0,0,0,0.10),
+    0 6px 12px -4px rgba(0,0,0,0.08);
 }
 
 .chip:active { transform: scale(0.96); }
@@ -1021,11 +1024,16 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   display: block;
   padding: 17px 18px 18px 20px;
   color: var(--text-1);
-  --pill-col: var(--sec, var(--accent));
+  --pill-col: var(--sec, var(--accent-solid));
   transition: transform 0.3s var(--ease), border-color 0.25s var(--ease), background 0.3s var(--ease), box-shadow 0.3s var(--ease);
   will-change: transform;
-  animation: cardIn 0.45s var(--ease) both;
-  animation-delay: var(--card-delay, 0s);
+  opacity: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .card {
+    animation: cardIn 0.45s var(--ease) both;
+    animation-delay: var(--card-delay, 0s);
+  }
 }
 .card[data-sent="positive"]  { --pill-col: #34d399; }
 .card[data-sent="warning"]   { --pill-col: #fbbf24; }
@@ -1076,7 +1084,7 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
 .card-pill {
   display: inline-flex;
   padding: 2px 7px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -2053,7 +2061,7 @@ body.modal-open { overflow: hidden; }
 .tutorial-toggle {
   position: absolute; top: 14px; right: 14px;
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   font-size: 10.5px; font-weight: 500;
   background: var(--accent-violet-soft);
   color: var(--accent-violet-hi);
@@ -2268,21 +2276,21 @@ body.modal-open { overflow: hidden; }
    activation band. Transition stroke + filter so the color change
    fades in at the same rhythm as the CTA accent + tile shadow lift. */
 .dash-panel-icon--learn {
-  stroke: rgba(30,24,16,0.22);
+  stroke: rgba(30,24,16,0.35);
   filter: none;
   transform: translateY(6px);
   transition: stroke 0.22s var(--ease-premium),
               filter 0.22s var(--ease-premium);
 }
 .dash-panel-icon--projects {
-  stroke: rgba(30,24,16,0.22);
+  stroke: rgba(30,24,16,0.35);
   filter: none;
   transform: translateY(6px);
   transition: stroke 0.22s var(--ease-premium),
               filter 0.22s var(--ease-premium);
 }
 .dash-panel-icon--tools {
-  stroke: rgba(30,24,16,0.22);
+  stroke: rgba(30,24,16,0.35);
   filter: none;
   transition: stroke 0.22s var(--ease-premium),
               filter 0.22s var(--ease-premium);
@@ -2758,7 +2766,7 @@ body.modal-open { overflow: hidden; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 11px 7px 12px;
+  padding: 7px 11px;
   min-height: 34px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
@@ -2844,7 +2852,7 @@ body.modal-open { overflow: hidden; }
     0 10px 24px -14px var(--accent-glow),
     0 4px 14px -6px rgba(0,0,0,0.10);
 }
-.tool-card:active { transform: scale(0.99); }
+.tool-card:active { transform: translateY(1px); }
 
 .tool-card-claude {
 }
@@ -5417,6 +5425,11 @@ body.modal-open { overflow: hidden; }
   border-color: var(--accent-border);
   background: color-mix(in srgb, var(--accent-solid) 10%, transparent);
 }
+.save-btn-mastery:hover {
+  color: var(--accent-solid);
+  border-color: var(--accent-border);
+  background: color-mix(in srgb, var(--accent-solid) 6%, transparent);
+}
 
 .project-pins-row {
   display: flex;
@@ -6321,9 +6334,9 @@ body.modal-open { overflow: hidden; }
   .status-strip:has(.in-view) { filter: saturate(1); }
 }
 @keyframes sevPulse {
-  0%   { transform: scale(1); box-shadow: 0 0 0 0 currentColor; }
+  0%   { transform: scale(1); box-shadow: 0 0 0 0 var(--dot, #60a5fa); }
   40%  { transform: scale(1.6); }
-  100% { transform: scale(1); box-shadow: 0 0 10px currentColor; }
+  100% { transform: scale(1); box-shadow: 0 0 10px var(--dot, #60a5fa); }
 }
 
 /* ===== Per-content-type activation effects ===== */
