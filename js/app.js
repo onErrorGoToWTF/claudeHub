@@ -441,6 +441,38 @@
     });
   });
 
+  // M9.6a — Global delegation for the ⋯ menu on learn items. One listener
+  // covers every card past and future; native <details> gives us open /
+  // close for free and a second document-level click closes anything
+  // that's open when the user taps elsewhere.
+  document.addEventListener("click", (e) => {
+    const actionBtn = e.target.closest("[data-learn-menu-action]");
+    if (actionBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const wrap = actionBtn.closest(".learn-item-wrap");
+      const row  = wrap?.querySelector(".learn-item");
+      if (!row) return;
+      const type  = row.dataset.learnType;
+      const id    = row.dataset.learnId;
+      const title = row.querySelector(".learn-item-title")?.textContent || "";
+      if (actionBtn.dataset.learnMenuAction === "toggle-pin") {
+        if (isLearnItemPinned(type, id)) unpinLearnItem(type, id);
+        else                              pinLearnItem(type, id, { title });
+        renderLearn();
+      }
+      // Close the menu (renderLearn replaces the DOM anyway, but this
+      // handles mouse/keyboard cases where the menu was toggled but
+      // nothing changed).
+      wrap?.querySelector(".learn-menu[open]")?.removeAttribute("open");
+      return;
+    }
+    // Close any open learn-menu when the click landed outside it.
+    document.querySelectorAll(".learn-menu[open]").forEach((d) => {
+      if (!d.contains(e.target)) d.removeAttribute("open");
+    });
+  }, true);
+
   // M9.4a — Learn filter chips (All · Lessons · Courses · Pinned · Has quiz).
   document.querySelectorAll(".learn-filter-chip").forEach((chip) => {
     chip.addEventListener("click", () => {
@@ -1728,18 +1760,36 @@
     const stateMarkup = stateLabel
       ? `<span class="learn-item-state" data-state="${escapeHtml(item.state)}">${escapeHtml(stateLabel)}</span>`
       : "";
-    return `
-      <${tag} class="learn-item panel-tile"${typeAttr}${hrefAttr} data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}">
-        <div class="learn-item-head">
-          <span class="learn-item-kind">${escapeHtml(item.kind)}</span>
-          ${pinMark}
-          ${masteryMark}
-          <span class="learn-item-title">${escapeHtml(item.title)}</span>
-          ${stateMarkup}
+    // M9.6a — Done items (mastered or completed) skip the ⋯ menu. Pinning
+    // a mastered item would leave it in Done but also "pinned," which
+    // confuses the bucketing; un-master UI lives on M9.7's Your-stack
+    // strip. Up Next + Everything else items get the menu as a fallback
+    // for mouse users who can't long-press.
+    const inDone = item.mastered || item.state === "completed";
+    const menuLabel = item.pinned ? "Remove from Up Next" : "Move to Up Next";
+    const menuMarkup = inDone ? "" : `
+      <details class="learn-menu">
+        <summary class="learn-menu-summary" aria-label="Actions" title="Actions">⋯</summary>
+        <div class="learn-menu-body" role="menu">
+          <button type="button" data-learn-menu-action="toggle-pin" role="menuitem">${escapeHtml(menuLabel)}</button>
         </div>
-        ${meta ? `<div class="learn-item-meta">${escapeHtml(meta)}</div>` : ""}
-        ${item.summary ? `<div class="learn-item-summary">${escapeHtml(item.summary)}</div>` : ""}
-      </${tag}>
+      </details>
+    `;
+    return `
+      <div class="learn-item-wrap">
+        <${tag} class="learn-item panel-tile"${typeAttr}${hrefAttr} data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}">
+          <div class="learn-item-head">
+            <span class="learn-item-kind">${escapeHtml(item.kind)}</span>
+            ${pinMark}
+            ${masteryMark}
+            <span class="learn-item-title">${escapeHtml(item.title)}</span>
+            ${stateMarkup}
+          </div>
+          ${meta ? `<div class="learn-item-meta">${escapeHtml(meta)}</div>` : ""}
+          ${item.summary ? `<div class="learn-item-summary">${escapeHtml(item.summary)}</div>` : ""}
+        </${tag}>
+        ${menuMarkup}
+      </div>
     `;
   }
   function renderLearnZone(hostId, items, opts) {
@@ -1809,67 +1859,140 @@
       });
     });
   }
-  // ===== M9.4b — Swipe gestures + toast with Undo =====
-  // Swipe-left on a .learn-item marks mastered + unpins. 5s toast offers
-  // Undo; tapping Undo restores the pre-swipe state. Works for both
-  // lessons (<button>) and academy courses (<a>). iOS safari honors
-  // touch-action: pan-y so vertical scroll still works.
-  const LEARN_SWIPE_THRESHOLD = 80;                              // px dx to commit
+  // ===== M9.4b swipe + M9.6a long-press-to-drag =====
+  // One state machine per row handles swipe-left (mastered) AND long-
+  // press (drag-between-zones). States:
+  //   idle      — nothing pending
+  //   pending   — pointerdown fired; long-press timer armed; no movement yet
+  //   swiping   — user moved past horizontal threshold; swipe-left visible
+  //   dragging  — long-press fired; zones highlighted, row pulses in place
+  // Transitions are driven by touchstart/move/end (passive: false on move
+  // so we can preventDefault once a gesture commits). Mouse path runs
+  // swipe-only; desktop users get the ⋯ menu as the drag fallback.
+  const LEARN_SWIPE_THRESHOLD     = 80;                          // px dx to commit a mastered-swipe
   const LEARN_SWIPE_VERTICAL_SLOP = 36;                          // |dy| above this = treat as scroll
+  const LEARN_LONG_PRESS_MS       = 350;                         // hold-and-wait to start a drag
+  const LEARN_LONG_PRESS_SLOP     = 8;                           // movement that cancels the long-press
   let learnToastTimer = null;
+  function pointInRect(x, y, r) {
+    return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+  }
   function wireLearnRowGestures(row) {
-    // iOS Safari cancels a pointer as soon as a gesture on
-    // touch-action: pan-y heads horizontal. So for touch we use touch*
-    // events + preventDefault on the horizontal-commit frame (requires
-    // passive: false) to keep the drag alive. For mouse we still use
-    // pointer events so desktop click-and-drag works.
     let startX = 0, startY = 0, dx = 0, dy = 0;
-    let tracking = false;
-    let horizontalLocked = false;    // once true, we've claimed the gesture
-    let activePointerType = "";      // "touch" | "mouse"
-    const reset = (animate) => {
+    let mode = "idle";
+    let activePointerType = "";
+    let longPressTimer = null;
+    const isDoneItem = () => !!row.closest(".learn-zone-done");
+    const clearLongPress = () => {
+      if (longPressTimer) { clearTimeout(longPressTimer); longPressTimer = null; }
+    };
+    const resetTransform = (animate) => {
       row.style.transition = animate
         ? "transform 0.2s var(--ease-premium), opacity 0.2s var(--ease-premium)"
         : "none";
       row.style.transform = "";
       row.style.opacity = "";
     };
-    const begin = (x, y, ptype) => {
-      startX = x;
-      startY = y;
-      dx = dy = 0;
-      tracking = true;
-      horizontalLocked = false;
-      activePointerType = ptype;
+    const clearDropHighlights = () => {
+      document.querySelectorAll(".learn-zone-drop-candidate").forEach((el) => el.classList.remove("learn-zone-drop-candidate"));
+      document.querySelectorAll(".learn-zone-drop-active").forEach((el) => el.classList.remove("learn-zone-drop-active"));
+    };
+    const enterDrag = () => {
+      mode = "dragging";
+      row.classList.add("learn-item-is-dragging");
+      row.dataset.learnSwipeHandled = "1";
+      try { if (navigator.vibrate) navigator.vibrate(10); } catch {}
+      document.querySelectorAll(".learn-zone-upnext, .learn-zone-all").forEach((z) => {
+        z.classList.add("learn-zone-drop-candidate");
+      });
+    };
+    const updateDropHover = (x, y) => {
+      const upnext = document.querySelector(".learn-zone-upnext");
+      const all    = document.querySelector(".learn-zone-all");
+      let active = null;
+      if (upnext && pointInRect(x, y, upnext.getBoundingClientRect())) active = upnext;
+      else if (all && pointInRect(x, y, all.getBoundingClientRect())) active = all;
+      document.querySelectorAll(".learn-zone-drop-active").forEach((el) => {
+        if (el !== active) el.classList.remove("learn-zone-drop-active");
+      });
+      if (active) active.classList.add("learn-zone-drop-active");
+    };
+    const finishDrag = (x, y) => {
+      const upnext = document.querySelector(".learn-zone-upnext");
+      const all    = document.querySelector(".learn-zone-all");
+      const drop = upnext && pointInRect(x, y, upnext.getBoundingClientRect()) ? "upnext"
+                 : all    && pointInRect(x, y, all.getBoundingClientRect())    ? "all"
+                 : null;
+      row.classList.remove("learn-item-is-dragging");
+      clearDropHighlights();
+      if (drop) {
+        const type = row.dataset.learnType;
+        const id = row.dataset.learnId;
+        const title = row.querySelector(".learn-item-title")?.textContent || "";
+        if (drop === "upnext") pinLearnItem(type, id, { title });
+        else                   unpinLearnItem(type, id);
+        renderLearn();
+      }
+    };
+    // --- Touch path (iOS / Android). long-press arms in touchstart;
+    // touchmove cancels it if the user starts scrolling or swiping. ---
+    row.addEventListener("touchstart", (e) => {
+      if (e.touches.length !== 1) return;
+      const t = e.touches[0];
+      startX = t.clientX; startY = t.clientY; dx = dy = 0;
+      mode = "pending";
+      activePointerType = "touch";
       row.dataset.learnSwipeHandled = "0";
       row.style.transition = "none";
-    };
-    const update = (x, y) => {
-      if (!tracking) return false;
-      dx = x - startX;
-      dy = y - startY;
-      if (!horizontalLocked) {
-        if (Math.abs(dy) > LEARN_SWIPE_VERTICAL_SLOP && Math.abs(dy) > Math.abs(dx)) {
-          // Gesture committed to vertical scroll — release and let the
-          // browser handle it. No reset animation; nothing was painted.
-          tracking = false;
-          return false;
-        }
-        if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) {
-          horizontalLocked = true;
+      if (!isDoneItem()) {
+        longPressTimer = setTimeout(() => {
+          if (mode !== "pending") return;
+          enterDrag();
+          updateDropHover(startX, startY);
+        }, LEARN_LONG_PRESS_MS);
+      }
+    }, { passive: true });
+    row.addEventListener("touchmove", (e) => {
+      if (mode === "idle") return;
+      if (e.touches.length !== 1) return;
+      const t = e.touches[0];
+      dx = t.clientX - startX;
+      dy = t.clientY - startY;
+      if (mode === "pending") {
+        if (Math.abs(dx) > LEARN_LONG_PRESS_SLOP || Math.abs(dy) > LEARN_LONG_PRESS_SLOP) {
+          clearLongPress();
+          if (Math.abs(dx) > Math.abs(dy) && dx < 0) {
+            mode = "swiping";
+          } else {
+            mode = "idle";                                       // vertical scroll intent; release to the browser
+          }
         }
       }
-      if (horizontalLocked && dx < 0) {
-        row.style.transform = `translateX(${dx}px)`;
-        row.style.opacity = String(Math.max(0.35, 1 + dx / 260));
-        return true;
+      if (mode === "swiping") {
+        if (Math.abs(dy) > LEARN_SWIPE_VERTICAL_SLOP) {
+          mode = "idle";
+          resetTransform(true);
+          return;
+        }
+        if (dx < -6) {
+          row.style.transform = `translateX(${dx}px)`;
+          row.style.opacity = String(Math.max(0.35, 1 + dx / 260));
+          e.preventDefault();
+        }
+      } else if (mode === "dragging") {
+        updateDropHover(t.clientX, t.clientY);
+        e.preventDefault();
       }
-      return false;
-    };
-    const finish = () => {
-      if (!tracking) return;
-      tracking = false;
-      if (dx < -LEARN_SWIPE_THRESHOLD && Math.abs(dy) < LEARN_SWIPE_VERTICAL_SLOP) {
+    }, { passive: false });
+    row.addEventListener("touchend", (e) => {
+      clearLongPress();
+      const t = e.changedTouches[0];
+      if (mode === "dragging") {
+        finishDrag(t ? t.clientX : 0, t ? t.clientY : 0);
+        mode = "idle";
+        return;
+      }
+      if (mode === "swiping" && dx < -LEARN_SWIPE_THRESHOLD && Math.abs(dy) < LEARN_SWIPE_VERTICAL_SLOP) {
         row.style.transition = "transform 0.22s var(--ease-premium), opacity 0.22s var(--ease-premium)";
         row.style.transform = "translateX(-115%)";
         row.style.opacity = "0";
@@ -1878,53 +2001,68 @@
         const id = row.dataset.learnId;
         const title = row.querySelector(".learn-item-title")?.textContent || "";
         setTimeout(() => handleLearnSwipeLeft(type, id, title), 200);
-      } else if (horizontalLocked) {
-        reset(true);
+      } else if (mode === "swiping") {
+        resetTransform(true);
       } else {
-        reset(false);
+        resetTransform(false);
       }
-    };
-    // --- Touch path (iOS / Android) ---
-    row.addEventListener("touchstart", (e) => {
-      if (e.touches.length !== 1) return;
-      const t = e.touches[0];
-      begin(t.clientX, t.clientY, "touch");
-    }, { passive: true });
-    row.addEventListener("touchmove", (e) => {
-      if (!tracking || e.touches.length !== 1) return;
-      const t = e.touches[0];
-      const didPaint = update(t.clientX, t.clientY);
-      // Once we own the horizontal gesture, tell the browser to stop
-      // treating it as a scroll candidate. Without this, Safari commits
-      // to vertical scroll ~40px in and the swipe never fires.
-      if (horizontalLocked && didPaint) e.preventDefault();
-    }, { passive: false });
-    row.addEventListener("touchend", finish);
-    row.addEventListener("touchcancel", () => {
-      tracking = false;
-      if (horizontalLocked) reset(true); else reset(false);
+      mode = "idle";
     });
-    // --- Mouse path (desktop) ---
+    row.addEventListener("touchcancel", () => {
+      clearLongPress();
+      if (mode === "dragging") {
+        row.classList.remove("learn-item-is-dragging");
+        clearDropHighlights();
+      }
+      mode = "idle";
+      resetTransform(true);
+    });
+    // --- Mouse path (desktop) — swipe only. Drag lives in the ⋯ menu. ---
     row.addEventListener("pointerdown", (e) => {
-      if (e.pointerType !== "mouse") return;
-      if (e.button !== 0) return;
-      begin(e.clientX, e.clientY, "mouse");
+      if (e.pointerType !== "mouse" || e.button !== 0) return;
+      startX = e.clientX; startY = e.clientY; dx = dy = 0;
+      mode = "swiping";
+      activePointerType = "mouse";
+      row.dataset.learnSwipeHandled = "0";
+      row.style.transition = "none";
     });
     row.addEventListener("pointermove", (e) => {
-      if (!tracking || activePointerType !== "mouse") return;
-      update(e.clientX, e.clientY);
+      if (mode !== "swiping" || activePointerType !== "mouse") return;
+      dx = e.clientX - startX;
+      dy = e.clientY - startY;
+      if (Math.abs(dy) > LEARN_SWIPE_VERTICAL_SLOP) {
+        mode = "idle";
+        resetTransform(true);
+        return;
+      }
+      if (dx < -6 && Math.abs(dx) > Math.abs(dy)) {
+        row.style.transform = `translateX(${dx}px)`;
+        row.style.opacity = String(Math.max(0.35, 1 + dx / 260));
+      }
     });
-    row.addEventListener("pointerup", (e) => {
+    row.addEventListener("pointerup", () => {
       if (activePointerType !== "mouse") return;
-      finish();
+      if (mode === "swiping" && dx < -LEARN_SWIPE_THRESHOLD && Math.abs(dy) < LEARN_SWIPE_VERTICAL_SLOP) {
+        row.style.transition = "transform 0.22s var(--ease-premium), opacity 0.22s var(--ease-premium)";
+        row.style.transform = "translateX(-115%)";
+        row.style.opacity = "0";
+        row.dataset.learnSwipeHandled = "1";
+        const type = row.dataset.learnType;
+        const id = row.dataset.learnId;
+        const title = row.querySelector(".learn-item-title")?.textContent || "";
+        setTimeout(() => handleLearnSwipeLeft(type, id, title), 200);
+      } else {
+        resetTransform(true);
+      }
+      mode = "idle";
     });
     row.addEventListener("pointercancel", () => {
       if (activePointerType !== "mouse") return;
-      tracking = false;
-      if (horizontalLocked) reset(true); else reset(false);
+      mode = "idle";
+      resetTransform(true);
     });
-    // Capture-phase click suppression so a committed swipe doesn't
-    // also fire openLesson (lessons) or anchor navigation (academy).
+    // Capture-phase click suppression so swipe / drag don't also fire
+    // openLesson (lessons) or anchor navigation (academy courses).
     row.addEventListener("click", (e) => {
       if (row.dataset.learnSwipeHandled === "1") {
         e.preventDefault();

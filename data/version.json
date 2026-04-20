@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.7",
-  "milestone": "M9.5b",
-  "milestoneTitle": "Phase M9.5b — Projects Finder as a full-page route. Added a \"← Back to saved\" link at top, a thin dot-separated step indicator (Describe · Capabilities · Path · Stack · Save) that scrolls to each section, and a Resume-draft banner surfaced whenever #projects/new is opened with an existing draft. \"Start fresh\" clears the draft + caps + textarea in one click. Collapsed the two finder-divider rows + examples + Mode B/C forks into a single <details> block (\"Start from an example or a different mode…\") that fades to 40% opacity once the user types in the describe field via :has(:not(:placeholder-shown)). clhub.v1.finderDraft schema extended from plain-string to { description, path?, updatedAt } — legacy strings auto-migrate on read. Save-form path radios persist their choice to the draft. On successful save, clearFinderDraft() + input + caps reset so the banner doesn't lie about stale work. Legacy .finder-divider CSS kept as dead code; cleanup pass after v0.7.0 stabilizes.",
-  "deployedAt": "2026-04-20T01:02Z",
+  "version": "0.7.0-dev.8",
+  "milestone": "M9.6a",
+  "milestoneTitle": "Phase M9.6a — Learn drag-and-drop between zones. Long-press 350ms on any Up Next / Everything else card lifts it (scale 1.02 + shadow), haptics fire via navigator.vibrate(10), and the two zones outline themselves as drop candidates. As the user drags, the zone under the pointer flips to an active highlight; release inside a zone commits — Up Next pins via pinLearnItem, Everything else unpins via unpinLearnItem. Done items opt out: no long-press arm, no ⋯ menu. Integrated into the existing swipe state machine (idle → pending → swiping|dragging) so one pointerdown handler dispatches both gestures — pending cancels on 8px movement and splits into swipe vs vertical-scroll. Fallback ⋯ menu renders as a native <details> sibling of each card; summary button toggles, one action inside (Move to Up Next / Remove from Up Next), document-level capture-phase delegate closes any open menu on outside click and dispatches action clicks through the same pin helpers.",
+  "deployedAt": "2026-04-20T01:19Z",
   "commitSha": ""
 }
