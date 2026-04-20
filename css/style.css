@@ -2293,7 +2293,11 @@ body.modal-open { overflow: hidden; }
    from .glass) lets the page ambient show through so the tile recedes.
    Red logo kept but glow softened to a single subtle drop-shadow — the
    tile shouldn't compete with the headings. */
-#youtube-open.dash-action.dash-action-quiet.glass {
+/* M9.7b — moved from #youtube-open to .youtube-open-btn so the same tile
+   can sit in every section-head (Dashboard / Learn / Projects / Tools),
+   keeping the header's vertical footprint uniform across pages and
+   reserving the top-right as a quick-action slot. */
+.youtube-open-btn.dash-action.dash-action-quiet.glass {
   --glass-top:      rgba(255,255,255,0.30);
   --glass-bottom:   rgba(255,255,255,0.14);
   --glass-fallback: rgba(255,255,255,0.22);
@@ -2302,7 +2306,7 @@ body.modal-open { overflow: hidden; }
     var(--glass-bottom) 100%);
 }
 @supports not (backdrop-filter: blur(1px)) {
-  #youtube-open.dash-action.dash-action-quiet.glass {
+  .youtube-open-btn.dash-action.dash-action-quiet.glass {
     background: var(--glass-fallback);
   }
 }
@@ -2311,7 +2315,7 @@ body.modal-open { overflow: hidden; }
    crisp white highlight 1px below (light catching the bottom rim of
    the recess) and a soft dark shadow 1px above (shadow at the top
    rim). Noticeable but quiet — no red tint. */
-#youtube-open.dash-action-quiet.glass svg {
+.youtube-open-btn.dash-action-quiet.glass svg {
   color: rgba(0,0,0,0.28);
   filter:
     drop-shadow(0 1px 0 rgba(255,255,255,0.80))

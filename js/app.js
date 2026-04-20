@@ -3606,8 +3606,12 @@
     }
   }
   {
-    const ytBtn = document.getElementById("youtube-open");
-    if (ytBtn) ytBtn.addEventListener("click", (e) => { e.preventDefault(); openYouTubeModal(); });
+    // M9.7b — one handler per YouTube tile; every section-head now carries
+    // the same button so the header's vertical footprint stays uniform
+    // across pages.
+    document.querySelectorAll(".youtube-open-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => { e.preventDefault(); openYouTubeModal(); });
+    });
     document.querySelectorAll("#youtube-modal [data-close]").forEach((el) => {
       el.addEventListener("click", (e) => { e.preventDefault(); closeYouTubeModal(); });
     });

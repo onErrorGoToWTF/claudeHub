@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.10",
-  "milestone": "M9.7",
-  "milestoneTitle": "Phase M9.7 — Tools redesign + mastered bucket. A new near-white-glass \"Your stack\" strip now sits above the Tools catalog, listing mastered tools first and the Dashboard's seed in-use tools after. Each strip entry opens the tool modal on tap. The modal itself gains a Mark mastered toggle next to Save so the user can populate the strip; flipping it re-renders the catalog so the ●ᴹ mastery badge on each card's title line reflects the new state instantly. The modality filter switched from a <select> to a .filter-chip row (Label (N) counts preserved) matching the Learn idiom — the original .learn-filter-chip class was generalized to .filter-chip and scoped per parent so the two surfaces' handlers don't cross-fire.",
-  "deployedAt": "2026-04-20T02:18Z",
+  "version": "0.7.0-dev.10.1",
+  "milestone": "M9.7b",
+  "milestoneTitle": "Phase M9.7b — YouTube tile on every section head. The same glass YouTube button that sits top-right on Dashboard now appears on Learn, Projects, and Tools so each section-head has identical vertical footprint — the top-of-page spacing (nav-to-header and header-to-first-component) no longer shifts as you switch tabs. The id selector #youtube-open was generalized to a .youtube-open-btn class so multiple instances share styles, and the JS click handler switched from getElementById to a querySelectorAll loop. That top-right slot is now reserved as a quick-action area for modal shortcuts that don't belong in the nav pill.",
+  "deployedAt": "2026-04-20T02:28Z",
   "commitSha": ""
 }
