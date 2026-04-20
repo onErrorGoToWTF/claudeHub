@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.44",
-  "milestone": "M9.18b",
-  "milestoneTitle": "Phase M9.18b — Dashboard Projects panel migrated to .dash-tile + dummy-fallback so the panel keeps its shape when the list is empty. renderContinueCard rewritten to emit the new fixed-slot markup: eyebrow carries 'Best/Easy path' + updated-ago relative timestamp (new timeAgoShort helper); duration slot reserved as em-dash (Projects have no duration); state pill resolves to Resume (updated > created) or Open; pin icon rolls up pinnedTools + pinnedSnippets count into a single filled/outline state; mastery + delete slots invisible-but-reserved so the Projects panel lines up pixel-for-pixel with the Learn panel. When getProjects() is empty, DASH_DUMMY_PROJECT renders a single example tile titled 'Build an MCP-powered knowledge agent' that routes to #projects/new on tap — keeps the shape visible and gives the user a clear starting action. Same dummy-fallback pattern added to renderDashLearn for defensive parity: DASH_DUMMY_LESSON 'Prompt Engineering Basics' routes to the Learn tab when tapped. Placeholder tiles carry data-placeholder=1 and get a subtle 0.82 opacity muting so they read as examples without losing slot geometry. Tools panel migration is the next step (M9.18c).",
-  "deployedAt": "2026-04-20T17:05Z",
+  "version": "0.7.1-dev.45",
+  "milestone": "M9.18b.1",
+  "milestoneTitle": "Phase M9.18b.1 — Fix TDZ crash on initial load. DASH_DUMMY_PROJECT and DASH_DUMMY_LESSON were declared as `const` adjacent to their renderers (~L3048, ~L3148), but renderContinueCard / renderDashLearn are hoisted function declarations fired by replayHomeAnimations during the initial applyFilter('home') at L602. That call reads the dummies from inside the TDZ, throws ReferenceError, and silently aborts the rest of the IIFE — which killed subsequent bindings (data-chip click handlers, etc.) and left the first-load Dashboard non-functional until the user navigated away and back (which triggered a re-render after the IIFE's module-level const lines had finally been evaluated). Hoist the two const dummies to the top-of-file 'Hoisted module state' block (~L288) per the CLAUDE.md TDZ rule.",
+  "deployedAt": "2026-04-20T17:20Z",
   "commitSha": ""
 }

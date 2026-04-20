@@ -285,6 +285,32 @@
   };
 
   // Hoisted module state read by render fns during initial applyFilter.
+  // M9.18b — DASH_DUMMY_* const-declared dummies for empty-state tiles
+  // must live up here. renderDashLearn / renderContinueCard are hoisted
+  // function declarations fired by replayHomeAnimations during the
+  // initial applyFilter("home"); if the dummy consts are declared
+  // adjacent to those render fns (~L3048, ~L3148), they sit in the TDZ
+  // at call time and throw ReferenceError, aborting the rest of the
+  // IIFE init (kills data-chip click bindings, etc.). Hoist here.
+  const DASH_DUMMY_PROJECT = {
+    id: "__example__",
+    title: "Build an MCP-powered knowledge agent",
+    path: "best",
+    pinnedTools: ["claude-code", "mcp-server"],
+    pinnedSnippets: [],
+    notes: "",
+    createdAt: "2026-04-01T00:00:00Z",
+    updatedAt: "2026-04-10T00:00:00Z",
+    __placeholder: true,
+  };
+  const DASH_DUMMY_LESSON = {
+    slug: "__example__",
+    title: "Prompt Engineering Basics",
+    track: "prompting",
+    minutes: 8,
+    summary: "Start here: structure, examples, and constraints.",
+    __placeholder: true,
+  };
   let lessonsData = [];
   // Learn tab unified-list state (M9.4a). academyCourses is populated by
   // loadAcademy(); filter/sort own the Learn section UI state. All three
@@ -3030,21 +3056,11 @@
   }
   // M9.18b — Dashboard Projects panel migrated to the .dash-tile
   // fixed-slot grammar (see M9.18a). When no real projects exist,
-  // render a single dummy example tile so the panel keeps its shape
-  // instead of collapsing to an empty-state paragraph. Tapping the
-  // dummy routes to #projects/new (start-a-project flow); tapping any
-  // real tile jumps to Projects → Saved.
-  const DASH_DUMMY_PROJECT = {
-    id: "__example__",
-    title: "Build an MCP-powered knowledge agent",
-    path: "best",
-    pinnedTools: ["claude-code", "mcp-server"],
-    pinnedSnippets: [],
-    notes: "",
-    createdAt: "2026-04-01T00:00:00Z",
-    updatedAt: "2026-04-10T00:00:00Z",
-    __placeholder: true,
-  };
+  // render a single dummy example tile (DASH_DUMMY_PROJECT, hoisted
+  // at L288 to dodge the TDZ trap — see comment there) so the panel
+  // keeps its shape instead of collapsing to an empty-state paragraph.
+  // Tapping the dummy routes to #projects/new (start-a-project flow);
+  // tapping any real tile jumps to Projects → Saved.
   function renderContinueCard() {
     const host = document.getElementById("dash-projects-body");
     if (!host) return;
@@ -3146,16 +3162,9 @@
   // reserved for cross-panel alignment). Pin + mastery are live and
   // route through the existing [data-learn-action] delegation (~L484).
   // M9.18b: when no lessons exist (defensive — lessonsData is normally
-  // populated), render a single dummy example tile instead of the text
-  // empty state so the panel keeps its shape.
-  const DASH_DUMMY_LESSON = {
-    slug: "__example__",
-    title: "Prompt Engineering Basics",
-    track: "prompting",
-    minutes: 8,
-    summary: "Start here: structure, examples, and constraints.",
-    __placeholder: true,
-  };
+  // populated), render a single dummy example tile (DASH_DUMMY_LESSON,
+  // hoisted at L288) instead of the text empty state so the panel
+  // keeps its shape.
   function renderDashLearn() {
     const host = document.getElementById("dash-learn-body");
     if (!host) return;
