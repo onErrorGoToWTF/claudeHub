@@ -2201,10 +2201,10 @@
           if (e.target.closest("[data-learn-action]")) return;
           if (e.target.closest(".dash-tile-grab")) return;
           if (tile.dataset.learnSwipeHandled === "1") return;
-          // M9.19a.2 — if the tile is inside an open swipe wrap, the tap
-          // closes the swipe instead of navigating. Prevents the user
-          // from jumping into a lesson/URL when they just wanted to
-          // dismiss the Delete reveal.
+          // If the tile is inside an open swipe wrap, tap closes the
+          // swipe instead of expanding. Prevents the expand from
+          // stealing the tap when the user just wants to dismiss the
+          // red Delete reveal.
           const swipeWrap = tile.closest(".dash-tile-swipe-wrap");
           if (swipeWrap && swipeWrap.dataset.swipeState === "open") {
             e.preventDefault();
@@ -2212,26 +2212,12 @@
             tile.style.transform = "";
             return;
           }
-          const type = tile.dataset.learnType;
-          const id   = tile.dataset.learnId;
-          if (type === "lesson") {
-            e.preventDefault();
-            openLesson(id, "tutorial");
-            return;
-          }
-          if (type === "course") {
-            const course = (academyCourses || []).find((c) => c.id === id);
-            const url = course?.url;
-            if (url) { window.open(url, "_blank", "noopener"); e.preventDefault(); }
-            return;
-          }
-          if (type === "draft") {
-            const draft = (getLearnDrafts() || []).find((d) => d.id === id);
-            const url = draft?.docsUrl;
-            if (url) window.open(url, "_blank", "noopener");
-            else if (typeof openLesson === "function") openLesson(id, "tutorial");
-            e.preventDefault();
-          }
+          // M9.19a.9 — tap on a tile opens the expand view. The real
+          // navigation (openLesson / window.open / navigateTo) fires
+          // from the primary CTA button inside the expanded card, not
+          // from the condensed tile itself.
+          e.preventDefault();
+          openTileExpand(tile);
         };
         tile.addEventListener("click", navigate);
         tile.addEventListener("keydown", (e) => {
@@ -2477,6 +2463,219 @@
       if (wrap.contains(e.target)) return;
       close();
     });
+  }
+  // ===== M9.19a.9 — Tap-to-expand progressive disclosure for .dash-tile =====
+  // Condensed tile → tap → grows into a floating detail card at higher
+  // z-index, dims background via backdrop. Expanded card has a single
+  // big CTA at the bottom that fires the real action (Start lesson /
+  // Open course / Start quiz / Modify draft / Continue project); the
+  // tile tap itself only expands. Cascades across every .dash-tile
+  // (Learn list, dashboard Learn panel, dashboard Projects panel) —
+  // one shared interaction model. Origin animates from the tapped
+  // tile's centerpoint via compositor-only transform/opacity (no
+  // layout thrash), honoring the "transforms are exclusive" rule —
+  // the expanded element is a fresh DOM node so no prior motion
+  // carries over.
+  let currentTileExpand = null;
+  function openTileExpand(tile) {
+    if (!tile) return;
+    if (currentTileExpand) closeTileExpand();
+    const type      = tile.dataset.learnType || "";
+    const learnId   = tile.dataset.learnId  || "";
+    const projectId = tile.dataset.projectId || "";
+    const content = buildTileExpandContent(tile, type, learnId, projectId);
+    if (!content) return;
+    const backdrop = document.createElement("div");
+    backdrop.className = "dash-tile-expand-backdrop";
+    document.body.appendChild(backdrop);
+    const expanded = document.createElement("article");
+    expanded.className = "dash-tile-expanded";
+    expanded.innerHTML = content.html;
+    document.body.appendChild(expanded);
+    // FLIP-style origin — capture source rect, set initial transform
+    // to visually place the expanded element at the tile's position
+    // (scaled down), then animate to identity (centered, full size).
+    const srcRect = tile.getBoundingClientRect();
+    const srcCx = srcRect.left + srcRect.width / 2;
+    const srcCy = srcRect.top + srcRect.height / 2;
+    const dx = srcCx - window.innerWidth / 2;
+    const dy = srcCy - window.innerHeight / 2;
+    expanded.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(0.2)`;
+    expanded.style.opacity = "0";
+    // Force layout so the initial style is committed before we animate.
+    void expanded.offsetHeight;
+    requestAnimationFrame(() => {
+      backdrop.classList.add("is-visible");
+      expanded.classList.add("is-visible");
+      expanded.style.transform = "";   // defer to CSS .is-visible rule
+      expanded.style.opacity = "";
+    });
+    const close = () => closeTileExpand();
+    backdrop.addEventListener("click", close);
+    const closeBtn = expanded.querySelector(".dash-tile-expanded-close");
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    const ctaBtn = expanded.querySelector(".dash-tile-expanded-cta");
+    if (ctaBtn && content.cta && typeof content.cta.action === "function") {
+      ctaBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const act = content.cta.action;
+        close();
+        setTimeout(act, 160);           // let the close animation start before navigating
+      });
+    }
+    const escHandler = (e) => {
+      if (e.key === "Escape") close();
+    };
+    document.addEventListener("keydown", escHandler);
+    currentTileExpand = { expanded, backdrop, escHandler, srcRect };
+    document.body.classList.add("modal-open");
+  }
+  function closeTileExpand() {
+    if (!currentTileExpand) return;
+    const { expanded, backdrop, escHandler, srcRect } = currentTileExpand;
+    currentTileExpand = null;
+    document.removeEventListener("keydown", escHandler);
+    // Reverse animation — scale back down toward the original tile's
+    // centerpoint while fading out.
+    const srcCx = srcRect.left + srcRect.width / 2;
+    const srcCy = srcRect.top + srcRect.height / 2;
+    const dx = srcCx - window.innerWidth / 2;
+    const dy = srcCy - window.innerHeight / 2;
+    expanded.classList.remove("is-visible");
+    backdrop.classList.remove("is-visible");
+    expanded.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(0.2)`;
+    expanded.style.opacity = "0";
+    setTimeout(() => {
+      if (backdrop && backdrop.parentNode) backdrop.parentNode.removeChild(backdrop);
+      if (expanded && expanded.parentNode) expanded.parentNode.removeChild(expanded);
+      // Only unlock modal-open if no other modals are still open.
+      refreshModalOpenBodyClass();
+    }, 330);
+  }
+  function buildTileExpandContent(tile, type, learnId, projectId) {
+    if (type === "lesson" || type === "course" || type === "draft") {
+      return buildLearnTileExpand(type, learnId, tile);
+    }
+    if (projectId) {
+      return buildProjectTileExpand(projectId);
+    }
+    return null;
+  }
+  function buildLearnTileExpand(type, id, tile) {
+    let title = "", summary = "", link = "", minutes = 10, state = "new", eyebrow = "";
+    if (type === "lesson") {
+      const l = (lessonsData || []).find((x) => x.slug === id);
+      if (!l) return null;
+      title = l.title || "";
+      summary = l.summary || "";
+      minutes = l.minutes || 10;
+      const trackLabel = l.track ? (TRACK_LABEL[l.track] || l.track) : "";
+      eyebrow = trackLabel ? `${trackLabel} · Lesson` : "Lesson";
+      state = (getLessonProgress()[id]?.state) || "new";
+    } else if (type === "course") {
+      const c = (academyCourses || []).find((x) => x.slug === id);
+      if (!c) return null;
+      title = c.title || "";
+      summary = c.summary || "";
+      link = c.url || "";
+      minutes = c.minutes || 10;
+      eyebrow = "Course · Academy";
+      state = "new";
+    } else if (type === "draft") {
+      const d = (getLearnDrafts() || []).find((x) => x.id === id);
+      if (!d) return null;
+      title = d.learnPrompt || "Untitled draft";
+      summary = d.notes || "";
+      link = d.docsUrl || "";
+      const tool = (toolsData || []).find((t) => t.id === d.sourceToolId);
+      eyebrow = `Draft · ${tool?.name || "—"}`;
+      state = "new";
+    }
+    const stateLabel = state === "completed" ? "Done"
+                    : state === "in_progress" ? "Continue"
+                    : "Start";
+    let ctaLabel = "", ctaAction = () => {};
+    if (type === "lesson") {
+      ctaLabel = state === "completed" ? "Review lesson →"
+               : state === "in_progress" ? "Continue lesson →"
+               : "Start lesson →";
+      ctaAction = () => { if (typeof openLesson === "function") openLesson(id, "tutorial"); };
+    } else if (type === "course") {
+      ctaLabel = "Open course (new tab) →";
+      ctaAction = () => { if (link) window.open(link, "_blank", "noopener"); };
+    } else if (type === "draft") {
+      ctaLabel = link ? "Open source (new tab) →" : "Modify draft →";
+      ctaAction = () => {
+        if (link) window.open(link, "_blank", "noopener");
+        // Else: future authoring flow. No-op for v1.
+      };
+    }
+    const linkMarkup = link
+      ? `<div class="dash-tile-expanded-meta"><a class="dash-tile-expanded-link" href="${escapeHtml(link)}" target="_blank" rel="noopener">${escapeHtml(link)}</a></div>`
+      : "";
+    return {
+      html: `
+        <button type="button" class="dash-tile-expanded-close" aria-label="Close">&times;</button>
+        <div class="dash-tile-expanded-body">
+          <div class="dash-tile-expanded-eyebrow">${escapeHtml(eyebrow)}</div>
+          <h3 class="dash-tile-expanded-title">${escapeHtml(title)}</h3>
+          <div class="dash-tile-expanded-status">
+            <span class="dash-tile-duration">${minutes}m</span>
+            <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
+          </div>
+          ${summary ? `<div class="dash-tile-expanded-summary">${escapeHtml(summary)}</div>` : ""}
+          ${linkMarkup}
+        </div>
+        <button type="button" class="dash-tile-expanded-cta">${escapeHtml(ctaLabel)}</button>
+      `,
+      cta: { label: ctaLabel, action: ctaAction },
+    };
+  }
+  function buildProjectTileExpand(projectId) {
+    if (projectId === "__example__") {
+      return {
+        html: `
+          <button type="button" class="dash-tile-expanded-close" aria-label="Close">&times;</button>
+          <div class="dash-tile-expanded-body">
+            <div class="dash-tile-expanded-eyebrow">Example · Best path</div>
+            <h3 class="dash-tile-expanded-title">Build an MCP-powered knowledge agent</h3>
+            <div class="dash-tile-expanded-summary">This is a sample project tile so the dashboard panel keeps its shape before you've created anything. Tap the button below to start your first real project — the Finder will walk through picking tools and capabilities.</div>
+          </div>
+          <button type="button" class="dash-tile-expanded-cta">Start new project →</button>
+        `,
+        cta: { label: "Start new project", action: () => { navigateTo("projects", "new"); window.scrollTo({ top: 0, behavior: "smooth" }); } },
+      };
+    }
+    const p = (getProjects() || {})[projectId];
+    if (!p) return null;
+    const pathLabel = p.path === "best" ? "Best path" : "Easy path";
+    const pinTools    = Array.isArray(p.pinnedTools)    ? p.pinnedTools.length    : 0;
+    const pinSnippets = Array.isArray(p.pinnedSnippets) ? p.pinnedSnippets.length : 0;
+    const inventoryParts = [];
+    if (pinTools)    inventoryParts.push(`${pinTools} tool${pinTools === 1 ? "" : "s"}`);
+    if (pinSnippets) inventoryParts.push(`${pinSnippets} snippet${pinSnippets === 1 ? "" : "s"}`);
+    const inventoryLine = inventoryParts.length ? `Pinned: ${inventoryParts.join(" · ")}` : "";
+    const summary = (p.goal || p.notes || "").trim();
+    const updated = Date.parse(p.updatedAt || 0) || 0;
+    const created = Date.parse(p.createdAt || 0) || 0;
+    const state = (updated > created) ? "resume" : "open";
+    const stateLabel = state === "resume" ? "Resume" : "Open";
+    return {
+      html: `
+        <button type="button" class="dash-tile-expanded-close" aria-label="Close">&times;</button>
+        <div class="dash-tile-expanded-body">
+          <div class="dash-tile-expanded-eyebrow">${escapeHtml(pathLabel)}</div>
+          <h3 class="dash-tile-expanded-title">${escapeHtml(p.title || "Untitled project")}</h3>
+          <div class="dash-tile-expanded-status">
+            <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
+          </div>
+          ${summary ? `<div class="dash-tile-expanded-summary">${escapeHtml(summary)}</div>` : ""}
+          ${inventoryLine ? `<div class="dash-tile-expanded-meta">${escapeHtml(inventoryLine)}</div>` : ""}
+        </div>
+        <button type="button" class="dash-tile-expanded-cta">Open project →</button>
+      `,
+      cta: { label: "Open project", action: () => { navigateTo("projects", ""); window.scrollTo({ top: 0, behavior: "smooth" }); } },
+    };
   }
   // handleLearnSwipeLeft retired in M9.17b.d alongside swipe-left-mastery.
   // Inline ✓ button (data-learn-action="master") now owns the mastery flow.
@@ -3313,13 +3512,10 @@
         if (e.target.closest(".dash-tile-icon")) return;
         if (e.target.closest(".dash-tile-grab")) return;
         e.preventDefault();
-        const id = tile.dataset.projectId;
-        if (id === "__example__") {
-          navigateTo("projects", "new");
-        } else {
-          navigateTo("projects", "");
-        }
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        // M9.19a.9 — tap opens expand; CTA inside (Start new project →
+        // for the dummy, Open project → for real projects) fires the
+        // real navigation.
+        openTileExpand(tile);
       };
       tile.addEventListener("click", navigate);
       tile.addEventListener("keydown", (e) => {
@@ -3423,20 +3619,19 @@
     }).join("");
     host.querySelectorAll(".dash-tile").forEach((tile) => {
       const navigate = (e) => {
-        // Ignore clicks originating in the action icons cluster or the
-        // grab column — those have their own handlers / are inert.
         if (e.target.closest("[data-learn-action]")) return;
         if (e.target.closest(".dash-tile-grab")) return;
         e.preventDefault();
-        // Placeholder tile routes to the Learn tab instead of trying to
-        // openLesson on a non-existent slug.
+        // M9.19a.9 — tap opens expand (same behavior as Learn list +
+        // Projects dashboard panel). CTA inside the expanded card
+        // does the real openLesson / navigateTo action. Placeholder
+        // tile routes to the Learn tab via its expanded CTA.
         if (tile.dataset.placeholder === "1") {
           navigateTo("learn", "");
           window.scrollTo({ top: 0, behavior: "smooth" });
           return;
         }
-        const slug = tile.dataset.dashLessonSlug;
-        if (slug && typeof openLesson === "function") openLesson(slug);
+        openTileExpand(tile);
       };
       tile.addEventListener("click", navigate);
       tile.addEventListener("keydown", (e) => {

@@ -2860,6 +2860,168 @@ body.modal-open { overflow: hidden; }
   .dash-tile-swipe-wrap > .dash-tile { transition: none; }
 }
 
+/* ===== M9.19a.9 — Expand-on-tap progressive disclosure =====
+   Tap a condensed tile, it grows into a larger floating container
+   with a dimmed backdrop showing full info at big tap-target sizes.
+   Primary CTA at the bottom (Start lesson / Open course / Start quiz
+   / Modify draft / Continue project) does the real navigation —
+   the tile tap itself only expands. Honors the "transforms are
+   exclusive" rule: hover glows and drag animations don't run during
+   the expand transform (the expanded element is a FRESH DOM node so
+   no prior motion carries over; the original tile underneath is
+   covered by backdrop + high-z-index expand). FLIP-style origin: the
+   detail enters visually from the tapped tile's centerpoint, scaling
+   from 0.2x at that point to 1x at screen center. Fully compositor:
+   transform + opacity only, no layout thrash. */
+.dash-tile-expand-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 16, 10, 0.38);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.24s var(--ease-premium);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.dash-tile-expand-backdrop.is-visible {
+  opacity: 1;
+}
+
+.dash-tile-expanded {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: min(560px, 92vw);
+  max-height: min(82vh, 720px);
+  z-index: 1000;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.80),
+    0 40px 80px -20px rgba(30,20,10,0.35),
+    0 16px 32px -12px rgba(30,20,10,0.18);
+  transform: translate(-50%, -50%) scale(0.2);
+  opacity: 0;
+  transition: transform 0.30s var(--ease-premium),
+              opacity  0.22s var(--ease-premium);
+  padding: 20px 20px 16px;
+  display: grid;
+  gap: 14px;
+  overflow: hidden;
+}
+.dash-tile-expanded.is-visible {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.dash-tile-expanded-body {
+  overflow-y: auto;
+  display: grid;
+  gap: 10px;
+  padding-right: 4px;
+  max-height: calc(min(82vh, 720px) - 140px);
+}
+.dash-tile-expanded .dash-tile-expanded-eyebrow {
+  font-size: 11.5px;
+  color: var(--text-2);
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.dash-tile-expanded .dash-tile-expanded-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin: 0;
+}
+.dash-tile-expanded .dash-tile-expanded-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.dash-tile-expanded .dash-tile-expanded-summary {
+  font-size: 14px;
+  color: var(--text-1);
+  line-height: 1.55;
+  letter-spacing: 0.002em;
+}
+.dash-tile-expanded .dash-tile-expanded-meta {
+  font-size: 12px;
+  color: var(--text-2);
+  letter-spacing: 0.005em;
+}
+.dash-tile-expanded .dash-tile-expanded-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-1);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(0,0,0,0.25);
+  word-break: break-all;
+}
+.dash-tile-expanded-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: rgba(0,0,0,0.04);
+  color: var(--text-2);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  transition: background 0.18s var(--ease-premium), color 0.18s var(--ease-premium);
+}
+.dash-tile-expanded-close:hover {
+  background: rgba(0,0,0,0.08);
+  color: var(--text-1);
+}
+.dash-tile-expanded-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 20px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--accent-solid, #1a1816);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background 0.18s var(--ease-premium),
+              transform 0.18s var(--ease-premium);
+  box-shadow: 0 4px 12px -4px rgba(0,0,0,0.18);
+}
+.dash-tile-expanded-cta:hover {
+  background: color-mix(in srgb, var(--accent-solid, #1a1816) 85%, #000000);
+}
+.dash-tile-expanded-cta:active {
+  transform: scale(0.98);
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash-tile-expand-backdrop,
+  .dash-tile-expanded { transition: opacity 0.12s linear; }
+  .dash-tile-expanded.is-visible { transform: translate(-50%, -50%); }
+  .dash-tile-expanded { transform: translate(-50%, -50%); }
+}
+
 .dash-eyebrow {
   font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--text-3);
