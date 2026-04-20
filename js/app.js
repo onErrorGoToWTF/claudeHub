@@ -2001,94 +2001,101 @@
     }
     return copy;
   }
+  // M9.19a — Learn list item migrated to the unified .dash-tile grammar.
+  // Same fixed-slot geometry as dashboard preview tiles (leading grab /
+  // content / trailing cluster), with Learn-specific optional rows
+  // turned on: summary, flag-icons (reserved for future), coverage
+  // matrix (drafts). Grab is visible via data-sortable="1". Inline
+  // pin / mastery / delete route through the global [data-learn-action]
+  // delegation (L~540) — unchanged; that handler already accepts both
+  // .learn-item-wrap and .dash-tile as row ancestors.
   function renderLearnItemRow(item) {
-    const draftHasUrl = item.type === "draft" && !!item.source?.docsUrl;
-    const useAnchor   = item.type === "course" || draftHasUrl;
-    const tag         = useAnchor ? "a" : "button";
-    const hrefUrl     = item.type === "course" ? (item.source?.url     || "#")
-                      : draftHasUrl            ? (item.source.docsUrl || "#")
-                      : "";
-    const hrefAttr    = useAnchor ? ` href="${escapeHtml(hrefUrl)}" target="_blank" rel="noopener"` : "";
-    const typeAttr    = useAnchor ? "" : ` type="button"`;
-    const stateLabel = item.state === "completed" ? "Done"
-                    : item.state === "in_progress" ? "In progress"
-                    : "";
-    const metaParts = [];
-    if (item.trackLabel) metaParts.push(item.trackLabel);
-    if (item.minutes)    metaParts.push(item.minutes + " min");
-    if (item.hasQuiz)    metaParts.push("quiz");
-    const meta = metaParts.join(" · ");
-    const stateMarkup = stateLabel
-      ? `<span class="learn-item-state" data-state="${escapeHtml(item.state)}">${escapeHtml(stateLabel)}</span>`
-      : "";
-    // M9.17b.a — inline action buttons replacing the collapsed ⋯ menu.
-    // Pin + Mastery toggles live on every non-Done item; a red destructive
-    // Trash action lives only on drafts. Done items (mastered/completed)
-    // skip the whole block; un-master lives in Tools > Your Stack.
-    // Buttons are SIBLINGS of the card anchor/button so taps don't trigger
-    // card navigation — same structural reason the ⋯ menu was a sibling.
     const inDone = item.mastered || item.state === "completed";
-    let actionsMarkup = "";
-    if (!inDone) {
-      const pinLabel     = item.pinned   ? "Remove from Up Next" : "Move to Up Next";
-      const masterLabel  = item.mastered ? "Remove mastery"      : "Mark mastered";
-      const pinned       = item.pinned   ? "1" : "";
-      const mastered     = item.mastered ? "1" : "";
-      const buttons = [
-        `<button type="button" class="learn-action-btn learn-action-pin" data-learn-action="pin" data-pressed="${pinned}" aria-pressed="${item.pinned ? "true" : "false"}" aria-label="${pinLabel}" title="${pinLabel}">${item.pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}</button>`,
-        `<button type="button" class="learn-action-btn learn-action-master" data-learn-action="master" data-pressed="${mastered}" aria-pressed="${item.mastered ? "true" : "false"}" aria-label="${masterLabel}" title="${masterLabel}">${item.mastered ? MASTERY_SVG_FILLED : MASTERY_SVG_OUTLINE}</button>`,
-      ];
-      if (item.type === "draft") {
-        buttons.push(`<button type="button" class="learn-action-btn learn-action-btn-danger learn-action-delete" data-learn-action="remove-draft" data-armed="" aria-label="Delete draft" title="Delete draft">${TRASH_SVG}</button>`);
-      }
-      actionsMarkup = `<div class="learn-item-actions" role="group" aria-label="Item actions">${buttons.join("")}</div>`;
-    }
-    // M9.6c — draft cards carry a coverage matrix showing what material
-    // already exists elsewhere for the source tool. Helps decide whether
-    // the pinned topic is a blank slate ("author from scratch") or
-    // already partially covered ("review these first"). Fuzzy match;
-    // no database required.
+    const sortable = !inDone;
+    const isDraft = item.type === "draft";
+    // Eyebrow: {kind} · {track}. Future slot will add updated-ago.
+    const eyebrowParts = [];
+    if (item.kind) eyebrowParts.push(item.kind);
+    if (item.trackLabel) eyebrowParts.push(item.trackLabel);
+    const eyebrow = eyebrowParts.join(" · ");
+    // Duration chip — Learn items usually have minutes; em-dash fallback.
+    const minutesLabel = item.minutes ? `${item.minutes}m` : "—";
+    const durationEmpty = item.minutes ? "" : ' data-empty="1"';
+    // State pill vocab: Start / Continue / Done (extensible to Retake /
+    // Review / Locked / New — styling keyed off data-state).
+    const stateRaw = item.state === "completed" ? "completed"
+                  : item.state === "in_progress" ? "in_progress"
+                  : "new";
+    const stateLabel = stateRaw === "completed" ? "Done"
+                    : stateRaw === "in_progress" ? "Continue"
+                    : "Start";
+    // Actions — pin + mastery always visible on non-Done items, delete
+    // only on drafts. Done items get invisible-reserved slots so the
+    // trailing cluster geometry stays identical across Up Next /
+    // Everything else / Done zones.
+    const pinned   = !!item.pinned;
+    const mastered = !!item.mastered;
+    const pinLabel    = pinned   ? "Remove from Up Next" : "Move to Up Next";
+    const masterLabel = mastered ? "Remove mastery"      : "Mark mastered";
+    const pinEmpty    = inDone ? ' data-empty="1"' : "";
+    const masterEmpty = inDone ? ' data-empty="1"' : "";
+    const pinAction    = inDone ? "" : ' data-learn-action="pin"';
+    const masterAction = inDone ? "" : ' data-learn-action="master"';
+    const deleteSlot = isDraft && !inDone
+      ? `<button type="button" class="dash-tile-icon dash-tile-delete" data-learn-action="remove-draft" data-armed="" aria-label="Delete draft" title="Delete draft">${TRASH_SVG}</button>`
+      : `<button type="button" class="dash-tile-icon dash-tile-delete" data-empty="1" aria-hidden="true" tabindex="-1">${TRASH_SVG}</button>`;
+    // Flag-icons row — reserved slot. Currently emits nothing; future
+    // signals (warning / locked / new / recommended / has-notes) will
+    // populate here without needing another layout change.
+    let flagsMarkup = "";
+    // Example (not yet wired):
+    // const flags = [];
+    // if (item.isNew) flags.push({ key: "new", label: "New" });
+    // if (item.prereqUnmet) flags.push({ key: "locked", label: "Locked" });
+    // if (flags.length) flagsMarkup = `<div class="dash-tile-flags">${flags.map(...)}</div>`;
+    // Coverage matrix — drafts only. Pills show counts across each
+    // existing material type so the author can see whether the pinned
+    // topic is blank-slate or partially covered.
     let coverageMarkup = "";
-    if (item.type === "draft") {
+    if (isDraft) {
       const cov = coverageFor(item.source);
       if (cov.total === 0) {
-        coverageMarkup = `<div class="learn-item-coverage" data-coverage="none">No existing material — blank slate.</div>`;
+        coverageMarkup = `<div class="dash-tile-coverage"><span class="dash-tile-coverage-pill" data-kind="blank">No existing material — blank slate</span></div>`;
       } else {
         const parts = [];
-        if (cov.lessons)  parts.push(`<span class="coverage-pill" data-kind="lessons">${cov.lessons} lesson${cov.lessons === 1 ? "" : "s"}</span>`);
-        if (cov.courses)  parts.push(`<span class="coverage-pill" data-kind="courses">${cov.courses} course${cov.courses === 1 ? "" : "s"}</span>`);
-        if (cov.snippets) parts.push(`<span class="coverage-pill" data-kind="snippets">${cov.snippets} snippet${cov.snippets === 1 ? "" : "s"}</span>`);
-        if (cov.videos)   parts.push(`<span class="coverage-pill" data-kind="videos">${cov.videos} video${cov.videos === 1 ? "" : "s"}</span>`);
-        coverageMarkup = `<div class="learn-item-coverage">Existing: ${parts.join(" · ")}</div>`;
+        if (cov.lessons)  parts.push(`<span class="dash-tile-coverage-pill" data-kind="lessons">${cov.lessons} lesson${cov.lessons === 1 ? "" : "s"}</span>`);
+        if (cov.courses)  parts.push(`<span class="dash-tile-coverage-pill" data-kind="courses">${cov.courses} course${cov.courses === 1 ? "" : "s"}</span>`);
+        if (cov.snippets) parts.push(`<span class="dash-tile-coverage-pill" data-kind="snippets">${cov.snippets} snippet${cov.snippets === 1 ? "" : "s"}</span>`);
+        if (cov.videos)   parts.push(`<span class="dash-tile-coverage-pill" data-kind="videos">${cov.videos} video${cov.videos === 1 ? "" : "s"}</span>`);
+        coverageMarkup = `<div class="dash-tile-coverage">${parts.join("")}</div>`;
       }
     }
-    // M9.17b.b — Grab handle (visible drag affordance on the left). Non-Done
-    // items only; Done items don't reorder. Sits as a flex sibling of the
-    // card, so touches on the handle never bubble into the card's click
-    // navigation or the card's own swipe-mastery gesture.
-    const grabMarkup = inDone
-      ? ""
-      : `<button type="button" class="learn-grab-handle" data-learn-grab="1" aria-label="Drag to reorder" title="Drag to reorder">${GRAB_SVG}</button>`;
-    // M9.17b.c — Only the head (kind + title + state) is the link.
-    // Meta / summary / coverage are passive siblings — tapping them does
-    // nothing. Fixes "I keep opening links by accident" without gating
-    // the primary action with a popup or a double-tap (iOS zoom collision).
-    // The .learn-item container stays as visual chrome, plain <div>.
+    // Grab handle — visible on non-Done items via data-sortable="1" on
+    // the tile. When data-sortable is absent, the grab renders invisible
+    // (28px column reserved) per .dash-tile-grab[data-empty="1"].
+    const grabEmpty = sortable ? "" : ' data-empty="1"';
+    // Summary — 1-line ellipsis, optional.
+    const summary = (item.summary || "").trim();
     return `
-      <div class="learn-item-wrap">
-        ${grabMarkup}
-        <div class="learn-item panel-tile" data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}">
-          <${tag} class="learn-item-head"${typeAttr}${hrefAttr}>
-            <span class="learn-item-kind">${escapeHtml(item.kind)}</span>
-            <span class="learn-item-title">${escapeHtml(item.title)}</span>
-            ${stateMarkup}
-          </${tag}>
-          ${meta ? `<div class="learn-item-meta">${escapeHtml(meta)}</div>` : ""}
-          ${item.summary ? `<div class="learn-item-summary">${escapeHtml(item.summary)}</div>` : ""}
+      <article class="dash-tile"${sortable ? ' data-sortable="1"' : ""} data-learn-type="${escapeHtml(item.type)}" data-learn-id="${escapeHtml(item.id)}" role="button" tabindex="0">
+        <button type="button" class="dash-tile-grab"${grabEmpty} aria-label="Drag to reorder" title="Drag to reorder" tabindex="-1">${GRAB_SVG}</button>
+        <div class="dash-tile-content">
+          ${eyebrow ? `<div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>` : ""}
+          <div class="dash-tile-title">${escapeHtml(item.title)}</div>
+          ${summary ? `<div class="dash-tile-summary">${escapeHtml(summary)}</div>` : ""}
+          ${flagsMarkup}
           ${coverageMarkup}
         </div>
-        ${actionsMarkup}
-      </div>
+        <div class="dash-tile-trailing">
+          <span class="dash-tile-duration"${durationEmpty}>${escapeHtml(minutesLabel)}</span>
+          <span class="dash-tile-state" data-state="${escapeHtml(stateRaw)}">${escapeHtml(stateLabel)}</span>
+          <div class="dash-tile-icons">
+            <button type="button" class="dash-tile-icon dash-tile-pin"${pinAction}${pinEmpty} aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinLabel}" title="${pinLabel}">${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}</button>
+            <button type="button" class="dash-tile-icon dash-tile-mastery"${masterAction}${masterEmpty} aria-pressed="${mastered ? "true" : "false"}" aria-label="${masterLabel}" title="${masterLabel}">${mastered ? MASTERY_SVG_FILLED : MASTERY_SVG_OUTLINE}</button>
+            ${deleteSlot}
+          </div>
+        </div>
+      </article>
     `;
   }
   function renderLearnZone(hostId, items, opts) {
@@ -2147,21 +2154,52 @@
     });
     const doneCount = document.getElementById("learn-done-count");
     if (doneCount) doneCount.textContent = done.length ? `(${done.length})` : "";
-    // Wire swipe-left + click on every rendered row. innerHTML was
-    // replaced above so every attached listener here is fresh.
-    document.querySelectorAll(".learn-item").forEach(wireLearnRowGestures);
-    document.querySelectorAll(".learn-grab-handle").forEach((handle) => {
-      wireLearnGrabHandle(handle, handle.nextElementSibling);
-    });
-    // M9.17b.c — lesson activation now fires from the head-link (a <button>
-    // for lessons). Walk up to .learn-item to read the dataset + honor the
-    // swipe-suppression flag set by wireLearnRowGestures.
-    document.querySelectorAll(".learn-item[data-learn-type='lesson'] > .learn-item-head").forEach((head) => {
-      head.addEventListener("click", (e) => {
-        const row = head.closest(".learn-item");
-        if (!row || row.dataset.learnSwipeHandled === "1") return;
-        e.preventDefault();
-        openLesson(row.dataset.learnId, "tutorial");
+    // M9.19a — Learn rows are now .dash-tile. Wire click-to-navigate +
+    // drag-to-reorder on every rendered tile. innerHTML was replaced
+    // above so every attached listener here is fresh.
+    const learnHosts = ["learn-upnext", "learn-all", "learn-done"];
+    learnHosts.forEach((id) => {
+      const host = document.getElementById(id);
+      if (!host) return;
+      host.querySelectorAll(".dash-tile").forEach(wireLearnRowGestures);
+      host.querySelectorAll(".dash-tile[data-sortable='1'] .dash-tile-grab").forEach((handle) => {
+        wireLearnGrabHandle(handle, handle.closest(".dash-tile"));
+      });
+      // Tile-click: navigate. Lesson / draft with no docsUrl → openLesson
+      // modal. Course / draft with docsUrl → open external URL in new
+      // tab. Action-icon + grab-handle clicks opt out (action icons
+      // stop propagation in the global delegation; grab sets
+      // dataset.learnSwipeHandled).
+      host.querySelectorAll(".dash-tile[data-learn-type]").forEach((tile) => {
+        const navigate = (e) => {
+          if (e.target.closest("[data-learn-action]")) return;
+          if (e.target.closest(".dash-tile-grab")) return;
+          if (tile.dataset.learnSwipeHandled === "1") return;
+          const type = tile.dataset.learnType;
+          const id   = tile.dataset.learnId;
+          if (type === "lesson") {
+            e.preventDefault();
+            openLesson(id, "tutorial");
+            return;
+          }
+          if (type === "course") {
+            const course = (academyCourses || []).find((c) => c.id === id);
+            const url = course?.url;
+            if (url) { window.open(url, "_blank", "noopener"); e.preventDefault(); }
+            return;
+          }
+          if (type === "draft") {
+            const draft = (getLearnDrafts() || []).find((d) => d.id === id);
+            const url = draft?.docsUrl;
+            if (url) window.open(url, "_blank", "noopener");
+            else if (typeof openLesson === "function") openLesson(id, "tutorial");
+            e.preventDefault();
+          }
+        };
+        tile.addEventListener("click", navigate);
+        tile.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); navigate(e); }
+        });
       });
     });
   }
@@ -2200,7 +2238,7 @@
     const startDrag = (x, y) => {
       dragging = true;
       startX = x; startY = y;
-      row.classList.add("learn-item-is-dragging");
+      row.classList.add("is-dragging");
       row.dataset.learnSwipeHandled = "1";
       row.style.transition = "none";           // inline translate must respond instantly; animation re-armed on release
       try { if (navigator.vibrate) navigator.vibrate(10); } catch {}
@@ -2239,12 +2277,12 @@
       const drop = upnext && pointInRect(x, y, upnext.getBoundingClientRect()) ? "upnext"
                  : all    && pointInRect(x, y, all.getBoundingClientRect())    ? "all"
                  : null;
-      row.classList.remove("learn-item-is-dragging");
+      row.classList.remove("is-dragging");
       clearDropHighlights();
       if (drop) {
         const type = row.dataset.learnType;
         const id = row.dataset.learnId;
-        const title = row.querySelector(".learn-item-title")?.textContent || "";
+        const title = row.querySelector(".dash-tile-title, .learn-item-title")?.textContent || "";
         if (drop === "upnext") pinLearnItem(type, id, { title });
         else                   unpinLearnItem(type, id);
         renderLearn();
@@ -2254,7 +2292,7 @@
       dragging = false;
     };
     const cancelDrag = () => {
-      row.classList.remove("learn-item-is-dragging");
+      row.classList.remove("is-dragging");
       clearDropHighlights();
       resetRowTransform();
       dragging = false;

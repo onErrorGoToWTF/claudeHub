@@ -2431,7 +2431,10 @@ body.modal-open { overflow: hidden; }
 .dash-tile-content {
   grid-column: 2;
   display: grid;
-  grid-template-rows: auto auto auto;
+  /* M9.19a — grid-auto-rows lets the renderer emit any combination of
+     eyebrow / title / summary / flags / coverage / progress rows; grid
+     doesn't care about the count. */
+  grid-auto-rows: auto;
   row-gap: 3px;
   min-width: 0;
 }
@@ -2611,6 +2614,144 @@ body.modal-open { overflow: hidden; }
   .dash-tile-progress > i,
   .dash-tile-icon,
   .dash-tile-grab { transition: none; }
+}
+
+/* ===== M9.19a — Learn-list feature parity on .dash-tile =====
+   The unified tile gains the optional rows + interactions that the
+   Learn list needs (visible grab handle when sortable, expanded
+   summary, informational flag icons, coverage matrix for drafts,
+   drag-to-reorder state). Dashboard preview omits these by not
+   emitting the markup — slot geometry stays identical across surfaces
+   because each optional row is absent-if-unused, not collapsed-after.
+   Ports drag + drop-highlight chrome from the retired .learn-item
+   recipe (~L4338+). */
+
+/* Sortable variant — grab handle becomes visible + interactive.
+   [data-sortable="1"] drives it so the dashboard preview (no attr)
+   keeps its invisible-reserved 28px column. */
+.dash-tile[data-sortable="1"] .dash-tile-grab {
+  visibility: visible;
+  pointer-events: auto;
+  color: var(--text-3);
+  cursor: grab;
+  touch-action: none;
+  flex-shrink: 0;
+}
+.dash-tile[data-sortable="1"] .dash-tile-grab:hover {
+  color: var(--text-2);
+  background: rgba(0,0,0,0.04);
+}
+.dash-tile[data-sortable="1"] .dash-tile-grab:active {
+  cursor: grabbing;
+}
+
+/* Summary row — secondary description, 1 line ellipsis. Sits below
+   title in the content column. Absent on dashboard preview; always
+   present on Learn-list tiles when the item has a summary. */
+.dash-tile-summary {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.35;
+  letter-spacing: 0.005em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Flag-icons row — informational status (warning / locked / new /
+   recommended / has-notes). Each flag is a small caps pill with an
+   optional icon. Absent when no flags active; horizontal flex wraps
+   if more flags than row width allows. */
+.dash-tile-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  min-height: 20px;
+}
+.dash-tile-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--text-1) 3%, transparent);
+  color: var(--text-3);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1.3;
+}
+.dash-tile-flag svg {
+  width: 11px;
+  height: 11px;
+}
+.dash-tile-flag[data-flag="warning"] {
+  color: var(--danger-solid);
+  border-color: color-mix(in srgb, var(--danger-solid) 30%, var(--border));
+  background: var(--danger-surface);
+}
+.dash-tile-flag[data-flag="new"],
+.dash-tile-flag[data-flag="recommended"] {
+  color: var(--accent-solid, var(--text-1));
+  border-color: var(--accent-border, var(--border));
+}
+.dash-tile-flag[data-flag="locked"],
+.dash-tile-flag[data-flag="notes"] {
+  color: var(--text-3);
+}
+
+/* Coverage matrix — drafts only. Pills showing counts across material
+   types (lessons / courses / snippets / videos). Ports the shape of
+   the retired .learn-item-coverage. Blank state gets an italic
+   "No existing material" pill. */
+.dash-tile-coverage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.dash-tile-coverage-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--text-1) 3%, transparent);
+  color: var(--text-3);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.dash-tile-coverage-pill[data-kind="blank"] {
+  font-style: italic;
+  color: var(--text-3);
+}
+
+/* Drag state — mirrors the retired .learn-item-is-dragging recipe.
+   Entry pulse, elevation shadow, z-index lift. Reduced-motion skips
+   the keyframe pulse but keeps the final scale so drag feedback
+   remains visible. */
+.dash-tile.is-dragging {
+  transform: scale(1.04);
+  transition: transform 0.18s var(--ease-premium),
+              box-shadow 0.18s var(--ease-premium);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    0 24px 40px -14px rgba(0,0,0,0.35),
+    0 8px 18px -6px rgba(0,0,0,0.22);
+  z-index: 2;
+  animation: dashTileDragIn 0.22s var(--ease-premium) both;
+}
+@keyframes dashTileDragIn {
+  0%   { transform: scale(1.00); }
+  55%  { transform: scale(1.06); }
+  100% { transform: scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash-tile.is-dragging { animation: none; }
 }
 
 .dash-eyebrow {
