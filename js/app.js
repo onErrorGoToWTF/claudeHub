@@ -1027,21 +1027,22 @@
     modal.dataset.loading = "1";
     delete modal.dataset.blocked;
     const myGen = ++docModalGen;
+    // Load handler clears the spinner but does NOT run detection —
+    // cross-origin pages can be briefly same-origin during navigation
+    // when load fires, which produced false-positive "blocked" flags.
+    // Detection runs only in the delayed timer below.
     iframe.addEventListener("load", () => {
       if (myGen !== docModalGen) return;
       delete modal.dataset.loading;
-      if (detectDocBlocked(iframe)) modal.dataset.blocked = "1";
     }, { once: true });
-    // Fallback: some browsers don't fire load consistently for blocked
-    // pages, and a network-level failure fires none at all. After 1.5s,
-    // force-clear the loading state and re-check blocked.
+    // Detection: wait 3s after open so any cross-origin transition has
+    // completed. If the iframe is still same-origin with an empty body
+    // after that window, it's genuinely blocked or network-failed.
     setTimeout(() => {
       if (myGen !== docModalGen) return;
       delete modal.dataset.loading;
-      if (!modal.dataset.blocked && detectDocBlocked(iframe)) {
-        modal.dataset.blocked = "1";
-      }
-    }, 1500);
+      if (detectDocBlocked(iframe)) modal.dataset.blocked = "1";
+    }, 3000);
     iframe.src = url;
     docModalLastFocus = document.activeElement;
     modal.hidden = false;

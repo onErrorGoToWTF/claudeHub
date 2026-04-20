@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.18",
-  "milestone": "M9.16j",
-  "milestoneTitle": "Phase M9.16j — Project-card chips drop the Claude-native orange tint. Chips for Claude-native tools now render grayscale like the rest; the .project-chip-claude rule is emptied (kept as a hook for a future color choice) and the JS still emits the class, so reintroducing a tint later is one rule edit away.",
-  "deployedAt": "2026-04-20T06:13Z",
+  "version": "0.7.1-dev.19",
+  "milestone": "M9.16k",
+  "milestoneTitle": "Phase M9.16k — Chunk polish. (1) Doc-modal detection moved out of the iframe load handler — cross-origin pages can be briefly same-origin during navigation when load fires, producing false-positive 'blocked' flags; detection now runs only in a single 3s timer (was 1.5s) so any transition has settled. (2) Safe-area-inset-top padding added to .storage-modal-head and .backup-modal-head (previously only .tool-modal-header, .doc-modal-header). (3) Dead --accent token definition removed from :root (0 consumers after M9.16i).",
+  "deployedAt": "2026-04-20T06:22Z",
   "commitSha": ""
 }
