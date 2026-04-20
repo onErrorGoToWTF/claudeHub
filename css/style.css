@@ -419,6 +419,19 @@ h1, h2, h3 { letter-spacing: -0.02em; font-weight: 600; }
   z-index: 2;
 }
 
+/* ===== M9.3 — Impressed label utility =====
+   Debossed text treatment for labels rendered ON glass. Bright top-edge
+   highlight + faint dark inner shadow make the text read as pressed-in.
+   Canonical callers: nav chip labels, YouTube tile wordmark, any
+   future "etched into the glass" label. Do NOT apply on dark surfaces
+   (nav-brand sticker uses a raised treatment instead — different recipe). */
+.label-debossed {
+  color: rgba(0,0,0,0.35);
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.80),
+    0 -0.5px 0.5px rgba(0,0,0,0.20);
+}
+
 /* ===== Top bar ===== */
 /* (.topbar / .topbar-inner / .brand* rules removed in M8.11.2 — the
    topbar container was retired when the nav-wrap became the fixed
@@ -1777,13 +1790,18 @@ body.modal-open { overflow: hidden; }
 .dash-panel > .dash-action     { grid-column: 1; grid-row: 2; align-self: start; justify-self: start; }
 .dash-panel > .dash-panel-icon { grid-column: 2; grid-row: 1 / span 2; align-self: end; justify-self: end; }
 .dash-panel > .dash-panel-body { grid-column: 1 / -1; grid-row: 3; }
-/* Learn + Projects panels and the YouTube tile share one glass tone —
-   nearly white so they pop against the greige page. Linked via a single
-   selector so any future retune updates both together. The explicit
-   background re-application is needed because .dash-action sets
+/* Near-white glass tone — Dashboard panels, the YouTube tile, and
+   (M9.3) the Projects page's panel + Finder wrappers share this tone
+   so they pop against the greige page. Linked via a single selector so
+   any future retune updates them together. The explicit background
+   re-application is needed because .dash-action sets
    background: transparent later in the cascade. */
 .dash-panel.glass,
-.dash-action.dash-action-quiet.glass {
+.dash-action.dash-action-quiet.glass,
+.projects-grid.glass,
+.finder-step.glass,
+.finder-fork.glass,
+.save-form.glass {
   --glass-top:    rgba(255,255,255,0.97);
   --glass-bottom: rgba(254,253,251,0.90);
   --glass-fallback: rgba(255,255,255,0.98);
@@ -1936,28 +1954,32 @@ body.modal-open { overflow: hidden; }
   gap: 8px;
   border-top: 1px solid rgba(0,0,0,0.10);
 }
-/* M8.12.22 — tile interior fakes a "hole through the panel" to the page
-   bg. Tile bg = solid --bg-0 (page color); glass-like chrome stacks on
-   top: thin hairline edge + inset top-edge specular highlight + faint
-   drop shadow. No real blur — just optical trickery that matches the
-   page bg around the panel. */
-.dash-panel-body .continue-row {
-  padding: 12px 12px;
+/* M8.12.22 / M9.3 — canonical tile idiom. Fakes a "hole through the
+   parent panel" to the page bg. Tile bg = solid --bg-0 (page color);
+   glass-like chrome stacks on top: thin hairline edge + inset top-edge
+   specular highlight + faint drop shadow. No real blur — just optical
+   trickery that matches the page bg around the parent. Requires a
+   near-white parent for the illusion to read (see .dash-panel.glass,
+   .projects-grid.glass, .finder-step.glass, etc.). M9.3 lifted this
+   recipe out of .dash-panel-body scope into .panel-tile / .continue-row
+   so project cards and any future item-row can adopt it with a single
+   class. Padding + inter-row hairline still live under the
+   Dashboard-specific selector below so callers set their own spacing. */
+.panel-tile,
+.continue-row {
   background: var(--bg-0);
   border: 1px solid rgba(0,0,0,0.07);
   border-radius: var(--radius-sm);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.55),
     0 1px 2px rgba(0,0,0,0.04);
-  opacity: 1;
   transition:
     background 0.18s var(--ease-premium),
     border-color 0.18s var(--ease-premium),
     box-shadow   0.18s var(--ease-premium);
 }
-.dash-panel-body .continue-row + .continue-row { border-top: 1px solid rgba(0,0,0,0.07); }
-.dash-panel-body .continue-row:hover {
-  opacity: 1;
+.panel-tile:hover,
+.continue-row:hover {
   background: color-mix(in srgb, var(--bg-0) 88%, #ffffff);
   border-color: var(--accent-border, rgba(0,0,0,0.12));
   box-shadow:
@@ -1965,9 +1987,17 @@ body.modal-open { overflow: hidden; }
     0 2px 6px rgba(0,0,0,0.05),
     0 0 0 3px var(--accent-glow, transparent);
 }
-.dash-panel-body .continue-row:active {
+.panel-tile:active,
+.continue-row:active {
   background: color-mix(in srgb, var(--bg-0) 88%, #000000);
   box-shadow: inset 0 2px 3px rgba(0,0,0,0.08);
+}
+/* Dashboard-specific: continue-rows stack with an inter-row hairline and
+   use tighter padding than the canonical panel-tile. Project cards bring
+   their own padding (L3312) so the generic recipe stays padding-agnostic. */
+.dash-panel-body .continue-row { padding: 12px 12px; }
+.dash-panel-body .continue-row + .continue-row {
+  border-top: 1px solid rgba(0,0,0,0.07);
 }
 .continue-row-path {
   grid-column: 2;
@@ -2187,12 +2217,8 @@ body.modal-open { overflow: hidden; }
     drop-shadow(0 1px 0 rgba(255,255,255,0.80))
     drop-shadow(0 -0.5px 0.5px rgba(0,0,0,0.22));
 }
-#youtube-open.dash-action-quiet.glass span {
-  color: rgba(0,0,0,0.35);
-  text-shadow:
-    0 1px 0 rgba(255,255,255,0.80),
-    0 -0.5px 0.5px rgba(0,0,0,0.20);
-}
+/* YouTube wordmark now uses the .label-debossed utility (M9.3).
+   Keep the SVG impression rule above — it's filter-based, distinct. */
 
 /* ===== YouTube modal (M5.2) ===== */
 .yt-modal[hidden] { display: none !important; }
@@ -3300,13 +3326,19 @@ body.modal-open { overflow: hidden; }
   border-color: var(--text-1);
 }
 
-/* ===== My Projects (Learn → My Projects) ===== */
+/* ===== My Projects (Learn → My Projects) =====
+   M9.3 — the grid is now a near-white glass panel containing recessed
+   project-card tiles (see .projects-grid.glass in the near-white tone
+   block above + .project-card .panel-tile styling below). Interior
+   padding gives the tiles breathing room; the .glass primitive provides
+   border + radius + shadow. */
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
+  padding: 14px;
 }
-@media (min-width: 720px)  { .projects-grid { grid-template-columns: 1fr 1fr; gap: 14px; } }
+@media (min-width: 720px)  { .projects-grid { grid-template-columns: 1fr 1fr; gap: 14px; padding: 16px; } }
 @media (min-width: 1100px) { .projects-grid { grid-template-columns: 1fr 1fr 1fr; } }
 
 .project-card {

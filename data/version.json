@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.2",
-  "milestone": "M9.2",
-  "milestoneTitle": "Phase M9.2 — Pill-radius global purge: replaced 25 non-circle border-radius: var(--radius-pill) declarations with var(--radius-sm) (6px), converted the sole circular button (.faceoff-arrow) to border-radius: 50%, and deleted the --radius-pill token from :root. Also updated palette-preview.html inline pill/badge radii, bumped the design-review skill rule to past tense, and refreshed CLAUDE.md's restrained-rounding note to document the deletion + explicit circle rule. snippets.json content left untouched (user-authored prompt payload). First visible delta of the v0.7 refactor — pills across Learn/Tools/Projects/Dashboard are now squared-off to 6px.",
-  "deployedAt": "2026-04-19T23:53Z",
+  "version": "0.7.0-dev.3",
+  "milestone": "M9.3",
+  "milestoneTitle": "Phase M9.3 — Panel glass + tile idiom site-wide: lifted the Projects page (.projects-grid) and Finder wrappers (.finder-step, .finder-fork, .save-form) to the Dashboard's near-white glass tone. Hoisted the tile recipe out of .dash-panel-body scope into shared .panel-tile / .continue-row selectors so project cards and future item-rows adopt it with one class. Converted .project-card from .glass to .panel-tile — recessed tiles read as slots inside the new near-white projects panel instead of glass cards floating on the page. Added a canonical .label-debossed utility and migrated the YouTube wordmark to use it (inlined CSS rule deleted). Scope-limited per plan: tool cards stay on their current styling (M9.7 owns), lesson rows + academy course headers stay untouched (M9.4 rewrites the zones that contain them), and all modals remain on current glass (M9.9 parity pass). Dashboard's continue-row padding + inter-row hairline preserved at .dash-panel-body scope so the existing tiles render unchanged.",
+  "deployedAt": "2026-04-20T00:01Z",
   "commitSha": ""
 }

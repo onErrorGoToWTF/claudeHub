@@ -2460,7 +2460,7 @@
     host.innerHTML = "";
     projects.forEach((p) => {
       const card = document.createElement("article");
-      card.className = "project-card glass" + (p.path === "best" ? " project-card-best" : " project-card-easy");
+      card.className = "project-card panel-tile" + (p.path === "best" ? " project-card-best" : " project-card-easy");
       const pathLabel = p.path === "best" ? "Best path" : "Easiest path";
       const stackChips = (p.stack || []).map((s) => {
         const tool = toolsData?.find((t) => t.id === s.toolId);
