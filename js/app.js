@@ -1910,12 +1910,19 @@
     // Rendered alongside authored lessons + academy courses; sort_date
     // uses createdAt-negated-as-order so most-recent drafts bubble up.
     getLearnDrafts().forEach((d) => {
+      // M9.19a.1 — trackLabel on drafts reads the source tool name
+      // (falls back to "Draft" if the tool lookup fails) so the
+      // eyebrow displays "Draft · Claude Code" instead of the old
+      // "Draft · Draft" tautology. Drafts are authored from a specific
+      // Tools-card pin, so the source tool IS the track in context.
+      const sourceTool = (toolsData || []).find((t) => t.id === d.sourceToolId);
+      const trackLabel = sourceTool?.name || "Draft";
       items.push({
         type: "draft",
         id: d.id,
         title: d.learnPrompt || "Untitled draft",
         summary: d.notes || "",
-        trackLabel: "Draft",
+        trackLabel,
         minutes: 0,
         order: -Date.parse(d.createdAt || 0),                    // newer first within the group
         hasQuiz: false,
