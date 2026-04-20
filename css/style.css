@@ -2336,6 +2336,255 @@ body.modal-open { overflow: hidden; }
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* ===== Dashboard tile (M9.18a) — fixed-slot row grammar =====
+   Unified item-row for Dashboard Learn / Projects / Tools panels (and
+   eventually Learn/Projects/Tools list views in Phase 2). Slot widths
+   are rigid so the user's eye learns one geometry forever. Sources:
+   Apple HIG layout / gestures (leading grab, trailing cluster, 44x44
+   hit via padding), Linear (eyebrow above title, lifecycle + secondary
+   signals in separate fixed slots), Khan (duration + state each get a
+   permanent spot). See plan:
+   C:\Users\alany\.claude\plans\ok-lets-work-on-quiet-gadget.md.
+   Phase 1 wires Learn dashboard panel first; Projects + Tools follow
+   in M9.18b / M9.18c once phone-reviewed. */
+.dash-tile {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) auto;
+  column-gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  min-height: 64px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bg-0) 45%, #ffffff);
+  border: 1px solid rgba(0,0,0,0.07);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.65),
+    0 1px 2px rgba(0,0,0,0.04);
+  color: var(--text-1);
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  transition:
+    background 0.18s var(--ease-premium),
+    border-color 0.18s var(--ease-premium),
+    box-shadow   0.18s var(--ease-premium);
+}
+.dash-tile:hover {
+  background: color-mix(in srgb, var(--bg-0) 20%, #ffffff);
+  border-color: var(--accent-border, rgba(0,0,0,0.12));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.70),
+    0 2px 6px rgba(0,0,0,0.05),
+    0 0 0 3px var(--accent-glow, transparent);
+}
+.dash-tile:active {
+  background: color-mix(in srgb, var(--bg-0) 88%, #000000);
+  box-shadow: inset 0 2px 3px rgba(0,0,0,0.08);
+}
+/* Tile-to-tile spacing is inherited from the parent .dash-panel-body
+   grid (gap: 8px under Learn/Projects/Tools identity). No margin here. */
+
+/* Leading column — 28px. Grab handle when sortable; invisible spacer
+   otherwise. Width stays identical across surfaces so tiles line up. */
+.dash-tile-grab {
+  grid-column: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-3);
+  cursor: grab;
+  border-radius: var(--radius-sm);
+  transition: color 0.18s var(--ease-premium), background 0.18s var(--ease-premium);
+}
+.dash-tile-grab:hover { color: var(--text-2); background: rgba(0,0,0,0.04); }
+.dash-tile-grab[data-empty="1"] { visibility: hidden; pointer-events: none; }
+
+/* Content column — title + eyebrow + optional progress bar. Only column
+   that flexes; title + eyebrow ellipsis on overflow so variable copy
+   never pushes trailing pills. */
+.dash-tile-content {
+  grid-column: 2;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  row-gap: 3px;
+  min-width: 0;
+}
+.dash-tile-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-1);
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dash-tile-eyebrow {
+  font-size: 11.5px;
+  color: var(--text-2);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dash-tile-progress {
+  height: 2px;
+  background: var(--border);
+  border-radius: 1px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+.dash-tile-progress > i {
+  display: block;
+  height: 2px;
+  width: var(--pct, 0%);
+  background: var(--accent-solid, var(--text-1));
+  border-radius: 1px;
+  transition: width 400ms var(--ease-premium);
+}
+
+/* Trailing cluster — fixed inner grid. Top row: duration (40px) + state
+   pill (84px). Bottom row: three 24px action slots (pin / mastery /
+   delete). Width is 40 + 6 + 84 = 130px at all times, regardless of
+   which fills are populated. */
+.dash-tile-trailing {
+  grid-column: 3;
+  display: grid;
+  grid-template-rows: 20px 24px;
+  grid-template-columns: 40px 84px;
+  column-gap: 6px;
+  row-gap: 4px;
+  align-items: center;
+  justify-items: end;
+}
+.dash-tile-duration {
+  grid-row: 1;
+  grid-column: 1;
+  width: 40px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--text-1) 3%, transparent);
+  color: var(--text-2);
+  font-size: 10.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.dash-tile-duration[data-empty="1"] {
+  color: var(--text-3);
+  background: transparent;
+  border-color: rgba(0,0,0,0.05);
+}
+.dash-tile-state {
+  grid-row: 1;
+  grid-column: 2;
+  width: 84px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--text-1) 5%, transparent);
+  color: var(--text-2);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.dash-tile-state[data-state="in_progress"],
+.dash-tile-state[data-state="resume"] {
+  color: var(--accent-solid, var(--text-1));
+  border-color: var(--accent-border, var(--border));
+  background: var(--accent-surface, color-mix(in srgb, var(--text-1) 6%, transparent));
+}
+.dash-tile-state[data-state="completed"],
+.dash-tile-state[data-state="done"] {
+  color: var(--text-3);
+  border-color: rgba(0,0,0,0.05);
+  background: transparent;
+}
+.dash-tile-state[data-state="empty"] { visibility: hidden; }
+
+.dash-tile-icons {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 24px 24px 24px;
+  column-gap: 4px;
+  justify-self: end;
+}
+.dash-tile-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-3);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    color 0.15s var(--ease-premium),
+    background 0.15s var(--ease-premium);
+}
+.dash-tile-icon:hover {
+  color: var(--accent-solid, var(--text-1));
+  background: rgba(0,0,0,0.04);
+}
+.dash-tile-icon[aria-pressed="true"] {
+  color: var(--accent-solid, var(--text-1));
+}
+.dash-tile-icon[data-empty="1"] {
+  opacity: 0;
+  pointer-events: none;
+}
+.dash-tile-icon.dash-tile-delete {
+  color: color-mix(in srgb, var(--danger-solid) 75%, var(--text-3));
+}
+.dash-tile-icon.dash-tile-delete:hover {
+  color: var(--danger-solid);
+  background: var(--danger-surface);
+}
+.dash-tile-icon.dash-tile-delete[data-armed="1"] {
+  color: var(--danger-ink);
+  background: var(--danger-solid);
+  box-shadow: 0 0 0 2px var(--danger-glow);
+}
+
+/* Touch devices: expand hit area to 44x44 via padding + negative margin
+   so the visual icon stays 24x24 but the tap target meets Apple HIG. */
+@media (hover: none) {
+  .dash-tile-icon { padding: 10px; margin: -10px; }
+  .dash-tile-grab { width: 44px; margin: 0 -8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dash-tile,
+  .dash-tile-progress > i,
+  .dash-tile-icon,
+  .dash-tile-grab { transition: none; }
+}
+
 .dash-eyebrow {
   font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--text-3);

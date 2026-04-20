@@ -486,23 +486,36 @@
     if (!actionBtn) return;
     e.preventDefault();
     e.stopPropagation();
-    const wrap = actionBtn.closest(".learn-item-wrap");
-    const row  = wrap?.querySelector(".learn-item");
+    // M9.18a — accept .dash-tile as an alternate row ancestor so the
+    // dashboard Learn panel shares this delegation. When the action
+    // fires inside a .dash-tile, the tile itself is the row (carries
+    // data-learn-type / data-learn-id). When inside .learn-item-wrap,
+    // the .learn-item child is the row.
+    const wrap = actionBtn.closest(".learn-item-wrap, .dash-tile");
+    if (!wrap) return;
+    const row  = wrap.classList.contains("dash-tile")
+      ? wrap
+      : wrap.querySelector(".learn-item");
     if (!row) return;
     const type   = row.dataset.learnType;
     const id     = row.dataset.learnId;
-    const title  = row.querySelector(".learn-item-title")?.textContent || "";
+    const titleEl = row.querySelector(".learn-item-title, .dash-tile-title");
+    const title   = titleEl?.textContent || "";
     const action = actionBtn.dataset.learnAction;
+    const rerender = () => {
+      if (typeof renderLearn === "function") renderLearn();
+      if (typeof renderDashLearn === "function") renderDashLearn();
+    };
     if (action === "pin") {
       if (isLearnItemPinned(type, id)) unpinLearnItem(type, id);
       else                              pinLearnItem(type, id, { title });
-      renderLearn();
+      rerender();
       return;
     }
     if (action === "master") {
       if (isMastered(type, id)) unsetMastered(type, id);
       else                       setMastered(type, id);
-      renderLearn();
+      rerender();
       return;
     }
     if (action === "remove-draft" && type === "draft") {
@@ -514,7 +527,7 @@
         removeLearnDraft(id);
         unpinLearnItem("draft", id);
         unsetMastered("draft", id);
-        renderLearn();
+        rerender();
         return;
       }
       // Arm the button in place — change dataset + label, start disarm timer.
@@ -3061,7 +3074,13 @@
     });
   }
 
-  // M5.1: Dashboard Learn panel — up to 3 in-progress or upcoming lessons.
+  // M5.1: Dashboard Learn panel — up to 2 in-progress or upcoming lessons.
+  // M9.18a: migrated from .continue-row to the new .dash-tile grammar —
+  // fixed slots (leading grab / content / duration / state / pin /
+  // mastery / delete) so every dashboard panel shares one geometry.
+  // Grab + delete render invisible on the dashboard preview (slot width
+  // reserved for cross-panel alignment). Pin + mastery are live and
+  // route through the existing [data-learn-action] delegation (~L484).
   function renderDashLearn() {
     const host = document.getElementById("dash-learn-body");
     if (!host) return;
@@ -3082,22 +3101,52 @@
     const slice = sorted.slice(0, 2);
     host.innerHTML = slice.map((l) => {
       const state = progress[l.slug]?.state || "new";
-      const stateLabel = state === "completed" ? "Completed"
-                      : state === "in_progress" ? "In progress"
+      const stateLabel = state === "completed" ? "Done"
+                      : state === "in_progress" ? "Continue"
                       : "Start";
+      const trackLabel = l.track ? (TRACK_LABEL[l.track] || l.track) : "";
+      const eyebrowParts = [];
+      if (trackLabel) eyebrowParts.push(trackLabel);
+      eyebrowParts.push("Lesson");
+      const eyebrow = eyebrowParts.join(" · ");
+      const minutesLabel = l.minutes ? `${l.minutes}m` : "—";
+      const durationEmpty = l.minutes ? "" : ' data-empty="1"';
+      const pinned   = isLearnItemPinned("lesson", l.slug);
+      const mastered = isMastered("lesson", l.slug);
+      const pinLabel    = pinned   ? "Remove from Up Next" : "Move to Up Next";
+      const masterLabel = mastered ? "Remove mastery"      : "Mark mastered";
       return `
-        <button type="button" class="continue-row" data-dash-lesson-slug="${escapeHtml(l.slug)}">
-          <span class="continue-row-title">${escapeHtml(l.title)}</span>
-          <span class="continue-row-path" data-state="${escapeHtml(state)}">${stateLabel}</span>
-          <div class="continue-row-meta">${l.minutes ? l.minutes + " min · " : ""}${escapeHtml(l.summary || "")}</div>
-        </button>
+        <article class="dash-tile" data-learn-type="lesson" data-learn-id="${escapeHtml(l.slug)}" data-dash-lesson-slug="${escapeHtml(l.slug)}" role="button" tabindex="0">
+          <button type="button" class="dash-tile-grab" data-empty="1" aria-hidden="true" tabindex="-1">${GRAB_SVG}</button>
+          <div class="dash-tile-content">
+            <div class="dash-tile-title">${escapeHtml(l.title)}</div>
+            <div class="dash-tile-eyebrow">${escapeHtml(eyebrow)}</div>
+          </div>
+          <div class="dash-tile-trailing">
+            <span class="dash-tile-duration"${durationEmpty}>${escapeHtml(minutesLabel)}</span>
+            <span class="dash-tile-state" data-state="${escapeHtml(state)}">${escapeHtml(stateLabel)}</span>
+            <div class="dash-tile-icons">
+              <button type="button" class="dash-tile-icon dash-tile-pin" data-learn-action="pin" aria-pressed="${pinned ? "true" : "false"}" aria-label="${pinLabel}" title="${pinLabel}">${pinned ? PIN_SVG_FILLED : PIN_SVG_OUTLINE}</button>
+              <button type="button" class="dash-tile-icon dash-tile-mastery" data-learn-action="master" aria-pressed="${mastered ? "true" : "false"}" aria-label="${masterLabel}" title="${masterLabel}">${mastered ? MASTERY_SVG_FILLED : MASTERY_SVG_OUTLINE}</button>
+              <button type="button" class="dash-tile-icon dash-tile-delete" data-empty="1" aria-hidden="true" tabindex="-1">${TRASH_SVG}</button>
+            </div>
+          </div>
+        </article>
       `;
     }).join("");
-    host.querySelectorAll(".continue-row").forEach((row) => {
-      row.addEventListener("click", (e) => {
+    host.querySelectorAll(".dash-tile").forEach((tile) => {
+      const navigate = (e) => {
+        // Ignore clicks originating in the action icons cluster or the
+        // grab column — those have their own handlers / are inert.
+        if (e.target.closest("[data-learn-action]")) return;
+        if (e.target.closest(".dash-tile-grab")) return;
         e.preventDefault();
-        const slug = row.dataset.dashLessonSlug;
+        const slug = tile.dataset.dashLessonSlug;
         if (slug && typeof openLesson === "function") openLesson(slug);
+      };
+      tile.addEventListener("click", navigate);
+      tile.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); navigate(e); }
       });
     });
   }
