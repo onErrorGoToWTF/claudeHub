@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.27",
-  "milestone": "M9.17a",
-  "milestoneTitle": "Phase M9.17a — Overflow fix on Up Next + parallel list surfaces. Lesson title 'Claude Code: zero to your first session' was bleeding out of its .learn-item container. Root cause: the flex-column chain (.learn-zone-body → .learn-item → .learn-item-head) lacked min-width: 0, so the title's min-content width forced ancestors wider than the panel despite the title's own ellipsis rule. Added min-width: 0 at each flex level. Same defensive fix applied to .tool-card and .project-card (parallel flex-column card classes that could exhibit the same class of bug). No overflow:hidden at card level — would clip the warm drop-shadow.",
-  "deployedAt": "2026-04-20T11:55Z",
+  "version": "0.7.1-dev.28",
+  "milestone": "M9.17a.1",
+  "milestoneTitle": "Phase M9.17a.1 — Hotfix for M9.17a. Phone review showed the learn-item title was still bleeding past the card's right edge on long titles like 'Custom slash commands — the real leverage' and 'Blender + AI hybrid — the Young Carpets hero shot'. Root cause was a second layer: the ⋯ menu is absolute-positioned at top:4px right:6px (28×28) on .learn-item-wrap and the .learn-item itself reserved no gutter for it, so the title's flex-row ellipsized AT the card edge, floating under the menu button. Added .learn-item:has(+ .learn-menu) { padding-right: 44px; } so the title truncates before the menu zone. Items without a menu (Done/mastered) keep the original padding — no wasted right gutter.",
+  "deployedAt": "2026-04-20T12:07Z",
   "commitSha": ""
 }
