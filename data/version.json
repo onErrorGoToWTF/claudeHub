@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.28",
-  "milestone": "M9.17a.1",
-  "milestoneTitle": "Phase M9.17a.1 — Hotfix for M9.17a. Phone review showed the learn-item title was still bleeding past the card's right edge on long titles like 'Custom slash commands — the real leverage' and 'Blender + AI hybrid — the Young Carpets hero shot'. Root cause was a second layer: the ⋯ menu is absolute-positioned at top:4px right:6px (28×28) on .learn-item-wrap and the .learn-item itself reserved no gutter for it, so the title's flex-row ellipsized AT the card edge, floating under the menu button. Added .learn-item:has(+ .learn-menu) { padding-right: 44px; } so the title truncates before the menu zone. Items without a menu (Done/mastered) keep the original padding — no wasted right gutter.",
-  "deployedAt": "2026-04-20T12:07Z",
+  "version": "0.7.1-dev.29",
+  "milestone": "M9.17a.2",
+  "milestoneTitle": "Phase M9.17a.2 — Stronger overflow fix after phone review still showed bleed on 'Custom slash commands — the real leverage' and 'Blender + AI hybrid — the Young Carpets hero shot'. M9.17a.1's :has(+ .learn-menu) rule was correctly deployed but either browser-cached or not firing in Brave iOS. Switched to belt-and-suspenders: unconditional right gutter via padding: 12px 44px 12px 14px on .learn-item, plus overflow:hidden on both .learn-item and .learn-item-head so text physically cannot escape the card regardless of flex-shrink behavior. panel-tile box-shadow renders outside the element and is unaffected.",
+  "deployedAt": "2026-04-20T12:28Z",
   "commitSha": ""
 }
