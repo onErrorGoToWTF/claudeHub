@@ -936,7 +936,7 @@
     const iframe = modal.querySelector(".video-modal-iframe");
     iframe.src = "";
     modal.hidden = true;
-    document.body.classList.remove("modal-open");
+    refreshModalOpenBodyClass();
     if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
   }
   document.querySelectorAll("#video-modal [data-close]").forEach((el) => {
@@ -960,14 +960,34 @@
   }
 
   // ======================================================================
-  // Link-in-modal interceptor (M9.16b) — keeps external <a> clicks inside
-  // the app. YouTube links route to openVideoModal; everything else goes
-  // to a sandboxed doc-modal iframe. Modified clicks, same-origin links,
-  // non-http protocols, and data-no-modal anchors pass through unchanged.
-  // History state is pushed on open so the phone back gesture closes the
-  // modal instead of leaving the app. ESC runs in capture phase so it
-  // closes only the topmost modal (doc-modal when stacked over another).
+  // Link-in-modal interceptor (M9.16b/c) — keeps external <a> clicks
+  // inside the app. YouTube links route to openVideoModal; everything
+  // else goes to a sandboxed doc-modal iframe. Modified clicks, same-
+  // origin links, non-http protocols, and data-no-modal anchors pass
+  // through unchanged. History state is pushed on open so the phone
+  // back gesture closes the modal instead of leaving the app. ESC runs
+  // in capture phase so it closes only the topmost modal (doc-modal
+  // when stacked over another).
   // ======================================================================
+
+  // M9.16c — shared scroll-lock bookkeeping. Each modal closer used to
+  // duplicate a :not([hidden]) selector list of every known modal class;
+  // the lists had drifted (some included .backup-modal, others didn't,
+  // and the video-modal closer removed the class unconditionally which
+  // unlocked scroll even while another modal remained open). Unifying
+  // here guarantees body.modal-open tracks "any modal visible" exactly.
+  function refreshModalOpenBodyClass() {
+    const anyOpen = document.querySelector(
+      ".video-modal:not([hidden]), .tool-modal:not([hidden]), " +
+      ".search-modal:not([hidden]), .pin-picker-modal:not([hidden]), " +
+      ".backup-modal:not([hidden]), .storage-modal:not([hidden]), " +
+      ".yt-modal:not([hidden]), .doc-modal:not([hidden])"
+    );
+    if (!anyOpen) document.body.classList.remove("modal-open");
+  }
+
+  let docModalLastFocus = null;
+
   function openDocModal(url, meta) {
     const modal = document.getElementById("doc-modal");
     if (!modal) return;
@@ -975,13 +995,19 @@
     const srcEl    = modal.querySelector(".doc-modal-source");
     const titleEl  = modal.querySelector(".doc-modal-title");
     const openLink = modal.querySelector(".doc-modal-open");
-    iframe.src          = url;
     srcEl.textContent   = (meta && meta.hostname) || "";
     titleEl.textContent = (meta && meta.title)    || "";
     openLink.href       = url;
+    modal.dataset.loading = "1";
+    iframe.addEventListener("load", () => {
+      delete modal.dataset.loading;
+    }, { once: true });
+    iframe.src = url;
+    docModalLastFocus = document.activeElement;
     modal.hidden = false;
     document.body.classList.add("modal-open");
     history.pushState({ clhubModal: "doc" }, "", location.href);
+    modal.querySelector(".doc-modal-close")?.focus();
   }
   function hideDocModal() {
     const modal = document.getElementById("doc-modal");
@@ -989,9 +1015,12 @@
     const iframe = modal.querySelector(".doc-modal-iframe");
     iframe.src = "about:blank";
     modal.hidden = true;
-    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .backup-modal:not([hidden]), .storage-modal:not([hidden]), .yt-modal:not([hidden])")) {
-      document.body.classList.remove("modal-open");
+    delete modal.dataset.loading;
+    refreshModalOpenBodyClass();
+    if (docModalLastFocus && typeof docModalLastFocus.focus === "function") {
+      docModalLastFocus.focus();
     }
+    docModalLastFocus = null;
   }
   function closeDocModal() {
     const modal = document.getElementById("doc-modal");
@@ -1019,6 +1048,16 @@
     e.stopImmediatePropagation();
     closeDocModal();
   }, true);
+  // Focus trap — if focus escapes the open doc-modal (via Tab from outside
+  // the iframe's browsing context, or a stray programmatic focus), pull
+  // it back to the close button. focusin doesn't fire for focus changes
+  // inside a cross-origin iframe, so typing inside the iframe is safe.
+  document.addEventListener("focusin", (e) => {
+    const modal = document.getElementById("doc-modal");
+    if (!modal || modal.hidden) return;
+    if (modal.contains(e.target)) return;
+    modal.querySelector(".doc-modal-close")?.focus();
+  });
   (function wireDocOpenLink() {
     const openLink = document.querySelector("#doc-modal .doc-modal-open");
     if (!openLink) return;
@@ -1581,9 +1620,7 @@
     const modal = document.getElementById("backup-modal");
     if (!modal || modal.hidden) return;
     modal.hidden = true;
-    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .doc-modal:not([hidden])")) {
-      document.body.classList.remove("modal-open");
-    }
+    refreshModalOpenBodyClass();
   }
   async function copyBackupJson() {
     const modal = document.getElementById("backup-modal");
@@ -2517,9 +2554,7 @@
     const modal = document.getElementById("lesson-modal");
     if (!modal || modal.hidden) return;
     modal.hidden = true;
-    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .backup-modal:not([hidden]), .storage-modal:not([hidden]), .doc-modal:not([hidden])")) {
-      document.body.classList.remove("modal-open");
-    }
+    refreshModalOpenBodyClass();
     renderLessonsList(); // refresh status chips
   }
   {
@@ -2621,9 +2656,7 @@
     const modal = document.getElementById("storage-modal");
     if (!modal || modal.hidden) return;
     modal.hidden = true;
-    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .pin-picker-modal:not([hidden]), .backup-modal:not([hidden]), .doc-modal:not([hidden])")) {
-      document.body.classList.remove("modal-open");
-    }
+    refreshModalOpenBodyClass();
   }
   function renderStorageBody() {
     const bar     = document.getElementById("storage-usage-bar");
@@ -3086,9 +3119,7 @@
     const modal = document.getElementById("pin-picker-modal");
     if (!modal || modal.hidden) return;
     modal.hidden = true;
-    if (!document.querySelector(".video-modal:not([hidden]), .tool-modal:not([hidden]), .search-modal:not([hidden]), .doc-modal:not([hidden])")) {
-      document.body.classList.remove("modal-open");
-    }
+    refreshModalOpenBodyClass();
   }
   function commitPinPicker() {
     const modal = document.getElementById("pin-picker-modal");
@@ -3713,9 +3744,7 @@
     if (!modal || modal.hidden) return;
     modal.hidden = true;
     // Also clear body scroll lock unless another modal is open.
-    if (!document.querySelector(".video-modal:not([hidden]), .search-modal:not([hidden]), .doc-modal:not([hidden])")) {
-      document.body.classList.remove("modal-open");
-    }
+    refreshModalOpenBodyClass();
   }
 
   document.querySelectorAll("#tool-modal [data-close]").forEach((el) => {
@@ -3739,9 +3768,7 @@
     const modal = document.getElementById("youtube-modal");
     if (!modal || modal.hidden) return;
     modal.hidden = true;
-    if (!document.querySelector(".tool-modal:not([hidden]), .video-modal:not([hidden]), .doc-modal:not([hidden])")) {
-      document.body.classList.remove("modal-open");
-    }
+    refreshModalOpenBodyClass();
   }
   {
     // M9.7b — one handler per YouTube tile; every section-head now carries
