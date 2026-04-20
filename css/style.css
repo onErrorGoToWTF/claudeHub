@@ -360,14 +360,17 @@ html::after {
   position: fixed; inset: 0;
   pointer-events: none;
   z-index: 5;
+  /* M9.16e — gradient compressed toward the edges. Peak alphas at 0%
+     and 100% unchanged; falloff to transparent happens sooner so the
+     middle band is clear over a wider range. */
   background: linear-gradient(180deg,
     rgba(60, 54, 44, 0.24) 0%,
-    rgba(60, 54, 44, 0.14) 10%,
-    rgba(60, 54, 44, 0.06) 20%,
-    transparent 25%,
-    transparent 75%,
-    rgba(60, 54, 44, 0.06) 80%,
-    rgba(60, 54, 44, 0.14) 90%,
+    rgba(60, 54, 44, 0.14) 5%,
+    rgba(60, 54, 44, 0.06) 11%,
+    transparent 16%,
+    transparent 84%,
+    rgba(60, 54, 44, 0.06) 89%,
+    rgba(60, 54, 44, 0.14) 95%,
     rgba(60, 54, 44, 0.24) 100%
   );
 }

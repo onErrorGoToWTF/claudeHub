@@ -1,7 +1,7 @@
 {
-  "version": "0.7.1-dev.12",
-  "milestone": "M9.16d",
-  "milestoneTitle": "Phase M9.16d — Doc-modal blocked-state. Sites that refuse iframe embedding (X-Frame-Options / CSP frame-ancestors) now render a clear 'can't preview' card with a circle-slash icon and a prominent 'Open on {hostname}' button, instead of blank white. Detection probes iframe.contentDocument after load — cross-origin successful loads throw SecurityError (treated as loaded), empty same-origin bodies indicate blocked. Generation counter protects against race conditions between rapid open/close cycles.",
-  "deployedAt": "2026-04-20T05:27Z",
+  "version": "0.7.1-dev.13",
+  "milestone": "M9.16e",
+  "milestoneTitle": "Phase M9.16e — Vignette gradient more concentrated toward the edges. Peak alphas at 0% and 100% unchanged (0.24); the fade to transparent now finishes at 16% / 84% (was 25% / 75%), so the dark band lives in a tighter ~16% strip at each edge and the clear middle widens from 50% to 68% of viewport height.",
+  "deployedAt": "2026-04-20T05:40Z",
   "commitSha": ""
 }
