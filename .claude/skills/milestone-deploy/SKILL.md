@@ -16,6 +16,7 @@ Use this skill when you've just completed a milestone's code changes (e.g. M9.3)
 ## Steps
 
 1. **Verify the working tree is clean of unrelated changes.** Run `git status --short`. If files unrelated to this milestone are staged/modified, STOP and report to the user.
+1b. **If `js/app.js` is in the diff**, invoke `/tdz-audit` BEFORE bumping the version. TDZ regressions on the initial-render path silently abort the IIFE on first page load (dashboard non-functional until the user refreshes on a non-home route). This has shipped twice (M9.18b.1, M9.18b.3) before the audit existed — don't skip it. If `/tdz-audit` reports any violation, hoist the offending declaration and re-run the audit until it passes.
 2. **Update `data/version.json`** using the inputs:
    ```json
    {
