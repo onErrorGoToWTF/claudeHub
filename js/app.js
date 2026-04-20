@@ -348,6 +348,20 @@
     document.querySelectorAll('.projects-view[data-projects-view]').forEach((el) => {
       el.hidden = el.dataset.projectsView !== normalized;
     });
+    // M9.5b — show the Resume-draft banner whenever a user lands on the
+    // Finder with an existing draft that still has some description text.
+    // Start fresh button (wired in initFinder) hides it explicitly; the
+    // banner reappears on the next #projects/new visit if the draft
+    // persists. "No silent resurrection" — the user can always see that
+    // their earlier attempt was auto-loaded.
+    if (normalized === "new") {
+      const banner = document.getElementById("finder-resume-banner");
+      if (banner) {
+        const draft = getFinderDraft();
+        const hasContent = !!(draft && typeof draft.description === "string" && draft.description.trim());
+        banner.hidden = !hasContent;
+      }
+    }
   }
   function applyRoute() {
     const { chip, view } = parseRoute();
@@ -3207,8 +3221,35 @@
   }
   loadVersion();
 
-  // ---------- Finder wizard (Learn → Finder) ----------
+  // ---------- Finder wizard (Projects → + New project) ----------
   const FINDER_DRAFT_KEY = "clhub.v1.finderDraft";
+
+  // M9.5b — finderDraft shape: { description, path, updatedAt }.
+  // Migrated from the pre-M9.5b plain-string format (which stored just
+  // the textarea content). getFinderDraft() transparently upgrades old
+  // entries; putFinderDraft / patchFinderDraft always write JSON.
+  function getFinderDraft() {
+    try {
+      const raw = localStorage.getItem(FINDER_DRAFT_KEY);
+      if (!raw) return null;
+      if (raw.startsWith("{")) {
+        const obj = JSON.parse(raw);
+        if (obj && typeof obj === "object") return obj;
+        return null;
+      }
+      return { description: raw };                              // legacy migration
+    } catch { return null; }
+  }
+  function putFinderDraft(draft) {
+    try { localStorage.setItem(FINDER_DRAFT_KEY, JSON.stringify(draft || {})); } catch {}
+  }
+  function patchFinderDraft(patch) {
+    const current = getFinderDraft() || {};
+    putFinderDraft({ ...current, ...(patch || {}), updatedAt: new Date().toISOString() });
+  }
+  function clearFinderDraft() {
+    try { localStorage.removeItem(FINDER_DRAFT_KEY); } catch {}
+  }
 
   // ---------- Finder example projects (M5.3) ----------
   async function loadFinderExamples() {
@@ -3244,7 +3285,7 @@
     const input = document.getElementById("finder-input");
     if (input) {
       input.value = ex.goal || "";
-      try { localStorage.setItem(FINDER_DRAFT_KEY, input.value); } catch {}
+      patchFinderDraft({ description: input.value });
     }
     // Pre-check the example's capabilities and persist + re-render the grid.
     capsSelected.clear();
@@ -3270,14 +3311,14 @@
       status.dataset.kind = kind || "";
     }
 
-    // Restore any draft text the user typed last time.
-    try {
-      const saved = localStorage.getItem(FINDER_DRAFT_KEY);
-      if (saved) input.value = saved;
-    } catch {}
+    // M9.5b — restore draft (description + path). Object shape; legacy
+    // plain-string entries are auto-migrated by getFinderDraft. Path is
+    // applied once the save form's radio buttons are wired below.
+    const existingDraft = getFinderDraft();
+    if (existingDraft?.description) input.value = existingDraft.description;
 
     input.addEventListener("input", () => {
-      try { localStorage.setItem(FINDER_DRAFT_KEY, input.value); } catch {}
+      patchFinderDraft({ description: input.value });
       if (status.dataset.kind) setStatus("", "");
     });
 
@@ -3357,6 +3398,12 @@
           updateSaveCtaVisibility();
         });
       }
+      // M9.5b — persist path choice to draft on radio change.
+      saveForm.querySelectorAll('input[name="save-path-radio"]').forEach((r) => {
+        r.addEventListener("change", () => {
+          if (r.checked) patchFinderDraft({ path: r.value });
+        });
+      });
       saveForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const path = saveForm.querySelector('input[name="save-path-radio"]:checked')?.value || "easy";
@@ -3368,12 +3415,26 @@
         }
         saveStatus.textContent = "Saved. Opening Projects…";
         saveStatus.dataset.kind = "ok";
+        // M9.5b — wipe the draft on successful save. Otherwise the
+        // Resume banner lies on the next #projects/new visit, offering
+        // to restore work the user just finalized. Caps + textarea are
+        // cleared in the same setTimeout so the Finder is a clean slate
+        // if the user comes back immediately.
+        clearFinderDraft();
         setTimeout(() => {
           saveForm.hidden = true;
           saveTitle.value = "";
           saveStatus.textContent = "";
           saveStatus.dataset.kind = "";
           updateSaveCtaVisibility();
+          // Reset the Finder UI so revisiting #projects/new doesn't show
+          // the just-saved project's description + caps.
+          input.value = "";
+          capsSelected.clear();
+          try { localStorage.removeItem(FINDER_CAPS_KEY); } catch {}
+          if (typeof renderCapGrid      === "function") renderCapGrid();
+          if (typeof renderCapFilterBar === "function") renderCapFilterBar();
+          if (typeof renderStack        === "function") renderStack({ scroll: false });
           // M9.5a — after save, navigate to #projects so the user lands
           // on the saved list home state with their new project at top.
           navigateTo("projects", "");
@@ -3381,6 +3442,60 @@
         }, 650);
       });
     }
+
+    // ===== M9.5b — Finder full-page chrome =====
+    // Back link: returns to the saved list home state.
+    const finderBack = document.getElementById("finder-back");
+    if (finderBack) {
+      finderBack.addEventListener("click", () => {
+        navigateTo("projects", "");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+    // Step-chip scroll-to. Each chip maps to a section of the wizard.
+    // Sections hidden by progressive disclosure ignore the tap so the
+    // chip stays advisory rather than skipping state the user hasn't
+    // filled yet (capabilities before stack, etc.).
+    const STEP_SELECTORS = {
+      describe:     "#finder-input",
+      capabilities: ".cap-wrap",
+      path:         "#stack-output",
+      stack:        "#stack-output",
+      save:         "#stack-save",
+    };
+    document.querySelectorAll(".finder-step-chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const selector = STEP_SELECTORS[chip.dataset.finderStep];
+        if (!selector) return;
+        const el = document.querySelector(selector);
+        if (!el) return;
+        // Skip hidden targets — progressive disclosure gates later steps.
+        if (el.hasAttribute("hidden") || el.closest("[hidden]")) {
+          document.getElementById("finder-input")?.focus();
+          return;
+        }
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+    // Resume banner: "Start fresh" clears draft + caps + text, re-renders.
+    const resumeBanner = document.getElementById("finder-resume-banner");
+    const resumeFresh  = document.getElementById("finder-resume-fresh");
+    if (resumeFresh) {
+      resumeFresh.addEventListener("click", () => {
+        clearFinderDraft();
+        input.value = "";
+        capsSelected.clear();
+        try { localStorage.removeItem(FINDER_CAPS_KEY); } catch {}
+        if (typeof renderCapGrid      === "function") renderCapGrid();
+        if (typeof renderCapFilterBar === "function") renderCapFilterBar();
+        if (typeof renderStack        === "function") renderStack({ scroll: false });
+        if (resumeBanner) resumeBanner.hidden = true;
+      });
+    }
+    // The banner's visibility is driven by applyProjectsView (below) —
+    // every time the user lands on #projects/new with an existing draft,
+    // it re-shows. Input-change doesn't hide it; Start fresh or a manual
+    // navigation away does.
 
     // Seed My Projects pane with any previously-saved projects.
     renderProjects();

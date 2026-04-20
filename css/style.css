@@ -2602,6 +2602,123 @@ body.modal-open { overflow: hidden; }
 .finder-status[data-kind="ok"]   { color: #34d399; }
 .finder-status[data-kind="info"] { color: var(--text-2); }
 
+/* M9.5b — Finder full-page chrome: Back link, step indicator, Resume
+   banner, collapsed Start-from details. Examples + forks previously
+   sat between two .finder-divider rows; those are now wrapped inside
+   a <details> so the describe field dominates the first fold. Legacy
+   .finder-divider CSS retained below as dead code — the dividers
+   aren't rendered post-M9.5b but a cleanup pass will remove them. */
+.finder-back {
+  align-self: flex-start;
+  min-height: 36px;
+  padding: 6px 14px;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 0.18s var(--ease-premium),
+              border-color 0.18s var(--ease-premium);
+}
+.finder-back:hover { color: var(--text-1); border-color: var(--border-strong); }
+
+.finder-steps {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 0;
+  padding: 2px 0;
+}
+.finder-step-chip {
+  background: transparent;
+  border: 0;
+  padding: 6px 8px;
+  color: var(--text-3);
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 0.18s var(--ease-premium);
+}
+.finder-step-chip:hover { color: var(--text-1); }
+.finder-step-chip + .finder-step-chip::before {
+  content: "·";
+  color: var(--text-3);
+  margin-right: 6px;
+}
+
+.finder-resume-banner {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: var(--text-1);
+  font-size: 12.5px;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+}
+.finder-resume-banner[hidden] { display: none; }
+.finder-resume-fresh {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin-left: 4px;
+  color: var(--accent-solid);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.finder-resume-fresh:hover { color: var(--accent-hover); }
+
+.finder-startfrom {
+  transition: opacity 0.3s var(--ease-premium);
+}
+.finder-startfrom-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 4px;
+  list-style: none;
+  color: var(--text-2);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.finder-startfrom-summary::-webkit-details-marker { display: none; }
+.finder-startfrom-summary::before {
+  content: "▸";
+  color: var(--text-3);
+  font-size: 11px;
+  transition: transform 0.2s var(--ease-premium);
+}
+.finder-startfrom[open] .finder-startfrom-summary::before { transform: rotate(90deg); }
+.finder-startfrom-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 8px;
+}
+/* Fade once the user has typed a description. Hovering the details
+   or opening it restores full opacity so the affordance doesn't
+   disappear — it just steps aside. */
+.finder-wizard:has(.finder-input:not(:placeholder-shown)) .finder-startfrom:not(:hover):not([open]) {
+  opacity: 0.4;
+}
+
 .finder-divider {
   display: flex;
   align-items: center;

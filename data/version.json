@@ -1,7 +1,7 @@
 {
-  "version": "0.7.0-dev.6",
-  "milestone": "M9.5a",
-  "milestoneTitle": "Phase M9.5a — Projects: killed the Saved | + New project sub-pills and moved Projects to hash-based sub-routes. #projects shows the saved list (home state); #projects/new shows the Finder. Added parseRoute / navigateTo / applyRoute + popstate/hashchange listeners so the nav chips, the new Start-a-new-project CTA, the Dashboard Projects panel CTA, the Finder Save handler, and the Dashboard continue-rows all drive the same route pipeline. Deep links (/#projects/new) work; browser back button is honored. Two stale .subpill[data-projects-view=\"saved\"].click() callsites replaced with navigateTo(\"projects\", \"\"). Dashboard Learn CTA lost its now-defunct data-subpill=\"courses\" (M9.4a retired those pills). Full-page Finder chrome (Back link, step indicator, draft-resume banner) lands in M9.5b; this commit only moves the routing.",
-  "deployedAt": "2026-04-20T00:55Z",
+  "version": "0.7.0-dev.7",
+  "milestone": "M9.5b",
+  "milestoneTitle": "Phase M9.5b — Projects Finder as a full-page route. Added a \"← Back to saved\" link at top, a thin dot-separated step indicator (Describe · Capabilities · Path · Stack · Save) that scrolls to each section, and a Resume-draft banner surfaced whenever #projects/new is opened with an existing draft. \"Start fresh\" clears the draft + caps + textarea in one click. Collapsed the two finder-divider rows + examples + Mode B/C forks into a single <details> block (\"Start from an example or a different mode…\") that fades to 40% opacity once the user types in the describe field via :has(:not(:placeholder-shown)). clhub.v1.finderDraft schema extended from plain-string to { description, path?, updatedAt } — legacy strings auto-migrate on read. Save-form path radios persist their choice to the draft. On successful save, clearFinderDraft() + input + caps reset so the banner doesn't lie about stale work. Legacy .finder-divider CSS kept as dead code; cleanup pass after v0.7.0 stabilizes.",
+  "deployedAt": "2026-04-20T01:02Z",
   "commitSha": ""
 }

@@ -213,6 +213,20 @@
     </div>
 
     <div class="projects-view" data-projects-view="new" hidden>
+      <button class="finder-back" type="button" id="finder-back" aria-label="Back to saved projects">← Back to saved</button>
+
+      <nav class="finder-steps" aria-label="Finder progress">
+        <button class="finder-step-chip" type="button" data-finder-step="describe">Describe</button>
+        <button class="finder-step-chip" type="button" data-finder-step="capabilities">Capabilities</button>
+        <button class="finder-step-chip" type="button" data-finder-step="path">Path</button>
+        <button class="finder-step-chip" type="button" data-finder-step="stack">Stack</button>
+        <button class="finder-step-chip" type="button" data-finder-step="save">Save</button>
+      </nav>
+
+      <div class="finder-resume-banner" id="finder-resume-banner" hidden>
+        <span class="finder-resume-text">Resumed your draft. <button type="button" id="finder-resume-fresh" class="finder-resume-fresh">Start fresh</button></span>
+      </div>
+
       <div class="hub-intro">
         <div class="hub-eyebrow">New project</div>
         <h3 class="hub-title">Find the stack.</h3>
@@ -230,24 +244,24 @@
           </div>
         </div>
 
-        <div class="finder-divider"><span>or load an example project</span></div>
-
-        <div class="finder-examples" id="finder-examples"></div>
-
-        <div class="finder-divider"><span>or start from…</span></div>
-
-        <div class="finder-forks">
-          <button class="finder-fork glass" type="button" data-fork="tools">
-            <div class="finder-fork-eyebrow">Mode B</div>
-            <h4 class="finder-fork-title">Pick tools</h4>
-            <p class="finder-fork-body">You already know the tools. Multi-select from the catalog; get setup + how-to for that exact stack.</p>
-          </button>
-          <button class="finder-fork glass" type="button" data-fork="topic">
-            <div class="finder-fork-eyebrow">Mode C</div>
-            <h4 class="finder-fork-title">Browse by topic</h4>
-            <p class="finder-fork-body">Lessons, snippets, videos, and news filtered by a single topic — Skills, MCP, LoRA, and so on.</p>
-          </button>
-        </div>
+        <details class="finder-startfrom" id="finder-startfrom">
+          <summary class="finder-startfrom-summary">Start from an example or a different mode…</summary>
+          <div class="finder-startfrom-body">
+            <div class="finder-examples" id="finder-examples"></div>
+            <div class="finder-forks">
+              <button class="finder-fork glass" type="button" data-fork="tools">
+                <div class="finder-fork-eyebrow">Mode B</div>
+                <h4 class="finder-fork-title">Pick tools</h4>
+                <p class="finder-fork-body">You already know the tools. Multi-select from the catalog; get setup + how-to for that exact stack.</p>
+              </button>
+              <button class="finder-fork glass" type="button" data-fork="topic">
+                <div class="finder-fork-eyebrow">Mode C</div>
+                <h4 class="finder-fork-title">Browse by topic</h4>
+                <p class="finder-fork-body">Lessons, snippets, videos, and news filtered by a single topic — Skills, MCP, LoRA, and so on.</p>
+              </button>
+            </div>
+          </div>
+        </details>
 
         <div class="cap-wrap">
           <div class="cap-head">

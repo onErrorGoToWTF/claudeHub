@@ -255,7 +255,7 @@ All under the `clhub.v1.*` namespace. Bumped only on breaking shape changes.
 
 - `clhub.v1.projects`       — `{ [projectId]: SavedProject }`
 - `clhub.v1.lessonProgress` — `{ [slug]: { state: "new"|"in_progress"|"completed", quizPassedAt?: ISO8601 } }`
-- `clhub.v1.finderDraft`    — current in-flight Finder state (single slot)
+- `clhub.v1.finderDraft`    — current in-flight Finder state (single slot): `{ description: string, path?: "easy"|"best", updatedAt: ISO8601 }`. Pre-M9.5b entries stored just the description string; `getFinderDraft` migrates them transparently on read. A Resume banner appears at the top of `#projects/new` whenever `description.trim()` is non-empty; **Start fresh** clears the slot + the separate `finderCaps` store.
 - `clhub.v1.finderCaps`     — last capability-box selections
 - `clhub.v1.mastery`        — `{ [key]: ISO8601 }` where `key` is `lesson:<slug>`, `course:<slug>`, or `tool:<toolId>` *(M9.4b — unified "I've got this" signal; swipe-left on a Learn card sets it + unpins; Tools catalog renders ●ᴹ badge for mastered tools in M9.7)*
 - `clhub.v1.ui`             — misc UI prefs (selected filters, active sort)
