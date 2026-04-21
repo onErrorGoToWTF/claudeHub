@@ -88,7 +88,7 @@ export function ProjectNewOffice() {
   )
 
   const canAdvance =
-    step === 0 ? title.trim().length > 2 :
+    step === 0 ? title.trim().length >= 1 :
     step === 1 ? summary.trim().length > 8 :
     true
 

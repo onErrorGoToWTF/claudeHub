@@ -42,7 +42,7 @@ function ProjectNewBuild() {
   )
 
   const canAdvance =
-    step === 0 ? title.trim().length > 2 :
+    step === 0 ? title.trim().length >= 1 :
     step === 1 ? summary.trim().length > 8 :
     step === 2 ? picked.length > 0 :
     true
