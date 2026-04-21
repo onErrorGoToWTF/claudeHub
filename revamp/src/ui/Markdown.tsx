@@ -87,10 +87,18 @@ export function Markdown({ text }: { text: string }) {
     if (line.startsWith('> ')) {
       const quoteLines: string[] = []
       while (i < lines.length && lines[i].startsWith('> ')) { quoteLines.push(lines[i].slice(2)); i++ }
+      // Swallow the following attribution line (starts with em-dash) and
+      // fold it into the title attribute — no separate rendered line.
+      while (i < lines.length && !lines[i].trim()) i++
+      let attribution: string | undefined
+      if (i < lines.length && /^[——]/.test(lines[i].trim())) {
+        attribution = lines[i].trim().replace(/^[——]\s*/, '')
+        i++
+      }
       out.push(
-        <blockquote key={k++}>
-          {quoteLines.map((t, j) => <p key={j}>{inline(t)}</p>)}
-        </blockquote>
+        <p key={k++} className="md-cite" title={attribution}>
+          {quoteLines.map((t, j) => <span key={j}>{inline(t)}{j < quoteLines.length - 1 ? ' ' : ''}</span>)}
+        </p>
       )
       continue
     }

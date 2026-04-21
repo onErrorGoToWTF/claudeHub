@@ -24,17 +24,19 @@
   border-radius: var(--radius-sm);
 }
 
-.article :global(.md) blockquote {
-  margin: var(--space-4) 0;
-  padding: var(--space-3) var(--space-5);
-  background: var(--bg-sunken);
-  border-left: 3px solid var(--accent-border);
-  border-radius: var(--radius-sm);
+/* Discreet citation — italic quiet text; hover (desktop) surfaces source */
+.article :global(.md) :global(.md-cite) {
+  margin: var(--space-3) 0;
+  font-style: italic;
   color: var(--ink-2);
-  font-style: normal;
+  font-size: 0.96em;
+  cursor: help;
+  border-bottom: 1px dotted transparent;
+  transition: border-color 150ms ease;
 }
-.article :global(.md) blockquote p { margin-bottom: var(--space-2); color: var(--ink-2); }
-.article :global(.md) blockquote p:last-child { margin-bottom: 0; }
+.article :global(.md) :global(.md-cite):hover {
+  border-bottom-color: var(--hair-strong);
+}
 
 .article :global(.md) a {
   color: var(--accent-ink);
