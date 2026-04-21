@@ -27,6 +27,7 @@ Running ledger. Rehydrate from this after context compaction.
 ## Remaining work (prioritized)
 
 ### Active (next up)
+- [ ] **Dark mode** — match Anthropic's dark palette (Claude app style). Add a `data-theme="dark"` variant in `tokens.css`, flip `--bg-*` / `--ink-*` / `--hair` sets, verify glass + code-block surfaces still work, respect `prefers-color-scheme` initially then add a user toggle.
 - [ ] Extend Learn — more tracks + topics + authored lessons (currently 4 tracks, 9 topics, 1 polished lesson, 1 polished quiz)
 - [ ] Content tagging for audience — `audience: 'dev' | 'beginner' | 'both'` on Learn tracks, Library items, topics; default filter per surface
 - [ ] Projects intake variant for Lisa — workflow-oriented flow (coordination / doc / comms focus) vs. the current build-oriented one
