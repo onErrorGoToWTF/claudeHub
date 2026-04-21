@@ -447,6 +447,21 @@ erDiagram
     </section>
 
     <!-- ===================================================== -->
+    <!-- SIGNUP_ALLOWLIST                                      -->
+    <!-- ===================================================== -->
+    <section class="tbl" id="t-signup_allowlist" style="box-shadow: inset 4px 0 0 #c44a4a;">
+      <header class="tbl-head"><span class="tbl-name">signup_allowlist</span><span class="tbl-badge">auth gate</span></header>
+      <div class="tbl-body">
+        <table class="cols">
+          <tr><td class="col-name">email</td><td class="col-type">citext</td><td class="col-flags"><span class="pill pk">PK</span> permitted email</td></tr>
+          <tr><td class="col-name">added_at</td><td class="col-type">timestamptz</td><td class="col-flags"></td></tr>
+          <tr><td class="col-name">note</td><td class="col-type">text</td><td class="col-flags">who they are / why</td></tr>
+        </table>
+        <div class="note">Service-role only (no public RLS). A BEFORE INSERT trigger on <code>auth.users</code> rejects any signup whose email isn't in this table. Hardcode permitted emails via the Supabase dashboard.</div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
     <!-- FRIENDSHIPS (scaffold)                                -->
     <!-- ===================================================== -->
     <section class="tbl scope-scaffold" id="t-friendships">

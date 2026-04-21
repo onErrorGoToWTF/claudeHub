@@ -269,6 +269,48 @@ create policy friendships_involved_all        on public.friendships
   with check (user_id = auth.uid());
 
 -- =====================================================================
+-- 4b. SIGNUP ALLOWLIST
+-- Gate who can create an account. Separate concern from MFA (MFA gates
+-- ongoing access; this gates the door). Hardcode permitted emails by
+-- inserting rows into signup_allowlist from the Supabase dashboard.
+-- =====================================================================
+
+create table if not exists public.signup_allowlist (
+  email     citext primary key,
+  added_at  timestamptz not null default now(),
+  note      text  -- optional: who they are, why they're in
+);
+
+-- Not RLS-protected for writes — only the service role (dashboard / CLI)
+-- ever touches this table. We still enable RLS so the anon + authenticated
+-- roles get zero access by default.
+alter table public.signup_allowlist enable row level security;
+-- (no policies — fully private to service_role)
+
+create or replace function public.enforce_signup_allowlist()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if not exists (
+    select 1 from public.signup_allowlist where email = new.email
+  ) then
+    raise exception 'signup not permitted for %', new.email
+      using errcode = 'insufficient_privilege',
+            hint    = 'ask the owner to add this email to signup_allowlist';
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists enforce_signup_allowlist on auth.users;
+create trigger enforce_signup_allowlist
+  before insert on auth.users
+  for each row execute function public.enforce_signup_allowlist();
+
+-- =====================================================================
 -- 5. AUTH TRIGGER — seed a profile row on signup
 -- Without this, a user exists in auth.users but has no user_profile row,
 -- so pathway preference would fall back to 'all' every time.
