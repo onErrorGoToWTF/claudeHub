@@ -45,6 +45,93 @@
 }
 .article :global(.md) a:hover { text-decoration-color: var(--accent-solid); }
 
+/* ---------- fenced code block — dark copyable window ---------- */
+.article :global(.md) :global(.md-code) {
+  margin: var(--space-4) 0;
+  background: #13172a;
+  color: #e7eaf3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  user-select: text;
+}
+.article :global(.md) :global(.md-code-head) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px 6px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.article :global(.md) :global(.md-code-lang) {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(231, 234, 243, 0.55);
+  text-transform: lowercase;
+}
+.article :global(.md) :global(.md-code-copy) {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(231, 234, 243, 0.7);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+.article :global(.md) :global(.md-code-copy):hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.09);
+}
+.article :global(.md) pre {
+  margin: 0;
+  padding: var(--space-4) var(--space-5);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.55;
+  overflow-x: auto;
+  background: transparent;
+}
+.article :global(.md) pre code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  color: #e7eaf3;
+  white-space: pre;
+}
+
+/* hljs tokens — muted dark-theme palette */
+.article :global(.md) :global(.hljs-keyword),
+.article :global(.md) :global(.hljs-built_in),
+.article :global(.md) :global(.hljs-meta)            { color: #c792ea; }
+.article :global(.md) :global(.hljs-string),
+.article :global(.md) :global(.hljs-regexp)          { color: #c3e88d; }
+.article :global(.md) :global(.hljs-number),
+.article :global(.md) :global(.hljs-literal)         { color: #f78c6c; }
+.article :global(.md) :global(.hljs-comment)         { color: rgba(231, 234, 243, 0.38); font-style: italic; }
+.article :global(.md) :global(.hljs-function),
+.article :global(.md) :global(.hljs-title),
+.article :global(.md) :global(.hljs-title.function_) { color: #82aaff; }
+.article :global(.md) :global(.hljs-attr),
+.article :global(.md) :global(.hljs-attribute),
+.article :global(.md) :global(.hljs-property)        { color: #ffcb6b; }
+.article :global(.md) :global(.hljs-type),
+.article :global(.md) :global(.hljs-title.class_)    { color: #89ddff; }
+.article :global(.md) :global(.hljs-tag),
+.article :global(.md) :global(.hljs-name),
+.article :global(.md) :global(.hljs-selector-tag)    { color: #f07178; }
+.article :global(.md) :global(.hljs-symbol),
+.article :global(.md) :global(.hljs-bullet),
+.article :global(.md) :global(.hljs-link)            { color: #c792ea; }
+.article :global(.md) :global(.hljs-variable),
+.article :global(.md) :global(.hljs-params)          { color: #e7eaf3; }
+
 .footer {
   display: flex;
   gap: var(--space-3);

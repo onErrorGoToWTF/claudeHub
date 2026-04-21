@@ -4,7 +4,32 @@
  *   - bullets, **bold**, inline `code`, and line breaks.
  * Enough for the v1 lesson view; swap for react-markdown if richer syntax appears.
  */
-import type { JSX } from 'react'
+import { useMemo, useState, type JSX } from 'react'
+import { Check, Copy } from 'lucide-react'
+import hljs from 'highlight.js/lib/core'
+import bash       from 'highlight.js/lib/languages/bash'
+import javascript from 'highlight.js/lib/languages/javascript'
+import typescript from 'highlight.js/lib/languages/typescript'
+import json       from 'highlight.js/lib/languages/json'
+import css        from 'highlight.js/lib/languages/css'
+import xml        from 'highlight.js/lib/languages/xml'
+import python     from 'highlight.js/lib/languages/python'
+
+hljs.registerLanguage('bash', bash)
+hljs.registerLanguage('sh', bash)
+hljs.registerLanguage('shell', bash)
+hljs.registerLanguage('javascript', javascript)
+hljs.registerLanguage('js', javascript)
+hljs.registerLanguage('typescript', typescript)
+hljs.registerLanguage('ts', typescript)
+hljs.registerLanguage('tsx', typescript)
+hljs.registerLanguage('jsx', javascript)
+hljs.registerLanguage('json', json)
+hljs.registerLanguage('css', css)
+hljs.registerLanguage('html', xml)
+hljs.registerLanguage('xml', xml)
+hljs.registerLanguage('python', python)
+hljs.registerLanguage('py', python)
 
 function inline(text: string): (string | JSX.Element)[] {
   const parts: (string | JSX.Element)[] = []
@@ -40,6 +65,16 @@ export function Markdown({ text }: { text: string }) {
   while (i < lines.length) {
     const line = lines[i]
     if (!line.trim()) { i++; continue }
+    // Fenced code block — preserve whitespace verbatim
+    if (line.startsWith('```')) {
+      const lang = line.slice(3).trim() || undefined
+      i++
+      const codeLines: string[] = []
+      while (i < lines.length && !lines[i].startsWith('```')) { codeLines.push(lines[i]); i++ }
+      if (i < lines.length) i++ // skip closing fence
+      out.push(<CodeBlock key={k++} lang={lang} code={codeLines.join('\n')} />)
+      continue
+    }
     if (line.startsWith('### ')) { out.push(<h3 key={k++}>{inline(line.slice(4))}</h3>); i++; continue }
     if (line.startsWith('## '))  { out.push(<h2 key={k++}>{inline(line.slice(3))}</h2>); i++; continue }
     if (line.startsWith('# '))   { out.push(<h1 key={k++}>{inline(line.slice(2))}</h1>); i++; continue }
@@ -66,4 +101,39 @@ export function Markdown({ text }: { text: string }) {
     out.push(<p key={k++}>{inline(para.join(' '))}</p>)
   }
   return <div className="md">{out}</div>
+}
+
+function CodeBlock({ code, lang }: { code: string; lang?: string }) {
+  const [copied, setCopied] = useState(false)
+
+  const html = useMemo(() => {
+    if (lang && hljs.getLanguage(lang)) {
+      try { return hljs.highlight(code, { language: lang, ignoreIllegals: true }).value } catch { /* fall through */ }
+    }
+    return hljs.highlightAuto(code).value
+  }, [code, lang])
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(code)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1400)
+    } catch {
+      // Some contexts block clipboard; silent.
+    }
+  }
+  return (
+    <div className="md-code">
+      <div className="md-code-head">
+        <span className="md-code-lang">{lang ?? 'code'}</span>
+        <button type="button" className="md-code-copy" onClick={copy} aria-label="Copy code">
+          {copied ? <Check size={13} strokeWidth={2.2} /> : <Copy size={13} strokeWidth={1.8} />}
+          <span>{copied ? 'Copied' : 'Copy'}</span>
+        </button>
+      </div>
+      <pre data-lang={lang}>
+        <code className={`hljs language-${lang ?? 'plain'}`} dangerouslySetInnerHTML={{ __html: html }} />
+      </pre>
+    </div>
+  )
 }
