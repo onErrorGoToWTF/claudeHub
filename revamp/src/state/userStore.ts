@@ -34,6 +34,10 @@ export interface UserProfile {
 }
 
 interface UserState extends UserProfile {
+  /** Set after the user skips or finishes onboarding. First-run guard
+   *  in App.tsx uses this to decide whether to auto-redirect to the
+   *  onboarding flow. Users can always revisit /onboarding manually. */
+  onboardingSeen:   boolean
   setPathway:       (p: UserPathway)        => void
   setHandle:        (h: string | undefined) => void
   setWorkStyles:    (s: WorkStyle[])        => void
@@ -42,17 +46,19 @@ interface UserState extends UserProfile {
   setKnownTopicIds: (ids: string[])         => void
   /** Mark/unmark a single topic as known. */
   toggleKnownTopic: (topicId: string)       => void
+  markOnboardingSeen: ()                    => void
   /** Wipe every optional field back to defaults. Handy for "reset profile". */
   resetProfile:     ()                      => void
 }
 
-const DEFAULTS: UserProfile = {
+const DEFAULTS: UserProfile & { onboardingSeen: boolean } = {
   pathway: 'all',
   handle: undefined,
   workStyles: [],
   devices: [],
   yearsCoding: undefined,
   knownTopicIds: [],
+  onboardingSeen: false,
 }
 
 export const useUserStore = create<UserState>()(
@@ -71,6 +77,7 @@ export const useUserStore = create<UserState>()(
         else curr.add(topicId)
         return { knownTopicIds: [...curr] }
       }),
+      markOnboardingSeen: () => set({ onboardingSeen: true }),
       resetProfile: () => set({ ...DEFAULTS }),
     }),
     {

@@ -11,6 +11,9 @@ Running ledger. Rehydrate from this after context compaction.
 
 ## Shipped (most recent on top)
 
+- **Onboarding flow** at `/onboarding` — first-visit redirect (skippable); 6-step optional profile setup (welcome → pathway → work styles → devices → years coding [dev only] → known topics → done). Dismissed flag in userStore persists the "don't re-redirect" decision.
+- **Extended user profile** — `UserProfile` with `handle`, `workStyles[]`, `devices[]`, `yearsCoding`, `knownTopicIds[]` in zustand (localStorage-persisted, version 2); matching columns drafted in Supabase schema (`user_profile`). Tag-based vocab for work styles; permissive text[] on DB side so new values don't need a migration.
+- **Library filter popover + topic mastery breakdown** — collapsed facets + sort into a Filter button with active-filter clear chips; Khan-style "N/M lessons · Q/R quizzes mastered" line under topic mastery bar.
 - **Per-project status-change log** — `projectEvents` Dexie table (v4), auto-logged on `repo.putProject` diff; History section on ProjectDetail with from→to chips + relative timestamps.
 - **Global search** — Ctrl/Cmd+K modal indexing tracks, topics, lessons, projects, library (pathway-filtered); keyboard nav + Esc close.
 - **Cross-surface activity feed** on Dashboard — last 8 events across Learn + Projects + Library.
@@ -29,7 +32,8 @@ Running ledger. Rehydrate from this after context compaction.
 - [ ] Extend Learn — more tracks + topics + authored lessons (currently 4 tracks, 9 topics, 1 polished lesson, 1 polished quiz). Authoring is external via Claude Code skills + manual commit to `src/db/seed*`.
 
 ### Planned (later)
-- [ ] **DB migration — Supabase (Postgres + auth + RLS + TOTP MFA)**. ~1 month out. Schema drafted in `revamp/docs/supabase-schema.sql` + visualized in `revamp/docs/supabase-schema.html`. Fresh-start model: no IndexedDB → Supabase import, every user starts clean (users have been warned). Multi-user from day one (~5 people), RLS-isolated; friend-view scaffolding (visibility column + friendships table) is in the schema but deferred. Decisions locked: handle + citext for public URLs, UUID for new user-minted IDs (legacy `p.xxx` still accepted), RESTRICT cascades on content tables, TOTP MFA with 7-day grace.
+- [ ] Settings / profile edit page — today the profile is set once via `/onboarding`. Users will want a surface to revisit handle / pathway / work styles / devices / known topics without re-running the full flow. Small; likely `/settings` reusing the same form chunks.
+- [ ] **DB migration — Supabase (Postgres + auth + RLS + TOTP MFA)**. ~1 month out. Schema drafted in `revamp/docs/supabase-schema.sql` + visualized in `revamp/docs/supabase-schema.html`. Fresh-start model: no IndexedDB → Supabase import, every user starts clean (users have been warned). Multi-user from day one (~5 people), RLS-isolated; friend-view scaffolding (visibility column + friendships table) is in the schema but deferred. Signup gating via `signup_allowlist` table + BEFORE INSERT trigger on `auth.users`. Decisions locked: handle + citext for public URLs, UUID for new user-minted IDs (legacy `p.xxx` still accepted), RESTRICT cascades on content tables, TOTP MFA with 7-day grace.
 - [ ] Authoring flow in-app — create lessons / quizzes / library notes (today authored externally). Likely post-DB.
 - [ ] Project bootstrapper — scaffold files + run init commands from a project's stack pick.
 - [ ] Resume / public project-detail pages (the "site IS the resume" north star).
