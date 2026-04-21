@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
 import { LayoutDashboard, BookOpen, FolderGit2, Library as LibraryIcon } from 'lucide-react'
+import { ThemeToggle } from '../ui/ThemeToggle'
 import styles from './AppShell.module.css'
 
 type NavItem = { to: string; label: string; Icon: typeof LayoutDashboard; end?: boolean }
@@ -28,6 +29,9 @@ export function AppShell({ children }: { children: ReactNode }) {
             </NavLink>
           ))}
         </nav>
+        <div className={styles.topActions}>
+          <ThemeToggle />
+        </div>
       </header>
 
       <main className={styles.main}>{children}</main>

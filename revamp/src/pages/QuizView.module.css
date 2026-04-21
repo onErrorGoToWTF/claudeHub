@@ -79,7 +79,7 @@
   align-items: center;
   justify-content: center;
   width: 22px; height: 22px;
-  background: #ffffff;
+  background: var(--bg-card);
   border: 1.5px solid var(--hair-strong);
   border-radius: 50%;
   color: transparent;

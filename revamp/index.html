@@ -4,8 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="color-scheme" content="light" />
-    <meta name="theme-color" content="#ece9e2" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ece9e2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1c1a17" media="(prefers-color-scheme: dark)" />
+    <script>
+      // No-flash theme init: resolve stored or system preference before paint.
+      (function () {
+        try {
+          var stored = localStorage.getItem('ai-theme'); // 'light' | 'dark' | null
+          var mq = window.matchMedia('(prefers-color-scheme: dark)');
+          var theme = stored || (mq.matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <title>aiUniversity</title>

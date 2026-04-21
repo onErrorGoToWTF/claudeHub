@@ -56,7 +56,7 @@
 .btnPrimary:hover { background: var(--accent-hover); box-shadow: 0 0 0 1px var(--accent-border), 0 10px 26px -8px var(--accent-glow); }
 
 .btnGhost { background: transparent; border-color: transparent; color: var(--ink-2); }
-.btnGhost:hover { background: rgba(20,19,18,0.04); color: var(--ink-1); }
+.btnGhost:hover { background: var(--hover-tint); color: var(--ink-1); }
 
 .btnDanger {
   background: var(--danger-solid);
@@ -241,3 +241,23 @@
   border: 1px dashed var(--hair-strong);
   border-radius: var(--radius-md);
 }
+
+/* ---------- theme toggle ---------- */
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  color: var(--ink-2);
+  border: 1px solid transparent;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color var(--dur-2) var(--ease-premium),
+    background var(--dur-2) var(--ease-premium),
+    border-color var(--dur-2) var(--ease-premium);
+}
+.themeToggle:hover { color: var(--ink-1); background: var(--accent-surface); border-color: var(--accent-border); }
+.themeToggle:focus-visible { box-shadow: 0 0 0 3px var(--focus-ring); }

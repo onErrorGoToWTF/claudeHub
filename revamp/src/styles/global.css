@@ -39,8 +39,8 @@ body::before {
   position: fixed; inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 900px 600px at 8% 0%,  rgba(80, 72, 58, 0.08), transparent 60%),
-    radial-gradient(ellipse 900px 600px at 100% 100%, rgba(80, 72, 58, 0.10), transparent 60%);
+    radial-gradient(ellipse 900px 600px at 8% 0%,  var(--wash-color-1), transparent 60%),
+    radial-gradient(ellipse 900px 600px at 100% 100%, var(--wash-color-2), transparent 60%);
   z-index: 0;
 }
 
@@ -50,8 +50,8 @@ body::after {
   position: fixed; inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(to right,  rgba(20, 19, 18, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(20, 19, 18, 0.035) 1px, transparent 1px);
+    linear-gradient(to right,  var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 28px 28px;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 90%);
   -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 90%);
@@ -139,7 +139,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
   -webkit-backdrop-filter: blur(18px) saturate(1.2);
           backdrop-filter: blur(18px) saturate(1.2);
   border: 1px solid var(--hair);
-  box-shadow: var(--shadow-2), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-2), inset 0 1px 0 var(--glass-highlight);
 }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass { background: var(--glass-fallback); }

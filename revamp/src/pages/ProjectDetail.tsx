@@ -159,7 +159,7 @@ export function ProjectDetail() {
               ) : (
                 <span style={{
                   width: 22, height: 22, borderRadius: '50%',
-                  background: '#fff', border: '1.5px solid var(--hair-strong)',
+                  background: 'var(--bg-card)', border: '1.5px solid var(--hair-strong)',
                 }} />
               )}
               onClick={() => toggle(item.id)}

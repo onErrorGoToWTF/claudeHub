@@ -13,7 +13,7 @@
   align-items: center;
   gap: var(--space-6);
   padding: var(--space-4) var(--space-6);
-  background: linear-gradient(180deg, rgba(236, 233, 226, 0.92), rgba(236, 233, 226, 0.76));
+  background: linear-gradient(180deg, var(--topbar-bg-top), var(--topbar-bg-bottom));
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
           backdrop-filter: blur(16px) saturate(1.2);
   border-bottom: 1px solid var(--hair);
@@ -39,6 +39,16 @@
 /* ---------- desktop nav ---------- */
 .topnav { display: none; gap: 2px; margin-left: auto; }
 
+.topActions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+@media (min-width: 720px) {
+  .topActions { margin-left: var(--space-3); }
+}
+
 .topLink {
   display: inline-flex;
   align-items: center;
@@ -58,7 +68,7 @@
 .topLink:focus-visible {
   box-shadow: 0 0 0 3px var(--focus-ring);
 }
-.topLink:hover { color: var(--ink-1); background: rgba(20, 19, 18, 0.04); }
+.topLink:hover { color: var(--ink-1); background: var(--hover-tint); }
 .topLink:active,
 .topLink:focus,
 .topLink:focus-visible { background: transparent; box-shadow: none; }
