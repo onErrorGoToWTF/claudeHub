@@ -1,0 +1,160 @@
+/* =========================================================
+   Global reset + typography + layout primitives
+   ========================================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Kill iOS Safari's default tap-highlight on every element */
+* { -webkit-tap-highlight-color: transparent; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--ink-1);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-base);
+  letter-spacing: var(--tracking-tight);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* App-wide: no text selection by default. Opt IN via `.article` / .selectable. */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Long-form reading surfaces opt back in */
+.article, .article *, .selectable, .selectable * {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
+/* ambient warm greige wash — subtle diagonal bias */
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 900px 600px at 8% 0%,  rgba(80, 72, 58, 0.08), transparent 60%),
+    radial-gradient(ellipse 900px 600px at 100% 100%, rgba(80, 72, 58, 0.10), transparent 60%);
+  z-index: 0;
+}
+
+/* Faint blueprint grid overlay — Anthropic research-preview vibe */
+body::after {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right,  rgba(20, 19, 18, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 19, 18, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 90%);
+  z-index: 0;
+}
+
+#root { position: relative; z-index: 1; min-height: 100%; }
+
+h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 600; letter-spacing: var(--tracking-tight); }
+h1 { font-size: var(--text-3xl); line-height: var(--leading-tight); }
+h2 { font-size: var(--text-2xl); line-height: var(--leading-tight); }
+h3 { font-size: var(--text-lg); }
+
+/* Display utility — reserved for hero page titles (sans, tight tracking) */
+.serif-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-size: 38px;
+  line-height: 1.08;
+}
+@media (min-width: 720px) { .serif-display { font-size: 46px; } }
+p  { margin: 0; color: var(--ink-2); line-height: var(--leading-loose); }
+
+a { color: var(--accent-ink); text-decoration: none; }
+a:hover { text-decoration: none; }
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+input, textarea, select {
+  font: inherit;
+  color: var(--ink-1);
+  background: var(--bg-card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  transition: border-color var(--dur-2) var(--ease-premium),
+              box-shadow var(--dur-2) var(--ease-premium);
+}
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: none;
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+::selection { background: var(--accent-surface); color: var(--accent-ink); }
+
+/* Tappable surfaces: no text selection by default (iOS long-press loupe) */
+[data-tappable="true"], .tappable {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Focus ring utility */
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+
+/* Page container */
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) calc(var(--space-16) + 80px);
+}
+@media (min-width: 768px) {
+  .page { padding: var(--space-10) var(--space-8) var(--space-16); }
+}
+
+/* Glass primitive */
+.glass {
+  background: linear-gradient(180deg, var(--glass-top), var(--glass-bottom));
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+          backdrop-filter: blur(18px) saturate(1.2);
+  border: 1px solid var(--hair);
+  box-shadow: var(--shadow-2), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass { background: var(--glass-fallback); }
+}
+
+/* Card primitive */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+}
+
+/* Scrollbar (subtle) */
+* { scrollbar-width: thin; scrollbar-color: var(--hair-strong) transparent; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: var(--hair-strong); border-radius: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
