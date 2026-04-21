@@ -14,6 +14,7 @@
 -- =====================================================================
 
 create extension if not exists pgcrypto;
+create extension if not exists citext;
 
 -- =====================================================================
 -- 1. USER PROFILE
@@ -23,10 +24,15 @@ create extension if not exists pgcrypto;
 
 create table if not exists public.user_profile (
   user_id    uuid primary key references auth.users(id) on delete cascade,
+  -- handle: mutable display name. Used in friend-view URLs (/u/<handle>).
+  -- Keeps auth.users.id out of URLs so you can rename yourself without
+  -- breaking any relationship (all FKs are on user_id, never handle).
+  handle     citext unique,
   pathway    text not null default 'all' check (pathway in ('all','student','office','dev')),
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
+-- Required for the citext type above. Cheap extension, no downside.
 
 -- =====================================================================
 -- 2. SHARED CONTENT
@@ -44,7 +50,9 @@ create table if not exists public.tracks (
 
 create table if not exists public.topics (
   id               text primary key,
-  track_id         text not null references public.tracks(id) on delete cascade,
+  -- RESTRICT, not CASCADE: deleting a track should NOT silently nuke every
+  -- user's progress + mastery rows. Content authors must unlink topics first.
+  track_id         text not null references public.tracks(id) on delete restrict,
   title            text not null,
   summary          text not null,
   "order"          int  not null,
@@ -55,7 +63,7 @@ create index if not exists topics_track_id_idx on public.topics(track_id);
 
 create table if not exists public.lessons (
   id       text primary key,
-  topic_id text not null references public.topics(id) on delete cascade,
+  topic_id text not null references public.topics(id) on delete restrict,
   title    text not null,
   summary  text not null,
   minutes  int  not null default 0,
@@ -118,8 +126,17 @@ create table if not exists public.user_mastery (
 );
 
 create table if not exists public.user_projects (
-  id              text primary key, -- your existing 'p.xxx' scheme
+  -- ID strategy: keep TEXT so existing 'p.xxx' IDs from IndexedDB migrate
+  -- as-is, but NEW project IDs minted by the app should be UUIDs
+  -- (gen_random_uuid()::text) to avoid millisecond-collision risk once
+  -- two users mint projects at the same moment.
+  id              text primary key,
   user_id         uuid not null references auth.users(id) on delete cascade,
+  -- visibility: private today, 'friends' / 'public' once friend-view lands.
+  -- Carried now so RLS policies + future friendship joins don't need a
+  -- column migration on a populated table.
+  visibility      text not null default 'private'
+    check (visibility in ('private','friends','public')),
   title           text not null,
   summary         text not null,
   status          text not null default 'backlog'
@@ -173,6 +190,24 @@ create table if not exists public.user_search_misses (
 );
 
 -- =====================================================================
+-- 3b. FRIENDSHIPS (scaffolded for friend-view, unused in v1)
+-- Symmetric relationship: we store both (A -> B) and (B -> A) rows on
+-- accept, so every "are these two connected?" query is a single point
+-- read by PK. Status lifecycle: 'pending' -> 'accepted' | 'blocked'.
+-- =====================================================================
+
+create table if not exists public.friendships (
+  user_id    uuid not null references auth.users(id) on delete cascade,
+  friend_id  uuid not null references auth.users(id) on delete cascade,
+  status     text not null default 'pending'
+    check (status in ('pending','accepted','blocked')),
+  created_at timestamptz not null default now(),
+  primary key (user_id, friend_id),
+  check (user_id <> friend_id)
+);
+create index if not exists friendships_friend_idx on public.friendships(friend_id);
+
+-- =====================================================================
 -- 4. ROW-LEVEL SECURITY
 -- Turn RLS on for every table, then write policies.
 -- Shared content = read-only-to-everyone; no public write policies.
@@ -191,6 +226,7 @@ alter table public.user_projects        enable row level security;
 alter table public.user_project_events  enable row level security;
 alter table public.user_library_state   enable row level security;
 alter table public.user_search_misses   enable row level security;
+alter table public.friendships          enable row level security;
 
 -- ---- shared content: anyone signed in can read, nobody can write via RLS
 create policy tracks_read          on public.tracks          for select using (true);
@@ -216,6 +252,9 @@ create policy user_library_state_owner_all   on public.user_library_state
   for all using (user_id = auth.uid()) with check (user_id = auth.uid());
 create policy user_search_misses_owner_all   on public.user_search_misses
   for all using (user_id = auth.uid()) with check (user_id = auth.uid());
+create policy friendships_involved_all        on public.friendships
+  for all using (user_id = auth.uid() or friend_id = auth.uid())
+  with check (user_id = auth.uid());
 
 -- =====================================================================
 -- 5. AUTH TRIGGER — seed a profile row on signup
