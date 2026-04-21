@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { BookOpen, FileText, Film, FlaskConical, Pin, PinOff, Search, Wrench } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { LibraryItem, LibraryKind } from '../db/types'
@@ -19,6 +20,7 @@ const FACETS: { id: Facet; label: string; Icon?: typeof Wrench }[] = [
 type Sort = 'newest' | 'alpha' | 'pinned'
 
 export function Library() {
+  const nav = useNavigate()
   const [items, setItems] = useState<LibraryItem[]>([])
   const [facet, setFacet] = useState<Facet>('all')
   const [sort, setSort] = useState<Sort>('pinned')
@@ -115,12 +117,7 @@ export function Library() {
               title={
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
                   <KindDot kind={i.kind} />
-                  {i.url ? (
-                    <a href={i.url} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
-                       style={{ color: 'inherit', textDecoration: 'none' }}>
-                      {i.title}
-                    </a>
-                  ) : i.title}
+                  {i.title}
                 </span>
               }
               sub={
@@ -146,7 +143,7 @@ export function Library() {
                 </button>
               }
               onClick={() => {
-                if (i.url) window.open(i.url, '_blank', 'noreferrer')
+                if (i.body) nav(`/library/${i.id}`)
               }}
             />
           ))}

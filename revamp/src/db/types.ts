@@ -63,6 +63,8 @@ export interface LibraryItem {
   kind: LibraryKind
   title: string
   summary?: string
+  /** Optional markdown body — rendered in-app at /library/:id. */
+  body?: string
   url?: string
   tags: string[]
   pinned: boolean

@@ -2,6 +2,7 @@ import { db } from './schema'
 import type {
   Track, Topic, Lesson, Quiz, LibraryItem, Project,
 } from './types'
+import { libraryNotes } from './seedLibraryNotes'
 
 const tracks: Track[] = [
   { id: 'foundations', order: 1, title: 'AI Foundations',
@@ -199,5 +200,14 @@ export async function seedIfEmpty(): Promise<void> {
       },
     )
   }
-  if (lc === 0) await db.library.bulkPut(library)
+  if (lc === 0) {
+    await db.library.bulkPut(library)
+    await db.library.bulkPut(libraryNotes)
+  } else {
+    // Soft-upsert: add any note IDs that don't exist yet (preserves user edits)
+    for (const n of libraryNotes) {
+      const existing = await db.library.get(n.id)
+      if (!existing) await db.library.put(n)
+    }
+  }
 }

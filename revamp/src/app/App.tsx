@@ -11,6 +11,7 @@ import { Projects } from '../pages/Projects'
 import { ProjectNew } from '../pages/ProjectNew'
 import { ProjectDetail } from '../pages/ProjectDetail'
 import { Library } from '../pages/Library'
+import { LibraryDetail } from '../pages/LibraryDetail'
 import { seedIfEmpty } from '../db/seed'
 
 export function App() {
@@ -44,6 +45,7 @@ export function App() {
             <Route path="/projects/new" element={<ProjectNew />} />
             <Route path="/projects/:projectId" element={<ProjectDetail />} />
             <Route path="/library" element={<Library />} />
+            <Route path="/library/:id" element={<LibraryDetail />} />
             <Route path="*" element={<Dashboard />} />
           </Routes>
         </motion.div>
