@@ -24,6 +24,27 @@
   border-radius: var(--radius-sm);
 }
 
+.article :global(.md) blockquote {
+  margin: var(--space-4) 0;
+  padding: var(--space-3) var(--space-5);
+  background: var(--bg-sunken);
+  border-left: 3px solid var(--accent-border);
+  border-radius: var(--radius-sm);
+  color: var(--ink-2);
+  font-style: normal;
+}
+.article :global(.md) blockquote p { margin-bottom: var(--space-2); color: var(--ink-2); }
+.article :global(.md) blockquote p:last-child { margin-bottom: 0; }
+
+.article :global(.md) a {
+  color: var(--accent-ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--accent-border);
+}
+.article :global(.md) a:hover { text-decoration-color: var(--accent-solid); }
+
 .footer {
   display: flex;
   gap: var(--space-3);

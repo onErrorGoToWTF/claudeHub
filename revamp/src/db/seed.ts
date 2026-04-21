@@ -204,10 +204,12 @@ export async function seedIfEmpty(): Promise<void> {
     await db.library.bulkPut(library)
     await db.library.bulkPut(libraryNotes)
   } else {
-    // Soft-upsert: add any note IDs that don't exist yet (preserves user edits)
+    // System-managed notes: always overwrite so format/content edits ship via code.
+    // User-owned library items (tools, their own notes) are never touched here.
     for (const n of libraryNotes) {
-      const existing = await db.library.get(n.id)
-      if (!existing) await db.library.put(n)
+      const prev = await db.library.get(n.id)
+      // Preserve user-set `pinned` state; everything else syncs from source.
+      await db.library.put({ ...n, pinned: prev?.pinned ?? n.pinned })
     }
   }
 }
