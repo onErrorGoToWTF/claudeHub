@@ -3,6 +3,7 @@ import type {
   Track, Topic, Lesson, Quiz, LibraryItem, Project,
 } from './types'
 import { libraryNotes } from './seedLibraryNotes'
+import { TOOL_BODIES } from './toolBodies'
 import { migrateLegacyStatus } from '../lib/projectStatus'
 
 const tracks: Track[] = [
@@ -200,7 +201,7 @@ const library: LibraryItem[] = [
     summary: 'Walkthrough of the CLI agent, from install to first autonomous task.',
     url: 'https://www.youtube.com/results?search_query=claude+code+cli',
     tags: ['agents', 'tutorial'], pinned: false, addedAt: L(12) },
-]
+].map(item => TOOL_BODIES[item.id] ? { ...item, body: TOOL_BODIES[item.id] } : item) as LibraryItem[]
 
 const sampleProject: Project = {
   id: 'p.sample',
@@ -223,6 +224,11 @@ const sampleProject: Project = {
 
 /** Populate on first boot. Idempotent — only seeds stores that are empty. */
 export async function seedIfEmpty(): Promise<void> {
+  // Remove orphan doc-note duplicates of tools (merged into their tool entries)
+  await db.library.bulkDelete([
+    'n.claude-code', 'n.claude-agent-sdk', 'n.framer-motion', 'n.dexie',
+  ])
+
   // Migrate legacy project statuses (draft/active/paused/shipped → Linear vocab)
   const projects = await db.projects.toArray()
   for (const p of projects) {
