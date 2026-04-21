@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, BookOpen, FolderGit2 } from 'lucide-react'
+import { ArrowRight, BookOpen, FolderGit2, Library as LibraryIcon } from 'lucide-react'
 import { overallProgress, repo } from '../db/repo'
-import type { Progress, Topic, Project } from '../db/types'
+import type { Progress, Topic, Project, LibraryItem } from '../db/types'
 import { PageHeader, ProgressBar, List, Row, Chip } from '../ui'
 import { STATUS_LABEL } from '../lib/projectStatus'
 import s from './Dashboard.module.css'
@@ -14,6 +14,8 @@ export function Dashboard() {
   const [recent, setRecent] = useState<{ progress: Progress; topic?: Topic }[]>([])
   const [projects, setProjects] = useState<Project[]>([])
   const [nextTopic, setNextTopic] = useState<Topic | null>(null)
+  const [libraryItems, setLibraryItems] = useState<LibraryItem[]>([])
+  const [libraryTotal, setLibraryTotal] = useState(0)
 
   useEffect(() => {
     ;(async () => {
@@ -34,6 +36,15 @@ export function Dashboard() {
       const byId = new Map(mastery.map(m => [m.topicId, m.score]))
       const unstarted = topics.find(t => !byId.has(t.id)) ?? topics[0]
       setNextTopic(unstarted ?? null)
+
+      const library = await repo.listLibrary()
+      const viewable = library.filter(i => !!i.body)
+      setLibraryTotal(viewable.length)
+      // Pinned first, then newest
+      const sortedLib = [...viewable].sort((a, b) =>
+        Number(b.pinned) - Number(a.pinned) || b.addedAt - a.addedAt
+      )
+      setLibraryItems(sortedLib.slice(0, 3))
     })()
   }, [])
 
@@ -111,6 +122,37 @@ export function Dashboard() {
             </List>
           )}
         </section>
+
+        {/* ---------- Library panel ---------- */}
+        <section className={s.panel}>
+          <header className={s.panelHead}>
+            <span className={s.panelTitle}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                <LibraryIcon size={16} strokeWidth={1.75} /> Library
+              </span>
+            </span>
+            <span className={s.panelMeta}>{libraryTotal} entries</span>
+          </header>
+
+          <Link to="/library" className={s.cta} style={{ color: 'inherit' }}>
+            <span className={s.ctaLeft}>
+              <span>Browse library</span>
+              <span className={s.ctaSub}>Tools, docs, references. Pin what you come back to.</span>
+            </span>
+            <ArrowRight size={16} />
+          </Link>
+
+          <div className={s.sectionLabel}>Pinned</div>
+          {libraryItems.length === 0 ? (
+            <div className={s.muted}>Nothing pinned yet.</div>
+          ) : (
+            <List>
+              {libraryItems.map(it => (
+                <LibraryRow key={it.id} item={it} />
+              ))}
+            </List>
+          )}
+        </section>
       </div>
     </div>
   )
@@ -145,6 +187,20 @@ function ProjectRow({ project }: { project: Project }) {
         title={project.title}
         sub={project.summary}
         right={<Chip>{STATUS_LABEL[project.status]}</Chip>}
+      />
+    </Link>
+  )
+}
+
+const KIND_LABEL: Record<string, string> = { tool: 'Tool', doc: 'Doc', read: 'Read', video: 'Video' }
+
+function LibraryRow({ item }: { item: LibraryItem }) {
+  return (
+    <Link to={`/library/${item.id}`} style={{ color: 'inherit' }}>
+      <Row
+        title={item.title}
+        sub={item.summary}
+        right={<Chip variant={item.pinned ? 'accent' : undefined}>{KIND_LABEL[item.kind] ?? item.kind}</Chip>}
       />
     </Link>
   )
