@@ -269,6 +269,119 @@ Modern React (via frameworks like Next.js, Remix) splits components into **serve
 - [You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect)
 `.trim(),
 
+  'i.claude-opus': `
+**TL;DR** — Claude Opus 4.7 is the most capable model in Anthropic's 4.x family — built for deep, long-context reasoning and multi-step agentic work; pick it when quality matters more than speed or cost.
+
+## What it's good at
+
+- **Long-context reasoning.** Holds and reasons over large codebases, long documents, sprawling research material.
+- **Agentic work.** Multi-turn tool use without losing the plot. The backbone of Claude Code's longest sessions.
+- **Judgment-heavy writing.** Strategy docs, design critiques, sensitive comms.
+- **Code across files.** Refactors, migrations, greenfield features that span many files.
+
+## When to reach for something else
+
+- **Sonnet 4.6** — most everyday Claude work. 80–90% of Opus' quality at a fraction of the cost / latency.
+- **Haiku 4.5** — classification, routing, summarization. Low-stakes high-volume tasks.
+
+## Context window
+
+\`claude-opus-4-7\` ships with a 1M token context window variant (\`claude-opus-4-7[1m]\`). The full 1M is expensive — default to the 200K version unless you actually need the headroom.
+
+## Pricing (subscription-side)
+
+- **Pro** ($20/mo) — limited Opus via Claude.ai.
+- **Max 5×** ($100/mo) — 5× higher Opus usage.
+- **Max 20×** ($200/mo) — 20× Pro; heaviest Opus use.
+
+On the API: Opus is priced per-token at a premium vs. Sonnet. Use prompt caching to soften the cost on stable system prompts / context docs.
+
+## Sources
+
+- [Anthropic — models overview](https://www.anthropic.com/claude)
+- [Claude — model card](https://docs.claude.com/en/docs/about-claude/models)
+- [Anthropic — pricing](https://www.anthropic.com/pricing)
+- [Prompt caching](https://docs.claude.com/en/docs/build-with-claude/prompt-caching)
+`.trim(),
+
+  'i.claude-sonnet': `
+**TL;DR** — Claude Sonnet 4.6 is the default workhorse — fast, cheap, and smart enough for ~90% of real work; reserve Opus for the genuinely hard stuff and Haiku for cheap bulk.
+
+## Why it's the default
+
+- **Price / latency / quality** hit the right spot. Faster than Opus, cheaper, and still strong across reasoning, coding, and writing.
+- **Long context without Opus pricing.** 200K token window for most use cases.
+- **Production-friendly.** Teams running Claude in products usually default to Sonnet and only escalate specific calls to Opus.
+
+## When to escalate to Opus
+
+- Judgment calls where a subtle miss is expensive (strategy memos, legal nuance, security-sensitive decisions).
+- Multi-step agentic sessions where drift compounds.
+- Tasks where correctness on the first try saves more than the price delta.
+
+## When to de-escalate to Haiku 4.5
+
+- Classification, routing, tagging, summarization.
+- Wrapping or reformatting existing text.
+- Any high-volume call where latency or cost dominates.
+
+## Model ID
+
+API: \`claude-sonnet-4-6\`. On Claude.ai: selectable in the model picker on paid plans; the free tier also grants limited Sonnet access.
+
+## Pairing pattern
+
+A common stack: **Haiku routes → Sonnet handles → Opus escalates.** Let Haiku classify the incoming query, Sonnet does the work, and only the hardest cases bubble up to Opus.
+
+## Sources
+
+- [Claude — model card](https://docs.claude.com/en/docs/about-claude/models)
+- [Anthropic — pricing](https://www.anthropic.com/pricing)
+- [Build with Claude — choosing a model](https://docs.claude.com/en/docs/build-with-claude/models)
+`.trim(),
+
+  'i.vercel': `
+**TL;DR** — Vercel is opinionated hosting for modern web apps — \`git push\` and it builds, deploys, and gives you preview URLs per branch; it's Next.js's home but handles most static and SSR stacks gracefully.
+
+## The core loop
+
+1. Connect a GitHub/GitLab/Bitbucket repo.
+2. Every push to the main branch → production deploy.
+3. Every pull request → an isolated **preview deployment** at its own URL.
+4. Comment the preview URL on the PR; share with anyone.
+
+## What you get for free
+
+- **HTTPS + custom domains** — one click, automatic certs.
+- **Edge network** — assets served from the nearest region.
+- **Image optimization** — \`next/image\` or equivalent.
+- **Serverless / Edge functions** — run TypeScript or Go at the edge without managing servers.
+- **Analytics** — basic web analytics in the free tier.
+
+## When Vercel fits best
+
+- Next.js apps (native home).
+- Static SPAs (Vite, Astro, SvelteKit) — works fine; you're not really using the SSR side.
+- Apps with a light serverless backend (auth, webhooks, DB queries).
+
+## When to pick something else
+
+- **GitHub Pages** — pure static, zero build complexity, no server runtime needed.
+- **Cloudflare Pages / Workers** — lower egress cost at scale, better edge compute model for some workloads.
+- **A VPS** — long-running processes, WebSockets at scale, anything with state that doesn't fit the serverless shape.
+
+## Pricing sharp edges
+
+The free (Hobby) tier is generous but has **bandwidth + function invocation limits**. A viral moment on Hobby can rate-limit you. Pro starts at $20/mo/seat and raises all the limits; scrutinize usage if you get popular.
+
+## Sources
+
+- [Vercel — main site](https://vercel.com/)
+- [Vercel — docs](https://vercel.com/docs)
+- [Vercel — pricing](https://vercel.com/pricing)
+- [Vercel — limits](https://vercel.com/docs/limits/overview)
+`.trim(),
+
   'i.vscode': `
 **TL;DR** — VS Code is a free, cross-platform editor built on Electron that's become the default for web dev through sheer plugin gravity; pair it with Claude Code or Cursor and it's the workspace most AI-era coding happens in.
 
