@@ -18,7 +18,7 @@ export function PageHeader({ eyebrow, title, subtitle, right }: {
   )
 }
 
-export function Section({ title, meta, children }: { title: string; meta?: ReactNode; children: ReactNode }) {
+export function Section({ title, meta, children }: { title: ReactNode; meta?: ReactNode; children: ReactNode }) {
   return (
     <section className={s.section}>
       <div className={s.sectionHead}>

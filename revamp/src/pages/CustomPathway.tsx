@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Topic, Track } from '../db/types'
 import { Button, Chip, List, PageHeader, Row } from '../ui'
-import { matchesPathway } from '../lib/audience'
+import { splitByPathway } from '../lib/audience'
 import { useUserStore } from '../state/userStore'
 import { orderByPrereqs } from '../lib/pathwayOrder'
 
@@ -23,7 +23,10 @@ export function CustomPathway() {
   }, [])
 
   const topicsByTrack = useMemo(() => {
-    const shown = tracks.filter(t => matchesPathway(pathway, t.audience))
+    // Pathway reorders tracks for this picker: primary first, rest below.
+    // Every track stays visible — users can claim topics from anywhere.
+    const { primary, rest } = splitByPathway(tracks, t => t.audience, pathway)
+    const shown = [...primary, ...rest]
     const map = new Map<string, Topic[]>()
     for (const tr of shown) map.set(tr.id, [])
     for (const tp of topics) if (map.has(tp.trackId)) map.get(tp.trackId)!.push(tp)

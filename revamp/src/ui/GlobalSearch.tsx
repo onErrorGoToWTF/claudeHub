@@ -5,7 +5,7 @@ import {
 } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Lesson, LibraryItem, Project, Topic, Track } from '../db/types'
-import { matchesPathway } from '../lib/audience'
+import { isPrimaryForPathway } from '../lib/audience'
 import { useUserStore } from '../state/userStore'
 import styles from './ui.module.css'
 
@@ -76,41 +76,46 @@ export function GlobalSearch({ open, onClose }: { open: boolean; onClose: () => 
     const match = (s: string | undefined) => !!s && s.toLowerCase().includes(q)
     const out: Hit[] = []
 
+    // Pathway sorts results — never hides them. Collect then sort at the end.
+    const scored: Array<Hit & { primary: boolean }> = []
+    const push = (hit: Hit, audienceSource?: { audience?: import('../db/types').Audience[] }) => {
+      scored.push({ ...hit, primary: isPrimaryForPathway(pathway, audienceSource?.audience) })
+    }
     for (const t of idx.tracks) {
-      if (!matchesPathway(pathway, t.audience)) continue
       if (match(t.title) || match(t.summary)) {
-        out.push({ id: `track:${t.id}`, kind: 'track', title: t.title, sub: t.summary, to: '/learn' })
+        push({ id: `track:${t.id}`, kind: 'track', title: t.title, sub: t.summary, to: '/learn' }, t)
       }
     }
     for (const t of idx.topics) {
-      if (!matchesPathway(pathway, t.audience)) continue
       if (match(t.title) || match(t.summary)) {
-        out.push({ id: `topic:${t.id}`, kind: 'topic', title: t.title, sub: t.summary, to: `/learn/topic/${t.id}` })
+        push({ id: `topic:${t.id}`, kind: 'topic', title: t.title, sub: t.summary, to: `/learn/topic/${t.id}` }, t)
       }
     }
     for (const l of idx.lessons) {
       if (match(l.title) || match(l.summary) || match(l.body)) {
-        out.push({ id: `lesson:${l.id}`, kind: 'lesson', title: l.title, sub: l.summary, to: `/learn/lesson/${l.id}` })
+        push({ id: `lesson:${l.id}`, kind: 'lesson', title: l.title, sub: l.summary, to: `/learn/lesson/${l.id}` })
       }
     }
     for (const p of idx.projects) {
       if (match(p.title) || match(p.summary)) {
-        out.push({ id: `proj:${p.id}`, kind: 'project', title: p.title, sub: p.summary, to: `/projects/${p.id}` })
+        push({ id: `proj:${p.id}`, kind: 'project', title: p.title, sub: p.summary, to: `/projects/${p.id}` })
       }
     }
     for (const i of idx.library) {
       if (!i.body) continue
-      if (!matchesPathway(pathway, i.audience)) continue
       if (match(i.title) || match(i.summary) || i.tags.some(tg => tg.toLowerCase().includes(q))) {
-        out.push({
+        push({
           id: `lib:${i.id}`,
           kind: 'library',
           title: i.title,
           sub: i.summary ?? i.tags.join(' · '),
           to: `/library/${i.id}`,
-        })
+        }, i)
       }
     }
+    // Stable sort: primary-for-pathway first.
+    scored.sort((a, b) => Number(b.primary) - Number(a.primary))
+    out.push(...scored)
     return out.slice(0, 40)
   }, [idx, query, pathway])
 

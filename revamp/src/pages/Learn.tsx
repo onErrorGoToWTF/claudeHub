@@ -8,7 +8,8 @@ import {
   Chip, ProgressBar,
 } from '../ui'
 import { grid } from '../ui/grid'
-import { matchesPathway } from '../lib/audience'
+import { AudienceBadge } from '../ui/AudienceBadge'
+import { splitByPathway, type UserPathway } from '../lib/audience'
 import { useUserStore } from '../state/userStore'
 import s from './Learn.module.css'
 
@@ -43,8 +44,11 @@ export function Learn() {
     })()
   }, [])
 
-  const shownTracks = useMemo(
-    () => tracks.filter(t => matchesPathway(pathway, t.audience)),
+  // Pathway sorts; never hides. For student/office we get two buckets;
+  // for dev/all everything is primary and the "Everything else" label
+  // is suppressed.
+  const { primary, rest, split } = useMemo(
+    () => splitByPathway(tracks, t => t.audience, pathway),
     [tracks, pathway],
   )
 
@@ -88,44 +92,104 @@ export function Learn() {
         </Link>
       </div>
 
-      {shownTracks.map(track => (
-        <Section
+      {split && primary.length > 0 && (
+        <SectionHeading label="For you" />
+      )}
+      {primary.map(track => (
+        <TrackSection
           key={track.id}
-          title={track.title}
-          meta={track.summary}
-        >
-          <div className={grid}>
-            {(topicsByTrack[track.id] ?? []).map(topic => {
-              const score = mastery[topic.id] ?? 0
-              const label =
-                score === 0 ? 'Not started'
-                : score < 0.5 ? 'Started'
-                : score < 0.8 ? 'Progressing'
-                : 'Mastered'
-              return (
-                <Link key={topic.id} to={`/learn/topic/${topic.id}`} style={{ color: 'inherit' }}>
-                  <Tile>
-                    <TileRow>
-                      <TileTitle>{topic.title}</TileTitle>
-                      <ArrowRight size={16} />
-                    </TileRow>
-                    <TileMeta>{topic.summary}</TileMeta>
-                    <div style={{ marginTop: 'var(--space-2)' }}>
-                      <ProgressBar value={score} />
-                    </div>
-                    <TileRow>
-                      <Chip variant={score >= 0.8 ? 'mastery' : score > 0 ? 'accent' : undefined}>
-                        {label}
-                      </Chip>
-                      <TileMeta>{Math.round(score * 100)}%</TileMeta>
-                    </TileRow>
-                  </Tile>
-                </Link>
-              )
-            })}
-          </div>
-        </Section>
+          track={track}
+          topics={topicsByTrack[track.id] ?? []}
+          mastery={mastery}
+          pathway={pathway}
+        />
+      ))}
+
+      {split && rest.length > 0 && (
+        <SectionHeading label="Everything else" tone="muted" />
+      )}
+      {rest.map(track => (
+        <TrackSection
+          key={track.id}
+          track={track}
+          topics={topicsByTrack[track.id] ?? []}
+          mastery={mastery}
+          pathway={pathway}
+        />
       ))}
     </div>
+  )
+}
+
+function SectionHeading({ label, tone = 'default' }: { label: string; tone?: 'default' | 'muted' }) {
+  return (
+    <div style={{
+      display: 'flex',
+      alignItems: 'baseline',
+      gap: 'var(--space-3)',
+      margin: 'var(--space-8) 0 var(--space-2)',
+      paddingBottom: 6,
+      borderBottom: '1px solid var(--hair)',
+    }}>
+      <span style={{
+        fontSize: 'var(--text-xs)',
+        fontWeight: 600,
+        letterSpacing: '0.1em',
+        textTransform: 'uppercase',
+        color: tone === 'muted' ? 'var(--ink-3)' : 'var(--ink-2)',
+      }}>{label}</span>
+    </div>
+  )
+}
+
+function TrackSection({
+  track, topics, mastery, pathway,
+}: {
+  track: Track
+  topics: Topic[]
+  mastery: Record<string, number>
+  pathway: UserPathway
+}) {
+  return (
+    <Section
+      title={
+        <span style={{ display: 'inline-flex', alignItems: 'baseline', gap: 8 }}>
+          {track.title}
+          <AudienceBadge audience={track.audience} pathway={pathway} />
+        </span>
+      }
+      meta={track.summary}
+    >
+      <div className={grid}>
+        {topics.map(topic => {
+          const score = mastery[topic.id] ?? 0
+          const label =
+            score === 0 ? 'Not started'
+            : score < 0.5 ? 'Started'
+            : score < 0.8 ? 'Progressing'
+            : 'Mastered'
+          return (
+            <Link key={topic.id} to={`/learn/topic/${topic.id}`} style={{ color: 'inherit' }}>
+              <Tile>
+                <TileRow>
+                  <TileTitle>{topic.title}</TileTitle>
+                  <ArrowRight size={16} />
+                </TileRow>
+                <TileMeta>{topic.summary}</TileMeta>
+                <div style={{ marginTop: 'var(--space-2)' }}>
+                  <ProgressBar value={score} />
+                </div>
+                <TileRow>
+                  <Chip variant={score >= 0.8 ? 'mastery' : score > 0 ? 'accent' : undefined}>
+                    {label}
+                  </Chip>
+                  <TileMeta>{Math.round(score * 100)}%</TileMeta>
+                </TileRow>
+              </Tile>
+            </Link>
+          )
+        })}
+      </div>
+    </Section>
   )
 }

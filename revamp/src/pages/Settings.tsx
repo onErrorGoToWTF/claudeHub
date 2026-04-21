@@ -4,7 +4,7 @@ import { Check, Laptop, Monitor, Smartphone, Tablet, Terminal, RotateCcw } from 
 import { repo } from '../db/repo'
 import type { Topic, Track } from '../db/types'
 import { Button, PageHeader } from '../ui'
-import { matchesPathway, PATHWAYS, type UserPathway } from '../lib/audience'
+import { splitByPathway, PATHWAYS, type UserPathway } from '../lib/audience'
 import {
   useUserStore, type Device, type WorkStyle,
 } from '../state/userStore'
@@ -69,7 +69,9 @@ export function Settings() {
 
   const pathwayWorkStyles = WORK_STYLE_OPTIONS.filter(ws =>
     profile.pathway === 'all' || ws.pathways.includes(profile.pathway))
-  const visibleTracks = tracks.filter(t => matchesPathway(profile.pathway, t.audience))
+  // Show every track in Settings too — users can mark anything as known.
+  const { primary: primaryTr, rest: restTr } = splitByPathway(tracks, t => t.audience, profile.pathway)
+  const visibleTracks = [...primaryTr, ...restTr]
   const known = new Set(profile.knownTopicIds ?? [])
 
   return (

@@ -41,13 +41,8 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-3);
-  min-width: 0;        /* let the wordmark truncate before pushing nav off */
+  min-width: 0;
   flex-wrap: nowrap;
-}
-/* On narrow widths we collapse the pathway picker to keep the brand +
-   user menu visible. Bottom nav handles primary navigation on mobile. */
-@media (max-width: 480px) {
-  .topLeft > :global(label) { display: none; } /* PathwayPicker wraps a <label> */
 }
 
 /* ---------- desktop nav (middle) ---------- */

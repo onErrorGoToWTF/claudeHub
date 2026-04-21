@@ -7,7 +7,8 @@ import {
 import { repo } from '../db/repo'
 import type { LibraryItem, LibraryKind } from '../db/types'
 import { Chip, List, PageHeader, Row, Empty } from '../ui'
-import { matchesPathway } from '../lib/audience'
+import { AudienceBadge } from '../ui/AudienceBadge'
+import { splitByPathway, type UserPathway } from '../lib/audience'
 import { useUserStore } from '../state/userStore'
 import styles from './Library.module.css'
 
@@ -70,12 +71,10 @@ export function Library() {
     }
   }, [filterOpen])
 
-  const shown = useMemo(() => {
-    // Only surface items with in-app body content.
-    // Incomplete tool entries still exist in the DB (they drive the Projects
-    // intake stack picker) — they just don't clutter the Library list.
+  // Apply facet + search + user sort to the raw list. Pathway does NOT
+  // filter — it's applied later as a soft split (primary + rest).
+  const sorted = useMemo(() => {
     let out = items.filter(i => !!i.body)
-    out = out.filter(i => matchesPathway(pathway, i.audience))
     if (facet !== 'all') out = out.filter(i => i.kind === facet)
     if (query.trim()) {
       const q = query.toLowerCase()
@@ -85,14 +84,22 @@ export function Library() {
         || i.tags.some(t => t.toLowerCase().includes(q))
       )
     }
-    const sorted = [...out]
-    if (sort === 'alpha')  sorted.sort((a, b) => a.title.localeCompare(b.title))
-    if (sort === 'newest') sorted.sort((a, b) => b.addedAt - a.addedAt)
-    if (sort === 'pinned') sorted.sort((a, b) =>
+    const arr = [...out]
+    if (sort === 'alpha')  arr.sort((a, b) => a.title.localeCompare(b.title))
+    if (sort === 'newest') arr.sort((a, b) => b.addedAt - a.addedAt)
+    if (sort === 'pinned') arr.sort((a, b) =>
       Number(b.pinned) - Number(a.pinned) || b.addedAt - a.addedAt
     )
-    return sorted
-  }, [items, facet, sort, query, pathway])
+    return arr
+  }, [items, facet, sort, query])
+
+  // Soft pathway split — primary on top, rest below, no one gets filtered out.
+  const { primary, rest, split } = useMemo(
+    () => splitByPathway(sorted, i => i.audience, pathway),
+    [sorted, pathway],
+  )
+  // Combined list for the miss-detection + count badge.
+  const shown = useMemo(() => [...primary, ...rest], [primary, rest])
 
   // Debounce-log a miss: 900ms after the user stops typing, if query is
   // non-trivial AND has zero matches, persist it to `searchMisses` and
@@ -245,44 +252,30 @@ export function Library() {
           <Empty>Nothing matches. Clear filters or search.</Empty>
         )
       ) : (
-        <List>
-          {shown.map(i => (
-            <Row
-              key={i.id}
-              title={
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                  <KindDot kind={i.kind} />
-                  {i.title}
-                </span>
-              }
-              sub={
-                <>
-                  {i.summary ?? toolSub(i)}
-                  {i.tags.length > 0 && (
-                    <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', marginTop: 6 }}>
-                      {i.tags.map(t => <Chip key={t}>{t}</Chip>)}
-                      {i.kind === 'tool' && i.owned && <Chip variant="mastery">owned</Chip>}
-                    </div>
-                  )}
-                </>
-              }
-              right={
-                <button
-                  type="button"
-                  className={styles.pinBtn}
-                  onClick={e => { e.stopPropagation(); togglePin(i) }}
-                  aria-label={i.pinned ? 'Unpin' : 'Pin'}
-                  title={i.pinned ? 'Unpin' : 'Pin'}
-                >
-                  {i.pinned ? <Pin size={14} strokeWidth={2} /> : <PinOff size={14} strokeWidth={1.5} />}
-                </button>
-              }
-              onClick={() => {
-                if (i.body) nav(`/library/${i.id}`)
-              }}
-            />
-          ))}
-        </List>
+        <>
+          {split && primary.length > 0 && <BandHeading label="For you" />}
+          {primary.length > 0 && (
+            <List>
+              {primary.map(i => (
+                <LibRow key={i.id} item={i} pathway={pathway}
+                  onNavigate={() => { if (i.body) nav(`/library/${i.id}`) }}
+                  onTogglePin={(e) => { e.stopPropagation(); togglePin(i) }}
+                />
+              ))}
+            </List>
+          )}
+          {split && rest.length > 0 && <BandHeading label="Everything else" muted />}
+          {rest.length > 0 && (
+            <List>
+              {rest.map(i => (
+                <LibRow key={i.id} item={i} pathway={pathway}
+                  onNavigate={() => { if (i.body) nav(`/library/${i.id}`) }}
+                  onTogglePin={(e) => { e.stopPropagation(); togglePin(i) }}
+                />
+              ))}
+            </List>
+          )}
+        </>
       )}
 
       {openMisses > 0 && (
@@ -300,6 +293,67 @@ export function Library() {
         </div>
       )}
     </div>
+  )
+}
+
+function BandHeading({ label, muted }: { label: string; muted?: boolean }) {
+  return (
+    <div style={{
+      display: 'flex', alignItems: 'baseline',
+      margin: 'var(--space-6) 0 var(--space-2)',
+      paddingBottom: 6,
+      borderBottom: '1px solid var(--hair)',
+    }}>
+      <span style={{
+        fontSize: 'var(--text-xs)',
+        fontWeight: 600,
+        letterSpacing: '0.1em',
+        textTransform: 'uppercase',
+        color: muted ? 'var(--ink-3)' : 'var(--ink-2)',
+      }}>{label}</span>
+    </div>
+  )
+}
+
+function LibRow({ item, pathway, onNavigate, onTogglePin }: {
+  item: LibraryItem
+  pathway: UserPathway
+  onNavigate: () => void
+  onTogglePin: (e: React.MouseEvent) => void
+}) {
+  return (
+    <Row
+      title={
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+          <KindDot kind={item.kind} />
+          {item.title}
+          <AudienceBadge audience={item.audience} pathway={pathway} />
+        </span>
+      }
+      sub={
+        <>
+          {item.summary ?? toolSub(item)}
+          {item.tags.length > 0 && (
+            <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', marginTop: 6 }}>
+              {item.tags.map(t => <Chip key={t}>{t}</Chip>)}
+              {item.kind === 'tool' && item.owned && <Chip variant="mastery">owned</Chip>}
+            </div>
+          )}
+        </>
+      }
+      right={
+        <button
+          type="button"
+          className={styles.pinBtn}
+          onClick={onTogglePin}
+          aria-label={item.pinned ? 'Unpin' : 'Pin'}
+          title={item.pinned ? 'Unpin' : 'Pin'}
+        >
+          {item.pinned ? <Pin size={14} strokeWidth={2} /> : <PinOff size={14} strokeWidth={1.5} />}
+        </button>
+      }
+      onClick={onNavigate}
+    />
   )
 }
 

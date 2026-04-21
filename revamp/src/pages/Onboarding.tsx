@@ -8,7 +8,7 @@ import {
 import { repo } from '../db/repo'
 import type { Topic, Track } from '../db/types'
 import { Button, ProgressBar } from '../ui'
-import { matchesPathway, PATHWAYS, type UserPathway } from '../lib/audience'
+import { splitByPathway, PATHWAYS, type UserPathway } from '../lib/audience'
 import {
   useUserStore,
   type Device,
@@ -361,7 +361,11 @@ function KnownTopicsList({
   known: Set<string>
   onToggle: (id: string) => void
 }) {
-  const visibleTracks = tracks.filter(t => matchesPathway(pathway, t.audience))
+  // Show every track so users can claim topics outside their pathway.
+  // Ordered primary-first for easier scanning; no "Everything else" heading
+  // needed — the list is short and the badge on each track carries the signal.
+  const { primary, rest } = splitByPathway(tracks, t => t.audience, pathway)
+  const visibleTracks = [...primary, ...rest]
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
       {visibleTracks.map(track => {
