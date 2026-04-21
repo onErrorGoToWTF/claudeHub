@@ -34,9 +34,11 @@ Running ledger. Rehydrate from this after context compaction.
 - [ ] Extend Learn — more tracks + topics + authored lessons (currently 4 tracks, 9 topics, 1 polished lesson, 1 polished quiz)
 - [ ] Content tagging for audience — `audience: 'dev' | 'beginner' | 'both'` on Learn tracks, Library items, topics; default filter per surface
 - [x] **Projects intake variant for the Office pathway** — shipped. New `ProjectNewOffice` component: 4-step flow (title → summary → workflow type → tools). Workflow types (document, meeting prep, announcement, analysis, cadence) each seed their own workflow-oriented checklist. Tools step filters the inventory to office-audience items (Claude.ai, chat, image/video/voice, automation). `ProjectNew` is now a thin dispatcher on the active pathway — dev/student/all still get the original build-oriented 5-step stack/routes flow.
-- [ ] Pin affordance in Library list (currently Detail only)
+- [x] **Pin affordance in Library list** — already in place; each Row has a Pin/PinOff toggle in its right slot (stale STATE entry cleared).
 
 ### Planned (later)
+- [x] **Custom pathway builder** — shipped at `/learn/custom`. User multi-selects topics grouped by track; `orderByPrereqs` (Kahn's topo-sort, track-clustered tie-breaker) returns a prerequisite-respecting ordered list rendered as a numbered sequence linking to each topic. Topics gained an optional `prereqTopicIds` field; seed populates sensible defaults + a backfill migration runs for existing installs. A small "Build a custom pathway" link sits under the Continue CTA on the Learn section-homepage.
+
 - [x] **Audience tagging (pathways)** — shipped. `Audience = 'student' | 'office' | 'dev'` on Track/Topic/LibraryItem; PathwayPicker in topbar (zustand + localStorage); Learn + Library filter by pathway; library items auto-derive audience at seed time from kind/category/tags.
 - [x] **Library search-miss logging** — shipped. `searchMisses` Dexie table (v3 migration); 900ms-debounced `repo.logSearchMiss(query)` fires when query has zero matches; inline "‘{query}’ isn't in the library yet — noted. It'll be added shortly." replaces the generic Empty state. Per-session dedupe so backspacing doesn't inflate counts.
 - [x] **Search-miss admin surface** — shipped at `/library/wishlist`. Lists `searchMisses` sorted by open-state → count → recency, with per-row resolve/unresolve toggle and "show resolved" checkbox. A small "{N} wishlist entries to triage" link appears at the foot of the Library page when any miss is open.

@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { AppShell } from './AppShell'
 import { Dashboard } from '../pages/Dashboard'
 import { Learn } from '../pages/Learn'
+import { CustomPathway } from '../pages/CustomPathway'
 import { TopicDetail } from '../pages/TopicDetail'
 import { LessonView } from '../pages/LessonView'
 import { QuizView } from '../pages/QuizView'
@@ -39,6 +40,7 @@ export function App() {
           <Routes location={location}>
             <Route path="/" element={<Dashboard />} />
             <Route path="/learn" element={<Learn />} />
+            <Route path="/learn/custom" element={<CustomPathway />} />
             <Route path="/learn/topic/:topicId" element={<TopicDetail />} />
             <Route path="/learn/lesson/:lessonId" element={<LessonView />} />
             <Route path="/learn/quiz/:quizId" element={<QuizView />} />

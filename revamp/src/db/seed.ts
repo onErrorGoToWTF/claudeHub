@@ -26,24 +26,32 @@ const topics: Topic[] = [
   { id: 't.tokens',     trackId: 'foundations', order: 1, title: 'Tokens & Tokenization',
     summary: 'What a token is, why it matters, and how context windows are measured.' },
   { id: 't.transformers', trackId: 'foundations', order: 2, title: 'How Transformers Think',
-    summary: 'Attention, self-attention, and why models pay attention the way they do.' },
+    summary: 'Attention, self-attention, and why models pay attention the way they do.',
+    prereqTopicIds: ['t.tokens'] },
   { id: 't.sampling',   trackId: 'foundations', order: 3, title: 'Sampling & Temperature',
-    summary: 'Why the same prompt can produce different answers, and how to control it.' },
+    summary: 'Why the same prompt can produce different answers, and how to control it.',
+    prereqTopicIds: ['t.transformers'] },
 
   { id: 't.clear-prompts', trackId: 'prompt-eng', order: 1, title: 'Writing Clear Prompts',
-    summary: 'Structure, specificity, and anti-patterns that quietly degrade answers.' },
+    summary: 'Structure, specificity, and anti-patterns that quietly degrade answers.',
+    prereqTopicIds: ['t.tokens'] },
   { id: 't.few-shot',   trackId: 'prompt-eng', order: 2, title: 'Few-Shot Examples',
-    summary: 'When examples help, when they hurt, and how to pick them.' },
+    summary: 'When examples help, when they hurt, and how to pick them.',
+    prereqTopicIds: ['t.clear-prompts'] },
 
   { id: 't.tool-use',   trackId: 'agents', order: 1, title: 'Tool Use Basics',
-    summary: 'Defining tools, returning results, composing multi-step calls.' },
+    summary: 'Defining tools, returning results, composing multi-step calls.',
+    prereqTopicIds: ['t.clear-prompts'] },
   { id: 't.memory',     trackId: 'agents', order: 2, title: 'Memory Patterns',
-    summary: 'Short-term context vs. persistent memory, and when each fits.' },
+    summary: 'Short-term context vs. persistent memory, and when each fits.',
+    prereqTopicIds: ['t.tool-use'] },
 
   { id: 't.streaming',  trackId: 'frontend-ai', order: 1, title: 'Streaming UIs',
-    summary: 'Render tokens as they arrive without jank, typewriter traps, or layout shift.' },
+    summary: 'Render tokens as they arrive without jank, typewriter traps, or layout shift.',
+    prereqTopicIds: ['t.tokens'] },
   { id: 't.glass-motion', trackId: 'frontend-ai', order: 2, title: 'Glass, Motion & Feel',
-    summary: 'Backdrop filters, premium easing, and when motion helps vs. distracts.' },
+    summary: 'Backdrop filters, premium easing, and when motion helps vs. distracts.',
+    prereqTopicIds: ['t.streaming'] },
 ]
 
 const lessons: Lesson[] = [
@@ -344,6 +352,14 @@ export async function seedIfEmpty(): Promise<void> {
     if (!t.audience || t.audience.length === 0) {
       const seed = tracks.find(x => x.id === t.id)
       if (seed?.audience) await db.tracks.put({ ...t, audience: seed.audience })
+    }
+  }
+  // Backfill topic prerequisites from the seed list for existing installs.
+  const existingTopics = await db.topics.toArray()
+  for (const t of existingTopics) {
+    if (!t.prereqTopicIds) {
+      const seed = topics.find(x => x.id === t.id)
+      if (seed?.prereqTopicIds) await db.topics.put({ ...t, prereqTopicIds: seed.prereqTopicIds })
     }
   }
 

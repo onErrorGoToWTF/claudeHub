@@ -20,6 +20,9 @@ export interface Topic {
   summary: string
   order: number
   audience?: Audience[]
+  /** Topic IDs that should come before this one in any learning path.
+   *  Used by the custom-pathway builder to topologically order user picks. */
+  prereqTopicIds?: ID[]
 }
 
 export interface Lesson {

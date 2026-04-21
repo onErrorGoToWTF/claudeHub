@@ -75,6 +75,18 @@ export function Learn() {
         )}
       </div>
 
+      <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
+        <Link
+          to="/learn/custom"
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            color: 'var(--ink-3)', fontSize: 13,
+          }}
+        >
+          Build a custom pathway <ArrowRight size={13} strokeWidth={1.75} />
+        </Link>
+      </div>
+
       {shownTracks.map(track => (
         <Section
           key={track.id}
