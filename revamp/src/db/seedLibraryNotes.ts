@@ -311,4 +311,107 @@ Artifacts edit live; keep iterating until it's right, then copy out.
 - [Anthropic — pricing](https://www.anthropic.com/pricing)
 `.trim(),
   },
+
+  {
+    id: 'n.mcp',
+    kind: 'doc',
+    title: 'MCP — Model Context Protocol',
+    summary: "Anthropic's open protocol for connecting AI assistants to tools, data, and external systems. The plumbing that lets Claude (and others) talk to your stuff.",
+    url: 'https://modelcontextprotocol.io/',
+    tags: ['claude', 'protocol', 'agent'],
+    pinned: true,
+    addedAt: L(0),
+    body: `
+**TL;DR** — MCP is a client-server protocol where an AI assistant (the client) talks to MCP servers (the tools) over JSON-RPC; one server plugs Claude into GitHub, another into your database, another into Slack, all using the same shape. Think of it as "USB for AI tools."
+
+## The three roles
+
+- **Host** — the app the user interacts with (Claude Desktop, Claude Code, Cursor, an IDE). Contains one or more clients.
+- **Client** — a connection to a specific MCP server. Manages its lifecycle.
+- **Server** — a program exposing tools, resources, or prompts. Local (stdio) or remote (HTTP/SSE).
+
+The Host / Client lives on the user's side. The Server can live anywhere — local process, remote endpoint, cloud service.
+
+## What a server exposes
+
+Every server can expose some or all of:
+
+- **Tools** — callable functions (\`create_issue\`, \`query_db\`, \`send_message\`). The AI decides when to call them.
+- **Resources** — readable data sources (files, records, knowledge bases). The AI can read them into context.
+- **Prompts** — user-selectable templates (\`/run-report\`, \`/draft-pr-description\`). Users pick them; the server returns a prepared prompt.
+
+Most servers start with just tools, then add resources.
+
+## Transport
+
+Two main transports:
+
+- **stdio** — local process, pipes in/out. Fastest, simplest for developer-machine tools.
+- **HTTP + SSE** — remote server; supports streaming. Used for hosted services (Linear's MCP, Slack's MCP, etc.).
+
+## A minimal TypeScript server
+
+\`\`\`ts
+import { Server } from '@modelcontextprotocol/sdk/server/index.js'
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
+
+const server = new Server({ name: 'demo', version: '0.1.0' }, { capabilities: { tools: {} } })
+
+server.setRequestHandler('tools/list', async () => ({
+  tools: [{
+    name: 'add',
+    description: 'Add two numbers',
+    inputSchema: { type: 'object', properties: { a: { type: 'number' }, b: { type: 'number' } }, required: ['a','b'] },
+  }],
+}))
+
+server.setRequestHandler('tools/call', async (req) => {
+  if (req.params.name === 'add') {
+    const { a, b } = req.params.arguments as { a: number; b: number }
+    return { content: [{ type: 'text', text: String(a + b) }] }
+  }
+  throw new Error('Unknown tool')
+})
+
+await server.connect(new StdioServerTransport())
+\`\`\`
+
+That's a complete, valid MCP server.
+
+## Wiring it into Claude Code
+
+In \`.claude/mcp.json\`:
+
+\`\`\`json
+{
+  "mcpServers": {
+    "demo": {
+      "command": "node",
+      "args": ["./servers/demo.js"]
+    }
+  }
+}
+\`\`\`
+
+Claude Code launches the process, lists its tools, and exposes them to the agent.
+
+## When MCP beats a custom integration
+
+- **Portability.** The same server works in Claude Code, Claude Desktop, Cursor, and any future MCP host.
+- **Ecosystem.** Hundreds of existing servers (databases, Git, Slack, Notion, calendars, search).
+- **Auth + security are pushed to the server.** The AI never sees your credentials directly.
+
+## When to skip MCP
+
+- **One-off tool use inside your own app.** Use the Agent SDK's native tool facility directly; no protocol overhead needed.
+- **Very latency-sensitive loops.** JSON-RPC + process boundaries add ms; tight inner loops should stay in-process.
+
+## Sources
+
+- [Model Context Protocol — main site](https://modelcontextprotocol.io/)
+- [MCP — specification](https://spec.modelcontextprotocol.io/)
+- [MCP — SDK repos (TS + Python)](https://github.com/modelcontextprotocol)
+- [Anthropic — MCP announcement](https://www.anthropic.com/news/model-context-protocol)
+`.trim(),
+  },
 ]

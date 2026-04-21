@@ -510,6 +510,138 @@ Parameter counts range from small (8B, fits on a laptop GPU) to huge (405B+, clo
 - [DeepSeek on Hugging Face](https://huggingface.co/deepseek-ai)
 `.trim(),
 
+  'i.tailwind': `
+**TL;DR** — Tailwind is a utility-first CSS framework: instead of writing \`.card { padding: 16px }\`, you write \`<div class="p-4">\`. It's controversial, it's productive, and it pairs natively with most modern stacks (Shadcn, v0, Next.js, Astro).
+
+## The mental model
+
+Every Tailwind class is a single CSS declaration. Compose them directly on the element.
+
+\`\`\`html
+<div class="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
+  <img class="w-10 h-10 rounded-full" src="..." />
+  <div class="flex flex-col">
+    <span class="font-semibold text-gray-900">Name</span>
+    <span class="text-sm text-gray-500">subtitle</span>
+  </div>
+</div>
+\`\`\`
+
+Tailwind scans your source files at build time and only emits the classes you actually used. Production CSS typically ends up ~5–15 KB.
+
+## Design tokens
+
+Tailwind's default theme is a carefully-opinionated palette + spacing + typography scale. Customize in \`tailwind.config.js\`:
+
+\`\`\`js
+export default {
+  content: ['./src/**/*.{ts,tsx,html}'],
+  theme: {
+    extend: {
+      colors: { brand: { 500: '#5e6ad2' } },
+      fontFamily: { sans: ['Inter', 'system-ui'] },
+    },
+  },
+}
+\`\`\`
+
+Extend rather than replace — you keep all of Tailwind's base scale.
+
+## Arbitrary values
+
+When the scale doesn't have what you need, bracket it:
+
+\`\`\`html
+<div class="top-[17px] w-[calc(100%-2rem)] bg-[#1a1816]">
+\`\`\`
+
+## Variants
+
+Prefix classes for states:
+
+- \`hover:\`, \`focus:\`, \`active:\`, \`disabled:\`
+- \`sm:\`, \`md:\`, \`lg:\`, \`xl:\` — responsive
+- \`dark:\` — dark mode
+- \`group-hover:\`, \`peer-focus:\` — relational
+
+\`\`\`html
+<button class="bg-gray-100 hover:bg-gray-200 md:bg-blue-500 md:hover:bg-blue-600">
+\`\`\`
+
+## When Tailwind fits
+
+- You're building UIs at speed and don't want to bikeshed class names.
+- You already use Shadcn UI, v0, or a Next.js template — they assume Tailwind.
+- Multiple people / AI tools touching the same repo — Tailwind's verbosity becomes self-documenting.
+
+## When it doesn't
+
+- You're styling a large marketing site with strong brand constraints — a proper design-system approach may serve better.
+- You're in this app (CSS Modules + design tokens) — Tailwind would duplicate the token system.
+- You hate the look of \`class="a b c d e f g"\` — fair, many people do.
+
+## Sources
+
+- [Tailwind CSS — docs](https://tailwindcss.com/docs)
+- [Tailwind — utility-first philosophy](https://tailwindcss.com/docs/styling-with-utility-classes)
+- [Tailwind — configuration](https://tailwindcss.com/docs/configuration)
+- [Tailwind Play](https://play.tailwindcss.com/)
+`.trim(),
+
+  'i.shadcn': `
+**TL;DR** — Shadcn UI is not a package you install — it's a CLI that copies well-crafted React components *into* your repo. You own the code, you edit it freely, and there's no upstream dependency to upgrade.
+
+## Why this model matters
+
+Most component libraries (MUI, Chakra, Mantine) are npm packages. You import, you customize via theme props, and you live downstream of their choices.
+
+Shadcn inverts that: you run one command, the component file lands in \`src/components/ui/\`, and it's yours. No version lock-in. No wrestling with an abstraction you can't open.
+
+## Getting started
+
+\`\`\`bash
+# Next.js / Vite project with Tailwind already set up
+npx shadcn@latest init
+
+# Then pull components as you need them
+npx shadcn@latest add button
+npx shadcn@latest add dialog
+npx shadcn@latest add dropdown-menu
+\`\`\`
+
+The files go into \`src/components/ui/\`. Edit them like any other file in your repo.
+
+## What you get
+
+- ~50 components: Button, Dialog, DropdownMenu, Command, Sheet, Toast, Form, Calendar, Data Table, Combobox, Tooltip, Popover, and more.
+- Built on **Radix UI** primitives (accessibility handled) + **Tailwind** styling.
+- Keyboard + screen reader behavior correct by default.
+- Dark mode via Tailwind's \`dark:\` variant, no extra config.
+
+## How v0 uses it
+
+v0 generates components using the Shadcn kit by default. If you've run \`shadcn init\` in your repo, v0 output drops in with no adjustments — consistent styling across generated and hand-written code.
+
+## When Shadcn fits
+
+- You want a proven component kit without the library-lock tax.
+- You use Tailwind + React already.
+- You're fine managing dependency updates manually for the few Radix primitives under the hood.
+
+## When to pick a real library
+
+- You want upgrades to arrive automatically (MUI, Chakra).
+- Your team doesn't want to own UI code — they want it to Just Work™.
+- You need a framework other than React (though Shadcn has Vue and Svelte ports now).
+
+## Sources
+
+- [Shadcn UI — main site](https://ui.shadcn.com/)
+- [Shadcn UI — docs](https://ui.shadcn.com/docs)
+- [Shadcn UI — components](https://ui.shadcn.com/docs/components)
+- [Radix UI](https://www.radix-ui.com/)
+`.trim(),
+
   'i.gpt': `
 **TL;DR** — OpenAI's GPT family (via ChatGPT + the OpenAI API) is the other frontier LLM you should know; pragmatically handy as a second opinion or for features where OpenAI's ecosystem (Whisper, DALL·E, Sora, Realtime voice) is what you actually need.
 

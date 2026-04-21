@@ -173,6 +173,12 @@ const library: LibraryItem[] = [
   { id: 'i.davinci', kind: 'tool', title: 'DaVinci Resolve',
     summary: 'Free pro-grade editor + color grading — industry standard for post-production.',
     tags: ['video', 'editing'], pinned: false, addedAt: L(0), toolCategory: 'tool', cost: 'free', owned: false },
+  { id: 'i.tailwind', kind: 'tool', title: 'Tailwind CSS',
+    summary: 'Utility-first CSS framework. Style in HTML/JSX with pre-made classes instead of writing custom CSS.',
+    tags: ['framework', 'css'], pinned: false, addedAt: L(0), toolCategory: 'framework', cost: 'free', owned: false },
+  { id: 'i.shadcn', kind: 'tool', title: 'Shadcn UI',
+    summary: "Copy-paste component library for React. Not a package — you own the code that lands in your repo.",
+    tags: ['framework', 'ui', 'react'], pinned: false, addedAt: L(0), toolCategory: 'framework', cost: 'free', owned: false },
 
   // ---- documents ----
   { id: 'd.apple-hig',      kind: 'doc', title: 'Apple Human Interface Guidelines',
