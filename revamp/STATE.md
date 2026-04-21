@@ -33,13 +33,13 @@ Running ledger. Rehydrate from this after context compaction.
 - [x] **Electrified progress bars** — shipped. `ui/ProgressBar` rewritten: 2px dim baseline + accent-glow line that grows left-to-right; optional `milestones` prop renders lit-on-pass circular nodes with staggered lighting delay matched to line progress; `useInViewReplay` hook (IntersectionObserver) bumps a key on each re-entry so the animation replays; no shimmer/drift (single-motion rule); reduced-motion jumps to static end state.
 - [ ] Extend Learn — more tracks + topics + authored lessons (currently 4 tracks, 9 topics, 1 polished lesson, 1 polished quiz)
 - [ ] Content tagging for audience — `audience: 'dev' | 'beginner' | 'both'` on Learn tracks, Library items, topics; default filter per surface
-- [ ] Projects intake variant for Lisa — workflow-oriented flow (coordination / doc / comms focus) vs. the current build-oriented one
+- [ ] Projects intake variant for the **Office pathway** — workflow-oriented flow (coordination / doc / comms focus) instead of the current build-oriented stack/routes flow; triggered when active pathway is `office`
 - [ ] Pin affordance in Library list (currently Detail only)
 
 ### Planned (later)
 - [x] **Audience tagging (pathways)** — shipped. `Audience = 'student' | 'office' | 'dev'` on Track/Topic/LibraryItem; PathwayPicker in topbar (zustand + localStorage); Learn + Library filter by pathway; library items auto-derive audience at seed time from kind/category/tags.
 - [x] **Library search-miss logging** — shipped. `searchMisses` Dexie table (v3 migration); 900ms-debounced `repo.logSearchMiss(query)` fires when query has zero matches; inline "‘{query}’ isn't in the library yet — noted. It'll be added shortly." replaces the generic Empty state. Per-session dedupe so backspacing doesn't inflate counts.
-- [ ] Search-miss admin surface — small page/panel listing `searchMisses` sorted by count/recency, with a "resolve" toggle so we can triage the wishlist
+- [x] **Search-miss admin surface** — shipped at `/library/wishlist`. Lists `searchMisses` sorted by open-state → count → recency, with per-row resolve/unresolve toggle and "show resolved" checkbox. A small "{N} wishlist entries to triage" link appears at the foot of the Library page when any miss is open.
 - [ ] Read-only friend-view — Alan ↔ Lisa progress visibility; requires export/import snapshot or a shared backend tier
 - [ ] Authoring flow — create lessons / quizzes / library notes in-app (today: all seeded in code; authoring is done externally via Claude Code skills + manual upload to the repo)
 - [ ] Project bootstrapper — scaffold files + run init commands from a project's stack pick

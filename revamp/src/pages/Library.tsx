@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { BookOpen, FileText, Film, Pin, PinOff, Search, Wrench } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+import { BookOpen, FileText, Film, Pin, PinOff, Search, Wrench, ArrowRight } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { LibraryItem, LibraryKind } from '../db/types'
 import { Chip, List, PageHeader, Row, Empty } from '../ui'
@@ -27,10 +27,14 @@ export function Library() {
   const [sort, setSort] = useState<Sort>('pinned')
   const [query, setQuery] = useState('')
   const [missLogged, setMissLogged] = useState<string | null>(null)
+  const [openMisses, setOpenMisses] = useState(0)
   const loggedRef = useRef<Set<string>>(new Set())
   const pathway = useUserStore(st => st.pathway)
 
   useEffect(() => { repo.listLibrary().then(setItems) }, [])
+  useEffect(() => {
+    repo.listSearchMisses().then(ms => setOpenMisses(ms.filter(m => !m.resolved).length))
+  }, [missLogged])
 
   const shown = useMemo(() => {
     // Only surface items with in-app body content.
@@ -184,6 +188,21 @@ export function Library() {
             />
           ))}
         </List>
+      )}
+
+      {openMisses > 0 && (
+        <div style={{ marginTop: 'var(--space-8)', textAlign: 'center' }}>
+          <Link
+            to="/library/wishlist"
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              color: 'var(--ink-3)', fontSize: 13,
+            }}
+          >
+            {openMisses} wishlist {openMisses === 1 ? 'entry' : 'entries'} to triage
+            <ArrowRight size={13} strokeWidth={1.75} />
+          </Link>
+        </div>
       )}
     </div>
   )
