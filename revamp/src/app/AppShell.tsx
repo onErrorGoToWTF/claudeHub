@@ -1,8 +1,10 @@
-import type { ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
-import { LayoutDashboard, BookOpen, FolderGit2, Library as LibraryIcon } from 'lucide-react'
+import { LayoutDashboard, BookOpen, FolderGit2, Library as LibraryIcon, Search } from 'lucide-react'
 import { ThemeToggle } from '../ui/ThemeToggle'
 import { PathwayPicker } from '../ui/PathwayPicker'
+import { GlobalSearch } from '../ui/GlobalSearch'
+import sharedStyles from '../ui/ui.module.css'
 import styles from './AppShell.module.css'
 
 type NavItem = { to: string; label: string; Icon: typeof LayoutDashboard; end?: boolean }
@@ -14,6 +16,20 @@ const NAV: NavItem[] = [
 ]
 
 export function AppShell({ children }: { children: ReactNode }) {
+  const [searchOpen, setSearchOpen] = useState(false)
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const mod = e.metaKey || e.ctrlKey
+      if (mod && e.key.toLowerCase() === 'k') {
+        e.preventDefault()
+        setSearchOpen(true)
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
   return (
     <div className={styles.shell}>
       <header className={styles.topbar}>
@@ -31,12 +47,23 @@ export function AppShell({ children }: { children: ReactNode }) {
           ))}
         </nav>
         <div className={styles.topActions}>
+          <button
+            type="button"
+            className={sharedStyles.searchTrigger}
+            onClick={() => setSearchOpen(true)}
+            aria-label="Search"
+            title="Search (Ctrl/Cmd+K)"
+          >
+            <Search size={16} strokeWidth={1.75} />
+          </button>
           <PathwayPicker />
           <ThemeToggle />
         </div>
       </header>
 
       <main className={styles.main}>{children}</main>
+
+      <GlobalSearch open={searchOpen} onClose={() => setSearchOpen(false)} />
 
       <nav className={styles.bottomnav} aria-label="Primary mobile">
         {NAV.map(({ to, label, Icon, end }) => (

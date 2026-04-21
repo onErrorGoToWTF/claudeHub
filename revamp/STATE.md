@@ -51,7 +51,7 @@ Running ledger. Rehydrate from this after context compaction.
 - [ ] YouTube API integration (needs interactive Google login — deferred)
 - [x] **Activity feed on Dashboard** — shipped. `src/lib/activity.ts` merges Progress (lesson completions + quiz scores), Projects (created / updated), and LibraryItems (pinned / added) into a unified time-sorted stream. Dashboard renders last 8 events below the three existing panels, with a kind-specific icon, primary title, sub-line, and a short relative timestamp (`12m`, `3h`, `2d`). Each row links through to the relevant surface.
 - [ ] Status-change log per project (audit history)
-- [ ] Search across the whole app (currently Library-only)
+- [x] **Global search** — shipped. `GlobalSearch` modal triggered by Ctrl/Cmd+K or the search icon in the topbar. Indexes tracks, topics, lesson bodies, projects, and library items with bodies (respecting the active pathway filter). Keyboard: ↑↓ to navigate, Enter to open, Esc to close. Results tagged by kind with a small badge. Debouncing not needed — datasets are small.
 
 ### Deferred (explicitly parked)
 - Electrified-circuit skill-map viz — fights the Linear-minimal aesthetic at v1
