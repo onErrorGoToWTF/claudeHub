@@ -16,6 +16,7 @@ import { LibraryDetail } from '../pages/LibraryDetail'
 import { LibraryWishlist } from '../pages/LibraryWishlist'
 import { Onboarding } from '../pages/Onboarding'
 import { Settings } from '../pages/Settings'
+import { SignIn } from '../pages/SignIn'
 import { seedIfEmpty } from '../db/seed'
 import { useUserStore } from '../state/userStore'
 
@@ -43,6 +44,12 @@ export function App() {
   // nav) to keep first-run focused on the flow.
   if (location.pathname === '/onboarding') {
     return <Onboarding />
+  }
+
+  // Sign-in preview — also renders outside the normal shell. Not linked
+  // from anywhere; reachable by direct URL while the UX is iterated.
+  if (location.pathname === '/signin') {
+    return <SignIn />
   }
 
   return (
