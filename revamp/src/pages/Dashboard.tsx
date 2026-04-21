@@ -1,10 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, BookOpen, FolderGit2, Library as LibraryIcon } from 'lucide-react'
+import {
+  ArrowRight, BookOpen, FolderGit2, Library as LibraryIcon,
+  CheckCircle2, BrainCircuit, Plus, RefreshCcw, Pin, BookPlus,
+} from 'lucide-react'
 import { overallProgress, repo } from '../db/repo'
 import type { Progress, Topic, Project, LibraryItem } from '../db/types'
 import { PageHeader, ProgressBar, List, Row, Chip } from '../ui'
 import { STATUS_LABEL } from '../lib/projectStatus'
+import { buildActivity, whenShort, type ActivityKind } from '../lib/activity'
 import s from './Dashboard.module.css'
 
 export function Dashboard() {
@@ -16,6 +20,10 @@ export function Dashboard() {
   const [nextTopic, setNextTopic] = useState<Topic | null>(null)
   const [libraryItems, setLibraryItems] = useState<LibraryItem[]>([])
   const [libraryTotal, setLibraryTotal] = useState(0)
+  const [allTopics, setAllTopics] = useState<Topic[]>([])
+  const [allProgress, setAllProgress] = useState<Progress[]>([])
+  const [allProjects, setAllProjects] = useState<Project[]>([])
+  const [allLibrary, setAllLibrary]   = useState<LibraryItem[]>([])
 
   useEffect(() => {
     ;(async () => {
@@ -45,8 +53,18 @@ export function Dashboard() {
         Number(b.pinned) - Number(a.pinned) || b.addedAt - a.addedAt
       )
       setLibraryItems(sortedLib.slice(0, 3))
+
+      setAllTopics(topics)
+      setAllProgress(progs)
+      setAllProjects(projs)
+      setAllLibrary(library)
     })()
   }, [])
+
+  const activity = useMemo(() => {
+    const topicsById = new Map(allTopics.map(t => [t.id, t]))
+    return buildActivity(allProgress, topicsById, allProjects, allLibrary).slice(0, 8)
+  }, [allProgress, allTopics, allProjects, allLibrary])
 
   const activeProjects = projects.filter(p => p.status === 'in_progress' || p.status === 'planned').length
 
@@ -123,6 +141,7 @@ export function Dashboard() {
           )}
         </section>
 
+        {/* Library panel wrapper preserved */}
         {/* ---------- Library panel ---------- */}
         <section className={s.panel}>
           <header className={s.panelHead}>
@@ -154,8 +173,58 @@ export function Dashboard() {
           )}
         </section>
       </div>
+
+      {/* ---------- Activity ---------- */}
+      {activity.length > 0 && (
+        <section style={{ marginTop: 'var(--space-10)' }}>
+          <div style={{
+            display: 'flex', alignItems: 'baseline', justifyContent: 'space-between',
+            marginBottom: 'var(--space-3)',
+          }}>
+            <h2 style={{ fontSize: 'var(--text-md)', color: 'var(--ink-2)', fontWeight: 600 }}>
+              Activity
+            </h2>
+            <span style={{ fontSize: 'var(--text-xs)', color: 'var(--ink-3)' }}>
+              Across Learn, Projects, and Library
+            </span>
+          </div>
+          <List>
+            {activity.map(a => (
+              <Link key={a.id} to={a.to ?? '#'} style={{ color: 'inherit' }}>
+                <Row
+                  title={
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10 }}>
+                      <ActivityIcon kind={a.kind} />
+                      {a.title}
+                    </span>
+                  }
+                  sub={a.sub}
+                  right={<span style={{ fontSize: 'var(--text-xs)', color: 'var(--ink-3)' }}>{whenShort(a.ts)}</span>}
+                />
+              </Link>
+            ))}
+          </List>
+        </section>
+      )}
     </div>
   )
+}
+
+function ActivityIcon({ kind }: { kind: ActivityKind }) {
+  const common = { size: 14, strokeWidth: 1.75 as const }
+  const wrap = {
+    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+    width: 22, height: 22, borderRadius: 'var(--radius-sm)',
+    background: 'var(--bg-sunken)', color: 'var(--ink-2)',
+  } as const
+  let Icon = BookOpen
+  if (kind === 'lesson_done')      Icon = CheckCircle2
+  if (kind === 'quiz_taken')       Icon = BrainCircuit
+  if (kind === 'project_new')      Icon = Plus
+  if (kind === 'project_updated')  Icon = RefreshCcw
+  if (kind === 'library_pinned')   Icon = Pin
+  if (kind === 'library_added')    Icon = BookPlus
+  return <span style={wrap}><Icon {...common} /></span>
 }
 
 function RecentRow({ progress, topic }: { progress: Progress; topic?: Topic }) {

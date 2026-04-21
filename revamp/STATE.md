@@ -49,7 +49,7 @@ Running ledger. Rehydrate from this after context compaction.
 - [ ] Claude API integration (after DB migration)
 - [ ] DB migration off IndexedDB — swap target behind `src/db/repo.ts` interface
 - [ ] YouTube API integration (needs interactive Google login — deferred)
-- [ ] Activity feed on Dashboard — Linear-style collapsed property changes + human updates
+- [x] **Activity feed on Dashboard** — shipped. `src/lib/activity.ts` merges Progress (lesson completions + quiz scores), Projects (created / updated), and LibraryItems (pinned / added) into a unified time-sorted stream. Dashboard renders last 8 events below the three existing panels, with a kind-specific icon, primary title, sub-line, and a short relative timestamp (`12m`, `3h`, `2d`). Each row links through to the relevant surface.
 - [ ] Status-change log per project (audit history)
 - [ ] Search across the whole app (currently Library-only)
 
