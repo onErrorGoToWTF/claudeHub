@@ -269,6 +269,171 @@ Modern React (via frameworks like Next.js, Remix) splits components into **serve
 - [You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect)
 `.trim(),
 
+  'i.supabase': `
+**TL;DR** — Supabase is a Postgres-first backend-as-a-service — real database, auth, storage, realtime, and edge functions — with a free tier large enough to ship real products on; the open-source alternative to Firebase that speaks SQL.
+
+## What's in the box
+
+- **Postgres** — a full Postgres database with \`psql\` access, extensions (\`pgvector\`, \`pg_graphql\`, etc.), and Row-Level Security.
+- **Auth** — email + OAuth providers, magic links, MFA, session JWTs.
+- **Storage** — S3-compatible object storage, access-controlled by Postgres policies.
+- **Realtime** — listen to Postgres changes over websockets.
+- **Edge Functions** — Deno-based serverless functions on Supabase's edge.
+- **Vector search** — \`pgvector\` built in; use any embedding model.
+
+## Three ways to talk to it
+
+1. **\`@supabase/supabase-js\`** — typed client for browser + server.
+2. **REST** — auto-generated from your schema (PostgREST).
+3. **Direct Postgres** — connection strings for server-side pooling (Prisma, Drizzle, raw SQL).
+
+## Auth in one snippet
+
+\`\`\`ts
+import { createClient } from '@supabase/supabase-js'
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
+await supabase.auth.signInWithPassword({ email, password })
+const { data: { user } } = await supabase.auth.getUser()
+\`\`\`
+
+## Row-Level Security (the thing to learn first)
+
+RLS is Postgres-native row-scoped access. Default-deny every table, then add policies like "user can read their own rows":
+
+\`\`\`sql
+alter table notes enable row level security;
+
+create policy "own notes" on notes
+for select using (auth.uid() = user_id);
+\`\`\`
+
+With RLS on, the anon key is safe to put in your client — Postgres enforces access.
+
+## When Supabase fits
+
+- Anything needing a real database (not just K/V).
+- Products that might outgrow Firebase limits.
+- Vector/RAG apps (pgvector).
+- Apps where you want to leave without a migration nightmare — you own the Postgres.
+
+## When to pick something else
+
+- **Firebase** if you want Google's ecosystem (FCM, Analytics) wired up.
+- **PlanetScale / Neon** for a pure Postgres/MySQL with serverless scaling; BYO auth/storage.
+- **Dexie + local-first** (like this app) when the data is genuinely single-user and offline-first.
+
+## Sources
+
+- [Supabase — main site](https://supabase.com/)
+- [Supabase — docs](https://supabase.com/docs)
+- [Supabase — auth](https://supabase.com/docs/guides/auth)
+- [Supabase — Row-Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security)
+`.trim(),
+
+  'i.v0': `
+**TL;DR** — v0 is Vercel's prompt-to-React-component generator — describe a UI, get JSX built on Shadcn UI + Tailwind + TypeScript, iterate with follow-up prompts, and deploy to Vercel in one click.
+
+## The loop
+
+1. Describe the component or screen ("a dashboard card with a title, a trend arrow, and a sparkline").
+2. v0 generates three variants.
+3. Click one, then iterate conversationally ("make the sparkline green", "add a dropdown for the time range").
+4. Copy the code into your repo, or click **Deploy** for an instant Vercel URL.
+
+## What it generates
+
+- React (or Vue in beta) components.
+- Styled with Tailwind; uses **Shadcn UI** primitives under the hood.
+- TypeScript by default.
+- Clean, readable code — not minified black-box output. You can read and edit it.
+
+## When to use it
+
+- Starting a new component and the "empty file" is blocking you.
+- Visual exploration — try five layouts in ten minutes.
+- Building out an internal tool UI where pixel-fidelity matters less than ship-speed.
+
+## When not to use it
+
+- You need to match an existing design system precisely — v0 will default to Shadcn's look unless explicitly steered.
+- You want deep custom animations or non-standard interactions — hand-written usually wins.
+- You're optimizing bundle size — v0 pulls in Shadcn's full component kit generously.
+
+## Pricing
+
+Free tier to explore. Premium unlocks higher generation limits + private generations.
+
+## Pairs with
+
+- **Shadcn UI** — the component primitives v0 speaks natively.
+- **Cursor** or **Claude Code** — for everything v0 doesn't generate (logic, data fetching, state).
+- **Vercel** — one-click deploys straight from the v0 canvas.
+
+## Sources
+
+- [v0 — main site](https://v0.app/)
+- [v0 — docs](https://v0.app/docs)
+- [Shadcn UI](https://ui.shadcn.com/)
+- [Vercel — about v0](https://vercel.com/blog/announcing-v0-generative-ui)
+`.trim(),
+
+  'i.n8n': `
+**TL;DR** — n8n is a self-hostable visual workflow runner — drag nodes, connect them, and you've got a durable automation; ships with 70+ AI nodes (LLMs, embeddings, vector stores) and persistent agent memory for building stateful assistants without writing backend glue.
+
+## The mental model
+
+A **workflow** is a directed graph of nodes:
+
+- A **trigger node** starts a run — webhook, schedule, manual, email, etc.
+- **Action nodes** transform or act on data — HTTP requests, DB queries, LLM calls, file ops.
+- **Logic nodes** route and branch — \`If\`, \`Switch\`, \`Merge\`, \`Loop\`.
+
+Every execution is stored — you can inspect inputs/outputs at each node, replay runs, and debug visually.
+
+## AI-specific nodes
+
+- \`AI Agent\` — a tool-using Claude/GPT/Gemini node with memory backends.
+- \`Vector Store\` — Pinecone, Qdrant, Postgres/pgvector.
+- \`LLM Chain\` — classic LangChain-style retrieval + generation.
+- \`Tool\` nodes — let the agent call any other n8n action as a tool.
+
+## Self-host in one command
+
+\`\`\`bash
+docker run -d --name n8n \\
+  -p 5678:5678 \\
+  -v n8n_data:/home/node/.n8n \\
+  n8nio/n8n
+\`\`\`
+
+Open \`http://localhost:5678\`, create an account, start dragging.
+
+## When n8n fits
+
+- You want durable workflows with inspection, retry, and scheduling out of the box.
+- You're gluing 3+ services (GitHub → Slack → Claude → DB) and want version control on the wiring.
+- You want visual handoff — hand a workflow to a non-coder and they can read it.
+
+## When to pick something else
+
+- **Zapier / Make** — you'd rather not self-host and your workflows are simple.
+- **Custom code** — your workflow is one-off, isolated, or needs latency below n8n's overhead.
+- **LangGraph / direct SDK** — you want code-first agent graphs with full programmatic control.
+
+## Pricing
+
+Self-host is free (fair-code license). Cloud tier starts at ~$20/mo for hosted + team features.
+
+## Sources
+
+- [n8n — main site](https://n8n.io/)
+- [n8n — docs](https://docs.n8n.io/)
+- [n8n — AI nodes](https://docs.n8n.io/advanced-ai/)
+- [n8n — self-hosting](https://docs.n8n.io/hosting/)
+`.trim(),
+
   'i.claude-opus': `
 **TL;DR** — Claude Opus 4.7 is the most capable model in Anthropic's 4.x family — built for deep, long-context reasoning and multi-step agentic work; pick it when quality matters more than speed or cost.
 
