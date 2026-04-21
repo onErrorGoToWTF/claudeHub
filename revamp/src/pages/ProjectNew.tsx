@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowLeft, ArrowRight, Check, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { InventoryItem, Project, ProjectRoute, Topic } from '../db/types'
-import { Button, Chip, PageHeader, ProgressBar } from '../ui'
+import { Button, Chip, List, PageHeader, ProgressBar, Row } from '../ui'
 import { ROUTE_BLURBS, ROUTE_LABELS, routeStack } from '../lib/projectRoutes'
 import styles from './ProjectNew.module.css'
 
@@ -116,29 +116,25 @@ export function ProjectNew() {
             <>
               <label className={styles.label}>What do you think you'll need?</label>
               <div className={styles.hint} style={{ marginBottom: 'var(--space-4)' }}>
-                Pick the tools and services you expect to use. We'll help you compare routes next.
+                Pick the tools and services you expect to use. We'll compare routes next.
               </div>
-              <div className={styles.invGrid}>
+              <List>
                 {inventory.map(i => {
                   const on = pickedIds.includes(i.id)
                   return (
-                    <button
+                    <Row
                       key={i.id}
-                      type="button"
-                      className={`${styles.invChip} ${on ? styles.invChipOn : ''}`}
+                      title={i.name}
+                      sub={`${i.category} · ${i.cost}${i.owned ? ' · owned' : ''}`}
+                      selected={on}
+                      right={on ? <Chip variant="accent">Picked</Chip> : undefined}
                       onClick={() => setPickedIds(ids =>
                         ids.includes(i.id) ? ids.filter(x => x !== i.id) : [...ids, i.id]
                       )}
-                    >
-                      <span className={styles.invName}>{i.name}</span>
-                      <span className={styles.invMeta}>
-                        {i.category} · {i.cost}{i.owned ? ' · owned' : ''}
-                      </span>
-                      {on && <span className={styles.invCheck}><Check size={13} strokeWidth={2.5} /></span>}
-                    </button>
+                    />
                   )
                 })}
-              </div>
+              </List>
             </>
           )}
 
@@ -148,29 +144,34 @@ export function ProjectNew() {
               <div className={styles.hint} style={{ marginBottom: 'var(--space-4)' }}>
                 Same destination — three different paths.
               </div>
-              <div className={styles.routes}>
+              <List>
                 {(['easiest', 'cheapest', 'best'] as ProjectRoute[]).map(r => {
                   const stack = routeStack(r, picked, inventory)
+                  const on = route === r
                   return (
-                    <button
+                    <Row
                       key={r}
-                      type="button"
-                      className={`${styles.routeCard} ${route === r ? styles.routeCardOn : ''}`}
+                      title={
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                          {ROUTE_LABELS[r]}
+                          {on && <Sparkles size={13} />}
+                        </span>
+                      }
+                      sub={
+                        <>
+                          {ROUTE_BLURBS[r]}
+                          <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', marginTop: 6 }}>
+                            {stack.slice(0, 5).map(s => <Chip key={s.id}>{s.name}</Chip>)}
+                            {stack.length > 5 && <Chip>+{stack.length - 5} more</Chip>}
+                          </div>
+                        </>
+                      }
+                      selected={on}
                       onClick={() => setRoute(r)}
-                    >
-                      <div className={styles.routeTitle}>
-                        {ROUTE_LABELS[r]}
-                        {route === r && <Sparkles size={14} />}
-                      </div>
-                      <div className={styles.routeBlurb}>{ROUTE_BLURBS[r]}</div>
-                      <div className={styles.routeStack}>
-                        {stack.slice(0, 6).map(s => <Chip key={s.id}>{s.name}</Chip>)}
-                        {stack.length > 6 && <Chip>+{stack.length - 6} more</Chip>}
-                      </div>
-                    </button>
+                    />
                   )
                 })}
-              </div>
+              </List>
             </>
           )}
 
@@ -178,27 +179,25 @@ export function ProjectNew() {
             <>
               <label className={styles.label}>What do you think you'll need to learn?</label>
               <div className={styles.hint} style={{ marginBottom: 'var(--space-4)' }}>
-                Pick topics you want on your learning path for this project. You can change these anytime.
+                Pick topics for your learning path. You can change these anytime.
               </div>
-              <div className={styles.topicGrid}>
+              <List>
                 {topics.map(t => {
                   const on = gapIds.includes(t.id)
                   return (
-                    <button
+                    <Row
                       key={t.id}
-                      type="button"
-                      className={`${styles.invChip} ${on ? styles.invChipOn : ''}`}
+                      title={t.title}
+                      sub={t.summary}
+                      selected={on}
+                      right={on ? <Chip variant="accent">On path</Chip> : undefined}
                       onClick={() => setGapIds(ids =>
                         ids.includes(t.id) ? ids.filter(x => x !== t.id) : [...ids, t.id]
                       )}
-                    >
-                      <span className={styles.invName}>{t.title}</span>
-                      <span className={styles.invMeta}>{t.summary}</span>
-                      {on && <span className={styles.invCheck}><Check size={13} strokeWidth={2.5} /></span>}
-                    </button>
+                    />
                   )
                 })}
-              </div>
+              </List>
             </>
           )}
         </motion.div>

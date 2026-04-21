@@ -3,7 +3,8 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, ExternalLink, Trash2 } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { InventoryItem, Project, Topic } from '../db/types'
-import { Button, Chip, PageHeader, ProgressBar, Section, Tile, TileMeta, TileRow, TileTitle, grid } from '../ui'
+import { Button, Chip, List, PageHeader, ProgressBar, Row, Section, Tile, TileMeta, TileRow, TileTitle, grid } from '../ui'
+import { Check } from 'lucide-react'
 import { ROUTE_LABELS, ROUTE_BLURBS } from '../lib/projectRoutes'
 import styles from './ProjectDetail.module.css'
 
@@ -86,20 +87,33 @@ export function ProjectDetail() {
       </div>
 
       <Section title="Progress" meta={`${done} / ${p.checklist.length}`}>
-        <ProgressBar value={pct} />
-        <div className={styles.checklist}>
-          {p.checklist.map(item => (
-            <button
-              key={item.id}
-              type="button"
-              className={`${styles.check} ${item.done ? styles.checkDone : ''}`}
-              onClick={() => toggle(item.id)}
-            >
-              <span className={styles.checkBox}>{item.done ? '✓' : ''}</span>
-              <span className={styles.checkLabel}>{item.label}</span>
-            </button>
-          ))}
+        <div style={{ marginBottom: 'var(--space-4)' }}>
+          <ProgressBar value={pct} />
         </div>
+        <List>
+          {p.checklist.map(item => (
+            <Row
+              key={item.id}
+              title={item.label}
+              done={item.done}
+              right={item.done ? (
+                <span style={{
+                  display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                  width: 22, height: 22, borderRadius: '50%',
+                  background: 'var(--mastery-solid)', color: 'var(--ink-inverse)',
+                }}>
+                  <Check size={13} strokeWidth={2.5} />
+                </span>
+              ) : (
+                <span style={{
+                  width: 22, height: 22, borderRadius: '50%',
+                  background: '#fff', border: '1.5px solid var(--hair-strong)',
+                }} />
+              )}
+              onClick={() => toggle(item.id)}
+            />
+          ))}
+        </List>
       </Section>
 
       <Section title="Stack" meta={`${p.stack.length} items`}>

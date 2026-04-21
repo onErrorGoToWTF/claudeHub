@@ -23,19 +23,44 @@ export function QuizView() {
   const total = quiz?.questions.length ?? 0
   const progress = useMemo(() => (total === 0 ? 0 : (phase === 'done' ? 1 : i / total)), [i, total, phase])
 
+  // Keyboard: 1-9 pick (no lock), Enter submit / advance
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (!q) return
+      if (phase === 'answering') {
+        const n = parseInt(e.key, 10)
+        if (!isNaN(n) && n >= 1 && n <= q.choices.length) setPicked(n - 1)
+        else if ((e.key === 'Enter' || e.key === ' ') && picked !== null) {
+          e.preventDefault()
+          submit()
+        }
+      } else if (phase === 'feedback' && (e.key === 'Enter' || e.key === ' ')) {
+        e.preventDefault()
+        next()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [q, phase, i, correct, picked])
+
   if (!quiz || !q) return <div className="page" />
 
-  function choose(idx: number) {
+  function select(idx: number) {
     if (phase !== 'answering') return
     setPicked(idx)
+  }
+
+  function submit() {
+    if (phase !== 'answering' || picked === null) return
     setPhase('feedback')
-    if (idx === q!.answerIdx) setCorrect(c => c + 1)
+    if (picked === q!.answerIdx) setCorrect(c => c + 1)
   }
 
   async function next() {
     if (!quiz) return
     if (i + 1 >= quiz.questions.length) {
-      const score = (correct) / quiz.questions.length
+      const score = correct / quiz.questions.length
       await repo.recordQuiz(quiz.id, quiz.topicId, score)
       setPhase('done')
     } else {
@@ -91,36 +116,41 @@ export function QuizView() {
       <AnimatePresence mode="wait">
         <motion.div
           key={i + ':' + phase}
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.32, ease: [0.22, 0.61, 0.36, 1] }}
+          exit={{ opacity: 0, y: -6 }}
+          transition={{ duration: 0.28, ease: [0.22, 0.61, 0.36, 1] }}
           className={styles.card}
         >
           <div className={styles.prompt}>{q.prompt}</div>
-          <div className={styles.choices}>
+
+          <div className={styles.choices} role="radiogroup">
             {q.choices.map((c, idx) => {
               const isPicked = picked === idx
               const isAnswer = idx === q.answerIdx
               const state =
-                phase === 'answering' ? 'idle'
-                : isPicked && isAnswer ? 'correct'
-                : isPicked ? 'wrong'
-                : isAnswer ? 'reveal'
-                : 'dim'
+                phase === 'answering'
+                  ? (isPicked ? 'picked' : 'idle')
+                  : isPicked && isAnswer ? 'correct'
+                  : isPicked ? 'wrong'
+                  : isAnswer ? 'reveal'
+                  : 'dim'
               return (
                 <button
                   key={idx}
                   type="button"
-                  className={`${styles.choice} ${styles[`state_${state}`]}`}
+                  role="radio"
+                  aria-checked={isPicked}
+                  className={`${styles.choice} ${state !== 'idle' ? styles[`state_${state}`] : ''}`}
                   data-tappable="true"
-                  onClick={() => choose(idx)}
+                  onClick={() => select(idx)}
                   disabled={phase !== 'answering'}
                 >
-                  <span className={styles.choiceDot}>
-                    {state === 'correct' && <Check size={14} strokeWidth={2.5} />}
-                    {state === 'wrong'   && <X size={14} strokeWidth={2.5} />}
-                    {state === 'reveal'  && <Check size={14} strokeWidth={2} />}
+                  <span className={styles.dot} aria-hidden>
+                    {state === 'picked'  && <span className={styles.dotInner} />}
+                    {state === 'correct' && <Check size={13} strokeWidth={2.5} />}
+                    {state === 'wrong'   && <X size={13} strokeWidth={2.5} />}
+                    {state === 'reveal'  && <Check size={13} strokeWidth={2} />}
                   </span>
                   <span className={styles.choiceLabel}>{c}</span>
                 </button>
@@ -139,13 +169,23 @@ export function QuizView() {
             </motion.div>
           )}
 
-          {phase === 'feedback' && (
-            <div className={styles.footer}>
-              <Button variant="primary" onClick={next}>
+          <div className={styles.footer}>
+            <span className={styles.footerHint}>
+              {phase === 'answering'
+                ? (picked === null ? 'Select an answer' : 'Change your mind, or submit')
+                : 'Press Enter to continue'}
+            </span>
+            {phase === 'answering' && (
+              <button className={styles.secondaryBtn} onClick={submit} disabled={picked === null}>
+                Submit
+              </button>
+            )}
+            {phase === 'feedback' && (
+              <button className={styles.secondaryBtn} onClick={next}>
                 {i + 1 < total ? 'Next question' : 'See results'}
-              </Button>
-            </div>
-          )}
+              </button>
+            )}
+          </div>
         </motion.div>
       </AnimatePresence>
     </div>

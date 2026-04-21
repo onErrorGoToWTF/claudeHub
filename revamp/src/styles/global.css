@@ -30,12 +30,36 @@ body::before {
   z-index: 0;
 }
 
+/* Faint blueprint grid overlay — Anthropic research-preview vibe */
+body::after {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right,  rgba(20, 19, 18, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 19, 18, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 90%);
+  z-index: 0;
+}
+
 #root { position: relative; z-index: 1; min-height: 100%; }
 
 h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 600; letter-spacing: var(--tracking-tight); }
 h1 { font-size: var(--text-3xl); line-height: var(--leading-tight); }
 h2 { font-size: var(--text-2xl); line-height: var(--leading-tight); }
 h3 { font-size: var(--text-lg); }
+
+/* Serif display utility — reserved for hero page titles */
+.serif-display {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: 42px;
+  line-height: 1.08;
+}
+@media (min-width: 720px) { .serif-display { font-size: 52px; } }
 p  { margin: 0; color: var(--ink-2); line-height: var(--leading-loose); }
 
 a { color: var(--accent-ink); text-decoration: none; }
