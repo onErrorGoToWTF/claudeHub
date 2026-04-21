@@ -95,27 +95,80 @@
   border-color: var(--danger-border);
 }
 
-/* ---------- progress bar ---------- */
+/* ---------- progress bar — electrified line ---------- */
+/* Thin dim baseline. A brighter line grows left-to-right over it, casting a
+   subtle accent glow. Optional milestone nodes sit on the line and light up
+   as the front passes them. One motion at a time — no shimmer, no drift. */
 .bar {
   position: relative;
-  height: 10px;
-  background: var(--bg-sunken);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  border: 1px solid var(--hair);
+  height: 14px;
+  width: 100%;
+  /* leave room on the sides so milestone nodes at 0% / 100% aren't clipped */
+}
+.barTrack {
+  position: absolute;
+  left: 0; right: 0;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  background: var(--hair-strong);
+  border-radius: 2px;
 }
 .barFill {
   position: absolute;
-  inset: 0;
-  right: auto;
-  background: linear-gradient(
-    90deg,
-    color-mix(in oklch, var(--accent-base) 75%, white 25%),
-    var(--accent-solid)
-  );
-  box-shadow: 0 0 16px -2px var(--accent-glow);
-  transition: width 600ms var(--ease-premium);
-  border-radius: var(--radius-sm);
+  left: 0;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  width: var(--target, 0%);
+  background: var(--accent-solid);
+  border-radius: 2px;
+  box-shadow:
+    0 0 2px var(--accent-solid),
+    0 0 10px var(--accent-glow);
+  animation: barGrow 900ms var(--ease-premium) both;
+}
+@keyframes barGrow {
+  from { width: 0%; }
+  to   { width: var(--target, 0%); }
+}
+
+.barNode {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1.5px solid var(--hair-strong);
+  box-shadow: none;
+}
+.barNodeLit {
+  animation: barNodeLight 220ms var(--ease-premium) both;
+  animation-delay: var(--lit-delay, 0ms);
+}
+@keyframes barNodeLight {
+  from {
+    background: var(--bg-card);
+    border-color: var(--hair-strong);
+    box-shadow: none;
+  }
+  to {
+    background: var(--accent-solid);
+    border-color: var(--accent-border);
+    box-shadow: 0 0 8px var(--accent-glow);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .barFill       { animation: none; width: var(--target, 0%); }
+  .barNodeLit    {
+    animation: none;
+    background: var(--accent-solid);
+    border-color: var(--accent-border);
+    box-shadow: 0 0 8px var(--accent-glow);
+  }
 }
 
 /* ---------- tile ---------- */

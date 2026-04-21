@@ -1,5 +1,6 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import type { ButtonHTMLAttributes, CSSProperties, ReactNode } from 'react'
 import clsx from 'clsx'
+import { useInViewReplay } from '../lib/useInViewReplay'
 import s from './ui.module.css'
 
 export function PageHeader({ eyebrow, title, subtitle, right }: {
@@ -58,11 +59,55 @@ export function Chip({ children, variant }: { children: ReactNode; variant?: 'ac
   )
 }
 
-export function ProgressBar({ value }: { value: number /* 0..1 */ }) {
+/**
+ * Electrified progress bar — thin glowing line that grows left-to-right,
+ * with optional milestone nodes that "light up" as the front crosses them.
+ *
+ * Animation re-triggers every time the bar re-enters the viewport
+ * (IntersectionObserver). Only one motion at a time: gradient drift / shimmer
+ * are intentionally absent so the growth reveal is the only thing moving.
+ * Reduced-motion: static end state, no replay.
+ *
+ * `value` + each `milestones[i]` are 0..1.
+ */
+export function ProgressBar({ value, milestones }: {
+  value: number
+  milestones?: number[]
+}) {
   const pct = Math.max(0, Math.min(1, value)) * 100
+  const [ref, playKey] = useInViewReplay<HTMLDivElement>()
+  const GROW_MS = 900
+
   return (
-    <div className={s.bar} role="progressbar" aria-valuenow={Math.round(pct)} aria-valuemin={0} aria-valuemax={100}>
-      <div className={s.barFill} style={{ width: `${pct}%` }} />
+    <div
+      ref={ref}
+      className={s.bar}
+      role="progressbar"
+      aria-valuenow={Math.round(pct)}
+      aria-valuemin={0}
+      aria-valuemax={100}
+    >
+      <div className={s.barTrack} />
+      <div
+        key={`fill-${playKey}`}
+        className={s.barFill}
+        style={{ ['--target' as string]: `${pct}%` } as CSSProperties}
+      />
+      {milestones?.map((m, i) => {
+        const mpct = Math.max(0, Math.min(1, m)) * 100
+        const lit = pct >= mpct
+        const delayMs = Math.round((mpct / 100) * GROW_MS)
+        return (
+          <span
+            key={`node-${i}-${playKey}`}
+            className={clsx(s.barNode, lit && s.barNodeLit)}
+            style={{
+              left: `${mpct}%`,
+              ['--lit-delay' as string]: `${delayMs}ms`,
+            } as CSSProperties}
+          />
+        )
+      })}
     </div>
   )
 }
