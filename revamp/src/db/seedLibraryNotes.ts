@@ -835,4 +835,220 @@ That restraint is exactly what makes Khan the closest analog to a calm, adult-se
 - [Khan Academy](https://www.khanacademy.org/)
 `.trim(),
   },
+
+  {
+    id: 'n.hig-gestures',
+    kind: 'doc',
+    title: 'Apple HIG — Gestures, Drag & Swipe Actions',
+    summary: "The standard gesture vocabulary, system gestures you can't override, and the directional semantics for swipe actions (trailing = destructive, leading = contextual).",
+    url: 'https://developer.apple.com/design/human-interface-guidelines/gestures',
+    tags: ['design', 'interaction', 'gestures', 'apple'],
+    pinned: false,
+    addedAt: L(0),
+    body: `
+**TL;DR** — Use the standard gesture vocabulary users already know (tap, long-press, swipe, pinch), never override the system gestures (back-swipe, home, notification pull), and keep swipe-action direction semantic — **trailing for destructive**, **leading for contextual**.
+
+## The standard vocabulary
+
+| Gesture | Standard meaning |
+|---|---|
+| Tap | Primary action, selection |
+| Long press | Context menu, preview, drag lift |
+| Swipe horizontal | Delete (trailing), archive/pin (leading), back (left edge) |
+| Swipe vertical | Scroll, dismiss sheet (down) |
+| Pinch | Zoom |
+| Two-finger rotate | Rotate content |
+
+Stick to these. Custom gestures are discoverability traps.
+
+## System gestures you cannot override
+
+- **Swipe from left edge** → back navigation.
+- **Swipe down from top-left** → Notification Center.
+- **Swipe down from top-right** → Control Center.
+- **Swipe up from bottom** → home / app switcher.
+
+Any UI that fights these breaks fundamental navigation.
+
+## Swipe-action direction semantics
+
+> The trailing edge is reserved for destructive actions (Delete). The leading edge is for contextual actions (Pin, Archive, Mark as Read).
+
+— Apple HIG, Lists and Tables (distilled)
+
+- Swipe **left-to-right** on a row → contextual actions reveal on the leading side.
+- Swipe **right-to-left** on a row → destructive action reveals on the trailing side.
+
+Mail's swipe-to-delete matches this; every good iOS list follows it.
+
+## Drag-and-drop
+
+- **Lift state** — source item scales up slightly (~1.04), shadow grows, surface brightens. Never darkens.
+- **Drop target feedback** — the destination highlights as the drag enters it.
+- **Drop animation** — the item settles into place with a brief spring; don't just snap.
+- **Cancel gesture** — releasing outside a valid drop target should return the item to its origin.
+
+## Long-press
+
+On iOS, the standard long-press duration is ~500ms. Uses:
+
+- Reveal a context menu.
+- Preview a piece of content.
+- Initiate a drag lift.
+
+Don't reuse long-press for arbitrary actions users can't discover.
+
+## Every gesture needs an alternative
+
+Swipe-to-delete users who can't swipe (motor impairment, external keyboard, Switch Control) need a Delete button too. See the Accessibility note.
+
+## Sources
+
+- [Apple HIG — Gestures](https://developer.apple.com/design/human-interface-guidelines/gestures)
+- [Apple HIG — Drag and Drop](https://developer.apple.com/design/human-interface-guidelines/drag-and-drop)
+- [Apple HIG — Lists and Tables](https://developer.apple.com/design/human-interface-guidelines/lists-and-tables)
+- [ehmo/platform-design-skills](https://github.com/ehmo/platform-design-skills)
+`.trim(),
+  },
+
+  {
+    id: 'n.hig-materials',
+    kind: 'doc',
+    title: 'Apple HIG — System Materials (ultraThin → ultraThick)',
+    summary: "The named translucent-blur levels pre-Liquid-Glass — Ultra Thin, Thin, Regular, Thick, Ultra Thick — and how vibrancy automatically adapts text that sits on them.",
+    url: 'https://developer.apple.com/design/human-interface-guidelines/foundations/materials',
+    tags: ['design', 'materials', 'glass', 'apple'],
+    pinned: false,
+    addedAt: L(0),
+    body: `
+**TL;DR** — Apple's **named materials** (\`ultraThin\` → \`ultraThick\`) are pre-tuned translucent-blur backgrounds — pick the level by how much content-behind visibility you want, and **vibrancy** handles legible text on top automatically. Liquid Glass (2025) is a separate material category that sits atop this older family.
+
+## What a material is
+
+> A material imparts translucency and blurring to a background, creating a sense of visual separation between foreground and background layers.
+
+— Apple HIG, Materials (aggregated)
+
+Think of it as a physical layer — glass that blurs what's behind it so text and controls sitting on top stay legible.
+
+## The five named levels
+
+| SwiftUI | UIKit | Feel | Typical use |
+|---|---|---|---|
+| \`.ultraThinMaterial\` | systemUltraThinMaterial | Softest blur | Small floating controls — content behind still clearly visible |
+| \`.thinMaterial\` | systemThinMaterial | Subtle | Tab bars, nav bars where content continuity matters |
+| \`.regularMaterial\` | systemMaterial | Standard | **Default.** Sheets, popovers, sidebars |
+| \`.thickMaterial\` | systemThickMaterial | Heavy blur | Modal overlays where focus fully shifts |
+| \`.ultraThickMaterial\` | systemUltraThickMaterial | Nearly opaque | Rare; high-focus contexts |
+
+Apple doesn't publish the exact blur/opacity values — they're tuned per-platform and per-context.
+
+## Vibrancy
+
+When text or icons sit on a material, apply a **vibrancy** color instead of a flat color. Vibrancy blends the foreground with the material behind, lifting the content's tone toward what's legible on that specific backdrop.
+
+- SwiftUI: \`.foregroundStyle(.primary)\` / \`.secondary\` / \`.tertiary\` already carries vibrancy on material backgrounds.
+- UIKit: \`UIVisualEffectView\` with \`UIVibrancyEffect\`.
+
+## Dark Mode adaptation
+
+All materials auto-adapt. \`.regularMaterial\` in light mode looks near-white; in dark mode, dark-translucent. You don't write two variants.
+
+## Relationship to Liquid Glass
+
+Liquid Glass (introduced 2025) is a **new material category** with explicit lensing, specular highlights, and motion response — not a replacement. Older materials still exist for:
+
+- Apps not yet rebuilt on iOS 26+.
+- System surfaces Apple hasn't migrated.
+- Contexts where Liquid Glass is inappropriate (content-layer blurs, dense text backdrops).
+
+Most UIs in the 2026 era use BOTH — Liquid Glass for the nav / functional layer, named materials for secondary surfaces (sheets, popovers).
+
+## Web equivalent
+
+CSS \`backdrop-filter: blur() saturate()\` with tuned values:
+
+\`\`\`css
+.ultra-thin { backdrop-filter: blur(8px)  saturate(1.1); background: rgba(255,255,255,0.35); }
+.thin       { backdrop-filter: blur(12px) saturate(1.15); background: rgba(255,255,255,0.5); }
+.regular    { backdrop-filter: blur(18px) saturate(1.2);  background: rgba(255,255,255,0.65); }
+.thick      { backdrop-filter: blur(28px) saturate(1.25); background: rgba(255,255,255,0.8); }
+\`\`\`
+
+Tune opacity against your ambient bg tone. Pair with an inset 1px top-edge white highlight for the specular feel.
+
+## Sources
+
+- [Apple HIG — Materials](https://developer.apple.com/design/human-interface-guidelines/foundations/materials)
+- [Apple HIG — Dark Mode](https://developer.apple.com/design/human-interface-guidelines/dark-mode)
+- [MDN — backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
+`.trim(),
+  },
+
+  {
+    id: 'n.quizlet-learn',
+    kind: 'doc',
+    title: 'Quizlet — Learn mode & tri-state progress',
+    summary: "The least ambitious progress tracking of the major learning apps — tri-state completion (not started / started / finished) + adaptive per-term loop — and that restraint is the whole lesson.",
+    url: 'https://quizlet.com/',
+    tags: ['learning', 'ux', 'progress'],
+    pinned: false,
+    addedAt: L(0),
+    body: `
+**TL;DR** — Quizlet tracks progress with a simple **tri-state** (not started / started / finished) at the set level, plus an **adaptive per-term loop** inside Learn mode — no streaks, no XP, no mascot. The restraint is the lesson; most apps over-build this.
+
+## Tri-state at the set level
+
+Every study set lives in one of three states:
+
+- **Not started** — no terms reviewed.
+- **Started** — partial progress; a progress bar fills as terms cross thresholds.
+- **Finished** — all terms reviewed to completion; a small green check appears on the set tile.
+
+Five states is theatre when the question is just "has the user engaged with this or not?"
+
+## The set-tile signal
+
+- Small **green checkmark** on completion — ambient, not celebratory.
+- Progress bar for in-progress sets (terms-reviewed / terms-total).
+- The list view stays scannable because progress is encoded on every tile, not in a separate stats surface.
+
+## Learn mode — adaptive per-term
+
+Inside a set, Learn mode tracks per-term difficulty:
+
+- Every term starts "unseen."
+- Correct answers advance it toward "known."
+- Wrong answers reset / demote it.
+- Hard terms return more often; easy terms fade out of the loop.
+
+This is classic spaced retrieval, served as an interactive loop rather than a daily-review queue (Khan's pattern).
+
+## What Quizlet does NOT do
+
+- No streak fire / day counter.
+- No XP store / cosmetics.
+- No mascot.
+- No social leaderboard on the Learn surface.
+
+(The app *does* have gamified modes — Match, Gravity, Live — but these are side-modes, not load-bearing.)
+
+## What to port
+
+- **Tri-state is enough** for engagement-level progress on any browseable content list.
+- **Ambient completion check** on the list item — not a celebratory popup.
+- **Per-term adaptive loop inside a quiz** — if a user gets a concept wrong, it returns sooner.
+
+## What to leave
+
+- Quizlet's set-creator UX is aimed at students memorizing vocabulary; it doesn't generalize.
+- The gamified side modes are a distraction for an adult-serious learning app.
+
+## Sources
+
+- [Quizlet — main site](https://quizlet.com/)
+- [Quizlet — Learn mode announcement](https://quizlet.com/blog/new-a-smarter-learn-mode)
+- [Quizlet — Class Progress](https://help.quizlet.com/hc/en-us/articles/360030512432)
+`.trim(),
+  },
 ]
