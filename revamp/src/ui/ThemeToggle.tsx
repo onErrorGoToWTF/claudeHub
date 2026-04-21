@@ -17,7 +17,9 @@ export function ThemeToggle() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
-    try { localStorage.setItem('ai-theme', theme) } catch {}
+    try { localStorage.setItem('ai-theme', theme) } catch {
+      // private-mode / disabled storage — ignore
+    }
   }, [theme])
 
   useEffect(() => {

@@ -5,8 +5,9 @@ import { overallProgress, repo } from '../db/repo'
 import type { Track, Topic, Mastery } from '../db/types'
 import {
   PageHeader, Section, Tile, TileTitle, TileMeta, TileRow,
-  Chip, ProgressBar, grid,
+  Chip, ProgressBar,
 } from '../ui'
+import { grid } from '../ui/grid'
 import { matchesPathway } from '../lib/audience'
 import { useUserStore } from '../state/userStore'
 import s from './Learn.module.css'

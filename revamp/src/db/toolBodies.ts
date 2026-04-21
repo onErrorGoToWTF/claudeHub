@@ -545,7 +545,7 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 const user = await prisma.user.create({
-  data: { email: 'a@b.com', name: 'Alan', posts: { create: { title: 'Hi' } } },
+  data: { email: 'a@b.com', name: 'Demo', posts: { create: { title: 'Hi' } } },
   include: { posts: true },
 })
 // user.posts is typed as Post[]
@@ -1008,7 +1008,7 @@ let flag: boolean = true
 
 // objects
 type User = { id: string; name: string; age?: number }  // age is optional
-const u: User = { id: 'u1', name: 'Alan' }
+const u: User = { id: 'u1', name: 'Demo' }
 
 // arrays + generics
 const ids: string[] = ['a', 'b']

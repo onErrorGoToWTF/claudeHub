@@ -16,6 +16,9 @@ export function useInViewReplay<T extends Element = HTMLDivElement>(threshold = 
     if (!el) return
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduced) {
+      // Intentional: one synchronous bump on mount so the consumer renders
+      // the end state without animation. No further state transitions.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPlayKey(k => k + 1)
       return
     }

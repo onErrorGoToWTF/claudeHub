@@ -51,7 +51,10 @@ export function GlobalSearch({ open, onClose }: { open: boolean; onClose: () => 
     if (open) {
       requestAnimationFrame(() => inputRef.current?.focus())
     } else {
-      setQuery(''); setFocusIdx(0)
+      // Syncing prop -> internal on close is intentional.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setQuery('')
+      setFocusIdx(0)
     }
   }, [open])
 
@@ -111,8 +114,11 @@ export function GlobalSearch({ open, onClose }: { open: boolean; onClose: () => 
     return out.slice(0, 40)
   }, [idx, query, pathway])
 
-  // Clamp focus when hit set changes.
-  useEffect(() => { setFocusIdx(0) }, [query])
+  // Clamp focus when hit set changes. Resetting to top on query change is intentional.
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setFocusIdx(0)
+  }, [query])
 
   function activate(h: Hit) {
     nav(h.to)

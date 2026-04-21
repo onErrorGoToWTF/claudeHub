@@ -158,5 +158,5 @@ export function Row({
   )
 }
 
-export const grid = s.grid
-export const grid3 = s.grid3
+// Grid class-name constants live in ui/grid.ts — import them from there.
+// (Keeping this file component-only so Vite fast-refresh stays happy.)

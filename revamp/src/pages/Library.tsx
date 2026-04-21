@@ -64,8 +64,13 @@ export function Library() {
   // non-trivial AND has zero matches, persist it to `searchMisses` and
   // surface an inline "we'll add it" note. Per-session dedupe so a user
   // mashing the backspace key doesn't rack up count inflation.
+  //
+  // setState calls here are intentional — they sync visible banner state
+  // with external inputs (the derived `shown` list + `query`). Lint rule
+  // flags this pattern aggressively; behavior is correct.
   useEffect(() => {
     const q = query.trim()
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing banner with derived inputs is intentional
     if (q.length < 2) { setMissLogged(null); return }
     if (shown.length > 0) { setMissLogged(null); return }
     const key = q.toLowerCase()

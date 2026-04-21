@@ -3,7 +3,8 @@ import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, BookOpen, CircleCheckBig, HelpCircle } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Lesson, Quiz, Topic, Progress } from '../db/types'
-import { PageHeader, Section, Tile, TileTitle, TileMeta, TileRow, Chip, ProgressBar, grid } from '../ui'
+import { PageHeader, Section, Tile, TileTitle, TileMeta, TileRow, Chip, ProgressBar } from '../ui'
+import { grid } from '../ui/grid'
 
 export function TopicDetail() {
   const { topicId = '' } = useParams()
