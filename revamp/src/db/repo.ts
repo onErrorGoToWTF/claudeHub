@@ -6,7 +6,7 @@
 import { db } from './schema'
 import type {
   Track, Topic, Lesson, Quiz, Progress, Mastery,
-  InventoryItem, Project,
+  LibraryItem, LibraryKind, InventoryItem, Project,
 } from './types'
 
 export const repo = {
@@ -62,10 +62,26 @@ export const repo = {
   async listMastery(): Promise<Mastery[]> { return db.mastery.toArray() },
   async getMastery(topicId: string) { return db.mastery.get(topicId) },
 
-  // ---------- inventory ----------
-  async listInventory(): Promise<InventoryItem[]> { return db.inventory.toArray() },
+  // ---------- library ----------
+  async listLibrary(): Promise<LibraryItem[]> {
+    return (await db.library.toArray()).sort((a, b) => b.addedAt - a.addedAt)
+  },
+  async listLibraryByKind(kind: LibraryKind): Promise<LibraryItem[]> {
+    return (await db.library.where('kind').equals(kind).toArray())
+      .sort((a, b) => b.addedAt - a.addedAt)
+  },
+  async getLibraryItem(id: string) { return db.library.get(id) },
+  async putLibraryItem(item: LibraryItem) { await db.library.put(item) },
+  async deleteLibraryItem(id: string) { await db.library.delete(id) },
+  async togglePinned(id: string, pinned: boolean) { await db.library.update(id, { pinned }) },
+
+  // ---------- inventory (tool-filtered library, for Projects intake) ----------
+  async listInventory(): Promise<InventoryItem[]> {
+    const tools = await db.library.where('kind').equals('tool').toArray()
+    return tools as InventoryItem[]
+  },
   async setOwned(id: string, owned: boolean) {
-    await db.inventory.update(id, { owned })
+    await db.library.update(id, { owned })
   },
 
   // ---------- projects ----------

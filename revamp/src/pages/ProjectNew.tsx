@@ -124,8 +124,8 @@ export function ProjectNew() {
                   return (
                     <Row
                       key={i.id}
-                      title={i.name}
-                      sub={`${i.category} · ${i.cost}${i.owned ? ' · owned' : ''}`}
+                      title={i.title}
+                      sub={`${i.toolCategory} · ${i.cost}${i.owned ? ' · owned' : ''}`}
                       selected={on}
                       right={on ? <Chip variant="accent">Picked</Chip> : undefined}
                       onClick={() => setPickedIds(ids =>
@@ -161,7 +161,7 @@ export function ProjectNew() {
                         <>
                           {ROUTE_BLURBS[r]}
                           <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', marginTop: 6 }}>
-                            {stack.slice(0, 5).map(s => <Chip key={s.id}>{s.name}</Chip>)}
+                            {stack.slice(0, 5).map(s => <Chip key={s.id}>{s.title}</Chip>)}
                             {stack.length > 5 && <Chip>+{stack.length - 5} more</Chip>}
                           </div>
                         </>

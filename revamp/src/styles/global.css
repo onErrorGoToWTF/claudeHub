@@ -51,15 +51,15 @@ h1 { font-size: var(--text-3xl); line-height: var(--leading-tight); }
 h2 { font-size: var(--text-2xl); line-height: var(--leading-tight); }
 h3 { font-size: var(--text-lg); }
 
-/* Serif display utility — reserved for hero page titles */
+/* Display utility — reserved for hero page titles (sans, tight tracking) */
 .serif-display {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  font-size: 42px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-size: 38px;
   line-height: 1.08;
 }
-@media (min-width: 720px) { .serif-display { font-size: 52px; } }
+@media (min-width: 720px) { .serif-display { font-size: 46px; } }
 p  { margin: 0; color: var(--ink-2); line-height: var(--leading-loose); }
 
 a { color: var(--accent-ink); text-decoration: none; }

@@ -123,7 +123,7 @@ export function ProjectDetail() {
             if (!i) return null
             return (
               <Chip key={id} variant={i.owned ? 'mastery' : i.cost === 'free' ? undefined : 'accent'}>
-                {i.name}{!i.owned && i.cost !== 'free' ? ' · $$' : ''}
+                {i.title}{!i.owned && i.cost !== 'free' ? ' · $$' : ''}
               </Chip>
             )
           })}

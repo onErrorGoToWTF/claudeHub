@@ -21,7 +21,7 @@
   --focus-ring:     color-mix(in oklch, var(--accent-solid) 70%, transparent);
 
   /* ---------- accent (one knob) ---------- */
-  --accent-base:    oklch(62% 0.17 272);     /* Linear-family indigo */
+  --accent-base:    oklch(60% 0.14 235);     /* ocean blue */
   --accent-solid:   var(--accent-base);
   --accent-hover:   color-mix(in oklch, var(--accent-base) 88%, black 12%);
   --accent-border:  color-mix(in oklch, var(--accent-base) 55%, transparent);
@@ -64,9 +64,9 @@
   --space-16: 64px;
 
   /* ---------- typography ---------- */
-  --font-sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-serif: "Source Serif 4", "Newsreader", "Lora", ui-serif, Georgia, serif;
-  --font-mono:  "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans:    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI Variable", "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI Variable", "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --text-xs:   12px;
   --text-sm:   13px;
   --text-base: 14px;

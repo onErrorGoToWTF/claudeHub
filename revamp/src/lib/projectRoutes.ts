@@ -20,7 +20,6 @@ export function routeStack(
 ): InventoryItem[] {
   if (route === 'easiest')  return picked.filter(i => i.owned)
   if (route === 'cheapest') return picked.filter(i => i.cost === 'free' || i.owned)
-  // best: include picked + unowned premium items flagged as category=model/tool
-  const extras = inventory.filter(i => !picked.includes(i) && (i.category === 'model' || i.category === 'tool'))
+  const extras = inventory.filter(i => !picked.includes(i) && (i.toolCategory === 'model' || i.toolCategory === 'tool'))
   return [...picked, ...extras.slice(0, 2)]
 }

@@ -56,14 +56,26 @@ export type Mastery = {
   updatedAt: number
 }
 
-export interface InventoryItem {
+export type LibraryKind = 'tool' | 'document' | 'article' | 'video' | 'paper'
+
+export interface LibraryItem {
   id: ID
-  name: string
-  category: 'model' | 'ide' | 'framework' | 'service' | 'tool'
-  cost: 'free' | 'paid' | 'subscription'
-  owned: boolean
+  kind: LibraryKind
+  title: string
+  summary?: string
+  url?: string
+  tags: string[]
+  pinned: boolean
+  addedAt: number
+  /** Tool-only fields. Meaningless for other kinds but kept here to keep one schema. */
+  toolCategory?: 'model' | 'ide' | 'framework' | 'service' | 'tool'
+  cost?: 'free' | 'paid' | 'subscription'
+  owned?: boolean
   notes?: string
 }
+
+/** Legacy alias — still used by the Projects intake flow. */
+export type InventoryItem = LibraryItem & { kind: 'tool'; toolCategory: NonNullable<LibraryItem['toolCategory']>; cost: NonNullable<LibraryItem['cost']>; owned: boolean }
 
 export type ProjectStatus = 'draft' | 'active' | 'paused' | 'shipped'
 export type ProjectRoute = 'easiest' | 'cheapest' | 'best'

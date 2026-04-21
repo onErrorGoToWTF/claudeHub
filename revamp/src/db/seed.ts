@@ -1,6 +1,6 @@
 import { db } from './schema'
 import type {
-  Track, Topic, Lesson, Quiz, InventoryItem, Project,
+  Track, Topic, Lesson, Quiz, LibraryItem, Project,
 } from './types'
 
 const tracks: Track[] = [
@@ -113,17 +113,55 @@ const quizzes: Quiz[] = [
   },
 ]
 
-const inventory: InventoryItem[] = [
-  { id: 'i.claude-opus',   name: 'Claude Opus 4.7',         category: 'model',     cost: 'subscription', owned: true },
-  { id: 'i.claude-sonnet', name: 'Claude Sonnet 4.6',       category: 'model',     cost: 'subscription', owned: true },
-  { id: 'i.gpt',           name: 'GPT (paid)',              category: 'model',     cost: 'subscription', owned: false },
-  { id: 'i.vscode',        name: 'VS Code',                 category: 'ide',       cost: 'free',         owned: true },
-  { id: 'i.claude-code',   name: 'Claude Code (CLI)',       category: 'tool',      cost: 'subscription', owned: true },
-  { id: 'i.vite',          name: 'Vite',                    category: 'framework', cost: 'free',         owned: true },
-  { id: 'i.react',         name: 'React',                   category: 'framework', cost: 'free',         owned: true },
-  { id: 'i.github-pages',  name: 'GitHub Pages',            category: 'service',   cost: 'free',         owned: true },
-  { id: 'i.vercel',        name: 'Vercel',                  category: 'service',   cost: 'free',         owned: false },
-  { id: 'i.supabase',      name: 'Supabase',                category: 'service',   cost: 'free',         owned: false },
+const NOW = Date.now()
+const L = (n: number) => NOW - n * 86400_000
+
+const library: LibraryItem[] = [
+  // ---- tools ----
+  { id: 'i.claude-opus',   kind: 'tool', title: 'Claude Opus 4.7',    tags: ['model', 'frontier'], pinned: true,  addedAt: L(3),  toolCategory: 'model',     cost: 'subscription', owned: true  },
+  { id: 'i.claude-sonnet', kind: 'tool', title: 'Claude Sonnet 4.6',  tags: ['model'],             pinned: false, addedAt: L(7),  toolCategory: 'model',     cost: 'subscription', owned: true  },
+  { id: 'i.gpt',           kind: 'tool', title: 'GPT (paid)',         tags: ['model'],             pinned: false, addedAt: L(14), toolCategory: 'model',     cost: 'subscription', owned: false },
+  { id: 'i.vscode',        kind: 'tool', title: 'VS Code',            tags: ['ide'],               pinned: false, addedAt: L(30), toolCategory: 'ide',       cost: 'free',         owned: true  },
+  { id: 'i.claude-code',   kind: 'tool', title: 'Claude Code (CLI)',  tags: ['agent', 'cli'],      pinned: true,  addedAt: L(2),  toolCategory: 'tool',      cost: 'subscription', owned: true  },
+  { id: 'i.vite',          kind: 'tool', title: 'Vite',               tags: ['framework', 'build'],pinned: false, addedAt: L(10), toolCategory: 'framework', cost: 'free',         owned: true  },
+  { id: 'i.react',         kind: 'tool', title: 'React',              tags: ['framework'],         pinned: false, addedAt: L(10), toolCategory: 'framework', cost: 'free',         owned: true  },
+  { id: 'i.github-pages',  kind: 'tool', title: 'GitHub Pages',       tags: ['hosting'],           pinned: false, addedAt: L(30), toolCategory: 'service',   cost: 'free',         owned: true  },
+  { id: 'i.vercel',        kind: 'tool', title: 'Vercel',             tags: ['hosting'],           pinned: false, addedAt: L(45), toolCategory: 'service',   cost: 'free',         owned: false },
+  { id: 'i.supabase',      kind: 'tool', title: 'Supabase',           tags: ['db', 'hosting'],     pinned: false, addedAt: L(45), toolCategory: 'service',   cost: 'free',         owned: false },
+
+  // ---- documents ----
+  { id: 'd.apple-hig',      kind: 'document', title: 'Apple Human Interface Guidelines',
+    summary: 'Apple\'s definitive reference on macOS/iOS interaction, visual design, typography, motion, and accessibility.',
+    url: 'https://developer.apple.com/design/human-interface-guidelines/',
+    tags: ['design', 'reference'], pinned: true, addedAt: L(1) },
+  { id: 'd.liquid-glass',   kind: 'document', title: 'Liquid Glass (WWDC25)',
+    summary: 'Apple\'s 2025 glass material spec — blur, saturation, and layering rules for light/dark surfaces.',
+    url: 'https://developer.apple.com/documentation/technologyoverviews/liquid-glass',
+    tags: ['design', 'glass'], pinned: false, addedAt: L(4) },
+  { id: 'd.linear-method',  kind: 'document', title: 'The Linear Method',
+    summary: 'Linear\'s product philosophy and UX principles — the reference we\'re modeling this app on.',
+    url: 'https://linear.app/method',
+    tags: ['design', 'product'], pinned: true, addedAt: L(5) },
+  { id: 'd.anthropic-docs', kind: 'document', title: 'Anthropic Claude docs',
+    summary: 'API reference, SDK guides, and Claude model documentation.',
+    url: 'https://docs.anthropic.com/',
+    tags: ['api', 'reference'], pinned: false, addedAt: L(6) },
+
+  // ---- articles ----
+  { id: 'a.attention',      kind: 'article', title: 'Attention is All You Need',
+    summary: 'The original transformer paper. If you want intuition for how modern LLMs actually think, start here.',
+    url: 'https://arxiv.org/abs/1706.03762',
+    tags: ['ml', 'foundations'], pinned: false, addedAt: L(20) },
+  { id: 'a.mcp',            kind: 'article', title: 'Model Context Protocol overview',
+    summary: 'Anthropic\'s open protocol for connecting Claude to tools, data, and external systems.',
+    url: 'https://modelcontextprotocol.io/',
+    tags: ['agents', 'protocol'], pinned: false, addedAt: L(8) },
+
+  // ---- videos ----
+  { id: 'v.claude-code-demo', kind: 'video', title: 'Claude Code — getting started',
+    summary: 'Walkthrough of the CLI agent, from install to first autonomous task.',
+    url: 'https://www.youtube.com/results?search_query=claude+code+cli',
+    tags: ['agents', 'tutorial'], pinned: false, addedAt: L(12) },
 ]
 
 const sampleProject: Project = {
@@ -145,20 +183,21 @@ const sampleProject: Project = {
   updatedAt: Date.now(),
 }
 
-/** Populate on first boot. Idempotent — only seeds an empty store. */
+/** Populate on first boot. Idempotent — only seeds stores that are empty. */
 export async function seedIfEmpty(): Promise<void> {
-  const existing = await db.tracks.count()
-  if (existing > 0) return
-  await db.transaction(
-    'rw',
-    [db.tracks, db.topics, db.lessons, db.quizzes, db.inventory, db.projects],
-    async () => {
-      await db.tracks.bulkPut(tracks)
-      await db.topics.bulkPut(topics)
-      await db.lessons.bulkPut(lessons)
-      await db.quizzes.bulkPut(quizzes)
-      await db.inventory.bulkPut(inventory)
-      await db.projects.bulkPut([sampleProject])
-    },
-  )
+  const [tc, lc] = await Promise.all([db.tracks.count(), db.library.count()])
+  if (tc === 0) {
+    await db.transaction(
+      'rw',
+      [db.tracks, db.topics, db.lessons, db.quizzes, db.projects],
+      async () => {
+        await db.tracks.bulkPut(tracks)
+        await db.topics.bulkPut(topics)
+        await db.lessons.bulkPut(lessons)
+        await db.quizzes.bulkPut(quizzes)
+        await db.projects.bulkPut([sampleProject])
+      },
+    )
+  }
+  if (lc === 0) await db.library.bulkPut(library)
 }
