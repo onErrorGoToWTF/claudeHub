@@ -9,53 +9,38 @@ Running ledger. Rehydrate from this after context compaction.
 - Pages source: **GitHub Actions** (workflow: `.github/workflows/deploy-pages.yml`)
 - Old feed-refresh workflow (`update.yml`) still runs every 2h in parallel; it doesn't touch `revamp/`
 
-## Shipped
+## Shipped (most recent on top)
 
-- Vite + React + TS + Dexie + Framer Motion + Zustand + React Router + highlight.js
-- Design tokens (`src/styles/tokens.css`) — single `--accent-base` (ocean blue) cascades via `color-mix` in OKLCH
-- App shell: desktop top nav + mobile floating bottom nav, accent-surface active state
-- Responsive Dashboard with three parallel panels (Learn / Projects / Library)
-- Learn: Khan-style tracks → topics with per-topic mastery bars
-- Lesson view: markdown (headings, bullets, inline code, links, citations, fenced code blocks with copy + syntax highlighting)
-- Quiz engine: select → Submit → feedback flow, accent-tinted picked state, green-check / red-X on outcome, auto mastery recompute
-- Projects: Linear-style status vocabulary (Backlog / Planned / In progress / Completed / Canceled) + orthogonal Health pill (On track / At risk / Off track), user-set, no auto-flip
-- Project intake: 5-step guided flow (title → summary → stack → route → gap topics)
-- Library: search + kind filter (Tool / Doc / Read / Video) + sort, filtered to items with in-app body
-- Library detail: markdown body with hover-tooltip citations + Sources section
-- ~51 tool bodies, ~11 reference docs, 2 reads — all in the locked format
+- **Per-project status-change log** — `projectEvents` Dexie table (v4), auto-logged on `repo.putProject` diff; History section on ProjectDetail with from→to chips + relative timestamps.
+- **Global search** — Ctrl/Cmd+K modal indexing tracks, topics, lessons, projects, library (pathway-filtered); keyboard nav + Esc close.
+- **Cross-surface activity feed** on Dashboard — last 8 events across Learn + Projects + Library.
+- **Custom pathway builder** at `/learn/custom` — user picks topics, Kahn topo-sort orders them by prerequisite; topics gained `prereqTopicIds`.
+- **Office-pathway project intake** — 4-step workflow-oriented flow (document / meeting / announcement / analysis / cadence) when active pathway is `office`; `ProjectNew` dispatches.
+- **Audience tagging (3 pathways)** — `Audience = student | office | dev` on Track/Topic/LibraryItem; PathwayPicker in topbar; Learn + Library filter live.
+- **Library search-miss logging + wishlist admin** — `searchMisses` Dexie table (v3), debounced log on empty results, `/library/wishlist` triage page.
+- **Electrified progress bars** — thin glowing line grows left-to-right, optional milestone nodes light on pass, IntersectionObserver re-plays on scroll-back, single-motion rule.
+- **Learn + Projects section-homepages** — rollup cards above each list with continue / resume CTAs.
+- **Dark mode (v1)** — `[data-theme="dark"]` in tokens.css, topbar toggle, no-flash init. Polish pass deferred until light-mode is finalized.
+- Vite + React + TS + Dexie + Framer Motion + Zustand + React Router + highlight.js baseline.
 
 ## Remaining work (prioritized)
 
 ### Active (next up)
-- [x] **Dark mode (v1)** — shipped. `[data-theme="dark"]` in tokens.css, topbar toggle, no-flash init, warm-dark palette. Polish pass deferred until light-mode design is finalized.
-- [x] **Learn page section-homepage** — shipped. Overall mastery rollup + continue CTA above tracks list.
-- [x] **Projects page section-homepage** — shipped. Status counts (in progress / active / completed) + resume CTA above projects list.
-- [x] **Electrified progress bars** — shipped. `ui/ProgressBar` rewritten: 2px dim baseline + accent-glow line that grows left-to-right; optional `milestones` prop renders lit-on-pass circular nodes with staggered lighting delay matched to line progress; `useInViewReplay` hook (IntersectionObserver) bumps a key on each re-entry so the animation replays; no shimmer/drift (single-motion rule); reduced-motion jumps to static end state.
-- [ ] Extend Learn — more tracks + topics + authored lessons (currently 4 tracks, 9 topics, 1 polished lesson, 1 polished quiz)
-- [ ] Content tagging for audience — `audience: 'dev' | 'beginner' | 'both'` on Learn tracks, Library items, topics; default filter per surface
-- [x] **Projects intake variant for the Office pathway** — shipped. New `ProjectNewOffice` component: 4-step flow (title → summary → workflow type → tools). Workflow types (document, meeting prep, announcement, analysis, cadence) each seed their own workflow-oriented checklist. Tools step filters the inventory to office-audience items (Claude.ai, chat, image/video/voice, automation). `ProjectNew` is now a thin dispatcher on the active pathway — dev/student/all still get the original build-oriented 5-step stack/routes flow.
-- [x] **Pin affordance in Library list** — already in place; each Row has a Pin/PinOff toggle in its right slot (stale STATE entry cleared).
+- [ ] Extend Learn — more tracks + topics + authored lessons (currently 4 tracks, 9 topics, 1 polished lesson, 1 polished quiz). Authoring is external via Claude Code skills + manual commit to `src/db/seed*`.
 
 ### Planned (later)
-- [x] **Custom pathway builder** — shipped at `/learn/custom`. User multi-selects topics grouped by track; `orderByPrereqs` (Kahn's topo-sort, track-clustered tie-breaker) returns a prerequisite-respecting ordered list rendered as a numbered sequence linking to each topic. Topics gained an optional `prereqTopicIds` field; seed populates sensible defaults + a backfill migration runs for existing installs. A small "Build a custom pathway" link sits under the Continue CTA on the Learn section-homepage.
-
-- [x] **Audience tagging (pathways)** — shipped. `Audience = 'student' | 'office' | 'dev'` on Track/Topic/LibraryItem; PathwayPicker in topbar (zustand + localStorage); Learn + Library filter by pathway; library items auto-derive audience at seed time from kind/category/tags.
-- [x] **Library search-miss logging** — shipped. `searchMisses` Dexie table (v3 migration); 900ms-debounced `repo.logSearchMiss(query)` fires when query has zero matches; inline "‘{query}’ isn't in the library yet — noted. It'll be added shortly." replaces the generic Empty state. Per-session dedupe so backspacing doesn't inflate counts.
-- [x] **Search-miss admin surface** — shipped at `/library/wishlist`. Lists `searchMisses` sorted by open-state → count → recency, with per-row resolve/unresolve toggle and "show resolved" checkbox. A small "{N} wishlist entries to triage" link appears at the foot of the Library page when any miss is open.
-- [ ] Read-only friend-view — Alan ↔ Lisa progress visibility; requires export/import snapshot or a shared backend tier
-- [ ] Authoring flow — create lessons / quizzes / library notes in-app (today: all seeded in code; authoring is done externally via Claude Code skills + manual upload to the repo)
-- [ ] Project bootstrapper — scaffold files + run init commands from a project's stack pick
-- [ ] Resume / public project-detail pages (the "site IS the resume" north star)
-- [ ] DB migration off IndexedDB — swap target behind `src/db/repo.ts` interface
-- [ ] YouTube API integration (needs interactive Google login — deferred)
-- [x] **Activity feed on Dashboard** — shipped. `src/lib/activity.ts` merges Progress (lesson completions + quiz scores), Projects (created / updated), and LibraryItems (pinned / added) into a unified time-sorted stream. Dashboard renders last 8 events below the three existing panels, with a kind-specific icon, primary title, sub-line, and a short relative timestamp (`12m`, `3h`, `2d`). Each row links through to the relevant surface.
-- [x] **Status-change log per project** — shipped. New `projectEvents` Dexie table (schema v4) captures immutable `created` / `status_changed` / `health_changed` events. `repo.putProject` diffs against the prior record and appends events automatically; `deleteProject` cascades. ProjectDetail renders a **History** section at the bottom with from → to chips and a relative timestamp. `seedIfEmpty` backfills a `created` event for any pre-existing project so every project shows at least one line.
-- [x] **Global search** — shipped. `GlobalSearch` modal triggered by Ctrl/Cmd+K or the search icon in the topbar. Indexes tracks, topics, lesson bodies, projects, and library items with bodies (respecting the active pathway filter). Keyboard: ↑↓ to navigate, Enter to open, Esc to close. Results tagged by kind with a small badge. Debouncing not needed — datasets are small.
+- [ ] **DB migration — Supabase (Postgres + auth + RLS + TOTP MFA)**. ~1 month out. Schema drafted in `revamp/docs/supabase-schema.sql` + visualized in `revamp/docs/supabase-schema.html`. Fresh-start model: no IndexedDB → Supabase import, every user starts clean (users have been warned). Multi-user from day one (~5 people), RLS-isolated; friend-view scaffolding (visibility column + friendships table) is in the schema but deferred. Decisions locked: handle + citext for public URLs, UUID for new user-minted IDs (legacy `p.xxx` still accepted), RESTRICT cascades on content tables, TOTP MFA with 7-day grace.
+- [ ] Authoring flow in-app — create lessons / quizzes / library notes (today authored externally). Likely post-DB.
+- [ ] Project bootstrapper — scaffold files + run init commands from a project's stack pick.
+- [ ] Resume / public project-detail pages (the "site IS the resume" north star).
+- [ ] YouTube API integration (needs interactive Google login — deferred).
 
 ### Deferred (explicitly parked)
-- Electrified-circuit skill-map viz — fights the Linear-minimal aesthetic at v1
-- Inventory dedicated page — schema ready, UI deferred
-- Persona switcher — out of scope per user decision; tag-based filtering instead
+- Read-only friend-view — user explicitly deprioritized. Schema scaffolding is already in place (visibility column on `user_projects`, `friendships` table) but no UI or cross-user RLS until user opts back in.
+- Electrified-circuit skill-map viz — fights the Linear-minimal aesthetic at v1.
+- Inventory dedicated page — schema ready, UI deferred.
+- Persona switcher — out of scope per user decision; tag-based filtering instead.
+- Claude API integration — **separate future project**, not a step in this build. Never propose as next-up.
 
 ## How to preview locally
 
@@ -77,11 +62,18 @@ Every push to `main` touching `revamp/**` auto-deploys via GitHub Actions.
 
 ## Key file paths
 
-- `src/styles/tokens.css` — design tokens (single source)
+- `src/styles/tokens.css` — design tokens (single source, light + `[data-theme="dark"]`)
 - `src/app/App.tsx` — routes
-- `src/app/AppShell.tsx` — responsive nav
+- `src/app/AppShell.tsx` — responsive nav + PathwayPicker + ThemeToggle + global-search trigger
 - `src/db/{types,schema,repo,seed,toolBodies,seedLibraryNotes}.ts` — data layer
-- `src/pages/*` — Dashboard, Learn, TopicDetail, LessonView, QuizView, Projects, ProjectNew, ProjectDetail, Library, LibraryDetail
-- `src/ui/*` — shared UI kit (PageHeader, Button, Chip, ProgressBar, Tile, List, Row, Markdown)
+- `src/pages/*` — Dashboard, Learn, CustomPathway, TopicDetail, LessonView, QuizView, Projects, ProjectNew (+ ProjectNewOffice), ProjectDetail, Library, LibraryDetail, LibraryWishlist
+- `src/ui/*` — PageHeader, Button, Chip, ProgressBar (electrified), Tile, List, Row, Markdown, ThemeToggle, PathwayPicker, GlobalSearch
 - `src/lib/projectRoutes.ts` — Easiest / Cheapest / Best logic
 - `src/lib/projectStatus.ts` — Linear-style status vocabulary + legacy-value migration
+- `src/lib/audience.ts` — pathway types + `matchesPathway` + `deriveLibraryAudience`
+- `src/lib/pathwayOrder.ts` — Kahn topo-sort for custom-pathway builder
+- `src/lib/activity.ts` — unified event stream + `whenShort` relative-time helper
+- `src/lib/useInViewReplay.ts` — IntersectionObserver hook for re-triggering animations
+- `src/state/userStore.ts` — zustand + localStorage (pathway preference)
+- `docs/supabase-schema.sql` — Postgres schema draft for the planned DB migration
+- `docs/supabase-schema.html` — schema visualization (Mermaid ER + table cards)
