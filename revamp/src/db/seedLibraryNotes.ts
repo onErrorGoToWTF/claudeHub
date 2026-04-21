@@ -414,4 +414,193 @@ Claude Code launches the process, lists its tools, and exposes them to the agent
 - [Anthropic — MCP announcement](https://www.anthropic.com/news/model-context-protocol)
 `.trim(),
   },
+
+  {
+    id: 'n.hig-typography',
+    kind: 'doc',
+    title: 'Apple HIG — Typography & Dynamic Type',
+    summary: 'Use semantic text styles, let layouts reflow up to ~200%, pick SF Pro unless you have a reason not to. The rules that make iOS text feel right at every size.',
+    url: 'https://developer.apple.com/design/human-interface-guidelines/typography',
+    tags: ['design', 'typography', 'apple'],
+    pinned: false,
+    addedAt: L(0),
+    body: `
+**TL;DR** — Use **semantic text styles** (\`.body\`, \`.headline\`, \`.title\`…) so type scales with Dynamic Type, design layouts that can **reflow up to ~200%**, and default to **SF Pro** / system fonts unless you have a reason to diverge.
+
+## Semantic styles, not hardcoded sizes
+
+> Always use semantic text styles rather than hardcoded sizes. These scale automatically with Dynamic Type.
+
+— ehmo platform-design-skills, iOS §3.1 (distilled from Apple HIG)
+
+iOS semantic styles, from largest to smallest: \`.largeTitle\`, \`.title\`, \`.title2\`, \`.title3\`, \`.headline\`, \`.subheadline\`, \`.body\`, \`.callout\`, \`.footnote\`, \`.caption\`, \`.caption2\`.
+
+Use them directly — \`Text("Hi").font(.body)\`. Never \`.font(.system(size: 17))\`; that ignores the user's Dynamic Type preference.
+
+## Dynamic Type can scale to ~200%
+
+> Dynamic Type can scale text up to approximately 200% at the largest accessibility sizes. Layouts must reflow — never truncate or clip essential text.
+
+— ehmo platform-design-skills, iOS §3.2
+
+This means a horizontal row of three chips may need to stack vertically at AX sizes. Use \`ViewThatFits\` or detect \`dynamicTypeSize.isAccessibilitySize\` in SwiftUI and swap layout.
+
+## SF Pro as the default
+
+SF Pro (Text for body, Display for large headers) is the default system face on Apple platforms. It's designed for on-screen reading and tuned for optical sizes. Reach for a custom font only when brand or character demands it — and scale it with Dynamic Type if you do.
+
+## Minimum text sizes
+
+HIG guidance: never go below 11pt for body copy, 10pt for sparingly-used captions. iOS-default body is 17pt — the right starting point for most UI text.
+
+## Web translation
+
+- **Semantic CSS \`font-size\`** keyed to a fluid scale (\`clamp()\`), or variables tied to a \`:root\` scale.
+- Respect the user's browser default size — don't set \`html { font-size: 14px }\` without intention.
+- Use \`em\` / \`rem\` for type so layouts reflow when the user zooms.
+
+## Sources
+
+- [Apple HIG — Typography](https://developer.apple.com/design/human-interface-guidelines/typography)
+- [Apple — SF Pro](https://developer.apple.com/fonts/)
+- [Apple — Dynamic Type](https://developer.apple.com/design/human-interface-guidelines/typography#Dynamic-Type)
+- [ehmo/platform-design-skills](https://github.com/ehmo/platform-design-skills)
+`.trim(),
+  },
+
+  {
+    id: 'n.hig-color',
+    kind: 'doc',
+    title: 'Apple HIG — Color, Dark Mode & Contrast',
+    summary: 'Semantic colors adapt automatically, contrast must hit WCAG AA (4.5:1), and color alone can never carry meaning — a compact pass through the rules that actually matter.',
+    url: 'https://developer.apple.com/design/human-interface-guidelines/color',
+    tags: ['design', 'color', 'accessibility', 'apple'],
+    pinned: false,
+    addedAt: L(0),
+    body: `
+**TL;DR** — Use **semantic system colors** so light/dark adapt automatically, pair **every color cue with a second channel** (icon, text, shape), and meet **WCAG AA contrast** (4.5:1 body, 3:1 large text) — these three rules handle most real-world color work.
+
+## Semantic colors over hardcoded hex
+
+> Use system-provided semantic colors that automatically adapt to light and dark modes.
+
+— ehmo platform-design-skills, iOS §4.1
+
+SwiftUI: \`.foregroundStyle(.primary)\`, \`.foregroundStyle(.secondary)\`, \`Color(.systemBackground)\`. Never \`Color.black\` / \`Color.white\` — they ignore Dark Mode.
+
+Web equivalent: \`color-mix\` + CSS custom properties tied to a theme, or \`light-dark()\` for the simplest cases.
+
+## Never rely on color alone
+
+> Ensure that everyone can perceive and understand the information your app provides — don't rely on color as the only way to convey important information.
+
+— Apple HIG, Color
+
+Red for "error" paired with an X icon. Green for "success" paired with a checkmark. Status conveyed by both color **and** shape, so colorblind users — ~8% of men — don't lose the signal.
+
+## WCAG AA contrast ratios
+
+- **4.5:1** — regular body text against its background.
+- **3:1** — large text (≥18pt regular or 14pt bold) and critical UI elements.
+- **7:1** — WCAG AAA; aim higher than AA when the context is reading-heavy.
+
+Use a contrast checker; don't eyeball it. Greige on greige backgrounds is where most hand-crafted designs quietly fail AA.
+
+## Three-level background hierarchy
+
+Apple designs surfaces in three tiers:
+
+1. **Base background** — the root surface.
+2. **Secondary background** — cards, grouped sections.
+3. **Tertiary background** — deeper wells, code blocks, inline containers.
+
+In this app: \`--bg-page\` → \`--bg-canvas\` → \`--bg-card\` / \`--bg-sunken\`. Same pattern.
+
+## One accent color
+
+Apple designs iOS around one tint color per app. Anything interactive inherits it; non-interactive chrome stays neutral. This is why a blue checkbox means "tap me" without any explanation.
+
+This app's \`--accent-base\` serves the same purpose.
+
+## Display P3 wide gamut
+
+On modern displays, Display P3 adds saturation headroom outside sRGB — oranges and greens look punchier. Most OS-level tools work in P3 now; if you're emitting sRGB hex, you're leaving some richness on the table. CSS \`oklch()\` gives you wide-gamut without the manual math.
+
+## Sources
+
+- [Apple HIG — Color](https://developer.apple.com/design/human-interface-guidelines/color)
+- [Apple HIG — Dark Mode](https://developer.apple.com/design/human-interface-guidelines/dark-mode)
+- [WCAG 2.2 — Contrast Minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
+- [WebAIM — contrast checker](https://webaim.org/resources/contrastchecker/)
+`.trim(),
+  },
+
+  {
+    id: 'n.hig-accessibility',
+    kind: 'doc',
+    title: 'Apple HIG — Accessibility',
+    summary: "VoiceOver labels on everything interactive, honor Reduce Motion / Increase Contrast / Bold Text, always provide a non-gesture alternative. The floor every app should clear.",
+    url: 'https://developer.apple.com/design/human-interface-guidelines/accessibility',
+    tags: ['design', 'accessibility', 'a11y', 'apple'],
+    pinned: false,
+    addedAt: L(0),
+    body: `
+**TL;DR** — Every interactive element needs a meaningful label, every gesture needs a non-gesture alternative, every system preference (Reduce Motion, Bold Text, Increase Contrast, Dynamic Type) needs a graceful response — the four rules that cover most accessibility work on real products.
+
+## Label every interactive element
+
+> Every button, control, and interactive element must have a meaningful accessibility label.
+
+— ehmo platform-design-skills, iOS §5.1
+
+- **SwiftUI:** \`.accessibilityLabel("Add to cart")\` on icon-only buttons.
+- **Web:** \`aria-label\` on icon-only \`<button>\` / \`<a>\`. Close-X buttons → \`aria-label="Close"\`. Pin / delete / drag handles → explicit labels.
+
+An icon alone tells a sighted user enough; VoiceOver or NVDA cannot read an SVG.
+
+## Logical reading order
+
+> Ensure VoiceOver reads elements in a logical order — not dictated by layout coordinates.
+
+— ehmo platform-design-skills, iOS §5.2
+
+In SwiftUI use \`accessibilitySortPriority\`. On the web, DOM order IS reading order — design your markup so a linear top-to-bottom read makes sense before you style it.
+
+## Honor system preferences
+
+- **Bold Text.** On iOS, users can force stronger weights. Use \`.fontWeight(.bold)\` only for actual emphasis; never to fake \`bold\` with faux-bold rendering that breaks at AX text sizes.
+- **Reduce Motion.** Replace parallax / scale / translate with dissolve, color shift, or static state. Never strip the **information** the motion carried.
+- **Increase Contrast.** On iOS, this dims lots of transparency. If your UI leans heavily on glass or low-alpha overlays, add a higher-contrast fallback.
+- **Dynamic Type.** Layouts reflow up to ~200%. See the Typography note for specifics.
+
+## Every gesture needs an alternative
+
+Swipe-to-delete, pinch-to-zoom, two-finger scroll — all fine as enhancements, none acceptable as the only path.
+
+- Swipe-to-delete → also expose a Delete button on long-press / selection mode.
+- Pinch zoom → also a + / − button pair.
+- Drag-reorder → also an up/down move control when the user taps a row.
+
+AssistiveTouch, Switch Control, and Voice Control users can't perform complex gestures. The alternative is required, not nice-to-have.
+
+## Color is never the only signal
+
+Pair color with icon or text. See the Color note for why.
+
+## What to test with
+
+- **VoiceOver** (iOS/macOS) / **TalkBack** (Android) / **NVDA** (Windows, free) — turn it on, navigate your app without looking.
+- **Reduce Motion** — toggle it in system prefs, re-run key flows.
+- **Dynamic Type → Largest** — run through the app at AX5; look for clipped or overlapping text.
+- **Contrast checker** — verify every piece of meaningful text against its background.
+
+## Sources
+
+- [Apple HIG — Accessibility](https://developer.apple.com/design/human-interface-guidelines/accessibility)
+- [Apple — VoiceOver guide](https://www.apple.com/accessibility/vision/)
+- [WCAG 2.2 — Understanding](https://www.w3.org/WAI/WCAG22/Understanding/)
+- [WebAIM](https://webaim.org/)
+- [ehmo/platform-design-skills](https://github.com/ehmo/platform-design-skills)
+`.trim(),
+  },
 ]
