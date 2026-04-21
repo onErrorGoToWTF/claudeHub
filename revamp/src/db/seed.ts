@@ -123,7 +123,13 @@ const library: LibraryItem[] = [
   // ---- tools ----
   { id: 'i.claude-opus',   kind: 'tool', title: 'Claude Opus 4.7',    tags: ['model', 'frontier'], pinned: true,  addedAt: L(3),  toolCategory: 'model',     cost: 'subscription', owned: true  },
   { id: 'i.claude-sonnet', kind: 'tool', title: 'Claude Sonnet 4.6',  tags: ['model'],             pinned: false, addedAt: L(7),  toolCategory: 'model',     cost: 'subscription', owned: true  },
+  { id: 'i.claude-haiku',  kind: 'tool', title: 'Claude Haiku 4.5',   tags: ['model', 'fast'],     pinned: false, addedAt: L(1),  toolCategory: 'model',     cost: 'subscription', owned: true  },
   { id: 'i.gpt',           kind: 'tool', title: 'GPT (paid)',         tags: ['model'],             pinned: false, addedAt: L(14), toolCategory: 'model',     cost: 'subscription', owned: false },
+  { id: 'i.gemini',        kind: 'tool', title: 'Gemini',             tags: ['model', 'google'],   pinned: false, addedAt: L(1),  toolCategory: 'model',     cost: 'subscription', owned: false },
+  { id: 'i.grok',          kind: 'tool', title: 'Grok (xAI)',         tags: ['model', 'xai'],      pinned: false, addedAt: L(1),  toolCategory: 'model',     cost: 'subscription', owned: false },
+  { id: 'i.llama',         kind: 'tool', title: 'Llama (Meta)',       tags: ['model', 'open'],     pinned: false, addedAt: L(1),  toolCategory: 'model',     cost: 'free',         owned: false },
+  { id: 'i.mistral',       kind: 'tool', title: 'Mistral',            tags: ['model', 'open'],     pinned: false, addedAt: L(1),  toolCategory: 'model',     cost: 'free',         owned: false },
+  { id: 'i.deepseek',      kind: 'tool', title: 'DeepSeek',           tags: ['model', 'open'],     pinned: false, addedAt: L(1),  toolCategory: 'model',     cost: 'free',         owned: false },
   { id: 'i.vscode',        kind: 'tool', title: 'VS Code',            tags: ['ide'],               pinned: false, addedAt: L(30), toolCategory: 'ide',       cost: 'free',         owned: true  },
   { id: 'i.claude-code',   kind: 'tool', title: 'Claude Code (CLI)',  tags: ['agent', 'cli'],      pinned: true,  addedAt: L(2),  toolCategory: 'tool',      cost: 'subscription', owned: true  },
   { id: 'i.vite',          kind: 'tool', title: 'Vite',               tags: ['framework', 'build'],pinned: false, addedAt: L(10), toolCategory: 'framework', cost: 'free',         owned: true  },

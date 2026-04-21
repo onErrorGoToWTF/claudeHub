@@ -269,6 +269,385 @@ Modern React (via frameworks like Next.js, Remix) splits components into **serve
 - [You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect)
 `.trim(),
 
+  'i.claude-haiku': `
+**TL;DR** — Claude Haiku 4.5 is the speedy, cheap end of the Claude family — fast enough for routing, classification, and high-volume bulk work where Sonnet or Opus would be overkill, while still inheriting the family's voice and safety posture.
+
+## What it's built for
+
+- **Classification and routing.** Is this ticket bug / feature / spam? → Haiku.
+- **Summarization at volume.** Collapse 5,000 reviews into themes.
+- **Data extraction.** Pulling structured fields out of messy text.
+- **First-pass drafts** that a human or a Sonnet call refines.
+
+## When to step up to Sonnet
+
+- Answers need nuance, not just categories.
+- Multi-step reasoning across several documents.
+- User-facing writing where voice and judgment matter.
+
+## Pairing pattern
+
+The canonical "smart-funnel" shape:
+
+> **Haiku classifies → Sonnet handles → Opus escalates.**
+
+Haiku decides "does this need more thinking?" Sonnet does the work. Opus only sees the hardest 10%. You get Opus-quality judgment on the high-stakes cases without paying Opus prices for the whole volume.
+
+## Pricing
+
+On the API, Haiku 4.5 is multiple times cheaper than Sonnet per token, and ~20× cheaper than Opus. Prompt caching helps even more if your system prompt is stable across many Haiku calls.
+
+## Recent releases
+
+- **Haiku 4.5** *(current)* — faster, more accurate for classification + extraction.
+- **Haiku 4** — 4.x debut of the small model.
+- **Haiku 3.5** — previous generation.
+
+## Sources
+
+- [Claude — models overview](https://docs.claude.com/en/docs/about-claude/models)
+- [Anthropic — pricing](https://www.anthropic.com/pricing)
+- [Prompt caching](https://docs.claude.com/en/docs/build-with-claude/prompt-caching)
+`.trim(),
+
+  'i.gemini': `
+**TL;DR** — Gemini is Google's frontier model family, strongest when you need big context windows, tight integration with Google surfaces (Workspace, Search, YouTube, Android), or Google-exclusive generative media (Nano Banana, Veo, Imagen); the main flavors are Pro (quality), Flash (speed), and Nano (on-device).
+
+## The family
+
+- **Gemini Pro** — the flagship reasoning model. Comparable to GPT / Sonnet for most tasks.
+- **Gemini Flash** — fast + cheap; used inside Google products and for high-volume API work.
+- **Gemini Nano** — runs on-device on Pixel / select Androids for local AI features.
+- **Deep Research** — an agentic mode in the Gemini app that researches, cites, and reports.
+
+## Where Gemini genuinely shines
+
+- **Very long context.** 1M-token window on Gemini Pro (experimental 2M variants); good for whole-codebase reading or multi-hour transcripts.
+- **Multimodal defaults.** Vision + audio inputs are native and strong.
+- **Google-surface integration.** Gmail, Docs, Sheets, Calendar, YouTube — Gemini can read and act on them with your account.
+- **Generative media.** Nano Banana (fast image), Veo (video), Imagen (image) are all under the Gemini umbrella.
+
+## Access
+
+- **Consumer:** [gemini.google.com](https://gemini.google.com). Free tier + Gemini Advanced ($20/mo within Google One AI Premium).
+- **Developer:** [Google AI Studio](https://aistudio.google.com/) and Vertex AI (enterprise tier).
+
+## When to reach for Gemini over Claude / GPT
+
+- Massive context (1M tokens) on a single call.
+- You need generative image or video inline with the chat.
+- You're building on Google Workspace data.
+- You want free generous limits on Flash for bulk work.
+
+## Sources
+
+- [Gemini](https://gemini.google.com/)
+- [Google DeepMind — Gemini](https://deepmind.google/technologies/gemini/)
+- [Google AI Studio](https://aistudio.google.com/)
+- [Vertex AI — Gemini](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/overview)
+`.trim(),
+
+  'i.grok': `
+**TL;DR** — Grok is xAI's frontier model, integrated deeply with X (Twitter); distinctive for real-time social-graph data access, an unfiltered voice, and native generative image + video under the Aurora + Grok Imagine features.
+
+## What's distinct
+
+- **Real-time X data.** Grok can pull recent posts, threads, and trending topics — useful for news-aware answers in a way most models lack.
+- **Aurora image gen.** Strong text-in-image and photoreal defaults.
+- **Grok Imagine (video).** Native video generation for short-form clips inside the Grok app.
+- **Less-filtered tone** than Claude / Gemini; occasionally a feature, often a liability.
+
+## Access
+
+- **Consumer:** [grok.com](https://grok.com/) or the Grok app on X.
+- **X Premium+** includes Grok access as part of the subscription.
+- **Developer:** xAI API at [x.ai](https://x.ai/) — OpenAI-compatible endpoint schema.
+
+## When to reach for Grok
+
+- You need current-moment social context (news, sports, market chatter) baked into the answer.
+- You want generative image/video tied to the same chat context.
+- You're building on the X ecosystem.
+
+## When to skip it
+
+- Safety- or brand-sensitive deployments — Grok's tone is less reliably professional.
+- Long-running agentic tasks — other models have more mature tool-use + SDK stories.
+- Ecosystem depth (Workspace, MCP, first-class IDE integrations) isn't here yet.
+
+## Sources
+
+- [Grok](https://grok.com/)
+- [xAI — API](https://x.ai/)
+- [xAI — models](https://docs.x.ai/docs/models)
+`.trim(),
+
+  'i.llama': `
+**TL;DR** — Llama is Meta's open-weights model family — free to download, fine-tune, and run on your own hardware; the default choice when you need a model you *own* rather than rent, with ecosystem support from Groq, Cerebras, Together, and most inference providers.
+
+## Why it matters
+
+- **Open weights.** You can download and host it; no API lock-in.
+- **Fine-tunable.** LoRA / QLoRA training on consumer GPUs, full fine-tuning on cloud GPUs.
+- **Licensing.** Llama's license permits commercial use with some restrictions (very large businesses need Meta's approval).
+
+## The variants
+
+- **Llama 3.x / 4.x Instruct** — chat-tuned, what you use out of the box.
+- **Llama Vision** — multimodal image + text.
+- **Llama Code** — code-specialized checkpoints (some generations).
+
+Parameter counts range from small (8B, fits on a laptop GPU) to huge (405B+, cloud-only).
+
+## How to actually run it
+
+- **Laptop / desktop:** [Ollama](https://ollama.com/) — one command to download and run.
+- **Browser:** WebLLM (runs fully in the browser via WebGPU).
+- **API (hosted):** Groq, Together, Fireworks, Replicate, Amazon Bedrock.
+- **Self-host at scale:** vLLM or TGI on your own GPUs.
+
+## When to reach for Llama over Claude / GPT
+
+- Privacy: sensitive data never leaves your infrastructure.
+- Cost at scale: hosted Llama on Groq is dramatically cheaper per token than frontier closed models.
+- Customization: you need a model fine-tuned on your domain.
+- Offline: air-gapped environments where API access isn't possible.
+
+## When to stay closed
+
+- You care more about peak quality than ownership.
+- You don't want to manage inference infra.
+- You need the tool-use / MCP / agent tooling that the closed ecosystems have more of.
+
+## Sources
+
+- [Meta AI — Llama](https://ai.meta.com/llama/)
+- [Llama — Hugging Face](https://huggingface.co/meta-llama)
+- [Ollama](https://ollama.com/)
+- [Groq — hosted Llama](https://console.groq.com/)
+`.trim(),
+
+  'i.mistral': `
+**TL;DR** — Mistral is a French AI company shipping both open-weights models (Mistral 7B, Mixtral, Ministral) and a commercial frontier model (Mistral Large, Mistral Medium 3); leaner than Meta's open models, strong on European languages, and the leading European frontier-model alternative.
+
+## The lineup
+
+- **Mistral Large / Medium** — frontier-level proprietary models via La Plateforme (Mistral's API).
+- **Mixtral 8×22B / 8×7B** — mixture-of-experts open-weights; fast per-token.
+- **Mistral 7B / Ministral** — compact open-weights for edge + self-hosting.
+- **Codestral** — code-specialized model.
+- **Pixtral** — multimodal variant.
+
+## Why people pick Mistral
+
+- **European data residency.** EU-hosted inference for GDPR-sensitive deployments.
+- **Multilingual defaults.** Strong on French, German, Spanish, Italian; often beats US-centric models on those.
+- **Open + closed mix.** You can start on La Plateforme and graduate to self-hosting the open weights as scale grows.
+
+## Access
+
+- **API:** La Plateforme at [console.mistral.ai](https://console.mistral.ai).
+- **Open models:** Hugging Face, Ollama, Together, Groq.
+- **Chat:** [Le Chat](https://chat.mistral.ai/) — Mistral's consumer chat UI (free tier).
+
+## When to reach for Mistral
+
+- Your team / users are in Europe and data residency matters.
+- You want open weights with Apache 2.0 licensing.
+- Multilingual workloads where Mistral's European-language tuning pays off.
+
+## When to skip
+
+- You need frontier-level reasoning — Claude / GPT / Gemini generally lead benchmarks today.
+- You're already on Llama — Mistral's open models are great but you probably don't need both.
+
+## Sources
+
+- [Mistral AI](https://mistral.ai/)
+- [La Plateforme — docs](https://docs.mistral.ai/)
+- [Le Chat](https://chat.mistral.ai/)
+- [Mistral on Hugging Face](https://huggingface.co/mistralai)
+`.trim(),
+
+  'i.deepseek': `
+**TL;DR** — DeepSeek is a Chinese open-weights lab whose R1 reasoning model made frontier-tier reasoning freely available at a fraction of the cost; its V3 + R1 releases reshaped the cost curve for deep-thinking models in 2025.
+
+## Why it shook things up
+
+- **R1** — open-weights chain-of-thought reasoning model competitive with OpenAI's o1 at a fraction of the training + inference cost.
+- **V3** — the base model behind R1; strong general-purpose with very favorable pricing.
+- **Open weights + reasoning traces** — you can download R1 and see how it thinks, which also enables fine-tuning on top of its reasoning style.
+
+## Where it fits
+
+- **Reasoning-heavy tasks** where you'd otherwise reach for Opus or o1, at much lower cost.
+- **Open-weights self-hosting** — like Llama and Mistral, you can run DeepSeek on your own infra.
+- **Code + math benchmarks** where DeepSeek performs at or near frontier.
+
+## Access
+
+- **Chat:** [chat.deepseek.com](https://chat.deepseek.com/) — free tier.
+- **API:** DeepSeek API, OpenAI-compatible.
+- **Open weights:** Hugging Face, Ollama.
+- **Hosted on:** Together, Fireworks, and several Chinese clouds.
+
+## Caveats
+
+- Chinese provenance matters for some deployments — data residency, regulatory, and geopolitical considerations.
+- Tool-use and ecosystem tooling (MCP, Agent SDKs) trail Anthropic / OpenAI.
+- The chat product is censored on some topics per Chinese regulation; self-hosted weights aren't.
+
+## When to reach for it
+
+- Tight budget, reasoning-heavy use case (code debugging, math, complex planning).
+- You want open-weights reasoning to experiment with or fine-tune.
+- A second-opinion model that's meaningfully different from Claude / GPT / Gemini.
+
+## Sources
+
+- [DeepSeek](https://www.deepseek.com/)
+- [DeepSeek — API docs](https://api-docs.deepseek.com/)
+- [DeepSeek on Hugging Face](https://huggingface.co/deepseek-ai)
+`.trim(),
+
+  'i.gpt': `
+**TL;DR** — OpenAI's GPT family (via ChatGPT + the OpenAI API) is the other frontier LLM you should know; pragmatically handy as a second opinion or for features where OpenAI's ecosystem (Whisper, DALL·E, Sora, Realtime voice) is what you actually need.
+
+## Why keep access
+
+- **Second opinion.** When Claude pushes back hard or isn't landing, GPT's disagreement or agreement is data.
+- **Ecosystem features.** Realtime voice API, Whisper (ASR), Sora (video), DALL·E (image), Canvas. Some of these have no direct Anthropic equivalent today.
+- **Assistants + Tool-use parity.** Function calling, structured outputs, vision — covered.
+
+## Plans to know
+
+- **Free** — limited GPT-4o mini + basic GPT-4o, rate-limited.
+- **Plus** ($20/mo) — higher limits, image gen, Canvas, Advanced Voice.
+- **Pro** ($200/mo) — \`o1\` / \`o1-pro\` for heavy reasoning, higher Sora limits.
+- **Team / Enterprise** — admin, privacy guarantees, SSO.
+
+## When to reach for GPT over Claude
+
+- You want image or video gen inline with chat (DALL·E, Sora).
+- You're on a Realtime voice project — OpenAI's Realtime API is ahead of Anthropic's offerings today.
+- A specific benchmark or eval you care about ranks GPT higher for your task shape.
+
+## When to stay on Claude
+
+- Long-context code and writing — Opus and Sonnet lead on many practical agentic + long-doc tasks.
+- Your workflow is built around Claude Code / Agent SDK / MCP.
+- You care about Anthropic's safety posture + constitutional framing specifically.
+
+## Sources
+
+- [OpenAI — main site](https://openai.com/)
+- [OpenAI API — docs](https://platform.openai.com/docs)
+- [OpenAI — pricing](https://openai.com/pricing)
+- [OpenAI — models overview](https://platform.openai.com/docs/models)
+`.trim(),
+
+  'i.elevenlabs': `
+**TL;DR** — ElevenLabs is the reference for AI narration — expressive text-to-speech, accurate voice cloning, multilingual dubbing, and a real-time conversational voice API; if an AI product needs to *sound* polished, this is usually the answer.
+
+## What it does best
+
+- **Narration.** Audiobook and documentary-grade TTS that genuinely sounds like a person performing.
+- **Voice cloning.** Instant clone from 1 minute of audio; Professional Voice Clone from ~30 min for top fidelity.
+- **Multilingual.** One voice across 30+ languages with consistent character.
+- **Real-time Conversational AI.** Low-latency voice-in / voice-out API for phone-style AI agents.
+- **Dubbing.** Translate + re-voice a video while preserving the original performance.
+
+## Settings worth knowing
+
+- **Stability** — lower = more expressive and variable; higher = more consistent but flatter.
+- **Similarity** — how closely the output tracks the cloned voice.
+- **Style** — (v2 voices) how exaggerated the performance is.
+
+Common recipe: stability 40–60, similarity 70–80, style 0–20 for natural narration.
+
+## API example
+
+\`\`\`ts
+import { ElevenLabsClient } from 'elevenlabs'
+
+const client = new ElevenLabsClient({ apiKey: process.env.ELEVENLABS_API_KEY! })
+const audio = await client.textToSpeech.convert('voice_id_here', {
+  text: 'Hello from ElevenLabs.',
+  modelId: 'eleven_multilingual_v2',
+})
+\`\`\`
+
+## When to reach for it
+
+- Any narration-quality voice-over.
+- Voice cloning for consistent branded narration across episodes.
+- Real-time AI phone / agent voice.
+
+## When something else fits
+
+- **Browser SpeechSynthesis** — free, terrible sound, but zero dependency.
+- **OpenAI TTS** — cheaper, decent quality, simpler API if you're already in OpenAI.
+- **Cartesia / PlayHT** — alternatives closing in on ElevenLabs; worth comparing on price/latency for your voice.
+
+## Pricing
+
+Free tier: ~10K characters/month. Starter ($5/mo), Creator ($22), Pro ($99), Scale + Enterprise. Real-time voice + Professional Clones are higher tiers.
+
+## Sources
+
+- [ElevenLabs — main site](https://elevenlabs.io/)
+- [ElevenLabs — docs](https://elevenlabs.io/docs)
+- [ElevenLabs — voice lab](https://elevenlabs.io/voice-lab)
+- [ElevenLabs — conversational AI](https://elevenlabs.io/conversational-ai)
+`.trim(),
+
+  'i.davinci': `
+**TL;DR** — DaVinci Resolve is a free, professional-grade video editor + color-grading + audio-post suite — the same tool used on major films — with a free tier powerful enough for almost everything short of IMAX-tier finishing.
+
+## What's in it
+
+Seven integrated pages (tabs), each a complete tool:
+
+- **Media** — import, organize, proxy generation.
+- **Cut** — fast-paced editing for social and docs.
+- **Edit** — traditional timeline editing (think Premiere).
+- **Fusion** — node-based VFX + motion graphics (think After Effects).
+- **Color** — industry-leading color grading (what DaVinci was born for).
+- **Fairlight** — multitrack audio post.
+- **Deliver** — render to any codec/format.
+
+Every tab shares one project file — no round-tripping between apps.
+
+## Free vs. Studio
+
+**Free** covers 90% of needs: unlimited tracks, H.264/H.265, most Fusion effects, full color.
+
+**Studio** ($295 one-time) adds: 4K+ export, advanced noise reduction, stereoscopic 3D, more Fusion nodes, hardware accel for some codecs. One-time purchase; no subscription.
+
+## Why people stick
+
+- **Color grading** is genuinely best-in-class — the reason Hollywood colorists use it.
+- **One file, no round-tripping.** Edit, grade, mix in the same project.
+- **Hardware-aware** — scales with GPU; a modern Mac or PC runs it well.
+- **No subscription.** Unlike Premiere + After Effects, you can use Resolve forever free.
+
+## Learning curve
+
+Real — especially Fusion (node-based is a different mindset than layer-based). Start in **Edit**, grade in **Color**, ignore Fusion until you need motion graphics. Blackmagic's free training courses + Casey Faris's YouTube channel are the two best learning paths.
+
+## When to pick something else
+
+- **CapCut** — social content, quick cuts, you don't need color.
+- **Final Cut Pro** — you're on Mac and want the Apple-integrated pipeline.
+- **Premiere + After Effects** — your team already lives in Adobe and a switch would cost more than it saves.
+
+## Sources
+
+- [Blackmagic — DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve)
+- [DaVinci Resolve — training](https://www.blackmagicdesign.com/products/davinciresolve/training)
+- [Blackmagic — manuals + downloads](https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion)
+`.trim(),
+
   'i.midjourney': `
 **TL;DR** — Midjourney is the painterly / cinematic end of AI image generation — the strongest aesthetic defaults of any model, best when you want a finished-looking image from a short prompt, and still a subscription service you mostly drive from the web or a Discord bot.
 
@@ -584,6 +963,15 @@ Self-host is free (fair-code license). Cloud tier starts at ~$20/mo for hosted +
 
 On the API: Opus is priced per-token at a premium vs. Sonnet. Use prompt caching to soften the cost on stable system prompts / context docs.
 
+## Recent releases
+
+- **Opus 4.7** *(current)* — 1M-token variant, stronger agentic tool-use, improved reasoning on long tasks.
+- **Opus 4.6** — preceding flagship; 4.x family's first major step up in agentic steadiness.
+- **Opus 4 / 4.1** — introduced the 4.x architecture and extended thinking.
+- **Opus 3 / 3.5** — the predecessor generation. Still referenced in third-party benchmarks.
+
+Dates and exact deltas drift. Check the model card for the authoritative current list.
+
 ## Sources
 
 - [Anthropic — models overview](https://www.anthropic.com/claude)
@@ -620,6 +1008,15 @@ API: \`claude-sonnet-4-6\`. On Claude.ai: selectable in the model picker on paid
 ## Pairing pattern
 
 A common stack: **Haiku routes → Sonnet handles → Opus escalates.** Let Haiku classify the incoming query, Sonnet does the work, and only the hardest cases bubble up to Opus.
+
+## Recent releases
+
+- **Sonnet 4.6** *(current)* — the workhorse revision of the 4.x family; long-context, tool-use, and coding all bumped.
+- **Sonnet 4.5** — previous revision; still performant and cheaper on older tiers.
+- **Sonnet 4** — the 4.x family's debut Sonnet.
+- **Sonnet 3.7 / 3.5** — predecessor generation; benchmark reference point.
+
+Dates and deltas drift. Check the model card for the authoritative list.
 
 ## Sources
 

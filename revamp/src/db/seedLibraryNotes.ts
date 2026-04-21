@@ -224,4 +224,91 @@ Reminders run on a schedule (weekly / biweekly, specific day + time). Leads get 
 - [The Linear Method](https://linear.app/method)
 `.trim(),
   },
+
+  {
+    id: 'n.claude-cowork',
+    kind: 'doc',
+    title: 'Claude as a Coworker',
+    summary: 'Working with Claude day-to-day — meetings, documents, decisions, comms. Not coding. For leaders and knowledge workers.',
+    url: 'https://claude.ai',
+    tags: ['claude', 'workflow', 'leadership', 'beginner'],
+    pinned: true,
+    addedAt: L(0),
+    body: `
+**TL;DR** — Treat Claude as a thinking partner, not a search engine — set up a small number of persistent Projects that know your context, start each session with "what's on your mind," and let Claude draft, critique, and summarize while you make the calls.
+
+## The shift in mindset
+
+The first instinct with any AI tool is to ask one-off questions. That's fine, but the value compounds when you stop treating it like a search box and start treating it like a colleague who reads along with you.
+
+A Claude coworker relationship has three properties:
+
+- **It remembers context.** Projects (on Claude.ai Pro / Max) hold system prompts and attached files across every chat in that project.
+- **It drafts, doesn't decide.** Claude produces first passes; you edit, approve, or discard. You stay accountable.
+- **It thinks out loud.** When you ask "what would you push back on here?", real answers come back — not flattery.
+
+## Projects are load-bearing
+
+A Project is a workspace for a recurring domain. Reasonable ones to stand up:
+
+- **Board & Stakeholders** — bios, prior updates, recent decisions, upcoming asks.
+- **Team & People** — org chart, direct reports, goals, recent 1:1 notes.
+- **Product / Strategy** — current priorities, market context, customer insights.
+- **Inbox Triage** — thread context so Claude can draft replies in your voice.
+
+For each, attach a short **context note** (1–2 pages), a **style note** (how you write), and any **living docs** (current plan, current OKRs). Claude reads them on every message in that Project.
+
+## A daily rhythm that works
+
+**Morning.** Open your exec Project. "Given my calendar today and the open threads, what should I have crisp answers to by 9am?" Surfaces angles you'd otherwise discover mid-meeting.
+
+**Before a meeting.** Paste the invite + any attached doc. "I have 15 minutes to read this. What are the three questions I should be ready to ask, and the one I should be ready to answer?"
+
+**After a meeting.** Paste your notes. "Summarize for my files, and give me a short version I could send to the team."
+
+**Comms drafting.** "Draft a short note to [person] addressing [point]. Direct tone, no filler, 4 sentences max. Show me three versions."
+
+**End of week.** "Here's my week. Give me a three-sentence status for myself and a two-sentence status I could send up."
+
+## Working with documents
+
+Claude.ai handles PDFs, Word, slides, spreadsheets, and images. Pragmatic patterns:
+
+- **Long doc in, summary out.** Board packet → one-page brief + three open questions.
+- **Comparison.** Two contract drafts → table of meaningful differences.
+- **Structured extraction.** Meeting transcript → action items with owners + due dates.
+- **Stress-test a plan.** "What's the strongest objection to this proposal? Who would make it, and what's the honest response?"
+
+## Artifacts (for non-coders)
+
+Artifacts are the side-panel renders Claude makes when output is long or visual. For leaders the useful ones are:
+
+- **One-page briefs** rendered as a formatted document.
+- **Decision tables** — pros/cons, who-what-when grids.
+- **Simple charts** — bar/line charts for back-of-envelope numbers.
+- **Slide outlines** you can paste into Keynote / PowerPoint.
+
+Artifacts edit live; keep iterating until it's right, then copy out.
+
+## What to watch for
+
+- **Over-delegation.** Claude is confident even when it's wrong. Check anything leaving your desk.
+- **Context bleed.** A great answer Monday becomes a stale answer Thursday. Refresh the Project's context note weekly.
+- **Private data.** Consumer Claude.ai doesn't use chats to train by default; confirm your plan's privacy posture for sensitive material. Enterprise tiers give stronger guarantees.
+- **Tone drift.** If Claude starts sounding like its defaults, re-paste your voice samples. A short style note goes a long way.
+
+## When to graduate
+
+- **Same question every day?** → Add it to a custom instruction or a dedicated Project.
+- **Connected data you touch often?** → MCP connectors (setup usually handled by IT / a dev partner).
+- **Cross-team workflow?** → You're at the edge of what solo Claude.ai is for; start thinking about team tooling.
+
+## Sources
+
+- [Claude.ai](https://claude.ai)
+- [Claude — Projects](https://docs.claude.com/en/docs/build-with-claude/projects)
+- [Claude — Artifacts](https://docs.claude.com/en/docs/build-with-claude/artifacts)
+- [Anthropic — pricing](https://www.anthropic.com/pricing)
+`.trim(),
+  },
 ]
