@@ -33,7 +33,7 @@ Running ledger. Rehydrate from this after context compaction.
 - [x] **Electrified progress bars** — shipped. `ui/ProgressBar` rewritten: 2px dim baseline + accent-glow line that grows left-to-right; optional `milestones` prop renders lit-on-pass circular nodes with staggered lighting delay matched to line progress; `useInViewReplay` hook (IntersectionObserver) bumps a key on each re-entry so the animation replays; no shimmer/drift (single-motion rule); reduced-motion jumps to static end state.
 - [ ] Extend Learn — more tracks + topics + authored lessons (currently 4 tracks, 9 topics, 1 polished lesson, 1 polished quiz)
 - [ ] Content tagging for audience — `audience: 'dev' | 'beginner' | 'both'` on Learn tracks, Library items, topics; default filter per surface
-- [ ] Projects intake variant for the **Office pathway** — workflow-oriented flow (coordination / doc / comms focus) instead of the current build-oriented stack/routes flow; triggered when active pathway is `office`
+- [x] **Projects intake variant for the Office pathway** — shipped. New `ProjectNewOffice` component: 4-step flow (title → summary → workflow type → tools). Workflow types (document, meeting prep, announcement, analysis, cadence) each seed their own workflow-oriented checklist. Tools step filters the inventory to office-audience items (Claude.ai, chat, image/video/voice, automation). `ProjectNew` is now a thin dispatcher on the active pathway — dev/student/all still get the original build-oriented 5-step stack/routes flow.
 - [ ] Pin affordance in Library list (currently Detail only)
 
 ### Planned (later)

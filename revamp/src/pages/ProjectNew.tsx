@@ -6,11 +6,21 @@ import { repo } from '../db/repo'
 import type { InventoryItem, Project, ProjectRoute, Topic } from '../db/types'
 import { Button, Chip, List, PageHeader, ProgressBar, Row } from '../ui'
 import { ROUTE_BLURBS, ROUTE_LABELS, routeStack } from '../lib/projectRoutes'
+import { useUserStore } from '../state/userStore'
+import { ProjectNewOffice } from './ProjectNewOffice'
 import styles from './ProjectNew.module.css'
 
 type Step = 0 | 1 | 2 | 3 | 4
 
+/** Dispatches to the Office-pathway intake when the user is on that pathway;
+ *  otherwise runs the build-oriented flow below. */
 export function ProjectNew() {
+  const pathway = useUserStore(s => s.pathway)
+  if (pathway === 'office') return <ProjectNewOffice />
+  return <ProjectNewBuild />
+}
+
+function ProjectNewBuild() {
   const nav = useNavigate()
   const [step, setStep] = useState<Step>(0)
   const [title, setTitle]       = useState('')
