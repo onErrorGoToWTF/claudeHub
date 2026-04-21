@@ -6,6 +6,8 @@ import type { InventoryItem, Project, Topic } from '../db/types'
 import { Button, Chip, List, PageHeader, ProgressBar, Row, Section, Tile, TileMeta, TileRow, TileTitle, grid } from '../ui'
 import { Check } from 'lucide-react'
 import { ROUTE_LABELS, ROUTE_BLURBS } from '../lib/projectRoutes'
+import { STATUSES, HEALTHS, STATUS_LABEL, HEALTH_LABEL, showsHealth } from '../lib/projectStatus'
+import type { ProjectStatus, ProjectHealth } from '../db/types'
 import styles from './ProjectDetail.module.css'
 
 export function ProjectDetail() {
@@ -51,6 +53,21 @@ export function ProjectDetail() {
     nav('/projects')
   }
 
+  async function setStatus(next: ProjectStatus) {
+    if (!p || p.status === next) return
+    const updated = { ...p, status: next }
+    await repo.putProject(updated)
+    setP(updated)
+  }
+
+  async function setHealth(next: ProjectHealth) {
+    if (!p) return
+    const nextVal = p.health === next ? null : next
+    const updated = { ...p, health: nextVal }
+    await repo.putProject(updated)
+    setP(updated)
+  }
+
   const invById = new Map(inventory.map(i => [i.id, i]))
   const topicById = new Map(topics.map(t => [t.id, t]))
 
@@ -64,7 +81,7 @@ export function ProjectDetail() {
       </Link>
 
       <PageHeader
-        eyebrow={`Project · ${p.status}`}
+        eyebrow={`Project · ${STATUS_LABEL[p.status]}`}
         title={p.title}
         subtitle={p.summary}
         right={
@@ -85,6 +102,41 @@ export function ProjectDetail() {
         <Chip variant="accent">{ROUTE_LABELS[p.route]}</Chip>
         <span className={styles.metaBlurb}>{ROUTE_BLURBS[p.route]}</span>
       </div>
+
+      <Section title="Status">
+        <div className={styles.statusRow}>
+          {STATUSES.map(s => (
+            <button
+              key={s.id}
+              type="button"
+              className={`${styles.statusPill} ${p.status === s.id ? styles.statusPillOn : ''}`}
+              onClick={() => setStatus(s.id)}
+            >
+              {s.label}
+            </button>
+          ))}
+        </div>
+        {showsHealth(p.status) && (
+          <div className={styles.healthRow}>
+            <span className={styles.healthLabel}>Health</span>
+            {HEALTHS.map(h => (
+              <button
+                key={h.id}
+                type="button"
+                className={`${styles.healthPill} ${p.health === h.id ? styles[`healthPillOn_${h.id}`] : ''}`}
+                onClick={() => setHealth(h.id)}
+              >
+                {h.label}
+              </button>
+            ))}
+            {p.health && (
+              <span className={styles.healthActive}>
+                {HEALTH_LABEL[p.health]}
+              </span>
+            )}
+          </div>
+        )}
+      </Section>
 
       <Section title="Progress" meta={`${done} / ${p.checklist.length}`}>
         <div style={{ marginBottom: 'var(--space-4)' }}>

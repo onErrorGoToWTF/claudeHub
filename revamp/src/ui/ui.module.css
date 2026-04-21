@@ -100,7 +100,7 @@
   position: relative;
   height: 10px;
   background: var(--bg-sunken);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
   border: 1px solid var(--hair);
 }
@@ -115,7 +115,7 @@
   );
   box-shadow: 0 0 16px -2px var(--accent-glow);
   transition: width 600ms var(--ease-premium);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
 }
 
 /* ---------- tile ---------- */
@@ -187,8 +187,19 @@
   cursor: pointer;
   transition: background var(--dur-2) var(--ease-premium);
 }
-.row:first-child { border-top: 0; }
-.row:hover:not(:disabled) { background: color-mix(in oklch, var(--ink-1) 5%, var(--bg-canvas)); }
+.row:first-child {
+  border-top: 0;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+.row:last-child {
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+}
+.row:hover:not(:disabled),
+.row:active:not(:disabled) {
+  background: var(--accent-surface);
+}
 .row:disabled { cursor: default; }
 
 .rowBody { flex: 1; min-width: 0; }

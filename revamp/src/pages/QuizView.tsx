@@ -147,12 +147,16 @@ export function QuizView() {
                   disabled={phase !== 'answering'}
                 >
                   <span className={styles.dot} aria-hidden>
-                    {state === 'picked'  && <span className={styles.dotInner} />}
-                    {state === 'correct' && <Check size={13} strokeWidth={2.5} />}
-                    {state === 'wrong'   && <X size={13} strokeWidth={2.5} />}
-                    {state === 'reveal'  && <Check size={13} strokeWidth={2} />}
+                    {(state === 'picked' || state === 'correct' || state === 'wrong' || state === 'reveal')
+                      && <span className={styles.dotInner} />}
                   </span>
                   <span className={styles.choiceLabel}>{c}</span>
+                  {(state === 'correct' || state === 'reveal') && (
+                    <Check className={styles.trailIcon} size={16} strokeWidth={2.2} aria-hidden />
+                  )}
+                  {state === 'wrong' && (
+                    <X className={styles.trailIcon} size={16} strokeWidth={2.2} aria-hidden />
+                  )}
                 </button>
               )
             })}

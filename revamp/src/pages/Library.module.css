@@ -73,7 +73,7 @@
   font-size: 10px;
   color: var(--ink-3);
   background: var(--bg-sunken);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
 }
 .facetOn .facetCount { background: var(--bg-canvas); }
 

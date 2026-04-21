@@ -26,7 +26,7 @@
   --accent-hover:   color-mix(in oklch, var(--accent-base) 88%, black 12%);
   --accent-border:  color-mix(in oklch, var(--accent-base) 55%, transparent);
   --accent-glow:    color-mix(in oklch, var(--accent-base) 32%, transparent);
-  --accent-surface: color-mix(in oklch, var(--accent-base) 10%, var(--bg-card));
+  --accent-surface: color-mix(in oklch, var(--accent-base) 16%, var(--bg-card));
   --accent-ink:     color-mix(in oklch, var(--accent-base) 78%, black 22%);
   --accent-soft:    color-mix(in oklch, var(--accent-base) 16%, var(--bg-page));
 
@@ -36,20 +36,21 @@
   --danger-hover:   color-mix(in oklch, var(--danger-base) 88%, black 12%);
   --danger-border:  color-mix(in oklch, var(--danger-base) 55%, transparent);
   --danger-glow:    color-mix(in oklch, var(--danger-base) 32%, transparent);
-  --danger-surface: color-mix(in oklch, var(--danger-base) 10%, var(--bg-card));
+  --danger-surface: color-mix(in oklch, var(--danger-base) 16%, var(--bg-card));
 
   /* ---------- success / mastery ---------- */
   --mastery-base:   oklch(68% 0.15 150);
   --mastery-solid:  var(--mastery-base);
   --mastery-border: color-mix(in oklch, var(--mastery-base) 55%, transparent);
   --mastery-glow:   color-mix(in oklch, var(--mastery-base) 32%, transparent);
-  --mastery-soft:   color-mix(in oklch, var(--mastery-base) 14%, var(--bg-page));
+  --mastery-surface: color-mix(in oklch, var(--mastery-base) 16%, var(--bg-card));
+  --mastery-soft:    color-mix(in oklch, var(--mastery-base) 14%, var(--bg-page));
 
   /* ---------- radii (squared-off) ---------- */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
-  --radius-xl: 20px;
+  --radius-xl: 16px;  /* reserved for the floating bottom-nav pill only */
 
   /* ---------- spacing ---------- */
   --space-1:  4px;

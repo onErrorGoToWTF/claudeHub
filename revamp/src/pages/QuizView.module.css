@@ -10,7 +10,7 @@
   padding: var(--space-8) var(--space-7, 28px);
   background: var(--bg-card);
   border: 1px solid var(--hair);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-2);
 }
 
@@ -52,8 +52,19 @@
     background var(--dur-2) var(--ease-premium),
     color var(--dur-2) var(--ease-premium);
 }
-.choice:first-child { border-top: 0; }
-.choice:hover:not(:disabled) { background: color-mix(in oklch, var(--ink-1) 5%, var(--bg-canvas)); }
+.choice:first-child {
+  border-top: 0;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+.choice:last-child {
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+}
+.choice:hover:not(:disabled),
+.choice:active:not(:disabled) {
+  background: var(--accent-surface);
+}
 .choice:disabled { cursor: default; }
 
 .choiceLabel {
@@ -81,9 +92,9 @@
 
 /* ----- states ----- */
 
-/* Selected pre-submit: greige-tinted row, white circle filled with accent dot */
+/* Selected pre-submit: accent-tinted background, text stays default */
 .state_picked {
-  background: color-mix(in oklch, var(--ink-1) 5%, var(--bg-canvas));
+  background: var(--accent-surface);
 }
 .state_picked .dot {
   border-color: var(--accent-solid);
@@ -94,40 +105,26 @@
   border-radius: 50%;
 }
 
-/* Correct pick */
-.state_correct {
-  background: var(--mastery-soft);
-  color: color-mix(in oklch, var(--mastery-base) 35%, var(--ink-1));
-}
-.state_correct .dot {
-  background: var(--mastery-solid);
-  border-color: var(--mastery-solid);
-  color: var(--ink-inverse);
-}
+/* Correct pick — radio dot + check after text, no bg tint */
+.state_correct .dot { border-color: var(--mastery-solid); }
+.state_correct .dotInner { background: var(--mastery-solid); }
 
-/* Wrong pick */
-.state_wrong {
-  background: var(--danger-surface);
-  color: color-mix(in oklch, var(--danger-base) 35%, var(--ink-1));
-}
-.state_wrong .dot {
-  background: var(--danger-solid);
-  border-color: var(--danger-solid);
-  color: var(--ink-inverse);
-}
+/* Revealed correct (user picked wrong) — same treatment as correct */
+.state_reveal .dot { border-color: var(--mastery-solid); }
+.state_reveal .dotInner { background: var(--mastery-solid); }
 
-/* Revealed correct answer (when user picked a wrong option) */
-.state_reveal {
-  background: var(--mastery-soft);
-}
-.state_reveal .dot {
-  background: #ffffff;
-  border-color: var(--mastery-border);
-  color: color-mix(in oklch, var(--mastery-base) 60%, black);
-}
+/* Wrong pick — radio dot + X after text, no bg tint */
+.state_wrong .dot { border-color: var(--danger-solid); }
+.state_wrong .dotInner { background: var(--danger-solid); }
 
 /* Everything else during feedback */
 .state_dim { opacity: 0.5; }
+
+/* Trailing feedback icon (after the text) */
+.trailIcon { flex-shrink: 0; }
+.state_correct .trailIcon,
+.state_reveal .trailIcon { color: var(--mastery-solid); }
+.state_wrong .trailIcon { color: var(--danger-solid); }
 
 /* ----- explain note ----- */
 .explain {
@@ -177,7 +174,7 @@
   padding: var(--space-10) var(--space-8);
   background: var(--bg-card);
   border: 1px solid var(--hair);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-2);
   text-align: center;
 }
@@ -215,5 +212,5 @@
   color: color-mix(in oklch, var(--mastery-base) 70%, black);
   background: var(--mastery-soft);
   border: 1px solid var(--mastery-border);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
 }

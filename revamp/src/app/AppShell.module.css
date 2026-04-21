@@ -48,13 +48,26 @@
   font-size: var(--text-sm);
   font-weight: 500;
   border-radius: var(--radius-sm);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
   transition:
     color var(--dur-2) var(--ease-premium),
     background var(--dur-2) var(--ease-premium),
     box-shadow var(--dur-2) var(--ease-premium);
 }
+.topLink:focus-visible {
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
 .topLink:hover { color: var(--ink-1); background: rgba(20, 19, 18, 0.04); }
-.topLinkActive {
+.topLink:active,
+.topLink:focus,
+.topLink:focus-visible { background: transparent; box-shadow: none; }
+
+.topLinkActive,
+.topLinkActive:hover,
+.topLinkActive:active,
+.topLinkActive:focus,
+.topLinkActive:focus-visible {
   color: var(--accent-ink);
   background: var(--accent-surface);
   box-shadow: inset 0 0 0 1px var(--accent-border);
@@ -103,12 +116,39 @@
   font-size: 11px;
   font-weight: 500;
   border-radius: var(--radius-md);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
   transition:
     color var(--dur-2) var(--ease-premium),
     background var(--dur-2) var(--ease-premium),
     transform var(--dur-2) var(--ease-premium);
 }
-.bottomLink:active { transform: scale(0.96); }
+.bottomLink:hover,
+.bottomLink:focus,
+.bottomLink:focus-visible {
+  background: transparent;
+  box-shadow: none;
+}
+/* Tap state paints the target active tint immediately —
+   no darker pass-through before the route/class updates. */
+.bottomLink:active {
+  transform: scale(0.96);
+  color: var(--accent-ink);
+  background: var(--accent-surface);
+  box-shadow: inset 0 0 0 1px var(--accent-border);
+  transition: none;
+}
+
+/* The selected state wins over the above no-bg rules. */
+.bottomLinkActive,
+.bottomLinkActive:hover,
+.bottomLinkActive:active,
+.bottomLinkActive:focus,
+.bottomLinkActive:focus-visible {
+  color: var(--accent-ink);
+  background: var(--accent-surface);
+  box-shadow: inset 0 0 0 1px var(--accent-border);
+}
 .bottomLinkActive {
   color: var(--accent-ink);
   background: var(--accent-surface);

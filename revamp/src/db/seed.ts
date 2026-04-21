@@ -3,6 +3,7 @@ import type {
   Track, Topic, Lesson, Quiz, LibraryItem, Project,
 } from './types'
 import { libraryNotes } from './seedLibraryNotes'
+import { migrateLegacyStatus } from '../lib/projectStatus'
 
 const tracks: Track[] = [
   { id: 'foundations', order: 1, title: 'AI Foundations',
@@ -129,31 +130,58 @@ const library: LibraryItem[] = [
   { id: 'i.github-pages',  kind: 'tool', title: 'GitHub Pages',       tags: ['hosting'],           pinned: false, addedAt: L(30), toolCategory: 'service',   cost: 'free',         owned: true  },
   { id: 'i.vercel',        kind: 'tool', title: 'Vercel',             tags: ['hosting'],           pinned: false, addedAt: L(45), toolCategory: 'service',   cost: 'free',         owned: false },
   { id: 'i.supabase',      kind: 'tool', title: 'Supabase',           tags: ['db', 'hosting'],     pinned: false, addedAt: L(45), toolCategory: 'service',   cost: 'free',         owned: false },
+  { id: 'i.cursor',        kind: 'tool', title: 'Cursor',
+    summary: 'AI-first code editor — inline edit, tab-complete, full-context chat on the open repo.',
+    tags: ['ide', 'coding'],      pinned: false, addedAt: L(0), toolCategory: 'ide',       cost: 'subscription', owned: false },
+  { id: 'i.claude-agent-sdk', kind: 'tool', title: 'Claude Agent SDK',
+    summary: 'TS / Python SDK for building custom agentic apps on Claude with tool use + MCP.',
+    tags: ['agent', 'sdk', 'mcp'], pinned: false, addedAt: L(0), toolCategory: 'framework', cost: 'free',         owned: false },
+  { id: 'i.framer-motion', kind: 'tool', title: 'Framer Motion',
+    summary: 'React animation library — premium UI motion, spring physics, layout transitions.',
+    tags: ['framework', 'motion'], pinned: false, addedAt: L(0), toolCategory: 'framework', cost: 'free',         owned: true  },
+  { id: 'i.claude-ai', kind: 'tool', title: 'Claude.ai',
+    summary: "Claude's web + mobile app. Chat, Projects, Artifacts, file uploads.",
+    tags: ['chat', 'model'], pinned: true, addedAt: L(0), toolCategory: 'tool', cost: 'subscription', owned: true },
+  { id: 'i.dexie', kind: 'tool', title: 'Dexie',
+    summary: 'Minimal IndexedDB wrapper — the persistence layer powering this app.',
+    tags: ['db', 'local-first'], pinned: false, addedAt: L(0), toolCategory: 'framework', cost: 'free', owned: true },
+  { id: 'i.n8n', kind: 'tool', title: 'n8n',
+    summary: 'Self-hostable visual workflow runner. 70+ AI nodes, persistent agent memory.',
+    tags: ['automation', 'agent'], pinned: false, addedAt: L(0), toolCategory: 'service', cost: 'free', owned: false },
+  { id: 'i.v0', kind: 'tool', title: 'v0',
+    summary: 'Prompt-to-React-component generator with Shadcn UI and one-click Vercel deploy.',
+    tags: ['coding', 'ui'], pinned: false, addedAt: L(0), toolCategory: 'tool', cost: 'subscription', owned: false },
+  { id: 'i.nano-banana', kind: 'tool', title: 'Nano Banana',
+    summary: 'Gemini 3.1 Flash Image — fast in-chat image gen with accurate text rendering.',
+    tags: ['image', 'model'], pinned: false, addedAt: L(0), toolCategory: 'model', cost: 'free', owned: false },
+  { id: 'i.elevenlabs', kind: 'tool', title: 'ElevenLabs',
+    summary: 'Expressive TTS and voice cloning — the reference for AI narration quality.',
+    tags: ['voice', 'audio'], pinned: false, addedAt: L(0), toolCategory: 'service', cost: 'subscription', owned: false },
 
   // ---- documents ----
-  { id: 'd.apple-hig',      kind: 'document', title: 'Apple Human Interface Guidelines',
+  { id: 'd.apple-hig',      kind: 'doc', title: 'Apple Human Interface Guidelines',
     summary: 'Apple\'s definitive reference on macOS/iOS interaction, visual design, typography, motion, and accessibility.',
     url: 'https://developer.apple.com/design/human-interface-guidelines/',
     tags: ['design', 'reference'], pinned: true, addedAt: L(1) },
-  { id: 'd.liquid-glass',   kind: 'document', title: 'Liquid Glass (WWDC25)',
+  { id: 'd.liquid-glass',   kind: 'doc', title: 'Liquid Glass (WWDC25)',
     summary: 'Apple\'s 2025 glass material spec — blur, saturation, and layering rules for light/dark surfaces.',
     url: 'https://developer.apple.com/documentation/technologyoverviews/liquid-glass',
     tags: ['design', 'glass'], pinned: false, addedAt: L(4) },
-  { id: 'd.linear-method',  kind: 'document', title: 'The Linear Method',
+  { id: 'd.linear-method',  kind: 'doc', title: 'The Linear Method',
     summary: 'Linear\'s product philosophy and UX principles — the reference we\'re modeling this app on.',
     url: 'https://linear.app/method',
     tags: ['design', 'product'], pinned: true, addedAt: L(5) },
-  { id: 'd.anthropic-docs', kind: 'document', title: 'Anthropic Claude docs',
+  { id: 'd.anthropic-docs', kind: 'doc', title: 'Anthropic Claude docs',
     summary: 'API reference, SDK guides, and Claude model documentation.',
     url: 'https://docs.anthropic.com/',
     tags: ['api', 'reference'], pinned: false, addedAt: L(6) },
 
   // ---- articles ----
-  { id: 'a.attention',      kind: 'article', title: 'Attention is All You Need',
+  { id: 'a.attention',      kind: 'read', title: 'Attention is All You Need',
     summary: 'The original transformer paper. If you want intuition for how modern LLMs actually think, start here.',
     url: 'https://arxiv.org/abs/1706.03762',
     tags: ['ml', 'foundations'], pinned: false, addedAt: L(20) },
-  { id: 'a.mcp',            kind: 'article', title: 'Model Context Protocol overview',
+  { id: 'a.mcp',            kind: 'read', title: 'Model Context Protocol overview',
     summary: 'Anthropic\'s open protocol for connecting Claude to tools, data, and external systems.',
     url: 'https://modelcontextprotocol.io/',
     tags: ['agents', 'protocol'], pinned: false, addedAt: L(8) },
@@ -169,7 +197,7 @@ const sampleProject: Project = {
   id: 'p.sample',
   title: 'Personal AI flashcard app',
   summary: 'A mobile-friendly flashcard app that drills the topics I\'m currently learning, backed by the same mastery model the site uses.',
-  status: 'draft',
+  status: 'backlog',
   route: 'easiest',
   stack: ['i.vite', 'i.react', 'i.claude-code', 'i.github-pages'],
   gapTopicIds: ['t.streaming'],
@@ -186,6 +214,24 @@ const sampleProject: Project = {
 
 /** Populate on first boot. Idempotent — only seeds stores that are empty. */
 export async function seedIfEmpty(): Promise<void> {
+  // Migrate legacy project statuses (draft/active/paused/shipped → Linear vocab)
+  const projects = await db.projects.toArray()
+  for (const p of projects) {
+    const migrated = migrateLegacyStatus(p.status)
+    if (migrated !== p.status) await db.projects.put({ ...p, status: migrated })
+  }
+
+  // Migrate legacy kinds in-place (document/article/paper → doc/read)
+  const all = await db.library.toArray() as (LibraryItem & { kind: string })[]
+  const LEGACY: Record<string, LibraryItem['kind']> = {
+    document: 'doc', article: 'read', paper: 'read',
+  }
+  for (const item of all) {
+    if (LEGACY[item.kind]) {
+      await db.library.put({ ...item, kind: LEGACY[item.kind] })
+    }
+  }
+
   const [tc, lc] = await Promise.all([db.tracks.count(), db.library.count()])
   if (tc === 0) {
     await db.transaction(
@@ -204,12 +250,15 @@ export async function seedIfEmpty(): Promise<void> {
     await db.library.bulkPut(library)
     await db.library.bulkPut(libraryNotes)
   } else {
-    // System-managed notes: always overwrite so format/content edits ship via code.
-    // User-owned library items (tools, their own notes) are never touched here.
+    // System-managed notes: overwrite from code, preserve user's pinned state.
     for (const n of libraryNotes) {
       const prev = await db.library.get(n.id)
-      // Preserve user-set `pinned` state; everything else syncs from source.
       await db.library.put({ ...n, pinned: prev?.pinned ?? n.pinned })
+    }
+    // Tools: soft-insert only missing IDs so user edits (owned, pinned) stick.
+    for (const tool of library) {
+      const prev = await db.library.get(tool.id)
+      if (!prev) await db.library.put(tool)
     }
   }
 }

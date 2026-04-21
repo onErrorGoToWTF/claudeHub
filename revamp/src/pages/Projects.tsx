@@ -4,6 +4,7 @@ import { Plus, ArrowRight } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Project } from '../db/types'
 import { Button, Chip, Empty, PageHeader, Tile, TileMeta, TileRow, TileTitle, grid } from '../ui'
+import { STATUS_LABEL } from '../lib/projectStatus'
 
 export function Projects() {
   const [projects, setProjects] = useState<Project[]>([])
@@ -37,7 +38,7 @@ export function Projects() {
                 <TileRow>
                   <div style={{ display: 'flex', gap: 6 }}>
                     <Chip variant="accent">{p.route}</Chip>
-                    <Chip>{p.status}</Chip>
+                    <Chip>{STATUS_LABEL[p.status]}</Chip>
                   </div>
                   <TileMeta>{new Date(p.updatedAt).toLocaleDateString()}</TileMeta>
                 </TileRow>

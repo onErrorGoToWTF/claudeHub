@@ -57,3 +57,79 @@
   gap: 6px;
   flex-wrap: wrap;
 }
+
+/* ---------- status + health pickers ---------- */
+.statusRow {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--bg-sunken);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-md);
+  flex-wrap: wrap;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ink-2);
+  background: transparent;
+  border-radius: var(--radius-sm);
+  transition:
+    color var(--dur-2) var(--ease-premium),
+    background var(--dur-2) var(--ease-premium);
+}
+.statusPill:hover { color: var(--ink-1); }
+.statusPillOn {
+  color: var(--accent-ink);
+  background: var(--accent-surface);
+}
+
+.healthRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-3);
+  flex-wrap: wrap;
+}
+.healthLabel {
+  font-size: var(--text-xs);
+  color: var(--ink-3);
+  margin-right: 4px;
+}
+.healthPill {
+  padding: 5px 10px;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--ink-2);
+  background: var(--bg-card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-sm);
+  transition:
+    color var(--dur-2) var(--ease-premium),
+    background var(--dur-2) var(--ease-premium),
+    border-color var(--dur-2) var(--ease-premium);
+}
+.healthPill:hover { border-color: var(--hair-strong); }
+
+.healthPillOn_on_track {
+  color: color-mix(in oklch, var(--mastery-base) 60%, black);
+  background: var(--mastery-surface);
+  border-color: var(--mastery-border);
+}
+.healthPillOn_at_risk {
+  color: color-mix(in oklch, oklch(72% 0.14 75) 60%, black);
+  background: color-mix(in oklch, oklch(72% 0.14 75) 16%, var(--bg-card));
+  border-color: color-mix(in oklch, oklch(72% 0.14 75) 55%, transparent);
+}
+.healthPillOn_off_track {
+  color: color-mix(in oklch, var(--danger-base) 60%, black);
+  background: var(--danger-surface);
+  border-color: var(--danger-border);
+}
+.healthActive { display: none; }

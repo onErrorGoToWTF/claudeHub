@@ -56,7 +56,7 @@ export type Mastery = {
   updatedAt: number
 }
 
-export type LibraryKind = 'tool' | 'document' | 'article' | 'video' | 'paper'
+export type LibraryKind = 'tool' | 'doc' | 'read' | 'video'
 
 export interface LibraryItem {
   id: ID
@@ -79,8 +79,9 @@ export interface LibraryItem {
 /** Legacy alias — still used by the Projects intake flow. */
 export type InventoryItem = LibraryItem & { kind: 'tool'; toolCategory: NonNullable<LibraryItem['toolCategory']>; cost: NonNullable<LibraryItem['cost']>; owned: boolean }
 
-export type ProjectStatus = 'draft' | 'active' | 'paused' | 'shipped'
-export type ProjectRoute = 'easiest' | 'cheapest' | 'best'
+export type ProjectStatus = 'backlog' | 'planned' | 'in_progress' | 'completed' | 'canceled'
+export type ProjectHealth = 'on_track' | 'at_risk' | 'off_track' | null
+export type ProjectRoute  = 'easiest' | 'cheapest' | 'best'
 
 export interface ProjectChecklistItem {
   id: ID
@@ -93,6 +94,7 @@ export interface Project {
   title: string
   summary: string
   status: ProjectStatus
+  health?: ProjectHealth
   route: ProjectRoute
   stack: ID[]            // inventory ids
   gapTopicIds: ID[]      // topics user still needs

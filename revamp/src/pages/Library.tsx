@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { BookOpen, FileText, Film, FlaskConical, Pin, PinOff, Search, Wrench } from 'lucide-react'
+import { BookOpen, FileText, Film, Pin, PinOff, Search, Wrench } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { LibraryItem, LibraryKind } from '../db/types'
 import { Chip, List, PageHeader, Row, Empty } from '../ui'
@@ -9,12 +9,11 @@ import styles from './Library.module.css'
 type Facet = 'all' | LibraryKind
 
 const FACETS: { id: Facet; label: string; Icon?: typeof Wrench }[] = [
-  { id: 'all',       label: 'All' },
-  { id: 'tool',      label: 'Tools',     Icon: Wrench },
-  { id: 'document',  label: 'Documents', Icon: FileText },
-  { id: 'article',   label: 'Articles',  Icon: BookOpen },
-  { id: 'video',     label: 'Videos',    Icon: Film },
-  { id: 'paper',     label: 'Papers',    Icon: FlaskConical },
+  { id: 'all',   label: 'All' },
+  { id: 'tool',  label: 'Tools', Icon: Wrench },
+  { id: 'doc',   label: 'Docs',  Icon: FileText },
+  { id: 'read',  label: 'Reads', Icon: BookOpen },
+  { id: 'video', label: 'Videos', Icon: Film },
 ]
 
 type Sort = 'newest' | 'alpha' | 'pinned'
@@ -64,7 +63,7 @@ export function Library() {
       <PageHeader
         eyebrow="Library"
         title="Your reference shelf"
-        subtitle="Tools, docs, articles, videos. Pin the ones you come back to."
+        subtitle="Tools, docs, articles, videos."
       />
 
       {/* Search */}
@@ -155,11 +154,10 @@ export function Library() {
 
 function KindDot({ kind }: { kind: LibraryKind }) {
   const map: Record<LibraryKind, { bg: string; fg: string; label: string }> = {
-    tool:     { bg: 'color-mix(in oklch, var(--accent-base) 18%, var(--bg-card))', fg: 'var(--accent-ink)', label: 'T' },
-    document: { bg: 'color-mix(in oklch, var(--ink-1) 10%, var(--bg-card))',       fg: 'var(--ink-1)',     label: 'D' },
-    article:  { bg: 'color-mix(in oklch, var(--mastery-base) 16%, var(--bg-card))', fg: 'color-mix(in oklch, var(--mastery-base) 60%, black)', label: 'A' },
-    video:    { bg: 'color-mix(in oklch, var(--danger-base) 14%, var(--bg-card))',  fg: 'color-mix(in oklch, var(--danger-base) 60%, black)',  label: 'V' },
-    paper:    { bg: 'color-mix(in oklch, var(--ink-1) 14%, var(--bg-card))',        fg: 'var(--ink-1)',     label: 'P' },
+    tool:  { bg: 'color-mix(in oklch, var(--accent-base) 18%, var(--bg-card))',   fg: 'var(--accent-ink)', label: 'T' },
+    doc:   { bg: 'color-mix(in oklch, var(--ink-1) 10%, var(--bg-card))',         fg: 'var(--ink-1)',      label: 'D' },
+    read:  { bg: 'color-mix(in oklch, var(--mastery-base) 16%, var(--bg-card))',  fg: 'color-mix(in oklch, var(--mastery-base) 60%, black)', label: 'R' },
+    video: { bg: 'color-mix(in oklch, var(--danger-base) 14%, var(--bg-card))',   fg: 'color-mix(in oklch, var(--danger-base) 60%, black)',  label: 'V' },
   }
   const s = map[kind]
   return (

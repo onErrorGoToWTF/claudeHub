@@ -43,7 +43,7 @@ export function ProjectNew() {
       id: `p.${now.toString(36)}`,
       title: title.trim(),
       summary: summary.trim(),
-      status: 'draft',
+      status: 'backlog',
       route,
       stack: pickedIds,
       gapTopicIds: gapIds,

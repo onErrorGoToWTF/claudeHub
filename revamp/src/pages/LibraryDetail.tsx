@@ -8,7 +8,7 @@ import { Markdown } from '../ui/Markdown'
 import styles from './LessonView.module.css'
 
 const KIND_LABEL: Record<string, string> = {
-  tool: 'Tool', document: 'Document', article: 'Article', video: 'Video', paper: 'Paper',
+  tool: 'Tool', doc: 'Doc', read: 'Read', video: 'Video',
 }
 
 export function LibraryDetail() {
