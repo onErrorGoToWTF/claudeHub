@@ -269,6 +269,129 @@ Modern React (via frameworks like Next.js, Remix) splits components into **serve
 - [You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect)
 `.trim(),
 
+  'i.midjourney': `
+**TL;DR** — Midjourney is the painterly / cinematic end of AI image generation — the strongest aesthetic defaults of any model, best when you want a finished-looking image from a short prompt, and still a subscription service you mostly drive from the web or a Discord bot.
+
+## What it's best at
+
+- **Cinematic photos** — moody lighting, anamorphic lens looks, depth-of-field.
+- **Painterly illustration** — watercolor, oil, gouache, concept-art energy.
+- **Character + environment studies** — consistent style across variants.
+
+## What it's weaker at
+
+- **Text inside images** — still uneven. Use Nano Banana or Ideogram for typography-heavy images.
+- **Tight editorial control** — it loves dramatic; getting clean product-photography plate shots takes prompt wrestling.
+- **Multi-subject compositions** with precise placement — draft the layout elsewhere and use Midjourney for a pass.
+
+## Prompt basics
+
+- Lead with subject, then setting, then mood/lens cues.
+- \`--ar 16:9\` sets aspect ratio. \`--stylize 100\` dials the aesthetic push; lower = more literal.
+- \`--sref <url>\` conditions on a style reference image. \`--cref <url>\` conditions on a character reference.
+- \`--no\` excludes concepts from the image ("--no text" often helps).
+
+## Iteration pattern
+
+- Generate 4 variants (default grid).
+- \`V1–V4\` re-rolls that variant. \`U1–U4\` upscales. \`Vary (Strong/Subtle)\` explores adjacent takes.
+- Save style seeds you like; reuse via \`--sref\`.
+
+## Access
+
+Web UI at midjourney.com (main way to use it as of 2025). Discord bot still works but most users have moved to the web. Subscription plans start around $10/mo.
+
+## Sources
+
+- [Midjourney — main site](https://www.midjourney.com/)
+- [Midjourney — docs](https://docs.midjourney.com/)
+- [Midjourney — prompt guide](https://docs.midjourney.com/hc/en-us/articles/32528614141581-Prompts)
+`.trim(),
+
+  'i.nano-banana': `
+**TL;DR** — Nano Banana is Google's nickname for Gemini 3.1 Flash Image — the fastest in-chat image generator with genuinely accurate text rendering; use it when you want an image *right now*, or when words need to show up inside the picture.
+
+## Why it's distinct
+
+- **Speed.** Generations return in a second or two; fast enough to ideate interactively.
+- **Text inside images.** Signs, titles, labels, UI mockups all render legibly — a long-standing weakness for image models.
+- **In-chat.** It's part of Gemini Chat; no separate app or Discord bot.
+- **Free tier** on the Gemini consumer app.
+
+## Prompting
+
+Plainspoken prompts work best:
+
+> "A poster reading 'aiUniversity' in bold serif, cream background, faint grid, small orange lightning bolt above the title."
+
+Add constraints with plain language: "no people", "flat vector style", "4:5 aspect ratio".
+
+## When to reach for it
+
+- Social posts, quick marketing imagery, meeting mocks.
+- Diagrams or signage that need accurate letters.
+- Ideation — iterate twenty prompts in the time Midjourney fetches one.
+
+## When to switch to Midjourney
+
+- You want polish and mood depth over speed and accuracy.
+- The final image is camera-perfect or illustrative rather than utility-first.
+
+## Access
+
+Free via [gemini.google.com](https://gemini.google.com) on any Google account. Also available via the Gemini API for programmatic use.
+
+## Sources
+
+- [Gemini](https://gemini.google.com/)
+- [Google DeepMind — Gemini](https://deepmind.google/technologies/gemini/)
+- [Google — generative AI image overview](https://cloud.google.com/vertex-ai/generative-ai/docs/image/overview)
+`.trim(),
+
+  'i.veo': `
+**TL;DR** — Veo 3.1 is Google DeepMind's best-in-class generative video model — 4K @ 60fps, synchronized audio, and first/last-frame conditioning for interpolation; practically the only model that gives you finished-looking video from a prompt.
+
+## What sets it apart
+
+- **Synchronized audio.** Sound effects, ambient noise, even subtle dialogue aligned to the action — not just silent clips.
+- **4K @ 60fps.** Upscaling + frame-rate support that past video models couldn't touch.
+- **First-frame / last-frame conditioning.** Provide two stills (from Nano Banana, Midjourney, or photos) and Veo animates the interpolation.
+- **Prompt-to-scene fidelity.** Camera moves, subject actions, lighting cues — it listens.
+
+## Prompt ingredients that matter
+
+- **Subject.** "A golden retriever."
+- **Action.** "Chasing a red ball across wet grass."
+- **Camera.** "Slow dolly-in, shallow depth of field."
+- **Lighting.** "Warm late-afternoon backlight."
+- **Audio cue.** "Soft paw splashes, distant birdsong."
+
+Treat it like a director's shot list, not a one-liner.
+
+## Clip length
+
+Most public access caps at ~8s clips today. Chain clips with first/last-frame conditioning to build longer sequences. **Google Flow** is the canvas that makes this chaining visual.
+
+## Access
+
+- **Gemini Advanced** subscribers get Veo in the Gemini app for free-form prompts.
+- **Google AI Studio / Vertex AI** for API access.
+- **Google Flow** for keyframe-chained productions.
+
+## When Veo fits
+
+- Short-form social content.
+- Motion storyboards — previz for something you'll shoot or animate properly.
+- Product shots with light motion ("package rotating, soft studio light").
+
+## Sources
+
+- [Veo — product page](https://deepmind.google/technologies/veo/)
+- [Google Flow](https://labs.google/flow/)
+- [Gemini Advanced — video](https://gemini.google.com/)
+- [Vertex AI — generative video](https://cloud.google.com/vertex-ai/generative-ai/docs/video/overview)
+`.trim(),
+
   'i.supabase': `
 **TL;DR** — Supabase is a Postgres-first backend-as-a-service — real database, auth, storage, realtime, and edge functions — with a free tier large enough to ship real products on; the open-source alternative to Firebase that speaks SQL.
 
