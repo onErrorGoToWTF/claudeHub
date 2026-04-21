@@ -37,8 +37,11 @@ Running ledger. Rehydrate from this after context compaction.
 - [ ] Pin affordance in Library list (currently Detail only)
 
 ### Planned (later)
+- [x] **Audience tagging (pathways)** — shipped. `Audience = 'student' | 'office' | 'dev'` on Track/Topic/LibraryItem; PathwayPicker in topbar (zustand + localStorage); Learn + Library filter by pathway; library items auto-derive audience at seed time from kind/category/tags.
+- [x] **Library search-miss logging** — shipped. `searchMisses` Dexie table (v3 migration); 900ms-debounced `repo.logSearchMiss(query)` fires when query has zero matches; inline "‘{query}’ isn't in the library yet — noted. It'll be added shortly." replaces the generic Empty state. Per-session dedupe so backspacing doesn't inflate counts.
+- [ ] Search-miss admin surface — small page/panel listing `searchMisses` sorted by count/recency, with a "resolve" toggle so we can triage the wishlist
 - [ ] Read-only friend-view — Alan ↔ Lisa progress visibility; requires export/import snapshot or a shared backend tier
-- [ ] Authoring flow — create lessons / quizzes / library notes in-app (today: all seeded in code)
+- [ ] Authoring flow — create lessons / quizzes / library notes in-app (today: all seeded in code; authoring is done externally via Claude Code skills + manual upload to the repo)
 - [ ] Project bootstrapper — scaffold files + run init commands from a project's stack pick
 - [ ] Resume / public project-detail pages (the "site IS the resume" north star)
 - [ ] Claude API integration (after DB migration)

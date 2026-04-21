@@ -5,16 +5,21 @@ import type {
 import { libraryNotes } from './seedLibraryNotes'
 import { TOOL_BODIES } from './toolBodies'
 import { migrateLegacyStatus } from '../lib/projectStatus'
+import { deriveLibraryAudience } from '../lib/audience'
 
 const tracks: Track[] = [
   { id: 'foundations', order: 1, title: 'AI Foundations',
-    summary: 'How modern AI models work, from tokens to transformers.' },
+    summary: 'How modern AI models work, from tokens to transformers.',
+    audience: ['student', 'office', 'dev'] },
   { id: 'prompt-eng', order: 2, title: 'Prompt Engineering',
-    summary: 'Get precise, reliable output from any frontier model.' },
+    summary: 'Get precise, reliable output from any frontier model.',
+    audience: ['student', 'office', 'dev'] },
   { id: 'agents',     order: 3, title: 'Agents & Tool Use',
-    summary: 'Give models hands: tool calls, memory, autonomous loops.' },
+    summary: 'Give models hands: tool calls, memory, autonomous loops.',
+    audience: ['dev'] },
   { id: 'frontend-ai', order: 4, title: 'AI Frontend',
-    summary: 'Ship polished interfaces for AI products (streaming, glass UI, motion).' },
+    summary: 'Ship polished interfaces for AI products (streaming, glass UI, motion).',
+    audience: ['dev'] },
 ]
 
 const topics: Topic[] = [
@@ -276,7 +281,11 @@ const library: LibraryItem[] = [
     summary: 'Walkthrough of the CLI agent, from install to first autonomous task.',
     url: 'https://www.youtube.com/results?search_query=claude+code+cli',
     tags: ['agents', 'tutorial'], pinned: false, addedAt: L(12) },
-].map(item => TOOL_BODIES[item.id] ? { ...item, body: TOOL_BODIES[item.id] } : item) as LibraryItem[]
+].map(item => {
+  const withBody = TOOL_BODIES[item.id] ? { ...item, body: TOOL_BODIES[item.id] } : item
+  // Tag audience at seed time so UI filtering doesn't re-derive on every render.
+  return { ...withBody, audience: deriveLibraryAudience(withBody as LibraryItem) } as LibraryItem
+}) as LibraryItem[]
 
 const sampleProject: Project = {
   id: 'p.sample',
@@ -322,6 +331,22 @@ export async function seedIfEmpty(): Promise<void> {
     }
   }
 
+  // Backfill `audience` for rows seeded before the pathway model existed.
+  const untagged = await db.library.toArray()
+  for (const item of untagged) {
+    if (!item.audience || item.audience.length === 0) {
+      await db.library.put({ ...item, audience: deriveLibraryAudience(item) })
+    }
+  }
+  // Same backfill for tracks (existing installs are missing audience on all 4).
+  const trks = await db.tracks.toArray()
+  for (const t of trks) {
+    if (!t.audience || t.audience.length === 0) {
+      const seed = tracks.find(x => x.id === t.id)
+      if (seed?.audience) await db.tracks.put({ ...t, audience: seed.audience })
+    }
+  }
+
   const [tc, lc] = await Promise.all([db.tracks.count(), db.library.count()])
   if (tc === 0) {
     await db.transaction(
@@ -343,7 +368,8 @@ export async function seedIfEmpty(): Promise<void> {
     // System-managed notes: overwrite from code, preserve user's pinned state.
     for (const n of libraryNotes) {
       const prev = await db.library.get(n.id)
-      await db.library.put({ ...n, pinned: prev?.pinned ?? n.pinned })
+      const merged = { ...n, pinned: prev?.pinned ?? n.pinned }
+      await db.library.put({ ...merged, audience: deriveLibraryAudience(merged) })
     }
     // Library items: soft-insert missing IDs so user edits (owned, pinned) stick.
     // Existing rows that gained a `body` in code get that body patched in
@@ -353,7 +379,8 @@ export async function seedIfEmpty(): Promise<void> {
       if (!prev) {
         await db.library.put(item)
       } else if (item.body && prev.body !== item.body) {
-        await db.library.put({ ...prev, body: item.body, summary: item.summary ?? prev.summary })
+        const merged = { ...prev, body: item.body, summary: item.summary ?? prev.summary }
+        await db.library.put({ ...merged, audience: merged.audience ?? item.audience })
       }
     }
   }

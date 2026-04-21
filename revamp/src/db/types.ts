@@ -1,10 +1,16 @@
 export type ID = string
 
+/** Pathway audience — maps to the three user tracks in PLAN.md:
+ *  student (foundational), office (AI without coding), dev (coding with AI).
+ *  Content with an empty or missing audience list is visible to everyone. */
+export type Audience = 'student' | 'office' | 'dev'
+
 export interface Track {
   id: ID
   title: string
   summary: string
   order: number
+  audience?: Audience[]
 }
 
 export interface Topic {
@@ -13,6 +19,7 @@ export interface Topic {
   title: string
   summary: string
   order: number
+  audience?: Audience[]
 }
 
 export interface Lesson {
@@ -58,6 +65,20 @@ export type Mastery = {
 
 export type LibraryKind = 'tool' | 'doc' | 'read' | 'video'
 
+/** Logged when a user's Library search returned no matches. Lets us see
+ *  what people want that isn't there yet so we can author/upload it. */
+export interface SearchMiss {
+  /** Normalized query (lowercase, trimmed) — used as primary key so repeats collapse. */
+  id: ID
+  /** Original query the user typed, last time they searched it. */
+  query: string
+  count: number
+  firstAt: number
+  lastAt: number
+  /** Set once someone has addressed the gap (authored content or marked wontfix). */
+  resolved?: boolean
+}
+
 export interface LibraryItem {
   id: ID
   kind: LibraryKind
@@ -69,6 +90,8 @@ export interface LibraryItem {
   tags: string[]
   pinned: boolean
   addedAt: number
+  /** Pathway audiences this item is relevant to. Missing/empty = visible to all. */
+  audience?: Audience[]
   /** Tool-only fields. Meaningless for other kinds but kept here to keep one schema. */
   toolCategory?: 'model' | 'ide' | 'framework' | 'service' | 'tool'
   cost?: 'free' | 'paid' | 'subscription'

@@ -1,9 +1,11 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { BookOpen, FileText, Film, Pin, PinOff, Search, Wrench } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { LibraryItem, LibraryKind } from '../db/types'
 import { Chip, List, PageHeader, Row, Empty } from '../ui'
+import { matchesPathway } from '../lib/audience'
+import { useUserStore } from '../state/userStore'
 import styles from './Library.module.css'
 
 type Facet = 'all' | LibraryKind
@@ -24,6 +26,9 @@ export function Library() {
   const [facet, setFacet] = useState<Facet>('all')
   const [sort, setSort] = useState<Sort>('pinned')
   const [query, setQuery] = useState('')
+  const [missLogged, setMissLogged] = useState<string | null>(null)
+  const loggedRef = useRef<Set<string>>(new Set())
+  const pathway = useUserStore(st => st.pathway)
 
   useEffect(() => { repo.listLibrary().then(setItems) }, [])
 
@@ -32,6 +37,7 @@ export function Library() {
     // Incomplete tool entries still exist in the DB (they drive the Projects
     // intake stack picker) — they just don't clutter the Library list.
     let out = items.filter(i => !!i.body)
+    out = out.filter(i => matchesPathway(pathway, i.audience))
     if (facet !== 'all') out = out.filter(i => i.kind === facet)
     if (query.trim()) {
       const q = query.toLowerCase()
@@ -48,7 +54,27 @@ export function Library() {
       Number(b.pinned) - Number(a.pinned) || b.addedAt - a.addedAt
     )
     return sorted
-  }, [items, facet, sort, query])
+  }, [items, facet, sort, query, pathway])
+
+  // Debounce-log a miss: 900ms after the user stops typing, if query is
+  // non-trivial AND has zero matches, persist it to `searchMisses` and
+  // surface an inline "we'll add it" note. Per-session dedupe so a user
+  // mashing the backspace key doesn't rack up count inflation.
+  useEffect(() => {
+    const q = query.trim()
+    if (q.length < 2) { setMissLogged(null); return }
+    if (shown.length > 0) { setMissLogged(null); return }
+    const key = q.toLowerCase()
+    if (loggedRef.current.has(key)) { setMissLogged(q); return }
+    const t = setTimeout(async () => {
+      try {
+        await repo.logSearchMiss(q)
+        loggedRef.current.add(key)
+        setMissLogged(q)
+      } catch { /* empty query etc. — ignore */ }
+    }, 900)
+    return () => clearTimeout(t)
+  }, [query, shown.length])
 
   async function togglePin(item: LibraryItem) {
     await repo.togglePinned(item.id, !item.pinned)
@@ -111,7 +137,14 @@ export function Library() {
       </div>
 
       {shown.length === 0 ? (
-        <Empty>Nothing matches. Clear filters or search.</Empty>
+        missLogged ? (
+          <Empty>
+            <strong>“{missLogged}”</strong> isn&apos;t in the library yet — noted.
+            It&apos;ll be added shortly.
+          </Empty>
+        ) : (
+          <Empty>Nothing matches. Clear filters or search.</Empty>
+        )
       ) : (
         <List>
           {shown.map(i => (

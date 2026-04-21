@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { overallProgress, repo } from '../db/repo'
@@ -7,6 +7,8 @@ import {
   PageHeader, Section, Tile, TileTitle, TileMeta, TileRow,
   Chip, ProgressBar, grid,
 } from '../ui'
+import { matchesPathway } from '../lib/audience'
+import { useUserStore } from '../state/userStore'
 import s from './Learn.module.css'
 
 export function Learn() {
@@ -17,6 +19,7 @@ export function Learn() {
   const [completed, setCompleted] = useState(0)
   const [topicsTotal, setTopicsTotal] = useState(0)
   const [nextTopic, setNextTopic] = useState<Topic | null>(null)
+  const pathway = useUserStore(st => st.pathway)
 
   useEffect(() => {
     ;(async () => {
@@ -38,6 +41,11 @@ export function Learn() {
       setNextTopic(unstarted ?? null)
     })()
   }, [])
+
+  const shownTracks = useMemo(
+    () => tracks.filter(t => matchesPathway(pathway, t.audience)),
+    [tracks, pathway],
+  )
 
   return (
     <div className="page">
@@ -67,7 +75,7 @@ export function Learn() {
         )}
       </div>
 
-      {tracks.map(track => (
+      {shownTracks.map(track => (
         <Section
           key={track.id}
           title={track.title}

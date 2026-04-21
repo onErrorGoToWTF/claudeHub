@@ -1,18 +1,19 @@
 import Dexie, { type Table } from 'dexie'
 import type {
   Track, Topic, Lesson, Quiz, Progress, Mastery,
-  LibraryItem, Project,
+  LibraryItem, Project, SearchMiss,
 } from './types'
 
 export class AiUniversityDB extends Dexie {
-  tracks!:    Table<Track, string>
-  topics!:    Table<Topic, string>
-  lessons!:   Table<Lesson, string>
-  quizzes!:   Table<Quiz, string>
-  progress!:  Table<Progress, string>
-  mastery!:   Table<Mastery, string>
-  library!:   Table<LibraryItem, string>
-  projects!:  Table<Project, string>
+  tracks!:       Table<Track, string>
+  topics!:       Table<Topic, string>
+  lessons!:      Table<Lesson, string>
+  quizzes!:      Table<Quiz, string>
+  progress!:     Table<Progress, string>
+  mastery!:      Table<Mastery, string>
+  library!:      Table<LibraryItem, string>
+  projects!:     Table<Project, string>
+  searchMisses!: Table<SearchMiss, string>
 
   constructor() {
     super('aiUniversity')
@@ -29,6 +30,9 @@ export class AiUniversityDB extends Dexie {
     this.version(2).stores({
       inventory: null,                                    // drop old table
       library:   'id, kind, pinned, addedAt, toolCategory',
+    })
+    this.version(3).stores({
+      searchMisses: 'id, count, lastAt, resolved',
     })
   }
 }

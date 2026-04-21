@@ -6,7 +6,7 @@
 import { db } from './schema'
 import type {
   Track, Topic, Lesson, Quiz, Progress, Mastery,
-  LibraryItem, LibraryKind, InventoryItem, Project,
+  LibraryItem, LibraryKind, InventoryItem, Project, SearchMiss,
 } from './types'
 
 export const repo = {
@@ -94,6 +94,27 @@ export const repo = {
     await db.projects.put(p)
   },
   async deleteProject(id: string) { await db.projects.delete(id) },
+
+  // ---------- search misses ----------
+  /** Log a library-search query that returned nothing. Repeats increment count
+   *  instead of inserting, so the `searchMisses` table stays a deduped wishlist. */
+  async logSearchMiss(query: string): Promise<SearchMiss> {
+    const normalized = query.trim().toLowerCase()
+    if (!normalized) throw new Error('empty query')
+    const now = Date.now()
+    const prev = await db.searchMisses.get(normalized)
+    const next: SearchMiss = prev
+      ? { ...prev, query: query.trim(), count: prev.count + 1, lastAt: now }
+      : { id: normalized, query: query.trim(), count: 1, firstAt: now, lastAt: now }
+    await db.searchMisses.put(next)
+    return next
+  },
+  async listSearchMisses(): Promise<SearchMiss[]> {
+    return (await db.searchMisses.toArray()).sort((a, b) => b.lastAt - a.lastAt)
+  },
+  async resolveSearchMiss(id: string, resolved = true) {
+    await db.searchMisses.update(id, { resolved })
+  },
 }
 
 /** Mastery = avg(lesson completion rate, best quiz score) across a topic. */
