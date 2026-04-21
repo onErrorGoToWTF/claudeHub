@@ -4,6 +4,7 @@ import { LayoutDashboard, BookOpen, FolderGit2, Library as LibraryIcon, Search }
 import { ThemeToggle } from '../ui/ThemeToggle'
 import { PathwayPicker } from '../ui/PathwayPicker'
 import { GlobalSearch } from '../ui/GlobalSearch'
+import { UserMenu } from '../ui/UserMenu'
 import sharedStyles from '../ui/ui.module.css'
 import styles from './AppShell.module.css'
 
@@ -58,6 +59,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           </button>
           <PathwayPicker />
           <ThemeToggle />
+          <UserMenu />
         </div>
       </header>
 

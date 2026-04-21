@@ -15,6 +15,7 @@ import { Library } from '../pages/Library'
 import { LibraryDetail } from '../pages/LibraryDetail'
 import { LibraryWishlist } from '../pages/LibraryWishlist'
 import { Onboarding } from '../pages/Onboarding'
+import { Settings } from '../pages/Settings'
 import { seedIfEmpty } from '../db/seed'
 import { useUserStore } from '../state/userStore'
 
@@ -68,6 +69,7 @@ export function App() {
             <Route path="/library" element={<Library />} />
             <Route path="/library/wishlist" element={<LibraryWishlist />} />
             <Route path="/library/:id" element={<LibraryDetail />} />
+            <Route path="/settings" element={<Settings />} />
             <Route path="*" element={<Dashboard />} />
           </Routes>
         </motion.div>
