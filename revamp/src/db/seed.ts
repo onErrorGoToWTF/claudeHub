@@ -157,6 +157,15 @@ const library: LibraryItem[] = [
   { id: 'i.elevenlabs', kind: 'tool', title: 'ElevenLabs',
     summary: 'Expressive TTS and voice cloning — the reference for AI narration quality.',
     tags: ['voice', 'audio'], pinned: false, addedAt: L(0), toolCategory: 'service', cost: 'subscription', owned: false },
+  { id: 'i.midjourney', kind: 'tool', title: 'Midjourney',
+    summary: 'Painterly / cinematic end of image generation — strongest aesthetic defaults.',
+    tags: ['image', 'generative'], pinned: false, addedAt: L(0), toolCategory: 'service', cost: 'subscription', owned: false },
+  { id: 'i.veo', kind: 'tool', title: 'Veo 3.1',
+    summary: 'Best-in-class generative video — synced audio, 4K60, first/last-frame conditioning.',
+    tags: ['video', 'generative'], pinned: false, addedAt: L(0), toolCategory: 'service', cost: 'subscription', owned: false },
+  { id: 'i.davinci', kind: 'tool', title: 'DaVinci Resolve',
+    summary: 'Free pro-grade editor + color grading — industry standard for post-production.',
+    tags: ['video', 'editing'], pinned: false, addedAt: L(0), toolCategory: 'tool', cost: 'free', owned: false },
 
   // ---- documents ----
   { id: 'd.apple-hig',      kind: 'doc', title: 'Apple Human Interface Guidelines',
