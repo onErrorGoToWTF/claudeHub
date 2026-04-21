@@ -130,3 +130,19 @@ export interface Project {
   createdAt: number
   updatedAt: number
 }
+
+/** Immutable audit event appended to a project's history.
+ *  Today: created, status change, health change. */
+export type ProjectEventKind =
+  | 'created'
+  | 'status_changed'
+  | 'health_changed'
+
+export interface ProjectEvent {
+  id: ID                 // `evt.<projectId>.<ts>.<kind>`
+  projectId: ID
+  ts: number
+  kind: ProjectEventKind
+  from?: string | null
+  to?: string | null
+}

@@ -363,6 +363,23 @@ export async function seedIfEmpty(): Promise<void> {
     }
   }
 
+  // Seed a `created` event for any project missing history (e.g., projects
+  // that existed before projectEvents was introduced, plus the sample seed).
+  const allProjects = await db.projects.toArray()
+  for (const proj of allProjects) {
+    const existing = await db.projectEvents.where('projectId').equals(proj.id).count()
+    if (existing === 0) {
+      await db.projectEvents.put({
+        id: `evt.${proj.id}.${proj.createdAt}.created`,
+        projectId: proj.id,
+        ts: proj.createdAt,
+        kind: 'created',
+        from: null,
+        to: proj.status,
+      })
+    }
+  }
+
   const [tc, lc] = await Promise.all([db.tracks.count(), db.library.count()])
   if (tc === 0) {
     await db.transaction(

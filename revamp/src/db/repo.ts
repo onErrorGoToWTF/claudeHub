@@ -6,7 +6,7 @@
 import { db } from './schema'
 import type {
   Track, Topic, Lesson, Quiz, Progress, Mastery,
-  LibraryItem, LibraryKind, InventoryItem, Project, SearchMiss,
+  LibraryItem, LibraryKind, InventoryItem, Project, SearchMiss, ProjectEvent,
 } from './types'
 
 export const repo = {
@@ -89,11 +89,50 @@ export const repo = {
     return (await db.projects.toArray()).sort((a, b) => b.updatedAt - a.updatedAt)
   },
   async getProject(id: string) { return db.projects.get(id) },
+  /** Upsert a project; append immutable audit events for status/health changes
+   *  (and a `created` event on first insert). Events live in `projectEvents`. */
   async putProject(p: Project) {
-    p.updatedAt = Date.now()
+    const now = Date.now()
+    const prev = await db.projects.get(p.id)
+    p.updatedAt = now
     await db.projects.put(p)
+
+    const events: ProjectEvent[] = []
+    if (!prev) {
+      events.push({
+        id: `evt.${p.id}.${now}.created`,
+        projectId: p.id, ts: now, kind: 'created',
+        from: null, to: p.status,
+      })
+    } else {
+      if (prev.status !== p.status) {
+        events.push({
+          id: `evt.${p.id}.${now}.status`,
+          projectId: p.id, ts: now, kind: 'status_changed',
+          from: prev.status, to: p.status,
+        })
+      }
+      const prevHealth = prev.health ?? null
+      const nextHealth = p.health ?? null
+      if (prevHealth !== nextHealth) {
+        events.push({
+          id: `evt.${p.id}.${now}.health`,
+          projectId: p.id, ts: now, kind: 'health_changed',
+          from: prevHealth, to: nextHealth,
+        })
+      }
+    }
+    if (events.length) await db.projectEvents.bulkPut(events)
   },
-  async deleteProject(id: string) { await db.projects.delete(id) },
+  async deleteProject(id: string) {
+    await db.projects.delete(id)
+    const related = await db.projectEvents.where('projectId').equals(id).primaryKeys()
+    await db.projectEvents.bulkDelete(related as string[])
+  },
+  async listProjectEvents(projectId: string): Promise<ProjectEvent[]> {
+    const all = await db.projectEvents.where('projectId').equals(projectId).toArray()
+    return all.sort((a, b) => b.ts - a.ts)
+  },
 
   // ---------- search misses ----------
   /** Log a library-search query that returned nothing. Repeats increment count

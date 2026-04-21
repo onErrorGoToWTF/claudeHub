@@ -2,13 +2,45 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, ExternalLink, Trash2 } from 'lucide-react'
 import { repo } from '../db/repo'
-import type { InventoryItem, Project, Topic } from '../db/types'
+import type { InventoryItem, Project, ProjectEvent, Topic } from '../db/types'
 import { Button, Chip, List, PageHeader, ProgressBar, Row, Section, Tile, TileMeta, TileRow, TileTitle, grid } from '../ui'
 import { Check } from 'lucide-react'
 import { ROUTE_LABELS, ROUTE_BLURBS } from '../lib/projectRoutes'
 import { STATUSES, HEALTHS, STATUS_LABEL, HEALTH_LABEL, showsHealth } from '../lib/projectStatus'
 import type { ProjectStatus, ProjectHealth } from '../db/types'
+import { whenShort } from '../lib/activity'
 import styles from './ProjectDetail.module.css'
+
+function HistoryLine({ ev }: { ev: ProjectEvent }) {
+  if (ev.kind === 'created') {
+    return <span>Project created</span>
+  }
+  if (ev.kind === 'status_changed') {
+    const fromLabel = STATUS_LABEL[ev.from as ProjectStatus] ?? ev.from ?? '—'
+    const toLabel   = STATUS_LABEL[ev.to as ProjectStatus]   ?? ev.to   ?? '—'
+    return (
+      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+        Status
+        <Chip>{fromLabel}</Chip>
+        <span style={{ color: 'var(--ink-3)' }}>→</span>
+        <Chip variant="accent">{toLabel}</Chip>
+      </span>
+    )
+  }
+  if (ev.kind === 'health_changed') {
+    const label = (v: string | null | undefined) =>
+      !v ? 'Cleared' : (HEALTH_LABEL[v as NonNullable<ProjectHealth>] ?? v)
+    return (
+      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+        Health
+        <Chip>{label(ev.from)}</Chip>
+        <span style={{ color: 'var(--ink-3)' }}>→</span>
+        <Chip variant="accent">{label(ev.to)}</Chip>
+      </span>
+    )
+  }
+  return <span>{ev.kind}</span>
+}
 
 export function ProjectDetail() {
   const { projectId = '' } = useParams()
@@ -17,19 +49,26 @@ export function ProjectDetail() {
   const [inventory, setInventory] = useState<InventoryItem[]>([])
   const [topics, setTopics] = useState<Topic[]>([])
   const [confirmDel, setConfirmDel] = useState(false)
+  const [history, setHistory] = useState<ProjectEvent[]>([])
 
   useEffect(() => {
     ;(async () => {
-      const [proj, inv, tops] = await Promise.all([
+      const [proj, inv, tops, hist] = await Promise.all([
         repo.getProject(projectId),
         repo.listInventory(),
         repo.listTopics(),
+        repo.listProjectEvents(projectId),
       ])
       setP(proj ?? null)
       setInventory(inv)
       setTopics(tops)
+      setHistory(hist)
     })()
   }, [projectId])
+
+  async function refreshHistory() {
+    setHistory(await repo.listProjectEvents(projectId))
+  }
 
   if (!p) return <div className="page" />
 
@@ -58,6 +97,7 @@ export function ProjectDetail() {
     const updated = { ...p, status: next }
     await repo.putProject(updated)
     setP(updated)
+    refreshHistory()
   }
 
   async function setHealth(next: ProjectHealth) {
@@ -66,6 +106,7 @@ export function ProjectDetail() {
     const updated = { ...p, health: nextVal }
     await repo.putProject(updated)
     setP(updated)
+    refreshHistory()
   }
 
   const invById = new Map(inventory.map(i => [i.id, i]))
@@ -205,6 +246,20 @@ export function ProjectDetail() {
           </div>
         )}
       </Section>
+
+      {history.length > 0 && (
+        <Section title="History" meta={`${history.length} ${history.length === 1 ? 'event' : 'events'}`}>
+          <List>
+            {history.map(ev => (
+              <Row
+                key={ev.id}
+                title={<HistoryLine ev={ev} />}
+                right={<span style={{ fontSize: 'var(--text-xs)', color: 'var(--ink-3)' }}>{whenShort(ev.ts)}</span>}
+              />
+            ))}
+          </List>
+        </Section>
+      )}
     </div>
   )
 }

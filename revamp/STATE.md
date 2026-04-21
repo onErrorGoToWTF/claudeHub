@@ -46,11 +46,10 @@ Running ledger. Rehydrate from this after context compaction.
 - [ ] Authoring flow — create lessons / quizzes / library notes in-app (today: all seeded in code; authoring is done externally via Claude Code skills + manual upload to the repo)
 - [ ] Project bootstrapper — scaffold files + run init commands from a project's stack pick
 - [ ] Resume / public project-detail pages (the "site IS the resume" north star)
-- [ ] Claude API integration (after DB migration)
 - [ ] DB migration off IndexedDB — swap target behind `src/db/repo.ts` interface
 - [ ] YouTube API integration (needs interactive Google login — deferred)
 - [x] **Activity feed on Dashboard** — shipped. `src/lib/activity.ts` merges Progress (lesson completions + quiz scores), Projects (created / updated), and LibraryItems (pinned / added) into a unified time-sorted stream. Dashboard renders last 8 events below the three existing panels, with a kind-specific icon, primary title, sub-line, and a short relative timestamp (`12m`, `3h`, `2d`). Each row links through to the relevant surface.
-- [ ] Status-change log per project (audit history)
+- [x] **Status-change log per project** — shipped. New `projectEvents` Dexie table (schema v4) captures immutable `created` / `status_changed` / `health_changed` events. `repo.putProject` diffs against the prior record and appends events automatically; `deleteProject` cascades. ProjectDetail renders a **History** section at the bottom with from → to chips and a relative timestamp. `seedIfEmpty` backfills a `created` event for any pre-existing project so every project shows at least one line.
 - [x] **Global search** — shipped. `GlobalSearch` modal triggered by Ctrl/Cmd+K or the search icon in the topbar. Indexes tracks, topics, lesson bodies, projects, and library items with bodies (respecting the active pathway filter). Keyboard: ↑↓ to navigate, Enter to open, Esc to close. Results tagged by kind with a small badge. Debouncing not needed — datasets are small.
 
 ### Deferred (explicitly parked)
