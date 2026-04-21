@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T12:55:02.761Z",
+  "generated_at": "2026-04-21T15:03:39.298Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -7,7 +7,7 @@
         "title": "Anthropic Amazon Compute",
         "url": "https://www.anthropic.com/news/anthropic-amazon-compute",
         "source": "Anthropic",
-        "published": "2026-04-21T01:50:34.000Z",
+        "published": "2026-04-21T14:08:40.000Z",
         "summary": ""
       },
       {
@@ -146,11 +146,59 @@
     ],
     "news": [
       {
-        "title": "Amazon Deepens Anthropic Deal With $25 Billion New Investment - Dataconomy",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQdlFocmh5WWxVLVNZekdDQmlGY0ROLWYzYzRITTNXTlJUSEZFa2V1Nm5WY3NYOHYzMHRtVXhNZWRVT2xYMkhsd2tWOVQzZnhhOGRtRnA3OGU1TVh0RjNrZkY2TlEtSXlBcXFHTW5WTWtoeU5BSFZrOTNfMVFZb3lqUWQ5YTJHN3hOWXhjZmg0UkRsSzI1RDZZ?oc=5",
+        "title": "Three AI coding agents leaked secrets through a single prompt injection. One vendor's system card predicted it - Venturebeat",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTndHeG94c2taeXhFU0w4MXdLZVpUQmhMYmdrSWlxNGFqM2ZqTlliNGM1blRKVHJmUUZucVJuMWF2dXptdEFYM0VwYnF4QjRVWm1BWHZ6YTdDWnRHVUlLckdkWWdGaFZvaE5yRHVYR1JHRTllOGpZZnJfeXNaRHlLeUVUd1ZkX0p2UThSWjhLcW1RYnFvdlZOMEVfeW1Tcll1UmJV?oc=5",
         "source": "Google News",
-        "published": "2026-04-21T12:27:22.000Z",
-        "summary": "Amazon Deepens Anthropic Deal With $25 Billion New Investment Dataconomy"
+        "published": "2026-04-21T14:51:17.000Z",
+        "summary": "Three AI coding agents leaked secrets through a single prompt injection. One vendor's system card predicted it Venturebeat"
+      },
+      {
+        "title": "Claude Code Routines - It Codes While You Sleep",
+        "url": "https://www.youtube.com/watch?v=bzYheNpYl8Y",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "bzYheNpYl8Y",
+        "thumbnail": "https://i.ytimg.com/vi/bzYheNpYl8Y/hqdefault.jpg",
+        "published": "2026-04-21T14:00:59.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Amazon Deepens Anthropic Partnership, Eyeing Up to $25B as Claude Demand Surges - TechRepublic",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBJY0ZONUU1TDNDbE9uYmctS1lpSjBpdFRlRk1mWDNRY2RXcGN4djFyV2xsTnBPNHBKSzZqSV9QRjBrSUJWVTQ1UVlyRlVXN3NLNTVTaFpjZXc4dWtYRU5VTC03Tm5BRE5CVFp1TnJMaFhNcllGZUp3?oc=5",
+        "source": "Google News",
+        "published": "2026-04-21T13:49:19.000Z",
+        "summary": "Amazon Deepens Anthropic Partnership, Eyeing Up to $25B as Claude Demand Surges TechRepublic"
+      },
+      {
+        "title": "Anthropic takes $5B from Amazon and pledges $100B in cloud spending in return",
+        "url": "https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/",
+        "source": "HN · 73↑",
+        "hn_id": "47848276",
+        "published": "2026-04-21T13:08:25.000Z",
+        "summary": ""
+      },
+      {
+        "title": "AI is Already Finding Thousands of Software Flaws, Even Before Anthropic’s Mythos",
+        "url": "https://www.bloomberg.com/news/newsletters/2026-04-21/ai-is-already-finding-thousands-of-software-flaws-even-before-anthropic-s-mythos",
+        "source": "Bloomberg",
+        "published": "2026-04-21T13:00:01.000Z",
+        "summary": "A bug-tracking program found 200 serious issues in roughly a week."
+      },
+      {
+        "title": "Amazon Stock Rises As Anthropic Commits Over $100B to AWS - Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNbGFsRDBHQmRFeUhiZ3Qtc2s0dEZCWEZwVDJKdWFzTERNdjdwdlQzREM5M2EzbzU5OHZ3UmVmSEJ6dEhBVzkzRWhqSHZWQ1Rael9JSWJhMjdLUjh1eGlnOU5LaWRzRHctQm9KU19uVWJaTHk1WTZ6Q0piUGNKWDZ1ZTBtd1FzdmVtZ0JEX0FuOHBNZWxvYmRvZTRyaGI2Z1R3Q3NyN1ctUUUwN0h1U1BzYWw3Tm1UNXZU?oc=5",
+        "source": "Google News",
+        "published": "2026-04-21T12:45:04.000Z",
+        "summary": "Amazon Stock Rises As Anthropic Commits Over $100B to AWS Benzinga"
+      },
+      {
+        "title": "Amazon is investing up to $25 billion more in Anthropic - qz.com",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0tNURjeWs4LWx4UlZGdUMwbWhjVFVhTWhXZ2pBUXFjQTBuOGZ6SHpVaE1GT0V0OTlwQjdDWnVsX3Q2THg4enlMQTRjTV94N2haN0hYV05QM2RaQWkxQUNtZ1ZDNmo3SGxNQ05UTUp3c2ZXZl9pWm9yenlNc3dyQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-21T12:43:40.000Z",
+        "summary": "Amazon is investing up to $25 billion more in Anthropic qz.com"
       },
       {
         "title": "Amazon Jumps on $5B Anthropic AI Bet, Deal Could Hit $20B - TradingView",
@@ -160,18 +208,18 @@
         "summary": "Amazon Jumps on $5B Anthropic AI Bet, Deal Could Hit $20B TradingView"
       },
       {
+        "title": "Anthropic bites back in the compute wars with Amazon partnership - Axios",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBodDJTWFRsYnN3NXItQVQxTXQxWWdSZy1LUDl4b1o4M21hZVpaSVMzYmt4c0Q1MWpOX0ZtYVdNVHNFcTZZS0c2WEI4TnIyMUlJY3hibi1LT2dCamlrbFAwdzVuN25hanNqUjJHVURvSQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-21T12:01:18.000Z",
+        "summary": "Anthropic bites back in the compute wars with Amazon partnership Axios"
+      },
+      {
         "title": "Amazon (AMZN) and Anthropic Strike $125 Billion 10-Year Deal in Major AI Push - TipRanks",
         "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPanFiejJFQjFTOHl6bnNzTnV0MnJiaFdQY0xSR18yeVRwWWdhUVgyQ0pyMDBZWTFXRHdtemlFVS0xSlp2SzdzUUJWYnZDN0c5aXRpSV8tS1ZqR2VvTUhzM1d3R3EwNHF3bGlCVVpERV8yLS1YZjJPeS11c0FTcl9KdXh3R3RRVkk5aXZjZW1wTXZ3V1AyT2dpX2ppd0FVSGVwWGhteGUzUQ?oc=5",
         "source": "Google News",
-        "published": "2026-04-21T11:48:45.000Z",
+        "published": "2026-04-21T11:52:33.000Z",
         "summary": "Amazon (AMZN) and Anthropic Strike $125 Billion 10-Year Deal in Major AI Push TipRanks"
-      },
-      {
-        "title": "Amazon is investing up to $25 billion more in Anthropic in expanded cloud deal - qz.com",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0tNURjeWs4LWx4UlZGdUMwbWhjVFVhTWhXZ2pBUXFjQTBuOGZ6SHpVaE1GT0V0OTlwQjdDWnVsX3Q2THg4enlMQTRjTV94N2haN0hYV05QM2RaQWkxQUNtZ1ZDNmo3SGxNQ05UTUp3c2ZXZl9pWm9yenlNc3dyQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-21T11:38:01.000Z",
-        "summary": "Amazon is investing up to $25 billion more in Anthropic in expanded cloud deal qz.com"
       },
       {
         "title": "Why Amazon is investing $25bn into Anthropic in a major AI deal - capacityglobal.com",
@@ -216,6 +264,13 @@
         "summary": "NSA Utilizes Anthropic’s Mythos Model Amid Pentagon Dispute ForkLog"
       },
       {
+        "title": "Anthropic Claude Cowork is replacing dashboards with live artifacts - YourStory.com",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPd1pzbVdNbjBwWDJsOHpoZE5udnBlZG96MFBtdzVqQXBXWVFLVmE0TDhpMHUyU1o2WW9iaVBVSDdvUnUwU1pMY3lZbEtCYTN5NEViZUUyMy1kSGhpOEFOZ3lWUm9uNEVGd0JMR1g4aURIemQzWTYwWWtBMTE2M0FVNkxGdw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-21T08:58:24.000Z",
+        "summary": "Anthropic Claude Cowork is replacing dashboards with live artifacts YourStory.com"
+      },
+      {
         "title": "Amazon is investing $25 billion in Claude developer Anthropic - Techzine Global",
         "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQNy1jaXQ5MXNtUno2LXNKa29vdWVpUHhOWUpUZjc4ckxnTEhMS3hzN25lVU8xbUttRzJ4aUl5OVgyajRnM2h6Wmg5T2c2UkdPVW13Y096UVpTdWNLdVNuSVlQOU41dVd1akV2aGwtampBdEdNcDRPei1hckE0LTZfU0xRVVNDMmRNN3p0YnlhbVZITUFSR0ZpQVZnbEJXbG9CYWlNZk1NUEh4R3B0c3Fwc25n?oc=5",
         "source": "Google News",
@@ -228,13 +283,6 @@
         "source": "Google News",
         "published": "2026-04-21T07:21:26.000Z",
         "summary": "Anthropic Introduces Claude Design to Generate Visual Prototypes and Pitch Decks Using AI CXO Digitalpulse"
-      },
-      {
-        "title": "Amazon to invest $5 bn in Anthropic, may add $20 bn more as AI partnership deepens - bestmediainfo.com",
-        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPQS05WGFsb2UxZ2dVUHhCZkV1VTRGWXg4bG9NUGVseWZ0SkFpQWxGUUIzV2laTTFDU0FlYnNEcFZCeXNJMUxFSDVncUtkXzlxUnZBMEtxdVk1V2JsTFhuY19yVl9MZ19fbDRqdzNEcExaTjFEek5nVVpmY281T1U3RVd2UFlqaFZEUG1lc3B0TW5rOTRKa0x6VHJmSWVPQ19lTHF4bThBdUxTbktzbUlweUJEQV9STWJTNUdkVG5fRlJJTFFnRk1UeXJNUk5FUU5LWUFQRjN3ekt0aERU0gHcAUFVX3lxTE9BLTlYYWxvZTFnZ1VQeEJmRXVVNEZZeDhsb01QZWx5ZnRKQWlBbEZRQjNXaVpNMUNTQWVic0RwVkJ5c0kxTEVINWdxS2RfOXFSdkEwS3F1WTVXYmxMWG5jX3JWX0xnX19sNGp3M0RwTFpOMUR6TmdVWmZjbzVPVTdFV3ZQWWpoVkRQbWVzcHRNbms5NEprTHpUcmZJZU9DX2VMcXhtOEF1TFNuS3NtSXB5QkRBX1JNYlM1R2RUbl9GUklMUWdGTVR5ck1STkVRTktZQVBGM3d6S3RoRFQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-21T07:03:05.000Z",
-        "summary": "Amazon to invest $5 bn in Anthropic, may add $20 bn more as AI partnership deepens bestmediainfo.com"
       },
       {
         "title": "Why Does Anthropic Urgently Need Amazon’s Computing Power Infusion? - NAI500",
@@ -272,13 +320,6 @@
         "summary": "US Spies Already Using Mythos Despite Anthropic’s Pentagon Feud CXOToday.com"
       },
       {
-        "title": "Amazon deepens AI rivalry with $25 billion Anthropic investment and $100 billion AWS pact - Latest news from Azerbaijan",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOODZVUGdrUWJVTXZ0a29RaUpHV2VobnZRLTZ6QkFhdFFXRE5uV1lUcUd4VVBGWnM1a2pNcmROQkNYZlZfUC1PZmlUWnZfcVNMU1ItY0drcnFrN3h5bTJIU3B4RHVxcHkyMk9mdzg4Wm04WDhnejNPbTFRTENOSzdFVXM5N2l2dWV0bjhaVDVLZGk4THI5Q3Q2LWNJUzAzS0prbmI0YmQ3UXU0VDhs?oc=5",
-        "source": "Google News",
-        "published": "2026-04-21T05:57:56.000Z",
-        "summary": "Amazon deepens AI rivalry with $25 billion Anthropic investment and $100 billion AWS pact Latest news from Azerbaijan"
-      },
-      {
         "title": "Anthropic Targets Visual Workflows With Claude Design - CMSWire",
         "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOeDc5aGZKZkNMbVliUUczQlgyelJCcDJXZnhVQ0NFalA2enBXUEFTQlZsS0ZWMEJRcVlCM2ZnT0ZieVpmOTVyUFJ6ZU9kajVPc2VxbjdPRXA2dTk2M2VGV0htZVFGLVhLdV9BbVBkeEVnWEVBa0RjQjk4X3VGWmRESUV4eDZZRGhyam1SQkF6TWtSM2R4SHFwLVN0aTN4WHAyYlFDRGRwLVRrN19X?oc=5",
         "source": "Google News",
@@ -291,35 +332,6 @@
         "source": "Google News",
         "published": "2026-04-21T04:44:34.000Z",
         "summary": "Amazon Invests Billions in Anthropic, Secures AWS Commitments Let's Data Science"
-      },
-      {
-        "title": "Amazon Invests $5 Billion More in Anthropic, Secures 10-Year AWS Deal Worth $100 Billion - Bitcoin News",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNLUplcGdyM2JCNHUyTUlZZlVrNjdDM1ZaaDdlZ1ZGcnBBUnNlNkNuVHdHMVR2eWF1bkF0S3RkVF8wWTF1TVRfVUpuNEVMSVRvVGs4c2lVSE1JUXhoRXp6bjVvRVdpbVpDZUhnUkZnbmYwZ0RXZFpJcDBPX0MxNHlxSTdpQUtHMXJUMWtLNm1xZlA3OGdmZGwxMEpraVVNbHR1eWtRSWo1SktHS1ZHSVI5dA?oc=5",
-        "source": "Google News",
-        "published": "2026-04-21T03:54:28.000Z",
-        "summary": "Amazon Invests $5 Billion More in Anthropic, Secures 10-Year AWS Deal Worth $100 Billion Bitcoin News"
-      },
-      {
-        "title": "Anthropic says OpenClaw-style Claude CLI usage is allowed again",
-        "url": "https://docs.openclaw.ai/providers/anthropic",
-        "source": "HN · 277↑",
-        "hn_id": "47844269",
-        "published": "2026-04-21T03:43:03.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Mythos remains a mystery as security world faces rising threats, agentic attacks and concerns about AI integrity - SiliconANGLE",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPS18xNm5TUTl0dV9wYmhjejZqeEUycnFpUjNWUVQySXNLSkNoajhTWDR5aVBEVzFPSkhFODI5QzdBUFh3UndZMmowZVBLZDRuTkJ6YlAwc2ZuSzJsOExBVDVDdy1YVTVVUU9QbG83RkRTZjV3LVFLclFvSXFtczlWV1pKUnR5cnFpRGhtc3ZDc2x4eUZLeXhIV01xVndweFFxSHFzbnRfeXBNeDVRd2ZYTi1xeWFBMWpESGxHVFR1VWRTT0FPbUNxRVgxVkR4UQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-21T02:58:30.000Z",
-        "summary": "Mythos remains a mystery as security world faces rising threats, agentic attacks and concerns about AI integrity SiliconANGLE"
-      },
-      {
-        "title": "Anthropic’s B2B campaign ‘Keep Thinking’ looked at problems as invitations - Ad Age",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOMGtqTHU3eU8xbjFFcWpzRTg0VTkwOG9SS05kem9GaEZCRWJRVkFVU1YxRWZ2NkJtTWdGYmNjMnphTEVIaTJTWHF5N2IxNmx5UFBCVmxpOXk4dVluV3lNVjZUcGpuNU5rZEJwNVZ0Z3ZkajhoWHFCeHhOMDBfQWttbWp3NUhVcjFOQXRPX0FFR0plMFliYVBMcVhGcktZQW9YLXEwdUpjZw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-21T02:30:00.000Z",
-        "summary": "Anthropic’s B2B campaign ‘Keep Thinking’ looked at problems as invitations Ad Age"
       },
       {
         "title": "The creator of Claude Code just revealed 7 secrets to using Claude Code (Opus 4.7)",
@@ -500,30 +512,6 @@
         "published": "2026-04-11T17:41:13.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Code Skills Killed Vibe Coding. Here's What's Next.",
-        "url": "https://www.youtube.com/watch?v=JeqBWUDX4mI",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "JeqBWUDX4mI",
-        "thumbnail": "https://i.ytimg.com/vi/JeqBWUDX4mI/hqdefault.jpg",
-        "published": "2026-04-11T13:00:38.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "I Built Alex Hormozi's AI Workflow Framework in Claude Cowork",
-        "url": "https://www.youtube.com/watch?v=RXhEScTBBqs",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "RXhEScTBBqs",
-        "thumbnail": "https://i.ytimg.com/vi/RXhEScTBBqs/hqdefault.jpg",
-        "published": "2026-04-10T12:52:00.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -613,6 +601,28 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Claude Code Routines - It Codes While You Sleep",
+        "url": "https://www.youtube.com/watch?v=bzYheNpYl8Y",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "bzYheNpYl8Y",
+        "thumbnail": "https://i.ytimg.com/vi/bzYheNpYl8Y/hqdefault.jpg",
+        "published": "2026-04-21T14:00:59.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude + Higgsfield: Build Beautiful ANIMATED Websites! (Claude Tutorial)",
+        "url": "https://www.youtube.com/watch?v=OcX-1zh-FeI",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "OcX-1zh-FeI",
+        "thumbnail": "https://i.ytimg.com/vi/OcX-1zh-FeI/hqdefault.jpg",
+        "published": "2026-04-21T13:00:45.000Z",
+        "summary": ""
+      },
       {
         "title": "How to Sell Claude Code Skills (What Clients Want)",
         "url": "https://www.youtube.com/watch?v=TxZhIMXnfi8",
@@ -920,31 +930,21 @@
         "thumbnail": "https://i.ytimg.com/vi/7Sy5ko4Jo60/hqdefault.jpg",
         "published": "2026-04-11T17:41:13.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Code Skills Killed Vibe Coding. Here's What's Next.",
-        "url": "https://www.youtube.com/watch?v=JeqBWUDX4mI",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "JeqBWUDX4mI",
-        "thumbnail": "https://i.ytimg.com/vi/JeqBWUDX4mI/hqdefault.jpg",
-        "published": "2026-04-11T13:00:38.000Z",
-        "summary": ""
-      },
-      {
-        "title": "I Built Alex Hormozi's AI Workflow Framework in Claude Cowork",
-        "url": "https://www.youtube.com/watch?v=RXhEScTBBqs",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "RXhEScTBBqs",
-        "thumbnail": "https://i.ytimg.com/vi/RXhEScTBBqs/hqdefault.jpg",
-        "published": "2026-04-10T12:52:00.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "Claude + Higgsfield: Build Beautiful ANIMATED Websites! (Claude Tutorial)",
+        "url": "https://www.youtube.com/watch?v=OcX-1zh-FeI",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "OcX-1zh-FeI",
+        "thumbnail": "https://i.ytimg.com/vi/OcX-1zh-FeI/hqdefault.jpg",
+        "published": "2026-04-21T13:00:45.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
       {
         "title": "v2.1.116",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.116",
@@ -1744,6 +1744,20 @@
     ],
     "claude_learning": [
       {
+        "title": "Claude Code Routines - It Codes While You Sleep",
+        "url": "https://www.youtube.com/watch?v=bzYheNpYl8Y",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-04-21T14:00:59.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude + Higgsfield: Build Beautiful ANIMATED Websites! (Claude Tutorial)",
+        "url": "https://www.youtube.com/watch?v=OcX-1zh-FeI",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-04-21T13:00:45.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.116",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.116",
         "source": "Claude Code",
@@ -2056,20 +2070,6 @@
         "url": "https://www.youtube.com/shorts/7Sy5ko4Jo60",
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-04-11T17:41:13.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code Skills Killed Vibe Coding. Here's What's Next.",
-        "url": "https://www.youtube.com/watch?v=JeqBWUDX4mI",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-04-11T13:00:38.000Z",
-        "summary": ""
-      },
-      {
-        "title": "I Built Alex Hormozi's AI Workflow Framework in Claude Cowork",
-        "url": "https://www.youtube.com/watch?v=RXhEScTBBqs",
-        "source": "YouTube · Ryan & Matt Data Science",
-        "published": "2026-04-10T12:52:00.000Z",
         "summary": ""
       },
       {
