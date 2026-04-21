@@ -510,6 +510,290 @@ Parameter counts range from small (8B, fits on a laptop GPU) to huge (405B+, clo
 - [DeepSeek on Hugging Face](https://huggingface.co/deepseek-ai)
 `.trim(),
 
+  'i.python': `
+**TL;DR** — Python is the lingua franca of ML, data, scripting, and backend work — slow to execute but blazing to write, with the deepest ecosystem of AI-related libraries anywhere. If you're touching LLMs, agents, retrieval, or data pipelines, you're going to read Python.
+
+## Why Python won ML
+
+- **Early access.** PyTorch, TensorFlow, JAX all shipped Python-first; every new model drops with a Python reference implementation.
+- **Notebooks.** Jupyter + Colab are the native format for model exploration.
+- **Glue-language strength.** One script that chains \`requests\`, \`pandas\`, \`sqlalchemy\`, \`openai\`, and \`scikit-learn\` is normal.
+
+## Install + environment
+
+\`\`\`bash
+# macOS / Linux: use pyenv to avoid system-Python mess
+brew install pyenv
+pyenv install 3.12.5
+pyenv global 3.12.5
+
+# Project-local env
+python -m venv .venv
+source .venv/bin/activate
+pip install anthropic pandas
+\`\`\`
+
+## Modern tooling to prefer
+
+- **\`uv\`** (Astral) — much faster pip/venv replacement. \`uv pip install\` instead of \`pip install\` is often a 10× speedup.
+- **\`ruff\`** — lint + format in one, extremely fast. Replaces \`flake8\` + \`black\` + \`isort\`.
+- **\`pyright\`** / **\`mypy\`** — static type checking.
+- **\`pytest\`** — the test runner.
+
+## Type hints (use them)
+
+Python's type hints aren't enforced at runtime, but \`pyright\` / \`mypy\` / your editor use them for autocomplete + errors.
+
+\`\`\`python
+from typing import Iterable
+
+def sum_scores(scores: Iterable[float]) -> float:
+    return sum(scores)
+\`\`\`
+
+Treat them as documentation that also catches bugs.
+
+## Python vs. TypeScript for AI apps
+
+- **Python** — ML training, research, data science, notebooks, most agent-frameworks (LangChain, LangGraph).
+- **TypeScript** — web/frontend apps, edge runtimes, Claude Agent SDK, product code.
+
+Many real projects use both — Python for the model/ML side, TS for the product surface.
+
+## Sources
+
+- [Python — main site](https://python.org/)
+- [The Python Tutorial](https://docs.python.org/3/tutorial/)
+- [uv — fast Python package manager](https://docs.astral.sh/uv/)
+- [Ruff — lint + format](https://docs.astral.sh/ruff/)
+- [Real Python](https://realpython.com/) (excellent tutorials)
+`.trim(),
+
+  'i.docker': `
+**TL;DR** — Docker packages an app, its runtime, and its dependencies into a **container image** — a self-contained, layered tarball that runs identically on your laptop, a CI runner, and a production cluster. The tool that made "works on my machine" obsolete.
+
+## The three concepts
+
+- **Image** — a read-only snapshot of a filesystem + process config. Built from a \`Dockerfile\`.
+- **Container** — a running instance of an image. Isolated from the host, cheap to start/stop.
+- **Registry** — where images live (Docker Hub, GitHub Container Registry, AWS ECR).
+
+## A minimal Dockerfile
+
+\`\`\`dockerfile
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --omit=dev
+COPY . .
+CMD ["node", "dist/server.js"]
+\`\`\`
+
+\`\`\`bash
+docker build -t myapp:latest .
+docker run -p 3000:3000 myapp:latest
+\`\`\`
+
+## Patterns worth knowing
+
+- **Multi-stage builds.** Build in a heavy image (with compilers), copy only the artifact to a tiny runtime image.
+- **\`.dockerignore\`.** Exclude \`node_modules\`, \`.git\`, build artifacts — smaller images, faster builds.
+- **Layer cache.** Put rarely-changed things (lockfile install) above rarely-changed things (source copy); rebuilds stay fast.
+- **Don't run as root.** \`USER node\` near the end of the Dockerfile.
+
+## Docker vs. containers in general
+
+Docker is one implementation; the OCI (Open Container Initiative) spec is the underlying standard. \`podman\`, \`containerd\`, and \`nerdctl\` all speak OCI. The images you build with Docker run everywhere.
+
+## When to reach for Docker
+
+- Reproducible local dev that mirrors production.
+- Services with native deps (ffmpeg, ImageMagick, Postgres) you don't want on your laptop.
+- Deploying to anything container-based (Kubernetes, ECS, Fly, Railway).
+
+## When not to
+
+- **Serverless functions** (Vercel, Cloudflare Workers) — the runtime handles packaging; Docker adds overhead.
+- **Static sites** — Pages / Netlify just serve files.
+- **Simple local scripts** — a venv / node_modules is enough.
+
+## Sources
+
+- [Docker — docs](https://docs.docker.com/)
+- [Docker — get started](https://docs.docker.com/get-started/)
+- [Dockerfile — reference](https://docs.docker.com/reference/dockerfile/)
+- [OCI image spec](https://github.com/opencontainers/image-spec)
+`.trim(),
+
+  'i.git': `
+**TL;DR** — Git is the distributed version-control system nearly every codebase uses — commits are immutable snapshots, branches are movable pointers, and the commands you'll actually use day-to-day are a small, stable subset hidden inside a very large, occasionally-confusing CLI.
+
+## The mental model
+
+- **Working tree** — your files on disk.
+- **Index (staging area)** — what will be in the next commit.
+- **HEAD** — the commit you're currently on.
+- **Branch** — a movable pointer to a commit.
+- **Remote** — another repo you sync with (\`origin\` by convention).
+
+Flow: \`edit → git add (→ index) → git commit (→ HEAD) → git push (→ remote)\`.
+
+## The commands you'll actually use
+
+\`\`\`bash
+# daily
+git status                           # what changed
+git add -p                           # stage hunks interactively
+git commit -m "feat: ..."            # new commit
+git pull --rebase                    # sync + replay your commits on top
+git push
+
+# branches
+git checkout -b feat/x               # new branch
+git checkout main                    # switch back
+git merge feat/x                     # merge into current branch
+
+# undoing
+git restore <file>                   # discard unstaged changes
+git restore --staged <file>          # unstage
+git reset --soft HEAD~1              # undo last commit, keep changes
+git revert <sha>                     # new commit that undoes <sha>
+
+# history
+git log --oneline --graph --all
+git blame <file>
+git diff main..HEAD
+\`\`\`
+
+## Commit messages
+
+- Imperative mood: "add login", not "added login".
+- One logical change per commit.
+- Conventional Commits if the team uses them: \`feat:\`, \`fix:\`, \`chore:\`, \`refactor:\`.
+
+## Rebase vs. merge
+
+- **Rebase** keeps linear history. Use on feature branches before merging to main.
+- **Merge** preserves the branching structure. Use for main / release branches.
+- **Never rebase shared branches** — it rewrites history others depend on.
+
+## Hooks worth knowing
+
+- \`pre-commit\` — run lint / tests before a commit lands.
+- \`commit-msg\` — validate commit message format.
+- \`pre-push\` — run the full test suite before pushing.
+
+## Sources
+
+- [Git — docs](https://git-scm.com/doc)
+- [Pro Git — free book](https://git-scm.com/book/en/v2)
+- [GitHub — learning lab](https://docs.github.com/en/get-started/using-git)
+- [\`git\` CLI — reference](https://git-scm.com/docs)
+`.trim(),
+
+  'i.groq': `
+**TL;DR** — Groq is hosted inference on custom LPU (Language Processing Unit) chips — open-weights models like Llama and Mixtral return at hundreds of tokens per second with latency low enough to feel instant, at prices that undercut frontier API bills by a lot.
+
+## What's distinct
+
+- **Speed.** Llama 3 70B on Groq returns ~200+ tok/s; most hosts do 30–60. Agentic loops go faster end-to-end.
+- **Cost.** Small fraction of OpenAI / Anthropic pricing for equivalent open-weights quality.
+- **OpenAI-compatible API.** Swap \`baseURL\` in your OpenAI SDK, keep the rest.
+
+## Catalog
+
+Groq hosts popular open-weights models — Llama family, Mixtral, Gemma, Whisper. Frontier proprietary models (Claude, GPT) are NOT here; Groq is open-weights only.
+
+## API snippet
+
+\`\`\`ts
+import OpenAI from 'openai'
+
+const groq = new OpenAI({
+  apiKey: process.env.GROQ_API_KEY!,
+  baseURL: 'https://api.groq.com/openai/v1',
+})
+
+const r = await groq.chat.completions.create({
+  model: 'llama-3.3-70b-versatile',
+  messages: [{ role: 'user', content: 'In one line: what is an LPU?' }],
+})
+\`\`\`
+
+## When Groq fits
+
+- Agentic loops where per-step latency dominates (every tool call is faster).
+- Voice interfaces — Whisper on Groq + LLM on Groq + TTS on ElevenLabs = sub-second roundtrips.
+- Budget-sensitive high-volume workloads.
+- A/B testing open-weights models against closed frontier ones.
+
+## When to pick something else
+
+- You need frontier-quality reasoning — open-weights don't match Opus / GPT / Gemini on the hardest tasks.
+- You need fine-tuning — Groq hosts off-the-shelf models; for custom weights, use Together / Fireworks / your own GPU.
+- You need multi-modal inputs (image, audio-in) at frontier quality.
+
+## Sources
+
+- [Groq — main site](https://groq.com/)
+- [Groq — console + models](https://console.groq.com/)
+- [Groq — API docs](https://console.groq.com/docs/quickstart)
+`.trim(),
+
+  'i.replicate': `
+**TL;DR** — Replicate is "one API for hundreds of open-source models" — you pick a model, call a prediction endpoint, Replicate runs it on GPUs and returns the result; the fastest way to try an arbitrary open-source model without standing up your own infra.
+
+## Why Replicate exists
+
+Open-source ML models drop weekly — image gen, video gen, music, 3D, LLMs, embeddings. Each has its own setup, dependencies, weights. Replicate wraps them so you can call any of them with the same request shape.
+
+## API shape
+
+\`\`\`ts
+import Replicate from 'replicate'
+
+const replicate = new Replicate({ auth: process.env.REPLICATE_API_TOKEN! })
+const output = await replicate.run(
+  'black-forest-labs/flux-schnell',
+  { input: { prompt: 'a cream-colored poster with a small lightning bolt' } },
+)
+\`\`\`
+
+Models are versioned: \`<owner>/<name>:<version-sha>\`. Pin a version in production so quality doesn't drift.
+
+## What's on Replicate
+
+- **Image** — Flux, Stable Diffusion, IP-Adapter, ControlNet.
+- **Video** — Animate-Anyone, various motion models.
+- **Audio** — MusicGen, AudioLDM, Whisper.
+- **Language** — Llama, Mistral, CodeLlama (though Groq is faster for LLMs).
+- **3D** — TripoSR, mesh generators.
+- **Niche** — upscalers, restoration, face-swap, pose estimation.
+
+## Pricing
+
+Pay-per-second of compute. Small models cost fractions of a cent per run; big video-gen models can be several cents to a dollar per run. Cold-start tax on cold models; pay a bit more to keep hot.
+
+## When Replicate fits
+
+- Quickly trying a model someone just tweeted about.
+- Shipping a single feature that uses one open-source model without standing up GPU infra.
+- Building AI features into a product when you don't know which model will win — you can swap with a string change.
+
+## When to pick something else
+
+- **Groq** for LLM inference at speed + scale.
+- **Hugging Face Inference Endpoints** if you want dedicated deployment per model.
+- **Running locally** if you have the GPU and need privacy.
+- **Fal.ai** — similar model, often cheaper on image gen.
+
+## Sources
+
+- [Replicate — main site](https://replicate.com/)
+- [Replicate — explore](https://replicate.com/explore)
+- [Replicate — API docs](https://replicate.com/docs)
+`.trim(),
+
   'i.nextjs': `
 **TL;DR** — Next.js is the React framework — file-based routing, React Server Components, streaming SSR, edge functions, image + font optimization, and Vercel-native deployment. If you're building a real React product, Next.js is the default unless you have a specific reason to pick something else.
 
