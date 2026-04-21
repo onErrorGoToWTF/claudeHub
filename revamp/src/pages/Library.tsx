@@ -28,7 +28,10 @@ export function Library() {
   useEffect(() => { repo.listLibrary().then(setItems) }, [])
 
   const shown = useMemo(() => {
-    let out = items
+    // Only surface items with in-app body content.
+    // Incomplete tool entries still exist in the DB (they drive the Projects
+    // intake stack picker) — they just don't clutter the Library list.
+    let out = items.filter(i => !!i.body)
     if (facet !== 'all') out = out.filter(i => i.kind === facet)
     if (query.trim()) {
       const q = query.toLowerCase()
@@ -53,8 +56,9 @@ export function Library() {
   }
 
   const counts = useMemo(() => {
-    const c: Record<string, number> = { all: items.length }
-    for (const i of items) c[i.kind] = (c[i.kind] ?? 0) + 1
+    const withBody = items.filter(i => !!i.body)
+    const c: Record<string, number> = { all: withBody.length }
+    for (const i of withBody) c[i.kind] = (c[i.kind] ?? 0) + 1
     return c
   }, [items])
 
