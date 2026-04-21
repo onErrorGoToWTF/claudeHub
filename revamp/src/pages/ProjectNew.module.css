@@ -1,0 +1,133 @@
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-sm);
+  color: var(--ink-3);
+  margin-bottom: var(--space-4);
+  background: none;
+  border: 0;
+}
+.back:hover { color: var(--ink-1); }
+
+.card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+  background: var(--bg-card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-2);
+}
+
+.label {
+  display: block;
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--ink-1);
+  margin-bottom: var(--space-2);
+}
+
+.hint {
+  font-size: var(--text-sm);
+  color: var(--ink-3);
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: var(--text-md);
+  margin-bottom: var(--space-3);
+}
+.textarea { resize: vertical; min-height: 96px; }
+
+.invGrid, .topicGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+@media (min-width: 640px) {
+  .invGrid, .topicGrid { grid-template-columns: 1fr 1fr; }
+}
+
+.invChip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 10px 14px;
+  background: var(--bg-canvas);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-sm);
+  text-align: left;
+  transition:
+    background var(--dur-2) var(--ease-premium),
+    border-color var(--dur-2) var(--ease-premium),
+    box-shadow var(--dur-2) var(--ease-premium);
+}
+.invChip:hover { border-color: var(--hair-strong); }
+.invChipOn {
+  background: var(--accent-surface);
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 1px var(--accent-border), 0 0 22px -6px var(--accent-glow);
+}
+
+.invName { font-size: var(--text-sm); font-weight: 600; color: var(--ink-1); }
+.invMeta { font-size: var(--text-xs); color: var(--ink-3); }
+
+.invCheck {
+  position: absolute;
+  top: 8px; right: 10px;
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--accent-solid);
+  color: var(--ink-inverse);
+}
+
+.routes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+@media (min-width: 720px) {
+  .routes { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.routeCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: var(--space-5);
+  background: var(--bg-canvas);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-md);
+  text-align: left;
+  transition:
+    background var(--dur-2) var(--ease-premium),
+    border-color var(--dur-2) var(--ease-premium),
+    box-shadow var(--dur-2) var(--ease-premium),
+    transform var(--dur-2) var(--ease-premium);
+}
+.routeCard:hover { transform: translateY(-1px); border-color: var(--hair-strong); }
+.routeCardOn {
+  background: var(--accent-surface);
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 1px var(--accent-border), 0 10px 30px -10px var(--accent-glow);
+}
+.routeTitle {
+  display: flex; align-items: center; gap: 6px;
+  font-size: var(--text-md); font-weight: 600; color: var(--ink-1);
+}
+.routeCardOn .routeTitle { color: var(--accent-ink); }
+.routeBlurb { font-size: var(--text-xs); color: var(--ink-2); line-height: var(--leading-loose); }
+.routeStack { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 720px;
+  margin: var(--space-6) auto 0;
+}

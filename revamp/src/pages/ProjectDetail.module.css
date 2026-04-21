@@ -1,0 +1,59 @@
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+}
+.metaBlurb { font-size: var(--text-sm); color: var(--ink-3); }
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: var(--space-4);
+}
+.check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-md);
+  text-align: left;
+  color: var(--ink-1);
+  transition:
+    background var(--dur-2) var(--ease-premium),
+    border-color var(--dur-2) var(--ease-premium);
+}
+.check:hover { border-color: var(--hair-strong); }
+
+.checkBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; height: 20px;
+  border: 1.5px solid var(--hair-strong);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--ink-inverse);
+  background: transparent;
+  flex-shrink: 0;
+}
+.checkDone .checkBox {
+  background: var(--mastery-solid);
+  border-color: var(--mastery-solid);
+}
+.checkDone .checkLabel {
+  text-decoration: line-through;
+  color: var(--ink-3);
+}
+
+.stackRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}

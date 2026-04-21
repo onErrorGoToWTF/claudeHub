@@ -1,0 +1,113 @@
+/* =========================================================
+   aiUniversity design tokens — single source of truth
+   Change --accent-base (or --danger-base) and the rest cascades.
+   ========================================================= */
+
+:root {
+  /* ---------- color: neutrals (greige) ---------- */
+  --bg-page:        #ece9e2;   /* warm greige page */
+  --bg-canvas:      #f2efe8;   /* slightly lighter — large surfaces */
+  --bg-card:        #ffffff;   /* cards / elevated surfaces */
+  --bg-sunken:      #e5e1d8;   /* input wells / sunken panels */
+  --bg-overlay:     rgba(30, 28, 24, 0.42); /* modal scrim */
+
+  --ink-1:          #141312;   /* primary text */
+  --ink-2:          rgba(20, 19, 18, 0.66);
+  --ink-3:          rgba(20, 19, 18, 0.40);
+  --ink-inverse:    #fafaf8;
+
+  --hair:           rgba(20, 19, 18, 0.10);  /* hairline border */
+  --hair-strong:    rgba(20, 19, 18, 0.18);
+  --focus-ring:     color-mix(in oklch, var(--accent-solid) 70%, transparent);
+
+  /* ---------- accent (one knob) ---------- */
+  --accent-base:    oklch(62% 0.17 272);     /* Linear-family indigo */
+  --accent-solid:   var(--accent-base);
+  --accent-hover:   color-mix(in oklch, var(--accent-base) 88%, black 12%);
+  --accent-border:  color-mix(in oklch, var(--accent-base) 55%, transparent);
+  --accent-glow:    color-mix(in oklch, var(--accent-base) 32%, transparent);
+  --accent-surface: color-mix(in oklch, var(--accent-base) 10%, var(--bg-card));
+  --accent-ink:     color-mix(in oklch, var(--accent-base) 78%, black 22%);
+  --accent-soft:    color-mix(in oklch, var(--accent-base) 16%, var(--bg-page));
+
+  /* ---------- danger (one knob) ---------- */
+  --danger-base:    oklch(58% 0.19 28);
+  --danger-solid:   var(--danger-base);
+  --danger-hover:   color-mix(in oklch, var(--danger-base) 88%, black 12%);
+  --danger-border:  color-mix(in oklch, var(--danger-base) 55%, transparent);
+  --danger-glow:    color-mix(in oklch, var(--danger-base) 32%, transparent);
+  --danger-surface: color-mix(in oklch, var(--danger-base) 10%, var(--bg-card));
+
+  /* ---------- success / mastery ---------- */
+  --mastery-base:   oklch(68% 0.15 150);
+  --mastery-solid:  var(--mastery-base);
+  --mastery-border: color-mix(in oklch, var(--mastery-base) 55%, transparent);
+  --mastery-glow:   color-mix(in oklch, var(--mastery-base) 32%, transparent);
+  --mastery-soft:   color-mix(in oklch, var(--mastery-base) 14%, var(--bg-page));
+
+  /* ---------- radii (squared-off) ---------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  /* ---------- spacing ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ---------- typography ---------- */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --text-xs:   12px;
+  --text-sm:   13px;
+  --text-base: 14px;
+  --text-md:   15px;
+  --text-lg:   17px;
+  --text-xl:   20px;
+  --text-2xl:  24px;
+  --text-3xl:  32px;
+  --text-4xl:  40px;
+  --leading-tight: 1.2;
+  --leading-base:  1.5;
+  --leading-loose: 1.7;
+  --tracking-tight: -0.015em;
+
+  /* ---------- motion ---------- */
+  --ease-premium: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-lensing: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 320ms;
+  --dur-4: 480ms;
+
+  /* ---------- shadows ---------- */
+  --shadow-1: 0 1px 0 rgba(20, 19, 18, 0.04), 0 1px 2px rgba(20, 19, 18, 0.04);
+  --shadow-2: 0 1px 0 rgba(20, 19, 18, 0.04), 0 6px 18px -6px rgba(20, 19, 18, 0.16);
+  --shadow-3: 0 4px 24px -6px rgba(20, 19, 18, 0.18), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  --shadow-glow: 0 0 0 1px var(--accent-border), 0 0 22px -4px var(--accent-glow);
+
+  /* ---------- glass ---------- */
+  --glass-top:      rgba(255, 255, 255, 0.68);
+  --glass-bottom:   rgba(255, 255, 255, 0.44);
+  --glass-fallback: rgba(255, 255, 255, 0.82);
+
+  /* ---------- z ---------- */
+  --z-nav:     50;
+  --z-modal:   100;
+  --z-toast:   200;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-1: 0ms; --dur-2: 0ms; --dur-3: 0ms; --dur-4: 0ms;
+  }
+}

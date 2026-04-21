@@ -3,17 +3,41 @@
 Running ledger. Rehydrate from this after compaction.
 
 ## Done
-- Scaffold: Vite + React + TS via `npm create vite@latest`
-- Deps installed: dexie, react-router-dom, framer-motion, lucide-react, clsx, zustand
-- Durable state files written (PLAN/DECISIONS/STATE)
+- Scaffold: Vite + React + TS
+- Deps: dexie, react-router-dom, framer-motion, lucide-react, clsx, zustand
+- Design tokens (`src/styles/tokens.css`) + global CSS
+- App shell: responsive top nav (desktop) + floating bottom nav (mobile)
+- Data layer: Dexie schema + repository interface (swap-ready)
+- Seed data: 4 tracks, 9 topics, 1 polished lesson, 1 polished quiz, inventory, sample project
+- Dashboard: overall progress bar + quick links + recent + projects
+- Learn: tracks → topics with per-topic mastery bars
+- Topic detail: lessons + quizzes listings
+- Lesson view: markdown render + mark-done
+- Quiz engine: MCQ with animated feedback, result card, mastery recompute
+- Projects list + New Project 5-step intake + Project Detail with checklist
+- Light markdown renderer (no extra dep)
+- Vite base path wired for `/claudeHub/revamp/` on prod
+- Inter font loaded via CDN
+- Production build passes cleanly
 
-## In progress
-- Design tokens + global CSS
+## Deferred (intentional)
+- Electrified-circuit skill-map viz — doesn't fit Linear-minimalism at v1. Mastery bars convey progress fine. Revisit if depth calls for it.
+- Inventory dedicated page — schema + seed ready, UI deferred
+- Authoring flow (create lessons/quizzes in-app) — Claude API integration comes later
+- Project bootstrapper (scaffolds files + runs init) — deferred
+- Resume / public-links surface — deferred
 
-## Next
-- App shell: routing + responsive nav
-- Data layer (Dexie + repo)
-- Dashboard → Learn → Quiz → Projects
+## How to preview locally
+```
+cd revamp
+npm run dev
+```
+Opens http://localhost:5173
+
+## GH Pages
+Production build outputs `dist/`. Deploy either:
+- Point Pages at this branch, path `/revamp/` (base path already set)
+- Or copy `dist/` contents to repo root and merge
 
 ## Key knobs (once set)
 - Accent base: `--accent-base` in `src/styles/tokens.css` — one value drives every accent surface.
