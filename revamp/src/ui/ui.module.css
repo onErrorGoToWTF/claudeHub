@@ -86,7 +86,7 @@
 }
 .chipMastery {
   color: color-mix(in oklch, var(--mastery-base) 70%, black);
-  background: var(--mastery-soft);
+  background: var(--mastery-surface);
   border-color: var(--mastery-border);
 }
 .chipDanger {

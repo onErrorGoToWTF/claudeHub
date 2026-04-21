@@ -510,6 +510,733 @@ Parameter counts range from small (8B, fits on a laptop GPU) to huge (405B+, clo
 - [DeepSeek on Hugging Face](https://huggingface.co/deepseek-ai)
 `.trim(),
 
+  'i.nextjs': `
+**TL;DR** — Next.js is the React framework — file-based routing, React Server Components, streaming SSR, edge functions, image + font optimization, and Vercel-native deployment. If you're building a real React product, Next.js is the default unless you have a specific reason to pick something else.
+
+## Why it's the default
+
+- **File-based routing.** \`app/dashboard/page.tsx\` becomes \`/dashboard\`. No router wiring.
+- **Server Components.** Most of your tree renders on the server, shipping tiny JS to the client.
+- **Client Components.** Mark files with \`"use client"\` when you need hooks, state, or browser APIs.
+- **Streaming.** Send HTML to the browser before the whole page is ready.
+- **Data fetching in components.** \`await fetch()\` in a Server Component — no \`getServerSideProps\` ceremony.
+
+## Two routers
+
+- **App Router** (\`app/\`) — the current default. Server Components, layouts, streaming.
+- **Pages Router** (\`pages/\`) — the original. Still supported; pre-Server-Component apps often live here.
+
+New projects → App Router.
+
+## Minimal example
+
+\`\`\`tsx
+// app/page.tsx — Server Component by default
+export default async function Home() {
+  const posts = await fetch('https://api.example.com/posts').then(r => r.json())
+  return <ul>{posts.map((p: any) => <li key={p.id}>{p.title}</li>)}</ul>
+}
+\`\`\`
+
+No \`useEffect\`, no \`useState\` — renders on the server, streams to the client as HTML.
+
+## When to skip Next.js
+
+- You want a static SPA with no server — Vite is simpler.
+- You want content-first with islands — Astro is better.
+- You don't want Vercel's opinions baked in — Remix, SvelteKit, or plain React + Vite give you more neutrality.
+
+## Sources
+
+- [Next.js — docs](https://nextjs.org/docs)
+- [Next.js — App Router](https://nextjs.org/docs/app)
+- [Next.js — learn](https://nextjs.org/learn)
+- [Vercel — Next.js](https://vercel.com/frameworks/next-js)
+`.trim(),
+
+  'i.typescript': `
+**TL;DR** — TypeScript is JavaScript with a type system, a compile-time checker, and editor superpowers (autocomplete, refactor, find-all-references) — it doesn't change what runs in the browser, but it massively changes what runs in your head while writing.
+
+## The core value
+
+- **Catch errors before they run.** \`obj.property\` on a possibly-\`undefined\` object → compile error, not a 3am page.
+- **Refactor with confidence.** Rename a symbol, and every usage updates. Miss one, the compiler tells you.
+- **Doc-as-types.** A function's signature is its contract. No more guessing what shape a third-party API returns.
+
+## The essentials
+
+\`\`\`ts
+// primitives
+let name: string = 'Claude'
+let count: number = 42
+let flag: boolean = true
+
+// objects
+type User = { id: string; name: string; age?: number }  // age is optional
+const u: User = { id: 'u1', name: 'Alan' }
+
+// arrays + generics
+const ids: string[] = ['a', 'b']
+async function fetchJSON<T>(url: string): Promise<T> {
+  const r = await fetch(url)
+  return r.json()
+}
+const user = await fetchJSON<User>('/api/me')
+
+// unions + narrowing
+type Result = { ok: true; value: string } | { ok: false; error: string }
+function handle(r: Result) {
+  if (r.ok) return r.value  // TS narrows to the { ok: true } branch
+  throw new Error(r.error)
+}
+\`\`\`
+
+## Tips that pay dividends
+
+- **\`strict: true\`** in \`tsconfig.json\`. Turn it on day one.
+- **Prefer \`type\` over \`interface\`** for most shapes; reach for \`interface\` when you genuinely need declaration merging.
+- **\`as const\`** for literal types: \`const STATUSES = ['todo', 'done'] as const\` — \`typeof STATUSES[number]\` is \`'todo' | 'done'\`.
+- **\`satisfies\`** when you want type-checking without widening: \`const map = { a: 1 } satisfies Record<string, number>\`.
+
+## Sources
+
+- [TypeScript — handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [TypeScript — playground](https://www.typescriptlang.org/play)
+- [Matt Pocock — TotalTypeScript](https://www.totaltypescript.com/) (best tutorial content on the web)
+- [tsconfig — reference](https://www.typescriptlang.org/tsconfig)
+`.trim(),
+
+  'i.zustand': `
+**TL;DR** — Zustand is a tiny, hook-based state library for React — one function creates a store, components subscribe to the slices they need, and updates only re-render the subscribers that actually use the changed state. Used by this app for the same reason most Vite projects pick it: minimal API, zero boilerplate.
+
+## The whole API in one example
+
+\`\`\`ts
+import { create } from 'zustand'
+
+type Store = {
+  count: number
+  increment: () => void
+  reset: () => void
+}
+
+export const useCounter = create<Store>((set) => ({
+  count: 0,
+  increment: () => set((s) => ({ count: s.count + 1 })),
+  reset: () => set({ count: 0 }),
+}))
+
+// in a component:
+function Counter() {
+  const count = useCounter((s) => s.count)
+  const increment = useCounter((s) => s.increment)
+  return <button onClick={increment}>{count}</button>
+}
+\`\`\`
+
+That's it. No provider, no reducer, no action types.
+
+## When Zustand fits
+
+- You want global-ish state (auth, theme, open-modal flags) without Redux ceremony.
+- You want fine-grained subscriptions so one slice change doesn't re-render your whole tree.
+- You want to call the store from outside React (\`useCounter.getState()\` works anywhere).
+
+## When to reach for something else
+
+- **React's built-in state + context** covers small apps fine.
+- **TanStack Query** for server state (caching, refetch, revalidation). Don't try to put server data into Zustand.
+- **Redux Toolkit** for big apps where time-travel debugging or a strict flux pattern matters to the team.
+
+## Middlewares worth knowing
+
+- \`persist\` — serialize the store to localStorage / IndexedDB.
+- \`devtools\` — hook into Redux DevTools.
+- \`immer\` — write mutating-style updates that are actually immutable.
+
+## Sources
+
+- [Zustand — GitHub](https://github.com/pmndrs/zustand)
+- [Zustand — docs](https://zustand.docs.pmnd.rs/)
+- [Zustand — middleware](https://zustand.docs.pmnd.rs/middlewares)
+`.trim(),
+
+  'i.react-router': `
+**TL;DR** — React Router is the standard client-side router for React — URL-driven navigation, nested routes, and data loading on route transitions. v6 is the current stable family; v7 (with Remix integration) is the forward direction.
+
+## Core ideas
+
+- **Routes map URLs to components.** You declare them with \`<Route path="/x" element={<X />} />\`.
+- **Nested routes share layouts.** A \`<Outlet />\` in a parent renders whichever child route matches.
+- **Navigation is a hook.** \`useNavigate()\` for imperative moves; \`<Link>\` for declarative ones.
+
+## Minimal setup
+
+\`\`\`tsx
+import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom'
+
+function Layout() {
+  return (
+    <>
+      <nav><Link to="/">Home</Link> · <Link to="/about">About</Link></nav>
+      <Outlet />
+    </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
+}
+\`\`\`
+
+## GitHub Pages / subpath deploys
+
+When your app is served from \`/claudeHub/\` instead of \`/\`, tell the router:
+
+\`\`\`tsx
+<BrowserRouter basename={import.meta.env.BASE_URL}>
+\`\`\`
+
+Vite sets \`BASE_URL\` based on \`vite.config.ts\`'s \`base\` option. One change, both sides agree.
+
+## Hooks you'll reach for
+
+- \`useParams()\` — \`/users/:id\` → \`{ id: 'u1' }\`.
+- \`useNavigate()\` — \`nav('/dashboard')\`.
+- \`useLocation()\` — current pathname, search, hash.
+- \`useSearchParams()\` — read + set the query string.
+
+## When to skip it
+
+- Full-framework routing (Next.js, Remix, Astro) — they bring their own.
+- Mostly static pages — links are enough; no router needed.
+
+## Sources
+
+- [React Router — docs](https://reactrouter.com/)
+- [React Router — tutorial](https://reactrouter.com/tutorials)
+- [React Router — migration guide](https://reactrouter.com/upgrading/v6)
+`.trim(),
+
+  'i.astro': `
+**TL;DR** — Astro is a content-first web framework that ships mostly static HTML and lets you sprinkle in "islands" of React / Svelte / Vue only where you actually need interactivity — the result is tiny payloads and marketing sites that score near 100 on Lighthouse by default.
+
+## The mental model
+
+- **Default: zero JS.** Astro components compile to static HTML.
+- **Islands.** When you need interactivity, wrap a component with a hydration directive.
+- **BYO UI framework.** React, Svelte, Vue, Preact, Solid, Lit — all coexist in the same project.
+
+\`\`\`astro
+---
+// pages/index.astro
+import Counter from '../components/Counter.tsx'
+const posts = await Astro.glob('./posts/*.md')
+---
+<h1>Welcome</h1>
+<ul>{posts.map(p => <li>{p.frontmatter.title}</li>)}</ul>
+<Counter client:visible />  <!-- hydrates only when scrolled into view -->
+\`\`\`
+
+## Hydration directives
+
+- \`client:load\` — hydrate on page load.
+- \`client:idle\` — hydrate when the main thread is idle.
+- \`client:visible\` — hydrate when scrolled into view. Default pick for below-the-fold widgets.
+- \`client:only="react"\` — render only on the client (no SSR for this island).
+
+## When Astro fits
+
+- Marketing sites, docs sites, blogs — anywhere content dominates interaction.
+- Multi-framework teams — React + Svelte can ship in the same repo.
+- You want Lighthouse scores to be effortless.
+
+## When it doesn't
+
+- Full-app SaaS dashboards — Next.js / Remix / SvelteKit fit better.
+- Heavy interactivity on every page — the islands model adds friction when everything is an island.
+
+## Content Collections
+
+Astro's built-in CMS-lite: put markdown/MDX in \`src/content/\`, define a Zod schema, query it with type safety.
+
+## Sources
+
+- [Astro — main site](https://astro.build/)
+- [Astro — docs](https://docs.astro.build/)
+- [Astro — islands](https://docs.astro.build/en/concepts/islands/)
+- [Content Collections](https://docs.astro.build/en/guides/content-collections/)
+`.trim(),
+
+  'i.sveltekit': `
+**TL;DR** — SvelteKit is Svelte's full-stack framework — file-based routing, server-side data loading, form actions, and no virtual DOM (Svelte compiles components away at build time, shipping less JS than almost any alternative).
+
+## Why Svelte is distinct
+
+- **Compiled, not runtime.** There's no "React runtime" shipped to the browser.
+- **Reactivity is a language primitive** (\`$state\`, \`$derived\`, \`$effect\` in Svelte 5's runes). No hooks, no \`useEffect\`.
+- **Single-file components** — markup, script, style in one \`.svelte\` file.
+
+\`\`\`svelte
+<script>
+  let count = $state(0)
+</script>
+
+<button onclick={() => count++}>clicks: {count}</button>
+
+<style>
+  button { padding: 8px 12px; border-radius: 6px; }
+</style>
+\`\`\`
+
+## SvelteKit on top
+
+- File-based routing in \`src/routes/\`.
+- \`+page.svelte\` for the page; \`+page.server.ts\` for server-only data loading.
+- \`+layout.svelte\` for shared UI.
+- Form actions as the canonical way to handle POST.
+
+## When SvelteKit fits
+
+- You want the smallest JS bundle size without fighting for it.
+- You want reactivity without hooks rules.
+- Your team is open to a smaller ecosystem than React's (but growing fast).
+
+## When to skip
+
+- You hire primarily React developers and the ecosystem matters.
+- You need the largest possible component + tool ecosystem.
+- Your existing stack is already in React.
+
+## Sources
+
+- [SvelteKit — docs](https://svelte.dev/docs/kit/introduction)
+- [Svelte 5 — docs (with runes)](https://svelte.dev/docs/svelte/overview)
+- [Svelte — tutorial](https://svelte.dev/tutorial)
+`.trim(),
+
+  'i.cloudflare-pages': `
+**TL;DR** — Cloudflare Pages + Workers is Cloudflare's static hosting + edge-compute pair — connect a repo, deploy on push, run serverless code on Cloudflare's global edge network, with a free tier that's genuinely generous and egress costs that don't surprise you.
+
+## Pages
+
+Static hosting tied to your Git repo. Every push builds and deploys; every PR gets a preview URL. Same shape as Vercel + Netlify, different pricing physics.
+
+## Workers
+
+Serverless functions on V8 isolates (not containers) — cold starts in single-digit ms, globally replicated. Write in TypeScript/JavaScript or any language that compiles to WASM.
+
+\`\`\`ts
+export default {
+  async fetch(req: Request, env: Env): Promise<Response> {
+    const { pathname } = new URL(req.url)
+    if (pathname === '/hello') return new Response('Hi from the edge')
+    return new Response('Not found', { status: 404 })
+  },
+}
+\`\`\`
+
+## What to use Workers for
+
+- Edge API endpoints.
+- Image resizing / transformation on the fly.
+- A/B experiments via cookie rewriting.
+- Auth middleware that augments every request.
+- Cron-like scheduled jobs (\`scheduled\` handler).
+
+## Workers KV / D1 / R2 / Queues
+
+- **KV** — eventually-consistent key-value store. Fast reads anywhere.
+- **D1** — SQLite at the edge. Good for read-heavy workloads.
+- **R2** — S3-compatible object storage with **no egress fees**.
+- **Queues** — durable message passing between Workers.
+
+Together: a cheap serverless backend that doesn't bleed money on bandwidth.
+
+## When Cloudflare fits
+
+- Global audience, egress-heavy workloads (video, assets).
+- You want one provider for CDN, DNS, hosting, and compute.
+- You want workers that start in milliseconds, not seconds.
+
+## When it doesn't
+
+- You need long-running Node processes — Workers have per-request CPU limits.
+- You're all-in on Next.js + Vercel's integrations.
+- You want a big database (Postgres/Mongo) — pair Cloudflare with Neon / Supabase.
+
+## Sources
+
+- [Cloudflare Pages](https://pages.cloudflare.com/)
+- [Cloudflare Workers](https://workers.cloudflare.com/)
+- [Workers — docs](https://developers.cloudflare.com/workers/)
+- [Workers KV / D1 / R2 / Queues](https://developers.cloudflare.com/products/?product-group=Developer+platform)
+`.trim(),
+
+  'i.neon': `
+**TL;DR** — Neon is serverless Postgres with branching — you get a real Postgres database that scales to zero when idle, and you can create a cheap branch per preview environment so every PR has its own isolated DB copy.
+
+## What's distinct
+
+- **Scales to zero.** Idle databases cost nothing; cold-start is a few hundred ms.
+- **Branching.** Like Git for your database — branch a DB from \`main\`, apply migrations, throw it away.
+- **Real Postgres.** Extensions (\`pgvector\`, \`postgis\`, \`pg_stat_statements\`), logical replication, full SQL.
+- **Bottomless storage.** Storage separated from compute; old data doesn't slow down compute.
+
+## Branching in practice
+
+\`\`\`bash
+# main
+psql "postgres://...@ep-abc-main.neon.tech/neondb"
+
+# branch for a PR
+neon branches create pr-123 --parent main
+# → new connection string for pr-123
+\`\`\`
+
+Every preview deploy gets its own branch. Merge = delete branch. No more shared staging DB with conflicting migrations.
+
+## Pricing
+
+Free tier includes 0.5 GB storage and 1 compute unit. Pro starts around $19/mo with generous quotas. Pay-as-you-go for compute hours — no 24/7 baseline cost if your DB sleeps.
+
+## When Neon fits
+
+- You want Postgres, not a proprietary serverless DB.
+- You need per-branch dev DBs for PR previews.
+- You're building on Vercel / Cloudflare and want database compute to match serverless economics.
+
+## When to pick something else
+
+- **Supabase** — you want auth/storage/realtime bundled with Postgres.
+- **PlanetScale** — MySQL with its own branching model (though they've pivoted away from generous free tiers).
+- **RDS / self-hosted** — you need always-on, predictable pricing at scale.
+
+## Sources
+
+- [Neon — main site](https://neon.tech/)
+- [Neon — docs](https://neon.tech/docs)
+- [Neon — branching](https://neon.tech/docs/introduction/branching)
+- [Neon — pricing](https://neon.tech/pricing)
+`.trim(),
+
+  'i.pinecone': `
+**TL;DR** — Pinecone is a managed vector database — the fastest path to production RAG if you don't want to operate the infra; hosted, fully-managed, pay-per-index + request.
+
+## What a vector DB does
+
+Stores high-dimensional embedding vectors + their metadata, and returns the **k-nearest neighbors** to a query vector in milliseconds. Everything RAG depends on this primitive.
+
+## The loop
+
+1. Embed your corpus → vectors.
+2. Upsert into a Pinecone index.
+3. At query time: embed the question → Pinecone returns top-k matches → feed them to the LLM.
+
+\`\`\`ts
+import { Pinecone } from '@pinecone-database/pinecone'
+
+const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY! })
+const index = pc.index('my-index')
+
+await index.upsert([
+  { id: 'doc-1', values: embed('The sky is blue.'), metadata: { source: 'doc-1' } },
+])
+
+const results = await index.query({
+  vector: embed('What color is the sky?'),
+  topK: 5,
+  includeMetadata: true,
+})
+\`\`\`
+
+## Why Pinecone over self-hosting
+
+- Zero ops — no Qdrant/Weaviate deployment to manage.
+- Horizontal scaling handled for you.
+- Serverless (usage-based) tier for small projects; pod-based for predictable latency.
+
+## When to pick something else
+
+- **pgvector** (Postgres extension) — if you already have Postgres, start here; "good enough" up to millions of vectors.
+- **Qdrant** — open-source, self-host; same API quality, no per-month cost.
+- **Chroma** — tiny, embedded-friendly; good for local dev or small apps.
+- **Turbopuffer** — cheaper at very large scale with object-storage backing.
+
+## Sources
+
+- [Pinecone — main site](https://www.pinecone.io/)
+- [Pinecone — docs](https://docs.pinecone.io/)
+- [Pinecone — learning center](https://www.pinecone.io/learn/)
+- [pgvector (alternative)](https://github.com/pgvector/pgvector)
+`.trim(),
+
+  'i.whisper': `
+**TL;DR** — Whisper is OpenAI's speech-to-text model — multilingual, robust to noise, open-weights + hosted — the default pick for transcribing audio of real-world quality without training your own ASR.
+
+## What it's good at
+
+- **Multilingual.** ~99 languages with varying quality; English is near-human.
+- **Robust to noise.** Music in background, accents, phone-quality calls — it still performs.
+- **Long audio.** Chunked transcription with good alignment.
+- **Timestamps.** Word-level timestamps available (via whisper-timestamped / faster-whisper).
+
+## Where to run it
+
+- **OpenAI API.** \`audio.transcriptions.create\` — easiest path, pay per minute.
+- **Groq API.** Whisper-large on Groq's inference stack — very fast, very cheap.
+- **Self-host with \`whisper.cpp\`.** C++ implementation; runs on a Mac, a Raspberry Pi, a phone.
+- **\`faster-whisper\` + CTranslate2.** Python, GPU-accelerated, much faster than the reference impl.
+- **Hugging Face Transformers.** PyTorch reference, easy to fine-tune.
+
+## Models + tradeoffs
+
+\`tiny\` (39M) → \`base\` (74M) → \`small\` (244M) → \`medium\` (769M) → \`large-v3\` (1.55B).
+
+- \`small\` is the sweet spot for real-time English on CPU.
+- \`large-v3\` is what you want for accuracy on anything important.
+
+## When to reach for Whisper
+
+- Meeting transcripts, voice notes, podcast show notes.
+- Subtitles + dubbing prep.
+- Voice-first apps (paired with a TTS like ElevenLabs / Cartesia).
+
+## When something else fits
+
+- **Deepgram** — faster + cheaper for live streaming at scale.
+- **AssemblyAI** — richer pipeline (speaker diarization, sentiment, topic tagging).
+- **Apple / Android on-device** — privacy + offline on mobile.
+
+## Sources
+
+- [Whisper — GitHub](https://github.com/openai/whisper)
+- [OpenAI — Audio API](https://platform.openai.com/docs/guides/speech-to-text)
+- [whisper.cpp](https://github.com/ggerganov/whisper.cpp)
+- [faster-whisper](https://github.com/SYSTRAN/faster-whisper)
+`.trim(),
+
+  'i.huggingface': `
+**TL;DR** — Hugging Face is the GitHub of machine learning — the central hub for open-weights models, datasets, demo Spaces, plus the \`transformers\` library that runs most of them. If open-source AI has a town square, this is it.
+
+## What's on the Hub
+
+- **Models.** Every major open-weights model: Llama, Mistral, DeepSeek, Whisper, Stable Diffusion, tiny classifiers, big foundation models.
+- **Datasets.** Pre-tokenized corpora, benchmarks, fine-tuning sets.
+- **Spaces.** Gradio / Streamlit demo apps running live on HF infra.
+- **Inference Endpoints.** One-click hosted deployment for any model on the Hub.
+
+## Libraries you'll touch
+
+- \`transformers\` — the core PyTorch/TF library. Run any HF model in a few lines.
+- \`datasets\` — load + stream datasets efficiently.
+- \`peft\` — parameter-efficient fine-tuning (LoRA, QLoRA).
+- \`accelerate\` — distributed / mixed-precision training helpers.
+- \`diffusers\` — everything image/video gen.
+
+## Minimal example
+
+\`\`\`python
+from transformers import pipeline
+
+pipe = pipeline('sentiment-analysis')
+pipe("I love this thing.")
+# [{'label': 'POSITIVE', 'score': 0.999}]
+\`\`\`
+
+Behind the scenes: downloads a default model, caches it, runs inference. Most HF models work this way.
+
+## When the Hub is the right answer
+
+- Exploring model options before committing.
+- Needing a specialized model (image classification, NER, embeddings).
+- Running open-weights at scale (Inference Endpoints, Text Generation Inference server).
+
+## Sources
+
+- [Hugging Face — main site](https://huggingface.co/)
+- [transformers — docs](https://huggingface.co/docs/transformers)
+- [HF — datasets](https://huggingface.co/datasets)
+- [HF — Spaces](https://huggingface.co/spaces)
+`.trim(),
+
+  'i.langchain': `
+**TL;DR** — LangChain is a Python / TypeScript framework for building LLM apps — chains, agents, retrieval, tools; LangGraph is its sibling that adds explicit state-machine graphs for durable, auditable agent workflows. Heavily opinionated, broadly useful, occasionally over-engineered.
+
+## What LangChain does
+
+- **Chains.** Compose \`input → prompt → LLM → parser → output\` pipelines.
+- **Retrieval.** Unified interfaces over vector DBs (Pinecone, Qdrant, Chroma, pgvector).
+- **Tools.** Wrap arbitrary functions so agents can call them.
+- **Agents.** Loop-style reasoning — LLM picks a tool, sees the result, picks another.
+- **Integrations.** Connectors for every major LLM, DB, document loader, and API.
+
+## LangGraph — the graph runtime
+
+LangChain agents can be unpredictable. **LangGraph** solves this by making the control flow explicit:
+
+- Nodes are steps (call LLM, call tool, branch).
+- Edges are transitions (conditional, parallel, back-to-start).
+- State is persistent — pause, checkpoint, human-in-the-loop.
+
+If you're building production agents, LangGraph > vanilla LangChain agents.
+
+## When LangChain fits
+
+- You want pre-built connectors for a huge ecosystem (you don't want to hand-roll yet another PDF parser).
+- Your team benefits from a shared vocabulary + patterns.
+- You're prototyping quickly across many LLM + retrieval combinations.
+
+## When to skip
+
+- You're building on Claude with Anthropic's Agent SDK — it already covers tools, MCP, and streaming natively.
+- You find the abstraction layers add more confusion than they remove. Hand-writing the loop with an SDK is often cleaner.
+
+## Sources
+
+- [LangChain — docs](https://python.langchain.com/docs/introduction/)
+- [LangGraph — docs](https://langchain-ai.github.io/langgraph/)
+- [LangSmith — tracing + eval](https://smith.langchain.com/)
+- [LangChain — JS](https://js.langchain.com/)
+`.trim(),
+
+  'i.ideogram': `
+**TL;DR** — Ideogram is an image generator purpose-built for accurate text rendering — posters, logos, UI mockups, book covers — anywhere letters need to appear inside the image without garbling. The specialist pick alongside Midjourney and Nano Banana.
+
+## What it's best at
+
+- **Accurate typography.** Readable, correctly-spelled text in the image.
+- **Logo ideation.** Pushes out clean, spec-looking logos faster than general models.
+- **Poster + book cover mockups.**
+- **UI mocks.** Fake screens with real-looking labels.
+
+## Versions
+
+- Ideogram 3 (current flagship) — strongest text + photoreal + illustration quality.
+- Prior versions linger on older plans; prefer 3 on new prompts.
+
+## Prompt style
+
+Lean into explicit text instructions:
+
+> "Poster with bold serif title 'The Last Afternoon', subtitle 'Stories from the coastline', muted blue gradient, small compass illustration bottom-right, 4:5 aspect."
+
+Ideogram listens harder than most image models to quoted text.
+
+## Access
+
+Web UI at [ideogram.ai](https://ideogram.ai/). Free tier. Plus + Pro tiers unlock higher limits, commercial licensing clarity, and private mode.
+
+## When to reach for it
+
+- Marketing / social graphics with real copy.
+- Logo exploration before handing off to a designer.
+- Anything where the words must be readable.
+
+## When Midjourney wins
+
+- Mood photography, cinematic stills, painterly illustration.
+- Aesthetic-first work where text either isn't needed or is added in post.
+
+## Sources
+
+- [Ideogram](https://ideogram.ai/)
+- [Ideogram — help center](https://help.ideogram.ai/)
+`.trim(),
+
+  'i.runway': `
+**TL;DR** — Runway is a generative video + AI editing studio — Gen-3 / Gen-4 models for text-to-video and image-to-video, plus a full creative suite (inpainting, green-screen, motion tracking, frame interpolation). Veo 3.1 is flashier; Runway remains a deeper production toolkit.
+
+## What's in the suite
+
+- **Gen-4 video.** Text-to-video, image-to-video, video-to-video transforms.
+- **Act-One.** Drive a character's performance from a reference video — face + body animation from footage you shot.
+- **Green-screen.** Automatic chroma-key / rotoscoping.
+- **Inpainting / object removal** on video frames.
+- **Motion brush.** Paint motion areas onto a still image to animate specific regions.
+- **Frame interpolation.** Smooth out frame-rate of existing footage.
+
+## Where it still wins
+
+- **Production pipeline.** Multiple tools in one canvas — not just "here's a generated clip."
+- **Control.** Motion brush, keyframes, masks — more knobs than prompt-only models.
+- **Speed of iteration.** Tight feedback loop for short-form.
+
+## Where Veo wins
+
+- Synced audio out of the box.
+- Generally stronger photoreal defaults on simple prompts.
+- Google-surface integration (Gemini, Flow).
+
+## Pricing
+
+Free tier with limited credits. Standard / Pro / Unlimited tiers scale credits + unlock features. Commercial use clarity from Standard up.
+
+## Sources
+
+- [Runway — main site](https://runwayml.com/)
+- [Runway — Gen-4](https://runwayml.com/research/introducing-runway-gen-4)
+- [Runway — Act-One](https://runwayml.com/research/introducing-act-one)
+`.trim(),
+
+  'i.cartesia': `
+**TL;DR** — Cartesia is a voice AI company whose Sonic model competes with ElevenLabs on expressive quality and beats it on latency — sub-100 ms time-to-first-audio, which makes it the pick when you're building real-time conversational voice agents.
+
+## Why low latency matters
+
+- A phone agent that answers in 300 ms feels like a person; at 900 ms it feels like a robot.
+- Sonic streams audio while the LLM is still generating text — no wait for full response.
+- Voice-to-voice roundtrip (user → STT → LLM → TTS → user) can stay under 800 ms end-to-end with Sonic.
+
+## What Cartesia offers
+
+- **Sonic** — flagship expressive TTS. Streaming-first architecture.
+- **Sonic Turbo** — even faster, slightly less expressive.
+- **Voice cloning.** Few-second instant clones; studio-grade clones with more audio.
+- **Multilingual.** Growing coverage; strongest on English.
+
+## API shape
+
+\`\`\`ts
+import { CartesiaClient } from '@cartesia/cartesia-js'
+
+const cartesia = new CartesiaClient({ apiKey: process.env.CARTESIA_API_KEY! })
+const stream = await cartesia.tts.stream({
+  modelId: 'sonic-english',
+  voice: { mode: 'id', id: 'voice_id_here' },
+  transcript: 'Hello, this streams in under 100 milliseconds.',
+  outputFormat: { container: 'raw', encoding: 'pcm_f32le', sampleRate: 44100 },
+})
+\`\`\`
+
+## When to pick Cartesia over ElevenLabs
+
+- Real-time voice agents (phone, live avatars).
+- Low-latency requirements baked into the product.
+- High-volume streaming where cost + speed dominate quality-of-emotion.
+
+## When ElevenLabs still wins
+
+- Narration / audiobook-grade emotional performance.
+- Deepest voice-cloning fidelity (Professional Voice Clone).
+- Multilingual breadth.
+
+## Sources
+
+- [Cartesia — main site](https://cartesia.ai/)
+- [Cartesia — docs](https://docs.cartesia.ai/)
+- [Sonic](https://cartesia.ai/sonic)
+`.trim(),
+
   'i.tailwind': `
 **TL;DR** — Tailwind is a utility-first CSS framework: instead of writing \`.card { padding: 16px }\`, you write \`<div class="p-4">\`. It's controversial, it's productive, and it pairs natively with most modern stacks (Shadcn, v0, Next.js, Astro).
 
