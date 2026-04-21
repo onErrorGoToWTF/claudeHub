@@ -1,7 +1,7 @@
 {
-  "version": "1.0.1-dev.39",
-  "milestone": "M10.14",
-  "milestoneTitle": "M10.14 — Dashboard CTA border / glow refinement. The activated + hover edge treatment on Start new course / Start new project / Browse the tools was reading too heavy because (a) the inset 1px accent ring was doubling the perceived line thickness on top of the 1px solid border-color, and (b) the blurred glow layers were sized for smaller chip footprints, so on the larger Dashboard CTA footprint they bloomed past the edge. Fix: the inset 0 0 0 1px ring is dropped entirely — the border-color alone carries the saturated edge — and every glow blur radius is tightened toward the border. Activated state: inset blur 10 → 6, outer glow 14 → 8. Hover state: inset blur 12 → 8, outer glow 20 → 12. Net effect: the neon-tube read concentrates right at the 1px line instead of blooming outward, so the CTA reads lit but crisp. Outer drop shadow (8px 20px / 10px 24px at ~0.18-0.22 black) untouched — it still carries the floating-in-space depth. Nav chip glow stack intentionally left at its current sizing (chip footprint is smaller so the same blur radii read proportionally). Bundles the M10.13 tile grammar polish + Learn↔Projects color swap + Tools-back-to-deep-orange retune already shipped prior.",
-  "deployedAt": "2026-04-20T22:15:00Z",
+  "version": "1.0.1-dev.43",
+  "milestone": "M10.15",
+  "milestoneTitle": "M10.15 — Save point. No functional changes since M10.14; cache-bust + version sync only. Hero-icon experiment under the Dashboard title was tried (JPEG with mix-blend-mode, then inline SVG approximation) and rolled back by the user — the section-head + CSS revert to their pre-experiment state, file untouched. This commit marks a stable backup point on main before next session veers into a revamp branch. Tagged `backup/pre-revamp-2026-04-20`; backup branch `backup/pre-revamp` pushed alongside so main can keep moving without losing this baseline.",
+  "deployedAt": "2026-04-20T22:30:00Z",
   "commitSha": ""
 }
