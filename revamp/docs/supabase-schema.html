@@ -105,6 +105,10 @@ erDiagram
     uuid user_id PK
     citext handle "unique"
     text pathway "all|student|office|dev"
+    text[] work_styles "no_code|vibe_code|engineer|..."
+    text[] devices "mac|windows|linux|iphone|..."
+    int years_coding
+    text[] known_topic_ids
   }
 
   tracks {
@@ -213,11 +217,15 @@ erDiagram
         <table class="cols">
           <tr><td class="col-name">user_id</td><td class="col-type">uuid</td><td class="col-flags"><span class="pill pk">PK</span> <span class="pill fk">FK → <a href="#t-auth_users">auth.users.id</a></span></td></tr>
           <tr><td class="col-name">handle</td><td class="col-type">citext</td><td class="col-flags">unique, case-insensitive — public URL slug</td></tr>
-          <tr><td class="col-name">pathway</td><td class="col-type">text</td><td class="col-flags">all | student | office | dev</td></tr>
+          <tr><td class="col-name">pathway</td><td class="col-type">text</td><td class="col-flags">all | student | office | dev — default Learn filter</td></tr>
+          <tr><td class="col-name">work_styles</td><td class="col-type">text[]</td><td class="col-flags">tag set: no_code / vibe_code / engineer / frontend / backend / fullstack / research / …</td></tr>
+          <tr><td class="col-name">devices</td><td class="col-type">text[]</td><td class="col-flags">mac / windows / linux / iphone / android / ipad</td></tr>
+          <tr><td class="col-name">years_coding</td><td class="col-type">int</td><td class="col-flags">nullable, only meaningful when pathway=dev</td></tr>
+          <tr><td class="col-name">known_topic_ids</td><td class="col-type">text[]</td><td class="col-flags">topics the user has told us they already know; soft reference</td></tr>
           <tr><td class="col-name">created_at</td><td class="col-type">timestamptz</td><td class="col-flags">default now()</td></tr>
           <tr><td class="col-name">updated_at</td><td class="col-type">timestamptz</td><td class="col-flags">default now()</td></tr>
         </table>
-        <div class="note">Auto-created on sign-up by <code>on_auth_user_created</code> trigger.</div>
+        <div class="note">Auto-created on sign-up by <code>on_auth_user_created</code> trigger. Every field except <code>pathway</code> defaults to empty/null — profile is optional.</div>
       </div>
     </section>
 

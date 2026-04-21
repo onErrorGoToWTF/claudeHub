@@ -29,6 +29,18 @@ create table if not exists public.user_profile (
   -- breaking any relationship (all FKs are on user_id, never handle).
   handle     citext unique,
   pathway    text not null default 'all' check (pathway in ('all','student','office','dev')),
+  -- work_styles: permissive tag set. Users can select multiple
+  -- ('no_code', 'vibe_code', 'engineer', 'frontend', 'backend', 'fullstack',
+  -- 'research', etc.). Values are a free-form convention, not a CHECK
+  -- constraint, so new styles can land without a migration.
+  work_styles      text[] not null default '{}',
+  -- devices: 'mac' | 'windows' | 'linux' | 'iphone' | 'android' | 'ipad'
+  devices          text[] not null default '{}',
+  years_coding     int,  -- nullable, only meaningful when pathway='dev'
+  -- known_topic_ids: topics the user has told us they already know.
+  -- Learn can dim, collapse, or auto-complete these. Soft reference
+  -- (no FK) so a content-side topic delete doesn't break the profile.
+  known_topic_ids  text[] not null default '{}',
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
