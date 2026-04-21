@@ -1,14 +1,27 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Plus, ArrowRight } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Project } from '../db/types'
 import { Button, Chip, Empty, PageHeader, Tile, TileMeta, TileRow, TileTitle, grid } from '../ui'
 import { STATUS_LABEL } from '../lib/projectStatus'
+import s from './Projects.module.css'
 
 export function Projects() {
   const [projects, setProjects] = useState<Project[]>([])
   useEffect(() => { repo.listProjects().then(setProjects) }, [])
+
+  const active = useMemo(
+    () => projects.filter(p => p.status === 'in_progress' || p.status === 'planned'),
+    [projects],
+  )
+  const inProgress = projects.filter(p => p.status === 'in_progress').length
+  const completed  = projects.filter(p => p.status === 'completed').length
+
+  // Most-recently-updated active project = what to resume
+  const resume = useMemo(() => {
+    return [...active].sort((a, b) => b.updatedAt - a.updatedAt)[0] ?? null
+  }, [active])
 
   return (
     <div className="page">
@@ -22,6 +35,34 @@ export function Projects() {
           </Link>
         }
       />
+
+      {projects.length > 0 && (
+        <div className={s.summary}>
+          <div className={s.stats}>
+            <div className={s.stat}>
+              <span className={s.statValue}>{inProgress}</span>
+              <span className={s.statLabel}>In progress</span>
+            </div>
+            <div className={s.stat}>
+              <span className={s.statValue}>{active.length}</span>
+              <span className={s.statLabel}>Active</span>
+            </div>
+            <div className={s.stat}>
+              <span className={s.statValue}>{completed}</span>
+              <span className={s.statLabel}>Completed</span>
+            </div>
+          </div>
+          {resume && (
+            <Link to={`/projects/${resume.id}`} className={s.resume}>
+              <span className={s.resumeLeft}>
+                <span>Resume</span>
+                <span className={s.resumeSub}>{resume.title}</span>
+              </span>
+              <ArrowRight size={16} />
+            </Link>
+          )}
+        </div>
+      )}
 
       {projects.length === 0 ? (
         <Empty>No projects yet. Start one.</Empty>
