@@ -1051,4 +1051,102 @@ This is classic spaced retrieval, served as an interactive loop rather than a da
 - [Quizlet — Class Progress](https://help.quizlet.com/hc/en-us/articles/360030512432)
 `.trim(),
   },
+
+  {
+    id: 'n.prompt-eng',
+    kind: 'doc',
+    title: 'Prompt Engineering — Anthropic\'s playbook',
+    summary: 'What Claude responds to best: specificity, structure, examples, role + context framing, and a handful of techniques (XML tags, chain-of-thought, prefilled responses) that compound across long prompts.',
+    url: 'https://docs.claude.com/en/docs/build-with-claude/prompt-engineering',
+    tags: ['claude', 'prompting', 'beginner'],
+    pinned: true,
+    addedAt: L(0),
+    body: `
+**TL;DR** — Good Claude prompts are **specific, structured, example-bearing, and context-carrying**. Anthropic's techniques — XML tags, chain-of-thought, prefilling, multi-shot examples — each compound; combine them for long or high-stakes prompts and reach for simpler ones for quick chats.
+
+## The four levers that matter most
+
+- **Specificity.** "Summarize this" → "Summarize this 600-word post into three bullets aimed at a product manager who hasn't read the article."
+- **Structure.** Break your prompt into sections. Claude responds to structure as meta-information.
+- **Examples.** One or two good examples beat a page of abstract instructions.
+- **Context.** Tell Claude who it is, who the audience is, and what the output is for.
+
+## XML tags — the signature Claude move
+
+Claude was trained heavily on XML-tagged content. Structure your prompts with tags and Claude's adherence jumps sharply.
+
+\`\`\`xml
+<context>
+You are reviewing pull requests for a React codebase.
+</context>
+
+<instructions>
+For each diff below, flag anything that could break production.
+Be concrete; name files and line numbers.
+</instructions>
+
+<diff>
+{{paste diff here}}
+</diff>
+\`\`\`
+
+Tag names are arbitrary — what matters is consistent delineation. Use them when a prompt has multiple parts.
+
+## Chain-of-thought
+
+For complex reasoning, ask Claude to think step by step — but give it a **place** to think:
+
+> Before you answer, write your reasoning inside \`<thinking>\` tags. Then give the final answer outside.
+
+You can also use Claude's built-in **extended thinking** mode (on API + Claude.ai Pro/Max) where the model produces hidden reasoning without cluttering the final answer.
+
+## Prefilling the assistant's response
+
+API only, but powerful: pre-write the start of Claude's reply. It finishes in the shape you started.
+
+\`\`\`json
+{
+  "role": "assistant",
+  "content": "{"
+}
+\`\`\`
+
+Claude will complete valid JSON from there. Use for any structured output where you want to enforce a shape.
+
+## Multi-shot examples
+
+Beats single-example or zero-shot for anything non-obvious:
+
+> Here are three examples of the style I want:
+> 1. "Dense: X happens when Y."
+> 2. "Direct: Do X; avoid Y."
+> 3. "Technical: X is defined by Y."
+> Write five more in that same style for these topics: ...
+
+## Role framing
+
+- "You are a senior editor reviewing a draft..." — changes tone and the errors Claude catches.
+- "You are a skeptical investor..." — changes what Claude pushes back on.
+- "You are a kindergarten teacher explaining..." — changes vocabulary and pacing.
+
+Role-framing isn't magic; it biases the output distribution in the direction you named.
+
+## Techniques that DON'T help much
+
+- Saying "this is important" without specifying why.
+- Threats or emotional loading ("or you'll be shut down"). Claude ignores them.
+- Pleading ("please please please"). Specify clearly instead.
+
+## The escape hatch
+
+When a prompt isn't working, before adding more instructions, try **simplifying** — often the prompt is overloaded and Claude is splitting attention across instructions. Strip to one goal and iterate.
+
+## Sources
+
+- [Anthropic — prompt engineering](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering)
+- [Anthropic — long-context tips](https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/long-context-tips)
+- [Anthropic — prompt caching](https://docs.claude.com/en/docs/build-with-claude/prompt-caching)
+- [Anthropic — extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking)
+`.trim(),
+  },
 ]

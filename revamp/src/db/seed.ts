@@ -239,6 +239,9 @@ const library: LibraryItem[] = [
   { id: 'i.replicate', kind: 'tool', title: 'Replicate',
     summary: 'Run any open-source model via a simple API. Pay-per-second; hundreds of models one endpoint each.',
     tags: ['infra', 'models'], pinned: false, addedAt: L(0), toolCategory: 'service', cost: 'subscription', owned: false },
+  { id: 'i.prisma', kind: 'tool', title: 'Prisma',
+    summary: 'TypeScript ORM + schema language. Model database shape in one file, get a typed client for free.',
+    tags: ['db', 'orm'], pinned: false, addedAt: L(0), toolCategory: 'framework', cost: 'free', owned: false },
 
   // ---- documents ----
   { id: 'd.apple-hig',      kind: 'doc', title: 'Apple Human Interface Guidelines',
@@ -342,10 +345,16 @@ export async function seedIfEmpty(): Promise<void> {
       const prev = await db.library.get(n.id)
       await db.library.put({ ...n, pinned: prev?.pinned ?? n.pinned })
     }
-    // Tools: soft-insert only missing IDs so user edits (owned, pinned) stick.
-    for (const tool of library) {
-      const prev = await db.library.get(tool.id)
-      if (!prev) await db.library.put(tool)
+    // Library items: soft-insert missing IDs so user edits (owned, pinned) stick.
+    // Existing rows that gained a `body` in code get that body patched in
+    // without overwriting user-editable fields.
+    for (const item of library) {
+      const prev = await db.library.get(item.id)
+      if (!prev) {
+        await db.library.put(item)
+      } else if (item.body && prev.body !== item.body) {
+        await db.library.put({ ...prev, body: item.body, summary: item.summary ?? prev.summary })
+      }
     }
   }
 }

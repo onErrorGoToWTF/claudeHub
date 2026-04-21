@@ -510,6 +510,157 @@ Parameter counts range from small (8B, fits on a laptop GPU) to huge (405B+, clo
 - [DeepSeek on Hugging Face](https://huggingface.co/deepseek-ai)
 `.trim(),
 
+  'i.prisma': `
+**TL;DR** — Prisma is a TypeScript ORM where you define your database schema in a single \`schema.prisma\` file and get a fully-typed, auto-completing client in return — the pragmatic middle between writing raw SQL and wrestling with a traditional ORM.
+
+## The one file
+
+\`\`\`prisma
+// prisma/schema.prisma
+datasource db { provider = "postgresql"; url = env("DATABASE_URL") }
+generator client { provider = "prisma-client-js" }
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  posts     Post[]
+  createdAt DateTime @default(now())
+}
+
+model Post {
+  id       String @id @default(cuid())
+  title    String
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String
+}
+\`\`\`
+
+Run \`npx prisma migrate dev\` — Prisma diffs against the current DB and creates a migration. Run \`npx prisma generate\` — you get a typed client.
+
+## Using it
+
+\`\`\`ts
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
+
+const user = await prisma.user.create({
+  data: { email: 'a@b.com', name: 'Alan', posts: { create: { title: 'Hi' } } },
+  include: { posts: true },
+})
+// user.posts is typed as Post[]
+\`\`\`
+
+Every method is autocomplete-driven; the result type flows from the query shape.
+
+## Prisma vs. raw SQL
+
+- **Prisma wins** when: you want safe CRUD with zero boilerplate, you'd rather refactor a model than a hundred queries, you want migrations generated from schema diffs.
+- **Raw SQL wins** when: complex joins + window functions dominate your workload, you need DB features Prisma hasn't exposed yet (rare in 2026), you care about last-mile query performance.
+
+Prisma lets you drop to \`prisma.$queryRaw\` when needed, so it's not an either/or.
+
+## Supported databases
+
+PostgreSQL, MySQL, SQLite, SQL Server, MongoDB, CockroachDB. Postgres is the sweet spot.
+
+## Sources
+
+- [Prisma — docs](https://www.prisma.io/docs)
+- [Prisma — schema reference](https://www.prisma.io/docs/orm/prisma-schema)
+- [Prisma Client — API](https://www.prisma.io/docs/orm/prisma-client)
+- [Prisma — migrations](https://www.prisma.io/docs/orm/prisma-migrate)
+`.trim(),
+
+  'a.attention': `
+**TL;DR** — "Attention Is All You Need" (2017) introduced the **Transformer** architecture — every modern LLM, including Claude, GPT, and Gemini, is a descendant. The core move: throw out recurrence and convolutions, make everything "attend" to everything else, then stack.
+
+## Why the paper matters
+
+Before Transformers, the frontier architectures were RNNs, LSTMs, and convolutions applied to language. All had two problems:
+
+- **Sequential.** Each time-step depended on the previous one, making training slow on modern GPUs.
+- **Forgetful.** Long-range dependencies degraded with distance.
+
+The Transformer replaced both with **self-attention** — every token looks at every other token directly, all in parallel. Training scaled; distance stopped mattering.
+
+## The one equation
+
+\`\`\`
+Attention(Q, K, V) = softmax(Q K^T / sqrt(d_k)) V
+\`\`\`
+
+- Each token projects into **Q**uery, **K**ey, **V**alue vectors.
+- A token's **Q** dots against every other token's **K** → attention scores.
+- Scores weight each token's **V**; sum produces the output for that token.
+- Run this in parallel for all tokens → one matrix multiply.
+
+Stack 12, 48, or 96 of those layers with some MLPs between them → a Transformer.
+
+## What scales from here
+
+Later papers (GPT-2, GPT-3, scaling laws) showed: **bigger Transformers trained on more data get smoothly better** along predictable curves. The current frontier is the same architecture with orders of magnitude more parameters and tokens.
+
+## Things the paper did NOT predict
+
+- Instruction-tuned chat behavior (emerged years later).
+- In-context learning ("few-shot prompting").
+- Tool use / agentic behavior.
+- RLHF / constitutional AI.
+
+All of those are post-2017 discoveries running on top of the architecture introduced here.
+
+## Why to actually read it
+
+- The equation above is the core idea; the paper derives it cleanly.
+- Positional encoding (how the model knows token order) is elegant.
+- Multi-head attention (why you run several attention passes in parallel) is the move that made scaling work.
+
+## Sources
+
+- [Attention Is All You Need — arXiv](https://arxiv.org/abs/1706.03762)
+- [The Illustrated Transformer — Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
+- [The Annotated Transformer — Harvard NLP](https://nlp.seas.harvard.edu/annotated-transformer/)
+`.trim(),
+
+  'a.mcp': `
+**TL;DR** — The Model Context Protocol is Anthropic's open standard for letting AI assistants plug into tools, data, and external systems through one shared shape — a single MCP server can expose GitHub / Postgres / Slack / anything to Claude, Claude Code, Cursor, or any future MCP-speaking host.
+
+## Why it exists
+
+Before MCP, every AI tool reinvented integration. GitHub + Claude looked nothing like Slack + GPT, which looked nothing like a custom-built Postgres retriever. MCP defines one shape — JSON-RPC over stdio or HTTP/SSE — and everyone can speak it.
+
+## The shape (one paragraph)
+
+An MCP server exposes **tools** (callable functions), **resources** (readable data), and **prompts** (user-selectable templates). A host app (Claude Desktop, Claude Code, Cursor) connects to one or more servers through **clients** and makes their capabilities available to the AI.
+
+## Why it's a protocol, not a framework
+
+- You write a server in the language you like (TS, Python, Go, Rust).
+- Any host can consume it. Today: Claude Desktop, Claude Code, Cursor, Zed, several IDEs. Tomorrow: presumably more.
+- Auth and security belong to the server. The AI never sees your credentials directly.
+
+## What's already built
+
+- GitHub, GitLab, Git
+- Slack, Linear, Notion, Asana
+- Postgres, SQLite, Filesystem
+- Puppeteer / Brave / Fetch (web)
+- Google Drive, Google Calendar
+- Hundreds more on the community index
+
+## Link to the deeper doc
+
+For build-level detail (schema, SDK example, Claude Code wiring), see the **MCP — Model Context Protocol** library entry; it has full code.
+
+## Sources
+
+- [modelcontextprotocol.io](https://modelcontextprotocol.io/)
+- [MCP — specification](https://spec.modelcontextprotocol.io/)
+- [MCP — community servers](https://github.com/modelcontextprotocol/servers)
+- [Anthropic — MCP announcement](https://www.anthropic.com/news/model-context-protocol)
+`.trim(),
+
   'i.python': `
 **TL;DR** — Python is the lingua franca of ML, data, scripting, and backend work — slow to execute but blazing to write, with the deepest ecosystem of AI-related libraries anywhere. If you're touching LLMs, agents, retrieval, or data pipelines, you're going to read Python.
 
