@@ -603,4 +603,236 @@ Pair color with icon or text. See the Color note for why.
 - [ehmo/platform-design-skills](https://github.com/ehmo/platform-design-skills)
 `.trim(),
   },
+
+  {
+    id: 'n.hig-layout',
+    kind: 'doc',
+    title: 'Apple HIG — Layout, Tap Targets & Safe Areas',
+    summary: '44×44 hit areas, primary actions in the bottom-third thumb zone, respect every safe-area inset. The spatial floor every mobile UI should clear.',
+    url: 'https://developer.apple.com/design/human-interface-guidelines/layout',
+    tags: ['design', 'layout', 'mobile', 'apple'],
+    pinned: false,
+    addedAt: L(0),
+    body: `
+**TL;DR** — Tappable targets should be **≥ 44×44 pt** including padding, **primary actions** belong near the user's thumb (bottom third of the screen), and every layout should **respect safe-area insets** (notch, Dynamic Island, home indicator) even if that just means reserving the space.
+
+## The 44×44 rule
+
+> Create controls that measure at least 44 points × 44 points so they can be accurately tapped with a finger.
+
+— Apple UI Design Tips
+
+The 44pt minimum applies to the **hit area**, not necessarily the visible element. A 28×28 icon button is fine *if* it sits inside a 44×44 tappable bounding box via padding.
+
+> Place at least 8pt between tappable controls so users don't accidentally hit the wrong target.
+
+— ehmo platform-design-skills, iOS §1.3
+
+## Thumb zone
+
+Modern iPhones are hard to reach top-of-screen with one hand. Put primary actions in the **bottom third**.
+
+- Main action bar / tab bar → bottom of the screen.
+- Destructive buttons (delete, wipe) → further from the thumb rest; guard with two-tap confirm.
+- Floating action buttons → bottom-right (or bottom-center) by default.
+
+## Safe-area insets
+
+- **Top** — status bar, Dynamic Island, camera notch.
+- **Bottom** — home indicator area.
+- **Sides** — landscape mode on most iPhones.
+
+Never render content under any of these without intention.
+
+Web translation:
+
+\`\`\`css
+.container {
+  padding-top: max(16px, env(safe-area-inset-top));
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+  padding-left:  max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+\`\`\`
+
+Needs \`<meta name="viewport" content="..., viewport-fit=cover" />\` to activate.
+
+## Hit-area padding (web recipe)
+
+\`\`\`css
+/* Visible 28×28 icon, 44×44 tap target */
+.icon-btn {
+  position: relative;
+  width: 28px; height: 28px;
+}
+.icon-btn::after {
+  content: '';
+  position: absolute; inset: -8px;  /* expands hit area by 8px on all sides */
+}
+\`\`\`
+
+## Test sizes
+
+- **Narrowest phone:** ~320 px (iPhone SE).
+- **Widest phone:** ~430 px (Pro Max).
+- **Tablet portrait:** ~768 px.
+- **Tablet landscape / small desktop:** ~1024 px.
+
+If the app works cleanly at 320 px and 1024 px, everything in between usually falls out.
+
+## Sources
+
+- [Apple HIG — Layout](https://developer.apple.com/design/human-interface-guidelines/layout)
+- [Apple — UI Design Tips](https://developer.apple.com/design/tips/)
+- [ehmo/platform-design-skills](https://github.com/ehmo/platform-design-skills)
+`.trim(),
+  },
+
+  {
+    id: 'n.liquid-glass-web',
+    kind: 'doc',
+    title: 'Liquid Glass — Web Implementation',
+    summary: "Translating Apple's 2025 material vocabulary into CSS. What's high-fidelity on the web (translucency, soft lensing, static specular) vs. what simply doesn't port (device-motion highlights).",
+    url: 'https://developer.apple.com/documentation/technologyoverviews/liquid-glass',
+    tags: ['design', 'glass', 'css', 'apple'],
+    pinned: false,
+    addedAt: L(0),
+    body: `
+**TL;DR** — On the web, Liquid Glass translates to **backdrop-filter blur + saturate** for translucency, a **static inset specular** for the highlight, and — if you want real lensing — an **SVG \`<feDisplacementMap>\`** filter behind \`backdrop-filter: url(...)\`. Most of the motion-coupled magic simply doesn't port; accept the static version gracefully.
+
+## What ports, what doesn't
+
+| Liquid Glass concept | Web equivalent | Fidelity |
+|---|---|---|
+| Translucency | \`backdrop-filter: blur() saturate()\` | High |
+| Lensing / refraction | SVG \`<feDisplacementMap>\` via \`backdrop-filter: url(#...)\` | Medium (no Safari) |
+| Static specular highlight | \`box-shadow: inset 0 1px 0 rgba(255,255,255,α)\` | Medium-high |
+| Motion-coupled specular | JS pointer / DeviceOrientation (permission prompt) | Low on mobile web |
+| Adaptive shadow | \`filter: drop-shadow()\` + hover/scroll state | Medium |
+| Scroll edge effect | \`position: sticky\` + gradient mask | High |
+| Reduced transparency | \`@media (prefers-reduced-transparency: reduce)\` | Native |
+
+## Blur vs. lensing — the key distinction
+
+**Glassmorphism** (the 2020 trend) uses Gaussian blur — light scatters, background becomes a soft wash.
+
+**Liquid Glass** uses lensing — light bends, background is compressed and optically shifted.
+
+On the web you can get real lensing via SVG filters, but Safari doesn't support \`backdrop-filter: url(...)\`. Feature-detect and fall back:
+
+\`\`\`css
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.68), rgba(255,255,255,0.44));
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+          backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 1px 0 rgba(20,19,18,0.04);
+}
+@supports (backdrop-filter: url(#lg-refract)) {
+  .glass.with-lensing { backdrop-filter: blur(12px) saturate(1.2) url(#lg-refract); }
+}
+\`\`\`
+
+## Minimal SVG filter
+
+\`\`\`html
+<svg width="0" height="0" style="position:absolute">
+  <filter id="lg-refract">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+    <feTurbulence baseFrequency="0.02" numOctaves="1" result="turb" />
+    <feDisplacementMap in="blur" in2="turb" scale="10" />
+  </filter>
+</svg>
+\`\`\`
+
+Tune \`stdDeviation\` (blur amount), \`baseFrequency\` (lens granularity), and \`scale\` (displacement strength) to taste.
+
+## Accessibility media queries
+
+- \`prefers-reduced-motion\` — turn off glass animations, keep static state.
+- \`prefers-reduced-transparency\` — swap translucent backgrounds for opaque ones.
+- \`prefers-contrast: more\` — boost border opacity, raise text contrast.
+
+These should be the **first** thing you wire up, not the last.
+
+## Performance notes
+
+- \`backdrop-filter\` is expensive; don't animate blur radius on every frame.
+- Nested glass-on-glass multiplies the cost. Apple's own rule says avoid it anyway.
+- On older Android / low-end devices, consider a no-glass fallback using a solid near-white background with a hairline border.
+
+## Sources
+
+- [Apple — Adopting Liquid Glass](https://developer.apple.com/documentation/technologyoverviews/liquid-glass/adopting-liquid-glass)
+- [conorluddy/LiquidGlassReference](https://github.com/conorluddy/LiquidGlassReference)
+- [nikdelvin/liquid-glass (Astro + SVG)](https://github.com/nikdelvin/liquid-glass)
+- [MDN — backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
+`.trim(),
+  },
+
+  {
+    id: 'n.khan-dashboard',
+    kind: 'doc',
+    title: 'Khan Academy — Learning Dashboard patterns',
+    summary: "The dashboard-as-homepage thesis, mastery tasks on a daily cadence, achievements inlined (not a separate wall). The minimal end of the learning-app spectrum.",
+    url: 'https://blog.khanacademy.org/introducingthe-learning-dashboard/',
+    tags: ['learning', 'ux', 'dashboard'],
+    pinned: false,
+    addedAt: L(0),
+    body: `
+**TL;DR** — Khan's Learning Dashboard is your personal homepage that tells you what to do *next*, not what you've already done — prescriptive, minimal, and with achievement signals (points, badges, levels) inlined on the dashboard rather than banished to a separate Awards page.
+
+## The framing
+
+> Your personal homepage on Khan Academy — find the best next things for you to do.
+
+— Khan Academy blog
+
+The dashboard is prescriptive ("here's what to do next") rather than descriptive ("here's what you've done"). The dominant UI element is a **recommended task list**, not a leaderboard or analytics panel.
+
+## Composition
+
+- **Recommended tasks** — skills the system picks as optimal for this session. Users can customize; teachers / coaches can contribute.
+- **Mastery tasks** — small reviews that unlock daily.
+- **Overall progress bar** — real-time across the current course or topic.
+- **Points, badges, skill levels** — all visible on the dashboard, updated in real time.
+
+No separate achievements screen. The signal is ambient.
+
+## Mastery tasks + daily cadence
+
+> Mastery tasks on the dashboard unlock daily ... proving what you know over time is a really great way to ensure that you actually remember what you've learned.
+
+— Khan Academy blog
+
+This is **spaced retrieval surfaced as UI**. The learner doesn't need to remember to review; the dashboard offers today's items. It creates **a cadence without a streak** — something to do each day, without the loss-aversion pressure of "don't break your streak."
+
+## What Khan does NOT do
+
+- No streak fires.
+- No XP shop.
+- No mascot.
+- No leaderboard comparisons on the dashboard.
+
+That restraint is exactly what makes Khan the closest analog to a calm, adult-serious learning app. The **mastery tier** carries progress; streak / XP gamification is deliberately absent.
+
+## What to port
+
+- Dashboard-first structure: the home view *is* the prescription for what to work on next.
+- Ambient achievements — chips / badges inlined beside the content, not on a dedicated page.
+- Mastery tiers (Familiar → Proficient → Mastered) as the progress vocabulary.
+- Daily cadence without streak pressure.
+
+## What to leave alone
+
+- Khan's visual density — there's a lot on one page; a quieter layout (this app's direction) works better for adult users.
+- Explicit points as a currency — progress-bar fill already carries the signal.
+
+## Sources
+
+- [Introducing the Learning Dashboard — Khan blog](https://blog.khanacademy.org/introducingthe-learning-dashboard/)
+- [Khan Academy — parent dashboard](https://support.khanacademy.org/hc/en-us/articles/360039664491)
+- [Khan Academy — teacher reporting](https://support.khanacademy.org/hc/en-us/articles/360031129891)
+- [Khan Academy](https://www.khanacademy.org/)
+`.trim(),
+  },
 ]
