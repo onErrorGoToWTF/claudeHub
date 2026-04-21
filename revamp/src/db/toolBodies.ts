@@ -269,6 +269,169 @@ Modern React (via frameworks like Next.js, Remix) splits components into **serve
 - [You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect)
 `.trim(),
 
+  'i.vscode': `
+**TL;DR** — VS Code is a free, cross-platform editor built on Electron that's become the default for web dev through sheer plugin gravity; pair it with Claude Code or Cursor and it's the workspace most AI-era coding happens in.
+
+## Why it stuck
+
+- **Fast, hackable, multi-language.** TypeScript support is first-party; everything else lands via extensions.
+- **Built-in terminal, Git, debug, task runner.** No context-switching.
+- **Settings Sync** — log in with GitHub; every machine has your keybinds, extensions, themes.
+- **Remote dev** via SSH, Containers, or WSL — your VS Code UI is local, the project files + tools run somewhere else.
+
+## The one settings file that matters
+
+\`settings.json\` (user and workspace scopes) controls everything. Start minimal:
+
+\`\`\`json
+{
+  "editor.fontFamily": "JetBrains Mono, Menlo, monospace",
+  "editor.fontSize": 13,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": true,
+  "workbench.colorTheme": "Default Light+"
+}
+\`\`\`
+
+Command Palette → \`Preferences: Open Settings (JSON)\`.
+
+## Extensions worth having
+
+- **Prettier** — auto-format JS/TS/CSS on save.
+- **ESLint** — inline lint errors.
+- **GitLens** — per-line blame + commit history in the editor.
+- **Error Lens** — render errors inline, not just in the Problems panel.
+- **Tailwind CSS IntelliSense** — if you use Tailwind.
+- **Path Intellisense** — autocomplete \`import\` paths.
+
+## Keyboard you'll actually use
+
+- \`Cmd/Ctrl+P\` — fuzzy file open.
+- \`Cmd/Ctrl+Shift+P\` — Command Palette (all actions).
+- \`Cmd/Ctrl+D\` — add next match to selection.
+- \`Cmd/Ctrl+Shift+F\` — search across project.
+- \`F2\` — rename symbol everywhere.
+- \`Option/Alt+↑/↓\` — move line up/down.
+
+## Sources
+
+- [VS Code — main site](https://code.visualstudio.com/)
+- [VS Code — docs](https://code.visualstudio.com/docs)
+- [VS Code — keybindings](https://code.visualstudio.com/docs/getstarted/keybindings)
+- [VS Code — Remote Development](https://code.visualstudio.com/docs/remote/remote-overview)
+`.trim(),
+
+  'i.cursor': `
+**TL;DR** — Cursor is a fork of VS Code with AI woven through the editor — tab-completion that reads your whole codebase, inline chat on any selection, and a composer for multi-file agent edits — and your VS Code muscle memory transfers intact.
+
+## What's actually different vs VS Code
+
+- **Tab** — inline completions that often span multiple lines; aware of surrounding files, not just the current one.
+- **\`Cmd/Ctrl+K\`** — inline edit on a selection ("rewrite this function", "add error handling", "convert to async").
+- **Chat panel** — conversation with the codebase. Reference files with \`@\`, pin them, scope retrieval.
+- **Composer / Agent** — make changes across many files from a single prompt. Preview diffs, accept or reject.
+- **Rules files** (\`.cursorrules\`) — persistent instructions Cursor reads every session.
+
+Everything else is VS Code — same extensions, same keybinds, same settings.
+
+## When to pick Cursor over VS Code + Claude Code
+
+- **Cursor** — you want AI edit affordances inline with your editing flow; short-turn, feedback-heavy work.
+- **Claude Code** — you want a long-session autonomous agent on a whole task; you're OK living in a terminal.
+
+They're not competitors so much as different shapes of the same idea. Some people use both (Claude Code for long tasks, Cursor Tab for live typing).
+
+## Setup worth doing once
+
+- Sign in with your existing VS Code settings (Settings Sync imports them).
+- Write a \`.cursorrules\` at the repo root — house style, banned patterns, "always use X library" — Cursor reads it.
+- Pin your \`CLAUDE.md\` or equivalent in the chat so the assistant sees it.
+
+## Pricing
+
+Free tier for exploration. Pro ($20/mo) unlocks Claude Opus / Sonnet + higher Tab limits. Business tier adds privacy mode + SSO.
+
+## Sources
+
+- [Cursor — main site](https://cursor.com/)
+- [Cursor — docs](https://docs.cursor.com/)
+- [Cursor — rules](https://docs.cursor.com/context/rules)
+- [Cursor — features overview](https://docs.cursor.com/features)
+`.trim(),
+
+  'i.github-pages': `
+**TL;DR** — GitHub Pages serves static files from any GitHub repo over HTTPS for free; point it at a branch (or a GitHub Actions artifact) and your site is live at \`https://<user>.github.io/<repo>/\`.
+
+## Two ways to deploy
+
+- **Deploy from a branch** — Pages serves \`/\` or \`/docs\` of a chosen branch. Simplest if you commit a pre-built \`dist\`.
+- **GitHub Actions** — a workflow builds your site and uploads the result as a Pages artifact. What this project uses.
+
+Switch between them in **Repo → Settings → Pages**.
+
+## Actions deploy pattern (what this app uses)
+
+\`\`\`yaml
+# .github/workflows/deploy-pages.yml
+on:
+  push: { branches: [main], paths: ['app/**'] }
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: npm }
+      - run: npm ci && npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: app/dist }
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: github-pages
+    steps:
+      - uses: actions/deploy-pages@v4
+\`\`\`
+
+## Base path gotcha
+
+User sites (\`<user>.github.io\`) serve at \`/\`. Project sites serve at \`/<repo>/\`. Most SPAs break here because they assume root. In Vite:
+
+\`\`\`ts
+export default defineConfig({ base: '/<repo>/' })
+\`\`\`
+
+React Router needs a matching \`basename\` (Vite exposes the base path via \`import.meta.env.BASE_URL\`).
+
+## What Pages is good at
+
+- Docs sites, marketing pages, static SPAs.
+- Personal resumes and portfolios.
+- Preview builds off long-lived branches.
+
+## What it's not
+
+- **No server-side rendering.** Static files only.
+- **No edge functions.** Use Vercel / Cloudflare Pages / Netlify for that.
+- **No custom backend.** Build static, hit public APIs from the client, or host the backend elsewhere.
+
+## Custom domain
+
+Add a \`CNAME\` file with your domain; point your DNS at GitHub's Pages IPs or a \`CNAME\` record. HTTPS is automatic via Let's Encrypt once DNS propagates.
+
+## Sources
+
+- [GitHub Pages — docs](https://docs.github.com/en/pages)
+- [GitHub Pages — quickstart](https://docs.github.com/en/pages/quickstart)
+- [actions/deploy-pages](https://github.com/actions/deploy-pages)
+- [Vite — GitHub Pages deploy guide](https://vite.dev/guide/static-deploy.html#github-pages)
+`.trim(),
+
   'i.claude-ai': `
 **TL;DR** — Claude.ai is the web/mobile/desktop home for chatting with Claude — the same models that power the API, wrapped with Projects (persistent knowledge), Artifacts (rendered output), and uploads, across free and paid plans.
 
