@@ -1,6 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { BookOpen, FileText, Film, Pin, PinOff, Search, Wrench, ArrowRight } from 'lucide-react'
+import {
+  BookOpen, FileText, Film, Pin, PinOff, Search, Wrench, ArrowRight,
+  SlidersHorizontal, X,
+} from 'lucide-react'
 import { repo } from '../db/repo'
 import type { LibraryItem, LibraryKind } from '../db/types'
 import { Chip, List, PageHeader, Row, Empty } from '../ui'
@@ -17,24 +20,55 @@ const FACETS: { id: Facet; label: string; Icon?: typeof Wrench }[] = [
   { id: 'read',  label: 'Reads', Icon: BookOpen },
   { id: 'video', label: 'Videos', Icon: Film },
 ]
+const FACET_LABEL: Record<Facet, string> = Object.fromEntries(
+  FACETS.map(f => [f.id, f.label]),
+) as Record<Facet, string>
 
 type Sort = 'newest' | 'alpha' | 'pinned'
+const SORT_LABEL: Record<Sort, string> = {
+  pinned: 'Pinned first',
+  newest: 'Newest',
+  alpha:  'A–Z',
+}
+const DEFAULT_FACET: Facet = 'all'
+const DEFAULT_SORT:  Sort  = 'pinned'
 
 export function Library() {
   const nav = useNavigate()
   const [items, setItems] = useState<LibraryItem[]>([])
-  const [facet, setFacet] = useState<Facet>('all')
-  const [sort, setSort] = useState<Sort>('pinned')
+  const [facet, setFacet] = useState<Facet>(DEFAULT_FACET)
+  const [sort, setSort] = useState<Sort>(DEFAULT_SORT)
   const [query, setQuery] = useState('')
+  const [filterOpen, setFilterOpen] = useState(false)
   const [missLogged, setMissLogged] = useState<string | null>(null)
   const [openMisses, setOpenMisses] = useState(0)
   const loggedRef = useRef<Set<string>>(new Set())
+  const filterRef = useRef<HTMLDivElement>(null)
   const pathway = useUserStore(st => st.pathway)
 
   useEffect(() => { repo.listLibrary().then(setItems) }, [])
   useEffect(() => {
     repo.listSearchMisses().then(ms => setOpenMisses(ms.filter(m => !m.resolved).length))
   }, [missLogged])
+
+  // Close the filter popover on outside click or Escape.
+  useEffect(() => {
+    if (!filterOpen) return
+    const onDown = (e: MouseEvent) => {
+      if (filterRef.current && !filterRef.current.contains(e.target as Node)) {
+        setFilterOpen(false)
+      }
+    }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setFilterOpen(false)
+    }
+    window.addEventListener('mousedown', onDown)
+    window.addEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('mousedown', onDown)
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [filterOpen])
 
   const shown = useMemo(() => {
     // Only surface items with in-app body content.
@@ -97,6 +131,9 @@ export function Library() {
     return c
   }, [items])
 
+  const activeFiltersCount =
+    (facet !== DEFAULT_FACET ? 1 : 0) + (sort !== DEFAULT_SORT ? 1 : 0)
+
   return (
     <div className="page">
       <PageHeader
@@ -116,33 +153,86 @@ export function Library() {
         />
       </div>
 
-      {/* Filters + sort */}
-      <div className={styles.bar}>
-        <div className={styles.facets}>
-          {FACETS.map(f => {
-            const active = facet === f.id
-            return (
+      {/* Filter button + inline active chips. Secondary controls hide in
+          a popover so the library entry stays spare as the catalog grows. */}
+      <div className={styles.bar} ref={filterRef}>
+        <button
+          type="button"
+          className={`${styles.filterBtn} ${filterOpen ? styles.filterBtnOn : ''}`}
+          onClick={() => setFilterOpen(v => !v)}
+          aria-expanded={filterOpen}
+          aria-haspopup="true"
+        >
+          <SlidersHorizontal size={14} strokeWidth={1.75} />
+          Filter
+          {activeFiltersCount > 0 && <span className={styles.filterBadge}>{activeFiltersCount}</span>}
+        </button>
+
+        {(facet !== DEFAULT_FACET || sort !== DEFAULT_SORT) && (
+          <div className={styles.activeChips}>
+            {facet !== DEFAULT_FACET && (
               <button
-                key={f.id}
                 type="button"
-                className={`${styles.facet} ${active ? styles.facetOn : ''}`}
-                onClick={() => setFacet(f.id)}
+                className={styles.chipClear}
+                onClick={() => setFacet(DEFAULT_FACET)}
+                aria-label={`Clear ${FACET_LABEL[facet]} filter`}
               >
-                {f.Icon && <f.Icon size={13} strokeWidth={1.75} />}
-                <span>{f.label}</span>
-                <span className={styles.facetCount}>{counts[f.id] ?? 0}</span>
+                {FACET_LABEL[facet]} <X size={11} strokeWidth={2} />
               </button>
-            )
-          })}
+            )}
+            {sort !== DEFAULT_SORT && (
+              <button
+                type="button"
+                className={styles.chipClear}
+                onClick={() => setSort(DEFAULT_SORT)}
+                aria-label="Reset sort"
+              >
+                {SORT_LABEL[sort]} <X size={11} strokeWidth={2} />
+              </button>
+            )}
+          </div>
+        )}
+
+        <div className={styles.resultMeta}>
+          {shown.length} {shown.length === 1 ? 'item' : 'items'}
         </div>
-        <label className={styles.sort}>
-          <span>Sort</span>
-          <select value={sort} onChange={e => setSort(e.target.value as Sort)}>
-            <option value="pinned">Pinned first</option>
-            <option value="newest">Newest</option>
-            <option value="alpha">A–Z</option>
-          </select>
-        </label>
+
+        {filterOpen && (
+          <div className={styles.filterPanel} role="dialog" aria-label="Library filters">
+            <div className={styles.filterGroup}>
+              <div className={styles.filterLabel}>Kind</div>
+              <div className={styles.facets}>
+                {FACETS.map(f => {
+                  const active = facet === f.id
+                  return (
+                    <button
+                      key={f.id}
+                      type="button"
+                      className={`${styles.facet} ${active ? styles.facetOn : ''}`}
+                      onClick={() => setFacet(f.id)}
+                    >
+                      {f.Icon && <f.Icon size={13} strokeWidth={1.75} />}
+                      <span>{f.label}</span>
+                      <span className={styles.facetCount}>{counts[f.id] ?? 0}</span>
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+            <div className={styles.filterGroup}>
+              <div className={styles.filterLabel}>Sort</div>
+              <select
+                value={sort}
+                onChange={e => setSort(e.target.value as Sort)}
+                className={styles.sortSelect}
+              >
+                <option value="pinned">Pinned first</option>
+                <option value="newest">Newest</option>
+                <option value="alpha">A–Z</option>
+              </select>
+            </div>
+          </div>
+        )}
       </div>
 
       {shown.length === 0 ? (

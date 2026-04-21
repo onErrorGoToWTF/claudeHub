@@ -48,6 +48,21 @@ export function TopicDetail() {
           <span>Mastery</span><span>{Math.round(mastery * 100)}%</span>
         </div>
         <ProgressBar value={mastery} />
+        {(() => {
+          const lessonsDone    = lessons.filter(l => !!progress[l.id]?.completedAt).length
+          const quizzesPassed  = quizzes.filter(q => (progress[q.id]?.score ?? 0) >= 0.8).length
+          const lessonsTotal   = lessons.length
+          const quizzesTotal   = quizzes.length
+          if (lessonsTotal === 0 && quizzesTotal === 0) return null
+          const bits: string[] = []
+          if (lessonsTotal > 0)  bits.push(`${lessonsDone}/${lessonsTotal} lessons done`)
+          if (quizzesTotal > 0)  bits.push(`${quizzesPassed}/${quizzesTotal} quizzes mastered`)
+          return (
+            <div style={{
+              marginTop: 8, fontSize: 'var(--text-xs)', color: 'var(--ink-3)',
+            }}>{bits.join(' · ')}</div>
+          )
+        })()}
       </div>
 
       <Section title="Lessons" meta={`${lessons.length} items`}>
