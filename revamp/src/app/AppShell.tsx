@@ -34,9 +34,16 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className={styles.shell}>
       <header className={styles.topbar}>
-        <div className={styles.brand}>
-          <span className={styles.wordmark}>aiUniversity</span>
+        {/* Left cluster: identity + current context */}
+        <div className={styles.topLeft}>
+          <div className={styles.brand}>
+            <span className={styles.wordmark}>aiUniversity</span>
+          </div>
+          <UserMenu />
+          <PathwayPicker />
         </div>
+
+        {/* Middle: nav on desktop only; hidden on mobile (bottom nav wins) */}
         <nav className={styles.topnav} aria-label="Primary">
           {NAV.map(({ to, label, Icon, end }) => (
             <NavLink key={to} to={to} end={end} className={({ isActive }) =>
@@ -47,6 +54,8 @@ export function AppShell({ children }: { children: ReactNode }) {
             </NavLink>
           ))}
         </nav>
+
+        {/* Right cluster: tools */}
         <div className={styles.topActions}>
           <button
             type="button"
@@ -57,9 +66,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           >
             <Search size={16} strokeWidth={1.75} />
           </button>
-          <PathwayPicker />
           <ThemeToggle />
-          <UserMenu />
         </div>
       </header>
 
