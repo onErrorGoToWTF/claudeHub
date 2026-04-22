@@ -1,3 +1,12 @@
+.eyebrow {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: var(--space-6);
+}
+
 .split {
   display: grid;
   grid-template-columns: 1fr;

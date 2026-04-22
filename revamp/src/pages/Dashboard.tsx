@@ -6,7 +6,7 @@ import {
 } from 'lucide-react'
 import { overallProgress, repo } from '../db/repo'
 import type { Progress, Topic, Project, LibraryItem } from '../db/types'
-import { PageHeader, ProgressBar, List, Row } from '../ui'
+import { ProgressBar, List, Row } from '../ui'
 import { STATUS_LABEL } from '../lib/projectStatus'
 import { buildActivity, whenShort, type ActivityKind } from '../lib/activity'
 import s from './Dashboard.module.css'
@@ -61,7 +61,7 @@ export function Dashboard() {
 
   return (
     <div className="page">
-      <PageHeader title="Dashboard" />
+      <div className={s.eyebrow}>Dashboard</div>
 
       <div className={s.split}>
         {/* ---------- Learn panel ---------- */}
