@@ -61,8 +61,6 @@ export function Dashboard() {
 
   return (
     <div className="page">
-      <div className={s.eyebrow}>Dashboard</div>
-
       <div className={s.split}>
         {/* ---------- Learn panel ---------- */}
         <section className={s.panel}>
