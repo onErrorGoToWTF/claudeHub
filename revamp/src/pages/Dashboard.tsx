@@ -34,8 +34,19 @@ export function Dashboard() {
       const unstarted = topics.find(t => !byId.has(t.id)) ?? topics[0]
       setNextTopic(unstarted ?? null)
 
-      const sorted = progs.sort((a, b) => b.updatedAt - a.updatedAt).slice(0, 2)
-      setRecent(sorted.map(pr => ({
+      // Dedupe by topic — most-recent touch per topic wins. Lesson and quiz
+      // are separate progress rows but collapse to one topic here so the
+      // dashboard doesn't show identical-looking duplicates.
+      const sortedByRecent = progs.sort((a, b) => b.updatedAt - a.updatedAt)
+      const seen = new Set<string>()
+      const dedup: typeof progs = []
+      for (const pr of sortedByRecent) {
+        if (seen.has(pr.topicId)) continue
+        seen.add(pr.topicId)
+        dedup.push(pr)
+        if (dedup.length >= 2) break
+      }
+      setRecent(dedup.map(pr => ({
         progress: pr,
         topic: topicsById.get(pr.topicId),
         topicScore: byId.get(pr.topicId) ?? 0,
@@ -124,9 +135,7 @@ function RecentRow({ progress, topic, topicScore }: {
   topic?: Topic
   topicScore: number
 }) {
-  const to = progress.kind === 'lesson'
-    ? `/learn/lesson/${progress.id}`
-    : `/learn/quiz/${progress.id}`
+  const to = `/learn/topic/${progress.topicId}`
   const status = masteryStatus(topicScore)
   const meta = topicScore > 0
     ? `${MASTERY_LABEL[status]} · ${Math.round(topicScore * 100)}%`
