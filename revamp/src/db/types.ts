@@ -1,9 +1,13 @@
 export type ID = string
 
-/** Pathway audience — maps to the three user tracks in PLAN.md:
- *  student (foundational), office (AI without coding), dev (coding with AI).
+/** Pathway audience — five user tracks ordered by ascending code involvement:
+ *  student   — learning AI concepts, often no code
+ *  office    — Claude-as-coworker, zero code (docs, meetings, analysis)
+ *  media     — generative media tools (image/video/voice), UI-driven, no code
+ *  vibe      — AI-assisted building; ships software without hand-writing it
+ *  dev       — writes and owns production code
  *  Content with an empty or missing audience list is visible to everyone. */
-export type Audience = 'student' | 'office' | 'dev'
+export type Audience = 'student' | 'office' | 'media' | 'vibe' | 'dev'
 
 export interface Track {
   id: ID

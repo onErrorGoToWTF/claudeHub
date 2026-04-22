@@ -81,7 +81,7 @@ export function TopicDetail() {
                         </span>
                       </TileTitle>
                       {done
-                        ? <Chip variant="mastery"><CircleCheckBig size={12} /> Done</Chip>
+                        ? <Chip variant="mastery"><CircleCheckBig size={12} /> Completed</Chip>
                         : <ArrowRight size={16} />}
                     </TileRow>
                     <TileMeta>{l.summary}</TileMeta>

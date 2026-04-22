@@ -10,14 +10,14 @@ import styles from './LessonView.module.css'
 export function LessonView() {
   const { lessonId = '' } = useParams()
   const nav = useNavigate()
-  const [lesson, setLesson] = useState<Lesson | null>(null)
+  const [lesson, setLesson] = useState<Lesson | null | undefined>(undefined)
   const [progress, setProgress] = useState<Progress | null>(null)
   const [topicQuiz, setTopicQuiz] = useState<Quiz | null>(null)
 
   useEffect(() => {
     ;(async () => {
       const l = await repo.getLesson(lessonId)
-      if (!l) return
+      if (!l) { setLesson(null); return }
       setLesson(l)
       const [p, qs] = await Promise.all([
         repo.getProgress(l.id),
@@ -28,7 +28,20 @@ export function LessonView() {
     })()
   }, [lessonId])
 
-  if (!lesson) return <div className="page" />
+  if (lesson === undefined) return <div className="page" />
+  if (lesson === null) {
+    return (
+      <div className="page">
+        <Link to="/learn" style={{
+          display: 'inline-flex', alignItems: 'center', gap: 4,
+          fontSize: 'var(--text-sm)', color: 'var(--ink-3)', marginBottom: 'var(--space-4)',
+        }}>
+          <ArrowLeft size={14} /> Back to Learn
+        </Link>
+        <PageHeader eyebrow="Lesson" title="Lesson not found" subtitle="This lesson may have been removed or the link is out of date." />
+      </div>
+    )
+  }
 
   const done = !!progress?.completedAt
 
@@ -52,7 +65,7 @@ export function LessonView() {
         eyebrow={`Lesson · ${lesson.minutes} min`}
         title={lesson.title}
         subtitle={lesson.summary}
-        right={done ? <Chip variant="mastery"><CircleCheckBig size={12} /> Complete</Chip> : undefined}
+        right={done ? <Chip variant="mastery"><CircleCheckBig size={12} /> Completed</Chip> : undefined}
       />
 
       <article className={styles.article}>

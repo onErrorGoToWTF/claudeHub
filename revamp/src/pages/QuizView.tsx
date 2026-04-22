@@ -5,14 +5,14 @@ import { ArrowLeft, Sparkles } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Quiz } from '../db/types'
 import { Button, PageHeader, ProgressBar } from '../ui'
-import { PASS_THRESHOLD } from '../lib/mastery'
+import { PASS_THRESHOLD, MASTERY_LABEL, masteryStatus } from '../lib/mastery'
 import styles from './QuizView.module.css'
 
 type Phase = 'answering' | 'done'
 
 export function QuizView() {
   const { quizId = '' } = useParams()
-  const [quiz, setQuiz] = useState<Quiz | null>(null)
+  const [quiz, setQuiz] = useState<Quiz | null | undefined>(undefined)
   const [i, setI] = useState(0)
   const [picked, setPicked] = useState<number | null>(null)
   const [phase, setPhase] = useState<Phase>('answering')
@@ -40,7 +40,20 @@ export function QuizView() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [q, phase, i, correct, picked])
 
-  if (!quiz) return <div className="page" />
+  if (quiz === undefined) return <div className="page" />
+  if (quiz === null) {
+    return (
+      <div className="page">
+        <Link to="/learn" style={{
+          display: 'inline-flex', alignItems: 'center', gap: 4,
+          fontSize: 'var(--text-sm)', color: 'var(--ink-3)', marginBottom: 'var(--space-4)',
+        }}>
+          <ArrowLeft size={14} /> Back to Learn
+        </Link>
+        <PageHeader eyebrow="Quiz" title="Quiz not found" subtitle="This quiz may have been removed or the link is out of date." />
+      </div>
+    )
+  }
   if (quiz.questions.length === 0) {
     return (
       <div className="page">
@@ -97,7 +110,7 @@ export function QuizView() {
           </div>
           {passed && (
             <div className={styles.masteryPing}>
-              <Sparkles size={14} /> Mastery updated
+              <Sparkles size={14} /> {MASTERY_LABEL[masteryStatus(score)]}
             </div>
           )}
         </div>

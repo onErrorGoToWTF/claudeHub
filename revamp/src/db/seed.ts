@@ -10,16 +10,16 @@ import { deriveLibraryAudience } from '../lib/audience'
 const tracks: Track[] = [
   { id: 'foundations', order: 1, title: 'AI Foundations',
     summary: 'How modern AI models work, from tokens to transformers.',
-    audience: ['student', 'office', 'dev'] },
+    audience: ['student', 'office', 'media', 'vibe', 'dev'] },
   { id: 'prompt-eng', order: 2, title: 'Prompt Engineering',
     summary: 'Get precise, reliable output from any frontier model.',
-    audience: ['student', 'office', 'dev'] },
+    audience: ['student', 'office', 'media', 'vibe', 'dev'] },
   { id: 'agents',     order: 3, title: 'Agents & Tool Use',
     summary: 'Give models hands: tool calls, memory, autonomous loops.',
-    audience: ['dev'] },
+    audience: ['vibe', 'dev'] },
   { id: 'frontend-ai', order: 4, title: 'AI Frontend',
     summary: 'Ship polished interfaces for AI products (streaming, glass UI, motion).',
-    audience: ['dev'] },
+    audience: ['vibe', 'dev'] },
 ]
 
 const topics: Topic[] = [

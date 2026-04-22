@@ -29,14 +29,16 @@ const PATHWAY_BLURBS: Record<UserPathway, string> = {
   all:     "I'm not sure yet — show me everything.",
   student: 'Learning AI literacy from the ground up.',
   office:  'Using AI as a working partner — no coding.',
+  media:   'Generating images, video, voice, audio with AI.',
+  vibe:    'Shipping software with AI — I don\'t hand-write the code.',
   dev:     'Coding with AI — frameworks, SDKs, agents.',
 }
 
 const WORK_STYLE_OPTIONS: { id: WorkStyle; title: string; sub: string; pathways: UserPathway[] }[] = [
   { id: 'no_code',    title: 'No-code',    sub: 'Prompts, Projects, Artifacts — no terminal.',
-    pathways: ['office'] },
+    pathways: ['office', 'media'] },
   { id: 'vibe_code',  title: 'Vibe-code',  sub: 'I paste code snippets but don\'t really write them.',
-    pathways: ['office'] },
+    pathways: ['vibe'] },
   { id: 'engineer',   title: 'Engineer',   sub: 'General software engineer.',
     pathways: ['dev'] },
   { id: 'frontend',   title: 'Frontend',   sub: 'UIs, design systems, client-side state.',

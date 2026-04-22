@@ -7,6 +7,8 @@ export const PATHWAYS: { id: UserPathway; label: string; short: string }[] = [
   { id: 'all',     label: 'All pathways',   short: 'All' },
   { id: 'student', label: 'Student',        short: 'Student' },
   { id: 'office',  label: 'Office',         short: 'Office' },
+  { id: 'media',   label: 'Media creator',  short: 'Media' },
+  { id: 'vibe',    label: 'Vibe coder',     short: 'Vibe' },
   { id: 'dev',     label: 'Developer',      short: 'Dev' },
 ]
 
@@ -71,6 +73,8 @@ export function audienceBadge(p: UserPathway, audience?: Audience[]): Audience |
 export const AUDIENCE_LABEL: Record<Audience, string> = {
   student: 'Student',
   office:  'Office',
+  media:   'Media',
+  vibe:    'Vibe',
   dev:     'Dev',
 }
 
@@ -83,32 +87,37 @@ export function deriveLibraryAudience(item: LibraryItem): Audience[] {
   const has = (t: string) => tags.has(t)
 
   // Foundational references — relevant to everyone.
-  if (has('foundations') || has('reference')) return ['student', 'office', 'dev']
+  if (has('foundations') || has('reference')) return ['student', 'office', 'media', 'vibe', 'dev']
 
-  // Anything code-shaped → dev only.
-  if (cat === 'ide' || cat === 'framework') return ['dev']
-  if (has('coding') || has('cli') || has('sdk') || has('orm') || has('ssr') || has('react')
+  // IDEs + frameworks — building software; vibe coders use them too.
+  if (cat === 'ide' || cat === 'framework') return ['vibe', 'dev']
+
+  // Deep engineering tags — real dev only.
+  if (has('cli') || has('sdk') || has('orm') || has('ssr') || has('react')
       || has('routing') || has('language') || has('state') || has('build')
       || has('devops') || has('container') || has('vcs')) {
     return ['dev']
   }
+  // Generic "coding" tag — dev + vibe.
+  if (has('coding')) return ['vibe', 'dev']
 
-  // Creative / no-code surfaces — office + student.
-  if (has('image') || has('video') || has('voice') || has('audio') || has('automation')) {
-    return ['office', 'student']
+  // Image/video/voice/audio → media creators (primary) + office (decks, presentations).
+  if (has('image') || has('video') || has('voice') || has('audio')) {
+    return ['media', 'office']
   }
+  // Automation / no-code workflow tools → office + vibe.
+  if (has('automation')) return ['office', 'vibe']
 
-  // Frontier chat models + hosting the whole team sees — everyone.
-  if (cat === 'model' || has('chat')) return ['student', 'office', 'dev']
+  // Frontier chat models + generic chat — everyone.
+  if (cat === 'model' || has('chat')) return ['student', 'office', 'media', 'vibe', 'dev']
 
-  // Infra/hosting/db/services default to dev (they require code to use).
+  // Services — depends on shape.
   if (cat === 'service') {
-    if (has('hosting') || has('db') || has('vector') || has('edge') || has('infra')) return ['dev']
-    // generative services with no code path → creators
-    if (has('generative')) return ['office', 'student']
-    return ['dev']
+    if (has('hosting') || has('db') || has('vector') || has('edge') || has('infra')) return ['vibe', 'dev']
+    if (has('generative')) return ['media', 'office']
+    return ['vibe', 'dev']
   }
 
   // Generic tools — default visible to all so nothing disappears silently.
-  return ['student', 'office', 'dev']
+  return ['student', 'office', 'media', 'vibe', 'dev']
 }

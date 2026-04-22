@@ -12,9 +12,9 @@ import s from './Onboarding.module.css'
 
 const WORK_STYLE_OPTIONS: { id: WorkStyle; title: string; sub: string; pathways: UserPathway[] }[] = [
   { id: 'no_code',    title: 'No-code',    sub: 'Prompts, Projects, Artifacts — no terminal.',
-    pathways: ['office'] },
+    pathways: ['office', 'media'] },
   { id: 'vibe_code',  title: 'Vibe-code',  sub: 'I paste code snippets but don\'t really write them.',
-    pathways: ['office'] },
+    pathways: ['vibe'] },
   { id: 'engineer',   title: 'Engineer',   sub: 'General software engineer.',
     pathways: ['dev'] },
   { id: 'frontend',   title: 'Frontend',   sub: 'UIs, design systems, client-side state.',
