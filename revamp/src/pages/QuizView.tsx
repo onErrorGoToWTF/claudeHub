@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowLeft, Check, X, Sparkles } from 'lucide-react'
+import { ArrowLeft, Sparkles } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Quiz } from '../db/types'
 import { Button, PageHeader, ProgressBar } from '../ui'
 import styles from './QuizView.module.css'
 
-type Phase = 'answering' | 'feedback' | 'done'
+type Phase = 'answering' | 'done'
 
 export function QuizView() {
   const { quizId = '' } = useParams()
@@ -23,20 +23,15 @@ export function QuizView() {
   const total = quiz?.questions.length ?? 0
   const progress = useMemo(() => (total === 0 ? 0 : (phase === 'done' ? 1 : i / total)), [i, total, phase])
 
-  // Keyboard: 1-9 pick (no lock), Enter submit / advance
+  // Keyboard: 1-9 pick, Enter advance
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (!q) return
-      if (phase === 'answering') {
-        const n = parseInt(e.key, 10)
-        if (!isNaN(n) && n >= 1 && n <= q.choices.length) setPicked(n - 1)
-        else if ((e.key === 'Enter' || e.key === ' ') && picked !== null) {
-          e.preventDefault()
-          submit()
-        }
-      } else if (phase === 'feedback' && (e.key === 'Enter' || e.key === ' ')) {
+      if (!q || phase !== 'answering') return
+      const n = parseInt(e.key, 10)
+      if (!isNaN(n) && n >= 1 && n <= q.choices.length) setPicked(n - 1)
+      else if ((e.key === 'Enter' || e.key === ' ') && picked !== null) {
         e.preventDefault()
-        next()
+        advance()
       }
     }
     window.addEventListener('keydown', onKey)
@@ -51,22 +46,19 @@ export function QuizView() {
     setPicked(idx)
   }
 
-  function submit() {
-    if (phase !== 'answering' || picked === null) return
-    setPhase('feedback')
-    if (picked === q!.answerIdx) setCorrect(c => c + 1)
-  }
-
-  async function next() {
-    if (!quiz) return
+  async function advance() {
+    if (phase !== 'answering' || picked === null || !quiz) return
+    const wasCorrect = picked === q!.answerIdx
+    const nextCorrect = correct + (wasCorrect ? 1 : 0)
     if (i + 1 >= quiz.questions.length) {
-      const score = correct / quiz.questions.length
+      const score = nextCorrect / quiz.questions.length
       await repo.recordQuiz(quiz.id, quiz.topicId, score)
+      setCorrect(nextCorrect)
       setPhase('done')
     } else {
+      setCorrect(nextCorrect)
       setI(x => x + 1)
       setPicked(null)
-      setPhase('answering')
     }
   }
 
@@ -115,7 +107,7 @@ export function QuizView() {
 
       <AnimatePresence mode="wait">
         <motion.div
-          key={i + ':' + phase}
+          key={i}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
@@ -127,14 +119,7 @@ export function QuizView() {
           <div className={styles.choices} role="radiogroup">
             {q.choices.map((c, idx) => {
               const isPicked = picked === idx
-              const isAnswer = idx === q.answerIdx
-              const state =
-                phase === 'answering'
-                  ? (isPicked ? 'picked' : 'idle')
-                  : isPicked && isAnswer ? 'correct'
-                  : isPicked ? 'wrong'
-                  : isAnswer ? 'reveal'
-                  : 'dim'
+              const state = isPicked ? 'picked' : 'idle'
               return (
                 <button
                   key={idx}
@@ -144,51 +129,23 @@ export function QuizView() {
                   className={`${styles.choice} ${state !== 'idle' ? styles[`state_${state}`] : ''}`}
                   data-tappable="true"
                   onClick={() => select(idx)}
-                  disabled={phase !== 'answering'}
                 >
                   <span className={styles.dot} aria-hidden>
-                    {(state === 'picked' || state === 'correct' || state === 'wrong' || state === 'reveal')
-                      && <span className={styles.dotInner} />}
+                    {isPicked && <span className={styles.dotInner} />}
                   </span>
                   <span className={styles.choiceLabel}>{c}</span>
-                  {(state === 'correct' || state === 'reveal') && (
-                    <Check className={styles.trailIcon} size={16} strokeWidth={2.2} aria-hidden />
-                  )}
-                  {state === 'wrong' && (
-                    <X className={styles.trailIcon} size={16} strokeWidth={2.2} aria-hidden />
-                  )}
                 </button>
               )
             })}
           </div>
 
-          {phase === 'feedback' && (
-            <motion.div
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.22 }}
-              className={styles.explain}
-            >
-              {q.explain}
-            </motion.div>
-          )}
-
           <div className={styles.footer}>
             <span className={styles.footerHint}>
-              {phase === 'answering'
-                ? (picked === null ? 'Select an answer' : 'Change your mind, or submit')
-                : 'Press Enter to continue'}
+              {picked === null ? 'Select an answer' : 'Change your mind, or continue'}
             </span>
-            {phase === 'answering' && (
-              <button className={styles.secondaryBtn} onClick={submit} disabled={picked === null}>
-                Submit
-              </button>
-            )}
-            {phase === 'feedback' && (
-              <button className={styles.secondaryBtn} onClick={next}>
-                {i + 1 < total ? 'Next question' : 'See results'}
-              </button>
-            )}
+            <button className={styles.secondaryBtn} onClick={advance} disabled={picked === null}>
+              {i + 1 < total ? 'Next' : 'Finish'}
+            </button>
           </div>
         </motion.div>
       </AnimatePresence>
