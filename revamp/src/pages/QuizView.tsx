@@ -1,20 +1,58 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowLeft, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowDown, ArrowUp, Sparkles } from 'lucide-react'
 import { repo } from '../db/repo'
-import type { Quiz } from '../db/types'
+import type {
+  Quiz,
+  QuizQuestion,
+  OrderedStepsQuestion,
+  CodeTypingQuestion,
+  ShortAnswerQuestion,
+  MCQQuestion,
+} from '../db/types'
 import { Button, PageHeader, ProgressBar } from '../ui'
 import { PASS_THRESHOLD, MASTERY_LABEL, masteryStatus } from '../lib/mastery'
+import { gradeQuestion, isAnswerable, questionKind } from '../lib/quizGrading'
 import styles from './QuizView.module.css'
 
 type Phase = 'answering' | 'done'
+
+/** Shuffle an array deterministically-ish (Fisher–Yates with Math.random). */
+function shuffled<T>(arr: T[]): T[] {
+  const out = arr.slice()
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[out[i], out[j]] = [out[j], out[i]]
+  }
+  return out
+}
+
+/** Initial draft answer for a question (shape depends on kind). */
+function initialAnswer(q: QuizQuestion): unknown {
+  const kind = questionKind(q)
+  if (kind === 'mcq') return null
+  if (kind === 'ordered-steps') {
+    const os = q as OrderedStepsQuestion
+    // Present steps in a shuffled order; don't accidentally hand the user the answer.
+    const indices = os.steps.map((_, i) => i)
+    let next = shuffled(indices)
+    // Guard: if by chance we shuffled into the correct order, swap the first two.
+    if (next.length >= 2 && next.every((v, i) => v === os.correctOrder[i])) {
+      ;[next[0], next[1]] = [next[1], next[0]]
+    }
+    return next
+  }
+  if (kind === 'code-typing') return ''
+  if (kind === 'short-answer') return ''
+  return null
+}
 
 export function QuizView() {
   const { quizId = '' } = useParams()
   const [quiz, setQuiz] = useState<Quiz | null | undefined>(undefined)
   const [i, setI] = useState(0)
-  const [picked, setPicked] = useState<number | null>(null)
+  const [answer, setAnswer] = useState<unknown>(null)
   const [phase, setPhase] = useState<Phase>('answering')
   const [correct, setCorrect] = useState(0)
 
@@ -22,15 +60,35 @@ export function QuizView() {
 
   const q = quiz?.questions[i]
   const total = quiz?.questions.length ?? 0
-  const progress = useMemo(() => (total === 0 ? 0 : (phase === 'done' ? 1 : i / total)), [i, total, phase])
+  const progress = useMemo(
+    () => (total === 0 ? 0 : (phase === 'done' ? 1 : i / total)),
+    [i, total, phase],
+  )
 
-  // Keyboard: 1-9 pick, Enter advance
+  // Reset the draft answer whenever the current question changes.
+  useEffect(() => {
+    if (q) setAnswer(initialAnswer(q))
+  }, [q])
+
+  const answerable = q ? isAnswerable(q, answer) : false
+
+  // Keyboard: Enter advances when answerable. 1–9 picks MCQ choice.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (!q || phase !== 'answering') return
-      const n = parseInt(e.key, 10)
-      if (!isNaN(n) && n >= 1 && n <= q.choices.length) setPicked(n - 1)
-      else if ((e.key === 'Enter' || e.key === ' ') && picked !== null) {
+      // Don't hijack typing inside inputs/textareas.
+      const tgt = e.target as HTMLElement | null
+      const typing = tgt && (tgt.tagName === 'INPUT' || tgt.tagName === 'TEXTAREA' || tgt.isContentEditable)
+
+      const kind = questionKind(q)
+      if (kind === 'mcq' && !typing) {
+        const n = parseInt(e.key, 10)
+        if (!isNaN(n) && n >= 1 && n <= (q as MCQQuestion).choices.length) {
+          setAnswer(n - 1)
+          return
+        }
+      }
+      if (e.key === 'Enter' && !typing && answerable) {
         e.preventDefault()
         advance()
       }
@@ -38,7 +96,7 @@ export function QuizView() {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [q, phase, i, correct, picked])
+  }, [q, phase, answerable, answer])
 
   if (quiz === undefined) return <div className="page" />
   if (quiz === null) {
@@ -69,14 +127,10 @@ export function QuizView() {
   }
   if (!q) return <div className="page" />
 
-  function select(idx: number) {
-    if (phase !== 'answering') return
-    setPicked(idx)
-  }
-
   async function advance() {
-    if (phase !== 'answering' || picked === null || !quiz) return
-    const wasCorrect = picked === q!.answerIdx
+    if (phase !== 'answering' || !quiz || !q) return
+    if (!isAnswerable(q, answer)) return
+    const wasCorrect = gradeQuestion(q, answer)
     const nextCorrect = correct + (wasCorrect ? 1 : 0)
     if (i + 1 >= quiz.questions.length) {
       const score = nextCorrect / quiz.questions.length
@@ -86,7 +140,6 @@ export function QuizView() {
     } else {
       setCorrect(nextCorrect)
       setI(x => x + 1)
-      setPicked(null)
     }
   }
 
@@ -144,39 +197,182 @@ export function QuizView() {
         >
           <div className={styles.prompt}>{q.prompt}</div>
 
-          <div className={styles.choices} role="radiogroup">
-            {q.choices.map((c, idx) => {
-              const isPicked = picked === idx
-              const state = isPicked ? 'picked' : 'idle'
-              return (
-                <button
-                  key={idx}
-                  type="button"
-                  role="radio"
-                  aria-checked={isPicked}
-                  className={`${styles.choice} ${state !== 'idle' ? styles[`state_${state}`] : ''}`}
-                  data-tappable="true"
-                  onClick={() => select(idx)}
-                >
-                  <span className={styles.dot} aria-hidden>
-                    {isPicked && <span className={styles.dotInner} />}
-                  </span>
-                  <span className={styles.choiceLabel}>{c}</span>
-                </button>
-              )
-            })}
-          </div>
+          <QuestionBody q={q} answer={answer} onChange={setAnswer} />
 
           <div className={styles.footer}>
-            <span className={styles.footerHint}>
-              {picked === null ? 'Select an answer' : 'Change your mind, or continue'}
-            </span>
-            <button className={styles.secondaryBtn} onClick={advance} disabled={picked === null}>
+            <span className={styles.footerHint}>{hintFor(q, answerable)}</span>
+            <button className={styles.secondaryBtn} onClick={advance} disabled={!answerable}>
               {i + 1 < total ? 'Next' : 'Finish'}
             </button>
           </div>
         </motion.div>
       </AnimatePresence>
+    </div>
+  )
+}
+
+function hintFor(q: QuizQuestion, answerable: boolean): string {
+  const kind = questionKind(q)
+  if (!answerable) {
+    if (kind === 'mcq') return 'Select an answer'
+    if (kind === 'ordered-steps') return 'Arrange the steps'
+    if (kind === 'code-typing') return 'Type your answer'
+    if (kind === 'short-answer') return 'Type your answer'
+  }
+  return 'Change your mind, or continue'
+}
+
+function QuestionBody({
+  q, answer, onChange,
+}: { q: QuizQuestion; answer: unknown; onChange: (next: unknown) => void }) {
+  const kind = questionKind(q)
+  if (kind === 'mcq') return <MCQBody q={q as MCQQuestion} picked={typeof answer === 'number' ? answer : null} onPick={onChange} />
+  if (kind === 'ordered-steps') return <OrderedStepsBody q={q as OrderedStepsQuestion} order={Array.isArray(answer) ? (answer as number[]) : []} onChange={(ord) => onChange(ord)} />
+  if (kind === 'code-typing') return <CodeTypingBody q={q as CodeTypingQuestion} value={typeof answer === 'string' ? answer : ''} onChange={(v) => onChange(v)} />
+  if (kind === 'short-answer') return <ShortAnswerBody q={q as ShortAnswerQuestion} value={typeof answer === 'string' ? answer : ''} onChange={(v) => onChange(v)} />
+  return null
+}
+
+// ---------- MCQ ----------
+function MCQBody({ q, picked, onPick }: { q: MCQQuestion; picked: number | null; onPick: (idx: number) => void }) {
+  return (
+    <div className={styles.choices} role="radiogroup">
+      {q.choices.map((c, idx) => {
+        const isPicked = picked === idx
+        return (
+          <button
+            key={idx}
+            type="button"
+            role="radio"
+            aria-checked={isPicked}
+            className={`${styles.choice} ${isPicked ? styles.state_picked : ''}`}
+            data-tappable="true"
+            onClick={() => onPick(idx)}
+          >
+            <span className={styles.dot} aria-hidden>
+              {isPicked && <span className={styles.dotInner} />}
+            </span>
+            <span className={styles.choiceLabel}>{c}</span>
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+// ---------- Ordered steps ----------
+function OrderedStepsBody({
+  q, order, onChange,
+}: { q: OrderedStepsQuestion; order: number[]; onChange: (next: number[]) => void }) {
+  const listRef = useRef<HTMLOListElement | null>(null)
+
+  function move(fromPos: number, delta: number) {
+    const toPos = fromPos + delta
+    if (toPos < 0 || toPos >= order.length) return
+    const next = order.slice()
+    ;[next[fromPos], next[toPos]] = [next[toPos], next[fromPos]]
+    onChange(next)
+    // Preserve focus on the moved row.
+    requestAnimationFrame(() => {
+      const el = listRef.current?.querySelector<HTMLElement>(`[data-step-pos="${toPos}"]`)
+      el?.focus()
+    })
+  }
+
+  return (
+    <ol ref={listRef} className={styles.stepsList} aria-label="Ordered steps — use Up/Down arrows on a step to reorder">
+      {order.map((stepIdx, pos) => {
+        const text = q.steps[stepIdx]
+        return (
+          <li key={stepIdx} className={styles.stepRow}>
+            <span className={styles.stepIndex} aria-hidden>{pos + 1}</span>
+            <span
+              className={styles.stepText}
+              tabIndex={0}
+              role="button"
+              aria-label={`Step ${pos + 1} of ${order.length}: ${text}. Press Up or Down to reorder.`}
+              data-step-pos={pos}
+              onKeyDown={(e) => {
+                if (e.key === 'ArrowUp') { e.preventDefault(); move(pos, -1) }
+                else if (e.key === 'ArrowDown') { e.preventDefault(); move(pos, +1) }
+              }}
+            >
+              {text}
+            </span>
+            <span className={styles.stepControls}>
+              <button
+                type="button"
+                className={styles.stepBtn}
+                aria-label={`Move step ${pos + 1} up`}
+                onClick={() => move(pos, -1)}
+                disabled={pos === 0}
+              >
+                <ArrowUp size={14} />
+              </button>
+              <button
+                type="button"
+                className={styles.stepBtn}
+                aria-label={`Move step ${pos + 1} down`}
+                onClick={() => move(pos, +1)}
+                disabled={pos === order.length - 1}
+              >
+                <ArrowDown size={14} />
+              </button>
+            </span>
+          </li>
+        )
+      })}
+    </ol>
+  )
+}
+
+// ---------- Code typing ----------
+function CodeTypingBody({
+  q, value, onChange,
+}: { q: CodeTypingQuestion; value: string; onChange: (v: string) => void }) {
+  const parts = q.code.split('{{blank}}')
+  const before = parts[0] ?? ''
+  const after = parts.slice(1).join('{{blank}}')
+  return (
+    <div className={styles.codeBlock}>
+      <pre className={styles.codePre}>
+        <code>
+          {before}
+          <input
+            className={styles.codeInput}
+            type="text"
+            value={value}
+            spellCheck={false}
+            autoCapitalize="off"
+            autoCorrect="off"
+            aria-label="Fill in the blank"
+            placeholder="…"
+            onChange={(e) => onChange(e.target.value)}
+          />
+          {after}
+        </code>
+      </pre>
+    </div>
+  )
+}
+
+// ---------- Short answer ----------
+function ShortAnswerBody({
+  q, value, onChange,
+}: { q: ShortAnswerQuestion; value: string; onChange: (v: string) => void }) {
+  return (
+    <div className={styles.shortWrap}>
+      <input
+        className={styles.shortInput}
+        type="text"
+        value={value}
+        spellCheck={false}
+        autoCapitalize="off"
+        autoCorrect="off"
+        placeholder={q.placeholder ?? 'Your answer'}
+        aria-label="Short answer"
+        onChange={(e) => onChange(e.target.value)}
+      />
     </div>
   )
 }

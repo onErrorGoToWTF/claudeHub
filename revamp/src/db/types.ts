@@ -39,13 +39,61 @@ export interface Lesson {
   order: number
 }
 
-export interface QuizQuestion {
+/** Multiple-choice. Original question shape; `kind` defaults to 'mcq' if missing. */
+export interface MCQQuestion {
+  kind?: 'mcq'
   id: ID
   prompt: string
   choices: string[]
   answerIdx: number
   explain?: string
 }
+
+/** Drag-to-order. User reorders `steps` to match `correctOrder` (an array of
+ *  indices into `steps` in the order they should appear). Pass = exact match. */
+export interface OrderedStepsQuestion {
+  kind: 'ordered-steps'
+  id: ID
+  prompt: string
+  steps: string[]
+  /** Indices into `steps` in the correct final order. */
+  correctOrder: number[]
+  explain?: string
+}
+
+/** Fill-in-the-blank. `code` contains `{{blank}}`; user types; pass = string
+ *  match after trimming and collapsing internal whitespace. Case-sensitive
+ *  unless `caseInsensitive` is true. */
+export interface CodeTypingQuestion {
+  kind: 'code-typing'
+  id: ID
+  prompt: string
+  /** Pre-filled code with `{{blank}}` where the user types. */
+  code: string
+  expected: string
+  caseInsensitive?: boolean
+  /** Optional language hint for syntax highlighting (e.g., 'ts', 'py'). */
+  language?: string
+  explain?: string
+}
+
+/** Free-text short answer. Either `expected` (case-insensitive equality after
+ *  trim) OR `pattern` (regex matched with flag 'i'). `pattern` wins if both. */
+export interface ShortAnswerQuestion {
+  kind: 'short-answer'
+  id: ID
+  prompt: string
+  expected?: string
+  pattern?: string
+  placeholder?: string
+  explain?: string
+}
+
+export type QuizQuestion =
+  | MCQQuestion
+  | OrderedStepsQuestion
+  | CodeTypingQuestion
+  | ShortAnswerQuestion
 
 export interface Quiz {
   id: ID

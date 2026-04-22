@@ -11,6 +11,7 @@ Running ledger. Rehydrate from this after context compaction.
 
 ## Shipped (most recent on top)
 
+- **Three new quiz question types (Chunk B, 2026-04-22)** — `QuizQuestion` is now a discriminated union on `kind`: `'mcq'` (default, legacy rows tolerated), `'ordered-steps'` (drag/reorder, exact-match scoring), `'code-typing'` (fill-in-the-blank with `{{blank}}` marker, whitespace-collapsed string match, optional `caseInsensitive`), `'short-answer'` (free text; `expected` for case-insensitive equality OR `pattern` for regex with flag `i`; `pattern` wins). New `src/lib/quizGrading.ts` centralizes `gradeQuestion` + `isAnswerable` + `questionKind`. `QuizView.tsx` rewritten around a `QuestionBody` dispatcher — pick/advance/end-only-feedback flow preserved, keyboard 1–9 still picks MCQ, Enter advances when answerable and input focus is not on a typable field. Ordered-steps rows are keyboard-reorderable (Up/Down on the focused step, plus explicit up/down buttons). Seeded examples: `q.tokens.5` ordered-steps (prompt → token pipeline), `q.tokens.6` code-typing (`max_tokens` JSON blank), `q.tokens.7` short-answer (regex `^tokens?$`). Existing four MCQ rows migrated to explicit `kind: 'mcq'`. Grading is scored in-UI and passed as a fraction to `repo.recordQuiz` (contract unchanged).
 - **5-pathway expansion + audit cleanup (Chunk A, 2026-04-22)** — `Audience` is now `student | office | media | vibe | dev`, ordered by ascending code involvement. Labels: Student / Office / Media creator / Vibe coder / Developer. `deriveLibraryAudience` reclassified: IDE/framework → `vibe+dev`; image/video/voice/audio → `media+office`; automation → `office+vibe`; deep-eng tags (cli/sdk/orm/ssr/react/routing/language/state/build/devops/container/vcs) stay `dev`-only; chat/model/foundations → everyone. Onboarding + Settings work-style pathway tags updated (`no_code` → office+media; `vibe_code` → vibe). Seed track audiences extended. `PATHWAY_BLURBS` gained vibe + media entries. **Scenario-audit items closed:** #3 quiz-pass flash now reads dynamic bucket name (`Completed` or `Mastered`) via `MASTERY_LABEL[masteryStatus(score)]`; #4 lesson + topic done-chip unified to "Completed" (project-status "Done" left alone — Linear vocab); #5 enum verified already aligned post-grading-overhaul; #11 friendly "not found" fallbacks on LessonView + QuizView when `repo.getLesson`/`repo.getQuiz` return null (previously blank page).
 - **Grading overhaul + quiz flow refinements** — 4 status buckets (Not started / In progress / Completed / Mastered); PASS_THRESHOLD=0.50, MASTERY_THRESHOLD=0.90, with 0.80 reserved as the "true understanding" bar for the future report card. Letter-grade (F/D/C/B/A/A+) and accolade-tier helpers in `src/lib/mastery.ts`. Retake now overwrites prior score (latest-attempt-wins, Khan-style). Quiz flow removed mid-question feedback — pick, advance, see result only at end. Zero-question quiz shows a friendly "unavailable" message instead of a blank page. Retake affordance surfaces as a chip on TopicDetail (not on the result screen — extra step by design).
 - **Project intake ends with Save as plan / Start now** — dev + office intakes let the user pick initial status. Status stays user-controlled, no auto-promote; editable any direction.
@@ -55,25 +56,6 @@ Running ledger. Rehydrate from this after context compaction.
 - **Content depth:** "solid first-pass to full polish depending on topic weight." Target ~5 new topics *total* across tracks, with full lessons + full quizzes. Short where appropriate, deep where warranted. Quizzes usually 5–10 questions; heavy topics can go higher.
 - **3 new quiz question types (Chunk B):** ordered-steps (drag-to-order), code-typing (fill-in-the-blank, string-match with whitespace tolerance), short-answer (free text, case-insensitive substring or regex match per question). All in addition to the existing multiple-choice. Each new question type gets ≥1 seeded example in an existing quiz so the UI is exercised.
 - **Autonomous execution style:** no pausing on individual edits; batch related edits into single commits; use milestone-chunk pauses only between chunks A–F. No asking the user to pick between options mid-chunk — the spec below is authoritative.
-
----
-
-#### Chunk B — three new quiz question types
-
-**Scope:** extend the Quiz schema + UI to support three new question shapes alongside multiple-choice:
-1. **ordered-steps** — prompt + array of steps in the correct order; user drags to reorder; pass requires exact order.
-2. **code-typing** — prompt + pre-filled code with a `{{blank}}` marker + expected string; user types; pass = expected string match after trimming + collapsing internal whitespace; case-sensitive by default, with a `caseInsensitive?: boolean` opt-in per question.
-3. **short-answer** — prompt + either `expected: string` (case-insensitive equality after trim) OR `pattern: string` (regex, flags `i`) — question declares which. If both present, `pattern` wins.
-
-**Schema:** in `src/db/types.ts`, `QuizQuestion` becomes a discriminated union on a new `kind` field (default `"mcq"` for backwards-compat — migrate existing seed data to explicitly set `kind: "mcq"`). Keep `answerIdx` on `mcq`; add `correctOrder: number[]`, `steps: string[]`, `prompt` etc. per type. Update `repo.recordQuiz` to accept a per-question correctness array if needed; simplest is to score in the UI and pass the final fraction (as today).
-
-**UI:** extend `QuizView.tsx`. Each `kind` renders its own block inside the existing card. Keep the "pick → advance → see result at end" flow (no mid-question feedback). Keyboard: 1-9 stays for mcq; Enter always advances when the question's current state is "answerable."
-
-**Seed examples:** add one `ordered-steps`, one `code-typing`, one `short-answer` question to the existing polished quiz in `src/db/seed.ts` (t.tokens' quiz — extend, don't replace).
-
-**Accessibility:** drag-to-order must be keyboard-accessible (up/down arrows to reorder the focused step). Screen-reader labels on each step.
-
-**Out of scope:** randomization, partial credit, hints, timing.
 
 ---
 
