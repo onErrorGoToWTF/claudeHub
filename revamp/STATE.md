@@ -50,6 +50,7 @@ Running ledger. Rehydrate from this after context compaction.
   - **Dev debug panel.** Feature flags, fake-user switches, DB dump, reset buttons.
   - **Live theme tweaker.** Color picker that updates `--accent-base` / `--danger-base` / `--mastery-base` in the running app so design iteration doesn't require a deploy.
 - [ ] **YouTube API integration** — powers the admin-only browse / feed surface. Admin can search YouTube and see recent uploads from tracked channels without leaving the app, then trigger the pin-form or wishlist flow above. Needs interactive Google OAuth. Deferred until the manual video-ID-paste path in the admin pipeline is live and we feel the friction. Never exposed to non-admin users.
+- [ ] **User personalization controls** (not content authoring — just tweaks to how the user sees the app). In scope: per-item notes, reorder / hide-from-view elements on a page, user-owned pathways (custom pathways are already shipped), bookmarks. Admin-authored content remains the canonical source; these are overlays on top of it, stored per user. Touch later.
 - [ ] Project bootstrapper — scaffold files + run init commands from a project's stack pick.
 - [ ] Resume / public project-detail pages (the "site IS the resume" north star).
 
@@ -60,6 +61,7 @@ Running ledger. Rehydrate from this after context compaction.
 - Inventory dedicated page — schema ready, UI deferred.
 - Persona switcher — out of scope per user decision. A runtime picker to flip between "personas" is different from onboarding pathway templates (still Planned above); this line refers only to the former.
 - Claude API integration — **separate future project**, not a step in this build. Never propose as next-up.
+- User-authored content (lessons, quizzes, etc.) — depends on the separate Claude API project to handle the complex authoring assistance. Even once it lands, every user-authored piece goes through admin review before it's published. Out of scope for this build; captured so the path is known.
 
 ## How to preview locally
 
