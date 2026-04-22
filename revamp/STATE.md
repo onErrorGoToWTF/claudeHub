@@ -11,6 +11,11 @@ Running ledger. Rehydrate from this after context compaction.
 
 ## Shipped (most recent on top)
 
+- **Grading overhaul + quiz flow refinements** — 4 status buckets (Not started / In progress / Completed / Mastered); PASS_THRESHOLD=0.50, MASTERY_THRESHOLD=0.90, with 0.80 reserved as the "true understanding" bar for the future report card. Letter-grade (F/D/C/B/A/A+) and accolade-tier helpers in `src/lib/mastery.ts`. Retake now overwrites prior score (latest-attempt-wins, Khan-style). Quiz flow removed mid-question feedback — pick, advance, see result only at end. Zero-question quiz shows a friendly "unavailable" message instead of a blank page. Retake affordance surfaces as a chip on TopicDetail (not on the result screen — extra step by design).
+- **Project intake ends with Save as plan / Start now** — dev + office intakes let the user pick initial status. Status stays user-controlled, no auto-promote; editable any direction.
+- **Status colors + demo projects** — Backlog grey, Planned dim blue (mixed with white so warm canvas doesn't green-shift it), In progress accent, Completed green, Canceled red. Seed backfills 5 demo projects (one per status). Chip `muted` variant added.
+- **Dashboard minimal** — Library panel dropped (Activity feed + nav cover it); Activity feed dropped (too busy); Dashboard eyebrow/title dropped; just the two panels (Learn, Projects) with condensed one-line recent rows. Empty states keep the panel shape (reserved 66px). Learn recents dedupe by topic (lesson + quiz touches on the same topic collapse to one row linking to topic detail).
+- **Theme toggle moved to Settings → Appearance** — topbar reduced to brand + nav + search + account menu; account anchors top-right per convention.
 - **Library kind icons** — Wrench / FileText / BookOpen / Film replace the single-letter T/D/R/V badges next to each library row.
 - **Collapsible "Everything else"** — dev pathway gets the split but starts collapsed; student/office default expanded. `shouldCollapseRestByDefault` helper + new `ui/Disclosure` component.
 - **Pathway sorts, never filters** — the pivot from hard filter to soft sort. All content is always visible; matching content floats to the top under a "For you" band, rest sits below. Dev + All get one merged list (before the collapsible update, above). New helpers: `isPrimaryForPathway`, `splitByPathway`, `audienceBadge`. Inline `AudienceBadge` pill on every track / library row.
@@ -38,6 +43,12 @@ Running ledger. Rehydrate from this after context compaction.
 
 ### Active (next up)
 
+- [ ] **Scenario audit — resume here.** In-progress review of every create/modify/delete/bail path across Projects + Learn (requested 2026-04-22). Completed so far: (1) zero-question-quiz fallback shipped; (2) latest-attempt-wins retake logic + new grading thresholds shipped. Still pending from the audit:
+  - [ ] Issue #3 — stale "Mastery updated" flash on QuizView pass screen (`src/pages/QuizView.tsx` ~L93). Decide: change to "Completed" (matches new vocab) or keep "Mastery updated" (more accurate to what moves under the hood).
+  - [ ] Issue #4 — vocabulary drift: `TopicDetail.tsx` lesson chip says "Done", `LessonView.tsx` says "Complete", topic status says "Completed". Pick one canonical word and sweep.
+  - [ ] Issue #5 — `MasteryStatus` enum still names the top tier `mastered` while the UI label is "Completed" and the "Mastered" label applies only to the new A+ tier. Rename enum to align, or document why they diverge.
+  - [ ] Issue #11 — no error boundary when `repo.getQuiz` / `repo.getLesson` returns null; currently blank page. Add a friendly "not found" fallback like the zero-question case.
+  - Everything else from the audit either shipped or was classified as Linear-style intentional restraint (no unsaved-changes warning on intake back-out, no countdown on two-tap delete, reset-profile only wipes profile, pathway change doesn't notify). Leave those alone.
 - [ ] Extend Learn — more tracks + topics + authored lessons (currently 4 tracks, 9 topics, 1 polished lesson, 1 polished quiz). Authoring is external via Claude Code skills + manual commit to `src/db/seed*`.
 - [ ] **Tool-overview courses** — at least one basic overview course per popular workplace tool, focused on *how it integrates with AI*. Applies to dev pathway too — devs routinely under-cover the tools real workers use. Initial scope: Slack, Microsoft Teams, Zoom, GitHub, Miro, Service Cloud, ServiceNow, Zendesk, and the Microsoft ecosystem (Excel, Word, PowerPoint, Outlook, Copilot). Cross-link via shared tags today; `Track.library_item_ids?: ID[]` is the optional future addition if we want explicit relationships. Authored externally.
 
