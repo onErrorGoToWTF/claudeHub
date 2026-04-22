@@ -32,6 +32,10 @@ Running ledger. Rehydrate from this after context compaction.
 - [ ] Extend Learn — more tracks + topics + authored lessons (currently 4 tracks, 9 topics, 1 polished lesson, 1 polished quiz). Authoring is external via Claude Code skills + manual commit to `src/db/seed*`.
 
 ### Planned (later)
+- [ ] **Admin role + admin-only surfaces** (post-DB, owner-only). `user_profile.is_admin` (already in the schema draft) gates everything here. Never user-editable. Includes:
+  - **YouTube curation pipeline.** YouTube is a primary how-to / new-thing resource. Admin can pin any video to a related topic / track / tool / library item, or add it to a "course material" authoring queue with a note ("turn this into lesson + quiz"). Public users see pinned videos inline on the relevant surface; the queue is admin-only.
+  - **Dev debug panel.** Feature flags, fake-user switches, DB dump, reset buttons.
+  - **Live theme tweaker.** Color picker that updates `--accent-base` / `--danger-base` / `--mastery-base` in the running app so design iteration doesn't require a deploy.
 - [ ] Settings / profile edit page — today the profile is set once via `/onboarding`. Users will want a surface to revisit handle / pathway / work styles / devices / known topics without re-running the full flow. Small; likely `/settings` reusing the same form chunks.
 - [ ] **DB migration — Supabase (Postgres + auth + RLS + TOTP MFA)**. ~1 month out. Schema drafted in `revamp/docs/supabase-schema.sql` + visualized in `revamp/docs/supabase-schema.html`. Fresh-start model: no IndexedDB → Supabase import, every user starts clean (users have been warned). Multi-user from day one (~5 people), RLS-isolated; friend-view scaffolding (visibility column + friendships table) is in the schema but deferred. Signup gating via `signup_allowlist` table + BEFORE INSERT trigger on `auth.users`. Decisions locked: handle + citext for public URLs, UUID for new user-minted IDs (legacy `p.xxx` still accepted), RESTRICT cascades on content tables, TOTP MFA with 7-day grace.
 - [ ] Authoring flow in-app — create lessons / quizzes / library notes (today authored externally). Likely post-DB.

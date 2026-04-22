@@ -217,6 +217,7 @@ erDiagram
         <table class="cols">
           <tr><td class="col-name">user_id</td><td class="col-type">uuid</td><td class="col-flags"><span class="pill pk">PK</span> <span class="pill fk">FK → <a href="#t-auth_users">auth.users.id</a></span></td></tr>
           <tr><td class="col-name">handle</td><td class="col-type">citext</td><td class="col-flags">unique, case-insensitive — public URL slug</td></tr>
+          <tr><td class="col-name">is_admin</td><td class="col-type">boolean</td><td class="col-flags">gates admin-only surfaces; service-role write only</td></tr>
           <tr><td class="col-name">pathway</td><td class="col-type">text</td><td class="col-flags">all | student | office | dev — default Learn filter</td></tr>
           <tr><td class="col-name">work_styles</td><td class="col-type">text[]</td><td class="col-flags">tag set: no_code / vibe_code / engineer / frontend / backend / fullstack / research / …</td></tr>
           <tr><td class="col-name">devices</td><td class="col-type">text[]</td><td class="col-flags">mac / windows / linux / iphone / android / ipad</td></tr>

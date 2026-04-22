@@ -28,6 +28,11 @@ create table if not exists public.user_profile (
   -- Keeps auth.users.id out of URLs so you can rename yourself without
   -- breaking any relationship (all FKs are on user_id, never handle).
   handle     citext unique,
+  -- is_admin: gates the admin-only surfaces (YouTube video pinning to
+  -- topics/courses/tools, authoring queue, dev debug panel, theme
+  -- tweaker, etc.). Set only via the Supabase dashboard / service role
+  -- — user-editable RLS policies MUST never include this column.
+  is_admin   boolean not null default false,
   pathway    text not null default 'all' check (pathway in ('all','student','office','dev')),
   -- work_styles: permissive tag set. Users can select multiple
   -- ('no_code', 'vibe_code', 'engineer', 'frontend', 'backend', 'fullstack',
