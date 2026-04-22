@@ -1,8 +1,22 @@
 {
-  "generated_at": "2026-04-22T16:50:45.013Z",
+  "generated_at": "2026-04-22T18:55:06.160Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "81k Economics",
+        "url": "https://www.anthropic.com/research/81k-economics",
+        "source": "Anthropic Research",
+        "published": "2026-04-22T17:04:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Economic Index Survey Announcement",
+        "url": "https://www.anthropic.com/research/economic-index-survey-announcement",
+        "source": "Anthropic Research",
+        "published": "2026-04-22T17:01:04.000Z",
+        "summary": ""
+      },
       {
         "title": "Anthropic Amazon Compute",
         "url": "https://www.anthropic.com/news/anthropic-amazon-compute",
@@ -128,23 +142,100 @@
         "source": "Anthropic Research",
         "published": "2026-03-26T11:07:12.000Z",
         "summary": ""
-      },
-      {
-        "title": "Project Vend 2",
-        "url": "https://www.anthropic.com/research/project-vend-2",
-        "source": "Anthropic Research",
-        "published": "2026-03-26T11:07:02.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Mozilla Firefox Security",
-        "url": "https://www.anthropic.com/news/mozilla-firefox-security",
-        "source": "Anthropic",
-        "published": "2026-03-26T11:05:56.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic tested removing Claude Code from the Pro plan",
+        "url": "https://arstechnica.com/ai/2026/04/anthropic-tested-removing-claude-code-from-the-pro-plan/",
+        "source": "Ars Technica",
+        "published": "2026-04-22T18:34:16.000Z",
+        "summary": "Anthropic caused a stir among developers with what appeared to be a surprise change to its pricing plan: The company signaled that Claude Code, the popular agentic development tool, would no longer…"
+      },
+      {
+        "title": "Anthropic tested removing Claude Code from the Pro plan - Ars Technica",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPcDZZMHBKbTdEZDVWTHpLNFduZnZHSHR0RnJNdE1PT0Y4RWpMMW00RjN0Z1EwSE9WRXFHNEhEZ1V3bUNxdHhGbk5jRWR6aTNCcF9PSzBvdlhXd2FNT0QwUkwwUFBfLWxGdC1YcEgtcWxMTEliQ1YxOGRxTVhENUM5UG96WUtnMXgydXhmaHBFSDZ4dGR4OEE?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T18:34:16.000Z",
+        "summary": "Anthropic tested removing Claude Code from the Pro plan Ars Technica"
+      },
+      {
+        "title": "Discord-Linked Group Accessed Anthropic’s Claude Mythos AI in Vendor Breach - Hackread",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE81NEtrTnFyZ1M2ZmdEelkyV2dOczFvRVlwMDdsTTJNbWd3YU9ZVlk1WnlYa1p4R19EX21MdzJsbXFUaHdiSDFtcmFENjJHM3BkMElTWlhCbmpKTnAwVjVRVDhSTUo3VGl1cWpHeXlGNjVJeGdkNTVwZFVn?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T18:12:28.000Z",
+        "summary": "Discord-Linked Group Accessed Anthropic’s Claude Mythos AI in Vendor Breach Hackread"
+      },
+      {
+        "title": "Discord group says it accessed Claude Mythos by guessing location - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE96d0U4YUNPU0ZUYTNnZWo2bndLT1BELTl5MU4yUk9oMk5Vdm1ac3o4aDh5WmJYODR2aVZxLUFUSE1lWHctXzJDaEFqU0xIM3hRMVFXT002cGtmMVNhTFQ0bnNzalpOWWZmTE1ObDZOUXdMUUxvY0gwWm5HQm4?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T17:47:48.000Z",
+        "summary": "Discord group says it accessed Claude Mythos by guessing location Mashable"
+      },
+      {
+        "title": "Microsoft (MSFT) Stock Integrates Anthropic Claude Mythos Into Security Framework - CoinCentral",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPNTNWbmR5blZNYjlnbjF3Z255eWx3bGRWbEFhTFFXMDdGcmFHUmhvSXpqZ29oQnN6S3lRX1gtbmdIUEhDcGI2cU1TQUl2RXZId0llNHY1VThxVXJMYUJqeTZWaDNMSkZIYms0bzIxUXhPZGdXbjhqLW9WZ3hUbUF1ZUxJQTJLRzNRNkl2WXQwaG9Oa25PaUVVRHB4WUJCemc5ZEZOcEljYw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T17:28:36.000Z",
+        "summary": "Microsoft (MSFT) Stock Integrates Anthropic Claude Mythos Into Security Framework CoinCentral"
+      },
+      {
+        "title": "Microsoft to integrate Anthropic's Mythos into its security development program - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQVXhjQ2htNVUyLUp0c3AyUW8zclU2MTlpa2dDYXRxZkFocTB0T0ZGTHkzU3d4SFJEaTNjZjhkai1OMUxINnVkQXF1azFFMWIzaWJMMkxySWhwLUVCYUItUVNEV1FJUVZUU3R0M0RCb1hDV0swVm10czhRa2ROaVozUWgwd0QzdzNxYTQta0FZdlF4b0s1NmVVRmJncnVCSlgyaWxZdkdZZWgwU005SHptTERaTlRSVnRYaE1vei11SQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T17:25:02.000Z",
+        "summary": "Microsoft to integrate Anthropic's Mythos into its security development program Reuters"
+      },
+      {
+        "title": "Microsoft to integrate Anthropic’s Claude Mythos into security framework - Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQaWZNNVdKR05aVFUwNFNLVFhpTUZFaUVWQzJyZkhVS2ZwRktVVkFxRy15THozNFdVVnBUVWh6aHpOTkRxUm9pclJVWlZZNlhiMW56cFBtSURDUUxlUnVqSTlNcjE0cUVQcVdwb2RaT0V5WDBteU5xNDFKZk4zZ1pNV1FUYnNwODhFdmlpRFhXQVhIWVlCMlAzUHVxSkwwaHdfOUJaWVZZVFZBSXJIZnViYkdtNDktQlQzYVExTmlTOHJBWTFmMUVueHR1UUNiUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T17:10:54.000Z",
+        "summary": "Microsoft to integrate Anthropic’s Claude Mythos into security framework Investing.com"
+      },
+      {
+        "title": "Today Is the Day Anthropic Promised That Fully Autonomous Employees Would Be Tearing Through the Business World - Futurism",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSzVYY1ZYMXV4UE5KaWUxYjVKU2JsQmc2RnhmWXVfaEMtVDVhRnhiejQ0dG02TXdWM0QzQ1lpYWNYanhTSWdBc1F4aHJYV21xS2sxVkMycDZfaW9hZGRsLWRITXZvaTl3cC1UVV8yTzI0ZUZJRjF6UEYxMnVTWndlWg?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T17:03:20.000Z",
+        "summary": "Today Is the Day Anthropic Promised That Fully Autonomous Employees Would Be Tearing Through the Business World Futurism"
+      },
+      {
+        "title": "Anthropic’s Mythos rollout has missed America’s cybersecurity agency",
+        "url": "https://www.theverge.com/policy/916758/anthropic-mythos-preview-cisa-left-out",
+        "source": "The Verge",
+        "published": "2026-04-22T16:57:36.000Z",
+        "summary": "Several US federal agencies are taking up Anthropic's new cybersecurity model to find vulnerabilities, but one is reportedly not getting in on the action: the nation's central cybersecurity…"
+      },
+      {
+        "title": "Outsiders breached Anthropic's Claude Mythos same day 'potentially dangerous' AI model was revealed: report - New York Post",
+        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOVmhtTlNBYzZBcV9kZ0ZjbU16NEpCSXBBWVVZX2wzNlMtZnlDMVJfSHktTUdWS3ZoeDBLNXBuZWM1Um43Q0wweDFmMFNubzN1MnRWbS1VRWNHaENGbmZXUnVUYlA3N2dNdVJndXlTUXB3TTZTRHhqM3BnRVJEMTVMQWk1UmVidGRqNmREX2xtZ1REQUwtMENObDdXU3VxZjJxNG5hc1NPT0RJaGlfU3B6bDN2SXNJa1R2OEZMVmRKdzNiNGRFSHhvcjVCNnFua21hY2tWWkN2bGJsRHM?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T16:56:00.000Z",
+        "summary": "Outsiders breached Anthropic's Claude Mythos same day 'potentially dangerous' AI model was revealed: report New York Post"
+      },
+      {
+        "title": "Anthropic reportedly 'lost control' of its most dangerous AI model — and that should worry everyone - Tom's Guide",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVmhTUE84VlJDSWRWLWVrdExGX1NtaDQ2cDRQRDAxWUVhcU5BZ3dnMlVjUTFHQ3RDV1loMUg0dXNNRnVfcVBpTU5sZ09WWjFESzV3WTRLdUdhbDN5M3V1V1NDcmFlUTYtUlgxaFpiaktLTWticlUtNlNHVlN2UHZ0UFBqQldRU3ZCbWZBTHg4aGdOdjVnUmp4bWhhSE1DNzdOZHdHMWctR3NkU0MyLXAzOHdpTTRpN1VaSVQ5VkVhRmFaQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T16:15:15.000Z",
+        "summary": "Anthropic reportedly 'lost control' of its most dangerous AI model — and that should worry everyone Tom's Guide"
+      },
+      {
+        "title": "Anthropic’s Claude Code turns the AI coding assistant into a fully autonomous software engineer - Startup Fortune",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNLWJYR1hDOHFld2lOVFNERHhLQmxZb3UzZTBHV0c3Y0s3WE5udG9MNlRobTlmSU5VYmpnLXJWMG5GWjFDX3QxX0lDUW5EamRzcmtra29memVOdEw3V3NScmlwUDBtSnpYQll2eWtJcllGdWdvQW5IWUhVekxUWkp3eXJSZHdfOWVHVl95QXJfeHFqdURsT0NjQVEzUWhZTW5ucGhoOERTbkE4alhIbFVNRmk2VHJzZlF1S2hWWkRCZw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T16:13:47.000Z",
+        "summary": "Anthropic’s Claude Code turns the AI coding assistant into a fully autonomous software engineer Startup Fortune"
+      },
+      {
+        "title": "Anthropic Investigates Uninvited Access to Mythos AI Model - PYMNTS.com",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQOHFRMkltdHJZZXBzTWwwOURzaHRGWVRPem5NTU4xVXlfMG5kZU5ITy1qbHBzTnVZc1VxRmFXYnh4XzR1T1czWF9US1pocl9KSDB1NEw4TnFuOGhFVmtkeDRNN1FlSy0xTWtXS0lOU3p6Nnpfa0FWbk93U1BwTUxyYjFLbGZNZHFXeVEzdi1DeHNIUi1JaVg0cHJ0NGZ3cXJHczhwM0FWMA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T16:13:05.000Z",
+        "summary": "Anthropic Investigates Uninvited Access to Mythos AI Model PYMNTS.com"
+      },
       {
         "title": "Why Anthropic’s Mythos Is Sparking Global Alarm",
         "url": "https://www.bloomberg.com/news/articles/2026-04-22/mythos-why-anthropic-s-ai-model-is-sparking-global-alarm",
@@ -153,18 +244,81 @@
         "summary": "Anthropic PBC has said its new artificial intelligence tool, Mythos, is too powerful to release to the general public. The AI giant has described the model as so good at finding vulnerabilities in…"
       },
       {
-        "title": "China’s 360 Hunts Software Flaws With AI, Echoing Mythos",
-        "url": "https://www.bloomberg.com/news/articles/2026-04-22/china-s-360-hunts-software-flaws-with-ai-echoing-mythos",
-        "source": "Bloomberg",
-        "published": "2026-04-22T13:01:37.000Z",
-        "summary": "A large Chinese cybersecurity firm is using artificial intelligence to identify security vulnerabilities in widely used software applications, positioning itself as a competitor to Anthropic PBC,…"
+        "title": "Anthropic investigating possible breach of its Mythos AI model - CBS News",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBRNHQ5M3BReTJqMkRGMTlDZm5vYUlYSUlqZ3Z4UTdPZWxnbDdHcXBQNVJxMk1ickpMYkJ4MG8wSDBZV0VvWnVPbml1cTN0alB4dGl0NWdOdnMxem5tUkFUVy1DTmkxN2NJazZBeTJ5dzZHZzdoN1J6TdIBfkFVX3lxTFBDb1BkcHk5TnA4enhsVWtPYXA3UzhsN3gwNkhiYVRIcFQzci01c1h2a3R4VXdNLTh1UGNHemU0Nkp4U0Q5S3ZuakRQQ0xsQ0UxN2JvclFTV1NNcGxGT20ySk5MNmFBS3h5Nmw2Vk5PcDFyR3UtTGs4emRVYVZPQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T16:05:29.000Z",
+        "summary": "Anthropic investigating possible breach of its Mythos AI model CBS News"
       },
       {
-        "title": "Google Releases New AI Agents to Challenge OpenAI and Anthropic",
-        "url": "https://www.bloomberg.com/news/articles/2026-04-22/google-releases-new-ai-agents-to-challenge-openai-and-anthropic",
-        "source": "Bloomberg",
-        "published": "2026-04-22T12:00:10.000Z",
-        "summary": "Alphabet Inc.’s Google unveiled a slew of tools to build AI agents aimed at helping companies automate tasks in the tech giant’s latest attempt to take on OpenAI and Anthropic PBC in the burgeoning…"
+        "title": "Anthropic investigating report of 'unauthorized access' of powerful Mythos model - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNNkx3RUxrNTlrSHFjR1BmQjN4UmlFTVN4Vlg0eVZob3BRTURzNmF6bDFCLTB2dE9VQTM4Zk5DSHhtSHNua2ZUc1NlWm1lc3RIbUN5SG05U3RfNXBIZHhOTW04TGJkamdORTh0RlRVY01ycTVwVjd1ZjJ2WHF2Rm16QTZXNWxReFFTTU5qQVdrLVg1VUZwTHNoYnliREx3OE1VSFc2cEJxS1VGZFp1YWJJRm1WNHpZV0VZaUlPT3dzakFGRGhNVXE5SHNROXFzU3BhOU9JaWo1dHQzTS1KY09Z?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T16:03:12.000Z",
+        "summary": "Anthropic investigating report of 'unauthorized access' of powerful Mythos model Yahoo Finance"
+      },
+      {
+        "title": "Amazon expands Anthropic partnership with $100B cloud deal and $25B investment - 11Alive.com",
+        "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPRU1NbjA5QnBGM2tNYm1kZ0pqVmNXR1dTclRQWlI1d1htLUN1Tk1CbHdoYXk1QWNiWGtNVDh0clNpbFFvMzNJY1BVRGZYWTRsSHV4OGswSWFqQ1ZZaHgxLS1Ob25aTnA0TjZxdGk1dEEybkRjMER4TDRTYVVRakE3eThuZ05RcnlEdmxJR0ZMV09GLXRpcGpMb1FvVThOeG9XS0M1UGpMd1VlbWNoaEtkNmx4MmZfMWVNRmlMSWhlQk93Qmd2YTRUQU91MWJQUmR4Wlp2Qi1VNGZ2c0ZTdGhJNjAyN2VLZl9UMzBrM2RFcGo3OHBmRkhnUFhCTQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T15:44:00.000Z",
+        "summary": "Amazon expands Anthropic partnership with $100B cloud deal and $25B investment 11Alive.com"
+      },
+      {
+        "title": "Anthropic AI Finds 271 Vulnerabilities in Firefox - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOWTVyc0dadUdvVm9RX1NkTTJhM20xYjN4NjNUZGtwSFJ3blFnVHpoOFBuYjluOUtydHJoVXF3S3MtanptZTYwQ0RoYU1Eb1FjbVNXMWZ0bWlLc0phNnpTWWMxRy1ZOHVDNkRaUFdtUXQxaVd5S2Fwel9jcVZiR3NnSVUyeU1sQVpIZkNDdDJ2TU5lemdQYnc?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T15:35:17.000Z",
+        "summary": "Anthropic AI Finds 271 Vulnerabilities in Firefox Let's Data Science"
+      },
+      {
+        "title": "Anthropic's Claude Mythos AI model has reportedly been accessed by unauthorized users - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNUTRLLU9Lb2RTSGItMlRsbHpWdG9MX0RrWEdudGlINkd1RVE1a3lZdl9ZMTEwUTBodENDcXY5cVVqcmRqS1o3dnFiaHVKZ0ZicG93YWVMSzM5RGlxbkxyUDItcWhIN1J0ZFBwTE9RTWI4TlA5UFZ1NW5OdnFvcloyeTIxVEhtRGlSbkdOcndNdzc3ZFF0T2FTbnIzTWN3QmdvRXpqQTZwNUU0SGN4Vnpld08xQUpsYlVob0tTaU1tWDBtLS02aXlIYmZYYmZiVGd0bXhHb3M3VQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T15:11:17.000Z",
+        "summary": "Anthropic's Claude Mythos AI model has reportedly been accessed by unauthorized users Yahoo Tech"
+      },
+      {
+        "title": "Anthropic considers pulling Claude Code from its $20 Pro plan - PCWorld",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdnIzdy02X0YzVzM1WkVTSGo2a0ZldjNvOVU4UEt4QjBySU1uOTdCdGp4eFhfTnNyMFZCTjVPb1ByV184N2E5c2FjLW1JSVB1Vnh5RUl5Z2dnMmF2RVFLaE1TWjhtV2h1V01aZW1laWcyQ1FRT0F0endqQzNQSTRsVXpSc3pVbTZaREI5UVZvSHRhWFYyUnM1Mm9DWEkwU1JvaXBpZmE1LXA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T15:11:00.000Z",
+        "summary": "Anthropic considers pulling Claude Code from its $20 Pro plan PCWorld"
+      },
+      {
+        "title": "Anthropic Reveals Mythos AI Enables Automated Vulnerability Exploitation - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQd0tlS25LOXF0RVUtNFg3WW1rYVJGdU9wMEhoZHFYVkNZSmNuS2dDWU96RXMwMDlMc0pMb1F5T2YxdTk1U0kzVzBsYjN4RFV2X1ZQSjk5b1d3MlJLWjlSWGQ2QXBCbHJ5WFJFQVVRYm5FNFRoYWZjT21zbnMyazRhLXdpRGtDRkRMSVpBQXViQWxOYjdlczctM2hQOFFMRVp0alVz?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T15:05:03.000Z",
+        "summary": "Anthropic Reveals Mythos AI Enables Automated Vulnerability Exploitation Let's Data Science"
+      },
+      {
+        "title": "Leaked Code for Anthropic’s Claude Code Tests Copyright Challenges in A.I. Era - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNZGdMSEhUWmxXWGVlWmdkV1lMWWc0TGt2S25uVElvZUJvVFc2WmhWY1N2LU1rZnR6ZmZ1Qjg4SzBiODZKRUNCdVl1M2laUXE0X2d1b2swejJkc1c3NTJRZE1sR3FjTmVRVVhxM1Z0bkxiOWRtbjlPMjVhR2xqM3R2ZDNMR3Ryb00?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T14:37:38.000Z",
+        "summary": "Leaked Code for Anthropic’s Claude Code Tests Copyright Challenges in A.I. Era The New York Times"
+      },
+      {
+        "title": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBoQkkwMnB2b0tyeFllX3Iwa2FrRXNZbW5Dem5ERGlLVzFkbGNycUN1UXVEMnhYVlVmaGNTNDZuSTVWZ3d3alpjN29LbkprZV9qTjg1QVFKdURnYk9FYlFTQWFReVRNdEJPaHdTWlhGUTM?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T14:33:01.000Z",
+        "summary": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety Mashable"
+      },
+      {
+        "title": "Anthropic’s Claude Is Pumping Out Vulnerable Code, Cyber Experts Warn - Forbes",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOYm52d3hQV25lMzl4bXo4SGVhUG1xRjdZXzAzaElIMl9PazU1cTdRaWE0WVh1eVl4RDdqcEdHcThUYU8tdkx5UDJiWHRuSm1jNVdIb0xpQlVzMWJfXzdHanQ3TjlYWWEtRU5Ja3RSakJwWGJ1d3piUnBwcDJQbnZiTmtoQ3N0OXp6MHg5NVM4QmpFMXZhUlRzVnJTWHJ2M0ZOY1U3c3htN0wwclg2Z2V3ZHJndHoyeEZicjdyVA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T14:26:03.000Z",
+        "summary": "Anthropic’s Claude Is Pumping Out Vulnerable Code, Cyber Experts Warn Forbes"
+      },
+      {
+        "title": "Firefox Fixes 271 Security Flaws Discovered by Claude Mythos AI - SQ Magazine",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBiSzB4bG1TZEdWbXhudFhfYUlOV2cwMzlDTnJ4bUN0U003MmNaeFdrVFBsS3hnMUo4blpiM1VXSmRCc1dFMDZmaFF1UnlTVGtQYk45dm1zMHN5aVlpdWVDOHZzamsyX3JTN1pGYzNoa1pXRFZ3SjBYbG1R?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T14:24:37.000Z",
+        "summary": "Firefox Fixes 271 Security Flaws Discovered by Claude Mythos AI SQ Magazine"
       },
       {
         "title": "Claude Design + Claude Code = No Designer Needed",
@@ -179,81 +333,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Unauthorized group has gained access to Anthropic’s exclusive cyber tool Mythos, report claims",
-        "url": "https://techcrunch.com/2026/04/21/unauthorized-group-has-gained-access-to-anthropics-exclusive-cyber-tool-mythos-report-claims/",
-        "source": "TechCrunch",
-        "published": "2026-04-21T23:26:45.000Z",
-        "summary": "Anthropic told TechCrunch it is investigating the claims, but maintains that there is no evidence that its systems have been impacted."
-      },
-      {
-        "title": "Claude Code Removed from $20-a-Month \"Pro\" Subscription for New Users",
-        "url": "https://www.wheresyoured.at/news-anthropic-removes-pro-cc/",
-        "source": "HN · 75↑",
-        "hn_id": "47855832",
-        "published": "2026-04-21T22:56:09.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code to be removed from Pro Tier?",
-        "url": "https://bsky.app/profile/edzitron.com/post/3mjzxwfx3qs2a",
-        "source": "HN · 264↑",
-        "hn_id": "47855565",
-        "published": "2026-04-21T22:36:24.000Z",
-        "summary": "https:&#x2F;&#x2F;x.com&#x2F;TheAmolAvasare&#x2F;status&#x2F;2046725498592722972   https:&#x2F;&#x2F;xcancel.com&#x2F;TheAmolAvasare&#x2F;status&#x2F;204672549859272297..."
-      },
-      {
-        "title": "Adobe Expands Agentic AI Ecosystem With Big Tech Partners",
-        "url": "https://www.bloomberg.com/news/videos/2026-04-21/adobe-expands-agentic-ai-with-big-tech-partners-video",
-        "source": "Bloomberg",
-        "published": "2026-04-21T22:26:29.000Z",
-        "summary": "Adobe is launching a new agentic platform targeting business-to-business and consumers that, in addition to working closely with model providers OpenAI and Anthropic, can ease concern about…"
-      },
-      {
-        "title": "Anthropic's Mythos Model Is Being Accessed by Unauthorized Users",
-        "url": "https://www.bloomberg.com/news/articles/2026-04-21/anthropic-s-mythos-model-is-being-accessed-by-unauthorized-users",
-        "source": "HN · 47↑",
-        "hn_id": "47855093",
-        "published": "2026-04-21T21:57:43.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Mozilla: Anthropic's Mythos found 271 security vulnerabilities in Firefox 150",
-        "url": "https://arstechnica.com/ai/2026/04/mozilla-anthropics-mythos-found-271-zero-day-vulnerabilities-in-firefox-150/",
-        "source": "Ars Technica",
-        "published": "2026-04-21T21:40:41.000Z",
-        "summary": "Earlier this month, Anthropic said its Mythos Preview model was so good at finding cybersecurity vulnerabilities that the company was limiting its initial release to \"a limited group of critical…"
-      },
-      {
-        "title": "Mozilla Used Anthropic's Mythos to Find and Fix 271 Bugs in Firefox",
-        "url": "https://www.wired.com/story/mozilla-used-anthropics-mythos-to-find-271-bugs-in-firefox/",
-        "source": "HN · 37↑",
-        "hn_id": "47853649",
-        "published": "2026-04-21T19:49:53.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Sam Altman throws shade at Anthropic’s cyber model, Mythos: ‘fear-based marketing’",
-        "url": "https://techcrunch.com/2026/04/21/sam-altman-throws-shade-at-anthropics-cyber-model-mythos-fear-based-marketing/",
-        "source": "TechCrunch",
-        "published": "2026-04-21T18:51:52.000Z",
-        "summary": "This week, during a podcast appearance, OpenAI CEO Sam Altman called out his competitor's new cybersecurity model, noting that the company was using fear to make its product sound more impressive…"
-      },
-      {
-        "title": "Anthropic gets $5B investment from Amazon, will use it to buy Amazon chips",
-        "url": "https://arstechnica.com/ai/2026/04/anthropic-gets-5b-investment-from-amazon-will-use-it-to-buy-amazon-chips/",
-        "source": "Ars Technica",
-        "published": "2026-04-21T17:00:04.000Z",
-        "summary": "Amazon has significantly boosted its multibillion-dollar bet on Claude developer Anthropic by investing an additional $5 billion—enabling Anthropic to eventually secure up to 5 gigawatts' worth of…"
-      },
-      {
-        "title": "Show HN: Daemons – we pivoted from building agents to cleaning up after them",
-        "url": "https://charlielabs.ai/",
-        "source": "HN · 62↑",
-        "hn_id": "47850907",
-        "published": "2026-04-21T16:16:41.000Z",
-        "summary": "For almost two years, we&#x27;ve been developing Charlie, a coding agent that is autonomous, cloud-based, and focused primarily on TypeScript development. During that time, the…"
-      },
-      {
         "title": "Claude Code Routines - It Codes While You Sleep",
         "url": "https://www.youtube.com/watch?v=5LCjeni0Z-U",
         "source": "Leon van Zyl",
@@ -264,99 +343,6 @@
         "published": "2026-04-21T16:11:58.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Show HN: GoModel – an open-source AI gateway in Go",
-        "url": "https://github.com/ENTERPILOT/GOModel/",
-        "source": "HN · 189↑",
-        "hn_id": "47849097",
-        "published": "2026-04-21T14:11:53.000Z",
-        "summary": "Hi, I’m Jakub, a solo founder based in Warsaw. I’ve been building GoModel since December with a couple of contributors. It&#x27;s an open-source AI gateway that sits between your…"
-      },
-      {
-        "title": "Anthropic says OpenClaw-style Claude CLI usage is allowed again",
-        "url": "https://docs.openclaw.ai/providers/anthropic",
-        "source": "HN · 495↑",
-        "hn_id": "47844269",
-        "published": "2026-04-21T03:43:03.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic takes $5B from Amazon and pledges $100B in cloud spending in return",
-        "url": "https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/",
-        "source": "TechCrunch",
-        "published": "2026-04-20T23:10:27.000Z",
-        "summary": "Amazon has made another circular AI deal: It's investing another $5 billion in Anthropic. Anthropic has agreed to spend $100 billion on AWS in return."
-      },
-      {
-        "title": "Show HN: Ctx – a /resume that works across Claude Code and Codex",
-        "url": "https://github.com/dchu917/ctx",
-        "source": "HN · 69↑",
-        "hn_id": "47836740",
-        "published": "2026-04-20T16:35:05.000Z",
-        "summary": "ctx is a local SQLite-backed skill for Claude Code and Codex that stores context as a persistent workstream that can be continued across agent sessions. Each workstream can…"
-      },
-      {
-        "title": "NSA spies are reportedly using Anthropic’s Mythos, despite Pentagon feud",
-        "url": "https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/",
-        "source": "TechCrunch",
-        "published": "2026-04-20T16:06:21.000Z",
-        "summary": "NSA is said to be using Anthropic's restricted Mythos AI model."
-      },
-      {
-        "title": "I prompted ChatGPT, Claude, Perplexity, and Gemini and watched my Nginx logs",
-        "url": "https://surfacedby.com/blog/nginx-logs-ai-traffic-vs-referral-traffic",
-        "source": "HN · 135↑",
-        "hn_id": "47835646",
-        "published": "2026-04-20T15:22:01.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic's Mythos AI model sparks fears of turbocharged hacking",
-        "url": "https://arstechnica.com/ai/2026/04/anthropics-mythos-ai-model-sparks-fears-of-turbocharged-hacking/",
-        "source": "Ars Technica",
-        "published": "2026-04-20T14:21:40.000Z",
-        "summary": "Anthropic’s new Mythos AI model is raising concern among governments and companies that it could outpace current cyber security defenses, turbocharge hacking, and expose weaknesses faster than they…"
-      },
-      {
-        "title": "Figma's woes compound with Claude Design",
-        "url": "https://martinalderson.com/posts/figmas-woes-compound-with-claude-design/",
-        "source": "HN · 122↑",
-        "hn_id": "47832366",
-        "published": "2026-04-20T10:26:35.000Z",
-        "summary": ""
-      },
-      {
-        "title": "NSA is using Anthropic's Mythos despite blacklist",
-        "url": "https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon",
-        "source": "HN · 481↑",
-        "hn_id": "47832222",
-        "published": "2026-04-20T10:00:35.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic installed a spyware bridge on my machine?",
-        "url": "https://www.thatprivacyguy.com/blog/anthropic-spyware/",
-        "source": "HN · 117↑",
-        "hn_id": "47829800",
-        "published": "2026-04-20T02:41:50.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Token Counter, now with model comparisons",
-        "url": "https://simonwillison.net/2026/Apr/20/claude-token-counts/",
-        "source": "HN · 224↑",
-        "hn_id": "47829178",
-        "published": "2026-04-20T00:56:40.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Banned by Anthropic?",
-        "url": "https://bannedbyanthropic.com/",
-        "source": "HN · 101↑",
-        "hn_id": "47828249",
-        "published": "2026-04-19T22:33:31.000Z",
-        "summary": ""
       },
       {
         "title": "The creator of Claude Code just revealed 7 secrets to using Claude Code (Opus 4.7)",
