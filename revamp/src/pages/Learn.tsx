@@ -11,6 +11,7 @@ import { grid } from '../ui/grid'
 import { AudienceBadge } from '../ui/AudienceBadge'
 import { Disclosure } from '../ui/Disclosure'
 import { splitByPathway, shouldCollapseRestByDefault, type UserPathway } from '../lib/audience'
+import { masteryStatus, MASTERY_LABEL } from '../lib/mastery'
 import { useUserStore } from '../state/userStore'
 import s from './Learn.module.css'
 
@@ -169,11 +170,8 @@ function TrackSection({
       <div className={grid}>
         {topics.map(topic => {
           const score = mastery[topic.id] ?? 0
-          const label =
-            score === 0 ? 'Not started'
-            : score < 0.5 ? 'Started'
-            : score < 0.8 ? 'Progressing'
-            : 'Mastered'
+          const status = masteryStatus(score)
+          const label = MASTERY_LABEL[status]
           return (
             <Link key={topic.id} to={`/learn/topic/${topic.id}`} style={{ color: 'inherit' }}>
               <Tile>

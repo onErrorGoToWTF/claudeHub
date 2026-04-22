@@ -5,13 +5,14 @@ import { overallProgress, repo } from '../db/repo'
 import type { Progress, Topic, Project } from '../db/types'
 import { ProgressBar } from '../ui'
 import { STATUS_LABEL } from '../lib/projectStatus'
+import { masteryStatus, MASTERY_LABEL } from '../lib/mastery'
 import s from './Dashboard.module.css'
 
 export function Dashboard() {
   const [score, setScore] = useState(0)
   const [completed, setCompleted] = useState(0)
   const [topicsCount, setTopicsCount] = useState(0)
-  const [recent, setRecent] = useState<{ progress: Progress; topic?: Topic }[]>([])
+  const [recent, setRecent] = useState<{ progress: Progress; topic?: Topic; topicScore: number }[]>([])
   const [projects, setProjects] = useState<Project[]>([])
   const [nextTopic, setNextTopic] = useState<Topic | null>(null)
 
@@ -26,14 +27,19 @@ export function Dashboard() {
         repo.listProjects(),
       ])
       const topicsById = new Map(topics.map(t => [t.id, t]))
-      const sorted = progs.sort((a, b) => b.updatedAt - a.updatedAt).slice(0, 2)
-      setRecent(sorted.map(pr => ({ progress: pr, topic: topicsById.get(pr.topicId) })))
       setProjects(projs.slice(0, 2))
 
       const mastery = await repo.listMastery()
       const byId = new Map(mastery.map(m => [m.topicId, m.score]))
       const unstarted = topics.find(t => !byId.has(t.id)) ?? topics[0]
       setNextTopic(unstarted ?? null)
+
+      const sorted = progs.sort((a, b) => b.updatedAt - a.updatedAt).slice(0, 2)
+      setRecent(sorted.map(pr => ({
+        progress: pr,
+        topic: topicsById.get(pr.topicId),
+        topicScore: byId.get(pr.topicId) ?? 0,
+      })))
     })()
   }, [])
 
@@ -67,8 +73,13 @@ export function Dashboard() {
             <div className={s.muted}>Start a lesson or quiz — it'll show up here.</div>
           ) : (
             <div className={s.recents}>
-              {recent.map(({ progress, topic }) => (
-                <RecentRow key={progress.id + progress.kind} progress={progress} topic={topic} />
+              {recent.map(({ progress, topic, topicScore }) => (
+                <RecentRow
+                  key={progress.id + progress.kind}
+                  progress={progress}
+                  topic={topic}
+                  topicScore={topicScore}
+                />
               ))}
             </div>
           )}
@@ -108,13 +119,18 @@ export function Dashboard() {
   )
 }
 
-function RecentRow({ progress, topic }: { progress: Progress; topic?: Topic }) {
+function RecentRow({ progress, topic, topicScore }: {
+  progress: Progress
+  topic?: Topic
+  topicScore: number
+}) {
   const to = progress.kind === 'lesson'
     ? `/learn/lesson/${progress.id}`
     : `/learn/quiz/${progress.id}`
-  const meta = progress.kind === 'quiz'
-    ? `Quiz · ${Math.round((progress.score ?? 0) * 100)}%`
-    : 'Lesson'
+  const status = masteryStatus(topicScore)
+  const meta = topicScore > 0
+    ? `${MASTERY_LABEL[status]} · ${Math.round(topicScore * 100)}%`
+    : MASTERY_LABEL[status]
   return (
     <Link to={to} className={s.recentRow}>
       <span className={s.recentTitle}>{topic?.title ?? progress.topicId}</span>
