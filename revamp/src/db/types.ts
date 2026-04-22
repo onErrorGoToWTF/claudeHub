@@ -198,6 +198,21 @@ export type ProjectEventKind =
   | 'status_changed'
   | 'health_changed'
 
+/** A correction/issue the user filed against a quiz question or a whole quiz.
+ *  Local-only today; will sync when DB migration lands so an admin can triage. */
+export type QuizReportKind = 'incorrect' | 'unclear' | 'typo' | 'other'
+
+export interface QuizReport {
+  id: ID                  // `qrep.<ts>.<quizId>[.<questionId>]`
+  quizId: ID
+  /** Missing when the user is reporting the whole quiz, not a specific question. */
+  questionId?: ID
+  kind: QuizReportKind
+  note: string
+  ts: number
+  resolved?: boolean
+}
+
 /** A row in the user's persistent learning plan ("my pathway").
  *  Soft-delete by flipping status to 'archived' — never hard-delete so the
  *  user keeps a full learning record. Progress + mastery key off topicId,

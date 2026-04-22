@@ -333,3 +333,126 @@
   border: 1px solid var(--mastery-border);
   border-radius: var(--radius-sm);
 }
+
+/* ================= Report flag — unobtrusive corner action ================= */
+/* Khan Academy pattern: small muted link in the lower-right of the card. */
+.reportFlag {
+  position: absolute;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-3);
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity var(--dur-2) var(--ease-premium),
+              color var(--dur-2) var(--ease-premium),
+              background var(--dur-2) var(--ease-premium);
+}
+.reportFlag:hover,
+.reportFlag:focus-visible {
+  opacity: 1;
+  color: var(--ink-2);
+  background: var(--bg-sunken);
+  outline: none;
+}
+.reportFlagLabel { letter-spacing: 0.01em; }
+
+.card { position: relative; }
+.resultCard { position: relative; }
+
+/* The inline form that replaces the flag when clicked. */
+.reportForm {
+  position: absolute;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  width: min(340px, calc(100% - var(--space-6)));
+  padding: 10px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-2);
+  z-index: 2;
+}
+.reportKinds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.reportKindBtn {
+  padding: 4px 8px;
+  font-size: 11px;
+  color: var(--ink-2);
+  background: var(--bg-sunken);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--dur-2) var(--ease-premium),
+              border-color var(--dur-2) var(--ease-premium),
+              color var(--dur-2) var(--ease-premium);
+}
+.reportKindBtn:hover { background: var(--accent-surface); }
+.reportKindBtnOn {
+  background: var(--accent-surface);
+  border-color: var(--accent-border);
+  color: var(--accent-ink);
+}
+.reportNote {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  font-size: 12px;
+  font-family: inherit;
+  color: var(--ink-1);
+  background: var(--bg-canvas);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-sm);
+  resize: vertical;
+  outline: none;
+}
+.reportNote:focus { border-color: var(--accent-solid); }
+.reportActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 8px;
+}
+.reportCancel,
+.reportSend {
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid var(--hair-strong);
+}
+.reportCancel { color: var(--ink-2); background: var(--bg-card); }
+.reportCancel:hover { background: var(--bg-sunken); }
+.reportSend { color: white; background: var(--accent-solid); border-color: var(--accent-solid); }
+.reportSend:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.reportThanks {
+  position: absolute;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  padding: 4px 8px;
+  font-size: 11px;
+  color: var(--mastery-solid, var(--ink-2));
+  background: var(--mastery-soft, var(--bg-sunken));
+  border-radius: var(--radius-sm);
+  animation: reportFade 1.8s ease-out;
+}
+@keyframes reportFade {
+  0%   { opacity: 0; transform: translateY(4px); }
+  15%  { opacity: 1; transform: translateY(0); }
+  85%  { opacity: 1; }
+  100% { opacity: 0; }
+}

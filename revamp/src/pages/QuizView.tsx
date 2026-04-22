@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowLeft, ArrowDown, ArrowUp, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowDown, ArrowUp, Flag, Sparkles } from 'lucide-react'
 import { repo } from '../db/repo'
 import type {
   Quiz,
   QuizQuestion,
+  QuizReportKind,
   OrderedStepsQuestion,
   CodeTypingQuestion,
   ShortAnswerQuestion,
@@ -166,6 +167,7 @@ export function QuizView() {
               <Sparkles size={14} /> {MASTERY_LABEL[masteryStatus(score)]}
             </div>
           )}
+          <ReportFlag quizId={quiz.id} />
         </div>
       </div>
     )
@@ -205,6 +207,8 @@ export function QuizView() {
               {i + 1 < total ? 'Next' : 'Finish'}
             </button>
           </div>
+
+          <ReportFlag quizId={quiz.id} questionId={q.id} />
         </motion.div>
       </AnimatePresence>
     </div>
@@ -353,6 +357,80 @@ function CodeTypingBody({
         </code>
       </pre>
     </div>
+  )
+}
+
+// ---------- Report flag (Khan-style quiet "report a problem") ----------
+/** A tiny flag in the corner of the question / result card. Click →
+ *  inline canned-reason form → submit → "Thanks, logged" fade. Purpose-
+ *  built to be easy to ignore until you want it. */
+function ReportFlag({ quizId, questionId }: { quizId: string; questionId?: string }) {
+  type View = 'idle' | 'form' | 'thanks'
+  const [view, setView] = useState<View>('idle')
+  const [kind, setKind] = useState<QuizReportKind>('incorrect')
+  const [note, setNote] = useState('')
+  const [busy, setBusy] = useState(false)
+
+  async function submit() {
+    if (busy) return
+    setBusy(true)
+    try {
+      await repo.logQuizReport({ quizId, questionId, kind, note: note.trim() })
+      setView('thanks')
+      setTimeout(() => {
+        setView('idle'); setNote(''); setKind('incorrect')
+      }, 1800)
+    } finally { setBusy(false) }
+  }
+
+  if (view === 'thanks') {
+    return <div className={styles.reportThanks}>Thanks — logged.</div>
+  }
+
+  if (view === 'form') {
+    return (
+      <div className={styles.reportForm} onClick={(e) => e.stopPropagation()}>
+        <div className={styles.reportKinds}>
+          {([
+            ['incorrect', 'Wrong answer'],
+            ['unclear',   'Unclear wording'],
+            ['typo',      'Typo'],
+            ['other',     'Other'],
+          ] as [QuizReportKind, string][]).map(([k, label]) => (
+            <button
+              key={k}
+              type="button"
+              className={`${styles.reportKindBtn} ${kind === k ? styles.reportKindBtnOn : ''}`}
+              onClick={() => setKind(k)}
+            >{label}</button>
+          ))}
+        </div>
+        <textarea
+          className={styles.reportNote}
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          placeholder="Optional detail (what's wrong, what you expected)…"
+          rows={2}
+        />
+        <div className={styles.reportActions}>
+          <button className={styles.reportCancel} onClick={() => setView('idle')}>Cancel</button>
+          <button className={styles.reportSend} onClick={submit} disabled={busy}>Send</button>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <button
+      type="button"
+      className={styles.reportFlag}
+      aria-label="Report a problem with this question"
+      title="Report a problem"
+      onClick={() => setView('form')}
+    >
+      <Flag size={13} strokeWidth={1.75} />
+      <span className={styles.reportFlagLabel}>Report</span>
+    </button>
   )
 }
 

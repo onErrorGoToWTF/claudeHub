@@ -7,7 +7,7 @@ import { db } from './schema'
 import type {
   Track, Topic, Lesson, Quiz, Progress, Mastery,
   LibraryItem, LibraryKind, InventoryItem, Project, SearchMiss, ProjectEvent,
-  UserPathwayItem,
+  UserPathwayItem, QuizReport,
 } from './types'
 import { PASS_THRESHOLD } from '../lib/mastery'
 import { PATHWAY_TEMPLATES } from '../lib/pathwayTemplates'
@@ -164,6 +164,24 @@ export const repo = {
   },
   async resolveSearchMiss(id: string, resolved = true) {
     await db.searchMisses.update(id, { resolved })
+  },
+
+  // ---------- quiz reports (user-filed corrections) ----------
+  async logQuizReport(r: Omit<QuizReport, 'id' | 'ts'> & { ts?: number }): Promise<QuizReport> {
+    const ts = r.ts ?? Date.now()
+    const id = `qrep.${ts}.${r.quizId}${r.questionId ? `.${r.questionId}` : ''}`
+    const row: QuizReport = { ...r, id, ts }
+    await db.quizReports.put(row)
+    return row
+  },
+  async listQuizReports(): Promise<QuizReport[]> {
+    return (await db.quizReports.toArray()).sort((a, b) => b.ts - a.ts)
+  },
+  async resolveQuizReport(id: string, resolved = true) {
+    await db.quizReports.update(id, { resolved })
+  },
+  async deleteQuizReport(id: string) {
+    await db.quizReports.delete(id)
   },
 
   // ---------- user pathway ("my pathway") ----------
