@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Check, Laptop, Monitor, Smartphone, Tablet, Terminal, RotateCcw } from 'lucide-react'
+import { Check, Laptop, Monitor, Smartphone, Tablet, Terminal, RotateCcw, Sun, Moon } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Topic, Track } from '../db/types'
 import { Button, PageHeader } from '../ui'
@@ -46,6 +46,17 @@ export function Settings() {
   const setYearsCoding     = useUserStore(st => st.setYearsCoding)
   const toggleKnownTopic   = useUserStore(st => st.toggleKnownTopic)
   const resetProfile       = useUserStore(st => st.resetProfile)
+
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const attr = document.documentElement.getAttribute('data-theme')
+    return attr === 'dark' ? 'dark' : 'light'
+  })
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    try { localStorage.setItem('ai-theme', theme) } catch {
+      // private-mode / disabled storage — ignore
+    }
+  }, [theme])
 
   const [tracks, setTracks] = useState<Track[]>([])
   const [topics, setTopics] = useState<Topic[]>([])
@@ -115,6 +126,34 @@ export function Settings() {
           autoComplete="off"
           spellCheck={false}
         />
+      </section>
+
+      {/* Appearance */}
+      <section style={{ marginBottom: 'var(--space-8)' }}>
+        <h2 style={sectionTitle}>Appearance</h2>
+        <p style={sectionHint}>Light or dark — your choice sticks per device.</p>
+        <div className={`${s.optionGrid} ${s.cols2}`}>
+          {([
+            { id: 'light', title: 'Light', Icon: Sun },
+            { id: 'dark',  title: 'Dark',  Icon: Moon },
+          ] as const).map(opt => {
+            const on = theme === opt.id
+            return (
+              <button
+                key={opt.id}
+                type="button"
+                className={`${s.option} ${on ? s.optionOn : ''}`}
+                onClick={() => setTheme(opt.id)}
+              >
+                <opt.Icon size={16} strokeWidth={1.75} />
+                <div className={s.optionBody}>
+                  <div className={s.optionTitle}>{opt.title}</div>
+                </div>
+                {on && <span className={s.check}><Check size={12} /></span>}
+              </button>
+            )
+          })}
+        </div>
       </section>
 
       {/* Pathway */}
