@@ -85,9 +85,35 @@
     background var(--dur-2) var(--ease-premium);
 }
 .statusPill:hover { color: var(--ink-1); }
-.statusPillOn {
+.statusPillOn_backlog {
+  color: var(--ink-1);
+  background: var(--bg-sunken);
+  border: 1px solid var(--hair);
+  padding: 5px 11px;
+}
+.statusPillOn_planned {
+  color: color-mix(in oklch, var(--accent-ink) 65%, var(--ink-3));
+  background: color-mix(in oklch, var(--accent-surface) 55%, var(--bg-sunken));
+  border: 1px solid color-mix(in oklch, var(--accent-border) 55%, var(--hair));
+  padding: 5px 11px;
+}
+.statusPillOn_in_progress {
   color: var(--accent-ink);
   background: var(--accent-surface);
+  border: 1px solid var(--accent-border);
+  padding: 5px 11px;
+}
+.statusPillOn_completed {
+  color: color-mix(in oklch, var(--mastery-base) 70%, black);
+  background: var(--mastery-surface);
+  border: 1px solid var(--mastery-border);
+  padding: 5px 11px;
+}
+.statusPillOn_canceled {
+  color: color-mix(in oklch, var(--danger-base) 70%, black);
+  background: var(--danger-surface);
+  border: 1px solid var(--danger-border);
+  padding: 5px 11px;
 }
 
 .healthRow {

@@ -46,11 +46,12 @@ export function Button({ variant = 'default', className, ...rest }: BtnProps) {
   )
 }
 
-export function Chip({ children, variant }: { children: ReactNode; variant?: 'accent' | 'mastery' | 'danger' }) {
+export function Chip({ children, variant }: { children: ReactNode; variant?: 'accent' | 'muted' | 'mastery' | 'danger' }) {
   return (
     <span className={clsx(
       s.chip,
       variant === 'accent'  && s.chipAccent,
+      variant === 'muted'   && s.chipMuted,
       variant === 'mastery' && s.chipMastery,
       variant === 'danger'  && s.chipDanger,
     )}>

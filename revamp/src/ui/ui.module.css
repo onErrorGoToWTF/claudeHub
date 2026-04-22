@@ -84,6 +84,11 @@
   background: var(--accent-surface);
   border-color: var(--accent-border);
 }
+.chipMuted {
+  color: color-mix(in oklch, var(--accent-ink) 65%, var(--ink-3));
+  background: color-mix(in oklch, var(--accent-surface) 55%, var(--bg-sunken));
+  border-color: color-mix(in oklch, var(--accent-border) 55%, var(--hair));
+}
 .chipMastery {
   color: color-mix(in oklch, var(--mastery-base) 70%, black);
   background: var(--mastery-surface);

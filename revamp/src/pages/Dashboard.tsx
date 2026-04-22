@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, BookOpen, FolderGit2 } from 'lucide-react'
 import { overallProgress, repo } from '../db/repo'
 import type { Progress, Topic, Project } from '../db/types'
-import { ProgressBar } from '../ui'
-import { STATUS_LABEL } from '../lib/projectStatus'
+import { ProgressBar, Chip } from '../ui'
+import { STATUS_LABEL, statusChipVariant } from '../lib/projectStatus'
 import s from './Dashboard.module.css'
 
 export function Dashboard() {
@@ -127,7 +127,7 @@ function ProjectRow({ project }: { project: Project }) {
   return (
     <Link to={`/projects/${project.id}`} className={s.recentRow}>
       <span className={s.recentTitle}>{project.title}</span>
-      <span className={s.recentMeta}>{STATUS_LABEL[project.status]}</span>
+      <Chip variant={statusChipVariant(project.status)}>{STATUS_LABEL[project.status]}</Chip>
     </Link>
   )
 }

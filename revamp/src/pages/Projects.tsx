@@ -5,7 +5,7 @@ import { repo } from '../db/repo'
 import type { Project } from '../db/types'
 import { Button, Chip, Empty, PageHeader, Tile, TileMeta, TileRow, TileTitle } from '../ui'
 import { grid } from '../ui/grid'
-import { STATUS_LABEL } from '../lib/projectStatus'
+import { STATUS_LABEL, statusChipVariant } from '../lib/projectStatus'
 import s from './Projects.module.css'
 
 export function Projects() {
@@ -80,7 +80,7 @@ export function Projects() {
                 <TileRow>
                   <div style={{ display: 'flex', gap: 6 }}>
                     <Chip variant="accent">{p.route}</Chip>
-                    <Chip>{STATUS_LABEL[p.status]}</Chip>
+                    <Chip variant={statusChipVariant(p.status)}>{STATUS_LABEL[p.status]}</Chip>
                   </div>
                   <TileMeta>{new Date(p.updatedAt).toLocaleDateString()}</TileMeta>
                 </TileRow>

@@ -314,6 +314,40 @@ const sampleProject: Project = {
   updatedAt: Date.now(),
 }
 
+// Demo projects — one per status — so the status colors are visible at a glance.
+const demoProjects: Project[] = [
+  {
+    id: 'p.demo-backlog', title: 'Rough idea — agent that files receipts',
+    summary: 'Rough sketch. Worth revisiting later when expenses get out of hand.',
+    status: 'backlog', route: 'easiest', stack: [], gapTopicIds: [], checklist: [],
+    createdAt: Date.now() - 60_000 * 60 * 24 * 21, updatedAt: Date.now() - 60_000 * 60 * 24 * 20,
+  },
+  {
+    id: 'p.demo-planned', title: 'Weekly board prep automation',
+    summary: 'Outline the workflow, pick tools, draft the prompts. Not started yet.',
+    status: 'planned', route: 'easiest', stack: [], gapTopicIds: [], checklist: [],
+    createdAt: Date.now() - 60_000 * 60 * 24 * 10, updatedAt: Date.now() - 60_000 * 60 * 24 * 9,
+  },
+  {
+    id: 'p.demo-in_progress', title: 'Personal dashboard with Claude integrations',
+    summary: 'Building now. Scaffold is up, wiring the Slack + Gmail connections.',
+    status: 'in_progress', route: 'best', stack: [], gapTopicIds: [], checklist: [],
+    createdAt: Date.now() - 60_000 * 60 * 24 * 7, updatedAt: Date.now() - 60_000 * 60 * 3,
+  },
+  {
+    id: 'p.demo-completed', title: 'Claude-powered résumé refresh',
+    summary: 'Done. Shipped a tightened one-pager that lands the elevator pitch up top.',
+    status: 'completed', route: 'cheapest', stack: [], gapTopicIds: [], checklist: [],
+    createdAt: Date.now() - 60_000 * 60 * 24 * 30, updatedAt: Date.now() - 60_000 * 60 * 24 * 4,
+  },
+  {
+    id: 'p.demo-canceled', title: 'Custom Slack bot for standups',
+    summary: 'Shelved — team switched to a commercial tool before this was worth finishing.',
+    status: 'canceled', route: 'easiest', stack: [], gapTopicIds: [], checklist: [],
+    createdAt: Date.now() - 60_000 * 60 * 24 * 45, updatedAt: Date.now() - 60_000 * 60 * 24 * 15,
+  },
+]
+
 /** Populate on first boot. Idempotent — only seeds stores that are empty. */
 export async function seedIfEmpty(): Promise<void> {
   // Remove orphan doc-note duplicates of tools (merged into their tool entries)
@@ -363,6 +397,13 @@ export async function seedIfEmpty(): Promise<void> {
     }
   }
 
+  // Backfill demo projects (one per status) on existing installs so the
+  // color vocabulary is visible without clearing local data. Idempotent per-id.
+  for (const d of demoProjects) {
+    const existing = await db.projects.get(d.id)
+    if (!existing) await db.projects.put(d)
+  }
+
   // Seed a `created` event for any project missing history (e.g., projects
   // that existed before projectEvents was introduced, plus the sample seed).
   const allProjects = await db.projects.toArray()
@@ -390,7 +431,7 @@ export async function seedIfEmpty(): Promise<void> {
         await db.topics.bulkPut(topics)
         await db.lessons.bulkPut(lessons)
         await db.quizzes.bulkPut(quizzes)
-        await db.projects.bulkPut([sampleProject])
+        await db.projects.bulkPut([sampleProject, ...demoProjects])
       },
     )
   }

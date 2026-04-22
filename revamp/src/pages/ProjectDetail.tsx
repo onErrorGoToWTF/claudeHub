@@ -151,7 +151,7 @@ export function ProjectDetail() {
             <button
               key={s.id}
               type="button"
-              className={`${styles.statusPill} ${p.status === s.id ? styles.statusPillOn : ''}`}
+              className={`${styles.statusPill} ${p.status === s.id ? styles[`statusPillOn_${s.id}`] : ''}`}
               onClick={() => setStatus(s.id)}
             >
               {s.label}

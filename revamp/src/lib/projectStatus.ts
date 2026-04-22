@@ -22,6 +22,17 @@ export function showsHealth(status: ProjectStatus) {
   return status === 'planned' || status === 'in_progress'
 }
 
+/** Status → chip variant. Drives the project status color across all surfaces. */
+export function statusChipVariant(status: ProjectStatus): undefined | 'accent' | 'muted' | 'mastery' | 'danger' {
+  switch (status) {
+    case 'backlog':     return undefined   // grey default chip
+    case 'planned':     return 'muted'     // dim accent (not yet lit)
+    case 'in_progress': return 'accent'    // full accent blue
+    case 'completed':   return 'mastery'   // green
+    case 'canceled':    return 'danger'    // red
+  }
+}
+
 /** Legacy → Linear vocabulary. Applied in seed on boot for existing DBs. */
 export function migrateLegacyStatus(status: string): ProjectStatus {
   switch (status) {
