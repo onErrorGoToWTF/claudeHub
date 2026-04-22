@@ -6,7 +6,7 @@ import {
 } from 'lucide-react'
 import { overallProgress, repo } from '../db/repo'
 import type { Progress, Topic, Project, LibraryItem } from '../db/types'
-import { PageHeader, ProgressBar, List, Row, Chip } from '../ui'
+import { PageHeader, ProgressBar, List, Row } from '../ui'
 import { STATUS_LABEL } from '../lib/projectStatus'
 import { buildActivity, whenShort, type ActivityKind } from '../lib/activity'
 import s from './Dashboard.module.css'
@@ -34,9 +34,9 @@ export function Dashboard() {
         repo.listProjects(),
       ])
       const topicsById = new Map(topics.map(t => [t.id, t]))
-      const sorted = progs.sort((a, b) => b.updatedAt - a.updatedAt).slice(0, 3)
+      const sorted = progs.sort((a, b) => b.updatedAt - a.updatedAt).slice(0, 2)
       setRecent(sorted.map(pr => ({ progress: pr, topic: topicsById.get(pr.topicId) })))
-      setProjects(projs.slice(0, 3))
+      setProjects(projs.slice(0, 2))
 
       const mastery = await repo.listMastery()
       const byId = new Map(mastery.map(m => [m.topicId, m.score]))
@@ -89,15 +89,14 @@ export function Dashboard() {
             <ArrowRight size={16} />
           </Link>
 
-          <div className={s.sectionLabel}>Recent</div>
           {recent.length === 0 ? (
             <div className={s.muted}>Start a lesson or quiz — it'll show up here.</div>
           ) : (
-            <List>
+            <div className={s.recents}>
               {recent.map(({ progress, topic }) => (
                 <RecentRow key={progress.id + progress.kind} progress={progress} topic={topic} />
               ))}
-            </List>
+            </div>
           )}
         </section>
 
@@ -120,15 +119,14 @@ export function Dashboard() {
             <ArrowRight size={16} />
           </Link>
 
-          <div className={s.sectionLabel}>Recent</div>
           {projects.length === 0 ? (
             <div className={s.muted}>No projects yet.</div>
           ) : (
-            <List>
+            <div className={s.recents}>
               {projects.map(p => (
                 <ProjectRow key={p.id} project={p} />
               ))}
-            </List>
+            </div>
           )}
         </section>
 
@@ -191,32 +189,22 @@ function RecentRow({ progress, topic }: { progress: Progress; topic?: Topic }) {
   const to = progress.kind === 'lesson'
     ? `/learn/lesson/${progress.id}`
     : `/learn/quiz/${progress.id}`
-  const sub = progress.kind === 'quiz'
+  const meta = progress.kind === 'quiz'
     ? `Quiz · ${Math.round((progress.score ?? 0) * 100)}%`
-    : 'Lesson · done'
+    : 'Lesson'
   return (
-    <Link to={to} style={{ color: 'inherit' }}>
-      <Row
-        title={topic?.title ?? progress.topicId}
-        sub={sub}
-        right={
-          <Chip variant={progress.kind === 'quiz' ? 'accent' : 'mastery'}>
-            {progress.kind}
-          </Chip>
-        }
-      />
+    <Link to={to} className={s.recentRow}>
+      <span className={s.recentTitle}>{topic?.title ?? progress.topicId}</span>
+      <span className={s.recentMeta}>{meta}</span>
     </Link>
   )
 }
 
 function ProjectRow({ project }: { project: Project }) {
   return (
-    <Link to={`/projects/${project.id}`} style={{ color: 'inherit' }}>
-      <Row
-        title={project.title}
-        sub={project.summary}
-        right={<Chip>{STATUS_LABEL[project.status]}</Chip>}
-      />
+    <Link to={`/projects/${project.id}`} className={s.recentRow}>
+      <span className={s.recentTitle}>{project.title}</span>
+      <span className={s.recentMeta}>{STATUS_LABEL[project.status]}</span>
     </Link>
   )
 }
