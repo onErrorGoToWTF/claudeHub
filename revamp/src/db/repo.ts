@@ -7,8 +7,11 @@ import { db } from './schema'
 import type {
   Track, Topic, Lesson, Quiz, Progress, Mastery,
   LibraryItem, LibraryKind, InventoryItem, Project, SearchMiss, ProjectEvent,
+  UserPathwayItem,
 } from './types'
 import { PASS_THRESHOLD } from '../lib/mastery'
+import { PATHWAY_TEMPLATES } from '../lib/pathwayTemplates'
+import type { UserPathway } from '../lib/audience'
 
 export const repo = {
   // ---------- tracks / topics ----------
@@ -126,6 +129,11 @@ export const repo = {
       }
     }
     if (events.length) await db.projectEvents.bulkPut(events)
+
+    // Auto-merge project gap topics into the user's active pathway.
+    // Non-blocking: failures here must not fail the save.
+    try { await mergeProjectGapsIntoPathway(p.gapTopicIds ?? []) }
+    catch (err) { console.warn('[repo.putProject] pathway auto-merge failed', err) }
   },
   async deleteProject(id: string) {
     await db.projects.delete(id)
@@ -157,6 +165,153 @@ export const repo = {
   async resolveSearchMiss(id: string, resolved = true) {
     await db.searchMisses.update(id, { resolved })
   },
+
+  // ---------- user pathway ("my pathway") ----------
+  async listPathwayItems(): Promise<UserPathwayItem[]> {
+    // Stable order: active rows ascending by position; archived rows after
+    // (UI groups them separately, but this keeps the list deterministic).
+    const all = await db.userPathwayItems.toArray()
+    const activeAsc  = all.filter(r => r.status === 'active').sort((a, b) => a.position - b.position)
+    const archivedBy = all.filter(r => r.status === 'archived').sort((a, b) => b.addedAt - a.addedAt)
+    return [...activeAsc, ...archivedBy]
+  },
+  async hasAnyPathwayItems(): Promise<boolean> {
+    return (await db.userPathwayItems.count()) > 0
+  },
+  async addPathwayItem(topicId: string, source: UserPathwayItem['source'] = 'manual'): Promise<UserPathwayItem | null> {
+    const existing = await db.userPathwayItems.get(`upi.${topicId}`)
+    if (existing) {
+      if (existing.status === 'archived') {
+        // Un-archive and push to end of active list.
+        const active = await db.userPathwayItems.where('status').equals('active').toArray()
+        const nextPos = active.length
+        const row: UserPathwayItem = { ...existing, status: 'active', position: nextPos }
+        await db.userPathwayItems.put(row)
+        return row
+      }
+      return existing
+    }
+    const active = await db.userPathwayItems.where('status').equals('active').toArray()
+    const row: UserPathwayItem = {
+      id: `upi.${topicId}`,
+      topicId,
+      status: 'active',
+      position: active.length,
+      addedAt: Date.now(),
+      source,
+    }
+    await db.userPathwayItems.put(row)
+    return row
+  },
+  async archivePathwayItem(topicId: string) {
+    const id = `upi.${topicId}`
+    const row = await db.userPathwayItems.get(id)
+    if (!row || row.status === 'archived') return
+    await db.userPathwayItems.update(id, { status: 'archived' })
+    // Compact positions of remaining active rows so gaps don't accumulate.
+    await compactActivePositions()
+  },
+  async unarchivePathwayItem(topicId: string) {
+    const id = `upi.${topicId}`
+    const row = await db.userPathwayItems.get(id)
+    if (!row || row.status === 'active') return
+    const active = await db.userPathwayItems.where('status').equals('active').toArray()
+    await db.userPathwayItems.update(id, { status: 'active', position: active.length })
+  },
+  async deletePathwayItem(topicId: string) {
+    await db.userPathwayItems.delete(`upi.${topicId}`)
+    await compactActivePositions()
+  },
+  async reorderPathwayItems(activeTopicIds: string[]) {
+    // activeTopicIds is the new full ordering of the active list.
+    await db.transaction('rw', db.userPathwayItems, async () => {
+      for (let i = 0; i < activeTopicIds.length; i++) {
+        await db.userPathwayItems.update(`upi.${activeTopicIds[i]}`, { position: i })
+      }
+    })
+  },
+  /** Stamp the default template for a given pathway onto the user's plan.
+   *  Respects history: does nothing if ANY pathway items already exist. */
+  async seedPathwayFromTemplate(pathway: UserPathway): Promise<number> {
+    if (await repo.hasAnyPathwayItems()) return 0
+    if (pathway === 'all') return 0
+    const template = PATHWAY_TEMPLATES[pathway] ?? []
+    if (!template.length) return 0
+    // Filter to topics that actually exist today — missing IDs silently drop
+    // until Chunk F lands their content.
+    const existing = new Set((await db.topics.toArray()).map(t => t.id))
+    const picks = template.filter(id => existing.has(id))
+    const now = Date.now()
+    const rows: UserPathwayItem[] = picks.map((topicId, i) => ({
+      id: `upi.${topicId}`,
+      topicId,
+      status: 'active',
+      position: i,
+      addedAt: now + i, // distinct-ish so sorts stay stable
+      source: 'seed',
+    }))
+    if (rows.length) await db.userPathwayItems.bulkPut(rows)
+    return rows.length
+  },
+  /** Reset: wipe all rows and re-stamp the template for the current pathway. */
+  async resetPathway(pathway: UserPathway): Promise<number> {
+    await db.userPathwayItems.clear()
+    if (pathway === 'all') return 0
+    // Manual call path — bypass the "any-items-exist" guard by re-inserting
+    // after the clear above.
+    const template = PATHWAY_TEMPLATES[pathway] ?? []
+    const existing = new Set((await db.topics.toArray()).map(t => t.id))
+    const picks = template.filter(id => existing.has(id))
+    const now = Date.now()
+    const rows: UserPathwayItem[] = picks.map((topicId, i) => ({
+      id: `upi.${topicId}`, topicId,
+      status: 'active', position: i, addedAt: now + i, source: 'seed',
+    }))
+    if (rows.length) await db.userPathwayItems.bulkPut(rows)
+    return rows.length
+  },
+}
+
+/** Compact position field on active rows so they remain 0..n-1 contiguous. */
+async function compactActivePositions() {
+  const active = (await db.userPathwayItems.where('status').equals('active').toArray())
+    .sort((a, b) => a.position - b.position)
+  await db.transaction('rw', db.userPathwayItems, async () => {
+    for (let i = 0; i < active.length; i++) {
+      if (active[i].position !== i) {
+        await db.userPathwayItems.update(active[i].id, { position: i })
+      }
+    }
+  })
+}
+
+/** Merge project gap topics into the active pathway. For each gap topic not
+ *  already active, insert (or un-archive) at the end of the active list with
+ *  source 'project'. Dedup by topicId. */
+async function mergeProjectGapsIntoPathway(gapTopicIds: string[]) {
+  if (!gapTopicIds.length) return
+  const existing = new Set((await db.topics.toArray()).map(t => t.id))
+  const candidates = Array.from(new Set(gapTopicIds)).filter(id => existing.has(id))
+  if (!candidates.length) return
+
+  for (const topicId of candidates) {
+    const id = `upi.${topicId}`
+    const row = await db.userPathwayItems.get(id)
+    if (!row) {
+      const active = await db.userPathwayItems.where('status').equals('active').toArray()
+      await db.userPathwayItems.put({
+        id, topicId,
+        status: 'active',
+        position: active.length,
+        addedAt: Date.now(),
+        source: 'project',
+      })
+    } else if (row.status === 'archived') {
+      const active = await db.userPathwayItems.where('status').equals('active').toArray()
+      await db.userPathwayItems.update(id, { status: 'active', position: active.length })
+    }
+    // else: already active — no-op (dedup)
+  }
 }
 
 /** Mastery = avg(lesson completion rate, best quiz score) across a topic. */

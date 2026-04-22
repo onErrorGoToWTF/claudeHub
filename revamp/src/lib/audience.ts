@@ -92,6 +92,11 @@ export function deriveLibraryAudience(item: LibraryItem): Audience[] {
   // IDEs + frameworks — building software; vibe coders use them too.
   if (cat === 'ide' || cat === 'framework') return ['vibe', 'dev']
 
+  // Agent CLIs are vibe coders' canonical surface — Claude Code, Cursor's
+  // terminal agent, etc. Route them to vibe + dev, not dev-only.
+  if (has('cli') && has('agent')) return ['vibe', 'dev']
+  if (has('agent')) return ['vibe', 'dev']
+
   // Deep engineering tags — real dev only.
   if (has('cli') || has('sdk') || has('orm') || has('ssr') || has('react')
       || has('routing') || has('language') || has('state') || has('build')

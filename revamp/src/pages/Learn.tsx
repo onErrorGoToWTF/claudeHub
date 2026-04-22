@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { overallProgress, repo } from '../db/repo'
-import type { Track, Topic, Mastery } from '../db/types'
+import type { Track, Topic, Mastery, UserPathwayItem } from '../db/types'
 import {
   PageHeader, Section, Tile, TileTitle, TileMeta, TileRow,
   Chip, ProgressBar,
@@ -23,16 +23,19 @@ export function Learn() {
   const [completed, setCompleted] = useState(0)
   const [topicsTotal, setTopicsTotal] = useState(0)
   const [nextTopic, setNextTopic] = useState<Topic | null>(null)
+  const [pathwayItems, setPathwayItems] = useState<UserPathwayItem[]>([])
   const pathway = useUserStore(st => st.pathway)
 
   useEffect(() => {
     ;(async () => {
-      const [tr, top, ma, prog] = await Promise.all([
+      const [tr, top, ma, prog, upi] = await Promise.all([
         repo.listTracks(),
         repo.listTopics(),
         repo.listMastery(),
         overallProgress(),
+        repo.listPathwayItems(),
       ])
+      setPathwayItems(upi)
       setTracks(tr)
       const grouped: Record<string, Topic[]> = {}
       for (const t of top) (grouped[t.trackId] ||= []).push(t)
@@ -52,6 +55,11 @@ export function Learn() {
   const { primary, rest, split } = useMemo(
     () => splitByPathway(tracks, t => t.audience, pathway),
     [tracks, pathway],
+  )
+
+  const topicsById = useMemo(
+    () => Object.fromEntries(Object.values(topicsByTrack).flat().map(t => [t.id, t])),
+    [topicsByTrack],
   )
 
   return (
@@ -81,6 +89,8 @@ export function Learn() {
           </Link>
         )}
       </div>
+
+      <MyPathwayPanel items={pathwayItems} topicsById={topicsById} />
 
       <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
         <Link
@@ -124,6 +134,49 @@ export function Learn() {
           ))}
         </Disclosure>
       )}
+    </div>
+  )
+}
+
+function MyPathwayPanel({
+  items, topicsById,
+}: { items: UserPathwayItem[]; topicsById: Record<string, Topic> }) {
+  const active = items.filter(r => r.status === 'active')
+  if (active.length === 0) {
+    return (
+      <div className={s.pathwayPanel}>
+        <div className={s.pathwayHead}>
+          <span className={s.pathwayLabel}>My pathway</span>
+          <Link to="/learn/pathway" className={s.pathwayMeta}>
+            Build one <ArrowRight size={13} strokeWidth={1.75} />
+          </Link>
+        </div>
+        <div className={s.pathwayEmpty}>
+          No plan yet — start from a default or build it topic-by-topic.
+        </div>
+      </div>
+    )
+  }
+  const preview = active.slice(0, 3).map(r => topicsById[r.topicId]).filter(Boolean)
+  return (
+    <div className={s.pathwayPanel}>
+      <div className={s.pathwayHead}>
+        <span className={s.pathwayLabel}>My pathway</span>
+        <Link to="/learn/pathway" className={s.pathwayMeta}>
+          See full pathway ({active.length}) <ArrowRight size={13} strokeWidth={1.75} />
+        </Link>
+      </div>
+      <ol className={s.pathwayList}>
+        {preview.map((t, i) => (
+          <li key={t.id}>
+            <Link to={`/learn/topic/${t.id}`} className={s.pathwayRow}>
+              <span className={s.pathwayIdx}>{i + 1}</span>
+              <span className={s.pathwayTitle}>{t.title}</span>
+              <ArrowRight size={13} strokeWidth={1.75} />
+            </Link>
+          </li>
+        ))}
+      </ol>
     </div>
   )
 }

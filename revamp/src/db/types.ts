@@ -190,6 +190,24 @@ export type ProjectEventKind =
   | 'status_changed'
   | 'health_changed'
 
+/** A row in the user's persistent learning plan ("my pathway").
+ *  Soft-delete by flipping status to 'archived' — never hard-delete so the
+ *  user keeps a full learning record. Progress + mastery key off topicId,
+ *  not membership, so toggling status never wipes scores. */
+export interface UserPathwayItem {
+  id: ID                 // `upi.<topicId>`
+  topicId: ID
+  status: 'active' | 'archived'
+  /** Position within the active list (ascending). Archived rows keep their
+   *  last-known position so re-activating is stable, but the sort key shown
+   *  in the UI is `addedAt` descending for archived rows. */
+  position: number
+  addedAt: number
+  /** How the row got there — 'seed' (template stamp), 'manual' (user pick),
+   *  'project' (auto-merged from a project's gap topics). */
+  source: 'seed' | 'manual' | 'project'
+}
+
 export interface ProjectEvent {
   id: ID                 // `evt.<projectId>.<ts>.<kind>`
   projectId: ID

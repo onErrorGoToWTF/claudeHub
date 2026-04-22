@@ -105,6 +105,11 @@ export function Onboarding() {
   }
   function finish() {
     markOnboardingSeen()
+    // Stamp the default pathway template if the user has no plan yet.
+    // Non-blocking — pathway seeding must not stall the nav.
+    repo.seedPathwayFromTemplate(profile.pathway).catch(err =>
+      console.warn('[onboarding] pathway seed failed', err)
+    )
     nav('/')
   }
   function skipAll() {

@@ -171,7 +171,13 @@ export function Settings() {
                 key={p.id}
                 type="button"
                 className={`${s.option} ${on ? s.optionOn : ''}`}
-                onClick={() => setPathway(p.id)}
+                onClick={() => {
+                  setPathway(p.id)
+                  // Stamp the starter plan if the user has no pathway rows yet.
+                  repo.seedPathwayFromTemplate(p.id).catch(err =>
+                    console.warn('[settings] pathway seed failed', err)
+                  )
+                }}
               >
                 <div className={s.optionBody}>
                   <div className={s.optionTitle}>{p.label}</div>

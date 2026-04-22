@@ -5,6 +5,7 @@ import { AppShell } from './AppShell'
 import { Dashboard } from '../pages/Dashboard'
 import { Learn } from '../pages/Learn'
 import { CustomPathway } from '../pages/CustomPathway'
+import { MyPathway } from '../pages/MyPathway'
 import { TopicDetail } from '../pages/TopicDetail'
 import { LessonView } from '../pages/LessonView'
 import { QuizView } from '../pages/QuizView'
@@ -67,6 +68,7 @@ export function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/learn" element={<Learn />} />
             <Route path="/learn/custom" element={<CustomPathway />} />
+            <Route path="/learn/pathway" element={<MyPathway />} />
             <Route path="/learn/topic/:topicId" element={<TopicDetail />} />
             <Route path="/learn/lesson/:lessonId" element={<LessonView />} />
             <Route path="/learn/quiz/:quizId" element={<QuizView />} />

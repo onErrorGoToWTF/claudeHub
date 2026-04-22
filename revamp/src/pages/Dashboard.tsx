@@ -31,7 +31,17 @@ export function Dashboard() {
 
       const mastery = await repo.listMastery()
       const byId = new Map(mastery.map(m => [m.topicId, m.score]))
-      const unstarted = topics.find(t => !byId.has(t.id)) ?? topics[0]
+
+      // Prefer the user's own pathway: first active row whose topic isn't
+      // mastered yet. Falls back to the legacy "first unstarted in catalog"
+      // pick so users without a pathway still see a sensible next step.
+      const upi = await repo.listPathwayItems()
+      const activeUpi = upi.filter(r => r.status === 'active')
+      const fromPathway = activeUpi
+        .map(r => topicsById.get(r.topicId))
+        .filter((t): t is Topic => !!t)
+        .find(t => (byId.get(t.id) ?? 0) < 0.9)
+      const unstarted = fromPathway ?? topics.find(t => !byId.has(t.id)) ?? topics[0]
       setNextTopic(unstarted ?? null)
 
       // Dedupe by topic — most-recent touch per topic wins. Lesson and quiz
