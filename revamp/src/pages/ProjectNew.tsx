@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react'
 import { repo } from '../db/repo'
-import type { InventoryItem, Project, ProjectRoute, Topic } from '../db/types'
+import type { InventoryItem, Project, ProjectRoute, ProjectStatus, Topic } from '../db/types'
 import { Button, Chip, List, PageHeader, ProgressBar, Row } from '../ui'
 import { ROUTE_BLURBS, ROUTE_LABELS, routeStack } from '../lib/projectRoutes'
 import { useUserStore } from '../state/userStore'
@@ -47,13 +47,13 @@ function ProjectNewBuild() {
     step === 2 ? picked.length > 0 :
     true
 
-  async function save() {
+  async function save(initialStatus: ProjectStatus) {
     const now = Date.now()
     const p: Project = {
       id: `p.${now.toString(36)}`,
       title: title.trim(),
       summary: summary.trim(),
-      status: 'backlog',
+      status: initialStatus,
       route,
       stack: pickedIds,
       gapTopicIds: gapIds,
@@ -219,9 +219,12 @@ function ProjectNewBuild() {
             Continue <ArrowRight size={15} />
           </Button>
         ) : (
-          <Button variant="primary" onClick={save}>
-            Create project <ArrowRight size={15} />
-          </Button>
+          <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
+            <Button onClick={() => save('planned')}>Save as plan</Button>
+            <Button variant="primary" onClick={() => save('in_progress')}>
+              Start now <ArrowRight size={15} />
+            </Button>
+          </div>
         )}
       </div>
     </div>
