@@ -33,12 +33,11 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className={styles.shell}>
       <header className={styles.topbar}>
-        {/* Left cluster: identity (pathway now lives inside the user menu) */}
+        {/* Left cluster: brand only — account moved to the right */}
         <div className={styles.topLeft}>
           <div className={styles.brand}>
             <span className={styles.wordmark}>aiUniversity</span>
           </div>
-          <UserMenu />
         </div>
 
         {/* Middle: nav on desktop only; hidden on mobile (bottom nav wins) */}
@@ -65,6 +64,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <Search size={16} strokeWidth={1.75} />
           </button>
           <ThemeToggle />
+          <UserMenu />
         </div>
       </header>
 
