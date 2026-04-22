@@ -364,19 +364,23 @@ function LibRow({ item, pathway, onNavigate, onTogglePin }: {
 }
 
 function KindDot({ kind }: { kind: LibraryKind }) {
-  const map: Record<LibraryKind, { bg: string; fg: string; label: string }> = {
-    tool:  { bg: 'color-mix(in oklch, var(--accent-base) 18%, var(--bg-card))',   fg: 'var(--accent-ink)', label: 'T' },
-    doc:   { bg: 'color-mix(in oklch, var(--ink-1) 10%, var(--bg-card))',         fg: 'var(--ink-1)',      label: 'D' },
-    read:  { bg: 'color-mix(in oklch, var(--mastery-base) 16%, var(--bg-card))',  fg: 'color-mix(in oklch, var(--mastery-base) 60%, black)', label: 'R' },
-    video: { bg: 'color-mix(in oklch, var(--danger-base) 14%, var(--bg-card))',   fg: 'color-mix(in oklch, var(--danger-base) 60%, black)',  label: 'V' },
+  const map: Record<LibraryKind, { bg: string; fg: string; Icon: typeof Wrench; title: string }> = {
+    tool:  { bg: 'color-mix(in oklch, var(--accent-base) 18%, var(--bg-card))',   fg: 'var(--accent-ink)',                                       Icon: Wrench,   title: 'Tool'  },
+    doc:   { bg: 'color-mix(in oklch, var(--ink-1) 10%, var(--bg-card))',         fg: 'var(--ink-1)',                                            Icon: FileText, title: 'Doc'   },
+    read:  { bg: 'color-mix(in oklch, var(--mastery-base) 16%, var(--bg-card))',  fg: 'color-mix(in oklch, var(--mastery-base) 60%, black)',     Icon: BookOpen, title: 'Read'  },
+    video: { bg: 'color-mix(in oklch, var(--danger-base) 14%, var(--bg-card))',   fg: 'color-mix(in oklch, var(--danger-base) 60%, black)',      Icon: Film,     title: 'Video' },
   }
   const s = map[kind]
+  const Icon = s.Icon
   return (
-    <span aria-hidden style={{
+    <span aria-label={s.title} title={s.title} style={{
       display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-      width: 20, height: 20, fontSize: 10, fontWeight: 700,
-      color: s.fg, background: s.bg, borderRadius: 'var(--radius-sm)', letterSpacing: 0,
-    }}>{s.label}</span>
+      width: 22, height: 22,
+      color: s.fg, background: s.bg, borderRadius: 'var(--radius-sm)',
+      flexShrink: 0,
+    }}>
+      <Icon size={12} strokeWidth={2} />
+    </span>
   )
 }
 
