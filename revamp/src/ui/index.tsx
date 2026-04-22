@@ -121,6 +121,21 @@ export function Tile({ children, onClick }: { children: ReactNode; onClick?: () 
   )
 }
 
+/** Corner diagonal-fold ribbon. Sits top-right inside a relatively-positioned card.
+ *  Color maps to a semantic state (project status today; extend as needed). */
+export function StatusRibbon({ tone, label }: {
+  tone: 'backlog' | 'planned' | 'in_progress' | 'completed' | 'canceled'
+  label: string
+}) {
+  const cls =
+    tone === 'backlog'     ? s.ribbonBacklog :
+    tone === 'planned'     ? s.ribbonPlanned :
+    tone === 'in_progress' ? s.ribbonInProgress :
+    tone === 'completed'   ? s.ribbonCompleted :
+                             s.ribbonCanceled
+  return <span className={clsx(s.ribbon, cls)}>{label}</span>
+}
+
 export const TileTitle = ({ children }: { children: ReactNode }) => <div className={s.tileTitle}>{children}</div>
 export const TileMeta  = ({ children }: { children: ReactNode }) => <div className={s.tileMeta}>{children}</div>
 export const TileRow   = ({ children }: { children: ReactNode }) => <div className={s.tileRow}>{children}</div>

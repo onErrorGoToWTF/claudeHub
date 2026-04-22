@@ -85,9 +85,11 @@
   border-color: var(--accent-border);
 }
 .chipMuted {
-  color: color-mix(in oklch, var(--accent-ink) 65%, var(--ink-3));
-  background: color-mix(in oklch, var(--accent-surface) 55%, var(--bg-sunken));
-  border-color: color-mix(in oklch, var(--accent-border) 55%, var(--hair));
+  /* Dim the accent by mixing with white, not with warm ink — warm greige
+     canvas would otherwise green-shift the mix. */
+  color: color-mix(in oklch, var(--accent-ink) 75%, white);
+  background: color-mix(in oklch, var(--accent-surface) 50%, white);
+  border-color: color-mix(in oklch, var(--accent-border) 55%, white);
 }
 .chipMastery {
   color: color-mix(in oklch, var(--mastery-base) 70%, black);
@@ -178,6 +180,8 @@
 
 /* ---------- tile ---------- */
 .tile {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
@@ -194,6 +198,30 @@
     border-color var(--dur-2) var(--ease-premium),
     box-shadow var(--dur-2) var(--ease-premium);
 }
+
+/* ---------- status ribbon (corner diagonal fold) ---------- */
+.ribbon {
+  position: absolute;
+  top: 14px;
+  right: -36px;
+  width: 130px;
+  transform: rotate(45deg);
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-inverse);
+  padding: 3px 0;
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+.ribbonBacklog     { background: color-mix(in oklch, var(--ink-3) 80%, black); }
+.ribbonPlanned     { background: color-mix(in oklch, var(--accent-solid) 55%, white); color: var(--accent-ink); }
+.ribbonInProgress  { background: var(--accent-solid); }
+.ribbonCompleted   { background: var(--mastery-base); color: white; }
+.ribbonCanceled    { background: var(--danger-solid); }
 .tile:hover {
   background: color-mix(in oklch, var(--ink-1) 4%, var(--bg-card));
   border-color: var(--hair-strong);

@@ -92,9 +92,9 @@
   padding: 5px 11px;
 }
 .statusPillOn_planned {
-  color: color-mix(in oklch, var(--accent-ink) 65%, var(--ink-3));
-  background: color-mix(in oklch, var(--accent-surface) 55%, var(--bg-sunken));
-  border: 1px solid color-mix(in oklch, var(--accent-border) 55%, var(--hair));
+  color: color-mix(in oklch, var(--accent-ink) 75%, white);
+  background: color-mix(in oklch, var(--accent-surface) 50%, white);
+  border: 1px solid color-mix(in oklch, var(--accent-border) 55%, white);
   padding: 5px 11px;
 }
 .statusPillOn_in_progress {
