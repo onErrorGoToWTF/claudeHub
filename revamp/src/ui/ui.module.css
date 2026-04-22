@@ -199,29 +199,22 @@
     box-shadow var(--dur-2) var(--ease-premium);
 }
 
-/* ---------- status ribbon (corner diagonal fold) ---------- */
-.ribbon {
+/* ---------- corner status icon ---------- */
+.cornerIcon {
   position: absolute;
-  top: 14px;
-  right: -36px;
-  width: 130px;
-  transform: rotate(45deg);
-  text-align: center;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-inverse);
-  padding: 3px 0;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
   z-index: 1;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 }
-.ribbonBacklog     { background: color-mix(in oklch, var(--ink-3) 80%, black); }
-.ribbonPlanned     { background: color-mix(in oklch, var(--accent-solid) 55%, white); color: var(--accent-ink); }
-.ribbonInProgress  { background: var(--accent-solid); }
-.ribbonCompleted   { background: var(--mastery-base); color: white; }
-.ribbonCanceled    { background: var(--danger-solid); }
+.cornerBacklog    { color: var(--ink-3); }
+.cornerPlanned    { color: color-mix(in oklch, var(--accent-solid) 65%, white); }
+.cornerInProgress { color: var(--accent-solid); }
+.cornerCompleted  { color: var(--mastery-base); }
+.cornerCanceled   { color: var(--danger-solid); }
 .tile:hover {
   background: color-mix(in oklch, var(--ink-1) 4%, var(--bg-card));
   border-color: var(--hair-strong);

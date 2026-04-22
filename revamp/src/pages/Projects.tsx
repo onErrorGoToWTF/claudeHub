@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Plus, ArrowRight } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Project } from '../db/types'
-import { Button, Chip, Empty, PageHeader, StatusRibbon, Tile, TileMeta, TileRow, TileTitle } from '../ui'
+import { Button, Chip, Empty, PageHeader, StatusIcon, Tile, TileMeta, TileRow, TileTitle } from '../ui'
 import { grid } from '../ui/grid'
 import { STATUS_LABEL } from '../lib/projectStatus'
 import s from './Projects.module.css'
@@ -72,7 +72,7 @@ export function Projects() {
           {projects.map(p => (
             <Link key={p.id} to={`/projects/${p.id}`} style={{ color: 'inherit' }}>
               <Tile>
-                <StatusRibbon tone={p.status} label={STATUS_LABEL[p.status]} />
+                <StatusIcon tone={p.status} label={STATUS_LABEL[p.status]} />
                 <TileRow>
                   <TileTitle>{p.title}</TileTitle>
                 </TileRow>

@@ -1,5 +1,6 @@
 import type { ButtonHTMLAttributes, CSSProperties, ReactNode } from 'react'
 import clsx from 'clsx'
+import { HelpCircle, Lightbulb, Zap, CheckCircle2, XCircle } from 'lucide-react'
 import { useInViewReplay } from '../lib/useInViewReplay'
 import s from './ui.module.css'
 
@@ -121,19 +122,29 @@ export function Tile({ children, onClick }: { children: ReactNode; onClick?: () 
   )
 }
 
-/** Corner diagonal-fold ribbon. Sits top-right inside a relatively-positioned card.
- *  Color maps to a semantic state (project status today; extend as needed). */
-export function StatusRibbon({ tone, label }: {
+/** Small colored icon in the top-right corner of a relatively-positioned card.
+ *  Replaces the heavier ribbon — quieter, readable at a glance. */
+export function StatusIcon({ tone, label }: {
   tone: 'backlog' | 'planned' | 'in_progress' | 'completed' | 'canceled'
   label: string
 }) {
+  const Icon =
+    tone === 'backlog'     ? HelpCircle    :
+    tone === 'planned'     ? Lightbulb     :
+    tone === 'in_progress' ? Zap           :
+    tone === 'completed'   ? CheckCircle2  :
+                             XCircle
   const cls =
-    tone === 'backlog'     ? s.ribbonBacklog :
-    tone === 'planned'     ? s.ribbonPlanned :
-    tone === 'in_progress' ? s.ribbonInProgress :
-    tone === 'completed'   ? s.ribbonCompleted :
-                             s.ribbonCanceled
-  return <span className={clsx(s.ribbon, cls)}>{label}</span>
+    tone === 'backlog'     ? s.cornerBacklog :
+    tone === 'planned'     ? s.cornerPlanned :
+    tone === 'in_progress' ? s.cornerInProgress :
+    tone === 'completed'   ? s.cornerCompleted :
+                             s.cornerCanceled
+  return (
+    <span className={clsx(s.cornerIcon, cls)} aria-label={label} title={label}>
+      <Icon size={16} strokeWidth={2} />
+    </span>
+  )
 }
 
 export const TileTitle = ({ children }: { children: ReactNode }) => <div className={s.tileTitle}>{children}</div>
