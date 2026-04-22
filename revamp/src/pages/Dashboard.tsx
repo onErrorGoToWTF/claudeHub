@@ -94,7 +94,7 @@ export function Dashboard() {
           </Link>
 
           {projects.length === 0 ? (
-            <div className={s.muted}>No projects yet.</div>
+            <div className={s.muted}>Start a project — it'll show up here.</div>
           ) : (
             <div className={s.recents}>
               {projects.map(p => (

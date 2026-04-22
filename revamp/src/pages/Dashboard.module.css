@@ -67,6 +67,9 @@
   font-size: var(--text-sm);
   color: var(--ink-3);
   padding: var(--space-3) 0;
+  min-height: 66px;
+  display: flex;
+  align-items: center;
 }
 
 .recents {
