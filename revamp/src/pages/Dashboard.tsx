@@ -61,7 +61,7 @@ export function Dashboard() {
 
   return (
     <div className="page">
-      <PageHeader title="Learn. Build. Ship." />
+      <PageHeader title="Dashboard" />
 
       <div className={s.split}>
         {/* ---------- Learn panel ---------- */}
