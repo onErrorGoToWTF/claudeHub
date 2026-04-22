@@ -131,3 +131,35 @@
   max-width: 720px;
   margin: var(--space-6) auto 0;
 }
+
+/* ----- chip-row pickers (vibe + media stack sketches) ----- */
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pickChip {
+  padding: 6px 12px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ink-1);
+  background: var(--bg-card);
+  border: 1px solid var(--hair-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background var(--dur-2) var(--ease-premium),
+    border-color var(--dur-2) var(--ease-premium),
+    color var(--dur-2) var(--ease-premium);
+}
+.pickChip:hover { background: var(--accent-surface); }
+.pickChipOn {
+  background: var(--accent-surface);
+  border-color: var(--accent-border);
+  color: var(--accent-ink);
+}
+.chipMuted {
+  color: var(--ink-3);
+  font-weight: 400;
+  font-size: 11px;
+}

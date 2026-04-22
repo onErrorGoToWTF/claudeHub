@@ -167,6 +167,9 @@ export interface ProjectChecklistItem {
   done: boolean
 }
 
+/** Output shape for media-pathway projects. Missing = not a media project. */
+export type MediaKind = 'image' | 'video' | 'youtube' | 'voice' | 'audio' | 'multi'
+
 export interface Project {
   id: ID
   title: string
@@ -179,6 +182,11 @@ export interface Project {
   checklist: ProjectChecklistItem[]
   liveUrl?: string
   repoUrl?: string
+  /** Media-pathway-only. Undefined for vibe / dev / office projects. */
+  mediaKind?: MediaKind
+  /** Vibe/media-pathway-only free-text stack sketch (tools the user named
+   *  beyond the picked inventory items). Not parsed — just preserved. */
+  stackNotes?: string
   createdAt: number
   updatedAt: number
 }

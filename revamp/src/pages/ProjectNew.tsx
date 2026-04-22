@@ -8,15 +8,19 @@ import { Button, Chip, List, PageHeader, ProgressBar, Row } from '../ui'
 import { ROUTE_BLURBS, ROUTE_LABELS, routeStack } from '../lib/projectRoutes'
 import { useUserStore } from '../state/userStore'
 import { ProjectNewOffice } from './ProjectNewOffice'
+import { ProjectNewVibe } from './ProjectNewVibe'
+import { ProjectNewMedia } from './ProjectNewMedia'
 import styles from './ProjectNew.module.css'
 
 type Step = 0 | 1 | 2 | 3 | 4
 
-/** Dispatches to the Office-pathway intake when the user is on that pathway;
- *  otherwise runs the build-oriented flow below. */
+/** Dispatches to the pathway-specific intake. `dev` + `student` + `all`
+ *  share the build-oriented flow below (stack picker + route comparison). */
 export function ProjectNew() {
   const pathway = useUserStore(s => s.pathway)
   if (pathway === 'office') return <ProjectNewOffice />
+  if (pathway === 'vibe')   return <ProjectNewVibe />
+  if (pathway === 'media')  return <ProjectNewMedia />
   return <ProjectNewBuild />
 }
 
