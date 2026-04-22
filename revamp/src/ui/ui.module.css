@@ -523,7 +523,7 @@
   gap: 1px;
 }
 .userMenuItem {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
   padding: 8px 10px;
@@ -531,6 +531,49 @@
   color: var(--ink-1);
   border-radius: var(--radius-sm);
   text-decoration: none;
-  transition: background var(--dur-2) var(--ease-premium);
+  background: transparent;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--dur-2) var(--ease-premium), color var(--dur-2) var(--ease-premium);
 }
 .userMenuItem:hover { background: var(--accent-surface); color: var(--accent-ink); }
+
+.userMenuItemOn { color: var(--accent-ink); }
+
+.userMenuGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 2px 0 4px;
+}
+.userMenuGroupLabel {
+  padding: 8px 10px 4px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.userMenuRadio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid var(--hair-strong);
+  color: var(--accent-ink);
+  background: var(--bg-canvas);
+  flex-shrink: 0;
+}
+.userMenuItemOn .userMenuRadio {
+  border-color: var(--accent-border);
+  background: var(--accent-surface);
+}
+
+.userMenuDivider {
+  height: 1px;
+  background: var(--hair);
+  margin: 4px 2px;
+}

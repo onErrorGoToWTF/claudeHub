@@ -2,7 +2,6 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
 import { LayoutDashboard, BookOpen, FolderGit2, Library as LibraryIcon, Search } from 'lucide-react'
 import { ThemeToggle } from '../ui/ThemeToggle'
-import { PathwayPicker } from '../ui/PathwayPicker'
 import { GlobalSearch } from '../ui/GlobalSearch'
 import { UserMenu } from '../ui/UserMenu'
 import sharedStyles from '../ui/ui.module.css'
@@ -34,13 +33,12 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className={styles.shell}>
       <header className={styles.topbar}>
-        {/* Left cluster: identity + current context */}
+        {/* Left cluster: identity (pathway now lives inside the user menu) */}
         <div className={styles.topLeft}>
           <div className={styles.brand}>
             <span className={styles.wordmark}>aiUniversity</span>
           </div>
           <UserMenu />
-          <PathwayPicker />
         </div>
 
         {/* Middle: nav on desktop only; hidden on mobile (bottom nav wins) */}
