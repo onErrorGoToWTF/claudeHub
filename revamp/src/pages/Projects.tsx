@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import { Plus, ArrowRight } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Project } from '../db/types'
-import { Button, Chip, Empty, PageHeader, StatusIcon, Tile, TileMeta, TileRow, TileTitle } from '../ui'
+import { Button, Chip, Empty, PageHeader, Tile, TileMeta, TileRow, TileTitle } from '../ui'
 import { grid } from '../ui/grid'
-import { STATUS_LABEL } from '../lib/projectStatus'
+import { STATUS_LABEL, statusChipVariant } from '../lib/projectStatus'
 import s from './Projects.module.css'
 
 export function Projects() {
@@ -73,14 +73,11 @@ export function Projects() {
             <Link key={p.id} to={`/projects/${p.id}`} style={{ color: 'inherit' }}>
               <Tile>
                 <TileRow>
-                  <TileTitle>
-                    <StatusIcon tone={p.status} label={STATUS_LABEL[p.status]} />
-                    {p.title}
-                  </TileTitle>
+                  <TileTitle>{p.title}</TileTitle>
                 </TileRow>
                 <TileMeta>{p.summary}</TileMeta>
                 <TileRow>
-                  <Chip variant="accent">{p.route}</Chip>
+                  <Chip variant={statusChipVariant(p.status)}>{STATUS_LABEL[p.status]}</Chip>
                   <TileMeta>{new Date(p.updatedAt).toLocaleDateString()}</TileMeta>
                 </TileRow>
               </Tile>
