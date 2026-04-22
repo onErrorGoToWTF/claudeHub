@@ -180,8 +180,6 @@
 
 /* ---------- tile ---------- */
 .tile {
-  position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
@@ -199,16 +197,13 @@
     box-shadow var(--dur-2) var(--ease-premium);
 }
 
-/* ---------- corner status icon ---------- */
+/* ---------- inline status icon (prefixes title) ---------- */
 .cornerIcon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
-  z-index: 1;
+  margin-right: 6px;
+  vertical-align: -2px;
 }
 .cornerBacklog    { color: var(--ink-3); }
 .cornerPlanned    { color: color-mix(in oklch, var(--accent-solid) 65%, white); }

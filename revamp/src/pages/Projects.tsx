@@ -72,9 +72,11 @@ export function Projects() {
           {projects.map(p => (
             <Link key={p.id} to={`/projects/${p.id}`} style={{ color: 'inherit' }}>
               <Tile>
-                <StatusIcon tone={p.status} label={STATUS_LABEL[p.status]} />
                 <TileRow>
-                  <TileTitle>{p.title}</TileTitle>
+                  <TileTitle>
+                    <StatusIcon tone={p.status} label={STATUS_LABEL[p.status]} />
+                    {p.title}
+                  </TileTitle>
                 </TileRow>
                 <TileMeta>{p.summary}</TileMeta>
                 <TileRow>
