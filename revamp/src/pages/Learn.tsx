@@ -9,7 +9,8 @@ import {
 } from '../ui'
 import { grid } from '../ui/grid'
 import { AudienceBadge } from '../ui/AudienceBadge'
-import { splitByPathway, type UserPathway } from '../lib/audience'
+import { Disclosure } from '../ui/Disclosure'
+import { splitByPathway, shouldCollapseRestByDefault, type UserPathway } from '../lib/audience'
 import { useUserStore } from '../state/userStore'
 import s from './Learn.module.css'
 
@@ -106,17 +107,22 @@ export function Learn() {
       ))}
 
       {split && rest.length > 0 && (
-        <SectionHeading label="Everything else" tone="muted" />
+        <Disclosure
+          label="Everything else"
+          meta={`${rest.length} ${rest.length === 1 ? 'track' : 'tracks'}`}
+          defaultOpen={!shouldCollapseRestByDefault(pathway)}
+        >
+          {rest.map(track => (
+            <TrackSection
+              key={track.id}
+              track={track}
+              topics={topicsByTrack[track.id] ?? []}
+              mastery={mastery}
+              pathway={pathway}
+            />
+          ))}
+        </Disclosure>
       )}
-      {rest.map(track => (
-        <TrackSection
-          key={track.id}
-          track={track}
-          topics={topicsByTrack[track.id] ?? []}
-          mastery={mastery}
-          pathway={pathway}
-        />
-      ))}
     </div>
   )
 }

@@ -19,24 +19,24 @@ export function matchesPathway(p: UserPathway, audience?: Audience[]): boolean {
 
 /** True when this item should float to the top for the user's pathway.
  *  - `all` → everything is primary (no sort preference).
- *  - `dev` → everything is primary. Devs get exposure to all sides so they
- *    can build for student/office users; no "everything else" bucket.
- *  - `student`/`office` → only matching items are primary. Non-matching
- *    content is still fully available; it just sits below the primary list. */
+ *  - `student`/`office`/`dev` → only audience-matching items are primary.
+ *    Non-matching content is still fully available; it sits below the
+ *    primary list and — for dev — is collapsed by default
+ *    (see shouldCollapseRestByDefault). */
 export function isPrimaryForPathway(p: UserPathway, audience?: Audience[]): boolean {
-  if (p === 'all' || p === 'dev') return true
+  if (p === 'all') return true
   if (!audience || audience.length === 0) return true
   return audience.includes(p)
 }
 
 /** Split a list into `primary` (matches pathway) and `rest` (everything
- *  else). `split === false` for `all` and `dev` — render as one list. */
+ *  else). `split === false` only for `all` — one merged list, no labels. */
 export function splitByPathway<T>(
   items: T[],
   audienceOf: (item: T) => Audience[] | undefined,
   p: UserPathway,
 ): { primary: T[]; rest: T[]; split: boolean } {
-  if (p === 'all' || p === 'dev') return { primary: items, rest: [], split: false }
+  if (p === 'all') return { primary: items, rest: [], split: false }
   const primary: T[] = []
   const rest: T[]    = []
   for (const it of items) {
@@ -44,6 +44,15 @@ export function splitByPathway<T>(
     else rest.push(it)
   }
   return { primary, rest, split: true }
+}
+
+/** Whether the "Everything else" band should start collapsed.
+ *  Only `dev` defaults to collapsed — devs already know most basics and
+ *  want the foundational / office material tucked away until they ask.
+ *  Student + office default to expanded because exposure to the rest
+ *  broadens their learning. */
+export function shouldCollapseRestByDefault(p: UserPathway): boolean {
+  return p === 'dev'
 }
 
 /** Short audience tag for chip rendering. Items in multiple audiences show

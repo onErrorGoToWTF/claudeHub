@@ -8,7 +8,8 @@ import { repo } from '../db/repo'
 import type { LibraryItem, LibraryKind } from '../db/types'
 import { Chip, List, PageHeader, Row, Empty } from '../ui'
 import { AudienceBadge } from '../ui/AudienceBadge'
-import { splitByPathway, type UserPathway } from '../lib/audience'
+import { Disclosure } from '../ui/Disclosure'
+import { splitByPathway, shouldCollapseRestByDefault, type UserPathway } from '../lib/audience'
 import { useUserStore } from '../state/userStore'
 import styles from './Library.module.css'
 
@@ -264,16 +265,21 @@ export function Library() {
               ))}
             </List>
           )}
-          {split && rest.length > 0 && <BandHeading label="Everything else" muted />}
-          {rest.length > 0 && (
-            <List>
-              {rest.map(i => (
-                <LibRow key={i.id} item={i} pathway={pathway}
-                  onNavigate={() => { if (i.body) nav(`/library/${i.id}`) }}
-                  onTogglePin={(e) => { e.stopPropagation(); togglePin(i) }}
-                />
-              ))}
-            </List>
+          {split && rest.length > 0 && (
+            <Disclosure
+              label="Everything else"
+              meta={`${rest.length} ${rest.length === 1 ? 'item' : 'items'}`}
+              defaultOpen={!shouldCollapseRestByDefault(pathway)}
+            >
+              <List>
+                {rest.map(i => (
+                  <LibRow key={i.id} item={i} pathway={pathway}
+                    onNavigate={() => { if (i.body) nav(`/library/${i.id}`) }}
+                    onTogglePin={(e) => { e.stopPropagation(); togglePin(i) }}
+                  />
+                ))}
+              </List>
+            </Disclosure>
           )}
         </>
       )}
