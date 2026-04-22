@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T10:56:05.917Z",
+  "generated_at": "2026-04-22T12:55:31.728Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,51 @@
     ],
     "news": [
       {
+        "title": "Anthropic just made AI scarier - vox.com",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZU5PMVNWSzYtQUlqQ0IyRVZLS2JnU1pmNGJfREJxSXBQMThyaEtPekx2NThGLWRRT0MyU0UycXV3WXJKcWRfSDdnclFtZm5KbWNMalh1bFV0RDZFT2JzaHBQemlkRW9RTFBsaVNFbm5vd0l0bHEyR0NvLWp5YW0tZTMzc1hpYXM2cTRiMkt6OHN2bTRjSVJiR2RqYzBrM01y?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T11:30:00.000Z",
+        "summary": "Anthropic just made AI scarier vox.com"
+      },
+      {
+        "title": "Claude Design + Claude Code = No Designer Needed",
+        "url": "https://www.youtube.com/watch?v=-W8uYEX4gLQ",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "-W8uYEX4gLQ",
+        "thumbnail": "https://i.ytimg.com/vi/-W8uYEX4gLQ/hqdefault.jpg",
+        "published": "2026-04-22T11:25:52.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic's Claude Mythos found 271 Firefox vulnerabilities - CTO calls it just as capable as 'elite security researchers' - TweakTown",
+        "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPOU1xYTJWeEtoNm5aZkdtRVdodExNbVM1TFViLURFbTBubm81ZnhRLUh0bVJCZVlycU5wcUdPT0ViQ3FrOWpYT1IxbFpsdU44aWptdC1wYmktejZpRzBNbmZVUjRXaDFqY3YyMVVNN21YVXJrVFExMWl5WVFaTUhyRFBSNEZPOFdYdi0wN1JuTnJJcXdVci12TUxMalZmWThPR1lGM1JzMGpSSEFMbTd6WURubmYzdVg1RHdCQmhkbUVnY3hETU1ZRkJVR2ttNUNxdzZsMTlTcE5qcWYwM256MjVtMFFsRENIT2QtUU9sY1BKbVZB?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T11:22:06.000Z",
+        "summary": "Anthropic's Claude Mythos found 271 Firefox vulnerabilities - CTO calls it just as capable as 'elite security researchers' TweakTown"
+      },
+      {
+        "title": "Anthropic's Model Context Protocol includes a critical remote code execution vulnerability — newly discovered exploit puts 200,000 AI servers at risk - Tom's Hardware",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPODhBN25WYUh4Mnd6WVZPaXJKRHlObDhKeDVCU1E1TXNYNmItUzVXeDJpMlpTd3VJZXZIdU96NTRzWXJkMmNaUEZabFdzSGlwNldhSTMxQ3BMQmhuVjdBaTgwRDZRcmVuc1oxbjhEbDFfYlRBMDJHSVUxVVFkTjFXUlB2N2ExRDk0UEFRNnZRaUZEVGZsakNuT3VKUkxESE5XUHRrNUh1Skdkb1dNZTQ0NXN1V2F3eHYwQWdubXZ4Z1NtV2FLbWJmRFRLUVo0czY4?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T11:00:00.000Z",
+        "summary": "Anthropic's Model Context Protocol includes a critical remote code execution vulnerability — newly discovered exploit puts 200,000 AI servers at risk Tom's Hardware"
+      },
+      {
         "title": "Unauthorised users accessed Claude Mythos, Anthropic investigates - Storyboard18",
         "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQOVMzT3NQN0F6MzhHeEx4QWcxTzhpOWxLYlNlX29wSDRFNVlvNGp4WGdOeWQyX2NLZ1lUZXp3SHBPSHNyZEw2TU1pQm9mMFZMalRTVnh0SWVmcm45T3FNQXBUVFJWRkl6eUM5NzIwT2JybEFPY0NhbUFwNjhJZElwSUZFQkE3RDc3QmktSU5PU29ERmoyX0hiVkZZNU1FbDNYSmpEMXJIWkQwQWlLdGJISFZKOGhBd9IBtgFBVV95cUxQOVMzT3NQN0F6MzhHeEx4QWcxTzhpOWxLYlNlX29wSDRFNVlvNGp4WGdOeWQyX2NLZ1lUZXp3SHBPSHNyZEw2TU1pQm9mMFZMalRTVnh0SWVmcm45T3FNQXBUVFJWRkl6eUM5NzIwT2JybEFPY0NhbUFwNjhJZElwSUZFQkE3RDc3QmktSU5PU29ERmoyX0hiVkZZNU1FbDNYSmpEMXJIWkQwQWlLdGJISFZKOGhBdw?oc=5",
         "source": "Google News",
         "published": "2026-04-22T10:48:20.000Z",
         "summary": "Unauthorised users accessed Claude Mythos, Anthropic investigates Storyboard18"
+      },
+      {
+        "title": "Discord group accessed Anthropic’s Mythos without authorization - Cybernews",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE4zVk9jbVRGQmg4Zmd3R0NqMnlQTXVNTzJqS0pTZThOcTkxNk9TdW5nUUQ0S3FnQl9VNGtQSzZLeTFiOXRnbTI2dE91b3BheXBZNVV4cnVJUTZwb3JoNEZtLVIyNHMzMFhmQkVPU1l0QzMwbHN2NjI4dFUwQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T10:23:17.000Z",
+        "summary": "Discord group accessed Anthropic’s Mythos without authorization Cybernews"
       },
       {
         "title": "Anthropic investigating claims of rogue access to its high-risk Claude Mythos AI: Report - The Indian Express",
@@ -167,11 +207,18 @@
         "summary": "Anthropic's Mythos AI Breached by Unauthorized Users The Tech Buzz"
       },
       {
-        "title": "Reserve Bank of India studies AI risks from Anthropic Mythos - Gulf Business",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQdmdqZ00xSEotVHplbjZSSHRUcjFOTGhYTVZpMEptMV9rZGh6MWFpOE1NMUYwNUM5Ym5rUmhMdTJPQ1ZFaFRPcUJkODdEUnE1MFB3cXlYdDR3VGpBdVEzRll6SjFDbXBua1lMNWlVcjY5MmlkbW5KZEFPcEpDSjYzTG5acUR4VmpXbFNuSFFCRmdNYlZDOWhpU1hVTFpsSS1DZURnWTJFMWxyNnp4Z0RfWXZNZTA5cmYzTnc?oc=5",
+        "title": "Anthropic investigating claim of unauthorised access to Mythos AI tool - BBC",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB2NzZaZlJ3Y21VbHdvNm43anJ4SU41WS10cjAxb3NaSWFFOFlDSWFIRDR0MUtfQ1NXVmJkUFhGWVlkYnlzUmtRbDBsQTktYzhWakRHVlFYSjBPQQ?oc=5",
         "source": "Google News",
-        "published": "2026-04-22T10:04:33.000Z",
-        "summary": "Reserve Bank of India studies AI risks from Anthropic Mythos Gulf Business"
+        "published": "2026-04-22T10:13:35.000Z",
+        "summary": "Anthropic investigating claim of unauthorised access to Mythos AI tool BBC"
+      },
+      {
+        "title": "Amazon stocks see gain following $25,000,000,000 AI bet - UNILAD Tech",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOanV2SUVQd3JwYmZ3Qk9aQ0VRQ3BfbTI5SUxPcnhNZEpqRUZDS2xnQzFIeld4RE10QWFnM3BCSzZTNWplS2FwNnVDaEh2cVBrWEZ5bmZkSzBCeW9yZWZtenVZT0lpODRPMHN1b2c3UDd5VnUtWjU0NDR2OHJCYkpoOUxxcDI5RmRWVzJUdUJhRDEwaWVJa1E?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T10:11:43.000Z",
+        "summary": "Amazon stocks see gain following $25,000,000,000 AI bet UNILAD Tech"
       },
       {
         "title": "Claude over AI Code? Anthropic in fresh drama as users say access to Code made more expensive - India Today",
@@ -207,6 +254,13 @@
         "source": "The Verge",
         "published": "2026-04-22T09:18:40.000Z",
         "summary": "Anthropic's Mythos AI model, a powerful cybersecurity tool that the company said could be dangerous in the wrong hands, has been accessed by a \"small group of unauthorized users,\" Bloomberg reports.…"
+      },
+      {
+        "title": "Anthropic’s most dangerous AI model just fell into the wrong hands - The Verge",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNLUJjcW5zR2djTTluWmhuU05jNW85Vll2cWsyUFFfeVlLbGJrckMzblJtcE9SY0JYTV8yamRSMHdRNTQ4bV9uVVZ4U2xzOWpsUm5ZaHJmTGRjSDB5cUNXLVQ0Y1VuTnBDSWc3SjdrQXE4VUYzRzNkOThwclJYQUdEaXNSZ2Y2U3ZhVC1wSW9iQmRjN0dobEM3b3FfMGxLRnpkaU1oTTQwZTdQeVlzWHBB?oc=5",
+        "source": "Google News",
+        "published": "2026-04-22T09:18:40.000Z",
+        "summary": "Anthropic’s most dangerous AI model just fell into the wrong hands The Verge"
       },
       {
         "title": "Anthropic's Unreleased Claude Mythos Found 271 Firefox Bugs - BeInCrypto",
@@ -272,53 +326,11 @@
         "summary": "Anthropic and Amazon Secure 5GW Compute for Claude Let's Data Science"
       },
       {
-        "title": "Trump Hints at Thaw With AI Firm Anthropic - The Defense Post",
-        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1kSi0zbURmUFBSa25lTmVLUnd2eEF2ZzRydjZ6VW9VRndCT0RRSTdMMXl0dTBKX0hfLWxJZUlWN0ItTjZZeWFEVng5bHJ5SkFXbnp6Z0Vpdk1jYXU3WV9SMWNxX3BfOGU1UHRmWtIBckFVX3lxTE5KLWNneTAwYmViOFAzTTdrWHNodGdxcFE2RTlWYTlQWGR1c1djZHJRX2w1TlpZV19PWkU2TC1UQkJmV1J2MEN4ejdhMEF1ek1EWXNzLUdhcTdKRkdNREk5dE9tdkZGbk92a0RGLVBSUjFYZw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-22T05:55:50.000Z",
-        "summary": "Trump Hints at Thaw With AI Firm Anthropic The Defense Post"
-      },
-      {
         "title": "Anthropic’s Mythos Accessed by Unauthorized Users",
         "url": "https://www.bloomberg.com/news/videos/2026-04-22/anthropic-s-mythos-accessed-by-unauthorized-users-video-mo9mo8e4",
         "source": "Bloomberg",
         "published": "2026-04-22T05:44:22.000Z",
         "summary": "A small group of unauthorized users have accessed Anthropic's new Mythos AI model, a technology that the company says is so powerful it can enable dangerous cyberattacks, according to a person…"
-      },
-      {
-        "title": "Anthropic’s Mythos model accessed by unauthorized users, report says - Cybernews",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE4zVk9jbVRGQmg4Zmd3R0NqMnlQTXVNTzJqS0pTZThOcTkxNk9TdW5nUUQ0S3FnQl9VNGtQSzZLeTFiOXRnbTI2dE91b3BheXBZNVV4cnVJUTZwb3JoNEZtLVIyNHMzMFhmQkVPU1l0QzMwbHN2NjI4dFUwQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-22T05:32:13.000Z",
-        "summary": "Anthropic’s Mythos model accessed by unauthorized users, report says Cybernews"
-      },
-      {
-        "title": "Anthropic Asserts Fair Use in Music Copyright Lawsuit - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNZTF5Um5LNEpONWJJdkg4ZHQ5WnhId0FfYzBYUmZFbmVRUXROSE5FcnVPSE1VOFFGZTlyWW5WMmI1R2Zsbnlxb191aWRicXZjX0FyQ1lNRjNqUWg1Y0JpNGVzbUVkakNpZWVpUDVoU3BoaWN4cTBVNFJncFRYQzRyQVpMTU5BcjJaUkpHNHRwY1BTVi02czhFdzRDVQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-22T05:07:10.000Z",
-        "summary": "Anthropic Asserts Fair Use in Music Copyright Lawsuit Let's Data Science"
-      },
-      {
-        "title": "AI: Anthropic & OpenAI's 'Velvet Rope AI' upgrade Drift. RTZ #1064 - AI: Reset to Zero",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE56YVQwMm0xNndRTTdCV1hzLWYwdVV0WERodUI1dk1fTWY3TmR1YjVqNm1DTGFVMHlUbFN5Nnpid1hubUhURW0tOWlnNERDV2J4T256VWItWjg5bWVYUUVxWlQ1NE8yVkdzSWVMOWRTaDJUSGw5UTZ5OHgyNHpaZw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-22T05:02:50.000Z",
-        "summary": "AI: Anthropic & OpenAI's 'Velvet Rope AI' upgrade Drift. RTZ #1064 AI: Reset to Zero"
-      },
-      {
-        "title": "Some Unknown Group Is Reportedly Using Claude Mythos Without Permission - Gizmodo",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNT2FTQXZUNE55SG1QYzVheUV2QTgycUx4SGxLUU5hazE5eDA2ZGI5LTVRUUptRmJiY0I4WFNJcVFpNnBYemJKWTM3Z096UkN1WVlsOWFIN29HengzaUZqTGRHY1pmY3NYOEUyNDFMeGFMY3pDRmtqc0tNMkh2bnRnbWZNb1RVLVUxT3R5YjcxODhBQzZTNno3ZV9FdzZmcHA3MFA1dA?oc=5",
-        "source": "Google News",
-        "published": "2026-04-22T03:37:46.000Z",
-        "summary": "Some Unknown Group Is Reportedly Using Claude Mythos Without Permission Gizmodo"
-      },
-      {
-        "title": "Unknown Group Accesses Claude Mythos Without Authorization - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxObHZyQ3h4bkVwLVhTQW9LRC0zU1ZBb3dJREM3eHBMUFRqYjNCcnFiLTQ0Vzk0dGNaWWljVnhpcUdHR2FxSjNUQnJibWs2N0ktZFhKLVFHNTluUDctR25abjZMbkxmckVZRHRCZXk2RHpLZzIzeWh5a3diMWh3bTdSdnNEM3lxS0VmRWNJRndsdXpzT25BeS1UOU84ek01OGN2OVE?oc=5",
-        "source": "Google News",
-        "published": "2026-04-22T03:37:21.000Z",
-        "summary": "Unknown Group Accesses Claude Mythos Without Authorization Let's Data Science"
       },
       {
         "title": "Claude Code Routines - It Codes While You Sleep",
@@ -589,6 +601,17 @@
     ],
     "youtube": [
       {
+        "title": "Claude Design + Claude Code = No Designer Needed",
+        "url": "https://www.youtube.com/watch?v=-W8uYEX4gLQ",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "-W8uYEX4gLQ",
+        "thumbnail": "https://i.ytimg.com/vi/-W8uYEX4gLQ/hqdefault.jpg",
+        "published": "2026-04-22T11:25:52.000Z",
+        "summary": ""
+      },
+      {
         "title": "How to Use Claude Cowork Live Artifacts (Step-by-Step Tutorial)",
         "url": "https://www.youtube.com/watch?v=6jKeNcfvGVM",
         "source": "Ryan & Matt Data Science",
@@ -906,17 +929,6 @@
         "thumbnail": "https://i.ytimg.com/vi/HN6Zd6sZT-A/hqdefault.jpg",
         "published": "2026-04-14T13:00:27.000Z",
         "summary": ""
-      },
-      {
-        "title": "FULL Claude Tutorial For Beginners in 2026! (FULL COURSE)",
-        "url": "https://www.youtube.com/watch?v=Xg55nTrbYYY",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "Xg55nTrbYYY",
-        "thumbnail": "https://i.ytimg.com/vi/Xg55nTrbYYY/hqdefault.jpg",
-        "published": "2026-04-13T13:01:03.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
@@ -1183,18 +1195,6 @@
         "published": "2026-04-13T17:46:47.000Z",
         "summary": "",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "FULL Claude Tutorial For Beginners in 2026! (FULL COURSE)",
-        "url": "https://www.youtube.com/watch?v=Xg55nTrbYYY",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "Xg55nTrbYYY",
-        "thumbnail": "https://i.ytimg.com/vi/Xg55nTrbYYY/hqdefault.jpg",
-        "published": "2026-04-13T13:01:03.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "Merge pull request #526 from anthropics/sre-incident-response-agent-f…",
@@ -1743,6 +1743,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Claude Design + Claude Code = No Designer Needed",
+        "url": "https://www.youtube.com/watch?v=-W8uYEX4gLQ",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-04-22T11:25:52.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.117",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.117",
         "source": "Claude Code",
@@ -2063,13 +2070,6 @@
         "source": "MCP Inspector",
         "published": "2026-04-13T14:03:19.000Z",
         "summary": "chore: bump version to 0.21.2"
-      },
-      {
-        "title": "FULL Claude Tutorial For Beginners in 2026! (FULL COURSE)",
-        "url": "https://www.youtube.com/watch?v=Xg55nTrbYYY",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-04-13T13:01:03.000Z",
-        "summary": ""
       },
       {
         "title": "We've launched the advisor tool in public beta. Pair a faster executor model with a higher-intelligence advisor model…",
