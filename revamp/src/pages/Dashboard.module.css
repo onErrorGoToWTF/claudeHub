@@ -6,9 +6,6 @@
 @media (min-width: 880px) {
   .split { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
 }
-@media (min-width: 1240px) {
-  .split { grid-template-columns: 1fr 1fr 1fr; }
-}
 
 .panel {
   display: flex;
