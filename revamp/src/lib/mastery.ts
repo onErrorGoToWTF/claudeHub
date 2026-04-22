@@ -11,5 +11,5 @@ export function masteryStatus(score: number | undefined): MasteryStatus {
 export const MASTERY_LABEL: Record<MasteryStatus, string> = {
   not_started: 'Not started',
   in_progress: 'In progress',
-  mastered:    'Mastered',
+  mastered:    'Completed',
 }

@@ -56,7 +56,7 @@ export function TopicDetail() {
           if (lessonsTotal === 0 && quizzesTotal === 0) return null
           const bits: string[] = []
           if (lessonsTotal > 0)  bits.push(`${lessonsDone}/${lessonsTotal} lessons done`)
-          if (quizzesTotal > 0)  bits.push(`${quizzesPassed}/${quizzesTotal} quizzes mastered`)
+          if (quizzesTotal > 0)  bits.push(`${quizzesPassed}/${quizzesTotal} quizzes passed`)
           return (
             <div style={{
               marginTop: 8, fontSize: 'var(--text-xs)', color: 'var(--ink-3)',

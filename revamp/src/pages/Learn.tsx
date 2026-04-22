@@ -66,7 +66,7 @@ export function Learn() {
         <div className={s.rollup}>
           <div className={s.rollupHead}>
             <span className={s.rollupLabel}>Overall mastery</span>
-            <span className={s.rollupMeta}>{completed} / {topicsTotal} mastered</span>
+            <span className={s.rollupMeta}>{completed} / {topicsTotal} completed</span>
           </div>
           <div className={s.rollupValue}>{Math.round(score * 100)}%</div>
           <ProgressBar value={score} />

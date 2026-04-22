@@ -67,7 +67,7 @@ export function Dashboard() {
                 <BookOpen size={16} strokeWidth={1.75} /> Learn
               </span>
             </span>
-            <span className={s.panelMeta}>{completed} / {topicsCount} mastered</span>
+            <span className={s.panelMeta}>{completed} / {topicsCount} completed</span>
           </header>
 
           <ProgressBar value={score} />
