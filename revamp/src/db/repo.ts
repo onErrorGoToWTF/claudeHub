@@ -8,6 +8,7 @@ import type {
   Track, Topic, Lesson, Quiz, Progress, Mastery,
   LibraryItem, LibraryKind, InventoryItem, Project, SearchMiss, ProjectEvent,
 } from './types'
+import { PASS_THRESHOLD } from '../lib/mastery'
 
 export const repo = {
   // ---------- tracks / topics ----------
@@ -48,11 +49,13 @@ export const repo = {
   async recordQuiz(quizId: string, topicId: string, score: number) {
     const now = Date.now()
     const prev = await db.progress.get(quizId)
+    // Latest attempt wins. A lower score on retake overwrites the old one —
+    // Khan-style truth over high-water mark. Report card will persist history.
     await db.progress.put({
       id: quizId, kind: 'quiz', topicId,
-      score: Math.max(prev?.score ?? 0, score),
+      score,
       attempts: (prev?.attempts ?? 0) + 1,
-      completedAt: score >= 0.8 ? now : prev?.completedAt,
+      completedAt: score >= PASS_THRESHOLD ? now : undefined,
       updatedAt: now,
     })
     await recomputeMastery(topicId)
@@ -187,6 +190,6 @@ export async function overallProgress(): Promise<{ score: number; topics: number
   return {
     score: sum / topics,
     topics,
-    completed: mastery.filter(m => m.score >= 0.8).length,
+    completed: mastery.filter(m => m.score >= PASS_THRESHOLD).length,
   }
 }

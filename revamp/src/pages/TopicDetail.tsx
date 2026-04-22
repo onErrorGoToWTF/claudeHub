@@ -5,6 +5,7 @@ import { repo } from '../db/repo'
 import type { Lesson, Quiz, Topic, Progress } from '../db/types'
 import { PageHeader, Section, Tile, TileTitle, TileMeta, TileRow, Chip, ProgressBar } from '../ui'
 import { grid } from '../ui/grid'
+import { PASS_THRESHOLD, MASTERY_THRESHOLD } from '../lib/mastery'
 
 export function TopicDetail() {
   const { topicId = '' } = useParams()
@@ -50,7 +51,7 @@ export function TopicDetail() {
         <ProgressBar value={mastery} />
         {(() => {
           const lessonsDone    = lessons.filter(l => !!progress[l.id]?.completedAt).length
-          const quizzesPassed  = quizzes.filter(q => (progress[q.id]?.score ?? 0) >= 0.8).length
+          const quizzesPassed  = quizzes.filter(q => (progress[q.id]?.score ?? 0) >= PASS_THRESHOLD).length
           const lessonsTotal   = lessons.length
           const quizzesTotal   = quizzes.length
           if (lessonsTotal === 0 && quizzesTotal === 0) return null
@@ -101,7 +102,8 @@ export function TopicDetail() {
             {quizzes.map(q => {
               const pr = progress[q.id]
               const score = pr?.score ?? 0
-              const failed = !!pr && score < 0.8
+              const failed = !!pr && score < PASS_THRESHOLD
+              const mastered = score >= MASTERY_THRESHOLD
               return (
                 <Link key={q.id} to={`/learn/quiz/${q.id}`} style={{ color: 'inherit' }}>
                   <Tile>
@@ -112,7 +114,7 @@ export function TopicDetail() {
                         </span>
                       </TileTitle>
                       {pr
-                        ? <Chip variant={score >= 0.8 ? 'mastery' : 'accent'}>
+                        ? <Chip variant={mastered ? 'mastery' : score >= PASS_THRESHOLD ? 'accent' : undefined}>
                             {Math.round(score * 100)}%
                           </Chip>
                         : <ArrowRight size={16} />}

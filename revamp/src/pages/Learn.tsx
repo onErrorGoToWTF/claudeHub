@@ -11,7 +11,7 @@ import { grid } from '../ui/grid'
 import { AudienceBadge } from '../ui/AudienceBadge'
 import { Disclosure } from '../ui/Disclosure'
 import { splitByPathway, shouldCollapseRestByDefault, type UserPathway } from '../lib/audience'
-import { masteryStatus, MASTERY_LABEL } from '../lib/mastery'
+import { masteryStatus, MASTERY_LABEL, PASS_THRESHOLD, MASTERY_THRESHOLD } from '../lib/mastery'
 import { useUserStore } from '../state/userStore'
 import s from './Learn.module.css'
 
@@ -184,7 +184,7 @@ function TrackSection({
                   <ProgressBar value={score} />
                 </div>
                 <TileRow>
-                  <Chip variant={score >= 0.8 ? 'mastery' : score > 0 ? 'accent' : undefined}>
+                  <Chip variant={score >= MASTERY_THRESHOLD ? 'mastery' : score >= PASS_THRESHOLD ? 'accent' : undefined}>
                     {label}
                   </Chip>
                   <TileMeta>{Math.round(score * 100)}%</TileMeta>

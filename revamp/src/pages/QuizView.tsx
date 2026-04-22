@@ -5,6 +5,7 @@ import { ArrowLeft, Sparkles } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Quiz } from '../db/types'
 import { Button, PageHeader, ProgressBar } from '../ui'
+import { PASS_THRESHOLD } from '../lib/mastery'
 import styles from './QuizView.module.css'
 
 type Phase = 'answering' | 'done'
@@ -79,7 +80,7 @@ export function QuizView() {
   if (phase === 'done') {
     const score = correct / quiz.questions.length
     const pct = Math.round(score * 100)
-    const passed = score >= 0.8
+    const passed = score >= PASS_THRESHOLD
     return (
       <div className="page">
         <PageHeader eyebrow="Quiz complete" title={passed ? 'Nicely done.' : 'Not quite — try again soon.'} />
