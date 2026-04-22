@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, BookOpen, CircleCheckBig, HelpCircle } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpen, CircleCheckBig, HelpCircle, RotateCcw } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Lesson, Quiz, Topic, Progress } from '../db/types'
 import { PageHeader, Section, Tile, TileTitle, TileMeta, TileRow, Chip, ProgressBar } from '../ui'
@@ -100,6 +100,8 @@ export function TopicDetail() {
           <div className={grid}>
             {quizzes.map(q => {
               const pr = progress[q.id]
+              const score = pr?.score ?? 0
+              const failed = !!pr && score < 0.8
               return (
                 <Link key={q.id} to={`/learn/quiz/${q.id}`} style={{ color: 'inherit' }}>
                   <Tile>
@@ -110,12 +112,19 @@ export function TopicDetail() {
                         </span>
                       </TileTitle>
                       {pr
-                        ? <Chip variant={(pr.score ?? 0) >= 0.8 ? 'mastery' : 'accent'}>
-                            {Math.round((pr.score ?? 0) * 100)}%
+                        ? <Chip variant={score >= 0.8 ? 'mastery' : 'accent'}>
+                            {Math.round(score * 100)}%
                           </Chip>
                         : <ArrowRight size={16} />}
                     </TileRow>
-                    <TileMeta>{q.questions.length} questions</TileMeta>
+                    <TileRow>
+                      <TileMeta>{q.questions.length} questions</TileMeta>
+                      {failed && (
+                        <Chip variant="accent">
+                          <RotateCcw size={12} /> Retake
+                        </Chip>
+                      )}
+                    </TileRow>
                   </Tile>
                 </Link>
               )

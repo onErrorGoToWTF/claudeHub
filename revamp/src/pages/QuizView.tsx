@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowLeft, Check, X, Sparkles, RotateCcw } from 'lucide-react'
+import { ArrowLeft, Check, X, Sparkles } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Quiz } from '../db/types'
 import { Button, PageHeader, ProgressBar } from '../ui'
@@ -57,13 +57,6 @@ export function QuizView() {
     if (picked === q!.answerIdx) setCorrect(c => c + 1)
   }
 
-  function retake() {
-    setI(0)
-    setPicked(null)
-    setPhase('answering')
-    setCorrect(0)
-  }
-
   async function next() {
     if (!quiz) return
     if (i + 1 >= quiz.questions.length) {
@@ -91,25 +84,9 @@ export function QuizView() {
           </div>
           <ProgressBar value={score} />
           <div className={styles.resultActions}>
-            {passed ? (
-              <>
-                <Link to={`/learn/topic/${quiz.topicId}`}>
-                  <Button variant="primary">Back to topic</Button>
-                </Link>
-                <Button onClick={retake}>
-                  <RotateCcw size={14} /> Retake
-                </Button>
-              </>
-            ) : (
-              <>
-                <Button variant="primary" onClick={retake}>
-                  <RotateCcw size={14} /> Retake quiz
-                </Button>
-                <Link to={`/learn/topic/${quiz.topicId}`}>
-                  <Button>Back to topic</Button>
-                </Link>
-              </>
-            )}
+            <Link to={`/learn/topic/${quiz.topicId}`}>
+              <Button variant="primary">Back to topic</Button>
+            </Link>
           </div>
           {passed && (
             <div className={styles.masteryPing}>
