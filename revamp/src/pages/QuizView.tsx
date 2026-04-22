@@ -39,7 +39,21 @@ export function QuizView() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [q, phase, i, correct, picked])
 
-  if (!quiz || !q) return <div className="page" />
+  if (!quiz) return <div className="page" />
+  if (quiz.questions.length === 0) {
+    return (
+      <div className="page">
+        <Link to={`/learn/topic/${quiz.topicId}`} style={{
+          display: 'inline-flex', alignItems: 'center', gap: 4,
+          fontSize: 'var(--text-sm)', color: 'var(--ink-3)', marginBottom: 'var(--space-4)',
+        }}>
+          <ArrowLeft size={14} /> Back to topic
+        </Link>
+        <PageHeader eyebrow="Quiz" title={quiz.title} subtitle="Quiz unavailable at this time — no questions yet. Check back later." />
+      </div>
+    )
+  }
+  if (!q) return <div className="page" />
 
   function select(idx: number) {
     if (phase !== 'answering') return
