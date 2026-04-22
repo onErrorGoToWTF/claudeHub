@@ -61,11 +61,7 @@ export function Dashboard() {
 
   return (
     <div className="page">
-      <PageHeader
-        eyebrow="Dashboard"
-        title="Learn. Build. Ship."
-        subtitle="Pick up where you left off, or start something new."
-      />
+      <PageHeader title="Learn. Build. Ship." />
 
       <div className={s.split}>
         {/* ---------- Learn panel ---------- */}
