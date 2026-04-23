@@ -451,7 +451,7 @@
 }
 .reportCancel { color: var(--ink-2); background: var(--bg-card); }
 .reportCancel:hover { background: var(--bg-sunken); }
-.reportSend { color: white; background: var(--accent-solid); border-color: var(--accent-solid); }
+.reportSend { color: var(--ink-inverse); background: var(--accent-solid); border-color: var(--accent-solid); }
 .reportSend:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .reportThanks {

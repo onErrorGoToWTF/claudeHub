@@ -40,7 +40,7 @@
 }
 .brandMark {
   width: 28px; height: 28px;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   background:
     radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), transparent 60%),
     linear-gradient(135deg, var(--accent-solid), color-mix(in oklch, var(--accent-base) 60%, black));

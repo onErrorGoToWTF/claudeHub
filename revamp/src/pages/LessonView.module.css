@@ -32,7 +32,7 @@
   font-size: 0.96em;
   cursor: help;
   border-bottom: 1px dotted transparent;
-  transition: border-color 150ms ease;
+  transition: border-color var(--dur-1) var(--ease-lensing);
 }
 .article :global(.md) :global(.md-cite):hover {
   border-bottom-color: var(--hair-strong);
@@ -83,7 +83,7 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background 150ms ease, color 150ms ease;
+  transition: background var(--dur-1) var(--ease-lensing), color var(--dur-1) var(--ease-lensing);
 }
 .article :global(.md) :global(.md-code-copy):hover {
   color: #ffffff;
@@ -148,7 +148,7 @@
   background: var(--accent-surface);
   border: 1px solid var(--accent-border);
   border-radius: var(--radius-md);
-  animation: addPromptIn 240ms var(--ease-premium, cubic-bezier(0.22, 0.61, 0.36, 1));
+  animation: addPromptIn var(--dur-2) var(--ease-premium);
 }
 .addPromptBody {
   display: flex;
@@ -177,7 +177,7 @@
   border: 1px solid var(--hair-strong);
 }
 .addPromptNo  { color: var(--ink-2); background: var(--bg-card); }
-.addPromptYes { color: white; background: var(--accent-solid); border-color: var(--accent-solid); }
+.addPromptYes { color: var(--ink-inverse); background: var(--accent-solid); border-color: var(--accent-solid); }
 .addPromptNo:hover  { background: var(--bg-sunken); }
 .addPromptYes:hover { background: var(--accent-hover); }
 
