@@ -266,7 +266,11 @@ function StarterPacksRow({
   const [expandedId, setExpandedId] = useState<keyof typeof PATHWAY_TEMPLATES | null>(null)
   const [anchorRect, setAnchorRect] = useState<DOMRect | null>(null)
 
-  function open(id: keyof typeof PATHWAY_TEMPLATES, e: React.MouseEvent<HTMLButtonElement>) {
+  function open(id: keyof typeof PATHWAY_TEMPLATES, e: React.MouseEvent<HTMLElement>) {
+    // Explicit focus so the modal's focus-restore-on-close returns here, not
+    // to document.body (which defaults to the first tabbable — the first
+    // pack card, regardless of which one we tapped).
+    e.currentTarget.focus()
     setAnchorRect(e.currentTarget.getBoundingClientRect())
     setExpandedId(id)
   }
@@ -305,24 +309,44 @@ function StarterPacksRow({
           const already = topicIds.filter(id => activePlanIds.has(id)).length
           const allIn   = already === topicIds.length
           return (
-            <button
+            <div
               key={p.id}
-              type="button"
+              role="button"
+              tabIndex={0}
               className={`${s.starterCard} ${allIn ? s.starterCardOn : ''}`}
               onClick={(e) => open(p.id, e)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  open(p.id, e as unknown as React.MouseEvent<HTMLElement>)
+                }
+              }}
             >
               <div className={s.starterCardHead}>
                 <span className={s.starterCardTitle}>{p.label}</span>
-                {allIn
-                  ? <Check size={14} strokeWidth={2} />
-                  : <Plus size={14} strokeWidth={2} />}
+                <button
+                  type="button"
+                  className={`${s.starterAddBtn} ${allIn ? s.starterAddBtnOn : ''}`}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    if (allIn) return
+                    addAll(p.id)
+                  }}
+                  disabled={allIn}
+                  aria-label={allIn ? `${p.label} pack: all added` : `Add all ${topicIds.length} ${p.label} topics`}
+                  title={allIn ? 'All added' : 'Add all to plan'}
+                >
+                  {allIn
+                    ? <Check size={14} strokeWidth={2} />
+                    : <Plus size={14} strokeWidth={2} />}
+                </button>
               </div>
               <div className={s.starterCardBlurb}>{p.blurb}</div>
               <div className={s.starterCardFoot}>
                 {already > 0 && !allIn && <>{already} of {topicIds.length} in plan · </>}
                 {allIn ? 'All added' : `${topicIds.length} topics`}
               </div>
-            </button>
+            </div>
           )
         })}
       </div>

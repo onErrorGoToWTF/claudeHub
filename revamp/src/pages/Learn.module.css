@@ -223,11 +223,17 @@
   border: 1px solid var(--hair);
   border-radius: var(--radius-lg);
   cursor: pointer;
+  outline: none;
   transition:
     background var(--dur-2) var(--ease-premium),
-    border-color var(--dur-2) var(--ease-premium);
+    border-color var(--dur-2) var(--ease-premium),
+    box-shadow var(--dur-2) var(--ease-premium);
 }
 .starterCard:hover { border-color: var(--accent-border); background: var(--accent-surface); }
+.starterCard:focus-visible {
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 2px var(--focus-ring);
+}
 .starterCardOn {
   border-color: var(--mastery-border);
   background: var(--mastery-surface);
@@ -392,5 +398,37 @@
   background: var(--bg-sunken);
   border-color: var(--hair);
   color: var(--ink-3);
+  cursor: default;
+}
+
+/* The inline + button inside the starter-pack card head. Has its own tap
+   target separate from the card's 'open modal' click. */
+.starterAddBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--hair-strong);
+  border-radius: var(--radius-sm);
+  color: var(--ink-2);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--dur-2) var(--ease-premium), color var(--dur-2) var(--ease-premium);
+}
+.starterAddBtn::after {
+  /* 44px tap target without changing visible size (per mobile rule). */
+  content: ''; position: absolute; inset: -6px;
+}
+.starterAddBtn:hover:not(:disabled) {
+  background: var(--accent-surface);
+  color: var(--accent-ink);
+  border-color: var(--accent-border);
+}
+.starterAddBtnOn {
+  background: var(--mastery-surface);
+  color: var(--mastery-ink);
+  border-color: var(--mastery-border);
   cursor: default;
 }
