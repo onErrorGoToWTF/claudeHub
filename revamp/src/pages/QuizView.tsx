@@ -170,6 +170,8 @@ export function QuizView() {
               <Sparkles size={14} /> {MASTERY_LABEL[masteryStatus(score)]}
             </div>
           )}
+        </div>
+        <div className={styles.reportRow}>
           <ReportFlag quizId={quiz.id} />
         </div>
       </div>
@@ -210,10 +212,15 @@ export function QuizView() {
               {i + 1 < total ? 'Next' : 'Finish'}
             </button>
           </div>
-
-          <ReportFlag quizId={quiz.id} questionId={q.id} />
         </motion.div>
       </AnimatePresence>
+
+      {/* Report flag lives OUTSIDE the card so its tap target can't overlap
+          the Next/Finish button. Separated by a margin; left-aligned so it
+          sits opposite (and not stacked under) the right-aligned footer. */}
+      <div className={styles.reportRow}>
+        <ReportFlag quizId={quiz.id} questionId={q.id} />
+      </div>
     </div>
   )
 }

@@ -344,16 +344,24 @@
   border-radius: var(--radius-sm);
 }
 
-/* ================= Report flag — unobtrusive corner action ================= */
-/* Khan Academy pattern: small muted link in the lower-right of the card. */
+/* ================= Report flag — unobtrusive below-card action ================= */
+/* Previously: absolute bottom-right inside the card. That put a 40x40 hit
+   extender right next to the Next button, causing misclicks. Now: sits in
+   a dedicated row BELOW the card, left-aligned (Next is right-aligned so
+   they're on opposite corners with the card's bottom edge between them).
+   Still Khan-quiet at rest; brightens on hover/focus. Hit extender kept
+   for the fat-finger case but can only bleed into empty space now. */
+.reportRow {
+  display: flex;
+  justify-content: flex-start;
+  padding: var(--space-4) var(--space-2) 0;
+}
 .reportFlag {
-  position: absolute;
-  right: var(--space-3);
-  bottom: var(--space-3);
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 4px 8px;
+  padding: 6px 10px;
   font-size: 11px;
   font-weight: 500;
   color: var(--ink-3);
@@ -361,7 +369,7 @@
   border: 0;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  opacity: 0.4;
+  opacity: 0.5;
   transition: opacity var(--dur-2) var(--ease-premium),
               color var(--dur-2) var(--ease-premium),
               background var(--dur-2) var(--ease-premium);
@@ -369,12 +377,12 @@
 .reportFlag:hover,
 .reportFlag:focus-visible {
   opacity: 1;
-  color: var(--ink-2);
-  background: var(--bg-sunken);
+  color: var(--danger-ink);
+  background: var(--danger-surface);
   outline: none;
 }
-/* Invisible hit-area extender — the flag stays visually small + muted
-   (Khan pattern), but taps work from ~40x40 around it. */
+/* Invisible hit-area extender — confirms 44x44 minimum tap target per
+   Apple HIG. Safe to bleed: flag sits alone in its row now. */
 .reportFlag::after {
   content: '';
   position: absolute;
@@ -402,23 +410,29 @@
   gap: 4px;
   margin-bottom: 8px;
 }
+/* Reason-pill treatment uses the danger family (red/orange at hue 28)
+   instead of accent. Signals "flagging a problem" without being alarmist
+   — the 22% color-mix keeps surfaces soft at rest, intensifying on
+   select. Matches the flag's hover-state tint so the whole report
+   sub-surface reads as one coherent warning context. */
 .reportKindBtn {
-  padding: 4px 8px;
+  padding: 4px 10px;
   font-size: 11px;
-  color: var(--ink-2);
-  background: var(--bg-sunken);
-  border: 1px solid var(--hair);
+  color: var(--danger-ink);
+  background: var(--danger-soft);
+  border: 1px solid var(--danger-border);
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: background var(--dur-2) var(--ease-premium),
               border-color var(--dur-2) var(--ease-premium),
               color var(--dur-2) var(--ease-premium);
 }
-.reportKindBtn:hover { background: var(--accent-surface); }
+.reportKindBtn:hover { background: var(--danger-surface); }
 .reportKindBtnOn {
-  background: var(--accent-surface);
-  border-color: var(--accent-border);
-  color: var(--accent-ink);
+  background: var(--danger-surface);
+  border-color: var(--danger-border);
+  color: var(--danger-ink);
+  font-weight: 600;
 }
 .reportNote {
   width: 100%;
