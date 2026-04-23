@@ -267,6 +267,22 @@ export const repo = {
     await db.userPathwayItems.delete(`upi.${topicId}`)
     await compactActivePositions()
   },
+  /** Remove a topic from the plan with the right destructiveness:
+   *  0% mastery → hard-delete (nothing to preserve);
+   *  any progress → archive (keeps the learning record visible in /me).
+   *  Mirrors the rule applied on the /me page. */
+  async removeFromPlan(topicId: string): Promise<'deleted' | 'archived' | 'noop'> {
+    const row = await db.userPathwayItems.get(`upi.${topicId}`)
+    if (!row) return 'noop'
+    const m = await db.mastery.get(topicId)
+    const score = m?.score ?? 0
+    if (score > 0) {
+      await repo.archivePathwayItem(topicId)
+      return 'archived'
+    }
+    await repo.deletePathwayItem(topicId)
+    return 'deleted'
+  },
   async reorderPathwayItems(activeTopicIds: string[]) {
     // activeTopicIds is the new full ordering of the active list.
     await db.transaction('rw', db.userPathwayItems, async () => {

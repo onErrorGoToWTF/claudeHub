@@ -241,10 +241,18 @@ function CategoryModalBody({
     })
   }, [])
 
-  async function addOne(topicId: string) {
-    if (pathwayItems.has(topicId)) return
-    await repo.addPathwayItem(topicId, 'manual')
-    setPathwayItems(prev => new Set(prev).add(topicId))
+  async function toggleOne(topicId: string) {
+    if (pathwayItems.has(topicId)) {
+      await repo.removeFromPlan(topicId)
+      setPathwayItems(prev => {
+        const next = new Set(prev)
+        next.delete(topicId)
+        return next
+      })
+    } else {
+      await repo.addPathwayItem(topicId, 'manual')
+      setPathwayItems(prev => new Set(prev).add(topicId))
+    }
   }
   async function addAll() {
     const toAdd = allTopicIds.filter(id => !pathwayItems.has(id))
@@ -305,10 +313,9 @@ function CategoryModalBody({
                       <button
                         type="button"
                         className={`${s.starterTopicBtn} ${already ? s.starterTopicBtnOn : ''}`}
-                        onClick={() => addOne(t.id)}
-                        disabled={already}
-                        aria-label={already ? 'Already in plan' : `Add ${t.title} to plan`}
-                        title={already ? 'Already in plan' : 'Add to plan'}
+                        onClick={() => toggleOne(t.id)}
+                        aria-label={already ? `Remove ${t.title} from plan` : `Add ${t.title} to plan`}
+                        title={already ? 'In plan — tap to remove' : 'Add to plan'}
                       >
                         {already
                           ? <Check size={14} strokeWidth={2} />
@@ -372,9 +379,12 @@ function StarterPacksRow({
     setExpandedId(null)
   }
 
-  async function addOne(topicId: string) {
-    if (activePlanIds.has(topicId)) return
-    await repo.addPathwayItem(topicId, 'seed')
+  async function toggleOne(topicId: string) {
+    if (activePlanIds.has(topicId)) {
+      await repo.removeFromPlan(topicId)
+    } else {
+      await repo.addPathwayItem(topicId, 'seed')
+    }
     onAfterAdd()
   }
 
@@ -458,7 +468,7 @@ function StarterPacksRow({
             topicsById={topicsById}
             activePlanIds={activePlanIds}
             onClose={close}
-            onAddOne={addOne}
+            onToggleOne={toggleOne}
             onAddAll={() => addAll(expandedPack.id)}
           />
         )}
@@ -468,14 +478,14 @@ function StarterPacksRow({
 }
 
 function ExpandedPack({
-  pack, topicIds, topicsById, activePlanIds, onClose, onAddOne, onAddAll,
+  pack, topicIds, topicsById, activePlanIds, onClose, onToggleOne, onAddAll,
 }: {
   pack: { id: keyof typeof PATHWAY_TEMPLATES; label: string; blurb: string }
   topicIds: string[]
   topicsById: Record<string, Topic>
   activePlanIds: Set<string>
   onClose: () => void
-  onAddOne: (topicId: string) => void
+  onToggleOne: (topicId: string) => void
   onAddAll: () => void
 }) {
   const topics = topicIds.map(id => topicsById[id]).filter(Boolean)
@@ -511,10 +521,9 @@ function ExpandedPack({
               <button
                 type="button"
                 className={`${s.starterTopicBtn} ${already ? s.starterTopicBtnOn : ''}`}
-                onClick={() => onAddOne(t.id)}
-                disabled={already}
-                aria-label={already ? 'Already in plan' : `Add ${t.title} to plan`}
-                title={already ? 'Already in plan' : 'Add to plan'}
+                onClick={() => onToggleOne(t.id)}
+                aria-label={already ? `Remove ${t.title} from plan` : `Add ${t.title} to plan`}
+                title={already ? 'In plan — tap to remove' : 'Add to plan'}
               >
                 {already
                   ? <Check size={14} strokeWidth={2} />

@@ -374,7 +374,13 @@
   background: var(--mastery-surface);
   border-color: var(--mastery-border);
   color: var(--mastery-ink);
-  cursor: default;
+}
+.starterTopicBtnOn:hover {
+  /* Tap-to-remove affordance — subtly warn on hover without committing to
+     a destructive-red treatment at rest. */
+  background: var(--danger-surface);
+  border-color: var(--danger-border);
+  color: var(--danger-ink);
 }
 
 .starterExpandedFoot {
