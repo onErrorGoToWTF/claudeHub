@@ -25,6 +25,8 @@ const LibraryDetail   = lazy(() => import('../pages/LibraryDetail').then(m => ({
 const LibraryWishlist = lazy(() => import('../pages/LibraryWishlist').then(m => ({ default: m.LibraryWishlist })))
 const Settings        = lazy(() => import('../pages/Settings').then(m => ({ default: m.Settings })))
 const SignIn          = lazy(() => import('../pages/SignIn').then(m => ({ default: m.SignIn })))
+// Lab — experimental; safe to delete this import + its route below to roll back.
+const RadarLab        = lazy(() => import('../pages/RadarLab').then(m => ({ default: m.RadarLab })))
 
 export function App() {
   const location = useLocation()
@@ -84,6 +86,8 @@ export function App() {
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/colophon" element={<Colophon />} />
                 <Route path="/feedback" element={<Feedback />} />
+                {/* Lab — experimental; safe to remove this route to roll back. */}
+                <Route path="/labs/radar" element={<RadarLab />} />
                 {/* Legacy: /onboarding now redirects to home — onboarding retired. */}
                 <Route path="/onboarding" element={<Navigate to="/" replace />} />
                 <Route path="*" element={<Dashboard />} />
