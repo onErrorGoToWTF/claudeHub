@@ -6,6 +6,7 @@ import { Dashboard } from '../pages/Dashboard'
 import { Learn } from '../pages/Learn'
 import { CustomPathway } from '../pages/CustomPathway'
 import { MyPathway } from '../pages/MyPathway'
+import { Me } from '../pages/Me'
 import { TopicDetail } from '../pages/TopicDetail'
 import { LessonView } from '../pages/LessonView'
 import { QuizView } from '../pages/QuizView'
@@ -78,6 +79,7 @@ export function App() {
             <Route path="/library" element={<Library />} />
             <Route path="/library/wishlist" element={<LibraryWishlist />} />
             <Route path="/library/:id" element={<LibraryDetail />} />
+            <Route path="/me" element={<Me />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="*" element={<Dashboard />} />
           </Routes>

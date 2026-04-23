@@ -53,7 +53,10 @@ interface UserState extends UserProfile {
 
 const DEFAULTS: UserProfile & { onboardingSeen: boolean } = {
   pathway: 'all',
-  handle: undefined,
+  // Default "signed-in-as-admin" handle for the pre-auth build. Once real
+  // auth lands, the initial value comes from the session and this default
+  // becomes a fallback for offline/guest.
+  handle: 'admin',
   workStyles: [],
   devices: [],
   yearsCoding: undefined,

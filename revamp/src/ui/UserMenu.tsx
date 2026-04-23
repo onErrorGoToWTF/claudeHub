@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ChevronDown, Check, Settings as SettingsIcon, RotateCcw, User,
+  ChevronDown, Check, Settings as SettingsIcon, RotateCcw, User, Gauge,
 } from 'lucide-react'
 import { useUserStore } from '../state/userStore'
 import { PATHWAYS, type UserPathway } from '../lib/audience'
@@ -88,6 +88,15 @@ export function UserMenu() {
 
           <div className={styles.userMenuDivider} />
 
+          <Link
+            to="/me"
+            className={styles.userMenuItem}
+            role="menuitem"
+            onClick={() => setOpen(false)}
+          >
+            <Gauge size={14} strokeWidth={1.75} />
+            My progress
+          </Link>
           <Link
             to="/settings"
             className={styles.userMenuItem}
