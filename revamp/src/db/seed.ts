@@ -338,6 +338,30 @@ Before hitting send, read your prompt back and ask: **which of the five am I mis
 - **Examples.** One before/after pair is worth a paragraph of description.
 - **Anti-requirements.** "Don't apologize" and "don't ask me follow-up questions" are as important as the positive asks.
 - **The grain size.** "Short" is subjective; "~80 words" isn't.
+
+## The scope of this model
+
+Be honest about what the five pieces are for. This is a checklist for writing **one good prompt** — refined, specific output from a one-shot-ish ask. That's it.
+
+The 5-piece model is to prompting what **who / what / when / where / why** is to journalism: a useful floor for "did I say enough," not the whole craft. Journalists don't stop at the five W's when they're writing a feature, and you don't stop at the five pieces when you're building an agent.
+
+It is **not** a complete framework for:
+
+- **Agents** — where the model decides its own next steps. "Task" becomes dynamic, "format" is tool-call-shaped, and the dominant inputs are actually tool descriptions + a loop policy + stop conditions.
+- **Skills** (like Anthropic's Claude Skills) — bundled instruction sets with activation triggers and composability concerns the five pieces don't name.
+- **Multi-turn systems** — system prompts that persist, memory, context window management.
+- **Retrieval-augmented generation, evals, fine-tuning, structured output chains, tool use loops** — each has its own model.
+
+## When to deliberately break the rule
+
+The five pieces guide refined, directed output. Sometimes you **don't want** refined, directed output:
+
+- **Brainstorming / ideation.** "Give me 30 wild ideas for X, no filtering." Adding role + constraints + format here narrows the range and ruins the point. The whole goal is breadth, not precision.
+- **Rubber-ducking.** "Here's what I'm stuck on. Talk through it with me." You want an open conversation, not a structured response.
+- **Creative exploration.** Asking for a poem with a strict role + format spec often produces something technically correct and lifeless. Sometimes "write a poem about loss, surprise me" beats a tightly specified brief.
+- **Testing the model's defaults.** If you're trying to calibrate how a model behaves without guidance, stuffing a prompt with all five pieces tells you nothing about the baseline.
+
+Rule of thumb: **if precision matters, use the five pieces. If surprise matters, don't.**
 `.trim(),
   },
 
@@ -1625,6 +1649,26 @@ const quizzes: Quiz[] = [
         ],
         answerIdx: 1,
         explain: 'Named-and-banned beats unspoken-and-hoped.' },
+      { kind: 'mcq', id: 'q.pb.7',
+        prompt: 'The 5-piece model is analogous to journalism\'s "who / what / when / where / why" because…',
+        choices: [
+          'Both were invented in the same decade',
+          'Both are a useful FLOOR for "did I say enough," not a complete framework for the whole craft',
+          'Both require exactly five items, never more, never less',
+          'Journalism uses the 5-piece model too',
+        ],
+        answerIdx: 1,
+        explain: 'A checklist for one good prompt — not a complete framework for agents, skills, evals, multi-turn systems, or creative exploration.' },
+      { kind: 'mcq', id: 'q.pb.8',
+        prompt: 'When should you deliberately NOT apply the 5-piece model?',
+        choices: [
+          'When drafting a board memo with a tight deadline',
+          'When brainstorming wildly — you want breadth, not precision',
+          'When asking a model to rewrite a paragraph',
+          'When generating structured JSON for an API response',
+        ],
+        answerIdx: 1,
+        explain: 'Rule of thumb: if precision matters, use the five pieces. If surprise matters, don\'t.' },
     ],
   },
 
