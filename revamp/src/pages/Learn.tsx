@@ -526,6 +526,16 @@ function ExpandedPack({
   const topics = topicIds.map(id => topicsById[id]).filter(Boolean)
   const inPlan = topics.filter(t => activePlanIds.has(t.id)).length
   const allIn  = inPlan === topics.length && topics.length > 0
+  const [justAddedId, setJustAddedId] = useState<string | null>(null)
+
+  function handleToggle(topicId: string) {
+    const wasActive = activePlanIds.has(topicId)
+    onToggleOne(topicId)
+    if (!wasActive) {
+      setJustAddedId(topicId)
+      window.setTimeout(() => setJustAddedId(prev => prev === topicId ? null : prev), 320)
+    }
+  }
 
   return (
     <ModalCardShell
@@ -541,6 +551,7 @@ function ExpandedPack({
       <ul className={s.starterTopicList}>
         {topics.map(t => {
           const already = activePlanIds.has(t.id)
+          const popping = justAddedId === t.id
           return (
             <li key={t.id} className={s.starterTopicRow}>
               <Link to={`/learn/topic/${t.id}`} className={s.starterTopicBody}>
@@ -549,8 +560,8 @@ function ExpandedPack({
               </Link>
               <button
                 type="button"
-                className={`${s.starterTopicBtn} ${already ? s.starterTopicBtnOn : ''}`}
-                onClick={() => onToggleOne(t.id)}
+                className={`${s.starterTopicBtn} ${already ? s.starterTopicBtnOn : ''} ${popping ? s.starterTopicBtnPop : ''}`}
+                onClick={() => handleToggle(t.id)}
                 aria-label={already ? `Remove ${t.title} from plan` : `Add ${t.title} to plan`}
                 title={already ? 'In plan — tap to remove' : 'Add to plan'}
               >

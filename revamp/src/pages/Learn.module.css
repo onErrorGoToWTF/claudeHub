@@ -383,6 +383,21 @@
   color: var(--danger-ink);
 }
 
+/* Single-pulse confirmation when a topic lands in the plan. Fires once on
+   add (not on remove). The class is cleared from state after 320ms so the
+   animation only runs on the triggering transition. */
+.starterTopicBtnPop {
+  animation: starterTopicPop var(--dur-3) var(--ease-premium);
+}
+@keyframes starterTopicPop {
+  0%   { transform: scale(1); }
+  45%  { transform: scale(1.14); }
+  100% { transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .starterTopicBtnPop { animation: none; }
+}
+
 .starterExpandedFoot {
   display: flex;
   align-items: center;
