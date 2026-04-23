@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, BookOpen, FolderGit2 } from 'lucide-react'
+import { ArrowRight, BookOpen, FolderGit2, Flame } from 'lucide-react'
 import { overallProgress, repo } from '../db/repo'
 import type { Progress, Topic, Project } from '../db/types'
 import { ProgressBar } from '../ui'
 import { STATUS_LABEL } from '../lib/projectStatus'
 import { masteryStatus, MASTERY_LABEL } from '../lib/mastery'
+import { currentStreak } from '../lib/studyStats'
 import s from './Dashboard.module.css'
 
 export function Dashboard() {
@@ -15,6 +16,7 @@ export function Dashboard() {
   const [recent, setRecent] = useState<{ progress: Progress; topic?: Topic; topicScore: number }[]>([])
   const [projects, setProjects] = useState<Project[]>([])
   const [nextTopic, setNextTopic] = useState<Topic | null>(null)
+  const [streak, setStreak] = useState(0)
 
   useEffect(() => {
     ;(async () => {
@@ -28,6 +30,7 @@ export function Dashboard() {
       ])
       const topicsById = new Map(topics.map(t => [t.id, t]))
       setProjects(projs.slice(0, 2))
+      setStreak(currentStreak(progs))
 
       const mastery = await repo.listMastery()
       const byId = new Map(mastery.map(m => [m.topicId, m.score]))
@@ -84,7 +87,15 @@ export function Dashboard() {
                 <BookOpen size={16} strokeWidth={1.75} /> Learn
               </span>
             </span>
-            <span className={s.panelMeta}>{completed} / {topicsCount} completed</span>
+            <span className={s.panelMeta}>
+              {streak > 0 && (
+                <span className={s.streakPill} title={`${streak}-day study streak`}>
+                  <Flame size={11} strokeWidth={2} className={s.streakFlame} />
+                  {streak}d
+                </span>
+              )}
+              {completed} / {topicsCount} completed
+            </span>
           </header>
 
           <ProgressBar value={score} />

@@ -30,8 +30,40 @@
   letter-spacing: var(--tracking-tight);
 }
 .panelMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: var(--text-xs);
   color: var(--ink-3);
+}
+
+/* Streak pill in the Learn panel header. Same flicker animation as the
+   /me streak card so the two surfaces feel like one feature, contained
+   to the flame icon so the pill itself stays still. */
+.streakPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent-ink);
+  background: var(--accent-surface);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-sm);
+}
+.streakFlame {
+  animation: streakFlamePulse 3s var(--ease-lensing) infinite;
+}
+@keyframes streakFlamePulse {
+  0%, 40%, 100% { opacity: 1; }
+  45%           { opacity: 0.55; }
+  50%           { opacity: 1; }
+  55%           { opacity: 0.7; }
+  60%           { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .streakFlame { animation: none; }
 }
 
 .cta {

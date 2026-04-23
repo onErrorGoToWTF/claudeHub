@@ -55,6 +55,19 @@ export function LessonView() {
     setShowAddPrompt(false)
   }
 
+  // Esc dismisses the add-to-plan banner without committing either way — it
+  // treats the press as an in-session "not now" so the banner re-hides but
+  // reappears on the next lesson. Only binds while the banner is visible so
+  // Esc elsewhere still bubbles to the browser.
+  useEffect(() => {
+    if (!showAddPrompt) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { e.preventDefault(); setShowAddPrompt(false) }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [showAddPrompt])
+
   if (lesson === undefined) return <div className="page" />
   if (lesson === null) {
     return (
@@ -95,8 +108,16 @@ export function LessonView() {
         right={done ? <Chip variant="mastery"><CircleCheckBig size={12} /> Completed</Chip> : undefined}
       />
 
+      {/* Inline engagement banner — not a true modal. Doesn't obscure the
+          lesson body, so no focus trap / scrim. role=region + aria-live so
+          screen readers announce it on entry; Esc dismisses (bound above). */}
       {showAddPrompt && (
-        <div className={styles.addPrompt} role="dialog" aria-label="Add to plan">
+        <div
+          className={styles.addPrompt}
+          role="region"
+          aria-label="Add to plan"
+          aria-live="polite"
+        >
           <div className={styles.addPromptBody}>
             <span className={styles.addPromptText}>
               Add <b>{topicTitle}</b> to your plan? It'll show up on /me and in your report card.

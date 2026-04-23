@@ -1,17 +1,39 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { Plus, ArrowRight } from 'lucide-react'
 import { repo } from '../db/repo'
-import type { Project } from '../db/types'
+import type { Project, ProjectStatus } from '../db/types'
 import { Button, Chip, Empty, PageHeader, Tile, TileMeta, TileRow, TileTitle } from '../ui'
 import { Disclosure } from '../ui/Disclosure'
 import { grid } from '../ui/grid'
 import { STATUS_LABEL, statusChipVariant } from '../lib/projectStatus'
 import s from './Projects.module.css'
 
+// Live-grid filter. "all" = default. Individual statuses drill the grid
+// to only that status's projects; archive disclosure below is unaffected.
+type LiveFilter = 'all' | Extract<ProjectStatus, 'backlog' | 'planned' | 'in_progress'>
+const LIVE_FILTERS: { id: LiveFilter; label: string }[] = [
+  { id: 'all',         label: 'All' },
+  { id: 'in_progress', label: 'In progress' },
+  { id: 'planned',     label: 'Planned' },
+  { id: 'backlog',     label: 'Backlog' },
+]
+
 export function Projects() {
   const [projects, setProjects] = useState<Project[]>([])
+  const [searchParams, setSearchParams] = useSearchParams()
   useEffect(() => { repo.listProjects().then(setProjects) }, [])
+
+  const liveFilter: LiveFilter = (() => {
+    const v = searchParams.get('status')
+    if (LIVE_FILTERS.some(f => f.id === v)) return v as LiveFilter
+    return 'all'
+  })()
+  const setLiveFilter = (f: LiveFilter) => {
+    const next = new URLSearchParams(searchParams)
+    if (f === 'all') next.delete('status'); else next.set('status', f)
+    setSearchParams(next, { replace: true })
+  }
 
   const active = useMemo(
     () => projects.filter(p => p.status === 'in_progress' || p.status === 'planned'),
@@ -28,6 +50,17 @@ export function Projects() {
     () => projects.filter(p => p.status === 'completed' || p.status === 'canceled'),
     [projects],
   )
+  // Status-chip filter operates only on the live grid — archived projects
+  // stay hidden inside the disclosure regardless of the chosen filter.
+  const shownLive = useMemo(() => {
+    if (liveFilter === 'all') return liveProjects
+    return liveProjects.filter(p => p.status === liveFilter)
+  }, [liveProjects, liveFilter])
+  const liveCounts = useMemo(() => {
+    const out: Record<string, number> = { all: liveProjects.length }
+    for (const p of liveProjects) out[p.status] = (out[p.status] ?? 0) + 1
+    return out
+  }, [liveProjects])
   const inProgress = projects.filter(p => p.status === 'in_progress').length
   const completed  = projects.filter(p => p.status === 'completed').length
 
@@ -81,13 +114,46 @@ export function Projects() {
         <Empty>No projects yet. Start one.</Empty>
       ) : (
         <>
+          {liveProjects.length > 0 && (
+            <div className={s.statusChips}>
+              {LIVE_FILTERS.map(f => {
+                const count = liveCounts[f.id] ?? 0
+                if (f.id !== 'all' && count === 0) return null
+                const active = liveFilter === f.id
+                return (
+                  <button
+                    key={f.id}
+                    type="button"
+                    className={`${s.statusChip} ${active ? s.statusChipOn : ''}`}
+                    onClick={() => setLiveFilter(f.id)}
+                    aria-pressed={active}
+                  >
+                    {f.label} <span className={s.statusChipCount}>{count}</span>
+                  </button>
+                )
+              })}
+            </div>
+          )}
           {liveProjects.length === 0 ? (
             <Empty>
               No live projects. Everything's archived — start a new one, or expand below to revisit.
             </Empty>
+          ) : shownLive.length === 0 ? (
+            <Empty>
+              No {LIVE_FILTERS.find(f => f.id === liveFilter)?.label.toLowerCase()} projects.{' '}
+              <button
+                type="button"
+                onClick={() => setLiveFilter('all')}
+                style={{
+                  background: 'transparent', border: 'none', padding: 0,
+                  color: 'var(--accent-ink)', cursor: 'pointer', font: 'inherit',
+                  textDecoration: 'underline',
+                }}
+              >Show all</button>.
+            </Empty>
           ) : (
             <div className={grid}>
-              {liveProjects.map(p => (
+              {shownLive.map(p => (
                 <ProjectTile key={p.id} project={p} />
               ))}
             </div>
