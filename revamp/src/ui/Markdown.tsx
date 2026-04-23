@@ -41,9 +41,24 @@ hljs.registerLanguage('xml', xml)
 hljs.registerLanguage('python', python)
 hljs.registerLanguage('py', python)
 
+/** Resolve an Obsidian-style wiki-link like `[[t.tokens]]` or
+ *  `[[i.claude-code|Claude Code]]` to a local route + label.
+ *  Convention: `t.*` → `/learn/topic/…`, `i.*`/`n.*` → `/library/…`.
+ *  Pipe form overrides the label. Unknown IDs render as literal text. */
+function resolveWikiLink(raw: string): { href: string; label: string } | null {
+  const pipeIdx = raw.indexOf('|')
+  const id    = (pipeIdx === -1 ? raw : raw.slice(0, pipeIdx)).trim()
+  const label = (pipeIdx === -1 ? id  : raw.slice(pipeIdx + 1)).trim() || id
+  if (id.startsWith('t.'))                          return { href: `/learn/topic/${id}`, label }
+  if (id.startsWith('i.') || id.startsWith('n.'))   return { href: `/library/${id}`, label }
+  return null
+}
+
 function inline(text: string): (string | JSX.Element)[] {
   const parts: (string | JSX.Element)[] = []
-  const regex = /(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g
+  // Wiki-links FIRST in the alternation so `[[...]]` matches before the
+  // single-bracket link pattern `[label](url)`.
+  const regex = /(\*\*[^*]+\*\*|`[^`]+`|\[\[[^\]]+\]\]|\[[^\]]+\]\([^)]+\))/g
   let last = 0
   let m: RegExpExecArray | null
   let i = 0
@@ -54,8 +69,19 @@ function inline(text: string): (string | JSX.Element)[] {
       parts.push(<strong key={`b${i++}`}>{token.slice(2, -2)}</strong>)
     } else if (token.startsWith('`')) {
       parts.push(<code key={`c${i++}`}>{token.slice(1, -1)}</code>)
+    } else if (token.startsWith('[[')) {
+      // Wiki-link — internal route. Rendered as same-tab navigation.
+      const inner = token.slice(2, -2)
+      const resolved = resolveWikiLink(inner)
+      if (resolved) {
+        parts.push(
+          <a key={`w${i++}`} href={resolved.href} data-wiki="true">{resolved.label}</a>
+        )
+      } else {
+        parts.push(`[[${inner}]]`)
+      }
     } else {
-      // [label](url)
+      // [label](url) — external link.
       const mm = /^\[([^\]]+)\]\(([^)]+)\)$/.exec(token)!
       parts.push(
         <a key={`l${i++}`} href={mm[2]} target="_blank" rel="noreferrer noopener">{mm[1]}</a>

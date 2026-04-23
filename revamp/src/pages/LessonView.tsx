@@ -132,6 +132,17 @@ export function LessonView() {
           </Button>
         )}
       </div>
+
+      {lesson.updatedAt && (
+        <p style={{
+          marginTop: 'var(--space-8)',
+          fontSize: 11,
+          color: 'var(--ink-3)',
+          textAlign: 'center',
+        }}>
+          Last updated {new Date(lesson.updatedAt).toISOString().slice(0, 10)}
+        </p>
+      )}
     </div>
   )
 }

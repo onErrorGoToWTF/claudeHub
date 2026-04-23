@@ -53,6 +53,12 @@ export interface Topic {
   /** Library items that relate to this topic. Bidirectional with
    *  LibraryItem.relatedTopicIds. */
   relatedLibraryIds?: ID[]
+  /** Learning objectives — "By the end you'll be able to…" bullets.
+   *  Verb-led, measurable. Shown at the top of the topic page. */
+  objectives?: string[]
+  /** Unix ms timestamp of the last content review / edit. Drives the
+   *  "Last updated" footer + Freshness Pipeline's staleness signal. */
+  updatedAt?: number
 }
 
 export interface Lesson {
@@ -63,6 +69,8 @@ export interface Lesson {
   minutes: number
   body: string   // markdown
   order: number
+  /** Unix ms — last content review/edit timestamp. */
+  updatedAt?: number
 }
 
 /** Multiple-choice. Original question shape; `kind` defaults to 'mcq' if missing. */
@@ -183,6 +191,8 @@ export interface LibraryItem {
   relatedTopicIds?: ID[]
   /** Symmetric "related resource" edges to other library items. */
   relatedLibraryIds?: ID[]
+  /** Unix ms — last content review/edit timestamp. */
+  updatedAt?: number
 }
 
 /** Legacy alias — still used by the Projects intake flow. */

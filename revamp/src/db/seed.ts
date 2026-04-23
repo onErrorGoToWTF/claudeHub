@@ -7,6 +7,148 @@ import { TOOL_BODIES } from './toolBodies'
 import { migrateLegacyStatus } from '../lib/projectStatus'
 import { deriveLibraryAudience } from '../lib/audience'
 
+/** Topic → learning objectives. Verb-led, measurable. Rendered at the top
+ *  of each topic page as "By the end, you'll be able to…". Shared-seed
+ *  pattern (like TOPIC_TAGS) so objectives stay grep-able alongside tags. */
+const TOPIC_OBJECTIVES: Record<string, string[]> = {
+  // Foundations
+  't.tokens': [
+    'Explain what a token is and how it differs from a word or character.',
+    'Predict when a reply will cut off due to output limits.',
+    'Rough-estimate token count from character or word count.',
+  ],
+  't.transformers': [
+    'Describe attention as "which parts of the input matter now."',
+    'Explain why transformers scale better than recurrent models.',
+    'Name the two main transformer flavors (decoder-only vs. encoder-decoder).',
+  ],
+  't.sampling': [
+    'Predict how changing temperature changes output diversity.',
+    'Pick temperature + top_p sensibly for a given task.',
+  ],
+  't.models-compared': [
+    'Name strengths of Claude, ChatGPT, and Gemini without benchmark worship.',
+    'Pick a model for a task based on fit, not hype.',
+    'Identify where each model\'s free tier lands.',
+  ],
+  // Literacy
+  't.ai-literacy': [
+    'Explain why LLMs produce plausible output that can be wrong.',
+    'Name three kinds of claim you should NOT trust without verifying.',
+    'Form a "how would I verify this" habit before trusting specifics.',
+  ],
+  't.ai-literacy-at-work': [
+    'List categories of content that should never be pasted into a public model.',
+    'Apply the "sign your name" rule to anything you ship with AI help.',
+    'Verify specifics (numbers, names, citations) in any AI-generated doc.',
+  ],
+  't.ai-for-students': [
+    'Use AI to multiply practice, not replace it.',
+    'Identify the integrity line between study-aid and cheating.',
+    'Avoid pasting sensitive personal information into chat tools.',
+  ],
+  // Prompting
+  't.prompt-basics': [
+    'Identify the five pieces of a prompt (role, context, task, constraints, format).',
+    'Diagnose which piece is missing when output feels off.',
+    'Name two situations where applying the five pieces is the wrong move.',
+  ],
+  't.clear-prompts': [
+    'Rewrite a vague prompt to be specific and actionable.',
+    'Spot common anti-patterns (rhetorical questions, buried asks).',
+  ],
+  't.few-shot': [
+    'Decide when examples help and when they narrow the model.',
+    'Pick examples that are representative, not edge cases.',
+  ],
+  // Agents + production
+  't.tool-use': [
+    'Define a tool with a narrow, well-described schema.',
+    'Handle the tool_use → tool_result loop in code.',
+    'Identify the "too many tools" failure mode.',
+  ],
+  't.agents-intro': [
+    'Describe the plan → act → observe → decide loop.',
+    'Estimate compound-error risk over N steps.',
+    'Decide when to reach for an agent vs. a single call.',
+  ],
+  't.memory': [
+    'Distinguish short-term context from persistent memory.',
+    'Pick the right memory pattern for a given agent\'s scope.',
+  ],
+  't.prompt-caching': [
+    'Place a cache_control marker correctly in the messages array.',
+    'Diagnose the classic "why isn\'t it hitting" cache-miss bugs.',
+    'Estimate when caching is and isn\'t worth it.',
+  ],
+  // Frontend
+  't.streaming': [
+    'Stream tokens to a UI without layout shift or typewriter jank.',
+    'Handle cancellation + backpressure on a streaming response.',
+  ],
+  't.glass-motion': [
+    'Use backdrop filters + easing tokens without overloading the page.',
+    'Decide when motion helps and when it distracts.',
+  ],
+  // Vibe
+  't.vibe-what-and-why': [
+    'Define vibe coding in one sentence a non-dev could follow.',
+    'Identify first-week failure modes and avoid them.',
+    'Name where vibe coding is a bad fit today.',
+  ],
+  't.vibe-tools-compared': [
+    'Pick one editor-AI + one generator + one backend without overlap.',
+    'Name the job each tool actually does (and doesn\'t).',
+  ],
+  't.claude-code-basics': [
+    'Run a Claude Code session in a repo with confidence in the permission model.',
+    'Use /init and /clear at the right moments.',
+    'Recover from a sideways change via git reset.',
+  ],
+  't.vibe-iteration-loop': [
+    'Run the describe → observe → correct → commit rhythm end-to-end.',
+    'Apply the two-fix-rule: stop and reassess after two failed patches.',
+    'Produce a healthy commit log from a 90-minute vibe session.',
+  ],
+  // Office
+  't.claude-for-office': [
+    'Treat an AI assistant with the coworker mindset (persistent context, not search).',
+    'Set up a scoped Project / Custom GPT / Gem / Copilot Agent for a real workstream.',
+    'Use draft-then-critique and rubber-duck patterns intentionally.',
+  ],
+  't.docs-with-ai': [
+    'Apply the five doc-work moves: draft, rewrite, shorten, tone-shift, summarise.',
+    'Specify an audience in every doc prompt to tune tone + length.',
+    'Spot-check AI-summarised specifics before sharing.',
+  ],
+  't.meetings-with-ai': [
+    'Run the before / during / after meeting-AI workflow.',
+    'Write the ur-prompt for meeting summaries (decisions / actions / open questions).',
+    'Assemble a weekly rollup from individual meeting summaries.',
+  ],
+  // Media
+  't.generative-media-101': [
+    'Explain what "generative" means (sampling a latent space, not editing).',
+    'Describe the rights + consent landscape for cloned faces / voices.',
+    'Follow platform disclosure rules for AI-generated or realistic content.',
+  ],
+  't.image-generation': [
+    'Pick the right image model for a task (painterly vs. fast vs. typography).',
+    'Write a 6-slot image prompt (subject, composition, style, lighting, mood, negatives).',
+    'Plan for 10-30 iterations on any polished hero image.',
+  ],
+  't.video-generation': [
+    'Prompt a single clip with one clear motion instead of stuffing beats.',
+    'Use first/last-frame conditioning to stitch shots coherently.',
+    'Budget realistic cost + duration for generative-video projects.',
+  ],
+  't.voice-and-audio': [
+    'Decide when generated voice beats recorded narration.',
+    'Get written consent before cloning anyone else\'s voice.',
+    'Use in-text markup ([laughs], pauses, emphasis) to control delivery.',
+  ],
+}
+
 /** Topic → tag map. Normalized lowercase; `/`-separated for eventual nested
  *  rendering (e.g., `prompting/patterns` under a Prompting parent). Shared
  *  vocabulary with Library.tags so cross-cutting themes surface everywhere. */
@@ -2850,6 +2992,7 @@ const sampleProject: Project = {
   route: 'easiest',
   stack: ['i.vite', 'i.react', 'i.claude-code', 'i.github-pages'],
   gapTopicIds: ['t.streaming'],
+  relatedTopicIds: ['t.streaming', 't.vibe-iteration-loop', 't.claude-code-basics'],
   checklist: [
     { id: 'c1', label: 'Scaffold with Vite + React',       done: true },
     { id: 'c2', label: 'Design token pass',                done: false },
@@ -2873,18 +3016,21 @@ const demoProjects: Project[] = [
     id: 'p.demo-planned', title: 'Weekly board prep automation',
     summary: 'Outline the workflow, pick tools, draft the prompts. Not started yet.',
     status: 'planned', route: 'easiest', stack: [], gapTopicIds: [], checklist: [],
+    relatedTopicIds: ['t.claude-for-office', 't.docs-with-ai', 't.meetings-with-ai'],
     createdAt: Date.now() - 60_000 * 60 * 24 * 10, updatedAt: Date.now() - 60_000 * 60 * 24 * 9,
   },
   {
     id: 'p.demo-in_progress', title: 'Personal dashboard with Claude integrations',
     summary: 'Building now. Scaffold is up, wiring the Slack + Gmail connections.',
     status: 'in_progress', route: 'best', stack: [], gapTopicIds: [], checklist: [],
+    relatedTopicIds: ['t.tool-use', 't.agents-intro', 't.claude-code-basics'],
     createdAt: Date.now() - 60_000 * 60 * 24 * 7, updatedAt: Date.now() - 60_000 * 60 * 3,
   },
   {
     id: 'p.demo-completed', title: 'Claude-powered résumé refresh',
     summary: 'Done. Shipped a tightened one-pager that lands the elevator pitch up top.',
     status: 'completed', route: 'cheapest', stack: [], gapTopicIds: [], checklist: [],
+    relatedTopicIds: ['t.prompt-basics', 't.docs-with-ai'],
     createdAt: Date.now() - 60_000 * 60 * 24 * 30, updatedAt: Date.now() - 60_000 * 60 * 24 * 4,
   },
   {
@@ -2945,10 +3091,16 @@ export async function seedIfEmpty(): Promise<void> {
   }
 
   // Backfill demo projects (one per status) on existing installs so the
-  // color vocabulary is visible without clearing local data. Idempotent per-id.
+  // color vocabulary is visible without clearing local data. Also re-apply
+  // relatedTopicIds on existing demo rows so the 'Projects that practice
+  // this' topic band populates for users who installed before Chunk N.
   for (const d of demoProjects) {
     const existing = await db.projects.get(d.id)
-    if (!existing) await db.projects.put(d)
+    if (!existing) {
+      await db.projects.put(d)
+    } else if (!existing.relatedTopicIds && d.relatedTopicIds) {
+      await db.projects.put({ ...existing, relatedTopicIds: d.relatedTopicIds })
+    }
   }
 
   // Seed a `created` event for any project missing history (e.g., projects
@@ -3066,28 +3218,51 @@ export async function seedIfEmpty(): Promise<void> {
     }
   }
 
-  // Write topic tags + topic edges.
+  // Bootstamp for content `updatedAt` when the seed hasn't set an explicit
+  // per-item timestamp. Intentionally one timestamp for the whole seed — the
+  // Freshness Pipeline will bump per-item values individually as content is
+  // reviewed. Using a stable constant (not Date.now()) so we don't rewrite
+  // storage on every boot with fresh timestamps. Bump this string when the
+  // seed content has a major revision.
+  const CONTENT_BOOTSTAMP = Date.parse('2026-04-23')
+
+  // Write topic tags + topic edges + objectives + updatedAt.
   for (const topic of await db.topics.toArray()) {
     const tags = TOPIC_TAGS[topic.id]
     const edges = topicEdgeAccum[topic.id]
-    const next = {
+    const objectives = TOPIC_OBJECTIVES[topic.id]
+    const next: typeof topic = {
       ...topic,
       tags: tags ?? topic.tags,
       relatedTopicIds: edges ? [...edges.topics] : topic.relatedTopicIds,
       relatedLibraryIds: edges ? [...edges.library] : topic.relatedLibraryIds,
+      objectives: objectives ?? topic.objectives,
+      updatedAt: topic.updatedAt ?? CONTENT_BOOTSTAMP,
     }
-    // Only write if changed to reduce churn on boot.
     const changed =
-      next.tags !== topic.tags ||
-      next.relatedTopicIds !== topic.relatedTopicIds ||
-      next.relatedLibraryIds !== topic.relatedLibraryIds
+      next.tags              !== topic.tags ||
+      next.relatedTopicIds   !== topic.relatedTopicIds ||
+      next.relatedLibraryIds !== topic.relatedLibraryIds ||
+      next.objectives        !== topic.objectives ||
+      next.updatedAt         !== topic.updatedAt
     if (changed) await db.topics.put(next)
   }
 
-  // Write library → topic reverse edges.
-  for (const [libId, topicIds] of Object.entries(libraryEdgeAccum)) {
-    const item = await db.library.get(libId)
-    if (!item) continue
-    await db.library.put({ ...item, relatedTopicIds: [...topicIds] })
+  // Lessons: stamp updatedAt on anything missing one.
+  for (const lesson of await db.lessons.toArray()) {
+    if (!lesson.updatedAt) {
+      await db.lessons.put({ ...lesson, updatedAt: CONTENT_BOOTSTAMP })
+    }
+  }
+
+  // Library: stamp updatedAt + write reverse edges from library↔topic map.
+  for (const item of await db.library.toArray()) {
+    const reverseEdges = libraryEdgeAccum[item.id]
+    const patch: Partial<typeof item> = {}
+    if (reverseEdges) patch.relatedTopicIds = [...reverseEdges]
+    if (!item.updatedAt) patch.updatedAt = CONTENT_BOOTSTAMP
+    if (Object.keys(patch).length > 0) {
+      await db.library.put({ ...item, ...patch })
+    }
   }
 }

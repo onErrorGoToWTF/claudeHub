@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, BookOpen, CircleCheckBig, HelpCircle, RotateCcw, Lock } from 'lucide-react'
 import { repo } from '../db/repo'
-import type { Lesson, Quiz, Topic, Progress, LibraryItem } from '../db/types'
+import type { Lesson, Quiz, Topic, Progress, LibraryItem, Project } from '../db/types'
 import { PageHeader, Section, Tile, TileTitle, TileMeta, TileRow, Chip, ProgressBar } from '../ui'
 import { grid } from '../ui/grid'
 import { PASS_THRESHOLD, MASTERY_THRESHOLD } from '../lib/mastery'
@@ -15,8 +15,8 @@ export function TopicDetail() {
   const [progress, setProgress] = useState<Record<string, Progress>>({})
   const [mastery, setMastery] = useState(0)
   const [related, setRelated] = useState<{
-    topics: Topic[]; prereqs: Topic[]; library: LibraryItem[]
-  }>({ topics: [], prereqs: [], library: [] })
+    topics: Topic[]; prereqs: Topic[]; library: LibraryItem[]; projects: Project[]
+  }>({ topics: [], prereqs: [], library: [], projects: [] })
 
   useEffect(() => {
     ;(async () => {
@@ -37,13 +37,20 @@ export function TopicDetail() {
         const prereqIds = t.prereqTopicIds ?? []
         const relIds    = t.relatedTopicIds ?? []
         const relLibIds = t.relatedLibraryIds ?? []
-        const allTopics = await repo.listTopics()
+        const [allTopics, library, allProjects] = await Promise.all([
+          repo.listTopics(),
+          Promise.all(relLibIds.map(id => repo.getLibraryItem(id))),
+          repo.listProjects(),
+        ])
         const topicsById = new Map(allTopics.map(x => [x.id, x]))
-        const library = await Promise.all(relLibIds.map(id => repo.getLibraryItem(id)))
+        const projects = allProjects.filter(p =>
+          p.relatedTopicIds?.includes(topicId) || p.gapTopicIds?.includes(topicId)
+        )
         setRelated({
           topics: relIds.map(id => topicsById.get(id)).filter((x): x is Topic => !!x),
           prereqs: prereqIds.map(id => topicsById.get(id)).filter((x): x is Topic => !!x),
           library: library.filter((x): x is LibraryItem => !!x),
+          projects,
         })
       }
     })()
@@ -70,6 +77,36 @@ export function TopicDetail() {
             </Link>
           ))}
         </div>
+      )}
+
+      {/* Learning objectives — "By the end you'll be able to…" */}
+      {topic.objectives && topic.objectives.length > 0 && (
+        <section style={{
+          padding: '14px 18px',
+          marginBottom: 'var(--space-6)',
+          background: 'var(--bg-card)',
+          border: '1px solid var(--hair)',
+          borderLeft: '3px solid var(--accent-border)',
+          borderRadius: 'var(--radius-md)',
+        }}>
+          <div style={{
+            fontSize: 11,
+            fontWeight: 700,
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+            color: 'var(--ink-3)',
+            marginBottom: 8,
+          }}>By the end, you'll be able to</div>
+          <ul style={{
+            margin: 0,
+            paddingLeft: 20,
+            color: 'var(--ink-1)',
+            fontSize: 'var(--text-sm)',
+            lineHeight: 1.55,
+          }}>
+            {topic.objectives.map((o, i) => <li key={i} style={{ marginBottom: 4 }}>{o}</li>)}
+          </ul>
+        </section>
       )}
 
       {/* Prerequisites — only if any */}
@@ -235,6 +272,50 @@ export function TopicDetail() {
           </div>
         </Section>
       )}
+
+      {/* Projects that practice this topic — authentic-assessment bridge */}
+      {related.projects.length > 0 && (
+        <Section title="Projects that practice this" meta="Apply what you learn on a real project">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {related.projects.map(p => (
+              <Link key={p.id} to={`/projects/${p.id}`} style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                padding: '10px 14px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--hair)',
+                borderRadius: 'var(--radius-md)',
+                color: 'var(--ink-1)',
+                textDecoration: 'none',
+                fontSize: 'var(--text-sm)',
+              }}>
+                <span><b>{p.title}</b> — <span style={{ color: 'var(--ink-3)' }}>{p.summary}</span></span>
+                <ArrowRight size={14} strokeWidth={1.75} />
+              </Link>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {/* Updated-on footer — Freshness Pipeline signal. Only renders when
+          updatedAt is set (new topics today; older ones backfill at seed). */}
+      {topic.updatedAt && (
+        <p style={{
+          marginTop: 'var(--space-10)',
+          fontSize: 11,
+          color: 'var(--ink-3)',
+          textAlign: 'center',
+        }}>
+          Last updated {formatDate(topic.updatedAt)}
+        </p>
+      )}
     </div>
   )
+}
+
+/** YYYY-MM-DD in local time. Short + stable; no locale ambiguity. */
+function formatDate(ts: number): string {
+  const d = new Date(ts)
+  const mm = String(d.getMonth() + 1).padStart(2, '0')
+  const dd = String(d.getDate()).padStart(2, '0')
+  return `${d.getFullYear()}-${mm}-${dd}`
 }
