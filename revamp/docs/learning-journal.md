@@ -46,6 +46,10 @@ Three deploys in a row silently failed. Local `tsc --noEmit` passed. CI `tsc -b`
 
 Chunks H through L: new Category layer, shared tag vocabulary, bidirectional edges, `/me` reflective page, Learn restructured by category, Starter packs, onboarding cut, Settings overhauled with transparency labels, topic cross-links, Library tag facet, engagement prompt on lesson start. 5 commits, all green, deployed live. Felt like a lot going in; felt natural once the pieces were sequenced correctly. Rule learned: when the research doc is solid, execution is mostly typing.
 
+## 2026-04-23 — `#progress` — Autonomous tidying shift while I was at work
+
+Six commits while I was away, all green: (1) detail pages now distinguish loading from not-found (a deleted/renamed id used to render a silent blank page), (2) a small ModalCardShell helper de-dupes the two dive-in modals in Learn, (3) a handful of CSS literals routed through tokens so reduced-motion actually governs them and dark mode won't invert the wrong way, (4) `user_project_events` renamed to `project_events` with `from_value`/`to_value` columns — the draft schema had a reserved-word trap I would have hit on day one of migration, (5) a 320ms scale pulse on the starter-pack + button so "it landed" reads visually, (6) a full DB-migration research doc at `docs/research-db-migration.md` covering schema refinements on all six post-draft chunks, full RLS SQL with an escalation-proof `protect_is_admin` trigger, a dual-impl `repo.dexie.ts`/`repo.supabase.ts` flag for no-code rollback during soak, a 10-step playbook, ~60–80h estimate. The small stuff mattered as much as the research — the blank-page crash and the reserved-word trap were both quiet bugs.
+
 ---
 
 ## Template for new entries
