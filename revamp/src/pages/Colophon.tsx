@@ -57,6 +57,39 @@ _Bio goes here — short personal note, what I'm trying to learn, why this app e
 `.trim()} />
       </Section>
 
+      <Section title="Editorial policy">
+        <Markdown text={`
+How content here is made and cited, stated out loud.
+
+## Authorship
+
+Lessons are **original synthesis** — text written for this app, informed by the sources listed in each lesson's Sources section. They are not copies of external material with a link dropped at the bottom. When a specific phrase comes from a specific source, it's quoted inline (\`>\` block with a \`— Source\` attribution line) so the quoted portion is visible and credited.
+
+## AI-assisted authoring
+
+Every lesson carries an explicit **AI-assisted authoring** disclosure. Lessons are drafted with Claude and reviewed by a human before they ship. Specifics (numbers, names, citations, API shapes) can drift; readers are directed to verify against the Sources section for anything they'll act on.
+
+## Citation practice
+
+- **All external sources** consulted to write a lesson appear in a \`## Sources\` block at the bottom of that lesson.
+- **Direct quotes** are kept short (a sentence or two), clearly visible in \`>\` blocks, with inline attribution.
+- **Paraphrased ideas** are cited via the footer Sources list, without inline markers (those are visually distracting).
+- **External links** don't appear in the prose — only in the Sources section and the Library.
+
+## Scope + purpose
+
+Non-commercial, educational. The app is a solo-built learning space, free to use, with no ads, no tracking, no paywall. If that changes — commercial use, paid tiers, redistribution — the editorial approach will be reviewed first.
+
+## Corrections
+
+If a specific claim looks wrong, a quote looks uncredited, or a source looks misused: the quiet flag on every quiz question accepts reports, and a general feedback channel is in the roadmap. Corrections welcome; nothing here claims to be infallible.
+
+## License-specific sources
+
+Content under Creative Commons or other explicit licenses is attributed in the format that license requires (CC-BY-SA keeps its share-alike; CC-BY includes the exact attribution string; etc.). If a source's terms disallow reproduction even with attribution, it isn't reproduced — just cited.
+`.trim()} />
+      </Section>
+
       <Section title="Practice what we teach">
         <Markdown text={`
 Every lesson in this app carries an **AI-assisted authoring** disclosure — because the literacy material teaches exactly that kind of verification, and hiding the fact that the lessons were drafted with AI would be the wrong way to teach it. The app tries to model the rules it's teaching: transparent about generation, structured like the prompting patterns it recommends, committed in small iteration loops, tested on a phone.

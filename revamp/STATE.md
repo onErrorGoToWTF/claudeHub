@@ -127,6 +127,9 @@ If a template topic doesn't exist yet in `seed.ts`, Chunk F should create it dur
 
 ### Planned (later)
 
+- [ ] **Topic: `t.citing-sources-with-ai` (Literacy track, all pathways).** Author a dedicated lesson + quiz on the editorial policy codified in `/colophon`. Covers: why citation matters (legal + ethical), how short quotes differ from copied chunks, how to structure a Sources footer, how to attribute AI-assisted content honestly, what happens when you don't cite (Mata v. Avianca-style incidents). Reference the Colophon's Editorial policy directly from the lesson. Should include a practical segment on applying the rule to user-authored Project descriptions and future user-contributed content. Target audience: all 5 pathways (literacy-first, ethics-adjacent).
+
+
 - [ ] **Freshness Pipeline (post-Claude-API + post-DB + post-admin).** The app's strategic differentiator: **content freshness**. Stitches together three already-parked items under one loop so their design decisions stay coherent:
   1. **Scraper layer** — revive/repoint the legacy-root `update-feed` pipeline (`data/latest.json`, runs every 2h) so newly-indexed sources flow into an admin queue.
   2. **Claude drafts layer** — once the Claude API project lands, Claude reads scraped material + catalog taxonomy and proposes new topics / lessons / quizzes / library items in the seed-compatible shape.
