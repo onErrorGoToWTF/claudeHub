@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Plus, Check } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { ArrowRight, Plus, Check, X } from 'lucide-react'
 import { overallProgress, repo } from '../db/repo'
 import type { Category, Track, Topic, Mastery, UserPathwayItem } from '../db/types'
 import {
@@ -69,6 +70,11 @@ export function Learn() {
   )
   const activeCount = activePlanIds.size
 
+  const topicsById = useMemo<Record<string, Topic>>(
+    () => Object.fromEntries(Object.values(topicsByTrack).flat().map(t => [t.id, t])),
+    [topicsByTrack],
+  )
+
   return (
     <div className="page">
       <PageHeader
@@ -119,7 +125,11 @@ export function Learn() {
       ))}
 
       {/* ---------- Starter packs — opt-in template subscribes ---------- */}
-      <StarterPacksRow activePlanIds={activePlanIds} onAfterAdd={refresh} />
+      <StarterPacksRow
+        activePlanIds={activePlanIds}
+        topicsById={topicsById}
+        onAfterAdd={refresh}
+      />
 
       {/* ---------- Custom pathway link (deep end) ---------- */}
       <div className={s.customLink}>
@@ -247,19 +257,24 @@ const STARTER_PACKS: { id: keyof typeof PATHWAY_TEMPLATES; label: string; blurb:
 ]
 
 function StarterPacksRow({
-  activePlanIds, onAfterAdd,
-}: { activePlanIds: Set<string>; onAfterAdd: () => void }) {
-  async function subscribe(packId: keyof typeof PATHWAY_TEMPLATES, label: string) {
+  activePlanIds, topicsById, onAfterAdd,
+}: {
+  activePlanIds: Set<string>
+  topicsById: Record<string, Topic>
+  onAfterAdd: () => void
+}) {
+  const [expandedId, setExpandedId] = useState<keyof typeof PATHWAY_TEMPLATES | null>(null)
+
+  async function addOne(topicId: string) {
+    if (activePlanIds.has(topicId)) return
+    await repo.addPathwayItem(topicId, 'seed')
+    onAfterAdd()
+  }
+
+  async function addAll(packId: keyof typeof PATHWAY_TEMPLATES) {
     const topicIds = PATHWAY_TEMPLATES[packId]
     const toAdd = topicIds.filter(id => !activePlanIds.has(id))
-    if (toAdd.length === 0) {
-      window.alert(`All ${topicIds.length} ${label} topics are already in your plan.`)
-      return
-    }
-    const ok = window.confirm(
-      `Add ${toAdd.length} ${label} starter topic${toAdd.length === 1 ? '' : 's'} to your plan?`,
-    )
-    if (!ok) return
+    if (toAdd.length === 0) return
     for (const id of toAdd) {
       await repo.addPathwayItem(id, 'seed')
     }
@@ -270,35 +285,138 @@ function StarterPacksRow({
     <div className={s.starterWrap}>
       <div className={s.starterHead}>
         <span className={s.starterLabel}>Starter packs</span>
-        <span className={s.starterMeta}>Opt-in bundles. Add all, then edit from /me.</span>
+        <span className={s.starterMeta}>
+          {expandedId ? 'Tap the card to close. Tap + to add a single topic.' : 'Tap a pack to dive in.'}
+        </span>
       </div>
-      <div className={s.starterGrid}>
-        {STARTER_PACKS.map(p => {
-          const topicIds = PATHWAY_TEMPLATES[p.id]
-          const already = topicIds.filter(id => activePlanIds.has(id)).length
-          const allIn   = already === topicIds.length
+
+      <motion.div
+        layout
+        transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1] }}
+        className={s.starterGrid}
+      >
+        <AnimatePresence mode="popLayout">
+          {expandedId ? (
+            <ExpandedPack
+              key="expanded"
+              pack={STARTER_PACKS.find(p => p.id === expandedId)!}
+              topicIds={PATHWAY_TEMPLATES[expandedId]}
+              topicsById={topicsById}
+              activePlanIds={activePlanIds}
+              onClose={() => setExpandedId(null)}
+              onAddOne={addOne}
+              onAddAll={() => addAll(expandedId)}
+            />
+          ) : (
+            STARTER_PACKS.map(p => {
+              const topicIds = PATHWAY_TEMPLATES[p.id]
+              const already = topicIds.filter(id => activePlanIds.has(id)).length
+              const allIn   = already === topicIds.length
+              return (
+                <motion.button
+                  key={p.id}
+                  layoutId={`pack-${p.id}`}
+                  type="button"
+                  className={`${s.starterCard} ${allIn ? s.starterCardOn : ''}`}
+                  onClick={() => setExpandedId(p.id)}
+                  transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1] }}
+                >
+                  <div className={s.starterCardHead}>
+                    <span className={s.starterCardTitle}>{p.label}</span>
+                    {allIn
+                      ? <Check size={14} strokeWidth={2} />
+                      : <Plus size={14} strokeWidth={2} />}
+                  </div>
+                  <div className={s.starterCardBlurb}>{p.blurb}</div>
+                  <div className={s.starterCardFoot}>
+                    {already > 0 && !allIn && <>{already} of {topicIds.length} in plan · </>}
+                    {allIn ? 'All added' : `${topicIds.length} topics`}
+                  </div>
+                </motion.button>
+              )
+            })
+          )}
+        </AnimatePresence>
+      </motion.div>
+    </div>
+  )
+}
+
+function ExpandedPack({
+  pack, topicIds, topicsById, activePlanIds, onClose, onAddOne, onAddAll,
+}: {
+  pack: { id: keyof typeof PATHWAY_TEMPLATES; label: string; blurb: string }
+  topicIds: string[]
+  topicsById: Record<string, Topic>
+  activePlanIds: Set<string>
+  onClose: () => void
+  onAddOne: (topicId: string) => void
+  onAddAll: () => void
+}) {
+  const topics = topicIds.map(id => topicsById[id]).filter(Boolean)
+  const inPlan = topics.filter(t => activePlanIds.has(t.id)).length
+  const allIn  = inPlan === topics.length && topics.length > 0
+
+  return (
+    <motion.div
+      layoutId={`pack-${pack.id}`}
+      className={s.starterExpanded}
+      transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1] }}
+    >
+      <div className={s.starterExpandedHead}>
+        <div>
+          <div className={s.starterCardTitle}>{pack.label}</div>
+          <div className={s.starterCardBlurb}>{pack.blurb}</div>
+        </div>
+        <button
+          type="button"
+          className={s.starterCloseBtn}
+          onClick={onClose}
+          aria-label="Close starter pack"
+        >
+          <X size={16} strokeWidth={2} />
+        </button>
+      </div>
+
+      <ul className={s.starterTopicList}>
+        {topics.map(t => {
+          const already = activePlanIds.has(t.id)
           return (
-            <button
-              key={p.id}
-              type="button"
-              className={`${s.starterCard} ${allIn ? s.starterCardOn : ''}`}
-              onClick={() => subscribe(p.id, p.label)}
-            >
-              <div className={s.starterCardHead}>
-                <span className={s.starterCardTitle}>{p.label}</span>
-                {allIn
+            <li key={t.id} className={s.starterTopicRow}>
+              <Link to={`/learn/topic/${t.id}`} className={s.starterTopicBody}>
+                <span className={s.starterTopicTitle}>{t.title}</span>
+                <span className={s.starterTopicSummary}>{t.summary}</span>
+              </Link>
+              <button
+                type="button"
+                className={`${s.starterTopicBtn} ${already ? s.starterTopicBtnOn : ''}`}
+                onClick={() => onAddOne(t.id)}
+                disabled={already}
+                aria-label={already ? 'Already in plan' : `Add ${t.title} to plan`}
+                title={already ? 'Already in plan' : 'Add to plan'}
+              >
+                {already
                   ? <Check size={14} strokeWidth={2} />
                   : <Plus size={14} strokeWidth={2} />}
-              </div>
-              <div className={s.starterCardBlurb}>{p.blurb}</div>
-              <div className={s.starterCardFoot}>
-                {already > 0 && !allIn && <>{already} of {topicIds.length} in plan · </>}
-                {allIn ? 'All added' : `${topicIds.length} topics`}
-              </div>
-            </button>
+              </button>
+            </li>
           )
         })}
+      </ul>
+
+      <div className={s.starterExpandedFoot}>
+        <span className={s.starterCardFoot}>
+          {inPlan} of {topics.length} in plan
+        </span>
+        <button
+          type="button"
+          className={s.starterAddAllBtn}
+          onClick={onAddAll}
+          disabled={allIn}
+        >
+          {allIn ? 'All added' : `Add all ${topics.length}`}
+        </button>
       </div>
-    </div>
+    </motion.div>
   )
 }
