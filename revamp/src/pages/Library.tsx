@@ -369,6 +369,8 @@ export function Library() {
             <List>
               {primary.map(i => (
                 <LibRow key={i.id} item={i} pathway={pathway}
+                  activeTags={tagFilters}
+                  onTagClick={toggleTagFilter}
                   onNavigate={() => { if (i.body) nav(`/library/${i.id}`) }}
                   onTogglePin={(e) => { e.stopPropagation(); togglePin(i) }}
                   onToggleRead={(e) => { e.stopPropagation(); toggleRead(i) }}
@@ -385,6 +387,8 @@ export function Library() {
               <List>
                 {rest.map(i => (
                   <LibRow key={i.id} item={i} pathway={pathway}
+                    activeTags={tagFilters}
+                    onTagClick={toggleTagFilter}
                     onNavigate={() => { if (i.body) nav(`/library/${i.id}`) }}
                     onTogglePin={(e) => { e.stopPropagation(); togglePin(i) }}
                     onToggleRead={(e) => { e.stopPropagation(); toggleRead(i) }}
@@ -433,9 +437,11 @@ function BandHeading({ label, muted }: { label: string; muted?: boolean }) {
   )
 }
 
-function LibRow({ item, pathway, onNavigate, onTogglePin, onToggleRead }: {
+function LibRow({ item, pathway, activeTags, onTagClick, onNavigate, onTogglePin, onToggleRead }: {
   item: LibraryItem
   pathway: UserPathway
+  activeTags: string[]
+  onTagClick: (tag: string) => void
   onNavigate: () => void
   onTogglePin: (e: React.MouseEvent) => void
   onToggleRead: (e: React.MouseEvent) => void
@@ -454,7 +460,21 @@ function LibRow({ item, pathway, onNavigate, onTogglePin, onToggleRead }: {
           {item.summary ?? toolSub(item)}
           {item.tags.length > 0 && (
             <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', marginTop: 6 }}>
-              {item.tags.map(t => <Chip key={t}>{t}</Chip>)}
+              {item.tags.map(t => {
+                const active = activeTags.includes(t.toLowerCase())
+                return (
+                  <button
+                    key={t}
+                    type="button"
+                    onClick={(e) => { e.stopPropagation(); onTagClick(t) }}
+                    className={active ? styles.rowTagActive : styles.rowTag}
+                    aria-pressed={active}
+                    aria-label={active ? `Remove tag ${t} from filter` : `Filter by tag ${t}`}
+                  >
+                    #{t}
+                  </button>
+                )
+              })}
               {item.kind === 'tool' && item.owned && <Chip variant="mastery">owned</Chip>}
             </div>
           )}
