@@ -9,6 +9,21 @@
 
 html, body, #root { height: 100%; }
 
+/* Reserve scrollbar gutter on the root scroller so content doesn't shift
+   horizontally when a scrollbar appears/disappears between routes.
+   (Layout-stability rule — see feedback memory.) */
+html { scrollbar-gutter: stable; }
+
+/* Long unbroken strings (URLs, API identifiers, hashes) must wrap on
+   mobile rather than force horizontal overflow. `anywhere` is more
+   aggressive than `break-word` — it breaks mid-token if the token
+   would otherwise exceed its container. Applied to text-holding
+   elements; code/pre handle their own overflow via overflow-x:auto. */
+h1, h2, h3, h4, h5, h6, p, li, dd, dt, blockquote {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 body {
   margin: 0;
   background: var(--bg-page);
