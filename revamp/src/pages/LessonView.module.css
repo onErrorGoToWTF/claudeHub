@@ -140,3 +140,51 @@
   justify-content: center;
   margin-top: var(--space-8);
 }
+
+/* ---------- add-to-plan engagement prompt ---------- */
+.addPrompt {
+  margin: 0 0 var(--space-6);
+  padding: 10px 14px;
+  background: var(--accent-surface);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-md);
+  animation: addPromptIn 240ms var(--ease-premium, cubic-bezier(0.22, 0.61, 0.36, 1));
+}
+.addPromptBody {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.addPromptText {
+  font-size: var(--text-sm);
+  color: var(--ink-1);
+  line-height: 1.4;
+}
+.addPromptActions {
+  display: inline-flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.addPromptNo,
+.addPromptYes {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid var(--hair-strong);
+}
+.addPromptNo  { color: var(--ink-2); background: var(--bg-card); }
+.addPromptYes { color: white; background: var(--accent-solid); border-color: var(--accent-solid); }
+.addPromptNo:hover  { background: var(--bg-sunken); }
+.addPromptYes:hover { background: var(--accent-hover); }
+
+@keyframes addPromptIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .addPrompt { animation: none; }
+}

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import {
   BookOpen, FileText, Film, Pin, PinOff, Search, Wrench, ArrowRight,
   SlidersHorizontal, X,
@@ -41,6 +41,13 @@ export function Library() {
   const [facet, setFacet] = useState<Facet>(DEFAULT_FACET)
   const [sort, setSort] = useState<Sort>(DEFAULT_SORT)
   const [query, setQuery] = useState('')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const tagFilter = searchParams.get('tag') || null
+  const setTagFilter = (t: string | null) => {
+    const next = new URLSearchParams(searchParams)
+    if (t) next.set('tag', t); else next.delete('tag')
+    setSearchParams(next, { replace: true })
+  }
   const [filterOpen, setFilterOpen] = useState(false)
   const [missLogged, setMissLogged] = useState<string | null>(null)
   const [openMisses, setOpenMisses] = useState(0)
@@ -77,6 +84,7 @@ export function Library() {
   const sorted = useMemo(() => {
     let out = items.filter(i => !!i.body)
     if (facet !== 'all') out = out.filter(i => i.kind === facet)
+    if (tagFilter) out = out.filter(i => i.tags.some(t => t.toLowerCase() === tagFilter.toLowerCase()))
     if (query.trim()) {
       const q = query.toLowerCase()
       out = out.filter(i =>
@@ -92,7 +100,21 @@ export function Library() {
       Number(b.pinned) - Number(a.pinned) || b.addedAt - a.addedAt
     )
     return arr
-  }, [items, facet, sort, query])
+  }, [items, facet, sort, query, tagFilter])
+
+  // Top tags by frequency — across items that have a body. These are the
+  // shared-vocab tags surfaced from Chunk H. The 12 most common get chips;
+  // the rest are still reachable via direct URL (?tag=…) or search.
+  const topTags = useMemo(() => {
+    const counts: Record<string, number> = {}
+    for (const i of items.filter(x => !!x.body)) {
+      for (const t of i.tags ?? []) counts[t.toLowerCase()] = (counts[t.toLowerCase()] ?? 0) + 1
+    }
+    return Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 12)
+      .map(([tag, n]) => ({ tag, n }))
+  }, [items])
 
   // Soft pathway split — primary on top, rest below, no one gets filtered out.
   const { primary, rest, split } = useMemo(
@@ -140,7 +162,7 @@ export function Library() {
   }, [items])
 
   const activeFiltersCount =
-    (facet !== DEFAULT_FACET ? 1 : 0) + (sort !== DEFAULT_SORT ? 1 : 0)
+    (facet !== DEFAULT_FACET ? 1 : 0) + (sort !== DEFAULT_SORT ? 1 : 0) + (tagFilter ? 1 : 0)
 
   return (
     <div className="page">
@@ -176,7 +198,7 @@ export function Library() {
           {activeFiltersCount > 0 && <span className={styles.filterBadge}>{activeFiltersCount}</span>}
         </button>
 
-        {(facet !== DEFAULT_FACET || sort !== DEFAULT_SORT) && (
+        {(facet !== DEFAULT_FACET || sort !== DEFAULT_SORT || tagFilter) && (
           <div className={styles.activeChips}>
             {facet !== DEFAULT_FACET && (
               <button
@@ -186,6 +208,16 @@ export function Library() {
                 aria-label={`Clear ${FACET_LABEL[facet]} filter`}
               >
                 {FACET_LABEL[facet]} <X size={11} strokeWidth={2} />
+              </button>
+            )}
+            {tagFilter && (
+              <button
+                type="button"
+                className={styles.chipClear}
+                onClick={() => setTagFilter(null)}
+                aria-label={`Clear tag ${tagFilter}`}
+              >
+                #{tagFilter} <X size={11} strokeWidth={2} />
               </button>
             )}
             {sort !== DEFAULT_SORT && (
@@ -227,6 +259,27 @@ export function Library() {
                 })}
               </div>
             </div>
+            {topTags.length > 0 && (
+              <div className={styles.filterGroup}>
+                <div className={styles.filterLabel}>Tag</div>
+                <div className={styles.facets}>
+                  {topTags.map(({ tag, n }) => {
+                    const active = tagFilter === tag
+                    return (
+                      <button
+                        key={tag}
+                        type="button"
+                        className={`${styles.facet} ${active ? styles.facetOn : ''}`}
+                        onClick={() => setTagFilter(active ? null : tag)}
+                      >
+                        <span>#{tag}</span>
+                        <span className={styles.facetCount}>{n}</span>
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
             <div className={styles.filterGroup}>
               <div className={styles.filterLabel}>Sort</div>
               <select

@@ -31,6 +31,10 @@ export interface UserProfile {
   /** Topics the user has told us they already know — Learn can dim,
    *  collapse, or auto-complete them. */
   knownTopicIds?: string[]
+  /** Topics where the user has declined the "add to plan?" prompt at
+   *  lesson-start. Prevents re-asking. A yes-answer adds the topic to
+   *  pathway directly (no flag needed — membership IS the answer). */
+  promptDismissedTopicIds?: string[]
 }
 
 interface UserState extends UserProfile {
@@ -46,6 +50,8 @@ interface UserState extends UserProfile {
   setKnownTopicIds: (ids: string[])         => void
   /** Mark/unmark a single topic as known. */
   toggleKnownTopic: (topicId: string)       => void
+  /** Remember that the user said "no" to the add-to-plan prompt for a topic. */
+  dismissAddPrompt: (topicId: string)       => void
   markOnboardingSeen: ()                    => void
   /** Wipe every optional field back to defaults. Handy for "reset profile". */
   resetProfile:     ()                      => void
@@ -61,6 +67,7 @@ const DEFAULTS: UserProfile & { onboardingSeen: boolean } = {
   devices: [],
   yearsCoding: undefined,
   knownTopicIds: [],
+  promptDismissedTopicIds: [],
   onboardingSeen: false,
 }
 
@@ -79,6 +86,11 @@ export const useUserStore = create<UserState>()(
         if (curr.has(topicId)) curr.delete(topicId)
         else curr.add(topicId)
         return { knownTopicIds: [...curr] }
+      }),
+      dismissAddPrompt: (topicId) => set((prev) => {
+        const curr = new Set(prev.promptDismissedTopicIds ?? [])
+        curr.add(topicId)
+        return { promptDismissedTopicIds: [...curr] }
       }),
       markOnboardingSeen: () => set({ onboardingSeen: true }),
       resetProfile: () => set({ ...DEFAULTS }),

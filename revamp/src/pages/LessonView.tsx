@@ -5,6 +5,7 @@ import { repo } from '../db/repo'
 import type { Lesson, Quiz, Progress } from '../db/types'
 import { Button, Chip, PageHeader } from '../ui'
 import { Markdown } from '../ui/Markdown'
+import { useUserStore } from '../state/userStore'
 import styles from './LessonView.module.css'
 
 export function LessonView() {
@@ -13,20 +14,46 @@ export function LessonView() {
   const [lesson, setLesson] = useState<Lesson | null | undefined>(undefined)
   const [progress, setProgress] = useState<Progress | null>(null)
   const [topicQuiz, setTopicQuiz] = useState<Quiz | null>(null)
+  const [showAddPrompt, setShowAddPrompt] = useState(false)
+  const [topicTitle, setTopicTitle] = useState('')
+  const dismissAddPrompt  = useUserStore(s => s.dismissAddPrompt)
+  const dismissedTopicIds = useUserStore(s => s.promptDismissedTopicIds)
 
   useEffect(() => {
     ;(async () => {
       const l = await repo.getLesson(lessonId)
       if (!l) { setLesson(null); return }
       setLesson(l)
-      const [p, qs] = await Promise.all([
+      const [p, qs, pathwayItems, topic] = await Promise.all([
         repo.getProgress(l.id),
         repo.listQuizzesByTopic(l.topicId),
+        repo.listPathwayItems(),
+        repo.getTopic(l.topicId),
       ])
       setProgress(p ?? null)
       setTopicQuiz(qs[0] ?? null)
+      setTopicTitle(topic?.title ?? '')
+
+      // Engagement prompt: ask once per topic, only if topic isn't already
+      // active in the pathway AND the user hasn't declined before. A yes-
+      // answer adds the topic, so this won't fire again.
+      const inPathway = pathwayItems.some(r => r.topicId === l.topicId && r.status === 'active')
+      const dismissed = (dismissedTopicIds ?? []).includes(l.topicId)
+      if (!inPathway && !dismissed) setShowAddPrompt(true)
     })()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lessonId])
+
+  async function acceptAddPrompt() {
+    if (!lesson) return
+    await repo.addPathwayItem(lesson.topicId, 'manual')
+    setShowAddPrompt(false)
+  }
+  function declineAddPrompt() {
+    if (!lesson) return
+    dismissAddPrompt(lesson.topicId)
+    setShowAddPrompt(false)
+  }
 
   if (lesson === undefined) return <div className="page" />
   if (lesson === null) {
@@ -67,6 +94,20 @@ export function LessonView() {
         subtitle={lesson.summary}
         right={done ? <Chip variant="mastery"><CircleCheckBig size={12} /> Completed</Chip> : undefined}
       />
+
+      {showAddPrompt && (
+        <div className={styles.addPrompt} role="dialog" aria-label="Add to plan">
+          <div className={styles.addPromptBody}>
+            <span className={styles.addPromptText}>
+              Add <b>{topicTitle}</b> to your plan? It'll show up on /me and in your report card.
+            </span>
+            <span className={styles.addPromptActions}>
+              <button className={styles.addPromptNo}  onClick={declineAddPrompt}>Not now</button>
+              <button className={styles.addPromptYes} onClick={acceptAddPrompt}>Add to plan</button>
+            </span>
+          </div>
+        </div>
+      )}
 
       <article className={styles.article}>
         <Markdown text={lesson.body} />

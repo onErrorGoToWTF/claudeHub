@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, BookOpen, CircleCheckBig, HelpCircle, RotateCcw } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpen, CircleCheckBig, HelpCircle, RotateCcw, Lock } from 'lucide-react'
 import { repo } from '../db/repo'
-import type { Lesson, Quiz, Topic, Progress } from '../db/types'
+import type { Lesson, Quiz, Topic, Progress, LibraryItem } from '../db/types'
 import { PageHeader, Section, Tile, TileTitle, TileMeta, TileRow, Chip, ProgressBar } from '../ui'
 import { grid } from '../ui/grid'
 import { PASS_THRESHOLD, MASTERY_THRESHOLD } from '../lib/mastery'
@@ -14,6 +14,9 @@ export function TopicDetail() {
   const [quizzes, setQuizzes] = useState<Quiz[]>([])
   const [progress, setProgress] = useState<Record<string, Progress>>({})
   const [mastery, setMastery] = useState(0)
+  const [related, setRelated] = useState<{
+    topics: Topic[]; prereqs: Topic[]; library: LibraryItem[]
+  }>({ topics: [], prereqs: [], library: [] })
 
   useEffect(() => {
     ;(async () => {
@@ -29,6 +32,20 @@ export function TopicDetail() {
       setQuizzes(qs)
       setProgress(Object.fromEntries(allProg.map(p => [p.id, p])))
       setMastery(mas?.score ?? 0)
+
+      if (t) {
+        const prereqIds = t.prereqTopicIds ?? []
+        const relIds    = t.relatedTopicIds ?? []
+        const relLibIds = t.relatedLibraryIds ?? []
+        const allTopics = await repo.listTopics()
+        const topicsById = new Map(allTopics.map(x => [x.id, x]))
+        const library = await Promise.all(relLibIds.map(id => repo.getLibraryItem(id)))
+        setRelated({
+          topics: relIds.map(id => topicsById.get(id)).filter((x): x is Topic => !!x),
+          prereqs: prereqIds.map(id => topicsById.get(id)).filter((x): x is Topic => !!x),
+          library: library.filter((x): x is LibraryItem => !!x),
+        })
+      }
     })()
   }, [topicId])
 
@@ -43,6 +60,40 @@ export function TopicDetail() {
         <ArrowLeft size={14} /> Back to Learn
       </Link>
       <PageHeader eyebrow="Topic" title={topic.title} subtitle={topic.summary} />
+
+      {/* Tags row — quiet, under the header */}
+      {topic.tags && topic.tags.length > 0 && (
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 'var(--space-6)' }}>
+          {topic.tags.map(tag => (
+            <Link key={tag} to={`/library?tag=${encodeURIComponent(tag)}`} style={{ textDecoration: 'none' }}>
+              <Chip>#{tag}</Chip>
+            </Link>
+          ))}
+        </div>
+      )}
+
+      {/* Prerequisites — only if any */}
+      {related.prereqs.length > 0 && (
+        <Section title={<><Lock size={14} strokeWidth={1.75} /> Prerequisites</>} meta="Get these first for the smoothest path">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {related.prereqs.map(t => (
+              <Link key={t.id} to={`/learn/topic/${t.id}`} style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                padding: '10px 14px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--hair)',
+                borderRadius: 'var(--radius-md)',
+                color: 'var(--ink-1)',
+                textDecoration: 'none',
+                fontSize: 'var(--text-sm)',
+              }}>
+                <span><b>{t.title}</b> — <span style={{ color: 'var(--ink-3)' }}>{t.summary}</span></span>
+                <ArrowRight size={14} strokeWidth={1.75} />
+              </Link>
+            ))}
+          </div>
+        </Section>
+      )}
 
       <div style={{ marginBottom: 'var(--space-8)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontSize: 'var(--text-sm)', color: 'var(--ink-2)' }}>
@@ -96,7 +147,7 @@ export function TopicDetail() {
         )}
       </Section>
 
-      <Section title="Quizzes" meta={`${quizzes.length} items`}>
+      <Section title="Quizzes" meta={`${quizzes.length} items`} key="quizzes-section">
         {quizzes.length === 0 ? <TileMeta>No quizzes yet.</TileMeta> : (
           <div className={grid}>
             {quizzes.map(q => {
@@ -134,6 +185,56 @@ export function TopicDetail() {
           </div>
         )}
       </Section>
+
+      {/* See also — symmetric related topics */}
+      {related.topics.length > 0 && (
+        <Section title="See also" meta="Topics that connect to this one">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {related.topics.map(t => (
+              <Link key={t.id} to={`/learn/topic/${t.id}`} style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                padding: '10px 14px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--hair)',
+                borderRadius: 'var(--radius-md)',
+                color: 'var(--ink-1)',
+                textDecoration: 'none',
+                fontSize: 'var(--text-sm)',
+              }}>
+                <span><b>{t.title}</b> — <span style={{ color: 'var(--ink-3)' }}>{t.summary}</span></span>
+                <ArrowRight size={14} strokeWidth={1.75} />
+              </Link>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {/* Further reading — linked library items */}
+      {related.library.length > 0 && (
+        <Section title="Further reading" meta="Library resources for this topic">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {related.library.map(item => (
+              <Link key={item.id} to={`/library/${item.id}`} style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                padding: '10px 14px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--hair)',
+                borderRadius: 'var(--radius-md)',
+                color: 'var(--ink-1)',
+                textDecoration: 'none',
+                fontSize: 'var(--text-sm)',
+              }}>
+                <span>
+                  <Chip>{item.kind}</Chip>&nbsp;
+                  <b>{item.title}</b>
+                  {item.summary && <span style={{ color: 'var(--ink-3)' }}> — {item.summary}</span>}
+                </span>
+                <ArrowRight size={14} strokeWidth={1.75} />
+              </Link>
+            ))}
+          </div>
+        </Section>
+      )}
     </div>
   )
 }
