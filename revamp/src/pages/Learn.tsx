@@ -214,6 +214,61 @@ function CategoriesGrid({
   )
 }
 
+// Shared layout for dive-in modal bodies (category + starter pack). Head
+// with title/blurb + close X, arbitrary body slot, foot with "N of M in
+// plan" caption + Add-all action. Promote to src/ui/ when a third modal
+// starts using it.
+function ModalCardShell({
+  title, blurb, closeAriaLabel, onClose,
+  inPlan, total, addAllDisabled, onAddAll,
+  children,
+}: {
+  title: string
+  blurb: string
+  closeAriaLabel: string
+  onClose: () => void
+  inPlan: number
+  total: number
+  addAllDisabled: boolean
+  onAddAll: () => void
+  children: React.ReactNode
+}) {
+  return (
+    <div className={s.starterExpanded}>
+      <div className={s.starterExpandedHead}>
+        <div>
+          <div className={s.starterCardTitle}>{title}</div>
+          <div className={s.starterCardBlurb}>{blurb}</div>
+        </div>
+        <button
+          type="button"
+          className={s.starterCloseBtn}
+          onClick={onClose}
+          aria-label={closeAriaLabel}
+        >
+          <X size={16} strokeWidth={2} />
+        </button>
+      </div>
+
+      {children}
+
+      <div className={s.starterExpandedFoot}>
+        <span className={s.starterCardFoot}>
+          {inPlan} of {total} in plan
+        </span>
+        <button
+          type="button"
+          className={s.starterAddAllBtn}
+          onClick={onAddAll}
+          disabled={addAllDisabled}
+        >
+          {addAllDisabled ? 'All added' : `Add all ${total}`}
+        </button>
+      </div>
+    </div>
+  )
+}
+
 function CategoryModalBody({
   category, tracks, topicsByTrack, mastery, pathway, onClose,
 }: {
@@ -271,22 +326,16 @@ function CategoryModalBody({
   const allIn = allTopicIds.length > 0 && inPlan === allTopicIds.length
 
   return (
-    <div className={s.starterExpanded}>
-      <div className={s.starterExpandedHead}>
-        <div>
-          <div className={s.starterCardTitle}>{category.title}</div>
-          <div className={s.starterCardBlurb}>{category.summary}</div>
-        </div>
-        <button
-          type="button"
-          className={s.starterCloseBtn}
-          onClick={onClose}
-          aria-label="Close category"
-        >
-          <X size={16} strokeWidth={2} />
-        </button>
-      </div>
-
+    <ModalCardShell
+      title={category.title}
+      blurb={category.summary}
+      closeAriaLabel="Close category"
+      onClose={onClose}
+      inPlan={inPlan}
+      total={allTopicIds.length}
+      addAllDisabled={allIn}
+      onAddAll={addAll}
+    >
       <div className={s.modalTrackStack}>
         {orderedTracks.map(track => {
           const topics = topicsByTrack[track.id] ?? []
@@ -329,21 +378,7 @@ function CategoryModalBody({
           )
         })}
       </div>
-
-      <div className={s.starterExpandedFoot}>
-        <span className={s.starterCardFoot}>
-          {inPlan} of {allTopicIds.length} in plan
-        </span>
-        <button
-          type="button"
-          className={s.starterAddAllBtn}
-          onClick={addAll}
-          disabled={allIn}
-        >
-          {allIn ? 'All added' : `Add all ${allTopicIds.length}`}
-        </button>
-      </div>
-    </div>
+    </ModalCardShell>
   )
 }
 
@@ -493,22 +528,16 @@ function ExpandedPack({
   const allIn  = inPlan === topics.length && topics.length > 0
 
   return (
-    <div className={s.starterExpanded}>
-      <div className={s.starterExpandedHead}>
-        <div>
-          <div className={s.starterCardTitle}>{pack.label}</div>
-          <div className={s.starterCardBlurb}>{pack.blurb}</div>
-        </div>
-        <button
-          type="button"
-          className={s.starterCloseBtn}
-          onClick={onClose}
-          aria-label="Close starter pack"
-        >
-          <X size={16} strokeWidth={2} />
-        </button>
-      </div>
-
+    <ModalCardShell
+      title={pack.label}
+      blurb={pack.blurb}
+      closeAriaLabel="Close starter pack"
+      onClose={onClose}
+      inPlan={inPlan}
+      total={topics.length}
+      addAllDisabled={allIn}
+      onAddAll={onAddAll}
+    >
       <ul className={s.starterTopicList}>
         {topics.map(t => {
           const already = activePlanIds.has(t.id)
@@ -533,20 +562,6 @@ function ExpandedPack({
           )
         })}
       </ul>
-
-      <div className={s.starterExpandedFoot}>
-        <span className={s.starterCardFoot}>
-          {inPlan} of {topics.length} in plan
-        </span>
-        <button
-          type="button"
-          className={s.starterAddAllBtn}
-          onClick={onAddAll}
-          disabled={allIn}
-        >
-          {allIn ? 'All added' : `Add all ${topics.length}`}
-        </button>
-      </div>
-    </div>
+    </ModalCardShell>
   )
 }
