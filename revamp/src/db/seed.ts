@@ -1352,7 +1352,7 @@ Generate multiple characters for a scene. Most tools expose tone controls (happy
 Two layers:
 
 1. **Voice choice** — select a voice that already carries the tone you want.
-2. **In-text markup** — most tools accept markers: ellipses for pauses, capitalisation for emphasis, explicit `[laughs]` or `[whispers]` tags. Read the model's docs; conventions differ.
+2. **In-text markup** — most tools accept markers: ellipses for pauses, capitalisation for emphasis, explicit [laughs] or [whispers] tags. Read the model's docs; conventions differ.
 
 Writing for voice is different from writing for the eye. Short sentences land better. Commas pace breath. Read your script out loud before generating — if it's awkward to read, it'll sound awkward.
 
