@@ -90,11 +90,6 @@ export const repo = {
     const [latest] = await this.listQuizAttempts(quizId)
     return latest ?? null
   },
-  /** User signals "I'm accepting this score as final." Advisory flag —
-   *  future retakes still create new attempts; mastery still updates. */
-  async lockQuizAttempt(id: string, locked: boolean) {
-    await db.quizAttempts.update(id, { locked })
-  },
 
   // ---------- mastery ----------
   async listMastery(): Promise<Mastery[]> { return db.mastery.toArray() },

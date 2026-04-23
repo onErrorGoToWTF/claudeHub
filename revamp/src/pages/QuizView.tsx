@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowLeft, ArrowDown, ArrowUp, Flag, Sparkles, Check, X as XIcon, Lock, LockOpen } from 'lucide-react'
+import { ArrowLeft, ArrowDown, ArrowUp, Flag, Sparkles, Check, X as XIcon } from 'lucide-react'
 import { repo } from '../db/repo'
 import type {
   Quiz,
@@ -62,7 +62,6 @@ export function QuizView() {
   // re-grading. Reset when the user starts a fresh quiz via key change.
   const [answers, setAnswers] = useState<import('../db/types').QuizAttemptAnswer[]>([])
   const [startedAt] = useState(() => Date.now())
-  const [attemptId, setAttemptId] = useState<string | null>(null)
 
   useEffect(() => { repo.getQuiz(quizId).then(q => setQuiz(q ?? null)) }, [quizId])
 
@@ -146,13 +145,12 @@ export function QuizView() {
       await repo.recordQuiz(quiz.id, quiz.topicId, score)
       // Persist the full attempt record. Every attempt is a new row; retake
       // appends rather than overwrites so review history is durable.
-      const id = `qa.${quiz.id}.${Date.now()}`
       await repo.saveQuizAttempt({
-        id, quizId: quiz.id, topicId: quiz.topicId,
+        id: `qa.${quiz.id}.${Date.now()}`,
+        quizId: quiz.id, topicId: quiz.topicId,
         startedAt, finishedAt: Date.now(),
         score, answers: nextAnswers,
       })
-      setAttemptId(id)
       setCorrect(nextCorrect)
       setAnswers(nextAnswers)
       setPhase('done')
@@ -190,11 +188,7 @@ export function QuizView() {
             </div>
           )}
         </div>
-        <ReviewSection
-          quiz={quiz}
-          answers={answers}
-          attemptId={attemptId}
-        />
+        <ReviewSection quiz={quiz} answers={answers} />
         <div className={styles.reportRow}>
           <ReportFlag quizId={quiz.id} />
         </div>
@@ -520,23 +514,13 @@ function ShortAnswerBody({
 // explainer (when authored). Toggle collapses to a single button so users
 // who just want their score aren't forced past a wall of text.
 function ReviewSection({
-  quiz, answers, attemptId,
+  quiz, answers,
 }: {
   quiz: Quiz
   answers: QuizAttemptAnswer[]
-  attemptId: string | null
 }) {
   const [open, setOpen] = useState(false)
-  const [locked, setLocked] = useState(false)
-
   const wrongCount = answers.filter(a => !a.correct).length
-
-  async function toggleLock() {
-    if (!attemptId) return
-    const next = !locked
-    await repo.lockQuizAttempt(attemptId, next)
-    setLocked(next)
-  }
 
   return (
     <div className={styles.reviewWrap}>
@@ -549,20 +533,6 @@ function ReviewSection({
         >
           {open ? 'Hide answer review' : `Review answers${wrongCount > 0 ? ` (${wrongCount} missed)` : ''}`}
         </button>
-        {attemptId && (
-          <button
-            type="button"
-            className={`${styles.lockBtn} ${locked ? styles.lockBtnOn : ''}`}
-            onClick={toggleLock}
-            aria-pressed={locked}
-            title={locked
-              ? 'Attempt locked as final — tap to unlock'
-              : 'Accept this attempt as final. Advisory: mastery still updates on retake.'}
-          >
-            {locked ? <Lock size={12} strokeWidth={2} /> : <LockOpen size={12} strokeWidth={2} />}
-            {locked ? 'Locked' : 'Accept score'}
-          </button>
-        )}
       </div>
 
       {open && (

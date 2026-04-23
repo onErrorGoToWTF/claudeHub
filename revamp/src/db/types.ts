@@ -161,11 +161,6 @@ export interface QuizAttempt {
    *  repo.recordQuiz so the two records stay in sync. */
   score: number
   answers: QuizAttemptAnswer[]
-  /** User signaled "I'm accepting this attempt as final." Advisory, not
-   *  a gate — review stays visible regardless. Surfaces in the future
-   *  admin review queue so staff can see which attempts the learner
-   *  marked done. */
-  locked?: boolean
 }
 
 export interface Progress {
