@@ -65,6 +65,13 @@ export function Dashboard() {
   }, [])
 
   const activeProjects = projects.filter(p => p.status === 'in_progress' || p.status === 'planned').length
+  // Prefer the most-recently-updated in_progress project as the "jump back
+  // in" target; fall back to any planned project; finally to the generic
+  // new-project CTA. Matches the Learn panel's "Next up" picking logic.
+  const resumeProject =
+    projects.find(p => p.status === 'in_progress')
+    ?? projects.find(p => p.status === 'planned')
+    ?? null
 
   return (
     <div className="page">
@@ -117,10 +124,18 @@ export function Dashboard() {
             <span className={s.panelMeta}>{activeProjects} active · {projects.length} total</span>
           </header>
 
-          <Link to="/projects/new" className={s.cta} style={{ color: 'inherit' }}>
+          <Link
+            to={resumeProject ? `/projects/${resumeProject.id}` : '/projects/new'}
+            className={s.cta}
+            style={{ color: 'inherit' }}
+          >
             <span className={s.ctaLeft}>
-              <span>Start a project</span>
-              <span className={s.ctaSub}>Brainstorm, pick a stack, generate a path.</span>
+              <span>{resumeProject ? 'Jump back in' : 'Start a project'}</span>
+              <span className={s.ctaSub}>
+                {resumeProject
+                  ? resumeProject.title
+                  : 'Brainstorm, pick a stack, generate a path.'}
+              </span>
             </span>
             <ArrowRight size={16} />
           </Link>
