@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowLeft, ArrowDown, ArrowUp, Flag, Sparkles, Check, X as XIcon } from 'lucide-react'
 import { repo } from '../db/repo'
@@ -52,6 +52,8 @@ function initialAnswer(q: QuizQuestion): unknown {
 
 export function QuizView() {
   const { quizId = '' } = useParams()
+  const [searchParams] = useSearchParams()
+  const isReviewMode = searchParams.get('review') === '1'
   const [quiz, setQuiz] = useState<Quiz | null | undefined>(undefined)
   const [i, setI] = useState(0)
   const [answer, setAnswer] = useState<unknown>(null)
@@ -62,8 +64,28 @@ export function QuizView() {
   // re-grading. Reset when the user starts a fresh quiz via key change.
   const [answers, setAnswers] = useState<import('../db/types').QuizAttemptAnswer[]>([])
   const [startedAt] = useState(() => Date.now())
+  const [reviewNotFound, setReviewNotFound] = useState(false)
 
   useEffect(() => { repo.getQuiz(quizId).then(q => setQuiz(q ?? null)) }, [quizId])
+
+  // Review mode: hydrate state from the latest persisted attempt and jump
+  // straight to phase=done so the learner lands in the result + review
+  // UI without re-taking. If no attempt exists yet we fall through to the
+  // "review not found" notice below.
+  useEffect(() => {
+    if (!isReviewMode || !quiz) return
+    let alive = true
+    ;(async () => {
+      const latest = await repo.getLatestQuizAttempt(quiz.id)
+      if (!alive) return
+      if (!latest) { setReviewNotFound(true); return }
+      const correctCount = latest.answers.filter(a => a.correct).length
+      setAnswers(latest.answers)
+      setCorrect(correctCount)
+      setPhase('done')
+    })()
+    return () => { alive = false }
+  }, [isReviewMode, quiz])
 
   const q = quiz?.questions[i]
   const total = quiz?.questions.length ?? 0
@@ -161,13 +183,35 @@ export function QuizView() {
     }
   }
 
+  if (isReviewMode && reviewNotFound) {
+    return (
+      <div className="page">
+        <Link to={`/learn/topic/${quiz.topicId}`} style={{
+          display: 'inline-flex', alignItems: 'center', gap: 4,
+          fontSize: 'var(--text-sm)', color: 'var(--ink-3)', marginBottom: 'var(--space-4)',
+        }}>
+          <ArrowLeft size={14} /> Back to topic
+        </Link>
+        <PageHeader eyebrow="Review" title={quiz.title} subtitle="No completed attempts yet — take the quiz first, then the review will show your answers." />
+        <div style={{ marginTop: 'var(--space-4)' }}>
+          <Link to={`/learn/quiz/${quiz.id}`}>
+            <Button variant="primary">Take the quiz</Button>
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
   if (phase === 'done') {
     const score = correct / quiz.questions.length
     const pct = Math.round(score * 100)
     const passed = score >= PASS_THRESHOLD
     return (
       <div className="page">
-        <PageHeader eyebrow="Quiz complete" title={passed ? 'Nicely done.' : 'Not quite — try again soon.'} />
+        <PageHeader
+          eyebrow={isReviewMode ? 'Last attempt review' : 'Quiz complete'}
+          title={isReviewMode ? quiz.title : (passed ? 'Nicely done.' : 'Not quite — try again soon.')}
+        />
         <div className={styles.resultCard} role="status" aria-live="polite">
           <div className={styles.resultScore}>
             <CountUp to={pct} />
@@ -181,6 +225,11 @@ export function QuizView() {
             <Link to={`/learn/topic/${quiz.topicId}`}>
               <Button variant="primary">Back to topic</Button>
             </Link>
+            {isReviewMode && (
+              <Link to={`/learn/quiz/${quiz.id}`}>
+                <Button variant="ghost">Retake</Button>
+              </Link>
+            )}
           </div>
           {passed && (
             <div className={styles.masteryPing}>
@@ -188,7 +237,7 @@ export function QuizView() {
             </div>
           )}
         </div>
-        <ReviewSection quiz={quiz} answers={answers} />
+        <ReviewSection quiz={quiz} answers={answers} defaultOpen={isReviewMode} />
         <div className={styles.reportRow}>
           <ReportFlag quizId={quiz.id} />
         </div>
@@ -514,12 +563,13 @@ function ShortAnswerBody({
 // explainer (when authored). Toggle collapses to a single button so users
 // who just want their score aren't forced past a wall of text.
 function ReviewSection({
-  quiz, answers,
+  quiz, answers, defaultOpen = false,
 }: {
   quiz: Quiz
   answers: QuizAttemptAnswer[]
+  defaultOpen?: boolean
 }) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(defaultOpen)
   const wrongCount = answers.filter(a => !a.correct).length
 
   return (

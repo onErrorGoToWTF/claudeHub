@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, BookOpen, CircleCheckBig, HelpCircle, RotateCcw, Lock, Plus, Check } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Lesson, Quiz, Topic, Progress, LibraryItem, Project } from '../db/types'
@@ -9,6 +9,7 @@ import { PASS_THRESHOLD, MASTERY_THRESHOLD } from '../lib/mastery'
 
 export function TopicDetail() {
   const { topicId = '' } = useParams()
+  const nav = useNavigate()
   const [topic, setTopic] = useState<Topic | null | undefined>(undefined)
   const [lessons, setLessons] = useState<Lesson[]>([])
   const [quizzes, setQuizzes] = useState<Quiz[]>([])
@@ -265,6 +266,29 @@ export function TopicDetail() {
                         <Chip variant="accent">
                           <RotateCcw size={12} /> Retake
                         </Chip>
+                      )}
+                      {pr && (
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.preventDefault()
+                            e.stopPropagation()
+                            nav(`/learn/quiz/${q.id}?review=1`)
+                          }}
+                          style={{
+                            marginLeft: 'auto',
+                            padding: '3px 8px',
+                            fontSize: 'var(--text-xs)',
+                            color: 'var(--ink-3)',
+                            background: 'transparent',
+                            border: '1px solid var(--hair)',
+                            borderRadius: 'var(--radius-sm)',
+                            cursor: 'pointer',
+                          }}
+                          title="Open the last attempt's answer review without retaking"
+                        >
+                          Review
+                        </button>
                       )}
                     </TileRow>
                   </Tile>
