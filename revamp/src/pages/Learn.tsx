@@ -112,17 +112,14 @@ export function Learn() {
         </Link>
       </div>
 
-      {/* ---------- Categories ---------- */}
-      {categories.map(cat => (
-        <CategorySection
-          key={cat.id}
-          category={cat}
-          tracks={tracksByCategory[cat.id] ?? []}
-          topicsByTrack={topicsByTrack}
-          mastery={mastery}
-          pathway={pathway}
-        />
-      ))}
+      {/* ---------- Categories (dive-in cards) ---------- */}
+      <CategoriesGrid
+        categories={categories}
+        tracksByCategory={tracksByCategory}
+        topicsByTrack={topicsByTrack}
+        mastery={mastery}
+        pathway={pathway}
+      />
 
       {/* ---------- Starter packs — opt-in template subscribes ---------- */}
       <StarterPacksRow
@@ -141,29 +138,136 @@ export function Learn() {
   )
 }
 
-function CategorySection({
-  category, tracks, topicsByTrack, mastery, pathway,
+function CategoriesGrid({
+  categories, tracksByCategory, topicsByTrack, mastery, pathway,
+}: {
+  categories: Category[]
+  tracksByCategory: Record<string, Track[]>
+  topicsByTrack: Record<string, Topic[]>
+  mastery: Record<string, number>
+  pathway: UserPathway
+}) {
+  const [expandedId, setExpandedId] = useState<string | null>(null)
+  const [anchorRect, setAnchorRect] = useState<DOMRect | null>(null)
+
+  const openCat = (id: string, e: React.MouseEvent<HTMLElement>) => {
+    e.currentTarget.focus()
+    setAnchorRect(e.currentTarget.getBoundingClientRect())
+    setExpandedId(id)
+  }
+  const closeCat = () => setExpandedId(null)
+
+  const expanded = expandedId ? categories.find(c => c.id === expandedId) : null
+
+  return (
+    <div className={s.catGridWrap}>
+      <div className={s.catHeadRow}>
+        <span className={s.catHeadLabel}>Categories</span>
+        <span className={s.catHeadMeta}>Tap a category to dive in.</span>
+      </div>
+
+      <div className={s.catCardGrid}>
+        {categories.map(cat => {
+          const tracks = tracksByCategory[cat.id] ?? []
+          if (tracks.length === 0) return null
+          const trackCount = tracks.length
+          const topicCount = tracks.reduce(
+            (acc, tr) => acc + (topicsByTrack[tr.id]?.length ?? 0), 0,
+          )
+          return (
+            <div
+              key={cat.id}
+              role="button"
+              tabIndex={0}
+              className={s.catCard}
+              onClick={(e) => openCat(cat.id, e)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  openCat(cat.id, e as unknown as React.MouseEvent<HTMLElement>)
+                }
+              }}
+            >
+              <div className={s.catCardTitle}>{cat.title}</div>
+              <div className={s.catCardBlurb}>{cat.summary}</div>
+              <div className={s.catCardFoot}>
+                {trackCount} {trackCount === 1 ? 'track' : 'tracks'} · {topicCount} {topicCount === 1 ? 'topic' : 'topics'}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
+      <LiftModal
+        open={!!expanded}
+        anchorRect={anchorRect}
+        onClose={closeCat}
+        ariaLabel={expanded ? `${expanded.title} category details` : undefined}
+        maxWidth={880}
+      >
+        {expanded && (
+          <CategoryModalBody
+            category={expanded}
+            tracks={tracksByCategory[expanded.id] ?? []}
+            topicsByTrack={topicsByTrack}
+            mastery={mastery}
+            pathway={pathway}
+            onClose={closeCat}
+          />
+        )}
+      </LiftModal>
+    </div>
+  )
+}
+
+function CategoryModalBody({
+  category, tracks, topicsByTrack, mastery, pathway, onClose,
 }: {
   category: Category
   tracks: Track[]
   topicsByTrack: Record<string, Topic[]>
   mastery: Record<string, number>
   pathway: UserPathway
+  onClose: () => void
 }) {
-  // Within a category, still sort by pathway: matching tracks up top,
-  // "Everything else" collapsed on dev.
   const { primary, rest, split } = useMemo(
     () => splitByPathway(tracks, t => t.audience, pathway),
     [tracks, pathway],
   )
 
-  if (tracks.length === 0) return null
-
   return (
-    <div className={s.catSection}>
-      <div className={s.catHead}>
-        <span className={s.catTitle}>{category.title}</span>
-        <span className={s.catMeta}>{category.summary}</span>
+    <div style={{ padding: 'var(--space-5) var(--space-5) var(--space-6)' }}>
+      <div style={{
+        display: 'flex',
+        alignItems: 'flex-start',
+        justifyContent: 'space-between',
+        gap: 'var(--space-3)',
+        marginBottom: 'var(--space-5)',
+      }}>
+        <div>
+          <div className={s.catCardTitle} style={{ fontSize: 'var(--text-xl)' }}>{category.title}</div>
+          <div className={s.catCardBlurb}>{category.summary}</div>
+        </div>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          style={{
+            position: 'relative',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 32, height: 32,
+            background: 'var(--bg-card)',
+            border: '1px solid var(--hair-strong)',
+            borderRadius: 'var(--radius-sm)',
+            color: 'var(--ink-2)',
+            cursor: 'pointer',
+            flexShrink: 0,
+          }}
+        >
+          <X size={16} strokeWidth={2} />
+        </button>
       </div>
 
       {primary.map(track => (
