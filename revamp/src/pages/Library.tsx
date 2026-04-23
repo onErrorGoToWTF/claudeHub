@@ -43,11 +43,26 @@ export function Library() {
   const [query, setQuery] = useState('')
   const [savedOnly, setSavedOnly] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams()
-  const tagFilter = searchParams.get('tag') || null
-  const setTagFilter = (t: string | null) => {
+  // Tag filter is multi-select. URL carries `?tag=a,b,c` (AND'd). Existing
+  // single-tag links (?tag=prompting) Just Work — they're arrays of 1.
+  const tagFilters = useMemo<string[]>(() => {
+    const raw = searchParams.get('tag')
+    if (!raw) return []
+    return raw.split(',').map(t => t.trim().toLowerCase()).filter(Boolean)
+  }, [searchParams])
+  const writeTagFilters = (tags: string[]) => {
     const next = new URLSearchParams(searchParams)
-    if (t) next.set('tag', t); else next.delete('tag')
+    if (tags.length === 0) next.delete('tag')
+    else next.set('tag', tags.join(','))
     setSearchParams(next, { replace: true })
+  }
+  const toggleTagFilter = (tag: string) => {
+    const key = tag.toLowerCase()
+    const exists = tagFilters.includes(key)
+    writeTagFilters(exists ? tagFilters.filter(t => t !== key) : [...tagFilters, key])
+  }
+  const removeTagFilter = (tag: string) => {
+    writeTagFilters(tagFilters.filter(t => t !== tag.toLowerCase()))
   }
   const [filterOpen, setFilterOpen] = useState(false)
   const [missLogged, setMissLogged] = useState<string | null>(null)
@@ -86,7 +101,12 @@ export function Library() {
     let out = items.filter(i => !!i.body)
     if (facet !== 'all') out = out.filter(i => i.kind === facet)
     if (savedOnly) out = out.filter(i => !!i.savedForLater)
-    if (tagFilter) out = out.filter(i => i.tags.some(t => t.toLowerCase() === tagFilter.toLowerCase()))
+    if (tagFilters.length > 0) {
+      out = out.filter(i => {
+        const itemTags = i.tags.map(t => t.toLowerCase())
+        return tagFilters.every(tf => itemTags.includes(tf))
+      })
+    }
     if (query.trim()) {
       const q = query.toLowerCase()
       out = out.filter(i =>
@@ -102,7 +122,7 @@ export function Library() {
       Number(b.pinned) - Number(a.pinned) || b.addedAt - a.addedAt
     )
     return arr
-  }, [items, facet, sort, query, tagFilter, savedOnly])
+  }, [items, facet, sort, query, tagFilters, savedOnly])
 
   // Top tags by frequency — across items that have a body. These are the
   // shared-vocab tags surfaced from Chunk H. The 12 most common get chips;
@@ -170,7 +190,7 @@ export function Library() {
   }, [items])
 
   const activeFiltersCount =
-    (facet !== DEFAULT_FACET ? 1 : 0) + (sort !== DEFAULT_SORT ? 1 : 0) + (tagFilter ? 1 : 0) + (savedOnly ? 1 : 0)
+    (facet !== DEFAULT_FACET ? 1 : 0) + (sort !== DEFAULT_SORT ? 1 : 0) + tagFilters.length + (savedOnly ? 1 : 0)
 
   return (
     <div className="page">
@@ -207,7 +227,7 @@ export function Library() {
           {activeFiltersCount > 0 && <span className={styles.filterBadge}>{activeFiltersCount}</span>}
         </button>
 
-        {(facet !== DEFAULT_FACET || sort !== DEFAULT_SORT || tagFilter || savedOnly) && (
+        {(facet !== DEFAULT_FACET || sort !== DEFAULT_SORT || tagFilters.length > 0 || savedOnly) && (
           <div className={styles.activeChips}>
             {facet !== DEFAULT_FACET && (
               <button
@@ -219,16 +239,17 @@ export function Library() {
                 {FACET_LABEL[facet]} <X size={13} strokeWidth={2} />
               </button>
             )}
-            {tagFilter && (
+            {tagFilters.map(tf => (
               <button
+                key={tf}
                 type="button"
                 className={styles.chipClear}
-                onClick={() => setTagFilter(null)}
-                aria-label={`Clear tag ${tagFilter}`}
+                onClick={() => removeTagFilter(tf)}
+                aria-label={`Clear tag ${tf}`}
               >
-                #{tagFilter} <X size={13} strokeWidth={2} />
+                #{tf} <X size={13} strokeWidth={2} />
               </button>
-            )}
+            ))}
             {savedOnly && (
               <button
                 type="button"
@@ -283,13 +304,14 @@ export function Library() {
                 <div className={styles.filterLabel}>Tag</div>
                 <div className={styles.facets}>
                   {topTags.map(({ tag, n }) => {
-                    const active = tagFilter === tag
+                    const active = tagFilters.includes(tag)
                     return (
                       <button
                         key={tag}
                         type="button"
                         className={`${styles.facet} ${active ? styles.facetOn : ''}`}
-                        onClick={() => setTagFilter(active ? null : tag)}
+                        onClick={() => toggleTagFilter(tag)}
+                        aria-pressed={active}
                       >
                         <span>#{tag}</span>
                         <span className={styles.facetCount}>{n}</span>
