@@ -127,6 +127,11 @@ If a template topic doesn't exist yet in `seed.ts`, Chunk F should create it dur
 
 ### Planned (later)
 
+- [ ] **Freshness Pipeline (post-Claude-API + post-DB + post-admin).** The app's strategic differentiator: **content freshness**. Stitches together three already-parked items under one loop so their design decisions stay coherent:
+  1. **Scraper layer** — revive/repoint the legacy-root `update-feed` pipeline (`data/latest.json`, runs every 2h) so newly-indexed sources flow into an admin queue.
+  2. **Claude drafts layer** — once the Claude API project lands, Claude reads scraped material + catalog taxonomy and proposes new topics / lessons / quizzes / library items in the seed-compatible shape.
+  3. **Admin review layer** — once the admin role is wired (post-DB), the admin gets a review queue: approve, edit, reject each draft. Approved drafts publish with a "new" flag that fades after N days.
+  The value this produces is "the app's content is always current" — differentiates from the snapshot-in-time quality of static learning apps. Decisions today (topic/library schema, admin flags, seed-compatible shape for drafts) should preserve a clean path into this loop. **Do NOT build pieces in isolation before the predecessor pieces are ready** — order is DB migration → admin role → Claude API integration → Freshness Pipeline.
 - [ ] **AI-generated custom pathway (post-Claude-API project).** Once the separate Claude API integration lands, add a "Describe yourself" input that accepts a natural-language prompt: user's background, goals, worries, what they already know. Claude reads this + the full topic catalog (id, title, summary, tags, category, prereqs) + known-topics + emergent-pathway signals from `/me` and returns an ordered `string[]` of topic IDs. Feed straight into `repo.addPathwayItem` for each — no new plumbing, the data shape is already right. Fits alongside the existing three add-paths: engagement prompts, starter packs, manual pick. **Do NOT build before the Claude API project ships** — this depends on it.
 
 
