@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import {
   BookOpen, FileText, Film, Pin, PinOff, Search, Wrench, ArrowRight,
-  SlidersHorizontal, X,
+  SlidersHorizontal, X, Bookmark, BookmarkCheck,
 } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { LibraryItem, LibraryKind } from '../db/types'
@@ -41,6 +41,7 @@ export function Library() {
   const [facet, setFacet] = useState<Facet>(DEFAULT_FACET)
   const [sort, setSort] = useState<Sort>(DEFAULT_SORT)
   const [query, setQuery] = useState('')
+  const [savedOnly, setSavedOnly] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams()
   const tagFilter = searchParams.get('tag') || null
   const setTagFilter = (t: string | null) => {
@@ -84,6 +85,7 @@ export function Library() {
   const sorted = useMemo(() => {
     let out = items.filter(i => !!i.body)
     if (facet !== 'all') out = out.filter(i => i.kind === facet)
+    if (savedOnly) out = out.filter(i => !!i.savedForLater)
     if (tagFilter) out = out.filter(i => i.tags.some(t => t.toLowerCase() === tagFilter.toLowerCase()))
     if (query.trim()) {
       const q = query.toLowerCase()
@@ -100,7 +102,7 @@ export function Library() {
       Number(b.pinned) - Number(a.pinned) || b.addedAt - a.addedAt
     )
     return arr
-  }, [items, facet, sort, query, tagFilter])
+  }, [items, facet, sort, query, tagFilter, savedOnly])
 
   // Top tags by frequency — across items that have a body. These are the
   // shared-vocab tags surfaced from Chunk H. The 12 most common get chips;
@@ -149,6 +151,12 @@ export function Library() {
     return () => clearTimeout(t)
   }, [query, shown.length])
 
+  async function toggleRead(item: LibraryItem) {
+    const next = !item.savedForLater
+    await repo.toggleSavedForLater(item.id, next)
+    setItems(list => list.map(x => x.id === item.id ? { ...x, savedForLater: next } : x))
+  }
+
   async function togglePin(item: LibraryItem) {
     await repo.togglePinned(item.id, !item.pinned)
     setItems(list => list.map(x => x.id === item.id ? { ...x, pinned: !x.pinned } : x))
@@ -162,7 +170,7 @@ export function Library() {
   }, [items])
 
   const activeFiltersCount =
-    (facet !== DEFAULT_FACET ? 1 : 0) + (sort !== DEFAULT_SORT ? 1 : 0) + (tagFilter ? 1 : 0)
+    (facet !== DEFAULT_FACET ? 1 : 0) + (sort !== DEFAULT_SORT ? 1 : 0) + (tagFilter ? 1 : 0) + (savedOnly ? 1 : 0)
 
   return (
     <div className="page">
@@ -198,7 +206,7 @@ export function Library() {
           {activeFiltersCount > 0 && <span className={styles.filterBadge}>{activeFiltersCount}</span>}
         </button>
 
-        {(facet !== DEFAULT_FACET || sort !== DEFAULT_SORT || tagFilter) && (
+        {(facet !== DEFAULT_FACET || sort !== DEFAULT_SORT || tagFilter || savedOnly) && (
           <div className={styles.activeChips}>
             {facet !== DEFAULT_FACET && (
               <button
@@ -218,6 +226,16 @@ export function Library() {
                 aria-label={`Clear tag ${tagFilter}`}
               >
                 #{tagFilter} <X size={13} strokeWidth={2} />
+              </button>
+            )}
+            {savedOnly && (
+              <button
+                type="button"
+                className={styles.chipClear}
+                onClick={() => setSavedOnly(false)}
+                aria-label="Clear saved-for-later filter"
+              >
+                Saved for later <X size={13} strokeWidth={2} />
               </button>
             )}
             {sort !== DEFAULT_SORT && (
@@ -281,6 +299,19 @@ export function Library() {
               </div>
             )}
             <div className={styles.filterGroup}>
+              <div className={styles.filterLabel}>Saved</div>
+              <div className={styles.facets}>
+                <button
+                  type="button"
+                  className={`${styles.facet} ${savedOnly ? styles.facetOn : ''}`}
+                  onClick={() => setSavedOnly(v => !v)}
+                >
+                  <Bookmark size={13} strokeWidth={1.75} />
+                  <span>Saved for later only</span>
+                </button>
+              </div>
+            </div>
+            <div className={styles.filterGroup}>
               <div className={styles.filterLabel}>Sort</div>
               <select
                 value={sort}
@@ -314,6 +345,7 @@ export function Library() {
                 <LibRow key={i.id} item={i} pathway={pathway}
                   onNavigate={() => { if (i.body) nav(`/library/${i.id}`) }}
                   onTogglePin={(e) => { e.stopPropagation(); togglePin(i) }}
+                  onToggleRead={(e) => { e.stopPropagation(); toggleRead(i) }}
                 />
               ))}
             </List>
@@ -329,6 +361,7 @@ export function Library() {
                   <LibRow key={i.id} item={i} pathway={pathway}
                     onNavigate={() => { if (i.body) nav(`/library/${i.id}`) }}
                     onTogglePin={(e) => { e.stopPropagation(); togglePin(i) }}
+                    onToggleRead={(e) => { e.stopPropagation(); toggleRead(i) }}
                   />
                 ))}
               </List>
@@ -374,11 +407,12 @@ function BandHeading({ label, muted }: { label: string; muted?: boolean }) {
   )
 }
 
-function LibRow({ item, pathway, onNavigate, onTogglePin }: {
+function LibRow({ item, pathway, onNavigate, onTogglePin, onToggleRead }: {
   item: LibraryItem
   pathway: UserPathway
   onNavigate: () => void
   onTogglePin: (e: React.MouseEvent) => void
+  onToggleRead: (e: React.MouseEvent) => void
 }) {
   return (
     <Row
@@ -401,15 +435,28 @@ function LibRow({ item, pathway, onNavigate, onTogglePin }: {
         </>
       }
       right={
-        <button
-          type="button"
-          className={styles.pinBtn}
-          onClick={onTogglePin}
-          aria-label={item.pinned ? 'Unpin' : 'Pin'}
-          title={item.pinned ? 'Unpin' : 'Pin'}
-        >
-          {item.pinned ? <Pin size={14} strokeWidth={2} /> : <PinOff size={14} strokeWidth={1.5} />}
-        </button>
+        <span style={{ display: 'inline-flex', gap: 4 }}>
+          <button
+            type="button"
+            className={styles.pinBtn}
+            onClick={onToggleRead}
+            aria-label={item.savedForLater ? 'Remove from read-later' : 'Save for later'}
+            title={item.savedForLater ? 'Saved for later' : 'Save for later'}
+          >
+            {item.savedForLater
+              ? <BookmarkCheck size={14} strokeWidth={2} />
+              : <Bookmark size={14} strokeWidth={1.5} />}
+          </button>
+          <button
+            type="button"
+            className={styles.pinBtn}
+            onClick={onTogglePin}
+            aria-label={item.pinned ? 'Unpin' : 'Pin'}
+            title={item.pinned ? 'Unpin' : 'Pin'}
+          >
+            {item.pinned ? <Pin size={14} strokeWidth={2} /> : <PinOff size={14} strokeWidth={1.5} />}
+          </button>
+        </span>
       }
       onClick={onNavigate}
     />
