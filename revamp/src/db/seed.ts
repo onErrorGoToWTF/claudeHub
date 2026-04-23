@@ -1,37 +1,153 @@
 import { db } from './schema'
 import type {
-  Track, Topic, Lesson, Quiz, LibraryItem, Project,
+  Track, Topic, Lesson, Quiz, LibraryItem, Project, Category,
 } from './types'
 import { libraryNotes } from './seedLibraryNotes'
 import { TOOL_BODIES } from './toolBodies'
 import { migrateLegacyStatus } from '../lib/projectStatus'
 import { deriveLibraryAudience } from '../lib/audience'
 
+/** Topic → tag map. Normalized lowercase; `/`-separated for eventual nested
+ *  rendering (e.g., `prompting/patterns` under a Prompting parent). Shared
+ *  vocabulary with Library.tags so cross-cutting themes surface everywhere. */
+const TOPIC_TAGS: Record<string, string[]> = {
+  // Foundations
+  't.tokens':          ['foundations', 'tokens', 'cost'],
+  't.transformers':    ['foundations', 'theory', 'attention'],
+  't.sampling':        ['foundations', 'theory', 'determinism'],
+  't.models-compared': ['foundations', 'models', 'choosing'],
+  // Literacy
+  't.ai-literacy':          ['literacy', 'foundations', 'trust', 'hallucinations'],
+  't.ai-literacy-at-work':  ['literacy', 'office', 'ethics', 'privacy'],
+  't.ai-for-students':      ['literacy', 'student', 'ethics', 'study'],
+  // Prompting
+  't.prompt-basics':   ['prompting', 'foundations', 'beginner'],
+  't.clear-prompts':   ['prompting', 'patterns/clear'],
+  't.few-shot':        ['prompting', 'patterns/few-shot'],
+  // Agents + production
+  't.tool-use':        ['agents', 'tool-use', 'production'],
+  't.agents-intro':    ['agents', 'theory', 'production'],
+  't.memory':          ['agents', 'memory', 'patterns'],
+  't.prompt-caching':  ['production', 'cost', 'anthropic-sdk'],
+  // Frontend
+  't.streaming':       ['frontend', 'streaming', 'ui'],
+  't.glass-motion':    ['frontend', 'ui', 'motion'],
+  // Vibe
+  't.vibe-what-and-why':    ['vibe', 'literacy', 'beginner'],
+  't.vibe-tools-compared':  ['vibe', 'tools/vibe', 'choosing'],
+  't.claude-code-basics':   ['vibe', 'tools/claude-code', 'cli'],
+  't.vibe-iteration-loop':  ['vibe', 'workflow', 'git'],
+  // Office
+  't.claude-for-office':  ['office', 'workflow', 'coworker'],
+  't.docs-with-ai':       ['office', 'workflow/docs'],
+  't.meetings-with-ai':   ['office', 'workflow/meetings'],
+  // Media
+  't.generative-media-101':  ['media', 'literacy', 'rights-and-consent'],
+  't.image-generation':      ['media', 'tools/image', 'prompting'],
+  't.video-generation':      ['media', 'tools/video', 'prompting'],
+  't.voice-and-audio':       ['media', 'tools/voice', 'rights-and-consent'],
+}
+
+/** Explicit cross-links — topic ↔ topic "see also" + topic ↔ library
+ *  resources. Bidirectional; repo-level helpers keep both sides in sync.
+ *  Hand-authored; opportunistic — don't aim for exhaustive. */
+const TOPIC_EDGES: Record<string, { topics?: string[]; library?: string[] }> = {
+  't.ai-literacy': {
+    topics: ['t.ai-literacy-at-work', 't.ai-for-students', 't.models-compared'],
+    library: ['n.claude-cowork'],
+  },
+  't.prompt-basics': {
+    topics: ['t.clear-prompts', 't.few-shot'],
+  },
+  't.vibe-what-and-why': {
+    topics: ['t.vibe-tools-compared', 't.vibe-iteration-loop'],
+  },
+  't.vibe-tools-compared': {
+    topics: ['t.claude-code-basics'],
+    library: ['i.cursor', 'i.claude-code'],
+  },
+  't.claude-code-basics': {
+    library: ['i.claude-code'],
+  },
+  't.tool-use': {
+    topics: ['t.agents-intro', 't.prompt-caching'],
+  },
+  't.agents-intro': {
+    topics: ['t.tool-use', 't.memory'],
+  },
+  't.prompt-caching': {
+    topics: ['t.tool-use'],
+  },
+  't.image-generation': {
+    topics: ['t.generative-media-101', 't.video-generation'],
+  },
+  't.video-generation': {
+    topics: ['t.generative-media-101', 't.image-generation'],
+  },
+  't.claude-for-office': {
+    topics: ['t.docs-with-ai', 't.meetings-with-ai', 't.ai-literacy-at-work'],
+    library: ['n.claude-cowork'],
+  },
+}
+
+/** The four thematic bookshelves above Tracks. Single-parent per Track —
+ *  cross-cutting lives at the tag layer. */
+const categories: Category[] = [
+  { id: 'cat.foundations', order: 1,
+    title: 'Foundations',
+    summary: 'Literacy, how models work, prompting fundamentals — the bedrock.' },
+  { id: 'cat.building', order: 2,
+    title: 'Building with AI',
+    summary: 'Shipping real software with AI — from agents + tool use to vibe coding.' },
+  { id: 'cat.work', order: 3,
+    title: 'AI at Work',
+    summary: 'Claude (and peers) as a coworker: docs, meetings, workflow integration.' },
+  { id: 'cat.media', order: 4,
+    title: 'Generative Media',
+    summary: 'Prompting images, video, voice, and music; rights, consent, disclosure.' },
+]
+
 const tracks: Track[] = [
   { id: 'foundations', order: 1, title: 'AI Foundations',
     summary: 'How modern AI models work, from tokens to transformers.',
-    audience: ['student', 'office', 'media', 'vibe', 'dev'] },
+    audience: ['student', 'office', 'media', 'vibe', 'dev'],
+    categoryId: 'cat.foundations',
+    tags: ['foundations', 'theory'] },
   { id: 'prompt-eng', order: 2, title: 'Prompt Engineering',
     summary: 'Get precise, reliable output from any frontier model.',
-    audience: ['student', 'office', 'media', 'vibe', 'dev'] },
+    audience: ['student', 'office', 'media', 'vibe', 'dev'],
+    categoryId: 'cat.foundations',
+    tags: ['prompting', 'foundations'] },
   { id: 'agents',     order: 3, title: 'Agents & Tool Use',
     summary: 'Give models hands: tool calls, memory, autonomous loops.',
-    audience: ['vibe', 'dev'] },
+    audience: ['vibe', 'dev'],
+    categoryId: 'cat.building',
+    tags: ['agents', 'tool-use', 'production'] },
   { id: 'frontend-ai', order: 4, title: 'AI Frontend',
     summary: 'Ship polished interfaces for AI products (streaming, glass UI, motion).',
-    audience: ['vibe', 'dev'] },
+    audience: ['vibe', 'dev'],
+    categoryId: 'cat.building',
+    tags: ['frontend', 'ui'] },
   { id: 'vibe-coding', order: 5, title: 'Vibe Coding',
     summary: 'Build software end-to-end with AI doing most of the typing. Tools, loops, guardrails.',
-    audience: ['vibe'] },
+    audience: ['vibe'],
+    categoryId: 'cat.building',
+    tags: ['vibe', 'workflow'] },
   { id: 'literacy', order: 0, title: 'AI Literacy',
     summary: 'What AI is, what it isn\'t, and how to tell when it\'s wrong. The first thing to learn.',
-    audience: ['student', 'office', 'media', 'vibe', 'dev'] },
+    audience: ['student', 'office', 'media', 'vibe', 'dev'],
+    categoryId: 'cat.foundations',
+    tags: ['literacy', 'foundations', 'ethics'] },
   { id: 'office-ai', order: 6, title: 'AI at Work',
     summary: 'Claude as a coworker: docs, meetings, communication, and day-to-day knowledge work.',
-    audience: ['office'] },
+    audience: ['office'],
+    categoryId: 'cat.work',
+    tags: ['workflow', 'office'] },
   { id: 'generative-media', order: 7, title: 'Generative Media',
     summary: 'Prompting images, video, voice, and music — and knowing what you\'re allowed to do with the output.',
-    audience: ['media'] },
+    audience: ['media'],
+    categoryId: 'cat.media',
+    tags: ['media', 'generative'] },
 ]
 
 const topics: Topic[] = [
@@ -2808,6 +2924,12 @@ export async function seedIfEmpty(): Promise<void> {
     }
   }
 
+  // Seed / upsert the Category layer. These are system-managed — overwrite
+  // from code every boot so title/summary edits propagate.
+  for (const c of categories) {
+    await db.categories.put(c)
+  }
+
   const [tc, lc] = await Promise.all([db.tracks.count(), db.library.count()])
   if (tc === 0) {
     await db.transaction(
@@ -2861,5 +2983,67 @@ export async function seedIfEmpty(): Promise<void> {
         await db.library.put({ ...merged, audience: merged.audience ?? item.audience })
       }
     }
+  }
+
+  // ---------- Taxonomy pass: categories, tags, cross-links ----------
+  // Runs after tracks/topics/library are in place. System-managed; overwrites
+  // from code every boot so taxonomy edits propagate to existing installs.
+
+  // Track: patch categoryId + tags from the seed arrays.
+  for (const t of tracks) {
+    const prev = await db.tracks.get(t.id)
+    if (prev) {
+      await db.tracks.put({ ...prev, categoryId: t.categoryId ?? prev.categoryId, tags: t.tags ?? prev.tags })
+    }
+  }
+
+  // Topic: apply tag map + bidirectional edges.
+  // Edges are written symmetrically — both Topic.relatedTopicIds and the
+  // reciprocal Topic.relatedTopicIds (or LibraryItem.relatedTopicIds) get
+  // the edge, so every query direction resolves without a join.
+  const topicEdgeAccum: Record<string, { topics: Set<string>; library: Set<string> }> = {}
+  const libraryEdgeAccum: Record<string, Set<string>> = {}
+  const ensureTopic = (id: string) => {
+    if (!topicEdgeAccum[id]) topicEdgeAccum[id] = { topics: new Set(), library: new Set() }
+    return topicEdgeAccum[id]
+  }
+  const ensureLibrary = (id: string) => {
+    if (!libraryEdgeAccum[id]) libraryEdgeAccum[id] = new Set()
+    return libraryEdgeAccum[id]
+  }
+  for (const [topicId, edges] of Object.entries(TOPIC_EDGES)) {
+    for (const otherTopicId of edges.topics ?? []) {
+      ensureTopic(topicId).topics.add(otherTopicId)
+      ensureTopic(otherTopicId).topics.add(topicId)
+    }
+    for (const libId of edges.library ?? []) {
+      ensureTopic(topicId).library.add(libId)
+      ensureLibrary(libId).add(topicId)
+    }
+  }
+
+  // Write topic tags + topic edges.
+  for (const topic of await db.topics.toArray()) {
+    const tags = TOPIC_TAGS[topic.id]
+    const edges = topicEdgeAccum[topic.id]
+    const next = {
+      ...topic,
+      tags: tags ?? topic.tags,
+      relatedTopicIds: edges ? [...edges.topics] : topic.relatedTopicIds,
+      relatedLibraryIds: edges ? [...edges.library] : topic.relatedLibraryIds,
+    }
+    // Only write if changed to reduce churn on boot.
+    const changed =
+      next.tags !== topic.tags ||
+      next.relatedTopicIds !== topic.relatedTopicIds ||
+      next.relatedLibraryIds !== topic.relatedLibraryIds
+    if (changed) await db.topics.put(next)
+  }
+
+  // Write library → topic reverse edges.
+  for (const [libId, topicIds] of Object.entries(libraryEdgeAccum)) {
+    const item = await db.library.get(libId)
+    if (!item) continue
+    await db.library.put({ ...item, relatedTopicIds: [...topicIds] })
   }
 }

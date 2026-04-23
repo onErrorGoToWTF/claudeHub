@@ -9,12 +9,28 @@ export type ID = string
  *  Content with an empty or missing audience list is visible to everyone. */
 export type Audience = 'student' | 'office' | 'media' | 'vibe' | 'dev'
 
+/** Top-level thematic grouping above Tracks — the "bookshelf" layer.
+ *  Single-parent per Track. Cross-cutting lives at the tag layer, not here. */
+export interface Category {
+  id: ID
+  title: string
+  summary: string
+  order: number
+  /** Optional tags on the category itself (rarely used; primarily for future
+   *  graph-viz enrichment). */
+  tags?: string[]
+}
+
 export interface Track {
   id: ID
   title: string
   summary: string
   order: number
   audience?: Audience[]
+  /** Thematic bookshelf this track lives under. Missing = "Other" bucket. */
+  categoryId?: ID
+  /** Optional tag set for the track itself. */
+  tags?: string[]
 }
 
 export interface Topic {
@@ -25,8 +41,18 @@ export interface Topic {
   order: number
   audience?: Audience[]
   /** Topic IDs that should come before this one in any learning path.
-   *  Used by the custom-pathway builder to topologically order user picks. */
+   *  Used by the custom-pathway builder to topologically order user picks.
+   *  Directed edge — "must come first." */
   prereqTopicIds?: ID[]
+  /** Shared-vocabulary tag list. Normalized lowercase, `/`-separated for
+   *  eventual nesting (e.g., `ai/safety`, `prompting/patterns`). */
+  tags?: string[]
+  /** Symmetric "see-also" edges to other topics. Repo-level setRelated keeps
+   *  both sides in sync; treat the arrays as the source of truth at query time. */
+  relatedTopicIds?: ID[]
+  /** Library items that relate to this topic. Bidirectional with
+   *  LibraryItem.relatedTopicIds. */
+  relatedLibraryIds?: ID[]
 }
 
 export interface Lesson {
@@ -152,6 +178,11 @@ export interface LibraryItem {
   cost?: 'free' | 'paid' | 'subscription'
   owned?: boolean
   notes?: string
+  /** Topics this library item relates to. Bidirectional with
+   *  Topic.relatedLibraryIds — repo-level setRelated keeps both sides synced. */
+  relatedTopicIds?: ID[]
+  /** Symmetric "related resource" edges to other library items. */
+  relatedLibraryIds?: ID[]
 }
 
 /** Legacy alias — still used by the Projects intake flow. */
@@ -187,6 +218,15 @@ export interface Project {
   /** Vibe/media-pathway-only free-text stack sketch (tools the user named
    *  beyond the picked inventory items). Not parsed — just preserved. */
   stackNotes?: string
+  /** User-authored tag list for the project (shared-vocabulary with topics
+   *  + library so cross-cutting themes surface everywhere). */
+  tags?: string[]
+  /** Broader than gapTopicIds — any topic relevant to the project, whether
+   *  the user still needs to learn it or not. gapTopicIds stays focused on
+   *  "still to learn"; relatedTopicIds is the full context surface. */
+  relatedTopicIds?: ID[]
+  /** Library items relevant to this project. */
+  relatedLibraryIds?: ID[]
   createdAt: number
   updatedAt: number
 }

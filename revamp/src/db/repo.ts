@@ -7,13 +7,19 @@ import { db } from './schema'
 import type {
   Track, Topic, Lesson, Quiz, Progress, Mastery,
   LibraryItem, LibraryKind, InventoryItem, Project, SearchMiss, ProjectEvent,
-  UserPathwayItem, QuizReport,
+  UserPathwayItem, QuizReport, Category,
 } from './types'
 import { PASS_THRESHOLD } from '../lib/mastery'
 import { PATHWAY_TEMPLATES } from '../lib/pathwayTemplates'
 import type { UserPathway } from '../lib/audience'
 
 export const repo = {
+  // ---------- categories ----------
+  async listCategories(): Promise<Category[]> {
+    return db.categories.orderBy('order').toArray()
+  },
+  async getCategory(id: string) { return db.categories.get(id) },
+
   // ---------- tracks / topics ----------
   async listTracks(): Promise<Track[]> {
     return db.tracks.orderBy('order').toArray()
@@ -287,6 +293,139 @@ export const repo = {
     }))
     if (rows.length) await db.userPathwayItems.bulkPut(rows)
     return rows.length
+  },
+
+  // ---------- taxonomy / graph ----------
+  /** Every tag used across topics, library items, tracks, projects.
+   *  Deduped + lowercased + sorted. Seeds the tag-facet UI. */
+  async listAllTags(): Promise<string[]> {
+    const bag = new Set<string>()
+    const push = (arr?: string[]) => arr?.forEach(t => bag.add(t.toLowerCase()))
+    for (const t of await db.topics.toArray())   push(t.tags)
+    for (const l of await db.library.toArray())  push(l.tags)
+    for (const tr of await db.tracks.toArray())  push(tr.tags)
+    for (const p of await db.projects.toArray()) push(p.tags)
+    return [...bag].sort()
+  },
+  /** Every entity carrying the given tag. Returns typed unions so callers
+   *  can render per-kind affordances. Case-insensitive. */
+  async nodesForTag(tag: string): Promise<{
+    topics: Topic[]; library: LibraryItem[]; tracks: Track[]; projects: Project[]
+  }> {
+    const needle = tag.toLowerCase()
+    const matches = (arr?: string[]) => !!arr?.some(t => t.toLowerCase() === needle)
+    const [topics, library, tracks, projects] = await Promise.all([
+      db.topics.toArray(),
+      db.library.toArray(),
+      db.tracks.toArray(),
+      db.projects.toArray(),
+    ])
+    return {
+      topics:   topics.filter(t => matches(t.tags)),
+      library:  library.filter(l => matches(l.tags)),
+      tracks:   tracks.filter(tr => matches(tr.tags)),
+      projects: projects.filter(p => matches(p.tags)),
+    }
+  },
+  /** Every node that references a given entity — the inverse of its outbound
+   *  edges. Essential for a "backlinks" UI and the future graph view. */
+  async getBacklinks(entityId: string): Promise<{
+    topics: Topic[]; library: LibraryItem[]; projects: Project[]
+  }> {
+    const [topics, library, projects] = await Promise.all([
+      db.topics.toArray(),
+      db.library.toArray(),
+      db.projects.toArray(),
+    ])
+    return {
+      topics: topics.filter(t =>
+        t.prereqTopicIds?.includes(entityId) ||
+        t.relatedTopicIds?.includes(entityId) ||
+        t.relatedLibraryIds?.includes(entityId)
+      ),
+      library: library.filter(l =>
+        l.relatedTopicIds?.includes(entityId) ||
+        l.relatedLibraryIds?.includes(entityId)
+      ),
+      projects: projects.filter(p =>
+        p.gapTopicIds?.includes(entityId) ||
+        p.relatedTopicIds?.includes(entityId) ||
+        p.relatedLibraryIds?.includes(entityId) ||
+        p.stack?.includes(entityId)
+      ),
+    }
+  },
+  /** Breadth-first collect nodes within `depth` hops of the seed.
+   *  Returns node IDs keyed by kind — raw material for a future graph view.
+   *  Kept lightweight: no edge list, no weighting; callers can recompute. */
+  async getNeighborhood(entityId: string, depth = 1): Promise<Set<string>> {
+    const seen = new Set<string>([entityId])
+    let frontier: string[] = [entityId]
+    for (let d = 0; d < depth; d++) {
+      const next: string[] = []
+      for (const id of frontier) {
+        const topic = await db.topics.get(id)
+        if (topic) {
+          for (const t of topic.prereqTopicIds   ?? []) if (!seen.has(t)) { seen.add(t); next.push(t) }
+          for (const t of topic.relatedTopicIds  ?? []) if (!seen.has(t)) { seen.add(t); next.push(t) }
+          for (const t of topic.relatedLibraryIds?? []) if (!seen.has(t)) { seen.add(t); next.push(t) }
+        }
+        const item = await db.library.get(id)
+        if (item) {
+          for (const t of item.relatedTopicIds   ?? []) if (!seen.has(t)) { seen.add(t); next.push(t) }
+          for (const t of item.relatedLibraryIds ?? []) if (!seen.has(t)) { seen.add(t); next.push(t) }
+        }
+      }
+      frontier = next
+      if (!frontier.length) break
+    }
+    return seen
+  },
+  /** Write a symmetric edge between two entities. Works for topic↔topic,
+   *  topic↔library, library↔library. Keeps both sides in sync so every
+   *  query direction resolves without a join. Idempotent. */
+  async setRelated(
+    a: { id: string; kind: 'topic' | 'library' },
+    b: { id: string; kind: 'topic' | 'library' },
+  ): Promise<void> {
+    const add = (list: string[] | undefined, id: string) =>
+      list?.includes(id) ? list : [...(list ?? []), id]
+
+    if (a.kind === 'topic') {
+      const row = await db.topics.get(a.id)
+      if (row) {
+        const patch = b.kind === 'topic'
+          ? { relatedTopicIds: add(row.relatedTopicIds, b.id) }
+          : { relatedLibraryIds: add(row.relatedLibraryIds, b.id) }
+        await db.topics.put({ ...row, ...patch })
+      }
+    } else {
+      const row = await db.library.get(a.id)
+      if (row) {
+        const patch = b.kind === 'topic'
+          ? { relatedTopicIds: add(row.relatedTopicIds, b.id) }
+          : { relatedLibraryIds: add(row.relatedLibraryIds, b.id) }
+        await db.library.put({ ...row, ...patch })
+      }
+    }
+
+    if (b.kind === 'topic') {
+      const row = await db.topics.get(b.id)
+      if (row) {
+        const patch = a.kind === 'topic'
+          ? { relatedTopicIds: add(row.relatedTopicIds, a.id) }
+          : { relatedLibraryIds: add(row.relatedLibraryIds, a.id) }
+        await db.topics.put({ ...row, ...patch })
+      }
+    } else {
+      const row = await db.library.get(b.id)
+      if (row) {
+        const patch = a.kind === 'topic'
+          ? { relatedTopicIds: add(row.relatedTopicIds, a.id) }
+          : { relatedLibraryIds: add(row.relatedLibraryIds, a.id) }
+        await db.library.put({ ...row, ...patch })
+      }
+    }
   },
 }
 

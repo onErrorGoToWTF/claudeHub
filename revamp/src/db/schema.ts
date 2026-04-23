@@ -2,6 +2,7 @@ import Dexie, { type Table } from 'dexie'
 import type {
   Track, Topic, Lesson, Quiz, Progress, Mastery,
   LibraryItem, Project, SearchMiss, ProjectEvent, UserPathwayItem, QuizReport,
+  Category,
 } from './types'
 
 export class AiUniversityDB extends Dexie {
@@ -17,6 +18,7 @@ export class AiUniversityDB extends Dexie {
   projectEvents!: Table<ProjectEvent, string>
   userPathwayItems!: Table<UserPathwayItem, string>
   quizReports!: Table<QuizReport, string>
+  categories!: Table<Category, string>
 
   constructor() {
     super('aiUniversity')
@@ -45,6 +47,9 @@ export class AiUniversityDB extends Dexie {
     })
     this.version(6).stores({
       quizReports: 'id, quizId, questionId, ts, resolved',
+    })
+    this.version(7).stores({
+      categories: 'id, order',
     })
   }
 }
