@@ -92,14 +92,30 @@
   border-color: color-mix(in oklch, var(--accent-border) 55%, white);
 }
 .chipMastery {
-  color: color-mix(in oklch, var(--mastery-base) 70%, black);
+  /* Use the dedicated -ink token so text reads vibrant, not dulled by a
+     black mix. Surface + border already sit on white (--bg-card) so the
+     warm canvas can't tint them. */
+  color: var(--mastery-ink);
   background: var(--mastery-surface);
   border-color: var(--mastery-border);
+  /* One-shot electric-ping on mount. Single motion, non-looping.
+     Reduced-motion clients see the static chip only. */
+  animation: chipElectricPing 900ms var(--ease-premium, cubic-bezier(0.22, 0.61, 0.36, 1)) 1;
+  will-change: box-shadow;
 }
 .chipDanger {
-  color: color-mix(in oklch, var(--danger-base) 70%, black);
+  color: var(--danger-ink);
   background: var(--danger-surface);
   border-color: var(--danger-border);
+}
+
+@keyframes chipElectricPing {
+  0%   { box-shadow: 0 0 0 0 var(--mastery-glow); }
+  60%  { box-shadow: 0 0 0 6px color-mix(in oklch, var(--mastery-glow) 40%, transparent); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chipMastery { animation: none; }
 }
 
 /* ---------- progress bar — electrified line ---------- */

@@ -107,8 +107,8 @@ const topics: Topic[] = [
     prereqTopicIds: ['t.tokens'] },
 
   // ---- Office track ----
-  { id: 't.claude-for-office', trackId: 'office-ai', order: 1, title: 'Claude as a Coworker',
-    summary: 'Projects, custom instructions, and the coworker-mode mental model.',
+  { id: 't.claude-for-office', trackId: 'office-ai', order: 1, title: 'AI as a Coworker',
+    summary: 'The coworker mindset that unlocks any AI tool: Claude Projects, ChatGPT Projects, Copilot, Gemini — same playbook, different buttons.',
     audience: ['office'],
     prereqTopicIds: ['t.prompt-basics'] },
   { id: 't.docs-with-ai', trackId: 'office-ai', order: 2, title: 'Document Work with AI',
@@ -885,44 +885,59 @@ For any long-running app — an agent, a chatbot with big system context, a doc-
   // ==================== t.claude-for-office ====================
   {
     id: 'l.claude-office.intro', topicId: 't.claude-for-office', order: 1, minutes: 8,
-    title: 'Claude as a coworker',
-    summary: 'Projects, custom instructions, and getting past "is this better than Google?" to an actual daily habit.',
+    title: 'AI as a coworker',
+    summary: 'The coworker mindset that unlocks any tool: Claude Projects, ChatGPT Projects, Microsoft Copilot, Gemini — same playbook, different buttons.',
     body: `
-**TL;DR** — The mindset that unlocks Claude for office work: treat it like a coworker who just started, eager to help, needs context you'd give a new hire. Projects and custom instructions are how you give that context once instead of every conversation.
+**TL;DR** — The mindset that unlocks AI at work: treat the assistant like a coworker who just started — eager to help, needs context you'd give a new hire. Every major tool (Claude, ChatGPT, Copilot, Gemini) has its version of the same primitives: **custom instructions** and **persistent workspaces**. Use them both.
 
 ## The shift
 
-Most people's first weeks with Claude feel like a better Google. That's fine for quick Q&A but misses the real value. The shift: **Claude isn't a search engine; it's a coworker you can delegate to**. Coworkers need:
+Most people's first weeks with any AI tool feel like a better Google. That's fine for quick Q&A but misses the real value. The shift: **it isn't a search engine; it's a coworker you can delegate to**. Coworkers need:
 
 - Context about your role, team, and goals.
 - The documents you're working from.
 - A sense of your tone and standards.
 
-You give a human new hire all of that in the first week. Give Claude the same, once.
+You give a human new hire all of that in the first week. Give the AI the same, once.
 
-## Custom instructions
+## Pick your tool
 
-In claude.ai settings, "custom instructions" are a short description of who you are and how you work. Claude sees them on every conversation. Example:
+All the big four support this pattern. Pick the one you'll actually open — switching costs are low.
+
+- **ChatGPT** (OpenAI) — largest office install base. Projects + Custom GPTs + Team plan.
+- **Microsoft Copilot** — integrated into Word, Excel, Outlook, Teams. If you're on Microsoft 365, the friction is zero.
+- **Claude** (Anthropic) — strongest writing + long-doc handling. Projects + custom instructions on Pro / Team.
+- **Gemini** (Google) — deep Workspace integration. If you're Google-shop, this is the zero-friction choice.
+
+The habits below transfer across all four.
+
+## Custom instructions (every tool calls this something)
+
+A short description of who you are and how you work, applied to every conversation. Example:
 
 > I'm a Director of Marketing at a 200-person B2B SaaS company. I write in a direct, warm, specific voice — short sentences, concrete examples, no jargon. I prefer bullet points for action lists and prose for reasoning. When I ask for a draft, assume the audience is a C-suite peer unless I say otherwise.
 
 That one paragraph removes three rounds of "please make it shorter, less jargon, more like a peer" from every future conversation.
 
-## Projects
+Per tool: **ChatGPT** → Settings → Personalization → Custom Instructions. **Claude** → Settings → Profile → Personal Preferences. **Copilot** → Agent Builder instructions. **Gemini** → Saved Info.
 
-**Projects** are persistent conversations + a knowledge base. Upload your style guide, your last five board decks, your team roster, the product roadmap. Every conversation in that project has access to those files.
+## Workspaces (the "coworker's desk")
 
-Good project shapes:
+All four have a concept of a persistent workspace + a knowledge base. Upload your style guide, your last five board decks, your team roster, the product roadmap. Every conversation inside that workspace has access to those files.
+
+Per tool: **Claude Projects** · **ChatGPT Projects / Custom GPTs** · **Copilot Agents / Notebooks** · **Gemini Gems**.
+
+Good workspace shapes:
 
 - **"Q2 Board Update"** — last board deck, OKRs, key metrics. Every iteration of this deck happens here.
 - **"Sales Enablement"** — product one-pager, case studies, objection handling. Every rep email gets drafted here.
 - **"Onboarding Buddy"** — company handbook, team org chart. New hires can ask it anything.
 
-The trick: a **specific, scoped** project beats one giant "work project." Five small projects; not one dumping ground.
+The trick: a **specific, scoped** workspace beats one giant "work workspace." Five small ones; not one dumping ground.
 
-## The coworker patterns
+## The coworker patterns (transfer to any tool)
 
-- **Draft, then critique.** "Here's my first cut; tell me what's missing and what's weak." Claude is better as a critic than as a first-drafter.
+- **Draft, then critique.** "Here's my first cut; tell me what's missing and what's weak." AI is better as a critic than as a first-drafter.
 - **Rubber duck.** "I'm thinking about X. Talk through the tradeoffs with me." Often you'll solve it yourself, just by explaining.
 - **Translator.** "Rewrite this for engineering" or "rewrite this for finance." Same content, different dialect.
 - **Meeting shadow.** Paste the transcript; ask for a summary, then for follow-ups, then for "what did people not say but probably mean."
@@ -935,7 +950,7 @@ The trick: a **specific, scoped** project beats one giant "work project." Five s
 
 ## The habit
 
-Once per Monday morning: open the project that matches what you're working on this week. Put three things into it — today's agenda, this week's goal, the one doc everything keys off. Every conversation that week starts with context already there.
+Once per Monday morning: open the workspace that matches what you're working on this week. Put three things into it — today's agenda, this week's goal, the one doc everything keys off. Every conversation that week starts with context already there.
 `.trim(),
   },
 

@@ -21,14 +21,17 @@
   --focus-ring:     color-mix(in oklch, var(--accent-solid) 70%, transparent);
 
   /* ---------- accent (one knob) ---------- */
+  /* Pill fills always mix with white (--bg-card = #ffffff) — never --bg-page —
+     so the warm greige canvas can't tint a pill that sits on top of it.
+     Surface % bumped from 16 → 22 so fills read vibrant on a neutral page. */
   --accent-base:    oklch(60% 0.14 235);     /* ocean blue */
   --accent-solid:   var(--accent-base);
   --accent-hover:   color-mix(in oklch, var(--accent-base) 88%, black 12%);
   --accent-border:  color-mix(in oklch, var(--accent-base) 55%, transparent);
   --accent-glow:    color-mix(in oklch, var(--accent-base) 32%, transparent);
-  --accent-surface: color-mix(in oklch, var(--accent-base) 16%, var(--bg-card));
-  --accent-ink:     color-mix(in oklch, var(--accent-base) 78%, black 22%);
-  --accent-soft:    color-mix(in oklch, var(--accent-base) 16%, var(--bg-page));
+  --accent-surface: color-mix(in oklch, var(--accent-base) 22%, var(--bg-card));
+  --accent-ink:     color-mix(in oklch, var(--accent-base) 80%, black 20%);
+  --accent-soft:    color-mix(in oklch, var(--accent-base) 18%, var(--bg-card));
 
   /* ---------- danger (one knob) ---------- */
   --danger-base:    oklch(58% 0.19 28);
@@ -36,15 +39,18 @@
   --danger-hover:   color-mix(in oklch, var(--danger-base) 88%, black 12%);
   --danger-border:  color-mix(in oklch, var(--danger-base) 55%, transparent);
   --danger-glow:    color-mix(in oklch, var(--danger-base) 32%, transparent);
-  --danger-surface: color-mix(in oklch, var(--danger-base) 16%, var(--bg-card));
+  --danger-surface: color-mix(in oklch, var(--danger-base) 22%, var(--bg-card));
+  --danger-ink:     color-mix(in oklch, var(--danger-base) 80%, black 20%);
+  --danger-soft:    color-mix(in oklch, var(--danger-base) 18%, var(--bg-card));
 
   /* ---------- success / mastery ---------- */
   --mastery-base:   oklch(68% 0.15 150);
   --mastery-solid:  var(--mastery-base);
   --mastery-border: color-mix(in oklch, var(--mastery-base) 55%, transparent);
   --mastery-glow:   color-mix(in oklch, var(--mastery-base) 32%, transparent);
-  --mastery-surface: color-mix(in oklch, var(--mastery-base) 16%, var(--bg-card));
-  --mastery-soft:    color-mix(in oklch, var(--mastery-base) 14%, var(--bg-page));
+  --mastery-surface: color-mix(in oklch, var(--mastery-base) 22%, var(--bg-card));
+  --mastery-ink:     color-mix(in oklch, var(--mastery-base) 80%, black 20%);
+  --mastery-soft:    color-mix(in oklch, var(--mastery-base) 18%, var(--bg-card));
 
   /* ---------- radii (squared-off) ---------- */
   --radius-sm: 6px;
@@ -137,29 +143,34 @@
   --hair:           rgba(237, 232, 220, 0.10);
   --hair-strong:    rgba(237, 232, 220, 0.20);
 
-  /* accents: lift lightness for dark backgrounds */
+  /* accents: lift lightness for dark backgrounds. In dark mode --bg-card is
+     the card layer (#2a2721) — pill fills sit on it and shouldn't pull from
+     --bg-page, which is darker and would dim the pill. */
   --accent-base:    oklch(70% 0.15 235);
   --accent-solid:   var(--accent-base);
   --accent-hover:   color-mix(in oklch, var(--accent-base) 88%, white 12%);
   --accent-border:  color-mix(in oklch, var(--accent-base) 55%, transparent);
   --accent-glow:    color-mix(in oklch, var(--accent-base) 38%, transparent);
-  --accent-surface: color-mix(in oklch, var(--accent-base) 22%, var(--bg-card));
+  --accent-surface: color-mix(in oklch, var(--accent-base) 28%, var(--bg-card));
   --accent-ink:     color-mix(in oklch, var(--accent-base) 92%, white 8%);
-  --accent-soft:    color-mix(in oklch, var(--accent-base) 18%, var(--bg-page));
+  --accent-soft:    color-mix(in oklch, var(--accent-base) 22%, var(--bg-card));
 
   --danger-base:    oklch(66% 0.19 28);
   --danger-solid:   var(--danger-base);
   --danger-hover:   color-mix(in oklch, var(--danger-base) 88%, white 12%);
   --danger-border:  color-mix(in oklch, var(--danger-base) 55%, transparent);
   --danger-glow:    color-mix(in oklch, var(--danger-base) 38%, transparent);
-  --danger-surface: color-mix(in oklch, var(--danger-base) 22%, var(--bg-card));
+  --danger-surface: color-mix(in oklch, var(--danger-base) 28%, var(--bg-card));
+  --danger-ink:     color-mix(in oklch, var(--danger-base) 92%, white 8%);
+  --danger-soft:    color-mix(in oklch, var(--danger-base) 22%, var(--bg-card));
 
   --mastery-base:   oklch(74% 0.15 150);
   --mastery-solid:  var(--mastery-base);
   --mastery-border: color-mix(in oklch, var(--mastery-base) 55%, transparent);
   --mastery-glow:   color-mix(in oklch, var(--mastery-base) 38%, transparent);
-  --mastery-surface: color-mix(in oklch, var(--mastery-base) 22%, var(--bg-card));
-  --mastery-soft:    color-mix(in oklch, var(--mastery-base) 18%, var(--bg-page));
+  --mastery-surface: color-mix(in oklch, var(--mastery-base) 28%, var(--bg-card));
+  --mastery-ink:     color-mix(in oklch, var(--mastery-base) 92%, white 8%);
+  --mastery-soft:    color-mix(in oklch, var(--mastery-base) 22%, var(--bg-card));
 
   /* glass recipe adapts — warm dark surface, faint top highlight */
   --glass-top:       rgba(42, 39, 33, 0.72);

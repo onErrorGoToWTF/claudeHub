@@ -152,7 +152,10 @@ export function QuizView() {
       <div className="page">
         <PageHeader eyebrow="Quiz complete" title={passed ? 'Nicely done.' : 'Not quite — try again soon.'} />
         <div className={styles.resultCard}>
-          <div className={styles.resultScore}>{pct}<span>%</span></div>
+          <div className={styles.resultScore}>
+            <CountUp to={pct} />
+            <span>%</span>
+          </div>
           <div className={styles.resultSub}>
             {correct} of {quiz.questions.length} correct
           </div>
@@ -358,6 +361,30 @@ function CodeTypingBody({
       </pre>
     </div>
   )
+}
+
+/** Quiet number tick from 0 to the final value on mount. ~750ms ease-out.
+ *  Reduced-motion clients get the final number immediately. Single motion;
+ *  no looping, no restart on re-render. */
+function CountUp({ to, duration = 750 }: { to: number; duration?: number }) {
+  const [n, setN] = useState(0)
+  useEffect(() => {
+    if (typeof window === 'undefined') { setN(to); return }
+    const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced || to === 0) { setN(to); return }
+    let raf = 0
+    const start = performance.now()
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / duration)
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - t, 3)
+      setN(Math.round(eased * to))
+      if (t < 1) raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [to, duration])
+  return <>{n}</>
 }
 
 // ---------- Report flag (Khan-style quiet "report a problem") ----------
