@@ -137,3 +137,136 @@
   font-size: var(--text-md);
   font-weight: 500;
 }
+
+/* ---------- Plan link (slim) ---------- */
+.planLink {
+  max-width: 720px;
+  margin: 0 auto var(--space-8);
+}
+.planLinkRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-md);
+  color: var(--ink-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background var(--dur-2) var(--ease-premium),
+    border-color var(--dur-2) var(--ease-premium),
+    color var(--dur-2) var(--ease-premium);
+}
+.planLinkRow:hover { background: var(--accent-surface); border-color: var(--accent-border); color: var(--accent-ink); }
+.planCount { color: var(--ink-3); margin-left: 4px; }
+
+/* ---------- Category section ---------- */
+.catSection {
+  margin-top: var(--space-10);
+}
+.catHead {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--hair);
+}
+.catTitle {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.catMeta {
+  font-size: var(--text-sm);
+  color: var(--ink-3);
+}
+
+/* ---------- Starter packs ---------- */
+.starterWrap {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--hair);
+}
+.starterHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.starterLabel {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.starterMeta {
+  font-size: var(--text-xs);
+  color: var(--ink-3);
+}
+.starterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+}
+.starterCard {
+  text-align: left;
+  padding: var(--space-4) var(--space-5);
+  background: var(--bg-card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition:
+    background var(--dur-2) var(--ease-premium),
+    border-color var(--dur-2) var(--ease-premium);
+}
+.starterCard:hover { border-color: var(--accent-border); background: var(--accent-surface); }
+.starterCardOn {
+  border-color: var(--mastery-border);
+  background: var(--mastery-surface);
+}
+.starterCardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: 4px;
+}
+.starterCardTitle {
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--ink-1);
+}
+.starterCardBlurb {
+  font-size: var(--text-sm);
+  color: var(--ink-2);
+  line-height: 1.4;
+  margin-bottom: var(--space-3);
+}
+.starterCardFoot {
+  font-size: 11px;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+/* ---------- Custom-pathway link (deep-end) ---------- */
+.customLink {
+  text-align: center;
+  margin-top: var(--space-8);
+}
+.customLink a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ink-3);
+  font-size: 13px;
+  text-decoration: none;
+}
+.customLink a:hover { color: var(--accent-ink); }

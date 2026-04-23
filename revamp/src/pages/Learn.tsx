@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Plus, Check } from 'lucide-react'
 import { overallProgress, repo } from '../db/repo'
-import type { Track, Topic, Mastery, UserPathwayItem } from '../db/types'
+import type { Category, Track, Topic, Mastery, UserPathwayItem } from '../db/types'
 import {
   PageHeader, Section, Tile, TileTitle, TileMeta, TileRow,
   Chip, ProgressBar,
@@ -12,69 +12,77 @@ import { AudienceBadge } from '../ui/AudienceBadge'
 import { Disclosure } from '../ui/Disclosure'
 import { splitByPathway, shouldCollapseRestByDefault, type UserPathway } from '../lib/audience'
 import { masteryStatus, MASTERY_LABEL, PASS_THRESHOLD, MASTERY_THRESHOLD } from '../lib/mastery'
+import { PATHWAY_TEMPLATES } from '../lib/pathwayTemplates'
 import { useUserStore } from '../state/userStore'
 import s from './Learn.module.css'
 
 export function Learn() {
-  const [tracks, setTracks] = useState<Track[]>([])
+  const [categories, setCategories]       = useState<Category[]>([])
+  const [tracks, setTracks]               = useState<Track[]>([])
   const [topicsByTrack, setTopicsByTrack] = useState<Record<string, Topic[]>>({})
-  const [mastery, setMastery] = useState<Record<string, number>>({})
-  const [score, setScore] = useState(0)
-  const [completed, setCompleted] = useState(0)
-  const [topicsTotal, setTopicsTotal] = useState(0)
-  const [nextTopic, setNextTopic] = useState<Topic | null>(null)
-  const [pathwayItems, setPathwayItems] = useState<UserPathwayItem[]>([])
+  const [mastery, setMastery]             = useState<Record<string, number>>({})
+  const [score, setScore]                 = useState(0)
+  const [topicsTotal, setTopicsTotal]     = useState(0)
+  const [completedCount, setCompleted]    = useState(0)
+  const [nextTopic, setNextTopic]         = useState<Topic | null>(null)
+  const [pathwayItems, setPathwayItems]   = useState<UserPathwayItem[]>([])
   const pathway = useUserStore(st => st.pathway)
 
-  useEffect(() => {
-    ;(async () => {
-      const [tr, top, ma, prog, upi] = await Promise.all([
-        repo.listTracks(),
-        repo.listTopics(),
-        repo.listMastery(),
-        overallProgress(),
-        repo.listPathwayItems(),
-      ])
-      setPathwayItems(upi)
-      setTracks(tr)
-      const grouped: Record<string, Topic[]> = {}
-      for (const t of top) (grouped[t.trackId] ||= []).push(t)
-      setTopicsByTrack(grouped)
-      setMastery(Object.fromEntries(ma.map((m: Mastery) => [m.topicId, m.score])))
+  async function refresh() {
+    const [cats, tr, top, ma, prog, upi] = await Promise.all([
+      repo.listCategories(),
+      repo.listTracks(),
+      repo.listTopics(),
+      repo.listMastery(),
+      overallProgress(),
+      repo.listPathwayItems(),
+    ])
+    setCategories(cats)
+    setTracks(tr)
+    const grouped: Record<string, Topic[]> = {}
+    for (const t of top) (grouped[t.trackId] ||= []).push(t)
+    setTopicsByTrack(grouped)
+    setMastery(Object.fromEntries(ma.map((m: Mastery) => [m.topicId, m.score])))
+    setScore(prog.score); setCompleted(prog.completed); setTopicsTotal(prog.topics)
+    const byId = new Map(ma.map(m => [m.topicId, m.score]))
+    const unstarted = top.find(t => !byId.has(t.id)) ?? top[0]
+    setNextTopic(unstarted ?? null)
+    setPathwayItems(upi)
+  }
+  useEffect(() => { refresh() }, [])
 
-      setScore(prog.score); setCompleted(prog.completed); setTopicsTotal(prog.topics)
-      const byId = new Map(ma.map(m => [m.topicId, m.score]))
-      const unstarted = top.find(t => !byId.has(t.id)) ?? top[0]
-      setNextTopic(unstarted ?? null)
-    })()
-  }, [])
+  // Group tracks under their category. Tracks missing categoryId land in
+  // an "Other" bucket at the bottom — defensive, shouldn't happen once
+  // seed data is caught up.
+  const tracksByCategory = useMemo(() => {
+    const out: Record<string, Track[]> = {}
+    for (const t of tracks) {
+      const key = t.categoryId ?? '__other__'
+      ;(out[key] ||= []).push(t)
+    }
+    return out
+  }, [tracks])
 
-  // Pathway sorts; never hides. For student/office we get two buckets;
-  // for dev/all everything is primary and the "Everything else" label
-  // is suppressed.
-  const { primary, rest, split } = useMemo(
-    () => splitByPathway(tracks, t => t.audience, pathway),
-    [tracks, pathway],
+  const activePlanIds = useMemo(
+    () => new Set(pathwayItems.filter(r => r.status === 'active').map(r => r.topicId)),
+    [pathwayItems],
   )
-
-  const topicsById = useMemo(
-    () => Object.fromEntries(Object.values(topicsByTrack).flat().map(t => [t.id, t])),
-    [topicsByTrack],
-  )
+  const activeCount = activePlanIds.size
 
   return (
     <div className="page">
       <PageHeader
         eyebrow="Learn"
         title="Your AI curriculum"
-        subtitle="Tracks break into topics. Each topic ends with a quiz. Mastery unlocks quietly, in the background."
+        subtitle="Everything's grouped by category. Start anywhere — your plan grows as you engage."
       />
 
+      {/* ---------- Overall rollup + resume ---------- */}
       <div className={s.summary}>
         <div className={s.rollup}>
           <div className={s.rollupHead}>
             <span className={s.rollupLabel}>Overall mastery</span>
-            <span className={s.rollupMeta}>{completed} / {topicsTotal} completed</span>
+            <span className={s.rollupMeta}>{completedCount} / {topicsTotal} completed</span>
           </div>
           <div className={s.rollupValue}>{Math.round(score * 100)}%</div>
           <ProgressBar value={score} />
@@ -90,23 +98,64 @@ export function Learn() {
         )}
       </div>
 
-      <MyPathwayPanel items={pathwayItems} topicsById={topicsById} />
-
-      <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
-        <Link
-          to="/learn/custom"
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: 6,
-            color: 'var(--ink-3)', fontSize: 13,
-          }}
-        >
-          Build a custom pathway <ArrowRight size={13} strokeWidth={1.75} />
+      {/* ---------- Slim link to /me for plan detail ---------- */}
+      <div className={s.planLink}>
+        <Link to="/me" className={s.planLinkRow}>
+          <span>My plan {activeCount > 0 && <span className={s.planCount}>({activeCount})</span>}</span>
+          <ArrowRight size={13} strokeWidth={1.75} />
         </Link>
       </div>
 
-      {split && primary.length > 0 && (
-        <SectionHeading label="For you" />
-      )}
+      {/* ---------- Categories ---------- */}
+      {categories.map(cat => (
+        <CategorySection
+          key={cat.id}
+          category={cat}
+          tracks={tracksByCategory[cat.id] ?? []}
+          topicsByTrack={topicsByTrack}
+          mastery={mastery}
+          pathway={pathway}
+        />
+      ))}
+
+      {/* ---------- Starter packs — opt-in template subscribes ---------- */}
+      <StarterPacksRow activePlanIds={activePlanIds} onAfterAdd={refresh} />
+
+      {/* ---------- Custom pathway link (deep end) ---------- */}
+      <div className={s.customLink}>
+        <Link to="/learn/custom">
+          Build a custom pathway <ArrowRight size={13} strokeWidth={1.75} />
+        </Link>
+      </div>
+    </div>
+  )
+}
+
+function CategorySection({
+  category, tracks, topicsByTrack, mastery, pathway,
+}: {
+  category: Category
+  tracks: Track[]
+  topicsByTrack: Record<string, Topic[]>
+  mastery: Record<string, number>
+  pathway: UserPathway
+}) {
+  // Within a category, still sort by pathway: matching tracks up top,
+  // "Everything else" collapsed on dev.
+  const { primary, rest, split } = useMemo(
+    () => splitByPathway(tracks, t => t.audience, pathway),
+    [tracks, pathway],
+  )
+
+  if (tracks.length === 0) return null
+
+  return (
+    <div className={s.catSection}>
+      <div className={s.catHead}>
+        <span className={s.catTitle}>{category.title}</span>
+        <span className={s.catMeta}>{category.summary}</span>
+      </div>
+
       {primary.map(track => (
         <TrackSection
           key={track.id}
@@ -119,7 +168,7 @@ export function Learn() {
 
       {split && rest.length > 0 && (
         <Disclosure
-          label="Everything else"
+          label="Everything else in this category"
           meta={`${rest.length} ${rest.length === 1 ? 'track' : 'tracks'}`}
           defaultOpen={!shouldCollapseRestByDefault(pathway)}
         >
@@ -134,70 +183,6 @@ export function Learn() {
           ))}
         </Disclosure>
       )}
-    </div>
-  )
-}
-
-function MyPathwayPanel({
-  items, topicsById,
-}: { items: UserPathwayItem[]; topicsById: Record<string, Topic> }) {
-  const active = items.filter(r => r.status === 'active')
-  if (active.length === 0) {
-    return (
-      <div className={s.pathwayPanel}>
-        <div className={s.pathwayHead}>
-          <span className={s.pathwayLabel}>My pathway</span>
-          <Link to="/learn/pathway" className={s.pathwayMeta}>
-            Build one <ArrowRight size={13} strokeWidth={1.75} />
-          </Link>
-        </div>
-        <div className={s.pathwayEmpty}>
-          No plan yet — start from a default or build it topic-by-topic.
-        </div>
-      </div>
-    )
-  }
-  const preview = active.slice(0, 3).map(r => topicsById[r.topicId]).filter(Boolean)
-  return (
-    <div className={s.pathwayPanel}>
-      <div className={s.pathwayHead}>
-        <span className={s.pathwayLabel}>My pathway</span>
-        <Link to="/learn/pathway" className={s.pathwayMeta}>
-          See full pathway ({active.length}) <ArrowRight size={13} strokeWidth={1.75} />
-        </Link>
-      </div>
-      <ol className={s.pathwayList}>
-        {preview.map((t, i) => (
-          <li key={t.id}>
-            <Link to={`/learn/topic/${t.id}`} className={s.pathwayRow}>
-              <span className={s.pathwayIdx}>{i + 1}</span>
-              <span className={s.pathwayTitle}>{t.title}</span>
-              <ArrowRight size={13} strokeWidth={1.75} />
-            </Link>
-          </li>
-        ))}
-      </ol>
-    </div>
-  )
-}
-
-function SectionHeading({ label, tone = 'default' }: { label: string; tone?: 'default' | 'muted' }) {
-  return (
-    <div style={{
-      display: 'flex',
-      alignItems: 'baseline',
-      gap: 'var(--space-3)',
-      margin: 'var(--space-8) 0 var(--space-2)',
-      paddingBottom: 6,
-      borderBottom: '1px solid var(--hair)',
-    }}>
-      <span style={{
-        fontSize: 'var(--text-xs)',
-        fontWeight: 600,
-        letterSpacing: '0.1em',
-        textTransform: 'uppercase',
-        color: tone === 'muted' ? 'var(--ink-3)' : 'var(--ink-2)',
-      }}>{label}</span>
     </div>
   )
 }
@@ -248,5 +233,72 @@ function TrackSection({
         })}
       </div>
     </Section>
+  )
+}
+
+// ------------------ Starter packs ------------------
+
+const STARTER_PACKS: { id: keyof typeof PATHWAY_TEMPLATES; label: string; blurb: string }[] = [
+  { id: 'student', label: 'Student',   blurb: 'Literacy first, then prompt basics, then how to pick a model.' },
+  { id: 'office',  label: 'Office',    blurb: 'Coworker-mode playbook for docs, meetings, and comms.' },
+  { id: 'media',   label: 'Media',     blurb: 'Rights + prompting for image, video, voice.' },
+  { id: 'vibe',    label: 'Vibe',      blurb: 'Build software by describing it. Tools, the loop, guardrails.' },
+  { id: 'dev',     label: 'Developer', blurb: 'Tokens → tool use → agents → caching. Production path.' },
+]
+
+function StarterPacksRow({
+  activePlanIds, onAfterAdd,
+}: { activePlanIds: Set<string>; onAfterAdd: () => void }) {
+  async function subscribe(packId: keyof typeof PATHWAY_TEMPLATES, label: string) {
+    const topicIds = PATHWAY_TEMPLATES[packId]
+    const toAdd = topicIds.filter(id => !activePlanIds.has(id))
+    if (toAdd.length === 0) {
+      window.alert(`All ${topicIds.length} ${label} topics are already in your plan.`)
+      return
+    }
+    const ok = window.confirm(
+      `Add ${toAdd.length} ${label} starter topic${toAdd.length === 1 ? '' : 's'} to your plan?`,
+    )
+    if (!ok) return
+    for (const id of toAdd) {
+      await repo.addPathwayItem(id, 'seed')
+    }
+    onAfterAdd()
+  }
+
+  return (
+    <div className={s.starterWrap}>
+      <div className={s.starterHead}>
+        <span className={s.starterLabel}>Starter packs</span>
+        <span className={s.starterMeta}>Opt-in bundles. Add all, then edit from /me.</span>
+      </div>
+      <div className={s.starterGrid}>
+        {STARTER_PACKS.map(p => {
+          const topicIds = PATHWAY_TEMPLATES[p.id]
+          const already = topicIds.filter(id => activePlanIds.has(id)).length
+          const allIn   = already === topicIds.length
+          return (
+            <button
+              key={p.id}
+              type="button"
+              className={`${s.starterCard} ${allIn ? s.starterCardOn : ''}`}
+              onClick={() => subscribe(p.id, p.label)}
+            >
+              <div className={s.starterCardHead}>
+                <span className={s.starterCardTitle}>{p.label}</span>
+                {allIn
+                  ? <Check size={14} strokeWidth={2} />
+                  : <Plus size={14} strokeWidth={2} />}
+              </div>
+              <div className={s.starterCardBlurb}>{p.blurb}</div>
+              <div className={s.starterCardFoot}>
+                {already > 0 && !allIn && <>{already} of {topicIds.length} in plan · </>}
+                {allIn ? 'All added' : `${topicIds.length} topics`}
+              </div>
+            </button>
+          )
+        })}
+      </div>
+    </div>
   )
 }
