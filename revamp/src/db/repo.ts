@@ -7,7 +7,7 @@ import { db } from './schema'
 import type {
   Track, Topic, Lesson, Quiz, Progress, Mastery,
   LibraryItem, LibraryKind, InventoryItem, Project, SearchMiss, ProjectEvent,
-  UserPathwayItem, QuizReport, Category,
+  UserPathwayItem, QuizReport, Category, Feedback, FeedbackKind,
 } from './types'
 import { PASS_THRESHOLD } from '../lib/mastery'
 import { PATHWAY_TEMPLATES } from '../lib/pathwayTemplates'
@@ -86,6 +86,7 @@ export const repo = {
   async putLibraryItem(item: LibraryItem) { await db.library.put(item) },
   async deleteLibraryItem(id: string) { await db.library.delete(id) },
   async togglePinned(id: string, pinned: boolean) { await db.library.update(id, { pinned }) },
+  async toggleSavedForLater(id: string, savedForLater: boolean) { await db.library.update(id, { savedForLater }) },
 
   // ---------- inventory (tool-filtered library, for Projects intake) ----------
   async listInventory(): Promise<InventoryItem[]> {
@@ -170,6 +171,26 @@ export const repo = {
   },
   async resolveSearchMiss(id: string, resolved = true) {
     await db.searchMisses.update(id, { resolved })
+  },
+
+  // ---------- general feedback (footer link → form) ----------
+  async logFeedback(r: { kind: FeedbackKind; message: string; path?: string }): Promise<Feedback> {
+    const ts = Date.now()
+    const row: Feedback = {
+      id: `fb.${ts}`,
+      kind: r.kind,
+      message: r.message.trim(),
+      path: r.path,
+      ts,
+    }
+    await db.feedback.put(row)
+    return row
+  },
+  async listFeedback(): Promise<Feedback[]> {
+    return (await db.feedback.toArray()).sort((a, b) => b.ts - a.ts)
+  },
+  async resolveFeedback(id: string, resolved = true) {
+    await db.feedback.update(id, { resolved })
   },
 
   // ---------- quiz reports (user-filed corrections) ----------

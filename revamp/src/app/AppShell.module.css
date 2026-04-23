@@ -197,3 +197,8 @@
   letter-spacing: 0.02em;
 }
 .colophonLink:hover { color: var(--ink-2); text-decoration: underline; }
+.colophonSep {
+  margin: 0 8px;
+  color: var(--ink-3);
+  font-size: 12px;
+}

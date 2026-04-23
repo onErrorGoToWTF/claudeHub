@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowDown, ArrowUp, X } from 'lucide-react'
+import { ArrowDown, ArrowUp, ArrowRight, X, Flame } from 'lucide-react'
 import { repo } from '../db/repo'
-import type { Category, Topic, UserPathwayItem, Mastery, Track } from '../db/types'
+import type { Category, Topic, UserPathwayItem, Mastery, Track, Progress } from '../db/types'
 import { Chip, Empty, List, PageHeader, ProgressBar, Row, Section } from '../ui'
 import { Disclosure } from '../ui/Disclosure'
 import { masteryStatus, MASTERY_LABEL, MASTERY_THRESHOLD, PASS_THRESHOLD, letterGrade } from '../lib/mastery'
+import { currentStreak, daysThisWeek, dueForReview } from '../lib/studyStats'
 import styles from './Me.module.css'
 
 export function Me() {
@@ -16,20 +17,23 @@ export function Me() {
   const [topics, setTopics]         = useState<Topic[]>([])
   const [mastery, setMastery]       = useState<Record<string, number>>({})
   const [items, setItems]           = useState<UserPathwayItem[]>([])
+  const [progress, setProgress]     = useState<Progress[]>([])
 
   async function refresh() {
-    const [cats, trs, tops, ma, upi] = await Promise.all([
+    const [cats, trs, tops, ma, upi, prog] = await Promise.all([
       repo.listCategories(),
       repo.listTracks(),
       repo.listTopics(),
       repo.listMastery(),
       repo.listPathwayItems(),
+      repo.listProgress(),
     ])
     setCategories(cats)
     setTracks(trs)
     setTopics(tops)
     setMastery(Object.fromEntries(ma.map((m: Mastery) => [m.topicId, m.score])))
     setItems(upi)
+    setProgress(prog)
   }
   useEffect(() => { refresh() }, [])
 
@@ -85,6 +89,13 @@ export function Me() {
 
   const masteredCount = useMemo(() => topics.filter(t => (mastery[t.id] ?? 0) >= MASTERY_THRESHOLD).length, [topics, mastery])
 
+  const streak = useMemo(() => currentStreak(progress), [progress])
+  const weekDays = useMemo(() => daysThisWeek(progress), [progress])
+  const dueTopics = useMemo(() => {
+    const ids = dueForReview(progress, 7).slice(0, 5)
+    return ids.map(id => topicsById.get(id)).filter((t): t is Topic => !!t)
+  }, [progress, topicsById])
+
   async function move(topicId: string, delta: number) {
     const order = activeItems.map(r => r.topicId)
     const i = order.indexOf(topicId)
@@ -114,6 +125,45 @@ export function Me() {
           : 'Start a lesson or quiz and the report card fills in.'
         }
       />
+
+      {/* ---------- Study habits (streak + due-for-review) ---------- */}
+      {(streak > 0 || weekDays > 0 || dueTopics.length > 0) && (
+        <div className={styles.habitsGrid}>
+          {(streak > 0 || weekDays > 0) && (
+            <div className={styles.habitCard}>
+              <div className={styles.habitEyebrow}>
+                <Flame size={12} strokeWidth={2} /> Habit
+              </div>
+              <div className={styles.habitBig}>
+                {streak > 0 ? `${streak}-day streak` : 'No streak today'}
+              </div>
+              <div className={styles.habitMeta}>
+                {weekDays} {weekDays === 1 ? 'day' : 'days'} studied this week
+              </div>
+            </div>
+          )}
+          {dueTopics.length > 0 && (
+            <div className={styles.habitCard}>
+              <div className={styles.habitEyebrow}>Review</div>
+              <div className={styles.habitBig}>
+                {dueTopics.length} ready for review
+              </div>
+              <div className={styles.habitMeta}>
+                Topics you passed over a week ago — a quick quiz locks them in.
+              </div>
+              <ul className={styles.habitList}>
+                {dueTopics.map(t => (
+                  <li key={t.id}>
+                    <Link to={`/learn/topic/${t.id}`} className={styles.habitListLink}>
+                      {t.title} <ArrowRight size={12} strokeWidth={1.75} />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* ---------- Report card ---------- */}
       <Section title="Report card" meta={`${masteredCount} mastered · ${Math.round(overall * 100)}% overall`}>

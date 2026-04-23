@@ -193,6 +193,10 @@ export interface LibraryItem {
   relatedLibraryIds?: ID[]
   /** Unix ms — last content review/edit timestamp. */
   updatedAt?: number
+  /** User-saved "read later" flag. Distinct from `pinned` (which boosts
+   *  the item's sort priority on everyone's list — essentially a
+   *  personal favorites list). Read-later is "I'll come back to this." */
+  savedForLater?: boolean
 }
 
 /** Legacy alias — still used by the Projects intake flow. */
@@ -247,6 +251,19 @@ export type ProjectEventKind =
   | 'created'
   | 'status_changed'
   | 'health_changed'
+
+/** General app feedback the user filed from the footer link.
+ *  Broader than QuizReport (which is quiz-question-specific). */
+export type FeedbackKind = 'bug' | 'idea' | 'content-issue' | 'other'
+
+export interface Feedback {
+  id: ID                   // `fb.<ts>`
+  kind: FeedbackKind
+  message: string
+  path?: string            // route the user was on when submitting
+  ts: number
+  resolved?: boolean
+}
 
 /** A correction/issue the user filed against a quiz question or a whole quiz.
  *  Local-only today; will sync when DB migration lands so an admin can triage. */

@@ -13,6 +13,7 @@ import { seedIfEmpty } from '../db/seed'
 const CustomPathway   = lazy(() => import('../pages/CustomPathway').then(m => ({ default: m.CustomPathway })))
 const Me              = lazy(() => import('../pages/Me').then(m => ({ default: m.Me })))
 const Colophon        = lazy(() => import('../pages/Colophon').then(m => ({ default: m.Colophon })))
+const Feedback        = lazy(() => import('../pages/Feedback').then(m => ({ default: m.Feedback })))
 const TopicDetail     = lazy(() => import('../pages/TopicDetail').then(m => ({ default: m.TopicDetail })))
 const LessonView      = lazy(() => import('../pages/LessonView').then(m => ({ default: m.LessonView })))
 const QuizView        = lazy(() => import('../pages/QuizView').then(m => ({ default: m.QuizView })))
@@ -82,6 +83,7 @@ export function App() {
                 <Route path="/me" element={<Me />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/colophon" element={<Colophon />} />
+                <Route path="/feedback" element={<Feedback />} />
                 {/* Legacy: /onboarding now redirects to home — onboarding retired. */}
                 <Route path="/onboarding" element={<Navigate to="/" replace />} />
                 <Route path="*" element={<Dashboard />} />
