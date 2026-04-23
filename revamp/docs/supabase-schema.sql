@@ -173,17 +173,21 @@ create table if not exists public.user_projects (
 create index if not exists user_projects_user_updated_idx
   on public.user_projects(user_id, updated_at desc);
 
-create table if not exists public.user_project_events (
+create table if not exists public.project_events (
   id         text primary key,
   user_id    uuid not null references auth.users(id) on delete cascade,
   project_id text not null references public.user_projects(id) on delete cascade,
   ts         timestamptz not null default now(),
   kind       text not null check (kind in ('created','status_changed','health_changed')),
-  "from"     text,
-  "to"       text
+  -- Avoid reserved-word columns ("from"/"to" worked only when quoted and
+  -- made every query a trap). Names match the shape used client-side in
+  -- src/db/types.ts: ProjectEvent.from / .to are serialized as from_value
+  -- / to_value over the wire.
+  from_value text,
+  to_value   text
 );
-create index if not exists user_project_events_project_ts_idx
-  on public.user_project_events(project_id, ts desc);
+create index if not exists project_events_project_ts_idx
+  on public.project_events(project_id, ts desc);
 
 create table if not exists public.user_library_state (
   user_id uuid not null references auth.users(id) on delete cascade,
@@ -240,7 +244,7 @@ alter table public.library_items        enable row level security;
 alter table public.user_progress        enable row level security;
 alter table public.user_mastery         enable row level security;
 alter table public.user_projects        enable row level security;
-alter table public.user_project_events  enable row level security;
+alter table public.project_events        enable row level security;
 alter table public.user_library_state   enable row level security;
 alter table public.user_search_misses   enable row level security;
 alter table public.friendships          enable row level security;
@@ -263,7 +267,7 @@ create policy user_mastery_owner_all         on public.user_mastery
   for all using (user_id = auth.uid()) with check (user_id = auth.uid());
 create policy user_projects_owner_all        on public.user_projects
   for all using (user_id = auth.uid()) with check (user_id = auth.uid());
-create policy user_project_events_owner_all  on public.user_project_events
+create policy project_events_owner_all        on public.project_events
   for all using (user_id = auth.uid()) with check (user_id = auth.uid());
 create policy user_library_state_owner_all   on public.user_library_state
   for all using (user_id = auth.uid()) with check (user_id = auth.uid());
