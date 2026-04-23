@@ -39,6 +39,14 @@ jobs:
         working-directory: revamp
         run: npm run build
 
+      # SPA fallback for GitHub Pages: serving 404.html for unknown paths
+      # lets the BrowserRouter pick up the URL on deep-link refresh
+      # (e.g., /claudeHub/learn). Without this, refresh on any non-root
+      # route 404s and the user is booted.
+      - name: Add SPA 404 fallback
+        working-directory: revamp
+        run: cp dist/index.html dist/404.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
