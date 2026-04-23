@@ -73,6 +73,40 @@ Come back to the app build. Phase 1 plan:
 3. First AI feature: small, contained. Good candidates: "generate a draft of a new lesson from a topic title," "suggest 3 quiz questions from a lesson body," "propose related library items to link to this topic." All fit the Freshness Pipeline vision long-term.
 4. Wire prompt caching from day one. The cost math only works with it.
 
+## Payment-method notes (wallet-loss workaround)
+
+Lost the physical card. Have a bank-issued **virtual credit card** linked to the chequing account. Should work, but two things to check before relying on it for a recurring subscription:
+
+1. **Reusable vs. single-use.**
+   - Some bank-issued virtual cards are one-shot — generated fresh for each transaction. Those WILL NOT work for a recurring subscription.
+   - The one that works for subscriptions is a persistent virtual card number that auto-updates when the underlying physical card rotates.
+   - Check the bank app to confirm which type this is.
+
+2. **Debit rail vs. credit rail.**
+   - Some "virtual credit cards" backed by chequing run on Visa Debit / Mastercard Debit rails rather than true credit rails.
+   - US-based SaaS (like Anthropic) usually accepts Visa Debit / Mastercard Debit for recurring transactions, but not universally.
+   - Worth testing before trusting it.
+
+### Low-risk test sequence
+
+- Start with the **API account** at console.anthropic.com (no commitment — billing is per-use, starts at $0).
+  - Add the virtual card.
+  - Run ~$0.50 of test usage.
+  - If it charges cleanly, the card is compatible with Anthropic's payment processor (Stripe).
+- **Then** do the Max direct subscription on claude.com.
+  - Same payment processor underneath — if step 1 worked, this will too.
+
+If the API-account test fails, the card isn't going to work for a recurring Max subscription either. Pivot: try PayPal (if claude.com accepts it at checkout), or accept one more Apple-tax cycle and wait for the physical card.
+
+### If the virtual card can't hold a recurring charge reliably
+
+- Let Apple renew Max 20x on May 6 once (~$150 extra in Apple markup).
+- Cancel right after renewal — access through next cycle is fine.
+- Physical card arrives in the meantime.
+- Do the clean switch on the NEXT renewal date.
+
+One extra month of Apple tax is the cost of not having a service gap. Not catastrophic.
+
 ## References (verify yourself — prices change)
 
 - https://claude.com/pricing — subscription tiers direct pricing
