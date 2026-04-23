@@ -13,11 +13,24 @@ const KIND_LABEL: Record<string, string> = {
 
 export function LibraryDetail() {
   const { id = '' } = useParams()
-  const [item, setItem] = useState<LibraryItem | null>(null)
+  const [item, setItem] = useState<LibraryItem | null | undefined>(undefined)
 
   useEffect(() => { repo.getLibraryItem(id).then(i => setItem(i ?? null)) }, [id])
 
-  if (!item) return <div className="page" />
+  if (item === undefined) return <div className="page" />
+  if (item === null) {
+    return (
+      <div className="page">
+        <Link to="/library" style={{
+          display: 'inline-flex', alignItems: 'center', gap: 4,
+          fontSize: 'var(--text-sm)', color: 'var(--ink-3)', marginBottom: 'var(--space-4)',
+        }}>
+          <ArrowLeft size={14} /> Back to Library
+        </Link>
+        <PageHeader eyebrow="Library" title="Item not found" subtitle="This item may have been removed or the link is out of date." />
+      </div>
+    )
+  }
 
   async function togglePin() {
     if (!item) return

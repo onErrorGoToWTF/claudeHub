@@ -9,7 +9,7 @@ import { PASS_THRESHOLD, MASTERY_THRESHOLD } from '../lib/mastery'
 
 export function TopicDetail() {
   const { topicId = '' } = useParams()
-  const [topic, setTopic] = useState<Topic | null>(null)
+  const [topic, setTopic] = useState<Topic | null | undefined>(undefined)
   const [lessons, setLessons] = useState<Lesson[]>([])
   const [quizzes, setQuizzes] = useState<Quiz[]>([])
   const [progress, setProgress] = useState<Record<string, Progress>>({})
@@ -56,7 +56,20 @@ export function TopicDetail() {
     })()
   }, [topicId])
 
-  if (!topic) return <div className="page" />
+  if (topic === undefined) return <div className="page" />
+  if (topic === null) {
+    return (
+      <div className="page">
+        <Link to="/learn" style={{
+          display: 'inline-flex', alignItems: 'center', gap: 4,
+          fontSize: 'var(--text-sm)', color: 'var(--ink-3)', marginBottom: 'var(--space-4)',
+        }}>
+          <ArrowLeft size={14} /> Back to Learn
+        </Link>
+        <PageHeader eyebrow="Topic" title="Topic not found" subtitle="This topic may have been removed or the link is out of date." />
+      </div>
+    )
+  }
 
   return (
     <div className="page">

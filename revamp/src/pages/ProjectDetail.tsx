@@ -46,7 +46,7 @@ function HistoryLine({ ev }: { ev: ProjectEvent }) {
 export function ProjectDetail() {
   const { projectId = '' } = useParams()
   const nav = useNavigate()
-  const [p, setP] = useState<Project | null>(null)
+  const [p, setP] = useState<Project | null | undefined>(undefined)
   const [inventory, setInventory] = useState<InventoryItem[]>([])
   const [topics, setTopics] = useState<Topic[]>([])
   const [confirmDel, setConfirmDel] = useState(false)
@@ -71,7 +71,20 @@ export function ProjectDetail() {
     setHistory(await repo.listProjectEvents(projectId))
   }
 
-  if (!p) return <div className="page" />
+  if (p === undefined) return <div className="page" />
+  if (p === null) {
+    return (
+      <div className="page">
+        <Link to="/projects" style={{
+          display: 'inline-flex', alignItems: 'center', gap: 4,
+          fontSize: 'var(--text-sm)', color: 'var(--ink-3)', marginBottom: 'var(--space-4)',
+        }}>
+          <ArrowLeft size={14} /> All projects
+        </Link>
+        <PageHeader eyebrow="Project" title="Project not found" subtitle="This project may have been removed or the link is out of date." />
+      </div>
+    )
+  }
 
   const done = p.checklist.filter(c => c.done).length
   const pct = p.checklist.length === 0 ? 0 : done / p.checklist.length
