@@ -233,63 +233,76 @@ const TOPIC_EDGES: Record<string, { topics?: string[]; library?: string[] }> = {
 }
 
 /** The four thematic bookshelves above Tracks. Single-parent per Track —
- *  cross-cutting lives at the tag layer. */
+ *  cross-cutting lives at the tag layer. Order is an intentional reading-
+ *  complexity gradient: literacy → workplace use → creator tools →
+ *  production coding. Pathway-sort still lifts audience-relevant content
+ *  for power users who'd rather dive straight into dev material. */
 const categories: Category[] = [
   { id: 'cat.foundations', order: 1,
     title: 'Foundations',
     summary: 'Literacy, how models work, prompting fundamentals — the bedrock.' },
-  { id: 'cat.building', order: 2,
-    title: 'Building with AI',
-    summary: 'Shipping real software with AI — from agents + tool use to vibe coding.' },
-  { id: 'cat.work', order: 3,
+  { id: 'cat.work', order: 2,
     title: 'AI at Work',
     summary: 'Claude (and peers) as a coworker: docs, meetings, workflow integration.' },
-  { id: 'cat.media', order: 4,
+  { id: 'cat.media', order: 3,
     title: 'Generative Media',
     summary: 'Prompting images, video, voice, and music; rights, consent, disclosure.' },
+  { id: 'cat.building', order: 4,
+    title: 'Building with AI',
+    summary: 'Shipping real software with AI — from agents + tool use to vibe coding.' },
 ]
 
+// Tracks ordered by the experience floor a user needs to get started —
+// ascending. Renders that way both globally and within each category.
+//   1. AI Literacy            — pure beginner; "what even is AI"
+//   2. Prompt Engineering     — practical; write a better prompt
+//   3. AI Foundations         — mechanistic; tokens, transformers
+//   4. AI at Work             — workplace application; no code
+//   5. Generative Media       — creator tools; UI-driven
+//   6. Vibe Coding            — describes software; iteration-friendly
+//   7. Agents & Tool Use      — SDK mental model; programmatic
+//   8. AI Frontend            — production UI; full-stack + design
 const tracks: Track[] = [
-  { id: 'foundations', order: 1, title: 'AI Foundations',
-    summary: 'How modern AI models work, from tokens to transformers.',
+  { id: 'literacy', order: 1, title: 'AI Literacy',
+    summary: 'What AI is, what it isn\'t, and how to tell when it\'s wrong. The first thing to learn.',
     audience: ['student', 'office', 'media', 'vibe', 'dev'],
     categoryId: 'cat.foundations',
-    tags: ['foundations', 'theory'] },
+    tags: ['literacy', 'foundations', 'ethics'] },
   { id: 'prompt-eng', order: 2, title: 'Prompt Engineering',
     summary: 'Get precise, reliable output from any frontier model.',
     audience: ['student', 'office', 'media', 'vibe', 'dev'],
     categoryId: 'cat.foundations',
     tags: ['prompting', 'foundations'] },
-  { id: 'agents',     order: 3, title: 'Agents & Tool Use',
-    summary: 'Give models hands: tool calls, memory, autonomous loops.',
-    audience: ['vibe', 'dev'],
-    categoryId: 'cat.building',
-    tags: ['agents', 'tool-use', 'production'] },
-  { id: 'frontend-ai', order: 4, title: 'AI Frontend',
-    summary: 'Ship polished interfaces for AI products (streaming, glass UI, motion).',
-    audience: ['vibe', 'dev'],
-    categoryId: 'cat.building',
-    tags: ['frontend', 'ui'] },
-  { id: 'vibe-coding', order: 5, title: 'Vibe Coding',
-    summary: 'Build software end-to-end with AI doing most of the typing. Tools, loops, guardrails.',
-    audience: ['vibe'],
-    categoryId: 'cat.building',
-    tags: ['vibe', 'workflow'] },
-  { id: 'literacy', order: 0, title: 'AI Literacy',
-    summary: 'What AI is, what it isn\'t, and how to tell when it\'s wrong. The first thing to learn.',
+  { id: 'foundations', order: 3, title: 'AI Foundations',
+    summary: 'How modern AI models work, from tokens to transformers.',
     audience: ['student', 'office', 'media', 'vibe', 'dev'],
     categoryId: 'cat.foundations',
-    tags: ['literacy', 'foundations', 'ethics'] },
-  { id: 'office-ai', order: 6, title: 'AI at Work',
+    tags: ['foundations', 'theory'] },
+  { id: 'office-ai', order: 4, title: 'AI at Work',
     summary: 'Claude as a coworker: docs, meetings, communication, and day-to-day knowledge work.',
     audience: ['office'],
     categoryId: 'cat.work',
     tags: ['workflow', 'office'] },
-  { id: 'generative-media', order: 7, title: 'Generative Media',
+  { id: 'generative-media', order: 5, title: 'Generative Media',
     summary: 'Prompting images, video, voice, and music — and knowing what you\'re allowed to do with the output.',
     audience: ['media'],
     categoryId: 'cat.media',
     tags: ['media', 'generative'] },
+  { id: 'vibe-coding', order: 6, title: 'Vibe Coding',
+    summary: 'Build software end-to-end with AI doing most of the typing. Tools, loops, guardrails.',
+    audience: ['vibe'],
+    categoryId: 'cat.building',
+    tags: ['vibe', 'workflow'] },
+  { id: 'agents',     order: 7, title: 'Agents & Tool Use',
+    summary: 'Give models hands: tool calls, memory, autonomous loops.',
+    audience: ['vibe', 'dev'],
+    categoryId: 'cat.building',
+    tags: ['agents', 'tool-use', 'production'] },
+  { id: 'frontend-ai', order: 8, title: 'AI Frontend',
+    summary: 'Ship polished interfaces for AI products (streaming, glass UI, motion).',
+    audience: ['vibe', 'dev'],
+    categoryId: 'cat.building',
+    tags: ['frontend', 'ui'] },
 ]
 
 const topics: Topic[] = [
@@ -304,14 +317,14 @@ const topics: Topic[] = [
 
   { id: 't.clear-prompts', trackId: 'prompt-eng', order: 1, title: 'Writing Clear Prompts',
     summary: 'Structure, specificity, and anti-patterns that quietly degrade answers.',
-    prereqTopicIds: ['t.tokens'] },
+    prereqTopicIds: ['t.prompt-basics'] },
   { id: 't.few-shot',   trackId: 'prompt-eng', order: 2, title: 'Few-Shot Examples',
     summary: 'When examples help, when they hurt, and how to pick them.',
     prereqTopicIds: ['t.clear-prompts'] },
 
   { id: 't.tool-use',   trackId: 'agents', order: 1, title: 'Tool Use Basics',
     summary: 'Defining tools, returning results, composing multi-step calls.',
-    prereqTopicIds: ['t.clear-prompts'] },
+    prereqTopicIds: ['t.prompt-basics'] },
   { id: 't.memory',     trackId: 'agents', order: 2, title: 'Memory Patterns',
     summary: 'Short-term context vs. persistent memory, and when each fits.',
     prereqTopicIds: ['t.tool-use'] },
@@ -320,8 +333,7 @@ const topics: Topic[] = [
     summary: 'Render tokens as they arrive without jank, typewriter traps, or layout shift.',
     prereqTopicIds: ['t.tokens'] },
   { id: 't.glass-motion', trackId: 'frontend-ai', order: 2, title: 'Glass, Motion & Feel',
-    summary: 'Backdrop filters, premium easing, and when motion helps vs. distracts.',
-    prereqTopicIds: ['t.streaming'] },
+    summary: 'Backdrop filters, premium easing, and when motion helps vs. distracts.' },
 
   // ---- Prompt-basics (referenced by 4 of 5 pathway templates) ----
   { id: 't.prompt-basics', trackId: 'prompt-eng', order: 0, title: 'Prompt Basics',
@@ -331,7 +343,8 @@ const topics: Topic[] = [
   // ---- Vibe-coding track ----
   { id: 't.vibe-what-and-why', trackId: 'vibe-coding', order: 1, title: 'What Vibe Coding Is',
     summary: 'Building software without typing the code yourself. What it is, what it isn\'t, and when to reach for it.',
-    audience: ['vibe'] },
+    audience: ['vibe'],
+    prereqTopicIds: ['t.prompt-basics'] },
   { id: 't.vibe-tools-compared', trackId: 'vibe-coding', order: 2, title: 'The Vibe Stack',
     summary: 'Cursor vs. Claude Code vs. v0 vs. Lovable vs. Replit — what each is for.',
     audience: ['vibe'],
@@ -361,8 +374,7 @@ const topics: Topic[] = [
   // ---- Foundations — models-compared slots in ----
   { id: 't.models-compared', trackId: 'foundations', order: 4, title: 'Models Compared',
     summary: 'Claude vs. ChatGPT vs. Gemini: what each is good at, free tiers, and picking for the task.',
-    audience: ['student', 'office', 'media', 'vibe', 'dev'],
-    prereqTopicIds: ['t.tokens'] },
+    audience: ['student', 'office', 'media', 'vibe', 'dev'] },
 
   // ---- Office track ----
   { id: 't.claude-for-office', trackId: 'office-ai', order: 1, title: 'AI as a Coworker',
@@ -381,7 +393,8 @@ const topics: Topic[] = [
   // ---- Generative media track ----
   { id: 't.generative-media-101', trackId: 'generative-media', order: 1, title: 'Generative Media 101',
     summary: 'What "generative" means, creator-side literacy, rights + consent, and what platforms will and won\'t accept.',
-    audience: ['media'] },
+    audience: ['media'],
+    prereqTopicIds: ['t.prompt-basics'] },
   { id: 't.image-generation', trackId: 'generative-media', order: 2, title: 'Image Generation',
     summary: 'Midjourney / Nano Banana / Ideogram — painterly vs. fast vs. typography, and the iteration loop.',
     audience: ['media'],
@@ -3081,12 +3094,39 @@ export async function seedIfEmpty(): Promise<void> {
       if (seed?.audience) await db.tracks.put({ ...t, audience: seed.audience })
     }
   }
-  // Backfill topic prerequisites from the seed list for existing installs.
+  // Overwrite topic prereqs + order from the seed list every boot.
+  // Prereqs and ordering are system-managed taxonomy, not user data —
+  // they need to propagate when authors tighten the prereq chain or
+  // re-sort topics by experience floor.
   const existingTopics = await db.topics.toArray()
   for (const t of existingTopics) {
-    if (!t.prereqTopicIds) {
-      const seed = topics.find(x => x.id === t.id)
-      if (seed?.prereqTopicIds) await db.topics.put({ ...t, prereqTopicIds: seed.prereqTopicIds })
+    const seed = topics.find(x => x.id === t.id)
+    if (!seed) continue
+    const nextPrereqs = seed.prereqTopicIds // may be undefined to intentionally clear
+    const needsUpdate =
+      t.order !== seed.order ||
+      JSON.stringify(t.prereqTopicIds ?? null) !== JSON.stringify(nextPrereqs ?? null) ||
+      t.trackId !== seed.trackId
+    if (needsUpdate) {
+      await db.topics.put({
+        ...t,
+        order: seed.order,
+        trackId: seed.trackId,
+        prereqTopicIds: nextPrereqs,
+      })
+    }
+  }
+
+  // Same pattern for tracks — order + categoryId are system-managed.
+  for (const t of await db.tracks.toArray()) {
+    const seed = tracks.find(x => x.id === t.id)
+    if (!seed) continue
+    if (t.order !== seed.order || t.categoryId !== seed.categoryId) {
+      await db.tracks.put({
+        ...t,
+        order: seed.order,
+        categoryId: seed.categoryId,
+      })
     }
   }
 
