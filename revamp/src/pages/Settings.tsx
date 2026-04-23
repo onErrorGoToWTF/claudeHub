@@ -1,30 +1,21 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Check, Laptop, Monitor, Smartphone, Tablet, Terminal, RotateCcw, Sun, Moon } from 'lucide-react'
+import { Check, Laptop, Monitor, Smartphone, Tablet, Terminal, Sun, Moon } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Topic, Track } from '../db/types'
 import { Button, PageHeader } from '../ui'
-import { splitByPathway, PATHWAYS, type UserPathway } from '../lib/audience'
 import {
   useUserStore, type Device, type WorkStyle,
 } from '../state/userStore'
 import s from './Onboarding.module.css'
 
-const WORK_STYLE_OPTIONS: { id: WorkStyle; title: string; sub: string; pathways: UserPathway[] }[] = [
-  { id: 'no_code',    title: 'No-code',    sub: 'Prompts, Projects, Artifacts — no terminal.',
-    pathways: ['office', 'media'] },
-  { id: 'vibe_code',  title: 'Vibe-code',  sub: 'I paste code snippets but don\'t really write them.',
-    pathways: ['vibe'] },
-  { id: 'engineer',   title: 'Engineer',   sub: 'General software engineer.',
-    pathways: ['dev'] },
-  { id: 'frontend',   title: 'Frontend',   sub: 'UIs, design systems, client-side state.',
-    pathways: ['dev'] },
-  { id: 'backend',    title: 'Backend',    sub: 'APIs, databases, infra.',
-    pathways: ['dev'] },
-  { id: 'fullstack',  title: 'Full-stack', sub: 'Both ends.',
-    pathways: ['dev'] },
-  { id: 'research',   title: 'Research',   sub: 'Papers, ML, analysis.',
-    pathways: ['dev', 'student'] },
+const WORK_STYLE_OPTIONS: { id: WorkStyle; title: string; sub: string }[] = [
+  { id: 'no_code',    title: 'No-code',    sub: 'Prompts, Projects, Artifacts — no terminal.' },
+  { id: 'vibe_code',  title: 'Vibe-code',  sub: 'I paste code snippets but don\'t really write them.' },
+  { id: 'engineer',   title: 'Engineer',   sub: 'General software engineer.' },
+  { id: 'frontend',   title: 'Frontend',   sub: 'UIs, design systems, client-side state.' },
+  { id: 'backend',    title: 'Backend',    sub: 'APIs, databases, infra.' },
+  { id: 'fullstack',  title: 'Full-stack', sub: 'Both ends.' },
+  { id: 'research',   title: 'Research',   sub: 'Papers, ML, analysis.' },
 ]
 
 const DEVICE_OPTIONS: { id: Device; title: string; Icon: typeof Laptop }[] = [
@@ -37,9 +28,7 @@ const DEVICE_OPTIONS: { id: Device; title: string; Icon: typeof Laptop }[] = [
 ]
 
 export function Settings() {
-  const nav = useNavigate()
   const profile            = useUserStore()
-  const setPathway         = useUserStore(st => st.setPathway)
   const setHandle          = useUserStore(st => st.setHandle)
   const setWorkStyles      = useUserStore(st => st.setWorkStyles)
   const setDevices         = useUserStore(st => st.setDevices)
@@ -66,23 +55,11 @@ export function Settings() {
     })
   }, [])
 
-  function retakeOnboarding() {
-    // User re-enters the guided flow. Clearing the flag first means the
-    // app won't auto-redirect back here if they bail partway.
-    useUserStore.setState({ onboardingSeen: false })
-    nav('/onboarding')
-  }
-
   function hardReset() {
-    if (!confirm('Reset your profile? This wipes pathway, work styles, devices, known topics — local only.')) return
+    if (!confirm('Reset your profile? This wipes handle, work styles, devices, known topics — local only.')) return
     resetProfile()
   }
 
-  const pathwayWorkStyles = WORK_STYLE_OPTIONS.filter(ws =>
-    profile.pathway === 'all' || ws.pathways.includes(profile.pathway))
-  // Show every track in Settings too — users can mark anything as known.
-  const { primary: primaryTr, rest: restTr } = splitByPathway(tracks, t => t.audience, profile.pathway)
-  const visibleTracks = [...primaryTr, ...restTr]
   const known = new Set(profile.knownTopicIds ?? [])
 
   return (
@@ -90,12 +67,7 @@ export function Settings() {
       <PageHeader
         eyebrow="Settings"
         title="Your profile"
-        subtitle="Tune the app to how you actually work. Every field is optional — empty = no filter, no assumptions."
-        right={
-          <Button variant="ghost" onClick={retakeOnboarding}>
-            <RotateCcw size={14} strokeWidth={1.75} /> Retake onboarding
-          </Button>
-        }
+        subtitle="Every field is optional. Each one unlocks a specific feature — if you skip it, that feature just stays generic."
       />
 
       <div style={{
@@ -106,15 +78,15 @@ export function Settings() {
       }}>
         Signed-in accounts will persist these settings across devices.
         Until then, every field you edit here is saved locally on this
-        device only and will be lost if you clear site data or switch
-        browsers.
+        device only.
       </div>
 
       {/* Handle */}
       <section style={{ marginBottom: 'var(--space-8)' }}>
         <h2 style={sectionTitle}>Handle</h2>
         <p style={sectionHint}>
-          A short name used in future friend-view URLs. Nothing's shared today — just reserves it.
+          <b>Why we ask:</b> a short name that shows in the top-right menu.
+          Reserves a slug for future public-profile / friend-view URLs.
         </p>
         <input
           type="text"
@@ -131,7 +103,10 @@ export function Settings() {
       {/* Appearance */}
       <section style={{ marginBottom: 'var(--space-8)' }}>
         <h2 style={sectionTitle}>Appearance</h2>
-        <p style={sectionHint}>Light or dark — your choice sticks per device.</p>
+        <p style={sectionHint}>
+          <b>Why we ask:</b> lets you force dark mode if you prefer. App
+          defaults to light regardless of your OS setting.
+        </p>
         <div className={`${s.optionGrid} ${s.cols2}`}>
           {([
             { id: 'light', title: 'Light', Icon: Sun },
@@ -156,47 +131,15 @@ export function Settings() {
         </div>
       </section>
 
-      {/* Pathway */}
-      <section style={{ marginBottom: 'var(--space-8)' }}>
-        <h2 style={sectionTitle}>Pathway</h2>
-        <p style={sectionHint}>
-          Default filter for Learn + Library. The topbar picker changes
-          this too — same setting, two surfaces.
-        </p>
-        <div className={s.optionGrid}>
-          {PATHWAYS.map(p => {
-            const on = profile.pathway === p.id
-            return (
-              <button
-                key={p.id}
-                type="button"
-                className={`${s.option} ${on ? s.optionOn : ''}`}
-                onClick={() => {
-                  setPathway(p.id)
-                  // Stamp the starter plan if the user has no pathway rows yet.
-                  repo.seedPathwayFromTemplate(p.id).catch(err =>
-                    console.warn('[settings] pathway seed failed', err)
-                  )
-                }}
-              >
-                <div className={s.optionBody}>
-                  <div className={s.optionTitle}>{p.label}</div>
-                </div>
-                {on && <span className={s.check}><Check size={12} /></span>}
-              </button>
-            )
-          })}
-        </div>
-      </section>
-
       {/* Work styles */}
       <section style={{ marginBottom: 'var(--space-8)' }}>
         <h2 style={sectionTitle}>Work styles</h2>
         <p style={sectionHint}>
-          Tune the tool + project recommendations. Tag-based — pick any.
+          <b>Why we ask:</b> tunes project and tool recommendations. Skip if
+          you want the generic mix. Tag-based — pick any.
         </p>
         <div className={`${s.optionGrid} ${s.cols2}`}>
-          {pathwayWorkStyles.map(ws => {
+          {WORK_STYLE_OPTIONS.map(ws => {
             const picked = (profile.workStyles ?? []).includes(ws.id)
             return (
               <button
@@ -224,7 +167,11 @@ export function Settings() {
       {/* Devices */}
       <section style={{ marginBottom: 'var(--space-8)' }}>
         <h2 style={sectionTitle}>Devices</h2>
-        <p style={sectionHint}>Will inform the future bootstrapper + tool fit.</p>
+        <p style={sectionHint}>
+          <b>Why we ask:</b> used by the future project bootstrapper — what
+          OS to scaffold for, which tools install cleanly. No bootstrapper
+          features unlock without at least one pick.
+        </p>
         <div className={`${s.optionGrid} ${s.cols2}`}>
           {DEVICE_OPTIONS.map(d => {
             const picked = (profile.devices ?? []).includes(d.id)
@@ -251,36 +198,38 @@ export function Settings() {
         </div>
       </section>
 
-      {/* Years coding — only shown for dev pathway */}
-      {profile.pathway === 'dev' && (
-        <section style={{ marginBottom: 'var(--space-8)' }}>
-          <h2 style={sectionTitle}>Years coding</h2>
-          <p style={sectionHint}>Calibrates pacing. Leave blank for default.</p>
-          <input
-            type="number"
-            min={0}
-            max={60}
-            step={1}
-            placeholder="e.g. 3"
-            value={profile.yearsCoding ?? ''}
-            onChange={(e) => {
-              const n = e.target.value === '' ? undefined : Number(e.target.value)
-              setYearsCoding(Number.isFinite(n as number) ? (n as number) : undefined)
-            }}
-            className={s.input}
-          />
-        </section>
-      )}
+      {/* Years coding */}
+      <section style={{ marginBottom: 'var(--space-8)' }}>
+        <h2 style={sectionTitle}>Years coding</h2>
+        <p style={sectionHint}>
+          <b>Why we ask:</b> calibrates the dev bootstrapper's defaults
+          (prompt depth, assumed tooling). Leave blank if you don't code —
+          the dev bootstrapper just uses general defaults.
+        </p>
+        <input
+          type="number"
+          min={0}
+          max={60}
+          step={1}
+          placeholder="e.g. 3"
+          value={profile.yearsCoding ?? ''}
+          onChange={(e) => {
+            const n = e.target.value === '' ? undefined : Number(e.target.value)
+            setYearsCoding(Number.isFinite(n as number) ? (n as number) : undefined)
+          }}
+          className={s.input}
+        />
+      </section>
 
       {/* Known topics */}
       <section style={{ marginBottom: 'var(--space-8)' }}>
         <h2 style={sectionTitle}>Already know</h2>
         <p style={sectionHint}>
-          Topics you're confident with — Learn will dim them so you can
-          focus on what's new.
+          <b>Why we ask:</b> Learn dims topics you've marked as known so
+          you can focus on what's new. Nothing's hidden — just de-emphasized.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-          {visibleTracks.map(track => {
+          {tracks.map(track => {
             const list = topics.filter(t => t.trackId === track.id)
               .sort((a, b) => a.order - b.order)
             if (list.length === 0) return null

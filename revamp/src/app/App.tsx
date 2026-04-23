@@ -15,16 +15,13 @@ import { ProjectDetail } from '../pages/ProjectDetail'
 import { Library } from '../pages/Library'
 import { LibraryDetail } from '../pages/LibraryDetail'
 import { LibraryWishlist } from '../pages/LibraryWishlist'
-import { Onboarding } from '../pages/Onboarding'
 import { Settings } from '../pages/Settings'
 import { SignIn } from '../pages/SignIn'
 import { seedIfEmpty } from '../db/seed'
-import { useUserStore } from '../state/userStore'
 
 export function App() {
   const location = useLocation()
   const [ready, setReady] = useState(false)
-  const onboardingSeen = useUserStore(s => s.onboardingSeen)
 
   useEffect(() => {
     seedIfEmpty().then(() => setReady(true))
@@ -32,22 +29,7 @@ export function App() {
 
   if (!ready) return null
 
-  // First-run redirect: first visit (no dismissal flag yet) lands on
-  // /onboarding. Users who skip or finish get flagged and never auto-
-  // redirect again; they can still visit /onboarding manually.
-  const shouldRedirectToOnboarding =
-    !onboardingSeen && location.pathname !== '/onboarding'
-  if (shouldRedirectToOnboarding) {
-    return <Navigate to="/onboarding" replace />
-  }
-
-  // Onboarding renders outside the normal AppShell (no topbar / bottom
-  // nav) to keep first-run focused on the flow.
-  if (location.pathname === '/onboarding') {
-    return <Onboarding />
-  }
-
-  // Sign-in preview — also renders outside the normal shell. Not linked
+  // Sign-in preview — renders outside the normal shell. Not linked
   // from anywhere; reachable by direct URL while the UX is iterated.
   if (location.pathname === '/signin') {
     return <SignIn />
@@ -80,6 +62,8 @@ export function App() {
             <Route path="/library/:id" element={<LibraryDetail />} />
             <Route path="/me" element={<Me />} />
             <Route path="/settings" element={<Settings />} />
+            {/* Legacy: /onboarding now redirects to home — onboarding retired. */}
+            <Route path="/onboarding" element={<Navigate to="/" replace />} />
             <Route path="*" element={<Dashboard />} />
           </Routes>
         </motion.div>
