@@ -76,9 +76,11 @@ export function Settings() {
         borderRadius: 'var(--radius-sm)',
         fontSize: 'var(--text-sm)', color: 'var(--ink-2)',
       }}>
-        Signed-in accounts will persist these settings across devices.
-        Until then, every field you edit here is saved locally on this
-        device only.
+        <b>Privacy:</b> every field below is stored only in this browser
+        (<code style={{ fontSize: '0.92em' }}>localStorage</code> + IndexedDB). Nothing leaves your device — no
+        analytics, no server, no tracking. When real accounts land, the
+        app will explicitly ask before syncing anything. Clearing site
+        data deletes your profile.
       </div>
 
       {/* Handle */}

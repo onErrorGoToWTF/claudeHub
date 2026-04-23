@@ -3,6 +3,16 @@
  *   # / ## / ### headings, paragraphs, blank-line separation,
  *   - bullets, **bold**, inline `code`, and line breaks.
  * Enough for the v1 lesson view; swap for react-markdown if richer syntax appears.
+ *
+ * XSS posture (audited 2026-04-23):
+ *   - Input is TRUSTED markdown (code-committed lessons + library notes).
+ *   - Output is built from React elements; no raw HTML passthrough from input.
+ *   - The one `dangerouslySetInnerHTML` lives in CodeBlock, fed by highlight.js
+ *     which escapes input before tokenising. Safe as long as input stays a
+ *     string and the library isn't replaced with one that doesn't escape.
+ *   - External links use `rel="noreferrer noopener"` + `target="_blank"`.
+ *   - If user-authored markdown is ever accepted (feedback comments, journal,
+ *     user-authored lessons), add DOMPurify here and re-audit.
  */
 import { useMemo, useState, type JSX } from 'react'
 import { Check, Copy } from 'lucide-react'
@@ -48,7 +58,7 @@ function inline(text: string): (string | JSX.Element)[] {
       // [label](url)
       const mm = /^\[([^\]]+)\]\(([^)]+)\)$/.exec(token)!
       parts.push(
-        <a key={`l${i++}`} href={mm[2]} target="_blank" rel="noreferrer">{mm[1]}</a>
+        <a key={`l${i++}`} href={mm[2]} target="_blank" rel="noreferrer noopener">{mm[1]}</a>
       )
     }
     last = regex.lastIndex
