@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-04-23T17:07:09.123Z",
+  "generated_at": "2026-04-23T18:52:10.013Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "April 23 Postmortem",
+        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+        "source": "Anthropic Eng",
+        "published": "2026-04-23T18:00:13.000Z",
+        "summary": ""
+      },
       {
         "title": "81k Economics",
         "url": "https://www.anthropic.com/research/81k-economics",
@@ -135,29 +142,107 @@
         "source": "Anthropic Research",
         "published": "2026-03-31T22:35:47.000Z",
         "summary": ""
-      },
-      {
-        "title": "Project Fetch Robot Dog",
-        "url": "https://www.anthropic.com/research/project-fetch-robot-dog",
-        "source": "Anthropic Research",
-        "published": "2026-03-26T11:07:12.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "StubHub Brings Live Event Discovery to Anthropic’s Claude - Business Wire",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObTI4WmM4dUlUaUJja1dxZlNSdVN5WHljeUVLc1NvMlVHclRxWXdaR1hSRGNGVDg0dmFid1dlWjRsZEE4Z2E4NUJnNXRha2VDOE1OS0pHZkFhUGxFUHdzd2xMX2JpZEJlX3Axbkl1SUlESlJfTDdfTzNZUmFuUzlSZEVfdTVGUmZVaDgyLWV1VHluT1dHaFhSdkJISFRkaU5lb2d4RW55ckV1TTFyZkc0M2hvOA?oc=5",
+        "title": "OpenAI's GPT-5.5 is here, and it's no potato: narrowly beats Anthropic's Claude Mythos Preview on Terminal-Bench 2.0 - VentureBeat",
+        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQbFZvQ3FjcDFyOUdubWFhSzVyUzNHN3dkUWl6bG5YWG5mZ01hNkVRdllmSWF5UGtaTEk5dEtWbHIxeEtDc3FNUGV2QzE2XzYtUEJqb1ZOQTBIN1NSMGkzbGNLdlRwVXJRaVJuS1hVT2FxTmVHRHhBQWg2MGxUbldiUkJnSDVyMnc1N1BEZXZOWU1IRHZINE5uOUppQnYyNlRvR3hJYjBVLU9vWVFKSktPU1dSeWhFa3kzaXVhMk9JT2RXU3BlUk1mc2dBdEhTVkZCSFMxNUZwbkJyU0FDbk1F?oc=5",
         "source": "Google News",
-        "published": "2026-04-23T17:01:00.000Z",
-        "summary": "StubHub Brings Live Event Discovery to Anthropic’s Claude Business Wire"
+        "published": "2026-04-23T18:27:00.000Z",
+        "summary": "OpenAI's GPT-5.5 is here, and it's no potato: narrowly beats Anthropic's Claude Mythos Preview on Terminal-Bench 2.0 VentureBeat"
       },
       {
-        "title": "Thumbtack Delivers Home Services Experience in Anthropic’s Claude - Business Wire",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQWFQ0aWxTTGk1YS1ORFZ3bGxKVDVHTThEWWdLWmx4Ump4Yl9pR3QzVl80dzgxaG1SclFZS0VZeDMtV3FKSG5NNTZYaWtXTGk1bFBEZUFGRGlrZXVsN3FOdjF6dm14NVNHUmU3YS1OclJMQ2N1c0dreWlfWHhhNmVndC1GUmcxZ1JMelNZcEtMSnpuMjd5RDdpa0NIZ1RpTmd6d1RJUjU3UUVMOVpTSHdJRVUtSzFnb2MyVVRuU1FR?oc=5",
+        "title": "Anthropic’s Mythos breach was humiliating",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/917644/anthropic-claude-mythos-breach-humiliation",
+        "source": "The Verge",
+        "published": "2026-04-23T18:24:56.000Z",
+        "summary": "Anthropic's tightly controlled rollout of Claude Mythos has taken an awkward turn. After spending weeks insisting the AI model is so capable at cybersecurity that it is too dangerous to release…"
+      },
+      {
+        "title": "Anthropic’s Mythos breach was humiliating - The Verge",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQYWVuVUkyMGpFWngwOHoxa3FlSXFEa1pnRmVPU3Rhc3dHTjFuOC1QbHdZS2NvRkRoUTJ1ZVdzakpPTmtUYnZFRFFEYnRkNHVsWjJNcGN5bjl3OXpwTnFqSzhDR2xTOGI3UG5pbFZ5NGZaQXNvX2x3NklWR2ZpYXNCRFExNER2QkpkWmE3anFGNDZkdktsWEpCM1BmTVRBQ28wOXhZ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T18:24:56.000Z",
+        "summary": "Anthropic’s Mythos breach was humiliating The Verge"
+      },
+      {
+        "title": "Figma (FIG) Stock Falls 9% After Anthropic Launches Claude Design - CoinCentral",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOd1dkaWdkZUtweTZVbmpOcjJ4UWQ2MlFSa1gzVHgyS1JxZ1habkhOMVlFWGhHVjNUdnNQLW5TQW9OTThsZFFSX19FN0xWSTdvOHotNkJMVW9iRjZfSWRuaXYyVjA2cHFhSDFVWURpZFBNc0xYLVBzRUpnMGkySHIwUW5xejlfUjBjRjAzTmNQNFM?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T18:03:59.000Z",
+        "summary": "Figma (FIG) Stock Falls 9% After Anthropic Launches Claude Design CoinCentral"
+      },
+      {
+        "title": "OpenAI Unveils GPT-5.5 to Field Tasks With Limited Instructions",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-23/openai-unveils-gpt-5-5-to-field-tasks-with-limited-instructions",
+        "source": "Bloomberg",
+        "published": "2026-04-23T18:00:20.000Z",
+        "summary": "OpenAI is introducing an artificial intelligence model that’s intended to be better at completing work without much direction, part of a push to keep pace with rivals like Anthropic PBC in courting…"
+      },
+      {
+        "title": "An update on recent Claude Code quality reports",
+        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+        "source": "HN · 183↑",
+        "hn_id": "47878905",
+        "published": "2026-04-23T17:48:38.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Stubhub announces integration with Anthropic's Claude AI assistant - marketscreener.com",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNYTdDeVN1Y0xiNUhIZWNyRlREZk5yTlFaU0FYdjBxZHdPNFFEMWZwRHNock1ZNlNVdHRqbUo5Sld1Z0dYMzhYOUFfXzB0UEZIRkZRY3pJQ2RDZ0RNWFVBbGVvMDc0SkczTkhHdGNfX3B3andHUkwtMUhHakdBejhaZVdSWWhPb1pkaWlWVlFBMEVaUkxONXVkSUlpeGUtUTVyYVBVc0VpVnRzNFk1NXZGalQ0M2JSXzA4RDE4?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T17:27:41.000Z",
+        "summary": "Stubhub announces integration with Anthropic's Claude AI assistant marketscreener.com"
+      },
+      {
+        "title": "StubHub announces integration with Anthropic’s Claude - TipRanks",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOYjNqQVJZM2JlZ0JNdW5QSjBmVjc5ZW5ZRXg3ZUt2dmtERDJpeFhMSzlVSHFaMU9jOHRjczMwdmtZYWhqRkY4YWY3VmZHTldBUG80bGs2MjBCRFdmTGFzTEJHR2xUX2xJNW9lV1M0R2RfaklHU0wySlFvMG9JNXhqU3lTZGN3ckZlOFUxSWo4alZSX0UtS1dWNDIwYnZuc0pwVE1XcA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T17:11:36.000Z",
+        "summary": "StubHub announces integration with Anthropic’s Claude TipRanks"
+      },
+      {
+        "title": "Stubhub Announces Integration With Anthropic's Claude AI Assistant - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOcFJXYmYwa0RBQ1hDcUg1YkJJVks0ZWZ3ZnlVX3FXNkNHWWJ5RHgtQVEzemFsQTFFTDBYeTJwQXFGNFFMVC1NNzRvR1Q0eHI1T0d3SlFYVmM1amJsVnZMRndRNGJrLWFScFVBMnc4TWlPRFhKd2JIUGxzZXpseUh2Unl3M0ZGNzRfUDZtNnRiZXlXN0V6bUhGc00ySG00VWNOcG93VGZBYVQ0eHVzYUhBWldHeUlucURzZkNwY096SXBETS1NZTQ5TVF1aTR4cGpNNmc?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T17:06:25.000Z",
+        "summary": "Stubhub Announces Integration With Anthropic's Claude AI Assistant TradingView"
+      },
+      {
+        "title": "Anthropic’s Claude desktop app left hidden browser files on Macs and the privacy backlash was swift - Startup Fortune",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPU1d5QVdNdHZnV3dRZGpsYWZFY1ZaYzhmbUVCMGFsRU1yS0hVX00zX2xDMEwwVHN3Q2g4MHZqWkY2SkMtM1JnWG9ScWlrVmlTNlJHWVRsb3kwbjRHNVpBb1dIc0RNNDZkVjd0X3RqY1FpQ1d3cnVDbnJCVUlNNXRodWFIOWREangteHJCTk5Gd3c0NGh0eG1uaEptSnQweGxveUtfdmVoX3A1LXBkOGZLaHM4SGhNbUhfTmRtMjRRYWlOTURk?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T17:05:56.000Z",
+        "summary": "Anthropic’s Claude desktop app left hidden browser files on Macs and the privacy backlash was swift Startup Fortune"
+      },
+      {
+        "title": "StubHub Brings Live Event Discovery to Anthropic’s Claude - Rutland Herald",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQZ2VDaEk5RkdLUllTYTk0Z2tVQ00xQWNXengwWWd4ZDlKOFdxUDNnalgzUXhzWkZtVVdSV3V4QzhoQ0ZISU5tbC1XNVZZNl9PWW5GUkJsbm5qZTJBS1p3c0RDVFMtQnB0anU5TTlSLVh6dENMTi1UTWpYZzlmWlhjNXFZeGtDbmQzNUpTTHkydDNnYWRWbEtfSlczMWQ5R0JmdjR0UldndGpWcjBZc1JQZk9ENmU5UWVsMF9fWnNrMFI1dk5MRUhhZFg1TC01X0syczNFbWlOc0l3N3cxRGcxeFAyQkRzZw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T17:02:14.000Z",
+        "summary": "StubHub Brings Live Event Discovery to Anthropic’s Claude Rutland Herald"
+      },
+      {
+        "title": "StubHub Brings Live Event Discovery to Anthropic’s Claude - Bluefield Daily Telegraph",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOTjRoeUJTcy1TWjg4cHQ5SkhiS2dYYUxmcG5LZlc5NG1TMEF0QmhoUlNtZURXVERDQ3FfOU5hRzR1WmExdFAxbUdGdmtnSnF4MkUtaUZveFd5SGdNclFkYzFDRThVVERYOURRZlVyWXo2bmZLWDRIMExKY0V1dzBPWm1hdlZ4RlgtYzhJbXNGdXVFdl9iWUhITDVaMFVLSlNmZHFSQk4waHZyeDl5eEtYLTlENy1EcEt3VlBwNnIwdDN6YnJNcTZDVDNReU9DQ0xqX0xsZ2ZPa0QyMEdxaGtGNjRiNXhvQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T17:02:14.000Z",
+        "summary": "StubHub Brings Live Event Discovery to Anthropic’s Claude Bluefield Daily Telegraph"
+      },
+      {
+        "title": "Thumbtack Delivers Home Services Experience in Anthropic’s Claude - Eagle-Tribune",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPa2FRNTAtUFpuMWc0cFZQeHhENGMwZjNjSjFmVHFXQl9tZ0lHVVlpZHZzSnNYV0FlQUM3bjV0UGZUUEJQbENuT1J6QVV0MGpxN0NvdXRNeVdUZXJCV0o1NHFpSE5pVE1wUFJ6UnJ5YktPeGhzM2Z4OUpLWHVfaW9YS2lJODZTRk0yVXlVcmJlWGZ5dFlIMGhLWjczaTdDX2hIMmZFblNNOW94ZjJ6dXNqQ0FacGVwc1RVUzE1WGw0dHlIZmtpNlVzMW5zRmRIWGtMR2tNTU5WZUpGVGRfaC1BU1ptbVFpdw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T17:00:40.000Z",
+        "summary": "Thumbtack Delivers Home Services Experience in Anthropic’s Claude Eagle-Tribune"
+      },
+      {
+        "title": "Thumbtack Delivers Home Services Experience in Anthropic’s Claude - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNLTVCemVrcEhITnlmdlB0WjVIZmlLUmZpQXBmTHlhVnpVTThuaURBYi1NaWtCaDMybEVrN2hqMlpyRGd1RkxNdFZfTUJFNEd1eG1ielNQWG5wODRVOVpKYlFwUVdIRlNYYVVkZkZwTzJDZC0tV2k0QktYVVJoZDZ3R2x4N0x1S2hDeExPZ0lmVkZianJCSEtySWNLRldYLUhtZWFHaFdlWHNLTU5KTGY5MEpn?oc=5",
         "source": "Google News",
         "published": "2026-04-23T17:00:00.000Z",
-        "summary": "Thumbtack Delivers Home Services Experience in Anthropic’s Claude Business Wire"
+        "summary": "Thumbtack Delivers Home Services Experience in Anthropic’s Claude Yahoo Finance"
       },
       {
         "title": "Claude Mythos Redefines Cybersecurity Threats and Defenses - Let's Data Science",
@@ -165,13 +250,6 @@
         "source": "Google News",
         "published": "2026-04-23T16:41:04.000Z",
         "summary": "Claude Mythos Redefines Cybersecurity Threats and Defenses Let's Data Science"
-      },
-      {
-        "title": "Anthropic just overtook OpenAI with $1 trillion valuation - The Independent",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE01X21tSGlFYmJpYnZIc1o3N2NSYmQ0Ul96TGFBbHVwM0h4bkwtSzJTMGJ4eDV2bjFZZ0J2X0dXNThFVDh4U0gxYkg1Rk1GdENOOFBSalNtVUFFSUgtMnl1cU40Sk5LbDV0R2xtcUF5S2pudXJ2MTE1RGxFdlNrUm8?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T15:53:00.000Z",
-        "summary": "Anthropic just overtook OpenAI with $1 trillion valuation The Independent"
       },
       {
         "title": "Discord group says it accessed Claude Mythos by guessing location - Mashable",
@@ -216,11 +294,11 @@
         "summary": "“Training on lyrics is transformative”: AI firm Anthropic argues “fair use” against UMG in ongoing legal battle MusicTech"
       },
       {
-        "title": "You’re about to feel the AI money squeeze",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/917380/ai-monetization-anthropic-openai-token-economics-revenue",
-        "source": "The Verge",
-        "published": "2026-04-23T13:45:00.000Z",
-        "summary": "Earlier this month, millions of OpenClaw users woke up to a sweeping mandate: The viral AI agent tool, which this year took the worldwide tech industry by storm, had been severely restricted by…"
+        "title": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBoQkkwMnB2b0tyeFllX3Iwa2FrRXNZbW5Dem5ERGlLVzFkbGNycUN1UXVEMnhYVlVmaGNTNDZuSTVWZ3d3alpjN29LbkprZV9qTjg1QVFKdURnYk9FYlFTQWFReVRNdEJPaHdTWlhGUTM?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T14:36:06.000Z",
+        "summary": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety Mashable"
       },
       {
         "title": "Freshfields Now Partners With Anthropic - Artificial Lawyer",
@@ -249,89 +327,11 @@
         "_kind": "news_video"
       },
       {
-        "title": "Jim Cramer Says People Who Sold CrowdStrike on AI Fear Made the Biggest Mistake of 2026 - 24/7 Wall St.",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNd2hUTEhBSkl4TU81cVBWcmROYTFLbWxQVDJFdUlGYmc4Zk1oVkpwbzhiOHpCREZQbHNDZ2EyWnRzaW1hOGo4cGFHN2VkdzVmTmsxc3BGcTdfdmpKOWc4VUY4R3RrTzk2LXpMdkhCSmRwdW1rSFB3WFgxTDRFZ0psS2JibWprc0hsRVV6VFY3N0NzaFJkRFpBZF93RGNSSkRuZnJ1djRiMFh0WDRCbG95cU1SZVZyN1h1OThOQ2Y5MFpFb1Bfb25TMmNQTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T12:56:18.000Z",
-        "summary": "Jim Cramer Says People Who Sold CrowdStrike on AI Fear Made the Biggest Mistake of 2026 24/7 Wall St."
-      },
-      {
         "title": "AI shrinkflation: Why Anthropic's Claude Opus 4.7 may be less capable than the model it replaced - The New Stack",
         "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5Ub1hHOGxGMWNEcVhEb0tvalNuRkdCRmw0cUkwWHI0LTZJa21ZYUFySGN3WVBHb1I0Y0dBWjZwQ2RNclZfMXJNUkdQUkdKNjVXWFY0U2J1QW41MUE5VmNiWGhfZFNaT0E?oc=5",
         "source": "Google News",
-        "published": "2026-04-23T12:56:15.000Z",
+        "published": "2026-04-23T12:57:26.000Z",
         "summary": "AI shrinkflation: Why Anthropic's Claude Opus 4.7 may be less capable than the model it replaced The New Stack"
-      },
-      {
-        "title": "Freshfields Deploys Anthropic Claude Firmwide for Legal Workflows - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNSE05V2R6TXJnMGJaZGZCTTBBaG9CdnYtY0UzOVB0bEVPU2NsNHMwNnJqbFA1SkVqeVlIX2VJUFlmWVBfYjBRZWltQkNmTGtlemdFVzQtSFZOd0dqQnI4M0RCaV9ySFFNNkZueGJOUjEtSlMwUkFxOFRYUm0zTHptNWFPWkRjRU9aRTA2M1JHc3V5M2p5M3BQc1E0OTFnT05NblFoNA?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T12:38:22.000Z",
-        "summary": "Freshfields Deploys Anthropic Claude Firmwide for Legal Workflows Let's Data Science"
-      },
-      {
-        "title": "Freshfields and Anthropic enter multi-year collaboration agreement - Legal IT Insider",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPQnU5aS1fZG9ONUNpY0xJLWJNTERpS3VXLVBuVGRUczJ0RTduLTA1d0lFSEw4RWNsSVg0d2lGNWU0ZnZzSlJ1enc4czNLQ252cFFpZlBfZkpnRTlnd1lLcFNXQWdOaEItRWZ0WXRRcVlMOFV3OXE4czl1MXZwaW9UbHlZY0F6M2FMOWZ2cjlSck9QVTQ3RXR4QS1sdEhJWlhPRWxTekdBQ3c2Zw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T12:36:59.000Z",
-        "summary": "Freshfields and Anthropic enter multi-year collaboration agreement Legal IT Insider"
-      },
-      {
-        "title": "Anthropic Using ‘Fear-Based Marketing’ to Promote Claude Mythos: Sam Altman - Decrypt",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOTjF6Ml9LUzJoRV9iOVZuMWN2ZUFNVVlsN3ZOZTBPaUludUt5VF8xUjBnZlp0NF95c2t1RmVJYTI2bmNoUHlxYUlHM01lWkt6OUJoVVJOTmF1Ukk0bENNQzlHSWpkNU9FdmZLbVl6S0phY3VjbG9INGxpcGxMRlRWQWwxdmcyZm55OF82YjF2RjdHQ0NpemNkbWVaWWR0NGvSAacBQVVfeXFMTTg3TTZRbGxpNU5EN19VYjNkU19YNklmemJZQzNxUzhtVGZiR2tGWEkxWUlmUElUS2ZWNTduYnVaVTRlMkU4c3RpRnRDNjU3bWx5NjJuNHh1THpwVzNET1ZJWWItTXZIZzlrRmZjZkhRRTdORWJpUUdsV1hKOFUtSG1HeXhOQUd1WVRBMmhseFBfN1FwSER6NTMtSy1wVDJublNZMFVOVTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T11:54:15.000Z",
-        "summary": "Anthropic Using ‘Fear-Based Marketing’ to Promote Claude Mythos: Sam Altman Decrypt"
-      },
-      {
-        "title": "Sam Altman Criticizes Anthropic's Claude Mythos Marketing - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOYkZoSVJJZXRFX2R2czJxVklFNS1LN0ZFdDQ4VGdBaTd5RkgzX0FObWJBTXZLRGpJSnE1cVdoMThmeE90R1QzbjJkUldpMnZETWZINXJUU0VRRDRNd3lTLTYxVFc0Tm91ZWNvd2Z2TmFKVDJ3SHV1U0pLSm1za09mOVZZTHRLVElDMmdDVmxoRElUNEF5RW5MdmVKczU2ZkU?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T11:54:15.000Z",
-        "summary": "Sam Altman Criticizes Anthropic's Claude Mythos Marketing Let's Data Science"
-      },
-      {
-        "title": "Claude Code for Healthcare: How Physicians Build with AI - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOc29ONWJhLTNhaFI3TDZhZzVFVE9KQzlDZ01NQ3k1ZmxqZ25wYzRVZm9nc2MwQUJCWXFiVlhXZUdidEhzUUtEQ3pBTk44QTUzMmhSbnA5Zmt6TzFWSVQ1NkdzNHpoalNkbWROUlV4OUpGMTJrclJBQ0pZd1otZlF3cERIc2h1c1lBRktyVEZWd0RUMk44aVlVUW1rd3JPTk0xeWc?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T11:37:25.000Z",
-        "summary": "Claude Code for Healthcare: How Physicians Build with AI Anthropic"
-      },
-      {
-        "title": "After someone accessed Mythos, cyber pros doubt Anthropic can walk the walk - Cybernews",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOOUI5NUY0ZHdFSlN4QUYyTjJ5NnJOSHd3Tm1oVWZ5RWIxU0FkT0h1cEV2aFZyRlBBamloTWhTTHR2Z29SSEVFejJpSDVGTnZEeTk1N1p3UUZBeERkaGFvajIteHdsaGxMdDZ5ZTlmd0ROQ1FHbVFvNDZ6Uk9qTUxoTmFONDN5cWFN?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T11:02:13.000Z",
-        "summary": "After someone accessed Mythos, cyber pros doubt Anthropic can walk the walk Cybernews"
-      },
-      {
-        "title": "Freshfields Strikes Anthropic Deal, Deploys Claude Firmwide - Law.com",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQODFRLXBqNEsxSk80a2lyVFF3dTN4cmk3cnZKWUpCZE5tMGlaTE9ubmxxR2FTRmlyQUpUR1htQUlPVWNzdERrdlhwSlVodlRGUmhNb21FcVUtOEhKSlhZZXIwTjc1eUg3Z3hSdVV1Q2t0X1dsUGRxQ0d1aDJkRG5WLWxseFgweWZrYm5QaDNabnQ0dHh4eUg5LXpCS1hicGhqbXp5cXFaZmRMUi0zSnJaaXBR?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T10:41:00.000Z",
-        "summary": "Freshfields Strikes Anthropic Deal, Deploys Claude Firmwide Law.com"
-      },
-      {
-        "title": "GIC and Anthropic Promote Claude Adoption in Singapore - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOTFhJMmV6SWNIcGcycmtKWDh3cTNDOUVnbVlFbV9Cb0EyRGFDRkMxd3F4WmFOSkxabTUtT0g4MjVYNjlEUjI2YW5Jd1hab1J0TGljTXFDYUU1bHFXMkRuVFRwRDRVV3lNeGEwZlhpRnltd2VFZDUxaVVaT2F1MVpnS0dNQzh0MzJUaC1JVFpyNVNsVFZWWXItemlGdTE?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T10:07:08.000Z",
-        "summary": "GIC and Anthropic Promote Claude Adoption in Singapore Let's Data Science"
-      },
-      {
-        "title": "Anthropic Hunts Six-Figure Exec to Lock Down Europe Data Centers - The Tech Buzz",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNOE1oTzVtVTE0QlVPSlhOTVdTM0tPRWpwTHItdUZMRkZlSTdGekt4WWt5T3ZjXzVMTm1IcHN2X2pNcklfeFlmdEhUM1NOWTJwOU80TGJXMUU0cVlUdlhOWGdBS0JvVC1EbUF5ZURZcVlWN2VBYTZxVERrX3pwU2ZhSlJvZU9iNU55aUszR2lWUnRlcE9xZWg0N1pYSkVEZw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T09:48:00.000Z",
-        "summary": "Anthropic Hunts Six-Figure Exec to Lock Down Europe Data Centers The Tech Buzz"
-      },
-      {
-        "title": "Mythos is shaping up to be a nothingburger",
-        "url": "https://www.theregister.com/2026/04/22/anthropic_mythos_hype_nothingburger/",
-        "source": "HN · 33↑",
-        "hn_id": "47873433",
-        "published": "2026-04-23T08:29:51.000Z",
-        "summary": ""
       },
       {
         "title": "The best Claude Design workflow you’ll ever see…",
@@ -934,6 +934,14 @@
     ],
     "tutorials": [
       {
+        "title": "April 23 Postmortem",
+        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+        "source": "Anthropic Eng",
+        "published": "2026-04-23T18:00:13.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.118",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.118",
         "source": "Claude Code Releases",
@@ -1410,14 +1418,6 @@
         "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
         "source": "Anthropic Eng",
         "published": "2026-01-06T15:05:23.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Claude Think Tool",
-        "url": "https://www.anthropic.com/engineering/claude-think-tool",
-        "source": "Anthropic Eng",
-        "published": "2025-12-15T18:02:25.000Z",
         "summary": "",
         "tutorial_kind": "official"
       },
