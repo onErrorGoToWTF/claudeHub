@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, ExternalLink, Trash2 } from 'lucide-react'
 import { repo } from '../db/repo'
-import type { InventoryItem, Project, ProjectEvent, Topic } from '../db/types'
+import type { InventoryItem, LibraryItem, Project, ProjectEvent, Topic } from '../db/types'
 import { Button, Chip, List, PageHeader, ProgressBar, Row, Section, Tile, TileMeta, TileRow, TileTitle } from '../ui'
 import { grid } from '../ui/grid'
 import { Check } from 'lucide-react'
 import { ROUTE_LABELS, ROUTE_BLURBS } from '../lib/projectRoutes'
-import { STATUSES, HEALTHS, STATUS_LABEL, HEALTH_LABEL, showsHealth } from '../lib/projectStatus'
+import { STATUSES, HEALTHS, STATUS_LABEL, HEALTH_LABEL, showsHealth, statusChipVariant } from '../lib/projectStatus'
 import type { ProjectStatus, ProjectHealth } from '../db/types'
 import { whenShort } from '../lib/activity'
 import styles from './ProjectDetail.module.css'
@@ -51,6 +51,8 @@ export function ProjectDetail() {
   const [topics, setTopics] = useState<Topic[]>([])
   const [confirmDel, setConfirmDel] = useState(false)
   const [history, setHistory] = useState<ProjectEvent[]>([])
+  const [relatedLibrary, setRelatedLibrary] = useState<LibraryItem[]>([])
+  const [similarProjects, setSimilarProjects] = useState<Project[]>([])
 
   useEffect(() => {
     ;(async () => {
@@ -66,6 +68,31 @@ export function ProjectDetail() {
       setHistory(hist)
     })()
   }, [projectId])
+
+  // Discovery: related library via author-curated relatedLibraryIds +
+  // tag-overlap neighbors among other projects. Same dedup pattern as
+  // LibraryDetail. Runs after the project loads.
+  useEffect(() => {
+    if (!p) { setRelatedLibrary([]); setSimilarProjects([]); return }
+    ;(async () => {
+      const [allLibrary, allProjects] = await Promise.all([
+        repo.listLibrary(),
+        repo.listProjects(),
+      ])
+      const curated = (p.relatedLibraryIds ?? [])
+        .map(id => allLibrary.find(l => l.id === id))
+        .filter((l): l is LibraryItem => !!l && !!l.body)
+      setRelatedLibrary(curated.slice(0, 6))
+
+      const pTags = new Set((p.tags ?? []).map(t => t.toLowerCase()))
+      if (pTags.size === 0) { setSimilarProjects([]); return }
+      const overlap = allProjects
+        .filter(other => other.id !== p.id)
+        .filter(other => (other.tags ?? []).some(t => pTags.has(t.toLowerCase())))
+        .slice(0, 4)
+      setSimilarProjects(overlap)
+    })()
+  }, [p])
 
   async function refreshHistory() {
     setHistory(await repo.listProjectEvents(projectId))
@@ -260,6 +287,39 @@ export function ProjectDetail() {
           </div>
         )}
       </Section>
+
+      {relatedLibrary.length > 0 && (
+        <Section title="Further reading" meta={`${relatedLibrary.length}`}>
+          <div className={grid}>
+            {relatedLibrary.map(l => (
+              <Link key={l.id} to={`/library/${l.id}`} style={{ color: 'inherit' }}>
+                <Tile>
+                  <TileRow><TileTitle>{l.title}</TileTitle></TileRow>
+                  {l.summary && <TileMeta>{l.summary}</TileMeta>}
+                </Tile>
+              </Link>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {similarProjects.length > 0 && (
+        <Section title="Similar projects" meta={`${similarProjects.length}`}>
+          <div className={grid}>
+            {similarProjects.map(sp => (
+              <Link key={sp.id} to={`/projects/${sp.id}`} style={{ color: 'inherit' }}>
+                <Tile>
+                  <TileRow><TileTitle>{sp.title}</TileTitle></TileRow>
+                  {sp.summary && <TileMeta>{sp.summary}</TileMeta>}
+                  <TileRow>
+                    <Chip variant={statusChipVariant(sp.status)}>{STATUS_LABEL[sp.status]}</Chip>
+                  </TileRow>
+                </Tile>
+              </Link>
+            ))}
+          </div>
+        </Section>
+      )}
 
       {history.length > 0 && (
         <Section title="History" meta={`${history.length} ${history.length === 1 ? 'event' : 'events'}`}>

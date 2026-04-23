@@ -38,24 +38,46 @@ const DEFAULT_SORT:  Sort  = 'pinned'
 export function Library() {
   const nav = useNavigate()
   const [items, setItems] = useState<LibraryItem[]>([])
-  const [facet, setFacet] = useState<Facet>(DEFAULT_FACET)
-  const [sort, setSort] = useState<Sort>(DEFAULT_SORT)
   const [query, setQuery] = useState('')
-  const [savedOnly, setSavedOnly] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams()
-  // Tag filter is multi-select. URL carries `?tag=a,b,c` (AND'd). Existing
-  // single-tag links (?tag=prompting) Just Work — they're arrays of 1.
+
+  // Every persistent filter rides on the URL so filtered views are
+  // shareable and the back button restores state. Search query stays
+  // component-local — typing-a-character shouldn't replace history.
+  const facet: Facet = (() => {
+    const v = searchParams.get('kind')
+    if (v && FACETS.some(f => f.id === v)) return v as Facet
+    return DEFAULT_FACET
+  })()
+  const sort: Sort = (() => {
+    const v = searchParams.get('sort')
+    if (v === 'newest' || v === 'alpha' || v === 'pinned') return v
+    return DEFAULT_SORT
+  })()
+  const savedOnly = searchParams.get('saved') === '1'
   const tagFilters = useMemo<string[]>(() => {
     const raw = searchParams.get('tag')
     if (!raw) return []
     return raw.split(',').map(t => t.trim().toLowerCase()).filter(Boolean)
   }, [searchParams])
-  const writeTagFilters = (tags: string[]) => {
+
+  function writeParams(mutator: (p: URLSearchParams) => void) {
     const next = new URLSearchParams(searchParams)
-    if (tags.length === 0) next.delete('tag')
-    else next.set('tag', tags.join(','))
+    mutator(next)
     setSearchParams(next, { replace: true })
   }
+  const setFacet = (f: Facet) => writeParams(p => {
+    if (f === DEFAULT_FACET) p.delete('kind'); else p.set('kind', f)
+  })
+  const setSort = (s: Sort) => writeParams(p => {
+    if (s === DEFAULT_SORT) p.delete('sort'); else p.set('sort', s)
+  })
+  const setSavedOnly = (v: boolean) => writeParams(p => {
+    if (v) p.set('saved', '1'); else p.delete('saved')
+  })
+  const writeTagFilters = (tags: string[]) => writeParams(p => {
+    if (tags.length === 0) p.delete('tag'); else p.set('tag', tags.join(','))
+  })
   const toggleTagFilter = (tag: string) => {
     const key = tag.toLowerCase()
     const exists = tagFilters.includes(key)
@@ -364,7 +386,7 @@ export function Library() {
                 <button
                   type="button"
                   className={`${styles.facet} ${savedOnly ? styles.facetOn : ''}`}
-                  onClick={() => setSavedOnly(v => !v)}
+                  onClick={() => setSavedOnly(!savedOnly)}
                 >
                   <Bookmark size={13} strokeWidth={1.75} />
                   <span>Saved for later only</span>
