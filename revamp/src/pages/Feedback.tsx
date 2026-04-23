@@ -93,8 +93,9 @@ export function Feedback() {
       </section>
 
       <section style={{ marginBottom: 'var(--space-6)' }}>
-        <label style={labelStyle}>Message</label>
+        <label htmlFor="feedback-message" style={labelStyle}>Message</label>
         <textarea
+          id="feedback-message"
           autoFocus
           value={message}
           onChange={e => setMessage(e.target.value)}

@@ -188,6 +188,7 @@ export function Library() {
           value={query}
           onChange={e => setQuery(e.target.value)}
           placeholder="Search by title, summary, or tag…"
+          aria-label="Search library"
         />
       </div>
 
@@ -312,8 +313,9 @@ export function Library() {
               </div>
             </div>
             <div className={styles.filterGroup}>
-              <div className={styles.filterLabel}>Sort</div>
+              <label htmlFor="library-sort-select" className={styles.filterLabel}>Sort</label>
               <select
+                id="library-sort-select"
                 value={sort}
                 onChange={e => setSort(e.target.value as Sort)}
                 className={styles.sortSelect}

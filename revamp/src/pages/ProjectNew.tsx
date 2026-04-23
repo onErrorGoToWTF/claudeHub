@@ -99,8 +99,9 @@ function ProjectNewBuild() {
         >
           {step === 0 && (
             <>
-              <label className={styles.label}>What's the project called?</label>
+              <label htmlFor="project-title-input" className={styles.label}>What's the project called?</label>
               <input
+                id="project-title-input"
                 autoFocus
                 value={title}
                 onChange={e => setTitle(e.target.value)}
@@ -113,8 +114,9 @@ function ProjectNewBuild() {
 
           {step === 1 && (
             <>
-              <label className={styles.label}>In one or two sentences, what is it?</label>
+              <label htmlFor="project-summary-input" className={styles.label}>In one or two sentences, what is it?</label>
               <textarea
+                id="project-summary-input"
                 autoFocus
                 value={summary}
                 onChange={e => setSummary(e.target.value)}

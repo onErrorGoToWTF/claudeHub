@@ -99,6 +99,7 @@ export function Settings() {
           maxLength={32}
           autoComplete="off"
           spellCheck={false}
+          aria-label="Handle"
         />
       </section>
 
@@ -220,6 +221,7 @@ export function Settings() {
             setYearsCoding(Number.isFinite(n as number) ? (n as number) : undefined)
           }}
           className={s.input}
+          aria-label="Years coding"
         />
       </section>
 
