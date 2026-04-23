@@ -207,7 +207,7 @@ export function Library() {
                 onClick={() => setFacet(DEFAULT_FACET)}
                 aria-label={`Clear ${FACET_LABEL[facet]} filter`}
               >
-                {FACET_LABEL[facet]} <X size={11} strokeWidth={2} />
+                {FACET_LABEL[facet]} <X size={13} strokeWidth={2} />
               </button>
             )}
             {tagFilter && (
@@ -217,7 +217,7 @@ export function Library() {
                 onClick={() => setTagFilter(null)}
                 aria-label={`Clear tag ${tagFilter}`}
               >
-                #{tagFilter} <X size={11} strokeWidth={2} />
+                #{tagFilter} <X size={13} strokeWidth={2} />
               </button>
             )}
             {sort !== DEFAULT_SORT && (
@@ -227,7 +227,7 @@ export function Library() {
                 onClick={() => setSort(DEFAULT_SORT)}
                 aria-label="Reset sort"
               >
-                {SORT_LABEL[sort]} <X size={11} strokeWidth={2} />
+                {SORT_LABEL[sort]} <X size={13} strokeWidth={2} />
               </button>
             )}
           </div>

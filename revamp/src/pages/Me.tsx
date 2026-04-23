@@ -169,8 +169,8 @@ export function Me() {
                           }>
                             {MASTERY_LABEL[status]}
                           </Chip>
-                          <button className={styles.iconBtn} aria-label="Move up"   disabled={idx === 0}                     onClick={(e) => { e.stopPropagation(); move(topic.id, -1) }}><ArrowUp size={14} /></button>
-                          <button className={styles.iconBtn} aria-label="Move down" disabled={idx === activeItems.length - 1} onClick={(e) => { e.stopPropagation(); move(topic.id, +1) }}><ArrowDown size={14} /></button>
+                          <button className={styles.iconBtn} aria-label="Move up"   disabled={idx === 0}                     onClick={(e) => { e.stopPropagation(); move(topic.id, -1) }}><ArrowUp size={16} strokeWidth={2} /></button>
+                          <button className={styles.iconBtn} aria-label="Move down" disabled={idx === activeItems.length - 1} onClick={(e) => { e.stopPropagation(); move(topic.id, +1) }}><ArrowDown size={16} strokeWidth={2} /></button>
                           <button
                             className={styles.iconBtn}
                             aria-label={canHardDelete ? 'Remove from plan' : 'Archive'}
@@ -179,7 +179,7 @@ export function Me() {
                               e.stopPropagation()
                               canHardDelete ? hardDelete(topic.id) : archive(topic.id)
                             }}
-                          ><X size={14} /></button>
+                          ><X size={16} strokeWidth={2} /></button>
                         </span>
                       }
                       onClick={() => nav(`/learn/topic/${topic.id}`)}

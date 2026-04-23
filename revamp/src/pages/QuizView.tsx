@@ -314,7 +314,7 @@ function OrderedStepsBody({
                 onClick={() => move(pos, -1)}
                 disabled={pos === 0}
               >
-                <ArrowUp size={14} />
+                <ArrowUp size={16} strokeWidth={2} />
               </button>
               <button
                 type="button"
@@ -323,7 +323,7 @@ function OrderedStepsBody({
                 onClick={() => move(pos, +1)}
                 disabled={pos === order.length - 1}
               >
-                <ArrowDown size={14} />
+                <ArrowDown size={16} strokeWidth={2} />
               </button>
             </span>
           </li>
@@ -455,7 +455,7 @@ function ReportFlag({ quizId, questionId }: { quizId: string; questionId?: strin
       title="Report a problem"
       onClick={() => setView('form')}
     >
-      <Flag size={13} strokeWidth={1.75} />
+      <Flag size={14} strokeWidth={2} />
       <span className={styles.reportFlagLabel}>Report</span>
     </button>
   )

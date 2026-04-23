@@ -59,6 +59,7 @@
   gap: 6px;
 }
 .iconBtn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -69,6 +70,14 @@
   color: var(--ink-2);
   cursor: pointer;
   transition: background var(--dur-2) var(--ease-premium), color var(--dur-2) var(--ease-premium);
+}
+/* Invisible hit-area extender. Pushes the touch target to ~44x44 (Apple
+   HIG + WCAG 2.5.5) without changing the visible button size or the
+   surrounding layout. */
+.iconBtn::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
 }
 .iconBtn:hover:not(:disabled) { background: var(--accent-surface); color: var(--accent-ink); }
 .iconBtn:disabled { opacity: 0.35; cursor: not-allowed; }
