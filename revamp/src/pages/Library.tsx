@@ -331,10 +331,12 @@ export function Library() {
 
       {shown.length === 0 ? (
         missLogged ? (
-          <Empty>
-            <strong>“{missLogged}”</strong> isn&apos;t in the library yet — noted.
-            It&apos;ll be added shortly.
-          </Empty>
+          <div role="status" aria-live="polite">
+            <Empty>
+              <strong>“{missLogged}”</strong> isn&apos;t in the library yet — noted.
+              It&apos;ll be added shortly.
+            </Empty>
+          </div>
         ) : (
           <Empty>Nothing matches. Clear filters or search.</Empty>
         )

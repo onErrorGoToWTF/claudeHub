@@ -169,7 +169,7 @@ export function GlobalSearch({ open, onClose }: { open: boolean; onClose: () => 
           </button>
         </div>
 
-        <div className={styles.searchResults}>
+        <div className={styles.searchResults} role="status" aria-live="polite">
           {query.trim() === '' ? (
             <div className={styles.searchHint}>
               Start typing to search across Learn, Projects, and Library.

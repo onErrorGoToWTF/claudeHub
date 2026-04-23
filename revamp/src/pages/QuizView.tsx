@@ -151,7 +151,7 @@ export function QuizView() {
     return (
       <div className="page">
         <PageHeader eyebrow="Quiz complete" title={passed ? 'Nicely done.' : 'Not quite — try again soon.'} />
-        <div className={styles.resultCard}>
+        <div className={styles.resultCard} role="status" aria-live="polite">
           <div className={styles.resultScore}>
             <CountUp to={pct} />
             <span>%</span>
