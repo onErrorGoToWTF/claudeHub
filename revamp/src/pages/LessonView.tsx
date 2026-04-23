@@ -113,6 +113,17 @@ export function LessonView() {
         <Markdown text={lesson.body} />
       </article>
 
+      {/* Practice what we teach: every lesson models the hallucination-
+          awareness rule by explicitly disclosing AI-assisted authoring
+          and pointing back to sources for verification. */}
+      <aside className={styles.authorNote} role="note">
+        <b>AI-assisted authoring.</b> Lessons are drafted with Claude and
+        reviewed, not hand-written from scratch. Specifics (numbers,
+        names, citations, API shapes) can drift — verify anything you're
+        going to act on against the <b>Sources</b> section inline or the
+        "Further reading" links on the topic page.
+      </aside>
+
       <div className={styles.footer}>
         {!done && <Button variant="primary" onClick={markDone}>Mark as done</Button>}
         {topicQuiz && (

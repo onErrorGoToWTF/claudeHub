@@ -188,3 +188,18 @@
 @media (prefers-reduced-motion: reduce) {
   .addPrompt { animation: none; }
 }
+
+/* ---------- AI-assisted authoring disclosure ---------- */
+/* Eats our own dog food: every lesson models the 'verify specifics'
+   rule it teaches. Muted, below the article, above the action buttons. */
+.authorNote {
+  margin: var(--space-6) 0 0;
+  padding: 10px 14px;
+  background: var(--bg-sunken);
+  border: 1px solid var(--hair);
+  border-left: 3px solid var(--accent-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
