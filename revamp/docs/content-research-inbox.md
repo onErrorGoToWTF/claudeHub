@@ -25,6 +25,8 @@ Each entry: source + why it's worth mining + any specific video/article/thread t
 
 **Citation convention when used:** link the specific video in the lesson's `## Sources` section. Paraphrase his framing; direct quotes kept short per the editorial policy.
 
+**Practical note:** Tim Corey publishes video **transcripts** (YouTube auto-caption + likely his own on his site). Mining is much faster when a transcript exists — grep for key phrases, paste quotes verbatim (short ones, attributed), no manual transcription. Pull the transcript first; skim the video for tone + which parts got emphasis.
+
 ---
 
 ## Template for future entries
