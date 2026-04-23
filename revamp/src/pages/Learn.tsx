@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ArrowRight, Plus, Check, X } from 'lucide-react'
 import { overallProgress, repo } from '../db/repo'
 import type { Category, Track, Topic, Mastery, UserPathwayItem } from '../db/types'
@@ -295,48 +295,46 @@ function StarterPacksRow({
         transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1] }}
         className={s.starterGrid}
       >
-        <AnimatePresence mode="popLayout">
-          {expandedId ? (
-            <ExpandedPack
-              key="expanded"
-              pack={STARTER_PACKS.find(p => p.id === expandedId)!}
-              topicIds={PATHWAY_TEMPLATES[expandedId]}
-              topicsById={topicsById}
-              activePlanIds={activePlanIds}
-              onClose={() => setExpandedId(null)}
-              onAddOne={addOne}
-              onAddAll={() => addAll(expandedId)}
-            />
-          ) : (
-            STARTER_PACKS.map(p => {
-              const topicIds = PATHWAY_TEMPLATES[p.id]
-              const already = topicIds.filter(id => activePlanIds.has(id)).length
-              const allIn   = already === topicIds.length
-              return (
-                <motion.button
-                  key={p.id}
-                  layoutId={`pack-${p.id}`}
-                  type="button"
-                  className={`${s.starterCard} ${allIn ? s.starterCardOn : ''}`}
-                  onClick={() => setExpandedId(p.id)}
-                  transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1] }}
-                >
-                  <div className={s.starterCardHead}>
-                    <span className={s.starterCardTitle}>{p.label}</span>
-                    {allIn
-                      ? <Check size={14} strokeWidth={2} />
-                      : <Plus size={14} strokeWidth={2} />}
-                  </div>
-                  <div className={s.starterCardBlurb}>{p.blurb}</div>
-                  <div className={s.starterCardFoot}>
-                    {already > 0 && !allIn && <>{already} of {topicIds.length} in plan · </>}
-                    {allIn ? 'All added' : `${topicIds.length} topics`}
-                  </div>
-                </motion.button>
-              )
-            })
-          )}
-        </AnimatePresence>
+        {expandedId ? (
+          <ExpandedPack
+            key="expanded"
+            pack={STARTER_PACKS.find(p => p.id === expandedId)!}
+            topicIds={PATHWAY_TEMPLATES[expandedId]}
+            topicsById={topicsById}
+            activePlanIds={activePlanIds}
+            onClose={() => setExpandedId(null)}
+            onAddOne={addOne}
+            onAddAll={() => addAll(expandedId)}
+          />
+        ) : (
+          STARTER_PACKS.map(p => {
+            const topicIds = PATHWAY_TEMPLATES[p.id]
+            const already = topicIds.filter(id => activePlanIds.has(id)).length
+            const allIn   = already === topicIds.length
+            return (
+              <motion.button
+                key={p.id}
+                layoutId={`pack-${p.id}`}
+                type="button"
+                className={`${s.starterCard} ${allIn ? s.starterCardOn : ''}`}
+                onClick={() => setExpandedId(p.id)}
+                transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1] }}
+              >
+                <div className={s.starterCardHead}>
+                  <span className={s.starterCardTitle}>{p.label}</span>
+                  {allIn
+                    ? <Check size={14} strokeWidth={2} />
+                    : <Plus size={14} strokeWidth={2} />}
+                </div>
+                <div className={s.starterCardBlurb}>{p.blurb}</div>
+                <div className={s.starterCardFoot}>
+                  {already > 0 && !allIn && <>{already} of {topicIds.length} in plan · </>}
+                  {allIn ? 'All added' : `${topicIds.length} topics`}
+                </div>
+              </motion.button>
+            )
+          })
+        )}
       </motion.div>
     </div>
   )
