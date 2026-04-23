@@ -74,6 +74,8 @@ export function GlobalSearch({ open, onClose }: { open: boolean; onClose: () => 
     if (!q) return []
 
     const match = (s: string | undefined) => !!s && s.toLowerCase().includes(q)
+    const matchTags = (tags?: string[]) =>
+      !!tags && tags.some(tg => tg.toLowerCase().includes(q))
     const out: Hit[] = []
 
     // Pathway sorts results — never hides them. Collect then sort at the end.
@@ -82,12 +84,12 @@ export function GlobalSearch({ open, onClose }: { open: boolean; onClose: () => 
       scored.push({ ...hit, primary: isPrimaryForPathway(pathway, audienceSource?.audience) })
     }
     for (const t of idx.tracks) {
-      if (match(t.title) || match(t.summary)) {
+      if (match(t.title) || match(t.summary) || matchTags(t.tags)) {
         push({ id: `track:${t.id}`, kind: 'track', title: t.title, sub: t.summary, to: '/learn' }, t)
       }
     }
     for (const t of idx.topics) {
-      if (match(t.title) || match(t.summary)) {
+      if (match(t.title) || match(t.summary) || matchTags(t.tags)) {
         push({ id: `topic:${t.id}`, kind: 'topic', title: t.title, sub: t.summary, to: `/learn/topic/${t.id}` }, t)
       }
     }
@@ -97,7 +99,7 @@ export function GlobalSearch({ open, onClose }: { open: boolean; onClose: () => 
       }
     }
     for (const p of idx.projects) {
-      if (match(p.title) || match(p.summary)) {
+      if (match(p.title) || match(p.summary) || matchTags(p.tags)) {
         push({ id: `proj:${p.id}`, kind: 'project', title: p.title, sub: p.summary, to: `/projects/${p.id}` })
       }
     }
