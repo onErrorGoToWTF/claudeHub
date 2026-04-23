@@ -117,6 +117,23 @@
   color: var(--accent-ink);
   margin-bottom: 6px;
 }
+
+/* Active-streak flame — two-frame opacity flicker on a long (3s) interval
+   so it reads as "alive but calm", never frenetic. Contained to the icon
+   itself so the surrounding layout doesn't shift. Respects reduced-motion. */
+.habitFlame {
+  animation: habitFlameFlicker 3s var(--ease-lensing) infinite;
+}
+@keyframes habitFlameFlicker {
+  0%, 40%, 100% { opacity: 1; }
+  45%           { opacity: 0.55; }
+  50%           { opacity: 1; }
+  55%           { opacity: 0.7; }
+  60%           { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .habitFlame { animation: none; }
+}
 .habitBig {
   font-size: var(--text-lg);
   font-weight: 600;

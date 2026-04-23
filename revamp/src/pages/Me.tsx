@@ -132,7 +132,11 @@ export function Me() {
           {(streak > 0 || weekDays > 0) && (
             <div className={styles.habitCard}>
               <div className={styles.habitEyebrow}>
-                <Flame size={12} strokeWidth={2} /> Habit
+                <Flame
+                  size={12}
+                  strokeWidth={2}
+                  className={streak > 0 ? styles.habitFlame : undefined}
+                /> Habit
               </div>
               <div className={styles.habitBig}>
                 {streak > 0 ? `${streak}-day streak` : 'No streak today'}
