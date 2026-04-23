@@ -125,3 +125,8 @@ When done with whatever subset of the above you tackle:
 5. Leave one `🟡 WIP` note in this file (`docs/next-session-plan.md`) at the bottom if you started something you couldn't finish, so Alan can see where to pick up.
 
 Don't be precious. Being mid-session when Alan gets back is better than having finished nothing.
+
+
+### Next-session note
+
+**2026-04-23** — DB migration research doc now exists at `revamp/docs/research-db-migration.md`. Covers schema refinements (Chunks H/I/J/K/L/O deltas against `supabase-schema.sql`), RLS with admin-bypass + is_admin escalation guard, Supabase Auth + TOTP + 7-day grace, seed-via-script recommendation, `repo.ts` swap strategy (dual-impl behind `VITE_USE_SUPABASE` flag), fresh-start UX, 10-step playbook, rollback, post-migration follow-ups, effort estimate (~60–80 h / 2 weeks), and 8 open questions. Use as SSOT when the migration task activates.
