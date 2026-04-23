@@ -27,6 +27,13 @@ export function App() {
     seedIfEmpty().then(() => setReady(true))
   }, [])
 
+  // Scroll to top on route change. Without this, navigating Learn → a
+  // topic → back to Learn keeps you mid-scroll on the previous page.
+  // Fine for in-page anchor changes; applies per pathname change only.
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' })
+  }, [location.pathname])
+
   if (!ready) return null
 
   // Sign-in preview — renders outside the normal shell. Not linked

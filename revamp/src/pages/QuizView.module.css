@@ -371,18 +371,16 @@
 .card { position: relative; }
 .resultCard { position: relative; }
 
-/* The inline form that replaces the flag when clicked. */
+/* Form that replaces the flag when clicked. Flows in the document
+   so it pushes the card taller instead of overlaying the choices/
+   Next button — especially important on narrow mobile cards. */
 .reportForm {
-  position: absolute;
-  right: var(--space-3);
-  bottom: var(--space-3);
-  width: min(340px, calc(100% - var(--space-6)));
+  margin-top: var(--space-4);
   padding: 10px 12px;
   background: var(--bg-card);
   border: 1px solid var(--hair);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-2);
-  z-index: 2;
 }
 .reportKinds {
   display: flex;
