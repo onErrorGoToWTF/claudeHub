@@ -124,19 +124,20 @@ export function Library() {
     return arr
   }, [items, facet, sort, query, tagFilters, savedOnly])
 
-  // Top tags by frequency — across items that have a body. These are the
-  // shared-vocab tags surfaced from Chunk H. The 12 most common get chips;
-  // the rest are still reachable via direct URL (?tag=…) or search.
-  const topTags = useMemo(() => {
+  // All tags by frequency — across items that have a body. These are the
+  // shared-vocab tags surfaced from Chunk H. Top 12 show by default; the
+  // rest reveal under a "Show more" disclosure inside the popover.
+  const allTags = useMemo(() => {
     const counts: Record<string, number> = {}
     for (const i of items.filter(x => !!x.body)) {
       for (const t of i.tags ?? []) counts[t.toLowerCase()] = (counts[t.toLowerCase()] ?? 0) + 1
     }
     return Object.entries(counts)
       .sort((a, b) => b[1] - a[1])
-      .slice(0, 12)
       .map(([tag, n]) => ({ tag, n }))
   }, [items])
+  const topTags = useMemo(() => allTags.slice(0, 12), [allTags])
+  const [showAllTags, setShowAllTags] = useState(false)
 
   // Soft pathway split — primary on top, rest below, no one gets filtered out.
   const { primary, rest, split } = useMemo(
@@ -314,28 +315,49 @@ export function Library() {
                 })}
               </div>
             </div>
-            {topTags.length > 0 && (
-              <div className={styles.filterGroup}>
-                <div className={styles.filterLabel}>Tag</div>
-                <div className={styles.facets}>
-                  {topTags.map(({ tag, n }) => {
-                    const active = tagFilters.includes(tag)
-                    return (
+            {allTags.length > 0 && (() => {
+              // Always keep currently-active tags visible, even if they fall
+              // outside the top-12 frequency cut. Otherwise the user can't
+              // see what they've filtered by without expanding.
+              const visibleIds = new Set(topTags.map(t => t.tag))
+              for (const tf of tagFilters) visibleIds.add(tf)
+              const shown = showAllTags
+                ? allTags
+                : allTags.filter(t => visibleIds.has(t.tag))
+              const hiddenCount = allTags.length - shown.length
+              return (
+                <div className={styles.filterGroup}>
+                  <div className={styles.filterLabel}>Tag</div>
+                  <div className={styles.facets}>
+                    {shown.map(({ tag, n }) => {
+                      const active = tagFilters.includes(tag)
+                      return (
+                        <button
+                          key={tag}
+                          type="button"
+                          className={`${styles.facet} ${active ? styles.facetOn : ''}`}
+                          onClick={() => toggleTagFilter(tag)}
+                          aria-pressed={active}
+                        >
+                          <span>#{tag}</span>
+                          <span className={styles.facetCount}>{n}</span>
+                        </button>
+                      )
+                    })}
+                    {(hiddenCount > 0 || showAllTags) && (
                       <button
-                        key={tag}
                         type="button"
-                        className={`${styles.facet} ${active ? styles.facetOn : ''}`}
-                        onClick={() => toggleTagFilter(tag)}
-                        aria-pressed={active}
+                        className={styles.facetMore}
+                        onClick={() => setShowAllTags(v => !v)}
+                        aria-expanded={showAllTags}
                       >
-                        <span>#{tag}</span>
-                        <span className={styles.facetCount}>{n}</span>
+                        {showAllTags ? 'Show fewer' : `Show all (${hiddenCount} more)`}
                       </button>
-                    )
-                  })}
+                    )}
+                  </div>
                 </div>
-              </div>
-            )}
+              )
+            })()}
             <div className={styles.filterGroup}>
               <div className={styles.filterLabel}>Saved</div>
               <div className={styles.facets}>

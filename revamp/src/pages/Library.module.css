@@ -113,6 +113,27 @@
   border-color: var(--danger-border);
 }
 
+/* "Show all (N more) / Show fewer" pill inside the Tag facet group. Sits
+   inline with the tag chips; quiet styling (dashed border) so it reads as
+   an action, not another tag. */
+.facetMore {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--ink-3);
+  background: transparent;
+  border: 1px dashed var(--hair-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color var(--dur-2) var(--ease-premium), border-color var(--dur-2) var(--ease-premium);
+}
+.facetMore:hover {
+  color: var(--accent-ink);
+  border-color: var(--accent-border);
+}
+
 .resultMeta {
   margin-left: auto;
   font-size: var(--text-xs);
