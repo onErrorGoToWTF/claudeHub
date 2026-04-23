@@ -5,15 +5,23 @@
 
 :root {
   /* ---------- color: neutrals (greige) ---------- */
-  --bg-page:        #ece9e2;   /* warm greige page */
-  --bg-canvas:      #f2efe8;   /* slightly lighter — large surfaces */
-  --bg-card:        #ffffff;   /* cards / elevated surfaces */
-  --bg-sunken:      #e5e1d8;   /* input wells / sunken panels */
+  /* Page darkened from #ece9e2 → #e6e2d8 so white cards have a real
+     lightness delta against the page; sunken panels tracked in
+     lockstep so tag chips still sit ~one step darker than the card
+     rim. Tweaked for perceived contrast on mobile, where simultaneous-
+     contrast against the warm greige was washing out light text. */
+  --bg-page:        #e6e2d8;
+  --bg-canvas:      #eeeae1;
+  --bg-card:        #ffffff;
+  --bg-sunken:      #ddd9cf;
   --bg-overlay:     rgba(30, 28, 24, 0.42); /* modal scrim */
 
-  --ink-1:          #141312;   /* primary text */
+  --ink-1:          #141312;   /* primary text — solid; leave alone */
   --ink-2:          rgba(20, 19, 18, 0.66);
-  --ink-3:          rgba(20, 19, 18, 0.40);
+  /* ink-3 at 0.40 was borderline WCAG-AA on white and read even fainter
+     against the warm greige via simultaneous contrast. 0.52 lifts meta
+     text to ~5:1 without collapsing the title/meta hierarchy. */
+  --ink-3:          rgba(20, 19, 18, 0.52);
   --ink-inverse:    #fafaf8;
 
   --hair:           rgba(20, 19, 18, 0.10);  /* hairline border */
