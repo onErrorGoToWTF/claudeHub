@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowLeft, ArrowDown, ArrowUp, Flag, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowDown, ArrowUp, Flag, Sparkles, Check, X as XIcon, Lock, LockOpen } from 'lucide-react'
 import { repo } from '../db/repo'
 import type {
   Quiz,
   QuizQuestion,
   QuizReportKind,
+  QuizAttemptAnswer,
   OrderedStepsQuestion,
   CodeTypingQuestion,
   ShortAnswerQuestion,
@@ -56,6 +57,12 @@ export function QuizView() {
   const [answer, setAnswer] = useState<unknown>(null)
   const [phase, setPhase] = useState<Phase>('answering')
   const [correct, setCorrect] = useState(0)
+  // Attempt capture — every submitted answer accumulates here so the review
+  // screen (and future admin history) can replay the attempt without
+  // re-grading. Reset when the user starts a fresh quiz via key change.
+  const [answers, setAnswers] = useState<import('../db/types').QuizAttemptAnswer[]>([])
+  const [startedAt] = useState(() => Date.now())
+  const [attemptId, setAttemptId] = useState<string | null>(null)
 
   useEffect(() => { repo.getQuiz(quizId).then(q => setQuiz(q ?? null)) }, [quizId])
 
@@ -133,13 +140,25 @@ export function QuizView() {
     if (!isAnswerable(q, answer)) return
     const wasCorrect = gradeQuestion(q, answer)
     const nextCorrect = correct + (wasCorrect ? 1 : 0)
+    const nextAnswers = [...answers, { questionId: q.id, submitted: answer, correct: wasCorrect }]
     if (i + 1 >= quiz.questions.length) {
       const score = nextCorrect / quiz.questions.length
       await repo.recordQuiz(quiz.id, quiz.topicId, score)
+      // Persist the full attempt record. Every attempt is a new row; retake
+      // appends rather than overwrites so review history is durable.
+      const id = `qa.${quiz.id}.${Date.now()}`
+      await repo.saveQuizAttempt({
+        id, quizId: quiz.id, topicId: quiz.topicId,
+        startedAt, finishedAt: Date.now(),
+        score, answers: nextAnswers,
+      })
+      setAttemptId(id)
       setCorrect(nextCorrect)
+      setAnswers(nextAnswers)
       setPhase('done')
     } else {
       setCorrect(nextCorrect)
+      setAnswers(nextAnswers)
       setI(x => x + 1)
     }
   }
@@ -171,6 +190,11 @@ export function QuizView() {
             </div>
           )}
         </div>
+        <ReviewSection
+          quiz={quiz}
+          answers={answers}
+          attemptId={attemptId}
+        />
         <div className={styles.reportRow}>
           <ReportFlag quizId={quiz.id} />
         </div>
@@ -487,4 +511,193 @@ function ShortAnswerBody({
       />
     </div>
   )
+}
+
+// ---------- Review (post-submit per-question replay) ----------
+// Always visible on the result screen — review isn't gated on "accepting"
+// the score. Research across Khan/Coursera/edX/Udemy/Codecademy converged
+// on that default. Per-question triad: user's answer, correct answer,
+// explainer (when authored). Toggle collapses to a single button so users
+// who just want their score aren't forced past a wall of text.
+function ReviewSection({
+  quiz, answers, attemptId,
+}: {
+  quiz: Quiz
+  answers: QuizAttemptAnswer[]
+  attemptId: string | null
+}) {
+  const [open, setOpen] = useState(false)
+  const [locked, setLocked] = useState(false)
+
+  const wrongCount = answers.filter(a => !a.correct).length
+
+  async function toggleLock() {
+    if (!attemptId) return
+    const next = !locked
+    await repo.lockQuizAttempt(attemptId, next)
+    setLocked(next)
+  }
+
+  return (
+    <div className={styles.reviewWrap}>
+      <div className={styles.reviewControls}>
+        <button
+          type="button"
+          className={styles.reviewToggle}
+          onClick={() => setOpen(v => !v)}
+          aria-expanded={open}
+        >
+          {open ? 'Hide answer review' : `Review answers${wrongCount > 0 ? ` (${wrongCount} missed)` : ''}`}
+        </button>
+        {attemptId && (
+          <button
+            type="button"
+            className={`${styles.lockBtn} ${locked ? styles.lockBtnOn : ''}`}
+            onClick={toggleLock}
+            aria-pressed={locked}
+            title={locked
+              ? 'Attempt locked as final — tap to unlock'
+              : 'Accept this attempt as final. Advisory: mastery still updates on retake.'}
+          >
+            {locked ? <Lock size={12} strokeWidth={2} /> : <LockOpen size={12} strokeWidth={2} />}
+            {locked ? 'Locked' : 'Accept score'}
+          </button>
+        )}
+      </div>
+
+      {open && (
+        <ol className={styles.reviewList}>
+          {quiz.questions.map((q, idx) => {
+            const rec = answers.find(a => a.questionId === q.id)
+            return (
+              <li key={q.id} className={styles.reviewItem}>
+                <div className={styles.reviewHead}>
+                  <span className={styles.reviewQnum}>{idx + 1}</span>
+                  <span className={styles.reviewPrompt}>{q.prompt}</span>
+                  <span
+                    className={rec?.correct ? styles.reviewBadgeOk : styles.reviewBadgeNo}
+                    aria-label={rec?.correct ? 'Correct' : 'Incorrect'}
+                  >
+                    {rec?.correct
+                      ? <Check size={12} strokeWidth={2.5} />
+                      : <XIcon size={12} strokeWidth={2.5} />}
+                  </span>
+                </div>
+                <ReviewAnswerBody q={q} submitted={rec?.submitted} correct={rec?.correct ?? false} />
+                {('explain' in q) && q.explain && (
+                  <div className={styles.reviewExplain}>{q.explain}</div>
+                )}
+              </li>
+            )
+          })}
+        </ol>
+      )}
+    </div>
+  )
+}
+
+// Render a single reviewed question's user-answer + correct-answer per kind.
+// Stays small: just the facts, no interactive replay. The learner can tap
+// Retake if they want another attempt.
+function ReviewAnswerBody({ q, submitted, correct }: {
+  q: QuizQuestion
+  submitted: unknown
+  correct: boolean
+}) {
+  const kind = questionKind(q)
+
+  if (kind === 'mcq') {
+    const mq = q as MCQQuestion
+    const pickedIdx = typeof submitted === 'number' ? submitted : -1
+    return (
+      <div className={styles.reviewBody}>
+        {mq.choices.map((c, i) => {
+          const isUser = i === pickedIdx
+          const isCorrect = i === mq.answerIdx
+          return (
+            <div
+              key={i}
+              className={[
+                styles.reviewChoice,
+                isCorrect ? styles.reviewChoiceCorrect : '',
+                isUser && !isCorrect ? styles.reviewChoiceUserWrong : '',
+              ].filter(Boolean).join(' ')}
+            >
+              <span className={styles.reviewChoiceMark}>
+                {isCorrect ? <Check size={11} strokeWidth={2.5} />
+                  : isUser ? <XIcon size={11} strokeWidth={2.5} />
+                  : null}
+              </span>
+              <span>{c}</span>
+              {isUser && !isCorrect && <span className={styles.reviewTag}>your answer</span>}
+              {isCorrect && <span className={styles.reviewTag}>correct</span>}
+            </div>
+          )
+        })}
+      </div>
+    )
+  }
+
+  if (kind === 'ordered-steps') {
+    const oq = q as OrderedStepsQuestion
+    const userOrder = Array.isArray(submitted) ? (submitted as number[]) : []
+    return (
+      <div className={styles.reviewBody}>
+        {!correct && (
+          <div className={styles.reviewSubhead}>Your order</div>
+        )}
+        {!correct && (
+          <ol className={styles.reviewSteps}>
+            {userOrder.map((idx, pos) => (
+              <li key={pos}><span className={styles.reviewStepNum}>{pos + 1}</span>{oq.steps[idx]}</li>
+            ))}
+          </ol>
+        )}
+        <div className={styles.reviewSubhead}>{correct ? 'Order' : 'Correct order'}</div>
+        <ol className={styles.reviewSteps}>
+          {oq.correctOrder.map((idx, pos) => (
+            <li key={pos}><span className={styles.reviewStepNum}>{pos + 1}</span>{oq.steps[idx]}</li>
+          ))}
+        </ol>
+      </div>
+    )
+  }
+
+  if (kind === 'code-typing') {
+    const cq = q as CodeTypingQuestion
+    const userText = typeof submitted === 'string' ? submitted : ''
+    return (
+      <div className={styles.reviewBody}>
+        <div className={styles.reviewSubhead}>Your answer</div>
+        <code className={styles.reviewInline}>{userText || <em>(blank)</em>}</code>
+        <div className={styles.reviewSubhead}>Expected</div>
+        <code className={styles.reviewInline}>{cq.expected}</code>
+      </div>
+    )
+  }
+
+  if (kind === 'short-answer') {
+    const sq = q as ShortAnswerQuestion
+    const userText = typeof submitted === 'string' ? submitted : ''
+    return (
+      <div className={styles.reviewBody}>
+        <div className={styles.reviewSubhead}>Your answer</div>
+        <div className={styles.reviewInline}>{userText || <em>(blank)</em>}</div>
+        {sq.expected && (
+          <>
+            <div className={styles.reviewSubhead}>Expected</div>
+            <div className={styles.reviewInline}>{sq.expected}</div>
+          </>
+        )}
+        {!sq.expected && sq.pattern && (
+          <>
+            <div className={styles.reviewSubhead}>Accepted pattern</div>
+            <code className={styles.reviewInline}>/{sq.pattern}/i</code>
+          </>
+        )}
+      </div>
+    )
+  }
+
+  return null
 }

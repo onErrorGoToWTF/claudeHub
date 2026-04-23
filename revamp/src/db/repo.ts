@@ -70,6 +70,32 @@ export const repo = {
     await recomputeMastery(topicId)
   },
 
+  // ---------- quiz attempts (review surface, admin future) ----------
+  /** Full per-attempt record. Always inserts a new row — never updates.
+   *  Retake = new attempt row. Mastery is latest-attempt-wins via
+   *  recordQuiz above; this table is the durable audit trail. */
+  async saveQuizAttempt(attempt: import('./types').QuizAttempt) {
+    await db.quizAttempts.put(attempt)
+  },
+  /** All attempts for a quiz, most-recent first. Drives the review screen
+   *  + the eventual admin history view. */
+  async listQuizAttempts(quizId?: string): Promise<import('./types').QuizAttempt[]> {
+    const rows = quizId
+      ? await db.quizAttempts.where('quizId').equals(quizId).toArray()
+      : await db.quizAttempts.toArray()
+    return rows.sort((a, b) => b.finishedAt - a.finishedAt)
+  },
+  /** Most-recent attempt for a quiz (null if never attempted). */
+  async getLatestQuizAttempt(quizId: string): Promise<import('./types').QuizAttempt | null> {
+    const [latest] = await this.listQuizAttempts(quizId)
+    return latest ?? null
+  },
+  /** User signals "I'm accepting this score as final." Advisory flag —
+   *  future retakes still create new attempts; mastery still updates. */
+  async lockQuizAttempt(id: string, locked: boolean) {
+    await db.quizAttempts.update(id, { locked })
+  },
+
   // ---------- mastery ----------
   async listMastery(): Promise<Mastery[]> { return db.mastery.toArray() },
   async getMastery(topicId: string) { return db.mastery.get(topicId) },

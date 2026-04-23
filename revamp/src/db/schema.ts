@@ -2,7 +2,7 @@ import Dexie, { type Table } from 'dexie'
 import type {
   Track, Topic, Lesson, Quiz, Progress, Mastery,
   LibraryItem, Project, SearchMiss, ProjectEvent, UserPathwayItem, QuizReport,
-  Category, Feedback,
+  Category, Feedback, QuizAttempt,
 } from './types'
 
 export class AiUniversityDB extends Dexie {
@@ -20,6 +20,7 @@ export class AiUniversityDB extends Dexie {
   quizReports!: Table<QuizReport, string>
   categories!: Table<Category, string>
   feedback!: Table<Feedback, string>
+  quizAttempts!: Table<QuizAttempt, string>
 
   constructor() {
     super('aiUniversity')
@@ -54,6 +55,13 @@ export class AiUniversityDB extends Dexie {
     })
     this.version(8).stores({
       feedback: 'id, kind, ts, resolved',
+    })
+    this.version(9).stores({
+      // Full per-attempt record: every answer, every timestamp, optional
+      // lock flag. Enables post-submit review for the learner and a future
+      // admin "submission history" surface à la edX. Latest attempt still
+      // drives mastery; this table is additive.
+      quizAttempts: 'id, quizId, topicId, finishedAt, locked',
     })
   }
 }

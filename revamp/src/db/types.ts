@@ -136,6 +136,38 @@ export interface Quiz {
   questions: QuizQuestion[]
 }
 
+/** One answer inside a QuizAttempt. `submitted` is stored as whatever
+ *  shape the question kind expects (number index for MCQ, number[] for
+ *  ordered-steps, string for code/short-answer), and `correct` is the
+ *  already-graded result so review rendering doesn't need to re-grade. */
+export interface QuizAttemptAnswer {
+  questionId: ID
+  /** Whatever the UI captured: number (MCQ), number[] (ordered-steps), string (typing). */
+  submitted: unknown
+  correct: boolean
+}
+
+/** One quiz attempt in full — every answer, every timestamp. Persisted
+ *  on Quiz finish. Latest attempt still drives mastery; this table is
+ *  the durable record used by post-submit review (user-facing) and the
+ *  planned admin submission-history surface. */
+export interface QuizAttempt {
+  id: ID
+  quizId: ID
+  topicId: ID
+  startedAt: number
+  finishedAt: number
+  /** 0..1, pre-computed from the answers. Matches the score passed to
+   *  repo.recordQuiz so the two records stay in sync. */
+  score: number
+  answers: QuizAttemptAnswer[]
+  /** User signaled "I'm accepting this attempt as final." Advisory, not
+   *  a gate — review stays visible regardless. Surfaces in the future
+   *  admin review queue so staff can see which attempts the learner
+   *  marked done. */
+  locked?: boolean
+}
+
 export interface Progress {
   id: ID                 // same as lesson/quiz id
   kind: 'lesson' | 'quiz'
