@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft, Pin, PinOff } from 'lucide-react'
+import { ArrowLeft, Pin, PinOff, Bookmark, BookmarkMinus } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { LibraryItem } from '../db/types'
-import { Button, Chip, PageHeader } from '../ui'
+import { Button, PageHeader } from '../ui'
 import { Markdown } from '../ui/Markdown'
 import styles from './LessonView.module.css'
 
@@ -37,6 +37,12 @@ export function LibraryDetail() {
     await repo.togglePinned(item.id, !item.pinned)
     setItem({ ...item, pinned: !item.pinned })
   }
+  async function toggleSave() {
+    if (!item) return
+    const next = !item.savedForLater
+    await repo.toggleSavedForLater(item.id, next)
+    setItem({ ...item, savedForLater: next })
+  }
 
   return (
     <div className="page">
@@ -52,16 +58,36 @@ export function LibraryDetail() {
         title={item.title}
         subtitle={item.summary}
         right={
-          <Button variant="ghost" onClick={togglePin}>
-            {item.pinned ? <Pin size={14} /> : <PinOff size={14} />}
-            {item.pinned ? 'Pinned' : 'Pin'}
-          </Button>
+          <span style={{ display: 'inline-flex', gap: 6 }}>
+            <Button variant="ghost" onClick={toggleSave}>
+              {item.savedForLater ? <BookmarkMinus size={14} /> : <Bookmark size={14} />}
+              {item.savedForLater ? 'Saved' : 'Save for later'}
+            </Button>
+            <Button variant="ghost" onClick={togglePin}>
+              {item.pinned ? <Pin size={14} /> : <PinOff size={14} />}
+              {item.pinned ? 'Pinned' : 'Pin'}
+            </Button>
+          </span>
         }
       />
 
       {item.tags.length > 0 && (
         <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 'var(--space-6)' }}>
-          {item.tags.map(t => <Chip key={t}>{t}</Chip>)}
+          {item.tags.map(t => (
+            <Link
+              key={t}
+              to={`/library?tag=${encodeURIComponent(t)}`}
+              style={{
+                display: 'inline-flex', alignItems: 'center',
+                padding: '2px 8px', fontSize: 'var(--text-xs)', lineHeight: 1.4,
+                color: 'var(--ink-2)', background: 'var(--bg-card)',
+                border: '1px solid var(--hair)', borderRadius: 'var(--radius-sm)',
+                textDecoration: 'none',
+              }}
+            >
+              #{t}
+            </Link>
+          ))}
         </div>
       )}
 
