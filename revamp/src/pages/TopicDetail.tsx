@@ -79,14 +79,15 @@ export function TopicDetail() {
         </div>
       )}
 
-      {/* Learning objectives — "By the end you'll be able to…" */}
+      {/* Learning objectives — "By the end you'll be able to…". No
+          left-bar treatment (reserved for drag handles). Accent tint on
+          the eyebrow carries the signal instead. */}
       {topic.objectives && topic.objectives.length > 0 && (
         <section style={{
           padding: '14px 18px',
           marginBottom: 'var(--space-6)',
           background: 'var(--bg-card)',
           border: '1px solid var(--hair)',
-          borderLeft: '3px solid var(--accent-border)',
           borderRadius: 'var(--radius-md)',
         }}>
           <div style={{
@@ -94,7 +95,7 @@ export function TopicDetail() {
             fontWeight: 700,
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
-            color: 'var(--ink-3)',
+            color: 'var(--accent-ink)',
             marginBottom: 8,
           }}>By the end, you'll be able to</div>
           <ul style={{
