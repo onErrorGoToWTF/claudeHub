@@ -4,15 +4,9 @@ import { ArrowRight, Plus, Check, X } from 'lucide-react'
 import { overallProgress, repo } from '../db/repo'
 import type { Category, Track, Topic, Mastery, UserPathwayItem } from '../db/types'
 import { LiftModal } from '../ui/LiftModal'
-import {
-  PageHeader, Section, Tile, TileTitle, TileMeta, TileRow,
-  Chip, ProgressBar,
-} from '../ui'
-import { grid } from '../ui/grid'
+import { PageHeader, ProgressBar } from '../ui'
 import { AudienceBadge } from '../ui/AudienceBadge'
-import { Disclosure } from '../ui/Disclosure'
-import { splitByPathway, shouldCollapseRestByDefault, type UserPathway } from '../lib/audience'
-import { masteryStatus, MASTERY_LABEL, PASS_THRESHOLD, MASTERY_THRESHOLD } from '../lib/mastery'
+import { splitByPathway, type UserPathway } from '../lib/audience'
 import { PATHWAY_TEMPLATES } from '../lib/pathwayTemplates'
 import { useUserStore } from '../state/userStore'
 import s from './Learn.module.css'
@@ -230,123 +224,119 @@ function CategoryModalBody({
   pathway: UserPathway
   onClose: () => void
 }) {
-  const { primary, rest, split } = useMemo(
+  // Pathway-sort then flatten. Track grouping stays visible as a small
+  // label above each group, but the row pattern matches the starter-pack
+  // modal for visual consistency across every dive-in.
+  const { primary, rest } = useMemo(
     () => splitByPathway(tracks, t => t.audience, pathway),
     [tracks, pathway],
   )
+  const orderedTracks = [...primary, ...rest]
+  const allTopicIds = orderedTracks.flatMap(tr => (topicsByTrack[tr.id] ?? []).map(t => t.id))
+  const [pathwayItems, setPathwayItems] = useState<Set<string>>(new Set())
+
+  useEffect(() => {
+    repo.listPathwayItems().then(rows => {
+      setPathwayItems(new Set(rows.filter(r => r.status === 'active').map(r => r.topicId)))
+    })
+  }, [])
+
+  async function addOne(topicId: string) {
+    if (pathwayItems.has(topicId)) return
+    await repo.addPathwayItem(topicId, 'manual')
+    setPathwayItems(prev => new Set(prev).add(topicId))
+  }
+  async function addAll() {
+    const toAdd = allTopicIds.filter(id => !pathwayItems.has(id))
+    if (toAdd.length === 0) return
+    for (const id of toAdd) {
+      await repo.addPathwayItem(id, 'manual')
+    }
+    setPathwayItems(prev => {
+      const next = new Set(prev)
+      toAdd.forEach(id => next.add(id))
+      return next
+    })
+  }
+
+  const inPlan = allTopicIds.filter(id => pathwayItems.has(id)).length
+  const allIn = allTopicIds.length > 0 && inPlan === allTopicIds.length
 
   return (
-    <div style={{ padding: 'var(--space-5) var(--space-5) var(--space-6)' }}>
-      <div style={{
-        display: 'flex',
-        alignItems: 'flex-start',
-        justifyContent: 'space-between',
-        gap: 'var(--space-3)',
-        marginBottom: 'var(--space-5)',
-      }}>
+    <div className={s.starterExpanded}>
+      <div className={s.starterExpandedHead}>
         <div>
-          <div className={s.catCardTitle} style={{ fontSize: 'var(--text-xl)' }}>{category.title}</div>
-          <div className={s.catCardBlurb}>{category.summary}</div>
+          <div className={s.starterCardTitle}>{category.title}</div>
+          <div className={s.starterCardBlurb}>{category.summary}</div>
         </div>
         <button
           type="button"
+          className={s.starterCloseBtn}
           onClick={onClose}
-          aria-label="Close"
-          style={{
-            position: 'relative',
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: 32, height: 32,
-            background: 'var(--bg-card)',
-            border: '1px solid var(--hair-strong)',
-            borderRadius: 'var(--radius-sm)',
-            color: 'var(--ink-2)',
-            cursor: 'pointer',
-            flexShrink: 0,
-          }}
+          aria-label="Close category"
         >
           <X size={16} strokeWidth={2} />
         </button>
       </div>
 
-      {primary.map(track => (
-        <TrackSection
-          key={track.id}
-          track={track}
-          topics={topicsByTrack[track.id] ?? []}
-          mastery={mastery}
-          pathway={pathway}
-        />
-      ))}
-
-      {split && rest.length > 0 && (
-        <Disclosure
-          label="Everything else in this category"
-          meta={`${rest.length} ${rest.length === 1 ? 'track' : 'tracks'}`}
-          defaultOpen={!shouldCollapseRestByDefault(pathway)}
-        >
-          {rest.map(track => (
-            <TrackSection
-              key={track.id}
-              track={track}
-              topics={topicsByTrack[track.id] ?? []}
-              mastery={mastery}
-              pathway={pathway}
-            />
-          ))}
-        </Disclosure>
-      )}
-    </div>
-  )
-}
-
-function TrackSection({
-  track, topics, mastery, pathway,
-}: {
-  track: Track
-  topics: Topic[]
-  mastery: Record<string, number>
-  pathway: UserPathway
-}) {
-  return (
-    <Section
-      title={
-        <span style={{ display: 'inline-flex', alignItems: 'baseline', gap: 8 }}>
-          {track.title}
-          <AudienceBadge audience={track.audience} pathway={pathway} />
-        </span>
-      }
-      meta={track.summary}
-    >
-      <div className={grid}>
-        {topics.map(topic => {
-          const score = mastery[topic.id] ?? 0
-          const status = masteryStatus(score)
-          const label = MASTERY_LABEL[status]
+      <div className={s.modalTrackStack}>
+        {orderedTracks.map(track => {
+          const topics = topicsByTrack[track.id] ?? []
+          if (topics.length === 0) return null
           return (
-            <Link key={topic.id} to={`/learn/topic/${topic.id}`} style={{ color: 'inherit' }}>
-              <Tile>
-                <TileRow>
-                  <TileTitle>{topic.title}</TileTitle>
-                  <ArrowRight size={16} />
-                </TileRow>
-                <TileMeta>{topic.summary}</TileMeta>
-                <div style={{ marginTop: 'var(--space-2)' }}>
-                  <ProgressBar value={score} />
-                </div>
-                <TileRow>
-                  <Chip variant={score >= MASTERY_THRESHOLD ? 'mastery' : score >= PASS_THRESHOLD ? 'accent' : undefined}>
-                    {label}
-                  </Chip>
-                  <TileMeta>{Math.round(score * 100)}%</TileMeta>
-                </TileRow>
-              </Tile>
-            </Link>
+            <div key={track.id}>
+              <div className={s.modalTrackLabel}>
+                <span>{track.title}</span>
+                <AudienceBadge audience={track.audience} pathway={pathway} />
+              </div>
+              <ul className={s.starterTopicList}>
+                {topics.map(t => {
+                  const already = pathwayItems.has(t.id)
+                  const score = mastery[t.id] ?? 0
+                  return (
+                    <li key={t.id} className={s.starterTopicRow}>
+                      <Link to={`/learn/topic/${t.id}`} className={s.starterTopicBody}>
+                        <span className={s.starterTopicTitle}>{t.title}</span>
+                        <span className={s.starterTopicSummary}>{t.summary}</span>
+                        {score > 0 && (
+                          <span className={s.modalTopicProgress}>{Math.round(score * 100)}% mastered</span>
+                        )}
+                      </Link>
+                      <button
+                        type="button"
+                        className={`${s.starterTopicBtn} ${already ? s.starterTopicBtnOn : ''}`}
+                        onClick={() => addOne(t.id)}
+                        disabled={already}
+                        aria-label={already ? 'Already in plan' : `Add ${t.title} to plan`}
+                        title={already ? 'Already in plan' : 'Add to plan'}
+                      >
+                        {already
+                          ? <Check size={14} strokeWidth={2} />
+                          : <Plus size={14} strokeWidth={2} />}
+                      </button>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
           )
         })}
       </div>
-    </Section>
+
+      <div className={s.starterExpandedFoot}>
+        <span className={s.starterCardFoot}>
+          {inPlan} of {allTopicIds.length} in plan
+        </span>
+        <button
+          type="button"
+          className={s.starterAddAllBtn}
+          onClick={addAll}
+          disabled={allIn}
+        >
+          {allIn ? 'All added' : `Add all ${allTopicIds.length}`}
+        </button>
+      </div>
+    </div>
   )
 }
 

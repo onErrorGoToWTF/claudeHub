@@ -494,3 +494,28 @@
   color: var(--ink-3);
   font-weight: 500;
 }
+
+/* Category modal internals — track labels between groups + topic meta. */
+.modalTrackStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.modalTrackLabel {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin: 4px 2px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.modalTopicProgress {
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--mastery-ink);
+}
