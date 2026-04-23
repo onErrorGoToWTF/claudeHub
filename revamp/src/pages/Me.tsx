@@ -48,9 +48,17 @@ export function Me() {
       const touched = topicsInCat.filter(t => (mastery[t.id] ?? 0) > 0)
       const mastered = topicsInCat.filter(t => (mastery[t.id] ?? 0) >= MASTERY_THRESHOLD)
       const completed = topicsInCat.filter(t => (mastery[t.id] ?? 0) >= PASS_THRESHOLD)
-      const avgScore = topicsInCat.length === 0 ? 0
+      // Grade only considers touched topics. Untouched topics don't lower
+      // the grade — you can't fail what you haven't tried. If nothing's
+      // been touched the card renders without a letter grade.
+      const gradeScore = touched.length === 0 ? null
+        : touched.reduce((acc, t) => acc + (mastery[t.id] ?? 0), 0) / touched.length
+      // Progress bar still reflects coverage vs. total — "how much of this
+      // category have you actually learned," which IS affected by untouched
+      // topics. Otherwise a single mastered topic would peg the bar at 100%.
+      const coverage = topicsInCat.length === 0 ? 0
         : topicsInCat.reduce((acc, t) => acc + (mastery[t.id] ?? 0), 0) / topicsInCat.length
-      return { cat, total: topicsInCat.length, touched: touched.length, completed: completed.length, mastered: mastered.length, avgScore }
+      return { cat, total: topicsInCat.length, touched: touched.length, completed: completed.length, mastered: mastered.length, gradeScore, coverage }
     })
   }, [categories, topics, tracksById, mastery])
 
@@ -214,20 +222,22 @@ export function Me() {
 }
 
 function CategoryCard({ stats }: { stats: {
-  cat: Category; total: number; touched: number; completed: number; mastered: number; avgScore: number
+  cat: Category; total: number; touched: number; completed: number; mastered: number
+  gradeScore: number | null; coverage: number
 } }) {
-  const pct = stats.total === 0 ? 0 : stats.avgScore
-  const grade = letterGrade(pct)
   return (
     <div className={styles.catCard}>
       <div className={styles.catHead}>
         <span className={styles.catTitle}>{stats.cat.title}</span>
-        <span className={styles.catGrade}>{grade}</span>
+        <span className={styles.catGrade}>
+          {stats.gradeScore === null ? '—' : letterGrade(stats.gradeScore)}
+        </span>
       </div>
-      <ProgressBar value={pct} />
+      <ProgressBar value={stats.coverage} />
       <div className={styles.catMeta}>
         {stats.completed} of {stats.total} completed
         {stats.mastered > 0 && <> · {stats.mastered} mastered</>}
+        {stats.gradeScore === null && <> · no quizzes yet</>}
       </div>
     </div>
   )
