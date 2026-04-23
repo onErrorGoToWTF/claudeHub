@@ -61,9 +61,15 @@ export function shouldCollapseRestByDefault(p: UserPathway): boolean {
  *  the one that matters most for the active pathway when possible. */
 export function audienceBadge(p: UserPathway, audience?: Audience[]): Audience | null {
   if (!audience || audience.length === 0) return null
+  // Audience that covers every pathway = "universal" — no badge needed; it
+  // isn't signalling anything specific. Otherwise alphabetical-first picks
+  // a random-looking label for universal content.
+  if (audience.length >= 5) return null
   if (audience.length === 1) return audience[0]
-  // Prefer the one that matches the active pathway, if any.
-  if (p !== 'all' && p !== 'dev' && audience.includes(p)) return p
+  // Prefer the one that matches the active pathway, for every pathway
+  // including dev. (Earlier exclusion of dev produced the wrong result —
+  // a dev user on universal content alphabetical-sorted to "dev" anyway.)
+  if (p !== 'all' && audience.includes(p)) return p
   // Otherwise first alphabetical for stability.
   const sorted = [...audience].sort()
   return sorted[0] ?? null

@@ -232,6 +232,7 @@ Reminders run on a schedule (weekly / biweekly, specific day + time). Leads get 
     summary: 'Working with Claude day-to-day — meetings, documents, decisions, comms. Not coding. For leaders and knowledge workers.',
     url: 'https://claude.ai',
     tags: ['claude', 'workflow', 'leadership', 'beginner'],
+    audience: ['office'],
     pinned: true,
     addedAt: L(0),
     body: `
