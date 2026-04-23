@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { LayoutDashboard, BookOpen, FolderGit2, Library as LibraryIcon, Search } from 'lucide-react'
 import { GlobalSearch } from '../ui/GlobalSearch'
 import { UserMenu } from '../ui/UserMenu'
@@ -67,6 +67,10 @@ export function AppShell({ children }: { children: ReactNode }) {
       </header>
 
       <main className={styles.main}>{children}</main>
+
+      <footer className={styles.appFooter}>
+        <Link to="/colophon" className={styles.colophonLink}>Colophon</Link>
+      </footer>
 
       <GlobalSearch open={searchOpen} onClose={() => setSearchOpen(false)} />
 

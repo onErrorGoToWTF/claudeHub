@@ -6,6 +6,7 @@ import { Dashboard } from '../pages/Dashboard'
 import { Learn } from '../pages/Learn'
 import { CustomPathway } from '../pages/CustomPathway'
 import { Me } from '../pages/Me'
+import { Colophon } from '../pages/Colophon'
 import { TopicDetail } from '../pages/TopicDetail'
 import { LessonView } from '../pages/LessonView'
 import { QuizView } from '../pages/QuizView'
@@ -69,6 +70,7 @@ export function App() {
             <Route path="/library/:id" element={<LibraryDetail />} />
             <Route path="/me" element={<Me />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/colophon" element={<Colophon />} />
             {/* Legacy: /onboarding now redirects to home — onboarding retired. */}
             <Route path="/onboarding" element={<Navigate to="/" replace />} />
             <Route path="*" element={<Dashboard />} />
