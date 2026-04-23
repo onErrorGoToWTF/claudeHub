@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, BookOpen, CircleCheckBig, HelpCircle, RotateCcw, Lock } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpen, CircleCheckBig, HelpCircle, RotateCcw, Lock, Plus, Check } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Lesson, Quiz, Topic, Progress, LibraryItem, Project } from '../db/types'
 import { PageHeader, Section, Tile, TileTitle, TileMeta, TileRow, Chip, ProgressBar } from '../ui'
@@ -17,6 +17,7 @@ export function TopicDetail() {
   const [related, setRelated] = useState<{
     topics: Topic[]; prereqs: Topic[]; library: LibraryItem[]; projects: Project[]
   }>({ topics: [], prereqs: [], library: [], projects: [] })
+  const [inPlan, setInPlan] = useState<boolean | null>(null)
 
   useEffect(() => {
     ;(async () => {
@@ -37,10 +38,11 @@ export function TopicDetail() {
         const prereqIds = t.prereqTopicIds ?? []
         const relIds    = t.relatedTopicIds ?? []
         const relLibIds = t.relatedLibraryIds ?? []
-        const [allTopics, library, allProjects] = await Promise.all([
+        const [allTopics, library, allProjects, upi] = await Promise.all([
           repo.listTopics(),
           Promise.all(relLibIds.map(id => repo.getLibraryItem(id))),
           repo.listProjects(),
+          repo.listPathwayItems(),
         ])
         const topicsById = new Map(allTopics.map(x => [x.id, x]))
         const projects = allProjects.filter(p =>
@@ -52,9 +54,21 @@ export function TopicDetail() {
           library: library.filter((x): x is LibraryItem => !!x),
           projects,
         })
+        setInPlan(upi.some(r => r.topicId === topicId && r.status === 'active'))
       }
     })()
   }, [topicId])
+
+  async function togglePlan() {
+    if (inPlan === null) return
+    if (inPlan) {
+      await repo.removeFromPlan(topicId)
+      setInPlan(false)
+    } else {
+      await repo.addPathwayItem(topicId, 'manual')
+      setInPlan(true)
+    }
+  }
 
   if (topic === undefined) return <div className="page" />
   if (topic === null) {
@@ -79,7 +93,31 @@ export function TopicDetail() {
       }}>
         <ArrowLeft size={14} /> Back to Learn
       </Link>
-      <PageHeader eyebrow="Topic" title={topic.title} subtitle={topic.summary} />
+      <PageHeader
+        eyebrow="Topic"
+        title={topic.title}
+        subtitle={topic.summary}
+        right={inPlan !== null ? (
+          <button
+            type="button"
+            onClick={togglePlan}
+            aria-pressed={inPlan}
+            title={inPlan ? 'In your plan — tap to remove' : 'Add to your plan'}
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              padding: '6px 12px', fontSize: 'var(--text-xs)', fontWeight: 500,
+              color: inPlan ? 'var(--mastery-ink)' : 'var(--ink-2)',
+              background: inPlan ? 'var(--mastery-surface)' : 'var(--bg-card)',
+              border: `1px solid ${inPlan ? 'var(--mastery-border)' : 'var(--hair-strong)'}`,
+              borderRadius: 'var(--radius-sm)',
+              cursor: 'pointer',
+            }}
+          >
+            {inPlan ? <Check size={13} strokeWidth={2} /> : <Plus size={13} strokeWidth={2} />}
+            {inPlan ? 'In plan' : 'Add to plan'}
+          </button>
+        ) : undefined}
+      />
 
       {/* Tags row — quiet, under the header */}
       {topic.tags && topic.tags.length > 0 && (

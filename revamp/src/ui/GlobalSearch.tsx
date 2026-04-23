@@ -2,12 +2,37 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   Search, X, BookOpen, FolderGit2, Library as LibraryIcon, GraduationCap,
+  History,
 } from 'lucide-react'
 import { repo } from '../db/repo'
 import type { Lesson, LibraryItem, Project, Topic, Track } from '../db/types'
 import { isPrimaryForPathway } from '../lib/audience'
 import { useUserStore } from '../state/userStore'
 import styles from './ui.module.css'
+
+// Recent-searches persistence. Up to 5 distinct queries, MRU-first, stored
+// locally. Committed on navigation (not on every keystroke) so transient
+// typing doesn't pollute history.
+const RECENT_KEY = 'aiu:recentSearches'
+const RECENT_MAX = 5
+function loadRecent(): string[] {
+  try {
+    const raw = localStorage.getItem(RECENT_KEY)
+    if (!raw) return []
+    const parsed = JSON.parse(raw)
+    return Array.isArray(parsed) ? parsed.filter(x => typeof x === 'string').slice(0, RECENT_MAX) : []
+  } catch { return [] }
+}
+function saveRecent(q: string, current: string[]): string[] {
+  const norm = q.trim()
+  if (norm.length < 2) return current
+  const next = [norm, ...current.filter(x => x.toLowerCase() !== norm.toLowerCase())].slice(0, RECENT_MAX)
+  try { localStorage.setItem(RECENT_KEY, JSON.stringify(next)) } catch { /* quota etc */ }
+  return next
+}
+function clearRecent() {
+  try { localStorage.removeItem(RECENT_KEY) } catch { /* ignore */ }
+}
 
 type Hit = {
   id: string
@@ -26,7 +51,11 @@ export function GlobalSearch({ open, onClose }: { open: boolean; onClose: () => 
     tracks: Track[]; topics: Topic[]; lessons: Lesson[];
     projects: Project[]; library: LibraryItem[];
   } | null>(null)
+  const [recent, setRecent] = useState<string[]>([])
   const inputRef = useRef<HTMLInputElement>(null)
+
+  // Load recent searches whenever the modal opens.
+  useEffect(() => { if (open) setRecent(loadRecent()) }, [open])
 
   // Load the search index once the modal opens.
   useEffect(() => {
@@ -128,8 +157,18 @@ export function GlobalSearch({ open, onClose }: { open: boolean; onClose: () => 
   }, [query])
 
   function activate(h: Hit) {
+    saveRecent(query, recent)
     nav(h.to)
     onClose()
+  }
+
+  function applyRecent(q: string) {
+    setQuery(q)
+    inputRef.current?.focus()
+  }
+  function handleClearRecent() {
+    clearRecent()
+    setRecent([])
   }
 
   function onInputKey(e: React.KeyboardEvent<HTMLInputElement>) {
@@ -174,7 +213,34 @@ export function GlobalSearch({ open, onClose }: { open: boolean; onClose: () => 
         <div className={styles.searchResults} role="status" aria-live="polite">
           {query.trim() === '' ? (
             <div className={styles.searchHint}>
-              Start typing to search across Learn, Projects, and Library.
+              {recent.length > 0 ? (
+                <div className={styles.recentWrap}>
+                  <div className={styles.recentHead}>
+                    <span className={styles.recentLabel}>
+                      <History size={12} strokeWidth={1.75} /> Recent
+                    </span>
+                    <button
+                      type="button"
+                      className={styles.recentClear}
+                      onClick={handleClearRecent}
+                    >Clear</button>
+                  </div>
+                  <div className={styles.recentChips}>
+                    {recent.map(r => (
+                      <button
+                        key={r}
+                        type="button"
+                        className={styles.recentChip}
+                        onClick={() => applyRecent(r)}
+                      >{r}</button>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <>
+                  Start typing to search across Learn, Projects, and Library.
+                </>
+              )}
               <div className={styles.searchKey}>Esc to close · ↑↓ to navigate · Enter to open</div>
             </div>
           ) : hits.length === 0 ? (
