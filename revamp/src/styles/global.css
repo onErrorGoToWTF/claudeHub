@@ -93,6 +93,11 @@ button {
 
 input, textarea, select {
   font: inherit;
+  /* iOS Safari auto-zooms into any form control rendered below 16px and
+     deliberately doesn't auto-zoom back — leaves the page stranded at
+     a zoomed scale. 16px here opts us out of that behavior entirely
+     without viewport-scale hacks (which break pinch-zoom + fail WCAG). */
+  font-size: 16px;
   color: var(--ink-1);
   background: var(--bg-card);
   border: 1px solid var(--hair);

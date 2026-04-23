@@ -256,6 +256,9 @@
   padding: 1px 6px;
   margin: 0 2px;
   font: inherit;
+  /* iOS auto-zoom prevention — monospace family is inherited from parent,
+     but size must be >= 16px to stop Safari from zooming on focus. */
+  font-size: 16px;
   color: #ffd479;
   background: rgba(255, 212, 121, 0.08);
   border: 1px solid rgba(255, 212, 121, 0.45);
@@ -277,7 +280,7 @@
 }
 .shortInput {
   width: 100%;
-  font-size: var(--text-md);
+  font-size: 16px; /* iOS auto-zoom prevention (>= 16px on form fields) */
   color: var(--ink-1);
   background: transparent;
   border: 0;
@@ -409,7 +412,7 @@
   width: 100%;
   box-sizing: border-box;
   padding: 6px 8px;
-  font-size: 12px;
+  font-size: 16px; /* iOS auto-zoom prevention */
   font-family: inherit;
   color: var(--ink-1);
   background: var(--bg-canvas);
