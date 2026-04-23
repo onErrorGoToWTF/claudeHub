@@ -8,12 +8,14 @@
     <meta name="theme-color" content="#ece9e2" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#1c1a17" media="(prefers-color-scheme: dark)" />
     <script>
-      // No-flash theme init: resolve stored or system preference before paint.
+      // No-flash theme init: light by default. We only honor an explicit
+      // user choice stored in localStorage — OS-level dark mode is
+      // intentionally ignored so first-run + private browsing always
+      // land in the light palette the design is tuned for.
       (function () {
         try {
           var stored = localStorage.getItem('ai-theme'); // 'light' | 'dark' | null
-          var mq = window.matchMedia('(prefers-color-scheme: dark)');
-          var theme = stored || (mq.matches ? 'dark' : 'light');
+          var theme = stored === 'dark' ? 'dark' : 'light';
           document.documentElement.setAttribute('data-theme', theme);
         } catch (e) {
           document.documentElement.setAttribute('data-theme', 'light');
