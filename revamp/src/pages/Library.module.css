@@ -93,6 +93,26 @@
 }
 .chipClear:hover { filter: brightness(0.95); }
 
+/* "Clear all" — styled a notch quieter than individual clear chips so it
+   reads as a meta-action on the row, not as another filter chip. */
+.chipClearAll {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--ink-3);
+  background: transparent;
+  border: 1px solid var(--hair);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color var(--dur-2) var(--ease-premium), border-color var(--dur-2) var(--ease-premium);
+}
+.chipClearAll:hover {
+  color: var(--danger-ink);
+  border-color: var(--danger-border);
+}
+
 .resultMeta {
   margin-left: auto;
   font-size: var(--text-xs);

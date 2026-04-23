@@ -270,6 +270,21 @@ export function Library() {
                 {SORT_LABEL[sort]} <X size={13} strokeWidth={2} />
               </button>
             )}
+            {activeFiltersCount >= 2 && (
+              <button
+                type="button"
+                className={styles.chipClearAll}
+                onClick={() => {
+                  setFacet(DEFAULT_FACET)
+                  setSort(DEFAULT_SORT)
+                  writeTagFilters([])
+                  setSavedOnly(false)
+                }}
+                aria-label="Clear all filters"
+              >
+                Clear all
+              </button>
+            )}
           </div>
         )}
 
