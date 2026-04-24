@@ -573,11 +573,11 @@ export function AtomComposition({
     const iRect = iRef.current.getBoundingClientRect()
     const canvasRect = atomLayerRef.current.getBoundingClientRect()
     // Empirical font-metric nudges: observed landings sat slightly below
-    // + slightly left of the visual i-dot. -3 (was -2) shifts the target
-    // ~1px up and +0.5 on X nudges it a half-pixel right. Both are
-    // typeface-dependent; retune on font swap.
+    // + slightly left of the visual i-dot. -2.5 on Y and +0.5 on X place
+    // the landings right on the dot. Both are typeface-dependent; retune
+    // on font swap.
     const dotX = iRect.left + iRect.width / 2 + 0.5
-    const dotY = iRect.top + iRect.height * 0.32 - 3
+    const dotY = iRect.top + iRect.height * 0.32 - 2.5
     const local = projectPixelToLocal(dotX, dotY, canvasRect, camZ)
     setSettleTarget(local)
   }, [settle, aiHalf, atomLeft, compact, camZ])
