@@ -36,6 +36,12 @@ const ORBITS: OrbitConfig[] = [
 
 const ELECTRON_COLOR = '#ffffff'
 
+/* Duration of the .aiPulse strike-flicker. Must match the `aiStrike`
+   keyframe animation duration in LabsAtom.module.css — the JS timer
+   here is what clears the pulsing class so the CSS transition can
+   re-engage and fade/hold the text back to its rest state. */
+const PULSE_DURATION_MS = 560
+
 const N_TRAIL = 96
 const ARC = Math.PI * 0.62
 
@@ -252,7 +258,7 @@ function Electron({
         />
       </mesh>
       <mesh ref={haloRef} scale={0.0001}>
-        <sphereGeometry args={[0.042, 32, 32]} />
+        <sphereGeometry args={[0.050, 32, 32]} />
         <meshBasicMaterial
           ref={haloMatRef}
           color={color}
@@ -263,7 +269,7 @@ function Electron({
         />
       </mesh>
       <mesh ref={headRef}>
-        <sphereGeometry args={[0.042, 32, 32]} />
+        <sphereGeometry args={[0.050, 32, 32]} />
         <meshBasicMaterial
           ref={headMatRef}
           color={color}
@@ -408,14 +414,14 @@ export function AtomComposition({
     setLandedCount((c) => c + 1)
   }, [])
 
-  // On each landing, fire the 420ms .aiPulse flash. 'ai' snaps bright +
+  // On each landing, fire the .aiPulse flash. 'ai' snaps bright +
   // flickers, then CSS transition either fades it back to debossed
   // (intermediate strikes) or leaves it at full brightness (final strike,
   // when allLanded below is true).
   useEffect(() => {
     if (strikeCount === 0) return
     setPulsing(true)
-    const timer = setTimeout(() => setPulsing(false), 420)
+    const timer = setTimeout(() => setPulsing(false), PULSE_DURATION_MS)
     return () => clearTimeout(timer)
   }, [strikeCount])
 
