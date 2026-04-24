@@ -118,8 +118,12 @@
   --glass-highlight: rgba(255, 255, 255, 0.6);  /* inner top highlight */
 
   /* ---------- chrome surfaces (theme-aware) ---------- */
-  --topbar-bg-top:    rgba(236, 233, 226, 0.92);
-  --topbar-bg-bottom: rgba(236, 233, 226, 0.76);
+  /* Warm-taupe band: darker than page canvas so the topbar reads as a
+     distinct chrome layer and the animated atom logo's white electrons
+     + glow pop on contrast. Keep the gradient (0.92 → 0.76 alpha) so
+     the backdrop-filter blur still blends with the page below. */
+  --topbar-bg-top:    rgba(190, 176, 152, 0.94);
+  --topbar-bg-bottom: rgba(190, 176, 152, 0.80);
   --wash-color-1:     rgba(80, 72, 58, 0.08);
   --wash-color-2:     rgba(80, 72, 58, 0.10);
   --grid-line:        rgba(20, 19, 18, 0.035);
