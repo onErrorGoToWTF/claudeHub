@@ -60,6 +60,11 @@ const SETTLE_DURATION_T = 2 * Math.PI         // 1 lap to spiral in
 // peak (10% of 560ms = 56ms in) to fire before impact, so the text is
 // already mid-flicker when the electron hits the i-dot.
 const STRIKE_LEAD_T = 0.5
+// After the final electron lands + the pulse completes, hold the 'ai'
+// at full glow for a beat, then decay the white glow stack to zero so
+// the wordmark resolves to clean flat white text and the scene settles.
+const POST_STRIKE_HOLD_MS = 700
+const GLOW_DECAY_MS = 1500
 
 // Scene-wide group rotation applied around the atom. Exposed so target
 // world→local conversion in AtomComposition matches exactly.
@@ -370,11 +375,19 @@ function projectPixelToLocal(
 export // Flash-only style. On light bg (default): rest is debossed dark;
 // strike snaps white with glow. On dark bg (`onDark`): rest is a soft
 // white-gray, strike pumps to full white + glow. Both return to rest
-// via the CSS transition after the 420ms pulse. `compact` (topbar)
+// via the CSS transition after the 560ms pulse. `compact` (topbar)
 // drops the multi-layer glow stack — the wordmark reads flat against
-// the chrome band instead of halo'd.
-function buildAiStyle(progress: number, onDark: boolean, compact: boolean): CSSProperties {
+// the chrome band instead of halo'd. `glowMultiplier` (0..1) scales
+// only the white glow stack so the post-final-strike decay can fade
+// the halo to zero while the text stays lit white.
+function buildAiStyle(
+  progress: number,
+  onDark: boolean,
+  compact: boolean,
+  glowMultiplier: number,
+): CSSProperties {
   const g = progress
+  const gm = glowMultiplier
   if (onDark) {
     const alpha = 0.55 + g * 0.4
     const embossAlpha = (1 - g) * 0.18
@@ -384,10 +397,10 @@ function buildAiStyle(progress: number, onDark: boolean, compact: boolean): CSSP
         ? 'none'
         : [
             `0 1px 1px rgba(255, 255, 255, ${embossAlpha.toFixed(3)})`,
-            `0 0 3px rgba(255, 255, 255, ${(0.9 * g).toFixed(3)})`,
-            `0 0 6px rgba(255, 255, 255, ${(0.65 * g).toFixed(3)})`,
-            `0 0 12px rgba(255, 255, 255, ${(0.4 * g).toFixed(3)})`,
-            `0 0 22px rgba(255, 255, 255, ${(0.2 * g).toFixed(3)})`,
+            `0 0 3px rgba(255, 255, 255, ${(0.9 * g * gm).toFixed(3)})`,
+            `0 0 6px rgba(255, 255, 255, ${(0.65 * g * gm).toFixed(3)})`,
+            `0 0 12px rgba(255, 255, 255, ${(0.4 * g * gm).toFixed(3)})`,
+            `0 0 22px rgba(255, 255, 255, ${(0.2 * g * gm).toFixed(3)})`,
           ].join(', '),
     }
   }
@@ -400,10 +413,10 @@ function buildAiStyle(progress: number, onDark: boolean, compact: boolean): CSSP
       ? 'none'
       : [
           `0 -1px 1px rgba(0, 0, 0, ${debossAlpha.toFixed(3)})`,
-          `0 0 3px rgba(255, 255, 255, ${(0.9 * g).toFixed(3)})`,
-          `0 0 6px rgba(255, 255, 255, ${(0.65 * g).toFixed(3)})`,
-          `0 0 12px rgba(255, 255, 255, ${(0.4 * g).toFixed(3)})`,
-          `0 0 22px rgba(255, 255, 255, ${(0.2 * g).toFixed(3)})`,
+          `0 0 3px rgba(255, 255, 255, ${(0.9 * g * gm).toFixed(3)})`,
+          `0 0 6px rgba(255, 255, 255, ${(0.65 * g * gm).toFixed(3)})`,
+          `0 0 12px rgba(255, 255, 255, ${(0.4 * g * gm).toFixed(3)})`,
+          `0 0 22px rgba(255, 255, 255, ${(0.2 * g * gm).toFixed(3)})`,
         ].join(', '),
   }
 }
@@ -429,6 +442,7 @@ export function AtomComposition({
   const [strikeCount, setStrikeCount] = useState(0)
   const [landedCount, setLandedCount] = useState(0)
   const [pulsing, setPulsing] = useState(false)
+  const [glowMultiplier, setGlowMultiplier] = useState(1)
 
   // Camera closer for the compact logo so the atom fills the smaller canvas.
   const camZ = compact ? 5.5 : 11
@@ -460,6 +474,28 @@ export function AtomComposition({
   // post-final-strike the progress doesn't decay to debossed.
   const allLanded = settle === true && landedCount >= totalElectrons
   const progress = pulsing ? 1 : allLanded ? 1 : 0
+
+  // After the final landing + a short hold at full glow, decay the
+  // white glow stack to zero so the wordmark resolves to clean flat
+  // white text. Compact (topbar) has no glow to decay — skip.
+  useEffect(() => {
+    if (!allLanded || compact) return
+    let rafId: number | undefined
+    const holdTimer = setTimeout(() => {
+      const startTime = performance.now()
+      const tick = (now: number) => {
+        const elapsed = now - startTime
+        const p = Math.min(1, elapsed / GLOW_DECAY_MS)
+        setGlowMultiplier(1 - easeOutCubic(p))
+        if (p < 1) rafId = requestAnimationFrame(tick)
+      }
+      rafId = requestAnimationFrame(tick)
+    }, POST_STRIKE_HOLD_MS)
+    return () => {
+      clearTimeout(holdTimer)
+      if (rafId !== undefined) cancelAnimationFrame(rafId)
+    }
+  }, [allLanded, compact])
 
   // First pass: measure 'ai' width + (compact only) the pixel offset of
   // ai's center within the cell, so the atom canvas's `left` can be set
@@ -541,7 +577,7 @@ export function AtomComposition({
         <span
           ref={aiRef}
           className={`${s.ai} ${pulsing ? pulseClassForStrike(strikeCount, s) : ''}`}
-          style={buildAiStyle(progress, onDark ?? false, compact ?? false)}
+          style={buildAiStyle(progress, onDark ?? false, compact ?? false, glowMultiplier)}
         >
           a<span ref={iRef}>i</span>
         </span>
