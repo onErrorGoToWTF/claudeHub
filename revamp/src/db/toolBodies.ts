@@ -40,6 +40,23 @@ Hooks (in \`.claude/settings.json\`) fire on events like \`PreToolUse\`, \`PostT
 - **Use it for:** multi-file refactors, migrations, net-new features touching 5+ files.
 - **Skip it for:** one-line fixes, throwaway scripts, whole-app scaffolds (a scaffolder is better).
 
+## Working remotely (phone / second device)
+
+Claude Code supports **remote control** — you can send prompts to an active session from your phone or another device.
+
+- Run \`/remote-control\` in your session before stepping away from your laptop.
+- Your phone connects to the running session and can send prompts, review diffs, approve tool calls.
+- The session has full access to your project files, git history, and tools — everything you'd have at the keyboard.
+
+This is different from **Dispatch** in the Claude web app. Dispatch runs tasks in Anthropic's cloud sandbox — it cannot see your local project folder, your git repo, or your installed tools. Dispatch is useful for standalone research or writing tasks that don't need local files. But for anything involving your codebase, remote control is the right choice.
+
+**When to use which:**
+
+- **Remote control** — you're building in a repo and want to step away from the laptop. Full project access. Runs on your machine.
+- **Dispatch** — you want Claude to do background research, draft a document, or analyze an uploaded file. No local access needed. Runs in the cloud.
+
+**Gotcha (VS Code):** if you type locally in VS Code while a remote session is active, VS Code reclaims focus and kills the phone session. Run \`/remote-control\` again as your last step before leaving the keyboard.
+
 ## Keeping it on rails
 
 - Write a \`CLAUDE.md\` at the repo root — user instructions, style rules, gotchas. Claude reads it every session.
@@ -2406,12 +2423,58 @@ Command Palette → \`Preferences: Open Settings (JSON)\`.
 - \`F2\` — rename symbol everywhere.
 - \`Option/Alt+↑/↓\` — move line up/down.
 
+## Claude Code in VS Code
+
+The Claude Code extension runs inside VS Code as a panel. You get full agent capabilities (file edits, terminal, git) without leaving the editor. Remote control (\`/remote-control\`) lets you send prompts from your phone — but if you type locally in VS Code, it reclaims focus and kills the phone session. Run \`/remote-control\` again before stepping away.
+
+For seamless cross-device session handoff, see the Zed entry — its remote model keeps both connections alive simultaneously.
+
 ## Sources
 
 - [VS Code — main site](https://code.visualstudio.com/)
 - [VS Code — docs](https://code.visualstudio.com/docs)
 - [VS Code — keybindings](https://code.visualstudio.com/docs/getstarted/keybindings)
 - [VS Code — Remote Development](https://code.visualstudio.com/docs/remote/remote-overview)
+`.trim(),
+
+  'i.zed': `
+**TL;DR** — Zed is a GPU-accelerated native editor with built-in Claude integration and the smoothest cross-device session handoff of any coding environment — start a Claude session on your laptop, pick it up on your phone, and both stay connected.
+
+## Why it exists
+
+Zed is built from scratch in Rust — no Electron, no web runtime. It's fast in a way VS Code can't be: instant file open, sub-frame input latency, native GPU rendering. Built by the team behind Atom and Tree-sitter.
+
+## Claude integration
+
+Claude is built into Zed as a first-class AI assistant — not an extension, not a plugin. You get:
+
+- **Inline edits** — select code, describe the change.
+- **Chat panel** — conversation with full project context.
+- **Agent mode** — multi-file autonomous work, similar to Claude Code.
+
+## Remote sessions — Zed's standout feature
+
+Zed's remote development model keeps **parallel connections alive**. Start a Claude session on your laptop, walk away, open Zed on your phone or another device, and you're in the same session — no commands to run, no reconnection steps. Both devices can interact with the session simultaneously.
+
+This is genuinely better than VS Code's remote control, where local typing kills the phone session. With Zed, there's no "last step before leaving the keyboard" ritual.
+
+## Trade-offs vs VS Code
+
+- **Smaller extension ecosystem.** No GitLens, no Error Lens, fewer language-specific plugins.
+- **Newer.** Some workflows aren't fully built out yet.
+- **Claude panel UX is simpler** than VS Code's Claude Code extension, which has a richer tool-approval and diff-review interface.
+
+## When to pick Zed
+
+- You want the fastest possible editor and are OK with fewer extensions.
+- Cross-device session handoff matters to your workflow (phone review, couch coding, walking away mid-task).
+- You prefer a native app over Electron.
+
+## Sources
+
+- [Zed — main site](https://zed.dev)
+- [Zed — docs](https://zed.dev/docs)
+- [Zed — AI assistant](https://zed.dev/docs/assistant)
 `.trim(),
 
   'i.cursor': `
