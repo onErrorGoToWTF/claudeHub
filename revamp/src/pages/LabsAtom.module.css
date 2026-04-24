@@ -178,6 +178,54 @@
   display: none;
 }
 
+/* Compact 'i' span is promoted to inline-block + position:relative so
+   the absolute .iDotGlow inside it can anchor to the glyph box. The
+   measurement via iRef still works — getBoundingClientRect reports the
+   same rect for inline vs inline-block for single-char content. */
+.iChar {
+  position: relative;
+  display: inline-block;
+}
+
+/* One-shot pulse over the dot of the lowercase 'i'. Mounts with a key
+   driven by pathname + hover/click counter so remounting restarts the
+   animation. No resting state — forwards fill leaves it at opacity 0
+   so the halo fully disappears and stays gone until the next retrigger. */
+.iDotGlow {
+  position: absolute;
+  top: 0.22em;
+  left: 50%;
+  width: 0.90em;
+  height: 0.90em;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.42) 32%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  pointer-events: none;
+  opacity: 1;
+  animation: iDotGlowPulse 1.8s ease-out forwards;
+  z-index: 1;
+}
+
+@keyframes iDotGlowPulse {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iDotGlow { animation: none; opacity: 0; }
+}
+
 /* Compact 'University' keeps the .university / .universityDark deboss
    or emboss shadow via inheritance — we only bump the color alpha so
    the label reads a bit darker against the warm-grey chrome band than

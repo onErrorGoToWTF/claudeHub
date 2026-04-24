@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { LayoutDashboard, BookOpen, FolderGit2, Library as LibraryIcon, Search } from 'lucide-react'
 import { GlobalSearch } from '../ui/GlobalSearch'
 import { UserMenu } from '../ui/UserMenu'
@@ -18,6 +18,14 @@ const NAV: NavItem[] = [
 export function AppShell({ children }: { children: ReactNode }) {
   const [searchOpen, setSearchOpen] = useState(false)
 
+  // I-dot glow retrigger: React key is (pathname + hover/click counter),
+  // so remounting the glow span restarts its CSS animation on initial
+  // load, any route change, and every hover/click on the brand.
+  const location = useLocation()
+  const [iDotTriggers, setIDotTriggers] = useState(0)
+  const retriggerIDotGlow = () => setIDotTriggers((n) => n + 1)
+  const iDotGlowKey = `${location.pathname}::${iDotTriggers}`
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const mod = e.metaKey || e.ctrlKey
@@ -35,8 +43,12 @@ export function AppShell({ children }: { children: ReactNode }) {
       <header className={styles.topbar}>
         {/* Left cluster: brand only — account moved to the right */}
         <div className={styles.topLeft}>
-          <div className={styles.brand}>
-            <AtomComposition compact settle />
+          <div
+            className={styles.brand}
+            onMouseEnter={retriggerIDotGlow}
+            onClick={retriggerIDotGlow}
+          >
+            <AtomComposition compact settle iDotGlowKey={iDotGlowKey} />
           </div>
         </div>
 

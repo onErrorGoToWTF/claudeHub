@@ -426,11 +426,15 @@ export function AtomComposition({
   settle,
   compact,
   onDark,
+  iDotGlowKey,
 }: {
   onlyPlane?: Plane
   settle?: boolean
   compact?: boolean
   onDark?: boolean
+  // Compact variant only. When the key changes, the i-dot glow span
+  // unmounts + remounts, restarting the 1.8s one-shot CSS pulse.
+  iDotGlowKey?: string | number
 }) {
   const aiRef = useRef<HTMLSpanElement>(null)
   const iRef = useRef<HTMLSpanElement>(null)
@@ -579,7 +583,17 @@ export function AtomComposition({
           className={`${s.ai} ${pulsing ? pulseClassForStrike(strikeCount, s) : ''}`}
           style={buildAiStyle(progress, onDark ?? false, compact ?? false, glowMultiplier)}
         >
-          a<span ref={iRef}>i</span>
+          a
+          <span ref={iRef} className={compact ? s.iChar : undefined}>
+            i
+            {compact && iDotGlowKey !== undefined && (
+              <span
+                key={iDotGlowKey}
+                className={s.iDotGlow}
+                aria-hidden="true"
+              />
+            )}
+          </span>
         </span>
         <span
           className={`${s.university} ${onDark ? s.universityDark : ''} ${compact ? s.universityCompact : ''}`}
