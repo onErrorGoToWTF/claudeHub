@@ -66,6 +66,14 @@ const STRIKE_LEAD_T = 0.5
 const POST_STRIKE_HOLD_MS = 700
 const GLOW_DECAY_MS = 1500
 
+// After each electron's post-pulse rest, hold briefly then fade both
+// the electron body and its halo to zero. At ORBIT_SPEED 3.30 these
+// t-units map to ~700ms hold + ~1500ms fade, matching the CSS
+// glow-stack decay so the 3D scene + text resolve together to a
+// crisp flat-white wordmark with nothing overlaid on the i-dot.
+const POST_LAND_HOLD_T = 2.3
+const POST_LAND_FADE_T = 5.0
+
 // Scene-wide group rotation applied around the atom. Exposed so target
 // world→local conversion in AtomComposition matches exactly.
 const GROUP_ROTATION: [number, number, number] = [Math.PI / 4, Math.PI / 4, 0]
@@ -241,11 +249,20 @@ function Electron({
       const postScale = vis > 0 ? POST_SCALE : 1
       const postHaloScale = vis > 0 ? POST_HALO_SCALE : 0.0001
       if (t >= doneT + PULSE_T) {
-        // Post-pulse rest — scale + halo + opacity determined by vis.
+        // Post-pulse rest — hold at full post-land visibility, then
+        // fade electron body + halo to zero so the final resting state
+        // on the i-dot is nothing (no dot overlay, no halo, just the
+        // crisp typographic 'ai' underneath).
+        const elapsedAfterPulse = t - (doneT + PULSE_T)
+        let fadeMult = 1
+        if (elapsedAfterPulse > POST_LAND_HOLD_T) {
+          const p = Math.min(1, (elapsedAfterPulse - POST_LAND_HOLD_T) / POST_LAND_FADE_T)
+          fadeMult = 1 - easeOutCubic(p)
+        }
         electronScale = postScale
-        electronOpacity = vis
+        electronOpacity = vis * fadeMult
         haloScale = postHaloScale
-        haloOpacity = POST_HALO_OPACITY * vis
+        haloOpacity = POST_HALO_OPACITY * vis * fadeMult
       } else if (t >= doneT) {
         // Pulse window — full-intensity flash, ramps toward vis by p=1.
         const p = (t - doneT) / PULSE_T
@@ -426,15 +443,11 @@ export function AtomComposition({
   settle,
   compact,
   onDark,
-  iDotGlowKey,
 }: {
   onlyPlane?: Plane
   settle?: boolean
   compact?: boolean
   onDark?: boolean
-  // Compact variant only. When the key changes, the i-dot glow span
-  // unmounts + remounts, restarting the 1.8s one-shot CSS pulse.
-  iDotGlowKey?: string | number
 }) {
   const aiRef = useRef<HTMLSpanElement>(null)
   const iRef = useRef<HTMLSpanElement>(null)
@@ -583,17 +596,7 @@ export function AtomComposition({
           className={`${s.ai} ${pulsing ? pulseClassForStrike(strikeCount, s) : ''}`}
           style={buildAiStyle(progress, onDark ?? false, compact ?? false, glowMultiplier)}
         >
-          a
-          <span ref={iRef} className={compact ? s.iChar : undefined}>
-            i
-            {compact && iDotGlowKey !== undefined && (
-              <span
-                key={iDotGlowKey}
-                className={s.iDotGlow}
-                aria-hidden="true"
-              />
-            )}
-          </span>
+          a<span ref={iRef}>i</span>
         </span>
         <span
           className={`${s.university} ${onDark ? s.universityDark : ''} ${compact ? s.universityCompact : ''}`}
