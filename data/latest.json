@@ -1,22 +1,8 @@
 {
-  "generated_at": "2026-04-24T12:54:00.523Z",
+  "generated_at": "2026-04-24T15:00:14.750Z",
   "version": 1,
   "sections": {
     "updates": [
-      {
-        "title": "Anthropic Nec",
-        "url": "https://www.anthropic.com/news/anthropic-nec",
-        "source": "Anthropic",
-        "published": "2026-04-24T04:06:50.000Z",
-        "summary": ""
-      },
-      {
-        "title": "April 23 Postmortem",
-        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
-        "source": "Anthropic Eng",
-        "published": "2026-04-24T00:00:37.000Z",
-        "summary": ""
-      },
       {
         "title": "81k Economics",
         "url": "https://www.anthropic.com/research/81k-economics",
@@ -142,9 +128,58 @@
         "source": "Anthropic",
         "published": "2026-03-31T23:16:54.000Z",
         "summary": ""
+      },
+      {
+        "title": "How Australia Uses Claude",
+        "url": "https://www.anthropic.com/research/how-australia-uses-claude",
+        "source": "Anthropic Research",
+        "published": "2026-03-31T22:35:47.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Project Fetch Robot Dog",
+        "url": "https://www.anthropic.com/research/project-fetch-robot-dog",
+        "source": "Anthropic Research",
+        "published": "2026-03-26T11:07:12.000Z",
+        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic highlights election safeguards on Claude ahead of US midterms - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMTJmVGJYRjE5amhQeDgxcGl1QjZfWVlqWElPQS12X1VvRFZOV2hzdEt6Vi1LbmJfZFJITnJWYURrQXgwYWVOblVGTUFYdHVabDVNYkhUTHZ5MnVKV2NFUHlRcmhTeDdDRm5MdWdZS0hCSW96TG5GVk5vczlsd2pPMkJ0NkpIcEp2T2IwQ21yU25VZjNXMTN6SmFzbEFxWHBkNXZCNVJHMS1qd1ZacHc?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T14:37:35.000Z",
+        "summary": "Anthropic highlights election safeguards on Claude ahead of US midterms Seeking Alpha"
+      },
+      {
+        "title": "Finma Says Immediate Mythos Access Would Pose Systemic Bank Risk",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-24/finma-says-immediate-mythos-access-would-pose-systemic-bank-risk",
+        "source": "Bloomberg",
+        "published": "2026-04-24T14:28:24.000Z",
+        "summary": "Switzerland’s top financial regulator said giving banks quick and easy access to Anthropic PBC’s artificial intelligence tool Mythos would create a severe risk for the country’s financial system."
+      },
+      {
+        "title": "Japanese IT giant NEC tells 30,000 employees to use Anthropic’s Claude - Cybernews",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9xWVlwd2RUWlBBV0gxUU5mMFVtUnI3SV91YjMzV0ZETUpTVzJzUnpwc1dZdUpFQVhPbTZxZGFYV2tyaUZJLVFnbnU4UnF0R242ZTBjN1AtakRQV0xUc0dCUlFITWxZR2pkdjBSRGlFOVM?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T14:11:34.000Z",
+        "summary": "Japanese IT giant NEC tells 30,000 employees to use Anthropic’s Claude Cybernews"
+      },
+      {
+        "title": "'Too Dangerous to Release' Is Becoming AI's New Normal - Time Magazine",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNNFJRdjh2TXlmVGNFeXZOZmpYVTBIVktxNGxDZF9iaWlfc0hPRkZ2czZRVHByQ0dERU1MeEZjN2JhM1RfRko3ZVpiTFFpUTRLM013elVTS0ZxZkNOUXhQVEF3WGNPNHdmWGFzSmV3VURVTC1NSlNkUGVOd3ptUDlzTE1IaFA0WWJaWVFIYzRn?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T13:35:17.000Z",
+        "summary": "'Too Dangerous to Release' Is Becoming AI's New Normal Time Magazine"
+      },
+      {
+        "title": "Weekly news roundup: Tim Cook exits Apple, Meta layoffs intensify and Anthropic investigates Claude - TechTarget",
+        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQMVNLdDBZRkhJQkRCTG9mMkFWMG5CSGhtNGU2WGlncTRaZ0tWNkVIZFpvRHdLSEZLbzZTTmNYSE00N2pDeUp6VFRvXzNydTBkTGJ0Xzl5bzN6LVVObGNqVUdxdTRGOGE0R3NzX2ZiUGJYNC1Mc0ViaG9SUnZ6QUo1VjFpVloyZ2NaaUM3WWl5c2FNNTBUWmMxVTc5dXBpX1VndG4xVTlEV05qMHVVZU8wb0pnSkt4R0ZzbUo2RTF6SGZodXhzcmxJSUdhNG53NVVSRU9KQ2FKV1QtZ3NhQ2F3NXNWNA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T13:08:02.000Z",
+        "summary": "Weekly news roundup: Tim Cook exits Apple, Meta layoffs intensify and Anthropic investigates Claude TechTarget"
+      },
       {
         "title": "Claude Code Skills: The Biggest Opportunity of 2026",
         "url": "https://www.youtube.com/watch?v=c0OMEmj6DFg",
@@ -172,11 +207,11 @@
         "summary": "Anthropic’s Claude is Becoming the AI for Top Earners Yahoo Tech"
       },
       {
-        "title": "Claude Connectors Are No Longer Just For Work, Adds 15 New Personal Apps - PCMag UK",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNc3FhUWNlSUZoaWZSWHBMQU42SGRGbzRoekZhNzEwQXRxWE5CZjJnT29KNUw2TVFWYW5LRW5rblJXVTZCZklqanlMOU94TFYtT1hNckpVV0NnOTQyMVpYZFE5Ul9NcHVQekg3bGsyNXFhcjJwanlnYmZMTDBXR3A5RFkwMmU1bS1Va2lva1lqdWM3ZXJRMDVDS1RLcWZ6NU16RWNROQ?oc=5",
+        "title": "Claude Connectors Are No Longer Just For Work, Adds 15 New Personal Apps - PCMag",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOOVIwWS1qUWFXRFZrZ0pqZldIUGZ5eDVyZGFUYkxqRUViVVlqd1BkSTBtVmkxZHVOXzRsMTRPdy1XZF9qRXR6STdtNmpxRHJlbGxQZXNwaF91UWV1UnR4SnppVmd5UlR2enJIRVo1Tk5lVE9yX0hQQmlTa3NhSjZnVlY4ZXpIR29rdFhTOVE0cmphMm1qRDVBeHo2blQ3aTA?oc=5",
         "source": "Google News",
-        "published": "2026-04-24T11:47:34.000Z",
-        "summary": "Claude Connectors Are No Longer Just For Work, Adds 15 New Personal Apps PCMag UK"
+        "published": "2026-04-24T11:47:49.000Z",
+        "summary": "Claude Connectors Are No Longer Just For Work, Adds 15 New Personal Apps PCMag"
       },
       {
         "title": "Mozilla Says Claude Mythos Helped Find 271 Firefox Bugs - extremetech.com",
@@ -198,6 +233,13 @@
         "source": "Google News",
         "published": "2026-04-24T10:18:00.000Z",
         "summary": "Anthropic's Claude can now book an Uber, play Spotify, and handle other tasks with over dozen everyday ap The Times of India"
+      },
+      {
+        "title": "BoE deputy governor warns on stock market valuations; Anthropic talks with UK over wider Claude Mythos access for banks - TheBanker.com",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9YSzB0VVVmMWN5WnpWNmZqUGZJWk5qeWozb2xSQnJRaXFUYXBDejRFRk4wNVU3Q0VJYm5HZjJzaXZQMXY0QV9obkRvWUVvV0J3M3NDSm12OXhtN0hEeTR5S2NiUWc5VkY3Wk9OdDRPNDFQQ0FtUkoyZHFn?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T10:07:17.000Z",
+        "summary": "BoE deputy governor warns on stock market valuations; Anthropic talks with UK over wider Claude Mythos access for banks TheBanker.com"
       },
       {
         "title": "Anthropic Fixes Claude Code Performance Regression - Let's Data Science",
@@ -244,7 +286,7 @@
       {
         "title": "Show HN: How LLMs Work – Interactive visual guide based on Karpathy's lecture",
         "url": "https://ynarwal.github.io/how-llms-work/",
-        "source": "HN · 109↑",
+        "source": "HN · 175↑",
         "hn_id": "47886517",
         "published": "2026-04-24T06:48:53.000Z",
         "summary": "All content is based on Andrej Karpathy&#x27;s &quot;Intro to Large Language Models&quot; lecture (youtube.com&#x2F;watch?v=7xTGNNLPyMI). I downloaded the transcript and used…"
@@ -255,20 +297,6 @@
         "source": "Google News",
         "published": "2026-04-24T06:17:37.000Z",
         "summary": "Anthropic expands Claude with connectors for Spotify, Uber, Instacart and other consumer apps Storyboard18"
-      },
-      {
-        "title": "Claude Code's product chief says people have serious FOMO over AI's relentless pace - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQM3UxV3psb1RqXzFEUm1FcEx5M1NJUWNCMnNpS00tb1h4RTVoV09wWF9pNWtPNnEtU0JBUjRwdFpGMnp6OFdLcTBELXN6WC1PenE4b2xkU25nSVhTT1dUMENVMEUxU1B4cDZZY0V1U21ZZ29OY0dmTUp5OVJMcElQQnkzdk5nT1BSaUJneWlPZDFGWmdqR0txclphUmdEc3ZVTU1r?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T06:10:00.000Z",
-        "summary": "Claude Code's product chief says people have serious FOMO over AI's relentless pace Business Insider"
-      },
-      {
-        "title": "AI cyber risk alarm: Bain and Co urges firms to act as Claude Mythos raises global security fears - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxORzBjV1p5MWJMaUUwcUtrcDdxazFwaGNxLVpVaTVCQ20yQkV4UTA5N2VuQkdsWDZLWGQwZzhIdk1ULUpYWHJIOE1PSGU0dTNlcEx3TXVnSnRHUUJJTVlHNkpEQUNCNWtqYmppc1dwd1g3bHVsVEtJQVFOOUJyTno2YWk5TjZ2bS1CQ0lOWExmWHJOUjZJUlk1czUxV1VBUGxOa2U3X3FjaVNXellVZkFEQ3V3YlhtN214aklwRDQ4aEpYVUdqdDdXdGxUczBJRHYtNTBRM09VY0xxdS1DaGJaWk9WRVFfZ9IB6wFBVV95cUxOMEVuVGYzY2M3THR2UTlKZUt4YmdWaS01XzRmOWRTVkM2a0lwNEZnMXVXRllrRHEyNkdxSnZMWmlUU1E3RFRWdXJJNnNJc2tUTVBCUExwSkhPNTBGMnkwN2hOVXJBXzhaeHRTZkcyWTJyU3dYUEROVFB4N0pzT1JKNzNGcTFzMFJkYXRlbUpRN1JmQnhCS0hKS05PLURjUDhrcEhEZ2VrSGFVbFRNeFBqeGozTFhJWmh6dkcweUlxOU01c0czWUJ2LTJKRlBtcXdrQndxV2I5MjRrZG5nTnE0MVBpTzV3aFl6cl9r?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T05:31:39.000Z",
-        "summary": "AI cyber risk alarm: Bain and Co urges firms to act as Claude Mythos raises global security fears Firstpost"
       },
       {
         "title": "Anthropic made Claude Code stupid? Probe finds 3 major issues - India Today",
@@ -285,13 +313,6 @@
         "summary": "Anthropic and NEC partner to build AI-native engineering at scale in Japan Anthropic"
       },
       {
-        "title": "Finance Minister Nirmala Sitharaman raises alarm on bank security risk due to Anthropic Mythos AI - India Today",
-        "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOT093d2lxSVI1Y05Ed0xfdUlUZ2VOR2Q5aWtrUnlqN1Z0M080ZGFpV0dHclo2ekdmZU4ybjFhczBuTy13ZUtfWHBVeFp5eUhrd2M1V2oybnZQUVZFdVNqWEtGQ3RWc0FzWDZELURjSExDYThaa2Z2MERmUTZCVW5fTjNpVlMwU09NaTYxY1F0Y1RsMDNhRHhoYTBfVC1NeV9SYy1TR0tOSEkwU0xVaU1YbU9Lb240U29TSV9HVUN6a29oR3lxX3IzMjFiVHJSazlCc0JpUUtkbm5jcV9abV9hRW5RZjZMMlEyX0FRUkJWcUg0STFyQ1F30gH8AUFVX3lxTE9YZWZJeVB3NlJ2X2pEUXpENnN0a0MwYl9XUVpGQkVSaGdFZ2M4MFhTNXNpSVhaUkg4T1FVRGZEbGgtZ0xLQ3pkb2NSR2NVcHQ5WG9SNlZfTVh4VE1GNDNJZWV3MFU5c3FNazNpWl9YSThOeXlXN19BYzExQWI0LUJxSVZYTkZJRm01Z19aRWU4aFJYbVVGem91ZTIzSWFNMEtyMm12bENCQjgyX1BlWWxaWTItYTI4My1aYWFiclpiT2tsRm13Y3E4cmU0M3dQQTNsdEVlQWFmbHF5bEtoNXAtX2YwRGxZVTdKLW1GcENrQ2FWVTVzUURmM0VWUA?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T04:02:52.000Z",
-        "summary": "Finance Minister Nirmala Sitharaman raises alarm on bank security risk due to Anthropic Mythos AI India Today"
-      },
-      {
         "title": "Banks charged sharply different fees for access to Anthropic investment - Financial Times",
         "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOakZ2SnowZHlBNjJQVnktOGhNOWpCRmZEYVNqQ21oeEgzLXlQUG5XWlNnVGVpZjRYR19PcUtHY1Rnb0Zqem1HNFEtY3ZSaFFHOE1UVlhHUFZvNndoX2EzRE1haTgxZ2tLVTQxZWVmU2VoN2pqd3FIREVwZU1faEFYbjJvNS0?oc=5",
         "source": "Google News",
@@ -303,7 +324,7 @@
         "url": "https://www.bloomberg.com/news/articles/2026-04-24/deepseek-unveils-newest-flagship-a-year-after-ai-breakthrough",
         "source": "Bloomberg",
         "published": "2026-04-24T03:15:33.000Z",
-        "summary": "DeepSeek rolled out preview versions of a new flagship artificial intelligence model a year after upending Silicon Valley, calling it the most powerful open-source platform in a challenge to rivals…"
+        "summary": "A year after rattling Silicon Valley with its technology, China’s DeepSeek rolled out preview versions of a new flagship artificial intelligence model, calling it the most powerful open-source…"
       },
       {
         "title": "Anthropic Expands Claude AI Integrations With Spotify, Third-Party Apps For Smarter Everyday Tasks - Tech Times",
@@ -311,27 +332,6 @@
         "source": "Google News",
         "published": "2026-04-24T03:10:16.000Z",
         "summary": "Anthropic Expands Claude AI Integrations With Spotify, Third-Party Apps For Smarter Everyday Tasks Tech Times"
-      },
-      {
-        "title": "Behind Cursor’s Deal With SpaceX, Anthropic and Compute Costs Loomed Large - The Information",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQYjdlSlRtZkZNRExLcjRKN3pOMmc5VE1VRkpwdzZJVGd0OC1qT1REUGQ1ejNnRVFzb3k1TUVQcDBtaVZkbEFCNnpwd045S3I1YkRiLVgxSFE3RnppZ1h0ODBLLWZWSnBGdXMzTDVzQWY5YWxjbGV2NEZfbTJScklmRndfem8zMkJNdld5allfUUhBdm96Qjl1dHhjSGFVS08yZGowcWFn?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T02:41:00.000Z",
-        "summary": "Behind Cursor’s Deal With SpaceX, Anthropic and Compute Costs Loomed Large The Information"
-      },
-      {
-        "title": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBoQkkwMnB2b0tyeFllX3Iwa2FrRXNZbW5Dem5ERGlLVzFkbGNycUN1UXVEMnhYVlVmaGNTNDZuSTVWZ3d3alpjN29LbkprZV9qTjg1QVFKdURnYk9FYlFTQWFReVRNdEJPaHdTWlhGUTM?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T02:32:37.000Z",
-        "summary": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety Mashable"
-      },
-      {
-        "title": "The Guardian view on Anthropic’s Claude Mythos: when AI finds every flaw, who controls the internet? | Editorial - The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPZ1FkS0J5cmxkN0xnR2RMOHJQbmptQ2hieVB1ZHVaNGtsWFlrTUt5NDlGSFVQTE5FYjJXZ0hMZWRPNGxLVW93alRFRlJqT3h4X1lWekVRZVdVTmg4TGRkX0U5bGtESHJaNTFoYVl5V3F2bWFERWNSUWg4ejltTXk5OTROZmU1QmpVUm9CSV9fLUhpLVdIRlJxcksxaHFPMk5rQkZ4QVpMZnR0d0ZvYW1Zbzh4QzQ0aHZYc1IzYm8zeEVtRkNvSnRzTlp3MERiOExPR2loaXoyb1V1WGtfVUdnVG5MS0o?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T01:30:00.000Z",
-        "summary": "The Guardian view on Anthropic’s Claude Mythos: when AI finds every flaw, who controls the internet? | Editorial The Guardian Anthropic investigating possible breach of its Mythos AI model CBS News…"
       },
       {
         "title": "Claude Live Artifacts just dropped... ALL your tools in one place!",
@@ -934,10 +934,26 @@
     ],
     "tutorials": [
       {
+        "title": "Infrastructure Noise",
+        "url": "https://www.anthropic.com/engineering/infrastructure-noise",
+        "source": "Anthropic Eng",
+        "published": "2026-04-24T14:21:28.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Managed Agents",
+        "url": "https://www.anthropic.com/engineering/managed-agents",
+        "source": "Anthropic Eng",
+        "published": "2026-04-24T14:19:43.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "April 23 Postmortem",
         "url": "https://www.anthropic.com/engineering/april-23-postmortem",
         "source": "Anthropic Eng",
-        "published": "2026-04-24T00:00:37.000Z",
+        "published": "2026-04-24T14:19:00.000Z",
         "summary": "",
         "tutorial_kind": "official"
       },
@@ -1238,14 +1254,6 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "Managed Agents",
-        "url": "https://www.anthropic.com/engineering/managed-agents",
-        "source": "Anthropic Eng",
-        "published": "2026-04-10T19:17:30.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "Merge pull request #516 from anthropics/mnowicki/cma-versioning-heade…",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/b96dc048794747788e5479079c3116a976e9cece",
         "source": "Anthropic Cookbook",
@@ -1362,14 +1370,6 @@
         "url": "https://www.anthropic.com/engineering/building-c-compiler",
         "source": "Anthropic Eng",
         "published": "2026-02-05T19:38:29.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Infrastructure Noise",
-        "url": "https://www.anthropic.com/engineering/infrastructure-noise",
-        "source": "Anthropic Eng",
-        "published": "2026-02-05T17:42:29.000Z",
         "summary": "",
         "tutorial_kind": "official"
       },
