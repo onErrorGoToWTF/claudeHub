@@ -178,8 +178,11 @@
   display: none;
 }
 
-/* Compact 'University' drops the debossed top-line — the darker chrome
-   band makes even a subtle 1px dark shadow read as a visible seam. */
+/* Compact 'University' drops the debossed top-line AND bumps the color
+   to solid ink. On the labs page it stays a quiet 0.22-alpha debossed
+   label; in the topbar it needs to read as real wordmark text against
+   the chrome band. */
 .universityCompact {
   text-shadow: none;
+  color: var(--ink-1);
 }

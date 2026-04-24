@@ -57,6 +57,10 @@
   gap: var(--space-3);
   min-width: 0;
   flex-wrap: nowrap;
+  /* Nudge the animated-atom wordmark closer to the viewport edge so the
+     logo feels anchored to the corner. Topbar padding is 24px, so this
+     still leaves ~9px breathing room before any clipping. */
+  margin-left: -15px;
 }
 
 /* ---------- desktop nav (middle) ---------- */
