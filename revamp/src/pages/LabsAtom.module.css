@@ -178,11 +178,10 @@
   display: none;
 }
 
-/* Compact 'University' drops the debossed top-line AND bumps the color
-   to solid ink. On the labs page it stays a quiet 0.22-alpha debossed
-   label; in the topbar it needs to read as real wordmark text against
-   the chrome band. */
+/* Compact 'University' keeps the .university / .universityDark deboss
+   or emboss shadow via inheritance — we only bump the color alpha so
+   the label reads a bit darker against the warm-grey chrome band than
+   the labs-page's quiet 0.22-alpha treatment. */
 .universityCompact {
-  text-shadow: none;
-  color: var(--ink-1);
+  color: rgba(0, 0, 0, 0.42);
 }
