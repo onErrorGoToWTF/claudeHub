@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { LayoutDashboard, BookOpen, FolderGit2, Library as LibraryIcon, Search } from 'lucide-react'
 import { GlobalSearch } from '../ui/GlobalSearch'
 import { UserMenu } from '../ui/UserMenu'
+import { AtomComposition } from '../pages/LabsAtom'
 import sharedStyles from '../ui/ui.module.css'
 import styles from './AppShell.module.css'
 
@@ -35,7 +36,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         {/* Left cluster: brand only — account moved to the right */}
         <div className={styles.topLeft}>
           <div className={styles.brand}>
-            <span className={styles.wordmark}>aiUniversity</span>
+            <AtomComposition compact settle />
           </div>
         </div>
 
