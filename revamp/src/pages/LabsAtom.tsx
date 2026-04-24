@@ -55,6 +55,11 @@ const ARC = Math.PI * 0.62
 
 // Settle parameters — for the "lands on the i-dot" composition.
 const SETTLE_DURATION_T = 2 * Math.PI         // 1 lap to spiral in
+// How far before actual landing the strike flash fires. At ORBIT_SPEED
+// 3.30, 0.5 t-units ≈ 150ms real time — enough for the first keyframe
+// peak (10% of 560ms = 56ms in) to fire before impact, so the text is
+// already mid-flicker when the electron hits the i-dot.
+const STRIKE_LEAD_T = 0.5
 
 // Scene-wide group rotation applied around the atom. Exposed so target
 // world→local conversion in AtomComposition matches exactly.
@@ -111,6 +116,7 @@ function Electron({
   settleTarget,
   settle,
   onLand,
+  onStrike,
 }: {
   config: OrbitConfig
   fadeTex: THREE.DataTexture
@@ -118,9 +124,11 @@ function Electron({
   settleTarget?: THREE.Vector3
   settle?: boolean
   onLand?: () => void
+  onStrike?: () => void
 }) {
   const settleAfterT = settle ? config.laps * 2 * Math.PI : undefined
   const landedRef = useRef(false)
+  const struckRef = useRef(false)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const geomRef = useRef<any>(null!)
   const headRef = useRef<THREE.Mesh>(null!)
@@ -215,6 +223,12 @@ function Electron({
     if (settleTarget && settleAfterT !== undefined) {
       const doneT = settleAfterT + SETTLE_DURATION_T
       const PULSE_T = Math.PI * 0.7
+      // Strike fires slightly before landing so the flash stutter is
+      // already mid-cycle when the electron actually hits the i-dot.
+      if (t >= doneT - STRIKE_LEAD_T && !struckRef.current) {
+        struckRef.current = true
+        if (onStrike) onStrike()
+      }
       if (t >= doneT && !landedRef.current) {
         landedRef.current = true
         if (onLand) onLand()
@@ -296,12 +310,14 @@ function Scene({
   settleTarget,
   settle,
   onLand,
+  onStrike,
 }: {
   color: string
   onlyPlane?: Plane
   settleTarget?: THREE.Vector3
   settle?: boolean
   onLand?: () => void
+  onStrike?: () => void
 }) {
   const fadeTex = useMemo(() => makeFadeTexture(), [])
   const orbits = onlyPlane ? ORBITS.filter((o) => o.plane === onlyPlane) : ORBITS
@@ -316,6 +332,7 @@ function Scene({
           settleTarget={settleTarget}
           settle={settle}
           onLand={onLand}
+          onStrike={onStrike}
         />
       ))}
     </group>
@@ -417,8 +434,14 @@ export function AtomComposition({
   const camZ = compact ? 5.5 : 11
   const totalElectrons = onlyPlane ? 1 : ORBITS.length
 
-  const onLand = useCallback(() => {
+  // Strike fires slightly before landing (see STRIKE_LEAD_T) so the
+  // stutter is already mid-cycle when the dot hits the i. The separate
+  // landedCount drives the allLanded / permanent-lit logic on the
+  // actual landing beat, after the strike has begun.
+  const onStrike = useCallback(() => {
     setStrikeCount((c) => c + 1)
+  }, [])
+  const onLand = useCallback(() => {
     setLandedCount((c) => c + 1)
   }, [])
 
@@ -505,6 +528,7 @@ export function AtomComposition({
             settleTarget={settleTarget ?? undefined}
             settle={settle}
             onLand={onLand}
+            onStrike={onStrike}
           />
         </Canvas>
       </div>
