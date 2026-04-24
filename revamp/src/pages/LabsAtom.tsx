@@ -23,6 +23,13 @@ type OrbitConfig = {
   // How visible the electron stays after it lands + flashes. 0 = disappears
   // after the flash. 0.33 = stays dim over the i-dot. 1 = stays fully lit.
   postLandVisibility: number
+  // Optional spiral-in overrides. Default: SETTLE_DURATION_T + easeOutCubic
+  // — a fast inward pull that decelerates toward the target. Set these on
+  // an orbit that needs a smoother blend from orbit to spiral (e.g. start
+  // the spiral earlier via `laps`, widen it via settleDurationT, and swap
+  // to smoothstep so velocity is continuous at the transition boundary).
+  settleDurationT?: number
+  settleEase?: 'outCubic' | 'smoothstep'
 }
 
 const RADIUS_A = 1.40
@@ -31,7 +38,20 @@ const ORBIT_SPEED = 3.30
 const ORBITS: OrbitConfig[] = [
   { plane: 'xy', speed: ORBIT_SPEED, phase: 0,                 laps: 3,   postLandVisibility: 0 },
   { plane: 'yz', speed: ORBIT_SPEED, phase: (2 * Math.PI) / 3, laps: 5,   postLandVisibility: 0.33 },
-  { plane: 'xz', speed: ORBIT_SPEED, phase: (4 * Math.PI) / 3, laps: 6.5, postLandVisibility: 1 },
+  // Final electron gets a gradual spiral — starts 1 lap earlier (5.5
+  // instead of 6.5) and takes twice as long (4π = 2 laps instead of 2π),
+  // with smoothstep easing so the orbit→spiral handoff has no velocity
+  // discontinuity. Total-time-to-land is unchanged (5.5 + 2 = 7.5 laps,
+  // same as the old 6.5 + 1) so the strike timing still aligns.
+  {
+    plane: 'xz',
+    speed: ORBIT_SPEED,
+    phase: (4 * Math.PI) / 3,
+    laps: 5.5,
+    postLandVisibility: 1,
+    settleDurationT: 4 * Math.PI,
+    settleEase: 'smoothstep',
+  },
 ]
 
 const ELECTRON_COLOR = '#ffffff'
@@ -122,6 +142,13 @@ function easeOutCubic(x: number): number {
   return 1 - Math.pow(1 - x, 3)
 }
 
+// Smoothstep — zero derivative at both ends, so the orbit→spiral
+// transition has no velocity discontinuity (gradual pull-in instead of
+// the sharp inward snap easeOutCubic produces at p≈0).
+function smoothstep(x: number): number {
+  return x * x * (3 - 2 * x)
+}
+
 function Electron({
   config,
   fadeTex,
@@ -140,6 +167,8 @@ function Electron({
   onStrike?: () => void
 }) {
   const settleAfterT = settle ? config.laps * 2 * Math.PI : undefined
+  const settleDurT = config.settleDurationT ?? SETTLE_DURATION_T
+  const settleEaseFn = config.settleEase === 'smoothstep' ? smoothstep : easeOutCubic
   const landedRef = useRef(false)
   const struckRef = useRef(false)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -183,10 +212,11 @@ function Electron({
 
     if (settleTarget && settleAfterT !== undefined && t >= settleAfterT) {
       // Orbit-morphing settle: center slides from origin → target while
-      // radii scale from 1 → 0, easeOutCubic'd. Electron keeps advancing
-      // through t, tracing a smooth spiral into the target point.
-      const p = Math.min(1, (t - settleAfterT) / SETTLE_DURATION_T)
-      const e = easeOutCubic(p)
+      // radii scale from 1 → 0, eased. Electron keeps advancing through
+      // t, tracing a smooth spiral into the target point. Duration +
+      // easing are per-orbit (see OrbitConfig).
+      const p = Math.min(1, (t - settleAfterT) / settleDurT)
+      const e = settleEaseFn(p)
       const cx = settleTarget.x * e
       const cy = settleTarget.y * e
       const cz = settleTarget.z * e
@@ -234,7 +264,7 @@ function Electron({
     let haloScale = 0.0001
     let haloOpacity = 0
     if (settleTarget && settleAfterT !== undefined) {
-      const doneT = settleAfterT + SETTLE_DURATION_T
+      const doneT = settleAfterT + settleDurT
       const PULSE_T = Math.PI * 0.7
       // Strike fires slightly before landing so the flash stutter is
       // already mid-cycle when the electron actually hits the i-dot.
