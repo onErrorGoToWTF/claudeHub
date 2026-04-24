@@ -58,9 +58,12 @@
   min-width: 0;
   flex-wrap: nowrap;
   /* Nudge the animated-atom wordmark closer to the viewport edge so the
-     logo feels anchored to the corner. Topbar padding is 24px, so this
-     still leaves ~9px breathing room before any clipping. */
-  margin-left: -15px;
+     logo feels anchored to the corner. Topbar padding is 24px, so at
+     -25px the cell box sits 1px outside the padding band — the actual
+     visible content (canvas visible-left is ~16px inside cellCompact's
+     padding-left 44px; 'ai' text is 44px inside) stays well clear of
+     the viewport edge. */
+  margin-left: -25px;
 }
 
 /* ---------- desktop nav (middle) ---------- */
