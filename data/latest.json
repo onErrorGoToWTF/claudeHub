@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-23T22:32:29.419Z",
+  "generated_at": "2026-04-24T01:20:52.779Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -7,7 +7,7 @@
         "title": "April 23 Postmortem",
         "url": "https://www.anthropic.com/engineering/april-23-postmortem",
         "source": "Anthropic Eng",
-        "published": "2026-04-23T18:00:13.000Z",
+        "published": "2026-04-24T00:00:37.000Z",
         "summary": ""
       },
       {
@@ -146,6 +146,81 @@
     ],
     "news": [
       {
+        "title": "Anthropic’s Claude gains persistent memory, impacting AI model leaderboard race - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQekJpVXpBak9BZ0VONGpnXzF1T1kzYXJTcmNQSGFIS1MtdnBXaEF2Y3NyOHprOXNwU1FYbUNqSE9rMVlDT29OdlYtd21YcXhrUXJoeW5EOFNNcUJ1UHZlczhCN3JoYXFPc1lYZU1xUzNxbU01ZjlMN2lmYVJfYUNNTE1vdlBlXzZ2ZjRtek9MWXVIc0RDaGtJWklGd1ZlUnFVdUx3LXJ2eFU?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T00:08:49.000Z",
+        "summary": "Anthropic’s Claude gains persistent memory, impacting AI model leaderboard race Crypto Briefing"
+      },
+      {
+        "title": "GPT 5.5 is Here (Better than Claude?)",
+        "url": "https://www.youtube.com/watch?v=P1WAkVNFGVk",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "P1WAkVNFGVk",
+        "thumbnail": "https://i.ytimg.com/vi/P1WAkVNFGVk/hqdefault.jpg",
+        "published": "2026-04-23T23:57:57.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Taps Spotify, Uber, TurboTax in AI Assistant War - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQSzNyczU3NEZIYzl4b1YzTHZ2RU5iUUJETFFCZnAycDJhYUtkWnFVbTV0Z1YtdTZaMHc2YTZiZ244T3FsNTZlbjkyOWhwRU5rbUkwUUF0Z1FadXZTTER6R3NwZ1BXcVMxRmlWclZyT2pjeUZyVFQwc2o4UFpGUlVlM0VISVZDMEJTX1ZTOGUzMA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T23:33:00.000Z",
+        "summary": "Claude Taps Spotify, Uber, TurboTax in AI Assistant War The Tech Buzz"
+      },
+      {
+        "title": "Anthropic admits it dumbed down Claude with 'úpgrades' - theregister.com",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5Gd3ByczVGemZXQ1BaaUM3bkc0QS1aUm1vcS1iaXIxVndUV1ZmRUVqcnd2a0tmaWdnU3hFS2k3UEVLQkk1bEpGNnNiWTJxRkFCNVVuSGRtTmVGN2hMMzl4YWpUV3BQeWc4RG9iTk5FM3Axd2RSenc?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T23:26:00.000Z",
+        "summary": "Anthropic admits it dumbed down Claude with 'úpgrades' theregister.com"
+      },
+      {
+        "title": "Anthropic's \"too dangerous\" AI was accessed by guessing the URL - Boing Boing",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQVUFVMzdZdkdXbkNyTEI3WThZeERvb1hsUExHb00xMERuMVdVQ2RKRE0xRE96SmhDTnh0bHNMX2lqV08xMmthVER2NURoWXRmcE9tNW5id2R5ejdTNjNXOGhPVmF5azh6bUlFYWd3aGliV2xKNEs4ZThLSk1UekthTnI3MTlIRVVHSFFLM3VkcWJNT0tNak9GSlkyUnIwbHRT0gGmAUFVX3lxTE9IZkJ6azFDRDhHM0IzMWFfS0kwNHpLbkJ0dHlUdWl0UXRKYl9vWlFBUE1nM0x3RXJFekFpeDVZby1VdmNHZzMyc1Fya1o4aWVFVDhMdWtxS1ZtTFpsbnNhLTRPSzdUTlVURVlBcjZzNDNLYW1QZlo0ZEc1Qml3SzJkWm9oSV9FUm13eVlSdWgtbkFSMjlaYUVtUHJaX2xsSEhQcmJSOHc?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T23:05:49.000Z",
+        "summary": "Anthropic's \"too dangerous\" AI was accessed by guessing the URL Boing Boing"
+      },
+      {
+        "title": "StubHub Expands AI Ticket Discovery Push With New Claude Integration - TicketNews",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOWjJzQjNEWUZTX2QwSW9zWi1jdEdWa2w3U3lBTDlYS05lbUxtN00tSW5vREtwektLTjVHSVdLMEtKOTJGRzgyM29Dc3h1bjlkNURqNmN2cXEwZTRxZ0xMUDVBemdwRHJBbm1NZnNORXYyUGFiUGJ1bmhaOHUxTnJpTmNhbzhtQzZwNDRaUS11d1Iwc3p4aFY3N294dDctV0xoSXBzejdHUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T23:04:41.000Z",
+        "summary": "StubHub Expands AI Ticket Discovery Push With New Claude Integration TicketNews"
+      },
+      {
+        "title": "OpenAI's ChatGPT 5.5 'Spud' vs Anthropic Opus 4.7/Mythos AI Model Grind continues. & More. - AI: Reset to Zero",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBQTU0xLTktV1paWGFrQzg3XzQ4b3ZDQ1lYNmgtbTRMdTUzZEhtRTBPbFktUU45ZVExSjhGT24zWHpJdEVzcVc0WU1PNG0yUDZDMUxsYlVPMjNDSFl6d1AzSVhaOXNiVnFpbGttOEhaYTkxZ3hBMGd5S1h2VmZhUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T22:58:10.000Z",
+        "summary": "OpenAI's ChatGPT 5.5 'Spud' vs Anthropic Opus 4.7/Mythos AI Model Grind continues. & More. AI: Reset to Zero"
+      },
+      {
+        "title": "Claude can now connect to lifestyle apps like Spotify, Instacart and AllTrails - Engadget",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaGNoTXNQQUpHWk45U0xhWnlCNGdDTUhGeHFjTmhVcWdzV25aNjMtVDJpQ0ZhSWozaUR6ZXd0MGM2Rjh1MFBQbnVHYmJqc1RPbmhUcWg2cjcyclN0aW9mVC15cjJzYzVramdmaFNIYXY1VDI0dGJ6cWRIbEIwMTFmRHgzemppUV9Ubzd1dGRvd1lVZmtxeWdaT2JlNFhYMU5TM2U2cmhpTkJmWkZ0MGRlMEMwdk8yekdiMXpNdw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T22:55:10.000Z",
+        "summary": "Claude can now connect to lifestyle apps like Spotify, Instacart and AllTrails Engadget"
+      },
+      {
+        "title": "Anthropic Expands Claude Connections to Personal Apps - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUVpUakV4aWJjVDNnMENiY1ptbWxuZXlCaUpaRE40LXhLUFctWVNOUGNqUXJVT1VnM3JKT3lNeWlXalk5blU5eGVFbTBHNHZZem12eVZldU1MY1p4Y1c2U3NRQm92WUY0Y3NzVVhMYTdhdTNPTnlmejlDQkV3SlhtLWpaM1U1a0NubmZaeDkyc3VpcnJDTmk1NWU0cw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-23T22:35:48.000Z",
+        "summary": "Anthropic Expands Claude Connections to Personal Apps Let's Data Science"
+      },
+      {
+        "title": "Claude is connecting directly to your personal apps like Spotify, Uber Eats, and TurboTax",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/917871/anthropic-claude-personal-app-connectors",
+        "source": "The Verge",
+        "published": "2026-04-23T22:27:11.000Z",
+        "summary": "Claude users can access more apps with Anthropic's AI now thanks to new connectors for everything from hiking to grocery shopping. Anthropic already supported connecting numerous work-related apps…"
+      },
+      {
         "title": "Claude is connecting directly to your personal apps like Spotify, Uber Eats, and TurboTax - The Verge",
         "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNQWR2WU83TWpUQ3BReEpqRGYybUNsNTB0cHlZVUc5Q0E2YUpqb1BWSFRHV1BseEtHN1dURzlsdmItS1BhRU9mV0UzSXQ4R0k2eGYxa21zbS15VkNtUUNjMUdJeV9McGtQeUp0RlBJNHZ6YTlsS0NxNERCRjZqM0xJTW9VcERiU1FLNzg2X2IyYk9hdW1FZzRWSlVsbXlCWlRD?oc=5",
         "source": "Google News",
@@ -167,11 +242,11 @@
         "summary": "Anthropic says Claude Code did get worse — but shoots down speculation it 'nerfed' the model Business Insider"
       },
       {
-        "title": "Mystery solved: Anthropic reveals changes to Claude's harnesses and operating instructions likely caused degradation - Venturebeat",
+        "title": "Mystery solved: Anthropic reveals changes to Claude's harnesses and operating instructions likely caused degradation - VentureBeat",
         "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPVU96ZmdmYmd0NWFLNFJwRFV0X0Y2OEZQdUpHNzREaGRRMlZEOXV2MU5lYmZYUG5pTmRHMGZlV1dSX2RFd3pwRGZoTTMwTnFIN3dEVWExeWRMMjJPZzMxYkJHQzVYaEVGN1F6S1A3akpWSGxEdWNDQzA2RkpobGpXdFpZazFoc3o4Q0Q1SlNuUXJLMnYzcUZ0eXRXdERkSjlkQ0MzS3E1Zy1DSGMtenRWaURMTXhNMF9OMXowUWhzVkZvSVVjQjFvcjdqb0FIT1Fzck5rajJKZ2E0UDhqVHhJOXE0OA?oc=5",
         "source": "Google News",
         "published": "2026-04-23T21:50:00.000Z",
-        "summary": "Mystery solved: Anthropic reveals changes to Claude's harnesses and operating instructions likely caused degradation Venturebeat"
+        "summary": "Mystery solved: Anthropic reveals changes to Claude's harnesses and operating instructions likely caused degradation VentureBeat"
       },
       {
         "title": "US accuses China of “industrial-scale” AI theft. China says it’s “slander.”",
@@ -239,45 +314,17 @@
       {
         "title": "Anthropic's Claude Desktop App Installs Undisclosed Native Messaging Bridge",
         "url": "https://letsdatascience.com/news/claude-desktop-installs-preauthorized-browser-extension-mani-4064fb1a",
-        "source": "HN · 78↑",
+        "source": "HN · 82↑",
         "hn_id": "47880697",
         "published": "2026-04-23T19:43:08.000Z",
         "summary": ""
       },
       {
-        "title": "OpenAI Unveils Its New, More Powerful GPT-5.5 Model - The New York Times",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5kM0M1bXdZcFhlb1BDVEl6eTRQUDJQem9KQ1dCRFl2TTRSTFFhS1ZPZGh0UFdXQ3hjSFZQcXlLMGxpOFBIQW8xOTRfMnhwR2lPYmwwckhJZzUwaUZpbm5fX3JoNDlwYWVBWm1FYnN5bDhkYXhoM0E?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T19:15:08.000Z",
-        "summary": "OpenAI Unveils Its New, More Powerful GPT-5.5 Model The New York Times"
-      },
-      {
-        "title": "StubHub Expands AI Ticket Discovery Push With New Claude Integration - TicketNews",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOWjJzQjNEWUZTX2QwSW9zWi1jdEdWa2w3U3lBTDlYS05lbUxtN00tSW5vREtwektLTjVHSVdLMEtKOTJGRzgyM29Dc3h1bjlkNURqNmN2cXEwZTRxZ0xMUDVBemdwRHJBbm1NZnNORXYyUGFiUGJ1bmhaOHUxTnJpTmNhbzhtQzZwNDRaUS11d1Iwc3p4aFY3N294dDctV0xoSXBzejdHUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T19:02:41.000Z",
-        "summary": "StubHub Expands AI Ticket Discovery Push With New Claude Integration TicketNews"
-      },
-      {
-        "title": "OpenAI Launches GPT-5.5 to Challenge Anthropic’s Claude Opus 4.7 - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNVU5MYjhKNXRnQm9HdDdINGJuTHA4NUV6cUN6YVZiTlp2UkpOeTF3cmYzSnJoemdvYWRkMXZGRDNROE5nSWkxLUo3cmhsSnpKVkVES1c5LWNFUHNjbU1IRzhFLUZaWDJCbUNOa0FZTmV1eW11SDVpUGQ3aVhwYU03NURESjNBTGdo?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T18:33:10.000Z",
-        "summary": "OpenAI Launches GPT-5.5 to Challenge Anthropic’s Claude Opus 4.7 Yahoo Tech"
-      },
-      {
-        "title": "OpenAI's GPT-5.5 is here, and it's no potato: narrowly beats Anthropic's Claude Mythos Preview on Terminal-Bench 2.0 - Venturebeat",
+        "title": "OpenAI's GPT-5.5 is here, and it's no potato: narrowly beats Anthropic's Claude Mythos Preview on Terminal-Bench 2.0 - VentureBeat",
         "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNMG5WMHBBeXZkNWx3dEFPZ1FjSHBxUFlpbXpwbWJMTTlMaDhLNG1xb2dYbXhkS1RUUWVZUWZ0VFRXWUh0a2J2S2dMdUNfQnZoZDRNRHRFdFVGX042N1J5b1ZVcVRYU1RkUE9qbE0zUEVUUFMtZ2JmajNxSlB2dThjY1UtYWNRUi1ZbUJOaE0wcGpJM2dWQVNIQ25RNlh2dGJvY3dhNW5pMTdyTlU3dzZYTXNseEhSU0xyOExVdXdwVlBOQnRnTHFnTHlyRnlEVF9GQll5bg?oc=5",
         "source": "Google News",
         "published": "2026-04-23T18:27:00.000Z",
-        "summary": "OpenAI's GPT-5.5 is here, and it's no potato: narrowly beats Anthropic's Claude Mythos Preview on Terminal-Bench 2.0 Venturebeat"
-      },
-      {
-        "title": "Anthropic’s Mythos breach was humiliating",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/917644/anthropic-claude-mythos-breach-humiliation",
-        "source": "The Verge",
-        "published": "2026-04-23T18:24:56.000Z",
-        "summary": "Anthropic's tightly controlled rollout of Claude Mythos has taken an awkward turn. After spending weeks insisting the AI model is so capable at cybersecurity that it is too dangerous to release…"
+        "summary": "OpenAI's GPT-5.5 is here, and it's no potato: narrowly beats Anthropic's Claude Mythos Preview on Terminal-Bench 2.0 VentureBeat"
       },
       {
         "title": "Anthropic’s Mythos breach was humiliating - The Verge",
@@ -285,42 +332,6 @@
         "source": "Google News",
         "published": "2026-04-23T18:24:56.000Z",
         "summary": "Anthropic’s Mythos breach was humiliating The Verge"
-      },
-      {
-        "title": "The Guardian view on Anthropic’s Claude Mythos: when AI finds every flaw, who controls the internet? | Editorial - The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPZ1FkS0J5cmxkN0xnR2RMOHJQbmptQ2hieVB1ZHVaNGtsWFlrTUt5NDlGSFVQTE5FYjJXZ0hMZWRPNGxLVW93alRFRlJqT3h4X1lWekVRZVdVTmg4TGRkX0U5bGtESHJaNTFoYVl5V3F2bWFERWNSUWg4ejltTXk5OTROZmU1QmpVUm9CSV9fLUhpLVdIRlJxcksxaHFPMk5rQkZ4QVpMZnR0d0ZvYW1Zbzh4QzQ0aHZYc1IzYm8zeEVtRkNvSnRzTlp3MERiOExPR2loaXoyb1V1WGtfVUdnVG5MS0o?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T18:07:00.000Z",
-        "summary": "The Guardian view on Anthropic’s Claude Mythos: when AI finds every flaw, who controls the internet? | Editorial The Guardian"
-      },
-      {
-        "title": "An update on recent Claude Code quality reports - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9lbzBkRXBGLTl2YjRQU2NDT0piaWdaZks2ckFNNXYwXzdEOERUZHBEWVZSTktyZ0xQLTNrM2h3NXZnY3N2Ty0xdUJFRzNfUFRqWHl3VW5hMGxpTkttOVR1YXRSMnVJNWR5?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T18:05:55.000Z",
-        "summary": "An update on recent Claude Code quality reports Anthropic"
-      },
-      {
-        "title": "Figma (FIG) Stock Falls 9% After Anthropic Launches Claude Design - CoinCentral",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOd1dkaWdkZUtweTZVbmpOcjJ4UWQ2MlFSa1gzVHgyS1JxZ1habkhOMVlFWGhHVjNUdnNQLW5TQW9OTThsZFFSX19FN0xWSTdvOHotNkJMVW9iRjZfSWRuaXYyVjA2cHFhSDFVWURpZFBNc0xYLVBzRUpnMGkySHIwUW5xejlfUjBjRjAzTmNQNFM?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T18:03:59.000Z",
-        "summary": "Figma (FIG) Stock Falls 9% After Anthropic Launches Claude Design CoinCentral"
-      },
-      {
-        "title": "An update on recent Claude Code quality reports",
-        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
-        "source": "HN · 468↑",
-        "hn_id": "47878905",
-        "published": "2026-04-23T17:48:38.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Stubhub announces integration with Anthropic's Claude AI assistant - marketscreener.com",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNYTdDeVN1Y0xiNUhIZWNyRlREZk5yTlFaU0FYdjBxZHdPNFFEMWZwRHNock1ZNlNVdHRqbUo5Sld1Z0dYMzhYOUFfXzB0UEZIRkZRY3pJQ2RDZ0RNWFVBbGVvMDc0SkczTkhHdGNfX3B3andHUkwtMUhHakdBejhaZVdSWWhPb1pkaWlWVlFBMEVaUkxONXVkSUlpeGUtUTVyYVBVc0VpVnRzNFk1NXZGalQ0M2JSXzA4RDE4?oc=5",
-        "source": "Google News",
-        "published": "2026-04-23T17:27:41.000Z",
-        "summary": "Stubhub announces integration with Anthropic's Claude AI assistant marketscreener.com"
       },
       {
         "title": "Claude Live Artifacts just dropped... ALL your tools in one place!",
@@ -501,18 +512,6 @@
         "published": "2026-04-15T15:00:53.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Routines Just Dropped, And It's Perfect",
-        "url": "https://www.youtube.com/watch?v=j3aXJNu9804",
-        "source": "Nick Saraev",
-        "channel": "Nick Saraev",
-        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
-        "video_id": "j3aXJNu9804",
-        "thumbnail": "https://i.ytimg.com/vi/j3aXJNu9804/hqdefault.jpg",
-        "published": "2026-04-14T19:08:20.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -602,6 +601,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "GPT 5.5 is Here (Better than Claude?)",
+        "url": "https://www.youtube.com/watch?v=P1WAkVNFGVk",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "P1WAkVNFGVk",
+        "thumbnail": "https://i.ytimg.com/vi/P1WAkVNFGVk/hqdefault.jpg",
+        "published": "2026-04-23T23:57:57.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Live Artifacts just dropped... ALL your tools in one place!",
         "url": "https://www.youtube.com/watch?v=4yEBOvtMr5o",
@@ -920,17 +930,6 @@
         "thumbnail": "https://i.ytimg.com/vi/pHr1O_Af5NA/hqdefault.jpg",
         "published": "2026-04-15T02:13:41.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Routines Just Dropped, And It's Perfect",
-        "url": "https://www.youtube.com/watch?v=j3aXJNu9804",
-        "source": "Nick Saraev",
-        "channel": "Nick Saraev",
-        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
-        "video_id": "j3aXJNu9804",
-        "thumbnail": "https://i.ytimg.com/vi/j3aXJNu9804/hqdefault.jpg",
-        "published": "2026-04-14T19:08:20.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
@@ -938,8 +937,16 @@
         "title": "April 23 Postmortem",
         "url": "https://www.anthropic.com/engineering/april-23-postmortem",
         "source": "Anthropic Eng",
-        "published": "2026-04-23T18:00:13.000Z",
+        "published": "2026-04-24T00:00:37.000Z",
         "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "v2.1.119",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.119",
+        "source": "Claude Code Releases",
+        "published": "2026-04-23T23:24:19.000Z",
+        "summary": "What's changed /config settings (theme, editor mode, verbose, etc.) now persist to ~/.claude/settings.json and participate in project/local/policy override precedence Added prUrlTemplate setting to…",
         "tutorial_kind": "official"
       },
       {
@@ -1189,14 +1196,6 @@
         "published": "2026-04-15T02:13:41.000Z",
         "summary": "",
         "tutorial_kind": "video"
-      },
-      {
-        "title": "v2.1.108",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.108",
-        "source": "Claude Code Releases",
-        "published": "2026-04-14T19:12:01.000Z",
-        "summary": "What's changed Added ENABLE_PROMPT_CACHING_1H env var to opt into 1-hour prompt cache TTL on API key, Bedrock, Vertex, and Foundry ( ENABLE_PROMPT_CACHING_1H_BEDROCK is deprecated but still…",
-        "tutorial_kind": "official"
       },
       {
         "title": "Building Effective Agents",
@@ -1745,6 +1744,20 @@
     ],
     "claude_learning": [
       {
+        "title": "GPT 5.5 is Here (Better than Claude?)",
+        "url": "https://www.youtube.com/watch?v=P1WAkVNFGVk",
+        "source": "YouTube · Ryan & Matt Data Science",
+        "published": "2026-04-23T23:57:57.000Z",
+        "summary": ""
+      },
+      {
+        "title": "v2.1.119",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.119",
+        "source": "Claude Code",
+        "published": "2026-04-23T23:24:19.000Z",
+        "summary": "What's changed /config settings (theme, editor mode, verbose, etc.) now persist to ~/.claude/settings.json and participate in project/local/policy override precedence Added prUrlTemplate setting to point the footer PR…"
+      },
+      {
         "title": "Claude Live Artifacts just dropped... ALL your tools in one place!",
         "url": "https://www.youtube.com/watch?v=4yEBOvtMr5o",
         "source": "YouTube · Productive Dude",
@@ -2037,20 +2050,6 @@
         "source": "MCP Inspector",
         "published": "2026-04-14T20:55:04.000Z",
         "summary": "What's Changed Fix decimal typing behavior for number inputs in tools form by @MumuTW in #1127 fix: ensure DCR always registers both redirect URIs by @asoorm in #1173 fix: add horizontal scrolling for long values in…"
-      },
-      {
-        "title": "v2.1.108",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.108",
-        "source": "Claude Code",
-        "published": "2026-04-14T19:12:01.000Z",
-        "summary": "What's changed Added ENABLE_PROMPT_CACHING_1H env var to opt into 1-hour prompt cache TTL on API key, Bedrock, Vertex, and Foundry ( ENABLE_PROMPT_CACHING_1H_BEDROCK is deprecated but still honored), and…"
-      },
-      {
-        "title": "Claude Routines Just Dropped, And It's Perfect",
-        "url": "https://www.youtube.com/watch?v=j3aXJNu9804",
-        "source": "YouTube · Nick Saraev",
-        "published": "2026-04-14T19:08:20.000Z",
-        "summary": ""
       },
       {
         "title": "0.21.2-hotfix-2",
