@@ -139,11 +139,15 @@
   white-space: nowrap;
 }
 
+/* Compact (topbar) variant: no shadow — the wordmark reads flat against
+   the chrome band. Element kept (aria-hidden stub) so the JSX structure
+   matches the labs variant. */
 .textShadowCompact {
-  position: absolute;
-  inset: -1px -2px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.1);
-  filter: blur(4px);
-  z-index: -1;
+  display: none;
+}
+
+/* Compact 'University' drops the debossed top-line — the darker chrome
+   band makes even a subtle 1px dark shadow read as a visible seam. */
+.universityCompact {
+  text-shadow: none;
 }

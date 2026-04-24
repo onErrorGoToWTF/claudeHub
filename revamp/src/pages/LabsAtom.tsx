@@ -339,21 +339,25 @@ function projectPixelToLocal(
 export // Flash-only style. On light bg (default): rest is debossed dark;
 // strike snaps white with glow. On dark bg (`onDark`): rest is a soft
 // white-gray, strike pumps to full white + glow. Both return to rest
-// via the CSS transition after the 420ms pulse.
-function buildAiStyle(progress: number, onDark: boolean): CSSProperties {
+// via the CSS transition after the 420ms pulse. `compact` (topbar)
+// drops the multi-layer glow stack — the wordmark reads flat against
+// the chrome band instead of halo'd.
+function buildAiStyle(progress: number, onDark: boolean, compact: boolean): CSSProperties {
   const g = progress
   if (onDark) {
     const alpha = 0.55 + g * 0.4
     const embossAlpha = (1 - g) * 0.18
     return {
       color: `rgba(235, 235, 235, ${alpha.toFixed(3)})`,
-      textShadow: [
-        `0 1px 1px rgba(255, 255, 255, ${embossAlpha.toFixed(3)})`,
-        `0 0 3px rgba(255, 255, 255, ${(0.9 * g).toFixed(3)})`,
-        `0 0 6px rgba(255, 255, 255, ${(0.65 * g).toFixed(3)})`,
-        `0 0 12px rgba(255, 255, 255, ${(0.4 * g).toFixed(3)})`,
-        `0 0 22px rgba(255, 255, 255, ${(0.2 * g).toFixed(3)})`,
-      ].join(', '),
+      textShadow: compact
+        ? 'none'
+        : [
+            `0 1px 1px rgba(255, 255, 255, ${embossAlpha.toFixed(3)})`,
+            `0 0 3px rgba(255, 255, 255, ${(0.9 * g).toFixed(3)})`,
+            `0 0 6px rgba(255, 255, 255, ${(0.65 * g).toFixed(3)})`,
+            `0 0 12px rgba(255, 255, 255, ${(0.4 * g).toFixed(3)})`,
+            `0 0 22px rgba(255, 255, 255, ${(0.2 * g).toFixed(3)})`,
+          ].join(', '),
     }
   }
   const gray = 255 * g
@@ -361,13 +365,15 @@ function buildAiStyle(progress: number, onDark: boolean): CSSProperties {
   const debossAlpha = (1 - g) * 0.14
   return {
     color: `rgba(${gray}, ${gray}, ${gray}, ${colorAlpha})`,
-    textShadow: [
-      `0 -1px 1px rgba(0, 0, 0, ${debossAlpha.toFixed(3)})`,
-      `0 0 3px rgba(255, 255, 255, ${(0.9 * g).toFixed(3)})`,
-      `0 0 6px rgba(255, 255, 255, ${(0.65 * g).toFixed(3)})`,
-      `0 0 12px rgba(255, 255, 255, ${(0.4 * g).toFixed(3)})`,
-      `0 0 22px rgba(255, 255, 255, ${(0.2 * g).toFixed(3)})`,
-    ].join(', '),
+    textShadow: compact
+      ? 'none'
+      : [
+          `0 -1px 1px rgba(0, 0, 0, ${debossAlpha.toFixed(3)})`,
+          `0 0 3px rgba(255, 255, 255, ${(0.9 * g).toFixed(3)})`,
+          `0 0 6px rgba(255, 255, 255, ${(0.65 * g).toFixed(3)})`,
+          `0 0 12px rgba(255, 255, 255, ${(0.4 * g).toFixed(3)})`,
+          `0 0 22px rgba(255, 255, 255, ${(0.2 * g).toFixed(3)})`,
+        ].join(', '),
   }
 }
 
@@ -497,11 +503,15 @@ export function AtomComposition({
         <span
           ref={aiRef}
           className={`${s.ai} ${pulsing ? s.aiPulse : ''}`}
-          style={buildAiStyle(progress, onDark ?? false)}
+          style={buildAiStyle(progress, onDark ?? false, compact ?? false)}
         >
           a<span ref={iRef}>i</span>
         </span>
-        <span className={`${s.university} ${onDark ? s.universityDark : ''}`}>University</span>
+        <span
+          className={`${s.university} ${onDark ? s.universityDark : ''} ${compact ? s.universityCompact : ''}`}
+        >
+          University
+        </span>
       </div>
     </div>
   )
