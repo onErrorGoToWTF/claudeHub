@@ -36,11 +36,19 @@ const ORBITS: OrbitConfig[] = [
 
 const ELECTRON_COLOR = '#ffffff'
 
-/* Duration of the .aiPulse strike-flicker. Must match the `aiStrike`
+/* Duration of the .aiPulse strike-flicker. Must match the aiStrikeN
    keyframe animation duration in LabsAtom.module.css — the JS timer
    here is what clears the pulsing class so the CSS transition can
    re-engage and fade/hold the text back to its rest state. */
 const PULSE_DURATION_MS = 560
+
+// Strike 1 is a subtle tap, 2 lands harder, 3+ is the full slam. More
+// than three strikes would stay at .aiPulse3.
+function pulseClassForStrike(strike: number, s: Record<string, string>): string {
+  if (strike <= 1) return s.aiPulse1
+  if (strike === 2) return s.aiPulse2
+  return s.aiPulse3
+}
 
 const N_TRAIL = 96
 const ARC = Math.PI * 0.62
@@ -508,7 +516,7 @@ export function AtomComposition({
         <div className={textShadowClass} aria-hidden="true" />
         <span
           ref={aiRef}
-          className={`${s.ai} ${pulsing ? s.aiPulse : ''}`}
+          className={`${s.ai} ${pulsing ? pulseClassForStrike(strikeCount, s) : ''}`}
           style={buildAiStyle(progress, onDark ?? false, compact ?? false)}
         >
           a<span ref={iRef}>i</span>
