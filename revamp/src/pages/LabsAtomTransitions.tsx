@@ -599,6 +599,17 @@ export function LabsAtomTransitions() {
         </button>
       )}
 
+      <button
+        type="button"
+        className={s.canvasReplay}
+        onClick={replay}
+        disabled={!!compositionError}
+        aria-label="Replay"
+        title="Replay"
+      >
+        ↻
+      </button>
+
       <LabsNav />
       <AtomLabHud config={hudConfig} mathRef={mathRef} events={events} tone="dark" />
     </div>

@@ -554,6 +554,16 @@ export function LabsAtomStates() {
         </button>
       )}
 
+      <button
+        type="button"
+        className={s.canvasReplay}
+        onClick={replay}
+        aria-label="Replay"
+        title="Replay"
+      >
+        ↻
+      </button>
+
       <LabsNav />
       <AtomLabHud config={hudConfig} mathRef={mathRef} events={events} tone="dark" />
     </div>
