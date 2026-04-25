@@ -236,7 +236,9 @@ type StateRuntime = {
 
 The dual contract is forced by `pulsate` (which has constant position but varying scale). Every state implements both — most are no-ops on one side.
 
-**Why NOT a unified `transformFn(t) → SE(3) + scale` (locked decision):** A unified function looks tidier but forces every state to construct a full 7-tuple per frame when most only need to set one field — a real perf cost in `useFrame` at 60Hz. The split mirrors Three.js's own `Object3D.position` / `Object3D.quaternion` / `Object3D.scale` API and reflects the actual semantic split: `pulsate` varies scale not position; `orbit` varies position not scale. Project pitfall #14 (parallel over unified) applies. Do not "tidy" this into a unified transform.
+**Why NOT a unified `transformFn(t) → SE(3) + scale` (locked for the 5 STATES):** A unified function looks tidier but forces every state to construct a full 7-tuple per frame when most only need to set one field — a real perf cost in `useFrame` at 60Hz. The split mirrors Three.js's own `Object3D.position` / `Object3D.quaternion` / `Object3D.scale` API and reflects the actual semantic split: `pulsate` varies scale not position; `orbit` varies position not scale. Project pitfall #14 (parallel over unified) applies. Do not collapse this into a single unified transform.
+
+**Subject to growth at end-effects walkthrough.** End effects may need additional **parallel** fns — e.g. `colorFn(t, ctx)` for an `activate` neon flash, `trailFn(t, ctx)` for a `fade`. Adding parallel fns is OK and follows the same parallel-over-unified principle. What's banned is collapsing the existing position/scale split into one transform.
 
 `StateContext` carries:
 - The state's tunable constants (size, aspect, target, etc.)
@@ -302,6 +304,8 @@ Four discriminating questions to put to advisor + architecture-review skill:
 
 - **Trail rendering across speed-shaped boundaries.** The current `Electron.tsx` samples positions every frame; speed shaping makes the electron slow at corners, which bunches trail vertices. May read as anticipation (good) or as a visual clump (bad). **Validate at the transitions lab before shipping the first preset.**
 - **Plane-blending policy** for `orbit(plane=A) → orbit(plane=B)` is unspecified. Old `phase-types-reference.md` had a `plane: 'morph'` mode; the new spec dropped it. If any future use case wants converging-orbit choreography, this gap surfaces. **Stub a decision when it surfaces (likely "interpolate plane normal across the transition window" or "reject same-state-different-plane sequences").**
+- **Per-state trail variation isn't in the runtime contract.** Trail config currently lives per-electron (`{ head, halo, trail }` colors + an opacity ramp). The plan does not specify whether a state can override trail behavior — e.g. tighter trail during `spiral.inward`, longer trail during `straight`, suppressed trail during `pulsate`. If it turns out the design needs per-state trail expression, the runtime contract grows a third fn (e.g. `trailFn(t, ctx) → TrailParams`). Validate at the states lab when trail variation becomes a concrete request.
+- **Default `transitionWindow` value may need to land below the midpoint.** The locked formula (`windowMs = transitionWindow · 0.5 · min(durLeft, durRight)`) caps the window at 50% of the shorter adjacent state — that's the upper bound, not a default. Framer Motion / GSAP-style libraries typically default to ~20–30% of the shorter span. At `transitionWindow = 0.5` (midpoint), two equal-duration states yield a 25% window each side, which is in the right neighborhood — but the *default user-facing value* may want to land lower (e.g. `0.4`) if the midpoint reads sluggish. **Validate at the transitions lab; pick the default after sweeping it on real boundaries.**
 
 ---
 
