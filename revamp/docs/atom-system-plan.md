@@ -263,6 +263,19 @@ Not yet designed. Treat as a separate concern. For now, every electron carries `
 
 ---
 
+## Consumer trigger API — DEFERRED (gated on first use case)
+
+The plan locks the internal **config shape** (states + boundaries + runtime contract) but does NOT yet specify how a consumer wires up an atom. Two patterns are on the table:
+
+- **Declarative:** `<Atom config={cfg} trigger={isOpen} />` — animation is a pure function of state. Easier to reason about, easier to test, plays well with React's render cycle.
+- **Imperative:** `const ref = useRef<AtomHandle>(); ref.current?.play(cfg)` — fire-and-forget. Useful for "play this animation right now without changing app state" (error shake, success pulse, quiz-pass celebration).
+
+Likely outcome: support BOTH. Declarative as the default; imperative escape hatch via `useImperativeHandle` for visual-response moments where state shouldn't persist. See `_resources/component-patterns.md` for the pattern.
+
+**Decision deferred until the first concrete preset lands** (probably quiz reward). At that point, pick a default and lock the API. Same gating pattern as the color system.
+
+---
+
 ## Open work / pending
 
 ### Background sync — BLOCKED
