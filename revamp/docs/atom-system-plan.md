@@ -508,12 +508,25 @@ The user has authorized autonomous chunked execution of the lab pages, deploying
       evalState() / evalVelocityMagnitude() / defaultConfigFor() helpers
       that Chunk 4 (transitions lab) will reuse.
 
-[ ] Chunk 4 — Transitions lab (/labs/atom-transitions)
-    - State A picker, State B picker (with composition-rule validation — disable invalid combos)
-    - transitionWindow slider (default 0.5)
-    - Replay button
-    - Boundary chips (live |Δv|/peak% indicator, green/yellow/red — same pattern as old blend-test)
-    - Mounts <AtomLabHud />
+[x] Chunk 4 — Transitions lab (/labs/atom-transitions)
+    - State A picker (5 options) + State B picker (composition-rule
+      validation grays out illegal pairs; spiral.inward only enabled
+      when A=orbit; spiral.outward needs an at-point predecessor).
+    - transitionWindow slider [0.0–1.0], default 0.5. Computed windowMs
+      via `computeWindowMs()` in src/ui/atom/runtime/transitions.ts
+      (`windowMs = window · 0.5 · min(durLeft, durRight)`, MIN_WINDOW_MS=40ms).
+    - A.dur / B.dur sliders alongside the window knob.
+    - Replay button + auto-replay on any pair / window change.
+    - Boundary chips: measured |Δv|/peak% from frame-to-frame finite
+      difference of rendered positions, classified green (<2.5%) /
+      yellow (<5%) / red (>=5%) against the eye-perceptible threshold
+      from the retired blend-test.
+    - Mounts <AtomLabHud />.
+    - **MVP scope note:** the seam today is concat-only. Path-blend math
+      (smoothstep at curve↔curve, Hermite cubic at curve↔straight, fillet
+      arc + speed shaping at straight↔straight, ramp from/to zero at
+      pause↔anything) is iterated by the user *on top of* this stage in
+      follow-up work. The diagnostic chips will read red until the math lands.
 
 [ ] Chunk 5 — Retire /labs/atom-blend-test
     - Delete revamp/src/pages/LabsAtomBlend.tsx + .module.css
