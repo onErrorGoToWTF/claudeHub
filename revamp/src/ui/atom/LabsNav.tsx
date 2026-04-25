@@ -13,6 +13,7 @@ const LABS: Array<{ path: string; label: string }> = [
   { path: '/labs/atom-states', label: 'States lab' },
   { path: '/labs/atom-transitions', label: 'Transitions lab' },
   { path: '/labs/atom-sequence', label: 'Sequence lab' },
+  { path: '/labs/atom-motion', label: 'Motion lab' },
 ]
 
 export function LabsNav() {
