@@ -1,21 +1,39 @@
 /*
- * travel.ts — gravity-shaped S-curve between two orbits.
+ * travel.ts — elliptical-arc travel between two orbital nuclei.
  *
- * One canonical transition between any two orbits: a symmetric S composed
- * of two cubic Hermite arcs joined at the midpoint. C1 in TIME at both
- * orbit boundaries (the cubic's velocity matches the orbit's velocity at
- * the exit/entry instant), C1 at the midpoint. Distance scales the shape
- * implicitly — short distance keeps the S bowed; long distance straightens
- * the middle.
+ * Single ellipse with foci at the two nuclei. The whole system is three
+ * ellipses sharing the same focal structure: orbit A, orbit B, and the
+ * transfer ellipse spanning them. Travel is an arc of the transfer ellipse
+ * from the electron's current orbit position over to the symmetric point
+ * on B's orbit.
  *
- * Math-checked formulation (see plan + advisor 2026-04-25):
- *   - Endpoint Hermite tangent magnitudes are tied to orbital speed *
- *     half-duration, NOT to inter-nucleus distance. Tying them to distance
- *     creates a velocity jump at handoff (the jagged symptom on the old
- *     orbit↔straight Hermite blend). Pin to v · (T/2) and the handoff is
- *     C1 in time, not just C1 in direction.
- *   - Midpoint tangent direction = P_A → P_B; magnitude = κ · |P_B − P_A|
- *     (single artistic knob, default 0.5).
+ * Geometric construction (deterministic from the orbit configs +
+ * exit-angle):
+ *   center O = midpoint of (A, B)
+ *   linear eccentricity c = |B − A| / 2
+ *   semi-major a = (|P_A − A| + |P_A − B|) / 2     (focus-distance sum)
+ *   semi-minor b = sqrt(a² − c²)
+ *   major-axis direction  uHat = unit(B − A)
+ *   minor-axis direction  wHat = unit(P_A − O − ((P_A − O)·uHat)·uHat)
+ *
+ * Position on the transfer ellipse:
+ *   P(φ) = O + a·cos(φ)·uHat + b·sin(φ)·wHat
+ *
+ * Symmetric travel: φ at exit = φ_exit (computed from P_A); φ at entry =
+ * π − φ_exit (mirror across the minor axis through O). Linear interpolation
+ * of φ in time. Single sweep, no midpoint joining, no κ artistic knob.
+ *
+ * Dest rotation direction is picked by a 1-line dot-product test so the
+ * post-capture orbit doesn't reverse direction at handoff.
+ *
+ * Notes on the trade-off:
+ *   - Tangent at the orbit-handoff is NOT in general aligned with the
+ *     orbital tangent on circular orbits (only collinear A–P_A–B points
+ *     give tangency, and that's the degenerate case where the ellipse
+ *     collapses to the chord line). So there's a small velocity-direction
+ *     kink at exit + capture, representing the gravitational impulse
+ *     ("energy given to leave the orbit"). Accepted in exchange for
+ *     substantially simpler math.
  */
 import type { Vec3 } from './types'
 import { applyTilt, planeLift } from './types'
@@ -55,8 +73,7 @@ export function orbitPosAt(orbit: OrbitDesc, theta: number): Vec3 {
   ]
 }
 
-/** dPosition/dt on an orbit at orbit-frame angle θ. Sign carried by
- *  orbit.omega (positive = CCW). Magnitude in scene-units / second. */
+/** dPosition/dt on an orbit at orbit-frame angle θ. */
 export function orbitVelocityAt(orbit: OrbitDesc, theta: number): Vec3 {
   const du = -orbit.size * Math.sin(theta) * orbit.omega
   const dv = orbit.size * orbit.aspect * Math.cos(theta) * orbit.omega
@@ -65,9 +82,7 @@ export function orbitVelocityAt(orbit: OrbitDesc, theta: number): Vec3 {
 }
 
 /** Find the orbit-frame angle where the orbit point is closest to a
- *  target world position. For aspect=1 (circle) this has a closed form;
- *  for aspect != 1 we sample N candidates. N=64 is over-resolved for
- *  visuals — exit/entry geometry doesn't need sub-degree precision. */
+ *  target world position. Sample-based; N=64 is over-resolved. */
 export function closestPointAngle(orbit: OrbitDesc, target: Vec3): number {
   const N = 64
   let best = 0
@@ -87,214 +102,179 @@ export function closestPointAngle(orbit: OrbitDesc, target: Vec3): number {
   return best
 }
 
-/** Standard cubic Hermite, evaluated component-wise on Vec3.
- *  P(u) = h00·P0 + h10·m0 + h01·P1 + h11·m1
- *  Yields P(0)=P0, P'(0)=m0, P(1)=P1, P'(1)=m1. */
-export function cubicHermite(
-  P0: Vec3, P1: Vec3, m0: Vec3, m1: Vec3, u: number,
-): Vec3 {
-  const u2 = u * u
-  const u3 = u2 * u
-  const h00 = 2 * u3 - 3 * u2 + 1
-  const h10 = u3 - 2 * u2 + u
-  const h01 = -2 * u3 + 3 * u2
-  const h11 = u3 - u2
-  return [
-    h00 * P0[0] + h10 * m0[0] + h01 * P1[0] + h11 * m1[0],
-    h00 * P0[1] + h10 * m0[1] + h01 * P1[1] + h11 * m1[1],
-    h00 * P0[2] + h10 * m0[2] + h01 * P1[2] + h11 * m1[2],
-  ]
-}
-
-/** Cubic Hermite derivative dP/du. */
-export function cubicHermiteDerivative(
-  P0: Vec3, P1: Vec3, m0: Vec3, m1: Vec3, u: number,
-): Vec3 {
-  const u2 = u * u
-  const dh00 = 6 * u2 - 6 * u
-  const dh10 = 3 * u2 - 4 * u + 1
-  const dh01 = -6 * u2 + 6 * u
-  const dh11 = 3 * u2 - 2 * u
-  return [
-    dh00 * P0[0] + dh10 * m0[0] + dh01 * P1[0] + dh11 * m1[0],
-    dh00 * P0[1] + dh10 * m0[1] + dh01 * P1[1] + dh11 * m1[1],
-    dh00 * P0[2] + dh10 * m0[2] + dh01 * P1[2] + dh11 * m1[2],
-  ]
-}
-
-/** A precomputed travel from orbit A to orbit B. Built once per travel
- *  event from the orbit descriptors + endpoint angles + duration. */
+/** Pre-computed travel description: a slice of an ellipse with foci at
+ *  the source and destination nuclei. */
 export type TravelDesc = {
   /** Total wall-clock travel duration in seconds. */
   duration: number
-  /** Exit point on A's orbit (world). */
-  P_A: Vec3
-  /** Entry point on B's orbit (world). */
-  P_B: Vec3
-  /** Midpoint of P_A and P_B (world). */
-  M: Vec3
-  /** Hermite m-vector at u=0 of cubic 1 (= v_orbit_A · halfT). */
-  m_A: Vec3
-  /** Hermite m-vector shared at midpoint (same vector for both cubics
-   *  ensures C1 at the midpoint). */
-  m_M: Vec3
-  /** Hermite m-vector at u=1 of cubic 2 (= v_orbit_B · halfT). */
-  m_B: Vec3
-  /** Source-orbit angle at exit (for resuming source-orbit math, debug). */
+  /** Ellipse center (midpoint of foci). */
+  O: Vec3
+  /** Semi-major axis along the chord. */
+  a: number
+  /** Semi-minor axis perpendicular to the chord, in the transfer plane. */
+  b: number
+  /** Major-axis unit vector (along chord). */
+  uHat: Vec3
+  /** Minor-axis unit vector (perpendicular to chord, in transfer plane). */
+  wHat: Vec3
+  /** Ellipse parameter at exit. */
+  phiExit: number
+  /** Ellipse parameter at entry (= π − phiExit; symmetric across minor axis). */
+  phiEntry: number
+  /** Source-orbit angle at exit. */
   exitAngle: number
-  /** Dest-orbit angle at capture (so the receiving orbit phase is
-   *  C0-continuous at handoff). */
+  /** Dest-orbit angle at entry (closest-point on dest orbit to the
+   *  ellipse-resolved P_B). */
   entryAngle: number
-  /** Dest orbit as actually used by this travel (potentially with omega
-   *  sign flipped from the caller's hint to make endpoint tangents
-   *  anti-parallel — see "rotation policy" note in buildTravel). The lab
-   *  / consumer should use THIS for the post-capture orbit so the
-   *  rotation direction visually agrees with what the curve already
-   *  resolved to. */
+  /** Exit point (world). */
+  P_A: Vec3
+  /** Entry point (world). */
+  P_B: Vec3
+  /** Dest orbit as actually used by this travel. The omega sign may have
+   *  been flipped from the caller's hint so the post-capture orbital
+   *  motion roughly continues the ellipse's incoming direction (avoids a
+   *  visible 180° rotation reversal at capture). */
   destOrbit: OrbitDesc
 }
 
 /** Build a TravelDesc from source orbit, destination orbit, and total
- *  duration (seconds).
- *
- *  IMPORTANT: each cubic Hermite arc is parameterized over u ∈ [0, 1]
- *  but spans half the wall-clock duration (T/2). Therefore, to make the
- *  cubic's velocity at u=0 equal the orbit's velocity in world units/sec,
- *  the m-vector must equal v_orbit · (T/2):
- *
- *    dP/dt = dP/du · du/dt = dP/du · (1 / halfT)
- *    So  dP/du @ u=0  must equal  v_orbit · halfT.
+ *  duration. Defaults: exit at the source orbit's current `phase` (no
+ *  phase-alignment wait); entry mirrors the exit across the minor axis
+ *  of the transfer ellipse.
  */
 export function buildTravel(
   source: OrbitDesc,
   dest: OrbitDesc,
   duration: number,
   options: {
-    /** Exit angle on source. Default = closest-to-dest-center. */
+    /** Exit angle on source. Default = source.phase (current). */
     exitAngle?: number
-    /** Entry angle on dest. Default = closest-to-source-center. */
-    entryAngle?: number
-    /** Midpoint tangent magnitude scale. Default 0.5. */
-    kappa?: number
   } = {},
 ): TravelDesc {
-  const exitAngle = options.exitAngle ?? closestPointAngle(source, dest.center)
-  const entryAngle = options.entryAngle ?? closestPointAngle(dest, source.center)
-  const kappa = options.kappa ?? 0.5
-  const halfT = duration / 2
+  const F1 = source.center
+  const F2 = dest.center
+  const O: Vec3 = [
+    (F1[0] + F2[0]) / 2,
+    (F1[1] + F2[1]) / 2,
+    (F1[2] + F2[2]) / 2,
+  ]
+  const chordX = F2[0] - F1[0]
+  const chordY = F2[1] - F1[1]
+  const chordZ = F2[2] - F1[2]
+  const chordLen = Math.hypot(chordX, chordY, chordZ)
+  const c = chordLen / 2
+  const uHat: Vec3 = chordLen > 1e-9
+    ? [chordX / chordLen, chordY / chordLen, chordZ / chordLen]
+    : [1, 0, 0]
 
+  // Exit at the source orbit's current phase by default — no waiting.
+  const exitAngle = options.exitAngle ?? source.phase
   const P_A = orbitPosAt(source, exitAngle)
-  const P_B = orbitPosAt(dest, entryAngle)
-  const v_A = orbitVelocityAt(source, exitAngle)
 
-  // ROTATION POLICY (geometric, not blanket-reverse):
-  //
-  // For the S-curve to be smooth at both ends, the endpoint orbital
-  // tangents v_A and v_B must be roughly anti-parallel (dot < 0). With
-  // parallel tangents the cubic forces a tight end-loop to reconcile
-  // direction — visually this is the "bang into orbit" symptom.
-  //
-  // Whether reversing the dest rotation gives anti-parallel depends on
-  // the plane geometry:
-  //   - When closest-points sit on opposing arcs (xy/xz planes with
-  //     nuclei on the x-axis), the orbital tangents at those points are
-  //     already anti-parallel under SAME rotation; reversing flips them
-  //     to parallel.
-  //   - When closest-points sit on the same side (yz plane perpendicular
-  //     to the chord), the tangents are parallel under same rotation;
-  //     reversing flips them anti-parallel.
-  //
-  // So we don't blanket-reverse. We compute v_B for the caller's hint
-  // direction; if dot(v_A, v_B) > 0 (parallel), we flip the dest
-  // rotation. The selected dest orbit is returned in TravelDesc so the
-  // post-capture orbit math agrees with the curve that was actually
-  // built.
-  let destResolved = dest
-  let v_B = orbitVelocityAt(destResolved, entryAngle)
-  if (v_A[0] * v_B[0] + v_A[1] * v_B[1] + v_A[2] * v_B[2] > 0) {
-    destResolved = { ...dest, omega: -dest.omega }
-    v_B = orbitVelocityAt(destResolved, entryAngle)
-  }
+  // P_A in ellipse-local frame: dP from O, decomposed along uHat (major
+  // axis) and the perpendicular direction in the transfer plane.
+  const dPx = P_A[0] - O[0]
+  const dPy = P_A[1] - O[1]
+  const dPz = P_A[2] - O[2]
+  const uComp = dPx * uHat[0] + dPy * uHat[1] + dPz * uHat[2]
+  const perp: Vec3 = [
+    dPx - uComp * uHat[0],
+    dPy - uComp * uHat[1],
+    dPz - uComp * uHat[2],
+  ]
+  const perpLen = Math.hypot(perp[0], perp[1], perp[2])
+  // Minor-axis direction is wherever the perpendicular component of P_A
+  // points. The transfer plane is therefore the plane spanned by the
+  // chord and the source orbit's current radial offset perpendicular to
+  // the chord. Always non-degenerate as long as P_A is not on the chord
+  // line itself (orbit radius > 0 ensures this for non-collinear cases).
+  const wHat: Vec3 = perpLen > 1e-9
+    ? [perp[0] / perpLen, perp[1] / perpLen, perp[2] / perpLen]
+    : [0, 1, 0]
 
-  const M: Vec3 = [
-    (P_A[0] + P_B[0]) / 2,
-    (P_A[1] + P_B[1]) / 2,
-    (P_A[2] + P_B[2]) / 2,
+  // Focus-distance sum determines the ellipse size.
+  const distA = Math.hypot(P_A[0] - F1[0], P_A[1] - F1[1], P_A[2] - F1[2])
+  const distB = Math.hypot(P_A[0] - F2[0], P_A[1] - F2[1], P_A[2] - F2[2])
+  const a = (distA + distB) / 2
+  const b = Math.sqrt(Math.max(0, a * a - c * c))
+
+  // Project P_A to ellipse parameter φ.
+  // Position on ellipse: O + a·cos(φ)·uHat + b·sin(φ)·wHat. Comparing to
+  // the decomposition above: uComp = a·cos(φ_exit), perpLen = b·sin(φ_exit).
+  const cosPhi = a > 1e-9 ? uComp / a : 1
+  const sinPhi = b > 1e-9 ? perpLen / b : 0
+  const phiExit = Math.atan2(sinPhi, cosPhi)
+  // Symmetric mirror across the minor axis: cos flips sign, sin stays.
+  const phiEntry = Math.PI - phiExit
+
+  // Materialize P_B from the entry parameter.
+  const aCosE = a * Math.cos(phiEntry)
+  const bSinE = b * Math.sin(phiEntry)
+  const P_B: Vec3 = [
+    O[0] + aCosE * uHat[0] + bSinE * wHat[0],
+    O[1] + aCosE * uHat[1] + bSinE * wHat[1],
+    O[2] + aCosE * uHat[2] + bSinE * wHat[2],
   ]
 
-  // Endpoint m-vectors: v · halfT yields C1 in time at the orbit handoff.
-  const m_A: Vec3 = [v_A[0] * halfT, v_A[1] * halfT, v_A[2] * halfT]
-  const m_B: Vec3 = [v_B[0] * halfT, v_B[1] * halfT, v_B[2] * halfT]
+  // Project P_B onto dest orbit to get the entry angle. For symmetric
+  // configurations (same orbit size, both circular, same plane parallel
+  // to chord) P_B lies exactly on dest orbit; for non-symmetric setups
+  // we snap to the closest point on dest orbit.
+  const entryAngle = closestPointAngle(dest, P_B)
 
-  // Midpoint m-vector: direction (P_B − P_A) scaled by κ. Algebraically
-  // this is `unit(P_B − P_A) · κ · |P_B − P_A|` which collapses to the
-  // chord vector times κ. Single artistic knob; orbital speed has no
-  // effect here on purpose — keeps the middle's bow under user control.
-  const dx = P_B[0] - P_A[0]
-  const dy = P_B[1] - P_A[1]
-  const dz = P_B[2] - P_A[2]
-  const m_M: Vec3 = [dx * kappa, dy * kappa, dz * kappa]
+  // Pick dest rotation direction so post-capture orbital motion
+  // continues the ellipse's incoming direction (no 180° reversal). This
+  // is a 1-line geometric correction; the user's `dest.omega` is treated
+  // as a hint that may be flipped.
+  const dphiSign = phiEntry > phiExit ? 1 : -1
+  const ellipseVelEntry: Vec3 = [
+    dphiSign * (-a * Math.sin(phiEntry) * uHat[0] + b * Math.cos(phiEntry) * wHat[0]),
+    dphiSign * (-a * Math.sin(phiEntry) * uHat[1] + b * Math.cos(phiEntry) * wHat[1]),
+    dphiSign * (-a * Math.sin(phiEntry) * uHat[2] + b * Math.cos(phiEntry) * wHat[2]),
+  ]
+  let destResolved = dest
+  let v_B = orbitVelocityAt(destResolved, entryAngle)
+  if (
+    ellipseVelEntry[0] * v_B[0] +
+    ellipseVelEntry[1] * v_B[1] +
+    ellipseVelEntry[2] * v_B[2] < 0
+  ) {
+    destResolved = { ...dest, omega: -dest.omega }
+  }
 
   return {
-    duration, P_A, P_B, M, m_A, m_M, m_B,
+    duration,
+    O, a, b, uHat, wHat,
+    phiExit, phiEntry,
     exitAngle, entryAngle,
+    P_A, P_B,
     destOrbit: destResolved,
   }
 }
 
-/** Find the next wall-clock time-since-anchor at which the electron's
- *  orbital phase reaches `targetAngle`. Used to delay travel-trigger
- *  until the electron's current position aligns with the geometric-
- *  optimum exit point — combined with the closest-point exit angle, this
- *  guarantees the cubic's exit position AND velocity match the
- *  electron's actual motion (no snap, no velocity jump).
- *
- *  theta(t) = initialPhase + omega · (t − anchor). Solve theta ≡
- *  targetAngle (mod 2π) with t ≥ anchor + minOffset. */
-export function nextPhaseAlignmentOffset(
-  initialPhase: number,
-  omega: number,
-  targetAngle: number,
-  minOffset: number,
-): number {
-  if (omega === 0) return minOffset
-  const period = (2 * Math.PI) / Math.abs(omega)
-  // Solve omega·dt ≡ (targetAngle − initialPhase) (mod 2π) for dt ≥ minOffset.
-  let dt = (targetAngle - initialPhase) / omega
-  // Normalize into [minOffset, minOffset + period).
-  while (dt < minOffset - 1e-9) dt += period
-  return dt
-}
-
-/** Evaluate a travel at wall-clock time t ∈ [0, duration]. Clamps outside. */
+/** Evaluate the travel position at wall-clock t ∈ [0, duration]. */
 export function evalTravel(travel: TravelDesc, t: number): Vec3 {
-  if (t <= 0) return travel.P_A
-  if (t >= travel.duration) return travel.P_B
-  const halfT = travel.duration / 2
-  if (t < halfT) {
-    const u = t / halfT
-    return cubicHermite(travel.P_A, travel.M, travel.m_A, travel.m_M, u)
-  }
-  const u = (t - halfT) / halfT
-  return cubicHermite(travel.M, travel.P_B, travel.m_M, travel.m_B, u)
+  const u = Math.max(0, Math.min(1, t / travel.duration))
+  const phi = travel.phiExit + u * (travel.phiEntry - travel.phiExit)
+  const ac = travel.a * Math.cos(phi)
+  const bs = travel.b * Math.sin(phi)
+  return [
+    travel.O[0] + ac * travel.uHat[0] + bs * travel.wHat[0],
+    travel.O[1] + ac * travel.uHat[1] + bs * travel.wHat[1],
+    travel.O[2] + ac * travel.uHat[2] + bs * travel.wHat[2],
+  ]
 }
 
-/** Analytical dP/dt on a travel, in world units/sec. Used for boundary-
- *  continuity diagnostics and, optionally, for explicit speed metrics. */
+/** Analytical dP/dt on the ellipse, in world units / second. */
 export function evalTravelVelocity(travel: TravelDesc, t: number): Vec3 {
-  const halfT = travel.duration / 2
-  if (t <= 0) return scale(travel.m_A, 1 / halfT)
-  if (t >= travel.duration) return scale(travel.m_B, 1 / halfT)
-  if (t < halfT) {
-    const u = t / halfT
-    const m = cubicHermiteDerivative(travel.P_A, travel.M, travel.m_A, travel.m_M, u)
-    return scale(m, 1 / halfT)
-  }
-  const u = (t - halfT) / halfT
-  const m = cubicHermiteDerivative(travel.M, travel.P_B, travel.m_M, travel.m_B, u)
-  return scale(m, 1 / halfT)
-}
-
-function scale(v: Vec3, k: number): Vec3 {
-  return [v[0] * k, v[1] * k, v[2] * k]
+  const u = Math.max(0, Math.min(1, t / travel.duration))
+  const phi = travel.phiExit + u * (travel.phiEntry - travel.phiExit)
+  const dPhiDt = (travel.phiEntry - travel.phiExit) / travel.duration
+  const dA = -travel.a * Math.sin(phi) * dPhiDt
+  const dB = travel.b * Math.cos(phi) * dPhiDt
+  return [
+    dA * travel.uHat[0] + dB * travel.wHat[0],
+    dA * travel.uHat[1] + dB * travel.wHat[1],
+    dA * travel.uHat[2] + dB * travel.wHat[2],
+  ]
 }
