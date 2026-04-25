@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T20:25:57.636Z",
+  "generated_at": "2026-04-25T22:23:45.323Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,27 @@
     ],
     "news": [
       {
+        "title": "Anthropic's AI Agents Just Closed Real Deals With Real Money - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNLTVKQkZjd05FSmlIY2dHa0FsUWE1eE1SU1JoWkh3QkpPenhtWF83SVFNLUk0M0phQ2g2cWo0VmJFR2NNekhSRmZHSGhBMkI5dWJLdGRhYkkzREZBcHNzVHQ3di10M0I2b3RTdjZZQjljN0N6SndiaVVrcWozLUtDamZVbVRHX0lXMEVXbDJmNFBURFBVQVFsRg?oc=5",
+        "source": "Google News",
+        "published": "2026-04-25T22:11:00.000Z",
+        "summary": "Anthropic's AI Agents Just Closed Real Deals With Real Money The Tech Buzz"
+      },
+      {
+        "title": "Anthropic created a test marketplace for agent-on-agent commerce",
+        "url": "https://techcrunch.com/2026/04/25/anthropic-created-a-test-marketplace-for-agent-on-agent-commerce/",
+        "source": "TechCrunch",
+        "published": "2026-04-25T21:43:37.000Z",
+        "summary": "In a recent experiment, Anthropic created a classified marketplace where AI agents represented both buyers and sellers, striking real deals for real goods and real money."
+      },
+      {
+        "title": "Amazon's Partnership With Anthropic Keeps Deepening. Is This the Catalyst Amazon Stock Needs? - The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNMFVsc0VCbFlNdVJ4UFhXeDl2X2hNOGlONkRmX3c0cEtMMS03N2hfUTU1bWpWQXNXQTdEdGUyanBBNjRweWVlbzBIVmVQTXNCMXdJeXMxMzNfUFlMMF9JODRzTHZWOEJ1VGVrbk1TRk5UWGp4THRyMVdCMUhwa2c3U09zN1JUSFFsWnpLZ1k0ZldXZkJUMWJHdA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-25T19:51:25.000Z",
+        "summary": "Amazon's Partnership With Anthropic Keeps Deepening. Is This the Catalyst Amazon Stock Needs? The Motley Fool"
+      },
+      {
         "title": "Blitzy Highlights Use of Anthropic’s Claude in Autonomous Software Development - TipRanks",
         "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPcHdOenJ5UUhsTFNQa2VPSWMzcGFWOG02UmVVcUJlS1pRaUNKZUJTbTJTdnBJZEQ4UXhuM3l0UksydE5sN0lRbnNJY0ZxLU9Ed2dQY0I4Z2xwQjhCbWdSTEh1cExweGZxenBoOWZNZV9aYTg1WjExSEoxWEk2a29WY2FwcVkyMWdHTE9rVDEzVzdPbUl5YnFOYXN6eXpKQVlxcmg0YXNkdS1KVGZiUWhsWlR0U3RiN0xGY3l6cWd3V0pzLUU?oc=5",
         "source": "Google News",
@@ -181,7 +202,7 @@
       {
         "title": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
         "url": "https://github.com/nex-crm/wuphf",
-        "source": "HN · 214↑",
+        "source": "HN · 217↑",
         "hn_id": "47899844",
         "published": "2026-04-25T08:53:53.000Z",
         "summary": "I shipped a wiki layer for AI agents that uses markdown + git as the source of truth, with a bleve (BM25) + SQLite index on top. No vector or graph db yet. It runs locally in…"
@@ -210,7 +231,7 @@
       {
         "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
         "url": "https://alash3al.github.io/stash?_v01",
-        "source": "HN · 157↑",
+        "source": "HN · 158↑",
         "hn_id": "47897790",
         "published": "2026-04-25T01:24:40.000Z",
         "summary": ""
@@ -230,11 +251,11 @@
         "summary": "Google will invest at least $10 billion in Anthropic, and that amount could rise to $40 billion if Anthropic meets certain performance targets, Bloomberg reports . The investment follows Amazon's $5…"
       },
       {
-        "title": "Google will invest as much as $40 billion in Anthropic - Ars Technica",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxObFF6a1VQb1NvNEYxcjJEZEZ5UWhPTV9xOEN3Ymd4MDJJUHp0U2RPQk9tSUxqV01XeEg3YkY0OFdLcnliMDZBWE5JcWVhRFNRaTFFSlhCekN4cmF5VWE5LXBXZWhMWEVRdl9ZUkZmeGlNU2lYUmZBT0lRZG4yYzRIV0lxLXZ6UjIxeE1EcEhfY05HXzQ?oc=5",
+        "title": "Claude Mythos Probably Isn’t What You Think It Is - Medium",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcU1UampveDV0aFJOanFiZnMtaGo1c0RVUEVhd0tkelFSLTc0Q2M2OERRa215OXBlWUM1cndlTUZGRTZublpnNmtMX1NwN0RCb3k4R212SmhiS1VSNTN2MUs4ZFl4b1lySnhZUG85SUtybGxfUlZ0WTZqb2NfbGtDVDBVT0xlbHdkb0g1dzhCQ2xkT2c?oc=5",
         "source": "Google News",
-        "published": "2026-04-24T22:05:45.000Z",
-        "summary": "Google will invest as much as $40 billion in Anthropic Ars Technica"
+        "published": "2026-04-24T21:01:01.000Z",
+        "summary": "Claude Mythos Probably Isn’t What You Think It Is Medium"
       },
       {
         "title": "'Too Dangerous to Release' Is Becoming AI's New Normal - Time Magazine",
@@ -316,7 +337,7 @@
       {
         "title": "CC-Canary: Detect early signs of regressions in Claude Code",
         "url": "https://github.com/delta-hq/cc-canary",
-        "source": "HN · 64↑",
+        "source": "HN · 65↑",
         "hn_id": "47893620",
         "published": "2026-04-24T17:53:37.000Z",
         "summary": ""
@@ -327,27 +348,6 @@
         "source": "TechCrunch",
         "published": "2026-04-24T17:45:57.000Z",
         "summary": "A new era is on the way for Apple as Tim Cook plans to step down from his CEO role in September, handing the reins to hardware chief John Ternus. Ternus may be inheriting one of the most durable…"
-      },
-      {
-        "title": "Google to invest up to $40 billion in Anthropic as search giant spreads its AI bets - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOT2NxSktQaDVOV3FRckRrRGZ0TzJjX2NmWWUwQklqUERpZWxrRW9heVhDVHVaNU9yNjJlY2tpRTZyUzRhOEVOS3hxM3BuUks5LURYVlk2Nm1BVWpFRE9DaXNMcWZ4cUs0Y1BwQWpIVGlFTC00V216R0ItVFJUX0w4cy1qNzVTNHBQaVR2RVVZRkVrdTIzSDB4bEhhRm5FeGZlU18wTmFRZlZBNGhURWhUWGRrMjZweC1HR2Nv0gHAAUFVX3lxTFAzNjgyNC1ZdmE5aE9obWpnUldYTFBvRWhQME12Q05TbGN1RWs5LVM4R0FnRW9QNU9vUV8yV044OFdPaGh2QTlkZlo3R3NyYjZ4UzB1V2pJQ1RLRWJyQXpHX2p1VFhYaGRRZHhYZ3BUdnVabmxMWUNGWExhTkt1ckVZcTM5aVFfZTJHTDl0bktiYV92OHl5bWpJTDRYdWp1Vk1JRFBvUEpvZE85U3JiZVhfelpWeUZFN2ZqMTM3Nl9qNg?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T17:30:55.000Z",
-        "summary": "Google to invest up to $40 billion in Anthropic as search giant spreads its AI bets CNBC"
-      },
-      {
-        "title": "Spotify isn’t the only service now integrated with Anthropic’s Claude - 9to5Mac",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONHBVeG5VakVCanlJOE5PRnZ4bkxiV0kyMnFLcTZMN2VaQVlBTlBkR3BhanNPTmJZUXl6a2ZBQVBxbFpKQmtfNmhPMDhhYnNwcC0yQ1gyWGpabzQtSzZrZVM3Ty1xVmVpWXhhZDdwRk85cktvdkxYV1J6aU5McjlXN0I5cHMwaF9sdW8welVZVElld3UzdHhfaFNHOW5YVElG?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T17:27:00.000Z",
-        "summary": "Spotify isn’t the only service now integrated with Anthropic’s Claude 9to5Mac"
-      },
-      {
-        "title": "Anthropic says engineering missteps were behind Claude Code’s monthlong decline after weeks of user backlash - Fortune",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPTEdyc2dGVUtyNW90cFh5OGZmcnFvb0VmWU5iNjVJRlpWM1BndktEcnZaeGhxRU1kSnl4Qjg4MlRzU1pYUFBPZDMtZm9rTFdyLTNWTzFLU0dqU1AxWU5sUThVV2x4UXMwcVJhWlE1ODVRRlFFNFVqMUJFdUtpZ2ZlY1JIV0dLVWVwZ0tsOTFyYmZyQ2k5ZVBEZnpIYWp1V0psZHdUcnB4am1BWmN3?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T17:21:00.000Z",
-        "summary": "Anthropic says engineering missteps were behind Claude Code’s monthlong decline after weeks of user backlash Fortune"
       },
       {
         "title": "Claude Code Skills: The Biggest Opportunity of 2026",
