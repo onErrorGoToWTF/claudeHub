@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T14:34:30.853Z",
+  "generated_at": "2026-04-25T16:28:25.183Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -167,7 +167,7 @@
       {
         "title": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
         "url": "https://github.com/nex-crm/wuphf",
-        "source": "HN · 139↑",
+        "source": "HN · 162↑",
         "hn_id": "47899844",
         "published": "2026-04-25T08:53:53.000Z",
         "summary": "I shipped a wiki layer for AI agents that uses markdown + git as the source of truth, with a bleve (BM25) + SQLite index on top. No vector or graph db yet. It runs locally in…"
@@ -196,7 +196,7 @@
       {
         "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
         "url": "https://alash3al.github.io/stash?_v01",
-        "source": "HN · 99↑",
+        "source": "HN · 125↑",
         "hn_id": "47897790",
         "published": "2026-04-25T01:24:40.000Z",
         "summary": ""
@@ -221,20 +221,6 @@
         "source": "Google News",
         "published": "2026-04-24T22:05:45.000Z",
         "summary": "Google will invest as much as $40 billion in Anthropic Ars Technica"
-      },
-      {
-        "title": "Claude Mythos Probably Isn’t What You Think It Is - Medium",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcU1UampveDV0aFJOanFiZnMtaGo1c0RVUEVhd0tkelFSLTc0Q2M2OERRa215OXBlWUM1cndlTUZGRTZublpnNmtMX1NwN0RCb3k4R212SmhiS1VSNTN2MUs4ZFl4b1lySnhZUG85SUtybGxfUlZ0WTZqb2NfbGtDVDBVT0xlbHdkb0g1dzhCQ2xkT2c?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T21:01:01.000Z",
-        "summary": "Claude Mythos Probably Isn’t What You Think It Is Medium"
-      },
-      {
-        "title": "Google is surprisingly investing up to $40 billion in Claude creator Anthropic - Chrome Unboxed",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUnAyMmRhSUdWd1NYM1dRUnRVa1c2b214T3h4WHFIbGcySEF6U25Iel9kQWl6cWdBdzYwR0s1QnRGSzB6Sko3MlgteVV2OHVLemFhdV9mRW1JUWZDbzQ1WG1Ha29WTWdvbUhucHI3b1g2bWhETTJHcFVBZFJ4bllWa3dNSXZ5OEZfc19mQ3gxUFoyY1I4WkNFakZsbllkNzFuTEpZS2lBWQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T20:48:50.000Z",
-        "summary": "Google is surprisingly investing up to $40 billion in Claude creator Anthropic Chrome Unboxed"
       },
       {
         "title": "'Too Dangerous to Release' Is Becoming AI's New Normal - Time Magazine",
@@ -306,13 +292,6 @@
         "summary": "Anthropic Adds Election Safeguards to Claude Ahead of Midterms Let's Data Science"
       },
       {
-        "title": "Anthropic Rolls Out Election Safeguards for Claude AI Ahead of US Midterms - Decrypt",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOdFNLOUJQa0UyWEI0eEJoSFNBUWpWNjJlZGoza21EbEFRTmhXQ2JqT2pGZW9CWF93SjZLOS1oSTd3Yjd2TG9scUV5TmZienBRQ3VORDFpRXRfZDRCY2J0WXpnT1dpd3o0dnNZa3dldzNVSlJqTjI4NjVITUVMbnIyeHpIONIBiwFBVV95cUxQMjJjSnpjVWg2eEpIOHcxVnhpcFBOZ1R4dUlmcXJaZlJVS0tlam56UDBwSGJiUzZGNzI3OUJJMmhKc0MzVFZwSzBmZ2tLMml4RHBETjRiRkJVWU5vR0pmRmQ2Mk0xTGdzRVB5SktiUzN2c3BWWWt0MzFtV1JNdmxVTU51VXpscTdMeExz?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T18:58:18.000Z",
-        "summary": "Anthropic Rolls Out Election Safeguards for Claude AI Ahead of US Midterms Decrypt"
-      },
-      {
         "title": "Google investing up to $40B in Anthropic",
         "url": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic",
         "source": "HN · 50↑",
@@ -347,6 +326,28 @@
         "source": "Google News",
         "published": "2026-04-24T18:00:03.000Z",
         "summary": "Google to invest up to $40B in Anthropic in cash and compute TechCrunch"
+      },
+      {
+        "title": "CC-Canary: Detect early signs of regressions in Claude Code",
+        "url": "https://github.com/delta-hq/cc-canary",
+        "source": "HN · 62↑",
+        "hn_id": "47893620",
+        "published": "2026-04-24T17:53:37.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Apple’s new CEO, and why Elon Musk wants to buy Cursor for $60B",
+        "url": "https://techcrunch.com/podcast/apples-new-ceo-and-why-elon-musk-wants-to-buy-cursor-for-60b/",
+        "source": "TechCrunch",
+        "published": "2026-04-24T17:45:57.000Z",
+        "summary": "A new era is on the way for Apple as Tim Cook plans to step down from his CEO role in September, handing the reins to hardware chief John Ternus. Ternus may be inheriting one of the most durable…"
+      },
+      {
+        "title": "Google to invest up to $40 billion in Anthropic as search giant spreads its AI bets - CNBC",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOT2NxSktQaDVOV3FRckRrRGZ0TzJjX2NmWWUwQklqUERpZWxrRW9heVhDVHVaNU9yNjJlY2tpRTZyUzRhOEVOS3hxM3BuUks5LURYVlk2Nm1BVWpFRE9DaXNMcWZ4cUs0Y1BwQWpIVGlFTC00V216R0ItVFJUX0w4cy1qNzVTNHBQaVR2RVVZRkVrdTIzSDB4bEhhRm5FeGZlU18wTmFRZlZBNGhURWhUWGRrMjZweC1HR2Nv0gHAAUFVX3lxTFAzNjgyNC1ZdmE5aE9obWpnUldYTFBvRWhQME12Q05TbGN1RWs5LVM4R0FnRW9QNU9vUV8yV044OFdPaGh2QTlkZlo3R3NyYjZ4UzB1V2pJQ1RLRWJyQXpHX2p1VFhYaGRRZHhYZ3BUdnVabmxMWUNGWExhTkt1ckVZcTM5aVFfZTJHTDl0bktiYV92OHl5bWpJTDRYdWp1Vk1JRFBvUEpvZE85U3JiZVhfelpWeUZFN2ZqMTM3Nl9qNg?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T17:30:55.000Z",
+        "summary": "Google to invest up to $40 billion in Anthropic as search giant spreads its AI bets CNBC"
       },
       {
         "title": "Claude Code Skills: The Biggest Opportunity of 2026",
