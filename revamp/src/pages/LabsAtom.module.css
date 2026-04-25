@@ -114,7 +114,7 @@
 
 /* "University" per-letter neon-tube flash. Inline-block so opacity +
    filter animations work; staggered via animationDelay set in JSX.
-   Animation duration must match UNI_FLASH_MS in LabsAtom.tsx. Only
+   Animation duration must match LOGO.uni.flashMs in LabsAtom.tsx. Only
    opacity + filter animate (compositor-safe per motion policy). The
    inline color is set by buildUniversityStyle so the lit state reads
    white over the parent .university debossed color, then blends to

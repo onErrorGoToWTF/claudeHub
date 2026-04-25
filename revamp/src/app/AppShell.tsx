@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { LayoutDashboard, BookOpen, FolderGit2, Library as LibraryIcon, Search } from 'lucide-react'
 import { GlobalSearch } from '../ui/GlobalSearch'
 import { UserMenu } from '../ui/UserMenu'
-import { AtomComposition } from '../pages/LabsAtom'
+import { AtomComposition, LOGO } from '../pages/LabsAtom'
 import sharedStyles from '../ui/ui.module.css'
 import styles from './AppShell.module.css'
 
@@ -15,18 +15,16 @@ const NAV: NavItem[] = [
   { to: '/library',  label: 'Library',   Icon: LibraryIcon },
 ]
 
-// Delay before mounting the atom logo so the sticky topbar is fully
-// committed before WebGL creates its own compositor layer (avoids the
-// Safari/incognito sticky race). The atom itself manages its own
-// fade-in via the electron opacity ramp.
-const ATOM_DELAY_MS = 400
+// Mount-delay timer. Sourced from LOGO.mountDelayMs so it tracks the
+// rest of the atom's tuning. See revamp/docs/atom-baseline-2026-04-25.md
+// for the iOS Safari layer-race rationale.
 
 export function AppShell({ children }: { children: ReactNode }) {
   const [searchOpen, setSearchOpen] = useState(false)
   const [atomMounted, setAtomMounted] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => setAtomMounted(true), ATOM_DELAY_MS)
+    const timer = setTimeout(() => setAtomMounted(true), LOGO.mountDelayMs)
     return () => clearTimeout(timer)
   }, [])
 
