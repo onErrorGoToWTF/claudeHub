@@ -33,10 +33,10 @@ type OrbitConfig = {
 }
 
 /* =========================================================
-   ATOM ANIMATION DEFAULTS (as of 2026-04-25)
-   When the user says "go back to default settings", restore the
-   values below verbatim. These are the tuned values; everything
-   else in the file should be left alone.
+   ATOM ANIMATION (logo constants) — DEFAULTS (as of 2026-04-25)
+   When the user says "go back to default settings" (or "logo
+   constants"), restore the values below verbatim. These are the
+   tuned values; everything else in the file should be left alone.
    ---------------------------------------------------------
    AppShell.tsx:    ATOM_DELAY_MS         = 400
 
@@ -53,6 +53,22 @@ type OrbitConfig = {
      yz:  laps 5,   postLandVisibility 0.33
      xz:  laps 6,   postLandVisibility 1,
           settleDurationT 3π, settleEase 'smoothstep'
+
+   Electron part colors:
+     HEAD_COLOR                  = '#ffffff'
+     HALO_COLOR                  = '#ffffff'
+     TRAIL_COLOR                 = '#ffffff'
+
+   Text colors (ai + University, separate per element):
+     AI_LIT_RGB_LIGHT            = [255, 255, 255]
+     AI_LIT_RGB_DARK             = [235, 235, 235]
+     AI_DEBOSS_RGB               = [0, 0, 0]
+     AI_EMBOSS_RGB               = [255, 255, 255]
+     AI_GLOW_RGB                 = [255, 255, 255]
+     UNI_LIT_RGB_LIGHT           = [255, 255, 255]
+     UNI_LIT_RGB_DARK            = [235, 235, 235]
+     UNI_DEBOSS_RGB              = [0, 0, 0]
+     UNI_EMBOSS_RGB              = [255, 255, 255]
 
    Settle & strike timing:
      SETTLE_DURATION_T           = 2 * Math.PI
@@ -106,10 +122,42 @@ const ORBITS: OrbitConfig[] = [
   },
 ]
 
-const ELECTRON_COLOR = '#ffffff'
-// Optional head-only color override. Set to ELECTRON_COLOR to keep the
-// head matching halo/trail. Currently testing electric blue.
-const HEAD_COLOR = '#1ea8ff'
+// ---------- electron part colors ----------
+// Head, halo, and trail can each be tinted independently.
+const HEAD_COLOR = '#ffffff'    // tiny solid sphere at the orbit head
+const HALO_COLOR = '#ffffff'    // expanding glow burst on strike
+const TRAIL_COLOR = '#ffffff'   // ring-buffer line behind the head
+
+// ---------- text colors (ai + University) ----------
+// Each value is an [r, g, b] triple combined with an alpha at runtime.
+// "ai" and "University" share defaults but live in separate constants
+// so they can diverge later without code changes outside this block.
+const AI_LIT_RGB_LIGHT: [number, number, number]   = [255, 255, 255]   // bright on light bg
+const AI_LIT_RGB_DARK:  [number, number, number]   = [235, 235, 235]   // bright on dark bg
+const AI_DEBOSS_RGB:    [number, number, number]   = [0, 0, 0]         // dark deboss (light bg)
+const AI_EMBOSS_RGB:    [number, number, number]   = [255, 255, 255]   // light emboss (dark bg)
+const AI_GLOW_RGB:      [number, number, number]   = [255, 255, 255]   // labs-page glow stack
+
+const UNI_LIT_RGB_LIGHT: [number, number, number]  = [255, 255, 255]
+const UNI_LIT_RGB_DARK:  [number, number, number]  = [235, 235, 235]
+const UNI_DEBOSS_RGB:    [number, number, number]  = [0, 0, 0]
+const UNI_EMBOSS_RGB:    [number, number, number]  = [255, 255, 255]
+
+function rgba(rgb: readonly [number, number, number], a: number): string {
+  return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${a.toFixed(3)})`
+}
+
+function blendRgb(
+  a: readonly [number, number, number],
+  b: readonly [number, number, number],
+  t: number,
+): [number, number, number] {
+  return [
+    Math.round(a[0] * (1 - t) + b[0] * t),
+    Math.round(a[1] * (1 - t) + b[1] * t),
+    Math.round(a[2] * (1 - t) + b[2] * t),
+  ]
+}
 
 /* Duration of the .aiPulse strike-flicker. Must match the aiStrikeN
    keyframe animation duration in LabsAtom.module.css — the JS timer
@@ -230,7 +278,6 @@ function smoothstep(x: number): number {
 function Electron({
   config,
   fadeTex,
-  color,
   settleTarget,
   settle,
   onLand,
@@ -239,7 +286,6 @@ function Electron({
 }: {
   config: OrbitConfig
   fadeTex: THREE.DataTexture
-  color: string
   settleTarget?: THREE.Vector3
   settle?: boolean
   onLand?: () => void
@@ -418,7 +464,7 @@ function Electron({
         <meshLineGeometry ref={geomRef} />
         <meshLineMaterial
           ref={trailMatRef}
-          color={color}
+          color={TRAIL_COLOR}
           lineWidth={0.17}
           transparent
           opacity={0}
@@ -433,7 +479,7 @@ function Electron({
         <sphereGeometry args={[0.050, 32, 32]} />
         <meshBasicMaterial
           ref={haloMatRef}
-          color={color}
+          color={HALO_COLOR}
           toneMapped={false}
           transparent
           opacity={0}
@@ -455,7 +501,6 @@ function Electron({
 }
 
 function Scene({
-  color,
   onlyPlane,
   settleTarget,
   settle,
@@ -463,7 +508,6 @@ function Scene({
   onStrike,
   restProgressRef,
 }: {
-  color: string
   onlyPlane?: Plane
   settleTarget?: THREE.Vector3
   settle?: boolean
@@ -480,7 +524,6 @@ function Scene({
           key={`e-${o.plane}`}
           config={o}
           fadeTex={fadeTex}
-          color={color}
           settleTarget={settleTarget}
           settle={settle}
           onLand={onLand}
@@ -542,40 +585,38 @@ function buildAiStyle(
   const r = restProgress
   if (onDark) {
     // Stays light throughout. Glow dissipates as r→1, top-emboss
-    // highlight appears as r→1 (gives the text a subtle raised feel
-    // against the dark canvas at rest).
+    // highlight appears as r→1.
     const colorAlpha = g * 0.95
     const embossAlpha = r * 0.18
-    const debossShadow = `0 1px 1px rgba(255, 255, 255, ${embossAlpha.toFixed(3)})`
+    const embossShadow = `0 1px 1px ${rgba(AI_EMBOSS_RGB, embossAlpha)}`
     return {
-      color: `rgba(235, 235, 235, ${colorAlpha.toFixed(3)})`,
+      color: rgba(AI_LIT_RGB_DARK, colorAlpha),
       textShadow: compact
-        ? (r > 0 ? debossShadow : 'none')
+        ? (r > 0 ? embossShadow : 'none')
         : [
-            debossShadow,
-            `0 0 3px rgba(255, 255, 255, ${(0.9 * g * gm * (1 - r)).toFixed(3)})`,
-            `0 0 6px rgba(255, 255, 255, ${(0.65 * g * gm * (1 - r)).toFixed(3)})`,
-            `0 0 12px rgba(255, 255, 255, ${(0.4 * g * gm * (1 - r)).toFixed(3)})`,
-            `0 0 22px rgba(255, 255, 255, ${(0.2 * g * gm * (1 - r)).toFixed(3)})`,
+            embossShadow,
+            `0 0 3px ${rgba(AI_GLOW_RGB, 0.9 * g * gm * (1 - r))}`,
+            `0 0 6px ${rgba(AI_GLOW_RGB, 0.65 * g * gm * (1 - r))}`,
+            `0 0 12px ${rgba(AI_GLOW_RGB, 0.4 * g * gm * (1 - r))}`,
+            `0 0 22px ${rgba(AI_GLOW_RGB, 0.2 * g * gm * (1 - r))}`,
           ].join(', '),
     }
   }
   // Light mode: stays bright white throughout. Glow dissipates as r→1,
-  // dark deboss shadow appears as r→1 (gives the text a pressed-in
-  // feel against the chrome band at rest).
+  // dark deboss shadow appears as r→1.
   const colorAlpha = g * 0.98
   const debossAlpha = r * 0.14
-  const debossShadow = `0 -1px 1px rgba(0, 0, 0, ${debossAlpha.toFixed(3)})`
+  const debossShadow = `0 -1px 1px ${rgba(AI_DEBOSS_RGB, debossAlpha)}`
   return {
-    color: `rgba(255, 255, 255, ${colorAlpha.toFixed(3)})`,
+    color: rgba(AI_LIT_RGB_LIGHT, colorAlpha),
     textShadow: compact
       ? (r > 0 ? debossShadow : 'none')
       : [
           debossShadow,
-          `0 0 3px rgba(255, 255, 255, ${(0.9 * g * gm * (1 - r)).toFixed(3)})`,
-          `0 0 6px rgba(255, 255, 255, ${(0.65 * g * gm * (1 - r)).toFixed(3)})`,
-          `0 0 12px rgba(255, 255, 255, ${(0.4 * g * gm * (1 - r)).toFixed(3)})`,
-          `0 0 22px rgba(255, 255, 255, ${(0.2 * g * gm * (1 - r)).toFixed(3)})`,
+          `0 0 3px ${rgba(AI_GLOW_RGB, 0.9 * g * gm * (1 - r))}`,
+          `0 0 6px ${rgba(AI_GLOW_RGB, 0.65 * g * gm * (1 - r))}`,
+          `0 0 12px ${rgba(AI_GLOW_RGB, 0.4 * g * gm * (1 - r))}`,
+          `0 0 22px ${rgba(AI_GLOW_RGB, 0.2 * g * gm * (1 - r))}`,
         ].join(', '),
   }
 }
@@ -593,24 +634,24 @@ function buildUniversityStyle(
   if (!triggered) return {}
   const r = restProgress
   if (onDark) {
-    // Bright (1.0 alpha white-gray) → resting (0.55 alpha) — alpha-only blend
+    // Bright (1.0 alpha) → resting (0.55 alpha) — alpha-only blend
     const alpha = 1.0 * (1 - r) + 0.55 * r
     return {
-      color: `rgba(235, 235, 235, ${alpha.toFixed(3)})`,
+      color: rgba(UNI_LIT_RGB_DARK, alpha),
       textShadow: r > 0
-        ? `0 1px 1px rgba(255, 255, 255, ${(r * 0.18).toFixed(3)})`
+        ? `0 1px 1px ${rgba(UNI_EMBOSS_RGB, r * 0.18)}`
         : 'none',
     }
   }
-  // Light mode: blend RGB white→black AND alpha 0.98→restAlpha together
+  // Light mode: blend RGB lit→deboss AND alpha 0.98→restAlpha together
   // so the dim feels like power draining (not just opacity fade).
   const restAlpha = compact ? 0.42 : 0.22
-  const gray = Math.round(255 * (1 - r))
+  const blended = blendRgb(UNI_LIT_RGB_LIGHT, UNI_DEBOSS_RGB, r)
   const alpha = 0.98 * (1 - r) + restAlpha * r
   return {
-    color: `rgba(${gray}, ${gray}, ${gray}, ${alpha.toFixed(3)})`,
+    color: rgba(blended, alpha),
     textShadow: r > 0
-      ? `0 -1px 1px rgba(0, 0, 0, ${(r * 0.14).toFixed(3)})`
+      ? `0 -1px 1px ${rgba(UNI_DEBOSS_RGB, r * 0.14)}`
       : 'none',
   }
 }
@@ -803,7 +844,6 @@ export function AtomComposition({
           }}
         >
           <Scene
-            color={ELECTRON_COLOR}
             onlyPlane={onlyPlane}
             settleTarget={settleTarget ?? undefined}
             settle={settle}
