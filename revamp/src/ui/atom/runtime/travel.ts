@@ -222,33 +222,18 @@ export function buildTravel(
   // we snap to the closest point on dest orbit.
   const entryAngle = closestPointAngle(dest, P_B)
 
-  // Pick dest rotation direction so post-capture orbital motion
-  // continues the ellipse's incoming direction (no 180° reversal). This
-  // is a 1-line geometric correction; the user's `dest.omega` is treated
-  // as a hint that may be flipped.
-  const dphiSign = phiEntry > phiExit ? 1 : -1
-  const ellipseVelEntry: Vec3 = [
-    dphiSign * (-a * Math.sin(phiEntry) * uHat[0] + b * Math.cos(phiEntry) * wHat[0]),
-    dphiSign * (-a * Math.sin(phiEntry) * uHat[1] + b * Math.cos(phiEntry) * wHat[1]),
-    dphiSign * (-a * Math.sin(phiEntry) * uHat[2] + b * Math.cos(phiEntry) * wHat[2]),
-  ]
-  let destResolved = dest
-  let v_B = orbitVelocityAt(destResolved, entryAngle)
-  if (
-    ellipseVelEntry[0] * v_B[0] +
-    ellipseVelEntry[1] * v_B[1] +
-    ellipseVelEntry[2] * v_B[2] < 0
-  ) {
-    destResolved = { ...dest, omega: -dest.omega }
-  }
-
+  // Dest rotation is whatever the caller specified — the natural
+  // gravitational pattern reverses spin at capture (CW around A → CCW
+  // around B), so the electron arrives spinning the opposite direction
+  // by the time it reaches the other nucleus. The visible direction
+  // flip at handoff is the gravitational impulse.
   return {
     duration,
     O, a, b, uHat, wHat,
     phiExit, phiEntry,
     exitAngle, entryAngle,
     P_A, P_B,
-    destOrbit: destResolved,
+    destOrbit: dest,
   }
 }
 
