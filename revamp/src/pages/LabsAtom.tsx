@@ -107,6 +107,9 @@ const ORBITS: OrbitConfig[] = [
 ]
 
 const ELECTRON_COLOR = '#ffffff'
+// Optional head-only color override. Set to ELECTRON_COLOR to keep the
+// head matching halo/trail. Currently testing electric blue.
+const HEAD_COLOR = '#1ea8ff'
 
 /* Duration of the .aiPulse strike-flicker. Must match the aiStrikeN
    keyframe animation duration in LabsAtom.module.css — the JS timer
@@ -441,7 +444,7 @@ function Electron({
         <sphereGeometry args={[0.050, 32, 32]} />
         <meshBasicMaterial
           ref={headMatRef}
-          color={color}
+          color={HEAD_COLOR}
           toneMapped={false}
           transparent
           opacity={0}
