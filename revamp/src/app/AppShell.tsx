@@ -19,7 +19,7 @@ const NAV: NavItem[] = [
 // committed before WebGL creates its own compositor layer (avoids the
 // Safari/incognito sticky race). The atom itself manages its own
 // fade-in via the electron opacity ramp.
-const ATOM_DELAY_MS = 800
+const ATOM_DELAY_MS = 400
 
 export function AppShell({ children }: { children: ReactNode }) {
   const [searchOpen, setSearchOpen] = useState(false)
