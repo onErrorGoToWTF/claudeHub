@@ -204,8 +204,15 @@ export function buildTravel(
   const cosPhi = a > 1e-9 ? uComp / a : 1
   const sinPhi = b > 1e-9 ? perpLen / b : 0
   const phiExit = Math.atan2(sinPhi, cosPhi)
-  // Symmetric mirror across the minor axis: cos flips sign, sin stays.
-  const phiEntry = Math.PI - phiExit
+  // Sweep UNDER the chord — diametrically opposite point on the
+  // ellipse, NOT a mirror across the minor axis. For exit at far-A
+  // (φ_exit = π), this lands at far-B (φ_entry = 2π = 0 in position
+  // but the sweep π → 2π passes through 3π/2 = bottom of ellipse). The
+  // arc dips below the chord so it arrives at far-B going +y, which
+  // matches the destination's CCW orbital tangent at θ=0 — capture is
+  // smooth, the rotation reverses at A's exit (the gravitational-
+  // impulse "energy gift" the user described).
+  const phiEntry = phiExit + Math.PI
 
   // Materialize P_B from the entry parameter.
   const aCosE = a * Math.cos(phiEntry)
