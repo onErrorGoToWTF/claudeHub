@@ -93,11 +93,26 @@ type ElectronSpec = {
 
 // One electron for now — get the A↔B elliptical transit clean before
 // layering more.
+//
+// User insight: the orbit-A apex (furthest perpendicular-to-chord point)
+// is the geometric pivot — at that point orbit shape merges into the
+// transition path. For an xy-plane orbit with chord along the x-axis,
+// the apex is at orbital angle θ = π/2. We pick the electron's
+// initialPhase so it arrives EXACTLY at θ = π/2 when travel triggers,
+// and pin buildTravel's exit angle to π/2 too — the handoff happens at
+// the same apex point on every replay (symmetric, predictable).
+const APEX_ANGLE = Math.PI / 2
+const E1_OMEGA = -ORBIT_OMEGA_BASE // CW
+// Solve theta(travelStart) = APEX_ANGLE:
+//   APEX_ANGLE = initialPhase + omega · (travelStart − fadeInStart)
+const E1_INITIAL_PHASE =
+  APEX_ANGLE - E1_OMEGA * (TRAVEL_BASE_T /* travelStart since fadeInStart=0 */)
+
 const ELECTRONS: ElectronSpec[] = [
   {
     plane: 'xy',
     cwAtA: true,
-    initialPhase: 0,
+    initialPhase: E1_INITIAL_PHASE,
     fadeInStart: 0,
     travelStart: TRAVEL_BASE_T,
     color: '#ffffff',
