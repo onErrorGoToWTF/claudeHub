@@ -528,20 +528,39 @@ The user has authorized autonomous chunked execution of the lab pages, deploying
       pause↔anything) is iterated by the user *on top of* this stage in
       follow-up work. The diagnostic chips will read red until the math lands.
 
-[ ] Chunk 5 — Retire /labs/atom-blend-test
-    - Delete revamp/src/pages/LabsAtomBlend.tsx + .module.css
-    - Remove the lazy import + route from App.tsx
-    - Don't lose the velocity-spike fix (dt floor + warmup) — port any still-useful bits into the new labs first
+[x] Chunk 5 — Retire /labs/atom-blend-test
+    - Deleted revamp/src/pages/LabsAtomBlend.tsx + .module.css.
+    - Removed lazy import + route from App.tsx.
+    - Salvaged before delete: dt floor at 1/240 (≥4ms — prevents tiny
+      first-frame delta from producing a 60+ unit/s velocity spike) and
+      3-frame velWarmup (skip first 3 |v| samples so peakV doesn't lock
+      high) — both ported into LabsAtomTransitions.tsx so the boundary
+      chips read truthfully on first replay.
 
-[ ] Chunk 6 — Polish + reduced-motion gate
-    - prefers-reduced-motion: render the static end-state; HUD still renders
-    - aria-hidden="true" on Canvas
-    - 44pt tap targets verified
-    - 100dvh canvas verified on iOS
+[x] Chunk 6 — Polish + reduced-motion gate
+    - usePrefersReducedMotion() hook in src/ui/atom/. Live-updated via
+      matchMedia 'change' event so a settings toggle takes effect without
+      reload. SSR-safe.
+    - States lab + Transitions lab both gate useFrame on `reducedMotion`.
+      When set: the probe seeds the trail buffer at t=1, snaps the head
+      + halo to the end-state position/scale, writes a one-shot math line
+      with `extra: 'reduced-motion'`, and skips animation. HUD renders
+      normally so the screenshot still captures full debug context.
+    - aria-hidden="true" on both labs' Canvas (already present from C3/C4).
+    - Bumped Transitions lab radio min-height 36→44pt to match HIG floor.
+    - 100dvh canvas verified (`.root { height: 100dvh }` in both modules).
 
-[ ] Chunk 7 — Update STATE.md
-    - Mark lab redesign chunks done
-    - Surface next workstream (likely first preset deployment)
+[x] Chunk 7 — Update STATE.md
+    - "Shipped" entry summarizing all 7 chunks landed at the top of the
+      history (one bullet, full breadth so the next session can rehydrate
+      from STATE.md alone).
+    - Active section pivoted from "pick the top NOT DONE chunk" to the
+      next workstream: iterating seam-blending math on top of the
+      now-functional transitions lab. Six numbered next steps captured
+      (speed shaping → curve↔curve → curve↔straight → straight↔straight
+      → pause/pulsate edges → first preset deployment).
+    - Cold-start read-order updated to point at runtime modules + the
+      transitions lab as the new entry surface.
 ```
 
 Mark chunks done by changing `[ ]` to `[x]`. Commit message format: `feat(atom-lab): chunk N — short title`.

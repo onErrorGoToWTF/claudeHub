@@ -26,7 +26,6 @@ const LibraryWishlist = lazy(() => import('../pages/LibraryWishlist').then(m => 
 const Settings        = lazy(() => import('../pages/Settings').then(m => ({ default: m.Settings })))
 const SignIn          = lazy(() => import('../pages/SignIn').then(m => ({ default: m.SignIn })))
 const LabsAtom        = lazy(() => import('../pages/LabsAtom').then(m => ({ default: m.LabsAtom })))
-const LabsAtomBlend   = lazy(() => import('../pages/LabsAtomBlend').then(m => ({ default: m.LabsAtomBlend })))
 const LabsAtomStates  = lazy(() => import('../pages/LabsAtomStates').then(m => ({ default: m.LabsAtomStates })))
 const LabsAtomTransitions = lazy(() => import('../pages/LabsAtomTransitions').then(m => ({ default: m.LabsAtomTransitions })))
 
@@ -66,7 +65,6 @@ export function App() {
         <Suspense fallback={null}>
           <Routes location={location}>
             <Route path="/labs/atom" element={<LabsAtom />} />
-            <Route path="/labs/atom-blend-test" element={<LabsAtomBlend />} />
             <Route path="/labs/atom-states" element={<LabsAtomStates />} />
             <Route path="/labs/atom-transitions" element={<LabsAtomTransitions />} />
           </Routes>

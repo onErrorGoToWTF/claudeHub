@@ -23,6 +23,7 @@ import {
 } from '../ui/atom/AtomLabHud'
 import { ELECTRON } from '../ui/atom/constants'
 import { makeFadeTexture } from '../ui/atom/Electron'
+import { usePrefersReducedMotion } from '../ui/atom/usePrefersReducedMotion'
 import {
   STATE_TYPES,
   defaultConfigFor,
@@ -66,12 +67,14 @@ function ElectronProbe({
   replayKey,
   colors,
   mathRef,
+  reducedMotion,
   onComplete,
 }: {
   config: StateConfig
   replayKey: number
   colors: Colors
   mathRef: React.MutableRefObject<AtomLabMathState>
+  reducedMotion: boolean
   onComplete: () => void
 }) {
   const headRef = useRef<THREE.Mesh>(null!)
@@ -106,18 +109,39 @@ function ElectronProbe({
     completedRef.current = false
     insertIdxRef.current = 0
     // Seed the trail buffer with the t=0 position so the first frame
-    // doesn't render a streak from the world origin.
-    const startPos = evalState(config, 0, ZERO_CTX).position
+    // doesn't render a streak from the world origin. Under reduced-motion
+    // we seed at t=1 instead so the static end-state has the trail
+    // collapsed onto the resting point.
+    const seedT = reducedMotion ? 1 : 0
+    const seedRes = evalState(config, seedT, ZERO_CTX)
+    const startPos = seedRes.position
     const buf = bufRef.current!
     for (let i = 0; i < TRAIL_SEGMENTS; i++) {
       buf[i * 3] = startPos[0]
       buf[i * 3 + 1] = startPos[1]
       buf[i * 3 + 2] = startPos[2]
     }
+    if (reducedMotion) {
+      // Snap to end-state and report it once. No useFrame animation.
+      headRef.current.position.set(startPos[0], startPos[1], startPos[2])
+      headRef.current.scale.setScalar(seedRes.scale)
+      if (haloRef.current) {
+        haloRef.current.position.set(startPos[0], startPos[1], startPos[2])
+        haloRef.current.scale.setScalar(seedRes.scale)
+      }
+      mathRef.current = {
+        phase: 'state',
+        stateName: config.type,
+        t: 1,
+        vMag: 0,
+        extra: 'reduced-motion',
+      }
+    }
     invalidate()
-  }, [config, replayKey, invalidate])
+  }, [config, replayKey, invalidate, reducedMotion, mathRef])
 
   useFrame((_, delta) => {
+    if (reducedMotion) return
     const dtMs = Math.min(delta, 1 / 30) * 1000
     elapsedMsRef.current += dtMs
     const duration = Math.max(1, config.duration)
@@ -384,6 +408,7 @@ export function LabsAtomStates() {
   const [replayKey, setReplayKey] = useState(0)
   const [events, setEvents] = useState<AtomLabEvent[]>([])
   const [collapsed, setCollapsed] = useState(false)
+  const reducedMotion = usePrefersReducedMotion()
 
   const mathRef = useRef<AtomLabMathState>({
     phase: 'state',
@@ -447,6 +472,7 @@ export function LabsAtomStates() {
             replayKey={replayKey}
             colors={colors}
             mathRef={mathRef}
+            reducedMotion={reducedMotion}
             onComplete={() => pushEvent(`complete·${config.type}`)}
           />
         </Canvas>

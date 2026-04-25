@@ -27,6 +27,7 @@ import {
 } from '../ui/atom/AtomLabHud'
 import { ELECTRON } from '../ui/atom/constants'
 import { makeFadeTexture } from '../ui/atom/Electron'
+import { usePrefersReducedMotion } from '../ui/atom/usePrefersReducedMotion'
 import {
   defaultConfigFor,
   evalState,
@@ -56,6 +57,7 @@ function ElectronTransitionProbe({
   b,
   replayKey,
   mathRef,
+  reducedMotion,
   onSeam,
   onComplete,
 }: {
@@ -63,6 +65,7 @@ function ElectronTransitionProbe({
   b: StateConfig
   replayKey: number
   mathRef: React.MutableRefObject<AtomLabMathState>
+  reducedMotion: boolean
   onSeam: (s: SeamSample) => void
   onComplete: () => void
 }) {
@@ -81,6 +84,10 @@ function ElectronTransitionProbe({
   const lastDtRef = useRef(0)
   const lastVRef = useRef(0)
   const beforeSeamVRef = useRef(0)
+  // Salvaged from the retired blend-test: skip the first 3 velocity samples
+  // so a wonky first-frame finite-difference can't lock peakV high and
+  // make every chip read 0%.
+  const velWarmupRef = useRef(3)
 
   const fadeTex = useMemo(() => makeFadeTexture(), [])
   const { invalidate, size } = useThree()
@@ -106,7 +113,35 @@ function ElectronTransitionProbe({
     beforeSeamVRef.current = 0
     lastVRef.current = 0
     lastDtRef.current = 0
+    velWarmupRef.current = 3
     insertIdxRef.current = 0
+    if (reducedMotion) {
+      // Snap to the end of B (sequence end-state) and skip animation.
+      const endRes = evalState(b, 1, { nucleus: [0, 0, 0], prev: { endPos: aEndPos, endTangent: [0, 0, 0] } })
+      const endPos = endRes.position
+      lastPosRef.current = endPos
+      const buf = bufRef.current!
+      for (let i = 0; i < TRAIL_SEGMENTS; i++) {
+        buf[i * 3] = endPos[0]
+        buf[i * 3 + 1] = endPos[1]
+        buf[i * 3 + 2] = endPos[2]
+      }
+      headRef.current.position.set(endPos[0], endPos[1], endPos[2])
+      headRef.current.scale.setScalar(endRes.scale)
+      if (haloRef.current) {
+        haloRef.current.position.set(endPos[0], endPos[1], endPos[2])
+        haloRef.current.scale.setScalar(endRes.scale)
+      }
+      mathRef.current = {
+        phase: 'B',
+        stateName: b.type,
+        t: 1,
+        vMag: 0,
+        extra: 'reduced-motion',
+      }
+      invalidate()
+      return
+    }
     const start = evalState(a, 0, { nucleus: [0, 0, 0] }).position
     lastPosRef.current = start
     const buf = bufRef.current!
@@ -116,10 +151,15 @@ function ElectronTransitionProbe({
       buf[i * 3 + 2] = start[2]
     }
     invalidate()
-  }, [a, b, replayKey, invalidate])
+  }, [a, b, aEndPos, replayKey, reducedMotion, invalidate, mathRef])
 
   useFrame((_, delta) => {
-    const dtMs = Math.min(delta, 1 / 30) * 1000
+    if (reducedMotion) return
+    // dt floor at 1/240 (4ms) — salvaged from the retired blend-test.
+    // Prevents a tiny first-frame delta from dividing a finite Δpos and
+    // producing a 60+ unit/s velocity spike that pins peakV high.
+    const dtSecClamped = Math.max(1 / 240, Math.min(delta, 1 / 30))
+    const dtMs = dtSecClamped * 1000
     elapsedMsRef.current += dtMs
     const elapsed = elapsedMsRef.current
     const durA = Math.max(1, a.duration)
@@ -190,25 +230,30 @@ function ElectronTransitionProbe({
     const dx = position[0] - last[0]
     const dy = position[1] - last[1]
     const dz = position[2] - last[2]
-    const dtSec = Math.max(0.001, dtMs / 1000)
-    const vMag = Math.sqrt(dx * dx + dy * dy + dz * dz) / dtSec
-    if (vMag > peakVRef.current) peakVRef.current = vMag
+    const vMag = Math.sqrt(dx * dx + dy * dy + dz * dz) / dtSecClamped
 
-    // Seam detection — record the last |v| in A, then on the first frame in
-    // B that has a real dt, sample |v| again and report.
-    if (phase === 'A') {
-      beforeSeamVRef.current = vMag
-    } else if (phase === 'B' && !seamReportedRef.current && lastDtRef.current > 0) {
-      seamReportedRef.current = true
-      onSeam({
-        beforeV: beforeSeamVRef.current,
-        afterV: vMag,
-        peakV: peakVRef.current,
-      })
+    const warmingUp = velWarmupRef.current > 0
+    if (warmingUp) {
+      velWarmupRef.current -= 1
+    } else {
+      if (vMag > peakVRef.current) peakVRef.current = vMag
+
+      // Seam detection — record the last |v| in A, then on the first
+      // frame in B sample |v| again and report.
+      if (phase === 'A') {
+        beforeSeamVRef.current = vMag
+      } else if (phase === 'B' && !seamReportedRef.current && lastDtRef.current > 0) {
+        seamReportedRef.current = true
+        onSeam({
+          beforeV: beforeSeamVRef.current,
+          afterV: vMag,
+          peakV: peakVRef.current,
+        })
+      }
     }
 
     lastPosRef.current = position
-    lastDtRef.current = dtSec
+    lastDtRef.current = dtSecClamped
     lastVRef.current = vMag
 
     mathRef.current = {
@@ -314,6 +359,7 @@ export function LabsAtomTransitions() {
   const [events, setEvents] = useState<AtomLabEvent[]>([])
   const [seam, setSeam] = useState<SeamSample | null>(null)
   const [collapsed, setCollapsed] = useState(false)
+  const reducedMotion = usePrefersReducedMotion()
 
   const mathRef = useRef<AtomLabMathState>({
     phase: 'A',
@@ -399,6 +445,7 @@ export function LabsAtomTransitions() {
               b={b}
               replayKey={replayKey}
               mathRef={mathRef}
+              reducedMotion={reducedMotion}
               onSeam={setSeam}
               onComplete={() => pushEvent(`complete·${a.type}→${b.type}`)}
             />
