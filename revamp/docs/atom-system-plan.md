@@ -491,10 +491,11 @@ The user has authorized autonomous chunked execution of the lab pages, deploying
     - Hidden `data-atom-debug-context` node for screenshot/source-view dumps
     - 1s console.debug heartbeat with full debug state
 
-[ ] Chunk 2 — Build-time commit-hash injection
-    - vite.config.ts: define VITE_GIT_COMMIT = first 7 chars of `git rev-parse HEAD`
-    - Falls back to "dev-local" if git command fails
-    - HUD reads from import.meta.env.VITE_GIT_COMMIT
+[x] Chunk 2 — Build-time commit-hash injection
+    - vite.config.ts: `define` replaces `import.meta.env.VITE_GIT_COMMIT` with
+      `JSON.stringify(<7-char SHA>)` (or "dev-local" if `git` is absent).
+    - Verified by probe build: SHA literal lands in dist/assets/index-*.js.
+    - HUD reads from import.meta.env.VITE_GIT_COMMIT.
 
 [ ] Chunk 3 — States lab (/labs/atom-states)
     - State picker (radio: orbit | straight | spiral | pulsate | pause)
