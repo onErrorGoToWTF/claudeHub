@@ -242,6 +242,7 @@ The two intensity knobs are independent so the user can express asymmetric impac
 **Constants:**
 - Operates on **head + halo only**. Opacity ramps `1 → 0` (forward) or `0 → 1` (reversed).
 - `withShrink` — optional boolean. If true, head + halo also shrink to zero scale alongside opacity. More dramatic exit/entrance. Defaults `false`.
+- `curve` — locked default `smoothstep` (slow-fast-slow, graceful). Rate is controlled via `duration` only — no separate rate knob. If a future use case wants a different curve (linear / easeInCubic / easeOutCubic), expose `curve` as a per-instance override at that point.
 
 **Future refinements (recorded, not implemented):**
 - `trail-linger` — head fades first, trail continues for a beat then fades. Currently this is the AUTOMATIC behavior because trail is autonomous, but if we want explicit control over the trail's post-fade lifetime, it'd grow a knob.
@@ -249,15 +250,26 @@ The two intensity knobs are independent so the user can express asymmetric impac
 
 ---
 
-## End effect summary table
+## Moment-accent summary table (start + end)
 
-| Accent       | Side          | Forward | Reverse | Bidirectional name |
-|--------------|---------------|---------|---------|---------------------|
-| `target-hit` | both          | yes     | no      | —                   |
-| `activate`   | target        | yes     | no      | —                   |
-| `burst`      | electron      | yes     | no (symmetric — looks the same reversed; treat as forward-only for clarity) | — |
-| `fade`       | electron      | yes     | yes     | `appear` (when `at: 'start'`) |
-| `spawn-portal` (deferred) | electron | no | yes | — (start-only) |
+| Accent       | Side          | Valid at end | Valid at start | Bidirectional name |
+|--------------|---------------|--------------|----------------|---------------------|
+| `target-hit` | both          | yes          | no             | —                   |
+| `activate`   | target        | yes          | no             | —                   |
+| `burst`      | electron      | yes          | yes (symmetric — looks the same reversed) | — |
+| `fade`       | electron      | yes          | yes            | `appear` (when `at: 'start'`) |
+| `spawn-portal` (deferred) | electron | no | yes        | — (start-only)      |
+| `ignition` (deferred) | electron | no | yes            | — (start-only)      |
+
+## Start effects — wrapped
+
+Start effects reuse the unified catalog. Of the locked accents:
+- **`appear`** — `fade` played in reverse (`at: 'start'`). Head + halo opacity `0 → 1`, optional `withShrink`, smoothstep curve.
+- **`burst`** — symmetric; valid at start with the same constants as end-side burst.
+
+Start-only accents (`spawn-portal`, `ignition`) are **deferred** — recorded as candidates, not yet designed. Revisit when a concrete use case requires one. Same deferral gate as the color system, consumer trigger API, and the `speedShaping` escape hatch.
+
+The named consumer use cases (logo, quiz reward, award activation, departure/arrival, panel highlight, Genius celebration, modal entrance/exit) all read fine with just `appear` + `burst` available at sequence start.
 
 ---
 
