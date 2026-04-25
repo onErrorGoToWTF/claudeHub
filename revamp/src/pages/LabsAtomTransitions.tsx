@@ -35,6 +35,17 @@ import {
   type Vec3,
 } from '../ui/atom/runtime'
 import { checkComposition, computeWindowMs, evalSequence } from '../ui/atom/runtime/transitions'
+import {
+  IDENTITY_OVERLAY,
+  defaultEndEffect,
+  defaultStartEffect,
+  evalEndEffect,
+  evalStartEffect,
+  type ElectronOverlay,
+  type EndEffectConfig,
+  type StartEffectConfig,
+} from '../ui/atom/runtime/endEffects'
+import { ATOM } from '../ui/atom/constants'
 import s from './LabsAtomTransitions.module.css'
 
 extend({ MeshLineGeometry, MeshLineMaterial })
@@ -53,7 +64,10 @@ function ElectronTransitionProbe({
   a,
   b,
   windowMs,
+  startEffect,
+  endEffect,
   replayKey,
+  colors,
   mathRef,
   reducedMotion,
   onSeam,
@@ -62,7 +76,10 @@ function ElectronTransitionProbe({
   a: StateConfig
   b: StateConfig
   windowMs: number
+  startEffect: StartEffectConfig | null
+  endEffect: EndEffectConfig | null
   replayKey: number
+  colors: { head: string; halo: string; trail: string }
   mathRef: React.MutableRefObject<AtomLabMathState>
   reducedMotion: boolean
   onSeam: (s: SeamSample) => void
@@ -70,6 +87,8 @@ function ElectronTransitionProbe({
 }) {
   const headRef = useRef<THREE.Mesh>(null!)
   const haloRef = useRef<THREE.Mesh>(null!)
+  const headMatRef = useRef<THREE.MeshBasicMaterial>(null!)
+  const haloMatRef = useRef<THREE.MeshBasicMaterial>(null!)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const trailGeomRef = useRef<any>(null!)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -168,60 +187,104 @@ function ElectronTransitionProbe({
   useFrame((_, delta) => {
     if (reducedMotion) return
     // dt floor at 1/240 (4ms) — salvaged from the retired blend-test.
-    // Prevents a tiny first-frame delta from dividing a finite Δpos and
-    // producing a 60+ unit/s velocity spike that pins peakV high.
     const dtSecClamped = Math.max(1 / 240, Math.min(delta, 1 / 30))
     const dtMs = dtSecClamped * 1000
     elapsedMsRef.current += dtMs
     const elapsed = elapsedMsRef.current
     const durA = Math.max(1, a.duration)
     const durB = Math.max(1, b.duration)
-    const totalDur = durA + durB
+    const startDur = startEffect?.duration ?? 0
+    const endDur = endEffect?.duration ?? 0
+    const seqDur = durA + durB
+    const totalDur = startDur + seqDur + endDur
 
-    const seqResult = evalSequence(
-      {
-        a,
-        b,
-        ctxA: { nucleus: [0, 0, 0] },
-        ctxB: { nucleus: [0, 0, 0], prev: { endPos: aEndPos, endTangent: [0, 0, 0] } },
-        windowMs,
-      },
-      Math.min(elapsed, totalDur),
-    )
-    const phase = seqResult.phase
-    const tLocal = seqResult.tLocal
-    const position = seqResult.position
-    const scale = seqResult.scale
+    let phase: 'start' | 'A' | 'window' | 'B' | 'end'
+    let tLocal: number
+    let position: Vec3
+    let scale: number
+    let overlay: ElectronOverlay = IDENTITY_OVERLAY
+
+    if (startDur > 0 && elapsed < startDur) {
+      // Start phase — electron at A's t=0 with start-effect overlay.
+      phase = 'start'
+      tLocal = elapsed / startDur
+      const r = evalState(a, 0, { nucleus: [0, 0, 0] })
+      position = r.position
+      scale = r.scale
+      if (startEffect) overlay = evalStartEffect(startEffect, tLocal)
+    } else if (elapsed < startDur + seqDur) {
+      // Sequence (A → window → B) via Hermite seam blend.
+      const seqElapsed = elapsed - startDur
+      const seqResult = evalSequence(
+        {
+          a,
+          b,
+          ctxA: { nucleus: [0, 0, 0] },
+          ctxB: { nucleus: [0, 0, 0], prev: { endPos: aEndPos, endTangent: [0, 0, 0] } },
+          windowMs,
+        },
+        Math.min(seqElapsed, seqDur),
+      )
+      phase = seqResult.phase
+      tLocal = seqResult.tLocal
+      position = seqResult.position
+      scale = seqResult.scale
+    } else {
+      // End phase — electron at B's t=1 with end-effect overlay.
+      phase = 'end'
+      tLocal = endDur > 0 ? Math.min(1, (elapsed - startDur - seqDur) / endDur) : 1
+      const r = evalState(b, 1, {
+        nucleus: [0, 0, 0],
+        prev: { endPos: aEndPos, endTangent: [0, 0, 0] },
+      })
+      position = r.position
+      scale = r.scale
+      if (endEffect) overlay = evalEndEffect(endEffect, tLocal)
+    }
+
+    const finalScale = scale * overlay.scaleMult
 
     headRef.current.position.set(position[0], position[1], position[2])
-    headRef.current.scale.setScalar(scale)
+    headRef.current.scale.setScalar(finalScale)
+    if (headMatRef.current) {
+      headMatRef.current.opacity = overlay.opacityMult
+      if (overlay.colorOverride) {
+        headMatRef.current.color.set(overlay.colorOverride)
+      } else {
+        headMatRef.current.color.set(colors.head)
+      }
+    }
     if (haloRef.current) {
       haloRef.current.position.set(position[0], position[1], position[2])
-      haloRef.current.scale.setScalar(scale)
+      haloRef.current.scale.setScalar(finalScale)
+    }
+    if (haloMatRef.current) {
+      haloMatRef.current.opacity = 0.35 * overlay.opacityMult * overlay.glowMult
     }
 
-    // Trail
-    const buf = bufRef.current!
-    const idx = insertIdxRef.current
-    buf[idx * 3] = position[0]
-    buf[idx * 3 + 1] = position[1]
-    buf[idx * 3 + 2] = position[2]
-    insertIdxRef.current = (idx + 1) % TRAIL_SEGMENTS
-    const unroll = new Float32Array(TRAIL_SEGMENTS * 3)
-    for (let i = 0; i < TRAIL_SEGMENTS; i++) {
-      const src = (insertIdxRef.current + i) % TRAIL_SEGMENTS
-      unroll[i * 3] = buf[src * 3]
-      unroll[i * 3 + 1] = buf[src * 3 + 1]
-      unroll[i * 3 + 2] = buf[src * 3 + 2]
-    }
-    if (trailGeomRef.current?.setPoints) {
-      trailGeomRef.current.setPoints(unroll)
+    // Trail: skip during 'start' (electron is materializing at the anchor)
+    // so the trail doesn't seed from world origin. End phase still samples
+    // (locks at one point, naturally collapses).
+    if (phase !== 'start') {
+      const buf = bufRef.current!
+      const idx = insertIdxRef.current
+      buf[idx * 3] = position[0]
+      buf[idx * 3 + 1] = position[1]
+      buf[idx * 3 + 2] = position[2]
+      insertIdxRef.current = (idx + 1) % TRAIL_SEGMENTS
+      const unroll = new Float32Array(TRAIL_SEGMENTS * 3)
+      for (let i = 0; i < TRAIL_SEGMENTS; i++) {
+        const src = (insertIdxRef.current + i) % TRAIL_SEGMENTS
+        unroll[i * 3] = buf[src * 3]
+        unroll[i * 3 + 1] = buf[src * 3 + 1]
+        unroll[i * 3 + 2] = buf[src * 3 + 2]
+      }
+      if (trailGeomRef.current?.setPoints) {
+        trailGeomRef.current.setPoints(unroll)
+      }
     }
 
-    // Velocity from frame-to-frame finite difference of actual rendered
-    // positions — this is the truthful read; the runtime evalVelocityMagnitude
-    // is the analytical version. They agree for smooth phases but diverge
-    // exactly at the seam, which is what the chips diagnose.
+    // Velocity from frame-to-frame finite difference. Truthful read.
     const last = lastPosRef.current
     const dx = position[0] - last[0]
     const dy = position[1] - last[1]
@@ -234,10 +297,6 @@ function ElectronTransitionProbe({
     } else {
       if (vMag > peakVRef.current) peakVRef.current = vMag
 
-      // Seam detection across the Hermite window:
-      //   before = last |v| in pure-A region (phase='A', i.e. window entry)
-      //   after  = first |v| in pure-B region (phase='B', window exit)
-      // With C1 Hermite at both window boundaries, Δ|v| ≈ 0 → green.
       if (phase === 'A') {
         beforeSeamVRef.current = vMag
       } else if (phase === 'B' && !seamReportedRef.current && lastDtRef.current > 0) {
@@ -255,7 +314,15 @@ function ElectronTransitionProbe({
     lastVRef.current = vMag
 
     const stateName =
-      phase === 'A' ? a.type : phase === 'B' ? b.type : `${a.type}→${b.type}`
+      phase === 'start'
+        ? `${startEffect?.type ?? 'start'}→${a.type}`
+        : phase === 'A'
+          ? a.type
+          : phase === 'B'
+            ? b.type
+            : phase === 'end'
+              ? `${b.type}→${endEffect?.type ?? 'end'}`
+              : `${a.type}→${b.type}`
     mathRef.current = {
       phase,
       stateName,
@@ -278,7 +345,7 @@ function ElectronTransitionProbe({
         <meshLineGeometry ref={trailGeomRef} />
         <meshLineMaterial
           ref={trailMatRef}
-          color="#ffffff"
+          color={colors.trail}
           lineWidth={0.17}
           transparent
           opacity={1}
@@ -291,11 +358,24 @@ function ElectronTransitionProbe({
       </mesh>
       <mesh ref={haloRef} scale={1}>
         <sphereGeometry args={[0.05, 32, 32]} />
-        <meshBasicMaterial color="#ffffff" toneMapped={false} transparent opacity={0.35} depthWrite={false} />
+        <meshBasicMaterial
+          ref={haloMatRef}
+          color={colors.halo}
+          toneMapped={false}
+          transparent
+          opacity={0.35}
+          depthWrite={false}
+        />
       </mesh>
       <mesh ref={headRef}>
         <sphereGeometry args={[0.05, 32, 32]} />
-        <meshBasicMaterial color="#ffffff" toneMapped={false} transparent opacity={1} />
+        <meshBasicMaterial
+          ref={headMatRef}
+          color={colors.head}
+          toneMapped={false}
+          transparent
+          opacity={1}
+        />
       </mesh>
     </>
   )
@@ -355,6 +435,9 @@ export function LabsAtomTransitions() {
     return { ...sp, direction: 'inward' as const }
   })
   const [transitionWindow, setTransitionWindow] = useState(0.5)
+  const [startEffect, setStartEffect] = useState<StartEffectConfig | null>(null)
+  const [endEffect, setEndEffect] = useState<EndEffectConfig | null>(null)
+  const [colors] = useState({ head: '#ffffff', halo: '#ffffff', trail: '#ffffff' })
   const [replayKey, setReplayKey] = useState(0)
   const [events, setEvents] = useState<AtomLabEvent[]>([])
   const [seam, setSeam] = useState<SeamSample | null>(null)
@@ -406,6 +489,57 @@ export function LabsAtomTransitions() {
     return checkComposition(a, candidate) === null
   }, [a])
 
+  const cycleStartEffect = useCallback(() => {
+    setStartEffect((cur) => {
+      if (cur === null) return defaultStartEffect('appear')
+      if (cur.type === 'appear') return defaultStartEffect('burst')
+      return null
+    })
+    setReplayKey((k) => k + 1)
+  }, [])
+
+  const cycleEndEffect = useCallback(() => {
+    setEndEffect((cur) => {
+      if (cur === null) return defaultEndEffect('burst')
+      if (cur.type === 'burst') return defaultEndEffect('fade')
+      return null
+    })
+    setReplayKey((k) => k + 1)
+  }, [])
+
+  /** Recreate the production logo's motion: appear in → orbit (xy plane,
+   *  ~4 laps with the locked ellipse aspect from constants.ts) → Hermite
+   *  blend → spiral.inward collapse → burst on landing. Single-electron
+   *  approximation; the real logo runs three on different planes. Targets
+   *  the origin in the lab (the production logo targets the i-dot DOM
+   *  coord, which isn't available outside the topbar scene). */
+  const loadLogoPreset = useCallback(() => {
+    const aspect = ATOM.orbit.radiusB / ATOM.orbit.radiusA  // 0.85 / 1.40
+    setA({
+      type: 'orbit',
+      size: ATOM.orbit.radiusA,
+      aspect,
+      revolutions: 4,
+      duration: 4000,
+      plane: 'xy',
+    })
+    setB({
+      type: 'spiral',
+      direction: 'inward',
+      size: ATOM.orbit.radiusA,
+      aspect,
+      revolutions: 1.5,
+      duration: 1500,
+      plane: 'xy',
+    })
+    setTransitionWindow(0.5)
+    setStartEffect({ type: 'appear', withShrink: false, duration: 500 })
+    setEndEffect({ type: 'burst', scaleIntensity: 1.45, glowIntensity: 2.5, duration: 600 })
+    setSeam(null)
+    setReplayKey((k) => k + 1)
+    pushEvent('preset·logo')
+  }, [pushEvent])
+
   const hudConfig = useMemo<Record<string, unknown>>(() => {
     const aBit =
       a.type === 'spiral'
@@ -422,8 +556,10 @@ export function LabsAtomTransitions() {
       'B.dur': b.duration,
       window: transitionWindow.toFixed(2),
       windowMs: Math.round(windowMs),
+      start: startEffect ? `${startEffect.type}/${startEffect.duration}ms` : 'none',
+      end: endEffect ? `${endEffect.type}/${endEffect.duration}ms` : 'none',
     }
-  }, [a, b, transitionWindow, windowMs])
+  }, [a, b, transitionWindow, windowMs, startEffect, endEffect])
 
   return (
     <div className={s.root}>
@@ -439,7 +575,10 @@ export function LabsAtomTransitions() {
               a={a}
               b={b}
               windowMs={windowMs}
+              startEffect={startEffect}
+              endEffect={endEffect}
               replayKey={replayKey}
+              colors={colors}
               mathRef={mathRef}
               reducedMotion={reducedMotion}
               onSeam={setSeam}
@@ -503,6 +642,48 @@ export function LabsAtomTransitions() {
           {compositionError && (
             <div className={s.warning}>{compositionError}</div>
           )}
+
+          <div className={s.section}>
+            <p className={s.sectionLabel}>Preset</p>
+            <button
+              type="button"
+              className={s.radio}
+              style={{ width: '100%', justifyContent: 'center' }}
+              onClick={loadLogoPreset}
+            >
+              ↻ Load logo preset
+            </button>
+          </div>
+
+          <div className={s.section}>
+            <p className={s.sectionLabel}>Start effect</p>
+            <button
+              type="button"
+              className={s.radio}
+              style={{ width: '100%', justifyContent: 'flex-start' }}
+              onClick={cycleStartEffect}
+            >
+              {startEffect ? startEffect.type : 'none'}
+              <span style={{ marginLeft: 'auto', opacity: 0.5, fontSize: 11 }}>
+                {startEffect ? `${startEffect.duration}ms` : 'tap to cycle'}
+              </span>
+            </button>
+          </div>
+
+          <div className={s.section}>
+            <p className={s.sectionLabel}>End effect</p>
+            <button
+              type="button"
+              className={s.radio}
+              style={{ width: '100%', justifyContent: 'flex-start' }}
+              onClick={cycleEndEffect}
+            >
+              {endEffect ? endEffect.type : 'none'}
+              <span style={{ marginLeft: 'auto', opacity: 0.5, fontSize: 11 }}>
+                {endEffect ? `${endEffect.duration}ms` : 'tap to cycle'}
+              </span>
+            </button>
+          </div>
 
           <div className={s.section}>
             <p className={s.sectionLabel}>Window</p>
