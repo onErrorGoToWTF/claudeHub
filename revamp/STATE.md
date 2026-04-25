@@ -98,6 +98,8 @@ The spiral.inward primitive is explicitly kept ("obviously an amazing one. I wan
 
 **Corkscrew design hint (from user):** "tight corkscrew that opens up into the orbit" + reverse for orbit→line. Geometrically: helix where radius is small near line-end, grows to orbit's R at orbit-start; guide axis runs from line-end-position to orbit-center; n turns of corkscrew across the window. Match velocity at u=0 to line tangent; at u=1 to orbit tangent. Reuse existing `stateTangentNormalized()` helper for boundary tangents.
 
+**Why this pair first (user observation):** orbit→line under the current Hermite blend reads "jagged and off" on phone review. The user's hypothesis is that the corkscrew geometry will fix it specifically — and likely the rest of the perceived seam-quality issues, since orbit↔line is the visually dominant pair in the planned use cases (atom-forms, logo, quiz reward, panel highlight).
+
 **Next-session entry point:**
 1. Open `revamp/src/ui/atom/runtime/transitions.ts`. The `blendAt()` dispatcher is at ~L289. The two TODO markers point at where to insert `corkscrewStraightToOrbit()` and `corkscrewOrbitToStraight()`.
 2. Implement the corkscrew. Keep C1 at u=0 and u=1 (use boundary-velocity matching like the Hermite version does — reuse `stateTangentNormalized()`).
