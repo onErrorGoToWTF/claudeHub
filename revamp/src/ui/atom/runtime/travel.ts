@@ -149,6 +149,21 @@ export function buildTravel(
   options: {
     /** Exit angle on source. Default = source.phase (current). */
     exitAngle?: number
+    /** Which side of the chord the arc sweeps through.
+     *
+     *  'top' (default) — phi sweeps phiExit → π−phiExit (mirror across
+     *    minor axis, arc goes through ellipse top φ=π/2). Smooth at
+     *    BOTH ends when source and dest have the SAME orbital rotation
+     *    (orbital tangents at far-A and far-B are anti-parallel in y,
+     *    matching the arc's +y exit / −y entry).
+     *
+     *  'bottom' — phi sweeps phiExit → phiExit+π (diametrically
+     *    opposite, arc goes through ellipse bottom φ=3π/2). Smooth at
+     *    capture when dest has OPPOSITE rotation to source (CCW at B
+     *    while CW at A) — arc arrives at far-B going +y, matching
+     *    CCW orbital tangent. Exit kinks 180° (the "energy gift" to
+     *    leave A's CW orbit). */
+    arcSide?: 'top' | 'bottom'
   } = {},
 ): TravelDesc {
   const F1 = source.center
@@ -204,14 +219,14 @@ export function buildTravel(
   const cosPhi = a > 1e-9 ? uComp / a : 1
   const sinPhi = b > 1e-9 ? perpLen / b : 0
   const phiExit = Math.atan2(sinPhi, cosPhi)
-  // Symmetric mirror across the minor axis. Sweep goes OVER the top of
-  // the transit ellipse (φ_exit → π/2 → φ_entry). For exit at far-A
-  // (φ_exit = π), this gives φ_entry = 0 = far-B. With same orbital
-  // rotation at both nuclei, the orbital velocity at far-A is opposite
-  // (in y) to the orbital velocity at far-B — they're on opposite sides
-  // of the chord — so a top-sweep arc starting +y at far-A naturally
-  // ends −y at far-B, matching both. Smooth at both ends.
-  const phiEntry = Math.PI - phiExit
+  const arcSide = options.arcSide ?? 'top'
+  // Top sweep: mirror across minor axis (φ goes through π/2 = ellipse
+  // top). Bottom sweep: diametrically opposite (φ goes through 3π/2
+  // = ellipse bottom). Both end at the same world position when
+  // exit/entry are at major-axis tips; the bow goes the other way.
+  const phiEntry = arcSide === 'bottom'
+    ? phiExit + Math.PI
+    : Math.PI - phiExit
 
   // Materialize P_B from the entry parameter.
   const aCosE = a * Math.cos(phiEntry)

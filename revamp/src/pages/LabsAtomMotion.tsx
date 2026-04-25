@@ -142,17 +142,18 @@ function makeOrbitADesc(spec: ElectronSpec): OrbitDesc {
   }
 }
 
-function makeOrbitBDesc(spec: ElectronSpec): OrbitDesc {
+function makeOrbitBDesc(spec: ElectronSpec, opposite: boolean): OrbitDesc {
+  // Same rotation (default): top-sweep arc, smooth at both ends, visual
+  // "opposite spin" comes from chord-side handoff geometry.
+  // Opposite rotation: bottom-sweep arc, actually CCW at B vs CW at A,
+  // smooth capture but 180° kink at exit (the gravitational impulse).
+  const sourceOmega = spec.cwAtA ? -ORBIT_OMEGA_BASE : ORBIT_OMEGA_BASE
   return {
     center: NUCLEUS_B,
     plane: spec.plane,
     size: ORBIT_SIZE,
     aspect: ORBIT_ASPECT,
-    // SAME rotation as A. Visual "opposite spin" at the far-side handoffs
-    // is geometric (electrons on opposite sides of the chord) — same
-    // omega, but at far-A the CW velocity is +y while at far-B it's −y.
-    // Top-sweep transit arc connects them smoothly at both ends.
-    omega: spec.cwAtA ? -ORBIT_OMEGA_BASE : ORBIT_OMEGA_BASE,
+    omega: opposite ? -sourceOmega : sourceOmega,
     phase: 0,
   }
 }
@@ -163,6 +164,7 @@ function ElectronProbe({
   fadeTex,
   replayKey,
   reducedMotion,
+  oppositeRotation,
   onReport,
 }: {
   spec: ElectronSpec
@@ -170,6 +172,7 @@ function ElectronProbe({
   fadeTex: THREE.DataTexture
   replayKey: number
   reducedMotion: boolean
+  oppositeRotation: boolean
   onReport: (idx: number, report: ProbeReport) => void
 }) {
   const headRef = useRef<THREE.Mesh>(null!)
@@ -207,9 +210,10 @@ function ElectronProbe({
     // HUD continues to render normally so screenshots still capture context.
     if (reducedMotion) {
       const orbitA = makeOrbitADesc(spec)
-      const orbitB = makeOrbitBDesc(spec)
+      const orbitB = makeOrbitBDesc(spec, oppositeRotation)
       const desc = buildTravel(orbitA, orbitB, TRAVEL_DUR, {
         exitAngle: spec.initialPhase,
+        arcSide: oppositeRotation ? 'bottom' : 'top',
       })
       const restPos = orbitPosAt(orbitB, desc.entryAngle)
       if (bufRef.current) {
@@ -264,7 +268,7 @@ function ElectronProbe({
     let vMag = 0
 
     const orbitA = makeOrbitADesc(spec)
-    const orbitB = makeOrbitBDesc(spec)
+    const orbitB = makeOrbitBDesc(spec, oppositeRotation)
 
     // Fade-in opacity (head/halo).
     let opacity = 0
@@ -301,7 +305,10 @@ function ElectronProbe({
           sourceAtExit,
           orbitB,
           TRAVEL_DUR,
-          { exitAngle },
+          {
+            exitAngle,
+            arcSide: oppositeRotation ? 'bottom' : 'top',
+          },
         )
       }
       const localT = t - spec.travelStart
@@ -436,6 +443,7 @@ export function LabsAtomMotion() {
   const [autoReplay, setAutoReplay] = useState(true)
   const [collapsed, setCollapsed] = useState(false)
   const [zoom, setZoom] = useState(CAMERA_Z)
+  const [oppositeRotation, setOppositeRotation] = useState(false)
   const reducedMotion = usePrefersReducedMotion()
   const fadeTex = useMemo(() => makeFadeTexture(), [])
   const mathRef = useRef<AtomLabMathState>({
@@ -485,12 +493,13 @@ export function LabsAtomMotion() {
             <Nuclei />
             {ELECTRONS.map((spec, i) => (
               <ElectronProbe
-                key={`e${i}-${replayKey}`}
+                key={`e${i}-${replayKey}-${oppositeRotation ? 'opp' : 'same'}`}
                 spec={spec}
                 electronIndex={i}
                 fadeTex={fadeTex}
                 replayKey={replayKey}
                 reducedMotion={reducedMotion}
+                oppositeRotation={oppositeRotation}
                 onReport={onReport}
               />
             ))}
@@ -533,6 +542,19 @@ export function LabsAtomMotion() {
                 onChange={(e) => setAutoReplay(e.target.checked)}
               />
               <span>auto-loop</span>
+            </label>
+          </div>
+          <div className={s.row}>
+            <label className={s.checkbox}>
+              <input
+                type="checkbox"
+                checked={oppositeRotation}
+                onChange={(e) => {
+                  setOppositeRotation(e.target.checked)
+                  setReplayKey((k) => k + 1)
+                }}
+              />
+              <span>opposite rotation at B (CCW capture, kinks at exit)</span>
             </label>
           </div>
           <div className={s.legend}>
