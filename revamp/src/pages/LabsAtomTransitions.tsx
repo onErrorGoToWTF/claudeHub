@@ -104,7 +104,18 @@ function ElectronTransitionProbe({
     bufRef.current = new Float32Array(TRAIL_SEGMENTS * 3)
   }
 
-  // Reset on replay or config change.
+  // Latest a / b / aEndPos read inside the reset effect via refs so that
+  // slider drags (which mutate the configs on every tick) don't reseed +
+  // restart. State-TYPE swaps go through switchA/switchB which ALSO bump
+  // replayKey via the auto-replay effect upstream, so type changes still
+  // reset cleanly. Slider tweaks on the same A/B pair update live.
+  const aRef = useRef(a)
+  const bRef = useRef(b)
+  const aEndPosRef = useRef(aEndPos)
+  useEffect(() => { aRef.current = a }, [a])
+  useEffect(() => { bRef.current = b }, [b])
+  useEffect(() => { aEndPosRef.current = aEndPos }, [aEndPos])
+
   useEffect(() => {
     elapsedMsRef.current = 0
     completedRef.current = false
@@ -115,9 +126,11 @@ function ElectronTransitionProbe({
     lastDtRef.current = 0
     velWarmupRef.current = 3
     insertIdxRef.current = 0
+    const aCfg = aRef.current
+    const bCfg = bRef.current
+    const aEnd = aEndPosRef.current
     if (reducedMotion) {
-      // Snap to the end of B (sequence end-state) and skip animation.
-      const endRes = evalState(b, 1, { nucleus: [0, 0, 0], prev: { endPos: aEndPos, endTangent: [0, 0, 0] } })
+      const endRes = evalState(bCfg, 1, { nucleus: [0, 0, 0], prev: { endPos: aEnd, endTangent: [0, 0, 0] } })
       const endPos = endRes.position
       lastPosRef.current = endPos
       const buf = bufRef.current!
@@ -134,7 +147,7 @@ function ElectronTransitionProbe({
       }
       mathRef.current = {
         phase: 'B',
-        stateName: b.type,
+        stateName: bCfg.type,
         t: 1,
         vMag: 0,
         extra: 'reduced-motion',
@@ -142,7 +155,7 @@ function ElectronTransitionProbe({
       invalidate()
       return
     }
-    const start = evalState(a, 0, { nucleus: [0, 0, 0] }).position
+    const start = evalState(aCfg, 0, { nucleus: [0, 0, 0] }).position
     lastPosRef.current = start
     const buf = bufRef.current!
     for (let i = 0; i < TRAIL_SEGMENTS; i++) {
@@ -151,7 +164,7 @@ function ElectronTransitionProbe({
       buf[i * 3 + 2] = start[2]
     }
     invalidate()
-  }, [a, b, aEndPos, replayKey, reducedMotion, invalidate, mathRef])
+  }, [replayKey, reducedMotion, invalidate, mathRef])
 
   useFrame((_, delta) => {
     if (reducedMotion) return
@@ -386,22 +399,17 @@ export function LabsAtomTransitions() {
     pushEvent(`replay·${a.type}→${b.type}`)
   }, [a.type, b.type, compositionError, pushEvent])
 
-  // Auto-replay on A/B/window change so the user always sees the current pair.
-  useEffect(() => {
-    if (compositionError) return
+  const switchA = useCallback((type: StateType) => {
+    setA(defaultConfigFor(type))
     setSeam(null)
     setReplayKey((k) => k + 1)
-  }, [a, b, compositionError])
-
-  const switchA = useCallback((type: StateType) => {
-    const next = defaultConfigFor(type)
-    setA(next)
     pushEvent(`A·${type}`)
   }, [pushEvent])
 
   const switchB = useCallback((type: StateType) => {
-    const next = defaultConfigFor(type)
-    setB(next)
+    setB(defaultConfigFor(type))
+    setSeam(null)
+    setReplayKey((k) => k + 1)
     pushEvent(`B·${type}`)
   }, [pushEvent])
 
@@ -528,6 +536,11 @@ export function LabsAtomTransitions() {
               <span className={s.fieldValue} style={{ flex: 1, textAlign: 'left' }}>
                 {Math.round(windowMs)}ms
               </span>
+            </div>
+            <div className={s.note}>
+              Path-blend math not yet wired — slider sets <code>windowMs</code>{' '}
+              for next workstream. Boundary chips will read red until the
+              math lands.
             </div>
             <div className={s.field}>
               <span className={s.fieldLabel}>A.dur</span>

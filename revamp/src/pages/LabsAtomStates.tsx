@@ -103,17 +103,21 @@ function ElectronProbe({
     bufRef.current = new Float32Array(TRAIL_SEGMENTS * 3)
   }
 
-  // Reset on replay or config change.
+  // Read latest config from a ref inside the reset effect so that slider
+  // drags (which mutate `config` on every tick) don't reseed the trail
+  // buffer + reset elapsedMs. State-TYPE changes go through switchState()
+  // which bumps replayKey alongside config, so type swaps still reset
+  // cleanly. Sliders on a single state update the visible motion live.
+  const configRef = useRef(config)
+  useEffect(() => { configRef.current = config }, [config])
+
   useEffect(() => {
     elapsedMsRef.current = 0
     completedRef.current = false
     insertIdxRef.current = 0
-    // Seed the trail buffer with the t=0 position so the first frame
-    // doesn't render a streak from the world origin. Under reduced-motion
-    // we seed at t=1 instead so the static end-state has the trail
-    // collapsed onto the resting point.
+    const cfg = configRef.current
     const seedT = reducedMotion ? 1 : 0
-    const seedRes = evalState(config, seedT, ZERO_CTX)
+    const seedRes = evalState(cfg, seedT, ZERO_CTX)
     const startPos = seedRes.position
     const buf = bufRef.current!
     for (let i = 0; i < TRAIL_SEGMENTS; i++) {
@@ -122,7 +126,6 @@ function ElectronProbe({
       buf[i * 3 + 2] = startPos[2]
     }
     if (reducedMotion) {
-      // Snap to end-state and report it once. No useFrame animation.
       headRef.current.position.set(startPos[0], startPos[1], startPos[2])
       headRef.current.scale.setScalar(seedRes.scale)
       if (haloRef.current) {
@@ -131,14 +134,14 @@ function ElectronProbe({
       }
       mathRef.current = {
         phase: 'state',
-        stateName: config.type,
+        stateName: cfg.type,
         t: 1,
         vMag: 0,
         extra: 'reduced-motion',
       }
     }
     invalidate()
-  }, [config, replayKey, invalidate, reducedMotion, mathRef])
+  }, [replayKey, reducedMotion, invalidate, mathRef])
 
   useFrame((_, delta) => {
     if (reducedMotion) return
