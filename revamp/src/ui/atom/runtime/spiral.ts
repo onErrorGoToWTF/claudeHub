@@ -1,5 +1,5 @@
 import type { SpiralStateConfig, StateContext, StateRuntime, Vec3 } from './types'
-import { planeLift } from './types'
+import { applyTilt, planeLift } from './types'
 
 /**
  * Spiral — orbit with shrinking (inward) or growing (outward) radius.
@@ -23,8 +23,9 @@ export const spiralRuntime: StateRuntime<SpiralStateConfig> = {
     const r = c.direction === 'inward' ? c.size * (1 - t) : c.size * t
     const u = r * Math.cos(theta)
     const v = r * c.aspect * Math.sin(theta)
-    const [lx, ly, lz] = planeLift(c.plane, u, v)
-    return [ctx.nucleus[0] + lx, ctx.nucleus[1] + ly, ctx.nucleus[2] + lz]
+    const lifted = planeLift(c.plane, u, v)
+    const [tx, ty, tz] = applyTilt(lifted, c.tiltX ?? 0, c.tiltY ?? 0)
+    return [ctx.nucleus[0] + tx, ctx.nucleus[1] + ty, ctx.nucleus[2] + tz]
   },
   scaleFn: () => 1,
 }

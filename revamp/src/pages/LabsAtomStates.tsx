@@ -381,6 +381,12 @@ function StateConstants({
           format={(v) => `${v.toFixed(0)}ms`}
           onChange={(v) => setConfig({ ...config, duration: v })} />
         <PlaneSelect plane={config.plane} onChange={(p) => setConfig({ ...config, plane: p })} />
+        <Slider label="tilt X" value={(config.tiltX ?? 0) * 180 / Math.PI} min={-180} max={180} step={1}
+          format={(v) => `${v.toFixed(0)}°`}
+          onChange={(v) => setConfig({ ...config, tiltX: v * Math.PI / 180 })} />
+        <Slider label="tilt Y" value={(config.tiltY ?? 0) * 180 / Math.PI} min={-180} max={180} step={1}
+          format={(v) => `${v.toFixed(0)}°`}
+          onChange={(v) => setConfig({ ...config, tiltY: v * Math.PI / 180 })} />
       </>
     )
   }
@@ -413,6 +419,12 @@ function StateConstants({
           format={(v) => `${v.toFixed(0)}ms`}
           onChange={(v) => setConfig({ ...config, duration: v })} />
         <PlaneSelect plane={config.plane} onChange={(p) => setConfig({ ...config, plane: p })} />
+        <Slider label="tilt X" value={(config.tiltX ?? 0) * 180 / Math.PI} min={-180} max={180} step={1}
+          format={(v) => `${v.toFixed(0)}°`}
+          onChange={(v) => setConfig({ ...config, tiltX: v * Math.PI / 180 })} />
+        <Slider label="tilt Y" value={(config.tiltY ?? 0) * 180 / Math.PI} min={-180} max={180} step={1}
+          format={(v) => `${v.toFixed(0)}°`}
+          onChange={(v) => setConfig({ ...config, tiltY: v * Math.PI / 180 })} />
       </>
     )
   }
@@ -524,23 +536,6 @@ export function LabsAtomStates() {
     pushEvent(`replay·${config.type}`)
   }, [config.type, pushEvent])
 
-  const cycleStartEffect = useCallback(() => {
-    setStartEffect((cur) => {
-      if (cur === null) return defaultStartEffect('appear')
-      if (cur.type === 'appear') return defaultStartEffect('burst')
-      return null
-    })
-    setReplayKey((k) => k + 1)
-  }, [])
-
-  const cycleEndEffect = useCallback(() => {
-    setEndEffect((cur) => {
-      if (cur === null) return defaultEndEffect('burst')
-      if (cur.type === 'burst') return defaultEndEffect('fade')
-      return null
-    })
-    setReplayKey((k) => k + 1)
-  }, [])
 
   const hudConfig = useMemo<Record<string, unknown>>(() => {
     const base: Record<string, unknown> = {
@@ -604,17 +599,17 @@ export function LabsAtomStates() {
 
           <div className={s.section}>
             <p className={s.sectionLabel}>State</p>
-            <div className={s.radioRow}>
-              {STATE_TYPES.map((t) => (
-                <button
-                  key={t}
-                  type="button"
-                  className={`${s.radio} ${config.type === t ? s.radioActive : ''}`}
-                  onClick={() => switchState(t)}
-                >
-                  {t}
-                </button>
-              ))}
+            <div className={s.field}>
+              <select
+                className={s.select}
+                style={{ flex: 1 }}
+                value={config.type}
+                onChange={(e) => switchState(e.target.value as StateType)}
+              >
+                {STATE_TYPES.map((t) => (
+                  <option key={t} value={t}>{t}</option>
+                ))}
+              </select>
             </div>
           </div>
 
@@ -640,17 +635,24 @@ export function LabsAtomStates() {
 
           <div className={s.section}>
             <p className={s.sectionLabel}>Start effect</p>
-            <button
-              type="button"
-              className={s.radio}
-              style={{ width: '100%', justifyContent: 'flex-start' }}
-              onClick={cycleStartEffect}
-            >
-              {startEffect ? startEffect.type : 'none'}
-              <span style={{ marginLeft: 'auto', opacity: 0.5, fontSize: 11 }}>
-                {startEffect ? `${startEffect.duration}ms` : 'tap to cycle'}
-              </span>
-            </button>
+            <div className={s.field}>
+              <select
+                className={s.select}
+                style={{ flex: 1 }}
+                value={startEffect?.type ?? 'none'}
+                onChange={(e) => {
+                  const v = e.target.value
+                  if (v === 'none') setStartEffect(null)
+                  else if (v === 'appear') setStartEffect(defaultStartEffect('appear'))
+                  else if (v === 'burst') setStartEffect(defaultStartEffect('burst'))
+                  setReplayKey((k) => k + 1)
+                }}
+              >
+                <option value="none">none</option>
+                <option value="appear">appear</option>
+                <option value="burst">burst</option>
+              </select>
+            </div>
             {startEffect?.type === 'burst' && (
               <>
                 <Slider label="scale" value={startEffect.scaleIntensity} min={0} max={2} step={0.05}
@@ -684,17 +686,24 @@ export function LabsAtomStates() {
 
           <div className={s.section}>
             <p className={s.sectionLabel}>End effect</p>
-            <button
-              type="button"
-              className={s.radio}
-              style={{ width: '100%', justifyContent: 'flex-start' }}
-              onClick={cycleEndEffect}
-            >
-              {endEffect ? endEffect.type : 'none'}
-              <span style={{ marginLeft: 'auto', opacity: 0.5, fontSize: 11 }}>
-                {endEffect ? `${endEffect.duration}ms` : 'tap to cycle'}
-              </span>
-            </button>
+            <div className={s.field}>
+              <select
+                className={s.select}
+                style={{ flex: 1 }}
+                value={endEffect?.type ?? 'none'}
+                onChange={(e) => {
+                  const v = e.target.value
+                  if (v === 'none') setEndEffect(null)
+                  else if (v === 'burst') setEndEffect(defaultEndEffect('burst'))
+                  else if (v === 'fade') setEndEffect(defaultEndEffect('fade'))
+                  setReplayKey((k) => k + 1)
+                }}
+              >
+                <option value="none">none</option>
+                <option value="burst">burst</option>
+                <option value="fade">fade</option>
+              </select>
+            </div>
             {endEffect?.type === 'burst' && (
               <>
                 <Slider label="scale" value={endEffect.scaleIntensity} min={0} max={2} step={0.05}
@@ -728,6 +737,12 @@ export function LabsAtomStates() {
 
           <div className={s.section}>
             <p className={s.sectionLabel}>Color</p>
+            <div className={s.colorRow}>
+              <input className={s.colorInput} type="color"
+                value={colors.head === colors.halo && colors.halo === colors.trail ? colors.head : '#ffffff'}
+                onChange={(e) => setColors({ head: e.target.value, halo: e.target.value, trail: e.target.value })} />
+              <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.85)' }}>all (sets every channel)</span>
+            </div>
             <div className={s.colorRow}>
               <input className={s.colorInput} type="color" value={colors.head}
                 onChange={(e) => setColors({ ...colors, head: e.target.value })} />
@@ -772,6 +787,27 @@ export function LabsAtomStates() {
       >
         ↻
       </button>
+      <div className={s.canvasZoomCluster}>
+        <button
+          type="button"
+          className={s.canvasZoomBtn}
+          onClick={() => setZoom((z) => Math.max(3, +(z - 0.5).toFixed(2)))}
+          aria-label="Zoom in"
+          title="Zoom in (closer)"
+        >
+          −
+        </button>
+        <button
+          type="button"
+          className={s.canvasZoomBtn}
+          onClick={() => setZoom((z) => Math.min(30, +(z + 0.5).toFixed(2)))}
+          aria-label="Zoom out"
+          title="Zoom out (farther)"
+        >
+          +
+        </button>
+      </div>
+      <span className={s.canvasZoomLabel}>z={zoom.toFixed(1)}</span>
 
       <LabsNav />
       <AtomLabHud config={hudConfig} mathRef={mathRef} events={events} tone="dark" />

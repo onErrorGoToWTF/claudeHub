@@ -1,5 +1,5 @@
 import type { OrbitStateConfig, StateContext, StateRuntime, Vec3 } from './types'
-import { planeLift } from './types'
+import { applyTilt, planeLift } from './types'
 
 /**
  * Orbit — circle (aspect=1) or ellipse around the nucleus.
@@ -14,8 +14,9 @@ export const orbitRuntime: StateRuntime<OrbitStateConfig> = {
     const theta = 2 * Math.PI * c.revolutions * t
     const u = c.size * Math.cos(theta)
     const v = c.size * c.aspect * Math.sin(theta)
-    const [lx, ly, lz] = planeLift(c.plane, u, v)
-    return [ctx.nucleus[0] + lx, ctx.nucleus[1] + ly, ctx.nucleus[2] + lz]
+    const lifted = planeLift(c.plane, u, v)
+    const [tx, ty, tz] = applyTilt(lifted, c.tiltX ?? 0, c.tiltY ?? 0)
+    return [ctx.nucleus[0] + tx, ctx.nucleus[1] + ty, ctx.nucleus[2] + tz]
   },
   scaleFn: () => 1,
 }

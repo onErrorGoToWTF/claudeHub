@@ -532,23 +532,6 @@ export function LabsAtomTransitions() {
     return checkComposition(a, candidate) === null
   }, [a])
 
-  const cycleStartEffect = useCallback(() => {
-    setStartEffect((cur) => {
-      if (cur === null) return defaultStartEffect('appear')
-      if (cur.type === 'appear') return defaultStartEffect('burst')
-      return null
-    })
-    setReplayKey((k) => k + 1)
-  }, [])
-
-  const cycleEndEffect = useCallback(() => {
-    setEndEffect((cur) => {
-      if (cur === null) return defaultEndEffect('burst')
-      if (cur.type === 'burst') return defaultEndEffect('fade')
-      return null
-    })
-    setReplayKey((k) => k + 1)
-  }, [])
 
   /** Recreate the production logo's motion: appear in → orbit (xy plane,
    *  ~4 laps with the locked ellipse aspect from constants.ts) → Hermite
@@ -649,38 +632,38 @@ export function LabsAtomTransitions() {
 
           <div className={s.section}>
             <p className={s.sectionLabel}>State A</p>
-            <div className={s.radioRow}>
-              {STATE_TYPES.map((t) => (
-                <button
-                  key={t}
-                  type="button"
-                  className={`${s.radio} ${a.type === t ? s.radioActive : ''}`}
-                  onClick={() => switchA(t)}
-                >
-                  {t}
-                </button>
-              ))}
+            <div className={s.field}>
+              <select
+                className={s.select}
+                style={{ flex: 1 }}
+                value={a.type}
+                onChange={(e) => switchA(e.target.value as StateType)}
+              >
+                {STATE_TYPES.map((t) => (
+                  <option key={t} value={t}>{t}</option>
+                ))}
+              </select>
             </div>
           </div>
 
           <div className={s.section}>
             <p className={s.sectionLabel}>State B</p>
-            <div className={s.radioRow}>
-              {STATE_TYPES.map((t) => {
-                const legal = isBOptionLegal(t)
-                return (
-                  <button
-                    key={t}
-                    type="button"
-                    disabled={!legal}
-                    className={`${s.radio} ${b.type === t ? s.radioActive : ''} ${!legal ? s.radioDisabled : ''}`}
-                    onClick={() => legal && switchB(t)}
-                    title={!legal ? 'composition rule blocks this pair' : undefined}
-                  >
-                    {t}
-                  </button>
-                )
-              })}
+            <div className={s.field}>
+              <select
+                className={s.select}
+                style={{ flex: 1 }}
+                value={b.type}
+                onChange={(e) => {
+                  const v = e.target.value as StateType
+                  if (isBOptionLegal(v)) switchB(v)
+                }}
+              >
+                {STATE_TYPES.map((t) => (
+                  <option key={t} value={t} disabled={!isBOptionLegal(t)}>
+                    {t}{!isBOptionLegal(t) ? ' — illegal' : ''}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
 
@@ -702,32 +685,46 @@ export function LabsAtomTransitions() {
 
           <div className={s.section}>
             <p className={s.sectionLabel}>Start effect</p>
-            <button
-              type="button"
-              className={s.radio}
-              style={{ width: '100%', justifyContent: 'flex-start' }}
-              onClick={cycleStartEffect}
-            >
-              {startEffect ? startEffect.type : 'none'}
-              <span style={{ marginLeft: 'auto', opacity: 0.5, fontSize: 11 }}>
-                {startEffect ? `${startEffect.duration}ms` : 'tap to cycle'}
-              </span>
-            </button>
+            <div className={s.field}>
+              <select
+                className={s.select}
+                style={{ flex: 1 }}
+                value={startEffect?.type ?? 'none'}
+                onChange={(e) => {
+                  const v = e.target.value
+                  if (v === 'none') setStartEffect(null)
+                  else if (v === 'appear') setStartEffect(defaultStartEffect('appear'))
+                  else if (v === 'burst') setStartEffect(defaultStartEffect('burst'))
+                  setReplayKey((k) => k + 1)
+                }}
+              >
+                <option value="none">none</option>
+                <option value="appear">appear</option>
+                <option value="burst">burst</option>
+              </select>
+            </div>
           </div>
 
           <div className={s.section}>
             <p className={s.sectionLabel}>End effect</p>
-            <button
-              type="button"
-              className={s.radio}
-              style={{ width: '100%', justifyContent: 'flex-start' }}
-              onClick={cycleEndEffect}
-            >
-              {endEffect ? endEffect.type : 'none'}
-              <span style={{ marginLeft: 'auto', opacity: 0.5, fontSize: 11 }}>
-                {endEffect ? `${endEffect.duration}ms` : 'tap to cycle'}
-              </span>
-            </button>
+            <div className={s.field}>
+              <select
+                className={s.select}
+                style={{ flex: 1 }}
+                value={endEffect?.type ?? 'none'}
+                onChange={(e) => {
+                  const v = e.target.value
+                  if (v === 'none') setEndEffect(null)
+                  else if (v === 'burst') setEndEffect(defaultEndEffect('burst'))
+                  else if (v === 'fade') setEndEffect(defaultEndEffect('fade'))
+                  setReplayKey((k) => k + 1)
+                }}
+              >
+                <option value="none">none</option>
+                <option value="burst">burst</option>
+                <option value="fade">fade</option>
+              </select>
+            </div>
           </div>
 
           <div className={s.section}>
@@ -860,6 +857,27 @@ export function LabsAtomTransitions() {
       >
         ↻
       </button>
+      <div className={s.canvasZoomCluster}>
+        <button
+          type="button"
+          className={s.canvasZoomBtn}
+          onClick={() => setZoom((z) => Math.max(3, +(z - 0.5).toFixed(2)))}
+          aria-label="Zoom in"
+          title="Zoom in (closer)"
+        >
+          −
+        </button>
+        <button
+          type="button"
+          className={s.canvasZoomBtn}
+          onClick={() => setZoom((z) => Math.min(30, +(z + 0.5).toFixed(2)))}
+          aria-label="Zoom out"
+          title="Zoom out (farther)"
+        >
+          +
+        </button>
+      </div>
+      <span className={s.canvasZoomLabel}>z={zoom.toFixed(1)}</span>
 
       <LabsNav />
       <AtomLabHud config={hudConfig} mathRef={mathRef} events={events} tone="dark" />

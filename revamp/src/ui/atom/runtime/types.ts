@@ -31,6 +31,12 @@ export type OrbitStateConfig = {
   revolutions: number   // laps before exiting the state
   duration: number      // ms
   plane: Plane
+  /** Pitch rotation around the X axis, radians. Default 0. Tilts the
+   *  orbit plane up/down out of its base xy/yz/xz frame. */
+  tiltX?: number
+  /** Yaw rotation around the Y axis, radians. Default 0. Rotates the
+   *  orbit plane around the vertical. */
+  tiltY?: number
 }
 
 export type StraightStateConfig = {
@@ -47,6 +53,10 @@ export type SpiralStateConfig = {
   revolutions: number
   duration: number
   plane: Plane
+  /** Pitch rotation around the X axis, radians. Default 0. */
+  tiltX?: number
+  /** Yaw rotation around the Y axis, radians. Default 0. */
+  tiltY?: number
 }
 
 export type PulsateStateConfig = {
@@ -89,4 +99,20 @@ export function planeLift(plane: Plane, u: number, v: number): Vec3 {
   if (plane === 'xy') return [u, v, 0]
   if (plane === 'yz') return [0, u, v]
   return [u, 0, v] // 'xz'
+}
+
+/** Apply pitch (around X) then yaw (around Y) to a 3D point. Used by
+ *  orbit + spiral to tilt the orbit plane off the base xy/yz/xz frame. */
+export function applyTilt(p: Vec3, tiltX: number, tiltY: number): Vec3 {
+  if (tiltX === 0 && tiltY === 0) return p
+  const [x, y, z] = p
+  // Rotate around X axis: (x, y·cos − z·sin, y·sin + z·cos)
+  const cx = Math.cos(tiltX), sx = Math.sin(tiltX)
+  const y1 = y * cx - z * sx
+  const z1 = y * sx + z * cx
+  // Rotate around Y axis: (x·cos + z·sin, y, −x·sin + z·cos)
+  const cy = Math.cos(tiltY), sy = Math.sin(tiltY)
+  const x2 = x * cy + z1 * sy
+  const z2 = -x * sy + z1 * cy
+  return [x2, y1, z2]
 }
