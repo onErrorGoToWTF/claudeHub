@@ -73,6 +73,18 @@ const DEFAULT_COLORS: Colors = {
   trail: '#ffffff',
 }
 
+/** Live-updates the camera's z position. Lets the user preview the
+ *  scene at production sizes (5.5 = topbar compact, 11 = full-page lab,
+ *  larger = farther / smaller). */
+function CameraController({ zoom }: { zoom: number }) {
+  const { camera } = useThree()
+  useEffect(() => {
+    camera.position.z = zoom
+    camera.updateProjectionMatrix()
+  }, [zoom, camera])
+  return null
+}
+
 function ElectronProbe({
   config,
   startEffect,
@@ -481,6 +493,7 @@ export function LabsAtomStates() {
   const [replayKey, setReplayKey] = useState(0)
   const [events, setEvents] = useState<AtomLabEvent[]>([])
   const [collapsed, setCollapsed] = useState(false)
+  const [zoom, setZoom] = useState(5)
   const reducedMotion = usePrefersReducedMotion()
 
   const mathRef = useRef<AtomLabMathState>({
@@ -548,8 +561,9 @@ export function LabsAtomStates() {
     }
     base.start = startEffect ? `${startEffect.type}/${startEffect.duration}ms` : 'none'
     base.end = endEffect ? `${endEffect.type}/${endEffect.duration}ms` : 'none'
+    base.cam = zoom
     return base
-  }, [config, startEffect, endEffect])
+  }, [config, startEffect, endEffect, zoom])
 
   return (
     <div className={s.root}>
@@ -560,6 +574,7 @@ export function LabsAtomStates() {
           aria-hidden="true"
         >
           <ambientLight intensity={1} />
+          <CameraController zoom={zoom} />
           <ElectronProbe
             config={config}
             startEffect={startEffect}
@@ -606,6 +621,21 @@ export function LabsAtomStates() {
           <div className={s.section}>
             <p className={s.sectionLabel}>Constants</p>
             <StateConstants config={config} setConfig={updateConfig} />
+          </div>
+
+          <div className={s.section}>
+            <p className={s.sectionLabel}>Camera (zoom)</p>
+            <Slider label="z" value={zoom} min={3} max={30} step={0.1}
+              format={(v) => v.toFixed(1)}
+              onChange={setZoom} />
+            <div className={s.radioRow} style={{ marginTop: 4 }}>
+              <button type="button" className={s.radio}
+                style={{ minHeight: 36 }}
+                onClick={() => setZoom(5.5)}>Compact</button>
+              <button type="button" className={s.radio}
+                style={{ minHeight: 36 }}
+                onClick={() => setZoom(11)}>Lab</button>
+            </div>
           </div>
 
           <div className={s.section}>

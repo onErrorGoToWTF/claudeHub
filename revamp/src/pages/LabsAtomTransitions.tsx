@@ -68,6 +68,17 @@ type SeamSample = {
   startB: number
 }
 
+/** Live-updates the camera's z position. Lets the user preview the
+ *  scene at production sizes (5.5 = topbar compact, 11 = full-page lab). */
+function CameraController({ zoom }: { zoom: number }) {
+  const { camera } = useThree()
+  useEffect(() => {
+    camera.position.z = zoom
+    camera.updateProjectionMatrix()
+  }, [zoom, camera])
+  return null
+}
+
 function ElectronTransitionProbe({
   a,
   b,
@@ -473,6 +484,7 @@ export function LabsAtomTransitions() {
   const [events, setEvents] = useState<AtomLabEvent[]>([])
   const [seam, setSeam] = useState<SeamSample | null>(null)
   const [collapsed, setCollapsed] = useState(false)
+  const [zoom, setZoom] = useState(5)
   const reducedMotion = usePrefersReducedMotion()
 
   const mathRef = useRef<AtomLabMathState>({
@@ -589,8 +601,9 @@ export function LabsAtomTransitions() {
       windowMs: Math.round(windowMs),
       start: startEffect ? `${startEffect.type}/${startEffect.duration}ms` : 'none',
       end: endEffect ? `${endEffect.type}/${endEffect.duration}ms` : 'none',
+      cam: zoom.toFixed(1),
     }
-  }, [a, b, transitionWindow, windowMs, startEffect, endEffect])
+  }, [a, b, transitionWindow, windowMs, startEffect, endEffect, zoom])
 
   return (
     <div className={s.root}>
@@ -601,6 +614,7 @@ export function LabsAtomTransitions() {
           aria-hidden="true"
         >
           <ambientLight intensity={1} />
+          <CameraController zoom={zoom} />
           {!compositionError && (
             <ElectronTransitionProbe
               a={a}
@@ -766,6 +780,31 @@ export function LabsAtomTransitions() {
                 onChange={(e) => setB({ ...b, duration: parseFloat(e.target.value) })}
               />
               <span className={s.fieldValue}>{b.duration}ms</span>
+            </div>
+          </div>
+
+          <div className={s.section}>
+            <p className={s.sectionLabel}>Camera (zoom)</p>
+            <div className={s.field}>
+              <span className={s.fieldLabel}>z</span>
+              <input
+                className={s.slider}
+                type="range"
+                min={3}
+                max={30}
+                step={0.1}
+                value={zoom}
+                onChange={(e) => setZoom(parseFloat(e.target.value))}
+              />
+              <span className={s.fieldValue}>{zoom.toFixed(1)}</span>
+            </div>
+            <div className={s.radioRow} style={{ gridTemplateColumns: '1fr 1fr', marginTop: 4 }}>
+              <button type="button" className={s.radio}
+                style={{ minHeight: 36 }}
+                onClick={() => setZoom(5.5)}>Compact</button>
+              <button type="button" className={s.radio}
+                style={{ minHeight: 36 }}
+                onClick={() => setZoom(11)}>Lab</button>
             </div>
           </div>
 
