@@ -23,7 +23,7 @@ type OrbitConfig = {
   // How visible the electron stays after it lands + flashes. 0 = disappears
   // after the flash. 0.33 = stays dim over the i-dot. 1 = stays fully lit.
   postLandVisibility: number
-  // Optional spiral-in overrides. Default: SETTLE_DURATION_T + easeOutCubic
+  // Optional spiral-in overrides. Default: ELECTRON_SETTLE_DURATION_T + easeOutCubic
   // — a fast inward pull that decelerates toward the target. Set these on
   // an orbit that needs a smoother blend from orbit to spiral (e.g. start
   // the spiral earlier via `laps`, widen it via settleDurationT, and swap
@@ -38,15 +38,14 @@ type OrbitConfig = {
    constants"), restore the values below verbatim. These are the
    tuned values; everything else in the file should be left alone.
    ---------------------------------------------------------
-   AppShell.tsx:    ATOM_DELAY_MS         = 400
+   AppShell.tsx:
+     ATOM_DELAY_MS                 = 400
 
-   Geometry / speed:
-     RADIUS_A                    = 1.40
-     RADIUS_B                    = 0.85
-     ORBIT_SPEED                 = 3.30
-     N_TRAIL                     = 96
-     ARC                         = Math.PI * 0.62
-     GROUP_ROTATION              = [π/4, π/4, 0]
+   Orbit geometry / speed:
+     ORBIT_RADIUS_A                = 1.40
+     ORBIT_RADIUS_B                = 0.85
+     ORBIT_SPEED                   = 3.30
+     SCENE_GROUP_ROTATION          = [π/4, π/4, 0]
 
    ORBITS (per-electron):
      xy:  laps 3.5, postLandVisibility 0
@@ -54,41 +53,43 @@ type OrbitConfig = {
      xz:  laps 6,   postLandVisibility 1,
           settleDurationT 3π, settleEase 'smoothstep'
 
-   Electron part colors:
-     HEAD_COLOR                  = '#ffffff'
-     HALO_COLOR                  = '#ffffff'
-     TRAIL_COLOR                 = '#ffffff'
+   Electron parts:
+     ELECTRON_HEAD_COLOR           = '#ffffff'
+     ELECTRON_HALO_COLOR           = '#ffffff'
+     ELECTRON_TRAIL_COLOR          = '#ffffff'
+     ELECTRON_TRAIL_SEGMENTS       = 96
+     ELECTRON_TRAIL_ARC            = Math.PI * 0.62
 
    Text colors (ai + University, separate per element):
-     AI_LIT_RGB_LIGHT            = [255, 255, 255]
-     AI_LIT_RGB_DARK             = [235, 235, 235]
-     AI_DEBOSS_RGB               = [0, 0, 0]
-     AI_EMBOSS_RGB               = [255, 255, 255]
-     AI_GLOW_RGB                 = [255, 255, 255]
-     UNI_LIT_RGB_LIGHT           = [255, 255, 255]
-     UNI_LIT_RGB_DARK            = [235, 235, 235]
-     UNI_DEBOSS_RGB              = [0, 0, 0]
-     UNI_EMBOSS_RGB              = [255, 255, 255]
+     AI_LIT_RGB_LIGHT              = [255, 255, 255]
+     AI_LIT_RGB_DARK               = [235, 235, 235]
+     AI_DEBOSS_RGB                 = [0, 0, 0]
+     AI_EMBOSS_RGB                 = [255, 255, 255]
+     AI_GLOW_RGB                   = [255, 255, 255]
+     UNI_LIT_RGB_LIGHT             = [255, 255, 255]
+     UNI_LIT_RGB_DARK              = [235, 235, 235]
+     UNI_DEBOSS_RGB                = [0, 0, 0]
+     UNI_EMBOSS_RGB                = [255, 255, 255]
 
-   Settle & strike timing:
-     SETTLE_DURATION_T           = 2 * Math.PI
-     STRIKE_LEAD_T               = 0.5
-     PULSE_DURATION_MS           = 560
-     POST_STRIKE_HOLD_MS         = 700
-     GLOW_DECAY_MS               = 1500
-     POST_LAND_HOLD_T            = 2.3
-     POST_LAND_FADE_T            = 5.0
+   Strike & settle timing (electron):
+     ELECTRON_SETTLE_DURATION_T    = 2 * Math.PI
+     ELECTRON_STRIKE_LEAD_T        = 0.5
+     ELECTRON_POST_LAND_HOLD_T     = 2.3
+     ELECTRON_POST_LAND_FADE_T     = 5.0
+     ELECTRON_FADE_IN_T            = 4 * Math.PI
 
-   Electron fade-in:
-     FADE_IN_T                   = 4 * Math.PI
+   Strike timing (ai text):
+     AI_STRIKE_PULSE_MS            = 560
+     AI_GLOW_HOLD_MS               = 700
+     AI_GLOW_DECAY_MS              = 1500
 
-   i-dot landing nudge:
-     IDOT_NUDGE_X                =  0.5
-     IDOT_NUDGE_Y                = -2.5
+   i-dot landing nudge (ai):
+     AI_IDOT_NUDGE_X               =  0.5
+     AI_IDOT_NUDGE_Y               = -2.5
 
    University reveal:
-     UNI_STAGGER_COMPACT_MS      = 50
-     UNI_STAGGER_LABS_MS         = 80
+     UNI_STAGGER_COMPACT_MS        = 50
+     UNI_STAGGER_LABS_MS           = 80
      UNI_FLASH_MS                = 300
      UNI_REVEAL_DELAY_MS         = 200
 
@@ -102,8 +103,8 @@ type OrbitConfig = {
      POST_HALO_OPACITY           = 0.5
    ========================================================= */
 
-const RADIUS_A = 1.40
-const RADIUS_B = 0.85
+const ORBIT_RADIUS_A = 1.40
+const ORBIT_RADIUS_B = 0.85
 const ORBIT_SPEED = 3.30
 const ORBITS: OrbitConfig[] = [
   { plane: 'xy', speed: ORBIT_SPEED, phase: 0,                 laps: 3.5, postLandVisibility: 0 },
@@ -124,9 +125,9 @@ const ORBITS: OrbitConfig[] = [
 
 // ---------- electron part colors ----------
 // Head, halo, and trail can each be tinted independently.
-const HEAD_COLOR = '#ffffff'    // tiny solid sphere at the orbit head
-const HALO_COLOR = '#ffffff'    // expanding glow burst on strike
-const TRAIL_COLOR = '#ffffff'   // ring-buffer line behind the head
+const ELECTRON_HEAD_COLOR = '#ffffff'    // tiny solid sphere at the orbit head
+const ELECTRON_HALO_COLOR = '#ffffff'    // expanding glow burst on strike
+const ELECTRON_TRAIL_COLOR = '#ffffff'   // ring-buffer line behind the head
 
 // ---------- text colors (ai + University) ----------
 // Each value is an [r, g, b] triple combined with an alpha at runtime.
@@ -163,7 +164,7 @@ function blendRgb(
    keyframe animation duration in LabsAtom.module.css — the JS timer
    here is what clears the pulsing class so the CSS transition can
    re-engage and fade/hold the text back to its rest state. */
-const PULSE_DURATION_MS = 560
+const AI_STRIKE_PULSE_MS = 560
 
 // Strike 1 is a subtle tap, 2 lands harder, 3+ is the full slam. More
 // than three strikes would stay at .aiPulse3.
@@ -173,39 +174,39 @@ function pulseClassForStrike(strike: number, s: Record<string, string>): string 
   return s.aiPulse3
 }
 
-const N_TRAIL = 96
-const ARC = Math.PI * 0.62
+const ELECTRON_TRAIL_SEGMENTS = 96
+const ELECTRON_TRAIL_ARC = Math.PI * 0.62
 
 // Settle parameters — for the "lands on the i-dot" composition.
-const SETTLE_DURATION_T = 2 * Math.PI         // 1 lap to spiral in
+const ELECTRON_SETTLE_DURATION_T = 2 * Math.PI         // 1 lap to spiral in
 // How far before actual landing the strike flash fires. At ORBIT_SPEED
 // 3.30, 0.5 t-units ≈ 150ms real time — enough for the first keyframe
 // peak (10% of 560ms = 56ms in) to fire before impact, so the text is
 // already mid-flicker when the electron hits the i-dot.
-const STRIKE_LEAD_T = 0.5
+const ELECTRON_STRIKE_LEAD_T = 0.5
 // After the final electron lands + the pulse completes, hold the 'ai'
 // at full glow for a beat, then decay the white glow stack to zero so
 // the wordmark resolves to clean flat white text and the scene settles.
-const POST_STRIKE_HOLD_MS = 700
-const GLOW_DECAY_MS = 1500
+const AI_GLOW_HOLD_MS = 700
+const AI_GLOW_DECAY_MS = 1500
 
 // After each electron's post-pulse rest, hold briefly then fade both
 // the electron body and its halo to zero. At ORBIT_SPEED 3.30 these
 // t-units map to ~700ms hold + ~1500ms fade, matching the CSS
 // glow-stack decay so the 3D scene + text resolve together to a
 // crisp flat-white wordmark with nothing overlaid on the i-dot.
-const POST_LAND_HOLD_T = 2.3
-const POST_LAND_FADE_T = 5.0
+const ELECTRON_POST_LAND_HOLD_T = 2.3
+const ELECTRON_POST_LAND_FADE_T = 5.0
 
 // Electrons fade in over the first ~2 orbits so they appear gradually
 // rather than popping in. tRef starts at config.phase, so the fade is
 // measured relative to that — all electrons take the same wall time.
-const FADE_IN_T = 4 * Math.PI
+const ELECTRON_FADE_IN_T = 4 * Math.PI
 
 // Empirical font-metric nudges for landing the electron on the i-dot.
 // Both are typeface-dependent — retune on font swap.
-const IDOT_NUDGE_X = 0.5
-const IDOT_NUDGE_Y = -2.5
+const AI_IDOT_NUDGE_X = 0.5
+const AI_IDOT_NUDGE_Y = -2.5
 
 // "University" neon-tube reveal — letters flash on left → right after
 // the final strike's pulse ends. Stagger is per-letter delay between
@@ -222,13 +223,13 @@ const SETTLE_DURATION_MS = 3500
 
 // Scene-wide group rotation applied around the atom. Exposed so target
 // world→local conversion in AtomComposition matches exactly.
-const GROUP_ROTATION: [number, number, number] = [Math.PI / 4, Math.PI / 4, 0]
+const SCENE_GROUP_ROTATION: [number, number, number] = [Math.PI / 4, Math.PI / 4, 0]
 
 function orbitPos(t: number, plane: Plane): [number, number, number] {
   const c = Math.cos(t), sn = Math.sin(t)
-  if (plane === 'xy') return [RADIUS_A * c, RADIUS_B * sn, 0]
-  if (plane === 'yz') return [0, RADIUS_A * c, RADIUS_B * sn]
-  return [RADIUS_A * c, 0, RADIUS_B * sn]
+  if (plane === 'xy') return [ORBIT_RADIUS_A * c, ORBIT_RADIUS_B * sn, 0]
+  if (plane === 'yz') return [0, ORBIT_RADIUS_A * c, ORBIT_RADIUS_B * sn]
+  return [ORBIT_RADIUS_A * c, 0, ORBIT_RADIUS_B * sn]
 }
 
 // Same orbit but with a shifted center and scaled radii — the settling
@@ -243,9 +244,9 @@ function orbitPosMorphed(
   scale: number,
 ): [number, number, number] {
   const c = Math.cos(t), sn = Math.sin(t)
-  if (plane === 'xy') return [cx + RADIUS_A * scale * c, cy + RADIUS_B * scale * sn, cz]
-  if (plane === 'yz') return [cx, cy + RADIUS_A * scale * c, cz + RADIUS_B * scale * sn]
-  return [cx + RADIUS_A * scale * c, cy, cz + RADIUS_B * scale * sn]
+  if (plane === 'xy') return [cx + ORBIT_RADIUS_A * scale * c, cy + ORBIT_RADIUS_B * scale * sn, cz]
+  if (plane === 'yz') return [cx, cy + ORBIT_RADIUS_A * scale * c, cz + ORBIT_RADIUS_B * scale * sn]
+  return [cx + ORBIT_RADIUS_A * scale * c, cy, cz + ORBIT_RADIUS_B * scale * sn]
 }
 
 function makeFadeTexture() {
@@ -293,7 +294,7 @@ function Electron({
   restProgressRef?: React.MutableRefObject<number>
 }) {
   const settleAfterT = settle ? config.laps * 2 * Math.PI : undefined
-  const settleDurT = config.settleDurationT ?? SETTLE_DURATION_T
+  const settleDurT = config.settleDurationT ?? ELECTRON_SETTLE_DURATION_T
   const settleEaseFn = config.settleEase === 'smoothstep' ? smoothstep : easeOutCubic
   const landedRef = useRef(false)
   const struckRef = useRef(false)
@@ -319,9 +320,9 @@ function Electron({
   const bufRef = useRef<Float32Array | null>(null)
   const insertIdxRef = useRef(0)
   if (!bufRef.current) {
-    const buf = new Float32Array(N_TRAIL * 3)
-    for (let i = 0; i < N_TRAIL; i++) {
-      const tSample = config.phase - ARC + (ARC * i) / (N_TRAIL - 1)
+    const buf = new Float32Array(ELECTRON_TRAIL_SEGMENTS * 3)
+    for (let i = 0; i < ELECTRON_TRAIL_SEGMENTS; i++) {
+      const tSample = config.phase - ELECTRON_TRAIL_ARC + (ELECTRON_TRAIL_ARC * i) / (ELECTRON_TRAIL_SEGMENTS - 1)
       const [x, y, z] = orbitPos(tSample, config.plane)
       buf[i * 3] = x
       buf[i * 3 + 1] = y
@@ -364,12 +365,12 @@ function Electron({
     buf[idx * 3] = hx
     buf[idx * 3 + 1] = hy
     buf[idx * 3 + 2] = hz
-    insertIdxRef.current = (idx + 1) % N_TRAIL
+    insertIdxRef.current = (idx + 1) % ELECTRON_TRAIL_SEGMENTS
 
     // Unroll buffer to a contiguous "oldest → newest" array for meshline.
-    const unroll = new Float32Array(N_TRAIL * 3)
-    for (let i = 0; i < N_TRAIL; i++) {
-      const src = (insertIdxRef.current + i) % N_TRAIL
+    const unroll = new Float32Array(ELECTRON_TRAIL_SEGMENTS * 3)
+    for (let i = 0; i < ELECTRON_TRAIL_SEGMENTS; i++) {
+      const src = (insertIdxRef.current + i) % ELECTRON_TRAIL_SEGMENTS
       unroll[i * 3] = buf[src * 3]
       unroll[i * 3 + 1] = buf[src * 3 + 1]
       unroll[i * 3 + 2] = buf[src * 3 + 2]
@@ -396,7 +397,7 @@ function Electron({
       const PULSE_T = Math.PI * 0.7
       // Strike fires slightly before landing so the flash stutter is
       // already mid-cycle when the electron actually hits the i-dot.
-      if (t >= doneT - STRIKE_LEAD_T && !struckRef.current) {
+      if (t >= doneT - ELECTRON_STRIKE_LEAD_T && !struckRef.current) {
         struckRef.current = true
         if (onStrike) onStrike()
       }
@@ -418,8 +419,8 @@ function Electron({
           fadeMult = 1 - restProgressRef.current
         } else {
           const elapsedAfterPulse = t - (doneT + PULSE_T)
-          if (elapsedAfterPulse > POST_LAND_HOLD_T) {
-            const p = Math.min(1, (elapsedAfterPulse - POST_LAND_HOLD_T) / POST_LAND_FADE_T)
+          if (elapsedAfterPulse > ELECTRON_POST_LAND_HOLD_T) {
+            const p = Math.min(1, (elapsedAfterPulse - ELECTRON_POST_LAND_HOLD_T) / ELECTRON_POST_LAND_FADE_T)
             fadeMult = 1 - easeOutCubic(p)
           }
         }
@@ -440,7 +441,7 @@ function Electron({
     // Initial fade-in: electrons appear smoothly over the first ~2 orbits
     // rather than popping in. Measured from config.phase so wall-time is
     // consistent across electrons regardless of starting phase.
-    const fadeIn = Math.min(1, Math.max(0, (tRef.current - config.phase) / FADE_IN_T))
+    const fadeIn = Math.min(1, Math.max(0, (tRef.current - config.phase) / ELECTRON_FADE_IN_T))
 
     headRef.current.scale.setScalar(electronScale)
     if (headMatRef.current) {
@@ -464,7 +465,7 @@ function Electron({
         <meshLineGeometry ref={geomRef} />
         <meshLineMaterial
           ref={trailMatRef}
-          color={TRAIL_COLOR}
+          color={ELECTRON_TRAIL_COLOR}
           lineWidth={0.17}
           transparent
           opacity={0}
@@ -479,7 +480,7 @@ function Electron({
         <sphereGeometry args={[0.050, 32, 32]} />
         <meshBasicMaterial
           ref={haloMatRef}
-          color={HALO_COLOR}
+          color={ELECTRON_HALO_COLOR}
           toneMapped={false}
           transparent
           opacity={0}
@@ -490,7 +491,7 @@ function Electron({
         <sphereGeometry args={[0.050, 32, 32]} />
         <meshBasicMaterial
           ref={headMatRef}
-          color={HEAD_COLOR}
+          color={ELECTRON_HEAD_COLOR}
           toneMapped={false}
           transparent
           opacity={0}
@@ -518,7 +519,7 @@ function Scene({
   const fadeTex = useMemo(() => makeFadeTexture(), [])
   const orbits = onlyPlane ? ORBITS.filter((o) => o.plane === onlyPlane) : ORBITS
   return (
-    <group rotation={GROUP_ROTATION}>
+    <group rotation={SCENE_GROUP_ROTATION}>
       {orbits.map((o) => (
         <Electron
           key={`e-${o.plane}`}
@@ -558,7 +559,7 @@ function projectPixelToLocal(
 
   const world = new THREE.Vector3(worldX, worldY, 0)
   const rotationMatrix = new THREE.Matrix4().makeRotationFromEuler(
-    new THREE.Euler(GROUP_ROTATION[0], GROUP_ROTATION[1], GROUP_ROTATION[2], 'XYZ'),
+    new THREE.Euler(SCENE_GROUP_ROTATION[0], SCENE_GROUP_ROTATION[1], SCENE_GROUP_ROTATION[2], 'XYZ'),
   )
   return world.applyMatrix4(rotationMatrix.invert())
 }
@@ -697,7 +698,7 @@ export function AtomComposition({
   const camZ = compact ? 5.5 : 11
   const totalElectrons = onlyPlane ? 1 : ORBITS.length
 
-  // Strike fires slightly before landing (see STRIKE_LEAD_T) so the
+  // Strike fires slightly before landing (see ELECTRON_STRIKE_LEAD_T) so the
   // stutter is already mid-cycle when the dot hits the i. The separate
   // landedCount drives the allLanded / permanent-lit logic on the
   // actual landing beat, after the strike has begun.
@@ -715,7 +716,7 @@ export function AtomComposition({
   useEffect(() => {
     if (strikeCount === 0) return
     setPulsing(true)
-    const timer = setTimeout(() => setPulsing(false), PULSE_DURATION_MS)
+    const timer = setTimeout(() => setPulsing(false), AI_STRIKE_PULSE_MS)
     return () => clearTimeout(timer)
   }, [strikeCount])
 
@@ -737,12 +738,12 @@ export function AtomComposition({
       const startTime = performance.now()
       const tick = (now: number) => {
         const elapsed = now - startTime
-        const p = Math.min(1, elapsed / GLOW_DECAY_MS)
+        const p = Math.min(1, elapsed / AI_GLOW_DECAY_MS)
         setGlowMultiplier(1 - easeOutCubic(p))
         if (p < 1) rafId = requestAnimationFrame(tick)
       }
       rafId = requestAnimationFrame(tick)
-    }, POST_STRIKE_HOLD_MS)
+    }, AI_GLOW_HOLD_MS)
     return () => {
       clearTimeout(holdTimer)
       if (rafId !== undefined) cancelAnimationFrame(rafId)
@@ -808,10 +809,10 @@ export function AtomComposition({
     if (!iRef.current || !atomLayerRef.current) return
     const iRect = iRef.current.getBoundingClientRect()
     const canvasRect = atomLayerRef.current.getBoundingClientRect()
-    // Empirical font-metric nudges (see IDOT_NUDGE_X/Y at top of file)
+    // Empirical font-metric nudges (see AI_IDOT_NUDGE_X/Y at top of file)
     // place the landings right on the visual dot of the 'i'.
-    const dotX = iRect.left + iRect.width / 2 + IDOT_NUDGE_X
-    const dotY = iRect.top + iRect.height * 0.32 + IDOT_NUDGE_Y
+    const dotX = iRect.left + iRect.width / 2 + AI_IDOT_NUDGE_X
+    const dotY = iRect.top + iRect.height * 0.32 + AI_IDOT_NUDGE_Y
     const local = projectPixelToLocal(dotX, dotY, canvasRect, camZ)
     setSettleTarget(local)
   }, [settle, aiHalf, atomLeft, compact, camZ])
