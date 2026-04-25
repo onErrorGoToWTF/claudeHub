@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T16:28:25.183Z",
+  "generated_at": "2026-04-25T18:32:50.181Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,20 @@
     ],
     "news": [
       {
+        "title": "Blitzy Highlights Use of Anthropic’s Claude in Autonomous Software Development - TipRanks",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPcHdOenJ5UUhsTFNQa2VPSWMzcGFWOG02UmVVcUJlS1pRaUNKZUJTbTJTdnBJZEQ4UXhuM3l0UksydE5sN0lRbnNJY0ZxLU9Ed2dQY0I4Z2xwQjhCbWdSTEh1cExweGZxenBoOWZNZV9aYTg1WjExSEoxWEk2a29WY2FwcVkyMWdHTE9rVDEzVzdPbUl5YnFOYXN6eXpKQVlxcmg0YXNkdS1KVGZiUWhsWlR0U3RiN0xGY3l6cWd3V0pzLUU?oc=5",
+        "source": "Google News",
+        "published": "2026-04-25T18:11:10.000Z",
+        "summary": "Blitzy Highlights Use of Anthropic’s Claude in Autonomous Software Development TipRanks"
+      },
+      {
+        "title": "Anthropic runs Claude-powered employee marketplace experiment - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdFYwNHFyS2ZlWlA0Sy1sUDVMVUNJNW5fR3hzSHZ0b2R5RGktVFI4RHpZcmNubGswaG9Nci1MT1hGMjJCUGhrQ1RsY0wwSzVjd1F3clZlanFzVXFLYkZqcTEtcEE2cjBxNDB1d1dVdk5Zem1BcUN3QmdpZjFIcV9mUlhIVGtfeFE4bTgzVGNlVTJvUXExSzl0dFJIQlBaYUJyN1YybA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-25T17:52:12.000Z",
+        "summary": "Anthropic runs Claude-powered employee marketplace experiment Let's Data Science"
+      },
+      {
         "title": "Something Big Is Happening. It's Called Claude Code",
         "url": "https://www.youtube.com/watch?v=GR8xJh7k5G8",
         "source": "Pragati Kunwer",
@@ -167,7 +181,7 @@
       {
         "title": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
         "url": "https://github.com/nex-crm/wuphf",
-        "source": "HN · 162↑",
+        "source": "HN · 191↑",
         "hn_id": "47899844",
         "published": "2026-04-25T08:53:53.000Z",
         "summary": "I shipped a wiki layer for AI agents that uses markdown + git as the source of truth, with a bleve (BM25) + SQLite index on top. No vector or graph db yet. It runs locally in…"
@@ -196,7 +210,7 @@
       {
         "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
         "url": "https://alash3al.github.io/stash?_v01",
-        "source": "HN · 125↑",
+        "source": "HN · 149↑",
         "hn_id": "47897790",
         "published": "2026-04-25T01:24:40.000Z",
         "summary": ""
@@ -207,6 +221,13 @@
         "source": "Bloomberg",
         "published": "2026-04-24T23:13:02.000Z",
         "summary": "This week, regulators and banks are scrambling to catch up after the debut of Anthropic’s nearly autonomous system that can find cybersecurity vulnerabilities on its own. And, the electric vehicle…"
+      },
+      {
+        "title": "Anthropic's Claude Opus 4.7: 5 features that could make your work faster and smarter - MSN",
+        "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxORnc3WmVwbWpVeUJJVjRwSC1rTVBzWGVIajhuLWJyYlBfUUNHVDFkVXdva1d0WWRkNHg4TWFYbm5lMnY4bV90dGx3cUcxZktDb1NSaTRySVppZ2tFM1BJMjRraURHdFhIbzdtQWF6MnFJT1R4N0dUOHk5bks5cE10bnFsZXczOTBWSm14VURjcW1WYzREaVUxdjF1XzJVcW9QaHdBMzQ5bXI3NUtYWnhla3FBMDFkcW5ReEZwLU5nb2JvUklkYU52dFlZNFFBTkNWTW93TFF5RkJsdGNsaFF1bDIwazNKZHVBNDNNN2xGd2hvYTFldU1yb2w1dVZZNzEwNlVKalRKaEJST0dKd21iVC10QQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T22:13:55.000Z",
+        "summary": "Anthropic's Claude Opus 4.7: 5 features that could make your work faster and smarter MSN"
       },
       {
         "title": "Google will invest as much as $40 billion in Anthropic",
@@ -265,17 +286,10 @@
       {
         "title": "Could a Claude Code routine watch my finances?",
         "url": "https://driggsby.com/blog/claude-code-routine-watch-my-finances",
-        "source": "HN · 77↑",
+        "source": "HN · 80↑",
         "hn_id": "47894690",
         "published": "2026-04-24T19:25:15.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic Claude Code's New Pricing Structure And Rate Limits Explained (Fyk9n2hoUo) - fathomjournal.org",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9tMjNPUjkxblg2bXBmVmdaeDJLaF96MUVTR1NzZ3VXa3cyM0ZwMmd3QXl1Sl9IWlhOU3Rid202QTROUE9ObExoR043aklacFA2dy1Kb21VVkdzcDBOV19NVEdNZlEtR0FzQzQ1Tk5ydzg?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T19:16:15.000Z",
-        "summary": "Anthropic Claude Code's New Pricing Structure And Rate Limits Explained (Fyk9n2hoUo) fathomjournal.org"
       },
       {
         "title": "Intel Delivers Strong AI-Fueled Outlook | Bloomberg Tech 4/24/2026",
@@ -283,13 +297,6 @@
         "source": "Bloomberg",
         "published": "2026-04-24T19:08:12.000Z",
         "summary": "Bloomberg’s Ed Ludlow discusses his conversation with Intel CEO Lip Bu Tan following the company’s strong earnings that sent its stock blasting past its dot-com era peak. Plus, Google plans to…"
-      },
-      {
-        "title": "Anthropic Adds Election Safeguards to Claude Ahead of Midterms - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOWnN1b3Vua2Z3NVBCelhUbmZ0OFZrRTZxU0xXZmxob1JoYnVtSUhLSzVMV0RQRTQzUnE0SHpoUXctWkhQX0JTUWl0cDZOSzhaT1ZQLWlwVmFtOHp2d3NBOElGdEJCSlFGS3Ruck1HT1BuUWI5MzgzT2FsNFJNRWhoRjE3ZVp2UExNdjBKYzZabTFKTFdvR2ZMY2VVREJCcHh5eE9KWg?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T18:58:18.000Z",
-        "summary": "Anthropic Adds Election Safeguards to Claude Ahead of Midterms Let's Data Science"
       },
       {
         "title": "Google investing up to $40B in Anthropic",
@@ -307,13 +314,6 @@
         "summary": "Google to invest up to $40 billion in AI rival Anthropic Reuters"
       },
       {
-        "title": "Claude’s new connectors use AI to order food, control music, and do your taxes - 9to5Google",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNeU5GUkhPYzhITGFHYWt0R1RvN0FMNnVpTmxCTUhUS2x4b3RxVTZjRG93d2NOdi16ZUxUQ0N6S0xKY3FuckNrdWZ3Ui1taWNzYmpfYUJzaGRTQXR1UlNxNlllRmJQb3NjUkFZcmZ2RDBGX1M3QWxRYl9VUW9HOFAtTmVyTVVNZw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T18:05:00.000Z",
-        "summary": "Claude’s new connectors use AI to order food, control music, and do your taxes 9to5Google"
-      },
-      {
         "title": "Google to invest up to $40B in Anthropic in cash and compute",
         "url": "https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/",
         "source": "TechCrunch",
@@ -321,16 +321,9 @@
         "summary": "Google plans up to $40B investment in Anthropic as AI rivals race to secure massive compute capacity, following the limited release of its powerful, cybersecurity-focused Mythos model."
       },
       {
-        "title": "Google to invest up to $40B in Anthropic in cash and compute - TechCrunch",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQRUhlZ245NGgwTjlnbWdOUzI3Ry1LNnJlU3h2VXBUV2VjREptdDdXSGJwcEhNcFlBa0JTdkpaS1F0RXcwcmttN1ZYT0VGVlN0REpNNHRocnFCaXdEcUU1bFVpcXRnOW5mU3JEc0tMTzlSRFhzVDNfRDhxRldEcm9rbkhucUdFcGlxaDNIYkRtM0ZsbVc0VnU5UkJR?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T18:00:03.000Z",
-        "summary": "Google to invest up to $40B in Anthropic in cash and compute TechCrunch"
-      },
-      {
         "title": "CC-Canary: Detect early signs of regressions in Claude Code",
         "url": "https://github.com/delta-hq/cc-canary",
-        "source": "HN · 62↑",
+        "source": "HN · 63↑",
         "hn_id": "47893620",
         "published": "2026-04-24T17:53:37.000Z",
         "summary": ""
@@ -348,6 +341,13 @@
         "source": "Google News",
         "published": "2026-04-24T17:30:55.000Z",
         "summary": "Google to invest up to $40 billion in Anthropic as search giant spreads its AI bets CNBC"
+      },
+      {
+        "title": "Spotify isn’t the only service now integrated with Anthropic’s Claude - 9to5Mac",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONHBVeG5VakVCanlJOE5PRnZ4bkxiV0kyMnFLcTZMN2VaQVlBTlBkR3BhanNPTmJZUXl6a2ZBQVBxbFpKQmtfNmhPMDhhYnNwcC0yQ1gyWGpabzQtSzZrZVM3Ty1xVmVpWXhhZDdwRk85cktvdkxYV1J6aU5McjlXN0I5cHMwaF9sdW8welVZVElld3UzdHhfaFNHOW5YVElG?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T17:27:00.000Z",
+        "summary": "Spotify isn’t the only service now integrated with Anthropic’s Claude 9to5Mac"
       },
       {
         "title": "Claude Code Skills: The Biggest Opportunity of 2026",
