@@ -1,0 +1,408 @@
+/*
+ * /labs/atom-blend-test — Phase-blend math prototype.
+ *
+ * NOT a production component. NOT extracted to src/ui/atom/. NOT in nav.
+ * Diagnostic instrument for one decision: does hand-rolled math achieve
+ * C1 (velocity continuity) at boundaries between four sequential phases
+ * on a single electron? If no, GSAP becomes a candidate (separate chunk).
+ *
+ * Phase sequence (1s each, 4s total, then loops):
+ *   Phase 0  circle-orbit       r=1.0, 1 lap
+ *   Phase 1  ellipse-stretch    radii (1.0,1.0) → (1.4,0.85), 1 lap
+ *   Phase 2  straight           (1.4, 0, 0) → (0.4, 0.4, 0)
+ *   Phase 3  spiral inward      from (0.4, 0.4, 0) to (0, 0, 0), 1 rev
+ *
+ * Three boundaries — each has a per-boundary <select> for blend mode:
+ *   B1  phase 0 → phase 1   (controls ellipse-stretch's radius easing)
+ *   B2  phase 1 → phase 2   (controls straight's lerp easing)
+ *   B3  phase 2 → phase 3   (controls spiral's radius-shrink easing)
+ *
+ * Blend modes:
+ *   sharp       linear easing — derivative ≠ 0 at boundary, kink expected
+ *   smoothstep  s²(3-2s)    — derivative 0 at both ends, C1 IF the
+ *                              boundary velocity is also 0 (won't be)
+ *   cubic       1-(1-s)³   — derivative 3 at start, 0 at end. Snappy entry.
+ *
+ * Cleanliness criterion (committed to before reading results):
+ *   Δ|v| between adjacent frames at a boundary, relative to peak |v|
+ *   anywhere in the sequence. Pass = ratio < 5% (eye-perceptible threshold).
+ *   Fail = ratio > 5% AND visible kink in the persistent trail.
+ *
+ * Math state held in refs only — no React state writes inside useFrame.
+ * Readout updates via ref-write to a <pre> element's textContent.
+ */
+import { useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react'
+import * as THREE from 'three'
+import { Canvas, useFrame } from '@react-three/fiber'
+import s from './LabsAtomBlend.module.css'
+
+type BlendMode = 'sharp' | 'smoothstep' | 'cubic'
+
+const BLEND_MODES: BlendMode[] = ['sharp', 'smoothstep', 'cubic']
+
+function ease(x: number, mode: BlendMode): number {
+  if (mode === 'sharp') return x
+  if (mode === 'smoothstep') return x * x * (3 - 2 * x)
+  return 1 - Math.pow(1 - x, 3) // easeOutCubic
+}
+
+type Phase =
+  | { type: 'circle-orbit'; revolutions: number }
+  | { type: 'ellipse-stretch'; rxStart: number; ryStart: number; rxEnd: number; ryEnd: number; revolutions: number }
+  | { type: 'straight'; from: [number, number, number]; to: [number, number, number] }
+  | { type: 'spiral'; orbitCenter: [number, number, number]; startRadius: number; startAngle: number; revolutions: number }
+
+const PHASES: Phase[] = [
+  { type: 'circle-orbit', revolutions: 1 },
+  { type: 'ellipse-stretch', rxStart: 1.0, ryStart: 1.0, rxEnd: 1.4, ryEnd: 0.85, revolutions: 1 },
+  { type: 'straight', from: [1.4, 0, 0], to: [0.4, 0.4, 0] },
+  // Spiral starts at (0.4, 0.4, 0). |start| = √(0.32) ≈ 0.566.
+  // startAngle = atan2(0.4, 0.4) = π/4. Orbit center = origin so the
+  // electron arrives at (0,0,0) when the radius shrinks to 0.
+  {
+    type: 'spiral',
+    orbitCenter: [0, 0, 0],
+    startRadius: Math.SQRT2 * 0.4,
+    startAngle: Math.PI / 4,
+    revolutions: 1,
+  },
+]
+
+const PHASE_DURATION_S = 1
+const TOTAL_DURATION_S = PHASES.length * PHASE_DURATION_S
+const TRAIL_LENGTH = 600 // ~10s @ 60fps; covers ~2.5 loops, kinks accumulate
+
+function evaluatePhase(phase: Phase, sIn: number, blend: BlendMode): [number, number, number] {
+  const e = ease(sIn, blend)
+  switch (phase.type) {
+    case 'circle-orbit': {
+      // Orbit progresses uniformly in angle (no easing on θ — orbits are
+      // intrinsically uniform-angular-velocity). Blend has NO effect here;
+      // its first effective use is in phase 1.
+      const theta = 2 * Math.PI * phase.revolutions * sIn
+      return [Math.cos(theta), Math.sin(theta), 0]
+    }
+    case 'ellipse-stretch': {
+      // Angle still uniform; blend controls how rx/ry interpolate from
+      // start radii to end radii. C1 with previous orbit IFF derivative
+      // of `e` at sIn=0 equals 0 (smoothstep ✓, cubic ✗, sharp ✗).
+      const rx = phase.rxStart + (phase.rxEnd - phase.rxStart) * e
+      const ry = phase.ryStart + (phase.ryEnd - phase.ryStart) * e
+      const theta = 2 * Math.PI * phase.revolutions * sIn
+      return [rx * Math.cos(theta), ry * Math.sin(theta), 0]
+    }
+    case 'straight': {
+      // Pure positional lerp. Initial velocity ∝ e'(0). With smoothstep
+      // e'(0)=0, the line starts AT REST — but the previous phase exits
+      // with nonzero orbital velocity, so smoothstep here gives a sudden
+      // velocity DROP not a smooth handoff. This is the prototype's
+      // central reveal: lerp+smoothstep ≠ C1 across orbit→straight.
+      return [
+        phase.from[0] + (phase.to[0] - phase.from[0]) * e,
+        phase.from[1] + (phase.to[1] - phase.from[1]) * e,
+        phase.from[2] + (phase.to[2] - phase.from[2]) * e,
+      ]
+    }
+    case 'spiral': {
+      // Radius shrinks via `e`; angle progresses uniformly. Initial velocity
+      // has BOTH a radial component (∝ e'(0)) and a tangential component
+      // (∝ angular speed × radius). Tangential is always nonzero at sIn=0.
+      // So even with smoothstep, spiral entry has a baseline tangential
+      // velocity that won't match a stopped (smoothstep-ended) straight.
+      const radius = phase.startRadius * (1 - e)
+      const theta = phase.startAngle + 2 * Math.PI * phase.revolutions * sIn
+      return [
+        phase.orbitCenter[0] + radius * Math.cos(theta),
+        phase.orbitCenter[1] + radius * Math.sin(theta),
+        phase.orbitCenter[2],
+      ]
+    }
+  }
+}
+
+type Metrics = {
+  t: number
+  phaseIdx: number
+  sInPhase: number
+  pos: [number, number, number]
+  velMag: number
+  dVel: number
+  peakVel: number
+}
+
+function ProtoElectron({
+  blendsRef,
+  metricsRef,
+}: {
+  blendsRef: React.MutableRefObject<BlendMode[]>
+  metricsRef: React.MutableRefObject<Metrics | null>
+}) {
+  const headRef = useRef<THREE.Mesh>(null!)
+  const trailRef = useRef<THREE.BufferGeometry>(null!)
+  const tRef = useRef(0)
+  const lastPosRef = useRef<[number, number, number]>([1, 0, 0])
+  const lastVelMagRef = useRef(0)
+  const peakVelRef = useRef(0)
+  // Persistent positions buffer for the trail — reused across frames so
+  // the polyline shows accumulated history through phase boundaries.
+  const trailPositionsRef = useRef<Float32Array>(new Float32Array(TRAIL_LENGTH * 3))
+  const trailFilledRef = useRef(0)
+
+  useEffect(() => {
+    // Initialize the trail BufferGeometry's position attribute once. We
+    // mutate the underlying Float32Array in-place each frame and only
+    // call needsUpdate=true; never reallocate.
+    const geo = trailRef.current
+    if (!geo) return
+    geo.setAttribute('position', new THREE.BufferAttribute(trailPositionsRef.current, 3))
+    geo.setDrawRange(0, 0)
+  }, [])
+
+  useFrame((_, delta) => {
+    const dt = Math.min(delta, 1 / 30)
+    tRef.current += dt
+    if (tRef.current >= TOTAL_DURATION_S) {
+      tRef.current = 0
+      // Reset trail when the loop restarts so kinks from one cycle don't
+      // overlap the next cycle's phases.
+      trailFilledRef.current = 0
+      peakVelRef.current = 0
+    }
+
+    const t = tRef.current
+    const phaseIdx = Math.min(PHASES.length - 1, Math.floor(t / PHASE_DURATION_S))
+    const sInPhase = (t - phaseIdx * PHASE_DURATION_S) / PHASE_DURATION_S
+    // Boundary 0 doesn't exist (phase 0 has no incoming). For phase 0 we
+    // pass 'sharp' but evaluatePhase ignores blend on circle-orbit anyway.
+    const blends = blendsRef.current
+    const blend = phaseIdx === 0 ? 'sharp' : blends[phaseIdx - 1]
+    const [x, y, z] = evaluatePhase(PHASES[phaseIdx], sInPhase, blend)
+
+    headRef.current.position.set(x, y, z)
+
+    // Frame-by-frame velocity via finite-difference. Magnitude only —
+    // direction would need a vector readout that's noisier to interpret.
+    const lp = lastPosRef.current
+    const dx = x - lp[0]
+    const dy = y - lp[1]
+    const dz = z - lp[2]
+    const velMag = Math.hypot(dx, dy, dz) / dt
+    const dVel = velMag - lastVelMagRef.current
+    if (velMag > peakVelRef.current) peakVelRef.current = velMag
+
+    metricsRef.current = {
+      t,
+      phaseIdx,
+      sInPhase,
+      pos: [x, y, z],
+      velMag,
+      dVel,
+      peakVel: peakVelRef.current,
+    }
+
+    // Append to trail (ring fill until full, then stop appending — the
+    // trail captures one full loop, then the loop reset clears it).
+    const filled = trailFilledRef.current
+    if (filled < TRAIL_LENGTH) {
+      const buf = trailPositionsRef.current
+      buf[filled * 3] = x
+      buf[filled * 3 + 1] = y
+      buf[filled * 3 + 2] = z
+      trailFilledRef.current = filled + 1
+      const geo = trailRef.current
+      if (geo) {
+        const attr = geo.getAttribute('position') as THREE.BufferAttribute
+        attr.needsUpdate = true
+        geo.setDrawRange(0, filled + 1)
+      }
+    }
+
+    lastPosRef.current = [x, y, z]
+    lastVelMagRef.current = velMag
+  })
+
+  return (
+    <>
+      <line>
+        <bufferGeometry ref={trailRef} />
+        <lineBasicMaterial color="#ff4d4d" toneMapped={false} />
+      </line>
+      <mesh ref={headRef}>
+        <sphereGeometry args={[0.05, 16, 16]} />
+        <meshBasicMaterial color="#ffffff" toneMapped={false} />
+      </mesh>
+    </>
+  )
+}
+
+function NucleusSphere() {
+  return (
+    <mesh position={[0, 0, 0]}>
+      <sphereGeometry args={[0.04, 16, 16]} />
+      <meshBasicMaterial color="#4d9eff" toneMapped={false} />
+    </mesh>
+  )
+}
+
+// Updates the readout <pre> element via direct DOM write at ~30 Hz so we
+// don't render-storm React. Reads metricsRef inside its own RAF loop.
+function useReadoutPump(
+  metricsRef: React.MutableRefObject<Metrics | null>,
+  preRef: React.RefObject<HTMLPreElement | null>,
+) {
+  useEffect(() => {
+    let rafId = 0
+    let lastWriteMs = 0
+    const tick = (now: number) => {
+      if (now - lastWriteMs > 33) {
+        const m = metricsRef.current
+        const pre = preRef.current
+        if (m && pre) {
+          const phaseLabel = PHASE_LABELS[m.phaseIdx]
+          // Highlight when we're within ±2 frames of a phase boundary
+          const sFromBoundary = Math.min(m.sInPhase, 1 - m.sInPhase)
+          const nearBoundary = sFromBoundary < 0.034 // ~2 frames @ 60fps
+          const ratio = m.peakVel > 0 ? Math.abs(m.dVel) / m.peakVel : 0
+          pre.textContent =
+            `t=${m.t.toFixed(3)}s  phase=${m.phaseIdx} ${phaseLabel}\n` +
+            `s=${m.sInPhase.toFixed(3)}\n` +
+            `pos=(${m.pos[0].toFixed(3)}, ${m.pos[1].toFixed(3)}, ${m.pos[2].toFixed(3)})\n` +
+            `|v|=${m.velMag.toFixed(3)}  Δ|v|=${m.dVel >= 0 ? '+' : ''}${m.dVel.toFixed(3)}\n` +
+            `peak |v|=${m.peakVel.toFixed(3)}\n` +
+            `Δ|v| / peak = ${(ratio * 100).toFixed(1)}%${nearBoundary ? '   ← AT BOUNDARY' : ''}`
+        }
+        lastWriteMs = now
+      }
+      rafId = requestAnimationFrame(tick)
+    }
+    rafId = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(rafId)
+  }, [metricsRef, preRef])
+}
+
+const PHASE_LABELS = ['circle-orbit', 'ellipse-stretch', 'straight', 'spiral']
+
+const BOUNDARY_LABELS = [
+  'B1: orbit → ellipse-stretch (controls ellipse radius easing)',
+  'B2: ellipse → straight (controls straight lerp easing)',
+  'B3: straight → spiral (controls spiral radius easing)',
+]
+
+function BlendSelect({
+  idx,
+  value,
+  onChange,
+}: {
+  idx: number
+  value: BlendMode
+  onChange: (v: BlendMode) => void
+}) {
+  return (
+    <label className={s.field}>
+      <span className={s.fieldLabel}>{BOUNDARY_LABELS[idx]}</span>
+      <select
+        className={s.select}
+        value={value}
+        onChange={(e: ChangeEvent<HTMLSelectElement>) => onChange(e.target.value as BlendMode)}
+      >
+        {BLEND_MODES.map((m) => (
+          <option key={m} value={m}>{m}</option>
+        ))}
+      </select>
+    </label>
+  )
+}
+
+export function LabsAtomBlend() {
+  const [b1, setB1] = useState<BlendMode>('smoothstep')
+  const [b2, setB2] = useState<BlendMode>('smoothstep')
+  const [b3, setB3] = useState<BlendMode>('smoothstep')
+  const [showNucleus, setShowNucleus] = useState(true)
+  const blendsRef = useRef<BlendMode[]>([b1, b2, b3])
+  useEffect(() => { blendsRef.current = [b1, b2, b3] }, [b1, b2, b3])
+  const metricsRef = useRef<Metrics | null>(null)
+  const preRef = useRef<HTMLPreElement | null>(null)
+  useReadoutPump(metricsRef, preRef)
+
+  // 'sharp' | 'smoothstep' | 'cubic' applied uniformly across all three
+  // boundaries — quick way to A/B test the three modes globally.
+  const setAll = (mode: BlendMode) => { setB1(mode); setB2(mode); setB3(mode) }
+
+  // Memo'd Canvas children to keep the React tree stable across blend changes
+  // (blends propagate via ref, not props, so the Canvas body doesn't re-render).
+  const sceneChildren = useMemo(() => (
+    <>
+      <ProtoElectron blendsRef={blendsRef} metricsRef={metricsRef} />
+      {showNucleus && <NucleusSphere />}
+      <axesHelper args={[1.6]} />
+    </>
+  ), [showNucleus])
+
+  return (
+    <div className={s.wrap}>
+      <div className={s.canvasArea}>
+        <Canvas
+          dpr={[1, 2]}
+          camera={{ position: [0, 0, 4.5], fov: 45, near: 0.1, far: 50 }}
+          gl={{ alpha: true, antialias: true, powerPreference: 'high-performance' }}
+        >
+          {sceneChildren}
+        </Canvas>
+      </div>
+
+      <aside className={s.panel}>
+        <h1 className={s.h1}>Phase-blend math test</h1>
+        <p className={s.lede}>
+          Single electron through 4 phases (1s each, looping). Per-boundary
+          select changes the easing of the SECOND phase's progression. Watch
+          the red trail for kinks at boundaries; watch <code>Δ|v| / peak</code>
+          for the velocity-discontinuity ratio. Pass criterion: &lt;5% at
+          every boundary.
+        </p>
+
+        <h2 className={s.h2}>Blend per boundary</h2>
+        <BlendSelect idx={0} value={b1} onChange={setB1} />
+        <BlendSelect idx={1} value={b2} onChange={setB2} />
+        <BlendSelect idx={2} value={b3} onChange={setB3} />
+
+        <div className={s.row}>
+          <span className={s.fieldLabel}>Apply to all:</span>
+          {BLEND_MODES.map((m) => (
+            <button key={m} type="button" className={s.miniBtn} onClick={() => setAll(m)}>
+              {m}
+            </button>
+          ))}
+        </div>
+
+        <label className={`${s.field} ${s.fieldRow}`}>
+          <input
+            type="checkbox"
+            checked={showNucleus}
+            onChange={(e) => setShowNucleus(e.target.checked)}
+          />
+          <span className={s.fieldLabel}>Show nucleus (origin)</span>
+        </label>
+
+        <h2 className={s.h2}>Live readout</h2>
+        <pre ref={preRef} className={s.readout}>
+          (waiting for first frame…)
+        </pre>
+
+        <h2 className={s.h2}>Phase legend</h2>
+        <ol className={s.legend}>
+          <li><b>0 circle-orbit</b> r=1.0, 1 lap (no easing — uniform angular)</li>
+          <li><b>1 ellipse-stretch</b> radii 1.0,1.0 → 1.4,0.85, 1 lap</li>
+          <li><b>2 straight</b> (1.4,0) → (0.4,0.4) — pure lerp</li>
+          <li><b>3 spiral</b> from (0.4,0.4) to (0,0), 1 rev</li>
+        </ol>
+
+        <h2 className={s.h2}>Expected reading (pre-test prediction)</h2>
+        <ul className={s.legend}>
+          <li><b>B1 smoothstep</b> ≈ C1 — orbit and ellipse share angular velocity at the seam; only radii change, and smoothstep zeros that derivative</li>
+          <li><b>B2 smoothstep</b> ≠ C1 — ellipse exits with nonzero tangent; lerp+smoothstep starts at rest</li>
+          <li><b>B3 smoothstep</b> ≠ C1 — straight ends at rest; spiral entry has baseline tangential velocity</li>
+        </ul>
+      </aside>
+    </div>
+  )
+}

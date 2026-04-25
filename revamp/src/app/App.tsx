@@ -26,6 +26,7 @@ const LibraryWishlist = lazy(() => import('../pages/LibraryWishlist').then(m => 
 const Settings        = lazy(() => import('../pages/Settings').then(m => ({ default: m.Settings })))
 const SignIn          = lazy(() => import('../pages/SignIn').then(m => ({ default: m.SignIn })))
 const LabsAtom        = lazy(() => import('../pages/LabsAtom').then(m => ({ default: m.LabsAtom })))
+const LabsAtomBlend   = lazy(() => import('../pages/LabsAtomBlend').then(m => ({ default: m.LabsAtomBlend })))
 
 export function App() {
   const location = useLocation()
@@ -86,6 +87,7 @@ export function App() {
                 <Route path="/colophon" element={<Colophon />} />
                 <Route path="/feedback" element={<Feedback />} />
                 <Route path="/labs/atom" element={<LabsAtom />} />
+                <Route path="/labs/atom-blend-test" element={<LabsAtomBlend />} />
                 {/* Legacy: /onboarding now redirects to home — onboarding retired. */}
                 <Route path="/onboarding" element={<Navigate to="/" replace />} />
                 <Route path="*" element={<Dashboard />} />
