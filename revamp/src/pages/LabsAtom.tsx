@@ -473,18 +473,18 @@ function buildAiStyle(
   const gm = glowMultiplier
   const r = restProgress
   if (onDark) {
-    // Bright phase: rgba(235,235,235, g*0.95). Resting phase: rgba(235,235,235, 0.55) (.universityDark equivalent).
-    // Blend alpha; RGB stays the same so transitions are alpha-only when r=0.
-    const brightAlpha = g * 0.95
-    const restAlpha = 0.55
-    const alpha = brightAlpha * (1 - r) + restAlpha * r
+    // Stays light throughout. Glow dissipates as r→1, top-emboss
+    // highlight appears as r→1 (gives the text a subtle raised feel
+    // against the dark canvas at rest).
+    const colorAlpha = g * 0.95
     const embossAlpha = r * 0.18
+    const debossShadow = `0 1px 1px rgba(255, 255, 255, ${embossAlpha.toFixed(3)})`
     return {
-      color: `rgba(235, 235, 235, ${alpha.toFixed(3)})`,
+      color: `rgba(235, 235, 235, ${colorAlpha.toFixed(3)})`,
       textShadow: compact
-        ? 'none'
+        ? (r > 0 ? debossShadow : 'none')
         : [
-            `0 1px 1px rgba(255, 255, 255, ${embossAlpha.toFixed(3)})`,
+            debossShadow,
             `0 0 3px rgba(255, 255, 255, ${(0.9 * g * gm * (1 - r)).toFixed(3)})`,
             `0 0 6px rgba(255, 255, 255, ${(0.65 * g * gm * (1 - r)).toFixed(3)})`,
             `0 0 12px rgba(255, 255, 255, ${(0.4 * g * gm * (1 - r)).toFixed(3)})`,
@@ -492,19 +492,18 @@ function buildAiStyle(
           ].join(', '),
     }
   }
-  // Light mode: bright = rgba(255,255,255, g*0.98). Rest = rgba(0,0,0, 0.28) (debossed).
-  // Blend RGB and alpha together so the settle ramp moves white→black smoothly.
-  const gray = Math.round(255 * (1 - r))
-  const brightAlpha = g * 0.98
-  const restAlpha = 0.28
-  const colorAlpha = brightAlpha * (1 - r) + restAlpha * r
+  // Light mode: stays bright white throughout. Glow dissipates as r→1,
+  // dark deboss shadow appears as r→1 (gives the text a pressed-in
+  // feel against the chrome band at rest).
+  const colorAlpha = g * 0.98
   const debossAlpha = r * 0.14
+  const debossShadow = `0 -1px 1px rgba(0, 0, 0, ${debossAlpha.toFixed(3)})`
   return {
-    color: `rgba(${gray}, ${gray}, ${gray}, ${colorAlpha.toFixed(3)})`,
+    color: `rgba(255, 255, 255, ${colorAlpha.toFixed(3)})`,
     textShadow: compact
-      ? 'none'
+      ? (r > 0 ? debossShadow : 'none')
       : [
-          `0 -1px 1px rgba(0, 0, 0, ${debossAlpha.toFixed(3)})`,
+          debossShadow,
           `0 0 3px rgba(255, 255, 255, ${(0.9 * g * gm * (1 - r)).toFixed(3)})`,
           `0 0 6px rgba(255, 255, 255, ${(0.65 * g * gm * (1 - r)).toFixed(3)})`,
           `0 0 12px rgba(255, 255, 255, ${(0.4 * g * gm * (1 - r)).toFixed(3)})`,
