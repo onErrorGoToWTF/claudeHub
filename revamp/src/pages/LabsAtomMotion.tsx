@@ -71,15 +71,12 @@ const CAMERA_Z = 5.5
 // --- Sequence timing (seconds) ---------------------------------------------
 
 const FADE_IN_DUR = 0.55
-const FADE_IN_STAGGER = 0.32
 const ORBIT_A_DUR = 2.2
 const TRAVEL_DUR = 1.55
-const TRAVEL_STAGGER = 1.55
 const POST_HOLD = 1.4
 
 const TRAVEL_BASE_T = ORBIT_A_DUR
-const TOTAL_DUR =
-  TRAVEL_BASE_T + 2 * TRAVEL_STAGGER + TRAVEL_DUR + POST_HOLD
+const TOTAL_DUR = TRAVEL_BASE_T + TRAVEL_DUR + POST_HOLD
 
 // --- Per-electron specs -----------------------------------------------------
 
@@ -94,39 +91,18 @@ type ElectronSpec = {
   trailColor: string
 }
 
-// Distinct colors per electron so the three orthogonal planes are visually
-// distinguishable in 3D — three white electrons overlap into one blob when
-// they cross. Picked: warm white, cool blue, amber.
+// One electron for now — get the A↔B elliptical transit clean before
+// layering more.
 const ELECTRONS: ElectronSpec[] = [
   {
     plane: 'xy',
     cwAtA: true,
     initialPhase: 0,
     fadeInStart: 0,
-    travelStart: TRAVEL_BASE_T + 0 * TRAVEL_STAGGER,
+    travelStart: TRAVEL_BASE_T,
     color: '#ffffff',
     haloColor: '#ffffff',
     trailColor: '#ffffff',
-  },
-  {
-    plane: 'yz',
-    cwAtA: false,
-    initialPhase: (2 * Math.PI) / 3,
-    fadeInStart: FADE_IN_STAGGER,
-    travelStart: TRAVEL_BASE_T + 1 * TRAVEL_STAGGER,
-    color: '#87d8ff',
-    haloColor: '#87d8ff',
-    trailColor: '#87d8ff',
-  },
-  {
-    plane: 'xz',
-    cwAtA: true,
-    initialPhase: (4 * Math.PI) / 3,
-    fadeInStart: 2 * FADE_IN_STAGGER,
-    travelStart: TRAVEL_BASE_T + 2 * TRAVEL_STAGGER,
-    color: '#ffd66b',
-    haloColor: '#ffd66b',
-    trailColor: '#ffd66b',
   },
 ]
 
