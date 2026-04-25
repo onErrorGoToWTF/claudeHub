@@ -36,7 +36,7 @@ const RADIUS_A = 1.40
 const RADIUS_B = 0.85
 const ORBIT_SPEED = 3.30
 const ORBITS: OrbitConfig[] = [
-  { plane: 'xy', speed: ORBIT_SPEED, phase: 0,                 laps: 4,   postLandVisibility: 0 },
+  { plane: 'xy', speed: ORBIT_SPEED, phase: 0,                 laps: 3.5, postLandVisibility: 0 },
   { plane: 'yz', speed: ORBIT_SPEED, phase: (2 * Math.PI) / 3, laps: 5,   postLandVisibility: 0.33 },
   // Final electron gets a gentler spiral via custom settleDurationT (3π
   // = 1.5 laps) and smoothstep easing so the orbit→spiral handoff has
