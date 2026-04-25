@@ -1,163 +1,190 @@
 # Phase Types — Reference
 
-Five phase types in the atom motion system. Each defines a parametric position function over t∈[0,1].
+Five state primitives in the atom motion system. Each defines a parametric `positionFn(t)` and `scaleFn(t)` over t ∈ [0,1].
+
+The dual `positionFn` + `scaleFn` contract is mandatory because `pulsate` has constant position but varying scale. Most states are no-ops on one side of the contract.
+
+> Source of truth for the overall design: [`revamp/docs/atom-system-plan.md`](../../../../revamp/docs/atom-system-plan.md). Composition restrictions, the `transitionWindow` knob, and the three-concept model live there.
 
 ## 1. orbit
 
-Electron travels along an elliptical (or circular) orbit around the nucleus.
+Unified circle + ellipse. A circle is just an orbit with `aspect = 1.0`.
 
 **Parameters:**
-- `shape: 'circular'` (rx == ry) | `{ rx: number, ry: number }` (ellipse)
-- `plane: 'xy' | 'yz' | 'xz' | 'morph'` (which 2D plane the orbit lives in)
-- `revolutions: number` (default 1) — how many times around in this phase
-- `phaseStart: number` (default 0) — starting angle in radians
+- `size` — primary radius (rx). Single knob; aspect derives ry.
+- `aspect` — `1.0` = circle, `<1` or `>1` = ellipse stretched along one axis. Default `1.0`.
+- `revolutions` — laps before exiting the state. Default `1`.
+- `duration` — total time in this state (ms).
+- `plane` — orientation of the orbit in 3D. Two dimensions sufficient (rx, ry derived from size + aspect; tilt expressible via plane normal). No third dimension needed for our use cases.
+- `phaseStart` — starting angle in radians. Default `0`.
 
 **Position (relative to nucleus):**
 ```
+rx = size
+ry = size · aspect
 P(t) = (rx · cos(2π · revolutions · t + phaseStart),
         ry · sin(2π · revolutions · t + phaseStart),
         0)
 ```
-
-(Then rotated to the chosen plane.)
-
-**Tangent (for blending):**
-```
-P'(t) = (-2π · revolutions · rx · sin(2π · revolutions · t + phaseStart),
-          2π · revolutions · ry · cos(2π · revolutions · t + phaseStart),
-          0)
-```
-
-**Plane morphing (`plane: 'morph'`):** interpolate between two plane orientations over t. Used for "perpendicular orbits converging into one plane" choreography.
-
-## 2. straight
-
-Electron travels in a straight line from current position to a target.
-
-**Parameters:**
-- `target: TargetSpec` (Vector3 | DOM ref | container keyword)
-- `easing: 'linear' | 'smoothstep' | 'easeOutCubic'` (default 'smoothstep')
-- `intensity: number` (default 1, scales how much the easing biases the path)
-
-**Position (relative to nucleus, if applicable):**
-```
-P(t) = P_start + (target - P_start) · easing(t)
-```
+(Then rotated to the configured plane.)
 
 **Tangent:**
 ```
-P'(t) = (target - P_start) · easing'(t)
+P'(t) = (-2π · revolutions · rx · sin(...),
+          2π · revolutions · ry · cos(...),
+          0)
 ```
 
-**For C1 entry from a previous phase:**
-Use `easing: 'smoothstep'` to ensure P'(0) = 0, so the straight line starts at zero velocity (matches a smooth boundary).
+**Scale:** constant `1.0`.
 
-**For C1 exit to a next phase:**
-`smoothstep` ensures P'(1) = 0.
+## 2. straight
+
+Linear travel from current position to a target. The electron *draws* the line — there is never an instant pre-drawn line. The electron is the living thing; trail follows.
+
+**Parameters:**
+- `target` — destination point (absolute, or relative to nucleus, or DOM ref / container keyword)
+- `duration` — total time (ms)
+
+**Start-point behavior:**
+- If a previous state exists, start point = previous state's end point. Smooth handoff is the transition layer's job, not the state's.
+- If first state of the sequence, the electron appears at start point and begins drawing immediately.
+
+**Position:**
+```
+P(t) = P_start + (target - P_start) · t
+```
+
+The state itself uses linear t. Easing / window-shaping happens in the transition layer at boundaries, not inside this state.
+
+**Tangent:**
+```
+P'(t) = (target - P_start)
+```
+Constant magnitude, constant direction.
+
+**Scale:** constant `1.0`.
 
 ## 3. spiral
 
-Electron orbits with shrinking radius, collapsing to a target point.
+Orbit with shrinking (or growing) radius, collapsing to / expanding from a point.
 
 **Parameters:**
-- `target: TargetSpec` — where the spiral ends
-- `revolutions: number` (default 1) — how many laps around during the spiral
-- `ease: 'cubic' | 'smoothstep'` (default 'smoothstep') — how the radius shrinks
-- `plane: 'xy' | 'yz' | 'xz'` — which orbital plane
+- `direction` — `'inward'` | `'outward'`
+- `revolutions` — laps during the spiral. Default `1`.
+- `duration` — total time (ms).
 
-**Position (relative to nucleus, with target at origin of relative frame):**
+**Composition restrictions (HARD):**
+- `spiral.inward` can ONLY follow an `orbit` state. Needs an existing nucleus center to spiral into.
+- `spiral.outward` can ONLY follow an "at point" state (`pause`, `pulsate`, end of `straight`, end of `spiral.inward`).
+
+Enforced at config-validation time. Reject sequences that violate.
+
+**Position (inward, with target at origin of relative frame):**
 ```
-e = ease(t)               // shrinkage progression 0 → 1
-center = target · e        // orbit center slides toward target
-scale = 1 - e              // radius shrinks
+e = t                       // linear shrinkage; window-shaping in transition layer
+center = target · e         // orbit center slides toward target
+scale = 1 - e               // radius shrinks
 angle = 2π · revolutions · t
 
 P(t) = center + (scale · rx · cos(angle), scale · ry · sin(angle), 0)
 ```
+This is the current `orbitPosMorphed` pattern in the codebase.
 
-**This is what the current settle uses (`orbitPosMorphed`).** Already in the codebase.
+**Outward:** mirror of inward. `e` runs `1 → 0`, radius grows from 0.
 
-## 4. pause
+**Scale:** constant `1.0` (this is path scale, not mesh scale).
 
-Electron stays stationary at its current position.
+## 4. pulsate
+
+Stationary scale-pulse in place. No translational motion. Forces the dual `positionFn` + `scaleFn` contract.
 
 **Parameters:**
-- `duration: number` (in t-units or ms)
+- `intensity` — peak scale multiplier. Default `1.5`.
+- `pulses` — number of pulses. Default `1`.
+- `duration` — total time (ms).
+- `shiftColorAfter` — optional `{ afterPulse: number, color: Rgb }`. After N pulses, the electron's color changes; subsequent pulses run in the new color.
 
 **Position:**
 ```
-P(t) = P_start  (constant)
+P(t) = P_start   (constant)
 ```
 
-**Tangent:**
+**Scale (per pulse, peak at midpoint of each pulse):**
 ```
-P'(t) = 0
+pulsePhase = (t · pulses) mod 1
+scale(t) = 1 + (intensity - 1) · sin(π · pulsePhase)
 ```
+
+`pulsate ↔ anything` boundaries are spatially trivial (no positional motion at the boundary on the pulsate side). Speed handoff is also trivial.
+
+## 5. pause
+
+Stationary hold at current position. Useful as a beat between states. Renders nothing new.
+
+**Parameters:**
+- `duration` — total time (ms).
+
+**Position:**
+```
+P(t) = P_start   (constant)
+```
+
+**Tangent:** `P'(t) = 0`.
+
+**Scale:** constant `1.0`.
 
 C1-compliant on both boundaries by default (zero velocity matches anything that ends/starts at zero velocity).
 
-## 5. burst
-
-Brief size pulse at the current position. Visual only — does not change path.
-
-**Parameters:**
-- `intensity: number` (peak scale multiplier, default 1.5)
-- `duration: ms`
-- `ease: 'snap' | 'spring'` (default 'snap')
-
-**Position:**
-```
-P(t) = P_start  (constant)
-```
-
-**Scale modifier (applied to electron mesh):**
-```
-scale(t) = 1 + (intensity - 1) · sin(π · t)  // peak at t=0.5
-```
-
-**This is the strike pulse pattern.** Used at landing moments and end-effect triggers.
-
-## Composing phases (the choreography)
-
-A phase sequence is an array:
+## Composing states (the choreography)
 
 ```ts
 const electronPath = [
-  { type: 'orbit',    shape: 'circular',    revolutions: 2, plane: 'xy', duration: 1.5 },
-  { type: 'orbit',    shape: { rx: 1.4, ry: 0.85 }, revolutions: 1, transition: 'smooth' },
-  { type: 'straight', target: nucleusRef,   easing: 'smoothstep', duration: 0.8 },
-  { type: 'spiral',   target: nucleusRef,   revolutions: 1.5, duration: 1.2 },
-  { type: 'burst',    intensity: 1.8,       duration: 200 },
+  { type: 'orbit',    size: 1.0, aspect: 1.0, revolutions: 2, plane: 'xy', duration: 1500 },
+  { type: 'orbit',    size: 1.0, aspect: 0.6, revolutions: 1, duration: 900 },
+  { type: 'straight', target: nucleusRef,     duration: 800 },
+  { type: 'pulsate',  intensity: 1.6, pulses: 3, duration: 600 },
+  { type: 'spiral',   direction: 'outward', revolutions: 1.5, duration: 1200 },
 ]
 ```
 
-Each phase's `duration` is in ms (real time). The runtime normalizes to t∈[0,1] internally.
+Each state's `duration` is in ms. The runtime normalizes to t ∈ [0,1] per-state.
+
+## Composition cheatsheet
+
+```
+orbit       → any
+straight    → any
+spiral.in   → must come AFTER orbit
+spiral.out  → must come AFTER an at-point state (pause, pulsate, end of straight, end of spiral.in)
+pulsate     → any (any → pulsate, pulsate → any)
+pause       → any
+```
 
 ## Nucleus path (same vocabulary)
 
-The nucleus has its own phase sequence:
-
 ```ts
 const nucleusPath = [
-  { type: 'pause',    duration: 800 },                         // hold at start
-  { type: 'straight', target: 'center', easing: 'smoothstep', duration: 600 },
-  { type: 'pause',    duration: ∞ },                            // settled
+  { type: 'pause',    duration: 800 },
+  { type: 'straight', target: 'center', duration: 600 },
+  { type: 'pause',    duration: Infinity },
 ]
 ```
 
-Most use cases: nucleus is a single `{ type: 'pause' }` (stationary). Some use cases (atom flies in): nucleus has its own travel.
+Most use cases: nucleus is a single `{ type: 'pause' }` (stationary). Some (atom flies in): nucleus has its own travel.
 
-## Phase blending math
+## Boundary blending — see transitions, not states
 
-See `geometry-blending.md` for the full math. Quick rules:
+State definitions are duration-relative and unbiased — they run on linear t and produce clean tangents. Easing / window-shaping happens in the **transition layer**, controlled by the single `transitionWindow` knob. See [`continuity-cheatsheet.md`](continuity-cheatsheet.md) and [`geometry-blending.md`](geometry-blending.md).
 
-- **`transition: 'sharp'`** — C0 only. Position matches at boundary, velocity can jump.
-- **`transition: 'smooth'`** — C1. Velocity matches (use smoothstep easing or Hermite cubic interpolation).
-- Default is smooth.
+The user-facing knob `transitionWindow` controls how much time/distance a boundary blend gets. Short window → tighter arc. Long window → wider arc. Smoothness is fixed at maximum (never a kink).
+
+## End effects (NOT states)
+
+`burst`, `target-hit flash`, `activate glow`, `fade` — these are END EFFECTS, not states. They fire at sequence end only, never at intermediate boundaries. See the system plan; spec for end-effect API is pending.
 
 ## Forbidden compositions
 
-- ❌ `pause → burst → pause` with no continuity check — burst's scale animation needs to NOT inherit from pause's zero velocity (it's a visual scale, not a position change, so it's fine)
-- ❌ Two consecutive `straight` phases to the same target — collapses to one phase
-- ❌ Spiral that doesn't end at the target — math becomes ambiguous; spiral always ends at its target
-- ❌ orbit `shape: 'circular'` with rx ≠ ry — use `{ rx, ry }` instead
+- ❌ `spiral.inward` not preceded by `orbit` — fail config validation.
+- ❌ `spiral.outward` preceded by a moving (non-at-point) state — fail config validation.
+- ❌ Two consecutive `straight` phases to the same target — collapse to one.
+- ❌ `orbit` with `aspect = 0` or negative — out of range.

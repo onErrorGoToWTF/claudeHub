@@ -1,11 +1,13 @@
 ---
 name: electron-motion
-description: Math + geometry + motion-policy expert for the atom/electron animation system. Invoke when the user describes what they want an electron (or atom) to do — orbit, spiral, fly between points, converge, reveal text, etc. Translates natural-language motion intent into a mathematically smooth phase sequence with continuity guarantees (C0/C1/C2). Walks a catalog: decompose into 5 phase types (orbit/straight/spiral/pause/burst), pick continuity per boundary, validate easing derivatives, apply motion policy (prefers-reduced-motion, frameloop=demand, aria-hidden, IntersectionObserver), enforce 3-tier dev policy, flag smoothness risks. References indexed research at _resources/ (motion-policy, R3F isolation, accessibility, component patterns, geometry blending, easing reference, phase types reference, continuity cheatsheet). Use when planning a new atom use case (quiz reward, panel highlight, landing decoration, modal entrance, Genius celebration), tweaking an existing one, or asking "is this going to be smooth?" / "will this cause flicker?" / "what easing should I use here?" Invocation phrases: "design an electron animation for X", "add an atom to Y", "is this motion smooth", "/electron-motion".
+description: Math + geometry + motion-policy expert for the atom/electron animation system. Invoke when the user describes what they want an electron (or atom) to do — orbit, spiral, fly between points, converge, reveal text, etc. Translates natural-language motion intent into a mathematically smooth phase sequence using the locked 5-state model (orbit/straight/spiral/pulsate/pause). Smoothness is fixed at maximum at every boundary; the user-facing knob is `transitionWindow` (window length sets the arc shape). Burst / target-hit / activate / fade are END EFFECTS, not states. Walks a catalog: decompose into states, validate composition restrictions (spiral.in must follow orbit; spiral.out must follow at-point), pick `transitionWindow` per boundary, apply motion policy (prefers-reduced-motion, frameloop=demand, aria-hidden, IntersectionObserver), enforce 3-tier dev policy. References indexed research at _resources/. Source of truth: revamp/docs/atom-system-plan.md. Use when planning a new atom use case (quiz reward, panel highlight, landing decoration, modal entrance, Genius celebration), tweaking an existing one, or asking "is this going to be smooth?" / "will this cause flicker?" Invocation phrases: "design an electron animation for X", "add an atom to Y", "is this motion smooth", "/electron-motion".
 ---
 
 # electron-motion
 
-Math + geometry + motion-policy expert for the atom animation system. Invoke whenever the user describes what they want an electron (or atom) to do, and translate that description into a mathematically smooth phase sequence with continuity guarantees.
+Math + geometry + motion-policy expert for the atom animation system. Invoke whenever the user describes what they want an electron (or atom) to do, and translate that description into a mathematically smooth phase sequence using the locked 5-state model.
+
+**Source of truth:** [`revamp/docs/atom-system-plan.md`](../../../revamp/docs/atom-system-plan.md). Read it before answering. The plan defines the 5 states, composition rules, and the `transitionWindow` knob.
 
 This skill is the keeper of the atom system's research catalog. Resources under `_resources/` are indexed primary findings — refer to them rather than re-researching.
 
@@ -69,16 +71,23 @@ Plus:
 
 For every motion request, walk the catalog in order:
 
-### 1. Decompose into phases
+### 1. Decompose into states
 
-Break the request into sequential phases. Each phase is one of the 5 types:
-- `orbit` — parametric ellipse around current center (nucleus)
-- `straight` — linear travel from current position to a target
-- `spiral` — orbit with shrinking radius collapsing to a point
+Break the request into sequential states. Each is one of the 5 LOCKED types:
+- `orbit` — unified circle/ellipse around the nucleus (`size` + `aspect` + `revolutions` + `plane`). Circle = orbit with `aspect = 1.0`.
+- `straight` — linear travel; the electron *draws* the line (no instant pre-drawn line)
+- `spiral` — orbit with shrinking/growing radius. `direction: 'inward' | 'outward'`
+- `pulsate` — stationary scale-pulse in place; supports `shiftColorAfter`
 - `pause` — stationary hold
-- `burst` — brief size pulse (visual only, no path math)
 
-Document the boundaries between phases.
+**HARD composition rules:**
+- `spiral.inward` must be preceded by `orbit` (needs nucleus center)
+- `spiral.outward` must be preceded by an at-point state (`pause`, `pulsate`, end of `straight`, end of `spiral.inward`)
+- All other transitions are free (any → any)
+
+**`burst` / `target-hit` / `activate` / `fade` are END EFFECTS, not states.** They fire at sequence END only — never at intermediate boundaries.
+
+Document the boundaries between states.
 
 ### 2. Decide nucleus path vs electron path
 
@@ -89,33 +98,41 @@ Two layers can move independently:
 Most use cases: nucleus is stationary, electrons do all the motion.
 Some use cases: nucleus moves (atom-flies-in), electrons orbit relative to it.
 
-### 3. Pick continuity per boundary
+### 3. Pick `transitionWindow` per boundary
 
-For each phase boundary, decide:
-- **Sharp (C0)** — position matches but velocity can jump. Visible kink. Use for "snap" moments (e.g., burst).
-- **Smooth (C1)** — position AND velocity match. No visible kink. Default for most transitions.
-- **Buttery (C2)** — also matches acceleration. Industry research says imperceptible at 60fps for typical animation. Use only if you have a specific reason.
+Smoothness is FIXED at maximum at every boundary — there is no smoothness knob. The single user-facing knob is `transitionWindow ∈ [0,1]`:
+- `0.0` = minimum window — tightest allowable arc, never zero (floor enforced)
+- `1.0` = maximum window — most generous arc, deepest speed shaping
 
-C1 is the default. See `_resources/continuity-cheatsheet.md`.
+Window length determines arc shape. The user thinks in window length; the math layer maps that to:
+- `curve ↔ curve` (orbit↔orbit, orbit↔spiral, spiral↔spiral) — smoothstep on inner phase; window has subtle effect (mostly speed shaping)
+- `curve ↔ straight` — Hermite cubic spanning the window; window length sets fillet radius
+- `straight ↔ straight at angle` — fillet arc + slow-into-corner / accelerate-out
+- `pulsate ↔ anything` — trivial (no positional change at the pulsate boundary)
+- `pause ↔ anything` — trivial geometrically; speed must ramp from/to zero
 
-### 4. Pick easing per phase
+Internally, every boundary has TWO dimensions: **path geometry** (how the curve rounds) AND **speed shaping** (`s_path = f(s_time)` time-reparameterization, decelerate into corners / accelerate out). Don't ship one without the other.
 
-Easing functions have derivative behavior at endpoints that determines continuity:
-- **smoothstep** `x²(3-2x)` — derivative 0 at both ends. **C1-compliant.** Use for blends.
-- **easeOutCubic** `1-(1-x)³` — derivative 3 at start, 0 at end. **NOT C1-compliant** at start. Use only when starting velocity != 0 is desired.
-- **linear** — constant derivative. Sharp boundaries on both ends.
+C1 is the default at every boundary by design. See `_resources/continuity-cheatsheet.md`.
+
+### 4. Easing inside states
+
+States themselves run on linear t. Easing / window-shaping happens in the **transition layer** at boundaries, not inside states. Internal easings the transition layer uses:
+- **smoothstep** `x²(3-2x)` — derivative 0 at both ends. C1.
 - **Hermite cubic** — interpolates position + velocity at boundaries. C1 by construction.
+- **easeOutCubic / linear** — internal use; not user-facing.
 
 See `_resources/easing-reference.md`.
 
-### 5. Verify smoothness math
+### 5. Verify smoothness math (already guaranteed by design)
 
-For C1 boundaries, verify:
-- Exit velocity of phase N = Entry velocity of phase N+1
-- For orbit→straight: tangent of ellipse at exit t = (-A·sin(t), B·cos(t)). Normalize. Use as straight line's initial velocity (eased via Hermite cubic).
-- For straight→spiral: tangent of straight = direction (P1-P0)/|P1-P0|. Use as spiral's initial direction.
+Smoothness is structural — every state produces a clean tangent and the transition layer matches them. You don't pick C0 vs C1 per boundary; the system is C1 by default. The remaining math check is just:
 
-If continuity math doesn't work cleanly, fall back to **blend window** (smoothstep mix of two parametric curves over an overlap window) — slightly less precise but always smooth.
+- `spiral.inward` must follow `orbit` (precondition for the math to be defined)
+- `spiral.outward` must follow an at-point state
+- The transition layer's window must fit inside the adjacent states' durations
+
+If the composition doesn't satisfy preconditions, REJECT the config — don't paper over it.
 
 See `_resources/geometry-blending.md`.
 
@@ -173,7 +190,7 @@ If Low, recommend prototyping at `/labs/atom-blend-test` before committing.
 - `_resources/component-patterns.md` — choreography preset + trigger/effect decoupling
 - `_resources/geometry-blending.md` — Hermite cubics + Catmull-Rom + Three.js curves + tangent math
 - `_resources/easing-reference.md` — common easings + derivatives + when to use each
-- `_resources/phase-types-reference.md` — orbit/straight/spiral/pause/burst formulas + tangent vectors
+- `_resources/phase-types-reference.md` — orbit/straight/spiral/pulsate/pause formulas + composition rules
 - `_resources/continuity-cheatsheet.md` — C0/C1/C2 explained for non-mathematicians
 - `_resources/architecture-plan.md` — pointer to current architecture plan
 

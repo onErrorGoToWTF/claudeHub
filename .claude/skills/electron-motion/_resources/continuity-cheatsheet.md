@@ -1,5 +1,7 @@
 # Continuity Cheatsheet — C0, C1, C2 for Non-Mathematicians
 
+> **Note (locked design):** The user never sees C0/C1/C2 terminology. The system is **structurally C1 by default at every boundary** — smoothness is not a knob. The user-facing knob is `transitionWindow` (window length sets arc shape). This cheatsheet is internal vocabulary for the skill / math layer. Source of truth: [`revamp/docs/atom-system-plan.md`](../../../revamp/docs/atom-system-plan.md).
+
 Continuity describes how "smooth" the transition between two motion phases is. Higher continuity = smoother to the eye.
 
 ## The three levels
@@ -12,9 +14,9 @@ But velocity (direction + speed) can jump.
 
 **Visual effect:** sharp kink. The path changes direction abruptly.
 
-**When to use:** intentional snap moments. Bursts. Effects where the abruptness IS the point.
+**When to use:** intentional snap moments handled at the END of a sequence — the `burst` end effect, target-hit flashes, etc. Never at intermediate state boundaries in the locked design.
 
-**Example:** electron lands at i-dot → burst phase. Position is the same, but the burst introduces a visual scale pop. C0 is fine because the burst doesn't move the electron.
+**Example:** electron lands at i-dot → end-effect `burst`. Position is the same, but the burst introduces a visual scale pop. C0 is fine because the end effect runs after the path completes.
 
 ### C1 — velocity continuous (smooth transition)
 

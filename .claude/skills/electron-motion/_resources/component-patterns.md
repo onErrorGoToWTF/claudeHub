@@ -116,15 +116,23 @@ useEffect(() => {
 Prevent misconfiguration at compile time:
 
 ```ts
-type Phase =
-  | { type: 'orbit';    shape: 'circular' | { rx: number; ry: number }; duration: number }
+type Plane = { rx: number; ry: number; tilt?: number }
+
+type State =
+  | { type: 'orbit';    size: number; aspect?: number; revolutions?: number; plane?: Plane; phaseStart?: number; duration: number }
   | { type: 'straight'; target: TargetSpec; duration: number }
-  | { type: 'spiral';   target: TargetSpec; duration: number; revolutions?: number }
+  | { type: 'spiral';   direction: 'inward' | 'outward'; revolutions?: number; duration: number }
+  | { type: 'pulsate';  intensity: number; pulses?: number; duration: number; shiftColorAfter?: { afterPulse: number; color: Rgb } }
   | { type: 'pause';    duration: number }
-  | { type: 'burst';    intensity: number; duration: number }
+
+type Boundary = { transitionWindow: number /* 0..1 */ }
+
+type Sequence = { states: State[]; boundaries: Boundary[] /* length = states.length - 1 */ }
 ```
 
-TypeScript narrows on `type` field. Try to use `straight.shape` → compile error. Forget a phase type in a switch → exhaustiveness check fails.
+TypeScript narrows on `type` field. Try to use `straight.size` → compile error. Forget a state type in a switch → exhaustiveness check fails.
+
+`burst` / `target-hit` / `activate` / `fade` are END EFFECTS, modeled as a separate type that attaches at sequence end. Not states.
 
 ## Versioning & migration
 
