@@ -117,6 +117,11 @@ Prevent misconfiguration at compile time:
 
 ```ts
 type Plane = { rx: number; ry: number; tilt?: number }
+type TargetSpec =
+  | { space: 'nucleus';   value: Vec3 }
+  | { space: 'canvas';    value: Vec3 }
+  | { space: 'viewport';  value: { x: number; y: number } }
+  | { space: 'dom-ref';   value: DOMRef }
 
 type State =
   | { type: 'orbit';    size: number; aspect?: number; revolutions?: number; plane?: Plane; phaseStart?: number; duration: number }

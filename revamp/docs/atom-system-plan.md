@@ -65,7 +65,17 @@ Unified circle + ellipse. A circle is just an orbit with `aspect = 1.0`.
 Linear travel from current position to a target. The electron *draws* the line — the line is a fading trail behind a moving electron, never an instant line stroke. The electron is the living thing.
 
 **Tunable constants:**
-- `target` — destination point (absolute or relative-to-nucleus)
+- `target` — destination point. Coordinate system is explicit:
+  ```ts
+  target: {
+    space: 'nucleus' | 'canvas' | 'viewport' | 'dom-ref'
+    value: Vec3 | { x: number; y: number } | DOMRef
+  }
+  ```
+  - `'nucleus'` — relative to current nucleus position (default for in-atom motion)
+  - `'canvas'` — absolute within the R3F canvas frame
+  - `'viewport'` — viewport-relative pixels (translated to canvas coords by the runtime). **Required for departure / arrival use cases that travel off-screen.**
+  - `'dom-ref'` — anchor on a DOM element (e.g. an award badge, a panel)
 - `duration` — total time in this state
 
 **Start-point behavior:**
@@ -128,9 +138,17 @@ Smooth handoff between states is a transition concern, not the state's concern.
 The user never sees C0/C1/Hermite/smoothstep terminology. They see one knob.
 
 **The user-facing knob: `transitionWindow`**
-- Continuous scalar `0.0 ↔ 1.0` (or expressible as a fraction of adjacent state durations)
+- Continuous scalar `0.0 ↔ 1.0`
 - `0.0` = minimum window (tightest allowable arc, snappy seam — but never zero, see floor below)
 - `1.0` = maximum window (most generous arc, gradual blend, deepest speed shaping)
+
+**Window length formula (LOCKED):**
+```
+windowMs = transitionWindow · 0.5 · min(durLeft, durRight)
+```
+Then clamp `windowMs ≥ MIN_WINDOW_MS` (the floor representing the user's minimum corner radius).
+
+The `0.5 · min(...)` factor guarantees the window can never consume more than half of either adjacent state, so each state retains ≥ 50% of its duration as un-blended motion. No silent overflow. No surprise behavior on short states.
 
 **Internal mapping (math hidden from user):**
 - `curve ↔ curve` boundary (orbit↔orbit, orbit↔spiral, spiral↔spiral): smoothstep on inner phase. Window has subtle effect (mostly speed shaping).
@@ -149,6 +167,8 @@ The minimum window is never zero. A `transitionWindow = 0.0` straight↔straight
 Don't ship transitions with geometric smoothness but no speed shaping. Both dimensions or neither.
 
 **Lab strategy:** Transitions get their **own diagnostic page**, separate from the states lab. User quote: "transitions should be separate from the labs dev page from the states. I will work on them separately."
+
+**Foreseeable escape hatch (deferred — do NOT implement preemptively):** If a future use case wants a wide-arc geometry without the speed dip — e.g. an `activate` end effect where the electron should *slam* into the target — `transitionWindow` alone can't express it (the rule couples speed-shaping to window length). At that point, expose `speedShaping ∈ [0,1]` as a per-boundary override, default = follows window length. Until a real use case demands it, this stays as a record-only note.
 
 ---
 
@@ -216,6 +236,8 @@ type StateRuntime = {
 
 The dual contract is forced by `pulsate` (which has constant position but varying scale). Every state implements both — most are no-ops on one side.
 
+**Why NOT a unified `transformFn(t) → SE(3) + scale` (locked decision):** A unified function looks tidier but forces every state to construct a full 7-tuple per frame when most only need to set one field — a real perf cost in `useFrame` at 60Hz. The split mirrors Three.js's own `Object3D.position` / `Object3D.quaternion` / `Object3D.scale` API and reflects the actual semantic split: `pulsate` varies scale not position; `orbit` varies position not scale. Project pitfall #14 (parallel over unified) applies. Do not "tidy" this into a unified transform.
+
 `StateContext` carries:
 - The state's tunable constants (size, aspect, target, etc.)
 - The previous state's end position + tangent (for smooth handoff)
@@ -262,6 +284,11 @@ Four discriminating questions to put to advisor + architecture-review skill:
 - Color system design (deferred).
 - Speed-shaping prototype.
 - First preset deployment (gated on a concrete consumer use case, e.g. quiz reward).
+
+### Known risks (recorded — to validate at implementation, not block design)
+
+- **Trail rendering across speed-shaped boundaries.** The current `Electron.tsx` samples positions every frame; speed shaping makes the electron slow at corners, which bunches trail vertices. May read as anticipation (good) or as a visual clump (bad). **Validate at the transitions lab before shipping the first preset.**
+- **Plane-blending policy** for `orbit(plane=A) → orbit(plane=B)` is unspecified. Old `phase-types-reference.md` had a `plane: 'morph'` mode; the new spec dropped it. If any future use case wants converging-orbit choreography, this gap surfaces. **Stub a decision when it surfaces (likely "interpolate plane normal across the transition window" or "reject same-state-different-plane sequences").**
 
 ---
 
