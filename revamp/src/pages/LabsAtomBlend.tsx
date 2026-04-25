@@ -209,9 +209,14 @@ type Metrics = {
 function ProtoElectron({
   blendsRef,
   metricsRef,
+  boundaryRatiosRef,
 }: {
   blendsRef: React.MutableRefObject<BlendMode[]>
   metricsRef: React.MutableRefObject<Metrics | null>
+  // Worst-observed Δ|v|/peak ratio per boundary, captured at the frame
+  // immediately AFTER the phaseIdx changes. Persists across frames so the
+  // chip shows the loop's worst-case reading rather than the live value.
+  boundaryRatiosRef: React.MutableRefObject<[number, number, number]>
 }) {
   const headRef = useRef<THREE.Mesh>(null!)
   const trailRef = useRef<THREE.BufferGeometry>(null!)
@@ -219,6 +224,7 @@ function ProtoElectron({
   const lastPosRef = useRef<[number, number, number]>([1, 0, 0])
   const lastVelMagRef = useRef(0)
   const peakVelRef = useRef(0)
+  const lastPhaseIdxRef = useRef(0)
   // Persistent positions buffer for the trail — reused across frames so
   // the polyline shows accumulated history through phase boundaries.
   const trailPositionsRef = useRef<Float32Array>(new Float32Array(TRAIL_LENGTH * 3))
@@ -239,10 +245,12 @@ function ProtoElectron({
     tRef.current += dt
     if (tRef.current >= TOTAL_DURATION_S) {
       tRef.current = 0
-      // Reset trail when the loop restarts so kinks from one cycle don't
-      // overlap the next cycle's phases.
+      // Reset trail + per-boundary worst readings when the loop restarts
+      // so a fresh loop after a blend change isn't shadowed by stale data.
       trailFilledRef.current = 0
       peakVelRef.current = 0
+      boundaryRatiosRef.current = [0, 0, 0]
+      lastPhaseIdxRef.current = 0
     }
 
     const t = tRef.current
@@ -262,6 +270,22 @@ function ProtoElectron({
     const velMag = Math.hypot(dx, dy, dz) / dt
     const dVel = velMag - lastVelMagRef.current
     if (velMag > peakVelRef.current) peakVelRef.current = velMag
+
+    // Boundary capture: when phaseIdx just changed (this is the first
+    // frame of a new phase), the |dVel| measured against the previous
+    // frame IS the boundary discontinuity. Record it as the worst-so-far
+    // for that boundary index (boundaryIdx = phaseIdx - 1).
+    if (phaseIdx !== lastPhaseIdxRef.current && phaseIdx > 0 && phaseIdx <= 3) {
+      const boundaryIdx = phaseIdx - 1
+      const ratio = peakVelRef.current > 0 ? Math.abs(dVel) / peakVelRef.current : 0
+      const stored = boundaryRatiosRef.current[boundaryIdx]
+      if (ratio > stored) {
+        const next: [number, number, number] = [...boundaryRatiosRef.current]
+        next[boundaryIdx] = ratio
+        boundaryRatiosRef.current = next
+      }
+    }
+    lastPhaseIdxRef.current = phaseIdx
 
     metricsRef.current = {
       t,
@@ -319,13 +343,18 @@ function NucleusSphere() {
 
 // Updates the readout <pre> element via direct DOM write at ~30 Hz so we
 // don't render-storm React. Reads metricsRef inside its own RAF loop.
+// Same loop also syncs boundary-ratios into React state at ~4 Hz so the
+// chip strip re-renders at low frequency without spamming reconciliation.
 function useReadoutPump(
   metricsRef: React.MutableRefObject<Metrics | null>,
   preRef: React.RefObject<HTMLPreElement | null>,
+  boundaryRatiosRef: React.MutableRefObject<[number, number, number]>,
+  setBoundaryRatios: (r: [number, number, number]) => void,
 ) {
   useEffect(() => {
     let rafId = 0
     let lastWriteMs = 0
+    let lastChipMs = 0
     const tick = (now: number) => {
       if (now - lastWriteMs > 33) {
         const m = metricsRef.current
@@ -346,11 +375,40 @@ function useReadoutPump(
         }
         lastWriteMs = now
       }
+      if (now - lastChipMs > 250) {
+        const r = boundaryRatiosRef.current
+        setBoundaryRatios([r[0], r[1], r[2]])
+        lastChipMs = now
+      }
       rafId = requestAnimationFrame(tick)
     }
     rafId = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(rafId)
-  }, [metricsRef, preRef])
+  }, [metricsRef, preRef, boundaryRatiosRef, setBoundaryRatios])
+}
+
+// Pass criterion locked at 5% (eye-perceptible velocity discontinuity).
+// 5–20% is observable but borderline; ≥20% is a clear kink.
+const PASS_RATIO = 0.05
+const WARN_RATIO = 0.20
+
+function ratioVerdict(ratio: number): 'pass' | 'warn' | 'fail' | 'idle' {
+  if (ratio === 0) return 'idle'
+  if (ratio < PASS_RATIO) return 'pass'
+  if (ratio < WARN_RATIO) return 'warn'
+  return 'fail'
+}
+
+function BoundaryChip({ idx, ratio }: { idx: number; ratio: number }) {
+  const verdict = ratioVerdict(ratio)
+  const cls = `${s.chip} ${s[`chip_${verdict}`]}`
+  const label = verdict === 'idle' ? '—' : `${(ratio * 100).toFixed(1)}%`
+  return (
+    <span className={cls} title={`Boundary B${idx + 1} worst Δ|v|/peak this loop`}>
+      <span className={s.chipKey}>B{idx + 1}</span>
+      <span className={s.chipValue}>{label}</span>
+    </span>
+  )
 }
 
 const PHASE_LABELS = ['circle-orbit', 'ellipse-stretch', 'straight', 'spiral']
@@ -392,20 +450,45 @@ export function LabsAtomBlend() {
   const [b3, setB3] = useState<BlendMode>('smoothstep')
   const [showNucleus, setShowNucleus] = useState(true)
   const blendsRef = useRef<BlendMode[]>([b1, b2, b3])
+  const boundaryRatiosRef = useRef<[number, number, number]>([0, 0, 0])
+  const [boundaryRatios, setBoundaryRatios] = useState<[number, number, number]>([0, 0, 0])
+  // Mirror current blends into the ref. Pure ref-write; the chip reset
+  // happens in the user-facing setter wrapper (resetReadings) below to
+  // avoid a setState-in-effect.
   useEffect(() => { blendsRef.current = [b1, b2, b3] }, [b1, b2, b3])
   const metricsRef = useRef<Metrics | null>(null)
   const preRef = useRef<HTMLPreElement | null>(null)
-  useReadoutPump(metricsRef, preRef)
+  useReadoutPump(metricsRef, preRef, boundaryRatiosRef, setBoundaryRatios)
 
-  // 'sharp' | 'smoothstep' | 'cubic' applied uniformly across all three
-  // boundaries — quick way to A/B test the three modes globally.
-  const setAll = (mode: BlendMode) => { setB1(mode); setB2(mode); setB3(mode) }
+  // Reset chip readings whenever the user changes any blend — otherwise
+  // the worst-case from the previous setting lingers and reads stale.
+  // Done in response to user action (not via effect) so it doesn't trip
+  // react-hooks/set-state-in-effect.
+  const resetReadings = () => {
+    boundaryRatiosRef.current = [0, 0, 0]
+    setBoundaryRatios([0, 0, 0])
+  }
+  const setBlend = (idx: 0 | 1 | 2, mode: BlendMode) => {
+    if (idx === 0) setB1(mode)
+    if (idx === 1) setB2(mode)
+    if (idx === 2) setB3(mode)
+    resetReadings()
+  }
+  // Apply one blend mode to all three boundaries — quick A/B testing.
+  const setAll = (mode: BlendMode) => {
+    setB1(mode); setB2(mode); setB3(mode)
+    resetReadings()
+  }
 
   // Memo'd Canvas children to keep the React tree stable across blend changes
   // (blends propagate via ref, not props, so the Canvas body doesn't re-render).
   const sceneChildren = useMemo(() => (
     <>
-      <ProtoElectron blendsRef={blendsRef} metricsRef={metricsRef} />
+      <ProtoElectron
+        blendsRef={blendsRef}
+        metricsRef={metricsRef}
+        boundaryRatiosRef={boundaryRatiosRef}
+      />
       {showNucleus && <NucleusSphere />}
       <axesHelper args={[1.6]} />
     </>
@@ -433,10 +516,18 @@ export function LabsAtomBlend() {
           every boundary.
         </p>
 
+        <h2 className={s.h2}>Boundary readings (worst Δ|v|/peak this loop)</h2>
+        <div className={s.chipRow}>
+          <BoundaryChip idx={0} ratio={boundaryRatios[0]} />
+          <BoundaryChip idx={1} ratio={boundaryRatios[1]} />
+          <BoundaryChip idx={2} ratio={boundaryRatios[2]} />
+        </div>
+        <p className={s.chipLegend}>green &lt;5%  ·  yellow 5–20%  ·  red ≥20%</p>
+
         <h2 className={s.h2}>Blend per boundary</h2>
-        <BlendSelect idx={0} value={b1} onChange={setB1} />
-        <BlendSelect idx={1} value={b2} onChange={setB2} />
-        <BlendSelect idx={2} value={b3} onChange={setB3} />
+        <BlendSelect idx={0} value={b1} onChange={(m) => setBlend(0, m)} />
+        <BlendSelect idx={1} value={b2} onChange={(m) => setBlend(1, m)} />
+        <BlendSelect idx={2} value={b3} onChange={(m) => setBlend(2, m)} />
 
         <div className={s.row}>
           <span className={s.fieldLabel}>Apply to all:</span>
