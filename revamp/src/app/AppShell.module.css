@@ -21,15 +21,6 @@
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
           backdrop-filter: blur(16px) saturate(1.2);
   border-bottom: 1px solid var(--hair);
-  /* Pin the sticky to its own compositor layer upfront so it doesn't
-     race the WebGL canvas's layer creation during initial paint on
-     iOS Safari. Without this, WebKit committed the sticky's position
-     from a stale pre-layout snapshot, leaving a blank gap above it. */
-  transform: translateZ(0);
-  will-change: transform;
-  /* Explicit minimum height so the sticky's box is committed before
-     the canvas-sized content loads — sticky reflow glitches amplify
-     when the element height is content-derived via async children. */
   min-height: 60px;
 }
 

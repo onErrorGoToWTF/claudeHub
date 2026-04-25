@@ -138,28 +138,30 @@
 }
 
 /* =========================================================
-   Dark theme — Anthropic Claude-app warm-dark palette
-   Toggled via <html data-theme="dark">. Single-knob accents
-   cascade through color-mix just like light mode.
+   Dark theme — Linear-style warm-greyscale
+   Neutral enough that accent color-mix won't hue-shift, but
+   not cold/blue. Toggled via <html data-theme="dark">.
    ========================================================= */
 [data-theme="dark"] {
-  --bg-page:        #1c1a17;
-  --bg-canvas:      #221f1a;
-  --bg-card:        #2a2721;
-  --bg-sunken:      #161310;
+  /* Backgrounds: neutral dark greys with just enough warmth to
+     avoid feeling clinical. Card surface (#27282c) is deliberately
+     neutral so accent/danger/mastery surface mixes stay true. */
+  --bg-page:        #191a1c;
+  --bg-canvas:      #1f2023;
+  --bg-card:        #27282c;
+  --bg-sunken:      #131415;
   --bg-overlay:     rgba(0, 0, 0, 0.62);
 
-  --ink-1:          #ede8dc;
-  --ink-2:          rgba(237, 232, 220, 0.68);
-  --ink-3:          rgba(237, 232, 220, 0.42);
+  --ink-1:          #e8e8ec;
+  --ink-2:          rgba(232, 232, 236, 0.68);
+  --ink-3:          rgba(232, 232, 236, 0.44);
   --ink-inverse:    #141312;
 
-  --hair:           rgba(237, 232, 220, 0.10);
-  --hair-strong:    rgba(237, 232, 220, 0.20);
+  --hair:           rgba(232, 232, 236, 0.10);
+  --hair-strong:    rgba(232, 232, 236, 0.18);
 
-  /* accents: lift lightness for dark backgrounds. In dark mode --bg-card is
-     the card layer (#2a2721) — pill fills sit on it and shouldn't pull from
-     --bg-page, which is darker and would dim the pill. */
+  /* accents: lift lightness for dark backgrounds. --bg-card is neutral
+     (#27282c) so color-mix surfaces won't drift blue→teal or green→olive. */
   --accent-base:    oklch(70% 0.15 235);
   --accent-solid:   var(--accent-base);
   --accent-hover:   color-mix(in oklch, var(--accent-base) 88%, white 12%);
@@ -186,24 +188,24 @@
   --mastery-ink:     color-mix(in oklch, var(--mastery-base) 92%, white 8%);
   --mastery-soft:    color-mix(in oklch, var(--mastery-base) 22%, var(--bg-card));
 
-  /* glass recipe adapts — warm dark surface, faint top highlight */
-  --glass-top:       rgba(42, 39, 33, 0.72);
-  --glass-bottom:    rgba(42, 39, 33, 0.48);
-  --glass-fallback:  rgba(42, 39, 33, 0.92);
+  /* glass: neutral dark surface, faint white top highlight */
+  --glass-top:       rgba(39, 40, 44, 0.72);
+  --glass-bottom:    rgba(39, 40, 44, 0.48);
+  --glass-fallback:  rgba(39, 40, 44, 0.92);
   --glass-highlight: rgba(255, 255, 255, 0.06);
 
-  /* shadows on dark: deeper black + subtle */
+  /* shadows: deeper black, subtle */
   --shadow-1: 0 1px 0 rgba(0,0,0,0.30), 0 1px 2px rgba(0,0,0,0.40);
   --shadow-2: 0 1px 0 rgba(0,0,0,0.30), 0 8px 22px -6px rgba(0,0,0,0.55);
   --shadow-3: 0 4px 28px -6px rgba(0,0,0,0.60), 0 1px 0 rgba(255,255,255,0.05) inset;
 
-  /* chrome surfaces */
-  --topbar-bg-top:    rgba(28, 26, 23, 0.88);
-  --topbar-bg-bottom: rgba(28, 26, 23, 0.68);
-  --wash-color-1:     rgba(255, 220, 170, 0.035);
-  --wash-color-2:     rgba(255, 220, 170, 0.045);
-  --grid-line:        rgba(237, 232, 220, 0.04);
-  --hover-tint:       rgba(237, 232, 220, 0.06);
+  /* chrome surfaces — neutral, not warm-tinted */
+  --topbar-bg-top:    rgba(25, 26, 28, 0.88);
+  --topbar-bg-bottom: rgba(25, 26, 28, 0.68);
+  --wash-color-1:     rgba(200, 200, 210, 0.03);
+  --wash-color-2:     rgba(200, 200, 210, 0.04);
+  --grid-line:        rgba(232, 232, 236, 0.04);
+  --hover-tint:       rgba(232, 232, 236, 0.06);
 }
 
 html { color-scheme: light; }

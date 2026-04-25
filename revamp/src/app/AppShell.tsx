@@ -15,8 +15,23 @@ const NAV: NavItem[] = [
   { to: '/library',  label: 'Library',   Icon: LibraryIcon },
 ]
 
+// Delay before mounting the atom logo so the sticky topbar is fully
+// committed. The component fades in over the first couple of orbits.
+const ATOM_DELAY_MS = 800
+
 export function AppShell({ children }: { children: ReactNode }) {
   const [searchOpen, setSearchOpen] = useState(false)
+  const [atomMounted, setAtomMounted] = useState(false)
+  const [atomVisible, setAtomVisible] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAtomMounted(true)
+      // Trigger fade-in on next frame so the opacity transition fires
+      requestAnimationFrame(() => setAtomVisible(true))
+    }, ATOM_DELAY_MS)
+    return () => clearTimeout(timer)
+  }, [])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -35,8 +50,14 @@ export function AppShell({ children }: { children: ReactNode }) {
       <header className={styles.topbar}>
         {/* Left cluster: brand only — account moved to the right */}
         <div className={styles.topLeft}>
-          <div className={styles.brand}>
-            <AtomComposition compact settle />
+          <div
+            className={styles.brand}
+            style={{
+              opacity: atomVisible ? 1 : 0,
+              transition: 'opacity 1.2s ease-out',
+            }}
+          >
+            {atomMounted && <AtomComposition compact settle />}
           </div>
         </div>
 

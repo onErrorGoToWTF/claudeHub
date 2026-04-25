@@ -491,6 +491,10 @@ export function AtomComposition({
   const [pulsing, setPulsing] = useState(false)
   const [glowMultiplier, setGlowMultiplier] = useState(1)
 
+  // Defer Canvas mount so the sticky topbar's compositor layer is fully
+  // committed before WebGL creates its own layer. Without this, Safari
+  // races the two layer snapshots and the header gets stuck mid-page.
+
   // Camera closer for the compact logo so the atom fills the smaller canvas.
   const camZ = compact ? 5.5 : 11
   const totalElectrons = onlyPlane ? 1 : ORBITS.length

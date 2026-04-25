@@ -311,7 +311,7 @@
 
 /* Selected state — subtle accent tint */
 .rowOn {
-  background: color-mix(in oklch, var(--accent-base) 7%, var(--bg-canvas));
+  background: color-mix(in oklch, var(--accent-base) 7%, var(--bg-card));
 }
 .rowOn .rowShortcut {
   background: var(--accent-solid);
