@@ -145,6 +145,13 @@ export type TravelDesc = {
   /** Dest-orbit angle at capture (so the receiving orbit phase is
    *  C0-continuous at handoff). */
   entryAngle: number
+  /** Dest orbit as actually used by this travel (potentially with omega
+   *  sign flipped from the caller's hint to make endpoint tangents
+   *  anti-parallel — see "rotation policy" note in buildTravel). The lab
+   *  / consumer should use THIS for the post-capture orbit so the
+   *  rotation direction visually agrees with what the curve already
+   *  resolved to. */
+  destOrbit: OrbitDesc
 }
 
 /** Build a TravelDesc from source orbit, destination orbit, and total
@@ -179,7 +186,35 @@ export function buildTravel(
   const P_A = orbitPosAt(source, exitAngle)
   const P_B = orbitPosAt(dest, entryAngle)
   const v_A = orbitVelocityAt(source, exitAngle)
-  const v_B = orbitVelocityAt(dest, entryAngle)
+
+  // ROTATION POLICY (geometric, not blanket-reverse):
+  //
+  // For the S-curve to be smooth at both ends, the endpoint orbital
+  // tangents v_A and v_B must be roughly anti-parallel (dot < 0). With
+  // parallel tangents the cubic forces a tight end-loop to reconcile
+  // direction — visually this is the "bang into orbit" symptom.
+  //
+  // Whether reversing the dest rotation gives anti-parallel depends on
+  // the plane geometry:
+  //   - When closest-points sit on opposing arcs (xy/xz planes with
+  //     nuclei on the x-axis), the orbital tangents at those points are
+  //     already anti-parallel under SAME rotation; reversing flips them
+  //     to parallel.
+  //   - When closest-points sit on the same side (yz plane perpendicular
+  //     to the chord), the tangents are parallel under same rotation;
+  //     reversing flips them anti-parallel.
+  //
+  // So we don't blanket-reverse. We compute v_B for the caller's hint
+  // direction; if dot(v_A, v_B) > 0 (parallel), we flip the dest
+  // rotation. The selected dest orbit is returned in TravelDesc so the
+  // post-capture orbit math agrees with the curve that was actually
+  // built.
+  let destResolved = dest
+  let v_B = orbitVelocityAt(destResolved, entryAngle)
+  if (v_A[0] * v_B[0] + v_A[1] * v_B[1] + v_A[2] * v_B[2] > 0) {
+    destResolved = { ...dest, omega: -dest.omega }
+    v_B = orbitVelocityAt(destResolved, entryAngle)
+  }
 
   const M: Vec3 = [
     (P_A[0] + P_B[0]) / 2,
@@ -200,7 +235,35 @@ export function buildTravel(
   const dz = P_B[2] - P_A[2]
   const m_M: Vec3 = [dx * kappa, dy * kappa, dz * kappa]
 
-  return { duration, P_A, P_B, M, m_A, m_M, m_B, exitAngle, entryAngle }
+  return {
+    duration, P_A, P_B, M, m_A, m_M, m_B,
+    exitAngle, entryAngle,
+    destOrbit: destResolved,
+  }
+}
+
+/** Find the next wall-clock time-since-anchor at which the electron's
+ *  orbital phase reaches `targetAngle`. Used to delay travel-trigger
+ *  until the electron's current position aligns with the geometric-
+ *  optimum exit point — combined with the closest-point exit angle, this
+ *  guarantees the cubic's exit position AND velocity match the
+ *  electron's actual motion (no snap, no velocity jump).
+ *
+ *  theta(t) = initialPhase + omega · (t − anchor). Solve theta ≡
+ *  targetAngle (mod 2π) with t ≥ anchor + minOffset. */
+export function nextPhaseAlignmentOffset(
+  initialPhase: number,
+  omega: number,
+  targetAngle: number,
+  minOffset: number,
+): number {
+  if (omega === 0) return minOffset
+  const period = (2 * Math.PI) / Math.abs(omega)
+  // Solve omega·dt ≡ (targetAngle − initialPhase) (mod 2π) for dt ≥ minOffset.
+  let dt = (targetAngle - initialPhase) / omega
+  // Normalize into [minOffset, minOffset + period).
+  while (dt < minOffset - 1e-9) dt += period
+  return dt
 }
 
 /** Evaluate a travel at wall-clock time t ∈ [0, duration]. Clamps outside. */

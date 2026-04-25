@@ -38,8 +38,10 @@ import { LabsNav } from '../ui/atom/LabsNav'
 import type { Vec3 } from '../ui/atom/runtime/types'
 import {
   buildTravel,
+  closestPointAngle,
   evalTravel,
   evalTravelVelocity,
+  nextPhaseAlignmentOffset,
   orbitPosAt,
   orbitVelocityAt,
   type OrbitDesc,
@@ -78,8 +80,13 @@ const TRAVEL_STAGGER = 1.55
 const POST_HOLD = 1.4
 
 const TRAVEL_BASE_T = ORBIT_A_DUR
+// Phase-alignment wait can add up to one orbital period per electron
+// (2π/ω) before its travel actually fires — see nextPhaseAlignmentOffset.
+// Pad TOTAL_DUR with one full period so the auto-loop never restarts
+// mid-travel even on the worst-case alignment.
+const ORBIT_PERIOD = (2 * Math.PI) / ORBIT_OMEGA_BASE
 const TOTAL_DUR =
-  TRAVEL_BASE_T + 2 * TRAVEL_STAGGER + TRAVEL_DUR + POST_HOLD
+  TRAVEL_BASE_T + 2 * TRAVEL_STAGGER + ORBIT_PERIOD + TRAVEL_DUR + POST_HOLD
 
 // --- Per-electron specs -----------------------------------------------------
 
@@ -187,6 +194,12 @@ function ElectronProbe({
 
   const elapsedRef = useRef(0)
   const travelDescRef = useRef<TravelDesc | null>(null)
+  // Wall-clock offset (since the electron's fadeInStart) at which travel
+  // actually fires. Computed lazily on the first frame the scheduled
+  // `spec.travelStart` is exceeded, by waiting for the orbit phase to
+  // align with the closest-point exit angle. Stored here so the orbit-A
+  // → travel boundary is deterministic for the rest of the run.
+  const actualTravelStartRef = useRef<number | null>(null)
   const lastPosRef = useRef<Vec3>(NUCLEUS_A)
   const { size, invalidate } = useThree()
   const resolution = useMemo(
@@ -205,6 +218,7 @@ function ElectronProbe({
   useEffect(() => {
     elapsedRef.current = 0
     travelDescRef.current = null
+    actualTravelStartRef.current = null
 
     // Reduced-motion gate: render the static end-state — electron sitting in
     // its captured orbit around nucleus B at the entry angle. No animation.
@@ -276,42 +290,73 @@ function ElectronProbe({
       opacity = Math.min(1, (t - spec.fadeInStart) / FADE_IN_DUR)
     }
 
+    // Lazily compute the actual travel-start time the first time we cross
+    // the scheduled trigger. We wait for the electron's orbit phase to
+    // reach the geometric-optimum exit angle (closest-to-B) so the
+    // cubic's exit point + tangent match the electron's actual position
+    // + velocity at handoff (true C0 + C1, not a snap).
+    if (
+      actualTravelStartRef.current === null &&
+      t >= spec.travelStart &&
+      t >= spec.fadeInStart
+    ) {
+      const exitAngle = closestPointAngle(orbitA, NUCLEUS_B)
+      const minOffset = spec.travelStart - spec.fadeInStart
+      const dt = nextPhaseAlignmentOffset(
+        spec.initialPhase,
+        orbitA.omega,
+        exitAngle,
+        minOffset,
+      )
+      actualTravelStartRef.current = spec.fadeInStart + dt
+    }
+
+    const actualTravelStart = actualTravelStartRef.current
+    const inTravelWindow =
+      actualTravelStart !== null &&
+      t >= actualTravelStart &&
+      t < actualTravelStart + TRAVEL_DUR
+    const postTravel =
+      actualTravelStart !== null && t >= actualTravelStart + TRAVEL_DUR
+
     if (t < spec.fadeInStart) {
       phase = 'pre'
       const theta = spec.initialPhase + orbitA.omega * 0
       pos = orbitPosAt(orbitA, theta)
-    } else if (t < spec.travelStart) {
+    } else if (!inTravelWindow && !postTravel) {
+      // Orbit A: includes the fadeIn window and any extra revolutions
+      // we wait through to align orbit phase with the exit angle.
       phase = t < spec.fadeInStart + FADE_IN_DUR ? 'fadeIn' : 'orbitA'
       const dtSinceFade = t - spec.fadeInStart
       const theta = spec.initialPhase + orbitA.omega * dtSinceFade
       pos = orbitPosAt(orbitA, theta)
       const v = orbitVelocityAt(orbitA, theta)
       vMag = Math.hypot(v[0], v[1], v[2])
-    } else if (t < spec.travelStart + TRAVEL_DUR) {
+    } else if (inTravelWindow) {
       phase = 'travel'
-      // Build the travel descriptor on the first frame of travel using the
-      // electron's current orbital phase as the exit angle. This keeps the
-      // exit C1-in-time with whatever orbital position+velocity the electron
-      // had at the trigger instant — no snap to closest-point.
-      if (!travelDescRef.current) {
-        const dtSinceFade = spec.travelStart - spec.fadeInStart
-        const exitAngle = spec.initialPhase + orbitA.omega * dtSinceFade
+      if (!travelDescRef.current && actualTravelStart !== null) {
+        const exitAngle = closestPointAngle(orbitA, NUCLEUS_B)
         travelDescRef.current = buildTravel(orbitA, orbitB, TRAVEL_DUR, {
           exitAngle,
         })
       }
-      const localT = t - spec.travelStart
-      pos = evalTravel(travelDescRef.current, localT)
-      const v = evalTravelVelocity(travelDescRef.current, localT)
+      const localT = t - (actualTravelStart as number)
+      pos = evalTravel(travelDescRef.current!, localT)
+      const v = evalTravelVelocity(travelDescRef.current!, localT)
       vMag = Math.hypot(v[0], v[1], v[2])
     } else {
       phase = 'orbitB'
-      const captureT = spec.travelStart + TRAVEL_DUR
+      const captureT = (actualTravelStart as number) + TRAVEL_DUR
       const dtSinceCapture = t - captureT
       const entryAngle = travelDescRef.current?.entryAngle ?? 0
-      const theta = entryAngle + orbitB.omega * dtSinceCapture
-      pos = orbitPosAt(orbitB, theta)
-      const v = orbitVelocityAt(orbitB, theta)
+      // Use the dest orbit AS RESOLVED by buildTravel — its omega may
+      // have been flipped from `orbitB` to make endpoint tangents
+      // anti-parallel for a smooth S. The post-capture rotation must
+      // match the curve's incoming tangent direction.
+      const orbitBResolved = travelDescRef.current?.destOrbit ?? orbitB
+      const theta = entryAngle + orbitBResolved.omega * dtSinceCapture
+      pos = orbitPosAt(orbitBResolved, theta)
+      const v = orbitVelocityAt(orbitBResolved, theta)
       vMag = Math.hypot(v[0], v[1], v[2])
     }
 
