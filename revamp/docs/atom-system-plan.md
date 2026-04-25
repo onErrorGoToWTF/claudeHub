@@ -273,40 +273,93 @@ The named consumer use cases (logo, quiz reward, award activation, departure/arr
 
 ---
 
-## Lab page architecture (locked principles)
+## Lab page architecture (LOCKED — implementation-ready)
 
-### `/labs/*` is escape-hatch territory
+### Routes (locked)
 
-- Routes outside `AppShell` (same pattern as `/signin`)
-- No topbar, no floating navbar
-- Stage for testing only
+- `/labs/atom-states` — States lab. Pick one state, tweak its constants, watch it run in isolation.
+- `/labs/atom-transitions` — Transitions lab. Pick two adjacent states + a boundary, sweep `transitionWindow`, watch the seam.
+- `/labs/atom-blend-test` — **retired**. The original prototype that proved hand-rolled smoothstep can't achieve C1 between orbit-like and lerp-like phases. Its diagnostic UI was the seed for the two new labs. Delete the file when the new labs ship.
 
-### Two-layer UI pattern
+All three live outside `AppShell` (same pattern as `/signin`) — no topbar, no floating navbar. The lab is a stage for testing.
 
-**Layer 1 — User controls (HIG-clean, minimal):**
-- Only the things the user is actively tweaking (color picker, mode selector, transitionWindow slider).
-- Hover-collapse card overlay so the canvas can fill the viewport on mobile.
-- Color is its own thing, somewhat separated from other controls.
+### Layout (locked)
 
-**Layer 2 — Always-rendered HUD (peripheral, debug-complete):**
+```
+┌──────────────────────────────────────────────┐
+│                                              │
+│                                              │
+│              R3F CANVAS (fills viewport)     │
+│                                              │
+│                          ┌──────────────────┐│
+│                          │ user controls    ││
+│                          │ (top-right card) ││
+│                          │ collapsed = icon ││
+│                          │ on mobile        ││
+│                          └──────────────────┘│
+│                                              │
+│                                              │
+│  build·commit  |  route  |  viewport  |  ts  │  ← HUD line 1
+│  [active config compact]                     │  ← HUD line 2
+│  [math state, 30Hz refresh via DOM write]    │  ← HUD line 3
+│  [last 5 events]                             │  ← HUD line 4
+└──────────────────────────────────────────────┘
+```
 
-The HUD's job is to be IN every screenshot the user sends, NOT visible to them during normal interaction. Small monospace, low opacity, edge-pinned. The eye ignores it; the camera captures it.
+- **Canvas:** fills `100dvh × 100vw`. R3F renders here. Frameloop = `'demand'`.
+- **User controls card:** floating, top-right, ~280px wide on desktop. On mobile (`<700px`), collapses to a single icon (◀) by default; tap to expand into a full sheet that slides from the right edge. The card is the only surface the user actively tweaks.
+- **HUD:** fixed to the bottom edge of viewport. Full-width. 4 lines of monospace, ~10px / 0.7rem, low opacity (`color: rgba(white, 0.55)` on dark backdrop or `rgba(black, 0.55)` on light), no background fill. The eye skips it; the camera captures it. Survives card collapse, viewport resize, scroll, sliding sheets.
 
-The act of screenshotting IS the feedback mechanism. No toggle, no "diagnostic mode."
+### HUD contents (LOCKED)
 
-**HUD must contain at all times:**
-1. **Build identifier** — short git commit hash (first 7 chars), embedded at build time.
-2. **Active config** — every user-set parameter that affects the canvas (e.g., `B1·smooth B2·smooth B3·smooth`).
-3. **Math state at capture moment** — current values of every sampled metric. For atom-blend-test: t, phase, |v|, Δ|v|/peak ratio, per-boundary chip readings.
-4. **Phase / state label** — current mode/phase/state.
-5. **Rolling event log** — last 3–5 discrete events (phase change, boundary worst-case update, blend mode change, error).
+Four lines, always rendered, in this order:
 
-The HUD survives panel collapse, viewport resize, scroll, and sliding sheets. It's the floor of always-visible diagnostic info.
+```
+Line 1:  build·{7-char-commit}  |  route·{path}  |  viewport·{w}×{h}  |  t·{HH:MM:SS}
+Line 2:  cfg·{compact serialization of every user-set parameter}
+Line 3:  math·{phase}·{stateName} t={t.toFixed(3)} |v|={vMag.toFixed(2)} {extra-metrics}
+Line 4:  evt·{newest first, 5-deep, format: t·{relSec}s {action}}
+```
 
-### Two separate diagnostic surfaces planned
+Refresh rate per line:
+- Line 1: every route change + every 1s (timestamp ticks)
+- Line 2: every config change
+- Line 3: 30Hz, written via direct DOM `textContent` mutation (NOT React state) — same pattern that eliminated frame-time pressure in the old `atom-blend-test`
+- Line 4: every event, prepended
 
-- **States lab** — pick a state, set its constants, watch it run in isolation. No transition complexity.
-- **Transitions lab** — pick two adjacent states + a boundary, sweep `transitionWindow`, watch the seam. Inherits HUD logging of `end-of-state-N` and `start-of-state-N+1` values per boundary.
+### Controls per lab (LOCKED)
+
+**States lab (`/labs/atom-states`):**
+1. State type picker — radio: `orbit | straight | spiral | pulsate | pause`
+2. Per-state constants section (changes based on selected type — only the active state's knobs render)
+3. "Replay" button — re-runs the state from t=0
+4. Color picker — separated card section (color is its own concern per user direction)
+
+**Transitions lab (`/labs/atom-transitions`):**
+1. State A picker — radio: which state runs first
+2. State B picker — radio: which state runs second (with composition-rule validation; e.g. `spiral.inward` only enabled if A is `orbit`)
+3. `transitionWindow` slider — `[0.0 ↔ 1.0]`, default `0.5`
+4. "Replay" button — re-runs the A→B sequence
+5. Boundary chips (live) — green/yellow/red dots on |Δv|/peak% as the seam plays. Same pattern as the retired blend-test page.
+
+### Logging feedback to me (LOCKED)
+
+The screenshot is the primary debug-feedback channel. The HUD is what I read from a screenshot. Two supplementary logging surfaces:
+
+1. **Hidden DOM node** — `<div data-atom-debug-context aria-hidden="true" style="position:absolute;left:-9999px;">…JSON of full debug state…</div>` — A future "long-press to copy debug context" affordance can surface this. For now, just present in the DOM so phone screenshots that capture page source (HTML view) include it.
+
+2. **`console.debug` every 1s** — full debug context as JSON. Useful when laptop is connected to phone via remote DevTools. Non-load-bearing — phone-only screenshots are still the primary channel.
+
+3. **Console error/warn on validation failures** — e.g. `spiral.inward` configured after a non-`orbit` state should `console.warn(...)` AND surface in the HUD's event log.
+
+### Mobile-first checklist
+
+- Tap target ≥ 44pt for all controls (HIG floor).
+- Card collapse-to-icon below 700px viewport width.
+- Canvas takes 100dvh (not 100vh — accounts for iOS dynamic chrome).
+- HUD always 4 lines, bottom-aligned, never scrolls out of frame.
+- No native confirm() / alert() (project rule, see `feedback_two_tap_delete.md`).
+- `prefers-reduced-motion` gate respected — render the static end-state of the selected state/transition with no animation.
 
 ---
 
@@ -416,6 +469,78 @@ Four discriminating questions to put to advisor + architecture-review skill:
 
 ---
 
+## Next-session execution plan (autonomous chunks)
+
+The user has authorized autonomous chunked execution of the lab pages, deploying after each chunk so phone review is possible. Re-entry protocol when the user says "continue":
+
+1. Read this file (you are here).
+2. Read `STATE.md` only if this section's chunk-tracker is missing — otherwise, the chunk-tracker below is authoritative for what's next.
+3. Pick the top **NOT DONE** chunk. State it in one sentence. Start building.
+4. After each chunk: commit + push. Auto-deploy via `.github/workflows/deploy-pages.yml`.
+5. Only stop and ask the user if a Tier 3 violation surfaces (see `electron-motion` skill) or an unplanned design decision appears.
+
+### Chunk tracker
+
+```
+[ ] Chunk 1 — HUD primitive component
+    - revamp/src/ui/atom/AtomLabHud.tsx + .module.css
+    - 4 lines (build / config / math / events), low-opacity monospace, bottom-pinned
+    - Props: { config: object; mathRef: MutableRef<MathState>; events: Event[] }
+    - Math state writes via direct DOM textContent at 30Hz (NOT React state)
+    - Pull commit hash from import.meta.env.VITE_GIT_COMMIT (set up below)
+
+[ ] Chunk 2 — Build-time commit-hash injection
+    - vite.config.ts: define VITE_GIT_COMMIT = first 7 chars of `git rev-parse HEAD`
+    - Falls back to "dev-local" if git command fails
+    - HUD reads from import.meta.env.VITE_GIT_COMMIT
+
+[ ] Chunk 3 — States lab (/labs/atom-states)
+    - State picker (radio: orbit | straight | spiral | pulsate | pause)
+    - Per-state controls panel (top-right floating card, collapse-to-icon below 700px)
+    - Color picker (separate sub-section)
+    - Replay button
+    - Mounts <AtomLabHud /> with current state config
+    - Math state populated from the running state's positionFn/scaleFn output
+
+[ ] Chunk 4 — Transitions lab (/labs/atom-transitions)
+    - State A picker, State B picker (with composition-rule validation — disable invalid combos)
+    - transitionWindow slider (default 0.5)
+    - Replay button
+    - Boundary chips (live |Δv|/peak% indicator, green/yellow/red — same pattern as old blend-test)
+    - Mounts <AtomLabHud />
+
+[ ] Chunk 5 — Retire /labs/atom-blend-test
+    - Delete revamp/src/pages/LabsAtomBlend.tsx + .module.css
+    - Remove the lazy import + route from App.tsx
+    - Don't lose the velocity-spike fix (dt floor + warmup) — port any still-useful bits into the new labs first
+
+[ ] Chunk 6 — Polish + reduced-motion gate
+    - prefers-reduced-motion: render the static end-state; HUD still renders
+    - aria-hidden="true" on Canvas
+    - 44pt tap targets verified
+    - 100dvh canvas verified on iOS
+
+[ ] Chunk 7 — Update STATE.md
+    - Mark lab redesign chunks done
+    - Surface next workstream (likely first preset deployment)
+```
+
+Mark chunks done by changing `[ ]` to `[x]`. Commit message format: `feat(atom-lab): chunk N — short title`.
+
+### Decisions already locked (don't re-ask)
+
+The user has explicitly delegated lab redesign decisions to me. The decisions are above in "Lab page architecture (LOCKED — implementation-ready)". Don't re-ask:
+- HUD position (bottom edge, 4 lines)
+- Card position (top-right, collapse-to-icon below 700px)
+- Refresh rate per HUD line (30Hz for math, event-driven otherwise)
+- Default `transitionWindow = 0.5`
+- 100dvh canvas
+- Replay buttons exist on both labs
+
+The user will only interrupt if a Tier 3 violation appears or a genuinely unplanned decision shows up.
+
+---
+
 ## Standing question (next reply)
 
-> "End-effects walkthrough next? Y / N"
+This conversation's standing Q ("End-effects walkthrough next?") is now resolved — end effects are locked. There's no open Y/N. Next session continues from the chunk tracker.

@@ -42,7 +42,15 @@ P'(t) = (-2π · revolutions · rx · sin(...),
 Linear travel from current position to a target. The electron *draws* the line — there is never an instant pre-drawn line. The electron is the living thing; trail follows.
 
 **Parameters:**
-- `target` — destination point (absolute, or relative to nucleus, or DOM ref / container keyword)
+- `target: TargetSpec` — destination point. Locked shape:
+  ```ts
+  type TargetSpec =
+    | { space: 'nucleus';   value: Vec3 }
+    | { space: 'canvas';    value: Vec3 }
+    | { space: 'viewport';  value: { x: number; y: number } }
+    | { space: 'dom-ref';   value: DOMRef }
+  ```
+  `'viewport'` is required for off-screen travel (page-traversal departure / arrival).
 - `duration` — total time (ms)
 
 **Start-point behavior:**
