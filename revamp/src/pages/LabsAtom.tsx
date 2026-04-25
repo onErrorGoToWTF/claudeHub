@@ -178,6 +178,7 @@ function Electron({
   settle,
   onLand,
   onStrike,
+  restProgressRef,
 }: {
   config: OrbitConfig
   fadeTex: THREE.DataTexture
@@ -186,6 +187,7 @@ function Electron({
   settle?: boolean
   onLand?: () => void
   onStrike?: () => void
+  restProgressRef?: React.MutableRefObject<number>
 }) {
   const settleAfterT = settle ? config.laps * 2 * Math.PI : undefined
   const settleDurT = config.settleDurationT ?? SETTLE_DURATION_T
@@ -302,15 +304,21 @@ function Electron({
       const postScale = vis > 0 ? POST_SCALE : 1
       const postHaloScale = vis > 0 ? POST_HALO_SCALE : 0.0001
       if (t >= doneT + PULSE_T) {
-        // Post-pulse rest — hold at full post-land visibility, then
-        // fade electron body + halo to zero so the final resting state
-        // on the i-dot is nothing (no dot overlay, no halo, just the
-        // crisp typographic 'ai' underneath).
-        const elapsedAfterPulse = t - (doneT + PULSE_T)
+        // Post-pulse rest — hold then fade so the final resting state
+        // on the i-dot has no dot overlay or halo. The FINAL electron
+        // (postLandVisibility >= 1) syncs its fade to the University
+        // settle ramp via restProgressRef so the i-dot glow loss and
+        // the text dim share the same timeline. Other electrons keep
+        // the t-based fade since they're already gone by settle time.
         let fadeMult = 1
-        if (elapsedAfterPulse > POST_LAND_HOLD_T) {
-          const p = Math.min(1, (elapsedAfterPulse - POST_LAND_HOLD_T) / POST_LAND_FADE_T)
-          fadeMult = 1 - easeOutCubic(p)
+        if (vis >= 1 && restProgressRef && restProgressRef.current > 0) {
+          fadeMult = 1 - restProgressRef.current
+        } else {
+          const elapsedAfterPulse = t - (doneT + PULSE_T)
+          if (elapsedAfterPulse > POST_LAND_HOLD_T) {
+            const p = Math.min(1, (elapsedAfterPulse - POST_LAND_HOLD_T) / POST_LAND_FADE_T)
+            fadeMult = 1 - easeOutCubic(p)
+          }
         }
         electronScale = postScale
         electronOpacity = vis * fadeMult
@@ -396,6 +404,7 @@ function Scene({
   settle,
   onLand,
   onStrike,
+  restProgressRef,
 }: {
   color: string
   onlyPlane?: Plane
@@ -403,6 +412,7 @@ function Scene({
   settle?: boolean
   onLand?: () => void
   onStrike?: () => void
+  restProgressRef?: React.MutableRefObject<number>
 }) {
   const fadeTex = useMemo(() => makeFadeTexture(), [])
   const orbits = onlyPlane ? ORBITS.filter((o) => o.plane === onlyPlane) : ORBITS
@@ -418,6 +428,7 @@ function Scene({
           settle={settle}
           onLand={onLand}
           onStrike={onStrike}
+          restProgressRef={restProgressRef}
         />
       ))}
     </group>
@@ -574,6 +585,11 @@ export function AtomComposition({
   // After University finishes revealing, everything settles to the
   // debossed resting state via this 0→1 ramp.
   const [restProgress, setRestProgress] = useState(0)
+  // Mirror restProgress into a ref so the in-Canvas Electron useFrame
+  // can read it without re-renders. Used to sync the i-dot electron's
+  // post-pulse fade with the University settle.
+  const restProgressRef = useRef(0)
+  useEffect(() => { restProgressRef.current = restProgress }, [restProgress])
 
   // Defer Canvas mount so the sticky topbar's compositor layer is fully
   // committed before WebGL creates its own layer. Without this, Safari
@@ -736,6 +752,7 @@ export function AtomComposition({
             settle={settle}
             onLand={onLand}
             onStrike={onStrike}
+            restProgressRef={restProgressRef}
           />
         </Canvas>
       </div>
