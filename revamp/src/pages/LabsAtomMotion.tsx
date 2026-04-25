@@ -94,14 +94,16 @@ type ElectronSpec = {
 // One electron for now — get the A↔B elliptical transit clean before
 // layering more.
 //
-// User insight: the orbit-A apex (furthest perpendicular-to-chord point)
-// is the geometric pivot — at that point orbit shape merges into the
-// transition path. For an xy-plane orbit with chord along the x-axis,
-// the apex is at orbital angle θ = π/2. We pick the electron's
-// initialPhase so it arrives EXACTLY at θ = π/2 when travel triggers,
-// and pin buildTravel's exit angle to π/2 too — the handoff happens at
-// the same apex point on every replay (symmetric, predictable).
-const APEX_ANGLE = Math.PI / 2
+// User-locked geometric structure: each orbit's "furthest point from the
+// other nucleus" is the handoff. On A's orbit (centered at -c on x-axis,
+// B at +c), the far-side angle is θ = π — the orbit point at A.center +
+// (-size, 0, 0). On B's orbit, the far-side angle is θ = 0. Both points
+// are on the chord line, so they sit at the major-axis tips of the
+// transit ellipse with foci at A and B. The transit arc then sweeps
+// between those tips via the transit ellipse's own apex (top, φ=π/2) —
+// THE furthest point of the transit path. Three furthest points line up
+// on the symmetric pattern.
+const APEX_ANGLE = Math.PI
 const E1_OMEGA = -ORBIT_OMEGA_BASE // CW
 // Solve theta(travelStart) = APEX_ANGLE:
 //   APEX_ANGLE = initialPhase + omega · (travelStart − fadeInStart)
