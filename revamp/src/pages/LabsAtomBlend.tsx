@@ -36,15 +36,23 @@ import * as THREE from 'three'
 import { Canvas, useFrame } from '@react-three/fiber'
 import s from './LabsAtomBlend.module.css'
 
-type BlendMode = 'sharp' | 'smoothstep' | 'cubic'
+type BlendMode = 'sharp' | 'smoothstep' | 'cubic' | 'hermite'
 
-const BLEND_MODES: BlendMode[] = ['sharp', 'smoothstep', 'cubic']
+const BLEND_MODES: BlendMode[] = ['sharp', 'smoothstep', 'cubic', 'hermite']
 
+// Body easing for the phase's interior. Hermite mode uses sharp (linear)
+// for the body so the segment past the boundary window has predictable
+// constant velocity; the boundary itself is interpolated via Hermite cubic.
 function ease(x: number, mode: BlendMode): number {
-  if (mode === 'sharp') return x
+  if (mode === 'sharp' || mode === 'hermite') return x
   if (mode === 'smoothstep') return x * x * (3 - 2 * x)
   return 1 - Math.pow(1 - x, 3) // easeOutCubic
 }
+
+// Width of the Hermite boundary window in s-units (sInPhase). 0.08 ≈ 80ms
+// per 1s phase — ~5 frames @ 60fps. Big enough to read on the trail; small
+// enough that the body of the phase still dominates the visual.
+const HERMITE_WINDOW_S = 0.08
 
 type Phase =
   | { type: 'circle-orbit'; revolutions: number }
@@ -120,6 +128,74 @@ function evaluatePhase(phase: Phase, sIn: number, blend: BlendMode): [number, nu
   }
 }
 
+// Numerical tangent (dP/ds) via central finite-difference. Cheap and good
+// enough for the prototype — analytic tangents per phase type would be
+// ~5x faster but require derivatives we'd have to recompute on every
+// phase shape tweak. This prototype's value is in the EXPERIMENTAL surface,
+// not perf.
+function tangent(phase: Phase, sIn: number, blend: BlendMode): [number, number, number] {
+  const eps = 1e-3
+  const a = evaluatePhase(phase, Math.max(0, sIn - eps), blend)
+  const b = evaluatePhase(phase, Math.min(1, sIn + eps), blend)
+  const denom = Math.min(1, sIn + eps) - Math.max(0, sIn - eps)
+  return [(b[0] - a[0]) / denom, (b[1] - a[1]) / denom, (b[2] - a[2]) / denom]
+}
+
+// Cubic Hermite basis (Wikipedia / Pomax / geometry-blending.md):
+//   p(u) = (2u³-3u²+1)·P₀ + (u³-2u²+u)·m₀
+//        + (-2u³+3u²)·P₁  + (u³-u²)·m₁
+// with u ∈ [0, 1]. m₀, m₁ are tangents IN u-SPACE (dP/du at endpoints).
+function hermiteCubic(
+  u: number,
+  P0: [number, number, number], P1: [number, number, number],
+  m0: [number, number, number], m1: [number, number, number],
+): [number, number, number] {
+  const u2 = u * u, u3 = u2 * u
+  const h00 = 2 * u3 - 3 * u2 + 1
+  const h10 = u3 - 2 * u2 + u
+  const h01 = -2 * u3 + 3 * u2
+  const h11 = u3 - u2
+  return [
+    h00 * P0[0] + h10 * m0[0] + h01 * P1[0] + h11 * m1[0],
+    h00 * P0[1] + h10 * m0[1] + h01 * P1[1] + h11 * m1[1],
+    h00 * P0[2] + h10 * m0[2] + h01 * P1[2] + h11 * m1[2],
+  ]
+}
+
+// Top-level frame evaluator. When the current phase's incoming blend is
+// 'hermite' AND we're inside the boundary window, the position comes from
+// a cubic Hermite curve that explicitly matches:
+//   P₀ = previous phase's exit position (s=1 of prev)
+//   m₀ = previous phase's exit tangent  (in s-space) × HERMITE_WINDOW_S
+//   P₁ = current phase's natural pos at s=HERMITE_WINDOW_S (sharp body)
+//   m₁ = current phase's natural tangent at s=HERMITE_WINDOW_S × window
+//
+// The × window scaling converts dP/ds tangents to dP/du tangents because
+// u = sInPhase / HERMITE_WINDOW_S. C1 at both endpoints is by construction.
+function frameAt(t: number, blends: BlendMode[]): [number, number, number] {
+  const phaseIdx = Math.min(PHASES.length - 1, Math.floor(t / PHASE_DURATION_S))
+  const sInPhase = (t - phaseIdx * PHASE_DURATION_S) / PHASE_DURATION_S
+  const blend: BlendMode = phaseIdx === 0 ? 'sharp' : blends[phaseIdx - 1]
+
+  if (phaseIdx > 0 && sInPhase < HERMITE_WINDOW_S && blend === 'hermite') {
+    const u = sInPhase / HERMITE_WINDOW_S
+    const prevPhase = PHASES[phaseIdx - 1]
+    const currPhase = PHASES[phaseIdx]
+    const prevBlend: BlendMode = phaseIdx === 1 ? 'sharp' : blends[phaseIdx - 2]
+    // Body of any hermite phase is sharp; otherwise its declared blend.
+    const prevBodyBlend: BlendMode = prevBlend === 'hermite' ? 'sharp' : prevBlend
+    const P0 = evaluatePhase(prevPhase, 1, prevBodyBlend)
+    const v0 = tangent(prevPhase, 1, prevBodyBlend)
+    const P1 = evaluatePhase(currPhase, HERMITE_WINDOW_S, 'sharp')
+    const v1 = tangent(currPhase, HERMITE_WINDOW_S, 'sharp')
+    const m0: [number, number, number] = [v0[0] * HERMITE_WINDOW_S, v0[1] * HERMITE_WINDOW_S, v0[2] * HERMITE_WINDOW_S]
+    const m1: [number, number, number] = [v1[0] * HERMITE_WINDOW_S, v1[1] * HERMITE_WINDOW_S, v1[2] * HERMITE_WINDOW_S]
+    return hermiteCubic(u, P0, P1, m0, m1)
+  }
+
+  return evaluatePhase(PHASES[phaseIdx], sInPhase, blend)
+}
+
 type Metrics = {
   t: number
   phaseIdx: number
@@ -172,11 +248,8 @@ function ProtoElectron({
     const t = tRef.current
     const phaseIdx = Math.min(PHASES.length - 1, Math.floor(t / PHASE_DURATION_S))
     const sInPhase = (t - phaseIdx * PHASE_DURATION_S) / PHASE_DURATION_S
-    // Boundary 0 doesn't exist (phase 0 has no incoming). For phase 0 we
-    // pass 'sharp' but evaluatePhase ignores blend on circle-orbit anyway.
     const blends = blendsRef.current
-    const blend = phaseIdx === 0 ? 'sharp' : blends[phaseIdx - 1]
-    const [x, y, z] = evaluatePhase(PHASES[phaseIdx], sInPhase, blend)
+    const [x, y, z] = frameAt(t, blends)
 
     headRef.current.position.set(x, y, z)
 
@@ -401,6 +474,13 @@ export function LabsAtomBlend() {
           <li><b>B1 smoothstep</b> ≈ C1 — orbit and ellipse share angular velocity at the seam; only radii change, and smoothstep zeros that derivative</li>
           <li><b>B2 smoothstep</b> ≠ C1 — ellipse exits with nonzero tangent; lerp+smoothstep starts at rest</li>
           <li><b>B3 smoothstep</b> ≠ C1 — straight ends at rest; spiral entry has baseline tangential velocity</li>
+          <li><b>any boundary, hermite</b> ≈ C1 — Hermite cubic over an
+            80ms window explicitly matches both endpoint tangents.
+            Pass criterion: Δ|v|/peak should drop to ~0% at every boundary
+            with hermite selected. Trade-off: phase body becomes linear
+            (lerp/uniform-orbit), so visual character of cubic eased
+            radius-shrinks etc. is lost in the body.
+          </li>
         </ul>
       </aside>
     </div>
