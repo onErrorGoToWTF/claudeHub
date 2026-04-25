@@ -121,27 +121,29 @@ Smooth handoff between states is a transition concern, not the state's concern.
 
 ---
 
-## 2. Transitions — single-knob sharpness (locked)
+## 2. Transitions — single-knob `transitionWindow` (locked)
 
-Smoothness is **always guaranteed by internal math**. The user never sees C0/C1/Hermite/smoothstep terminology. They see one knob.
+**Mental model (locked clarification):** Smoothness is fixed at maximum — there is no smoothness knob. The user knob controls **how much time / distance the transition gets to happen in**. Short window → tighter arc (reads as "sharp"). Long window → wider arc (reads as "gradual"). The arc shape is a derived consequence of the available window, not the thing being dialed.
 
-**The user-facing knob: `sharpness`**
-- Continuous scalar `0.0 ↔ 1.0`
-- `0.0` = maximum gradual blend (long blend window, deep speed deceleration into corners, generous curves)
-- `1.0` = maximum quick blend (short window, minimal deceleration, tighter curve)
+The user never sees C0/C1/Hermite/smoothstep terminology. They see one knob.
+
+**The user-facing knob: `transitionWindow`**
+- Continuous scalar `0.0 ↔ 1.0` (or expressible as a fraction of adjacent state durations)
+- `0.0` = minimum window (tightest allowable arc, snappy seam — but never zero, see floor below)
+- `1.0` = maximum window (most generous arc, gradual blend, deepest speed shaping)
 
 **Internal mapping (math hidden from user):**
-- `curve ↔ curve` boundary (orbit↔orbit, orbit↔spiral, spiral↔spiral): smoothstep on inner phase. Sharpness has subtle effect (mostly speed shaping).
-- `curve ↔ straight` boundary: Hermite cubic over a window. Sharpness scales window length and corner-fillet radius.
-- `straight ↔ straight at angle`: fillet arc + slow-into-corner / speed-out-of-corner. Sharpness scales fillet radius and speed-dip depth.
+- `curve ↔ curve` boundary (orbit↔orbit, orbit↔spiral, spiral↔spiral): smoothstep on inner phase. Window has subtle effect (mostly speed shaping).
+- `curve ↔ straight` boundary: Hermite cubic spanning the window. Window length directly sets corner-fillet radius.
+- `straight ↔ straight at angle`: fillet arc + slow-into-corner / speed-out-of-corner. Window scales fillet radius and speed-dip depth.
 - `pulsate ↔ anything`: trivial (no positional change at pulsate boundary).
 - `pause ↔ anything`: also trivial geometrically; speed must ramp from/to zero.
 
-**Sharpness floor (locked):**
-The minimum corner radius is set by the user's "low corner radius" preference for sharp turns — never zero. A `sharpness = 1.0` straight↔straight turn still has a slight curve. Quote: "sharp turns or transitions will likely never be ZERO rounded corners. My low radius for corners should be the minimum 'sharpness' for a line turning."
+**Window floor (locked):**
+The minimum window is never zero. A `transitionWindow = 0.0` straight↔straight turn still has a slight curve. Quote: "sharp turns or transitions will likely never be ZERO rounded corners. My low radius for corners should be the minimum 'sharpness' for a line turning." Translate that radius into a minimum window length and clamp.
 
 **Two implementation dimensions per boundary (internal):**
-1. **Path geometry** — how the spatial curve rounds at the seam.
+1. **Path geometry** — how the spatial curve rounds across the window.
 2. **Speed shaping** — `s_path = f(s_time)` time-reparameterization. Velocity magnitude dips approaching corners and accelerates leaving them. Animation principle of anticipation + follow-through.
 
 Don't ship transitions with geometric smoothness but no speed shaping. Both dimensions or neither.
@@ -175,7 +177,7 @@ This is the next conversation. The walkthrough is gated on user `Y` to the stand
 ### Two-layer UI pattern
 
 **Layer 1 — User controls (HIG-clean, minimal):**
-- Only the things the user is actively tweaking (color picker, mode selector, sharpness slider).
+- Only the things the user is actively tweaking (color picker, mode selector, transitionWindow slider).
 - Hover-collapse card overlay so the canvas can fill the viewport on mobile.
 - Color is its own thing, somewhat separated from other controls.
 
@@ -197,7 +199,7 @@ The HUD survives panel collapse, viewport resize, scroll, and sliding sheets. It
 ### Two separate diagnostic surfaces planned
 
 - **States lab** — pick a state, set its constants, watch it run in isolation. No transition complexity.
-- **Transitions lab** — pick two adjacent states + a boundary, sweep sharpness, watch the seam. Inherits HUD logging of `end-of-state-N` and `start-of-state-N+1` values per boundary.
+- **Transitions lab** — pick two adjacent states + a boundary, sweep `transitionWindow`, watch the seam. Inherits HUD logging of `end-of-state-N` and `start-of-state-N+1` values per boundary.
 
 ---
 
@@ -249,7 +251,7 @@ Not yet designed. Treat as a separate concern. For now, every electron carries `
 ### Genius / architecture review — pending post-sync
 Four discriminating questions to put to advisor + architecture-review skill:
 1. Is the 5-state taxonomy minimal-and-complete for the named use cases (logo, quiz reward, departure, arrival-activate, panel highlight, Genius celebration)?
-2. Does single-knob sharpness collapse cleanly to a boundary-strategy table without losing range?
+2. Does single-knob `transitionWindow` collapse cleanly to a boundary-strategy table without losing range?
 3. Does the `positionFn`/`scaleFn` dual-contract for `pulsate` generalize, or is it a wart?
 4. Where does this design fail first in implementation?
 
