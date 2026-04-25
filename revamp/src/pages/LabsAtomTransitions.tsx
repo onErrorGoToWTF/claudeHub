@@ -55,9 +55,17 @@ const SEAM_KINK_THRESHOLD_GREEN = 0.025 // <2.5% reads visually clean
 const SEAM_KINK_THRESHOLD_YELLOW = 0.05 // 2.5-5% borderline; >5% perceptible
 
 type SeamSample = {
-  beforeV: number   // |v| in last frame of A
-  afterV: number    // |v| in first frame of B
-  peakV: number     // peak |v| in the full run
+  /** Max per-frame |Δ|v|| across the whole run. With C1 Hermite + any
+   *  smooth state, this stays tiny (sub-percent of peak) — only spikes
+   *  if there's an actual kink in the path. */
+  maxFrameDV: number
+  /** Peak |v| in the run, used to normalize maxFrameDV into a percentage. */
+  peakV: number
+  /** Informational: |v| at last frame in pure-A region. */
+  endA: number
+  /** Informational: |v| at first frame in pure-B region. Differs from
+   *  endA by the inherent A↔B speed disparity, NOT by a kink. */
+  startB: number
 }
 
 function ElectronTransitionProbe({
@@ -96,12 +104,17 @@ function ElectronTransitionProbe({
 
   const elapsedMsRef = useRef(0)
   const completedRef = useRef(false)
-  const seamReportedRef = useRef(false)
   const peakVRef = useRef(0)
   const lastPosRef = useRef<Vec3>([0, 0, 0])
   const lastDtRef = useRef(0)
   const lastVRef = useRef(0)
-  const beforeSeamVRef = useRef(0)
+  // Per-frame max |Δ|v|| accumulator. With Hermite C1 + smooth states this
+  // stays sub-percent of peak; spikes only if there's an actual kink.
+  const maxFrameDVRef = useRef(0)
+  const endARef = useRef(0)
+  const startBRef = useRef(0)
+  const sawAFrameRef = useRef(false)
+  const sawBFrameRef = useRef(false)
   // Salvaged from the retired blend-test: skip the first 3 velocity samples
   // so a wonky first-frame finite-difference can't lock peakV high and
   // make every chip read 0%.
@@ -137,9 +150,12 @@ function ElectronTransitionProbe({
   useEffect(() => {
     elapsedMsRef.current = 0
     completedRef.current = false
-    seamReportedRef.current = false
     peakVRef.current = 0
-    beforeSeamVRef.current = 0
+    maxFrameDVRef.current = 0
+    endARef.current = 0
+    startBRef.current = 0
+    sawAFrameRef.current = false
+    sawBFrameRef.current = false
     lastVRef.current = 0
     lastDtRef.current = 0
     velWarmupRef.current = 3
@@ -297,15 +313,24 @@ function ElectronTransitionProbe({
     } else {
       if (vMag > peakVRef.current) peakVRef.current = vMag
 
+      // Per-frame |Δ|v||. Skip the first post-warmup frame (no prior
+      // sample). This is the kink-sensitive metric: with Hermite C1 +
+      // smooth states the cubic varies |v| slowly across the window, so
+      // per-frame Δ|v| stays tiny. A real kink would spike one frame.
+      if (lastVRef.current > 0) {
+        const dV = Math.abs(vMag - lastVRef.current)
+        if (dV > maxFrameDVRef.current) maxFrameDVRef.current = dV
+      }
+
+      // Track |v| at A's last frame and B's first frame for informational
+      // chip readouts (these legitimately differ — orbit speed at t≈1
+      // simply isn't equal to spiral speed at t≈0; that's not a kink).
       if (phase === 'A') {
-        beforeSeamVRef.current = vMag
-      } else if (phase === 'B' && !seamReportedRef.current && lastDtRef.current > 0) {
-        seamReportedRef.current = true
-        onSeam({
-          beforeV: beforeSeamVRef.current,
-          afterV: vMag,
-          peakV: peakVRef.current,
-        })
+        endARef.current = vMag
+        sawAFrameRef.current = true
+      } else if (phase === 'B' && !sawBFrameRef.current && lastDtRef.current > 0) {
+        startBRef.current = vMag
+        sawBFrameRef.current = true
       }
     }
 
@@ -333,6 +358,12 @@ function ElectronTransitionProbe({
 
     if (elapsed >= totalDur && !completedRef.current) {
       completedRef.current = true
+      onSeam({
+        maxFrameDV: maxFrameDVRef.current,
+        peakV: peakVRef.current,
+        endA: endARef.current,
+        startB: startBRef.current,
+      })
       onComplete()
     } else {
       invalidate()
@@ -385,7 +416,7 @@ function ElectronTransitionProbe({
 
 function classifyKink(seam: SeamSample): 'green' | 'yellow' | 'red' {
   if (seam.peakV <= 0) return 'green'
-  const ratio = Math.abs(seam.afterV - seam.beforeV) / seam.peakV
+  const ratio = seam.maxFrameDV / seam.peakV
   if (ratio < SEAM_KINK_THRESHOLD_GREEN) return 'green'
   if (ratio < SEAM_KINK_THRESHOLD_YELLOW) return 'yellow'
   return 'red'
@@ -403,24 +434,24 @@ function BoundaryChips({ seam }: { seam: SeamSample | null }) {
   }
   const cls = classifyKink(seam)
   const chipCls = cls === 'green' ? s.chipGreen : cls === 'yellow' ? s.chipYellow : s.chipRed
-  const ratio = seam.peakV > 0 ? (Math.abs(seam.afterV - seam.beforeV) / seam.peakV) : 0
+  const ratio = seam.peakV > 0 ? seam.maxFrameDV / seam.peakV : 0
   return (
     <div className={s.chips}>
-      <span className={`${s.chip} ${chipCls}`}>
+      <span className={`${s.chip} ${chipCls}`} title="Max per-frame |Δ|v|| / peak. Kink-sensitive metric.">
         <span className={s.chipDot} />
-        Δ|v| {(ratio * 100).toFixed(1)}%
+        max Δ|v|/frame {(ratio * 100).toFixed(2)}%
       </span>
       <span className={`${s.chip} ${s.chipGreen}`}>
         <span className={s.chipDot} />
         peak {seam.peakV.toFixed(2)}
       </span>
-      <span className={`${s.chip} ${s.chipGreen}`}>
+      <span className={`${s.chip} ${s.chipGreen}`} title="A's |v| at last pure-A frame. Informational.">
         <span className={s.chipDot} />
-        before {seam.beforeV.toFixed(2)}
+        A.endV {seam.endA.toFixed(2)}
       </span>
-      <span className={`${s.chip} ${s.chipGreen}`}>
+      <span className={`${s.chip} ${s.chipGreen}`} title="B's |v| at first pure-B frame. Differs from A.endV by inherent A↔B speed disparity, not a kink.">
         <span className={s.chipDot} />
-        after {seam.afterV.toFixed(2)}
+        B.startV {seam.startB.toFixed(2)}
       </span>
     </div>
   )
