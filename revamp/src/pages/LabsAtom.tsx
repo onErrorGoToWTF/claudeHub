@@ -281,7 +281,7 @@ function Electron({
     //   1    → flash, then stays fully lit forever (third, final)
     // Halo is pumped to fully swallow the i-dot silhouette.
     const POST_SCALE = 1.45
-    const POST_HALO_SCALE = 2.6
+    const POST_HALO_SCALE = 2.4
     const POST_HALO_OPACITY = 0.5
     const vis = config.postLandVisibility
     let electronScale = 1
