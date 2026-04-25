@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T18:32:50.181Z",
+  "generated_at": "2026-04-25T20:25:57.636Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -181,7 +181,7 @@
       {
         "title": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
         "url": "https://github.com/nex-crm/wuphf",
-        "source": "HN · 191↑",
+        "source": "HN · 214↑",
         "hn_id": "47899844",
         "published": "2026-04-25T08:53:53.000Z",
         "summary": "I shipped a wiki layer for AI agents that uses markdown + git as the source of truth, with a bleve (BM25) + SQLite index on top. No vector or graph db yet. It runs locally in…"
@@ -210,7 +210,7 @@
       {
         "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
         "url": "https://alash3al.github.io/stash?_v01",
-        "source": "HN · 149↑",
+        "source": "HN · 157↑",
         "hn_id": "47897790",
         "published": "2026-04-25T01:24:40.000Z",
         "summary": ""
@@ -221,13 +221,6 @@
         "source": "Bloomberg",
         "published": "2026-04-24T23:13:02.000Z",
         "summary": "This week, regulators and banks are scrambling to catch up after the debut of Anthropic’s nearly autonomous system that can find cybersecurity vulnerabilities on its own. And, the electric vehicle…"
-      },
-      {
-        "title": "Anthropic's Claude Opus 4.7: 5 features that could make your work faster and smarter - MSN",
-        "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxORnc3WmVwbWpVeUJJVjRwSC1rTVBzWGVIajhuLWJyYlBfUUNHVDFkVXdva1d0WWRkNHg4TWFYbm5lMnY4bV90dGx3cUcxZktDb1NSaTRySVppZ2tFM1BJMjRraURHdFhIbzdtQWF6MnFJT1R4N0dUOHk5bks5cE10bnFsZXczOTBWSm14VURjcW1WYzREaVUxdjF1XzJVcW9QaHdBMzQ5bXI3NUtYWnhla3FBMDFkcW5ReEZwLU5nb2JvUklkYU52dFlZNFFBTkNWTW93TFF5RkJsdGNsaFF1bDIwazNKZHVBNDNNN2xGd2hvYTFldU1yb2w1dVZZNzEwNlVKalRKaEJST0dKd21iVC10QQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T22:13:55.000Z",
-        "summary": "Anthropic's Claude Opus 4.7: 5 features that could make your work faster and smarter MSN"
       },
       {
         "title": "Google will invest as much as $40 billion in Anthropic",
@@ -270,20 +263,6 @@
         "summary": "Google commits billions to Anthropic in major AI partnership USA Today"
       },
       {
-        "title": "Google commits $40 billion investment to Claude AI developer Anthropic - Cryptopolitan",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOaFdvZUxpdVVPRW9jemZoaUx1WjVENC1MVUgxalk2YmQwX0ZsalVaSHFVSnBQUDNhTnVxc0dEd3c1US1NUUNLd21HT1dFTmRvUUNrOTlKVmZLNDFXWmE1S0d1UVd0di1vSDdDRjE4ZUU1Ui1lUE0xVjBVQlBkX2l5eF9Rbk9lemY2QnFTeGNTSjdUNkNNb1VTUUl4Ml9qYzhwcnc?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T19:44:00.000Z",
-        "summary": "Google commits $40 billion investment to Claude AI developer Anthropic Cryptopolitan"
-      },
-      {
-        "title": "Google Doubles Down on Anthropic With New $40 Billion Investment - PYMNTS.com",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQblZwVWVXTWpwX1puSkU5VWhnMzJUbjR3Yjlfcy1rMmtCM0xIdkZhS2QtcEFPbEZHQ3NUWmE4LWxWYlVXUnRNVDJSSzRJZWVNbjRCdGtwUmhTMnBJdFBnOF9XMXVGQ0F5NmZUV3F0NGtaeDZqU2dwU1otUlkzQzJSdUpGY3VvaWhNQjljRHhsU2ZqSHZVV1hWSm1xVXRuNEwtWm5TUTZvNmRzbDdfZHhjYmhPanh2Wnc?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T19:41:45.000Z",
-        "summary": "Google Doubles Down on Anthropic With New $40 Billion Investment PYMNTS.com"
-      },
-      {
         "title": "Could a Claude Code routine watch my finances?",
         "url": "https://driggsby.com/blog/claude-code-routine-watch-my-finances",
         "source": "HN · 80↑",
@@ -314,6 +293,13 @@
         "summary": "Google to invest up to $40 billion in AI rival Anthropic Reuters"
       },
       {
+        "title": "Claude’s new connectors use AI to order food, control music, and do your taxes - 9to5Google",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNeU5GUkhPYzhITGFHYWt0R1RvN0FMNnVpTmxCTUhUS2x4b3RxVTZjRG93d2NOdi16ZUxUQ0N6S0xKY3FuckNrdWZ3Ui1taWNzYmpfYUJzaGRTQXR1UlNxNlllRmJQb3NjUkFZcmZ2RDBGX1M3QWxRYl9VUW9HOFAtTmVyTVVNZw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T18:05:00.000Z",
+        "summary": "Claude’s new connectors use AI to order food, control music, and do your taxes 9to5Google"
+      },
+      {
         "title": "Google to invest up to $40B in Anthropic in cash and compute",
         "url": "https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/",
         "source": "TechCrunch",
@@ -321,9 +307,16 @@
         "summary": "Google plans up to $40B investment in Anthropic as AI rivals race to secure massive compute capacity, following the limited release of its powerful, cybersecurity-focused Mythos model."
       },
       {
+        "title": "Google to invest up to $40B in Anthropic in cash and compute - TechCrunch",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQRUhlZ245NGgwTjlnbWdOUzI3Ry1LNnJlU3h2VXBUV2VjREptdDdXSGJwcEhNcFlBa0JTdkpaS1F0RXcwcmttN1ZYT0VGVlN0REpNNHRocnFCaXdEcUU1bFVpcXRnOW5mU3JEc0tMTzlSRFhzVDNfRDhxRldEcm9rbkhucUdFcGlxaDNIYkRtM0ZsbVc0VnU5UkJR?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T18:00:03.000Z",
+        "summary": "Google to invest up to $40B in Anthropic in cash and compute TechCrunch"
+      },
+      {
         "title": "CC-Canary: Detect early signs of regressions in Claude Code",
         "url": "https://github.com/delta-hq/cc-canary",
-        "source": "HN · 63↑",
+        "source": "HN · 64↑",
         "hn_id": "47893620",
         "published": "2026-04-24T17:53:37.000Z",
         "summary": ""
@@ -348,6 +341,13 @@
         "source": "Google News",
         "published": "2026-04-24T17:27:00.000Z",
         "summary": "Spotify isn’t the only service now integrated with Anthropic’s Claude 9to5Mac"
+      },
+      {
+        "title": "Anthropic says engineering missteps were behind Claude Code’s monthlong decline after weeks of user backlash - Fortune",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPTEdyc2dGVUtyNW90cFh5OGZmcnFvb0VmWU5iNjVJRlpWM1BndktEcnZaeGhxRU1kSnl4Qjg4MlRzU1pYUFBPZDMtZm9rTFdyLTNWTzFLU0dqU1AxWU5sUThVV2x4UXMwcVJhWlE1ODVRRlFFNFVqMUJFdUtpZ2ZlY1JIV0dLVWVwZ0tsOTFyYmZyQ2k5ZVBEZnpIYWp1V0psZHdUcnB4am1BWmN3?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T17:21:00.000Z",
+        "summary": "Anthropic says engineering missteps were behind Claude Code’s monthlong decline after weeks of user backlash Fortune"
       },
       {
         "title": "Claude Code Skills: The Biggest Opportunity of 2026",
@@ -532,6 +532,13 @@
     ],
     "status": [
       {
+        "title": "Investigated elevated errors and slower responses on claude.ai",
+        "url": "https://status.claude.com/incidents/c3km369dp85h",
+        "source": "Claude Status",
+        "published": "2026-04-25T19:02:15.000Z",
+        "summary": "Apr 25 , 19:02 UTC Resolved - This incident has been resolved. Apr 25 , 18:42 UTC Investigating - We are currently investigating this issue."
+      },
+      {
         "title": "Elevated errors on Claude Opus 4.7",
         "url": "https://status.claude.com/incidents/87m29x6sk78g",
         "source": "Claude Status",
@@ -607,13 +614,6 @@
         "source": "Claude Status",
         "published": "2026-04-20T14:21:06.000Z",
         "summary": "Apr 20 , 14:21 UTC Resolved - This incident has been resolved. Apr 20 , 13:31 UTC Investigating - We are currently investigating an issue related to uploading files on Claude.ai and Claude API. Some…"
-      },
-      {
-        "title": "Claude Sonnet 4.5 error spike",
-        "url": "https://status.claude.com/incidents/8rg3l7v56ngc",
-        "source": "Claude Status",
-        "published": "2026-04-20T07:25:21.000Z",
-        "summary": "Apr 20 , 07:25 UTC Resolved - This incident has been resolved. Apr 20 , 06:41 UTC Update - We are continuing to monitor for any further issues. Apr 20 , 06:38 UTC Monitoring - A fix has been…"
       }
     ],
     "youtube": [
