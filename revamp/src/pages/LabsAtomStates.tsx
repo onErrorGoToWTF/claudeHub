@@ -24,6 +24,7 @@ import {
 import { ELECTRON } from '../ui/atom/constants'
 import { makeFadeTexture } from '../ui/atom/Electron'
 import { usePrefersReducedMotion } from '../ui/atom/usePrefersReducedMotion'
+import { LabsNav } from '../ui/atom/LabsNav'
 import {
   STATE_TYPES,
   defaultConfigFor,
@@ -553,6 +554,7 @@ export function LabsAtomStates() {
         </button>
       )}
 
+      <LabsNav />
       <AtomLabHud config={hudConfig} mathRef={mathRef} events={events} tone="dark" />
     </div>
   )

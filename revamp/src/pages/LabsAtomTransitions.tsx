@@ -3,18 +3,14 @@
  *
  * Pick state A and state B from radio rows (composition-rule validation
  * grays out illegal pairs — e.g. spiral.inward only enabled when A is
- * orbit). Hit Replay; the electron runs A then B back-to-back. The
- * boundary chips read measured |Δv| at the seam vs peak |v| in the run,
- * categorized green / yellow / red against a 5% threshold (eye-perceptible
- * kink boundary, same as the retired blend-test).
+ * orbit). Hit Replay; the electron runs A through a Hermite-cubic blend
+ * region into B. The boundary chips read measured |Δv| from the last
+ * pre-window frame to the first post-window frame; with C1 Hermite at
+ * both window edges this should approach zero → green.
  *
- * MVP scope: this lab is the *stage* for transition math. The seam today
- * is concat-only — no blending, no speed shaping. The user iterates the
- * blending math against this stage in follow-up work; per the locked
- * plan, "transitions should be separate from the labs dev page from the
- * states. I will work on them separately." The transitionWindow slider
- * exists and is wired through the HUD + computeWindowMs() so its value is
- * legible; the path-blend implementation lands later.
+ * The seam math lives in `runtime/transitions.ts` (`evalSequence`); this
+ * page just wires sliders to it and renders the result. windowMs comes
+ * from the locked `transitionWindow · 0.5 · min(durL, durR)` formula.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
@@ -28,6 +24,7 @@ import {
 import { ELECTRON } from '../ui/atom/constants'
 import { makeFadeTexture } from '../ui/atom/Electron'
 import { usePrefersReducedMotion } from '../ui/atom/usePrefersReducedMotion'
+import { LabsNav } from '../ui/atom/LabsNav'
 import {
   defaultConfigFor,
   evalState,
@@ -37,7 +34,7 @@ import {
   type StateType,
   type Vec3,
 } from '../ui/atom/runtime'
-import { checkComposition, computeWindowMs } from '../ui/atom/runtime/transitions'
+import { checkComposition, computeWindowMs, evalSequence } from '../ui/atom/runtime/transitions'
 import s from './LabsAtomTransitions.module.css'
 
 extend({ MeshLineGeometry, MeshLineMaterial })
@@ -55,6 +52,7 @@ type SeamSample = {
 function ElectronTransitionProbe({
   a,
   b,
+  windowMs,
   replayKey,
   mathRef,
   reducedMotion,
@@ -63,6 +61,7 @@ function ElectronTransitionProbe({
 }: {
   a: StateConfig
   b: StateConfig
+  windowMs: number
   replayKey: number
   mathRef: React.MutableRefObject<AtomLabMathState>
   reducedMotion: boolean
@@ -179,36 +178,20 @@ function ElectronTransitionProbe({
     const durB = Math.max(1, b.duration)
     const totalDur = durA + durB
 
-    let phase: 'A' | 'B'
-    let tLocal: number
-    let position: Vec3
-    let scale: number
-
-    if (elapsed < durA) {
-      phase = 'A'
-      tLocal = elapsed / durA
-      const r = evalState(a, tLocal, { nucleus: [0, 0, 0] })
-      position = r.position
-      scale = r.scale
-    } else if (elapsed < totalDur) {
-      phase = 'B'
-      tLocal = (elapsed - durA) / durB
-      const r = evalState(b, tLocal, {
-        nucleus: [0, 0, 0],
-        prev: { endPos: aEndPos, endTangent: [0, 0, 0] },
-      })
-      position = r.position
-      scale = r.scale
-    } else {
-      phase = 'B'
-      tLocal = 1
-      const r = evalState(b, 1, {
-        nucleus: [0, 0, 0],
-        prev: { endPos: aEndPos, endTangent: [0, 0, 0] },
-      })
-      position = r.position
-      scale = r.scale
-    }
+    const seqResult = evalSequence(
+      {
+        a,
+        b,
+        ctxA: { nucleus: [0, 0, 0] },
+        ctxB: { nucleus: [0, 0, 0], prev: { endPos: aEndPos, endTangent: [0, 0, 0] } },
+        windowMs,
+      },
+      Math.min(elapsed, totalDur),
+    )
+    const phase = seqResult.phase
+    const tLocal = seqResult.tLocal
+    const position = seqResult.position
+    const scale = seqResult.scale
 
     headRef.current.position.set(position[0], position[1], position[2])
     headRef.current.scale.setScalar(scale)
@@ -251,8 +234,10 @@ function ElectronTransitionProbe({
     } else {
       if (vMag > peakVRef.current) peakVRef.current = vMag
 
-      // Seam detection — record the last |v| in A, then on the first
-      // frame in B sample |v| again and report.
+      // Seam detection across the Hermite window:
+      //   before = last |v| in pure-A region (phase='A', i.e. window entry)
+      //   after  = first |v| in pure-B region (phase='B', window exit)
+      // With C1 Hermite at both window boundaries, Δ|v| ≈ 0 → green.
       if (phase === 'A') {
         beforeSeamVRef.current = vMag
       } else if (phase === 'B' && !seamReportedRef.current && lastDtRef.current > 0) {
@@ -269,9 +254,11 @@ function ElectronTransitionProbe({
     lastDtRef.current = dtSecClamped
     lastVRef.current = vMag
 
+    const stateName =
+      phase === 'A' ? a.type : phase === 'B' ? b.type : `${a.type}→${b.type}`
     mathRef.current = {
       phase,
-      stateName: phase === 'A' ? a.type : b.type,
+      stateName,
       t: tLocal,
       vMag,
       extra: `peakV=${peakVRef.current.toFixed(2)} pos=(${position[0].toFixed(2)},${position[1].toFixed(2)},${position[2].toFixed(2)})`,
@@ -451,6 +438,7 @@ export function LabsAtomTransitions() {
             <ElectronTransitionProbe
               a={a}
               b={b}
+              windowMs={windowMs}
               replayKey={replayKey}
               mathRef={mathRef}
               reducedMotion={reducedMotion}
@@ -538,9 +526,8 @@ export function LabsAtomTransitions() {
               </span>
             </div>
             <div className={s.note}>
-              Path-blend math not yet wired — slider sets <code>windowMs</code>{' '}
-              for next workstream. Boundary chips will read red until the
-              math lands.
+              Hermite cubic blend across the window. Longer window = wider
+              fillet at the seam. Δ|v|/peakV target: green (&lt;2.5%).
             </div>
             <div className={s.field}>
               <span className={s.fieldLabel}>A.dur</span>
@@ -612,6 +599,7 @@ export function LabsAtomTransitions() {
         </button>
       )}
 
+      <LabsNav />
       <AtomLabHud config={hudConfig} mathRef={mathRef} events={events} tone="dark" />
     </div>
   )

@@ -1,4 +1,5 @@
 import { AtomLogo } from '../ui/atom/AtomLogo'
+import { LabsNav } from '../ui/atom/LabsNav'
 import s from './LabsAtom.module.css'
 
 export function LabsAtom() {
@@ -10,6 +11,7 @@ export function LabsAtom() {
           <AtomLogo onlyPlane="yz" settle />
           <AtomLogo onlyPlane="xz" settle /> */}
       <AtomLogo settle />
+      <LabsNav />
     </div>
   )
 }

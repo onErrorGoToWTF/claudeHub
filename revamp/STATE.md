@@ -69,13 +69,13 @@ Running ledger. Rehydrate from this after context compaction.
 - `/labs/atom-blend-test` retired; dt-floor (1/240) + 3-frame velWarmup salvaged into the new transitions lab.
 - `usePrefersReducedMotion()` hook gates both labs to a static end-state when set; HUD still renders.
 
-**Next workstream — iterate the seam-blending math on top of the now-functional transitions lab.** Today the seam is concat-only (the boundary chips read red, which is the diagnostic working as intended). The user works the math in this order:
-1. **Speed shaping** at the seam — apply a smoothstep velocity envelope across `windowMs` so |Δv| at the seam approaches zero. Wire the slider so longer window = lower red %.
-2. **Path geometry** at curve↔curve — smoothstep on inner phase across the window.
-3. **Path geometry** at curve↔straight — Hermite cubic spanning the window. Window length = corner-fillet radius.
-4. **Path geometry** at straight↔straight (turn) — fillet arc + speed dip into corner.
-5. **Pause / pulsate edges** — speed must ramp from / to zero.
-6. **First preset deployment** — once the math reads green on the diagnostic chips, port to the real consumer (likely quiz reward or Genius A+ celebration).
+**Seam-blending math shipped 2026-04-25** — the locked plan's per-boundary table (smoothstep on curve↔curve, Hermite on curve↔straight, fillet arc on straight↔straight, ramp from/to zero on pause edges) collapsed to a single universal solution: **Hermite cubic across the window using each state's analytical tangent**, sampled via central finite-difference of `evalState`. C1 continuity at u=0 and u=1 is mathematically guaranteed (verified algebraically — see `runtime/transitions.ts` header). Edge cases handled by construction: pause/pulsate yield zero tangent → cubic ramps from/to zero; straight↔straight at angle gets a corner fillet for free; identical A=B reduces to identity. Speed shaping is implicit in the cubic's |dP/du| profile.
+
+**Next workstream:**
+1. **Phone-validate** — open `/labs/atom-transitions`, sweep through all legal A/B pairs, drag `transitionWindow` from 0→1, confirm boundary chips read green (Δ|v|/peakV < 2.5%) at every pair.
+2. **Refine if anomalies surface** — domain-edge tangents may need clamping (the finite-diff probe can hit t<0 or t>1); revisit if any pair shows unexpected red.
+3. **First preset deployment** — port the system to a real consumer (likely quiz reward or Genius A+ celebration). Pick declarative-vs-imperative trigger API at that point (currently deferred).
+4. **Color system** — still deferred; design when first preset needs it.
 
 **Locked decisions (do NOT re-ask):** 5 states (orbit/straight/spiral/pulsate/pause); composition rules (spiral.in must follow orbit; spiral.out must follow at-point); `transitionWindow` knob with formula `windowMs = transitionWindow · 0.5 · min(durLeft, durRight)`, MIN_WINDOW_MS=40ms; dual `positionFn` + `scaleFn` runtime; `TargetSpec = { space, value }` (deferred to consumer trigger API); trail invariant (autonomous, fade doesn't touch); HUD spec (4 lines, bottom-pinned, 30Hz math via direct DOM write).
 

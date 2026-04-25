@@ -1,0 +1,80 @@
+/* Floating labs-nav button — top-left of the viewport on every /labs/* page.
+   Phone-friendly tap target so the user can jump between labs without
+   typing a URL. Survives card collapse + viewport resize. */
+
+.root {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 9998;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+.handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 6px 12px;
+  background: rgba(20, 20, 20, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 22px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.handle:active {
+  background: rgba(40, 40, 40, 0.92);
+}
+
+.chev {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-left: 2px;
+}
+
+.menu {
+  margin-top: 6px;
+  min-width: 200px;
+  padding: 6px;
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.item {
+  display: block;
+  min-height: 44px;
+  padding: 8px 10px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 8px;
+  line-height: 1.3;
+}
+
+.item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.itemActive {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.itemSub {
+  display: block;
+  font-size: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 2px;
+}

@@ -84,6 +84,8 @@ export function AppShell({ children }: { children: ReactNode }) {
         <Link to="/colophon" className={styles.colophonLink}>Colophon</Link>
         <span className={styles.colophonSep}>·</span>
         <Link to="/feedback" className={styles.colophonLink}>Feedback</Link>
+        <span className={styles.colophonSep}>·</span>
+        <Link to="/labs/atom-states" className={styles.colophonLink}>Labs</Link>
       </footer>
 
       <GlobalSearch open={searchOpen} onClose={() => setSearchOpen(false)} />
