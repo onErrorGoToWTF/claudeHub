@@ -57,77 +57,26 @@ Running ledger. Rehydrate from this after context compaction.
 
 ## Remaining work (prioritized)
 
-### Active (next up) — AUTONOMOUS RUN PLAN (spec'd 2026-04-22)
+### Active (next up) — ATOM SYSTEM REWORK (spec'd 2026-04-25)
 
-**Cold-start read-order for next session:** (1) this section, (2) `src/lib/audience.ts`, (3) `src/lib/mastery.ts`, (4) `src/db/types.ts`, (5) `src/db/seed.ts` (first 50 lines) to see track shape, (6) `src/pages/TopicDetail.tsx` + `src/pages/QuizView.tsx` to see the lesson/quiz contract. Then execute chunks B→F in order, committing + pushing each chunk as its own milestone. **Do NOT ask clarifying questions — every decision below is locked.**
+**Single source of truth:** [`revamp/docs/atom-system-plan.md`](docs/atom-system-plan.md). Read this first when the user says "continue."
 
-**Ship cadence per chunk:** commit (conventional-commits style `feat(scope): …` / `fix(scope): …`) → `git pull --rebase && git push`. Revamp has no `data/version.json` (Vite handles hashing via dist/). Auto-deploy triggers on push to `main` touching `revamp/**`. Between chunks: stop and wait for phone-review approval OR for the user to say "continue" / "next chunk" / "save + clear". **Never skip hooks. Never amend. Never force-push.**
+The plan locks the 5-state model, transitions, end effects, and the lab page architecture. It contains a **chunk tracker** (7 chunks) that is the authoritative work queue. Pick the top NOT DONE chunk and build.
 
-**Locked decisions from the planning session:**
-- **5 pathways, ordered by ascending code involvement:** student → office → media → vibe → dev (Chunk A shipped this).
-- **Project gap topics auto-merge into the user's main pathway** when a project is created/saved (option `a` — unified plan, dedup if already present).
-- **Vibe/media get dedicated project intakes** (Chunk E). Until shipped, they fall through to the build flow.
-- **Content depth:** "solid first-pass to full polish depending on topic weight." Target ~5 new topics *total* across tracks, with full lessons + full quizzes. Short where appropriate, deep where warranted. Quizzes usually 5–10 questions; heavy topics can go higher.
-- **3 new quiz question types (Chunk B):** ordered-steps (drag-to-order), code-typing (fill-in-the-blank, string-match with whitespace tolerance), short-answer (free text, case-insensitive substring or regex match per question). All in addition to the existing multiple-choice. Each new question type gets ≥1 seeded example in an existing quiz so the UI is exercised.
-- **Autonomous execution style:** no pausing on individual edits; batch related edits into single commits; use milestone-chunk pauses only between chunks A–F. No asking the user to pick between options mid-chunk — the spec below is authoritative.
+**Ship cadence per chunk:** save + commit + push. Auto-deploy triggers on push to `main` touching `revamp/**`. Between chunks: continue autonomously unless a Tier 3 violation surfaces or an unplanned design decision appears. The user only interrupts if necessary.
 
----
+**Cold-start read-order for next session:**
+1. `revamp/docs/atom-system-plan.md` (the plan, including chunk tracker)
+2. `revamp/src/ui/atom/{constants,Electron,Atom,AtomLogo}.tsx` (existing atom primitives — already shipped)
+3. `revamp/src/pages/LabsAtomBlend.tsx` (current diagnostic prototype — to be retired in Chunk 5)
+4. `revamp/src/app/App.tsx` (`/labs/*` route handling)
+5. `.claude/skills/electron-motion/SKILL.md` if any motion question arises
 
-#### Chunk C — "My pathway" (data layer + Learn entry + edit UI + auto-merge)
+**Locked decisions in the plan (do NOT re-ask):** 5 states (orbit/straight/spiral/pulsate/pause); composition rules (spiral.in must follow orbit; spiral.out must follow at-point); `transitionWindow` knob with formula `windowMs = transitionWindow · 0.5 · min(durLeft, durRight)`; dual `positionFn` + `scaleFn` runtime; `TargetSpec = { space, value }`; trail invariant (autonomous, fade doesn't touch); HUD spec (4 lines, bottom-pinned, 30Hz math via direct DOM write); routes `/labs/atom-states` + `/labs/atom-transitions`.
 
-**Data model:** new Dexie table `userPathwayItems` (bump schema version in `src/db/schema.ts`). Row shape:
-```
-{ id: string, topicId: string, status: 'active' | 'archived',
-  position: number, addedAt: number, source: 'seed' | 'manual' | 'project' }
-```
-Index on `status`, `position`. All CRUD via `src/db/repo.ts` (`listPathwayItems`, `addPathwayItem`, `archivePathwayItem`, `reorderPathwayItems`, `unarchivePathwayItem`, `deletePathwayItem` — soft by default).
-
-**Seeding:** when the user reaches the onboarding `done` step OR picks a pathway in Settings and has zero `userPathwayItems`, stamp a default plan from Chunk D's templates. *Don't* stamp if the user already has items (even archived ones) — respect their history.
-
-**Main pathway page:** `/learn/pathway` (new route). List-style, not the visual-tree deferred feature. Each row:
-- Topic title + track name + minutes
-- Status chip (mastery bucket from `masteryStatus` of the topic's last quiz score)
-- Drag-handle for reorder (keyboard-accessible)
-- "Archive" button (soft-delete; goes behind disclosure at bottom)
-- Click navigates to TopicDetail
-
-Above list: "Add topic" button → small modal with searchable topic list (respects prereq checks — can't add a topic whose prereqs aren't in the pathway as `active`). "Show archived (N)" disclosure at bottom. Empty state: "No pathway yet — build one" button linking to the existing `/learn/custom` flow.
-
-**Learn section-homepage entry:** replace or merge the current "Build a custom pathway" link with a "My pathway" panel showing top 3 active items + a "See full pathway" link. When pathway is empty, show onboarding-seeded CTA.
-
-**Project gap auto-merge:** on `repo.putProject`, diff `gapTopicIds` vs. existing active pathway items. For each new gap topic not already `active`, insert a row with `source: 'project'` at the end of active items (dedup). If the topic exists as `archived`, un-archive it. Don't block project save on errors — log + continue.
-
-**Dashboard:** small "Up next on my pathway" rollup (top 1–2 items) joins the existing two panels (Learn + Projects). Stay minimal — no new eyebrow.
-
----
-
-#### Chunk D — default pathway templates (one per pathway)
-
-**Shape:** `src/lib/pathwayTemplates.ts` exports `PATHWAY_TEMPLATES: Record<UserPathway, { topicIds: string[]; order: number[] }>`. The seed function (Chunk C) reads this to stamp a user's starting plan when their pathway is picked.
-
-**Template picks (locked):**
-- **student** — t.tokens, t.transformers, t.prompt-basics, t.prompt-patterns, t.models-compared (foundations-heavy, adds a model-comparison topic that may need authoring in Chunk F)
-- **office** — t.prompt-basics, t.prompt-patterns, t.claude-for-office (new topic for Chunk F), t.docs-with-ai (new), t.meetings-with-ai (new)
-- **media** — t.prompt-basics, t.image-generation (new), t.video-generation (new), t.voice-cloning-ethics (new), t.media-workflow (new)
-- **vibe** — t.prompt-basics, t.prompt-patterns, t.agents-intro (new or pull from agents track), t.claude-code-basics (new), t.vibe-workflow (new)
-- **dev** — t.tokens, t.prompt-patterns, t.tool-use, t.agents-intro, t.streaming-ui (existing track content; confirm IDs during execution)
-
-If a template topic doesn't exist yet in `seed.ts`, Chunk F should create it during the content expansion. If Chunk F runs after Chunk D, the template seed can tolerate missing IDs (filter to existing topics at stamp time); or Chunk D can be deferred to run *after* Chunk F. **Recommend running Chunk F before Chunk D so templates reference real topics.** If re-ordering feels cleaner, do: B → C (with template-seeding stubbed to no-op) → F → D.
-
-**Settings:** "Reset pathway" button — wipes `userPathwayItems` and re-stamps the template for the current pathway. Two-tap confirm.
-
----
-
-#### Post-F housekeeping
-
-- Update this STATE.md — move completed chunks to Shipped, drop the Active spec, add any regressions surfaced during phone review to the top of Active.
-- Touch `docs/supabase-schema.sql` only if the new tables (`userPathwayItems`) should also land in the post-migration schema draft. Low priority; can defer.
-- No DB migration work of any kind in this run. **Explicitly out of scope.**
-
----
-
-- [ ] Extend Learn — more tracks + topics + authored lessons. Subsumed by Chunk F above for the first wave; the broader "extend Learn" item remains for future waves.
-- [ ] **Tool-overview courses** — full roster (Slack, Teams, Zoom, GitHub, Miro, Service Cloud, ServiceNow, Zendesk, MS Office suite). This run does one as a smoke test (see Chunk F). Remaining courses stay here as deferred-in-active.
+**Other Active items (lower priority than atom rework):**
+- [ ] Extend Learn — more tracks + topics + authored lessons. Pending.
+- [ ] **Tool-overview courses** — full roster (Slack, Teams, Zoom, GitHub, Miro, Service Cloud, ServiceNow, Zendesk, MS Office suite). One smoke test shipped earlier; remainder pending.
 
 ### Planned (later)
 
