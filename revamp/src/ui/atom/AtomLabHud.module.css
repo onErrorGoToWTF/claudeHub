@@ -1,0 +1,58 @@
+/* Bottom-pinned 4-line diagnostic HUD for /labs/atom-* pages.
+   Low-opacity monospace; the eye skips it, the screenshot captures it. */
+
+.hud {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 6px 10px 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 9999;
+  /* Default tone: light text for dark lab backdrops. Override via the
+     data-tone attribute on a wrapping element (or restyle per route). */
+  color: rgba(255, 255, 255, 0.55);
+  background: transparent;
+}
+
+.hud[data-tone='light'] {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.line {
+  display: block;
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line + .line {
+  margin-top: 1px;
+}
+
+.evtList {
+  display: block;
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hidden {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .hud {
+    font-size: 9px;
+    padding: 4px 8px 6px;
+  }
+}

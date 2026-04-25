@@ -482,12 +482,14 @@ The user has authorized autonomous chunked execution of the lab pages, deploying
 ### Chunk tracker
 
 ```
-[ ] Chunk 1 — HUD primitive component
+[x] Chunk 1 — HUD primitive component
     - revamp/src/ui/atom/AtomLabHud.tsx + .module.css
     - 4 lines (build / config / math / events), low-opacity monospace, bottom-pinned
-    - Props: { config: object; mathRef: MutableRef<MathState>; events: Event[] }
-    - Math state writes via direct DOM textContent at 30Hz (NOT React state)
-    - Pull commit hash from import.meta.env.VITE_GIT_COMMIT (set up below)
+    - Props: { config: object; mathRef: MutableRef<MathState>; events: Event[]; tone? }
+    - Math state writes via direct DOM textContent at 30Hz (rAF-throttled, NOT React state)
+    - Reads commit from import.meta.env.VITE_GIT_COMMIT (Chunk 2 wires the value)
+    - Hidden `data-atom-debug-context` node for screenshot/source-view dumps
+    - 1s console.debug heartbeat with full debug state
 
 [ ] Chunk 2 — Build-time commit-hash injection
     - vite.config.ts: define VITE_GIT_COMMIT = first 7 chars of `git rev-parse HEAD`
