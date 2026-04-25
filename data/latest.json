@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T08:39:42.762Z",
+  "generated_at": "2026-04-25T10:33:16.105Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,19 @@
     ],
     "news": [
       {
-        "title": "Google Invests in Anthropic to Expand Compute Capacity - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQTdUcWpBV2p2S19wZ0l5WlJyV3NsQWljd0dMSkNoakJKenMxV2ZYdkxZRlpjbl85LXVha2FLaEU2SVlqZ2hrdWVzR2VmTjFhSm13cXA4M1l3MkJucVppX0hmV1YyUTRMUWs4dkcxVzI2dUd5YVRKM2VEZklzY1NWMlRfb0paWkt3LUxWTm0taWxtWUNkSC1jUFAyc0o?oc=5",
+        "title": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
+        "url": "https://github.com/nex-crm/wuphf",
+        "source": "HN · 58↑",
+        "hn_id": "47899844",
+        "published": "2026-04-25T08:53:53.000Z",
+        "summary": "I shipped a wiki layer for AI agents that uses markdown + git as the source of truth, with a bleve (BM25) + SQLite index on top. No vector or graph db yet. It runs locally in…"
+      },
+      {
+        "title": "Google to invest up to $40 billion in Anthropic as AI investment race intensifies - Storyboard18",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOUlNXanVZeXlodTJnYVoyUVBzNFNhYzRKZG0wVkNxa1ZyblppNGhuVW5YSDY1QWw1LTREV1dXQ0ZEZ09OdkF1Rm1kOTNqbTNWbVE1ak1zcGJIMlh6UWk1WjRtaGdxcU01ZjQ5czJheWNHSm92OWo0Ym9QR3ZtLXl0b3VkcGJoOTVtbW5MdU1JYWNnbno4UThxRk5yMUhRN21kc0J1SG1NT0ZfMEY2aGdwMGticEFMOEdURlhMZ3RBTFhxYXhvRDNBUkVLUW3SAdIBQVVfeXFMTjA4YlplRFY5emdzUElzRHRoNW5Rbll2a19lWmlrczlkYkNuLXhnUlFuS0cwUnpTS0lmdW5sWE9OWVU2VWxON0x2bzNlVl81aE45Z3hSenhGQTNHU2hKblFNajFTRjhjTGJ3Q3JvSFhQR2JWNXgwa0FZV0c0RTB6Ui1MTWdfOWJTbXM5SGt1R25FZFRjdVpzWmNsa1FyVFVrNVNneksxM2NNVWd0QkVBcE1WaEtNUkswUmpSYmp2TV9uYVlKbnNIRkJ5Y04zM1RhRzNB?oc=5",
         "source": "Google News",
-        "published": "2026-04-25T06:12:06.000Z",
-        "summary": "Google Invests in Anthropic to Expand Compute Capacity Let's Data Science"
+        "published": "2026-04-25T06:38:49.000Z",
+        "summary": "Google to invest up to $40 billion in Anthropic as AI investment race intensifies Storyboard18"
       },
       {
         "title": "Google to invest up to $40 billion in Anthropic; $10 billion cash now but sets 'Performance Targets' for - The Times of India",
@@ -174,11 +182,12 @@
         "summary": "Anthropic Engages Governments Over Mythos Early Access Let's Data Science"
       },
       {
-        "title": "Google Invests Up to $40B in Anthropic - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNOWR5YzZMNVNQczd3TDNCVmhTRmttZXg2RTNXaGpuNjBBUG1TclBldjVOYXVPVHAxQmFxQmtvZVpNSE9LUzhUa2d4czZPdjJ2UHJuV1NoUG1aVGhySFZESDdJOWtHX2tmRTBYQV9uZlQzVUNPaDRDcnl2TEFqeEh4emNHXzJlQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-25T01:10:47.000Z",
-        "summary": "Google Invests Up to $40B in Anthropic Let's Data Science"
+        "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
+        "url": "https://alash3al.github.io/stash?_v01",
+        "source": "HN · 44↑",
+        "hn_id": "47897790",
+        "published": "2026-04-25T01:24:40.000Z",
+        "summary": ""
       },
       {
         "title": "Claude can now connect with Spotify, Uber, and a lot more apps - Mashable",
@@ -202,11 +211,11 @@
         "summary": "Google will invest at least $10 billion in Anthropic, and that amount could rise to $40 billion if Anthropic meets certain performance targets, Bloomberg reports . The investment follows Amazon's $5…"
       },
       {
-        "title": "DeepSeek V4 is here: How it compares to ChatGPT, Claude, Gemini - Mashable SEA",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNQVFydVQ1N0VOYk96Z0IzVUQtZ3J3dTZFdmR0ZzVrYVVPMHNuN01vb1NXTUZYNDdSQXhOYjhXY3Ytcnd2aVpydkZINkExOUVwWnlxZ0xlMVExbjBSZGdkaU1kSkRwMTh4bjBhWFZuaEthNkpKd21jNEhPTXJGRVJXbms1NkRDYzVNRnBaM3d1NW82UENDWGxnVWw2S2c?oc=5",
+        "title": "Google will invest as much as $40 billion in Anthropic - Ars Technica",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxObFF6a1VQb1NvNEYxcjJEZEZ5UWhPTV9xOEN3Ymd4MDJJUHp0U2RPQk9tSUxqV01XeEg3YkY0OFdLcnliMDZBWE5JcWVhRFNRaTFFSlhCekN4cmF5VWE5LXBXZWhMWEVRdl9ZUkZmeGlNU2lYUmZBT0lRZG4yYzRIV0lxLXZ6UjIxeE1EcEhfY05HXzQ?oc=5",
         "source": "Google News",
-        "published": "2026-04-24T21:54:24.000Z",
-        "summary": "DeepSeek V4 is here: How it compares to ChatGPT, Claude, Gemini Mashable SEA"
+        "published": "2026-04-24T22:05:45.000Z",
+        "summary": "Google will invest as much as $40 billion in Anthropic Ars Technica"
       },
       {
         "title": "Claude Mythos Probably Isn’t What You Think It Is - Medium",
@@ -297,13 +306,6 @@
         "source": "Google News",
         "published": "2026-04-24T18:58:18.000Z",
         "summary": "Anthropic Rolls Out Election Safeguards for Claude AI Ahead of US Midterms Decrypt"
-      },
-      {
-        "title": "Anthropic Rolls Out Election Safeguards for Claude AI Ahead of US Midterms - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQZ3BjbzNjVVhlMWlpRjlSNXBucHlIZVRZcEhzS2F6TlNhNG1iQjAyUzVmVUYtYzc0blZWY1YwQ3o4ajd1dlh4MlYtdkFqWnZTcndxZzV2eVctT0dCRV9rV3ZhVHI0WVExNC02ZGlWbnRHS1FJWmxUQ3UyNzQ0UWdQMmkxZjItZ09uZk9ycVNrRER2YnZlWS05NXJqV29FVmJz?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T18:58:18.000Z",
-        "summary": "Anthropic Rolls Out Election Safeguards for Claude AI Ahead of US Midterms Yahoo Tech"
       },
       {
         "title": "Google investing up to $40B in Anthropic",
@@ -530,6 +532,13 @@
     "status": [
       {
         "title": "Elevated errors on Claude Opus 4.7",
+        "url": "https://status.claude.com/incidents/87m29x6sk78g",
+        "source": "Claude Status",
+        "published": "2026-04-25T08:57:57.000Z",
+        "summary": "Apr 25 , 08:57 UTC Monitoring - A fix has been implemented and we are monitoring the results. Apr 25 , 08:43 UTC Identified - The issue has been identified and a fix is being implemented."
+      },
+      {
+        "title": "Elevated errors on Claude Opus 4.7",
         "url": "https://status.claude.com/incidents/29ryc4sj27jk",
         "source": "Claude Status",
         "published": "2026-04-25T08:37:30.000Z",
@@ -604,13 +613,6 @@
         "source": "Claude Status",
         "published": "2026-04-20T07:25:21.000Z",
         "summary": "Apr 20 , 07:25 UTC Resolved - This incident has been resolved. Apr 20 , 06:41 UTC Update - We are continuing to monitor for any further issues. Apr 20 , 06:38 UTC Monitoring - A fix has been…"
-      },
-      {
-        "title": "Elevated errors on Opus 4.6",
-        "url": "https://status.claude.com/incidents/34yy5hskyw2v",
-        "source": "Claude Status",
-        "published": "2026-04-20T00:00:15.000Z",
-        "summary": "Apr 20 , 00:00 UTC Resolved - This incident has been resolved. Apr 19 , 22:44 UTC Investigating - We are currently investigating this issue."
       }
     ],
     "youtube": [
