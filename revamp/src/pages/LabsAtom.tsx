@@ -32,6 +32,60 @@ type OrbitConfig = {
   settleEase?: 'outCubic' | 'smoothstep'
 }
 
+/* =========================================================
+   ATOM ANIMATION DEFAULTS (as of 2026-04-25)
+   When the user says "go back to default settings", restore the
+   values below verbatim. These are the tuned values; everything
+   else in the file should be left alone.
+   ---------------------------------------------------------
+   AppShell.tsx:    ATOM_DELAY_MS         = 400
+
+   Geometry / speed:
+     RADIUS_A                    = 1.40
+     RADIUS_B                    = 0.85
+     ORBIT_SPEED                 = 3.30
+     N_TRAIL                     = 96
+     ARC                         = Math.PI * 0.62
+     GROUP_ROTATION              = [π/4, π/4, 0]
+
+   ORBITS (per-electron):
+     xy:  laps 3.5, postLandVisibility 0
+     yz:  laps 5,   postLandVisibility 0.33
+     xz:  laps 6,   postLandVisibility 1,
+          settleDurationT 3π, settleEase 'smoothstep'
+
+   Settle & strike timing:
+     SETTLE_DURATION_T           = 2 * Math.PI
+     STRIKE_LEAD_T               = 0.5
+     PULSE_DURATION_MS           = 560
+     POST_STRIKE_HOLD_MS         = 700
+     GLOW_DECAY_MS               = 1500
+     POST_LAND_HOLD_T            = 2.3
+     POST_LAND_FADE_T            = 5.0
+
+   Electron fade-in:
+     FADE_IN_T                   = 4 * Math.PI
+
+   i-dot landing nudge:
+     IDOT_NUDGE_X                =  0.5
+     IDOT_NUDGE_Y                = -2.5
+
+   University reveal:
+     UNI_STAGGER_COMPACT_MS      = 50
+     UNI_STAGGER_LABS_MS         = 80
+     UNI_FLASH_MS                = 300
+     UNI_REVEAL_DELAY_MS         = 200
+
+   Settle ramp:
+     SETTLE_DELAY_MS             = 400
+     SETTLE_DURATION_MS          = 3500
+
+   Post-land electron sizing (inside Electron useFrame):
+     POST_SCALE                  = 1.45
+     POST_HALO_SCALE             = 2.4
+     POST_HALO_OPACITY           = 0.5
+   ========================================================= */
+
 const RADIUS_A = 1.40
 const RADIUS_B = 0.85
 const ORBIT_SPEED = 3.30
