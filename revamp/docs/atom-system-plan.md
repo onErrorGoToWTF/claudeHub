@@ -29,15 +29,36 @@ A reusable atom-system library deployable across the app. One small set of well-
 
 ---
 
-## Three-concept model (locked)
+## Four-concept model (locked)
 
 ```
-Phases       — what the electron is doing (state primitives)
-Transitions  — how adjacent phases blend at the seam
-End effects  — terminal accents fired at sequence END only
+Start effects  — moment accents fired at sequence START
+Phases         — what the electron is doing (state primitives)
+Transitions    — how adjacent phases blend at the seam
+End effects    — moment accents fired at sequence END
 ```
 
-Phases and Transitions are **locked**. End effects haven't been walked through yet — that's the next conversation.
+Phases and Transitions are **locked**. Start + End effects are walking through now.
+
+**Unified moment-accent catalog (locked):** Start effects and end effects share ONE catalog. Each accent declares whether it works `forward` (valid at end), `reverse` (valid at start, auto-reversed time function), or both. Symmetric accents (fade ↔ appear, burst) live as one entry with `at: 'start' | 'end'` selecting the direction. Asymmetric accents (target-hit, activate, spawn-portal) only valid at the side where they semantically make sense.
+
+```ts
+type MomentAccent = {
+  name: string
+  forward: boolean   // valid at sequence END
+  reverse: boolean   // valid at sequence START (runtime auto-reverses time fn)
+  // ... per-accent params (intensity, duration, target, etc.)
+}
+
+type AccentInstance = {
+  accent: MomentAccent
+  at: 'start' | 'end'
+  delayMs: number    // delay-from-sequence-edge
+  duration: number
+}
+```
+
+**Stacking:** Multiple accents can fire at the same edge (start or end), stacked or micro-sequenced via `delayMs`. Example: `target-hit` at end+0ms, `activate` at end+80ms, `fade` at end+200ms.
 
 ---
 
@@ -172,17 +193,71 @@ Don't ship transitions with geometric smoothness but no speed shaping. Both dime
 
 ---
 
-## 3. End effects — NEXT (not yet walked through)
+## 3. End effects (in progress — walking through)
 
-The third leg of the model. Fired at sequence END only — never at intermediate boundaries.
+Fired at sequence END only (or sequence START for reversible accents). Lives in the unified moment-accent catalog above. Per accent: `at`, `delayMs`, `duration` come from `AccentInstance`; per-accent constants are below.
 
-Candidates floated so far:
-- `target-hit` — landing flash when an electron arrives at a destination
-- `activate` — "neon bulb flash" that lights up a target word/award/panel
-- `burst` — brief size pulse + glow (was a phase in old model — reclassified as end effect)
-- `fade` — graceful exit, electron dissolves
+### `target-hit` — landing flash on impact
 
-This is the next conversation. The walkthrough is gated on user `Y` to the standing question.
+**Scope:** coupled both-side flash. Electron's halo blooms AND target glows in the same frame — two halves of one moment.
+
+**Constants:**
+- `electronIntensity` — peak halo-bloom multiplier on the electron itself, `[0, 2]`
+- `targetIntensity` — peak glow-spread multiplier on the target, `[0, 2]`
+- `color` — defaults to electron `head` color (the electron is what arrived; the flash is its energy released). Optional per-instance override for cases where the brand wants the target to dictate the color (e.g. an award medal with its own gold tone).
+
+The two intensity knobs are independent so the user can express asymmetric impact moments — e.g. soft electron + bright target ("the target was ready, just needed activation"), or bright electron + subtle target ("the electron delivered all the energy"). Lab UI may surface them as two sliders, or one slider + a "link/unlink" toggle, depending on layout. Data shape stays 2 knobs.
+
+**Future refinement (recorded, not implemented):** The richer behavior the user described is a **chromatic-shockwave**: at the contact site, electron color is dominant; as the glow propagates outward into the target, it transitions through a mixed gradient zone (blue electron + gold target = greenish via hue interpolation) and finally settles to the target's color at the outer edge. Reads like the electron "pulses through" the target, depositing its energy. Two-stop animated radial gradient with hue interpolation. **For now: simple electron-color-with-override.** Revisit when the chromatic effect can be prototyped at the transitions/end-effects lab.
+
+### `activate` — neon-bulb flash on the target
+
+**Scope:** target-side moment. Atom system delivers a flash burst on the target; the target then owns its own post-activation visual state (CSS class, animation loop, badge state, whatever the target's design language is). Atom system fires once and is done.
+
+**Why pulse-on, not state-change** (decision delegated to system per user direction "I don't wanna overcomplicate how an electron interacts with an existing object"): keeping `activate` as a pulse-on moment means the atom system never holds target lifecycle. The atom dispatches a CustomEvent on the target's DOM ref (e.g. `'atom-activated'`); the target listens and updates its own state. This matches the project's EventTarget pattern (see `component-patterns.md`) and avoids cross-component state coupling.
+
+**Constants:**
+- `color` — defaults to target's accent color (the target is what's being activated, its own color is the natural primary). Falls back to electron `head` color when the target is something generic without its own tone.
+- `intensity` — peak flash brightness multiplier, `[0, 2]`. Single knob (no electron-side, since `activate` is target-only).
+- `spread` — glow radius from target's edge as a multiplier on the target's shorter edge. `[0, 2]`. Defaults `1.0` (glow extends ~1× the target's shorter dimension before fading).
+- `decay` — locked default `sin(πt)` shape over `duration` (no per-instance knob).
+
+### `burst` — size pulse + glow on the electron
+
+**Scope:** electron-only. Position-locked — fires at the electron's current position; doesn't move it. Was a phase in the old model; reclassified as an end effect.
+
+**Constants:**
+- `scaleIntensity` — peak size multiplier on the electron mesh, `[0, 2]`. Decoupled from glow on purpose: lets the user express "big pop + faint glow" (mechanical punch) vs "subtle scale + bright glow" (pure energy release).
+- `glowIntensity` — peak halo bloom multiplier, `[0, 2]`.
+- `color` — peak/default color. Defaults to electron `head` color, optional override.
+- `colorTo` — optional terminal color. If set, the burst color animates from `color` → `colorTo` across `duration`. If not set, color stays constant. Mirrors `pulsate.shiftColorAfter`.
+- `decay` — locked default `sin(πt)` shape over `duration` (no per-instance knob).
+
+### `fade` — graceful exit (reversible)
+
+**Scope:** electron-only. Bidirectional — at sequence END plays opacity `1 → 0`; at sequence START plays reversed (`0 → 1`) and is named `appear` in the consumer-facing catalog.
+
+**Locked principle: trails always dissipate naturally.** The electron's trail is autonomous — it has its own intrinsic decay (opacity ramp, fade texture, time-based fade-out, all in `Electron.tsx`). `fade` does NOT touch the trail. The trail handles itself regardless of any end effect. This is a system-wide invariant, not specific to `fade`.
+
+**Constants:**
+- Operates on **head + halo only**. Opacity ramps `1 → 0` (forward) or `0 → 1` (reversed).
+- `withShrink` — optional boolean. If true, head + halo also shrink to zero scale alongside opacity. More dramatic exit/entrance. Defaults `false`.
+
+**Future refinements (recorded, not implemented):**
+- `trail-linger` — head fades first, trail continues for a beat then fades. Currently this is the AUTOMATIC behavior because trail is autonomous, but if we want explicit control over the trail's post-fade lifetime, it'd grow a knob.
+- `scatter` — electron breaks into particles that scatter outward and fade. Complex; defer.
+
+---
+
+## End effect summary table
+
+| Accent       | Side          | Forward | Reverse | Bidirectional name |
+|--------------|---------------|---------|---------|---------------------|
+| `target-hit` | both          | yes     | no      | —                   |
+| `activate`   | target        | yes     | no      | —                   |
+| `burst`      | electron      | yes     | no (symmetric — looks the same reversed; treat as forward-only for clarity) | — |
+| `fade`       | electron      | yes     | yes     | `appear` (when `at: 'start'`) |
+| `spawn-portal` (deferred) | electron | no | yes | — (start-only) |
 
 ---
 
