@@ -55,6 +55,22 @@ export function App() {
     )
   }
 
+  // /labs/* — diagnostic / experimental stages. Renders bare, outside
+  // the AppShell topbar + bottom nav, so the page is a full canvas for
+  // prototyping. Not linked from anywhere; direct URL access.
+  if (location.pathname.startsWith('/labs/')) {
+    return (
+      <ErrorBoundary>
+        <Suspense fallback={null}>
+          <Routes location={location}>
+            <Route path="/labs/atom" element={<LabsAtom />} />
+            <Route path="/labs/atom-blend-test" element={<LabsAtomBlend />} />
+          </Routes>
+        </Suspense>
+      </ErrorBoundary>
+    )
+  }
+
   return (
     <ErrorBoundary>
       <AppShell>
@@ -86,8 +102,7 @@ export function App() {
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/colophon" element={<Colophon />} />
                 <Route path="/feedback" element={<Feedback />} />
-                <Route path="/labs/atom" element={<LabsAtom />} />
-                <Route path="/labs/atom-blend-test" element={<LabsAtomBlend />} />
+                {/* /labs/* routes render bare, outside the shell — see early return above. */}
                 {/* Legacy: /onboarding now redirects to home — onboarding retired. */}
                 <Route path="/onboarding" element={<Navigate to="/" replace />} />
                 <Route path="*" element={<Dashboard />} />

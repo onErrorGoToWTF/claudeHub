@@ -225,6 +225,11 @@ function ProtoElectron({
   const lastVelMagRef = useRef(0)
   const peakVelRef = useRef(0)
   const lastPhaseIdxRef = useRef(0)
+  // Skip velocity sampling for the first N frames after mount or reset.
+  // Avoids R3F's first-frame delta wonkiness (sometimes near-zero, which
+  // would divide |Δpos| by a tiny dt and produce a stale peak that
+  // permanently pins the chip ratios at 0%).
+  const velWarmupRef = useRef(3)
   // Persistent positions buffer for the trail — reused across frames so
   // the polyline shows accumulated history through phase boundaries.
   const trailPositionsRef = useRef<Float32Array>(new Float32Array(TRAIL_LENGTH * 3))
@@ -241,16 +246,25 @@ function ProtoElectron({
   }, [])
 
   useFrame((_, delta) => {
-    const dt = Math.min(delta, 1 / 30)
+    // Floor at 1/240 (4ms) so a tiny first-frame delta can't divide
+    // a finite Δpos and produce a 60+ velocity spike that pins peakVel.
+    const dt = Math.max(1 / 240, Math.min(delta, 1 / 30))
     tRef.current += dt
     if (tRef.current >= TOTAL_DURATION_S) {
       tRef.current = 0
       // Reset trail + per-boundary worst readings when the loop restarts
       // so a fresh loop after a blend change isn't shadowed by stale data.
+      // Also re-anchor lastPos to phase-0-start (1, 0, 0) — without this,
+      // the next frame's finite-difference would span phase-3-end → phase-0-start
+      // (a ~1-unit jump in one frame ≈ 60 unit/s spike) and lock peakVel high,
+      // which makes every boundary chip read ~0% even when it's actually 30%+.
       trailFilledRef.current = 0
       peakVelRef.current = 0
       boundaryRatiosRef.current = [0, 0, 0]
       lastPhaseIdxRef.current = 0
+      lastPosRef.current = [1, 0, 0]
+      lastVelMagRef.current = 0
+      velWarmupRef.current = 3
     }
 
     const t = tRef.current
@@ -269,20 +283,28 @@ function ProtoElectron({
     const dz = z - lp[2]
     const velMag = Math.hypot(dx, dy, dz) / dt
     const dVel = velMag - lastVelMagRef.current
-    if (velMag > peakVelRef.current) peakVelRef.current = velMag
 
-    // Boundary capture: when phaseIdx just changed (this is the first
-    // frame of a new phase), the |dVel| measured against the previous
-    // frame IS the boundary discontinuity. Record it as the worst-so-far
-    // for that boundary index (boundaryIdx = phaseIdx - 1).
-    if (phaseIdx !== lastPhaseIdxRef.current && phaseIdx > 0 && phaseIdx <= 3) {
-      const boundaryIdx = phaseIdx - 1
-      const ratio = peakVelRef.current > 0 ? Math.abs(dVel) / peakVelRef.current : 0
-      const stored = boundaryRatiosRef.current[boundaryIdx]
-      if (ratio > stored) {
-        const next: [number, number, number] = [...boundaryRatiosRef.current]
-        next[boundaryIdx] = ratio
-        boundaryRatiosRef.current = next
+    // Skip peak / boundary updates during the warmup window so a wonky
+    // first-frame doesn't lock peakVel high. Position + trail still draw.
+    const warmingUp = velWarmupRef.current > 0
+    if (warmingUp) {
+      velWarmupRef.current -= 1
+    } else {
+      if (velMag > peakVelRef.current) peakVelRef.current = velMag
+
+      // Boundary capture: when phaseIdx just changed (this is the first
+      // frame of a new phase), the |dVel| measured against the previous
+      // frame IS the boundary discontinuity. Record it as the worst-so-far
+      // for that boundary index (boundaryIdx = phaseIdx - 1).
+      if (phaseIdx !== lastPhaseIdxRef.current && phaseIdx > 0 && phaseIdx <= 3) {
+        const boundaryIdx = phaseIdx - 1
+        const ratio = peakVelRef.current > 0 ? Math.abs(dVel) / peakVelRef.current : 0
+        const stored = boundaryRatiosRef.current[boundaryIdx]
+        if (ratio > stored) {
+          const next: [number, number, number] = [...boundaryRatiosRef.current]
+          next[boundaryIdx] = ratio
+          boundaryRatiosRef.current = next
+        }
       }
     }
     lastPhaseIdxRef.current = phaseIdx
