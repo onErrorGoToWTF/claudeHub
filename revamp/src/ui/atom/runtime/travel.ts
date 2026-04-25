@@ -204,15 +204,14 @@ export function buildTravel(
   const cosPhi = a > 1e-9 ? uComp / a : 1
   const sinPhi = b > 1e-9 ? perpLen / b : 0
   const phiExit = Math.atan2(sinPhi, cosPhi)
-  // Sweep UNDER the chord — diametrically opposite point on the
-  // ellipse, NOT a mirror across the minor axis. For exit at far-A
-  // (φ_exit = π), this lands at far-B (φ_entry = 2π = 0 in position
-  // but the sweep π → 2π passes through 3π/2 = bottom of ellipse). The
-  // arc dips below the chord so it arrives at far-B going +y, which
-  // matches the destination's CCW orbital tangent at θ=0 — capture is
-  // smooth, the rotation reverses at A's exit (the gravitational-
-  // impulse "energy gift" the user described).
-  const phiEntry = phiExit + Math.PI
+  // Symmetric mirror across the minor axis. Sweep goes OVER the top of
+  // the transit ellipse (φ_exit → π/2 → φ_entry). For exit at far-A
+  // (φ_exit = π), this gives φ_entry = 0 = far-B. With same orbital
+  // rotation at both nuclei, the orbital velocity at far-A is opposite
+  // (in y) to the orbital velocity at far-B — they're on opposite sides
+  // of the chord — so a top-sweep arc starting +y at far-A naturally
+  // ends −y at far-B, matching both. Smooth at both ends.
+  const phiEntry = Math.PI - phiExit
 
   // Materialize P_B from the entry parameter.
   const aCosE = a * Math.cos(phiEntry)

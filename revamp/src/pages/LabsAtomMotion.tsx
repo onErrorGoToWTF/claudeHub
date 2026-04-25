@@ -148,8 +148,11 @@ function makeOrbitBDesc(spec: ElectronSpec): OrbitDesc {
     plane: spec.plane,
     size: ORBIT_SIZE,
     aspect: ORBIT_ASPECT,
-    // Opposite rotation on capture — see plan §"Travel math" + advisor note.
-    omega: spec.cwAtA ? ORBIT_OMEGA_BASE : -ORBIT_OMEGA_BASE,
+    // SAME rotation as A. Visual "opposite spin" at the far-side handoffs
+    // is geometric (electrons on opposite sides of the chord) — same
+    // omega, but at far-A the CW velocity is +y while at far-B it's −y.
+    // Top-sweep transit arc connects them smoothly at both ends.
+    omega: spec.cwAtA ? -ORBIT_OMEGA_BASE : ORBIT_OMEGA_BASE,
     phase: 0,
   }
 }
