@@ -115,7 +115,7 @@ const UNI_REVEAL_DELAY_MS = 200      // pause after final strike before letters 
 // After "University" is fully lit, hold briefly then dim everything
 // (ai + university + i-dot glow) to the debossed resting state.
 const SETTLE_DELAY_MS = 400
-const SETTLE_DURATION_MS = 2500
+const SETTLE_DURATION_MS = 3500
 
 // Scene-wide group rotation applied around the atom. Exposed so target
 // world→local conversion in AtomComposition matches exactly.
