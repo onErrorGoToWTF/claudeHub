@@ -35,17 +35,6 @@ import {
   type Vec3,
 } from '../ui/atom/runtime'
 import { checkComposition, computeWindowMs, evalSequence } from '../ui/atom/runtime/transitions'
-import {
-  IDENTITY_OVERLAY,
-  defaultEndEffect,
-  defaultStartEffect,
-  evalEndEffect,
-  evalStartEffect,
-  type ElectronOverlay,
-  type EndEffectConfig,
-  type StartEffectConfig,
-} from '../ui/atom/runtime/endEffects'
-import { ATOM } from '../ui/atom/constants'
 import s from './LabsAtomTransitions.module.css'
 
 extend({ MeshLineGeometry, MeshLineMaterial })
@@ -83,8 +72,6 @@ function ElectronTransitionProbe({
   a,
   b,
   windowMs,
-  startEffect,
-  endEffect,
   replayKey,
   colors,
   mathRef,
@@ -95,8 +82,6 @@ function ElectronTransitionProbe({
   a: StateConfig
   b: StateConfig
   windowMs: number
-  startEffect: StartEffectConfig | null
-  endEffect: EndEffectConfig | null
   replayKey: number
   colors: { head: string; halo: string; trail: string }
   mathRef: React.MutableRefObject<AtomLabMathState>
@@ -220,79 +205,39 @@ function ElectronTransitionProbe({
     const elapsed = elapsedMsRef.current
     const durA = Math.max(1, a.duration)
     const durB = Math.max(1, b.duration)
-    const startDur = startEffect?.duration ?? 0
-    const endDur = endEffect?.duration ?? 0
-    const seqDur = durA + durB
-    const totalDur = startDur + seqDur + endDur
+    const totalDur = durA + durB
 
-    let phase: 'start' | 'A' | 'window' | 'B' | 'end'
-    let tLocal: number
-    let position: Vec3
-    let scale: number
-    let overlay: ElectronOverlay = IDENTITY_OVERLAY
-
-    if (startDur > 0 && elapsed < startDur) {
-      // Start phase — electron at A's t=0 with start-effect overlay.
-      phase = 'start'
-      tLocal = elapsed / startDur
-      const r = evalState(a, 0, { nucleus: [0, 0, 0] })
-      position = r.position
-      scale = r.scale
-      if (startEffect) overlay = evalStartEffect(startEffect, tLocal)
-    } else if (elapsed < startDur + seqDur) {
-      // Sequence (A → window → B) via Hermite seam blend.
-      const seqElapsed = elapsed - startDur
-      const seqResult = evalSequence(
-        {
-          a,
-          b,
-          ctxA: { nucleus: [0, 0, 0] },
-          ctxB: { nucleus: [0, 0, 0], prev: { endPos: aEndPos, endTangent: [0, 0, 0] } },
-          windowMs,
-        },
-        Math.min(seqElapsed, seqDur),
-      )
-      phase = seqResult.phase
-      tLocal = seqResult.tLocal
-      position = seqResult.position
-      scale = seqResult.scale
-    } else {
-      // End phase — electron at B's t=1 with end-effect overlay.
-      phase = 'end'
-      tLocal = endDur > 0 ? Math.min(1, (elapsed - startDur - seqDur) / endDur) : 1
-      const r = evalState(b, 1, {
-        nucleus: [0, 0, 0],
-        prev: { endPos: aEndPos, endTangent: [0, 0, 0] },
-      })
-      position = r.position
-      scale = r.scale
-      if (endEffect) overlay = evalEndEffect(endEffect, tLocal)
-    }
-
-    const finalScale = scale * overlay.scaleMult
+    const seqResult = evalSequence(
+      {
+        a,
+        b,
+        ctxA: { nucleus: [0, 0, 0] },
+        ctxB: { nucleus: [0, 0, 0], prev: { endPos: aEndPos, endTangent: [0, 0, 0] } },
+        windowMs,
+      },
+      Math.min(elapsed, totalDur),
+    )
+    const phase = seqResult.phase
+    const tLocal = seqResult.tLocal
+    const position = seqResult.position
+    const scale = seqResult.scale
 
     headRef.current.position.set(position[0], position[1], position[2])
-    headRef.current.scale.setScalar(finalScale)
+    headRef.current.scale.setScalar(scale)
     if (headMatRef.current) {
-      headMatRef.current.opacity = overlay.opacityMult
-      if (overlay.colorOverride) {
-        headMatRef.current.color.set(overlay.colorOverride)
-      } else {
-        headMatRef.current.color.set(colors.head)
-      }
+      headMatRef.current.opacity = 1
+      headMatRef.current.color.set(colors.head)
     }
     if (haloRef.current) {
       haloRef.current.position.set(position[0], position[1], position[2])
-      haloRef.current.scale.setScalar(finalScale)
+      haloRef.current.scale.setScalar(scale)
     }
     if (haloMatRef.current) {
-      haloMatRef.current.opacity = 0.35 * overlay.opacityMult * overlay.glowMult
+      haloMatRef.current.opacity = 0.35
     }
 
-    // Trail: skip during 'start' (electron is materializing at the anchor)
-    // so the trail doesn't seed from world origin. End phase still samples
-    // (locks at one point, naturally collapses).
-    if (phase !== 'start') {
+    // Trail
+    {
       const buf = bufRef.current!
       const idx = insertIdxRef.current
       buf[idx * 3] = position[0]
@@ -350,15 +295,7 @@ function ElectronTransitionProbe({
     lastVRef.current = vMag
 
     const stateName =
-      phase === 'start'
-        ? `${startEffect?.type ?? 'start'}→${a.type}`
-        : phase === 'A'
-          ? a.type
-          : phase === 'B'
-            ? b.type
-            : phase === 'end'
-              ? `${b.type}→${endEffect?.type ?? 'end'}`
-              : `${a.type}→${b.type}`
+      phase === 'A' ? a.type : phase === 'B' ? b.type : `${a.type}→${b.type}`
     mathRef.current = {
       phase,
       stateName,
@@ -477,8 +414,6 @@ export function LabsAtomTransitions() {
     return { ...sp, direction: 'inward' as const }
   })
   const [transitionWindow, setTransitionWindow] = useState(0.5)
-  const [startEffect, setStartEffect] = useState<StartEffectConfig | null>(null)
-  const [endEffect, setEndEffect] = useState<EndEffectConfig | null>(null)
   const [colors] = useState({ head: '#ffffff', halo: '#ffffff', trail: '#ffffff' })
   const [replayKey, setReplayKey] = useState(0)
   const [events, setEvents] = useState<AtomLabEvent[]>([])
@@ -533,38 +468,6 @@ export function LabsAtomTransitions() {
   }, [a])
 
 
-  /** Recreate the production logo's motion: appear in → orbit (xy plane,
-   *  ~4 laps with the locked ellipse aspect from constants.ts) → Hermite
-   *  blend → spiral.inward collapse → burst on landing. Single-electron
-   *  approximation; the real logo runs three on different planes. Targets
-   *  the origin in the lab (the production logo targets the i-dot DOM
-   *  coord, which isn't available outside the topbar scene). */
-  const loadLogoPreset = useCallback(() => {
-    const aspect = ATOM.orbit.radiusB / ATOM.orbit.radiusA  // 0.85 / 1.40
-    setA({
-      type: 'orbit',
-      size: ATOM.orbit.radiusA,
-      aspect,
-      revolutions: 4,
-      duration: 4000,
-      plane: 'xy',
-    })
-    setB({
-      type: 'spiral',
-      direction: 'inward',
-      size: ATOM.orbit.radiusA,
-      aspect,
-      revolutions: 1.5,
-      duration: 1500,
-      plane: 'xy',
-    })
-    setTransitionWindow(0.5)
-    setStartEffect({ type: 'appear', withShrink: false, duration: 500 })
-    setEndEffect({ type: 'burst', scaleIntensity: 1.45, glowIntensity: 2.5, duration: 600 })
-    setSeam(null)
-    setReplayKey((k) => k + 1)
-    pushEvent('preset·logo')
-  }, [pushEvent])
 
   const hudConfig = useMemo<Record<string, unknown>>(() => {
     const aBit =
@@ -582,11 +485,9 @@ export function LabsAtomTransitions() {
       'B.dur': b.duration,
       window: transitionWindow.toFixed(2),
       windowMs: Math.round(windowMs),
-      start: startEffect ? `${startEffect.type}/${startEffect.duration}ms` : 'none',
-      end: endEffect ? `${endEffect.type}/${endEffect.duration}ms` : 'none',
       cam: zoom.toFixed(1),
     }
-  }, [a, b, transitionWindow, windowMs, startEffect, endEffect, zoom])
+  }, [a, b, transitionWindow, windowMs, zoom])
 
   return (
     <div className={s.root}>
@@ -603,8 +504,6 @@ export function LabsAtomTransitions() {
               a={a}
               b={b}
               windowMs={windowMs}
-              startEffect={startEffect}
-              endEffect={endEffect}
               replayKey={replayKey}
               colors={colors}
               mathRef={mathRef}
@@ -671,60 +570,9 @@ export function LabsAtomTransitions() {
             <div className={s.warning}>{compositionError}</div>
           )}
 
-          <div className={s.section}>
-            <p className={s.sectionLabel}>Preset</p>
-            <button
-              type="button"
-              className={s.radio}
-              style={{ width: '100%', justifyContent: 'center' }}
-              onClick={loadLogoPreset}
-            >
-              ↻ Load logo preset
-            </button>
-          </div>
-
-          <div className={s.section}>
-            <p className={s.sectionLabel}>Start effect</p>
-            <div className={s.field}>
-              <select
-                className={s.select}
-                style={{ flex: 1 }}
-                value={startEffect?.type ?? 'none'}
-                onChange={(e) => {
-                  const v = e.target.value
-                  if (v === 'none') setStartEffect(null)
-                  else if (v === 'appear') setStartEffect(defaultStartEffect('appear'))
-                  else if (v === 'burst') setStartEffect(defaultStartEffect('burst'))
-                  setReplayKey((k) => k + 1)
-                }}
-              >
-                <option value="none">none</option>
-                <option value="appear">appear</option>
-                <option value="burst">burst</option>
-              </select>
-            </div>
-          </div>
-
-          <div className={s.section}>
-            <p className={s.sectionLabel}>End effect</p>
-            <div className={s.field}>
-              <select
-                className={s.select}
-                style={{ flex: 1 }}
-                value={endEffect?.type ?? 'none'}
-                onChange={(e) => {
-                  const v = e.target.value
-                  if (v === 'none') setEndEffect(null)
-                  else if (v === 'burst') setEndEffect(defaultEndEffect('burst'))
-                  else if (v === 'fade') setEndEffect(defaultEndEffect('fade'))
-                  setReplayKey((k) => k + 1)
-                }}
-              >
-                <option value="none">none</option>
-                <option value="burst">burst</option>
-                <option value="fade">fade</option>
-              </select>
-            </div>
+          <div className={s.note}>
+            Pure 2-state seam test. Build full sequences (start effect →
+            chain of states → end effect) at <code>/labs/atom-sequence</code>.
           </div>
 
           <div className={s.section}>

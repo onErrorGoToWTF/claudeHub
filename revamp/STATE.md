@@ -58,7 +58,55 @@ Running ledger. Rehydrate from this after context compaction.
 
 ## Remaining work (prioritized)
 
-### Active (next up) — ATOM TRANSITION-MATH ITERATION
+### Active (next up) — ATOM CANONICAL TRANSITIONS, PAIR-BY-PAIR
+
+**Direction locked 2026-04-25 (mid-session redesign):** the user's call is to **decide a canonical transition geometry per state pair**, lock it in, and stop manipulating per-pair values. Each adjacent state-pair gets one specific blend that reads "right" — not a knob the user has to dial. First pair to implement: **line ↔ orbit** as a corkscrew.
+
+**Scope of "locked vs tunable":** transitions get locked; state PARAMETERS stay tunable.
+
+| Layer | Locked or tunable? |
+|-------|--------------------|
+| Motion primitives (orbit / spiral / straight / pulsate / pause) | Locked — five state types |
+| State parameters (size, aspect, plane, tilt X/Y, duration, revolutions, intensity, etc.) | Tunable per state |
+| Transition geometry between adjacent states | **Locked — canonical per pair** |
+| Electron appearance (head / halo / trail color, glow, scale) | Tunable |
+| Start/end effects (appear / burst / fade) | Selectable + tunable per sequence |
+
+The spiral.inward primitive is explicitly kept ("obviously an amazing one. I wanna keep").
+
+> "I think we should decide on these formats of transitions and just work on those instead of trying to manipulate every value."
+> "Will work on each one individually. The first one will be line to orbit and orbit to line."
+> "It makes more sense to finalize on how these transition between states so the math becomes simpler. It's a set kind of format."
+
+**Scaffolding shipped:**
+- `evalSequenceN` (multi-state Hermite-blend evaluator) now dispatches through a pair-aware `blendAt()` in `revamp/src/ui/atom/runtime/transitions.ts`. Currently every pair routes through the universal Hermite cubic (the C1 fallback). Two `TODO(next session)` markers in `blendAt` indicate where the corkscrew functions go.
+- `/labs/atom-sequence` lab built — composes 2–3 states with start/end effects, save/load patterns to localStorage with user-named slots (e.g. "a1"), copy-pattern-as-JSON button. **Per-pair transitionWindow slider has been removed**: each seam now displays the canonical-transition label (e.g. "corkscrew (line opens into orbit)" / "smooth blend (Hermite cubic)") read-only, so the user composes states + sees what blend the system applies.
+- `/labs/atom-transitions` retains 2-state seam testing for math validation; start/end effects + the logo preset moved out (those belong to a sequence, not a transition).
+
+**Per-pair transition geometry — canonical specifications:**
+
+| Pair | Geometry | Status |
+|------|----------|--------|
+| straight → orbit | Corkscrew. Tight near the line; radius opens up to orbit's R. | TODO — first up |
+| orbit → straight | Corkscrew reversed. Orbit coils to a tight corkscrew; becomes line. | TODO |
+| orbit ↔ orbit | Hermite cubic | shipped (universal fallback) |
+| orbit ↔ spiral.in | Hermite cubic | shipped |
+| spiral.in → orbit | Hermite cubic | shipped |
+| spiral.in ↔ straight | TBD per session | currently Hermite |
+| pulsate ↔ * | Hermite (pulsate locks position; tangent=0 → trivial blend) | shipped |
+| pause ↔ * | Hermite (pause locks position + tangent → trivial speed ramp) | shipped |
+
+**Corkscrew design hint (from user):** "tight corkscrew that opens up into the orbit" + reverse for orbit→line. Geometrically: helix where radius is small near line-end, grows to orbit's R at orbit-start; guide axis runs from line-end-position to orbit-center; n turns of corkscrew across the window. Match velocity at u=0 to line tangent; at u=1 to orbit tangent. Reuse existing `stateTangentNormalized()` helper for boundary tangents.
+
+**Next-session entry point:**
+1. Open `revamp/src/ui/atom/runtime/transitions.ts`. The `blendAt()` dispatcher is at ~L289. The two TODO markers point at where to insert `corkscrewStraightToOrbit()` and `corkscrewOrbitToStraight()`.
+2. Implement the corkscrew. Keep C1 at u=0 and u=1 (use boundary-velocity matching like the Hermite version does — reuse `stateTangentNormalized()`).
+3. Validate on `/labs/atom-sequence` with the **Atom forms** preset (`straight → orbit → spiral.in → burst`), which exercises straight→orbit. Save patterns "a1", "a2", etc. to compare iterations.
+4. When line↔orbit reads right, move to the next pair (likely spiral↔straight).
+
+---
+
+### Earlier — ATOM TRANSITION-MATH ITERATION (LANDED)
 
 **Lab redesign shipped 2026-04-25.** The 7-chunk tracker in [`revamp/docs/atom-system-plan.md`](docs/atom-system-plan.md) is fully complete:
 - `/labs/atom-states` — single-state isolation lab (orbit / straight / spiral / pulsate / pause), per-state controls, color picker, Replay, HUD.

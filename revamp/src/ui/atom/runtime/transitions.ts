@@ -186,3 +186,167 @@ export function evalSequence(
 
   return { phase: 'window', position: [px, py, pz], scale, tLocal: u }
 }
+
+/* =========================================================================
+   N-state sequence — generalizes evalSequence to any chain of states
+   ========================================================================= */
+
+export type SequenceNFrame = {
+  /** 'pure' = inside one state's region (no blend);
+   *  'window' = inside the Hermite window between state[stateIndex] and
+   *  state[stateIndex+1]. */
+  phase: 'pure' | 'window'
+  /** Index of the active state (or, in window phase, of the LEFT state
+   *  of the blended pair). */
+  stateIndex: number
+  position: Vec3
+  scale: number
+  /** Local progress within the active region: 0..1 within the state for
+   *  'pure', 0..1 across the window for 'window'. */
+  tLocal: number
+}
+
+export type SequenceNCtx = {
+  states: StateConfig[]
+  /** One StateContext per state. ctxs[i].prev should carry the endPos +
+   *  endTangent of state[i-1]; ctxs[0] has no prev. */
+  ctxs: StateContext[]
+  /** One windowMs per adjacent state pair. Length = states.length - 1. */
+  windowsMs: number[]
+}
+
+/** Evaluate a multi-state sequence at `elapsedMs` (elapsed since the
+ *  first state began — *excludes* any start-effect duration). Applies
+ *  Hermite blending across each adjacent state's window, mirroring the
+ *  2-state evalSequence math but iterated over N states. */
+export function evalSequenceN(
+  seq: SequenceNCtx,
+  elapsedMs: number,
+): SequenceNFrame {
+  const { states, ctxs, windowsMs } = seq
+  const N = states.length
+  // End-time of each state (cumulative).
+  const ends: number[] = []
+  let acc = 0
+  for (let i = 0; i < N; i++) {
+    acc += Math.max(1, states[i].duration)
+    ends.push(acc)
+  }
+  const totalDur = acc
+  const e = Math.min(Math.max(0, elapsedMs), totalDur)
+
+  // Find state i: smallest i where e ≤ ends[i].
+  let i = 0
+  while (i < N - 1 && e > ends[i]) i++
+
+  const durI = Math.max(1, states[i].duration)
+  const stateStart = i === 0 ? 0 : ends[i - 1]
+  const stateEnd = ends[i]
+  const hPrev = i > 0 ? Math.min(windowsMs[i - 1] * 0.5, Math.max(1, states[i - 1].duration) * 0.5, durI * 0.5) : 0
+  const hNext = i < N - 1 ? Math.min(windowsMs[i] * 0.5, durI * 0.5, Math.max(1, states[i + 1].duration) * 0.5) : 0
+
+  // Window with the NEXT state — left half (e is approaching stateEnd).
+  if (i < N - 1 && e >= stateEnd - hNext) {
+    return blendAt(
+      states[i], ctxs[i],
+      states[i + 1], ctxs[i + 1],
+      windowsMs[i], stateEnd, e, i,
+    )
+  }
+  // Window with the PREVIOUS state — right half (e is leaving stateStart).
+  if (i > 0 && e <= stateStart + hPrev) {
+    return blendAt(
+      states[i - 1], ctxs[i - 1],
+      states[i], ctxs[i],
+      windowsMs[i - 1], stateStart, e, i - 1,
+    )
+  }
+
+  // Pure state i.
+  const t = (e - stateStart) / Math.max(1, stateEnd - stateStart)
+  const r = evalState(states[i], Math.min(1, Math.max(0, t)), ctxs[i])
+  return { phase: 'pure', stateIndex: i, position: r.position, scale: r.scale, tLocal: t }
+}
+
+/** Default `transitionWindow` for canonical-blend dispatch. The sequence
+ *  lab no longer exposes this as a slider — the per-pair geometry IS
+ *  the design decision; the window length is fixed at a sensible
+ *  default that keeps the blend region at ~25% of the shorter adjacent
+ *  state. */
+export const CANONICAL_TRANSITION_WINDOW = 0.5
+
+/** Pair-aware blend dispatcher. The user-facing model: "decide canonical
+ *  transitions per pair; don't manipulate every value." Routes to a
+ *  pair-specific geometry function:
+ *
+ *    straight ↔ orbit     →  corkscrew (TODO: implement geometry)
+ *    everything else      →  Hermite cubic (universal C1 fallback)
+ *
+ *  Both produce C1-continuous paths at the window edges. The corkscrew
+ *  pair-specific implementations land in the next session per user
+ *  direction ("first one will be line to orbit and orbit to line").
+ *  Until then those pairs route through Hermite so the system runs. */
+function blendAt(
+  a: StateConfig, ctxA: StateContext,
+  b: StateConfig, ctxB: StateContext,
+  windowMs: number,
+  seamMs: number,
+  elapsedMs: number,
+  pairIndex: number,
+): SequenceNFrame {
+  // TODO(next session): implement corkscrew for (straight, orbit) — line
+  // gradually corkscrews into the orbit, starting tight near the line and
+  // opening up to the orbit's radius.
+  // TODO(next session): implement corkscrew for (orbit, straight) — orbit
+  // coils up into a tight corkscrew that becomes a straight line.
+  // For now both fall through to the universal Hermite blend so the
+  // sequence still runs end-to-end.
+  return hermiteBlendAt(a, ctxA, b, ctxB, windowMs, seamMs, elapsedMs, pairIndex)
+}
+
+/** Hermite cubic at a specific point inside the window between A and B,
+ *  centered at `seamMs` in elapsed-time. Extracted so evalSequenceN can
+ *  reuse the math without recomputing window bounds. */
+function hermiteBlendAt(
+  a: StateConfig, ctxA: StateContext,
+  b: StateConfig, ctxB: StateContext,
+  windowMs: number,
+  seamMs: number,
+  elapsedMs: number,
+  pairIndex: number,
+): SequenceNFrame {
+  const D_A = Math.max(1, a.duration)
+  const D_B = Math.max(1, b.duration)
+  const h = Math.min(windowMs * 0.5, D_A * 0.5, D_B * 0.5)
+  const u = (elapsedMs - (seamMs - h)) / (2 * h)
+
+  const t_a0 = 1 - h / D_A
+  const t_b1 = h / D_B
+  const a_state = evalState(a, t_a0, ctxA)
+  const b_state = evalState(b, t_b1, ctxB)
+  const p0 = a_state.position
+  const p1 = b_state.position
+
+  const tan_a = stateTangentNormalized(a, t_a0, ctxA)
+  const tan_b = stateTangentNormalized(b, t_b1, ctxB)
+  const sA = (2 * h) / D_A
+  const sB = (2 * h) / D_B
+  const m0: Vec3 = [tan_a[0] * sA, tan_a[1] * sA, tan_a[2] * sA]
+  const m1: Vec3 = [tan_b[0] * sB, tan_b[1] * sB, tan_b[2] * sB]
+
+  const u2 = u * u
+  const u3 = u2 * u
+  const h00 = 2 * u3 - 3 * u2 + 1
+  const h10 = u3 - 2 * u2 + u
+  const h01 = -2 * u3 + 3 * u2
+  const h11 = u3 - u2
+
+  const px = h00 * p0[0] + h10 * m0[0] + h01 * p1[0] + h11 * m1[0]
+  const py = h00 * p0[1] + h10 * m0[1] + h01 * p1[1] + h11 * m1[1]
+  const pz = h00 * p0[2] + h10 * m0[2] + h01 * p1[2] + h11 * m1[2]
+
+  const ss = u * u * (3 - 2 * u)
+  const scale = a_state.scale + (b_state.scale - a_state.scale) * ss
+
+  return { phase: 'window', stateIndex: pairIndex, position: [px, py, pz], scale, tLocal: u }
+}
