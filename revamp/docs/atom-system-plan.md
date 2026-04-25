@@ -497,13 +497,16 @@ The user has authorized autonomous chunked execution of the lab pages, deploying
     - Verified by probe build: SHA literal lands in dist/assets/index-*.js.
     - HUD reads from import.meta.env.VITE_GIT_COMMIT.
 
-[ ] Chunk 3 — States lab (/labs/atom-states)
+[x] Chunk 3 — States lab (/labs/atom-states)
     - State picker (radio: orbit | straight | spiral | pulsate | pause)
-    - Per-state controls panel (top-right floating card, collapse-to-icon below 700px)
-    - Color picker (separate sub-section)
-    - Replay button
-    - Mounts <AtomLabHud /> with current state config
-    - Math state populated from the running state's positionFn/scaleFn output
+    - Per-state controls panel (top-right floating card, ×-collapsible)
+    - Color picker (head/halo/trail) — direct material tint, system deferred
+    - Replay button (re-seeds elapsed=0, resets trail buffer)
+    - Mounts <AtomLabHud /> with compact config + 30Hz math + event log
+    - Runtime modules under src/ui/atom/runtime/{types,orbit,straight,
+      spiral,pulsate,pause,index}.ts — positionFn/scaleFn per state, plus
+      evalState() / evalVelocityMagnitude() / defaultConfigFor() helpers
+      that Chunk 4 (transitions lab) will reuse.
 
 [ ] Chunk 4 — Transitions lab (/labs/atom-transitions)
     - State A picker, State B picker (with composition-rule validation — disable invalid combos)

@@ -27,6 +27,7 @@ const Settings        = lazy(() => import('../pages/Settings').then(m => ({ defa
 const SignIn          = lazy(() => import('../pages/SignIn').then(m => ({ default: m.SignIn })))
 const LabsAtom        = lazy(() => import('../pages/LabsAtom').then(m => ({ default: m.LabsAtom })))
 const LabsAtomBlend   = lazy(() => import('../pages/LabsAtomBlend').then(m => ({ default: m.LabsAtomBlend })))
+const LabsAtomStates  = lazy(() => import('../pages/LabsAtomStates').then(m => ({ default: m.LabsAtomStates })))
 
 export function App() {
   const location = useLocation()
@@ -65,6 +66,7 @@ export function App() {
           <Routes location={location}>
             <Route path="/labs/atom" element={<LabsAtom />} />
             <Route path="/labs/atom-blend-test" element={<LabsAtomBlend />} />
+            <Route path="/labs/atom-states" element={<LabsAtomStates />} />
           </Routes>
         </Suspense>
       </ErrorBoundary>
