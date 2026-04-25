@@ -35,6 +35,16 @@ import {
   type StateType,
   type Vec3,
 } from '../ui/atom/runtime'
+import {
+  IDENTITY_OVERLAY,
+  defaultEndEffect,
+  defaultStartEffect,
+  evalEndEffect,
+  evalStartEffect,
+  type ElectronOverlay,
+  type EndEffectConfig,
+  type StartEffectConfig,
+} from '../ui/atom/runtime/endEffects'
 import s from './LabsAtomStates.module.css'
 
 extend({ MeshLineGeometry, MeshLineMaterial })
@@ -65,6 +75,8 @@ const DEFAULT_COLORS: Colors = {
 
 function ElectronProbe({
   config,
+  startEffect,
+  endEffect,
   replayKey,
   colors,
   mathRef,
@@ -72,6 +84,8 @@ function ElectronProbe({
   onComplete,
 }: {
   config: StateConfig
+  startEffect: StartEffectConfig | null
+  endEffect: EndEffectConfig | null
   replayKey: number
   colors: Colors
   mathRef: React.MutableRefObject<AtomLabMathState>
@@ -148,57 +162,110 @@ function ElectronProbe({
     if (reducedMotion) return
     const dtMs = Math.min(delta, 1 / 30) * 1000
     elapsedMsRef.current += dtMs
-    const duration = Math.max(1, config.duration)
-    const tRaw = elapsedMsRef.current / duration
-    const t = Math.min(1, Math.max(0, tRaw))
+    const elapsed = elapsedMsRef.current
 
-    const { position, scale } = evalState(config, t, ZERO_CTX)
+    const startDur = startEffect?.duration ?? 0
+    const stateDur = Math.max(1, config.duration)
+    const endDur = endEffect?.duration ?? 0
+    const totalDur = startDur + stateDur + endDur
+
+    // Three-phase timeline: start (state frozen at t=0 with appear/burst
+    // overlay) → state (full motion) → end (state frozen at t=1 with
+    // burst/fade overlay). Position + scale come from evalState; the
+    // overlay layers multiplicative tweaks on top.
+    let phase: 'start' | 'state' | 'end'
+    let tInPhase: number
+    let stateT: number
+    let overlay: ElectronOverlay
+
+    if (startDur > 0 && elapsed < startDur) {
+      phase = 'start'
+      tInPhase = elapsed / startDur
+      stateT = 0
+      overlay = startEffect ? evalStartEffect(startEffect, tInPhase) : IDENTITY_OVERLAY
+    } else if (elapsed < startDur + stateDur) {
+      phase = 'state'
+      tInPhase = (elapsed - startDur) / stateDur
+      stateT = tInPhase
+      overlay = IDENTITY_OVERLAY
+    } else {
+      phase = 'end'
+      tInPhase = endDur > 0 ? Math.min(1, (elapsed - startDur - stateDur) / endDur) : 1
+      stateT = 1
+      overlay = endEffect ? evalEndEffect(endEffect, tInPhase) : IDENTITY_OVERLAY
+    }
+
+    const { position, scale: baseScale } = evalState(config, stateT, ZERO_CTX)
+    const finalScale = baseScale * overlay.scaleMult
+
     headRef.current.position.set(position[0], position[1], position[2])
-    headRef.current.scale.setScalar(scale)
+    headRef.current.scale.setScalar(finalScale)
+    if (headMatRef.current) {
+      headMatRef.current.opacity = overlay.opacityMult
+      if (overlay.colorOverride) {
+        headMatRef.current.color.set(overlay.colorOverride)
+      } else {
+        headMatRef.current.color.set(colors.head)
+      }
+    }
     if (haloRef.current) {
       haloRef.current.position.set(position[0], position[1], position[2])
-      haloRef.current.scale.setScalar(scale)
+      haloRef.current.scale.setScalar(finalScale)
+    }
+    if (haloMatRef.current) {
+      haloMatRef.current.opacity = 0.35 * overlay.opacityMult * overlay.glowMult
     }
 
-    // Trail: append current position to ring buffer.
-    const buf = bufRef.current!
-    const idx = insertIdxRef.current
-    buf[idx * 3] = position[0]
-    buf[idx * 3 + 1] = position[1]
-    buf[idx * 3 + 2] = position[2]
-    insertIdxRef.current = (idx + 1) % TRAIL_SEGMENTS
-    const unroll = new Float32Array(TRAIL_SEGMENTS * 3)
-    for (let i = 0; i < TRAIL_SEGMENTS; i++) {
-      const src = (insertIdxRef.current + i) % TRAIL_SEGMENTS
-      unroll[i * 3] = buf[src * 3]
-      unroll[i * 3 + 1] = buf[src * 3 + 1]
-      unroll[i * 3 + 2] = buf[src * 3 + 2]
-    }
-    if (trailGeomRef.current?.setPoints) {
-      trailGeomRef.current.setPoints(unroll)
+    // Trail: append current position. Skip while in 'start' phase (electron
+    // is materializing — no trail yet) so the trail doesn't ghost from the
+    // appear-position. Trail naturally fades during 'end' via its own alpha
+    // ramp + the head's opacity-mult; per locked invariant, end effects do
+    // not directly touch the trail.
+    if (phase !== 'start') {
+      const buf = bufRef.current!
+      const idx = insertIdxRef.current
+      buf[idx * 3] = position[0]
+      buf[idx * 3 + 1] = position[1]
+      buf[idx * 3 + 2] = position[2]
+      insertIdxRef.current = (idx + 1) % TRAIL_SEGMENTS
+      const unroll = new Float32Array(TRAIL_SEGMENTS * 3)
+      for (let i = 0; i < TRAIL_SEGMENTS; i++) {
+        const src = (insertIdxRef.current + i) % TRAIL_SEGMENTS
+        unroll[i * 3] = buf[src * 3]
+        unroll[i * 3 + 1] = buf[src * 3 + 1]
+        unroll[i * 3 + 2] = buf[src * 3 + 2]
+      }
+      if (trailGeomRef.current?.setPoints) {
+        trailGeomRef.current.setPoints(unroll)
+      }
     }
 
-    // Math line: velocity-mag in scene-units / state-duration normalized t.
-    // Convert to scene-units / second by dividing by (duration / 1000).
-    const vNorm = evalVelocityMagnitude(config, t, ZERO_CTX)
-    const vMag = vNorm / (duration / 1000)
+    const vNorm = evalVelocityMagnitude(config, stateT, ZERO_CTX)
+    const vMag = vNorm / (stateDur / 1000)
     const extra =
-      config.type === 'pulsate'
-        ? `scale=${scale.toFixed(3)}`
-        : `pos=(${position[0].toFixed(2)},${position[1].toFixed(2)},${position[2].toFixed(2)})`
+      phase === 'state'
+        ? config.type === 'pulsate'
+          ? `scale=${finalScale.toFixed(3)}`
+          : `pos=(${position[0].toFixed(2)},${position[1].toFixed(2)},${position[2].toFixed(2)})`
+        : `phase=${phase} sM=${overlay.scaleMult.toFixed(2)} oM=${overlay.opacityMult.toFixed(2)}`
+    const stateName =
+      phase === 'state'
+        ? config.type
+        : phase === 'start'
+          ? `${startEffect?.type ?? 'start'}→${config.type}`
+          : `${config.type}→${endEffect?.type ?? 'end'}`
     mathRef.current = {
-      phase: 'state',
-      stateName: config.type,
-      t,
+      phase,
+      stateName,
+      t: tInPhase,
       vMag,
       extra,
     }
 
-    if (t >= 1 && !completedRef.current) {
+    if (elapsed >= totalDur && !completedRef.current) {
       completedRef.current = true
       onComplete()
     } else {
-      // Keep frameloop=demand spinning until we reach t=1.
       invalidate()
     }
   })
@@ -409,6 +476,8 @@ function DirSelect({
 export function LabsAtomStates() {
   const [config, setConfig] = useState<StateConfig>(() => defaultConfigFor('orbit'))
   const [colors, setColors] = useState<Colors>(DEFAULT_COLORS)
+  const [startEffect, setStartEffect] = useState<StartEffectConfig | null>(null)
+  const [endEffect, setEndEffect] = useState<EndEffectConfig | null>(null)
   const [replayKey, setReplayKey] = useState(0)
   const [events, setEvents] = useState<AtomLabEvent[]>([])
   const [collapsed, setCollapsed] = useState(false)
@@ -442,6 +511,24 @@ export function LabsAtomStates() {
     pushEvent(`replay·${config.type}`)
   }, [config.type, pushEvent])
 
+  const cycleStartEffect = useCallback(() => {
+    setStartEffect((cur) => {
+      if (cur === null) return defaultStartEffect('appear')
+      if (cur.type === 'appear') return defaultStartEffect('burst')
+      return null
+    })
+    setReplayKey((k) => k + 1)
+  }, [])
+
+  const cycleEndEffect = useCallback(() => {
+    setEndEffect((cur) => {
+      if (cur === null) return defaultEndEffect('burst')
+      if (cur.type === 'burst') return defaultEndEffect('fade')
+      return null
+    })
+    setReplayKey((k) => k + 1)
+  }, [])
+
   const hudConfig = useMemo<Record<string, unknown>>(() => {
     const base: Record<string, unknown> = {
       type: config.type,
@@ -459,8 +546,10 @@ export function LabsAtomStates() {
       base.peak = config.intensity
       base.pulses = config.pulses
     }
+    base.start = startEffect ? `${startEffect.type}/${startEffect.duration}ms` : 'none'
+    base.end = endEffect ? `${endEffect.type}/${endEffect.duration}ms` : 'none'
     return base
-  }, [config])
+  }, [config, startEffect, endEffect])
 
   return (
     <div className={s.root}>
@@ -473,6 +562,8 @@ export function LabsAtomStates() {
           <ambientLight intensity={1} />
           <ElectronProbe
             config={config}
+            startEffect={startEffect}
+            endEffect={endEffect}
             replayKey={replayKey}
             colors={colors}
             mathRef={mathRef}
@@ -515,6 +606,94 @@ export function LabsAtomStates() {
           <div className={s.section}>
             <p className={s.sectionLabel}>Constants</p>
             <StateConstants config={config} setConfig={updateConfig} />
+          </div>
+
+          <div className={s.section}>
+            <p className={s.sectionLabel}>Start effect</p>
+            <button
+              type="button"
+              className={s.radio}
+              style={{ width: '100%', justifyContent: 'flex-start' }}
+              onClick={cycleStartEffect}
+            >
+              {startEffect ? startEffect.type : 'none'}
+              <span style={{ marginLeft: 'auto', opacity: 0.5, fontSize: 11 }}>
+                {startEffect ? `${startEffect.duration}ms` : 'tap to cycle'}
+              </span>
+            </button>
+            {startEffect?.type === 'burst' && (
+              <>
+                <Slider label="scale" value={startEffect.scaleIntensity} min={0} max={2} step={0.05}
+                  onChange={(v) => { setStartEffect({ ...startEffect, scaleIntensity: v }); setReplayKey((k) => k + 1) }} />
+                <Slider label="glow" value={startEffect.glowIntensity} min={0} max={2} step={0.05}
+                  onChange={(v) => { setStartEffect({ ...startEffect, glowIntensity: v }); setReplayKey((k) => k + 1) }} />
+                <Slider label="dur" value={startEffect.duration} min={100} max={2000} step={50}
+                  format={(v) => `${v.toFixed(0)}ms`}
+                  onChange={(v) => { setStartEffect({ ...startEffect, duration: v }); setReplayKey((k) => k + 1) }} />
+              </>
+            )}
+            {startEffect?.type === 'appear' && (
+              <>
+                <div className={s.field}>
+                  <span className={s.fieldLabel}>shrink</span>
+                  <button
+                    type="button"
+                    className={s.radio}
+                    style={{ flex: 1, justifyContent: 'center', minHeight: 32 }}
+                    onClick={() => { setStartEffect({ ...startEffect, withShrink: !startEffect.withShrink }); setReplayKey((k) => k + 1) }}
+                  >
+                    {startEffect.withShrink ? 'on' : 'off'}
+                  </button>
+                </div>
+                <Slider label="dur" value={startEffect.duration} min={100} max={2000} step={50}
+                  format={(v) => `${v.toFixed(0)}ms`}
+                  onChange={(v) => { setStartEffect({ ...startEffect, duration: v }); setReplayKey((k) => k + 1) }} />
+              </>
+            )}
+          </div>
+
+          <div className={s.section}>
+            <p className={s.sectionLabel}>End effect</p>
+            <button
+              type="button"
+              className={s.radio}
+              style={{ width: '100%', justifyContent: 'flex-start' }}
+              onClick={cycleEndEffect}
+            >
+              {endEffect ? endEffect.type : 'none'}
+              <span style={{ marginLeft: 'auto', opacity: 0.5, fontSize: 11 }}>
+                {endEffect ? `${endEffect.duration}ms` : 'tap to cycle'}
+              </span>
+            </button>
+            {endEffect?.type === 'burst' && (
+              <>
+                <Slider label="scale" value={endEffect.scaleIntensity} min={0} max={2} step={0.05}
+                  onChange={(v) => { setEndEffect({ ...endEffect, scaleIntensity: v }); setReplayKey((k) => k + 1) }} />
+                <Slider label="glow" value={endEffect.glowIntensity} min={0} max={2} step={0.05}
+                  onChange={(v) => { setEndEffect({ ...endEffect, glowIntensity: v }); setReplayKey((k) => k + 1) }} />
+                <Slider label="dur" value={endEffect.duration} min={100} max={2000} step={50}
+                  format={(v) => `${v.toFixed(0)}ms`}
+                  onChange={(v) => { setEndEffect({ ...endEffect, duration: v }); setReplayKey((k) => k + 1) }} />
+              </>
+            )}
+            {endEffect?.type === 'fade' && (
+              <>
+                <div className={s.field}>
+                  <span className={s.fieldLabel}>shrink</span>
+                  <button
+                    type="button"
+                    className={s.radio}
+                    style={{ flex: 1, justifyContent: 'center', minHeight: 32 }}
+                    onClick={() => { setEndEffect({ ...endEffect, withShrink: !endEffect.withShrink }); setReplayKey((k) => k + 1) }}
+                  >
+                    {endEffect.withShrink ? 'on' : 'off'}
+                  </button>
+                </div>
+                <Slider label="dur" value={endEffect.duration} min={100} max={3000} step={50}
+                  format={(v) => `${v.toFixed(0)}ms`}
+                  onChange={(v) => { setEndEffect({ ...endEffect, duration: v }); setReplayKey((k) => k + 1) }} />
+              </>
+            )}
           </div>
 
           <div className={s.section}>
