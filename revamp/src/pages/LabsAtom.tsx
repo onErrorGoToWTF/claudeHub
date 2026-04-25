@@ -36,18 +36,16 @@ const RADIUS_A = 1.40
 const RADIUS_B = 0.85
 const ORBIT_SPEED = 3.30
 const ORBITS: OrbitConfig[] = [
-  { plane: 'xy', speed: ORBIT_SPEED, phase: 0,                 laps: 3,   postLandVisibility: 0 },
-  { plane: 'yz', speed: ORBIT_SPEED, phase: (2 * Math.PI) / 3, laps: 5,   postLandVisibility: 0.33 },
-  // Final electron gets a gentler spiral — starts half a lap earlier
-  // (6.0 instead of 6.5) and takes 1.5× as long (3π instead of 2π),
-  // with smoothstep easing so the orbit→spiral handoff has no velocity
-  // discontinuity. Total-time-to-land stays 7.5 laps (6.0 + 1.5, same
-  // as the old 6.5 + 1) so the strike timing still aligns.
+  { plane: 'xy', speed: ORBIT_SPEED, phase: 0,                 laps: 5,   postLandVisibility: 0 },
+  { plane: 'yz', speed: ORBIT_SPEED, phase: (2 * Math.PI) / 3, laps: 6,   postLandVisibility: 0.33 },
+  // Final electron gets a gentler spiral via custom settleDurationT (3π
+  // = 1.5 laps) and smoothstep easing so the orbit→spiral handoff has
+  // no velocity discontinuity.
   {
     plane: 'xz',
     speed: ORBIT_SPEED,
     phase: (4 * Math.PI) / 3,
-    laps: 6.0,
+    laps: 6.5,
     postLandVisibility: 1,
     settleDurationT: 3 * Math.PI,
     settleEase: 'smoothstep',
