@@ -94,6 +94,29 @@ const GLOW_DECAY_MS = 1500
 const POST_LAND_HOLD_T = 2.3
 const POST_LAND_FADE_T = 5.0
 
+// Electrons fade in over the first ~2 orbits so they appear gradually
+// rather than popping in. tRef starts at config.phase, so the fade is
+// measured relative to that — all electrons take the same wall time.
+const FADE_IN_T = 4 * Math.PI
+
+// Empirical font-metric nudges for landing the electron on the i-dot.
+// Both are typeface-dependent — retune on font swap.
+const IDOT_NUDGE_X = 0.5
+const IDOT_NUDGE_Y = -2.5
+
+// "University" neon-tube reveal — letters flash on left → right after
+// the final strike's pulse ends. Stagger is per-letter delay between
+// flash starts; flash is the per-letter animation duration.
+const UNI_STAGGER_COMPACT_MS = 50    // ~13px font in topbar
+const UNI_STAGGER_LABS_MS = 80       // ~32px font in /labs/atom
+const UNI_FLASH_MS = 300
+const UNI_REVEAL_DELAY_MS = 200      // pause after final strike before letters start
+
+// After "University" is fully lit, hold briefly then dim everything
+// (ai + university + i-dot glow) to the debossed resting state.
+const SETTLE_DELAY_MS = 400
+const SETTLE_DURATION_MS = 800
+
 // Scene-wide group rotation applied around the atom. Exposed so target
 // world→local conversion in AtomComposition matches exactly.
 const GROUP_ROTATION: [number, number, number] = [Math.PI / 4, Math.PI / 4, 0]
@@ -177,6 +200,8 @@ function Electron({
   const headMatRef = useRef<THREE.MeshBasicMaterial>(null!)
   const haloRef = useRef<THREE.Mesh>(null!)
   const haloMatRef = useRef<THREE.MeshBasicMaterial>(null!)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const trailMatRef = useRef<any>(null!)
   const tRef = useRef(config.phase)
   const { size } = useThree()
   const resolution = useMemo(
@@ -303,16 +328,24 @@ function Electron({
         haloOpacity = pulse * 0.35 + p * POST_HALO_OPACITY * vis
       }
     }
+    // Initial fade-in: electrons appear smoothly over the first ~2 orbits
+    // rather than popping in. Measured from config.phase so wall-time is
+    // consistent across electrons regardless of starting phase.
+    const fadeIn = Math.min(1, Math.max(0, (tRef.current - config.phase) / FADE_IN_T))
+
     headRef.current.scale.setScalar(electronScale)
     if (headMatRef.current) {
-      headMatRef.current.opacity = electronOpacity
+      headMatRef.current.opacity = electronOpacity * fadeIn
     }
     if (haloRef.current) {
       haloRef.current.position.set(hx, hy, hz)
       haloRef.current.scale.setScalar(haloScale)
     }
     if (haloMatRef.current) {
-      haloMatRef.current.opacity = haloOpacity
+      haloMatRef.current.opacity = haloOpacity * fadeIn
+    }
+    if (trailMatRef.current) {
+      trailMatRef.current.opacity = fadeIn
     }
   })
 
@@ -321,9 +354,11 @@ function Electron({
       <mesh>
         <meshLineGeometry ref={geomRef} />
         <meshLineMaterial
+          ref={trailMatRef}
           color={color}
           lineWidth={0.17}
           transparent
+          opacity={0}
           depthWrite={false}
           alphaMap={fadeTex}
           useAlphaMap={1}
@@ -349,7 +384,7 @@ function Electron({
           color={color}
           toneMapped={false}
           transparent
-          opacity={1}
+          opacity={0}
         />
       </mesh>
     </>
@@ -419,52 +454,99 @@ function projectPixelToLocal(
   return world.applyMatrix4(rotationMatrix.invert())
 }
 
-export // Flash-only style. On light bg (default): rest is debossed dark;
-// strike snaps white with glow. On dark bg (`onDark`): rest is a soft
-// white-gray, strike pumps to full white + glow. Both return to rest
-// via the CSS transition after the 560ms pulse. `compact` (topbar)
-// drops the multi-layer glow stack — the wordmark reads flat against
-// the chrome band instead of halo'd. `glowMultiplier` (0..1) scales
-// only the white glow stack so the post-final-strike decay can fade
-// the halo to zero while the text stays lit white.
+export // Flash-only style. Three driver states:
+//   restProgress=0, progress=0  → fully invisible (text not yet revealed)
+//   restProgress=0, progress=1  → bright white strike-flash with glow
+//   restProgress=1, progress=*  → debossed/embossed resting state
+// Intermediate restProgress blends white→debossed so the settle is smooth.
+// Crucially: when restProgress=0 the RGB stays at white, so the CSS
+// transition from progress=1→0 (after strikes 1 & 2) is alpha-only and
+// the text fades out cleanly without passing through gray.
+// `compact` (topbar) drops the multi-layer glow stack. `glowMultiplier`
+// (0..1) scales the glow stack independently for the post-strike decay.
 function buildAiStyle(
   progress: number,
   onDark: boolean,
   compact: boolean,
   glowMultiplier: number,
+  restProgress: number = 0,
 ): CSSProperties {
   const g = progress
   const gm = glowMultiplier
+  const r = restProgress
   if (onDark) {
-    const alpha = 0.55 + g * 0.4
-    const embossAlpha = (1 - g) * 0.18
+    // Bright phase: rgba(235,235,235, g*0.95). Resting phase: rgba(235,235,235, 0.55) (.universityDark equivalent).
+    // Blend alpha; RGB stays the same so transitions are alpha-only when r=0.
+    const brightAlpha = g * 0.95
+    const restAlpha = 0.55
+    const alpha = brightAlpha * (1 - r) + restAlpha * r
+    const embossAlpha = r * 0.18
     return {
       color: `rgba(235, 235, 235, ${alpha.toFixed(3)})`,
       textShadow: compact
         ? 'none'
         : [
             `0 1px 1px rgba(255, 255, 255, ${embossAlpha.toFixed(3)})`,
-            `0 0 3px rgba(255, 255, 255, ${(0.9 * g * gm).toFixed(3)})`,
-            `0 0 6px rgba(255, 255, 255, ${(0.65 * g * gm).toFixed(3)})`,
-            `0 0 12px rgba(255, 255, 255, ${(0.4 * g * gm).toFixed(3)})`,
-            `0 0 22px rgba(255, 255, 255, ${(0.2 * g * gm).toFixed(3)})`,
+            `0 0 3px rgba(255, 255, 255, ${(0.9 * g * gm * (1 - r)).toFixed(3)})`,
+            `0 0 6px rgba(255, 255, 255, ${(0.65 * g * gm * (1 - r)).toFixed(3)})`,
+            `0 0 12px rgba(255, 255, 255, ${(0.4 * g * gm * (1 - r)).toFixed(3)})`,
+            `0 0 22px rgba(255, 255, 255, ${(0.2 * g * gm * (1 - r)).toFixed(3)})`,
           ].join(', '),
     }
   }
-  const gray = 255 * g
-  const colorAlpha = 0.28 + g * 0.7
-  const debossAlpha = (1 - g) * 0.14
+  // Light mode: bright = rgba(255,255,255, g*0.98). Rest = rgba(0,0,0, 0.28) (debossed).
+  // Blend RGB and alpha together so the settle ramp moves white→black smoothly.
+  const gray = Math.round(255 * (1 - r))
+  const brightAlpha = g * 0.98
+  const restAlpha = 0.28
+  const colorAlpha = brightAlpha * (1 - r) + restAlpha * r
+  const debossAlpha = r * 0.14
   return {
-    color: `rgba(${gray}, ${gray}, ${gray}, ${colorAlpha})`,
+    color: `rgba(${gray}, ${gray}, ${gray}, ${colorAlpha.toFixed(3)})`,
     textShadow: compact
       ? 'none'
       : [
           `0 -1px 1px rgba(0, 0, 0, ${debossAlpha.toFixed(3)})`,
-          `0 0 3px rgba(255, 255, 255, ${(0.9 * g * gm).toFixed(3)})`,
-          `0 0 6px rgba(255, 255, 255, ${(0.65 * g * gm).toFixed(3)})`,
-          `0 0 12px rgba(255, 255, 255, ${(0.4 * g * gm).toFixed(3)})`,
-          `0 0 22px rgba(255, 255, 255, ${(0.2 * g * gm).toFixed(3)})`,
+          `0 0 3px rgba(255, 255, 255, ${(0.9 * g * gm * (1 - r)).toFixed(3)})`,
+          `0 0 6px rgba(255, 255, 255, ${(0.65 * g * gm * (1 - r)).toFixed(3)})`,
+          `0 0 12px rgba(255, 255, 255, ${(0.4 * g * gm * (1 - r)).toFixed(3)})`,
+          `0 0 22px rgba(255, 255, 255, ${(0.2 * g * gm * (1 - r)).toFixed(3)})`,
         ].join(', '),
+  }
+}
+
+// Per-letter "University" style. Once `triggered` is true, every letter
+// gets an inline color so the neon flash reads white (overriding the
+// debossed .university class color). When `restProgress` ramps 0→1, the
+// inline color blends to the resting debossed/embossed state.
+function buildUniversityStyle(
+  triggered: boolean,
+  restProgress: number,
+  onDark: boolean,
+  compact: boolean,
+): CSSProperties {
+  if (!triggered) return {}
+  const r = restProgress
+  if (onDark) {
+    // Bright (1.0 alpha white-gray) → resting (0.55 alpha) — alpha-only blend
+    const alpha = 1.0 * (1 - r) + 0.55 * r
+    return {
+      color: `rgba(235, 235, 235, ${alpha.toFixed(3)})`,
+      textShadow: r > 0
+        ? `0 1px 1px rgba(255, 255, 255, ${(r * 0.18).toFixed(3)})`
+        : 'none',
+    }
+  }
+  // Light mode: blend RGB white→black AND alpha 0.98→restAlpha together
+  // so the dim feels like power draining (not just opacity fade).
+  const restAlpha = compact ? 0.42 : 0.22
+  const gray = Math.round(255 * (1 - r))
+  const alpha = 0.98 * (1 - r) + restAlpha * r
+  return {
+    color: `rgba(${gray}, ${gray}, ${gray}, ${alpha.toFixed(3)})`,
+    textShadow: r > 0
+      ? `0 -1px 1px rgba(0, 0, 0, ${(r * 0.14).toFixed(3)})`
+      : 'none',
   }
 }
 
@@ -490,6 +572,11 @@ export function AtomComposition({
   const [landedCount, setLandedCount] = useState(0)
   const [pulsing, setPulsing] = useState(false)
   const [glowMultiplier, setGlowMultiplier] = useState(1)
+  // After the final strike, "University" reveals letter-by-letter.
+  const [universityTriggered, setUniversityTriggered] = useState(false)
+  // After University finishes revealing, everything settles to the
+  // debossed resting state via this 0→1 ramp.
+  const [restProgress, setRestProgress] = useState(0)
 
   // Defer Canvas mount so the sticky topbar's compositor layer is fully
   // committed before WebGL creates its own layer. Without this, Safari
@@ -521,10 +608,13 @@ export function AtomComposition({
     return () => clearTimeout(timer)
   }, [strikeCount])
 
-  // Once every electron has landed, 'ai' stays lit permanently —
-  // post-final-strike the progress doesn't decay to debossed.
+  // After the FINAL strike fires, 'ai' stays lit (progress=1). Strikes
+  // 1 & 2 set pulsing→true→false, so progress flips 1→0 and the CSS
+  // transition fades the text back to invisible (alpha 0). Only the
+  // final strike keeps progress=1 permanently.
   const allLanded = settle === true && landedCount >= totalElectrons
-  const progress = pulsing ? 1 : allLanded ? 1 : 0
+  const finalStrike = strikeCount >= totalElectrons
+  const progress = pulsing ? 1 : finalStrike ? 1 : 0
 
   // After the final landing + a short hold at full glow, decay the
   // white glow stack to zero so the wordmark resolves to clean flat
@@ -547,6 +637,37 @@ export function AtomComposition({
       if (rafId !== undefined) cancelAnimationFrame(rafId)
     }
   }, [allLanded, compact])
+
+  // After the final strike's pulse ends, kick off the "University"
+  // letter-by-letter reveal (with a small breath so it doesn't step on
+  // the strike's brightness flicker).
+  useEffect(() => {
+    if (!finalStrike || pulsing || universityTriggered) return
+    const timer = setTimeout(() => setUniversityTriggered(true), UNI_REVEAL_DELAY_MS)
+    return () => clearTimeout(timer)
+  }, [finalStrike, pulsing, universityTriggered])
+
+  // After "University" is fully revealed (all letters lit), wait a beat
+  // then ramp restProgress 0→1 to dim everything to the debossed state.
+  useEffect(() => {
+    if (!universityTriggered) return
+    const staggerMs = compact ? UNI_STAGGER_COMPACT_MS : UNI_STAGGER_LABS_MS
+    const totalRevealMs = ('University'.length - 1) * staggerMs + UNI_FLASH_MS
+    let rafId: number | undefined
+    const delayTimer = setTimeout(() => {
+      const startTime = performance.now()
+      const tick = (now: number) => {
+        const p = Math.min(1, (now - startTime) / SETTLE_DURATION_MS)
+        setRestProgress(easeOutCubic(p))
+        if (p < 1) rafId = requestAnimationFrame(tick)
+      }
+      rafId = requestAnimationFrame(tick)
+    }, totalRevealMs + SETTLE_DELAY_MS)
+    return () => {
+      clearTimeout(delayTimer)
+      if (rafId !== undefined) cancelAnimationFrame(rafId)
+    }
+  }, [universityTriggered, compact])
 
   // First pass: measure 'ai' width + (compact only) the pixel offset of
   // ai's center within the cell, so the atom canvas's `left` can be set
@@ -576,12 +697,10 @@ export function AtomComposition({
     if (!iRef.current || !atomLayerRef.current) return
     const iRect = iRef.current.getBoundingClientRect()
     const canvasRect = atomLayerRef.current.getBoundingClientRect()
-    // Empirical font-metric nudges: observed landings sat slightly below
-    // + slightly left of the visual i-dot. -2.5 on Y and +0.5 on X place
-    // the landings right on the dot. Both are typeface-dependent; retune
-    // on font swap.
-    const dotX = iRect.left + iRect.width / 2 + 0.5
-    const dotY = iRect.top + iRect.height * 0.32 - 2.5
+    // Empirical font-metric nudges (see IDOT_NUDGE_X/Y at top of file)
+    // place the landings right on the visual dot of the 'i'.
+    const dotX = iRect.left + iRect.width / 2 + IDOT_NUDGE_X
+    const dotY = iRect.top + iRect.height * 0.32 + IDOT_NUDGE_Y
     const local = projectPixelToLocal(dotX, dotY, canvasRect, camZ)
     setSettleTarget(local)
   }, [settle, aiHalf, atomLeft, compact, camZ])
@@ -631,15 +750,29 @@ export function AtomComposition({
         <div className={textShadowClass} aria-hidden="true" />
         <span
           ref={aiRef}
-          className={`${s.ai} ${pulsing ? pulseClassForStrike(strikeCount, s) : ''}`}
-          style={buildAiStyle(progress, onDark ?? false, compact ?? false, glowMultiplier)}
+          className={`${s.ai} ${pulsing ? pulseClassForStrike(strikeCount, s) : ''} ${restProgress > 0 ? s.aiSettling : ''}`}
+          style={buildAiStyle(progress, onDark ?? false, compact ?? false, glowMultiplier, restProgress)}
         >
           a<span ref={iRef}>i</span>
         </span>
         <span
           className={`${s.university} ${onDark ? s.universityDark : ''} ${compact ? s.universityCompact : ''}`}
         >
-          University
+          {'University'.split('').map((ch, i) => {
+            const staggerMs = compact ? UNI_STAGGER_COMPACT_MS : UNI_STAGGER_LABS_MS
+            return (
+              <span
+                key={i}
+                className={universityTriggered ? s.uniLetterOn : s.uniLetter}
+                style={{
+                  animationDelay: universityTriggered ? `${i * staggerMs}ms` : undefined,
+                  ...buildUniversityStyle(universityTriggered, restProgress, onDark ?? false, compact ?? false),
+                }}
+              >
+                {ch}
+              </span>
+            )
+          })}
         </span>
       </div>
     </div>
