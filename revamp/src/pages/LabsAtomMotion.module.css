@@ -113,12 +113,19 @@
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.16);
   color: rgba(255, 255, 255, 0.85);
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Push the visual away from the title row's spacing without shrinking
+     the tap target — extends ~6px above the title baseline so a fat
+     thumb hit anywhere in the upper-right corner closes the panel. */
+  margin: -6px -6px -6px 0;
 }
 
 .iconHandle {

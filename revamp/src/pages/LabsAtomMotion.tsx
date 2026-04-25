@@ -37,9 +37,11 @@ import { usePrefersReducedMotion } from '../ui/atom/usePrefersReducedMotion'
 import { LabsNav } from '../ui/atom/LabsNav'
 import type { Vec3 } from '../ui/atom/runtime/types'
 import {
+  buildLemniscate,
   buildTravel,
   evalTravel,
   evalTravelVelocity,
+  lemniscatePos,
   orbitPosAt,
   orbitVelocityAt,
   type OrbitDesc,
@@ -66,7 +68,9 @@ const ORBIT_SIZE = 0.55
 const ORBIT_ASPECT = 0.62
 const ORBIT_OMEGA_BASE = 2.4 // rad/s
 const GROUP_ROTATION: [number, number, number] = [Math.PI / 4, Math.PI / 4, 0]
-const CAMERA_Z = 5.5
+const CAMERA_Z = 9.0
+// Lemniscate cycle period — full figure-8 traversal in seconds.
+const LEMNISCATE_PERIOD = 6.0
 
 // --- Sequence timing (seconds) ---------------------------------------------
 
@@ -274,6 +278,51 @@ function ElectronProbe({
     let opacity = 0
     if (t >= spec.fadeInStart) {
       opacity = Math.min(1, (t - spec.fadeInStart) / FADE_IN_DUR)
+    }
+
+    // Opposite-rotation mode: lemniscate (figure-8) traversal. Single
+    // closed curve with foci at A and B; topology naturally flips
+    // orbital rotation between the two lobes (CCW around one, CW around
+    // the other). The user's vision: "Think of it as a figure 8 pathway
+    // — that flips the rotation about each foci."
+    if (oppositeRotation) {
+      const lemnisc = buildLemniscate(NUCLEUS_A, NUCLEUS_B, [0, 1, 0])
+      // Map wall-clock time to τ. Period is the full figure-8 cycle.
+      const tau = (2 * Math.PI * (t - spec.fadeInStart)) / LEMNISCATE_PERIOD
+      pos = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau)
+      // Phase classification by which lobe currently holds the electron:
+      //   τ in [0, π/2] or [3π/2, 2π) → right lobe (B side)
+      //   τ in [π/2, 3π/2]            → left lobe (A side)
+      const tauMod = ((tau % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI)
+      const inLeftLobe = tauMod >= Math.PI / 2 && tauMod < (3 * Math.PI) / 2
+      phase = inLeftLobe ? 'orbitA' : 'orbitB'
+      // Rough velocity magnitude (finite difference in τ).
+      const eps = 1e-3
+      const pPlus = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau + eps)
+      vMag = Math.hypot(pPlus[0] - pos[0], pPlus[1] - pos[1], pPlus[2] - pos[2]) / (eps * LEMNISCATE_PERIOD / (2 * Math.PI))
+
+      lastPosRef.current = pos
+      headRef.current.position.set(pos[0], pos[1], pos[2])
+      if (haloRef.current) haloRef.current.position.set(pos[0], pos[1], pos[2])
+      const buf = bufRef.current!
+      const idx = insertIdxRef.current
+      buf[idx * 3] = pos[0]
+      buf[idx * 3 + 1] = pos[1]
+      buf[idx * 3 + 2] = pos[2]
+      insertIdxRef.current = (idx + 1) % ELECTRON.trail.segments
+      const unroll = new Float32Array(ELECTRON.trail.segments * 3)
+      for (let i = 0; i < ELECTRON.trail.segments; i++) {
+        const src = (insertIdxRef.current + i) % ELECTRON.trail.segments
+        unroll[i * 3] = buf[src * 3]
+        unroll[i * 3 + 1] = buf[src * 3 + 1]
+        unroll[i * 3 + 2] = buf[src * 3 + 2]
+      }
+      if (trailGeomRef.current?.setPoints) trailGeomRef.current.setPoints(unroll)
+      if (headMatRef.current) headMatRef.current.opacity = opacity
+      if (haloMatRef.current) haloMatRef.current.opacity = opacity * 0.42
+      if (trailMatRef.current) trailMatRef.current.opacity = opacity
+      onReport(electronIndex, { phase, position: pos, vMag })
+      return
     }
 
     if (t < spec.fadeInStart) {

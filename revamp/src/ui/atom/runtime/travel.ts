@@ -119,22 +119,75 @@ export type TravelDesc = {
   wHat: Vec3
   /** Ellipse parameter at exit. */
   phiExit: number
-  /** Ellipse parameter at entry (= π − phiExit; symmetric across minor axis). */
+  /** Ellipse parameter at entry. */
   phiEntry: number
   /** Source-orbit angle at exit. */
   exitAngle: number
-  /** Dest-orbit angle at entry (closest-point on dest orbit to the
-   *  ellipse-resolved P_B). */
+  /** Dest-orbit angle at entry. */
   entryAngle: number
   /** Exit point (world). */
   P_A: Vec3
   /** Entry point (world). */
   P_B: Vec3
-  /** Dest orbit as actually used by this travel. The omega sign may have
-   *  been flipped from the caller's hint so the post-capture orbital
-   *  motion roughly continues the ellipse's incoming direction (avoids a
-   *  visible 180° rotation reversal at capture). */
+  /** Dest orbit as actually used by this travel. */
   destOrbit: OrbitDesc
+}
+
+/** Lemniscate of Bernoulli with foci at A and B. Single closed curve in
+ *  the form of a figure-8: two lobes around the foci, self-intersecting
+ *  at the chord midpoint. Traversing the curve flips orbital rotation at
+ *  each lobe by topology — CCW around one focus, CW around the other.
+ *
+ *  Position at parameter τ ∈ [0, 2π]:
+ *    u = a·cos(τ) / (1 + sin²(τ))                    (along chord)
+ *    v = a·sin(τ)·cos(τ) / (1 + sin²(τ))             (perpendicular)
+ *  where a = c·√2 places the lemniscate's foci at ±c from center —
+ *  exactly at the two nuclei.
+ *
+ *  Lobe tips are at (±a, 0) = (±c·√2, 0) — slightly outside the nuclei.
+ *  The curve passes through origin twice per period.
+ */
+export function lemniscatePos(
+  midpoint: Vec3,
+  uHat: Vec3,
+  wHat: Vec3,
+  a: number,
+  tau: number,
+): Vec3 {
+  const denom = 1 + Math.sin(tau) ** 2
+  const u = (a * Math.cos(tau)) / denom
+  const v = (a * Math.sin(tau) * Math.cos(tau)) / denom
+  return [
+    midpoint[0] + u * uHat[0] + v * wHat[0],
+    midpoint[1] + u * uHat[1] + v * wHat[1],
+    midpoint[2] + u * uHat[2] + v * wHat[2],
+  ]
+}
+
+/** Build the parameters for a lemniscate connecting two nuclei. The
+ *  caller picks a transverse direction (wHat) so the figure-8 sits in
+ *  the chosen plane. */
+export function buildLemniscate(A: Vec3, B: Vec3, wHat: Vec3): {
+  midpoint: Vec3
+  uHat: Vec3
+  wHat: Vec3
+  a: number
+} {
+  const midpoint: Vec3 = [
+    (A[0] + B[0]) / 2,
+    (A[1] + B[1]) / 2,
+    (A[2] + B[2]) / 2,
+  ]
+  const dx = B[0] - A[0]
+  const dy = B[1] - A[1]
+  const dz = B[2] - A[2]
+  const chordLen = Math.hypot(dx, dy, dz)
+  const c = chordLen / 2
+  const uHat: Vec3 = chordLen > 1e-9
+    ? [dx / chordLen, dy / chordLen, dz / chordLen]
+    : [1, 0, 0]
+  const a = c * Math.SQRT2
+  return { midpoint, uHat, wHat, a }
 }
 
 /** Build a TravelDesc from source orbit, destination orbit, and total
