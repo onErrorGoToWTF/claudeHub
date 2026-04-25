@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T10:33:16.105Z",
+  "generated_at": "2026-04-25T12:35:13.914Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,9 +146,16 @@
     ],
     "news": [
       {
+        "title": "Anthropic says stronger AI models cut better deals, and the losers don't even notice - the-decoder.com",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUkFvcUNtbEI2LU1lTHdQdldlcC1vdThjb2Rib1dXQWx3aG1ZQkNlZkFrZVg0ck4tVEJLbDJVcmw1NDBtcmctVVJ3X1VuV0cxOC1oTGVkaTY4Tkk3VFRyNExEQTVsM3JoMGZkQ2JiOGlkRmNJMG15SzV5eTFiOG9FMUh4OGdJbTNkcnNNNFp3WU1DN2pCbmFIRzBGbmlMdXJObWFyTlpXLXpJMWc?oc=5",
+        "source": "Google News",
+        "published": "2026-04-25T10:22:35.000Z",
+        "summary": "Anthropic says stronger AI models cut better deals, and the losers don't even notice the-decoder.com"
+      },
+      {
         "title": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
         "url": "https://github.com/nex-crm/wuphf",
-        "source": "HN · 58↑",
+        "source": "HN · 103↑",
         "hn_id": "47899844",
         "published": "2026-04-25T08:53:53.000Z",
         "summary": "I shipped a wiki layer for AI agents that uses markdown + git as the source of truth, with a bleve (BM25) + SQLite index on top. No vector or graph db yet. It runs locally in…"
@@ -159,6 +166,13 @@
         "source": "Google News",
         "published": "2026-04-25T06:38:49.000Z",
         "summary": "Google to invest up to $40 billion in Anthropic as AI investment race intensifies Storyboard18"
+      },
+      {
+        "title": "Anthropic's Mythos Raises Alarms Across Global Banking - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZm5vMnVsdlVwY0J6OEZnZWdXMnM1ck5icWxRQWhaa0ZpajVYeTBRVE10RTgxME1tMENkaFo4NzVNSGFNVTFtNWRLcmJCeVY1LXhkWWlaN3hzMVBRc0NTUDdyX19CdFI1Y1ExcFdVTTRBY3ZrYnRoWEtyUjQycXNIWFZIeFJYNjVoT3JPSHdpQjE2X3pfMTIzaTZYOA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-25T05:49:43.000Z",
+        "summary": "Anthropic's Mythos Raises Alarms Across Global Banking Let's Data Science"
       },
       {
         "title": "Google to invest up to $40 billion in Anthropic; $10 billion cash now but sets 'Performance Targets' for - The Times of India",
@@ -184,17 +198,10 @@
       {
         "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
         "url": "https://alash3al.github.io/stash?_v01",
-        "source": "HN · 44↑",
+        "source": "HN · 78↑",
         "hn_id": "47897790",
         "published": "2026-04-25T01:24:40.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude can now connect with Spotify, Uber, and a lot more apps - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOV3BhTkJiYlBzcVpPUkhjQWFjM3dDWDU0X3lEVktSSDZMUUVoRHRxQmxUZllQeE5Uc09WX1IzUzFBWnp1U05NOEp0SUFfS1ZRcTF5Zi1xVDVMQTgxQ2NHMEI2UE1ENEZrTkRMRUtTRnBhNXRDOXRKeWlEd3NId0JRSEkxMV90cjA?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T23:15:07.000Z",
-        "summary": "Claude can now connect with Spotify, Uber, and a lot more apps Mashable"
       },
       {
         "title": "Wall Street Week | Anthropic Cybersecurity Risk, BYD Goes Global, The Billionaire Next Door",
@@ -216,13 +223,6 @@
         "source": "Google News",
         "published": "2026-04-24T22:05:45.000Z",
         "summary": "Google will invest as much as $40 billion in Anthropic Ars Technica"
-      },
-      {
-        "title": "Claude Mythos Probably Isn’t What You Think It Is - Medium",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcU1UampveDV0aFJOanFiZnMtaGo1c0RVUEVhd0tkelFSLTc0Q2M2OERRa215OXBlWUM1cndlTUZGRTZublpnNmtMX1NwN0RCb3k4R212SmhiS1VSNTN2MUs4ZFl4b1lySnhZUG85SUtybGxfUlZ0WTZqb2NfbGtDVDBVT0xlbHdkb0g1dzhCQ2xkT2c?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T21:01:01.000Z",
-        "summary": "Claude Mythos Probably Isn’t What You Think It Is Medium"
       },
       {
         "title": "Google is surprisingly investing up to $40 billion in Claude creator Anthropic - Chrome Unboxed",
@@ -534,8 +534,8 @@
         "title": "Elevated errors on Claude Opus 4.7",
         "url": "https://status.claude.com/incidents/87m29x6sk78g",
         "source": "Claude Status",
-        "published": "2026-04-25T08:57:57.000Z",
-        "summary": "Apr 25 , 08:57 UTC Monitoring - A fix has been implemented and we are monitoring the results. Apr 25 , 08:43 UTC Identified - The issue has been identified and a fix is being implemented."
+        "published": "2026-04-25T11:58:15.000Z",
+        "summary": "Apr 25 , 11:58 UTC Resolved - This incident has been resolved. Apr 25 , 08:57 UTC Monitoring - A fix has been implemented and we are monitoring the results. Apr 25 , 08:43 UTC Identified - The issue…"
       },
       {
         "title": "Elevated errors on Claude Opus 4.7",
