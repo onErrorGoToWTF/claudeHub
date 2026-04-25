@@ -15,6 +15,15 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
+
+function CameraController({ zoom }: { zoom: number }) {
+  const { camera } = useThree()
+  useEffect(() => {
+    camera.position.z = zoom
+    camera.updateProjectionMatrix()
+  }, [zoom, camera])
+  return null
+}
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import {
   AtomLabHud,
@@ -420,6 +429,8 @@ function ReplayLoop({
 export function LabsAtomMotion() {
   const [replayKey, setReplayKey] = useState(0)
   const [autoReplay, setAutoReplay] = useState(true)
+  const [collapsed, setCollapsed] = useState(false)
+  const [zoom, setZoom] = useState(CAMERA_Z)
   const reducedMotion = usePrefersReducedMotion()
   const fadeTex = useMemo(() => makeFadeTexture(), [])
   const mathRef = useRef<AtomLabMathState>({
@@ -460,10 +471,11 @@ export function LabsAtomMotion() {
     <div className={s.root}>
       <div className={s.canvasArea}>
         <Canvas
-          camera={{ position: [0, 0, CAMERA_Z], fov: 50 }}
+          camera={{ position: [0, 0, zoom], fov: 50 }}
           frameloop="always"
           aria-hidden="true"
         >
+          <CameraController zoom={zoom} />
           <group rotation={GROUP_ROTATION}>
             <Nuclei />
             {ELECTRONS.map((spec, i) => (
@@ -486,37 +498,89 @@ export function LabsAtomMotion() {
 
       <LabsNav />
 
-      <div className={s.card}>
-        <div className={s.cardHeader}>
-          <p className={s.title}>Atom motion lab</p>
+      {!collapsed && (
+        <div className={s.card}>
+          <div className={s.cardHeader}>
+            <p className={s.title}>Atom motion lab</p>
+            <button
+              className={s.collapseBtn}
+              type="button"
+              onClick={() => setCollapsed(true)}
+              aria-label="Collapse controls"
+            >
+              ×
+            </button>
+          </div>
+          <p className={s.blurb}>
+            3 electrons fade in around nucleus A on three orthogonal elliptical
+            planes, then travel one-by-one to nucleus B via a gravity-shaped
+            S-curve (cubic Hermite, C1-in-time at handoff). Rotation reverses on
+            capture. {reducedMotion ? '(reduced-motion: animation suppressed)' : ''}
+          </p>
+          <div className={s.row}>
+            <button type="button" className={s.button} onClick={handleReplay}>
+              ↻ Replay
+            </button>
+            <label className={s.checkbox}>
+              <input
+                type="checkbox"
+                checked={autoReplay}
+                onChange={(e) => setAutoReplay(e.target.checked)}
+              />
+              <span>auto-loop</span>
+            </label>
+          </div>
+          <div className={s.legend}>
+            <div>nucleus A · ({NUCLEUS_A.join(', ')})</div>
+            <div>nucleus B · ({NUCLEUS_B.join(', ')})</div>
+            <div>orbits · size {ORBIT_SIZE} aspect {ORBIT_ASPECT}</div>
+            <div>ω · {ORBIT_OMEGA_BASE} rad/s (sign per electron)</div>
+            <div>travel · {TRAVEL_DUR}s, κ=0.5</div>
+          </div>
         </div>
-        <p className={s.blurb}>
-          3 electrons fade in around nucleus A on three orthogonal elliptical
-          planes, then travel one-by-one to nucleus B via a gravity-shaped
-          S-curve (cubic Hermite, C1-in-time at handoff). Rotation reverses on
-          capture. {reducedMotion ? '(reduced-motion: animation suppressed)' : ''}
-        </p>
-        <div className={s.row}>
-          <button type="button" className={s.button} onClick={handleReplay}>
-            Replay
-          </button>
-          <label className={s.checkbox}>
-            <input
-              type="checkbox"
-              checked={autoReplay}
-              onChange={(e) => setAutoReplay(e.target.checked)}
-            />
-            <span>auto-loop</span>
-          </label>
-        </div>
-        <div className={s.legend}>
-          <div>nucleus A · ({NUCLEUS_A.join(', ')})</div>
-          <div>nucleus B · ({NUCLEUS_B.join(', ')})</div>
-          <div>orbits · size {ORBIT_SIZE} aspect {ORBIT_ASPECT}</div>
-          <div>ω · {ORBIT_OMEGA_BASE} rad/s (sign per electron)</div>
-          <div>travel · {TRAVEL_DUR}s, κ=0.5</div>
-        </div>
+      )}
+
+      {collapsed && (
+        <button
+          className={s.iconHandle}
+          type="button"
+          onClick={() => setCollapsed(false)}
+          aria-label="Expand controls"
+        >
+          ◀
+        </button>
+      )}
+
+      <button
+        type="button"
+        className={s.canvasReplay}
+        onClick={handleReplay}
+        aria-label="Replay"
+        title="Replay"
+      >
+        ↻
+      </button>
+      <div className={s.canvasZoomCluster}>
+        <button
+          type="button"
+          className={s.canvasZoomBtn}
+          onClick={() => setZoom((z) => Math.max(3, +(z - 0.5).toFixed(2)))}
+          aria-label="Zoom in"
+          title="Zoom in (closer)"
+        >
+          −
+        </button>
+        <button
+          type="button"
+          className={s.canvasZoomBtn}
+          onClick={() => setZoom((z) => Math.min(30, +(z + 0.5).toFixed(2)))}
+          aria-label="Zoom out"
+          title="Zoom out (farther)"
+        >
+          +
+        </button>
       </div>
+      <span className={s.canvasZoomLabel}>z={zoom.toFixed(1)}</span>
 
       <AtomLabHud
         config={{
