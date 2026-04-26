@@ -75,8 +75,8 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Matches Preset 1.
-const DEFAULT_CAMERA_POS: [number, number, number] = [29.61, 9, -5.71]
-const DEFAULT_CAMERA_TARGET: [number, number, number] = [2.79, -4.37, 0.69]
+const DEFAULT_CAMERA_POS: [number, number, number] = [35.3, 12.35, -7.55]
+const DEFAULT_CAMERA_TARGET: [number, number, number] = [2.51, -4, 0.28]
 const FOV_DEG = 50
 
 const INITIAL_POINT_A: Vec3 = [-12.8, 0, 0]
@@ -694,8 +694,8 @@ const PRESETS: Preset[] = [
     showNuclei: true,
     showAxis: false,
     theme: 'dark',
-    camPos: [29.61, 9, -5.71],
-    camTgt: [2.79, -4.37, 0.69],
+    camPos: [35.3, 12.35, -7.55],
+    camTgt: [2.51, -4, 0.28],
   },
 ]
 
