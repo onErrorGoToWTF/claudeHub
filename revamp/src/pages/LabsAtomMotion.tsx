@@ -32,6 +32,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
+import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import { ELECTRON } from '../ui/atom/constants'
 import { makeFadeTexture } from '../ui/atom/Electron'
@@ -847,6 +848,14 @@ export function LabsAtomMotion() {
               />
             ))}
           </group>
+          <EffectComposer>
+            <Bloom
+              intensity={0.7}
+              luminanceThreshold={0.2}
+              luminanceSmoothing={0.6}
+              mipmapBlur
+            />
+          </EffectComposer>
         </Canvas>
       </div>
 
