@@ -502,6 +502,7 @@ function ElectronProbe({
           useAlphaMap={1}
           toneMapped={false}
           resolution={resolution}
+          blending={THREE.AdditiveBlending}
         />
       </mesh>
       <mesh ref={haloRef} scale={1.7}>
