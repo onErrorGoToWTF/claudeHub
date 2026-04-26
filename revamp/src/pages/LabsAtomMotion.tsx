@@ -508,10 +508,10 @@ export function LabsAtomMotion() {
   const [autoReplay, setAutoReplay] = useState(true)
   const [zoom, setZoom] = useState(CAMERA_Z)
   const [oppositeRotation, setOppositeRotation] = useState(true)
-  const [speedMult, setSpeedMult] = useState(1)
-  const SPEED_STEPS = [0.5, 1, 2, 3, 4]
-  const [lapsBefore, setLapsBefore] = useState(3)
-  const [lapsAfter, setLapsAfter] = useState(3)
+  const [speedMult, setSpeedMult] = useState(3)
+  const SPEED_STEPS = [0.5, 1, 2, 3, 4, 5, 6]
+  const [lapsBefore, setLapsBefore] = useState(1)
+  const [lapsAfter, setLapsAfter] = useState(1)
   const orbitADur = lapsBefore * ORBIT_PERIOD
   const orbitBDur = lapsAfter * ORBIT_PERIOD
   const reducedMotion = usePrefersReducedMotion()
