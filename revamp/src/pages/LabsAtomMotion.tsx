@@ -64,13 +64,23 @@ declare module '@react-three/fiber' {
 
 const NUCLEUS_A: Vec3 = [-1.6, 0, 0]
 const NUCLEUS_B: Vec3 = [1.6, 0, 0]
-const ORBIT_SIZE = 0.55
+const CHORD_HALF = 1.6 // = (NUCLEUS_B.x − NUCLEUS_A.x) / 2
+// Orbit semi-major sized so the far-side tip (θ=π on A's orbit, θ=0
+// on B's orbit) sits EXACTLY on the lemniscate's lobe tip — that's the
+// position-and-tangent-continuous handoff point between orbital motion
+// and the half-lemniscate transit:
+//   orbit-A far-tip = A.center − ORBIT_SIZE = −c − c(√2−1) = −c·√2
+//   lemniscate left tip = −a = −c·√2  ✓
+const ORBIT_SIZE = CHORD_HALF * (Math.SQRT2 - 1) // ≈ 0.663
 const ORBIT_ASPECT = 0.62
 const ORBIT_OMEGA_BASE = 2.4 // rad/s
 const GROUP_ROTATION: [number, number, number] = [Math.PI / 4, Math.PI / 4, 0]
 const CAMERA_Z = 9.0
 // Lemniscate cycle period — full figure-8 traversal in seconds.
 const LEMNISCATE_PERIOD = 6.0
+// Half-lemniscate transit (left lobe tip → right lobe tip) takes half a
+// full cycle. Used in opposite-rotation mode to bridge orbit A → orbit B.
+const HALF_LEMNISCATE = LEMNISCATE_PERIOD / 2
 
 // --- Sequence timing (seconds) ---------------------------------------------
 
@@ -239,19 +249,10 @@ function ElectronProbe({
       return
     }
 
-    // Seed trail behind the electron's starting position. In opposite-
-    // rotation mode that's the lemniscate's τ=0 point (right-lobe tip);
-    // in same-rotation mode it's the electron's orbit-A starting phase.
-    // Without this branch the trail dumps a straight line from far-left
-    // (orbit-A) to far-right (lemniscate start) on the first frame.
+    // Seed trail behind the electron's orbit-A starting phase (both
+    // modes now start the electron orbiting A, not on the lemniscate).
     const orbitA = makeOrbitADesc(spec)
-    let start: Vec3
-    if (oppositeRotation) {
-      const lemnisc = buildLemniscate(NUCLEUS_A, NUCLEUS_B, [0, 1, 0])
-      start = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, 0)
-    } else {
-      start = orbitPosAt(orbitA, spec.initialPhase)
-    }
+    const start: Vec3 = orbitPosAt(orbitA, spec.initialPhase)
     if (bufRef.current) {
       for (let i = 0; i < ELECTRON.trail.segments; i++) {
         bufRef.current[i * 3] = start[0]
@@ -288,26 +289,50 @@ function ElectronProbe({
       opacity = Math.min(1, (t - spec.fadeInStart) / FADE_IN_DUR)
     }
 
-    // Opposite-rotation mode: lemniscate (figure-8) traversal. Single
-    // closed curve with foci at A and B; topology naturally flips
-    // orbital rotation between the two lobes (CCW around one, CW around
-    // the other). The user's vision: "Think of it as a figure 8 pathway
-    // — that flips the rotation about each foci."
+    // Opposite-rotation mode: orbit A → half-lemniscate transit → orbit B.
+    // The orbit's far-side tip is co-located with the lemniscate's lobe
+    // tip (by ORBIT_SIZE = c·(√2−1)), and the orbital tangent there
+    // matches the lemniscate tangent there — smooth handoff at both
+    // ends. CW around A, CCW around B (the figure-8 topology hands the
+    // rotation flip to us "for free").
     if (oppositeRotation) {
       const lemnisc = buildLemniscate(NUCLEUS_A, NUCLEUS_B, [0, 1, 0])
-      // Map wall-clock time to τ. Period is the full figure-8 cycle.
-      const tau = (2 * Math.PI * (t - spec.fadeInStart)) / LEMNISCATE_PERIOD
-      pos = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau)
-      // Phase classification by which lobe currently holds the electron:
-      //   τ in [0, π/2] or [3π/2, 2π) → right lobe (B side)
-      //   τ in [π/2, 3π/2]            → left lobe (A side)
-      const tauMod = ((tau % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI)
-      const inLeftLobe = tauMod >= Math.PI / 2 && tauMod < (3 * Math.PI) / 2
-      phase = inLeftLobe ? 'orbitA' : 'orbitB'
-      // Rough velocity magnitude (finite difference in τ).
-      const eps = 1e-3
-      const pPlus = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau + eps)
-      vMag = Math.hypot(pPlus[0] - pos[0], pPlus[1] - pos[1], pPlus[2] - pos[2]) / (eps * LEMNISCATE_PERIOD / (2 * Math.PI))
+
+      if (t < spec.fadeInStart) {
+        phase = 'pre'
+        pos = orbitPosAt(orbitA, spec.initialPhase)
+      } else if (t < spec.travelStart) {
+        // Orbit A — CW. Initial phase is derived to land the electron
+        // at θ=π exactly when travel triggers.
+        phase = t < spec.fadeInStart + FADE_IN_DUR ? 'fadeIn' : 'orbitA'
+        const dtSinceFade = t - spec.fadeInStart
+        const theta = spec.initialPhase + orbitA.omega * dtSinceFade
+        pos = orbitPosAt(orbitA, theta)
+        const v = orbitVelocityAt(orbitA, theta)
+        vMag = Math.hypot(v[0], v[1], v[2])
+      } else if (t < spec.travelStart + HALF_LEMNISCATE) {
+        // Half-lemniscate transit: τ from π (left lobe tip = far-A) to
+        // 2π (right lobe tip = far-B). Sweeps through upper-left lobe
+        // edge, origin, lower-right lobe edge.
+        phase = 'travel'
+        const localT = t - spec.travelStart
+        const tau = Math.PI + (Math.PI * localT) / HALF_LEMNISCATE
+        pos = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau)
+        const eps = 1e-3
+        const pPlus = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau + eps)
+        const dTauDt = Math.PI / HALF_LEMNISCATE
+        vMag = (Math.hypot(pPlus[0] - pos[0], pPlus[1] - pos[1], pPlus[2] - pos[2]) / eps) * dTauDt
+      } else {
+        // Orbit B — CCW. Capture at θ=0 (right lobe tip = far-B), then
+        // continue orbiting until replay.
+        phase = 'orbitB'
+        const captureT = spec.travelStart + HALF_LEMNISCATE
+        const dtSinceCapture = t - captureT
+        const theta = 0 + orbitB.omega * dtSinceCapture
+        pos = orbitPosAt(orbitB, theta)
+        const v = orbitVelocityAt(orbitB, theta)
+        vMag = Math.hypot(v[0], v[1], v[2])
+      }
 
       lastPosRef.current = pos
       headRef.current.position.set(pos[0], pos[1], pos[2])
@@ -567,7 +592,13 @@ export function LabsAtomMotion() {
             <ReplayLoop
               replayKey={replayKey}
               setReplayKey={setReplayKey}
-              duration={oppositeRotation ? LEMNISCATE_PERIOD * 2 : TOTAL_DUR}
+              duration={
+                oppositeRotation
+                  // Opposite-rotation phased: orbit A + half-lemniscate
+                  // transit + orbit B (a couple revolutions for visual)
+                  ? TRAVEL_BASE_T + HALF_LEMNISCATE + 2 * (2 * Math.PI / ORBIT_OMEGA_BASE)
+                  : TOTAL_DUR
+              }
             />
           )}
         </Canvas>
