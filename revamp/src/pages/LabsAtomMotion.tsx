@@ -102,7 +102,10 @@ type ElectronSpec = {
 
 const MAX_ELECTRONS = 4
 
-const ELECTRON_SPECS: ElectronSpec[] = [0, 1, 2, 3].map((k) => {
+// Electron-fill order across the four orbital planes (0°, 45°, 90°, 135°
+// around the chord X-axis). Reordered so e2 (index 1) is perpendicular
+// to e1 — same four planes as before, different sequencing.
+const ELECTRON_SPECS: ElectronSpec[] = [0, 2, 1, 3].map((k) => {
   const upAngle = (Math.PI * k) / MAX_ELECTRONS
   const upHat: Vec3 = [0, Math.cos(upAngle), Math.sin(upAngle)]
   const initialPhase = Math.PI + (2 * Math.PI * k) / MAX_ELECTRONS
@@ -705,7 +708,7 @@ export function LabsAtomMotion() {
     new Array(MAX_ELECTRONS).fill(0),
   )
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
-  const [showGuides, setShowGuides] = useState(true)
+  const [showGuides, setShowGuides] = useState(false)
   const [theme, setTheme] = useTheme()
   const palette = THEME_PALETTE[theme]
 
