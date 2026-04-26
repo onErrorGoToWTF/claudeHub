@@ -15,11 +15,11 @@
 .themeLight {
   --lab-bg: #cac4b8;
   --lab-ink: #141312;
-  --lab-panel-bg: rgba(255, 255, 255, 0.62);
-  --lab-panel-border: rgba(20, 19, 18, 0.14);
-  --lab-btn-bg: rgba(20, 19, 18, 0.06);
-  --lab-btn-border: rgba(20, 19, 18, 0.18);
-  --lab-btn-active: rgba(20, 19, 18, 0.12);
+  --lab-panel-bg: rgba(255, 255, 255, 0.32);
+  --lab-panel-border: rgba(20, 19, 18, 0.10);
+  --lab-btn-bg: rgba(20, 19, 18, 0.05);
+  --lab-btn-border: rgba(20, 19, 18, 0.14);
+  --lab-btn-active: rgba(20, 19, 18, 0.10);
   --lab-track: rgba(20, 19, 18, 0.18);
   --lab-thumb: rgba(20, 19, 18, 0.85);
   --lab-thumb-border: rgba(20, 19, 18, 0.95);
@@ -29,11 +29,11 @@
 .themeDark {
   --lab-bg: #1a1a1a;
   --lab-ink: #eaeaea;
-  --lab-panel-bg: rgba(18, 18, 18, 0.72);
-  --lab-panel-border: rgba(255, 255, 255, 0.08);
-  --lab-btn-bg: rgba(255, 255, 255, 0.06);
-  --lab-btn-border: rgba(255, 255, 255, 0.18);
-  --lab-btn-active: rgba(255, 255, 255, 0.14);
+  --lab-panel-bg: rgba(18, 18, 18, 0.36);
+  --lab-panel-border: rgba(255, 255, 255, 0.06);
+  --lab-btn-bg: rgba(255, 255, 255, 0.05);
+  --lab-btn-border: rgba(255, 255, 255, 0.14);
+  --lab-btn-active: rgba(255, 255, 255, 0.12);
   --lab-track: rgba(255, 255, 255, 0.18);
   --lab-thumb: rgba(255, 255, 255, 0.85);
   --lab-thumb-border: rgba(255, 255, 255, 0.95);
