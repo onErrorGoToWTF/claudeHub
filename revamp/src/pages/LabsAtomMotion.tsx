@@ -387,6 +387,20 @@ function ElectronProbe({
     } else {
       // travelAB: tau = pi -> 2pi (left lobe tip -> right lobe tip)
       // travelBA: tau = 0 -> pi (right -> left, the other half)
+      //
+      // FUTURE — same-rotation transit pathway (user-requested re-add):
+      // Pre-multi-electron there was a second mode that used a single
+      // ellipse-arc transit (`buildTravel` + `evalTravel` from
+      // runtime/travel.ts) instead of the lemniscate. It kept orbital
+      // rotation the SAME at A and B (no omega flip) and produced a
+      // gentler top-/bottom-sweep arc rather than the figure-8 S-curve.
+      // User preferred its visual feel for some atoms — wants the
+      // option to switch between the two pathways. Re-add as a per-
+      // electron-spec or per-atom flag, gated by a panel toggle.
+      // Constraint: same-rotation arc only generalizes cleanly when the
+      // orbit's perpendicular direction is consistent with the transit's
+      // wHat — need to thread an upHat fallback through buildTravel for
+      // the multi-plane case (chord-line exit has perpLen ≈ 0).
       const lemnisc = buildLemniscate(
         [-chordHalf, 0, 0],
         [chordHalf, 0, 0],
