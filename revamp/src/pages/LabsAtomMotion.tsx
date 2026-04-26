@@ -64,6 +64,9 @@ const FADE_DUR = 0.55
 const LEMNISCATE_PERIOD = 6.0
 const TRANSIT_DUR = LEMNISCATE_PERIOD / 2
 const SPEED_STEPS = [0.5, 1, 2, 3, 4, 5, 6]
+// Global multiplier applied on top of the user-selected speed. Halved so the
+// labelled "1×" is half as fast as before.
+const SPEED_SCALE = 0.5
 // Orbits are always circular (aspect = 1). Visual ellipses are purely a
 // camera-angle effect on a 3D circle, not an actual orbital aspect.
 const ORBIT_ASPECT = 1.0
@@ -311,7 +314,7 @@ function ElectronProbe({
   useFrame((_, delta) => {
     if (reducedMotion) return
 
-    const dt = Math.min(delta, 1 / 30) * speedMult
+    const dt = Math.min(delta, 1 / 30) * speedMult * SPEED_SCALE
     const prevLocalT = phaseElapsedRef.current
     phaseElapsedRef.current += dt
     let localT = phaseElapsedRef.current
@@ -543,14 +546,21 @@ function AxisLine({
   }, [direction, length, ticks, tickSize])
 
   return (
-    <lineSegments>
+    <lineSegments renderOrder={-1}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
           args={[positions, 3]}
         />
       </bufferGeometry>
-      <lineBasicMaterial color={color} transparent opacity={0.45} toneMapped={false} />
+      <lineBasicMaterial
+        color={color}
+        transparent
+        opacity={0.45}
+        toneMapped={false}
+        depthWrite={false}
+        depthTest={false}
+      />
     </lineSegments>
   )
 }
