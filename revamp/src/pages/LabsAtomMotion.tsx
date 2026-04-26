@@ -74,11 +74,11 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Distance from origin ≈ 20.3.
-const DEFAULT_CAMERA_POS: [number, number, number] = [15.93, 9.33, 8.52]
+const DEFAULT_CAMERA_POS: [number, number, number] = [16.42, 2.84, 3.57]
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-5.7, 0, 0]
-const INITIAL_POINT_B: Vec3 = [5.7, 0, 0]
+const INITIAL_POINT_A: Vec3 = [-8.5, 0, 0]
+const INITIAL_POINT_B: Vec3 = [8.5, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -684,7 +684,7 @@ export function LabsAtomMotion() {
     new Array(MAX_ELECTRONS).fill(0),
   )
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
-  const [showGuides, setShowGuides] = useState(true)
+  const [showGuides, setShowGuides] = useState(false)
   const [theme, setTheme] = useTheme()
 
   // Contextual hint above the action strip — guides the user through the
