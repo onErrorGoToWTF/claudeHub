@@ -74,13 +74,13 @@ const SPEED_SCALE = 0.5
 // camera-angle effect on a 3D circle, not an actual orbital aspect.
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
-// preferred starting orientation). Distance from origin ≈ 20.3.
-const DEFAULT_CAMERA_POS: [number, number, number] = [31.44, 16.44, -5.17]
-const DEFAULT_CAMERA_TARGET: [number, number, number] = [1.83, -3.37, 0.58]
+// preferred starting orientation). Matches Preset 1.
+const DEFAULT_CAMERA_POS: [number, number, number] = [29.61, 9, -5.71]
+const DEFAULT_CAMERA_TARGET: [number, number, number] = [2.79, -4.37, 0.69]
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-11.1, 0, 0]
-const INITIAL_POINT_B: Vec3 = [11.1, 0, 0]
+const INITIAL_POINT_A: Vec3 = [-12.8, 0, 0]
+const INITIAL_POINT_B: Vec3 = [12.8, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -664,6 +664,41 @@ const THEME_PALETTE: Record<ThemeName, {
   },
 }
 
+// --- Presets --------------------------------------------------------------
+// Curated example configurations. Order is the user-facing order. Append
+// to grow. Preset 1 also doubles as the page's default state — applying
+// it on a fresh load is a no-op visually.
+
+type Preset = {
+  name: string
+  electronColor: string
+  bgColor: string
+  spread: number
+  speed: number
+  loop: boolean
+  showNuclei: boolean
+  showAxis: boolean
+  theme: ThemeName
+  camPos: [number, number, number]
+  camTgt: [number, number, number]
+}
+
+const PRESETS: Preset[] = [
+  {
+    name: '1',
+    electronColor: '#ffdbd8',
+    bgColor: '#240c00',
+    spread: 12.8,
+    speed: 4.5,
+    loop: true,
+    showNuclei: true,
+    showAxis: false,
+    theme: 'dark',
+    camPos: [29.61, 9, -5.71],
+    camTgt: [2.79, -4.37, 0.69],
+  },
+]
+
 function useTheme(): [ThemeName, (next: ThemeName) => void] {
   const [theme, setTheme] = useState<ThemeName>(() => {
     if (typeof localStorage === 'undefined') return 'dark'
@@ -698,7 +733,7 @@ export function LabsAtomMotion() {
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
   const [showNuclei, setShowNuclei] = useState(true)
   const [showAxis, setShowAxis] = useState(false)
-  const [electronColor, setElectronColor] = useState('#b5efe6')
+  const [electronColor, setElectronColor] = useState('#ffdbd8')
   const [bgColor, setBgColor] = useState('#240c00')
   const [theme, setTheme] = useTheme()
 
@@ -829,6 +864,24 @@ export function LabsAtomMotion() {
     orbitControlsRef.current?.reset?.()
   }, [])
 
+  const applyPreset = useCallback((p: Preset) => {
+    setElectronColor(p.electronColor)
+    setBgColor(p.bgColor)
+    setPointA([-p.spread, 0, 0])
+    setPointB([p.spread, 0, 0])
+    setSpeedMult(p.speed)
+    setAutoReplay(p.loop)
+    setShowNuclei(p.showNuclei)
+    setShowAxis(p.showAxis)
+    setTheme(p.theme)
+    const ctrl = orbitControlsRef.current
+    if (ctrl?.object?.position && ctrl?.target) {
+      ctrl.object.position.set(p.camPos[0], p.camPos[1], p.camPos[2])
+      ctrl.target.set(p.camTgt[0], p.camTgt[1], p.camTgt[2])
+      ctrl.update?.()
+    }
+  }, [setTheme])
+
   return (
     <div
       className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark}`}
@@ -956,6 +1009,22 @@ export function LabsAtomMotion() {
 
       {/* Single transparent control panel — drag canvas to rotate, pinch to zoom. */}
       <div className={s.unifiedPanel} aria-label="Atom motion controls">
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>presets</span>
+          <div className={s.presetButtons}>
+            {PRESETS.map((p) => (
+              <button
+                key={p.name}
+                type="button"
+                className={`${s.btn} ${s.btnPreset}`}
+                onClick={() => applyPreset(p)}
+                aria-label={`Apply preset ${p.name}`}
+              >
+                {p.name}
+              </button>
+            ))}
+          </div>
+        </div>
         <div className={s.unifiedRow}>
           <button
             type="button"
