@@ -64,6 +64,15 @@
   background: rgba(255, 255, 255, 0.14);
 }
 
+.btn:disabled {
+  opacity: 0.32;
+  cursor: not-allowed;
+}
+
+.btn:disabled:active {
+  background: rgba(255, 255, 255, 0.06);
+}
+
 .btnIcon {
   width: 40px;
   padding: 0;
@@ -82,4 +91,46 @@
   letter-spacing: 0.02em;
   user-select: none;
   -webkit-user-select: none;
+}
+
+/* --- Drag handles for A and B ------------------------------------------ */
+
+.dragHandle {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid;
+  background: rgba(20, 20, 20, 0.45);
+  color: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  z-index: 9000;
+  transform: translate(-50%, -50%);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  pointer-events: auto;
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+  background: rgba(20, 20, 20, 0.62);
+}
+
+.dragHandleA {
+  border-color: rgba(255, 200, 80, 0.7);
+  color: rgba(255, 220, 130, 0.95);
+}
+
+.dragHandleB {
+  border-color: rgba(120, 200, 255, 0.7);
+  color: rgba(150, 215, 255, 0.95);
 }

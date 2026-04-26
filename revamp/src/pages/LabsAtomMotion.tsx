@@ -1,32 +1,28 @@
 /*
- * /labs/atom-motion — gravity-handoff stage (round-trip).
+ * /labs/atom-motion — gravity-handoff stage with manual control.
  *
- * Two nuclei. One electron in a continuous round-trip cycle:
- *   orbit A (lapsBefore × ORBIT_PERIOD)
- *   → A→B transit (top-sweep arc OR half-lemniscate τ=π→2π)
- *   → orbit B (lapsAfter × ORBIT_PERIOD)
- *   → B→A transit (bottom-sweep arc OR half-lemniscate τ=0→π)
- *   → loop
- * Position-and-tangent continuous at every boundary including the wrap.
+ * Two draggable nuclei (A, B). Phase state machine:
+ *   orbitA → travelAB → orbitB → travelBA → orbitA
  *
- * Floating glass controls cycle laps-before / laps-after through
- * [1,2,3,5,10] and speed through [0.5×, 1×, 2×, 4×]. Rotation toggle
- * picks ellipse-arc vs lemniscate transit; loop toggle resets the trail
- * at cycle boundaries. The motion runs forever modulo the cycle even
- * with auto-replay off.
+ * Existence is independent of phase:
+ *   idle    → electron not present
+ *   visible → electron rendered (with fade in/out around state changes)
+ *
+ * Buttons:
+ *   start   idle → visible, motionPhase = orbitA
+ *   end     visible → idle (fade out)
+ *   travel  orbitA ↔ orbitB (advance into the corresponding transit)
+ *   loop    when on, orbits auto-advance into the next transit
+ *           (transits always auto-advance into the next orbit)
+ *
+ * Geometry: chord lives along local +X. The whole scene is wrapped in an
+ * outer group that translates by the chord midpoint and rotates around Z
+ * by the chord angle, so the orbit / lemniscate math stays in a clean
+ * local frame regardless of where A and B are placed on screen.
  */
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
-
-function CameraController({ zoom }: { zoom: number }) {
-  const { camera } = useThree()
-  useEffect(() => {
-    camera.position.z = zoom
-    camera.updateProjectionMatrix()
-  }, [zoom, camera])
-  return null
-}
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import { ELECTRON } from '../ui/atom/constants'
 import { makeFadeTexture } from '../ui/atom/Electron'
@@ -38,10 +34,8 @@ import {
   buildLemniscate,
   buildTravel,
   evalTravel,
-  evalTravelVelocity,
   lemniscatePos,
   orbitPosAt,
-  orbitVelocityAt,
   type OrbitDesc,
   type TravelDesc,
 } from '../ui/atom/runtime/travel'
@@ -58,155 +52,145 @@ declare module '@react-three/fiber' {
   }
 }
 
-// --- Stage geometry ---------------------------------------------------------
+// --- Constants -------------------------------------------------------------
 
-// Chord lives along local +X. The whole scene is wrapped in an outer
-// group that translates by GROUP_OFFSET and rotates around Z by
-// GROUP_TILT_Z, so the visible chord can be placed anywhere in the
-// camera plane while the orbit/lemniscate math stays in a clean local
-// frame (chord along X, orbits in xy plane).
-const CHORD_HALF = 4.33
-const NUCLEUS_A: Vec3 = [-CHORD_HALF, 0, 0]
-const NUCLEUS_B: Vec3 = [+CHORD_HALF, 0, 0]
-// Orbit semi-major sized so the far-side tip (θ=π on A's orbit, θ=0
-// on B's orbit) sits EXACTLY on the lemniscate's lobe tip — that's the
-// position-and-tangent-continuous handoff point between orbital motion
-// and the half-lemniscate transit:
-//   orbit-A far-tip = A.center − ORBIT_SIZE = −c − c(√2−1) = −c·√2
-//   lemniscate left tip = −a = −c·√2  ✓
-const ORBIT_SIZE = CHORD_HALF * (Math.SQRT2 - 1)
 const ORBIT_ASPECT = 0.62
-const ORBIT_OMEGA_BASE = 2.4 // rad/s
-// Test placement: blue-dot positions from the user's annotated screenshot.
-// Midpoint = (1.31, 2.40), chord direction = (0.93, -0.37) → tilt -21.7°.
-// 3D group tilt is dropped for this test so the chord lies cleanly in
-// the screen plane and the geometry is easy to read.
-const GROUP_OFFSET: [number, number, number] = [1.31, 2.4, 0]
-const GROUP_TILT_Z = -0.378
-const GROUP_ROTATION: [number, number, number] = [0, 0, 0]
-const CAMERA_Z = 22.0
-const COMMIT: string = (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
-// Hoisted to module scope so its identity is stable — passing a fresh
-// `() => {}` from inside the component would change identity on every
-// parent re-render (e.g. from setZoom), and ElectronProbe's reset
-// useEffect depends on `onReport`, so an unstable identity would re-fire
-// the fade-in reset on every zoom click and mask the actual zoom change.
-const NOOP_REPORT = () => {}
-// Lemniscate cycle period — full figure-8 traversal in seconds.
-const LEMNISCATE_PERIOD = 6.0
-// Half-lemniscate transit (left lobe tip → right lobe tip) takes half a
-// full cycle. Used in opposite-rotation mode to bridge orbit A → orbit B.
-const HALF_LEMNISCATE = LEMNISCATE_PERIOD / 2
-
-// --- Sequence timing (seconds) ---------------------------------------------
-
-const FADE_IN_DUR = 0.55
+const ORBIT_OMEGA_BASE = 2.4
 const ORBIT_PERIOD = (2 * Math.PI) / ORBIT_OMEGA_BASE
+const FADE_DUR = 0.55
 const TRAVEL_DUR = 1.55
-// Lap-count cycle for the lap toggle buttons.
+const LEMNISCATE_PERIOD = 6.0
+const HALF_LEMNISCATE = LEMNISCATE_PERIOD / 2
 const LAP_STEPS = [1, 2, 3, 5, 10]
+const SPEED_STEPS = [0.5, 1, 2, 3, 4, 5, 6]
+const CAMERA_Z = 22.0
+const FOV_DEG = 50
+const INITIAL_PHASE = Math.PI
 
-// --- Per-electron specs -----------------------------------------------------
+const INITIAL_POINT_A: Vec3 = [-2.72, 4.0, 0]
+const INITIAL_POINT_B: Vec3 = [5.33, 0.8, 0]
+
+const COMMIT: string = (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
+
+// --- Types -----------------------------------------------------------------
+
+type Existence = 'idle' | 'visible'
+type MotionPhase = 'orbitA' | 'travelAB' | 'orbitB' | 'travelBA'
 
 type ElectronSpec = {
   plane: Plane
-  cwAtA: boolean // true = CW around A; reverses on capture at B
+  cwAtA: boolean
   initialPhase: number
-  fadeInStart: number
   color: string
   haloColor: string
   trailColor: string
 }
-
-// One electron for now — get the A↔B elliptical transit clean before
-// layering more.
-//
-// User-locked geometric structure: each orbit's "furthest point from the
-// other nucleus" is the handoff. On A's orbit (centered at -c on x-axis,
-// B at +c), the far-side angle is θ = π — the orbit point at A.center +
-// (-size, 0, 0). On B's orbit, the far-side angle is θ = 0. Both points
-// are on the chord line, so they sit at the major-axis tips of the
-// transit ellipse with foci at A and B. The transit arc then sweeps
-// between those tips via the transit ellipse's own apex (top, φ=π/2) —
-// THE furthest point of the transit path. Three furthest points line up
-// on the symmetric pattern.
-//
-// Initial phase is fixed at π — after N full orbital periods (any N) the
-// electron is back at θ=π, so no derivation is needed regardless of
-// lapsBefore.
-const INITIAL_PHASE = Math.PI
 
 const ELECTRONS: ElectronSpec[] = [
   {
     plane: 'xy',
     cwAtA: true,
     initialPhase: INITIAL_PHASE,
-    fadeInStart: 0,
     color: '#ffffff',
     haloColor: '#ffffff',
     trailColor: '#ffffff',
   },
 ]
 
-// --- Electron probe ---------------------------------------------------------
+// --- Geometry derivations --------------------------------------------------
 
-type ProbeReport = {
-  phase: 'pre' | 'fadeIn' | 'orbitA' | 'travel' | 'orbitB'
-  position: Vec3
-  vMag: number
+function chordHalfFrom(a: Vec3, b: Vec3): number {
+  return Math.hypot(b[0] - a[0], b[1] - a[1]) / 2
+}
+function midpointFrom(a: Vec3, b: Vec3): [number, number, number] {
+  return [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2, 0]
+}
+function tiltZFrom(a: Vec3, b: Vec3): number {
+  return Math.atan2(b[1] - a[1], b[0] - a[0])
 }
 
-function makeOrbitADesc(spec: ElectronSpec): OrbitDesc {
+function makeOrbitADesc(spec: ElectronSpec, chordHalf: number, orbitSize: number): OrbitDesc {
   return {
-    center: NUCLEUS_A,
+    center: [-chordHalf, 0, 0],
     plane: spec.plane,
-    size: ORBIT_SIZE,
+    size: orbitSize,
     aspect: ORBIT_ASPECT,
     omega: spec.cwAtA ? -ORBIT_OMEGA_BASE : ORBIT_OMEGA_BASE,
     phase: spec.initialPhase,
   }
 }
-
-function makeOrbitBDesc(spec: ElectronSpec, opposite: boolean): OrbitDesc {
-  // Same rotation (default): top-sweep arc, smooth at both ends, visual
-  // "opposite spin" comes from chord-side handoff geometry.
-  // Opposite rotation: bottom-sweep arc, actually CCW at B vs CW at A,
-  // smooth capture but 180° kink at exit (the gravitational impulse).
+function makeOrbitBDesc(
+  spec: ElectronSpec,
+  chordHalf: number,
+  orbitSize: number,
+  opposite: boolean,
+): OrbitDesc {
   const sourceOmega = spec.cwAtA ? -ORBIT_OMEGA_BASE : ORBIT_OMEGA_BASE
   return {
-    center: NUCLEUS_B,
+    center: [chordHalf, 0, 0],
     plane: spec.plane,
-    size: ORBIT_SIZE,
+    size: orbitSize,
     aspect: ORBIT_ASPECT,
     omega: opposite ? -sourceOmega : sourceOmega,
     phase: 0,
   }
 }
 
+// --- Camera + projection ---------------------------------------------------
+
+function CameraController({ zoom }: { zoom: number }) {
+  const { camera } = useThree()
+  useEffect(() => {
+    camera.position.z = zoom
+    camera.updateProjectionMatrix()
+  }, [zoom, camera])
+  return null
+}
+
+function projectWorldToScreen(world: Vec3, zoom: number, w: number, h: number) {
+  const halfH = zoom * Math.tan(((FOV_DEG * Math.PI) / 180) / 2)
+  const halfW = halfH * (w / h)
+  return {
+    x: (w / 2) * (1 + world[0] / halfW),
+    y: (h / 2) * (1 - world[1] / halfH),
+  }
+}
+function unprojectScreenToWorld(
+  clientX: number,
+  clientY: number,
+  zoom: number,
+  w: number,
+  h: number,
+): Vec3 {
+  const halfH = zoom * Math.tan(((FOV_DEG * Math.PI) / 180) / 2)
+  const halfW = halfH * (w / h)
+  return [((2 * clientX - w) / w) * halfW, ((h - 2 * clientY) / h) * halfH, 0]
+}
+
+// --- ElectronProbe ---------------------------------------------------------
+
 function ElectronProbe({
   spec,
-  electronIndex,
   fadeTex,
-  replayKey,
   reducedMotion,
   oppositeRotation,
   speedMult,
-  orbitADur,
-  orbitBDur,
-  autoReplay,
-  onReport,
+  chordHalf,
+  orbitSize,
+  motionPhase,
+  existence,
+  startSeed,
 }: {
   spec: ElectronSpec
-  electronIndex: number
   fadeTex: THREE.DataTexture
-  replayKey: number
   reducedMotion: boolean
   oppositeRotation: boolean
   speedMult: number
-  orbitADur: number
-  orbitBDur: number
-  autoReplay: boolean
-  onReport: (idx: number, report: ProbeReport) => void
+  chordHalf: number
+  orbitSize: number
+  motionPhase: MotionPhase
+  existence: Existence
+  startSeed: number
 }) {
   const transitDur = oppositeRotation ? HALF_LEMNISCATE : TRAVEL_DUR
   const headRef = useRef<THREE.Mesh>(null!)
@@ -218,224 +202,188 @@ function ElectronProbe({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const trailMatRef = useRef<any>(null!)
 
-  const elapsedRef = useRef(0)
-  // Cached travel descs for the same-rotation mode — A→B (top sweep) and
-  // B→A (bottom sweep). Built once per (replayKey, mode, orbit-config),
-  // then reused every frame.
+  const phaseElapsedRef = useRef(0)
+  const opacityRef = useRef(0)
+  const lastPhaseRef = useRef<MotionPhase>(motionPhase)
   const travelDescABRef = useRef<TravelDesc | null>(null)
   const travelDescBARef = useRef<TravelDesc | null>(null)
-  const lastPosRef = useRef<Vec3>(NUCLEUS_A)
+  const lastPosRef = useRef<Vec3>([-chordHalf, 0, 0])
   const { size, invalidate } = useThree()
   const resolution = useMemo(
     () => new THREE.Vector2(size.width, size.height),
     [size.width, size.height],
   )
 
-  // Trail ring buffer.
   const bufRef = useRef<Float32Array | null>(null)
   const insertIdxRef = useRef(0)
   if (!bufRef.current) {
     bufRef.current = new Float32Array(ELECTRON.trail.segments * 3)
   }
 
-  // Reset on replay.
+  // Reset elapsed-in-phase on phase change.
   useEffect(() => {
-    elapsedRef.current = 0
+    if (lastPhaseRef.current !== motionPhase) {
+      phaseElapsedRef.current = 0
+      lastPhaseRef.current = motionPhase
+      travelDescABRef.current = null
+      travelDescBARef.current = null
+    }
+  }, [motionPhase])
+
+  // Drop cached travel descs whenever chord geometry shifts.
+  useEffect(() => {
     travelDescABRef.current = null
     travelDescBARef.current = null
+  }, [chordHalf, orbitSize, oppositeRotation])
 
-    // Reduced-motion gate: render the static end-state — electron sitting in
-    // its captured orbit around nucleus B at the entry angle. No animation.
-    // HUD continues to render normally so screenshots still capture context.
-    if (reducedMotion) {
-      const orbitA = makeOrbitADesc(spec)
-      const orbitB = makeOrbitBDesc(spec, oppositeRotation)
-      const desc = buildTravel(orbitA, orbitB, TRAVEL_DUR, {
-        exitAngle: spec.initialPhase,
-        arcSide: oppositeRotation ? 'bottom' : 'top',
-      })
-      const restPos = orbitPosAt(orbitB, desc.entryAngle)
-      if (bufRef.current) {
-        for (let i = 0; i < ELECTRON.trail.segments; i++) {
-          bufRef.current[i * 3] = restPos[0]
-          bufRef.current[i * 3 + 1] = restPos[1]
-          bufRef.current[i * 3 + 2] = restPos[2]
-        }
-      }
-      insertIdxRef.current = 0
-      lastPosRef.current = restPos
-      if (headRef.current) headRef.current.position.set(restPos[0], restPos[1], restPos[2])
-      if (haloRef.current) haloRef.current.position.set(restPos[0], restPos[1], restPos[2])
-      if (headMatRef.current) headMatRef.current.opacity = 1
-      if (haloMatRef.current) haloMatRef.current.opacity = 0.42
-      if (trailMatRef.current) trailMatRef.current.opacity = 1
-      onReport(electronIndex, { phase: 'orbitB', position: restPos, vMag: 0 })
-      invalidate()
-      return
-    }
-
-    // Seed trail behind the electron's orbit-A starting phase (both
-    // modes now start the electron orbiting A, not on the lemniscate).
-    const orbitA = makeOrbitADesc(spec)
-    const start: Vec3 = orbitPosAt(orbitA, spec.initialPhase)
+  // On Start (startSeed bumps), seed the trail at the orbit-A entry position
+  // and reset opacity so fade-in begins from 0.
+  useEffect(() => {
+    const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize)
+    const seed: Vec3 = orbitPosAt(orbitA, spec.initialPhase)
     if (bufRef.current) {
       for (let i = 0; i < ELECTRON.trail.segments; i++) {
-        bufRef.current[i * 3] = start[0]
-        bufRef.current[i * 3 + 1] = start[1]
-        bufRef.current[i * 3 + 2] = start[2]
+        bufRef.current[i * 3] = seed[0]
+        bufRef.current[i * 3 + 1] = seed[1]
+        bufRef.current[i * 3 + 2] = seed[2]
       }
     }
     insertIdxRef.current = 0
-    lastPosRef.current = start
-    if (headRef.current) headRef.current.position.set(start[0], start[1], start[2])
-    if (haloRef.current) haloRef.current.position.set(start[0], start[1], start[2])
+    lastPosRef.current = seed
+    phaseElapsedRef.current = 0
+    opacityRef.current = 0
+    if (headRef.current) headRef.current.position.set(seed[0], seed[1], seed[2])
+    if (haloRef.current) haloRef.current.position.set(seed[0], seed[1], seed[2])
     if (headMatRef.current) headMatRef.current.opacity = 0
     if (haloMatRef.current) haloMatRef.current.opacity = 0
     if (trailMatRef.current) trailMatRef.current.opacity = 0
     invalidate()
-  }, [replayKey, spec, invalidate, reducedMotion, electronIndex, onReport])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [startSeed])
+
+  // Reduced-motion gate: render the static end-state.
+  useEffect(() => {
+    if (!reducedMotion) return
+    const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize)
+    const orbitB = makeOrbitBDesc(spec, chordHalf, orbitSize, oppositeRotation)
+    const desc = buildTravel(orbitA, orbitB, TRAVEL_DUR, {
+      exitAngle: spec.initialPhase,
+      arcSide: oppositeRotation ? 'bottom' : 'top',
+    })
+    const restPos = orbitPosAt(orbitB, desc.entryAngle)
+    if (bufRef.current) {
+      for (let i = 0; i < ELECTRON.trail.segments; i++) {
+        bufRef.current[i * 3] = restPos[0]
+        bufRef.current[i * 3 + 1] = restPos[1]
+        bufRef.current[i * 3 + 2] = restPos[2]
+      }
+    }
+    insertIdxRef.current = 0
+    lastPosRef.current = restPos
+    if (headRef.current) headRef.current.position.set(restPos[0], restPos[1], restPos[2])
+    if (haloRef.current) haloRef.current.position.set(restPos[0], restPos[1], restPos[2])
+    if (headMatRef.current) headMatRef.current.opacity = 1
+    if (haloMatRef.current) haloMatRef.current.opacity = 0.42
+    if (trailMatRef.current) trailMatRef.current.opacity = 1
+    opacityRef.current = 1
+    invalidate()
+  }, [reducedMotion, spec, chordHalf, orbitSize, oppositeRotation, invalidate])
 
   useFrame((_, delta) => {
     if (reducedMotion) return
+
     const dt = Math.min(delta, 1 / 30) * speedMult
-    elapsedRef.current += dt
-    const t = elapsedRef.current
+    phaseElapsedRef.current += dt
+    const localT = phaseElapsedRef.current
 
-    let phase: ProbeReport['phase'] = 'pre'
-    let pos: Vec3 = lastPosRef.current
-    let vMag = 0
-
-    const orbitA = makeOrbitADesc(spec)
-    const orbitB = makeOrbitBDesc(spec, oppositeRotation)
-
-    // Fade-in opacity (head/halo).
-    let opacity = 0
-    if (t >= spec.fadeInStart) {
-      opacity = Math.min(1, (t - spec.fadeInStart) / FADE_IN_DUR)
+    // Lerp opacity toward existence target. Fade rate is wall-clock so the
+    // visual fade speed doesn't change with speedMult.
+    const targetOpacity = existence === 'visible' ? 1 : 0
+    const opacityRate = delta / FADE_DUR
+    if (opacityRef.current < targetOpacity) {
+      opacityRef.current = Math.min(targetOpacity, opacityRef.current + opacityRate)
+    } else if (opacityRef.current > targetOpacity) {
+      opacityRef.current = Math.max(targetOpacity, opacityRef.current - opacityRate)
     }
 
-    // Pre-fade rest position — sits at orbit-A exit angle until fade-in
-    // begins.
-    if (t < spec.fadeInStart) {
-      phase = 'pre'
-      pos = orbitPosAt(orbitA, spec.initialPhase)
-      lastPosRef.current = pos
-      headRef.current.position.set(pos[0], pos[1], pos[2])
-      if (haloRef.current) haloRef.current.position.set(pos[0], pos[1], pos[2])
+    // Fully-faded-out idle → don't run motion math, just keep meshes hidden.
+    if (existence === 'idle' && opacityRef.current === 0) {
       if (headMatRef.current) headMatRef.current.opacity = 0
       if (haloMatRef.current) haloMatRef.current.opacity = 0
       if (trailMatRef.current) trailMatRef.current.opacity = 0
-      onReport(electronIndex, { phase, position: pos, vMag })
       return
     }
 
-    // Continuous round-trip cycle:
-    //   orbit A (lapsBefore laps) → A→B transit → orbit B (lapsAfter laps)
-    //                              → B→A transit → loop
-    // Position-and-tangent continuous at every boundary including the
-    // wrap, so modulo-cycle is seamless — no trail reset, no fade-in
-    // intermission. autoReplay=false clamps at the cycle end so the
-    // electron freezes at far-A after one full round-trip.
-    const cycleDur = orbitADur + transitDur + orbitBDur + transitDur
-    const tAfterFade = t - spec.fadeInStart
-    const cycleT = autoReplay
-      ? ((tAfterFade % cycleDur) + cycleDur) % cycleDur
-      : Math.min(tAfterFade, cycleDur)
+    const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize)
+    const orbitB = makeOrbitBDesc(spec, chordHalf, orbitSize, oppositeRotation)
+    let pos: Vec3 = lastPosRef.current
 
-    const endA  = orbitADur
-    const endAB = endA + transitDur
-    const endB  = endAB + orbitBDur
-
-    if (cycleT < endA) {
-      // Orbit A. θ = π at cycle start; orbital omega walks θ around
-      // until θ = π + ω · orbitADur = π + ω · N · (2π/|ω|), which is
-      // π modulo 2π — the electron lands at far-A (θ=π) again.
-      phase = tAfterFade < FADE_IN_DUR ? 'fadeIn' : 'orbitA'
-      const localT = cycleT
+    if (motionPhase === 'orbitA') {
       const theta = spec.initialPhase + orbitA.omega * localT
       pos = orbitPosAt(orbitA, theta)
-      const v = orbitVelocityAt(orbitA, theta)
-      vMag = Math.hypot(v[0], v[1], v[2])
-    } else if (cycleT < endAB) {
-      // A → B transit.
-      phase = 'travel'
-      const localT = cycleT - endA
+    } else if (motionPhase === 'travelAB') {
+      const t = Math.min(localT, transitDur)
       if (oppositeRotation) {
-        // Half-lemniscate τ ∈ [π, 2π] (left lobe tip → right lobe tip).
-        const lemnisc = buildLemniscate(NUCLEUS_A, NUCLEUS_B, [0, 1, 0])
-        const tau = Math.PI + (Math.PI * localT) / transitDur
-        pos = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau)
-        const eps = 1e-3
-        const pPlus = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau + eps)
-        const dTauDt = Math.PI / transitDur
-        vMag = (Math.hypot(pPlus[0] - pos[0], pPlus[1] - pos[1], pPlus[2] - pos[2]) / eps) * dTauDt
+        const lemnisc = buildLemniscate(
+          [-chordHalf, 0, 0],
+          [chordHalf, 0, 0],
+          [0, 1, 0],
+        )
+        const tau = Math.PI + (Math.PI * t) / transitDur
+        pos = lemniscatePos(
+          lemnisc.midpoint,
+          lemnisc.uHat,
+          lemnisc.wHat,
+          lemnisc.a,
+          tau,
+        )
       } else {
-        // Same-rotation: top-sweep ellipse arc, exit at θ=π on orbit A,
-        // entry at θ=0 on orbit B (both far-tips). Smooth at both ends.
         if (!travelDescABRef.current) {
           const sourceAtExit: OrbitDesc = { ...orbitA, phase: Math.PI }
-          travelDescABRef.current = buildTravel(
-            sourceAtExit,
-            orbitB,
-            transitDur,
-            { exitAngle: Math.PI, arcSide: 'top' },
-          )
+          travelDescABRef.current = buildTravel(sourceAtExit, orbitB, transitDur, {
+            exitAngle: Math.PI,
+            arcSide: 'top',
+          })
         }
-        pos = evalTravel(travelDescABRef.current, localT)
-        const v = evalTravelVelocity(travelDescABRef.current, localT)
-        vMag = Math.hypot(v[0], v[1], v[2])
+        pos = evalTravel(travelDescABRef.current, t)
       }
-    } else if (cycleT < endB) {
-      // Orbit B. θ = 0 at orbit-B start. After orbitBDur (= lapsAfter
-      // periods) θ is back at 0 modulo 2π — lands at far-B again.
-      phase = 'orbitB'
-      const localT = cycleT - endAB
+    } else if (motionPhase === 'orbitB') {
       const theta = 0 + orbitB.omega * localT
       pos = orbitPosAt(orbitB, theta)
-      const v = orbitVelocityAt(orbitB, theta)
-      vMag = Math.hypot(v[0], v[1], v[2])
     } else {
-      // B → A transit.
-      phase = 'travel'
-      const localT = cycleT - endB
+      // travelBA
+      const t = Math.min(localT, transitDur)
       if (oppositeRotation) {
-        // Other half-lemniscate τ ∈ [0, π] (right lobe tip → left lobe
-        // tip). At τ=0 lemniscate tangent matches CCW orbit-B at θ=0
-        // (+y); at τ=π it matches CW orbit-A at θ=π (+y). Smooth wrap.
-        const lemnisc = buildLemniscate(NUCLEUS_A, NUCLEUS_B, [0, 1, 0])
-        const tau = (Math.PI * localT) / transitDur
-        pos = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau)
-        const eps = 1e-3
-        const pPlus = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau + eps)
-        const dTauDt = Math.PI / transitDur
-        vMag = (Math.hypot(pPlus[0] - pos[0], pPlus[1] - pos[1], pPlus[2] - pos[2]) / eps) * dTauDt
+        const lemnisc = buildLemniscate(
+          [-chordHalf, 0, 0],
+          [chordHalf, 0, 0],
+          [0, 1, 0],
+        )
+        const tau = (Math.PI * t) / transitDur
+        pos = lemniscatePos(
+          lemnisc.midpoint,
+          lemnisc.uHat,
+          lemnisc.wHat,
+          lemnisc.a,
+          tau,
+        )
       } else {
-        // Same-rotation B→A: bottom-sweep arc with exit at θ=0 on
-        // orbit B, ends at far-A on orbit A. CW + CW means tangents at
-        // far-B (−y) and far-A (+y) match the bottom-sweep arc tangents
-        // — smooth at both ends.
         if (!travelDescBARef.current) {
           const sourceAtExit: OrbitDesc = { ...orbitB, phase: 0 }
-          travelDescBARef.current = buildTravel(
-            sourceAtExit,
-            orbitA,
-            transitDur,
-            { exitAngle: 0, arcSide: 'bottom' },
-          )
+          travelDescBARef.current = buildTravel(sourceAtExit, orbitA, transitDur, {
+            exitAngle: 0,
+            arcSide: 'bottom',
+          })
         }
-        pos = evalTravel(travelDescBARef.current, localT)
-        const v = evalTravelVelocity(travelDescBARef.current, localT)
-        vMag = Math.hypot(v[0], v[1], v[2])
+        pos = evalTravel(travelDescBARef.current, t)
       }
     }
 
     lastPosRef.current = pos
 
-    // Head + halo position.
     headRef.current.position.set(pos[0], pos[1], pos[2])
     if (haloRef.current) haloRef.current.position.set(pos[0], pos[1], pos[2])
 
-    // Update trail ring buffer.
     const buf = bufRef.current!
     const idx = insertIdxRef.current
     buf[idx * 3] = pos[0]
@@ -451,12 +399,9 @@ function ElectronProbe({
     }
     if (trailGeomRef.current?.setPoints) trailGeomRef.current.setPoints(unroll)
 
-    // Apply opacities.
-    if (headMatRef.current) headMatRef.current.opacity = opacity
-    if (haloMatRef.current) haloMatRef.current.opacity = opacity * 0.42
-    if (trailMatRef.current) trailMatRef.current.opacity = opacity
-
-    onReport(electronIndex, { phase, position: pos, vMag })
+    if (headMatRef.current) headMatRef.current.opacity = opacityRef.current
+    if (haloMatRef.current) haloMatRef.current.opacity = opacityRef.current * 0.42
+    if (trailMatRef.current) trailMatRef.current.opacity = opacityRef.current
   })
 
   return (
@@ -501,16 +446,16 @@ function ElectronProbe({
   )
 }
 
-// --- Stage --------------------------------------------------------------
+// --- Nuclei ----------------------------------------------------------------
 
-function Nuclei() {
+function Nuclei({ chordHalf }: { chordHalf: number }) {
   return (
     <>
-      <mesh position={NUCLEUS_A as unknown as [number, number, number]}>
+      <mesh position={[-chordHalf, 0, 0]}>
         <sphereGeometry args={[0.07, 24, 24]} />
         <meshBasicMaterial color="#ffffff" toneMapped={false} transparent opacity={0.85} />
       </mesh>
-      <mesh position={NUCLEUS_B as unknown as [number, number, number]}>
+      <mesh position={[chordHalf, 0, 0]}>
         <sphereGeometry args={[0.07, 24, 24]} />
         <meshBasicMaterial color="#ffffff" toneMapped={false} transparent opacity={0.85} />
       </mesh>
@@ -518,71 +463,209 @@ function Nuclei() {
   )
 }
 
-// --- Page ---------------------------------------------------------------
+// --- Drag handle -----------------------------------------------------------
+
+function DragHandle({
+  pos,
+  onDrag,
+  zoom,
+  viewport,
+  label,
+}: {
+  pos: Vec3
+  onDrag: (next: Vec3) => void
+  zoom: number
+  viewport: { w: number; h: number }
+  label: 'A' | 'B'
+}) {
+  const screen = projectWorldToScreen(pos, zoom, viewport.w, viewport.h)
+  return (
+    <div
+      className={`${s.dragHandle} ${label === 'A' ? s.dragHandleA : s.dragHandleB}`}
+      style={{ left: `${screen.x}px`, top: `${screen.y}px` }}
+      onPointerDown={(e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        ;(e.target as HTMLDivElement).setPointerCapture(e.pointerId)
+      }}
+      onPointerMove={(e) => {
+        if (!(e.target as HTMLDivElement).hasPointerCapture(e.pointerId)) return
+        e.preventDefault()
+        e.stopPropagation()
+        onDrag(unprojectScreenToWorld(e.clientX, e.clientY, zoom, viewport.w, viewport.h))
+      }}
+      onPointerUp={(e) => {
+        ;(e.target as HTMLDivElement).releasePointerCapture(e.pointerId)
+      }}
+      aria-label={`Drag point ${label}`}
+    >
+      {label}
+    </div>
+  )
+}
+
+// --- Page ------------------------------------------------------------------
+
+function useViewport() {
+  const [v, setV] = useState({ w: window.innerWidth, h: window.innerHeight })
+  useEffect(() => {
+    const onResize = () => setV({ w: window.innerWidth, h: window.innerHeight })
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+  return v
+}
 
 export function LabsAtomMotion() {
-  const [replayKey, setReplayKey] = useState(0)
+  const [pointA, setPointA] = useState<Vec3>(INITIAL_POINT_A)
+  const [pointB, setPointB] = useState<Vec3>(INITIAL_POINT_B)
+  const [existence, setExistence] = useState<Existence>('idle')
+  const [motionPhase, setMotionPhase] = useState<MotionPhase>('orbitA')
   const [autoReplay, setAutoReplay] = useState(true)
   const [zoom, setZoom] = useState(CAMERA_Z)
   const [oppositeRotation, setOppositeRotation] = useState(true)
   const [speedMult, setSpeedMult] = useState(3)
-  const SPEED_STEPS = [0.5, 1, 2, 3, 4, 5, 6]
   const [lapsBefore, setLapsBefore] = useState(1)
   const [lapsAfter, setLapsAfter] = useState(1)
-  const orbitADur = lapsBefore * ORBIT_PERIOD
-  const orbitBDur = lapsAfter * ORBIT_PERIOD
+  const [startSeed, setStartSeed] = useState(0)
+
+  const viewport = useViewport()
   const reducedMotion = usePrefersReducedMotion()
   const fadeTex = useMemo(() => makeFadeTexture(), [])
 
-  const handleReplay = () => setReplayKey((k) => k + 1)
+  const chordHalf = useMemo(() => chordHalfFrom(pointA, pointB), [pointA, pointB])
+  const orbitSize = useMemo(() => chordHalf * (Math.SQRT2 - 1), [chordHalf])
+  const groupOffset = useMemo(() => midpointFrom(pointA, pointB), [pointA, pointB])
+  const groupTiltZ = useMemo(() => tiltZFrom(pointA, pointB), [pointA, pointB])
+
+  const transitDur = oppositeRotation ? HALF_LEMNISCATE : TRAVEL_DUR
+  const orbitADur = lapsBefore * ORBIT_PERIOD
+  const orbitBDur = lapsAfter * ORBIT_PERIOD
+
+  // Phase auto-advance:
+  //  - transits always advance to the next orbit
+  //  - orbits advance to the next transit only when Loop is on
+  useEffect(() => {
+    if (existence !== 'visible') return
+    let phaseDur = 0
+    let next: MotionPhase | null = null
+    if (motionPhase === 'travelAB') {
+      phaseDur = transitDur
+      next = 'orbitB'
+    } else if (motionPhase === 'travelBA') {
+      phaseDur = transitDur
+      next = 'orbitA'
+    } else if (autoReplay && motionPhase === 'orbitA') {
+      phaseDur = orbitADur
+      next = 'travelAB'
+    } else if (autoReplay && motionPhase === 'orbitB') {
+      phaseDur = orbitBDur
+      next = 'travelBA'
+    }
+    if (next === null) return
+    const ms = (phaseDur / speedMult) * 1000
+    const advance = next
+    const tid = window.setTimeout(() => setMotionPhase(advance), ms)
+    return () => window.clearTimeout(tid)
+  }, [motionPhase, existence, autoReplay, orbitADur, orbitBDur, transitDur, speedMult])
+
+  const onStart = useCallback(() => {
+    setMotionPhase('orbitA')
+    setExistence('visible')
+    setStartSeed((s) => s + 1)
+  }, [])
+  const onEnd = useCallback(() => {
+    setExistence('idle')
+  }, [])
+  const onTravel = useCallback(() => {
+    setMotionPhase((p) => {
+      if (p === 'orbitA') return 'travelAB'
+      if (p === 'orbitB') return 'travelBA'
+      return p
+    })
+  }, [])
+
+  const travelEnabled =
+    existence === 'visible' && (motionPhase === 'orbitA' || motionPhase === 'orbitB')
 
   return (
     <div className={s.root}>
       <div className={s.canvasArea}>
         <Canvas
-          camera={{ position: [0, 0, zoom], fov: 50 }}
+          camera={{ position: [0, 0, zoom], fov: FOV_DEG }}
           frameloop="always"
           aria-hidden="true"
         >
           <CameraController zoom={zoom} />
-          <group position={GROUP_OFFSET} rotation={[0, 0, GROUP_TILT_Z]}>
-            <group rotation={GROUP_ROTATION}>
-              <Nuclei />
-              {ELECTRONS.map((spec, i) => (
+          <group position={groupOffset} rotation={[0, 0, groupTiltZ]}>
+            <Nuclei chordHalf={chordHalf} />
+            {ELECTRONS.map((spec, i) => (
               <ElectronProbe
-                key={`e${i}-${replayKey}-${oppositeRotation ? 'opp' : 'same'}-${speedMult}-${lapsBefore}-${lapsAfter}`}
+                key={`e${i}`}
                 spec={spec}
-                electronIndex={i}
                 fadeTex={fadeTex}
-                replayKey={replayKey}
                 reducedMotion={reducedMotion}
                 oppositeRotation={oppositeRotation}
                 speedMult={speedMult}
-                orbitADur={orbitADur}
-                orbitBDur={orbitBDur}
-                autoReplay={autoReplay}
-                onReport={NOOP_REPORT}
+                chordHalf={chordHalf}
+                orbitSize={orbitSize}
+                motionPhase={motionPhase}
+                existence={existence}
+                startSeed={startSeed}
               />
             ))}
-            </group>
           </group>
         </Canvas>
       </div>
 
       <LabsNav />
 
+      <DragHandle pos={pointA} onDrag={setPointA} zoom={zoom} viewport={viewport} label="A" />
+      <DragHandle pos={pointB} onDrag={setPointB} zoom={zoom} viewport={viewport} label="B" />
+
       <div className={s.controlsPanel} aria-label="Atom motion controls">
         <div className={s.controlsRow}>
           <button
             type="button"
             className={s.btn}
-            onClick={() => {
+            onClick={onStart}
+            aria-label="Start"
+            title="Start"
+          >
+            ▶ start
+          </button>
+          <button
+            type="button"
+            className={s.btn}
+            onClick={onTravel}
+            aria-label="Travel"
+            title="Travel A↔B (only while orbiting)"
+            disabled={!travelEnabled}
+          >
+            ⇋ travel
+          </button>
+          <button
+            type="button"
+            className={s.btn}
+            onClick={onEnd}
+            aria-label="End"
+            title="End"
+            disabled={existence !== 'visible'}
+          >
+            ■ end
+          </button>
+        </div>
+
+        <div className={s.controlsRow}>
+          <button
+            type="button"
+            className={s.btn}
+            onClick={() =>
               setLapsBefore((v) => {
                 const idx = LAP_STEPS.indexOf(v)
                 return LAP_STEPS[(idx + 1) % LAP_STEPS.length]
               })
-              setReplayKey((k) => k + 1)
-            }}
+            }
             aria-label={`${lapsBefore} laps before transit — tap to change`}
             title={`${lapsBefore} laps before transit`}
           >
@@ -591,13 +674,12 @@ export function LabsAtomMotion() {
           <button
             type="button"
             className={s.btn}
-            onClick={() => {
+            onClick={() =>
               setLapsAfter((v) => {
                 const idx = LAP_STEPS.indexOf(v)
                 return LAP_STEPS[(idx + 1) % LAP_STEPS.length]
               })
-              setReplayKey((k) => k + 1)
-            }}
+            }
             aria-label={`${lapsAfter} laps after capture — tap to change`}
             title={`${lapsAfter} laps after capture`}
           >
@@ -609,12 +691,17 @@ export function LabsAtomMotion() {
           <button
             type="button"
             className={`${s.btn} ${oppositeRotation ? s.btnActive : ''}`}
-            onClick={() => {
-              setOppositeRotation((v) => !v)
-              setReplayKey((k) => k + 1)
-            }}
-            aria-label={oppositeRotation ? 'Switch to same-rotation transit' : 'Switch to opposite-rotation transit'}
-            title={oppositeRotation ? 'Opposite rotation (lemniscate)' : 'Same rotation (ellipse arc)'}
+            onClick={() => setOppositeRotation((v) => !v)}
+            aria-label={
+              oppositeRotation
+                ? 'Switch to same-rotation transit'
+                : 'Switch to opposite-rotation transit'
+            }
+            title={
+              oppositeRotation
+                ? 'Opposite rotation (lemniscate)'
+                : 'Same rotation (ellipse arc)'
+            }
           >
             {oppositeRotation ? '⇄ opposite' : '→ same'}
           </button>
@@ -630,14 +717,12 @@ export function LabsAtomMotion() {
           <button
             type="button"
             className={s.btn}
-            onClick={() => {
+            onClick={() =>
               setSpeedMult((v) => {
                 const idx = SPEED_STEPS.indexOf(v)
-                const next = SPEED_STEPS[(idx + 1) % SPEED_STEPS.length]
-                return next
+                return SPEED_STEPS[(idx + 1) % SPEED_STEPS.length]
               })
-              setReplayKey((k) => k + 1)
-            }}
+            }
             aria-label={`Speed ${speedMult}x — tap to change`}
             title={`Speed ${speedMult}x`}
           >
@@ -646,15 +731,6 @@ export function LabsAtomMotion() {
         </div>
 
         <div className={s.controlsRow}>
-          <button
-            type="button"
-            className={`${s.btn} ${s.btnIcon}`}
-            onClick={handleReplay}
-            aria-label="Replay"
-            title="Replay"
-          >
-            ↻
-          </button>
           <button
             type="button"
             className={`${s.btn} ${s.btnIcon}`}
