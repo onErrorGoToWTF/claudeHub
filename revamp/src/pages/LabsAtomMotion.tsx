@@ -71,11 +71,11 @@ const SPEED_SCALE = 0.5
 // Orbits are always circular (aspect = 1). Visual ellipses are purely a
 // camera-angle effect on a 3D circle, not an actual orbital aspect.
 const ORBIT_ASPECT = 1.0
-const CAMERA_Z = 29.0
+const CAMERA_Z = 21.0
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-8, 0, 0]
-const INITIAL_POINT_B: Vec3 = [8, 0, 0]
+const INITIAL_POINT_A: Vec3 = [-5.2, 0, 0]
+const INITIAL_POINT_B: Vec3 = [5.2, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -179,6 +179,27 @@ function CameraController({ zoom }: { zoom: number }) {
   return null
 }
 
+// Master clock — page-level scaled-time accumulator. Increments inside the
+// Canvas via useFrame so the value progresses on the same render tick the
+// electrons use. Each new electron snaps its entry angle to this clock,
+// which keeps freshly-added electrons evenly spaced relative to existing
+// ones regardless of when the user adds them.
+function MasterClock({
+  timeRef,
+  speedMult,
+  reducedMotion,
+}: {
+  timeRef: React.MutableRefObject<number>
+  speedMult: number
+  reducedMotion: boolean
+}) {
+  useFrame((_, delta) => {
+    if (reducedMotion) return
+    timeRef.current += Math.min(delta, 1 / 30) * speedMult * SPEED_SCALE
+  })
+  return null
+}
+
 function projectWorldToScreen(world: Vec3, zoom: number, w: number, h: number) {
   const halfH = zoom * Math.tan(((FOV_DEG * Math.PI) / 180) / 2)
   const halfW = halfH * (w / h)
@@ -215,6 +236,7 @@ function ElectronProbe({
   trailColor,
   color,
   haloColor,
+  globalScaledTimeRef,
 }: {
   spec: ElectronSpec
   fadeTex: THREE.DataTexture
@@ -229,6 +251,7 @@ function ElectronProbe({
   trailColor: string
   color: string
   haloColor: string
+  globalScaledTimeRef: React.MutableRefObject<number>
 }) {
   const headRef = useRef<THREE.Mesh>(null!)
   const headMatRef = useRef<THREE.MeshBasicMaterial>(null!)
@@ -267,15 +290,21 @@ function ElectronProbe({
     if (lastStartSeedRef.current === startSeed) return
     lastStartSeedRef.current = startSeed
     phaseRef.current = 'orbitA'
-    entryAngleRef.current = spec.initialPhase
+    // Sync new electron to the master clock: enter at the angle this
+    // electron WOULD be at if it had been running since global t=0. Same
+    // formula across all electrons keeps them locked at constant phase
+    // offsets (their evenly-spaced spec.initialPhase values).
+    const omegaA = spec.cwAtA ? -ORBIT_OMEGA_BASE : ORBIT_OMEGA_BASE
+    const syncedEntry = spec.initialPhase + omegaA * globalScaledTimeRef.current
+    entryAngleRef.current = syncedEntry
     phaseElapsedRef.current = 0
     opacityRef.current = 0
     lapsInPhaseRef.current = 0
     // Catch up the travel-count baseline so old taps don't immediately
     // fire on the new run.
     lastTravelCountRef.current = travelCount
-    const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize, spec.initialPhase)
-    const seed: Vec3 = orbitPosAt(orbitA, spec.initialPhase)
+    const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize, syncedEntry)
+    const seed: Vec3 = orbitPosAt(orbitA, syncedEntry)
     if (bufRef.current) {
       for (let i = 0; i < ELECTRON.trail.segments; i++) {
         bufRef.current[i * 3] = seed[0]
@@ -705,9 +734,9 @@ export function LabsAtomMotion() {
   const [tiltXDeg, setTiltXDeg] = useState(137)
   const [tiltYDeg, setTiltYDeg] = useState(71)
   const [tiltZDeg, setTiltZDeg] = useState(156)
-  const [autoReplay, setAutoReplay] = useState(false)
+  const [autoReplay, setAutoReplay] = useState(true)
   const [zoom, setZoom] = useState(CAMERA_Z)
-  const [speedMult, setSpeedMult] = useState(5)
+  const [speedMult, setSpeedMult] = useState(3.5)
   const [startSeeds, setStartSeeds] = useState<number[]>(() =>
     new Array(MAX_ELECTRONS).fill(0),
   )
@@ -741,6 +770,9 @@ export function LabsAtomMotion() {
   // head-vs-tail wrap seam that shows up as a "black notch" at higher
   // effective speeds, where the trail wraps around the orbit once.
   const fadeTex = useMemo(() => makeFadeTexture(5), [])
+  // Master clock advancing on the same render tick as the electrons. Each
+  // newly-added electron reads this value to compute its entry angle.
+  const globalScaledTimeRef = useRef(0)
 
   // Atom midpoint locks to world origin — controls now hug the edges of
   // the screen, so the visible-canvas center is essentially the viewport
@@ -792,6 +824,8 @@ export function LabsAtomMotion() {
     setElectronCount(0)
     setTravelCounts(new Array(MAX_ELECTRONS).fill(0))
     setNextTravelIndex(0)
+    // Reset master clock so the next "Add" cycle starts fresh.
+    globalScaledTimeRef.current = 0
   }, [])
   const onTravel = useCallback(() => {
     if (electronCount === 0) return
@@ -884,6 +918,11 @@ export function LabsAtomMotion() {
           aria-hidden="true"
         >
           <CameraController zoom={zoom} />
+          <MasterClock
+            timeRef={globalScaledTimeRef}
+            speedMult={speedMult}
+            reducedMotion={reducedMotion}
+          />
           <group position={groupOffset} rotation={[0, 0, groupTiltZ]}>
             <group rotation={[tiltXRad, tiltYRad, tiltZRad]}>
               {showGuides && (
@@ -912,6 +951,7 @@ export function LabsAtomMotion() {
                   trailColor={palette.ink}
                   color={palette.ink}
                   haloColor={palette.ink}
+                  globalScaledTimeRef={globalScaledTimeRef}
                 />
               ))}
             </group>
