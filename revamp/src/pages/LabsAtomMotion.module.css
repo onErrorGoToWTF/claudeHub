@@ -18,22 +18,8 @@
   overflow: hidden;
 }
 
-/* Theme variables scoped to the lab. Light = topbar greige; dark = near-black.
-   The 3D canvas itself is transparent, so this background shows through. */
-.themeLight {
-  --lab-bg: #cac4b8;
-  --lab-ink: #141312;
-  --lab-panel-bg: rgba(255, 255, 255, 0.32);
-  --lab-panel-border: rgba(20, 19, 18, 0.10);
-  --lab-btn-bg: rgba(20, 19, 18, 0.05);
-  --lab-btn-border: rgba(20, 19, 18, 0.14);
-  --lab-btn-active: rgba(20, 19, 18, 0.10);
-  --lab-track: rgba(20, 19, 18, 0.18);
-  --lab-thumb: rgba(20, 19, 18, 0.85);
-  --lab-thumb-border: rgba(20, 19, 18, 0.95);
-  --lab-meta: rgba(20, 19, 18, 0.45);
-}
-
+/* Theme variables scoped to the lab. Dark only — the 3D canvas itself is
+   transparent, so this background shows through. */
 .themeDark {
   --lab-bg: #1a1a1a;
   --lab-ink: #eaeaea;

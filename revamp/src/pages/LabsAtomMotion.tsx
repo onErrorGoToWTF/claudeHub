@@ -636,33 +636,17 @@ function AxisIndicators({
   )
 }
 
-// --- Theme palette ---------------------------------------------------------
+// --- Palette ---------------------------------------------------------------
 
-type ThemeName = 'light' | 'dark'
-const THEME_KEY = 'labs-atom-motion-theme'
-
-const THEME_PALETTE: Record<ThemeName, {
-  ink: string
-  axisX: string
-  axisY: string
-  axisZ: string
-  axisOpacity: number
-}> = {
-  light: {
-    ink: '#141312',
-    axisX: '#c45050',
-    axisY: '#3d8f3d',
-    axisZ: '#4a55c4',
-    axisOpacity: 0.32,
-  },
-  dark: {
-    ink: '#ffffff',
-    axisX: '#ff8a8a',
-    axisY: '#8aff8a',
-    axisZ: '#8a8aff',
-    axisOpacity: 0.45,
-  },
+const PALETTE = {
+  ink: '#ffffff',
+  axisX: '#ff8a8a',
+  axisY: '#8aff8a',
+  axisZ: '#8a8aff',
+  axisOpacity: 0.45,
 }
+
+const DEFAULT_E_COLOR = '#ffdbd8'
 
 // --- Presets --------------------------------------------------------------
 // Curated example configurations. Order is the user-facing order. Append
@@ -671,14 +655,13 @@ const THEME_PALETTE: Record<ThemeName, {
 
 type Preset = {
   name: string
-  electronColor: string
+  electronColors: string[] // length MAX_ELECTRONS
   bgColor: string
   spread: number
   speed: number
   loop: boolean
   showNuclei: boolean
   showAxis: boolean
-  theme: ThemeName
   camPos: [number, number, number]
   camTgt: [number, number, number]
 }
@@ -686,27 +669,25 @@ type Preset = {
 const PRESETS: Preset[] = [
   {
     name: '1',
-    electronColor: '#ffdbd8',
+    electronColors: ['#ffdbd8', '#ffdbd8', '#ffdbd8', '#ffdbd8'],
     bgColor: '#240c00',
     spread: 12.8,
     speed: 4.5,
     loop: true,
     showNuclei: true,
     showAxis: false,
-    theme: 'dark',
     camPos: [35.3, 12.35, -7.55],
     camTgt: [2.51, -4, 0.28],
   },
   {
     name: '2',
-    electronColor: '#ffdbd8',
+    electronColors: ['#ffdbd8', '#ffdbd8', '#ffdbd8', '#ffdbd8'],
     bgColor: '#551029',
     spread: 15.1,
     speed: 4.5,
     loop: true,
     showNuclei: true,
     showAxis: false,
-    theme: 'dark',
     // Camera sits exactly on the chord-axis line (y=0, z=0) so both
     // nuclei project to the same pixel. Target pulled down (y=-6) tilts
     // the view direction so the sparkle composes higher in frame; the
@@ -718,31 +699,17 @@ const PRESETS: Preset[] = [
   },
   {
     name: '3',
-    electronColor: '#ffdbd8',
+    electronColors: ['#ffdbd8', '#ffdbd8', '#ffdbd8', '#ffdbd8'],
     bgColor: '#020023',
     spread: 10.5,
     speed: 6,
     loop: true,
     showNuclei: false,
     showAxis: false,
-    theme: 'dark',
     camPos: [21.86, 4.39, 3.23],
     camTgt: [-1.12, -3.51, -0.82],
   },
 ]
-
-function useTheme(): [ThemeName, (next: ThemeName) => void] {
-  const [theme, setTheme] = useState<ThemeName>(() => {
-    if (typeof localStorage === 'undefined') return 'dark'
-    const stored = localStorage.getItem(THEME_KEY)
-    return stored === 'light' ? 'light' : 'dark'
-  })
-  const update = useCallback((next: ThemeName) => {
-    setTheme(next)
-    try { localStorage.setItem(THEME_KEY, next) } catch { /* ignore */ }
-  }, [])
-  return [theme, update]
-}
 
 // --- Page ------------------------------------------------------------------
 
@@ -765,9 +732,18 @@ export function LabsAtomMotion() {
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
   const [showNuclei, setShowNuclei] = useState(true)
   const [showAxis, setShowAxis] = useState(false)
-  const [electronColor, setElectronColor] = useState('#ffdbd8')
+  const [electronColors, setElectronColors] = useState<string[]>(() =>
+    new Array(MAX_ELECTRONS).fill(DEFAULT_E_COLOR),
+  )
   const [bgColor, setBgColor] = useState('#551029')
-  const [theme, setTheme] = useTheme()
+
+  const setElectronColorAt = useCallback((idx: number, color: string) => {
+    setElectronColors((prev) => {
+      const next = prev.slice()
+      next[idx] = color
+      return next
+    })
+  }, [])
 
   // Contextual hint above the action strip — guides the user through the
   // happy path. Empty string = no hint shown (animation in flow).
@@ -897,7 +873,7 @@ export function LabsAtomMotion() {
   }, [])
 
   const applyPreset = useCallback((p: Preset) => {
-    setElectronColor(p.electronColor)
+    setElectronColors(p.electronColors.slice())
     setBgColor(p.bgColor)
     setPointA([-p.spread, 0, 0])
     setPointB([p.spread, 0, 0])
@@ -905,18 +881,17 @@ export function LabsAtomMotion() {
     setAutoReplay(p.loop)
     setShowNuclei(p.showNuclei)
     setShowAxis(p.showAxis)
-    setTheme(p.theme)
     const ctrl = orbitControlsRef.current
     if (ctrl?.object?.position && ctrl?.target) {
       ctrl.object.position.set(p.camPos[0], p.camPos[1], p.camPos[2])
       ctrl.target.set(p.camTgt[0], p.camTgt[1], p.camTgt[2])
       ctrl.update?.()
     }
-  }, [setTheme])
+  }, [])
 
   return (
     <div
-      className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark}`}
+      className={`${s.root} ${s.themeDark}`}
       style={{ ['--lab-bg-base' as string]: bgColor }}
     >
       <div className={s.canvasArea}>
@@ -956,30 +931,33 @@ export function LabsAtomMotion() {
             {showAxis && (
               <AxisIndicators
                 chordHalf={chordHalf}
-                colors={{ x: palette.axisX, y: palette.axisY, z: palette.axisZ }}
-                opacity={palette.axisOpacity}
+                colors={{ x: PALETTE.axisX, y: PALETTE.axisY, z: PALETTE.axisZ }}
+                opacity={PALETTE.axisOpacity}
               />
             )}
-            {showNuclei && <Nuclei chordHalf={chordHalf} color={palette.ink} />}
-            {ELECTRON_SPECS.map((spec, i) => (
-              <ElectronProbe
-                key={`e${i}`}
-                spec={spec}
-                fadeTex={fadeTex}
-                reducedMotion={reducedMotion}
-                speedMult={speedMult}
-                chordHalf={chordHalf}
-                orbitSize={orbitSize}
-                existence={i < electronCount ? 'visible' : 'idle'}
-                autoReplay={autoReplay && !introActive}
-                travelCount={travelCounts[i] ?? 0}
-                startSeed={startSeeds[i] ?? 0}
-                trailColor={electronColor}
-                color={electronColor}
-                haloColor={electronColor}
-                globalScaledTimeRef={globalScaledTimeRef}
-              />
-            ))}
+            {showNuclei && <Nuclei chordHalf={chordHalf} color={PALETTE.ink} />}
+            {ELECTRON_SPECS.map((spec, i) => {
+              const c = electronColors[i] ?? DEFAULT_E_COLOR
+              return (
+                <ElectronProbe
+                  key={`e${i}`}
+                  spec={spec}
+                  fadeTex={fadeTex}
+                  reducedMotion={reducedMotion}
+                  speedMult={speedMult}
+                  chordHalf={chordHalf}
+                  orbitSize={orbitSize}
+                  existence={i < electronCount ? 'visible' : 'idle'}
+                  autoReplay={autoReplay && !introActive}
+                  travelCount={travelCounts[i] ?? 0}
+                  startSeed={startSeeds[i] ?? 0}
+                  trailColor={c}
+                  color={c}
+                  haloColor={c}
+                  globalScaledTimeRef={globalScaledTimeRef}
+                />
+              )
+            })}
           </group>
           <EffectComposer>
             <Bloom
@@ -994,15 +972,6 @@ export function LabsAtomMotion() {
 
       {/* Top-right: global appearance controls. */}
       <div className={s.appearanceCluster} aria-label="Appearance">
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon}`}
-          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-          aria-label="Toggle theme"
-          title={theme === 'light' ? 'Light' : 'Dark'}
-        >
-          {theme === 'light' ? '☼' : '☾'}
-        </button>
         <button
           type="button"
           className={`${s.btn} ${s.btnIcon} ${showNuclei ? s.btnActive : ''}`}
@@ -1021,14 +990,17 @@ export function LabsAtomMotion() {
         >
           {showAxis ? '✦' : '✧'}
         </button>
-        <input
-          type="color"
-          value={electronColor}
-          onChange={(e) => setElectronColor(e.currentTarget.value)}
-          className={s.colorPicker}
-          aria-label="Electron color"
-          title="Electron color"
-        />
+        {electronColors.map((c, i) => (
+          <input
+            key={`e${i}-color`}
+            type="color"
+            value={c}
+            onChange={(e) => setElectronColorAt(i, e.currentTarget.value)}
+            className={s.colorPicker}
+            aria-label={`Electron ${i + 1} color`}
+            title={`Electron ${i + 1}`}
+          />
+        ))}
         <input
           type="color"
           value={bgColor}
@@ -1143,7 +1115,10 @@ export function LabsAtomMotion() {
           {`tgt (${camTgt[0]}, ${camTgt[1]}, ${camTgt[2]})`}
         </span>
         <span className={s.buildLabel}>
-          {`build·${COMMIT} · e ${electronColor} · bg ${bgColor}`}
+          {`e ${electronColors.join(' ')}`}
+        </span>
+        <span className={s.buildLabel}>
+          {`build·${COMMIT} · bg ${bgColor}`}
         </span>
       </div>
     </div>
