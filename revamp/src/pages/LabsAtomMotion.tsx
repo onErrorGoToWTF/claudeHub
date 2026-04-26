@@ -686,6 +686,7 @@ export function LabsAtomMotion() {
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
   const [showGuides, setShowGuides] = useState(false)
   const [electronColor, setElectronColor] = useState('#ffffff')
+  const [bgColor, setBgColor] = useState('#1a1a1a')
   const [theme, setTheme] = useTheme()
 
   // Contextual hint above the action strip — guides the user through the
@@ -784,7 +785,10 @@ export function LabsAtomMotion() {
   }, [])
 
   return (
-    <div className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark}`}>
+    <div
+      className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark}`}
+      style={{ background: bgColor }}
+    >
       <div className={s.canvasArea}>
         <Canvas
           camera={{ position: DEFAULT_CAMERA_POS, fov: FOV_DEG }}
@@ -922,6 +926,14 @@ export function LabsAtomMotion() {
             className={s.colorPicker}
             aria-label="Electron color"
             title="Electron color"
+          />
+          <input
+            type="color"
+            value={bgColor}
+            onChange={(e) => setBgColor(e.currentTarget.value)}
+            className={s.colorPicker}
+            aria-label="Background color"
+            title="Background color"
           />
         </div>
         <div className={s.tiltSliderRow}>
