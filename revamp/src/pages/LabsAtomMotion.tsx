@@ -710,7 +710,11 @@ export function LabsAtomMotion() {
 
   const viewport = useViewport()
   const reducedMotion = usePrefersReducedMotion()
-  const fadeTex = useMemo(() => makeFadeTexture(), [])
+  // Sharper fade (power 5) concentrates the visible trail near the head
+  // and pushes the alpha-zero zone over a longer stretch. Hides the
+  // head-vs-tail wrap seam that shows up as a "black notch" at higher
+  // effective speeds, where the trail wraps around the orbit once.
+  const fadeTex = useMemo(() => makeFadeTexture(5), [])
 
   // Stage-center Y in world coords: scales with zoom so the atom always
   // renders at the visible-canvas vertical center (above the controls

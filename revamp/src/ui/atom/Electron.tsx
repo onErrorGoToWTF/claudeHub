@@ -70,12 +70,12 @@ function orbitPosMorphed(
   return [cx + ATOM.orbit.radiusA * scale * c, cy, cz + ATOM.orbit.radiusB * scale * sn]
 }
 
-export function makeFadeTexture() {
+export function makeFadeTexture(power = 2.2) {
   const n = 128
   const data = new Uint8Array(n * 4)
   for (let i = 0; i < n; i++) {
     const x = i / (n - 1)
-    const a = Math.pow(x, 2.2) * 255
+    const a = Math.pow(x, power) * 255
     data[i * 4] = 255
     data[i * 4 + 1] = 255
     data[i * 4 + 2] = 255
