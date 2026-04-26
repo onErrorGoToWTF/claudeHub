@@ -721,6 +721,21 @@ export function LabsAtomMotion() {
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
   const [showGuides, setShowGuides] = useState(false)
   const [theme, setTheme] = useTheme()
+  const [sheetOpen, setSheetOpen] = useState(false)
+  const [activeTab, setActiveTab] = useState<'stage' | 'motion' | 'display'>('stage')
+
+  // Contextual hint above the action strip — guides the user through the
+  // happy path. Empty string = no hint shown (animation in flow).
+  const totalTravels = useMemo(
+    () => travelCounts.reduce((a, b) => a + b, 0),
+    [travelCounts],
+  )
+  const hintText = useMemo(() => {
+    if (electronCount === 0) return 'Tap + e⁻ to add an electron'
+    if (autoReplay) return 'Looping'
+    if (totalTravels === 0) return 'Tap ⇋ travel to send it across'
+    return ''
+  }, [electronCount, autoReplay, totalTravels])
   const palette = THEME_PALETTE[theme]
 
   const viewport = useViewport()
@@ -884,164 +899,228 @@ export function LabsAtomMotion() {
         label="B"
       />
 
-      <div className={s.controlsPanel} aria-label="Atom motion controls">
-        <div className={s.controlsRow}>
+      {hintText && <div className={s.hintLine}>{hintText}</div>}
+
+      <div className={s.actionStrip} aria-label="Motion controls">
+        <button
+          type="button"
+          className={s.btn}
+          onClick={onAddElectron}
+          aria-label={
+            electronCount >= MAX_ELECTRONS
+              ? `Maximum ${MAX_ELECTRONS} electrons`
+              : `Add electron ${electronCount + 1}`
+          }
+          title={`Add electron (${electronCount}/${MAX_ELECTRONS})`}
+          disabled={electronCount >= MAX_ELECTRONS}
+        >
+          {electronCount >= MAX_ELECTRONS
+            ? `${MAX_ELECTRONS}/${MAX_ELECTRONS} e⁻`
+            : `+ e⁻ (${electronCount}/${MAX_ELECTRONS})`}
+        </button>
+        <button
+          type="button"
+          className={s.btn}
+          onClick={onTravel}
+          aria-label={`Travel electron ${nextTravelIndex + 1}`}
+          title={`Travel — next: e${nextTravelIndex + 1}`}
+          disabled={electronCount === 0}
+        >
+          {`⇋ travel e${nextTravelIndex + 1}`}
+        </button>
+        <button
+          type="button"
+          className={s.btn}
+          onClick={onEnd}
+          aria-label="End"
+          title="End — fade out, drag re-enabled"
+          disabled={electronCount === 0}
+        >
+          ■ end
+        </button>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon} ${s.tuneBtn}`}
+          onClick={() => setSheetOpen((v) => !v)}
+          aria-label={sheetOpen ? 'Close settings' : 'Open settings'}
+          title="Settings"
+        >
+          ⚙
+        </button>
+      </div>
+
+      {sheetOpen && (
+        <div
+          className={s.sheetBackdrop}
+          onClick={() => setSheetOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      <div
+        className={`${s.sheet} ${sheetOpen ? s.sheetOpen : ''}`}
+        role="dialog"
+        aria-label="Settings"
+        aria-hidden={!sheetOpen}
+      >
+        <div className={s.sheetHandle}>
+          <div className={s.sheetHandleBar} />
+        </div>
+        <div className={s.tabBar}>
           <button
             type="button"
-            className={s.btn}
-            onClick={onAddElectron}
-            aria-label={
-              electronCount >= MAX_ELECTRONS
-                ? `Maximum ${MAX_ELECTRONS} electrons`
-                : `Add electron ${electronCount + 1}`
-            }
-            title={`Add electron (${electronCount}/${MAX_ELECTRONS})`}
-            disabled={electronCount >= MAX_ELECTRONS}
+            className={`${s.tab} ${activeTab === 'stage' ? s.tabActive : ''}`}
+            onClick={() => setActiveTab('stage')}
           >
-            {electronCount >= MAX_ELECTRONS
-              ? `${MAX_ELECTRONS}/${MAX_ELECTRONS} e⁻`
-              : `+ e⁻ (${electronCount}/${MAX_ELECTRONS})`}
+            stage
           </button>
           <button
             type="button"
-            className={s.btn}
-            onClick={onTravel}
-            aria-label={`Travel electron ${nextTravelIndex + 1}`}
-            title={`Travel — next: e${nextTravelIndex + 1}`}
-            disabled={electronCount === 0}
+            className={`${s.tab} ${activeTab === 'motion' ? s.tabActive : ''}`}
+            onClick={() => setActiveTab('motion')}
           >
-            {`⇋ travel e${nextTravelIndex + 1}`}
+            motion
           </button>
           <button
             type="button"
-            className={s.btn}
-            onClick={onEnd}
-            aria-label="End"
-            title="End — fade out, drag re-enabled"
-            disabled={electronCount === 0}
+            className={`${s.tab} ${activeTab === 'display' ? s.tabActive : ''}`}
+            onClick={() => setActiveTab('display')}
           >
-            ■ end
+            display
           </button>
         </div>
 
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`spread  ${chordHalf.toFixed(1)}`}</span>
-          <input
-            type="range"
-            min={1.5}
-            max={20}
-            step={0.1}
-            value={Math.min(20, Math.max(1.5, chordHalf))}
-            onChange={(e) => setSpread(parseFloat(e.currentTarget.value))}
-            className={s.tiltSlider}
-            aria-label="Spread (chord half-distance)"
-          />
-        </div>
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`tilt X  ${tiltXDeg}°`}</span>
-          <input
-            type="range"
-            min={0}
-            max={180}
-            step={1}
-            value={tiltXDeg}
-            onChange={(e) => setTiltXDeg(parseInt(e.currentTarget.value, 10))}
-            className={s.tiltSlider}
-            aria-label="Tilt around X axis"
-          />
-        </div>
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`tilt Y  ${tiltYDeg}°`}</span>
-          <input
-            type="range"
-            min={0}
-            max={180}
-            step={1}
-            value={tiltYDeg}
-            onChange={(e) => setTiltYDeg(parseInt(e.currentTarget.value, 10))}
-            className={s.tiltSlider}
-            aria-label="Tilt around Y axis"
-          />
-        </div>
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`tilt Z  ${tiltZDeg}°`}</span>
-          <input
-            type="range"
-            min={0}
-            max={180}
-            step={1}
-            value={tiltZDeg}
-            onChange={(e) => setTiltZDeg(parseInt(e.currentTarget.value, 10))}
-            className={s.tiltSlider}
-            aria-label="Tilt around Z axis"
-          />
-        </div>
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`speed  ${speedMult}×`}</span>
-          <input
-            type="range"
-            min={0.5}
-            max={6}
-            step={0.5}
-            value={speedMult}
-            onChange={(e) => setSpeedMult(parseFloat(e.currentTarget.value))}
-            className={s.tiltSlider}
-            aria-label="Animation speed"
-          />
-        </div>
+        <div className={s.tabContent}>
+          {activeTab === 'stage' && (
+            <>
+              <div className={s.tiltSliderRow}>
+                <span className={s.tiltSliderLabel}>{`spread  ${chordHalf.toFixed(1)}`}</span>
+                <input
+                  type="range"
+                  min={1.5}
+                  max={20}
+                  step={0.1}
+                  value={Math.min(20, Math.max(1.5, chordHalf))}
+                  onChange={(e) => setSpread(parseFloat(e.currentTarget.value))}
+                  className={s.tiltSlider}
+                  aria-label="Spread (chord half-distance)"
+                />
+              </div>
+              <div className={s.tiltSliderRow}>
+                <span className={s.tiltSliderLabel}>{`tilt X  ${tiltXDeg}°`}</span>
+                <input
+                  type="range"
+                  min={0}
+                  max={180}
+                  step={1}
+                  value={tiltXDeg}
+                  onChange={(e) => setTiltXDeg(parseInt(e.currentTarget.value, 10))}
+                  className={s.tiltSlider}
+                  aria-label="Tilt around X axis"
+                />
+              </div>
+              <div className={s.tiltSliderRow}>
+                <span className={s.tiltSliderLabel}>{`tilt Y  ${tiltYDeg}°`}</span>
+                <input
+                  type="range"
+                  min={0}
+                  max={180}
+                  step={1}
+                  value={tiltYDeg}
+                  onChange={(e) => setTiltYDeg(parseInt(e.currentTarget.value, 10))}
+                  className={s.tiltSlider}
+                  aria-label="Tilt around Y axis"
+                />
+              </div>
+              <div className={s.tiltSliderRow}>
+                <span className={s.tiltSliderLabel}>{`tilt Z  ${tiltZDeg}°`}</span>
+                <input
+                  type="range"
+                  min={0}
+                  max={180}
+                  step={1}
+                  value={tiltZDeg}
+                  onChange={(e) => setTiltZDeg(parseInt(e.currentTarget.value, 10))}
+                  className={s.tiltSlider}
+                  aria-label="Tilt around Z axis"
+                />
+              </div>
+              <div className={s.controlsRow}>
+                <button
+                  type="button"
+                  className={`${s.btn} ${s.btnIcon}`}
+                  onClick={() => setZoom((z) => Math.max(2, +(z / 1.25).toFixed(2)))}
+                  aria-label="Zoom in"
+                  title="Zoom in (closer)"
+                >
+                  −
+                </button>
+                <button
+                  type="button"
+                  className={`${s.btn} ${s.btnIcon}`}
+                  onClick={() => setZoom((z) => Math.min(80, +(z * 1.25).toFixed(2)))}
+                  aria-label="Zoom out"
+                  title="Zoom out (farther)"
+                >
+                  +
+                </button>
+              </div>
+            </>
+          )}
 
-        <div className={s.controlsRow}>
-          <button
-            type="button"
-            className={`${s.btn} ${autoReplay ? s.btnActive : ''}`}
-            onClick={() => setAutoReplay((v) => !v)}
-            aria-label={autoReplay ? 'Disable auto-loop' : 'Enable auto-loop'}
-            title={autoReplay ? 'Auto-loop on' : 'Auto-loop off'}
-          >
-            {autoReplay ? '↻ loop' : '↻ once'}
-          </button>
-          <button
-            type="button"
-            className={s.btn}
-            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-            title={`${theme === 'light' ? 'Light' : 'Dark'} mode`}
-          >
-            {theme === 'light' ? '☼ light' : '☾ dark'}
-          </button>
-          <button
-            type="button"
-            className={`${s.btn} ${showGuides ? s.btnActive : ''}`}
-            onClick={() => setShowGuides((v) => !v)}
-            aria-label={showGuides ? 'Hide axis and nuclei' : 'Show axis and nuclei'}
-            title={showGuides ? 'Guides on' : 'Guides off'}
-          >
-            {showGuides ? '✦ guides' : '✧ guides'}
-          </button>
-        </div>
+          {activeTab === 'motion' && (
+            <>
+              <div className={s.tiltSliderRow}>
+                <span className={s.tiltSliderLabel}>{`speed  ${speedMult}×`}</span>
+                <input
+                  type="range"
+                  min={0.5}
+                  max={6}
+                  step={0.5}
+                  value={speedMult}
+                  onChange={(e) => setSpeedMult(parseFloat(e.currentTarget.value))}
+                  className={s.tiltSlider}
+                  aria-label="Animation speed"
+                />
+              </div>
+              <div className={s.controlsRow}>
+                <button
+                  type="button"
+                  className={`${s.btn} ${autoReplay ? s.btnActive : ''}`}
+                  onClick={() => setAutoReplay((v) => !v)}
+                  aria-label={autoReplay ? 'Disable auto-loop' : 'Enable auto-loop'}
+                  title={autoReplay ? 'Auto-loop on' : 'Auto-loop off'}
+                >
+                  {autoReplay ? '↻ loop' : '↻ once'}
+                </button>
+              </div>
+            </>
+          )}
 
-        <div className={s.controlsRow}>
-          <button
-            type="button"
-            className={`${s.btn} ${s.btnIcon}`}
-            onClick={() => setZoom((z) => Math.max(2, +(z / 1.25).toFixed(2)))}
-            aria-label="Zoom in"
-            title="Zoom in (closer)"
-          >
-            −
-          </button>
-          <button
-            type="button"
-            className={`${s.btn} ${s.btnIcon}`}
-            onClick={() => setZoom((z) => Math.min(80, +(z * 1.25).toFixed(2)))}
-            aria-label="Zoom out"
-            title="Zoom out (farther)"
-          >
-            +
-          </button>
+          {activeTab === 'display' && (
+            <>
+              <div className={s.controlsRow}>
+                <button
+                  type="button"
+                  className={s.btn}
+                  onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                  aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+                >
+                  {theme === 'light' ? '☼ light' : '☾ dark'}
+                </button>
+                <button
+                  type="button"
+                  className={`${s.btn} ${showGuides ? s.btnActive : ''}`}
+                  onClick={() => setShowGuides((v) => !v)}
+                  aria-label={showGuides ? 'Hide axis and nuclei' : 'Show axis and nuclei'}
+                >
+                  {showGuides ? '✦ guides' : '✧ guides'}
+                </button>
+              </div>
+              <span className={s.buildLabel}>{`build·${COMMIT} · z=${zoom.toFixed(1)}`}</span>
+            </>
+          )}
         </div>
-
-        <span className={s.buildLabel}>{`build·${COMMIT} · z=${zoom.toFixed(1)}`}</span>
       </div>
     </div>
   )
