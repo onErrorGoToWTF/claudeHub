@@ -60,19 +60,30 @@ declare module '@react-three/fiber' {
 
 // --- Stage geometry ---------------------------------------------------------
 
-const NUCLEUS_A: Vec3 = [-1.6, 0, 0]
-const NUCLEUS_B: Vec3 = [1.6, 0, 0]
-const CHORD_HALF = 1.6 // = (NUCLEUS_B.x − NUCLEUS_A.x) / 2
+// Chord lives along local +X. The whole scene is wrapped in an outer
+// group that translates by GROUP_OFFSET and rotates around Z by
+// GROUP_TILT_Z, so the visible chord can be placed anywhere in the
+// camera plane while the orbit/lemniscate math stays in a clean local
+// frame (chord along X, orbits in xy plane).
+const CHORD_HALF = 4.33
+const NUCLEUS_A: Vec3 = [-CHORD_HALF, 0, 0]
+const NUCLEUS_B: Vec3 = [+CHORD_HALF, 0, 0]
 // Orbit semi-major sized so the far-side tip (θ=π on A's orbit, θ=0
 // on B's orbit) sits EXACTLY on the lemniscate's lobe tip — that's the
 // position-and-tangent-continuous handoff point between orbital motion
 // and the half-lemniscate transit:
 //   orbit-A far-tip = A.center − ORBIT_SIZE = −c − c(√2−1) = −c·√2
 //   lemniscate left tip = −a = −c·√2  ✓
-const ORBIT_SIZE = CHORD_HALF * (Math.SQRT2 - 1) // ≈ 0.663
+const ORBIT_SIZE = CHORD_HALF * (Math.SQRT2 - 1)
 const ORBIT_ASPECT = 0.62
 const ORBIT_OMEGA_BASE = 2.4 // rad/s
-const GROUP_ROTATION: [number, number, number] = [Math.PI / 4, Math.PI / 4, 0]
+// Test placement: blue-dot positions from the user's annotated screenshot.
+// Midpoint = (1.31, 2.40), chord direction = (0.93, -0.37) → tilt -21.7°.
+// 3D group tilt is dropped for this test so the chord lies cleanly in
+// the screen plane and the geometry is easy to read.
+const GROUP_OFFSET: [number, number, number] = [1.31, 2.4, 0]
+const GROUP_TILT_Z = -0.378
+const GROUP_ROTATION: [number, number, number] = [0, 0, 0]
 const CAMERA_Z = 22.0
 const COMMIT: string = (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
 // Hoisted to module scope so its identity is stable — passing a fresh
@@ -534,9 +545,10 @@ export function LabsAtomMotion() {
           aria-hidden="true"
         >
           <CameraController zoom={zoom} />
-          <group rotation={GROUP_ROTATION}>
-            <Nuclei />
-            {ELECTRONS.map((spec, i) => (
+          <group position={GROUP_OFFSET} rotation={[0, 0, GROUP_TILT_Z]}>
+            <group rotation={GROUP_ROTATION}>
+              <Nuclei />
+              {ELECTRONS.map((spec, i) => (
               <ElectronProbe
                 key={`e${i}-${replayKey}-${oppositeRotation ? 'opp' : 'same'}-${speedMult}-${lapsBefore}-${lapsAfter}`}
                 spec={spec}
@@ -552,6 +564,7 @@ export function LabsAtomMotion() {
                 onReport={NOOP_REPORT}
               />
             ))}
+            </group>
           </group>
         </Canvas>
       </div>
