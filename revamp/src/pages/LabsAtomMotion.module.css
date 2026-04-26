@@ -135,7 +135,7 @@
 .tiltSliderLabel {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--lab-ink);
   min-width: 64px;
   text-align: left;
   user-select: none;
@@ -155,13 +155,13 @@
 
 .tiltSlider::-webkit-slider-runnable-track {
   height: 4px;
-  background: rgba(255, 255, 255, 0.18);
+  background: var(--lab-track);
   border-radius: 2px;
 }
 
 .tiltSlider::-moz-range-track {
   height: 4px;
-  background: rgba(255, 255, 255, 0.18);
+  background: var(--lab-track);
   border-radius: 2px;
 }
 
@@ -172,30 +172,30 @@
   height: 28px;
   margin-top: -12px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.95);
+  background: var(--lab-thumb);
+  border: 1px solid var(--lab-thumb-border);
   cursor: grab;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 .tiltSlider::-moz-range-thumb {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.95);
+  background: var(--lab-thumb);
+  border: 1px solid var(--lab-thumb-border);
   cursor: grab;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 .tiltSlider:active::-webkit-slider-thumb {
   cursor: grabbing;
-  background: #ffffff;
+  background: var(--lab-thumb);
 }
 
 .tiltSlider:active::-moz-range-thumb {
   cursor: grabbing;
-  background: #ffffff;
+  background: var(--lab-thumb);
 }
 
 /* --- Drag handles for A and B ------------------------------------------ */

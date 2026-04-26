@@ -745,6 +745,27 @@ export function LabsAtomMotion() {
     setNextTravelIndex((i) => (i + 1) % electronCount)
   }, [nextTravelIndex, electronCount])
 
+  // Scales the A↔B distance symmetrically about the midpoint while preserving
+  // chord direction. Lets the user spread the nuclei without fighting the
+  // drag handles (which can't reach past the screen edge at low zoom).
+  const setSpread = useCallback((newHalf: number) => {
+    const mx = (pointA[0] + pointB[0]) / 2
+    const my = (pointA[1] + pointB[1]) / 2
+    const mz = (pointA[2] + pointB[2]) / 2
+    const dx = pointA[0] - mx
+    const dy = pointA[1] - my
+    const dz = pointA[2] - mz
+    const curHalf = Math.hypot(dx, dy, dz)
+    if (curHalf < 1e-6) {
+      setPointA([mx - newHalf, my, mz])
+      setPointB([mx + newHalf, my, mz])
+      return
+    }
+    const k = newHalf / curHalf
+    setPointA([mx + dx * k, my + dy * k, mz + dz * k])
+    setPointB([mx - dx * k, my - dy * k, mz - dz * k])
+  }, [pointA, pointB])
+
   return (
     <div className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark}`}>
       <div className={s.canvasArea}>
@@ -844,6 +865,19 @@ export function LabsAtomMotion() {
           </button>
         </div>
 
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`spread  ${chordHalf.toFixed(1)}`}</span>
+          <input
+            type="range"
+            min={1.5}
+            max={20}
+            step={0.1}
+            value={Math.min(20, Math.max(1.5, chordHalf))}
+            onChange={(e) => setSpread(parseFloat(e.currentTarget.value))}
+            className={s.tiltSlider}
+            aria-label="Spread (chord half-distance)"
+          />
+        </div>
         <div className={s.tiltSliderRow}>
           <span className={s.tiltSliderLabel}>{`tilt X  ${tiltXDeg}°`}</span>
           <input
