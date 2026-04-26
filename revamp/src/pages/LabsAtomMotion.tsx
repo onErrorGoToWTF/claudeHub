@@ -685,6 +685,7 @@ export function LabsAtomMotion() {
   )
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
   const [showGuides, setShowGuides] = useState(false)
+  const [electronColor, setElectronColor] = useState('#ffffff')
   const [theme, setTheme] = useTheme()
 
   // Contextual hint above the action strip — guides the user through the
@@ -835,9 +836,9 @@ export function LabsAtomMotion() {
                 autoReplay={autoReplay}
                 travelCount={travelCounts[i] ?? 0}
                 startSeed={startSeeds[i] ?? 0}
-                trailColor={palette.ink}
-                color={palette.ink}
-                haloColor={palette.ink}
+                trailColor={electronColor}
+                color={electronColor}
+                haloColor={electronColor}
                 globalScaledTimeRef={globalScaledTimeRef}
               />
             ))}
@@ -914,6 +915,14 @@ export function LabsAtomMotion() {
           >
             {showGuides ? '✦' : '✧'}
           </button>
+          <input
+            type="color"
+            value={electronColor}
+            onChange={(e) => setElectronColor(e.currentTarget.value)}
+            className={s.colorPicker}
+            aria-label="Electron color"
+            title="Electron color"
+          />
         </div>
         <div className={s.tiltSliderRow}>
           <span className={s.tiltSliderLabel}>{`spread  ${chordHalf.toFixed(1)}`}</span>

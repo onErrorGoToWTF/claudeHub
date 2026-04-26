@@ -93,6 +93,36 @@
   border-color: rgba(122, 162, 255, 0.6);
 }
 
+/* Native color input styled as a circular swatch matching .btnIcon. */
+.colorPicker {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--lab-panel-border);
+  padding: 2px;
+  background: var(--lab-panel-bg);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.colorPicker::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 50%;
+}
+
+.colorPicker::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+.colorPicker::-moz-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
 .buildLabel {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 10px;
