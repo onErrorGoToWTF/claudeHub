@@ -118,9 +118,6 @@ const ELECTRON_SPECS: ElectronSpec[] = [0, 2, 1, 3].map((k) => {
 function chordHalfFrom(a: Vec3, b: Vec3): number {
   return Math.hypot(b[0] - a[0], b[1] - a[1]) / 2
 }
-function midpointFrom(a: Vec3, b: Vec3): [number, number, number] {
-  return [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2, 0]
-}
 function tiltZFrom(a: Vec3, b: Vec3): number {
   return Math.atan2(b[1] - a[1], b[0] - a[0])
 }
@@ -767,7 +764,10 @@ export function LabsAtomMotion() {
   // to any chord/orbit ratio so the S-shape recalculates from the placed
   // positions.
   const orbitSize = useMemo(() => 3 * (Math.SQRT2 - 1), [])
-  const groupOffset = useMemo(() => midpointFrom(pointA, pointB), [pointA, pointB])
+  const groupOffset = useMemo<[number, number, number]>(
+    () => [viewOffset[0], viewOffset[1], 0],
+    [viewOffset],
+  )
   const groupTiltZ = useMemo(() => tiltZFrom(pointA, pointB), [pointA, pointB])
   const tiltXRad = useMemo(() => (tiltXDeg * Math.PI) / 180, [tiltXDeg])
   const tiltYRad = useMemo(() => (tiltYDeg * Math.PI) / 180, [tiltYDeg])
@@ -822,6 +822,40 @@ export function LabsAtomMotion() {
     setPointA([mx + dx * k, my + dy * k, mz + dz * k])
     setPointB([mx - dx * k, my - dy * k, mz - dz * k])
   }, [pointA, pointB])
+
+  // Manual "recenter" — tap to snap the projected midpoint of the two
+  // nuclei to viewport center. Computes their world positions after the
+  // current tilt + outer Z rotation, projects to screen, then back-solves
+  // a world-space offset that puts the screen midpoint at center. The
+  // offset is at depth=zoom (good approximation; perspective makes it
+  // not exact for tilted scenes, but a second tap converges quickly).
+  const [viewOffset, setViewOffset] = useState<[number, number]>([0, 0])
+  const onRecenter = useCallback(() => {
+    const innerEuler = new THREE.Euler(tiltXRad, tiltYRad, tiltZRad)
+    const outerEuler = new THREE.Euler(0, 0, groupTiltZ)
+    const aLocal = new THREE.Vector3(-chordHalf, 0, 0)
+      .applyEuler(innerEuler)
+      .applyEuler(outerEuler)
+    const bLocal = new THREE.Vector3(chordHalf, 0, 0)
+      .applyEuler(innerEuler)
+      .applyEuler(outerEuler)
+    const aWorld: Vec3 = [
+      aLocal.x + viewOffset[0],
+      aLocal.y + viewOffset[1],
+      aLocal.z,
+    ]
+    const bWorld: Vec3 = [
+      bLocal.x + viewOffset[0],
+      bLocal.y + viewOffset[1],
+      bLocal.z,
+    ]
+    const aScreen = projectWorldToScreen(aWorld, zoom, viewport.w, viewport.h)
+    const bScreen = projectWorldToScreen(bWorld, zoom, viewport.w, viewport.h)
+    const midX = (aScreen.x + bScreen.x) / 2
+    const midY = (aScreen.y + bScreen.y) / 2
+    const midWorld = unprojectScreenToWorld(midX, midY, zoom, viewport.w, viewport.h)
+    setViewOffset([viewOffset[0] - midWorld[0], viewOffset[1] - midWorld[1]])
+  }, [tiltXRad, tiltYRad, tiltZRad, groupTiltZ, chordHalf, viewOffset, zoom, viewport])
 
   return (
     <div className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark}`}>
@@ -939,8 +973,17 @@ export function LabsAtomMotion() {
         </button>
       </div>
 
-      {/* Top-right: display toggles */}
+      {/* Top-right: display toggles + recenter */}
       <div className={s.floatingControls}>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={onRecenter}
+          aria-label="Recenter view on nuclei midpoint"
+          title="Recenter"
+        >
+          ◎
+        </button>
         <button
           type="button"
           className={`${s.btn} ${s.btnIcon}`}
