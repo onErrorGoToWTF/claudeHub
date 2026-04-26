@@ -67,8 +67,12 @@ const SPEED_STEPS = [0.5, 1, 2, 3, 4, 5, 6]
 // Orbits are always circular (aspect = 1). Visual ellipses are purely a
 // camera-angle effect on a 3D circle, not an actual orbital aspect.
 const ORBIT_ASPECT = 1.0
+// Orthographic camera. Higher zoom = bigger image. Default 37 matches
+// the prior perspective view's apparent scale at typical phone viewport
+// height (~756px). Camera position z is irrelevant for ortho sizing —
+// kept at 22 only so the near/far frustum encloses the atoms after tilt.
 const CAMERA_Z = 22.0
-const FOV_DEG = 50
+const ORTHO_ZOOM_DEFAULT = 37
 
 const INITIAL_POINT_A: Vec3 = [-3, 3, 0]
 const INITIAL_POINT_B: Vec3 = [3, 3, 0]
@@ -169,18 +173,19 @@ function tOffsetTo(entryAngle: number, omega: number, target: number): number {
 function CameraController({ zoom }: { zoom: number }) {
   const { camera } = useThree()
   useEffect(() => {
-    camera.position.z = zoom
+    camera.zoom = zoom
     camera.updateProjectionMatrix()
   }, [zoom, camera])
   return null
 }
 
+// Orthographic projection. R3F's orthographic mode sets the visible
+// world height = canvas_height_px / zoom (centered on lookAt). World
+// units convert to screen pixels via multiplication by zoom.
 function projectWorldToScreen(world: Vec3, zoom: number, w: number, h: number) {
-  const halfH = zoom * Math.tan(((FOV_DEG * Math.PI) / 180) / 2)
-  const halfW = halfH * (w / h)
   return {
-    x: (w / 2) * (1 + world[0] / halfW),
-    y: (h / 2) * (1 - world[1] / halfH),
+    x: w / 2 + world[0] * zoom,
+    y: h / 2 - world[1] * zoom,
   }
 }
 function unprojectScreenToWorld(
@@ -190,9 +195,7 @@ function unprojectScreenToWorld(
   w: number,
   h: number,
 ): Vec3 {
-  const halfH = zoom * Math.tan(((FOV_DEG * Math.PI) / 180) / 2)
-  const halfW = halfH * (w / h)
-  return [((2 * clientX - w) / w) * halfW, ((h - 2 * clientY) / h) * halfH, 0]
+  return [(clientX - w / 2) / zoom, -(clientY - h / 2) / zoom, 0]
 }
 
 // --- ElectronProbe (autonomous phase machine) -----------------------------
@@ -614,7 +617,7 @@ export function LabsAtomMotion() {
   const [tiltYDeg, setTiltYDeg] = useState(0)
   const [tiltZDeg, setTiltZDeg] = useState(0)
   const [autoReplay, setAutoReplay] = useState(false)
-  const [zoom, setZoom] = useState(CAMERA_Z)
+  const [zoom, setZoom] = useState(ORTHO_ZOOM_DEFAULT)
   const [speedMult, setSpeedMult] = useState(3)
   const [startSeeds, setStartSeeds] = useState<number[]>(() =>
     new Array(MAX_ELECTRONS).fill(0),
@@ -669,7 +672,8 @@ export function LabsAtomMotion() {
     <div className={s.root}>
       <div className={s.canvasArea}>
         <Canvas
-          camera={{ position: [0, 0, zoom], fov: FOV_DEG }}
+          orthographic
+          camera={{ position: [0, 0, CAMERA_Z], zoom }}
           frameloop="always"
           aria-hidden="true"
         >
@@ -830,18 +834,18 @@ export function LabsAtomMotion() {
           <button
             type="button"
             className={`${s.btn} ${s.btnIcon}`}
-            onClick={() => setZoom((z) => Math.max(2, +(z / 1.25).toFixed(2)))}
+            onClick={() => setZoom((z) => Math.min(200, +(z * 1.25).toFixed(2)))}
             aria-label="Zoom in"
-            title="Zoom in (closer)"
+            title="Zoom in (bigger)"
           >
             −
           </button>
           <button
             type="button"
             className={`${s.btn} ${s.btnIcon}`}
-            onClick={() => setZoom((z) => Math.min(80, +(z * 1.25).toFixed(2)))}
+            onClick={() => setZoom((z) => Math.max(5, +(z / 1.25).toFixed(2)))}
             aria-label="Zoom out"
-            title="Zoom out (farther)"
+            title="Zoom out (smaller)"
           >
             +
           </button>
