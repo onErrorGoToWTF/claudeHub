@@ -794,11 +794,13 @@ export function LabsAtomMotion() {
             ref={orbitControlsRef}
             makeDefault
             enableRotate
-            enablePan={false}
+            enablePan
             enableZoom
             enableDamping
             dampingFactor={0.12}
             rotateSpeed={0.9}
+            panSpeed={0.9}
+            screenSpacePanning
             minDistance={4}
             maxDistance={80}
             target={[0, 0, 0]}
