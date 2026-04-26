@@ -39,7 +39,7 @@ import { LabsNav } from '../ui/atom/LabsNav'
 import type { Vec3 } from '../ui/atom/runtime/types'
 import {
   buildLemniscate,
-  lemniscatePos,
+  sCurvePos,
   orbitPosAt,
   type OrbitDesc,
 } from '../ui/atom/runtime/travel'
@@ -409,10 +409,14 @@ function ElectronProbe({
         [chordHalf, 0, 0],
         spec.upHat,
       )
-      const t = Math.min(localT, TRANSIT_DUR)
-      const tauStart = phase === 'travelAB' ? Math.PI : 0
-      const tau = tauStart + (Math.PI * t) / TRANSIT_DUR
-      pos = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau)
+      // S-curve fitted to current geometry: lobe-tips at orbit far-tips
+      // (a = chordHalf + orbitSize), amplitude in the same aspect ratio
+      // as the original Bernoulli lemniscate (a / 2√2).
+      const a = chordHalf + orbitSize
+      const amp = a / (2 * Math.SQRT2)
+      const t01 = Math.min(localT / TRANSIT_DUR, 1)
+      const direction = phase === 'travelAB' ? -1 : 1
+      pos = sCurvePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, a, amp, t01, direction)
     }
 
     lastPosRef.current = pos
@@ -731,11 +735,11 @@ export function LabsAtomMotion() {
   }, [stageCenterY])
 
   const chordHalf = useMemo(() => chordHalfFrom(pointA, pointB), [pointA, pointB])
-  // Orbit size is coupled to chord distance via `chordHalf * (√2 − 1)`,
-  // which is exactly the constraint that makes the Bernoulli lemniscate's
-  // lobe-tips coincide with each orbit's far-tip — the relationship that
-  // produces the "perfect S" transit at any chord.
-  const orbitSize = useMemo(() => chordHalf * (Math.SQRT2 - 1), [chordHalf])
+  // Orbit size is fixed — atoms keep the same on-screen size regardless of
+  // how far apart they're placed. The transit math (sCurvePos) generalises
+  // to any chord/orbit ratio so the S-shape recalculates from the placed
+  // positions.
+  const orbitSize = useMemo(() => 3 * (Math.SQRT2 - 1), [])
   const groupOffset = useMemo(() => midpointFrom(pointA, pointB), [pointA, pointB])
   const groupTiltZ = useMemo(() => tiltZFrom(pointA, pointB), [pointA, pointB])
   const tiltXRad = useMemo(() => (tiltXDeg * Math.PI) / 180, [tiltXDeg])
