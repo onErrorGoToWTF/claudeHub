@@ -850,6 +850,44 @@ export function LabsAtomMotion() {
         </Canvas>
       </div>
 
+      {/* Top-right: global appearance controls. */}
+      <div className={s.appearanceCluster} aria-label="Appearance">
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+          aria-label="Toggle theme"
+          title={theme === 'light' ? 'Light' : 'Dark'}
+        >
+          {theme === 'light' ? '☼' : '☾'}
+        </button>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon} ${showGuides ? s.btnActive : ''}`}
+          onClick={() => setShowGuides((v) => !v)}
+          aria-label="Toggle guides"
+          title={showGuides ? 'Guides on' : 'Guides off'}
+        >
+          {showGuides ? '✦' : '✧'}
+        </button>
+        <input
+          type="color"
+          value={electronColor}
+          onChange={(e) => setElectronColor(e.currentTarget.value)}
+          className={s.colorPicker}
+          aria-label="Electron color"
+          title="Electron color"
+        />
+        <input
+          type="color"
+          value={bgColor}
+          onChange={(e) => setBgColor(e.currentTarget.value)}
+          className={s.colorPicker}
+          aria-label="Background color"
+          title="Background color"
+        />
+      </div>
+
       {/* Single transparent control panel — drag canvas to rotate, pinch to zoom. */}
       <div className={s.unifiedPanel} aria-label="Atom motion controls">
         <div className={s.unifiedRow}>
@@ -903,38 +941,6 @@ export function LabsAtomMotion() {
           >
             ◎
           </button>
-          <button
-            type="button"
-            className={`${s.btn} ${s.btnIcon}`}
-            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            aria-label="Toggle theme"
-          >
-            {theme === 'light' ? '☼' : '☾'}
-          </button>
-          <button
-            type="button"
-            className={`${s.btn} ${s.btnIcon} ${showGuides ? s.btnActive : ''}`}
-            onClick={() => setShowGuides((v) => !v)}
-            aria-label="Toggle guides"
-          >
-            {showGuides ? '✦' : '✧'}
-          </button>
-          <input
-            type="color"
-            value={electronColor}
-            onChange={(e) => setElectronColor(e.currentTarget.value)}
-            className={s.colorPicker}
-            aria-label="Electron color"
-            title="Electron color"
-          />
-          <input
-            type="color"
-            value={bgColor}
-            onChange={(e) => setBgColor(e.currentTarget.value)}
-            className={s.colorPicker}
-            aria-label="Background color"
-            title="Background color"
-          />
         </div>
         <div className={s.tiltSliderRow}>
           <span className={s.tiltSliderLabel}>{`spread  ${chordHalf.toFixed(1)}`}</span>

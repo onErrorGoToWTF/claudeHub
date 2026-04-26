@@ -133,6 +133,18 @@
   -webkit-user-select: none;
 }
 
+/* --- Top-right appearance cluster (theme, guides, color pickers) ----- */
+
+.appearanceCluster {
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 12px);
+  right: 12px;
+  z-index: 9996;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
 /* --- Unified transparent control panel -------------------------------- */
 /* Drag canvas to rotate, pinch to zoom — sliders + buttons for the rest. */
 
