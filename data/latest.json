@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T07:14:49.069Z",
+  "generated_at": "2026-04-26T08:47:35.385Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -251,7 +251,7 @@
       {
         "title": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
         "url": "https://github.com/nex-crm/wuphf",
-        "source": "HN · 229↑",
+        "source": "HN · 231↑",
         "hn_id": "47899844",
         "published": "2026-04-25T08:53:53.000Z",
         "summary": "I shipped a wiki layer for AI agents that uses markdown + git as the source of truth, with a bleve (BM25) + SQLite index on top. No vector or graph db yet. It runs locally in…"
@@ -266,7 +266,7 @@
       {
         "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
         "url": "https://alash3al.github.io/stash?_v01",
-        "source": "HN · 168↑",
+        "source": "HN · 170↑",
         "hn_id": "47897790",
         "published": "2026-04-25T01:24:40.000Z",
         "summary": ""
@@ -284,13 +284,6 @@
         "source": "Ars Technica",
         "published": "2026-04-24T22:05:45.000Z",
         "summary": "Google will invest at least $10 billion in Anthropic, and that amount could rise to $40 billion if Anthropic meets certain performance targets, Bloomberg reports . The investment follows Amazon's $5…"
-      },
-      {
-        "title": "Claude Mythos Probably Isn’t What You Think It Is - Medium",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcU1UampveDV0aFJOanFiZnMtaGo1c0RVUEVhd0tkelFSLTc0Q2M2OERRa215OXBlWUM1cndlTUZGRTZublpnNmtMX1NwN0RCb3k4R212SmhiS1VSNTN2MUs4ZFl4b1lySnhZUG85SUtybGxfUlZ0WTZqb2NfbGtDVDBVT0xlbHdkb0g1dzhCQ2xkT2c?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T21:01:01.000Z",
-        "summary": "Claude Mythos Probably Isn’t What You Think It Is Medium"
       },
       {
         "title": "'Too Dangerous to Release' Is Becoming AI's New Normal - Time Magazine",
@@ -347,6 +340,13 @@
         "source": "Google News",
         "published": "2026-04-24T18:07:43.000Z",
         "summary": "Google to invest up to $40 billion in AI rival Anthropic Reuters"
+      },
+      {
+        "title": "Claude’s new connectors use AI to order food, control music, and do your taxes - 9to5Google",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNeU5GUkhPYzhITGFHYWt0R1RvN0FMNnVpTmxCTUhUS2x4b3RxVTZjRG93d2NOdi16ZUxUQ0N6S0xKY3FuckNrdWZ3Ui1taWNzYmpfYUJzaGRTQXR1UlNxNlllRmJQb3NjUkFZcmZ2RDBGX1M3QWxRYl9VUW9HOFAtTmVyTVVNZw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T18:05:00.000Z",
+        "summary": "Claude’s new connectors use AI to order food, control music, and do your taxes 9to5Google"
       },
       {
         "title": "Claude Code Skills: The Biggest Opportunity of 2026",
