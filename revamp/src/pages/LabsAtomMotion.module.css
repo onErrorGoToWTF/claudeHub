@@ -88,7 +88,51 @@
   transform: translateY(-50%);
 }
 
-/* --- Sheet (Stage / Motion / Display) --------------------------------- */
+/* --- Floating top-right buttons over the canvas ----------------------- */
+
+.floatingControls {
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 12px);
+  right: 12px;
+  z-index: 9995;
+  display: flex;
+  gap: 6px;
+  pointer-events: auto;
+}
+
+.floatBtn {
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 16px;
+  background: var(--lab-panel-bg);
+  border: 1px solid var(--lab-panel-border);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  color: var(--lab-ink);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* --- Section header inside the sheet ---------------------------------- */
+
+.sheetSection {
+  width: 100%;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lab-meta);
+  padding: 4px 0 2px;
+  text-align: left;
+}
+
+/* --- Sheet (single tab) ----------------------------------------------- */
 
 .sheetBackdrop {
   position: fixed;
