@@ -48,12 +48,11 @@
   --lab-meta: rgba(255, 255, 255, 0.38);
 }
 
-/* --- Debossed-logo bg layer ------------------------------------------- */
-/* Two stacked clones of the same logo, offset opposite directions:
-   - Shadow clone offset up-left, multiply blend → dark rim on UL of strokes
-   - Highlight clone offset down-right, inverted + screen blend → light rim
-     on LR of strokes
-   Combined illusion = logo pressed into the bg with light from upper-left. */
+/* --- Debossed text bg layer ------------------------------------------- */
+/* Two stacked text clones, offset opposite directions:
+   - Shadow clone (black) offset up-left, multiply blend → dark rim on UL
+   - Highlight clone (white) offset down-right, screen blend → light rim
+   Combined illusion = text pressed into the bg with light from upper-left. */
 
 .debossLayer {
   position: absolute;
@@ -66,20 +65,31 @@
 .debossHighlight {
   position: absolute;
   inset: 0;
-  background-repeat: no-repeat;
-  background-size: min(60vw, 60vh) auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 28vh;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(40px, 11vw, 128px);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .debossShadow {
-  background-position: calc(50% - 1.5px) calc(30% - 1.5px);
+  color: #000;
+  transform: translate(-1.5px, -1.5px);
   filter: blur(0.4px);
   opacity: 0.22;
   mix-blend-mode: multiply;
 }
 
 .debossHighlight {
-  background-position: calc(50% + 1.5px) calc(30% + 1.5px);
-  filter: invert(1) blur(0.4px);
+  color: #fff;
+  transform: translate(1.5px, 1.5px);
+  filter: blur(0.4px);
   opacity: 0.14;
   mix-blend-mode: screen;
 }

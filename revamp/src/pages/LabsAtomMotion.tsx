@@ -85,7 +85,7 @@ const INITIAL_POINT_B: Vec3 = [15.1, 0, 0]
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
 
-const DEBOSS_LOGO_URL = `${import.meta.env.BASE_URL}AF.png`
+const DEBOSS_TEXT = 'aiUniversity'
 
 // --- Types -----------------------------------------------------------------
 
@@ -948,14 +948,8 @@ export function LabsAtomMotion() {
       style={{ ['--lab-bg-base' as string]: bgColor }}
     >
       <div className={s.debossLayer} aria-hidden="true">
-        <div
-          className={s.debossShadow}
-          style={{ backgroundImage: `url(${DEBOSS_LOGO_URL})` }}
-        />
-        <div
-          className={s.debossHighlight}
-          style={{ backgroundImage: `url(${DEBOSS_LOGO_URL})` }}
-        />
+        <div className={s.debossShadow}>{DEBOSS_TEXT}</div>
+        <div className={s.debossHighlight}>{DEBOSS_TEXT}</div>
       </div>
       <div className={s.canvasArea}>
         <Canvas
