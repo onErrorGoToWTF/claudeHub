@@ -705,6 +705,7 @@ export function LabsAtomMotion() {
     new Array(MAX_ELECTRONS).fill(0),
   )
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
+  const [showGuides, setShowGuides] = useState(true)
   const [theme, setTheme] = useTheme()
   const palette = THEME_PALETTE[theme]
 
@@ -811,12 +812,16 @@ export function LabsAtomMotion() {
           <CameraController zoom={zoom} />
           <group position={groupOffset} rotation={[0, 0, groupTiltZ]}>
             <group rotation={[tiltXRad, tiltYRad, tiltZRad]}>
-              <AxisIndicators
-                chordHalf={chordHalf}
-                colors={{ x: palette.axisX, y: palette.axisY, z: palette.axisZ }}
-                opacity={palette.axisOpacity}
-              />
-              <Nuclei chordHalf={chordHalf} color={palette.ink} />
+              {showGuides && (
+                <>
+                  <AxisIndicators
+                    chordHalf={chordHalf}
+                    colors={{ x: palette.axisX, y: palette.axisY, z: palette.axisZ }}
+                    opacity={palette.axisOpacity}
+                  />
+                  <Nuclei chordHalf={chordHalf} color={palette.ink} />
+                </>
+              )}
               {ELECTRON_SPECS.map((spec, i) => (
                 <ElectronProbe
                   key={`e${i}`}
@@ -990,6 +995,15 @@ export function LabsAtomMotion() {
             title={`${theme === 'light' ? 'Light' : 'Dark'} mode`}
           >
             {theme === 'light' ? '☼ light' : '☾ dark'}
+          </button>
+          <button
+            type="button"
+            className={`${s.btn} ${showGuides ? s.btnActive : ''}`}
+            onClick={() => setShowGuides((v) => !v)}
+            aria-label={showGuides ? 'Hide axis and nuclei' : 'Show axis and nuclei'}
+            title={showGuides ? 'Guides on' : 'Guides off'}
+          >
+            {showGuides ? '✦ guides' : '✧ guides'}
           </button>
         </div>
 
