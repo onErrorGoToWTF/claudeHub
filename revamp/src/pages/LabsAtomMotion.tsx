@@ -610,7 +610,9 @@ export function LabsAtomMotion() {
   const [pointA, setPointA] = useState<Vec3>(INITIAL_POINT_A)
   const [pointB, setPointB] = useState<Vec3>(INITIAL_POINT_B)
   const [electronCount, setElectronCount] = useState(0)
-  const [tiltDeg, setTiltDeg] = useState(0)
+  const [tiltXDeg, setTiltXDeg] = useState(0)
+  const [tiltYDeg, setTiltYDeg] = useState(0)
+  const [tiltZDeg, setTiltZDeg] = useState(0)
   const [autoReplay, setAutoReplay] = useState(false)
   const [zoom, setZoom] = useState(CAMERA_Z)
   const [speedMult, setSpeedMult] = useState(3)
@@ -630,7 +632,9 @@ export function LabsAtomMotion() {
   const orbitSize = useMemo(() => chordHalf * (Math.SQRT2 - 1), [chordHalf])
   const groupOffset = useMemo(() => midpointFrom(pointA, pointB), [pointA, pointB])
   const groupTiltZ = useMemo(() => tiltZFrom(pointA, pointB), [pointA, pointB])
-  const tiltRad = useMemo(() => (tiltDeg * Math.PI) / 180, [tiltDeg])
+  const tiltXRad = useMemo(() => (tiltXDeg * Math.PI) / 180, [tiltXDeg])
+  const tiltYRad = useMemo(() => (tiltYDeg * Math.PI) / 180, [tiltYDeg])
+  const tiltZRad = useMemo(() => (tiltZDeg * Math.PI) / 180, [tiltZDeg])
 
   const dragLocked = electronCount > 0
 
@@ -671,7 +675,7 @@ export function LabsAtomMotion() {
         >
           <CameraController zoom={zoom} />
           <group position={groupOffset} rotation={[0, 0, groupTiltZ]}>
-            <group rotation={[tiltRad, 0, 0]}>
+            <group rotation={[tiltXRad, tiltYRad, tiltZRad]}>
               <AxisIndicators chordHalf={chordHalf} />
               <Nuclei chordHalf={chordHalf} />
               {ELECTRON_SPECS.map((spec, i) => (
@@ -757,16 +761,42 @@ export function LabsAtomMotion() {
         </div>
 
         <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`tilt ${tiltDeg}°`}</span>
+          <span className={s.tiltSliderLabel}>{`tilt X  ${tiltXDeg}°`}</span>
           <input
             type="range"
             min={0}
             max={180}
             step={1}
-            value={tiltDeg}
-            onChange={(e) => setTiltDeg(parseInt(e.currentTarget.value, 10))}
+            value={tiltXDeg}
+            onChange={(e) => setTiltXDeg(parseInt(e.currentTarget.value, 10))}
             className={s.tiltSlider}
-            aria-label="Tilt angle"
+            aria-label="Tilt around X axis"
+          />
+        </div>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`tilt Y  ${tiltYDeg}°`}</span>
+          <input
+            type="range"
+            min={0}
+            max={180}
+            step={1}
+            value={tiltYDeg}
+            onChange={(e) => setTiltYDeg(parseInt(e.currentTarget.value, 10))}
+            className={s.tiltSlider}
+            aria-label="Tilt around Y axis"
+          />
+        </div>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`tilt Z  ${tiltZDeg}°`}</span>
+          <input
+            type="range"
+            min={0}
+            max={180}
+            step={1}
+            value={tiltZDeg}
+            onChange={(e) => setTiltZDeg(parseInt(e.currentTarget.value, 10))}
+            className={s.tiltSlider}
+            aria-label="Tilt around Z axis"
           />
         </div>
 
