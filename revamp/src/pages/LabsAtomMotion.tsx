@@ -716,6 +716,19 @@ const PRESETS: Preset[] = [
     camPos: [50, 0, 0],
     camTgt: [0, -6, 0],
   },
+  {
+    name: '3',
+    electronColor: '#ffdbd8',
+    bgColor: '#020023',
+    spread: 10.5,
+    speed: 6,
+    loop: true,
+    showNuclei: false,
+    showAxis: false,
+    theme: 'dark',
+    camPos: [21.86, 4.39, 3.23],
+    camTgt: [-1.12, -3.51, -0.82],
+  },
 ]
 
 function useTheme(): [ThemeName, (next: ThemeName) => void] {
