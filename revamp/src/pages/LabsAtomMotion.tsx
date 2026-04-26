@@ -75,12 +75,12 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Distance from origin ≈ 20.3.
-const DEFAULT_CAMERA_POS: [number, number, number] = [19.66, 6.42, -4.08]
-const DEFAULT_CAMERA_TARGET: [number, number, number] = [0, 0, 0]
+const DEFAULT_CAMERA_POS: [number, number, number] = [27.16, 6.51, -5.46]
+const DEFAULT_CAMERA_TARGET: [number, number, number] = [1.58, -3.04, 1.19]
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-9.2, 0, 0]
-const INITIAL_POINT_B: Vec3 = [9.2, 0, 0]
+const INITIAL_POINT_A: Vec3 = [-11.1, 0, 0]
+const INITIAL_POINT_B: Vec3 = [11.1, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
