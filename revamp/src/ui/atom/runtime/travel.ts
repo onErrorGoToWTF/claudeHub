@@ -58,13 +58,35 @@ export type OrbitDesc = {
   omega: number
   /** Phase offset at t=0 (radians). */
   phase: number
+  /** If set, overrides `plane`: the orbit lives in the plane spanned by
+   *  `chordAxis` (defaulting to +X) and `upHat`. The two basis axes are
+   *  used to build the orbit ellipse (size·cos along chordAxis, aspect·
+   *  size·sin along upHat). Lets each electron have its own orbital
+   *  plane around a shared chord (atom-motion's multi-electron case). */
+  upHat?: Vec3
+  /** Optional companion to `upHat`. Defaults to [1,0,0] when upHat is
+   *  set — i.e. the chord runs along local +X. */
+  chordAxis?: Vec3
+}
+
+function liftToBasis(
+  orbit: OrbitDesc,
+  u: number,
+  v: number,
+): Vec3 {
+  if (orbit.upHat) {
+    const c = orbit.chordAxis ?? [1, 0, 0]
+    const w = orbit.upHat
+    return [u * c[0] + v * w[0], u * c[1] + v * w[1], u * c[2] + v * w[2]]
+  }
+  return planeLift(orbit.plane, u, v)
 }
 
 /** Position on an orbit at orbit-frame angle θ (post-tilt, world-aligned). */
 export function orbitPosAt(orbit: OrbitDesc, theta: number): Vec3 {
   const u = orbit.size * Math.cos(theta)
   const v = orbit.size * orbit.aspect * Math.sin(theta)
-  const lifted = planeLift(orbit.plane, u, v)
+  const lifted = liftToBasis(orbit, u, v)
   const tilted = applyTilt(lifted, orbit.tiltX ?? 0, orbit.tiltY ?? 0)
   return [
     orbit.center[0] + tilted[0],
@@ -77,7 +99,7 @@ export function orbitPosAt(orbit: OrbitDesc, theta: number): Vec3 {
 export function orbitVelocityAt(orbit: OrbitDesc, theta: number): Vec3 {
   const du = -orbit.size * Math.sin(theta) * orbit.omega
   const dv = orbit.size * orbit.aspect * Math.cos(theta) * orbit.omega
-  const lifted = planeLift(orbit.plane, du, dv)
+  const lifted = liftToBasis(orbit, du, dv)
   return applyTilt(lifted, orbit.tiltX ?? 0, orbit.tiltY ?? 0)
 }
 
