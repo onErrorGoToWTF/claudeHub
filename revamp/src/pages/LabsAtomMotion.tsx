@@ -567,7 +567,7 @@ export function LabsAtomMotion() {
             <ReplayLoop
               replayKey={replayKey}
               setReplayKey={setReplayKey}
-              duration={oppositeRotation ? LEMNISCATE_PERIOD : TOTAL_DUR}
+              duration={oppositeRotation ? LEMNISCATE_PERIOD * 2 : TOTAL_DUR}
             />
           )}
         </Canvas>
