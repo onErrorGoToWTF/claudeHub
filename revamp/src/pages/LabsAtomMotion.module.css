@@ -71,16 +71,16 @@
 }
 
 .debossShadow {
-  background-position: calc(50% - 4px) calc(50% - 4px);
-  filter: blur(3px);
-  opacity: 0.14;
+  background-position: calc(50% - 1.5px) calc(30% - 1.5px);
+  filter: blur(0.4px);
+  opacity: 0.22;
   mix-blend-mode: multiply;
 }
 
 .debossHighlight {
-  background-position: calc(50% + 4px) calc(50% + 4px);
-  filter: invert(1) blur(3px);
-  opacity: 0.09;
+  background-position: calc(50% + 1.5px) calc(30% + 1.5px);
+  filter: invert(1) blur(0.4px);
+  opacity: 0.14;
   mix-blend-mode: screen;
 }
 
