@@ -75,8 +75,8 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Matches Preset 1.
-const DEFAULT_CAMERA_POS: [number, number, number] = [50, 0, 0]
-const DEFAULT_CAMERA_TARGET: [number, number, number] = [0, 0, 0]
+const DEFAULT_CAMERA_POS: [number, number, number] = [50, -6, 0]
+const DEFAULT_CAMERA_TARGET: [number, number, number] = [0, -6, 0]
 const FOV_DEG = 50
 
 const INITIAL_POINT_A: Vec3 = [-17.2, 0, 0]
@@ -710,8 +710,8 @@ const PRESETS: Preset[] = [
     // Pure chord-axis view — camera and target share Y=Z=0 so the four
     // orbital planes (all containing the X chord axis) collapse edge-on
     // and project to 4 spokes radiating from one apparent center.
-    camPos: [50, 0, 0],
-    camTgt: [0, 0, 0],
+    camPos: [50, -6, 0],
+    camTgt: [0, -6, 0],
   },
 ]
 
