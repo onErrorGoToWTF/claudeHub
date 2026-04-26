@@ -64,7 +64,6 @@ const FADE_DUR = 0.55
 const LEMNISCATE_PERIOD = 6.0
 const TRANSIT_DUR = LEMNISCATE_PERIOD / 2
 const SPEED_STEPS = [0.5, 1, 2, 3, 4, 5, 6]
-const TILT_STEPS_DEG = [0, 30, 45, 60]
 // Orbits are always circular (aspect = 1). Visual ellipses are purely a
 // camera-angle effect on a 3D circle, not an actual orbital aspect.
 const ORBIT_ASPECT = 1.0
@@ -672,7 +671,7 @@ export function LabsAtomMotion() {
         >
           <CameraController zoom={zoom} />
           <group position={groupOffset} rotation={[0, 0, groupTiltZ]}>
-            <group rotation={[tiltRad, tiltRad, 0]}>
+            <group rotation={[tiltRad, 0, 0]}>
               <AxisIndicators chordHalf={chordHalf} />
               <Nuclei chordHalf={chordHalf} />
               {ELECTRON_SPECS.map((spec, i) => (
@@ -757,21 +756,18 @@ export function LabsAtomMotion() {
           </button>
         </div>
 
-        <div className={s.controlsRow}>
-          <button
-            type="button"
-            className={s.btn}
-            onClick={() =>
-              setTiltDeg((d) => {
-                const idx = TILT_STEPS_DEG.indexOf(d)
-                return TILT_STEPS_DEG[(idx + 1) % TILT_STEPS_DEG.length]
-              })
-            }
-            aria-label={`Tilt ${tiltDeg}° — tap to change`}
-            title={`Tilt ${tiltDeg}°`}
-          >
-            {`tilt ${tiltDeg}°`}
-          </button>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`tilt ${tiltDeg}°`}</span>
+          <input
+            type="range"
+            min={0}
+            max={180}
+            step={1}
+            value={tiltDeg}
+            onChange={(e) => setTiltDeg(parseInt(e.currentTarget.value, 10))}
+            className={s.tiltSlider}
+            aria-label="Tilt angle"
+          />
         </div>
 
         <div className={s.controlsRow}>
