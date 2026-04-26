@@ -45,189 +45,16 @@
   inset: 0;
 }
 
-/* --- Hint line + action strip ------------------------------------------ */
+/* --- Buttons (shared) -------------------------------------------------- */
 
-.hintLine {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: calc(60px + env(safe-area-inset-bottom) + 6px);
-  z-index: 9996;
-  text-align: center;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 11px;
-  color: var(--lab-meta);
-  letter-spacing: 0.02em;
-  pointer-events: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.actionStrip {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9997;
-  height: calc(60px + env(safe-area-inset-bottom));
-  padding: 8px 12px env(safe-area-inset-bottom);
-  background: var(--lab-panel-bg);
-  border-top: 1px solid var(--lab-panel-border);
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.tuneBtn {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* --- Floating top-right buttons over the canvas ----------------------- */
-
-.floatingControls {
-  position: fixed;
-  top: calc(env(safe-area-inset-top) + 12px);
-  right: 12px;
-  z-index: 9995;
-  display: flex;
-  gap: 6px;
-  pointer-events: auto;
-}
-
-.floatBtn {
-  height: 32px;
-  padding: 0 12px;
-  border-radius: 16px;
+.btn {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 18px;
   background: var(--lab-panel-bg);
   border: 1px solid var(--lab-panel-border);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
-  color: var(--lab-ink);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 11px;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-/* --- Section header inside the sheet ---------------------------------- */
-
-.sheetSection {
-  width: 100%;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--lab-meta);
-  padding: 4px 0 2px;
-  text-align: left;
-}
-
-/* --- Sheet (single tab) ----------------------------------------------- */
-
-.sheetBackdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  background: transparent;
-}
-
-.sheet {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  height: min(50dvh, 480px);
-  background: var(--lab-panel-bg);
-  border-top: 1px solid var(--lab-panel-border);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  transform: translateY(100%);
-  transition: transform 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
-.sheetOpen {
-  transform: translateY(0);
-}
-
-.sheetHandle {
-  display: flex;
-  justify-content: center;
-  padding: 8px 0 4px;
-}
-
-.sheetHandleBar {
-  width: 36px;
-  height: 4px;
-  border-radius: 2px;
-  background: var(--lab-btn-border);
-}
-
-.tabBar {
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--lab-panel-border);
-}
-
-.tab {
-  height: 30px;
-  padding: 0 14px;
-  border-radius: 15px;
-  background: transparent;
-  border: none;
-  color: var(--lab-meta);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 12px;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.tabActive {
-  background: var(--lab-btn-bg);
-  color: var(--lab-ink);
-}
-
-.tabContent {
-  flex: 1;
-  overflow-y: auto;
-  padding: 14px 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.controlsRow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.btn {
-  height: 40px;
-  padding: 0 14px;
-  border-radius: 20px;
-  background: var(--lab-btn-bg);
-  border: 1px solid var(--lab-btn-border);
   color: var(--lab-ink);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 12px;
@@ -250,14 +77,10 @@
   cursor: not-allowed;
 }
 
-.btn:disabled:active {
-  background: var(--lab-btn-bg);
-}
-
 .btnIcon {
-  width: 40px;
+  width: 36px;
   padding: 0;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .btnActive {
@@ -274,20 +97,148 @@
   -webkit-user-select: none;
 }
 
-/* --- Tilt slider ------------------------------------------------------- */
+/* --- Top-left action stack (motion verbs) ----------------------------- */
+
+.topLeftActions {
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 12px);
+  left: 12px;
+  z-index: 9996;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* --- Top-right floating display toggles ------------------------------- */
+
+.floatingControls {
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 12px);
+  right: 12px;
+  z-index: 9995;
+  display: flex;
+  gap: 6px;
+}
+
+/* --- Hint line (floats above the bottom controls) --------------------- */
+
+.hintLine {
+  position: fixed;
+  bottom: calc(96px + env(safe-area-inset-bottom));
+  left: 0;
+  right: 0;
+  z-index: 9994;
+  text-align: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: var(--lab-meta);
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* --- Left-edge collapsible slider panel ------------------------------- */
+
+.leftPanelToggle {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9994;
+  width: 28px;
+  height: 80px;
+  border: none;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  background: var(--lab-panel-bg);
+  border-right: 1px solid var(--lab-panel-border);
+  border-top: 1px solid var(--lab-panel-border);
+  border-bottom: 1px solid var(--lab-panel-border);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  color: var(--lab-ink);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.leftPanel {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  z-index: 9995;
+  width: min(300px, 86%);
+  padding: 12px 14px;
+  background: var(--lab-panel-bg);
+  border: 1px solid var(--lab-panel-border);
+  border-left: none;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.leftPanelOpen {
+  transform: translate(0, -50%);
+}
+
+.leftPanelClose {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--lab-meta);
+  cursor: pointer;
+  font-size: 12px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* --- Bottom strip (speed + zoom sliders) ------------------------------ */
+
+.bottomBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9995;
+  padding: 8px 14px calc(8px + env(safe-area-inset-bottom));
+  background: var(--lab-panel-bg);
+  border-top: 1px solid var(--lab-panel-border);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: stretch;
+}
+
+/* --- Slider rows ------------------------------------------------------ */
 
 .tiltSliderRow {
   display: flex;
   align-items: center;
-  gap: 12px;
-  width: min(360px, 90%);
+  gap: 10px;
+  width: 100%;
 }
 
 .tiltSliderLabel {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--lab-ink);
-  min-width: 64px;
+  min-width: 70px;
   text-align: left;
   user-select: none;
   -webkit-user-select: none;
@@ -295,7 +246,7 @@
 
 .tiltSlider {
   flex: 1;
-  height: 32px;
+  height: 22px;
   appearance: none;
   -webkit-appearance: none;
   background: transparent;
@@ -319,9 +270,9 @@
 .tiltSlider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 28px;
-  height: 28px;
-  margin-top: -12px;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
   border-radius: 50%;
   background: var(--lab-thumb);
   border: 1px solid var(--lab-thumb-border);
@@ -330,8 +281,8 @@
 }
 
 .tiltSlider::-moz-range-thumb {
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: var(--lab-thumb);
   border: 1px solid var(--lab-thumb-border);

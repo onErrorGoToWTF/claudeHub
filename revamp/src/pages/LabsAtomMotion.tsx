@@ -35,7 +35,6 @@ import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import { ELECTRON } from '../ui/atom/constants'
 import { makeFadeTexture } from '../ui/atom/Electron'
 import { usePrefersReducedMotion } from '../ui/atom/usePrefersReducedMotion'
-import { LabsNav } from '../ui/atom/LabsNav'
 import type { Vec3 } from '../ui/atom/runtime/types'
 import {
   buildLemniscate,
@@ -75,8 +74,8 @@ const ORBIT_ASPECT = 1.0
 const CAMERA_Z = 22.0
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-8, 3, 0]
-const INITIAL_POINT_B: Vec3 = [8, 3, 0]
+const INITIAL_POINT_A: Vec3 = [-8, 0, 0]
+const INITIAL_POINT_B: Vec3 = [8, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -721,7 +720,7 @@ export function LabsAtomMotion() {
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
   const [showGuides, setShowGuides] = useState(false)
   const [theme, setTheme] = useTheme()
-  const [sheetOpen, setSheetOpen] = useState(false)
+  const [leftPanelOpen, setLeftPanelOpen] = useState(false)
 
   // Contextual hint above the action strip — guides the user through the
   // happy path. Empty string = no hint shown (animation in flow).
@@ -745,15 +744,10 @@ export function LabsAtomMotion() {
   // effective speeds, where the trail wraps around the orbit once.
   const fadeTex = useMemo(() => makeFadeTexture(5), [])
 
-  // Stage-center Y in world coords: scales with zoom so the atom always
-  // renders at the visible-canvas vertical center (above the controls
-  // panel) regardless of how far the camera is pulled back. 0.15 ≈
-  // controls panel covers ~30% of viewport, so visible-canvas center
-  // sits ~15% above viewport midline.
-  const stageCenterY = useMemo(() => {
-    const halfTan = Math.tan(((FOV_DEG * Math.PI) / 180) / 2)
-    return zoom * 0.15 * 2 * halfTan
-  }, [zoom])
+  // Atom midpoint locks to world origin — controls now hug the edges of
+  // the screen, so the visible-canvas center is essentially the viewport
+  // center (camera is at 0,0,zoom looking at origin).
+  const stageCenterY = 0
 
   // Whenever stage-center shifts (zoom change), translate both points so
   // the midpoint stays locked to the stage center. Preserves chord
@@ -873,8 +867,6 @@ export function LabsAtomMotion() {
         </Canvas>
       </div>
 
-      <LabsNav />
-
       <DragHandle
         pos={pointA}
         onDrag={(p) => {
@@ -898,30 +890,8 @@ export function LabsAtomMotion() {
         label="B"
       />
 
-      <div className={s.floatingControls}>
-        <button
-          type="button"
-          className={s.floatBtn}
-          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-          title={`${theme === 'light' ? 'Light' : 'Dark'} mode`}
-        >
-          {theme === 'light' ? '☼' : '☾'}
-        </button>
-        <button
-          type="button"
-          className={s.floatBtn}
-          onClick={() => setShowGuides((v) => !v)}
-          aria-label={showGuides ? 'Hide guides' : 'Show guides'}
-          title={showGuides ? 'Guides on' : 'Guides off'}
-        >
-          {showGuides ? '✦' : '✧'}
-        </button>
-      </div>
-
-      {hintText && <div className={s.hintLine}>{hintText}</div>}
-
-      <div className={s.actionStrip} aria-label="Motion controls">
+      {/* Top-left: motion verbs */}
+      <div className={s.topLeftActions} aria-label="Motion controls">
         <button
           type="button"
           className={s.btn}
@@ -960,137 +930,149 @@ export function LabsAtomMotion() {
         </button>
         <button
           type="button"
-          className={`${s.btn} ${s.btnIcon} ${s.tuneBtn}`}
-          onClick={() => setSheetOpen((v) => !v)}
-          aria-label={sheetOpen ? 'Close settings' : 'Open settings'}
-          title="Settings"
+          className={`${s.btn} ${autoReplay ? s.btnActive : ''}`}
+          onClick={() => setAutoReplay((v) => !v)}
+          aria-label={autoReplay ? 'Disable auto-loop' : 'Enable auto-loop'}
+          title={autoReplay ? 'Auto-loop on' : 'Auto-loop off'}
         >
-          ⚙
+          {autoReplay ? '↻ loop' : '↻ once'}
         </button>
       </div>
 
-      {sheetOpen && (
-        <div
-          className={s.sheetBackdrop}
-          onClick={() => setSheetOpen(false)}
-          aria-hidden="true"
-        />
+      {/* Top-right: display toggles */}
+      <div className={s.floatingControls}>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          title={`${theme === 'light' ? 'Light' : 'Dark'} mode`}
+        >
+          {theme === 'light' ? '☼' : '☾'}
+        </button>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon} ${showGuides ? s.btnActive : ''}`}
+          onClick={() => setShowGuides((v) => !v)}
+          aria-label={showGuides ? 'Hide guides' : 'Show guides'}
+          title={showGuides ? 'Guides on' : 'Guides off'}
+        >
+          {showGuides ? '✦' : '✧'}
+        </button>
+      </div>
+
+      {hintText && <div className={s.hintLine}>{hintText}</div>}
+
+      {/* Left edge: collapsible stage-sliders panel */}
+      {!leftPanelOpen && (
+        <button
+          type="button"
+          className={s.leftPanelToggle}
+          onClick={() => setLeftPanelOpen(true)}
+          aria-label="Open stage sliders"
+          title="Stage sliders"
+        >
+          ▸
+        </button>
       )}
-
       <div
-        className={`${s.sheet} ${sheetOpen ? s.sheetOpen : ''}`}
+        className={`${s.leftPanel} ${leftPanelOpen ? s.leftPanelOpen : ''}`}
         role="dialog"
-        aria-label="Settings"
-        aria-hidden={!sheetOpen}
+        aria-label="Stage sliders"
+        aria-hidden={!leftPanelOpen}
       >
-        <div className={s.sheetHandle}>
-          <div className={s.sheetHandleBar} />
+        <button
+          type="button"
+          className={s.leftPanelClose}
+          onClick={() => setLeftPanelOpen(false)}
+          aria-label="Close stage sliders"
+        >
+          ◂
+        </button>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`spread  ${chordHalf.toFixed(1)}`}</span>
+          <input
+            type="range"
+            min={1.5}
+            max={20}
+            step={0.1}
+            value={Math.min(20, Math.max(1.5, chordHalf))}
+            onChange={(e) => setSpread(parseFloat(e.currentTarget.value))}
+            className={s.tiltSlider}
+            aria-label="Spread (chord half-distance)"
+          />
         </div>
-
-        <div className={s.tabContent}>
-          <div className={s.sheetSection}>stage</div>
-          <div className={s.tiltSliderRow}>
-            <span className={s.tiltSliderLabel}>{`spread  ${chordHalf.toFixed(1)}`}</span>
-            <input
-              type="range"
-              min={1.5}
-              max={20}
-              step={0.1}
-              value={Math.min(20, Math.max(1.5, chordHalf))}
-              onChange={(e) => setSpread(parseFloat(e.currentTarget.value))}
-              className={s.tiltSlider}
-              aria-label="Spread (chord half-distance)"
-            />
-          </div>
-          <div className={s.tiltSliderRow}>
-            <span className={s.tiltSliderLabel}>{`tilt X  ${tiltXDeg}°`}</span>
-            <input
-              type="range"
-              min={0}
-              max={180}
-              step={1}
-              value={tiltXDeg}
-              onChange={(e) => setTiltXDeg(parseInt(e.currentTarget.value, 10))}
-              className={s.tiltSlider}
-              aria-label="Tilt around X axis"
-            />
-          </div>
-          <div className={s.tiltSliderRow}>
-            <span className={s.tiltSliderLabel}>{`tilt Y  ${tiltYDeg}°`}</span>
-            <input
-              type="range"
-              min={0}
-              max={180}
-              step={1}
-              value={tiltYDeg}
-              onChange={(e) => setTiltYDeg(parseInt(e.currentTarget.value, 10))}
-              className={s.tiltSlider}
-              aria-label="Tilt around Y axis"
-            />
-          </div>
-          <div className={s.tiltSliderRow}>
-            <span className={s.tiltSliderLabel}>{`tilt Z  ${tiltZDeg}°`}</span>
-            <input
-              type="range"
-              min={0}
-              max={180}
-              step={1}
-              value={tiltZDeg}
-              onChange={(e) => setTiltZDeg(parseInt(e.currentTarget.value, 10))}
-              className={s.tiltSlider}
-              aria-label="Tilt around Z axis"
-            />
-          </div>
-          <div className={s.controlsRow}>
-            <button
-              type="button"
-              className={`${s.btn} ${s.btnIcon}`}
-              onClick={() => setZoom((z) => Math.max(2, +(z / 1.25).toFixed(2)))}
-              aria-label="Zoom in"
-              title="Zoom in (closer)"
-            >
-              −
-            </button>
-            <button
-              type="button"
-              className={`${s.btn} ${s.btnIcon}`}
-              onClick={() => setZoom((z) => Math.min(80, +(z * 1.25).toFixed(2)))}
-              aria-label="Zoom out"
-              title="Zoom out (farther)"
-            >
-              +
-            </button>
-          </div>
-
-          <div className={s.sheetSection}>motion</div>
-          <div className={s.tiltSliderRow}>
-            <span className={s.tiltSliderLabel}>{`speed  ${speedMult}×`}</span>
-            <input
-              type="range"
-              min={0.5}
-              max={6}
-              step={0.5}
-              value={speedMult}
-              onChange={(e) => setSpeedMult(parseFloat(e.currentTarget.value))}
-              className={s.tiltSlider}
-              aria-label="Animation speed"
-            />
-          </div>
-          <div className={s.controlsRow}>
-            <button
-              type="button"
-              className={`${s.btn} ${autoReplay ? s.btnActive : ''}`}
-              onClick={() => setAutoReplay((v) => !v)}
-              aria-label={autoReplay ? 'Disable auto-loop' : 'Enable auto-loop'}
-              title={autoReplay ? 'Auto-loop on' : 'Auto-loop off'}
-            >
-              {autoReplay ? '↻ loop' : '↻ once'}
-            </button>
-          </div>
-
-          <span className={s.buildLabel}>{`build·${COMMIT} · z=${zoom.toFixed(1)}`}</span>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`tilt X  ${tiltXDeg}°`}</span>
+          <input
+            type="range"
+            min={0}
+            max={180}
+            step={1}
+            value={tiltXDeg}
+            onChange={(e) => setTiltXDeg(parseInt(e.currentTarget.value, 10))}
+            className={s.tiltSlider}
+            aria-label="Tilt around X axis"
+          />
+        </div>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`tilt Y  ${tiltYDeg}°`}</span>
+          <input
+            type="range"
+            min={0}
+            max={180}
+            step={1}
+            value={tiltYDeg}
+            onChange={(e) => setTiltYDeg(parseInt(e.currentTarget.value, 10))}
+            className={s.tiltSlider}
+            aria-label="Tilt around Y axis"
+          />
+        </div>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`tilt Z  ${tiltZDeg}°`}</span>
+          <input
+            type="range"
+            min={0}
+            max={180}
+            step={1}
+            value={tiltZDeg}
+            onChange={(e) => setTiltZDeg(parseInt(e.currentTarget.value, 10))}
+            className={s.tiltSlider}
+            aria-label="Tilt around Z axis"
+          />
         </div>
       </div>
+
+      {/* Bottom: speed + zoom sliders */}
+      <div className={s.bottomBar} aria-label="Speed and zoom">
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`speed  ${speedMult}×`}</span>
+          <input
+            type="range"
+            min={0.5}
+            max={6}
+            step={0.5}
+            value={speedMult}
+            onChange={(e) => setSpeedMult(parseFloat(e.currentTarget.value))}
+            className={s.tiltSlider}
+            aria-label="Animation speed"
+          />
+        </div>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`zoom  ${zoom.toFixed(0)}`}</span>
+          <input
+            type="range"
+            min={2}
+            max={80}
+            step={1}
+            value={zoom}
+            onChange={(e) => setZoom(parseFloat(e.currentTarget.value))}
+            className={s.tiltSlider}
+            aria-label="Zoom (camera distance)"
+          />
+        </div>
+      </div>
+
     </div>
   )
 }
