@@ -64,6 +64,9 @@ const FADE_DUR = 0.55
 const LEMNISCATE_PERIOD = 6.0
 const TRANSIT_DUR = LEMNISCATE_PERIOD / 2
 const SPEED_STEPS = [0.5, 1, 2, 3, 4, 5, 6]
+// Number of full orbital laps loop mode runs before triggering a
+// transit. Manual travel-button taps still fire on the very next wrap.
+const LOOP_LAPS_BEFORE_TRAVEL = 2
 // Global multiplier applied on top of the user-selected speed. Halved so the
 // labelled "1×" is half as fast as before.
 const SPEED_SCALE = 0.5
@@ -245,6 +248,9 @@ function ElectronProbe({
   const phaseElapsedRef = useRef(0)
   const entryAngleRef = useRef(spec.initialPhase)
   const opacityRef = useRef(0)
+  // Counts completed orbital laps in the current orbit phase. Loop mode
+  // travels only after LOOP_LAPS_BEFORE_TRAVEL wraps.
+  const lapsInPhaseRef = useRef(0)
   const lastPosRef = useRef<Vec3>([-chordHalf, 0, 0])
   const lastTravelCountRef = useRef(travelCount)
   const lastStartSeedRef = useRef(-1)
@@ -269,6 +275,7 @@ function ElectronProbe({
     entryAngleRef.current = spec.initialPhase
     phaseElapsedRef.current = 0
     opacityRef.current = 0
+    lapsInPhaseRef.current = 0
     // Catch up the travel-count baseline so old taps don't immediately
     // fire on the new run.
     lastTravelCountRef.current = travelCount
@@ -354,12 +361,15 @@ function ElectronProbe({
       const dCurr = dist(localT)
       const wrapped = prevLocalT > 1e-3 && dPrev > dCurr && dPrev - dCurr > ORBIT_PERIOD / 2
       if (wrapped) {
+        lapsInPhaseRef.current += 1
         const newTravel = travelCount > lastTravelCountRef.current
-        if (newTravel || autoReplay) {
+        const loopReady = autoReplay && lapsInPhaseRef.current >= LOOP_LAPS_BEFORE_TRAVEL
+        if (newTravel || loopReady) {
           phase = phase === 'orbitA' ? 'travelAB' : 'travelBA'
           phaseRef.current = phase
           phaseElapsedRef.current = 0
           localT = 0
+          lapsInPhaseRef.current = 0
           if (newTravel) lastTravelCountRef.current = travelCount
         }
       }
@@ -373,6 +383,8 @@ function ElectronProbe({
         const overshoot = localT - TRANSIT_DUR
         phaseElapsedRef.current = overshoot
         localT = overshoot
+        // Reset lap counter for the new orbit phase.
+        lapsInPhaseRef.current = 0
         // Re-entry orbits land at the chord-line far-tip exactly.
         if (next === 'orbitA') entryAngleRef.current = Math.PI
         // (orbit-B's entry angle is always 0 — built into makeOrbitBDesc.)
