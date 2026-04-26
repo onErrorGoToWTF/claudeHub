@@ -75,11 +75,11 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Distance from origin ≈ 20.3.
-const DEFAULT_CAMERA_POS: [number, number, number] = [23.53, -7.62, 3]
+const DEFAULT_CAMERA_POS: [number, number, number] = [21.33, -8.42, 4.81]
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-8.5, 0, 0]
-const INITIAL_POINT_B: Vec3 = [8.5, 0, 0]
+const INITIAL_POINT_A: Vec3 = [-9.2, 0, 0]
+const INITIAL_POINT_B: Vec3 = [9.2, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -685,9 +685,10 @@ export function LabsAtomMotion() {
     new Array(MAX_ELECTRONS).fill(0),
   )
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
-  const [showGuides, setShowGuides] = useState(false)
-  const [electronColor, setElectronColor] = useState('#ffffff')
-  const [bgColor, setBgColor] = useState('#1a1a1a')
+  const [showNuclei, setShowNuclei] = useState(true)
+  const [showAxis, setShowAxis] = useState(false)
+  const [electronColor, setElectronColor] = useState('#a8e0f5')
+  const [bgColor, setBgColor] = useState('#0e2c5e')
   const [theme, setTheme] = useTheme()
 
   // Contextual hint above the action strip — guides the user through the
@@ -818,16 +819,14 @@ export function LabsAtomMotion() {
           />
           <CameraDebugger onUpdate={setCamPos} />
           <group rotation={[0, 0, groupTiltZ]}>
-            {showGuides && (
-              <>
-                <AxisIndicators
-                  chordHalf={chordHalf}
-                  colors={{ x: palette.axisX, y: palette.axisY, z: palette.axisZ }}
-                  opacity={palette.axisOpacity}
-                />
-                <Nuclei chordHalf={chordHalf} color={palette.ink} />
-              </>
+            {showAxis && (
+              <AxisIndicators
+                chordHalf={chordHalf}
+                colors={{ x: palette.axisX, y: palette.axisY, z: palette.axisZ }}
+                opacity={palette.axisOpacity}
+              />
             )}
+            {showNuclei && <Nuclei chordHalf={chordHalf} color={palette.ink} />}
             {ELECTRON_SPECS.map((spec, i) => (
               <ElectronProbe
                 key={`e${i}`}
@@ -872,12 +871,21 @@ export function LabsAtomMotion() {
         </button>
         <button
           type="button"
-          className={`${s.btn} ${s.btnIcon} ${showGuides ? s.btnActive : ''}`}
-          onClick={() => setShowGuides((v) => !v)}
-          aria-label="Toggle guides"
-          title={showGuides ? 'Guides on' : 'Guides off'}
+          className={`${s.btn} ${s.btnIcon} ${showNuclei ? s.btnActive : ''}`}
+          onClick={() => setShowNuclei((v) => !v)}
+          aria-label="Toggle nuclei"
+          title={showNuclei ? 'Nuclei on' : 'Nuclei off'}
         >
-          {showGuides ? '✦' : '✧'}
+          {showNuclei ? '●' : '○'}
+        </button>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon} ${showAxis ? s.btnActive : ''}`}
+          onClick={() => setShowAxis((v) => !v)}
+          aria-label="Toggle axis"
+          title={showAxis ? 'Axis on' : 'Axis off'}
+        >
+          {showAxis ? '✦' : '✧'}
         </button>
         <input
           type="color"
@@ -979,7 +987,7 @@ export function LabsAtomMotion() {
         </div>
         {hintText && <div className={s.hintInline}>{hintText}</div>}
         <span className={s.buildLabel}>
-          {`build·${COMMIT} · cam (${camPos[0]}, ${camPos[1]}, ${camPos[2]})`}
+          {`build·${COMMIT} · cam (${camPos[0]}, ${camPos[1]}, ${camPos[2]}) · e ${electronColor} · bg ${bgColor}`}
         </span>
       </div>
     </div>
