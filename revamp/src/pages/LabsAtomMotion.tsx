@@ -531,7 +531,6 @@ function ReplayLoop({
 export function LabsAtomMotion() {
   const [replayKey, setReplayKey] = useState(0)
   const [autoReplay, setAutoReplay] = useState(true)
-  const [collapsed, setCollapsed] = useState(false)
   const [zoom, setZoom] = useState(CAMERA_Z)
   const [oppositeRotation, setOppositeRotation] = useState(false)
   const reducedMotion = usePrefersReducedMotion()
@@ -613,59 +612,6 @@ export function LabsAtomMotion() {
 
       <LabsNav />
 
-      {!collapsed && (
-        <div className={s.card}>
-          <div className={s.cardHeader}>
-            <p className={s.title}>Atom motion lab</p>
-            <button
-              className={s.collapseBtn}
-              type="button"
-              onClick={() => setCollapsed(true)}
-              aria-label="Collapse controls"
-            >
-              ×
-            </button>
-          </div>
-          <p className={s.blurb}>
-            3 electrons fade in around nucleus A on three orthogonal elliptical
-            planes, then travel one-by-one to nucleus B via a gravity-shaped
-            S-curve (cubic Hermite, C1-in-time at handoff). Rotation reverses on
-            capture. {reducedMotion ? '(reduced-motion: animation suppressed)' : ''}
-          </p>
-          <div className={s.row}>
-            <button type="button" className={s.button} onClick={handleReplay}>
-              ↻ Replay
-            </button>
-            <label className={s.checkbox}>
-              <input
-                type="checkbox"
-                checked={autoReplay}
-                onChange={(e) => setAutoReplay(e.target.checked)}
-              />
-              <span>auto-loop</span>
-            </label>
-          </div>
-          <div className={s.legend}>
-            <div>nucleus A · ({NUCLEUS_A.join(', ')})</div>
-            <div>nucleus B · ({NUCLEUS_B.join(', ')})</div>
-            <div>orbits · size {ORBIT_SIZE} aspect {ORBIT_ASPECT}</div>
-            <div>ω · {ORBIT_OMEGA_BASE} rad/s (sign per electron)</div>
-            <div>travel · {TRAVEL_DUR}s, κ=0.5</div>
-          </div>
-        </div>
-      )}
-
-      {collapsed && (
-        <button
-          className={s.iconHandle}
-          type="button"
-          onClick={() => setCollapsed(false)}
-          aria-label="Expand controls"
-        >
-          ◀
-        </button>
-      )}
-
       <button
         type="button"
         className={s.canvasReplay}
@@ -707,6 +653,15 @@ export function LabsAtomMotion() {
         title={oppositeRotation ? 'Opposite rotation (lemniscate)' : 'Same rotation (ellipse arc)'}
       >
         {oppositeRotation ? '⇄ opposite' : '→ same'}
+      </button>
+      <button
+        type="button"
+        className={`${s.canvasLoopBtn} ${autoReplay ? s.canvasRotBtnActive : ''}`}
+        onClick={() => setAutoReplay((v) => !v)}
+        aria-label={autoReplay ? 'Disable auto-loop' : 'Enable auto-loop'}
+        title={autoReplay ? 'Auto-loop on' : 'Auto-loop off'}
+      >
+        {autoReplay ? '↻ loop' : '↻ once'}
       </button>
 
       <AtomLabHud
