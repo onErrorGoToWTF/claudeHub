@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T08:47:35.385Z",
+  "generated_at": "2026-04-26T10:34:58.962Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "Business Buzz: Amazon’s Anthropic investment reflects the scale and structure of the AI race - The Etownian",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQMVRBWl9CTEFzUXB2LUdPQ0ZtNzFON0YyWndIeUZ3SDJxaENiQlFxN3hkWlktazB3Qm1PT2RKeEVQNEZHSmd1WnZ5cmoxbnVLU2hQZWdrUERQNVhtMGlTbDYyajJ5d3NnaW9iVGtwczVCbG1TMVBpOVpmc1FLSjFXeDdremUyc2VIWEJ6NFlaclhOcGpSc1N5WmV0MDF6MjN6OEU4X2RTVUpab3R5OTN3MFFYV05QeVA3Vk0ycHk1OA?oc=5",
+        "source": "Google News",
+        "published": "2026-04-26T08:09:12.000Z",
+        "summary": "Business Buzz: Amazon’s Anthropic investment reflects the scale and structure of the AI race The Etownian"
+      },
+      {
         "title": "Anthropic publishes Claude system prompts, setting new AI transparency bar - Startup Fortune",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNU0c2dEoyMXdualBSWnRrQUxOMHRhbDEwcFFaa2FkWEhCd3pOVjRoR1MzUDlWeXkwT3hoa3h4eFpJaTh5YXNzUzZVSW04NV9sZDNXNy1tSTVCQWQtT2Z4VDBoWXBOcm0xX2ctRGVKWm5OUnJ4d0ZZSXltbW1HU0ZNMDRvSkRTdUREQk51MWE0OG5YckRiSE93SDB5TFNSZVpLdXdV?oc=5",
         "source": "Google News",
@@ -216,13 +223,6 @@
         "summary": "Amazon's Partnership With Anthropic Keeps Deepening. Is This the Catalyst Amazon Stock Needs? The Motley Fool"
       },
       {
-        "title": "Blitzy Highlights Use of Anthropic’s Claude in Autonomous Software Development - TipRanks",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPcHdOenJ5UUhsTFNQa2VPSWMzcGFWOG02UmVVcUJlS1pRaUNKZUJTbTJTdnBJZEQ4UXhuM3l0UksydE5sN0lRbnNJY0ZxLU9Ed2dQY0I4Z2xwQjhCbWdSTEh1cExweGZxenBoOWZNZV9aYTg1WjExSEoxWEk2a29WY2FwcVkyMWdHTE9rVDEzVzdPbUl5YnFOYXN6eXpKQVlxcmg0YXNkdS1KVGZiUWhsWlR0U3RiN0xGY3l6cWd3V0pzLUU?oc=5",
-        "source": "Google News",
-        "published": "2026-04-25T18:11:10.000Z",
-        "summary": "Blitzy Highlights Use of Anthropic’s Claude in Autonomous Software Development TipRanks"
-      },
-      {
         "title": "Anthropic runs Claude-powered employee marketplace experiment - Let's Data Science",
         "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdFYwNHFyS2ZlWlA0Sy1sUDVMVUNJNW5fR3hzSHZ0b2R5RGktVFI4RHpZcmNubGswaG9Nci1MT1hGMjJCUGhrQ1RsY0wwSzVjd1F3clZlanFzVXFLYkZqcTEtcEE2cjBxNDB1d1dVdk5Zem1BcUN3QmdpZjFIcV9mUlhIVGtfeFE4bTgzVGNlVTJvUXExSzl0dFJIQlBaYUJyN1YybA?oc=5",
         "source": "Google News",
@@ -251,7 +251,7 @@
       {
         "title": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
         "url": "https://github.com/nex-crm/wuphf",
-        "source": "HN · 231↑",
+        "source": "HN · 235↑",
         "hn_id": "47899844",
         "published": "2026-04-25T08:53:53.000Z",
         "summary": "I shipped a wiki layer for AI agents that uses markdown + git as the source of truth, with a bleve (BM25) + SQLite index on top. No vector or graph db yet. It runs locally in…"
@@ -266,7 +266,7 @@
       {
         "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
         "url": "https://alash3al.github.io/stash?_v01",
-        "source": "HN · 170↑",
+        "source": "HN · 171↑",
         "hn_id": "47897790",
         "published": "2026-04-25T01:24:40.000Z",
         "summary": ""
