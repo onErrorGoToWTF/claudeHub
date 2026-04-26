@@ -709,7 +709,11 @@ export function LabsAtomMotion() {
   const fadeTex = useMemo(() => makeFadeTexture(), [])
 
   const chordHalf = useMemo(() => chordHalfFrom(pointA, pointB), [pointA, pointB])
-  const orbitSize = useMemo(() => chordHalf * (Math.SQRT2 - 1), [chordHalf])
+  // Orbit size is currently decoupled from chord distance so the user can
+  // spread the nuclei without scaling the orbits. Frozen at the value it had
+  // when chordHalf=3 (the original default) — `3 * (√2 − 1)` ≈ 1.243.
+  // A future iteration will expose this as its own slider.
+  const orbitSize = useMemo(() => 3 * (Math.SQRT2 - 1), [])
   const groupOffset = useMemo(() => midpointFrom(pointA, pointB), [pointA, pointB])
   const groupTiltZ = useMemo(() => tiltZFrom(pointA, pointB), [pointA, pointB])
   const tiltXRad = useMemo(() => (tiltXDeg * Math.PI) / 180, [tiltXDeg])
