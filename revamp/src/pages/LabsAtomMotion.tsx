@@ -718,6 +718,7 @@ export function LabsAtomMotion() {
   const [showGuides, setShowGuides] = useState(false)
   const [theme, setTheme] = useTheme()
   const [leftPanelOpen, setLeftPanelOpen] = useState(false)
+  const [viewOffset, setViewOffset] = useState<[number, number]>([0, 0])
 
   // Contextual hint above the action strip — guides the user through the
   // happy path. Empty string = no hint shown (animation in flow).
@@ -829,7 +830,6 @@ export function LabsAtomMotion() {
   // a world-space offset that puts the screen midpoint at center. The
   // offset is at depth=zoom (good approximation; perspective makes it
   // not exact for tilted scenes, but a second tap converges quickly).
-  const [viewOffset, setViewOffset] = useState<[number, number]>([0, 0])
   const onRecenter = useCallback(() => {
     const innerEuler = new THREE.Euler(tiltXRad, tiltYRad, tiltZRad)
     const outerEuler = new THREE.Euler(0, 0, groupTiltZ)
