@@ -476,9 +476,11 @@ function Nuclei() {
 function ReplayLoop({
   replayKey,
   setReplayKey,
+  duration,
 }: {
   replayKey: number
   setReplayKey: (k: number) => void
+  duration: number
 }) {
   const startRef = useRef(performance.now())
   useEffect(() => {
@@ -486,7 +488,7 @@ function ReplayLoop({
   }, [replayKey])
   useFrame(() => {
     const elapsed = (performance.now() - startRef.current) / 1000
-    if (elapsed > TOTAL_DUR) {
+    if (elapsed > duration) {
       setReplayKey(replayKey + 1)
     }
   })
@@ -562,7 +564,11 @@ export function LabsAtomMotion() {
             ))}
           </group>
           {autoReplay && (
-            <ReplayLoop replayKey={replayKey} setReplayKey={setReplayKey} />
+            <ReplayLoop
+              replayKey={replayKey}
+              setReplayKey={setReplayKey}
+              duration={oppositeRotation ? LEMNISCATE_PERIOD : TOTAL_DUR}
+            />
           )}
         </Canvas>
       </div>
