@@ -713,6 +713,28 @@ export function LabsAtomMotion() {
   const reducedMotion = usePrefersReducedMotion()
   const fadeTex = useMemo(() => makeFadeTexture(), [])
 
+  // Stage-center Y in world coords: scales with zoom so the atom always
+  // renders at the visible-canvas vertical center (above the controls
+  // panel) regardless of how far the camera is pulled back. 0.15 ≈
+  // controls panel covers ~30% of viewport, so visible-canvas center
+  // sits ~15% above viewport midline.
+  const stageCenterY = useMemo(() => {
+    const halfTan = Math.tan(((FOV_DEG * Math.PI) / 180) / 2)
+    return zoom * 0.15 * 2 * halfTan
+  }, [zoom])
+
+  // Whenever stage-center shifts (zoom change), translate both points so
+  // the midpoint stays locked to the stage center. Preserves chord
+  // direction and length.
+  useEffect(() => {
+    const midY = (pointA[1] + pointB[1]) / 2
+    const dy = stageCenterY - midY
+    if (Math.abs(dy) < 1e-4) return
+    setPointA((p) => [p[0], p[1] + dy, p[2]])
+    setPointB((p) => [p[0], p[1] + dy, p[2]])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stageCenterY])
+
   const chordHalf = useMemo(() => chordHalfFrom(pointA, pointB), [pointA, pointB])
   // Orbit size is currently decoupled from chord distance so the user can
   // spread the nuclei without scaling the orbits. Frozen at the value it had
@@ -819,7 +841,10 @@ export function LabsAtomMotion() {
 
       <DragHandle
         pos={pointA}
-        onDrag={setPointA}
+        onDrag={(p) => {
+          setPointA(p)
+          setPointB([-p[0], 2 * stageCenterY - p[1], -p[2]])
+        }}
         zoom={zoom}
         viewport={viewport}
         enabled={!dragLocked}
@@ -827,7 +852,10 @@ export function LabsAtomMotion() {
       />
       <DragHandle
         pos={pointB}
-        onDrag={setPointB}
+        onDrag={(p) => {
+          setPointB(p)
+          setPointA([-p[0], 2 * stageCenterY - p[1], -p[2]])
+        }}
         zoom={zoom}
         viewport={viewport}
         enabled={!dragLocked}
