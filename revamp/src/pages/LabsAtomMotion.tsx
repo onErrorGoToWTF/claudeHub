@@ -73,7 +73,7 @@ const ORBIT_SIZE = CHORD_HALF * (Math.SQRT2 - 1) // ≈ 0.663
 const ORBIT_ASPECT = 0.62
 const ORBIT_OMEGA_BASE = 2.4 // rad/s
 const GROUP_ROTATION: [number, number, number] = [Math.PI / 4, Math.PI / 4, 0]
-const CAMERA_Z = 14.0
+const CAMERA_Z = 22.0
 const COMMIT: string = (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
 // Lemniscate cycle period — full figure-8 traversal in seconds.
 const LEMNISCATE_PERIOD = 6.0
@@ -176,6 +176,7 @@ function ElectronProbe({
   speedMult,
   orbitADur,
   orbitBDur,
+  autoReplay,
   onReport,
 }: {
   spec: ElectronSpec
@@ -187,6 +188,7 @@ function ElectronProbe({
   speedMult: number
   orbitADur: number
   orbitBDur: number
+  autoReplay: boolean
   onReport: (idx: number, report: ProbeReport) => void
 }) {
   const transitDur = oppositeRotation ? HALF_LEMNISCATE : TRAVEL_DUR
@@ -314,11 +316,14 @@ function ElectronProbe({
     //   orbit A (lapsBefore laps) → A→B transit → orbit B (lapsAfter laps)
     //                              → B→A transit → loop
     // Position-and-tangent continuous at every boundary including the
-    // wrap. Modulo-cycle keeps the motion alive forever; auto-replay (if
-    // enabled) just resets the trail at the cycle boundary.
+    // wrap, so modulo-cycle is seamless — no trail reset, no fade-in
+    // intermission. autoReplay=false clamps at the cycle end so the
+    // electron freezes at far-A after one full round-trip.
     const cycleDur = orbitADur + transitDur + orbitBDur + transitDur
     const tAfterFade = t - spec.fadeInStart
-    const cycleT = ((tAfterFade % cycleDur) + cycleDur) % cycleDur
+    const cycleT = autoReplay
+      ? ((tAfterFade % cycleDur) + cycleDur) % cycleDur
+      : Math.min(tAfterFade, cycleDur)
 
     const endA  = orbitADur
     const endAB = endA + transitDur
@@ -496,28 +501,6 @@ function Nuclei() {
   )
 }
 
-function ReplayLoop({
-  replayKey,
-  setReplayKey,
-  duration,
-}: {
-  replayKey: number
-  setReplayKey: (k: number) => void
-  duration: number
-}) {
-  const startRef = useRef(performance.now())
-  useEffect(() => {
-    startRef.current = performance.now()
-  }, [replayKey])
-  useFrame(() => {
-    const elapsed = (performance.now() - startRef.current) / 1000
-    if (elapsed > duration) {
-      setReplayKey(replayKey + 1)
-    }
-  })
-  return null
-}
-
 // --- Page ---------------------------------------------------------------
 
 export function LabsAtomMotion() {
@@ -560,25 +543,11 @@ export function LabsAtomMotion() {
                 speedMult={speedMult}
                 orbitADur={orbitADur}
                 orbitBDur={orbitBDur}
+                autoReplay={autoReplay}
                 onReport={noopReport}
               />
             ))}
           </group>
-          {autoReplay && (
-            <ReplayLoop
-              replayKey={replayKey}
-              setReplayKey={setReplayKey}
-              duration={
-                // Full round-trip cycle:
-                //   orbit A (lapsBefore) + A→B transit + orbit B (lapsAfter) + B→A transit
-                // Both transits are equal duration per mode (TRAVEL_DUR for
-                // same-rotation, HALF_LEMNISCATE for opposite-rotation).
-                ((oppositeRotation
-                  ? orbitADur + HALF_LEMNISCATE + orbitBDur + HALF_LEMNISCATE
-                  : orbitADur + TRAVEL_DUR + orbitBDur + TRAVEL_DUR)) / speedMult
-              }
-            />
-          )}
         </Canvas>
       </div>
 
