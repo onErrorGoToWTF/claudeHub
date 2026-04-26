@@ -185,6 +185,7 @@ function ElectronProbe({
   replayKey,
   reducedMotion,
   oppositeRotation,
+  speedMult,
   onReport,
 }: {
   spec: ElectronSpec
@@ -193,6 +194,7 @@ function ElectronProbe({
   replayKey: number
   reducedMotion: boolean
   oppositeRotation: boolean
+  speedMult: number
   onReport: (idx: number, report: ProbeReport) => void
 }) {
   const headRef = useRef<THREE.Mesh>(null!)
@@ -278,7 +280,7 @@ function ElectronProbe({
 
   useFrame((_, delta) => {
     if (reducedMotion) return
-    const dt = Math.min(delta, 1 / 30)
+    const dt = Math.min(delta, 1 / 30) * speedMult
     elapsedRef.current += dt
     const t = elapsedRef.current
 
@@ -533,6 +535,8 @@ export function LabsAtomMotion() {
   const [autoReplay, setAutoReplay] = useState(true)
   const [zoom, setZoom] = useState(CAMERA_Z)
   const [oppositeRotation, setOppositeRotation] = useState(false)
+  const [speedMult, setSpeedMult] = useState(1)
+  const SPEED_STEPS = [0.5, 1, 2, 4]
   const reducedMotion = usePrefersReducedMotion()
   const fadeTex = useMemo(() => makeFadeTexture(), [])
   const mathRef = useRef<AtomLabMathState>({
@@ -582,13 +586,14 @@ export function LabsAtomMotion() {
             <Nuclei />
             {ELECTRONS.map((spec, i) => (
               <ElectronProbe
-                key={`e${i}-${replayKey}-${oppositeRotation ? 'opp' : 'same'}`}
+                key={`e${i}-${replayKey}-${oppositeRotation ? 'opp' : 'same'}-${speedMult}`}
                 spec={spec}
                 electronIndex={i}
                 fadeTex={fadeTex}
                 replayKey={replayKey}
                 reducedMotion={reducedMotion}
                 oppositeRotation={oppositeRotation}
+                speedMult={speedMult}
                 onReport={onReport}
               />
             ))}
@@ -598,12 +603,12 @@ export function LabsAtomMotion() {
               replayKey={replayKey}
               setReplayKey={setReplayKey}
               duration={
-                oppositeRotation
+                (oppositeRotation
                   // Opposite-rotation phased: orbit A (ORBIT_LAPS laps)
                   // + half-lemniscate transit + orbit B (same lap count
                   // for symmetry).
                   ? TRAVEL_BASE_T + HALF_LEMNISCATE + ORBIT_LAPS * ORBIT_PERIOD
-                  : TOTAL_DUR
+                  : TOTAL_DUR) / speedMult
               }
             />
           )}
@@ -662,6 +667,22 @@ export function LabsAtomMotion() {
         title={autoReplay ? 'Auto-loop on' : 'Auto-loop off'}
       >
         {autoReplay ? '↻ loop' : '↻ once'}
+      </button>
+      <button
+        type="button"
+        className={s.canvasSpeedBtn}
+        onClick={() => {
+          setSpeedMult((v) => {
+            const idx = SPEED_STEPS.indexOf(v)
+            const next = SPEED_STEPS[(idx + 1) % SPEED_STEPS.length]
+            return next
+          })
+          setReplayKey((k) => k + 1)
+        }}
+        aria-label={`Speed ${speedMult}x — tap to change`}
+        title={`Speed ${speedMult}x`}
+      >
+        {`${speedMult}× speed`}
       </button>
 
       <AtomLabHud
