@@ -824,13 +824,29 @@ export function LabsAtomMotion() {
     setPointB([mx - dx * k, my - dy * k, mz - dz * k])
   }, [pointA, pointB])
 
-  // Manual "recenter" — tap to snap the projected midpoint of the two
-  // nuclei to viewport center. Computes their world positions after the
-  // current tilt + outer Z rotation, projects to screen, then back-solves
-  // a world-space offset that puts the screen midpoint at center. The
-  // offset is at depth=zoom (good approximation; perspective makes it
-  // not exact for tilted scenes, but a second tap converges quickly).
+  // Manual "recenter" — tap to fit-and-frame:
+  //   1. Push zoom out (if needed) so the bounding sphere of the system
+  //      (nuclei + orbits + transit side-bow) fits inside the smaller of
+  //      the viewport's two screen dimensions, with a small margin.
+  //   2. Translate the world group so the projected midpoint of the two
+  //      nuclei lands at viewport center. Corrects the perspective skew
+  //      that pulls them off-center under tilt.
+  // Tilts and spread are preserved; only zoom and view offset move.
   const onRecenter = useCallback(() => {
+    const halfTan = Math.tan(((FOV_DEG * Math.PI) / 180) / 2)
+    const aspect = viewport.w / viewport.h
+    const usableFraction = Math.min(aspect, 1)
+    const margin = 1.15
+    // Bounding sphere: chord far-tip is at chordHalf + orbitSize from
+    // origin; the transit side-bow adds amp = (chordHalf+orbitSize)/(2√2)
+    // perpendicular. Outer radius ≈ √(1 + 1/8) ≈ 1.061× the chord-line tip.
+    const tipDist = chordHalf + orbitSize
+    const R = tipDist * Math.sqrt(1 + 1 / 8)
+    const requiredZoom = (R * margin) / (halfTan * usableFraction)
+    const nextZoom = Math.min(80, Math.max(zoom, +requiredZoom.toFixed(2)))
+
+    // Recompute screen midpoint at the new zoom, then back-solve a world
+    // offset (at depth=nextZoom) that lands it on viewport center.
     const innerEuler = new THREE.Euler(tiltXRad, tiltYRad, tiltZRad)
     const outerEuler = new THREE.Euler(0, 0, groupTiltZ)
     const aLocal = new THREE.Vector3(-chordHalf, 0, 0)
@@ -849,13 +865,15 @@ export function LabsAtomMotion() {
       bLocal.y + viewOffset[1],
       bLocal.z,
     ]
-    const aScreen = projectWorldToScreen(aWorld, zoom, viewport.w, viewport.h)
-    const bScreen = projectWorldToScreen(bWorld, zoom, viewport.w, viewport.h)
+    const aScreen = projectWorldToScreen(aWorld, nextZoom, viewport.w, viewport.h)
+    const bScreen = projectWorldToScreen(bWorld, nextZoom, viewport.w, viewport.h)
     const midX = (aScreen.x + bScreen.x) / 2
     const midY = (aScreen.y + bScreen.y) / 2
-    const midWorld = unprojectScreenToWorld(midX, midY, zoom, viewport.w, viewport.h)
+    const midWorld = unprojectScreenToWorld(midX, midY, nextZoom, viewport.w, viewport.h)
+
+    if (nextZoom !== zoom) setZoom(nextZoom)
     setViewOffset([viewOffset[0] - midWorld[0], viewOffset[1] - midWorld[1]])
-  }, [tiltXRad, tiltYRad, tiltZRad, groupTiltZ, chordHalf, viewOffset, zoom, viewport])
+  }, [tiltXRad, tiltYRad, tiltZRad, groupTiltZ, chordHalf, orbitSize, viewOffset, zoom, viewport])
 
   return (
     <div className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark}`}>
