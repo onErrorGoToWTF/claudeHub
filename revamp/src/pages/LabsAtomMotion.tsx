@@ -787,7 +787,7 @@ export function LabsAtomMotion() {
   return (
     <div
       className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark}`}
-      style={{ background: bgColor }}
+      style={{ ['--lab-bg-base' as string]: bgColor }}
     >
       <div className={s.canvasArea}>
         <Canvas
