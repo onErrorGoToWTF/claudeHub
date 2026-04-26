@@ -65,7 +65,9 @@ const LEMNISCATE_PERIOD = 6.0
 const TRANSIT_DUR = LEMNISCATE_PERIOD / 2
 const SPEED_STEPS = [0.5, 1, 2, 3, 4, 5, 6]
 const TILT_STEPS_DEG = [0, 30, 45, 60]
-const ASPECT_STEPS = [0.4, 0.62, 0.8, 1.0]
+// Orbits are always circular (aspect = 1). Visual ellipses are purely a
+// camera-angle effect on a 3D circle, not an actual orbital aspect.
+const ORBIT_ASPECT = 1.0
 const CAMERA_Z = 22.0
 const FOV_DEG = 50
 
@@ -90,16 +92,18 @@ type ElectronSpec = {
 // A plane through the chord axis is determined by an upHat direction; +up
 // and -up span the same plane. So unique planes only span [0, π) of
 // rotation around the chord — 180° / count gives evenly-spaced *distinct*
-// planes:
-//   1 electron: 0° (XY)
-//   2 electrons: 0°, 90° (XY + XZ)
-//   3 electrons: 0°, 60°, 120°
+// 4-electron pinwheel: 45° apart in [0°, 180°). At tilt 0° two of the
+// planes project to the same ellipse (45° and 135° are mirrors, identical
+// for circles); at tilt > 0 all four read distinctly, matching the
+// classic atom-flower-petal pattern.
 // Plane assignments are fixed by index — adding e2 doesn't shuffle e1.
 
-const ELECTRON_SPECS: ElectronSpec[] = [0, 1, 2].map((k) => {
-  const upAngle = (Math.PI * k) / 3
+const MAX_ELECTRONS = 4
+
+const ELECTRON_SPECS: ElectronSpec[] = [0, 1, 2, 3].map((k) => {
+  const upAngle = (Math.PI * k) / MAX_ELECTRONS
   const upHat: Vec3 = [0, Math.cos(upAngle), Math.sin(upAngle)]
-  const initialPhase = Math.PI + (2 * Math.PI * k) / 3
+  const initialPhase = Math.PI + (2 * Math.PI * k) / MAX_ELECTRONS
   return { upHat, cwAtA: true, initialPhase }
 })
 
@@ -119,7 +123,6 @@ function makeOrbitADesc(
   spec: ElectronSpec,
   chordHalf: number,
   orbitSize: number,
-  orbitAspect: number,
   entryAngle: number,
 ): OrbitDesc {
   return {
@@ -128,7 +131,7 @@ function makeOrbitADesc(
     upHat: spec.upHat,
     chordAxis: [1, 0, 0],
     size: orbitSize,
-    aspect: orbitAspect,
+    aspect: ORBIT_ASPECT,
     omega: spec.cwAtA ? -ORBIT_OMEGA_BASE : ORBIT_OMEGA_BASE,
     phase: entryAngle,
   }
@@ -138,7 +141,6 @@ function makeOrbitBDesc(
   spec: ElectronSpec,
   chordHalf: number,
   orbitSize: number,
-  orbitAspect: number,
 ): OrbitDesc {
   // Omega flips sign at B vs A. The lemniscate's tangent at the right
   // tip (tau=2pi for travelAB) points in +upHat. Orbit-B at theta=0
@@ -151,7 +153,7 @@ function makeOrbitBDesc(
     upHat: spec.upHat,
     chordAxis: [1, 0, 0],
     size: orbitSize,
-    aspect: orbitAspect,
+    aspect: ORBIT_ASPECT,
     omega: spec.cwAtA ? ORBIT_OMEGA_BASE : -ORBIT_OMEGA_BASE,
     phase: 0,
   }
@@ -203,7 +205,6 @@ function ElectronProbe({
   speedMult,
   chordHalf,
   orbitSize,
-  orbitAspect,
   existence,
   autoReplay,
   travelCount,
@@ -218,7 +219,6 @@ function ElectronProbe({
   speedMult: number
   chordHalf: number
   orbitSize: number
-  orbitAspect: number
   existence: Existence
   autoReplay: boolean
   travelCount: number
@@ -267,7 +267,7 @@ function ElectronProbe({
     // Catch up the travel-count baseline so old taps don't immediately
     // fire on the new run.
     lastTravelCountRef.current = travelCount
-    const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize, orbitAspect, spec.initialPhase)
+    const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize, spec.initialPhase)
     const seed: Vec3 = orbitPosAt(orbitA, spec.initialPhase)
     if (bufRef.current) {
       for (let i = 0; i < ELECTRON.trail.segments; i++) {
@@ -284,12 +284,12 @@ function ElectronProbe({
     if (haloMatRef.current) haloMatRef.current.opacity = 0
     if (trailMatRef.current) trailMatRef.current.opacity = 0
     invalidate()
-  }, [startSeed, spec, chordHalf, orbitSize, orbitAspect, travelCount, invalidate])
+  }, [startSeed, spec, chordHalf, orbitSize, travelCount, invalidate])
 
   // Reduced-motion: park at orbit-A entry angle, full opacity. No motion.
   useEffect(() => {
     if (!reducedMotion) return
-    const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize, orbitAspect, spec.initialPhase)
+    const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize, spec.initialPhase)
     const restPos = orbitPosAt(orbitA, spec.initialPhase)
     if (bufRef.current) {
       for (let i = 0; i < ELECTRON.trail.segments; i++) {
@@ -307,7 +307,7 @@ function ElectronProbe({
     if (trailMatRef.current) trailMatRef.current.opacity = 1
     opacityRef.current = 1
     invalidate()
-  }, [reducedMotion, spec, chordHalf, orbitSize, orbitAspect, invalidate])
+  }, [reducedMotion, spec, chordHalf, orbitSize, invalidate])
 
   useFrame((_, delta) => {
     if (reducedMotion) return
@@ -375,8 +375,8 @@ function ElectronProbe({
     }
 
     // Compute position for current phase.
-    const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize, orbitAspect, entryAngleRef.current)
-    const orbitB = makeOrbitBDesc(spec, chordHalf, orbitSize, orbitAspect)
+    const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize, entryAngleRef.current)
+    const orbitB = makeOrbitBDesc(spec, chordHalf, orbitSize)
     let pos: Vec3 = lastPosRef.current
 
     if (phase === 'orbitA') {
@@ -612,12 +612,15 @@ export function LabsAtomMotion() {
   const [pointB, setPointB] = useState<Vec3>(INITIAL_POINT_B)
   const [electronCount, setElectronCount] = useState(0)
   const [tiltDeg, setTiltDeg] = useState(0)
-  const [orbitAspect, setOrbitAspect] = useState(1.0)
   const [autoReplay, setAutoReplay] = useState(false)
   const [zoom, setZoom] = useState(CAMERA_Z)
   const [speedMult, setSpeedMult] = useState(3)
-  const [startSeeds, setStartSeeds] = useState<number[]>([0, 0, 0])
-  const [travelCounts, setTravelCounts] = useState<number[]>([0, 0, 0])
+  const [startSeeds, setStartSeeds] = useState<number[]>(() =>
+    new Array(MAX_ELECTRONS).fill(0),
+  )
+  const [travelCounts, setTravelCounts] = useState<number[]>(() =>
+    new Array(MAX_ELECTRONS).fill(0),
+  )
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
 
   const viewport = useViewport()
@@ -634,9 +637,8 @@ export function LabsAtomMotion() {
 
   const onAddElectron = useCallback(() => {
     setElectronCount((c) => {
-      if (c >= 3) return c
+      if (c >= MAX_ELECTRONS) return c
       const newIdx = c
-      // Bump that electron's startSeed so its probe seeds trail + fades in.
       setStartSeeds((seeds) => {
         const next = seeds.slice()
         next[newIdx] = (next[newIdx] ?? 0) + 1
@@ -647,7 +649,7 @@ export function LabsAtomMotion() {
   }, [])
   const onEnd = useCallback(() => {
     setElectronCount(0)
-    setTravelCounts([0, 0, 0])
+    setTravelCounts(new Array(MAX_ELECTRONS).fill(0))
     setNextTravelIndex(0)
   }, [])
   const onTravel = useCallback(() => {
@@ -682,7 +684,6 @@ export function LabsAtomMotion() {
                   speedMult={speedMult}
                   chordHalf={chordHalf}
                   orbitSize={orbitSize}
-                  orbitAspect={orbitAspect}
                   existence={i < electronCount ? 'visible' : 'idle'}
                   autoReplay={autoReplay}
                   travelCount={travelCounts[i] ?? 0}
@@ -723,14 +724,16 @@ export function LabsAtomMotion() {
             className={s.btn}
             onClick={onAddElectron}
             aria-label={
-              electronCount >= 3
-                ? 'Maximum 3 electrons'
+              electronCount >= MAX_ELECTRONS
+                ? `Maximum ${MAX_ELECTRONS} electrons`
                 : `Add electron ${electronCount + 1}`
             }
-            title={`Add electron (${electronCount}/3)`}
-            disabled={electronCount >= 3}
+            title={`Add electron (${electronCount}/${MAX_ELECTRONS})`}
+            disabled={electronCount >= MAX_ELECTRONS}
           >
-            {electronCount >= 3 ? `3/3 e⁻` : `+ e⁻ (${electronCount}/3)`}
+            {electronCount >= MAX_ELECTRONS
+              ? `${MAX_ELECTRONS}/${MAX_ELECTRONS} e⁻`
+              : `+ e⁻ (${electronCount}/${MAX_ELECTRONS})`}
           </button>
           <button
             type="button"
@@ -768,24 +771,6 @@ export function LabsAtomMotion() {
             title={`Tilt ${tiltDeg}°`}
           >
             {`tilt ${tiltDeg}°`}
-          </button>
-          <button
-            type="button"
-            className={s.btn}
-            onClick={() =>
-              setOrbitAspect((a) => {
-                const idx = ASPECT_STEPS.indexOf(a)
-                return ASPECT_STEPS[(idx + 1) % ASPECT_STEPS.length]
-              })
-            }
-            aria-label={`Orbit aspect ${orbitAspect.toFixed(2)} — tap to change`}
-            title={
-              orbitAspect >= 0.99
-                ? 'Circular orbit'
-                : `Elliptical orbit (aspect ${orbitAspect.toFixed(2)})`
-            }
-          >
-            {orbitAspect >= 0.99 ? 'circle' : `aspect ${orbitAspect.toFixed(2)}`}
           </button>
         </div>
 
