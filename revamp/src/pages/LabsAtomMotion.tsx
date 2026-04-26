@@ -698,8 +698,8 @@ export function LabsAtomMotion() {
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
   const [showNuclei, setShowNuclei] = useState(true)
   const [showAxis, setShowAxis] = useState(false)
-  const [electronColor, setElectronColor] = useState('#a8e0f5')
-  const [bgColor, setBgColor] = useState('#0e2c5e')
+  const [electronColor, setElectronColor] = useState('#b5efe6')
+  const [bgColor, setBgColor] = useState('#240c00')
   const [theme, setTheme] = useTheme()
 
   // Contextual hint above the action strip — guides the user through the
