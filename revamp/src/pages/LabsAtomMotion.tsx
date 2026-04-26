@@ -63,7 +63,6 @@ const ORBIT_PERIOD = (2 * Math.PI) / ORBIT_OMEGA_BASE
 const FADE_DUR = 0.55
 const LEMNISCATE_PERIOD = 6.0
 const TRANSIT_DUR = LEMNISCATE_PERIOD / 2
-const SPEED_STEPS = [0.5, 1, 2, 3, 4, 5, 6]
 // Number of full orbital laps loop mode runs before triggering a
 // transit. Manual travel-button taps still fire on the very next wrap.
 const LOOP_LAPS_BEFORE_TRAVEL = 2
@@ -977,6 +976,19 @@ export function LabsAtomMotion() {
             aria-label="Tilt around Z axis"
           />
         </div>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`speed  ${speedMult}×`}</span>
+          <input
+            type="range"
+            min={0.5}
+            max={6}
+            step={0.5}
+            value={speedMult}
+            onChange={(e) => setSpeedMult(parseFloat(e.currentTarget.value))}
+            className={s.tiltSlider}
+            aria-label="Animation speed"
+          />
+        </div>
 
         <div className={s.controlsRow}>
           <button
@@ -987,20 +999,6 @@ export function LabsAtomMotion() {
             title={autoReplay ? 'Auto-loop on' : 'Auto-loop off'}
           >
             {autoReplay ? '↻ loop' : '↻ once'}
-          </button>
-          <button
-            type="button"
-            className={s.btn}
-            onClick={() =>
-              setSpeedMult((v) => {
-                const idx = SPEED_STEPS.indexOf(v)
-                return SPEED_STEPS[(idx + 1) % SPEED_STEPS.length]
-              })
-            }
-            aria-label={`Speed ${speedMult}x — tap to change`}
-            title={`Speed ${speedMult}x`}
-          >
-            {`${speedMult}× speed`}
           </button>
           <button
             type="button"
