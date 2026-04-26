@@ -75,12 +75,12 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Matches Preset 1.
-const DEFAULT_CAMERA_POS: [number, number, number] = [50, -6, 0]
+const DEFAULT_CAMERA_POS: [number, number, number] = [50, 0, 0]
 const DEFAULT_CAMERA_TARGET: [number, number, number] = [0, -6, 0]
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-17.2, 0, 0]
-const INITIAL_POINT_B: Vec3 = [17.2, 0, 0]
+const INITIAL_POINT_A: Vec3 = [-15.1, 0, 0]
+const INITIAL_POINT_B: Vec3 = [15.1, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -701,16 +701,19 @@ const PRESETS: Preset[] = [
     name: '2',
     electronColor: '#ffdbd8',
     bgColor: '#551029',
-    spread: 17.2,
+    spread: 15.1,
     speed: 4.5,
     loop: true,
     showNuclei: true,
     showAxis: false,
     theme: 'dark',
-    // Pure chord-axis view — camera and target share Y=Z=0 so the four
-    // orbital planes (all containing the X chord axis) collapse edge-on
-    // and project to 4 spokes radiating from one apparent center.
-    camPos: [50, -6, 0],
+    // Camera sits exactly on the chord-axis line (y=0, z=0) so both
+    // nuclei project to the same pixel. Target pulled down (y=-6) tilts
+    // the view direction so the sparkle composes higher in frame; the
+    // resulting ~7° tilt opens the orbits into thin ellipses but reads
+    // as a sparkle visually. Camera y/z must stay exactly zero — any
+    // drift unstacks the nuclei.
+    camPos: [50, 0, 0],
     camTgt: [0, -6, 0],
   },
 ]
