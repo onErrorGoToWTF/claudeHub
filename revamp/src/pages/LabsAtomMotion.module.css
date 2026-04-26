@@ -139,6 +139,13 @@
   text-align: center;
   user-select: none;
   -webkit-user-select: none;
+  /* Live HUD values change every frame; padding/wrapping at the boundary
+     would cause a vertical flicker. Lock to one line and clip overflow. */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
 }
 
 /* --- Top-right appearance cluster (theme, guides, color pickers) ----- */
