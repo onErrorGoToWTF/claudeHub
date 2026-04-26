@@ -31,6 +31,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import { ELECTRON } from '../ui/atom/constants'
 import { makeFadeTexture } from '../ui/atom/Electron'
@@ -71,11 +72,13 @@ const SPEED_SCALE = 0.5
 // Orbits are always circular (aspect = 1). Visual ellipses are purely a
 // camera-angle effect on a 3D circle, not an actual orbital aspect.
 const ORBIT_ASPECT = 1.0
-const CAMERA_Z = 21.0
+// Default camera position (rotated 3-quarter view captured from the user's
+// preferred starting orientation). Distance from origin ≈ 20.3.
+const DEFAULT_CAMERA_POS: [number, number, number] = [15.93, 9.33, 8.52]
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-6.5, 0, 0]
-const INITIAL_POINT_B: Vec3 = [6.5, 0, 0]
+const INITIAL_POINT_A: Vec3 = [-5.7, 0, 0]
+const INITIAL_POINT_B: Vec3 = [5.7, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -170,12 +173,21 @@ function tOffsetTo(entryAngle: number, omega: number, target: number): number {
 
 // --- Camera + projection ---------------------------------------------------
 
-function CameraController({ zoom }: { zoom: number }) {
-  const { camera } = useThree()
-  useEffect(() => {
-    camera.position.z = zoom
-    camera.updateProjectionMatrix()
-  }, [zoom, camera])
+// Camera HUD — pushes the live camera position back up to the page so we
+// can show it in the build label. Lets the user screenshot exact camera
+// coords after rotating to a view they want as the new default.
+function CameraDebugger({
+  onUpdate,
+}: {
+  onUpdate: (pos: [number, number, number]) => void
+}) {
+  useFrame(({ camera }) => {
+    onUpdate([
+      +camera.position.x.toFixed(2),
+      +camera.position.y.toFixed(2),
+      +camera.position.z.toFixed(2),
+    ])
+  })
   return null
 }
 
@@ -198,26 +210,6 @@ function MasterClock({
     timeRef.current += Math.min(delta, 1 / 30) * speedMult * SPEED_SCALE
   })
   return null
-}
-
-function projectWorldToScreen(world: Vec3, zoom: number, w: number, h: number) {
-  const halfH = zoom * Math.tan(((FOV_DEG * Math.PI) / 180) / 2)
-  const halfW = halfH * (w / h)
-  return {
-    x: (w / 2) * (1 + world[0] / halfW),
-    y: (h / 2) * (1 - world[1] / halfH),
-  }
-}
-function unprojectScreenToWorld(
-  clientX: number,
-  clientY: number,
-  zoom: number,
-  w: number,
-  h: number,
-): Vec3 {
-  const halfH = zoom * Math.tan(((FOV_DEG * Math.PI) / 180) / 2)
-  const halfW = halfH * (w / h)
-  return [((2 * clientX - w) / w) * halfW, ((h - 2 * clientY) / h) * halfH, 0]
 }
 
 // --- ElectronProbe (autonomous phase machine) -----------------------------
@@ -632,48 +624,6 @@ function AxisIndicators({
   )
 }
 
-// --- Drag handle (invisible touch target over the nucleus) ----------------
-
-function DragHandle({
-  pos,
-  onDrag,
-  zoom,
-  viewport,
-  enabled,
-  label,
-}: {
-  pos: Vec3
-  onDrag: (next: Vec3) => void
-  zoom: number
-  viewport: { w: number; h: number }
-  enabled: boolean
-  label: 'A' | 'B'
-}) {
-  const screen = projectWorldToScreen(pos, zoom, viewport.w, viewport.h)
-  if (!enabled) return null
-  return (
-    <div
-      className={s.dragHandle}
-      style={{ left: `${screen.x}px`, top: `${screen.y}px` }}
-      onPointerDown={(e) => {
-        e.preventDefault()
-        e.stopPropagation()
-        ;(e.target as HTMLDivElement).setPointerCapture(e.pointerId)
-      }}
-      onPointerMove={(e) => {
-        if (!(e.target as HTMLDivElement).hasPointerCapture(e.pointerId)) return
-        e.preventDefault()
-        e.stopPropagation()
-        onDrag(unprojectScreenToWorld(e.clientX, e.clientY, zoom, viewport.w, viewport.h))
-      }}
-      onPointerUp={(e) => {
-        ;(e.target as HTMLDivElement).releasePointerCapture(e.pointerId)
-      }}
-      aria-label={`Drag point ${label}`}
-    />
-  )
-}
-
 // --- Theme palette ---------------------------------------------------------
 
 type ThemeName = 'light' | 'dark'
@@ -717,26 +667,12 @@ function useTheme(): [ThemeName, (next: ThemeName) => void] {
 
 // --- Page ------------------------------------------------------------------
 
-function useViewport() {
-  const [v, setV] = useState({ w: window.innerWidth, h: window.innerHeight })
-  useEffect(() => {
-    const onResize = () => setV({ w: window.innerWidth, h: window.innerHeight })
-    window.addEventListener('resize', onResize)
-    return () => window.removeEventListener('resize', onResize)
-  }, [])
-  return v
-}
-
 export function LabsAtomMotion() {
   const [pointA, setPointA] = useState<Vec3>(INITIAL_POINT_A)
   const [pointB, setPointB] = useState<Vec3>(INITIAL_POINT_B)
   const [electronCount, setElectronCount] = useState(MAX_ELECTRONS)
-  const [tiltXDeg, setTiltXDeg] = useState(162)
-  const [tiltYDeg, setTiltYDeg] = useState(71)
-  const [tiltZDeg, setTiltZDeg] = useState(156)
   const [autoReplay, setAutoReplay] = useState(true)
-  const [zoom, setZoom] = useState(CAMERA_Z)
-  const [speedMult, setSpeedMult] = useState(3.5)
+  const [speedMult, setSpeedMult] = useState(4.5)
   // Bump every slot's seed by 1 on mount so each ElectronProbe runs its
   // reset effect and snaps its entry angle to the master clock — that's
   // what makes the four initial electrons fire on the loop in evenly-
@@ -748,10 +684,8 @@ export function LabsAtomMotion() {
     new Array(MAX_ELECTRONS).fill(0),
   )
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
-  const [showGuides, setShowGuides] = useState(false)
+  const [showGuides, setShowGuides] = useState(true)
   const [theme, setTheme] = useTheme()
-  const [leftPanelOpen, setLeftPanelOpen] = useState(false)
-  const [viewOffset, setViewOffset] = useState<[number, number]>([0, 0])
 
   // Contextual hint above the action strip — guides the user through the
   // happy path. Empty string = no hint shown (animation in flow).
@@ -767,7 +701,6 @@ export function LabsAtomMotion() {
   }, [electronCount, autoReplay, totalTravels])
   const palette = THEME_PALETTE[theme]
 
-  const viewport = useViewport()
   const reducedMotion = usePrefersReducedMotion()
   // Sharper fade (power 5) concentrates the visible trail near the head
   // and pushes the alpha-zero zone over a longer stretch. Hides the
@@ -777,23 +710,10 @@ export function LabsAtomMotion() {
   // Master clock advancing on the same render tick as the electrons. Each
   // newly-added electron reads this value to compute its entry angle.
   const globalScaledTimeRef = useRef(0)
-
-  // Atom midpoint locks to world origin — controls now hug the edges of
-  // the screen, so the visible-canvas center is essentially the viewport
-  // center (camera is at 0,0,zoom looking at origin).
-  const stageCenterY = 0
-
-  // Whenever stage-center shifts (zoom change), translate both points so
-  // the midpoint stays locked to the stage center. Preserves chord
-  // direction and length.
-  useEffect(() => {
-    const midY = (pointA[1] + pointB[1]) / 2
-    const dy = stageCenterY - midY
-    if (Math.abs(dy) < 1e-4) return
-    setPointA((p) => [p[0], p[1] + dy, p[2]])
-    setPointB((p) => [p[0], p[1] + dy, p[2]])
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stageCenterY])
+  // Live camera position (updated each frame by CameraDebugger). Visible
+  // in the build-label HUD so the user can screenshot the exact values
+  // and turn a rotated view into a new default.
+  const [camPos, setCamPos] = useState<[number, number, number]>(DEFAULT_CAMERA_POS)
 
   const chordHalf = useMemo(() => chordHalfFrom(pointA, pointB), [pointA, pointB])
   // Orbit size is fixed — atoms keep the same on-screen size regardless of
@@ -801,16 +721,7 @@ export function LabsAtomMotion() {
   // to any chord/orbit ratio so the S-shape recalculates from the placed
   // positions.
   const orbitSize = useMemo(() => 3 * (Math.SQRT2 - 1), [])
-  const groupOffset = useMemo<[number, number, number]>(
-    () => [viewOffset[0], viewOffset[1], 0],
-    [viewOffset],
-  )
   const groupTiltZ = useMemo(() => tiltZFrom(pointA, pointB), [pointA, pointB])
-  const tiltXRad = useMemo(() => (tiltXDeg * Math.PI) / 180, [tiltXDeg])
-  const tiltYRad = useMemo(() => (tiltYDeg * Math.PI) / 180, [tiltYDeg])
-  const tiltZRad = useMemo(() => (tiltZDeg * Math.PI) / 180, [tiltZDeg])
-
-  const dragLocked = electronCount > 0
 
   const onAddElectron = useCallback(() => {
     setElectronCount((c) => {
@@ -862,238 +773,146 @@ export function LabsAtomMotion() {
     setPointB([mx - dx * k, my - dy * k, mz - dz * k])
   }, [pointA, pointB])
 
-  // Manual "recenter" — tap to fit-and-frame:
-  //   1. Push zoom out (if needed) so the bounding sphere of the system
-  //      (nuclei + orbits + transit side-bow) fits inside the smaller of
-  //      the viewport's two screen dimensions, with a small margin.
-  //   2. Translate the world group so the projected midpoint of the two
-  //      nuclei lands at viewport center. Corrects the perspective skew
-  //      that pulls them off-center under tilt.
-  // Tilts and spread are preserved; only zoom and view offset move.
+  // Manual "recenter" — resets OrbitControls back to the initial camera
+  // position and target, undoing whatever rotation/zoom the user has
+  // applied via touch.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const orbitControlsRef = useRef<any>(null)
   const onRecenter = useCallback(() => {
-    const halfTan = Math.tan(((FOV_DEG * Math.PI) / 180) / 2)
-    const aspect = viewport.w / viewport.h
-    const usableFraction = Math.min(aspect, 1)
-    const margin = 1.15
-    // Bounding sphere: chord far-tip is at chordHalf + orbitSize from
-    // origin; the transit side-bow adds amp = (chordHalf+orbitSize)/(2√2)
-    // perpendicular. Outer radius ≈ √(1 + 1/8) ≈ 1.061× the chord-line tip.
-    const tipDist = chordHalf + orbitSize
-    const R = tipDist * Math.sqrt(1 + 1 / 8)
-    const requiredZoom = (R * margin) / (halfTan * usableFraction)
-    const nextZoom = Math.min(80, Math.max(zoom, +requiredZoom.toFixed(2)))
-
-    // Recompute screen midpoint at the new zoom, then back-solve a world
-    // offset (at depth=nextZoom) that lands it on viewport center.
-    const innerEuler = new THREE.Euler(tiltXRad, tiltYRad, tiltZRad)
-    const outerEuler = new THREE.Euler(0, 0, groupTiltZ)
-    const aLocal = new THREE.Vector3(-chordHalf, 0, 0)
-      .applyEuler(innerEuler)
-      .applyEuler(outerEuler)
-    const bLocal = new THREE.Vector3(chordHalf, 0, 0)
-      .applyEuler(innerEuler)
-      .applyEuler(outerEuler)
-    const aWorld: Vec3 = [
-      aLocal.x + viewOffset[0],
-      aLocal.y + viewOffset[1],
-      aLocal.z,
-    ]
-    const bWorld: Vec3 = [
-      bLocal.x + viewOffset[0],
-      bLocal.y + viewOffset[1],
-      bLocal.z,
-    ]
-    const aScreen = projectWorldToScreen(aWorld, nextZoom, viewport.w, viewport.h)
-    const bScreen = projectWorldToScreen(bWorld, nextZoom, viewport.w, viewport.h)
-    const midX = (aScreen.x + bScreen.x) / 2
-    const midY = (aScreen.y + bScreen.y) / 2
-    const midWorld = unprojectScreenToWorld(midX, midY, nextZoom, viewport.w, viewport.h)
-
-    if (nextZoom !== zoom) setZoom(nextZoom)
-    setViewOffset([viewOffset[0] - midWorld[0], viewOffset[1] - midWorld[1]])
-  }, [tiltXRad, tiltYRad, tiltZRad, groupTiltZ, chordHalf, orbitSize, viewOffset, zoom, viewport])
+    orbitControlsRef.current?.reset?.()
+  }, [])
 
   return (
     <div className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark}`}>
       <div className={s.canvasArea}>
         <Canvas
-          camera={{ position: [0, 0, zoom], fov: FOV_DEG }}
+          camera={{ position: DEFAULT_CAMERA_POS, fov: FOV_DEG }}
           frameloop="always"
           aria-hidden="true"
         >
-          <CameraController zoom={zoom} />
+          <OrbitControls
+            ref={orbitControlsRef}
+            makeDefault
+            enableRotate
+            enablePan={false}
+            enableZoom
+            enableDamping
+            dampingFactor={0.12}
+            rotateSpeed={0.9}
+            minDistance={4}
+            maxDistance={80}
+            target={[0, 0, 0]}
+          />
           <MasterClock
             timeRef={globalScaledTimeRef}
             speedMult={speedMult}
             reducedMotion={reducedMotion}
           />
-          <group position={groupOffset} rotation={[0, 0, groupTiltZ]}>
-            <group rotation={[tiltXRad, tiltYRad, tiltZRad]}>
-              {showGuides && (
-                <>
-                  <AxisIndicators
-                    chordHalf={chordHalf}
-                    colors={{ x: palette.axisX, y: palette.axisY, z: palette.axisZ }}
-                    opacity={palette.axisOpacity}
-                  />
-                  <Nuclei chordHalf={chordHalf} color={palette.ink} />
-                </>
-              )}
-              {ELECTRON_SPECS.map((spec, i) => (
-                <ElectronProbe
-                  key={`e${i}`}
-                  spec={spec}
-                  fadeTex={fadeTex}
-                  reducedMotion={reducedMotion}
-                  speedMult={speedMult}
+          <CameraDebugger onUpdate={setCamPos} />
+          <group rotation={[0, 0, groupTiltZ]}>
+            {showGuides && (
+              <>
+                <AxisIndicators
                   chordHalf={chordHalf}
-                  orbitSize={orbitSize}
-                  existence={i < electronCount ? 'visible' : 'idle'}
-                  autoReplay={autoReplay}
-                  travelCount={travelCounts[i] ?? 0}
-                  startSeed={startSeeds[i] ?? 0}
-                  trailColor={palette.ink}
-                  color={palette.ink}
-                  haloColor={palette.ink}
-                  globalScaledTimeRef={globalScaledTimeRef}
+                  colors={{ x: palette.axisX, y: palette.axisY, z: palette.axisZ }}
+                  opacity={palette.axisOpacity}
                 />
-              ))}
-            </group>
+                <Nuclei chordHalf={chordHalf} color={palette.ink} />
+              </>
+            )}
+            {ELECTRON_SPECS.map((spec, i) => (
+              <ElectronProbe
+                key={`e${i}`}
+                spec={spec}
+                fadeTex={fadeTex}
+                reducedMotion={reducedMotion}
+                speedMult={speedMult}
+                chordHalf={chordHalf}
+                orbitSize={orbitSize}
+                existence={i < electronCount ? 'visible' : 'idle'}
+                autoReplay={autoReplay}
+                travelCount={travelCounts[i] ?? 0}
+                startSeed={startSeeds[i] ?? 0}
+                trailColor={palette.ink}
+                color={palette.ink}
+                haloColor={palette.ink}
+                globalScaledTimeRef={globalScaledTimeRef}
+              />
+            ))}
           </group>
         </Canvas>
       </div>
 
-      <DragHandle
-        pos={pointA}
-        onDrag={(p) => {
-          setPointA(p)
-          setPointB([-p[0], 2 * stageCenterY - p[1], -p[2]])
-        }}
-        zoom={zoom}
-        viewport={viewport}
-        enabled={!dragLocked}
-        label="A"
-      />
-      <DragHandle
-        pos={pointB}
-        onDrag={(p) => {
-          setPointB(p)
-          setPointA([-p[0], 2 * stageCenterY - p[1], -p[2]])
-        }}
-        zoom={zoom}
-        viewport={viewport}
-        enabled={!dragLocked}
-        label="B"
-      />
-
-      {/* Top-left: motion verbs */}
-      <div className={s.topLeftActions} aria-label="Motion controls">
-        <button
-          type="button"
-          className={s.btn}
-          onClick={onAddElectron}
-          aria-label={
-            electronCount >= MAX_ELECTRONS
-              ? `Maximum ${MAX_ELECTRONS} electrons`
-              : `Add electron ${electronCount + 1}`
-          }
-          title={`Add electron (${electronCount}/${MAX_ELECTRONS})`}
-          disabled={electronCount >= MAX_ELECTRONS}
-        >
-          {electronCount >= MAX_ELECTRONS
-            ? `${MAX_ELECTRONS}/${MAX_ELECTRONS} e⁻`
-            : `+ e⁻ (${electronCount}/${MAX_ELECTRONS})`}
-        </button>
-        <button
-          type="button"
-          className={s.btn}
-          onClick={onTravel}
-          aria-label={`Travel electron ${nextTravelIndex + 1}`}
-          title={`Travel — next: e${nextTravelIndex + 1}`}
-          disabled={electronCount === 0}
-        >
-          {`⇋ travel e${nextTravelIndex + 1}`}
-        </button>
-        <button
-          type="button"
-          className={s.btn}
-          onClick={onEnd}
-          aria-label="End"
-          title="End — fade out, drag re-enabled"
-          disabled={electronCount === 0}
-        >
-          ■ end
-        </button>
-        <button
-          type="button"
-          className={`${s.btn} ${autoReplay ? s.btnActive : ''}`}
-          onClick={() => setAutoReplay((v) => !v)}
-          aria-label={autoReplay ? 'Disable auto-loop' : 'Enable auto-loop'}
-          title={autoReplay ? 'Auto-loop on' : 'Auto-loop off'}
-        >
-          {autoReplay ? '↻ loop' : '↻ once'}
-        </button>
-      </div>
-
-      {/* Top-right: display toggles + recenter */}
-      <div className={s.floatingControls}>
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon}`}
-          onClick={onRecenter}
-          aria-label="Recenter view on nuclei midpoint"
-          title="Recenter"
-        >
-          ◎
-        </button>
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon}`}
-          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-          title={`${theme === 'light' ? 'Light' : 'Dark'} mode`}
-        >
-          {theme === 'light' ? '☼' : '☾'}
-        </button>
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon} ${showGuides ? s.btnActive : ''}`}
-          onClick={() => setShowGuides((v) => !v)}
-          aria-label={showGuides ? 'Hide guides' : 'Show guides'}
-          title={showGuides ? 'Guides on' : 'Guides off'}
-        >
-          {showGuides ? '✦' : '✧'}
-        </button>
-      </div>
-
-      {hintText && <div className={s.hintLine}>{hintText}</div>}
-
-      {/* Left edge: collapsible stage-sliders panel */}
-      {!leftPanelOpen && (
-        <button
-          type="button"
-          className={s.leftPanelToggle}
-          onClick={() => setLeftPanelOpen(true)}
-          aria-label="Open stage sliders"
-          title="Stage sliders"
-        >
-          ▸
-        </button>
-      )}
-      <div
-        className={`${s.leftPanel} ${leftPanelOpen ? s.leftPanelOpen : ''}`}
-        role="dialog"
-        aria-label="Stage sliders"
-        aria-hidden={!leftPanelOpen}
-      >
-        <button
-          type="button"
-          className={s.leftPanelClose}
-          onClick={() => setLeftPanelOpen(false)}
-          aria-label="Close stage sliders"
-        >
-          ◂
-        </button>
+      {/* Single transparent control panel — drag canvas to rotate, pinch to zoom. */}
+      <div className={s.unifiedPanel} aria-label="Atom motion controls">
+        <div className={s.unifiedRow}>
+          <button
+            type="button"
+            className={s.btn}
+            onClick={onAddElectron}
+            aria-label={
+              electronCount >= MAX_ELECTRONS
+                ? `Maximum ${MAX_ELECTRONS} electrons`
+                : `Add electron ${electronCount + 1}`
+            }
+            disabled={electronCount >= MAX_ELECTRONS}
+          >
+            {electronCount >= MAX_ELECTRONS
+              ? `${MAX_ELECTRONS}/${MAX_ELECTRONS} e⁻`
+              : `+ e⁻ (${electronCount}/${MAX_ELECTRONS})`}
+          </button>
+          <button
+            type="button"
+            className={s.btn}
+            onClick={onTravel}
+            aria-label={`Travel electron ${nextTravelIndex + 1}`}
+            disabled={electronCount === 0}
+          >
+            {`⇋ e${nextTravelIndex + 1}`}
+          </button>
+          <button
+            type="button"
+            className={s.btn}
+            onClick={onEnd}
+            aria-label="End"
+            disabled={electronCount === 0}
+          >
+            ■
+          </button>
+          <button
+            type="button"
+            className={`${s.btn} ${autoReplay ? s.btnActive : ''}`}
+            onClick={() => setAutoReplay((v) => !v)}
+            aria-label={autoReplay ? 'Disable auto-loop' : 'Enable auto-loop'}
+          >
+            {autoReplay ? '↻' : '○'}
+          </button>
+          <button
+            type="button"
+            className={`${s.btn} ${s.btnIcon}`}
+            onClick={onRecenter}
+            aria-label="Recenter view"
+            title="Reset camera"
+          >
+            ◎
+          </button>
+          <button
+            type="button"
+            className={`${s.btn} ${s.btnIcon}`}
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? '☼' : '☾'}
+          </button>
+          <button
+            type="button"
+            className={`${s.btn} ${s.btnIcon} ${showGuides ? s.btnActive : ''}`}
+            onClick={() => setShowGuides((v) => !v)}
+            aria-label="Toggle guides"
+          >
+            {showGuides ? '✦' : '✧'}
+          </button>
+        </div>
         <div className={s.tiltSliderRow}>
           <span className={s.tiltSliderLabel}>{`spread  ${chordHalf.toFixed(1)}`}</span>
           <input
@@ -1108,49 +927,6 @@ export function LabsAtomMotion() {
           />
         </div>
         <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`tilt X  ${tiltXDeg}°`}</span>
-          <input
-            type="range"
-            min={0}
-            max={180}
-            step={1}
-            value={tiltXDeg}
-            onChange={(e) => setTiltXDeg(parseInt(e.currentTarget.value, 10))}
-            className={s.tiltSlider}
-            aria-label="Tilt around X axis"
-          />
-        </div>
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`tilt Y  ${tiltYDeg}°`}</span>
-          <input
-            type="range"
-            min={0}
-            max={180}
-            step={1}
-            value={tiltYDeg}
-            onChange={(e) => setTiltYDeg(parseInt(e.currentTarget.value, 10))}
-            className={s.tiltSlider}
-            aria-label="Tilt around Y axis"
-          />
-        </div>
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`tilt Z  ${tiltZDeg}°`}</span>
-          <input
-            type="range"
-            min={0}
-            max={180}
-            step={1}
-            value={tiltZDeg}
-            onChange={(e) => setTiltZDeg(parseInt(e.currentTarget.value, 10))}
-            className={s.tiltSlider}
-            aria-label="Tilt around Z axis"
-          />
-        </div>
-      </div>
-
-      {/* Bottom: speed + zoom sliders */}
-      <div className={s.bottomBar} aria-label="Speed and zoom">
-        <div className={s.tiltSliderRow}>
           <span className={s.tiltSliderLabel}>{`speed  ${speedMult}×`}</span>
           <input
             type="range"
@@ -1163,22 +939,11 @@ export function LabsAtomMotion() {
             aria-label="Animation speed"
           />
         </div>
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`zoom  ${zoom.toFixed(0)}`}</span>
-          <input
-            type="range"
-            min={2}
-            max={80}
-            step={1}
-            value={zoom}
-            onChange={(e) => setZoom(parseFloat(e.currentTarget.value))}
-            className={s.tiltSlider}
-            aria-label="Zoom (camera distance)"
-          />
-        </div>
-        <span className={s.buildLabel}>{`build·${COMMIT} · z=${zoom.toFixed(1)}`}</span>
+        {hintText && <div className={s.hintInline}>{hintText}</div>}
+        <span className={s.buildLabel}>
+          {`build·${COMMIT} · cam (${camPos[0]}, ${camPos[1]}, ${camPos[2]})`}
+        </span>
       </div>
-
     </div>
   )
 }

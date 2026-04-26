@@ -43,6 +43,11 @@
 .canvasArea {
   position: absolute;
   inset: 0;
+  touch-action: none;
+}
+
+.canvasArea canvas {
+  touch-action: none;
 }
 
 /* --- Buttons (shared) -------------------------------------------------- */
@@ -94,6 +99,45 @@
   color: var(--lab-meta);
   letter-spacing: 0.02em;
   text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* --- Unified transparent control panel -------------------------------- */
+/* Drag canvas to rotate, pinch to zoom — sliders + buttons for the rest. */
+
+.unifiedPanel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9996;
+  padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: stretch;
+  pointer-events: none;
+}
+
+.unifiedPanel > * {
+  pointer-events: auto;
+}
+
+.unifiedRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.hintInline {
+  text-align: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: var(--lab-meta);
+  letter-spacing: 0.02em;
   user-select: none;
   -webkit-user-select: none;
 }
