@@ -516,7 +516,7 @@ function DragHandle({
   const screen = projectWorldToScreen(pos, zoom, viewport.w, viewport.h)
   return (
     <div
-      className={`${s.dragHandle} ${label === 'A' ? s.dragHandleA : s.dragHandleB}`}
+      className={s.dragHandle}
       style={{ left: `${screen.x}px`, top: `${screen.y}px` }}
       onPointerDown={(e) => {
         e.preventDefault()
@@ -533,9 +533,7 @@ function DragHandle({
         ;(e.target as HTMLDivElement).releasePointerCapture(e.pointerId)
       }}
       aria-label={`Drag point ${label}`}
-    >
-      {label}
-    </div>
+    />
   )
 }
 
