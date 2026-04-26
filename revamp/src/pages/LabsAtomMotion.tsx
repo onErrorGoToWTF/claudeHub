@@ -1071,6 +1071,7 @@ export function LabsAtomMotion() {
             aria-label="Zoom (camera distance)"
           />
         </div>
+        <span className={s.buildLabel}>{`build·${COMMIT} · z=${zoom.toFixed(1)}`}</span>
       </div>
 
     </div>
