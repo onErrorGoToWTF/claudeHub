@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T22:23:45.323Z",
+  "generated_at": "2026-04-26T01:23:11.410Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "Anthropic’s Project Deal Lets Claude Agents Trade Real Goods - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPQXhwZWI3QkJka1ZRRnV1XzdVVUl6ZDZBcVFaQVhHa3RIUENwTUVMUVkzNEhJV0lxUE83Z09acFBrbWFFTTcwcy1CdWJCZWJFMHk1MnhmOW5tVldwdl9ETnN1V3d2NmNDMjU1dDNmU1hwRDJuaUtJdG1aeGk4SmF1R2d4VWxMckZu?oc=5",
+        "source": "Google News",
+        "published": "2026-04-25T23:04:21.000Z",
+        "summary": "Anthropic’s Project Deal Lets Claude Agents Trade Real Goods Unite.AI"
+      },
+      {
         "title": "Anthropic's AI Agents Just Closed Real Deals With Real Money - The Tech Buzz",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNLTVKQkZjd05FSmlIY2dHa0FsUWE1eE1SU1JoWkh3QkpPenhtWF83SVFNLUk0M0phQ2g2cWo0VmJFR2NNekhSRmZHSGhBMkI5dWJLdGRhYkkzREZBcHNzVHQ3di10M0I2b3RTdjZZQjljN0N6SndiaVVrcWozLUtDamZVbVRHX0lXMEVXbDJmNFBURFBVQVFsRg?oc=5",
         "source": "Google News",
@@ -163,7 +170,7 @@
         "title": "Amazon's Partnership With Anthropic Keeps Deepening. Is This the Catalyst Amazon Stock Needs? - The Motley Fool",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNMFVsc0VCbFlNdVJ4UFhXeDl2X2hNOGlONkRmX3c0cEtMMS03N2hfUTU1bWpWQXNXQTdEdGUyanBBNjRweWVlbzBIVmVQTXNCMXdJeXMxMzNfUFlMMF9JODRzTHZWOEJ1VGVrbk1TRk5UWGp4THRyMVdCMUhwa2c3U09zN1JUSFFsWnpLZ1k0ZldXZkJUMWJHdA?oc=5",
         "source": "Google News",
-        "published": "2026-04-25T19:51:25.000Z",
+        "published": "2026-04-25T20:17:00.000Z",
         "summary": "Amazon's Partnership With Anthropic Keeps Deepening. Is This the Catalyst Amazon Stock Needs? The Motley Fool"
       },
       {
@@ -172,6 +179,13 @@
         "source": "Google News",
         "published": "2026-04-25T18:11:10.000Z",
         "summary": "Blitzy Highlights Use of Anthropic’s Claude in Autonomous Software Development TipRanks"
+      },
+      {
+        "title": "Anthropic's Claude Opus 4.7 is here: Check improvements, safety features, and what's new - MSN",
+        "url": "https://news.google.com/rss/articles/CBMiiwNBVV95cUxOeTRpRE0zei14ZV9rZU0tZTdnVDgzOGR3QXhGcHQ3TkJsTjJYdFE3SnlFaHB0cHhGMXgyTGN6QWE4RVFqT0N5ZFkzRFRYdnZXMk82Ti1OdTFoUUlWNTZXLXE2cUZYTC1jOGRvU25YZVVQOXdjeFRTcV9kbXpmWEhpOEhpSFpqV3NQQW5IckluZUNxM2FxMzYwQ3NYU1pXaldhel80c0J0OVRjQ3FibjFreWRFNllIVU10NDJkMUZwWXZPc1p3NjlxTjMwNThKc0NQN0VXT3JTdUFfcXZaUUFYdmVhMHBudjFCREdTQnhXcUtYUnFUNVo2STc5a0U1anpmN0JCUkQwb3dHUWRMYUJwSXlXT09yTUo0blNkOFRLSE1nWGFSQlp4d0otMUhJcHpncTZmWWtQbUxaS1RJcFZfR2pLYUtRaDNEdVdoM1VFUXFPRUZsTnhtaXF6M25uX2FIc2x2YlB5R0hBV2IyLTRZTEhxQXVQRzZSb0dYVkRMZWVoX0ZFemUyM1JGWQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-25T18:06:32.000Z",
+        "summary": "Anthropic's Claude Opus 4.7 is here: Check improvements, safety features, and what's new MSN"
       },
       {
         "title": "Anthropic runs Claude-powered employee marketplace experiment - Let's Data Science",
@@ -202,17 +216,10 @@
       {
         "title": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
         "url": "https://github.com/nex-crm/wuphf",
-        "source": "HN · 217↑",
+        "source": "HN · 222↑",
         "hn_id": "47899844",
         "published": "2026-04-25T08:53:53.000Z",
         "summary": "I shipped a wiki layer for AI agents that uses markdown + git as the source of truth, with a bleve (BM25) + SQLite index on top. No vector or graph db yet. It runs locally in…"
-      },
-      {
-        "title": "Anthropic's Mythos Raises Alarms Across Global Banking - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZm5vMnVsdlVwY0J6OEZnZWdXMnM1ck5icWxRQWhaa0ZpajVYeTBRVE10RTgxME1tMENkaFo4NzVNSGFNVTFtNWRLcmJCeVY1LXhkWWlaN3hzMVBRc0NTUDdyX19CdFI1Y1ExcFdVTTRBY3ZrYnRoWEtyUjQycXNIWFZIeFJYNjVoT3JPSHdpQjE2X3pfMTIzaTZYOA?oc=5",
-        "source": "Google News",
-        "published": "2026-04-25T05:49:43.000Z",
-        "summary": "Anthropic's Mythos Raises Alarms Across Global Banking Let's Data Science"
       },
       {
         "title": "You weren't imagining it — Claude Code really did get worse, and Anthropic just explained why - XDA",
@@ -222,16 +229,9 @@
         "summary": "You weren't imagining it — Claude Code really did get worse, and Anthropic just explained why XDA"
       },
       {
-        "title": "Anthropic Engages Governments Over Mythos Early Access - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQRk1HeFpiVHNFbWxvekw4bVpGTWNwQ3kwVHlsQjcyX0o5d3EydVdZYVJDYTQ3VHZVTnBobl9qV0lNdFJDOW5NOC1RdHNZa21ZeEs5Z0dnQW5GajNGU1pxTS1ocnd5TGdzQzlNNUp6cVdwVUt3djRCSnc0Vk9MLVhWSDE5MndOVFY4akdLQ01pdFdYWUtuMUlhOG9SQVU?oc=5",
-        "source": "Google News",
-        "published": "2026-04-25T02:56:04.000Z",
-        "summary": "Anthropic Engages Governments Over Mythos Early Access Let's Data Science"
-      },
-      {
         "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
         "url": "https://alash3al.github.io/stash?_v01",
-        "source": "HN · 158↑",
+        "source": "HN · 160↑",
         "hn_id": "47897790",
         "published": "2026-04-25T01:24:40.000Z",
         "summary": ""
@@ -249,13 +249,6 @@
         "source": "Ars Technica",
         "published": "2026-04-24T22:05:45.000Z",
         "summary": "Google will invest at least $10 billion in Anthropic, and that amount could rise to $40 billion if Anthropic meets certain performance targets, Bloomberg reports . The investment follows Amazon's $5…"
-      },
-      {
-        "title": "Claude Mythos Probably Isn’t What You Think It Is - Medium",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcU1UampveDV0aFJOanFiZnMtaGo1c0RVUEVhd0tkelFSLTc0Q2M2OERRa215OXBlWUM1cndlTUZGRTZublpnNmtMX1NwN0RCb3k4R212SmhiS1VSNTN2MUs4ZFl4b1lySnhZUG85SUtybGxfUlZ0WTZqb2NfbGtDVDBVT0xlbHdkb0g1dzhCQ2xkT2c?oc=5",
-        "source": "Google News",
-        "published": "2026-04-24T21:01:01.000Z",
-        "summary": "Claude Mythos Probably Isn’t What You Think It Is Medium"
       },
       {
         "title": "'Too Dangerous to Release' Is Becoming AI's New Normal - Time Magazine",
@@ -282,6 +275,13 @@
         "source": "Google News",
         "published": "2026-04-24T19:57:00.000Z",
         "summary": "Google commits billions to Anthropic in major AI partnership USA Today"
+      },
+      {
+        "title": "Google commits $40 billion investment to Claude AI developer Anthropic - Cryptopolitan",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOaFdvZUxpdVVPRW9jemZoaUx1WjVENC1MVUgxalk2YmQwX0ZsalVaSHFVSnBQUDNhTnVxc0dEd3c1US1NUUNLd21HT1dFTmRvUUNrOTlKVmZLNDFXWmE1S0d1UVd0di1vSDdDRjE4ZUU1Ui1lUE0xVjBVQlBkX2l5eF9Rbk9lemY2QnFTeGNTSjdUNkNNb1VTUUl4Ml9qYzhwcnc?oc=5",
+        "source": "Google News",
+        "published": "2026-04-24T19:44:00.000Z",
+        "summary": "Google commits $40 billion investment to Claude AI developer Anthropic Cryptopolitan"
       },
       {
         "title": "Could a Claude Code routine watch my finances?",
@@ -337,7 +337,7 @@
       {
         "title": "CC-Canary: Detect early signs of regressions in Claude Code",
         "url": "https://github.com/delta-hq/cc-canary",
-        "source": "HN · 65↑",
+        "source": "HN · 66↑",
         "hn_id": "47893620",
         "published": "2026-04-24T17:53:37.000Z",
         "summary": ""
