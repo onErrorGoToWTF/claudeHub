@@ -15,7 +15,7 @@
  * at cycle boundaries. The motion runs forever modulo the cycle even
  * with auto-replay off.
  */
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
 
@@ -28,11 +28,6 @@ function CameraController({ zoom }: { zoom: number }) {
   return null
 }
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
-import {
-  AtomLabHud,
-  type AtomLabEvent,
-  type AtomLabMathState,
-} from '../ui/atom/AtomLabHud'
 import { ELECTRON } from '../ui/atom/constants'
 import { makeFadeTexture } from '../ui/atom/Electron'
 import type { Plane } from '../ui/atom/Electron'
@@ -78,7 +73,8 @@ const ORBIT_SIZE = CHORD_HALF * (Math.SQRT2 - 1) // ≈ 0.663
 const ORBIT_ASPECT = 0.62
 const ORBIT_OMEGA_BASE = 2.4 // rad/s
 const GROUP_ROTATION: [number, number, number] = [Math.PI / 4, Math.PI / 4, 0]
-const CAMERA_Z = 9.0
+const CAMERA_Z = 14.0
+const COMMIT: string = (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
 // Lemniscate cycle period — full figure-8 traversal in seconds.
 const LEMNISCATE_PERIOD = 6.0
 // Half-lemniscate transit (left lobe tip → right lobe tip) takes half a
@@ -528,48 +524,18 @@ export function LabsAtomMotion() {
   const [replayKey, setReplayKey] = useState(0)
   const [autoReplay, setAutoReplay] = useState(true)
   const [zoom, setZoom] = useState(CAMERA_Z)
-  const [oppositeRotation, setOppositeRotation] = useState(false)
+  const [oppositeRotation, setOppositeRotation] = useState(true)
   const [speedMult, setSpeedMult] = useState(1)
-  const SPEED_STEPS = [0.5, 1, 2, 4]
+  const SPEED_STEPS = [0.5, 1, 2, 3, 4]
   const [lapsBefore, setLapsBefore] = useState(3)
   const [lapsAfter, setLapsAfter] = useState(3)
   const orbitADur = lapsBefore * ORBIT_PERIOD
   const orbitBDur = lapsAfter * ORBIT_PERIOD
   const reducedMotion = usePrefersReducedMotion()
   const fadeTex = useMemo(() => makeFadeTexture(), [])
-  const mathRef = useRef<AtomLabMathState>({
-    phase: 'init',
-    stateName: 'motion',
-    t: 0,
-    vMag: 0,
-  })
-  const [events, setEvents] = useState<AtomLabEvent[]>([])
-  const reportsRef = useRef<ProbeReport[]>([])
-  const lastPhasesRef = useRef<string[]>(['', '', ''])
-
-  const onReport = useCallback((idx: number, report: ProbeReport) => {
-    reportsRef.current[idx] = report
-    // Aggregate math state for HUD.
-    const r0 = reportsRef.current[0]
-    const r1 = reportsRef.current[1]
-    const r2 = reportsRef.current[2]
-    const phaseStr = `${r0?.phase ?? '·'}|${r1?.phase ?? '·'}|${r2?.phase ?? '·'}`
-    const vAvg = ((r0?.vMag ?? 0) + (r1?.vMag ?? 0) + (r2?.vMag ?? 0)) / 3
-    mathRef.current.phase = phaseStr
-    mathRef.current.stateName = 'motion'
-    mathRef.current.t = performance.now() / 1000
-    mathRef.current.vMag = vAvg
-    // Phase change events (fire only on transitions).
-    if (lastPhasesRef.current[idx] !== report.phase) {
-      lastPhasesRef.current[idx] = report.phase
-      setEvents((prev) => [
-        { ts: performance.now(), action: `e${idx + 1}·${report.phase}` },
-        ...prev,
-      ].slice(0, 20))
-    }
-  }, [])
 
   const handleReplay = () => setReplayKey((k) => k + 1)
+  const noopReport = () => {}
 
   return (
     <div className={s.root}>
@@ -594,7 +560,7 @@ export function LabsAtomMotion() {
                 speedMult={speedMult}
                 orbitADur={orbitADur}
                 orbitBDur={orbitBDur}
-                onReport={onReport}
+                onReport={noopReport}
               />
             ))}
           </group>
@@ -618,119 +584,112 @@ export function LabsAtomMotion() {
 
       <LabsNav />
 
-      <button
-        type="button"
-        className={s.canvasReplay}
-        onClick={handleReplay}
-        aria-label="Replay"
-        title="Replay"
-      >
-        ↻
-      </button>
-      <div className={s.canvasZoomCluster}>
-        <button
-          type="button"
-          className={s.canvasZoomBtn}
-          onClick={() => setZoom((z) => Math.max(3, +(z - 0.5).toFixed(2)))}
-          aria-label="Zoom in"
-          title="Zoom in (closer)"
-        >
-          −
-        </button>
-        <button
-          type="button"
-          className={s.canvasZoomBtn}
-          onClick={() => setZoom((z) => Math.min(30, +(z + 0.5).toFixed(2)))}
-          aria-label="Zoom out"
-          title="Zoom out (farther)"
-        >
-          +
-        </button>
-      </div>
-      <span className={s.canvasZoomLabel}>z={zoom.toFixed(1)}</span>
-      <button
-        type="button"
-        className={`${s.canvasRotBtn} ${oppositeRotation ? s.canvasRotBtnActive : ''}`}
-        onClick={() => {
-          setOppositeRotation((v) => !v)
-          setReplayKey((k) => k + 1)
-        }}
-        aria-label={oppositeRotation ? 'Switch to same-rotation transit' : 'Switch to opposite-rotation transit'}
-        title={oppositeRotation ? 'Opposite rotation (lemniscate)' : 'Same rotation (ellipse arc)'}
-      >
-        {oppositeRotation ? '⇄ opposite' : '→ same'}
-      </button>
-      <button
-        type="button"
-        className={`${s.canvasLoopBtn} ${autoReplay ? s.canvasRotBtnActive : ''}`}
-        onClick={() => setAutoReplay((v) => !v)}
-        aria-label={autoReplay ? 'Disable auto-loop' : 'Enable auto-loop'}
-        title={autoReplay ? 'Auto-loop on' : 'Auto-loop off'}
-      >
-        {autoReplay ? '↻ loop' : '↻ once'}
-      </button>
-      <button
-        type="button"
-        className={s.canvasSpeedBtn}
-        onClick={() => {
-          setSpeedMult((v) => {
-            const idx = SPEED_STEPS.indexOf(v)
-            const next = SPEED_STEPS[(idx + 1) % SPEED_STEPS.length]
-            return next
-          })
-          setReplayKey((k) => k + 1)
-        }}
-        aria-label={`Speed ${speedMult}x — tap to change`}
-        title={`Speed ${speedMult}x`}
-      >
-        {`${speedMult}× speed`}
-      </button>
-      <button
-        type="button"
-        className={`${s.canvasLapsBtn} ${s.canvasLapsBeforeBtn}`}
-        onClick={() => {
-          setLapsBefore((v) => {
-            const idx = LAP_STEPS.indexOf(v)
-            return LAP_STEPS[(idx + 1) % LAP_STEPS.length]
-          })
-          setReplayKey((k) => k + 1)
-        }}
-        aria-label={`${lapsBefore} laps before transit — tap to change`}
-        title={`${lapsBefore} laps before transit`}
-      >
-        {`${lapsBefore} laps in`}
-      </button>
-      <button
-        type="button"
-        className={`${s.canvasLapsBtn} ${s.canvasLapsAfterBtn}`}
-        onClick={() => {
-          setLapsAfter((v) => {
-            const idx = LAP_STEPS.indexOf(v)
-            return LAP_STEPS[(idx + 1) % LAP_STEPS.length]
-          })
-          setReplayKey((k) => k + 1)
-        }}
-        aria-label={`${lapsAfter} laps after capture — tap to change`}
-        title={`${lapsAfter} laps after capture`}
-      >
-        {`${lapsAfter} laps out`}
-      </button>
+      <div className={s.controlsPanel} aria-label="Atom motion controls">
+        <div className={s.controlsRow}>
+          <button
+            type="button"
+            className={s.btn}
+            onClick={() => {
+              setLapsBefore((v) => {
+                const idx = LAP_STEPS.indexOf(v)
+                return LAP_STEPS[(idx + 1) % LAP_STEPS.length]
+              })
+              setReplayKey((k) => k + 1)
+            }}
+            aria-label={`${lapsBefore} laps before transit — tap to change`}
+            title={`${lapsBefore} laps before transit`}
+          >
+            {`${lapsBefore} laps in`}
+          </button>
+          <button
+            type="button"
+            className={s.btn}
+            onClick={() => {
+              setLapsAfter((v) => {
+                const idx = LAP_STEPS.indexOf(v)
+                return LAP_STEPS[(idx + 1) % LAP_STEPS.length]
+              })
+              setReplayKey((k) => k + 1)
+            }}
+            aria-label={`${lapsAfter} laps after capture — tap to change`}
+            title={`${lapsAfter} laps after capture`}
+          >
+            {`${lapsAfter} laps out`}
+          </button>
+        </div>
 
-      <AtomLabHud
-        config={{
-          nA: `[${NUCLEUS_A.join(',')}]`,
-          nB: `[${NUCLEUS_B.join(',')}]`,
-          size: ORBIT_SIZE,
-          aspect: ORBIT_ASPECT,
-          omega: ORBIT_OMEGA_BASE,
-          travelDur: TRAVEL_DUR,
-          kappa: 0.5,
-          electrons: 3,
-          replay: replayKey,
-        }}
-        mathRef={mathRef}
-        events={events}
-      />
+        <div className={s.controlsRow}>
+          <button
+            type="button"
+            className={`${s.btn} ${oppositeRotation ? s.btnActive : ''}`}
+            onClick={() => {
+              setOppositeRotation((v) => !v)
+              setReplayKey((k) => k + 1)
+            }}
+            aria-label={oppositeRotation ? 'Switch to same-rotation transit' : 'Switch to opposite-rotation transit'}
+            title={oppositeRotation ? 'Opposite rotation (lemniscate)' : 'Same rotation (ellipse arc)'}
+          >
+            {oppositeRotation ? '⇄ opposite' : '→ same'}
+          </button>
+          <button
+            type="button"
+            className={`${s.btn} ${autoReplay ? s.btnActive : ''}`}
+            onClick={() => setAutoReplay((v) => !v)}
+            aria-label={autoReplay ? 'Disable auto-loop' : 'Enable auto-loop'}
+            title={autoReplay ? 'Auto-loop on' : 'Auto-loop off'}
+          >
+            {autoReplay ? '↻ loop' : '↻ once'}
+          </button>
+          <button
+            type="button"
+            className={s.btn}
+            onClick={() => {
+              setSpeedMult((v) => {
+                const idx = SPEED_STEPS.indexOf(v)
+                const next = SPEED_STEPS[(idx + 1) % SPEED_STEPS.length]
+                return next
+              })
+              setReplayKey((k) => k + 1)
+            }}
+            aria-label={`Speed ${speedMult}x — tap to change`}
+            title={`Speed ${speedMult}x`}
+          >
+            {`${speedMult}× speed`}
+          </button>
+        </div>
+
+        <div className={s.controlsRow}>
+          <button
+            type="button"
+            className={`${s.btn} ${s.btnIcon}`}
+            onClick={handleReplay}
+            aria-label="Replay"
+            title="Replay"
+          >
+            ↻
+          </button>
+          <button
+            type="button"
+            className={`${s.btn} ${s.btnIcon}`}
+            onClick={() => setZoom((z) => Math.max(3, +(z - 0.5).toFixed(2)))}
+            aria-label="Zoom in"
+            title="Zoom in (closer)"
+          >
+            −
+          </button>
+          <button
+            type="button"
+            className={`${s.btn} ${s.btnIcon}`}
+            onClick={() => setZoom((z) => Math.min(30, +(z + 0.5).toFixed(2)))}
+            aria-label="Zoom out"
+            title="Zoom out (farther)"
+          >
+            +
+          </button>
+        </div>
+
+        <span className={s.buildLabel}>build·{COMMIT}</span>
+      </div>
     </div>
   )
 }
