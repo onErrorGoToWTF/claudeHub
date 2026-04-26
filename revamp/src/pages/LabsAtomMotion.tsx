@@ -65,13 +65,12 @@ const LEMNISCATE_PERIOD = 6.0
 const TRANSIT_DUR = LEMNISCATE_PERIOD / 2
 const SPEED_STEPS = [0.5, 1, 2, 3, 4, 5, 6]
 const TILT_STEPS_DEG = [0, 30, 45, 60]
-const COUNT_STEPS = [1, 2, 3] as const
 const ASPECT_STEPS = [0.4, 0.62, 0.8, 1.0]
 const CAMERA_Z = 22.0
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-2.72, 4.0, 0]
-const INITIAL_POINT_B: Vec3 = [5.33, 0.8, 0]
+const INITIAL_POINT_A: Vec3 = [-3, 0, 0]
+const INITIAL_POINT_B: Vec3 = [3, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -87,22 +86,22 @@ type ElectronSpec = {
   initialPhase: number
 }
 
-// --- Per-count electron layouts -------------------------------------------
-// Three pinwheeled planes around the chord X-axis at 120 deg, with
-// initial phases spaced 2pi/N so the electrons don't pile up at far-A
-// at start. cwAtA stays true (CW around A) — same convention as the
-// single-electron version.
+// --- Per-electron plane assignments ---------------------------------------
+// A plane through the chord axis is determined by an upHat direction; +up
+// and -up span the same plane. So unique planes only span [0, π) of
+// rotation around the chord — 180° / count gives evenly-spaced *distinct*
+// planes:
+//   1 electron: 0° (XY)
+//   2 electrons: 0°, 90° (XY + XZ)
+//   3 electrons: 0°, 60°, 120°
+// Plane assignments are fixed by index — adding e2 doesn't shuffle e1.
 
-function planesFor(count: 1 | 2 | 3): ElectronSpec[] {
-  const specs: ElectronSpec[] = []
-  for (let k = 0; k < count; k++) {
-    const upAngle = (2 * Math.PI * k) / count
-    const upHat: Vec3 = [0, Math.cos(upAngle), Math.sin(upAngle)]
-    const initialPhase = Math.PI + (2 * Math.PI * k) / count
-    specs.push({ upHat, cwAtA: true, initialPhase })
-  }
-  return specs
-}
+const ELECTRON_SPECS: ElectronSpec[] = [0, 1, 2].map((k) => {
+  const upAngle = (Math.PI * k) / 3
+  const upHat: Vec3 = [0, Math.cos(upAngle), Math.sin(upAngle)]
+  const initialPhase = Math.PI + (2 * Math.PI * k) / 3
+  return { upHat, cwAtA: true, initialPhase }
+})
 
 // --- Geometry helpers ------------------------------------------------------
 
@@ -484,6 +483,76 @@ function Nuclei({ chordHalf }: { chordHalf: number }) {
   )
 }
 
+// --- Axis indicators ------------------------------------------------------
+// Three short hash-marked segments at the chord midpoint along local +X
+// (chord), +Y, +Z. Subtle, dashed feel — orientation cue, not chrome.
+// Sit in the inner (tilt) group so they rotate with the atom.
+
+function AxisLine({
+  direction,
+  length,
+  color,
+  ticks = 4,
+  tickSize = 0.06,
+}: {
+  direction: Vec3
+  length: number
+  color: string
+  ticks?: number
+  tickSize?: number
+}) {
+  const positions = useMemo(() => {
+    const arr: number[] = []
+    // Main axis from origin to direction*length
+    arr.push(0, 0, 0, direction[0] * length, direction[1] * length, direction[2] * length)
+    // Pick a perpendicular for tick orientation. Any vector not parallel
+    // to direction works; cross with world up [0,1,0] unless direction
+    // is also +/-Y, in which case use +X.
+    const isY = Math.abs(direction[1]) > 0.99
+    const ref: Vec3 = isY ? [1, 0, 0] : [0, 1, 0]
+    // perp1 = direction × ref, normalized
+    const px = direction[1] * ref[2] - direction[2] * ref[1]
+    const py = direction[2] * ref[0] - direction[0] * ref[2]
+    const pz = direction[0] * ref[1] - direction[1] * ref[0]
+    const plen = Math.hypot(px, py, pz)
+    const perp: Vec3 = [px / plen, py / plen, pz / plen]
+    for (let i = 1; i <= ticks; i++) {
+      const t = (i / ticks) * length
+      const cx = direction[0] * t
+      const cy = direction[1] * t
+      const cz = direction[2] * t
+      arr.push(
+        cx - perp[0] * tickSize, cy - perp[1] * tickSize, cz - perp[2] * tickSize,
+        cx + perp[0] * tickSize, cy + perp[1] * tickSize, cz + perp[2] * tickSize,
+      )
+    }
+    return new Float32Array(arr)
+  }, [direction, length, ticks, tickSize])
+
+  return (
+    <lineSegments>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          args={[positions, 3]}
+        />
+      </bufferGeometry>
+      <lineBasicMaterial color={color} transparent opacity={0.45} toneMapped={false} />
+    </lineSegments>
+  )
+}
+
+function AxisIndicators({ chordHalf }: { chordHalf: number }) {
+  const length = chordHalf * 0.9
+  return (
+    <>
+      <AxisLine direction={[1, 0, 0]} length={length} color="#ff8a8a" />
+      <AxisLine direction={[0, 1, 0]} length={length} color="#8aff8a" />
+      <AxisLine direction={[0, 0, 1]} length={length} color="#8a8aff" />
+    </>
+  )
+}
+
 // --- Drag handle (invisible touch target over the nucleus) ----------------
 
 function DragHandle({
@@ -541,14 +610,13 @@ function useViewport() {
 export function LabsAtomMotion() {
   const [pointA, setPointA] = useState<Vec3>(INITIAL_POINT_A)
   const [pointB, setPointB] = useState<Vec3>(INITIAL_POINT_B)
-  const [existence, setExistence] = useState<Existence>('idle')
-  const [electronCount, setElectronCount] = useState<1 | 2 | 3>(3)
-  const [tiltDeg, setTiltDeg] = useState(45)
-  const [orbitAspect, setOrbitAspect] = useState(0.62)
+  const [electronCount, setElectronCount] = useState(0)
+  const [tiltDeg, setTiltDeg] = useState(0)
+  const [orbitAspect, setOrbitAspect] = useState(1.0)
   const [autoReplay, setAutoReplay] = useState(false)
   const [zoom, setZoom] = useState(CAMERA_Z)
   const [speedMult, setSpeedMult] = useState(3)
-  const [startSeed, setStartSeed] = useState(0)
+  const [startSeeds, setStartSeeds] = useState<number[]>([0, 0, 0])
   const [travelCounts, setTravelCounts] = useState<number[]>([0, 0, 0])
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
 
@@ -562,20 +630,28 @@ export function LabsAtomMotion() {
   const groupTiltZ = useMemo(() => tiltZFrom(pointA, pointB), [pointA, pointB])
   const tiltRad = useMemo(() => (tiltDeg * Math.PI) / 180, [tiltDeg])
 
-  const electrons = useMemo(() => planesFor(electronCount), [electronCount])
+  const dragLocked = electronCount > 0
 
-  const isLocked = existence !== 'idle'
-
-  const onStart = useCallback(() => {
-    setExistence('visible')
-    setStartSeed((s) => s + 1)
+  const onAddElectron = useCallback(() => {
+    setElectronCount((c) => {
+      if (c >= 3) return c
+      const newIdx = c
+      // Bump that electron's startSeed so its probe seeds trail + fades in.
+      setStartSeeds((seeds) => {
+        const next = seeds.slice()
+        next[newIdx] = (next[newIdx] ?? 0) + 1
+        return next
+      })
+      return c + 1
+    })
+  }, [])
+  const onEnd = useCallback(() => {
+    setElectronCount(0)
     setTravelCounts([0, 0, 0])
     setNextTravelIndex(0)
   }, [])
-  const onEnd = useCallback(() => {
-    setExistence('idle')
-  }, [])
   const onTravel = useCallback(() => {
+    if (electronCount === 0) return
     setTravelCounts((counts) => {
       const next = counts.slice()
       next[nextTravelIndex] = (next[nextTravelIndex] ?? 0) + 1
@@ -595,10 +671,11 @@ export function LabsAtomMotion() {
           <CameraController zoom={zoom} />
           <group position={groupOffset} rotation={[0, 0, groupTiltZ]}>
             <group rotation={[tiltRad, tiltRad, 0]}>
+              <AxisIndicators chordHalf={chordHalf} />
               <Nuclei chordHalf={chordHalf} />
-              {electrons.map((spec, i) => (
+              {ELECTRON_SPECS.map((spec, i) => (
                 <ElectronProbe
-                  key={`e${i}-${electronCount}`}
+                  key={`e${i}`}
                   spec={spec}
                   fadeTex={fadeTex}
                   reducedMotion={reducedMotion}
@@ -606,10 +683,10 @@ export function LabsAtomMotion() {
                   chordHalf={chordHalf}
                   orbitSize={orbitSize}
                   orbitAspect={orbitAspect}
-                  existence={existence}
+                  existence={i < electronCount ? 'visible' : 'idle'}
                   autoReplay={autoReplay}
                   travelCount={travelCounts[i] ?? 0}
-                  startSeed={startSeed}
+                  startSeed={startSeeds[i] ?? 0}
                   trailColor="#ffffff"
                   color="#ffffff"
                   haloColor="#ffffff"
@@ -627,7 +704,7 @@ export function LabsAtomMotion() {
         onDrag={setPointA}
         zoom={zoom}
         viewport={viewport}
-        enabled={!isLocked}
+        enabled={!dragLocked}
         label="A"
       />
       <DragHandle
@@ -635,7 +712,7 @@ export function LabsAtomMotion() {
         onDrag={setPointB}
         zoom={zoom}
         viewport={viewport}
-        enabled={!isLocked}
+        enabled={!dragLocked}
         label="B"
       />
 
@@ -644,12 +721,16 @@ export function LabsAtomMotion() {
           <button
             type="button"
             className={s.btn}
-            onClick={onStart}
-            aria-label="Start"
-            title="Start"
-            disabled={existence === 'visible'}
+            onClick={onAddElectron}
+            aria-label={
+              electronCount >= 3
+                ? 'Maximum 3 electrons'
+                : `Add electron ${electronCount + 1}`
+            }
+            title={`Add electron (${electronCount}/3)`}
+            disabled={electronCount >= 3}
           >
-            ▶ start
+            {electronCount >= 3 ? `3/3 e⁻` : `+ e⁻ (${electronCount}/3)`}
           </button>
           <button
             type="button"
@@ -657,7 +738,7 @@ export function LabsAtomMotion() {
             onClick={onTravel}
             aria-label={`Travel electron ${nextTravelIndex + 1}`}
             title={`Travel — next: e${nextTravelIndex + 1}`}
-            disabled={existence !== 'visible'}
+            disabled={electronCount === 0}
           >
             {`⇋ travel e${nextTravelIndex + 1}`}
           </button>
@@ -666,29 +747,14 @@ export function LabsAtomMotion() {
             className={s.btn}
             onClick={onEnd}
             aria-label="End"
-            title="End"
-            disabled={existence !== 'visible'}
+            title="End — fade out, drag re-enabled"
+            disabled={electronCount === 0}
           >
             ■ end
           </button>
         </div>
 
         <div className={s.controlsRow}>
-          <button
-            type="button"
-            className={s.btn}
-            onClick={() =>
-              setElectronCount((c) => {
-                const idx = COUNT_STEPS.indexOf(c)
-                return COUNT_STEPS[(idx + 1) % COUNT_STEPS.length]
-              })
-            }
-            aria-label={`${electronCount} electron — tap to change`}
-            title={`${electronCount} electron${electronCount > 1 ? 's' : ''}`}
-            disabled={isLocked}
-          >
-            {`${electronCount} e⁻`}
-          </button>
           <button
             type="button"
             className={s.btn}
@@ -700,7 +766,6 @@ export function LabsAtomMotion() {
             }
             aria-label={`Tilt ${tiltDeg}° — tap to change`}
             title={`Tilt ${tiltDeg}°`}
-            disabled={isLocked}
           >
             {`tilt ${tiltDeg}°`}
           </button>
@@ -719,7 +784,6 @@ export function LabsAtomMotion() {
                 ? 'Circular orbit'
                 : `Elliptical orbit (aspect ${orbitAspect.toFixed(2)})`
             }
-            disabled={isLocked}
           >
             {orbitAspect >= 0.99 ? 'circle' : `aspect ${orbitAspect.toFixed(2)}`}
           </button>
