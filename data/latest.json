@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T10:34:58.962Z",
+  "generated_at": "2026-04-26T12:36:41.570Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -251,7 +251,7 @@
       {
         "title": "Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)",
         "url": "https://github.com/nex-crm/wuphf",
-        "source": "HN · 235↑",
+        "source": "HN · 238↑",
         "hn_id": "47899844",
         "published": "2026-04-25T08:53:53.000Z",
         "summary": "I shipped a wiki layer for AI agents that uses markdown + git as the source of truth, with a bleve (BM25) + SQLite index on top. No vector or graph db yet. It runs locally in…"
@@ -266,7 +266,7 @@
       {
         "title": "Open source memory layer so any AI agent can do what Claude.ai and ChatGPT do",
         "url": "https://alash3al.github.io/stash?_v01",
-        "source": "HN · 171↑",
+        "source": "HN · 173↑",
         "hn_id": "47897790",
         "published": "2026-04-25T01:24:40.000Z",
         "summary": ""
@@ -314,7 +314,7 @@
       {
         "title": "Could a Claude Code routine watch my finances?",
         "url": "https://driggsby.com/blog/claude-code-routine-watch-my-finances",
-        "source": "HN · 81↑",
+        "source": "HN · 82↑",
         "hn_id": "47894690",
         "published": "2026-04-24T19:25:15.000Z",
         "summary": ""
