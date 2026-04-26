@@ -48,6 +48,42 @@
   --lab-meta: rgba(255, 255, 255, 0.38);
 }
 
+/* --- Debossed-logo bg layer ------------------------------------------- */
+/* Two stacked clones of the same logo, offset opposite directions:
+   - Shadow clone offset up-left, multiply blend → dark rim on UL of strokes
+   - Highlight clone offset down-right, inverted + screen blend → light rim
+     on LR of strokes
+   Combined illusion = logo pressed into the bg with light from upper-left. */
+
+.debossLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.debossShadow,
+.debossHighlight {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: min(60vw, 60vh) auto;
+}
+
+.debossShadow {
+  background-position: calc(50% - 7px) calc(50% - 7px);
+  filter: blur(2.5px);
+  opacity: 0.7;
+  mix-blend-mode: multiply;
+}
+
+.debossHighlight {
+  background-position: calc(50% + 7px) calc(50% + 7px);
+  filter: invert(1) blur(2.5px);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+
 .canvasArea {
   position: absolute;
   inset: 0;

@@ -85,6 +85,8 @@ const INITIAL_POINT_B: Vec3 = [15.1, 0, 0]
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
 
+const DEBOSS_LOGO_URL = `${import.meta.env.BASE_URL}AF.png`
+
 // --- Types -----------------------------------------------------------------
 
 type Existence = 'idle' | 'visible'
@@ -721,32 +723,6 @@ const PRESETS: Preset[] = [
   },
   {
     name: '3',
-    electronColors: ['#ffdbd8', '#ffdbd8', '#ffdbd8', '#ffdbd8'],
-    bgColor: '#020023',
-    spread: 10.5,
-    speed: 6,
-    loop: true,
-    showNuclei: false,
-    showAxis: false,
-    theme: 'dark',
-    camPos: [21.86, 4.39, 3.23],
-    camTgt: [-1.12, -3.51, -0.82],
-  },
-  {
-    name: '4',
-    electronColors: ['#38571a', '#669d34', '#96d35f', '#b1dd8b'],
-    bgColor: '#000000',
-    spread: 15.1,
-    speed: 6,
-    loop: true,
-    showNuclei: false,
-    showAxis: false,
-    theme: 'dark',
-    camPos: [-35.67, -9.55, -13.27],
-    camTgt: [8.59, -2.87, 6.13],
-  },
-  {
-    name: '5',
     electronColors: ['#b4fff3', '#d6ffde', '#c2ffcf', '#d2f8ff'],
     bgColor: '#055a00',
     spread: 4.3,
@@ -759,7 +735,7 @@ const PRESETS: Preset[] = [
     camTgt: [-2.43, -1.46, -1.59],
   },
   {
-    name: '6',
+    name: '4',
     electronColors: ['#bddbd8', '#7ddbd8', '#ffd689', '#ffccf0'],
     bgColor: '#b93600',
     spread: 15.1,
@@ -971,6 +947,16 @@ export function LabsAtomMotion() {
       className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark}`}
       style={{ ['--lab-bg-base' as string]: bgColor }}
     >
+      <div className={s.debossLayer} aria-hidden="true">
+        <div
+          className={s.debossShadow}
+          style={{ backgroundImage: `url(${DEBOSS_LOGO_URL})` }}
+        />
+        <div
+          className={s.debossHighlight}
+          style={{ backgroundImage: `url(${DEBOSS_LOGO_URL})` }}
+        />
+      </div>
       <div className={s.canvasArea}>
         <Canvas
           camera={{ position: DEFAULT_CAMERA_POS, fov: FOV_DEG }}
