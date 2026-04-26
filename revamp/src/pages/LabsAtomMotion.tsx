@@ -85,7 +85,51 @@ const INITIAL_POINT_B: Vec3 = [15.1, 0, 0]
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
 
-const DEBOSS_TEXT = 'aiUniversity'
+// --- Deboss text settings -------------------------------------------------
+
+const DEBOSS_KEY = 'labs-atom-motion-deboss'
+
+type DebossFont = 'sans' | 'serif' | 'mono'
+
+type DebossSettings = {
+  text: string
+  font: DebossFont
+  bold: boolean
+  italic: boolean
+  size: number
+}
+
+const DEFAULT_DEBOSS: DebossSettings = {
+  text: 'aiUniversity',
+  font: 'sans',
+  bold: true,
+  italic: false,
+  size: 96,
+}
+
+const DEBOSS_FONT_STACK: Record<DebossFont, string> = {
+  sans: 'ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
+  serif: 'ui-serif, Georgia, Cambria, "Times New Roman", serif',
+  mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+}
+
+function useDebossSettings(): [DebossSettings, (next: Partial<DebossSettings>) => void] {
+  const [settings, setSettings] = useState<DebossSettings>(() => {
+    try {
+      const stored = typeof localStorage !== 'undefined' ? localStorage.getItem(DEBOSS_KEY) : null
+      if (stored) return { ...DEFAULT_DEBOSS, ...JSON.parse(stored) }
+    } catch { /* ignore */ }
+    return DEFAULT_DEBOSS
+  })
+  const update = useCallback((next: Partial<DebossSettings>) => {
+    setSettings((prev) => {
+      const merged = { ...prev, ...next }
+      try { localStorage.setItem(DEBOSS_KEY, JSON.stringify(merged)) } catch { /* ignore */ }
+      return merged
+    })
+  }, [])
+  return [settings, update]
+}
 
 // --- Types -----------------------------------------------------------------
 
@@ -789,6 +833,7 @@ export function LabsAtomMotion() {
   const [bgColor, setBgColor] = useState('#551029')
   const [theme, setTheme] = useTheme()
   const palette = THEME_PALETTE[theme]
+  const [deboss, updateDeboss] = useDebossSettings()
 
   const setElectronColorAt = useCallback((idx: number, color: string) => {
     setElectronColors((prev) => {
@@ -947,10 +992,21 @@ export function LabsAtomMotion() {
       className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark}`}
       style={{ ['--lab-bg-base' as string]: bgColor }}
     >
-      <div className={s.debossLayer} aria-hidden="true">
-        <div className={s.debossShadow}>{DEBOSS_TEXT}</div>
-        <div className={s.debossHighlight}>{DEBOSS_TEXT}</div>
-      </div>
+      {deboss.text.length > 0 && (
+        <div className={s.debossLayer} aria-hidden="true">
+          <div
+            className={s.debossText}
+            style={{
+              fontFamily: DEBOSS_FONT_STACK[deboss.font],
+              fontWeight: deboss.bold ? 700 : 400,
+              fontStyle: deboss.italic ? 'italic' : 'normal',
+              fontSize: `${deboss.size}px`,
+            }}
+          >
+            {deboss.text}
+          </div>
+        </div>
+      )}
       <div className={s.canvasArea}>
         <Canvas
           camera={{ position: DEFAULT_CAMERA_POS, fov: FOV_DEG }}
@@ -1094,6 +1150,63 @@ export function LabsAtomMotion() {
               </button>
             ))}
           </div>
+        </div>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>deboss</span>
+          <input
+            type="text"
+            value={deboss.text}
+            onChange={(e) => updateDeboss({ text: e.currentTarget.value })}
+            placeholder="(empty)"
+            className={s.debossInput}
+            aria-label="Deboss text"
+          />
+        </div>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>font</span>
+          <div className={s.debossFontRow}>
+            <select
+              value={deboss.font}
+              onChange={(e) => updateDeboss({ font: e.currentTarget.value as DebossFont })}
+              className={s.debossSelect}
+              aria-label="Deboss font"
+            >
+              <option value="sans">Sans</option>
+              <option value="serif">Serif</option>
+              <option value="mono">Mono</option>
+            </select>
+            <button
+              type="button"
+              className={`${s.btn} ${s.btnIcon} ${deboss.bold ? s.btnActive : ''}`}
+              onClick={() => updateDeboss({ bold: !deboss.bold })}
+              aria-label="Bold"
+              style={{ fontWeight: 700 }}
+            >
+              B
+            </button>
+            <button
+              type="button"
+              className={`${s.btn} ${s.btnIcon} ${deboss.italic ? s.btnActive : ''}`}
+              onClick={() => updateDeboss({ italic: !deboss.italic })}
+              aria-label="Italic"
+              style={{ fontStyle: 'italic' }}
+            >
+              I
+            </button>
+          </div>
+        </div>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`size  ${deboss.size}`}</span>
+          <input
+            type="range"
+            min={20}
+            max={200}
+            step={2}
+            value={deboss.size}
+            onChange={(e) => updateDeboss({ size: parseInt(e.currentTarget.value, 10) })}
+            className={s.tiltSlider}
+            aria-label="Deboss size"
+          />
         </div>
         <div className={s.unifiedRow}>
           <button
