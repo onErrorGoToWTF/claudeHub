@@ -5,23 +5,15 @@
   inset: 0;
   width: 100vw;
   height: 100dvh;
-  /* Two layered gradients composed from the user-picked --lab-bg-base
-     (set inline on the root). A diagonal light→dark linear pass gives
-     the overall depth; a soft radial highlight in the upper-right adds
-     a subtle warm-yellow shift. Falls back to --lab-bg if the inline
-     var isn't set (initial render). */
-  background:
-    radial-gradient(
-      ellipse 75% 55% at 68% 22%,
-      color-mix(in oklch, var(--lab-bg-base, var(--lab-bg)) 88%, #f5d588) 0%,
-      transparent 65%
-    ),
-    linear-gradient(
-      165deg,
-      color-mix(in oklch, var(--lab-bg-base, var(--lab-bg)) 80%, white) 0%,
-      var(--lab-bg-base, var(--lab-bg)) 55%,
-      color-mix(in oklch, var(--lab-bg-base, var(--lab-bg)) 78%, black) 100%
-    );
+  /* Diagonal light→dark gradient composed from the user-picked
+     --lab-bg-base (set inline on the root). Falls back to --lab-bg if
+     the inline var isn't set yet (initial render). */
+  background: linear-gradient(
+    165deg,
+    color-mix(in oklch, var(--lab-bg-base, var(--lab-bg)) 80%, white) 0%,
+    var(--lab-bg-base, var(--lab-bg)) 55%,
+    color-mix(in oklch, var(--lab-bg-base, var(--lab-bg)) 78%, black) 100%
+  );
   color: var(--lab-ink);
   overflow: hidden;
 }
