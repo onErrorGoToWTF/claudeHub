@@ -75,7 +75,7 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Distance from origin ≈ 20.3.
-const DEFAULT_CAMERA_POS: [number, number, number] = [21.33, -8.42, 4.81]
+const DEFAULT_CAMERA_POS: [number, number, number] = [19.49, 5.18, -4.46]
 const FOV_DEG = 50
 
 const INITIAL_POINT_A: Vec3 = [-9.2, 0, 0]
