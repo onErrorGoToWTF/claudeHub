@@ -73,8 +73,8 @@ const ORBIT_ASPECT = 1.0
 const CAMERA_Z = 22.0
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-3, 3, 0]
-const INITIAL_POINT_B: Vec3 = [3, 3, 0]
+const INITIAL_POINT_A: Vec3 = [-8, 3, 0]
+const INITIAL_POINT_B: Vec3 = [8, 3, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -665,9 +665,9 @@ const THEME_PALETTE: Record<ThemeName, {
 
 function useTheme(): [ThemeName, (next: ThemeName) => void] {
   const [theme, setTheme] = useState<ThemeName>(() => {
-    if (typeof localStorage === 'undefined') return 'light'
+    if (typeof localStorage === 'undefined') return 'dark'
     const stored = localStorage.getItem(THEME_KEY)
-    return stored === 'dark' ? 'dark' : 'light'
+    return stored === 'light' ? 'light' : 'dark'
   })
   const update = useCallback((next: ThemeName) => {
     setTheme(next)
@@ -693,11 +693,11 @@ export function LabsAtomMotion() {
   const [pointB, setPointB] = useState<Vec3>(INITIAL_POINT_B)
   const [electronCount, setElectronCount] = useState(0)
   const [tiltXDeg, setTiltXDeg] = useState(0)
-  const [tiltYDeg, setTiltYDeg] = useState(0)
-  const [tiltZDeg, setTiltZDeg] = useState(0)
+  const [tiltYDeg, setTiltYDeg] = useState(75)
+  const [tiltZDeg, setTiltZDeg] = useState(180)
   const [autoReplay, setAutoReplay] = useState(false)
   const [zoom, setZoom] = useState(CAMERA_Z)
-  const [speedMult, setSpeedMult] = useState(3)
+  const [speedMult, setSpeedMult] = useState(5)
   const [startSeeds, setStartSeeds] = useState<number[]>(() =>
     new Array(MAX_ELECTRONS).fill(0),
   )
