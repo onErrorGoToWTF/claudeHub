@@ -767,15 +767,15 @@ export function LabsAtomMotion() {
 
   // Auto-zoom-out when spread grows past what current zoom can show. The
   // atom's worst-case extent in any tilt direction is `chordHalf +
-  // orbitSize`. Visible canvas accounts for the controls panel
-  // (panelFraction ≈ 0.55 of viewport height usable). Margin of 1.15 keeps
-  // a little breathing room on the edges. Manual zoom-in stays free —
-  // we only push zoom OUT, never IN.
+  // orbitSize`. Visible canvas height ≈ 0.72 of viewport (controls panel
+  // takes ~28% with the tightened layout). Margin 1.10 leaves a little
+  // breathing room. Manual zoom-in stays free — we only push zoom OUT,
+  // never IN.
   useEffect(() => {
     const halfTan = Math.tan(((FOV_DEG * Math.PI) / 180) / 2)
     const aspect = viewport.w / viewport.h
-    const usableFraction = Math.min(aspect, 0.55)
-    const margin = 1.15
+    const usableFraction = Math.min(aspect, 0.72)
+    const margin = 1.10
     const minZoom = ((chordHalf + orbitSize) * margin) / (halfTan * usableFraction)
     setZoom((z) => (z < minZoom ? +minZoom.toFixed(2) : z))
   }, [chordHalf, orbitSize, viewport.w, viewport.h])
