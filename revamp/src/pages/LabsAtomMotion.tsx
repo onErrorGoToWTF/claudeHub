@@ -484,16 +484,16 @@ function ElectronProbe({
 
 // --- Nuclei ----------------------------------------------------------------
 
-function Nuclei({ chordHalf }: { chordHalf: number }) {
+function Nuclei({ chordHalf, color }: { chordHalf: number; color: string }) {
   return (
     <>
       <mesh position={[-chordHalf, 0, 0]}>
         <sphereGeometry args={[0.07, 24, 24]} />
-        <meshBasicMaterial color="#ffffff" toneMapped={false} transparent opacity={0.85} />
+        <meshBasicMaterial color={color} toneMapped={false} transparent opacity={0.85} />
       </mesh>
       <mesh position={[chordHalf, 0, 0]}>
         <sphereGeometry args={[0.07, 24, 24]} />
-        <meshBasicMaterial color="#ffffff" toneMapped={false} transparent opacity={0.85} />
+        <meshBasicMaterial color={color} toneMapped={false} transparent opacity={0.85} />
       </mesh>
     </>
   )
@@ -508,12 +508,14 @@ function AxisLine({
   direction,
   length,
   color,
+  opacity = 0.45,
   ticks = 4,
   tickSize = 0.06,
 }: {
   direction: Vec3
   length: number
   color: string
+  opacity?: number
   ticks?: number
   tickSize?: number
 }) {
@@ -556,7 +558,7 @@ function AxisLine({
       <lineBasicMaterial
         color={color}
         transparent
-        opacity={0.45}
+        opacity={opacity}
         toneMapped={false}
         depthWrite={false}
         depthTest={false}
@@ -565,13 +567,24 @@ function AxisLine({
   )
 }
 
-function AxisIndicators({ chordHalf }: { chordHalf: number }) {
-  const length = chordHalf * 0.9
+function AxisIndicators({
+  chordHalf,
+  colors,
+  opacity,
+}: {
+  chordHalf: number
+  colors: { x: string; y: string; z: string }
+  opacity: number
+}) {
+  // Length capped so the axes stay in the inter-nucleus gap and never reach
+  // into the orbital region. Orbit's leftmost extent from origin is
+  // chordHalf*(1 - (sqrt(2)-1)) ≈ 0.586*chordHalf; 0.5 keeps a safe margin.
+  const length = chordHalf * 0.5
   return (
     <>
-      <AxisLine direction={[1, 0, 0]} length={length} color="#ff8a8a" />
-      <AxisLine direction={[0, 1, 0]} length={length} color="#8aff8a" />
-      <AxisLine direction={[0, 0, 1]} length={length} color="#8a8aff" />
+      <AxisLine direction={[1, 0, 0]} length={length} color={colors.x} opacity={opacity} />
+      <AxisLine direction={[0, 1, 0]} length={length} color={colors.y} opacity={opacity} />
+      <AxisLine direction={[0, 0, 1]} length={length} color={colors.z} opacity={opacity} />
     </>
   )
 }
@@ -618,6 +631,47 @@ function DragHandle({
   )
 }
 
+// --- Theme palette ---------------------------------------------------------
+
+type ThemeName = 'light' | 'dark'
+const THEME_KEY = 'labs-atom-motion-theme'
+
+const THEME_PALETTE: Record<ThemeName, {
+  ink: string
+  axisX: string
+  axisY: string
+  axisZ: string
+  axisOpacity: number
+}> = {
+  light: {
+    ink: '#141312',
+    axisX: '#c45050',
+    axisY: '#3d8f3d',
+    axisZ: '#4a55c4',
+    axisOpacity: 0.32,
+  },
+  dark: {
+    ink: '#ffffff',
+    axisX: '#ff8a8a',
+    axisY: '#8aff8a',
+    axisZ: '#8a8aff',
+    axisOpacity: 0.45,
+  },
+}
+
+function useTheme(): [ThemeName, (next: ThemeName) => void] {
+  const [theme, setTheme] = useState<ThemeName>(() => {
+    if (typeof localStorage === 'undefined') return 'light'
+    const stored = localStorage.getItem(THEME_KEY)
+    return stored === 'dark' ? 'dark' : 'light'
+  })
+  const update = useCallback((next: ThemeName) => {
+    setTheme(next)
+    try { localStorage.setItem(THEME_KEY, next) } catch { /* ignore */ }
+  }, [])
+  return [theme, update]
+}
+
 // --- Page ------------------------------------------------------------------
 
 function useViewport() {
@@ -647,6 +701,8 @@ export function LabsAtomMotion() {
     new Array(MAX_ELECTRONS).fill(0),
   )
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
+  const [theme, setTheme] = useTheme()
+  const palette = THEME_PALETTE[theme]
 
   const viewport = useViewport()
   const reducedMotion = usePrefersReducedMotion()
@@ -690,7 +746,7 @@ export function LabsAtomMotion() {
   }, [nextTravelIndex, electronCount])
 
   return (
-    <div className={s.root}>
+    <div className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark}`}>
       <div className={s.canvasArea}>
         <Canvas
           camera={{ position: [0, 0, zoom], fov: FOV_DEG }}
@@ -700,8 +756,12 @@ export function LabsAtomMotion() {
           <CameraController zoom={zoom} />
           <group position={groupOffset} rotation={[0, 0, groupTiltZ]}>
             <group rotation={[tiltXRad, tiltYRad, tiltZRad]}>
-              <AxisIndicators chordHalf={chordHalf} />
-              <Nuclei chordHalf={chordHalf} />
+              <AxisIndicators
+                chordHalf={chordHalf}
+                colors={{ x: palette.axisX, y: palette.axisY, z: palette.axisZ }}
+                opacity={palette.axisOpacity}
+              />
+              <Nuclei chordHalf={chordHalf} color={palette.ink} />
               {ELECTRON_SPECS.map((spec, i) => (
                 <ElectronProbe
                   key={`e${i}`}
@@ -715,9 +775,9 @@ export function LabsAtomMotion() {
                   autoReplay={autoReplay}
                   travelCount={travelCounts[i] ?? 0}
                   startSeed={startSeeds[i] ?? 0}
-                  trailColor="#ffffff"
-                  color="#ffffff"
-                  haloColor="#ffffff"
+                  trailColor={palette.ink}
+                  color={palette.ink}
+                  haloColor={palette.ink}
                 />
               ))}
             </group>
@@ -847,6 +907,15 @@ export function LabsAtomMotion() {
             title={`Speed ${speedMult}x`}
           >
             {`${speedMult}× speed`}
+          </button>
+          <button
+            type="button"
+            className={s.btn}
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            title={`${theme === 'light' ? 'Light' : 'Dark'} mode`}
+          >
+            {theme === 'light' ? '☼ light' : '☾ dark'}
           </button>
         </div>
 

@@ -5,9 +5,39 @@
   inset: 0;
   width: 100vw;
   height: 100dvh;
-  background: #1a1a1a;
-  color: #eaeaea;
+  background: var(--lab-bg);
+  color: var(--lab-ink);
   overflow: hidden;
+}
+
+/* Theme variables scoped to the lab. Light = topbar greige; dark = near-black.
+   The 3D canvas itself is transparent, so this background shows through. */
+.themeLight {
+  --lab-bg: #cac4b8;
+  --lab-ink: #141312;
+  --lab-panel-bg: rgba(255, 255, 255, 0.62);
+  --lab-panel-border: rgba(20, 19, 18, 0.14);
+  --lab-btn-bg: rgba(20, 19, 18, 0.06);
+  --lab-btn-border: rgba(20, 19, 18, 0.18);
+  --lab-btn-active: rgba(20, 19, 18, 0.12);
+  --lab-track: rgba(20, 19, 18, 0.18);
+  --lab-thumb: rgba(20, 19, 18, 0.85);
+  --lab-thumb-border: rgba(20, 19, 18, 0.95);
+  --lab-meta: rgba(20, 19, 18, 0.45);
+}
+
+.themeDark {
+  --lab-bg: #1a1a1a;
+  --lab-ink: #eaeaea;
+  --lab-panel-bg: rgba(18, 18, 18, 0.72);
+  --lab-panel-border: rgba(255, 255, 255, 0.08);
+  --lab-btn-bg: rgba(255, 255, 255, 0.06);
+  --lab-btn-border: rgba(255, 255, 255, 0.18);
+  --lab-btn-active: rgba(255, 255, 255, 0.14);
+  --lab-track: rgba(255, 255, 255, 0.18);
+  --lab-thumb: rgba(255, 255, 255, 0.85);
+  --lab-thumb-border: rgba(255, 255, 255, 0.95);
+  --lab-meta: rgba(255, 255, 255, 0.38);
 }
 
 .canvasArea {
@@ -24,8 +54,8 @@
   bottom: 0;
   z-index: 9997;
   padding: 14px 16px calc(14px + env(safe-area-inset-bottom));
-  background: rgba(18, 18, 18, 0.72);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--lab-panel-bg);
+  border-top: 1px solid var(--lab-panel-border);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   display: flex;
@@ -45,9 +75,9 @@
   height: 40px;
   padding: 0 14px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #fff;
+  background: var(--lab-btn-bg);
+  border: 1px solid var(--lab-btn-border);
+  color: var(--lab-ink);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 12px;
   line-height: 1;
@@ -61,7 +91,7 @@
 }
 
 .btn:active {
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--lab-btn-active);
 }
 
 .btn:disabled {
@@ -70,7 +100,7 @@
 }
 
 .btn:disabled:active {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--lab-btn-bg);
 }
 
 .btnIcon {
@@ -87,7 +117,7 @@
 .buildLabel {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.38);
+  color: var(--lab-meta);
   letter-spacing: 0.02em;
   user-select: none;
   -webkit-user-select: none;
