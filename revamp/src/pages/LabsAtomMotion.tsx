@@ -70,8 +70,8 @@ const ORBIT_ASPECT = 1.0
 const CAMERA_Z = 22.0
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-3, 0, 0]
-const INITIAL_POINT_B: Vec3 = [3, 0, 0]
+const INITIAL_POINT_A: Vec3 = [-3, 3, 0]
+const INITIAL_POINT_B: Vec3 = [3, 3, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
