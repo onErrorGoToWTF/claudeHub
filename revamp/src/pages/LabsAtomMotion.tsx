@@ -1,16 +1,19 @@
 /*
- * /labs/atom-motion — gravity-handoff stage.
+ * /labs/atom-motion — gravity-handoff stage (round-trip).
  *
- * Two nuclei. Three electrons fade in around nucleus A on three orthogonal
- * elliptical orbital planes. After a brief orbit phase they travel one-by-
- * one to nucleus B via the gravity-shaped S-curve in `runtime/travel.ts`,
- * with rotation reversed on capture (CW around A → CCW around B per plane).
- * After capture the electron continues orbiting B from the entry angle.
+ * Two nuclei. One electron in a continuous round-trip cycle:
+ *   orbit A (lapsBefore × ORBIT_PERIOD)
+ *   → A→B transit (top-sweep arc OR half-lemniscate τ=π→2π)
+ *   → orbit B (lapsAfter × ORBIT_PERIOD)
+ *   → B→A transit (bottom-sweep arc OR half-lemniscate τ=0→π)
+ *   → loop
+ * Position-and-tangent continuous at every boundary including the wrap.
  *
- * Sized to logo-compact (camera z=5.5, group rotation π/4·π/4 for 3/4 view)
- * so the demo reads like a logo-scale composition. Nuclei rendered as small
- * subtle spheres so the user can see the centers; can be hidden by setting
- * `showNuclei` false.
+ * Floating glass controls cycle laps-before / laps-after through
+ * [1,2,3,5,10] and speed through [0.5×, 1×, 2×, 4×]. Rotation toggle
+ * picks ellipse-arc vs lemniscate transit; loop toggle resets the trail
+ * at cycle boundaries. The motion runs forever modulo the cycle even
+ * with auto-replay off.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
@@ -87,7 +90,6 @@ const HALF_LEMNISCATE = LEMNISCATE_PERIOD / 2
 const FADE_IN_DUR = 0.55
 const ORBIT_PERIOD = (2 * Math.PI) / ORBIT_OMEGA_BASE
 const TRAVEL_DUR = 1.55
-const POST_HOLD = 1.4
 // Lap-count cycle for the lap toggle buttons.
 const LAP_STEPS = [1, 2, 3, 5, 10]
 
@@ -177,6 +179,7 @@ function ElectronProbe({
   oppositeRotation,
   speedMult,
   orbitADur,
+  orbitBDur,
   onReport,
 }: {
   spec: ElectronSpec
@@ -187,9 +190,10 @@ function ElectronProbe({
   oppositeRotation: boolean
   speedMult: number
   orbitADur: number
+  orbitBDur: number
   onReport: (idx: number, report: ProbeReport) => void
 }) {
-  const travelStart = spec.fadeInStart + orbitADur
+  const transitDur = oppositeRotation ? HALF_LEMNISCATE : TRAVEL_DUR
   const headRef = useRef<THREE.Mesh>(null!)
   const headMatRef = useRef<THREE.MeshBasicMaterial>(null!)
   const haloRef = useRef<THREE.Mesh>(null!)
@@ -200,7 +204,11 @@ function ElectronProbe({
   const trailMatRef = useRef<any>(null!)
 
   const elapsedRef = useRef(0)
-  const travelDescRef = useRef<TravelDesc | null>(null)
+  // Cached travel descs for the same-rotation mode — A→B (top sweep) and
+  // B→A (bottom sweep). Built once per (replayKey, mode, orbit-config),
+  // then reused every frame.
+  const travelDescABRef = useRef<TravelDesc | null>(null)
+  const travelDescBARef = useRef<TravelDesc | null>(null)
   const lastPosRef = useRef<Vec3>(NUCLEUS_A)
   const { size, invalidate } = useThree()
   const resolution = useMemo(
@@ -218,7 +226,8 @@ function ElectronProbe({
   // Reset on replay.
   useEffect(() => {
     elapsedRef.current = 0
-    travelDescRef.current = null
+    travelDescABRef.current = null
+    travelDescBARef.current = null
 
     // Reduced-motion gate: render the static end-state — electron sitting in
     // its captured orbit around nucleus B at the entry angle. No animation.
@@ -290,124 +299,116 @@ function ElectronProbe({
       opacity = Math.min(1, (t - spec.fadeInStart) / FADE_IN_DUR)
     }
 
-    // Opposite-rotation mode: orbit A → half-lemniscate transit → orbit B.
-    // The orbit's far-side tip is co-located with the lemniscate's lobe
-    // tip (by ORBIT_SIZE = c·(√2−1)), and the orbital tangent there
-    // matches the lemniscate tangent there — smooth handoff at both
-    // ends. CW around A, CCW around B (the figure-8 topology hands the
-    // rotation flip to us "for free").
-    if (oppositeRotation) {
-      const lemnisc = buildLemniscate(NUCLEUS_A, NUCLEUS_B, [0, 1, 0])
-
-      if (t < spec.fadeInStart) {
-        phase = 'pre'
-        pos = orbitPosAt(orbitA, spec.initialPhase)
-      } else if (t < travelStart) {
-        // Orbit A — CW. Initial phase is derived to land the electron
-        // at θ=π exactly when travel triggers.
-        phase = t < spec.fadeInStart + FADE_IN_DUR ? 'fadeIn' : 'orbitA'
-        const dtSinceFade = t - spec.fadeInStart
-        const theta = spec.initialPhase + orbitA.omega * dtSinceFade
-        pos = orbitPosAt(orbitA, theta)
-        const v = orbitVelocityAt(orbitA, theta)
-        vMag = Math.hypot(v[0], v[1], v[2])
-      } else if (t < travelStart + HALF_LEMNISCATE) {
-        // Half-lemniscate transit: τ from π (left lobe tip = far-A) to
-        // 2π (right lobe tip = far-B). Sweeps through upper-left lobe
-        // edge, origin, lower-right lobe edge.
-        phase = 'travel'
-        const localT = t - travelStart
-        const tau = Math.PI + (Math.PI * localT) / HALF_LEMNISCATE
-        pos = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau)
-        const eps = 1e-3
-        const pPlus = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau + eps)
-        const dTauDt = Math.PI / HALF_LEMNISCATE
-        vMag = (Math.hypot(pPlus[0] - pos[0], pPlus[1] - pos[1], pPlus[2] - pos[2]) / eps) * dTauDt
-      } else {
-        // Orbit B — CCW. Capture at θ=0 (right lobe tip = far-B), then
-        // continue orbiting until replay.
-        phase = 'orbitB'
-        const captureT = travelStart + HALF_LEMNISCATE
-        const dtSinceCapture = t - captureT
-        const theta = 0 + orbitB.omega * dtSinceCapture
-        pos = orbitPosAt(orbitB, theta)
-        const v = orbitVelocityAt(orbitB, theta)
-        vMag = Math.hypot(v[0], v[1], v[2])
-      }
-
+    // Pre-fade rest position — sits at orbit-A exit angle until fade-in
+    // begins.
+    if (t < spec.fadeInStart) {
+      phase = 'pre'
+      pos = orbitPosAt(orbitA, spec.initialPhase)
       lastPosRef.current = pos
       headRef.current.position.set(pos[0], pos[1], pos[2])
       if (haloRef.current) haloRef.current.position.set(pos[0], pos[1], pos[2])
-      const buf = bufRef.current!
-      const idx = insertIdxRef.current
-      buf[idx * 3] = pos[0]
-      buf[idx * 3 + 1] = pos[1]
-      buf[idx * 3 + 2] = pos[2]
-      insertIdxRef.current = (idx + 1) % ELECTRON.trail.segments
-      const unroll = new Float32Array(ELECTRON.trail.segments * 3)
-      for (let i = 0; i < ELECTRON.trail.segments; i++) {
-        const src = (insertIdxRef.current + i) % ELECTRON.trail.segments
-        unroll[i * 3] = buf[src * 3]
-        unroll[i * 3 + 1] = buf[src * 3 + 1]
-        unroll[i * 3 + 2] = buf[src * 3 + 2]
-      }
-      if (trailGeomRef.current?.setPoints) trailGeomRef.current.setPoints(unroll)
-      if (headMatRef.current) headMatRef.current.opacity = opacity
-      if (haloMatRef.current) haloMatRef.current.opacity = opacity * 0.42
-      if (trailMatRef.current) trailMatRef.current.opacity = opacity
+      if (headMatRef.current) headMatRef.current.opacity = 0
+      if (haloMatRef.current) haloMatRef.current.opacity = 0
+      if (trailMatRef.current) trailMatRef.current.opacity = 0
       onReport(electronIndex, { phase, position: pos, vMag })
       return
     }
 
-    if (t < spec.fadeInStart) {
-      phase = 'pre'
-      pos = orbitPosAt(orbitA, spec.initialPhase)
-    } else if (t < travelStart) {
-      // Orbit A — includes the fade-in window. Travel exits at whatever
-      // orbital phase the electron happens to be at when scheduled — the
-      // ellipse construction handles arbitrary exit phases naturally.
-      phase = t < spec.fadeInStart + FADE_IN_DUR ? 'fadeIn' : 'orbitA'
-      const dtSinceFade = t - spec.fadeInStart
-      const theta = spec.initialPhase + orbitA.omega * dtSinceFade
+    // Continuous round-trip cycle:
+    //   orbit A (lapsBefore laps) → A→B transit → orbit B (lapsAfter laps)
+    //                              → B→A transit → loop
+    // Position-and-tangent continuous at every boundary including the
+    // wrap. Modulo-cycle keeps the motion alive forever; auto-replay (if
+    // enabled) just resets the trail at the cycle boundary.
+    const cycleDur = orbitADur + transitDur + orbitBDur + transitDur
+    const tAfterFade = t - spec.fadeInStart
+    const cycleT = ((tAfterFade % cycleDur) + cycleDur) % cycleDur
+
+    const endA  = orbitADur
+    const endAB = endA + transitDur
+    const endB  = endAB + orbitBDur
+
+    if (cycleT < endA) {
+      // Orbit A. θ = π at cycle start; orbital omega walks θ around
+      // until θ = π + ω · orbitADur = π + ω · N · (2π/|ω|), which is
+      // π modulo 2π — the electron lands at far-A (θ=π) again.
+      phase = tAfterFade < FADE_IN_DUR ? 'fadeIn' : 'orbitA'
+      const localT = cycleT
+      const theta = spec.initialPhase + orbitA.omega * localT
       pos = orbitPosAt(orbitA, theta)
       const v = orbitVelocityAt(orbitA, theta)
       vMag = Math.hypot(v[0], v[1], v[2])
-    } else if (t < travelStart + TRAVEL_DUR) {
+    } else if (cycleT < endAB) {
+      // A → B transit.
       phase = 'travel'
-      if (!travelDescRef.current) {
-        // Build the transfer ellipse on first travel frame using the
-        // electron's current orbital phase as the exit angle. Each
-        // electron's transfer plane is set per-electron by the position
-        // of its exit point relative to the chord — three electrons in
-        // three orbital planes produce three transfer planes that share
-        // the chord and cross in 3D (the figure-8 pattern).
-        const dtSinceFade = travelStart - spec.fadeInStart
-        const exitAngle = spec.initialPhase + orbitA.omega * dtSinceFade
-        const sourceAtExit: OrbitDesc = { ...orbitA, phase: exitAngle }
-        travelDescRef.current = buildTravel(
-          sourceAtExit,
-          orbitB,
-          TRAVEL_DUR,
-          {
-            exitAngle,
-            arcSide: oppositeRotation ? 'bottom' : 'top',
-          },
-        )
+      const localT = cycleT - endA
+      if (oppositeRotation) {
+        // Half-lemniscate τ ∈ [π, 2π] (left lobe tip → right lobe tip).
+        const lemnisc = buildLemniscate(NUCLEUS_A, NUCLEUS_B, [0, 1, 0])
+        const tau = Math.PI + (Math.PI * localT) / transitDur
+        pos = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau)
+        const eps = 1e-3
+        const pPlus = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau + eps)
+        const dTauDt = Math.PI / transitDur
+        vMag = (Math.hypot(pPlus[0] - pos[0], pPlus[1] - pos[1], pPlus[2] - pos[2]) / eps) * dTauDt
+      } else {
+        // Same-rotation: top-sweep ellipse arc, exit at θ=π on orbit A,
+        // entry at θ=0 on orbit B (both far-tips). Smooth at both ends.
+        if (!travelDescABRef.current) {
+          const sourceAtExit: OrbitDesc = { ...orbitA, phase: Math.PI }
+          travelDescABRef.current = buildTravel(
+            sourceAtExit,
+            orbitB,
+            transitDur,
+            { exitAngle: Math.PI, arcSide: 'top' },
+          )
+        }
+        pos = evalTravel(travelDescABRef.current, localT)
+        const v = evalTravelVelocity(travelDescABRef.current, localT)
+        vMag = Math.hypot(v[0], v[1], v[2])
       }
-      const localT = t - travelStart
-      pos = evalTravel(travelDescRef.current, localT)
-      const v = evalTravelVelocity(travelDescRef.current, localT)
+    } else if (cycleT < endB) {
+      // Orbit B. θ = 0 at orbit-B start. After orbitBDur (= lapsAfter
+      // periods) θ is back at 0 modulo 2π — lands at far-B again.
+      phase = 'orbitB'
+      const localT = cycleT - endAB
+      const theta = 0 + orbitB.omega * localT
+      pos = orbitPosAt(orbitB, theta)
+      const v = orbitVelocityAt(orbitB, theta)
       vMag = Math.hypot(v[0], v[1], v[2])
     } else {
-      phase = 'orbitB'
-      const captureT = travelStart + TRAVEL_DUR
-      const dtSinceCapture = t - captureT
-      const entryAngle = travelDescRef.current?.entryAngle ?? 0
-      const orbitBResolved = travelDescRef.current?.destOrbit ?? orbitB
-      const theta = entryAngle + orbitBResolved.omega * dtSinceCapture
-      pos = orbitPosAt(orbitBResolved, theta)
-      const v = orbitVelocityAt(orbitBResolved, theta)
-      vMag = Math.hypot(v[0], v[1], v[2])
+      // B → A transit.
+      phase = 'travel'
+      const localT = cycleT - endB
+      if (oppositeRotation) {
+        // Other half-lemniscate τ ∈ [0, π] (right lobe tip → left lobe
+        // tip). At τ=0 lemniscate tangent matches CCW orbit-B at θ=0
+        // (+y); at τ=π it matches CW orbit-A at θ=π (+y). Smooth wrap.
+        const lemnisc = buildLemniscate(NUCLEUS_A, NUCLEUS_B, [0, 1, 0])
+        const tau = (Math.PI * localT) / transitDur
+        pos = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau)
+        const eps = 1e-3
+        const pPlus = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau + eps)
+        const dTauDt = Math.PI / transitDur
+        vMag = (Math.hypot(pPlus[0] - pos[0], pPlus[1] - pos[1], pPlus[2] - pos[2]) / eps) * dTauDt
+      } else {
+        // Same-rotation B→A: bottom-sweep arc with exit at θ=0 on
+        // orbit B, ends at far-A on orbit A. CW + CW means tangents at
+        // far-B (−y) and far-A (+y) match the bottom-sweep arc tangents
+        // — smooth at both ends.
+        if (!travelDescBARef.current) {
+          const sourceAtExit: OrbitDesc = { ...orbitB, phase: 0 }
+          travelDescBARef.current = buildTravel(
+            sourceAtExit,
+            orbitA,
+            transitDur,
+            { exitAngle: 0, arcSide: 'bottom' },
+          )
+        }
+        pos = evalTravel(travelDescBARef.current, localT)
+        const v = evalTravelVelocity(travelDescBARef.current, localT)
+        vMag = Math.hypot(v[0], v[1], v[2])
+      }
     }
 
     lastPosRef.current = pos
@@ -592,6 +593,7 @@ export function LabsAtomMotion() {
                 oppositeRotation={oppositeRotation}
                 speedMult={speedMult}
                 orbitADur={orbitADur}
+                orbitBDur={orbitBDur}
                 onReport={onReport}
               />
             ))}
@@ -601,12 +603,13 @@ export function LabsAtomMotion() {
               replayKey={replayKey}
               setReplayKey={setReplayKey}
               duration={
-                (oppositeRotation
-                  // Opposite-rotation phased: orbit A (lapsBefore laps)
-                  // + half-lemniscate transit + orbit B (lapsAfter laps).
-                  ? orbitADur + HALF_LEMNISCATE + orbitBDur
-                  // Same-rotation: orbit A + ellipse-arc transit + orbit B + post-hold.
-                  : orbitADur + TRAVEL_DUR + orbitBDur + POST_HOLD) / speedMult
+                // Full round-trip cycle:
+                //   orbit A (lapsBefore) + A→B transit + orbit B (lapsAfter) + B→A transit
+                // Both transits are equal duration per mode (TRAVEL_DUR for
+                // same-rotation, HALF_LEMNISCATE for opposite-rotation).
+                ((oppositeRotation
+                  ? orbitADur + HALF_LEMNISCATE + orbitBDur + HALF_LEMNISCATE
+                  : orbitADur + TRAVEL_DUR + orbitBDur + TRAVEL_DUR)) / speedMult
               }
             />
           )}
