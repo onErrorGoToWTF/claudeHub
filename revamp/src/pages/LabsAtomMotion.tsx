@@ -39,7 +39,7 @@ import { LabsNav } from '../ui/atom/LabsNav'
 import type { Vec3 } from '../ui/atom/runtime/types'
 import {
   buildLemniscate,
-  lemniscatePos,
+  sCurvePos,
   orbitPosAt,
   type OrbitDesc,
 } from '../ui/atom/runtime/travel'
@@ -409,10 +409,15 @@ function ElectronProbe({
         [chordHalf, 0, 0],
         spec.upHat,
       )
-      const t = Math.min(localT, TRANSIT_DUR)
-      const tauStart = phase === 'travelAB' ? Math.PI : 0
-      const tau = tauStart + (Math.PI * t) / TRANSIT_DUR
-      pos = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, tau)
+      // Generalised S-curve: lobe-tips land on the orbit far-tips
+      // (a = chordHalf + orbitSize), and amp keeps the same aspect ratio
+      // as the original lemniscate (a / 2√2) so the curve is geometrically
+      // similar regardless of chord/orbit ratio.
+      const a = chordHalf + orbitSize
+      const amp = a / (2 * Math.SQRT2)
+      const t01 = Math.min(localT / TRANSIT_DUR, 1)
+      const direction = phase === 'travelAB' ? -1 : 1
+      pos = sCurvePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, a, amp, t01, direction)
     }
 
     lastPosRef.current = pos

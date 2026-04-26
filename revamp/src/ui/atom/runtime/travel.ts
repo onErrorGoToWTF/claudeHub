@@ -212,6 +212,36 @@ export function buildLemniscate(A: Vec3, B: Vec3, wHat: Vec3): {
   return { midpoint, uHat, wHat, a }
 }
 
+/** Generalised half-period sine S between two endpoints on the chord axis
+ *  at ±a from midpoint. Decouples curve shape from orbit-size:
+ *    u(t) = ±a·cos(π·t)         — flat at endpoints (perpendicular tangent)
+ *    v(t) = amp·sin(2π·t)       — one full sine bow (single S)
+ *
+ *  Tangent at both endpoints is along ±wHat (perpendicular to the chord),
+ *  matching the orbital tangent at the orbit far-tip — so handoff is
+ *  smooth for any chord/orbit ratio. Replaces the Bernoulli lemniscate
+ *  when orbit size is decoupled from chord half-distance.
+ *
+ *  `direction = +1` traces +a → −a (right → left, BA travel).
+ *  `direction = −1` traces −a → +a (left → right, AB travel). */
+export function sCurvePos(
+  midpoint: Vec3,
+  uHat: Vec3,
+  wHat: Vec3,
+  a: number,
+  amp: number,
+  t: number,
+  direction: 1 | -1,
+): Vec3 {
+  const u = direction * a * Math.cos(Math.PI * t)
+  const v = amp * Math.sin(2 * Math.PI * t)
+  return [
+    midpoint[0] + u * uHat[0] + v * wHat[0],
+    midpoint[1] + u * uHat[1] + v * wHat[1],
+    midpoint[2] + u * uHat[2] + v * wHat[2],
+  ]
+}
+
 /** Build a TravelDesc from source orbit, destination orbit, and total
  *  duration. Defaults: exit at the source orbit's current `phase` (no
  *  phase-alignment wait); entry mirrors the exit across the minor axis
