@@ -71,7 +71,7 @@ const SPEED_SCALE = 0.5
 // Orbits are always circular (aspect = 1). Visual ellipses are purely a
 // camera-angle effect on a 3D circle, not an actual orbital aspect.
 const ORBIT_ASPECT = 1.0
-const CAMERA_Z = 22.0
+const CAMERA_Z = 29.0
 const FOV_DEG = 50
 
 const INITIAL_POINT_A: Vec3 = [-8, 0, 0]
@@ -702,9 +702,9 @@ export function LabsAtomMotion() {
   const [pointA, setPointA] = useState<Vec3>(INITIAL_POINT_A)
   const [pointB, setPointB] = useState<Vec3>(INITIAL_POINT_B)
   const [electronCount, setElectronCount] = useState(0)
-  const [tiltXDeg, setTiltXDeg] = useState(0)
-  const [tiltYDeg, setTiltYDeg] = useState(75)
-  const [tiltZDeg, setTiltZDeg] = useState(180)
+  const [tiltXDeg, setTiltXDeg] = useState(137)
+  const [tiltYDeg, setTiltYDeg] = useState(71)
+  const [tiltZDeg, setTiltZDeg] = useState(156)
   const [autoReplay, setAutoReplay] = useState(false)
   const [zoom, setZoom] = useState(CAMERA_Z)
   const [speedMult, setSpeedMult] = useState(5)
