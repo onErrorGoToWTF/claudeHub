@@ -1005,10 +1005,13 @@ export function LabsAtomMotion() {
         </div>
         {hintText && <div className={s.hintInline}>{hintText}</div>}
         <span className={s.buildLabel}>
-          {`build·${COMMIT} · cam (${camPos[0]}, ${camPos[1]}, ${camPos[2]}) · tgt (${camTgt[0]}, ${camTgt[1]}, ${camTgt[2]})`}
+          {`cam (${camPos[0]}, ${camPos[1]}, ${camPos[2]})`}
         </span>
         <span className={s.buildLabel}>
-          {`e ${electronColor} · bg ${bgColor}`}
+          {`tgt (${camTgt[0]}, ${camTgt[1]}, ${camTgt[2]})`}
+        </span>
+        <span className={s.buildLabel}>
+          {`build·${COMMIT} · e ${electronColor} · bg ${bgColor}`}
         </span>
       </div>
     </div>
