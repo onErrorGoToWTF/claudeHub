@@ -64,7 +64,7 @@ const LEMNISCATE_PERIOD = 6.0
 const TRANSIT_DUR = LEMNISCATE_PERIOD / 2
 // Number of full orbital laps loop mode runs before triggering a
 // transit. Manual travel-button taps still fire on the very next wrap.
-const LOOP_LAPS_BEFORE_TRAVEL = 2
+const LOOP_LAPS_BEFORE_TRAVEL = 3
 // Global multiplier applied on top of the user-selected speed. Halved so the
 // labelled "1×" is half as fast as before.
 const SPEED_SCALE = 0.5
@@ -74,8 +74,8 @@ const ORBIT_ASPECT = 1.0
 const CAMERA_Z = 21.0
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-5.2, 0, 0]
-const INITIAL_POINT_B: Vec3 = [5.2, 0, 0]
+const INITIAL_POINT_A: Vec3 = [-6.5, 0, 0]
+const INITIAL_POINT_B: Vec3 = [6.5, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -730,15 +730,19 @@ function useViewport() {
 export function LabsAtomMotion() {
   const [pointA, setPointA] = useState<Vec3>(INITIAL_POINT_A)
   const [pointB, setPointB] = useState<Vec3>(INITIAL_POINT_B)
-  const [electronCount, setElectronCount] = useState(0)
-  const [tiltXDeg, setTiltXDeg] = useState(137)
+  const [electronCount, setElectronCount] = useState(MAX_ELECTRONS)
+  const [tiltXDeg, setTiltXDeg] = useState(162)
   const [tiltYDeg, setTiltYDeg] = useState(71)
   const [tiltZDeg, setTiltZDeg] = useState(156)
   const [autoReplay, setAutoReplay] = useState(true)
   const [zoom, setZoom] = useState(CAMERA_Z)
   const [speedMult, setSpeedMult] = useState(3.5)
+  // Bump every slot's seed by 1 on mount so each ElectronProbe runs its
+  // reset effect and snaps its entry angle to the master clock — that's
+  // what makes the four initial electrons fire on the loop in evenly-
+  // spaced phase positions.
   const [startSeeds, setStartSeeds] = useState<number[]>(() =>
-    new Array(MAX_ELECTRONS).fill(0),
+    new Array(MAX_ELECTRONS).fill(1),
   )
   const [travelCounts, setTravelCounts] = useState<number[]>(() =>
     new Array(MAX_ELECTRONS).fill(0),
