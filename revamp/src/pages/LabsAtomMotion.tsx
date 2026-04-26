@@ -75,8 +75,8 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Distance from origin ≈ 20.3.
-const DEFAULT_CAMERA_POS: [number, number, number] = [27.16, 6.51, -5.46]
-const DEFAULT_CAMERA_TARGET: [number, number, number] = [1.58, -3.04, 1.19]
+const DEFAULT_CAMERA_POS: [number, number, number] = [31.44, 16.44, -5.17]
+const DEFAULT_CAMERA_TARGET: [number, number, number] = [1.83, -3.37, 0.58]
 const FOV_DEG = 50
 
 const INITIAL_POINT_A: Vec3 = [-11.1, 0, 0]
@@ -682,15 +682,15 @@ function useTheme(): [ThemeName, (next: ThemeName) => void] {
 export function LabsAtomMotion() {
   const [pointA, setPointA] = useState<Vec3>(INITIAL_POINT_A)
   const [pointB, setPointB] = useState<Vec3>(INITIAL_POINT_B)
-  const [electronCount, setElectronCount] = useState(MAX_ELECTRONS)
+  const [electronCount, setElectronCount] = useState(0)
+  const [introActive, setIntroActive] = useState(true)
   const [autoReplay, setAutoReplay] = useState(true)
   const [speedMult, setSpeedMult] = useState(4.5)
-  // Bump every slot's seed by 1 on mount so each ElectronProbe runs its
-  // reset effect and snaps its entry angle to the master clock — that's
-  // what makes the four initial electrons fire on the loop in evenly-
-  // spaced phase positions.
+  // Each slot starts at seed 0; the staggered intro effect bumps them one
+  // at a time so each electron snaps its entry angle to the master clock
+  // at the moment it appears.
   const [startSeeds, setStartSeeds] = useState<number[]>(() =>
-    new Array(MAX_ELECTRONS).fill(1),
+    new Array(MAX_ELECTRONS).fill(0),
   )
   const [travelCounts, setTravelCounts] = useState<number[]>(() =>
     new Array(MAX_ELECTRONS).fill(0),
@@ -757,6 +757,9 @@ export function LabsAtomMotion() {
     setNextTravelIndex(0)
     // Reset master clock so the next "Add" cycle starts fresh.
     globalScaledTimeRef.current = 0
+    // End breaks the intro choreography — disable the gate so manual
+    // re-adds + loop work normally.
+    setIntroActive(false)
   }, [])
   const onTravel = useCallback(() => {
     if (electronCount === 0) return
@@ -771,6 +774,34 @@ export function LabsAtomMotion() {
   // Scales the A↔B distance symmetrically about the midpoint while preserving
   // chord direction. Lets the user spread the nuclei without fighting the
   // drag handles (which can't reach past the screen edge at low zoom).
+  // Intro choreography: stagger the first four electrons on mount so the
+  // user sees each one come in and orbit on its own for a few laps before
+  // the next joins. The master clock keeps each new arrival phase-locked
+  // to the existing orbits, so the spacing stays even across the cascade.
+  // Loop transits are gated off until all four are in.
+  useEffect(() => {
+    let cancelled = false
+    const stagger = 3500 // ms between adds — ~3 laps at default speed
+    const t1 = setTimeout(() => { if (!cancelled) onAddElectron() }, 0)
+    const t2 = setTimeout(() => { if (!cancelled) onAddElectron() }, stagger)
+    const t3 = setTimeout(() => { if (!cancelled) onAddElectron() }, stagger * 2)
+    const t4 = setTimeout(() => { if (!cancelled) onAddElectron() }, stagger * 3)
+    const tDone = setTimeout(
+      () => { if (!cancelled) setIntroActive(false) },
+      stagger * 4,
+    )
+    return () => {
+      cancelled = true
+      clearTimeout(t1)
+      clearTimeout(t2)
+      clearTimeout(t3)
+      clearTimeout(t4)
+      clearTimeout(tDone)
+    }
+    // Run once on mount.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const setSpread = useCallback((newHalf: number) => {
     const mx = (pointA[0] + pointB[0]) / 2
     const my = (pointA[1] + pointB[1]) / 2
@@ -855,7 +886,7 @@ export function LabsAtomMotion() {
                 chordHalf={chordHalf}
                 orbitSize={orbitSize}
                 existence={i < electronCount ? 'visible' : 'idle'}
-                autoReplay={autoReplay}
+                autoReplay={autoReplay && !introActive}
                 travelCount={travelCounts[i] ?? 0}
                 startSeed={startSeeds[i] ?? 0}
                 trailColor={electronColor}
