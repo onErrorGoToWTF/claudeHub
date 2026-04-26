@@ -180,6 +180,8 @@ function ElectronProbe({
   motionPhase,
   existence,
   startSeed,
+  pendingTravel,
+  onFarTip,
 }: {
   spec: ElectronSpec
   fadeTex: THREE.DataTexture
@@ -191,6 +193,8 @@ function ElectronProbe({
   motionPhase: MotionPhase
   existence: Existence
   startSeed: number
+  pendingTravel: boolean
+  onFarTip: () => void
 }) {
   const transitDur = oppositeRotation ? HALF_LEMNISCATE : TRAVEL_DUR
   const headRef = useRef<THREE.Mesh>(null!)
@@ -203,8 +207,19 @@ function ElectronProbe({
   const trailMatRef = useRef<any>(null!)
 
   const phaseElapsedRef = useRef(0)
+  const prevLocalTRef = useRef(0)
   const opacityRef = useRef(0)
   const lastPhaseRef = useRef<MotionPhase>(motionPhase)
+  // Track the latest pendingTravel + onFarTip via refs so useFrame doesn't
+  // re-bind closures every parent render.
+  const pendingTravelRef = useRef(pendingTravel)
+  const onFarTipRef = useRef(onFarTip)
+  useEffect(() => {
+    pendingTravelRef.current = pendingTravel
+  }, [pendingTravel])
+  useEffect(() => {
+    onFarTipRef.current = onFarTip
+  }, [onFarTip])
   const travelDescABRef = useRef<TravelDesc | null>(null)
   const travelDescBARef = useRef<TravelDesc | null>(null)
   const lastPosRef = useRef<Vec3>([-chordHalf, 0, 0])
@@ -224,6 +239,7 @@ function ElectronProbe({
   useEffect(() => {
     if (lastPhaseRef.current !== motionPhase) {
       phaseElapsedRef.current = 0
+      prevLocalTRef.current = 0
       lastPhaseRef.current = motionPhase
       travelDescABRef.current = null
       travelDescBARef.current = null
@@ -293,8 +309,27 @@ function ElectronProbe({
     if (reducedMotion) return
 
     const dt = Math.min(delta, 1 / 30) * speedMult
+    const prevLocalT = phaseElapsedRef.current
     phaseElapsedRef.current += dt
     const localT = phaseElapsedRef.current
+
+    // Far-tip wrap detection — only fires when Travel is pending. Each
+    // orbit revolution lands the electron at its far-tip every
+    // ORBIT_PERIOD seconds (orbitA: theta = π; orbitB: theta = 0). When
+    // localT crosses a multiple of ORBIT_PERIOD, prev mod > curr mod —
+    // that's the wrap moment, and the cleanest place to hand off into
+    // the position-and-tangent-continuous transit.
+    if (
+      pendingTravelRef.current &&
+      (motionPhase === 'orbitA' || motionPhase === 'orbitB')
+    ) {
+      const prevMod = prevLocalT % ORBIT_PERIOD
+      const currMod = localT % ORBIT_PERIOD
+      if (prevLocalT > 1e-3 && currMod < prevMod) {
+        onFarTipRef.current()
+      }
+    }
+    prevLocalTRef.current = localT
 
     // Lerp opacity toward existence target. Fade rate is wall-clock so the
     // visual fade speed doesn't change with speedMult.
@@ -528,6 +563,7 @@ export function LabsAtomMotion() {
   const [lapsBefore, setLapsBefore] = useState(1)
   const [lapsAfter, setLapsAfter] = useState(1)
   const [startSeed, setStartSeed] = useState(0)
+  const [pendingTravel, setPendingTravel] = useState(false)
 
   const viewport = useViewport()
   const reducedMotion = usePrefersReducedMotion()
@@ -565,7 +601,13 @@ export function LabsAtomMotion() {
     if (next === null) return
     const ms = (phaseDur / speedMult) * 1000
     const advance = next
-    const tid = window.setTimeout(() => setMotionPhase(advance), ms)
+    const tid = window.setTimeout(() => {
+      setMotionPhase(advance)
+      // Loop-driven advance lands at a far-tip too, so any queued Travel
+      // is satisfied by this transition. Clearing avoids carrying the
+      // flag into the next orbit and re-firing on its first wrap.
+      setPendingTravel(false)
+    }, ms)
     return () => window.clearTimeout(tid)
   }, [motionPhase, existence, autoReplay, orbitADur, orbitBDur, transitDur, speedMult])
 
@@ -573,16 +615,26 @@ export function LabsAtomMotion() {
     setMotionPhase('orbitA')
     setExistence('visible')
     setStartSeed((s) => s + 1)
+    setPendingTravel(false)
   }, [])
   const onEnd = useCallback(() => {
     setExistence('idle')
+    setPendingTravel(false)
   }, [])
   const onTravel = useCallback(() => {
+    // Queue the transit; ElectronProbe fires onFarTip at the next orbit
+    // wrap, where the handoff is position-and-tangent-continuous. Tapping
+    // Travel mid-orbit and starting the transit immediately would skip
+    // the chord-line exit and produce a visible straight-line glitch.
+    setPendingTravel(true)
+  }, [])
+  const onFarTip = useCallback(() => {
     setMotionPhase((p) => {
       if (p === 'orbitA') return 'travelAB'
       if (p === 'orbitB') return 'travelBA'
       return p
     })
+    setPendingTravel(false)
   }, [])
 
   const travelEnabled =
@@ -612,6 +664,8 @@ export function LabsAtomMotion() {
                 motionPhase={motionPhase}
                 existence={existence}
                 startSeed={startSeed}
+                pendingTravel={pendingTravel}
+                onFarTip={onFarTip}
               />
             ))}
           </group>
@@ -636,13 +690,13 @@ export function LabsAtomMotion() {
           </button>
           <button
             type="button"
-            className={s.btn}
+            className={`${s.btn} ${pendingTravel ? s.btnActive : ''}`}
             onClick={onTravel}
             aria-label="Travel"
-            title="Travel A↔B (only while orbiting)"
+            title="Travel A↔B (queues until next far-tip)"
             disabled={!travelEnabled}
           >
-            ⇋ travel
+            {pendingTravel ? '⇋ travel·queued' : '⇋ travel'}
           </button>
           <button
             type="button"
