@@ -75,12 +75,12 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Matches Preset 1.
-const DEFAULT_CAMERA_POS: [number, number, number] = [50, 0, 0]
-const DEFAULT_CAMERA_TARGET: [number, number, number] = [0, -6, 0]
+const DEFAULT_CAMERA_POS: [number, number, number] = [34.54, 15.68, 6.14]
+const DEFAULT_CAMERA_TARGET: [number, number, number] = [3.39, -5, 0.78]
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-15.1, 0, 0]
-const INITIAL_POINT_B: Vec3 = [15.1, 0, 0]
+const INITIAL_POINT_A: Vec3 = [-14.7, 0, 0]
+const INITIAL_POINT_B: Vec3 = [14.7, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -745,6 +745,19 @@ const PRESETS: Preset[] = [
     camPos: [7.66, 0.64, 2.59],
     camTgt: [-0.88, -1.26, 1.9],
   },
+  {
+    name: '5',
+    electronColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
+    bgColor: '#240c00',
+    spread: 14.7,
+    speed: 4.5,
+    loop: true,
+    showNuclei: true,
+    showAxis: false,
+    theme: 'dark',
+    camPos: [34.54, 15.68, 6.14],
+    camTgt: [3.39, -5, 0.78],
+  },
 ]
 
 function useTheme(): [ThemeName, (next: ThemeName) => void] {
@@ -782,9 +795,9 @@ export function LabsAtomMotion() {
   const [showNuclei, setShowNuclei] = useState(true)
   const [showAxis, setShowAxis] = useState(false)
   const [electronColors, setElectronColors] = useState<string[]>(() =>
-    new Array(MAX_ELECTRONS).fill(DEFAULT_E_COLOR),
+    ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
   )
-  const [bgColor, setBgColor] = useState('#551029')
+  const [bgColor, setBgColor] = useState('#240c00')
   const [theme, setTheme] = useTheme()
   const palette = THEME_PALETTE[theme]
 
