@@ -75,12 +75,12 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Matches Preset 1.
-const DEFAULT_CAMERA_POS: [number, number, number] = [35.3, 12.35, -7.55]
-const DEFAULT_CAMERA_TARGET: [number, number, number] = [2.51, -4, 0.28]
+const DEFAULT_CAMERA_POS: [number, number, number] = [50, 0, 0]
+const DEFAULT_CAMERA_TARGET: [number, number, number] = [0, 0, 0]
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-12.8, 0, 0]
-const INITIAL_POINT_B: Vec3 = [12.8, 0, 0]
+const INITIAL_POINT_A: Vec3 = [-17.2, 0, 0]
+const INITIAL_POINT_B: Vec3 = [17.2, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -697,6 +697,22 @@ const PRESETS: Preset[] = [
     camPos: [35.3, 12.35, -7.55],
     camTgt: [2.51, -4, 0.28],
   },
+  {
+    name: '2',
+    electronColor: '#ffdbd8',
+    bgColor: '#551029',
+    spread: 17.2,
+    speed: 4.5,
+    loop: true,
+    showNuclei: true,
+    showAxis: false,
+    theme: 'dark',
+    // Pure chord-axis view — camera and target share Y=Z=0 so the four
+    // orbital planes (all containing the X chord axis) collapse edge-on
+    // and project to 4 spokes radiating from one apparent center.
+    camPos: [50, 0, 0],
+    camTgt: [0, 0, 0],
+  },
 ]
 
 function useTheme(): [ThemeName, (next: ThemeName) => void] {
@@ -734,7 +750,7 @@ export function LabsAtomMotion() {
   const [showNuclei, setShowNuclei] = useState(true)
   const [showAxis, setShowAxis] = useState(false)
   const [electronColor, setElectronColor] = useState('#ffdbd8')
-  const [bgColor, setBgColor] = useState('#240c00')
+  const [bgColor, setBgColor] = useState('#551029')
   const [theme, setTheme] = useTheme()
 
   // Contextual hint above the action strip — guides the user through the
