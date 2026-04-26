@@ -239,11 +239,19 @@ function ElectronProbe({
       return
     }
 
-    // Seed trail behind the electron's starting orbit position so the trail
-    // is visible on first frame instead of streaking from origin.
+    // Seed trail behind the electron's starting position. In opposite-
+    // rotation mode that's the lemniscate's τ=0 point (right-lobe tip);
+    // in same-rotation mode it's the electron's orbit-A starting phase.
+    // Without this branch the trail dumps a straight line from far-left
+    // (orbit-A) to far-right (lemniscate start) on the first frame.
     const orbitA = makeOrbitADesc(spec)
-    const startTheta = spec.initialPhase
-    const start = orbitPosAt(orbitA, startTheta)
+    let start: Vec3
+    if (oppositeRotation) {
+      const lemnisc = buildLemniscate(NUCLEUS_A, NUCLEUS_B, [0, 1, 0])
+      start = lemniscatePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemnisc.a, 0)
+    } else {
+      start = orbitPosAt(orbitA, spec.initialPhase)
+    }
     if (bufRef.current) {
       for (let i = 0; i < ELECTRON.trail.segments; i++) {
         bufRef.current[i * 3] = start[0]
