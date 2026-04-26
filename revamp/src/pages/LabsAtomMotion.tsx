@@ -75,6 +75,12 @@ const ORBIT_OMEGA_BASE = 2.4 // rad/s
 const GROUP_ROTATION: [number, number, number] = [Math.PI / 4, Math.PI / 4, 0]
 const CAMERA_Z = 22.0
 const COMMIT: string = (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
+// Hoisted to module scope so its identity is stable — passing a fresh
+// `() => {}` from inside the component would change identity on every
+// parent re-render (e.g. from setZoom), and ElectronProbe's reset
+// useEffect depends on `onReport`, so an unstable identity would re-fire
+// the fade-in reset on every zoom click and mask the actual zoom change.
+const NOOP_REPORT = () => {}
 // Lemniscate cycle period — full figure-8 traversal in seconds.
 const LEMNISCATE_PERIOD = 6.0
 // Half-lemniscate transit (left lobe tip → right lobe tip) takes half a
@@ -518,7 +524,6 @@ export function LabsAtomMotion() {
   const fadeTex = useMemo(() => makeFadeTexture(), [])
 
   const handleReplay = () => setReplayKey((k) => k + 1)
-  const noopReport = () => {}
 
   return (
     <div className={s.root}>
@@ -544,7 +549,7 @@ export function LabsAtomMotion() {
                 orbitADur={orbitADur}
                 orbitBDur={orbitBDur}
                 autoReplay={autoReplay}
-                onReport={noopReport}
+                onReport={NOOP_REPORT}
               />
             ))}
           </group>
@@ -640,7 +645,7 @@ export function LabsAtomMotion() {
           <button
             type="button"
             className={`${s.btn} ${s.btnIcon}`}
-            onClick={() => setZoom((z) => Math.max(3, +(z - 0.5).toFixed(2)))}
+            onClick={() => setZoom((z) => Math.max(2, +(z / 1.25).toFixed(2)))}
             aria-label="Zoom in"
             title="Zoom in (closer)"
           >
@@ -649,7 +654,7 @@ export function LabsAtomMotion() {
           <button
             type="button"
             className={`${s.btn} ${s.btnIcon}`}
-            onClick={() => setZoom((z) => Math.min(30, +(z + 0.5).toFixed(2)))}
+            onClick={() => setZoom((z) => Math.min(80, +(z * 1.25).toFixed(2)))}
             aria-label="Zoom out"
             title="Zoom out (farther)"
           >
@@ -657,7 +662,7 @@ export function LabsAtomMotion() {
           </button>
         </div>
 
-        <span className={s.buildLabel}>build·{COMMIT}</span>
+        <span className={s.buildLabel}>{`build·${COMMIT} · z=${zoom.toFixed(1)}`}</span>
       </div>
     </div>
   )
