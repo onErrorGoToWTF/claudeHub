@@ -53,7 +53,7 @@
   right: 0;
   bottom: 0;
   z-index: 9997;
-  padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+  padding: 14px 16px calc(14px + env(safe-area-inset-bottom));
   background: var(--lab-panel-bg);
   border-top: 1px solid var(--lab-panel-border);
   backdrop-filter: blur(18px) saturate(140%);
@@ -61,20 +61,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 10px;
 }
 
 .controlsRow {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px;
+  gap: 10px;
 }
 
 .btn {
-  height: 30px;
-  padding: 0 12px;
-  border-radius: 15px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 20px;
   background: var(--lab-btn-bg);
   border: 1px solid var(--lab-btn-border);
   color: var(--lab-ink);
@@ -104,9 +104,9 @@
 }
 
 .btnIcon {
-  width: 30px;
+  width: 40px;
   padding: 0;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .btnActive {
@@ -128,15 +128,15 @@
 .tiltSliderRow {
   display: flex;
   align-items: center;
-  gap: 10px;
-  width: min(360px, 92%);
+  gap: 12px;
+  width: min(360px, 90%);
 }
 
 .tiltSliderLabel {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--lab-ink);
-  min-width: 60px;
+  min-width: 64px;
   text-align: left;
   user-select: none;
   -webkit-user-select: none;
@@ -144,7 +144,7 @@
 
 .tiltSlider {
   flex: 1;
-  height: 22px;
+  height: 32px;
   appearance: none;
   -webkit-appearance: none;
   background: transparent;
@@ -168,9 +168,9 @@
 .tiltSlider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
-  margin-top: -8px;
+  width: 28px;
+  height: 28px;
+  margin-top: -12px;
   border-radius: 50%;
   background: var(--lab-thumb);
   border: 1px solid var(--lab-thumb-border);
@@ -179,8 +179,8 @@
 }
 
 .tiltSlider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: var(--lab-thumb);
   border: 1px solid var(--lab-thumb-border);
