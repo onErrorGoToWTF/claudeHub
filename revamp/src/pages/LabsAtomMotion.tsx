@@ -757,7 +757,6 @@ export function LabsAtomMotion() {
     if (totalTravels === 0) return 'Tap ⇋ travel to send it across'
     return ''
   }, [electronCount, autoReplay, totalTravels])
-  const palette = THEME_PALETTE[theme]
 
   const reducedMotion = usePrefersReducedMotion()
   // Sharper fade (power 5) concentrates the visible trail near the head
