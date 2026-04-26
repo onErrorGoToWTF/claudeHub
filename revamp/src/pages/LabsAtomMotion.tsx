@@ -645,19 +645,6 @@ export function LabsAtomMotion() {
               <span>auto-loop</span>
             </label>
           </div>
-          <div className={s.row}>
-            <label className={s.checkbox}>
-              <input
-                type="checkbox"
-                checked={oppositeRotation}
-                onChange={(e) => {
-                  setOppositeRotation(e.target.checked)
-                  setReplayKey((k) => k + 1)
-                }}
-              />
-              <span>opposite rotation at B (CCW capture, kinks at exit)</span>
-            </label>
-          </div>
           <div className={s.legend}>
             <div>nucleus A · ({NUCLEUS_A.join(', ')})</div>
             <div>nucleus B · ({NUCLEUS_B.join(', ')})</div>
@@ -709,6 +696,18 @@ export function LabsAtomMotion() {
         </button>
       </div>
       <span className={s.canvasZoomLabel}>z={zoom.toFixed(1)}</span>
+      <button
+        type="button"
+        className={`${s.canvasRotBtn} ${oppositeRotation ? s.canvasRotBtnActive : ''}`}
+        onClick={() => {
+          setOppositeRotation((v) => !v)
+          setReplayKey((k) => k + 1)
+        }}
+        aria-label={oppositeRotation ? 'Switch to same-rotation transit' : 'Switch to opposite-rotation transit'}
+        title={oppositeRotation ? 'Opposite rotation (lemniscate)' : 'Same rotation (ellipse arc)'}
+      >
+        {oppositeRotation ? '⇄ opposite' : '→ same'}
+      </button>
 
       <AtomLabHud
         config={{
