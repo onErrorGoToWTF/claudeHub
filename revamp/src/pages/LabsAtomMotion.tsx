@@ -75,7 +75,8 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Distance from origin ≈ 20.3.
-const DEFAULT_CAMERA_POS: [number, number, number] = [19.49, 5.18, -4.46]
+const DEFAULT_CAMERA_POS: [number, number, number] = [19.66, 6.42, -4.08]
+const DEFAULT_CAMERA_TARGET: [number, number, number] = [0, 0, 0]
 const FOV_DEG = 50
 
 const INITIAL_POINT_A: Vec3 = [-9.2, 0, 0]
@@ -174,20 +175,30 @@ function tOffsetTo(entryAngle: number, omega: number, target: number): number {
 
 // --- Camera + projection ---------------------------------------------------
 
-// Camera HUD — pushes the live camera position back up to the page so we
-// can show it in the build label. Lets the user screenshot exact camera
-// coords after rotating to a view they want as the new default.
+// Camera HUD — pushes live camera position + OrbitControls target back up
+// to the page so the build-label HUD shows them. Lets the user screenshot
+// exact values after rotating/panning into a view they want as default.
 function CameraDebugger({
   onUpdate,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  controlsRef,
 }: {
-  onUpdate: (pos: [number, number, number]) => void
+  onUpdate: (pos: [number, number, number], tgt: [number, number, number]) => void
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  controlsRef: React.MutableRefObject<any>
 }) {
   useFrame(({ camera }) => {
-    onUpdate([
-      +camera.position.x.toFixed(2),
-      +camera.position.y.toFixed(2),
-      +camera.position.z.toFixed(2),
-    ])
+    const t = controlsRef.current?.target
+    onUpdate(
+      [
+        +camera.position.x.toFixed(2),
+        +camera.position.y.toFixed(2),
+        +camera.position.z.toFixed(2),
+      ],
+      t
+        ? [+t.x.toFixed(2), +t.y.toFixed(2), +t.z.toFixed(2)]
+        : [0, 0, 0],
+    )
   })
   return null
 }
@@ -718,6 +729,7 @@ export function LabsAtomMotion() {
   // in the build-label HUD so the user can screenshot the exact values
   // and turn a rotated view into a new default.
   const [camPos, setCamPos] = useState<[number, number, number]>(DEFAULT_CAMERA_POS)
+  const [camTgt, setCamTgt] = useState<[number, number, number]>(DEFAULT_CAMERA_TARGET)
 
   const chordHalf = useMemo(() => chordHalfFrom(pointA, pointB), [pointA, pointB])
   // Orbit size is fixed — atoms keep the same on-screen size regardless of
@@ -810,14 +822,20 @@ export function LabsAtomMotion() {
             screenSpacePanning
             minDistance={4}
             maxDistance={80}
-            target={[0, 0, 0]}
+            target={DEFAULT_CAMERA_TARGET}
           />
           <MasterClock
             timeRef={globalScaledTimeRef}
             speedMult={speedMult}
             reducedMotion={reducedMotion}
           />
-          <CameraDebugger onUpdate={setCamPos} />
+          <CameraDebugger
+            controlsRef={orbitControlsRef}
+            onUpdate={(pos, tgt) => {
+              setCamPos(pos)
+              setCamTgt(tgt)
+            }}
+          />
           <group rotation={[0, 0, groupTiltZ]}>
             {showAxis && (
               <AxisIndicators
@@ -987,7 +1005,7 @@ export function LabsAtomMotion() {
         </div>
         {hintText && <div className={s.hintInline}>{hintText}</div>}
         <span className={s.buildLabel}>
-          {`build·${COMMIT} · cam (${camPos[0]}, ${camPos[1]}, ${camPos[2]}) · e ${electronColor} · bg ${bgColor}`}
+          {`build·${COMMIT} · cam (${camPos[0]}, ${camPos[1]}, ${camPos[2]}) · tgt (${camTgt[0]}, ${camTgt[1]}, ${camTgt[2]}) · e ${electronColor} · bg ${bgColor}`}
         </span>
       </div>
     </div>
