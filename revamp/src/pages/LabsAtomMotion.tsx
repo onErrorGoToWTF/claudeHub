@@ -139,9 +139,11 @@ function makeOrbitBDesc(
   chordHalf: number,
   orbitSize: number,
 ): OrbitDesc {
-  // Same rotation sense as orbit A. Lemniscate transit naturally flips
-  // visual rotation relative to the other focus by topology — CW around
-  // A reads as CCW around B without any sign flip in omega.
+  // Omega flips sign at B vs A. The lemniscate's tangent at the right
+  // tip (tau=2pi for travelAB) points in +upHat. Orbit-B at theta=0
+  // also needs +upHat tangent to match the handoff — that's
+  // omega > 0 (CCW around B) when omega < 0 (CW around A). Without
+  // the flip the new orbit goes "the wrong direction" after capture.
   return {
     center: [chordHalf, 0, 0],
     plane: 'xy',
@@ -149,7 +151,7 @@ function makeOrbitBDesc(
     chordAxis: [1, 0, 0],
     size: orbitSize,
     aspect: ORBIT_ASPECT,
-    omega: spec.cwAtA ? -ORBIT_OMEGA_BASE : ORBIT_OMEGA_BASE,
+    omega: spec.cwAtA ? ORBIT_OMEGA_BASE : -ORBIT_OMEGA_BASE,
     phase: 0,
   }
 }
