@@ -85,7 +85,13 @@ const HALF_LEMNISCATE = LEMNISCATE_PERIOD / 2
 // --- Sequence timing (seconds) ---------------------------------------------
 
 const FADE_IN_DUR = 0.55
-const ORBIT_A_DUR = 2.2
+const ORBIT_PERIOD = (2 * Math.PI) / ORBIT_OMEGA_BASE
+// Number of full orbital revolutions before transit fires (and after
+// capture, in opposite-rotation mode). Bumped from <1 to 3 so the
+// electron actually circles each nucleus a few times before/after the
+// figure-8 transit.
+const ORBIT_LAPS = 3
+const ORBIT_A_DUR = ORBIT_LAPS * ORBIT_PERIOD
 const TRAVEL_DUR = 1.55
 const POST_HOLD = 1.4
 
@@ -594,9 +600,10 @@ export function LabsAtomMotion() {
               setReplayKey={setReplayKey}
               duration={
                 oppositeRotation
-                  // Opposite-rotation phased: orbit A + half-lemniscate
-                  // transit + orbit B (a couple revolutions for visual)
-                  ? TRAVEL_BASE_T + HALF_LEMNISCATE + 2 * (2 * Math.PI / ORBIT_OMEGA_BASE)
+                  // Opposite-rotation phased: orbit A (ORBIT_LAPS laps)
+                  // + half-lemniscate transit + orbit B (same lap count
+                  // for symmetry).
+                  ? TRAVEL_BASE_T + HALF_LEMNISCATE + ORBIT_LAPS * ORBIT_PERIOD
                   : TOTAL_DUR
               }
             />
