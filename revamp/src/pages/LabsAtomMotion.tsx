@@ -141,6 +141,23 @@ const DEFAULT_E_COLOR = '#ffdbd8'
 
 const MAX_ELECTRONS = 16
 
+// "Sweet spot" N values for the appearance-cluster +/− buttons. Each is
+// a clean symmetry — 4 (square), 6 (hex), 8 (octagonal), 12 (sphere-ish),
+// 16 (max / supercharge). Slider still allows any N in [1, 16] for free
+// tuning; the buttons step through these so a tap is a deliberate
+// level-up, not a 1-by-1 jolt through ugly intermediate values.
+const COUNT_STEPS = [4, 6, 8, 12, 16] as const
+
+function nextCountStep(n: number): number | null {
+  for (const s of COUNT_STEPS) if (s > n) return s
+  return null
+}
+function prevCountStep(n: number): number | null {
+  let r: number | null = null
+  for (const s of COUNT_STEPS) if (s < n) r = s
+  return r
+}
+
 function buildElectronSpecs(N: number): ElectronSpec[] {
   const safeN = Math.max(1, Math.min(MAX_ELECTRONS, N))
   return Array.from({ length: safeN }, (_, k) => {
@@ -1017,8 +1034,8 @@ export function LabsAtomMotion() {
   }, [])
   const onAddOne = useCallback(() => {
     setTargetN((n) => {
-      if (n >= MAX_ELECTRONS) return n
-      const next = n + 1
+      const next = nextCountStep(n)
+      if (next === null) return n
       // Bump startSeeds for all active slots so every probe reseeds at
       // the new spec angles. Quick snap; no intro stagger.
       setStartSeeds((prev) => {
@@ -1032,8 +1049,8 @@ export function LabsAtomMotion() {
   }, [])
   const onRemoveOne = useCallback(() => {
     setTargetN((n) => {
-      if (n <= 1) return n
-      const next = n - 1
+      const next = prevCountStep(n)
+      if (next === null) return n
       setStartSeeds((prev) => {
         const seeds = prev.slice()
         for (let i = 0; i < next; i++) seeds[i] = (seeds[i] ?? 0) + 1
@@ -1293,9 +1310,9 @@ export function LabsAtomMotion() {
           type="button"
           className={`${s.btn} ${s.btnIcon}`}
           onClick={onRemoveOne}
-          aria-label="Remove one electron"
-          title={`Remove (${targetN} → ${Math.max(1, targetN - 1)})`}
-          disabled={targetN <= 1}
+          aria-label="Step down to previous symmetry"
+          title={`Step down (${targetN} → ${prevCountStep(targetN) ?? '—'})`}
+          disabled={prevCountStep(targetN) === null}
         >
           −
         </button>
@@ -1303,9 +1320,9 @@ export function LabsAtomMotion() {
           type="button"
           className={`${s.btn} ${s.btnIcon}`}
           onClick={onAddOne}
-          aria-label="Add one electron"
-          title={`Add (${targetN} → ${Math.min(MAX_ELECTRONS, targetN + 1)})`}
-          disabled={targetN >= MAX_ELECTRONS}
+          aria-label="Step up to next symmetry"
+          title={`Step up (${targetN} → ${nextCountStep(targetN) ?? '—'})`}
+          disabled={nextCountStep(targetN) === null}
         >
           +
         </button>
