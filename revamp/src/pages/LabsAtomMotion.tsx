@@ -75,8 +75,8 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Matches Preset 1.
-const DEFAULT_CAMERA_POS: [number, number, number] = [34.54, 15.68, 6.14]
-const DEFAULT_CAMERA_TARGET: [number, number, number] = [3.39, -5, 0.78]
+const DEFAULT_CAMERA_POS: [number, number, number] = [33.4, 7.12, 5.41]
+const DEFAULT_CAMERA_TARGET: [number, number, number] = [3.46, -5.19, 0.41]
 const FOV_DEG = 50
 
 const INITIAL_POINT_A: Vec3 = [-14.7, 0, 0]
@@ -84,11 +84,6 @@ const INITIAL_POINT_B: Vec3 = [14.7, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
-
-// Sprite head size in world units. Replaces the old sphereGeometry head
-// (radius 0.05 → diameter 0.10); slightly larger to make the soft edge
-// readable as a "pulse of energy" instead of a flat lit ball.
-const HEAD_SPRITE_SCALE = 0.16
 
 // Generates a multi-ring radial texture for electron heads — bright hot
 // core, alternating dim/bright shells, soft outer fade. Sized 512×512 so
@@ -732,6 +727,9 @@ type Preset = {
   theme: ThemeName
   camPos: [number, number, number]
   camTgt: [number, number, number]
+  headScale: number
+  haloScale: number
+  trailWidth: number
 }
 
 const PRESETS: Preset[] = [
@@ -747,6 +745,9 @@ const PRESETS: Preset[] = [
     theme: 'dark',
     camPos: [35.3, 12.35, -7.55],
     camTgt: [2.51, -4, 0.28],
+    headScale: 0.16,
+    haloScale: 1.7,
+    trailWidth: 0.16,
   },
   {
     name: '2',
@@ -766,6 +767,9 @@ const PRESETS: Preset[] = [
     // drift unstacks the nuclei.
     camPos: [50, 0, 0],
     camTgt: [0, -6, 0],
+    headScale: 0.16,
+    haloScale: 1.7,
+    trailWidth: 0.16,
   },
   {
     name: '3',
@@ -779,6 +783,9 @@ const PRESETS: Preset[] = [
     theme: 'dark',
     camPos: [-6.66, 25.45, -3.26],
     camTgt: [-2.43, -1.46, -1.59],
+    headScale: 0.16,
+    haloScale: 1.7,
+    trailWidth: 0.16,
   },
   {
     name: '4',
@@ -792,6 +799,9 @@ const PRESETS: Preset[] = [
     theme: 'dark',
     camPos: [7.66, 0.64, 2.59],
     camTgt: [-0.88, -1.26, 1.9],
+    headScale: 0.16,
+    haloScale: 1.7,
+    trailWidth: 0.16,
   },
   {
     name: '5',
@@ -805,6 +815,25 @@ const PRESETS: Preset[] = [
     theme: 'dark',
     camPos: [34.54, 15.68, 6.14],
     camTgt: [3.39, -5, 0.78],
+    headScale: 0.16,
+    haloScale: 1.7,
+    trailWidth: 0.16,
+  },
+  {
+    name: '6',
+    electronColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
+    bgColor: '#59004c',
+    spread: 14.7,
+    speed: 4.5,
+    loop: true,
+    showNuclei: false,
+    showAxis: false,
+    theme: 'dark',
+    camPos: [33.4, 7.12, 5.41],
+    camTgt: [3.46, -5.19, 0.41],
+    headScale: 0.08,
+    haloScale: 1.1,
+    trailWidth: 0.07,
   },
 ]
 
@@ -840,15 +869,16 @@ export function LabsAtomMotion() {
     new Array(MAX_ELECTRONS).fill(0),
   )
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
-  const [showNuclei, setShowNuclei] = useState(true)
+  const [showNuclei, setShowNuclei] = useState(false)
   const [showAxis, setShowAxis] = useState(false)
+  const [uiHidden, setUiHidden] = useState(false)
   const [electronColors, setElectronColors] = useState<string[]>(() =>
     ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
   )
-  const [bgColor, setBgColor] = useState('#240c00')
-  const [headScale, setHeadScale] = useState(HEAD_SPRITE_SCALE)
-  const [haloScale, setHaloScale] = useState(1.7)
-  const [trailWidth, setTrailWidth] = useState(0.16)
+  const [bgColor, setBgColor] = useState('#59004c')
+  const [headScale, setHeadScale] = useState(0.08)
+  const [haloScale, setHaloScale] = useState(1.1)
+  const [trailWidth, setTrailWidth] = useState(0.07)
   const [theme, setTheme] = useTheme()
   const palette = THEME_PALETTE[theme]
 
@@ -997,6 +1027,9 @@ export function LabsAtomMotion() {
     setShowNuclei(p.showNuclei)
     setShowAxis(p.showAxis)
     setTheme(p.theme)
+    setHeadScale(p.headScale)
+    setHaloScale(p.haloScale)
+    setTrailWidth(p.trailWidth)
     const ctrl = orbitControlsRef.current
     if (ctrl?.object?.position && ctrl?.target) {
       ctrl.object.position.set(p.camPos[0], p.camPos[1], p.camPos[2])
@@ -1090,6 +1123,19 @@ export function LabsAtomMotion() {
         </Canvas>
       </div>
 
+      {/* Top-left: hide-all-UI toggle. Always visible. */}
+      <button
+        type="button"
+        className={`${s.btn} ${s.btnIcon} ${s.uiToggleBtn}`}
+        onClick={() => setUiHidden((v) => !v)}
+        aria-label={uiHidden ? 'Show controls' : 'Hide controls'}
+        title={uiHidden ? 'Show' : 'Hide'}
+      >
+        {uiHidden ? '◇' : '◆'}
+      </button>
+
+      {!uiHidden && (
+      <>
       {/* Top-right: global appearance controls. */}
       <div className={s.appearanceCluster} aria-label="Appearance">
         <button
@@ -1289,6 +1335,8 @@ export function LabsAtomMotion() {
           {`build·${COMMIT} · bg ${bgColor}`}
         </span>
       </div>
+      </>
+      )}
     </div>
   )
 }
