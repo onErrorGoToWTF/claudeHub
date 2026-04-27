@@ -479,55 +479,6 @@ function MasterClock({
   return null
 }
 
-// --- HigherOrbitDots (experimental, throwaway) ----------------------------
-// 2 tiny white spheres on a 1.5x orbit around atom A, 90° apart in
-// phase. Uses globalScaledTime so speed matches the main electrons.
-// Standalone, easy to delete.
-function HigherOrbitDots({
-  chordHalf,
-  orbitSize,
-  headScale,
-  globalScaledTimeRef,
-}: {
-  chordHalf: number
-  orbitSize: number
-  headScale: number
-  globalScaledTimeRef: React.MutableRefObject<number>
-}) {
-  const ref1 = useRef<THREE.Mesh>(null!)
-  const ref2 = useRef<THREE.Mesh>(null!)
-  const radius = 1.5 * orbitSize
-  useFrame(() => {
-    const theta = ORBIT_OMEGA_BASE * globalScaledTimeRef.current
-    if (ref1.current) {
-      ref1.current.position.set(
-        -chordHalf + radius * Math.cos(theta),
-        radius * Math.sin(theta),
-        0,
-      )
-    }
-    if (ref2.current) {
-      ref2.current.position.set(
-        -chordHalf + radius * Math.cos(theta + Math.PI / 2),
-        radius * Math.sin(theta + Math.PI / 2),
-        0,
-      )
-    }
-  })
-  return (
-    <>
-      <mesh ref={ref1}>
-        <sphereGeometry args={[Math.max(0.02, headScale), 16, 16]} />
-        <meshBasicMaterial color="#ffffff" />
-      </mesh>
-      <mesh ref={ref2}>
-        <sphereGeometry args={[Math.max(0.02, headScale), 16, 16]} />
-        <meshBasicMaterial color="#ffffff" />
-      </mesh>
-    </>
-  )
-}
-
 // --- ElectronProbe (autonomous phase machine) -----------------------------
 
 function ElectronProbe({
@@ -1303,11 +1254,6 @@ export function LabsAtomMotion() {
   // separate drei <Stars> layer outside the tilted group, so it sits
   // in world space behind the atoms regardless of chord tilt.
   const [showStars, setShowStars] = useState(false)
-  // Experimental higher-orbit test layer — 2 stationary white dots
-  // around atom A on a 1.5× orbit, 180° apart (top + bottom along
-  // the chord-normal). Will likely be deleted after the user
-  // evaluates the look. Standalone state + standalone button.
-  const [showHigherOrbit, setShowHigherOrbit] = useState(false)
   // Pause/Play toggle (Chunk 4). When paused, MasterClock and ElectronProbe
   // see speedMult=0 so motion freezes in place; the autoReplay loop is
   // also gated. Resuming continues from the same state.
@@ -1869,14 +1815,6 @@ export function LabsAtomMotion() {
             />
           )}
           <group rotation={[0, 0, groupTiltZ]}>
-            {showHigherOrbit && (
-              <HigherOrbitDots
-                chordHalf={chordHalf}
-                orbitSize={orbitSize}
-                headScale={headScale}
-                globalScaledTimeRef={globalScaledTimeRef}
-              />
-            )}
             {(showAxis || interacting) && (
               <AxisIndicators
                 chordHalf={chordHalf}
@@ -2232,16 +2170,6 @@ export function LabsAtomMotion() {
                   {capturedPreset && (
                     <pre className={s.capturedBlock}>{capturedPreset}</pre>
                   )}
-                  {/* Throwaway experimental layer — 2 static dots on a
-                      1.5× orbit around atom A. Likely deletion target. */}
-                  <button
-                    type="button"
-                    className={`${s.btn} ${s.btnPreset} ${showHigherOrbit ? s.btnActive : ''}`}
-                    onClick={() => setShowHigherOrbit((v) => !v)}
-                    aria-label="Toggle higher-orbit test dots"
-                  >
-                    {showHigherOrbit ? 'higher orbit ✓' : '+ higher orbit (test)'}
-                  </button>
                   <div className={s.panelRow}>
                     <button
                       type="button"
