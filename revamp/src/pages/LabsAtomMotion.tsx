@@ -1868,7 +1868,7 @@ export function LabsAtomMotion() {
             label="speed"
             value={speedMult}
             min={0.5}
-            max={6}
+            max={10}
             step={0.5}
             onChange={setSpeedMult}
             format={(v) => `${v}×`}
