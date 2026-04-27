@@ -691,24 +691,35 @@ function AxisLine({
 
 function AxisIndicators({
   chordHalf,
-  colors,
+  color,
   opacity,
 }: {
   chordHalf: number
-  colors: { x: string; y: string; z: string }
+  color: string
   opacity: number
 }) {
-  // Length capped so the axes stay in the inter-nucleus gap and never reach
-  // into the orbital region. Orbit's leftmost extent from origin is
-  // chordHalf*(1 - (sqrt(2)-1)) ≈ 0.586*chordHalf; 0.5 keeps a safe margin.
-  const length = chordHalf * 0.5
+  // Extends past the inter-nucleus gap into the orbital region — guides
+  // are now a single bg-derived tone (not 3 separate axis colors), so the
+  // longer reach reads as orientation scaffolding, not "RGB axis tripod."
+  const length = chordHalf * 1.2
   return (
     <>
-      <AxisLine direction={[1, 0, 0]} length={length} color={colors.x} opacity={opacity} />
-      <AxisLine direction={[0, 1, 0]} length={length} color={colors.y} opacity={opacity} />
-      <AxisLine direction={[0, 0, 1]} length={length} color={colors.z} opacity={opacity} />
+      <AxisLine direction={[1, 0, 0]} length={length} color={color} opacity={opacity} />
+      <AxisLine direction={[0, 1, 0]} length={length} color={color} opacity={opacity} />
+      <AxisLine direction={[0, 0, 1]} length={length} color={color} opacity={opacity} />
     </>
   )
+}
+
+// Lightens a hex color in HSL space — used to derive the axis-guide tone
+// from the active bgColor so the guides feel like a brighter shadow of
+// the canvas, not a separate palette.
+function lightenHex(hex: string, byL: number): string {
+  const c = new THREE.Color(hex)
+  const hsl = { h: 0, s: 0, l: 0 }
+  c.getHSL(hsl)
+  c.setHSL(hsl.h, hsl.s, Math.min(1, hsl.l + byL))
+  return '#' + c.getHexString()
 }
 
 // --- Theme palette ---------------------------------------------------------
@@ -937,6 +948,10 @@ export function LabsAtomMotion() {
   const [gradientStart, setGradientStart] = useState('#ffa57d')
   const [gradientEnd, setGradientEnd] = useState('#93e3fd')
   const [paletteOpen, setPaletteOpen] = useState(false)
+  // True while the user is actively interacting with the canvas (rotate /
+  // pinch / pan). Forces guides ON regardless of manual toggles.
+  const [interacting, setInteracting] = useState(false)
+  const interactingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const [bgColor, setBgColor] = useState('#59004c')
   const [headScale, setHeadScale] = useState(0.08)
   const [haloScale, setHaloScale] = useState(1.1)
@@ -1127,6 +1142,14 @@ export function LabsAtomMotion() {
             minDistance={4}
             maxDistance={80}
             target={DEFAULT_CAMERA_TARGET}
+            onStart={() => {
+              if (interactingTimeoutRef.current) clearTimeout(interactingTimeoutRef.current)
+              setInteracting(true)
+            }}
+            onEnd={() => {
+              if (interactingTimeoutRef.current) clearTimeout(interactingTimeoutRef.current)
+              interactingTimeoutRef.current = setTimeout(() => setInteracting(false), 300)
+            }}
           />
           <MasterClock
             timeRef={globalScaledTimeRef}
@@ -1141,14 +1164,14 @@ export function LabsAtomMotion() {
             }}
           />
           <group rotation={[0, 0, groupTiltZ]}>
-            {showAxis && (
+            {(showAxis || interacting) && (
               <AxisIndicators
                 chordHalf={chordHalf}
-                colors={{ x: palette.axisX, y: palette.axisY, z: palette.axisZ }}
+                color={lightenHex(bgColor, 0.45)}
                 opacity={palette.axisOpacity}
               />
             )}
-            {showNuclei && <Nuclei chordHalf={chordHalf} color={palette.ink} />}
+            {(showNuclei || interacting) && <Nuclei chordHalf={chordHalf} color={palette.ink} />}
             {electronSpecs.map((spec, i) => {
               const c = electronColors[i] ?? DEFAULT_E_COLOR
               return (
