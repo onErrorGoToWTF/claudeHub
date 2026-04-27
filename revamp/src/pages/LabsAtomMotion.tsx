@@ -244,56 +244,77 @@ const MAX_ELECTRONS = 16
 // then clean symmetry steps: 4 (square), 6 (hex), 8 (octagonal),
 // 12 (sphere-ish), 16 (max / supercharge). Slider still allows any
 // integer in [1, 16] for free tuning.
-// Slot identity table — maps a 0-indexed slot to its (plane, phase)
-// coordinates. The "four orthogonal furthest-apart orbits" rule: every
-// electron added up through slot 4 occupies its OWN plane. Once all
-// four planes are populated, additional electrons add antipodal pairs
-// (phase 180°), then quarter-phases (90° and 270°). Each new electron
-// gets the most spread-apart slot available; nesting is preserved at
-// every sweet-spot count (1 ⊂ 2 ⊂ 4 ⊂ 8 ⊂ 16):
-//   N=1   plane 0°
-//   N=2   + plane 90°                     (perpendicular pair)
-//   N=3   + plane 135°                    (asymmetric, accepted)
-//   N=4   + plane 45°                     (4 orthogonal orbits)
-//   N=5..8   each plane gains phase 180°  (4 planes × 2 phases)
-//   N=9..12  each plane gains phase 90°
-//   N=13..16 each plane gains phase 270°  (4 planes × 4 phases — sweet spot)
-// Slot k always occupies the same (plane, phase) regardless of total
-// count — slot identity is permanent across grow/shrink and across
-// atoms (e_k on B sits at the same plane/phase, just on B's frame).
+// Slot identity table — every one of the 16 slots gets its OWN
+// distinct plane. No two slots ever share an orbit; one electron per
+// orbit per atom is the locked rule. Fill order is bit-reversal-shaped
+// so each prefix at a sweet-spot count (1, 2, 4, 8, 16) gives the
+// most-evenly-spread plane set possible at that count, nested inside
+// the next-up sweet spot:
+//   N=1   { 0°}
+//   N=2   { 0°,  90°}                                  perpendicular pair
+//   N=4   { 0°,  90°, 135°,  45°}                       4 orthogonal orbits
+//   N=8   { 0°,  90°, 135°,  45°, 22.5°, 112.5°, 157.5°, 67.5°}
+//   N=16  all 16 planes 11.25° apart (one per slot)
+// Slot k always occupies the same plane regardless of total count
+// or which atom holds it — slot identity is permanent across
+// grow/shrink and across atoms (e_k on B sits at the same plane,
+// just on B's frame).
 //
-// Plane fill order: 0°, 90°, 135°, 45°. (135° before 45° matches the
-// "fill the empty upper half first" intent from the original
-// FILL_ORDER_4=[0,2,3,1] — at N=3 slot 3 lands opposite the empty
-// quadrant left by slots 1+2 rather than packing next to them.)
-const SLOT_PLANE_ANGLES = [0, Math.PI / 2, 3 * Math.PI / 4, Math.PI / 4]
-const SLOT_PHASE_ANGLES = [0, Math.PI, Math.PI / 2, 3 * Math.PI / 2]
+// Plane indices below are in [0, 16); angle = idx · π / 16.
+// First four entries (slots 0..3) reproduce the original
+// FILL_ORDER_4=[0,2,3,1] preference: 0°, 90°, 135°, 45° (fill upper
+// half before lower so slot 3 lands opposite the empty upper-half
+// quadrant left by slots 1+2). Slots 4..7 add the four planes that
+// the N=8 sweet spot introduces; slots 8..15 add the eight planes
+// that are new in N=16. Verified to be a permutation of [0..15].
+const SLOT_PLANE_INDICES = [
+  0,   // slot 1   →    0°
+  8,   // slot 2   →   90°    perpendicular pair with slot 1
+  12,  // slot 3   →  135°    upper-half first
+  4,   // slot 4   →   45°    closes the 4-orbit set
+  10,  // slot 5   →  112.5°  upper-half first among N=8 additions
+  14,  // slot 6   →  157.5°
+  2,   // slot 7   →   22.5°
+  6,   // slot 8   →   67.5°
+  11,  // slot 9   →  123.75° upper-half first among N=16 additions
+  13,  // slot 10  →  146.25°
+  9,   // slot 11  →  101.25°
+  15,  // slot 12  →  168.75°
+  3,   // slot 13  →   33.75°
+  5,   // slot 14  →   56.25°
+  1,   // slot 15  →   11.25°
+  7,   // slot 16  →   78.75°
+] as const
 
-function slotPlaneIdx(slotIdx0: number): number {
-  // Slots 0..3 fill all four distinct planes (no plane reused while
-  // any plane is empty). Slots 4..15 cycle through the same plane
-  // order, each block of 4 sharing a phase.
-  return slotIdx0 % 4
+// Per-slot initial orbit angle at t=0. Avoids 0 and π — those are
+// plane-independent axial points (chord-line tips) where any two
+// slots would visually collide on the first frame regardless of
+// plane. Cycles through four non-axial phases on a 4-slot period
+// so consecutive spawns don't all start at the same angle.
+const SLOT_PHASE_OFFSETS = [
+  Math.PI / 2,
+  3 * Math.PI / 4,
+  5 * Math.PI / 4,
+  7 * Math.PI / 4,
+] as const
+
+function slotPlaneAngle(slotIdx0: number): number {
+  return (SLOT_PLANE_INDICES[slotIdx0] * Math.PI) / 16
 }
 
-function slotPhaseIdx(slotIdx0: number): number {
-  // Phase index advances every 4 slots — slots 0..3 sit at phase 0°,
-  // slots 4..7 at 180°, 8..11 at 90°, 12..15 at 270°.
-  return Math.floor(slotIdx0 / 4)
+function slotInitialPhase(slotIdx0: number): number {
+  return SLOT_PHASE_OFFSETS[slotIdx0 % SLOT_PHASE_OFFSETS.length]
 }
 
 function buildElectronSpecs(N: number): ElectronSpec[] {
   const safeN = Math.max(0, Math.min(MAX_ELECTRONS, N))
   const out: ElectronSpec[] = []
   for (let k = 0; k < safeN; k++) {
-    const planeAngle = SLOT_PLANE_ANGLES[slotPlaneIdx(k)]
-    const phaseAngle = SLOT_PHASE_ANGLES[slotPhaseIdx(k)]
+    const planeAngle = slotPlaneAngle(k)
     out.push({
       upHat: [0, Math.cos(planeAngle), Math.sin(planeAngle)],
       cwAtA: true,
-      // initialPhase seeds the electron at its slot's phase-angle
-      // coordinate at t=0 (consumed by makeOrbitADesc as theta seed).
-      initialPhase: phaseAngle,
+      initialPhase: slotInitialPhase(k),
     })
   }
   return out
