@@ -280,6 +280,9 @@ function ElectronProbe({
   trailColor,
   color,
   haloColor,
+  headScale,
+  haloScale,
+  trailWidth,
   globalScaledTimeRef,
 }: {
   spec: ElectronSpec
@@ -296,6 +299,9 @@ function ElectronProbe({
   trailColor: string
   color: string
   haloColor: string
+  headScale: number
+  haloScale: number
+  trailWidth: number
   globalScaledTimeRef: React.MutableRefObject<number>
 }) {
   const headRef = useRef<THREE.Sprite>(null!)
@@ -535,7 +541,7 @@ function ElectronProbe({
         <meshLineMaterial
           ref={trailMatRef}
           color={trailColor}
-          lineWidth={0.16}
+          lineWidth={trailWidth}
           transparent
           opacity={0}
           depthWrite={false}
@@ -546,7 +552,7 @@ function ElectronProbe({
           blending={THREE.AdditiveBlending}
         />
       </mesh>
-      <mesh ref={haloRef} scale={1.7}>
+      <mesh ref={haloRef} scale={haloScale}>
         <sphereGeometry args={[0.05, 32, 32]} />
         <meshBasicMaterial
           ref={haloMatRef}
@@ -557,7 +563,7 @@ function ElectronProbe({
           depthWrite={false}
         />
       </mesh>
-      <sprite ref={headRef} scale={[HEAD_SPRITE_SCALE, HEAD_SPRITE_SCALE, 1]}>
+      <sprite ref={headRef} scale={[headScale, headScale, 1]}>
         <spriteMaterial
           ref={headMatRef}
           map={orbTex}
@@ -840,6 +846,9 @@ export function LabsAtomMotion() {
     ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
   )
   const [bgColor, setBgColor] = useState('#240c00')
+  const [headScale, setHeadScale] = useState(HEAD_SPRITE_SCALE)
+  const [haloScale, setHaloScale] = useState(1.7)
+  const [trailWidth, setTrailWidth] = useState(0.16)
   const [theme, setTheme] = useTheme()
   const palette = THEME_PALETTE[theme]
 
@@ -1051,6 +1060,9 @@ export function LabsAtomMotion() {
                   spec={spec}
                   fadeTex={fadeTex}
                   orbTex={orbTex}
+                  headScale={headScale}
+                  haloScale={haloScale}
+                  trailWidth={trailWidth}
                   reducedMotion={reducedMotion}
                   speedMult={speedMult}
                   chordHalf={chordHalf}
@@ -1222,6 +1234,45 @@ export function LabsAtomMotion() {
             onChange={(e) => setSpeedMult(parseFloat(e.currentTarget.value))}
             className={s.tiltSlider}
             aria-label="Animation speed"
+          />
+        </div>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`head  ${headScale.toFixed(2)}`}</span>
+          <input
+            type="range"
+            min={0.04}
+            max={0.30}
+            step={0.01}
+            value={headScale}
+            onChange={(e) => setHeadScale(parseFloat(e.currentTarget.value))}
+            className={s.tiltSlider}
+            aria-label="Electron head size"
+          />
+        </div>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`halo  ${haloScale.toFixed(1)}`}</span>
+          <input
+            type="range"
+            min={0.8}
+            max={3.0}
+            step={0.1}
+            value={haloScale}
+            onChange={(e) => setHaloScale(parseFloat(e.currentTarget.value))}
+            className={s.tiltSlider}
+            aria-label="Halo scale"
+          />
+        </div>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`trail  ${trailWidth.toFixed(2)}`}</span>
+          <input
+            type="range"
+            min={0.04}
+            max={0.30}
+            step={0.01}
+            value={trailWidth}
+            onChange={(e) => setTrailWidth(parseFloat(e.currentTarget.value))}
+            className={s.tiltSlider}
+            aria-label="Trail width"
           />
         </div>
         {hintText && <div className={s.hintInline}>{hintText}</div>}
