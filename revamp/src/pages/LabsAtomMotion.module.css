@@ -853,6 +853,29 @@
   box-shadow: 0 0 0 2px rgba(122, 162, 255, 0.55);
 }
 
+/* Armed-for-delete warning. Compound selectors win over the base
+   .slotOnA / .slotOnB tints to make the warning unmistakable. */
+
+.slotArmed {
+  box-shadow: 0 0 0 2px rgba(220, 80, 80, 0.7);
+}
+
+.slotArmed.slotOnA,
+.slotArmed.slotOnB {
+  background: rgba(220, 80, 80, 0.32);
+  border-color: rgba(220, 80, 80, 0.7);
+}
+
+.armedHint {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: rgba(220, 80, 80, 0.9);
+  letter-spacing: 0.02em;
+  user-select: none;
+  -webkit-user-select: none;
+  flex: 1;
+}
+
 /* First-load pulse on slot 1 while the stage is empty.
    Uses transform + opacity only on a pseudo-element ring (no animated
    box-shadow / background) so the pulse runs on the GPU compositor and

@@ -1250,10 +1250,29 @@ export function LabsAtomMotion() {
   // see speedMult=0 so motion freezes in place; the autoReplay loop is
   // also gated. Resuming continues from the same state.
   const [paused, setPaused] = useState(false)
-  // Slot grid selection (Chunk 5e). Index of the currently-highlighted
-  // slot, or null when nothing selected. Action buttons (→B / ←A /
-  // Delete) act on this slot.
-  const [selectedSlot, setSelectedSlot] = useState<number | null>(null)
+  // Slot grid armed-for-delete state. Tap an occupied slot once →
+  // armed (warning visual + inline →B/←A actions appear). Tap the
+  // same slot again within 3s → confirms delete. Tap elsewhere or
+  // wait → auto-disarm. No explicit Delete button — tap-tap is the
+  // only delete pathway, matching the two-tap-confirm rule for
+  // destructive actions.
+  const [armedSlot, setArmedSlot] = useState<number | null>(null)
+  const armedTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const disarmSlot = useCallback(() => {
+    if (armedTimeoutRef.current) {
+      clearTimeout(armedTimeoutRef.current)
+      armedTimeoutRef.current = null
+    }
+    setArmedSlot(null)
+  }, [])
+  const armSlotForDelete = useCallback((k: number) => {
+    if (armedTimeoutRef.current) clearTimeout(armedTimeoutRef.current)
+    setArmedSlot(k)
+    armedTimeoutRef.current = setTimeout(() => {
+      setArmedSlot(null)
+      armedTimeoutRef.current = null
+    }, 3000)
+  }, [])
   // New 5-panel system (chunks 3+). Each dock icon toggles its panel
   // independently; multiple panels may be open simultaneously. Panel
   // bodies fill in over chunks 4-8. First-load default opens Electrons
@@ -1319,7 +1338,7 @@ export function LabsAtomMotion() {
   const [bgColor, setBgColor] = useState('#59004c')
   const [headScale, setHeadScale] = useState(0.03)
   const [haloScale, setHaloScale] = useState(0.0)
-  const [trailWidth, setTrailWidth] = useState(0.08)
+  const [trailWidth, setTrailWidth] = useState(0.07)
   const [theme, setTheme] = useTheme()
   const palette = THEME_PALETTE[theme]
 
@@ -1409,54 +1428,59 @@ export function LabsAtomMotion() {
   const orbitSize = useMemo(() => 3 * (Math.SQRT2 - 1), [])
   const groupTiltZ = useMemo(() => tiltZFrom(pointA, pointB), [pointA, pointB])
 
-  // Slot-grid handlers (Chunk 5e).
-  // Tap empty → add to A. Tap occupied → toggle selection.
+  // Slot-grid handlers. Tap empty → add e_k to A. Tap occupied →
+  // arm for delete (3s auto-disarm). Tap an armed slot again → delete.
+  // Tapping a different occupied slot moves the arm to that slot.
   const onSlotTap = useCallback((k: number) => {
-    setSlotLocations((prev) => {
-      if (prev[k] === 'none') {
+    const loc = slotLocations[k]
+    if (loc === 'none') {
+      // Add to A.
+      setSlotLocations((prev) => {
         const out = prev.slice()
         out[k] = 'A'
-        // Bump start seed so the freshly-spawned probe re-syncs to
-        // master clock and lands at slot k's phase-clock-correct
-        // position on its first frame.
-        setStartSeeds((seeds) => {
-          const ss = seeds.slice()
-          ss[k] = (ss[k] ?? 0) + 1
-          return ss
-        })
-        setSelectedSlot(null)
         return out
-      }
-      // Occupied — toggle selection (tap selected slot again to deselect).
-      setSelectedSlot((sel) => (sel === k ? null : k))
-      return prev
-    })
-  }, [])
+      })
+      setStartSeeds((seeds) => {
+        const ss = seeds.slice()
+        ss[k] = (ss[k] ?? 0) + 1
+        return ss
+      })
+      disarmSlot()
+      return
+    }
+    if (armedSlot === k) {
+      // Second tap on the armed slot → confirm delete.
+      setSlotLocations((prev) => {
+        const out = prev.slice()
+        out[k] = 'none'
+        return out
+      })
+      disarmSlot()
+      return
+    }
+    // First tap on occupied slot (or switching arm to a different slot).
+    armSlotForDelete(k)
+  }, [slotLocations, armedSlot, disarmSlot, armSlotForDelete])
   const onSlotMoveToB = useCallback(() => {
+    if (armedSlot === null) return
     setSlotLocations((prev) => {
-      if (selectedSlot === null || prev[selectedSlot] !== 'A') return prev
+      if (prev[armedSlot] !== 'A') return prev
       const out = prev.slice()
-      out[selectedSlot] = 'B'
+      out[armedSlot] = 'B'
       return out
     })
-  }, [selectedSlot])
+    disarmSlot()
+  }, [armedSlot, disarmSlot])
   const onSlotMoveToA = useCallback(() => {
+    if (armedSlot === null) return
     setSlotLocations((prev) => {
-      if (selectedSlot === null || prev[selectedSlot] !== 'B') return prev
+      if (prev[armedSlot] !== 'B') return prev
       const out = prev.slice()
-      out[selectedSlot] = 'A'
+      out[armedSlot] = 'A'
       return out
     })
-  }, [selectedSlot])
-  const onSlotDelete = useCallback(() => {
-    setSlotLocations((prev) => {
-      if (selectedSlot === null) return prev
-      const out = prev.slice()
-      out[selectedSlot] = 'none'
-      return out
-    })
-    setSelectedSlot(null)
-  }, [selectedSlot])
+    disarmSlot()
+  }, [armedSlot, disarmSlot])
   // Full refresh — return to first-load defaults. Clears all electrons,
   // resets every slider/color/mode/theme/axis/nuclei back to defaults,
   // closes all panels, recenters camera. Triggered from the Playback
@@ -1471,7 +1495,7 @@ export function LabsAtomMotion() {
     setSpeedMult(3.5)
     setHeadScale(0.03)
     setHaloScale(0.0)
-    setTrailWidth(0.08)
+    setTrailWidth(0.07)
     setBgColor('#59004c')
     setBgMode('solid')
     setBgGradientStart('#7a3a8c')
@@ -1500,9 +1524,9 @@ export function LabsAtomMotion() {
       dimensions: false,
       scene: false,
     })
-    setSelectedSlot(null)
+    disarmSlot()
     orbitControlsRef.current?.reset?.()
-  }, [setTheme])
+  }, [setTheme, disarmSlot])
   // Centralized auto-loop. When autoReplay is on, fire travel bumps in
   // interleaved-perpendicular order at a tempo tied to the orbit period —
   // each in-play slot crosses A↔B once per cycle of LOOP_LAPS_BEFORE_TRAVEL
@@ -2026,7 +2050,7 @@ export function LabsAtomMotion() {
                   <div className={s.slotGrid}>
                     {Array.from({ length: MAX_ELECTRONS }, (_, k) => {
                       const loc = slotLocations[k]
-                      const isSelected = selectedSlot === k
+                      const isArmed = armedSlot === k
                       const cls =
                         loc === 'A'
                           ? s.slotOnA
@@ -2037,13 +2061,18 @@ export function LabsAtomMotion() {
                       // signals "tap here to add your first electron." The
                       // pulse stops the moment any slot becomes occupied.
                       const shouldPulse = k === 0 && highestOccupied === -1
+                      const ariaLabel = loc === 'none'
+                        ? `Slot ${k + 1}: empty. Tap to add.`
+                        : isArmed
+                          ? `Slot ${k + 1} on ${loc}. Tap again to delete.`
+                          : `Slot ${k + 1} on ${loc}. Tap to arm for delete.`
                       return (
                         <button
                           key={k}
                           type="button"
-                          className={`${s.slotCell} ${cls} ${isSelected ? s.slotSelected : ''} ${shouldPulse ? s.slotPulse : ''}`}
+                          className={`${s.slotCell} ${cls} ${isArmed ? s.slotArmed : ''} ${shouldPulse ? s.slotPulse : ''}`}
                           onClick={() => onSlotTap(k)}
-                          aria-label={`Slot ${k + 1}: ${loc === 'none' ? 'empty' : `on ${loc}`}`}
+                          aria-label={ariaLabel}
                           aria-pressed={loc !== 'none'}
                         >
                           {k + 1}
@@ -2051,36 +2080,29 @@ export function LabsAtomMotion() {
                       )
                     })}
                   </div>
-                  {selectedSlot !== null && slotLocations[selectedSlot] !== 'none' && (
+                  {armedSlot !== null && slotLocations[armedSlot] !== 'none' && (
                     <div className={s.panelRow}>
-                      {slotLocations[selectedSlot] === 'A' && (
+                      <span className={s.armedHint}>{`tap slot ${armedSlot + 1} again to remove`}</span>
+                      {slotLocations[armedSlot] === 'A' && (
                         <button
                           type="button"
                           className={s.btn}
                           onClick={onSlotMoveToB}
-                          aria-label="Move selected electron to atom B"
+                          aria-label="Move armed electron to atom B"
                         >
                           → B
                         </button>
                       )}
-                      {slotLocations[selectedSlot] === 'B' && (
+                      {slotLocations[armedSlot] === 'B' && (
                         <button
                           type="button"
                           className={s.btn}
                           onClick={onSlotMoveToA}
-                          aria-label="Move selected electron to atom A"
+                          aria-label="Move armed electron to atom A"
                         >
                           ← A
                         </button>
                       )}
-                      <button
-                        type="button"
-                        className={s.btn}
-                        onClick={onSlotDelete}
-                        aria-label="Delete selected electron"
-                      >
-                        Delete
-                      </button>
                     </div>
                   )}
                 </>
