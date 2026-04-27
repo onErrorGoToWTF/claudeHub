@@ -479,55 +479,6 @@ function MasterClock({
   return null
 }
 
-// --- STracer (experimental, throwaway) ------------------------------------
-// Single sphere following a parametric S-curve (∫-style) around atom A.
-// Visible only while tracing (fades in at top, full glow through the
-// middle, fades out at bottom) so it reads as "drawing" the letter S
-// rather than orbiting. Loops invisibly back to the top each cycle.
-function STracer({
-  chordHalf,
-  orbitSize,
-  headScale,
-}: {
-  chordHalf: number
-  orbitSize: number
-  headScale: number
-}) {
-  const ref = useRef<THREE.Mesh>(null!)
-  const matRef = useRef<THREE.MeshBasicMaterial>(null!)
-  const startRef = useRef<number | null>(null)
-  // Real-time period (seconds) for one full S trace + invisible reset.
-  const PERIOD = 3
-  // Letter dimensions, sized off the existing orbit so it looks at home
-  // next to the electrons. Tall and slim like a written S.
-  const xRadius = orbitSize * 1.3
-  const yHeight = orbitSize * 4
-  // Fade-in / fade-out envelope as fractions of the period.
-  const FADE = 0.08
-  useFrame(({ clock }) => {
-    if (!ref.current || !matRef.current) return
-    if (startRef.current === null) startRef.current = clock.elapsedTime
-    const elapsed = clock.elapsedTime - startRef.current
-    const t = (elapsed % PERIOD) / PERIOD
-    // ∫-shape: sin(2π t) sweeps the dot left then right while y
-    // descends linearly. Negate so the curl reads as a proper S
-    // (opens right at the top, opens left at the bottom).
-    const x = -Math.sin(2 * Math.PI * t) * xRadius
-    const y = (0.5 - t) * yHeight
-    ref.current.position.set(-chordHalf + x, y, 0)
-    let op = 1
-    if (t < FADE) op = t / FADE
-    else if (t > 1 - FADE) op = (1 - t) / FADE
-    matRef.current.opacity = op
-  })
-  return (
-    <mesh ref={ref}>
-      <sphereGeometry args={[Math.max(0.06, headScale * 1.4), 18, 18]} />
-      <meshBasicMaterial ref={matRef} color="#ffffff" transparent />
-    </mesh>
-  )
-}
-
 // --- ElectronProbe (autonomous phase machine) -----------------------------
 
 function ElectronProbe({
@@ -1303,9 +1254,6 @@ export function LabsAtomMotion() {
   // separate drei <Stars> layer outside the tilted group, so it sits
   // in world space behind the atoms regardless of chord tilt.
   const [showStars, setShowStars] = useState(false)
-  // Experimental S-tracer: one dot draws the letter S around atom A,
-  // appearing only while it's on the curve. Throwaway test.
-  const [showSTracer, setShowSTracer] = useState(false)
   // Pause/Play toggle (Chunk 4). When paused, MasterClock and ElectronProbe
   // see speedMult=0 so motion freezes in place; the autoReplay loop is
   // also gated. Resuming continues from the same state.
@@ -1572,6 +1520,14 @@ export function LabsAtomMotion() {
     })
     disarmSlot()
   }, [disarmSlot])
+  // Reposition nuclei vertically (A on top, B on bottom) while keeping
+  // the current chord magnitude. Existing transit sCurvePos already
+  // sweeps a sine bow on each side of the midpoint; with the chord
+  // vertical, that bow becomes a literal letter S between the atoms.
+  const onSpellS = useCallback(() => {
+    setPointA([0, chordHalf, 0])
+    setPointB([0, -chordHalf, 0])
+  }, [chordHalf])
   const onQuickMoveToB = useCallback(() => {
     setSlotLocations((prev) => {
       for (let k = prev.length - 1; k >= 0; k--) {
@@ -1867,13 +1823,6 @@ export function LabsAtomMotion() {
             />
           )}
           <group rotation={[0, 0, groupTiltZ]}>
-            {showSTracer && (
-              <STracer
-                chordHalf={chordHalf}
-                orbitSize={orbitSize}
-                headScale={headScale}
-              />
-            )}
             {(showAxis || interacting) && (
               <AxisIndicators
                 chordHalf={chordHalf}
@@ -2229,14 +2178,17 @@ export function LabsAtomMotion() {
                   {capturedPreset && (
                     <pre className={s.capturedBlock}>{capturedPreset}</pre>
                   )}
-                  {/* Experimental S-tracer (throwaway test). */}
+                  {/* Vertical-chord button: places nuclei top + bottom so
+                      the existing transit math sweeps a literal letter S
+                      between them when the user adds an electron and
+                      taps →B. Throwaway test. */}
                   <button
                     type="button"
-                    className={`${s.btn} ${s.btnPreset} ${showSTracer ? s.btnActive : ''}`}
-                    onClick={() => setShowSTracer((v) => !v)}
-                    aria-label="Toggle S-letter tracer test"
+                    className={`${s.btn} ${s.btnPreset}`}
+                    onClick={onSpellS}
+                    aria-label="Reposition nuclei vertically for S-shape transit"
                   >
-                    {showSTracer ? 'spell S ✓' : 'spell S (test)'}
+                    spell S ↕
                   </button>
                   <div className={s.panelRow}>
                     <button
