@@ -129,8 +129,10 @@ type MotionPhase = 'orbitA' | 'travelAB' | 'orbitB' | 'travelBA'
 // allowed; the user picks which slots are occupied and on which atom.
 type SlotLocation = 'none' | 'A' | 'B'
 
-// Identifiers for the new 5-panel system (chunks 3+).
-type PanelKey = 'playback' | 'electrons' | 'colors' | 'dimensions' | 'scene'
+// Identifiers for the toggleable right-edge panel system. Playback is
+// no longer part of this set — it now lives as an always-visible
+// top-center bar (see render below).
+type PanelKey = 'electrons' | 'colors' | 'dimensions' | 'scene'
 
 // Reusable slider row with tap-to-reveal ± nudge buttons (Chunk 7).
 // Default state: clean slider only. Tapping the value label toggles
@@ -214,7 +216,6 @@ function SliderRow({
 }
 
 const PANEL_DEFINITIONS: { key: PanelKey; icon: string; label: string; chunk: number }[] = [
-  { key: 'playback', icon: '▶', label: 'Playback', chunk: 4 },
   { key: 'electrons', icon: '⚛', label: 'Electrons', chunk: 5 },
   { key: 'colors', icon: '◐', label: 'Colors', chunk: 6 },
   { key: 'dimensions', icon: '⊞', label: 'Dimensions', chunk: 7 },
@@ -1282,7 +1283,6 @@ export function LabsAtomMotion() {
   // so the user is one tap away from adding their first electron;
   // chunk 5f pulses slot 1 to make that affordance discoverable.
   const [panelsOpen, setPanelsOpen] = useState<Record<PanelKey, boolean>>({
-    playback: false,
     electrons: true,
     colors: false,
     dimensions: false,
@@ -1579,7 +1579,6 @@ export function LabsAtomMotion() {
     setPointB(INITIAL_POINT_B)
     setTheme('light')
     setPanelsOpen({
-      playback: false,
       electrons: true,
       colors: false,
       dimensions: false,
@@ -1786,11 +1785,94 @@ export function LabsAtomMotion() {
       </div>
 
 
-      {/* New 5-panel system (chunks 3+). Dock = right-edge column of icons.
-          Panel stack = right edge to the left of the dock. Each dock icon
-          toggles its panel independently. Panel bodies are placeholders
-          in chunk 3 — controls migrate from the legacy clusters in
-          chunks 4–8. */}
+      {/* Always-visible Playback bar pinned top-center. No panel toggle —
+          play/pause, loop, refresh, and the quick electron actions are
+          one-tap away regardless of which side panels are open. */}
+      <div className={s.topPlaybackBar} aria-label="Playback">
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={() => setPaused((p) => !p)}
+          aria-label={paused ? 'Play' : 'Pause'}
+          title={paused ? 'Play' : 'Pause'}
+        >
+          {paused ? '▶' : '‖'}
+        </button>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon} ${autoReplay ? s.btnActive : ''}`}
+          onClick={() => setAutoReplay((v) => !v)}
+          aria-label={autoReplay ? 'Disable loop' : 'Enable loop'}
+          title={autoReplay ? 'Loop on' : 'Loop off'}
+        >
+          {autoReplay ? '↻' : '○'}
+        </button>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={onRefresh}
+          aria-label="Refresh — reset everything"
+          title="Refresh"
+        >
+          ⟲
+        </button>
+        <span className={s.topPlaybackDivider} aria-hidden="true" />
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={onQuickAdd}
+          disabled={!slotLocations.includes('none')}
+          aria-label="Add electron to next empty orbit"
+          title="Add electron"
+        >
+          +
+        </button>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={onQuickRemove}
+          disabled={highestOccupied === -1}
+          aria-label="Remove highest electron"
+          title="Remove electron"
+        >
+          −
+        </button>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={onQuickMoveToB}
+          disabled={!slotLocations.includes('A')}
+          aria-label="Move highest A electron to B"
+          title="→ B"
+        >
+          →B
+        </button>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={onQuickMoveToA}
+          disabled={!slotLocations.includes('B')}
+          aria-label="Move highest B electron to A"
+          title="← A"
+        >
+          ←A
+        </button>
+        <div className={s.topPlaybackSpeed}>
+          <SliderRow
+            label="speed"
+            value={speedMult}
+            min={0.5}
+            max={6}
+            step={0.5}
+            onChange={setSpeedMult}
+            format={(v) => `${v}×`}
+          />
+        </div>
+      </div>
+
+      {/* Right-edge dock + panel stack. Toggleable category panels
+          (Electrons / Colors / Dimensions / Scene). Multiple may be
+          open simultaneously. */}
       <div className={s.dock} aria-label="Panels">
         {PANEL_DEFINITIONS.map(({ key, icon, label }) => (
           <button
@@ -1821,90 +1903,7 @@ export function LabsAtomMotion() {
               </button>
             </div>
             <div className={s.panelBody}>
-              {key === 'playback' ? (
-                <>
-                  <div className={s.panelRow}>
-                    <button
-                      type="button"
-                      className={`${s.btn} ${s.btnIcon}`}
-                      onClick={() => setPaused((p) => !p)}
-                      aria-label={paused ? 'Play' : 'Pause'}
-                      title={paused ? 'Play' : 'Pause'}
-                    >
-                      {paused ? '▶' : '‖'}
-                    </button>
-                    <button
-                      type="button"
-                      className={`${s.btn} ${s.btnIcon} ${autoReplay ? s.btnActive : ''}`}
-                      onClick={() => setAutoReplay((v) => !v)}
-                      aria-label={autoReplay ? 'Disable loop' : 'Enable loop'}
-                      title={autoReplay ? 'Loop on' : 'Loop off'}
-                    >
-                      {autoReplay ? '↻' : '○'}
-                    </button>
-                    <button
-                      type="button"
-                      className={`${s.btn} ${s.btnIcon}`}
-                      onClick={onRefresh}
-                      aria-label="Refresh — reset everything"
-                      title="Refresh"
-                    >
-                      ⟲
-                    </button>
-                  </div>
-                  <div className={s.panelRow}>
-                    <button
-                      type="button"
-                      className={`${s.btn} ${s.btnIcon}`}
-                      onClick={onQuickAdd}
-                      disabled={!slotLocations.includes('none')}
-                      aria-label="Add electron to next empty orbit"
-                      title="Add electron"
-                    >
-                      +
-                    </button>
-                    <button
-                      type="button"
-                      className={`${s.btn} ${s.btnIcon}`}
-                      onClick={onQuickRemove}
-                      disabled={highestOccupied === -1}
-                      aria-label="Remove highest electron"
-                      title="Remove electron"
-                    >
-                      −
-                    </button>
-                    <button
-                      type="button"
-                      className={`${s.btn} ${s.btnIcon}`}
-                      onClick={onQuickMoveToB}
-                      disabled={!slotLocations.includes('A')}
-                      aria-label="Move highest A electron to B"
-                      title="→ B"
-                    >
-                      →B
-                    </button>
-                    <button
-                      type="button"
-                      className={`${s.btn} ${s.btnIcon}`}
-                      onClick={onQuickMoveToA}
-                      disabled={!slotLocations.includes('B')}
-                      aria-label="Move highest B electron to A"
-                      title="← A"
-                    >
-                      ←A
-                    </button>
-                  </div>
-                  <SliderRow
-                    label="speed"
-                    value={speedMult}
-                    min={0.5}
-                    max={6}
-                    step={0.5}
-                    onChange={setSpeedMult}
-                    format={(v) => `${v}×`}
-                  />
-                </>
-              ) : key === 'colors' ? (
+              {key === 'colors' ? (
                 <>
                   <div className={s.subSection}>
                     <div className={s.subSectionLabel}>Electrons</div>
