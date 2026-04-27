@@ -75,8 +75,8 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Matches Preset 1.
-const DEFAULT_CAMERA_POS: [number, number, number] = [33.4, 7.12, 5.41]
-const DEFAULT_CAMERA_TARGET: [number, number, number] = [3.46, -5.19, 0.41]
+const DEFAULT_CAMERA_POS: [number, number, number] = [26.19, 15.45, -2.66]
+const DEFAULT_CAMERA_TARGET: [number, number, number] = [2.35, -2.33, 0.65]
 const FOV_DEG = 50
 
 const INITIAL_POINT_A: Vec3 = [-14.7, 0, 0]
@@ -735,19 +735,19 @@ type Preset = {
 const PRESETS: Preset[] = [
   {
     name: '1',
-    electronColors: ['#ffdbd8', '#ffdbd8', '#ffdbd8', '#ffdbd8'],
-    bgColor: '#240c00',
-    spread: 12.8,
+    electronColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
+    bgColor: '#59004c',
+    spread: 14.7,
     speed: 4.5,
     loop: true,
-    showNuclei: true,
+    showNuclei: false,
     showAxis: false,
     theme: 'dark',
-    camPos: [35.3, 12.35, -7.55],
-    camTgt: [2.51, -4, 0.28],
-    headScale: 0.16,
-    haloScale: 1.7,
-    trailWidth: 0.16,
+    camPos: [26.19, 15.45, -2.66],
+    camTgt: [2.35, -2.33, 0.65],
+    headScale: 0.08,
+    haloScale: 1.1,
+    trailWidth: 0.09,
   },
   {
     name: '2',
@@ -871,14 +871,14 @@ export function LabsAtomMotion() {
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
   const [showNuclei, setShowNuclei] = useState(false)
   const [showAxis, setShowAxis] = useState(false)
-  const [uiHidden, setUiHidden] = useState(false)
+  const [uiHidden, setUiHidden] = useState(true)
   const [electronColors, setElectronColors] = useState<string[]>(() =>
     ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
   )
   const [bgColor, setBgColor] = useState('#59004c')
   const [headScale, setHeadScale] = useState(0.08)
   const [haloScale, setHaloScale] = useState(1.1)
-  const [trailWidth, setTrailWidth] = useState(0.07)
+  const [trailWidth, setTrailWidth] = useState(0.09)
   const [theme, setTheme] = useTheme()
   const palette = THEME_PALETTE[theme]
 
