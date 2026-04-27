@@ -124,6 +124,11 @@ function makeSoftOrbTexture(): THREE.CanvasTexture {
 type Existence = 'idle' | 'visible'
 type MotionPhase = 'orbitA' | 'travelAB' | 'orbitB' | 'travelBA'
 
+// Per-electron membership: not present, on atom A, or on atom B.
+// Slot index is the electron's permanent identity 1..16. Holes are
+// allowed; the user picks which slots are occupied and on which atom.
+type SlotLocation = 'none' | 'A' | 'B'
+
 type ElectronSpec = {
   upHat: Vec3
   cwAtA: boolean
@@ -1020,9 +1025,21 @@ function useTheme(): [ThemeName, (next: ThemeName) => void] {
 export function LabsAtomMotion() {
   const [pointA, setPointA] = useState<Vec3>(INITIAL_POINT_A)
   const [pointB, setPointB] = useState<Vec3>(INITIAL_POINT_B)
-  // Design count (slider, preset-applied). Specs recompute on change.
-  // Default = 0 (empty stage; user adds electrons manually).
-  const [targetN, setTargetN] = useState(0)
+  // Source of truth for electron membership. Each entry = slot k+1's
+  // location ∈ {'none','A','B'}. Replaces the prior scalar `targetN`.
+  // Default = all 'none' (empty stage; user adds electrons manually).
+  // For Chunk 1 the existing UI keeps the legacy "fill prefix on A"
+  // semantic — count pills, +/-, and presets pack slots [0..N-1] = 'A'.
+  // The slot grid + per-slot picking land in Chunk 5.
+  const [slotLocations, setSlotLocations] = useState<SlotLocation[]>(
+    () => new Array(MAX_ELECTRONS).fill('none' as SlotLocation),
+  )
+  // Derived design count: number of slots currently flagged 'A'. Stands
+  // in for the prior `targetN` everywhere downstream.
+  const targetN = useMemo(
+    () => slotLocations.reduce((n, s) => (s === 'A' ? n + 1 : n), 0),
+    [slotLocations],
+  )
   // Visible count animates 0 → targetN during intro.
   const [visibleCount, setVisibleCount] = useState(0)
   // Bump to re-trigger the intro stagger (replay button).
@@ -1118,35 +1135,44 @@ export function LabsAtomMotion() {
     setIntroNonce((n) => n + 1)
   }, [])
   const onAddOne = useCallback(() => {
-    setTargetN((n) => {
-      const next = nextCountStep(n)
-      if (next === null) return n
-      // Bump only the NEW slots' startSeeds. Existing electrons keep
-      // their phase; their orbital planes redistribute symmetrically.
-      // Phase-spacing is handled separately by the count-pill row,
-      // which fires the full intro stagger for equidistant placement.
-      setStartSeeds((prev) => {
-        const seeds = prev.slice()
-        for (let i = n; i < next; i++) seeds[i] = (seeds[i] ?? 0) + 1
+    setSlotLocations((prev) => {
+      const currentN = prev.reduce((n, s) => (s === 'A' ? n + 1 : n), 0)
+      const next = nextCountStep(currentN)
+      if (next === null) return prev
+      const out = prev.slice()
+      // Pack the new slots into [currentN..next-1] = 'A'. Slot identity
+      // is the array index; existing 'A' slots in [0..currentN-1] keep
+      // their slot. Bump only the NEW slots' startSeeds. Existing
+      // electrons keep their phase; their orbital planes redistribute
+      // symmetrically. Phase-spacing is handled separately by the
+      // count-pill row, which fires the full intro stagger.
+      for (let i = currentN; i < next; i++) out[i] = 'A'
+      setStartSeeds((prev2) => {
+        const seeds = prev2.slice()
+        for (let i = currentN; i < next; i++) seeds[i] = (seeds[i] ?? 0) + 1
         return seeds
       })
       setVisibleCount(next)
-      return next
+      return out
     })
   }, [])
   const onRemoveOne = useCallback(() => {
-    setTargetN((n) => {
-      const next = prevCountStep(n)
-      if (next === null) return n
-      // No startSeed bumps — surviving electrons in [0, next) keep
-      // their current phase. Removed electrons (i >= next) fade out
-      // via existence='idle'. Planes redistribute symmetrically.
+    setSlotLocations((prev) => {
+      const currentN = prev.reduce((n, s) => (s === 'A' ? n + 1 : n), 0)
+      const next = prevCountStep(currentN)
+      if (next === null) return prev
+      const out = prev.slice()
+      // Vacate slots [next..currentN-1]. No startSeed bumps —
+      // surviving electrons in [0..next-1) keep their current phase.
+      // Removed electrons (i >= next) fade out via existence='idle'.
+      for (let i = next; i < currentN; i++) out[i] = 'none'
       setVisibleCount(next)
       setNextTravelIndex((idx) => Math.min(idx, next - 1))
-      return next
+      return out
     })
   }, [])
   const onEnd = useCallback(() => {
+    setSlotLocations(new Array(MAX_ELECTRONS).fill('none' as SlotLocation))
     setVisibleCount(0)
     setTravelCounts(new Array(MAX_ELECTRONS).fill(0))
     setNextTravelIndex(0)
@@ -1275,7 +1301,12 @@ export function LabsAtomMotion() {
     setHeadScale(p.headScale)
     setHaloScale(p.haloScale)
     setTrailWidth(p.trailWidth)
-    setTargetN(p.electronCount)
+    setSlotLocations(() => {
+      const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
+      const n = Math.max(0, Math.min(MAX_ELECTRONS, p.electronCount))
+      for (let i = 0; i < n; i++) out[i] = 'A'
+      return out
+    })
     const ctrl = orbitControlsRef.current
     if (ctrl?.object?.position && ctrl?.target) {
       ctrl.object.position.set(p.camPos[0], p.camPos[1], p.camPos[2])
@@ -1655,7 +1686,12 @@ export function LabsAtomMotion() {
                 onClick={() => {
                   // Picking a count = fresh setup. Fire the intro stagger
                   // to that N; the intro effect re-arms first-setup mode.
-                  setTargetN(n)
+                  setSlotLocations(() => {
+                    const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
+                    const next = Math.max(0, Math.min(MAX_ELECTRONS, n))
+                    for (let i = 0; i < next; i++) out[i] = 'A'
+                    return out
+                  })
                   setIntroNonce((nonce) => nonce + 1)
                 }}
                 aria-label={`Set ${n} electrons`}
