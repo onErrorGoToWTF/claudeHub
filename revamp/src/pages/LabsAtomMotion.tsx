@@ -1072,9 +1072,9 @@ export function LabsAtomMotion() {
   const [interacting, setInteracting] = useState(false)
   const interactingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const [bgColor, setBgColor] = useState('#59004c')
-  const [headScale, setHeadScale] = useState(0.05)
-  const [haloScale, setHaloScale] = useState(0.8)
-  const [trailWidth, setTrailWidth] = useState(0.07)
+  const [headScale, setHeadScale] = useState(0.03)
+  const [haloScale, setHaloScale] = useState(0.0)
+  const [trailWidth, setTrailWidth] = useState(0.03)
   const [theme, setTheme] = useTheme()
   const palette = THEME_PALETTE[theme]
 
@@ -1705,8 +1705,8 @@ export function LabsAtomMotion() {
           <span className={s.tiltSliderLabel}>{`head  ${headScale.toFixed(2)}`}</span>
           <input
             type="range"
-            min={0.04}
-            max={0.30}
+            min={0.0}
+            max={0.50}
             step={0.01}
             value={headScale}
             onChange={(e) => setHeadScale(parseFloat(e.currentTarget.value))}
@@ -1718,8 +1718,8 @@ export function LabsAtomMotion() {
           <span className={s.tiltSliderLabel}>{`halo  ${haloScale.toFixed(1)}`}</span>
           <input
             type="range"
-            min={0.8}
-            max={3.0}
+            min={0.0}
+            max={5.0}
             step={0.1}
             value={haloScale}
             onChange={(e) => setHaloScale(parseFloat(e.currentTarget.value))}
@@ -1731,8 +1731,8 @@ export function LabsAtomMotion() {
           <span className={s.tiltSliderLabel}>{`trail  ${trailWidth.toFixed(2)}`}</span>
           <input
             type="range"
-            min={0.04}
-            max={0.30}
+            min={0.0}
+            max={0.50}
             step={0.01}
             value={trailWidth}
             onChange={(e) => setTrailWidth(parseFloat(e.currentTarget.value))}
