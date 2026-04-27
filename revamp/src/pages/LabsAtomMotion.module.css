@@ -542,3 +542,106 @@
 .dragHandle:active {
   cursor: grabbing;
 }
+
+/* --- 5-panel system (right-edge dock + stack) ------------------------- */
+/* Dock: vertical column of category icons on the right edge. Each icon
+   toggles its panel independently — multiple panels may be open at once.
+   Panel stack: glass cards stacked top-to-bottom on the right edge,
+   positioned to the left of the dock so the icons stay visible.
+   Sits below the appearance cluster (which is at top-right + 12px) so
+   the two clusters do not overlap during the legacy-controls migration. */
+
+.dock {
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 64px);
+  right: 12px;
+  z-index: 9994;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dockBtn {
+  /* Inherits .btn + .btnIcon. Dock-specific tweaks live here. */
+}
+
+.panelStack {
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 64px);
+  right: calc(12px + 36px + 8px); /* dock width + gap */
+  z-index: 9993;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 96px);
+  overflow-y: auto;
+  pointer-events: none;
+}
+
+.panelStack > * {
+  pointer-events: auto;
+}
+
+.panel {
+  width: min(280px, calc(100vw - 24px - 36px - 8px));
+  padding: 10px 12px 12px;
+  background: var(--lab-panel-bg);
+  border: 1px solid var(--lab-panel-border);
+  border-radius: 14px;
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--lab-panel-border);
+}
+
+.panelTitle {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--lab-ink);
+  text-transform: lowercase;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.panelClose {
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  border: none;
+  background: transparent;
+  color: var(--lab-meta);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.panelClose:active {
+  background: var(--lab-btn-active);
+}
+
+.panelBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: var(--lab-meta);
+}
+
+.panelEmpty {
+  font-style: italic;
+  text-align: center;
+  padding: 8px 0;
+}

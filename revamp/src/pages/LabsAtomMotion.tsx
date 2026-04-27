@@ -129,6 +129,17 @@ type MotionPhase = 'orbitA' | 'travelAB' | 'orbitB' | 'travelBA'
 // allowed; the user picks which slots are occupied and on which atom.
 type SlotLocation = 'none' | 'A' | 'B'
 
+// Identifiers for the new 5-panel system (chunks 3+).
+type PanelKey = 'playback' | 'electrons' | 'colors' | 'dimensions' | 'scene'
+
+const PANEL_DEFINITIONS: { key: PanelKey; icon: string; label: string; chunk: number }[] = [
+  { key: 'playback', icon: '▶', label: 'Playback', chunk: 4 },
+  { key: 'electrons', icon: '⚛', label: 'Electrons', chunk: 5 },
+  { key: 'colors', icon: '◐', label: 'Colors', chunk: 6 },
+  { key: 'dimensions', icon: '⊞', label: 'Dimensions', chunk: 7 },
+  { key: 'scene', icon: '⊙', label: 'Scene', chunk: 8 },
+]
+
 type ElectronSpec = {
   upHat: Vec3
   cwAtA: boolean
@@ -1058,6 +1069,19 @@ export function LabsAtomMotion() {
   const [showAxis, setShowAxis] = useState(false)
   const [uiHidden, setUiHidden] = useState(true)
   const [playbackOpen, setPlaybackOpen] = useState(true)
+  // New 5-panel system (chunks 3+). Each dock icon toggles its panel
+  // independently; multiple panels may be open simultaneously. Panel
+  // bodies are placeholders in chunk 3 — controls migrate in 4-8.
+  const [panelsOpen, setPanelsOpen] = useState<Record<PanelKey, boolean>>({
+    playback: false,
+    electrons: false,
+    colors: false,
+    dimensions: false,
+    scene: false,
+  })
+  const togglePanel = useCallback((key: PanelKey) => {
+    setPanelsOpen((prev) => ({ ...prev, [key]: !prev[key] }))
+  }, [])
   // Color mode + per-mode state. electronColors is derived below.
   const [colorMode, setColorMode] = useState<ColorMode>('individual')
   const [solidColor, setSolidColor] = useState('#ffa57d')
@@ -1549,6 +1573,47 @@ export function LabsAtomMotion() {
           aria-label="Background color"
           title="Background color"
         />
+      </div>
+
+      {/* New 5-panel system (chunks 3+). Dock = right-edge column of icons.
+          Panel stack = right edge to the left of the dock. Each dock icon
+          toggles its panel independently. Panel bodies are placeholders
+          in chunk 3 — controls migrate from the legacy clusters in
+          chunks 4–8. */}
+      <div className={s.dock} aria-label="Panels">
+        {PANEL_DEFINITIONS.map(({ key, icon, label }) => (
+          <button
+            key={key}
+            type="button"
+            className={`${s.btn} ${s.btnIcon} ${s.dockBtn} ${panelsOpen[key] ? s.btnActive : ''}`}
+            onClick={() => togglePanel(key)}
+            aria-label={`Toggle ${label} panel`}
+            title={label}
+          >
+            {icon}
+          </button>
+        ))}
+      </div>
+      <div className={s.panelStack} aria-label="Open panels">
+        {PANEL_DEFINITIONS.map(({ key, label, chunk }) => panelsOpen[key] ? (
+          <div key={key} className={s.panel}>
+            <div className={s.panelHeader}>
+              <span className={s.panelTitle}>{label}</span>
+              <button
+                type="button"
+                className={s.panelClose}
+                onClick={() => togglePanel(key)}
+                aria-label={`Close ${label} panel`}
+                title="Close"
+              >
+                ×
+              </button>
+            </div>
+            <div className={s.panelBody}>
+              <span className={s.panelEmpty}>{`Migrating in chunk ${chunk}…`}</span>
+            </div>
+          </div>
+        ) : null)}
       </div>
 
       {paletteOpen && (
