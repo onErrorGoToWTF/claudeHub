@@ -986,6 +986,7 @@ const THEME_KEY = 'labs-atom-motion-theme'
 
 const THEME_PALETTE: Record<ThemeName, {
   ink: string
+  nucleus: string
   axisX: string
   axisY: string
   axisZ: string
@@ -993,6 +994,7 @@ const THEME_PALETTE: Record<ThemeName, {
 }> = {
   light: {
     ink: '#141312',
+    nucleus: '#ffffff',
     axisX: '#c45050',
     axisY: '#3d8f3d',
     axisZ: '#4a55c4',
@@ -1000,6 +1002,7 @@ const THEME_PALETTE: Record<ThemeName, {
   },
   dark: {
     ink: '#ffffff',
+    nucleus: '#ffffff',
     axisX: '#ff8a8a',
     axisY: '#8aff8a',
     axisZ: '#8a8aff',
@@ -1203,9 +1206,9 @@ const PRESETS: Preset[] = [
 
 function useTheme(): [ThemeName, (next: ThemeName) => void] {
   const [theme, setTheme] = useState<ThemeName>(() => {
-    if (typeof localStorage === 'undefined') return 'dark'
+    if (typeof localStorage === 'undefined') return 'light'
     const stored = localStorage.getItem(THEME_KEY)
-    return stored === 'light' ? 'light' : 'dark'
+    return stored === 'dark' ? 'dark' : 'light'
   })
   const update = useCallback((next: ThemeName) => {
     setTheme(next)
@@ -1679,7 +1682,7 @@ export function LabsAtomMotion() {
                 opacity={palette.axisOpacity}
               />
             )}
-            {(showNuclei || interacting) && <Nuclei chordHalf={chordHalf} color={palette.ink} />}
+            {(showNuclei || interacting) && <Nuclei chordHalf={chordHalf} color={palette.nucleus} />}
             <DimensionMarker
               pointA={[-chordHalf, 0, 0]}
               pointB={[chordHalf, 0, 0]}
