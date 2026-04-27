@@ -75,12 +75,12 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Matches Preset 1.
-const DEFAULT_CAMERA_POS: [number, number, number] = [26.19, 15.45, -2.66]
-const DEFAULT_CAMERA_TARGET: [number, number, number] = [2.35, -2.33, 0.65]
+const DEFAULT_CAMERA_POS: [number, number, number] = [-18.69, 12.91, -4.52]
+const DEFAULT_CAMERA_TARGET: [number, number, number] = [0.83, -2.96, 1.15]
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-14.7, 0, 0]
-const INITIAL_POINT_B: Vec3 = [14.7, 0, 0]
+const INITIAL_POINT_A: Vec3 = [-8.6, 0, 0]
+const INITIAL_POINT_B: Vec3 = [8.6, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -737,14 +737,14 @@ const PRESETS: Preset[] = [
     name: '1',
     electronColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
     bgColor: '#59004c',
-    spread: 14.7,
+    spread: 8.6,
     speed: 4.5,
     loop: true,
-    showNuclei: false,
+    showNuclei: true,
     showAxis: false,
     theme: 'dark',
-    camPos: [26.19, 15.45, -2.66],
-    camTgt: [2.35, -2.33, 0.65],
+    camPos: [-18.69, 12.91, -4.52],
+    camTgt: [0.83, -2.96, 1.15],
     headScale: 0.08,
     haloScale: 1.1,
     trailWidth: 0.09,
@@ -869,7 +869,7 @@ export function LabsAtomMotion() {
     new Array(MAX_ELECTRONS).fill(0),
   )
   const [nextTravelIndex, setNextTravelIndex] = useState(0)
-  const [showNuclei, setShowNuclei] = useState(false)
+  const [showNuclei, setShowNuclei] = useState(true)
   const [showAxis, setShowAxis] = useState(false)
   const [uiHidden, setUiHidden] = useState(true)
   const [electronColors, setElectronColors] = useState<string[]>(() =>
