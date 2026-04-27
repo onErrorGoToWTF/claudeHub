@@ -90,19 +90,33 @@ const COMMIT: string =
 // readable as a "pulse of energy" instead of a flat lit ball.
 const HEAD_SPRITE_SCALE = 0.16
 
-// Generates a soft radial-gradient texture for electron heads — bright
-// white core fading to fully transparent edge. White RGB is tinted by
-// SpriteMaterial.color (per-electron), so this is shared across all 4.
+// Generates a multi-ring radial texture for electron heads — bright hot
+// core, alternating dim/bright shells, soft outer fade. Sized 512×512 so
+// deep-zoom views render with crisp internal structure; at zoom-out the
+// rings smear into a clean glow. White RGB is tinted by SpriteMaterial
+// .color (per-electron), so this texture is shared across all 4.
 function makeSoftOrbTexture(): THREE.CanvasTexture {
-  const size = 128
+  const size = 512
   const canvas = document.createElement('canvas')
   canvas.width = canvas.height = size
   const ctx = canvas.getContext('2d')!
   const c = size / 2
   const g = ctx.createRadialGradient(c, c, 0, c, c, c)
-  g.addColorStop(0, 'rgba(255, 255, 255, 1)')
-  g.addColorStop(0.35, 'rgba(255, 255, 255, 0.55)')
-  g.addColorStop(1, 'rgba(255, 255, 255, 0)')
+  // Sharp core
+  g.addColorStop(0.00, 'rgba(255, 255, 255, 1.00)')
+  g.addColorStop(0.10, 'rgba(255, 255, 255, 1.00)')
+  // First dim band
+  g.addColorStop(0.14, 'rgba(255, 255, 255, 0.40)')
+  g.addColorStop(0.22, 'rgba(255, 255, 255, 0.40)')
+  // Bright ring
+  g.addColorStop(0.26, 'rgba(255, 255, 255, 0.80)')
+  g.addColorStop(0.34, 'rgba(255, 255, 255, 0.80)')
+  // Second dim band
+  g.addColorStop(0.38, 'rgba(255, 255, 255, 0.28)')
+  g.addColorStop(0.55, 'rgba(255, 255, 255, 0.28)')
+  // Outer fade
+  g.addColorStop(0.78, 'rgba(255, 255, 255, 0.10)')
+  g.addColorStop(1.00, 'rgba(255, 255, 255, 0.00)')
   ctx.fillStyle = g
   ctx.fillRect(0, 0, size, size)
   const tex = new THREE.CanvasTexture(canvas)
