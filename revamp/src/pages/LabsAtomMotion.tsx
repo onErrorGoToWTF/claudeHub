@@ -1496,7 +1496,7 @@ export function LabsAtomMotion() {
                   speedMult={effectiveSpeedMult}
                   chordHalf={chordHalf}
                   orbitSize={orbitSize}
-                  existence={i < visibleCount ? 'visible' : 'idle'}
+                  existence={slotLocations[i] !== 'none' ? 'visible' : 'idle'}
                   travelCount={travelCounts[i] ?? 0}
                   startSeed={startSeeds[i] ?? 0}
                   trailColor={c}
