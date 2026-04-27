@@ -392,6 +392,7 @@ function ElectronProbe({
   orbitSize,
   existence,
   travelCount,
+  atom,
   startSeed,
   trailColor,
   color,
@@ -409,7 +410,12 @@ function ElectronProbe({
   chordHalf: number
   orbitSize: number
   existence: Existence
+  /** Legacy round-trip trigger; bumping = single transit at next far-tip wrap. */
   travelCount: number
+  /** Target atom — when this differs from the probe's current orbit side,
+   *  the probe transits at the next far-tip wrap. The two triggers
+   *  (travelCount and atom) are OR-combined during the chunk-5 transition. */
+  atom: 'A' | 'B'
   startSeed: number
   trailColor: string
   color: string
@@ -552,12 +558,16 @@ function ElectronProbe({
       const wrapped = prevLocalT > 1e-3 && dPrev > dCurr && dPrev - dCurr > ORBIT_PERIOD / 2
       if (wrapped) {
         lapsInPhaseRef.current += 1
-        // Probe-level auto-loop trigger removed. Travel only fires when
-        // the parent bumps travelCount — the parent uses interleaved
-        // perpendicular-first order for loop ticks. Manual ⇋ travel
-        // also uses the same channel.
+        // Two transit triggers (OR-combined during the chunk-5 transition):
+        //   - Legacy `travelCount` bump — single transit per bump. Used
+        //     by the autoReplay loop and the legacy ⇋ button.
+        //   - `atom` prop differs from the probe's current orbit side —
+        //     transit toward the new target atom. Used by the slot grid
+        //     in chunk 5e and by the eventual loop refactor in 5d-2.
         const newTravel = travelCount > lastTravelCountRef.current
-        if (newTravel) {
+        const currentAtom: 'A' | 'B' = phase === 'orbitA' ? 'A' : 'B'
+        const wantsAtomSwitch = atom !== currentAtom
+        if (newTravel || wantsAtomSwitch) {
           phase = phase === 'orbitA' ? 'travelAB' : 'travelBA'
           phaseRef.current = phase
           phaseElapsedRef.current = 0
@@ -1498,6 +1508,7 @@ export function LabsAtomMotion() {
                   orbitSize={orbitSize}
                   existence={slotLocations[i] !== 'none' ? 'visible' : 'idle'}
                   travelCount={travelCounts[i] ?? 0}
+                  atom={slotLocations[i] === 'B' ? 'B' : 'A'}
                   startSeed={startSeeds[i] ?? 0}
                   trailColor={c}
                   color={c}
