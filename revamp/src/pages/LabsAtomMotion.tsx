@@ -1394,8 +1394,6 @@ export function LabsAtomMotion() {
         />
       </div>
 
-      {!uiHidden && (
-      <>
       {paletteOpen && (
         <>
           <div className={s.paletteBackdrop} onClick={() => setPaletteOpen(false)} />
@@ -1474,6 +1472,8 @@ export function LabsAtomMotion() {
         </>
       )}
 
+      {!uiHidden && (
+      <>
       {/* Single transparent control panel — drag canvas to rotate, pinch to zoom. */}
       <div className={s.unifiedPanel} aria-label="Atom motion controls">
         <div className={s.tiltSliderRow}>
