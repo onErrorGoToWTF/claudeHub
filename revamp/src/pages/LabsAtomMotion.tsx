@@ -75,12 +75,12 @@ const SPEED_SCALE = 0.5
 const ORBIT_ASPECT = 1.0
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Matches Preset 1.
-const DEFAULT_CAMERA_POS: [number, number, number] = [-18.69, 12.91, -4.52]
-const DEFAULT_CAMERA_TARGET: [number, number, number] = [0.83, -2.96, 1.15]
+const DEFAULT_CAMERA_POS: [number, number, number] = [-17.87, 7.26, -3.71]
+const DEFAULT_CAMERA_TARGET: [number, number, number] = [1.16, -2.52, 1.28]
 const FOV_DEG = 50
 
-const INITIAL_POINT_A: Vec3 = [-8.6, 0, 0]
-const INITIAL_POINT_B: Vec3 = [8.6, 0, 0]
+const INITIAL_POINT_A: Vec3 = [-8.5, 0, 0]
+const INITIAL_POINT_B: Vec3 = [8.5, 0, 0]
 
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
@@ -834,21 +834,41 @@ function preset(
 
 const PRESETS: Preset[] = [
   preset({
+    // Default page state — empty stage, loop off. User adds electrons
+    // manually via + and triggers transits manually via ⇋.
+    name: '0',
+    electronCount: 0,
+    individualColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
+    bgColor: '#59004c',
+    spread: 8.5,
+    speed: 3.5,
+    loop: false,
+    showNuclei: true,
+    showAxis: false,
+    theme: 'dark',
+    camPos: [-17.87, 7.26, -3.71],
+    camTgt: [1.16, -2.52, 1.28],
+    headScale: 0.05,
+    haloScale: 0.8,
+    trailWidth: 0.07,
+  }),
+  preset({
+    // Same as 0 but pre-populated with 4 electrons.
     name: '1',
     electronCount: 4,
     individualColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
     bgColor: '#59004c',
-    spread: 8.6,
-    speed: 4.5,
-    loop: true,
+    spread: 8.5,
+    speed: 3.5,
+    loop: false,
     showNuclei: true,
     showAxis: false,
     theme: 'dark',
-    camPos: [-18.69, 12.91, -4.52],
-    camTgt: [0.83, -2.96, 1.15],
-    headScale: 0.08,
-    haloScale: 1.1,
-    trailWidth: 0.09,
+    camPos: [-17.87, 7.26, -3.71],
+    camTgt: [1.16, -2.52, 1.28],
+    headScale: 0.05,
+    haloScale: 0.8,
+    trailWidth: 0.07,
   }),
   preset({
     name: '2',
@@ -937,25 +957,6 @@ const PRESETS: Preset[] = [
     haloScale: 1.1,
     trailWidth: 0.07,
   }),
-  preset({
-    name: '7',
-    // Empty stage — start with 0 electrons, user adds via the + button.
-    // Loop off so transits only fire on explicit ⇋ taps.
-    electronCount: 0,
-    individualColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
-    bgColor: '#59004c',
-    spread: 8.6,
-    speed: 4.5,
-    loop: false,
-    showNuclei: true,
-    showAxis: false,
-    theme: 'dark',
-    camPos: [-18.69, 12.91, -4.52],
-    camTgt: [0.83, -2.96, 1.15],
-    headScale: 0.08,
-    haloScale: 1.1,
-    trailWidth: 0.09,
-  }),
 ]
 
 function useTheme(): [ThemeName, (next: ThemeName) => void] {
@@ -977,14 +978,15 @@ export function LabsAtomMotion() {
   const [pointA, setPointA] = useState<Vec3>(INITIAL_POINT_A)
   const [pointB, setPointB] = useState<Vec3>(INITIAL_POINT_B)
   // Design count (slider, preset-applied). Specs recompute on change.
-  const [targetN, setTargetN] = useState(4)
+  // Default = 0 (empty stage; user adds electrons manually).
+  const [targetN, setTargetN] = useState(0)
   // Visible count animates 0 → targetN during intro.
   const [visibleCount, setVisibleCount] = useState(0)
   // Bump to re-trigger the intro stagger (replay button).
   const [introNonce, setIntroNonce] = useState(0)
   const [introActive, setIntroActive] = useState(true)
-  const [autoReplay, setAutoReplay] = useState(true)
-  const [speedMult, setSpeedMult] = useState(4.5)
+  const [autoReplay, setAutoReplay] = useState(false)
+  const [speedMult, setSpeedMult] = useState(3.5)
   const [startSeeds, setStartSeeds] = useState<number[]>(() =>
     new Array(MAX_ELECTRONS).fill(0),
   )
@@ -1009,9 +1011,9 @@ export function LabsAtomMotion() {
   const [interacting, setInteracting] = useState(false)
   const interactingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const [bgColor, setBgColor] = useState('#59004c')
-  const [headScale, setHeadScale] = useState(0.08)
-  const [haloScale, setHaloScale] = useState(1.1)
-  const [trailWidth, setTrailWidth] = useState(0.09)
+  const [headScale, setHeadScale] = useState(0.05)
+  const [haloScale, setHaloScale] = useState(0.8)
+  const [trailWidth, setTrailWidth] = useState(0.07)
   const [theme, setTheme] = useTheme()
   const palette = THEME_PALETTE[theme]
 
