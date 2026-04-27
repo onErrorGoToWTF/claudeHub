@@ -697,6 +697,53 @@
   background: var(--lab-btn-active);
 }
 
+/* --- Slider precision pattern (tap value → reveal ± nudge) ---------- */
+/* Default state: clean slider only. Tapping the value label reveals
+   inline ± buttons that step by the slider's `step`. Pattern applies
+   to every slider via the SliderRow component (Chunk 7). */
+
+.sliderLabelGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.sliderValueButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: var(--lab-ink);
+  text-align: left;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
+}
+
+.sliderNudge {
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  border: 1px solid var(--lab-panel-border);
+  background: var(--lab-btn-bg);
+  color: var(--lab-ink);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.sliderNudge:active {
+  background: var(--lab-btn-active);
+}
+
 /* --- Background gradient mode override on root ----------------------- */
 /* When the user picks "Gradient" in the Colors panel, swap the default
    165deg tonal blend for a clean top→bottom two-stop gradient between

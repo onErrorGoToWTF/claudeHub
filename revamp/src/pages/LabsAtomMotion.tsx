@@ -132,6 +132,79 @@ type SlotLocation = 'none' | 'A' | 'B'
 // Identifiers for the new 5-panel system (chunks 3+).
 type PanelKey = 'playback' | 'electrons' | 'colors' | 'dimensions' | 'scene'
 
+// Reusable slider row with tap-to-reveal ± nudge buttons (Chunk 7).
+// Default state: clean slider only. Tapping the value label toggles
+// inline ± buttons that step by `step`. The button-style label keeps
+// the underlying value-text accessible while serving as the tap target.
+function SliderRow({
+  label,
+  value,
+  min,
+  max,
+  step,
+  onChange,
+  format,
+}: {
+  label: string
+  value: number
+  min: number
+  max: number
+  step: number
+  onChange: (v: number) => void
+  format?: (v: number) => string
+}) {
+  const [nudgeOpen, setNudgeOpen] = useState(false)
+  const display = format ? format(value) : String(value)
+  // Round step-aligned arithmetic to avoid 0.03 + 0.01 = 0.04000000000001.
+  const stepDecimals = step < 1 ? Math.max(0, -Math.floor(Math.log10(step)) + 1) : 0
+  const stepClamp = (v: number) => +Math.max(min, Math.min(max, v)).toFixed(stepDecimals)
+  return (
+    <div className={s.tiltSliderRow}>
+      <div className={s.sliderLabelGroup}>
+        <button
+          type="button"
+          className={s.sliderValueButton}
+          onClick={() => setNudgeOpen((v) => !v)}
+          aria-label={`${label} ${display}. Tap to toggle nudge buttons.`}
+          aria-expanded={nudgeOpen}
+        >
+          {`${label}  ${display}`}
+        </button>
+        {nudgeOpen && (
+          <>
+            <button
+              type="button"
+              className={s.sliderNudge}
+              onClick={() => onChange(stepClamp(value - step))}
+              aria-label={`Decrease ${label}`}
+            >
+              −
+            </button>
+            <button
+              type="button"
+              className={s.sliderNudge}
+              onClick={() => onChange(stepClamp(value + step))}
+              aria-label={`Increase ${label}`}
+            >
+              +
+            </button>
+          </>
+        )}
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(parseFloat(e.currentTarget.value))}
+        className={s.tiltSlider}
+        aria-label={label}
+      />
+    </div>
+  )
+}
+
 const PANEL_DEFINITIONS: { key: PanelKey; icon: string; label: string; chunk: number }[] = [
   { key: 'playback', icon: '▶', label: 'Playback', chunk: 4 },
   { key: 'electrons', icon: '⚛', label: 'Electrons', chunk: 5 },
@@ -1834,19 +1907,15 @@ export function LabsAtomMotion() {
                       ⟲
                     </button>
                   </div>
-                  <div className={s.tiltSliderRow}>
-                    <span className={s.tiltSliderLabel}>{`speed  ${speedMult}×`}</span>
-                    <input
-                      type="range"
-                      min={0.5}
-                      max={6}
-                      step={0.5}
-                      value={speedMult}
-                      onChange={(e) => setSpeedMult(parseFloat(e.currentTarget.value))}
-                      className={s.tiltSlider}
-                      aria-label="Animation speed"
-                    />
-                  </div>
+                  <SliderRow
+                    label="speed"
+                    value={speedMult}
+                    min={0.5}
+                    max={6}
+                    step={0.5}
+                    onChange={setSpeedMult}
+                    format={(v) => `${v}×`}
+                  />
                 </>
               ) : key === 'colors' ? (
                 <>
@@ -1987,6 +2056,36 @@ export function LabsAtomMotion() {
                       </div>
                     )}
                   </div>
+                </>
+              ) : key === 'dimensions' ? (
+                <>
+                  <SliderRow
+                    label="head"
+                    value={headScale}
+                    min={0.0}
+                    max={0.50}
+                    step={0.01}
+                    onChange={setHeadScale}
+                    format={(v) => v.toFixed(2)}
+                  />
+                  <SliderRow
+                    label="halo"
+                    value={haloScale}
+                    min={0.0}
+                    max={5.0}
+                    step={0.1}
+                    onChange={setHaloScale}
+                    format={(v) => v.toFixed(1)}
+                  />
+                  <SliderRow
+                    label="trail"
+                    value={trailWidth}
+                    min={0.0}
+                    max={0.50}
+                    step={0.01}
+                    onChange={setTrailWidth}
+                    format={(v) => v.toFixed(2)}
+                  />
                 </>
               ) : key === 'electrons' ? (
                 <>
