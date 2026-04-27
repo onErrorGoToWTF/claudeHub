@@ -1036,11 +1036,13 @@ export function LabsAtomMotion() {
     setTargetN((n) => {
       const next = nextCountStep(n)
       if (next === null) return n
-      // Bump startSeeds for all active slots so every probe reseeds at
-      // the new spec angles. Quick snap; no intro stagger.
+      // Only bump startSeeds for the NEW indices [n, next). Existing
+      // electrons keep their current phase; their orbital planes shift
+      // slightly to the new symmetric layout but they don't reseed.
+      // The new electrons enter at master-clock-synced angles.
       setStartSeeds((prev) => {
         const seeds = prev.slice()
-        for (let i = 0; i < next; i++) seeds[i] = (seeds[i] ?? 0) + 1
+        for (let i = n; i < next; i++) seeds[i] = (seeds[i] ?? 0) + 1
         return seeds
       })
       setVisibleCount(next)
@@ -1051,13 +1053,10 @@ export function LabsAtomMotion() {
     setTargetN((n) => {
       const next = prevCountStep(n)
       if (next === null) return n
-      setStartSeeds((prev) => {
-        const seeds = prev.slice()
-        for (let i = 0; i < next; i++) seeds[i] = (seeds[i] ?? 0) + 1
-        return seeds
-      })
+      // No startSeed bumps — surviving electrons in [0, next) keep
+      // their current phase. Removed electrons (i >= next) fade out
+      // via existence='idle'. Planes redistribute symmetrically.
       setVisibleCount(next)
-      // Reset travel cycle if it points past the new last index.
       setNextTravelIndex((idx) => Math.min(idx, next - 1))
       return next
     })
@@ -1080,11 +1079,14 @@ export function LabsAtomMotion() {
   }, [nextTravelIndex, visibleCount])
 
   // Intro choreography: stagger N=targetN electrons over ~14s total.
-  // Re-runs on targetN change (slider/preset) or introNonce bump (replay).
-  // Loop transits are gated off until all N are visible.
+  // Re-runs ONLY on introNonce bump (replay button) or initial mount.
+  // targetN read via ref so +/- and slider changes don't restart the
+  // animation — those just shift visibleCount/specs in place.
+  const targetNRef = useRef(targetN)
+  targetNRef.current = targetN
   useEffect(() => {
     let cancelled = false
-    const N = Math.max(1, Math.min(MAX_ELECTRONS, targetN))
+    const N = Math.max(1, Math.min(MAX_ELECTRONS, targetNRef.current))
     const total = 14000
     const interval = total / N
     setVisibleCount(0)
@@ -1109,7 +1111,7 @@ export function LabsAtomMotion() {
       cancelled = true
       timeouts.forEach(clearTimeout)
     }
-  }, [targetN, introNonce])
+  }, [introNonce])
 
   const setSpread = useCallback((newHalf: number) => {
     const mx = (pointA[0] + pointB[0]) / 2
@@ -1514,7 +1516,23 @@ export function LabsAtomMotion() {
             max={MAX_ELECTRONS}
             step={1}
             value={targetN}
-            onChange={(e) => setTargetN(parseInt(e.currentTarget.value, 10))}
+            onChange={(e) => {
+              const N = parseInt(e.currentTarget.value, 10)
+              setTargetN((prev) => {
+                // Bump only NEW slots' startSeeds so existing electrons
+                // keep their phase as planes redistribute.
+                if (N > prev) {
+                  setStartSeeds((seeds) => {
+                    const next = seeds.slice()
+                    for (let i = prev; i < N; i++) next[i] = (next[i] ?? 0) + 1
+                    return next
+                  })
+                }
+                return N
+              })
+              setVisibleCount(N)
+              setNextTravelIndex((idx) => Math.min(idx, Math.max(0, N - 1)))
+            }}
             className={s.tiltSlider}
             aria-label="Electron count"
           />
