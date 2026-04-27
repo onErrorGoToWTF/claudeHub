@@ -1129,10 +1129,31 @@ export function LabsAtomMotion() {
   // pause-prop wiring. The autoReplay setInterval also reads this so
   // travel ticks halt cleanly when paused.
   const effectiveSpeedMult = paused ? 0 : speedMult
-  const electronSpecs = useMemo(() => buildElectronSpecs(targetN), [targetN])
+  // Highest occupied slot index across BOTH atoms (or -1 if none).
+  // Drives the active layout — adding e_k for k ≥ current layout's
+  // capacity expands to the next sweet spot.
+  const highestOccupied = useMemo(() => {
+    for (let i = slotLocations.length - 1; i >= 0; i--) {
+      if (slotLocations[i] !== 'none') return i
+    }
+    return -1
+  }, [slotLocations])
+  // Smallest sweet spot ≥ (highestOccupied + 1). Sweet spots {1,2,4,8,16}
+  // are the configurations where the slot table forms a perpendicular /
+  // maximally-spread pattern. Layouts nest, so existing electrons keep
+  // their (plane, phase) coordinates as the layout grows.
+  const activeLayout = useMemo(() => {
+    const need = highestOccupied + 1
+    if (need <= 0) return 0
+    for (const sweet of [1, 2, 4, 8, 16] as const) {
+      if (sweet >= need) return sweet
+    }
+    return MAX_ELECTRONS
+  }, [highestOccupied])
+  const electronSpecs = useMemo(() => buildElectronSpecs(activeLayout), [activeLayout])
   const electronColors = useMemo(
-    () => deriveElectronColors(targetN, colorMode, solidColor, individualColors, gradientStart, gradientEnd),
-    [targetN, colorMode, solidColor, individualColors, gradientStart, gradientEnd],
+    () => deriveElectronColors(activeLayout, colorMode, solidColor, individualColors, gradientStart, gradientEnd),
+    [activeLayout, colorMode, solidColor, individualColors, gradientStart, gradientEnd],
   )
 
   const setIndividualColorAt = useCallback((idx: number, color: string) => {
