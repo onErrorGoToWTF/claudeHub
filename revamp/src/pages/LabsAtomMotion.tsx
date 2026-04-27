@@ -1484,6 +1484,64 @@ export function LabsAtomMotion() {
     })
     disarmSlot()
   }, [armedSlot, disarmSlot])
+  // Quick controls (Playback panel). No which-slot picking — they
+  // operate on the next-free slot for add and the highest-occupied
+  // slot for everything else (LIFO). Same backing state as the slot
+  // grid, just a faster path for the common cases.
+  const onQuickAdd = useCallback(() => {
+    setSlotLocations((prev) => {
+      const k = prev.indexOf('none')
+      if (k === -1) return prev
+      const out = prev.slice()
+      out[k] = 'A'
+      setStartSeeds((seeds) => {
+        const ss = seeds.slice()
+        ss[k] = (ss[k] ?? 0) + 1
+        return ss
+      })
+      return out
+    })
+    disarmSlot()
+  }, [disarmSlot])
+  const onQuickRemove = useCallback(() => {
+    setSlotLocations((prev) => {
+      for (let k = prev.length - 1; k >= 0; k--) {
+        if (prev[k] !== 'none') {
+          const out = prev.slice()
+          out[k] = 'none'
+          return out
+        }
+      }
+      return prev
+    })
+    disarmSlot()
+  }, [disarmSlot])
+  const onQuickMoveToB = useCallback(() => {
+    setSlotLocations((prev) => {
+      for (let k = prev.length - 1; k >= 0; k--) {
+        if (prev[k] === 'A') {
+          const out = prev.slice()
+          out[k] = 'B'
+          return out
+        }
+      }
+      return prev
+    })
+    disarmSlot()
+  }, [disarmSlot])
+  const onQuickMoveToA = useCallback(() => {
+    setSlotLocations((prev) => {
+      for (let k = prev.length - 1; k >= 0; k--) {
+        if (prev[k] === 'B') {
+          const out = prev.slice()
+          out[k] = 'A'
+          return out
+        }
+      }
+      return prev
+    })
+    disarmSlot()
+  }, [disarmSlot])
   // Full refresh — return to first-load defaults. Clears all electrons,
   // resets every slider/color/mode/theme/axis/nuclei back to defaults,
   // closes all panels, recenters camera. Triggered from the Playback
@@ -1792,6 +1850,48 @@ export function LabsAtomMotion() {
                       title="Refresh"
                     >
                       ⟲
+                    </button>
+                  </div>
+                  <div className={s.panelRow}>
+                    <button
+                      type="button"
+                      className={`${s.btn} ${s.btnIcon}`}
+                      onClick={onQuickAdd}
+                      disabled={!slotLocations.includes('none')}
+                      aria-label="Add electron to next empty orbit"
+                      title="Add electron"
+                    >
+                      +
+                    </button>
+                    <button
+                      type="button"
+                      className={`${s.btn} ${s.btnIcon}`}
+                      onClick={onQuickRemove}
+                      disabled={highestOccupied === -1}
+                      aria-label="Remove highest electron"
+                      title="Remove electron"
+                    >
+                      −
+                    </button>
+                    <button
+                      type="button"
+                      className={`${s.btn} ${s.btnIcon}`}
+                      onClick={onQuickMoveToB}
+                      disabled={!slotLocations.includes('A')}
+                      aria-label="Move highest A electron to B"
+                      title="→ B"
+                    >
+                      →B
+                    </button>
+                    <button
+                      type="button"
+                      className={`${s.btn} ${s.btnIcon}`}
+                      onClick={onQuickMoveToA}
+                      disabled={!slotLocations.includes('B')}
+                      aria-label="Move highest B electron to A"
+                      title="← A"
+                    >
+                      ←A
                     </button>
                   </div>
                   <SliderRow
