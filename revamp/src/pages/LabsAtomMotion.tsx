@@ -202,6 +202,26 @@ function lerpHexColor(a: string, b: string, t: number): string {
   return '#' + ca.getHexString()
 }
 
+// Travel-order sequence for auto-loop. Interleaves first-half slots
+// with second-half slots so consecutive travels alternate between
+// near-perpendicular planes — avoids the "rotating pinwheel" feel of
+// slot-sequential travel where each next traveler is just one notch
+// over from the last.
+//   N=2: [0, 1]
+//   N=4: [0, 2, 1, 3]
+//   N=6: [0, 3, 1, 4, 2, 5]
+//   N=8: [0, 4, 1, 5, 2, 6, 3, 7]
+function travelOrderInterleaved(N: number): number[] {
+  const half = Math.floor(N / 2)
+  const order: number[] = []
+  for (let i = 0; i < half; i++) {
+    order.push(i)
+    order.push(i + half)
+  }
+  if (N % 2 === 1) order.push(N - 1)
+  return order
+}
+
 function deriveElectronColors(
   N: number,
   mode: ColorMode,
@@ -337,7 +357,6 @@ function ElectronProbe({
   chordHalf,
   orbitSize,
   existence,
-  autoReplay,
   travelCount,
   startSeed,
   trailColor,
@@ -356,7 +375,6 @@ function ElectronProbe({
   chordHalf: number
   orbitSize: number
   existence: Existence
-  autoReplay: boolean
   travelCount: number
   startSeed: number
   trailColor: string
@@ -500,15 +518,18 @@ function ElectronProbe({
       const wrapped = prevLocalT > 1e-3 && dPrev > dCurr && dPrev - dCurr > ORBIT_PERIOD / 2
       if (wrapped) {
         lapsInPhaseRef.current += 1
+        // Probe-level auto-loop trigger removed. Travel only fires when
+        // the parent bumps travelCount — the parent uses interleaved
+        // perpendicular-first order for loop ticks. Manual ⇋ travel
+        // also uses the same channel.
         const newTravel = travelCount > lastTravelCountRef.current
-        const loopReady = autoReplay && lapsInPhaseRef.current >= LOOP_LAPS_BEFORE_TRAVEL
-        if (newTravel || loopReady) {
+        if (newTravel) {
           phase = phase === 'orbitA' ? 'travelAB' : 'travelBA'
           phaseRef.current = phase
           phaseElapsedRef.current = 0
           localT = 0
           lapsInPhaseRef.current = 0
-          if (newTravel) lastTravelCountRef.current = travelCount
+          lastTravelCountRef.current = travelCount
         }
       }
     } else {
@@ -1126,6 +1147,34 @@ export function LabsAtomMotion() {
   // animation — those just shift visibleCount/specs in place.
   const targetNRef = useRef(targetN)
   targetNRef.current = targetN
+
+  // Centralized auto-loop. When autoReplay is on and the intro has
+  // settled, fire travel bumps in interleaved-perpendicular order at
+  // a tempo tied to the orbit period — matches the previous decentral
+  // "3 laps per electron" pacing, but the SEQUENCE is now perpendicular
+  // (slot 0, slot N/2, slot 1, slot N/2+1, ...) so consecutive travels
+  // hit perpendicular planes instead of rotating around the chord.
+  useEffect(() => {
+    if (!autoReplay || introActive || visibleCount === 0) return
+    const N = visibleCount
+    const order = travelOrderInterleaved(N)
+    let cycleIdx = 0
+    // Orbit period in real seconds: 2π / (ORBIT_OMEGA_BASE · speedMult · SPEED_SCALE)
+    const orbitPeriodMs = (2 * Math.PI * 1000) / (ORBIT_OMEGA_BASE * Math.max(0.5, speedMult) * SPEED_SCALE)
+    // Total per-electron cycle ≈ LOOP_LAPS_BEFORE_TRAVEL orbits → tick interval = that / N
+    const tickMs = (LOOP_LAPS_BEFORE_TRAVEL * orbitPeriodMs) / N
+    const fire = () => {
+      const slot = order[cycleIdx % order.length]
+      setTravelCounts((prev) => {
+        const next = prev.slice()
+        next[slot] = (next[slot] ?? 0) + 1
+        return next
+      })
+      cycleIdx++
+    }
+    const handle = setInterval(fire, tickMs)
+    return () => clearInterval(handle)
+  }, [autoReplay, introActive, visibleCount, speedMult])
   useEffect(() => {
     let cancelled = false
     const N = Math.max(0, Math.min(MAX_ELECTRONS, targetNRef.current))
@@ -1284,7 +1333,6 @@ export function LabsAtomMotion() {
                   chordHalf={chordHalf}
                   orbitSize={orbitSize}
                   existence={i < visibleCount ? 'visible' : 'idle'}
-                  autoReplay={autoReplay && !introActive}
                   travelCount={travelCounts[i] ?? 0}
                   startSeed={startSeeds[i] ?? 0}
                   trailColor={c}
