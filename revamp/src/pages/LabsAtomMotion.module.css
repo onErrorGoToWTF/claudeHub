@@ -997,3 +997,188 @@
     animation: none;
   }
 }
+
+/* --- Mom Mode (showcase, throwaway) ----------------------------------- */
+/* Floating neon button + full-screen "I ❤️ YOU, MOM" overlay revealed
+   when the user clicks the button. Designed as a one-shot wow piece.
+   Uses transform/opacity/filter only; respects prefers-reduced-motion. */
+
+.momButton {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  /* Above all panel HUDs (which top out at 9999) so the button stays
+     reachable; the overlay below sits one tier higher. */
+  z-index: 10001;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px 9px 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 100, 220, 0.55);
+  background: linear-gradient(
+    135deg,
+    rgba(60, 0, 80, 0.55),
+    rgba(20, 0, 40, 0.55)
+  );
+  backdrop-filter: blur(14px) saturate(170%);
+  -webkit-backdrop-filter: blur(14px) saturate(170%);
+  color: #ffd1f3;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  cursor: pointer;
+  text-shadow: 0 0 8px rgba(255, 100, 220, 0.7);
+  box-shadow:
+    0 0 22px rgba(255, 80, 220, 0.45),
+    inset 0 0 14px rgba(255, 100, 220, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.momButton:hover,
+.momButton:focus-visible {
+  transform: scale(1.06);
+  box-shadow:
+    0 0 32px rgba(255, 80, 220, 0.75),
+    inset 0 0 18px rgba(255, 100, 220, 0.4);
+  outline: none;
+}
+
+.momButtonHeart {
+  display: inline-block;
+  font-size: 14px;
+  color: #ff48b9;
+  text-shadow: 0 0 6px #ff48b9, 0 0 14px #ff48b9;
+  animation: momButtonPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes momButtonPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+
+.momOverlay {
+  position: fixed;
+  inset: 0;
+  /* Sits above every panel/HUD so the text doesn't get crowded out. */
+  z-index: 10002;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  /* Subtle radial dim behind the text so it pops over busy electrons. */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
+  animation: momOverlayIn 0.9s ease-out both;
+}
+
+@keyframes momOverlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.momOverlayExit {
+  animation: momOverlayOut 1.4s ease-in forwards;
+}
+
+@keyframes momOverlayOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.momText {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 11vw, 130px);
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1;
+  /* Layered neon glow — three concentric halos cycling hue. The
+     base color stays white so the inner letterforms remain legible
+     while the outer halos do all the chromatic work. */
+  text-shadow:
+    0 0 4px #fff,
+    0 0 12px #fff,
+    0 0 22px #fff,
+    0 0 44px #ff2dd1,
+    0 0 84px #ff2dd1,
+    0 0 110px #b14dff,
+    0 0 160px #00f0ff;
+  /* Hue rotates the entire glow rainbow; breath gives a subtle scale
+     pulse. They animate different properties so they coexist. */
+  animation:
+    momHueShift 5s linear infinite,
+    momBreath 3.4s ease-in-out infinite;
+}
+
+.momChar,
+.momHeart {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(36px) scale(0.6);
+  filter: blur(10px);
+  animation: momReveal 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.momHeart {
+  color: #ff3399;
+  /* Override the white text-fill so the heart stays pink; outer
+     shadows still come from .momText. */
+  -webkit-text-fill-color: #ff3399;
+  /* After the reveal completes, hand off to the heartbeat animation
+     via a chained second animation triggered by animationend in JS
+     would be ideal — but a longer combined animation keeps it pure
+     CSS: reveal then heartbeat. */
+}
+
+@keyframes momReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(36px) scale(0.6);
+    filter: blur(10px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.12);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes momHueShift {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes momBreath {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .momButtonHeart { animation: none; }
+  .momText { animation: none; }
+  .momChar,
+  .momHeart {
+    animation: momRevealReduced 0.5s ease forwards;
+    transform: none;
+    filter: none;
+  }
+  @keyframes momRevealReduced {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}

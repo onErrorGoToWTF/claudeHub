@@ -1753,6 +1753,99 @@ export function LabsAtomMotion() {
     trailWidth,
   ])
 
+  // --- Mom Mode (showcase, throwaway) -----------------------------------
+  // A celebratory one-shot: snapshots the current scene, applies a 16-
+  // electron rainbow-gradient swarm, reveals an "I ❤️ YOU, MOM" neon
+  // overlay, then restores the snapshot after a fixed window. Designed
+  // to impress; explicitly marked throwaway in case it gets retired.
+  const [momMode, setMomMode] = useState(false)
+  const [momExiting, setMomExiting] = useState(false)
+  type MomSnapshot = {
+    slotLocations: SlotLocation[]
+    colorMode: ColorMode
+    gradientStart: string
+    gradientEnd: string
+    speedMult: number
+    autoReplay: boolean
+    headScale: number
+    haloScale: number
+    trailWidth: number
+    bgColor: string
+  }
+  const momSnapshotRef = useRef<MomSnapshot | null>(null)
+  const momTimerRef = useRef<number | null>(null)
+  const momExitTimerRef = useRef<number | null>(null)
+  useEffect(() => {
+    return () => {
+      if (momTimerRef.current) window.clearTimeout(momTimerRef.current)
+      if (momExitTimerRef.current) window.clearTimeout(momExitTimerRef.current)
+    }
+  }, [])
+  const onMomMode = useCallback(() => {
+    if (momMode) return
+    momSnapshotRef.current = {
+      slotLocations: slotLocations.slice(),
+      colorMode,
+      gradientStart,
+      gradientEnd,
+      speedMult,
+      autoReplay,
+      headScale,
+      haloScale,
+      trailWidth,
+      bgColor,
+    }
+    // Showcase: max 16 electrons all orbiting atom A, hot-pink → cyan
+    // gradient (hue-rotated by the overlay's CSS animation produces the
+    // rainbow effect on the text; the electron palette stays fixed and
+    // looks great as-is), beefy heads/halos/trails for richness.
+    setSlotLocations(new Array(MAX_ELECTRONS).fill('A' as SlotLocation))
+    setColorMode('gradient')
+    setGradientStart('#ff2dd1')
+    setGradientEnd('#00f0ff')
+    setSpeedMult(7)
+    setAutoReplay(false)
+    setHeadScale(0.14)
+    setHaloScale(2.4)
+    setTrailWidth(0.2)
+    setBgColor('#1a0024')
+    setMomMode(true)
+    setMomExiting(false)
+    // Hold ~9s, then run the exit fade for ~1.4s before restoring.
+    momTimerRef.current = window.setTimeout(() => {
+      setMomExiting(true)
+      momExitTimerRef.current = window.setTimeout(() => {
+        const snap = momSnapshotRef.current
+        if (snap) {
+          setSlotLocations(snap.slotLocations)
+          setColorMode(snap.colorMode)
+          setGradientStart(snap.gradientStart)
+          setGradientEnd(snap.gradientEnd)
+          setSpeedMult(snap.speedMult)
+          setAutoReplay(snap.autoReplay)
+          setHeadScale(snap.headScale)
+          setHaloScale(snap.haloScale)
+          setTrailWidth(snap.trailWidth)
+          setBgColor(snap.bgColor)
+        }
+        setMomMode(false)
+        setMomExiting(false)
+      }, 1400)
+    }, 9000)
+  }, [
+    momMode,
+    slotLocations,
+    colorMode,
+    gradientStart,
+    gradientEnd,
+    speedMult,
+    autoReplay,
+    headScale,
+    haloScale,
+    trailWidth,
+    bgColor,
+  ])
+
   return (
     <div
       className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark} ${bgMode === 'gradient' ? s.bgGradient : ''}`}
@@ -1762,6 +1855,56 @@ export function LabsAtomMotion() {
         ['--lab-bg-grad-end' as string]: bgGradientEnd,
       }}
     >
+      {/* Mom-mode floating button + overlay (throwaway showcase). */}
+      {!momMode && (
+        <button
+          type="button"
+          className={s.momButton}
+          onClick={onMomMode}
+          aria-label="Surprise mom"
+        >
+          <span className={s.momButtonHeart}>❤</span>
+          <span>mom</span>
+        </button>
+      )}
+      {momMode && (
+        <div
+          className={`${s.momOverlay} ${momExiting ? s.momOverlayExit : ''}`}
+          aria-live="polite"
+          aria-label="I love you, mom"
+        >
+          <div className={s.momText}>
+            {(() => {
+              // Render each character (and the heart) as its own span so
+              // they can stagger-reveal. Spaces become non-breaking so
+              // letter-spacing and per-char animation still apply.
+              const segments: Array<{ ch: string; heart?: boolean }> = [
+                { ch: 'I' },
+                { ch: ' ' },
+                { ch: '❤', heart: true },
+                { ch: ' ' },
+                { ch: 'Y' },
+                { ch: 'O' },
+                { ch: 'U' },
+                { ch: ',' },
+                { ch: ' ' },
+                { ch: 'M' },
+                { ch: 'O' },
+                { ch: 'M' },
+              ]
+              return segments.map((seg, i) => (
+                <span
+                  key={i}
+                  className={seg.heart ? s.momHeart : s.momChar}
+                  style={{ animationDelay: `${i * 0.08}s` }}
+                >
+                  {seg.ch === ' ' ? ' ' : seg.ch}
+                </span>
+              ))
+            })()}
+          </div>
+        </div>
+      )}
       <div className={s.canvasArea}>
         <Canvas
           camera={{ position: DEFAULT_CAMERA_POS, fov: FOV_DEG }}
