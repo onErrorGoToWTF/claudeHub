@@ -985,6 +985,13 @@ export function LabsAtomMotion() {
   // Bump to re-trigger the intro stagger (replay button).
   const [introNonce, setIntroNonce] = useState(0)
   const [introActive, setIntroActive] = useState(true)
+  // True until the first travel / remove / slider-move / auto-loop fires.
+  // While true, tapping + reseeds ALL existing electrons so their phases
+  // stay evenly distributed around the orbit (true equidistant setup).
+  // After the first non-setup action, + only seeds new electrons.
+  const [firstSetupActive, setFirstSetupActive] = useState(true)
+  const firstSetupActiveRef = useRef(true)
+  firstSetupActiveRef.current = firstSetupActive
   const [autoReplay, setAutoReplay] = useState(false)
   const [speedMult, setSpeedMult] = useState(3.5)
   const [startSeeds, setStartSeeds] = useState<number[]>(() =>
@@ -1077,13 +1084,13 @@ export function LabsAtomMotion() {
     setTargetN((n) => {
       const next = nextCountStep(n)
       if (next === null) return n
-      // Only bump startSeeds for the NEW indices [n, next). Existing
-      // electrons keep their current phase; their orbital planes shift
-      // slightly to the new symmetric layout but they don't reseed.
-      // The new electrons enter at master-clock-synced angles.
+      // In first-setup mode (no travel/remove/loop yet), reseed ALL
+      // active slots so phases redistribute evenly across the new N.
+      // Otherwise only the new slots reseed; existing keep their phase.
+      const startIdx = firstSetupActiveRef.current ? 0 : n
       setStartSeeds((prev) => {
         const seeds = prev.slice()
-        for (let i = n; i < next; i++) seeds[i] = (seeds[i] ?? 0) + 1
+        for (let i = startIdx; i < next; i++) seeds[i] = (seeds[i] ?? 0) + 1
         return seeds
       })
       setVisibleCount(next)
@@ -1091,6 +1098,7 @@ export function LabsAtomMotion() {
     })
   }, [])
   const onRemoveOne = useCallback(() => {
+    setFirstSetupActive(false)
     setTargetN((n) => {
       const next = prevCountStep(n)
       if (next === null) return n
@@ -1111,6 +1119,7 @@ export function LabsAtomMotion() {
   }, [])
   const onTravel = useCallback(() => {
     if (visibleCount === 0) return
+    setFirstSetupActive(false)
     setTravelCounts((counts) => {
       const next = counts.slice()
       next[nextTravelIndex] = (next[nextTravelIndex] ?? 0) + 1
@@ -1125,12 +1134,21 @@ export function LabsAtomMotion() {
   // animation — those just shift visibleCount/specs in place.
   const targetNRef = useRef(targetN)
   targetNRef.current = targetN
+
+  // Auto-loop will start firing transits once the intro completes; that
+  // counts as "first travel" and ends the equidistant-setup mode.
+  useEffect(() => {
+    if (autoReplay && !introActive && visibleCount > 0) {
+      setFirstSetupActive(false)
+    }
+  }, [autoReplay, introActive, visibleCount])
   useEffect(() => {
     let cancelled = false
     const N = Math.max(0, Math.min(MAX_ELECTRONS, targetNRef.current))
     setVisibleCount(0)
     setIntroActive(true)
     setNextTravelIndex(0)
+    setFirstSetupActive(true)
     if (N === 0) {
       // Empty stage — no stagger, just turn intro gate off.
       setIntroActive(false)
@@ -1204,6 +1222,7 @@ export function LabsAtomMotion() {
     setHaloScale(p.haloScale)
     setTrailWidth(p.trailWidth)
     setTargetN(p.electronCount)
+    setFirstSetupActive(true)
     const ctrl = orbitControlsRef.current
     if (ctrl?.object?.position && ctrl?.target) {
       ctrl.object.position.set(p.camPos[0], p.camPos[1], p.camPos[2])
@@ -1574,6 +1593,7 @@ export function LabsAtomMotion() {
             value={targetN}
             onChange={(e) => {
               const N = parseInt(e.currentTarget.value, 10)
+              setFirstSetupActive(false)
               setTargetN((prev) => {
                 // Bump only NEW slots' startSeeds so existing electrons
                 // keep their phase as planes redistribute.
