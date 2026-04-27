@@ -746,6 +746,30 @@
   -webkit-user-select: none;
 }
 
+/* Captured-preset JSON block. Selectable so the user can copy on
+   phone if the auto-clipboard write didn't fire (e.g. permission
+   denied). Cap height with internal scroll so the panel doesn't
+   stretch past the viewport. */
+.capturedBlock {
+  margin: 0;
+  padding: 8px;
+  max-height: 220px;
+  overflow: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--lab-meta);
+  background: var(--lab-panel-bg);
+  border: 1px solid var(--lab-panel-border);
+  border-radius: 8px;
+  /* pre-wrap so JSON keeps its newlines but long arrays still wrap
+     inside the fixed-width panel. */
+  white-space: pre-wrap;
+  word-break: break-all;
+  user-select: all;
+  -webkit-user-select: all;
+}
+
 .subSectionToggle {
   align-self: flex-start;
   height: 26px;

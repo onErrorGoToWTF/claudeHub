@@ -1681,6 +1681,72 @@ export function LabsAtomMotion() {
     }
   }, [setTheme])
 
+  // Capture current scene as a Preset-shaped JSON blob. Logged to the
+  // console, written to clipboard (for phone), and rendered into a
+  // visible <pre> below the preset row so the values can be selected
+  // and pasted back to whoever is baking in the new preset.
+  const [capturedPreset, setCapturedPreset] = useState<string | null>(null)
+  const [captureFlash, setCaptureFlash] = useState(false)
+  const onCapturePreset = useCallback(() => {
+    const round = (n: number, p = 2) => Math.round(n * 10 ** p) / 10 ** p
+    const electronCount = slotLocations.filter((s) => s !== 'none').length
+    const data = {
+      name: '<TBD>',
+      electronCount,
+      colorMode,
+      solidColor,
+      individualColors,
+      gradientStart,
+      gradientEnd,
+      bgMode,
+      bgColor,
+      bgGradientStart,
+      bgGradientEnd,
+      spread: round(chordHalf),
+      speed: speedMult,
+      loop: autoReplay,
+      showNuclei,
+      showAxis,
+      theme,
+      camPos: camPos.map((n) => round(n)) as [number, number, number],
+      camTgt: camTgt.map((n) => round(n)) as [number, number, number],
+      headScale,
+      haloScale,
+      trailWidth,
+    }
+    const text = JSON.stringify(data, null, 2)
+    setCapturedPreset(text)
+    // eslint-disable-next-line no-console
+    console.log('[atom-motion preset]', data)
+    if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(text).catch(() => {})
+    }
+    setCaptureFlash(true)
+    window.setTimeout(() => setCaptureFlash(false), 1200)
+  }, [
+    slotLocations,
+    colorMode,
+    solidColor,
+    individualColors,
+    gradientStart,
+    gradientEnd,
+    bgMode,
+    bgColor,
+    bgGradientStart,
+    bgGradientEnd,
+    chordHalf,
+    speedMult,
+    autoReplay,
+    showNuclei,
+    showAxis,
+    theme,
+    camPos,
+    camTgt,
+    headScale,
+    haloScale,
+    trailWidth,
+  ])
+
   return (
     <div
       className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark} ${bgMode === 'gradient' ? s.bgGradient : ''}`}
@@ -2075,6 +2141,18 @@ export function LabsAtomMotion() {
                       </button>
                     ))}
                   </div>
+                  <div className={s.subSectionLabel}>capture</div>
+                  <button
+                    type="button"
+                    className={`${s.btn} ${s.btnPreset}`}
+                    onClick={onCapturePreset}
+                    aria-label="Capture current scene as preset JSON"
+                  >
+                    {captureFlash ? 'copied ✓' : 'capture preset'}
+                  </button>
+                  {capturedPreset && (
+                    <pre className={s.capturedBlock}>{capturedPreset}</pre>
+                  )}
                   <div className={s.panelRow}>
                     <button
                       type="button"
