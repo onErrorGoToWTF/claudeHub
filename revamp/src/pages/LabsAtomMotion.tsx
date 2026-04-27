@@ -161,12 +161,14 @@ function prevCountStep(n: number): number | null {
 
 function buildElectronSpecs(N: number): ElectronSpec[] {
   const safeN = Math.max(1, Math.min(MAX_ELECTRONS, N))
-  // For N ≤ 4: use a subset of the N=4 plane set in fill order [0, 2, 1, 3]
-  // so 1→2 places e2 perpendicular to e1, 2→3 puts e3 at 45° (visually
-  // furthest from the existing 0°/90° pair), 3→4 adds e4 at 135°.
-  // Existing electrons keep their planes as new ones are added.
+  // For N ≤ 4: use a subset of the N=4 plane set in fill order [0, 2, 3, 1]
+  // so 1→2 places e2 perpendicular to e1 (0°, 90°), 2→3 puts e3 at 135°
+  // (opposite the empty half — existing pair sit in the lower half, new
+  // electron fills the upper), 3→4 closes the layout at 45°. Existing
+  // electrons keep their planes as new ones are added; each new electron
+  // lands in the empty region rather than packing next to existing ones.
   if (safeN <= 4) {
-    const FILL_ORDER_4 = [0, 2, 1, 3]
+    const FILL_ORDER_4 = [0, 2, 3, 1]
     return Array.from({ length: safeN }, (_, k) => {
       const planeIdx = FILL_ORDER_4[k]
       const upAngle = (Math.PI * planeIdx) / 4
