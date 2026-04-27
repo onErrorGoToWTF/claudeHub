@@ -1338,7 +1338,7 @@ export function LabsAtomMotion() {
   const [bgColor, setBgColor] = useState('#59004c')
   const [headScale, setHeadScale] = useState(0.03)
   const [haloScale, setHaloScale] = useState(0.0)
-  const [trailWidth, setTrailWidth] = useState(0.07)
+  const [trailWidth, setTrailWidth] = useState(0.05)
   const [theme, setTheme] = useTheme()
   const palette = THEME_PALETTE[theme]
 
@@ -1495,7 +1495,7 @@ export function LabsAtomMotion() {
     setSpeedMult(3.5)
     setHeadScale(0.03)
     setHaloScale(0.0)
-    setTrailWidth(0.07)
+    setTrailWidth(0.05)
     setBgColor('#59004c')
     setBgMode('solid')
     setBgGradientStart('#7a3a8c')
