@@ -31,7 +31,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
-import { OrbitControls, Html } from '@react-three/drei'
+import { OrbitControls, Html, Stars } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import { ELECTRON } from '../ui/atom/constants'
@@ -1250,6 +1250,10 @@ export function LabsAtomMotion() {
   )
   const [showNuclei, setShowNuclei] = useState(true)
   const [showAxis, setShowAxis] = useState(false)
+  // Tiny shimmering white starfield, off by default. Rendered as a
+  // separate drei <Stars> layer outside the tilted group, so it sits
+  // in world space behind the atoms regardless of chord tilt.
+  const [showStars, setShowStars] = useState(false)
   // Pause/Play toggle (Chunk 4). When paused, MasterClock and ElectronProbe
   // see speedMult=0 so motion freezes in place; the autoReplay loop is
   // also gated. Resuming continues from the same state.
@@ -1707,6 +1711,7 @@ export function LabsAtomMotion() {
       loop: autoReplay,
       showNuclei,
       showAxis,
+      showStars,
       theme,
       camPos: camPos.map((n) => round(n)) as [number, number, number],
       camTgt: camTgt.map((n) => round(n)) as [number, number, number],
@@ -1739,6 +1744,7 @@ export function LabsAtomMotion() {
     autoReplay,
     showNuclei,
     showAxis,
+    showStars,
     theme,
     camPos,
     camTgt,
@@ -1797,6 +1803,17 @@ export function LabsAtomMotion() {
               setCamTgt(tgt)
             }}
           />
+          {showStars && (
+            <Stars
+              radius={80}
+              depth={40}
+              count={1500}
+              factor={1}
+              saturation={0}
+              fade
+              speed={0.6}
+            />
+          )}
           <group rotation={[0, 0, groupTiltZ]}>
             {(showAxis || interacting) && (
               <AxisIndicators
@@ -2180,6 +2197,15 @@ export function LabsAtomMotion() {
                       title={showAxis ? 'Axis on' : 'Axis off'}
                     >
                       {showAxis ? '✦' : '✧'}
+                    </button>
+                    <button
+                      type="button"
+                      className={`${s.btn} ${s.btnIcon} ${showStars ? s.btnActive : ''}`}
+                      onClick={() => setShowStars((v) => !v)}
+                      aria-label="Toggle stars"
+                      title={showStars ? 'Stars on' : 'Stars off'}
+                    >
+                      {showStars ? '★' : '☆'}
                     </button>
                     <button
                       type="button"
