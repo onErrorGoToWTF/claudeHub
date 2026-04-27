@@ -1101,6 +1101,10 @@ export function LabsAtomMotion() {
   // see speedMult=0 so motion freezes in place; the autoReplay loop is
   // also gated. Resuming continues from the same state.
   const [paused, setPaused] = useState(false)
+  // Slot grid selection (Chunk 5e). Index of the currently-highlighted
+  // slot, or null when nothing selected. Action buttons (→B / ←A /
+  // Delete) act on this slot.
+  const [selectedSlot, setSelectedSlot] = useState<number | null>(null)
   // New 5-panel system (chunks 3+). Each dock icon toggles its panel
   // independently; multiple panels may be open simultaneously. Panel
   // bodies fill in over chunks 4-8.
@@ -1260,7 +1264,56 @@ export function LabsAtomMotion() {
     setNextTravelIndex(0)
     globalScaledTimeRef.current = 0
     setIntroActive(false)
+    setSelectedSlot(null)
   }, [])
+  // Slot-grid handlers (Chunk 5e).
+  // Tap empty → add to A. Tap occupied → toggle selection.
+  const onSlotTap = useCallback((k: number) => {
+    setSlotLocations((prev) => {
+      if (prev[k] === 'none') {
+        const out = prev.slice()
+        out[k] = 'A'
+        // Bump start seed so the freshly-spawned probe re-syncs to
+        // master clock and lands at slot k's phase-clock-correct
+        // position on its first frame.
+        setStartSeeds((seeds) => {
+          const ss = seeds.slice()
+          ss[k] = (ss[k] ?? 0) + 1
+          return ss
+        })
+        setSelectedSlot(null)
+        return out
+      }
+      // Occupied — toggle selection (tap selected slot again to deselect).
+      setSelectedSlot((sel) => (sel === k ? null : k))
+      return prev
+    })
+  }, [])
+  const onSlotMoveToB = useCallback(() => {
+    setSlotLocations((prev) => {
+      if (selectedSlot === null || prev[selectedSlot] !== 'A') return prev
+      const out = prev.slice()
+      out[selectedSlot] = 'B'
+      return out
+    })
+  }, [selectedSlot])
+  const onSlotMoveToA = useCallback(() => {
+    setSlotLocations((prev) => {
+      if (selectedSlot === null || prev[selectedSlot] !== 'B') return prev
+      const out = prev.slice()
+      out[selectedSlot] = 'A'
+      return out
+    })
+  }, [selectedSlot])
+  const onSlotDelete = useCallback(() => {
+    setSlotLocations((prev) => {
+      if (selectedSlot === null) return prev
+      const out = prev.slice()
+      out[selectedSlot] = 'none'
+      return out
+    })
+    setSelectedSlot(null)
+  }, [selectedSlot])
   // Full refresh — return to first-load defaults. Clears all electrons,
   // resets every slider/color/mode/theme/axis/nuclei back to defaults,
   // closes all panels, recenters camera. Triggered from the Playback
@@ -1752,6 +1805,65 @@ export function LabsAtomMotion() {
                       aria-label="Animation speed"
                     />
                   </div>
+                </>
+              ) : key === 'electrons' ? (
+                <>
+                  <div className={s.slotGrid}>
+                    {Array.from({ length: MAX_ELECTRONS }, (_, k) => {
+                      const loc = slotLocations[k]
+                      const isSelected = selectedSlot === k
+                      const cls =
+                        loc === 'A'
+                          ? s.slotOnA
+                          : loc === 'B'
+                            ? s.slotOnB
+                            : s.slotEmpty
+                      return (
+                        <button
+                          key={k}
+                          type="button"
+                          className={`${s.slotCell} ${cls} ${isSelected ? s.slotSelected : ''}`}
+                          onClick={() => onSlotTap(k)}
+                          aria-label={`Slot ${k + 1}: ${loc === 'none' ? 'empty' : `on ${loc}`}`}
+                          aria-pressed={loc !== 'none'}
+                        >
+                          {k + 1}
+                        </button>
+                      )
+                    })}
+                  </div>
+                  {selectedSlot !== null && slotLocations[selectedSlot] !== 'none' && (
+                    <div className={s.panelRow}>
+                      {slotLocations[selectedSlot] === 'A' && (
+                        <button
+                          type="button"
+                          className={s.btn}
+                          onClick={onSlotMoveToB}
+                          aria-label="Move selected electron to atom B"
+                        >
+                          → B
+                        </button>
+                      )}
+                      {slotLocations[selectedSlot] === 'B' && (
+                        <button
+                          type="button"
+                          className={s.btn}
+                          onClick={onSlotMoveToA}
+                          aria-label="Move selected electron to atom A"
+                        >
+                          ← A
+                        </button>
+                      )}
+                      <button
+                        type="button"
+                        className={s.btn}
+                        onClick={onSlotDelete}
+                        aria-label="Delete selected electron"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  )}
                 </>
               ) : (
                 <span className={s.panelEmpty}>{`Migrating in chunk ${chunk}…`}</span>
