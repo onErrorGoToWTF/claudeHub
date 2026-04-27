@@ -978,6 +978,28 @@ const PRESETS: Preset[] = [
     haloScale: 1.1,
     trailWidth: 0.07,
   }),
+  {
+    // 16-electron supercharge — gradient mode, orange → mint, on purple.
+    name: '7',
+    electronCount: 16,
+    colorMode: 'gradient',
+    solidColor: '#ff9e3c',
+    individualColors: ['#ff9e3c'],
+    gradientStart: '#ff9e3c',
+    gradientEnd: '#5fffaf',
+    bgColor: '#59004c',
+    spread: 8.5,
+    speed: 5,
+    loop: true,
+    showNuclei: false,
+    showAxis: false,
+    theme: 'dark',
+    camPos: [-17.06, 4.08, -1.94],
+    camTgt: [1.05, -2.7, 1.52],
+    headScale: 0.05,
+    haloScale: 0.8,
+    trailWidth: 0.06,
+  },
 ]
 
 function useTheme(): [ThemeName, (next: ThemeName) => void] {
