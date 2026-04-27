@@ -1328,6 +1328,16 @@ export function LabsAtomMotion() {
         >
           +
         </button>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={onTravel}
+          aria-label={`Travel electron ${nextTravelIndex + 1}`}
+          title={`Travel e${nextTravelIndex + 1}`}
+          disabled={visibleCount === 0}
+        >
+          ⇋
+        </button>
         <input
           type="color"
           value={bgColor}
