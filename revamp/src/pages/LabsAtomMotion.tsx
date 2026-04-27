@@ -479,6 +479,55 @@ function MasterClock({
   return null
 }
 
+// --- HigherOrbitDots (experimental, throwaway) ----------------------------
+// 2 tiny white spheres on a 1.5x orbit around atom A, 90° apart in
+// phase. Uses globalScaledTime so speed matches the main electrons.
+// Standalone, easy to delete.
+function HigherOrbitDots({
+  chordHalf,
+  orbitSize,
+  headScale,
+  globalScaledTimeRef,
+}: {
+  chordHalf: number
+  orbitSize: number
+  headScale: number
+  globalScaledTimeRef: React.MutableRefObject<number>
+}) {
+  const ref1 = useRef<THREE.Mesh>(null!)
+  const ref2 = useRef<THREE.Mesh>(null!)
+  const radius = 1.5 * orbitSize
+  useFrame(() => {
+    const theta = ORBIT_OMEGA_BASE * globalScaledTimeRef.current
+    if (ref1.current) {
+      ref1.current.position.set(
+        -chordHalf + radius * Math.cos(theta),
+        radius * Math.sin(theta),
+        0,
+      )
+    }
+    if (ref2.current) {
+      ref2.current.position.set(
+        -chordHalf + radius * Math.cos(theta + Math.PI / 2),
+        radius * Math.sin(theta + Math.PI / 2),
+        0,
+      )
+    }
+  })
+  return (
+    <>
+      <mesh ref={ref1}>
+        <sphereGeometry args={[Math.max(0.02, headScale), 16, 16]} />
+        <meshBasicMaterial color="#ffffff" />
+      </mesh>
+      <mesh ref={ref2}>
+        <sphereGeometry args={[Math.max(0.02, headScale), 16, 16]} />
+        <meshBasicMaterial color="#ffffff" />
+      </mesh>
+    </>
+  )
+}
+
 // --- ElectronProbe (autonomous phase machine) -----------------------------
 
 function ElectronProbe({
@@ -1821,16 +1870,12 @@ export function LabsAtomMotion() {
           )}
           <group rotation={[0, 0, groupTiltZ]}>
             {showHigherOrbit && (
-              <>
-                <mesh position={[-chordHalf, 1.5 * orbitSize, 0]}>
-                  <sphereGeometry args={[0.12, 16, 16]} />
-                  <meshBasicMaterial color="#ffffff" />
-                </mesh>
-                <mesh position={[-chordHalf, -1.5 * orbitSize, 0]}>
-                  <sphereGeometry args={[0.12, 16, 16]} />
-                  <meshBasicMaterial color="#ffffff" />
-                </mesh>
-              </>
+              <HigherOrbitDots
+                chordHalf={chordHalf}
+                orbitSize={orbitSize}
+                headScale={headScale}
+                globalScaledTimeRef={globalScaledTimeRef}
+              />
             )}
             {(showAxis || interacting) && (
               <AxisIndicators
