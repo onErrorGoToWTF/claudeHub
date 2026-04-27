@@ -985,13 +985,6 @@ export function LabsAtomMotion() {
   // Bump to re-trigger the intro stagger (replay button).
   const [introNonce, setIntroNonce] = useState(0)
   const [introActive, setIntroActive] = useState(true)
-  // True until the first travel / remove / slider-move / auto-loop fires.
-  // While true, tapping + reseeds ALL existing electrons so their phases
-  // stay evenly distributed around the orbit (true equidistant setup).
-  // After the first non-setup action, + only seeds new electrons.
-  const [firstSetupActive, setFirstSetupActive] = useState(true)
-  const firstSetupActiveRef = useRef(true)
-  firstSetupActiveRef.current = firstSetupActive
   const [autoReplay, setAutoReplay] = useState(false)
   const [speedMult, setSpeedMult] = useState(3.5)
   const [startSeeds, setStartSeeds] = useState<number[]>(() =>
@@ -1084,13 +1077,13 @@ export function LabsAtomMotion() {
     setTargetN((n) => {
       const next = nextCountStep(n)
       if (next === null) return n
-      // In first-setup mode (no travel/remove/loop yet), reseed ALL
-      // active slots so phases redistribute evenly across the new N.
-      // Otherwise only the new slots reseed; existing keep their phase.
-      const startIdx = firstSetupActiveRef.current ? 0 : n
+      // Bump only the NEW slots' startSeeds. Existing electrons keep
+      // their phase; their orbital planes redistribute symmetrically.
+      // Phase-spacing is handled separately by the count-pill row,
+      // which fires the full intro stagger for equidistant placement.
       setStartSeeds((prev) => {
         const seeds = prev.slice()
-        for (let i = startIdx; i < next; i++) seeds[i] = (seeds[i] ?? 0) + 1
+        for (let i = n; i < next; i++) seeds[i] = (seeds[i] ?? 0) + 1
         return seeds
       })
       setVisibleCount(next)
@@ -1098,7 +1091,6 @@ export function LabsAtomMotion() {
     })
   }, [])
   const onRemoveOne = useCallback(() => {
-    setFirstSetupActive(false)
     setTargetN((n) => {
       const next = prevCountStep(n)
       if (next === null) return n
@@ -1119,7 +1111,6 @@ export function LabsAtomMotion() {
   }, [])
   const onTravel = useCallback(() => {
     if (visibleCount === 0) return
-    setFirstSetupActive(false)
     setTravelCounts((counts) => {
       const next = counts.slice()
       next[nextTravelIndex] = (next[nextTravelIndex] ?? 0) + 1
@@ -1134,21 +1125,12 @@ export function LabsAtomMotion() {
   // animation — those just shift visibleCount/specs in place.
   const targetNRef = useRef(targetN)
   targetNRef.current = targetN
-
-  // Auto-loop will start firing transits once the intro completes; that
-  // counts as "first travel" and ends the equidistant-setup mode.
-  useEffect(() => {
-    if (autoReplay && !introActive && visibleCount > 0) {
-      setFirstSetupActive(false)
-    }
-  }, [autoReplay, introActive, visibleCount])
   useEffect(() => {
     let cancelled = false
     const N = Math.max(0, Math.min(MAX_ELECTRONS, targetNRef.current))
     setVisibleCount(0)
     setIntroActive(true)
     setNextTravelIndex(0)
-    setFirstSetupActive(true)
     if (N === 0) {
       // Empty stage — no stagger, just turn intro gate off.
       setIntroActive(false)
@@ -1222,7 +1204,6 @@ export function LabsAtomMotion() {
     setHaloScale(p.haloScale)
     setTrailWidth(p.trailWidth)
     setTargetN(p.electronCount)
-    setFirstSetupActive(true)
     const ctrl = orbitControlsRef.current
     if (ctrl?.object?.position && ctrl?.target) {
       ctrl.object.position.set(p.camPos[0], p.camPos[1], p.camPos[2])
@@ -1584,34 +1565,25 @@ export function LabsAtomMotion() {
           />
         </div>
         <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`count  ${targetN}`}</span>
-          <input
-            type="range"
-            min={0}
-            max={MAX_ELECTRONS}
-            step={1}
-            value={targetN}
-            onChange={(e) => {
-              const N = parseInt(e.currentTarget.value, 10)
-              setFirstSetupActive(false)
-              setTargetN((prev) => {
-                // Bump only NEW slots' startSeeds so existing electrons
-                // keep their phase as planes redistribute.
-                if (N > prev) {
-                  setStartSeeds((seeds) => {
-                    const next = seeds.slice()
-                    for (let i = prev; i < N; i++) next[i] = (next[i] ?? 0) + 1
-                    return next
-                  })
-                }
-                return N
-              })
-              setVisibleCount(N)
-              setNextTravelIndex((idx) => Math.min(idx, Math.max(0, N - 1)))
-            }}
-            className={s.tiltSlider}
-            aria-label="Electron count"
-          />
+          <span className={s.tiltSliderLabel}>count</span>
+          <div className={s.presetButtons}>
+            {COUNT_STEPS.map((n) => (
+              <button
+                key={`count-${n}`}
+                type="button"
+                className={`${s.btn} ${s.btnPreset} ${targetN === n ? s.btnActive : ''}`}
+                onClick={() => {
+                  // Picking a count = fresh setup. Fire the intro stagger
+                  // to that N; the intro effect re-arms first-setup mode.
+                  setTargetN(n)
+                  setIntroNonce((nonce) => nonce + 1)
+                }}
+                aria-label={`Set ${n} electrons`}
+              >
+                {n}
+              </button>
+            ))}
+          </div>
         </div>
         <div className={s.tiltSliderRow}>
           <span className={s.tiltSliderLabel}>{`head  ${headScale.toFixed(2)}`}</span>
