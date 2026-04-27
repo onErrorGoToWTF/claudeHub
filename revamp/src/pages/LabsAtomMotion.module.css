@@ -567,7 +567,7 @@
 
 .bottomPlaybackBar {
   position: fixed;
-  bottom: calc(env(safe-area-inset-bottom) + 48px);
+  bottom: calc(env(safe-area-inset-bottom) + 12px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 9996;
