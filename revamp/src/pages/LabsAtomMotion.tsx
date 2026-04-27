@@ -744,7 +744,7 @@ const PRESETS: Preset[] = [
   },
   {
     name: '2',
-    electronColors: ['#ffdbd8', '#ffdbd8', '#ffdbd8', '#ffdbd8'],
+    electronColors: ['#ffc7c7', '#ffb8e7', '#ffe4ca', '#d7fff8'],
     bgColor: '#551029',
     spread: 15.1,
     speed: 4.5,
