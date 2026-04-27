@@ -244,18 +244,6 @@ const MAX_ELECTRONS = 16
 // then clean symmetry steps: 4 (square), 6 (hex), 8 (octagonal),
 // 12 (sphere-ish), 16 (max / supercharge). Slider still allows any
 // integer in [1, 16] for free tuning.
-const COUNT_STEPS = [1, 2, 3, 4, 6, 8, 12, 16] as const
-
-function nextCountStep(n: number): number | null {
-  for (const s of COUNT_STEPS) if (s > n) return s
-  return null
-}
-function prevCountStep(n: number): number | null {
-  let r: number | null = null
-  for (const s of COUNT_STEPS) if (s < n) r = s
-  return r
-}
-
 // Slot identity table — maps a 0-indexed slot to its (plane, phase)
 // coordinates. Designed so the prefix at every sweet-spot count
 // (1, 2, 4, 8, 16) hits a perpendicular/maximally-spread configuration
@@ -1211,30 +1199,24 @@ export function LabsAtomMotion() {
   const [slotLocations, setSlotLocations] = useState<SlotLocation[]>(
     () => new Array(MAX_ELECTRONS).fill('none' as SlotLocation),
   )
-  // Derived design count: number of slots currently flagged 'A'. Stands
-  // in for the prior `targetN` everywhere downstream.
-  const targetN = useMemo(
-    () => slotLocations.reduce((n, s) => (s === 'A' ? n + 1 : n), 0),
-    [slotLocations],
-  )
-  // Visible count animates 0 → targetN during intro.
-  const [visibleCount, setVisibleCount] = useState(0)
-  // Bump to re-trigger the intro stagger (replay button).
-  const [introNonce, setIntroNonce] = useState(0)
-  const [introActive, setIntroActive] = useState(true)
   const [autoReplay, setAutoReplay] = useState(false)
   const [speedMult, setSpeedMult] = useState(3.5)
+  // Per-slot start-seed nonce — bumped when an electron spawns into a
+  // previously-empty slot so ElectronProbe re-syncs to the master clock
+  // and lands at the slot's phase-clock-correct position on its first
+  // frame. Slot grid (chunk 5e) is the only writer.
   const [startSeeds, setStartSeeds] = useState<number[]>(() =>
     new Array(MAX_ELECTRONS).fill(0),
   )
+  // Per-slot travel counter — bumped by the autoReplay loop to fire a
+  // single transit at the next far-tip wrap (legacy trigger). The
+  // ElectronProbe `atom` prop is the primary trigger from chunk 5d
+  // onward; travelCount remains as the loop's mechanism.
   const [travelCounts, setTravelCounts] = useState<number[]>(() =>
     new Array(MAX_ELECTRONS).fill(0),
   )
-  const [nextTravelIndex, setNextTravelIndex] = useState(0)
   const [showNuclei, setShowNuclei] = useState(true)
   const [showAxis, setShowAxis] = useState(false)
-  const [uiHidden, setUiHidden] = useState(true)
-  const [playbackOpen, setPlaybackOpen] = useState(true)
   // Pause/Play toggle (Chunk 4). When paused, MasterClock and ElectronProbe
   // see speedMult=0 so motion freezes in place; the autoReplay loop is
   // also gated. Resuming continues from the same state.
@@ -1267,7 +1249,6 @@ export function LabsAtomMotion() {
   )
   const [gradientStart, setGradientStart] = useState('#ffa57d')
   const [gradientEnd, setGradientEnd] = useState('#93e3fd')
-  const [paletteOpen, setPaletteOpen] = useState(false)
   // "More modes" expander inside the Colors panel — collapses Solid +
   // Individual under a single chevron so the gradient pickers (the
   // primary, most-used surface) sit alone above the fold.
@@ -1375,19 +1356,6 @@ export function LabsAtomMotion() {
     })
   }, [solidColor, individualColors, gradientStart, gradientEnd])
 
-  // Contextual hint above the action strip — guides the user through the
-  // happy path. Empty string = no hint shown (animation in flow).
-  const totalTravels = useMemo(
-    () => travelCounts.reduce((a, b) => a + b, 0),
-    [travelCounts],
-  )
-  const hintText = useMemo(() => {
-    if (visibleCount === 0) return 'Tap ↺ to replay'
-    if (autoReplay) return 'Looping'
-    if (totalTravels === 0) return 'Tap ⇋ travel to send it across'
-    return ''
-  }, [visibleCount, autoReplay, totalTravels])
-
   const reducedMotion = usePrefersReducedMotion()
   // Sharper fade (power 5) concentrates the visible trail near the head
   // and pushes the alpha-zero zone over a longer stretch. Hides the
@@ -1412,55 +1380,6 @@ export function LabsAtomMotion() {
   const orbitSize = useMemo(() => 3 * (Math.SQRT2 - 1), [])
   const groupTiltZ = useMemo(() => tiltZFrom(pointA, pointB), [pointA, pointB])
 
-  const onReplay = useCallback(() => {
-    setIntroNonce((n) => n + 1)
-  }, [])
-  const onAddOne = useCallback(() => {
-    setSlotLocations((prev) => {
-      const currentN = prev.reduce((n, s) => (s === 'A' ? n + 1 : n), 0)
-      const next = nextCountStep(currentN)
-      if (next === null) return prev
-      const out = prev.slice()
-      // Pack the new slots into [currentN..next-1] = 'A'. Slot identity
-      // is the array index; existing 'A' slots in [0..currentN-1] keep
-      // their slot. Bump only the NEW slots' startSeeds. Existing
-      // electrons keep their phase; their orbital planes redistribute
-      // symmetrically. Phase-spacing is handled separately by the
-      // count-pill row, which fires the full intro stagger.
-      for (let i = currentN; i < next; i++) out[i] = 'A'
-      setStartSeeds((prev2) => {
-        const seeds = prev2.slice()
-        for (let i = currentN; i < next; i++) seeds[i] = (seeds[i] ?? 0) + 1
-        return seeds
-      })
-      setVisibleCount(next)
-      return out
-    })
-  }, [])
-  const onRemoveOne = useCallback(() => {
-    setSlotLocations((prev) => {
-      const currentN = prev.reduce((n, s) => (s === 'A' ? n + 1 : n), 0)
-      const next = prevCountStep(currentN)
-      if (next === null) return prev
-      const out = prev.slice()
-      // Vacate slots [next..currentN-1]. No startSeed bumps —
-      // surviving electrons in [0..next-1) keep their current phase.
-      // Removed electrons (i >= next) fade out via existence='idle'.
-      for (let i = next; i < currentN; i++) out[i] = 'none'
-      setVisibleCount(next)
-      setNextTravelIndex((idx) => Math.min(idx, next - 1))
-      return out
-    })
-  }, [])
-  const onEnd = useCallback(() => {
-    setSlotLocations(new Array(MAX_ELECTRONS).fill('none' as SlotLocation))
-    setVisibleCount(0)
-    setTravelCounts(new Array(MAX_ELECTRONS).fill(0))
-    setNextTravelIndex(0)
-    globalScaledTimeRef.current = 0
-    setIntroActive(false)
-    setSelectedSlot(null)
-  }, [])
   // Slot-grid handlers (Chunk 5e).
   // Tap empty → add to A. Tap occupied → toggle selection.
   const onSlotTap = useCallback((k: number) => {
@@ -1515,12 +1434,9 @@ export function LabsAtomMotion() {
   // panel's Refresh button.
   const onRefresh = useCallback(() => {
     setSlotLocations(new Array(MAX_ELECTRONS).fill('none' as SlotLocation))
-    setVisibleCount(0)
     setTravelCounts(new Array(MAX_ELECTRONS).fill(0))
-    setNextTravelIndex(0)
     setStartSeeds(new Array(MAX_ELECTRONS).fill(0))
     globalScaledTimeRef.current = 0
-    setIntroActive(false)
     setPaused(false)
     setAutoReplay(false)
     setSpeedMult(3.5)
@@ -1538,7 +1454,6 @@ export function LabsAtomMotion() {
     setIndividualColors(['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'])
     setGradientStart('#ffa57d')
     setGradientEnd('#93e3fd')
-    setPaletteOpen(false)
     setMoreModesOpen(false)
     setGuidesEnabled(true)
     setSpreadActive(false)
@@ -1559,40 +1474,31 @@ export function LabsAtomMotion() {
     setSelectedSlot(null)
     orbitControlsRef.current?.reset?.()
   }, [setTheme])
-  const onTravel = useCallback(() => {
-    if (visibleCount === 0) return
-    setTravelCounts((counts) => {
-      const next = counts.slice()
-      next[nextTravelIndex] = (next[nextTravelIndex] ?? 0) + 1
-      return next
-    })
-    setNextTravelIndex((i) => (i + 1) % visibleCount)
-  }, [nextTravelIndex, visibleCount])
-
-  // Intro choreography: stagger N=targetN electrons over ~14s total.
-  // Re-runs ONLY on introNonce bump (replay button) or initial mount.
-  // targetN read via ref so +/- and slider changes don't restart the
-  // animation — those just shift visibleCount/specs in place.
-  const targetNRef = useRef(targetN)
-  targetNRef.current = targetN
-
-  // Centralized auto-loop. When autoReplay is on and the intro has
-  // settled, fire travel bumps in interleaved-perpendicular order at
-  // a tempo tied to the orbit period — matches the previous decentral
-  // "3 laps per electron" pacing, but the SEQUENCE is now perpendicular
-  // (slot 0, slot N/2, slot 1, slot N/2+1, ...) so consecutive travels
-  // hit perpendicular planes instead of rotating around the chord.
+  // Centralized auto-loop. When autoReplay is on, fire travel bumps in
+  // interleaved-perpendicular order at a tempo tied to the orbit period —
+  // each in-play slot crosses A↔B once per cycle of LOOP_LAPS_BEFORE_TRAVEL
+  // orbits, with the SEQUENCE perpendicular (slot 0, slot N/2, slot 1,
+  // slot N/2+1, ...) so consecutive travels hit perpendicular planes.
+  // Reads slotLocations through a ref so changing membership mid-loop
+  // doesn't restart the interval and reset the cycle index.
+  const slotLocationsRef = useRef(slotLocations)
+  slotLocationsRef.current = slotLocations
   useEffect(() => {
-    if (!autoReplay || introActive || visibleCount === 0 || paused) return
-    const N = visibleCount
-    const order = travelOrderInterleaved(N)
-    let cycleIdx = 0
-    // Orbit period in real seconds: 2π / (ORBIT_OMEGA_BASE · speedMult · SPEED_SCALE)
+    if (!autoReplay || paused) return
     const orbitPeriodMs = (2 * Math.PI * 1000) / (ORBIT_OMEGA_BASE * Math.max(0.5, speedMult) * SPEED_SCALE)
-    // Total per-electron cycle ≈ LOOP_LAPS_BEFORE_TRAVEL orbits → tick interval = that / N
-    const tickMs = (LOOP_LAPS_BEFORE_TRAVEL * orbitPeriodMs) / N
+    // Approximate per-tick interval — averaged across the typical N range.
+    // Exact pacing depends on current in-play count which is read at fire-time.
+    const tickMs = (LOOP_LAPS_BEFORE_TRAVEL * orbitPeriodMs) / 8
+    let cycleIdx = 0
     const fire = () => {
-      const slot = order[cycleIdx % order.length]
+      const inPlay: number[] = []
+      for (let i = 0; i < slotLocationsRef.current.length; i++) {
+        if (slotLocationsRef.current[i] !== 'none') inPlay.push(i)
+      }
+      const N = inPlay.length
+      if (N === 0) return
+      const orderIdx = travelOrderInterleaved(N)[cycleIdx % N]
+      const slot = inPlay[orderIdx]
       setTravelCounts((prev) => {
         const next = prev.slice()
         next[slot] = (next[slot] ?? 0) + 1
@@ -1602,40 +1508,7 @@ export function LabsAtomMotion() {
     }
     const handle = setInterval(fire, tickMs)
     return () => clearInterval(handle)
-  }, [autoReplay, introActive, visibleCount, speedMult, paused])
-  useEffect(() => {
-    let cancelled = false
-    const N = Math.max(0, Math.min(MAX_ELECTRONS, targetNRef.current))
-    setVisibleCount(0)
-    setIntroActive(true)
-    setNextTravelIndex(0)
-    if (N === 0) {
-      // Empty stage — no stagger, just turn intro gate off.
-      setIntroActive(false)
-      return
-    }
-    const total = 14000
-    const interval = total / N
-    // Bump startSeeds for all N slots so probes reseed at intro start.
-    setStartSeeds((prev) => {
-      const next = prev.slice()
-      for (let i = 0; i < N; i++) next[i] = (next[i] ?? 0) + 1
-      return next
-    })
-    const timeouts: ReturnType<typeof setTimeout>[] = []
-    for (let i = 1; i <= N; i++) {
-      timeouts.push(
-        setTimeout(() => { if (!cancelled) setVisibleCount(i) }, interval * (i - 1)),
-      )
-    }
-    timeouts.push(
-      setTimeout(() => { if (!cancelled) setIntroActive(false) }, interval * N),
-    )
-    return () => {
-      cancelled = true
-      timeouts.forEach(clearTimeout)
-    }
-  }, [introNonce])
+  }, [autoReplay, speedMult, paused])
 
   const setSpread = useCallback((newHalf: number) => {
     const mx = (pointA[0] + pointB[0]) / 2
@@ -1798,149 +1671,6 @@ export function LabsAtomMotion() {
         </Canvas>
       </div>
 
-      {/* Top-left: hide-all-UI toggle. Always visible. */}
-      <button
-        type="button"
-        className={`${s.btn} ${s.btnIcon} ${s.uiToggleBtn}`}
-        onClick={() => setUiHidden((v) => !v)}
-        aria-label={uiHidden ? 'Show controls' : 'Hide controls'}
-        title={uiHidden ? 'Show' : 'Hide'}
-      >
-        {uiHidden ? '◇' : '◆'}
-      </button>
-
-      {/* Top-left: floating playback bar — replay / stop / loop / recenter.
-          Independent of the UI-hide toggle; has its own minimize. */}
-      <div className={s.playbackBar} aria-label="Playback">
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon}`}
-          onClick={() => setPlaybackOpen((v) => !v)}
-          aria-label={playbackOpen ? 'Minimize playback' : 'Expand playback'}
-          title={playbackOpen ? 'Minimize' : 'Expand'}
-        >
-          {playbackOpen ? '▾' : '▸'}
-        </button>
-        {playbackOpen && (
-          <>
-            <button
-              type="button"
-              className={`${s.btn} ${s.btnIcon}`}
-              onClick={onReplay}
-              aria-label={`Replay intro with ${targetN} electrons`}
-              title="Replay intro"
-            >
-              ↺
-            </button>
-            <button
-              type="button"
-              className={`${s.btn} ${s.btnIcon}`}
-              onClick={onEnd}
-              aria-label="Stop"
-              title="Stop"
-              disabled={visibleCount === 0}
-            >
-              ■
-            </button>
-            <button
-              type="button"
-              className={`${s.btn} ${s.btnIcon} ${autoReplay ? s.btnActive : ''}`}
-              onClick={() => setAutoReplay((v) => !v)}
-              aria-label={autoReplay ? 'Disable loop' : 'Enable loop'}
-              title={autoReplay ? 'Loop on' : 'Loop off'}
-            >
-              {autoReplay ? '↻' : '○'}
-            </button>
-            <button
-              type="button"
-              className={`${s.btn} ${s.btnIcon}`}
-              onClick={onRecenter}
-              aria-label="Recenter view"
-              title="Recenter"
-            >
-              ◎
-            </button>
-          </>
-        )}
-      </div>
-
-      {/* Top-right: global appearance controls — always visible. */}
-      <div className={s.appearanceCluster} aria-label="Appearance">
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon}`}
-          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-          aria-label="Toggle theme"
-          title={theme === 'light' ? 'Light' : 'Dark'}
-        >
-          {theme === 'light' ? '☼' : '☾'}
-        </button>
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon} ${showNuclei ? s.btnActive : ''}`}
-          onClick={() => setShowNuclei((v) => !v)}
-          aria-label="Toggle nuclei"
-          title={showNuclei ? 'Nuclei on' : 'Nuclei off'}
-        >
-          {showNuclei ? '●' : '○'}
-        </button>
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon} ${showAxis ? s.btnActive : ''}`}
-          onClick={() => setShowAxis((v) => !v)}
-          aria-label="Toggle axis"
-          title={showAxis ? 'Axis on' : 'Axis off'}
-        >
-          {showAxis ? '✦' : '✧'}
-        </button>
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon}`}
-          onClick={() => setPaletteOpen((v) => !v)}
-          aria-label="Open palette"
-          title="Palette"
-        >
-          ◐
-        </button>
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon}`}
-          onClick={onRemoveOne}
-          aria-label="Step down to previous symmetry"
-          title={`Step down (${targetN} → ${prevCountStep(targetN) ?? '—'})`}
-          disabled={prevCountStep(targetN) === null}
-        >
-          −
-        </button>
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon}`}
-          onClick={onAddOne}
-          aria-label="Step up to next symmetry"
-          title={`Step up (${targetN} → ${nextCountStep(targetN) ?? '—'})`}
-          disabled={nextCountStep(targetN) === null}
-        >
-          +
-        </button>
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon}`}
-          onClick={onTravel}
-          aria-label={`Travel electron ${nextTravelIndex + 1}`}
-          title={`Travel e${nextTravelIndex + 1}`}
-          disabled={visibleCount === 0}
-        >
-          ⇋
-        </button>
-        <input
-          type="color"
-          value={bgColor}
-          onChange={(e) => setBgColor(e.currentTarget.value)}
-          className={s.colorPicker}
-          aria-label="Background color"
-          title="Background color"
-        />
-      </div>
 
       {/* New 5-panel system (chunks 3+). Dock = right-edge column of icons.
           Panel stack = right edge to the left of the dock. Each dock icon
@@ -2333,211 +2063,18 @@ export function LabsAtomMotion() {
         ) : null)}
       </div>
 
-      {paletteOpen && (
-        <>
-          <div className={s.paletteBackdrop} onClick={() => setPaletteOpen(false)} />
-          <div className={s.palettePopover} onClick={(e) => e.stopPropagation()}>
-            <div className={s.modeTabs}>
-              <button
-                type="button"
-                className={`${s.modeTab} ${colorMode === 'solid' ? s.modeTabActive : ''}`}
-                onClick={() => setColorMode('solid')}
-              >
-                Solid
-              </button>
-              <button
-                type="button"
-                className={`${s.modeTab} ${colorMode === 'individual' ? s.modeTabActive : ''}`}
-                onClick={() => setColorMode('individual')}
-              >
-                Individual
-              </button>
-              <button
-                type="button"
-                className={`${s.modeTab} ${colorMode === 'gradient' ? s.modeTabActive : ''}`}
-                onClick={() => setColorMode('gradient')}
-              >
-                Gradient
-              </button>
-            </div>
-            <div className={s.paletteBody}>
-              {colorMode === 'solid' && (
-                <input
-                  type="color"
-                  value={solidColor}
-                  onChange={(e) => setSolidColor(e.currentTarget.value)}
-                  className={s.colorPicker}
-                  aria-label="Solid color"
-                />
-              )}
-              {colorMode === 'individual' && (
-                <div className={s.individualGrid}>
-                  {Array.from({ length: targetN }, (_, i) => (
-                    <input
-                      key={`pal-e${i}`}
-                      type="color"
-                      value={individualColors[i % individualColors.length] ?? DEFAULT_E_COLOR}
-                      onChange={(e) => setIndividualColorAt(i, e.currentTarget.value)}
-                      className={s.colorPicker}
-                      aria-label={`Electron ${i + 1} color`}
-                      title={`Electron ${i + 1}`}
-                    />
-                  ))}
-                </div>
-              )}
-              {colorMode === 'gradient' && (
-                <div className={s.gradientRow}>
-                  <input
-                    type="color"
-                    value={gradientStart}
-                    onChange={(e) => setGradientStart(e.currentTarget.value)}
-                    className={s.colorPicker}
-                    aria-label="Gradient start"
-                    title="Start"
-                  />
-                  <span className={s.gradientArrow}>→</span>
-                  <input
-                    type="color"
-                    value={gradientEnd}
-                    onChange={(e) => setGradientEnd(e.currentTarget.value)}
-                    className={s.colorPicker}
-                    aria-label="Gradient end"
-                    title="End"
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-        </>
-      )}
-
-      {!uiHidden && (
-      <>
-      {/* Single transparent control panel — drag canvas to rotate, pinch to zoom. */}
-      <div className={s.unifiedPanel} aria-label="Atom motion controls">
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>presets</span>
-          <div className={s.presetButtons}>
-            {PRESETS.map((p) => (
-              <button
-                key={p.name}
-                type="button"
-                className={`${s.btn} ${s.btnPreset}`}
-                onClick={() => applyPreset(p)}
-                aria-label={`Apply preset ${p.name}`}
-              >
-                {p.name}
-              </button>
-            ))}
-          </div>
-        </div>
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`spread  ${chordHalf.toFixed(1)}`}</span>
-          <input
-            type="range"
-            min={1.5}
-            max={20}
-            step={0.1}
-            value={Math.min(20, Math.max(1.5, chordHalf))}
-            onChange={(e) => setSpread(parseFloat(e.currentTarget.value))}
-            className={s.tiltSlider}
-            aria-label="Spread (chord half-distance)"
-          />
-        </div>
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`speed  ${speedMult}×`}</span>
-          <input
-            type="range"
-            min={0.5}
-            max={6}
-            step={0.5}
-            value={speedMult}
-            onChange={(e) => setSpeedMult(parseFloat(e.currentTarget.value))}
-            className={s.tiltSlider}
-            aria-label="Animation speed"
-          />
-        </div>
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>count</span>
-          <div className={s.presetButtons}>
-            {COUNT_STEPS.map((n) => (
-              <button
-                key={`count-${n}`}
-                type="button"
-                className={`${s.btn} ${s.btnPreset} ${targetN === n ? s.btnActive : ''}`}
-                onClick={() => {
-                  // Picking a count = fresh setup. Fire the intro stagger
-                  // to that N; the intro effect re-arms first-setup mode.
-                  setSlotLocations(() => {
-                    const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
-                    const next = Math.max(0, Math.min(MAX_ELECTRONS, n))
-                    for (let i = 0; i < next; i++) out[i] = 'A'
-                    return out
-                  })
-                  setIntroNonce((nonce) => nonce + 1)
-                }}
-                aria-label={`Set ${n} electrons`}
-              >
-                {n}
-              </button>
-            ))}
-          </div>
-        </div>
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`head  ${headScale.toFixed(2)}`}</span>
-          <input
-            type="range"
-            min={0.0}
-            max={0.50}
-            step={0.01}
-            value={headScale}
-            onChange={(e) => setHeadScale(parseFloat(e.currentTarget.value))}
-            className={s.tiltSlider}
-            aria-label="Electron head size"
-          />
-        </div>
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`halo  ${haloScale.toFixed(1)}`}</span>
-          <input
-            type="range"
-            min={0.0}
-            max={5.0}
-            step={0.1}
-            value={haloScale}
-            onChange={(e) => setHaloScale(parseFloat(e.currentTarget.value))}
-            className={s.tiltSlider}
-            aria-label="Halo scale"
-          />
-        </div>
-        <div className={s.tiltSliderRow}>
-          <span className={s.tiltSliderLabel}>{`trail  ${trailWidth.toFixed(2)}`}</span>
-          <input
-            type="range"
-            min={0.0}
-            max={0.50}
-            step={0.01}
-            value={trailWidth}
-            onChange={(e) => setTrailWidth(parseFloat(e.currentTarget.value))}
-            className={s.tiltSlider}
-            aria-label="Trail width"
-          />
-        </div>
-        {hintText && <div className={s.hintInline}>{hintText}</div>}
+      {/* Always-visible diagnostic HUD pinned bottom-left. Per the labs
+          screenshot-debug-complete rule: every /labs/* page surfaces
+          commit hash + key live values so a single screenshot is
+          debug-complete with no follow-ups. */}
+      <div className={s.diagHud} aria-hidden="true">
         <span className={s.buildLabel}>
-          {`cam (${camPos[0]}, ${camPos[1]}, ${camPos[2]})`}
+          {`build·${COMMIT} · cam (${camPos[0]}, ${camPos[1]}, ${camPos[2]}) · tgt (${camTgt[0]}, ${camTgt[1]}, ${camTgt[2]})`}
         </span>
         <span className={s.buildLabel}>
-          {`tgt (${camTgt[0]}, ${camTgt[1]}, ${camTgt[2]})`}
-        </span>
-        <span className={s.buildLabel}>
-          {`e ${electronColors.join(' ')}`}
-        </span>
-        <span className={s.buildLabel}>
-          {`build·${COMMIT} · bg ${bgColor}`}
+          {`A=${slotLocations.filter((l) => l === 'A').length} B=${slotLocations.filter((l) => l === 'B').length} layout=${activeLayout} bg=${bgMode}/${bgColor}`}
         </span>
       </div>
-      </>
-      )}
     </div>
   )
 }

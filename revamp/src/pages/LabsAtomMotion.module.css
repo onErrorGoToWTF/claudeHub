@@ -768,6 +768,26 @@
   transform: translate(-50%, -50%);
 }
 
+/* --- Diagnostic HUD (always-visible, bottom-left) -------------------- */
+/* Per the labs screenshot-debug-complete rule: every /labs/* page
+   surfaces commit hash + key live values so a single screenshot is
+   debug-complete with no follow-ups. Intentionally low-contrast and
+   pinned bottom-left so it stays out of the way of the panel stack. */
+
+.diagHud {
+  position: fixed;
+  left: 12px;
+  right: calc(12px + 36px + 8px);
+  bottom: calc(8px + env(safe-area-inset-bottom));
+  z-index: 9990;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 /* --- Background gradient mode override on root ----------------------- */
 /* When the user picks "Gradient" in the Colors panel, swap the default
    165deg tonal blend for a clean top→bottom two-stop gradient between
