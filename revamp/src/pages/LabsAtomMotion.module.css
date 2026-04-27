@@ -654,6 +654,64 @@
   align-items: center;
 }
 
+/* --- Panel sub-sections (Colors panel uses Electrons + Background) --- */
+
+.subSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 8px;
+}
+
+.subSection + .subSection {
+  border-top: 1px solid var(--lab-panel-border);
+  padding-top: 10px;
+}
+
+.subSectionLabel {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--lab-meta);
+  text-transform: lowercase;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.subSectionToggle {
+  align-self: flex-start;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 13px;
+  background: transparent;
+  border: 1px solid var(--lab-panel-border);
+  color: var(--lab-meta);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.subSectionToggle:active {
+  background: var(--lab-btn-active);
+}
+
+/* --- Background gradient mode override on root ----------------------- */
+/* When the user picks "Gradient" in the Colors panel, swap the default
+   165deg tonal blend for a clean top→bottom two-stop gradient between
+   the user-picked endpoints. Compound `.root.bgGradient` selector wins
+   the cascade against `.root` even though both are single-class
+   specificity. Hue is preserved exactly — only the gradient stops change. */
+
+.root.bgGradient {
+  background: linear-gradient(
+    180deg,
+    var(--lab-bg-grad-start, var(--lab-bg-base)) 0%,
+    var(--lab-bg-grad-end, var(--lab-bg-base)) 100%
+  );
+}
+
 /* --- Electrons panel — 16-slot grid --------------------------------- */
 /* 4×4 grid. Empty cells are dashed outlines; occupied cells are tinted
    by atom (A = cool blue, B = warm orange). Selected cell gets a

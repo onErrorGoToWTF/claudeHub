@@ -1121,7 +1121,8 @@ export function LabsAtomMotion() {
     setPanelsOpen((prev) => ({ ...prev, [key]: !prev[key] }))
   }, [])
   // Color mode + per-mode state. electronColors is derived below.
-  const [colorMode, setColorMode] = useState<ColorMode>('individual')
+  // Gradient is the showcase default (most-used per user feedback).
+  const [colorMode, setColorMode] = useState<ColorMode>('gradient')
   const [solidColor, setSolidColor] = useState('#ffa57d')
   const [individualColors, setIndividualColors] = useState<string[]>(() =>
     ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
@@ -1129,6 +1130,16 @@ export function LabsAtomMotion() {
   const [gradientStart, setGradientStart] = useState('#ffa57d')
   const [gradientEnd, setGradientEnd] = useState('#93e3fd')
   const [paletteOpen, setPaletteOpen] = useState(false)
+  // "More modes" expander inside the Colors panel — collapses Solid +
+  // Individual under a single chevron so the gradient pickers (the
+  // primary, most-used surface) sit alone above the fold.
+  const [moreModesOpen, setMoreModesOpen] = useState(false)
+  // Background mode + gradient endpoints (Chunk 6). Solid mode uses the
+  // legacy single bgColor; gradient mode does a top→bottom linear
+  // interpolation between two user-picked colors.
+  const [bgMode, setBgMode] = useState<'solid' | 'gradient'>('solid')
+  const [bgGradientStart, setBgGradientStart] = useState('#7a3a8c')
+  const [bgGradientEnd, setBgGradientEnd] = useState('#1a0a1a')
   // True while the user is actively interacting with the canvas (rotate /
   // pinch / pan). Forces guides ON regardless of manual toggles.
   const [interacting, setInteracting] = useState(false)
@@ -1181,6 +1192,26 @@ export function LabsAtomMotion() {
       return next
     })
   }, [])
+  // Switching INTO Individual pre-populates the swatches from the current
+  // effective per-electron colors (resolved Gradient or duplicated Solid).
+  // Subsequent re-entries preserve prior tweaks; only the entry that
+  // CHANGES mode reseeds. Solid → Solid / Gradient → Gradient = no-op.
+  const onSelectColorMode = useCallback((next: ColorMode) => {
+    setColorMode((prev) => {
+      if (next === 'individual' && prev !== 'individual') {
+        const resolved = deriveElectronColors(
+          MAX_ELECTRONS,
+          prev,
+          solidColor,
+          individualColors,
+          gradientStart,
+          gradientEnd,
+        )
+        setIndividualColors(resolved)
+      }
+      return next
+    })
+  }, [solidColor, individualColors, gradientStart, gradientEnd])
 
   // Contextual hint above the action strip — guides the user through the
   // happy path. Empty string = no hint shown (animation in flow).
@@ -1335,14 +1366,18 @@ export function LabsAtomMotion() {
     setHaloScale(0.0)
     setTrailWidth(0.03)
     setBgColor('#59004c')
+    setBgMode('solid')
+    setBgGradientStart('#7a3a8c')
+    setBgGradientEnd('#1a0a1a')
     setShowAxis(false)
     setShowNuclei(true)
-    setColorMode('individual')
+    setColorMode('gradient')
     setSolidColor('#ffa57d')
     setIndividualColors(['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'])
     setGradientStart('#ffa57d')
     setGradientEnd('#93e3fd')
     setPaletteOpen(false)
+    setMoreModesOpen(false)
     setPointA(INITIAL_POINT_A)
     setPointB(INITIAL_POINT_B)
     setTheme('light')
@@ -1494,8 +1529,12 @@ export function LabsAtomMotion() {
 
   return (
     <div
-      className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark}`}
-      style={{ ['--lab-bg-base' as string]: bgColor }}
+      className={`${s.root} ${theme === 'light' ? s.themeLight : s.themeDark} ${bgMode === 'gradient' ? s.bgGradient : ''}`}
+      style={{
+        ['--lab-bg-base' as string]: bgColor,
+        ['--lab-bg-grad-start' as string]: bgGradientStart,
+        ['--lab-bg-grad-end' as string]: bgGradientEnd,
+      }}
     >
       <div className={s.canvasArea}>
         <Canvas
@@ -1807,6 +1846,146 @@ export function LabsAtomMotion() {
                       className={s.tiltSlider}
                       aria-label="Animation speed"
                     />
+                  </div>
+                </>
+              ) : key === 'colors' ? (
+                <>
+                  <div className={s.subSection}>
+                    <div className={s.subSectionLabel}>Electrons</div>
+                    <div className={s.gradientRow}>
+                      <input
+                        type="color"
+                        value={gradientStart}
+                        onChange={(e) => {
+                          setGradientStart(e.currentTarget.value)
+                          if (colorMode !== 'gradient') setColorMode('gradient')
+                        }}
+                        className={s.colorPicker}
+                        aria-label="Electron gradient start"
+                        title="Start"
+                      />
+                      <span className={s.gradientArrow}>→</span>
+                      <input
+                        type="color"
+                        value={gradientEnd}
+                        onChange={(e) => {
+                          setGradientEnd(e.currentTarget.value)
+                          if (colorMode !== 'gradient') setColorMode('gradient')
+                        }}
+                        className={s.colorPicker}
+                        aria-label="Electron gradient end"
+                        title="End"
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      className={s.subSectionToggle}
+                      onClick={() => setMoreModesOpen((v) => !v)}
+                      aria-expanded={moreModesOpen}
+                    >
+                      {moreModesOpen ? '▾' : '▸'} More modes
+                    </button>
+                    {moreModesOpen && (
+                      <>
+                        <div className={s.modeTabs}>
+                          <button
+                            type="button"
+                            className={`${s.modeTab} ${colorMode === 'solid' ? s.modeTabActive : ''}`}
+                            onClick={() => onSelectColorMode('solid')}
+                          >
+                            Solid
+                          </button>
+                          <button
+                            type="button"
+                            className={`${s.modeTab} ${colorMode === 'individual' ? s.modeTabActive : ''}`}
+                            onClick={() => onSelectColorMode('individual')}
+                          >
+                            Individual
+                          </button>
+                          <button
+                            type="button"
+                            className={`${s.modeTab} ${colorMode === 'gradient' ? s.modeTabActive : ''}`}
+                            onClick={() => onSelectColorMode('gradient')}
+                          >
+                            Gradient
+                          </button>
+                        </div>
+                        {colorMode === 'solid' && (
+                          <input
+                            type="color"
+                            value={solidColor}
+                            onChange={(e) => setSolidColor(e.currentTarget.value)}
+                            className={s.colorPicker}
+                            aria-label="Solid color"
+                          />
+                        )}
+                        {colorMode === 'individual' && (
+                          <div className={s.individualGrid}>
+                            {Array.from({ length: MAX_ELECTRONS }, (_, i) => (
+                              <input
+                                key={`pal-e${i}`}
+                                type="color"
+                                value={individualColors[i] ?? DEFAULT_E_COLOR}
+                                onChange={(e) => setIndividualColorAt(i, e.currentTarget.value)}
+                                className={s.colorPicker}
+                                aria-label={`Electron ${i + 1} color`}
+                                title={`Electron ${i + 1}`}
+                              />
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
+                  <div className={s.subSection}>
+                    <div className={s.subSectionLabel}>Background</div>
+                    <div className={s.modeTabs}>
+                      <button
+                        type="button"
+                        className={`${s.modeTab} ${bgMode === 'solid' ? s.modeTabActive : ''}`}
+                        onClick={() => setBgMode('solid')}
+                      >
+                        Solid
+                      </button>
+                      <button
+                        type="button"
+                        className={`${s.modeTab} ${bgMode === 'gradient' ? s.modeTabActive : ''}`}
+                        onClick={() => setBgMode('gradient')}
+                      >
+                        Gradient
+                      </button>
+                    </div>
+                    {bgMode === 'solid' && (
+                      <input
+                        type="color"
+                        value={bgColor}
+                        onChange={(e) => setBgColor(e.currentTarget.value)}
+                        className={s.colorPicker}
+                        aria-label="Background color"
+                        title="Background"
+                      />
+                    )}
+                    {bgMode === 'gradient' && (
+                      <div className={s.gradientRow}>
+                        <input
+                          type="color"
+                          value={bgGradientStart}
+                          onChange={(e) => setBgGradientStart(e.currentTarget.value)}
+                          className={s.colorPicker}
+                          aria-label="Background gradient start"
+                          title="Top"
+                        />
+                        <span className={s.gradientArrow}>→</span>
+                        <input
+                          type="color"
+                          value={bgGradientEnd}
+                          onChange={(e) => setBgGradientEnd(e.currentTarget.value)}
+                          className={s.colorPicker}
+                          aria-label="Background gradient end"
+                          title="Bottom"
+                        />
+                      </div>
+                    )}
                   </div>
                 </>
               ) : key === 'electrons' ? (
