@@ -245,33 +245,41 @@ const MAX_ELECTRONS = 16
 // 12 (sphere-ish), 16 (max / supercharge). Slider still allows any
 // integer in [1, 16] for free tuning.
 // Slot identity table — maps a 0-indexed slot to its (plane, phase)
-// coordinates. Designed so the prefix at every sweet-spot count
-// (1, 2, 4, 8, 16) hits a perpendicular/maximally-spread configuration
-// AND each layout is a strict superset of the previous:
-//   N=1   1 electron       plane 0°,  phase 0°
-//   N=2   +1               plane 90°, phase 0°       (perpendicular pair)
-//   N=4   +2               planes 0°/90° gain phase 180°  (diagonal cross)
-//   N=8   +4               planes 0°/90° gain phases 90°/270°  (square × 2)
-//   N=16  +8               planes 45°/135° added with the same 4-phase set
+// coordinates. The "four orthogonal furthest-apart orbits" rule: every
+// electron added up through slot 4 occupies its OWN plane. Once all
+// four planes are populated, additional electrons add antipodal pairs
+// (phase 180°), then quarter-phases (90° and 270°). Each new electron
+// gets the most spread-apart slot available; nesting is preserved at
+// every sweet-spot count (1 ⊂ 2 ⊂ 4 ⊂ 8 ⊂ 16):
+//   N=1   plane 0°
+//   N=2   + plane 90°                     (perpendicular pair)
+//   N=3   + plane 135°                    (asymmetric, accepted)
+//   N=4   + plane 45°                     (4 orthogonal orbits)
+//   N=5..8   each plane gains phase 180°  (4 planes × 2 phases)
+//   N=9..12  each plane gains phase 90°
+//   N=13..16 each plane gains phase 270°  (4 planes × 4 phases — sweet spot)
 // Slot k always occupies the same (plane, phase) regardless of total
 // count — slot identity is permanent across grow/shrink and across
 // atoms (e_k on B sits at the same plane/phase, just on B's frame).
-const SLOT_PLANE_ANGLES = [0, Math.PI / 2, Math.PI / 4, 3 * Math.PI / 4]
+//
+// Plane fill order: 0°, 90°, 135°, 45°. (135° before 45° matches the
+// "fill the empty upper half first" intent from the original
+// FILL_ORDER_4=[0,2,3,1] — at N=3 slot 3 lands opposite the empty
+// quadrant left by slots 1+2 rather than packing next to them.)
+const SLOT_PLANE_ANGLES = [0, Math.PI / 2, 3 * Math.PI / 4, Math.PI / 4]
 const SLOT_PHASE_ANGLES = [0, Math.PI, Math.PI / 2, 3 * Math.PI / 2]
 
 function slotPlaneIdx(slotIdx0: number): number {
-  // Slots 0–7 alternate between planes 0/1 (angles 0°, 90°).
-  // Slots 8–15 alternate between planes 2/3 (angles 45°, 135°).
-  if (slotIdx0 < 8) return slotIdx0 % 2
-  return 2 + ((slotIdx0 - 8) % 2)
+  // Slots 0..3 fill all four distinct planes (no plane reused while
+  // any plane is empty). Slots 4..15 cycle through the same plane
+  // order, each block of 4 sharing a phase.
+  return slotIdx0 % 4
 }
 
 function slotPhaseIdx(slotIdx0: number): number {
-  // Within each 8-slot block, phase index cycles 0,0,1,1,2,2,3,3
-  // (phase angles 0°, 180°, 90°, 270°). Pairs share the same phase
-  // because they sit on perpendicular planes.
-  const local = slotIdx0 < 8 ? slotIdx0 : slotIdx0 - 8
-  return Math.floor(local / 2)
+  // Phase index advances every 4 slots — slots 0..3 sit at phase 0°,
+  // slots 4..7 at 180°, 8..11 at 90°, 12..15 at 270°.
+  return Math.floor(slotIdx0 / 4)
 }
 
 function buildElectronSpecs(N: number): ElectronSpec[] {
