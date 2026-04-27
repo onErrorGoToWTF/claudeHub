@@ -1069,9 +1069,13 @@ export function LabsAtomMotion() {
   const [showAxis, setShowAxis] = useState(false)
   const [uiHidden, setUiHidden] = useState(true)
   const [playbackOpen, setPlaybackOpen] = useState(true)
+  // Pause/Play toggle (Chunk 4). When paused, MasterClock and ElectronProbe
+  // see speedMult=0 so motion freezes in place; the autoReplay loop is
+  // also gated. Resuming continues from the same state.
+  const [paused, setPaused] = useState(false)
   // New 5-panel system (chunks 3+). Each dock icon toggles its panel
   // independently; multiple panels may be open simultaneously. Panel
-  // bodies are placeholders in chunk 3 — controls migrate in 4-8.
+  // bodies fill in over chunks 4-8.
   const [panelsOpen, setPanelsOpen] = useState<Record<PanelKey, boolean>>({
     playback: false,
     electrons: false,
@@ -1102,6 +1106,11 @@ export function LabsAtomMotion() {
   const [theme, setTheme] = useTheme()
   const palette = THEME_PALETTE[theme]
 
+  // Effective speed multiplier — zero when paused so MasterClock and
+  // every ElectronProbe stop advancing in lockstep without per-component
+  // pause-prop wiring. The autoReplay setInterval also reads this so
+  // travel ticks halt cleanly when paused.
+  const effectiveSpeedMult = paused ? 0 : speedMult
   const electronSpecs = useMemo(() => buildElectronSpecs(targetN), [targetN])
   const electronColors = useMemo(
     () => deriveElectronColors(targetN, colorMode, solidColor, individualColors, gradientStart, gradientEnd),
@@ -1203,6 +1212,45 @@ export function LabsAtomMotion() {
     globalScaledTimeRef.current = 0
     setIntroActive(false)
   }, [])
+  // Full refresh — return to first-load defaults. Clears all electrons,
+  // resets every slider/color/mode/theme/axis/nuclei back to defaults,
+  // closes all panels, recenters camera. Triggered from the Playback
+  // panel's Refresh button.
+  const onRefresh = useCallback(() => {
+    setSlotLocations(new Array(MAX_ELECTRONS).fill('none' as SlotLocation))
+    setVisibleCount(0)
+    setTravelCounts(new Array(MAX_ELECTRONS).fill(0))
+    setNextTravelIndex(0)
+    setStartSeeds(new Array(MAX_ELECTRONS).fill(0))
+    globalScaledTimeRef.current = 0
+    setIntroActive(false)
+    setPaused(false)
+    setAutoReplay(false)
+    setSpeedMult(3.5)
+    setHeadScale(0.03)
+    setHaloScale(0.0)
+    setTrailWidth(0.03)
+    setBgColor('#59004c')
+    setShowAxis(false)
+    setShowNuclei(true)
+    setColorMode('individual')
+    setSolidColor('#ffa57d')
+    setIndividualColors(['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'])
+    setGradientStart('#ffa57d')
+    setGradientEnd('#93e3fd')
+    setPaletteOpen(false)
+    setPointA(INITIAL_POINT_A)
+    setPointB(INITIAL_POINT_B)
+    setTheme('light')
+    setPanelsOpen({
+      playback: false,
+      electrons: false,
+      colors: false,
+      dimensions: false,
+      scene: false,
+    })
+    orbitControlsRef.current?.reset?.()
+  }, [setTheme])
   const onTravel = useCallback(() => {
     if (visibleCount === 0) return
     setTravelCounts((counts) => {
@@ -1227,7 +1275,7 @@ export function LabsAtomMotion() {
   // (slot 0, slot N/2, slot 1, slot N/2+1, ...) so consecutive travels
   // hit perpendicular planes instead of rotating around the chord.
   useEffect(() => {
-    if (!autoReplay || introActive || visibleCount === 0) return
+    if (!autoReplay || introActive || visibleCount === 0 || paused) return
     const N = visibleCount
     const order = travelOrderInterleaved(N)
     let cycleIdx = 0
@@ -1246,7 +1294,7 @@ export function LabsAtomMotion() {
     }
     const handle = setInterval(fire, tickMs)
     return () => clearInterval(handle)
-  }, [autoReplay, introActive, visibleCount, speedMult])
+  }, [autoReplay, introActive, visibleCount, speedMult, paused])
   useEffect(() => {
     let cancelled = false
     const N = Math.max(0, Math.min(MAX_ELECTRONS, targetNRef.current))
@@ -1375,7 +1423,7 @@ export function LabsAtomMotion() {
           />
           <MasterClock
             timeRef={globalScaledTimeRef}
-            speedMult={speedMult}
+            speedMult={effectiveSpeedMult}
             reducedMotion={reducedMotion}
           />
           <CameraDebugger
@@ -1406,7 +1454,7 @@ export function LabsAtomMotion() {
                   haloScale={haloScale}
                   trailWidth={trailWidth}
                   reducedMotion={reducedMotion}
-                  speedMult={speedMult}
+                  speedMult={effectiveSpeedMult}
                   chordHalf={chordHalf}
                   orbitSize={orbitSize}
                   existence={i < visibleCount ? 'visible' : 'idle'}
@@ -1610,7 +1658,54 @@ export function LabsAtomMotion() {
               </button>
             </div>
             <div className={s.panelBody}>
-              <span className={s.panelEmpty}>{`Migrating in chunk ${chunk}…`}</span>
+              {key === 'playback' ? (
+                <>
+                  <div className={s.panelRow}>
+                    <button
+                      type="button"
+                      className={`${s.btn} ${s.btnIcon}`}
+                      onClick={() => setPaused((p) => !p)}
+                      aria-label={paused ? 'Play' : 'Pause'}
+                      title={paused ? 'Play' : 'Pause'}
+                    >
+                      {paused ? '▶' : '❙❙'}
+                    </button>
+                    <button
+                      type="button"
+                      className={`${s.btn} ${s.btnIcon} ${autoReplay ? s.btnActive : ''}`}
+                      onClick={() => setAutoReplay((v) => !v)}
+                      aria-label={autoReplay ? 'Disable loop' : 'Enable loop'}
+                      title={autoReplay ? 'Loop on' : 'Loop off'}
+                    >
+                      {autoReplay ? '↻' : '○'}
+                    </button>
+                    <button
+                      type="button"
+                      className={`${s.btn} ${s.btnIcon}`}
+                      onClick={onRefresh}
+                      aria-label="Refresh — reset everything"
+                      title="Refresh"
+                    >
+                      ⟲
+                    </button>
+                  </div>
+                  <div className={s.tiltSliderRow}>
+                    <span className={s.tiltSliderLabel}>{`speed  ${speedMult}×`}</span>
+                    <input
+                      type="range"
+                      min={0.5}
+                      max={6}
+                      step={0.5}
+                      value={speedMult}
+                      onChange={(e) => setSpeedMult(parseFloat(e.currentTarget.value))}
+                      className={s.tiltSlider}
+                      aria-label="Animation speed"
+                    />
+                  </div>
+                </>
+              ) : (
+                <span className={s.panelEmpty}>{`Migrating in chunk ${chunk}…`}</span>
+              )}
             </div>
           </div>
         ) : null)}

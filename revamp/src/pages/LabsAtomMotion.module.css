@@ -645,3 +645,11 @@
   text-align: center;
   padding: 8px 0;
 }
+
+/* Generic horizontal cluster for buttons inside a panel body. */
+.panelRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
