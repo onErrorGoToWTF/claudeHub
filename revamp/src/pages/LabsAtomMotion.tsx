@@ -940,12 +940,13 @@ const PRESETS: Preset[] = [
   preset({
     name: '7',
     // Empty stage — start with 0 electrons, user adds via the + button.
+    // Loop off so transits only fire on explicit ⇋ taps.
     electronCount: 0,
     individualColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
     bgColor: '#59004c',
     spread: 8.6,
     speed: 4.5,
-    loop: true,
+    loop: false,
     showNuclei: true,
     showAxis: false,
     theme: 'dark',
