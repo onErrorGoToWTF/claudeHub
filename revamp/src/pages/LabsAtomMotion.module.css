@@ -744,6 +744,30 @@
   background: var(--lab-btn-active);
 }
 
+/* --- Blueprint dimension marker label (Scene panel Guides) ----------- */
+
+.guideHtmlWrapper {
+  pointer-events: none !important;
+}
+
+.guideLabel {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--lab-ink);
+  background: var(--lab-panel-bg);
+  border: 1px solid var(--lab-panel-border);
+  border-radius: 6px;
+  padding: 2px 8px;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
 /* --- Background gradient mode override on root ----------------------- */
 /* When the user picks "Gradient" in the Colors panel, swap the default
    165deg tonal blend for a clean top→bottom two-stop gradient between

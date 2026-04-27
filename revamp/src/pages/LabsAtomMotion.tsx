@@ -31,7 +31,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { OrbitControls, Html } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import { ELECTRON } from '../ui/atom/constants'
@@ -144,6 +144,7 @@ function SliderRow({
   step,
   onChange,
   format,
+  onActiveChange,
 }: {
   label: string
   value: number
@@ -152,6 +153,10 @@ function SliderRow({
   step: number
   onChange: (v: number) => void
   format?: (v: number) => string
+  /** Fired with `true` when the user starts touching/dragging the
+   *  slider, `false` when they release. Used to drive Guides
+   *  dimension markers in the 3D scene. */
+  onActiveChange?: (active: boolean) => void
 }) {
   const [nudgeOpen, setNudgeOpen] = useState(false)
   const display = format ? format(value) : String(value)
@@ -198,6 +203,9 @@ function SliderRow({
         step={step}
         value={value}
         onChange={(e) => onChange(parseFloat(e.currentTarget.value))}
+        onPointerDown={() => onActiveChange?.(true)}
+        onPointerUp={() => onActiveChange?.(false)}
+        onPointerCancel={() => onActiveChange?.(false)}
         className={s.tiltSlider}
         aria-label={label}
       />
@@ -864,6 +872,63 @@ function AxisLine({
   )
 }
 
+// Blueprint-style dimension marker between the two nuclei (Chunk 8b).
+// A thin chord-axis line + a centered numeric label showing the current
+// chord-half distance. Visible only while the user is actively touching
+// the spread slider AND the master Guides toggle is on. Lives inside
+// the chord-aligned group so it rotates with the rest of the scene.
+function DimensionMarker({
+  pointA,
+  pointB,
+  visible,
+  color,
+}: {
+  pointA: Vec3
+  pointB: Vec3
+  visible: boolean
+  color: string
+}) {
+  const positions = useMemo(() => {
+    return new Float32Array([
+      pointA[0], pointA[1], pointA[2],
+      pointB[0], pointB[1], pointB[2],
+    ])
+  }, [pointA, pointB])
+  const distance = useMemo(() => {
+    return Math.hypot(
+      pointB[0] - pointA[0],
+      pointB[1] - pointA[1],
+      pointB[2] - pointA[2],
+    )
+  }, [pointA, pointB])
+  const midpoint = useMemo<[number, number, number]>(() => [
+    (pointA[0] + pointB[0]) / 2,
+    (pointA[1] + pointB[1]) / 2 + 0.9,
+    (pointA[2] + pointB[2]) / 2,
+  ], [pointA, pointB])
+  if (!visible) return null
+  return (
+    <>
+      <lineSegments renderOrder={2}>
+        <bufferGeometry>
+          <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+        </bufferGeometry>
+        <lineBasicMaterial
+          color={color}
+          transparent
+          opacity={0.8}
+          toneMapped={false}
+          depthWrite={false}
+          depthTest={false}
+        />
+      </lineSegments>
+      <Html position={midpoint} center wrapperClass={s.guideHtmlWrapper}>
+        <div className={s.guideLabel}>{distance.toFixed(1)}</div>
+      </Html>
+    </>
+  )
+}
+
 function AxisIndicators({
   chordHalf,
   color,
@@ -1213,6 +1278,30 @@ export function LabsAtomMotion() {
   const [bgMode, setBgMode] = useState<'solid' | 'gradient'>('solid')
   const [bgGradientStart, setBgGradientStart] = useState('#7a3a8c')
   const [bgGradientEnd, setBgGradientEnd] = useState('#1a0a1a')
+  // Master Guides toggle (Chunk 8b). Default ON. When OFF, no in-scene
+  // measurement marker appears regardless of slider activity.
+  const [guidesEnabled, setGuidesEnabled] = useState(true)
+  // True only while the user is actively touching the spread slider.
+  // Drives the blueprint dimension marker between the two nuclei.
+  const [spreadActive, setSpreadActive] = useState(false)
+  // Soft fade-out timer for the marker after release.
+  const spreadActiveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const onSpreadActiveChange = useCallback((active: boolean) => {
+    if (active) {
+      if (spreadActiveTimeoutRef.current) {
+        clearTimeout(spreadActiveTimeoutRef.current)
+        spreadActiveTimeoutRef.current = null
+      }
+      setSpreadActive(true)
+    } else {
+      // Brief lingering window so the marker doesn't snap to invisible
+      // the instant the user lifts their finger.
+      spreadActiveTimeoutRef.current = setTimeout(() => {
+        setSpreadActive(false)
+        spreadActiveTimeoutRef.current = null
+      }, 600)
+    }
+  }, [])
   // True while the user is actively interacting with the canvas (rotate /
   // pinch / pan). Forces guides ON regardless of manual toggles.
   const [interacting, setInteracting] = useState(false)
@@ -1451,6 +1540,12 @@ export function LabsAtomMotion() {
     setGradientEnd('#93e3fd')
     setPaletteOpen(false)
     setMoreModesOpen(false)
+    setGuidesEnabled(true)
+    setSpreadActive(false)
+    if (spreadActiveTimeoutRef.current) {
+      clearTimeout(spreadActiveTimeoutRef.current)
+      spreadActiveTimeoutRef.current = null
+    }
     setPointA(INITIAL_POINT_A)
     setPointB(INITIAL_POINT_B)
     setTheme('light')
@@ -1659,6 +1754,12 @@ export function LabsAtomMotion() {
               />
             )}
             {(showNuclei || interacting) && <Nuclei chordHalf={chordHalf} color={palette.ink} />}
+            <DimensionMarker
+              pointA={[-chordHalf, 0, 0]}
+              pointB={[chordHalf, 0, 0]}
+              visible={spreadActive && guidesEnabled}
+              color={lightenHex(bgColor, 0.55)}
+            />
             {electronSpecs.map((spec, i) => {
               const c = electronColors[i] ?? DEFAULT_E_COLOR
               return (
@@ -2055,6 +2156,80 @@ export function LabsAtomMotion() {
                         />
                       </div>
                     )}
+                  </div>
+                </>
+              ) : key === 'scene' ? (
+                <>
+                  <SliderRow
+                    label="spread"
+                    value={Math.min(20, Math.max(1.5, chordHalf))}
+                    min={1.5}
+                    max={20}
+                    step={0.1}
+                    onChange={setSpread}
+                    onActiveChange={onSpreadActiveChange}
+                    format={(v) => v.toFixed(1)}
+                  />
+                  <div className={s.subSectionLabel}>presets</div>
+                  <div className={s.presetButtons}>
+                    {PRESETS.map((p) => (
+                      <button
+                        key={p.name}
+                        type="button"
+                        className={`${s.btn} ${s.btnPreset}`}
+                        onClick={() => applyPreset(p)}
+                        aria-label={`Apply preset ${p.name}`}
+                      >
+                        {p.name}
+                      </button>
+                    ))}
+                  </div>
+                  <div className={s.panelRow}>
+                    <button
+                      type="button"
+                      className={`${s.btn} ${s.btnIcon}`}
+                      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                      aria-label="Toggle theme"
+                      title={theme === 'light' ? 'Light' : 'Dark'}
+                    >
+                      {theme === 'light' ? '☼' : '☾'}
+                    </button>
+                    <button
+                      type="button"
+                      className={`${s.btn} ${s.btnIcon} ${showNuclei ? s.btnActive : ''}`}
+                      onClick={() => setShowNuclei((v) => !v)}
+                      aria-label="Toggle nuclei"
+                      title={showNuclei ? 'Nuclei on' : 'Nuclei off'}
+                    >
+                      {showNuclei ? '●' : '○'}
+                    </button>
+                    <button
+                      type="button"
+                      className={`${s.btn} ${s.btnIcon} ${showAxis ? s.btnActive : ''}`}
+                      onClick={() => setShowAxis((v) => !v)}
+                      aria-label="Toggle axis"
+                      title={showAxis ? 'Axis on' : 'Axis off'}
+                    >
+                      {showAxis ? '✦' : '✧'}
+                    </button>
+                    <button
+                      type="button"
+                      className={`${s.btn} ${s.btnIcon}`}
+                      onClick={onRecenter}
+                      aria-label="Recenter view"
+                      title="Recenter"
+                    >
+                      ◎
+                    </button>
+                    <button
+                      type="button"
+                      className={`${s.btn} ${s.btnIcon} ${guidesEnabled ? s.btnActive : ''}`}
+                      onClick={() => setGuidesEnabled((v) => !v)}
+                      aria-label={guidesEnabled ? 'Disable guides' : 'Enable guides'}
+                      title={guidesEnabled ? 'Guides on' : 'Guides off'}
+                    >
+                      ⊿
+                    </button>
                   </div>
                 </>
               ) : key === 'dimensions' ? (
