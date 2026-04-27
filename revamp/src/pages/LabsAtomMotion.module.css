@@ -232,6 +232,15 @@
   width: 100%;
 }
 
+/* Inside the grid, let swatches size to the cell instead of the fixed
+   36px from .colorPicker — otherwise 8 columns overflow the ~256px
+   panel and the rightmost swatches clip. */
+.individualGrid .colorPicker {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
 .gradientRow {
   display: flex;
   align-items: center;
