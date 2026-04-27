@@ -1015,6 +1015,36 @@ export function LabsAtomMotion() {
   const onReplay = useCallback(() => {
     setIntroNonce((n) => n + 1)
   }, [])
+  const onAddOne = useCallback(() => {
+    setTargetN((n) => {
+      if (n >= MAX_ELECTRONS) return n
+      const next = n + 1
+      // Bump startSeeds for all active slots so every probe reseeds at
+      // the new spec angles. Quick snap; no intro stagger.
+      setStartSeeds((prev) => {
+        const seeds = prev.slice()
+        for (let i = 0; i < next; i++) seeds[i] = (seeds[i] ?? 0) + 1
+        return seeds
+      })
+      setVisibleCount(next)
+      return next
+    })
+  }, [])
+  const onRemoveOne = useCallback(() => {
+    setTargetN((n) => {
+      if (n <= 1) return n
+      const next = n - 1
+      setStartSeeds((prev) => {
+        const seeds = prev.slice()
+        for (let i = 0; i < next; i++) seeds[i] = (seeds[i] ?? 0) + 1
+        return seeds
+      })
+      setVisibleCount(next)
+      // Reset travel cycle if it points past the new last index.
+      setNextTravelIndex((idx) => Math.min(idx, next - 1))
+      return next
+    })
+  }, [])
   const onEnd = useCallback(() => {
     setVisibleCount(0)
     setTravelCounts(new Array(MAX_ELECTRONS).fill(0))
@@ -1260,6 +1290,26 @@ export function LabsAtomMotion() {
           title="Palette"
         >
           ◐
+        </button>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={onRemoveOne}
+          aria-label="Remove one electron"
+          title={`Remove (${targetN} → ${Math.max(1, targetN - 1)})`}
+          disabled={targetN <= 1}
+        >
+          −
+        </button>
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={onAddOne}
+          aria-label="Add one electron"
+          title={`Add (${targetN} → ${Math.min(MAX_ELECTRONS, targetN + 1)})`}
+          disabled={targetN >= MAX_ELECTRONS}
+        >
+          +
         </button>
         <input
           type="color"
