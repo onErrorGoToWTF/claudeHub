@@ -997,6 +997,7 @@ export function LabsAtomMotion() {
   const [showNuclei, setShowNuclei] = useState(true)
   const [showAxis, setShowAxis] = useState(false)
   const [uiHidden, setUiHidden] = useState(true)
+  const [playbackOpen, setPlaybackOpen] = useState(true)
   // Color mode + per-mode state. electronColors is derived below.
   const [colorMode, setColorMode] = useState<ColorMode>('individual')
   const [solidColor, setSolidColor] = useState('#ffa57d')
@@ -1316,6 +1317,61 @@ export function LabsAtomMotion() {
         {uiHidden ? '◇' : '◆'}
       </button>
 
+      {/* Top-left: floating playback bar — replay / stop / loop / recenter.
+          Independent of the UI-hide toggle; has its own minimize. */}
+      <div className={s.playbackBar} aria-label="Playback">
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={() => setPlaybackOpen((v) => !v)}
+          aria-label={playbackOpen ? 'Minimize playback' : 'Expand playback'}
+          title={playbackOpen ? 'Minimize' : 'Expand'}
+        >
+          {playbackOpen ? '▾' : '▸'}
+        </button>
+        {playbackOpen && (
+          <>
+            <button
+              type="button"
+              className={`${s.btn} ${s.btnIcon}`}
+              onClick={onReplay}
+              aria-label={`Replay intro with ${targetN} electrons`}
+              title="Replay intro"
+            >
+              ↺
+            </button>
+            <button
+              type="button"
+              className={`${s.btn} ${s.btnIcon}`}
+              onClick={onEnd}
+              aria-label="Stop"
+              title="Stop"
+              disabled={visibleCount === 0}
+            >
+              ■
+            </button>
+            <button
+              type="button"
+              className={`${s.btn} ${s.btnIcon} ${autoReplay ? s.btnActive : ''}`}
+              onClick={() => setAutoReplay((v) => !v)}
+              aria-label={autoReplay ? 'Disable loop' : 'Enable loop'}
+              title={autoReplay ? 'Loop on' : 'Loop off'}
+            >
+              {autoReplay ? '↻' : '○'}
+            </button>
+            <button
+              type="button"
+              className={`${s.btn} ${s.btnIcon}`}
+              onClick={onRecenter}
+              aria-label="Recenter view"
+              title="Recenter"
+            >
+              ◎
+            </button>
+          </>
+        )}
+      </div>
+
       {/* Top-right: global appearance controls — always visible. */}
       <div className={s.appearanceCluster} aria-label="Appearance">
         <button
@@ -1491,52 +1547,6 @@ export function LabsAtomMotion() {
               </button>
             ))}
           </div>
-        </div>
-        <div className={s.unifiedRow}>
-          <button
-            type="button"
-            className={s.btn}
-            onClick={onReplay}
-            aria-label={`Replay intro with ${targetN} electrons`}
-            title="Replay intro"
-          >
-            {`↺ ${targetN} e⁻`}
-          </button>
-          <button
-            type="button"
-            className={s.btn}
-            onClick={onTravel}
-            aria-label={`Travel electron ${nextTravelIndex + 1}`}
-            disabled={visibleCount === 0}
-          >
-            {`⇋ e${nextTravelIndex + 1}`}
-          </button>
-          <button
-            type="button"
-            className={s.btn}
-            onClick={onEnd}
-            aria-label="End"
-            disabled={visibleCount === 0}
-          >
-            ■
-          </button>
-          <button
-            type="button"
-            className={`${s.btn} ${autoReplay ? s.btnActive : ''}`}
-            onClick={() => setAutoReplay((v) => !v)}
-            aria-label={autoReplay ? 'Disable auto-loop' : 'Enable auto-loop'}
-          >
-            {autoReplay ? '↻' : '○'}
-          </button>
-          <button
-            type="button"
-            className={`${s.btn} ${s.btnIcon}`}
-            onClick={onRecenter}
-            aria-label="Recenter view"
-            title="Reset camera"
-          >
-            ◎
-          </button>
         </div>
         <div className={s.tiltSliderRow}>
           <span className={s.tiltSliderLabel}>{`spread  ${chordHalf.toFixed(1)}`}</span>

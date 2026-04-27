@@ -253,6 +253,20 @@
   z-index: 9997;
 }
 
+/* --- Top-left floating playback bar (replay / stop / loop / recenter) --- */
+/* Sits next to the UI-hide toggle. Has its own minimize chevron so it
+   can collapse to a single button. Independent of the UI-hide toggle. */
+
+.playbackBar {
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 12px);
+  left: calc(12px + 36px + 6px); /* after .uiToggleBtn + gap */
+  z-index: 9997;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
 /* --- Top-right appearance cluster (theme, guides, color pickers) ----- */
 
 .appearanceCluster {
