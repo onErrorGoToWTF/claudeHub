@@ -703,3 +703,33 @@
 .slotSelected {
   box-shadow: 0 0 0 2px rgba(122, 162, 255, 0.55);
 }
+
+/* First-load pulse on slot 1 while the stage is empty.
+   Uses transform + opacity only on a pseudo-element ring (no animated
+   box-shadow / background) so the pulse runs on the GPU compositor and
+   doesn't trigger paint. Respects prefers-reduced-motion. */
+
+.slotPulse {
+  position: relative;
+}
+
+.slotPulse::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  border: 2px solid rgba(122, 162, 255, 0.55);
+  pointer-events: none;
+  animation: atomMotionSlotPulse 1.6s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+}
+
+@keyframes atomMotionSlotPulse {
+  0%   { transform: scale(1);   opacity: 1; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slotPulse::after {
+    animation: none;
+  }
+}

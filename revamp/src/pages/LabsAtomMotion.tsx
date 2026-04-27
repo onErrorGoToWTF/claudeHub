@@ -1107,10 +1107,12 @@ export function LabsAtomMotion() {
   const [selectedSlot, setSelectedSlot] = useState<number | null>(null)
   // New 5-panel system (chunks 3+). Each dock icon toggles its panel
   // independently; multiple panels may be open simultaneously. Panel
-  // bodies fill in over chunks 4-8.
+  // bodies fill in over chunks 4-8. First-load default opens Electrons
+  // so the user is one tap away from adding their first electron;
+  // chunk 5f pulses slot 1 to make that affordance discoverable.
   const [panelsOpen, setPanelsOpen] = useState<Record<PanelKey, boolean>>({
     playback: false,
-    electrons: false,
+    electrons: true,
     colors: false,
     dimensions: false,
     scene: false,
@@ -1346,11 +1348,12 @@ export function LabsAtomMotion() {
     setTheme('light')
     setPanelsOpen({
       playback: false,
-      electrons: false,
+      electrons: true,
       colors: false,
       dimensions: false,
       scene: false,
     })
+    setSelectedSlot(null)
     orbitControlsRef.current?.reset?.()
   }, [setTheme])
   const onTravel = useCallback(() => {
@@ -1818,11 +1821,15 @@ export function LabsAtomMotion() {
                           : loc === 'B'
                             ? s.slotOnB
                             : s.slotEmpty
+                      // Pulse slot 1 only while the entire stage is empty —
+                      // signals "tap here to add your first electron." The
+                      // pulse stops the moment any slot becomes occupied.
+                      const shouldPulse = k === 0 && highestOccupied === -1
                       return (
                         <button
                           key={k}
                           type="button"
-                          className={`${s.slotCell} ${cls} ${isSelected ? s.slotSelected : ''}`}
+                          className={`${s.slotCell} ${cls} ${isSelected ? s.slotSelected : ''} ${shouldPulse ? s.slotPulse : ''}`}
                           onClick={() => onSlotTap(k)}
                           aria-label={`Slot ${k + 1}: ${loc === 'none' ? 'empty' : `on ${loc}`}`}
                           aria-pressed={loc !== 'none'}
