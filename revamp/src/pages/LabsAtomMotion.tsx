@@ -130,27 +130,58 @@ type ElectronSpec = {
   initialPhase: number
 }
 
+const DEFAULT_E_COLOR = '#ffdbd8'
+
 // --- Per-electron plane assignments ---------------------------------------
 // A plane through the chord axis is determined by an upHat direction; +up
 // and -up span the same plane. So unique planes only span [0, π) of
-// rotation around the chord — 180° / count gives evenly-spaced *distinct*
-// 4-electron pinwheel: 45° apart in [0°, 180°). At tilt 0° two of the
-// planes project to the same ellipse (45° and 135° are mirrors, identical
-// for circles); at tilt > 0 all four read distinctly, matching the
-// classic atom-flower-petal pattern.
-// Plane assignments are fixed by index — adding e2 doesn't shuffle e1.
+// rotation around the chord — 180° / N gives evenly-spaced distinct planes.
+// Specs are recomputed for the active N (1..MAX_ELECTRONS) so all electrons
+// stay symmetrically placed at any count.
 
-const MAX_ELECTRONS = 4
+const MAX_ELECTRONS = 16
 
-// Electron-fill order across the four orbital planes (0°, 45°, 90°, 135°
-// around the chord X-axis). Reordered so e2 (index 1) is perpendicular
-// to e1 — same four planes as before, different sequencing.
-const ELECTRON_SPECS: ElectronSpec[] = [0, 2, 1, 3].map((k) => {
-  const upAngle = (Math.PI * k) / MAX_ELECTRONS
-  const upHat: Vec3 = [0, Math.cos(upAngle), Math.sin(upAngle)]
-  const initialPhase = Math.PI + (2 * Math.PI * k) / MAX_ELECTRONS
-  return { upHat, cwAtA: true, initialPhase }
-})
+function buildElectronSpecs(N: number): ElectronSpec[] {
+  const safeN = Math.max(1, Math.min(MAX_ELECTRONS, N))
+  return Array.from({ length: safeN }, (_, k) => {
+    const upAngle = (Math.PI * k) / safeN
+    const upHat: Vec3 = [0, Math.cos(upAngle), Math.sin(upAngle)]
+    const initialPhase = Math.PI + (2 * Math.PI * k) / safeN
+    return { upHat, cwAtA: true, initialPhase }
+  })
+}
+
+// --- Color modes ----------------------------------------------------------
+
+type ColorMode = 'solid' | 'individual' | 'gradient'
+
+// Rainbow-friendly hue lerp via Three.js Color.lerpHSL — short-arc on the
+// hue circle, perceptual enough for our purposes. Upgrade to oklch later
+// if subtle warm/cool transitions need it.
+function lerpHexColor(a: string, b: string, t: number): string {
+  const ca = new THREE.Color(a)
+  const cb = new THREE.Color(b)
+  ca.lerpHSL(cb, t)
+  return '#' + ca.getHexString()
+}
+
+function deriveElectronColors(
+  N: number,
+  mode: ColorMode,
+  solid: string,
+  individual: string[],
+  gStart: string,
+  gEnd: string,
+): string[] {
+  if (mode === 'solid') return new Array(N).fill(solid)
+  if (mode === 'gradient') {
+    if (N === 1) return [gStart]
+    return Array.from({ length: N }, (_, i) => lerpHexColor(gStart, gEnd, i / (N - 1)))
+  }
+  // individual: cycle the user's palette if N exceeds palette length
+  if (individual.length === 0) return new Array(N).fill(DEFAULT_E_COLOR)
+  return Array.from({ length: N }, (_, i) => individual[i % individual.length] ?? DEFAULT_E_COLOR)
+}
 
 // --- Geometry helpers ------------------------------------------------------
 
@@ -708,8 +739,6 @@ const THEME_PALETTE: Record<ThemeName, {
   },
 }
 
-const DEFAULT_E_COLOR = '#ffdbd8'
-
 // --- Presets --------------------------------------------------------------
 // Curated example configurations. Order is the user-facing order. Append
 // to grow. Preset 1 also doubles as the page's default state — applying
@@ -717,7 +746,12 @@ const DEFAULT_E_COLOR = '#ffdbd8'
 
 type Preset = {
   name: string
-  electronColors: string[] // length MAX_ELECTRONS
+  electronCount: number
+  colorMode: ColorMode
+  solidColor: string
+  individualColors: string[]
+  gradientStart: string
+  gradientEnd: string
   bgColor: string
   spread: number
   speed: number
@@ -732,10 +766,29 @@ type Preset = {
   trailWidth: number
 }
 
+// Helper to keep the preset list compact: every existing preset is
+// 'individual' mode with its specific palette. solid + gradient defaults
+// fall through to a representative pick from the palette.
+function preset(
+  base: Omit<Preset, 'colorMode' | 'solidColor' | 'gradientStart' | 'gradientEnd'> & {
+    individualColors: string[]
+  },
+): Preset {
+  const cols = base.individualColors
+  return {
+    ...base,
+    colorMode: 'individual',
+    solidColor: cols[0] ?? DEFAULT_E_COLOR,
+    gradientStart: cols[0] ?? DEFAULT_E_COLOR,
+    gradientEnd: cols[cols.length - 1] ?? DEFAULT_E_COLOR,
+  }
+}
+
 const PRESETS: Preset[] = [
-  {
+  preset({
     name: '1',
-    electronColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
+    electronCount: 4,
+    individualColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
     bgColor: '#59004c',
     spread: 8.6,
     speed: 4.5,
@@ -748,10 +801,11 @@ const PRESETS: Preset[] = [
     headScale: 0.08,
     haloScale: 1.1,
     trailWidth: 0.09,
-  },
-  {
+  }),
+  preset({
     name: '2',
-    electronColors: ['#ffc7c7', '#ffb8e7', '#ffe4ca', '#d7fff8'],
+    electronCount: 4,
+    individualColors: ['#ffc7c7', '#ffb8e7', '#ffe4ca', '#d7fff8'],
     bgColor: '#551029',
     spread: 15.1,
     speed: 4.5,
@@ -759,21 +813,18 @@ const PRESETS: Preset[] = [
     showNuclei: true,
     showAxis: false,
     theme: 'dark',
-    // Camera sits exactly on the chord-axis line (y=0, z=0) so both
-    // nuclei project to the same pixel. Target pulled down (y=-6) tilts
-    // the view direction so the sparkle composes higher in frame; the
-    // resulting ~7° tilt opens the orbits into thin ellipses but reads
-    // as a sparkle visually. Camera y/z must stay exactly zero — any
-    // drift unstacks the nuclei.
+    // Camera on chord-axis line (y=0, z=0) so both nuclei project to
+    // the same pixel. Target pulled down (y=-6) tilts view ~7°.
     camPos: [50, 0, 0],
     camTgt: [0, -6, 0],
     headScale: 0.16,
     haloScale: 1.7,
     trailWidth: 0.16,
-  },
-  {
+  }),
+  preset({
     name: '3',
-    electronColors: ['#b4fff3', '#d6ffde', '#c2ffcf', '#d2f8ff'],
+    electronCount: 4,
+    individualColors: ['#b4fff3', '#d6ffde', '#c2ffcf', '#d2f8ff'],
     bgColor: '#055a00',
     spread: 4.3,
     speed: 4,
@@ -786,10 +837,11 @@ const PRESETS: Preset[] = [
     headScale: 0.16,
     haloScale: 1.7,
     trailWidth: 0.16,
-  },
-  {
+  }),
+  preset({
     name: '4',
-    electronColors: ['#bddbd8', '#7ddbd8', '#ffd689', '#ffccf0'],
+    electronCount: 4,
+    individualColors: ['#bddbd8', '#7ddbd8', '#ffd689', '#ffccf0'],
     bgColor: '#b93600',
     spread: 15.1,
     speed: 4.5,
@@ -802,10 +854,11 @@ const PRESETS: Preset[] = [
     headScale: 0.16,
     haloScale: 1.7,
     trailWidth: 0.16,
-  },
-  {
+  }),
+  preset({
     name: '5',
-    electronColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
+    electronCount: 4,
+    individualColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
     bgColor: '#240c00',
     spread: 14.7,
     speed: 4.5,
@@ -818,10 +871,11 @@ const PRESETS: Preset[] = [
     headScale: 0.16,
     haloScale: 1.7,
     trailWidth: 0.16,
-  },
-  {
+  }),
+  preset({
     name: '6',
-    electronColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
+    electronCount: 4,
+    individualColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
     bgColor: '#59004c',
     spread: 14.7,
     speed: 4.5,
@@ -834,7 +888,7 @@ const PRESETS: Preset[] = [
     headScale: 0.08,
     haloScale: 1.1,
     trailWidth: 0.07,
-  },
+  }),
 ]
 
 function useTheme(): [ThemeName, (next: ThemeName) => void] {
@@ -855,13 +909,15 @@ function useTheme(): [ThemeName, (next: ThemeName) => void] {
 export function LabsAtomMotion() {
   const [pointA, setPointA] = useState<Vec3>(INITIAL_POINT_A)
   const [pointB, setPointB] = useState<Vec3>(INITIAL_POINT_B)
-  const [electronCount, setElectronCount] = useState(0)
+  // Design count (slider, preset-applied). Specs recompute on change.
+  const [targetN, setTargetN] = useState(4)
+  // Visible count animates 0 → targetN during intro.
+  const [visibleCount, setVisibleCount] = useState(0)
+  // Bump to re-trigger the intro stagger (replay button).
+  const [introNonce, setIntroNonce] = useState(0)
   const [introActive, setIntroActive] = useState(true)
   const [autoReplay, setAutoReplay] = useState(true)
   const [speedMult, setSpeedMult] = useState(4.5)
-  // Each slot starts at seed 0; the staggered intro effect bumps them one
-  // at a time so each electron snaps its entry angle to the master clock
-  // at the moment it appears.
   const [startSeeds, setStartSeeds] = useState<number[]>(() =>
     new Array(MAX_ELECTRONS).fill(0),
   )
@@ -872,9 +928,15 @@ export function LabsAtomMotion() {
   const [showNuclei, setShowNuclei] = useState(true)
   const [showAxis, setShowAxis] = useState(false)
   const [uiHidden, setUiHidden] = useState(true)
-  const [electronColors, setElectronColors] = useState<string[]>(() =>
+  // Color mode + per-mode state. electronColors is derived below.
+  const [colorMode, setColorMode] = useState<ColorMode>('individual')
+  const [solidColor, setSolidColor] = useState('#ffa57d')
+  const [individualColors, setIndividualColors] = useState<string[]>(() =>
     ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
   )
+  const [gradientStart, setGradientStart] = useState('#ffa57d')
+  const [gradientEnd, setGradientEnd] = useState('#93e3fd')
+  const [paletteOpen, setPaletteOpen] = useState(false)
   const [bgColor, setBgColor] = useState('#59004c')
   const [headScale, setHeadScale] = useState(0.08)
   const [haloScale, setHaloScale] = useState(1.1)
@@ -882,9 +944,17 @@ export function LabsAtomMotion() {
   const [theme, setTheme] = useTheme()
   const palette = THEME_PALETTE[theme]
 
-  const setElectronColorAt = useCallback((idx: number, color: string) => {
-    setElectronColors((prev) => {
+  const electronSpecs = useMemo(() => buildElectronSpecs(targetN), [targetN])
+  const electronColors = useMemo(
+    () => deriveElectronColors(targetN, colorMode, solidColor, individualColors, gradientStart, gradientEnd),
+    [targetN, colorMode, solidColor, individualColors, gradientStart, gradientEnd],
+  )
+
+  const setIndividualColorAt = useCallback((idx: number, color: string) => {
+    setIndividualColors((prev) => {
       const next = prev.slice()
+      // Pad if needed so high-N edits don't clobber lower indices.
+      while (next.length <= idx) next.push(DEFAULT_E_COLOR)
       next[idx] = color
       return next
     })
@@ -897,11 +967,11 @@ export function LabsAtomMotion() {
     [travelCounts],
   )
   const hintText = useMemo(() => {
-    if (electronCount === 0) return 'Tap + e⁻ to add an electron'
+    if (visibleCount === 0) return 'Tap ↺ to replay'
     if (autoReplay) return 'Looping'
     if (totalTravels === 0) return 'Tap ⇋ travel to send it across'
     return ''
-  }, [electronCount, autoReplay, totalTravels])
+  }, [visibleCount, autoReplay, totalTravels])
 
   const reducedMotion = usePrefersReducedMotion()
   // Sharper fade (power 5) concentrates the visible trail near the head
@@ -927,68 +997,57 @@ export function LabsAtomMotion() {
   const orbitSize = useMemo(() => 3 * (Math.SQRT2 - 1), [])
   const groupTiltZ = useMemo(() => tiltZFrom(pointA, pointB), [pointA, pointB])
 
-  const onAddElectron = useCallback(() => {
-    setElectronCount((c) => {
-      if (c >= MAX_ELECTRONS) return c
-      const newIdx = c
-      setStartSeeds((seeds) => {
-        const next = seeds.slice()
-        next[newIdx] = (next[newIdx] ?? 0) + 1
-        return next
-      })
-      return c + 1
-    })
+  const onReplay = useCallback(() => {
+    setIntroNonce((n) => n + 1)
   }, [])
   const onEnd = useCallback(() => {
-    setElectronCount(0)
+    setVisibleCount(0)
     setTravelCounts(new Array(MAX_ELECTRONS).fill(0))
     setNextTravelIndex(0)
-    // Reset master clock so the next "Add" cycle starts fresh.
     globalScaledTimeRef.current = 0
-    // End breaks the intro choreography — disable the gate so manual
-    // re-adds + loop work normally.
     setIntroActive(false)
   }, [])
   const onTravel = useCallback(() => {
-    if (electronCount === 0) return
+    if (visibleCount === 0) return
     setTravelCounts((counts) => {
       const next = counts.slice()
       next[nextTravelIndex] = (next[nextTravelIndex] ?? 0) + 1
       return next
     })
-    setNextTravelIndex((i) => (i + 1) % electronCount)
-  }, [nextTravelIndex, electronCount])
+    setNextTravelIndex((i) => (i + 1) % visibleCount)
+  }, [nextTravelIndex, visibleCount])
 
-  // Scales the A↔B distance symmetrically about the midpoint while preserving
-  // chord direction. Lets the user spread the nuclei without fighting the
-  // drag handles (which can't reach past the screen edge at low zoom).
-  // Intro choreography: stagger the first four electrons on mount so the
-  // user sees each one come in and orbit on its own for a few laps before
-  // the next joins. The master clock keeps each new arrival phase-locked
-  // to the existing orbits, so the spacing stays even across the cascade.
-  // Loop transits are gated off until all four are in.
+  // Intro choreography: stagger N=targetN electrons over ~14s total.
+  // Re-runs on targetN change (slider/preset) or introNonce bump (replay).
+  // Loop transits are gated off until all N are visible.
   useEffect(() => {
     let cancelled = false
-    const stagger = 3500 // ms between adds — ~3 laps at default speed
-    const t1 = setTimeout(() => { if (!cancelled) onAddElectron() }, 0)
-    const t2 = setTimeout(() => { if (!cancelled) onAddElectron() }, stagger)
-    const t3 = setTimeout(() => { if (!cancelled) onAddElectron() }, stagger * 2)
-    const t4 = setTimeout(() => { if (!cancelled) onAddElectron() }, stagger * 3)
-    const tDone = setTimeout(
-      () => { if (!cancelled) setIntroActive(false) },
-      stagger * 4,
+    const N = Math.max(1, Math.min(MAX_ELECTRONS, targetN))
+    const total = 14000
+    const interval = total / N
+    setVisibleCount(0)
+    setIntroActive(true)
+    setNextTravelIndex(0)
+    // Bump startSeeds for all N slots so probes reseed at intro start.
+    setStartSeeds((prev) => {
+      const next = prev.slice()
+      for (let i = 0; i < N; i++) next[i] = (next[i] ?? 0) + 1
+      return next
+    })
+    const timeouts: ReturnType<typeof setTimeout>[] = []
+    for (let i = 1; i <= N; i++) {
+      timeouts.push(
+        setTimeout(() => { if (!cancelled) setVisibleCount(i) }, interval * (i - 1)),
+      )
+    }
+    timeouts.push(
+      setTimeout(() => { if (!cancelled) setIntroActive(false) }, interval * N),
     )
     return () => {
       cancelled = true
-      clearTimeout(t1)
-      clearTimeout(t2)
-      clearTimeout(t3)
-      clearTimeout(t4)
-      clearTimeout(tDone)
+      timeouts.forEach(clearTimeout)
     }
-    // Run once on mount.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [targetN, introNonce])
 
   const setSpread = useCallback((newHalf: number) => {
     const mx = (pointA[0] + pointB[0]) / 2
@@ -1018,7 +1077,11 @@ export function LabsAtomMotion() {
   }, [])
 
   const applyPreset = useCallback((p: Preset) => {
-    setElectronColors(p.electronColors.slice())
+    setColorMode(p.colorMode)
+    setSolidColor(p.solidColor)
+    setIndividualColors(p.individualColors.slice())
+    setGradientStart(p.gradientStart)
+    setGradientEnd(p.gradientEnd)
     setBgColor(p.bgColor)
     setPointA([-p.spread, 0, 0])
     setPointB([p.spread, 0, 0])
@@ -1030,6 +1093,7 @@ export function LabsAtomMotion() {
     setHeadScale(p.headScale)
     setHaloScale(p.haloScale)
     setTrailWidth(p.trailWidth)
+    setTargetN(p.electronCount)
     const ctrl = orbitControlsRef.current
     if (ctrl?.object?.position && ctrl?.target) {
       ctrl.object.position.set(p.camPos[0], p.camPos[1], p.camPos[2])
@@ -1085,7 +1149,7 @@ export function LabsAtomMotion() {
               />
             )}
             {showNuclei && <Nuclei chordHalf={chordHalf} color={palette.ink} />}
-            {ELECTRON_SPECS.map((spec, i) => {
+            {electronSpecs.map((spec, i) => {
               const c = electronColors[i] ?? DEFAULT_E_COLOR
               return (
                 <ElectronProbe
@@ -1100,7 +1164,7 @@ export function LabsAtomMotion() {
                   speedMult={speedMult}
                   chordHalf={chordHalf}
                   orbitSize={orbitSize}
-                  existence={i < electronCount ? 'visible' : 'idle'}
+                  existence={i < visibleCount ? 'visible' : 'idle'}
                   autoReplay={autoReplay && !introActive}
                   travelCount={travelCounts[i] ?? 0}
                   startSeed={startSeeds[i] ?? 0}
@@ -1165,17 +1229,15 @@ export function LabsAtomMotion() {
         >
           {showAxis ? '✦' : '✧'}
         </button>
-        {electronColors.map((c, i) => (
-          <input
-            key={`e${i}-color`}
-            type="color"
-            value={c}
-            onChange={(e) => setElectronColorAt(i, e.currentTarget.value)}
-            className={s.colorPicker}
-            aria-label={`Electron ${i + 1} color`}
-            title={`Electron ${i + 1}`}
-          />
-        ))}
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnIcon}`}
+          onClick={() => setPaletteOpen((v) => !v)}
+          aria-label="Open palette"
+          title="Palette"
+        >
+          ◐
+        </button>
         <input
           type="color"
           value={bgColor}
@@ -1185,6 +1247,84 @@ export function LabsAtomMotion() {
           title="Background color"
         />
       </div>
+
+      {paletteOpen && (
+        <>
+          <div className={s.paletteBackdrop} onClick={() => setPaletteOpen(false)} />
+          <div className={s.palettePopover} onClick={(e) => e.stopPropagation()}>
+            <div className={s.modeTabs}>
+              <button
+                type="button"
+                className={`${s.modeTab} ${colorMode === 'solid' ? s.modeTabActive : ''}`}
+                onClick={() => setColorMode('solid')}
+              >
+                Solid
+              </button>
+              <button
+                type="button"
+                className={`${s.modeTab} ${colorMode === 'individual' ? s.modeTabActive : ''}`}
+                onClick={() => setColorMode('individual')}
+              >
+                Individual
+              </button>
+              <button
+                type="button"
+                className={`${s.modeTab} ${colorMode === 'gradient' ? s.modeTabActive : ''}`}
+                onClick={() => setColorMode('gradient')}
+              >
+                Gradient
+              </button>
+            </div>
+            <div className={s.paletteBody}>
+              {colorMode === 'solid' && (
+                <input
+                  type="color"
+                  value={solidColor}
+                  onChange={(e) => setSolidColor(e.currentTarget.value)}
+                  className={s.colorPicker}
+                  aria-label="Solid color"
+                />
+              )}
+              {colorMode === 'individual' && (
+                <div className={s.individualGrid}>
+                  {Array.from({ length: targetN }, (_, i) => (
+                    <input
+                      key={`pal-e${i}`}
+                      type="color"
+                      value={individualColors[i % individualColors.length] ?? DEFAULT_E_COLOR}
+                      onChange={(e) => setIndividualColorAt(i, e.currentTarget.value)}
+                      className={s.colorPicker}
+                      aria-label={`Electron ${i + 1} color`}
+                      title={`Electron ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+              {colorMode === 'gradient' && (
+                <div className={s.gradientRow}>
+                  <input
+                    type="color"
+                    value={gradientStart}
+                    onChange={(e) => setGradientStart(e.currentTarget.value)}
+                    className={s.colorPicker}
+                    aria-label="Gradient start"
+                    title="Start"
+                  />
+                  <span className={s.gradientArrow}>→</span>
+                  <input
+                    type="color"
+                    value={gradientEnd}
+                    onChange={(e) => setGradientEnd(e.currentTarget.value)}
+                    className={s.colorPicker}
+                    aria-label="Gradient end"
+                    title="End"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        </>
+      )}
 
       {/* Single transparent control panel — drag canvas to rotate, pinch to zoom. */}
       <div className={s.unifiedPanel} aria-label="Atom motion controls">
@@ -1208,24 +1348,18 @@ export function LabsAtomMotion() {
           <button
             type="button"
             className={s.btn}
-            onClick={onAddElectron}
-            aria-label={
-              electronCount >= MAX_ELECTRONS
-                ? `Maximum ${MAX_ELECTRONS} electrons`
-                : `Add electron ${electronCount + 1}`
-            }
-            disabled={electronCount >= MAX_ELECTRONS}
+            onClick={onReplay}
+            aria-label={`Replay intro with ${targetN} electrons`}
+            title="Replay intro"
           >
-            {electronCount >= MAX_ELECTRONS
-              ? `${MAX_ELECTRONS}/${MAX_ELECTRONS} e⁻`
-              : `+ e⁻ (${electronCount}/${MAX_ELECTRONS})`}
+            {`↺ ${targetN} e⁻`}
           </button>
           <button
             type="button"
             className={s.btn}
             onClick={onTravel}
             aria-label={`Travel electron ${nextTravelIndex + 1}`}
-            disabled={electronCount === 0}
+            disabled={visibleCount === 0}
           >
             {`⇋ e${nextTravelIndex + 1}`}
           </button>
@@ -1234,7 +1368,7 @@ export function LabsAtomMotion() {
             className={s.btn}
             onClick={onEnd}
             aria-label="End"
-            disabled={electronCount === 0}
+            disabled={visibleCount === 0}
           >
             ■
           </button>
@@ -1280,6 +1414,19 @@ export function LabsAtomMotion() {
             onChange={(e) => setSpeedMult(parseFloat(e.currentTarget.value))}
             className={s.tiltSlider}
             aria-label="Animation speed"
+          />
+        </div>
+        <div className={s.tiltSliderRow}>
+          <span className={s.tiltSliderLabel}>{`count  ${targetN}`}</span>
+          <input
+            type="range"
+            min={1}
+            max={MAX_ELECTRONS}
+            step={1}
+            value={targetN}
+            onChange={(e) => setTargetN(parseInt(e.currentTarget.value, 10))}
+            className={s.tiltSlider}
+            aria-label="Electron count"
           />
         </div>
         <div className={s.tiltSliderRow}>
