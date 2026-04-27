@@ -543,49 +543,58 @@
   cursor: grabbing;
 }
 
-/* --- Always-visible playback bar (top-center, transparent) ----------- */
-/* The bar itself has no background — only the buttons inside carry
-   the standard glass styling. Wraps to multiple rows on narrow
-   viewports so the speed slider drops below the button cluster
-   instead of pushing it off-screen. */
+/* --- Always-visible top atom bar + bottom playback bar -------------- */
+/* Both bars are transparent at the container level; only the buttons
+   and the speed-slider pill carry the standard glass styling. */
 
-.topPlaybackBar {
+.topAtomBar {
   position: fixed;
   top: calc(env(safe-area-inset-top) + 12px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 9996;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 6px;
   align-items: center;
-  padding: 0;
   background: transparent;
   pointer-events: none;
   max-width: calc(100vw - 24px);
 }
 
-.topPlaybackBar > * {
+.topAtomBar > * {
   pointer-events: auto;
 }
 
-.topPlaybackDivider {
-  width: 1px;
-  height: 22px;
-  background: var(--lab-panel-border);
-  margin: 0 4px;
-  flex-shrink: 0;
+.bottomPlaybackBar {
+  position: fixed;
+  bottom: calc(env(safe-area-inset-bottom) + 48px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9996;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  background: transparent;
+  pointer-events: none;
+  max-width: calc(100vw - 24px);
 }
 
-.topPlaybackSpeed {
-  /* Force the speed slider to its own row on narrow viewports. On
-     wide screens it sits at the right of the button cluster. */
+.bottomPlaybackBar > * {
+  pointer-events: auto;
+}
+
+.bottomPlaybackButtons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.bottomPlaybackSpeed {
   display: flex;
   align-items: center;
-  flex: 0 1 auto;
-  min-width: 200px;
-  padding: 6px 10px;
+  min-width: 220px;
+  padding: 6px 12px;
   background: var(--lab-panel-bg);
   border: 1px solid var(--lab-panel-border);
   border-radius: 18px;

@@ -1785,38 +1785,10 @@ export function LabsAtomMotion() {
       </div>
 
 
-      {/* Always-visible Playback bar pinned top-center. No panel toggle —
-          play/pause, loop, refresh, and the quick electron actions are
-          one-tap away regardless of which side panels are open. */}
-      <div className={s.topPlaybackBar} aria-label="Playback">
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon}`}
-          onClick={() => setPaused((p) => !p)}
-          aria-label={paused ? 'Play' : 'Pause'}
-          title={paused ? 'Play' : 'Pause'}
-        >
-          {paused ? '▶' : '‖'}
-        </button>
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon} ${autoReplay ? s.btnActive : ''}`}
-          onClick={() => setAutoReplay((v) => !v)}
-          aria-label={autoReplay ? 'Disable loop' : 'Enable loop'}
-          title={autoReplay ? 'Loop on' : 'Loop off'}
-        >
-          {autoReplay ? '↻' : '○'}
-        </button>
-        <button
-          type="button"
-          className={`${s.btn} ${s.btnIcon}`}
-          onClick={onRefresh}
-          aria-label="Refresh — reset everything"
-          title="Refresh"
-        >
-          ⟲
-        </button>
-        <span className={s.topPlaybackDivider} aria-hidden="true" />
+      {/* Top-center: atom quick controls. Always visible — one tap to
+          add to the next empty slot, remove the highest, or move the
+          highest electron between atoms. */}
+      <div className={s.topAtomBar} aria-label="Atom quick controls">
         <button
           type="button"
           className={`${s.btn} ${s.btnIcon}`}
@@ -1857,7 +1829,41 @@ export function LabsAtomMotion() {
         >
           ←A
         </button>
-        <div className={s.topPlaybackSpeed}>
+      </div>
+
+      {/* Bottom-center: playback + speed. Always visible. Speed slider
+          sits beneath the play/loop/refresh button cluster. */}
+      <div className={s.bottomPlaybackBar} aria-label="Playback">
+        <div className={s.bottomPlaybackButtons}>
+          <button
+            type="button"
+            className={`${s.btn} ${s.btnIcon}`}
+            onClick={() => setPaused((p) => !p)}
+            aria-label={paused ? 'Play' : 'Pause'}
+            title={paused ? 'Play' : 'Pause'}
+          >
+            {paused ? '▶' : '‖'}
+          </button>
+          <button
+            type="button"
+            className={`${s.btn} ${s.btnIcon} ${autoReplay ? s.btnActive : ''}`}
+            onClick={() => setAutoReplay((v) => !v)}
+            aria-label={autoReplay ? 'Disable loop' : 'Enable loop'}
+            title={autoReplay ? 'Loop on' : 'Loop off'}
+          >
+            {autoReplay ? '↻' : '○'}
+          </button>
+          <button
+            type="button"
+            className={`${s.btn} ${s.btnIcon}`}
+            onClick={onRefresh}
+            aria-label="Refresh — reset everything"
+            title="Refresh"
+          >
+            ⟲
+          </button>
+        </div>
+        <div className={s.bottomPlaybackSpeed}>
           <SliderRow
             label="speed"
             value={speedMult}
