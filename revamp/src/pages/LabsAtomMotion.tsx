@@ -175,33 +175,51 @@ function prevCountStep(n: number): number | null {
   return r
 }
 
+// Slot identity table — maps a 0-indexed slot to its (plane, phase)
+// coordinates. Designed so the prefix at every sweet-spot count
+// (1, 2, 4, 8, 16) hits a perpendicular/maximally-spread configuration
+// AND each layout is a strict superset of the previous:
+//   N=1   1 electron       plane 0°,  phase 0°
+//   N=2   +1               plane 90°, phase 0°       (perpendicular pair)
+//   N=4   +2               planes 0°/90° gain phase 180°  (diagonal cross)
+//   N=8   +4               planes 0°/90° gain phases 90°/270°  (square × 2)
+//   N=16  +8               planes 45°/135° added with the same 4-phase set
+// Slot k always occupies the same (plane, phase) regardless of total
+// count — slot identity is permanent across grow/shrink and across
+// atoms (e_k on B sits at the same plane/phase, just on B's frame).
+const SLOT_PLANE_ANGLES = [0, Math.PI / 2, Math.PI / 4, 3 * Math.PI / 4]
+const SLOT_PHASE_ANGLES = [0, Math.PI, Math.PI / 2, 3 * Math.PI / 2]
+
+function slotPlaneIdx(slotIdx0: number): number {
+  // Slots 0–7 alternate between planes 0/1 (angles 0°, 90°).
+  // Slots 8–15 alternate between planes 2/3 (angles 45°, 135°).
+  if (slotIdx0 < 8) return slotIdx0 % 2
+  return 2 + ((slotIdx0 - 8) % 2)
+}
+
+function slotPhaseIdx(slotIdx0: number): number {
+  // Within each 8-slot block, phase index cycles 0,0,1,1,2,2,3,3
+  // (phase angles 0°, 180°, 90°, 270°). Pairs share the same phase
+  // because they sit on perpendicular planes.
+  const local = slotIdx0 < 8 ? slotIdx0 : slotIdx0 - 8
+  return Math.floor(local / 2)
+}
+
 function buildElectronSpecs(N: number): ElectronSpec[] {
   const safeN = Math.max(0, Math.min(MAX_ELECTRONS, N))
-  if (safeN === 0) return []
-  // For N ≤ 4: use a subset of the N=4 plane set in fill order [0, 2, 3, 1]
-  // so 1→2 places e2 perpendicular to e1 (0°, 90°), 2→3 puts e3 at 135°
-  // (opposite the empty half — existing pair sit in the lower half, new
-  // electron fills the upper), 3→4 closes the layout at 45°. Existing
-  // electrons keep their planes as new ones are added; each new electron
-  // lands in the empty region rather than packing next to existing ones.
-  if (safeN <= 4) {
-    const FILL_ORDER_4 = [0, 2, 3, 1]
-    return Array.from({ length: safeN }, (_, k) => {
-      const planeIdx = FILL_ORDER_4[k]
-      const upAngle = (Math.PI * planeIdx) / 4
-      const upHat: Vec3 = [0, Math.cos(upAngle), Math.sin(upAngle)]
-      const initialPhase = Math.PI + (2 * Math.PI * k) / safeN
-      return { upHat, cwAtA: true, initialPhase }
+  const out: ElectronSpec[] = []
+  for (let k = 0; k < safeN; k++) {
+    const planeAngle = SLOT_PLANE_ANGLES[slotPlaneIdx(k)]
+    const phaseAngle = SLOT_PHASE_ANGLES[slotPhaseIdx(k)]
+    out.push({
+      upHat: [0, Math.cos(planeAngle), Math.sin(planeAngle)],
+      cwAtA: true,
+      // initialPhase seeds the electron at its slot's phase-angle
+      // coordinate at t=0 (consumed by makeOrbitADesc as theta seed).
+      initialPhase: phaseAngle,
     })
   }
-  // For N ≥ 5 (sweet spots 6/8/12/16 and any in-between via slider):
-  // full N-fold symmetric layout. Existing electrons reposition.
-  return Array.from({ length: safeN }, (_, k) => {
-    const upAngle = (Math.PI * k) / safeN
-    const upHat: Vec3 = [0, Math.cos(upAngle), Math.sin(upAngle)]
-    const initialPhase = Math.PI + (2 * Math.PI * k) / safeN
-    return { upHat, cwAtA: true, initialPhase }
-  })
+  return out
 }
 
 // --- Color modes ----------------------------------------------------------
