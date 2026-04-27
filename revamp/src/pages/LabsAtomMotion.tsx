@@ -1251,9 +1251,7 @@ export function LabsAtomMotion() {
         {uiHidden ? '◇' : '◆'}
       </button>
 
-      {!uiHidden && (
-      <>
-      {/* Top-right: global appearance controls. */}
+      {/* Top-right: global appearance controls — always visible. */}
       <div className={s.appearanceCluster} aria-label="Appearance">
         <button
           type="button"
@@ -1321,6 +1319,8 @@ export function LabsAtomMotion() {
         />
       </div>
 
+      {!uiHidden && (
+      <>
       {paletteOpen && (
         <>
           <div className={s.paletteBackdrop} onClick={() => setPaletteOpen(false)} />
