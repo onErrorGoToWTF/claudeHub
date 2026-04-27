@@ -141,12 +141,13 @@ const DEFAULT_E_COLOR = '#ffdbd8'
 
 const MAX_ELECTRONS = 16
 
-// "Sweet spot" N values for the appearance-cluster +/− buttons. Each is
-// a clean symmetry — 4 (square), 6 (hex), 8 (octagonal), 12 (sphere-ish),
-// 16 (max / supercharge). Slider still allows any N in [1, 16] for free
-// tuning; the buttons step through these so a tap is a deliberate
-// level-up, not a 1-by-1 jolt through ugly intermediate values.
-const COUNT_STEPS = [4, 6, 8, 12, 16] as const
+// Stepping values for the appearance-cluster +/− buttons. Granular
+// 1–3 at the low end so the user can drop below 4 (destructive — the
+// symmetric layout breaks but existing electrons keep their phase),
+// then clean symmetry steps: 4 (square), 6 (hex), 8 (octagonal),
+// 12 (sphere-ish), 16 (max / supercharge). Slider still allows any
+// integer in [1, 16] for free tuning.
+const COUNT_STEPS = [1, 2, 3, 4, 6, 8, 12, 16] as const
 
 function nextCountStep(n: number): number | null {
   for (const s of COUNT_STEPS) if (s > n) return s
