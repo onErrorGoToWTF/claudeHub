@@ -500,6 +500,7 @@ function ElectronProbe({
   haloScale,
   trailWidth,
   globalScaledTimeRef,
+  hideOnOrbit,
 }: {
   spec: ElectronSpec
   fadeTex: THREE.DataTexture
@@ -523,6 +524,10 @@ function ElectronProbe({
   haloScale: number
   trailWidth: number
   globalScaledTimeRef: React.MutableRefObject<number>
+  /** S-mode option: drop opacity to 0 during orbit phases so only the
+   *  travel curve is visible. Used to make repeated A↔B transits read
+   *  as a single repeating S-shape instead of orbit + travel + orbit. */
+  hideOnOrbit?: boolean
 }) {
   const headRef = useRef<THREE.Sprite>(null!)
   const headMatRef = useRef<THREE.SpriteMaterial>(null!)
@@ -625,8 +630,11 @@ function ElectronProbe({
     let localT = phaseElapsedRef.current
 
     // Opacity lerp toward existence target. Wall-clock so speed doesn't
-    // change visual fade rate.
-    const targetOpacity = existence === 'visible' ? 1 : 0
+    // change visual fade rate. In hideOnOrbit mode (S-mode), force 0
+    // during orbit phases so only the travel curve is visible.
+    const inOrbit = phaseRef.current === 'orbitA' || phaseRef.current === 'orbitB'
+    const baseTarget = existence === 'visible' ? 1 : 0
+    const targetOpacity = hideOnOrbit && inOrbit ? 0 : baseTarget
     const opacityRate = delta / FADE_DUR
     if (opacityRef.current < targetOpacity) {
       opacityRef.current = Math.min(targetOpacity, opacityRef.current + opacityRate)
@@ -1520,14 +1528,27 @@ export function LabsAtomMotion() {
     })
     disarmSlot()
   }, [disarmSlot])
-  // Reposition nuclei vertically (A on top, B on bottom) while keeping
-  // the current chord magnitude. Existing transit sCurvePos already
-  // sweeps a sine bow on each side of the midpoint; with the chord
-  // vertical, that bow becomes a literal letter S between the atoms.
+  // S-mode: vertical chord + hide-on-orbit. Existing transit sCurvePos
+  // already sweeps a sine bow on each side of the midpoint; with the
+  // chord vertical, that bow reads as a literal letter S. Pairing it
+  // with hide-on-orbit (sMode flag → ElectronProbe drops opacity to 0
+  // during orbit phases) means the user sees S → S → S in loop mode
+  // instead of orbit + S + orbit + S.
+  const [sMode, setSMode] = useState(false)
+  // Throwaway: a tighter chord for the S so the top nucleus stays
+  // on-screen at default camera. User can still tune via the spread
+  // slider afterwards.
+  const S_MODE_CHORD = 3.5
   const onSpellS = useCallback(() => {
-    setPointA([0, chordHalf, 0])
-    setPointB([0, -chordHalf, 0])
-  }, [chordHalf])
+    setSMode((prev) => {
+      const next = !prev
+      if (next) {
+        setPointA([0, S_MODE_CHORD, 0])
+        setPointB([0, -S_MODE_CHORD, 0])
+      }
+      return next
+    })
+  }, [])
   const onQuickMoveToB = useCallback(() => {
     setSlotLocations((prev) => {
       for (let k = prev.length - 1; k >= 0; k--) {
@@ -1860,6 +1881,7 @@ export function LabsAtomMotion() {
                   color={c}
                   haloColor={c}
                   globalScaledTimeRef={globalScaledTimeRef}
+                  hideOnOrbit={sMode}
                 />
               )
             })}
@@ -2178,17 +2200,16 @@ export function LabsAtomMotion() {
                   {capturedPreset && (
                     <pre className={s.capturedBlock}>{capturedPreset}</pre>
                   )}
-                  {/* Vertical-chord button: places nuclei top + bottom so
-                      the existing transit math sweeps a literal letter S
-                      between them when the user adds an electron and
-                      taps →B. Throwaway test. */}
+                  {/* S-mode toggle: vertical chord + hide-electrons-on-
+                      orbit, so a looping A↔B transit reads as a single
+                      repeating letter S. Throwaway test. */}
                   <button
                     type="button"
-                    className={`${s.btn} ${s.btnPreset}`}
+                    className={`${s.btn} ${s.btnPreset} ${sMode ? s.btnActive : ''}`}
                     onClick={onSpellS}
-                    aria-label="Reposition nuclei vertically for S-shape transit"
+                    aria-label="Toggle S-mode: vertical chord and hidden orbits"
                   >
-                    spell S ↕
+                    {sMode ? 'spell S ✓' : 'spell S ↕'}
                   </button>
                   <div className={s.panelRow}>
                     <button
