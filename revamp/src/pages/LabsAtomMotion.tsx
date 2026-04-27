@@ -85,6 +85,31 @@ const INITIAL_POINT_B: Vec3 = [14.7, 0, 0]
 const COMMIT: string =
   (import.meta.env.VITE_GIT_COMMIT as string | undefined) ?? 'dev-local'
 
+// Sprite head size in world units. Replaces the old sphereGeometry head
+// (radius 0.05 → diameter 0.10); slightly larger to make the soft edge
+// readable as a "pulse of energy" instead of a flat lit ball.
+const HEAD_SPRITE_SCALE = 0.16
+
+// Generates a soft radial-gradient texture for electron heads — bright
+// white core fading to fully transparent edge. White RGB is tinted by
+// SpriteMaterial.color (per-electron), so this is shared across all 4.
+function makeSoftOrbTexture(): THREE.CanvasTexture {
+  const size = 128
+  const canvas = document.createElement('canvas')
+  canvas.width = canvas.height = size
+  const ctx = canvas.getContext('2d')!
+  const c = size / 2
+  const g = ctx.createRadialGradient(c, c, 0, c, c, c)
+  g.addColorStop(0, 'rgba(255, 255, 255, 1)')
+  g.addColorStop(0.35, 'rgba(255, 255, 255, 0.55)')
+  g.addColorStop(1, 'rgba(255, 255, 255, 0)')
+  ctx.fillStyle = g
+  ctx.fillRect(0, 0, size, size)
+  const tex = new THREE.CanvasTexture(canvas)
+  tex.colorSpace = THREE.SRGBColorSpace
+  return tex
+}
+
 // --- Types -----------------------------------------------------------------
 
 type Existence = 'idle' | 'visible'
@@ -229,6 +254,7 @@ function MasterClock({
 function ElectronProbe({
   spec,
   fadeTex,
+  orbTex,
   reducedMotion,
   speedMult,
   chordHalf,
@@ -244,6 +270,7 @@ function ElectronProbe({
 }: {
   spec: ElectronSpec
   fadeTex: THREE.DataTexture
+  orbTex: THREE.CanvasTexture
   reducedMotion: boolean
   speedMult: number
   chordHalf: number
@@ -257,8 +284,8 @@ function ElectronProbe({
   haloColor: string
   globalScaledTimeRef: React.MutableRefObject<number>
 }) {
-  const headRef = useRef<THREE.Mesh>(null!)
-  const headMatRef = useRef<THREE.MeshBasicMaterial>(null!)
+  const headRef = useRef<THREE.Sprite>(null!)
+  const headMatRef = useRef<THREE.SpriteMaterial>(null!)
   const haloRef = useRef<THREE.Mesh>(null!)
   const haloMatRef = useRef<THREE.MeshBasicMaterial>(null!)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -494,7 +521,7 @@ function ElectronProbe({
         <meshLineMaterial
           ref={trailMatRef}
           color={trailColor}
-          lineWidth={0.13}
+          lineWidth={0.16}
           transparent
           opacity={0}
           depthWrite={false}
@@ -516,16 +543,17 @@ function ElectronProbe({
           depthWrite={false}
         />
       </mesh>
-      <mesh ref={headRef}>
-        <sphereGeometry args={[0.05, 32, 32]} />
-        <meshBasicMaterial
+      <sprite ref={headRef} scale={[HEAD_SPRITE_SCALE, HEAD_SPRITE_SCALE, 1]}>
+        <spriteMaterial
           ref={headMatRef}
+          map={orbTex}
           color={color}
           toneMapped={false}
           transparent
           opacity={0}
+          depthWrite={false}
         />
-      </mesh>
+      </sprite>
     </>
   )
 }
@@ -828,6 +856,7 @@ export function LabsAtomMotion() {
   // head-vs-tail wrap seam that shows up as a "black notch" at higher
   // effective speeds, where the trail wraps around the orbit once.
   const fadeTex = useMemo(() => makeFadeTexture(5), [])
+  const orbTex = useMemo(() => makeSoftOrbTexture(), [])
   // Master clock advancing on the same render tick as the electrons. Each
   // newly-added electron reads this value to compute its entry angle.
   const globalScaledTimeRef = useRef(0)
@@ -1007,6 +1036,7 @@ export function LabsAtomMotion() {
                   key={`e${i}`}
                   spec={spec}
                   fadeTex={fadeTex}
+                  orbTex={orbTex}
                   reducedMotion={reducedMotion}
                   speedMult={speedMult}
                   chordHalf={chordHalf}
