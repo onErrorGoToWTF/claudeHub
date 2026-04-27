@@ -160,7 +160,8 @@ function prevCountStep(n: number): number | null {
 }
 
 function buildElectronSpecs(N: number): ElectronSpec[] {
-  const safeN = Math.max(1, Math.min(MAX_ELECTRONS, N))
+  const safeN = Math.max(0, Math.min(MAX_ELECTRONS, N))
+  if (safeN === 0) return []
   // For N ≤ 4: use a subset of the N=4 plane set in fill order [0, 2, 3, 1]
   // so 1→2 places e2 perpendicular to e1 (0°, 90°), 2→3 puts e3 at 135°
   // (opposite the empty half — existing pair sit in the lower half, new
@@ -936,6 +937,24 @@ const PRESETS: Preset[] = [
     haloScale: 1.1,
     trailWidth: 0.07,
   }),
+  preset({
+    name: '7',
+    // Empty stage — start with 0 electrons, user adds via the + button.
+    electronCount: 0,
+    individualColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
+    bgColor: '#59004c',
+    spread: 8.6,
+    speed: 4.5,
+    loop: true,
+    showNuclei: true,
+    showAxis: false,
+    theme: 'dark',
+    camPos: [-18.69, 12.91, -4.52],
+    camTgt: [0.83, -2.96, 1.15],
+    headScale: 0.08,
+    haloScale: 1.1,
+    trailWidth: 0.09,
+  }),
 ]
 
 function useTheme(): [ThemeName, (next: ThemeName) => void] {
@@ -1105,12 +1124,17 @@ export function LabsAtomMotion() {
   targetNRef.current = targetN
   useEffect(() => {
     let cancelled = false
-    const N = Math.max(1, Math.min(MAX_ELECTRONS, targetNRef.current))
-    const total = 14000
-    const interval = total / N
+    const N = Math.max(0, Math.min(MAX_ELECTRONS, targetNRef.current))
     setVisibleCount(0)
     setIntroActive(true)
     setNextTravelIndex(0)
+    if (N === 0) {
+      // Empty stage — no stagger, just turn intro gate off.
+      setIntroActive(false)
+      return
+    }
+    const total = 14000
+    const interval = total / N
     // Bump startSeeds for all N slots so probes reseed at intro start.
     setStartSeeds((prev) => {
       const next = prev.slice()
@@ -1541,7 +1565,7 @@ export function LabsAtomMotion() {
           <span className={s.tiltSliderLabel}>{`count  ${targetN}`}</span>
           <input
             type="range"
-            min={1}
+            min={0}
             max={MAX_ELECTRONS}
             step={1}
             value={targetN}
