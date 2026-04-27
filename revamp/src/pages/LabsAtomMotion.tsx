@@ -1725,7 +1725,7 @@ export function LabsAtomMotion() {
                       aria-label={paused ? 'Play' : 'Pause'}
                       title={paused ? 'Play' : 'Pause'}
                     >
-                      {paused ? '▶' : '⏸'}
+                      {paused ? '▶' : '‖'}
                     </button>
                     <button
                       type="button"
