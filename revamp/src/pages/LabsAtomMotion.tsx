@@ -1403,13 +1403,16 @@ export function LabsAtomMotion() {
     // S-mode layout (matches the user's captured preset):
     //   slots 0, 1 — main S orbit (upHat [0, 0, -1]); 180° apart in
     //                phase so the 2 electrons step in alternately
-    //   slot 2     — side orbit tilted +11.25° from the S plane
-    //   slot 3     — side orbit tilted -11.25° from the S plane
-    // Side orbits are still active electrons; their visibility is
-    // gated separately (see sModeOnly per-slot at the render site).
+    //   slot 2     — side orbit tilted -11.25° from the S plane
+    //   slot 3     — side orbit tilted -22.5° from the S plane
+    // Both side orbits intentionally on the same side, since the
+    // opposite side traces a mirror-S. If the chosen side is the
+    // wrong one, flip the sign of sin* below for both slots.
     const TILT = (11.25 * Math.PI) / 180
     const cosT = Math.cos(TILT)
     const sinT = Math.sin(TILT)
+    const cos2T = Math.cos(2 * TILT)
+    const sin2T = Math.sin(2 * TILT)
     return base.map((spec, i) => {
       if (i < 2) {
         return {
@@ -1422,15 +1425,14 @@ export function LabsAtomMotion() {
       if (i === 2) {
         return {
           ...spec,
-          // Rotate [0, 0, -1] by +TILT around the chord (y) axis.
-          upHat: [0, sinT, -cosT] as Vec3,
+          upHat: [0, -sinT, -cosT] as Vec3,
           cwAtA: true,
         }
       }
       if (i === 3) {
         return {
           ...spec,
-          upHat: [0, -sinT, -cosT] as Vec3,
+          upHat: [0, -sin2T, -cos2T] as Vec3,
           cwAtA: true,
         }
       }
