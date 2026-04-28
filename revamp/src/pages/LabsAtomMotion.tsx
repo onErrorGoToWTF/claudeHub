@@ -500,7 +500,7 @@ function ElectronProbe({
   haloScale,
   trailWidth,
   globalScaledTimeRef,
-  hideOnOrbit,
+  sModeOnly,
 }: {
   spec: ElectronSpec
   fadeTex: THREE.DataTexture
@@ -524,10 +524,11 @@ function ElectronProbe({
   haloScale: number
   trailWidth: number
   globalScaledTimeRef: React.MutableRefObject<number>
-  /** S-mode option: drop opacity to 0 during orbit phases so only the
-   *  travel curve is visible. Used to make repeated A↔B transits read
-   *  as a single repeating S-shape instead of orbit + travel + orbit. */
-  hideOnOrbit?: boolean
+  /** S-mode option: drop opacity to 0 in every phase except travelAB,
+   *  so only the forward A→B transit is visible. Hides orbits AND the
+   *  travelBA return trip (which would otherwise trace a mirror-S over
+   *  the forward S each cycle in loop mode). */
+  sModeOnly?: boolean
 }) {
   const headRef = useRef<THREE.Sprite>(null!)
   const headMatRef = useRef<THREE.SpriteMaterial>(null!)
@@ -630,11 +631,13 @@ function ElectronProbe({
     let localT = phaseElapsedRef.current
 
     // Opacity lerp toward existence target. Wall-clock so speed doesn't
-    // change visual fade rate. In hideOnOrbit mode (S-mode), force 0
-    // during orbit phases so only the travel curve is visible.
-    const inOrbit = phaseRef.current === 'orbitA' || phaseRef.current === 'orbitB'
+    // change visual fade rate. In sModeOnly (S-mode), force 0 during
+    // every phase except travelAB so only the forward S transit is
+    // visible — the return travelBA would otherwise trace a mirror-S
+    // over the forward S each loop cycle.
     const baseTarget = existence === 'visible' ? 1 : 0
-    const targetOpacity = hideOnOrbit && inOrbit ? 0 : baseTarget
+    const targetOpacity =
+      sModeOnly && phaseRef.current !== 'travelAB' ? 0 : baseTarget
     const opacityRate = delta / FADE_DUR
     if (opacityRef.current < targetOpacity) {
       opacityRef.current = Math.min(targetOpacity, opacityRef.current + opacityRate)
@@ -1549,6 +1552,36 @@ export function LabsAtomMotion() {
       return next
     })
   }, [])
+  // All-in-one S-show button: vertical chord, 10 electrons in atom A,
+  // loop on, S-mode visibility on, beefed-up head/halo/trail for a
+  // bright look. One tap and the user gets a continuously redrawing
+  // S traced by 10 staggered electrons. Colors are left as-is so the
+  // user's current palette flows through.
+  const S_SHOW_ELECTRONS = 10
+  const onDrawSShow = useCallback(() => {
+    setSMode(true)
+    setPointA([0, S_MODE_CHORD, 0])
+    setPointB([0, -S_MODE_CHORD, 0])
+    setSlotLocations(() => {
+      const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
+      for (let i = 0; i < S_SHOW_ELECTRONS; i++) out[i] = 'A'
+      return out
+    })
+    // Bump every active slot's seed so each electron syncs to the
+    // master clock from a fresh entry — keeps the stagger tidy
+    // regardless of prior state.
+    setStartSeeds((prev) => {
+      const out = prev.slice()
+      for (let i = 0; i < S_SHOW_ELECTRONS; i++) out[i] = (out[i] ?? 0) + 1
+      return out
+    })
+    setAutoReplay(true)
+    // Brightness pass — bigger heads, fuller halos, fatter trails so
+    // the S reads strongly even with short-visible travel windows.
+    setHeadScale(0.1)
+    setHaloScale(1.6)
+    setTrailWidth(0.14)
+  }, [])
   const onQuickMoveToB = useCallback(() => {
     setSlotLocations((prev) => {
       for (let k = prev.length - 1; k >= 0; k--) {
@@ -1791,6 +1824,16 @@ export function LabsAtomMotion() {
         ['--lab-bg-grad-end' as string]: bgGradientEnd,
       }}
     >
+      {/* Floating S-show button (throwaway). One tap → vertical chord,
+          5 electrons in atom A, loop on, S-mode visibility on. */}
+      <button
+        type="button"
+        className={s.sShowButton}
+        onClick={onDrawSShow}
+        aria-label="Draw the letter S with 5 looping electrons"
+      >
+        draw S
+      </button>
       <div className={s.canvasArea}>
         <Canvas
           camera={{ position: DEFAULT_CAMERA_POS, fov: FOV_DEG }}
@@ -1881,7 +1924,7 @@ export function LabsAtomMotion() {
                   color={c}
                   haloColor={c}
                   globalScaledTimeRef={globalScaledTimeRef}
-                  hideOnOrbit={sMode}
+                  sModeOnly={sMode}
                 />
               )
             })}

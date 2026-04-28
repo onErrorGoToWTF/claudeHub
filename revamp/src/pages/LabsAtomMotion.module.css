@@ -997,3 +997,38 @@
     animation: none;
   }
 }
+
+/* --- Draw-S floating button (throwaway showcase) ---------------------- */
+/* One-tap S-show trigger — sits top-left, distinct from the panel
+   icons on the right and the atom controls at top-center. */
+.sShowButton {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 10001;
+  padding: 9px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(20, 0, 30, 0.5);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  color: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.sShowButton:hover,
+.sShowButton:focus-visible {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.32);
+  outline: none;
+}
