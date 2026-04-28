@@ -1409,23 +1409,16 @@ export function LabsAtomMotion() {
     if (!sMode) return base
     // S-mode: collapse all electrons onto the same orbit plane so they
     // S-mode layout:
-    //   slots 0..3 — main S orbit (upHat [0, 0, -1])
-    //   slot 4    — side  -5.625° (mint, blue side)
-    //   slot 5    — side -11.25°  (light blue)
-    //   slot 6    — side -22.5°   (mid blue)
-    //   slot 7    — side -33.75°  (deep blue)
-    //   slot 8    — side +11.25°  (yellow-green, other side)
-    //   slot 9    — side +22.5°   (green)
+    //   slots 0..5 — main S orbit (upHat [0, 0, -1])
+    //   slots 6..10 — negative-tilt side orbits (blue gradient)
+    //     6: -5.625°  7: -11.25°  8: -22.5°  9: -33.75°  10: -45°
+    //   slots 11..13 — positive-tilt side orbits (green gradient)
+    //     11: +11.25°  12: +22.5°  13: +33.75°
     // Each electron's initialPhase is chosen so its angle equals π
     // (far-tip) exactly when its first autoReplay bump arrives.
     // Alignment uses the inPlay-based N (matching autoReplay's
     // inPlay.length) so the schedule matches reality.
-    const TILT_4 = (5.625 * Math.PI) / 180
-    const TILT_5 = (11.25 * Math.PI) / 180
-    const TILT_6 = (22.5 * Math.PI) / 180
-    const TILT_7 = (33.75 * Math.PI) / 180
-    const TILT_8 = (11.25 * Math.PI) / 180
-    const TILT_9 = (22.5 * Math.PI) / 180
+    const tiltRad = (deg: number) => (deg * Math.PI) / 180
     const inPlay: number[] = []
     for (let k = 0; k < slotLocations.length; k++) {
       if (slotLocations[k] !== 'none') inPlay.push(k)
@@ -1444,13 +1437,27 @@ export function LabsAtomMotion() {
       const initialPhase =
         ((rawPhase % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI)
       let upHat: Vec3 = [0, 0, -1]
-      if (i === 4) upHat = [0, -Math.sin(TILT_4), -Math.cos(TILT_4)]
-      else if (i === 5) upHat = [0, -Math.sin(TILT_5), -Math.cos(TILT_5)]
-      else if (i === 6) upHat = [0, -Math.sin(TILT_6), -Math.cos(TILT_6)]
-      else if (i === 7) upHat = [0, -Math.sin(TILT_7), -Math.cos(TILT_7)]
-      // Positive-tilt opposite side (sin sign flipped).
-      else if (i === 8) upHat = [0, Math.sin(TILT_8), -Math.cos(TILT_8)]
-      else if (i === 9) upHat = [0, Math.sin(TILT_9), -Math.cos(TILT_9)]
+      // Negative-tilt side orbits (slots 6-10).
+      const negTiltDeg: Record<number, number> = {
+        6: 5.625,
+        7: 11.25,
+        8: 22.5,
+        9: 33.75,
+        10: 45,
+      }
+      // Positive-tilt side orbits (slots 11-13).
+      const posTiltDeg: Record<number, number> = {
+        11: 11.25,
+        12: 22.5,
+        13: 33.75,
+      }
+      if (negTiltDeg[i] !== undefined) {
+        const t = tiltRad(negTiltDeg[i])
+        upHat = [0, -Math.sin(t), -Math.cos(t)]
+      } else if (posTiltDeg[i] !== undefined) {
+        const t = tiltRad(posTiltDeg[i])
+        upHat = [0, Math.sin(t), -Math.cos(t)]
+      }
       return { ...spec, upHat, cwAtA: true, initialPhase }
     })
   }, [activeLayout, sMode, slotLocations])
@@ -1634,29 +1641,34 @@ export function LabsAtomMotion() {
     setPointB([0, -SHOW_CHORD, 0])
     setSlotLocations(() => {
       const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
-      // 10 electrons: 4 main S + 4 blue side (negative tilts) + 2
-      // green side (positive tilts on the opposite side).
-      for (let i = 0; i < 10; i++) out[i] = 'A'
+      // 14 electrons: 6 main S + 5 negative side + 3 positive side.
+      for (let i = 0; i < 14; i++) out[i] = 'A'
       return out
     })
     setStartSeeds((prev) => {
       const out = prev.slice()
-      for (let i = 0; i < 10; i++) out[i] = (out[i] ?? 0) + 1
+      for (let i = 0; i < 14; i++) out[i] = (out[i] ?? 0) + 1
       return out
     })
     setColorMode('individual')
     setIndividualColors((prev) => {
       const out = prev.slice()
-      while (out.length < 10) out.push(DEFAULT_E_COLOR)
-      // Yellow on the main S, blue tones on the negative-tilt side
-      // orbits, yellow-green/green tones on the positive-tilt side.
-      for (let i = 0; i < 4; i++) out[i] = YELLOW
-      out[4] = '#bce0bc' // mint
-      out[5] = '#93e3fd' // light blue
-      out[6] = '#5dabe0' // mid blue
-      out[7] = '#3782b8' // deep blue
-      out[8] = '#d4e890' // yellow-green
-      out[9] = '#98d870' // green
+      while (out.length < 14) out.push(DEFAULT_E_COLOR)
+      // Main S = yellow, side-orbit colors ramp out from yellow at the
+      // innermost orbit toward the gradient extremes (deep blue on
+      // the left, deep green on the right) at the outermost orbits,
+      // making the central yellow stand out.
+      for (let i = 0; i < 6; i++) out[i] = YELLOW
+      // Negative side (slots 6-10): yellow → deep blue
+      out[6] = '#f0e8a0'  // yellow-mint, closest to main
+      out[7] = '#bce0bc'  // mint
+      out[8] = '#93e3fd'  // light blue
+      out[9] = '#5dabe0'  // mid blue
+      out[10] = '#3782b8' // deep blue, outermost
+      // Positive side (slots 11-13): yellow → deep green
+      out[11] = '#d4e890' // yellow-green, closest to main
+      out[12] = '#98d870' // green
+      out[13] = '#5fa040' // deep green, outermost
       return out
     })
     setAutoReplay(true)
