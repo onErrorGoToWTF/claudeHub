@@ -1410,14 +1410,18 @@ export function LabsAtomMotion() {
     // S-mode: collapse all electrons onto the same orbit plane so they
     // S-mode layout:
     //   slots 0..3 — main S orbit (upHat [0, 0, -1])
-    //   slot 4    — side orbit tilted -5.625° from S plane
-    //   slot 5    — side orbit tilted -11.25° from S plane
+    //   slot 4    — side orbit tilted  -5.625° from S plane
+    //   slot 5    — side orbit tilted -11.25°
+    //   slot 6    — side orbit tilted -22.5°  (next standard step)
+    //   slot 7    — side orbit tilted -33.75° (next standard step)
     // Each electron's initialPhase is chosen so its angle equals π
     // (far-tip) exactly when its first autoReplay bump arrives.
     // Alignment uses the inPlay-based N (matching autoReplay's
     // inPlay.length) so the schedule matches reality.
-    const TILT_INNER = (5.625 * Math.PI) / 180
-    const TILT_OUTER = (11.25 * Math.PI) / 180
+    const TILT_4 = (5.625 * Math.PI) / 180
+    const TILT_5 = (11.25 * Math.PI) / 180
+    const TILT_6 = (22.5 * Math.PI) / 180
+    const TILT_7 = (33.75 * Math.PI) / 180
     const inPlay: number[] = []
     for (let k = 0; k < slotLocations.length; k++) {
       if (slotLocations[k] !== 'none') inPlay.push(k)
@@ -1436,11 +1440,10 @@ export function LabsAtomMotion() {
       const initialPhase =
         ((rawPhase % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI)
       let upHat: Vec3 = [0, 0, -1]
-      if (i === 4) {
-        upHat = [0, -Math.sin(TILT_INNER), -Math.cos(TILT_INNER)]
-      } else if (i === 5) {
-        upHat = [0, -Math.sin(TILT_OUTER), -Math.cos(TILT_OUTER)]
-      }
+      if (i === 4) upHat = [0, -Math.sin(TILT_4), -Math.cos(TILT_4)]
+      else if (i === 5) upHat = [0, -Math.sin(TILT_5), -Math.cos(TILT_5)]
+      else if (i === 6) upHat = [0, -Math.sin(TILT_6), -Math.cos(TILT_6)]
+      else if (i === 7) upHat = [0, -Math.sin(TILT_7), -Math.cos(TILT_7)]
       return { ...spec, upHat, cwAtA: true, initialPhase }
     })
   }, [activeLayout, sMode, slotLocations])
@@ -1624,25 +1627,26 @@ export function LabsAtomMotion() {
     setPointB([0, -SHOW_CHORD, 0])
     setSlotLocations(() => {
       const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
-      // 6 electrons: 4 main S (slots 0-3) + 2 side (slots 4-5).
-      for (let i = 0; i < 6; i++) out[i] = 'A'
+      // 8 electrons: 4 main S (slots 0-3) + 4 side (slots 4-7).
+      for (let i = 0; i < 8; i++) out[i] = 'A'
       return out
     })
     setStartSeeds((prev) => {
       const out = prev.slice()
-      for (let i = 0; i < 6; i++) out[i] = (out[i] ?? 0) + 1
+      for (let i = 0; i < 8; i++) out[i] = (out[i] ?? 0) + 1
       return out
     })
     setColorMode('individual')
     setIndividualColors((prev) => {
       const out = prev.slice()
-      while (out.length < 6) out.push(DEFAULT_E_COLOR)
-      // Yellow on the main S, transitioning toward blue on the two
-      // side orbits — slot 4 is a yellow-blue mid (mint-tinted),
-      // slot 5 is the palette blue.
+      while (out.length < 8) out.push(DEFAULT_E_COLOR)
+      // Yellow on the main S, transitioning toward blue across the
+      // four side orbits.
       for (let i = 0; i < 4; i++) out[i] = YELLOW
-      out[4] = '#bce0bc'
-      out[5] = '#93e3fd'
+      out[4] = '#bce0bc' // mint
+      out[5] = '#93e3fd' // light blue
+      out[6] = '#5dabe0' // mid blue
+      out[7] = '#3782b8' // deep blue
       return out
     })
     setAutoReplay(true)
@@ -1652,7 +1656,7 @@ export function LabsAtomMotion() {
     setShowStars(false)
     setHeadScale(0.03)
     setHaloScale(0)
-    setTrailWidth(0.05)
+    setTrailWidth(0.08)
     setBgColor('#59004c')
     // Snap camera to the captured pos/tgt.
     const ctrl = orbitControlsRef.current
