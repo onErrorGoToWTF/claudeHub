@@ -1396,6 +1396,11 @@ export function LabsAtomMotion() {
   // Declared here so electronSpecs (next useMemo) can read it; the
   // toggle/show callbacks live further down with the other actions.
   const [sMode, setSMode] = useState(false)
+  // Manual cycle-timer for tuning the S-show stagger. First tap on
+  // the mark button records a start timestamp; second tap records the
+  // elapsed seconds and resets, ready for the next measurement.
+  const [markStart, setMarkStart] = useState<number | null>(null)
+  const [markElapsed, setMarkElapsed] = useState<number | null>(null)
   const electronSpecs = useMemo(() => {
     const base = buildElectronSpecs(activeLayout)
     if (!sMode) return base
@@ -1646,7 +1651,7 @@ export function LabsAtomMotion() {
       return out
     })
     setAutoReplay(true)
-    setSpeedMult(10)
+    setSpeedMult(2)
     setShowNuclei(false)
     setShowAxis(false)
     setShowStars(false)
@@ -1661,6 +1666,25 @@ export function LabsAtomMotion() {
       ctrl.target.set(2.23, -0.24, 1.04)
       ctrl.update?.()
     }
+    // Reset the manual cycle timer for a fresh measurement run.
+    setMarkStart(null)
+    setMarkElapsed(null)
+  }, [])
+  // Two-tap manual cycle timer. First tap stamps a start time, second
+  // tap shows elapsed seconds (and resets so a fresh measurement can
+  // begin). Lets the user time one full cycle by eye and tell us the
+  // exact value to plug into tickMs.
+  const onMarkCycle = useCallback(() => {
+    const now = performance.now()
+    setMarkStart((prev) => {
+      if (prev === null) {
+        setMarkElapsed(null)
+        return now
+      }
+      const elapsed = (now - prev) / 1000
+      setMarkElapsed(elapsed)
+      return null
+    })
   }, [])
   const onQuickMoveToB = useCallback(() => {
     setSlotLocations((prev) => {
@@ -1918,6 +1942,20 @@ export function LabsAtomMotion() {
       >
         draw S
       </button>
+      {sMode && (
+        <button
+          type="button"
+          className={s.sMarkButton}
+          onClick={onMarkCycle}
+          aria-label="Tap to mark the start/end of a cycle"
+        >
+          {markStart !== null
+            ? 'mark · running…'
+            : markElapsed !== null
+              ? `mark · ${markElapsed.toFixed(2)}s`
+              : 'mark'}
+        </button>
+      )}
       <div className={s.canvasArea}>
         <Canvas
           camera={{ position: DEFAULT_CAMERA_POS, fov: FOV_DEG }}
@@ -2008,7 +2046,10 @@ export function LabsAtomMotion() {
                   color={c}
                   haloColor={c}
                   globalScaledTimeRef={globalScaledTimeRef}
-                  sModeOnly={sMode}
+                  // Tuning mode: keep electrons fully visible during
+                  // S-mode so the user can time a full cycle by eye.
+                  // Re-enable {sMode} once tickMs is dialed in.
+                  sModeOnly={false}
                 />
               )
             })}
