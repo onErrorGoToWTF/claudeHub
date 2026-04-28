@@ -1788,6 +1788,11 @@ export function LabsAtomMotion() {
       })
       cycleIdx++
     }
+    // Fire once immediately so the first transit happens at the first
+    // far-tip wrap, matching the cadence of all subsequent cycles. Without
+    // this, setInterval waits a full tickMs before the first bump, which
+    // adds extra orbits before the first transit and throws off timing.
+    fire()
     const handle = setInterval(fire, tickMs)
     return () => clearInterval(handle)
   }, [autoReplay, speedMult, paused, sMode])
