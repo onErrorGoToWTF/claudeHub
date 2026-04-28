@@ -1747,7 +1747,11 @@ export function LabsAtomMotion() {
     const orbitPeriodMs = (2 * Math.PI * 1000) / (ORBIT_OMEGA_BASE * Math.max(0.5, speedMult) * SPEED_SCALE)
     // Approximate per-tick interval — averaged across the typical N range.
     // Exact pacing depends on current in-play count which is read at fire-time.
-    const tickMs = (LOOP_LAPS_BEFORE_TRAVEL * orbitPeriodMs) / 8
+    const baseTickMs = (LOOP_LAPS_BEFORE_TRAVEL * orbitPeriodMs) / 8
+    // S-mode: 8× the gap between consecutive electron transits so
+    // there's a much wider stagger between yellow electrons drawing
+    // the S. User can dial further from here.
+    const tickMs = sMode ? baseTickMs * 8 : baseTickMs
     let cycleIdx = 0
     const fire = () => {
       const inPlay: number[] = []
@@ -1767,7 +1771,7 @@ export function LabsAtomMotion() {
     }
     const handle = setInterval(fire, tickMs)
     return () => clearInterval(handle)
-  }, [autoReplay, speedMult, paused])
+  }, [autoReplay, speedMult, paused, sMode])
 
   const setSpread = useCallback((newHalf: number) => {
     const mx = (pointA[0] + pointB[0]) / 2
