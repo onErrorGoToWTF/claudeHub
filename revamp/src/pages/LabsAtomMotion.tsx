@@ -82,9 +82,9 @@ const ORBIT_ASPECT = 1.0
 // rad), so low speeds run at N=1 substep with zero overhead.
 const TARGET_RAD_PER_SAMPLE = 0.02
 // Default camera position (rotated 3-quarter view captured from the user's
-// preferred starting orientation). Matches Preset 1.
-const DEFAULT_CAMERA_POS: [number, number, number] = [-17.87, 7.26, -3.71]
-const DEFAULT_CAMERA_TARGET: [number, number, number] = [1.16, -2.52, 1.28]
+// preferred starting orientation).
+const DEFAULT_CAMERA_POS: [number, number, number] = [-17.84, 5.61, -3.52]
+const DEFAULT_CAMERA_TARGET: [number, number, number] = [1.07, -3.91, 1.76]
 const FOV_DEG = 50
 
 const INITIAL_POINT_A: Vec3 = [-8.5, 0, 0]
@@ -1086,11 +1086,17 @@ type Preset = {
   gradientStart: string
   gradientEnd: string
   bgColor: string
+  // Background mode + gradient endpoints. Optional for backwards-compat
+  // with older presets that pre-date the gradient-bg feature.
+  bgMode?: 'solid' | 'gradient'
+  bgGradientStart?: string
+  bgGradientEnd?: string
   spread: number
   speed: number
   loop: boolean
   showNuclei: boolean
   showAxis: boolean
+  showStars?: boolean
   theme: ThemeName
   camPos: [number, number, number]
   camTgt: [number, number, number]
@@ -1225,23 +1231,34 @@ const PRESETS: Preset[] = [
     haloScale: 1.7,
     trailWidth: 0.16,
   }),
-  preset({
+  {
+    // 7-electron gradient on warm orange→cool blue, purple gradient bg.
+    // Mirrors the on-load default exactly so users can return to the
+    // initial state in one tap.
     name: '6',
-    electronCount: 4,
+    electronCount: 7,
+    colorMode: 'gradient',
+    solidColor: '#ffa57d',
     individualColors: ['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'],
+    gradientStart: '#ffa57d',
+    gradientEnd: '#93e3fd',
+    bgMode: 'gradient',
     bgColor: '#59004c',
-    spread: 14.7,
-    speed: 4.5,
+    bgGradientStart: '#4a0059',
+    bgGradientEnd: '#1a0a1a',
+    spread: 8.5,
+    speed: 3.5,
     loop: true,
-    showNuclei: false,
+    showNuclei: true,
     showAxis: false,
-    theme: 'dark',
-    camPos: [33.4, 7.12, 5.41],
-    camTgt: [3.46, -5.19, 0.41],
-    headScale: 0.08,
-    haloScale: 1.1,
-    trailWidth: 0.07,
-  }),
+    showStars: false,
+    theme: 'light',
+    camPos: [-17.84, 5.61, -3.52],
+    camTgt: [1.07, -3.91, 1.76],
+    headScale: 0.03,
+    haloScale: 0,
+    trailWidth: 0.05,
+  },
   {
     // 16-electron supercharge — gradient mode, orange → mint, on purple.
     name: '7',
@@ -1290,10 +1307,15 @@ export function LabsAtomMotion() {
   // For Chunk 1 the existing UI keeps the legacy "fill prefix on A"
   // semantic — count pills, +/-, and presets pack slots [0..N-1] = 'A'.
   // The slot grid + per-slot picking land in Chunk 5.
-  const [slotLocations, setSlotLocations] = useState<SlotLocation[]>(
-    () => new Array(MAX_ELECTRONS).fill('none' as SlotLocation),
-  )
-  const [autoReplay, setAutoReplay] = useState(false)
+  // First-load default mirrors preset #6: 7 electrons on atom A. Mirror
+  // any change here in onRefresh() (further down) and in preset #6 (above)
+  // so the three stay in lockstep.
+  const [slotLocations, setSlotLocations] = useState<SlotLocation[]>(() => {
+    const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
+    for (let i = 0; i < 7; i++) out[i] = 'A'
+    return out
+  })
+  const [autoReplay, setAutoReplay] = useState(true)
   const [speedMult, setSpeedMult] = useState(3.5)
   // Per-slot start-seed nonce — bumped when an electron spawns into a
   // previously-empty slot so ElectronProbe re-syncs to the master clock
@@ -1372,8 +1394,8 @@ export function LabsAtomMotion() {
   // Background mode + gradient endpoints (Chunk 6). Solid mode uses the
   // legacy single bgColor; gradient mode does a top→bottom linear
   // interpolation between two user-picked colors.
-  const [bgMode, setBgMode] = useState<'solid' | 'gradient'>('solid')
-  const [bgGradientStart, setBgGradientStart] = useState('#7a3a8c')
+  const [bgMode, setBgMode] = useState<'solid' | 'gradient'>('gradient')
+  const [bgGradientStart, setBgGradientStart] = useState('#4a0059')
   const [bgGradientEnd, setBgGradientEnd] = useState('#1a0a1a')
   // Master Guides toggle (Chunk 8b). Default ON. When OFF, no in-scene
   // measurement marker appears regardless of slider activity.
@@ -1635,22 +1657,27 @@ export function LabsAtomMotion() {
   // closes all panels, recenters camera. Triggered from the Playback
   // panel's Refresh button.
   const onRefresh = useCallback(() => {
-    setSlotLocations(new Array(MAX_ELECTRONS).fill('none' as SlotLocation))
+    // Mirror of the first-load useState defaults + preset #6. Three places
+    // hold the same configuration; keep them in lockstep.
+    const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
+    for (let i = 0; i < 7; i++) out[i] = 'A'
+    setSlotLocations(out)
     setTravelCounts(new Array(MAX_ELECTRONS).fill(0))
     setStartSeeds(new Array(MAX_ELECTRONS).fill(0))
     globalScaledTimeRef.current = 0
     setPaused(false)
-    setAutoReplay(false)
+    setAutoReplay(true)
     setSpeedMult(3.5)
     setHeadScale(0.03)
     setHaloScale(0.0)
     setTrailWidth(0.05)
     setBgColor('#59004c')
-    setBgMode('solid')
-    setBgGradientStart('#7a3a8c')
+    setBgMode('gradient')
+    setBgGradientStart('#4a0059')
     setBgGradientEnd('#1a0a1a')
     setShowAxis(false)
     setShowNuclei(true)
+    setShowStars(false)
     setColorMode('gradient')
     setSolidColor('#ffa57d')
     setIndividualColors(['#ffa57d', '#ffc5ab', '#ffa57d', '#93e3fd'])
@@ -1750,6 +1777,13 @@ export function LabsAtomMotion() {
     setGradientStart(p.gradientStart)
     setGradientEnd(p.gradientEnd)
     setBgColor(p.bgColor)
+    // bg gradient fields are optional on older presets — fall through to
+    // current state if missing so we don't clobber the user's manual
+    // tweaks with empty defaults.
+    if (p.bgMode !== undefined) setBgMode(p.bgMode)
+    if (p.bgGradientStart !== undefined) setBgGradientStart(p.bgGradientStart)
+    if (p.bgGradientEnd !== undefined) setBgGradientEnd(p.bgGradientEnd)
+    if (p.showStars !== undefined) setShowStars(p.showStars)
     setPointA([-p.spread, 0, 0])
     setPointB([p.spread, 0, 0])
     setSpeedMult(p.speed)
