@@ -1406,46 +1406,45 @@ export function LabsAtomMotion() {
     if (!sMode) return base
     // S-mode: collapse all electrons onto the same orbit plane so they
     // S-mode layout:
-    //   slots 0..5 — main S orbit (upHat [0, 0, -1]); 6 electrons
-    //                equally spaced at 60° intervals (0, π/3, 2π/3,
-    //                π, 4π/3, 5π/3) so the staggered transits fill
-    //                the visible travelAB window without dark gaps
-    //   slot 6     — side orbit tilted -11.25° from the S plane
-    //   slot 7     — side orbit tilted -22.5° from the S plane
-    // Both side orbits on the same side; the opposite side traces a
-    // mirror-S. Flip the sign of sin* below if this turns out to be
-    // the wrong side.
+    //   slots 0..(N-3) — main S orbit (upHat [0, 0, -1]); each
+    //     electron's initialPhase chosen so its angle equals π
+    //     (the far-tip) exactly when its first autoReplay bump
+    //     arrives. With angle alignment, every wrap fires a
+    //     transit, and the interleaved tick distributes those
+    //     transits evenly across the cycle by cycle/(2N).
+    //   last 2 slots — side orbits tilted -11.25° / -22.5° from
+    //     the S plane (when present). Flip sin* sign for the
+    //     opposite side if needed.
     const TILT = (11.25 * Math.PI) / 180
     const cosT = Math.cos(TILT)
     const sinT = Math.sin(TILT)
     const cos2T = Math.cos(2 * TILT)
     const sin2T = Math.sin(2 * TILT)
+    const N = activeLayout
+    const order = travelOrderInterleaved(N)
+    const cycleScaled =
+      (4 * Math.PI) / ORBIT_OMEGA_BASE + 2 * TRANSIT_DUR
     return base.map((spec, i) => {
-      if (i < 6) {
-        return {
-          ...spec,
-          upHat: [0, 0, -1] as Vec3,
-          cwAtA: true,
-          // 6 electrons spread evenly around the orbit (60° apart).
-          // User will tune from here.
-          initialPhase: (i * Math.PI) / 3,
-        }
+      // Side-orbit slots (last 2 when 8+ active electrons).
+      if (N >= 8 && i === N - 2) {
+        return { ...spec, upHat: [0, -sinT, -cosT] as Vec3, cwAtA: true }
       }
-      if (i === 6) {
-        return {
-          ...spec,
-          upHat: [0, -sinT, -cosT] as Vec3,
-          cwAtA: true,
-        }
+      if (N >= 8 && i === N - 1) {
+        return { ...spec, upHat: [0, -sin2T, -cos2T] as Vec3, cwAtA: true }
       }
-      if (i === 7) {
-        return {
-          ...spec,
-          upHat: [0, -sin2T, -cos2T] as Vec3,
-          cwAtA: true,
-        }
+      // Main-S slot — align initialPhase to bump arrival.
+      // bumpTimeScaled matches tickMs: cycle / N per consecutive bump.
+      const n = order.indexOf(i)
+      const bumpTimeScaled = n >= 0 ? (n * cycleScaled) / N : 0
+      const rawPhase = Math.PI + ORBIT_OMEGA_BASE * bumpTimeScaled
+      const initialPhase =
+        ((rawPhase % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI)
+      return {
+        ...spec,
+        upHat: [0, 0, -1] as Vec3,
+        cwAtA: true,
+        initialPhase,
       }
-      return spec
     })
   }, [activeLayout, sMode])
   const electronColors = useMemo(
@@ -1784,7 +1783,11 @@ export function LabsAtomMotion() {
       1000
     const activeSlots =
       slotLocations.filter((s) => s !== 'none').length || 1
-    const tickMs = sMode ? cycleRealMs / (2 * activeSlots) : baseTickMs
+    // S-mode tick = cycle / N. Bumps fire cycle/4 = 2.809s apart for
+    // N=4, matching the user's "cycle divided by N" intent. Each
+    // electron is bumped once per cycle (a single transit per cycle
+    // per electron, alternating visible / invisible).
+    const tickMs = sMode ? cycleRealMs / activeSlots : baseTickMs
     let cycleIdx = 0
     const fire = () => {
       const inPlay: number[] = []
