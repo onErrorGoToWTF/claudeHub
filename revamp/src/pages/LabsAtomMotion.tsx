@@ -754,13 +754,21 @@ function ElectronProbe({
     headRef.current.position.set(pos[0], pos[1], pos[2])
     if (haloRef.current) haloRef.current.position.set(pos[0], pos[1], pos[2])
 
-    // Trail ring buffer.
+    // Trail ring buffer. In S-mode, only write while the visible
+    // travelAB phase is active. Skipping writes during the invisible
+    // phases (orbits + travelBA) prevents an orbit-B circle/curl from
+    // accumulating at the bottom of the S during the fade-out — the
+    // existing travelAB shape stays intact and fades out smoothly
+    // via the trail material's quadratic opacity ramp.
     const buf = bufRef.current!
-    const idx = insertIdxRef.current
-    buf[idx * 3] = pos[0]
-    buf[idx * 3 + 1] = pos[1]
-    buf[idx * 3 + 2] = pos[2]
-    insertIdxRef.current = (idx + 1) % ELECTRON.trail.segments
+    const inSFadeOut = sModeOnly && phaseRef.current !== 'travelAB'
+    if (!inSFadeOut) {
+      const idx = insertIdxRef.current
+      buf[idx * 3] = pos[0]
+      buf[idx * 3 + 1] = pos[1]
+      buf[idx * 3 + 2] = pos[2]
+      insertIdxRef.current = (idx + 1) % ELECTRON.trail.segments
+    }
     const unroll = new Float32Array(ELECTRON.trail.segments * 3)
     for (let i = 0; i < ELECTRON.trail.segments; i++) {
       const src = (insertIdxRef.current + i) % ELECTRON.trail.segments
