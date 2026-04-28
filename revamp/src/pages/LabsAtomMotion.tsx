@@ -1390,6 +1390,14 @@ export function LabsAtomMotion() {
     () => buildElectronSpecs(MAX_ELECTRONS).map((s) => s.upHat),
     [],
   )
+  // Per-slot initial orbit phase — drives the mini-atom preview's angular
+  // position. Same table the main scene uses (slotInitialPhase), so the
+  // preview electron and the main-stage electron stay phase-locked while
+  // both are in the orbit-A phase.
+  const allInitialPhases = useMemo<number[]>(
+    () => buildElectronSpecs(MAX_ELECTRONS).map((s) => s.initialPhase),
+    [],
+  )
   // Color preview for unoccupied slots in the orbit map — uses the
   // full 16-slot gradient/solid/individual lookup so a tap-to-add
   // preview tone matches what the electron will look like once placed.
@@ -2278,9 +2286,15 @@ export function LabsAtomMotion() {
                   <div className={s.orbitMapWrap}>
                     <OrbitMap
                       upHats={allUpHats}
+                      initialPhases={allInitialPhases}
                       slotLocations={slotLocations}
                       electronColors={allElectronColors}
                       armedSlot={armedSlot}
+                      haloScale={haloScale}
+                      trailWidth={trailWidth}
+                      nucleusColor={palette.nucleus}
+                      globalScaledTimeRef={globalScaledTimeRef}
+                      reducedMotion={reducedMotion}
                     />
                   </div>
                   <div className={s.slotGrid}>
