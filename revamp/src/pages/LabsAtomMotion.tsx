@@ -1767,10 +1767,22 @@ export function LabsAtomMotion() {
     // Approximate per-tick interval — averaged across the typical N range.
     // Exact pacing depends on current in-play count which is read at fire-time.
     const baseTickMs = (LOOP_LAPS_BEFORE_TRAVEL * orbitPeriodMs) / 8
-    // S-mode: 8× the gap between consecutive electron transits so
-    // there's a much wider stagger between yellow electrons drawing
-    // the S. User can dial further from here.
-    const tickMs = sMode ? baseTickMs * 4 : baseTickMs
+    // S-mode: tick cadence derived from the exact full cycle time
+    //   cycle = 2·orbitPeriod + 2·TRANSIT_DUR (scaled seconds)
+    //         = 4π / ω + 2·TRANSIT_DUR
+    // Each electron transits twice per cycle (A→B, B→A), so its bump
+    // interval should be cycle/2. With N active electrons sharing the
+    // interleaved tick, system-wide tickMs = cycle / (2·N). Confirmed
+    // against user's hand-timed 11–11.5s at speed 2× (math = 11.236s).
+    const cycleScaled =
+      (4 * Math.PI) / ORBIT_OMEGA_BASE + 2 * TRANSIT_DUR
+    const cycleRealMs =
+      (cycleScaled /
+        (Math.max(0.5, speedMult) * SPEED_SCALE)) *
+      1000
+    const activeSlots =
+      slotLocations.filter((s) => s !== 'none').length || 1
+    const tickMs = sMode ? cycleRealMs / (2 * activeSlots) : baseTickMs
     let cycleIdx = 0
     const fire = () => {
       const inPlay: number[] = []
