@@ -1751,7 +1751,7 @@ export function LabsAtomMotion() {
     // S-mode: 8× the gap between consecutive electron transits so
     // there's a much wider stagger between yellow electrons drawing
     // the S. User can dial further from here.
-    const tickMs = sMode ? baseTickMs * 8 : baseTickMs
+    const tickMs = sMode ? baseTickMs * 4 : baseTickMs
     let cycleIdx = 0
     const fire = () => {
       const inPlay: number[] = []
