@@ -684,20 +684,12 @@ function ElectronProbe({
           localT = 0
           lapsInPhaseRef.current = 0
           lastTravelCountRef.current = travelCount
-          // S-mode trail-clear: when we enter travelAB while sModeOnly
-          // is on, collapse the trail buffer onto the head's current
-          // position. Without this, the buffer still holds positions
-          // from the just-completed orbit (and from travelBA before
-          // it), which fade back in as opacity ramps up at the start
-          // of travelAB and read as ghost circles around the nuclei.
-          if (sModeOnly && phase === 'travelAB' && bufRef.current) {
-            const head = lastPosRef.current
-            for (let i = 0; i < ELECTRON.trail.segments; i++) {
-              bufRef.current[i * 3] = head[0]
-              bufRef.current[i * 3 + 1] = head[1]
-              bufRef.current[i * 3 + 2] = head[2]
-            }
-          }
+          // (Previously cleared the trail buffer here on travelAB
+          // entry to suppress orbit/return-trip leakage at the nuclei.
+          // User wants a small circle visible at both ends, so the
+          // clear is intentionally NOT done — leftover orbit-A trail
+          // segments fade in alongside travelAB, mirroring the orbit-B
+          // leftover that already fades out at the bottom.)
         }
       }
     } else {
@@ -1409,12 +1401,11 @@ export function LabsAtomMotion() {
     if (!sMode) return base
     // S-mode: collapse all electrons onto the same orbit plane so they
     // trace a single 2D S, only the initialPhase staggering them along
-    // the path. upHat = [0, 0, 1] sets the bow chirality (flipped one
-    // more time per user request) and cwAtA = true keeps rotation
-    // consistent across all electrons.
+    // the path. upHat = [0, 0, -1] is the chirality the user kept; the
+    // earlier flip to [0, 0, 1] was wrong and is reverted here.
     return base.map((spec) => ({
       ...spec,
-      upHat: [0, 0, 1] as Vec3,
+      upHat: [0, 0, -1] as Vec3,
       cwAtA: true,
     }))
   }, [activeLayout, sMode])
@@ -1607,6 +1598,8 @@ export function LabsAtomMotion() {
       return out
     })
     setAutoReplay(true)
+    // Crank speed near the top of the slider for a fast, energetic S.
+    setSpeedMult(18)
   }, [])
   const onQuickMoveToB = useCallback(() => {
     setSlotLocations((prev) => {
@@ -2050,7 +2043,7 @@ export function LabsAtomMotion() {
             label="speed"
             value={speedMult}
             min={0.5}
-            max={10}
+            max={20}
             step={0.5}
             onChange={setSpeedMult}
             format={(v) => `${v}×`}
