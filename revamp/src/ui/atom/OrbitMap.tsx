@@ -32,6 +32,10 @@ const Z_AXIS = new THREE.Vector3(0, 0, 1)
 // main stage. cwAtA = true everywhere → omega is negative.
 const MINI_OMEGA_BASE = 2.4
 const MINI_FADE_DUR = 0.55
+// Mirror of SPEED_SCALE in LabsAtomMotion.tsx — applied to the
+// MasterClock advancement, so the mini's effective angular rate is
+// MINI_OMEGA_BASE × speedMult × MINI_SPEED_SCALE.
+const MINI_SPEED_SCALE = 0.5
 // Trail-smoothness budget — see same constant in LabsAtomMotion.tsx.
 // Substep count auto-tunes off this so the polyline stays curved at
 // any speedMult.
@@ -130,6 +134,7 @@ function MiniOrbitElectron({
   headScale,
   haloScale,
   trailWidth,
+  speedMult,
   fadeTex,
   orbTex,
   globalScaledTimeRef,
@@ -141,6 +146,7 @@ function MiniOrbitElectron({
   headScale: number
   haloScale: number
   trailWidth: number
+  speedMult: number
   fadeTex: THREE.DataTexture
   orbTex: THREE.CanvasTexture
   globalScaledTimeRef: React.MutableRefObject<number>
@@ -162,8 +168,19 @@ function MiniOrbitElectron({
   // much orbital time elapsed this frame. Initialized lazily on first
   // useFrame so we substep across the actual delta, not a 0→now jump.
   const lastGlobalTRef = useRef<number | null>(null)
+
+  // Trail buffer length scales with speedMult so the visible tail covers
+  // the same wall-clock duration regardless of speed (mirrors main-scene
+  // behavior). At 1×, buffer is ELECTRON.trail.segments (96, unchanged
+  // from pre-substep behavior); at 10×, 960; at 20×, 1920. Capped at 20×
+  // by the slider.
+  const nominalSubsteps = Math.max(
+    1,
+    Math.ceil((MINI_OMEGA_BASE / 60) * speedMult * MINI_SPEED_SCALE / TARGET_RAD_PER_SAMPLE),
+  )
+  const trailSegments = nominalSubsteps * ELECTRON.trail.segments
   if (!bufRef.current) {
-    bufRef.current = new Float32Array(ELECTRON.trail.segments * 3)
+    bufRef.current = new Float32Array(trailSegments * 3)
   }
 
   const { size, invalidate } = useThree()
@@ -194,7 +211,8 @@ function MiniOrbitElectron({
     const theta = initialPhase + omega * globalScaledTimeRef.current
     const seed = posAt(theta)
     if (bufRef.current) {
-      for (let i = 0; i < ELECTRON.trail.segments; i++) {
+      const segs = bufRef.current.length / 3
+      for (let i = 0; i < segs; i++) {
         bufRef.current[i * 3] = seed[0]
         bufRef.current[i * 3 + 1] = seed[1]
         bufRef.current[i * 3 + 2] = seed[2]
@@ -214,7 +232,8 @@ function MiniOrbitElectron({
     if (!reducedMotion) return
     const restPos = posAt(initialPhase)
     if (bufRef.current) {
-      for (let i = 0; i < ELECTRON.trail.segments; i++) {
+      const segs = bufRef.current.length / 3
+      for (let i = 0; i < segs; i++) {
         bufRef.current[i * 3] = restPos[0]
         bufRef.current[i * 3 + 1] = restPos[1]
         bufRef.current[i * 3 + 2] = restPos[2]
@@ -234,6 +253,20 @@ function MiniOrbitElectron({
   useFrame((_, delta) => {
     if (reducedMotion) return
 
+    // Resize trail buffer if speedMult-derived nominal substeps changed.
+    // Reseeds positions so the trail collapses cleanly on speed change
+    // rather than carrying stale-length data from the old buffer.
+    if (bufRef.current!.length !== trailSegments * 3) {
+      const seedPos = posAt(initialPhase + (-MINI_OMEGA_BASE) * globalScaledTimeRef.current)
+      bufRef.current = new Float32Array(trailSegments * 3)
+      for (let i = 0; i < trailSegments; i++) {
+        bufRef.current[i * 3] = seedPos[0]
+        bufRef.current[i * 3 + 1] = seedPos[1]
+        bufRef.current[i * 3 + 2] = seedPos[2]
+      }
+      insertIdxRef.current = 0
+    }
+
     // Fade-in to full opacity. Electron mounts when slot becomes occupied,
     // unmounts when it empties — so we just ramp toward 1 here.
     const opacityRate = delta / MINI_FADE_DUR
@@ -249,13 +282,8 @@ function MiniOrbitElectron({
 
     // Auto-tune substeps — keep angular delta per polyline sample under
     // TARGET_RAD_PER_SAMPLE so the orbit reads as a curve, not a polygon,
-    // at any speedMult. See companion logic + revisit note in
-    // LabsAtomMotion.tsx → ElectronProbe.
-    //
-    // NOTE — REVISIT TAIL LENGTH. Buffer is fixed at
-    // ELECTRON.trail.segments (96), so substepping shortens visual tail
-    // arc at high speed. To restore "tail extends with speed" behavior,
-    // multiply buffer + unroll length by `substeps`.
+    // at any speedMult. See companion logic in LabsAtomMotion.tsx →
+    // ElectronProbe.
     let substeps = 1
     if (span > 0) {
       const angularSpan = MINI_OMEGA_BASE * span
@@ -272,15 +300,15 @@ function MiniOrbitElectron({
       buf[idx * 3] = pos[0]
       buf[idx * 3 + 1] = pos[1]
       buf[idx * 3 + 2] = pos[2]
-      insertIdxRef.current = (idx + 1) % ELECTRON.trail.segments
+      insertIdxRef.current = (idx + 1) % trailSegments
     }
 
     if (headRef.current) headRef.current.position.set(pos[0], pos[1], pos[2])
     if (haloRef.current) haloRef.current.position.set(pos[0], pos[1], pos[2])
 
-    const unroll = new Float32Array(ELECTRON.trail.segments * 3)
-    for (let i = 0; i < ELECTRON.trail.segments; i++) {
-      const src = (insertIdxRef.current + i) % ELECTRON.trail.segments
+    const unroll = new Float32Array(trailSegments * 3)
+    for (let i = 0; i < trailSegments; i++) {
+      const src = (insertIdxRef.current + i) % trailSegments
       unroll[i * 3] = buf[src * 3]
       unroll[i * 3 + 1] = buf[src * 3 + 1]
       unroll[i * 3 + 2] = buf[src * 3 + 2]
@@ -345,6 +373,7 @@ export function OrbitMap({
   headScale,
   haloScale,
   trailWidth,
+  speedMult,
   nucleusColor,
   showGuides,
   globalScaledTimeRef,
@@ -358,6 +387,7 @@ export function OrbitMap({
   headScale: number
   haloScale: number
   trailWidth: number
+  speedMult: number
   nucleusColor: string
   showGuides: boolean
   globalScaledTimeRef: React.MutableRefObject<number>
@@ -398,6 +428,7 @@ export function OrbitMap({
             headScale={headScale}
             haloScale={haloScale}
             trailWidth={trailWidth}
+            speedMult={speedMult}
             fadeTex={fadeTex}
             orbTex={orbTex}
             globalScaledTimeRef={globalScaledTimeRef}

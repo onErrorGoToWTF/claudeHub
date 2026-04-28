@@ -560,8 +560,22 @@ function ElectronProbe({
 
   const bufRef = useRef<Float32Array | null>(null)
   const insertIdxRef = useRef(0)
+
+  // Trail buffer length tracks speedMult so the visible tail covers the
+  // same wall-clock duration regardless of speed. Each frame we sub-sample
+  // the orbit `nominalSubsteps` times to keep the polyline curved
+  // (TARGET_RAD_PER_SAMPLE), and the buffer is `nominalSubsteps` × the
+  // base segment count so it holds the same number of frames worth of
+  // motion as the original 96-segment buffer at 1× speed. Net: at 1× the
+  // buffer is 96 (unchanged from pre-substep behavior); at 10× it grows
+  // to 960 segments and the tail extends visibly to convey speed.
+  const nominalSubsteps = Math.max(
+    1,
+    Math.ceil((ORBIT_OMEGA_BASE / 60) * speedMult * SPEED_SCALE / TARGET_RAD_PER_SAMPLE),
+  )
+  const trailSegments = nominalSubsteps * ELECTRON.trail.segments
   if (!bufRef.current) {
-    bufRef.current = new Float32Array(ELECTRON.trail.segments * 3)
+    bufRef.current = new Float32Array(trailSegments * 3)
   }
 
   // Reset probe on Start (startSeed bumps).
@@ -585,7 +599,8 @@ function ElectronProbe({
     const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize, syncedEntry)
     const seed: Vec3 = orbitPosAt(orbitA, syncedEntry)
     if (bufRef.current) {
-      for (let i = 0; i < ELECTRON.trail.segments; i++) {
+      const segs = bufRef.current.length / 3
+      for (let i = 0; i < segs; i++) {
         bufRef.current[i * 3] = seed[0]
         bufRef.current[i * 3 + 1] = seed[1]
         bufRef.current[i * 3 + 2] = seed[2]
@@ -607,7 +622,8 @@ function ElectronProbe({
     const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize, spec.initialPhase)
     const restPos = orbitPosAt(orbitA, spec.initialPhase)
     if (bufRef.current) {
-      for (let i = 0; i < ELECTRON.trail.segments; i++) {
+      const segs = bufRef.current.length / 3
+      for (let i = 0; i < segs; i++) {
         bufRef.current[i * 3] = restPos[0]
         bufRef.current[i * 3 + 1] = restPos[1]
         bufRef.current[i * 3 + 2] = restPos[2]
@@ -626,6 +642,21 @@ function ElectronProbe({
 
   useFrame((_, delta) => {
     if (reducedMotion) return
+
+    // Resize trail buffer if speedMult-derived nominal substeps changed.
+    // Reseeds positions to lastPosRef so the trail collapses cleanly on
+    // speed change rather than carrying stale-length data from the old
+    // buffer. Inline (not in useEffect) to avoid frame ordering races.
+    if (bufRef.current!.length !== trailSegments * 3) {
+      const seed = lastPosRef.current
+      bufRef.current = new Float32Array(trailSegments * 3)
+      for (let i = 0; i < trailSegments; i++) {
+        bufRef.current[i * 3] = seed[0]
+        bufRef.current[i * 3 + 1] = seed[1]
+        bufRef.current[i * 3 + 2] = seed[2]
+      }
+      insertIdxRef.current = 0
+    }
 
     const dt = Math.min(delta, 1 / 30) * speedMult * SPEED_SCALE
     const prevLocalT = phaseElapsedRef.current
@@ -751,17 +782,6 @@ function ElectronProbe({
     // ≤ TARGET_RAD_PER_SAMPLE for orbit phases (the curved ones — visible
     // jaggedness lives here at high speedMult). Transit phases use the
     // S-curve which is smoother per-unit-time; N=1 is fine.
-    //
-    // NOTE — REVISIT TAIL LENGTH. The trail buffer is fixed at
-    // ELECTRON.trail.segments (96), so substepping shortens the tail's
-    // visual arc at high speed (today: 96 frames worth → ~3 orbits at
-    // speed=10×; with substeps: 96 samples worth → ~110° arc at all
-    // speeds). User wants to evaluate whether the tail should keep
-    // extending with speed (visual cue for "going fast"). To restore
-    // pre-substep behavior, multiply buffer length and unroll length
-    // by `substeps` so 96 × N samples cover the same wall-time as 96
-    // pre-substep samples. See companion comment in MiniOrbitElectron
-    // (revamp/src/ui/atom/OrbitMap.tsx) for the same revisit point.
     const span = localT - frameStartT
     const isOrbit = phase === 'orbitA' || phase === 'orbitB'
     let substeps = 1
@@ -779,16 +799,16 @@ function ElectronProbe({
       buf[idx * 3] = pos[0]
       buf[idx * 3 + 1] = pos[1]
       buf[idx * 3 + 2] = pos[2]
-      insertIdxRef.current = (idx + 1) % ELECTRON.trail.segments
+      insertIdxRef.current = (idx + 1) % trailSegments
     }
 
     lastPosRef.current = pos
     headRef.current.position.set(pos[0], pos[1], pos[2])
     if (haloRef.current) haloRef.current.position.set(pos[0], pos[1], pos[2])
 
-    const unroll = new Float32Array(ELECTRON.trail.segments * 3)
-    for (let i = 0; i < ELECTRON.trail.segments; i++) {
-      const src = (insertIdxRef.current + i) % ELECTRON.trail.segments
+    const unroll = new Float32Array(trailSegments * 3)
+    for (let i = 0; i < trailSegments; i++) {
+      const src = (insertIdxRef.current + i) % trailSegments
       unroll[i * 3] = buf[src * 3]
       unroll[i * 3 + 1] = buf[src * 3 + 1]
       unroll[i * 3 + 2] = buf[src * 3 + 2]
@@ -2326,6 +2346,7 @@ export function LabsAtomMotion() {
                       headScale={headScale}
                       haloScale={haloScale}
                       trailWidth={trailWidth}
+                      speedMult={effectiveSpeedMult}
                       nucleusColor={palette.nucleus}
                       showGuides={orbitGuidesShown}
                       globalScaledTimeRef={globalScaledTimeRef}
