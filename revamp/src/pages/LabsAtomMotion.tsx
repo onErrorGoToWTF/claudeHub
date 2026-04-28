@@ -2001,7 +2001,7 @@ export function LabsAtomMotion() {
                   color={c}
                   haloColor={c}
                   globalScaledTimeRef={globalScaledTimeRef}
-                  sModeOnly={sMode && i < 2}
+                  sModeOnly={sMode}
                 />
               )
             })}
