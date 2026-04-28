@@ -7,8 +7,10 @@ import type { Vec3 } from './runtime/types'
 type SlotLocation = 'A' | 'B' | 'none'
 
 const SPHERE_RADIUS = 1
-const RING_TUBE = 0.014
-const POLE_RADIUS = 0.05
+const RING_TUBE = 0.006
+const GLOW_TUBE = 0.022
+const ARMED_GLOW_TUBE = 0.030
+const POLE_RADIUS = 0.045
 const X_AXIS = new THREE.Vector3(1, 0, 0)
 const Z_AXIS = new THREE.Vector3(0, 0, 1)
 
@@ -29,15 +31,31 @@ function OrbitRing({
     return new THREE.Quaternion().setFromUnitVectors(Z_AXIS, normal)
   }, [upHat])
 
+  const lit = occupied || armed
   const ringColor = armed ? '#ff5050' : occupied ? color : '#9aa0a6'
-  const opacity = armed || occupied ? 0.95 : 0.18
-  const tubeRadius = armed ? RING_TUBE * 1.6 : RING_TUBE
+  const lineOpacity = lit ? 1 : 0.22
+  const glowTube = armed ? ARMED_GLOW_TUBE : GLOW_TUBE
+  const glowOpacity = armed ? 0.30 : 0.20
 
   return (
-    <mesh quaternion={quaternion}>
-      <torusGeometry args={[SPHERE_RADIUS, tubeRadius, 8, 96]} />
-      <meshBasicMaterial color={ringColor} transparent opacity={opacity} depthWrite={false} />
-    </mesh>
+    <group quaternion={quaternion}>
+      {lit && (
+        <mesh>
+          <torusGeometry args={[SPHERE_RADIUS, glowTube, 8, 64]} />
+          <meshBasicMaterial
+            color={ringColor}
+            transparent
+            opacity={glowOpacity}
+            depthWrite={false}
+            blending={THREE.AdditiveBlending}
+          />
+        </mesh>
+      )}
+      <mesh>
+        <torusGeometry args={[SPHERE_RADIUS, RING_TUBE, 8, 128]} />
+        <meshBasicMaterial color={ringColor} transparent opacity={lineOpacity} depthWrite={false} />
+      </mesh>
+    </group>
   )
 }
 

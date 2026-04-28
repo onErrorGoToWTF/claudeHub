@@ -999,13 +999,30 @@
 }
 
 /* Orbits panel — sphere-map widget container. Holds the small R3F
-   canvas above the 1-16 slot grid. */
+   canvas above the 1-16 slot grid. Background mirrors the main scene
+   so the same color palette plays under both viewports. CSS vars
+   --lab-bg-base / --lab-bg-grad-* are set on .root and inherit here. */
 .orbitMapWrap {
   width: 100%;
   aspect-ratio: 1 / 1;
   margin-bottom: 10px;
   border-radius: 10px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.18);
+  background: linear-gradient(
+    165deg,
+    color-mix(in oklch, var(--lab-bg-base, var(--lab-bg)) 80%, white) 0%,
+    var(--lab-bg-base, var(--lab-bg)) 55%,
+    color-mix(in oklch, var(--lab-bg-base, var(--lab-bg)) 78%, black) 100%
+  );
+}
+
+/* Gradient mode: replace the diagonal solid-derived gradient with the
+   user-picked top-to-bottom stops so the widget tracks the main scene. */
+.root.bgGradient .orbitMapWrap {
+  background: linear-gradient(
+    180deg,
+    var(--lab-bg-grad-start, var(--lab-bg-base)) 0%,
+    var(--lab-bg-grad-end, var(--lab-bg-base)) 100%
+  );
 }
 
