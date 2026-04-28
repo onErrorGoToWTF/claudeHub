@@ -33,7 +33,10 @@ function OrbitRing({
 
   const lit = occupied || armed
   const ringColor = armed ? '#ff5050' : occupied ? color : '#9aa0a6'
-  const lineOpacity = lit ? 1 : 0.22
+  // Lit rings render at partial alpha so the background blends through
+  // — this mirrors the trail's transparency in the main scene, which
+  // produces a softened version of each electron's true color.
+  const lineOpacity = armed ? 0.85 : occupied ? 0.55 : 0.22
   const glowTube = armed ? ARMED_GLOW_TUBE : GLOW_TUBE
   const glowOpacity = armed ? 0.30 : 0.20
 
