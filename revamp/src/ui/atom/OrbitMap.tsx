@@ -2,8 +2,8 @@ import { Canvas } from '@react-three/fiber'
 import { TrackballControls } from '@react-three/drei'
 import * as THREE from 'three'
 import { useMemo } from 'react'
+import type { Vec3 } from './runtime/types'
 
-type Vec3 = [number, number, number]
 type SlotLocation = 'A' | 'B' | 'none'
 
 const SPHERE_RADIUS = 1
