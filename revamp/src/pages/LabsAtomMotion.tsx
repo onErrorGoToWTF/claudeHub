@@ -1579,7 +1579,7 @@ export function LabsAtomMotion() {
   // bright look. One tap and the user gets a continuously redrawing
   // S traced by 10 staggered electrons. Colors are left as-is so the
   // user's current palette flows through.
-  const S_SHOW_ELECTRONS = 10
+  const S_SHOW_ELECTRONS = 3
   const onDrawSShow = useCallback(() => {
     setSMode(true)
     setPointA([0, S_MODE_CHORD, 0])
@@ -1598,8 +1598,8 @@ export function LabsAtomMotion() {
       return out
     })
     setAutoReplay(true)
-    // Crank speed near the top of the slider for a fast, energetic S.
-    setSpeedMult(18)
+    setSpeedMult(10)
+    setTrailWidth(0.12)
   }, [])
   const onQuickMoveToB = useCallback(() => {
     setSlotLocations((prev) => {
