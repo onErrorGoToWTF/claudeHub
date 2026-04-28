@@ -130,6 +130,7 @@ function MiniOrbitElectron({
   upHat,
   initialPhase,
   color,
+  headScale,
   haloScale,
   trailWidth,
   fadeTex,
@@ -140,6 +141,7 @@ function MiniOrbitElectron({
   upHat: Vec3
   initialPhase: number
   color: string
+  headScale: number
   haloScale: number
   trailWidth: number
   fadeTex: THREE.DataTexture
@@ -266,19 +268,6 @@ function MiniOrbitElectron({
     if (trailMatRef.current) trailMatRef.current.opacity = opacityRef.current
   })
 
-  // Head/halo/trail dimensions are intentionally larger than the same
-  // values would render at on the main stage — the preview camera is
-  // ~5× closer than the main camera, so the user sees a magnified version
-  // of the actual electron appearance. Materials, fade, and additive
-  // blending match exactly, so the perceived color is identical to what
-  // ships on stage.
-  // Head and halo size are tuned for the unit-radius sphere; they don't
-  // re-read the main scene's user-tuned headScale/trailWidth so the
-  // preview stays useful even when those sliders are pushed to extremes.
-  const PREVIEW_HEAD = 0.10
-  const PREVIEW_HALO = 0.05 * Math.max(haloScale, 1.0)
-  const PREVIEW_TRAIL = trailWidth * 0.6
-
   return (
     <>
       <mesh>
@@ -286,7 +275,7 @@ function MiniOrbitElectron({
         <meshLineMaterial
           ref={trailMatRef}
           color={color}
-          lineWidth={PREVIEW_TRAIL}
+          lineWidth={trailWidth}
           transparent
           opacity={0}
           depthWrite={false}
@@ -297,8 +286,8 @@ function MiniOrbitElectron({
           blending={THREE.AdditiveBlending}
         />
       </mesh>
-      <mesh ref={haloRef} scale={PREVIEW_HALO}>
-        <sphereGeometry args={[1, 32, 32]} />
+      <mesh ref={haloRef} scale={haloScale}>
+        <sphereGeometry args={[0.05, 32, 32]} />
         <meshBasicMaterial
           ref={haloMatRef}
           color={color}
@@ -308,7 +297,7 @@ function MiniOrbitElectron({
           depthWrite={false}
         />
       </mesh>
-      <sprite ref={headRef} scale={[PREVIEW_HEAD, PREVIEW_HEAD, 1]}>
+      <sprite ref={headRef} scale={[headScale, headScale, 1]}>
         <spriteMaterial
           ref={headMatRef}
           map={orbTex}
@@ -329,6 +318,7 @@ export function OrbitMap({
   slotLocations,
   electronColors,
   armedSlot,
+  headScale,
   haloScale,
   trailWidth,
   nucleusColor,
@@ -340,6 +330,7 @@ export function OrbitMap({
   slotLocations: SlotLocation[]
   electronColors: string[]
   armedSlot: number | null
+  headScale: number
   haloScale: number
   trailWidth: number
   nucleusColor: string
@@ -375,6 +366,7 @@ export function OrbitMap({
             upHat={upHat}
             initialPhase={initialPhases[i] ?? 0}
             color={electronColors[i] ?? '#ffdbd8'}
+            headScale={headScale}
             haloScale={haloScale}
             trailWidth={trailWidth}
             fadeTex={fadeTex}

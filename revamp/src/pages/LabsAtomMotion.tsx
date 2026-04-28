@@ -1398,13 +1398,6 @@ export function LabsAtomMotion() {
     () => buildElectronSpecs(MAX_ELECTRONS).map((s) => s.initialPhase),
     [],
   )
-  // Color preview for unoccupied slots in the orbit map — uses the
-  // full 16-slot gradient/solid/individual lookup so a tap-to-add
-  // preview tone matches what the electron will look like once placed.
-  const allElectronColors = useMemo(
-    () => deriveElectronColors(MAX_ELECTRONS, colorMode, solidColor, individualColors, gradientStart, gradientEnd),
-    [colorMode, solidColor, individualColors, gradientStart, gradientEnd],
-  )
   const electronColors = useMemo(
     () => deriveElectronColors(activeLayout, colorMode, solidColor, individualColors, gradientStart, gradientEnd),
     [activeLayout, colorMode, solidColor, individualColors, gradientStart, gradientEnd],
@@ -2288,8 +2281,9 @@ export function LabsAtomMotion() {
                       upHats={allUpHats}
                       initialPhases={allInitialPhases}
                       slotLocations={slotLocations}
-                      electronColors={allElectronColors}
+                      electronColors={electronColors}
                       armedSlot={armedSlot}
+                      headScale={headScale}
                       haloScale={haloScale}
                       trailWidth={trailWidth}
                       nucleusColor={palette.nucleus}
