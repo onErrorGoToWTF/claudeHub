@@ -1782,12 +1782,6 @@ export function LabsAtomMotion() {
           <TrackballControls
             ref={orbitControlsRef}
             makeDefault
-            rotateSpeed={3.5}
-            panSpeed={0.9}
-            zoomSpeed={1.2}
-            dynamicDampingFactor={0.12}
-            minDistance={4}
-            maxDistance={80}
             target={DEFAULT_CAMERA_TARGET}
             onStart={() => {
               if (interactingTimeoutRef.current) clearTimeout(interactingTimeoutRef.current)
