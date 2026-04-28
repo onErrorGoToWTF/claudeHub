@@ -684,22 +684,10 @@ function ElectronProbe({
           localT = 0
           lapsInPhaseRef.current = 0
           lastTravelCountRef.current = travelCount
-          // S-mode trail-clear: collapse the trail buffer onto the
-          // head's current position when entering travelAB. Without
-          // this the buffer still holds end-of-orbitA positions
-          // (a full circle's worth) which fade back in as opacity
-          // ramps from 0 → 1 over FADE_DUR, reading as a residual
-          // circle at the start of the S. Clearing trims the start
-          // and leaves only the natural end-of-orbitB tail at the
-          // bottom of the S.
-          if (sModeOnly && phase === 'travelAB' && bufRef.current) {
-            const head = lastPosRef.current
-            for (let i = 0; i < ELECTRON.trail.segments; i++) {
-              bufRef.current[i * 3] = head[0]
-              bufRef.current[i * 3 + 1] = head[1]
-              bufRef.current[i * 3 + 2] = head[2]
-            }
-          }
+          // (No trail clear here — leaving the orbit-A residue in
+          // the buffer for artistic flare. The trail-opacity scale
+          // below dampens it so it reads as a soft echo rather than
+          // competing with the S itself.)
         }
       }
     } else {
@@ -785,7 +773,12 @@ function ElectronProbe({
 
     if (headMatRef.current) headMatRef.current.opacity = opacityRef.current
     if (haloMatRef.current) haloMatRef.current.opacity = opacityRef.current * 0.42
-    if (trailMatRef.current) trailMatRef.current.opacity = opacityRef.current
+    // Trail dampener: in S-mode the buffer carries an orbit-A residue
+    // into the start of travelAB. Scaling its opacity down keeps that
+    // residue as a soft echo without letting it compete with the S.
+    const trailScale = sModeOnly ? 0.5 : 1
+    if (trailMatRef.current)
+      trailMatRef.current.opacity = opacityRef.current * trailScale
   })
 
   return (
