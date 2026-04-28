@@ -684,6 +684,20 @@ function ElectronProbe({
           localT = 0
           lapsInPhaseRef.current = 0
           lastTravelCountRef.current = travelCount
+          // S-mode trail-clear: when we enter travelAB while sModeOnly
+          // is on, collapse the trail buffer onto the head's current
+          // position. Without this, the buffer still holds positions
+          // from the just-completed orbit (and from travelBA before
+          // it), which fade back in as opacity ramps up at the start
+          // of travelAB and read as ghost circles around the nuclei.
+          if (sModeOnly && phase === 'travelAB' && bufRef.current) {
+            const head = lastPosRef.current
+            for (let i = 0; i < ELECTRON.trail.segments; i++) {
+              bufRef.current[i * 3] = head[0]
+              bufRef.current[i * 3 + 1] = head[1]
+              bufRef.current[i * 3 + 2] = head[2]
+            }
+          }
         }
       }
     } else {
@@ -1386,7 +1400,20 @@ export function LabsAtomMotion() {
     }
     return MAX_ELECTRONS
   }, [highestOccupied])
-  const electronSpecs = useMemo(() => buildElectronSpecs(activeLayout), [activeLayout])
+  const electronSpecs = useMemo(() => {
+    const base = buildElectronSpecs(activeLayout)
+    if (!sMode) return base
+    // S-mode: collapse all electrons onto the same orbit plane so they
+    // trace a single 2D S, only the initialPhase staggering them along
+    // the path. upHat = [0, 0, -1] flips the bow direction relative to
+    // the prior default (the user wanted "the other way") and the
+    // rotation stays cwAtA = true for consistency.
+    return base.map((spec) => ({
+      ...spec,
+      upHat: [0, 0, -1] as Vec3,
+      cwAtA: true,
+    }))
+  }, [activeLayout, sMode])
   const electronColors = useMemo(
     () => deriveElectronColors(activeLayout, colorMode, solidColor, individualColors, gradientStart, gradientEnd),
     [activeLayout, colorMode, solidColor, individualColors, gradientStart, gradientEnd],
@@ -1576,11 +1603,6 @@ export function LabsAtomMotion() {
       return out
     })
     setAutoReplay(true)
-    // Brightness pass — bigger heads, fuller halos, fatter trails so
-    // the S reads strongly even with short-visible travel windows.
-    setHeadScale(0.1)
-    setHaloScale(1.6)
-    setTrailWidth(0.14)
   }, [])
   const onQuickMoveToB = useCallback(() => {
     setSlotLocations((prev) => {
