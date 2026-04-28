@@ -1409,10 +1409,12 @@ export function LabsAtomMotion() {
     if (!sMode) return base
     // S-mode: collapse all electrons onto the same orbit plane so they
     // S-mode layout:
-    //   slots 0..3 — main S orbit (upHat [0, 0, -1]); 4 electrons
-    //                equally spaced at 0°, 90°, 180°, 270°
-    //   slot 4     — side orbit tilted -11.25° from the S plane
-    //   slot 5     — side orbit tilted -22.5° from the S plane
+    //   slots 0..5 — main S orbit (upHat [0, 0, -1]); 6 electrons
+    //                equally spaced at 60° intervals (0, π/3, 2π/3,
+    //                π, 4π/3, 5π/3) so the staggered transits fill
+    //                the visible travelAB window without dark gaps
+    //   slot 6     — side orbit tilted -11.25° from the S plane
+    //   slot 7     — side orbit tilted -22.5° from the S plane
     // Both side orbits on the same side; the opposite side traces a
     // mirror-S. Flip the sign of sin* below if this turns out to be
     // the wrong side.
@@ -1422,22 +1424,22 @@ export function LabsAtomMotion() {
     const cos2T = Math.cos(2 * TILT)
     const sin2T = Math.sin(2 * TILT)
     return base.map((spec, i) => {
-      if (i < 4) {
+      if (i < 6) {
         return {
           ...spec,
           upHat: [0, 0, -1] as Vec3,
           cwAtA: true,
-          initialPhase: (i * Math.PI) / 2,
+          initialPhase: (i * Math.PI) / 3,
         }
       }
-      if (i === 4) {
+      if (i === 6) {
         return {
           ...spec,
           upHat: [0, -sinT, -cosT] as Vec3,
           cwAtA: true,
         }
       }
-      if (i === 5) {
+      if (i === 7) {
         return {
           ...spec,
           upHat: [0, -sin2T, -cos2T] as Vec3,
@@ -1628,25 +1630,25 @@ export function LabsAtomMotion() {
     setPointB([0, -SHOW_CHORD, 0])
     setSlotLocations(() => {
       const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
-      // 6 electrons total: 4 main S + 2 side
-      for (let i = 0; i < 6; i++) out[i] = 'A'
+      // 8 electrons total: 6 main S + 2 side
+      for (let i = 0; i < 8; i++) out[i] = 'A'
       return out
     })
     setStartSeeds((prev) => {
       const out = prev.slice()
-      for (let i = 0; i < 6; i++) out[i] = (out[i] ?? 0) + 1
+      for (let i = 0; i < 8; i++) out[i] = (out[i] ?? 0) + 1
       return out
     })
-    // Per-electron colors: yellow for the 4 main S electrons, blue
+    // Per-electron colors: yellow for the 6 main S electrons, blue
     // for the 2 flanking side orbits. Force individual color mode so
     // each slot's color sticks regardless of prior gradient/solid.
     setColorMode('individual')
     setIndividualColors((prev) => {
       const out = prev.slice()
-      while (out.length < 6) out.push(DEFAULT_E_COLOR)
-      for (let i = 0; i < 4; i++) out[i] = YELLOW
-      out[4] = BLUE
-      out[5] = BLUE
+      while (out.length < 8) out.push(DEFAULT_E_COLOR)
+      for (let i = 0; i < 6; i++) out[i] = YELLOW
+      out[6] = BLUE
+      out[7] = BLUE
       return out
     })
     setAutoReplay(true)
@@ -2009,7 +2011,7 @@ export function LabsAtomMotion() {
                   haloColor={c}
                   globalScaledTimeRef={globalScaledTimeRef}
                   sModeOnly={sMode}
-                  selfLoop={sMode && i < 4}
+                  selfLoop={sMode && i < 6}
                 />
               )
             })}
