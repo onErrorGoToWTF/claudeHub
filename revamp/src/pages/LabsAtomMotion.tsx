@@ -1646,7 +1646,7 @@ export function LabsAtomMotion() {
       return out
     })
     setAutoReplay(true)
-    setSpeedMult(8)
+    setSpeedMult(5)
     setShowNuclei(false)
     setShowAxis(false)
     setShowStars(false)
