@@ -2058,10 +2058,7 @@ export function LabsAtomMotion() {
                   color={c}
                   haloColor={c}
                   globalScaledTimeRef={globalScaledTimeRef}
-                  // Tuning mode: keep electrons fully visible during
-                  // S-mode so the user can time a full cycle by eye.
-                  // Re-enable {sMode} once tickMs is dialed in.
-                  sModeOnly={false}
+                  sModeOnly={sMode}
                 />
               )
             })}
