@@ -501,7 +501,6 @@ function ElectronProbe({
   trailWidth,
   globalScaledTimeRef,
   sModeOnly,
-  selfLoop,
 }: {
   spec: ElectronSpec
   fadeTex: THREE.DataTexture
@@ -530,13 +529,6 @@ function ElectronProbe({
    *  travelBA return trip (which would otherwise trace a mirror-S over
    *  the forward S each cycle in loop mode). */
   sModeOnly?: boolean
-  /** Self-loop transit: fire a transit at every far-tip wrap without
-   *  waiting for the external autoReplay bump or atom-prop change.
-   *  Used in S-mode so the 4 main electrons cycle on a per-orbit-
-   *  period rhythm, giving continuous visible coverage of the S
-   *  rather than the long-dark gaps autoReplay's interleaved tick
-   *  pacing would otherwise produce. */
-  selfLoop?: boolean
 }) {
   const headRef = useRef<THREE.Sprite>(null!)
   const headMatRef = useRef<THREE.SpriteMaterial>(null!)
@@ -685,7 +677,7 @@ function ElectronProbe({
         const newTravel = travelCount > lastTravelCountRef.current
         const currentAtom: 'A' | 'B' = phase === 'orbitA' ? 'A' : 'B'
         const wantsAtomSwitch = atom !== currentAtom
-        if (newTravel || wantsAtomSwitch || selfLoop) {
+        if (newTravel || wantsAtomSwitch) {
           phase = phase === 'orbitA' ? 'travelAB' : 'travelBA'
           phaseRef.current = phase
           phaseElapsedRef.current = 0
@@ -1429,6 +1421,8 @@ export function LabsAtomMotion() {
           ...spec,
           upHat: [0, 0, -1] as Vec3,
           cwAtA: true,
+          // 6 electrons spread evenly around the orbit (60° apart).
+          // User will tune from here.
           initialPhase: (i * Math.PI) / 3,
         }
       }
@@ -2011,7 +2005,6 @@ export function LabsAtomMotion() {
                   haloColor={c}
                   globalScaledTimeRef={globalScaledTimeRef}
                   sModeOnly={sMode}
-                  selfLoop={sMode && i < 6}
                 />
               )
             })}
