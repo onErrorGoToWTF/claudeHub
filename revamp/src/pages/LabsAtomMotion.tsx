@@ -1623,31 +1623,26 @@ export function LabsAtomMotion() {
   const onDrawSShow = useCallback(() => {
     const SHOW_CHORD = 2.7
     const YELLOW = '#ffd84d'
-    const BLUE = '#93e3fd'
     setSMode(true)
     setPointA([0, SHOW_CHORD, 0])
     setPointB([0, -SHOW_CHORD, 0])
     setSlotLocations(() => {
       const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
-      // 8 electrons total: 6 main S + 2 side
-      for (let i = 0; i < 8; i++) out[i] = 'A'
+      // Tuning mode: just 1 main electron so the user can time a
+      // single cycle without trying to follow multiple at once.
+      out[0] = 'A'
       return out
     })
     setStartSeeds((prev) => {
       const out = prev.slice()
-      for (let i = 0; i < 8; i++) out[i] = (out[i] ?? 0) + 1
+      out[0] = (out[0] ?? 0) + 1
       return out
     })
-    // Per-electron colors: yellow for the 6 main S electrons, blue
-    // for the 2 flanking side orbits. Force individual color mode so
-    // each slot's color sticks regardless of prior gradient/solid.
     setColorMode('individual')
     setIndividualColors((prev) => {
       const out = prev.slice()
-      while (out.length < 8) out.push(DEFAULT_E_COLOR)
-      for (let i = 0; i < 6; i++) out[i] = YELLOW
-      out[6] = BLUE
-      out[7] = BLUE
+      while (out.length < 1) out.push(DEFAULT_E_COLOR)
+      out[0] = YELLOW
       return out
     })
     setAutoReplay(true)
