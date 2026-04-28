@@ -74,6 +74,13 @@ const SPEED_SCALE = 0.5
 // Orbits are always circular (aspect = 1). Visual ellipses are purely a
 // camera-angle effect on a 3D circle, not an actual orbital aspect.
 const ORBIT_ASPECT = 1.0
+// Trail-smoothness budget: target maximum angular delta between consecutive
+// samples in the trail polyline. At 0.02 rad (~1.15°) the polyline reads as
+// a continuous curve; above ~0.05 rad it starts to look faceted. Each frame
+// we substep position writes so this bound is respected even at high
+// speedMult. Calibrated to match the look at speed=1× (16.7ms × ω = 0.02
+// rad), so low speeds run at N=1 substep with zero overhead.
+const TARGET_RAD_PER_SAMPLE = 0.02
 // Default camera position (rotated 3-quarter view captured from the user's
 // preferred starting orientation). Matches Preset 1.
 const DEFAULT_CAMERA_POS: [number, number, number] = [-17.87, 7.26, -3.71]
@@ -644,8 +651,12 @@ function ElectronProbe({
     }
 
     // Phase-change checks BEFORE position computation, so we render the
-    // post-transition position on the same frame.
+    // post-transition position on the same frame. `frameStartT` is the
+    // localT at which this frame's motion begins in the current (possibly
+    // post-wrap) phase — used by the substep loop below to interpolate
+    // intermediate sample positions across the frame.
     let phase = phaseRef.current
+    let frameStartT = prevLocalT
     if (phase === 'orbitA' || phase === 'orbitB') {
       // Far-tip wrap detection.
       const targetAngle = phase === 'orbitA' ? Math.PI : 0
@@ -672,6 +683,7 @@ function ElectronProbe({
           phaseRef.current = phase
           phaseElapsedRef.current = 0
           localT = 0
+          frameStartT = 0
           lapsInPhaseRef.current = 0
           lastTravelCountRef.current = travelCount
           // (No trail clear — keep the orbit-A residue in the buffer
@@ -689,6 +701,7 @@ function ElectronProbe({
         const overshoot = localT - TRANSIT_DUR
         phaseElapsedRef.current = overshoot
         localT = overshoot
+        frameStartT = 0
         // Reset lap counter for the new orbit phase.
         lapsInPhaseRef.current = 0
         // Re-entry orbits land at the chord-line far-tip exactly.
@@ -697,60 +710,82 @@ function ElectronProbe({
       }
     }
 
-    // Compute position for current phase.
+    // Closed-form position function for the current (possibly post-wrap)
+    // phase. Lifted out of the conditional so the substep loop below can
+    // sample intermediate localT values.
+    //
+    // FUTURE — same-rotation transit pathway (user-requested re-add):
+    // Pre-multi-electron there was a second mode that used a single
+    // ellipse-arc transit (`buildTravel` + `evalTravel` from
+    // runtime/travel.ts) instead of the lemniscate. It kept orbital
+    // rotation the SAME at A and B (no omega flip) and produced a
+    // gentler top-/bottom-sweep arc rather than the figure-8 S-curve.
+    // User preferred its visual feel for some atoms — wants the option
+    // to switch between the two pathways. Re-add as a per-electron-spec
+    // or per-atom flag, gated by a panel toggle.
     const orbitA = makeOrbitADesc(spec, chordHalf, orbitSize, entryAngleRef.current)
     const orbitB = makeOrbitBDesc(spec, chordHalf, orbitSize)
-    let pos: Vec3 = lastPosRef.current
-
-    if (phase === 'orbitA') {
-      const theta = entryAngleRef.current + orbitA.omega * localT
-      pos = orbitPosAt(orbitA, theta)
-    } else if (phase === 'orbitB') {
-      const theta = 0 + orbitB.omega * localT
-      pos = orbitPosAt(orbitB, theta)
-    } else {
-      // travelAB: tau = pi -> 2pi (left lobe tip -> right lobe tip)
-      // travelBA: tau = 0 -> pi (right -> left, the other half)
-      //
-      // FUTURE — same-rotation transit pathway (user-requested re-add):
-      // Pre-multi-electron there was a second mode that used a single
-      // ellipse-arc transit (`buildTravel` + `evalTravel` from
-      // runtime/travel.ts) instead of the lemniscate. It kept orbital
-      // rotation the SAME at A and B (no omega flip) and produced a
-      // gentler top-/bottom-sweep arc rather than the figure-8 S-curve.
-      // User preferred its visual feel for some atoms — wants the
-      // option to switch between the two pathways. Re-add as a per-
-      // electron-spec or per-atom flag, gated by a panel toggle.
-      // Constraint: same-rotation arc only generalizes cleanly when the
-      // orbit's perpendicular direction is consistent with the transit's
-      // wHat — need to thread an upHat fallback through buildTravel for
-      // the multi-plane case (chord-line exit has perpLen ≈ 0).
-      const lemnisc = buildLemniscate(
-        [-chordHalf, 0, 0],
-        [chordHalf, 0, 0],
-        spec.upHat,
-      )
-      // S-curve fitted to current geometry: lobe-tips at orbit far-tips
-      // (a = chordHalf + orbitSize), amplitude in the same aspect ratio
-      // as the original Bernoulli lemniscate (a / 2√2).
-      const a = chordHalf + orbitSize
-      const amp = a / (2 * Math.SQRT2)
-      const t01 = Math.min(localT / TRANSIT_DUR, 1)
+    const lemnisc = buildLemniscate(
+      [-chordHalf, 0, 0],
+      [chordHalf, 0, 0],
+      spec.upHat,
+    )
+    const lemA = chordHalf + orbitSize
+    const lemAmp = lemA / (2 * Math.SQRT2)
+    const posAt = (t: number): Vec3 => {
+      if (phase === 'orbitA') {
+        const theta = entryAngleRef.current + orbitA.omega * t
+        return orbitPosAt(orbitA, theta)
+      }
+      if (phase === 'orbitB') {
+        const theta = orbitB.omega * t
+        return orbitPosAt(orbitB, theta)
+      }
+      // travelAB: tau = pi -> 2pi  /  travelBA: tau = 0 -> pi
+      const t01 = Math.min(t / TRANSIT_DUR, 1)
       const direction = phase === 'travelAB' ? -1 : 1
-      pos = sCurvePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, a, amp, t01, direction)
+      return sCurvePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemA, lemAmp, t01, direction)
+    }
+
+    // Auto-tune substep count to keep angular delta per polyline sample
+    // ≤ TARGET_RAD_PER_SAMPLE for orbit phases (the curved ones — visible
+    // jaggedness lives here at high speedMult). Transit phases use the
+    // S-curve which is smoother per-unit-time; N=1 is fine.
+    //
+    // NOTE — REVISIT TAIL LENGTH. The trail buffer is fixed at
+    // ELECTRON.trail.segments (96), so substepping shortens the tail's
+    // visual arc at high speed (today: 96 frames worth → ~3 orbits at
+    // speed=10×; with substeps: 96 samples worth → ~110° arc at all
+    // speeds). User wants to evaluate whether the tail should keep
+    // extending with speed (visual cue for "going fast"). To restore
+    // pre-substep behavior, multiply buffer length and unroll length
+    // by `substeps` so 96 × N samples cover the same wall-time as 96
+    // pre-substep samples. See companion comment in MiniOrbitElectron
+    // (revamp/src/ui/atom/OrbitMap.tsx) for the same revisit point.
+    const span = localT - frameStartT
+    const isOrbit = phase === 'orbitA' || phase === 'orbitB'
+    let substeps = 1
+    if (isOrbit && span > 0) {
+      const angularSpan = ORBIT_OMEGA_BASE * span
+      substeps = Math.max(1, Math.ceil(angularSpan / TARGET_RAD_PER_SAMPLE))
+    }
+
+    let pos: Vec3 = lastPosRef.current
+    const buf = bufRef.current!
+    for (let i = 1; i <= substeps; i++) {
+      const t = frameStartT + (span * i) / substeps
+      pos = posAt(t)
+      const idx = insertIdxRef.current
+      buf[idx * 3] = pos[0]
+      buf[idx * 3 + 1] = pos[1]
+      buf[idx * 3 + 2] = pos[2]
+      insertIdxRef.current = (idx + 1) % ELECTRON.trail.segments
     }
 
     lastPosRef.current = pos
     headRef.current.position.set(pos[0], pos[1], pos[2])
     if (haloRef.current) haloRef.current.position.set(pos[0], pos[1], pos[2])
 
-    // Trail ring buffer.
-    const buf = bufRef.current!
-    const idx = insertIdxRef.current
-    buf[idx * 3] = pos[0]
-    buf[idx * 3 + 1] = pos[1]
-    buf[idx * 3 + 2] = pos[2]
-    insertIdxRef.current = (idx + 1) % ELECTRON.trail.segments
     const unroll = new Float32Array(ELECTRON.trail.segments * 3)
     for (let i = 0; i < ELECTRON.trail.segments; i++) {
       const src = (insertIdxRef.current + i) % ELECTRON.trail.segments

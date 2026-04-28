@@ -32,6 +32,10 @@ const Z_AXIS = new THREE.Vector3(0, 0, 1)
 // main stage. cwAtA = true everywhere → omega is negative.
 const MINI_OMEGA_BASE = 2.4
 const MINI_FADE_DUR = 0.55
+// Trail-smoothness budget — see same constant in LabsAtomMotion.tsx.
+// Substep count auto-tunes off this so the polyline stays curved at
+// any speedMult.
+const TARGET_RAD_PER_SAMPLE = 0.02
 
 // Same head-sprite texture recipe as the main scene. Local copy so the
 // preview canvas owns its own GL upload (textures don't share across
@@ -154,6 +158,10 @@ function MiniOrbitElectron({
   const opacityRef = useRef(0)
   const bufRef = useRef<Float32Array | null>(null)
   const insertIdxRef = useRef(0)
+  // Tracks last frame's global scaled-time so the substep loop knows how
+  // much orbital time elapsed this frame. Initialized lazily on first
+  // useFrame so we substep across the actual delta, not a 0→now jump.
+  const lastGlobalTRef = useRef<number | null>(null)
   if (!bufRef.current) {
     bufRef.current = new Float32Array(ELECTRON.trail.segments * 3)
   }
@@ -234,19 +242,42 @@ function MiniOrbitElectron({
     }
 
     const omega = -MINI_OMEGA_BASE
-    const theta = initialPhase + omega * globalScaledTimeRef.current
-    const pos = posAt(theta)
+    const currGlobalT = globalScaledTimeRef.current
+    const prevGlobalT = lastGlobalTRef.current ?? currGlobalT
+    lastGlobalTRef.current = currGlobalT
+    const span = currGlobalT - prevGlobalT
+
+    // Auto-tune substeps — keep angular delta per polyline sample under
+    // TARGET_RAD_PER_SAMPLE so the orbit reads as a curve, not a polygon,
+    // at any speedMult. See companion logic + revisit note in
+    // LabsAtomMotion.tsx → ElectronProbe.
+    //
+    // NOTE — REVISIT TAIL LENGTH. Buffer is fixed at
+    // ELECTRON.trail.segments (96), so substepping shortens visual tail
+    // arc at high speed. To restore "tail extends with speed" behavior,
+    // multiply buffer + unroll length by `substeps`.
+    let substeps = 1
+    if (span > 0) {
+      const angularSpan = MINI_OMEGA_BASE * span
+      substeps = Math.max(1, Math.ceil(angularSpan / TARGET_RAD_PER_SAMPLE))
+    }
+
+    let pos: Vec3 = [0, 0, 0]
+    const buf = bufRef.current!
+    for (let i = 1; i <= substeps; i++) {
+      const sampleGlobalT = prevGlobalT + (span * i) / substeps
+      const theta = initialPhase + omega * sampleGlobalT
+      pos = posAt(theta)
+      const idx = insertIdxRef.current
+      buf[idx * 3] = pos[0]
+      buf[idx * 3 + 1] = pos[1]
+      buf[idx * 3 + 2] = pos[2]
+      insertIdxRef.current = (idx + 1) % ELECTRON.trail.segments
+    }
 
     if (headRef.current) headRef.current.position.set(pos[0], pos[1], pos[2])
     if (haloRef.current) haloRef.current.position.set(pos[0], pos[1], pos[2])
 
-    // Trail ring buffer — same pattern as ElectronProbe.
-    const buf = bufRef.current!
-    const idx = insertIdxRef.current
-    buf[idx * 3] = pos[0]
-    buf[idx * 3 + 1] = pos[1]
-    buf[idx * 3 + 2] = pos[2]
-    insertIdxRef.current = (idx + 1) % ELECTRON.trail.segments
     const unroll = new Float32Array(ELECTRON.trail.segments * 3)
     for (let i = 0; i < ELECTRON.trail.segments; i++) {
       const src = (insertIdxRef.current + i) % ELECTRON.trail.segments
