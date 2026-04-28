@@ -684,18 +684,9 @@ function ElectronProbe({
           localT = 0
           lapsInPhaseRef.current = 0
           lastTravelCountRef.current = travelCount
-          // S-mode trail clear on travelAB entry: collapse the buffer
-          // onto the head's current position so the orbit-A residue
-          // doesn't fade back in at the start of the S. Per user, the
-          // top circle should read as transparent / gone.
-          if (sModeOnly && phase === 'travelAB' && bufRef.current) {
-            const head = lastPosRef.current
-            for (let i = 0; i < ELECTRON.trail.segments; i++) {
-              bufRef.current[i * 3] = head[0]
-              bufRef.current[i * 3 + 1] = head[1]
-              bufRef.current[i * 3 + 2] = head[2]
-            }
-          }
+          // (No trail clear — keep the orbit-A residue in the buffer
+          // and let the trail-opacity quadratic ramp below smoothly
+          // fade it in instead of cutting it off.)
         }
       }
     } else {
@@ -781,12 +772,16 @@ function ElectronProbe({
 
     if (headMatRef.current) headMatRef.current.opacity = opacityRef.current
     if (haloMatRef.current) haloMatRef.current.opacity = opacityRef.current * 0.42
-    // Trail dampener: in S-mode the buffer carries an orbit-A residue
-    // into the start of travelAB. Scaling its opacity down keeps that
-    // residue as a soft echo without letting it compete with the S.
-    const trailScale = sModeOnly ? 0.5 : 1
-    if (trailMatRef.current)
-      trailMatRef.current.opacity = opacityRef.current * trailScale
+    // Trail in S-mode uses a quadratic fade-in so the orbit-A residue
+    // eases smoothly back into visibility at the start of travelAB
+    // instead of jumping in linearly. opacityRef² delays the early
+    // ramp (0→0.25 in the first half of FADE_DUR vs 0→0.5 linear) so
+    // the residue reads as a soft transparency, not a hard echo, and
+    // the * 0.5 keeps the steady-state trail intentionally dim.
+    const trailOpacity = sModeOnly
+      ? opacityRef.current * opacityRef.current * 0.5
+      : opacityRef.current
+    if (trailMatRef.current) trailMatRef.current.opacity = trailOpacity
   })
 
   return (
