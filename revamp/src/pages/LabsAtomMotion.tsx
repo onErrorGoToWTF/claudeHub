@@ -754,11 +754,22 @@ function ElectronProbe({
     headRef.current.position.set(pos[0], pos[1], pos[2])
     if (haloRef.current) haloRef.current.position.set(pos[0], pos[1], pos[2])
 
-    // Trail ring buffer.
+    // S-mode Y-clip: only draw between the two horizontal "draw lines"
+    // at |y| = chordHalf - orbitSize (the inside edge of the orbit
+    // circles). Outside that range the buffer writes a clamped
+    // position pinned to the clip boundary so the trail collapses at
+    // the boundary instead of drawing the orbit. Head opacity is
+    // hidden out of range. Net effect: travelAB starts being drawn
+    // when the electron crosses the top draw-line and stops at the
+    // bottom one — a clean S between the two lines.
+    const clipY = chordHalf - orbitSize
+    const inSClip = !sModeOnly || Math.abs(pos[1]) <= clipY
+    const writeY = inSClip ? pos[1] : Math.sign(pos[1]) * clipY
+
     const buf = bufRef.current!
     const idx = insertIdxRef.current
     buf[idx * 3] = pos[0]
-    buf[idx * 3 + 1] = pos[1]
+    buf[idx * 3 + 1] = writeY
     buf[idx * 3 + 2] = pos[2]
     insertIdxRef.current = (idx + 1) % ELECTRON.trail.segments
     const unroll = new Float32Array(ELECTRON.trail.segments * 3)
@@ -770,8 +781,11 @@ function ElectronProbe({
     }
     if (trailGeomRef.current?.setPoints) trailGeomRef.current.setPoints(unroll)
 
-    if (headMatRef.current) headMatRef.current.opacity = opacityRef.current
-    if (haloMatRef.current) haloMatRef.current.opacity = opacityRef.current * 0.42
+    const sClipMul = inSClip ? 1 : 0
+    if (headMatRef.current)
+      headMatRef.current.opacity = opacityRef.current * sClipMul
+    if (haloMatRef.current)
+      haloMatRef.current.opacity = opacityRef.current * 0.42 * sClipMul
     // Trail in S-mode uses a quadratic fade-in so the orbit-A residue
     // eases smoothly back into visibility at the start of travelAB
     // instead of jumping in linearly. opacityRef² delays the early
