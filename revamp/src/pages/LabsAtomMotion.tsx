@@ -1400,36 +1400,36 @@ export function LabsAtomMotion() {
     const base = buildElectronSpecs(activeLayout)
     if (!sMode) return base
     // S-mode: collapse all electrons onto the same orbit plane so they
-    // S-mode layout (matches the user's captured preset):
-    //   slots 0, 1 — main S orbit (upHat [0, 0, -1]); 180° apart in
-    //                phase so the 2 electrons step in alternately
-    //   slot 2     — side orbit tilted -11.25° from the S plane
-    //   slot 3     — side orbit tilted -22.5° from the S plane
-    // Both side orbits intentionally on the same side, since the
-    // opposite side traces a mirror-S. If the chosen side is the
-    // wrong one, flip the sign of sin* below for both slots.
+    // S-mode layout:
+    //   slots 0..3 — main S orbit (upHat [0, 0, -1]); 4 electrons
+    //                equally spaced at 0°, 90°, 180°, 270°
+    //   slot 4     — side orbit tilted -11.25° from the S plane
+    //   slot 5     — side orbit tilted -22.5° from the S plane
+    // Both side orbits on the same side; the opposite side traces a
+    // mirror-S. Flip the sign of sin* below if this turns out to be
+    // the wrong side.
     const TILT = (11.25 * Math.PI) / 180
     const cosT = Math.cos(TILT)
     const sinT = Math.sin(TILT)
     const cos2T = Math.cos(2 * TILT)
     const sin2T = Math.sin(2 * TILT)
     return base.map((spec, i) => {
-      if (i < 2) {
+      if (i < 4) {
         return {
           ...spec,
           upHat: [0, 0, -1] as Vec3,
           cwAtA: true,
-          initialPhase: i === 0 ? Math.PI / 2 : (3 * Math.PI) / 2,
+          initialPhase: (i * Math.PI) / 2,
         }
       }
-      if (i === 2) {
+      if (i === 4) {
         return {
           ...spec,
           upHat: [0, -sinT, -cosT] as Vec3,
           cwAtA: true,
         }
       }
-      if (i === 3) {
+      if (i === 5) {
         return {
           ...spec,
           upHat: [0, -sin2T, -cos2T] as Vec3,
@@ -1620,26 +1620,25 @@ export function LabsAtomMotion() {
     setPointB([0, -SHOW_CHORD, 0])
     setSlotLocations(() => {
       const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
-      // 4 electrons: 2 main + 2 side
-      for (let i = 0; i < 4; i++) out[i] = 'A'
+      // 6 electrons total: 4 main S + 2 side
+      for (let i = 0; i < 6; i++) out[i] = 'A'
       return out
     })
     setStartSeeds((prev) => {
       const out = prev.slice()
-      for (let i = 0; i < 4; i++) out[i] = (out[i] ?? 0) + 1
+      for (let i = 0; i < 6; i++) out[i] = (out[i] ?? 0) + 1
       return out
     })
-    // Per-electron colors: yellow for the S orbit pair, blue for the
-    // two flanking side orbits. Force individual color mode so each
-    // slot's color sticks regardless of prior gradient/solid setting.
+    // Per-electron colors: yellow for the 4 main S electrons, blue
+    // for the 2 flanking side orbits. Force individual color mode so
+    // each slot's color sticks regardless of prior gradient/solid.
     setColorMode('individual')
     setIndividualColors((prev) => {
       const out = prev.slice()
-      while (out.length < 4) out.push(DEFAULT_E_COLOR)
-      out[0] = YELLOW
-      out[1] = YELLOW
-      out[2] = BLUE
-      out[3] = BLUE
+      while (out.length < 6) out.push(DEFAULT_E_COLOR)
+      for (let i = 0; i < 4; i++) out[i] = YELLOW
+      out[4] = BLUE
+      out[5] = BLUE
       return out
     })
     setAutoReplay(true)
