@@ -778,14 +778,16 @@ function ElectronProbe({
       return sCurvePos(lemnisc.midpoint, lemnisc.uHat, lemnisc.wHat, lemA, lemAmp, t01, direction)
     }
 
-    // Auto-tune substep count to keep angular delta per polyline sample
-    // ≤ TARGET_RAD_PER_SAMPLE for orbit phases (the curved ones — visible
-    // jaggedness lives here at high speedMult). Transit phases use the
-    // S-curve which is smoother per-unit-time; N=1 is fine.
+    // Auto-tune substep count to keep polyline samples dense enough that
+    // every phase reads as a curve, not a polygon. For orbit phases we
+    // bound angular delta per sample. Transit phases reuse the same
+    // budget (ORBIT_OMEGA_BASE × span as a "would-be angular distance"
+    // proxy) — this gives transits the same per-frame substep count as
+    // orbits, which works out to plenty of vertices over the S-curve at
+    // any speed.
     const span = localT - frameStartT
-    const isOrbit = phase === 'orbitA' || phase === 'orbitB'
     let substeps = 1
-    if (isOrbit && span > 0) {
+    if (span > 0) {
       const angularSpan = ORBIT_OMEGA_BASE * span
       substeps = Math.max(1, Math.ceil(angularSpan / TARGET_RAD_PER_SAMPLE))
     }
