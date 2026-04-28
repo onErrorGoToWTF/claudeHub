@@ -1628,21 +1628,23 @@ export function LabsAtomMotion() {
     setPointB([0, -SHOW_CHORD, 0])
     setSlotLocations(() => {
       const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
-      // Tuning mode: just 1 main electron so the user can time a
-      // single cycle without trying to follow multiple at once.
-      out[0] = 'A'
+      // 4 electrons on the main S orbit. autoReplay's interleaved
+      // tick (cycle / (2·N) ms) gives each pair of consecutive
+      // transits a stagger of cycle/8 = ~1.4s, so the 4 electrons
+      // are evenly spaced across the 11.236s cycle.
+      for (let i = 0; i < 4; i++) out[i] = 'A'
       return out
     })
     setStartSeeds((prev) => {
       const out = prev.slice()
-      out[0] = (out[0] ?? 0) + 1
+      for (let i = 0; i < 4; i++) out[i] = (out[i] ?? 0) + 1
       return out
     })
     setColorMode('individual')
     setIndividualColors((prev) => {
       const out = prev.slice()
-      while (out.length < 1) out.push(DEFAULT_E_COLOR)
-      out[0] = YELLOW
+      while (out.length < 4) out.push(DEFAULT_E_COLOR)
+      for (let i = 0; i < 4; i++) out[i] = YELLOW
       return out
     })
     setAutoReplay(true)
