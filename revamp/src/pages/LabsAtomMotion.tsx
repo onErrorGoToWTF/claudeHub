@@ -1400,17 +1400,21 @@ export function LabsAtomMotion() {
     }
     return MAX_ELECTRONS
   }, [highestOccupied])
+  // S-mode: vertical chord + hide-on-orbit + same-orbit electron specs.
+  // Declared here so electronSpecs (next useMemo) can read it; the
+  // toggle/show callbacks live further down with the other actions.
+  const [sMode, setSMode] = useState(false)
   const electronSpecs = useMemo(() => {
     const base = buildElectronSpecs(activeLayout)
     if (!sMode) return base
     // S-mode: collapse all electrons onto the same orbit plane so they
     // trace a single 2D S, only the initialPhase staggering them along
-    // the path. upHat = [0, 0, -1] flips the bow direction relative to
-    // the prior default (the user wanted "the other way") and the
-    // rotation stays cwAtA = true for consistency.
+    // the path. upHat = [0, 0, 1] sets the bow chirality (flipped one
+    // more time per user request) and cwAtA = true keeps rotation
+    // consistent across all electrons.
     return base.map((spec) => ({
       ...spec,
-      upHat: [0, 0, -1] as Vec3,
+      upHat: [0, 0, 1] as Vec3,
       cwAtA: true,
     }))
   }, [activeLayout, sMode])
@@ -1563,8 +1567,8 @@ export function LabsAtomMotion() {
   // chord vertical, that bow reads as a literal letter S. Pairing it
   // with hide-on-orbit (sMode flag → ElectronProbe drops opacity to 0
   // during orbit phases) means the user sees S → S → S in loop mode
-  // instead of orbit + S + orbit + S.
-  const [sMode, setSMode] = useState(false)
+  // instead of orbit + S + orbit + S. (sMode state hoisted above
+  // electronSpecs since it's read inside that useMemo.)
   // Throwaway: a tighter chord for the S so the top nucleus stays
   // on-screen at default camera. User can still tune via the spread
   // slider afterwards.
