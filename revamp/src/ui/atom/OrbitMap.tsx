@@ -22,7 +22,6 @@ type SlotLocation = 'A' | 'B' | 'none'
 
 const SPHERE_RADIUS = 1
 const RING_TUBE = 0.006
-const GLOW_TUBE = 0.022
 const ARMED_GLOW_TUBE = 0.030
 const NUCLEUS_RADIUS = 0.045
 const X_AXIS = new THREE.Vector3(1, 0, 0)
@@ -63,14 +62,10 @@ function makeSoftOrbTexture(): THREE.CanvasTexture {
 
 function OrbitRing({
   upHat,
-  occupied,
   armed,
-  color,
 }: {
   upHat: Vec3
-  occupied: boolean
   armed: boolean
-  color: string
 }) {
   const quaternion = useMemo(() => {
     const upVec = new THREE.Vector3(upHat[0], upHat[1], upHat[2])
@@ -78,24 +73,22 @@ function OrbitRing({
     return new THREE.Quaternion().setFromUnitVectors(Z_AXIS, normal)
   }, [upHat])
 
-  const lit = occupied || armed
-  const ringColor = armed ? '#ff5050' : occupied ? color : '#9aa0a6'
-  // Lit rings render at partial alpha so the background blends through
-  // — this mirrors the trail's transparency in the main scene, which
-  // produces a softened version of each electron's true color.
-  const lineOpacity = armed ? 0.85 : occupied ? 0.55 : 0.22
-  const glowTube = armed ? ARMED_GLOW_TUBE : GLOW_TUBE
-  const glowOpacity = armed ? 0.30 : 0.20
+  // Rings are uniform faint grey — the orbiting electron provides its own
+  // visual signal for the occupied state. Only the armed-for-delete state
+  // lights the ring (red), since the electron alone wouldn't communicate
+  // "next tap will remove this."
+  const ringColor = armed ? '#ff5050' : '#9aa0a6'
+  const lineOpacity = armed ? 0.85 : 0.22
 
   return (
     <group quaternion={quaternion}>
-      {lit && (
+      {armed && (
         <mesh>
-          <torusGeometry args={[SPHERE_RADIUS, glowTube, 8, 64]} />
+          <torusGeometry args={[SPHERE_RADIUS, ARMED_GLOW_TUBE, 8, 64]} />
           <meshBasicMaterial
             color={ringColor}
             transparent
-            opacity={glowOpacity}
+            opacity={0.30}
             depthWrite={false}
             blending={THREE.AdditiveBlending}
           />
@@ -354,9 +347,7 @@ export function OrbitMap({
         <OrbitRing
           key={`ring-${i}`}
           upHat={upHat}
-          occupied={slotLocations[i] !== 'none'}
           armed={armedSlot === i}
-          color={electronColors[i] ?? '#9aa0a6'}
         />
       ))}
       {upHats.map((upHat, i) =>
