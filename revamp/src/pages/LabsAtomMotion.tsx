@@ -1600,6 +1600,7 @@ export function LabsAtomMotion() {
     setAutoReplay(true)
     setSpeedMult(10)
     setTrailWidth(0.12)
+    setShowNuclei(false)
   }, [])
   const onQuickMoveToB = useCallback(() => {
     setSlotLocations((prev) => {
