@@ -1409,47 +1409,41 @@ export function LabsAtomMotion() {
     if (!sMode) return base
     // S-mode: collapse all electrons onto the same orbit plane so they
     // S-mode layout:
-    //   slots 0..(N-3) — main S orbit (upHat [0, 0, -1]); each
-    //     electron's initialPhase chosen so its angle equals π
-    //     (the far-tip) exactly when its first autoReplay bump
-    //     arrives. With angle alignment, every wrap fires a
-    //     transit, and the interleaved tick distributes those
-    //     transits evenly across the cycle by cycle/(2N).
-    //   last 2 slots — side orbits tilted -11.25° / -22.5° from
-    //     the S plane (when present). Flip sin* sign for the
-    //     opposite side if needed.
-    const TILT = (11.25 * Math.PI) / 180
-    const cosT = Math.cos(TILT)
-    const sinT = Math.sin(TILT)
-    const cos2T = Math.cos(2 * TILT)
-    const sin2T = Math.sin(2 * TILT)
-    const N = activeLayout
+    //   slots 0..3 — main S orbit (upHat [0, 0, -1])
+    //   slot 4    — side orbit tilted -5.625° from S plane
+    //   slot 5    — side orbit tilted -11.25° from S plane
+    // Each electron's initialPhase is chosen so its angle equals π
+    // (far-tip) exactly when its first autoReplay bump arrives.
+    // Alignment uses the inPlay-based N (matching autoReplay's
+    // inPlay.length) so the schedule matches reality.
+    const TILT_INNER = (5.625 * Math.PI) / 180
+    const TILT_OUTER = (11.25 * Math.PI) / 180
+    const inPlay: number[] = []
+    for (let k = 0; k < slotLocations.length; k++) {
+      if (slotLocations[k] !== 'none') inPlay.push(k)
+    }
+    const N = inPlay.length
+    if (N === 0) return base
     const order = travelOrderInterleaved(N)
     const cycleScaled =
       (4 * Math.PI) / ORBIT_OMEGA_BASE + 2 * TRANSIT_DUR
     return base.map((spec, i) => {
-      // Side-orbit slots (last 2 when 8+ active electrons).
-      if (N >= 8 && i === N - 2) {
-        return { ...spec, upHat: [0, -sinT, -cosT] as Vec3, cwAtA: true }
-      }
-      if (N >= 8 && i === N - 1) {
-        return { ...spec, upHat: [0, -sin2T, -cos2T] as Vec3, cwAtA: true }
-      }
-      // Main-S slot — align initialPhase to bump arrival.
-      // bumpTimeScaled matches tickMs: cycle / N per consecutive bump.
-      const n = order.indexOf(i)
+      const inPlayIdx = inPlay.indexOf(i)
+      if (inPlayIdx < 0) return spec
+      const n = order.indexOf(inPlayIdx)
       const bumpTimeScaled = n >= 0 ? (n * cycleScaled) / N : 0
       const rawPhase = Math.PI + ORBIT_OMEGA_BASE * bumpTimeScaled
       const initialPhase =
         ((rawPhase % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI)
-      return {
-        ...spec,
-        upHat: [0, 0, -1] as Vec3,
-        cwAtA: true,
-        initialPhase,
+      let upHat: Vec3 = [0, 0, -1]
+      if (i === 4) {
+        upHat = [0, -Math.sin(TILT_INNER), -Math.cos(TILT_INNER)]
+      } else if (i === 5) {
+        upHat = [0, -Math.sin(TILT_OUTER), -Math.cos(TILT_OUTER)]
       }
+      return { ...spec, upHat, cwAtA: true, initialPhase }
     })
-  }, [activeLayout, sMode])
+  }, [activeLayout, sMode, slotLocations])
   const electronColors = useMemo(
     () => deriveElectronColors(activeLayout, colorMode, solidColor, individualColors, gradientStart, gradientEnd),
     [activeLayout, colorMode, solidColor, individualColors, gradientStart, gradientEnd],
@@ -1630,23 +1624,25 @@ export function LabsAtomMotion() {
     setPointB([0, -SHOW_CHORD, 0])
     setSlotLocations(() => {
       const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
-      // 4 electrons on the main S orbit. autoReplay's interleaved
-      // tick (cycle / (2·N) ms) gives each pair of consecutive
-      // transits a stagger of cycle/8 = ~1.4s, so the 4 electrons
-      // are evenly spaced across the 11.236s cycle.
-      for (let i = 0; i < 4; i++) out[i] = 'A'
+      // 6 electrons: 4 main S (slots 0-3) + 2 side (slots 4-5).
+      for (let i = 0; i < 6; i++) out[i] = 'A'
       return out
     })
     setStartSeeds((prev) => {
       const out = prev.slice()
-      for (let i = 0; i < 4; i++) out[i] = (out[i] ?? 0) + 1
+      for (let i = 0; i < 6; i++) out[i] = (out[i] ?? 0) + 1
       return out
     })
     setColorMode('individual')
     setIndividualColors((prev) => {
       const out = prev.slice()
-      while (out.length < 4) out.push(DEFAULT_E_COLOR)
+      while (out.length < 6) out.push(DEFAULT_E_COLOR)
+      // Yellow on the main S, transitioning toward blue on the two
+      // side orbits — slot 4 is a yellow-blue mid (mint-tinted),
+      // slot 5 is the palette blue.
       for (let i = 0; i < 4; i++) out[i] = YELLOW
+      out[4] = '#bce0bc'
+      out[5] = '#93e3fd'
       return out
     })
     setAutoReplay(true)
