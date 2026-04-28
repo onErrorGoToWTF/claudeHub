@@ -1321,6 +1321,11 @@ export function LabsAtomMotion() {
   // Master Guides toggle (Chunk 8b). Default ON. When OFF, no in-scene
   // measurement marker appears regardless of slider activity.
   const [guidesEnabled, setGuidesEnabled] = useState(true)
+  // Toggle for the grey guide rings inside the Electrons panel sphere.
+  // Default ON. When OFF, only the armed-slot ring still renders (red
+  // delete-arm signal); occupied slots show only the orbiting electron
+  // so the user can see its true color without ring tint bleed-through.
+  const [orbitGuidesShown, setOrbitGuidesShown] = useState(true)
   // True only while the user is actively touching the spread slider.
   // Drives the blueprint dimension marker between the two nuclei.
   const [spreadActive, setSpreadActive] = useState(false)
@@ -2287,9 +2292,19 @@ export function LabsAtomMotion() {
                       haloScale={haloScale}
                       trailWidth={trailWidth}
                       nucleusColor={palette.nucleus}
+                      showGuides={orbitGuidesShown}
                       globalScaledTimeRef={globalScaledTimeRef}
                       reducedMotion={reducedMotion}
                     />
+                    <button
+                      type="button"
+                      className={`${s.orbitGuideToggle} ${orbitGuidesShown ? '' : s.off}`}
+                      onClick={() => setOrbitGuidesShown((v) => !v)}
+                      aria-label={orbitGuidesShown ? 'Hide orbit guide rings' : 'Show orbit guide rings'}
+                      title={orbitGuidesShown ? 'Hide guide rings' : 'Show guide rings'}
+                    >
+                      ⊕
+                    </button>
                   </div>
                   <div className={s.slotGrid}>
                     {Array.from({ length: MAX_ELECTRONS }, (_, k) => {

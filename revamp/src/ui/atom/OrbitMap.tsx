@@ -315,6 +315,7 @@ export function OrbitMap({
   haloScale,
   trailWidth,
   nucleusColor,
+  showGuides,
   globalScaledTimeRef,
   reducedMotion,
 }: {
@@ -327,6 +328,7 @@ export function OrbitMap({
   haloScale: number
   trailWidth: number
   nucleusColor: string
+  showGuides: boolean
   globalScaledTimeRef: React.MutableRefObject<number>
   reducedMotion: boolean
 }) {
@@ -343,13 +345,18 @@ export function OrbitMap({
     >
       <TrackballControls makeDefault rotateSpeed={2.5} noPan noZoom />
       <MiniNucleus color={nucleusColor} />
-      {upHats.map((upHat, i) => (
-        <OrbitRing
-          key={`ring-${i}`}
-          upHat={upHat}
-          armed={armedSlot === i}
-        />
-      ))}
+      {upHats.map((upHat, i) => {
+        // When guides are off, only render the armed-slot ring (the red
+        // delete-arm signal still needs to be visible).
+        if (!showGuides && armedSlot !== i) return null
+        return (
+          <OrbitRing
+            key={`ring-${i}`}
+            upHat={upHat}
+            armed={armedSlot === i}
+          />
+        )
+      })}
       {upHats.map((upHat, i) =>
         slotLocations[i] !== 'none' ? (
           <MiniOrbitElectron
