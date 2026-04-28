@@ -762,14 +762,17 @@ function ElectronProbe({
     // hidden out of range. Net effect: travelAB starts being drawn
     // when the electron crosses the top draw-line and stops at the
     // bottom one — a clean S between the two lines.
-    const clipY = chordHalf - orbitSize
-    const inSClip = !sModeOnly || Math.abs(pos[1]) <= clipY
-    const writeY = inSClip ? pos[1] : Math.sign(pos[1]) * clipY
+    // Clip is along the chord axis (local x) — the group's z-tilt
+    // maps local x to world y when the user runs S-mode with vertical
+    // nuclei, so this is the correct axis regardless of orientation.
+    const clipChord = chordHalf - orbitSize
+    const inSClip = !sModeOnly || Math.abs(pos[0]) <= clipChord
+    const writeX = inSClip ? pos[0] : Math.sign(pos[0]) * clipChord
 
     const buf = bufRef.current!
     const idx = insertIdxRef.current
-    buf[idx * 3] = pos[0]
-    buf[idx * 3 + 1] = writeY
+    buf[idx * 3] = writeX
+    buf[idx * 3 + 1] = pos[1]
     buf[idx * 3 + 2] = pos[2]
     insertIdxRef.current = (idx + 1) % ELECTRON.trail.segments
     const unroll = new Float32Array(ELECTRON.trail.segments * 3)
