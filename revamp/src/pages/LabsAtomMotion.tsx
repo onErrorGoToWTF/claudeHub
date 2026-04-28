@@ -684,12 +684,22 @@ function ElectronProbe({
           localT = 0
           lapsInPhaseRef.current = 0
           lastTravelCountRef.current = travelCount
-          // (Previously cleared the trail buffer here on travelAB
-          // entry to suppress orbit/return-trip leakage at the nuclei.
-          // User wants a small circle visible at both ends, so the
-          // clear is intentionally NOT done — leftover orbit-A trail
-          // segments fade in alongside travelAB, mirroring the orbit-B
-          // leftover that already fades out at the bottom.)
+          // S-mode trail-clear: collapse the trail buffer onto the
+          // head's current position when entering travelAB. Without
+          // this the buffer still holds end-of-orbitA positions
+          // (a full circle's worth) which fade back in as opacity
+          // ramps from 0 → 1 over FADE_DUR, reading as a residual
+          // circle at the start of the S. Clearing trims the start
+          // and leaves only the natural end-of-orbitB tail at the
+          // bottom of the S.
+          if (sModeOnly && phase === 'travelAB' && bufRef.current) {
+            const head = lastPosRef.current
+            for (let i = 0; i < ELECTRON.trail.segments; i++) {
+              bufRef.current[i * 3] = head[0]
+              bufRef.current[i * 3 + 1] = head[1]
+              bufRef.current[i * 3 + 2] = head[2]
+            }
+          }
         }
       }
     } else {
