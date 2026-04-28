@@ -1410,10 +1410,12 @@ export function LabsAtomMotion() {
     // S-mode: collapse all electrons onto the same orbit plane so they
     // S-mode layout:
     //   slots 0..3 — main S orbit (upHat [0, 0, -1])
-    //   slot 4    — side orbit tilted  -5.625° from S plane
-    //   slot 5    — side orbit tilted -11.25°
-    //   slot 6    — side orbit tilted -22.5°  (next standard step)
-    //   slot 7    — side orbit tilted -33.75° (next standard step)
+    //   slot 4    — side  -5.625° (mint, blue side)
+    //   slot 5    — side -11.25°  (light blue)
+    //   slot 6    — side -22.5°   (mid blue)
+    //   slot 7    — side -33.75°  (deep blue)
+    //   slot 8    — side +11.25°  (yellow-green, other side)
+    //   slot 9    — side +22.5°   (green)
     // Each electron's initialPhase is chosen so its angle equals π
     // (far-tip) exactly when its first autoReplay bump arrives.
     // Alignment uses the inPlay-based N (matching autoReplay's
@@ -1422,6 +1424,8 @@ export function LabsAtomMotion() {
     const TILT_5 = (11.25 * Math.PI) / 180
     const TILT_6 = (22.5 * Math.PI) / 180
     const TILT_7 = (33.75 * Math.PI) / 180
+    const TILT_8 = (11.25 * Math.PI) / 180
+    const TILT_9 = (22.5 * Math.PI) / 180
     const inPlay: number[] = []
     for (let k = 0; k < slotLocations.length; k++) {
       if (slotLocations[k] !== 'none') inPlay.push(k)
@@ -1444,6 +1448,9 @@ export function LabsAtomMotion() {
       else if (i === 5) upHat = [0, -Math.sin(TILT_5), -Math.cos(TILT_5)]
       else if (i === 6) upHat = [0, -Math.sin(TILT_6), -Math.cos(TILT_6)]
       else if (i === 7) upHat = [0, -Math.sin(TILT_7), -Math.cos(TILT_7)]
+      // Positive-tilt opposite side (sin sign flipped).
+      else if (i === 8) upHat = [0, Math.sin(TILT_8), -Math.cos(TILT_8)]
+      else if (i === 9) upHat = [0, Math.sin(TILT_9), -Math.cos(TILT_9)]
       return { ...spec, upHat, cwAtA: true, initialPhase }
     })
   }, [activeLayout, sMode, slotLocations])
@@ -1627,26 +1634,29 @@ export function LabsAtomMotion() {
     setPointB([0, -SHOW_CHORD, 0])
     setSlotLocations(() => {
       const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
-      // 8 electrons: 4 main S (slots 0-3) + 4 side (slots 4-7).
-      for (let i = 0; i < 8; i++) out[i] = 'A'
+      // 10 electrons: 4 main S + 4 blue side (negative tilts) + 2
+      // green side (positive tilts on the opposite side).
+      for (let i = 0; i < 10; i++) out[i] = 'A'
       return out
     })
     setStartSeeds((prev) => {
       const out = prev.slice()
-      for (let i = 0; i < 8; i++) out[i] = (out[i] ?? 0) + 1
+      for (let i = 0; i < 10; i++) out[i] = (out[i] ?? 0) + 1
       return out
     })
     setColorMode('individual')
     setIndividualColors((prev) => {
       const out = prev.slice()
-      while (out.length < 8) out.push(DEFAULT_E_COLOR)
-      // Yellow on the main S, transitioning toward blue across the
-      // four side orbits.
+      while (out.length < 10) out.push(DEFAULT_E_COLOR)
+      // Yellow on the main S, blue tones on the negative-tilt side
+      // orbits, yellow-green/green tones on the positive-tilt side.
       for (let i = 0; i < 4; i++) out[i] = YELLOW
       out[4] = '#bce0bc' // mint
       out[5] = '#93e3fd' // light blue
       out[6] = '#5dabe0' // mid blue
       out[7] = '#3782b8' // deep blue
+      out[8] = '#d4e890' // yellow-green
+      out[9] = '#98d870' // green
       return out
     })
     setAutoReplay(true)
