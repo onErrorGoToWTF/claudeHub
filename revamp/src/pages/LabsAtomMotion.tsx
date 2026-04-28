@@ -1400,14 +1400,42 @@ export function LabsAtomMotion() {
     const base = buildElectronSpecs(activeLayout)
     if (!sMode) return base
     // S-mode: collapse all electrons onto the same orbit plane so they
-    // trace a single 2D S, only the initialPhase staggering them along
-    // the path. upHat = [0, 0, -1] is the chirality the user kept; the
-    // earlier flip to [0, 0, 1] was wrong and is reverted here.
-    return base.map((spec) => ({
-      ...spec,
-      upHat: [0, 0, -1] as Vec3,
-      cwAtA: true,
-    }))
+    // S-mode layout (matches the user's captured preset):
+    //   slots 0, 1 — main S orbit (upHat [0, 0, -1]); 180° apart in
+    //                phase so the 2 electrons step in alternately
+    //   slot 2     — side orbit tilted +11.25° from the S plane
+    //   slot 3     — side orbit tilted -11.25° from the S plane
+    // Side orbits are still active electrons; their visibility is
+    // gated separately (see sModeOnly per-slot at the render site).
+    const TILT = (11.25 * Math.PI) / 180
+    const cosT = Math.cos(TILT)
+    const sinT = Math.sin(TILT)
+    return base.map((spec, i) => {
+      if (i < 2) {
+        return {
+          ...spec,
+          upHat: [0, 0, -1] as Vec3,
+          cwAtA: true,
+          initialPhase: i === 0 ? Math.PI / 2 : (3 * Math.PI) / 2,
+        }
+      }
+      if (i === 2) {
+        return {
+          ...spec,
+          // Rotate [0, 0, -1] by +TILT around the chord (y) axis.
+          upHat: [0, sinT, -cosT] as Vec3,
+          cwAtA: true,
+        }
+      }
+      if (i === 3) {
+        return {
+          ...spec,
+          upHat: [0, -sinT, -cosT] as Vec3,
+          cwAtA: true,
+        }
+      }
+      return spec
+    })
   }, [activeLayout, sMode])
   const electronColors = useMemo(
     () => deriveElectronColors(activeLayout, colorMode, solidColor, individualColors, gradientStart, gradientEnd),
@@ -1574,32 +1602,60 @@ export function LabsAtomMotion() {
       return next
     })
   }, [])
-  // All-in-one S-show button: vertical chord, 10 electrons in atom A,
-  // loop on, S-mode visibility on, beefed-up head/halo/trail for a
-  // bright look. One tap and the user gets a continuously redrawing
-  // S traced by 10 staggered electrons. Colors are left as-is so the
-  // user's current palette flows through.
-  const S_SHOW_ELECTRONS = 10
+  // All-in-one S-show button — applies the user's captured preset:
+  //   - 4 electrons total: 2 yellow on the main S orbit (180° apart),
+  //     1 bluish on each side orbit (±11.25° tilt from S plane)
+  //   - chord ±2.7 vertical, speed 10×, loop on
+  //   - nuclei/axis/stars off, dark theme, bgColor #59004c
+  //   - camera position + target snapped to captured values
+  //   - small head/halo/trail (preserved from preset)
   const onDrawSShow = useCallback(() => {
+    const SHOW_CHORD = 2.7
+    const YELLOW = '#ffd84d'
+    const BLUE = '#93e3fd'
     setSMode(true)
-    setPointA([0, S_MODE_CHORD, 0])
-    setPointB([0, -S_MODE_CHORD, 0])
+    setPointA([0, SHOW_CHORD, 0])
+    setPointB([0, -SHOW_CHORD, 0])
     setSlotLocations(() => {
       const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
-      for (let i = 0; i < S_SHOW_ELECTRONS; i++) out[i] = 'A'
+      // 4 electrons: 2 main + 2 side
+      for (let i = 0; i < 4; i++) out[i] = 'A'
       return out
     })
-    // Bump every active slot's seed so each electron syncs to the
-    // master clock from a fresh entry — keeps the stagger tidy
-    // regardless of prior state.
     setStartSeeds((prev) => {
       const out = prev.slice()
-      for (let i = 0; i < S_SHOW_ELECTRONS; i++) out[i] = (out[i] ?? 0) + 1
+      for (let i = 0; i < 4; i++) out[i] = (out[i] ?? 0) + 1
+      return out
+    })
+    // Per-electron colors: yellow for the S orbit pair, blue for the
+    // two flanking side orbits. Force individual color mode so each
+    // slot's color sticks regardless of prior gradient/solid setting.
+    setColorMode('individual')
+    setIndividualColors((prev) => {
+      const out = prev.slice()
+      while (out.length < 4) out.push(DEFAULT_E_COLOR)
+      out[0] = YELLOW
+      out[1] = YELLOW
+      out[2] = BLUE
+      out[3] = BLUE
       return out
     })
     setAutoReplay(true)
-    // Crank speed near the top of the slider for a fast, energetic S.
-    setSpeedMult(18)
+    setSpeedMult(10)
+    setShowNuclei(false)
+    setShowAxis(false)
+    setShowStars(false)
+    setHeadScale(0.03)
+    setHaloScale(0)
+    setTrailWidth(0.05)
+    setBgColor('#59004c')
+    // Snap camera to the captured pos/tgt.
+    const ctrl = orbitControlsRef.current
+    if (ctrl?.object?.position && ctrl?.target) {
+      ctrl.object.position.set(-13.6, -1.89, -5.95)
+      ctrl.target.set(2.23, -0.24, 1.04)
+      ctrl.update?.()
+    }
   }, [])
   const onQuickMoveToB = useCallback(() => {
     setSlotLocations((prev) => {
@@ -1943,7 +1999,7 @@ export function LabsAtomMotion() {
                   color={c}
                   haloColor={c}
                   globalScaledTimeRef={globalScaledTimeRef}
-                  sModeOnly={sMode}
+                  sModeOnly={sMode && i < 2}
                 />
               )
             })}
