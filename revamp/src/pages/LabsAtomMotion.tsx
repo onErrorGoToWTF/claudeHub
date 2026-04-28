@@ -31,7 +31,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
-import { OrbitControls, Html, Stars } from '@react-three/drei'
+import { TrackballControls, Html, Stars } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import { ELECTRON } from '../ui/atom/constants'
@@ -500,7 +500,6 @@ function ElectronProbe({
   haloScale,
   trailWidth,
   globalScaledTimeRef,
-  sModeOnly,
 }: {
   spec: ElectronSpec
   fadeTex: THREE.DataTexture
@@ -524,11 +523,6 @@ function ElectronProbe({
   haloScale: number
   trailWidth: number
   globalScaledTimeRef: React.MutableRefObject<number>
-  /** S-mode option: drop opacity to 0 in every phase except travelAB,
-   *  so only the forward A→B transit is visible. Hides orbits AND the
-   *  travelBA return trip (which would otherwise trace a mirror-S over
-   *  the forward S each cycle in loop mode). */
-  sModeOnly?: boolean
 }) {
   const headRef = useRef<THREE.Sprite>(null!)
   const headMatRef = useRef<THREE.SpriteMaterial>(null!)
@@ -631,13 +625,8 @@ function ElectronProbe({
     let localT = phaseElapsedRef.current
 
     // Opacity lerp toward existence target. Wall-clock so speed doesn't
-    // change visual fade rate. In sModeOnly (S-mode), force 0 during
-    // every phase except travelAB so only the forward S transit is
-    // visible — the return travelBA would otherwise trace a mirror-S
-    // over the forward S each loop cycle.
-    const baseTarget = existence === 'visible' ? 1 : 0
-    const targetOpacity =
-      sModeOnly && phaseRef.current !== 'travelAB' ? 0 : baseTarget
+    // change visual fade rate.
+    const targetOpacity = existence === 'visible' ? 1 : 0
     const opacityRate = delta / FADE_DUR
     if (opacityRef.current < targetOpacity) {
       opacityRef.current = Math.min(targetOpacity, opacityRef.current + opacityRate)
@@ -772,16 +761,7 @@ function ElectronProbe({
 
     if (headMatRef.current) headMatRef.current.opacity = opacityRef.current
     if (haloMatRef.current) haloMatRef.current.opacity = opacityRef.current * 0.42
-    // Trail in S-mode uses a quadratic fade-in so the orbit-A residue
-    // eases smoothly back into visibility at the start of travelAB
-    // instead of jumping in linearly. opacityRef² delays the early
-    // ramp (0→0.25 in the first half of FADE_DUR vs 0→0.5 linear) so
-    // the residue reads as a soft transparency, not a hard echo, and
-    // the * 0.5 keeps the steady-state trail intentionally dim.
-    const trailOpacity = sModeOnly
-      ? opacityRef.current * opacityRef.current * 0.5
-      : opacityRef.current
-    if (trailMatRef.current) trailMatRef.current.opacity = trailOpacity
+    if (trailMatRef.current) trailMatRef.current.opacity = opacityRef.current
   })
 
   return (
@@ -1398,72 +1378,10 @@ export function LabsAtomMotion() {
     }
     return MAX_ELECTRONS
   }, [highestOccupied])
-  // S-mode: vertical chord + hide-on-orbit + same-orbit electron specs.
-  // Declared here so electronSpecs (next useMemo) can read it; the
-  // toggle/show callbacks live further down with the other actions.
-  const [sMode, setSMode] = useState(false)
-  // Manual cycle-timer for tuning the S-show stagger. First tap on
-  // the mark button records a start timestamp; second tap records the
-  // elapsed seconds and resets, ready for the next measurement.
-  const [markStart, setMarkStart] = useState<number | null>(null)
-  const [markElapsed, setMarkElapsed] = useState<number | null>(null)
-  const electronSpecs = useMemo(() => {
-    const base = buildElectronSpecs(activeLayout)
-    if (!sMode) return base
-    // S-mode: collapse all electrons onto the same orbit plane so they
-    // S-mode layout:
-    //   slots 0..5 — main S orbit (upHat [0, 0, -1])
-    //   slots 6..10 — negative-tilt side orbits (blue gradient)
-    //     6: -5.625°  7: -11.25°  8: -22.5°  9: -33.75°  10: -45°
-    //   slots 11..13 — positive-tilt side orbits (green gradient)
-    //     11: +11.25°  12: +22.5°  13: +33.75°
-    // Each electron's initialPhase is chosen so its angle equals π
-    // (far-tip) exactly when its first autoReplay bump arrives.
-    // Alignment uses the inPlay-based N (matching autoReplay's
-    // inPlay.length) so the schedule matches reality.
-    const tiltRad = (deg: number) => (deg * Math.PI) / 180
-    const inPlay: number[] = []
-    for (let k = 0; k < slotLocations.length; k++) {
-      if (slotLocations[k] !== 'none') inPlay.push(k)
-    }
-    const N = inPlay.length
-    if (N === 0) return base
-    const order = travelOrderInterleaved(N)
-    const cycleScaled =
-      (4 * Math.PI) / ORBIT_OMEGA_BASE + 2 * TRANSIT_DUR
-    return base.map((spec, i) => {
-      const inPlayIdx = inPlay.indexOf(i)
-      if (inPlayIdx < 0) return spec
-      const n = order.indexOf(inPlayIdx)
-      const bumpTimeScaled = n >= 0 ? (n * cycleScaled) / N : 0
-      const rawPhase = Math.PI + ORBIT_OMEGA_BASE * bumpTimeScaled
-      const initialPhase =
-        ((rawPhase % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI)
-      let upHat: Vec3 = [0, 0, -1]
-      // Negative-tilt side orbits (slots 6-10).
-      const negTiltDeg: Record<number, number> = {
-        6: 5.625,
-        7: 11.25,
-        8: 22.5,
-        9: 33.75,
-        10: 45,
-      }
-      // Positive-tilt side orbits (slots 11-13).
-      const posTiltDeg: Record<number, number> = {
-        11: 11.25,
-        12: 22.5,
-        13: 33.75,
-      }
-      if (negTiltDeg[i] !== undefined) {
-        const t = tiltRad(negTiltDeg[i])
-        upHat = [0, -Math.sin(t), -Math.cos(t)]
-      } else if (posTiltDeg[i] !== undefined) {
-        const t = tiltRad(posTiltDeg[i])
-        upHat = [0, Math.sin(t), -Math.cos(t)]
-      }
-      return { ...spec, upHat, cwAtA: true, initialPhase }
-    })
-  }, [activeLayout, sMode, slotLocations])
+  const electronSpecs = useMemo(
+    () => buildElectronSpecs(activeLayout),
+    [activeLayout],
+  )
   const electronColors = useMemo(
     () => deriveElectronColors(activeLayout, colorMode, solidColor, individualColors, gradientStart, gradientEnd),
     [activeLayout, colorMode, solidColor, individualColors, gradientStart, gradientEnd],
@@ -1608,108 +1526,6 @@ export function LabsAtomMotion() {
     })
     disarmSlot()
   }, [disarmSlot])
-  // S-mode: vertical chord + hide-on-orbit. Existing transit sCurvePos
-  // already sweeps a sine bow on each side of the midpoint; with the
-  // chord vertical, that bow reads as a literal letter S. Pairing it
-  // with hide-on-orbit (sMode flag → ElectronProbe drops opacity to 0
-  // during orbit phases) means the user sees S → S → S in loop mode
-  // instead of orbit + S + orbit + S. (sMode state hoisted above
-  // electronSpecs since it's read inside that useMemo.)
-  // Throwaway: a tighter chord for the S so the top nucleus stays
-  // on-screen at default camera. User can still tune via the spread
-  // slider afterwards.
-  const S_MODE_CHORD = 3.5
-  const onSpellS = useCallback(() => {
-    setSMode((prev) => {
-      const next = !prev
-      if (next) {
-        setPointA([0, S_MODE_CHORD, 0])
-        setPointB([0, -S_MODE_CHORD, 0])
-      }
-      return next
-    })
-  }, [])
-  // All-in-one S-show button — applies the user's captured preset:
-  //   - 4 electrons total: 2 yellow on the main S orbit (180° apart),
-  //     1 bluish on each side orbit (±11.25° tilt from S plane)
-  //   - chord ±2.7 vertical, speed 10×, loop on
-  //   - nuclei/axis/stars off, dark theme, bgColor #59004c
-  //   - camera position + target snapped to captured values
-  //   - small head/halo/trail (preserved from preset)
-  const onDrawSShow = useCallback(() => {
-    const SHOW_CHORD = 2.7
-    const YELLOW = '#ffd84d'
-    setSMode(true)
-    setPointA([0, SHOW_CHORD, 0])
-    setPointB([0, -SHOW_CHORD, 0])
-    setSlotLocations(() => {
-      const out = new Array(MAX_ELECTRONS).fill('none' as SlotLocation)
-      // 14 electrons: 6 main S + 5 negative side + 3 positive side.
-      for (let i = 0; i < 14; i++) out[i] = 'A'
-      return out
-    })
-    setStartSeeds((prev) => {
-      const out = prev.slice()
-      for (let i = 0; i < 14; i++) out[i] = (out[i] ?? 0) + 1
-      return out
-    })
-    setColorMode('individual')
-    setIndividualColors((prev) => {
-      const out = prev.slice()
-      while (out.length < 14) out.push(DEFAULT_E_COLOR)
-      // Main S = yellow, side-orbit colors ramp out from yellow at the
-      // innermost orbit toward the gradient extremes (deep blue on
-      // the left, deep green on the right) at the outermost orbits,
-      // making the central yellow stand out.
-      for (let i = 0; i < 6; i++) out[i] = YELLOW
-      // Negative side (slots 6-10): yellow → deep blue
-      out[6] = '#f0e8a0'  // yellow-mint, closest to main
-      out[7] = '#bce0bc'  // mint
-      out[8] = '#93e3fd'  // light blue
-      out[9] = '#5dabe0'  // mid blue
-      out[10] = '#3782b8' // deep blue, outermost
-      // Positive side (slots 11-13): yellow → deep green
-      out[11] = '#d4e890' // yellow-green, closest to main
-      out[12] = '#98d870' // green
-      out[13] = '#5fa040' // deep green, outermost
-      return out
-    })
-    setAutoReplay(true)
-    setSpeedMult(5)
-    setShowNuclei(false)
-    setShowAxis(false)
-    setShowStars(false)
-    setHeadScale(0.03)
-    setHaloScale(0)
-    setTrailWidth(0.08)
-    setBgColor('#59004c')
-    // Snap camera to the captured pos/tgt.
-    const ctrl = orbitControlsRef.current
-    if (ctrl?.object?.position && ctrl?.target) {
-      ctrl.object.position.set(-13.6, -1.89, -5.95)
-      ctrl.target.set(2.23, -0.24, 1.04)
-      ctrl.update?.()
-    }
-    // Reset the manual cycle timer for a fresh measurement run.
-    setMarkStart(null)
-    setMarkElapsed(null)
-  }, [])
-  // Two-tap manual cycle timer. First tap stamps a start time, second
-  // tap shows elapsed seconds (and resets so a fresh measurement can
-  // begin). Lets the user time one full cycle by eye and tell us the
-  // exact value to plug into tickMs.
-  const onMarkCycle = useCallback(() => {
-    const now = performance.now()
-    setMarkStart((prev) => {
-      if (prev === null) {
-        setMarkElapsed(null)
-        return now
-      }
-      const elapsed = (now - prev) / 1000
-      setMarkElapsed(elapsed)
-      return null
-    })
-  }, [])
   const onQuickMoveToB = useCallback(() => {
     setSlotLocations((prev) => {
       for (let k = prev.length - 1; k >= 0; k--) {
@@ -1795,27 +1611,7 @@ export function LabsAtomMotion() {
     const orbitPeriodMs = (2 * Math.PI * 1000) / (ORBIT_OMEGA_BASE * Math.max(0.5, speedMult) * SPEED_SCALE)
     // Approximate per-tick interval — averaged across the typical N range.
     // Exact pacing depends on current in-play count which is read at fire-time.
-    const baseTickMs = (LOOP_LAPS_BEFORE_TRAVEL * orbitPeriodMs) / 8
-    // S-mode: tick cadence derived from the exact full cycle time
-    //   cycle = 2·orbitPeriod + 2·TRANSIT_DUR (scaled seconds)
-    //         = 4π / ω + 2·TRANSIT_DUR
-    // Each electron transits twice per cycle (A→B, B→A), so its bump
-    // interval should be cycle/2. With N active electrons sharing the
-    // interleaved tick, system-wide tickMs = cycle / (2·N). Confirmed
-    // against user's hand-timed 11–11.5s at speed 2× (math = 11.236s).
-    const cycleScaled =
-      (4 * Math.PI) / ORBIT_OMEGA_BASE + 2 * TRANSIT_DUR
-    const cycleRealMs =
-      (cycleScaled /
-        (Math.max(0.5, speedMult) * SPEED_SCALE)) *
-      1000
-    const activeSlots =
-      slotLocations.filter((s) => s !== 'none').length || 1
-    // S-mode tick = cycle / N. Bumps fire cycle/4 = 2.809s apart for
-    // N=4, matching the user's "cycle divided by N" intent. Each
-    // electron is bumped once per cycle (a single transit per cycle
-    // per electron, alternating visible / invisible).
-    const tickMs = sMode ? cycleRealMs / activeSlots : baseTickMs
+    const tickMs = (LOOP_LAPS_BEFORE_TRAVEL * orbitPeriodMs) / 8
     let cycleIdx = 0
     const fire = () => {
       const inPlay: number[] = []
@@ -1840,7 +1636,7 @@ export function LabsAtomMotion() {
     fire()
     const handle = setInterval(fire, tickMs)
     return () => clearInterval(handle)
-  }, [autoReplay, speedMult, paused, sMode])
+  }, [autoReplay, speedMult, paused])
 
   const setSpread = useCallback((newHalf: number) => {
     const mx = (pointA[0] + pointB[0]) / 2
@@ -1977,47 +1773,19 @@ export function LabsAtomMotion() {
         ['--lab-bg-grad-end' as string]: bgGradientEnd,
       }}
     >
-      {/* Floating S-show button (throwaway). One tap → vertical chord,
-          5 electrons in atom A, loop on, S-mode visibility on. */}
-      <button
-        type="button"
-        className={s.sShowButton}
-        onClick={onDrawSShow}
-        aria-label="Draw the letter S with 5 looping electrons"
-      >
-        draw S
-      </button>
-      {sMode && (
-        <button
-          type="button"
-          className={s.sMarkButton}
-          onClick={onMarkCycle}
-          aria-label="Tap to mark the start/end of a cycle"
-        >
-          {markStart !== null
-            ? 'mark · running…'
-            : markElapsed !== null
-              ? `mark · ${markElapsed.toFixed(2)}s`
-              : 'mark'}
-        </button>
-      )}
       <div className={s.canvasArea}>
         <Canvas
           camera={{ position: DEFAULT_CAMERA_POS, fov: FOV_DEG }}
           frameloop="always"
           aria-hidden="true"
         >
-          <OrbitControls
+          <TrackballControls
             ref={orbitControlsRef}
             makeDefault
-            enableRotate
-            enablePan
-            enableZoom
-            enableDamping
-            dampingFactor={0.12}
-            rotateSpeed={0.9}
+            rotateSpeed={3.5}
             panSpeed={0.9}
-            screenSpacePanning
+            zoomSpeed={1.2}
+            dynamicDampingFactor={0.12}
             minDistance={4}
             maxDistance={80}
             target={DEFAULT_CAMERA_TARGET}
@@ -2091,7 +1859,6 @@ export function LabsAtomMotion() {
                   color={c}
                   haloColor={c}
                   globalScaledTimeRef={globalScaledTimeRef}
-                  sModeOnly={sMode}
                 />
               )
             })}
@@ -2410,17 +2177,6 @@ export function LabsAtomMotion() {
                   {capturedPreset && (
                     <pre className={s.capturedBlock}>{capturedPreset}</pre>
                   )}
-                  {/* S-mode toggle: vertical chord + hide-electrons-on-
-                      orbit, so a looping A↔B transit reads as a single
-                      repeating letter S. Throwaway test. */}
-                  <button
-                    type="button"
-                    className={`${s.btn} ${s.btnPreset} ${sMode ? s.btnActive : ''}`}
-                    onClick={onSpellS}
-                    aria-label="Toggle S-mode: vertical chord and hidden orbits"
-                  >
-                    {sMode ? 'spell S ✓' : 'spell S ↕'}
-                  </button>
                   <div className={s.panelRow}>
                     <button
                       type="button"
