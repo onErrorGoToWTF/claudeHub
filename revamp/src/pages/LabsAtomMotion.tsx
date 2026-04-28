@@ -684,10 +684,18 @@ function ElectronProbe({
           localT = 0
           lapsInPhaseRef.current = 0
           lastTravelCountRef.current = travelCount
-          // (No trail clear here — leaving the orbit-A residue in
-          // the buffer for artistic flare. The trail-opacity scale
-          // below dampens it so it reads as a soft echo rather than
-          // competing with the S itself.)
+          // S-mode trail clear on travelAB entry: collapse the buffer
+          // onto the head's current position so the orbit-A residue
+          // doesn't fade back in at the start of the S. Per user, the
+          // top circle should read as transparent / gone.
+          if (sModeOnly && phase === 'travelAB' && bufRef.current) {
+            const head = lastPosRef.current
+            for (let i = 0; i < ELECTRON.trail.segments; i++) {
+              bufRef.current[i * 3] = head[0]
+              bufRef.current[i * 3 + 1] = head[1]
+              bufRef.current[i * 3 + 2] = head[2]
+            }
+          }
         }
       }
     } else {
