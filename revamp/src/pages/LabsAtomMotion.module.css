@@ -998,3 +998,14 @@
   }
 }
 
+/* Orbits panel — sphere-map widget container. Holds the small R3F
+   canvas above the 1-16 slot grid. */
+.orbitMapWrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.18);
+}
+

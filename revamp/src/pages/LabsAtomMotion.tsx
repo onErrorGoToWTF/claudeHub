@@ -36,6 +36,7 @@ import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import { ELECTRON } from '../ui/atom/constants'
 import { makeFadeTexture } from '../ui/atom/Electron'
+import { OrbitMap } from '../ui/atom/OrbitMap'
 import { usePrefersReducedMotion } from '../ui/atom/usePrefersReducedMotion'
 import type { Vec3 } from '../ui/atom/runtime/types'
 import {
@@ -132,7 +133,7 @@ type SlotLocation = 'none' | 'A' | 'B'
 // Identifiers for the toggleable right-edge panel system. Playback is
 // no longer part of this set — it now lives as an always-visible
 // top-center bar (see render below).
-type PanelKey = 'electrons' | 'colors' | 'dimensions' | 'scene'
+type PanelKey = 'electrons' | 'colors' | 'dimensions' | 'scene' | 'orbits'
 
 // Reusable slider row with tap-to-reveal ± nudge buttons (Chunk 7).
 // Default state: clean slider only. Tapping the value label toggles
@@ -220,6 +221,7 @@ const PANEL_DEFINITIONS: { key: PanelKey; icon: string; label: string; chunk: nu
   { key: 'colors', icon: '◐', label: 'Colors', chunk: 6 },
   { key: 'dimensions', icon: '⊞', label: 'Dimensions', chunk: 7 },
   { key: 'scene', icon: '⊙', label: 'Scene', chunk: 8 },
+  { key: 'orbits', icon: '⊚', label: 'Orbits', chunk: 9 },
 ]
 
 type ElectronSpec = {
@@ -1294,6 +1296,7 @@ export function LabsAtomMotion() {
     colors: false,
     dimensions: false,
     scene: false,
+    orbits: false,
   })
   const togglePanel = useCallback((key: PanelKey) => {
     setPanelsOpen((prev) => ({ ...prev, [key]: !prev[key] }))
@@ -1381,6 +1384,20 @@ export function LabsAtomMotion() {
   const electronSpecs = useMemo(
     () => buildElectronSpecs(activeLayout),
     [activeLayout],
+  )
+  // All 16 orbit upHats (independent of activeLayout) — used by the
+  // Orbits panel sphere-map widget so every possible orbit is shown,
+  // not just the ones currently in play.
+  const allUpHats = useMemo<Vec3[]>(
+    () => buildElectronSpecs(MAX_ELECTRONS).map((s) => s.upHat),
+    [],
+  )
+  // Color preview for unoccupied slots in the orbit map — uses the
+  // full 16-slot gradient/solid/individual lookup so a tap-to-add
+  // preview tone matches what the electron will look like once placed.
+  const allElectronColors = useMemo(
+    () => deriveElectronColors(MAX_ELECTRONS, colorMode, solidColor, individualColors, gradientStart, gradientEnd),
+    [colorMode, solidColor, individualColors, gradientStart, gradientEnd],
   )
   const electronColors = useMemo(
     () => deriveElectronColors(activeLayout, colorMode, solidColor, individualColors, gradientStart, gradientEnd),
@@ -1593,6 +1610,7 @@ export function LabsAtomMotion() {
       colors: false,
       dimensions: false,
       scene: false,
+      orbits: false,
     })
     disarmSlot()
     orbitControlsRef.current?.reset?.()
@@ -2318,6 +2336,46 @@ export function LabsAtomMotion() {
                       )}
                     </div>
                   )}
+                </>
+              ) : key === 'orbits' ? (
+                <>
+                  <div className={s.orbitMapWrap}>
+                    <OrbitMap
+                      upHats={allUpHats}
+                      slotLocations={slotLocations}
+                      electronColors={allElectronColors}
+                      armedSlot={armedSlot}
+                    />
+                  </div>
+                  <div className={s.slotGrid}>
+                    {Array.from({ length: MAX_ELECTRONS }, (_, k) => {
+                      const loc = slotLocations[k]
+                      const isArmed = armedSlot === k
+                      const cls =
+                        loc === 'A'
+                          ? s.slotOnA
+                          : loc === 'B'
+                            ? s.slotOnB
+                            : s.slotEmpty
+                      const ariaLabel = loc === 'none'
+                        ? `Orbit ${k + 1}: empty. Tap to add.`
+                        : isArmed
+                          ? `Orbit ${k + 1} on ${loc}. Tap again to delete.`
+                          : `Orbit ${k + 1} on ${loc}. Tap to arm for delete.`
+                      return (
+                        <button
+                          key={k}
+                          type="button"
+                          className={`${s.slotCell} ${cls} ${isArmed ? s.slotArmed : ''}`}
+                          onClick={() => onSlotTap(k)}
+                          aria-label={ariaLabel}
+                          aria-pressed={loc !== 'none'}
+                        >
+                          {k + 1}
+                        </button>
+                      )
+                    })}
+                  </div>
                 </>
               ) : (
                 <span className={s.panelEmpty}>{`Migrating in chunk ${chunk}…`}</span>
