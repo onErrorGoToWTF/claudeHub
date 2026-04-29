@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T19:04:57.553Z",
+  "generated_at": "2026-04-29T20:49:16.562Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,47 @@
     ],
     "news": [
       {
+        "title": "Anthropic rolls out Claude connectors for creative platforms - TestingCatalog",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbzRtX2stZHJhYjZ1QTZWZ3pFMzBUdUJqejc0bTdqMmFrODIwUXNvN18wd2ZWeWNRWlptcWMzWHNfaEpxNlRpYjlPWWM0YmpTamFkRTNhQy05MVV3NTZyRW51Vy1zN25vSlcyYTh6NF9zbHRRUzhVODVWSXB1bDBIU2JEM0pHcWUzejFfdXFwQnV5WDFZdDZ3?oc=5",
+        "source": "Google News",
+        "published": "2026-04-29T20:31:55.000Z",
+        "summary": "Anthropic rolls out Claude connectors for creative platforms TestingCatalog"
+      },
+      {
+        "title": "Goldman Sachs Bars Hong Kong Staff from Using Anthropic’s Claude AI - Technobezz",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPSnB0YTZ1RVNTdEdjUi01SXgwNkdZc2RWT3BJSFBwMmpITjhNM2VNUDZSdFZVT3BuMzVJRXFZNmQ1bkJreVpfQUdDWFpQN2QtbVRoemRMLWZLVGh4V3d1LVVQTHRhZzFvWVlSRl9zN0M1WGZtYmwzWmpIaURzS0R0dXpTNENOVkFQMGVvUXNIWWRTMUhvQzUxX1VNNElLUUE?oc=5",
+        "source": "Google News",
+        "published": "2026-04-29T20:25:43.000Z",
+        "summary": "Goldman Sachs Bars Hong Kong Staff from Using Anthropic’s Claude AI Technobezz"
+      },
+      {
+        "title": "Amazon Reports Biggest Cloud Sales Jump Since 2022 on AI Demand",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-29/amazon-reports-biggest-cloud-sales-jump-since-2022-on-ai-demand",
+        "source": "Bloomberg",
+        "published": "2026-04-29T20:17:26.000Z",
+        "summary": "Amazon.com Inc.’s cloud unit posted its fastest quarterly growth in more than three years, bolstered by new data center capacity and an increasing slice of business from Anthropic and OpenAI."
+      },
+      {
+        "title": "🔴LIVE: The new Claude Code plugins are incredible...",
+        "url": "https://www.youtube.com/watch?v=8yVAuAGeMWo",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "8yVAuAGeMWo",
+        "thumbnail": "https://i.ytimg.com/vi/8yVAuAGeMWo/hqdefault.jpg",
+        "published": "2026-04-29T20:12:35.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "HERMES.md: Anthropic bug causes $200 extra charge, refuses refund",
+        "url": "https://github.com/anthropics/claude-code/issues/53262",
+        "source": "HN · 582↑",
+        "hn_id": "47952722",
+        "published": "2026-04-29T18:54:31.000Z",
+        "summary": ""
+      },
+      {
         "title": "White House Weighs Reinstating Anthropic for Federal Use Amid Pentagon Fight: Report - Decrypt",
         "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUUZkSlVBcWExZmVyUjhuNFBzSzE2aEgtelhRWlVHY0hIOGxfRU5OdFNRdGtsaURibE56dWhxNDdTOFc1X2RqUFJycUNEOUhKQjZ1dGlMYnFEX3NwbndVYXJ0SHg1eXZwNGhIRWFGRktnZ0k0WlN5bkhiRkdhOTdYMjJBMkrSAYwBQVVfeXFMTlVzd25MOGFvcnNKSkdTd2J1dmktcjZTZ2R3LUVEckNMajlBM0lLRHd0QkpoV1Z4TFFNSGkzUkhvb3B0QkhZX1NoRGZFSUNVZG10ejJiSW5lX1ZtVXFiVkU3SFM2djZfbDdqNGdUZHpYMlRlRjdSMHNhSW5PdTNMLXoxUk9vWGw5VUN5VVk?oc=5",
         "source": "Google News",
@@ -167,16 +208,19 @@
         "summary": "Goldman Sachs (GS) Disables Anthropic’s Claude AI for Hong Kong Bankers TipRanks"
       },
       {
-        "title": "🔴LIVE: The new Claude Code plugins are incredible...",
-        "url": "https://www.youtube.com/watch?v=8yVAuAGeMWo",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "8yVAuAGeMWo",
-        "thumbnail": "https://i.ytimg.com/vi/8yVAuAGeMWo/hqdefault.jpg",
-        "published": "2026-04-29T17:38:53.000Z",
-        "summary": "",
-        "_kind": "news_video"
+        "title": "Anthropic Hits $1 Trillion Valuation, Becomes Richest AI Company in the World - eWeek",
+        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9KRG9SWWdLazlKa1ZsYmd6LXFjVVROYVdQT0FEUUI0WV9IblVPaDdTLTdjYzk3TnFtaE1uTVlGdnZPRlhkd082a1NubTdMYTMyTTZMQW1XUEtqSDRtenVWMlFuSEItNS0tcUFuQ0U4U080VUE?oc=5",
+        "source": "Google News",
+        "published": "2026-04-29T17:22:29.000Z",
+        "summary": "Anthropic Hits $1 Trillion Valuation, Becomes Richest AI Company in the World eWeek"
+      },
+      {
+        "title": "Show HN: A new benchmark for testing LLMs for deterministic outputs",
+        "url": "https://interfaze.ai/blog/introducing-structured-output-benchmark",
+        "source": "HN · 37↑",
+        "hn_id": "47950283",
+        "published": "2026-04-29T16:01:51.000Z",
+        "summary": "When building workflows that rely on LLMs, we commonly use structured output for programmatic use cases like converting an invoice into rows or meeting transcripts into tickets…"
       },
       {
         "title": "Anthropic Expands Claude AI to Adobe, Blender and More Apps in Creative Push - HotHardware",
@@ -193,11 +237,25 @@
         "summary": "Anthropic Claude Now Connects With Affinity, Adobe, and Other Creator Solutions Thurrott.com"
       },
       {
+        "title": "'I violated every principle I was given': AI agent deletes company's entire database in 9 seconds, then confesses - Live Science",
+        "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQNnNESllfdEhiRDEydmd2VVBIelhrTmFqRjhsSEJzZGZMZGpuYXIzcUE0T1hMWWw1eFBJcTdXWU9BVS1GV0FKRmhqQmoxOU5tNjBWdEZ0MVhqcXNrMWtlRzNEek1IQXlHOF9MMlJMUEdwRjM2MUlQRlhkZUtxSkdJUDh4b1h4dk5yOUJZQ2Y0WFV2MXVmMTNhZHdtblVxMmprcm5jdWl4Rzd1MUtBQVdfY0VjRFI1a2NmUnRDTVRBTklWSW8yRnpqRHZOWi00am04dEplMlNQN0Y5TWpWTThSOE02YlVUd2tzMENLWHR3cm5VNGxIV1BJbG1sXzRsVlEw?oc=5",
+        "source": "Google News",
+        "published": "2026-04-29T14:57:54.000Z",
+        "summary": "'I violated every principle I was given': AI agent deletes company's entire database in 9 seconds, then confesses Live Science"
+      },
+      {
         "title": "Why Goldman Sachs Blocked Hong Kong Bankers from Anthropic’s Claude AI - Disruption Banking",
         "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQT29OSGZBQU0yUmhVLS14WDNoYjJjWEc3WWlfVUxQbjMzbzZ3NmpqY09UYjdoU0kwbEoySzNUMVpBTXpDNzdmS0FXbkY2NGt5WTdTRFYyTkZTS3VIU3RIYURmUW41b0JEcnVSRmpDSkhHNVhZLW96SnktejQ2SjJfcmREX2E0bW41dlZIWVByUG5Bd3U2blBhS2M5LWhhcWRPX2NDTExUclVjSi1fbEJ2ejMtdWlPQQ?oc=5",
         "source": "Google News",
         "published": "2026-04-29T14:44:15.000Z",
         "summary": "Why Goldman Sachs Blocked Hong Kong Bankers from Anthropic’s Claude AI Disruption Banking"
+      },
+      {
+        "title": "Anthropic doubles its estimate of what Claude Code tokens will cost engineers - Business Insider Africa",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOS2xqUWlnY3hRaXZkelhCWEEtRm52YTRUdjRTdW1FWEl1TmJ2NnladUZvUEk1cU4yZDM3UlliTFBqZkpFN2o1bnFaclRVNXFhdldJUTNCc2ZYWUlseTJTeUYySGE2S19FRXV4SVQ0MGw0RktpSXk3a2ZjTzctXzlEOFhnQzNaZ1RYNnZ1dWFQTEk5b0REemdNdlBhTnVZSUxJUEJpNUIyS0NiSlh5NlRPbWNOdTdWbkFTRkhxNGdOdjFCX3c?oc=5",
+        "source": "Google News",
+        "published": "2026-04-29T14:42:14.000Z",
+        "summary": "Anthropic doubles its estimate of what Claude Code tokens will cost engineers Business Insider Africa"
       },
       {
         "title": "Goldman stops Hong Kong bankers from using Claude - Finextra Research",
@@ -287,11 +345,11 @@
         "summary": "Anthropic Boosts Claude AI with Creative App Integrations The Hans India"
       },
       {
-        "title": "Claude expands into creative suites with Adobe, Blender, and Autodesk support - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORlVPT1ZSaEFBZ1dVczkxZVB5OFZMblZhV0NGZGU5aFZnV0hONnNNRHY0RFlmaHp5bTRaMnU5ZEZHNUdaTFNSYndzSTJHcHJOdkFMSEFNcVI4QTRVcV9ubVhvX3EwaXJMcXpWa3Q0aTlHLVlfTjhZUzNJd3BBTzlRRHc5cTJWZ2VtVW1Zd3FncGd3bUVZTWpqNnBpUG1aTTlzS2FYYVlETERoUFdUZ0NjOGU5S2dKVW5yV0J2UNIBwgFBVV95cUxPajNmZl9zUDM0dUZxakFlaHVYMmlwRmd1RUlTdjh3UkcwSXhoSDI4LXh5Umt3RVhnT2VhTUVpUWJsb1RUT0ZnRFVUZ2h1bXR2NmNIeXZCeFZUT19sNkpySmZ4bEtmT21sRXUxQUxOMThRODVPN1hqTDZ4NFliV0ttRnNJVkFjNURxOGFJck1Yb3lES3FfOGFERGg2ZUVwRE1pTTlreG1pZXZtWDFSaXVieDhqRUxPeUlObFlVUTE3SHFkZw?oc=5",
+        "title": "BT explainer: Anthropic's Claude Mythos preview is here to reshape cybersecurity—here's how - MSN",
+        "url": "https://news.google.com/rss/articles/CBMiwANBVV95cUxPSWpld0Y1MEFXOG1PLVg0UUdRRXowdE52RFVHTWZpSUI1MHJZYmRQcmplY3dBRzNCaVgwN1hBQjFKWkMtbE96Wldrb1g2NFVEZHAyVmJhbXNpUHh4enV5OUMzbnViQWczWWRNRENLVnY4Qk96dzRCUmZKR05FQlptSUo2d0ptNjZOb3pDamVNN3JHYm9nQk9UaEhfM0V0TmpmamdJWW1GTFJLYUJQVUttYk9EU1VIbXFCZUJPWF9wNjdUX251WkdSWHNQYzdJVGhseHc0Y0JGRzUtNWNoZU0wbEE5S0tfSmUzUERYdWVOeFh6NkVCUFJCOHU3RVNSV0RHelVvYWMxYWp5blNWSnJxcVNhcW9vTWtvNDZEWHpvZjFzMUlTZl85WEItcG9kRDZTUjlVd25haGtZNGdBVVByV1BiaEtWMmdBZkxDN1lOT3o2RnloY3NYOV9BVHhkZ0kzQl9RT3d3WnBQamtYLTVfOWE4Zll4a0Z0UllGcE41eFlOUlMtRW8tRVNoa2RpZzRrSWljQW45aTB6RVAzOFd1YmxpN1publdvZ3Fpa3M0Zno2cU1keXI1bnppcjFDUHVL?oc=5",
         "source": "Google News",
-        "published": "2026-04-29T11:53:30.000Z",
-        "summary": "Claude expands into creative suites with Adobe, Blender, and Autodesk support Firstpost"
+        "published": "2026-04-29T11:53:08.000Z",
+        "summary": "BT explainer: Anthropic's Claude Mythos preview is here to reshape cybersecurity—here's how MSN"
       },
       {
         "title": "Anthropic Doubles Daily Token Cost Estimate To $13 - Dataconomy",
@@ -299,27 +357,6 @@
         "source": "Google News",
         "published": "2026-04-29T11:39:12.000Z",
         "summary": "Anthropic Doubles Daily Token Cost Estimate To $13 Dataconomy"
-      },
-      {
-        "title": "AI developer Anthropic becomes Blender’s latest Corporate Patron - CG Channel",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPQmFsRUx6NHZ5SFBaZFN3TzRRVnFtQXFwbmZNSmlGczQ2dGd5OHhpcUtxX3J4R09hREhnTnVlRjgtWllGS0pSWUFxRnhDYmxEZmpkVENmd1VpbV91c3EwRmNtVkpjeWNlN3pIN0VsUE9OcUdBOExibC1yWjNfS3RBUjVFVl8tcWJ1MjhZV25ZemZkSkkxamt4alVleVgtSTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T11:38:01.000Z",
-        "summary": "AI developer Anthropic becomes Blender’s latest Corporate Patron CG Channel"
-      },
-      {
-        "title": "GitLab Deepens Anthropic Integration With Claude Opus 4.7 Access Through Duo Agent Platform - SMBtech",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQcG9lNXFubTBiMTYtdURkS0REYXlJb2tPLUQzVUQzVjZyZ1NJWHhFQ0tmQ1h1QmwxNkJpdWI1Ujc2bEg3b0lZdkZ6LXRLeFhqcHFTZ1F2VzB3S0RKN29wVEVmVXl4ZFExTWJGdjlVQ2VmalowVDd4TUNlancydkduOXJheHhUWHNDYmlHYVRzZ3BNWTNPLVhHX1pXZVpRaDQ5VDNPZXE4REtTWGNmT0JJRHlldTVpTjA?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T11:34:03.000Z",
-        "summary": "GitLab Deepens Anthropic Integration With Claude Opus 4.7 Access Through Duo Agent Platform SMBtech"
-      },
-      {
-        "title": "Anthropic lets users plug Claude directly into Adobe, Autodesk creative suite - The Indian Express",
-        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPcDM4RUJFcUo2NndNdlFwSWk2WktJWnhOcHF2R09GU21HSHdaSFotbEJvbllJYmFpS3VTeDctRmQzZHVfazNrWDdaVWRINkdWbUZ1aHE2VTRJUXJlOXZ2VTZ4X3Naa2Q2OFhJRWZqQXZfVzJ5WXA3SXZUbmRUX0taYzJQcGtXVTk1NVpJVW9mUy1RbzF4MlFQbG1mcDlHcFBOT0tkRzZVZHp0T1lOUXhDdUtOd0owWl9lSmQ0UjRPbFIyLXVUT0tZT25KbkNpY0FKSkNLc3dHMHRyUndST1lhZ2hfc9IB6gFBVV95cUxNQ3NMSDNlQmlndk9Bb2hDMTRLN1hvUEdXMWlFUTc2SFRUWG1zd1BxT3o4MEJfV2JJZ19KNXNyOHBLbHBlNERvckNXWFBFQ3hKcXVjaktISUJndWgyXzNlS2hlcFR0VDM1QXdxWHNjVFZjbXlLd2kya3FJY0hFN2UyNDFkcjdkUDdNSUluREYtM0FpcUo1aUo2V3N4czFwcjJHeXBUSGJ5dWZRZ180U2M2TndaSloxUGtQbktYU190cEsyb3RvakZvWnJjTFgxYllFcEkxODlTT2s1Ylc5U3BRSmw2U1UyQ0hYNXc?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T11:33:08.000Z",
-        "summary": "Anthropic lets users plug Claude directly into Adobe, Autodesk creative suite The Indian Express"
       },
       {
         "title": "Claude + Consensus AI = Research-Backed Answers",
@@ -332,41 +369,6 @@
         "published": "2026-04-29T11:01:10.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Blender CEO Addresses Funding From Claude AI Creator Anthropic - 80 Level",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOVzlFd3pYMkY5cDREZ3Z1NGNTOVVpTV8yeGVxbTlTTXhMUEVuNXVNNXVORHJldWYzNUlSOGN5RG9ibFlkV092UmN2dFhQbTM1aDN1VVRSS2RhSUF6WHNyc3RaQzl4cnl5T09kSzZhaC1ONnNjbTNlalNyUy1KbVJ4T01xR0pKZw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T10:05:15.000Z",
-        "summary": "Blender CEO Addresses Funding From Claude AI Creator Anthropic 80 Level"
-      },
-      {
-        "title": "😺 Anthropic just LAPPED OpenAI - The Neuron",
-        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE02cm1RNGJUUW9PUVYtcmk4Tnh0b05aZGh3eUdMeTRYWnh6UGQ1S01IeHBfdFQwRFFjbi03OXdUZmIwNGhSenlTQV9vTHB4V0w4Z2lTa2lhc3IxR0tUYTJQVW9ETDRyRi05aEZwN013?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T10:04:22.000Z",
-        "summary": "😺 Anthropic just LAPPED OpenAI The Neuron"
-      },
-      {
-        "title": "APRA meets with banks, urges more vigilance against AI-powered hacks - AFR",
-        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOMkVzdWUxaXRBZXJrUkg1bWZmUEZXazYwTVpGcEl4c1hPdGZtUjgxWHRSdFJtcGt2MF9NYlVMYzc2WTgwQVVuQ0xBTV9NeEZqWUZHX1d1NU1zVWVJbWpRekNOSEpISkZhRnRYWUFvazRLR3lDVjNMMFdfUTdzWElYNGZGb21FRjZWRm1pTUZtUGR4TDA0VzZiWFJIYVhDUzJPemdlUTlQMzUtNlBNSF9YMGNfOFJOR1hGQXFhU3dkNjFvNkF1TzFPc3dVaW4?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T10:00:00.000Z",
-        "summary": "APRA meets with banks, urges more vigilance against AI-powered hacks AFR"
-      },
-      {
-        "title": "Anthropic’s Claude Can Now Complete Creative Tasks in Adobe, Blender and Autodesk - Gadgets 360",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNVVhJankzYV9hZXI1NFNPcU5zeTZ0U1lVRHFUYWVLNnlMd0dLNjBoeHFhZmdYZ3h5N1c4ZlpfaWJwaHBTRjA4ekgzNGpEWE1OTTdka3NzMjVxY1VJUnRoVGtsd0E0MnpGOTV6U3Vqd293LXpPbER4ajJuLW0tTVZVX1RvOU1CUHdVS2VFZFpUenRDRGNkVHZLSmQwTmpYcVRWTGlsM0dvbW41QXYxQnl5YmtwY0JZS1RBNFlLQmF2aWRuRWpfcXp30gHMAUFVX3lxTE9aTTh4OWx3b0xhaXFZSE0zTzk0REJTYUNYZ2RCWFpyRHNVd2ZlQ093c2ZtbnN4eENfZkVicGUyS1JwT0JmUmMyc1hhb0pDbEVOdFdyYjIzcFBKWXJETVlKOWlRTV9STGhvR0RDZVBrdzBRMGFaR2hzYk5BSmxNcTZpTW1QbUZjSC02NXdkNFRHWVdQNzlCZklwaTRrcUo0YVlzVDNtWFRhdG5LRWN0bXNMNXNqOXFDUGJJbUU0ZzhWVDlFRVlxVUR3dGZHMA?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T09:51:18.000Z",
-        "summary": "Anthropic’s Claude Can Now Complete Creative Tasks in Adobe, Blender and Autodesk Gadgets 360"
-      },
-      {
-        "title": "Claude gets creative: Anthropic launches connectors for Adobe, Blender, and more - RedShark News",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPazk3T014dHlJcVNKdGhLUWg0cXVNRVpGc0NCbzVBWlBpVHNfN0ppUl83ZUNvenplNkpuQS0wVUVITlY0cVlRdVl6ak1EX2hyQzNPWEZoYWxQc0xmS2pydm0wVjVwOWgwYmZBQkk5a3IwX3lhaEpCZXNtWTZ5dWtYV1RMdW9ZTFkxdG4teWY0VElkUdIBogFBVV95cUxPS0hqTklXcWkyY0lhSk05VGY5dEt6SE9xajA3dkVaVlNXT1FDREFkNmQ5QUxKbWhnY1Myd29BdXNaRFFRdTNWenRleE9nVk5fQVJpSUJIeWtjVU1fbmtkMjYwZWdiU3J1LXRLOWlUd2w1a3hKSDRzM3NmMkNCSFRBMDNfM0EzalF0VUZrTFNNYmNMLTF4dDJxZUQycVh6VWFfblE?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T09:28:49.000Z",
-        "summary": "Claude gets creative: Anthropic launches connectors for Adobe, Blender, and more RedShark News"
       },
       {
         "title": "Claude Code vs Vibe Coding: What Actually Ships",
@@ -632,7 +634,7 @@
         "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
         "video_id": "8yVAuAGeMWo",
         "thumbnail": "https://i.ytimg.com/vi/8yVAuAGeMWo/hqdefault.jpg",
-        "published": "2026-04-29T17:38:53.000Z",
+        "published": "2026-04-29T20:12:35.000Z",
         "summary": ""
       },
       {
@@ -1746,7 +1748,7 @@
         "title": "🔴LIVE: The new Claude Code plugins are incredible...",
         "url": "https://www.youtube.com/watch?v=8yVAuAGeMWo",
         "source": "YouTube · Alex Finn",
-        "published": "2026-04-29T17:38:53.000Z",
+        "published": "2026-04-29T20:12:35.000Z",
         "summary": ""
       },
       {
