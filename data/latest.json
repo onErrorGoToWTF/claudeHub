@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-04-29T20:49:16.562Z",
+  "generated_at": "2026-04-29T22:43:23.813Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Evaluating Claude for Bioinformatics with Biomysterybench",
+        "url": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
+        "source": "Anthropic Research",
+        "published": "2026-04-29T22:38:05.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude for Creative Work",
         "url": "https://www.anthropic.com/news/claude-for-creative-work",
@@ -135,16 +142,30 @@
         "source": "Anthropic Research",
         "published": "2026-04-09T17:00:08.000Z",
         "summary": ""
-      },
-      {
-        "title": "Labor Market Impacts",
-        "url": "https://www.anthropic.com/research/labor-market-impacts",
-        "source": "Anthropic Research",
-        "published": "2026-04-08T14:10:47.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Claude AI agent’s confession after deleting a firm’s entire database: ‘I violated every principle I was given’ - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOM3RvT0tQdmZfT2xzTTBnbHJiQXZRVTc2WFJKM3FNNk9WMFpuWWdlMXBZSVF4emYxOXB1Uk03aTJYcmpMeUFON1dDNWhSdDJBdXotSUcyZWxkaFU1ZzRncmFVc0R6QVN3am1iTzBjNndscFBkRzVvel9YWHZpZzAxMmtJOVRPT3RZVmc?oc=5",
+        "source": "Google News",
+        "published": "2026-04-29T22:16:00.000Z",
+        "summary": "Claude AI agent’s confession after deleting a firm’s entire database: ‘I violated every principle I was given’ The Guardian"
+      },
+      {
+        "title": "Anthropic Considering Funding Offers at Over $900 Billion Value",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-29/anthropic-considering-funding-offers-at-over-900-billion-value",
+        "source": "Bloomberg",
+        "published": "2026-04-29T21:39:38.000Z",
+        "summary": "Anthropic PBC has begun weighing a fresh funding round that would value the artificial intelligence developer at more than $900 billion, according to people familiar with the matter, potentially…"
+      },
+      {
+        "title": "FirstFT: Goldman Sachs prevents Hong Kong bankers from using Anthropic’s Claude - Financial Times",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9XZUFnR3dNZU9pU1QtQm91VjR0S2tsVThZMDNUOEliYkd3cmswMVIyc1I0MmU0Vm1SM3JURERwZ0dtbUdoeW5HSHBxdDVLZDRXY0Nac2lJTDRnYktpNWtheEZ5OVhxZE0xb2VOX1lvR3I?oc=5",
+        "source": "Google News",
+        "published": "2026-04-29T21:36:37.000Z",
+        "summary": "FirstFT: Goldman Sachs prevents Hong Kong bankers from using Anthropic’s Claude Financial Times"
+      },
       {
         "title": "Anthropic rolls out Claude connectors for creative platforms - TestingCatalog",
         "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbzRtX2stZHJhYjZ1QTZWZ3pFMzBUdUJqejc0bTdqMmFrODIwUXNvN18wd2ZWeWNRWlptcWMzWHNfaEpxNlRpYjlPWWM0YmpTamFkRTNhQy05MVV3NTZyRW51Vy1zN25vSlcyYTh6NF9zbHRRUzhVODVWSXB1bDBIU2JEM0pHcWUzejFfdXFwQnV5WDFZdDZ3?oc=5",
@@ -160,13 +181,6 @@
         "summary": "Goldman Sachs Bars Hong Kong Staff from Using Anthropic’s Claude AI Technobezz"
       },
       {
-        "title": "Amazon Reports Biggest Cloud Sales Jump Since 2022 on AI Demand",
-        "url": "https://www.bloomberg.com/news/articles/2026-04-29/amazon-reports-biggest-cloud-sales-jump-since-2022-on-ai-demand",
-        "source": "Bloomberg",
-        "published": "2026-04-29T20:17:26.000Z",
-        "summary": "Amazon.com Inc.’s cloud unit posted its fastest quarterly growth in more than three years, bolstered by new data center capacity and an increasing slice of business from Anthropic and OpenAI."
-      },
-      {
         "title": "🔴LIVE: The new Claude Code plugins are incredible...",
         "url": "https://www.youtube.com/watch?v=8yVAuAGeMWo",
         "source": "Alex Finn",
@@ -179,9 +193,9 @@
         "_kind": "news_video"
       },
       {
-        "title": "HERMES.md: Anthropic bug causes $200 extra charge, refuses refund",
+        "title": "HERMES.md in commit messages causes requests to route to extra usage billing",
         "url": "https://github.com/anthropics/claude-code/issues/53262",
-        "source": "HN · 582↑",
+        "source": "HN · 881↑",
         "hn_id": "47952722",
         "published": "2026-04-29T18:54:31.000Z",
         "summary": ""
@@ -204,7 +218,7 @@
         "title": "Goldman Sachs (GS) Disables Anthropic’s Claude AI for Hong Kong Bankers - TipRanks",
         "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcVJEcXdnNm9ZVkplVTB4T2hVaWhLOFAzSVNzTEQzREVKeWgxOVp4X1FvYmtqZGMzd2dDZVVxN3FKQlBhdUEyYmMyNUU5bE9OTEl1N0gyaXlYY3d2dXpkMy13X3hQYzA2NmVTNUJVR1pfWmpNbnRUemd6eXJ1UzZIbHBVRTlEaHp4aDdZTXkxMGwtbGFEMGdSY25kSnpkbDg?oc=5",
         "source": "Google News",
-        "published": "2026-04-29T17:57:38.000Z",
+        "published": "2026-04-29T18:08:06.000Z",
         "summary": "Goldman Sachs (GS) Disables Anthropic’s Claude AI for Hong Kong Bankers TipRanks"
       },
       {
@@ -217,7 +231,7 @@
       {
         "title": "Show HN: A new benchmark for testing LLMs for deterministic outputs",
         "url": "https://interfaze.ai/blog/introducing-structured-output-benchmark",
-        "source": "HN · 37↑",
+        "source": "HN · 45↑",
         "hn_id": "47950283",
         "published": "2026-04-29T16:01:51.000Z",
         "summary": "When building workflows that rely on LLMs, we commonly use structured output for programmatic use cases like converting an invoice into rows or meeting transcripts into tickets…"
@@ -233,8 +247,15 @@
         "title": "Anthropic Claude Now Connects With Affinity, Adobe, and Other Creator Solutions - Thurrott.com",
         "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNGdsZ25ZbTNEb1V2cGxpd0hfSW4wWDhibFhrcnZFX0lUVG9xTUpSaEhyV2EzSWwxVk9pNDN6X0RtZWNkY2tfVUczLW05T3N1Nkw5LTVnUGhmTmxwTWZpZGtWbDJwb3NIejN4bm4walFHbEwzOF95N0hLVW5HcEdVZXdwR1ZMSDVlMHM3S3JCSFpoc0NKUUhSLUItTlFqemo3Z1lVMW40b0dJTDl5NWlnWmhLbkpMOEFiR19kZjVzQUE?oc=5",
         "source": "Google News",
-        "published": "2026-04-29T15:07:43.000Z",
+        "published": "2026-04-29T15:10:47.000Z",
         "summary": "Anthropic Claude Now Connects With Affinity, Adobe, and Other Creator Solutions Thurrott.com"
+      },
+      {
+        "title": "Anthropic releases Claude connectors for creative tools - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPRFU5X0MxckdIVVJSdW95bm9vRm9zQ2ZLNFdKY2FkZVVUNUNJbFQ0N1hkR3g3R1pldTZZMFdObWhzdUJxQXVBSklkOHpPcXVvb3lCWVE3QXlaR09UVXA5b0IydmpBX0pMOVpiUE9YVzN2ODFZWjlFSmt0ZlB5NjluNXo5MU92M2RpMzg1aDY2SExGdzdWdTFMbkNmOWdiQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-29T15:06:29.000Z",
+        "summary": "Anthropic releases Claude connectors for creative tools Let's Data Science"
       },
       {
         "title": "'I violated every principle I was given': AI agent deletes company's entire database in 9 seconds, then confesses - Live Science",
@@ -336,27 +357,6 @@
         "source": "Google News",
         "published": "2026-04-29T12:50:00.000Z",
         "summary": "Anthropic’s Claude can now work directly inside Photoshop, Blender, and Autodesk Fusion The Times of India"
-      },
-      {
-        "title": "Anthropic Boosts Claude AI with Creative App Integrations - The Hans India",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOTnJsdFh0dTVVaVpibGhVbk5BaVBYSE1PbmRUdXVuemxJeUhFc0x3NUo2LUI1MG8yWlNnRVV0ZG1fVXRTbFRhLURSTFk5cGlKeERpU1ZpTnBoQWhoQXRwelRHcmZiUXlhdFhMRWFjcWpVUFloWWlUOTFfeVlOY19rT08xT0VxbWZZbl8tSjl4Ynl0TmYya3NBMU05ZXcwRlBQaEFWQVNIT1M5UE52TnN5cGhRb0hIUdIBuwFBVV95cUxNVU4wb3JNanJaMUd6N1g5MFNUVFVsLUZLRTc1RHU0OFJjSHA3NGd2ZDZ0RHIyZDdDbGxsSmJvTjg3cThBZ1dWUThvQVFQUUpZSmg0YTBxQnVpN3pKTWxIZS1LcjJRbFZaRUR0UmprYkotb2RuOG9HS1Q1ejhOdEhQNGNHeldaSW5SWnNRcHJpM2ppM1NGYnF6QnhFV24wMUdnS0VMR3VTUGhJSTNsWHItbDludjJzQ2dkWGNR?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T12:38:20.000Z",
-        "summary": "Anthropic Boosts Claude AI with Creative App Integrations The Hans India"
-      },
-      {
-        "title": "BT explainer: Anthropic's Claude Mythos preview is here to reshape cybersecurity—here's how - MSN",
-        "url": "https://news.google.com/rss/articles/CBMiwANBVV95cUxPSWpld0Y1MEFXOG1PLVg0UUdRRXowdE52RFVHTWZpSUI1MHJZYmRQcmplY3dBRzNCaVgwN1hBQjFKWkMtbE96Wldrb1g2NFVEZHAyVmJhbXNpUHh4enV5OUMzbnViQWczWWRNRENLVnY4Qk96dzRCUmZKR05FQlptSUo2d0ptNjZOb3pDamVNN3JHYm9nQk9UaEhfM0V0TmpmamdJWW1GTFJLYUJQVUttYk9EU1VIbXFCZUJPWF9wNjdUX251WkdSWHNQYzdJVGhseHc0Y0JGRzUtNWNoZU0wbEE5S0tfSmUzUERYdWVOeFh6NkVCUFJCOHU3RVNSV0RHelVvYWMxYWp5blNWSnJxcVNhcW9vTWtvNDZEWHpvZjFzMUlTZl85WEItcG9kRDZTUjlVd25haGtZNGdBVVByV1BiaEtWMmdBZkxDN1lOT3o2RnloY3NYOV9BVHhkZ0kzQl9RT3d3WnBQamtYLTVfOWE4Zll4a0Z0UllGcE41eFlOUlMtRW8tRVNoa2RpZzRrSWljQW45aTB6RVAzOFd1YmxpN1publdvZ3Fpa3M0Zno2cU1keXI1bnppcjFDUHVL?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T11:53:08.000Z",
-        "summary": "BT explainer: Anthropic's Claude Mythos preview is here to reshape cybersecurity—here's how MSN"
-      },
-      {
-        "title": "Anthropic Doubles Daily Token Cost Estimate To $13 - Dataconomy",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQREc2bjZuX09uNnhGSXpqQ0RkUTB0MGZENXhVVmRsZ0FNMEg2Y2h3X0x0TTJwZEh0dUNqX1NRb2JoNVVJX2NCS1hMSkNpS2FrLWdob1Ixd3d4SUhXVTdWcXpiS2l1LVdOMGpNSzZCWVR0UXpRLXFfNERBT2NISkNiX2c1d1hhZVIzU2djZQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T11:39:12.000Z",
-        "summary": "Anthropic Doubles Daily Token Cost Estimate To $13 Dataconomy"
       },
       {
         "title": "Claude + Consensus AI = Research-Backed Answers",
