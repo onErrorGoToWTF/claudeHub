@@ -14,12 +14,10 @@ import { useCallback, useEffect, useState } from 'react'
 import { AnimatePresence, motion, type PanInfo } from 'framer-motion'
 import { ElementTile } from '../ui/element/ElementTile'
 import { ParticleControlBar } from '../ui/element/ParticleControlBar'
-import { findElementByZ } from '../db/seedElements'
+import { clamp, findElementByZ } from '../db/seedElements'
 import s from './LabsElements.module.css'
 
 const P_RANGE: [number, number] = [1, 20]
-const N_RANGE: [number, number] = [0, 30]
-const E_RANGE: [number, number] = [0, 22]
 
 function defaultStateForZ(z: number) {
   const el = findElementByZ(z)
@@ -46,16 +44,28 @@ export function LabsElements() {
 
   function adjustProtons(next: number) {
     if (next < P_RANGE[0] || next > P_RANGE[1]) return
-    setState(prev => ({ ...prev, protons: next }))
+    const newEl = findElementByZ(next)
+    if (!newEl) return
+    setState(prev => ({
+      protons: next,
+      // Clamp existing n / e into the new element's valid windows so the
+      // user never lands on a configuration that doesn't exist.
+      neutrons: clamp(prev.neutrons, newEl.neutronRange[0], newEl.neutronRange[1]),
+      electrons: clamp(prev.electrons, newEl.electronRange[0], newEl.electronRange[1]),
+    }))
   }
 
   function adjustNeutrons(next: number) {
-    if (next < N_RANGE[0] || next > N_RANGE[1]) return
+    const el = findElementByZ(protons)
+    if (!el) return
+    if (next < el.neutronRange[0] || next > el.neutronRange[1]) return
     setState(prev => ({ ...prev, neutrons: next }))
   }
 
   function adjustElectrons(next: number) {
-    if (next < E_RANGE[0] || next > E_RANGE[1]) return
+    const el = findElementByZ(protons)
+    if (!el) return
+    if (next < el.electronRange[0] || next > el.electronRange[1]) return
     setState(prev => ({ ...prev, electrons: next }))
   }
 
@@ -121,8 +131,8 @@ export function LabsElements() {
           neutrons={neutrons}
           electrons={electrons}
           pRange={P_RANGE}
-          nRange={N_RANGE}
-          eRange={E_RANGE}
+          nRange={findElementByZ(protons)?.neutronRange ?? [0, 30]}
+          eRange={findElementByZ(protons)?.electronRange ?? [0, 22]}
           onProtons={adjustProtons}
           onNeutrons={adjustNeutrons}
           onElectrons={adjustElectrons}
