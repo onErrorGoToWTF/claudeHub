@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T13:15:46.870Z",
+  "generated_at": "2026-04-30T15:42:49.222Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -7,7 +7,7 @@
         "title": "Evaluating Claude for Bioinformatics with Biomysterybench",
         "url": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
         "source": "Anthropic Research",
-        "published": "2026-04-30T01:21:05.000Z",
+        "published": "2026-04-30T15:03:14.000Z",
         "summary": ""
       },
       {
@@ -146,11 +146,40 @@
     ],
     "news": [
       {
-        "title": "White House AI Memo Hits Issues Driving Anthropic-Pentagon Feud",
+        "title": "Claude Code refuses requests or charges extra if your commits mention \"OpenClaw\"",
+        "url": "https://twitter.com/theo/status/2049645973350363168",
+        "source": "HN · 74↑",
+        "hn_id": "47963204",
+        "published": "2026-04-30T14:36:58.000Z",
+        "summary": ""
+      },
+      {
+        "title": "NSA Testing Anthropic’s Mythos to Find Flaws in Microsoft Tech",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-30/nsa-testing-anthropic-s-mythos-to-find-flaws-in-microsoft-tech",
+        "source": "Bloomberg",
+        "published": "2026-04-30T14:06:45.000Z",
+        "summary": "The National Security Agency has been testing the capabilities of Anthropic PBC’s new artificial intelligence model to find cybersecurity vulnerabilities in popular software, including Microsoft…"
+      },
+      {
+        "title": "AWS Solution Provider Caylent Unveils Dedicated Anthropic Claude Unit - crn.com",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPRk5vbmt1Mk8tR2hsZENYMHZSQlZkOHdpeE9ncXQ3RnNhdDJmZTlvQ3ZsUDJ2SmlIMXdvY2Z4a0JlTG92SndZcjllM3J5dlZ6VTJoRjhwbk5DelZzakw3bVFXWHpiTEhxOEpOR1lJZmJBX1JCNFZ6dWoxLXUyLUNDazdQVEM4cER6TjBhb2NmYkZUeHlNcXpKQkF3RmlEaUNjWWZvYg?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T14:05:00.000Z",
+        "summary": "AWS Solution Provider Caylent Unveils Dedicated Anthropic Claude Unit crn.com"
+      },
+      {
+        "title": "Anthropic: 2026 TIME100 Most Influential Companies - Time Magazine",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOdk9maWZXYXNtZ28tbE5LZF9SOE82WXI2Tmgxa1dxNnlRTGpxSENaVkhNak1zVW1kSkVsOXZIUW1EUkFUZjR6MEFneG5lSWo3ZXpuSFIyOGxBWlVFNmxYM0NHZXNfWHVMdVlmQ1Iya2NUTXpDUEJUY3d1cXpRQi1iWjhYeFM?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T13:20:03.000Z",
+        "summary": "Anthropic: 2026 TIME100 Most Influential Companies Time Magazine"
+      },
+      {
+        "title": "White House AI Memo Hits Issues in Anthropic-Pentagon Feud",
         "url": "https://www.bloomberg.com/news/articles/2026-04-30/white-house-ai-memo-hits-issues-driving-anthropic-pentagon-feud",
         "source": "Bloomberg",
         "published": "2026-04-30T13:08:52.000Z",
-        "summary": "White House officials are preparing a wide-ranging artificial intelligence policy memo that outlines requirements for AI deployment by national security agencies, some of which touch on issues…"
+        "summary": "White House officials are preparing a wide-ranging artificial intelligence policy memo that outlines requirements for AI deployment by national security agencies, some of which address the issues…"
       },
       {
         "title": "Anthropic's new benchmark claims Claude can match human experts in bioinformatics - the-decoder.com",
@@ -160,11 +189,25 @@
         "summary": "Anthropic's new benchmark claims Claude can match human experts in bioinformatics the-decoder.com"
       },
       {
+        "title": "Victim of AI agent that deleted company's entire database gets their data back — cloud provider recovers critical files and broadens its 48-hour delayed delete policy - Tom's Hardware",
+        "url": "https://news.google.com/rss/articles/CBMizwJBVV95cUxQZFpfaGx0cEhvN2pGOXI5UE1TVXhrX3ZQMG56MTJGWjJtWFJXbGJHbmRKLS1CdERFam5tQTZHNFUwdkpHRUlkWl8zUkZrUXl6STdTLURtdVZ2cm5PQzQtakdqLWVYaXpBZXJ6UnA5RWNjNFJsbi0yamV6VUp3QnE4RzhzeFZ0S0dPQWVZTnpQMmh1cVc0ZjM2TEluNkg1eFR4RVBpWmlyMlEzZWR4NEJfZURpTFg4aTRVS1Y0S1IxOWY1eVB2dHF6Yko3amoxa3FkclJOck00M0RVc1JXU0ZDcjdQU3d4YWhLNkQ2b2lza0QtVmVhZlhSRzVQaHpGekZzMGZ4R2ZuX0F1dE5jcTdBcFUyU2I5cGtXRVN5SHlhSHVBeU1mZVJjZ2tRckxabzR1RnlkaUp5SldXWXNPQ0R2ZERpUDNDQlBjWWZqUWZYVQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T12:13:38.000Z",
+        "summary": "Victim of AI agent that deleted company's entire database gets their data back — cloud provider recovers critical files and broadens its 48-hour delayed delete policy Tom's Hardware"
+      },
+      {
         "title": "iCapital®, With Anthropic, to Power AI‑Driven Client Experience for Alternatives, Structured Investments, and Annuities - Business Wire",
         "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPVkhyamFOM0h0VC1BRGMwam1ib0pKYU5Idno5OHRWSXFjZXRVN3FmOEt5akppYUhxYUVtSDdPOTdQRndPcE1EY1p1TWUwYnNTZlJmVVUwbzc2a1I1bm9iRlI3bl9SWlRDbHdVaTYzWExWNlJ5T0lmSzhNVEZIazF2WWhsdk9rWTBuQXJselh2QUdpamtvRjh2ZWtrdVF4eTF4dW4yZVdSWWFvcGYzUkNicmlzVjNMUlhpRGc3NVV0NjlYcHNldXRwVmE5ckR0VHBwZEdhLUw4c3d3aTZEWlNydHF0RjFWUkN5V21vUXJTbkZHc1B4eFZ2V3pUME5RcHM?oc=5",
         "source": "Google News",
         "published": "2026-04-30T12:00:00.000Z",
         "summary": "iCapital®, With Anthropic, to Power AI‑Driven Client Experience for Alternatives, Structured Investments, and Annuities Business Wire"
+      },
+      {
+        "title": "India Seeks Access to Claude Mythos Amid Cybersecurity Fears - MediaNama",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQ1VzeGstbE1ka1VITGZPLTFSMTNNQWsxQ0k0RDFfSnVYRXY3Vmh4Vl9tOFlEYkxmYVp1dmRDTXk1MzF6T2VNMnl3bnZOSE83UFA5MXBpTkNMQ2tSY1Z5aWZNU1BiVUtoc2N3b09wOHNZNGw5RUVHWTBJQ2lrenVWRWpUMEdFeVJ0c3UwdF9DSHhEaVlLdVE0Tg?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T11:59:53.000Z",
+        "summary": "India Seeks Access to Claude Mythos Amid Cybersecurity Fears MediaNama"
       },
       {
         "title": "From $380B to $900B: Anthropic could raise $50B at near-trillion dollar valuation - Tech Funding News",
@@ -237,26 +280,12 @@
         "summary": "Anthropic links Claude to Adobe, Blender & Ableton IT Brief Australia"
       },
       {
-        "title": "Anthropic Plan to Expand Mythos Access Is Opposed by White House",
-        "url": "https://www.bloomberg.com/news/articles/2026-04-30/white-house-opposes-anthropic-plan-for-mythos-access-wsj-says",
-        "source": "Bloomberg",
-        "published": "2026-04-30T01:21:39.000Z",
-        "summary": "The White House opposes a plan by Anthropic PBC to expand access to its Mythos AI model, an administration official said Wednesday night."
-      },
-      {
         "title": "Claude.ai and API unavailable [fixed]",
         "url": "https://status.claude.com/incidents/2gf1jpyty350",
-        "source": "HN · 117↑",
+        "source": "HN · 118↑",
         "hn_id": "47956895",
         "published": "2026-04-30T01:21:03.000Z",
         "summary": "https:&#x2F;&#x2F;status.claude.com&#x2F;"
-      },
-      {
-        "title": "Sources: Anthropic could raise a new $50B round at a valuation of $900B",
-        "url": "https://techcrunch.com/2026/04/29/sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b/",
-        "source": "TechCrunch",
-        "published": "2026-04-30T00:07:15.000Z",
-        "summary": "The maker of Claude has received multiple pre-emptive offers at valuations in the $850 billion to $900 billion range, according to sources familiar with the matter."
       },
       {
         "title": "Sources: Anthropic could raise a new $50B round at a valuation of $900B - TechCrunch",
@@ -264,13 +293,6 @@
         "source": "Google News",
         "published": "2026-04-30T00:07:15.000Z",
         "summary": "Sources: Anthropic could raise a new $50B round at a valuation of $900B TechCrunch"
-      },
-      {
-        "title": "Claude can now be plugged into Ableton to assist with your music projects - MusicTech",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVDVwdjZrZkVQT29mWGN5dXljamI3dDZuMG1CT1htZ0c3UzF1bkg5U1MtdUVhcXZUVlJKRW9ybkxlSVlnWWRiOFpQVk9iZ2R4MHYzM3YyZHVsYW52YmVlMTI1OXRVeF85czNsUU9DOXhVYmdkaFY4cDQ5V1prSFNMNw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T23:31:07.000Z",
-        "summary": "Claude can now be plugged into Ableton to assist with your music projects MusicTech"
       },
       {
         "title": "CodePath and Anthropic team up to open source what they are learning about AI's real impact on students - EdTech Innovation Hub",
@@ -299,28 +321,6 @@
         "source": "Google News",
         "published": "2026-04-29T22:16:00.000Z",
         "summary": "Claude AI agent’s confession after deleting a firm’s entire database: ‘I violated every principle I was given’ The Guardian"
-      },
-      {
-        "title": "Anthropic’s valuation is moving faster than anyone can justify and that is the story - Startup Fortune",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQU0tJcDlvZUY1R1lNTkt5TXl0MjR0Rm1KVXNJMjVIV1l5VXVEa1UtejBKbk41NjZzalFlRFNHT1hJTEVsWGY0U3kwSGM0QmZTZ2lvMEhoOG5WdktxLUxwQVZZYTIzTWRWdUNqWXJ4eUtrOEFEZm5Bc0p3Y3Uwck95b1JDdnZqYWlsRTJYdHlOMktfcTFRektWNndYVDZRcnBRaDRjR1J5Mm5WU1lLZGZiSw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T21:55:14.000Z",
-        "summary": "Anthropic’s valuation is moving faster than anyone can justify and that is the story Startup Fortune"
-      },
-      {
-        "title": "Evaluating Claude’s bioinformatics research capabilities with BioMysteryBench - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQY2hCMF9SM3hrcWxKQzJDdzRBeTlZbTNMYmlkUzlWMWI2VldYbmwwSUlOM3E3bXZ4b1NVQzdSVmxsU3RKT0tBVVAwUEpDNFcxOHQ5aGZFVXIydUVQMWpURnlnVHZpM0JTWUJMVUwyQjFiakVJRWFSYXhHbEpYZTdLYXM4ZklCMjRUTEVsaHgyY1Zvcmtjckcw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-29T21:39:17.000Z",
-        "summary": "Evaluating Claude’s bioinformatics research capabilities with BioMysteryBench Anthropic"
-      },
-      {
-        "title": "I benchmarked Claude Code's caveman plugin against \"be brief.\"",
-        "url": "https://www.maxtaylor.me/articles/i-benchmarked-caveman-against-two-words",
-        "source": "HN · 86↑",
-        "hn_id": "47954745",
-        "published": "2026-04-29T21:11:57.000Z",
-        "summary": ""
       },
       {
         "title": "🔴LIVE: The new Claude Code plugins are incredible...",
@@ -544,8 +544,8 @@
         "title": "Elevated errors on Claude Haiku 4.5",
         "url": "https://status.claude.com/incidents/dv9r688vqt8s",
         "source": "Claude Status",
-        "published": "2026-04-30T13:10:09.000Z",
-        "summary": "Apr 30 , 13:10 UTC Investigating - We are currently investigating this issue."
+        "published": "2026-04-30T14:01:41.000Z",
+        "summary": "Apr 30 , 14:01 UTC Resolved - The incident has been resolved. Error rates were elevated between 5:20 PT / 12:48 PT and 6:48 PT / 13:48 PT. Apr 30 , 13:10 UTC Investigating - We are currently…"
       },
       {
         "title": "claude.ai and API unavailable",
