@@ -1,13 +1,20 @@
 {
-  "generated_at": "2026-04-30T20:47:53.311Z",
+  "generated_at": "2026-04-30T22:39:09.026Z",
   "version": 1,
   "sections": {
     "updates": [
       {
+        "title": "April 23 Postmortem",
+        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+        "source": "Anthropic Eng",
+        "published": "2026-04-30T21:34:23.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Personal Guidance",
         "url": "https://www.anthropic.com/research/claude-personal-guidance",
         "source": "Anthropic Research",
-        "published": "2026-04-30T18:53:53.000Z",
+        "published": "2026-04-30T21:17:19.000Z",
         "summary": ""
       },
       {
@@ -64,13 +71,6 @@
         "url": "https://www.anthropic.com/engineering/managed-agents",
         "source": "Anthropic Eng",
         "published": "2026-04-24T14:19:43.000Z",
-        "summary": ""
-      },
-      {
-        "title": "April 23 Postmortem",
-        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
-        "source": "Anthropic Eng",
-        "published": "2026-04-24T14:19:00.000Z",
         "summary": ""
       },
       {
@@ -146,6 +146,56 @@
     ],
     "news": [
       {
+        "title": "White House presses tech companies for support on AI-driven cyberattacks - Politico",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOS3FNOWtWSV9VSlMxZlRKRktGUkFwcnFHSDJkMXJ4aHFGdGgzdk9QNVZPWjVnbXZ0X1N6a00wNkFDdEprd2poSlVhdUtTRncxdE9vZUxnSkQycDJYUkhLVUxobnZVTFI2TjU4ajYzWEd5OVpFcFdXa3h2emgyU05Wdm9UN1pRU1JDcFNITnpR?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T22:30:00.000Z",
+        "summary": "White House presses tech companies for support on AI-driven cyberattacks Politico"
+      },
+      {
+        "title": "Claude Generates High Token Usage, Raising Developer Costs - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPUF9CNmpGQW5GS3luTXh1ZFFBaU10ZW9VR3RoYjd1Mmt5Mm9raTJvS0phY052OVNVcHNLdTRjOU5Zci1HV2swb2xoRWpEejRZNng2eHhjSGxBS09OcDBRYTBWd1N0SUJpUENUMEN0dnhEYUFfMFVJcTRCN1U0TTR1WkFrUmlKR29IUFFZTWdkRHgzdHBzSU8ybWdvWldEci1s?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T21:18:09.000Z",
+        "summary": "Claude Generates High Token Usage, Raising Developer Costs Let's Data Science"
+      },
+      {
+        "title": "Anthropic Releases Claude Code Agentic Developer Tool - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNLU5ld0I4VEx3S1owcFFxR3Zyd0FjNmRoMTlNQ0ptcXBLRFhMU2UzWmNnSElTenN1bVVCMHN5TUhsZDRVWWk0VEt6bXYzcDM4dE5aSDZLUExjbXBWcXJXRjZjZmNnZDl0ZXpUbXlGNF9ZLXRPdDdEZGEwbk1sbDNOVDVzc1FhMERDQ0d2N3c4bFowMnIwcGlTWjhpTQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T21:10:35.000Z",
+        "summary": "Anthropic Releases Claude Code Agentic Developer Tool Let's Data Science"
+      },
+      {
+        "title": "Anthropic Outage Shows Digital Reliability Cracking Under AI’s Weight - PYMNTS.com",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOWXBEcUhlbEFKWXQzY0laX3BwQjMwdC1LV05xRmdUVXg3WUhiQmJyb3RjNWVHTnQwNmlfZkZveGt2emF6SzRaQ2w4Q2NUTFdSOWVLTHliRVZHRXBRMzYycFI5LXlCWGNPVTI2V0tQb25CYzNYS01ZbDZPQVgxXzYzbUw2UFlfT3NIazJ3eVFNZlZWUHdQUUhqd0hqc0MwRWwza3dWdXA5cjRMeU80bmRxLXNxSUpSdEVXXzAzdHduaXI?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T21:09:38.000Z",
+        "summary": "Anthropic Outage Shows Digital Reliability Cracking Under AI’s Weight PYMNTS.com"
+      },
+      {
+        "title": "UK Group Says OpenAI’s GPT-5.5 is Comparable to Anthropic Mythos in Cybersecurity Capabilities - The Information",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxONEJjRTJFR0lUa21JLWVmclcxSmtPa0NUSkJsZjhiQTJNcjloTTEwbUYwN0NGcUN0NW1zUVpiZk1qRFlKNjZxbUNWTWx1cHJoVnhnb0RUWmtqSEFPZGZJWmNZaVNiSlowRTdDa0UzaWFVSlVXVDkxQlJZTkgwOG83cVhqQUJuTVVzS0xnUnM4OEZPWVlOUmlwdlFfNDRfTWdhMDg2VUNwTnVBN1o4SmFPZV9TU2ZVX1ZCVFE4eFRHNGM2X1k?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T20:57:00.000Z",
+        "summary": "UK Group Says OpenAI’s GPT-5.5 is Comparable to Anthropic Mythos in Cybersecurity Capabilities The Information"
+      },
+      {
+        "title": "Show HN: Pu.sh – a full coding-agent harness in 400 lines of shell",
+        "url": "https://pu.dev/",
+        "source": "HN · 32↑",
+        "hn_id": "47968112",
+        "published": "2026-04-30T20:55:12.000Z",
+        "summary": "I originally was just messing with pi-autoresearch. Gave it a sample task to build the most portable coding agent. First cut was 6 KB of shell. Great for one-shots, unusable…"
+      },
+      {
+        "title": "AI Payoff in Focus During Tech Earnings Bonanza | Bloomberg Tech 4/30/2026",
+        "url": "https://www.bloomberg.com/news/videos/2026-04-30/bloomberg-tech-4-30-2026-video",
+        "source": "Bloomberg",
+        "published": "2026-04-30T20:31:02.000Z",
+        "summary": "Bloomberg’s Caroline Hyde and Ed Ludlow discuss tech earnings as Alphabet and Amazon see a clear payoff from their AI spending, while Meta lags behind. Plus, Anthropic has begun weighing a fresh…"
+      },
+      {
         "title": "After dissing Anthropic for limiting Mythos, OpenAI restricts access to Cyber, too",
         "url": "https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/",
         "source": "TechCrunch",
@@ -158,6 +208,20 @@
         "source": "Google News",
         "published": "2026-04-30T19:23:43.000Z",
         "summary": "Anthropic launches Claude Security in public beta for enterprise customers The Economic Times"
+      },
+      {
+        "title": "How people ask Claude for personal guidance - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5STEt1WHJpR3J0VnNjODZra2xrNGo1YWotQk42SThFalMtZUdJNDZnd2JMTnZQbHZYYlNWTTI5UnJUSWUtYUNnaHFISWJxaW9Hb1lJdzlIVTg4eHpoVElIUXA1MTVwQ3FaYVFJ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T19:04:13.000Z",
+        "summary": "How people ask Claude for personal guidance Anthropic"
+      },
+      {
+        "title": "Anthropic Unveils Claude Security to Counter AI-Powered Exploit Surge - SecurityWeek",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNTTJRa2xyX3NPRnhuU3dpaUtpQl9feWJSd3lYY0VORWlkNU0wOTVOTm5Ud0NQVW9aRC1QR2x4ak9qR2pjYXluZTlnOHNtMTJGT2dyejlldUpHZURLSmQyQzVndExacUNmaXc2T3pGRk9QZW1XampDeEZ2UlVzVXdiOVI5N0lBNWtwaGNGZVlqSU8tT29tZWswWTFWeWxkVmMz0gGmAUFVX3lxTE5lMVZMaW54VHRFR3MxeTRUaUVmWEgzeGgtcnl0TktqdzFPUV9ZVENBQ3lSX3lKdVRBVVhUMXpSTXRMRVNCMWVLNHZJZU9JR2l4UkJJZWxGczdTVGl1cUtXTUc5TWlpYy1GVTVzQkstbzFib0IxdnRUUGl4dklUVFRZRkVHN1NlOHItbWNpTWg1dGhIb1BEdFJOUkU2dkZuZm1FNTNCelE?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T18:57:55.000Z",
+        "summary": "Anthropic Unveils Claude Security to Counter AI-Powered Exploit Surge SecurityWeek"
       },
       {
         "title": "Anthropic's Powerful New Cybersecurity Tool Is Designed to Find Vulnerabilities in Your Code—and Patch Them - inc.com",
@@ -251,75 +315,11 @@
         "summary": "AI coding agents breached: attackers targeted credentials, not models VentureBeat"
       },
       {
-        "title": "Anthropic’s Claude Mythos Reduces Export Controls To Blind Projections - Forbes",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPVklWQnVZZzQ1d0dHUmJ5aVN1T3ZHVTBqMUNsLWgxdjBvRzJsRFFudG9vbk5KZUs4R29naWFUZHU4eHllQmt3N0NCN0RlM1VxRjA2NmltTjFpOTVnYjBJc3ktQTctYkhjbmVhNVZqUWNPdks4ZkJpYTVqek1xSXpPZGJoSjNzel95Y3E3Nnhpa09fSlVEWXhxX010UGFXa0txT2FQOXhTajNrZmJ5VHg5MkJQbENtQUFwdEZMQQ?oc=5",
+        "title": "Anthropic $900 Billion Valuation Signals AI Power Shift in Silicon Valley - USA Herald",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNT1o5UzFGdlFlLXNncjNzRzdXZEdfRUFzNEU0dE5Gd3lvWGRsRkZIcXhmZ1lWZTZUS2xDak1WVkVEREk3WnRma1ZQd0tRSldxUlNJam5ZdU9ZeEJrUHZPdEJZaWNtdTNHVUJ2SXhxZnBsWkx0azg0bWxnd0xEUGVNYmFLdXVxYVBLMGpla3pmUUNQbWNHVkRYZXBkdw?oc=5",
         "source": "Google News",
-        "published": "2026-04-30T16:00:19.000Z",
-        "summary": "Anthropic’s Claude Mythos Reduces Export Controls To Blind Projections Forbes"
-      },
-      {
-        "title": "Claude Mythos Fears Escalate As Regulators Warn FIs Are Falling Behind - CU Today",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQak9zRDltaFpiNHFoN3U0d3lZcmdjZkwxLUZqVWRVTVNPeHFpbXN0Z0Z1SF9hcXBiLW1jT1FxaDRmOFU5RF9XTEZYTC1xLW9JcWhUR3lPRjFCSTlHZmdya19lUkRLQUVHeUxxZS1mS3Y2TUFfRTJCa3ZDTTRfTkZQOE5TR0ZZb0x6eHJDdDZJVWprcVYwMXlMaUtCdl9tbnlqakZmdTd2dFRtMG8?oc=5",
-        "source": "Google News",
-        "published": "2026-04-30T15:45:48.000Z",
-        "summary": "Claude Mythos Fears Escalate As Regulators Warn FIs Are Falling Behind CU Today"
-      },
-      {
-        "title": "Euro-Area Finance Chiefs to Discuss Mythos as Concerns Mount",
-        "url": "https://www.bloomberg.com/news/articles/2026-04-30/euro-area-finance-chiefs-to-discuss-mythos-as-concerns-mount",
-        "source": "Bloomberg",
-        "published": "2026-04-30T15:43:37.000Z",
-        "summary": "Euro-area finance ministers will discuss the challenges that Anthropic PBC’s Mythos AI model poses as officials struggle to get clarity on the new tool’s powers."
-      },
-      {
-        "title": "Bank of America Expands Use of Anthropic AI - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNTmUyVHcwOWNIbjNTOWV5TUhQblNKYTRJRnJ1SDFhZjlTX0xjc1FBMjBtOF9yOWVsckRmYnYxMFhERVNnUVpicmxFYTBsYjBnYkNrUWYyclZiNnRUdnRnRUdYYVRPcDI4ZVY3elVjOElPNllpMmU1THVBT3AzWjVqbzVCN2JsUjZSTU9GcTd3?oc=5",
-        "source": "Google News",
-        "published": "2026-04-30T15:32:04.000Z",
-        "summary": "Bank of America Expands Use of Anthropic AI Let's Data Science"
-      },
-      {
-        "title": "Claude Code refuses requests or charges extra if your commits mention \"OpenClaw\"",
-        "url": "https://twitter.com/theo/status/2049645973350363168",
-        "source": "HN · 714↑",
-        "hn_id": "47963204",
-        "published": "2026-04-30T14:36:58.000Z",
-        "summary": "https:&#x2F;&#x2F;xcancel.com&#x2F;theo&#x2F;status&#x2F;2049645973350363168"
-      },
-      {
-        "title": "Canva announces their new collaboration with Claude Design by Anthropic Labs - Campaign Middle East",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQS2JPT2tjR2x5SVpFd1NXel9MV1dseTdhV1JRalN6cmV0M3BNYmNyS1hxWjlXcE5oUkhzdDlFRWZ1S0lTVHcyS0swVkVNM0ZQYzVHbExUVWsyLVR0NU13TTNmUThlX3hFeUdpZ1p1RTNJYWhPSGhFZjRVMGRCWGktblJPV0hQdF9sZ2VXTGdiU1VDQTQwSnpCX2h5NjJoLU9Pcmc?oc=5",
-        "source": "Google News",
-        "published": "2026-04-30T14:00:29.000Z",
-        "summary": "Canva announces their new collaboration with Claude Design by Anthropic Labs Campaign Middle East"
-      },
-      {
-        "title": "Anthropic: 2026 TIME100 Most Influential Companies - Time Magazine",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOdk9maWZXYXNtZ28tbE5LZF9SOE82WXI2Tmgxa1dxNnlRTGpxSENaVkhNak1zVW1kSkVsOXZIUW1EUkFUZjR6MEFneG5lSWo3ZXpuSFIyOGxBWlVFNmxYM0NHZXNfWHVMdVlmQ1Iya2NUTXpDUEJUY3d1cXpRQi1iWjhYeFM?oc=5",
-        "source": "Google News",
-        "published": "2026-04-30T13:20:03.000Z",
-        "summary": "Anthropic: 2026 TIME100 Most Influential Companies Time Magazine"
-      },
-      {
-        "title": "White House AI Memo Hits Issues in Anthropic-Pentagon Feud",
-        "url": "https://www.bloomberg.com/news/articles/2026-04-30/white-house-ai-memo-hits-issues-driving-anthropic-pentagon-feud",
-        "source": "Bloomberg",
-        "published": "2026-04-30T13:08:52.000Z",
-        "summary": "White House officials are preparing a wide-ranging artificial intelligence policy memo that outlines requirements for AI deployment by national security agencies, some of which address the issues…"
-      },
-      {
-        "title": "Anthropic's new benchmark claims Claude can match human experts in bioinformatics - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNa3hFVEVCSXNKR0RDbzMwZk1fRUVoNmx6dDlUcVNHVi1JZzRBZlFRZ1pTREJPcUpRNlVyVmpoVnlwdkNUVlYxbFZ4M3pwV2FESlpnei12UmY1R2pZX0M4dy1BRVpvTF9HRG5haTNITWJCVEM3ZUZQZEJ4NG9IcXFMc0VZZl9MUTZ4NXZBOTlQWmE5bjJiNWRENjdHVnllcmRIY3l0a0NScUE?oc=5",
-        "source": "Google News",
-        "published": "2026-04-30T12:34:35.000Z",
-        "summary": "Anthropic's new benchmark claims Claude can match human experts in bioinformatics the-decoder.com"
-      },
-      {
-        "title": "Victim of AI agent that deleted company's entire database gets their data back — cloud provider recovers critical files and broadens its 48-hour delayed delete policy - Tom's Hardware",
-        "url": "https://news.google.com/rss/articles/CBMizwJBVV95cUxQZFpfaGx0cEhvN2pGOXI5UE1TVXhrX3ZQMG56MTJGWjJtWFJXbGJHbmRKLS1CdERFam5tQTZHNFUwdkpHRUlkWl8zUkZrUXl6STdTLURtdVZ2cm5PQzQtakdqLWVYaXpBZXJ6UnA5RWNjNFJsbi0yamV6VUp3QnE4RzhzeFZ0S0dPQWVZTnpQMmh1cVc0ZjM2TEluNkg1eFR4RVBpWmlyMlEzZWR4NEJfZURpTFg4aTRVS1Y0S1IxOWY1eVB2dHF6Yko3amoxa3FkclJOck00M0RVc1JXU0ZDcjdQU3d4YWhLNkQ2b2lza0QtVmVhZlhSRzVQaHpGekZzMGZ4R2ZuX0F1dE5jcTdBcFUyU2I5cGtXRVN5SHlhSHVBeU1mZVJjZ2tRckxabzR1RnlkaUp5SldXWXNPQ0R2ZERpUDNDQlBjWWZqUWZYVQ?oc=5",
-        "source": "Google News",
-        "published": "2026-04-30T12:13:38.000Z",
-        "summary": "Victim of AI agent that deleted company's entire database gets their data back — cloud provider recovers critical files and broadens its 48-hour delayed delete policy Tom's Hardware"
+        "published": "2026-04-30T16:07:33.000Z",
+        "summary": "Anthropic $900 Billion Valuation Signals AI Power Shift in Silicon Valley USA Herald"
       },
       {
         "title": "🔴LIVE: The new Claude Code plugins are incredible...",
@@ -958,6 +958,14 @@
     ],
     "tutorials": [
       {
+        "title": "April 23 Postmortem",
+        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+        "source": "Anthropic Eng",
+        "published": "2026-04-30T21:34:23.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.123",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.123",
         "source": "Claude Code Releases",
@@ -1086,14 +1094,6 @@
         "url": "https://www.anthropic.com/engineering/managed-agents",
         "source": "Anthropic Eng",
         "published": "2026-04-24T14:19:43.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "April 23 Postmortem",
-        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
-        "source": "Anthropic Eng",
-        "published": "2026-04-24T14:19:00.000Z",
         "summary": "",
         "tutorial_kind": "official"
       },
@@ -1744,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "We've retired the 1M token context window beta ( context-1m-2025-08-07 ) for Claude Sonnet 4.5 and Claude Sonnet 4.…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#april-30-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-04-30T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "🔴LIVE: The new Claude Code plugins are incredible...",
         "url": "https://www.youtube.com/watch?v=8yVAuAGeMWo",
         "source": "YouTube · Alex Finn",
@@ -2225,13 +2232,6 @@
         "source": "MCP Inspector",
         "published": "2026-02-24T16:58:15.000Z",
         "summary": "What's Changed Bump actions/setup-node from 4 to 6 by @dependabot [bot] in #1057 Bump actions/upload-artifact from 4 to 6 by @dependabot [bot] in #1058 Bump actions/attest-build-provenance from 2 to 3 by @dependabot…"
-      },
-      {
-        "title": "We've launched automatic caching for the Messages API. Add a single cache_control field to your request body and the…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#february-19-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-02-19T00:00:00.000Z",
-        "summary": "We've retired the Claude Sonnet 3.7 model ( claude-3-7-sonnet-20250219 ) and the Claude Haiku 3.5 model ( claude-3-5-haiku-20241022 ). All requests to these models will now return an error. We recommend upgrading to Claude Sonnet 4.6 and…"
       }
     ]
   }
