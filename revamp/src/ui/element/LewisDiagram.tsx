@@ -1,76 +1,95 @@
 /*
  * Bohr-Rutherford "Lewis-style" diagram. SVG. Concentric rings + nucleus
- * at center + electrons placed at canonical Lewis-octet positions.
+ * at center + electrons grouped into cardinal CLUSTERS (top, bottom,
+ * right, left) — the same artistic layout the reference periodic-table
+ * cards use.
  *
- * Sizes are locked: nucleus, ring radii, electron radius stay constant
- * across all elements. Reality lives in a future deep-zoom layer
- * (orbital-probability shapes), not here.
+ * Distribution rule: split K electrons across 4 cardinal slots in order
+ * top → bottom → right → left, first slots get one extra when K is not
+ * divisible by 4. Each slot's M dots render in a tight 2-column grid
+ * centered on the ring point.
+ *
+ * Nucleus is a small outlined circle with an inner dot — visible as a
+ * proper "circle" not just a black dot, and ready to act as a tap area
+ * for the future "zoom into the nucleus" feature.
+ *
+ * Sizes are locked: nucleus, ring radii, electron radius, cluster
+ * spacing all stay constant across every element.
  */
 import s from './LewisDiagram.module.css'
 
 const SIZE = 200
-const NUCLEUS_R = 5
-const ELECTRON_R = 2.6
-// Equidistant ring layout: n=1 sits at RING_BASE (a bit further from
-// the nucleus than RING_GAP would suggest, so the innermost ring isn't
-// crowded). Every subsequent shell is exactly RING_GAP further out —
-// gaps are constant from n=1 onwards. Heaviest natural element (Z=87,
-// 7 shells) lands at r = 19 + 6·12 = 91, just inside the 200 viewBox.
+const NUCLEUS_OUTER_R = 9
+const NUCLEUS_INNER_R = 2.6
+const NUCLEUS_STROKE = 1.2
+const ELECTRON_R = 3
 const RING_BASE = 19
 const RING_GAP = 10
+const CLUSTER_SPACING = 7
+
+const CARDINALS = [0, 180, 90, 270] as const   // top, bottom, right, left
 
 function ringRadius(shellIndex: number): number {
   return RING_BASE + shellIndex * RING_GAP
 }
 
-// Pair offset in degrees, sized so the paired-dot on-screen gap stays
-// roughly constant across rings (small offset on outer rings, larger
-// on inner rings).
-function pairOffsetDeg(r: number): number {
-  return (2.6 * ELECTRON_R / r) * (180 / Math.PI)
+// Split K across 4 cardinal slots; first (K mod 4) get one extra.
+function distributeToCardinals(K: number): [number, number, number, number] {
+  if (K <= 0) return [0, 0, 0, 0]
+  const base = Math.floor(K / 4)
+  const rem = K % 4
+  return [
+    base + (0 < rem ? 1 : 0),
+    base + (1 < rem ? 1 : 0),
+    base + (2 < rem ? 1 : 0),
+    base + (3 < rem ? 1 : 0),
+  ]
 }
 
-// Canonical Lewis-octet placement for K electrons on the given shell.
-//   Shell 0 (n=1, max 2): K=1 → top; K=2 → top + bottom
-//   Shell 1+ (n=2+, max 8): cardinals filled in order top, bottom, right,
-//   left; once all four are singled, pair up at each in same order with
-//   a tangential offset that scales to keep the on-screen pair-gap
-//   consistent regardless of ring radius.
-function bohrPositions(K: number, shellIndex: number): number[] {
-  if (K <= 0) return []
-
-  if (shellIndex === 0) {
-    if (K === 1) return [0]
-    return [0, 180]
+// Cluster-local positions for M dots in a 2-column grid centered on the
+// ring point. Tangent axis runs along the ring; radial axis runs outward
+// from the nucleus. Last dot of an odd M is centered tangentially.
+function clusterOffsets(M: number): Array<[number, number]> {
+  if (M <= 0) return []
+  if (M === 1) return [[0, 0]]
+  const cols = 2
+  const rows = Math.ceil(M / cols)
+  const out: Array<[number, number]> = []
+  for (let i = 0; i < M; i++) {
+    const col = i % cols
+    const row = Math.floor(i / cols)
+    const radial = row - (rows - 1) / 2
+    const isOddLast = M % 2 === 1 && i === M - 1
+    const tangent = isOddLast ? 0 : col - 0.5
+    out.push([tangent, radial])
   }
+  return out
+}
 
-  const off = pairOffsetDeg(ringRadius(shellIndex))
-  const PAIR_ORDER = [0, 180, 90, 270]   // top, bottom, right, left
-  const positions: number[] = []
-  const filledOnce = [false, false, false, false]
-
-  for (let i = 0; i < K; i++) {
-    const slot = i % 4
-    const center = PAIR_ORDER[slot]
-    if (!filledOnce[slot]) {
-      positions.push(center)
-      filledOnce[slot] = true
-    } else {
-      const idx = positions.indexOf(center)
-      if (idx >= 0) positions[idx] = center - off
-      positions.push(center + off)
+function placeShellElectrons(K: number, r: number, cx: number, cy: number) {
+  if (K <= 0) return [] as Array<{ x: number; y: number }>
+  const slots = distributeToCardinals(K)
+  const result: Array<{ x: number; y: number }> = []
+  for (let s = 0; s < 4; s++) {
+    const M = slots[s]
+    if (M === 0) continue
+    const dirDeg = CARDINALS[s]
+    const dirRad = (dirDeg * Math.PI) / 180
+    // tangent (along ring) and radial (outward) unit vectors
+    const tx = Math.cos(dirRad)
+    const ty = Math.sin(dirRad)
+    const rx = Math.sin(dirRad)
+    const ry = -Math.cos(dirRad)
+    const ringX = cx + r * rx
+    const ringY = cy + r * ry
+    for (const [t, ρ] of clusterOffsets(M)) {
+      result.push({
+        x: ringX + t * CLUSTER_SPACING * tx + ρ * CLUSTER_SPACING * rx,
+        y: ringY + t * CLUSTER_SPACING * ty + ρ * CLUSTER_SPACING * ry,
+      })
     }
   }
-  return positions
-}
-
-function angleToXY(angleDeg: number, radius: number, cx: number, cy: number) {
-  // 0° = top, clockwise. SVG y-axis points down.
-  const rad = (angleDeg * Math.PI) / 180
-  return {
-    x: cx + radius * Math.sin(rad),
-    y: cy - radius * Math.cos(rad),
-  }
+  return result
 }
 
 export function LewisDiagram({ shells }: { shells: number[] }) {
@@ -98,23 +117,29 @@ export function LewisDiagram({ shells }: { shells: number[] }) {
         />
       ))}
 
-      <circle cx={cx} cy={cy} r={NUCLEUS_R} fill="currentColor" />
+      {/* Nucleus = outlined circle + small inner dot. Will become a tap
+          target for the nuclear-physics zoom view later. */}
+      <circle
+        cx={cx}
+        cy={cy}
+        r={NUCLEUS_OUTER_R}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={NUCLEUS_STROKE}
+      />
+      <circle cx={cx} cy={cy} r={NUCLEUS_INNER_R} fill="currentColor" />
 
-      {shells.map((K, i) => {
-        const r = ringRadius(i)
-        return bohrPositions(K, i).map((angleDeg, j) => {
-          const { x, y } = angleToXY(angleDeg, r, cx, cy)
-          return (
-            <circle
-              key={`e-${i}-${j}`}
-              cx={x}
-              cy={y}
-              r={ELECTRON_R}
-              fill="currentColor"
-            />
-          )
-        })
-      })}
+      {shells.map((K, i) =>
+        placeShellElectrons(K, ringRadius(i), cx, cy).map((pos, j) => (
+          <circle
+            key={`e-${i}-${j}`}
+            cx={pos.x}
+            cy={pos.y}
+            r={ELECTRON_R}
+            fill="currentColor"
+          />
+        )),
+      )}
     </svg>
   )
 }
