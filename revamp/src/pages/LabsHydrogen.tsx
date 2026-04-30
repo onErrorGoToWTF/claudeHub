@@ -10,7 +10,6 @@ import { Canvas } from '@react-three/fiber'
 import { TrackballControls } from '@react-three/drei'
 import { ATOM } from '../ui/atom/constants'
 import { Electron, makeFadeTexture, type OrbitConfig } from '../ui/atom/Electron'
-import { LabsNav } from '../ui/atom/LabsNav'
 
 const HYDROGEN_ELECTRON: OrbitConfig = {
   plane: 'xy',
@@ -25,7 +24,6 @@ export function LabsHydrogen() {
 
   return (
     <div style={{ position: 'fixed', inset: 0, background: '#0a0a0c' }}>
-      <LabsNav />
       <Canvas
         dpr={[1, 2]}
         camera={{ position: [0, 0, 6], fov: 38, near: 0.1, far: 50 }}
