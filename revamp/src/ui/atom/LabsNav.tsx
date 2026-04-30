@@ -14,6 +14,7 @@ const LABS: Array<{ path: string; label: string }> = [
   { path: '/labs/atom-transitions', label: 'Transitions lab' },
   { path: '/labs/atom-sequence', label: 'Sequence lab' },
   { path: '/labs/atom-motion', label: 'Motion lab' },
+  { path: '/labs/hydrogen', label: 'Hydrogen' },
 ]
 
 export function LabsNav() {
