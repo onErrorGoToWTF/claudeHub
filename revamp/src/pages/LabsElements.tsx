@@ -29,21 +29,23 @@ function defaultStateForZ(z: number) {
 }
 
 export function LabsElements() {
-  const [z, setZ] = useState(1)
   const [{ protons, neutrons, electrons }, setState] = useState(defaultStateForZ(1))
+  // swipeIdx drives the slide animation — bumped only on explicit
+  // navigation (swipe / arrow keys / nav buttons), NOT on control-bar
+  // p/n/e tweaks. Tweaks update the tile in place.
+  const [swipeIdx, setSwipeIdx] = useState(0)
   const [direction, setDirection] = useState<1 | -1>(1)
+  const z = protons
 
   const gotoElement = useCallback((nextZ: number) => {
     if (nextZ < P_RANGE[0] || nextZ > P_RANGE[1]) return
-    setDirection(nextZ > z ? 1 : -1)
-    setZ(nextZ)
+    setDirection(nextZ > protons ? 1 : -1)
+    setSwipeIdx(s => s + 1)
     setState(defaultStateForZ(nextZ))
-  }, [z])
+  }, [protons])
 
   function adjustProtons(next: number) {
     if (next < P_RANGE[0] || next > P_RANGE[1]) return
-    setDirection(next > protons ? 1 : -1)
-    setZ(next)
     setState(prev => ({ ...prev, protons: next }))
   }
 
@@ -87,7 +89,7 @@ export function LabsElements() {
 
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
-            key={z}
+            key={swipeIdx}
             className={s.tileWrap}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
