@@ -1,35 +1,38 @@
 /*
  * Bohr-Rutherford "Lewis-style" diagram. SVG. Concentric rings + nucleus
  * at center + electrons grouped into cardinal CLUSTERS (top, bottom,
- * right, left), matching the reference periodic-table card layout.
+ * right, left) of TIGHT, ORTHOGONAL PAIRS, matching the reference
+ * periodic-table card layout.
  *
- * Distribution rule: K electrons split across 4 cardinal slots in order
- * top → bottom → right → left; first (K mod 4) slots get one extra dot.
+ * Distribution: K electrons split across 4 cardinal slots in order
+ * top → bottom → right → left; first (K mod 4) slots get one extra.
  *
- * Cluster shape per slot of M dots: a tight grid centered on the ring.
+ * Cluster shape per slot of M dots:
  *   M=1 → single dot
- *   M=2 → horizontal pair (along the tangent)
- *   M=3 → 2 + 1 triangle pointing radially outward
+ *   M=2 → horizontal pair (along tangent — orthogonal to radial)
+ *   M=3 → 2 + 1 (pair + single, stacked radially)
  *   M=4 → 2×2 square
- *   M=5–9 → 3-wide grid; last partial row centered tangentially
+ *   M=5 → 2 + 2 + 1 (vertical 2-2-1 stack — like the reference)
+ *   M=6 → 2 + 2 + 2
+ *   M=7 → 4 + 3 (4-wide grid; only super-heavy elements)
+ *   M=8 → 4 + 4
  *
- * Sizes are locked: nucleus, ring radii, electron radius, cluster
- * spacing all stay constant across every element. Cluster radial span
- * stays inside the inter-ring gap.
+ * Each electron has a FIXED slot — adding the next electron just lights
+ * up the next predetermined position. Sizes (nucleus, ring radii,
+ * electron radius, cluster spacing) are constant across every element.
  *
- * Nucleus is a small outlined circle with an inner dot (acts as a
- * future tap target for the nuclear-physics zoom view).
+ * Nucleus = outlined circle, NO inner dot — acts as a future tap target
+ * for the nuclear-physics zoom view.
  */
 import s from './LewisDiagram.module.css'
 
 const SIZE = 200
-const NUCLEUS_OUTER_R = 9
-const NUCLEUS_INNER_R = 2.6
+const NUCLEUS_R = 9
 const NUCLEUS_STROKE = 1.2
-const ELECTRON_R = 3
+const ELECTRON_R = 2.6
 const RING_BASE = 19
-const RING_GAP = 10
-const CLUSTER_SPACING = 6.5
+const RING_GAP = 12
+const CLUSTER_SPACING = 5.5
 
 const CARDINALS = [0, 180, 90, 270] as const   // top, bottom, right, left
 
@@ -50,14 +53,13 @@ function distributeToCardinals(K: number): [number, number, number, number] {
   ]
 }
 
-// Adaptive grid width: 2 cols for tight clusters (≤4), 3 cols for 5+.
-// Keeps the radial span small relative to the inter-ring gap so the
-// 18-electron shells (max cluster of 5 with our rule) don't crowd
-// neighbouring rings.
+// Always 2-wide for M ≤ 6 (matches the reference's 2-2-1 vertical stack
+// for 5-electron clusters). 4-wide only for M ≥ 7 to keep the radial
+// span inside the inter-ring gap on super-heavy elements.
 function clusterCols(M: number): number {
   if (M <= 1) return 1
-  if (M <= 4) return 2
-  return 3
+  if (M <= 6) return 2
+  return 4
 }
 
 // Cluster-local (tangent, radial) offsets in CLUSTER_SPACING units.
@@ -132,17 +134,16 @@ export function LewisDiagram({ shells }: { shells: number[] }) {
         />
       ))}
 
-      {/* Nucleus = outlined circle + small inner dot. Will become a
-          tap target for the nuclear-physics zoom view later. */}
+      {/* Nucleus = outlined circle only (no center dot). Future tap
+          target for the nuclear-physics zoom view. */}
       <circle
         cx={cx}
         cy={cy}
-        r={NUCLEUS_OUTER_R}
+        r={NUCLEUS_R}
         fill="none"
         stroke="currentColor"
         strokeWidth={NUCLEUS_STROKE}
       />
-      <circle cx={cx} cy={cy} r={NUCLEUS_INNER_R} fill="currentColor" />
 
       {shells.map((K, i) =>
         placeShellElectrons(K, ringRadius(i), cx, cy).map((pos, j) => (
