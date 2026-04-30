@@ -22,12 +22,17 @@
 import s from './LewisDiagram.module.css'
 
 const SIZE = 200
-const OUTER_RADIUS_FACTOR = 0.38
 const ELECTRON_R_FACTOR = 0.02
 const NUCLEUS_R_FACTOR = 0.04
 const NUCLEUS_STROKE = 1.2
 
-const OUTER_RADIUS = OUTER_RADIUS_FACTOR * SIZE   // 76
+// FIXED ring radii — same value for every element. Ring n=1 is always
+// at RING_BASE; each subsequent shell adds RING_GAP. Heaviest natural
+// element (Z=87, 7 shells) lands at 16 + 6·12 = 88, leaving viewBox
+// margin for the electron radius.
+const RING_BASE = 16
+const RING_GAP = 12
+
 const ELECTRON_R = ELECTRON_R_FACTOR * SIZE       // 4
 const NUCLEUS_R = NUCLEUS_R_FACTOR * SIZE         // 8
 
@@ -55,8 +60,8 @@ const SHELL_SLOTS: number[][] = [
   [-5, 5, 85, 95, 175, 185, 265, 275],
 ]
 
-function shellRadius(shellIndex: number, shellCount: number): number {
-  return (OUTER_RADIUS * (shellIndex + 1)) / shellCount
+function shellRadius(shellIndex: number): number {
+  return RING_BASE + shellIndex * RING_GAP
 }
 
 function shellElectronAngles(K: number, shellIndex: number): number[] {
@@ -67,11 +72,10 @@ function shellElectronAngles(K: number, shellIndex: number): number[] {
 function placeShellElectrons(
   K: number,
   shellIndex: number,
-  shellCount: number,
   cx: number,
   cy: number,
 ) {
-  const r = shellRadius(shellIndex, shellCount)
+  const r = shellRadius(shellIndex)
   return shellElectronAngles(K, shellIndex).map(deg => {
     const rad = (deg * Math.PI) / 180
     return {
@@ -84,7 +88,6 @@ function placeShellElectrons(
 export function LewisDiagram({ shells }: { shells: number[] }) {
   const cx = SIZE / 2
   const cy = SIZE / 2 + SIZE * 0.04
-  const shellCount = shells.length
 
   return (
     <svg
@@ -99,7 +102,7 @@ export function LewisDiagram({ shells }: { shells: number[] }) {
           key={`ring-${i}`}
           cx={cx}
           cy={cy}
-          r={shellRadius(i, shellCount)}
+          r={shellRadius(i)}
           fill="none"
           stroke="currentColor"
           strokeWidth={0.8}
@@ -117,7 +120,7 @@ export function LewisDiagram({ shells }: { shells: number[] }) {
       />
 
       {shells.map((K, i) =>
-        placeShellElectrons(K, i, shellCount, cx, cy).map((pos, j) => (
+        placeShellElectrons(K, i, cx, cy).map((pos, j) => (
           <circle
             key={`e-${i}-${j}`}
             cx={pos.x}
