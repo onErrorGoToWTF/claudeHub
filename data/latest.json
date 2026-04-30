@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-04-30T17:07:16.981Z",
+  "generated_at": "2026-04-30T19:03:27.855Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Claude Personal Guidance",
+        "url": "https://www.anthropic.com/research/claude-personal-guidance",
+        "source": "Anthropic Research",
+        "published": "2026-04-30T18:53:53.000Z",
+        "summary": ""
+      },
       {
         "title": "The Long Term Benefit Trust",
         "url": "https://www.anthropic.com/news/the-long-term-benefit-trust",
@@ -135,16 +142,51 @@
         "source": "Anthropic",
         "published": "2026-04-10T12:11:09.000Z",
         "summary": ""
-      },
-      {
-        "title": "Healthcare Life Sciences",
-        "url": "https://www.anthropic.com/news/healthcare-life-sciences",
-        "source": "Anthropic",
-        "published": "2026-04-09T20:25:31.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic's Powerful New Cybersecurity Tool Is Designed to Find Vulnerabilities in Your Code—and Patch Them - inc.com",
+        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOWThCZFlBRFRzal9wa0FwQVcxc0FpQW5pOE1UNmpTZmU4cmw1bm5QWUVhUnpLWUZ1WDBsZDc3UTVBUkk2clFUMEtTdjNsYUE5c09QOUhQX20yRm8tTkxjTFlwcXE0MlM0TFJzTlRIWGQzb2l5amFyMjJ3MkVfS1pWQlJXT2phOEZJdmFVbFM1cE5RUGI4MGxoYjdRcnViOGRPcmFPNklJTnpKX21oQkZMVV9qeGRFM1k1UmtybHY4aU9LNFZZSG5GOGxpeWlsdS1LNHNMeE51NjY5aS1CRmt4QnNB?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T18:49:40.000Z",
+        "summary": "Anthropic's Powerful New Cybersecurity Tool Is Designed to Find Vulnerabilities in Your Code—and Patch Them inc.com"
+      },
+      {
+        "title": "Anthropic announces Claude Security beta for enterprise customers - Business Standard",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxObkVBdHY4bUhBN2d1NG14aEZ5aFcyWDBDb2JuNXlDVzU4RG5DbXNaMy16Y0lTX2l4VWhoQXJHbkowQjBWdk54SmFwWHN5YkhjdzYxTzNjVU45X0xqYkpHakt1d2trX2dsWTNaU0d1N0tXekRMMXB4XzFKRWg2ZG5kUkFWRkpnY2ZNLUtPa2lnaVB3SVB0YncwRHUwTHlRRDhXNmpGamZOM25ocldhY3FBQWJ6a1FuUWRWbFlpMndYdTVzeWhwS3ljUUVoZGk4WjBoakpDWm5GTdIB3AFBVV95cUxPMk9EVDVMQVh0VXM0eGIzdC1ZUlMxN19jd0duY3RGd01KVVN6QmFfdzc3V1pabTNaM1A3V25GNjF3SEk4OEN1Ti02RS1SbEdQSkJKbDVnOWxIZUJiRWF6Xy13RnkyeFQ4LUpseWxtbGxVem9mcUozY213WDlCUjQ5Yi12TmdwVFFIajIzM0dqUGJIWENWWk40UmxWb1NPbEpZcERTM0doQ2hGNWlBUU5maWo4TjM0QkJNNUZFQXMxNGNDdTNZVEUwREROcF80Y2pUcDNMTFJ0Tm1xRHlJ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T18:45:07.000Z",
+        "summary": "Anthropic announces Claude Security beta for enterprise customers Business Standard"
+      },
+      {
+        "title": "TrendAI Partners with Anthropic to Strengthen AI-Driven Cybersecurity - CDO Magazine",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQOTB1cllLOV9QQS0ydldZRnA0NnRWVnFEYlE3bWdVQ0U1LWRjMzh3b19YZmtSby1uM0sxbHdzTjB2Y0RJZno2MGZLS0pwSXNVN2FjNTNYbklkaV9KVUMxQkUtdTF1bkpURE91cUtCSHZXa2FtMkZLUkpJQlJjZjR3bU1ycDZuQ0xaVmxyeUpjMU1VWjVOekVlMllrcC1SVmMtMzJnVV9R?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T18:31:00.000Z",
+        "summary": "TrendAI Partners with Anthropic to Strengthen AI-Driven Cybersecurity CDO Magazine"
+      },
+      {
+        "title": "Anthropic Reportedly In Talks To Raise Funds At $900 Billion Valuation, Surpassing OpenAI - Pulse 2.0",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQQkl2MEVVaVhhbTgtblZNek5EQ3JmYzBJUHZEWXpTeEtKZ1NpTUNaV19PRkxMcExGLXI3d1BWR2V1TEgyeTQtWnNDbU5NUzQ4QjctU3R3Y0I5cFFSOThyTzFYMXBzY29LRkNocXI1SXo5OTZidGRrd3lNcElhVl9vNzNhbkRVaWxfaHdJNzI2MXRtVEE0TGNjYUhWazJSNkhFSkdLdEF0bzh0clXSAbABQVVfeXFMTmNlVE1NLWVIZFI3TG55UzNld25IVVktRTJPX3ZQV0lYYmxZY3l1cGJfT21tZUU4ZFRyU2kxOFd3ZW5aU3hNMWItVU5ad0FDOXlOZ25FWFBQSXBMMTlfUldScFVLQkQzWkRFeHBNXzRnamc4U1k3cFNRQ2d3TlVieEUzWkJZU2o2UEpBRFZmbkhpRFhnYmlva1FRa2V2RFJycHZ1b0lkTW5jU3JYaEk5eWM?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T18:10:26.000Z",
+        "summary": "Anthropic Reportedly In Talks To Raise Funds At $900 Billion Valuation, Surpassing OpenAI Pulse 2.0"
+      },
+      {
+        "title": "Anthropic Weighs Funding Offers at Over $900 Billion Valuation",
+        "url": "https://www.bloomberg.com/news/videos/2026-04-30/anthropic-weighs-funding-offers-at-over-900b-valuation-video",
+        "source": "Bloomberg",
+        "published": "2026-04-30T17:46:55.000Z",
+        "summary": "Anthropic has begun weighing a fresh funding round that would value the AI developer at more than $900 billion, according to sources, potentially overtaking longtime rival OpenAI as the world's most…"
+      },
+      {
+        "title": "From $380B to $900B: Anthropic could raise $50B at near-trillion dollar valuation - Tech Funding News",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5rdHltMGt1Y1FObnh4WHZBc2ZsYXlTUEt5VHY5R1VzWmdMcUk4dFptb0ZPWWhTTVFTbThUMDc5ZVBfallyaXpqMlJ0TmQ2cjd1aXJ5bkhHUzlfNmxXUk1LOUlqNDFDXzFzOUhQczh3Y1BvUi15bjFnaVhReWZrSmM?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T17:26:15.000Z",
+        "summary": "From $380B to $900B: Anthropic could raise $50B at near-trillion dollar valuation Tech Funding News"
+      },
       {
         "title": "Anthropic's Claude Security emerges from closed preview to scan your codebases for vulnerabilities - The New Stack",
         "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5YemY3ZkNDZ1g3TUJfbTNCazN3c29oTzUxOEJ2MWRxcV9sY2NXMC1ZbDBzMFpCcktucUJKNG9URWdlZ25QYVJqRTRsLWpUSEo5dFRVVGxtMVdxTG1jMFppTVFGNGRKQQ?oc=5",
@@ -156,7 +198,7 @@
         "title": "Datadog’s Big New Customer: Anthropic - Hunterbrook",
         "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE10d29TZ3JOQmRpWml5NVpIbWNKaXEwcm15M1JhS2tVYk1iOE9JYVI5R3M0Tk4wTE1WUmRuUWs0c042Zmc4QWE2TXhqbWFCVHc?oc=5",
         "source": "Google News",
-        "published": "2026-04-30T17:01:10.000Z",
+        "published": "2026-04-30T17:00:52.000Z",
         "summary": "Datadog’s Big New Customer: Anthropic Hunterbrook"
       },
       {
@@ -188,18 +230,18 @@
         "summary": "The TechBeat: Why Anthropic’s Claude is the Only AI Workspace You Need in 2026 (4/30/2026) HackerNoon"
       },
       {
-        "title": "AI Tools: How Claude Design industrializes visual creation - Telquel.ma",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOd0l6cFFSWmJRM2Y3MnVBU2VDUUx3WUt4VVlBRUNGbU9jYUdhbk1kNFJDMm5sSmhCRk1yN21xejZWMFNBNkNkSlZDeXV0aVRkZnJjb0NucFpoUFFzVWFWbVFCY2E5bEQtcGg4TWIxVjVBMjVDSHpLa2J0NVhWajB5b3BCWmIwRm0xMzR1elQwbDAzT0tBR2tBMGZNRQ?oc=5",
+        "title": "AI coding agents breached: attackers targeted credentials, not models - VentureBeat",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxORGdFV0Z6WV96ZlpMZnFLajQ1Z0ZTZC1GTXEtOTlZRmdpQVdRcGtTQXRfRDNUb1p5bjVDZzVlVlNRMURCNTFqR0o4cUVtZXhaNHN2c1hrNjg1MERvQXR3eEFYVGI2dHlGSUZvSnQxQUk5SUhsNFQyUE8wYlFwckw2OGJOT1BUNTVUeVlidmNWX0U?oc=5",
         "source": "Google News",
-        "published": "2026-04-30T16:33:40.000Z",
-        "summary": "AI Tools: How Claude Design industrializes visual creation Telquel.ma"
+        "published": "2026-04-30T16:30:01.000Z",
+        "summary": "AI coding agents breached: attackers targeted credentials, not models VentureBeat"
       },
       {
-        "title": "Anthropic’s Claude Mythos Reduces Export Controls To Blind Projections - Yahoo News Malaysia",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQcGFxUkRJS2l3RG9IT0xSNkVESU9Lem5LN1FGbG5tM3Y4Y21vMUViLVVDTmlOcEt1Nkp3ZHM0SGFYQUhuR2RXWkM1OF9Iak5EU3hlVDdnZUJBUHFhN0Y5SFFJbkFCaTlFNjVHM0g1aUJBbkVzY1N4U2N1dk1MQ2xXV2dIbzUwZWNtcEI3Y0NB?oc=5",
+        "title": "Anthropic’s Claude Mythos Reduces Export Controls To Blind Projections - Forbes",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPVklWQnVZZzQ1d0dHUmJ5aVN1T3ZHVTBqMUNsLWgxdjBvRzJsRFFudG9vbk5KZUs4R29naWFUZHU4eHllQmt3N0NCN0RlM1VxRjA2NmltTjFpOTVnYjBJc3ktQTctYkhjbmVhNVZqUWNPdks4ZkJpYTVqek1xSXpPZGJoSjNzel95Y3E3Nnhpa09fSlVEWXhxX010UGFXa0txT2FQOXhTajNrZmJ5VHg5MkJQbENtQUFwdEZMQQ?oc=5",
         "source": "Google News",
         "published": "2026-04-30T16:00:19.000Z",
-        "summary": "Anthropic’s Claude Mythos Reduces Export Controls To Blind Projections Yahoo News Malaysia"
+        "summary": "Anthropic’s Claude Mythos Reduces Export Controls To Blind Projections Forbes"
       },
       {
         "title": "Claude Mythos Fears Escalate As Regulators Warn FIs Are Falling Behind - CU Today",
@@ -223,19 +265,12 @@
         "summary": "Bank of America Expands Use of Anthropic AI Let's Data Science"
       },
       {
-        "title": "From $380B to $900B: Anthropic could raise $50B at near-trillion dollar valuation - Tech Funding News",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5rdHltMGt1Y1FObnh4WHZBc2ZsYXlTUEt5VHY5R1VzWmdMcUk4dFptb0ZPWWhTTVFTbThUMDc5ZVBfallyaXpqMlJ0TmQ2cjd1aXJ5bkhHUzlfNmxXUk1LOUlqNDFDXzFzOUhQczh3Y1BvUi15bjFnaVhReWZrSmM?oc=5",
-        "source": "Google News",
-        "published": "2026-04-30T15:00:00.000Z",
-        "summary": "From $380B to $900B: Anthropic could raise $50B at near-trillion dollar valuation Tech Funding News"
-      },
-      {
         "title": "Claude Code refuses requests or charges extra if your commits mention \"OpenClaw\"",
         "url": "https://twitter.com/theo/status/2049645973350363168",
-        "source": "HN · 274↑",
+        "source": "HN · 526↑",
         "hn_id": "47963204",
         "published": "2026-04-30T14:36:58.000Z",
-        "summary": ""
+        "summary": "https:&#x2F;&#x2F;xcancel.com&#x2F;theo&#x2F;status&#x2F;2049645973350363168"
       },
       {
         "title": "NSA Testing Anthropic’s Mythos to Find Flaws in Microsoft Tech",
@@ -285,41 +320,6 @@
         "source": "Google News",
         "published": "2026-04-30T12:00:00.000Z",
         "summary": "iCapital®, With Anthropic, to Power AI‑Driven Client Experience for Alternatives, Structured Investments, and Annuities Business Wire"
-      },
-      {
-        "title": "Claude AI agent wipes firm’s database in 9 seconds, confesses: “I violated every principle I was given” - Cybernews",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9NWTlEMjFWcHlMcVZJN2lUVkNKUEl4eTFLQlRTOVF2dmxwbEZycWlhLS1YdkVJTnl4bEpFOGtBTE1RWDM0aEVPV3pVaUpMWXhmMXRwLWtLMVBaUEt4S3FFeWpFZlJxSE1IQUtIbFo4Mk1BUGRNYXVj?oc=5",
-        "source": "Google News",
-        "published": "2026-04-30T11:11:54.000Z",
-        "summary": "Claude AI agent wipes firm’s database in 9 seconds, confesses: “I violated every principle I was given” Cybernews"
-      },
-      {
-        "title": "OpenAI CEO Sam Altman Teases GPT-5.5 Cyber AI Model Rollout, Could Take On Anthropic’s Claude Mythos - Gadgets 360",
-        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPbmdFa1hxYnNpTTM1Zlp6amUwakYwRVg3ZTFfMjRqRjZ0R29iTWQ5XzV0N1NuaGkzS1pha1huNGNlQkdSS21tWjNHSE9JRkY3bnU0dDY3UTZOZmE2TVJ5TTFULVFDMGN6bHBOUFhoVVZ6MVNIRVVQZWJlTk1RUGJ4Y2tITWpJNWZoQ2pfQ1pySHp0RFY4UGgzckdPTkFETlFxNlc4cTZwbGtkUDhXY1hKakJLYzg2enZLM0ExdURkSGlKZll3SnVmZ3RYUDRiczRkc2fSAdcBQVVfeXFMT25wWHVTTzRkd0p6M2hoVGFhcTNZYURJSEEySHhodlU2djJseWgzZEZsMl9BTFZjaTh1bzdvdWVpM3F0bTBMdmlXLVVPOUhSLVl0YjhmVWFHdXd5cTZZVEtDOGJtblhIeS1lc1F1LW5KNWhMeVVKUkpXVWhlYnVVUGRacW5RNHRjOGdNa3o4cnNPSzNER2VCOERPcHZ5ajByNTVTb0k2QVJqWVFMZm1MSV9lcUhjN19yZHNlMldKSE5UZmdMUVJRUXhIUjN5aGZTN2gySHNwUGs?oc=5",
-        "source": "Google News",
-        "published": "2026-04-30T11:02:15.000Z",
-        "summary": "OpenAI CEO Sam Altman Teases GPT-5.5 Cyber AI Model Rollout, Could Take On Anthropic’s Claude Mythos Gadgets 360"
-      },
-      {
-        "title": "Anthropic asks Catholic voices to weigh in - aleteia.org",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1JTUJKR3VzSi1LRU1Ed3hXeXlCUEJSNmhhOW1GQ1VoNmNGamtVNUprU19nSVF1Zzd2anM3S090bk9YNGZrSHlxbXpRb2p2UGtzZjkwNlU2MTl4SDlwM2h1Vm1ublRRbzhUblIyVFdhRk5Cakh1SEticXh6ZzB3ZTg?oc=5",
-        "source": "Google News",
-        "published": "2026-04-30T10:52:27.000Z",
-        "summary": "Anthropic asks Catholic voices to weigh in aleteia.org"
-      },
-      {
-        "title": "Quo Puts Power of Anthropic’s Claude to Work on Behalf of Small Businesses - MarTech Cube",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNV0tudS1JQy1pN1dWMmlTb1J3cEdqM1M4OXBtUk1wUzA4eXVKcjJNdVhYOFlGNXdYZ01TNVRiTHdwMUlXS3REYmRYY0YzTmpsV2lrSHpBZEZOd0RUSXZwR25vdmxpMVZPX2x4ellkX3JmSzZfZk5Pa2RKOGpDRWxNTU0yZ1p6dzJONnRMUE05RGRmSnhPVENZNGU1eWVvN3F1a25vMg?oc=5",
-        "source": "Google News",
-        "published": "2026-04-30T10:12:53.000Z",
-        "summary": "Quo Puts Power of Anthropic’s Claude to Work on Behalf of Small Businesses MarTech Cube"
-      },
-      {
-        "title": "BT explainer: Why Anthropic's Claude Mythos could become a major security risk - MSN",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQdWp1bzlfSFlZLWdKWFZHcGRPRVQtTnNBbFVKdFJ5bVZubVloVGN3NmM0VVhON0cxYWlUOWJIa2lvR0xzdzdXZ0JsTkM5eHZ5UlJ0MjM4clNNU3otUllGWUZwMEk1VW05Vktxa0FpbkZpUjRpYWJuM1dIY293SWdSQmIxQ2FYYVBDN2dqXzl1bXc5RU51czJTWHZUSm9mWWVwdjcxWi00ZVFzOTBQaGNDYm9WVGhKVUtzeDlRWm55ZVFSMU1mOHB6WTR4Zw?oc=5",
-        "source": "Google News",
-        "published": "2026-04-30T09:51:50.000Z",
-        "summary": "BT explainer: Why Anthropic's Claude Mythos could become a major security risk MSN"
       },
       {
         "title": "🔴LIVE: The new Claude Code plugins are incredible...",
