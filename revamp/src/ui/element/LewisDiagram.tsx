@@ -11,14 +11,30 @@ import s from './LewisDiagram.module.css'
 const SIZE = 200
 const NUCLEUS_R = 5
 const ELECTRON_R = 2.6
-const SHELL_RADII = [26, 48, 70, 92]
-const PAIR_OFFSET_DEG = 6
+// Inner-anchored ring layout: n=1 always at RING_BASE; each next shell
+// is RING_GAP further out. Heaviest natural element (Z=87, 7 shells)
+// lands at r = 14 + 6·12 = 86, leaving margin inside the 200 viewBox.
+// Tight by design — Phase-1 elements (1–2 shells) cluster near center.
+const RING_BASE = 14
+const RING_GAP = 12
+
+function ringRadius(shellIndex: number): number {
+  return RING_BASE + shellIndex * RING_GAP
+}
+
+// Pair offset in degrees, sized so the paired-dot on-screen gap stays
+// roughly constant across rings (small offset on outer rings, larger
+// on inner rings).
+function pairOffsetDeg(r: number): number {
+  return (2.6 * ELECTRON_R / r) * (180 / Math.PI)
+}
 
 // Canonical Lewis-octet placement for K electrons on the given shell.
 //   Shell 0 (n=1, max 2): K=1 → top; K=2 → top + bottom
 //   Shell 1+ (n=2+, max 8): cardinals filled in order top, bottom, right,
 //   left; once all four are singled, pair up at each in same order with
-//   a small tangential offset.
+//   a tangential offset that scales to keep the on-screen pair-gap
+//   consistent regardless of ring radius.
 function bohrPositions(K: number, shellIndex: number): number[] {
   if (K <= 0) return []
 
@@ -27,6 +43,7 @@ function bohrPositions(K: number, shellIndex: number): number[] {
     return [0, 180]
   }
 
+  const off = pairOffsetDeg(ringRadius(shellIndex))
   const PAIR_ORDER = [0, 180, 90, 270]   // top, bottom, right, left
   const positions: number[] = []
   const filledOnce = [false, false, false, false]
@@ -39,8 +56,8 @@ function bohrPositions(K: number, shellIndex: number): number[] {
       filledOnce[slot] = true
     } else {
       const idx = positions.indexOf(center)
-      if (idx >= 0) positions[idx] = center - PAIR_OFFSET_DEG
-      positions.push(center + PAIR_OFFSET_DEG)
+      if (idx >= 0) positions[idx] = center - off
+      positions.push(center + off)
     }
   }
   return positions
@@ -72,7 +89,7 @@ export function LewisDiagram({ shells }: { shells: number[] }) {
           key={`ring-${i}`}
           cx={cx}
           cy={cy}
-          r={SHELL_RADII[i] ?? SHELL_RADII[SHELL_RADII.length - 1]}
+          r={ringRadius(i)}
           fill="none"
           stroke="currentColor"
           strokeWidth={0.8}
@@ -83,7 +100,7 @@ export function LewisDiagram({ shells }: { shells: number[] }) {
       <circle cx={cx} cy={cy} r={NUCLEUS_R} fill="currentColor" />
 
       {shells.map((K, i) => {
-        const r = SHELL_RADII[i] ?? SHELL_RADII[SHELL_RADII.length - 1]
+        const r = ringRadius(i)
         return bohrPositions(K, i).map((angleDeg, j) => {
           const { x, y } = angleToXY(angleDeg, r, cx, cy)
           return (
