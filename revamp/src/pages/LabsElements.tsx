@@ -17,7 +17,7 @@ import { ParticleControlBar } from '../ui/element/ParticleControlBar'
 import { clamp, findElementByZ } from '../db/seedElements'
 import s from './LabsElements.module.css'
 
-const P_RANGE: [number, number] = [1, 20]
+const P_RANGE: [number, number] = [1, 118]
 
 function defaultStateForZ(z: number) {
   const el = findElementByZ(z)

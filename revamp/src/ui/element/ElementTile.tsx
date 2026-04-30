@@ -10,7 +10,7 @@
 import { LewisDiagram } from './LewisDiagram'
 import {
   SPECIAL_ISOTOPE_NAMES,
-  shellDistribution,
+  shellsFor,
   findElementByZ,
 } from '../../db/seedElements'
 import s from './ElementTile.module.css'
@@ -34,7 +34,7 @@ export function ElementTile({ protons, neutrons, electrons }: Props) {
 
   const massNumber = protons + neutrons
   const charge = protons - electrons
-  const shells = shellDistribution(electrons)
+  const shells = shellsFor(element, electrons)
 
   const defaultIso = element.isotopes.find(i => i.name === element.defaultIsotope)
   const isDefaultMass = defaultIso ? defaultIso.neutrons === neutrons : false
