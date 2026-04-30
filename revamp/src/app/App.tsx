@@ -31,6 +31,7 @@ const LabsAtomTransitions = lazy(() => import('../pages/LabsAtomTransitions').th
 const LabsAtomSequence = lazy(() => import('../pages/LabsAtomSequence').then(m => ({ default: m.LabsAtomSequence })))
 const LabsAtomMotion  = lazy(() => import('../pages/LabsAtomMotion').then(m => ({ default: m.LabsAtomMotion })))
 const LabsHydrogen    = lazy(() => import('../pages/LabsHydrogen').then(m => ({ default: m.LabsHydrogen })))
+const LabsElements    = lazy(() => import('../pages/LabsElements').then(m => ({ default: m.LabsElements })))
 
 export function App() {
   const location = useLocation()
@@ -73,6 +74,7 @@ export function App() {
             <Route path="/labs/atom-sequence" element={<LabsAtomSequence />} />
             <Route path="/labs/atom-motion" element={<LabsAtomMotion />} />
             <Route path="/labs/hydrogen" element={<LabsHydrogen />} />
+            <Route path="/labs/elements" element={<LabsElements />} />
           </Routes>
         </Suspense>
       </ErrorBoundary>
