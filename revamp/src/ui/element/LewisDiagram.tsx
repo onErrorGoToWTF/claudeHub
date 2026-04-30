@@ -9,10 +9,10 @@
 import s from './LewisDiagram.module.css'
 
 const SIZE = 200
-const NUCLEUS_R = 8
-const ELECTRON_R = 3.6
-const SHELL_RADII = [40, 72, 100, 128]
-const PAIR_OFFSET_DEG = 7
+const NUCLEUS_R = 5
+const ELECTRON_R = 2.6
+const SHELL_RADII = [26, 48, 70, 92]
+const PAIR_OFFSET_DEG = 6
 
 // Canonical Lewis-octet placement for K electrons on the given shell.
 //   Shell 0 (n=1, max 2): K=1 → top; K=2 → top + bottom
