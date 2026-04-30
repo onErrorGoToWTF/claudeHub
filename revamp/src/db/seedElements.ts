@@ -102,6 +102,121 @@ export const ELEMENTS: ElementData[] = [
       { name: 'Oxygen-18', protons: 8, neutrons: 10, electrons: 8, stable: true, orbitals: '1s2 2s2 2p4' },
     ],
   },
+  {
+    z: 9, symbol: 'F', name: 'Fluorine',
+    defaultIsotope: 'Fluorine-19', atomicWeight: 18.998,
+    electronConfig: '[He] 2s² 2p⁵',
+    isotopes: [
+      { name: 'Fluorine-19', protons: 9, neutrons: 10, electrons: 9, stable: true, orbitals: '1s2 2s2 2p5' },
+    ],
+  },
+  {
+    z: 10, symbol: 'Ne', name: 'Neon',
+    defaultIsotope: 'Neon-20', atomicWeight: 20.180,
+    electronConfig: '[He] 2s² 2p⁶',
+    isotopes: [
+      { name: 'Neon-20', protons: 10, neutrons: 10, electrons: 10, stable: true, orbitals: '1s2 2s2 2p6' },
+      { name: 'Neon-21', protons: 10, neutrons: 11, electrons: 10, stable: true, orbitals: '1s2 2s2 2p6' },
+      { name: 'Neon-22', protons: 10, neutrons: 12, electrons: 10, stable: true, orbitals: '1s2 2s2 2p6' },
+    ],
+  },
+  {
+    z: 11, symbol: 'Na', name: 'Sodium',
+    defaultIsotope: 'Sodium-23', atomicWeight: 22.990,
+    electronConfig: '[Ne] 3s¹',
+    isotopes: [
+      { name: 'Sodium-23', protons: 11, neutrons: 12, electrons: 11, stable: true, orbitals: '1s2 2s2 2p6 3s1' },
+    ],
+  },
+  {
+    z: 12, symbol: 'Mg', name: 'Magnesium',
+    defaultIsotope: 'Magnesium-24', atomicWeight: 24.305,
+    electronConfig: '[Ne] 3s²',
+    isotopes: [
+      { name: 'Magnesium-24', protons: 12, neutrons: 12, electrons: 12, stable: true, orbitals: '1s2 2s2 2p6 3s2' },
+      { name: 'Magnesium-25', protons: 12, neutrons: 13, electrons: 12, stable: true, orbitals: '1s2 2s2 2p6 3s2' },
+      { name: 'Magnesium-26', protons: 12, neutrons: 14, electrons: 12, stable: true, orbitals: '1s2 2s2 2p6 3s2' },
+    ],
+  },
+  {
+    z: 13, symbol: 'Al', name: 'Aluminum',
+    defaultIsotope: 'Aluminum-27', atomicWeight: 26.982,
+    electronConfig: '[Ne] 3s² 3p¹',
+    isotopes: [
+      { name: 'Aluminum-27', protons: 13, neutrons: 14, electrons: 13, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p1' },
+    ],
+  },
+  {
+    z: 14, symbol: 'Si', name: 'Silicon',
+    defaultIsotope: 'Silicon-28', atomicWeight: 28.085,
+    electronConfig: '[Ne] 3s² 3p²',
+    isotopes: [
+      { name: 'Silicon-28', protons: 14, neutrons: 14, electrons: 14, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p2' },
+      { name: 'Silicon-29', protons: 14, neutrons: 15, electrons: 14, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p2' },
+      { name: 'Silicon-30', protons: 14, neutrons: 16, electrons: 14, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p2' },
+    ],
+  },
+  {
+    z: 15, symbol: 'P', name: 'Phosphorus',
+    defaultIsotope: 'Phosphorus-31', atomicWeight: 30.974,
+    electronConfig: '[Ne] 3s² 3p³',
+    isotopes: [
+      { name: 'Phosphorus-31', protons: 15, neutrons: 16, electrons: 15, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p3' },
+    ],
+  },
+  {
+    z: 16, symbol: 'S', name: 'Sulfur',
+    defaultIsotope: 'Sulfur-32', atomicWeight: 32.06,
+    electronConfig: '[Ne] 3s² 3p⁴',
+    isotopes: [
+      { name: 'Sulfur-32', protons: 16, neutrons: 16, electrons: 16, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p4' },
+      { name: 'Sulfur-33', protons: 16, neutrons: 17, electrons: 16, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p4' },
+      { name: 'Sulfur-34', protons: 16, neutrons: 18, electrons: 16, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p4' },
+      { name: 'Sulfur-36', protons: 16, neutrons: 20, electrons: 16, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p4' },
+    ],
+  },
+  {
+    z: 17, symbol: 'Cl', name: 'Chlorine',
+    defaultIsotope: 'Chlorine-35', atomicWeight: 35.45,
+    electronConfig: '[Ne] 3s² 3p⁵',
+    isotopes: [
+      { name: 'Chlorine-35', protons: 17, neutrons: 18, electrons: 17, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p5' },
+      { name: 'Chlorine-37', protons: 17, neutrons: 20, electrons: 17, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p5' },
+    ],
+  },
+  {
+    z: 18, symbol: 'Ar', name: 'Argon',
+    defaultIsotope: 'Argon-40', atomicWeight: 39.95,
+    electronConfig: '[Ne] 3s² 3p⁶',
+    isotopes: [
+      { name: 'Argon-36', protons: 18, neutrons: 18, electrons: 18, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p6' },
+      { name: 'Argon-38', protons: 18, neutrons: 20, electrons: 18, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p6' },
+      { name: 'Argon-40', protons: 18, neutrons: 22, electrons: 18, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p6' },
+    ],
+  },
+  {
+    z: 19, symbol: 'K', name: 'Potassium',
+    defaultIsotope: 'Potassium-39', atomicWeight: 39.098,
+    electronConfig: '[Ar] 4s¹',
+    isotopes: [
+      { name: 'Potassium-39', protons: 19, neutrons: 20, electrons: 19, stable: true,  orbitals: '1s2 2s2 2p6 3s2 3p6 4s1' },
+      { name: 'Potassium-40', protons: 19, neutrons: 21, electrons: 19, stable: false, orbitals: '1s2 2s2 2p6 3s2 3p6 4s1' },
+      { name: 'Potassium-41', protons: 19, neutrons: 22, electrons: 19, stable: true,  orbitals: '1s2 2s2 2p6 3s2 3p6 4s1' },
+    ],
+  },
+  {
+    z: 20, symbol: 'Ca', name: 'Calcium',
+    defaultIsotope: 'Calcium-40', atomicWeight: 40.078,
+    electronConfig: '[Ar] 4s²',
+    isotopes: [
+      { name: 'Calcium-40', protons: 20, neutrons: 20, electrons: 20, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p6 4s2' },
+      { name: 'Calcium-42', protons: 20, neutrons: 22, electrons: 20, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p6 4s2' },
+      { name: 'Calcium-43', protons: 20, neutrons: 23, electrons: 20, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p6 4s2' },
+      { name: 'Calcium-44', protons: 20, neutrons: 24, electrons: 20, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p6 4s2' },
+      { name: 'Calcium-46', protons: 20, neutrons: 26, electrons: 20, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p6 4s2' },
+      { name: 'Calcium-48', protons: 20, neutrons: 28, electrons: 20, stable: true, orbitals: '1s2 2s2 2p6 3s2 3p6 4s2' },
+    ],
+  },
 ]
 
 // Hydrogen is the only element whose isotopes have proper names.
@@ -111,18 +226,22 @@ export const SPECIAL_ISOTOPE_NAMES: Record<string, string> = {
   'Hydrogen-3': 'Tritium',
 }
 
-// Electron capacities per shell: 2, 8, 18, 32. For Phase 1 (Z 1–8 +
-// reasonable ions), we only need shells 1–2.
+// Bohr-Rutherford shell-fill convention for Z 1–20: 2-8-8-2.
+// (4s fills before 3d so K + Ca have a fourth shell before Sc starts
+// populating the third further.) Anything past 20 electrons spills
+// into a fifth notional shell — we'll refine when Phase 2 extends.
 export function shellDistribution(electrons: number): number[] {
-  const caps = [2, 8, 18, 32]
+  if (electrons <= 0) return []
+  const limits = [2, 8, 8, 2]
   const shells: number[] = []
-  let remaining = Math.max(0, electrons)
-  for (const cap of caps) {
+  let remaining = electrons
+  for (const cap of limits) {
     if (remaining <= 0) break
     const fill = Math.min(remaining, cap)
     shells.push(fill)
     remaining -= fill
   }
+  if (remaining > 0) shells.push(remaining)
   return shells
 }
 
