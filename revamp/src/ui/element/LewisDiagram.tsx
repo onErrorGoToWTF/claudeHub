@@ -17,7 +17,7 @@ const ELECTRON_R = 2.6
 // gaps are constant from n=1 onwards. Heaviest natural element (Z=87,
 // 7 shells) lands at r = 19 + 6·12 = 91, just inside the 200 viewBox.
 const RING_BASE = 19
-const RING_GAP = 12
+const RING_GAP = 10
 
 function ringRadius(shellIndex: number): number {
   return RING_BASE + shellIndex * RING_GAP
