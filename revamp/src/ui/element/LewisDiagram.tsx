@@ -11,17 +11,15 @@ import s from './LewisDiagram.module.css'
 const SIZE = 200
 const NUCLEUS_R = 5
 const ELECTRON_R = 2.6
-// Inner-anchored ring layout: n=1 always at RING_BASE; each next shell
-// is RING_GAP further out. Heaviest natural element (Z=87, 7 shells)
-// lands at r = 14 + 6·12 = 86, leaving margin inside the 200 viewBox.
-// Tight by design — Phase-1 elements (1–2 shells) cluster near center.
-const RING_BASE = 14
+// Equidistant ring layout: n=1 sits at RING_BASE (a bit further from
+// the nucleus than RING_GAP would suggest, so the innermost ring isn't
+// crowded). Every subsequent shell is exactly RING_GAP further out —
+// gaps are constant from n=1 onwards. Heaviest natural element (Z=87,
+// 7 shells) lands at r = 19 + 6·12 = 91, just inside the 200 viewBox.
+const RING_BASE = 19
 const RING_GAP = 12
 
 function ringRadius(shellIndex: number): number {
-  // n=1 sits a touch wider than the linear progression so the innermost
-  // ring doesn't crowd the nucleus. Outer shells follow the constant gap.
-  if (shellIndex === 0) return 19
   return RING_BASE + shellIndex * RING_GAP
 }
 
