@@ -5,7 +5,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #f6f3ee 0%, #efeae3 100%);
+  background: #ffffff;
+  color-scheme: light;
   padding: 24px 16px;
   gap: 32px;
   overflow: hidden;
@@ -75,18 +76,4 @@
 
 @media (prefers-reduced-motion: reduce) {
   .nav { transition: none; }
-}
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    background: linear-gradient(180deg, #1c1a17 0%, #16140f 100%);
-  }
-  .nav {
-    background: rgba(255, 255, 255, 0.05);
-    color: #e8e6e2;
-    border-color: rgba(255, 255, 255, 0.08);
-  }
-  .nav:hover:not(:disabled) {
-    background: rgba(120, 170, 230, 0.16);
-  }
 }

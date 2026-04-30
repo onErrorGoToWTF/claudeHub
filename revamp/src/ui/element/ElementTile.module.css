@@ -2,9 +2,10 @@
   position: relative;
   width: 280px;
   height: 360px;
-  background: var(--bg-card, #ffffff);
+  background: #ffffff;
+  color-scheme: light;
   border-radius: var(--radius-lg, 14px);
-  border: 1px solid var(--hair, rgba(20, 19, 18, 0.10));
+  border: 1px solid rgba(20, 19, 18, 0.10);
   box-shadow:
     0 0 0 1px rgba(120, 170, 230, 0.18),
     0 0 28px -4px rgba(120, 170, 230, 0.32),
@@ -105,26 +106,4 @@
   margin: auto;
   color: rgba(43, 43, 43, 0.5);
   font-size: 14px;
-}
-
-@media (prefers-color-scheme: dark) {
-  .tile {
-    background: #242120;
-    border-color: rgba(255, 255, 255, 0.08);
-    color: #e8e6e2;
-    box-shadow:
-      0 0 0 1px rgba(120, 170, 230, 0.22),
-      0 0 32px -4px rgba(120, 170, 230, 0.36),
-      0 4px 24px -6px rgba(0, 0, 0, 0.5),
-      0 1px 0 rgba(255, 255, 255, 0.05) inset;
-  }
-  .subtitle {
-    color: rgba(232, 230, 226, 0.62);
-  }
-  .config {
-    color: rgba(232, 230, 226, 0.7);
-  }
-  .empty {
-    color: rgba(232, 230, 226, 0.5);
-  }
 }

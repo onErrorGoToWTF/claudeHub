@@ -90,28 +90,3 @@
 @media (prefers-reduced-motion: reduce) {
   .step { transition: none; }
 }
-
-@media (prefers-color-scheme: dark) {
-  .bar {
-    background: rgba(40, 38, 35, 0.62);
-    border-color: rgba(120, 170, 230, 0.25);
-    box-shadow:
-      0 0 24px -4px rgba(120, 170, 230, 0.32),
-      0 8px 28px -10px rgba(0, 0, 0, 0.5),
-      0 1px 0 rgba(255, 255, 255, 0.05) inset;
-  }
-  .label {
-    color: rgba(232, 230, 226, 0.6);
-  }
-  .step {
-    background: rgba(255, 255, 255, 0.05);
-    color: #e8e6e2;
-    border-color: rgba(255, 255, 255, 0.08);
-  }
-  .step:hover:not(:disabled) {
-    background: rgba(120, 170, 230, 0.16);
-  }
-  .value {
-    color: #e8e6e2;
-  }
-}
