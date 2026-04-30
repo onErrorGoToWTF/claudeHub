@@ -1,20 +1,24 @@
 /*
  * Bohr-Rutherford "Lewis-style" diagram. SVG. Concentric rings + nucleus
  * at center + electrons grouped into cardinal CLUSTERS (top, bottom,
- * right, left) — the same artistic layout the reference periodic-table
- * cards use.
+ * right, left), matching the reference periodic-table card layout.
  *
- * Distribution rule: split K electrons across 4 cardinal slots in order
- * top → bottom → right → left, first slots get one extra when K is not
- * divisible by 4. Each slot's M dots render in a tight 2-column grid
- * centered on the ring point.
+ * Distribution rule: K electrons split across 4 cardinal slots in order
+ * top → bottom → right → left; first (K mod 4) slots get one extra dot.
  *
- * Nucleus is a small outlined circle with an inner dot — visible as a
- * proper "circle" not just a black dot, and ready to act as a tap area
- * for the future "zoom into the nucleus" feature.
+ * Cluster shape per slot of M dots: a tight grid centered on the ring.
+ *   M=1 → single dot
+ *   M=2 → horizontal pair (along the tangent)
+ *   M=3 → 2 + 1 triangle pointing radially outward
+ *   M=4 → 2×2 square
+ *   M=5–9 → 3-wide grid; last partial row centered tangentially
  *
  * Sizes are locked: nucleus, ring radii, electron radius, cluster
- * spacing all stay constant across every element.
+ * spacing all stay constant across every element. Cluster radial span
+ * stays inside the inter-ring gap.
+ *
+ * Nucleus is a small outlined circle with an inner dot (acts as a
+ * future tap target for the nuclear-physics zoom view).
  */
 import s from './LewisDiagram.module.css'
 
@@ -25,7 +29,7 @@ const NUCLEUS_STROKE = 1.2
 const ELECTRON_R = 3
 const RING_BASE = 19
 const RING_GAP = 10
-const CLUSTER_SPACING = 7
+const CLUSTER_SPACING = 6.5
 
 const CARDINALS = [0, 180, 90, 270] as const   // top, bottom, right, left
 
@@ -46,21 +50,34 @@ function distributeToCardinals(K: number): [number, number, number, number] {
   ]
 }
 
-// Cluster-local positions for M dots in a 2-column grid centered on the
-// ring point. Tangent axis runs along the ring; radial axis runs outward
-// from the nucleus. Last dot of an odd M is centered tangentially.
+// Adaptive grid width: 2 cols for tight clusters (≤4), 3 cols for 5+.
+// Keeps the radial span small relative to the inter-ring gap so the
+// 18-electron shells (max cluster of 5 with our rule) don't crowd
+// neighbouring rings.
+function clusterCols(M: number): number {
+  if (M <= 1) return 1
+  if (M <= 4) return 2
+  return 3
+}
+
+// Cluster-local (tangent, radial) offsets in CLUSTER_SPACING units.
+// Tangent runs along the ring (perpendicular to radial). Radial runs
+// outward from the nucleus. Cluster is centered on the ring point.
+// Last partial row is centered tangentially.
 function clusterOffsets(M: number): Array<[number, number]> {
   if (M <= 0) return []
   if (M === 1) return [[0, 0]]
-  const cols = 2
+  const cols = clusterCols(M)
   const rows = Math.ceil(M / cols)
   const out: Array<[number, number]> = []
   for (let i = 0; i < M; i++) {
     const col = i % cols
     const row = Math.floor(i / cols)
+    const isLastRow = row === rows - 1
+    const dotsInRow = isLastRow ? M - row * cols : cols
+    const colOffset = (cols - dotsInRow) / 2
+    const tangent = col + colOffset - (cols - 1) / 2
     const radial = row - (rows - 1) / 2
-    const isOddLast = M % 2 === 1 && i === M - 1
-    const tangent = isOddLast ? 0 : col - 0.5
     out.push([tangent, radial])
   }
   return out
@@ -73,9 +90,7 @@ function placeShellElectrons(K: number, r: number, cx: number, cy: number) {
   for (let s = 0; s < 4; s++) {
     const M = slots[s]
     if (M === 0) continue
-    const dirDeg = CARDINALS[s]
-    const dirRad = (dirDeg * Math.PI) / 180
-    // tangent (along ring) and radial (outward) unit vectors
+    const dirRad = (CARDINALS[s] * Math.PI) / 180
     const tx = Math.cos(dirRad)
     const ty = Math.sin(dirRad)
     const rx = Math.sin(dirRad)
@@ -117,8 +132,8 @@ export function LewisDiagram({ shells }: { shells: number[] }) {
         />
       ))}
 
-      {/* Nucleus = outlined circle + small inner dot. Will become a tap
-          target for the nuclear-physics zoom view later. */}
+      {/* Nucleus = outlined circle + small inner dot. Will become a
+          tap target for the nuclear-physics zoom view later. */}
       <circle
         cx={cx}
         cy={cy}
