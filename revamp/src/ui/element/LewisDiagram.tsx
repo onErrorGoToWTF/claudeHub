@@ -11,13 +11,14 @@
  *
  * Per-shell axis sets:
  *   shell 1: N only
- *   shell 2: 4 cardinals
- *   shell 3+: all 8 axes
+ *   shell 2: 4 cardinals (N, E, S, W)
+ *   shell 3+: cardinals first, then ordinals (NE, SE, SW, NW)
  *
- * Fill order (Hund-style, clockwise from N):
+ * Fill order (Hund-style, clockwise from N within each axis group):
  *   for each stack k = 0, 1, 2, …
- *     pass 1: drop a single at every axis in order
- *     pass 2: convert each axis's single into a pair, in the same order
+ *     for each axis group (cardinals → ordinals):
+ *       singles round: drop a single at every axis in order
+ *       pairs round: convert each single into a pair, same order
  *
  * Angle convention: 0° = +x (right), 90° = down (+y) — SVG.
  */
@@ -36,10 +37,14 @@ const RING_GAP = 12
 const ELECTRON_R = ELECTRON_R_FACTOR * SIZE       // 4
 const NUCLEUS_R = NUCLEUS_R_FACTOR * SIZE         // 8
 
-// Tangential half-gap of a pair (pixels). Total pair-dot separation = 2×.
-const PAIR_HALF_GAP = 4
+// Pair offset is RADIAL — the two dots of a pair sit ON the axis line,
+// one slightly inward and one slightly outward of the ring radius. This
+// keeps every electron on its axis, so a ruler placed horizontally /
+// vertically / on a 45° diagonal through the nucleus hits every dot
+// that lives on that axis (singles and both pair-mates).
+const PAIR_HALF_GAP = 5
 // Radial step between stack levels along an axis (pixels).
-const STACK_STEP = 6
+const STACK_STEP = 11
 
 const N = -Math.PI / 2
 const E = 0
@@ -50,15 +55,22 @@ const SE = Math.PI / 4
 const SW = (3 * Math.PI) / 4
 const NW = (-3 * Math.PI) / 4
 
-// Per-shell axis fill order. shellIdx is 0-based (0 = n=1).
-const AXES_BY_SHELL: number[][] = [
-  [N],
-  [N, E, S, W],
-  [N, E, S, W, NE, SE, SW, NW],
+// Axis groups. Within a shell, all electrons fill the cardinals group
+// (singles round → pairs round) BEFORE any ordinal slot opens. This
+// matches the user's reference: Cl (shell 3 = 7e) = pairs N/E/S + single
+// W — cardinals only, not spread across 8 axes.
+const CARDINALS = [N, E, S, W]
+const ORDINALS = [NE, SE, SW, NW]
+
+// Per-shell axis groups, filled in order. shellIdx is 0-based.
+const AXIS_GROUPS_BY_SHELL: number[][][] = [
+  [[N]],                       // shell 1: just N
+  [CARDINALS],                 // shell 2: cardinals only
+  [CARDINALS, ORDINALS],       // shell 3+: cardinals first, then ordinals
 ]
 
-function axesForShell(shellIdx: number): number[] {
-  return AXES_BY_SHELL[Math.min(shellIdx, AXES_BY_SHELL.length - 1)]
+function axisGroupsForShell(shellIdx: number): number[][] {
+  return AXIS_GROUPS_BY_SHELL[Math.min(shellIdx, AXIS_GROUPS_BY_SHELL.length - 1)]
 }
 
 function shellRadius(shellIndex: number): number {
@@ -74,10 +86,8 @@ function computeShellDots(
   cy: number,
 ): Dot[] {
   if (K <= 0) return []
-  const axes = axesForShell(shellIdx)
+  const groups = axisGroupsForShell(shellIdx)
   const baseR = shellRadius(shellIdx)
-  // Track per-axis state at the current stack level: 0 = empty, 1 = single, 2 = paired.
-  const axisState: number[] = new Array(axes.length).fill(0)
   const dots: Dot[] = []
   let placed = 0
   let stack = 0
@@ -85,41 +95,41 @@ function computeShellDots(
   while (placed < K) {
     const r = baseR + stack * STACK_STEP
 
-    // Pass 1: singles at every axis.
-    for (let i = 0; i < axes.length && placed < K; i++) {
-      if (axisState[i] !== 0) continue
-      const θ = axes[i]
-      dots.push({ x: cx + r * Math.cos(θ), y: cy + r * Math.sin(θ) })
-      axisState[i] = 1
-      placed++
-    }
+    // Within one stack level: fill each axis group fully (singles round
+    // then pairs round) before opening the next group.
+    for (let g = 0; g < groups.length && placed < K; g++) {
+      const group = groups[g]
+      // Track which axes in this group at this stack level hold a single.
+      const singleIndex: number[] = []
 
-    // Pass 2: promote each single to a pair.
-    for (let i = 0; i < axes.length && placed < K; i++) {
-      if (axisState[i] !== 1) continue
-      const θ = axes[i]
-      const ax = cx + r * Math.cos(θ)
-      const ay = cy + r * Math.sin(θ)
-      // Tangent unit vector (perpendicular to axis): (-sin θ, cos θ)
-      const tx = -Math.sin(θ)
-      const ty = Math.cos(θ)
-      // Replace the single (last index in dots that matches) with two pair-dots.
-      // Easier: find and rewrite. Walk back through dots at this stack level.
-      for (let j = dots.length - 1; j >= 0; j--) {
-        if (Math.abs(dots[j].x - ax) < 1e-6 && Math.abs(dots[j].y - ay) < 1e-6) {
-          dots[j] = { x: ax - PAIR_HALF_GAP * tx, y: ay - PAIR_HALF_GAP * ty }
-          break
-        }
+      // Singles round.
+      for (let i = 0; i < group.length && placed < K; i++) {
+        const θ = group[i]
+        dots.push({ x: cx + r * Math.cos(θ), y: cy + r * Math.sin(θ) })
+        singleIndex.push(dots.length - 1)
+        placed++
       }
-      dots.push({ x: ax + PAIR_HALF_GAP * tx, y: ay + PAIR_HALF_GAP * ty })
-      axisState[i] = 2
-      placed++
+
+      // Pairs round — promote each single to a pair, in same order.
+      // Pair offset is RADIAL: dots sit on the axis line, one inward
+      // and one outward of the ring radius by PAIR_HALF_GAP.
+      for (let i = 0; i < singleIndex.length && placed < K; i++) {
+        const θ = group[i]
+        const idx = singleIndex[i]
+        const ax = dots[idx].x
+        const ay = dots[idx].y
+        // Radial unit vector along the axis: (cos θ, sin θ)
+        const nx = Math.cos(θ)
+        const ny = Math.sin(θ)
+        dots[idx] = { x: ax - PAIR_HALF_GAP * nx, y: ay - PAIR_HALF_GAP * ny }
+        dots.push({ x: ax + PAIR_HALF_GAP * nx, y: ay + PAIR_HALF_GAP * ny })
+        placed++
+      }
     }
 
     if (placed < K) {
-      // Stack k saturated — open the next stack.
+      // All groups saturated at this stack — open the next stack.
       stack++
-      axisState.fill(0)
     }
   }
 
