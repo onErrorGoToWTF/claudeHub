@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T19:03:27.855Z",
+  "generated_at": "2026-04-30T20:47:53.311Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,20 @@
     ],
     "news": [
       {
+        "title": "After dissing Anthropic for limiting Mythos, OpenAI restricts access to Cyber, too",
+        "url": "https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/",
+        "source": "TechCrunch",
+        "published": "2026-04-30T19:27:41.000Z",
+        "summary": "OpenAI will begin rolling out its cybersecurity testing tool, GPT-5.5 Cyber only \"to critical cyber defenders\" at first."
+      },
+      {
+        "title": "Anthropic launches Claude Security in public beta for enterprise customers - The Economic Times",
+        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQdi1YUFhNYzR1MVFtb0NVZ0FVNm5TSGVpU2s3ZGFSOXVlZFNnaklRYmhDZUpCSjJUSzdjSnRfRFo2QXJtOHJMUkgtanhUczV6S1FKZ0FrSFh1R2F4Wm5kV25mOFZ0VkN3Zmh1Z1JEVGUtYXJ0eGRUZlpneG4wSUUwb1NDUmlDTDdVcEVFQzV0NEk2SFh1NlhZeHo1S1lwM3NCdzhxSWk3azhBVGVRVXJSQ3pIUmU1ZVFpaWtuRnV1SWJHQXJyYTZsancwOUpPcGhkZXFJUDNxVWlQQ1VORjg3TEtTU2pIUmt0RTk2TC1B0gHzAUFVX3lxTE1Lb1ZBZUpQVXc5SFlhOVhtREJQYTBaN040cHFJci1oLV9kNWtCVERyOUhyTVZTcXFhcVZ1bGFuZHdWWTdWYXZONG56Q0pITVNoWXVLM2JjX0xkdmdndHJjZExXMmduR2RhRVFkNjAtUnd6YkduLWtSdVY0N2ppbUFmN0lReUx0ODRmcE95eXlnY1piVHBtYUZoU1cweVpoWDRGdzNOYWFvTGI0cXRtbDduV3JZLXR4aXlJVWo3Rzc4NW5pNy0xRHpYb1MwS2dfc3ZTZnRiNWdpQVVYY0NFbFdnVFl3bjUzd3BSR3dCWldHV3MxRQ?oc=5",
+        "source": "Google News",
+        "published": "2026-04-30T19:23:43.000Z",
+        "summary": "Anthropic launches Claude Security in public beta for enterprise customers The Economic Times"
+      },
+      {
         "title": "Anthropic's Powerful New Cybersecurity Tool Is Designed to Find Vulnerabilities in Your Code—and Patch Them - inc.com",
         "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOWThCZFlBRFRzal9wa0FwQVcxc0FpQW5pOE1UNmpTZmU4cmw1bm5QWUVhUnpLWUZ1WDBsZDc3UTVBUkk2clFUMEtTdjNsYUE5c09QOUhQX20yRm8tTkxjTFlwcXE0MlM0TFJzTlRIWGQzb2l5amFyMjJ3MkVfS1pWQlJXT2phOEZJdmFVbFM1cE5RUGI4MGxoYjdRcnViOGRPcmFPNklJTnpKX21oQkZMVV9qeGRFM1k1UmtybHY4aU9LNFZZSG5GOGxpeWlsdS1LNHNMeE51NjY5aS1CRmt4QnNB?oc=5",
         "source": "Google News",
@@ -267,17 +281,10 @@
       {
         "title": "Claude Code refuses requests or charges extra if your commits mention \"OpenClaw\"",
         "url": "https://twitter.com/theo/status/2049645973350363168",
-        "source": "HN · 526↑",
+        "source": "HN · 714↑",
         "hn_id": "47963204",
         "published": "2026-04-30T14:36:58.000Z",
         "summary": "https:&#x2F;&#x2F;xcancel.com&#x2F;theo&#x2F;status&#x2F;2049645973350363168"
-      },
-      {
-        "title": "NSA Testing Anthropic’s Mythos to Find Flaws in Microsoft Tech",
-        "url": "https://www.bloomberg.com/news/articles/2026-04-30/nsa-testing-anthropic-s-mythos-to-find-flaws-in-microsoft-tech",
-        "source": "Bloomberg",
-        "published": "2026-04-30T14:06:45.000Z",
-        "summary": "The National Security Agency has been testing the capabilities of Anthropic PBC’s new artificial intelligence model to find cybersecurity vulnerabilities in popular software, including Microsoft…"
       },
       {
         "title": "Canva announces their new collaboration with Claude Design by Anthropic Labs - Campaign Middle East",
@@ -313,13 +320,6 @@
         "source": "Google News",
         "published": "2026-04-30T12:13:38.000Z",
         "summary": "Victim of AI agent that deleted company's entire database gets their data back — cloud provider recovers critical files and broadens its 48-hour delayed delete policy Tom's Hardware"
-      },
-      {
-        "title": "iCapital®, With Anthropic, to Power AI‑Driven Client Experience for Alternatives, Structured Investments, and Annuities - Business Wire",
-        "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPVkhyamFOM0h0VC1BRGMwam1ib0pKYU5Idno5OHRWSXFjZXRVN3FmOEt5akppYUhxYUVtSDdPOTdQRndPcE1EY1p1TWUwYnNTZlJmVVUwbzc2a1I1bm9iRlI3bl9SWlRDbHdVaTYzWExWNlJ5T0lmSzhNVEZIazF2WWhsdk9rWTBuQXJselh2QUdpamtvRjh2ZWtrdVF4eTF4dW4yZVdSWWFvcGYzUkNicmlzVjNMUlhpRGc3NVV0NjlYcHNldXRwVmE5ckR0VHBwZEdhLUw4c3d3aTZEWlNydHF0RjFWUkN5V21vUXJTbkZHc1B4eFZ2V3pUME5RcHM?oc=5",
-        "source": "Google News",
-        "published": "2026-04-30T12:00:00.000Z",
-        "summary": "iCapital®, With Anthropic, to Power AI‑Driven Client Experience for Alternatives, Structured Investments, and Annuities Business Wire"
       },
       {
         "title": "🔴LIVE: The new Claude Code plugins are incredible...",
