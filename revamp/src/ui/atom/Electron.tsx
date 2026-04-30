@@ -33,6 +33,12 @@ export type OrbitConfig = {
   // to smoothstep so velocity is continuous at the transition boundary).
   settleDurationT?: number
   settleEase?: 'outCubic' | 'smoothstep'
+  // Per-electron visual size overrides. Defaults preserve the wordmark
+  // logo + labs sizing; pages that want a daintier electron (like the
+  // hydrogen lab) can dial these down.
+  headSize?: number      // sphere radius of the bright head dot. Default 0.050
+  haloSize?: number      // sphere radius of the strike halo. Default 0.050
+  trailWidth?: number    // meshLineMaterial lineWidth for the tail. Default 0.17
 }
 
 export function easeOutCubic(x: number): number {
@@ -273,7 +279,7 @@ export function Electron({
         <meshLineMaterial
           ref={trailMatRef}
           color={ELECTRON.trail.color}
-          lineWidth={0.17}
+          lineWidth={config.trailWidth ?? 0.17}
           transparent
           opacity={0}
           depthWrite={false}
@@ -284,7 +290,7 @@ export function Electron({
         />
       </mesh>
       <mesh ref={haloRef} scale={0.0001}>
-        <sphereGeometry args={[0.050, 32, 32]} />
+        <sphereGeometry args={[config.haloSize ?? 0.050, 32, 32]} />
         <meshBasicMaterial
           ref={haloMatRef}
           color={ELECTRON.halo.color}
@@ -295,7 +301,7 @@ export function Electron({
         />
       </mesh>
       <mesh ref={headRef}>
-        <sphereGeometry args={[0.050, 32, 32]} />
+        <sphereGeometry args={[config.headSize ?? 0.050, 32, 32]} />
         <meshBasicMaterial
           ref={headMatRef}
           color={ELECTRON.head.color}

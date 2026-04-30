@@ -17,6 +17,9 @@ const HYDROGEN_ELECTRON: OrbitConfig = {
   phase: 0,
   laps: 0,
   postLandVisibility: 1,
+  headSize: 0.015,
+  haloSize: 0.015,
+  trailWidth: 0.08,
 }
 
 export function LabsHydrogen() {
