@@ -19,6 +19,9 @@ const RING_BASE = 14
 const RING_GAP = 12
 
 function ringRadius(shellIndex: number): number {
+  // n=1 sits a touch wider than the linear progression so the innermost
+  // ring doesn't crowd the nucleus. Outer shells follow the constant gap.
+  if (shellIndex === 0) return 19
   return RING_BASE + shellIndex * RING_GAP
 }
 
