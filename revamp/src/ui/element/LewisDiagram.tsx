@@ -1,23 +1,25 @@
 /*
- * Bohr-style electron diagram. Implements the user-supplied
- * UNIVERSAL ELECTRON POSITION MAP — fixed slot angles per shell;
- * an element with K electrons in shell i fills the FIRST K entries.
- * Electrons never move when the element changes.
+ * Bohr-style electron diagram. Axis-locked geometry:
+ *   - Electrons live on 8 axes through the nucleus
+ *     (N, E, S, W cardinals + NE, SE, SW, NW ordinals).
+ *   - Single = dot centered on its axis line.
+ *   - Pair = two dots straddling its axis line with a FIXED PIXEL gap
+ *     (identical on every ring — never grows with radius).
+ *   - Multiple pairs on the same axis stack RADIALLY OUTWARD with a
+ *     fixed pixel step.
+ *   - Same-axis electrons across rings are colinear with the nucleus.
  *
- * Card-relative factors (× SIZE):
- *   outer radius   0.38   electron radius 0.02
- *   nucleus radius 0.04   pair separation 0.04 (encoded as ±5° tangent)
+ * Per-shell axis sets:
+ *   shell 1: N only
+ *   shell 2: 4 cardinals
+ *   shell 3+: all 8 axes
  *
- * Shell radius = outer · (shellIndex + 1) / shellCount — the outermost
- * ring sits at the same on-card distance for every element; inner
- * shells fit proportionally.
+ * Fill order (Hund-style, clockwise from N):
+ *   for each stack k = 0, 1, 2, …
+ *     pass 1: drop a single at every axis in order
+ *     pass 2: convert each axis's single into a pair, in the same order
  *
- * Angle convention: 0° = +x (right). y = sin(θ) (down in SVG).
- *   x = cx + r·cos(θ)
- *   y = cy + r·sin(θ)
- *
- * Nucleus = outlined circle (no center dot) — future tap target for
- * the nuclear-physics zoom view.
+ * Angle convention: 0° = +x (right), 90° = down (+y) — SVG.
  */
 import s from './LewisDiagram.module.css'
 
@@ -27,62 +29,101 @@ const NUCLEUS_R_FACTOR = 0.04
 const NUCLEUS_STROKE = 1.2
 
 // FIXED ring radii — same value for every element. Ring n=1 is always
-// at RING_BASE; each subsequent shell adds RING_GAP. Heaviest natural
-// element (Z=87, 7 shells) lands at 16 + 6·12 = 88, leaving viewBox
-// margin for the electron radius.
+// at RING_BASE; each subsequent shell adds RING_GAP.
 const RING_BASE = 16
 const RING_GAP = 12
 
 const ELECTRON_R = ELECTRON_R_FACTOR * SIZE       // 4
 const NUCLEUS_R = NUCLEUS_R_FACTOR * SIZE         // 8
 
-// Per-shell fixed slot angles. First K entries are used.
-const SHELL_SLOTS: number[][] = [
-  // n=1 (max 2): tight pair around 0°
-  [-5, 5],
+// Tangential half-gap of a pair (pixels). Total pair-dot separation = 2×.
+const PAIR_HALF_GAP = 4
+// Radial step between stack levels along an axis (pixels).
+const STACK_STEP = 6
 
-  // n=2 (max 8): 4 cardinal pairs
-  [-5, 5, 85, 95, 175, 185, 265, 275],
+const N = -Math.PI / 2
+const E = 0
+const S = Math.PI / 2
+const W = Math.PI
+const NE = -Math.PI / 4
+const SE = Math.PI / 4
+const SW = (3 * Math.PI) / 4
+const NW = (-3 * Math.PI) / 4
 
-  // n=3 (max 18): 9 pairs evenly at 40° step
-  [-5, 5, 35, 45, 75, 85, 115, 125, 155, 165, 195, 205, 235, 245, 275, 285, 315, 325],
-
-  // n=4 (max 18 in our visualization): same as n=3 rotated 15°
-  [10, 20, 50, 60, 90, 100, 130, 140, 170, 180, 210, 220, 250, 260, 290, 300, 330, 340],
-
-  // n=5: 4 cardinal pairs + diagonal single — partial fills take first K
-  [-5, 5, 85, 95, 175, 185, 265, 275, 225],
-
-  // n=6 (max 18): same as n=3
-  [-5, 5, 35, 45, 75, 85, 115, 125, 155, 165, 195, 205, 235, 245, 275, 285, 315, 325],
-
-  // n=7 (max 8): same as n=2
-  [-5, 5, 85, 95, 175, 185, 265, 275],
+// Per-shell axis fill order. shellIdx is 0-based (0 = n=1).
+const AXES_BY_SHELL: number[][] = [
+  [N],
+  [N, E, S, W],
+  [N, E, S, W, NE, SE, SW, NW],
 ]
+
+function axesForShell(shellIdx: number): number[] {
+  return AXES_BY_SHELL[Math.min(shellIdx, AXES_BY_SHELL.length - 1)]
+}
 
 function shellRadius(shellIndex: number): number {
   return RING_BASE + shellIndex * RING_GAP
 }
 
-function shellElectronAngles(K: number, shellIndex: number): number[] {
-  const slots = SHELL_SLOTS[shellIndex] ?? SHELL_SLOTS[SHELL_SLOTS.length - 1]
-  return slots.slice(0, K)
-}
+type Dot = { x: number; y: number }
 
-function placeShellElectrons(
+function computeShellDots(
+  shellIdx: number,
   K: number,
-  shellIndex: number,
   cx: number,
   cy: number,
-) {
-  const r = shellRadius(shellIndex)
-  return shellElectronAngles(K, shellIndex).map(deg => {
-    const rad = (deg * Math.PI) / 180
-    return {
-      x: cx + r * Math.cos(rad),
-      y: cy + r * Math.sin(rad),
+): Dot[] {
+  if (K <= 0) return []
+  const axes = axesForShell(shellIdx)
+  const baseR = shellRadius(shellIdx)
+  // Track per-axis state at the current stack level: 0 = empty, 1 = single, 2 = paired.
+  const axisState: number[] = new Array(axes.length).fill(0)
+  const dots: Dot[] = []
+  let placed = 0
+  let stack = 0
+
+  while (placed < K) {
+    const r = baseR + stack * STACK_STEP
+
+    // Pass 1: singles at every axis.
+    for (let i = 0; i < axes.length && placed < K; i++) {
+      if (axisState[i] !== 0) continue
+      const θ = axes[i]
+      dots.push({ x: cx + r * Math.cos(θ), y: cy + r * Math.sin(θ) })
+      axisState[i] = 1
+      placed++
     }
-  })
+
+    // Pass 2: promote each single to a pair.
+    for (let i = 0; i < axes.length && placed < K; i++) {
+      if (axisState[i] !== 1) continue
+      const θ = axes[i]
+      const ax = cx + r * Math.cos(θ)
+      const ay = cy + r * Math.sin(θ)
+      // Tangent unit vector (perpendicular to axis): (-sin θ, cos θ)
+      const tx = -Math.sin(θ)
+      const ty = Math.cos(θ)
+      // Replace the single (last index in dots that matches) with two pair-dots.
+      // Easier: find and rewrite. Walk back through dots at this stack level.
+      for (let j = dots.length - 1; j >= 0; j--) {
+        if (Math.abs(dots[j].x - ax) < 1e-6 && Math.abs(dots[j].y - ay) < 1e-6) {
+          dots[j] = { x: ax - PAIR_HALF_GAP * tx, y: ay - PAIR_HALF_GAP * ty }
+          break
+        }
+      }
+      dots.push({ x: ax + PAIR_HALF_GAP * tx, y: ay + PAIR_HALF_GAP * ty })
+      axisState[i] = 2
+      placed++
+    }
+
+    if (placed < K) {
+      // Stack k saturated — open the next stack.
+      stack++
+      axisState.fill(0)
+    }
+  }
+
+  return dots
 }
 
 export function LewisDiagram({ shells }: { shells: number[] }) {
@@ -120,7 +161,7 @@ export function LewisDiagram({ shells }: { shells: number[] }) {
       />
 
       {shells.map((K, i) =>
-        placeShellElectrons(K, i, cx, cy).map((pos, j) => (
+        computeShellDots(i, K, cx, cy).map((pos, j) => (
           <circle
             key={`e-${i}-${j}`}
             cx={pos.x}
