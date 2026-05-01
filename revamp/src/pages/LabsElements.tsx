@@ -105,7 +105,9 @@ export function LabsElements() {
           dampingFactor={0.07}
           minDistance={1.5}
           maxDistance={30}
+          enableRotate={false}
           enablePan={false}
+          enableZoom
         />
 
         <EffectComposer>
