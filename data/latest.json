@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-05-01T12:50:06.663Z",
+  "generated_at": "2026-05-01T14:44:33.283Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Emotion Concepts Function",
+        "url": "https://www.anthropic.com/research/emotion-concepts-function",
+        "source": "Anthropic Research",
+        "published": "2026-05-01T13:51:54.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Personal Guidance",
         "url": "https://www.anthropic.com/research/claude-personal-guidance",
@@ -135,16 +142,44 @@
         "source": "Anthropic Eng",
         "published": "2026-04-13T17:46:47.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude for Financial Services",
-        "url": "https://www.anthropic.com/news/claude-for-financial-services",
-        "source": "Anthropic",
-        "published": "2026-04-10T12:11:09.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Pentagon strikes classified AI deals with OpenAI, Google, and Nvidia — but not Anthropic",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/922113/pentagon-ai-classified-openai-google-nvidia",
+        "source": "The Verge",
+        "published": "2026-05-01T14:09:56.000Z",
+        "summary": "The Pentagon has struck deals with OpenAI, Google, Microsoft, Amazon, Nvidia, Elon Musk's xAI, and the startup Reflection, allowing the agency to use their AI tools in classified settings, according…"
+      },
+      {
+        "title": "Pentagon strikes deals with 7 big tech companies after shunning Anthropic - MSN",
+        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNYUt5Z0VZY2h0MlJ0b2lBVmRZeUp6eXpCRE9KR1ZvUTR2RmZoX2Y5SUlCWk1WZzU3TzlhN2xiaDZLcU9hdTRwUTltWkZveFF4ZE1abmpFTDltcHZqOTVyTndOM3NTamFfSTl6OTlyT3J5eHlUbklZT0c1NDBSS1ZwVVcwdm9xODRkekpiY0JldUhuWHRjdmhQOGNuTmpaUkxsc2ppcGo2SmFvTXMyNlFFc0syd3JrQWJhbzFxal81R1dfQzJ5MkU2QlhGNDMzWUNLUmxQS2Q3R3B4YkltcXhrbkhhLU50ZUhx?oc=5",
+        "source": "Google News",
+        "published": "2026-05-01T13:23:12.000Z",
+        "summary": "Pentagon strikes deals with 7 big tech companies after shunning Anthropic MSN"
+      },
+      {
+        "title": "Pentagon Keeps Anthropic Claude Ban, Separates Mythos Amid 'National Security' Concerns - Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPZmRqY0xONWpQaUV3SUtfTHhya2pOcnlra3BDMXJDVnREYkJfQ1B0bjZFbzlmcUxoaXQ3bHI1VWhaLWtfSVdPeHdRVmlqaURCRkh5SDJkNEluY3hmY0lTUHlYeGZlTDFiZUpaX2ZFTnlmaDIzMEZiM1BZOS1jVHJjZURrWl9CZzlnald1b1JvX19nRXFBTEdIaWtabVB1R1RURHJBaUhsTHA2RGw4bnlHblZIM3dTaHIzNDJIUFl0Z1dvaHg0THQ1TzRYVTI2UzFpSVd2cA?oc=5",
+        "source": "Google News",
+        "published": "2026-05-01T13:06:57.000Z",
+        "summary": "Pentagon Keeps Anthropic Claude Ban, Separates Mythos Amid 'National Security' Concerns Benzinga"
+      },
+      {
+        "title": "Pentagon signs deal with six top AI companies for classified work after Anthropic fallout - Washington Examiner",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZjlkRjZiLUpGb01lVmJ5TXJaRVF0Szl4MFk3ejlSb2RTTDR4dkU3YmxXTFdCZEZUQVdJYWl2WVJkZXVjLTExT3RURHExemlwWnNiNVQxYW9jck43a3RYekN3eHVyRFpXRjVKRzU5bHIxWnhONzJvakpHM0FxdGhYQjhDRGFLaUpCN2N0MVZBcE9ieVNoSHJMLTREVXRTQ3NyMWtsSVZRNEZvdw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-01T12:51:00.000Z",
+        "summary": "Pentagon signs deal with six top AI companies for classified work after Anthropic fallout Washington Examiner"
+      },
+      {
+        "title": "Can Anthropic’s Mythos Hack Europe’s Banks? - Disruption Banking",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOWW9zeGUzMHpsU3B4V0R4SzgwS2w5cW45elVNWWNETE9EVzRHbjNSRld1ZXpNYmlNNEhWSjJCTzhvdXVlVEE0TlJ4TFFtQXZDWHRqSkdnWnBEZ2ZVa3JXYUZmM1lZcEc2dmFFQ1hjSmdiZHhaMnNtcmdVM1lWZ0lvMnNQd2xidzR6eVNPbThkbw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-01T12:45:44.000Z",
+        "summary": "Can Anthropic’s Mythos Hack Europe’s Banks? Disruption Banking"
+      },
       {
         "title": "Cowork vs Claude Code | Pick the Right Tool Every Time",
         "url": "https://www.youtube.com/watch?v=03ASrjMmiCs",
@@ -202,7 +237,7 @@
       {
         "title": "Apple accidentally left Claude.md files Apple Support app",
         "url": "https://xcancel.com/aaronp613/status/2049986504617820551",
-        "source": "HN · 61↑",
+        "source": "HN · 208↑",
         "hn_id": "47973378",
         "published": "2026-05-01T11:08:32.000Z",
         "summary": ""
@@ -231,7 +266,7 @@
       {
         "title": "After dissing Anthropic for limiting Mythos, OpenAI restricts access to Cyber",
         "url": "https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/",
-        "source": "HN · 74↑",
+        "source": "HN · 111↑",
         "hn_id": "47973108",
         "published": "2026-05-01T10:28:12.000Z",
         "summary": ""
@@ -282,8 +317,15 @@
         "title": "Anthropic opens AI-powered Claude Security to enterprise customers - verdict.co.uk",
         "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5LU2NucVVyZTZZUXJNdDdvRS1LMVVEdEpYS2xRVklncUxITlJIQVFzOE5kbUF3Xzg0ZzFpTG4yX3FCb3pjN0lKazRJa2RNZ2MwNUJiMjhvZmlBRlhWY0dzVjlZS1R4ZEFDNWhvQkNFeXlNQQ?oc=5",
         "source": "Google News",
-        "published": "2026-05-01T08:03:45.000Z",
+        "published": "2026-05-01T08:10:54.000Z",
         "summary": "Anthropic opens AI-powered Claude Security to enterprise customers verdict.co.uk"
+      },
+      {
+        "title": "Anthropic Launches New Security Tool for Enterprises - AI Business",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQby1sdG13OHRsU19zTW9DOWE5dEtJSHJzWXBaamtyNVliN0VWTDlMeHlLbHlfV0M2UjduZHJtSFBwRUsxc2FDWXFLUV9XWFZELXQzLWZtOFdZYXJXdTFlZUZ4ekpVOFRydW44am1lWldrcWpMYlpHUGFEM01EdEFpTkJTNHRkdTIzWmhTWFFR?oc=5",
+        "source": "Google News",
+        "published": "2026-05-01T08:06:49.000Z",
+        "summary": "Anthropic Launches New Security Tool for Enterprises AI Business"
       },
       {
         "title": "Anthropic Brings AI-Powered Security Scanning to Enterprise Teams With Claude Security - DevOps.com",
@@ -291,48 +333,6 @@
         "source": "Google News",
         "published": "2026-05-01T07:54:57.000Z",
         "summary": "Anthropic Brings AI-Powered Security Scanning to Enterprise Teams With Claude Security DevOps.com"
-      },
-      {
-        "title": "Anthropic’s new Mythos AI will hit crypto. Bitcoin investors don’t care, says Coinbase - dlnews.com",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOEFNRnVvN256aHJRQTF3Vm1zU3p5QUtfNFFBbXBHWGdiZnBWMmdVRUhqWFd5ZzRWaUFlVWtFY084MG5VbW9IX3lNdE0wNXlTbllUZWd6Z0l5djlITGxCWXdPcndudEF1cVFBSjhJVDRKUFYxTGZOMzRhclMxOXlpM0k5aGctWnNsOWc3cmtSc2xieEp1d2o5cm1qN05rdy1xYUpUbHdBdTdjQW5jNWtSdXBNMkVJTy1vbGc?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T07:50:22.000Z",
-        "summary": "Anthropic’s new Mythos AI will hit crypto. Bitcoin investors don’t care, says Coinbase dlnews.com"
-      },
-      {
-        "title": "Fractal Hosts Invite-Only Enterprise AI Workshop Centered on Anthropic Claude Code - TipRanks",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOX0V6LTh5d1JSaDh6RjVxTjhuUVdTT1hRVzgxcVh0TUxzdVBZN0psTkREeVFReEVWa0J6U210Z2xkRUR4YlNfZjc5SURKRDNYMzVmVVN4QjljVlZoRjBZd3VKcnhIZDJkMFgxc3RpNUFmQ1ZxMmdyTDdvMXVaUVVkZG50dUxLUTY5UVR4ODRjczAwV0JfejF5SUFzaUsyMTdUTUVkX1M4YjNuWHF6M3g1RVFmbEhQWnVzZDQ3VW95ZTB5Tnc5OE5HekRB?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T06:22:13.000Z",
-        "summary": "Fractal Hosts Invite-Only Enterprise AI Workshop Centered on Anthropic Claude Code TipRanks"
-      },
-      {
-        "title": "Anthropic Claude Security available to all Enterprise customers - Techzine Global",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNYUc5MWZYT3BYb2oyTWY2SkloaVVkZFdfWnhrMmxWTzZvTnRBWkxPSFFsZEQtNkQ2SFlFaHF0T0pBVE1VaG1qQTc2Mk5CUkQ0dy01VWx2MWRlR01zUGtZMHZrcmxGN3JTRmhkVGFLTlJNMnY4X2EwWDIyNDNIVVl3NW5oSTRxZy1sY1BlNWNjdnlhNG9wdkVsZlVyanlWOEhnVWpLdnBva2xtN1cyd3c?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T06:05:00.000Z",
-        "summary": "Anthropic Claude Security available to all Enterprise customers Techzine Global"
-      },
-      {
-        "title": "Anthropic launches dedicated Claude Security platform to public beta - Cyber Daily",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOcWNGNGhMb0F6NURuR3pDb25JeS1GeHQ0QV9mQVFaZFMtOVBBLUxlUGc4bmp1X2dZd1hwNjNvZGFjZjZRWEs4VkNvLUMyRlVZYVM2YWFzNFpzNXNmSi14VWc2T2hXQmZ6clYwT3M2cFB3VWVwZ2JwN2hzOTdQektKbWk5N3JUY0owSXNVbV9DWFZhcm9hdVJTam9hUGY0NDBiTW9lTnJ4SG0?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T05:01:06.000Z",
-        "summary": "Anthropic launches dedicated Claude Security platform to public beta Cyber Daily"
-      },
-      {
-        "title": "TrendAI deepens Anthropic tie-up with Claude Opus 4.7 - ChannelLife Australia",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQNG5CODRoeWNsS1NnQ3FCbzRuTjZvbGRpY0hEeHVkTW1JX2gwaks5Q2ZwdUFfazZ5a1lLcW1oYXI1dGdXWlZ0aVBOSHk5VkpjNzhZdFdJRnYwRlhBbG9LLUxaMS1EalFMOGphNFpYV0RWcGV0YTZyRkVxMGE5LXFVTGRpenB4ZnpwbFE2MUNVVQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T02:17:00.000Z",
-        "summary": "TrendAI deepens Anthropic tie-up with Claude Opus 4.7 ChannelLife Australia"
-      },
-      {
-        "title": "Anthropic Releases BioMysteryBench To Evaluate AI Capabilities In Bioinformatics Research - Pulse 2.0",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNRDVLTWdrYWE4MTNJbE90b0E2dXNFeFJSU0VtTUlua1lySHBBSnNvVWVCSDhnWmpCN1NvMl9WR2gzWGlEajl3RUlmTW43em5Md3k1S2hJN3QwTkN1YnFncXA3cWRPc19RcGxzWjBxeGpwRlBKSkxKYkhkZ3N4Y2gzcEwyVXpoQlozQnoyZGNmdzlFQWNWckV0VGVFaXIxcDZiZndfaFJTWWp4NkZQb3fSAbMBQVVfeXFMT05BcnRyNC0wOTFRb3hTVUQ4LTZlQUVwZmxNcTc0cVJXbWMwODBGdEZWR0FvZE80c2dnOEdhajAyMFhVZ3REVzlfQ1FRTWtjeXZWanVjMktHLVF2ay1mTVA0eTBtNU53ejdiQVJIbC1JWTNvb2JsbjFUcHBmdUh0Q3ZONXN3TzVKNDg4M0xhZ1oyVDQ5N0gtTUVDczVIU0dmTXVhSWluUVdkdkxjZlNVdGE5R1U?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T01:56:19.000Z",
-        "summary": "Anthropic Releases BioMysteryBench To Evaluate AI Capabilities In Bioinformatics Research Pulse 2.0"
       },
       {
         "title": "🔴LIVE: The new Claude Code plugins are incredible...",
