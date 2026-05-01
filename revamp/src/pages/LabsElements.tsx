@@ -106,7 +106,8 @@ export function LabsElements() {
           minDistance={1.5}
           maxDistance={30}
           enableRotate={false}
-          enablePan={false}
+          enablePan
+          screenSpacePanning
           enableZoom
         />
 
