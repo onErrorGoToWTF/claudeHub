@@ -37,9 +37,9 @@ const BLOOM_RADIUS = 0.2
 const BLOOM_THRESHOLD = 0.85
 
 // Camera placement — Og's outer ring sits at radius ~2.6 (scale=1). Camera
-// is pulled back enough to fit the full diagram with margin and tilted up
-// so the rings aren't seen perfectly edge-on at first frame.
-const CAMERA_POSITION: [number, number, number] = [0, 3, 9]
+// is on the +z axis looking straight at the xy-plane so the rings render
+// as perfect concentric circles, perfectly flat to the viewer.
+const CAMERA_POSITION: [number, number, number] = [0, 0, 9]
 const CAMERA_FOV = 45
 
 export function LabsElements() {
