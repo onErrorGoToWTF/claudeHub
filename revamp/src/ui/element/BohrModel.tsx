@@ -16,10 +16,10 @@
  *   speed = ANIMATION_SPEED · (1 + (totalShells − shellIdx) · 0.1)
  * — inner shells rotate slightly faster than outer ones.
  *
- * The whole group also rotates slowly around y so the diagram is never
- * frozen, plus a small random initial tilt on x/z so each mount looks
- * organic. Materials use emissive + UnrealBloom in the parent canvas to
- * get the glowing-electron look.
+ * The group itself does not rotate — only the electrons orbit. A small
+ * random initial tilt on x/z is applied at mount so the rings read as
+ * 3D rather than dead-on. Materials use emissive + UnrealBloom in the
+ * parent canvas to get the glowing-electron look.
  */
 import { useMemo, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
@@ -31,7 +31,6 @@ const ELECTRON_RADIUS_FACTOR = 0.06
 const SHELL_SPACING_FACTOR = 0.35
 const RING_THICKNESS_FACTOR = 0.015
 const ANIMATION_SPEED = 0.3
-const GROUP_Y_ROT_PER_SEC = 0.03 // ~0.0005 rad/frame at 60fps
 
 const NUCLEUS_BASE_EMISSIVE = 0.3
 const ELECTRON_BASE_EMISSIVE = 0.4
@@ -92,10 +91,7 @@ export function BohrModel({ element, scale = 1 }: BohrModelProps) {
   )
   const phaseOffset = useMemo(() => Math.random() * 100, [])
 
-  useFrame((state, delta) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y += GROUP_Y_ROT_PER_SEC * delta
-    }
+  useFrame((state) => {
     const t = state.clock.elapsedTime + phaseOffset
     shells.forEach((shell, idx) => {
       const shellGroup = shellGroupsRef.current[idx]
