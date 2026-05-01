@@ -1,36 +1,28 @@
 /*
- * BohrModel — single-element textbook Bohr diagram, rendered as flat coplanar
- * rings tilted in 3D so the user can orbit around it.
+ * BohrModel — single-element textbook Bohr diagram. Static. No motion.
  *
- * Geometry recipe (ported from bamer.biruni.edu.tr/lab/interactive-periodic-table
- * `script.js` — same factor names, same numbers):
+ * Geometry (factor names + numbers ported from
+ * bamer.biruni.edu.tr/lab/interactive-periodic-table `script.js`):
  *
  *   nucleus radius     0.15 * scale
  *   electron radius    0.06 * scale
  *   shell spacing      0.35 * scale          (innermost = nucleusR + spacing)
  *   ring thickness     0.015 * scale         (RingGeometry inner/outer offset)
  *   shell rings        coplanar on y=0       (rotation x = π/2)
- *   electrons          orbit the y=0 plane   (x = cos θ · r, z = sin θ · r)
+ *   electrons          fixed on the y=0 plane (x = cos θ · r, z = sin θ · r)
  *
- * Per-shell speed factor matches the reference:
- *   speed = ANIMATION_SPEED · (1 + (totalShells − shellIdx) · 0.1)
- * — inner shells rotate slightly faster than outer ones.
- *
- * The group itself does not rotate — only the electrons orbit. A small
- * random initial tilt on x/z is applied at mount so the rings read as
- * 3D rather than dead-on. Materials use emissive + UnrealBloom in the
- * parent canvas to get the glowing-electron look.
+ * Random initial tilt on x/z so rings read as 3D rather than dead-on; the
+ * group never rotates after mount and the electrons never move. Materials
+ * use emissive + UnrealBloom (in the parent canvas) for the glow.
  */
-import { useMemo, useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
-import { DoubleSide, type Group } from 'three'
+import { useMemo } from 'react'
+import { DoubleSide } from 'three'
 import { categoryColorHex, type Element } from '../../db/elements'
 
 const NUCLEUS_RADIUS_FACTOR = 0.15
 const ELECTRON_RADIUS_FACTOR = 0.06
 const SHELL_SPACING_FACTOR = 0.35
 const RING_THICKNESS_FACTOR = 0.015
-const ANIMATION_SPEED = 0.3
 
 const NUCLEUS_BASE_EMISSIVE = 0.3
 const ELECTRON_BASE_EMISSIVE = 0.4
@@ -42,7 +34,6 @@ type Shell = {
   shellIdx: number
   radius: number
   numElectrons: number
-  speedFactor: number
   baseAngleOffset: number
 }
 
@@ -52,16 +43,12 @@ export type BohrModelProps = {
 }
 
 export function BohrModel({ element, scale = 1 }: BohrModelProps) {
-  const groupRef = useRef<Group>(null!)
-  const shellGroupsRef = useRef<Array<Group | null>>([])
-
   const nucleusR = NUCLEUS_RADIUS_FACTOR * scale
   const electronR = ELECTRON_RADIUS_FACTOR * scale
   const shellSpacing = SHELL_SPACING_FACTOR * scale
   const ringT = RING_THICKNESS_FACTOR * scale
 
   const nucleusColor = categoryColorHex(element.category)
-  const totalShells = element.electronsPerShell.length
 
   const shells = useMemo<Shell[]>(() => {
     const out: Shell[] = []
@@ -71,16 +58,13 @@ export function BohrModel({ element, scale = 1 }: BohrModelProps) {
         shellIdx: idx,
         radius: r,
         numElectrons: n,
-        speedFactor: ANIMATION_SPEED * (1 + (totalShells - idx) * 0.1),
         baseAngleOffset: idx * 0.5,
       })
       r += shellSpacing
     })
     return out
-  }, [element, nucleusR, shellSpacing, totalShells])
+  }, [element, nucleusR, shellSpacing])
 
-  // Random initial tilt + a randomized phase offset so refresh-to-refresh the
-  // electrons aren't always at the same starting angle.
   const initialRotation = useMemo<[number, number, number]>(
     () => [
       (Math.random() - 0.5) * 0.2,
@@ -89,23 +73,9 @@ export function BohrModel({ element, scale = 1 }: BohrModelProps) {
     ],
     [],
   )
-  const phaseOffset = useMemo(() => Math.random() * 100, [])
-
-  useFrame((state) => {
-    const t = state.clock.elapsedTime + phaseOffset
-    shells.forEach((shell, idx) => {
-      const shellGroup = shellGroupsRef.current[idx]
-      if (!shellGroup) return
-      const children = shellGroup.children
-      for (let i = 0; i < children.length; i++) {
-        const angle = shell.baseAngleOffset + (i / shell.numElectrons) * Math.PI * 2 + t * shell.speedFactor
-        children[i].position.set(Math.cos(angle) * shell.radius, 0, Math.sin(angle) * shell.radius)
-      }
-    })
-  })
 
   return (
-    <group ref={groupRef} rotation={initialRotation}>
+    <group rotation={initialRotation}>
       {/* Nucleus */}
       <mesh>
         <sphereGeometry args={[nucleusR, 16, 12]} />
@@ -118,7 +88,7 @@ export function BohrModel({ element, scale = 1 }: BohrModelProps) {
         />
       </mesh>
 
-      {shells.map((shell, idx) => (
+      {shells.map((shell) => (
         <group key={shell.shellIdx}>
           {/* Shell ring (flat on the y=0 plane) */}
           <mesh rotation={[Math.PI / 2, 0, 0]}>
@@ -133,10 +103,14 @@ export function BohrModel({ element, scale = 1 }: BohrModelProps) {
             />
           </mesh>
 
-          {/* Electrons — useFrame writes their positions every tick */}
-          <group ref={(el) => { shellGroupsRef.current[idx] = el }}>
-            {Array.from({ length: shell.numElectrons }).map((_, i) => (
-              <mesh key={i}>
+          {/* Electrons — frozen at their computed angle, no animation */}
+          {Array.from({ length: shell.numElectrons }).map((_, i) => {
+            const angle = shell.baseAngleOffset + (i / shell.numElectrons) * Math.PI * 2
+            return (
+              <mesh
+                key={i}
+                position={[Math.cos(angle) * shell.radius, 0, Math.sin(angle) * shell.radius]}
+              >
                 <sphereGeometry args={[electronR, 8, 6]} />
                 <meshStandardMaterial
                   color={ELECTRON_COLOR}
@@ -146,8 +120,8 @@ export function BohrModel({ element, scale = 1 }: BohrModelProps) {
                   metalness={0.1}
                 />
               </mesh>
-            ))}
-          </group>
+            )
+          })}
         </group>
       ))}
     </group>
