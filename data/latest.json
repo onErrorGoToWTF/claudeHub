@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-05-01T14:44:33.283Z",
+  "generated_at": "2026-05-01T16:42:00.404Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Claude for Creative Work",
+        "url": "https://www.anthropic.com/news/claude-for-creative-work",
+        "source": "Anthropic",
+        "published": "2026-05-01T15:44:00.000Z",
+        "summary": ""
+      },
       {
         "title": "Emotion Concepts Function",
         "url": "https://www.anthropic.com/research/emotion-concepts-function",
@@ -36,13 +43,6 @@
         "url": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
         "source": "Anthropic Research",
         "published": "2026-04-30T15:03:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude for Creative Work",
-        "url": "https://www.anthropic.com/news/claude-for-creative-work",
-        "source": "Anthropic",
-        "published": "2026-04-28T17:25:41.000Z",
         "summary": ""
       },
       {
@@ -146,6 +146,27 @@
     ],
     "news": [
       {
+        "title": "GPT-5.5 matches heavily hyped Mythos Preview in new cybersecurity tests",
+        "url": "https://arstechnica.com/ai/2026/05/amid-mythos-hyped-cybersecurity-prowess-researchers-find-gpt-5-5-is-just-as-good/",
+        "source": "Ars Technica",
+        "published": "2026-05-01T15:32:27.000Z",
+        "summary": "Last month, Anthropic made a big deal about the supposedly outsize cybersecurity threat represented by its Mythos Preview model, leading the company to restrict the initial release to “critical…"
+      },
+      {
+        "title": "Pentagon Secures AI Contracts with Nvidia, Microsoft, and AWS Following Anthropic Dispute - ForkLog",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNemdzR0J4TFNwaENyYzktbkRFeGlCWFNpOVV0QjRyaGpuNDB6TWlmdW84WEo4T3RPbVpKbEFPMmIyN2hocUY4Z252RXRrd0drYzhKRDh5X29rT1lPcmJsekttSFdjcVRDalZpWnFMLXZySWlaWGlJcFE2dnlNblJqSlhDWGloZnJSZGhfZWJYTDJ1U3lWN0NERHlGaGFsR0xHRGdhemowQjJhUkFnT2RldQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-01T14:48:31.000Z",
+        "summary": "Pentagon Secures AI Contracts with Nvidia, Microsoft, and AWS Following Anthropic Dispute ForkLog"
+      },
+      {
+        "title": "Pentagon tech chief says 'Anthropic is still blacklisted' despite Mythos program distinction - The News International",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOWmJhNjV4UXo1ZVVWcDZlRzQ3REFWbG45U1g5OHFYUzA4TmxaTWdEcERna2o3MjNheUNSNmRkMTIwb1U0ZFJ2cWFUVkkxTVFSZlk4bERsbXcwTXpQdUQ5UTFwY2NfVUd3ZVlJZmVvRmZHcDNqbmdFS0wxYXh4SzNNVE8xQS1Ua2duNkhOblY5d0Zoemwyem5IeXBITlVLYm5Od3hRa1JyODdBa3BIYm5JLW9wX2dZU2ZsbzA3ekhJa1hMeDZqYU16NnkxOGY?oc=5",
+        "source": "Google News",
+        "published": "2026-05-01T14:22:00.000Z",
+        "summary": "Pentagon tech chief says 'Anthropic is still blacklisted' despite Mythos program distinction The News International"
+      },
+      {
         "title": "Pentagon strikes classified AI deals with OpenAI, Google, and Nvidia — but not Anthropic",
         "url": "https://www.theverge.com/ai-artificial-intelligence/922113/pentagon-ai-classified-openai-google-nvidia",
         "source": "The Verge",
@@ -165,13 +186,6 @@
         "source": "Google News",
         "published": "2026-05-01T13:06:57.000Z",
         "summary": "Pentagon Keeps Anthropic Claude Ban, Separates Mythos Amid 'National Security' Concerns Benzinga"
-      },
-      {
-        "title": "Pentagon signs deal with six top AI companies for classified work after Anthropic fallout - Washington Examiner",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZjlkRjZiLUpGb01lVmJ5TXJaRVF0Szl4MFk3ejlSb2RTTDR4dkU3YmxXTFdCZEZUQVdJYWl2WVJkZXVjLTExT3RURHExemlwWnNiNVQxYW9jck43a3RYekN3eHVyRFpXRjVKRzU5bHIxWnhONzJvakpHM0FxdGhYQjhDRGFLaUpCN2N0MVZBcE9ieVNoSHJMLTREVXRTQ3NyMWtsSVZRNEZvdw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T12:51:00.000Z",
-        "summary": "Pentagon signs deal with six top AI companies for classified work after Anthropic fallout Washington Examiner"
       },
       {
         "title": "Can Anthropic’s Mythos Hack Europe’s Banks? - Disruption Banking",
@@ -207,6 +221,13 @@
         "summary": "Fractal Hosts Anthropic Claude Code Workshop Targeting Enterprise AI Development TipRanks"
       },
       {
+        "title": "Anthropic Claude Security Enters Public Beta for Enterprise - SQ Magazine",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE93a3AzZmtmNUdWbF9JX2VwNmc2ejFXQTR6MDRGd0o5YlpwZUw2V2FzajhyNmt1ZGd2WUJXR3FEaUVySmtjVXpYZy1KcDNkU00zR3NTS3Bremg3TEU3WGM0TWlkRlVTS1BSZzBPTERVa2gxS2N5TzZkZWI3SzZsdmc?oc=5",
+        "source": "Google News",
+        "published": "2026-05-01T12:17:29.000Z",
+        "summary": "Anthropic Claude Security Enters Public Beta for Enterprise SQ Magazine"
+      },
+      {
         "title": "Assessing GitLab (GTLB) Valuation As Anthropic Claude Integration Deepens Its Secure AI Development Platform - simplywall.st",
         "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcWdYdjlLNHY4ejhHTUZUWlM2S3M2TFgxZFU3M1JhTDVaQlljaS1KNk5raF9ScjJSMURnbldBUl9wYndoWkhULVVkYmpiSUE1MkstaFpiMUREc3JOVnJOVmo1MHRXd2owRTFKRDI5Mk9YVzZ1eXhhaER0dGhGTG5NNHF1LVYwblYzLUFvMDh4eUl5anItalZ2TkxoYUo4S0IxalFUTDIwc05IVGJJTlVwbnJyS2VDTTJhMkVPYXJ6Z0phUlHSAcgBQVVfeXFMTWllRHVCc041ZVN5aTFJRG5ESzh6REIyYXR5bDBjRjBxSUZBSHBEZVpSMGF3TVF2N1dVSVV1U2xUbzdjaldiTlZOUTd1d3B2RTJtWFVxZ3luekZDaUZPTXpKa1dUUjNjR2FzMFctaXBiQlNZaXFMUzVTRzBWbUdsZEN3eW9fZmJTR3lXWGlFNHB1LXdteGtsUnB6NHhjd3R1SzhGMFduZWs0bVBoYk52clc2NnB6WWwwVjRjalJncGFjVW5RODlnVTA?oc=5",
         "source": "Google News",
@@ -236,11 +257,11 @@
       },
       {
         "title": "Apple accidentally left Claude.md files Apple Support app",
-        "url": "https://xcancel.com/aaronp613/status/2049986504617820551",
-        "source": "HN · 208↑",
+        "url": "https://x.com/aaronp613/status/2049986504617820551",
+        "source": "HN · 309↑",
         "hn_id": "47973378",
         "published": "2026-05-01T11:08:32.000Z",
-        "summary": ""
+        "summary": "https:&#x2F;&#x2F;xcancel.com&#x2F;aaronp613&#x2F;status&#x2F;2049986504617820551"
       },
       {
         "title": "So, About That AI Bubble - The Atlantic",
@@ -266,7 +287,7 @@
       {
         "title": "After dissing Anthropic for limiting Mythos, OpenAI restricts access to Cyber",
         "url": "https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/",
-        "source": "HN · 111↑",
+        "source": "HN · 124↑",
         "hn_id": "47973108",
         "published": "2026-05-01T10:28:12.000Z",
         "summary": ""
@@ -277,13 +298,6 @@
         "source": "Google News",
         "published": "2026-05-01T10:25:40.000Z",
         "summary": "iCapital taps Anthropic for AI client tools Private Banker International"
-      },
-      {
-        "title": "Anthropic Claude Security Enters Public Beta for Enterprise - SQ Magazine",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE93a3AzZmtmNUdWbF9JX2VwNmc2ejFXQTR6MDRGd0o5YlpwZUw2V2FzajhyNmt1ZGd2WUJXR3FEaUVySmtjVXpYZy1KcDNkU00zR3NTS3Bremg3TEU3WGM0TWlkRlVTS1BSZzBPTERVa2gxS2N5TzZkZWI3SzZsdmc?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T09:51:26.000Z",
-        "summary": "Anthropic Claude Security Enters Public Beta for Enterprise SQ Magazine"
       },
       {
         "title": "Anthropic launches ‘Claude Security’ in beta to scan code and fix vulnerabilities - Storyboard18",
@@ -319,20 +333,6 @@
         "source": "Google News",
         "published": "2026-05-01T08:10:54.000Z",
         "summary": "Anthropic opens AI-powered Claude Security to enterprise customers verdict.co.uk"
-      },
-      {
-        "title": "Anthropic Launches New Security Tool for Enterprises - AI Business",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQby1sdG13OHRsU19zTW9DOWE5dEtJSHJzWXBaamtyNVliN0VWTDlMeHlLbHlfV0M2UjduZHJtSFBwRUsxc2FDWXFLUV9XWFZELXQzLWZtOFdZYXJXdTFlZUZ4ekpVOFRydW44am1lWldrcWpMYlpHUGFEM01EdEFpTkJTNHRkdTIzWmhTWFFR?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T08:06:49.000Z",
-        "summary": "Anthropic Launches New Security Tool for Enterprises AI Business"
-      },
-      {
-        "title": "Anthropic Brings AI-Powered Security Scanning to Enterprise Teams With Claude Security - DevOps.com",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOc3h5MzB5anRvRFdkRU9EcEFJRE96LUZFNlRSTWpNUkVyUFBZSXowdWNnOGlaQ0dUb0xnNmYxM21kUzg3cGJWcDd1U2xlVnhtanRIU2d4ZkNEZVA1TmN4a2FEUGY1bVlnc2d1T0ZlVmN4NVJqV2I1dDJvU2s4UnE0dUM5MTVHNC1YUlc4S0VPVTlmNjUweVdfYlQ1ak9idHRPTHNSdHJ1X0pxZw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T07:54:57.000Z",
-        "summary": "Anthropic Brings AI-Powered Security Scanning to Enterprise Teams With Claude Security DevOps.com"
       },
       {
         "title": "🔴LIVE: The new Claude Code plugins are incredible...",
@@ -537,18 +537,6 @@
         "published": "2026-04-16T23:54:36.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Opus 4.7 Just Dropped... (Everything you need to know)",
-        "url": "https://www.youtube.com/watch?v=3EWyQkaSIq0",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "3EWyQkaSIq0",
-        "thumbnail": "https://i.ytimg.com/vi/3EWyQkaSIq0/hqdefault.jpg",
-        "published": "2026-04-16T19:53:08.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -638,6 +626,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Master 80% of Claude Cowork With Just These 15 Features",
+        "url": "https://www.youtube.com/watch?v=4_Gc8lE9eKw",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "4_Gc8lE9eKw",
+        "thumbnail": "https://i.ytimg.com/vi/4_Gc8lE9eKw/hqdefault.jpg",
+        "published": "2026-05-01T15:40:19.000Z",
+        "summary": ""
+      },
       {
         "title": "Cowork vs Claude Code | Pick the Right Tool Every Time",
         "url": "https://www.youtube.com/watch?v=03ASrjMmiCs",
@@ -956,20 +955,21 @@
         "thumbnail": "https://i.ytimg.com/vi/8tTT2k0d97k/hqdefault.jpg",
         "published": "2026-04-16T23:54:36.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Opus 4.7 Just Dropped... (Everything you need to know)",
-        "url": "https://www.youtube.com/watch?v=3EWyQkaSIq0",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "3EWyQkaSIq0",
-        "thumbnail": "https://i.ytimg.com/vi/3EWyQkaSIq0/hqdefault.jpg",
-        "published": "2026-04-16T19:53:08.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "Master 80% of Claude Cowork With Just These 15 Features",
+        "url": "https://www.youtube.com/watch?v=4_Gc8lE9eKw",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "4_Gc8lE9eKw",
+        "thumbnail": "https://i.ytimg.com/vi/4_Gc8lE9eKw/hqdefault.jpg",
+        "published": "2026-05-01T15:40:19.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
       {
         "title": "v2.1.126",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.126",
@@ -1745,6 +1745,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Master 80% of Claude Cowork With Just These 15 Features",
+        "url": "https://www.youtube.com/watch?v=4_Gc8lE9eKw",
+        "source": "YouTube · Ryan & Matt Data Science",
+        "published": "2026-05-01T15:40:19.000Z",
+        "summary": ""
+      },
+      {
         "title": "Cowork vs Claude Code | Pick the Right Tool Every Time",
         "url": "https://www.youtube.com/watch?v=03ASrjMmiCs",
         "source": "YouTube · Pragati Kunwer",
@@ -2043,13 +2050,6 @@
         "url": "https://www.youtube.com/watch?v=8tTT2k0d97k",
         "source": "YouTube · Ryan & Matt Data Science",
         "published": "2026-04-16T23:54:36.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 4.7 Just Dropped... (Everything you need to know)",
-        "url": "https://www.youtube.com/watch?v=3EWyQkaSIq0",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-04-16T19:53:08.000Z",
         "summary": ""
       },
       {
