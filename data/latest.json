@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-02T12:40:45.772Z",
+  "generated_at": "2026-05-02T14:40:04.873Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,59 @@
     ],
     "news": [
       {
+        "title": "Claude Design + Claude Code: The Boardroom Deck Workflow",
+        "url": "https://www.youtube.com/watch?v=LfUmRBMwJUE",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "LfUmRBMwJUE",
+        "thumbnail": "https://i.ytimg.com/vi/LfUmRBMwJUE/hqdefault.jpg",
+        "published": "2026-05-02T14:30:23.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic Launches Claude Security in Public Beta for Enterprise Customers - CyberSecurityNews",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9zQ0FlMi15MGtIQ09tZDk1ek9kVzIzdzNaSHBEWlFlbHF1aGk0TVpBZmNtNFZoMFZZMDhTcVI5bDRCenYwd0l1NG95VFVwTk1RWVF2Q0MyaGZJN1AwZXJPbHV1d1pCT0tkNVHSAW9BVV95cUxOTkJvdUR2aDdiZVVqbWREUXRnOHpLdU5CaEI3WWdtcVR2cm9YSmx4dzVLemtKdW1MVGt3cjM4UURBUmt0aEtHZkc0cHJqdjFEQkl1dWtyZGVnQTJabTBKenNwY0VOd2RydVR6LTRnQjQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-02T14:03:22.000Z",
+        "summary": "Anthropic Launches Claude Security in Public Beta for Enterprise Customers CyberSecurityNews"
+      },
+      {
+        "title": "Video | Alphabet Invests $40 Billion In Anthropic - NDTV",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQVHhWaUI5M21DOHVpT0x3UWRWYm9fSFEwQjlGYmNmUHktVU9wdGxHOU5FR1RxZWNxRVMybndQb3BSU2lCbDdNaWVuSTlnU3BEcFhqVExzR2ZwSlQydVpEQUhyUWxxNV9UUnhMNEg1alNZbU5rRzlSUVpXX3pyLV9FMQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-02T13:52:36.000Z",
+        "summary": "Video | Alphabet Invests $40 Billion In Anthropic NDTV"
+      },
+      {
         "title": "Claude Mythos Preview: Anthropic's Most Dangerous Frontier AI - The Probe",
         "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTGRld2luQlpkMUxIQXcyblZfWlBzcnBpX0I4U3Nmdm9LZTBxbmVJWl9fQ3RxSG10c0NmMTdxUXRwOG9jNEg0WnBMRExuUjJsUGVFbzBWLUp5T0xiTUVueVg1TkdrVkxtbGY5c010UVdqSkplN21vaDJaZU5vSEEtU1VzMnNoX3MzNVJlVmVqeEg5OGNEM2E4eHVweEh0b1lvWWZQZXV2QVNHNnMyRzlyYktPdDTSAbQBQVVfeXFMT0xkZXdpbkJaZDFMSEF3Mm5WX1pQc3JwaV9COFNzZnZvS2UwcW5lSVpfX0N0cUhtdHNDZjE3cVF0cDhvYzRINFpwTERMblIybFBlRW8wVi1KeU9MYk1FbnlYNU5Ha1ZMbWxmOXNNdFFXakpKZTdtb2gyWmVOb0hBLVNVczJzaF9zMzVSZVZlanhIOThjRDNhOHh1cHhIdG9Zb1lmUGV1dkFTRzZzMkc5cmJLT3Q0?oc=5",
         "source": "Google News",
         "published": "2026-05-02T10:30:26.000Z",
         "summary": "Claude Mythos Preview: Anthropic's Most Dangerous Frontier AI The Probe"
+      },
+      {
+        "title": "Anthropic Releases Beta Version of its New Claude Security AI Tools - Tekedia",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORW9NUVR2d2h1S3VuVlpQZWkwZUR0dk8xVmFFaW9lR1BqN29tMGU1ZFZfaGhRX1Q1bnBfYnJGSVAzMm9sejBjSWtGWE1MR2xZdTh6NUFDVzJ5ZEJfeTZ1UktCcGZibERwWjBfYW95eWRXYTd3SVVGaXc2bGd6QlB4YjVreDFXb2VkaFk4cGlyUlhFdkZwWmlV?oc=5",
+        "source": "Google News",
+        "published": "2026-05-02T09:55:02.000Z",
+        "summary": "Anthropic Releases Beta Version of its New Claude Security AI Tools Tekedia"
+      },
+      {
+        "title": "Stop letting ChatGPT and other AI chatbots train on your data. Here’s why—and how - Fast Company",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPQmZ1dEFDYzQ0aXZhOFZBekxLOVh1VGdDcTZCUGhZaUZxamQ3SXY2WHRIS0xtbmlRbGdqYWYzWjc0ODlDNVA4SGx4Ni1USktuaDNoeXpLbWluM0gyVVpKbThfZWItb0o0YWNKMk9OUGs1bTQ5c0VGTzh4dGFDakVwNkpjcXdaMnUzbzBDZmxKbGxvdzlPQm1VcVBEUkhGZlpzQ2hoVV9mYl8tUmtOazhVLTZaR3hDZlRLcUMxbDN0XzhmN2J5NTN4NkpOakdOenVNVGtzSA?oc=5",
+        "source": "Google News",
+        "published": "2026-05-02T09:07:50.000Z",
+        "summary": "Stop letting ChatGPT and other AI chatbots train on your data. Here’s why—and how Fast Company"
+      },
+      {
+        "title": "Show HN: Filling PDF forms with AI using client-side tool calling",
+        "url": "https://copilot.simplepdf.com/?share=a7d00ad073c75a75d493228e6ff7b11eb3f2d945b6175913e87898ec96ca8076&form=w9&lang=en",
+        "source": "HN · 34↑",
+        "hn_id": "47984675",
+        "published": "2026-05-02T08:54:27.000Z",
+        "summary": "Hey HN! I built SimplePDF Copilot: an AI assistant that can interact with the PDF editor. It fills fields, answers questions, focuses on a specific field, adds fields, deletes…"
       },
       {
         "title": "Anthropic announces Claude Security beta for enterprise customers - varindia.com",
@@ -162,7 +210,7 @@
       {
         "title": "Show HN: Agent-desktop – Native desktop automation CLI for AI agents",
         "url": "https://github.com/lahfir/agent-desktop",
-        "source": "HN · 87↑",
+        "source": "HN · 88↑",
         "hn_id": "47982708",
         "published": "2026-05-02T02:18:24.000Z",
         "summary": "I&#x27;ve been building computer-use tools for a while, and I quietly launched this about a month ago (122 Stars on GH). I figured it was worth sharing here. Over the last few…"
@@ -180,6 +228,13 @@
         "source": "TechCrunch",
         "published": "2026-05-01T23:06:50.000Z",
         "summary": "At TechCrunch's sold-out StrictlyVC event in San Francisco on Thursday night, we covered a lot of ground in a short time, beginning with the question everyone in the industry is asking right now: in…"
+      },
+      {
+        "title": "Anthropic’s Claude Mythos: The AI model that India cannot access but cannot ignore either - ThePrint",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOTjRDVXNJVXFRanNHUWhmUFlBSFF0RTN0TmY4d2hIMXhSN293UkdtMk9fU09kS0E3VTdUVDdhaUlrMmFuWHhNZFpXWXoyUUt5VG5vaTlpemRqc0pkY1R1dHFicl9aV2Q0NDRmaW5aLVdNelpaN3RoM0VWdWxUdk5YWU5VWVFYM2xKUks1dDF2djBvdU9zaGZLdUxMUHB4cVBSSjdVcXdpdGl3MWlCMHVKRktNcUhlUjFIenZjemtoc9IBxAFBVV95cUxOMl9SZk15azNzN1h0MExQMURseTJYUGN0czFzRG9QcXNUWVVSOVFZVFFWTWR6SHowZFdTak1maEdpVVBRYWlKWkJITko5VldrZjJaY1NoS1Q5aXFiOVJyNHRIV09wZE8tX2xpcmNmWVVMZlIzWTZjSnJ6YmNNRDdOSHM4d3pvOWdCa19GVnBQRlJDdG5BbFFoQnVScUFsM3FfVFp6eFFvN2RKZkZ6bFhtRjBwMTNBWE9iR3E5dnJwaFlLNGgy?oc=5",
+        "source": "Google News",
+        "published": "2026-05-01T22:24:56.000Z",
+        "summary": "Anthropic’s Claude Mythos: The AI model that India cannot access but cannot ignore either ThePrint"
       },
       {
         "title": "Anthropic opens Claude Security public beta for code audits | brief | SC Media - SC Media",
@@ -213,7 +268,7 @@
       {
         "title": "Show HN: AI CAD Harness",
         "url": "https://fusion.adam.new/install",
-        "source": "HN · 86↑",
+        "source": "HN · 88↑",
         "hn_id": "47977694",
         "published": "2026-05-01T17:43:53.000Z",
         "summary": "Hi HN, I&#x27;m Zach, one of the co-founders of Adam ( https:&#x2F;&#x2F;adam.new ). We&#x27;ve been on HN twice before with text-to-CAD&#x2F;3D experiments [1][2]. The honest…"
@@ -228,7 +283,7 @@
       {
         "title": "Uber torches 2026 AI budget on Claude Code in four months",
         "url": "https://www.briefs.co/news/uber-torches-entire-2026-ai-budget-on-claude-code-in-four-months/",
-        "source": "HN · 383↑",
+        "source": "HN · 387↑",
         "hn_id": "47976415",
         "published": "2026-05-01T16:08:53.000Z",
         "summary": ""
@@ -293,51 +348,6 @@
         "source": "Google News",
         "published": "2026-05-01T12:00:00.000Z",
         "summary": "Anthropic Rolls Out Claude Security for AI Vulnerability Scanning Infosecurity Magazine"
-      },
-      {
-        "title": "Pentagon tech chief says Anthropic is still blacklisted, but Mythos is a separate issue - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPZkt3WjhQUmYyX1Q5NnZTWHJoeTd2WjFMVUVkSkV1WEFMMjd6dGJtdks4ck0xd2tjcGduYkV0SVVhN1dTaXJwZFlDWVMtTzN1dnF1QUQ5eW1MQnE0cTJuZFJQRTZPcWZmU21YQzVTVzc2RzBvSllNUkxFTkRtSlVpVXJENXVhSVHSAYwBQVVfeXFMTmJubDRYam5NT0pWbTY4R0duakFGMW10LXZSaUM0WVFXdWpKX1BoVzdqdng2b2pkUDVpLUQta0U1YVcxZmREME9fa1laMlZ3MDI0ZGliQ0ZOQXlZMm9zVjhNYkFTSzVYLWZ2eG9FOHVwTE1vb1BJZG55b3ZiMlc0VUZGUU4zTWhNSVdwa1Y?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T11:52:13.000Z",
-        "summary": "Pentagon tech chief says Anthropic is still blacklisted, but Mythos is a separate issue CNBC"
-      },
-      {
-        "title": "Apple accidentally left Claude.md files Apple Support app",
-        "url": "https://x.com/aaronp613/status/2049986504617820551",
-        "source": "HN · 372↑",
-        "hn_id": "47973378",
-        "published": "2026-05-01T11:08:32.000Z",
-        "summary": "https:&#x2F;&#x2F;xcancel.com&#x2F;aaronp613&#x2F;status&#x2F;2049986504617820551"
-      },
-      {
-        "title": "So, About That AI Bubble - The Atlantic",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQWDRBZFVUTHpIa1FMcjlYT2NLejFDYmZwS2MtU1BmV3ZKeEM2STBFWnYtMXNTMWpBdUZ3Y3BrQlNzeS1aNnVrU2JmcDR1YkFpYUdqOU1yT1Jjb1d1YXczYk9ZQjNHZ2dSdmw4VVNNUGZnVGxtcERBamVncVV0b2U4VFVsM1RTQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T11:00:00.000Z",
-        "summary": "So, About That AI Bubble The Atlantic"
-      },
-      {
-        "title": "GPT-5.5 matches Claude Mythos in cyber attack tests, UK AI Security Institute finds - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQanJHZmFMcWFZWm5CLTdWcjdEUXpCcTVmeG1lYmFxcllIUkFucVo3bmY3TkNhbVFmWlVOU0lUNWdJNVhGYVdCRVNTNzlHU0x1WWE1S2V6SHhDTmxBMHdOazRzMWtLRWdXM0ZxNi1qUExXX3J4Y0MxVXZQN1JEMEdfVjhhTXZBQll1UDlXUk1EdUs3LW1Td0ZWc19HcmJIRElXMzlrcFpqQXBjOUk?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T10:33:00.000Z",
-        "summary": "GPT-5.5 matches Claude Mythos in cyber attack tests, UK AI Security Institute finds the-decoder.com"
-      },
-      {
-        "title": "After dissing Anthropic for limiting Mythos, OpenAI restricts access to Cyber",
-        "url": "https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/",
-        "source": "HN · 139↑",
-        "hn_id": "47973108",
-        "published": "2026-05-01T10:28:12.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Show HN: Loopsy, a way for terminals and AI agents on different machines to talk",
-        "url": "https://github.com/leox255/loopsy",
-        "source": "HN · 52↑",
-        "hn_id": "47973093",
-        "published": "2026-05-01T10:25:41.000Z",
-        "summary": "I&#x27;ve always had the urge to have my two macbooks communicate. Having one idle while working on the other felt like underutilization of resources. So I built Loopsy.…"
       },
       {
         "title": "🔴LIVE: The new Claude Code plugins are incredible...",
@@ -518,18 +528,6 @@
         "published": "2026-04-17T18:32:38.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Opus 4.7 Just Made Claude Code Desktop Unstoppable",
-        "url": "https://www.youtube.com/watch?v=BV9Bnj3l8pk",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "BV9Bnj3l8pk",
-        "thumbnail": "https://i.ytimg.com/vi/BV9Bnj3l8pk/hqdefault.jpg",
-        "published": "2026-04-17T13:00:21.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -619,6 +617,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Claude Design + Claude Code: The Boardroom Deck Workflow",
+        "url": "https://www.youtube.com/watch?v=LfUmRBMwJUE",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "LfUmRBMwJUE",
+        "thumbnail": "https://i.ytimg.com/vi/LfUmRBMwJUE/hqdefault.jpg",
+        "published": "2026-05-02T14:30:23.000Z",
+        "summary": ""
+      },
       {
         "title": "How to Use Claude Code for FREE (2026)",
         "url": "https://www.youtube.com/watch?v=U6gg_bi1I70",
@@ -936,17 +945,6 @@
         "video_id": "9pniXngp8kk",
         "thumbnail": "https://i.ytimg.com/vi/9pniXngp8kk/hqdefault.jpg",
         "published": "2026-04-17T13:00:31.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Opus 4.7 Just Made Claude Code Desktop Unstoppable",
-        "url": "https://www.youtube.com/watch?v=BV9Bnj3l8pk",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "BV9Bnj3l8pk",
-        "thumbnail": "https://i.ytimg.com/vi/BV9Bnj3l8pk/hqdefault.jpg",
-        "published": "2026-04-17T13:00:21.000Z",
         "summary": ""
       }
     ],
@@ -1750,6 +1748,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Claude Design + Claude Code: The Boardroom Deck Workflow",
+        "url": "https://www.youtube.com/watch?v=LfUmRBMwJUE",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-05-02T14:30:23.000Z",
+        "summary": ""
+      },
+      {
         "title": "How to Use Claude Code for FREE (2026)",
         "url": "https://www.youtube.com/watch?v=U6gg_bi1I70",
         "source": "YouTube · Nick Saraev",
@@ -2048,13 +2053,6 @@
         "url": "https://www.youtube.com/watch?v=9pniXngp8kk",
         "source": "YouTube · Productive Dude",
         "published": "2026-04-17T13:00:31.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Opus 4.7 Just Made Claude Code Desktop Unstoppable",
-        "url": "https://www.youtube.com/watch?v=BV9Bnj3l8pk",
-        "source": "YouTube · Leon van Zyl",
-        "published": "2026-04-17T13:00:21.000Z",
         "summary": ""
       },
       {
