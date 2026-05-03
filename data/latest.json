@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-02T22:27:41.305Z",
+  "generated_at": "2026-05-03T01:30:14.868Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,31 @@
     ],
     "news": [
       {
+        "title": "The Claude Delusion: Richard Dawkins believes his AI chatbot is conscious",
+        "url": "https://www.dailygrail.com/2026/05/the-claude-delusion-richard-dawkins-believes-his-female-ai-chatbot-is-conscious/",
+        "source": "HN · 57↑",
+        "hn_id": "47991340",
+        "published": "2026-05-02T22:44:23.000Z",
+        "summary": ""
+      },
+      {
         "title": "Anthropic Launches Claude Security in Public Beta for Enterprise Customers - CyberSecurityNews",
         "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9zQ0FlMi15MGtIQ09tZDk1ek9kVzIzdzNaSHBEWlFlbHF1aGk0TVpBZmNtNFZoMFZZMDhTcVI5bDRCenYwd0l1NG95VFVwTk1RWVF2Q0MyaGZJN1AwZXJPbHV1d1pCT0tkNVHSAW9BVV95cUxOTkJvdUR2aDdiZVVqbWREUXRnOHpLdU5CaEI3WWdtcVR2cm9YSmx4dzVLemtKdW1MVGt3cjM4UURBUmt0aEtHZkc0cHJqdjFEQkl1dWtyZGVnQTJabTBKenNwY0VOd2RydVR6LTRnQjQ?oc=5",
         "source": "Google News",
-        "published": "2026-05-02T20:04:14.000Z",
+        "published": "2026-05-02T22:43:24.000Z",
         "summary": "Anthropic Launches Claude Security in Public Beta for Enterprise Customers CyberSecurityNews"
+      },
+      {
+        "title": "Codex Replaced Claude for Me… Here’s Why",
+        "url": "https://www.youtube.com/watch?v=FU2iB-UfPPA",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "FU2iB-UfPPA",
+        "thumbnail": "https://i.ytimg.com/vi/FU2iB-UfPPA/hqdefault.jpg",
+        "published": "2026-05-02T20:35:06.000Z",
+        "summary": "",
+        "_kind": "news_video"
       },
       {
         "title": "Anthropic kept Mythos away from the public because it was too dangerous, and the real shock is that outsiders still found a way in - OkDiario",
@@ -195,7 +215,7 @@
       {
         "title": "Show HN: Filling PDF forms with AI using client-side tool calling",
         "url": "https://copilot.simplepdf.com/?share=a7d00ad073c75a75d493228e6ff7b11eb3f2d945b6175913e87898ec96ca8076&form=w9&lang=en",
-        "source": "HN · 47↑",
+        "source": "HN · 49↑",
         "hn_id": "47984675",
         "published": "2026-05-02T08:54:27.000Z",
         "summary": "Hey HN! I built SimplePDF Copilot: an AI assistant that can interact with the PDF editor. It fills fields, answers questions, focuses on a specific field, adds fields, deletes…"
@@ -203,7 +223,7 @@
       {
         "title": "Show HN: Agent-desktop – Native desktop automation CLI for AI agents",
         "url": "https://github.com/lahfir/agent-desktop",
-        "source": "HN · 91↑",
+        "source": "HN · 93↑",
         "hn_id": "47982708",
         "published": "2026-05-02T02:18:24.000Z",
         "summary": "I&#x27;ve been building computer-use tools for a while, and I quietly launched this about a month ago (122 Stars on GH). I figured it was worth sharing here. Over the last few…"
@@ -261,7 +281,7 @@
       {
         "title": "Show HN: AI CAD Harness",
         "url": "https://fusion.adam.new/install",
-        "source": "HN · 91↑",
+        "source": "HN · 92↑",
         "hn_id": "47977694",
         "published": "2026-05-01T17:43:53.000Z",
         "summary": "Hi HN, I&#x27;m Zach, one of the co-founders of Adam ( https:&#x2F;&#x2F;adam.new ). We&#x27;ve been on HN twice before with text-to-CAD&#x2F;3D experiments [1][2]. The honest…"
@@ -287,6 +307,13 @@
         "source": "Ars Technica",
         "published": "2026-05-01T15:32:27.000Z",
         "summary": "Last month, Anthropic made a big deal about the supposedly outsize cybersecurity threat represented by its Mythos Preview model, leading the company to restrict the initial release to “critical…"
+      },
+      {
+        "title": "As ChatGPT and Claude remain banned in China, Goldman Sachs tells employees in Hong Kong: Do not use Anth - The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxOR2pBUGVBOUhwdk10MUd2a2JsTFFfZkRLYlFZanZUN2tBcUhHZWxleFh5dUd4a1NRUXl1ZkxGLUJyajZRMDdwZmpicnpUY2FJSnZSLW45Z0FvR3VVMXZ5ejhGRVh0Z3NrOUMybnJFcmdjcl9ucEdRY2luNmhCaDhWZWo2YmgyRU01RWlYTkFqYm5VRFdRNVJpb2Q1bTBrQ0FmSm5SSVM1RzlxMXdFRHJ6S2pha2VEWHYxd0R3YXpMeDNBY08zWkZfZFB4a05XYzVmVjl6LTlfVnRxRlRnVW95b1p1aVdUMnZUMFphcHZ2RjZwMmdhNEVVZHlxOXF2LUJmeGJSVDV5NEQtazlrc1pZQjVOR0pIN1haaGl2OFFrbjd3TlgyTlF2ZtIBrgJBVV95cUxQLS1BLWZWQnZ1OEtwUDRxVzRGYU1YM3hRNnN1OGREZ2hGV3FQQjI0RnYyUlU1by1seGRfclZqay1ZZzlUQVcwWVpoamsyR2ppdjBPVnM0Qy1mQjd0Vmx1cUE5S1d2ZGNhRURPc0xRRFFvRk52ZGtQWW9NODc0TWtvVVVpRk9GQmVhWU1aSzNFZGFfMEc2a3ZqdUJqWUpFa0NwbWpKRVNCU0ZuZzdHU1BaWXpOS2pqejdIODR6UG01Vm1KWG9XU0ZhNTFMb3JEUkVjUzUza2tWMDhJNlRvcmFJbGp0TC12NmpIR3E0Nmxid1U0TlNWX3dpMjV6N0VFR2lDckRlR2VaSDZIRjY0TEhlVGdmZjhCem1DOWZEcnVKRjJxTFlUQU9veDBiTU9TZw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-01T15:22:00.000Z",
+        "summary": "As ChatGPT and Claude remain banned in China, Goldman Sachs tells employees in Hong Kong: Do not use Anth The Times of India"
       },
       {
         "title": "Anthropic launches Claude Security to give defenders the same AI edge attackers already have - the-decoder.com",
@@ -334,21 +361,6 @@
         "source": "Google News",
         "published": "2026-05-01T12:00:00.000Z",
         "summary": "Anthropic Rolls Out Claude Security for AI Vulnerability Scanning Infosecurity Magazine"
-      },
-      {
-        "title": "Pentagon tech chief says Anthropic is still blacklisted, but Mythos is a separate issue - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPZkt3WjhQUmYyX1Q5NnZTWHJoeTd2WjFMVUVkSkV1WEFMMjd6dGJtdks4ck0xd2tjcGduYkV0SVVhN1dTaXJwZFlDWVMtTzN1dnF1QUQ5eW1MQnE0cTJuZFJQRTZPcWZmU21YQzVTVzc2RzBvSllNUkxFTkRtSlVpVXJENXVhSVHSAYwBQVVfeXFMTmJubDRYam5NT0pWbTY4R0duakFGMW10LXZSaUM0WVFXdWpKX1BoVzdqdng2b2pkUDVpLUQta0U1YVcxZmREME9fa1laMlZ3MDI0ZGliQ0ZOQXlZMm9zVjhNYkFTSzVYLWZ2eG9FOHVwTE1vb1BJZG55b3ZiMlc0VUZGUU4zTWhNSVdwa1Y?oc=5",
-        "source": "Google News",
-        "published": "2026-05-01T11:52:13.000Z",
-        "summary": "Pentagon tech chief says Anthropic is still blacklisted, but Mythos is a separate issue CNBC"
-      },
-      {
-        "title": "Apple accidentally left Claude.md files Apple Support app",
-        "url": "https://x.com/aaronp613/status/2049986504617820551",
-        "source": "HN · 376↑",
-        "hn_id": "47973378",
-        "published": "2026-05-01T11:08:32.000Z",
-        "summary": "https:&#x2F;&#x2F;xcancel.com&#x2F;aaronp613&#x2F;status&#x2F;2049986504617820551"
       },
       {
         "title": "🔴LIVE: The new Claude Code plugins are incredible...",
@@ -618,6 +630,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Codex Replaced Claude for Me… Here’s Why",
+        "url": "https://www.youtube.com/watch?v=FU2iB-UfPPA",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "FU2iB-UfPPA",
+        "thumbnail": "https://i.ytimg.com/vi/FU2iB-UfPPA/hqdefault.jpg",
+        "published": "2026-05-02T20:35:06.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Design + Claude Code: The Boardroom Deck Workflow",
         "url": "https://www.youtube.com/watch?v=LfUmRBMwJUE",
@@ -935,17 +958,6 @@
         "video_id": "W1FwFYnNgOI",
         "thumbnail": "https://i.ytimg.com/vi/W1FwFYnNgOI/hqdefault.jpg",
         "published": "2026-04-17T18:32:38.000Z",
-        "summary": ""
-      },
-      {
-        "title": "FULL Claude Code Tutorial For Beginners in 2026! (FULL COURSE)",
-        "url": "https://www.youtube.com/watch?v=9pniXngp8kk",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "9pniXngp8kk",
-        "thumbnail": "https://i.ytimg.com/vi/9pniXngp8kk/hqdefault.jpg",
-        "published": "2026-04-17T13:00:31.000Z",
         "summary": ""
       }
     ],
@@ -1269,18 +1281,6 @@
         "published": "2026-04-18T01:34:30.000Z",
         "summary": "What's changed Fixed a crash in the permission dialog when an agent teams teammate requested tool permission",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "FULL Claude Code Tutorial For Beginners in 2026! (FULL COURSE)",
-        "url": "https://www.youtube.com/watch?v=9pniXngp8kk",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "9pniXngp8kk",
-        "thumbnail": "https://i.ytimg.com/vi/9pniXngp8kk/hqdefault.jpg",
-        "published": "2026-04-17T13:00:31.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "Equipping Agents for the Real World with Agent Skills",
@@ -1749,6 +1749,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Codex Replaced Claude for Me… Here’s Why",
+        "url": "https://www.youtube.com/watch?v=FU2iB-UfPPA",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-05-02T20:35:06.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Design + Claude Code: The Boardroom Deck Workflow",
         "url": "https://www.youtube.com/watch?v=LfUmRBMwJUE",
         "source": "YouTube · Pragati Kunwer",
@@ -2047,13 +2054,6 @@
         "url": "https://www.youtube.com/watch?v=W1FwFYnNgOI",
         "source": "YouTube · Ryan & Matt Data Science",
         "published": "2026-04-17T18:32:38.000Z",
-        "summary": ""
-      },
-      {
-        "title": "FULL Claude Code Tutorial For Beginners in 2026! (FULL COURSE)",
-        "url": "https://www.youtube.com/watch?v=9pniXngp8kk",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-04-17T13:00:31.000Z",
         "summary": ""
       },
       {
