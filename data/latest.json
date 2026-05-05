@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-05T20:50:30.550Z",
+  "generated_at": "2026-05-05T22:43:11.315Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,18 @@
     ],
     "news": [
       {
+        "title": "EVERYTHING Claude Shipped in the Last 30 Days",
+        "url": "https://www.youtube.com/watch?v=wH8F4-mcDTY",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "wH8F4-mcDTY",
+        "thumbnail": "https://i.ytimg.com/vi/wH8F4-mcDTY/hqdefault.jpg",
+        "published": "2026-05-05T21:11:52.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
         "title": "Thoma Bravo Is `Model Agnostic,' Says Boro",
         "url": "https://www.bloomberg.com/news/videos/2026-05-05/thoma-bravo-is-model-agnostic-says-boro-video",
         "source": "Bloomberg",
@@ -200,13 +212,6 @@
         "source": "Google News",
         "published": "2026-05-05T17:38:51.000Z",
         "summary": "Anthropic Forms AI Services Firm With $300M Backing Quantum Zeitgeist"
-      },
-      {
-        "title": "Apple Weighs Using Intel, Samsung Processors | Bloomberg Tech 5/5/2026",
-        "url": "https://www.bloomberg.com/news/videos/2026-05-05/bloomberg-tech-5-5-2026-video",
-        "source": "Bloomberg",
-        "published": "2026-05-05T17:35:40.000Z",
-        "summary": "Bloomberg’s Caroline Hyde discusses Apple’s exploratory discussions with Intel and Samsung to build their processors for its US devices. Plus, Alphabet, Microsoft, and xAI have agreed to give the US…"
       },
       {
         "title": "Anthropic Teams With Wall Street Firms on AI Venture - AI Business",
@@ -272,6 +277,13 @@
         "summary": "Anthropic Targets Financial Services Space With New AI Agents PYMNTS.com"
       },
       {
+        "title": "Anthropic unveils AI agents to field financial services tasks - AFR",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNHBiVEZXOVk3eWxFa3V0VDRfaTZ0Z2ZNMTRCV25DX1EtdFh4ZUYxVms0SHRDa0tOTzBqOVRiWjNnSmEzTnFESWNTbzZRN21NRnNCZll3dWNDRkxuUHV2QXltX3AxSEg0d243bnZyc1J1aTdRSE5lMlctWXVGNE4tTDIza1M0T0tCOTVBblVrRWdZc3Y3d3F2LXcyMmVLek5kdnFzdmVXVV84ZVZQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-05T16:42:00.000Z",
+        "summary": "Anthropic unveils AI agents to field financial services tasks AFR"
+      },
+      {
         "title": "SPONSORED How health systems navigate patient data with Claude - Axios",
         "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdzBqYXlGQWxobmc5OWkybFhPZmtXLXpuVGZiXzBPV3pMMkdIVE9DVWZPUDlaQmRuQXVYbGZrN0pJNEVvVnBzRUdvTFRCSnlpVzFrTjJUV2xpRWNhUjMxTnJZMFQydlFmSF80MkU3VmotVHplc05GXy1WR0w0T1NfbWhUM1AtUUQtejF4Yg?oc=5",
         "source": "Google News",
@@ -314,11 +326,11 @@
         "summary": "Verisk integrates analytics into Anthropic's Claude via MCP Let's Data Science"
       },
       {
-        "title": "Anthropic deepens finance push with 10 new AI agents for banks, insurers - KFGO",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZUhleHZjVU1hZko4OW5MTkRwVU5ZRWV5Ym5rRXdBY3QxLU84V3d1eEFIX2RTeWFrNjR5Zkxsa2ZCYXI1MVkwSHJSbGNIaHBSX0N6em5SUGJSUU9WUG1xa251a3AwYXh5akd1ZG5SNzJVM1otQTMwTllHQVozZmR0eUlmMDZmczFCYkUyVFZHSXotbHIyalZaNk5pY1FDaVZKQlE?oc=5",
+        "title": "Anthropic is launching 10 AI agents targeting Wall Street banks and insurers - qz.com",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOdzZSSVdjTGhFQmtFTEpXeXpPZzFnZWpwRkRFS2E1YnZMZVU5c3hDcDhVcFB4Wk91WHlQT1F0ZlFyUUZCNWoyNVJhMm50bWluSTZfa2dpVDlQdzB2NWFJV21Nb05xV042MC1ON0FmeDNISjg2Z3UxMVZaSnphQnVjOA?oc=5",
         "source": "Google News",
-        "published": "2026-05-05T16:00:36.000Z",
-        "summary": "Anthropic deepens finance push with 10 new AI agents for banks, insurers KFGO"
+        "published": "2026-05-05T15:37:55.000Z",
+        "summary": "Anthropic is launching 10 AI agents targeting Wall Street banks and insurers qz.com"
       },
       {
         "title": "Learn 80% of Claude Code Skills in Under 20 Minutes",
@@ -511,18 +523,6 @@
         "published": "2026-04-21T16:11:58.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "The creator of Claude Code just revealed 7 secrets to using Claude Code (Opus 4.7)",
-        "url": "https://www.youtube.com/watch?v=8YhYtIF9PYI",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "8YhYtIF9PYI",
-        "thumbnail": "https://i.ytimg.com/vi/8YhYtIF9PYI/hqdefault.jpg",
-        "published": "2026-04-18T15:05:22.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -612,6 +612,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "EVERYTHING Claude Shipped in the Last 30 Days",
+        "url": "https://www.youtube.com/watch?v=wH8F4-mcDTY",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "wH8F4-mcDTY",
+        "thumbnail": "https://i.ytimg.com/vi/wH8F4-mcDTY/hqdefault.jpg",
+        "published": "2026-05-05T21:11:52.000Z",
+        "summary": ""
+      },
       {
         "title": "How to Use Claude Code Skills for FREE in 2026 (No Subscription Required)",
         "url": "https://www.youtube.com/watch?v=hIMGeqhjUrk",
@@ -929,17 +940,6 @@
         "video_id": "-o73ECZyjqk",
         "thumbnail": "https://i.ytimg.com/vi/-o73ECZyjqk/hqdefault.jpg",
         "published": "2026-04-19T00:11:31.000Z",
-        "summary": ""
-      },
-      {
-        "title": "The creator of Claude Code just revealed 7 secrets to using Claude Code (Opus 4.7)",
-        "url": "https://www.youtube.com/watch?v=8YhYtIF9PYI",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "8YhYtIF9PYI",
-        "thumbnail": "https://i.ytimg.com/vi/8YhYtIF9PYI/hqdefault.jpg",
-        "published": "2026-04-18T15:05:22.000Z",
         "summary": ""
       }
     ],
@@ -1743,6 +1743,13 @@
     ],
     "claude_learning": [
       {
+        "title": "EVERYTHING Claude Shipped in the Last 30 Days",
+        "url": "https://www.youtube.com/watch?v=wH8F4-mcDTY",
+        "source": "YouTube · Ryan & Matt Data Science",
+        "published": "2026-05-05T21:11:52.000Z",
+        "summary": ""
+      },
+      {
         "title": "How to Use Claude Code Skills for FREE in 2026 (No Subscription Required)",
         "url": "https://www.youtube.com/watch?v=hIMGeqhjUrk",
         "source": "YouTube · Pragati Kunwer",
@@ -2041,13 +2048,6 @@
         "url": "https://www.youtube.com/watch?v=-o73ECZyjqk",
         "source": "YouTube · Productive Dude",
         "published": "2026-04-19T00:11:31.000Z",
-        "summary": ""
-      },
-      {
-        "title": "The creator of Claude Code just revealed 7 secrets to using Claude Code (Opus 4.7)",
-        "url": "https://www.youtube.com/watch?v=8YhYtIF9PYI",
-        "source": "YouTube · Alex Finn",
-        "published": "2026-04-18T15:05:22.000Z",
         "summary": ""
       },
       {
