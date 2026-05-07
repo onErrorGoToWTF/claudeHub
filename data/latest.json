@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-05-07T15:57:12.367Z",
+  "generated_at": "2026-05-07T17:42:39.162Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Natural Language Autoencoders",
+        "url": "https://www.anthropic.com/research/natural-language-autoencoders",
+        "source": "Anthropic Research",
+        "published": "2026-05-07T17:35:46.000Z",
+        "summary": ""
+      },
       {
         "title": "Anthropic Institute Agenda",
         "url": "https://www.anthropic.com/research/anthropic-institute-agenda",
@@ -135,16 +142,70 @@
         "source": "Anthropic Research",
         "published": "2026-04-22T17:01:04.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Design Anthropic Labs",
-        "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
-        "source": "Anthropic",
-        "published": "2026-04-17T14:58:21.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Breakingviews - Anthropic deal clouds SpaceX’s AI value - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUHZ1SGFSREZsMkEteThkX3UtdHhoLXluN2hvWG1YOWZRbUhsRE43enIzcU5MME9vRmhUbDZodXpGQ01VLW51VmxoemlCLXZlZ2ZEX1VJdkgyWXpqLVJycnFnMWVvNFlBR0d5YkJyZ1UyYzcyTThkeUtZQUo4NEl2V2VXUzhDNFg0WDE0TERBbWVDT0VyYUpKS3J5RTZncnhH?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T17:19:02.000Z",
+        "summary": "Breakingviews - Anthropic deal clouds SpaceX’s AI value Reuters"
+      },
+      {
+        "title": "Klaviyo expands integration with Anthropic to bring agentic marketing workflows to Claude - marketscreener.com",
+        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQSnNUZXBoNkdScnpsRFZhMkJHeHVsQV9BZ1NGUE1yVjExWnVhNC1LdEtSZ0wzbzlvMTJTWDRMOTlxT0ZIMHlNUFV1UUV6MllzRjlqOTU4bzBCSjF3Yl9GX0ZHRVlUYkpiX2UyeGppLWpSREYyMEhSWnRyNXYwSnNoMExKdHNJdTAzbmhtc09DSmNIdk1PLWlaRkEtOExzU1FFQVR0TG9uSElqMmdacVAwV1ZndzNYYTdHOWRYMUJ5TjJOeDJyeVhock5fTkw0cW44MmZCdHpabWREQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T17:12:56.000Z",
+        "summary": "Klaviyo expands integration with Anthropic to bring agentic marketing workflows to Claude marketscreener.com"
+      },
+      {
+        "title": "Translating Claude’s thoughts into language",
+        "url": "https://www.youtube.com/watch?v=j2knrqAzYVY",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "j2knrqAzYVY",
+        "thumbnail": "https://i.ytimg.com/vi/j2knrqAzYVY/hqdefault.jpg",
+        "published": "2026-05-07T17:01:21.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Klaviyo Enhances Anthropic Integration with Agentic Workflows in Claude - geneonline.com",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOM3hjNlpZN1RKakRMTlpjZlRmclVLeHZRUDJhX1ZpZ1QwX0ZwOThycXRVVTFLemtmTjJRTXVfTnRJeFphNXhkQXF0ZXUwTW5WSnFLeFdSVTlnb0pkYWFKR1dZemlGcWtqRGoxOF9hRW1BRXBWQlFHMTZBQUloZXgwSHJHMENyZnQzb0Rlc2JqbllaMFFOLXJaZ1BXQ2ZYaEtP?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T16:33:52.000Z",
+        "summary": "Klaviyo Enhances Anthropic Integration with Agentic Workflows in Claude geneonline.com"
+      },
+      {
+        "title": "Grok’s usage is so low that Elon Musk can sell compute to Anthropic - Fast Company",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNam91SlRFQ0U2SjhVdkJYVmtzYjVkcWNDQ0QyN1F5NjItVDNqWW1uM2dOM19FRTVVODQwYkZQQVZUS0cwSENpZHRIVVFJWFBsZWx3aVJiSkFUa1U2OWxaa1hTbWl4RHR6Z0Q0b2sxcEUwRF91N3hzMHhoemFmMGJJYV95dmFaZnVFTjhTNDRRQzFUXzBoSTVNcQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T16:11:19.000Z",
+        "summary": "Grok’s usage is so low that Elon Musk can sell compute to Anthropic Fast Company"
+      },
+      {
+        "title": "Jobless Claims Rise, Rivian Expands, Claude AI Pivots - StartupHub.ai",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxONVhScUQ5VHJFNzcxTWU2dVZVTXlUSjcyQzdHMGlib2xZMWZSQnJSb3lmTXYwRXdMeXl4OVBBSks2VEtmSjZuYWZnZi03dVl2XzBnZUtPUFk2b2hWOG9sUXdmMXlNNGgyTEliX3pFak4xeFdqdEpzSTJKamd5ekpIYjZGdlRraUZTQW1kdkpLUks3SGd1M19Sall1ZU5WeDFfQ013Wld3?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T16:01:22.000Z",
+        "summary": "Jobless Claims Rise, Rivian Expands, Claude AI Pivots StartupHub.ai"
+      },
+      {
+        "title": "Anthropic updates Claude Managed Agents with three new features - 9to5Mac",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQd1dXNERBbXNsWWd6ZHByQ1p6Vzl1MDc1MUFLb1pPZlQwcXZOei1FTEYzdWFDVEY3c0FsMVlNazVuem1zTWo0RkwycjlDTkVNcGlSTjc5YjI4UGYxcU5JWjVZdzlhYmlTRWVPcDlWSjVIeTlPWUxYWjE1dUtyV1czUDhFVC00MnNOZVN5dHhoLW5ISW1vNkRaSE04MA?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T15:37:00.000Z",
+        "summary": "Anthropic updates Claude Managed Agents with three new features 9to5Mac"
+      },
+      {
+        "title": "Anthropic is increasing Claude Code usage limits — here’s everything you need to know - IT Pro",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNbUs3NXI5UzUtbXRSMnUtMUZPYkdVaC1Oank5X2FaT1p0MzFzSldCQzVxS05NYmZtM2IzcGdhV2RfVVVaODE3RmNZMEg0MFlSRlZNcWN1TldxRlhDVDNraUhnMmdDSk1oRW9pX0wzM1FMNmlMSlZrRW81TFhJMjZXZFlWbWtsTzFCV0VKZzlYRFVlZlBNSEpGSDZNY18tRC1scUFHTjJQYVN0UQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T15:23:35.000Z",
+        "summary": "Anthropic is increasing Claude Code usage limits — here’s everything you need to know IT Pro"
+      },
       {
         "title": "Why AI Isn’t a Threat to Wall Street Traders Just Yet",
         "url": "https://www.bloomberg.com/news/videos/2026-05-07/why-ai-isn-t-a-threat-to-wall-street-traders-just-yet-video",
@@ -153,11 +214,11 @@
         "summary": "Anthropic's latest AI agents are designed to win over Wall Street &mdash; but experiments show LLMs aren't ready to replace traders. Justina Lee explains why your fund manager is safe in their job,…"
       },
       {
-        "title": "OpenClaw and Claude can put your AI-generated podcasts in Spotify",
-        "url": "https://www.theverge.com/entertainment/925916/save-to-spotify-ai-podcasts",
-        "source": "The Verge",
-        "published": "2026-05-07T14:15:40.000Z",
-        "summary": "Save to Spotify is a new command-line tool designed specifically for AI agents like OpenClaw, Claude Code, or OpenAI Codex. If you're the kind of person who collects research on a topic, then feeds…"
+        "title": "Dun & Bradstreet Integrates Risk Data into Anthropic Claude - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOcXBzSUQxSlVGUFhFZkJlSmJnWUpSVUpvUTlxT1dESWw2YWJwTjIydGV2UjJNVFhHWEtHYlo4Y0NsU3lsWGtTVndJMVhOWDdiM2hyZGx5TU1CUXBwZWNKXzM1M2E3T3A3SlZYVTl4YlBPRGZtelczSEpXd3hmaG5zUWNVbEwzOHdaVTZWTHdrZC05d29QRWJXV2JoZXFaamJH?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T15:20:43.000Z",
+        "summary": "Dun & Bradstreet Integrates Risk Data into Anthropic Claude Let's Data Science"
       },
       {
         "title": "Anthropic compute deal taps SpaceXAI Colossus 1 ... - eeNews Europe",
@@ -170,7 +231,7 @@
         "title": "Elon Musk Called Claude 'Evil' — Now Anthropic Runs On His Nvidia Supercomputer - Benzinga",
         "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQLV9FSVZCdWN0RFZDZlFOV0d1bUJzV0hwSFM4NnBmRXpNSW1CV3ZIdmlGSmdCaWNUcUt5bm9IeXF6TC1ya1ZsMkdaaWR0NFJwaEpWOWx2UFNpYk5IRktsRVZSVE9GakE3MW1uRzczb21hRTgyTjhVYnVaOG5oZmZlTEpPd3JBSzBkcWszd1pIU29URTdrSXhUUkREVDFORk9kVTdMVU9SWjh2dkh3UE5tYXZNM3d6SFhyeC04ZEVVYVRBVDYxbUlz?oc=5",
         "source": "Google News",
-        "published": "2026-05-07T13:18:50.000Z",
+        "published": "2026-05-07T13:18:09.000Z",
         "summary": "Elon Musk Called Claude 'Evil' — Now Anthropic Runs On His Nvidia Supercomputer Benzinga"
       },
       {
@@ -188,20 +249,6 @@
         "summary": "Anthropic's \"Code with Claude\" Conference Goshen News"
       },
       {
-        "title": "Musk's SpaceX has rented out access to its supercomputer's 220,000 Nvidia GPUs and 300 megawatts of AI compute power to rival Anthropic — Musk says “No one set off my evil detector,” Antrhropic also interested in orbital data centers - Tom's Hardware",
-        "url": "https://news.google.com/rss/articles/CBMiowNBVV95cUxQSmkyX0JGZ0hfMF9KUjBjMGRJQzhqeHduZ0JlaU92RDlIT2Fyd1U3RnBXZGtVU1VyLXNPSlBBWmY4TmY1OFNqczRrT18yMDh4bER6UG9TS1NWYUlqUFoxZFAxUGNVN2p3SU9iRHpZdjdyZW1GSmZVOWZhTktKRWF5YWRjbWJZdzBObVhyYTVwUlZ4bW5qc1NNaEprVmdtOGdpNDNnT0ZYQ3VPVDZHem93b1o5UWM1WG1Ka0dkRUdycU1EXzk3R0toZjZHcHZTb0sxaXRxT0VMMEw1UTN6OFNYOUgyWlN2NG9vRFJWdWQteGNSVHdZRWFvckdaS1R2Z3UwemJiSFdNd0JjQkJ5d001WEZZblFwWUlkTU9NYWFGdl9Vc1Zlb0JVTkhtYzVhaHczX241LTFWazhBVGlQTWdqUUNOLUVxaFN5YnV5aWlEazRLRGo0d3JFcHQxVm5tMWpSLWt6VFNkWlFhZDNyZ2JCVzA0MzBmN2RMX0ZaanpuaW1FRTBLVTBwQllsb1ptazZ4ZktJbE90SERVTktHNzBfaVcyYw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T12:19:55.000Z",
-        "summary": "Musk's SpaceX has rented out access to its supercomputer's 220,000 Nvidia GPUs and 300 megawatts of AI compute power to rival Anthropic — Musk says “No one set off my evil detector,” Antrhropic also…"
-      },
-      {
-        "title": "Anthropic Taps SpaceX Data Centres to Expand Claude AI Capacity - outlookbusiness.com",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZFRSMUN2bUNvMlAycnhfZEVOYTRURG01SEZEeXFzMUZnZTdtbDdQZ1JERDBHSHRQZEN4dkJjazdScFd4ZEw3ejlka0ZYQXNVN1BDQmszcnplREhubTNuVC1zWVlNVDhyMTJmbmVzQWNpc3N6X2tEeDh6TEs0WEdnOE1ZTE5zS1RjQ2xyNC02LWNNdHlYUXfSAaMBQVVfeXFMTmNuMlFrbzRsY2tSOHo5VGtxMTRLVDk3VHItTGdfMjhHVi1GZFdZYTNYa3o5SV9NdG0tUjA4cFhJbTVEV2NDN2Z3RmJieUFQVERjNVRYRWVxcnV2Ui1Nb2JYb2lMSnZxV2NUNC1sSHVsd21nQkNZQnNHMDYwdVV3dWFlYnZkN2VoNExOUk1qNGt2b0RheGdQT1JQWG9EZTgtY1dpYw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T12:03:59.000Z",
-        "summary": "Anthropic Taps SpaceX Data Centres to Expand Claude AI Capacity outlookbusiness.com"
-      },
-      {
         "title": "Today in AI | Anthropic unveils ‘Dreams’ feature for Claude | Anthropic taps SpaceX supercomputer - Storyboard18",
         "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNYXlyX2UzaUE2MUJCLVBqU1JMdTFfYlJLbE80VmtiZjVtZnhVZjhXQThLR21EbVgxT2hscWthVWRFSzZsWmlNRlRsbVc0aFh2SzMyMzBnYUlGblNnWXY0TTdkN1BPZG1wbDhMZzhHa3hkS1liaTRUazV6VnpLd0xIRTh5SXhmZGNvUzgtQTlvWkI2VDM3NXRONUxpMDl4VWdKbFcxbEUwR05yX1NxX2c0OF9CYTZzWTkyOFFHdWE3ME0yTDc5MlBBUmdhcWFOMDlPSlpIUtIB2gFBVV95cUxNMTNTZGxiNmlYSWRIam5vSG14eEpGaG8tY28xajh6X2Y2MU1McUlsUWN3Z0kyQV9UYl94R0xYU1JTa1dVTW1hYlVneGdYWVplOUVISWlyWTVjaTAtYkx4NDl3NXV1N2p2VERCdGhhR3d1S0xYS3QwMWJLc1hSbms1TjRLTTdOUXQ5aTQ0ZHQwZXh1R3VjdFA3aXdhcFlkU0h2WEJlajNNSDhkY3BINjh1T3JyRkZpT2t2QV91UE5tVVNIUzlwMkM1Z2IzNk14Q0xxV2h2OFNtV2RuUQ?oc=5",
         "source": "Google News",
@@ -212,15 +259,15 @@
         "title": "How SpaceXAI & Anthropic Compute Deal Raises Claude Limits - AI Magazine",
         "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNYk9Yd3ZsZVgtRkUxVjVjQVF0bGtGYVoyNmU3RVVyUzB6RW0wcWQ3RS15NTlmMjBMNFc4ZkdUOEdLSmwxR0pGcm9sdTRXNkFNOVprRW9iMldpQjh2VEpMaHl0eVA1dGVHRThWZUxyS2s5QkQ5OFNfN3hlSGw1a1ZRLVk4MFRINWNydmJUQQ?oc=5",
         "source": "Google News",
-        "published": "2026-05-07T11:14:27.000Z",
+        "published": "2026-05-07T11:18:40.000Z",
         "summary": "How SpaceXAI & Anthropic Compute Deal Raises Claude Limits AI Magazine"
       },
       {
-        "title": "Anthropic Doubles Claude Code Rate Limits After Deal With SpaceX - Dataconomy",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMkpFRW4xUUM5WTUxS0h2Q2pXWUFYSlp5TG1BcEV3VGd5RkdQUE4ySlRyVy0za2xXeGFlV0FxbW1aWkxwYWVyMHhoMzgtRGVwMThnQjZZMXM1cmNGank1akxQeDBpQlNmSnpmYklpRFRtREE0NDBYdU9fU0VlYmdOaTBiM1BXSEZGR3V5dTlfMG92bkZISVFyM0tyWmtiZ0Yx?oc=5",
+        "title": "Anthropic expands compute with SpaceX deal, raises Claude usage limits - dqindia.com",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRlNlS0hnaUNhUG9SbUE2RlViendKX3hyVV9xd2xfZHF4M290bXQzTmd4MGRWVU1HRS1QeEQ0UF9LTXF0Sjl5eTlweXRjb1ZSdkNaeE5vUGpvQjhJZUUxTjVGS3lGMmhOY2xvbTZrRjJQcHFFVjZ3c1BfMjRLOWJ1TXNUZEsza3hacWFFeVN2bENuak9SbUkxOV9PV29mc2lRZlBaTG9oNWlDNTjSAasBQVVfeXFMUEZTZUtIZ2lDYVBvUm1BNkZVYnp3Sl94clVfcXdsX2RxeDNvdG10M05neDBkVlVNR0UtUHhENFBfS01xdEo5eXk5cHl0Y29WUnZDWnhOb1Bqb0I4SWVFMU41Rkt5RjJoTmNsb202a0YyUHBxRVY2d3NQXzI0SzlidU1zVGRLM2t4WnFhRXlTdmxDbmpPUm1JMTlfT1dvZnNpUWZQWkxvaDVpQzU4?oc=5",
         "source": "Google News",
-        "published": "2026-05-07T11:05:08.000Z",
-        "summary": "Anthropic Doubles Claude Code Rate Limits After Deal With SpaceX Dataconomy"
+        "published": "2026-05-07T11:00:56.000Z",
+        "summary": "Anthropic expands compute with SpaceX deal, raises Claude usage limits dqindia.com"
       },
       {
         "title": "Anthropic Employee Uses Claude AI To Map 12 Years Of Chats With Wife: \"1,795 'I Love You' Texts\" - NDTV",
@@ -284,41 +331,6 @@
         "source": "Google News",
         "published": "2026-05-07T07:40:44.000Z",
         "summary": "Dario Amodei Says Anthropic's Explosive Growth 'Too Hard To Handle' As Startup Sees 80-Fold Surge In Q1 Benzinga"
-      },
-      {
-        "title": "Anthropic CEO Dario Amodei jokes company’s 80x growth is “too hard to handle” - Storyboard18",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOR1pVNlRqZ3FOUVZBNnh4NEo4dnpOc1BINC1uXzhmbTlUUGU4MDFCVTRiTEdpSTNwX2RyeFpFbUpYdUZ6UWttUWVkTGc0XzVyZVJrazFYbnkxWlRJZjhXSzVPS0JwVVJsMzRBYUJSRW9fcGRCb2hLX0dqdzBhWUJEWncySV9aaTdsZEc3M3NEMVFaWHQ0UGxDLUlTaGNYdHVQTldTNU9aeGdOVzZWZERJNzV6bW5rMWs2LVFEUUhLQ05PM2ta0gHKAUFVX3lxTE9NcUluVGxUajdPSTdTQTdvU3lEMlZHNzVXTGJ2RlFpXy0zVG9tbkJTYlRTWl9pNTdDVFZfN3AzdzREc2pUdHd0X3NEd1hELWYtdnN1MWlEYkY5NmtJZmJSN0ltYWJwdWZFLUpSTm1XbzFkOHE4RFFnRTdSZ05NaEdYWDhVWlRBdzYzTVhwVklMaFRxN3lTUm5HbUV4S1RkU0dvNGx4TUU1RkY2OXBtRFozWXVPZ0s1VF9iZmx2Um5pVWp4c0VBYnlvNWc?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T07:28:11.000Z",
-        "summary": "Anthropic CEO Dario Amodei jokes company’s 80x growth is “too hard to handle” Storyboard18"
-      },
-      {
-        "title": "Anthropic Expands Claude Limits Following SpaceX Agreement - ForkLog",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNNExUZ1BadGtEUm5nbGVqcVFudkw5elUzVm1uYUJVQXBOQnBuOGtJd0hORkZocmtYRF8zdGR1SnZUUm5RMS1zV1pKdzZCZVhZNkY3ZTQ3Sjh2bkNiNmwzNEZPbmxoTllVaDBuWkE0WHpCaGNxQk1aME1pVjVJUHhLSVBIZkZiWWxlSXc?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T07:13:21.000Z",
-        "summary": "Anthropic Expands Claude Limits Following SpaceX Agreement ForkLog"
-      },
-      {
-        "title": "Anthropic will get compute capacity from Elon Musk's SpaceX - Axios",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAtaWlaSHNmWkt2dkc4X2JPUUptLW94TkRlZUhHUnZqOGhmZnd1dnBqOFhuTWJ6VEphd21MU084X2VyYS16dlZsUkNnSTVxRXpfVTFsVF9xMzZOamNkRTNEQnVDUXpZSzYxN0c1c00xZEt3cmxHSXc?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T07:07:40.000Z",
-        "summary": "Anthropic will get compute capacity from Elon Musk's SpaceX Axios"
-      },
-      {
-        "title": "Anthropic Announces AI Compute Partnership With SpaceX, Increases Claude Code Rate Limits - Gadgets 360",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxObWpwaldzd1FLWFR3MDh4bU5Qbkc4bkdSc240WWkzdk5oWFRQTXRRbXY1VFc0ZlVTVEF6d3pxbE0yWDRLTTlvTmVGenhFR3dzNF9IVlp0cmE1SkJHTjNFaTNLYWxKNnVXLW90Vl9Dcm9aM29uT1U4aHVvM3ZwWk80TTdJckhUWkhUcGMtb0F2Z25sUnJYQ09HR2xsM3NmODlGbWIzd3ZIdGptRXJYLVQtMEVSUzk1QWpLOXNBTTA1dFpydjVBTFhTWXRSaFcyaFXSAdQBQVVfeXFMTzBmampKQThReG9jMnNPOXpoS0VLNEhZRjZJM2FWNUtScVVzNE1PaFJaaWgxZzlRSXg0X1BmZTZFODdtbmNtTUYzNUFudVdVVGd6aW4zRVlITUNOb1BGRlNweDc0bURPYTdqcDJsLWgzTmlGTnZlc3NwZVZaYS1wcDFMYnFhQVdGY3RXMzZBaVZZbmJtYkNtV19mdXZVamtiS0ZMX3I2WFBFUkhNSDluZUI3NDBhS1QyMDBaX0hqVHRKanhRWXdUZHhCaGFaVlRvTDBqb1Y?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T07:04:26.000Z",
-        "summary": "Anthropic Announces AI Compute Partnership With SpaceX, Increases Claude Code Rate Limits Gadgets 360"
-      },
-      {
-        "title": "SpaceX Strikes AI Compute Deal With Anthropic as Demand for Claude Grows - ITP.net",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNSV9XSHFuXy1JU3NPQS1DcDRsNnkyN2VRaDBxWkEyeXo4UV9fdDJkQUdTSDBHRmNVYVhXNEZjdExFelBuaDFxWkRrSkFFbTJMRFIyVGdFdlA5RjV2WWJxSWFaeTRjSkZuUGNqaFdqZ0xVb1ZtSWJFRmtyTV9oaFpkVzR2c1dlLVBEYXhmaDZiLWpnTWRZQURvSlZfU3RrSE1jazc1ckRRQndKZw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T06:47:14.000Z",
-        "summary": "SpaceX Strikes AI Compute Deal With Anthropic as Demand for Claude Grows ITP.net"
       },
       {
         "title": "LIVE: Anthropic and Elon just teamed up to take down OpenAI",
@@ -530,8 +542,8 @@
         "title": "Connection failures for organizations restricting GitHub access by IP address",
         "url": "https://status.claude.com/incidents/snxm62gpxfc9",
         "source": "Claude Status",
-        "published": "2026-05-07T15:17:03.000Z",
-        "summary": "May 7 , 15:17 UTC Monitoring - A fix has been implemented and we are monitoring the results. May 6 , 22:32 UTC Identified - We have identified an issue affecting organizations that restrict GitHub…"
+        "published": "2026-05-07T16:36:27.000Z",
+        "summary": "May 7 , 16:36 UTC Resolved - This incident has been resolved. May 7 , 15:17 UTC Monitoring - A fix has been implemented and we are monitoring the results. May 6 , 22:32 UTC Identified - We have…"
       },
       {
         "title": "Elevated errors on Claude Opus 4.7",
@@ -612,6 +624,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Translating Claude’s thoughts into language",
+        "url": "https://www.youtube.com/watch?v=j2knrqAzYVY",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "j2knrqAzYVY",
+        "thumbnail": "https://i.ytimg.com/vi/j2knrqAzYVY/hqdefault.jpg",
+        "published": "2026-05-07T17:01:21.000Z",
+        "summary": ""
+      },
       {
         "title": "LIVE: Anthropic and Elon just teamed up to take down OpenAI",
         "url": "https://www.youtube.com/watch?v=q030uxRoV6U",
@@ -929,17 +952,6 @@
         "video_id": "GnoJaaIHXWU",
         "thumbnail": "https://i.ytimg.com/vi/GnoJaaIHXWU/hqdefault.jpg",
         "published": "2026-04-19T12:00:22.000Z",
-        "summary": ""
-      },
-      {
-        "title": "23 INSANE Claude Code Skills... to build your SaaS! (from Gary Tan)",
-        "url": "https://www.youtube.com/watch?v=-o73ECZyjqk",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "-o73ECZyjqk",
-        "thumbnail": "https://i.ytimg.com/vi/-o73ECZyjqk/hqdefault.jpg",
-        "published": "2026-04-19T00:11:31.000Z",
         "summary": ""
       }
     ],
@@ -1269,18 +1281,6 @@
         "video_id": "GnoJaaIHXWU",
         "thumbnail": "https://i.ytimg.com/vi/GnoJaaIHXWU/hqdefault.jpg",
         "published": "2026-04-19T12:00:22.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
-      },
-      {
-        "title": "23 INSANE Claude Code Skills... to build your SaaS! (from Gary Tan)",
-        "url": "https://www.youtube.com/watch?v=-o73ECZyjqk",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "-o73ECZyjqk",
-        "thumbnail": "https://i.ytimg.com/vi/-o73ECZyjqk/hqdefault.jpg",
-        "published": "2026-04-19T00:11:31.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1743,6 +1743,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Translating Claude’s thoughts into language",
+        "url": "https://www.youtube.com/watch?v=j2knrqAzYVY",
+        "source": "YouTube · Anthropic",
+        "published": "2026-05-07T17:01:21.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.132",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.132",
         "source": "Claude Code",
@@ -2048,13 +2055,6 @@
         "url": "https://www.youtube.com/watch?v=GnoJaaIHXWU",
         "source": "YouTube · Productive Dude",
         "published": "2026-04-19T12:00:22.000Z",
-        "summary": ""
-      },
-      {
-        "title": "23 INSANE Claude Code Skills... to build your SaaS! (from Gary Tan)",
-        "url": "https://www.youtube.com/watch?v=-o73ECZyjqk",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-04-19T00:11:31.000Z",
         "summary": ""
       },
       {
