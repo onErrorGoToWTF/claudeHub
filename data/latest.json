@@ -1,8 +1,22 @@
 {
-  "generated_at": "2026-05-07T19:22:27.543Z",
+  "generated_at": "2026-05-07T20:54:57.058Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Finance Agents",
+        "url": "https://www.anthropic.com/news/finance-agents",
+        "source": "Anthropic",
+        "published": "2026-05-07T20:29:52.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Model Context Protocol",
+        "url": "https://www.anthropic.com/news/model-context-protocol",
+        "source": "Anthropic",
+        "published": "2026-05-07T20:07:05.000Z",
+        "summary": ""
+      },
       {
         "title": "Natural Language Autoencoders",
         "url": "https://www.anthropic.com/research/natural-language-autoencoders",
@@ -15,13 +29,6 @@
         "url": "https://www.anthropic.com/research/anthropic-institute-agenda",
         "source": "Anthropic Research",
         "published": "2026-05-07T10:15:44.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Finance Agents",
-        "url": "https://www.anthropic.com/news/finance-agents",
-        "source": "Anthropic",
-        "published": "2026-05-06T20:56:20.000Z",
         "summary": ""
       },
       {
@@ -135,16 +142,37 @@
         "source": "Anthropic Research",
         "published": "2026-04-22T17:04:00.000Z",
         "summary": ""
-      },
-      {
-        "title": "Economic Index Survey Announcement",
-        "url": "https://www.anthropic.com/research/economic-index-survey-announcement",
-        "source": "Anthropic Research",
-        "published": "2026-04-22T17:01:04.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic: Higher Claude Usage Limits Introduced Following SpaceX Compute Partnership - Pulse 2.0",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOd1lpcUR2NVpFU3BMeW9RcEtpYk1Jb0ZQbWhGRjVkXzRCb2oyY0ZJbmN0VHhwaU5tNGdXaTF5d0RjMnNZY0dtWExxdDdFbGxYcHU5QVlUdXJrWEVVOXRraGlsa2xKTTB1UTg5a3puY1hLRDYzYVRfWDh0eHZLb25MQUpWSHpsX1l1QnVtY3FJTVl3bWJPVFE3VnpFUi1kUjFOTDZkZzh6c9IBrAFBVV95cUxNNGRRYTlza2ItVEV6RUhxbWM5RDlRX3B6bUNadjRqUUdqZjB4QktrQ2k2SGgtaWlMcmg2eHlZN20zTmE1RkFwRXpmOFV2LU4xaGlIc0dwUHNtb3pCekE5eWpVQkNrMnpDTnpBeVVIMHJrWlBVdjk0OW5RTzVIWmtCYmRvOWJDQlBSdUkxaFBKTXhXSXhrSVM1X3BvZzFaMlZvVVFuYUNiNkFDOGRQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T20:08:46.000Z",
+        "summary": "Anthropic: Higher Claude Usage Limits Introduced Following SpaceX Compute Partnership Pulse 2.0"
+      },
+      {
+        "title": "Anthropic deepens push into financial services - CIO Dive",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5fYkhCR0JGdUlOOUtxTlYxbVVNOXdBSjRlMnpIVTJNX0ZFcnd5eEJIQjVFQm5ZYUh1d05NYk1XZ1otcWt4dlJLZGhHYmdwc1ZtdTd5VWdvckpBcDJBLUI3M21IU2FpQ2UyN1RkcmtWRmNROTRBRVEtVk5Ja1ROZw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T19:48:20.000Z",
+        "summary": "Anthropic deepens push into financial services CIO Dive"
+      },
+      {
+        "title": "Arm Warns of Phone Market Weakness | Bloomberg Tech 5/7/2026",
+        "url": "https://www.bloomberg.com/news/videos/2026-05-07/bloomberg-tech-5-7-2026-video",
+        "source": "Bloomberg",
+        "published": "2026-05-07T19:45:22.000Z",
+        "summary": "Bloomberg’s Caroline Hyde speaks with Arm CEO Rene Haas about sluggishness in the smartphone industry and growing demand from AI data centers. Plus, Anthropic signs an agreement with Elon Musk's…"
+      },
+      {
+        "title": "Snyk embeds Anthropic’s Claude to scale AI-native application security - TipRanks",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOeFo5M3JNaG90bFljcHMtS0Y5QjB0WkV3OVNWVGlDTGNHbi1mdzE1RkRKczcycHhScmNOVmlUYUswMjlOYUJIcFhVT1FZR24yT3BGUzR0SEV5Z2pTRXhBZGtYR1V0LTktTlNDZm5OT2Z5SWQyZ1BHZU1TNjNVa3RSUTk5bHFqZ19xRlFOSjlnQVNRQ0tXSmlaSjBwa25ya2c4alplcDhHT3BDWGNNSUtKeGZhNzBNWkFE?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T19:28:08.000Z",
+        "summary": "Snyk embeds Anthropic’s Claude to scale AI-native application security TipRanks"
+      },
       {
         "title": "Mozilla says 271 vulnerabilities found by Mythos have \"almost no false positives\"",
         "url": "https://arstechnica.com/information-technology/2026/05/mozilla-says-271-vulnerabilities-found-by-mythos-have-almost-no-false-positives/",
@@ -190,10 +218,17 @@
       {
         "title": "Natural Language Autoencoders: Turning Claude's Thoughts into Text",
         "url": "https://www.anthropic.com/research/natural-language-autoencoders",
-        "source": "HN · 44↑",
+        "source": "HN · 94↑",
         "hn_id": "48052537",
         "published": "2026-05-07T17:54:02.000Z",
         "summary": ""
+      },
+      {
+        "title": "Snyk Embeds Anthropic's Claude to Advance AI-Powered Security for Software Development - The Daily Tribune News",
+        "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNMFRLcjJVWXh0RGdscXZ6clY5emNucmdabHJuS2loUmlzNmFvaDBFYS1KMXVHVXA2VVBwOG5STEVnZ2pLNzFRWnZhN2NWZEdKN1Z3NzVIVTFvVVN1RHpGNWxJeFZjVDJRNGJEaW4tS3B5Q3FFeWRhRlROOUJ6VWJLODVoZkUwa1Ytbl9iRFd1MkNIcGZBcHZDQVlYUHk1ZDdEYzg5cFhOblhTbk1ueUt5U0dlbzIwUFliWDI0ZGc2QjZ6OTRTWlhmRF9ta2pycEdyemRLeU9YVEZFbkdpUFpyeExjMXJRQWJrX3VTSkdzNGhzcHltRVpqa0NhZzhaUzRjdW5KZEJyYXo3a2MxbW4wRUlpQU5DRGdKQURFTms4T3pNdw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T17:49:58.000Z",
+        "summary": "Snyk Embeds Anthropic's Claude to Advance AI-Powered Security for Software Development The Daily Tribune News"
       },
       {
         "title": "Anthropic secures SpaceX Colossus 1 compute capacity - Let's Data Science",
@@ -203,18 +238,18 @@
         "summary": "Anthropic secures SpaceX Colossus 1 compute capacity Let's Data Science"
       },
       {
+        "title": "Natural Language Autoencoders: Turning Claude’s thoughts into text - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBmbVloTjJQSlBNV2VlTWZFUUJheEJrdEhOZXc4RzBjN1gxOVoyTXZMQ2ljUGhGdmlNeUhXbkoxd2MyQS1QNUR2ZXNyeEkwS1hkckNvVUlJZkF3VlV5MUowcTdiYVc0V0FMUWRqcTV0RW9ndw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T17:23:23.000Z",
+        "summary": "Natural Language Autoencoders: Turning Claude’s thoughts into text Anthropic"
+      },
+      {
         "title": "Breakingviews - Anthropic deal clouds SpaceX’s AI value - Reuters",
         "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUHZ1SGFSREZsMkEteThkX3UtdHhoLXluN2hvWG1YOWZRbUhsRE43enIzcU5MME9vRmhUbDZodXpGQ01VLW51VmxoemlCLXZlZ2ZEX1VJdkgyWXpqLVJycnFnMWVvNFlBR0d5YkJyZ1UyYzcyTThkeUtZQUo4NEl2V2VXUzhDNFg0WDE0TERBbWVDT0VyYUpKS3J5RTZncnhH?oc=5",
         "source": "Google News",
         "published": "2026-05-07T17:19:02.000Z",
         "summary": "Breakingviews - Anthropic deal clouds SpaceX’s AI value Reuters"
-      },
-      {
-        "title": "Klaviyo expands integration with Anthropic to bring agentic marketing workflows to Claude - marketscreener.com",
-        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQSnNUZXBoNkdScnpsRFZhMkJHeHVsQV9BZ1NGUE1yVjExWnVhNC1LdEtSZ0wzbzlvMTJTWDRMOTlxT0ZIMHlNUFV1UUV6MllzRjlqOTU4bzBCSjF3Yl9GX0ZHRVlUYkpiX2UyeGppLWpSREYyMEhSWnRyNXYwSnNoMExKdHNJdTAzbmhtc09DSmNIdk1PLWlaRkEtOExzU1FFQVR0TG9uSElqMmdacVAwV1ZndzNYYTdHOWRYMUJ5TjJOeDJyeVhock5fTkw0cW44MmZCdHpabWREQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T17:12:56.000Z",
-        "summary": "Klaviyo expands integration with Anthropic to bring agentic marketing workflows to Claude marketscreener.com"
       },
       {
         "title": "Translating Claude’s thoughts into language",
@@ -248,6 +283,14 @@
         "source": "TechCrunch",
         "published": "2026-05-07T16:05:48.000Z",
         "summary": "Security researchers at Mozilla say Anthropic's Mythos has unearthed a wealth of high-severity bugs in Firefox."
+      },
+      {
+        "title": "Hardening Firefox with Claude Mythos Preview",
+        "url": "https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/",
+        "source": "HN · 35↑",
+        "hn_id": "48051079",
+        "published": "2026-05-07T16:05:33.000Z",
+        "summary": ""
       },
       {
         "title": "Jobless Claims Rise, Rivian Expands, Claude AI Pivots - StartupHub.ai",
@@ -290,48 +333,6 @@
         "source": "Google News",
         "published": "2026-05-07T15:20:43.000Z",
         "summary": "Dun & Bradstreet Integrates Risk Data into Anthropic Claude Let's Data Science"
-      },
-      {
-        "title": "Anthropic and D&B accelerate business onboarding with AI - FinTech Global",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOT0lKbnQ5RzRQMHhaN0NodlV5MEVYZzhxX3hFUV9OR0s1T1dNcTJyUXFPRTdhUElxdV9RYVhyRm01ajZQaTRaaDBIbGwweGd3RHFtOFdJaVFESGdCcmhEaldIUFNmQ1lpNEhfUEdNMzlPTkZSTTRZV21iNFl5dURXdHNBN2l0Q2F3TVA3TzRpR2N6MUE2?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T14:10:46.000Z",
-        "summary": "Anthropic and D&B accelerate business onboarding with AI FinTech Global"
-      },
-      {
-        "title": "OpenAI and Anthropic LLMs Used in Critical Infrastructure Cyber-Attack, Warns Dragos - Infosecurity Magazine",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5lMWhPbm51X3ZSemNCalZLV0FMclRrdEx6c0h1MHZ6SWZ6VzYydUVULWgyWWpYSk1RVnFOb3hmNnFlSTFqd2F5Zl83aW8xSHIydGZiaFFtaTVieVdkSjFuNldMc1FPYklFWGRzRFlNS1c0MmNVVjMwVzVOTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T14:00:00.000Z",
-        "summary": "OpenAI and Anthropic LLMs Used in Critical Infrastructure Cyber-Attack, Warns Dragos Infosecurity Magazine"
-      },
-      {
-        "title": "Anthropic compute deal taps SpaceXAI Colossus 1 ... - eeNews Europe",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQaVoxcV9wUDZFZUNlclh3T0EyMkJfU3VNNFZnT08xWHo4ZFNfOW5nOHIzelFqWFMtZktNV1FBdks5X0N4Y0xLZ0p0Z3RrRGIxUjRseTdXb3Q5NHNORDFXblBTcGhwTk01TFc4SXRsMDBSbGx4ZXpKOEx5VTAtWnNkMw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T13:24:56.000Z",
-        "summary": "Anthropic compute deal taps SpaceXAI Colossus 1 ... eeNews Europe"
-      },
-      {
-        "title": "Elon Musk Called Claude 'Evil' — Now Anthropic Runs On His Nvidia Supercomputer - Benzinga",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQLV9FSVZCdWN0RFZDZlFOV0d1bUJzV0hwSFM4NnBmRXpNSW1CV3ZIdmlGSmdCaWNUcUt5bm9IeXF6TC1ya1ZsMkdaaWR0NFJwaEpWOWx2UFNpYk5IRktsRVZSVE9GakE3MW1uRzczb21hRTgyTjhVYnVaOG5oZmZlTEpPd3JBSzBkcWszd1pIU29URTdrSXhUUkREVDFORk9kVTdMVU9SWjh2dkh3UE5tYXZNM3d6SFhyeC04ZEVVYVRBVDYxbUlz?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T13:18:09.000Z",
-        "summary": "Elon Musk Called Claude 'Evil' — Now Anthropic Runs On His Nvidia Supercomputer Benzinga"
-      },
-      {
-        "title": "Anthropic's \"Code with Claude\" Conference - Bluefield Daily Telegraph",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNdUdybGNFc0g2TTRJTkoxNk5MVkZsd196a0FZblZtTVZuVTBMbjdXQ1RGS0dMc3FRQXNkbm8wSWtla1ZKR053VTNiNi1oRi0tS1hPOWdReTMwSFR5ZWNNUGpGOGhxdmVSYkZSdGlQS2UtcGhaZmhiQ0RaRjV5VTJTM2ZPeG5WcGVIYkFpdGlBRzF2QjYtZkEtVkxMQ3lmTEctaWVmM1daLW14bDF6UXh6MC00QUlMQ3lJWG1LTFhna3J2b1N5a0ZPQjhR?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T12:34:55.000Z",
-        "summary": "Anthropic's \"Code with Claude\" Conference Bluefield Daily Telegraph"
-      },
-      {
-        "title": "Today in AI | Anthropic unveils ‘Dreams’ feature for Claude | Anthropic taps SpaceX supercomputer - Storyboard18",
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNYXlyX2UzaUE2MUJCLVBqU1JMdTFfYlJLbE80VmtiZjVtZnhVZjhXQThLR21EbVgxT2hscWthVWRFSzZsWmlNRlRsbVc0aFh2SzMyMzBnYUlGblNnWXY0TTdkN1BPZG1wbDhMZzhHa3hkS1liaTRUazV6VnpLd0xIRTh5SXhmZGNvUzgtQTlvWkI2VDM3NXRONUxpMDl4VWdKbFcxbEUwR05yX1NxX2c0OF9CYTZzWTkyOFFHdWE3ME0yTDc5MlBBUmdhcWFOMDlPSlpIUtIB2gFBVV95cUxNMTNTZGxiNmlYSWRIam5vSG14eEpGaG8tY28xajh6X2Y2MU1McUlsUWN3Z0kyQV9UYl94R0xYU1JTa1dVTW1hYlVneGdYWVplOUVISWlyWTVjaTAtYkx4NDl3NXV1N2p2VERCdGhhR3d1S0xYS3QwMWJLc1hSbms1TjRLTTdOUXQ5aTQ0ZHQwZXh1R3VjdFA3aXdhcFlkU0h2WEJlajNNSDhkY3BINjh1T3JyRkZpT2t2QV91UE5tVVNIUzlwMkM1Z2IzNk14Q0xxV2h2OFNtV2RuUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T11:35:58.000Z",
-        "summary": "Today in AI | Anthropic unveils ‘Dreams’ feature for Claude | Anthropic taps SpaceX supercomputer Storyboard18"
       },
       {
         "title": "LIVE: Anthropic and Elon just teamed up to take down OpenAI",
