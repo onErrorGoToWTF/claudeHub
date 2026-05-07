@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-05-07T20:54:57.058Z",
+  "generated_at": "2026-05-07T22:48:48.805Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Donating Open Source Petri",
+        "url": "https://www.anthropic.com/research/donating-open-source-petri",
+        "source": "Anthropic Research",
+        "published": "2026-05-07T21:27:38.000Z",
+        "summary": ""
+      },
       {
         "title": "Finance Agents",
         "url": "https://www.anthropic.com/news/finance-agents",
@@ -135,29 +142,22 @@
         "source": "Anthropic",
         "published": "2026-04-24T04:06:50.000Z",
         "summary": ""
-      },
-      {
-        "title": "81k Economics",
-        "url": "https://www.anthropic.com/research/81k-economics",
-        "source": "Anthropic Research",
-        "published": "2026-04-22T17:04:00.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Claude, Open the Pod Bay Doors - Private Equity Professional",
+        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1rUzNFbDBfUkVTeU9hS242Q1FhbjZZdDlGOC1QemxJVDI0VXc2N0dPaENfQWtKZHV1U3hrYnplRzdKVDItbHhfU19reWJtRFdKaU5yZlB0UWFLTmRrNGcyNGc0MXpxMnYzSThZTG1pYlBLOWs?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T21:37:03.000Z",
+        "summary": "Claude, Open the Pod Bay Doors Private Equity Professional"
+      },
       {
         "title": "Anthropic: Higher Claude Usage Limits Introduced Following SpaceX Compute Partnership - Pulse 2.0",
         "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOd1lpcUR2NVpFU3BMeW9RcEtpYk1Jb0ZQbWhGRjVkXzRCb2oyY0ZJbmN0VHhwaU5tNGdXaTF5d0RjMnNZY0dtWExxdDdFbGxYcHU5QVlUdXJrWEVVOXRraGlsa2xKTTB1UTg5a3puY1hLRDYzYVRfWDh0eHZLb25MQUpWSHpsX1l1QnVtY3FJTVl3bWJPVFE3VnpFUi1kUjFOTDZkZzh6c9IBrAFBVV95cUxNNGRRYTlza2ItVEV6RUhxbWM5RDlRX3B6bUNadjRqUUdqZjB4QktrQ2k2SGgtaWlMcmg2eHlZN20zTmE1RkFwRXpmOFV2LU4xaGlIc0dwUHNtb3pCekE5eWpVQkNrMnpDTnpBeVVIMHJrWlBVdjk0OW5RTzVIWmtCYmRvOWJDQlBSdUkxaFBKTXhXSXhrSVM1X3BvZzFaMlZvVVFuYUNiNkFDOGRQ?oc=5",
         "source": "Google News",
         "published": "2026-05-07T20:08:46.000Z",
         "summary": "Anthropic: Higher Claude Usage Limits Introduced Following SpaceX Compute Partnership Pulse 2.0"
-      },
-      {
-        "title": "Anthropic deepens push into financial services - CIO Dive",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5fYkhCR0JGdUlOOUtxTlYxbVVNOXdBSjRlMnpIVTJNX0ZFcnd5eEJIQjVFQm5ZYUh1d05NYk1XZ1otcWt4dlJLZGhHYmdwc1ZtdTd5VWdvckpBcDJBLUI3M21IU2FpQ2UyN1RkcmtWRmNROTRBRVEtVk5Ja1ROZw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-07T19:48:20.000Z",
-        "summary": "Anthropic deepens push into financial services CIO Dive"
       },
       {
         "title": "Arm Warns of Phone Market Weakness | Bloomberg Tech 5/7/2026",
@@ -218,7 +218,7 @@
       {
         "title": "Natural Language Autoencoders: Turning Claude's Thoughts into Text",
         "url": "https://www.anthropic.com/research/natural-language-autoencoders",
-        "source": "HN · 94↑",
+        "source": "HN · 144↑",
         "hn_id": "48052537",
         "published": "2026-05-07T17:54:02.000Z",
         "summary": ""
@@ -267,7 +267,7 @@
         "title": "Klaviyo Enhances Anthropic Integration with Agentic Workflows in Claude - geneonline.com",
         "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOM3hjNlpZN1RKakRMTlpjZlRmclVLeHZRUDJhX1ZpZ1QwX0ZwOThycXRVVTFLemtmTjJRTXVfTnRJeFphNXhkQXF0ZXUwTW5WSnFLeFdSVTlnb0pkYWFKR1dZemlGcWtqRGoxOF9hRW1BRXBWQlFHMTZBQUloZXgwSHJHMENyZnQzb0Rlc2JqbllaMFFOLXJaZ1BXQ2ZYaEtP?oc=5",
         "source": "Google News",
-        "published": "2026-05-07T16:33:52.000Z",
+        "published": "2026-05-07T16:40:12.000Z",
         "summary": "Klaviyo Enhances Anthropic Integration with Agentic Workflows in Claude geneonline.com"
       },
       {
@@ -287,7 +287,7 @@
       {
         "title": "Hardening Firefox with Claude Mythos Preview",
         "url": "https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/",
-        "source": "HN · 35↑",
+        "source": "HN · 43↑",
         "hn_id": "48051079",
         "published": "2026-05-07T16:05:33.000Z",
         "summary": ""
@@ -321,18 +321,18 @@
         "summary": "Anthropic is increasing Claude Code usage limits — here’s everything you need to know IT Pro"
       },
       {
-        "title": "Why AI Isn’t a Threat to Wall Street Traders Just Yet",
-        "url": "https://www.bloomberg.com/news/videos/2026-05-07/why-ai-isn-t-a-threat-to-wall-street-traders-just-yet-video",
-        "source": "Bloomberg",
-        "published": "2026-05-07T15:23:18.000Z",
-        "summary": "Anthropic's latest AI agents are designed to win over Wall Street &mdash; but experiments show LLMs aren't ready to replace traders. Justina Lee explains why your fund manager is safe in their job,…"
-      },
-      {
         "title": "Dun & Bradstreet Integrates Risk Data into Anthropic Claude - Let's Data Science",
         "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOcXBzSUQxSlVGUFhFZkJlSmJnWUpSVUpvUTlxT1dESWw2YWJwTjIydGV2UjJNVFhHWEtHYlo4Y0NsU3lsWGtTVndJMVhOWDdiM2hyZGx5TU1CUXBwZWNKXzM1M2E3T3A3SlZYVTl4YlBPRGZtelczSEpXd3hmaG5zUWNVbEwzOHdaVTZWTHdrZC05d29QRWJXV2JoZXFaamJH?oc=5",
         "source": "Google News",
         "published": "2026-05-07T15:20:43.000Z",
         "summary": "Dun & Bradstreet Integrates Risk Data into Anthropic Claude Let's Data Science"
+      },
+      {
+        "title": "Paul Tudor Jones Draws Apple II Parallel For ChatGPT, Claude Code — Says AI Trade Still Has Runway - Stocktwits",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNX3dIMGt4ODNrOU5TUzgxdFRUdHdjMTlLVFRVNkNqc3dKVVgtWnJ0cklvb012WWd5eDBmZDExRkZWUlZoXzVTT0NqbnJtOXliaWhia2J2Wkc3bEwxOWFkX2RZb0UwUl85Y0FSWUJnZGs0bzFwNzN4d3c0aldfM2hsN1d6cWFubXFGd0tIaTlvUzdQMlVkT3VmUE9FQmJwREF5NnpGWG9GWk1XWl96cGpweGVCX2N3aS1JUGNUZ3UyT0cwcDhZa3RDRW1TckVONnItVTFaTmxn?oc=5",
+        "source": "Google News",
+        "published": "2026-05-07T14:52:00.000Z",
+        "summary": "Paul Tudor Jones Draws Apple II Parallel For ChatGPT, Claude Code — Says AI Trade Still Has Runway Stocktwits"
       },
       {
         "title": "LIVE: Anthropic and Elon just teamed up to take down OpenAI",
