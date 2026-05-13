@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T14:00:13.080Z",
+  "generated_at": "2026-05-13T16:19:33.008Z",
   "source": "Anthropic Academy",
   "base": "https://anthropic.skilljar.com",
   "courses": [
@@ -121,6 +121,13 @@
       "url": "https://anthropic.skilljar.com/ai-capabilities-and-limitations",
       "summary": "An introductory course about how AI works",
       "order": 16
+    },
+    {
+      "slug": "ai-fluency-for-small-businesses",
+      "title": "AI Fluency for Small Businesses",
+      "url": "https://anthropic.skilljar.com/ai-fluency-for-small-businesses",
+      "summary": "This course empowers small businesses to develop AI fluency in order to increase organizational impact and efficiency while staying true to their mission and values.",
+      "order": 17
     }
   ]
 }
