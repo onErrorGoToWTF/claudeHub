@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T21:01:33.286Z",
+  "generated_at": "2026-05-14T22:46:09.378Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,35 @@
     ],
     "news": [
       {
+        "title": "Apple Mac M5 System Exploited With Anthropic's Claude Mythos AI, Researchers Claim - Decrypt",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOHBfN2FFcWkyMEpIX2xWbkxIMHlFalNMY0t3ZFkwRmNSQU16TExzekdUR3hFTkVlcXhaV0U5LUhrN2xYWkJiZnA0aTBLcWthN3dqRGgzWGhEUzhnYm02VVN1TDc3ZnFJakhtVE82TXZiWmY2S3FvZDZBUk9Ld0RYTzZqTzBBeV9qdGfSAZIBQVVfeXFMUEo2ZDhlakJQZ3diY1N4Y2w5Q090R2ZYdmhjeHhVRFZXdnEyeERESVFNOXF3OTNTWURnZXRxTjFsNzZnTEt3cEJsZlltQ24tRWhnTXloZ280TWlSbFlNSUc3Q1ZmT19RYUl3SGZxeW1PQTJqcEtOLWdFS1ZYcnlBelMwMmFoMzFFY1lSUWU1Yk5YeXc?oc=5",
+        "source": "Google News",
+        "published": "2026-05-14T21:16:53.000Z",
+        "summary": "Apple Mac M5 System Exploited With Anthropic's Claude Mythos AI, Researchers Claim Decrypt"
+      },
+      {
+        "title": "Apple Mac M5 System Exploited With Anthropic's Claude Mythos AI, Researchers Claim - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOM2VwNjcxbDFqRHN2ZjBCdGliLWxYS3djbUlEZGJwVXB6cno2dWx0RWNOcDFmNGl5eGRnYlNwZThSWHF4ZE5US0NjR2MtTUZjS0JQa2F2NmxwWWNsTXNoc1JzSS1BdnVBUUtwR2k3M29IVUV2ejRaMDJkTXltZlV4Wmh6OWNTU3EyX3BnWFhPWHNkQXNu?oc=5",
+        "source": "Google News",
+        "published": "2026-05-14T21:16:53.000Z",
+        "summary": "Apple Mac M5 System Exploited With Anthropic's Claude Mythos AI, Researchers Claim Yahoo Tech"
+      },
+      {
+        "title": "Claude is telling users to go to sleep mid-session. Users are annoyed but Anthropic says it's a tic - Fortune",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdEppbVdmOGZYMVh3V0ZPNGFiOXVETkZCblhQaU5xN0w3bnBnZlFPM0ZuWUtzN1VsZ1J3bmU1Y2lFLUdYaEdVc3NycUQ0cENWNWl2cVFMeUJXbUtPWVV4Si1PZndBVXBtSUhzaHJzNmZnQ0R0MG1fRkxoNmpLS3NYME85TjlEZ2VYRV81T0pHVW42aEZQSV9WSkRpYU4?oc=5",
+        "source": "Google News",
+        "published": "2026-05-14T21:11:00.000Z",
+        "summary": "Claude is telling users to go to sleep mid-session. Users are annoyed but Anthropic says it's a tic Fortune"
+      },
+      {
+        "title": "Claude for Legal",
+        "url": "https://github.com/anthropics/claude-for-legal",
+        "source": "HN · 49↑",
+        "hn_id": "48141234",
+        "published": "2026-05-14T21:05:05.000Z",
+        "summary": ""
+      },
+      {
         "title": "OpenAI says Codex is coming to your phone",
         "url": "https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/",
         "source": "TechCrunch",
@@ -195,6 +224,13 @@
         "summary": "A new open source gadget called Clawdmeter turns Claude Code usage stats into a tiny desktop dashboard for AI coding power users."
       },
       {
+        "title": "Microsoft cancels Claude Code licenses, shifts developers to Copilot CLI - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOUDdOYVpMWWt6OXV6N3daMXBBNW5uTWJxZFM3REh4VE1lX1VnVUlRQ2hURWdTVEJhLXhMb0gtZmxEZVo4b1J4UnNsY0xrd3l2UlJyaEYySzk0WUF2cVhlTFVBWlpxX0sxR29NVW1KLXNMMTNlc3ppZXdXZkVoYUR3TGM1QmZHTkdXbEVFZk1EY2p4amRIQVNsWGJrcGtibGZLWk9z?oc=5",
+        "source": "Google News",
+        "published": "2026-05-14T19:03:02.000Z",
+        "summary": "Microsoft cancels Claude Code licenses, shifts developers to Copilot CLI Let's Data Science"
+      },
+      {
         "title": "Microsoft starts canceling Claude Code licenses",
         "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
         "source": "The Verge",
@@ -212,15 +248,8 @@
         "title": "Anthropic, Gates Foundation launch $200M AI health partnership - qz.com",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOSkZhanQxVXVreF9YQlp4ZFQzbElQX3dxeEtLZ2U1bVRKbDFDQXRnUG1GWFA2Nk5OM0dEd0Q0MERtYzdfanExRmtFZHM0YVlEa2RZdFdhUDE4S0dkMTNKZkdTR2lmdm9BeUI5Ukd2MzA1U0N4R1V0WDlfWmh6U28xZzRxbFlMd0U?oc=5",
         "source": "Google News",
-        "published": "2026-05-14T18:26:58.000Z",
+        "published": "2026-05-14T18:27:09.000Z",
         "summary": "Anthropic, Gates Foundation launch $200M AI health partnership qz.com"
-      },
-      {
-        "title": "What Claude Writing 90% of Anthropic’s Code Means for the Future of White-Collar Jobs - Techloy",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNLUdTb01UM0t4cXZid1VqZm9VOXZCUWRQT0xvM0V5R3pkNjlrZ0RhSkpaeF95Y3k0WjZfM3pPZ1FwVWU4VE1qVDR1eHMzeFlhVVl1U0s2M2Uwdmd1N0xTMW9saFpaOVRZdV8zQlpPWTVpTTdacFRRM2NmV2ZaVDE3bFJIRXlfVG9NWXo4SzJJWU96ODFreXlQLTRKTW82ZTFTUGhWUEZaSXIyX0FO?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T17:37:30.000Z",
-        "summary": "What Claude Writing 90% of Anthropic’s Code Means for the Future of White-Collar Jobs Techloy"
       },
       {
         "title": "Anthropic's Mythos is evolving faster than expected, reports AI safety agency - ZDNET",
@@ -235,6 +264,13 @@
         "source": "Google News",
         "published": "2026-05-14T17:10:16.000Z",
         "summary": "Anthropic announces ‘programmatic credit pool’ as agentic tool use rises SiliconANGLE"
+      },
+      {
+        "title": "Anthropic Pushes Deeper Into Legal Work With Claude Updates - Bloomberg Law News",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZkpsQlNEaHNRN3l3QjNhbUlidnJZNWhWSFJhRkZvQzhRcHppLVdlYndKTnUyMGdicDF6NFlQN0h1NFhTVUluYzNaWmhURkgxaUplSXprVTU5VHhVZ0xtb2tNcmNQMVladjhyN0lvNkFqX0dESmJoSWhqS2wyX2RLWVhiTlNGR0hHNU90Vm01Q2tWQ2hBV0t6cVBCbW1DckpQNzhSTW95WQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-14T17:00:00.000Z",
+        "summary": "Anthropic Pushes Deeper Into Legal Work With Claude Updates Bloomberg Law News"
       },
       {
         "title": "Anthropic launches Claude for Legal, expands generative AI offerings for lawyers - ABA Journal",
@@ -258,6 +294,13 @@
         "summary": "It Took Salesforce 20 Years to Reach $30 Billion in Revenue — Anthropic Did It in 3 24/7 Wall St."
       },
       {
+        "title": "Anthropic, Gates Foundation Ink $200M AI Deal - StartupHub.ai",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNMDdSUXRXenNKVG8waWp6bnNjdW84bzN3SDRZQmc3Vk1vOGo3TVJaZmJVRVUwR2JRZjdreG1RRXpHaXQ0MllEdmxXWXVOOFN1SzB4eWwwQ0c4SXF6dEJMZnhZZ25iUm92ZTVlYWFKa0RwVW9Tcy01ZUFkRWk1Zk1ULXhYQzdhR1laSHM4WEhoSndGamRwbjItLWdNLU0wVS1od1h2Y1VabW95dw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-14T16:01:15.000Z",
+        "summary": "Anthropic, Gates Foundation Ink $200M AI Deal StartupHub.ai"
+      },
+      {
         "title": "Anthropic puts Claude agents on a meter across its subscriptions - InfoWorld",
         "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPc2hXNkF0dVZVOVZ6Mi0wTFo5Z1pqdDNwTi12MVpNNHNhRUxia3N1aXducHVsS0RPWndHZjJPMmNKOXc5a2NrMzFhM1pmUkZDSWE0eUdaUUE2Zjc4a1paOTNkeDJXakR0eXFsQTh4NXNLM1JjNEt0WnFxZ1lUalN2MmE2UWlKNW44QmF3Ml9OeDI0WkZ3Uk1yYzFmSlB5V2F1YjhnRU9LNlA3REhoSWNuRA?oc=5",
         "source": "Google News",
@@ -267,7 +310,7 @@
       {
         "title": "Anthropic forms $200M partnership with the Gates Foundation",
         "url": "https://www.anthropic.com/news/gates-foundation-partnership",
-        "source": "HN · 112↑",
+        "source": "HN · 113↑",
         "hn_id": "48136662",
         "published": "2026-05-14T15:15:05.000Z",
         "summary": ""
@@ -278,50 +321,6 @@
         "source": "Google News",
         "published": "2026-05-14T15:06:56.000Z",
         "summary": "Anthropic forms $200 million partnership with the Gates Foundation Anthropic"
-      },
-      {
-        "title": "Anthropic launches Claude for Small Business with QuickBooks, PayPal - qz.com",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9CZnFSTTlDa2NFRE1xSEo0aHhHQ0pSdEwtZEdlNGZhZWk2cHZuNjhiQ1FUbjVnYXZTSWtvX1hRQi1IUXlYQjk1Ql9hZnFLYjVzQmV6UTJHbzdJX0JQNXRtLW5IU1h5dEptcmhrbEFENS1zdjdjT0w3N1pjZw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T14:59:14.000Z",
-        "summary": "Anthropic launches Claude for Small Business with QuickBooks, PayPal qz.com"
-      },
-      {
-        "title": "Anthropic overtakes OpenAI in business AI adoption - The News International",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUUpqaVFkUm9DWk50R3ZiSFZ2Sl9zU2xXYW9Tald6X3JFOUtyQzYtbEFrNWpKbGNwWlNMWFFiS0pRMUxmelhWM0E1THhYZnBFRlNJY0NuY1B4aTJWZ3R3ckF5aDBOWDVKc3BrUC16aGJyM1pCb1dJdHVxc3YwbmMwaU9PUW00ZlFRNjF4Y19VemhIVklUd2RF?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T14:56:46.000Z",
-        "summary": "Anthropic overtakes OpenAI in business AI adoption The News International"
-      },
-      {
-        "title": "Bitcoin trader recovers wallet with help of Claude",
-        "url": "https://www.tomshardware.com/tech-industry/cryptocurrency/bitcoin-trader-recovers-usd400-000-using-claude-ai-after-losing-wallet-password-11-years-ago-bot-tried-3-5-trillion-passwords-before-decrypting-an-old-wallet-backup",
-        "source": "HN · 303↑",
-        "hn_id": "48136240",
-        "published": "2026-05-14T14:49:48.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Targets Small Businesses With Latest Claude Release - AI Business",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQRGozR0o0dkxmRjUwYjZWWkZLSG1VMlNEa2ZuNTBPSHBiaUR1NEVOQVdiNjhER2g3UnFUVFZOSTBNZ01URnd3N0EwUEczY3h4ZDJYcEg2a3JpM2V0VmRGQzB1X3RKQ2FVODlOYm1aMTNLZHFoT1BqMGo3cjcxTEtwNHR0MmM4bEN3Sk9MMzVBZmsyTUtrUGJyeQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T14:09:12.000Z",
-        "summary": "Anthropic Targets Small Businesses With Latest Claude Release AI Business"
-      },
-      {
-        "title": "The Whole Anthropic Kerfuffle",
-        "url": "https://twitter.com/josevalim/status/2054887621336174799",
-        "source": "HN · 61↑",
-        "hn_id": "48134869",
-        "published": "2026-05-14T13:08:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic expands its partnership with PwC as it pushes to get Claude into the hands of corporate America - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOaFJieWJvR0JyWlp1VVpJVUZ2eGZZRk0xd3pYa25LenVrYnJ5bVYyU1V3TDNoeHJ1OTVfem45aUpVUHVnY0xETGZkdFNueDZBYVhlNWdzYWxNd0NjY1ZPbkRUcVJpeEctM0V5S2ZodU4yc0g5dGppTkNzMmNwbl9GZkx2aF9ZQXlFMlE?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T13:01:00.000Z",
-        "summary": "Anthropic expands its partnership with PwC as it pushes to get Claude into the hands of corporate America Business Insider"
       },
       {
         "title": "Claude Code Agent View: Parallel Agents Are Here",
@@ -569,8 +568,8 @@
         "title": "Elevated errors on Claude Opus 4.7",
         "url": "https://status.claude.com/incidents/6f1wzlw5cjqx",
         "source": "Claude Status",
-        "published": "2026-05-14T20:33:01.000Z",
-        "summary": "May 14 , 20:33 UTC Investigating - We are currently investigating this issue."
+        "published": "2026-05-14T22:25:06.000Z",
+        "summary": "May 14 , 22:25 UTC Resolved - This incident has been resolved. May 14 , 21:07 UTC Monitoring - A fix has been implemented and we are monitoring the results. May 14 , 20:33 UTC Investigating - We are…"
       },
       {
         "title": "Claude.ai is experiencing elevated error rates",
