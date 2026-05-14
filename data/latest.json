@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T13:24:03.534Z",
+  "generated_at": "2026-05-14T16:02:30.074Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -7,7 +7,14 @@
         "title": "Claude for Small Business",
         "url": "https://www.anthropic.com/news/claude-for-small-business",
         "source": "Anthropic",
-        "published": "2026-05-13T20:25:06.000Z",
+        "published": "2026-05-14T15:40:31.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Gates Foundation Partnership",
+        "url": "https://www.anthropic.com/news/gates-foundation-partnership",
+        "source": "Anthropic",
+        "published": "2026-05-14T15:00:23.000Z",
         "summary": ""
       },
       {
@@ -135,22 +142,67 @@
         "source": "Anthropic",
         "published": "2026-04-24T15:50:13.000Z",
         "summary": ""
-      },
-      {
-        "title": "Infrastructure Noise",
-        "url": "https://www.anthropic.com/engineering/infrastructure-noise",
-        "source": "Anthropic Eng",
-        "published": "2026-04-24T14:21:28.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic forms $200M partnership with the Gates Foundation",
+        "url": "https://www.anthropic.com/news/gates-foundation-partnership",
+        "source": "HN · 31↑",
+        "hn_id": "48136662",
+        "published": "2026-05-14T15:15:05.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic forms $200 million partnership with the Gates Foundation - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1UT25PT2ZVemEyNW5mY0RnYjlHa0NhUGw4cVlZWUNaaDdySnRMMXZXZVJMcHRKN25kRzBsVzNINFhUSHhmTGI4MU5JUDEtUVFLcEktM1VvbUZCc1RKUkhwcTFWY3gyWEdQMGZN?oc=5",
+        "source": "Google News",
+        "published": "2026-05-14T15:06:56.000Z",
+        "summary": "Anthropic forms $200 million partnership with the Gates Foundation Anthropic"
+      },
+      {
+        "title": "Anthropic overtakes OpenAI in business AI adoption - The News International",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUUpqaVFkUm9DWk50R3ZiSFZ2Sl9zU2xXYW9Tald6X3JFOUtyQzYtbEFrNWpKbGNwWlNMWFFiS0pRMUxmelhWM0E1THhYZnBFRlNJY0NuY1B4aTJWZ3R3ckF5aDBOWDVKc3BrUC16aGJyM1pCb1dJdHVxc3YwbmMwaU9PUW00ZlFRNjF4Y19VemhIVklUd2RF?oc=5",
+        "source": "Google News",
+        "published": "2026-05-14T14:56:46.000Z",
+        "summary": "Anthropic overtakes OpenAI in business AI adoption The News International"
+      },
+      {
+        "title": "Claude AI recovers an 11 yrs old BTC wallet holding 400k USD",
+        "url": "https://www.tomshardware.com/tech-industry/cryptocurrency/bitcoin-trader-recovers-usd400-000-using-claude-ai-after-losing-wallet-password-11-years-ago-bot-tried-3-5-trillion-passwords-before-decrypting-an-old-wallet-backup",
+        "source": "HN · 103↑",
+        "hn_id": "48136240",
+        "published": "2026-05-14T14:49:48.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic Targets Small Businesses With Latest Claude Release - AI Business",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQRGozR0o0dkxmRjUwYjZWWkZLSG1VMlNEa2ZuNTBPSHBiaUR1NEVOQVdiNjhER2g3UnFUVFZOSTBNZ01URnd3N0EwUEczY3h4ZDJYcEg2a3JpM2V0VmRGQzB1X3RKQ2FVODlOYm1aMTNLZHFoT1BqMGo3cjcxTEtwNHR0MmM4bEN3Sk9MMzVBZmsyTUtrUGJyeQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-14T14:09:12.000Z",
+        "summary": "Anthropic Targets Small Businesses With Latest Claude Release AI Business"
+      },
+      {
+        "title": "The Whole Anthropic Kerfuffle",
+        "url": "https://twitter.com/josevalim/status/2054887621336174799",
+        "source": "HN · 57↑",
+        "hn_id": "48134869",
+        "published": "2026-05-14T13:08:00.000Z",
+        "summary": ""
+      },
       {
         "title": "Anthropic expands its partnership with PwC as it pushes to get Claude into the hands of corporate America - Business Insider",
         "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOaFJieWJvR0JyWlp1VVpJVUZ2eGZZRk0xd3pYa25LenVrYnJ5bVYyU1V3TDNoeHJ1OTVfem45aUpVUHVnY0xETGZkdFNueDZBYVhlNWdzYWxNd0NjY1ZPbkRUcVJpeEctM0V5S2ZodU4yc0g5dGppTkNzMmNwbl9GZkx2aF9ZQXlFMlE?oc=5",
         "source": "Google News",
         "published": "2026-05-14T13:01:19.000Z",
         "summary": "Anthropic expands its partnership with PwC as it pushes to get Claude into the hands of corporate America Business Insider"
+      },
+      {
+        "title": "Anthropic’s Bun Rust rewrite merged at speed of AI - The Register",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQcVpqQ2NodU1FMXFKUGNpN3UtSnRFT2I3OWZHM1NJdjh5MXFMZUthOWtEZFpoN1oyblJlMzRYUlNpODlFVUFDWGllUGxqcmZvU0hSN1lpNGJnZlRLUWxtTFlWT2VHV21FNDBYVW0wLVFkTEFlaV9tMDZOTjdLSUdaQm9EV3R4NW9xTFZ0NFpRNVdSa0FKdmVMWXI2aE54anVUaFJQeTJn?oc=5",
+        "source": "Google News",
+        "published": "2026-05-14T13:01:00.000Z",
+        "summary": "Anthropic’s Bun Rust rewrite merged at speed of AI The Register"
       },
       {
         "title": "Anthropic’s Claude Is Winning the Enterprise AI Race - eWeek",
@@ -195,11 +247,11 @@
         "summary": "Anthropic speaks out on why AI bot Claude keeps telling users to go to sleep UNILAD Tech"
       },
       {
-        "title": "Anthropic launches new suite of Claude AI automation tools catered to small businesses - The Indian Express",
+        "title": "Anthropic launches new suite of Claude AI automation tools for small businesses - The Indian Express",
         "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQWkZWTk94bkRtMGFCQnB2ZThhSTNPem9COFFBcjg2QUxNQjlBdE5BMFJPOFFqQlJ0dmtfZ3dkZUMwOXZPejhsYS1JajBWcnZwcmI5cnZEYzNQN2xWRnhwdlR5cS1ObFFveDFYMGFyNkRJNGwyOXdqU2RMZjJsQW9ZQlJWNTRnUlB5WExSNUQ1enMzdVpCYlUwcTFSS2Y0di16dm5vTC1iT3pBemVDSmNRT3ZkeS1ycjFiZ29yTEpKRFUzT2M4dllmZ1ZR0gHQAUFVX3lxTE5kQm1UZm5oMUo5RXJ1OUk0Tk5NZUdfNms1QlVQS2p0LWFEWFN2SDE0b2F6MlAtcG5lY2NLSnRnNGpqamFlQnBtblJnN194NTVJUE1NZDBZRE5Gb1FIaGZ1ejJlXzFhR2VyNHZjT1MzSXZHRVl5ZEpBRnoyQkFHR2VZNVNETC1UNFprRjR3bW1nNjZ3bUF1Njd3M0JOMm1Zd0s3NTBpNHJoZTRGSkhsSm9YZlRROVNQV0JVLWFxN25BZk5SNF9LTEg3VjdzSkhSdkw?oc=5",
         "source": "Google News",
         "published": "2026-05-14T11:31:57.000Z",
-        "summary": "Anthropic launches new suite of Claude AI automation tools catered to small businesses The Indian Express"
+        "summary": "Anthropic launches new suite of Claude AI automation tools for small businesses The Indian Express"
       },
       {
         "title": "Anthropic Targets SMB AI Adoption Gap with Claude for Small Business - CX Today",
@@ -245,8 +297,15 @@
         "title": "Anthropic tightens limits on Claude subscriptions - Axios",
         "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9yUjhHRjZOWWFNdmkyeHBLWm5qZDV3bHpLTk1sWm8ySnFMclM5WVB5UjdlS2dGdWdOdTVLU1BRZTBIeW52TEIzcmVEcXVfSFpFVlVhTk9KU2x6QTFBS05mcWw5cFc0ZDc1N3AtS3dRLUhJMjVaMUpSLQ?oc=5",
         "source": "Google News",
-        "published": "2026-05-14T09:13:24.000Z",
+        "published": "2026-05-14T09:13:50.000Z",
         "summary": "Anthropic tightens limits on Claude subscriptions Axios"
+      },
+      {
+        "title": "Bedrock and a hard place: Claude adventure leaves AWS user staring down $30K invoice - The Register",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPTFhWeHpzbGtMUTdsY19mNFJmQWtlRF9JY0ZpbmQzd2pZNkowNkpQbVcxYkltclVUSTJNZGJfRlhCbm44bmVudUtrbWVxYnFPRnh1QWN2WDVXaS03RU9uTXM1Zk5tYTZJazUtV1RydGxTbFFHUWtIUXJDUWpQRkFmb3ltcWtza3ZKQzEzdVZMaE5aTWEtbTRrOEtyblJvNERyZTg5b2pTdzFyYTdZQ0RoV2huX2pZMWF6V2hBRE5RY1BWdVNGMFNxb0NCYzYyOWs?oc=5",
+        "source": "Google News",
+        "published": "2026-05-14T08:30:00.000Z",
+        "summary": "Bedrock and a hard place: Claude adventure leaves AWS user staring down $30K invoice The Register"
       },
       {
         "title": "Claude subscriptions get separate budgets for programmatic use, billed at full API prices - the-decoder.com",
@@ -263,13 +322,6 @@
         "summary": "Anthropic Introduces Claude for Small Business With Ready-to-Run AI Workflows, Connectors Gadgets 360"
       },
       {
-        "title": "Anthropic launches Claude for Small Business with QuickBooks, PayPal - qz.com",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9CZnFSTTlDa2NFRE1xSEo0aHhHQ0pSdEwtZEdlNGZhZWk2cHZuNjhiQ1FUbjVnYXZTSWtvX1hRQi1IUXlYQjk1Ql9hZnFLYjVzQmV6UTJHbzdJX0JQNXRtLW5IU1h5dEptcmhrbEFENS1zdjdjT0w3N1pjZw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T07:29:14.000Z",
-        "summary": "Anthropic launches Claude for Small Business with QuickBooks, PayPal qz.com"
-      },
-      {
         "title": "This week in AI research: Fields medalist says GPT-5.5 Pro did PhD-level math in an hour, Anthropic teaches Claude to 'dream' - R&D World",
         "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPWllmU19JT3ZCZkRxMWg5cXRxYklyLW5DSFo0VjVzTGl2YWctaW1mTTJjbEs1bnBXTURHVS00SHhITFlDbThZd1FqdVIyQWNxYXdoNEhxY0F2am1ZZmg5dWZfLTFMckJ4REY2ZGhkd3lUWGxUX3Q2X1Y5Q3Z6bjlxYmgzbnlIQkg0eVdUOUtuQjFfZHlaSVJNRTNiNGEwaG4xOW1DeW9PNDctc05RRXc3bjlRTkdaTUVpWlRIZjZsdThxd0Jub1RoRWN1Ym5ZVEJXaVhzUVUzNUtKRFNpcmVaRlRicTBscUk?oc=5",
         "source": "Google News",
@@ -282,57 +334,6 @@
         "source": "Google News",
         "published": "2026-05-14T06:46:14.000Z",
         "summary": "Firms nudged to go for Anthropic Opus 4.7 as mythos AI stays elusive Indiatimes"
-      },
-      {
-        "title": "OpenAI and Anthropic Are Trying to Out-Freebie Each Other - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSlhtWmxGTUI5dnplMnRWQmJHMFM4SF9SLUdrLVVWY3lZNl9MYmZPcG1qZWZPLXRzVG1RaWowSFhnclZJdTlWRjhJeDFoS2xDbHRMaFAyTHZscFNWOHNuNnRaMWZOSEVWek1TQTB4dmV5RzJZUXF4RjJERnNraUFrVkh4U3BmcFVXcHFRUUJqTWVwNDhGLUg0VmNSMjk?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T06:09:00.000Z",
-        "summary": "OpenAI and Anthropic Are Trying to Out-Freebie Each Other Business Insider"
-      },
-      {
-        "title": "Clio’s $500M milestone arrives just as Anthropic ups the ante - TechCrunch",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORzA2LWtTSkhreEN5SW82Y1NlS3M3YnFqdDZZQzhpaTBlZUk5bjZEcmZXYm1zczhPVDhVczRBVHY1ZTZSUEc1ZlFhMTlGN2FybkhmWjJYSlNVaXlhOXpwTkIyWnVweTBkekRpd0xWM1dxc2VqdzVMRFhjbzNoVlNEZFFFWk1FMi16Q3Ata2tRU2hKYmlCYXk2YnZ3?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T05:24:39.000Z",
-        "summary": "Clio’s $500M milestone arrives just as Anthropic ups the ante TechCrunch"
-      },
-      {
-        "title": "Anthropic targets small businesses with new Claude suite amid expanding AI adoption - Storyboard18",
-        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNeWZXNGVfbmFwOUYtSEstajVuTmtVOVBudUdVUXdEWUFRdm5NdkYzc0ZOOUJjSUJuTTQ4MWlBSHVEMmpkcVBfdXhKMDQ0bHBqQk9aMGhzckRPUXNTNm9na3dZdEJueFJmYXd5M3g4MG8xZUNreFhsZ05oTjNZSUVfcHBGSkNmSEwxUldsdzFpVWZyeUtjcjZhQkI1QnJ0azB3cXdzcG1wM2V6b0xzU1JFMUxGUVNBTmRHTVJpbHVzTW1QS0Zoei1ZZElEdTJrSm9q0gHWAUFVX3lxTE9aR19zM05qVGpBU2VWQ0o1MThCVEticTQxT3hDaHBFdmhaU3ZvR0hyVkE0MFFZQzd2MHVmMnFIQXRnMzFwTnEyTXBfY3c3WUZuWERxZGUzNkZLa19xMVpMeGwtLUhHSzRRUzk1d3gwSGp3c0N3M0tCOFhGYlJQTG4zeE13MS13ZHdOS21zczN6ZmwtN0dyY1Q5QXdBdGczb2txT2t5bUZDT1pNNXJTMUtvdjBFZEo5WXRnenF0OWJoeTliMTMyRFRRNGZJb1Z5c1FQb2NyUGc?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T04:32:46.000Z",
-        "summary": "Anthropic targets small businesses with new Claude suite amid expanding AI adoption Storyboard18"
-      },
-      {
-        "title": "Claude for Small Business",
-        "url": "https://www.anthropic.com/news/claude-for-small-business",
-        "source": "HN · 357↑",
-        "hn_id": "48130950",
-        "published": "2026-05-14T03:59:35.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic: Claude For Small Business Launches To Help SMBs Adopt AI - Pulse 2.0",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNd3ItdGxFSnBnbzJIcUYzWUswaFdBRzlnZGVWSkxFc2piS2xPN2xjMWIxOHliYUk3U1Z1RlVNWFJyblVnZFZOTmFsYm5IUF9vYzYxenBLWnhnc1NwWW1oSWxGYXVqaDdlTzNZZExiVWUwWUFFZ0Q0RmloOTBrMUJHYVphb0xTWVpkdkUyYVhJQdIBlAFBVV95cUxNQ3R6YlRUQnR2OTVnMmFOSk13cldEb3hqaWRFVTkyRkhPNWJPUTgxcGJxakI5SEo1UUdkbTFBOTNDZkRKNEE2aU5aWVFMVUZrVTRyM0JCNHhMZGRfemZMTTJEM2dFWV9VeFV2dmYxQVFrNWVRXzB2dkMwY2hvdVFCQVUzd3AybGd0cDg3VDZ6aVJCZll3?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T03:22:30.000Z",
-        "summary": "Anthropic: Claude For Small Business Launches To Help SMBs Adopt AI Pulse 2.0"
-      },
-      {
-        "title": "A Claude Code and Codex Skill for Deliberate Skill Development",
-        "url": "https://github.com/DrCatHicks/learning-opportunities",
-        "source": "HN · 105↑",
-        "hn_id": "48130679",
-        "published": "2026-05-14T03:13:31.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic launches Claude for Small Business with new automation workflows - SiliconANGLE",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOR3liNW01Q0JFRkxkdTFzazNMc25zMl9vTHJDQ2JVUXQ5Nm1zSHVtaEJ2REVDbWJwTmllOXI3ajhKLTBXRDFqaDcxVEhWdnFLVE0tejJBS3pYTnlncGJtZVQwbFFxVkRUU2pRUmkxVzRYTFRvNGpGMERwZlZNQUJ4MFRvUkN3czRISF9zVUctcFJqc0VVbkRYLTVuWDZ0bGdlek1DOA?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T01:14:18.000Z",
-        "summary": "Anthropic launches Claude for Small Business with new automation workflows SiliconANGLE"
       },
       {
         "title": "LIVE: The greatest Claude Code workflow ever",
