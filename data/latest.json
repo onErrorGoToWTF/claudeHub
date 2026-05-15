@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-15T01:52:33.691Z",
+  "generated_at": "2026-05-15T05:44:14.976Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,19 +146,69 @@
     ],
     "news": [
       {
-        "title": "Elevated error rates on Opus 4.7",
-        "url": "https://status.claude.com/incidents/8z7l5zcy0v3b",
-        "source": "HN · 45↑",
-        "hn_id": "48142964",
-        "published": "2026-05-15T00:22:53.000Z",
+        "title": "PwC to train 30,000 staff on Anthropic's Claude Code as firms target $2 trillion in enterprise tech debt - Cryptopolitan",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE14Q1pJYm9IVkd2dGUzRDdUdHVrOTVvYlJZQU90NFV5UnY0U19jM3B4TVJsN0lnc0dKd3phdm1rMFlndGxUR2ZoTmZHbXJoS0JTRG1oQVBmY3d6UENJbGFmVkpjM0swM3hIVDNwSFJhTy0tZVlqMU9QR0RR?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T05:25:22.000Z",
+        "summary": "PwC to train 30,000 staff on Anthropic's Claude Code as firms target $2 trillion in enterprise tech debt Cryptopolitan"
+      },
+      {
+        "title": "How Claude Code works in large codebases",
+        "url": "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
+        "source": "HN · 65↑",
+        "hn_id": "48144494",
+        "published": "2026-05-15T04:15:31.000Z",
         "summary": ""
       },
       {
-        "title": "US judge considers Anthropic's $1.5 billion settlement of authors' lawsuit - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOckQtRG1PRWF5M3ZYU2dGb043NXpaSmd3UWt3cmdyeFJKc0J1aWRCbGVPbXZuYV9HUm9LSlhZQ2pRNUNSRlItS21YVC1xcWVMSDFncTRXRmFVN1Bhb2wyLWZIVjgzZTRTaGFVMW5reEtWN2gzRXlCWlB2TG55dWtqaGxMdjRsZjMtWUZLSWNiRmtIWGVpTlFXeFc3T3U3ZjVnLUFfZDV1YUhNY1UwT0dBaHlOamhLRzcyQVJjbg?oc=5",
+        "title": "Anthropic faces scrutiny over Claude's architectural flaws after multiple security disclosures in May 2026 - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBXeUxXOXVDZHFVQjlvREZsb0ZYcDVJczZKV21LNlJDTnhZdEh0dzJHZUNPN0xmcFZWSWZiSWdyWmhaSGtNQnFkalFjR3dyX3dkNlBxUkdzQjlyWUZvR0FFdWZhekhEcFpkcW5XMVBsdEJ0SVNZUEx3?oc=5",
         "source": "Google News",
-        "published": "2026-05-14T23:51:01.000Z",
-        "summary": "US judge considers Anthropic's $1.5 billion settlement of authors' lawsuit Reuters"
+        "published": "2026-05-15T03:10:51.000Z",
+        "summary": "Anthropic faces scrutiny over Claude's architectural flaws after multiple security disclosures in May 2026 Crypto Briefing"
+      },
+      {
+        "title": "Anthropic's Claude faces security flaws as researchers expose deep trust issues in AI architecture - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9MbnBBbG1kWjZfUWgzeW1uVXhuZ1JaQ1VVOFNFeGVPZTMwakQxbEU1RzJsR0JGeGR2RzVDQXYyRDg4ZXhWMF9uNXc0UDlGYV9pVVQ3NmtXMWUzME5KM3lVNzJpX3Y3UHFKSnZFSGxPTW9BRlJHckFMTGRZeW4?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T03:06:50.000Z",
+        "summary": "Anthropic's Claude faces security flaws as researchers expose deep trust issues in AI architecture Crypto Briefing"
+      },
+      {
+        "title": "Researchers Disclose Multiple Security Flaws in Anthropic's Claude - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNOTg2THlfR2tFUG1LcldSb1phdWxoV3dTWm1DX0dNMzhmRUNqZzVucW05bFpJSm90N2oxampDNVFfbVc1NU9FaWQtWVg2ZkJwMGdzS05yeTBhQUxETXVFV2JjSEJ1MHFMYjc2U2h3NFNsR3BSODBjeU5Ja1NjZGkyQUc5MWRaa09Ga1RrRnU4UzB1ai1QMFdsWURtbG1pYkNCMXRhMA?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T03:06:26.000Z",
+        "summary": "Researchers Disclose Multiple Security Flaws in Anthropic's Claude Let's Data Science"
+      },
+      {
+        "title": "Japan’s Biggest Banks Turn To Anthropic’s Claude Mythos For Cyber Tests - Finimize",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPUzVHOWg5dE41WV9mQVNuZ0dSWlBfa1dTUHdBZ1FkaERoSkF0encyRldSTng1VFVhb0NEbjBFMk9VYTZ5d3BRVEdNbjQ4bFRUcHJiZXBvdXJOak13czc1SmxkWldwT2w1bVhsaFJNWFVucHFISkdCbl9vRmpaQlliTlBJUEc1bk1LOUVDNWJpZnc2X2k0ZFZFVVZKMlM1X0E?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T03:02:57.000Z",
+        "summary": "Japan’s Biggest Banks Turn To Anthropic’s Claude Mythos For Cyber Tests Finimize"
+      },
+      {
+        "title": "Anthropic and Gates Foundation commit $200 million to AI for public goods - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPU2YxX2pnT3hSYzNXTFhkeTFXYlNBdmwwaXI1N2p2RTF3S2hmNDV4a0FJV054bjBlWXRVQWxweDNYdWJERlQ2LUZ5MGJOZUlJM0pMUnkzRC1FdlctWGY0UTVEbGNSb1p3enkxS3Q1ZVlyNXBGa25ZQmQzbzNKMVd6SGV0RnBjZjVvV2VXaWtUWm9ENnQyVmtuTmpDV3B6NnFzS0RZ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T02:06:25.000Z",
+        "summary": "Anthropic and Gates Foundation commit $200 million to AI for public goods Let's Data Science"
+      },
+      {
+        "title": "US judge considers Anthropic’s $1.5 billion settlement of authors’ lawsuit - KFGO",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOeGhFdjN3YVl4WC14NmdyNXlUSkFackxhSTc5QXBfOFRHa0V3ak5vdlhyaG1QR1otcVdBQ2JJNVRtQzFhSTR0MWVMTEgtTGFpNGsxRVp3cWZiOXFpYXVUVUZLa0Z5LUdnMlltZGVzbXE3Q201MDlZR2VReGg3dU5fc0J4bHdiODJqRFk4TndBUG03TkhMWWlvdG9zNWZHeHY1cXc?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T01:21:18.000Z",
+        "summary": "US judge considers Anthropic’s $1.5 billion settlement of authors’ lawsuit KFGO"
+      },
+      {
+        "title": "Elevated error rates on Opus 4.7",
+        "url": "https://status.claude.com/incidents/8z7l5zcy0v3b",
+        "source": "HN · 55↑",
+        "hn_id": "48142964",
+        "published": "2026-05-15T00:22:53.000Z",
+        "summary": ""
       },
       {
         "title": "Anthropic Spat With US Emerges as Risk Factor for Figma, Others",
@@ -183,17 +233,10 @@
       },
       {
         "title": "Apple Mac M5 System Exploited With Anthropic's Claude Mythos AI, Researchers Claim - Decrypt",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOHBfN2FFcWkyMEpIX2xWbkxIMHlFalNMY0t3ZFkwRmNSQU16TExzekdUR3hFTkVlcXhaV0U5LUhrN2xYWkJiZnA0aTBLcWthN3dqRGgzWGhEUzhnYm02VVN1TDc3ZnFJakhtVE82TXZiWmY2S3FvZDZBUk9Ld0RYTzZqTzBBeV9qdGc?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQOHBfN2FFcWkyMEpIX2xWbkxIMHlFalNMY0t3ZFkwRmNSQU16TExzekdUR3hFTkVlcXhaV0U5LUhrN2xYWkJiZnA0aTBLcWthN3dqRGgzWGhEUzhnYm02VVN1TDc3ZnFJakhtVE82TXZiWmY2S3FvZDZBUk9Ld0RYTzZqTzBBeV9qdGfSAZIBQVVfeXFMUEo2ZDhlakJQZ3diY1N4Y2w5Q090R2ZYdmhjeHhVRFZXdnEyeERESVFNOXF3OTNTWURnZXRxTjFsNzZnTEt3cEJsZlltQ24tRWhnTXloZ280TWlSbFlNSUc3Q1ZmT19RYUl3SGZxeW1PQTJqcEtOLWdFS1ZYcnlBelMwMmFoMzFFY1lSUWU1Yk5YeXc?oc=5",
         "source": "Google News",
         "published": "2026-05-14T21:16:53.000Z",
         "summary": "Apple Mac M5 System Exploited With Anthropic's Claude Mythos AI, Researchers Claim Decrypt"
-      },
-      {
-        "title": "Apple Mac M5 System Exploited With Anthropic's Claude Mythos AI, Researchers Claim - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOM2VwNjcxbDFqRHN2ZjBCdGliLWxYS3djbUlEZGJwVXB6cno2dWx0RWNOcDFmNGl5eGRnYlNwZThSWHF4ZE5US0NjR2MtTUZjS0JQa2F2NmxwWWNsTXNoc1JzSS1BdnVBUUtwR2k3M29IVUV2ejRaMDJkTXltZlV4Wmh6OWNTU3EyX3BnWFhPWHNkQXNu?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T21:16:53.000Z",
-        "summary": "Apple Mac M5 System Exploited With Anthropic's Claude Mythos AI, Researchers Claim Yahoo Tech"
       },
       {
         "title": "Claude is telling users to go to sleep mid-session. Users are annoyed but Anthropic says it's a tic - Fortune",
@@ -205,7 +248,7 @@
       {
         "title": "Claude for Legal",
         "url": "https://github.com/anthropics/claude-for-legal",
-        "source": "HN · 67↑",
+        "source": "HN · 72↑",
         "hn_id": "48141234",
         "published": "2026-05-14T21:05:05.000Z",
         "summary": ""
@@ -279,48 +322,6 @@
         "source": "Google News",
         "published": "2026-05-14T19:00:00.000Z",
         "summary": "Microsoft starts canceling Claude Code licenses The Verge"
-      },
-      {
-        "title": "Anthropic, Gates Foundation launch $200M AI health partnership - qz.com",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOSkZhanQxVXVreF9YQlp4ZFQzbElQX3dxeEtLZ2U1bVRKbDFDQXRnUG1GWFA2Nk5OM0dEd0Q0MERtYzdfanExRmtFZHM0YVlEa2RZdFdhUDE4S0dkMTNKZkdTR2lmdm9BeUI5Ukd2MzA1U0N4R1V0WDlfWmh6U28xZzRxbFlMd0U?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T18:29:12.000Z",
-        "summary": "Anthropic, Gates Foundation launch $200M AI health partnership qz.com"
-      },
-      {
-        "title": "Anthropic's Mythos is evolving faster than expected, reports AI safety agency - ZDNET",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbEZuSGdrUFBiMWNtc1VBN0JDTFhacDhXY1NnbVd4ZF91dy1FSm41M0JheGoxUnR5dUdHd0p2Vm9oWFlCMmdSNEQ3dV8zTmpUb2ZRVzAwTTFlRFkyVkdtYW1YMXBCUUlzV2Z6MjF3ZmllaFVYcWZ0RDhpOGhhWloteXIyUjludVlwTjZr?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T17:32:00.000Z",
-        "summary": "Anthropic's Mythos is evolving faster than expected, reports AI safety agency ZDNET"
-      },
-      {
-        "title": "Why A.I. Safety Controls Are Not Very Effective - The New York Times",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOX1hKTkVWSGVrZGJxWW9KMWRlWVNYamh3MTEyd2pmQkxxNFAwX1BhY0VNVWJGS3pnaVE1REk1ZlRFNXEzQVJxbTlhZDFpcTlFWDN2ODhlWlVuRjZLa1NRYzlvRGJPMjZ4WGN4X3IyRUZmZ1BmdXZIeFY3Rlo5eFJycVJyOE9EUlJqYXhYMWZTa3BXM1Bp?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T17:19:39.000Z",
-        "summary": "Why A.I. Safety Controls Are Not Very Effective The New York Times"
-      },
-      {
-        "title": "Anthropic announces ‘programmatic credit pool’ as agentic tool use rises - SiliconANGLE",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPekQ4TWxDSDQxN0JESGl2aDRXbXdzZE1CTFUwbGxXeEJ6a1d4NU1ZMnlYSjFGLXFISll2OS11dERMaGt4ekRWUlFhWXJCTGxtbGtlOEFBQ09EODNjel9FWlhaZzlEZFI3OGZZdnRYWmsxRU9YbGxCbGJJLWVLdEpyYlo1RXJBSy1MdkxWVDJYbzdwYWpOMzBaNGwzRGwtbDZkejJVcUJaUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T17:10:16.000Z",
-        "summary": "Anthropic announces ‘programmatic credit pool’ as agentic tool use rises SiliconANGLE"
-      },
-      {
-        "title": "Anthropic Pushes Deeper Into Legal Work With Claude Updates - Bloomberg Law News",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZkpsQlNEaHNRN3l3QjNhbUlidnJZNWhWSFJhRkZvQzhRcHppLVdlYndKTnUyMGdicDF6NFlQN0h1NFhTVUluYzNaWmhURkgxaUplSXprVTU5VHhVZ0xtb2tNcmNQMVladjhyN0lvNkFqX0dESmJoSWhqS2wyX2RLWVhiTlNGR0hHNU90Vm01Q2tWQ2hBV0t6cVBCbW1DckpQNzhSTW95WQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T17:00:00.000Z",
-        "summary": "Anthropic Pushes Deeper Into Legal Work With Claude Updates Bloomberg Law News"
-      },
-      {
-        "title": "PwC and Anthropic expand alliance for enterprise agentic AI - PwC",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQeldRcDk3WWpRMHo1a0Qwb3djcGNxOXVVbHAtYVNnT1dtbnZkdGsyc0FlZUNxNDZoaFlaZUhLWGRnMVRaemdvblp1MjVFQjFiajBFM3hZOThxS25zTG9HZFVCdGdRX1JnSVphWUpaTkdjTjFFdVh0eXdhYk1lLTVjb1hacm00OHFjRDhlOGwtRWFjUUFRaHJsRjlXM0d3d1RJVTJMUEZjOGtqYndhRlktRVV3?oc=5",
-        "source": "Google News",
-        "published": "2026-05-14T16:49:19.000Z",
-        "summary": "PwC and Anthropic expand alliance for enterprise agentic AI PwC"
       },
       {
         "title": "Claude Code Agent View: Parallel Agents Are Here",
@@ -455,18 +456,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Automate ANYTHING with Claude! (Here's how...)",
-        "url": "https://www.youtube.com/watch?v=jdkrCbUBnDw",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "jdkrCbUBnDw",
-        "thumbnail": "https://i.ytimg.com/vi/jdkrCbUBnDw/hqdefault.jpg",
-        "published": "2026-04-29T13:01:22.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
         "title": "99% of You Prompt Claude Cowork Wrong",
         "url": "https://www.youtube.com/watch?v=265ZbRf8w9k",
         "source": "Ryan & Matt Data Science",
@@ -527,18 +516,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Claude Live Artifacts just dropped... ALL your tools in one place!",
-        "url": "https://www.youtube.com/watch?v=4yEBOvtMr5o",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "4yEBOvtMr5o",
-        "thumbnail": "https://i.ytimg.com/vi/4yEBOvtMr5o/hqdefault.jpg",
-        "published": "2026-04-23T13:00:18.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
         "title": "The best Claude Design workflow you’ll ever see…",
         "url": "https://www.youtube.com/watch?v=_v_heNg0j1c",
         "source": "Alex Finn",
@@ -559,6 +536,18 @@
         "video_id": "-W8uYEX4gLQ",
         "thumbnail": "https://i.ytimg.com/vi/-W8uYEX4gLQ/hqdefault.jpg",
         "published": "2026-04-22T11:25:52.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "I Let AI Agents Code While I Slept (Claude Code Routines)",
+        "url": "https://www.youtube.com/watch?v=5LCjeni0Z-U",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "5LCjeni0Z-U",
+        "thumbnail": "https://i.ytimg.com/vi/5LCjeni0Z-U/hqdefault.jpg",
+        "published": "2026-04-21T16:11:58.000Z",
         "summary": "",
         "_kind": "news_video"
       }
@@ -860,17 +849,6 @@
         "summary": ""
       },
       {
-        "title": "Automate ANYTHING with Claude! (Here's how...)",
-        "url": "https://www.youtube.com/watch?v=jdkrCbUBnDw",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "jdkrCbUBnDw",
-        "thumbnail": "https://i.ytimg.com/vi/jdkrCbUBnDw/hqdefault.jpg",
-        "published": "2026-04-29T13:01:22.000Z",
-        "summary": ""
-      },
-      {
         "title": "99% of You Prompt Claude Cowork Wrong",
         "url": "https://www.youtube.com/watch?v=265ZbRf8w9k",
         "source": "Ryan & Matt Data Science",
@@ -937,17 +915,6 @@
         "summary": ""
       },
       {
-        "title": "Claude Live Artifacts just dropped... ALL your tools in one place!",
-        "url": "https://www.youtube.com/watch?v=4yEBOvtMr5o",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "4yEBOvtMr5o",
-        "thumbnail": "https://i.ytimg.com/vi/4yEBOvtMr5o/hqdefault.jpg",
-        "published": "2026-04-23T13:00:18.000Z",
-        "summary": ""
-      },
-      {
         "title": "The best Claude Design workflow you’ll ever see…",
         "url": "https://www.youtube.com/watch?v=_v_heNg0j1c",
         "source": "Alex Finn",
@@ -978,6 +945,28 @@
         "video_id": "-W8uYEX4gLQ",
         "thumbnail": "https://i.ytimg.com/vi/-W8uYEX4gLQ/hqdefault.jpg",
         "published": "2026-04-22T11:25:52.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How to Use Claude Cowork Live Artifacts (Step-by-Step Tutorial)",
+        "url": "https://www.youtube.com/watch?v=6jKeNcfvGVM",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "6jKeNcfvGVM",
+        "thumbnail": "https://i.ytimg.com/vi/6jKeNcfvGVM/hqdefault.jpg",
+        "published": "2026-04-21T19:06:58.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I Let AI Agents Code While I Slept (Claude Code Routines)",
+        "url": "https://www.youtube.com/watch?v=5LCjeni0Z-U",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "5LCjeni0Z-U",
+        "thumbnail": "https://i.ytimg.com/vi/5LCjeni0Z-U/hqdefault.jpg",
+        "published": "2026-04-21T16:11:58.000Z",
         "summary": ""
       }
     ],
@@ -1283,6 +1272,18 @@
         "video_id": "MIdKddA6vU4",
         "thumbnail": "https://i.ytimg.com/vi/MIdKddA6vU4/hqdefault.jpg",
         "published": "2026-04-22T13:43:19.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
+        "title": "How to Use Claude Cowork Live Artifacts (Step-by-Step Tutorial)",
+        "url": "https://www.youtube.com/watch?v=6jKeNcfvGVM",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "6jKeNcfvGVM",
+        "thumbnail": "https://i.ytimg.com/vi/6jKeNcfvGVM/hqdefault.jpg",
+        "published": "2026-04-21T19:06:58.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1990,13 +1991,6 @@
         "summary": ""
       },
       {
-        "title": "Automate ANYTHING with Claude! (Here's how...)",
-        "url": "https://www.youtube.com/watch?v=jdkrCbUBnDw",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-04-29T13:01:22.000Z",
-        "summary": ""
-      },
-      {
         "title": "99% of You Prompt Claude Cowork Wrong",
         "url": "https://www.youtube.com/watch?v=265ZbRf8w9k",
         "source": "YouTube · Ryan & Matt Data Science",
@@ -2046,13 +2040,6 @@
         "summary": ""
       },
       {
-        "title": "Claude Live Artifacts just dropped... ALL your tools in one place!",
-        "url": "https://www.youtube.com/watch?v=4yEBOvtMr5o",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-04-23T13:00:18.000Z",
-        "summary": ""
-      },
-      {
         "title": "Memory for Claude Managed Agents is now in public beta under the standard managed-agents-2026-04-01 header. See Using…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#april-23-2026",
         "source": "Claude API Release Notes",
@@ -2078,6 +2065,20 @@
         "url": "https://www.youtube.com/watch?v=-W8uYEX4gLQ",
         "source": "YouTube · Leon van Zyl",
         "published": "2026-04-22T11:25:52.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How to Use Claude Cowork Live Artifacts (Step-by-Step Tutorial)",
+        "url": "https://www.youtube.com/watch?v=6jKeNcfvGVM",
+        "source": "YouTube · Ryan & Matt Data Science",
+        "published": "2026-04-21T19:06:58.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I Let AI Agents Code While I Slept (Claude Code Routines)",
+        "url": "https://www.youtube.com/watch?v=5LCjeni0Z-U",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-04-21T16:11:58.000Z",
         "summary": ""
       },
       {
