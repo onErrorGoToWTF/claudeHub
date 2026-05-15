@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-15T17:18:43.434Z",
+  "generated_at": "2026-05-15T19:12:39.746Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -7,7 +7,14 @@
         "title": "Teaching Claude Why",
         "url": "https://www.anthropic.com/research/teaching-claude-why",
         "source": "Anthropic Research",
-        "published": "2026-05-15T16:27:06.000Z",
+        "published": "2026-05-15T17:38:52.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Pwc Expanded Partnership",
+        "url": "https://www.anthropic.com/news/pwc-expanded-partnership",
+        "source": "Anthropic",
+        "published": "2026-05-15T17:32:36.000Z",
         "summary": ""
       },
       {
@@ -15,13 +22,6 @@
         "url": "https://www.anthropic.com/research/2028-ai-leadership",
         "source": "Anthropic Research",
         "published": "2026-05-15T15:28:58.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Pwc Expanded Partnership",
-        "url": "https://www.anthropic.com/news/pwc-expanded-partnership",
-        "source": "Anthropic",
-        "published": "2026-05-15T01:01:22.000Z",
         "summary": ""
       },
       {
@@ -146,6 +146,18 @@
     ],
     "news": [
       {
+        "title": "Claude for Small Business Owners is Finally Here",
+        "url": "https://www.youtube.com/watch?v=I2q6rI0aJ9c",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "I2q6rI0aJ9c",
+        "thumbnail": "https://i.ytimg.com/vi/I2q6rI0aJ9c/hqdefault.jpg",
+        "published": "2026-05-15T18:06:53.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
         "title": "AI radio hosts demonstrate why AI can’t be trusted alone",
         "url": "https://www.theverge.com/ai-artificial-intelligence/931479/andon-labs-ai-radio-companies",
         "source": "The Verge",
@@ -160,11 +172,11 @@
         "summary": "Anthropic’s open-source Claude Desktop Buddy turns ESP32-S3 devices into interactive AI desk companions CNX Software"
       },
       {
-        "title": "Claude’s next enterprise battle is not models: it’s the agent control plane - Venturebeat",
+        "title": "Claude’s next enterprise battle is not models: it’s the agent control plane - VentureBeat",
         "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPMWhRNmRxdEQ1b1NsZl9kanhnVlJBUG15ZWljamJQUGpOdFd5MC1MLVUtVzU5R1JWM2lxOXd4MEtRcVZiVnJGcjJHMkdHVHNZUy1KZ3hzYW1JNzFsUkRWYWM5RkNWNkxVR0tGX1d5T3ZPTWNkUnUtZGI4N2k1dmNvX3ltNmZjSmlvUWRFcmIyWHkzdkxKalNHU1RMb05pcWlXM3hhT2ZmbkN0a0pTajhF?oc=5",
         "source": "Google News",
         "published": "2026-05-15T16:45:00.000Z",
-        "summary": "Claude’s next enterprise battle is not models: it’s the agent control plane Venturebeat"
+        "summary": "Claude’s next enterprise battle is not models: it’s the agent control plane VentureBeat"
       },
       {
         "title": "Claude Desktop: 5 Things to Do FIRST",
@@ -244,7 +256,7 @@
       {
         "title": "“Too dangerous to release” or just too expensive?",
         "url": "https://kingy.ai/ai/too-dangerous-to-release-or-just-too-expensive-the-real-reason-anthropic-is-hiding-its-most-powerful-ai/",
-        "source": "HN · 143↑",
+        "source": "HN · 144↑",
         "hn_id": "48147945",
         "published": "2026-05-15T12:49:27.000Z",
         "summary": ""
@@ -264,32 +276,18 @@
         "summary": "Almost 5 months after Microsoft gave engineers access to Anthropic's Claude Code, company is canceling li The Times of India"
       },
       {
+        "title": "How PayPal and Anthropic are Bringing AI Literacy to SMBs - AI Magazine",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQWEJZTWh0Y2RYYW85Q2MwNjJoelRYSFlycjRJaDE3eWJ0V3ZVaklGaEdCNUp4M1VKNTVEcHZyajZrVnhMempTM3pvdi1icFV6YnRyN0t4QXFKNC01SkFGYW9pblJ4eTRPMEdZY1lLZmlWNVE5T0VQMmRncVFZVTF4TzlzWnZsLXd6TjhybU1DTElrdw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T12:39:51.000Z",
+        "summary": "How PayPal and Anthropic are Bringing AI Literacy to SMBs AI Magazine"
+      },
+      {
         "title": "Microsoft pulls Claude Code licenses and pushes developers back toward its own AI tool - the-decoder.com",
         "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxON25URTJjNHhQMXlIbVI2cUdpZ3BSdllocDhDMzlqMTBieHdrMXcyNHREQ0YtNjJ5VG00YzFEb0ZtSGN1bzFtMXdmam5hRUJkYlk0M082Z09mWG1pLUFlRFZid2NfVkZ2RzkzSEJjTFpLajZpUkZGUThLb1VqTGtvSE16TFJrZEhSRGthbjBwQjFXd0JyaWZkY3VyQzRSWHh3VUJVZVpYY3lCcUQ0ZG1SUg?oc=5",
         "source": "Google News",
         "published": "2026-05-15T12:39:40.000Z",
         "summary": "Microsoft pulls Claude Code licenses and pushes developers back toward its own AI tool the-decoder.com"
-      },
-      {
-        "title": "How PayPal and Anthropic are Bringing AI Literacy to SMBs - AI Magazine",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQWEJZTWh0Y2RYYW85Q2MwNjJoelRYSFlycjRJaDE3eWJ0V3ZVaklGaEdCNUp4M1VKNTVEcHZyajZrVnhMempTM3pvdi1icFV6YnRyN0t4QXFKNC01SkFGYW9pblJ4eTRPMEdZY1lLZmlWNVE5T0VQMmRncVFZVTF4TzlzWnZsLXd6TjhybU1DTElrdw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-15T12:23:47.000Z",
-        "summary": "How PayPal and Anthropic are Bringing AI Literacy to SMBs AI Magazine"
-      },
-      {
-        "title": "Anthropic's Mythos is already finding security flaws in Apple software - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE93dkg3Z2VRVFhDM1NiT3RRM040RHdLc1p6WU45Y2xMLVdWd3VFN0o3dkdNSl9PMUJsLVpJUlRTUTNCTG45RC11ZXRqa3Q3Rl8tc3lqQnJER3FxUTBCM2JOV0J2SjIxNzA?oc=5",
-        "source": "Google News",
-        "published": "2026-05-15T12:03:30.000Z",
-        "summary": "Anthropic's Mythos is already finding security flaws in Apple software Mashable"
-      },
-      {
-        "title": "Concentric AI’s Industry-First Anthropic Compliance API Integration Strengthens Data Security Governance for Claude Platform Users - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNVmRIOUZPczFHRUJfMS1rTmVUb3kzY1dUWTM5a3FhWUY0OUFNbERKeGxXRUczZWI4RHpQRkktUWtnOGlVT05iWi0yTWpia0dDeklBV0V0VnUwaXFnZ0ZtNUZ6RjRGc0ZlVXlqeEp3bEhCcmQ4bTR4RFpnMDZLa1NLcHFpQTVMN3dZMFJlNUZBODVkT29tc2JLMU9mczMwb2lpMjlUN0M3aE83LU0?oc=5",
-        "source": "Google News",
-        "published": "2026-05-15T12:00:00.000Z",
-        "summary": "Concentric AI’s Industry-First Anthropic Compliance API Integration Strengthens Data Security Governance for Claude Platform Users Yahoo Finance"
       },
       {
         "title": "Anthropic and Bill Gates' Foundation Commit $200 Million To AI for Healthcare And Education - Benzinga",
@@ -332,6 +330,20 @@
         "source": "Google News",
         "published": "2026-05-15T10:08:57.000Z",
         "summary": "Musk's Colossus 1 AI supercomputer's inefficient mixed-architecture design couldn't be used to train Grok, so Anthropic's using it for inference instead — Musk readies unified Blackwell-only…"
+      },
+      {
+        "title": "How Anthropic’s Claude Toggle Is A Tool For Small Businesses - Forbes",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQRlAwaldBaDdOS0hQZUp6T0ctTnFJcG9DdVIyQVlQdlU0ZXBwYU1UMUIxcWJRdFB6OXY5NEVENHRoc05qSE40bXl3NnM5VkRZSEtkakc0djV6RXAtTlNuRXVGZ2RxZjd3MC1sS3JLZC1rN0IxSXRpMjMyS3FmSk1JTGVOd2tPSm9tNE1qQVV5N2xNcXQ4aVl6MlY4OVVtbFVoLTNuWnRZSGR6MTRnYkZ3akducVBVZ0VqdWZqUFhxMG1qOG1QWmc?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T09:49:14.000Z",
+        "summary": "How Anthropic’s Claude Toggle Is A Tool For Small Businesses Forbes"
+      },
+      {
+        "title": "Claude Mythos Preview and the Erosion of Cyber Defense - Small Wars Journal",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNVlZ1N0w5cWlZeWYzVlE5b3VVWFhFTi1iRWhYemQ1MVZzTElKb09XSVUtZ3RYQlJFaTZkdTZHWGQtSHgxcC1NdTJhRkVzcFNaeVktOFRRUVBBNHdVZ0N3eHo3cm1qaUhGeHJVb3dtYktTbjcwUDBYZnBoR1RrTTJweUY3Y0xMWG9YZ1lfR0lYNDdKeklNWjFYcjRUaw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T09:38:24.000Z",
+        "summary": "Claude Mythos Preview and the Erosion of Cyber Defense Small Wars Journal"
       },
       {
         "title": "Claude Code Agent View: Parallel Agents Are Here",
@@ -538,18 +550,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "The best Claude Design workflow you’ll ever see…",
-        "url": "https://www.youtube.com/watch?v=_v_heNg0j1c",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "_v_heNg0j1c",
-        "thumbnail": "https://i.ytimg.com/vi/_v_heNg0j1c/hqdefault.jpg",
-        "published": "2026-04-22T22:12:45.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
         "title": "Claude Design + Claude Code = No Designer Needed",
         "url": "https://www.youtube.com/watch?v=-W8uYEX4gLQ",
         "source": "Leon van Zyl",
@@ -649,6 +649,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Claude for Small Business Owners is Finally Here",
+        "url": "https://www.youtube.com/watch?v=I2q6rI0aJ9c",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "I2q6rI0aJ9c",
+        "thumbnail": "https://i.ytimg.com/vi/I2q6rI0aJ9c/hqdefault.jpg",
+        "published": "2026-05-15T18:06:53.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Desktop: 5 Things to Do FIRST",
         "url": "https://www.youtube.com/shorts/xdXPDDfIJpk",
@@ -944,17 +955,6 @@
         "video_id": "4yEBOvtMr5o",
         "thumbnail": "https://i.ytimg.com/vi/4yEBOvtMr5o/hqdefault.jpg",
         "published": "2026-04-23T13:00:18.000Z",
-        "summary": ""
-      },
-      {
-        "title": "The best Claude Design workflow you’ll ever see…",
-        "url": "https://www.youtube.com/watch?v=_v_heNg0j1c",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "_v_heNg0j1c",
-        "thumbnail": "https://i.ytimg.com/vi/_v_heNg0j1c/hqdefault.jpg",
-        "published": "2026-04-22T22:12:45.000Z",
         "summary": ""
       },
       {
@@ -1744,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Claude for Small Business Owners is Finally Here",
+        "url": "https://www.youtube.com/watch?v=I2q6rI0aJ9c",
+        "source": "YouTube · Ryan & Matt Data Science",
+        "published": "2026-05-15T18:06:53.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Desktop: 5 Things to Do FIRST",
         "url": "https://www.youtube.com/shorts/xdXPDDfIJpk",
         "source": "YouTube · Pragati Kunwer",
@@ -2056,13 +2063,6 @@
         "url": "https://platform.claude.com/docs/en/release-notes/overview#april-23-2026",
         "source": "Claude API Release Notes",
         "published": "2026-04-23T00:00:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "The best Claude Design workflow you’ll ever see…",
-        "url": "https://www.youtube.com/watch?v=_v_heNg0j1c",
-        "source": "YouTube · Alex Finn",
-        "published": "2026-04-22T22:12:45.000Z",
         "summary": ""
       },
       {
