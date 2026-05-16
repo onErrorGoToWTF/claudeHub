@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-16T10:53:05.073Z",
+  "generated_at": "2026-05-16T12:52:29.908Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,20 @@
     ],
     "news": [
       {
+        "title": "First Apple M5 memory exploit discovered using Anthropic AI, gives root access on MacOS — Claude Mythos helps security researchers bypass Memory Integrity Enforcement - Tom's Hardware",
+        "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxPNUhtMEhKZGlST1RuLUotYWk4c0ZUUG1PblVJTWhrV3hweVNhcU14XzJtRHB4dVA0WHctLWJqTkF1Z3RSWEpOaG5kS0ZTN3RscHJJMUZnemRyUnZfNVZWQkZaaGhSQXpFQXkyaVZSd0ZQbUxrRm8zRWhMUGdEMUZWemszTHQxR0RaeXpBdjJDSDFwSXo1X1FEZW96LWhmT1dzX1FnU1N0OHlaRUprS3BOSGl0TnZ0QXM3akRybzlNY3dMdXk2LWptT0tsSGdLSkxFLXNmbEpKdEo3LXBlSW5saXVqLTA3WFNTajlMSmw5UnZCSjJwMTdPU29qSFV1SUZLYjZfOGVlemtjbEo4OW5fWU9NYktEUm5rNXNfamVkZFdPR0xsbElYMA?oc=5",
+        "source": "Google News",
+        "published": "2026-05-16T11:00:00.000Z",
+        "summary": "First Apple M5 memory exploit discovered using Anthropic AI, gives root access on MacOS — Claude Mythos helps security researchers bypass Memory Integrity Enforcement Tom's Hardware"
+      },
+      {
+        "title": "Anthropic's Claude Mythos Helps Crack Apple M5 Security Within A Week - ETV Bharat",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNa05EcDBZdjNNY0t6OVp2RFZUMmpnbjVjdHVlSzhyeHpBakQ5dFN6VHgwVHBvT0lma1kwb05IVjdCODlNUUhoT2NhZ0xEVVJCdDczSXk5QlYtclNKNDB3dUpQZ1JpTmV2NUpYb2dVazdJbEdQVDJWSnV2WkJzVmVyU1NVeUI1cG5DWlZKdmYwdmRESGhReV9qRDIzN3hwYXg2OGRya0NVbDNoUVlLUVltN01feVhwZUNlU3FIZmNESDHSAcYBQVVfeXFMT3RLZXRBUFBfSDNZbEV4M05VZkxKZ1cyMm1xMmU2dXROR1FBLVJMLURkVmJtUUlBYkVzUW5VQjJ3Y0JIcEpjUzJzZTREZXRLbkNhdm55WDVJT2cyOFZJVUFOU0JxUFlvcWl2TW1pNnlqRUJtQ3RpbGplNEE3Y25VV1pUQVdKNkozQ01XTFhkQjZEejNKUF96ZDhxVVY1cFZyVDNSZXNpLVlHRFk2WWVTajMtVUo3Q0FFb0RoVjBYNHFCVFZ3bk5n?oc=5",
+        "source": "Google News",
+        "published": "2026-05-16T10:23:01.000Z",
+        "summary": "Anthropic's Claude Mythos Helps Crack Apple M5 Security Within A Week ETV Bharat"
+      },
+      {
         "title": "Why AI safety controls are not very effective - The Spokesman-Review",
         "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTVNXNFlocURMX2xjTVlhS2J1UFNGN2w5ZG5uWm95dEExTlplUjlNWkVtZS13MU5jbU02al9iWTU2Q211ZlNicDFKMGZ3QXBHWElvX2NoNGdmcjVmcXprc2owWFFBY2dTalo0ZGNpZFJ5Ym1COHpoSk40VXZoS2FQdnRzVTJuSU5OOXQ1QUNKWmh5d2hOd3E4?oc=5",
         "source": "Google News",
@@ -174,13 +188,6 @@
         "summary": "Anthropic IPO outlook: What is Claude and how is it different from Open AI? TradingKey"
       },
       {
-        "title": "Anthropic Introduces Claude for Small Business - Thurrott.com",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNQ244VU94bVBvVjFFNHZlNGR0emswVjlvb2QybE94ZzBvMDF3eXhCamhhTHdVdW9QcTQwaHlaT3VrUWp5TkV2SnJTT1NuZ0ZmSDRKS0lUVkI1cWlSc3Z2My10NXd2UUJiSHBtbWlsUjcxSjJGQ0t3R1djRnI3b0tMa1hPQzFoaXlpT2pRMW1ORlZzZTFubmVz?oc=5",
-        "source": "Google News",
-        "published": "2026-05-15T22:01:31.000Z",
-        "summary": "Anthropic Introduces Claude for Small Business Thurrott.com"
-      },
-      {
         "title": "Anthropic’s $1.5B copyright settlement is getting messy as judge delays approval",
         "url": "https://arstechnica.com/tech-policy/2026/05/authors-fight-for-higher-payouts-from-anthropics-1-5b-copyright-settlement/",
         "source": "Ars Technica",
@@ -193,6 +200,13 @@
         "source": "Google News",
         "published": "2026-05-15T20:49:45.000Z",
         "summary": "PwC expands Anthropic alliance to deploy Claude across workforce By Investing.com Investing.com Nigeria"
+      },
+      {
+        "title": "Verizon joins Project Glasswing to test Anthropic's Claude Mythos model on its infrastructure - GSMArena.com news - GSMArena.com",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOdW0yZlpTN1dfMk5TUWFTaXZZY2Y1dXEyR1VBQjQtUXRoVHFISUdLRTJsMHdST05WVG8zR1Q4RldZUXM0MW94ZFZrekR1RFA0eG8tTnpydEZLZGY1QzBNdWZlWHMxb0FwMVk5eHdZdng3cGxvZUJnVnlnZW9hNVZxSlNPNERMZjA0WVkyaUQzNjZ2NDBxRW92cEVsUk1zRUdrdlpDR29ZdTJrY01GTTRpOE1vYlJsT0dEUUsyVmtweUI3b0x2azF2VWpSTjfSAcgBQVVfeXFMUFNBdVhiSXVadElvX1dVN1UtTEVYR05WUWRXdUtvTVpMRG9PNk1kWGFINzZheWNLcEVtLUFHbFJGV1pIUnNvRHgtRnE5TWZ4U19ua2lmQ3Q2bnlMaGxpNm56bnZQbWlBSi1Td19BRndvemV0YnV5VHFOUHBkWU9mSUZCODRYRXNhZWRZdEFEdFk0aU5jbXd4a2I1VXZEaFN4eUhhajYzUUN4S0s5Z0JCN251OFdfeWUtVHNoeGxUSC1SbkpjbTRlTGM?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T20:02:02.000Z",
+        "summary": "Verizon joins Project Glasswing to test Anthropic's Claude Mythos model on its infrastructure - GSMArena.com news GSMArena.com"
       },
       {
         "title": "The OpenAI trial wraps up, and the Musk founder machine keeps spinning",
@@ -214,13 +228,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "AI radio hosts demonstrate why AI can’t be trusted alone",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/931479/andon-labs-ai-radio-companies",
-        "source": "The Verge",
-        "published": "2026-05-15T17:09:16.000Z",
-        "summary": "Andon Labs has been running a series of experiments in which AI agents run businesses without human intervention. Its latest is a quartet of radio stations run by some of the most popular AI models…"
-      },
-      {
         "title": "Anthropic’s open-source Claude Desktop Buddy turns ESP32-S3 devices into interactive AI desk companions - CNX Software",
         "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQRU9vdW91bV9tUmV6VHZEVUNUa2RPeGJaSEZUcE5KbzNGbzN3MTdBdS0yUXE4UjV5STlzRFFoUzZGeVhiWXZENnFHSFZsZ3ZnMFRkbjRJcEVVeHpGVGltenpmMXF3RDB3bzhNb0lLcVJNLVBaS2Z1Y1lsUmV6Zm00X2hFXzJSN2dLSUhmM2doLVdfWWwyQVFMbWtmWVpKUjk3VFRqdVBPam9oa2UyNVpmRnE1Rm1CVGhRRWxydlBZV2xzRXpUa05kdFd2WGY0WmVSWGVzcms0b1l1NzTSAeMBQVVfeXFMTlNaMFUzNUdGbzBFNU8yOG5YOXIxcF8wU2hTaVdfSXJQejdNWmJWMVZVbGFVSElYelJORUo5RlZtd3hYajM5MXc5UklFSFFFRFdZcmpmWDVKUW9uQk5jUXgzSkdLb2hYNEUtbzBfOTg2bnZCLTd5eVpuSE9KNWc4MENfdWhjYnhhdVRVNDNvZlBCNVlBMlI3Z0Vmb0lVQWJYby1nSHp0TjVZWk80cGs4UDJuLUdaZ2wwWGF1SXI2dC0teV85OXd2NEY3SlROcnFlZk9ISE93QXJsTzlIVllzSVFlZ2c?oc=5",
         "source": "Google News",
@@ -228,11 +235,11 @@
         "summary": "Anthropic’s open-source Claude Desktop Buddy turns ESP32-S3 devices into interactive AI desk companions CNX Software"
       },
       {
-        "title": "Claude’s next enterprise battle is not models: it’s the agent control plane - Venturebeat",
+        "title": "Claude’s next enterprise battle is not models: it’s the agent control plane - VentureBeat",
         "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPMWhRNmRxdEQ1b1NsZl9kanhnVlJBUG15ZWljamJQUGpOdFd5MC1MLVUtVzU5R1JWM2lxOXd4MEtRcVZiVnJGcjJHMkdHVHNZUy1KZ3hzYW1JNzFsUkRWYWM5RkNWNkxVR0tGX1d5T3ZPTWNkUnUtZGI4N2k1dmNvX3ltNmZjSmlvUWRFcmIyWHkzdkxKalNHU1RMb05pcWlXM3hhT2ZmbkN0a0pTajhF?oc=5",
         "source": "Google News",
         "published": "2026-05-15T16:45:00.000Z",
-        "summary": "Claude’s next enterprise battle is not models: it’s the agent control plane Venturebeat"
+        "summary": "Claude’s next enterprise battle is not models: it’s the agent control plane VentureBeat"
       },
       {
         "title": "Claude Desktop: 5 Things to Do FIRST",
@@ -254,25 +261,11 @@
         "summary": "Claude for Legal Arrives, and the Legal AI Stack Gets Re-Segmented Overnight JD Supra"
       },
       {
-        "title": "Anthropic's Claude writes 90% of code: CFO Krishna Rao reveals productivity gains - The Economic Times",
-        "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPTEFiVGpNODFQLWlHVC1MQk5GMFRSOGFVRjZHOTZlcjRRR3MyekEwZlNySmxFYmFma1VKaGFJQjk1SmNSdHRpbEZ0QzA1MHdJWDVOaVM3RlJhdVo5SUxQaEVqWUlsVWtCTjJkcXBhN0RSSzdtaTFwemt1aVpXWGc4bDh2WVdSNGRvekZaR3RxM1NBdkhqZGN0b294dXdRWm1iWUR5VE96UTgyMmZBZ3ZXT3NETXFGSl9iOEwydVBZa3V6QkVIN2Ezd0JlZldlVkZ5ekRkeUNIY0ZRQXJyeDBNaDdDUkJzXzFlaUVqZG1rb24zMjjSAfgBQVVfeXFMTWlKd3B6T2hqUzhfR3FNWXR6RkZJcGd3cmt1TTh6ZE5YS3FlV2NjdjZiUkVwTXIzcmoxMzI4YmRydGx3cjQ0ckhaY3hTSzlfYjl1WVlJNTBJYnRkMWI0RjFsRGVNeW54ZUZJcTVKcUM1NnotYUVfSWJ3RWo4bVd2UmRPNEd0Ym1IVWdWdTN0cmwyTFhFdXhwLUZ0aW1UUk9xQi03cmdZVXhvQmJiX0c1blZLcXd6TXNHdXBkM2hBQThoLVEwQURLXzlCRFB0bkRYRlVycUVTclhzS0F0WTViaTdLanFxbXBxNGEwV2RxQU01aUdkVXdkbm4?oc=5",
-        "source": "Google News",
-        "published": "2026-05-15T16:07:33.000Z",
-        "summary": "Anthropic's Claude writes 90% of code: CFO Krishna Rao reveals productivity gains The Economic Times"
-      },
-      {
         "title": "Can Claude for Small Business Bridge the AI Adoption Gap for Main Street America? - The Futurum Group",
         "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPeXp4b3VnRGphdjItaG1SNGdJOENsN19rYjRWbUEyV1dJWUExOWVXSkVOY2lKY3REX2hCQzhYSkZEVlB0ZURvUzJscWJFOFMzNXN4MFZMSlZ1MmtRODE4YXJwOXRYWWFUTFRIWW9XWE0wWjNLaDJZVldONlgySmFhVFREdV83Q1pYQXRaWG43dW94alBqWHZxQ3JzQjBwamdUYUg1XzhvamhueDFSX1NZNHM1MFctZw?oc=5",
         "source": "Google News",
         "published": "2026-05-15T14:26:40.000Z",
         "summary": "Can Claude for Small Business Bridge the AI Adoption Gap for Main Street America? The Futurum Group"
-      },
-      {
-        "title": "Anthropic urges Uncle Sam to kneecap China's AI ambitions before 2028 - The Register",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNVEdEdGc5QlZmelFiM2lxOXE4Wk16VUw5NF9wdms5Rnc1VlgzdS1mVUZSMGVJRjktWWFWQkpBUzlPZGJncDdtMkpRZ1dTN0ZMbFQ2a1BtYTN5dkVBamE5YVlRZkFfcTRrd2IyZjJGTWhhbzFod2FDcTNmZ0xrNmtIV1BxODZIUHlTX0pUbEs2bk5qM0dNbnlKd2E1Q3RGRzVwdnUyQjgzQmw3aEhMRS04Y25JQWxJZ1c1UXAwaWNn?oc=5",
-        "source": "Google News",
-        "published": "2026-05-15T13:33:00.000Z",
-        "summary": "Anthropic urges Uncle Sam to kneecap China's AI ambitions before 2028 The Register"
       },
       {
         "title": "Anthropic and PwC in New Push to Embed Claude in Corporate World - AI Business",
@@ -284,10 +277,17 @@
       {
         "title": "“Too dangerous to release” or just too expensive?",
         "url": "https://kingy.ai/ai/too-dangerous-to-release-or-just-too-expensive-the-real-reason-anthropic-is-hiding-its-most-powerful-ai/",
-        "source": "HN · 146↑",
+        "source": "HN · 147↑",
         "hn_id": "48147945",
         "published": "2026-05-15T12:49:27.000Z",
         "summary": ""
+      },
+      {
+        "title": "Almost 5 months after Microsoft gave engineers access to Anthropic's Claude Code, company is canceling li - The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMi1wJBVV95cUxNTVlDbWplUFVzRjlXYndtRF9lenYwQnhNekM0a2lfYi1fcThtOHYxbEhZTGdPdXZIdF9VSzNNeC16S09VXzNlM1pDMGRwTmtGM2RqTzFWaTI1X09wNGswcG1IRjk2TkU5V0ROZXNERXFfbVFGQmZ5MGZLQkU2NmU1QmJDUlowODBnbDFpTUxkaDFVRVdYdWZhWGNhb0NDMF9wMFUxYzJvcmw4bFBoOWd4dHJSY2ZiUlloN0N3V1Z4b2Rmc0xaV0hYdmVZbjNEQjA3T0ZQY0E0OHh5X0FxclBSN0d0cmxvOTRWT01fWTNRbmw4czVrbjhBRWc4QUNRY3VzZllPN0tfR0JFblZ0bnQzTWdheU5kSEQ5ZGViVjhGbFRBMllLWlc3c0RHLTBmVGFEbXp6M19Vdmd6d2NhYkZCMG53eTluUUNmcWQ4ZFhWaDJhWnVkc2Vj0gHcAkFVX3lxTFBUNVZLSlF0UnU3em8xcnB3Z0w5WVNOUHplLUo0TjdVeVJDeWJxV0tmNHBZZV9fcXBvc0pYdTg2TEJ4R3pfNmhWZ2tIY0NVMXhpYld4TkNZSWdDUDVYakZ4b1F0ekVLSXBHTV9md0RkY0RadTZJRG1QeGJGX3g4VWpKSWljdVNRT2FCdERWY2FtREw4WVp4YnNOTWs0aUwyUGZqR0lwVnFINTdzR1ZRenBGNHBsSDkxNkRONnpDNzZPSFVxaHVobTV5VFFNcVJKNkd5Um5FRE1SRngtWUxjVzJaTjRVQ3QyV0lOWmd1Vktucmo2cVNFRG5fVnpfcmI4S3VEQ3lwNnU5NFBZNWVmZnVuN3hqbGJyMzRIbzF3aHRLQnFySldxSnU5TURLSVVUWGZYWHFSZ2ZSMmFRVGptdmtHZGJnOExEbWM4NHBBM01hVWU5T3ZBOW1ZQ2N5Vg?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T12:40:00.000Z",
+        "summary": "Almost 5 months after Microsoft gave engineers access to Anthropic's Claude Code, company is canceling li The Times of India"
       },
       {
         "title": "PwC, Anthropic expand alliance to embed Claude in key businesses - International Accounting Bulletin",
@@ -309,6 +309,13 @@
         "source": "Ars Technica",
         "published": "2026-05-15T10:30:01.000Z",
         "summary": "SAN FRANCISCO—Amid an ever-expanding array of surfaces, growing demand for tokens and compute, and a rapidly evolving user base, Anthropic doesn't have a long-term road map for Claude Code. However,…"
+      },
+      {
+        "title": "Claude Code’s product lead talks usage limits, transparency, and the “lean harness” - Ars Technica",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNci1HZm5FRlRCaVlRWWpBV3p1ZzkwTmFHN0ZrZElDWTlraFVRSkV5WWtzdjBGWkZIREJicUkzcEswZzBoeEpfdEVnQ3JfNmZCb0x0NS1RWThhRmNWaXJTQ3JhRXdfWHExaWlBYmdwYlZZZ3lLazNwbnJYUy1TTVUtV2pKNm16d19pTGx5bjZzSW1KREhxR19qb095dE93MEdyRDZ1bUg0NldHR2I0c05mTG1nRVA?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T10:30:01.000Z",
+        "summary": "Claude Code’s product lead talks usage limits, transparency, and the “lean harness” Ars Technica"
       },
       {
         "title": "Pentagon Leader Sees ‘Opportunity’ in Anthropic’s Project Glasswing and Claude Mythos - GovCon Wire",
@@ -339,14 +346,6 @@
         "hn_id": "48144670",
         "published": "2026-05-15T04:48:23.000Z",
         "summary": "I&#x27;m a Type 1 diabetic and software engineer. Last year I went months between endocrinologists with no clinician reviewing my data. I&#x27;m an engineer, so I built the tool…"
-      },
-      {
-        "title": "How Claude Code works in large codebases",
-        "url": "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
-        "source": "HN · 234↑",
-        "hn_id": "48144494",
-        "published": "2026-05-15T04:15:31.000Z",
-        "summary": ""
       },
       {
         "title": "Claude Code Agent View: Parallel Agents Are Here",
