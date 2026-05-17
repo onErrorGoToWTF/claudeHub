@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-17T20:37:30.588Z",
+  "generated_at": "2026-05-17T22:40:44.433Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,7 +146,14 @@
     ],
     "news": [
       {
-        "title": "STOP Using Claude Code without this tool",
+        "title": "Claude posts 68.4% success rate on Polymarket - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPaUpQbDU5MWptMkdxN1RuYzB2dFNWc1ZINkxTVFVFaGVPbDhwNUJ0TDFsNGpMV3dBdlBFa0o0TFRkQ2FnamxERHhZTEJyMF8xdmVpM2g4N0VzTWR1RHZsZWZFeDJRZFhNQXE2YlRpdzhxRGhmeXMwaUR0VW5SRm9PcU84RFVJWkJTY3ByWm5R?oc=5",
+        "source": "Google News",
+        "published": "2026-05-17T21:18:37.000Z",
+        "summary": "Claude posts 68.4% success rate on Polymarket Let's Data Science"
+      },
+      {
+        "title": "Claude Code is 1000x better when you use this tool",
         "url": "https://www.youtube.com/watch?v=VQPWyS2KGt0",
         "source": "Alex Finn",
         "channel": "Alex Finn",
@@ -163,6 +170,14 @@
         "source": "Google News",
         "published": "2026-05-17T17:31:00.000Z",
         "summary": "Japan to craft cyberdefense guidelines in response to Anthropic's Mythos Nikkei Asia"
+      },
+      {
+        "title": "Show HN: Semble – Code search for agents that uses 98% fewer tokens than grep",
+        "url": "https://github.com/MinishLab/semble",
+        "source": "HN · 88↑",
+        "hn_id": "48169874",
+        "published": "2026-05-17T15:37:07.000Z",
+        "summary": "Hey HN! We (Stephan and Thomas) recently open-sourced Semble. We kept running into the same problem while using Claude Code on large codebases: when the agent can&#x27;t find…"
       },
       {
         "title": "Researchers Claim Anthropic's Mythos Helped Crack macOS Security - PCMag Middle East",
@@ -186,11 +201,25 @@
         "summary": "Anthropic's Most Dangerous Model Was Accessed Without Authorization on Day One — and It's Still Not Going Public Tech Times"
       },
       {
+        "title": "PwC Trains 30,000 Professionals On Anthropic’s Claude - Quantum Zeitgeist",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBGV0VUYjRCUTNlRzFSdFpDRXpGTy00LU85VHVwUmdILU45OGhHZS0tYTBCZDNrZENMYmhUU2U5MFlISTE2R3RBMTBDVHRaMjlvcENHdDBtbWxKRk9PQnJtbGx2cng0TDl5UDhlVnlucjFNWVNrbEdlY3dTaw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-17T10:20:14.000Z",
+        "summary": "PwC Trains 30,000 Professionals On Anthropic’s Claude Quantum Zeitgeist"
+      },
+      {
         "title": "New benchmark shows Claude Mythos and GPT-5.5 can develop real browser exploits autonomously - the-decoder.com",
         "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOaEMwLUVFLUloY2c5M1ZZcjVLV3FRdmVZU2gyOXBzMmpQU1FzVmFvbElEb0N2Q0NTX1dRazc0MmdNa3pERUM5QUs2NEhLSjVJQUI2RkJYeHNmcGVZclJjeS02ZDk4YjBSSTdGQ1JPclRCdTRxXzhJY1h1VWd4WWhfOXljX2ZwZTdlcHhhVVBGaWhNQXpLd0ZlUDRJTmxDdDFQOU04dElCQ241OW92MXZRZkRuODNQYTFU?oc=5",
         "source": "Google News",
         "published": "2026-05-17T09:25:24.000Z",
         "summary": "New benchmark shows Claude Mythos and GPT-5.5 can develop real browser exploits autonomously the-decoder.com"
+      },
+      {
+        "title": "Anthropic's Mythos is already finding security flaws in Apple software - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE93dkg3Z2VRVFhDM1NiT3RRM040RHdLc1p6WU45Y2xMLVdWd3VFN0o3dkdNSl9PMUJsLVpJUlRTUTNCTG45RC11ZXRqa3Q3Rl8tc3lqQnJER3FxUTBCM2JOV0J2SjIxNzA?oc=5",
+        "source": "Google News",
+        "published": "2026-05-17T08:20:58.000Z",
+        "summary": "Anthropic's Mythos is already finding security flaws in Apple software Mashable"
       },
       {
         "title": "Chamath Palihapitiya Warns Anthropic Risks Becoming 'Friendster Of The AI Era' After Claude Refuses Stock - Benzinga",
@@ -216,13 +245,6 @@
         "summary": ""
       },
       {
-        "title": "Anthropic's New Founder Playbook Argues AI Has \"Rebooted\" the Startup Lifecycle — Here's What Holds Up - Tech Times",
-        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxORkNoekxRLW9iV0JTZzdrYWxSYmhEVnZLYUhGRUVEYVNxN1VaRTdmMVJEU2RXWGt6TmR0ckR6T3UxZFhGdDYzak5aa293WXRsT3JnTVUtYjU5VkRrZTJGcjh6eXlPNWJDNFlmblN4dWJiN2FCTEdWZEY3bHpWQUlYbGw2OUtSb0hMWTg3Yml6WXBGTnh4VW84akZSTXJEbU54OTdYbTdYMU12azVtY3dsSzM3eU85RW4zN21Ob0hJM1VtWUJsdGxONWh3UHhCYlVKRjY5eXdJaW5Vdjg2?oc=5",
-        "source": "Google News",
-        "published": "2026-05-16T20:52:38.000Z",
-        "summary": "Anthropic's New Founder Playbook Argues AI Has \"Rebooted\" the Startup Lifecycle — Here's What Holds Up Tech Times"
-      },
-      {
         "title": "How I Run My Business Using 4 .md Files (Anthropic Ships All Four)",
         "url": "https://www.youtube.com/shorts/uZZVHGE7SrY",
         "source": "Pragati Kunwer",
@@ -235,18 +257,11 @@
         "_kind": "news_video"
       },
       {
-        "title": "8 Ways to Use AI in Marketing, According to Anthropic’s Austin Lau - Chief Marketer",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOaERWTG5Zd1ZCd05EVnRBdG96U3lIQlZ4VlVkTkF3TEJFemZpR3RoLUUtT2RkWGtNaVU5NDltZF9TQXBCZEp3ZHlwUk9ubTlvTmxlZkw5cDRXbjlsNW9lZEEybDBEWTRkQTN5NmdzV1IxVjVTNXFrV28yNURBeWh2Zjc2XzY0c1ZpdlFVWVlBV2JUaFlqWDI0SXY2bw?oc=5",
+        "title": "Anthropic’s Transparency Hub - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBzTjRVU3F1Q0F6OWFOdHZJZHExekZZU0FtSVNIQWtIWmhOekt2S1lMOVlaS2Vtc285NGNpdk1DSExvVUlvNUtNOXR6bHZOTlFqSE51bHA5YU45bUVyTkJYLXNNQmY3bzFQdzFYclN2ZUtjMkxyaXAzdHRYdE1FQQ?oc=5",
         "source": "Google News",
-        "published": "2026-05-16T16:47:24.000Z",
-        "summary": "8 Ways to Use AI in Marketing, According to Anthropic’s Austin Lau Chief Marketer"
-      },
-      {
-        "title": "Anthropic pays premium compute to accelerate Claude - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQbFhySktVS05YUWd2c0F4VXpOSGRhUkI1enZxTzBxcG5YUkZFN0ZYZTJhNW9CNGFKWXNLNzRocnlLYjRhY0FDNG4tNWl2TzR6MWlJNmtCdWdVYjFmUC1mVzk4b25LWnRsY19USTE3dW10TzNzNzFQZnVGSEsyWFhkZ1NsMVRwamtMMFg1azBNN0I3V1lWU2FSWg?oc=5",
-        "source": "Google News",
-        "published": "2026-05-16T13:05:27.000Z",
-        "summary": "Anthropic pays premium compute to accelerate Claude Let's Data Science"
+        "published": "2026-05-16T15:08:57.000Z",
+        "summary": "Anthropic’s Transparency Hub Anthropic"
       },
       {
         "title": "I've been studying Big Tech for a long time. What just happened with Anthropic and the Pentagon terrifies me - Fortune",
@@ -263,25 +278,11 @@
         "summary": "First Apple M5 memory exploit discovered using Anthropic AI, gives root access on MacOS — Claude Mythos helps security researchers bypass Memory Integrity Enforcement Tom's Hardware"
       },
       {
-        "title": "Anthropic and OpenAI as anti-Stripe - The Ken",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5vQi1USHpyOWQ0cWl1a3h4MTFWN2xTeF9yckYwZUM5SElLakt0UWd5Nnd0bURoMmhTU3k5RHVFcnNxS2JBZmtrQUk0enVBRkFKZEliNGktYlVtZXFjMmZVVENrUWhyTlp0bTYtVUJTbFBmdFhNNDdJeVdxZmJOVjA?oc=5",
-        "source": "Google News",
-        "published": "2026-05-16T05:13:41.000Z",
-        "summary": "Anthropic and OpenAI as anti-Stripe The Ken"
-      },
-      {
         "title": "Salesforce CEO Marc Benioff said his company will likely spend $300M on Anthropic tokens - Business Insider",
         "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQNFlhakVHb3U4M01md2JiYlctVzdxMmZhTUU2b3ZXV3ZZT2hzTnFFYUpFVnh3dDlYWlI1eUJOcDF4Z0NwR2FzZzcxQkZOUkE2LVk1Y2tXa25jc1N0MFFWTy1TcWRuQ2xJNTFsRzAydy1yclV3NjhvNjNjOTR5b2REdDREbENMMTJXMkt4a0pBNmlHeDZFWnc?oc=5",
         "source": "Google News",
         "published": "2026-05-16T03:08:00.000Z",
         "summary": "Salesforce CEO Marc Benioff said his company will likely spend $300M on Anthropic tokens Business Insider"
-      },
-      {
-        "title": "Anthropic Launches Claude Design, Figma Raises Outlook - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPUU9MNXVqRWxaRDQyWXhvOVk4SXlzRVY3cjdSeFFoOGxMX0dHSkxBTkZFaEV3YzhzaDhhUUFzSmEzM1dfcGlMLTlHUnpJc003WEpaRzZlQkNfc0ViV2txT3g5V3NUUXFCWGlSYVBISUk5WmJpNDRGbXF1c3JCT2otd1Byak9oTU45enZXODM5ejNqU2JIbHJQOWUwWQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-15T22:42:32.000Z",
-        "summary": "Anthropic Launches Claude Design, Figma Raises Outlook Let's Data Science"
       },
       {
         "title": "Anthropic's hunt to find the next Claude Code - Sources | Alex Heath",
@@ -324,6 +325,13 @@
         "summary": "Anthropic’s open-source Claude Desktop Buddy turns ESP32-S3 devices into interactive AI desk companions CNX Software"
       },
       {
+        "title": "Apple’s Security Has Been Tough to Crack. Mythos Helped Find a Way In. - WSJ",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBFZk5ObXgyc3dYYkNQMU9tWGwyZVAxdVdWa002T0dwaVRrZTY5OW5CVmwzcl9Qa2p0R25jTzEyMHQ0RTNKVXczSXhjMzdFT3pYbXplNWo0UExaTUhPYS1GMFVqMjg4Y0plaWlqTzliQnQ1aDVuLWVQZw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T16:40:33.000Z",
+        "summary": "Apple’s Security Has Been Tough to Crack. Mythos Helped Find a Way In. WSJ"
+      },
+      {
         "title": "Claude Desktop: 5 Things to Do FIRST",
         "url": "https://www.youtube.com/shorts/xdXPDDfIJpk",
         "source": "Pragati Kunwer",
@@ -363,13 +371,6 @@
         "source": "Google News",
         "published": "2026-05-15T12:40:00.000Z",
         "summary": "Almost 5 months after Microsoft gave engineers access to Anthropic's Claude Code, company is canceling li The Times of India"
-      },
-      {
-        "title": "PwC, Anthropic expand alliance to embed Claude in key businesses - International Accounting Bulletin",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOYnE0S3hObXFZTEpEOTliaWQxMnF0V2JjRGhzR2RhOVVONlJrZ3diZzNwSmpGUThGaDJrT2xsNnV3MEtYZXBZaDZFUkxsQlZmT1RzS3JwR0NNd3BFSkdMdzRKQ2UxbFlfTmVkaFhYODhPZG0tVXY5TDlPV2NWWDRVNDdoWExpQmVHTEU4?oc=5",
-        "source": "Google News",
-        "published": "2026-05-15T10:38:37.000Z",
-        "summary": "PwC, Anthropic expand alliance to embed Claude in key businesses International Accounting Bulletin"
       },
       {
         "title": "Claude Code Agent View: Parallel Agents Are Here",
@@ -652,7 +653,7 @@
     ],
     "youtube": [
       {
-        "title": "STOP Using Claude Code without this tool",
+        "title": "Claude Code is 1000x better when you use this tool",
         "url": "https://www.youtube.com/watch?v=VQPWyS2KGt0",
         "source": "Alex Finn",
         "channel": "Alex Finn",
@@ -1746,7 +1747,7 @@
     ],
     "claude_learning": [
       {
-        "title": "STOP Using Claude Code without this tool",
+        "title": "Claude Code is 1000x better when you use this tool",
         "url": "https://www.youtube.com/watch?v=VQPWyS2KGt0",
         "source": "YouTube · Alex Finn",
         "published": "2026-05-17T18:06:00.000Z",
