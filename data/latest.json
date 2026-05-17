@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-17T16:42:05.084Z",
+  "generated_at": "2026-05-17T18:49:19.353Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,32 @@
     ],
     "news": [
       {
+        "title": "STOP Using Claude Code without this tool",
+        "url": "https://www.youtube.com/watch?v=VQPWyS2KGt0",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "VQPWyS2KGt0",
+        "thumbnail": "https://i.ytimg.com/vi/VQPWyS2KGt0/hqdefault.jpg",
+        "published": "2026-05-17T18:06:00.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Japan to craft cyberdefense guidelines in response to Anthropic's Mythos - Nikkei Asia",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPaEZ2T0p0R1NrZ3ZMTHRhRG4tRmJsTGlpZjBULVQ1NHBPUWppTDFueTE2UF90X05MOXoyb0x6eTlFTjRpcFJNcV9FbFdDLW16RmJwWkdROGdSSDdBbzdLRmNoTV9ZcnA4WDNXWW1WQ1c0VXdmTkE5aXFkRE92UEowekJaSk92VDhvZXdiRVRhYjk0Y1BzcWVkSHE3dlpLLXdCanBqOGE4c1RXbzdxSnBWMXdNcTVaMUR6N3N3ODRfMkFuRGc0UTBBdTZQMDRNLWlhX2JWeXlBWQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-17T17:31:00.000Z",
+        "summary": "Japan to craft cyberdefense guidelines in response to Anthropic's Mythos Nikkei Asia"
+      },
+      {
+        "title": "Researchers Claim Anthropic's Mythos Helped Crack macOS Security - PCMag Middle East",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOY0l0VnIxMmpNRTM4UlcybVRUbGRfR1hURXlTbjQxRzRUU0hPNXl4cWRBLTlhTGQtSTl2aVk5dU5fdjBmcEhoX3ZIWnpqSUZRVDJsblBLMFVEV19KaUVsRE5Ba2JUSno4UmNXb1JLcEZpeTc2SEpXWnJwMzBSZGhZamR6UDZVQ0J0cGhPbXN4RnVzUk9iWFpqNEFCRm5ZV0FTUFctMXdqWk9Ed3RPY0E?oc=5",
+        "source": "Google News",
+        "published": "2026-05-17T15:02:30.000Z",
+        "summary": "Researchers Claim Anthropic's Mythos Helped Crack macOS Security PCMag Middle East"
+      },
+      {
         "title": "Anthropic's Claude Mythos Reportedly Circumvents Apple Mac Security Systems - LinkedIn",
         "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQTkNobkV1WlF3cnJSSS1PMnRoOEIxMHFFQ1lFV1cwczdFdDNWdHFqbmpTb1kydzZPa2plTlM4S3h4aWNXTEFSRzBZb0NmeFNQMHdTQzlTRVFmUUJNN0tYRXA2Nkh3alFMZnVhSWt2NG9nMVg3Uk9xSm9ZRjVub2pYWGpZUGVKZ3N0SUlCQQ?oc=5",
         "source": "Google News",
@@ -176,22 +202,15 @@
       {
         "title": "How to buy cheap Claude tokens in China",
         "url": "https://www.chinatalk.media/p/how-to-buy-cheap-claude-tokens-in",
-        "source": "HN · 30↑",
+        "source": "HN · 32↑",
         "hn_id": "48165492",
         "published": "2026-05-17T02:11:57.000Z",
         "summary": ""
       },
       {
-        "title": "AI Week in Review 26.05.16 - Substack",
-        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBGbklMRGsxX1BXRzY5V281SHVUZFdNMW55b1dvS1pPeWx0TXJkaGhZQTNjUFJSYS03RHZ6bWFJMGk1NVhEN0xTMHN0eHpVclFDZDgtZ29ZUlNhTEVIR0dWcFZ6cEMzakZNVnRJRlpR?oc=5",
-        "source": "Google News",
-        "published": "2026-05-16T23:16:48.000Z",
-        "summary": "AI Week in Review 26.05.16 Substack"
-      },
-      {
         "title": "I tried to make Claude make me money on open-source bounties",
         "url": "https://github.com/ztc00/algora-scout/blob/main/POST.md",
-        "source": "HN · 36↑",
+        "source": "HN · 37↑",
         "hn_id": "48164229",
         "published": "2026-05-16T22:13:54.000Z",
         "summary": ""
@@ -209,11 +228,11 @@
         "_kind": "news_video"
       },
       {
-        "title": "8 Ways to Use AI in Marketing, According to Anthropic’s Austin Lau - Chief Marketer",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOaERWTG5Zd1ZCd05EVnRBdG96U3lIQlZ4VlVkTkF3TEJFemZpR3RoLUUtT2RkWGtNaVU5NDltZF9TQXBCZEp3ZHlwUk9ubTlvTmxlZkw5cDRXbjlsNW9lZEEybDBEWTRkQTN5NmdzV1IxVjVTNXFrV28yNURBeWh2Zjc2XzY0c1ZpdlFVWVlBV2JUaFlqWDI0SXY2bw?oc=5",
+        "title": "Anthropic’s Transparency Hub - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBzTjRVU3F1Q0F6OWFOdHZJZHExekZZU0FtSVNIQWtIWmhOekt2S1lMOVlaS2Vtc285NGNpdk1DSExvVUlvNUtNOXR6bHZOTlFqSE51bHA5YU45bUVyTkJYLXNNQmY3bzFQdzFYclN2ZUtjMkxyaXAzdHRYdE1FQQ?oc=5",
         "source": "Google News",
-        "published": "2026-05-16T16:47:24.000Z",
-        "summary": "8 Ways to Use AI in Marketing, According to Anthropic’s Austin Lau Chief Marketer"
+        "published": "2026-05-16T15:08:57.000Z",
+        "summary": "Anthropic’s Transparency Hub Anthropic"
       },
       {
         "title": "Anthropic pays premium compute to accelerate Claude - Let's Data Science",
@@ -221,6 +240,13 @@
         "source": "Google News",
         "published": "2026-05-16T13:05:27.000Z",
         "summary": "Anthropic pays premium compute to accelerate Claude Let's Data Science"
+      },
+      {
+        "title": "I've been studying Big Tech for a long time. What just happened with Anthropic and the Pentagon terrifies me - Fortune",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNR3hYdGV2Z3NucUlyRm02NmFRa0VJQXIxenJMZU15QzZ2QkxVWWg2SU1EMW9WSW51enlNWExPcHVEWHZHVTNPcDFPb3lZTzVZbjlIQURiSkhMTXlVMGFBemJfSldJVlVkc3djUUdYSml3cnJmc25QanZ5b0o0NHFOUHhsMVpIWG44cTFfOFZkRElkdkt2SWZKMg?oc=5",
+        "source": "Google News",
+        "published": "2026-05-16T12:15:00.000Z",
+        "summary": "I've been studying Big Tech for a long time. What just happened with Anthropic and the Pentagon terrifies me Fortune"
       },
       {
         "title": "First Apple M5 memory exploit discovered using Anthropic AI, gives root access on MacOS — Claude Mythos helps security researchers bypass Memory Integrity Enforcement - Tom's Hardware",
@@ -235,13 +261,6 @@
         "source": "Google News",
         "published": "2026-05-16T03:08:00.000Z",
         "summary": "Salesforce CEO Marc Benioff said his company will likely spend $300M on Anthropic tokens Business Insider"
-      },
-      {
-        "title": "Anthropic Launches Claude Design, Figma Raises Outlook - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPUU9MNXVqRWxaRDQyWXhvOVk4SXlzRVY3cjdSeFFoOGxMX0dHSkxBTkZFaEV3YzhzaDhhUUFzSmEzM1dfcGlMLTlHUnpJc003WEpaRzZlQkNfc0ViV2txT3g5V3NUUXFCWGlSYVBISUk5WmJpNDRGbXF1c3JCT2otd1Byak9oTU45enZXODM5ejNqU2JIbHJQOWUwWQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-15T22:42:32.000Z",
-        "summary": "Anthropic Launches Claude Design, Figma Raises Outlook Let's Data Science"
       },
       {
         "title": "Anthropic's hunt to find the next Claude Code - Sources | Alex Heath",
@@ -344,13 +363,6 @@
         "source": "Ars Technica",
         "published": "2026-05-15T10:30:01.000Z",
         "summary": "SAN FRANCISCO—Amid an ever-expanding array of surfaces, growing demand for tokens and compute, and a rapidly evolving user base, Anthropic doesn't have a long-term road map for Claude Code. However,…"
-      },
-      {
-        "title": "Claude Code’s product lead talks usage limits, transparency, and the “lean harness” - Ars Technica",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNci1HZm5FRlRCaVlRWWpBV3p1ZzkwTmFHN0ZrZElDWTlraFVRSkV5WWtzdjBGWkZIREJicUkzcEswZzBoeEpfdEVnQ3JfNmZCb0x0NS1RWThhRmNWaXJTQ3JhRXdfWHExaWlBYmdwYlZZZ3lLazNwbnJYUy1TTVUtV2pKNm16d19pTGx5bjZzSW1KREhxR19qb095dE93MEdyRDZ1bUg0NldHR2I0c05mTG1nRVA?oc=5",
-        "source": "Google News",
-        "published": "2026-05-15T10:30:01.000Z",
-        "summary": "Claude Code’s product lead talks usage limits, transparency, and the “lean harness” Ars Technica"
       },
       {
         "title": "Pentagon Leader Sees ‘Opportunity’ in Anthropic’s Project Glasswing and Claude Mythos - GovCon Wire",
@@ -528,18 +540,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "🔴LIVE: ChatGPT 5.5 is here. Does it beat Claude Opus 4.7?",
-        "url": "https://www.youtube.com/watch?v=l2o6HYJpiQI",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "l2o6HYJpiQI",
-        "thumbnail": "https://i.ytimg.com/vi/l2o6HYJpiQI/hqdefault.jpg",
-        "published": "2026-04-24T20:24:30.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
         "title": "Claude Live Artifacts just dropped... ALL your tools in one place!",
         "url": "https://www.youtube.com/watch?v=4yEBOvtMr5o",
         "source": "Productive Dude",
@@ -651,6 +651,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "STOP Using Claude Code without this tool",
+        "url": "https://www.youtube.com/watch?v=VQPWyS2KGt0",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "VQPWyS2KGt0",
+        "thumbnail": "https://i.ytimg.com/vi/VQPWyS2KGt0/hqdefault.jpg",
+        "published": "2026-05-17T18:06:00.000Z",
+        "summary": ""
+      },
       {
         "title": "How I Run My Business Using 4 .md Files (Anthropic Ships All Four)",
         "url": "https://www.youtube.com/shorts/uZZVHGE7SrY",
@@ -935,17 +946,6 @@
         "video_id": "fyRRafCurzE",
         "thumbnail": "https://i.ytimg.com/vi/fyRRafCurzE/hqdefault.jpg",
         "published": "2026-04-29T11:01:10.000Z",
-        "summary": ""
-      },
-      {
-        "title": "🔴LIVE: ChatGPT 5.5 is here. Does it beat Claude Opus 4.7?",
-        "url": "https://www.youtube.com/watch?v=l2o6HYJpiQI",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "l2o6HYJpiQI",
-        "thumbnail": "https://i.ytimg.com/vi/l2o6HYJpiQI/hqdefault.jpg",
-        "published": "2026-04-24T20:24:30.000Z",
         "summary": ""
       },
       {
@@ -1746,6 +1746,13 @@
     ],
     "claude_learning": [
       {
+        "title": "STOP Using Claude Code without this tool",
+        "url": "https://www.youtube.com/watch?v=VQPWyS2KGt0",
+        "source": "YouTube · Alex Finn",
+        "published": "2026-05-17T18:06:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "How I Run My Business Using 4 .md Files (Anthropic Ships All Four)",
         "url": "https://www.youtube.com/shorts/uZZVHGE7SrY",
         "source": "YouTube · Pragati Kunwer",
@@ -2037,13 +2044,6 @@
         "url": "https://www.youtube.com/watch?v=fyRRafCurzE",
         "source": "YouTube · Leon van Zyl",
         "published": "2026-04-29T11:01:10.000Z",
-        "summary": ""
-      },
-      {
-        "title": "🔴LIVE: ChatGPT 5.5 is here. Does it beat Claude Opus 4.7?",
-        "url": "https://www.youtube.com/watch?v=l2o6HYJpiQI",
-        "source": "YouTube · Alex Finn",
-        "published": "2026-04-24T20:24:30.000Z",
         "summary": ""
       },
       {
