@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-16T22:34:05.295Z",
+  "generated_at": "2026-05-17T01:49:46.291Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,21 @@
     ],
     "news": [
       {
+        "title": "AI Week in Review 26.05.16 - Substack",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBGbklMRGsxX1BXRzY5V281SHVUZFdNMW55b1dvS1pPeWx0TXJkaGhZQTNjUFJSYS03RHZ6bWFJMGk1NVhEN0xTMHN0eHpVclFDZDgtZ29ZUlNhTEVIR0dWcFZ6cEMzakZNVnRJRlpR?oc=5",
+        "source": "Google News",
+        "published": "2026-05-16T23:16:48.000Z",
+        "summary": "AI Week in Review 26.05.16 Substack"
+      },
+      {
+        "title": "I tried to make Claude make me money on open-source bounties",
+        "url": "https://github.com/ztc00/algora-scout/blob/main/POST.md",
+        "source": "HN · 34↑",
+        "hn_id": "48164229",
+        "published": "2026-05-16T22:13:54.000Z",
+        "summary": ""
+      },
+      {
         "title": "Anthropic's New Founder Playbook Argues AI Has \"Rebooted\" the Startup Lifecycle — Here's What Holds Up - Tech Times",
         "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxORkNoekxRLW9iV0JTZzdrYWxSYmhEVnZLYUhGRUVEYVNxN1VaRTdmMVJEU2RXWGt6TmR0ckR6T3UxZFhGdDYzak5aa293WXRsT3JnTVUtYjU5VkRrZTJGcjh6eXlPNWJDNFlmblN4dWJiN2FCTEdWZEY3bHpWQUlYbGw2OUtSb0hMWTg3Yml6WXBGTnh4VW84akZSTXJEbU54OTdYbTdYMU12azVtY3dsSzM3eU85RW4zN21Ob0hJM1VtWUJsdGxONWh3UHhCYlVKRjY5eXdJaW5Vdjg2?oc=5",
         "source": "Google News",
@@ -168,15 +183,8 @@
         "title": "8 Ways to Use AI in Marketing, According to Anthropic’s Austin Lau - Chief Marketer",
         "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOaERWTG5Zd1ZCd05EVnRBdG96U3lIQlZ4VlVkTkF3TEJFemZpR3RoLUUtT2RkWGtNaVU5NDltZF9TQXBCZEp3ZHlwUk9ubTlvTmxlZkw5cDRXbjlsNW9lZEEybDBEWTRkQTN5NmdzV1IxVjVTNXFrV28yNURBeWh2Zjc2XzY0c1ZpdlFVWVlBV2JUaFlqWDI0SXY2bw?oc=5",
         "source": "Google News",
-        "published": "2026-05-16T16:41:15.000Z",
+        "published": "2026-05-16T16:47:24.000Z",
         "summary": "8 Ways to Use AI in Marketing, According to Anthropic’s Austin Lau Chief Marketer"
-      },
-      {
-        "title": "Anthropic’s Transparency Hub - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBzTjRVU3F1Q0F6OWFOdHZJZHExekZZU0FtSVNIQWtIWmhOekt2S1lMOVlaS2Vtc285NGNpdk1DSExvVUlvNUtNOXR6bHZOTlFqSE51bHA5YU45bUVyTkJYLXNNQmY3bzFQdzFYclN2ZUtjMkxyaXAzdHRYdE1FQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-16T15:08:57.000Z",
-        "summary": "Anthropic’s Transparency Hub Anthropic"
       },
       {
         "title": "New benchmark shows Claude Mythos and GPT-5.5 can develop real browser exploits autonomously - the-decoder.com",
@@ -221,18 +229,25 @@
         "summary": "AL View: Claude For Legal Moves Centre Stage Artificial Lawyer"
       },
       {
+        "title": "Salesforce CEO Marc Benioff said his company will likely spend $300M on Anthropic tokens - Business Insider",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQNFlhakVHb3U4M01md2JiYlctVzdxMmZhTUU2b3ZXV3ZZT2hzTnFFYUpFVnh3dDlYWlI1eUJOcDF4Z0NwR2FzZzcxQkZOUkE2LVk1Y2tXa25jc1N0MFFWTy1TcWRuQ2xJNTFsRzAydy1yclV3NjhvNjNjOTR5b2REdDREbENMMTJXMkt4a0pBNmlHeDZFWnc?oc=5",
+        "source": "Google News",
+        "published": "2026-05-16T03:08:00.000Z",
+        "summary": "Salesforce CEO Marc Benioff said his company will likely spend $300M on Anthropic tokens Business Insider"
+      },
+      {
+        "title": "Anthropic Launches Claude Design, Figma Raises Outlook - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPUU9MNXVqRWxaRDQyWXhvOVk4SXlzRVY3cjdSeFFoOGxMX0dHSkxBTkZFaEV3YzhzaDhhUUFzSmEzM1dfcGlMLTlHUnpJc003WEpaRzZlQkNfc0ViV2txT3g5V3NUUXFCWGlSYVBISUk5WmJpNDRGbXF1c3JCT2otd1Byak9oTU45enZXODM5ejNqU2JIbHJQOWUwWQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-15T22:42:32.000Z",
+        "summary": "Anthropic Launches Claude Design, Figma Raises Outlook Let's Data Science"
+      },
+      {
         "title": "Anthropic's hunt to find the next Claude Code - Sources | Alex Heath",
         "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1GVXU3NFZYcWhWbWp0TmZTM19wUWJPbzFxSWV2V0RGRmZObkxqYVM0dXUtVDROdEhRSnRJN1Y5eUtOOXVPaFpiZnV6a2JGQUtaWmVOVTFoS254WjhsVkJxZmFPMHh3aEhBem1OeFdES1R5S0hCaDB6XzJPNmE?oc=5",
         "source": "Google News",
         "published": "2026-05-15T22:08:59.000Z",
         "summary": "Anthropic's hunt to find the next Claude Code Sources | Alex Heath"
-      },
-      {
-        "title": "Anthropic Introduces Claude for Small Business - Thurrott.com",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNQ244VU94bVBvVjFFNHZlNGR0emswVjlvb2QybE94ZzBvMDF3eXhCamhhTHdVdW9QcTQwaHlaT3VrUWp5TkV2SnJTT1NuZ0ZmSDRKS0lUVkI1cWlSc3Z2My10NXd2UUJiSHBtbWlsUjcxSjJGQ0t3R1djRnI3b0tMa1hPQzFoaXlpT2pRMW1ORlZzZTFubmVz?oc=5",
-        "source": "Google News",
-        "published": "2026-05-15T22:01:31.000Z",
-        "summary": "Anthropic Introduces Claude for Small Business Thurrott.com"
       },
       {
         "title": "Anthropic’s $1.5B copyright settlement is getting messy as judge delays approval",
@@ -287,11 +302,11 @@
         "summary": "Claude for Legal Arrives, and the Legal AI Stack Gets Re-Segmented Overnight JD Supra"
       },
       {
-        "title": "Anthropic's Claude writes 90% of code: CFO Krishna Rao reveals productivity gains - The Economic Times",
-        "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPTEFiVGpNODFQLWlHVC1MQk5GMFRSOGFVRjZHOTZlcjRRR3MyekEwZlNySmxFYmFma1VKaGFJQjk1SmNSdHRpbEZ0QzA1MHdJWDVOaVM3RlJhdVo5SUxQaEVqWUlsVWtCTjJkcXBhN0RSSzdtaTFwemt1aVpXWGc4bDh2WVdSNGRvekZaR3RxM1NBdkhqZGN0b294dXdRWm1iWUR5VE96UTgyMmZBZ3ZXT3NETXFGSl9iOEwydVBZa3V6QkVIN2Ezd0JlZldlVkZ5ekRkeUNIY0ZRQXJyeDBNaDdDUkJzXzFlaUVqZG1rb24zMjjSAfgBQVVfeXFMTWlKd3B6T2hqUzhfR3FNWXR6RkZJcGd3cmt1TTh6ZE5YS3FlV2NjdjZiUkVwTXIzcmoxMzI4YmRydGx3cjQ0ckhaY3hTSzlfYjl1WVlJNTBJYnRkMWI0RjFsRGVNeW54ZUZJcTVKcUM1NnotYUVfSWJ3RWo4bVd2UmRPNEd0Ym1IVWdWdTN0cmwyTFhFdXhwLUZ0aW1UUk9xQi03cmdZVXhvQmJiX0c1blZLcXd6TXNHdXBkM2hBQThoLVEwQURLXzlCRFB0bkRYRlVycUVTclhzS0F0WTViaTdLanFxbXBxNGEwV2RxQU01aUdkVXdkbm4?oc=5",
+        "title": "Can Claude for Small Business Bridge the AI Adoption Gap for Main Street America? - The Futurum Group",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPeXp4b3VnRGphdjItaG1SNGdJOENsN19rYjRWbUEyV1dJWUExOWVXSkVOY2lKY3REX2hCQzhYSkZEVlB0ZURvUzJscWJFOFMzNXN4MFZMSlZ1MmtRODE4YXJwOXRYWWFUTFRIWW9XWE0wWjNLaDJZVldONlgySmFhVFREdV83Q1pYQXRaWG43dW94alBqWHZxQ3JzQjBwamdUYUg1XzhvamhueDFSX1NZNHM1MFctZw?oc=5",
         "source": "Google News",
-        "published": "2026-05-15T16:07:33.000Z",
-        "summary": "Anthropic's Claude writes 90% of code: CFO Krishna Rao reveals productivity gains The Economic Times"
+        "published": "2026-05-15T14:26:40.000Z",
+        "summary": "Can Claude for Small Business Bridge the AI Adoption Gap for Main Street America? The Futurum Group"
       },
       {
         "title": "Anthropic and PwC in New Push to Embed Claude in Corporate World - AI Business",
@@ -342,22 +357,6 @@
         "source": "Google News",
         "published": "2026-05-15T08:37:04.000Z",
         "summary": "Pentagon Leader Sees ‘Opportunity’ in Anthropic’s Project Glasswing and Claude Mythos GovCon Wire"
-      },
-      {
-        "title": "Where's Ed: Anthropic Told Court $5B but Public $19B",
-        "url": "https://www.flyingpenguin.com/wheres-ed-anthropic-told-court-5-billion-but-public-19-billion/",
-        "source": "HN · 54↑",
-        "hn_id": "48145913",
-        "published": "2026-05-15T08:16:39.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Show HN: GlycemicGPT – Open-source AI-powered diabetes management",
-        "url": "https://github.com/GlycemicGPT/GlycemicGPT",
-        "source": "HN · 64↑",
-        "hn_id": "48144670",
-        "published": "2026-05-15T04:48:23.000Z",
-        "summary": "I&#x27;m a Type 1 diabetic and software engineer. Last year I went months between endocrinologists with no clinician reviewing my data. I&#x27;m an engineer, so I built the tool…"
       },
       {
         "title": "Claude Code Agent View: Parallel Agents Are Here",
