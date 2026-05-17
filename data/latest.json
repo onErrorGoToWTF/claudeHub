@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-17T10:57:32.593Z",
+  "generated_at": "2026-05-17T12:50:11.828Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -189,13 +189,6 @@
         "summary": ""
       },
       {
-        "title": "Anthropic's New Founder Playbook Argues AI Has \"Rebooted\" the Startup Lifecycle — Here's What Holds Up - Tech Times",
-        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxORkNoekxRLW9iV0JTZzdrYWxSYmhEVnZLYUhGRUVEYVNxN1VaRTdmMVJEU2RXWGt6TmR0ckR6T3UxZFhGdDYzak5aa293WXRsT3JnTVUtYjU5VkRrZTJGcjh6eXlPNWJDNFlmblN4dWJiN2FCTEdWZEY3bHpWQUlYbGw2OUtSb0hMWTg3Yml6WXBGTnh4VW84akZSTXJEbU54OTdYbTdYMU12azVtY3dsSzM3eU85RW4zN21Ob0hJM1VtWUJsdGxONWh3UHhCYlVKRjY5eXdJaW5Vdjg2?oc=5",
-        "source": "Google News",
-        "published": "2026-05-16T20:52:38.000Z",
-        "summary": "Anthropic's New Founder Playbook Argues AI Has \"Rebooted\" the Startup Lifecycle — Here's What Holds Up Tech Times"
-      },
-      {
         "title": "How I Run My Business Using 4 .md Files (Anthropic Ships All Four)",
         "url": "https://www.youtube.com/shorts/uZZVHGE7SrY",
         "source": "Pragati Kunwer",
@@ -222,11 +215,11 @@
         "summary": "Anthropic pays premium compute to accelerate Claude Let's Data Science"
       },
       {
-        "title": "SpaceX, OpenAI, and Anthropic: Here are the most anticipated IPOs in 2026 - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSkVQc2t1aGo3dXp2MGdvQ3ZvclJJaWJuVlFVaXZwZEhraUIzNkpfLWljcXVkSWp2VDI3TXA0emdPNUJpYV9FeDgyNnVWemotdGRHbk9PdGhValRfcVJKQlZzWl9nOUxtcUxPQk9wRTNybFRTYUppeENJZ0gyLTBqbVhseW1JbUoyWGtDSlRBREw1UkZMVHVudGxFZXBjU0dCU0dXelYyYWtpM29jbFlCM1NFZml1ek1xcms5Tl9abkdWY3U3R0E?oc=5",
+        "title": "First Apple M5 memory exploit discovered using Anthropic AI, gives root access on MacOS — Claude Mythos helps security researchers bypass Memory Integrity Enforcement - Tom's Hardware",
+        "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxPNUhtMEhKZGlST1RuLUotYWk4c0ZUUG1PblVJTWhrV3hweVNhcU14XzJtRHB4dVA0WHctLWJqTkF1Z3RSWEpOaG5kS0ZTN3RscHJJMUZnemRyUnZfNVZWQkZaaGhSQXpFQXkyaVZSd0ZQbUxrRm8zRWhMUGdEMUZWemszTHQxR0RaeXpBdjJDSDFwSXo1X1FEZW96LWhmT1dzX1FnU1N0OHlaRUprS3BOSGl0TnZ0QXM3akRybzlNY3dMdXk2LWptT0tsSGdLSkxFLXNmbEpKdEo3LXBlSW5saXVqLTA3WFNTajlMSmw5UnZCSjJwMTdPU29qSFV1SUZLYjZfOGVlemtjbEo4OW5fWU9NYktEUm5rNXNfamVkZFdPR0xsbElYMA?oc=5",
         "source": "Google News",
-        "published": "2026-05-16T11:44:39.000Z",
-        "summary": "SpaceX, OpenAI, and Anthropic: Here are the most anticipated IPOs in 2026 Yahoo Finance"
+        "published": "2026-05-16T11:00:00.000Z",
+        "summary": "First Apple M5 memory exploit discovered using Anthropic AI, gives root access on MacOS — Claude Mythos helps security researchers bypass Memory Integrity Enforcement Tom's Hardware"
       },
       {
         "title": "Salesforce CEO Marc Benioff said his company will likely spend $300M on Anthropic tokens - Business Insider",
@@ -358,6 +351,14 @@
         "hn_id": "48145913",
         "published": "2026-05-15T08:16:39.000Z",
         "summary": ""
+      },
+      {
+        "title": "Show HN: GlycemicGPT – Open-source AI-powered diabetes management",
+        "url": "https://github.com/GlycemicGPT/GlycemicGPT",
+        "source": "HN · 64↑",
+        "hn_id": "48144670",
+        "published": "2026-05-15T04:48:23.000Z",
+        "summary": "I&#x27;m a Type 1 diabetic and software engineer. Last year I went months between endocrinologists with no clinician reviewing my data. I&#x27;m an engineer, so I built the tool…"
       },
       {
         "title": "Claude Code Agent View: Parallel Agents Are Here",
@@ -1893,13 +1894,6 @@
         "summary": "What's changed Added CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL to re-enable the session quality survey for enterprises capturing responses through OpenTelemetry Added settings.autoMode.hard_deny for auto mode…"
       },
       {
-        "title": "v1.27.1",
-        "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.27.1",
-        "source": "MCP Python SDK",
-        "published": "2026-05-08T16:44:58.000Z",
-        "summary": "What's Changed [v1.x] fix: catch PydanticUserError when generating output schema (pydantic 2.13 compat) by @maxisbey in #2435 [v1.x] fix(auth): coerce empty-string optional URL fields to None in OAuthClientMetadata by…"
-      },
-      {
         "title": "0.21.2",
         "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/0.21.2-hotfix-3",
         "source": "MCP Inspector",
@@ -2145,13 +2139,6 @@
         "summary": "The Messages API is now available on Amazon Bedrock as a research preview. The new Claude in Amazon Bedrock endpoint at /anthropic/v1/messages uses the same request shape as the first-party Claude API and runs on AWS-managed…"
       },
       {
-        "title": "v1.27.0",
-        "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.27.0",
-        "source": "MCP Python SDK",
-        "published": "2026-04-02T14:36:40.000Z",
-        "summary": "What's Changed fix: remove unused requests dependency from simple-chatbot example by @maxisbey in #1959 ci: backport conformance tests from main to v1.x by @felixweinberger in #2068 fix: add RFC 8707 resource…"
-      },
-      {
         "title": "@modelcontextprotocol/fastify@2.0.0-alpha.2",
         "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Ffastify%402.0.0-alpha.2",
         "source": "MCP TypeScript SDK",
@@ -2234,6 +2221,20 @@
         "source": "Claude API Release Notes",
         "published": "2026-03-18T00:00:00.000Z",
         "summary": ""
+      },
+      {
+        "title": "We've launched the display field for extended thinking, letting you omit thinking content from responses for faster…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#march-16-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-03-16T00:00:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "The 1M token context window is now generally available for Claude Opus 4.6 and Sonnet 4.6 at standard pricing.…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#march-13-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-03-13T00:00:00.000Z",
+        "summary": "We've removed the dedicated 1M rate limits for all supported models. Your standard account limits now apply across every context length. • We've raised the media limit from 100 to 600 images or PDF pages per request when using the 1M…"
       }
     ]
   }
