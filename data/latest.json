@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T19:20:25.243Z",
+  "generated_at": "2026-05-18T20:59:41.030Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,32 @@
     ],
     "news": [
       {
+        "title": "Claude is still the best agentic coding tool, but Anthropic's tightening grip is the best argument yet for going local - XDA",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZjJ5MXN0ZTRXa1E1bDlfQ3VZTEJZbWs3ZHMyUGNtWWhvWi1DUWk1cldSdlp0M0xpcmIzMUw0Y0tnVmFkc1dnanNIR2FBWU15M05yMEZlZks4dFQ2bkJhQUlEbnZNWXFxa1Z4cGt3VDBEMTc1ZEVlX3NNcEM2enFTQVF5Rm1iMTYwVUZQVm1aMHVac2t3V1dyQ3FnLW1YMm9KRDg5MmhGdkhWc2lvUnh3?oc=5",
+        "source": "Google News",
+        "published": "2026-05-18T20:30:22.000Z",
+        "summary": "Claude is still the best agentic coding tool, but Anthropic's tightening grip is the best argument yet for going local XDA"
+      },
+      {
+        "title": "What is Claude Code? ONE subscription. No agents. No Python.",
+        "url": "https://www.youtube.com/shorts/TKesAiib59c",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "TKesAiib59c",
+        "thumbnail": "https://i.ytimg.com/vi/TKesAiib59c/hqdefault.jpg",
+        "published": "2026-05-18T20:30:08.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic has acquired the dev tools startup used by OpenAI, Google, and Cloudflare",
+        "url": "https://techcrunch.com/2026/05/18/anthropic-has-acquired-the-dev-tools-startup-used-by-openai-google-and-cloudflare/",
+        "source": "TechCrunch",
+        "published": "2026-05-18T19:27:52.000Z",
+        "summary": "Stainless, a New York-based startup, founded in 2022, rose to prominence in the emerging AI industry for automating the creation and maintenance of software development kits, or SDKs — the libraries…"
+      },
+      {
         "title": "Salesforce to spend $300 million on Anthropic tokens amid hiring pause - The American Bazaar",
         "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSDk2ZGc4UHlJZFdPcmxwZUdEbnJTSURzdHdDaWprdHZ0cWNPZGEwTVBLQTJTckFPU0czRndYeFQ4OWhUaldOdW8tcDFob21vT2hGU19FdnJQelNxcFhfcjJUa05ycjZMeDZmdzBES25kRE9BamVLREJ1Y3hQX1FfendwemdTQWNwVWhhYTlfSWZXS0tPaVdBNDRLYjRPV0hVMkJRLXliWDF3SXBpNkVGS19UM2w?oc=5",
         "source": "Google News",
@@ -153,11 +179,11 @@
         "summary": "Salesforce to spend $300 million on Anthropic tokens amid hiring pause The American Bazaar"
       },
       {
-        "title": "AI supply-chain attacks bypass model red teams - VentureBeat",
+        "title": "Four AI supply-chain attacks in 50 days exposed the release pipeline red teams aren't covering - VentureBeat",
         "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTzFmQ01KWFJYZlJBc2ZRUnNuNFRlZWduZXVuNVM4N1N0X21uQ0lSNVI2WmtDZ05DYVNkMVU3R3RaLXAyS1hiUlpIdENlVmszVDNGU3hoeU56RW5BamUxYXdSLWFRZkhUNVVITWZJZEVSeXF2bERPLWRKallxYWJJWGhoRHRXVkdwSUFxZk82N0s5WTJ2WFF2Q2hoRnRlYVpuaUE0MUsyTTE0QUZyZFROMmtkbG5HeW0tUFV1SUFB?oc=5",
         "source": "Google News",
         "published": "2026-05-18T17:16:58.000Z",
-        "summary": "AI supply-chain attacks bypass model red teams VentureBeat"
+        "summary": "Four AI supply-chain attacks in 50 days exposed the release pipeline red teams aren't covering VentureBeat"
       },
       {
         "title": "Shannon Lite v1.2.0 on Claude Opus 4.7: Anthropic's New Cyber Safeguards Require Pentesters to Enroll Before Scans - Tech Times",
@@ -169,7 +195,7 @@
       {
         "title": "Anthropic acquires Stainless",
         "url": "https://www.anthropic.com/news/anthropic-acquires-stainless",
-        "source": "HN · 175↑",
+        "source": "HN · 243↑",
         "hn_id": "48182281",
         "published": "2026-05-18T17:01:21.000Z",
         "summary": ""
@@ -189,17 +215,10 @@
         "summary": "Claude Mythos Builds Working Exploits 83% Of The Time, FSB Wants Answers Yellow.com"
       },
       {
-        "title": "Pope Leo to present his encyclical on AI alongside Anthropic co-founder - National Catholic Reporter",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNb3FnN0VtVEpvMmhDUWFVYWMtZXg5TjAzS0NCbHVIOU52UkNsUHR4NjI3ZF9Bb0x6ZHNNeUJpcHFwWVhkTkVHOXRjd3pZTkI2LTF0YkRUQXQ2VzlVNU9XQ1BwYS1MT0kxQUo0M3c5UWZTekF5SW5LYVpVcHZJa2JuYzZpczVHQ2NsbFJQTk0yS3czcXJJSjhJdlRONUtnNTZC?oc=5",
-        "source": "Google News",
-        "published": "2026-05-18T14:47:08.000Z",
-        "summary": "Pope Leo to present his encyclical on AI alongside Anthropic co-founder National Catholic Reporter"
-      },
-      {
         "title": "Salesforce CEO Marc Benioff says the company will spend $300 million on Anthropic this year - qz.com",
         "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBMemlHV0FoOFJhOHIxT053QkN0ckxxVk54SDdBc3hweUhhaEM4YVBUYjdLUU9qeU9jV0xfOTFxclY3aDdKU2lyLXctWExOcldhaTktU29pUHIxZDlOZXk1aFpicUVSMU5yXzQwX1NXOGtEc0pfbkRNTA?oc=5",
         "source": "Google News",
-        "published": "2026-05-18T14:12:56.000Z",
+        "published": "2026-05-18T14:42:56.000Z",
         "summary": "Salesforce CEO Marc Benioff says the company will spend $300 million on Anthropic this year qz.com"
       },
       {
@@ -222,20 +241,6 @@
         "source": "Google News",
         "published": "2026-05-18T13:14:05.000Z",
         "summary": "Anthropic's Code With Claude Announces Managed Agents, Proactive Workflows, Capability Curve infoq.com"
-      },
-      {
-        "title": "Pope to Launch Encyclical on AI Alongside Anthropic Co-Founder",
-        "url": "https://www.bloomberg.com/news/articles/2026-05-18/anthropic-s-co-founder-to-launch-encyclical-on-ai-with-pope-leo",
-        "source": "Bloomberg",
-        "published": "2026-05-18T13:09:02.000Z",
-        "summary": "Pope Leo XIV’s launch of his first encyclical focusing on artificial intelligence next week will feature an unexpected guest: Christopher Olah, co-founder of Anthropic."
-      },
-      {
-        "title": "Google’s Own AI Researchers Jockey for Access to Its Computing",
-        "url": "https://www.bloomberg.com/news/articles/2026-05-18/google-s-own-ai-researchers-jockey-for-access-to-its-computing",
-        "source": "Bloomberg",
-        "published": "2026-05-18T12:45:11.000Z",
-        "summary": "In the race to build the infrastructure that powers artificial intelligence, Alphabet Inc.’s Google has an enviable position: The company has a healthy cloud computing business, makes its own chips,…"
       },
       {
         "title": "Anthropic to brief global financial regulators on cyber flaws found by Claude Mythos - the-decoder.com",
@@ -320,6 +325,13 @@
         "source": "Google News",
         "published": "2026-05-18T07:29:51.000Z",
         "summary": "G20 wants answers on Claude Mythos risks, Anthropic ready to brief leaders now India Today"
+      },
+      {
+        "title": "Anthropic To Brief Leading Finance Ministries, Central Banks On Claude Mythos Cyber Risks: Report - Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQMEV3WU1QYTVfUHhkWUVURVh0UVdXNWR3SEFjdVR5NWNocG5JMGNUUWtRX29nb0VHd195ZnVZNVE3T1FKd3BaLWdTcDd2T0NnSGZMQjVTQXhRUTQxa3p6Q2JCQUJ5Vk1FY1hBS2NBNlZvZmZFeVB3X2FyR0JtYWw0eHhYWkNrZWhLUDluT3p2bTRoTGtmYTJsYzVMUllBemxzRlExUHgxREhESE5JcV9mQ3hQenFVMkpwSDdOci13?oc=5",
+        "source": "Google News",
+        "published": "2026-05-18T07:13:23.000Z",
+        "summary": "Anthropic To Brief Leading Finance Ministries, Central Banks On Claude Mythos Cyber Risks: Report Benzinga"
       },
       {
         "title": "Claude Code is 1000x better when you use this tool",
@@ -450,18 +462,6 @@
         "video_id": "wH8F4-mcDTY",
         "thumbnail": "https://i.ytimg.com/vi/wH8F4-mcDTY/hqdefault.jpg",
         "published": "2026-05-05T21:11:52.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Learn 80% of Claude Code Skills in Under 20 Minutes",
-        "url": "https://www.youtube.com/watch?v=SSs9D55hrbQ",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "SSs9D55hrbQ",
-        "thumbnail": "https://i.ytimg.com/vi/SSs9D55hrbQ/hqdefault.jpg",
-        "published": "2026-05-04T13:30:28.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -613,6 +613,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "What is Claude Code? ONE subscription. No agents. No Python.",
+        "url": "https://www.youtube.com/shorts/TKesAiib59c",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "TKesAiib59c",
+        "thumbnail": "https://i.ytimg.com/vi/TKesAiib59c/hqdefault.jpg",
+        "published": "2026-05-18T20:30:08.000Z",
+        "summary": ""
+      },
       {
         "title": "I built a newsletter Skill in 40 seconds — Claude Code Skills tutorial (no Python)",
         "url": "https://www.youtube.com/shorts/sMM-NaAmf2o",
@@ -842,17 +853,6 @@
         "video_id": "uZGDO0L-Dr4",
         "thumbnail": "https://i.ytimg.com/vi/uZGDO0L-Dr4/hqdefault.jpg",
         "published": "2026-05-05T12:33:17.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Learn 80% of Claude Code Skills in Under 20 Minutes",
-        "url": "https://www.youtube.com/watch?v=SSs9D55hrbQ",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "SSs9D55hrbQ",
-        "thumbnail": "https://i.ytimg.com/vi/SSs9D55hrbQ/hqdefault.jpg",
-        "published": "2026-05-04T13:30:28.000Z",
         "summary": ""
       },
       {
@@ -1744,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "What is Claude Code? ONE subscription. No agents. No Python.",
+        "url": "https://www.youtube.com/shorts/TKesAiib59c",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-05-18T20:30:08.000Z",
+        "summary": ""
+      },
+      {
         "title": "I built a newsletter Skill in 40 seconds — Claude Code Skills tutorial (no Python)",
         "url": "https://www.youtube.com/shorts/sMM-NaAmf2o",
         "source": "YouTube · Pragati Kunwer",
@@ -2007,13 +2014,6 @@
         "url": "https://www.youtube.com/watch?v=uZGDO0L-Dr4",
         "source": "YouTube · Leon van Zyl",
         "published": "2026-05-05T12:33:17.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Learn 80% of Claude Code Skills in Under 20 Minutes",
-        "url": "https://www.youtube.com/watch?v=SSs9D55hrbQ",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-05-04T13:30:28.000Z",
         "summary": ""
       },
       {
