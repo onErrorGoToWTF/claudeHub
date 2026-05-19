@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-05-19T10:51:36.883Z",
+  "generated_at": "2026-05-19T14:28:45.525Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Anthropic Kpmg",
+        "url": "https://www.anthropic.com/news/anthropic-kpmg",
+        "source": "Anthropic",
+        "published": "2026-05-19T13:30:59.000Z",
+        "summary": ""
+      },
       {
         "title": "Anthropic Acquires Stainless",
         "url": "https://www.anthropic.com/news/anthropic-acquires-stainless",
@@ -135,16 +142,99 @@
         "source": "Anthropic",
         "published": "2026-04-30T16:44:34.000Z",
         "summary": ""
-      },
-      {
-        "title": "Evaluating Claude for Bioinformatics with Biomysterybench",
-        "url": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
-        "source": "Anthropic Research",
-        "published": "2026-04-30T15:03:14.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "CloudHesive Launches its Anthropic AI Consulting Practice on AWS - AiThority",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVmFSdFhGWExPSGVXUDZFcUhYeXlWYTB3SjhhQkh6UUUtazdLVFFPWnUzcGxGVVMtNGs5d0wyRWlyMFRZcDhNMDduZWJ3MU5BdWNic2pBeUV6TF9YZzF2WXZ1WFkwTF8wVHZtWkNtaF91Z0s5STRPMlYwRTl3Vkc5UVNRbGU2Zk1fV3lNSk5VdHZnbzFFV3dMbUVQOEhyTHBqcEFzV3NEWEg?oc=5",
+        "source": "Google News",
+        "published": "2026-05-19T14:05:32.000Z",
+        "summary": "CloudHesive Launches its Anthropic AI Consulting Practice on AWS AiThority"
+      },
+      {
+        "title": "Claude Code Builds Portfolio Websites That Look Like This",
+        "url": "https://www.youtube.com/watch?v=DwvZ9f0RYzA",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "DwvZ9f0RYzA",
+        "thumbnail": "https://i.ytimg.com/vi/DwvZ9f0RYzA/hqdefault.jpg",
+        "published": "2026-05-19T14:00:24.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Researchers Claim Anthropic's Mythos Helped Crack macOS Security - PCMag",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOeGxOMFZQMEIyU2R5ZjlzNnRqYWhhWldaR2s0UFZKOWlGM280TnQwSnlqMzhxRU10S0FxaHdQOU5FVGJoc3U2UXRWMVVRSnJrQTBnbUVzNnlHR0Y1NXdjOTlMdTNmNDROTjdkWUVrUVQxaXQzS1BnR09yWVJ4UlN2SFVLNFBsRkYxZXpQaVBHSnMwcmpj?oc=5",
+        "source": "Google News",
+        "published": "2026-05-19T13:38:12.000Z",
+        "summary": "Researchers Claim Anthropic's Mythos Helped Crack macOS Security PCMag"
+      },
+      {
+        "title": "Anthropic Is Preparing for IPO and We Should Be Worried",
+        "url": "https://www.vincentschmalbach.com/anthropic-ipo-developers-should-be-worried-v2/",
+        "source": "HN · 48↑",
+        "hn_id": "48193111",
+        "published": "2026-05-19T13:30:58.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Cloudflare launches secure environment for Anthropic’s Claude agents By Investing.com - Investing.com Canada",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQMmlpQmwtWmh2N3V1SzBjQWdXbzU5YkNIc0FRaDFxX2Y3QjdFYmdGdno3UDFzc3gtRTFHc0UzaTQ2cXhJMjVhVV8weE9yQlpKS0xUNGFURGFVRzNOaWVHemZxUEM1eDNwWktMMDlTUlptdll2TnNsVHJSS1Q5UXVMMElXWkU0V2dwa001dXFMM0hld2hDTDBMc2swZnRzTnJNNTNqREtZY2h1X1R0cXFUVHgzeWRIT0hrR0F3aVFjYW1YaC1jbzJr?oc=5",
+        "source": "Google News",
+        "published": "2026-05-19T13:18:08.000Z",
+        "summary": "Cloudflare launches secure environment for Anthropic’s Claude agents By Investing.com Investing.com Canada"
+      },
+      {
+        "title": "Cloudflare–Anthropic tie-up for secure, scalable workplace AI agents - Stock Titan",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOQlNERDJuM0l2Rzc3UTBOeU9icFE0T2pkOFJVUkpHN0dDeXYxZ3VwSDZrSUU4NTRYVkpNQk40WEgxUmF4Y0paNDRENVdNOWZlTnV3dUNzVXJtM2NPaHc3XzJaNmNvbFVrX0JoMkcxMndyT3pVdUtPellTdHBoU050cDJ4eU5hWFRTa3M1X2xLYTNFSjluaEI1M3NmNVFiSDVTczd5U3dfOEd6cHhlQUZqQlFSYm0tZw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-19T13:00:00.000Z",
+        "summary": "Cloudflare–Anthropic tie-up for secure, scalable workplace AI agents Stock Titan"
+      },
+      {
+        "title": "KPMG Deploys Claude AI Across Global Digital Gateway - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNdkY0a1loMDhjWW5yYjNWcW5GVkkwTnBjRnlYZ0ROZjdkT1p6ZlFCaVY1NWticm1vR3RoaVU1OUNKSS1uTFJtRGtqMS1vdUFIRG5BSlFWcVZ3TXRfZklyRFlGcFZFb2N1cnJ0cVJXVnk2bDg4NGlYZGREZXN3Mm0tVm9LZTR1Ql9ScTNaUlVBTkdOVWEyT002eUJB?oc=5",
+        "source": "Google News",
+        "published": "2026-05-19T12:57:46.000Z",
+        "summary": "KPMG Deploys Claude AI Across Global Digital Gateway Let's Data Science"
+      },
+      {
+        "title": "KPMG and Anthropic Sign Global Alliance and Launch Digital Gateway Powered by Claude - TMX Newsfile",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPT3RyWXdQTGNTSFJVQzAtaEQxTVdtOTJEdExMMVNpQlRpbUZZYlc1VDlhaGQyMTRoU0s3QXR1bWhyX2VpX3lXQUdqYmE4Z1J6Yl81SGhSQ1Ftbk9uOXFHTldEbEx5c2tvS1VEN1ZLVlFyTTlVdTBmaGl3R2Y2SlFOTEtoeGhTN1kwV3RaZ1pDenJFZXo3NEtydHRidmp4cDN1TzAxMzY4b1Z5UVdIT1RFSEhldldlanlTS0pWS1otLThYZ2tSc0Jj?oc=5",
+        "source": "Google News",
+        "published": "2026-05-19T12:44:00.000Z",
+        "summary": "KPMG and Anthropic Sign Global Alliance and Launch Digital Gateway Powered by Claude TMX Newsfile"
+      },
+      {
+        "title": "Hitachi Partners With Anthropic to Deploy Claude Across 290,000 Employees - AIM Media House",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOaXE4UC1tUWdLUl9TdWdiOWlJRG9HX292cEVZVFNzQzJfOFlTQk9UTmFveGFNQ1dUU0U5NDZpay02QUwyMGprMm1HRnRoTmt2UUswYWx6UjZ4RHlNbTd3U0Y5SFNZcU05SlRjSy1HaG8xLUZfenl0alg5R2NaNi1udHFQbWthUDN6bEFIQnNYSUtOR2ZxY0xaMGJYQ0FnZHlvNlF2aWtONG9OWjdmTG1rUGlR?oc=5",
+        "source": "Google News",
+        "published": "2026-05-19T11:59:16.000Z",
+        "summary": "Hitachi Partners With Anthropic to Deploy Claude Across 290,000 Employees AIM Media House"
+      },
+      {
+        "title": "SandboxAQ Plugs Its Drug Discovery Models Into Claude, Skipping the PhD Requirement - Technology Org",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcVdDTU94RW1vMTdTdlpUUTJERVpHSktacW9OMm5Ja0tWUm5mek9sUHg3aGtoRnhDeWxldXJnTDJIdEtGOFNrTFhCYzlPdGlDSXF2REttQjRmYU11cTJRenNKT1dnaTNHd3dLeV9CalB6SXFWS2tBNkRra2tTR1FhbWFCdw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-19T11:53:51.000Z",
+        "summary": "SandboxAQ Plugs Its Drug Discovery Models Into Claude, Skipping the PhD Requirement Technology Org"
+      },
+      {
+        "title": "Anthropic acquires Stainless - Coverager",
+        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5pUHNJa1Y4RzBRYVk0RzVOS2gzZGNCZHpMTy1zMjV2c3hwNDdWelF0ZnJXZ3VqLWZpSHhvQjBoWklRVmIxY2J1bW03X1R1LTVPbU96T3BVSjdJaWMzV1AzQw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-19T11:27:06.000Z",
+        "summary": "Anthropic acquires Stainless Coverager"
+      },
+      {
+        "title": "All 276,000 employees at KPMG are getting Anthropic Claude AI licenses - techAU",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNT2VxVWRSTDF1TkNDY3RWZEd2aVdKNnk0all5VXpGZ1VYSlVUd01ESm1jeWx1MmNSUXBsU2Z0bENNRHVaQk1WSzZPZDlUS1JubFBZWWVvMGhSRm1adnY2TFo4aXZsSjRkWm82aXBCWHRkcFBRTmQzR3p4MHdQUU5uajRJRjNYSzN5bm5wUG5UVG5QdFA3OVRN?oc=5",
+        "source": "Google News",
+        "published": "2026-05-19T10:56:38.000Z",
+        "summary": "All 276,000 employees at KPMG are getting Anthropic Claude AI licenses techAU"
+      },
       {
         "title": "Anthropic acquires Stainless to strengthen Claude’s developer tooling - InfoWorld",
         "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQcVJiNEVYLUhDWGlWOHYwbXBycUMyQWNTTWlBM0Vxa1lpb1dzLVZjME9KT3NGSDBFbXRLeW55aEVra0dEZER1X1M5MHZVVUl6THdjQzRvT0VWczJ2Z3JkQkl5U2cwQ3d1bC1TaWtCckRZWkZNQWNDcXBpUWtHRE9naHYzS0xRT1JqN2Vlc1dwbWU2bUY2Ri13X2JIRjR3X1Z5MC1BajZCSHNWaWhRZU5wdV9pWF9NZw?oc=5",
@@ -202,18 +292,18 @@
         "summary": "Anthropic CEO Predicts AI Will Replace Software Jobs Let's Data Science"
       },
       {
-        "title": "SandboxAQ and Anthropic Join Forces to Bring AI-Powered Drug Discovery into Claude - The Hans India",
-        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPUTdybWR1T20xZUViV2dHeVNRVHZiWEpETDVISlQxMmlpZTl4QWxJNm9xWjlubFVTWHQzQnltcmFxTzEyVkhxdzdJVUNDMll1OU1JNTFscXRiV3NFa0F2YUc2d1NLR3BJcGdYTG9BNWNWTlM5ckRzWnJlTEV1SFRxNmdWYjNJazk3bXJsNTRRdnZhX19qMXYyWE9kR0lqaUJSeS03S0tPdGQ3dTRBbmlyT2xwbWgtanRnZGE4Sks1cWtwSTdvQTk5ZFRYZzBvRTdhejVSNWxnZ9IB3AFBVV95cUxNLU9kdnZ1UkdNdFYweTNKMkJ0U2UzNWFqY1Z5VV9NZV9PbWQyaWN6ck5UZndrNDNVQkRYOThxRjg4S1J2eGFzc1AwWHRQN1drMmxLZHhQVEliLWdBRklhc3o4Mk1mRU5aOGNZNVFGSGtxdmZzY0h1R3A3NHhZTEJYT0lBMlNoaTV1MW5LbGZzMkZoRkxMOE0zYlc5djk2b3Y0VU00UXZzTGE1R21MQUdHdzdORjVwRFV3bmI4NkFnbjZrZ2VxaERtNk9TYWhLeWpqUWdXcUN2Nkg1Umtz?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T09:06:32.000Z",
-        "summary": "SandboxAQ and Anthropic Join Forces to Bring AI-Powered Drug Discovery into Claude The Hans India"
-      },
-      {
         "title": "Anthropic Is Loosening the Secrecy Around Claude Mythos So Findings Can Be ‘Shared Broadly’ - Gizmodo",
         "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZzNSV2w1TFdzQjdJU2RaYnFaUk80QkppOXdmWUxwWF9mMFdaMXZCSHd2X2xmYlBOWFJtVGJUUmlVWU1XRFU3N3J3T2tIN0lSeGRrZmxTQUVJOGQwZnUxeWlWbDV1ZEhsbW5adVl6YjUtNUJuMXFOU3EzeldLdERBdnFlUHFEYzNoMXpRYVJiaFZMaXdsNFVlQWpnV2hkMjBBak54R25LUGdsTlp2ajlCX0dmTWZwRG1hdGl3Xw?oc=5",
         "source": "Google News",
         "published": "2026-05-19T09:00:13.000Z",
         "summary": "Anthropic Is Loosening the Secrecy Around Claude Mythos So Findings Can Be ‘Shared Broadly’ Gizmodo"
+      },
+      {
+        "title": "Anthropic Loosens Secrecy Around Claude Mythos Findings - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPYnRaZmdDRW0yZzU1XzF2d21oLWI1b1Q1eDVzQzN0b2lYeG1Xb2xZMXVFblh4VmEwOVZUQ1lsdzRiRG5FaUVrYkY5SEZfYlphdEY1eUtJVkhnR1l2bllRSHg3WWlLdkFCX1J3X3c3RncybWFUdWZ4WDRjWmR2alQ2RkU1VlVHemZhOFFoUkVTMTkxa054dm9tUElfaFN3dw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-19T09:00:13.000Z",
+        "summary": "Anthropic Loosens Secrecy Around Claude Mythos Findings Let's Data Science"
       },
       {
         "title": "Exclusive | KPMG Taps Anthropic to Revamp Global Tax, Advisory Platforms - WSJ",
@@ -223,11 +313,11 @@
         "summary": "Exclusive | KPMG Taps Anthropic to Revamp Global Tax, Advisory Platforms WSJ"
       },
       {
-        "title": "SandboxAQ integrates drug discovery models into Anthropic's Claude chatbot - NewsBytes",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdlBnUnVGd0pGVW1jNzdlcklQd3pyZ1NpNkhVUklGQ0tWVlA1ZW1aSGsyakstSnZHVUFBYXlrWkRSWVBQRmZ0dklSUURPbXYtU3NqbnVEVlRINGZ2SmRoNFpxVEs1dkJYOS1aNlNxMFdIVE1aMDlnSjVXa2QtMWZGWFBkb3B3dTZTQnAxSUFqUUVnVmVWZ2NvQWlZdmFWMVJ4bFVPYmJOX2NNajFKQzc5UHBmSVpBanRQTDd1NQ?oc=5",
+        "title": "Anthropic allows partners to share findings from Mythos - Techzine Global",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQZzVyUzVCNGN2bXM0NmxRVERhT0l6Uk9sRkZncGxoTV9UVkM4RU9rWm9oT2NkWFNQWjJwbjZyeTF0ZDlWVm42ZXViY3NDRUQ4OVI0YXNLOHFYQXF5NjVtaURoSzdGc19nQ0RyNHlxaDBfQWR6U1lNZlpFeVRRQ3RUZ2dycXNOR3FhTVNsZV8taHpkVGVYdDItRDlDYkpXdkI2ckNR?oc=5",
         "source": "Google News",
-        "published": "2026-05-19T08:28:34.000Z",
-        "summary": "SandboxAQ integrates drug discovery models into Anthropic's Claude chatbot NewsBytes"
+        "published": "2026-05-19T08:52:45.000Z",
+        "summary": "Anthropic allows partners to share findings from Mythos Techzine Global"
       },
       {
         "title": "Anthropic acquires Stainless to better integrate agents and tools - Techzine Global",
@@ -242,83 +332,6 @@
         "source": "Google News",
         "published": "2026-05-19T07:11:40.000Z",
         "summary": "SandboxAQ partners with Anthropic to bring scientific AI tools to Claude The Indian Express"
-      },
-      {
-        "title": "Anthropic eases restrictions on cybersecurity AI model sharing under Project Glasswing - Storyboard18",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPd0ttenBHNXhpbG1MNl85Sm1iTHNxdWV4RjJDdGNYdldnWWZURWtxSjRZNlJpanRVbDk1UTJ0ekFRZTBINFZpRHZYU3pGczZHRmtiVmVjcmNLYVcyZjRrR3l4S1RFTG5lMTFVbk5rRXhCVk9xM1JSYzNIMmZpZzRjcHozUUoyeDFLOXgyUG5SZ1JRVTkwR2tPZW50ank1bnhFUUg3Z2g1X2E0OG5ISnFhM3lRS3RfVktYa2QtN0plYUtJYVJLSzhqanloeXk2Z9IB0wFBVV95cUxOS05lX2RFMlhURWJtTU1Hb1FPSGxsSDNnbUl5cHd5c0MyZS1wQWhwMHY5ekNfM2hWVm9odkhDRGtjTkQzOXY5bVRFQkNRbDhVeFNUNFJwcXhWajJCRjA5V2wxcEtwWlE4OEZEeEFmN1pVQlR2QzlNNERNMVk5REgtY2NNSGFmWkRaZXBvOTZROG5tREF3RlY4d1Njd0VxYXR2MXI5Ni1OZHFJVDhVT0FfZ2EwUklzQjk4LWJlY041bUNvdDJXekZ1V1RHZ2N4MUk2ZjhF?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T04:00:45.000Z",
-        "summary": "Anthropic eases restrictions on cybersecurity AI model sharing under Project Glasswing Storyboard18"
-      },
-      {
-        "title": "Anthropic Acquires Stainless To Expand Agent Connectivity - Pulse 2.0",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPZmVqZW1MWm5ReHNVN05oWklBTUtLRmx4eW5rdHlYdHM2akxsSkJ1eGZicC1EMjhNX25KendtUzBUVUhwbFJTSzE2SGhQSnpjQlhfaDZIUHQwbnlrbm5LX29vQTQ1S191dG1sblA3eHB4RWhNUTBRSDEzbkdoSk9aTGRSTdIBiAFBVV95cUxPQkhibEdYZGZ5UWN1NmlVLVh2OUJHQ3lhSWFMa29ncHJTZGdhcmdsdm5zN1dhLTN1a0F5NlNzTlBRNEppdHgyU1I3MkdIOUZBZThlSzJ3NUY0eHdXZTJQam9zMHI4VlF2S3E3YkV5LXJ2dDRaTVJzYzJWSC1sZDQyamVRSlRDSl85?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T03:24:23.000Z",
-        "summary": "Anthropic Acquires Stainless To Expand Agent Connectivity Pulse 2.0"
-      },
-      {
-        "title": "Microsoft Drops Claude Code: What Changes for You - Memeburn",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBucDQ5akdTdF9kN3F3a1hVQlE2dHdiRlFVRkxuQXhGSXNKa252OFJLSXhjQ0RqY2FmcHR5dGZsZml3Rmp0cVoxVVR1WkpsbVU2NWI1NHNKUEt5UnNZV21fcEpyTldrM3BuYWVZVUctdEF6Z3d4eEpPSVV3?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T03:17:32.000Z",
-        "summary": "Microsoft Drops Claude Code: What Changes for You Memeburn"
-      },
-      {
-        "title": "Anthropic to let partners share Mythos cybersecurity findings with others - news.cgtn.com",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOcEl5WV9ocnhfbWh6WENTSWxTaktuM1YtUTBqWEZjQkw0dTc5d3J1WFZfN3pJMmEwQ1NZeFVmMDlxbTZGTzMtWW1ZVUFaTUxWN0tTMnJtMWRwUnZNNUpLRF9HRGdGQjc5T2lCOFp3OEFyTFNCMFZDcXNOWVAxZkNhV1I3bE90dVBYQ2FaMjVWZ0lNMjRKNzBENFVnbmtOcWF2T1hmODk4Ul9UNEZmdVdBNU00SjVxdUZ3Rmc?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T02:48:40.000Z",
-        "summary": "Anthropic to let partners share Mythos cybersecurity findings with others news.cgtn.com"
-      },
-      {
-        "title": "Anthropic Acquires Dev Tools Startup Stainless used by OpenAI, Google - CXOToday.com",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQSHhScWRPMkwyYkJXXzNVaHZEeFg3YTZ1eUE4ZXRzUGNmVzlZSXhPdW1SdnlKX1NCek5yOUo5RXlEam1YVFhmMFN4NTZ1RjROMUk2clVfODZrLWZXU2xZeTNva3FOdGdzanNac2R4WHBUVE5wZklPS3RnU0pqU3dnQVhQTVE0NFBURkxzMUlPQlNneGhoYUxZYQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T02:15:11.000Z",
-        "summary": "Anthropic Acquires Dev Tools Startup Stainless used by OpenAI, Google CXOToday.com"
-      },
-      {
-        "title": "Salesforce CEO Marc Benioff Will Spend $300 Million on Anthropic Tokens in 2026 as AI Coding Agents Transform Software Development - Nbsla.ca",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5raGFSSXVzOUZuS3FDMGNjUVNZN0F2ZjA3YnBob0VUT3dLUHBHODRBSlRNakZUczFGbjk3ZFNlZmlDNEFuNmJSV0U1ckhyOEE1dDF1eTZUUEFQUXozR2l3ZE5qMG90WWhyZnFPUVhwNWg3TFRCaEZTWVVB?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T02:06:38.000Z",
-        "summary": "Salesforce CEO Marc Benioff Will Spend $300 Million on Anthropic Tokens in 2026 as AI Coding Agents Transform Software Development Nbsla.ca"
-      },
-      {
-        "title": "Beyond the Sandbox: Scaling Autonomous AI Agents with Anthropic and Edmunds - Databricks",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQVUpBTjlwM2hpX2wzTUJMMV9USGJPVDllc1FVczlRQmNpd0ZlSERjb3dtRDk5cDBrajZ3bWdiTlN0UFVHOHZaanBLY0dvZm9VV1lvU1Fvd2dBc0JTZzNiTU85a0JJZkp2UDhnQUJnZVBqR203Y2ZaY2xISnlCbjVOUmVla2ctWlNJb1dzY2hoVllxSTlLbU1WT0ZtVG1kcG10LWhPRDBVSjBKUndwU0xZTTZvMA?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T01:42:19.000Z",
-        "summary": "Beyond the Sandbox: Scaling Autonomous AI Agents with Anthropic and Edmunds Databricks"
-      },
-      {
-        "title": "SandboxAQ Expands Access to Scientific AI Models via Anthropic’s Claude - TipRanks",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOYmNUNWxST0ZXM0hUUVZIU0xLWUlVWUxQQ1VJYjkxNkszU00zMDhNSjBiOEtMNzhDd05nbEFPT1NTdFdJTXlHVmZiSVBEcThhVWRqaGlWY2Jrc25SZ3FrZU5hV1d5NG04SVJiVkNtRUgtQlMtMzZ2cUdFVTZUd0xtYXpkdFp4MFdvUGJPTmdkT1lRbXpxS0RYQktWY0FLcDZVeFJoc0xiWmZiTlJoWWx2T25YZjZkMWQzZk9XTA?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T00:39:17.000Z",
-        "summary": "SandboxAQ Expands Access to Scientific AI Models via Anthropic’s Claude TipRanks"
-      },
-      {
-        "title": "Relativity Integrates Anthropic’s Claude to Strengthen Legal AI Platform - TipRanks",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNVXd0N3RRRDAxYS01elo5clBsOGdlVnZiRnJXeHh6RktfN04tcDdYY1Z3QWJCR1JYMlhreHhncHJuSDlDaVV2ZUxFdlRWcjRKU3U2NW5CWVc1RHVhNE9GYm5FUzhsSDhoSmlMcERpTHM5dlhxS1pjb005VEdZUTNUUk5DQ004RXVNOW0wel82a1d6NjJIV0NHMHVLd1ZsZkxsY1U4MUZ6UkhhTnA1UW5MWUpKdWxEVUxvLWtN?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T00:09:03.000Z",
-        "summary": "Relativity Integrates Anthropic’s Claude to Strengthen Legal AI Platform TipRanks"
-      },
-      {
-        "title": "Hitachi Announces Strategic Partnership With Anthropic to Strengthen \"Lumada 3.0\" Through Frontier AI - FinancialContent",
-        "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxONGJsdm9lWU1qa09EdDdrLVFYbzZ4SXdGNmR1UUp4emRqWWdkOFYxQ3dOX2JGR0hqbWNxLWhid0NPOW1fZU5XZkk2eHBDTG4tZXIxc0xCdEQtOWRBYk1DYkl1aUp4dGRXTnNVMTRkVF9hTE9IQUxweWZBZnBkM3VhMkpmT05uSDNVQndSalJmMUJPRDI1QV9wZFdTZGpHdUVPRUJvV0pleVVWVFlXdVhuazFWTW85b2czeGY3WWJBVFhaU0VlazdxUkdYM0FzVTVqYkZoeDZVem5od2swcTBWSjdlc0tXeHhyX1kwaWtyTGJjYl9nb3ptQ2NzTmE?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T00:00:00.000Z",
-        "summary": "Hitachi Announces Strategic Partnership With Anthropic to Strengthen \"Lumada 3.0\" Through Frontier AI FinancialContent"
-      },
-      {
-        "title": "Anthropic debuts Claude for Legal to embed generative AI into law firm workflows - digitimes",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcDltUGNrcV9LSnY0dVhpSW0yUHpqR0ZUUzBtSzNMbEVLLWVQNnV1UHVXaERnOU95QXpEemhGVTZNOXpuWkluNldlQ0pCSHBuVHB0U0NWWEQ0a0dLOHY5UEZIUm54MmRvX1NGSXExdk5ZWC1NeGE4THhtUGlxLUJ5NklPci11d3FWUUNnZFNOZEpDRXliXzYwZmZFTUVhUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-18T23:40:27.000Z",
-        "summary": "Anthropic debuts Claude for Legal to embed generative AI into law firm workflows digitimes"
       },
       {
         "title": "What is Claude Code? ONE subscription. No agents. No Python.",
@@ -487,21 +500,16 @@
         "published": "2026-04-29T12:53:56.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "This MCP Server Gave Claude 200 Million Research Papers",
-        "url": "https://www.youtube.com/watch?v=fyRRafCurzE",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "fyRRafCurzE",
-        "thumbnail": "https://i.ytimg.com/vi/fyRRafCurzE/hqdefault.jpg",
-        "published": "2026-04-29T11:01:10.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
+      {
+        "title": "Elevated errors on Claude Opus 4.7",
+        "url": "https://status.claude.com/incidents/f9yk8lqw384x",
+        "source": "Claude Status",
+        "published": "2026-05-19T14:03:04.000Z",
+        "summary": "May 19 , 14:03 UTC Investigating - We are currently investigating this issue."
+      },
       {
         "title": "Elevated errors on Claude Opus 4.7",
         "url": "https://status.claude.com/incidents/qkwdrjxvkb9s",
@@ -578,16 +586,20 @@
         "source": "Claude Status",
         "published": "2026-05-12T23:58:01.000Z",
         "summary": "May 12 , 23:58 UTC Resolved - This incident has been resolved. May 12 , 23:51 UTC Monitoring - A fix has been implemented and we are monitoring the results. May 12 , 23:38 UTC Identified - The issue…"
-      },
-      {
-        "title": "Elevated errors for Claude Sonnet 4.6 and Haiku 4.5",
-        "url": "https://status.claude.com/incidents/c2hjyfpgsprx",
-        "source": "Claude Status",
-        "published": "2026-05-12T20:13:05.000Z",
-        "summary": "May 12 , 20:13 UTC Resolved - This incident has been resolved. May 12 , 19:36 UTC Investigating - We are investigating elevated errors on requests to Claude Sonnet 4.6 and Haiku 4.5. We will provide…"
       }
     ],
     "youtube": [
+      {
+        "title": "Claude Code Builds Portfolio Websites That Look Like This",
+        "url": "https://www.youtube.com/watch?v=DwvZ9f0RYzA",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "DwvZ9f0RYzA",
+        "thumbnail": "https://i.ytimg.com/vi/DwvZ9f0RYzA/hqdefault.jpg",
+        "published": "2026-05-19T14:00:24.000Z",
+        "summary": ""
+      },
       {
         "title": "AI without coding — Claude Code Skills explained (no Python, no agents)",
         "url": "https://www.youtube.com/watch?v=kHosEUt4PW0",
@@ -906,20 +918,25 @@
         "thumbnail": "https://i.ytimg.com/vi/265ZbRf8w9k/hqdefault.jpg",
         "published": "2026-04-29T12:53:56.000Z",
         "summary": ""
-      },
-      {
-        "title": "This MCP Server Gave Claude 200 Million Research Papers",
-        "url": "https://www.youtube.com/watch?v=fyRRafCurzE",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "fyRRafCurzE",
-        "thumbnail": "https://i.ytimg.com/vi/fyRRafCurzE/hqdefault.jpg",
-        "published": "2026-04-29T11:01:10.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "Merge pull request #643 from anthropics/rlm/scrub-cma-notebooks",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/2eed173a533a690eb70ab324614ce5350776a23a",
+        "source": "Anthropic Cookbook",
+        "published": "2026-05-19T13:49:46.000Z",
+        "summary": "Merge pull request #643 from anthropics/rlm/scrub-cma-notebooks refactor(self_hosted_sandboxes): rename private-sandbox → self-hosted-sandbox",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "refactor(self_hosted_sandboxes): rename private-sandbox → self-hosted…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/01b041a64c08190ef0f5359270d4966605831144",
+        "source": "Anthropic Cookbook",
+        "published": "2026-05-19T13:40:31.000Z",
+        "summary": "refactor(self_hosted_sandboxes): rename private-sandbox → self-hosted-sandbox in artifacts and titles Align all deploy artifact names and README titles with the self_hosted language used in the…",
+        "tutorial_kind": "official"
+      },
       {
         "title": "Merge pull request #640 from anthropics/rlm/private-sandbox-updates",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/1a4f78a64a894fc2796072f76fb1041c218544cc",
@@ -1146,22 +1163,6 @@
         "source": "Anthropic Cookbook",
         "published": "2026-05-13T21:29:40.000Z",
         "summary": "feat(managed_agents): Linear stateless webhook bridge template Minimal TypeScript/Bun bridge connecting Linear's Agent Platform to Managed Agents via CMA outbound webhooks — no held SSE streams, no…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Merge pull request #617 from anthropics/lance/managed-agents-cma-mcp",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/e7b800d472527085494e3846d25e4dfc555b2857",
-        "source": "Anthropic Cookbook",
-        "published": "2026-05-13T15:52:01.000Z",
-        "summary": "Merge pull request #617 from anthropics/lance/managed-agents-cma-mcp feat(managed_agents): CMA Sessions API as an MCP server (stdio + HTTP)",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "feat(managed_agents): CMA Sessions API as an MCP server (stdio + HTTP)",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/a0902061e41142ff203d80c1bd87fae3066af440",
-        "source": "Anthropic Cookbook",
-        "published": "2026-05-13T15:47:57.000Z",
-        "summary": "feat(managed_agents): CMA Sessions API as an MCP server (stdio + HTTP) Thin MCP server wrapping Managed Agents sessions so Claude Desktop or claude.ai can drive hosted CMA agents via tool calls. DIY…",
         "tutorial_kind": "official"
       },
       {
@@ -1743,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Claude Code Builds Portfolio Websites That Look Like This",
+        "url": "https://www.youtube.com/watch?v=DwvZ9f0RYzA",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-05-19T14:00:24.000Z",
+        "summary": ""
+      },
+      {
         "title": "AI without coding — Claude Code Skills explained (no Python, no agents)",
         "url": "https://www.youtube.com/watch?v=kHosEUt4PW0",
         "source": "YouTube · Pragati Kunwer",
@@ -2076,13 +2084,6 @@
         "url": "https://www.youtube.com/watch?v=265ZbRf8w9k",
         "source": "YouTube · Ryan & Matt Data Science",
         "published": "2026-04-29T12:53:56.000Z",
-        "summary": ""
-      },
-      {
-        "title": "This MCP Server Gave Claude 200 Million Research Papers",
-        "url": "https://www.youtube.com/watch?v=fyRRafCurzE",
-        "source": "YouTube · Leon van Zyl",
-        "published": "2026-04-29T11:01:10.000Z",
         "summary": ""
       },
       {
