@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-20T01:58:29.769Z",
+  "generated_at": "2026-05-20T06:04:29.533Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,10 +146,66 @@
     ],
     "news": [
       {
+        "title": "Claude Code RCE Flaw Lets Attackers Execute Commands via Malicious Deeplinks - CyberSecurityNews",
+        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBfOGpPa0ZCcTRlU0paaDgzTElXUkh4dFlwT0J6bC1ZUjBib2hDYmRtTkJ5VXZZY1BCYnpNRU9zYjFNUFdNZVRzZURRSlpXZUJMaldvb2ZiOHRjekJzdHVvMNIBZkFVX3lxTFBMdzVYekwzc1I2YV9tTTY1VUlJY2NrRUZLRWRIWUptcG5DU09VMzdvSHN6VmtWeWJvbnJGVUlZMTZfeVB1aGVSMTcyMzZ2X25LUzZHSHd3Zm5hR2tLd0xSVGVUdW41Zw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-20T05:43:19.000Z",
+        "summary": "Claude Code RCE Flaw Lets Attackers Execute Commands via Malicious Deeplinks CyberSecurityNews"
+      },
+      {
+        "title": "Andrej Karpathy Joins Anthropic to Advance Claude AI Model - 조선일보",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPRklkLXNGcGRtYXN2OWVnRUU0UmxkUGpNWmlzcDJiSmE3anFFeVNVY1Z3dVNXUmo5U3YtdTVsdEFESnVBbWRPVXZFcGI4dS0wOHVMcERRSmZmMG1HeHAzT0gzNnNoTk4zcHFsNUVxWUFpTWpVVFpZQXhDX0p3MUEwQUJxRGtRUkNB?oc=5",
+        "source": "Google News",
+        "published": "2026-05-20T05:27:26.000Z",
+        "summary": "Andrej Karpathy Joins Anthropic to Advance Claude AI Model 조선일보"
+      },
+      {
+        "title": "Claude Reconnects With OpenClaw But Developers Say the Real Cost Just Exploded - Memeburn",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPMjRIdW5yRmx0RFRFVmJPclh1eFlKcDRqTE5XS1k2MnFLX0lnVEJ4X0NKYUhkNHhicEs5cVRPTnlFam45UEozNU82dWQySnNsdkRrNWpzZ3NFTzk2akQ3aDFhVXp0bHphU3k4SGVkLUZ4NTktc1c0cllTNUR6eloxS1lPRzVzZGlnUHllQlNjU0RicnRxYzdQMWpPenhSU24wUXc?oc=5",
+        "source": "Google News",
+        "published": "2026-05-20T05:22:26.000Z",
+        "summary": "Claude Reconnects With OpenClaw But Developers Say the Real Cost Just Exploded Memeburn"
+      },
+      {
+        "title": "Ex-OpenAI and Tesla AI lead joins Anthropic to accelerate Claude pretraining research - digitimes",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQYThON1NiSjdVbWZlWUxMSTQyVGRxM1ltOW9WcmxUSGw2d3hmSmt5WWFUR3FOX2VSamFwLVF0S0w2cUh0U0ZHTDVHc19rYlBUMnNCVWVQeXhWdXFqV2JaNmZ1YkQ1NktESFdOalRwNmRGeXJ2VXA4eG5PaFFiNnVvb3hRLTVZYThzMk9nTnFkN2JyUm5Q?oc=5",
+        "source": "Google News",
+        "published": "2026-05-20T03:06:07.000Z",
+        "summary": "Ex-OpenAI and Tesla AI lead joins Anthropic to accelerate Claude pretraining research digitimes"
+      },
+      {
+        "title": "OneStream expands AI strategy, adding interoperable agents - CFO Dive",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNQmotZ2I5SzJsY0RWcGZ1c0hOc3E5bnVENmhMeGJqdlRzUEE0ZE9fWG1MRzdVX2h6Sm1ZSHBReU81STg3NTlvVUhPNUdRWEo4QV9BU2I0bS1ybUdGdEEzeG02NTBzY1RRRVRKMGJnZXlXS2JtMDRETFhOaDlqRFF0X0ZoZTUtSldzZjdrTFNvdWdqT3FJaGJibXpYZlNydjVqRnRr?oc=5",
+        "source": "Google News",
+        "published": "2026-05-20T03:00:00.000Z",
+        "summary": "OneStream expands AI strategy, adding interoperable agents CFO Dive"
+      },
+      {
+        "title": "Cloudflare Anthropic Deal Highlights Push Into Secure AI Agent Infrastructure - simplywall.st",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOQUxsZXdaZzlXb1N2b05WcDNRMmF1cEZIc3dvbmFGUUFZc3o2SlRNT01VSm5NWUdDM2lnbkFnT1U3aElWd3B4clBHNGliQ2JTZThJYk1Ca2pqRGVpRk1pa21LalVQNGpVdkEwbmdnNGZBaFltSVBpMVVBTlR4QWMwWUZyZmJCUzF2NERIU2dXX3p5WjJzdUJucmQwWGtQSEt1aXVtMFpyclVLa3FMbkJPdTFYQ1daSU9qaUo0cjRZcXpocm9k0gHKAUFVX3lxTE9nSjYwcy1vaHctZ3pFWVFRZ18zVVJsM0FMbkVkbUVEd3RhV18tRzNEc1NIMm9CS240bUNLMmVKREViNTJrWTNXNnlqSHYzSkJZOW52ZDdmbVdNcWRlMVhXX0NES0hmWDhxZTduVUZFcWUtbXNRaUZ5Z3JZTlpnQ3k0eHY3Q0dERnBuLWsyTmpKSExtczlVMkR5c2w4dTFWaDN4UlVmZlV4dVozbW5TaHNucUYtbGhTblZ6dnlGVmVHQ0lEQ19LMW1PbkE?oc=5",
+        "source": "Google News",
+        "published": "2026-05-20T01:58:32.000Z",
+        "summary": "Cloudflare Anthropic Deal Highlights Push Into Secure AI Agent Infrastructure simplywall.st"
+      },
+      {
+        "title": "Microsoft warns GitHub could be displaced as rivals gain ground with AI coding tools - digitimes",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORm04bnZudVhUSWVWdjJSUXhoMnpITWE5WEhJbkxOdXVpaEJxa1ZOb0RzSk14cC1iMjF2N3B6X1FfQjlBRkxycEVjLTNwdmJrS3Ryam9ObFFrNHRQdTdqUm9DUXNRanBYRnFnRkNoMDlJalNwalVXMWc4NHl2Yi11eFl2TW1IQjJGTlNwVTgxcVk5Ymw5X0dZ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-20T01:17:01.000Z",
+        "summary": "Microsoft warns GitHub could be displaced as rivals gain ground with AI coding tools digitimes"
+      },
+      {
+        "title": "Anthropic hires OpenAI co-founder Andrej Karpathy to lead Claude pre-training research - The New Stack",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5GcFBrdVNfSUhmaUtyaVIxWW1zdkdBOGt1UVlZaUtrak1Zb0dRemQ1MkF3UEpkYi1uWnh2ZjV3VmNJR25XT2E5d1pJSHFwWWpudVBKajJIOUhRTWU1YW9yZjZ4TFVzWUtJV05IOVRn?oc=5",
+        "source": "Google News",
+        "published": "2026-05-20T01:10:45.000Z",
+        "summary": "Anthropic hires OpenAI co-founder Andrej Karpathy to lead Claude pre-training research The New Stack"
+      },
+      {
         "title": "Anthropic launches secure sandboxes and private MCPs - TestingCatalog AI News",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTWplcUZ1ZGJsQjlPNkFxV3U4VmZnZlN0UEViaVprN1Y1VzZkaE5pLWdEVTVVS3pKSktxM3J2cjRnanpWWVFYRW94d0dIZ1puak9fZmVLU002bThsYmV6STNMcFhKenhZZzZjQUstejVPdTBpS25HXzVyUlNPRl9rWVZOQjNZNUtTd240Z2RVeldoYkFIMTkzMQ?oc=5",
         "source": "Google News",
-        "published": "2026-05-19T23:43:10.000Z",
+        "published": "2026-05-19T23:45:02.000Z",
         "summary": "Anthropic launches secure sandboxes and private MCPs TestingCatalog AI News"
       },
       {
@@ -158,6 +214,13 @@
         "source": "Google News",
         "published": "2026-05-19T23:36:37.000Z",
         "summary": "Widening the conversation on frontier AI Anthropic"
+      },
+      {
+        "title": "Anthropic’s Stainless steal tightens grip on AI dev tooling - The Register",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZmZsd04zckpfV05OeFRTYTRKbnR2UFNZWkprbEtQSWowWjFSSy1sYUliRVFQQ1dJcFF6UnFhZ2tRTE96MEYzeHFCcGhrbjE4VF90LS1JNm81a2EzeFdnQmVNZkZUMGVqdDZRNXhoQndieXhEX2FCaXVhRzZwaF9oSm52NTdSbnNxRERycll5YVJBRVhIVGp0RUpDaHVTQ2tIeWFXbVpiejFCVTZ3Tjgtaw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-19T23:05:18.000Z",
+        "summary": "Anthropic’s Stainless steal tightens grip on AI dev tooling The Register"
       },
       {
         "title": "Google debuts new AI models, personal AI agents in effort to keep pace with OpenAI and Anthropic - The Tech Buzz",
@@ -174,6 +237,13 @@
         "summary": "Google expands CodeMender access to compete with Anthropic’s Mythos in AI security race Crypto Briefing"
       },
       {
+        "title": "Andrej Karpathy, Tesla Alum and OpenAI Co-Founder, Joins Anthropic - WSJ",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNbVd6ak5QblllM2NCbS1FVVozWnU2SUJCdDBCcUFjYjVWaS1SQnNuNnM0QVI4Z014RUJONnZCT0dBMWIzSTFieU5WZUN0Q2FQZHRueU9DQXBaenQydnFVWUxyV1l6QndWRjhQUkpaWTdJYkxsSm9FY2Y4MEZPY2VMSVoxdWJnWUFPY1hKcEVmQXhEREVKNDdFazhNVGFNbDN4WTQw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-19T21:30:00.000Z",
+        "summary": "Andrej Karpathy, Tesla Alum and OpenAI Co-Founder, Joins Anthropic WSJ"
+      },
+      {
         "title": "Appeals court hears Anthropic’s Pentagon AI suit - The Hill",
         "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPX2hRVUpMbS1HUXNqSklfYWlMOTZ4dTNUZDRyU2pHSlNkb2U2VGlydy05YmZwM0pRbTc2N09xVGd1U2RJSG5RYzhzemNpd1JzNHc2ZEpWbnBobG83QnJQbDJTdjg1dVJnbDVBcHJYNGVYcmZDckRoQ1ZNNllnbzZfZDZkMF93Q0dmbW5maVh1NUg2TGo2Y1p1MHZn0gGfAUFVX3lxTE5vS0dVQ2l3bXVqcDRIODludWZER2VUYVZpWExFd1RFU290bEt6R3o0WGZDVzlvNmJ4WnlMaG1vVzUtNkRXcUJIajJiNmFOTEZ5cm52Y0RET2lyUVlpNTFrYWhKVUNocjFFU21hMUd4SFdvbkptYjc0SU40eld2c01vdUZZUkNLdjQ4WllZWHc2NWhnNnZ6NWdsWmN1dVpYYw?oc=5",
         "source": "Google News",
@@ -181,11 +251,11 @@
         "summary": "Appeals court hears Anthropic’s Pentagon AI suit The Hill"
       },
       {
-        "title": "Anthropic hires OpenAI co-founder Andrej Karpathy to lead Claude pre-training research - The New Stack",
-        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5GcFBrdVNfSUhmaUtyaVIxWW1zdkdBOGt1UVlZaUtrak1Zb0dRemQ1MkF3UEpkYi1uWnh2ZjV3VmNJR25XT2E5d1pJSHFwWWpudVBKajJIOUhRTWU1YW9yZjZ4TFVzWUtJV05IOVRn?oc=5",
+        "title": "OpenAI co-founder Andrej Karpathy joins Anthropic - Axios",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9UcWNHT21RRk15dzlSTTRBOGlOdmE2RHVFUndyS3lfcXpJV1lQQ2ZoTXF5VFlSZk9QLUJxNDJTQUM0c2RDLS1BQ3B6WXdiNUp1aDJEdXRGX25jQi1zdDVvVFprNG1iWWNLNGJpUzZuSFF5a3liUkZOSEt2dWY?oc=5",
         "source": "Google News",
-        "published": "2026-05-19T20:54:10.000Z",
-        "summary": "Anthropic hires OpenAI co-founder Andrej Karpathy to lead Claude pre-training research The New Stack"
+        "published": "2026-05-19T20:03:28.000Z",
+        "summary": "OpenAI co-founder Andrej Karpathy joins Anthropic Axios"
       },
       {
         "title": "Andrej Karpathy Lands at Anthropic Amid AI Research Arms Race - PYMNTS.com",
@@ -207,13 +277,6 @@
         "source": "Google News",
         "published": "2026-05-19T19:07:46.000Z",
         "summary": "Anthropic Just Bought a Developer Tool Used by OpenAI, Google TechRepublic"
-      },
-      {
-        "title": "Wall Street Watchdogs Pause Some Cyber Exams After Mythos Shock",
-        "url": "https://www.bloomberg.com/news/articles/2026-05-19/anthropic-mythos-ai-model-prompts-regulators-to-delay-us-bank-cyberattack-tests",
-        "source": "Bloomberg",
-        "published": "2026-05-19T19:03:40.000Z",
-        "summary": "US regulators are pausing some cyber-related examinations of the largest banks, giving the lenders more breathing room as the firms dig into the risks exposed by Anthropic PBC’s new Mythos AI model."
       },
       {
         "title": "CAIS embeds Claude AI into advisor workflows for alternatives intelligence - InvestmentNews",
@@ -256,69 +319,6 @@
         "source": "Google News",
         "published": "2026-05-19T18:11:24.000Z",
         "summary": "CAIS Integrates Anthropic's Claude for Advisors Wealth Management"
-      },
-      {
-        "title": "Google markets CodeMender to challenge Anthropic Mythos - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOMXFyM2N0a180bEN2UFJWVkJ5a1BvM2FscmNDZnhpUWVlQl9iRzdUM3NTRDBiSUgxVWZzVWxHSWV6Ull5N2ZiaE5iWi0xUXU4ejczUWNIbVRxOGplY24wN1NadHpmYy12WHUxeXJ0Z3hNSWxhd2RJblBXYnhQQU9aM0FKMEd3eHpCaTE3elQ0T05RblBHQXRDQi1zSlYtZw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T18:02:54.000Z",
-        "summary": "Google markets CodeMender to challenge Anthropic Mythos Let's Data Science"
-      },
-      {
-        "title": "Anthropic hires OpenAI co-founder Andrej Karpathy, former Tesla AI leader - The Tech Buzz",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZUZrckM3MHJLRkltSml1d3VxanQzeGctTnlYcXFYQ0l4Y3BncXFlcmM1ZU56alY3eGJiVDlhWkdqNmloVUY2NDJ2a3ctNkxudUFuU2psLWdWaG9tSjJMQkd0THhuMmpzWTd4aXV5dGFUei1GMmY4bTcxb1VKbGpIWlp2a09nRDZpODJ6X2dmbzFuemtmRkxWOWVOUmx0T3pPcGRjcThRck8?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T17:57:00.000Z",
-        "summary": "Anthropic hires OpenAI co-founder Andrej Karpathy, former Tesla AI leader The Tech Buzz"
-      },
-      {
-        "title": "2026 CNBC Disruptor 50 list: Why Anthropic was No. 1 in this year's rankings - The Tech Buzz",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONFZOY1dtRFZOaDFpX3Fac1V1MGQ2MC13UHNHZVl3dTdweGlidGw5TkRJODBMeTc5MXN2Z2doTHA5VkhteThhcFhucWZFSmZya1VsTHd2VEJKM1JYTmhoLTZ2R21OZ2R5WUpLdkRGTWMtdWVzd3BWM1MtaVd6REdSalNSVHZEM21WOUx1Rk1fVlVlSURPSGRkRVJGQlJieW9SNnFkRjBkME5icFU?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T17:57:00.000Z",
-        "summary": "2026 CNBC Disruptor 50 list: Why Anthropic was No. 1 in this year's rankings The Tech Buzz"
-      },
-      {
-        "title": "OpenAI co-founder Andrej Karpathy joins Anthropic's pretraining team - qz.com",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9uT3BST3pJY0R3NURheGxRcFQ3VzlOdGVPWC1DNXBuY0o1ZUZYTEdmMVFadWo2SXJnSUNoTFVLako4SG1lWEFac2RfVHY1eWtGM2dYVDlZOHY5YkJrakRmY2JjN3FITDY4QlhucHp6cFBPQU5ERU5oS0hB?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T17:12:57.000Z",
-        "summary": "OpenAI co-founder Andrej Karpathy joins Anthropic's pretraining team qz.com"
-      },
-      {
-        "title": "Anthropic hires OpenAI co-founder Andrej Karpathy to build next-generation Claude AI models - Mint",
-        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNUnJSZHZVTTdGeGhVdHJVMTYxd2dlMDNOTmlwem50SG9FbzZmWU14S3dOakR1ZzJkT2dQdHVJbmFTRzEwTXI4Tk9ONFhOUHNYTHRHLWxEbnZ6cEF0ZndLVjI1SHBuNjk3eFZJUVB0YjVCbnVteGtSQXgxMWZ3TjUxakFwdUdmZ0lkZmU2cEVsRHVMTW9UaFFmbDNlMXpkOVJGRXRDUENNZU5CQzQyakFzVDREOWdncEtZbkw1ekF2OUliTDU4cDJsU2Flem02WVpDMDZDUUhHckYxZXpUdW9Fc0V2UXc5MFB20gHuAUFVX3lxTFBocHk4b2czMnpTbmVYSzNrWDhkSWFLelplaHhCcUZLWHhvekcyTHVsaktmTHFTdEZXaEdiX2cwbVFQWDBNbXpBNVV0TXU3blhuSlBmZEJmeUxEN1JCMkV5VzhrOUh5bGdGNHA4WndUbkh3S2NPTDlPdDBITkVEaHlXVjZINWZVVWNHd0FjRmJfa0lmNUJoQmI2UjhxLW9SMHBydVlNTGJNVV9pWU1USmVWTTBFY2xvcEJuRVpZMm9wbE53TE9WQlNEN05UWXZlVjRfbGctemNaU2RqSHk5RDJHNXhfNFVReGFEWmlEV3c?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T17:10:26.000Z",
-        "summary": "Anthropic hires OpenAI co-founder Andrej Karpathy to build next-generation Claude AI models Mint"
-      },
-      {
-        "title": "OpenAI co-founder Andrej Karpathy joins Anthropic - Axios",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9UcWNHT21RRk15dzlSTTRBOGlOdmE2RHVFUndyS3lfcXpJV1lQQ2ZoTXF5VFlSZk9QLUJxNDJTQUM0c2RDLS1BQ3B6WXdiNUp1aDJEdXRGX25jQi1zdDVvVFprNG1iWWNLNGJpUzZuSFF5a3liUkZOSEt2dWY?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T17:02:44.000Z",
-        "summary": "OpenAI co-founder Andrej Karpathy joins Anthropic Axios"
-      },
-      {
-        "title": "London Anthropic AI Code with Claude Developer Conference - The Herald Journal",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNOU5lZi1vTWNIb3VGTXU3N2stZDhkeEpobkFsOFplSmNFZVM1Vzc3ME1LSEFTWGRNS21SQ3R2WF8zQjdkOE13cTdOYk9fTVJJLThlRmZnNWRPWFdXcV9jSFdyRjZIWmRqSVhCQmhXNDB3cXRMdm5lSWo2ZUFqU2c2OVNnUEF0SDZITDRZTGxYS21sNzN5ZmF2LWFDeWdJUHZiclplNlM5V2FVS0t1b3gwQ243eHB4V01SWTZyWTVCT3pldlVTZkhmWWRqclZjMDA?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T16:38:19.000Z",
-        "summary": "London Anthropic AI Code with Claude Developer Conference The Herald Journal"
-      },
-      {
-        "title": "Anthropic, the company behind AI-chatbot Claude, eyeing expansion in Seattle's South Lake Union - MyNorthwest.com",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE13MndfU01tNjlYNW5wRUJ2NmtTWFozMmtZWFR3UHloWXZobXZmYnhhdkI4SWV5d3hGVnJDYXUxM0hKZ0J4MndqLVRwVkFQOXNWNmNqakRBQU5DdXdCbTU5M19hTDl3U2JhZURTRDlkV2drbFJWUEc3UzdGMG4?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T16:31:51.000Z",
-        "summary": "Anthropic, the company behind AI-chatbot Claude, eyeing expansion in Seattle's South Lake Union MyNorthwest.com"
-      },
-      {
-        "title": "Anthropic hires OpenAI co-founder Andrej Karpathy, former Tesla AI leader - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNX3BaX2VoOXUxLXdIWm4tNWVHTmdob2NKeFpXeUR4dV9WNlZSc0pYeFZ4RlpyZHpOSnlheTV0WlVzRjUtYWVsU3VJNzdrdnUzdEI2NGhwT1gwaEZsRXpxQ1gyRVNvQ0JNUDlvNjdudHoxcmdIa0w4U1VkeHZrUWNMbUNteUZqV0xJZVZfeHNWdVhoOGxmSmI5aDU5VUxaOERFUTdibW1SS0RJd9IBrwFBVV95cUxOaUFIT1FQWlBnMXBYRHZZR1puZ0xGVUFUMzJWbU85dGdueDIzZU5rSGd5ZkRtbnNSRUVfZXM4ak9NcVZLclA5U2UwVFRQQUNNVnhwOEpYUmhsYl81NWpIX0QtdlRNVzdjQloxckRmNFhPNG1EMFhwUk9BeTF6c0t1VkhydFNIZVFrX2hrWjBtbmxWeFdpdklqX1JBUjc0b1laQkg1WDNfQzJLVzN5TjBv?oc=5",
-        "source": "Google News",
-        "published": "2026-05-19T16:31:08.000Z",
-        "summary": "Anthropic hires OpenAI co-founder Andrej Karpathy, former Tesla AI leader CNBC"
       },
       {
         "title": "Claude Code Builds Portfolio Websites That Look Like This",
