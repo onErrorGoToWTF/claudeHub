@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-05-22T19:19:33.290Z",
+  "generated_at": "2026-05-22T21:01:47.621Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Glasswing Initial Update",
+        "url": "https://www.anthropic.com/research/glasswing-initial-update",
+        "source": "Anthropic Research",
+        "published": "2026-05-22T20:37:40.000Z",
+        "summary": ""
+      },
       {
         "title": "Natural Language Autoencoders",
         "url": "https://www.anthropic.com/research/natural-language-autoencoders",
@@ -135,16 +142,39 @@
         "source": "Anthropic Research",
         "published": "2026-05-01T00:08:28.000Z",
         "summary": ""
-      },
-      {
-        "title": "April 23 Postmortem",
-        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
-        "source": "Anthropic Eng",
-        "published": "2026-04-30T21:34:23.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic to Close Over $30 Billion Round as Soon as Next Week",
+        "url": "https://www.bloomberg.com/news/articles/2026-05-22/anthropic-to-close-over-30-billion-round-as-soon-as-next-week",
+        "source": "Bloomberg",
+        "published": "2026-05-22T19:42:50.000Z",
+        "summary": "Anthropic PBC is set to close its latest round of funding, which may top $30 billion at a valuation above $900 billion, as soon as next week, according to people familiar with the matter, vaulting…"
+      },
+      {
+        "title": "Project Glasswing: An initial update - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8xYzlNUUlJNFFKOFg2VGJsdFNCVkdJaWJ0Qi1tZnh2bUxIUzIta0RfUHR1dnB4blV5NmpsUVZ2ZWJiSWlSUzhYQUVmdTNXMnZSWmNQVGRUbEMxa0kteTFzbFJJWklYdFpoZkgw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-22T19:35:36.000Z",
+        "summary": "Project Glasswing: An initial update Anthropic"
+      },
+      {
+        "title": "Project Glasswing: An Initial Update",
+        "url": "https://www.anthropic.com/research/glasswing-initial-update",
+        "source": "HN · 104↑",
+        "hn_id": "48240419",
+        "published": "2026-05-22T19:31:45.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic's \"Profitability\" Swindle",
+        "url": "https://www.wheresyoured.at/anthropics-profitability-swindle/",
+        "source": "HN · 44↑",
+        "hn_id": "48240198",
+        "published": "2026-05-22T19:16:09.000Z",
+        "summary": ""
+      },
       {
         "title": "Elon Musk can’t hear you over the sound of his $1.75 trillion IPO",
         "url": "https://techcrunch.com/podcast/elon-musk-cant-hear-you-over-the-sound-of-his-1-75-trillion-ipo/",
@@ -160,12 +190,12 @@
         "summary": "A Tale of Two Anthropics Time Magazine"
       },
       {
-        "title": "Microsoft Drops Claude Code After Budget Overrun",
-        "url": "https://aiweekly.co/alerts/microsoft-drops-claude-code-after-budget-overrun",
-        "source": "HN · 65↑",
+        "title": "Microsoft starts canceling Claude Code licenses",
+        "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
+        "source": "HN · 127↑",
         "hn_id": "48238896",
         "published": "2026-05-22T17:32:04.000Z",
-        "summary": ""
+        "summary": "https:&#x2F;&#x2F;archive.ph&#x2F;WfCta"
       },
       {
         "title": "A founding member of OpenAI has joined Anthropic to boost Claude's research capabilities - TechRadar",
@@ -178,7 +208,7 @@
         "title": "Anthropic Reportedly Reaches Profitability as Claude Wins Over Businesses - TechRepublic",
         "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPa3VEcDZvZXdNeGg0ZHZZbUU3UE1iMDY0UWlmTmJwZDNNTE1wMnZlS0o3bWdWcndKMlFSaGV1eEdmdGE0c29EdWg2QWFUNDF2RnRmNnFER3J0MmhzZ1dPdGQ1VFQ0bUhRSkk3bTlvdmdrQm1fVFA0NW1SSE5CS3A4ZVczNEZOenBsYi0zOWNPdTFZQUZkMFE?oc=5",
         "source": "Google News",
-        "published": "2026-05-22T17:19:04.000Z",
+        "published": "2026-05-22T17:20:36.000Z",
         "summary": "Anthropic Reportedly Reaches Profitability as Claude Wins Over Businesses TechRepublic"
       },
       {
@@ -198,7 +228,7 @@
       {
         "title": "Launch HN: Superset (YC P26) – IDE for the agents era",
         "url": "https://github.com/superset-sh/superset",
-        "source": "HN · 49↑",
+        "source": "HN · 59↑",
         "hn_id": "48236770",
         "published": "2026-05-22T14:53:55.000Z",
         "summary": "Hey HN, we’re Avi, Kiet, and Satya. We’re building Superset ( https:&#x2F;&#x2F;github.com&#x2F;superset-sh&#x2F;superset ), an open-source agentic IDE for running coding agents…"
@@ -216,13 +246,6 @@
         "source": "Google News",
         "published": "2026-05-22T14:29:05.000Z",
         "summary": "EU makes little progress in talks with Anthropic on Mythos testing Crypto Briefing"
-      },
-      {
-        "title": "Anthropic is in talks to use Microsoft's custom AI chips for its Claude models - qz.com",
-        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5ZdVR1ZS14d1A0OU5RZHBLNElDLXdoaHRIdVhNT1J0YjRGQWZDQjVSdFVKc1F5QWpKemhhM3cxZ2d1YkxWaEQzaWhKSy1KQ0Z4Tm9GWXdLUlJmcFlmd00ycmJtT0QxR2NNZmhZ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-22T13:17:26.000Z",
-        "summary": "Anthropic is in talks to use Microsoft's custom AI chips for its Claude models qz.com"
       },
       {
         "title": "Microsoft Reportedly Considering Supplying Anthropic With AI Chips - International Business Times",
@@ -253,6 +276,13 @@
         "summary": "Nvidia Earnings, Anthropic-Microsoft Chip Talks Boost AI Gotrade"
       },
       {
+        "title": "The AI Token Pricing Crisis Behind OpenAI and Anthropic’s Revenue Race - Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPU3BGc2cwY24yTGRmVUZLWWx2TDFyS3ZwcnlHbTkxeXRWQ2ExMnF0RWhjbWdUTjdPV3Myd2xBM25ZSFJyVjNYYU5INjE1R3lNWjZRbUVxdkNqTE1FcjZ1NzJQYmpfR0hfUDNuY1ZDQ3ItUkU5WXdOYlZIcWN6WGU2TnFyazctWFBCSHcwcnl4S0lfWHRIVHJEbUl1VlBLc1lLLUpCRGM1ZGFrQWI5QXNIc1RQQ1o?oc=5",
+        "source": "Google News",
+        "published": "2026-05-22T08:29:46.000Z",
+        "summary": "The AI Token Pricing Crisis Behind OpenAI and Anthropic’s Revenue Race Investing.com"
+      },
+      {
         "title": "Claude Beats Gemini Because Of One Setting You Can Actually Touch, Expert Says - Yellow.com",
         "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBmVU1IOE5aYmZpdXdPVE1QbEhnckotOXhBbHpvYmpRX3k2THJtUmU1MWZPNklkSFBFd0JoeFFsNlVFUDZuNmtVbkJqUl9OemZISmlyXzdWcDhfM2JYbFd0bUdLV3dXQQ?oc=5",
         "source": "Google News",
@@ -260,11 +290,11 @@
         "summary": "Claude Beats Gemini Because Of One Setting You Can Actually Touch, Expert Says Yellow.com"
       },
       {
-        "title": "EU-Anthropic Talks Over Mythos Concerns Are Stalled, Spain Says",
-        "url": "https://www.bloomberg.com/news/articles/2026-05-22/eu-anthropic-talks-over-mythos-concerns-are-stalled-spain-says",
-        "source": "Bloomberg",
-        "published": "2026-05-22T07:27:23.000Z",
-        "summary": "The European Union has made little progress in talks with Anthropic PBC to get its banks and companies tested for digital vulnerabilities that the new Mythos AI model uncovers, Spain’s economy…"
+        "title": "Why is AI company Anthropic helping launch Pope Leo XIV's encyclical? - National Catholic Reporter",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxObzNxdFBzejJ1TVVBUFkwMkx2WEhtQTRsa1VERVhXdHYxNENmLUdiSlVpRFBib09wQ0IwVXpTSzF3TGZSUGpNZUxxek9mY0xGaE1wdFNMTkhfa2g2T3JnNl9nMjhtMWpYZTlkMFlNQ0RxUmxqdTY1ZXFHQ2ZQSS1RUllVZVltdzcyTHFBbkRYNDUtc2VjV2EzODlpRQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-22T08:04:20.000Z",
+        "summary": "Why is AI company Anthropic helping launch Pope Leo XIV's encyclical? National Catholic Reporter"
       },
       {
         "title": "Japan Secures Access to Anthropic's Claude Mythos Model - Let's Data Science",
@@ -272,20 +302,6 @@
         "source": "Google News",
         "published": "2026-05-22T07:23:36.000Z",
         "summary": "Japan Secures Access to Anthropic's Claude Mythos Model Let's Data Science"
-      },
-      {
-        "title": "276K+ KPMG Employees Gain Access To Claude Via Alliance - Quantum Zeitgeist",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5xRndjUDh2U3JEZ183OXpDWFFjV1h5RE5hSGd4T2RyWklydTE0THN5VWc2bnYyWFhhQTVSelUyRkJ5dkZyM292TnlvRmtQOUxiZmRTV2JPVk9ERnJyZjk4MUxPTDVzc0VsUGdQU0FjU1BmV0xwNnNqejdR?oc=5",
-        "source": "Google News",
-        "published": "2026-05-22T06:46:20.000Z",
-        "summary": "276K+ KPMG Employees Gain Access To Claude Via Alliance Quantum Zeitgeist"
-      },
-      {
-        "title": "Anthropic reportedly eyes Microsoft Maia chips to cut Nvidia reliance - digitimes",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQQTV1ZHYwclBvclBXVHNSX09BOFBCckZVdHRpdzk3V0NiMWUxM0djaThIZi0taHFGMVlVbF82V05mVC1Gekx0WU9USjNhd3dldTBMNDRrbUpDR3N2alYteFJXVHhmVTNzRVAtZ3FGQTVuNVlEMkpPOUVwRXQ4ZFVEenRSaXBJOGFSRGdJV1dBQ0ltblNHcTItX3BiYjRMcUk?oc=5",
-        "source": "Google News",
-        "published": "2026-05-22T06:17:45.000Z",
-        "summary": "Anthropic reportedly eyes Microsoft Maia chips to cut Nvidia reliance digitimes"
       },
       {
         "title": "Microsoft’s Maia AI chips could soon power Anthropic’s Claude models - Firstpost",
@@ -307,20 +323,6 @@
         "source": "Google News",
         "published": "2026-05-22T02:44:48.000Z",
         "summary": "Pentagon tests rival AI models to replace Anthropic’s Claude in military workflows Crypto Briefing"
-      },
-      {
-        "title": "Alibaba's proprietary Qwen3.7-Max can run for 35 hours autonomously and supports external harnesses like Anthropic's Claude Code - VentureBeat",
-        "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxON2FQNVBQcldMTXU3OEZTNzNyanEyOEZUWW0tRWFmZnBIRTN5ak4weEoyNVRJalRRYmFjaTh4T2JKbm5iaFl5U3ZpcWMxbGk2ellXYXR1ME9Qc201a0pXdFBldng5bFZ4enR4d3FoVXBpdjJLWmdVd1Q4QXNDVjdjenp2eFJ2V3AxWmx6VGFWTzhDUTJmbTllMTg5TWhzdkY4MjA5MW1jZ1BpblBMV0gya0JkdVZQeFlWbnlBNUpyVFMzdXNPNzBYb1JDcTNXdnZLQW5jcjRPd0ZSOXE2bktxMmo5c3VHM0t6bEZhcUxNU0JydUk?oc=5",
-        "source": "Google News",
-        "published": "2026-05-21T23:53:17.000Z",
-        "summary": "Alibaba's proprietary Qwen3.7-Max can run for 35 hours autonomously and supports external harnesses like Anthropic's Claude Code VentureBeat"
-      },
-      {
-        "title": "CrowdStrike integrates Anthropic Claude Compliance API into Falcon for AI governance - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQSExBcF9yVFhuWW5aM1Y1SmxwbFYyZHFmRmZSMUs1Z25kUkltTkg1RWNRYTlTb1VWeE5nYW1xOV9BaGhweXV0UVhjNWp6NE1YY01TZTlzWUg5N0JyOEV4cWZ3cDFQcFVZRWxCQ3VCa0xfaEJBSGp4ZGN4c0hpYkJNbk1mYw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-21T22:13:11.000Z",
-        "summary": "CrowdStrike integrates Anthropic Claude Compliance API into Falcon for AI governance Crypto Briefing"
       },
       {
         "title": "I Built a $1M/y SaaS with Claude Code, Here's How",
