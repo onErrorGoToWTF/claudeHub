@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T20:37:30.634Z",
+  "generated_at": "2026-05-23T22:40:24.881Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,25 @@
     ],
     "news": [
       {
+        "title": "AI Agents: The Biggest Updates You Missed This Week (Codex, Claude Code, Cursor)",
+        "url": "https://www.youtube.com/watch?v=52ltebR4Jnw",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "52ltebR4Jnw",
+        "thumbnail": "https://i.ytimg.com/vi/52ltebR4Jnw/hqdefault.jpg",
+        "published": "2026-05-23T22:29:01.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic says Mythos has found more than 10,000 software flaws - Startup Fortune",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNcE9zRWtPYWpUUmtqaHhyeE10ejZHTUNMSVVZTXZSd2hOOW1wQ0R2b1B0R2lwckprOVVIaDJHOXczYl9uYmNOVE95dmRpRHljc3piRFR3Ry1sWUpNTTFNcmdBSnVGaE1LUFNXcUtLQV9mS2hJdDlaVUI4SV9Rd01XU2J3NXRWRFhfYjdNcjJ2bnFnUzlZ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-23T20:39:03.000Z",
+        "summary": "Anthropic says Mythos has found more than 10,000 software flaws Startup Fortune"
+      },
+      {
         "title": "Anthropic engineer shares Claude Code cache tips to save 300 million tokens weekly - KuCoin",
         "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQemRfTURkcENDanduTHpJR1ZIRHUzOUpfN0dMY2FSLV9vVzJ0NU1SWUJ6QnZFU3dhMGowSk03ZGhkZ09tMUd0SFZTWFpLSUEzRFpRMm1lS2lKcjhVUGFZcGNKZGxCZkFzUDNWVHhha0FtRXhqdC1jUUQxQ3ljZXRxVEI0S2RiQmF2b29IcUc4Z0tDbldHT2RVa1NqRHNBUWZyaEhvQi1qbUt0bC1vVVE?oc=5",
         "source": "Google News",
@@ -210,7 +229,7 @@
         "title": "Inside startups, Claude has already won the AI coding wars. Cursor is fading. - Business Insider",
         "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQWGhaT0c5eVN5bnhVX1JyNkNKN1Z3NktZMHctM2Z2dFpkLWtWRDFaaFNUaEVrWUIyQlR6WW9UVWpWVm9DU09KVFFUbDBrOXpsNzZPa0xzSmxNcE5UZl9JaHp0NTA2N0Y2YnMxcHFfUWNwa3dXQS02NjVpY2ZVVldjVkhkT241QjJDTWpEOGtPVkN2bVB4YVpHVDJVQTE?oc=5",
         "source": "Google News",
-        "published": "2026-05-23T09:00:13.000Z",
+        "published": "2026-05-23T09:00:00.000Z",
         "summary": "Inside startups, Claude has already won the AI coding wars. Cursor is fading. Business Insider"
       },
       {
@@ -238,7 +257,7 @@
         "title": "Get ready to take sides in Big Tech’s giant IPO bake-off - Financial Times",
         "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQRkhOZ0xYMXB0bE5kVk9YeW5fTG5zTGlBRWw1U1ZPODFhc1JtNU41dlhNV2h2aVdiY21Ma3F6TzRPaVA3MmxURnZlNUpZTWxWblpZM1dwTjBuOWM3NVFSV0tZbURkcUhIN3ZzeGNKUmtvandIS0NuXzhlRkhRT1dKaTdwWU4?oc=5",
         "source": "Google News",
-        "published": "2026-05-23T04:00:40.000Z",
+        "published": "2026-05-23T05:02:53.000Z",
         "summary": "Get ready to take sides in Big Tech’s giant IPO bake-off Financial Times"
       },
       {
@@ -312,7 +331,7 @@
       {
         "title": "Project Glasswing: An Initial Update",
         "url": "https://www.anthropic.com/research/glasswing-initial-update",
-        "source": "HN · 511↑",
+        "source": "HN · 523↑",
         "hn_id": "48240419",
         "published": "2026-05-22T19:31:45.000Z",
         "summary": ""
@@ -334,17 +353,10 @@
       {
         "title": "Microsoft starts canceling Claude Code licenses",
         "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
-        "source": "HN · 432↑",
+        "source": "HN · 446↑",
         "hn_id": "48238896",
         "published": "2026-05-22T17:32:04.000Z",
         "summary": "https:&#x2F;&#x2F;archive.ph&#x2F;WfCta"
-      },
-      {
-        "title": "A founding member of OpenAI has joined Anthropic to boost Claude's research capabilities - TechRadar",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNcFZ6NVVQNmdUSENpS3NnU3hCNkh0WnBhNThWczBFZGJZcW40YkUzaC02NkFPbVpvSDRsaEZKak9NMTRyd1g4cVdWY3ZZdG9CWlNiUUlRNjY2ZjkxRkg5OWJKZzFTSVpBR21BSFJQeHF1bmh6aFRLY0w3NVZ4bHd2LWlXVk01b3hQMUU0bnVNWFpSZEdPeGVIRUsyQkRQR2c0Y1oyRUQ5NF8wblVFTUdjZ2w4Zk8zc2JZ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-22T17:25:00.000Z",
-        "summary": "A founding member of OpenAI has joined Anthropic to boost Claude's research capabilities TechRadar"
       },
       {
         "title": "I Built a $1M/y SaaS with Claude Code, Here's How",
@@ -501,18 +513,6 @@
         "published": "2026-04-29T11:01:10.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Live Artifacts just dropped... ALL your tools in one place!",
-        "url": "https://www.youtube.com/watch?v=4yEBOvtMr5o",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "4yEBOvtMr5o",
-        "thumbnail": "https://i.ytimg.com/vi/4yEBOvtMr5o/hqdefault.jpg",
-        "published": "2026-04-23T13:00:18.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -602,6 +602,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "AI Agents: The Biggest Updates You Missed This Week (Codex, Claude Code, Cursor)",
+        "url": "https://www.youtube.com/watch?v=52ltebR4Jnw",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "52ltebR4Jnw",
+        "thumbnail": "https://i.ytimg.com/vi/52ltebR4Jnw/hqdefault.jpg",
+        "published": "2026-05-23T22:29:01.000Z",
+        "summary": ""
+      },
       {
         "title": "I Tested 50+ Claude Code Skills, These Will Make You Rich",
         "url": "https://www.youtube.com/watch?v=HiULrNb-Muc",
@@ -919,17 +930,6 @@
         "video_id": "fyRRafCurzE",
         "thumbnail": "https://i.ytimg.com/vi/fyRRafCurzE/hqdefault.jpg",
         "published": "2026-04-29T11:01:10.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Live Artifacts just dropped... ALL your tools in one place!",
-        "url": "https://www.youtube.com/watch?v=4yEBOvtMr5o",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "4yEBOvtMr5o",
-        "thumbnail": "https://i.ytimg.com/vi/4yEBOvtMr5o/hqdefault.jpg",
-        "published": "2026-04-23T13:00:18.000Z",
         "summary": ""
       }
     ],
@@ -1745,6 +1745,13 @@
     ],
     "claude_learning": [
       {
+        "title": "AI Agents: The Biggest Updates You Missed This Week (Codex, Claude Code, Cursor)",
+        "url": "https://www.youtube.com/watch?v=52ltebR4Jnw",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-05-23T22:29:01.000Z",
+        "summary": ""
+      },
+      {
         "title": "I Tested 50+ Claude Code Skills, These Will Make You Rich",
         "url": "https://www.youtube.com/watch?v=HiULrNb-Muc",
         "source": "YouTube · Pragati Kunwer",
@@ -2085,13 +2092,6 @@
         "url": "https://platform.claude.com/docs/en/release-notes/overview#april-24-2026",
         "source": "Claude API Release Notes",
         "published": "2026-04-24T00:00:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Live Artifacts just dropped... ALL your tools in one place!",
-        "url": "https://www.youtube.com/watch?v=4yEBOvtMr5o",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-04-23T13:00:18.000Z",
         "summary": ""
       },
       {
