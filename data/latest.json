@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T22:47:08.303Z",
+  "generated_at": "2026-05-23T01:50:11.846Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,25 @@
     ],
     "news": [
       {
+        "title": "what is a claude code skill?",
+        "url": "https://www.youtube.com/shorts/p9axCFhPaII",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "p9axCFhPaII",
+        "thumbnail": "https://i.ytimg.com/vi/p9axCFhPaII/hqdefault.jpg",
+        "published": "2026-05-22T23:30:09.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Zoom’s Anthropic Investment Has Netted the Company $1 Billion",
+        "url": "https://www.bloomberg.com/news/articles/2026-05-22/zoom-s-anthropic-investment-has-netted-the-company-1-billion",
+        "source": "Bloomberg",
+        "published": "2026-05-22T22:41:51.000Z",
+        "summary": "Zoom Communications Inc., the videoconferencing company, has netted about $1 billion on an investment it made in artificial intelligence startup Anthropic PBC in early 2023."
+      },
+      {
         "title": "Project Glasswing: Anthropic says Claude found 10,000 critical software flaws in a month - Interesting Engineering",
         "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPY01lc2l6bFc2aWMwV1FGRVJ6engwWGQxdEIzZ3hfU2huUk42c1N6Z1E3VE00dlZ1TmdoY2tMM3gwbDBvdEFmUU5FUFhGRkZRbVFnV18zUnUyeERzczJDYlFZdGNKeFlFUF9EcUNHOXFJdGJrYWRoOWc5aTM2eXJFem45WV9CRFFHTDFxUGdrS2tEUEU0cHFBX1l4MGc5WU14dlZqa25WdTk?oc=5",
         "source": "Google News",
@@ -176,7 +195,7 @@
       {
         "title": "Project Glasswing: An Initial Update",
         "url": "https://www.anthropic.com/research/glasswing-initial-update",
-        "source": "HN · 230↑",
+        "source": "HN · 305↑",
         "hn_id": "48240419",
         "published": "2026-05-22T19:31:45.000Z",
         "summary": ""
@@ -184,7 +203,7 @@
       {
         "title": "Anthropic's \"Profitability\" Swindle",
         "url": "https://www.wheresyoured.at/anthropics-profitability-swindle/",
-        "source": "HN · 51↑",
+        "source": "HN · 56↑",
         "hn_id": "48240198",
         "published": "2026-05-22T19:16:09.000Z",
         "summary": ""
@@ -197,9 +216,16 @@
         "summary": "The SpaceX S-1 is finally here, and the story it tells goes way further than rockets. The filing runs to 36 pages of risk factors alone, and the numbers inside match the ambition: a $28 trillion…"
       },
       {
+        "title": "Anthropic Reportedly Reaches Profitability as Claude Wins Over Businesses - TechRepublic",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPa3VEcDZvZXdNeGg0ZHZZbUU3UE1iMDY0UWlmTmJwZDNNTE1wMnZlS0o3bWdWcndKMlFSaGV1eEdmdGE0c29EdWg2QWFUNDF2RnRmNnFER3J0MmhzZ1dPdGQ1VFQ0bUhRSkk3bTlvdmdrQm1fVFA0NW1SSE5CS3A4ZVczNEZOenBsYi0zOWNPdTFZQUZkMFE?oc=5",
+        "source": "Google News",
+        "published": "2026-05-22T18:04:18.000Z",
+        "summary": "Anthropic Reportedly Reaches Profitability as Claude Wins Over Businesses TechRepublic"
+      },
+      {
         "title": "Microsoft starts canceling Claude Code licenses",
         "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
-        "source": "HN · 145↑",
+        "source": "HN · 157↑",
         "hn_id": "48238896",
         "published": "2026-05-22T17:32:04.000Z",
         "summary": "https:&#x2F;&#x2F;archive.ph&#x2F;WfCta"
@@ -210,13 +236,6 @@
         "source": "Google News",
         "published": "2026-05-22T17:25:00.000Z",
         "summary": "A founding member of OpenAI has joined Anthropic to boost Claude's research capabilities TechRadar"
-      },
-      {
-        "title": "Anthropic Reportedly Reaches Profitability as Claude Wins Over Businesses - TechRepublic",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPa3VEcDZvZXdNeGg0ZHZZbUU3UE1iMDY0UWlmTmJwZDNNTE1wMnZlS0o3bWdWcndKMlFSaGV1eEdmdGE0c29EdWg2QWFUNDF2RnRmNnFER3J0MmhzZ1dPdGQ1VFQ0bUhRSkk3bTlvdmdrQm1fVFA0NW1SSE5CS3A4ZVczNEZOenBsYi0zOWNPdTFZQUZkMFE?oc=5",
-        "source": "Google News",
-        "published": "2026-05-22T17:20:36.000Z",
-        "summary": "Anthropic Reportedly Reaches Profitability as Claude Wins Over Businesses TechRepublic"
       },
       {
         "title": "Microsoft reports are exposing AI's real cost problem: Using the tech is more expensive than paying human employees - Fortune",
@@ -235,7 +254,7 @@
       {
         "title": "Launch HN: Superset (YC P26) – IDE for the agents era",
         "url": "https://github.com/superset-sh/superset",
-        "source": "HN · 67↑",
+        "source": "HN · 80↑",
         "hn_id": "48236770",
         "published": "2026-05-22T14:53:55.000Z",
         "summary": "Hey HN, we’re Avi, Kiet, and Satya. We’re building Superset ( https:&#x2F;&#x2F;github.com&#x2F;superset-sh&#x2F;superset ), an open-source agentic IDE for running coding agents…"
@@ -297,13 +316,6 @@
         "summary": "Japan Secures Access to Anthropic's Claude Mythos Model Let's Data Science"
       },
       {
-        "title": "Microsoft’s Maia AI chips could soon power Anthropic’s Claude models - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNb3AyZktMNEFpYXo5TnRCQnNkc3ZNdzFrcWc0Z1pxUkpDalBVVnhaVU9MYUZzVG1URWhyY29wRkpfRzFxWXRaZWdMTEp3TVZoUzJkLXNJOGJCaF9KcUVjbHV4dUZ2OFlYRHh1NVVPMURlQ0xybmo5RllRaE9fZG03RGtfbzJVcUhrdWoyQU52YjJOZTV4RE1aUUFXWFVUZkRLV3E3dFFCb3lNOGZhbENLVdIBtgFBVV95cUxPTy1hREpvTzZxS0V0V1UzSllFTk1Sa2JYVnhHTU50cTVmUF9TRk1leU81a3gyVXNIMlN2NW5qa1BrTFZpZnVzSGJPV0dGZFVGMWlOclRNMVlEYzg5QkhqYUZjRmJaSzN2QmJrbWZfSVoyTExja1VMd2JHa0VuMmtVLThmZDVoRldyOXhnZnYxck5RcTVJQldWZVNWb3hxdE1QUW85SERWYnF0MVNMdVRsMmRFYm5nZw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-22T05:46:42.000Z",
-        "summary": "Microsoft’s Maia AI chips could soon power Anthropic’s Claude models Firstpost"
-      },
-      {
         "title": "Anthropic reports elevated error rates issue - Breakingthenews.net",
         "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxONGhlWnRVcWg4NC1KZW1zWGlsaEtSckxZWF9BSTZlUUkyc2NfT3FtanJVdmVBWTRwRExpMWNZenczdXBSQkNJWlgwUXY0TkxJX0dzSzdybEt4RERpblg2NFd6RTRGNHhPOFRlY2pPV1gyeVpfZXFzWnZXdDRfTWxyZmRKX1hfRGtNRVlEUnFsazFvSGc?oc=5",
         "source": "Google News",
@@ -357,18 +369,6 @@
         "video_id": "VQPWyS2KGt0",
         "thumbnail": "https://i.ytimg.com/vi/VQPWyS2KGt0/hqdefault.jpg",
         "published": "2026-05-17T18:06:00.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "How I Run My Business Using 4 .md Files (Anthropic Ships All Four)",
-        "url": "https://www.youtube.com/shorts/uZZVHGE7SrY",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "uZZVHGE7SrY",
-        "thumbnail": "https://i.ytimg.com/vi/uZZVHGE7SrY/hqdefault.jpg",
-        "published": "2026-05-16T17:45:02.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -569,6 +569,17 @@
     ],
     "youtube": [
       {
+        "title": "what is a claude code skill?",
+        "url": "https://www.youtube.com/shorts/p9axCFhPaII",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "p9axCFhPaII",
+        "thumbnail": "https://i.ytimg.com/vi/p9axCFhPaII/hqdefault.jpg",
+        "published": "2026-05-22T23:30:09.000Z",
+        "summary": ""
+      },
+      {
         "title": "stop building AI agents. build claude code skills instead.",
         "url": "https://www.youtube.com/shorts/7FbLGNS73KM",
         "source": "Pragati Kunwer",
@@ -742,17 +753,6 @@
         "video_id": "VQPWyS2KGt0",
         "thumbnail": "https://i.ytimg.com/vi/VQPWyS2KGt0/hqdefault.jpg",
         "published": "2026-05-17T18:06:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "How I Run My Business Using 4 .md Files (Anthropic Ships All Four)",
-        "url": "https://www.youtube.com/shorts/uZZVHGE7SrY",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "uZZVHGE7SrY",
-        "thumbnail": "https://i.ytimg.com/vi/uZZVHGE7SrY/hqdefault.jpg",
-        "published": "2026-05-16T17:45:02.000Z",
         "summary": ""
       },
       {
@@ -1747,6 +1747,13 @@
     ],
     "claude_learning": [
       {
+        "title": "what is a claude code skill?",
+        "url": "https://www.youtube.com/shorts/p9axCFhPaII",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-05-22T23:30:09.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.149",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.149",
         "source": "Claude Code",
@@ -1912,13 +1919,6 @@
         "url": "https://www.youtube.com/watch?v=VQPWyS2KGt0",
         "source": "YouTube · Alex Finn",
         "published": "2026-05-17T18:06:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "How I Run My Business Using 4 .md Files (Anthropic Ships All Four)",
-        "url": "https://www.youtube.com/shorts/uZZVHGE7SrY",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-05-16T17:45:02.000Z",
         "summary": ""
       },
       {
