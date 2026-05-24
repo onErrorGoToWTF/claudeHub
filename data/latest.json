@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T11:05:02.905Z",
+  "generated_at": "2026-05-24T12:54:23.923Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -303,7 +303,7 @@
       {
         "title": "Project Glasswing: An Initial Update",
         "url": "https://www.anthropic.com/research/glasswing-initial-update",
-        "source": "HN · 533↑",
+        "source": "HN · 535↑",
         "hn_id": "48240419",
         "published": "2026-05-22T19:31:45.000Z",
         "summary": ""
@@ -325,7 +325,7 @@
       {
         "title": "Microsoft starts canceling Claude Code licenses",
         "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
-        "source": "HN · 464↑",
+        "source": "HN · 466↑",
         "hn_id": "48238896",
         "published": "2026-05-22T17:32:04.000Z",
         "summary": "https:&#x2F;&#x2F;archive.ph&#x2F;WfCta"
@@ -345,19 +345,20 @@
         "summary": "Microsoft reports are exposing AI's real cost problem: Using the tech is more expensive than paying human employees Fortune"
       },
       {
+        "title": "Show HN: Pablo – a Chrome extension that copies UI from any website",
+        "url": "https://www.usepablo.dev/",
+        "source": "HN · 30↑",
+        "hn_id": "48237415",
+        "published": "2026-05-22T15:42:32.000Z",
+        "summary": "Pablo is a Chrome extension that copies the HTML and CSS behind any element you hover. It captures computed styles, fonts (with @font-face and Google Fonts links), CSS keyframes,…"
+      },
+      {
         "title": "Launch HN: Superset (YC P26) – IDE for the agents era",
         "url": "https://github.com/superset-sh/superset",
-        "source": "HN · 102↑",
+        "source": "HN · 103↑",
         "hn_id": "48236770",
         "published": "2026-05-22T14:53:55.000Z",
         "summary": "Hey HN, we’re Avi, Kiet, and Satya. We’re building Superset ( https:&#x2F;&#x2F;github.com&#x2F;superset-sh&#x2F;superset ), an open-source agentic IDE for running coding agents…"
-      },
-      {
-        "title": "SpaceX files to go public, and the math requires a little faith",
-        "url": "https://techcrunch.com/video/spacex-files-to-go-public-and-the-math-requires-a-little-faith/",
-        "source": "TechCrunch",
-        "published": "2026-05-22T14:30:00.000Z",
-        "summary": "The SpaceX S-1 is finally here, and the story it tells goes way further than rockets. The filing runs to 36 pages of risk factors alone, and the numbers inside match the ambition: a $28 trillion…"
       },
       {
         "title": "I Built a $1M/y SaaS with Claude Code, Here's How",
