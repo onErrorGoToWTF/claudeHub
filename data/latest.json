@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-05-25T16:13:46.230Z",
+  "generated_at": "2026-05-25T19:11:46.291Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Chris Olah Pope Leo Encyclical",
+        "url": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
+        "source": "Anthropic",
+        "published": "2026-05-25T18:41:28.000Z",
+        "summary": ""
+      },
       {
         "title": "Glasswing Initial Update",
         "url": "https://www.anthropic.com/research/glasswing-initial-update",
@@ -135,16 +142,37 @@
         "source": "Anthropic Research",
         "published": "2026-05-01T13:51:54.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Personal Guidance",
-        "url": "https://www.anthropic.com/research/claude-personal-guidance",
-        "source": "Anthropic Research",
-        "published": "2026-05-01T00:08:28.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic’s restricted Claude Mythos model may be coming to Claude Code - BleepingComputer",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOM3gtQUw5b0lnX0FlSVFOdlloTnNHSVNYMENHOFdjU3hGS2Zvd2hGekUwc1RueGRVa0tWSW1ZWnZXbFdaNl94ZWJNaEtkSmtZeUV3ZmtSZFhuOTVoZTkyT01jRF90VVo2NHUxU3VLNXBHLW1yUHdXWFVaeENoQ29vc3ZKT0dkaWJfNWNQTWo4T3pJR243Z2hRVUpZOFNHY2hCQzVjZnNsOTY1bVhGWjdhYWtFRE1CSmc3MXc4Vk05VVBHbHc0ZEhFaTRvdTl2Z9IB0wFBVV95cUxNVWxiS2NQZGl3bXBBeWg2amk0U1YyMm5GLVc1X0ZsM2VLRjkzVXZvUjJZTC1ISERsbFBBakJvcVhqYzhtQ0dJSXhZQVNzWWJSMEYxTjFmTzdzZlhJVDNCMU5mWGJ1MXh3aUZQNlVZZXpJWUlQM3dxcmphVmNweUVERnRiZlo5NzRlUHpVSC1MMkJoOGl3LS1Mb3BGVG9LUWJ5LS1nMTNUZzhidzlkOE9KVHFQemlSNVc2SDFCUWFjZG5jdEJEQnNHRWQ5WlVLbHNmb2Jr?oc=5",
+        "source": "Google News",
+        "published": "2026-05-25T17:07:33.000Z",
+        "summary": "Anthropic’s restricted Claude Mythos model may be coming to Claude Code BleepingComputer"
+      },
+      {
+        "title": "Claude AI Review 2026: Is Anthropic's AI Worth $20/Month? - Memeburn",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9nZmVfUjlrbEpTSFhaQ0MwZ0NIV0dvbzlwdFNCZmkydWdtRERCTEpxMEhrTzlQQ25ndHp4Ulp4cG8zMDlQVFFTUllvTGpXSlE?oc=5",
+        "source": "Google News",
+        "published": "2026-05-25T16:22:29.000Z",
+        "summary": "Claude AI Review 2026: Is Anthropic's AI Worth $20/Month? Memeburn"
+      },
+      {
+        "title": "Anthropic’s Mythos Finds 10,000 Security Flaws, Exposes Patching Obstacles - Security Boulevard",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNdEd2QzNRMGxyVVc2NURJNDZSUlMwUURTQ2xvRlZYOHdIdVNDVnZqa1FYVjRlRHNjTTQwRjBGZm5GQ0dva3BMQjJTaGVKWU56dGtrUTlpRlNIaUZGcmkwSzJnVzFnZHd4ZmxTaFdCNzhfQXYtOFFrTUVrc3N2aGVOeHVqQ3FFWG1RUW82dFJyTkRkdG9MVmhHa0RwWVVDY2lPWUdRX2xrR0NlQ2dkZk9n?oc=5",
+        "source": "Google News",
+        "published": "2026-05-25T16:18:45.000Z",
+        "summary": "Anthropic’s Mythos Finds 10,000 Security Flaws, Exposes Patching Obstacles Security Boulevard"
+      },
+      {
+        "title": "Anthropic adds 28 security and compliance integrations for Claude - Help Net Security",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQd3FLd0sxNFpWUFY5WkJRNXY0QmMxZDFsa2FmVXpSNHJYYjdWOHMxNnkxRnhwZ3BXNjg4a2dGT09DVTh2THNwd3U1bjdYYk44NktyOTYtU1ZxMmpSZEJhUGlGaEZHVVY5R19xbzEteEdEaDlUUmZHUWgyZG9IUkJpN0ZFekFtWGdWb2F1R2hBdVZtSUdLdTd5TA?oc=5",
+        "source": "Google News",
+        "published": "2026-05-25T16:18:34.000Z",
+        "summary": "Anthropic adds 28 security and compliance integrations for Claude Help Net Security"
+      },
       {
         "title": "anthropic shipped the agent-killer.",
         "url": "https://www.youtube.com/shorts/W4d_eroYpXU",
@@ -156,6 +184,13 @@
         "published": "2026-05-25T15:30:09.000Z",
         "summary": "",
         "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic's Olah says AI must be guided from outside Big Tech - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPUjdKY25UdUNKeUJ2dU96T2Jrc0xHNTJ3bkwtMFpkS0s3SjYtU0NDNUxXTVZGM2xoOXM3eWNVSVFXUVJOdk9vT3ZXNlVpcXZVSXd3MU1JQXZaanc4RXNGRUQ0blFUejc4a2Nzak85dzQ5a3A5WlRuSHNNa3drSVd1QTdGRnl0d0VEVWFiTm1FQVZHaWw2bmQ1c2cwWkRYYWl1Vi13YTVqUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-05-25T14:31:44.000Z",
+        "summary": "Anthropic's Olah says AI must be guided from outside Big Tech Reuters"
       },
       {
         "title": "Fractional AI: Anthropic-Led AI Services Venture Acquires Company - Pulse 2.0",
@@ -172,11 +207,18 @@
         "summary": "Mythos mania leads to discovery of thousands of critical bugs: So why are devs unhappy? Cybernews"
       },
       {
-        "title": "Claude Mythos Just Found 10,000 Bugs In Critical Software, And That Is The Good News - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1aZTdTVzJrNzVDOUFybmxOU0lXRXFpeUxZdjFhbDdrbGkwZE9UbzVfLXliQ0FFWmVNSUYtUUd6bWZzVFE3b0lfbmZlTnFkckQwZmRpdXRzcjQwd1lVY1EzZFVrbUs0dzB3amRvNlNHbm4?oc=5",
+        "title": "Microsoft is dropping Claude Code by June 30 after burning through its entire year's AI budget in just months - Cybernews",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBWbzNuNVNvclRMNmo1czZFRUxCX0hITFZiZHZ3T001OW9LbW5hSzBfRHdic3hrbWM5X3pfaW9rTndYRVJJeXRWbVl6REM4SWo5Q1IzVGg1eTFaZTVSMFJHZ21XME5kaVNDUHNxS3pUWFdRYVVUMGhVZE45RWZHSFk?oc=5",
         "source": "Google News",
-        "published": "2026-05-25T10:57:04.000Z",
-        "summary": "Claude Mythos Just Found 10,000 Bugs In Critical Software, And That Is The Good News Yellow.com"
+        "published": "2026-05-25T12:14:46.000Z",
+        "summary": "Microsoft is dropping Claude Code by June 30 after burning through its entire year's AI budget in just months Cybernews"
+      },
+      {
+        "title": "Anthropic: Mythos Detected 23,000 Potential Vulnerabilities Across 1,000 OSS Projects - SecurityWeek",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRGNsYWRxNkJMdGltRG9uU0hwMHlHRDgxNkwxZTJXaXBqWTJNSmw4RmptbTJiZlRyWlUyQ2txT0FIZkFqUndNT093bDZjb0YwTG15aUVCNVlkak56ZWpoSWhtU1Y1UWRrcFlJaUt1T3NZQXRjc2Z4V2Z4Q000TEZHYmJPNV9JWDhvcVlLcmhlSE9OMF8tbnI3bFNSdUpWNDVXaUJ4a3dlcjgwU29sbzlMSVJB0gG3AUFVX3lxTE9iOWJMU1JrNkVUVEpZWlkwRTl5RFB4SWoxZ0NJR0k3RmRvTUljZ3dlaUlxOUZqdTdkQmw1ZkZOSS1OZXhMWFB4LS1QRTdHMDNDUjBjV2diRnJZamM4dExUWUZlSUk3YWhJOHoyOGxFSEI1R29TY21WS2YzR1lwX2NaQllSX3RCVGhJeXZvRkFkSXRTLUtQZ1g5U1V1WFdHakhieTE2c1NGTHU0MVZka0ZoR3hMMjJpYw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-25T10:58:07.000Z",
+        "summary": "Anthropic: Mythos Detected 23,000 Potential Vulnerabilities Across 1,000 OSS Projects SecurityWeek"
       },
       {
         "title": "Anthropic’s Claude has come up with a polite alternative to “touch grass,” and users want to know why - Cybernews",
@@ -184,13 +226,6 @@
         "source": "Google News",
         "published": "2026-05-25T10:43:10.000Z",
         "summary": "Anthropic’s Claude has come up with a polite alternative to “touch grass,” and users want to know why Cybernews"
-      },
-      {
-        "title": "Anthropic's Mythos finds 10,000+ vulnerabilities, flags security bottleneck - Business Standard",
-        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPV2g1a2ZHSi1mZEZtblRHc1FxUzhaTXJYMHhKY3hScmpKVlRhR3pzbnJ4LVVIQ2U5OG9qNGN3U3pwQUk4WDRNWHpqQ0E0OTNlRFQ2LV9PcUgtYkpqMGljOXd5SnFraWRxV1RDUXQ0b2RsRjRiTGFjZF9mYmswZ0drYk5kT2lZV1BURVYtNkQxM1BCUUlKZFNtRnhPWmtyR0xjMkx2T0NQTUFHRkFzcnlPZFQ4THh1LWtUa1AtZjczcXg2bmZ4bU8tZmhtbnNCRUhRYlhEd1lGdTZNR2thSlM0UDVn0gHnAUFVX3lxTE1WaUtjTWUyUmw5R0VyMVpkUnNWMDhpekxyd3pHcnV6TlJNNTI4LW9UMko5VDIwMzRqTG5Ra1dBVEhLdFg0TjQwN0hocFZqOXN5cGVsT1lYZmRsMTJLZzN6WGhXeUVjTUpuTTZCbWdVeU5GcXpuaC16VVZEbTFOdXkwcTV1ay1Qa3hhZzZpWmctNXJlZEx6RTJvb0IxdmJPakYtdGtlSHJMY29FUW5TN1VQTGN3N1RMN05HNTE2anVzdGh6SmpqeENPNnhlcFdYSEtRZTR4LUdUeVZhRUlOclZFbllraVhLUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-05-25T10:36:06.000Z",
-        "summary": "Anthropic's Mythos finds 10,000+ vulnerabilities, flags security bottleneck Business Standard"
       },
       {
         "title": "Anthropic Staffer Turns Texts Into Wedding Recap - Let's Data Science",
@@ -228,11 +263,11 @@
         "summary": "Anthropic updates on Glasswing progress in tracking cybersecurity bugs Telecompaper"
       },
       {
-        "title": "ECB Summons 111 Eurozone Banks Over Claude Mythos Cyber Risks - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZ1NNY3UtZlFyX2ZmX2plYU1FclhmWTkzYnFjUHJEdGpaUE9lY2tla2UyOTlpcjdzVGFsajJlNjJWaHRMTE9fZjE3MlVDeHcybW5Zdk1nY05hSEFsLVBHazZsQjRqSG1UaDJZVkpRdkZxU0pXTGNfb3MzSnAtOEdXa1VWVXFlWm8?oc=5",
+        "title": "Why Microsoft is betting on internal AI tools over Anthropic’s Claude Code - CNBC TV18",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQOFgwR2pzcEw5ZFV1SVBPLWlXVUFJYXd1YjNBVkdpdGVHNUJ2cWIzVlAxRjhnMmxZc0FqNHdxam9pbFNFRnk0TUFWcFZpaFU2MU5YLTdXdjltWUo1NmdpR0xpTnBnWWtmamxVRVZ1c3RvMEdxX0RORUI1ZFkyal9BdTdYWmlkU0NLOUpzVGNONGk4WW9FUDljbDZKWWcybjlmeWV4T0J4YmdtMENJaUlXZVMxM2lQMXhiT1Flc1BnRWN6YjRwRXfSAcsBQVVfeXFMUEdEcUR1Uk93dERla25waXctS3RZeFh0ejVqTXAzSFAxZ0JJOUphX1l6djUzLUxLMHpXMlFCSUExZ015OTdXY3dMd09oVEpPRWlkWDZWb0JySXI1d3hybmkyODIyNDFmN0t0aHkzWjZFZE53M2FuME1JTGk3Q1pYQWExUWdSdU5yVFJIVkpEX08wUEVwTHVqSWJUa3dDcDBVaHg1S0cwLUxfRkVWOE1YVmQteFBFTFlvTUd2VF92R2dqR2gwVFNzNGg1Tkk?oc=5",
         "source": "Google News",
-        "published": "2026-05-25T07:24:37.000Z",
-        "summary": "ECB Summons 111 Eurozone Banks Over Claude Mythos Cyber Risks Yellow.com"
+        "published": "2026-05-25T07:57:24.000Z",
+        "summary": "Why Microsoft is betting on internal AI tools over Anthropic’s Claude Code CNBC TV18"
       },
       {
         "title": "claude code for beginners. no python required.",
@@ -310,7 +345,7 @@
       {
         "title": "Claude is not your architect. Stop letting it pretend",
         "url": "https://www.hollandtech.net/claude-is-not-your-architect/",
-        "source": "HN · 259↑",
+        "source": "HN · 263↑",
         "hn_id": "48259784",
         "published": "2026-05-24T18:28:11.000Z",
         "summary": ""
@@ -321,41 +356,6 @@
         "source": "Google News",
         "published": "2026-05-24T18:07:22.000Z",
         "summary": "Anthropic Moves Closer to Public Claude Mythos Release: 10,000 Critical Bugs Found First Tech Times"
-      },
-      {
-        "title": "Run Your Whole Business From One Tab With Claude's New Update - Forbes",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYnNPN00xVlc4Z1ZYdl9KZUowU25NVVFqWnlqLTBXZ3RCNnJuTWdZdkczLThYSndCVzkyTjAyREFQVXVIRXphZE1vVU5BX1U0LXVheGZrUktzRUcxWkVCbGhyU2p5V1M2VXVxMFJqQ3NUMkFWUHFESnFYZ0xobkhsU3lwbGNHRE5EMzBuSjFQdEtzT3N0OFVXenM1aF9YczBKZXd3TzdFZlJReDBCc25MMw?oc=5",
-        "source": "Google News",
-        "published": "2026-05-24T16:00:42.000Z",
-        "summary": "Run Your Whole Business From One Tab With Claude's New Update Forbes"
-      },
-      {
-        "title": "Anthropic plans Claude memory update with new Memory Files - TestingCatalog AI News",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQdmEzam5vMVl2bkpzR0RTSDdWQmJCcjRkdXMtZFVwRkNYY3YyTDRoWmVLTzdRZG43QVdvYjBMckFqZG1PUjlJT3AzS3lSWlRnQ2tSenlkbnZ4MXJGUGVzUWNuMkFmOTVRZ09MaHJXcVZzb09IUHdpZ3lrbjFUT2dvb0RiTHFyS3JWZHhOZ3JDeFFfY0dy?oc=5",
-        "source": "Google News",
-        "published": "2026-05-24T15:45:19.000Z",
-        "summary": "Anthropic plans Claude memory update with new Memory Files TestingCatalog AI News"
-      },
-      {
-        "title": "Anthropic’s Claude Mythos AI Uncovers More Than 10,000 Critical Software Vulnerabilities - LinkedIn",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbWtmQmVpOE5ibG9pY1pXa3lUWVNHUUpmNkNFcUxpOXU3M0pDQUVoakh1eTdfbVJ1ZVBtSTcxTTR1UnFjb3hvTnk5MTVqMTZaaHNzQTNZNHpveV9OWTlIT0VpN0h1ZGJ0LUpBM2lGMWxnR01PbjNNazlDQlczLUxNcF82Tndab3pIWTZz?oc=5",
-        "source": "Google News",
-        "published": "2026-05-24T14:30:02.000Z",
-        "summary": "Anthropic’s Claude Mythos AI Uncovers More Than 10,000 Critical Software Vulnerabilities LinkedIn"
-      },
-      {
-        "title": "Pope Leo will take on AI alongside an Anthropic co-founder - NBC News",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOYVF2TGQ3ZFh4NGttVWtTTXhQeERoRnlmcENNT1ZLcjhmNnVwam81MHNxVVRkemRsVFBaWXFVSnJuNXhrZkxSSmxvZkllckJvdHRQTENuSzFvNFJhMGExNzdnMmxEb3FYYXRaS2lJRWFXVGxXU0lwMEJiQllYSFgxQ0FfRDNjU2taWGtBWXhIQXY?oc=5",
-        "source": "Google News",
-        "published": "2026-05-24T12:00:41.000Z",
-        "summary": "Pope Leo will take on AI alongside an Anthropic co-founder NBC News"
-      },
-      {
-        "title": "Anthropic is moving Mythos 1 closer to Claude Code - Startup Fortune",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxORXM3RVJDeVU0QXp6YkpRRXlQdHR1WEhrQmF0SHh3NnZpc1ZGeUhJZjEwOXV6TVFLLUprZFl2eHA2MzJJMDBUeUN3d3FYNVFmalJoRXdla2dMRTdVODF4ZW80ZE5fWFN4WnQzeFR0Wk9fRGQzZDZPNE9yVDkwODdjWk5CNEk?oc=5",
-        "source": "Google News",
-        "published": "2026-05-24T08:54:23.000Z",
-        "summary": "Anthropic is moving Mythos 1 closer to Claude Code Startup Fortune"
       },
       {
         "title": "AI Agents: They Run for 24+ Hours NOW (Codex & Claude)",
