@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-05-26T17:17:37.077Z",
+  "generated_at": "2026-05-26T19:51:53.289Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "How We Contain Claude",
+        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+        "source": "Anthropic Eng",
+        "published": "2026-05-26T18:05:40.000Z",
+        "summary": ""
+      },
       {
         "title": "Chris Olah Pope Leo Encyclical",
         "url": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
@@ -135,29 +142,50 @@
         "source": "Anthropic",
         "published": "2026-05-01T15:44:00.000Z",
         "summary": ""
-      },
-      {
-        "title": "Emotion Concepts Function",
-        "url": "https://www.anthropic.com/research/emotion-concepts-function",
-        "source": "Anthropic Research",
-        "published": "2026-05-01T13:51:54.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic's Claude Mythos, or a model like it, to get public release - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBwNUtpeTNOcWVyWHRSOGRRQkpYdGhKQ1cxd0M5MEs5cFVoQ1QwZnZPQ1gtWk5zbWMtTjR6a0lmR2FxN1hXWHh3YTBBcGVDdWN2cktDM2lkLWdfcm9kbEZsN2NMb19SdEJYVTM2VXRPaklnNnFrbkE?oc=5",
+        "source": "Google News",
+        "published": "2026-05-26T19:41:15.000Z",
+        "summary": "Anthropic's Claude Mythos, or a model like it, to get public release Mashable"
+      },
+      {
+        "title": "Anthropic Expands Public Access to Claude Mythos AI Model - BankInfoSecurity",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPNElTRTVFNFV2WktTX2JzVHdYX04tQjQxa3NLcjZfakdiQ0JQNDBpNnNvV1FnRUd5dkpPSzBsNWlsaEdxZ0VoNEZLMkRRVktOM2JmNjljbnhoSjJMU0FORnM0XzBHS1pBNGNadjRtWmI2ZTFjcnpldDc3OUxBTW5aS0pwUzhGMTRsRDNQX1NCRFp4WFY0ZGdyWWhGWUxsa1U?oc=5",
+        "source": "Google News",
+        "published": "2026-05-26T19:12:38.000Z",
+        "summary": "Anthropic Expands Public Access to Claude Mythos AI Model BankInfoSecurity"
+      },
+      {
+        "title": "Anthropic asks religious thinkers to help shape Claude as pope warns about AI - Scientific American",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQalBxVWVVOUtFS0tobHRYekxHMFRRcmdYbEUzMTRJVGxmV0ItMnMxS3hYcGRKQXJvU3RhQlZ0SWxzc2hJdVBHN2M5OFVtQmdhZWZuZ3JnUjdWVlVncnRLZXdQWWd0QkNkWmdYS3N0V1hXcFBLcmtnWDdZY2FmSWxMZ0tpYzBpaEhDdDJMVWlDZkg4VHo0bEhucGV5dy04T2d2X0lrSjRsakJjeHNyMjdYOWgxN1d6RkF5OUJDM3VR?oc=5",
+        "source": "Google News",
+        "published": "2026-05-26T19:00:00.000Z",
+        "summary": "Anthropic asks religious thinkers to help shape Claude as pope warns about AI Scientific American"
+      },
+      {
+        "title": "Anthropic’s Claude Mythos Flags 23K Potential Open-Source Security Flaws - eWeek",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBSaS1uMURZNXUtcUxUVWd3ci1wb01TeXN1MGZZSFdad1ZPQnFSYzVleHR1aGpnZkQ0SjctX1hzc2RHSEQwU21qVzZZU2N5OG1Eb0QyWFl0NThObVlvbkYyM2Z0NTBPZTdVVWNiZng4M2J6NzJ4?oc=5",
+        "source": "Google News",
+        "published": "2026-05-26T18:24:21.000Z",
+        "summary": "Anthropic’s Claude Mythos Flags 23K Potential Open-Source Security Flaws eWeek"
+      },
+      {
+        "title": "Smarsh brings Claude Enterprise into compliance platform - FinTech Global",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQaGpCUlhiWFI0NXg1M0Y2anJPY2RTV2lqaHZlSjA4c1NjaXR1TUdVaFBmcTZxT09ILWVGeFBtRVYya3M1dFNBMTZ3bFE3ZDJNb3lTOVJneW5vTG42TVJLQW5lc20wMlNXLTlWQkV3ZHN3b3VxRjEteTBzOGdWNjhaZkk4NHN3bUh6cDBzTlpxcXdSZTZRaWc?oc=5",
+        "source": "Google News",
+        "published": "2026-05-26T16:59:48.000Z",
+        "summary": "Smarsh brings Claude Enterprise into compliance platform FinTech Global"
+      },
       {
         "title": "Anthropic's Claude Mythos, or a model like it, to get public release - Mashable SEA",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeUpuTEsydm9YR2lEbU1iZDRGUUNVcUdXWXJ1YkdSdlptUEgwYW5xZlBZb25ac1ZGMDJ5RmFUdFp3X3VIYW9VVmkwa1lqSjdwcXNFMEpVeHIySXpILWZRUU94MGJha0xQdkRyeVIzdU9IdllERDQxQ250QUd4bG4wTFNtSGQxb1prMW1IODFvajBlNGdIVmhXcUdIWWlvUm5vSTdz?oc=5",
         "source": "Google News",
         "published": "2026-05-26T16:42:22.000Z",
         "summary": "Anthropic's Claude Mythos, or a model like it, to get public release Mashable SEA"
-      },
-      {
-        "title": "Smarsh brings Claude Enterprise into compliance platform - FinTech Global",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQaGpCUlhiWFI0NXg1M0Y2anJPY2RTV2lqaHZlSjA4c1NjaXR1TUdVaFBmcTZxT09ILWVGeFBtRVYya3M1dFNBMTZ3bFE3ZDJNb3lTOVJneW5vTG42TVJLQW5lc20wMlNXLTlWQkV3ZHN3b3VxRjEteTBzOGdWNjhaZkk4NHN3bUh6cDBzTlpxcXdSZTZRaWc?oc=5",
-        "source": "Google News",
-        "published": "2026-05-26T16:36:20.000Z",
-        "summary": "Smarsh brings Claude Enterprise into compliance platform FinTech Global"
       },
       {
         "title": "Anthropic’s expansion of legal AI tools is good for lawyers, experts say - The Global Legal Post",
@@ -183,7 +211,7 @@
       {
         "title": "Launch HN: Minicor (YC P26) – Windows desktop automations at scale",
         "url": "https://www.minicor.com/",
-        "source": "HN · 31↑",
+        "source": "HN · 51↑",
         "hn_id": "48280729",
         "published": "2026-05-26T14:57:27.000Z",
         "summary": "Hey we’re Faiz and Saheed and we built Minicor so AI companies who need to integrate to desktop systems with no API can quickly build scalable desktop RPAs. Demo:…"
@@ -196,11 +224,11 @@
         "summary": "Anthropic: Claude Mythos identified 10,000+ software flaws Help Net Security"
       },
       {
-        "title": "Anthropic’s Claude Mythos Flags 23K Potential Open-Source Security Flaws - eWeek",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBSaS1uMURZNXUtcUxUVWd3ci1wb01TeXN1MGZZSFdad1ZPQnFSYzVleHR1aGpnZkQ0SjctX1hzc2RHSEQwU21qVzZZU2N5OG1Eb0QyWFl0NThObVlvbkYyM2Z0NTBPZTdVVWNiZng4M2J6NzJ4?oc=5",
+        "title": "Anthropic CEO Dario Amodei warns AI models could target wrong people, lack human judgment - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB0VDJfU1h4dEY1VkZkSEMxSUtsOWczWlFCY3dFU2FPQno2Rk5ZemEwVS1MN01KdmtrbWY0bDVfeXczTHBzNmQ5eFNiYkVFQk5nTUxuekp4ZWxObGIxX3l5XzZZLW1OLXVNVV8tYzA3MXM?oc=5",
         "source": "Google News",
-        "published": "2026-05-26T13:34:32.000Z",
-        "summary": "Anthropic’s Claude Mythos Flags 23K Potential Open-Source Security Flaws eWeek"
+        "published": "2026-05-26T13:50:07.000Z",
+        "summary": "Anthropic CEO Dario Amodei warns AI models could target wrong people, lack human judgment Crypto Briefing"
       },
       {
         "title": "Anthropic expands Claude’s enterprise security governance with 28 integrations - Crypto Briefing",
@@ -210,18 +238,18 @@
         "summary": "Anthropic expands Claude’s enterprise security governance with 28 integrations Crypto Briefing"
       },
       {
+        "title": "Anthropic Expands Claude’s Enterprise Security Governance With 28 New Integrations - SecurityWeek",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOV0xpNjlkWjRLSjRyYVNhTkNFZnA5Vm85UDY2c25KLTk2RnJEanZ6WnMyb0JSNGRSRm4zVUY1SVI4dF84MEtMZGlTODRVRHRwdy11b0dKVnpzR212djBvMGtuYkJGSG5aWEpzdHBXQXBJWUF3dTZ0Um82WWxvZUNXQ00zV2l2aHRtcE5JdUtXajRLS0VtYjVwOThCenlyN2N4XzQ1TlZvT29aUdIBrwFBVV95cUxPUVdWbmhyeDUyaU9wbDBUNnBITEhSM1VlMHVKWGhJd2FxUDloX1J3VDJhQjM0UjFJU0RkODl3Z0lKa0gyZ19adlBEdFFEeDFfSUZSSzFRMlR0SGY3TVo5Ym5kY1ZYZXlLcFlfTUN2Vm4yMHhQQ1pNamdqdVR1OVRHMlotWFlVbFVLaEZXXzI5ZEJPNUxMQ0N6a0NvaEVYdFlQOFZTYWdIYTktY0k0Yl93?oc=5",
+        "source": "Google News",
+        "published": "2026-05-26T11:44:53.000Z",
+        "summary": "Anthropic Expands Claude’s Enterprise Security Governance With 28 New Integrations SecurityWeek"
+      },
+      {
         "title": "KPMG rolls out Anthropic Claude Cowork to tax teams - Business & Accountancy Daily",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxObnBhNk9LdlVIc1p2VWpvZ3RzWTFBa2ZqT0prSl9JaGoxc3hUM3hheUFJc0diSkw4U1VvNXBFNlc4Z0JQOHg5V0t2OUlIc1dQaDByWWduN19DM2RCNC1QVW1OekFFSGtjcGJrR2VodTd1SnU2dll6R1VyM2lkdVBHLTVGN0V2SHc?oc=5",
         "source": "Google News",
         "published": "2026-05-26T10:47:20.000Z",
         "summary": "KPMG rolls out Anthropic Claude Cowork to tax teams Business & Accountancy Daily"
-      },
-      {
-        "title": "BNP Paribas Works With Mistral to Prep for Mythos-Like AI Models",
-        "url": "https://www.bloomberg.com/news/articles/2026-05-26/bnp-paribas-works-with-mistral-to-prep-for-mythos-like-ai-models",
-        "source": "Bloomberg",
-        "published": "2026-05-26T10:32:50.000Z",
-        "summary": "BNP Paribas SA is working with French artificial intelligence startup Mistral AI and other partners to prepare for cybersecurity threats posed by new models such as Anthropic PBC’s Mythos."
       },
       {
         "title": "Big Four consulting has 2 AI nightmares. KPMG’s answer to both is the same - Fortune",
@@ -281,7 +309,7 @@
         "title": "Our survey about vibe coding became a vent session for the AI haters - Business Insider",
         "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPV2VUa09hNll0ZlVnU2o1WFpaOTQxNEFfaTR1N0pmbFZPSjVNZ2RsX3JETmpvT0xTSnZMN2tCUW01cHUyZ1BpVzJXNl9QREVBcGd2LVBPamllUjlNTWNpOXIxR1VMc1djYS1LM2Y3Tm1WeW9MZjlDcXFXV1NrbGlyYjc2VlJlR0tydHJjcGRfdllQeEpq?oc=5",
         "source": "Google News",
-        "published": "2026-05-26T09:00:14.000Z",
+        "published": "2026-05-26T09:00:00.000Z",
         "summary": "Our survey about vibe coding became a vent session for the AI haters Business Insider"
       },
       {
@@ -304,35 +332,6 @@
         "source": "Google News",
         "published": "2026-05-26T05:26:30.000Z",
         "summary": "Wiz brings Claude compliance into the cloud security stack Startup Fortune"
-      },
-      {
-        "title": "Anthropic's Mythos AI model detects 23,000 vulnerabilities across 1,000 open source projects - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9GS0I2XzVocGdWY3p1a29YQko3OTN1ZXdtUGROeWRFT3B3UXllV2JsMlhraE5aNTFPS0hWOFhPSzE0YWdkNzRsRjJxeS1pYWZWeGZNYUNoN3NMZ0QwTTd4V3JuV2VacGpTazdZcFQwZFVSanU5UGR0bVNn?oc=5",
-        "source": "Google News",
-        "published": "2026-05-26T02:42:58.000Z",
-        "summary": "Anthropic's Mythos AI model detects 23,000 vulnerabilities across 1,000 open source projects Crypto Briefing"
-      },
-      {
-        "title": "Cloudvisor becomes an Anthropic authorized reseller for Amazon Bedrock, bringing Claude to startups on AWS - The Daily Tribune News",
-        "url": "https://news.google.com/rss/articles/CBMivAJBVV95cUxPN2FPU0cyeV9tQ1pkYUVrY0puRk4teW9STEk1QmNIaWdoRU55TEIwV0MtR3JZdGcwdnJPNFo4XzRRSWJzMmVkWWlKU3d0LTJ0blkwQzBoY1dpa1NqMU43dXJjZ3VJRVRQSFZFSTdEMGFjZENncUFMMGUzT0ZORWoxREJRVGg1MjJhQ2JmaXBDVUszVERPa3JkbXZRaFZmX1czeFJoWGRCMVN2a3ZhZ2djbWpydXdXWVhKY1QzTFZaY19aRThuWUZBalEwNXV3eVgwOXYtVXNrdnlRRlpfNHhYb3dnUkFzbjd0YVhnbVBfRXVfR3lid09zQ3JBcE9lbDFOVzlQeVNNWmxDb1R6SmNteXQxaXhEUGZpRW84MTMtclVRdkUta2VaN2RKMzRUTThFbHRzQ0MydktiaUtx?oc=5",
-        "source": "Google News",
-        "published": "2026-05-26T00:40:03.000Z",
-        "summary": "Cloudvisor becomes an Anthropic authorized reseller for Amazon Bedrock, bringing Claude to startups on AWS The Daily Tribune News"
-      },
-      {
-        "title": "CVE-2026-28952: Apple macOS 26.5 Kernel Vuln found by Claude",
-        "url": "https://support.apple.com/en-us/127115",
-        "source": "HN · 162↑",
-        "hn_id": "48273169",
-        "published": "2026-05-25T23:40:40.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Citing Gandalf, Pope Leo says we must \"disarm\" AI",
-        "url": "https://arstechnica.com/tech-policy/2026/05/citing-gandalf-pope-leo-says-we-must-disarm-ai/",
-        "source": "Ars Technica",
-        "published": "2026-05-25T21:07:42.000Z",
-        "summary": "With the co-founder of Anthropic at his side today in Rome, Pope Leo XIV released a major new encyclical —his first—called Magnifica Humanitas ( Magnificent Humanity ). It calls for AI to be…"
       },
       {
         "title": "anthropic shipped the agent-killer.",
@@ -971,6 +970,14 @@
     ],
     "tutorials": [
       {
+        "title": "How We Contain Claude",
+        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+        "source": "Anthropic Eng",
+        "published": "2026-05-26T18:05:40.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "Claude Code Advanced Workflow - Build & Ship Real Apps",
         "url": "https://www.youtube.com/watch?v=zVZotTk6ZWU",
         "source": "Leon van Zyl",
@@ -1411,14 +1418,6 @@
         "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
         "source": "Anthropic Eng",
         "published": "2026-01-06T15:09:32.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Writing Tools for Agents",
-        "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
-        "source": "Anthropic Eng",
-        "published": "2026-01-06T15:05:23.000Z",
         "summary": "",
         "tutorial_kind": "official"
       },
