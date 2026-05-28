@@ -1,8 +1,22 @@
 {
-  "generated_at": "2026-05-28T09:56:39.854Z",
+  "generated_at": "2026-05-28T13:41:31.074Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Milan Office Opening",
+        "url": "https://www.anthropic.com/news/milan-office-opening",
+        "source": "Anthropic",
+        "published": "2026-05-28T13:00:32.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How We Contain Claude",
+        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+        "source": "Anthropic Eng",
+        "published": "2026-05-28T10:01:59.000Z",
+        "summary": ""
+      },
       {
         "title": "Coding Agents Social Sciences",
         "url": "https://www.anthropic.com/research/coding-agents-social-sciences",
@@ -22,13 +36,6 @@
         "url": "https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea",
         "source": "Anthropic",
         "published": "2026-05-26T23:11:06.000Z",
-        "summary": ""
-      },
-      {
-        "title": "How We Contain Claude",
-        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
-        "source": "Anthropic Eng",
-        "published": "2026-05-26T18:05:40.000Z",
         "summary": ""
       },
       {
@@ -135,16 +142,49 @@
         "source": "Anthropic Research",
         "published": "2026-05-07T10:15:44.000Z",
         "summary": ""
-      },
-      {
-        "title": "Higher Limits Spacex",
-        "url": "https://www.anthropic.com/news/higher-limits-spacex",
-        "source": "Anthropic",
-        "published": "2026-05-06T16:35:37.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Elon Musk Warns SpaceX Could Pull Back Anthropic’s $45B AI Compute Deal If Capacity Gets ‘Super Tight’ - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNY21wOFcxLTV0MU1rQnNLWGxHTnBoMkdjZFZRLUFuZ1BxYW83Y2hqbkswYkZvNnFSaW9Ka0h5N09OcUJxMmJkM1RxRUlORGJISVR1UFpzcXdJX0x0dnpTR2dDOTY2TUUtTmYteHhTalhCTXJkWWlDS3BjUFJJSEVXSUNmRmE4MzRSTnZLQ1QyeWVIUHNLYTFXcnVfS1VhR1Vxb0VwTWVLNHdOYXJ3YmxzU01IMXVXbjlwUVEtNUk2N1pwMlVJcGJQRm1zWXhnRk9vdGJNMVdfbTd5NHRXcXpuRGdxRTlCSjdHUGxYTHRKWmszZw?oc=5",
+        "source": "Google News",
+        "published": "2026-05-28T13:03:44.000Z",
+        "summary": "Elon Musk Warns SpaceX Could Pull Back Anthropic’s $45B AI Compute Deal If Capacity Gets ‘Super Tight’ TradingView"
+      },
+      {
+        "title": "Claude Code Is Too Expensive. Use This Instead",
+        "url": "https://www.youtube.com/watch?v=2omtxQ0dSFk",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "2omtxQ0dSFk",
+        "thumbnail": "https://i.ytimg.com/vi/2omtxQ0dSFk/hqdefault.jpg",
+        "published": "2026-05-28T13:00:03.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic ropes in former Microsoft executive to drive Claude adoption in Indian startups - varindia.com",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQSHRyRmNyYm5oNUF1YmlGS1ZKOXVGLWYxTTJJVFlXUHVMdEdkSnk0WFU3ckFKOGpZRG5aSjBrQ3ZpSXVXUlVBQ2JnZVZhV0JpeS1KSW9XNktOT29uNFV2TFhzX0hTVy15ZGx0dmJxR01jNnVuWElLZkNLWGljRFBraG5FbmJ2eFJJeUg5SmplbS1wdEgtU29KbDdlYjlSMllYZlhjdGJGWnY1cXZmRWhNNVdLV1M3WHFFMWdn?oc=5",
+        "source": "Google News",
+        "published": "2026-05-28T12:34:10.000Z",
+        "summary": "Anthropic ropes in former Microsoft executive to drive Claude adoption in Indian startups varindia.com"
+      },
+      {
+        "title": "Claude pricing raises new budgeting questions for CFOs - CFO.com",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOTnl3YjBtSXdSQWVobDhaRFQyTHFWVG94MXY0ZXdVekJFN3NQWDdWNE0xZWt1U3pYaXJ1WkhBdEFGblJuRmRDcERINEs1WGxxcFNEQ1RtMHVBZlE5NzNQck50Vm01Z05oNkMwVEowc0hXVE1sRzljTmtwS3hHUFRNOHVNSzBsczZnREY1RnoxbTkzQzA0WnNRU1NReUh6dnRfcnc?oc=5",
+        "source": "Google News",
+        "published": "2026-05-28T11:47:29.000Z",
+        "summary": "Claude pricing raises new budgeting questions for CFOs CFO.com"
+      },
+      {
+        "title": "Anthropic Is Playing Both Sides of the AI Spirituality Debate - Gizmodo",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQckdCV0dJdjRXR0liQXlzaGlRWVdDVE9oWkFsNnBUN2JZbGhUUk9RSE1rX1AtMlhhRGkta0pnNlBvUzJvQmlrT3FqTjM5bnYxaEdCMy1hVTQtN0tSZ2NZSkoxQjdZSDZPUkUwemNJcVR1Q29hb3JVZldkMVVBRm5PRHd2OUxXajRTMXFxTDkzWEZXaWpXdnpv?oc=5",
+        "source": "Google News",
+        "published": "2026-05-28T11:00:32.000Z",
+        "summary": "Anthropic Is Playing Both Sides of the AI Spirituality Debate Gizmodo"
+      },
       {
         "title": "Travelport Teams with Cognizant and Anthropic to Revolutionize AI Travel Technology Platforms for Airlines and Agencies - Travel And Tour World",
         "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBvQi1pN0E4SFV6b0NKaG53d1JDRVZpN0Y2WTE2VnhnSkN4U01VcHRzOVZGbWUxa1BmYVJNR0V5b1ZmSURaRlhTMkVtYW9zMXpRZElyT2s3NmpDODNxckxfc3dieHBPMkE2WkU3UnBB?oc=5",
@@ -177,7 +217,7 @@
         "title": "Anthropic is preparing a major multilingual upgrade for Claude Voice Mode - Android Authority",
         "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMFNVMVhKWnlURWpDci1QdGhMbldJalc3VWQzOGgxU3FickdEdG04dHJZTjk2Tk9pLUoyZ29NUENLSndmeldjSkVqV2xYV09HTUo4dHRFS3l5bF9QTTZOai01SG5TTW94cGlYZVZEQzBqR01FLW5QQ3BDX3hjb3JYa0ZKSkY1cGJJ?oc=5",
         "source": "Google News",
-        "published": "2026-05-28T07:30:32.000Z",
+        "published": "2026-05-28T07:31:43.000Z",
         "summary": "Anthropic is preparing a major multilingual upgrade for Claude Voice Mode Android Authority"
       },
       {
@@ -191,7 +231,7 @@
         "title": "ASI Showdown: OpenAI vs. Anthropic - The Battle for Supremacy - eu.36kr.com",
         "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE90bU1Wd2w5azF5eDlmWUloamQ0c2lSZ2w3QWVzVmxKQ3BGeld4R2FXYTFwdXdub3dmN0ZZSXZWbVFDcE9tUmQ5YVhsV0NrX19QeExF?oc=5",
         "source": "Google News",
-        "published": "2026-05-28T04:53:06.000Z",
+        "published": "2026-05-28T04:52:58.000Z",
         "summary": "ASI Showdown: OpenAI vs. Anthropic - The Battle for Supremacy eu.36kr.com"
       },
       {
@@ -209,11 +249,11 @@
         "summary": "Coding agents in the social sciences Anthropic"
       },
       {
-        "title": "CodeRabbit Joins the Claude Marketplace - Business Wire",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQmZsa3MxTDZTLVZ1YzlqYXNmU2RiSkZZdWlwMTNmOW5VQUstZTNmdzY5U3UwOWpjMThwNkFVd3ptZ2d1ZXZKU1RfMWwwVkhKeTNOX01La21ieHd1ZTB5WW9YdnF6a2QtLWJsa2NUUWFZWUFQLVdNdW9UTV93ajhhaHVqemxCa2RKTTRVekw3Z3dfQVpDWUNRXy0xQmk?oc=5",
+        "title": "CodeRabbit Joins the Claude Marketplace - The Malone Telegram",
+        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPTC0zQVNGU3RxaDMxeGZxcEQxMC1zZjd0dU9lcHRPSjZDRTc1SlF4MzMwZmRhdmxpN3hhZ0lheDdkdk56bWpXSU1sOURnS2YyMllxSnFmQlY4NnNBSmwyM0l1Skt2UjEyTnBxQTdYUWEzcVh2S05xbGhzSTNIR2xoTExVZWVNM3ZjVnppYXVROTBQaFBDc1R6andEenhJbG83WnAyR09jZ250TVctVy1kWUdsVkZYUWxpU1lhUV9GdDVhTEJiLXZySDdMUXR5cjA0clpjRU5zNTR6dnZSdk5FOXphMGZnT2d4?oc=5",
         "source": "Google News",
         "published": "2026-05-27T22:30:00.000Z",
-        "summary": "CodeRabbit Joins the Claude Marketplace Business Wire"
+        "summary": "CodeRabbit Joins the Claude Marketplace The Malone Telegram"
       },
       {
         "title": "When Will Anthropic Release Claude 4.8? Launch Date Odds - Action Network",
@@ -225,7 +265,7 @@
       {
         "title": "I think Anthropic and OpenAI have found product-market fit",
         "url": "https://simonwillison.net/2026/May/27/product-market-fit/",
-        "source": "HN · 870↑",
+        "source": "HN · 962↑",
         "hn_id": "48296794",
         "published": "2026-05-27T16:39:13.000Z",
         "summary": ""
@@ -236,13 +276,6 @@
         "source": "Google News",
         "published": "2026-05-27T15:44:00.000Z",
         "summary": "Malicious npm Package Stole Files From Claude AI User Directory via GitHub The Hacker News"
-      },
-      {
-        "title": "Claude vs Gemini 2026: 80.8% SWE-bench, 1M Tokens [Tested] - tech-insider.org",
-        "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBoanUzSlJOUUFDQTlHOVFWckVKZkhqZ1pIaHFoQmlGLV9fakw1U1pKNUFtbW9WN04wczI1SV9jMXg1OW5KX3c5eGt3aHR2V2pFemRKc2x3RURtcF9wQ3c?oc=5",
-        "source": "Google News",
-        "published": "2026-05-27T15:41:32.000Z",
-        "summary": "Claude vs Gemini 2026: 80.8% SWE-bench, 1M Tokens [Tested] tech-insider.org"
       },
       {
         "title": "Fujitsu partners with Anthropic to deploy Claude AI - Investing.com",
@@ -266,18 +299,18 @@
         "summary": "I tried Anthropic's open-source desk pet on an ESP32, and it fixes the most annoying thing about Claude XDA"
       },
       {
-        "title": "Fujitsu expands AI strategy through collaborations with OpenAI and Anthropic - Plataforma Media",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQV3lHMGNkQzVhaGY3RUV1R3pOdVJhN1Exd3ZpaEJabWJOYjIzeW5rRkRQZlpPekplemJVNF9mdGRfX21DNzZsR2QxaEVBWEJmbXdubzJTQmhUeGpWb3hIWGs2UldJTld0OTZRWEVqbnRhak10Ym8yLUItUWNXaTZ1UFhfdnoxYVRuc2N2WVRyOTFCNmZmc1IwbEZLaU0zR25BX2IzUzZpbjJ5SnNyckdHS2tjNWtDRjNPeXU3ZHFLRDg?oc=5",
-        "source": "Google News",
-        "published": "2026-05-27T14:45:00.000Z",
-        "summary": "Fujitsu expands AI strategy through collaborations with OpenAI and Anthropic Plataforma Media"
-      },
-      {
         "title": "Claude keeps nagging users to go to sleep. Here’s what you can do - PCWorld",
         "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOQkNoQy1FR0ZQc2hZRDhFUExVd1JQTmRSMXdFWlQ0Q0MtcUE1VWNuZGR0aTg2YjZtZ2U1X19FbEpZcmhBVldWZ1VhN1o0cEk5UmdfdENPNWRZbUdoVk9KYVpNT25GYm1CMy12NEliX0lmM3BfYjc4OVBTcGlwSG1ScmZvV2Nkc2dPOER2UndpUU5Xb0xVdjZCQ2pHNk9qNnZRa1FsVF8teWtQNjZQ?oc=5",
         "source": "Google News",
         "published": "2026-05-27T14:41:00.000Z",
         "summary": "Claude keeps nagging users to go to sleep. Here’s what you can do PCWorld"
+      },
+      {
+        "title": "Anthropic plans expanding Claude Voice Mode to more languages - TestingCatalog AI News",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOUHZZdDNPVVFoWFo3OFlNMXlXcVBoNDk5WmJnOWJBUHBYZGhBS1JwdXdMbFlsZ2x3Z0NySTdQX1pPQ2Rvb3NSZFNuOVl5U3p4d2FJS1NfUjMwa3pteHVNRkEwOERxdmlHSE5NaE9Qa3I0WU5tMUFDOVRjbThTeDBPOWNyZ3dYMnZBczVyejdQVGppLWhWS2d4TA?oc=5",
+        "source": "Google News",
+        "published": "2026-05-27T14:40:48.000Z",
+        "summary": "Anthropic plans expanding Claude Voice Mode to more languages TestingCatalog AI News"
       },
       {
         "title": "Nimble Gravity Launches the Nimble Gravity Applied Anthropic Practice, Built for Banking, Insurance, and Financial Services - PR Newswire",
@@ -294,32 +327,11 @@
         "summary": "Claude now reviews and fixes vulnerabilities as you write code Help Net Security"
       },
       {
-        "title": "Man Reveals How Claude Helped Him Trace Ancestral Land In UP: \"Excellent Use Of AI\" - ndtv.com",
+        "title": "Man Reveals How Claude Helped Him Trace Ancestral Land In UP: \"Excellent Use Of AI\" - NDTV",
         "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOYk0wWnNpUmJmUnZvY1VaYWUxTUdoTlhaZmRPTHBMaFRFS19xNUN0ZGE5QlpwaUplUmpsS2k2bG41b0JZYjItYjRBUEw2QTZWUGdrMzgxYlFwZmdENTAzd2ZsZEVvQnB5eGdIbUxsY0I0Y3lFUVZEQmpQeUxBb0U4dXhKVUtNbzFibGFxbGtHaWtqa0NGeF9DOXM1NXh3NXA1YW5nUl90LWwzT25NWEc0akJieWpDTnR5Z3MwM3dNalEyTHV1TVZNa9IB0AFBVV95cUxNUDNRNktlOVd5Vzg5eWNOWXhzUDFNNWx1Q0xrUnEyMTB0UnVoVDhNRGhjVVlmUno0RXIxWkNJRGtRTGM1M1duR3p4ZWlEX3A1ODIyWVB4bjVBTHZ2TUt0UndyaDlpY3FtbVFjaVZublNSYlAxLWhpd1VtZlZWRjdBXzdoeG1za2ctSjlXU2E0c2RpeEJsYlhoS2JZOHJRN0ZCSkJ3ZTEzc3pLSG9JdEVzZDVkemlmWlA4RXZfVVpLSVpqWWFlNll3TkE0Mi04STUx?oc=5",
         "source": "Google News",
         "published": "2026-05-27T13:34:15.000Z",
-        "summary": "Man Reveals How Claude Helped Him Trace Ancestral Land In UP: \"Excellent Use Of AI\" ndtv.com"
-      },
-      {
-        "title": "RedCloud Launches Saudi Operations Under $30M Joint Venture with Kayanat; RAID Intelligence Infrastructure on Anthropic Claude Activates for FMCG Deployment Across Kingdom - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPbGp0VHhwY2RsLVNqZWVTczBmTk5GZGM1MEJvSk1JY1YtcnZxYnhQbjZUSU1kcDh1UDFjSHg5VmZ6Zks2WGJPQ2dZM19Eb1llVWVwWVNjQW12c0lFSVk0bFNtaG9GVkItZ1BtWU0tOTNfbmRYdzlzb2hDZEtuQmpMMVpydmtJRHcxRWRnQkw1T2RVVHVpSGdZcE5NWFFUWWMtWGdRdG5VRVNHcDVRaEE?oc=5",
-        "source": "Google News",
-        "published": "2026-05-27T13:30:00.000Z",
-        "summary": "RedCloud Launches Saudi Operations Under $30M Joint Venture with Kayanat; RAID Intelligence Infrastructure on Anthropic Claude Activates for FMCG Deployment Across Kingdom Yahoo Finance"
-      },
-      {
-        "title": "$68B Saudi FMCG trade gets Anthropic AI boost from RedCloud - Stock Titan",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQdXA4UF95RmZfTTgtVElIeHFwbTBqaU9OMm9rd0RtN0U0SXZqQnBwRmpHNGNtdVRXWGZHSTlROUdzODdzWjhVRU1raVhhd2VoaU9mT0s0eXFkV0tGLWRBUWR0TDlKODdjdGs4ZmpoZDlTWjY5Rm1Fc3lNZTRiczl2OWZRWDRTQmduSy0xaHE2bVRwbnJXNWQwOFFtaDNxLXM5Z2swQTBMOUxNb0tocFVPZjduOXZEQTQ3TVE?oc=5",
-        "source": "Google News",
-        "published": "2026-05-27T13:30:00.000Z",
-        "summary": "$68B Saudi FMCG trade gets Anthropic AI boost from RedCloud Stock Titan"
-      },
-      {
-        "title": "Alpha Modus Introduces ARIA: Enterprise AI for Physical - GlobeNewswire",
-        "url": "https://news.google.com/rss/articles/CBMipAJBVV95cUxNUU5CVU1Jc002M25Jem5pbDF5TEh1eUY4N2RvS1BkM3dDcDRaYnM5T3VCZWQ1S00zSXpld0tDQUpWVjV3SW9xTXRKM3RMWXpkSmJXbWNITzhRVzlmUzJfQVQwSThnU213SWlDbTNTalJwTDU4aEZ5QjJqdHBNWTA5bXJoV21KRXd1U0tUNWpiQ19yXzk4NnQ1aEJDMlE2VzNHREVmOHhFSXdsM2M5dWJRdnVmRzdwNUluTFRYZ0s3R0dvVVlGbHdTOUFtZjU2OTRjUG83VU5vXzdPdDJOVFBNT1FqbHNsQ3VHcXRSVTJEVUtvaXZsRThsVHdTYlhTRFNiaVA1ckgyVGliMnZzSEJlckgyNUJnRXZfdzNXOWtTZWxnczFu?oc=5",
-        "source": "Google News",
-        "published": "2026-05-27T12:13:00.000Z",
-        "summary": "Alpha Modus Introduces ARIA: Enterprise AI for Physical GlobeNewswire"
+        "summary": "Man Reveals How Claude Helped Him Trace Ancestral Land In UP: \"Excellent Use Of AI\" NDTV"
       },
       {
         "title": "Anthropic Just Made Every AI Framework Optional.",
@@ -524,18 +536,6 @@
         "published": "2026-04-23T13:00:18.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Design + Claude Code = No Designer Needed",
-        "url": "https://www.youtube.com/watch?v=-W8uYEX4gLQ",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "-W8uYEX4gLQ",
-        "thumbnail": "https://i.ytimg.com/vi/-W8uYEX4gLQ/hqdefault.jpg",
-        "published": "2026-04-22T11:25:52.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -625,6 +625,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Claude Code Is Too Expensive. Use This Instead",
+        "url": "https://www.youtube.com/watch?v=2omtxQ0dSFk",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "2omtxQ0dSFk",
+        "thumbnail": "https://i.ytimg.com/vi/2omtxQ0dSFk/hqdefault.jpg",
+        "published": "2026-05-28T13:00:03.000Z",
+        "summary": ""
+      },
       {
         "title": "How To Learn Anything So Fast People Think You're A Genius (With Claude)",
         "url": "https://www.youtube.com/watch?v=0n5UI6p9jTE",
@@ -934,17 +945,6 @@
         "summary": ""
       },
       {
-        "title": "Claude Design + Claude Code = No Designer Needed",
-        "url": "https://www.youtube.com/watch?v=-W8uYEX4gLQ",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "-W8uYEX4gLQ",
-        "thumbnail": "https://i.ytimg.com/vi/-W8uYEX4gLQ/hqdefault.jpg",
-        "published": "2026-04-22T11:25:52.000Z",
-        "summary": ""
-      },
-      {
         "title": "How to Use Claude Cowork Live Artifacts (Step-by-Step Tutorial)",
         "url": "https://www.youtube.com/watch?v=6jKeNcfvGVM",
         "source": "Ryan & Matt Data Science",
@@ -957,6 +957,14 @@
       }
     ],
     "tutorials": [
+      {
+        "title": "How We Contain Claude",
+        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+        "source": "Anthropic Eng",
+        "published": "2026-05-28T10:01:59.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
       {
         "title": "v2.1.153",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.153",
@@ -991,14 +999,6 @@
         "source": "Claude Code Releases",
         "published": "2026-05-27T01:30:59.000Z",
         "summary": "What's changed /code-review --fix now applies review findings to your working tree after the review, surfacing reuse, simplification, and efficiency suggestions; /simplify now invokes /code-review…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "How We Contain Claude",
-        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
-        "source": "Anthropic Eng",
-        "published": "2026-05-26T18:05:40.000Z",
-        "summary": "",
         "tutorial_kind": "official"
       },
       {
@@ -1744,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Claude Code Is Too Expensive. Use This Instead",
+        "url": "https://www.youtube.com/watch?v=2omtxQ0dSFk",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-05-28T13:00:03.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.153",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.153",
         "source": "Claude Code",
@@ -2084,13 +2091,6 @@
         "url": "https://www.youtube.com/watch?v=MIdKddA6vU4",
         "source": "YouTube · Ryan & Matt Data Science",
         "published": "2026-04-22T13:43:19.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Design + Claude Code = No Designer Needed",
-        "url": "https://www.youtube.com/watch?v=-W8uYEX4gLQ",
-        "source": "YouTube · Leon van Zyl",
-        "published": "2026-04-22T11:25:52.000Z",
         "summary": ""
       },
       {
