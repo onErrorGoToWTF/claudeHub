@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T18:58:58.516Z",
+  "generated_at": "2026-05-31T20:45:21.119Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -287,7 +287,7 @@
       {
         "title": "Anthropic surpasses OpenAI to become most valuable AI startup",
         "url": "https://qazinform.com/news/anthropic-surpasses-openai-to-become-worlds-most-valuable-ai-startup",
-        "source": "HN · 411↑",
+        "source": "HN · 413↑",
         "hn_id": "48336233",
         "published": "2026-05-30T13:56:34.000Z",
         "summary": ""
@@ -316,7 +316,7 @@
       {
         "title": "Rsync 3.4.3 has hundreds of Claude commits",
         "url": "https://mastodon.gamedev.place/@JeremiahFieldhaven/116654345332213390",
-        "source": "HN · 113↑",
+        "source": "HN · 114↑",
         "hn_id": "48334021",
         "published": "2026-05-30T08:32:57.000Z",
         "summary": ""
@@ -329,11 +329,11 @@
         "summary": "Samsung, SK Hynix join strategic investment round in Anthropic, developer of Claude AI model KED Global"
       },
       {
-        "title": "Anthropic just topped OpenAI on a major metric ahead of rival IPOs - Fast Company",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQMC1FeXhHR0kyOXBiVVMtazFFX2dVMWh3Y0pGS0REWWhYQldmVEtVN0pRVGZBMEh3a29oUWJhRS1VSkdmS0NOU0VKSHdzZnZ1UWQxbENxTDdDakR5UnVEeVp1MGgwc3paTXoyUkJpRFhvU3kzckozaUlQV0doenBiRGRJenNlN2trX0NyOUEwMTBsV2ZmTFlKamFnYnRiYmRzakJRdkdQN082VF9kTlJzQVZR?oc=5",
+        "title": "Anthropic’s Guarded Mythos Model Is Headed For Wider Release - Forbes",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTUtDMmFiMmFTcWJoNG5WN3Bmc0x2X1RTNzVOUkVsSnVPS3R3TzktREZkUDAyWW1yTS1RSUtLUVBqbTdOTW5RQ051eWFldUFJeUhZejhhQ0k0S1lTZ3pMT1hCZ1dPcWlsekRxQTN3YkNiUHJSel9zcjVkMVZucFNMZ0ZwcmVyaFE1REhMQTdfbElSUXJJdHdqa3lXVzJjbElrekp2cUNxZXEzVFN2bHlhWExlZw?oc=5",
         "source": "Google News",
-        "published": "2026-05-29T22:00:21.000Z",
-        "summary": "Anthropic just topped OpenAI on a major metric ahead of rival IPOs Fast Company"
+        "published": "2026-05-29T18:47:33.000Z",
+        "summary": "Anthropic’s Guarded Mythos Model Is Headed For Wider Release Forbes"
       },
       {
         "title": "claude.md vs SKILL.md — what's the difference?",
@@ -972,6 +972,14 @@
     ],
     "tutorials": [
       {
+        "title": "v2.1.159",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.159",
+        "source": "Claude Code Releases",
+        "published": "2026-05-31T19:42:49.000Z",
+        "summary": "What's changed Internal infrastructure improvements (no user-facing changes)",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.158",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.158",
         "source": "Claude Code Releases",
@@ -1165,14 +1173,6 @@
         "source": "Claude Code Releases",
         "published": "2026-05-22T01:16:52.000Z",
         "summary": "What's changed Fixed the Bash tool returning exit code 127 on every command for some users (a regression introduced in 2.1.147)",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "v2.1.147",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.147",
-        "source": "Claude Code Releases",
-        "published": "2026-05-21T23:54:18.000Z",
-        "summary": "What's changed Pinned background sessions ( Ctrl+T in claude agents ) now stay alive when idle, are restarted in place to apply Claude Code updates, and are shed under memory pressure only after…",
         "tutorial_kind": "official"
       },
       {
@@ -1746,6 +1746,13 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.159",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.159",
+        "source": "Claude Code",
+        "published": "2026-05-31T19:42:49.000Z",
+        "summary": "What's changed Internal infrastructure improvements (no user-facing changes)"
+      },
+      {
         "title": "your first claude code skill in 5 minutes.",
         "url": "https://www.youtube.com/shorts/jICg9UXSMu4",
         "source": "YouTube · Pragati Kunwer",
@@ -1919,13 +1926,6 @@
         "source": "Claude Code",
         "published": "2026-05-22T01:16:52.000Z",
         "summary": "What's changed Fixed the Bash tool returning exit code 127 on every command for some users (a regression introduced in 2.1.147)"
-      },
-      {
-        "title": "v2.1.147",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.147",
-        "source": "Claude Code",
-        "published": "2026-05-21T23:54:18.000Z",
-        "summary": "What's changed Pinned background sessions ( Ctrl+T in claude agents ) now stay alive when idle, are restarted in place to apply Claude Code updates, and are shed under memory pressure only after non-pinned sessions…"
       },
       {
         "title": "I Built a $1M/y SaaS with Claude Code, Here's How",
