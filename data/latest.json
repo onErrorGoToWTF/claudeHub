@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-02T13:45:51.271Z",
+  "generated_at": "2026-06-02T17:58:19.375Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -7,7 +7,7 @@
         "title": "Expanding Project Glasswing",
         "url": "https://www.anthropic.com/news/expanding-project-glasswing",
         "source": "Anthropic",
-        "published": "2026-06-02T13:02:29.000Z",
+        "published": "2026-06-02T14:03:15.000Z",
         "summary": ""
       },
       {
@@ -146,74 +146,179 @@
     ],
     "news": [
       {
-        "title": "Anthropic expands Mythos access to about 200 partners across 15 countries - The Globe and Mail",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNUlNFTjJaRXZvdzJkeG9FRjU3UWU1YjVRelVSNV9yTnBfSjU1cG5sbWxrSzNYbmlaUnBZWmsxQWJab2c1MEMyQzV4TzZ4ZFJvVi0xQkgzMHJESTNHMUh3emM4cEJsdkZ3MmE5bGdRVVlwM2wwME9STUZ1M0lXZHNxY2h4RUVlYXE3Rnpla1JNbGpwd0dZUFp5UDJ4SF9NcWJfS2ZUWWlPZVM5SXZZU1JVX29pb01JZHRKbmhKT2pJMA?oc=5",
+        "title": "Anthropic’s First-Mover IPO Edge Set to Widen Lead Over OpenAI",
+        "url": "https://www.bloomberg.com/news/videos/2026-06-02/anthropic-s-ipo-edge-set-to-widen-lead-over-openai-video",
+        "source": "Bloomberg",
+        "published": "2026-06-02T17:23:09.000Z",
+        "summary": "Anthropic PBC pulled ahead of OpenAI with its confidential IPO filing Monday, as the free-spending artificial intelligence startups battle for a fundraising edge that’s set to determine who will win…"
+      },
+      {
+        "title": "The latest in AI investing: Interactive Brokers lets Claude write trades - MSN",
+        "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPcWJHVnpiM0ZWNl9kOEtac3pWa0hjcUlsa1c4Sjh2MHFiRGMyNEtpa0stV3ZPZm5Ta29LSUlNbWxoVmFnTlVlZWdwNVc4ZDRKQ0tKQlJFNkRmOUkyNkZRVVBVSWk0eG5DWms2UUNlZ21RdDBfd3Q3NWV1bmxjd1BGdXVyd1pIMGxvUGx0VjVSYk52S25sUVdsTy1PYldvN3B1RWFtMTVEOWh0WUxTWkNQQU1MdmhXb3k5WUh5MlBzaGxqQ2RsQzlTdkNqZ05rRzR6Rm9leVp3OVZaQ0JPUG1OSk9rc0U0djcxbHZXb2RicWtPYUk?oc=5",
         "source": "Google News",
-        "published": "2026-06-02T13:29:16.000Z",
-        "summary": "Anthropic expands Mythos access to about 200 partners across 15 countries The Globe and Mail"
+        "published": "2026-06-02T17:21:27.000Z",
+        "summary": "The latest in AI investing: Interactive Brokers lets Claude write trades MSN"
+      },
+      {
+        "title": "Anthropic files confidential IPO paperwork as Claude maker nears public markets - Cryptonews.net",
+        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBuLUVEbW1GWnhBRUpBdzlNNFpUZGZQaUR0d2NKdDRCd1AzUnNLaExKbnZWY21mUEx5bUlGendkSHZyc2VYbFRFY3R4aWxHQWZFNGxYLVNOTEw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-02T17:06:02.000Z",
+        "summary": "Anthropic files confidential IPO paperwork as Claude maker nears public markets Cryptonews.net"
+      },
+      {
+        "title": "Uber Caps Usage of AI Tools Like Claude Code to Cut Costs",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs",
+        "source": "Bloomberg",
+        "published": "2026-06-02T17:00:00.000Z",
+        "summary": "Uber Technologies Inc. has set usage caps on some artificial intelligence-powered tools used by its staff, a move meant to manage costs after the company blew through its AI budget earlier this year."
+      },
+      {
+        "title": "Google's $80B AI Power Move",
+        "url": "https://www.bloomberg.com/news/videos/2026-06-02/google-s-80b-ai-power-move-video",
+        "source": "Bloomberg",
+        "published": "2026-06-02T16:02:32.000Z",
+        "summary": "Alphabet's surprise $80 billion capital raise sparked debate, but Jefferies Equity Research Analyst Brent Thill says it's a power move, not a rescue mission. He joins Bloomberg Open Interest to…"
+      },
+      {
+        "title": "OpenAI Plans AI Tools for Finance, Legal in Race With Anthropic",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-02/openai-plans-ai-tools-for-finance-legal-in-race-with-anthropic",
+        "source": "Bloomberg",
+        "published": "2026-06-02T15:48:21.000Z",
+        "summary": "OpenAI is expanding the functionality of its artificial intelligence coding agent for a number of professions beyond software engineering, a bid to compete with rivals such as Anthropic PBC in…"
+      },
+      {
+        "title": "Claude down: Anthropic AI not working in major outage - Yahoo Finance UK",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPSGt0VXpSTUw4MGp1bWRpLW9PVlp4dE1sUmlIRmRpY1AtWTBYR1dBUGdveWVqb21OZzBoTV9rNmJoeUdPR2hhMkE3VzB3OEtNTUJqV1lDWUFMUlVZajU4dGZrc3E3RkRtdGtBQjNzWjgxNW4tREV5Y2t6aGYwMmxNaEtYaw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-02T15:38:42.000Z",
+        "summary": "Claude down: Anthropic AI not working in major outage Yahoo Finance UK"
+      },
+      {
+        "title": "Anthropic Expands Project Glasswing Claude Mythos Preview to 150 New Organizations - CyberSecurityNews",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9xdDZTUThtWGdkSHpSaDF2LXpKWjRBLWkyblE3TjZxVnJXMFF4cDM5ZTV6R18tdDFUWm9LTHBkT1cwTXh6dDNSUEIwdzVDRy1KRXJJckM1SkUyVXFPZ2YxNnJ3dTRSSlJPZjBiRXVGMHV1d3o30gF6QVVfeXFMTm96ck1id0lnOXZoc1YzNkNTVmNyRmZlTlN2OUE1VGVORW9Kc0JUbE9idkZhZ0Y1bUFlNDNPSlBhVUVYdnQ1VVd3blhqandSQXR2bEttOEtuRkUzVi1ycW95VlF1ZHRNZTdGNVVicFV3SERIYTlEV0s3VkE?oc=5",
+        "source": "Google News",
+        "published": "2026-06-02T15:33:45.000Z",
+        "summary": "Anthropic Expands Project Glasswing Claude Mythos Preview to 150 New Organizations CyberSecurityNews"
+      },
+      {
+        "title": "Anthropic deploys Claude Mythos to shield 100M+ lives - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSEVrR3ZYNXAwRWV2VjVtdGxmQXFleFlqXzdBTnpMUWxONDBzQ1ZpdjJXcE1NajQyOWRQWElIZE9hSlNvWURNLVZBRnY4RjRRN2pCbjJ6WVdOSUV3RERzZXNWM3c1WFpsUC1hQ3JmWVZHNXkzWXY2S2hpQWU2blNydFAwd1Q1NGR3aVNWTnJn?oc=5",
+        "source": "Google News",
+        "published": "2026-06-02T15:32:00.000Z",
+        "summary": "Anthropic deploys Claude Mythos to shield 100M+ lives The Tech Buzz"
+      },
+      {
+        "title": "'It dramatically has taken the momentum off OpenAI and ChatGPT': Jackson on Anthropic's Claude - BNN Bloomberg",
+        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPa2UzdlphLW9xaGJYRFJEWEx3NmhUUEgyZEE1NU1HOUR0UWhjVVpPNXVNMXNYZ1B2bUZKX3ZTN2dHTU5zRHlHRGx6YVJ4aEdfTHJvNUY4TlVsREJFOWNrVWpDWWtMNmpPdERINXZiZmZJVElCdy13R1JaOWcyU0NDMjFFWFJvSWsxblo5c0FuTlB3Z3ZYWXNGdGV6aWVIaHpWU2VneDduS3VndE92NmZKeGJVaTZwODlQYS1wMk9vOVhjZi1pU21FX1RqT19SSHdlVDdrblg4LTM1RHRxRzZtdUhzWmVubXhQbE13alUtVQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-02T15:29:52.000Z",
+        "summary": "'It dramatically has taken the momentum off OpenAI and ChatGPT': Jackson on Anthropic's Claude BNN Bloomberg"
+      },
+      {
+        "title": "Anthropic Expands Access to Claude Mythos After AI Giant Files for IPO - Decrypt",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVHlxY2U2WHdDN08wZ19DdG1PbWNRX3RLV0QycV9UazFTLTFXeTZlZFBRQjBXZXZkTkpqWUMwdGNVQndwUFFyX2JaeEJMVGhEN1dEQWdmLVlydW1DeFJiR0R2TW1DejMxc1NzVzdrQTdoSnNTOFZ1ZnppSGdDaHpCdWJYRUdhWGtob1JZ0gGTAUFVX3lxTE9na3NTcVBIeV83OFBwSzlsZGs2SkZFbDl1cHhnT2tfSFNkcWllOFc1M2pjUU92LUxvUWROcTZFVmNlQnRQT0FibmVxRGtZcWFiMFRrYWRxdzI0S0YyakdhS2Y4Tldka2M4YkVJdUhmcGtVZEFvd2lrV3dLNmRNLXMtb0dpbTJwTUhKTHp0XzNhVVo3WQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-02T15:29:05.000Z",
+        "summary": "Anthropic Expands Access to Claude Mythos After AI Giant Files for IPO Decrypt"
       },
       {
         "title": "Anthropic surges as OpenAI struggles to keep up - The Guardian",
         "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNWlR2NXN1b3RzU3hfZGVWb19sdnB6eEcyNW4tVkhJVER2TjNJWTZqU0ZzdVhsRnZTRjRjbGxDazF5WjVSRFhiX3B0MUhCN0ZBX0s0aWdadTFIeEVZMmEyel9hbHlhZE1hY1N1UEdzbU9qRF9fcWdEOGotWWZnd1B2QUsyOA?oc=5",
         "source": "Google News",
-        "published": "2026-06-02T13:07:00.000Z",
+        "published": "2026-06-02T15:07:00.000Z",
         "summary": "Anthropic surges as OpenAI struggles to keep up The Guardian"
       },
       {
-        "title": "Expanding Project Glasswing - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1SRWF6VVZqQWo3VEJKQ2NDOTRXT1dQaUNzcURtbkdocEg1bnY1WEFFWF8zRGxwd0R0d1NxZFZVQ3dBeXdGU1hpNEZMd2JFcHFzU0UxLTdUVnNKXzM3dTZSanU4b2ZGM1lwUnc?oc=5",
+        "title": "Anthropic shares Mythos with 150 more organizations, including critical infrastructure operators - Cybersecurity Dive",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQQldubzkzemNwSVNTRnhrZW1XbEpLbUktaVRqY3pONnJtclMwSmxUYW0xYUgydFJXalhxUHVTNWtkUWN1cjlUYmpJMGRsVVA1Xzh1dm45V0ZJaXRrdTdzOHBac1Q0eDZWQ3dTeUhuRmdRNlFxRkRXYU13X3lwUzZPMVFOSUlQTGFqNG1UZkRJRGtTTDJiRHZnYTdfTkZuLXc?oc=5",
         "source": "Google News",
-        "published": "2026-06-02T13:05:18.000Z",
-        "summary": "Expanding Project Glasswing Anthropic"
+        "published": "2026-06-02T15:03:31.000Z",
+        "summary": "Anthropic shares Mythos with 150 more organizations, including critical infrastructure operators Cybersecurity Dive"
       },
       {
-        "title": "Anthropic Mythos access to grow four-fold to about 200 Glasswing partners - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeVc3SGFuWllia01FdWZWV3AtcjJwZkRiQXJzZGxDZjRwVlFldTZfZkJQSWlXTjdadmhRSmhvSUhnQ1dPZEpRN0t3bEloWjFoa0xxSkFvU0pMdTJhMWg0dnZZZ3lkNzJ4d0xaVldRMDZhdUZxNUNTalVuZmw3WGpiaGtsNFBmTF9rZlMzVm53czR0YU9sNlpucEFlNmRIQmhrTHlWVQ?oc=5",
+        "title": "Anthropic Expands Its Claude Mythos Preview To More Partners - Engadget",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPdTdIeUZkM2tjVENOalFXeHdseGRPTHJZV2FPZ1pIMDh1eDJmZE0yZmpNcU56UGg0Ykx6akJteXo1THdPVXhaMmtPcUNlRFVqaXJSWkZGZlJINVZ1UUpxQWxibkRLc0lnUHpjOVUtMjEzTEIyeFRSSmxzOW52ODFEaXdxNXE4UTZSS2dtdU0yQVJ4S0xTWGtub1F3?oc=5",
         "source": "Google News",
-        "published": "2026-06-02T13:02:09.000Z",
-        "summary": "Anthropic Mythos access to grow four-fold to about 200 Glasswing partners Yahoo Finance"
+        "published": "2026-06-02T15:02:26.000Z",
+        "summary": "Anthropic Expands Its Claude Mythos Preview To More Partners Engadget"
       },
       {
-        "title": "Anthropic to expand Mythos access to more than 15 countries - Financial Times",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5pTEtzS3NQRFotdEljUmZEdDJLeTlqdXhzdVhhbFUxSVpnbk9oV09uaEFuTjM3ZmZ1RnJUR01rQzhRS3N0c0h4SGoxRDNsZ3ZmX3dRenljanhnMmZUaklfWjg2b0xXaVQxVFhtaG90ZV8?oc=5",
+        "title": "Anthropic is expanding its restricted cybersecurity AI program to roughly 200 partners - qz.com",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBpMWtIdV8tSzRfaEJoY0pqbnRpcVVoOUhPM1VXLWg1bTlmWG12UWdVTG1DT1dOR19ONkhYajRxbWExb3otZnBUODk5Z2dCRzU4cmx1dVRGQXFodkd6SjNIY0xmMzRYYS0wOC1JbHEtcFE3WnhPTC1PeDkyU3prUQ?oc=5",
         "source": "Google News",
-        "published": "2026-06-02T13:00:50.000Z",
-        "summary": "Anthropic to expand Mythos access to more than 15 countries Financial Times"
+        "published": "2026-06-02T14:54:50.000Z",
+        "summary": "Anthropic is expanding its restricted cybersecurity AI program to roughly 200 partners qz.com"
       },
       {
-        "title": "Anthropic Offers Mythos Model Access to 150 Additional Groups",
-        "url": "https://www.bloomberg.com/news/articles/2026-06-02/anthropic-offers-mythos-model-access-to-150-additional-groups",
-        "source": "Bloomberg",
-        "published": "2026-06-02T13:00:00.000Z",
-        "summary": "Anthropic PBC is allowing 150 additional organizations around the world to access Mythos, an artificial intelligence model aimed at finding cybersecurity vulnerabilities that the company has said…"
+        "title": "Anthropic scales Claude Mythos to critical infrastructure in 15+ countries",
+        "url": "https://techcrunch.com/2026/06/02/anthropic-scales-claude-mythos-to-critical-infrastructure-in-15-countries/",
+        "source": "TechCrunch",
+        "published": "2026-06-02T14:44:21.000Z",
+        "summary": "Anthropic is expanding Project Glasswing, its security vulnerability program, and access to Mythos to 150 organizations across 15 countries — targeting critical infrastructure in power, water,…"
       },
       {
-        "title": "Claude Suffers Global Outage, Anthropic Works To Restore Services - outlookbusiness.com",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOTFozaGRiTVQ4UFZ4TDlWeF9xcTA2LXJ4MHVxdFlGVm0xTVQxaVVwYVNfNi1HQ3p2eVhqeVQtMFhPT202VktTcjhrc3VhRzdUN3lqSkNTTFhOR21sOTE5eEh6WU55OGtjSEdvSkpaNEtRLXdVb1AyX0RodmpkQWtENmlIc19nQ0Ytd1E4UEJ4OG5XS0tvOUR5QXVnakxPU3hzdjlRLWtYQlfSAbYBQVVfeXFMTmE4OVExeFRBWWJuRVduMF9qWUd3Y09VZ2t5UUQxVVdmRHNXNjM1Umk2YmctNjc0RTRHTV92eVNMUWNFNHItemItZ290aWlHUmtLQ00wdUxJMF9WbG5FMDBCa0U3UDdua2ZKUVRQRVlUN0c2VnladjlDdHVUU2hxcUdrNGlHWUZXNjIyVC1QOXdqV2c5QmN3S2g4enVWZ2U1cGlTZDBneVdiRVZLVlloQW9qODd6OGc?oc=5",
+        "title": "Anthropic scales Claude Mythos to critical infrastructure in 15+ countries - TechCrunch",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQMzN3NDdoSTdFb0thUloyMXZHazlEQU9ieWE0blhlMzQ0MkY2aE5sZGxrQnQyN012Z216SDl3djdQbS11UVBVaGtmeVNJb1JfM0VyNHprY2w5eFBOVkt6cmd6TkhIcG4xZXlCWUVwWXZCWkFPZUIyRVhEQUt2T1dVUlIzM0hhcFozbmlSZzZhQnRzY2NpVEw4Z2pkY0RqLTdTUDJxZWdWVldFeVRa?oc=5",
         "source": "Google News",
-        "published": "2026-06-02T12:26:50.000Z",
-        "summary": "Claude Suffers Global Outage, Anthropic Works To Restore Services outlookbusiness.com"
+        "published": "2026-06-02T14:44:21.000Z",
+        "summary": "Anthropic scales Claude Mythos to critical infrastructure in 15+ countries TechCrunch"
       },
       {
-        "title": "Anthropic Readies Broad Release Of Mythos As It Unveils New Claude Opus Upgrade - CUToday",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNeG5zVWNvWlNSb2pOTGx2ZnI0ZzRoMDEyMHktb19mcXNCWlVjU3ZuTTFOcl9CRDhkaThOamMwazRTRVRKS2ZmN1RZSV9KMEl5V0NEU2NaTVBxRFJGVFo0OEQyTDVlU2hLemlBNDI0NnVXQmJxV0ZycmhCLWxJc0RiT21QdldlWDdONlVpWl84SkFwUEsxbGhheTBJLUF0azVsVGc2U2c5MmVwSzhYRWVNaFE0QWRGQVk?oc=5",
+        "title": "Anthropic expands access to Claude Mythos-level AI models - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPSFlsWnBBLVlnbmRLQUdlNzhQVWRNVnJETWFrNUozUXdMQ1Q4NXh6djlwTzhRRlROaGR1YjByd004VnFuMlliOWV4QVE3OXJvb0R1SXgzS1Z1VjBGeVByWmV0Wl9TbWFHenU1a2x2OGZvb25SRUdCdnhCMFRaSTNRQmxZSkRKNXYwWE9IZ1NB?oc=5",
         "source": "Google News",
-        "published": "2026-06-02T12:23:24.000Z",
-        "summary": "Anthropic Readies Broad Release Of Mythos As It Unveils New Claude Opus Upgrade CUToday"
+        "published": "2026-06-02T14:21:54.000Z",
+        "summary": "Anthropic expands access to Claude Mythos-level AI models Yahoo Finance"
       },
       {
-        "title": "Claude AI down: Users report problems accessing chatbot and API - The Indian Express",
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNTUlRYzZlM05sNE5SSHZ4VHRPZk9CcXhqazk2dGt2WThlRl9HakhtZjgxTTFKaTBQaHBDN2JWbUE3ckZyM2d5Vmg5SkVZNWZtZnlVRndNVnJTQ05XZkJ6cWVqdWwxbFVwMnZZYk5IUGx1d1JaSXJkOFEzQURPcGZDUFBjMW9fTDhOVThCOWowR3NvLTJrdHZPM2ptUUxkOUpCeGFyS2IwNlZxdlJqbGhBX3lUTHJrak1WaDVMN3R6N19TektkYWdhVW1FeEltNW1pSnRRadIB2wFBVV95cUxPRUlOVFpwdXVLTWZQeVZ4dXRsd0l5bFh4YkpNUTFOUDVsTk9nblp1MGRPdm9VVjVyZUhOTDEzZnphZjJNRS1aVHZDb3dtMUJUa0Qxa3BiakFnYlVVa2d2U04wZDN0cDBUYUJTN2FDVnJPT3p6Qm9hNngxOURoNXpYalo2VGV6d1BDaVZ2M1lKQU5VLWVIckd1dVdZeVFQZl90aV9QVnBGYWNidGFjcVRYTkhLSTFvUkJPR3lVWVRoNlAyb3VYaUhPRnZWTDlNZjBFWlpub0VyTWthTk0?oc=5",
+        "title": "Anthropic expanding access to Project Glasswing - CyberScoop",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNTGxvQ0IwVklMYjFHZW51WkJ0RGR3TExJTVZsNjJRZXdzcmJPTXNILXJLRlZZdGpDQVNQTXk0WkRDLVI1RFFxY3BrLWtiXzdCdHoxZHJyQk1BRElWbHJvbVBsbHMyczNGSTNqOXc5NTN5ZWZtVUMxbVMySmdhU1lCVkdVSE1KSmFUdWFyYk8xMm95aU1ySnNQc2x3VzZnUElJ?oc=5",
         "source": "Google News",
-        "published": "2026-06-02T12:04:09.000Z",
-        "summary": "Claude AI down: Users report problems accessing chatbot and API The Indian Express"
+        "published": "2026-06-02T14:19:08.000Z",
+        "summary": "Anthropic expanding access to Project Glasswing CyberScoop"
       },
       {
-        "title": "Claude is down for many — here's what we know about the outage - TechRadar",
-        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1QMEZ3NXVma29ROWkxcDBid21ydVhIY3lDNncyRkJEREJoY21yQ19VTXNpZzdtaWU2SU02cGJWbllaX09tbU9QczFYMnVoWUJZU2tqalNRRkY5TUVWMnltOVY0aFM5YTNZeF9F?oc=5",
+        "title": "Anthropic Expands Mythos AI to 150+ Organizations Globally - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPMzFjNk9XWVFiNEFES0pXS3h4RlVqNExmbE1KUE1hMkZSZDAtSFNkY2ZrbkRJSm9SZ2FUdnJ0b3FVNGNBREI2M2ZkcVlZMEFfYnpuNEhmOUQ1OFlJU3oxelhnOTQwZ1pQWnJpNklOeU5Wck9Yd1NBX2R5d1FmbE5EcmlnR3M5VFZydm9oXzZ6T195Vms2?oc=5",
         "source": "Google News",
-        "published": "2026-06-02T11:59:11.000Z",
-        "summary": "Claude is down for many — here's what we know about the outage TechRadar"
+        "published": "2026-06-02T14:18:00.000Z",
+        "summary": "Anthropic Expands Mythos AI to 150+ Organizations Globally The Tech Buzz"
+      },
+      {
+        "title": "Anthropic Expands AI Security Push - StartupHub.ai",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPMk8ySjNqTUlHVnZsWVVtQkxsZTBFVGE0c1FnZU4zODBOdmZ0SGpwQkFidElFRW5NNmFLOFhuM2dKVGlfekE1ODRrdFBXLXhNa1pJaU13ZmFUWHJHT3hWYTVhSkF5clFDTUZjbWNVVGhYYno3WUF3WHdTWnRYTjlGMjEyOE5TcWg4aFJwamdKdVpwc2UwTnp2M0l6ei1tdw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-02T14:16:38.000Z",
+        "summary": "Anthropic Expands AI Security Push StartupHub.ai"
+      },
+      {
+        "title": "Anthropic expanding Project Glasswing to 150 new organizations (ANTHRO:Private) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPMG5lZkFjTXV1ZmlDd2RpeDNSOVJlVnFGX0NoYjB2cmQyMDBOLVRaY092bXpsU2Z6WGdvY1d4SVFMRzcza0h3UkpDclhKMFRsQy11aWd5Wm5GNnJDQ2daNTF3c0ViZ1JMYm03QUU4VHBxYnNWMzR0NGY3OTJXNTNPU3FmVW16UnJTb2ZxZ2lBdEpCVmFtTXVqVkdQVmxOQVVKX2c?oc=5",
+        "source": "Google News",
+        "published": "2026-06-02T14:06:38.000Z",
+        "summary": "Anthropic expanding Project Glasswing to 150 new organizations (ANTHRO:Private) Seeking Alpha"
+      },
+      {
+        "title": "Anthropic Expands Mythos Access to 150 Organizations - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNX3RlVmRZaE9ETFJUUVdBYVFEQjE0OE1KMlA5d2VzdC1RLW56WnlaenUtNWY5a21ESFZ1QVlxelF2VnVLclNiSUpETDVESEVzbUwzQUNoVFpyeW5sa0JWOGpFd0czQ1ZzdmtveEplU0E1bU9PMGJPNl9QUlRWWF85WE9HQnZmWXdVTnhZRS1Rd1dxdXQxYUVKQ293?oc=5",
+        "source": "Google News",
+        "published": "2026-06-02T14:03:20.000Z",
+        "summary": "Anthropic Expands Mythos Access to 150 Organizations Let's Data Science"
+      },
+      {
+        "title": "Anthropic Expands Glasswing, Promises Mythos-class Public Release - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPS01sQmU4XzBtalZVU3kzaHZfYVJqMHVwUzkxaE5QUUZkVTBydTk3TGoxY0IyTXFwUDEwOXhkd1dMa3hTXzU1MUN1R3FmRG5pTC1YbDdOdWZZamxFeThKVGcyOFM1YmFkdVBMclNyaGw5cHJSMkh2Y3B6aUZmRVhXeXJTMU1KZ1prYnhGRXB4MjM5aW02b01vRE5TUzhXZVI4d2tUaA?oc=5",
+        "source": "Google News",
+        "published": "2026-06-02T14:01:54.000Z",
+        "summary": "Anthropic Expands Glasswing, Promises Mythos-class Public Release Let's Data Science"
+      },
+      {
+        "title": "Anthropic expands Glasswing as it promises public Claude Mythos-class model releases - 9to5Mac",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQVDNoN1pfem51N0NiempvZ1l3TnhDQURnTVJ1cVVVMzU3b1YzVl9DM2dDakl4V05falFoMDBBSzU2X1ltMXdLTElFWWJqeFJyaHJBLTAtOUFpMnVGRFlrS3dFcnhqRENQRHhHaFl5YlItVnBxSWI1bUQ2dWUyY0FPV2luR0FZTjFhNng0MnZiZGVFdUN1azAtQkFoVHB6TUZ4NEtYNjVUZndCMmxmLVJWSl84eG94NnM?oc=5",
+        "source": "Google News",
+        "published": "2026-06-02T14:01:00.000Z",
+        "summary": "Anthropic expands Glasswing as it promises public Claude Mythos-class model releases 9to5Mac"
       },
       {
         "title": "Claude Code + Higgsfield: Animated Websites Are Here",
@@ -226,112 +331,6 @@
         "published": "2026-06-02T11:57:56.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude celebrates Anthropic's stock market float with blockbuster ... outage - The Register",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOMnJhSnZuaVlaZTlMOFdvQldNZXM0UXZQSEZnSzVOeGtOd2lOWEk3RVQ4TnNjelh5R01MZy1kcEhMUE9jUXVRNmtkVU84aTlYc2xFNGx1b2VVelJOMTczQ3RwSjRTUC04MXlYT0NZcUt5WTVjUkpRajIyZjZtMFpxLXFHWHhUejNCQ0hfekhkNFRRTXN1cHJ2NkdzeHJ4Um5tZFpNZU9ZTTVGUkRiUTYyXzNlcGtaVHdsZy1DY0Fob0gwckhrQjVr?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T11:54:08.000Z",
-        "summary": "Claude celebrates Anthropic's stock market float with blockbuster ... outage The Register"
-      },
-      {
-        "title": "Is Claude AI still down? All we know as Anthropic reports global system-wide errors | Hindustan Times - Hindustan Times",
-        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNeWliUHJEMnRVXzgtT1kyR0J0MWJqQU1xcVhrZkVKd1poNkVwbTZXcUFJTnZGbk5Ib3BrRFFnYTF3endHazJaSTNLbDMwcnNoeHgzTnRLQlI3NDhqQVR4ZnVJLU5tTlJZWk54dkdyY1lrUWNLb2l6QlZnV25EUDNaVnplR0UxUFpNSVF6aWVkbkw1LVVEczV4OTdkR2RQQmNRMHliRU1HOHU5SmMyZmd4SVJ0NHB5WE52RFdmNjluQm00R1liZ2oyajRuVnNhZDNXeEdRVDRYSUZLZ3phMmsxM243VTVQM0JL0gHuAUFVX3lxTE1lMGZaVzN1M0JtX3lGLTMxaHlVWElsWW1JWDRpbWZEUU9FeEx0b2JqRUxSemRvamV1dEFyY0Zzc2dWNFNpb0hydGtteW41WEIzU2QtOG45bVJoTk04Z2lVRDFiMkRNTVpzUldDYVVoZmpxY2xGUTgyOS0xYTUzS2szNlBhMndtVlVmUVVCVkhsalk1aDVfQlh2NmtiYWxURmFUX0E2MnM4ekRHM3JQd3VCOHBSUXNRWlEzbzJIU3J0YTBKTWtyWVpZWEh0cTlOVUhqUWpvMEVrVVdYdlRJRzE2UlkxYTZiSFJBVzFERXc?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T11:33:53.000Z",
-        "summary": "Is Claude AI still down? All we know as Anthropic reports global system-wide errors | Hindustan Times Hindustan Times"
-      },
-      {
-        "title": "Anthropic Files for IPO: How to Position for the Next $1 Trillion AI Listing - Gotrade",
-        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4zcVZkT2R1dVdKSXFKZDhPaGlRNmliSzNEenc4UnJaQVhWZW1zRHlOZkRWNHFnOFZjZU55R25BdE0xNDF1YWNpUGdTRW9QeWg2TF96b2hCamlMQklibXg5UktBMU4?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T11:33:02.000Z",
-        "summary": "Anthropic Files for IPO: How to Position for the Next $1 Trillion AI Listing Gotrade"
-      },
-      {
-        "title": "Why Anthropic's Claude AI suffered a global outage? Here's what the company said | World News - Hindustan Times",
-        "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPeENSWW16WVktT3Y0NDVadTEwUlNwMi1kRHBfZmhKbjBEQk84RnloNTJUOEpIT2ZHZjF5NWJkd1hOdEVVOUJ4YTZOT3B2d0ZwQ1Vmb3hsd0ZtdEFxU25Gd0h4VzU0RWhydlloY19GWS1objVpT3MwQ2w5WlFTcGxDMkhfZFFPU0hJbzdxLW9pcFdYZDZyZFhva0pCTEYwVjFKZlVpXzFPbk8xYm9lanhXeks5d1o5a0VlV05UdUtxRFgzOXNJYWRVWlV0ZUNod25uMzhLVUNoYnl0WHlJa1FLYXZPU2gyNXV4UnVxaXBJa0VhZUXSAfgBQVVfeXFMTTNJRE5oOWJuVkpDejFfM21QcFZ2TXNxUy1PRjhRUndLcUtMOExUOEwyWF9IOTJLR09ScDlUSFVGQ2taMUJEOFhBZEhIUFZuMjU2RG1tb0NlZV9qY2dnX2V3VzZscVk1YmhPOHhpR1g5RWdpVEstOUQyLUxmSkk2RHlXTUNBUEZFX2lHYWRaM1hwRHpaMzhMaWQwbEdDbWVERTg0YS1GelFKZGxzb25qYW1uV3JPTTBBbldFY0Vza3FEZDNySTZuTllrc2VFOVF3QnNFczYwaGtpbV9XeHR4a2xxVTN3SUdLajB4cnVRemxTYUdtYm9Fd1A?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T11:20:07.000Z",
-        "summary": "Why Anthropic's Claude AI suffered a global outage? Here's what the company said | World News Hindustan Times"
-      },
-      {
-        "title": "Ripple Partner SBI Goes All-In on Claude AI - TradingView",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPN0psWi1UbnNRMkF0UExwMG1EMjBqckVxbk5BU3NLb0dteDBQeTRYSHV0d3VYa0ppTkdJdGJxbXgwVzF5SFhVbTNaZmN4al9lTTROS3VNZG5XYmlIbkt3NFJIazhaalc2RlR6dm9HZ1ExMWJfakM4MFZrOEdJeFA2c09ueUY3LU5GVnltMW5sZm04ZG9WbkVmajZQMDJrdEd4dFRZcUJR?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T11:11:47.000Z",
-        "summary": "Ripple Partner SBI Goes All-In on Claude AI TradingView"
-      },
-      {
-        "title": "Anthropic confidentially files for IPO – days after $65B raise pushed AI firm’s valuation to $965B - Music Business Worldwide",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQWXZSNlBsUUNwNTc0RTQ4RThNYThlNkxKVG1DZElsbUZWbGVkTlN2OVlDWXMyWFNyRFBLUjVmeEpwekVZdUg1MmV6TDllV3p3alByUjJEMzFtRFhzalUyX2NYVFJ5Wl9IT1RSUFdpcWpUdDRMeGRMa3VWRHBSTVJkeEZYcTRjb1BPbkFTNHFjY25LeGNTS1Y0VVhEX05WYjFacUVpS2xMWlZJbE1jWW12dkpGUGo4cjhuc19rQURVNmdVZw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T10:53:27.000Z",
-        "summary": "Anthropic confidentially files for IPO – days after $65B raise pushed AI firm’s valuation to $965B Music Business Worldwide"
-      },
-      {
-        "title": "BREAKING: Ripple Partner SBI Holdings Taps Anthropic To Use Claude AI Across Company - Cryptonews.net",
-        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1tSzZiOEM0VXZMNDJxVnhsLVNGVjdndVk1c1NTdTF2MzVTdklyTnpQeEhEZDM1VG9HVnJ1ZmV6UUV6dkhpNXRqRGJOamx0ejNxQzY5MnRR?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T10:47:37.000Z",
-        "summary": "BREAKING: Ripple Partner SBI Holdings Taps Anthropic To Use Claude AI Across Company Cryptonews.net"
-      },
-      {
-        "title": "Anthropic's Claude hit by major global outage due to 'unexpected capacity constraints' - The National",
-        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOcmFjQ2N6V1F5SHJVT05mMEZkZ3poQWZiaktmTzBmTzNiVWhQUmxtWTBCSnBSVngwX18yZWhVZjB1Y3NpN3dORkQxSnF4dnJwOVIyTWhCeTBXWG1ic2RrZzJoRk9odGZuR1A5RFBuRjF4S2NXdDRmQzdDc0pDaWZSRXZrUkNZeWFiSHpWM2FzeWJLTWVJSUpfZWRVaUhaWWY1My03NkZLdmlEZUxEc2FLSjZoZ2V5cnBjVllJZDBuVXBrY1VENzBJdHJXdVpEVE95UmdWV0VDemo3RDRpSFE?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T10:47:19.000Z",
-        "summary": "Anthropic's Claude hit by major global outage due to 'unexpected capacity constraints' The National"
-      },
-      {
-        "title": "Claude down: Anthropic AI not working in major outage - AOL.com",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBEdjhvTFk1dFVtcXNDbE8tNHRId21nUy10NmZveEpCWTNUWDgxdG5sM2JnN2F1RnF5aWxuS2FYTTVPT2x2Zm1kWjBEQXM5RFNSbXJvR0g4dlRXUnVFay0tSGhNazZSXzAwRmFKWnJWMzVlWGRtcy1n?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T10:43:26.000Z",
-        "summary": "Claude down: Anthropic AI not working in major outage AOL.com"
-      },
-      {
-        "title": "Anthropic’s Claude AI chatbot not working in major outage - The Independent",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNUWk5bC1MSDJIcEg3MmdEaG02eEJPWkZhVXVzRlNzNFVNS3lzaUVNUlFBZG1oYlYwMmMzUzR6UEJjN3lCYUtyRy1KVnh2MVZIai01LWE4WW1wVDBuWUczQnhBOFpRcnpIdDRxRmxROURhUEZFSzcwSkZ2aDV0LTNPUnhwZHUyYnZtTmN0WkN5bU1iZ1k?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T10:36:00.000Z",
-        "summary": "Anthropic’s Claude AI chatbot not working in major outage The Independent"
-      },
-      {
-        "title": "Anthropic's Claude offline in apparent major outage - The National",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNM2JJNGRsMTZ5ZldvZ2E0U3NnMjR3bFNxOUJHelQ3ejgtdnVaQXZEVzh6OGQ5SEo2YjVSVDZOSEc2V20ydUxCXzZ2eEIzWlNtSGdQS0NjaFA0bkRiZ29YWHhwRzh5OEFybXl2bGY3ZnVYUnF2MG1jZUNOeEdSazVmYVZVRnlDNFY1Q0x6ci1NVXc5b05hSDlIV21XNDBaVm5OMkYwa01FUEdkSXRWZ2R4QVR3?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T10:19:35.000Z",
-        "summary": "Anthropic's Claude offline in apparent major outage The National"
-      },
-      {
-        "title": "Michael Burry says neither SpaceX nor Anthropic is worth $1T",
-        "url": "https://www.businessinsider.com/big-short-michael-burry-spacex-anthropic-ipo-ai-bubble-claude-2026-6",
-        "source": "HN · 91↑",
-        "hn_id": "48368187",
-        "published": "2026-06-02T10:09:21.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude outage: Anthropic says working on fix, and other details - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPSXR5eElhUm5Xc0dfTU1qazdCemZGbkh2X09tMnZBRWw5ckE5RVhjYmlJUnp6TVN1TFNHSEpONlhHc2otTXdLR01zcEhZZVR4NkZoUWMtd3MxTWIxeUVYT1BDVFNZRVc2R1RCMS1leGJWTEVpSHF5WTZtOTE5cmFVLTIwUU9pOUprT2tZR1VBT1lwbEJuZG5nUmhZVjFFRTlZdVh1V0tZWnF1alhqVVpYdmdpeXZ0RjZNZERzVDBaSnJabkFSUEV3V0JVbGtvZFY0MnN3RnZ1aXlCLWN50gHiAUFVX3lxTE1INDVJUkVubWEyMmgzV2oxakVvU0xxbWR6MEVyQlYzQmZOcldyWnVPeW4tbFdCdExDaTNSd1owaFhSNnZWbE5iNnhEUmY2LUo3cWJLS2h4SEVSb2pmQ0VGZ3RSZTNQNUFYWlNmSUJvQUdFR1JaZ2pveUVOS1paNlhYakRFcm9JNmF3ZnRXdEV5WjJxNlR4VzFjTVBfUmZ1OVQtN3dDQ2RHM052eG1xWllBNEJlTF9KNXoxRS0yRG9uMWY5LWc3ZV9FQXNnRm1TeXhIMExMMlp0S253TlFSdld4RFE?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T10:02:00.000Z",
-        "summary": "Claude outage: Anthropic says working on fix, and other details The Times of India"
-      },
-      {
-        "title": "Claude AI Down: Anthropic’s Claude AI suffers disruption: What caused the outage and why user quotas were reset - Storyboard18",
-        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNak9pd3IyQml6NDhlYzJZeHV3RUgzbkdFa0RpWHdrR19KdTJXaF9RS1VReW5WTVkzNW5MaWExOUVKQWZXZHJRcXk1RW1qaVo1TGFnTlcxejJOTE9lV0Y2RFgteXY5M1liUmR1M2pJQndoelZlYnFDMUxLb1Z0UjUzTDYteHFmYzBCTXZ2YVNfNFJ3MzlfNnVsd0lDNjhuR24xdS1QSVlCeEQ0TWw1cEFoemdaWV9NeTNSU0piQ043X0RtMDBLU0FaVmhnaF9wTjhoUTgwVTY4SdIB3AFBVV95cUxOM0pxLVQ0M0NLVGVEdzFzTDl3WHowQzJsOVdiSS02M243QlFGRnJXSXZzbTIzQ2wyb21zSzZ1N3pRWjZTTnp4ZVRORWVuaVd4aUh1QVdNRENKQTdKRE9fZDlIYWdTNUVrdnRMSnNvM2w3Z1N3OU1hN1hXSVFPLXhUay10LWFDYy1mdDFPYUxnaFJEdGVZTEFNcHNaaG0zRkdDbUZNbEdqeEZ2bE9sM3JrTndZRDdqNS1lWWt5ek1YcWg3UlIzbmN3TnJTb3JmS3IzY0swWGxsUFk0cTV5?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T09:55:29.000Z",
-        "summary": "Claude AI Down: Anthropic’s Claude AI suffers disruption: What caused the outage and why user quotas were reset Storyboard18"
-      },
-      {
-        "title": "ZAWYA: Qatar’s QIA doubles down on Anthropic in $65bln funding round - TradingView",
-        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOVVIzY3BENW1yRklEZUw5b2tHbDZKd0xVZTlHOGJ2dVdNQVpVNEJXSDRxU2RtbEtxTFR3SHBtRUtBYUNMYVllMjA4b1FkTHJGWjVSUFRRT1BMMS0waEVtZjRvS29OaTdZZlRrbmR2bDRQS09lZ2VPRzdGZHBlVF9LeVYwMFpscmZ3a0Z3Y1JLMHZJemF3MnpCZG1mMUN1b2ZjQmpjYzNSLXRkc0VDX05zQXlQaWJWN0FPYTR4ZEN1UHFPQkZqaGl2TUQ3MzB4NGhPQ1NDSS0wams?oc=5",
-        "source": "Google News",
-        "published": "2026-06-02T09:28:32.000Z",
-        "summary": "ZAWYA: Qatar’s QIA doubles down on Anthropic in $65bln funding round TradingView"
       },
       {
         "title": "your first claude code skill in 5 minutes.",
@@ -564,7 +563,7 @@
     ],
     "status": [
       {
-        "title": "Elevated errors on Opus 4.6",
+        "title": "Elevated errors on multiple models",
         "url": "https://status.claude.com/incidents/zkr25thltwc9",
         "source": "Claude Status",
         "published": "2026-06-02T11:49:06.000Z",
@@ -771,17 +770,6 @@
         "summary": ""
       },
       {
-        "title": "Build AI Agents Without APIs or Frameworks (Just Claude Skills)",
-        "url": "https://www.youtube.com/watch?v=eikNTBB_u_g",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "eikNTBB_u_g",
-        "thumbnail": "https://i.ytimg.com/vi/eikNTBB_u_g/hqdefault.jpg",
-        "published": "2026-05-26T01:41:28.000Z",
-        "summary": ""
-      },
-      {
         "title": "Every NEW Claude & Codex Feature Explained",
         "url": "https://www.youtube.com/watch?v=52ltebR4Jnw",
         "source": "Riley Brown",
@@ -978,6 +966,17 @@
         "thumbnail": "https://i.ytimg.com/vi/4yEBOvtMr5o/hqdefault.jpg",
         "published": "2026-04-23T13:00:18.000Z",
         "summary": ""
+      },
+      {
+        "title": "How to Use Claude Code Ultraplan (Step-by-Step Tutorial)",
+        "url": "https://www.youtube.com/watch?v=MIdKddA6vU4",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "MIdKddA6vU4",
+        "thumbnail": "https://i.ytimg.com/vi/MIdKddA6vU4/hqdefault.jpg",
+        "published": "2026-04-22T13:43:19.000Z",
+        "summary": ""
       }
     ],
     "tutorials": [
@@ -1138,18 +1137,6 @@
         "tutorial_kind": "video"
       },
       {
-        "title": "Build AI Agents Without APIs or Frameworks (Just Claude Skills)",
-        "url": "https://www.youtube.com/watch?v=eikNTBB_u_g",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "eikNTBB_u_g",
-        "thumbnail": "https://i.ytimg.com/vi/eikNTBB_u_g/hqdefault.jpg",
-        "published": "2026-05-26T01:41:28.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
-      },
-      {
         "title": "ci: migrate claude-code-action workflows to Workload Identity Federat…",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/3c30b020594de29a7f24ee579c511ac3ac45fb6a",
         "source": "Anthropic Cookbook",
@@ -1300,6 +1287,18 @@
         "published": "2026-04-24T14:19:43.000Z",
         "summary": "",
         "tutorial_kind": "official"
+      },
+      {
+        "title": "How to Use Claude Code Ultraplan (Step-by-Step Tutorial)",
+        "url": "https://www.youtube.com/watch?v=MIdKddA6vU4",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "MIdKddA6vU4",
+        "thumbnail": "https://i.ytimg.com/vi/MIdKddA6vU4/hqdefault.jpg",
+        "published": "2026-04-22T13:43:19.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
       },
       {
         "title": "Equipping Agents for the Real World with Agent Skills",
@@ -1821,6 +1820,13 @@
         "summary": "What's changed Fixed an issue when using Opus 4.8 where thinking blocks were modified, leading to API errors."
       },
       {
+        "title": "Claude Managed Agents webhooks , multiagent orchestration , and self-hosted sandboxes are now available on Claude…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#may-29-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-05-29T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Opus 4.8 is Here (BEST Model Yet...)",
         "url": "https://www.youtube.com/watch?v=4wYQUn9H5Q8",
         "source": "YouTube · Ryan & Matt Data Science",
@@ -1863,6 +1869,13 @@
         "summary": "What's changed Added skipLfs option to github / git plugin marketplace sources to skip Git LFS downloads during clone and update Claude Code now shows a one-time notice when your npm global install can't auto-update;…"
       },
       {
+        "title": "We've launched Claude Opus 4.8 ( claude-opus-4-8 ), our most capable generally available model. Claude Opus 4.8…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#may-28-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-05-28T00:00:00.000Z",
+        "summary": "We've launched mid-conversation system messages . On Claude Opus 4.8, you can send role: \"system\" messages after a user turn (subject to placement rules ) in the messages array, preserving prompt cache hits when instructions change during…"
+      },
+      {
         "title": "How To Learn Anything So Fast People Think You're A Genius (With Claude)",
         "url": "https://www.youtube.com/watch?v=0n5UI6p9jTE",
         "source": "YouTube · Pragati Kunwer",
@@ -1888,13 +1901,6 @@
         "url": "https://www.youtube.com/watch?v=UYdgBKOpzg8",
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-05-26T09:48:35.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Build AI Agents Without APIs or Frameworks (Just Claude Skills)",
-        "url": "https://www.youtube.com/watch?v=eikNTBB_u_g",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-05-26T01:41:28.000Z",
         "summary": ""
       },
       {
@@ -1933,6 +1939,20 @@
         "summary": ""
       },
       {
+        "title": "MCP tunnels is now available as a Research Preview, so you can connect to MCP servers in your private network.",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#may-19-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-05-19T00:00:00.000Z",
+        "summary": "Self-hosted sandboxes are now available for Claude Managed Agents, as an alternative to running tool execution in Anthropic's infrastructure. See Self-hosted sandboxes . • With Claude Managed Agents, you can now update the agent's MCP…"
+      },
+      {
+        "title": "The web search tool now returns richer SEC filing data, making it easier to ground financial research agents, earnings…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#may-18-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-05-18T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Code is 1000x better when you use this tool",
         "url": "https://www.youtube.com/watch?v=VQPWyS2KGt0",
         "source": "YouTube · Alex Finn",
@@ -1961,10 +1981,31 @@
         "summary": ""
       },
       {
+        "title": "We've launched cache diagnostics in public beta. Pass diagnostics.previous_message_id on a Messages request and the…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#may-13-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-05-13T00:00:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Fast mode (research preview) now supports Claude Opus 4.7. Set speed: \"fast\" with model: \"claude-opus-4-7\" and the…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#may-12-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-05-12T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "How to Build Mobile Apps with Claude Code: Full Course (2026)",
         "url": "https://www.youtube.com/watch?v=BMMcmmnjrM8",
         "source": "YouTube · Nick Saraev",
         "published": "2026-05-11T17:51:20.000Z",
+        "summary": ""
+      },
+      {
+        "title": "We've launched Claude Platform on AWS , bringing the Claude API to Anthropic-managed infrastructure accessible through…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#may-11-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-05-11T00:00:00.000Z",
         "summary": ""
       },
       {
@@ -1996,6 +2037,13 @@
         "summary": ""
       },
       {
+        "title": "Multiagent sessions and Outcomes are now in public beta under the standard managed-agents-2026-04-01 beta header.",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#may-6-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-05-06T00:00:00.000Z",
+        "summary": "Claude Managed Agents vault credential background refresh is now supported for mcp_oauth credentials. See Authenticate with vaults . • Webhooks for Claude Managed Agents are now supported. Webhook event types include session and vault…"
+      },
+      {
         "title": "EVERYTHING Claude Shipped in the Last 30 Days",
         "url": "https://www.youtube.com/watch?v=wH8F4-mcDTY",
         "source": "YouTube · Ryan & Matt Data Science",
@@ -2024,6 +2072,13 @@
         "summary": ""
       },
       {
+        "title": "We've retired the 1M token context window beta ( context-1m-2025-08-07 ) for Claude Sonnet 4.5 and Claude Sonnet 4.…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#april-30-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-04-30T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "Automate ANYTHING with Claude! (Here's how...)",
         "url": "https://www.youtube.com/watch?v=jdkrCbUBnDw",
         "source": "YouTube · Productive Dude",
@@ -2045,11 +2100,46 @@
         "summary": ""
       },
       {
+        "title": "We've released the Rate Limits API , allowing administrators to programmatically query the rate limits configured for…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#april-24-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-04-24T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Live Artifacts just dropped... ALL your tools in one place!",
         "url": "https://www.youtube.com/watch?v=4yEBOvtMr5o",
         "source": "YouTube · Productive Dude",
         "published": "2026-04-23T13:00:18.000Z",
         "summary": ""
+      },
+      {
+        "title": "Memory for Claude Managed Agents is now in public beta under the standard managed-agents-2026-04-01 header. See Using…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#april-23-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-04-23T00:00:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How to Use Claude Code Ultraplan (Step-by-Step Tutorial)",
+        "url": "https://www.youtube.com/watch?v=MIdKddA6vU4",
+        "source": "YouTube · Ryan & Matt Data Science",
+        "published": "2026-04-22T13:43:19.000Z",
+        "summary": ""
+      },
+      {
+        "title": "We've retired the Claude Haiku 3 model ( claude-3-haiku-20240307 ). All requests to this model will now return an…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#april-20-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-04-20T00:00:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "We've launched Claude Opus 4.7 , our most capable generally available model for complex reasoning and agentic coding,…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#april-16-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-04-16T00:00:00.000Z",
+        "summary": "Claude in Amazon Bedrock is now open to all Amazon Bedrock customers. Claude Opus 4.7 and Claude Haiku 4.5 are available self-serve from the Bedrock console through the Messages API endpoint at /anthropic/v1/messages , in 27 AWS regions…"
       },
       {
         "title": "0.21.2-hotfix-2",
@@ -2066,11 +2156,39 @@
         "summary": "Merge pull request #1199 from modelcontextprotocol/paulc/npm-trusted-…"
       },
       {
+        "title": "We announced the deprecation of the Claude Sonnet 4 model ( claude-sonnet-4-20250514 ) and the Claude Opus 4 model (…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#april-14-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-04-14T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "Merge pull request #1194 from olaservo/chore/bump-version-0.21.2",
         "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/0.21.2",
         "source": "MCP Inspector",
         "published": "2026-04-13T14:03:19.000Z",
         "summary": "chore: bump version to 0.21.2"
+      },
+      {
+        "title": "We've launched the advisor tool in public beta. Pair a faster executor model with a higher-intelligence advisor model…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#april-9-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-04-09T00:00:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "We've launched Claude Managed Agents in public beta, a fully managed agent harness for running Claude as an autonomous…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#april-8-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-04-08T00:00:00.000Z",
+        "summary": "We've launched the ant CLI , a command-line client for the Claude API that enables faster interaction with the Claude API, native integration with Claude Code, and versioning of API resources in YAML files. Learn more in the CLI reference ."
+      },
+      {
+        "title": "We announced Claude Mythos Preview is available as a gated research preview for defensive cybersecurity work as part…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#april-7-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-04-07T00:00:00.000Z",
+        "summary": "The Messages API is now available on Amazon Bedrock as a research preview. The new Claude in Amazon Bedrock endpoint at /anthropic/v1/messages uses the same request shape as the first-party Claude API and runs on AWS-managed…"
       },
       {
         "title": "v1.27.0",
@@ -2113,125 +2231,6 @@
         "source": "MCP TypeScript SDK",
         "published": "2026-04-01T16:44:22.000Z",
         "summary": "Patch Changes #1840 424cbae Thanks @KKonstantinov ! - tsdown exports resolution fix Updated dependencies [ 424cbae ]: @modelcontextprotocol/server@2.0.0-alpha.2"
-      },
-      {
-        "title": "@modelcontextprotocol/hono@2.0.0-alpha.1",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fhono%402.0.0-alpha.1",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-04-01T14:46:47.000Z",
-        "summary": "Patch Changes #1534 69a0626 Thanks @josefaidt ! - remove npm references, use pnpm #1534 69a0626 Thanks @josefaidt ! - clean up package manager usage, all pnpm Updated dependencies [ e86b183 , 0a75810 , 3466a9e ,…"
-      },
-      {
-        "title": "@modelcontextprotocol/server@2.0.0-alpha.1",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver%402.0.0-alpha.1",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-04-01T14:46:44.000Z",
-        "summary": "Major Changes #1389 108f2f3 Thanks @DePasqualeOrg ! - Fix error handling for unknown tools and resources per MCP spec. Tools: Unknown or disabled tool calls now return JSON-RPC protocol errors with code -32602…"
-      },
-      {
-        "title": "@modelcontextprotocol/fastify@2.0.0-alpha.1",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Ffastify%402.0.0-alpha.1",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-04-01T14:46:40.000Z",
-        "summary": "Minor Changes #1536 81e4b2a Thanks @andyfleming ! - Add Fastify middleware adapter for MCP servers, following the same pattern as the Express and Hono adapters. Patch Changes Updated dependencies [ e86b183 , 0a75810 ,…"
-      },
-      {
-        "title": "@modelcontextprotocol/express@2.0.0-alpha.1",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fexpress%402.0.0-alpha.1",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-04-01T14:46:34.000Z",
-        "summary": "Patch Changes #1534 69a0626 Thanks @josefaidt ! - remove npm references, use pnpm #1534 69a0626 Thanks @josefaidt ! - clean up package manager usage, all pnpm #1625 1fe9eda Thanks @rameshreddy-adutla ! - Add jsonLimit…"
-      },
-      {
-        "title": "@modelcontextprotocol/node@2.0.0-alpha.1",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fnode%402.0.0-alpha.1",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-04-01T14:46:32.000Z",
-        "summary": "Patch Changes #1504 327243c Thanks @corvid-agent ! - Add missing hono peer dependency to @modelcontextprotocol/node . The package already depends on @hono/node-server which requires hono at runtime, but hono was only…"
-      },
-      {
-        "title": "0.21.1",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/0.21.1",
-        "source": "MCP Inspector",
-        "published": "2026-02-27T16:02:49.000Z",
-        "summary": "What's Changed fix: include server/static in published package files by @jwoods02 in #1113 Remove misleading structured content compatibility warning by @olaservo in #1098 chore: bump version to 0.21.1 by @Copilot in…"
-      },
-      {
-        "title": "0.21.0",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/0.21.0",
-        "source": "MCP Inspector",
-        "published": "2026-02-24T16:58:15.000Z",
-        "summary": "What's Changed Bump actions/setup-node from 4 to 6 by @dependabot [bot] in #1057 Bump actions/upload-artifact from 4 to 6 by @dependabot [bot] in #1058 Bump actions/attest-build-provenance from 2 to 3 by @dependabot…"
-      },
-      {
-        "title": "0.20.0",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/0.20.0",
-        "source": "MCP Inspector",
-        "published": "2026-02-06T17:52:31.000Z",
-        "summary": "What's Changed Fix async sampling test by @cliffhall in #1035 fix(client): fix dev mode hanging on Windows by @olaservo in #1051 fix(client): circular function calls leads to memory leak by @dzhulk in #1049 Enable…"
-      },
-      {
-        "title": "Release 2026.1.26",
-        "url": "https://github.com/modelcontextprotocol/servers/releases/tag/2026.1.26",
-        "source": "MCP Servers",
-        "published": "2026-01-27T12:11:26.000Z",
-        "summary": "Release : v2026.1.26 Updated packages @modelcontextprotocol/server-everything@2026.1.26 @modelcontextprotocol/server-memory@2026.1.26 mcp-server-time@2026.1.26"
-      },
-      {
-        "title": "v1.26.0",
-        "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.26.0",
-        "source": "MCP Python SDK",
-        "published": "2026-01-24T19:26:20.000Z",
-        "summary": "What's Changed ci: add all-green job to pull-request-checks workflow by @maxisbey in #1929 Backport: Support for Resource and ResourceTemplate metadata by @maxisbey in #1928 [v1.x] fix: return HTTP 404 for unknown…"
-      },
-      {
-        "title": "0.19.0",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/0.19.0-hotfix",
-        "source": "MCP Inspector",
-        "published": "2026-01-23T15:52:12.000Z",
-        "summary": "What's Changed Update V2 messaging to clarify V1 focus by @olaservo in #958 fix issue link in CONTRIBUTING.md by @DaleSeo in #963 [Docs] Fix broken CONTRIBUTING.md links in GitHub templates by @koic in #964 Add support…"
-      },
-      {
-        "title": "0.19.0",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/0.19.0",
-        "source": "MCP Inspector",
-        "published": "2026-01-23T15:30:20.000Z",
-        "summary": "Merge pull request #1029 from modelcontextprotocol/claude/issue-1028-…"
-      },
-      {
-        "title": "Release 2026.1.14",
-        "url": "https://github.com/modelcontextprotocol/servers/releases/tag/2026.1.14",
-        "source": "MCP Servers",
-        "published": "2026-01-14T16:35:35.000Z",
-        "summary": "Release : v2026.1.14 Updated packages @modelcontextprotocol/server-everything@2026.1.14 @modelcontextprotocol/server-filesystem@2026.1.14 mcp-server-git@2026.1.14"
-      },
-      {
-        "title": "v1.25.0",
-        "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.25.0",
-        "source": "MCP Python SDK",
-        "published": "2025-12-18T17:20:56.000Z",
-        "summary": "Branching Update Starting with this release, the repository has adopted a new branching strategy for v2 development: main — v2 development (breaking changes) v1.x — v1 maintenance (security and critical bug fixes only,…"
-      },
-      {
-        "title": "Release 2025.12.18",
-        "url": "https://github.com/modelcontextprotocol/servers/releases/tag/2025.12.18",
-        "source": "MCP Servers",
-        "published": "2025-12-18T16:33:28.000Z",
-        "summary": "Release : v2025.12.18 Updated packages @modelcontextprotocol/server-sequential-thinking@2025.12.18 @modelcontextprotocol/server-everything@2025.12.18 @modelcontextprotocol/server-filesystem@2025.12.18…"
-      },
-      {
-        "title": "0.18.0",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/0.18.0",
-        "source": "MCP Inspector",
-        "published": "2025-12-16T15:01:13.000Z",
-        "summary": "What's Changed Update V2 messaging to clarify V1 focus by @olaservo in #958 fix issue link in CONTRIBUTING.md by @DaleSeo in #963 [Docs] Fix broken CONTRIBUTING.md links in GitHub templates by @koic in #964 Add support…"
-      },
-      {
-        "title": "v1.24.0",
-        "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.24.0",
-        "source": "MCP Python SDK",
-        "published": "2025-12-12T14:11:16.000Z",
-        "summary": "What's Changed feat: client-side support for SEP-1577 sampling with tools by @jlowin in #1722 Fix JSON-RPC error response ID matching by @crondinini-ant in #1720 Add streamable_http_client which accepts…"
       }
     ]
   }
