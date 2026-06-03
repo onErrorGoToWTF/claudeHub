@@ -1,20 +1,27 @@
 {
-  "generated_at": "2026-06-03T14:18:59.961Z",
+  "generated_at": "2026-06-03T19:39:42.301Z",
   "version": 1,
   "sections": {
     "updates": [
       {
-        "title": "Services Track Partner Hub",
-        "url": "https://www.anthropic.com/news/services-track-partner-hub",
-        "source": "Anthropic",
-        "published": "2026-06-03T13:00:46.000Z",
+        "title": "How We Contain Claude",
+        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+        "source": "Anthropic Eng",
+        "published": "2026-06-03T16:22:23.000Z",
         "summary": ""
       },
       {
         "title": "Ai Enabled Cyber Threats Mitre Attack",
         "url": "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
         "source": "Anthropic",
-        "published": "2026-06-03T09:46:09.000Z",
+        "published": "2026-06-03T16:18:23.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Services Track Partner Hub",
+        "url": "https://www.anthropic.com/news/services-track-partner-hub",
+        "source": "Anthropic",
+        "published": "2026-06-03T15:30:11.000Z",
         "summary": ""
       },
       {
@@ -57,13 +64,6 @@
         "url": "https://www.anthropic.com/news/milan-office-opening",
         "source": "Anthropic",
         "published": "2026-05-28T13:00:32.000Z",
-        "summary": ""
-      },
-      {
-        "title": "How We Contain Claude",
-        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
-        "source": "Anthropic Eng",
-        "published": "2026-05-28T10:01:59.000Z",
         "summary": ""
       },
       {
@@ -146,11 +146,74 @@
     ],
     "news": [
       {
-        "title": "Anthropic launches Claude Partner Network Services Track - qz.com",
+        "title": "Snowflake expands Claude use as demand for governed AI grows - SecurityBrief Australia",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPM0VlLUhaODdoazhNQUIwS1RsczhZbWhGYThhZTgxNTJvanc1eVFidmNoUGs5MEU0TjFSSWVzRHZNXzFYcG9wVjZveUxSUTJjWWlyaXFVM3loc0JES3k1ME01WlhSaXMxbC0tZDBBc3d5blZLbUlxb05kd2QyUUIwbTQwS2pJd3JMdlgwaldVajgwckIwWkVDTlpzcw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-03T18:00:00.000Z",
+        "summary": "Snowflake expands Claude use as demand for governed AI grows SecurityBrief Australia"
+      },
+      {
+        "title": "Anthropic picks Morgan Stanley, Goldman Sachs to lead IPO - report (ANTHRO:Private) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQVENlMTNUUzJmVXNLa1JjdFNsei12ZnFsTzg4YUxVNzU0eWxpcU4wSGotYXpoNFg5cWpGWjRGR1RVeWEzeXpkak44WlBUNVFQRFZZaW13bDdqZ29HOF9TYTBtd2tta2toMnNseUhYWlR0eHVvSFZfSVBBdUltOGphTFZ6Vng0TXZ5eDk1aFhIczRvdkthRUpmS29xOXZiWXRnQThtd1FR?oc=5",
+        "source": "Google News",
+        "published": "2026-06-03T17:50:54.000Z",
+        "summary": "Anthropic picks Morgan Stanley, Goldman Sachs to lead IPO - report (ANTHRO:Private) Seeking Alpha"
+      },
+      {
+        "title": "Anthropic Picks Morgan Stanley, Goldman Sachs to Lead IPO",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-03/anthropic-said-to-pick-morgan-stanley-goldman-sachs-to-lead-ipo",
+        "source": "Bloomberg",
+        "published": "2026-06-03T17:04:01.000Z",
+        "summary": "Anthropic PBC has lined up banks to lead work on its IPO, according to people familiar with the matter, as the artificial intelligence company races its rival OpenAI to be first to go public."
+      },
+      {
+        "title": "Anthropic releases new features to help enterprises track advances made with Claude - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNMk01cWYxWXpYVkxsT0xlblBaakxZUXctSG1oOE5VRFJ4TmQtNUhUWFdIRlFhNUk4cVZJamNlWFN0SzA0NFJVeVVzSlhlMmk1eG1rNXEtSDgzSVNnUW1Ld2FwQXJwQnpnczRHUUlKbkVsalpzUDhUYWE1QWJLdGttYktKTUx3c3kzTThDbFF6bW5RdDV6bFpTX1VNM0VjOHI1V2J0ZGFjSkhJMTNUeUlEd0NCOUVQNWxDVFV4a3Bn?oc=5",
+        "source": "Google News",
+        "published": "2026-06-03T16:42:01.000Z",
+        "summary": "Anthropic releases new features to help enterprises track advances made with Claude Seeking Alpha"
+      },
+      {
+        "title": "Anthropic Expands Claude Mythos for Infrastructure Defense - WinBuzzer",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOWF9qZFNiblZZUVh4dE9PMmY0MVozb2FSRGQyNzJxMHNsWkYwX09veWdybWRIZ0UzRlRLUzFta2JUSlNsYUhRdlN0M3lCdTVYWnFiWUdlQ0hCNFR2Tl9UVG1lem9fZ2hqQW1EQy1DTHBqa3dsdURKTFA2RnhvWFFPMnFCUDV2emhjZkY1WlNqNUs4UVpCVTM1cjBKM3RpU1hO?oc=5",
+        "source": "Google News",
+        "published": "2026-06-03T15:57:03.000Z",
+        "summary": "Anthropic Expands Claude Mythos for Infrastructure Defense WinBuzzer"
+      },
+      {
+        "title": "Anthropic Formalizes AI Services with New Partner Tiers - StartupHub.ai",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQQmJrNDF4QUJJdmU1SXdxQVlWMVVlV2JRWUw5T2I1QkJJNFdHb0h1U1R6eEt2d0Eyd0dSMXJKcFhWbFRoXzNGTFNhcEpoMF8xX3dvck9EX3oxZ2xvbm95Znk1SkM1Zk04Y01SWlBPVjlRZVRSV1drY1dXeW5vSENlUDcybC1YRW9iM0JSR0RkUjFZaFUzcXc0bE9rbkVwTG9TaUY3R3FreHpUMWVYUmNadTZ6Qms1RDQ5V1E?oc=5",
+        "source": "Google News",
+        "published": "2026-06-03T15:01:53.000Z",
+        "summary": "Anthropic Formalizes AI Services with New Partner Tiers StartupHub.ai"
+      },
+      {
+        "title": "Head first into Claude: Anthropic bets big on India - The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPX0VtampfLVVqMjZxdHRHZkZPc1p4cEhNQlN0Tnl1Xy1NLWdLRmU5M1JqZGFNOWloOWd6MTFZYkdRcFF4di1zZnlldy1YMm9nMmFpV1kxandlQnpENGlkWkxlbUIwQlc1RDdxVU4zXzdDTlNqNlQ3N2NFSC0zTHpnYy1nTS1YTlAyTlBfY0pVZ1ozWWlRSGNmWW9nOEhjLXFXa0JNczhpNmcwd3RoemhPU25UWExRZnlVb3Jab2R30gHDAUFVX3lxTE1wN3I1MF9OT0wySUtHdEpsVnVBX1lMcVpTeWdYM2xKLURLTDh2WUNuSmY4NFdKLVRaNGYwcWZxbWV6UTVXb1lWYUhRX2hEV1VpNjE4ajhLc29FVXRpNjBEc3FZMElDNzl0emM5OFdkUGMzUjUyNDdlWjB5ZG1PNjZWUkEyeUtXNXhTdm1KV1hKY0VOQTkxbFlrak1DZ3BKOC1kSHlUVGc1VXhERVdiVi03UjBmT3c3aDVxU19zUlJTZjFWbw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-03T14:49:00.000Z",
+        "summary": "Head first into Claude: Anthropic bets big on India The Times of India"
+      },
+      {
+        "title": "Opinion | AI Hacking Is Not the Scariest Part About Anthropic's Claude Mythos - Common Dreams",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE15dVlYQk1USGZuTVB5T2tOemkwWU5VNFVWaGZoSm5qMFdFUFdqWEtvTUd1d3lYcWtMai1uUXNZbXpmcmxMY3lQeTczSDRHaVNQdFlLTEJyM2VfMGxTWDkwMGJ3dUM3Uy1oSWlsMw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-03T14:45:02.000Z",
+        "summary": "Opinion | AI Hacking Is Not the Scariest Part About Anthropic's Claude Mythos Common Dreams"
+      },
+      {
+        "title": "Anthropic Claude Partner Network: New Services Track Tiers and Partner Hub Portal - News and Statistics - IndexBox",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQdjFRQlJ0XzhacUc5b3VzbHZwRmlUUGRHTU1tYkZlWWlOaHJMMXRONUFucHByUzVKUGZlWDBXTU5JMW1EdVVBUFY4UGdzMFFXYmpwalBnaVhUTFJPb0RJQzVfQ1JRbndTWllzX3ZTbGpNVXp1RndYUlZhMnRnQ0xLLXNHZ0RsVEw1UWxtSlJ3X01QS0hDdEl5ZHU1elZlbzZJNzVmeGg3aDk0dWRXbTVNcm9fcw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-03T14:22:00.000Z",
+        "summary": "Anthropic Claude Partner Network: New Services Track Tiers and Partner Hub Portal - News and Statistics IndexBox"
+      },
+      {
+        "title": "Anthropic is launching a Services Track and Partner Hub to push Claude deeper into the enterprise - qz.com",
         "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPYWsyWXYwUDNOcGFvSXhzcUVwRmlQQkJfNjVNamdEbWhnX0djVmZnUVIzQ1JKQXBDeUVvRHNCczhEazRHOHdNSnBhal9OUnNGbnBBN094VHYzbGh2SVpaR2RFWmZHRDh3Mm9yQ2gzSU10RTRqQjMwNVZ6NE1LTXFTQ1l4OU1zMDNUaHgwaA?oc=5",
         "source": "Google News",
-        "published": "2026-06-03T13:41:39.000Z",
-        "summary": "Anthropic launches Claude Partner Network Services Track qz.com"
+        "published": "2026-06-03T14:11:39.000Z",
+        "summary": "Anthropic is launching a Services Track and Partner Hub to push Claude deeper into the enterprise qz.com"
       },
       {
         "title": "Grant Thornton to roll out Anthropic’s Claude for UK workforce - International Accounting Bulletin",
@@ -188,11 +251,18 @@
         "summary": "Anthropic Bulks Up Its Enterprise Partner Program Amid IPO Plans WSJ"
       },
       {
-        "title": "Intercontinental Exchange Joins Anthropic’s Project Glasswing - Yahoo Finance Singapore",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQWlhhMmRnd19FaHZFd1pRbjdRTFdQd3FKQ2psMDNPYkstaFg3S0twR0NoR014akpQTEVSaTA1YmtzQWNMSS1nMVZ4VVoyZ3RFaFE0c0p1SzZXNXJMVkV1SkFORl9LbndOd250UmpyVWhnMUZVVFVERGY0cnJoSjZ2T29HcDh0R0p4Q1AyRHZpbVBZMTRCS042LTFtOGdRNm8?oc=5",
+        "title": "Anthropic Targets Enterprise AI Growth With Services Partner Track, Outcome-Based Incentives - crn.com",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRmJnUFBWcEx1bFBnMFVBN0dZdGFUeDRHVk5TcXMtR1ZLRF83bW13Vy1QbHo3bWFKT3dUZVBMc01aUFY3TDJ5eEEtRHNPd2VQX0c2bE0yQzl6WGRDeXhoZXA3OVVibUlmT2hwVjNhMU1kV1ROT1ZRcmU4VlY0LU9GVnJFLW1lQXhOaWhkMGtSci1UVkVlX05MLUJpaEhhaGVreWFfOURzd3I1M2VyWHhxYlA3dHAyT2M4eE9KVFFETVJXZw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-03T13:00:00.000Z",
+        "summary": "Anthropic Targets Enterprise AI Growth With Services Partner Track, Outcome-Based Incentives crn.com"
+      },
+      {
+        "title": "Intercontinental Exchange Joins Anthropic’s Project Glasswing - Business Wire",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMi1EdlB3WjcydXhRZ2JsLVZoQ042bUNIOUZkSE82VVBEdTdZNV81dkY0T3JuYndjYXNzVlcycEhSS0NLRjJoVmhub3FNa3BPeVVDaXdvcHc5YWZ0U2lpcl9iLWZjLURCZHE4TEVnaVhVM3o1V3EyNFZ5NmtaVUpxMGVZWEZPSFhWcFVIOHN1VFdtSGduT3BXaVhHN1REQlZTbG1aZTIyYUlIc3RraExHUVdnRG5jU1R4?oc=5",
         "source": "Google News",
         "published": "2026-06-03T12:00:00.000Z",
-        "summary": "Intercontinental Exchange Joins Anthropic’s Project Glasswing Yahoo Finance Singapore"
+        "summary": "Intercontinental Exchange Joins Anthropic’s Project Glasswing Business Wire"
       },
       {
         "title": "Anthropic, Snowflake expand partnership to integrate Claude AI with enterprise data platforms - Storyboard18",
@@ -200,13 +270,6 @@
         "source": "Google News",
         "published": "2026-06-03T11:49:07.000Z",
         "summary": "Anthropic, Snowflake expand partnership to integrate Claude AI with enterprise data platforms Storyboard18"
-      },
-      {
-        "title": "Priceline upgrades AI assistant Penny with Anthropic’s Claude By Investing.com - Investing.com Canada",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQMmpZamd1b1dETkxWQUViNGdGUU1zSWR4d3lsVnZkaFZfOWFHdENySWp1QWVBXzM4Y0lGNG90blZZY2NVaWhFcnM0VjVyQ05XWThEYThmRVE5ejh1ZlM3cERubFJtTzJ0WVRoZFVNSTVlY0hweVNvZ3duZjVtSGl5TXlQanlrSklUcHc4VWV0enZhOGR6c2U4T05lMzNhbS1rWXZYRElWUi1yUExEemdtb2h2bTZhNk1SdkZ3T0d3?oc=5",
-        "source": "Google News",
-        "published": "2026-06-03T11:06:58.000Z",
-        "summary": "Priceline upgrades AI assistant Penny with Anthropic’s Claude By Investing.com Investing.com Canada"
       },
       {
         "title": "Priceline updates Penny AI assistant with Claude - PhocusWire",
@@ -251,74 +314,11 @@
         "summary": "QIA Expands Stake in Claude Maker Anthropic via $65B Funding Round cairoscene.com"
       },
       {
-        "title": "Hot job alert: Anthropic is hiring for its new 'AI Rule & Law' team - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1tckpQX0FsaGlRU1FIWXJsd1BCT21MR0tFSGFBRWQ4SGNpLXQ0MWVrLTVrU04zRm5yekt5UG15aUd6OG5xaVFKSW1YTDJQdkNKem5JeEs4VkRvaEctNHc2ZmswWXdMUS1NRk1URFFJUW9tRmpoM3RTVlBsNi0?oc=5",
+        "title": "Gov't, banks given access to latest Anthropic AI model for security - Japan Today",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQcTZBVnhHNHhCemlZZUltZ0szM0QxekFjY3B2bDkxbGpXSzlYdnRFNnM4TVhyVFM2UHYtLVllRl9ZUHFPWFhMdng5TENONlpIcVhCZlJNVE1TYkNUUGVyTHhkUmJVNWxRT2hjLXdDVVJSdm9CZXJ4YXdMR2tTRzZRaE1nTGNGcnJMYU1RM2c1M0dXVnRIUHN5dmFfcURrMXYtRkpGaDk2Z3BibHBKQ3c?oc=5",
         "source": "Google News",
-        "published": "2026-06-03T09:05:13.000Z",
-        "summary": "Hot job alert: Anthropic is hiring for its new 'AI Rule & Law' team Business Insider"
-      },
-      {
-        "title": "After months of AI doomsday warnings from CEO Dario Amodei, Claude-maker Anthropic quietly files for tril - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxOZWV5X0RITV8xanVLci1zUU9KSXlXQUp4cFU0Yk5ISTVkVXFKS0FCelo1c0RlNFdHT3pTMkdleDBBVENZMzRvMzFtak5xODUtRUpLd0R1d0VrcExuOHgzeXF5b1VKZkF2TVpsMl9oR214TGtabFYxVXBBNzlyUE1yd2lncFdKbl9UTFJjOXpvR3FtQy15X01fU2taV0JhaU96QTgzTndlODFYZ2x1TXhjbzJTTmU5akhEdUtqeE9oZy1QRkdybUJkTlJROFpGUkgxQnY5bTRlajA4T00xM3NaNVlnUVB0YUlDZlFxa2UtVHBXbl83WEVtay1weGJEYTUtRjJ3RkxrZU5rczhFMkFEVG1GWG5hREFCZDNLZUdrWWdEck1KOXFlVTJR0gGvAkFVX3lxTE1hT0dIQ2JjeHN1NEp6b1Z6TzlTNkRsdFdsRXpqZFF0NllQMTZueU5Yeno4YVoxUFRtRmZWMGd3UDJhYm9HRXNXeFFkTnpRS05hOTlCbDNQY0JpMXZSYlJYeG92N1phbE04RW5qRzZpOG1mZzhxZTd0aXFXUS13WjdmRmhlYlJPTElOMWN2cmFoMGR4OTdscVBzenI4LUZ0dFZ4VEk3NktaMzFPeEN6amhiUlJtZ2ZpV1Z0MHpJTWFLLU1jVzlSZGpoS1J5S0NHekFDTm9HakxJSTNwWE5IY1hia2xTckpSTEIzNmFDSlE2cU80ckFlOXRmT0ROeVlISzlPMXQwNkdVRTlqMEVoX3Q2dXFqNVJ1UV9hM3hqdTZ5cVowMWJvN2ZPeTdIZkJqSQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-03T08:29:00.000Z",
-        "summary": "After months of AI doomsday warnings from CEO Dario Amodei, Claude-maker Anthropic quietly files for tril The Times of India"
-      },
-      {
-        "title": "Japanese government and banks granted access to Claude Mythos - The Japan Times",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPbGpzWHk4QUFBanJ4RmVhMldZWHhHVEZXN1JqSXYwcHNZMG9lRUxoWkI0V3NmWkR1ZERzVUU0Y0YtWVhNc1RWOUc4Nnptc1c0ZnZMSy1BeGRrT25CRy1Ld0t4eWpjbkJuRzZjNUhudWpTandfNVV0dU9KOExUYmFsd0hJcw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-03T07:57:00.000Z",
-        "summary": "Japanese government and banks granted access to Claude Mythos The Japan Times"
-      },
-      {
-        "title": "Anthropic's Claude Mythos AI Model Will Now Be Accessible To Some Indian Organisations - NDTV Profit",
-        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOVHI5bGxPLXAyMGozZTRkLWVYTFNoejNDQlh4WTlKYWVPMGx6REkteGkzcWNmZUdKcmtLZFVneFhYMVl3a0RHVTE1QndBdzdlSXlLdVotQzVoUUljYmd3Z29nYnh3OXdXYjR1YzFLWXFjNXo3amNDWHNwWWJ3VlcyV1E1Sm5NMFdkQTcwaEFVT1psY0Qxd1g0cHY1bkh5T2g5eTl2azc1cE1Qalk1ZzluMmpOeDdWVVRPVGlwdGZhTGtfdE5PdGNIVndUSFLSAdQBQVVfeXFMTXhQYkpITERjLW0wREFELWR6cUtCZ2RNUWFfOXcyTzBGWS1KSW5JVFZabVNsQU1OTmhQdFB2M2Vsdkt6TzBHSENaSktUejRJaVRkb1Bmc0tCcklIUVRxMzdBbU5kTkl6OXlfTjdFNDNkblFNQ0NQSldMUzg1RHh6MmxMUHAxZU1pajJacW1pMHJHZHBwQUpCcVQ1cGFxbUNSVEo0TlVmazRoN1FnNHJOWXVWNE9XX2xvc1dXem5YcnVxT2VOSElvTGo0VzNGSkZIZlgzaFE?oc=5",
-        "source": "Google News",
-        "published": "2026-06-03T06:20:42.000Z",
-        "summary": "Anthropic's Claude Mythos AI Model Will Now Be Accessible To Some Indian Organisations NDTV Profit"
-      },
-      {
-        "title": "AI: Anthropic Mythos earning mythic Cybersecurity pricing. AI-RTZ #1106 - AI: Reset to Zero",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5LRHBrZUFkYW9FbWpIVTNzZFJqaXptV0o5WlpoVmxISVh5b3k5QzdfcFR2NXhDMy1fLVpwakJGRXRQbGJIN2hsdTVUOTZUc210SW56bkhycXpPNlItdElXSlBaakI1bXQzNzNlZkV6WGxwQlJ2VHYySEZZYw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-03T05:02:36.000Z",
-        "summary": "AI: Anthropic Mythos earning mythic Cybersecurity pricing. AI-RTZ #1106 AI: Reset to Zero"
-      },
-      {
-        "title": "Anthropic expands Claude Mythos access to India as enterprise and partner ecosystem grows - CRN Asia",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdXY3TmhkVGlMWW1ER29JYnEtY1JFcElsZXhJY0xraDFzNkhKX2NtUmlmVUV0YnktZFpLYVFab0RGMUZPTXNfZFVPeHptcklqVlh0TjluV0ZJNzVXaWZKdGR0MHhIbHNRNnJuMU9idDR1bkRHZ1B6LW4xZWpzSE45aG4xZDVOUEU2Z3ZiVm5vZlg2N09qZ25nb2VNVFZZbnRUM3VkbFduQ0xmRkRFRWcxTjFSRlN6Wkx6elp4MWpSeVIyR29DaHVOdg?oc=5",
-        "source": "Google News",
-        "published": "2026-06-03T04:34:29.000Z",
-        "summary": "Anthropic expands Claude Mythos access to India as enterprise and partner ecosystem grows CRN Asia"
-      },
-      {
-        "title": "Anthropic acknowledges Claude Opus 4.6 disruption, details hours-long service outage - Storyboard18",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOcVNMWVVNLU95NmJSVzlFMkxZYm1pdUJ6WGhwaEZZZGx4WkVZZWxsRVZTS3pvYXJsa3VzaFp1WlVXQ3d4b2d5NlAzZ3J5R0N2cWF1OUo0WGhfanhNRFZTTS1FY2I3aC0zNXFrWHNGdWFVdzUxLWk0WFdJekRVYS1zdDJRY3V6WVlwQnJmXzdzajJxMzE5dE9UWjJQdG9jSnV4ek1RVk0wOXo4Z0toZmpMWHpYckhPN3FUS05MQTRQOW0wZXdueVFuOWJOLTdIVllDZGNneFdB0gHbAUFVX3lxTE1vOUhpUzlRLTFNZ3E0MUlORTFUdUVMYkZSMGNXZ2p1LVF6QmZudGkyTFFWZFpxdjNRWWg2cDhQbVpOenR6VDVfMnZ4bEpTc3hWX3pGOTBZc2l1UGZ5WEpkdFhWcEo0VHlZTks1aEF5dWJOdW9rci1ocGZTMElodmpSQ0lhWnMyTDB5c3JvdDA2UXQwQXVFMm05N2NnRDRmZXFzR1lFVHdVU2V2d2xSbUhwM3J6SEZMYkpzWjFyOFc4d2pUdjNUVjEyTjcxRFRFdnVoV3I1VzVCSms0RQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-03T04:03:45.000Z",
-        "summary": "Anthropic acknowledges Claude Opus 4.6 disruption, details hours-long service outage Storyboard18"
-      },
-      {
-        "title": "Snowflake & Anthropic expand Claude use for enterprise AI - IT Brief Australia",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVTE2Z0JBd2hHbE1RMHFZOXNkYXpWM00zYXAyZXlTS3lCVDMxWlBjUmtid1lFakp5RjdULXZZVGJ1bzdCZlViQlNzVGVHbnFzYWxpVGF5XzFjZmY5RDlHdDR0UXp6RlJWT01CLTlNWUJsUW81SjZFNTUtckhkaUh2UW9fczBaUGxwdVNYYQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-03T03:45:00.000Z",
-        "summary": "Snowflake & Anthropic expand Claude use for enterprise AI IT Brief Australia"
-      },
-      {
-        "title": "ChatGPT Outpaces TikTok, YouTube As OpenAI's Chatbot Hits 1 Billion Monthly Users In Just 3 Years, But An - Benzinga",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQdVNCMEMxcElFVjBudUlqWHVScjIyT09FWGJZWmkxWnB4cmlzbDFvRXhBemk3bUZIMzBjMG5KaDc3QnB3b3ctM0xCVFlkYzJyRHc1VXVDa3lENGxNY1JwdTRGYzlCQ2M4WVp6cXNmSDY2REhsOWZZcjVvU1NpWkFEQ1RWb04xdVJMV0pEMFA5TllVNTdQVHBuQUlOZXN6ajJodmZaQVFySDRMdWQ4SjQ1eVo5U3RnRlpJUGtkNERDMnEwTm56NlprYXF3?oc=5",
-        "source": "Google News",
-        "published": "2026-06-03T01:49:55.000Z",
-        "summary": "ChatGPT Outpaces TikTok, YouTube As OpenAI's Chatbot Hits 1 Billion Monthly Users In Just 3 Years, But An Benzinga"
-      },
-      {
-        "title": "Anthropic grants Project Glasswing access to 150 more companies, with a focus on critical infrastructure - csoonline.com",
-        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQMUpHbXVxcG5pU2VxRVB5b1lycDZ4ekNJd3dqVjVJdEpjeGtJYVFUTERwVjNUZGlGeHpET1ZKeEN0eTl0M3ctRURxdC1qNzhzM29HWW5hYlNjYnQ3eXN1S21XakdnS0lGOUdJcF82UWZvd1ZTcG96Qk5uTEI5OEl6dXdTaFdHb1QwcmJtLXJtSFctUnNBaVdyc0FiMm9JUjc0b0xNT0xIYnV5OWJ2djZuZUlKN2p5VGwxQjF4TDZ4R25tUEQtVWM4MUI0eHJua3VBc0RYMFpIMXBSWDBlc05HX3ltRlI?oc=5",
-        "source": "Google News",
-        "published": "2026-06-03T00:39:35.000Z",
-        "summary": "Anthropic grants Project Glasswing access to 150 more companies, with a focus on critical infrastructure csoonline.com"
+        "published": "2026-06-03T09:13:00.000Z",
+        "summary": "Gov't, banks given access to latest Anthropic AI model for security Japan Today"
       },
       {
         "title": "Claude Code + Higgsfield: Animated Websites Are Here",
@@ -981,6 +981,14 @@
     ],
     "tutorials": [
       {
+        "title": "How We Contain Claude",
+        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+        "source": "Anthropic Eng",
+        "published": "2026-06-03T16:22:23.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "5 Beginner Tips to STOP Hitting Claude Cowork Limits",
         "url": "https://www.youtube.com/watch?v=jvy5rTh0ns0",
         "source": "Ryan & Matt Data Science",
@@ -1090,14 +1098,6 @@
         "source": "Claude Code Releases",
         "published": "2026-05-28T18:00:55.000Z",
         "summary": "What's changed Opus 4.8 is here! Now defaults to high effort · /effort xhigh for your hardest tasks Introducing dynamic workflows: ask Claude to create a workflow and it orchestrates work across…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "How We Contain Claude",
-        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
-        "source": "Anthropic Eng",
-        "published": "2026-05-28T10:01:59.000Z",
-        "summary": "",
         "tutorial_kind": "official"
       },
       {
