@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T19:51:51.607Z",
+  "generated_at": "2026-06-04T21:20:57.689Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,49 @@
     ],
     "news": [
       {
+        "title": "SpaceX Becomes A \"Neo Cloud\" Landlord As Anthropic's Compute Crunch Reshapes AI Infrastructure Bets - foreignpolicyjournal.com",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOM3VkNi1Cc3VQWUZEc00zWm1zUjcxY2JrS1daWFNVb2R0UkR1TnRUUXI0UVJiNjltMmxMeGVfSV8wek5wd2g5eHoxNEJGb0hyY0szWmpIUGs1cHpZMUljWmcyNDFxemthbWtkNmFUR3RLMWpGVmdNS0cyTmdMbTRvZkVLRTlFdnhlRGhUYjB6a1hQazhwc2Q5cDZ5SEJxRjJpaDNNVmRXNW15eFNMOXlia1FvYnBHbmJSUElOUDBoekJNZTljbE1sVS1HTUFFOVFlNE94TjR0b3UxLUpFc0E?oc=5",
+        "source": "Google News",
+        "published": "2026-06-04T21:09:00.000Z",
+        "summary": "SpaceX Becomes A \"Neo Cloud\" Landlord As Anthropic's Compute Crunch Reshapes AI Infrastructure Bets foreignpolicyjournal.com"
+      },
+      {
+        "title": "These LLMs are the best at resisting Russian propaganda",
+        "url": "https://arstechnica.com/ai/2026/06/these-llms-are-the-best-at-resisting-russian-propaganda/",
+        "source": "Ars Technica",
+        "published": "2026-06-04T20:44:31.000Z",
+        "summary": "As more people rely on large language models to provide pat answers to complex questions, state governments are understandably worried about those LLMs spouting what they see as dangerous propaganda…"
+      },
+      {
+        "title": "Anthropic says 80% of its new production code is now authored by Claude — how your enterprise can catch up - VentureBeat",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxObEFXWkZzSVF2anBCYjVKVTBhSVlaZ0RxRlBDQVpxRFhrZHNGWUhzLUg3TUktZ0RJV2dQNlhpTDJ0Vy1zRDlTNzViU2djbWNRSno1Z0Iwal9LOGVkZTVvWmwxbUdqaHI4R0lleXJ4Yk1sMmtSQ2pseEVndUJoYkE4RVk2OW5nRjhMT2ppeW5oSU5uMDRGR05IZm1CQ1RrMWN0U092QVBLTTVST3RhYnF5VGxtMmZxNzM3VXVUWGRFcFo1VHFUNXAzUC1kbXlaanFrclV3?oc=5",
+        "source": "Google News",
+        "published": "2026-06-04T20:25:00.000Z",
+        "summary": "Anthropic says 80% of its new production code is now authored by Claude — how your enterprise can catch up VentureBeat"
+      },
+      {
+        "title": "Anthropic’s Mythos puts AI engineering economics under pressure - Startup Fortune",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVUZCN0d5bHNfQ1Q0S0FfYjFWRG1EY041Q3pzYUloN2NZLUZsSWZmU3hPajZ1WG9nYzJpMWgxRUpiWTV5OVdyTlEtVVVtNmY0bC1ibjFjcFBkc0tYdzZacHM1OWhOQWxfcFc4c1E1ek9SR2VtcjZiYXlDcXdCSmc5S3VmbWsyUGVJOEowb1JhVURUTGNj?oc=5",
+        "source": "Google News",
+        "published": "2026-06-04T20:13:23.000Z",
+        "summary": "Anthropic’s Mythos puts AI engineering economics under pressure Startup Fortune"
+      },
+      {
+        "title": "Anthropic's open-source framework for AI-powered vulnerability discovery",
+        "url": "https://github.com/anthropics/defending-code-reference-harness",
+        "source": "HN · 89↑",
+        "hn_id": "48403980",
+        "published": "2026-06-04T20:11:20.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic's Daniela Amodei on AI's Future - StartupHub.ai",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNZktTelVlZ1FZWmU3b1hfVWh1OTlVYTBIUVhjMl9TQ0FkcGY5ZXpKS0dvbXlYTEJDYnY4dGFnLVRjSEZoOUlGaFVwOW80aE9hVlduZm05cEoxeTNXeDZOcXlPeFczZmtjS09mZXdCUUJTYlhCWTRzblpCLTJpOVkta0IyMHRPdDlHLTZwZVNhYWRpbUFMaTVMMHN1VHF2UlVGYWZYNDNZWQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-04T20:03:06.000Z",
+        "summary": "Anthropic's Daniela Amodei on AI's Future StartupHub.ai"
+      },
+      {
         "title": "Claude maker Anthropic confidentially files for IPO after revenue surge puts it near $1 trillion - Yahoo Finance",
         "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQVlFQTWJ5NEpZRnE0cDJkTy0wYnNWOE9PakJ1SkFrMjNvQnFpaTZ3cnVwS1NybmNndmpvYWwzc2N4X1BuWXh5T2VYTDdLaDZzWGtFYlJDNHg4WVNGSHl3bm1lMlMxeVczMWlibUNnVWY3RUhsMzJUZHVTU2NrVi1iRFFyVGI1c0dwejI5MXRkOWtEc1hTR3VlbFpfOGxVNEJTVGhzMUhoQVJjb04z?oc=5",
         "source": "Google News",
@@ -160,39 +203,11 @@
         "summary": "Anthropic PBC co-founder and President Daniela Amodei said the high cost of developing artificial intelligence models is driving firms like hers to look to the public market for capital, days after…"
       },
       {
-        "title": "AI Has Become Major Capital Formation Cycle, Says Altimeter",
-        "url": "https://www.bloomberg.com/news/videos/2026-06-04/ai-has-become-major-capital-formation-cycle-altimeter-video",
-        "source": "Bloomberg",
-        "published": "2026-06-04T17:57:46.000Z",
-        "summary": "Apoorv Agrawal, Altimeter capital partner, says AI has become one of the largest capital formation cycles. He also weighs in on the IPO landscape as SpaceX and Anthropic get close to going public,…"
-      },
-      {
-        "title": "SaaSpocalypse Is Overblown, Says Okta CEO",
-        "url": "https://www.bloomberg.com/news/videos/2026-06-04/saaspocalypse-is-overblown-says-okta-ceo-video",
-        "source": "Bloomberg",
-        "published": "2026-06-04T17:56:50.000Z",
-        "summary": "Todd McKinnon, Okta CEO, discusses his outlook for the cyber security industry in the wake of Anthropic's Mythos model and concerns around its impact on security. He also says he thinks worries of a…"
-      },
-      {
-        "title": "Anthropic's Ethicist on Whether AI Can Become Conscious",
-        "url": "https://www.bloomberg.com/news/videos/2026-06-04/anthropic-s-ethicist-on-whether-ai-can-become-conscious-video",
-        "source": "Bloomberg",
-        "published": "2026-06-04T17:53:21.000Z",
-        "summary": "Amanda Askell, Philosopher & Ethicist at Anthropic discusses AI consciousness and managing Claude's soul, as well as safety risks and ethical guardrails with Bloomberg’s Shirin Ghaffary at Bloomberg…"
-      },
-      {
-        "title": "Anthropic President Amodei on the Future of Claude",
-        "url": "https://www.bloomberg.com/news/videos/2026-06-04/anthropic-president-amodei-on-the-future-of-claude-video",
-        "source": "Bloomberg",
-        "published": "2026-06-04T17:51:56.000Z",
-        "summary": "Daniela Amodei, President & Co-Founder at Anthropic discusses the latest in model development, its commercialization strategy and current relations with the US government with Bloomberg’s Shirin…"
-      },
-      {
-        "title": "Anthropic made Claude worse for a month — this is how they got caught - MakeUseOf",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNbjhIWmNISWszQ3JMcmtQcjZJVUQyV0Y2N1hTUnlvWlZrWHFENHM4M1hqeW5sTlZvSXRrdGliYUdCMFllUUZSUHhZYkMxT0JEU0ZWR283d2VlTEJSLVRHR201S0lBb2Y2OFZkclZhSmVSbkpBQlVvaWZYNC13NWZFdA?oc=5",
+        "title": "Anthropic President Sees High Computing Costs as Driver for IPOs - Bloomberg.com",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRndXTVFBMnNuczVPTTNhMGd1M1BDR3RpOGM2cTcxZjh1WDBLWHktRzNOejlES2IwaE1OdnpIUW53RkZDaWlqcnNpSnIyQThxeHJpbVpFcE9XQ1R4TWppenJQVFZGcHdLM28xX2oybmtFa1dIdGlQQVROUGFHcW5lRFFEaWtHUkhKbXZ3UUpPbm1WNVBNbWZqYzV2c2NMT2VfZEtkWjZvdWUyclNNMVVpUGplZWk4QQ?oc=5",
         "source": "Google News",
-        "published": "2026-06-04T17:30:20.000Z",
-        "summary": "Anthropic made Claude worse for a month — this is how they got caught MakeUseOf"
+        "published": "2026-06-04T17:58:46.000Z",
+        "summary": "Anthropic President Sees High Computing Costs as Driver for IPOs Bloomberg.com"
       },
       {
         "title": "Anthropic Admits AI Is Learning to Build Better AI Faster Than Expected - BeInCrypto",
@@ -211,7 +226,7 @@
       {
         "title": "When AI Builds Itself: Our progress toward recursive self-improvement",
         "url": "https://www.anthropic.com/institute/recursive-self-improvement",
-        "source": "HN · 83↑",
+        "source": "HN · 165↑",
         "hn_id": "48400842",
         "published": "2026-06-04T16:20:17.000Z",
         "summary": ""
@@ -233,7 +248,7 @@
       {
         "title": "Show HN: Boxes.dev: ditch localhost; run Claude Code and Codex in the cloud",
         "url": "https://boxes.dev",
-        "source": "HN · 70↑",
+        "source": "HN · 77↑",
         "hn_id": "48399358",
         "published": "2026-06-04T14:38:35.000Z",
         "summary": "Hi HN, we’re Nick and Drew, and we’re building boxes.dev – the first cloud-only agentic dev environment (ADE) that gives every Codex and Claude Code agent its own cloud computer.…"
@@ -305,22 +320,8 @@
         "title": "Walmart's Code Puppy was born from rage at AI's lock-in trap - Business Insider",
         "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOX1BqSFExYXhXMFdGZHJHdjlUaGx6a1p1T3AycnAzbTJVSVRGMHVSX0NkTlpNNngzSm5QMFhRNFBQc21rNGZnR181RGhKYjV3eXQtVF80YnhkYUhMVmphUFJCNFVwRDRobi1Wb2JkemRSUzJqbmRuVU16Z1NfR05YQkl0UVpOdWJmNUxLSm1PRERFWklhWDFvMnVWRQ?oc=5",
         "source": "Google News",
-        "published": "2026-06-04T09:00:00.000Z",
+        "published": "2026-06-04T09:00:23.000Z",
         "summary": "Walmart's Code Puppy was born from rage at AI's lock-in trap Business Insider"
-      },
-      {
-        "title": "TrendAI Joins Anthropic’s Project Glasswing to Advance Global Software Security - World Business Outlook",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOSjlkVlY4QmlVS2pndGpWbEVJQmM3ck1jY01Fc0tBV0xwVWQ1R01ybUx2VXpQRVFvV3lsVVk2ZFdLSkprN2hVVkUyLTdQcHNsMWxJQWZPYXhKTkRESUNGMlM0OVp2M1FPLUtYY25qRDI3dGcxUDlzSVlGMmdIakRXTzh4Q0RrcFc4UFVwbmRuU2JXbDJBTEFLR0NXZzNwWHFlbG5iSEphS25fMHhzUXBQSk1n?oc=5",
-        "source": "Google News",
-        "published": "2026-06-04T08:01:10.000Z",
-        "summary": "TrendAI Joins Anthropic’s Project Glasswing to Advance Global Software Security World Business Outlook"
-      },
-      {
-        "title": "Anthropic turns its safety reputation into enterprise leverage - Startup Fortune",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQdXZDTnJ2TF94YWNIWElyRE9EMHItYVd5bWlrWXpTNkUtT1NKQVFidmVWOXc5X29xcXJTMzRtRlIycFNURU5VUHdkNTRaYkVqV251S0ZwR1RaYjdacEFyTkZHVnYxeFMxV2xYRUZQb2xGbzFzT1lCRVU0NG1LMFNMUl9tU3NBa2R0cldQblM1VnBsSmk1?oc=5",
-        "source": "Google News",
-        "published": "2026-06-04T07:42:52.000Z",
-        "summary": "Anthropic turns its safety reputation into enterprise leverage Startup Fortune"
       },
       {
         "title": "Claude Code + Higgsfield: Animated Websites Are Here",
