@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-06-05T17:44:27.829Z",
+  "generated_at": "2026-06-05T19:27:14.375Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Making Claude a Chemist",
+        "url": "https://www.anthropic.com/research/making-claude-a-chemist",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T19:11:58.000Z",
+        "summary": ""
+      },
       {
         "title": "Measuring Agent Autonomy",
         "url": "https://www.anthropic.com/research/measuring-agent-autonomy",
@@ -135,16 +142,51 @@
         "source": "Anthropic",
         "published": "2026-06-02T14:03:15.000Z",
         "summary": ""
-      },
-      {
-        "title": "Confidential Draft S1 Sec",
-        "url": "https://www.anthropic.com/news/confidential-draft-s1-sec",
-        "source": "Anthropic",
-        "published": "2026-06-01T15:59:13.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Model Routing Threatens OpenAI and Anthropic's Revenue Model - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQSjc5MEZORE5GUDRTdnhQSUhVZW40TnREYmx2bVlPT3V3MWV6ckJSSHo3bW16ekJTR2VYZEJMVVB5VGUwcXkzZnJObkFad29EVDRqOTNlMUMyNDlhZE5GTUY0Skt3LVdpMDY4TGxpSU9fUURpZGpxS1pJbnNPZ3R3dDF3R1lMdVhsNVczT20yWC1mc2JVZkI0UA?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T18:50:00.000Z",
+        "summary": "Model Routing Threatens OpenAI and Anthropic's Revenue Model The Tech Buzz"
+      },
+      {
+        "title": "S&P 500 rejects SpaceX, also blocking entry for OpenAI and Anthropic",
+        "url": "https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/",
+        "source": "Ars Technica",
+        "published": "2026-06-05T18:45:20.000Z",
+        "summary": "SpaceX has requested unusually swift entry into several leading stock market indexes as a condition of its historic stock market debut. But the S&P 500 stock market index representing many of the…"
+      },
+      {
+        "title": "Govt's cybersecurity efforts get Anthropic's Claude Mythos boost - Business Standard",
+        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQZlRLN2NBN1F1UGVMZHhtU3ByTE1RZm0zSDNsU2oyMkV2UGVBV1JvekFBUDdGM19JaHhiWnNHd0xpYXBHUFVGTGRTVE1aVkFuWVRFMXlmTGVaQnJyRVFVdXQtMmMyTzFwdldwMXA0TGl0NXNfWmlfekFKT3Z3enQ5Mjd3WGc0TDBsZlBxRUNKOW1PV1NUOGNMZ0sybGpjcUo4Qmh5b2k1YW5SN3JoZnlSX040d3V2SFhPTS0zZ285ZlFMejJXXzFBeFFIaTdxaWZwUUZYaUE3aFpEamPSAdsBQVVfeXFMUGZUSzdjQTdRdVBlTGR4bVNwckxNUWZtM0gzbFNqMjJFdlBlQVdSb3pBQVA3RjNfSWh4YlpzR3dMaWFwR1BVRkxkU1RNWlZBbllURTF5ZkxlWkJyckVRVXV0LTJjMk8xcHZXcDFwNExpdDVzX1ppX3pBSk92d3p0OTI3d1hnNEwwbGZQcUVDSjltT1dTVDhjTGdLMmxqY3FKOEJoeW9pNWFuUjdyaGZ5Ul9ONHd1dkhYT00tM2dvOWZRTHoyV18xQXhRSGk3cWlmcFFGWGlBN2haRGpj?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T18:26:36.000Z",
+        "summary": "Govt's cybersecurity efforts get Anthropic's Claude Mythos boost Business Standard"
+      },
+      {
+        "title": "Index Ventures' Achadjian on Backing Ex-SpaceX Workers",
+        "url": "https://www.bloomberg.com/news/videos/2026-06-05/index-ventures-achadjian-on-backing-ex-spacex-workers-video",
+        "source": "Bloomberg",
+        "published": "2026-06-05T18:10:06.000Z",
+        "summary": "Software has dominated venture capital for years, but as AI moves beyond the digital world and into manufacturing, robotics, and industrial systems, investors are betting the next trillion-dollar…"
+      },
+      {
+        "title": "Anthropic warns AI may soon begin recursive self-improvement - Scientific American",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOSDBjNWRscG40YjNuQzBiN2ZMcE5jU1pkNU1KY2FKaHdxZC1sa1pRQjhSNFBZWlQwaXVXTV95bjBNaFJoMkhmUlFTbkNZNWJlZFc0dDg1eUl2UFIxeXlRd1dTdVJ1cUtHR05qUUhjOW5rVmgyU3Z6SjZNTUdaejFJOTBlUzdkd3hyY0hnRTVTTHVUcmtQTXdYY3gtVDhqUkoyeVNjYXh0WQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T18:00:00.000Z",
+        "summary": "Anthropic warns AI may soon begin recursive self-improvement Scientific American"
+      },
+      {
+        "title": "Anthropic Claude enterprise AI adoption surpasses OpenAI - The Cryptonomist",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNZ1lyZURXMXJIcnBNdmZlVTh2enZjTUpUa2NzbmRxODZLbTlQMnNPbmFNeVhwaDlvSm0wVVhxSHZBam1wNHRBeDBtNW56YzRnYzJZQ2tueldNdWhrLU9Yejl4Qy1qODAxTEZzaU9VT0Y4LVBKS3dMWXAtMXNpSTBDN0Y2a2M?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T17:41:33.000Z",
+        "summary": "Anthropic Claude enterprise AI adoption surpasses OpenAI The Cryptonomist"
+      },
       {
         "title": "A Surprising AI Milestone Has Sparked New Concerns At Anthropic - Cointribune",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeDZxUE43b1NGbzFrdDdDSzcwVDVURkZubTZrdGZMXzVDbkw3RDVVZGhHNTE5TXR4eUVEYm1RMFFLUWlZcDJKbEY4U3dzLWxUeldaXy1aWnVUT1dnbHduRXZRem9HZFFGQmZSWm1HRWlBWGNnd3JlN0JvVm5YSm4wMjdHYXl4UnpJS0Rtcmp3MkRvWXFrZDlIag?oc=5",
@@ -209,11 +251,11 @@
         "summary": "The U.S. eavesdropping agency is reportedly preparing Anthropic's Mythos for use in cyberattacks, despite a federal ban on using the AI model maker."
       },
       {
-        "title": "Anthropic started red teaming new Mythos models, first results - TestingCatalog AI News",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOQTk1T1k4LW1ydW00UFZGSW9FQS1EOEdHcHNrcEVXcWVoM3JpSlJtRjJJS2xOQVpkV0dVVVJLLS01MFFMYTBGQVd1Ml9oeHpMUVEtb1pUYzRMYjNwTnVMZDFNajg2SE1vbGtORF91SFUzcl9jWjJCU0NWbm5NSEtUTzNjRDJJcUpKeG9yOHRhNy1UTjdfVnQwTA?oc=5",
+        "title": "Anthropic warns AI could soon build itself without human involvement—and urges a global pause on development - Fortune",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPS2ljWWNYcTRCOUpaRmlRRHByaG9EclRLLVU0dWx6T1QtU28wU2xEQVZVanMxZll5WHBzVldqdUNLT2UwRnkxM0VoSHRtMzkyNmJvMkswUXVDZi0zdWU4N0tyOUphaS1iWEl3QkRKY2UyejMxTkdGZ0x5bldZTU8zS2xQRWUzODhwMkJfaFdLd3JETnc?oc=5",
         "source": "Google News",
-        "published": "2026-06-05T13:30:58.000Z",
-        "summary": "Anthropic started red teaming new Mythos models, first results TestingCatalog AI News"
+        "published": "2026-06-05T14:27:00.000Z",
+        "summary": "Anthropic warns AI could soon build itself without human involvement—and urges a global pause on development Fortune"
       },
       {
         "title": "Anthropic Says Claude Now Writes 80% of Its Production Code, Targets Full Self-Improving AI - WinBuzzer",
@@ -251,16 +293,9 @@
         "summary": "Anthropic says Claude now writes over 90% of its code and wants the world to have an AI pause button the-decoder.com"
       },
       {
-        "title": "Morning Minute: Massive ZCash Exploit Found by Claude, Extent Unknown - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPY3NZendqQnkxYUswRk9UWUV1ZFFrTFZIRFZhLWdJVHhTbHBVc3B4QURkbVhocXZ0S1N6VjBDaERSUk5OdU1jU3lha0hYazV3SGVUaFpDWm96STZWN0V3cVFON19SN3JjNUZoV2hmY2xncU96Tjg2VlJRQWx5aDBBbGFXdXJPakhmWmpKNk1NQWp6Tzk0VzF1OVA3Nk1ENXhmdkFj?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T12:49:04.000Z",
-        "summary": "Morning Minute: Massive ZCash Exploit Found by Claude, Extent Unknown Yahoo Finance"
-      },
-      {
-        "title": "Did Claude Increase Bugs in Rsync?",
+        "title": "Did Claude increase bugs in rsync?",
         "url": "https://alexispurslane.github.io/rsync-analysis/",
-        "source": "HN · 62↑",
+        "source": "HN · 120↑",
         "hn_id": "48411635",
         "published": "2026-06-05T12:43:33.000Z",
         "summary": ""
@@ -268,7 +303,7 @@
       {
         "title": "Programmers will document for Claude, but not for each other",
         "url": "https://blog.plover.com/2026/03/09/#documentation-wins-2",
-        "source": "HN · 139↑",
+        "source": "HN · 152↑",
         "hn_id": "48411510",
         "published": "2026-06-05T12:30:17.000Z",
         "summary": ""
@@ -298,53 +333,6 @@
         "source": "Google News",
         "published": "2026-06-05T11:46:57.000Z",
         "summary": "Anthropic says something unsettling has been happening to Claude Yahoo Finance UK"
-      },
-      {
-        "title": "Anthropic says something unsettling has been happening to Claude - The Independent",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVkEzRVZHR1k2eHhzRmhVOUpMYXpPOUdaTGZhS2Ria0RKeEJwcENUcjNFTzVBdjh4ZjBXS09WWGxTaXlzTjk4TnpjVTZPQ25BUVdtUndxVG1qa1REd2hmUXVOMmUyeERCano1c2JhTXFhUDAzU1VHTEdGcEhIWWpCUE90MFAxLVNrcFVV?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T11:46:00.000Z",
-        "summary": "Anthropic says something unsettling has been happening to Claude The Independent"
-      },
-      {
-        "title": "Anthropic Calls For Global Pause In AI Development - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRjEza2hsQnZLS3Q0cnlrejA0M3YwbFh6Rm1BRE5tMTFXcFF0Ym8wemo3Yk9XQV85T09sV0M4RzRTOGFiWXFJSlB5a0l0SVdIM1RJVWVXRVZEOXdZLWNEdWdtbUZ2Q2FqQTFCbnRhYmxYVExlZ0Y4YnRybW5GR1VTTXhqLWUtaEg4ZWNyM3d6QWFtMEx6bWdv?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T11:43:49.000Z",
-        "summary": "Anthropic Calls For Global Pause In AI Development Let's Data Science"
-      },
-      {
-        "title": "Anthropic warns Claude AI is building itself faster than expected, calls for option to halt frontier development — 'recursive self improvement' increases risk humans lose control of AI - Tom's Hardware",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQWDVDVWFBWVNrMkJDUFVHUHlXZHhqTmUzZTRtS19VRzBBX2VUS3ZNc29SWlFoT3Y4anBhbUZLMFF3b25DdDN0aXF2SzJYYXVtSnJ4aGlzZFlrNWVUZlZlVVNUMS16WDA4U3pXTUo3X25uMWdoVkR3Z3BCdktLTHV6ZFF2M204UUV1dmp1SUIxY2N4dFhEYTV5TnEycUJyQ0F6Y0I4OUJSaHRPNm5aTTQyQ0hwMzFxTWgxbEV2SXVVWXRfWW5oY05td1VhUktFR3JNR2NiLTN3?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T11:29:35.000Z",
-        "summary": "Anthropic warns Claude AI is building itself faster than expected, calls for option to halt frontier development — 'recursive self improvement' increases risk humans lose control of AI Tom's Hardware"
-      },
-      {
-        "title": "Anthropic warns of 'risks of humans losing control over AI' - Sky News",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNjZUVG52bG5fenNPSC02NHVxVEZ5cWlDTF9Wd0xIS0cycTZKajFtRHF0ZTRYNGhDdGFMYXpkM2NDWWs5RmtGNU1UOUd3YVAwZVFPRmhHMVFzX0NsbGVrbWpsUlZycUZhTWF3bXNvNFhadW1OYzFpZ1E3Q0FuTjNyZk5Xb3JWODducDhXam5NV181MDFSYS1JbA?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T10:51:01.000Z",
-        "summary": "Anthropic warns of 'risks of humans losing control over AI' Sky News"
-      },
-      {
-        "title": "😺 Anthropic: AI Is Building AI now - The Neuron",
-        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1FNVhHclotTmp0alMzLUFOcDF2ZmhsTC0xSDMybk5MUFZTdUhkNG5GQ3pLZXlTTW1MZ3Z1Mm5uMVZOUUNaczZFOW5TR1VVdDJSanNreFpnQk44Vm00d1o2czNMMWxJRWVabTUzUXZfazJxZw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T10:00:24.000Z",
-        "summary": "😺 Anthropic: AI Is Building AI now The Neuron"
-      },
-      {
-        "title": "Claude Code + Higgsfield: Animated Websites Are Here",
-        "url": "https://www.youtube.com/watch?v=a4p6ykdRmzc",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "a4p6ykdRmzc",
-        "thumbnail": "https://i.ytimg.com/vi/a4p6ykdRmzc/hqdefault.jpg",
-        "published": "2026-06-02T11:57:56.000Z",
-        "summary": "",
-        "_kind": "news_video"
       },
       {
         "title": "your first claude code skill in 5 minutes.",
@@ -556,8 +544,8 @@
         "title": "Elevated errors on many Claude models",
         "url": "https://status.claude.com/incidents/fprlnsvdnr2k",
         "source": "Claude Status",
-        "published": "2026-06-05T17:13:32.000Z",
-        "summary": "Jun 5 , 17:13 UTC Monitoring - Success rates across all models have returned to expected levels. We are continuing to monitor closely to ensure no further issues will recur. Jun 5 , 16:46 UTC Update…"
+        "published": "2026-06-05T18:28:04.000Z",
+        "summary": "Jun 5 , 18:28 UTC Resolved - This incident has been resolved. Jun 5 , 18:27 UTC Update - The incident started at 8:08 PT / 15:08 UTC. Recovery times per model were: Opus 4.6 - 8:25 PT / 15:25 UTC…"
       },
       {
         "title": "Elevated errors on Opus 4.7",
@@ -672,7 +660,7 @@
         "summary": ""
       },
       {
-        "title": "Claude Code + Higgsfield: Animated Websites Are Here",
+        "title": "Build Animated Websites with Claude Code + Higgsfield",
         "url": "https://www.youtube.com/watch?v=a4p6ykdRmzc",
         "source": "Leon van Zyl",
         "channel": "Leon van Zyl",
@@ -1033,6 +1021,18 @@
         "published": "2026-06-02T21:58:22.000Z",
         "summary": "What's changed OTEL_RESOURCE_ATTRIBUTES values are now included as labels on metric datapoints, so you can slice usage metrics by custom dimensions like team or repo claude agents rows now show…",
         "tutorial_kind": "official"
+      },
+      {
+        "title": "Build Animated Websites with Claude Code + Higgsfield",
+        "url": "https://www.youtube.com/watch?v=a4p6ykdRmzc",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "a4p6ykdRmzc",
+        "thumbnail": "https://i.ytimg.com/vi/a4p6ykdRmzc/hqdefault.jpg",
+        "published": "2026-06-02T11:57:56.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
       },
       {
         "title": "v2.1.160",
@@ -1759,6 +1759,13 @@
         "summary": "What's changed Bug fixes and reliability improvements"
       },
       {
+        "title": "We announced the deprecation of the Claude Opus 4.1 model ( claude-opus-4-1-20250805 ), with retirement on the Claude…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#june-5-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-06-05T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.163",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.163",
         "source": "Claude Code",
@@ -1808,7 +1815,7 @@
         "summary": "What's changed OTEL_RESOURCE_ATTRIBUTES values are now included as labels on metric datapoints, so you can slice usage metrics by custom dimensions like team or repo claude agents rows now show done/total before the…"
       },
       {
-        "title": "Claude Code + Higgsfield: Animated Websites Are Here",
+        "title": "Build Animated Websites with Claude Code + Higgsfield",
         "url": "https://www.youtube.com/watch?v=a4p6ykdRmzc",
         "source": "YouTube · Leon van Zyl",
         "published": "2026-06-02T11:57:56.000Z",
@@ -2226,13 +2233,6 @@
         "source": "MCP Python SDK",
         "published": "2026-04-02T14:36:40.000Z",
         "summary": "What's Changed fix: remove unused requests dependency from simple-chatbot example by @maxisbey in #1959 ci: backport conformance tests from main to v1.x by @felixweinberger in #2068 fix: add RFC 8707 resource…"
-      },
-      {
-        "title": "@modelcontextprotocol/fastify@2.0.0-alpha.2",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Ffastify%402.0.0-alpha.2",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-04-01T16:44:34.000Z",
-        "summary": "Patch Changes #1840 424cbae Thanks @KKonstantinov ! - tsdown exports resolution fix Updated dependencies [ 424cbae ]: @modelcontextprotocol/server@2.0.0-alpha.2"
       }
     ]
   }
