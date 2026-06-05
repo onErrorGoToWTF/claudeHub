@@ -1,8 +1,113 @@
 {
-  "generated_at": "2026-06-05T14:18:01.437Z",
+  "generated_at": "2026-06-05T17:44:27.829Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Measuring Agent Autonomy",
+        "url": "https://www.anthropic.com/research/measuring-agent-autonomy",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T15:49:18.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Values Wild",
+        "url": "https://www.anthropic.com/research/values-wild",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T15:38:54.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How Ai Is Transforming Work at Anthropic",
+        "url": "https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T15:38:44.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Assistant Axis",
+        "url": "https://www.anthropic.com/research/assistant-axis",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T15:37:12.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Introspection",
+        "url": "https://www.anthropic.com/research/introspection",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T15:36:49.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Estimating Productivity Gains",
+        "url": "https://www.anthropic.com/research/estimating-productivity-gains",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T15:32:46.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Personal Guidance",
+        "url": "https://www.anthropic.com/research/claude-personal-guidance",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T15:31:07.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Emergent Misalignment Reward Hacking",
+        "url": "https://www.anthropic.com/research/emergent-misalignment-reward-hacking",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T15:20:07.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Emotion Concepts Function",
+        "url": "https://www.anthropic.com/research/emotion-concepts-function",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T15:19:58.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Next Generation Constitutional Classifiers",
+        "url": "https://www.anthropic.com/research/next-generation-constitutional-classifiers",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T15:19:41.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Automated Alignment Researchers",
+        "url": "https://www.anthropic.com/research/automated-alignment-researchers",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T15:19:26.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Persona Selection Model",
+        "url": "https://www.anthropic.com/research/persona-selection-model",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T15:19:12.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Natural Language Autoencoders",
+        "url": "https://www.anthropic.com/research/natural-language-autoencoders",
+        "source": "Anthropic Research",
+        "published": "2026-06-05T15:14:37.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Chris Olah Pope Leo Encyclical",
+        "url": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
+        "source": "Anthropic",
+        "published": "2026-06-05T14:58:47.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Widening Conversation Ai",
+        "url": "https://www.anthropic.com/news/widening-conversation-ai",
+        "source": "Anthropic",
+        "published": "2026-06-05T14:40:24.000Z",
+        "summary": ""
+      },
       {
         "title": "How We Contain Claude",
         "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
@@ -37,120 +142,92 @@
         "source": "Anthropic",
         "published": "2026-06-01T15:59:13.000Z",
         "summary": ""
-      },
-      {
-        "title": "Series H",
-        "url": "https://www.anthropic.com/news/series-h",
-        "source": "Anthropic",
-        "published": "2026-06-01T15:29:46.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 4 8",
-        "url": "https://www.anthropic.com/news/claude-opus-4-8",
-        "source": "Anthropic",
-        "published": "2026-06-01T10:18:23.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Design Anthropic Labs",
-        "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
-        "source": "Anthropic",
-        "published": "2026-05-28T19:33:59.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Milan Office Opening",
-        "url": "https://www.anthropic.com/news/milan-office-opening",
-        "source": "Anthropic",
-        "published": "2026-05-28T13:00:32.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Coding Agents Social Sciences",
-        "url": "https://www.anthropic.com/research/coding-agents-social-sciences",
-        "source": "Anthropic Research",
-        "published": "2026-05-27T23:35:45.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code Auto Mode",
-        "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
-        "source": "Anthropic Eng",
-        "published": "2026-05-27T11:44:48.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Kiyoung Choi Representative Director Anthropic Korea",
-        "url": "https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea",
-        "source": "Anthropic",
-        "published": "2026-05-26T23:11:06.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Chris Olah Pope Leo Encyclical",
-        "url": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
-        "source": "Anthropic",
-        "published": "2026-05-25T18:41:28.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Glasswing Initial Update",
-        "url": "https://www.anthropic.com/research/glasswing-initial-update",
-        "source": "Anthropic Research",
-        "published": "2026-05-22T20:37:40.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Natural Language Autoencoders",
-        "url": "https://www.anthropic.com/research/natural-language-autoencoders",
-        "source": "Anthropic Research",
-        "published": "2026-05-20T14:03:11.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Teaching Claude Why",
-        "url": "https://www.anthropic.com/research/teaching-claude-why",
-        "source": "Anthropic Research",
-        "published": "2026-05-20T13:19:12.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Widening Conversation Ai",
-        "url": "https://www.anthropic.com/news/widening-conversation-ai",
-        "source": "Anthropic",
-        "published": "2026-05-20T00:29:29.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Acquires Stainless",
-        "url": "https://www.anthropic.com/news/anthropic-acquires-stainless",
-        "source": "Anthropic",
-        "published": "2026-05-19T18:06:44.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Kpmg",
-        "url": "https://www.anthropic.com/news/anthropic-kpmg",
-        "source": "Anthropic",
-        "published": "2026-05-19T13:30:59.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Pwc Expanded Partnership",
-        "url": "https://www.anthropic.com/news/pwc-expanded-partnership",
-        "source": "Anthropic",
-        "published": "2026-05-15T17:32:36.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "A Surprising AI Milestone Has Sparked New Concerns At Anthropic - Cointribune",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeDZxUE43b1NGbzFrdDdDSzcwVDVURkZubTZrdGZMXzVDbkw3RDVVZGhHNTE5TXR4eUVEYm1RMFFLUWlZcDJKbEY4U3dzLWxUeldaXy1aWnVUT1dnbHduRXZRem9HZFFGQmZSWm1HRWlBWGNnd3JlN0JvVm5YSm4wMjdHYXl4UnpJS0Rtcmp3MkRvWXFrZDlIag?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T17:05:00.000Z",
+        "summary": "A Surprising AI Milestone Has Sparked New Concerns At Anthropic Cointribune"
+      },
+      {
+        "title": "Anthropic says the world should have option to ‘pause’ on AI - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPVXVJQXhlVjIxN1JhSGsxOVhGcUJ5cWRZd2FyLTBuNjNvVjhUcTc1SG9pTXc2U2pEcE1rajBMZU01T3ZUanBScHF5NXVQTERPLXl5VXJHbFI1c0RDMU1id3dtT1I5N0ZRSjF3RnJKZ0UxTnd2VW1ZLXhMdDRSVjZNbEJyY3A1bGlnNUY5Vm9QMmZSY3JjdXgwSlczT2FUaFgyNUYyLTdURU1yYWVjczNyRVRNVjVxMkJl?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T16:58:00.000Z",
+        "summary": "Anthropic says the world should have option to ‘pause’ on AI The Guardian"
+      },
+      {
+        "title": "NSA using Claude Mythos for 'offensive cyber operations,' report claims — says 'half-a-dozen' Anthropic engineers embedded inside the agency - Tom's Hardware",
+        "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxNMTBEcktzcGJhdkVMSWFUcVN0X2NqX3dHRmJqWEN5WjlRcDhRN2gzREVWdFhXWjlvdGpLQ0wwcE1xSHdNaTVKcXN6THRQeVFRQThWX1VZU1pTb2tCZ1FfRTZzSWExSXo4TlpFUGJVR24td29fVzhMNkNVcWhXc0d3SlZjdk9EbDBJUUUwVVE3QjZtdFFYVUhuTGliWUtxdy13bkJRS0xBUG9xa1BLeW1YQjZqWVhxUW1VOXo1SG55cnZkbzhNZ2J6S3dqd0I5eHZGdGdpaGdTY1E3OUhZT0drMVgyd25jZjlicllBRHZmLWRQdXg0ZUZVNngtaU9uMkpXMWFUNzI0XzNCSzQ3T1cyVHpuS2hhcVZXaVZJSjFLbEJPQ3ZtX1Rj?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T16:53:46.000Z",
+        "summary": "NSA using Claude Mythos for 'offensive cyber operations,' report claims — says 'half-a-dozen' Anthropic engineers embedded inside the agency Tom's Hardware"
+      },
+      {
+        "title": "Claude Becomes The Enterprise Favorite As Anthropic Passes OpenAI - Yahoo Finance Singapore",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOR1hmWlpkb3VRX3BjcDdrVnhHWWIxRE1LcFMxcVRBalJ4WUI5ajV0N1E5b25hbVhvUmsyWXpNXzRnT2xPMXM5VDk1UENSQnhHWV9pb21VWm5SVWZ6M2d5UmFCUkt0MVV2LXNvYVNnLWUyNUp2MENIRHhQU0xreWhpVTctb3lQUnU1Wkl0NEd6TDBMTFVtY0VVTw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T16:46:53.000Z",
+        "summary": "Claude Becomes The Enterprise Favorite As Anthropic Passes OpenAI Yahoo Finance Singapore"
+      },
+      {
+        "title": "Anthropic warns of AI's rapid development, societal risk ahead of IPO - CNBC",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdVlKNEhLSGE5elh2NEJMVzZTU0V2bzRmcE1ZNzFwRDRTa1JTY1pMbDZoNUNGcVg3UFlxREUyOHFIMWlhbGFzTW5rOWRIVkpxNnJEU3VhRm1uTWpnQVlmSER6c2xKZmNISWQ2TmN3WjlRekpVSkNhbHEyS3FtSjR5Q25YUDNkQ2dGVHJ4V3FwcU5FSWpCcFhZRWVGVXFlc0FGSzA1SlVIQdIBrAFBVV95cUxOaF96U1VOTzBPQTd3cmVqLWRiSjdxS0tJUjZCZTF4azdQVEFFSjNPMnI5LWpBWWt4WHd4bm4wTjFnTmF0cUhmSEF1Mm1CRkkxcE9TWk5fVnE2NEFQdVhOSkNSX0JWbmFqMWR5S29LOXE1V19LdkpwbnFxTXNKYzJGNkNFOENna1BlRTVLak5jVFlmbnhvSFdHb1UxMERFcU1xTDlNeDFFd01IVnZa?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T15:43:19.000Z",
+        "summary": "Anthropic warns of AI's rapid development, societal risk ahead of IPO CNBC"
+      },
+      {
+        "title": "Cohesity Gains Access to Anthropic?s Claude Mythos Preview Through Project Glasswing - marketscreener.com",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPSC1WQmsyQmpuRXEzNkYyOUtlWkgyZzRnZFNhWUhFcjZTTk0tUnJrX296MnFQVWl1elJEVHlXOHZoZk1EWWhfNEthTXZhNm9fZ1pWMjZXTklEYkZBc2cwSmx1NUttcjkzY3hScldDZFVKZW9wU0pkdm5lZzVsUDNsSFF2aGYxR0ZFQkhjYjIyTGJKWkNfd214TU5POHVrcDlXNHktZHZWUnR1TEFXdVpxenZVeDFtTnBybFkxcUdIYk9fZERXajdKY3dFeVQtdzhuRk9z?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T15:36:53.000Z",
+        "summary": "Cohesity Gains Access to Anthropic?s Claude Mythos Preview Through Project Glasswing marketscreener.com"
+      },
+      {
+        "title": "'Good for the world:' Anthropic calls for global temporary pause in AI development - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPaDBUb0stb2dVZ2hGWDkyVjJBeWVNN2FjWU5SZnFXbkczT19iekV6d2RqMGtNVXFRaU9sREhCbDJmSEpqRDZMd3c5ZXdtTEp2S1RhZlJmbW9ZWHlxY1NPZThYNC1WSkpiQkJtSXRVQkp1N0ZlMzZTYVlNUTZOdUk4ZmQyVTF2WXZSdm03aW9Fc0pjWGVMVGk4ZDYwTkpFNkQ2TEYyd2JlS2l1XzVvYXEyVVRkQjEwZDVQbVpCR0hhcDhZTUNWeDYw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T14:52:49.000Z",
+        "summary": "'Good for the world:' Anthropic calls for global temporary pause in AI development Yahoo Tech"
+      },
+      {
+        "title": "Claude Is Rapidly Building Its Own AI Successor, Anthropic Wants To Hit Pause - HotHardware",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1fMV9UT1ZyZ0hEaDFMT0xEQjVNOVRQeWZLYm9GMU1mdGpadDdrREpTVTlxRWlTZGdCLXJBYmQ1YmlJaW81XzV6b01UT3dsUGxhQUFSZWptd3hLUXluaEFlOGJjY2RncTF4YXh3Sm1R?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T14:35:00.000Z",
+        "summary": "Claude Is Rapidly Building Its Own AI Successor, Anthropic Wants To Hit Pause HotHardware"
+      },
+      {
+        "title": "NSA said to be readying Anthropic’s Mythos for use in cyber operations",
+        "url": "https://techcrunch.com/2026/06/05/nsa-said-to-be-readying-anthropics-mythos-for-use-in-cyber-operations/",
+        "source": "TechCrunch",
+        "published": "2026-06-05T14:32:57.000Z",
+        "summary": "The U.S. eavesdropping agency is reportedly preparing Anthropic's Mythos for use in cyberattacks, despite a federal ban on using the AI model maker."
+      },
+      {
+        "title": "Anthropic started red teaming new Mythos models, first results - TestingCatalog AI News",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOQTk1T1k4LW1ydW00UFZGSW9FQS1EOEdHcHNrcEVXcWVoM3JpSlJtRjJJS2xOQVpkV0dVVVJLLS01MFFMYTBGQVd1Ml9oeHpMUVEtb1pUYzRMYjNwTnVMZDFNajg2SE1vbGtORF91SFUzcl9jWjJCU0NWbm5NSEtUTzNjRDJJcUpKeG9yOHRhNy1UTjdfVnQwTA?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T13:30:58.000Z",
+        "summary": "Anthropic started red teaming new Mythos models, first results TestingCatalog AI News"
+      },
       {
         "title": "Anthropic Says Claude Now Writes 80% of Its Production Code, Targets Full Self-Improving AI - WinBuzzer",
         "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOODVPRXpPUjFiYlRXN2wzZUNST3ZLdFFMdmJ6MlJRd3B1TVc2eEEyUDVNLWNFczkxcXVaTjVxVm05c3g4QnpUR3ZVcDJWTWpmT3V3LWZDODRnV2xUWTVEQkJvR2YxbzduaHIzOXJFbmM5eHprMkxfMVpzNURJNW9oUFM1TUNTZFJLWEhObFpZcENPcEtVZ0hRZ2tFTDNzUQ?oc=5",
         "source": "Google News",
         "published": "2026-06-05T13:30:34.000Z",
         "summary": "Anthropic Says Claude Now Writes 80% of Its Production Code, Targets Full Self-Improving AI WinBuzzer"
+      },
+      {
+        "title": "Anthropic IPO Picks Goldman Sachs, Morgan Stanley, JPMorgan: Revenue Accounting Question Looms - Tech Times",
+        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZVFpbGtpdm9MNmhlS0Y1bXE1ZUtfdG02NEFLM1VmNmhtVFVYb1VUUjMyX1l3cXZEdXRrUGFZX3k1LTlCemo0MHIxMkJhQy1qLWlsV1hBRmFMckxRNl96aVBoWHhraXFIYXVaRnBIcjJOUGI4dFFHYU5tOTRXSzhnNUpBS2w5QVJ5QlBlT25xOVF0ZFNRN2tFR2Qzb3oyNnppc0swWmlqMWVMbkZUX3lkUEZ0Mk04azg0a215RXdmNUJOZ1ZfcE9hcmVIc1kyeGFYZzA5SThPVnhCZ2gweDdn?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T13:01:02.000Z",
+        "summary": "Anthropic IPO Picks Goldman Sachs, Morgan Stanley, JPMorgan: Revenue Accounting Question Looms Tech Times"
       },
       {
         "title": "Cohesity Gains Access to Anthropic’s Claude Mythos Preview Through Project Glasswing - Yahoo Finance",
@@ -167,9 +244,23 @@
         "summary": "'Pause button has no cords': Claude speaks against Anthropic's AI pause calls as pre-IPO cosplay WION"
       },
       {
+        "title": "Anthropic says Claude now writes over 90% of its code and wants the world to have an AI pause button - the-decoder.com",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMzZnRDFBZnphSEhBUTJ5XzVPdWZfWlZLcGVNSlB6NzBxTjFia3hFTXlXaUZIVjd1OWVuY1pWc1JsVHZHR0ItTktzNndVd3R2QXg4WDZmdWFSWHZUMVNiNEJLcGtHalZHcWN0QjY1dXVlc1VELTJiV0V6bUJVSzJfbXVSb0xReWw1QjdkV0tSLXVNNDdjLU1xRkZ5cno1dDVtLVBhMXh6aGRQWHJNb3V6Z1A1b2paRkx3OENOMzUwQ1V1Zw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T12:49:39.000Z",
+        "summary": "Anthropic says Claude now writes over 90% of its code and wants the world to have an AI pause button the-decoder.com"
+      },
+      {
+        "title": "Morning Minute: Massive ZCash Exploit Found by Claude, Extent Unknown - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPY3NZendqQnkxYUswRk9UWUV1ZFFrTFZIRFZhLWdJVHhTbHBVc3B4QURkbVhocXZ0S1N6VjBDaERSUk5OdU1jU3lha0hYazV3SGVUaFpDWm96STZWN0V3cVFON19SN3JjNUZoV2hmY2xncU96Tjg2VlJRQWx5aDBBbGFXdXJPakhmWmpKNk1NQWp6Tzk0VzF1OVA3Nk1ENXhmdkFj?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T12:49:04.000Z",
+        "summary": "Morning Minute: Massive ZCash Exploit Found by Claude, Extent Unknown Yahoo Finance"
+      },
+      {
         "title": "Did Claude Increase Bugs in Rsync?",
         "url": "https://alexispurslane.github.io/rsync-analysis/",
-        "source": "HN · 59↑",
+        "source": "HN · 62↑",
         "hn_id": "48411635",
         "published": "2026-06-05T12:43:33.000Z",
         "summary": ""
@@ -177,17 +268,10 @@
       {
         "title": "Programmers will document for Claude, but not for each other",
         "url": "https://blog.plover.com/2026/03/09/#documentation-wins-2",
-        "source": "HN · 58↑",
+        "source": "HN · 139↑",
         "hn_id": "48411510",
         "published": "2026-06-05T12:30:17.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic says Claude now writes over 90% of its code and wants the world to have an AI pause button - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMzZnRDFBZnphSEhBUTJ5XzVPdWZfWlZLcGVNSlB6NzBxTjFia3hFTXlXaUZIVjd1OWVuY1pWc1JsVHZHR0ItTktzNndVd3R2QXg4WDZmdWFSWHZUMVNiNEJLcGtHalZHcWN0QjY1dXVlc1VELTJiV0V6bUJVSzJfbXVSb0xReWw1QjdkV0tSLXVNNDdjLU1xRkZ5cno1dDVtLVBhMXh6aGRQWHJNb3V6Z1A1b2paRkx3OENOMzUwQ1V1Zw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T12:22:30.000Z",
-        "summary": "Anthropic says Claude now writes over 90% of its code and wants the world to have an AI pause button the-decoder.com"
       },
       {
         "title": "‘Time for pause’: Humans may lose control on AI as it starts building itself, warns Anthropic - WION",
@@ -209,11 +293,25 @@
         "_kind": "news_video"
       },
       {
-        "title": "Anthropic says new trend could see ‘humans losing control over AI systems’ - The Independent",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNSmhmZEFWX3hnM1NPY3BlSXJOaXFxRzBOY1kyRUJpeWdkZ0FvOTA5VGZhUll1bllWNE45SGVTS3MzNGZRR3A3enJseW5zMGhYRnJVU2ZsT1YzczZZNjdaNWJuY3R0UFU0d1k3RnNOaXFPVXZwekpIRk5CMjlTQThYRGRLN3VSd1czcU5vSDNySDFxQjhhNXJRN0FqaGM?oc=5",
+        "title": "Anthropic says something unsettling has been happening to Claude - Yahoo Finance UK",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQUHdibnFXbjU5eGVBVFhpdHdJOG84bFJidnRhWWNPSVJCYUZKcXc5UW5mMmJRakhDakhIa3pia2dJYzMyc1Z1cHJVVnljMzk1dmtOY0h2aF84ODVpV1pNeXctcTdoOWw5YUo3UHVET2V1dWdCY25NSU0zcmttVUc2X1hqT1NxVE5xU0FacThVbGZyT2VCVXE3ZUxR?oc=5",
         "source": "Google News",
-        "published": "2026-06-05T11:38:00.000Z",
-        "summary": "Anthropic says new trend could see ‘humans losing control over AI systems’ The Independent"
+        "published": "2026-06-05T11:46:57.000Z",
+        "summary": "Anthropic says something unsettling has been happening to Claude Yahoo Finance UK"
+      },
+      {
+        "title": "Anthropic says something unsettling has been happening to Claude - The Independent",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVkEzRVZHR1k2eHhzRmhVOUpMYXpPOUdaTGZhS2Ria0RKeEJwcENUcjNFTzVBdjh4ZjBXS09WWGxTaXlzTjk4TnpjVTZPQ25BUVdtUndxVG1qa1REd2hmUXVOMmUyeERCano1c2JhTXFhUDAzU1VHTEdGcEhIWWpCUE90MFAxLVNrcFVV?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T11:46:00.000Z",
+        "summary": "Anthropic says something unsettling has been happening to Claude The Independent"
+      },
+      {
+        "title": "Anthropic Calls For Global Pause In AI Development - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRjEza2hsQnZLS3Q0cnlrejA0M3YwbFh6Rm1BRE5tMTFXcFF0Ym8wemo3Yk9XQV85T09sV0M4RzRTOGFiWXFJSlB5a0l0SVdIM1RJVWVXRVZEOXdZLWNEdWdtbUZ2Q2FqQTFCbnRhYmxYVExlZ0Y4YnRybW5GR1VTTXhqLWUtaEg4ZWNyM3d6QWFtMEx6bWdv?oc=5",
+        "source": "Google News",
+        "published": "2026-06-05T11:43:49.000Z",
+        "summary": "Anthropic Calls For Global Pause In AI Development Let's Data Science"
       },
       {
         "title": "Anthropic warns Claude AI is building itself faster than expected, calls for option to halt frontier development — 'recursive self improvement' increases risk humans lose control of AI - Tom's Hardware",
@@ -230,109 +328,11 @@
         "summary": "Anthropic warns of 'risks of humans losing control over AI' Sky News"
       },
       {
-        "title": "Anthropic says something unsettling has been happening to Claude - The Independent",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVkEzRVZHR1k2eHhzRmhVOUpMYXpPOUdaTGZhS2Ria0RKeEJwcENUcjNFTzVBdjh4ZjBXS09WWGxTaXlzTjk4TnpjVTZPQ25BUVdtUndxVG1qa1REd2hmUXVOMmUyeERCano1c2JhTXFhUDAzU1VHTEdGcEhIWWpCUE90MFAxLVNrcFVV?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T10:35:00.000Z",
-        "summary": "Anthropic says something unsettling has been happening to Claude The Independent"
-      },
-      {
-        "title": "Chatbots Are Trying to Replace the Work of Financial Advisers",
-        "url": "https://www.bloomberg.com/news/newsletters/2026-06-05/ai-personal-financial-advisers-chatgpt-claude-threaten-jobs",
-        "source": "Bloomberg",
-        "published": "2026-06-05T10:30:01.000Z",
-        "summary": "How much money would you hand to Claude?"
-      },
-      {
         "title": "😺 Anthropic: AI Is Building AI now - The Neuron",
         "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1FNVhHclotTmp0alMzLUFOcDF2ZmhsTC0xSDMybk5MUFZTdUhkNG5GQ3pLZXlTTW1MZ3Z1Mm5uMVZOUUNaczZFOW5TR1VVdDJSanNreFpnQk44Vm00d1o2czNMMWxJRWVabTUzUXZfazJxZw?oc=5",
         "source": "Google News",
         "published": "2026-06-05T10:00:24.000Z",
         "summary": "😺 Anthropic: AI Is Building AI now The Neuron"
-      },
-      {
-        "title": "Claude AI Exposes Critical Zcash Vulnerability - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQYjJCdzZNMUE1S2RiS3pfUnlaR3VSdnhxUlhZZlEySnRYQzNFbVotaThIa2ZyNjBqYXEzeWpUYWFVT05JUnFodGpBNWllazdhc1Z4bHl5QlhyMUFTeWxDSFBuRjNkMnF3NHFQeVRsUTRVei1DUENOejNBc3BSalJSM3lJMVZoTFZydE92VGZUMDlVZw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T10:00:15.000Z",
-        "summary": "Claude AI Exposes Critical Zcash Vulnerability Let's Data Science"
-      },
-      {
-        "title": "Anthropic claims AI is too fast and needs to hit the brakes: let’s take it with a pinch of salt - Cybernews",
-        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5GUm9wWnF2SW1OZDlfZWMyclJOaEhFVXRvSVRjLVg3VS1ITEZYeTNSSmo1dWd1WlhQSVp3Q04yNFAyNkZOU3N1NU5YeFE1bG8wT0wyeXBEeWhycFhRQ3NBd251dnQ5RENPN2dMOU5pMlRwdw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T09:22:53.000Z",
-        "summary": "Anthropic claims AI is too fast and needs to hit the brakes: let’s take it with a pinch of salt Cybernews"
-      },
-      {
-        "title": "Pete Hegseth Confirms Pentagon Won't Back Down On Anthropic Risk Designation As Legal Fight Continues - Benzinga",
-        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPdm1hS0lSMHN1N0w3dXBiR290ZkttbV8tX0tsT1NnVFRVdXRzNjcwMEhQOWtVWWduck51bVBIc3REbXI5c3RlUDhiNDJVRHdDSmFLbnFMT2hzMGoxV1JNLVE3SjR3OVprSkFBbXBFcXIwTWF3RWVoMmQ4cTFrNFVuSjEzWURNRi01OTVoNUlMTGF2aFptcG0yZUdLMHo0RVFwY1NSdEo3MFR4WGRRWkthWkF4LW5rRWJTUmRmUVRJLWFmdUo1a2p2cGZ3SXVyZkVnTi1Jb1J1VVMyU2pZM2FaZmczME1CcjRDRlE?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T09:19:09.000Z",
-        "summary": "Pete Hegseth Confirms Pentagon Won't Back Down On Anthropic Risk Designation As Legal Fight Continues Benzinga"
-      },
-      {
-        "title": "Anthropic confronts the RSI clock - The Rundown AI",
-        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE14bHpzQk52UFNVSUZ1MktoTnlSeEFBSEw3dktGb2xhSFZoSUdEOURBMk5CVTN3NXFuZlRVVFMxekhxTjA2NU5NaGttV0JWQl9TVzdLc0xndHhMcjZUTlhxS0xxSFVnTVVRcEtnQkZR?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T09:12:08.000Z",
-        "summary": "Anthropic confronts the RSI clock The Rundown AI"
-      },
-      {
-        "title": "Anthropic’s AI fearmongering isn’t what it appears to be - Techzine Global",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTlF3ekFINWZSY1FBNm5WcERMUTFjVTdmY1hRdnpYUjdjV0FXeFNFRGhKT3Q3a2JoV3p0dWNUdXJNcVEtLXRDMWIwUlJ2Z3A0ZlJsLVl1Nmp0UWRiczlNOGdIYzN3OXZBM1lCVllqVUNtQ2hHbWpqbkJ5MEtqbnBMUkFZaTdLYkEtaUdLV2hrd09hdUpaQ0gycmplM3JDRENuUExMaVd4WjU?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T09:11:29.000Z",
-        "summary": "Anthropic’s AI fearmongering isn’t what it appears to be Techzine Global"
-      },
-      {
-        "title": "AI is beginning to write its own future, Anthropic says - PRESS Insider",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPcFllRXktUnU3NFIxZ1g2bkV2QWE1MFhPVTg1RjlDdUh0OUVIajZpY0NTNGMzVDRyNDVSdzZla1NTTDRnWElFUUE5dGZFLU9WWWFTcm1NXzNXZzFuRFJkLUxrWWUxbGRKeDFiaHZBTmpkNEE2NFB3SVY1RGc4LVg3OW9xdG9iNjNGb3d5MU52T0ZkUFUwdmc?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T09:08:49.000Z",
-        "summary": "AI is beginning to write its own future, Anthropic says PRESS Insider"
-      },
-      {
-        "title": "Anthropic Warns AI May Soon Build Itself, Calls for Global Pause Mechanism - thedeepdive.ca",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOYmhOVm81U2g2YkROQ0JPb2Fza2R1MWdlNWNnT3BPcXFjc25HQi1HYnhRNmRiM3g1b0VKUnNOcDI0NGMwVmk5M0NJN185LU9nWWU2ai0xcm03OWFqN0dlNlZ4R2ZOYkZ5WVNZdXd6a1N1STBnNUE2V2FJN181bzBWVGJaYzd4QlZFamp5WGpCdlc3SHY0V3o3eW54NjZrQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T09:07:22.000Z",
-        "summary": "Anthropic Warns AI May Soon Build Itself, Calls for Global Pause Mechanism thedeepdive.ca"
-      },
-      {
-        "title": "This AI startup says it saves $30,000 a month because of a quirk in OpenAI and Anthropic's pricing - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQdUc0NlRnUVZVdVpQZzhjQjZGZi1DZzQ4TXVJNDFEVkJfcjl4MGtHTjluZDlBd1JJV3d5NXctZFBJNGdwWWs5djFiS01Uc1hZQllIbmx6ZGViWkZXNzR4YUp2cGVaQ0tNVGxmb2R0T3gtX0dXNVpIdmtRTEFzQmVCRWtORUI5WHhCVWMxbEpKUmlXdUQtZ0pmeVY0MVpEZFB3UlhF?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T09:00:00.000Z",
-        "summary": "This AI startup says it saves $30,000 a month because of a quirk in OpenAI and Anthropic's pricing Business Insider"
-      },
-      {
-        "title": "Anthropic Calls for AI Pause Button to Let Humans Take Stock",
-        "url": "https://www.bloomberg.com/news/articles/2026-06-05/anthropic-calls-for-ai-pause-button-to-let-humans-take-stock",
-        "source": "Bloomberg",
-        "published": "2026-06-05T08:48:51.000Z",
-        "summary": "Anthropic PBC called for the creation of a system in which governments and artificial intelligence developers collectively decide when to slow work on the technology to stave off the risks it may…"
-      },
-      {
-        "title": "2 Software Stocks to Buy Before the Anthropic IPO - The Globe and Mail",
-        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQb1cyal9NODFXRC1JZGM0RUU5Rk4xREt5cG81UmNoLWNvbERwWTY4VmlzOHNQbjVBR0d1VVBNREtRS0l0cUJXQVVlZ1k3NFdYOEk0enB5bnQ3LXJLUkQwOVJwUzFzRUFrMjV0WHA2TXYwS2VBeTdVaTItaU1oWkZzaVczX3NkaHBKRFdlTERnaWo1c0hkX29aSGV4OEpzQUY0YUhIcFlONHVsZmpvQzgwb09OemdiUk04VXZwZlVYbURVVDBjYnlnZGpTSzdCOGlX?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T08:14:25.000Z",
-        "summary": "2 Software Stocks to Buy Before the Anthropic IPO The Globe and Mail"
-      },
-      {
-        "title": "Anthropic calls for AI research slowdown as model capabilities accelerate - digitimes",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPZEJMc2FBOFhkUzJubUNhNzZMMjlPdXJuUllaNWllYVRzLWhaY2wyU2NKR2ZJZVh1aWpNMGRBcV9SdVA0MjNkZEhvRTY3WDE5YVRfX2FGVnYxMExpZDh0T3hseFFBUjRtTzRwQk9TT1ZqR01IbWp1NnZqdXlTcGZxejJyUWNIa1BQQlAtbE5jdUE?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T08:03:04.000Z",
-        "summary": "Anthropic calls for AI research slowdown as model capabilities accelerate digitimes"
-      },
-      {
-        "title": "Anthropic co-founder Jack Clark warns AI needs a 'brake pedal' - BBC",
-        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB2ck1nRjJGSG9uanJYN3VlWWt5YmJDSUp1aFlqVVhXQmFxdGp3UE44UmE2cGpwa1luLVNGbzFrZUx3OGV6MG9KenQtbDFqc0hEdThmMG85azl3dw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T07:17:39.000Z",
-        "summary": "Anthropic co-founder Jack Clark warns AI needs a 'brake pedal' BBC"
       },
       {
         "title": "Claude Code + Higgsfield: Animated Websites Are Here",
@@ -553,6 +553,13 @@
     ],
     "status": [
       {
+        "title": "Elevated errors on many Claude models",
+        "url": "https://status.claude.com/incidents/fprlnsvdnr2k",
+        "source": "Claude Status",
+        "published": "2026-06-05T17:13:32.000Z",
+        "summary": "Jun 5 , 17:13 UTC Monitoring - Success rates across all models have returned to expected levels. We are continuing to monitor closely to ensure no further issues will recur. Jun 5 , 16:46 UTC Update…"
+      },
+      {
         "title": "Elevated errors on Opus 4.7",
         "url": "https://status.claude.com/incidents/thp2kyjx60qn",
         "source": "Claude Status",
@@ -628,13 +635,6 @@
         "source": "Claude Status",
         "published": "2026-05-29T08:45:43.000Z",
         "summary": "May 29 , 08:45 UTC Resolved - This incident has been resolved. May 29 , 08:39 UTC Monitoring - A fix has been implemented and we are monitoring the results. May 29 , 08:30 UTC Investigating - We are…"
-      },
-      {
-        "title": "Billing and subscription management issues",
-        "url": "https://status.claude.com/incidents/8q00jfj4yfv6",
-        "source": "Claude Status",
-        "published": "2026-05-28T19:23:57.000Z",
-        "summary": "May 28 , 19:23 UTC Resolved - The issue affecting Claude services has been resolved. Impact occurred from 18:27 UTC to 19:05 UTC. May 28 , 19:17 UTC Monitoring - A fix has been deployed for the…"
       }
     ],
     "youtube": [
