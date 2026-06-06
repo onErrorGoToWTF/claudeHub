@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T16:55:59.376Z",
+  "generated_at": "2026-06-06T19:01:07.204Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,41 @@
     ],
     "news": [
       {
+        "title": "Claude Code Vulnerability Could Let Attackers Steal Credentials From GitHub, Says Microsoft - Decrypt",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOTjdvUnZKWEtSZUlURlNPakxCYW9qRDl1a09fcWdBRXczdWtsZVFFR09oLUtWOTRWTDQzdUoyZjZxdGYzajAtck5rQ3BRcDhwT2w3SUVSc2VWWjNBdDI1U2tpUEhoZFlfOUlWWGwwdkxGVXBwWHlQXzcwNjNEWGdIOHlmZ1V5UWtLQXFkdk5qVDhsRExaNExhS1pQUUnSAaQBQVVfeXFMTVhmbmlNdzNVSVg0cHdzVk5McnpxUWNaTncwUVlfZDVNVEhCcXRmU0tYakwzUi1YalJmZXpQX0dXb1R3Y0I2Tm1hZXE4SWEzR3o0b25lRWdkLUJrWVBzdTRzZDJ6MWczbUJJY21yZERiX056RFlEUm4wWUM4M1NOdEpIajA0Wm1FME0xR3Z6dzZfLWxJZDh1RC11LWp6NzZyMTRMOEc?oc=5",
+        "source": "Google News",
+        "published": "2026-06-06T18:08:56.000Z",
+        "summary": "Claude Code Vulnerability Could Let Attackers Steal Credentials From GitHub, Says Microsoft Decrypt"
+      },
+      {
+        "title": "Microsoft Reports Claude Code GitHub Action Credential Leak - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNZFc0QTJMZ2hpRzNNZGFrX00yVkNQY0huQXVjZjRyRTBKVE9ydXMwMC0xa19kWWF4WkhUQ0JSVnJHTUwwd0pWUHFhR3ZOb0hrazhRWHNyT2UyZkpKekdIeFVYa0xoOV9nWkVoa0M5UnlfdWg1MjFWeXFnY3pEZERyOHE2TWhfdVMxYjkyWVJGUlR4MG04cFU4bjZ1TWFZaTljdUhn?oc=5",
+        "source": "Google News",
+        "published": "2026-06-06T18:08:56.000Z",
+        "summary": "Microsoft Reports Claude Code GitHub Action Credential Leak Let's Data Science"
+      },
+      {
+        "title": "Snowflake And Anthropic Accelerate Enterprise AI Adoption As Demand For Governed AI Grows - Pulse 2.0",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdXFlblhQa3FFM3FNOGYtcGhoMDhYVEt5SW5QNTBHTVBSLUdrSDVlTHRPbzQ5dFlBaFRxNGxwSUhybXRwbFNfTzZZV2dGdi1pblg5MTZoN01IWFUtWTBJMGNKNEVNcjhHZjN3aGd4Ulg2ZEs3SWdJd0tYQmlXQkloVTV6NFpYR09HTVpDOFN3dFVkQnZsY0Foa2t1V2VwN2w5SG5PWnFmeGRhcnFmc3fSAbMBQVVfeXFMTnExbW9pSDJnNF9pcTNsakJRTGVJTThKTjl3UjBsenp5ZDlkWUZaYnIzWGRQSURIaktVa2lrQzEzZVFvcmVyV3RXSG14eW05M3p1Ri1famZGeGkwSG5oWjBpaUpJNFRpSDhrbVJERThYbEMxa2pOYWFPODNXdDZQaTA2VjZsZ3Z2QW9wMVlYUWN5bGItY2RtWENnNUFjRmhuWTRySHRFRElkb3RzZzA3TzVYLVE?oc=5",
+        "source": "Google News",
+        "published": "2026-06-06T17:47:29.000Z",
+        "summary": "Snowflake And Anthropic Accelerate Enterprise AI Adoption As Demand For Governed AI Grows Pulse 2.0"
+      },
+      {
+        "title": "Anthropic Admitted Claude Is Close To Self-Improvement — Here’s What That Means - Dallas Express",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORjJXTWxNVHF3dzZXNFdQZGNBV3hhSF9XOGFuLTI2VVF2bmF2M2xJNlRyX0NjR2pGVnMyejNOZWR6MnVGUXJJOGFSNklOOE11SzhSLVkyLXpHRjNCMml6Q1FGQ3dtRFluQTVNZ2JzMVkyWi02MGdYem5CTXFnTGYwUUVFbmh5ejNSSEtVSm0wZ1Nlcnh0eXdRQmlXaHdlQ25UY3QwTVdlRWlyUVBSakpJdk9SSzk0VF9ac2VVMw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-06T17:04:16.000Z",
+        "summary": "Anthropic Admitted Claude Is Close To Self-Improvement — Here’s What That Means Dallas Express"
+      },
+      {
+        "title": "Anthropic is blacklisted by the Pentagon and being used by the NSA at the same time - TechSpot",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQX1ROY2gtaDB5VDk1aXdwT0JEdFp2RGR4TGxHendVamFmYU50M1RHZzZUMFo1ZVdGUE0xX3FqMkV3ZHJrZ2tTeXZIMGUtRFdpaEtNWWk1aHhGekltbzBKbm9RSE5kNGhkYVFMRVA3VDRuTXI2cjBmQ1Iwb1VHOF9hTVY4am5SVVZzbExlQzlBVG93QjBxUC00NnYwSQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-06T17:04:00.000Z",
+        "summary": "Anthropic is blacklisted by the Pentagon and being used by the NSA at the same time TechSpot"
+      },
+      {
         "title": "Select Govt Agencies, Indian Firms Gain Access To Anthropic's Claude Mythos For Cyber Defence - NDTV Profit",
         "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQaUwwXzh1a2FrazZkNmxCYVE1Z3BYTW41VTd3ZmdVemtpOE5sR3lKRGZNWGpheEFETFp0MVRxRzZTVWVjd2ZXQU1MQW1HR2U2TjZBQ3ljWXNxQkk1cjFLMUk2QldqTFlxbmRjUWQ4UGJoV1hWVjhGS3JhNmFicGU2T3dET2VnT2QzREUxLTlxdWFFa2swNW82SklsUjEtdms2Q0tUaEVVZzdzY3VPNi12bmRMaFI0MzJQYXduM3dnNDU4U3NuWWRBVEhMWGhvRm1VdEJHQtIB3AFBVV95cUxPSy1vR001MUEwVkxpWVR1ei1jRWNxMEk5Qm9ZTUR5U3BTZUtRTDFQQ2x1REpBQTFYNV9MTnVqd1AxRWJmaUlYTE9NYTIyMXQtTWZtZmFXMzBWdEF2OF93M0pKdEotWk00aGxkd2dRNEx2R21RQ0dJNkZqMVhTMUtUZFRxM3dPS2dJQ0U4SDI2SjYxbm9ER2F6V05ZRWlRWENDN2dTZDJCbFVpbVhDaTEydVRZbW1kVTRkaUs2bjd5SUk0OTFtRmpSV1JYRVpuT3A2S2xsTHhRVXNRRkFW?oc=5",
         "source": "Google News",
@@ -174,18 +209,18 @@
         "summary": "Anthropic files to go public in a potentially trillion-dollar debut Egypt Independent"
       },
       {
+        "title": "Claude Is Now Writing Claude - finchannel",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9KUTRFZkU0LUI3cFNyUTNQT1FlUVlLQ3JQZERpa3I5R3JwanZpaG90TXVldzZLUm9ET0lfVEFybVpzSktrVUpBNkxaRTJCRmx2UE1KMUxwaTN5TEdmdGQ2WFJSVGt5Zi1PUTZnOVBPN0VvMktoZnR5cEV6a1hxV1k?oc=5",
+        "source": "Google News",
+        "published": "2026-06-06T12:51:11.000Z",
+        "summary": "Claude Is Now Writing Claude finchannel"
+      },
+      {
         "title": "Elon Musk's xAI reportedly trained its coding models on Claude outputs for months before getting cut off - the-decoder.com",
         "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPUkQxdmpMTndNU2UxaWxBd0hid3VoN3gyUTdLdnY2NTBSTVhvbUhDY19XU1B0OEZWaGhDdEk4VFJuVndMNjNQRGRHZGtMQXB1OGR2TGp3NnpEQ2dON0xwN1QxVVZablRDN0tjUFdKeVdZeTVHWVRMaUVrR1A1dHVQamhTZXcydlc1Q3ZEYjNXdHNsTDlkbGtHaHE5c0pIZWRNeHBZdks3WnJpZU5JcExhTUdrWXczY0MtcU1VTXRyUkU0XzdiYVdz?oc=5",
         "source": "Google News",
         "published": "2026-06-06T11:27:43.000Z",
         "summary": "Elon Musk's xAI reportedly trained its coding models on Claude outputs for months before getting cut off the-decoder.com"
-      },
-      {
-        "title": "Anthropic calls for the ability to slow or pause frontier AI development - MediaNama",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPT2xpeVgzS280YVVINHF4RUxGODl1VjBRd0Q5d0pQeVc2WEVQSXd5Rjg4LUUzNFNSeWxTaUJ3Zzk2ZG9DVEh4U0VpanFrbmxwNG5Fay0yOF9LZUxocHVaTVBqVmhhZ0lOQXUtRXdyQlFNb0xWbVA3OWROVzYwenJoeWlEZklqWjB6Mk8wWGFtcG9hZmhNVDF4ZzhzRmNKQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-06T11:26:46.000Z",
-        "summary": "Anthropic calls for the ability to slow or pause frontier AI development MediaNama"
       },
       {
         "title": "This Week's Top Five Stories in AI - AI Magazine",
@@ -202,13 +237,6 @@
         "summary": "Anthropic co-founder warns AI needs a ‘brake pedal’ amid economic concerns Crypto Briefing"
       },
       {
-        "title": "Anthropic calls for coordinated AI slowdown or pause - qz.com",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE02RUZrVHJIX0ozRVVjV2NCT0lpQUdhVlFKTjdBV3lkcm42QmVWazZwWThzNEZDM2REZ0tLMjhfVWd1X2tZSExESXAzdE9ZaU8wdjliRndpV3N4RFh4U2d2a1ZqbzBwY2VKUDBXcXR3M3NHQWNzVVVlWU5n?oc=5",
-        "source": "Google News",
-        "published": "2026-06-06T05:53:36.000Z",
-        "summary": "Anthropic calls for coordinated AI slowdown or pause qz.com"
-      },
-      {
         "title": "Anthropic is Now Helping US National Security Agency with Its Mythos Model - CXOToday.com",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUWpvTTI2M0tSa2VDNWNUWVB3STg0QWRSRXZVRDJHYnVYb1JIR3FEQkJ0a29sVEptLXFLR2NtSXBldHJjbkhfdHBnUGpQNXpXRlprb3JhaTh5LUpmak5VN3JPN3owcE4xZl9mWjdQTEgzYWR3MDg0SUJhdTRrb21ObHN0a0RqREhuRTFqdjlPNjdsQVJXTzNQblpvSGx0dEtZMUN0ZmNDM2V0QXc?oc=5",
         "source": "Google News",
@@ -218,7 +246,7 @@
       {
         "title": "S&P 500 rejects SpaceX, also blocking entry for OpenAI and Anthropic",
         "url": "https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/",
-        "source": "HN · 1051↑",
+        "source": "HN · 1157↑",
         "hn_id": "48421442",
         "published": "2026-06-06T04:38:36.000Z",
         "summary": ""
@@ -280,20 +308,6 @@
         "summary": "Apollo Global Management Inc. and Blackstone Inc. have finalized a $35 billion financing package for Anthropic PBC to expand its AI infrastructure, marking the latest mega-deal in the artificial…"
       },
       {
-        "title": "Claude now authors over 80% of code merged into its own codebase - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1NYlIwNG9zdzMwQXRjcFVsQ3pOZlB1N014RDF5N2pzeURyM3FwNHZsajA5VXJsWDluUW1SeTdBRHZFTkhOeV8yZUN6UkFmS3lWcms2OW5NTkwyNm03WDhWNG9PUVFkRThnZ2lKM1R2aw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T20:45:53.000Z",
-        "summary": "Claude now authors over 80% of code merged into its own codebase Crypto Briefing"
-      },
-      {
-        "title": "It Sure Seems Like Pete Hegseth Is Losing His War Against Anthropic - Gizmodo",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNM0RpR3UwQUNPd1FBNFRtc1RrbHY1R1ZqWnA0VEprT0FmOU5DcDdyaTVUSU1LWWlQRk5rMTZMTkt5T3puRXdfLUlKWHVyS0puTWthWWhrRkdDOTN1TkZjRWlCMEJYU2VDZWloOHVjbFpyaDJJSzJDMm5XZFBqaXdyTE5vazB5M0xlZDJHU0UtZnVjOTRCb3RvU190Q002YXM?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T20:20:37.000Z",
-        "summary": "It Sure Seems Like Pete Hegseth Is Losing His War Against Anthropic Gizmodo"
-      },
-      {
         "title": "Anthropic Scared, Calls for Global Freeze on AI Advances - Futurism",
         "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNZ2JGWWFyRFhaRmVNZzljbmtkQ1RDYy1XWTItbkJ3TlcyNjFyaXpCN2VYRlA3emc1R1R5MjQwSS1FaGpuMlZKMTVBLTg1ZXBNS21lTExHT1dQNEpNRkpXTUxTV0NyeHlxUC1CMTNoUU5VUGQzcER6SU4zSzQzY0JTeDZMdkxWc3NvbGpKXw?oc=5",
         "source": "Google News",
@@ -306,20 +320,6 @@
         "source": "Google News",
         "published": "2026-06-05T19:33:33.000Z",
         "summary": "Cohesity Gains Access to Anthropic’s Claude Mythos Preview Through Project Glasswing The National Law Review"
-      },
-      {
-        "title": "Making Claude a chemist - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8wMkgxR3JCakJ0S2pJLUEzQ2gzZjVHdjNjUjBaV2hVTHE4UFYtTVdpdmdUcUtzeldxWXpEXzJRX2dTTzJjSGlpbm1CME9mZkJZa2FWVnpCdU1UeDhYbEprQjVSeVdQakUzMGc?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T19:27:40.000Z",
-        "summary": "Making Claude a chemist Anthropic"
-      },
-      {
-        "title": "Anthropic Is Helping the NSA Hack China. It Also Wants Everyone to Pause AI - Decrypt",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNTFF6aHVnaG90Y3BfcV80QWdMTnVMMGFURGRyRld0VU1odERkbzNTMlB1dUNWZ0NwaWhjMENzU01UMGg1TzZxaW1xVklFaFFXTF9iekdSc0NlUnAtZHpHckxUeHVqTWFJRDQwdDZfd0N1TUhVdFNpOXMtSTBHQzlpbDFzYzBraGZuZWZIYUgtd3PSAZgBQVVfeXFMTlpLRUFDemhIUlV6dlVjX3JLOHJMRGxuZVZtYzd4aUVhQUJRdEx0RHY0WGpwZWZsQXVyYnFxWXBqMEg4aHZCNEhRT0N1czJrRU5JbkgtcXc3NlVadk1fQVBzTnhBSU04bjBRNHJwdzhjWHY4ZFFmbmh2eE1laHV4U0JTUXZ6Zy1mXzZZRUMwczRrSFAyNzhaaEs?oc=5",
-        "source": "Google News",
-        "published": "2026-06-05T19:18:56.000Z",
-        "summary": "Anthropic Is Helping the NSA Hack China. It Also Wants Everyone to Pause AI Decrypt"
       },
       {
         "title": "Claude Code Skills Run My Faceless YouTube Channel",
@@ -540,6 +540,13 @@
     ],
     "status": [
       {
+        "title": "Elevated errors on Claude Opus 4.8",
+        "url": "https://status.claude.com/incidents/6ptd5skgmy3v",
+        "source": "Claude Status",
+        "published": "2026-06-06T18:37:44.000Z",
+        "summary": "Jun 6 , 18:37 UTC Identified - We are experiencing elevated error rates on Claude Opus 4.8. Our team has identified the issue and is working to fully resolve these errors."
+      },
+      {
         "title": "Opus 4.8 degraded service",
         "url": "https://status.claude.com/incidents/b1gzqlnpxxxk",
         "source": "Claude Status",
@@ -615,13 +622,6 @@
         "source": "Claude Status",
         "published": "2026-05-31T00:16:20.000Z",
         "summary": "May 31 , 00:16 UTC Resolved - This incident has been resolved. May 30 , 22:58 UTC Investigating - We are currently investigating this issue."
-      },
-      {
-        "title": "Elevated errors for Claude Opus 4.8",
-        "url": "https://status.claude.com/incidents/2zr0rkdxjdtc",
-        "source": "Claude Status",
-        "published": "2026-05-29T19:12:08.000Z",
-        "summary": "May 29 , 19:12 UTC Resolved - This issue has been resolved. May 29 , 18:55 UTC Monitoring - A fix has been deployed for Claude Opus 4.8 and success rates have returned to normal. Users saw elevated…"
       }
     ],
     "youtube": [
