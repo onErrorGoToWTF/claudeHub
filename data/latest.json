@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T19:02:16.027Z",
+  "generated_at": "2026-06-07T20:57:57.655Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "Is this the dawn of the Tokenpocalypse?",
+        "url": "https://techcrunch.com/2026/06/07/is-this-the-dawn-of-the-tokenpocalypse/",
+        "source": "TechCrunch",
+        "published": "2026-06-07T20:26:13.000Z",
+        "summary": "We're likely to see more price increases as the big AI companies plan to go public."
+      },
+      {
         "title": "Anthropic Urges Slower AI Progress Amid Risks - Let's Data Science",
         "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNc1p2eE1NUjV2Y1BHemlGWnQ2RXdZc21KWUxKZXJOdTk4LXJvWUx3eEQyamxXcmlDU25KSUFMLXZNT1hZQTFCcmJKWTRuLTIwc0xDTWhTMV9HZmVnMVhSRHFEMGVsTXBESDFKdUUyc3hXU2RoaWtlcXJBbTVZdFU5TnJmV0NJNzhadllYV3lpX1o?oc=5",
         "source": "Google News",
@@ -160,13 +167,6 @@
         "summary": "Anthropic wants caution but the market wants more AI Australian Broadcasting Corporation"
       },
       {
-        "title": "Notion disabled Anthropic models after Opus performance issues - mezha.net",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE50dFVFR0JIM3hiOFhJOXhxTUhyb19GYVZCMXByMFhvckthYTlpbDg1X1VOZnAwYlNUazlnY1hNYk5UWktEa0EtWXlqczdBOUI2eVkzRFd1Y1FjTy1rNkhLV0Zab3Q0ZVI5U1l5czc0Y1I?oc=5",
-        "source": "Google News",
-        "published": "2026-06-07T18:39:41.000Z",
-        "summary": "Notion disabled Anthropic models after Opus performance issues mezha.net"
-      },
-      {
         "title": "Notion Restores Anthropic AI Access After Brief Outage - The Tech Buzz",
         "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNOG45R2R5V1JlOE94aGNERUROdlVRQm1FNnllNlJ6Q2lCNnE0SjJ0RTNWVzJYR0hscjZqel9TS1NvWTFhazMzcVM4UXJQcVRkaUYtdXdubWtZNG0tSlZqT2g2X2xwQTcyUV9rbFlPQkxkQTFPU19MYUhZc3pqOFluNS11QzlTbGE5YTcxMmxENW8?oc=5",
         "source": "Google News",
@@ -179,6 +179,13 @@
         "source": "TechCrunch",
         "published": "2026-06-07T17:56:22.000Z",
         "summary": "Notion's head of product said he was \"astonished\" at “the amount of people RT-ing this.\""
+      },
+      {
+        "title": "Notion restores access to Anthropic after service disruption - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNMHMtMmhKZDZiVVRqUGFjUjh0TllHNnlRYV9XV3R5RTFlMEhIMFE3ekhjMGRqRjhhYWYxOTNuTHdDZmc5clNMUVBWQTRWRzRvZm9SVGNrdkNEXzFzcllnNzdYdklTVldLeTNrQndVM2Q0OTdTcEFud1l2ckNKWllwRHAzTlVMZDRSa21WZHNXQ3k2MkZHNmVXVmVfdU5CQm5HbVE?oc=5",
+        "source": "Google News",
+        "published": "2026-06-07T17:56:22.000Z",
+        "summary": "Notion restores access to Anthropic after service disruption Yahoo Tech"
       },
       {
         "title": "Claude Code Skills: Inside Anthropic’s Playbook for the Nine Types That Actually Work - Tech Times",
@@ -197,7 +204,7 @@
       {
         "title": "Anthropic, please ship an official Claude Desktop for Linux",
         "url": "https://github.com/anthropics/claude-code/issues/65697",
-        "source": "HN · 327↑",
+        "source": "HN · 378↑",
         "hn_id": "48434436",
         "published": "2026-06-07T13:06:52.000Z",
         "summary": ""
@@ -212,7 +219,7 @@
       {
         "title": "Anthropic/OpenAI may be spending more than $1000 for every $100 you pay them",
         "url": "https://ea.rna.nl/2026/06/07/anthropic-openai-may-be-spending-more-than-1000-for-every-100-you-pay-them/",
-        "source": "HN · 55↑",
+        "source": "HN · 58↑",
         "hn_id": "48434342",
         "published": "2026-06-07T12:54:54.000Z",
         "summary": ""
@@ -220,7 +227,7 @@
       {
         "title": "Show HN: Lathe – Use LLMs to learn a new domain, not skip past it",
         "url": "https://github.com/devenjarvis/lathe",
-        "source": "HN · 143↑",
+        "source": "HN · 184↑",
         "hn_id": "48433756",
         "published": "2026-06-07T11:16:46.000Z",
         "summary": "Hey HN! Lathe is an experiment in using LLMs to teach me something new, instead of doing the work for me. It generates a hands-on, source-backed tutorial for any technical topic…"
@@ -241,9 +248,9 @@
       },
       {
         "title": "The Anthropic IPO Could Make These 5 AI Stocks Unexpected Winners - The Globe and Mail",
-        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNLTZMUGxrQVNqbmFpQTJVRXQwNzJrcUhaMHB2azhjZWpTTk9HaFVkNWtRUmROTkVyZkR1azBieF9sS2o3elpCX3VBTHBEUXM4WVVIQ1AyOE1mbDYxS2xzWlJZM1B4RzhCYmN2YmpkNHZxNFlxaEREdTFoSUhVWVBUdFV3Zm9HVXVMWlZabXVTOTM0dXBHRUZUTU5hdXBxdmJRY2dpUHRmWWNrcFROSmF3cllzbk4xR3Y2ZENzdEpZOGZndGoxQjN2OFo4Q2dSaGkyRnN4OElZc1Vud2ta?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQXzZkNG9QMl9fTnE1TlZ0ZjBsa1pBLXdVNWVnMVJWelg4emhtZ0YwOVBISXZocTJId0JoZjNMVmVGR2dpR2JpMGh5bE90aXRGbmRuWlVJVG1FU2hWRXJWTERvNWZlcTN1S0J5eS1TMlRfVWRYWlE5NW1neVk2OU5IVmdnRXAzSmJnVkVfTDk1cGNuZGJtckdWaXd3V2FSYUFTb2FLY2hFbzFtaHBjamd1WVdnQmJwUkVQZjhIU1pXVWdzQkprNmpxUzdfOEZ5em5SSXJWVnk3UG9hdEl0a3RzNE9mZms?oc=5",
         "source": "Google News",
-        "published": "2026-06-07T10:09:24.000Z",
+        "published": "2026-06-07T09:39:42.000Z",
         "summary": "The Anthropic IPO Could Make These 5 AI Stocks Unexpected Winners The Globe and Mail"
       },
       {
@@ -256,7 +263,7 @@
       {
         "title": "I design with Claude more than Figma now",
         "url": "https://blog.janestreet.com/i-design-with-claude-code-more-than-figma-now-index/",
-        "source": "HN · 218↑",
+        "source": "HN · 223↑",
         "hn_id": "48431981",
         "published": "2026-06-07T05:04:24.000Z",
         "summary": ""
@@ -269,11 +276,12 @@
         "summary": "Varonis Anthropic Alliance Puts AI Governance At Center Of Growth Story simplywall.st"
       },
       {
-        "title": "Anthropic's IPO Filing Signals a New Era for AI Investing: Can the Claude Maker Become the First Trillion-Dollar Public AI Company? - KuCoin",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQOGNrd2VxYThHQTYtUmNDcUN2VC1TSHBnZkpoOWdyelFISnk3aktqQUc0bVNNRllrT1pRd2VEOVA5eFpHamRXSXZFbzJPTUcza1ZOWVRTNzlkeEh2MmFfRkJQNHh1TS0zZlBhczRfaFJpZ0d4THRpZlgtVHMybXdUQXlUVXQ3bXFPTy00?oc=5",
-        "source": "Google News",
-        "published": "2026-06-07T01:07:28.000Z",
-        "summary": "Anthropic's IPO Filing Signals a New Era for AI Investing: Can the Claude Maker Become the First Trillion-Dollar Public AI Company? KuCoin"
+        "title": "Claude, Teach Me Something",
+        "url": "https://hugotunius.se/2025/10/26/claude-teach-me-something.html",
+        "source": "HN · 32↑",
+        "hn_id": "48428097",
+        "published": "2026-06-06T19:25:25.000Z",
+        "summary": ""
       },
       {
         "title": "Snowflake And Anthropic Accelerate Enterprise AI Adoption As Demand For Governed AI Grows - Pulse 2.0",
@@ -304,26 +312,19 @@
         "summary": "Anthropic AI coding assistant could be tricked into revealing secrets, Microsoft warns Cybernews"
       },
       {
+        "title": "Claude Is Now Writing Claude - finchannel",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9KUTRFZkU0LUI3cFNyUTNQT1FlUVlLQ3JQZERpa3I5R3JwanZpaG90TXVldzZLUm9ET0lfVEFybVpzSktrVUpBNkxaRTJCRmx2UE1KMUxwaTN5TEdmdGQ2WFJSVGt5Zi1PUTZnOVBPN0VvMktoZnR5cEV6a1hxV1k?oc=5",
+        "source": "Google News",
+        "published": "2026-06-06T12:51:11.000Z",
+        "summary": "Claude Is Now Writing Claude finchannel"
+      },
+      {
         "title": "S&P 500 rejects SpaceX, also blocking entry for OpenAI and Anthropic",
         "url": "https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/",
-        "source": "HN · 1437↑",
+        "source": "HN · 1443↑",
         "hn_id": "48421442",
         "published": "2026-06-06T04:38:36.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic urges AI labs to pause development, warns humans risk losing control - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQTGoxa3dtZXpiZGo2TmpRNTJoeHY5TXV2U2VQN3Z3M0l0TDB1Mm5SSkZMOElLNlR0TGFRWDZzTXZKNU0wS3N5dEZaaUFQenE5OXYtc0RycnUwOE8wMm82TXJqTFlUdi1zV0ZrQzlPaUY4eHQ1MWEwYllGdmVhczZlb0JXeHFVLU1BU2tZdThBd2ZDNi1pUjlNclJLSlRQXzNHWFRjM1VBU2FpZGVpNmxEaVVsZ3NQY1BNU2doTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-06T03:42:35.000Z",
-        "summary": "Anthropic urges AI labs to pause development, warns humans risk losing control Reuters"
-      },
-      {
-        "title": "After CEO Dario Amodei's repeated warning that AI will wipe away millions of jobs, Anthropic publishes a - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMilgNBVV95cUxNNWUyN2gxVFFRUi1kWlRFV0c1TC1qUXgtLU1sb0FJT1pxc0s1Z1RVdlRPa3FaN1U1dmVKQ0dDSnFYc2hURVg4em9rVW9HR2k0V09kQWY3VFFKLVAtTXgyT3NGUnhVU2l4UkZscjZqSFhBZlg5emg5OXFJc2JxMndNMDNGS1ZsUTE0TkJZRWQzbkVvU0xad0lTSC1zdHNpeGhYbHQzZUtkYWttT2R1N255MWJ2Y3BfM1c3blNHd3R5QzM1Nlo3ZW5aVEt2a05nRk5oZUpFQWJKcEZLbG1VZHY3VmMxMERBZG9Sc21ZamJ1ZjVnN3VRSS1Qd0hpUWdEc2txMzVOTW5NMkhfUGVuSHdXeUIyZzZVWVB5UnZ1V3lLN05Icm9TZUtOTXNwaTNlNEV1N3JFaU12TmZpZEJha01UZ2hCQ0wxc2hiUHczMTJwWDBzVnI3NlNwdTRSdWVzekdpUy1XN01qSGxDOTRsejRfaHNHdkc4eThsXzNlODNiQWhfbE9mNG9uVEtIandCUFM4a2ZsRkdR0gGbA0FVX3lxTE02cm53VWhRY2xJZS1COFZmdXptQjhRMDA2cVZHS2xxZFVWeDdMeTdIeEFBMjM4N2o3TVZyaF9PMGlZQjFpY2ZQNklVX0JQeW13R3dBY1ZseEt2MHBZNjNwRGpJSG5rWHlEZG83ekpkdzlDVU1yYmlrODVsdG8wMld6WGwteF9COW1aWGsxWFpjWWdkTTVIaUZFSFhVS1NaLTdBSkRfM05TZnZ2OWQ2U0tZd0lHaXNSbnNNUWN2OXpDUGFNR2swVG53cWZGb0piUl9qdXYySl91X010TElQa21KeFFza29RRlEzQmtWVTlqekp2Q1ZkYUdJVTlfMHpGTXh5WHhaVDBHZlhFM29kQ1FJX3FFMEVoQjFWNjRqaFd6QjkwaUtIaHkxRlJhaFZfcVlZQ0w5TENaWV9Ba2RmODZsbFMzaUtfcldwbFIyUmZmbUppcGh1OW12cFZPZnA5WkZPNHV2ZkJBNUZERy1HTjJqcUVBR1RlWkZNYkZGVV9fV05qXzlhdGRlMFJzWFRQaDdMMHdrRzJValhGYw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-06T03:13:00.000Z",
-        "summary": "After CEO Dario Amodei's repeated warning that AI will wipe away millions of jobs, Anthropic publishes a The Times of India"
       },
       {
         "title": "Claude Code Skills Run My Faceless YouTube Channel",
