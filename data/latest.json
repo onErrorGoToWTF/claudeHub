@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-06-08T17:18:08.619Z",
+  "generated_at": "2026-06-08T19:56:49.196Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Agents in Biology",
+        "url": "https://www.anthropic.com/research/agents-in-biology",
+        "source": "Anthropic Research",
+        "published": "2026-06-08T17:37:03.000Z",
+        "summary": ""
+      },
       {
         "title": "How We Contain Claude",
         "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
@@ -135,16 +142,37 @@
         "source": "Anthropic",
         "published": "2026-06-03T15:30:11.000Z",
         "summary": ""
-      },
-      {
-        "title": "Expanding Project Glasswing",
-        "url": "https://www.anthropic.com/news/expanding-project-glasswing",
-        "source": "Anthropic",
-        "published": "2026-06-02T14:03:15.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Trump memo on AI aims to avoid repeat of Anthropic debacle - Breaking Defense",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUzlNRWg5RHRIak9ibGVqS0pLU3lYM1FxYlh2a2FGZUlvNW5JWFlLZTFjTG9Kc1BPUlJMa1lXZG1xck85cXFvSkVqb2xlYUFUb19tbWxSMGs5eFdNZEVYMFJkVUpkUWNFMldFS2Q2NTd4Wjh1SXRKeDY3UlZOUEMyam1mTnlXZjYtTzZ6eVE0NW9vSGU1cENscXROaw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-08T18:36:27.000Z",
+        "summary": "Trump memo on AI aims to avoid repeat of Anthropic debacle Breaking Defense"
+      },
+      {
+        "title": "Why Anthropic just doubled Claude Cowork limits at no charge - The New Stack",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBxb2hfTGdINWkxRGFEcWZJOXJHYmN2WXNTelluemZzOVpvLWc2WGc2RlJ3czhKelN6SldCTkJxeFZ5ZkowNkFVSXFHZm1vU2gtVTRnRFJwLThBUWQzVUp1MDdYY09YRGE5?oc=5",
+        "source": "Google News",
+        "published": "2026-06-08T17:37:55.000Z",
+        "summary": "Why Anthropic just doubled Claude Cowork limits at no charge The New Stack"
+      },
+      {
+        "title": "Anthropic Doubles Claude Cowork Usage Limits - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNWWVBSm9SRVdXUjMxUnVxY0xPblF5Ni1ZRkljWGFpaW5LTHR5UV9XUG9JUm1uS0pKYjl6OXR6SWROdnFYQS02ZGduMHNWZHJXRm9ZaDJEdFhXekFReExlSE5EdG5yYzVILTlTUGFWRlcxcDhfVFFMSFo5em5mcnhpTUtBVkw4dldqZTR5MTF6SQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-08T17:35:05.000Z",
+        "summary": "Anthropic Doubles Claude Cowork Usage Limits Let's Data Science"
+      },
+      {
+        "title": "Opinion | Anthropic might be the most powerful company in the world - The Washington Post",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQcGJoWnZyOTFkUXNFSXlVRVFrcTdLeUh5QzFMS0V3TTZoUWdmYnI1QjB2ejc4Zk80OGRtQzhkTnlyRy1NVTRJczc2R3VhSXBHUmhHLW5wZnFuNW9VUUFNX2NXbWlPREZtUVRFcEZUWjhQYWFKS2YxUnczdDBhQmdCd1VmXzktNWdN?oc=5",
+        "source": "Google News",
+        "published": "2026-06-08T17:30:00.000Z",
+        "summary": "Opinion | Anthropic might be the most powerful company in the world The Washington Post"
+      },
       {
         "title": "Notion restores access to Anthropic models after service disruption - Crypto Briefing",
         "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE05S1FXcF84cVdhTjM3dTYyQ0dQOWt0QVMwQUlndHZrbXZGbTJITjdmVDFBeEoyVXJsbm14QzlrNHc0SEJLNmJJeUtQTzNLeUljS2JYS0NQMjN0QWY4QkZpczNjQVdJWUJGNm8zdlp6WldyYk1BUEtVTFp3?oc=5",
@@ -153,10 +181,17 @@
         "summary": "Notion restores access to Anthropic models after service disruption Crypto Briefing"
       },
       {
+        "title": "Anthropic says Mythos can turn software patches into exploits in minutes - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNM0Y4X3FrMGp5VklCZVBLSlpKdWFhUEJQMG8yVTc1azh2TkViZjBEekYwZU9DbmhTWkQySWtmT0FlbzZJNEJoTDE1ZUo3RUhVZUxndmJPQnJIeFpqajh4THE5OV9QZHI3MjR6eXNvbmtiX29UelpWVzd6NFVjZ1MxSUx6NXB1X0tVME1Yd3JBNW9Ec3hLRXdn?oc=5",
+        "source": "Google News",
+        "published": "2026-06-08T17:00:06.000Z",
+        "summary": "Anthropic says Mythos can turn software patches into exploits in minutes Yahoo Tech"
+      },
+      {
         "title": "Anthropic Philosopher Amanda Askell Says Claude May Replace Her Job One Day - observer.com",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWVE5YVM4MWx4Y2pLWDNyMDIyek92ck9mMEw3ODU1Vzlrdm1YTmxfVTMwcmFSb1pBWGZTeU5DNHc4WkVYck1pY1RQeGs5dGJ3NnRwMTBmN2ZPRmJkN29JbWFmeDloOXkwU2t6VVVxWkxXNGdzNHdDX3NTX0g1VzlINWFhX0JmckgzREhYU000eTltdWlvenVabQ?oc=5",
         "source": "Google News",
-        "published": "2026-06-08T16:34:47.000Z",
+        "published": "2026-06-08T16:35:17.000Z",
         "summary": "Anthropic Philosopher Amanda Askell Says Claude May Replace Her Job One Day observer.com"
       },
       {
@@ -167,32 +202,11 @@
         "summary": "Amanda Askell Says Claude Could Replace Her Role Let's Data Science"
       },
       {
-        "title": "Opinion | Anthropic might be the most powerful company in the world - The Washington Post",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQcGJoWnZyOTFkUXNFSXlVRVFrcTdLeUh5QzFMS0V3TTZoUWdmYnI1QjB2ejc4Zk80OGRtQzhkTnlyRy1NVTRJczc2R3VhSXBHUmhHLW5wZnFuNW9VUUFNX2NXbWlPREZtUVRFcEZUWjhQYWFKS2YxUnczdDBhQmdCd1VmXzktNWdN?oc=5",
-        "source": "Google News",
-        "published": "2026-06-08T16:32:01.000Z",
-        "summary": "Opinion | Anthropic might be the most powerful company in the world The Washington Post"
-      },
-      {
-        "title": "States brace for AI-driven cyber attacks - Arizona Capitol Times",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOeVRJZUdOcXJuWGtQZFBzYlM4YVNWYnFMckdiNkJRdmNpXzNfVVNFZ1c3d0hjQmtyM09rcmdodWhraHBFdHMtWS12ZHhlV3FNVkxaQXBIWVlsc25ubUdaNW9rNkFvMGxIdnBmYng2UVlIaFg2WVBsTndCdnBQb2ozYlJtanhoR3h6NlBNdg?oc=5",
-        "source": "Google News",
-        "published": "2026-06-08T16:29:43.000Z",
-        "summary": "States brace for AI-driven cyber attacks Arizona Capitol Times"
-      },
-      {
         "title": "Anthropic Calls for Pause on Frontier AI Development - BankInfoSecurity",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNMlJkM2k4dUxoMlo0NUpIa2dwREJmc0Jwel9oV0NWZFV4M2RxTDFSTDBaNWNsb3VaSElSWGRsVjU0ZzN4bGhTWFA0YTBjekYyekJCTE9kc0ZPZlhPcWxTRVAyTXowVlVtbDBQOWMxMkVrTGZLZGxFRzdEYkhnazI1MVYxRm1LNEtqTGhUcWNieFRxQzQ4T3pnMw?oc=5",
         "source": "Google News",
-        "published": "2026-06-08T16:18:45.000Z",
+        "published": "2026-06-08T16:25:48.000Z",
         "summary": "Anthropic Calls for Pause on Frontier AI Development BankInfoSecurity"
-      },
-      {
-        "title": "CI&T Joins Claude Partner Network to Scale Claude Across the World's Largest Enterprises, with 1,000+ Certified AI Engineers - 01net",
-        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQT0xvcFZKSU1qZDdkUl9zYTF5QnhqUGxIVC1za2xIUlZlclVWMG53VmY3OVpydVMyQXg0R2JFR0gzeFRjSHVFY29wWndkWXpmd0RWaFNHTFV6ZVJNeUt2OFQ0c3VUbGNqOXE4QWZJOXBiVUtrVndONkc5RThrT25KbTNxVm94R3FhcnBkVWNJODhwYWVKZUJIdFBTOXlkenRMWlJtTkpRTzhGRFM1MGh1QWRnWnEtbDZObi1tMHRrcjhScl9qdlRCQ0JNcnIzQ21ubDlfTzI4djM?oc=5",
-        "source": "Google News",
-        "published": "2026-06-08T16:00:00.000Z",
-        "summary": "CI&T Joins Claude Partner Network to Scale Claude Across the World's Largest Enterprises, with 1,000+ Certified AI Engineers 01net"
       },
       {
         "title": "Anthropic’s Complete Guide to Claude Skills Building - KDnuggets",
@@ -249,9 +263,16 @@
         "summary": "OpenAI is preparing the biggest overhaul of ChatGPT since its launch kicked off the AI boom, as the $850 billion group hunts for new engines of growth ahead of a planned listing this year. The…"
       },
       {
+        "title": "Are We Too Reliant On Anthropic’s Claude? - TechRound",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQWk5JM1dxODVqV0tEQU9LcGxrRGdsbnBULUhucDV1dlNKekNGVEJ6Znh6QW5uZG4ySktoTzd4NWFXaGUwRG1idHV1VXJQb0NoclZyUnNkc0hTdVlOR0hod3hoM2I0S09BenVfblJiUHJDdDgxSUJ6dV9LNl9HWTRaeFc1U1hGXy00anBKOWQ0UTlEQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-08T13:35:57.000Z",
+        "summary": "Are We Too Reliant On Anthropic’s Claude? TechRound"
+      },
+      {
         "title": "Launch HN: Intuned (YC S22) – Build and run reliable browser automations as code",
         "url": "https://intunedhq.com",
-        "source": "HN · 81↑",
+        "source": "HN · 88↑",
         "hn_id": "48445171",
         "published": "2026-06-08T13:35:27.000Z",
         "summary": "Hey HN, we&#x27;re Faisal and Ahmad from Intuned ( https:&#x2F;&#x2F;intunedhq.com ). We’re building a platform for building, deploying, and maintaining browser automations.…"
@@ -285,23 +306,9 @@
         "summary": "Anthropic’s Mythos AI Reportedly Enters NSA Offensive Cyber Planning TechRepublic"
       },
       {
-        "title": "My Lord! AI Programming Undergoes Another Major Shift: Claude Code Father & Lobster Founder Endorse New Paradigm - Could It Kill Prompt Engineering? - 36 Kr",
-        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE52WXhpT1NYNDRmTFJNVng4NHQ0bG14Vm9ld0FaMnJWU2ZYWnh5RURfTzNLQWp3cThNS1FCamRlVk03VG9NTTl2dXFGNkdlVjdSVTVZ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-08T13:24:32.000Z",
-        "summary": "My Lord! AI Programming Undergoes Another Major Shift: Claude Code Father & Lobster Founder Endorse New Paradigm - Could It Kill Prompt Engineering? 36 Kr"
-      },
-      {
-        "title": "BT becomes first UK member of Anthropic's Project Glasswing - Telecompaper",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQUGtjYmFwdF9FSUR6S1VoWkt6aDZkQy1zRG10T2R6VnpSUUJmZ213dzlxT0t0MjVVc3luUUZ5NlIxOHdwdHRmY2xLdjJsMFhMZ0J6SEttbVJQSkRGOVNDRGFab2ExQ1FvdkoyMTNyd2I4UGxZWDBRMWF5eGVzWTJFNGxMYUdOekc1c3AtWmxGZElVcXR0cVJ5UmV0LTBPY0FPS2pZ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-08T13:21:17.000Z",
-        "summary": "BT becomes first UK member of Anthropic's Project Glasswing Telecompaper"
-      },
-      {
         "title": "Anthropic's Project Glasswing Update",
         "url": "https://www.schneier.com/blog/archives/2026/06/anthropics-project-glasswing-update.html",
-        "source": "HN · 34↑",
+        "source": "HN · 37↑",
         "hn_id": "48444528",
         "published": "2026-06-08T12:33:14.000Z",
         "summary": ""
@@ -321,17 +328,10 @@
         "summary": "😺ChatGPT is about to look completely different The Neuron"
       },
       {
-        "title": "Fujitsu, Anthropic bolster protection for critical infrastructure in Japan - Frontier Enterprise",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRkVIekc4bFJsY3c5SVMxbjYyTE4yYkE4MUFQN0FxSFpPLWR3aDNVUTdQbmY4ajFoaXpOQW8tVXZOaXczZ2d5eFRadC1NR2ZEbW5pQVJHTXBIWURnNmctSnAzT0s3bFJ5U3NNNjRWVUZXSS1aMUhfZk80eTZrTUZzZEV0Y3l0VzU0dG5nR1AtZzYwUVNqUENpcDdIa2s1aTcyNV9BMlotdll4Wm1HOTlj?oc=5",
-        "source": "Google News",
-        "published": "2026-06-08T09:00:00.000Z",
-        "summary": "Fujitsu, Anthropic bolster protection for critical infrastructure in Japan Frontier Enterprise"
-      },
-      {
         "title": "Boris Cherny of Anthropic discusses Claude Code’s flexible AI workflows - Crypto Briefing",
         "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE14OUZ1VWpmbXluUG00Zkh5OGh3Y0lfZTBwSUdtcGVSS2NLVHY2dzlTWWpYR255RTJtTDVKcmd2SUoyUWZ3SG93cmlHWXVfV1ozRnB6ZHU4LTdjX0l0enVJbDUyaXNnQ2NfT2owclpxY1pLdHk3SnJUSXJ5SQ?oc=5",
         "source": "Google News",
-        "published": "2026-06-08T07:25:54.000Z",
+        "published": "2026-06-08T09:50:54.000Z",
         "summary": "Boris Cherny of Anthropic discusses Claude Code’s flexible AI workflows Crypto Briefing"
       },
       {
@@ -553,11 +553,18 @@
     ],
     "status": [
       {
+        "title": "Elevated errors on Claude Haiku 4.5",
+        "url": "https://status.claude.com/incidents/829kf0y1f7pn",
+        "source": "Claude Status",
+        "published": "2026-06-08T19:52:06.000Z",
+        "summary": "Jun 8 , 19:52 UTC Resolved - The incident is now resolved. The impact started at 11:35 PT / 18:35 UTC and ended at 12:30 PT / 19:30 UTC. Jun 8 , 19:10 UTC Investigating - We are currently…"
+      },
+      {
         "title": "Elevated errors on Claude Opus 4.7",
         "url": "https://status.claude.com/incidents/3n1flr3mnpgl",
         "source": "Claude Status",
-        "published": "2026-06-08T17:15:04.000Z",
-        "summary": "Jun 8 , 17:15 UTC Investigating - We are currently investigating this issue."
+        "published": "2026-06-08T19:22:14.000Z",
+        "summary": "Jun 8 , 19:22 UTC Resolved - This issue has been resolved. We saw errors affecting Opus 4.7 from 16:56–17:47 UTC. Jun 8 , 17:55 UTC Monitoring - A fix has been implemented and we are monitoring the…"
       },
       {
         "title": "Elevated errors on Claude Opus 4.7",
@@ -628,13 +635,6 @@
         "source": "Claude Status",
         "published": "2026-06-01T15:41:10.000Z",
         "summary": "Jun 1 , 15:41 UTC Resolved - This incident has been resolved. Jun 1 , 15:21 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jun 1 , 14:40 UTC Identified - The issue…"
-      },
-      {
-        "title": "Elevated errors for Claude Opus 4.7",
-        "url": "https://status.claude.com/incidents/qc88nvqjv99m",
-        "source": "Claude Status",
-        "published": "2026-06-01T13:33:56.000Z",
-        "summary": "Jun 1 , 13:33 UTC Resolved - This incident has been resolved. Jun 1 , 12:48 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jun 1 , 12:19 UTC Identified - The issue…"
       }
     ],
     "youtube": [
@@ -2018,7 +2018,7 @@
         "summary": ""
       },
       {
-        "title": "MCP tunnels is now available as a Research Preview, so you can connect to MCP servers in your private network.",
+        "title": "MCP tunnels is now available as a research preview, so you can connect to MCP servers in your private network.",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#may-19-2026",
         "source": "Claude API Release Notes",
         "published": "2026-05-19T00:00:00.000Z",
@@ -2218,7 +2218,7 @@
         "url": "https://platform.claude.com/docs/en/release-notes/overview#april-8-2026",
         "source": "Claude API Release Notes",
         "published": "2026-04-08T00:00:00.000Z",
-        "summary": "We've launched the ant CLI , a command-line client for the Claude API that enables faster interaction with the Claude API, native integration with Claude Code, and versioning of API resources in YAML files. Learn more in the CLI reference ."
+        "summary": "We've launched the ant CLI , a command-line client for the Claude API that enables faster interaction with the Claude API, native integration with Claude Code, and versioning of API resources in YAML files. Learn more in the CLI…"
       },
       {
         "title": "We announced Claude Mythos Preview is available as a gated research preview for defensive cybersecurity work as part…",
