@@ -1,8 +1,22 @@
 {
-  "generated_at": "2026-06-12T12:47:15.876Z",
+  "generated_at": "2026-06-12T16:36:27.701Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Anthropic Public Record",
+        "url": "https://www.anthropic.com/news/anthropic-public-record",
+        "source": "Anthropic",
+        "published": "2026-06-12T16:24:44.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Making Claude a Chemist",
+        "url": "https://www.anthropic.com/research/making-claude-a-chemist",
+        "source": "Anthropic Research",
+        "published": "2026-06-12T13:24:10.000Z",
+        "summary": ""
+      },
       {
         "title": "Dxc Anthropic Alliance",
         "url": "https://www.anthropic.com/news/dxc-anthropic-alliance",
@@ -36,13 +50,6 @@
         "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
         "source": "Anthropic Eng",
         "published": "2026-06-06T00:28:16.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Making Claude a Chemist",
-        "url": "https://www.anthropic.com/research/making-claude-a-chemist",
-        "source": "Anthropic Research",
-        "published": "2026-06-05T20:13:40.000Z",
         "summary": ""
       },
       {
@@ -135,36 +142,99 @@
         "source": "Anthropic Research",
         "published": "2026-06-05T15:14:37.000Z",
         "summary": ""
-      },
-      {
-        "title": "Chris Olah Pope Leo Encyclical",
-        "url": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
-        "source": "Anthropic",
-        "published": "2026-06-05T14:58:47.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
+        "title": "SpaceX, Anthropic, and OpenAI’s hot IPO summer",
+        "url": "https://techcrunch.com/video/spacex-anthropic-and-openais-hot-ipo-summer/",
+        "source": "TechCrunch",
+        "published": "2026-06-12T16:23:25.000Z",
+        "summary": "The IPO market is back, and it’s not the same companies leading the charge. FAANG had a good run, but a new acronym is taking over: MANGOS — Meta (or Microsoft, depending on who you ask), Anthropic,…"
+      },
+      {
+        "title": "SpaceX Isn’t in the S&P 500. That's Good.",
+        "url": "https://www.bloomberg.com/news/videos/2026-06-12/opinion-spacex-isn-t-in-the-s-p-500-that-s-good-video",
+        "source": "Bloomberg",
+        "published": "2026-06-12T16:08:52.000Z",
+        "summary": "The S&P 500 shouldn’t make exceptions for big tech companies like SpaceX, Anthropic or OpenAI. Keeping its criteria for admission is more important, says Bloomberg Opinion columnist Nir Kaissar.…"
+      },
+      {
+        "title": "Montgomery County Food Bank selected for inaugural cohort of Anthropic’s Claude Corps - Hello Woodlands",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPc0RMbVV2enFVZThmR3JzS19kSU1OVTVIaUxQUkxIS3hoUmV3aGJtb3hreGJvazBsaFRnNDRDMGxiM3pNcU01T3JfM3BDUzZsN3pELVlDSUdjMEpSUlQweWJIMGh2NkRnUUkzVVBVV3JSbjBhVHVCNVFSWkJob3RwVTRBMlBOZldaMHZnWkFCX0h6NXViVjNfOVZsSEdXdVFDR1Q0LVo4VnZuMDVmWm82NWVn?oc=5",
+        "source": "Google News",
+        "published": "2026-06-12T15:52:38.000Z",
+        "summary": "Montgomery County Food Bank selected for inaugural cohort of Anthropic’s Claude Corps Hello Woodlands"
+      },
+      {
+        "title": "It’s hot IPO summer, and the MANGOS are ripe",
+        "url": "https://techcrunch.com/podcast/its-hot-ipo-summer-and-the-mangos-are-ripe/",
+        "source": "TechCrunch",
+        "published": "2026-06-12T15:50:52.000Z",
+        "summary": "The IPO market is back, and it’s not the same companies leading the charge. FAANG had a good run, but a new acronym is taking over: MANGOS — Meta (or Microsoft, depending on who you ask), Anthropic,…"
+      },
+      {
+        "title": "Anthropic's Claude Fable 5 sparks cybersecurity warnings - SecurityBrief Australia",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPMWZXbjl3Q2ZMcVF5Y19MRXZvQThQbENyZmM4dnNoR3pOMFBfd1l3cEc2dkVfX3R6Q0ZkaS1HLXZJb1V0VEYtSV9keW96WnhKNVpIWlBGbHZVT1ctLUNycmtGakRrcTBxdW1kNW1rNC1LMm5IakhnUWk2RHNCRjZhdDBNVXozbkt4aFlGX2N5RmxTdUlfa2c?oc=5",
+        "source": "Google News",
+        "published": "2026-06-12T15:30:00.000Z",
+        "summary": "Anthropic's Claude Fable 5 sparks cybersecurity warnings SecurityBrief Australia"
+      },
+      {
+        "title": "It’s Mythos’ world now. How do we live in it? - Cybersecurity Dive",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQbWNXU2FzdVVVWTlaeHo1QnRuMGY5c0ozVlBqRW04VkpsTm5rWk1VeE0taUxtUTNmaC0tUi1mVmNjdmV4cnFHZ0tSZU5WOGwwVERKTmR4TWFpV0I4RUIzUFA1YXgxWjFxVnUxTnJvb2xhSlhROGRtWGJhUXJ1akdiNjJYdkEyUG9faE5LOW8zV29OSVNhamJ5WDRKZ2h3WlU?oc=5",
+        "source": "Google News",
+        "published": "2026-06-12T14:58:56.000Z",
+        "summary": "It’s Mythos’ world now. How do we live in it? Cybersecurity Dive"
+      },
+      {
         "title": "Anthropic’s Claude Fable 5 AI Model Jailbroken for Stack Exploit Creation - gbhackers.com",
         "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5EZGJXTnUxZkRyQ0IxVlREeTB4dFVJcS1PbE0tY0ZYM2U0RmZ4aFZfUEliYnpvZXlnTE1ZcWtxUjcwUWprbDBUUjgybmZtYnRpQm5TMDZFS2dvdFBmc1dRbWR4aEMxZXhyZmY2SGdwR1F3V1dhemEw?oc=5",
         "source": "Google News",
-        "published": "2026-06-12T11:52:42.000Z",
+        "published": "2026-06-12T14:53:31.000Z",
         "summary": "Anthropic’s Claude Fable 5 AI Model Jailbroken for Stack Exploit Creation gbhackers.com"
       },
       {
-        "title": "The AI industry's platform trap is starting to look a lot like Microsoft's - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQOEJRcEVTV0VBX0t1LXZQNHd0d3k3YjZJRkFiYlRfZExwbVZ5T3dHMnM3STJvUDhTVWJqanhqd2piMEpQeVZoY1ViVmRDQnBkaDFjWFFLMjJobjlrYXYwWHNUN0hjUDhGUWkyZzhsUDR3ZXNmbmNBU3dLNDFLOTVQRGhTQXdDdVBMV21vS2pOdWtzRTVtV1pfWVZaNmNiUQ?oc=5",
+        "title": "AI is cutting hours of office work, but also creating a new kind of busywork - Los Angeles Times",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNMXRJYUZDY2NOZ3Rnam52cU5QaVgtN3lwaV9ZWDRPQ21YQVc0QlpJaWV2aG4zRmxNYTh1STIxdlFCeDI1d0VJaHMybTRMb2IyWmFSWjNDX25wRWR6ZmtMRjV6VVNzdkFxUUVUV0RTaWhqNDVyREc2SWJGclFYUkN6LWJneDhHa1FKcTFGdkctbGs5Y2k4cTg0dXNKcURmUDBsVGJkcm5NcnpsaV9WNUlTeGVxa1hVTFdy?oc=5",
         "source": "Google News",
-        "published": "2026-06-12T11:49:25.000Z",
-        "summary": "The AI industry's platform trap is starting to look a lot like Microsoft's the-decoder.com"
+        "published": "2026-06-12T14:41:00.000Z",
+        "summary": "AI is cutting hours of office work, but also creating a new kind of busywork Los Angeles Times"
       },
       {
-        "title": "Anthropic announces 'Claude Corps' to teach non-profits to use AI more effectively - Jamaica Gleaner",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOblZ2MFdEWWdBS1NNLU1FOXVoSGoxRGJLWEtIdk4tTkZBaVhQOUdySmszVDdJS1JETkhjTVZiUnVad0V1XzJHMUNsUTZyMUZZTDQxSnoxbEMycVgtaTJ1OS12ekZBX2txZEc5V19kMmoySGFtX2hZQVN4d0hpdVBIU1BRQ0dfaWRDNUxTZ3RtMXpwMEJfVjU5UTVZVFFOejQzNDR2emZmdVJQWlN6OUFEWlhkNjJPQQ?oc=5",
+        "title": "Anthropic CEO Dario Amodei warns of military risks in Claude use - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBTUHViSzBsRWUtWXlYTVF4RV9XRjdkREJiWFF0c2Ria25xZHJabHhiZVk2Rkp3bjRFa2hlN1ZnS3p2dzJKNHVLUHFkMzBERnZKQk5wTE5DQS01b2xSajkyLW9uLWR1akhnellQYzU3Mnl1T0FX?oc=5",
         "source": "Google News",
-        "published": "2026-06-12T11:46:23.000Z",
-        "summary": "Anthropic announces 'Claude Corps' to teach non-profits to use AI more effectively Jamaica Gleaner"
+        "published": "2026-06-12T14:36:37.000Z",
+        "summary": "Anthropic CEO Dario Amodei warns of military risks in Claude use Crypto Briefing"
+      },
+      {
+        "title": "Report: Microsoft Restricts Employees' Claude Access Over Data Retention - PCMag Australia",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPRmt0RFllanRnSFNrelJyazc0VUhwdTZDaENSYmQxRDJyUFNVYkRNNjZIRS1vMmVZTmNHMm5FS2k4cFYteTN4ZkRYaFhCeG0wV0VHWURvWVlaazlNd2pfNDlKM1ZDdXlzdVF2TlF1eVQzU2Fjdy01Q2ZVZlVWcVNNWGtjR3FrY2daVDBzbHpDenJCUktyMkoxazZxaUxYWHU3WVQ4?oc=5",
+        "source": "Google News",
+        "published": "2026-06-12T13:56:44.000Z",
+        "summary": "Report: Microsoft Restricts Employees' Claude Access Over Data Retention PCMag Australia"
+      },
+      {
+        "title": "Anthropic’s Claude Fable 5 launch – What matters to legal - Legal IT Insider",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNaV9Wb1UxY1l0SGkwNmdXZnp0MTlTa1JzMFUxQXEtdlhKRFhyNzBCU29XSEhEbzkzTzZUQ3NNRy1FTGNQTXRzQ2llcTMyUU8zUDZ0TlV3MGdEVXFaUWZNUkNqX3JjeTg5cEQySTFfQUFac2VvLXRaQnZVTlJSLVpxNVpBMTd1R3VzMEtB?oc=5",
+        "source": "Google News",
+        "published": "2026-06-12T13:43:56.000Z",
+        "summary": "Anthropic’s Claude Fable 5 launch – What matters to legal Legal IT Insider"
+      },
+      {
+        "title": "Industry Reactions to Claude Fable 5: Feedback Friday - SecurityWeek",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQbDlVMXgtem9XdDQ5ckJVRVAzdkRFYzBEZGVvMWNITUQ2Y2lZdjhXY0k4TzFNaWJLaHNsaXB1TjgtQmctd0hRQkRaMTRfQjdmQkFBZ2x5bHFYMjNMRlNmRFpSdFNHazdIdmFjemxkczZEdUJ5SDMzWUw2eU80VXBOU1pQUWZLQ0NaOHfSAY8BQVVfeXFMUE50a1ktcHZxSDNsUFN0S2lka2lNUi1fd0E5Tm9BdzF1MFZucHAwdDJWMUlCWUJvaXlsSHlfU1J5MTM2VUdvUUxtdl91MWcyZXhUWkRSMVdWajR5Y0lDcWEybWlWU0ZFV1V2SjVyd1Y2QW9TTFBwVjBpYno4UW5kcFNJYnF4T3dIMElCX2FGdTQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-12T12:30:34.000Z",
+        "summary": "Industry Reactions to Claude Fable 5: Feedback Friday SecurityWeek"
+      },
+      {
+        "title": "Anthropic and The Quarry's Claude Wins Big at AICP Post Awards - Little Black Book | LBBOnline",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPVDRnUE5TajdUUmlNRzZOb2R5cGtRc2stT3VXcFJBaEJqVmMyalBsdURoSTFQWEZvS3hLTy1WenR5OTlqVTN0NGJoNExNNm51bjJWN2VESVhncExONmJURTVVUnNBYWNFVjgzU20zdHNibnctRWZFOEpMTkREclNRYnZRT2NDaHNadzk5Um1CN19GUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-12T11:44:30.000Z",
+        "summary": "Anthropic and The Quarry's Claude Wins Big at AICP Post Awards Little Black Book | LBBOnline"
       },
       {
         "title": "OpenAI and Anthropic face pricing pressure as Chinese AI models undercut costs by up to 9x - Crypto Briefing",
@@ -174,11 +244,18 @@
         "summary": "OpenAI and Anthropic face pricing pressure as Chinese AI models undercut costs by up to 9x Crypto Briefing"
       },
       {
-        "title": "Microsoft blocks Claude Fable 5 for employees, citing fears of sensitive data exposure - Windows Central",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNaUFBandXZ000ZG5Uc3pRZHVLd3BYMUZrdjBHc0pTOGo5RDc3amxUcmZxZUJFb3RncW9oQ3VFN2l4X1ZaWFNUbmV4QV9iV3JVWk94N3FtTHFsVGVLRmpvU0Y1eUFJQldoMWZsUXlVUml1SHkwQUNKZmtGenJrZlZEM0lXVWdYTzQxZjJZRzQtOXRWU0NaNXdrMldTQjRWRXgxd2RLRzJZdVlzVEUzX2M4WEptdUgtNEROVVlB?oc=5",
+        "title": "Microsoft is not the only company 'warning' about using Anthropic Claude Fable, other companies too are w - The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxQRjdEdnJFVXBtY2lueVIxWS01eGt0ME1IeGVKLVFUamtJeUdJLVB4Vlh2dUExRklPLUJWSVBPVUVuUVUzYVh2Qm1YQ1RjZno3cnY3YTFsckNJeHczWm42RWdIRDN4SmNfS01XdWVqMWlFTHpCb3hDOTFIaVRRWFkyYnNpb3lkM0VEd2ZlaVN5eHR5Q1k3WFlVaDA4VVRwdUxBbDdjdzh0bzhta0t2aEVkVFVPOV9CUGZIQmEzLVdlMERmMU8yM3gyMXZ4QjVXQXFHT2hwTGFqOWpfWkY5bDI1dFlWLXk1WnZTTUYwb2FVb2tiY0hpa3puQmFNa1dnY3pic3o2d3otYmlqSUtjb01rY0JDUDcySThNak01S1BvdUtjUdIBpwJBVV95cUxQLTRKY2g5R1o5bjVodUt3aUF1dGpjSk51Q21ET0VuZlJ6YnpiZGNUdGU3X2hKYU9RYU9KdGNZWmZxQkluZl94NDN6QzA0Y2tqY3VoZVZCZzZ2Tm5tb2hHMDlwUy1qS3pwTnYyS0FQRnFMN0EtWEY1TUpBQmdXWVlyTmo2ZHFDQVg4d2JVRVRTMW1ubFF3TFlxcGNZdHFxMW5iZmF4cXFBc1hXNUk4bG41d2JaeUhRSWNpU3UtUGNQZ2ZNRjFIZ1FwaHNYdmVRQXdkeEhGSzZHOGFSU0gyd2pucTM1NE5BbVdLekVBdkM1OWhENHZMNHdCVUwzRjAwbTJjZGlPZWpVTi03Y3hZZE1TS0xadzF2MjIxMzFHTWNkdlJyZHVZYWVn?oc=5",
         "source": "Google News",
-        "published": "2026-06-12T11:28:07.000Z",
-        "summary": "Microsoft blocks Claude Fable 5 for employees, citing fears of sensitive data exposure Windows Central"
+        "published": "2026-06-12T11:36:00.000Z",
+        "summary": "Microsoft is not the only company 'warning' about using Anthropic Claude Fable, other companies too are w The Times of India"
+      },
+      {
+        "title": "Anthropic quietly degraded Fable 5 for AI researchers, then apologized - Startup Fortune",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPSkZ6dzZJTlp4ZGY2a1IxQ0I3QmFNQ3FnQ3hhNGVaV1BQdVZjSnBiVTcyQ3I5ZG1KQXlwY05HVG9sa01wV3owaVlqYVk4TUluMlF2bzBGdDNuZkhMOXdvbkU5ZnB5WWVQUWlJd1lmZU5nYWxJNHBTOVpJYWhtUkpXSmh1aTlVMDNGaWhkX2NpQk9KR0FUN2NZT3FTaEhEQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-12T11:24:39.000Z",
+        "summary": "Anthropic quietly degraded Fable 5 for AI researchers, then apologized Startup Fortune"
       },
       {
         "title": "Anthropic's Claude Fable 5 is the smartest AI model, but why that's not the same as being the best one - The Times of India",
@@ -202,11 +279,11 @@
         "summary": "Anthropic builds out Claude as OpenAI and Google stay ahead Tech Wire Asia"
       },
       {
-        "title": "Anthropic launches Claude Corps AI fellowship for US nonprofits - Digital Watch Observatory",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBaRkhEWklNdHRSUGVROFRtZ1ZPVlNSRkNpNWZhQVdVYTh5MWozVi1VUVdQNkE4X0JjRGgyRkJFZEZYaFFNdHBFcXp2eUdxSXo0X0xiSldoYTljS1BnSGVtblNnZ2VYSGNRNVhEcXl1cWFzYWI2a1oxeUh4TQ?oc=5",
+        "title": "Anthropic’s Claude Fable 5 adds hurdles for Chinese AI firms - Tech in Asia",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNREtUcGhHay1XUlk4WGFpZUlkQTlQb09BUkZyc3hGZS11aTBQMHJ5YTFFOXhlSTBnc0xuSm9JeW11a1ozTFU4MnE4c0lhNkJsZ2ZJTmN4RGdjeFpzbjNwQ2FUeW9BY1ZXdFJZX0VDYUttQlVYZWRyYlhMYTd2YmV5N2lwSHpJUzVQakRXdGZWTnNvOWdDeXc?oc=5",
         "source": "Google News",
-        "published": "2026-06-12T09:42:43.000Z",
-        "summary": "Anthropic launches Claude Corps AI fellowship for US nonprofits Digital Watch Observatory"
+        "published": "2026-06-12T09:54:00.000Z",
+        "summary": "Anthropic’s Claude Fable 5 adds hurdles for Chinese AI firms Tech in Asia"
       },
       {
         "title": "Anthropic says sorry to users of the new Claude Fable 5 model; says: We apologize for not getting the bal - The Times of India",
@@ -230,96 +307,18 @@
         "summary": "Anthropic Disputes Fable 5 AI Jailbreak SecurityWeek"
       },
       {
-        "title": "Anthropic, OpenAI, Google Executives Plan to Attend G7 Summit",
-        "url": "https://www.bloomberg.com/news/articles/2026-06-12/anthropic-openai-google-executives-plan-to-attend-g7-summit",
-        "source": "Bloomberg",
-        "published": "2026-06-12T07:54:50.000Z",
-        "summary": "Artificial intelligence executives from Anthropic PBC, OpenAI and Alphabet Inc.’s Google are slated to attend the Group of Seven summit, a gathering of world leaders that gets underway next week in…"
-      },
-      {
-        "title": "DXC Technology Partners with Anthropic to Scale Claude AI Across Global Enterprises - TechAfrica News",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNNGptZkF6U2VxNzVrMmtFbEJCaUd5UjJQRkRHLXpQTkNDOS1uY2ljTnVVU1VkMDhFOEJFdFRqeTVkeDE0and0ZXJ3a2ZlMDU0WVlUampGS2NPUGFZMzFKeGdWNk81TDFpcjdzajdPMEZkXzI2VkxLMWRPbmg0Yjlza0JDb3pIYVloXzFIZkxyRG5FNjZGc09iaFZUZUNPVlBDblZ6NVZBWi14cGNTeFZGU1laSzBkelN3UkNBeVlMaw?oc=5",
+        "title": "Anthropic launches Claude Corps AI fellowship for US nonprofits - Digital Watch Observatory",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBaRkhEWklNdHRSUGVROFRtZ1ZPVlNSRkNpNWZhQVdVYTh5MWozVi1VUVdQNkE4X0JjRGgyRkJFZEZYaFFNdHBFcXp2eUdxSXo0X0xiSldoYTljS1BnSGVtblNnZ2VYSGNRNVhEcXl1cWFzYWI2a1oxeUh4TQ?oc=5",
         "source": "Google News",
-        "published": "2026-06-12T07:35:09.000Z",
-        "summary": "DXC Technology Partners with Anthropic to Scale Claude AI Across Global Enterprises TechAfrica News"
+        "published": "2026-06-12T07:55:00.000Z",
+        "summary": "Anthropic launches Claude Corps AI fellowship for US nonprofits Digital Watch Observatory"
       },
       {
-        "title": "Anthropic’s Fable 5 Release Renewed Pressure on Enterprise Software Stocks, Valuations - ERP Today",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE45aGc5SjFMblFvbV9mTFFSTkx2cGdZZmZNa0lWQy1wZmFJVHBNai1CakRWMjVhblFPam4tb25zWVNOUWJ3NWlVeG9qWFJwR0VoQnJCNnB1TUp0QmtPQ196c3R3ckhCSmtYZ2l0ZXFLOXVrc0VJY2dfLVBR?oc=5",
+        "title": "Buy the SpaceX IPO -- or Wait for Anthropic and OpenAI? The Answer May Surprise You. - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZk9sUVNoQXFHdXg0cmlqVFdfT19DM0RoeFV2Smk4QXZYMkMtY0VvaWo2XzNhc0xpWjZzUDZvM3VnR1RjaVFmT2s5eGY1aGxmNnhiNDJJcG50Nkc2b3NJdXd0VXFnWGFZSjU0ZlRPZGREeG8yc016a2JjVFZUTkk0NkxJelJEdVhYbUZieE5kd0t2MHNEY25HWG93?oc=5",
         "source": "Google News",
-        "published": "2026-06-12T06:48:36.000Z",
-        "summary": "Anthropic’s Fable 5 Release Renewed Pressure on Enterprise Software Stocks, Valuations ERP Today"
-      },
-      {
-        "title": "ZAWYA: DXC and Anthropic announce multi-year global alliance to bring ai into mission-critical enterprise systems - TradingView",
-        "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxOUVowMndvYjFMZnhia2Z6WnFFQ2kyTGgtMkdPdVJ5QjM4bDQzR1dfUUFFdVFHQXQ4TjF1cVVNRGMzLTdaZUpaY2lwNmxCOTBsS1NWek9rbHk4UWMyM0Z0ZFBJUndPU2JMTnhmY1J1MlVCZU0zeHVRaS1OSjFGaWtENkg0S1dCR3VSUXI1UlllNkNycG5GbS13LWFQZjhPYnRBZ1VNVWw0TVFkSGE0bHFHWkVoTmlERU91eVdURHJ0dEljaUExS0VRZHJkYXNXT003MkMtVlFWeDR1Zms5YzNFdHBtdUo5UHFCbk9ZUWpDQmw3X0pwbmdFNjZNMGNRSVN4bTdOblVHUlF2Y21XOUg5T2lkWkttRzg?oc=5",
-        "source": "Google News",
-        "published": "2026-06-12T04:59:00.000Z",
-        "summary": "ZAWYA: DXC and Anthropic announce multi-year global alliance to bring ai into mission-critical enterprise systems TradingView"
-      },
-      {
-        "title": "Anthropic Claude Fable 5 Has Implications For Cybersecurity - SMBtech",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPM0ZSeXc0dWREdWlxeUJyYXNEdDZmSE5IaWk4WVZ4TjhUNmxtTXhMWnVFbmdLbjdiUEZmZ1diZFBhYlBPY3hQZS01RGkzeFlUMHRrdjJwU0hURFdzMmxTNHlxY2xkRmtzeVN3NjF0RlJ6M2dzSlpleVhaM1QxSngyWmhKcEdmenhFOHVQMFppT1VvUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-12T04:20:18.000Z",
-        "summary": "Anthropic Claude Fable 5 Has Implications For Cybersecurity SMBtech"
-      },
-      {
-        "title": "Anthropic splits Claude Fable 5 amid cyber risk fears - SecurityBrief Australia",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOd2M0Y0YwbzV0M3hOcE5zcjRPLUg5X1NKOE5RNXg0MmhDdHpwTGxmd3JBWGZ1RnA5TVpLSWdMQXhmc0JTRzl5WExsVGUyczgwZURuc3g0VTctQWd2YXBhQjJKSmR6UFZSTU10OHlqM3kzY1RBR1d5VEIxRW92NER6QlJXaDFvNTNxT2dNanV1YkVGdw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-12T02:53:23.000Z",
-        "summary": "Anthropic splits Claude Fable 5 amid cyber risk fears SecurityBrief Australia"
-      },
-      {
-        "title": "Janus Henderson develops AI investment tools with Percepta and Anthropic - Fund Selector Asia",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQb2N6TTRlV2s5SlFPMVlxOExzZ0UwRnhGWlFKckR4NklPaWVxaU5ZYXNTd09uX2I2R3pZX3BUU0Z1MHZSSS1VaE1hQUo5aTlsb29oU1kwWmVvdVJfaDNueVppM0RWa05Ha2xzY1lQckpjcGF6YzllbmJ2c0xHSkM0R3dRWmMyM1RaV0pWU3J5d285NEhJcGZjazJlTEQyYjNVZGxWVWdLQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-12T02:34:10.000Z",
-        "summary": "Janus Henderson develops AI investment tools with Percepta and Anthropic Fund Selector Asia"
-      },
-      {
-        "title": "Anthropic’s Claude Fable 5 plays it too safe on safety, developers say - Fast Company",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSExUbVNOeUhxMldFeF9laF90QzgwQXlzTXpfWmhYajZzY3NvUzdzY1F2Qno4aEhQYmdESm9HVlVFMWpaVmw3QktHWXRZYVZaTWZiNjlVejlRUElxVEpfcl8zUDBSdjBXSzIxY0ZtbUdfRE5ERElGajNZbGZfekl4M3g5MEdXR0tZRVR4YVIyY1Q?oc=5",
-        "source": "Google News",
-        "published": "2026-06-12T01:52:39.000Z",
-        "summary": "Anthropic’s Claude Fable 5 plays it too safe on safety, developers say Fast Company"
-      },
-      {
-        "title": "Claude Fable is relentlessly proactive",
-        "url": "https://simonwillison.net/2026/Jun/11/fable-is-relentlessly-proactive/",
-        "source": "HN · 537↑",
-        "hn_id": "48498573",
-        "published": "2026-06-12T01:06:51.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Reverses Secret Policy That Silently Degraded Claude for Rival AI Researchers - MLQ.ai",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPQ2RhbUlPNS1IX0M0SElidk1KX2pRbzI4SThUUEdKVVllbF84bkNESE5ETXFoSHFNRVJCeXRPU2RwRWF1MXBPVWgtQjlzcXlEbnBRU29WOGR1U0tidmlqWGxBX0Vlb3JVdEhkTHBXZ25ZNGhVTHNXeUpLNzdBME5yWXBsNGpGc0ZXNmpmRG9PT1hiRDNwN28tRUFOV2RJYWx1OHVqU0pLMS1RM3Vo?oc=5",
-        "source": "Google News",
-        "published": "2026-06-12T00:54:49.000Z",
-        "summary": "Anthropic Reverses Secret Policy That Silently Degraded Claude for Rival AI Researchers MLQ.ai"
-      },
-      {
-        "title": "Rubrik Launches Agent Cloud for Anthropic Claude Code & Claude Cowork to Secure AI Agents - The Fast Mode",
-        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPc0RLU1luV2E3VVB4MnZaUWJlYTc2UkRWNUNKVk05NUlOUVFlWUFTVTRTOFJnbFZOUm1mVGF0XzU4MmRNSmxoLWxIZ1hlVVlVaGtrdGtfUkVjV09seE9TX2o3bUU3Mkg2TW5yMjdtdGt2REFJTGx6amJZaTUtT0hLOHZ1TDRRTkZoRGNId0RCSHE4M0tuM3B4Y0pmYkRKRHM4MDZUTEkyMDQ3N3JGbzItZDRxSFpEdjZmY2ZJeWtiQ1FMLThFV1pPZXBBUkNPMHR6NzVRbWpxZndpdw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-12T00:50:35.000Z",
-        "summary": "Rubrik Launches Agent Cloud for Anthropic Claude Code & Claude Cowork to Secure AI Agents The Fast Mode"
-      },
-      {
-        "title": "Anthropic launches $150M Claude Corps nonprofit fellowship program - qz.com",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOT3EtLVpVOWRSXzJUYWNGRkU2cWtydUh4ZTJFM3E1RWZlS215UmhlZTRrdDZxWXBRMk9YUUVQb0xUeHlJcWxUMERSc21aUzZReFJ5aFNiVl9PSEI5LW9OUFZQUEY3NG8yRDNBRVVFb1lZWG1qT19hTjJKLTVNTWNxODB4NVg?oc=5",
-        "source": "Google News",
-        "published": "2026-06-12T00:39:26.000Z",
-        "summary": "Anthropic launches $150M Claude Corps nonprofit fellowship program qz.com"
-      },
-      {
-        "title": "Anthropic commits $150m to Claude Corps AI fellowship program - EdTech Innovation Hub",
-        "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNeHpCeG1oQ0hSLU4xTUplR3p1QUp4TTcxcHpBdlVIdFJBY3M2WkRSNExuZmU1b1FrU3FZaVo5NkhqMGhqbmN5SEE1bkU1V0drMWNMSmJFNERfMTJVNUtERE9TbVdzb2RhU3EwQ1FxTE1pSDZQV0dhX1hrRVVqT0ZWM0ZIS2ZIeVdXRzJRQmU3Qm9HbG0zMHpKd0lZMElpNUdhZnhnejRfSElsZHEyRHRHQ2pLZkhvSU0yLVNYSEhnY1ZnX0lIbGRkSFA3SFNWYlhrejRnc1gtTDNZMFJ5QlE0blcxaEFVZUFyUWJwc3g4ZWdiVGxhOUhINFBwZkZzV2R2VGpxTVNPUURpZw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-11T23:15:37.000Z",
-        "summary": "Anthropic commits $150m to Claude Corps AI fellowship program EdTech Innovation Hub"
+        "published": "2026-06-12T07:50:00.000Z",
+        "summary": "Buy the SpaceX IPO -- or Wait for Anthropic and OpenAI? The Answer May Surprise You. Yahoo Finance"
       },
       {
         "title": "Claude Fable 5 Built This in Claude Code and I'm Blown Away",
@@ -524,18 +523,6 @@
         "published": "2026-05-13T20:12:33.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Translating Claude’s thoughts into language",
-        "url": "https://www.youtube.com/watch?v=j2knrqAzYVY",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "j2knrqAzYVY",
-        "thumbnail": "https://i.ytimg.com/vi/j2knrqAzYVY/hqdefault.jpg",
-        "published": "2026-05-07T17:01:21.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -625,6 +612,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "How to Build Claude Skills (the Simple Way)",
+        "url": "https://www.youtube.com/watch?v=k3WOGaK-0gU",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "k3WOGaK-0gU",
+        "thumbnail": "https://i.ytimg.com/vi/k3WOGaK-0gU/hqdefault.jpg",
+        "published": "2026-06-12T15:30:28.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Fable 5 Built This in Claude Code and I'm Blown Away",
         "url": "https://www.youtube.com/watch?v=I3PYGi_tGy0",
@@ -943,20 +941,21 @@
         "thumbnail": "https://i.ytimg.com/vi/BMMcmmnjrM8/hqdefault.jpg",
         "published": "2026-05-11T17:51:20.000Z",
         "summary": ""
-      },
-      {
-        "title": "Translating Claude’s thoughts into language",
-        "url": "https://www.youtube.com/watch?v=j2knrqAzYVY",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "j2knrqAzYVY",
-        "thumbnail": "https://i.ytimg.com/vi/j2knrqAzYVY/hqdefault.jpg",
-        "published": "2026-05-07T17:01:21.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "How to Build Claude Skills (the Simple Way)",
+        "url": "https://www.youtube.com/watch?v=k3WOGaK-0gU",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "k3WOGaK-0gU",
+        "thumbnail": "https://i.ytimg.com/vi/k3WOGaK-0gU/hqdefault.jpg",
+        "published": "2026-06-12T15:30:28.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
       {
         "title": "v2.1.175",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.175",
@@ -1744,6 +1743,13 @@
     ],
     "claude_learning": [
       {
+        "title": "How to Build Claude Skills (the Simple Way)",
+        "url": "https://www.youtube.com/watch?v=k3WOGaK-0gU",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-06-12T15:30:28.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.175",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.175",
         "source": "Claude Code",
@@ -2148,13 +2154,6 @@
         "source": "MCP Inspector",
         "published": "2026-05-08T13:59:01.000Z",
         "summary": "What's Changed Fix decimal typing behavior for number inputs in tools form by @MumuTW in #1127 fix: ensure DCR always registers both redirect URIs by @asoorm in #1173 fix: add horizontal scrolling for long values in…"
-      },
-      {
-        "title": "Translating Claude’s thoughts into language",
-        "url": "https://www.youtube.com/watch?v=j2knrqAzYVY",
-        "source": "YouTube · Anthropic",
-        "published": "2026-05-07T17:01:21.000Z",
-        "summary": ""
       },
       {
         "title": "Multi-agent sessions and Outcomes are now in public beta under the standard managed-agents-2026-04-01 beta header.",
