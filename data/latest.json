@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-06-15T09:49:24.084Z",
+  "generated_at": "2026-06-15T15:34:49.376Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Emotion Concepts Function",
+        "url": "https://www.anthropic.com/research/emotion-concepts-function",
+        "source": "Anthropic Research",
+        "published": "2026-06-15T12:21:25.000Z",
+        "summary": ""
+      },
       {
         "title": "Making Claude a Chemist",
         "url": "https://www.anthropic.com/research/making-claude-a-chemist",
@@ -123,13 +130,6 @@
         "summary": ""
       },
       {
-        "title": "Emotion Concepts Function",
-        "url": "https://www.anthropic.com/research/emotion-concepts-function",
-        "source": "Anthropic Research",
-        "published": "2026-06-05T15:19:58.000Z",
-        "summary": ""
-      },
-      {
         "title": "Next Generation Constitutional Classifiers",
         "url": "https://www.anthropic.com/research/next-generation-constitutional-classifiers",
         "source": "Anthropic Research",
@@ -146,103 +146,180 @@
     ],
     "news": [
       {
-        "title": "Amazon Warning Reportedly Preceded Anthropic’s Claude Fable 5 Cutoff - WinBuzzer",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOWXJvVnRQbVlqRmRJalh6ZkNpSnVXWHA0Zlc1Q3JSR3ZRTEdHbHVTdHNSQWpnTWhzUnp3Z2U0SHZZLThHbmpPUlpQNDdGblBBSG00ekR1Y0Z3OTVwMFh0Y3VDd29VNjhnUHlNM3U0LWtBNVRKUnRNX3N0TUVZb0NFSUMzaEZFVWtOZ0tXV3c4UG51MFJtdUp5SUVtYjRrWmtIOUE?oc=5",
+        "title": "DXC Technology Partners with Anthropic to Deploy Claude Across Mission-Critical Enterprise Systems - TechAfrica News",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOSTMta3ltZkdvX2otdUFnYTFleE00OGNXdzZrNzM0dHhtZ205ZVNnM3FSOWw5OWRsZm1UanBjckhZYjU3TUFCY0RwcVBYOWZuQXNOekJpSEdsXzNRSWVRd2tzVUg2aXNGbVhGWDRJLXNTc0RQd18tU3hnbHV1N1dEdGdHNXlXeEhQMzNIaGZ0NmlfU1FiWjd1MDJROE9uUWlqUmZTeHhjd3NUOG9DQXl5RDlJbTJ0Z01WS0tEQXVIdDFZTmF3VlJ6X0U3cDF4U2VWMHc4?oc=5",
         "source": "Google News",
-        "published": "2026-06-15T09:37:17.000Z",
-        "summary": "Amazon Warning Reportedly Preceded Anthropic’s Claude Fable 5 Cutoff WinBuzzer"
+        "published": "2026-06-15T15:30:53.000Z",
+        "summary": "DXC Technology Partners with Anthropic to Deploy Claude Across Mission-Critical Enterprise Systems TechAfrica News"
       },
       {
-        "title": "Anthropic suspends Fabel and Mythos systems \"for all users\" after US government claims jailbreak risk - IT Pro",
-        "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPaFZmNmY5a1pFem54ZWU4QTZnU0xyaHlFbjc4czVVZWdrZ1VEQk9jVUt1alJtZ2Y1aWw4aEZ0Vjd5VE90TEdxLWQ0YlNCUHFTX2VVN1hfZ2lmWWZEVXdQOEVjZmZMVnB1VGVJdUE4T3BfUkZ6eEtPRkl6NmdVVHdWRnplRnVzTl9jZkxjc0Y2RGRqX18zRmEtbW1td1lQNVRCYzZEQUk4T2h2Q0N0NDNvVW9CeXJMTTJfeUJPN2FCLXEyTFd3Y2FiVUdlRWhoZHFOS25oQU5BSEduRUxqVDlVdTlpVGxxQmFLcnVtZQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-15T09:36:42.000Z",
-        "summary": "Anthropic suspends Fabel and Mythos systems \"for all users\" after US government claims jailbreak risk IT Pro"
+        "title": "Cybersecurity vets protest ‘dangerous’ US government ban on Anthropic’s most powerful models",
+        "url": "https://techcrunch.com/2026/06/15/cybersecurity-vets-protest-dangerous-us-government-ban-on-anthropics-most-powerful-models/",
+        "source": "TechCrunch",
+        "published": "2026-06-15T15:29:51.000Z",
+        "summary": "A group made up of dozens of cybersecurity experts urged the White House to remove export control restrictions on Anthropic’s models Fable and Mythos, arguing that the order is going to limit the…"
       },
       {
-        "title": "US Government Orders Anthropic to Shut Off Access to Claude Fable 5 and Mythos 5 Over National Security Concerns - iAfrica.com",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPX1poYzRPZ19JR1JRZzAwcXdzYl9KRTF6SlQ4VVN6eVE1UW4ycG82SnB2SzVSSkpYMmNvbFZ4LUlOa1FmRmV4YmF2QXlrQkNPeEYtV3VLczBFWTBVcFdXS0dwOVBvUWZWS18wazQzTUF5YUxNUy1qMVVra0llNEZETXZEZTF3SGE4MGhITWZWbW9xMkktdFZaN1FQbmxTUEdRNmZuUXB3OFdzdHcwSGItU1dHODlaUUZlaWk2cEpmTnBPSE41NXVkQUk2UlZXQQ?oc=5",
+        "title": "Anthropic Reportedly Sued For Misleading Subscribers About Premium Claude Plans - International Business Times",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNaEdTeXpfd1k1RlotRmV4QTJRQnJoYWg0N0p5OHphX0RYbC1VckduN2xUbzFYd3NkMVltUW5nQ1VLLWQwYlU1UjhzMVlhRlNPdHh4ZW5BZnpidFk5T2hZc1NJT3RzMU9QNmgyR2NxcnNrVkVuSEZYOGV1SlNMQnVaVGhkV0xfNmhGTVZlTmtFcWI0eTJ3dlg1ZnNRb25SOGhtS2xUUFZaR0NSR0E?oc=5",
         "source": "Google News",
-        "published": "2026-06-15T09:25:58.000Z",
-        "summary": "US Government Orders Anthropic to Shut Off Access to Claude Fable 5 and Mythos 5 Over National Security Concerns iAfrica.com"
+        "published": "2026-06-15T15:25:21.000Z",
+        "summary": "Anthropic Reportedly Sued For Misleading Subscribers About Premium Claude Plans International Business Times"
       },
       {
-        "title": "Meet the people who pay $2,400 a year for Anthropic's top-of-the-line Claude plan - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFA1Yk9OLVRKeDZHX1p1bVZHTGNYMXRjOHFUdEFBVmVHN04zcENmVWJycGo0Z0hoeXJCWUlwTEUxYkNRTDZEWDNBeURsdjhkMkJTaVJkUXpLSjlwWVhweUtSY3hQWGJyWWU5ell0SDR3TVpKV3ltLUlVYVp1LUMtQQ?oc=5",
+        "title": "Anthropic Faces Lawsuit Over Claude Subscription and Usage Limit - BeInCrypto",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8wV0I5OHRHNnJXQ1BxNlVTdFQ2b3BvMmktSngwZ0lscGJzZ2FtME1Ra01IVnpyaF9ndjcxb1N6NDFMaE1hUFU5SE9PWUNtdDMtb092clFVT0VTUnhCQWRxNlZ3NXVOTjA2bGNVUjRR?oc=5",
         "source": "Google News",
-        "published": "2026-06-15T09:00:07.000Z",
-        "summary": "Meet the people who pay $2,400 a year for Anthropic's top-of-the-line Claude plan Business Insider"
+        "published": "2026-06-15T15:07:00.000Z",
+        "summary": "Anthropic Faces Lawsuit Over Claude Subscription and Usage Limit BeInCrypto"
       },
       {
-        "title": "Anthropic Restricts Mythos After US Order",
-        "url": "https://www.bloomberg.com/news/videos/2026-06-15/anthropic-restricts-mythos-after-us-order-video",
+        "title": "Why has Anthropic’s Claude Fable 5 AI model been suspended? - capacityglobal.com",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5rdzhsNUJ1WHc5emtGZFNYQmMwWUIxYUdnSmc3YUkzVUxHVlg2VGdQaWFDZFloNlFGOEo3NWh4aE13blBEZGFENzJ6ajZWdWo3MkFZMGhTc2pHTTdWY0trMUFiZmQ0Mjg1d0xB?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T14:40:58.000Z",
+        "summary": "Why has Anthropic’s Claude Fable 5 AI model been suspended? capacityglobal.com"
+      },
+      {
+        "title": "Are Anthropic’s New Claude Models Evading Human Control? - AI Magazine",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQLUQ0LUw1UWpxaFJjb2ZJM3FIM29VN0gtSnE1X2NSUllhYm13OHJNYUxwVWxmQXUwQlo2b3NfR3JLb3l0Z2NFalVibVJsWXJ2blo1aHI0QWszT1lsdnBLS2pEMHhSYzRuWmNadm5rVWFuOUpYdjM3N3BCSlFRTEZzdFJBdjQ1ckRKeWc?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T14:38:35.000Z",
+        "summary": "Are Anthropic’s New Claude Models Evading Human Control? AI Magazine"
+      },
+      {
+        "title": "Anthropic Pulls Claude Fable and Mythos AI Models After Feds Claim Jailbreak - CNET",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPS0t6Wng3RzNPalVucXJsTWptTnhsNDF0VUI4M3ZjWTVjRUk5eTJNMmZvNE9aMjBRdXV6dWxfWFhVMkFEakhKM3dfTjFWY29VeG4zX3N4SkhhcTUtMnlpeVc4WlVvWmxVZnZyZEE5MHlqVmN1OFVZekRraGJKYUhkUkQtUnlaZVFRTjQ4ODZMa3poMDVVcjBJTXRJLTY2Zw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T14:23:00.000Z",
+        "summary": "Anthropic Pulls Claude Fable and Mythos AI Models After Feds Claim Jailbreak CNET"
+      },
+      {
+        "title": "Anthropic Engineering Team Is an Infrastructure Army: New Analysis of 1,680 Engineers - Tech Times",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUnBoR3hTcU1pMW1jVlEtcjR5TG4xdHVxcUVYLUR3OUxPblRFcGpWU0oweVNrT0Z3VnRBT3U1QmdqTy1SZG5RM0gzdmNOREFuTFVCbUhuekVSeGR0RzJUUWZKUVcxZ3VXUVVoXzVpMXIyaDBLc0FDRnNCbXNZZ2pNU0ZsR25MZThRSHhjZ1Q0ZVo3bmNhZXlobnk1TzhUVUhObE5SOWExNmFhRVpadmtmamZ4Tk9XMnFrUlpHUnphUjRYNXlxRTE4LQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T14:22:28.000Z",
+        "summary": "Anthropic Engineering Team Is an Infrastructure Army: New Analysis of 1,680 Engineers Tech Times"
+      },
+      {
+        "title": "Anthropic’s Claude Fable 5 Brings Mythos-Level AI to Everyone - Memeburn",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNeG1hVS1lU3pDNmlJZ3lib1FMY3lXQWZpZC1WU25XQnlEV2tpOHRhRms3YWFWcnM2VzRmcXhOZXpGS1dxUVZ2aTd1OXJPeUhSdUFQeEZMN1phdE1tQ2x1RWVJSUdvbEpYNDJWeE5sdWV2TlRmSHg3bkpHZTgxbVVfeEtJUW5xWlFVSHc?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T14:17:48.000Z",
+        "summary": "Anthropic’s Claude Fable 5 Brings Mythos-Level AI to Everyone Memeburn"
+      },
+      {
+        "title": "Anthropic faces lawsuit over usage limits on its premium AI plans: report - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUm1WMWRSbXppVTNwaVpZTFZsQmxkTFdRNjZSeGhkajd3X25INU1SUF9hUXh2TUd1enBUdkczOHlwYlBzd1A5QVlLUzNVS2xnbkM1TEZoeGtqamlJMWo1XzAyS3dsaFJmMW9Xb2ZHYnJJR0NoN3RSVlhwZTNIbmwtNnJ3MnltZVpoSEFLMm1xNmtneWhBbVBLX2ZPdC11RWdrTzByWEZn?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T14:03:39.000Z",
+        "summary": "Anthropic faces lawsuit over usage limits on its premium AI plans: report Seeking Alpha"
+      },
+      {
+        "title": "Anthropic Shuts Down Mythos Access After US Order",
+        "url": "https://www.bloomberg.com/news/videos/2026-06-15/anthropic-shuts-down-mythos-access-after-us-order-video",
         "source": "Bloomberg",
-        "published": "2026-06-15T07:44:20.000Z",
-        "summary": "Anthropic has shut off access to its most advanced AI models after a Trump administration order citing national security concerns. The move could set a major precedent for AI regulation, with…"
+        "published": "2026-06-15T13:46:40.000Z",
+        "summary": "The US Commerce Department imposed export controls on June 12 restricting Anthropic from offering its most advanced AI models to foreign nationals. In response, Anthropic announced it would halt…"
       },
       {
-        "title": "U.S. Blocks Anthropic AI, Global Sovereignty Push Grows - 조선일보",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQdjhhZGhIZVAtcWZiNzg2NnZFSzNjMXpQWUNEeGJQNmxpRmMxbm9xYlB5NVNrU1lBSTBYMkx5OUZvU3NxekxacUhwblhSWW9Gai0yWFhSS3NzTDhiYlJ6aGNWVkZHU2trR2QycG9WTEFMSW5VNEpTX1YtOXVzYnlVbElpeXRJVnlf?oc=5",
+        "title": "Anthropic sued over Claude Max subscription usage limits - qz.com",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9iU2FBbmpNNURRSlRlc3FBQndqdl95eGhzNlpnaXdlU0ZJeEt6bDVkUFZqS1Z3YUdTU3d0bjREYl95ellYZW80U3NGbjJ0cHR2dnNKcG9iN0o5VG9MSjJfaTZhVHI0Ym9OTzJEaVNFWGVLRW8tTUJkMF9qVUtyZw?oc=5",
         "source": "Google News",
-        "published": "2026-06-15T07:36:22.000Z",
-        "summary": "U.S. Blocks Anthropic AI, Global Sovereignty Push Grows 조선일보"
+        "published": "2026-06-15T13:35:22.000Z",
+        "summary": "Anthropic sued over Claude Max subscription usage limits qz.com"
       },
       {
-        "title": "US Orders Anthropic to Block Foreign Access to Mythos",
-        "url": "https://www.bloomberg.com/news/videos/2026-06-15/us-orders-anthropic-to-block-foreign-access-to-mythos-video",
+        "title": "How Trump officials pushed Anthropic to shut down the world’s most powerful AI models - Fast Company",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQeFJweGp1V0tGRTZYQXdyZkNBS1c2dDQ4Zm5KSk4wWU1DaUprWkJXWWtzemQwZWdrLVZvcUJPZDJXeTJvQzNScVdWR0swUFYtbks3Szg5Qm13aVFWM1Fjc2RuT3N3T29rVmZMNURIS3RZb2g3WnVhcVZQNkJ6a3l4V2FiZ3ZFS0VJd1h0dUNpbFgtNGtYUzR0ZEduUWhtUHhZWWxMMmpMYXZiWUVUWFpOTUZLQWhGeUdyd29CY2RR?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T13:22:01.000Z",
+        "summary": "How Trump officials pushed Anthropic to shut down the world’s most powerful AI models Fast Company"
+      },
+      {
+        "title": "New analysis shows ChatGPT and Claude subscriptions may cost AI firms thousands per user - Cybernews",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFAtMXdqbHZOdk9iTTJMYnhWeFBjRC1HQUZBX1kyUjRRZmpTSGxkLTJUZFhpbGpyZHhIUEZVeVB5a2tldkxpeUlBd2RyQVZyR1pYRXhJOF9sWW0tbXBCQnU1c3dxVFJERk9Fa1ZjWVM1OW9VTkl4aEtncmdQQmVKekU?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T13:17:19.000Z",
+        "summary": "New analysis shows ChatGPT and Claude subscriptions may cost AI firms thousands per user Cybernews"
+      },
+      {
+        "title": "Alarm Bells As Anthropic Claude Mythos AI Suspended By US Department Of Commerce - Crowdfund Insider",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOVkJkV3hrTFBwWFNqUHdhdDhuRVc1VHQwMnNLTF9wRjUybzYtOEJKSXVlb201RlpfdlJIN0VMMDNna21rcEhYcFhoaHVPRjItbGVmWHd3bFkxaGhIa3ZodWZ4ZERnVFRQTEk0VnFsdEJ4QTZZcFlzU1NtWFVHeGt6SzAtNWNmLW5RV3p0OXllXzN0VFN4Y3ZGRXo2OEdOQVR6aWVDUWpmNmVtX3YxMWhYRUJOOTdQZ2d5cWdkR1pfRWlyZ0J1SU1nLQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T12:46:13.000Z",
+        "summary": "Alarm Bells As Anthropic Claude Mythos AI Suspended By US Department Of Commerce Crowdfund Insider"
+      },
+      {
+        "title": "Anthropic's own $13 billion investor helped get the White House to ban the world's most powerful AI model - TweakTown",
+        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNSmUxSXZQUjVJVHpEYzlGM25qMEsxeDF2bVlQcVJleU1RbC0zTHJqbGpsRHIwSV9fM0xuRV9FYnhpSzlFMDBoZi12X3JkVUtuWFBKN2oxdW5xaWJoQXVhWHZfU1REczBWdlFnd2paazhoVUxsRDlWbEZXUjdMXy1KUWJsd0NabVVCVHdhTWdTQkd6dU43UnZQejJ6SXhsWDVQMXBxMzk3dHNMVW9ScFdtTU9JWU9MWUhyU212RENBV2g2Smd4UktwSlBWVWpnNEVJUFpHU1RGZmlyekp6Um55eDNXc3RGTnVKVnY3NWFZMA?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T12:40:06.000Z",
+        "summary": "Anthropic's own $13 billion investor helped get the White House to ban the world's most powerful AI model TweakTown"
+      },
+      {
+        "title": "Anthropic Launches ‘Claude Corps’ With $150M Pledge - The NonProfit Times",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPMXVWZlVCOE9wMXR4bW1DSTUyTk5fVnJMVnJLRFhQR1JtLWhrSHBtWWNDbWlOV2t5TVl6OENsQTh4NEdNMUJZaTFqWndicHlLWUhpZEhCajVJblUyZ01hN1BzVXp3a3NxQ3YtQmczTVEtZ0h3elFza2FOU1pkc2Nzem5MelZLbGFNcXkyQ01jbF9pLU85NFM0?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T12:36:15.000Z",
+        "summary": "Anthropic Launches ‘Claude Corps’ With $150M Pledge The NonProfit Times"
+      },
+      {
+        "title": "I borrowed Claude prompts from Anthropic engineers and immediately stopped wasting time on bad ones - XDA",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQTkp5OEVENlNPY3ZMSUwyMlV3TkV4dllQOGxJa2dHVUxjdkY2WGY4ZGVxLURRUkRGN25mRS1Bc2M3bnljTzJyanhkOU9SNHBua3B1aWR5X2k1Umd5M1Q0M1BRR0VPa0ZmY0M1RTFPaEtNRjV0ODhqNnBkeEF2STAwcVFhMjJDWUgycnc?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T12:30:22.000Z",
+        "summary": "I borrowed Claude prompts from Anthropic engineers and immediately stopped wasting time on bad ones XDA"
+      },
+      {
+        "title": "WALT Labs Joins Anthropic's Claude Partner Network - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPY0MwTlZYZkFLYVZPQ3ZSSVZVMGNXWFZHMmVqWFJTVU5ZMkJSWHNjNGJpcTBUQ3hCM19MSUZtYllCUkpILTJkUW1xenI1MUc5bFFLN2NaT3l4MTNfaE5nVEFXajNLWkFlZHFvcm1QOTNyRmRmYnJXajUtc0NIaTZLVS1EMzUyV0hZblh6V1pGZWJDdjFacXc?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T12:00:00.000Z",
+        "summary": "WALT Labs Joins Anthropic's Claude Partner Network Let's Data Science"
+      },
+      {
+        "title": "AI Tokens Rally as US Forces Anthropic to Shut Down New Claude AI Models - DailyCoin",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNmlpbEZlTEFTYlFUSkUtVWNQemFsdGxCSGpIRGJsRTNlYktOYU1saTlzYjk5OGNPWm44dXZURmpfWVRvc0lSbV8tRjRnTTFmaWIxS1IzMlJDSkRoWWluNWwzY3AwRmVDNzRZb2FCeEFTREVseU9IZlA1WlpoVEN2RlluMVplVGRha0pVbWhwbTBXelVJRzVLdA?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T12:00:00.000Z",
+        "summary": "AI Tokens Rally as US Forces Anthropic to Shut Down New Claude AI Models DailyCoin"
+      },
+      {
+        "title": "Claude's Backing: Seasoned Veterans from Major Tech Firms - Anthropic's 1,680-Person Engineering Team Profile Unveiled, Mostly from Google with 12-Year Avg. Experience and Bachelor's/Master's Degrees - 36 Kr",
+        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE04ZFlpYk43TlB6Y2hPdFNlWlRUX0hRXzdiLU9fLUdMNTdBbFBKVnNUUTNDQU0temZqQTJ4YkFqU0FrUWZCQ0FFeHpWbm03SWRiWDJ3?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T11:21:04.000Z",
+        "summary": "Claude's Backing: Seasoned Veterans from Major Tech Firms - Anthropic's 1,680-Person Engineering Team Profile Unveiled, Mostly from Google with 12-Year Avg. Experience and Bachelor's/Master's…"
+      },
+      {
+        "title": "Anthropic Announces Identity Verification for Claude Users Starting July 8 - KuCoin",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOQ3NMalBPNnpUaDllZmJsZ0lqMnZtMmpmR2RMSURILTNQNWxJakZaRHhPWmZaMmRoVEFTS1hFdGY4aEpzUW5xSGI3ZEhyUFoxbW5iRmpSQkZfb25KQXhaeUlRelR6NkZtU2ktZWZfRWF2U2RvR01PU1luWm83WTNISDRHaHZLNUxzT0o5b0FaU191TDlaOVBjUkZGeDFRUTUzR05hdGRSS3ZkMEhu?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T10:45:14.000Z",
+        "summary": "Anthropic Announces Identity Verification for Claude Users Starting July 8 KuCoin"
+      },
+      {
+        "title": "Anthropic Export Ban Deepens Fears About US Stranglehold on AI",
+        "url": "https://www.bloomberg.com/news/newsletters/2026-06-15/anthropic-export-ban-deepens-fears-about-us-stranglehold-on-ai",
         "source": "Bloomberg",
-        "published": "2026-06-15T07:33:41.000Z",
-        "summary": "The US government has ordered Anthropic PBC to disable access to its most advanced AI models, such as Mythos and Fable 5, for all foreign nationals. The order comes after the US government…"
+        "published": "2026-06-15T10:30:58.000Z",
+        "summary": "For many politicians and technologists outside the US, their gravest fear about AI came true this weekend"
       },
       {
-        "title": "EU investigates control directive of Anthropic AI models - Techzine Global",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQnJ6MXRoWnlBRlpaZGdSUzM3OGdRU3FlNXphTEtxcjFwbExPQ2o0NkxEcVZwR19PZG4yRG5rcmZDRzRMX0c5SF9GUDBaamxXQWtkWUJrM2JUOEJhNTNabGVUbV92R0ZpYXRLbGxub0loY1h5ZXBOekQtclVMc0FzbWpJa0dEemFGUTI4bWk1TUlyTW9JeDE2OWJWdmZfQ0xpR19OUg?oc=5",
-        "source": "Google News",
-        "published": "2026-06-15T07:33:41.000Z",
-        "summary": "EU investigates control directive of Anthropic AI models Techzine Global"
-      },
-      {
-        "title": "Anthropic's Claude Fable 5 Shut Down Within 72 Hours Amid Pressure from Amazon and the White House - KuCoin",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNN0k3QVVaVldaN3FLeFJtZ1lJN0tPcG9VV3dQNUJRaFJTRmx2NHpGYlZ4cVR6cGV1YWNfdnNQVTM5U0E0OFBjVS1ITnVDeEpmakhaYmR2ZWZLVXl3ZXJ4T1dObFBzMzdaZ190TVUxUjZLazNSUUlFNnBlV1JfX0dxbzRWLWRKa2dDTTlLYnFOZlVlYlpYTDZ5TjF4WXkxTzRxZTc2Njdnbk9rYV9nQUtOVXV1eV8yOGN1djVV?oc=5",
-        "source": "Google News",
-        "published": "2026-06-15T07:05:14.000Z",
-        "summary": "Anthropic's Claude Fable 5 Shut Down Within 72 Hours Amid Pressure from Amazon and the White House KuCoin"
-      },
-      {
-        "title": "Anthropic Releases and Temporarily Suspends Claude Fable 5 - infoq.com",
-        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5KZ2dYRkVybk1YWUJCQllMOW53U2NCMlhkRFo4cHVjYXB1SUVVZzVDcXo4OEgtUVBQXzd2TTVHT2JKQzFnZGdfMklQWWdQTExxM0gya0NHUHN5dW9XSTZJaFpB?oc=5",
-        "source": "Google News",
-        "published": "2026-06-15T05:01:23.000Z",
-        "summary": "Anthropic Releases and Temporarily Suspends Claude Fable 5 infoq.com"
-      },
-      {
-        "title": "Apple Foundation Models",
-        "url": "https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/apple-foundation-models",
-        "source": "HN · 128↑",
-        "hn_id": "48536776",
-        "published": "2026-06-15T04:55:34.000Z",
+        "title": "Anthropic's Safety Superpower",
+        "url": "https://stratechery.com/2026/anthropics-safety-superpower/",
+        "source": "HN · 159↑",
+        "hn_id": "48539078",
+        "published": "2026-06-15T10:06:35.000Z",
         "summary": ""
       },
       {
-        "title": "DXC Partners Anthropic to Scale Enterprise AI - IBS Intelligence",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQWUlCWW4yVlFBNUxGLWFRNUVOUmU0TUhJV1d6ZEgxc1dWd1BRNGxMamwwa3RVM3N2NlQ4bVVxODNRX2xxMnR3RHloMTJZaXdQMHVzY014QkdqSmtDc05VYmdMUW9fblh0cXFnMHhzdHZxYUVNdXRTaTJrSDlwUExmcG9ZNUlxaVpIVHdfNA?oc=5",
+        "title": "Claude Fable 5 vs GPT 5.5: Is this why the Trump admin banned one and not the other? - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5ENkVmNkswcWNpaWJhSGFucVpaM19FOU9pZHd3SF9EYVlLTmxRRUhvcTUtWVNFcmNHdTRickxvaFE1RkpNZzdZRlBmVDB1NVJ4QWcxVEJaZUNuWGRnQVlLcjRyTll4UU9CMEE1VHBnVVVZZVRzOUxj?oc=5",
         "source": "Google News",
-        "published": "2026-06-15T04:43:59.000Z",
-        "summary": "DXC Partners Anthropic to Scale Enterprise AI IBS Intelligence"
-      },
-      {
-        "title": "Anthropic Block Marks US Reversal, Warning to Silicon Valley",
-        "url": "https://www.bloomberg.com/news/articles/2026-06-15/anthropic-block-marks-us-reversal-warning-to-silicon-valley",
-        "source": "Bloomberg",
-        "published": "2026-06-15T04:25:20.000Z",
-        "summary": "The extraordinary move by the US to bar foreign access to Anthropic PBC’s best AI models underscores the Trump administration’s newfound willingness to exert control over a pivotal industry. It also…"
-      },
-      {
-        "title": "Why the US government shut down Anthropic’s latest Claude AI model - The Conversation",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWUpveEJWVS1OcWh3cDBXVFl3SXAxUUpxemJtNXEtUm9fZWkzNVpRS2wtaU1kZDNIb0pWRkFLdllyNkpSMzNTTXV4a2trWFlNNkN5aGI3RTY5b0VSMm54bjY3a25xUXZ0bmhLUVhPSGhjUXljMWtBNk56ekJ6bEpBRHhibDg4MU1ocWRlbFQtaXltc1h6LXRReTI0d0VWLWdNZ1E?oc=5",
-        "source": "Google News",
-        "published": "2026-06-15T04:08:34.000Z",
-        "summary": "Why the US government shut down Anthropic’s latest Claude AI model The Conversation Anthropic's Claude Fable 5 and Mythos 5 AI suspended over security fears BBC US asks Anthropic to block global…"
+        "published": "2026-06-15T09:38:28.000Z",
+        "summary": "Claude Fable 5 vs GPT 5.5: Is this why the Trump admin banned one and not the other? Mashable"
       },
       {
         "title": "the AI file anthropic built that nobody teaches.",
@@ -255,85 +332,6 @@
         "published": "2026-06-15T01:28:00.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Anthropic Seeks Trump Deal After 2 Claude Models Forced Offline - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1BcTVKYXpWanFIVlptRVNxTUFhZDExRXJMNGRYeHBBaE5rNExZamFTQWUyZVJscTdQWl9OeXYzbmFGaC1oQkstQVM4b2stUjIzZGREU042cUtzOERBNjFBUnZPaTBua1FOLWVvX1BSbWhBWUFU?oc=5",
-        "source": "Google News",
-        "published": "2026-06-15T00:05:37.000Z",
-        "summary": "Anthropic Seeks Trump Deal After 2 Claude Models Forced Offline Yellow.com"
-      },
-      {
-        "title": "Anthropic Fable 5 Mythos 5_Status - ServeTheHome",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNOThmSzRuVldXUDdXRll2dGViQk9jSWg0TVVKVEstbkVVcWV1SENBM0JLNXFZNS11YmlDU2JFdVdsZVprSlB5YWFkSjBtTUh2UmJLd0VhNlVOUW81dGhHbkZCdUtFUDJUTUtWWUROOEVCeFZHTVJoVDRkbTIzQkx5ZEdBdW5aSFF2ZmZFOU9KNTN1UVpnTFNUbUdwb0g4cHZvczNDdlBXYV9uejl4NVdB?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T23:19:14.000Z",
-        "summary": "Anthropic Fable 5 Mythos 5_Status ServeTheHome"
-      },
-      {
-        "title": "Anthropic Fable 5 Mythos 5 - ServeTheHome",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQODZpWGFORklNTzRMNUZ5YXE4cnA5WlNsbUR3cWJveE1VcDQ4LVhBLWI3SS1nLWxLbWFTeDVVdktaNl9KOFEweGJ3TzlPVGl3dEIxN0dvN1BIcUtQNzZtclowbEVuZEcwZkU2WU9BRjliYXIyQ1o5bHVYMlNqQzN6VVJSc2lIaFNkcEdmLXlHUlJrWFNjcUFaSXk3NDVPZllQQzJCZ1RB?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T23:19:13.000Z",
-        "summary": "Anthropic Fable 5 Mythos 5 ServeTheHome"
-      },
-      {
-        "title": "Anthropic Suspends Mythos Access Following Government Security Concerns - PYMNTS.com",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdUZwWkc1bGx0MnVFbUd5NWNUdUtYN3NfcS1EZGgzUk5kUmJ3SGNVaC1kQU9odUR5bkpOWGJ4OTA4dVdvQW5DQUdKMkFQdE1FSkZNUWdnRzVIaG9idEI4elk3bE5jbzRhSEFSczVKZFZIc2N6Sk9kUFROcmR6UGJOdHdhRlpVLXZMYTMta245V2lOQV9QRTBITWpFeUxJYVY3bm1faWdpdl9YVGtRTEppb1FNT1ZEY2ZDenlvQ0wybmItUkJUckRVRg?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T23:18:36.000Z",
-        "summary": "Anthropic Suspends Mythos Access Following Government Security Concerns PYMNTS.com"
-      },
-      {
-        "title": "Anthropic Leaders Are Reportedly in Washington, D.C. Trying to Resolve Their Latest Issues With the Trump Administration - Gizmodo",
-        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPdTduS1NTVVJQNFp0MjRYMU1tbWlMeUtSdHd3QlVwNjJJRjN0V0g2U2xpb0trN0Yzc1RIZVoxRk5FTlhSS1ZXTk1VN0dxeHZHTjQ4SEkxUHFiM1VwbkJZWFJtWjNoUkZJejlnd0c4UDZuYWpMMmt6SmdNOWRzczU1dUNLVWVwVG5YaTlGRl95VDR4RkhNeGh0VXlhWFJjWG9qUjVDR0hCb3NIejJieWg3ZU1Hd0J5VHZOaXJzQkFUYXJfc3FOZ28ybDhPdVdSZS0zYW15c2hpVVplRTRrMGNPSWsyRQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T22:50:38.000Z",
-        "summary": "Anthropic Leaders Are Reportedly in Washington, D.C. Trying to Resolve Their Latest Issues With the Trump Administration Gizmodo"
-      },
-      {
-        "title": "Did Anthropic ask for this?",
-        "url": "https://www.verysane.ai/p/did-anthropic-ask-for-this",
-        "source": "HN · 184↑",
-        "hn_id": "48533504",
-        "published": "2026-06-14T22:23:05.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Why Is Claude Turning into an a**Hole?",
-        "url": "https://bramcohen.com/p/why-is-claude-turning-into-an-asshole",
-        "source": "HN · 112↑",
-        "hn_id": "48533308",
-        "published": "2026-06-14T22:04:01.000Z",
-        "summary": ""
-      },
-      {
-        "title": "China may have accessed Mythos",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/949644/china-white-house-anthropic-mythos",
-        "source": "The Verge",
-        "published": "2026-06-14T18:27:55.000Z",
-        "summary": "According to a new report from Semafor, the White House's decision to impose export restrictions on Anthropic's Mythos was driven in part by fears that it had been accessed by a group linked to…"
-      },
-      {
-        "title": "The Claude ‘Fable 5’ Jailbreak | How a Handful of People Made a $965 Billion AI Company Blink - South Pasadena News",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPNWVMVERUT1ZuTmpweFEzYzY3U1lKNWNyUWVMU1R6RGtoaFVIR2lSc3c3MHN4R05UaGEteUs2dkF1a2t0N2stWHQ3dGthaWhqRmRRS2RHczRIQWh6cFp3T1NRSEd1M1d2OFJhMGQtNnZuM0k2bEJGZGhUYUZzZU9GSlp1MVlyLXdJSTVIbGUxSWR5ZXl5cjgwRHBDSGctYkZ1RU14WUV5UVhudDFXVUcwUTkzR0dKb2M?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T18:20:56.000Z",
-        "summary": "The Claude ‘Fable 5’ Jailbreak | How a Handful of People Made a $965 Billion AI Company Blink South Pasadena News"
-      },
-      {
-        "title": "Carney Says Anthropic Ban Shows Risk of Relying on Big AI Models",
-        "url": "https://www.bloomberg.com/news/articles/2026-06-14/carney-says-anthropic-ban-shows-risk-of-relying-on-big-ai-models",
-        "source": "Bloomberg",
-        "published": "2026-06-14T17:02:00.000Z",
-        "summary": "Prime Minister Mark Carney said the US export ban blocking all foreign access to Anthropic PBC’s latest artificial intelligence models underscores the risk of depending on just a handful of powerful…"
-      },
-      {
-        "title": "As AI companies race to go public, who else is along for the ride?",
-        "url": "https://techcrunch.com/2026/06/14/as-ai-companies-race-to-go-public-who-else-is-along-for-the-ride/",
-        "source": "TechCrunch",
-        "published": "2026-06-14T16:38:09.000Z",
-        "summary": "Startups are trying to \"ride that SpaceX IPO wave.\""
       },
       {
         "title": "CLAUDE FABLE 5 BANNED. IT ACTUALLY HAPPENED...",
