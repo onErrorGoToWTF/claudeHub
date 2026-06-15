@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-06-15T02:28:16.833Z",
+  "generated_at": "2026-06-15T09:49:24.084Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Making Claude a Chemist",
+        "url": "https://www.anthropic.com/research/making-claude-a-chemist",
+        "source": "Anthropic Research",
+        "published": "2026-06-15T09:24:09.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Fable 5 Mythos 5",
         "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
@@ -29,13 +36,6 @@
         "url": "https://www.anthropic.com/news/anthropic-public-record",
         "source": "Anthropic",
         "published": "2026-06-12T16:24:44.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Making Claude a Chemist",
-        "url": "https://www.anthropic.com/research/making-claude-a-chemist",
-        "source": "Anthropic Research",
-        "published": "2026-06-12T13:24:10.000Z",
         "summary": ""
       },
       {
@@ -146,6 +146,105 @@
     ],
     "news": [
       {
+        "title": "Amazon Warning Reportedly Preceded Anthropic’s Claude Fable 5 Cutoff - WinBuzzer",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOWXJvVnRQbVlqRmRJalh6ZkNpSnVXWHA0Zlc1Q3JSR3ZRTEdHbHVTdHNSQWpnTWhzUnp3Z2U0SHZZLThHbmpPUlpQNDdGblBBSG00ekR1Y0Z3OTVwMFh0Y3VDd29VNjhnUHlNM3U0LWtBNVRKUnRNX3N0TUVZb0NFSUMzaEZFVWtOZ0tXV3c4UG51MFJtdUp5SUVtYjRrWmtIOUE?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T09:37:17.000Z",
+        "summary": "Amazon Warning Reportedly Preceded Anthropic’s Claude Fable 5 Cutoff WinBuzzer"
+      },
+      {
+        "title": "Anthropic suspends Fabel and Mythos systems \"for all users\" after US government claims jailbreak risk - IT Pro",
+        "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPaFZmNmY5a1pFem54ZWU4QTZnU0xyaHlFbjc4czVVZWdrZ1VEQk9jVUt1alJtZ2Y1aWw4aEZ0Vjd5VE90TEdxLWQ0YlNCUHFTX2VVN1hfZ2lmWWZEVXdQOEVjZmZMVnB1VGVJdUE4T3BfUkZ6eEtPRkl6NmdVVHdWRnplRnVzTl9jZkxjc0Y2RGRqX18zRmEtbW1td1lQNVRCYzZEQUk4T2h2Q0N0NDNvVW9CeXJMTTJfeUJPN2FCLXEyTFd3Y2FiVUdlRWhoZHFOS25oQU5BSEduRUxqVDlVdTlpVGxxQmFLcnVtZQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T09:36:42.000Z",
+        "summary": "Anthropic suspends Fabel and Mythos systems \"for all users\" after US government claims jailbreak risk IT Pro"
+      },
+      {
+        "title": "US Government Orders Anthropic to Shut Off Access to Claude Fable 5 and Mythos 5 Over National Security Concerns - iAfrica.com",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPX1poYzRPZ19JR1JRZzAwcXdzYl9KRTF6SlQ4VVN6eVE1UW4ycG82SnB2SzVSSkpYMmNvbFZ4LUlOa1FmRmV4YmF2QXlrQkNPeEYtV3VLczBFWTBVcFdXS0dwOVBvUWZWS18wazQzTUF5YUxNUy1qMVVra0llNEZETXZEZTF3SGE4MGhITWZWbW9xMkktdFZaN1FQbmxTUEdRNmZuUXB3OFdzdHcwSGItU1dHODlaUUZlaWk2cEpmTnBPSE41NXVkQUk2UlZXQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T09:25:58.000Z",
+        "summary": "US Government Orders Anthropic to Shut Off Access to Claude Fable 5 and Mythos 5 Over National Security Concerns iAfrica.com"
+      },
+      {
+        "title": "Meet the people who pay $2,400 a year for Anthropic's top-of-the-line Claude plan - Business Insider",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFA1Yk9OLVRKeDZHX1p1bVZHTGNYMXRjOHFUdEFBVmVHN04zcENmVWJycGo0Z0hoeXJCWUlwTEUxYkNRTDZEWDNBeURsdjhkMkJTaVJkUXpLSjlwWVhweUtSY3hQWGJyWWU5ell0SDR3TVpKV3ltLUlVYVp1LUMtQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T09:00:07.000Z",
+        "summary": "Meet the people who pay $2,400 a year for Anthropic's top-of-the-line Claude plan Business Insider"
+      },
+      {
+        "title": "Anthropic Restricts Mythos After US Order",
+        "url": "https://www.bloomberg.com/news/videos/2026-06-15/anthropic-restricts-mythos-after-us-order-video",
+        "source": "Bloomberg",
+        "published": "2026-06-15T07:44:20.000Z",
+        "summary": "Anthropic has shut off access to its most advanced AI models after a Trump administration order citing national security concerns. The move could set a major precedent for AI regulation, with…"
+      },
+      {
+        "title": "U.S. Blocks Anthropic AI, Global Sovereignty Push Grows - 조선일보",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQdjhhZGhIZVAtcWZiNzg2NnZFSzNjMXpQWUNEeGJQNmxpRmMxbm9xYlB5NVNrU1lBSTBYMkx5OUZvU3NxekxacUhwblhSWW9Gai0yWFhSS3NzTDhiYlJ6aGNWVkZHU2trR2QycG9WTEFMSW5VNEpTX1YtOXVzYnlVbElpeXRJVnlf?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T07:36:22.000Z",
+        "summary": "U.S. Blocks Anthropic AI, Global Sovereignty Push Grows 조선일보"
+      },
+      {
+        "title": "US Orders Anthropic to Block Foreign Access to Mythos",
+        "url": "https://www.bloomberg.com/news/videos/2026-06-15/us-orders-anthropic-to-block-foreign-access-to-mythos-video",
+        "source": "Bloomberg",
+        "published": "2026-06-15T07:33:41.000Z",
+        "summary": "The US government has ordered Anthropic PBC to disable access to its most advanced AI models, such as Mythos and Fable 5, for all foreign nationals. The order comes after the US government…"
+      },
+      {
+        "title": "EU investigates control directive of Anthropic AI models - Techzine Global",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQnJ6MXRoWnlBRlpaZGdSUzM3OGdRU3FlNXphTEtxcjFwbExPQ2o0NkxEcVZwR19PZG4yRG5rcmZDRzRMX0c5SF9GUDBaamxXQWtkWUJrM2JUOEJhNTNabGVUbV92R0ZpYXRLbGxub0loY1h5ZXBOekQtclVMc0FzbWpJa0dEemFGUTI4bWk1TUlyTW9JeDE2OWJWdmZfQ0xpR19OUg?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T07:33:41.000Z",
+        "summary": "EU investigates control directive of Anthropic AI models Techzine Global"
+      },
+      {
+        "title": "Anthropic's Claude Fable 5 Shut Down Within 72 Hours Amid Pressure from Amazon and the White House - KuCoin",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNN0k3QVVaVldaN3FLeFJtZ1lJN0tPcG9VV3dQNUJRaFJTRmx2NHpGYlZ4cVR6cGV1YWNfdnNQVTM5U0E0OFBjVS1ITnVDeEpmakhaYmR2ZWZLVXl3ZXJ4T1dObFBzMzdaZ190TVUxUjZLazNSUUlFNnBlV1JfX0dxbzRWLWRKa2dDTTlLYnFOZlVlYlpYTDZ5TjF4WXkxTzRxZTc2Njdnbk9rYV9nQUtOVXV1eV8yOGN1djVV?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T07:05:14.000Z",
+        "summary": "Anthropic's Claude Fable 5 Shut Down Within 72 Hours Amid Pressure from Amazon and the White House KuCoin"
+      },
+      {
+        "title": "Anthropic Releases and Temporarily Suspends Claude Fable 5 - infoq.com",
+        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5KZ2dYRkVybk1YWUJCQllMOW53U2NCMlhkRFo4cHVjYXB1SUVVZzVDcXo4OEgtUVBQXzd2TTVHT2JKQzFnZGdfMklQWWdQTExxM0gya0NHUHN5dW9XSTZJaFpB?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T05:01:23.000Z",
+        "summary": "Anthropic Releases and Temporarily Suspends Claude Fable 5 infoq.com"
+      },
+      {
+        "title": "Apple Foundation Models",
+        "url": "https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/apple-foundation-models",
+        "source": "HN · 128↑",
+        "hn_id": "48536776",
+        "published": "2026-06-15T04:55:34.000Z",
+        "summary": ""
+      },
+      {
+        "title": "DXC Partners Anthropic to Scale Enterprise AI - IBS Intelligence",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQWUlCWW4yVlFBNUxGLWFRNUVOUmU0TUhJV1d6ZEgxc1dWd1BRNGxMamwwa3RVM3N2NlQ4bVVxODNRX2xxMnR3RHloMTJZaXdQMHVzY014QkdqSmtDc05VYmdMUW9fblh0cXFnMHhzdHZxYUVNdXRTaTJrSDlwUExmcG9ZNUlxaVpIVHdfNA?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T04:43:59.000Z",
+        "summary": "DXC Partners Anthropic to Scale Enterprise AI IBS Intelligence"
+      },
+      {
+        "title": "Anthropic Block Marks US Reversal, Warning to Silicon Valley",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-15/anthropic-block-marks-us-reversal-warning-to-silicon-valley",
+        "source": "Bloomberg",
+        "published": "2026-06-15T04:25:20.000Z",
+        "summary": "The extraordinary move by the US to bar foreign access to Anthropic PBC’s best AI models underscores the Trump administration’s newfound willingness to exert control over a pivotal industry. It also…"
+      },
+      {
+        "title": "Why the US government shut down Anthropic’s latest Claude AI model - The Conversation",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWUpveEJWVS1OcWh3cDBXVFl3SXAxUUpxemJtNXEtUm9fZWkzNVpRS2wtaU1kZDNIb0pWRkFLdllyNkpSMzNTTXV4a2trWFlNNkN5aGI3RTY5b0VSMm54bjY3a25xUXZ0bmhLUVhPSGhjUXljMWtBNk56ekJ6bEpBRHhibDg4MU1ocWRlbFQtaXltc1h6LXRReTI0d0VWLWdNZ1E?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T04:08:34.000Z",
+        "summary": "Why the US government shut down Anthropic’s latest Claude AI model The Conversation Anthropic's Claude Fable 5 and Mythos 5 AI suspended over security fears BBC US asks Anthropic to block global…"
+      },
+      {
         "title": "the AI file anthropic built that nobody teaches.",
         "url": "https://www.youtube.com/shorts/QjONDvqyhII",
         "source": "Pragati Kunwer",
@@ -156,6 +255,13 @@
         "published": "2026-06-15T01:28:00.000Z",
         "summary": "",
         "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic Seeks Trump Deal After 2 Claude Models Forced Offline - Yellow.com",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1BcTVKYXpWanFIVlptRVNxTUFhZDExRXJMNGRYeHBBaE5rNExZamFTQWUyZVJscTdQWl9OeXYzbmFGaC1oQkstQVM4b2stUjIzZGREU042cUtzOERBNjFBUnZPaTBua1FOLWVvX1BSbWhBWUFU?oc=5",
+        "source": "Google News",
+        "published": "2026-06-15T00:05:37.000Z",
+        "summary": "Anthropic Seeks Trump Deal After 2 Claude Models Forced Offline Yellow.com"
       },
       {
         "title": "Anthropic Fable 5 Mythos 5_Status - ServeTheHome",
@@ -188,7 +294,7 @@
       {
         "title": "Did Anthropic ask for this?",
         "url": "https://www.verysane.ai/p/did-anthropic-ask-for-this",
-        "source": "HN · 159↑",
+        "source": "HN · 184↑",
         "hn_id": "48533504",
         "published": "2026-06-14T22:23:05.000Z",
         "summary": ""
@@ -196,31 +302,10 @@
       {
         "title": "Why Is Claude Turning into an a**Hole?",
         "url": "https://bramcohen.com/p/why-is-claude-turning-into-an-asshole",
-        "source": "HN · 100↑",
+        "source": "HN · 112↑",
         "hn_id": "48533308",
         "published": "2026-06-14T22:04:01.000Z",
         "summary": ""
-      },
-      {
-        "title": "Fable 5 Beat GPT 5.5 Before US Order Took It Offline - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1FbjZOb0ZmNERuSWlqUnNuaEhvZzhpSVlKWExxRWNtUUFpMjIzdFlVa1pkMmZpV1VkcThsVzljR1FWVHplUmVHTXB0NXRDVHpxRnZSN1huMEJzcGVlOC1vaHJoQzI?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T21:01:27.000Z",
-        "summary": "Fable 5 Beat GPT 5.5 Before US Order Took It Offline Yellow.com"
-      },
-      {
-        "title": "Hegseth, White House allies intensify attacks on Anthropic - The Hill",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTGhnNlR6MzAyRFpOdGE1VXFKdFVIZzRRTEJJSGVieUJ1SnFuTVk3OXc2VWpEbU9UZUYzbHQtbzY2Z09lVmRQQ0ZVZVhnS1FBYldmX0hYZFp4YmZHazNtVU9FVFVadVNxV3drN3ZkT2FvdnBFT0F6dWF3REpSOVhhNk03ZlVRQzZjeDROS1lB0gGTAUFVX3lxTE1RQ2VSWVR5OXMtZWVNbE93NzdkMHhWZUpDekNySlJCbFhzclo2ZmY0dE92cVJ0cTJoTF9sRkYzbDBCdDk3NFFoZFgyelBiQWVlc05hTmlYVms5bFAyMEZsQXFsRUNZZktRVEFOZGhIYVVoUl9IZTRYdzBqdU11TnFQMXY4Ukc2M0l3cXZvRWZIMURZMA?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T20:49:00.000Z",
-        "summary": "Hegseth, White House allies intensify attacks on Anthropic The Hill"
-      },
-      {
-        "title": "Fear and policy in San Francisco: Anthropic and the AI reckoning - Capital Brief",
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNQUVMay1CSkQ3RFFEUVdLWnZDUkFUekpaSFpOQ0lZS3QtSlZJa09wSHEtVS1GQUEzLVFsMTM0YUQ4am9tMHR4cnNJbWJrX3p1bFg5V1p6cDlTTHVUMnAxSGc4M05yNFFyWVFZZUI2SlhUSTZSV1hSNVplQjF3QzdlQVdMWHpHWXdZRDNpclNnalYyTnJycFp4ZjFPaXcxWS1FLXdaY2xvMDlBckRzRTFCaTVLNTE3TGpNaVBsak13MWhSZ18zZkxRdTNxODIzZUJJWEVMRw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T19:00:00.000Z",
-        "summary": "Fear and policy in San Francisco: Anthropic and the AI reckoning Capital Brief"
       },
       {
         "title": "China may have accessed Mythos",
@@ -249,91 +334,6 @@
         "source": "TechCrunch",
         "published": "2026-06-14T16:38:09.000Z",
         "summary": "Startups are trying to \"ride that SpaceX IPO wave.\""
-      },
-      {
-        "title": "Claude Fable 5 vs GPT 5.5: Is this why the Trump admin banned one and not the other? - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5ENkVmNkswcWNpaWJhSGFucVpaM19FOU9pZHd3SF9EYVlLTmxRRUhvcTUtWVNFcmNHdTRickxvaFE1RkpNZzdZRlBmVDB1NVJ4QWcxVEJaZUNuWGRnQVlLcjRyTll4UU9CMEE1VHBnVVVZZVRzOUxj?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T14:59:29.000Z",
-        "summary": "Claude Fable 5 vs GPT 5.5: Is this why the Trump admin banned one and not the other? Mashable"
-      },
-      {
-        "title": "TCS to deploy Claude across insurance, banking, and healthcare - Coverager",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQRG8zMmNhOE1fTm9jQWJRYkpGRFZ2SXJCYzV4N01HMzRySVl6Y28tVW9GMmR6TnhYOFhDTTEzWFVmYVFEU25OazlqTFF3ZjBNZWRmZVdsWkVaYjMwYjRONjVYM0xFMmhuMU80UkkwWUNsbUUxZGk3TEpINFp2UTBDMDg5dS0wckpyYUhn?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T14:37:47.000Z",
-        "summary": "TCS to deploy Claude across insurance, banking, and healthcare Coverager"
-      },
-      {
-        "title": "EU Commission looking at practical consequences of Anthropic decision",
-        "url": "https://www.reuters.com/legal/litigation/eu-commission-looking-practical-consequences-anthropic-decision-spokesperson-2026-06-14/",
-        "source": "HN · 61↑",
-        "hn_id": "48527574",
-        "published": "2026-06-14T14:33:11.000Z",
-        "summary": ""
-      },
-      {
-        "title": "An AI startup founder is trying to vibe code his own \"Grand Theft Auto\" game - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSnh4RmpiN296cGVrbGZ0clBCQzlBdXdDVzhlVWtBTkk2RzJXbEhJV21kanNkZThfWDVzRDdPODVzbEI0YXBNVy1aMG9OWWJNQ21qUU9ocTNxbXA2cXR1ck9qT1VxaXltRXprYjdmOHdPUGFwWmZOeVl5bDhiRkZXSk9MNWpEcGZDTzNQNlFkaTlhQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T14:24:46.000Z",
-        "summary": "An AI startup founder is trying to vibe code his own \"Grand Theft Auto\" game Mashable"
-      },
-      {
-        "title": "US asks Anthropic to block global access to top AI models: Why it matters - Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOS0JVZ1VmVE9Tam15QlVrVURFYkFKaDRCenItc1JZWGlaakl3ZmhIUVFfbE4yMUhaQmdIUDlHVnJxT1FONWdBWW1ZREFPcHJBQVhIUFdYd28tNEVzSS1FdVZBcGNLdG01bDB3T2p2dnpBSDY1UUV5N3N5dEx3ejZJZk9zNzZxRlhPdnJHYmRPeDlrQzNVMGxSYkg4YUoxQ21lbURBY0ZpczRpSkU3SktvbUxpQdIBuAFBVV95cUxONGMzSmFWQzJhLWV5ckJsX2dXQ2FuVk5rMjQ5dGZjblRVSzNuUU9lRjRMOHRzdGRUQ2RPbGJBMTFmczM3eEZHYVA1bG1vUFVjWkYzQUpMRXN5dmVjV0t3YTJlRlBmbDhmSkZlTXJsSXM4V0pHeDc0cmpBS1ROQkxxcDkzcmFjVjVaOVZwNGhOU3FwNENFZ0g3RzFmaC1maXNjTEQ3TGlZaWhXeU5iWTN4Q1ctRVd6eVNt?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T14:10:04.000Z",
-        "summary": "US asks Anthropic to block global access to top AI models: Why it matters Al Jazeera"
-      },
-      {
-        "title": "Anthropic Refused To Patch Claude Fable's Jailbreak, So The US Banned It, David Sacks Says - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE16V002eXYyME5BQUQ2d01jRjUwWUgxU0lULVR0UXpBVi1GMThqdlBGSXlrUkJ0UXVvNTlGQy0zNTFzazJWU3lzbWRZeDk5bWk3WTRUUlFvTHVxZVk5bU9mOTRnMHYyY2FIaF9hUw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T13:37:12.000Z",
-        "summary": "Anthropic Refused To Patch Claude Fable's Jailbreak, So The US Banned It, David Sacks Says Yellow.com"
-      },
-      {
-        "title": "Anthropic Halts Access to Fable 5 and Mythos 5 - ServeTheHome",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxObm5USi1nNWw4WGxsX3NEVk43ZmMzaVpDYmtzN0RjOTZzUmhXRDJWVmJOd190UkFVbWNDWWRPREFjSDZHZVB2NGRuRmhrdHVvdlgzS3E5NGxXNHFLNmh2UXFFU3BVYmJnd1F0LTlCcHpxWDFpcDVtZTgxckJDb2Q5VjVB?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T13:00:04.000Z",
-        "summary": "Anthropic Halts Access to Fable 5 and Mythos 5 ServeTheHome"
-      },
-      {
-        "title": "US government warned Anthropic that Fable 5 had been jailbroken, but firm 'refused' to fix before US implemented export controls — Anthropic defended its decision by saying the jailbreak 'isn’t serious,' Chinese group had reportedly accessed model - Tom's Hardware",
-        "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNdjBYb2szem9pa1lRNlFFR25iTFFPVmZoM2x1Y0xBQVRHdW1hZ0JGbVdKQnlORTBuWm91Q3JNbEk3ak5Ta1g2Tkw4VC1ub0lRTFk3TlhfUEVsQjFtZGl4STVpNFhQR2RIaW9rZks5QTBWQUFKa09mWlVBa1pleHl2NGlZOWw0Rk9tajVkS3FUTzRUSks2TWhQZzhyOVNwNEp1VXpZaGhBeGdKaWYxRjk5MHNfRFFOLUwxV21weF90c19LV192aXp3bDh5a3JyY1RjdkVTWjFFX0YxYmlqRlk4SC02Z1ZQMVNDZDB2Vk5QYzRoSEhfSVZ5RmdR?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T11:46:43.000Z",
-        "summary": "US government warned Anthropic that Fable 5 had been jailbroken, but firm 'refused' to fix before US implemented export controls — Anthropic defended its decision by saying the jailbreak 'isn’t…"
-      },
-      {
-        "title": "Trump’s Ban On Foreign Access To New Anthropic Models Sparks Tech Backlash - Newsweek",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPWFp3QjNibnVscHRRT2llUWlwYXY3YzktNjFMT0QyVGFxNFl0Sm01UnlIOWRzVVgycEtLb2JQYUdNWGtER1FmV1pKLWZIb293ZnpLNERGcDBhcW9rNTJ6ZjRuSWQwTFNwbjZIdU50RF9kMzZvZnV3YVVyZ1FsU0tqYXg4dWNndXdPS2RzTktZYnpqdWpjV0NNbU9mT2R6SFlQdV9lUlk2cnJ4MUU?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T11:04:00.000Z",
-        "summary": "Trump’s Ban On Foreign Access To New Anthropic Models Sparks Tech Backlash Newsweek"
-      },
-      {
-        "title": "Anthropic Customers Seek Refunds After Fable 5 Shutdown - Forbes",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOGY0WVhtT3lJekhQY2ZCZmU5V0c5SmxaTWNaNmJhYzBJVFpWN1R4LTR2ZllVbkJQR0U4UXpwMTJwX0lNUXJqX1dIa0FqbTBlTWFETFYzUDRlcTR2ejd2OUx3aXZycFM1dTJ1LU1GU0luY2djOHlveG9aai1UR213bUtmQnpuTmF5VXpSS3VfSHlqUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T08:51:11.000Z",
-        "summary": "Anthropic Customers Seek Refunds After Fable 5 Shutdown Forbes"
-      },
-      {
-        "title": "Amazon Warning Triggered Anthropic’s Shutdown of Claude Fable and Mythos Models - BeInCrypto",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9KYWhYMEh0aFBrZU1NZEdUdTgwYjZNdTYtWXE2SnFtRTllY0x1ek5MbHBwRjB4ZTJkdXpwODVhZVZibTFEQ1l2VkFmMHB1OWFVVjJQbUs5Y0puZU5HeW5mUG55TmJsZTVLQ1BWSmJTWk5xdUFwXzFMX3hXSjY?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T08:07:00.000Z",
-        "summary": "Amazon Warning Triggered Anthropic’s Shutdown of Claude Fable and Mythos Models BeInCrypto"
-      },
-      {
-        "title": "Why US has restricted foreign access to Anthropic's Claude Fable 5, Mythos - Business Standard",
-        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQU2tnQVRsZC03R3RVekFZNU5UdmFBWElEVkZnX0lGVm5lbFZFejIwLU93Rm5QM3A5d0w1bzl2TFgwZ2lrOXZqTTg1RXNibmJCXzFESXVBbVZQTlF2YllvUlptTk5kbzl0LWo1UktOcGoyM291eE1ZZDlobzctam5lNS0zT21QcnI2Q2syS1l4cVpEMEpwTFpMcWNRbEJzZDVUYUZQbmIzRVR0UUZjUE1hNkk2T0swUFhsV2NycU1NV2VVTFNTUlduNmdnVjQzZlU4YlNjUkxkeGJFaVU3VS1J0gHkAUFVX3lxTE1TN1ZuVEZqbW9oRUtOUk1IYlVGRFI1VFA5VThSbGt0SjhPNTk1TzZXMDFQZWFKb0JLWTJBMDEySGtzNFVoNE0yLU5VWFIwMl9COEQ1UDhCSEFmWVVlVWp2YmRQZW1XUE16TDB3TDZWQ0Y0MzVkUk43eXd1Z1hWMXZxTl9hbmFJRmNVNTVxQmk4czF4OVBrRXJFUXVhNjhEeGkyZE8wWm4tcW82eU1seUlVVl8ya1dDbHl4VHVTTlczX3labU9BSGV5WE1jOVYxX0trQ3dJWS1PRVVxb1ZzbS1jaTEyVg?oc=5",
-        "source": "Google News",
-        "published": "2026-06-14T05:55:26.000Z",
-        "summary": "Why US has restricted foreign access to Anthropic's Claude Fable 5, Mythos Business Standard"
       },
       {
         "title": "CLAUDE FABLE 5 BANNED. IT ACTUALLY HAPPENED...",
@@ -531,6 +531,13 @@
     "status": [
       {
         "title": "Elevated errors on Claude Opus 4.8",
+        "url": "https://status.claude.com/incidents/slm0mhv6r1pf",
+        "source": "Claude Status",
+        "published": "2026-06-15T08:56:11.000Z",
+        "summary": "Jun 15 , 08:56 UTC Resolved - This incident has been resolved. Jun 15 , 08:14 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jun 15 , 06:20 UTC Investigating - We are…"
+      },
+      {
+        "title": "Elevated errors on Claude Opus 4.8",
         "url": "https://status.claude.com/incidents/1trjx6gxk1bt",
         "source": "Claude Status",
         "published": "2026-06-13T02:11:58.000Z",
@@ -605,13 +612,6 @@
         "source": "Claude Status",
         "published": "2026-06-08T19:52:06.000Z",
         "summary": "Jun 8 , 19:52 UTC Resolved - The incident is now resolved. The impact started at 11:35 PT / 18:35 UTC and ended at 12:30 PT / 19:30 UTC. Jun 8 , 19:10 UTC Investigating - We are currently…"
-      },
-      {
-        "title": "Elevated errors on Claude Opus 4.7",
-        "url": "https://status.claude.com/incidents/3n1flr3mnpgl",
-        "source": "Claude Status",
-        "published": "2026-06-08T19:22:14.000Z",
-        "summary": "Jun 8 , 19:22 UTC Resolved - This issue has been resolved. We saw errors affecting Opus 4.7 from 16:56–17:47 UTC. Jun 8 , 17:55 UTC Monitoring - A fix has been implemented and we are monitoring the…"
       }
     ],
     "youtube": [
