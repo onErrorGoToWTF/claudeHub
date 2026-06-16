@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-06-16T14:49:45.818Z",
+  "generated_at": "2026-06-16T19:25:40.124Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Claude Code Expertise",
+        "url": "https://www.anthropic.com/research/claude-code-expertise",
+        "source": "Anthropic Research",
+        "published": "2026-06-16T19:08:38.000Z",
+        "summary": ""
+      },
       {
         "title": "Tcs Anthropic Partnership",
         "url": "https://www.anthropic.com/news/tcs-anthropic-partnership",
@@ -135,16 +142,135 @@
         "source": "Anthropic Research",
         "published": "2026-06-05T15:20:07.000Z",
         "summary": ""
-      },
-      {
-        "title": "Next Generation Constitutional Classifiers",
-        "url": "https://www.anthropic.com/research/next-generation-constitutional-classifiers",
-        "source": "Anthropic Research",
-        "published": "2026-06-05T15:19:41.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "AI & Tech Brief: Anthropic’s army of AI integrators - The Washington Post",
+        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQcy1ZZk9wNDc1WVRpTVl2enJKeHBsWmJwT3dwVUp5bVNieGc2OEhKaDlSdF9vZFlNN1Y0VUFKWWRjQWdJcTNzQlpqV2xXcnJ2eGlSMmZheVg2aXlWUWxZTmstTWZGS3pfN0ZxeUtqdXBJVUJNU0RRQXNYVU5Mb0NXRmFmN0tTeV9tMDljb3o4aWtSZ1d5R01XY0t2dGluUElKbE9fZXJKWldqcE5NbW1kNUN3WXg1RTJ1SVgzaExvTGNaeGgtWldMMGhtRHk0YlZabU1OWnBvMXR0aHV1?oc=5",
+        "source": "Google News",
+        "published": "2026-06-16T19:19:44.000Z",
+        "summary": "AI & Tech Brief: Anthropic’s army of AI integrators The Washington Post"
+      },
+      {
+        "title": "Mark Zuckerberg’s Ringside Seat is Becoming A Big Problem for Anthropic - 24/7 Wall St.",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNLWtRdEFFTDVKNlY1aFpkaUNfQ05NOWpkbjk4dVBiUFpFQURJUUthcTRCUWpSb1p6ZkJvN3RtVjBTWnRrVTFlTi1KT215VUZiUFowTEJVTkVaTEk1c2tQVGs5VGNHNmxlR1c5c2VvUTZERkhXWlpuY05ja0NkcWJITmcyZWFFbnRsdlJFTXFHQS1JN0paT00ydDRlUzJJdVBLYktNTVk3eEs2a1NHWE9UY0Q0Y3c?oc=5",
+        "source": "Google News",
+        "published": "2026-06-16T19:12:22.000Z",
+        "summary": "Mark Zuckerberg’s Ringside Seat is Becoming A Big Problem for Anthropic 24/7 Wall St."
+      },
+      {
+        "title": "Anthropic vs. OpenAI: Which AI Giant Could Deliver Bigger Returns for Investors? - The Globe and Mail",
+        "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNNVNueUtOLXJ0ZHUyRklrQkgwejByY1hMbzBzWHd1TXRPdG1tWnZaNW45OXhOeGFqVUdJYTlmMW5xUkZOWS03YUJRVnNZU0JzTVkwMUlsY1Z4SW1MZzdPVVFiellsejE5VXdWb2E4Z3BYQzNNdDVnN3A2b1otdmQ2VE9xUXF5d1UzZkkzTU1UckZaS1FVZll3R2p1bjgtbGczcTBIXzVIOTc0d1NycjNJejJzSFRNMTZEbnpQVEprSlAzcHZmakdXYWdsUkNyYl95X3NmR1ZISUY4bXhuUmExcElnSTRyV1hTQU5MZWlSS1BMX0FVU2c?oc=5",
+        "source": "Google News",
+        "published": "2026-06-16T19:05:31.000Z",
+        "summary": "Anthropic vs. OpenAI: Which AI Giant Could Deliver Bigger Returns for Investors? The Globe and Mail"
+      },
+      {
+        "title": "Anthropic vs. OpenAI: Which AI Giant Could Deliver Bigger Returns for Investors? - The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNdVF2NktsNU51LTlhZDNadzBYQ3dNejJYOExqOXhpNFhHeUs5QXk4LTJVMjNOTmRKREVNdXpzZ2JadkcwVm5zNTFadkVMUExCUmtvVlg5bHd2eXBIN0VlMmg0UjJpSnV3a1ZMbUZoWjhCeGl0YXk0TDQ0WG81NjhzV0tYODRjaFM4ZWYxcUxySF9ZRHZWLWpVTQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-16T19:01:12.000Z",
+        "summary": "Anthropic vs. OpenAI: Which AI Giant Could Deliver Bigger Returns for Investors? The Motley Fool"
+      },
+      {
+        "title": "Lutnick’s Letter to Anthropic Warned of Curbs on Top AI Models",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-16/lutnick-s-letter-to-anthropic-warned-of-curbs-on-top-ai-models",
+        "source": "Bloomberg",
+        "published": "2026-06-16T18:47:25.000Z",
+        "summary": "US Commerce Secretary Howard Lutnick warned Anthropic PBC in a letter last week that it would need government permission to grant foreign nationals access to its most advanced AI models and…"
+      },
+      {
+        "title": "Read the Lutnick Letter That Led Anthropic to Disable Mythos",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-16/read-the-lutnick-letter-that-led-anthropic-to-disable-mythos",
+        "source": "Bloomberg",
+        "published": "2026-06-16T18:46:51.000Z",
+        "summary": "US Commerce Secretary Howard Lutnick warned Anthropic PBC Chief Executive Officer Dario Amodei in a letter Friday that the company would need government permission before exporting its Fable 5 and…"
+      },
+      {
+        "title": "SpaceX Soars On Third Trading Day, Seals Cursor Takeover | Bloomberg Tech 6/16/2026",
+        "url": "https://www.bloomberg.com/news/videos/2026-06-16/bloomberg-tech-6-16-2026-video",
+        "source": "Bloomberg",
+        "published": "2026-06-16T17:59:34.000Z",
+        "summary": "Bloomberg’s Ed Ludlow tracks SpaceX's value eclipsing Amazon's, this as it lands its $60 billion takeover of Cursor. Plus, Anthropic meets with US officials to resolve a national security dispute…"
+      },
+      {
+        "title": "The White House’s capricious controls on Anthropic - Financial Times",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAwZk5YWXhVMVVySWtFS3VjLU8yT3VHMnVscHJPOXJxU1g5dkJDdkthcUtobmg3M2JiRjFBSk51SndYVXVvbGphNFJfaHY4VFA0NVd0Y2Zhd1BHanlMbHpyTkFxeHJ6R0hPVk1lSzRjR2w?oc=5",
+        "source": "Google News",
+        "published": "2026-06-16T17:44:58.000Z",
+        "summary": "The White House’s capricious controls on Anthropic Financial Times"
+      },
+      {
+        "title": "Claude: Elevated errors across many models",
+        "url": "https://status.claude.com/incidents/xmhsglsz3h3w",
+        "source": "HN · 137↑",
+        "hn_id": "48558766",
+        "published": "2026-06-16T17:30:30.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic IPO: What to know before you buy the stock - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOUm4tUU1EYW9YS3lLVTNhNWRkcHJIZmJ6STByXzU4SVU1V2R5Q3NvQUprWkJQSWdabGpVd0xzcTNfMlpwd0N0U0lGLXpMX1Nnd19LS0txYVhPSzEyTzB4cVBSMFgzZWZLWUZSMUpIWnUxeXpPMmFIZDdGczZnc2prOFBwdjJXMTFVYXVMUW1XcUVJa0hsSG1RTGpnQ0h2dmRWcnk1ZDF2MGNaRzdsRnVWVG5adXJkQ3ZDMWJTVlU3Nm1tY0VTMlE?oc=5",
+        "source": "Google News",
+        "published": "2026-06-16T17:15:11.000Z",
+        "summary": "Anthropic IPO: What to know before you buy the stock Yahoo Finance"
+      },
+      {
+        "title": "Wipro Launches AI Centre Of Excellence For Anthropic's Claude, To Train 10,000 Experts - NDTV Profit",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQektKUXpaWXQ4cnJRcUVmejBzdVU2MHBZZVVzTTBTaVh3cmc5YlFzWnFKUkl5eFAxNVJYQjJiNzRoVWNRaGVxUXdRT3JtNHFncFNONlVDMDN4YnlITU5BajFWLWRuNmZzZ1BoUGhfMkxKeXItc0RtQXQyYllOSjFWakoyaXdneGc2N0dLaFl6ekVsUEdnOGdrbHBQOXZQWExxX082NEg0WnE5YTBTbEY0Z05NNkVUMm1yRUplS0FTcm1wZXc2aTl3Y9IB0AFBVV95cUxNcG9aZWVyWkliTjF4ZElfTlN0V2RIaEVKVUpJQWJSVTZsSGd6M0UzRHEwUDBydmotMjc4dDc3dkJ0MzJLbG5fQ3hfV21uazQ3OVV5elpISlMzbjJmekcwbXpfZllrMmpKdVpWaUF3WXR5UzR4ZHVBWlF4Y256UTR5SndxNWFSSk40X2VESzljcDZtT0dBbXBWeWhNV3JtRVAtdHpMLTNHSWxoRlFpMTNBcjJ6aGV5cUw1MDg4UXQ3dm13dHdpME1NTkE3SV9PeElv?oc=5",
+        "source": "Google News",
+        "published": "2026-06-16T17:02:03.000Z",
+        "summary": "Wipro Launches AI Centre Of Excellence For Anthropic's Claude, To Train 10,000 Experts NDTV Profit"
+      },
+      {
+        "title": "I Turned Claude Into a Folder That Runs My Whole Business",
+        "url": "https://www.youtube.com/watch?v=W92-Jhn5yck",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "W92-Jhn5yck",
+        "thumbnail": "https://i.ytimg.com/vi/W92-Jhn5yck/hqdefault.jpg",
+        "published": "2026-06-16T16:35:41.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Leaked financial docs show OpenAI is losing billions of dollars a year",
+        "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/",
+        "source": "Ars Technica",
+        "published": "2026-06-16T16:18:07.000Z",
+        "summary": "As OpenAI files SEC paperwork ahead of an expected initial public stock offering, newly leaked financial documents show a company with quickly growing revenues that are currently being overwhelmed…"
+      },
+      {
+        "title": "isolved Introduces Autonomous AI Agents Built to Own HR Outcomes — Brings Unified HCM Platform to Anthropic’s Claude Connectors Directory - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQTG51NGxtZmxMeWtnUFZZQWR6QWU4Ri1xZ1lHUklWTFFkcWJxOEpuTklnMmM0U245NWxNVEV1UjJ6WXByajBKeGRqVDR2ZGpod1Y5NWt1S0U5ZkFqTzRnMHl6Y21qNWMxcWxZTlNaNEdkWG5ibGxvNkZkZUltc0l3U3dyNlIwVUZtMEt6MjJRU256RllUOWFNSzhFbFNMQU4xS3l5SEJ3?oc=5",
+        "source": "Google News",
+        "published": "2026-06-16T16:10:00.000Z",
+        "summary": "isolved Introduces Autonomous AI Agents Built to Own HR Outcomes — Brings Unified HCM Platform to Anthropic’s Claude Connectors Directory Yahoo Finance"
+      },
+      {
+        "title": "The Machine and the Schoolhouse: Anthropic and the US War on Iran - Countercurrents",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQZW9WRFhWQmhhZlBqVE9VeGUzT2xLRmxZcXVJcEtoZDNQLXc5X3lUSTJTbTFwZ0puV21WWlhCVTNVcURDZlBTTkg0YlM1Y2hlVzRXMGhZN25HOEx4MkRRRjNHSjhuQXFpcGREczBRbm50cDdnQXZYYXZiOFBza09ySTMtWkctbmtTVWxpY0dGYUJXeXdRUnUxeFgtTVczNlE2S2Rz?oc=5",
+        "source": "Google News",
+        "published": "2026-06-16T15:29:17.000Z",
+        "summary": "The Machine and the Schoolhouse: Anthropic and the US War on Iran Countercurrents"
+      },
+      {
+        "title": "Fable ban was never about a jailbreak?",
+        "url": "https://techcrunch.com/2026/06/15/the-us-governments-anthropic-models-ban-was-never-about-an-ai-jailbreak/",
+        "source": "HN · 106↑",
+        "hn_id": "48556785",
+        "published": "2026-06-16T15:27:56.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Massachusetts nonprofit taps Anthropic fellows to overhaul AI curriculum - The Business Journals",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOUTdJbjhWOXA2cE95NTNMcEFTWmVmUEUxaUpGNjRNd3AyVDZBdlNUcm53OVVJZnprLUxwQk13ejk5RGlTZjRya2dGODVhSkRvNnYxSXdmN1lkLTcya0k1dW1WSVp3RVJUdVpHeTE4S0dJWVZvRkdEcm1hNW1wWXVnNHVXTmR3WldyaEpEdDlEUmplMUpsWEpiMw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-16T14:52:00.000Z",
+        "summary": "Massachusetts nonprofit taps Anthropic fellows to overhaul AI curriculum The Business Journals"
+      },
       {
         "title": "Anthropic restricts access to advanced models after Trump order - Crypto Briefing",
         "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPOUdnbWRFVTE3YmJPQjkzS000ajMtRzlXSlJaTWhNMkxsVmlpZnZLMlpqMDVTcGlLSVFrbW9NNm5RbnRwcmt4dktTSEFCby0yaG8tMzNsTnc1eWN4Q093Q1Y3NS1CSTFHdXJPT3ZrZEI3UmFoRm84ejZEX1YtdmthdQ?oc=5",
@@ -174,11 +300,25 @@
         "summary": "Wipro launches AI center for Anthropic’s Claude in Bengaluru (WIT:NYSE) Seeking Alpha"
       },
       {
+        "title": "Wipro Bets On Anthropic’s Claude To Reshape Its IT Playbook - Finimize",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSXNFaXAtUmxYbXNWa093Q1FZajN2Q2YzRlotbXJNNFdrcGxZM3Q0WTEzRFhnTVB6YlZTcXFaR0RxSjBwTENlYUpfaGxWVlJYazFOZXhoUWNLRnhrOUFPcnZVQlI2VUhCbEx2NWZHQXgxaVNMRGhkcGhwcnl3aGVmRXo1TnBMYzBoU3ZjRkFaUlM?oc=5",
+        "source": "Google News",
+        "published": "2026-06-16T12:21:45.000Z",
+        "summary": "Wipro Bets On Anthropic’s Claude To Reshape Its IT Playbook Finimize"
+      },
+      {
         "title": "India's Wipro opens AI center for Anthropic's Claude in Bengaluru - Reuters",
         "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVEgwWWJtTEVFcVhjb1E4bzlsNFhHelZFTHd5N2VjcmNZVEt1cGhtdklRcENkdnM2VmRyeFZGalB2ZzNGcGVPTTAwLVpjZ2RPVG5WUHlDY1NKRFhJOWxWZHNmUnRRVXY4eVlrZ1B6dTFPRFd0QTh6R2VQY0lCZHU0d09JM0hJcERQMUtDQW95aFdtNWR2RzBnRnJGcWlmb3VqemJ3ZVg5UQ?oc=5",
         "source": "Google News",
         "published": "2026-06-16T12:15:08.000Z",
         "summary": "India's Wipro opens AI center for Anthropic's Claude in Bengaluru Reuters"
+      },
+      {
+        "title": "Anthropic pauses Claude Agent SDK subscription change on day it was due to take effect - The New Stack",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOSUV3RjhQdHFtT1NUQjNCbWZLSEJnOGZncFRWQ0p4U0NUTzFRUmpZYmV3WnhCNXdzR3I3UmpuVHIyYlluSEROX3A5RThIbTZPejd3LWtRYVdUWnBMVXluX1BMUjc2Mk1wZVhCOVhoX3h2ZklpZVRBTjFMaFQtX1N0d010cw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-16T12:11:30.000Z",
+        "summary": "Anthropic pauses Claude Agent SDK subscription change on day it was due to take effect The New Stack"
       },
       {
         "title": "India's Wipro opens AI center for Anthropic's Claude in Bengaluru - TradingView",
@@ -188,137 +328,11 @@
         "summary": "India's Wipro opens AI center for Anthropic's Claude in Bengaluru TradingView"
       },
       {
-        "title": "Wipro Bets On Anthropic’s Claude To Reshape Its IT Playbook - Finimize",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSXNFaXAtUmxYbXNWa093Q1FZajN2Q2YzRlotbXJNNFdrcGxZM3Q0WTEzRFhnTVB6YlZTcXFaR0RxSjBwTENlYUpfaGxWVlJYazFOZXhoUWNLRnhrOUFPcnZVQlI2VUhCbEx2NWZHQXgxaVNMRGhkcGhwcnl3aGVmRXo1TnBMYzBoU3ZjRkFaUlM?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T12:02:45.000Z",
-        "summary": "Wipro Bets On Anthropic’s Claude To Reshape Its IT Playbook Finimize"
-      },
-      {
-        "title": "Dan Ives on US-Anthropic Talks, AI M&A, Open AI Losses",
-        "url": "https://www.bloomberg.com/news/videos/2026-06-16/dan-ives-on-us-anthropic-talks-ai-m-a-open-ai-losses-video",
-        "source": "Bloomberg",
-        "published": "2026-06-16T11:53:19.000Z",
-        "summary": "Dan Ives, global senior equity analyst at Wedbush Securities, discusses what he calls the “tug of war” between Anthropic and the Trump administration, why he expects accelerated M&A on artificial…"
-      },
-      {
-        "title": "Wipro launches AI Centre of Excellence for Anthropic’s Claude, plans to train 10,000 employees - Storyboard18",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQa3lrbW93cFJ5YU1aTzJFV1JQdHk2TE55bkZvRlR0NVJnX0NEMk5la3lPMTNUTk1SX3AzV1ZVZ2NoVXRVb25LZFVYRWpTSmdoa1lJWkE1LVJnSkdBVkIyUDdhSzduSVpZZmNra1BHeDVLRnY3QjZHNWVjeWU4SmN4QUk3ZEwtMzJBNkRzaVo3QVlVWlQ1SHFyazdZUE1JdktYanJuWWZVczg0VkdTTU9POUVNb3pyUXcya2psa0xjV2ZZMzZ6ZkFIVHRQSkcyelpHcDFYUUx30gHbAUFVX3lxTE95UHJSS0d4RTI3WGpNRGkwM1JCd25vXzB0RHVoOTY3ZFNMUHo0VHgwMGVIR1hPcmJaVnhiLWhoVEQ2a2x2NWpVMU5fYlJNRFdLTGFYMHN5VVpjcjMteWg5UVdnNG93SkpvR3ZfS0xnYnB2bmVaWjlEb252UnFSbk9HeGY3WjE1Z2pnYnFXempKVkczVjlLQmZKM0VMZ0p2c2VqY21jZEdjeFhMckhraDExQnJScFZ3QUJnMWJQSjhvTzdVLU9RSkloUTZWQWxtZmhFamxObklHU0V1VQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T11:44:43.000Z",
-        "summary": "Wipro launches AI Centre of Excellence for Anthropic’s Claude, plans to train 10,000 employees Storyboard18"
-      },
-      {
-        "title": "SpaceX is officially buying Cursor for $60 billion",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/950571/spacex-is-officially-buying-cursor-for-60-billion",
-        "source": "The Verge",
-        "published": "2026-06-16T11:41:31.000Z",
-        "summary": "Days after its massive IPO, SpaceX says it is spending $60 billion to buy Cursor - a bet designed to help Elon Musk's sprawling rocket / AI / social media behemoth win over lucrative enterprise…"
-      },
-      {
         "title": "SpaceX buys AI coding startup Cursor for $60 billion in race for an edge over Anthropic and OpenAI - WSLS",
         "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPek9WVE9iUnE2QUtaNHh3Z0JSYklhMnE1a3BCaTlvZ1dZQ2I5NlBHai1uU19OVFp3cHo3QnplVFhDWFYtamFpVjdTSjZFNlFvYjZTaHZlaGUzYTkyWmVZRHhYdzZ6T3Z6RkdxRDRjM1ZIeExoMDZnUmVNeXJsamV2WHRIRTVyOExTYlE1T3hOWk44N3poc3FpQ2lpbjFZX3h0a3VpODRqR0hKaTBvU0RrRkl4N3ZjaWtJeFpDVHFHTXJRUXBDVHdvZmYxVmdUWUVp?oc=5",
         "source": "Google News",
         "published": "2026-06-16T11:31:32.000Z",
         "summary": "SpaceX buys AI coding startup Cursor for $60 billion in race for an edge over Anthropic and OpenAI WSLS"
-      },
-      {
-        "title": "Anthropic’s AI Runs Into DC Rule Inconsistency",
-        "url": "https://www.bloomberg.com/news/newsletters/2026-06-16/anthropic-s-mythos-and-fable-models-trigger-policy-reversal-by-white-house",
-        "source": "Bloomberg",
-        "published": "2026-06-16T11:02:01.000Z",
-        "summary": "The AI pioneer is working to allay White House concerns about national security"
-      },
-      {
-        "title": "Anthropic’s AI Runs Into DC Rule Inconsistency - Bloomberg",
-        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNZHpLWTV0YzlvVFZyNWtxUkREUXluS0M4T1dfOW56VVJXMzBnQTBISkkwT3MtRmxyUmR6Nk5kbFdDaWRqb1J2NjBkRmIzaHRDRTJaX3hOdkFNTmdDV0hkWHBCRldMV0diT0hQZWt6TDNlRHB6LW00WVBYTkY0TFViSVd5eUNOUXN3ZjNxNEJKVmQySlpFWUpiRWhmVklrdWZlSFN4ODZIMFIzeDVtQ0tZeER0ZjRUanltVUhEUWJRTlhxZ3BFQ1RuT2JoVEpvajZyOFo4NE1Mb29DaHFJc3JDQTVmLU5XcU9mb3c?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T11:02:01.000Z",
-        "summary": "Anthropic’s AI Runs Into DC Rule Inconsistency Bloomberg"
-      },
-      {
-        "title": "Trump’s Anthropic Crackdown Sets Off AI Alarms for US Allies",
-        "url": "https://www.bloomberg.com/news/articles/2026-06-16/trump-s-anthropic-crackdown-sets-off-ai-alarms-for-us-allies",
-        "source": "Bloomberg",
-        "published": "2026-06-16T10:46:57.000Z",
-        "summary": "With the recent crackdown on Anthropic, the Trump administration has given global leaders another reason to panic about their place in the technology race."
-      },
-      {
-        "title": "Anthropic backs off unpopular billing overhaul as price war with OpenAI looms - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZjI5Y0VUMm8xcTVvV29iX3dVNWpmUlhvWVVOajNER3I2MlBiSzU4X3RlUUVzMERzWXJYYjNIaG8wa2wzbkQ2c3NVN0NFZW9UaDVNeGdOeFdsdzBrTVp0RC1PM1M3cFl4aWFFVUt3bmwyTi1VelFrTmFvOHBnMWlTOTBMME5oVTcydXV2Y25uRDNUWEZJNG1iVi1JZnV2ZC1iX3Fqbg?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T09:49:24.000Z",
-        "summary": "Anthropic backs off unpopular billing overhaul as price war with OpenAI looms the-decoder.com"
-      },
-      {
-        "title": "Cursor Drops Another Bombshell: Once Accounted for Half of Anthropic's Revenue - 36 Kr",
-        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBPR3dzTXJKUkFYcGhmeUI5aG1Mblhwckc3NlBqOXZRSmJ5aHVKRnlmbTM1bVoza2FidVdkTGFQcTJpV1JzdWZIYzItbHhuLTVLQmhr?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T09:42:53.000Z",
-        "summary": "Cursor Drops Another Bombshell: Once Accounted for Half of Anthropic's Revenue 36 Kr"
-      },
-      {
-        "title": "The White House Was Reportedly Ready to Go After Claude Mythos Long Before Fable 5 Was Released - Gizmodo",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNWJESlZycHhrY3JEZGdvNjh4b0JGT1U1MFhZUVhEbmJzNzVVM2VkM1NKTHZMN3VpQVVvNTZheWdwRU0weXJTUEtvMkhwcFBTdkxWZFluc0VrWkhCaDhCdGh0MWtuSjN3RHFNdFUxVmNRZUtRSmxFdFZmZ0JVWFBUQ0FseXFDenFEM21TYUdaaF9Ob3dtQnNXc1M4SGltbXFReTUwWmFmb0tRbFJqaGwwTkpFdnN2a2M2OFNTY3BkS1k3Z2Jk?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T09:30:13.000Z",
-        "summary": "The White House Was Reportedly Ready to Go After Claude Mythos Long Before Fable 5 Was Released Gizmodo"
-      },
-      {
-        "title": "Anthropic holds talks with US in bid to lift curbs on AI models - chinadailyasia.com",
-        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE42RnlFVkFkekFYYWhFaUhfcXRycWhEZmNITjE2d19ua0V0MWVPbEVwYk1lSU50U0JTczRJVVNPbWQtYTF6b2tQVFhjNGliQjdBUjJiRUJZLTM?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T09:16:15.000Z",
-        "summary": "Anthropic holds talks with US in bid to lift curbs on AI models chinadailyasia.com"
-      },
-      {
-        "title": "Anthropic's Claude narrows gap with ChatGPT among Singapore startups as AI becomes core infrastructure - TNGlobal",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOa2k1Wl84WFZPaFR3NFJNUU5SbnZDd0xKZ084aW1qOGk2cEF4RGNFeDQ3U2NzNVk0T0ZTMVItTXlJQ3BsNGE5WWszV244bDlFX0dNS1I2NG9vUEkxTG9PNlFWNlQ1MGRXMEZ0dlNUWi1FZV9NQ2tzQXptdDB0QllRT0I3SFVQRl9sajRGWDZXeFpVZDY5LUJsRFZHWWZoenBWQzhnN0V0NU9wc2ZKUUtnUHlPWE0yRlg4enhvWUJBUXRsTDBDdERqdkVpNVZsaUMzRkJV?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T09:10:00.000Z",
-        "summary": "Anthropic's Claude narrows gap with ChatGPT among Singapore startups as AI becomes core infrastructure TNGlobal"
-      },
-      {
-        "title": "Punt Partners joins Anthropic's Claude Partner Network through ShelfRadar.AI - bestmediainfo.com",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOdmtvS24tak4zN1JrOGZvZWV1LXd0RHNRU0RJOUlzM2EyNG9IUExjcGdySFBfenNYQzN1OVp2RHR0UkJGbTljQlF1LUhDTWl1ZjhGOXJMeEUwUGZzN2N0bjZ2bUhXLTFQYkZaV1ktVjJfbTdNRnRvMVd3dldld1NNVEluSU04RUJYMENnTGxKeEttZjdreE5LVzlZM2JXM011U1BhcEY5U0FpUmh6NkYwaGhfVEVUbnJ0d2VIeUlhd2VQN0JCZWZZYlhIejBGMVhMdzNZ0gHTAUFVX3lxTE52a29Lbi1qTjM3Ums4Zm9lZXUtd3REc1FTREk5SXMzYTI0b0hQTGNwZ3JIUF96c1hDM3U5WnZEdHRSQkZtOWNCUXUtSENNaXVmOEY5ckx4RTBQZnM3Y3RuNnZtSFctMVBiRlpXWS1WMl9tN01GdG8xV3d2V2V3U01USW5JTThFQlgwQ2dMbEp4S21mN2t4TktXOVkzYlczTXVTUGFwRjlTQWlSaHo2RjBoaF9URVRucnR3ZUh5SWF3ZVA3QkJlZlliWEh6MEYxWEx3M1k?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T08:29:55.000Z",
-        "summary": "Punt Partners joins Anthropic's Claude Partner Network through ShelfRadar.AI bestmediainfo.com"
-      },
-      {
-        "title": "Nonprofit AI Enablement Becomes a Business Strategy: Anthropic’s Claude Corps - HKTDC Newsbites",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9fcnRaMTNOSlhwOE4tb2JKVFRmX196d0J5ZnJPam9wcjBoUHduN2gwOWNWOGxoT09XRkRDQWE1TWlfS0NlcFp0Y1BYZEFyVzdXaXY3b0Y4cE1vZWs4ei1Z?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T08:01:51.000Z",
-        "summary": "Nonprofit AI Enablement Becomes a Business Strategy: Anthropic’s Claude Corps HKTDC Newsbites"
-      },
-      {
-        "title": "Punt Panther's ShelfRadar joins Anthropic's Claude Partner Network - Social Samosa",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPeHRuWG5pU0hOQUFqc1d4ZlFzRi1sNFFJVGdGeU9WU3ExTlV1QXdGYUp0OF9IY0N4RV9hVFMyRVpyUThXQTg4TjVMaE9iLUZUNDJyT3hXT2JWTE40bTlaWllfalFFa2NQd3N1bVhOMGFSNmtTMG1RTzhtVG1HZWpaX1Zyb2Y0UkRsRlpVMkFZMDVjaEZ3bGRVMHNMVzYxOWdjQnFjeHFUYlBQV1BaU0tZNdIBsAFBVV95cUxPeHRuWG5pU0hOQUFqc1d4ZlFzRi1sNFFJVGdGeU9WU3ExTlV1QXdGYUp0OF9IY0N4RV9hVFMyRVpyUThXQTg4TjVMaE9iLUZUNDJyT3hXT2JWTE40bTlaWllfalFFa2NQd3N1bVhOMGFSNmtTMG1RTzhtVG1HZWpaX1Zyb2Y0UkRsRlpVMkFZMDVjaEZ3bGRVMHNMVzYxOWdjQnFjeHFUYlBQV1BaU0tZNQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T07:22:13.000Z",
-        "summary": "Punt Panther's ShelfRadar joins Anthropic's Claude Partner Network Social Samosa"
-      },
-      {
-        "title": "Anthropic to widen data collection for Claude users from July 8 - MediaNama",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOVEdnbDFWQVo4TGRMenBZTjBWQkotS0hRblBuZjlPcGxvY1NBVUtDdC1lcklVMGJZUU42NUFTd3pnMjI5cE1hMGlsdzZyQ0JQaFQyMEpvMzdqYmRUemZYS2JRTlk2UkkwUmphZVJYT2Rhbm1LMnhEaUJmb1MtZk9qS29wUlhWeWV0UFYyNjJvak5VTkVHNFBMV1hCU1doUENYNENSbVdMVTdkakNILXpFWkt5RWM4ZllrcEdGMkdB?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T07:10:51.000Z",
-        "summary": "Anthropic to widen data collection for Claude users from July 8 MediaNama"
-      },
-      {
-        "title": "Anthropic may require identity verification for Claude use - Techzine Global",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPQ2xQek0zaGt6YW5QeTJaYVhrQnN0R1FJWVh6dGR5cnVrd0txWWd6MTJYaWZVQ1BFN0tMc0Q3U0t2bkg2WUVwY1p3c2Q1S0hNRHI1VURvWk1tZEJoLURGMFlzMGVMbVl3OUZNZG40eVYyU0FxY3Y1Mkg1Q0ZIOW9fWnhxNWs1bUpFd3ZFV3JqTzkxWWRZTGZqT3E1VUxibUhCdTVSR2w5bVBuTjQ0?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T06:54:00.000Z",
-        "summary": "Anthropic may require identity verification for Claude use Techzine Global"
-      },
-      {
-        "title": "Anthropic Disabled Fable 5 And Mythos 5 After A U.S. Export-Control Order. Here’s What Happened - Forbes",
-        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPYkwyT1lST2tlN3hMYXBXaVlJVjhucVVMejJ0OGhzVDkxd0dlVkFpZGNKZXpyUkNjVWdtQk82RU9zaFJmTk9YUlJwZmVGNzNtUGVTX2FlX1ZSNElZMjNuek9QNFlmRnFrc2dMVUVoLWVBRGlXaFd1R0lJYnhvWTBxeEdtaDQ1QkJIVWo2M1JzWTRmNVZhUWEyb0pYbGpnSlI3SzRnQlZzQm9qdlJKZHVaTDFxdnM2bXpsbDlTVkJXbGF3V3ByREdPZjNGNEE3SGJpWGVESC10OUp5VFp6dHc?oc=5",
-        "source": "Google News",
-        "published": "2026-06-16T06:35:00.000Z",
-        "summary": "Anthropic Disabled Fable 5 And Mythos 5 After A U.S. Export-Control Order. Here’s What Happened Forbes"
       },
       {
         "title": "the AI file anthropic built that nobody teaches.",
@@ -527,6 +541,13 @@
     ],
     "status": [
       {
+        "title": "Elevated errors across many models",
+        "url": "https://status.claude.com/incidents/xmhsglsz3h3w",
+        "source": "Claude Status",
+        "published": "2026-06-16T19:22:38.000Z",
+        "summary": "Jun 16 , 19:22 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jun 16 , 19:08 UTC Update - We are continuing to work on a fix for this issue. Jun 16 , 19:00 UTC Update…"
+      },
+      {
         "title": "Elevated errors on Claude Opus 4.8",
         "url": "https://status.claude.com/incidents/slm0mhv6r1pf",
         "source": "Claude Status",
@@ -602,16 +623,20 @@
         "source": "Claude Status",
         "published": "2026-06-08T21:56:44.000Z",
         "summary": "Jun 8 , 21:56 UTC Resolved - This issue has been resolved. Claude Opus 4.7 saw elevated errors from 2:01 PT / 21:01 UTC through 2:27 PT / 21:27 UTC. Jun 8 , 21:35 UTC Monitoring - A fix has been…"
-      },
-      {
-        "title": "Elevated errors on Claude Haiku 4.5",
-        "url": "https://status.claude.com/incidents/829kf0y1f7pn",
-        "source": "Claude Status",
-        "published": "2026-06-08T19:52:06.000Z",
-        "summary": "Jun 8 , 19:52 UTC Resolved - The incident is now resolved. The impact started at 11:35 PT / 18:35 UTC and ended at 12:30 PT / 19:30 UTC. Jun 8 , 19:10 UTC Investigating - We are currently…"
       }
     ],
     "youtube": [
+      {
+        "title": "I Turned Claude Into a Folder That Runs My Whole Business",
+        "url": "https://www.youtube.com/watch?v=W92-Jhn5yck",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "W92-Jhn5yck",
+        "thumbnail": "https://i.ytimg.com/vi/W92-Jhn5yck/hqdefault.jpg",
+        "published": "2026-06-16T16:35:41.000Z",
+        "summary": ""
+      },
       {
         "title": "the AI file anthropic built that nobody teaches.",
         "url": "https://www.youtube.com/shorts/QjONDvqyhII",
@@ -885,17 +910,6 @@
         "video_id": "2omtxQ0dSFk",
         "thumbnail": "https://i.ytimg.com/vi/2omtxQ0dSFk/hqdefault.jpg",
         "published": "2026-05-28T13:00:03.000Z",
-        "summary": ""
-      },
-      {
-        "title": "How To Learn Anything So Fast People Think You're A Genius (With Claude)",
-        "url": "https://www.youtube.com/watch?v=0n5UI6p9jTE",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "0n5UI6p9jTE",
-        "thumbnail": "https://i.ytimg.com/vi/0n5UI6p9jTE/hqdefault.jpg",
-        "published": "2026-05-27T13:30:00.000Z",
         "summary": ""
       },
       {
@@ -1219,18 +1233,6 @@
         "published": "2026-05-29T02:53:49.000Z",
         "summary": "chore(hosting): ruff format + lint fixes",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "How To Learn Anything So Fast People Think You're A Genius (With Claude)",
-        "url": "https://www.youtube.com/watch?v=0n5UI6p9jTE",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "0n5UI6p9jTE",
-        "thumbnail": "https://i.ytimg.com/vi/0n5UI6p9jTE/hqdefault.jpg",
-        "published": "2026-05-27T13:30:00.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "Claude Code Auto Mode",
@@ -1743,6 +1745,20 @@
     ],
     "claude_learning": [
       {
+        "title": "I Turned Claude Into a Folder That Runs My Whole Business",
+        "url": "https://www.youtube.com/watch?v=W92-Jhn5yck",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-06-16T16:35:41.000Z",
+        "summary": ""
+      },
+      {
+        "title": "2026.6.16",
+        "url": "https://github.com/modelcontextprotocol/servers/releases/tag/2026.6.16",
+        "source": "MCP Servers",
+        "published": "2026-06-16T14:53:11.000Z",
+        "summary": "Release 2026.6.16"
+      },
+      {
         "title": "v2.1.178",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.178",
         "source": "Claude Code",
@@ -2072,13 +2088,6 @@
         "summary": "We've launched mid-conversation system messages . On Claude Opus 4.8, you can send role: \"system\" messages after a user turn (subject to placement rules ) in the messages array, preserving prompt cache hits when instructions change during…"
       },
       {
-        "title": "How To Learn Anything So Fast People Think You're A Genius (With Claude)",
-        "url": "https://www.youtube.com/watch?v=0n5UI6p9jTE",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-05-27T13:30:00.000Z",
-        "summary": ""
-      },
-      {
         "title": "The Messages API response now includes usage.output_tokens_details.thinking_tokens , reporting how many of the billed…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#may-27-2026",
         "source": "Claude API Release Notes",
@@ -2224,13 +2233,6 @@
         "source": "Claude API Release Notes",
         "published": "2026-04-14T00:00:00.000Z",
         "summary": ""
-      },
-      {
-        "title": "Merge pull request #1194 from olaservo/chore/bump-version-0.21.2",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/0.21.2",
-        "source": "MCP Inspector",
-        "published": "2026-04-13T14:03:19.000Z",
-        "summary": "chore: bump version to 0.21.2"
       }
     ]
   }
