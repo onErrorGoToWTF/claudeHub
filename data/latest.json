@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-06-18T12:43:59.924Z",
+  "generated_at": "2026-06-18T16:48:51.986Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Project Fetch Phase Two",
+        "url": "https://www.anthropic.com/research/project-fetch-phase-two",
+        "source": "Anthropic Research",
+        "published": "2026-06-18T16:17:35.000Z",
+        "summary": ""
+      },
       {
         "title": "Seoul Office Partnerships Korean Ai Ecosystem",
         "url": "https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem",
@@ -135,16 +142,91 @@
         "source": "Anthropic Research",
         "published": "2026-06-17T16:46:57.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Code Expertise",
-        "url": "https://www.anthropic.com/research/claude-code-expertise",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T15:38:18.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic Sued for Allegedly Ripping Off Its Highest-Paying Customers - Futurism",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQVVFqeDE1a251Q1I0cm5ZX25JOXNENmtaRFVwTHQycHkxcG9rVXVlM2x0UWpZWDZjenc1aU4zME00MjhVTGY1a0NOWlp1R2duX3RuMWt1NnJVXzE4X3Z5N3pUNk9oZUYxVjlrWkw2c3pOcDN1MkdwbXpUMXlybi0xX2RsRTBKYk9J?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T16:11:32.000Z",
+        "summary": "Anthropic Sued for Allegedly Ripping Off Its Highest-Paying Customers Futurism"
+      },
+      {
+        "title": "Trump keeps kneecapping the U.S.’s most promising AI models - Fast Company",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZmpNSHJ0TWkzMlNmb0piNktJQkpnNEtmQmNwOWRqR3Y1OGF4aldfcTRWekNnMzRsMXFsRW1xTzJWVk1lQU13SDVrdGxrRTFCVUgzaWFBVm1KNl8zcHRpRm5pYnB0RDEtZHplNUxKWGZHVVJhSTBUTWdJcWt4STIxcjBILXdvajJudGpicGFaeTRQX1hNS05wZHlxdw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T16:06:06.000Z",
+        "summary": "Trump keeps kneecapping the U.S.’s most promising AI models Fast Company"
+      },
+      {
+        "title": "Can't Buy Anthropic, What Will the Market Buy? AI Stocks Worth Buying Before the Anthropic IPO - TradingKey",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNV0pXd05GRmpEcU9SUHA1azFmVHN5SGVSOFdZX1VaUkMwcEU1Y1g0cENsV1UtaW9FRlV0S1hnSzMzSzBCMzVvQWUzaDdBbGFKRTA1THVNeDNQcC1nQjZwSmRMV2NDX3VIZmRoNVFBUm5FZ0poUUMwVnppOFlZQkVpYW1lZUNsdFdyUTAtenpMRlpxTjlXU2dLWVNLOU05RVBsbk9uQXZFeHlyQUVCTjJFSXpCaDQ5YW5ILTlRSFI2THJ1cWxXV2RTZg?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T16:05:25.000Z",
+        "summary": "Can't Buy Anthropic, What Will the Market Buy? AI Stocks Worth Buying Before the Anthropic IPO TradingKey"
+      },
+      {
+        "title": "JPMorgan blocks Claude for Hong Kong employees - FT - Finextra Research",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNMWhlNGVQX2Fvb0FyMTJFQWtXb0pYVGFGeXFtaWxjd2g1S2tPdkpnRm4xRGxZRXYtS2JxVlhoNlh2bHR5TFN1d2hEU0I3XzlxUEdtak5Edm9Ub3FxZlNRdndzWGExMFQzZGtxTE51T2pzRlExSGg3REdlSFlGMm5abzl0Zlc0WVVWTXlLOFlFMnpUeEVHU1l2QURn?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T14:32:46.000Z",
+        "summary": "JPMorgan blocks Claude for Hong Kong employees - FT Finextra Research"
+      },
+      {
+        "title": "Anthropic Adds Brand Controls, Code Sync to Claude Design - TechRepublic",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQcnFvbEpEUUhGX1ZVQWNHd1pQWkxYTU9yVjRPc2xOTzlXdXNhZmtrSC1aTnMzSlJkanlaemxMT1oyeE1jTXlmMS1XUURkNXhMcFoybHhnYlFNRVNCMWZYLXJTUm41SWU0YnVycklpdkZFZERJaWNfX2lNRkpGM0E1T253U1dGVGc3T1NfSFdzSjZNemU5Mkh3?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T14:27:45.000Z",
+        "summary": "Anthropic Adds Brand Controls, Code Sync to Claude Design TechRepublic"
+      },
+      {
+        "title": "Who decides when AI is too dangerous?",
+        "url": "https://www.theverge.com/podcast/951542/anthropic-claude-fable-5-mythos-ban-pentagon-ai-regulation-trump",
+        "source": "The Verge",
+        "published": "2026-06-18T14:00:00.000Z",
+        "summary": "On today’s episode of Decoder, my guest is Hayden Field, senior AI reporter for The Verge. Often when Hayden comes on the show, it’s because something has gone wrong in the world of AI. Last…"
+      },
+      {
+        "title": "Anthropic Lays Out Vision for How to Bolster AI Models’ Safety",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-18/anthropic-lays-out-vision-for-how-to-bolster-ai-models-safety",
+        "source": "Bloomberg",
+        "published": "2026-06-18T13:41:33.000Z",
+        "summary": "Anthropic PBC co-founder Jack Clark said the company is in daily discussions with the Trump administration to resolve security concerns surrounding the startup’s top two artificial intelligence…"
+      },
+      {
+        "title": "Anthropic Lays Out Vision for How to Bolster AI Models’ Safety - Bloomberg.com",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQRFZBQnhZb2dZTFR0ZnFPai1EdTFkVTlMbnZpOE5QNm1IV2hWOUI2Njg0YV9vaHJrQTJxSUllRFRfbkxXSWJjVEU4SGdseXRaNFkxVnRTYXdiQVJ3N3FqeHFZU3l3b2NYd3RNSWl6YlRscVVWTTRMUTVGRnpJNEJVcGdMMmoyd2JjbEJlVlFKT1FWbm14YzNOc2lLRXdrcF9nRExSdGlzenJjZThWajBiQ3dB?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T13:41:33.000Z",
+        "summary": "Anthropic Lays Out Vision for How to Bolster AI Models’ Safety Bloomberg.com"
+      },
+      {
+        "title": "Korea emerges as global AI battleground as Anthropic launches Seoul office - KED Global",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9lNDktNEF1ZzRMb0NOMFUzVTEybzNicHg5cFMwSHJncUwyMHFSRkp4UE4zaXRyYUJpdU9feXIxdXNNWHdvMThJYXZELU5hOHRzNV9jRlpTZmdpdnlRV1hlbnhBV3lBUXIxNGNHQTl5N0tobU14TDVvaDh6aUhUVjg?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T13:34:00.000Z",
+        "summary": "Korea emerges as global AI battleground as Anthropic launches Seoul office KED Global"
+      },
+      {
+        "title": "Codex vs Claude Code: What I Found After 30 Days",
+        "url": "https://www.youtube.com/watch?v=-ZrzDuodAh8",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "-ZrzDuodAh8",
+        "thumbnail": "https://i.ytimg.com/vi/-ZrzDuodAh8/hqdefault.jpg",
+        "published": "2026-06-18T13:00:25.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "JPMorgan Limits Claude Use in Hong Kong - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPbDRNNUJVUG5od3JBU2dBVFJaQ25YZE5mZGVETU1JWk0wbHhNX3UzbzZhT0VDelU0NWJGWFpFRFJyaEZabF9hcXZOZ3lWVlNSNXI0RnlRRFdfb0VPWG5EQlZQdTVTdXllVmpTcGdVSHpoUHVHVXZYeTNHV2htdXBvN2c3NTRmUlNHeldWY2ZjMnNqa05IWTdVY0VpU2dfVUdX?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T12:24:32.000Z",
+        "summary": "JPMorgan Limits Claude Use in Hong Kong TradingView"
+      },
       {
         "title": "Anthropic and South Korea partner on AI safety and cybersecurity - Digital Watch Observatory",
         "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5QbTFlRnNlMjhzMEtwRk1ITWlfSE9LX3Z4ZWFad3Zic2wtLWpvYmwwcnZOdkE0aVpCRzhxbGFoNVBDSm8zT0t3OVBLcGQzZmg3WkFLd0MxZmVjUDduS3FwWTQ3RmJ4OV9aYmNhaTUxSXpkeVFLSlQ4N0pB?oc=5",
@@ -167,6 +249,13 @@
         "summary": "How Amanda Askell is teaching Claude to make ethical decisions Fast Company"
       },
       {
+        "title": "Swiss AI startup Prem is raising $100 million as Anthropic's export ban makes on-premise infrastructure look essential - Startup Fortune",
+        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQaTJXOXV2cWdpeVZkeHFJdi1XODZwandzRDVHNDBpOGQtbDctWnlTMTU4VFJKU3lWYmdqSG00ejNMbWxSOG16ME5uRkEycVdURkk2bFFZOFc4ckRQNlk2cFFvN1FwS2FMN05hMld5ejFoMy02MU05N1NEWjgtSXI2akthWi1fa1RVSk9laTd3UDBvY18teXlMQk5LTWQ1OXdIV3dlOEJ3Q0U2MEV1NlA4NjdRcXAzdVVQdFg2ZmphR09xUWlHZklyczRqWEtPckxCNENkb1ZPNFBGcGQ3?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T11:08:53.000Z",
+        "summary": "Swiss AI startup Prem is raising $100 million as Anthropic's export ban makes on-premise infrastructure look essential Startup Fortune"
+      },
+      {
         "title": "Anthropic Invests $150 Million To Launch 1,000 Claude Corps Fellowships - Forbes",
         "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNMmplakZsUTBhenBnb1ViN2xXQmZjdjdhN09PSFBrLW1oYXdra3JINjVVa2FjODc3ekRraEw4VndFNmI0TENKVzloaFhROUVCYVNWam1MWmJ5dm8zeEs5WkF2WFl4VmVwUkx5RkZrYzdEcUp2VU42ZTQ1Yi1RVXd6OTJwbGEwalFkNnV0NWpHdzZaUFlINjNnb3pfQ2NkTEdyOUhuZ0dQb3hLZWd0aGZVU09sR2dPSXR1aGRKS0ZYZWJhVEY3?oc=5",
         "source": "Google News",
@@ -177,7 +266,7 @@
         "title": "Lyra Cloud Services Announces Strategic Partnership with Anthropic to Accelerate Enterprise AI Adoption on AWS - Business Wire",
         "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNRTFDV0ttc2dmbEdUWTZ6a2p1ODRXdXhncEhNVGpKdEkwbk9IbGZSUmJIcU1SbXRJSDVGZG9IQTVlSkpnWm55b3M0R2hMcC1ldmhmb0tsLXpvOEwtMVNEWnc4anVVY3FEbGVyU0FfNWZyQnVfSEdsSW1vTUdrczVRRGRLdUoxVS04RVp3TGlvWl9VTHhtQldxS205TnZwblY0OE9VbzJobjZBUTJ0ZzREQkxiMXp6Zkw5UVl0WU9XeFRBN3o0Rlo3MjhMS0NuYmFNc2taZWZkN2NyVjNlaFpfQTZJc01NNEl3aEZlTkhZVnZfeldWYmJjT1JyQQ?oc=5",
         "source": "Google News",
-        "published": "2026-06-18T10:01:05.000Z",
+        "published": "2026-06-18T10:00:00.000Z",
         "summary": "Lyra Cloud Services Announces Strategic Partnership with Anthropic to Accelerate Enterprise AI Adoption on AWS Business Wire"
       },
       {
@@ -195,11 +284,18 @@
         "summary": "Anthropic changes pricing structure - again Computing UK"
       },
       {
-        "title": "JPMorgan Blocks Anthropic’s Claude for Staff in Hong Kong: Report - Analytics India Magazine",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPb010S3pwWUZRa0RFTW9NSmNKVUhSbS1DaDZ3ZzV0QnFUQnFuUlhvRDlkd29YRzhVUjBQdGM3cURWN2FBaVl5R3E5Z1hyeFhWTVFWSm4tNy1ScmUzZXdpVTNLV3gydy1DVkJsQW11UmszeU5YaHNYYjhkUUYzckRrQnhuVlc1OXhBdDNFLTVSd1NKU1pOeVBfQ2M3dG1jVGlsQ3pR?oc=5",
+        "title": "Anthropic's CEO confirms he can be fired as CEO through the company's own authority - TweakTown",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOdHJUOUJPV0ZSUldkcW1XNlU2YUI5OWJIU0hoTHlFLVlMbW51X0xmYlg3ZmtIUXJUblFhM3BtUjlvU2dnaWV5MXE3U1VtZXdJWTdDc2FMTm1EaWlrVlFnczZvQnFyRldTOWliSXhEY25zWEZIcHJlUExWLXVSemhiald1Uks5VlR2aUxnMWYweWlkNTJUNVUzcGZmOWFzRUxvbWZ6aTJRNGFOV1JtS1RpQTc3VUZpRm9ubzdDVkNjZGRGTHp1a0Y2ZVRR?oc=5",
         "source": "Google News",
         "published": "2026-06-18T09:33:06.000Z",
-        "summary": "JPMorgan Blocks Anthropic’s Claude for Staff in Hong Kong: Report Analytics India Magazine"
+        "summary": "Anthropic's CEO confirms he can be fired as CEO through the company's own authority TweakTown"
+      },
+      {
+        "title": "Anthropic's Claude down: Chatbot users report major outage - Latest news from Azerbaijan",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZFdDRXRLMFRKazRaZzFWTXliWjNCWnE3RERjQ2cwV2VScnc2akhMM1NNM01uOE94R196QW5KWVp1aHlRY2h6cnBoX0tyWFhnTHVKMWw3OU84dTN5SDBYTG9WR005VHZQd20zMUlGNnR4cUl2WXFNdXU0ZU1hNmZrdHBiWjc?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T08:45:23.000Z",
+        "summary": "Anthropic's Claude down: Chatbot users report major outage Latest news from Azerbaijan"
       },
       {
         "title": "Anthropic restores Claude access after AI chatbot platform experiences brief outage - The Indian Express",
@@ -209,11 +305,11 @@
         "summary": "Anthropic restores Claude access after AI chatbot platform experiences brief outage The Indian Express"
       },
       {
-        "title": "Korea emerges as global AI battleground as Anthropic launches Seoul office - KED Global",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9lNDktNEF1ZzRMb0NOMFUzVTEybzNicHg5cFMwSHJncUwyMHFSRkp4UE4zaXRyYUJpdU9feXIxdXNNWHdvMThJYXZELU5hOHRzNV9jRlpTZmdpdnlRV1hlbnhBV3lBUXIxNGNHQTl5N0tobU14TDVvaDh6aUhUVjg?oc=5",
+        "title": "Anthropic Faces More Scrutiny Ahead Of IPO: JPMorgan Reportedly Follows Goldman In Cutting Claude Access For Hong Kong Staff - Stocktwits",
+        "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxNZ05DaERyVWR6TGxTUF9qWGVTT25tdEloVzRzRHVOMkN3cDdzVjBSeTE1a1NhQkV0RXpGejBSWHQ5OGZKS1hpM0Fjd0xIMGkteWRYR0FJYVN4NWdTazRlT25wSjdfdjZLUEdrMU1ERHRjNVEtX1JaSUh6TUFfaEg2UmZwUXROTlhRQzdVV0JyRUdNNnhZM3hQVzlUWFlqRVNLYXh5Q19qUFRXSWhwZ24tcXZWQVhjd0w2S3gydHRZZFAtVktVNXNQQ3llTlFpa1Vudk03MTlyX2I4ajhQVjBxZ2RYcUE3N1h4ZDg0VGtDSEZJTmV2QnEzb0pmQU5HblBFVnVMMXh3SWlsbk9wX2V5MkQyWUQ0ZVk?oc=5",
         "source": "Google News",
-        "published": "2026-06-18T08:23:00.000Z",
-        "summary": "Korea emerges as global AI battleground as Anthropic launches Seoul office KED Global"
+        "published": "2026-06-18T08:41:32.000Z",
+        "summary": "Anthropic Faces More Scrutiny Ahead Of IPO: JPMorgan Reportedly Follows Goldman In Cutting Claude Access For Hong Kong Staff Stocktwits"
       },
       {
         "title": "'Working on a fix': What Anthropic said about Claude AI outage | World News - Hindustan Times",
@@ -235,91 +331,6 @@
         "source": "Google News",
         "published": "2026-06-18T07:52:30.000Z",
         "summary": "US order forces Anthropic to disable two Claude models BetaNews"
-      },
-      {
-        "title": "Anthropic Hits Pause on Claude Agent SDK Billing Change, For Now - DevOps.com",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNOWlGX0RCS2hyVlN2U1llUl9JR1NYQjhzMVhZZmRrSlFNa1dQTGFxRzFVN1lmWHBPUVBwTmpqNGJfTkdWQlh0eGw4VlgtdGZ6VTdrdVFIWW1xc0ROUWwzekxNSG5WNWtabkQwUmdjOFNhUGIxamotcUNveE5FRzB3RmV0dnhfellMNHMw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T07:39:01.000Z",
-        "summary": "Anthropic Hits Pause on Claude Agent SDK Billing Change, For Now DevOps.com"
-      },
-      {
-        "title": "Anthropic Pauses Claude Agent SDK Billing Overhaul - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOX1o0VWJoMzVlQ3dlYzc3SnpSc0RtUmZjNkp6M2QwdXhFQm5fcVQzZXFhZzFMRlVQZTc5Ty1jSkNvVnlwVXlxZDFRNlhiZnNuY2hSOVc3MnMyRUtvbE41QlhCTVBQNnJ6Q1M5UUdFbzFvclh4NXhyYUV1QjgzRzNBVXg1eXg2eHZrODd6Q3NJZWtrRlRkcGkw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T07:39:01.000Z",
-        "summary": "Anthropic Pauses Claude Agent SDK Billing Overhaul Let's Data Science"
-      },
-      {
-        "title": "Professionals say filing ITR with Claude feels ‘like a CA sitting next to me'. See prompt - Moneycontrol.com",
-        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNcURkZW80U0hSNWUxYUVOUWhWMWZSdjJxTENRTFpUazFZY0Z3RE40RzZpamVGTEFhOS1acDlxaTY2N08yanRhRU1ZLUZkS05LeFZGYUc4TGRrUGdJd3NmR1NmczQyQ245YWFuSGVzU0puMmFJT3l2c01kclJGWVhzOEE1ZmtYd2I5RE1hT2l3N1o2RS1CdFdDYW9jcmF4ZTdINnFiUmgxc3VwWEgxVFFSNTB3WkNCNjBraGlGWFN1MTkxemQ3NzhaNjRjVlNEa1B4UmJZanBfOE_SAd4BQVVfeXFMUFpHekRBa3AyeFBlUDVaUVhfTjVWQjluRHpXZTRUa183VVRIakZTaHlpOFBTZ0xUcDJmRXRzMFU0Y1ZNd0ctRTJSc2xQQjI2WmZnek5HaVpuYUdGTUtoUk94dm1LS21JMGQtTjE5eTVQcHMwTFNTLXNlM2NLbnEyVEliVU9sbTBLX25PVjVJeWZPMU5nQVFuVDBuSkFPbGZKTXFIQ3JkRUFmd01OZXJqdXNWb1dvTVNINzlBVFlBUjZpMGc1UTFBQWpqOHRiVFphV1FJZ01hWnFabF95THRB?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T07:29:57.000Z",
-        "summary": "Professionals say filing ITR with Claude feels ‘like a CA sitting next to me'. See prompt Moneycontrol.com"
-      },
-      {
-        "title": "When a major Indian IT firm commits to certifying 10,000 employees on a single AI model in 18 months, what does that actually signal about where enterprise AI is heading? Wipro has launched a Claude-powered Centre of Excellence in partnership with Anthr - LinkedIn",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQN1FLVWw4Q0xxWWJGOWxkeDVBV2xncEFlOU1mQV9Jd3V6OGxlSEJMdWpfa1k1WGdrdmt0Zjk5b1NVcmlHMGFuZ3NnY215OWJra1YwdWpaWWc0OVROUW5OUlVoMDBJZDdlZmlmbmdIcnM0Y2QxSFVtcTlFU3FGMmVQRWlEVmI5dWRuTF9fNUh0VFlBb1F0Wngta0Fvb0w0RXVvWExYN2RZYTN3MmNtVUdaV29R?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T07:00:07.000Z",
-        "summary": "When a major Indian IT firm commits to certifying 10,000 employees on a single AI model in 18 months, what does that actually signal about where enterprise AI is heading? Wipro has launched a…"
-      },
-      {
-        "title": "Anthropic Ban Forces Investor Rethink of Political Risk",
-        "url": "https://www.bloomberg.com/news/articles/2026-06-18/anthropic-ban-forces-investors-to-reckon-with-political-risk",
-        "source": "Bloomberg",
-        "published": "2026-06-18T06:10:10.000Z",
-        "summary": "Investors in the ever-hotter AI stock rally must suddenly consider a risk with the potential to be even more damaging than high valuations and big spending: Politics getting in the way."
-      },
-      {
-        "title": "Anthropic Eyes South Korea Growth Ahead Of IPO With Seoul Office, New Partnerships - Benzinga",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNR2pOTk5iZE5lMXhXeTlFeVI3MTdJalVRWENidU1vdzh0b055dDF3VWpnSTlRWTJHanRXNW5ZUlZHcVM0RE9aQ2dYdm9YYzBXdmxlU2ZCeW4zdUlTV1hqQTZPcDdYUncyd0dSMnE4eXlWcnQ0bEU3NnJnZmpOTnhCWUF1T0dvVTM4WkR5V2Q1M09zbjRKSnN0aFl3aldiVU9Sc3dtRXYzbGVZeGhjRGg0RDZ3dWQxYmxfY3A3bXZNYzFySDJ3a0d1amxUR3VuQVVKM1ZR?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T05:59:41.000Z",
-        "summary": "Anthropic Eyes South Korea Growth Ahead Of IPO With Seoul Office, New Partnerships Benzinga"
-      },
-      {
-        "title": "JPMorgan Pulled Anthropic’s Claude From Hong Kong Staff - Finimize",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPN2NMQlJWSU9oU0NfV3gyd1N1WFVXaGRKandIOVAxYkZlWHRoMEFlZGxYYWJyUzlBOEpocEZ1T253M0ZVSllyX0lOMEpDLXI1V21Tb2xGbVZ6Zjc4ZnJMUHREX192VVAzY3RlNjN1T2t5N2RHamQwWFppMDdpVEhucTBTaTIyQzZuWW44?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T05:19:08.000Z",
-        "summary": "JPMorgan Pulled Anthropic’s Claude From Hong Kong Staff Finimize"
-      },
-      {
-        "title": "JPMorgan Chase cuts off Anthropic access for its Hong Kong staff - Financial Times",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQYm9uWTJqZWE3R1FTQmprVlJSdWYzU21KSmVRd25RSVkwSlBNNmRYT08yZUNsRzdTVVFzYTFCX0VQVUN5dDNxa1hnYnE2Z1NBZjNTYy1VdnhaeERSazV4VzBpNlRvaTF6SGZQdHoxMWVpeXJBcU5CMHVMX0p2RTZqaFEtcWQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T04:01:31.000Z",
-        "summary": "JPMorgan Chase cuts off Anthropic access for its Hong Kong staff Financial Times"
-      },
-      {
-        "title": "Anthropic Fable dispute suggests ‘export’ no longer means what it used to - cio.com",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMzkzLVBYb0RsczBLQ3NIZ3p2bm15UmJBMW9MUlFVa24ydklhWEgyTkZ4azlaUDZKUG9HQ3hNRFd5UlZPLUJqV2ozLWUzZGVudHlKQW5QUXoybDY0ajMyeVR6WGx6SXVQYWJmWkNsbXFjMXVsbm1DeVVFNnFKQzNfV1JHWFdGelZKTnE1bVFqYURlN010UTRWY1dCb1RubnJ0Y2ZkTXY2bUJibTMwWThxNkNB?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T00:51:57.000Z",
-        "summary": "Anthropic Fable dispute suggests ‘export’ no longer means what it used to cio.com"
-      },
-      {
-        "title": "DXC strikes global Claude AI alliance with Anthropic - SecurityBrief Asia",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOaUducGZXdEFGZXhwR0NfRjlaa21EYXh3Y2hJZ2NVcFpxMnZGNlhHS1VqQm94NkRrU3NYTTJvd0VWci1FQTlORHZWVEZTa1R1aTFtSW1kVVc2MVlrOEs0RE1UQ0xaTUZzY2VKLXgzMkdSaUZnMDZJLThmeFp1NWdZU28xTFR5eGdiYjdGUGxn?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T00:15:00.000Z",
-        "summary": "DXC strikes global Claude AI alliance with Anthropic SecurityBrief Asia"
-      },
-      {
-        "title": "A robot is sprinting towards you. Do you want it running on Claude or Grok?",
-        "url": "https://openrouter.ai/blog/insights/royale-last-agent-standing/",
-        "source": "HN · 256↑",
-        "hn_id": "48576824",
-        "published": "2026-06-17T21:00:07.000Z",
-        "summary": ""
-      },
-      {
-        "title": "NewEdge Advisors Gives Field Teams Direct AI Access to Claude - Wealth Management",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQWEdkUjk3M2ZxU3B2Ri1RRHRwQzlfM0xPQ0FzSGJEeTMwZHBPSnVNRWFKckNnbTM2dU5aRWVNaWVrM1hid2FMRkxUVTNlSElMaG1uaXFQR21VV3Q4bHYzY1NNNDhyUkNZUEdsU2VISVFyN2tudHQ3eVBFTGJPdExFTXZMdmVQeTY5a2xCakxQd2NYR0dkNzZERTBoWHFYME1jU1A3OVdHd0s4bXNh?oc=5",
-        "source": "Google News",
-        "published": "2026-06-17T20:38:14.000Z",
-        "summary": "NewEdge Advisors Gives Field Teams Direct AI Access to Claude Wealth Management"
       },
       {
         "title": "I Turned Claude Into a Folder That Runs My Whole Business",
@@ -625,6 +636,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Codex vs Claude Code: What I Found After 30 Days",
+        "url": "https://www.youtube.com/watch?v=-ZrzDuodAh8",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "-ZrzDuodAh8",
+        "thumbnail": "https://i.ytimg.com/vi/-ZrzDuodAh8/hqdefault.jpg",
+        "published": "2026-06-18T13:00:25.000Z",
+        "summary": ""
+      },
       {
         "title": "I Turned Claude Into a Folder That Runs My Whole Business",
         "url": "https://www.youtube.com/watch?v=W92-Jhn5yck",
@@ -942,17 +964,6 @@
         "video_id": "K65vd9EYbDU",
         "thumbnail": "https://i.ytimg.com/vi/K65vd9EYbDU/hqdefault.jpg",
         "published": "2026-05-20T13:30:22.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Why I Use Claude Code to Build Every Portfolio Now",
-        "url": "https://www.youtube.com/watch?v=DwvZ9f0RYzA",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "DwvZ9f0RYzA",
-        "thumbnail": "https://i.ytimg.com/vi/DwvZ9f0RYzA/hqdefault.jpg",
-        "published": "2026-05-19T14:00:24.000Z",
         "summary": ""
       }
     ],
@@ -1262,18 +1273,6 @@
         "video_id": "52ltebR4Jnw",
         "thumbnail": "https://i.ytimg.com/vi/52ltebR4Jnw/hqdefault.jpg",
         "published": "2026-05-23T22:29:01.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
-      },
-      {
-        "title": "Why I Use Claude Code to Build Every Portfolio Now",
-        "url": "https://www.youtube.com/watch?v=DwvZ9f0RYzA",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "DwvZ9f0RYzA",
-        "thumbnail": "https://i.ytimg.com/vi/DwvZ9f0RYzA/hqdefault.jpg",
-        "published": "2026-05-19T14:00:24.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1744,6 +1743,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Codex vs Claude Code: What I Found After 30 Days",
+        "url": "https://www.youtube.com/watch?v=-ZrzDuodAh8",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-06-18T13:00:25.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.181",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.181",
         "source": "Claude Code",
@@ -2126,13 +2132,6 @@
         "url": "https://www.youtube.com/watch?v=K65vd9EYbDU",
         "source": "YouTube · Nick Saraev",
         "published": "2026-05-20T13:30:22.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Why I Use Claude Code to Build Every Portfolio Now",
-        "url": "https://www.youtube.com/watch?v=DwvZ9f0RYzA",
-        "source": "YouTube · Leon van Zyl",
-        "published": "2026-05-19T14:00:24.000Z",
         "summary": ""
       },
       {
