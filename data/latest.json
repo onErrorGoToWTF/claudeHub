@@ -1,13 +1,20 @@
 {
-  "generated_at": "2026-06-18T16:48:51.986Z",
+  "generated_at": "2026-06-18T20:05:01.014Z",
   "version": 1,
   "sections": {
     "updates": [
       {
+        "title": "Evaluating Claude for Bioinformatics with Biomysterybench",
+        "url": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
+        "source": "Anthropic Research",
+        "published": "2026-06-18T18:56:26.000Z",
+        "summary": ""
+      },
+      {
         "title": "Project Fetch Phase Two",
         "url": "https://www.anthropic.com/research/project-fetch-phase-two",
         "source": "Anthropic Research",
-        "published": "2026-06-18T16:17:35.000Z",
+        "published": "2026-06-18T18:44:44.000Z",
         "summary": ""
       },
       {
@@ -135,16 +142,58 @@
         "source": "Anthropic Research",
         "published": "2026-06-17T16:47:23.000Z",
         "summary": ""
-      },
-      {
-        "title": "Building Ai Cyber Defenders",
-        "url": "https://www.anthropic.com/research/building-ai-cyber-defenders",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T16:46:57.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic brings Artifacts to Claude Code, letting teams share live pages from coding sessions - the-decoder.com",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQVFRLdkdMYlcwakE2NmxLbGNSUmhUUVpvSXNuZndYUmNKbUFqVWdaOGlZWkswWWRhWDQzRjJ2OU9OendOZHdkMVVlZ0hta0xZaFFMZGR3a0dUc3RWMkpOVWdvbmktd09tS1FpWW1Yc1ZCaWpNWWF1aFhOV0RNcDZabE53SkdZOFdIYUk2M1JwdXFGRHhoNDZvbGp6UGh5cUs1R3RpMVBzaUdrTHJvbXNpOVg4cjNoc3NwdHc?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T19:08:36.000Z",
+        "summary": "Anthropic brings Artifacts to Claude Code, letting teams share live pages from coding sessions the-decoder.com"
+      },
+      {
+        "title": "JPMorganChase blocks Hong Kong staff from using Claude - American Banker",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVUJhS0hlODdwR3FfNVgzQ09xSzFHV014aGkxQ3pjWkhjV1pHZUFnXy1pbFF0U3dyV2lYZUV2X3VYRzFiUWpnUnZEZGFVWmZVS3V0d2ZfMXFnS05SeHFMY21tdmlYdVNEZERhZjdVZm82ZDJhUk1DZ09SNDFwbE1fU3F4aFpPX1NYb3FNb2plMVZqaGVX?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T18:00:00.000Z",
+        "summary": "JPMorganChase blocks Hong Kong staff from using Claude American Banker"
+      },
+      {
+        "title": "Anthropic Adds Brand Controls, Code Sync to Claude Design - TechRepublic",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQcnFvbEpEUUhGX1ZVQWNHd1pQWkxYTU9yVjRPc2xOTzlXdXNhZmtrSC1aTnMzSlJkanlaemxMT1oyeE1jTXlmMS1XUURkNXhMcFoybHhnYlFNRVNCMWZYLXJTUm41SWU0YnVycklpdkZFZERJaWNfX2lNRkpGM0E1T253U1dGVGc3T1NfSFdzSjZNemU5Mkh3?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T17:45:48.000Z",
+        "summary": "Anthropic Adds Brand Controls, Code Sync to Claude Design TechRepublic"
+      },
+      {
+        "title": "JPMorgan Pulls Anthropic Claude Access in Hong Kong - GovInfoSecurity",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZ2N0MGZzN1hqR0t4NFM3UXZVRWtpUXl1X1p4TVZBYnI1bGU4TnZWSG1faDRRYXZTVnFqX1J3S2RVd2xiWi1YNzk5TkQxZHpPeGNxUGF4aWZHLWRyTnJrVVZWRm5OY0hybU4wcU13LW5UQUo1M0l0Q1hvbmVDMW0zcmpWanVnYzIzNkNJR3loaFFsa3B1Z0E?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T17:04:36.000Z",
+        "summary": "JPMorgan Pulls Anthropic Claude Access in Hong Kong GovInfoSecurity"
+      },
+      {
+        "title": "Bernie Sanders unveils $7 trillion plan to give Americans control of AI industry",
+        "url": "https://arstechnica.com/tech-policy/2026/06/bernie-sanders-unveils-7-trillion-plan-to-give-americans-control-of-ai-industry/",
+        "source": "Ars Technica",
+        "published": "2026-06-18T17:02:49.000Z",
+        "summary": "Bernie Sanders has unveiled an aggressive plan to transfer trillions from leading AI firms to the public, and, to the likely horror of AI firms, it goes even further than expected to give Americans…"
+      },
+      {
+        "title": "How Powerful is Claude Fable (Mythos) 5 for Coding? - Towards Data Science",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQemtmODFpbUd5V0g4OEVaaTItbWxNb3p4VGpFTElNeGVfcG1QV0xNU0lCT0RRd0RUNTBqc1RaZnRoMGdudERzMnBicy1qWE43UEFtaVRXdjRPMHlPdTktbk94cjVKY0ppNUxrMnJ1UnhTMm5Da2ZQVFR3aElENFUwRHU1amxnVmc?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T16:30:00.000Z",
+        "summary": "How Powerful is Claude Fable (Mythos) 5 for Coding? Towards Data Science"
+      },
+      {
+        "title": "Project Fetch: Phase two - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5TLWJxbE9YblE2Wk13TmJ2N0ZxekNHM2R1M01JUnQ0emxWWTBHczk0MzdCajhRSWd2N3l5NEFtQ2pyd1RPM29ncFdfWEdWbWFaOFk4cW13dTVkQWMzY2xYOXl6d3dJaUdlV0E?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T16:23:22.000Z",
+        "summary": "Project Fetch: Phase two Anthropic"
+      },
       {
         "title": "Anthropic Sued for Allegedly Ripping Off Its Highest-Paying Customers - Futurism",
         "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQVVFqeDE1a251Q1I0cm5ZX25JOXNENmtaRFVwTHQycHkxcG9rVXVlM2x0UWpZWDZjenc1aU4zME00MjhVTGY1a0NOWlp1R2duX3RuMWt1NnJVXzE4X3Z5N3pUNk9oZUYxVjlrWkw2c3pOcDN1MkdwbXpUMXlybi0xX2RsRTBKYk9J?oc=5",
@@ -167,25 +216,18 @@
         "summary": "Can't Buy Anthropic, What Will the Market Buy? AI Stocks Worth Buying Before the Anthropic IPO TradingKey"
       },
       {
+        "title": "US suspension of Anthropic models prompts AI sovereignty calls - Computer Weekly",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPZmc4U0prZmZnV3AweVQ2U2FxLTBSMFV0VDZiNUNGRHBaVVFNYzk0VFR5a1NnTkdkcU9INVh2TUdYR3VDTkRzMkRCdkh0RWxLd2pIQzN1VkZCanY4NG5TbS01WHVXVHNsUVBqb1lMMzlqWHlOWnhzRk92UG5QU0IxYWZRWGRoQWx5QWtLdnRCVzR5RmRKQUlJSVU4TEpDRFh1dVM2d0xuNWNfc19H?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T15:27:39.000Z",
+        "summary": "US suspension of Anthropic models prompts AI sovereignty calls Computer Weekly"
+      },
+      {
         "title": "JPMorgan blocks Claude for Hong Kong employees - FT - Finextra Research",
         "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNMWhlNGVQX2Fvb0FyMTJFQWtXb0pYVGFGeXFtaWxjd2g1S2tPdkpnRm4xRGxZRXYtS2JxVlhoNlh2bHR5TFN1d2hEU0I3XzlxUEdtak5Edm9Ub3FxZlNRdndzWGExMFQzZGtxTE51T2pzRlExSGg3REdlSFlGMm5abzl0Zlc0WVVWTXlLOFlFMnpUeEVHU1l2QURn?oc=5",
         "source": "Google News",
         "published": "2026-06-18T14:32:46.000Z",
         "summary": "JPMorgan blocks Claude for Hong Kong employees - FT Finextra Research"
-      },
-      {
-        "title": "Anthropic Adds Brand Controls, Code Sync to Claude Design - TechRepublic",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQcnFvbEpEUUhGX1ZVQWNHd1pQWkxYTU9yVjRPc2xOTzlXdXNhZmtrSC1aTnMzSlJkanlaemxMT1oyeE1jTXlmMS1XUURkNXhMcFoybHhnYlFNRVNCMWZYLXJTUm41SWU0YnVycklpdkZFZERJaWNfX2lNRkpGM0E1T253U1dGVGc3T1NfSFdzSjZNemU5Mkh3?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T14:27:45.000Z",
-        "summary": "Anthropic Adds Brand Controls, Code Sync to Claude Design TechRepublic"
-      },
-      {
-        "title": "Who decides when AI is too dangerous?",
-        "url": "https://www.theverge.com/podcast/951542/anthropic-claude-fable-5-mythos-ban-pentagon-ai-regulation-trump",
-        "source": "The Verge",
-        "published": "2026-06-18T14:00:00.000Z",
-        "summary": "On today’s episode of Decoder, my guest is Hayden Field, senior AI reporter for The Verge. Often when Hayden comes on the show, it’s because something has gone wrong in the world of AI. Last…"
       },
       {
         "title": "Anthropic Lays Out Vision for How to Bolster AI Models’ Safety",
@@ -200,6 +242,13 @@
         "source": "Google News",
         "published": "2026-06-18T13:41:33.000Z",
         "summary": "Anthropic Lays Out Vision for How to Bolster AI Models’ Safety Bloomberg.com"
+      },
+      {
+        "title": "Fable 5 ban: 4 open models responded before Anthropic could restore access - The New Stack",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1RZUZFNWZNamRfZjNFWHJhdUQwWExZLXpmSHlvcmZoMnZnNWJMZ0FrcU1oWmpuMFA4RkVPbUJuWlRiQTF5U05JR0ZuUTQtNHV6ME1mc1lfMnVGdw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-18T13:37:28.000Z",
+        "summary": "Fable 5 ban: 4 open models responded before Anthropic could restore access The New Stack"
       },
       {
         "title": "Korea emerges as global AI battleground as Anthropic launches Seoul office - KED Global",
@@ -277,60 +326,11 @@
         "summary": "JPMorgan restricts Anthropic Claude access for employees in Hong Kong crypto.news"
       },
       {
-        "title": "Anthropic changes pricing structure - again - Computing UK",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWWtkbGMtTWZnUFZUd1A5SHlfbW1vVmx5MHBJcU13NGVwZXZJSXNZTktOdTE0dTZoZktjQWFJcGNUMGlWTUU1RzlJTFRjdTJwWG1BLV90QWNBaU9jbHBSMXVwdDVPV2tkaDVFQXR4QWhwMUFrQXJ2eEZhY203ZlQ2QTR5VEdmUk1aM0E?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T09:40:19.000Z",
-        "summary": "Anthropic changes pricing structure - again Computing UK"
-      },
-      {
         "title": "Anthropic's CEO confirms he can be fired as CEO through the company's own authority - TweakTown",
         "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOdHJUOUJPV0ZSUldkcW1XNlU2YUI5OWJIU0hoTHlFLVlMbW51X0xmYlg3ZmtIUXJUblFhM3BtUjlvU2dnaWV5MXE3U1VtZXdJWTdDc2FMTm1EaWlrVlFnczZvQnFyRldTOWliSXhEY25zWEZIcHJlUExWLXVSemhiald1Uks5VlR2aUxnMWYweWlkNTJUNVUzcGZmOWFzRUxvbWZ6aTJRNGFOV1JtS1RpQTc3VUZpRm9ubzdDVkNjZGRGTHp1a0Y2ZVRR?oc=5",
         "source": "Google News",
         "published": "2026-06-18T09:33:06.000Z",
         "summary": "Anthropic's CEO confirms he can be fired as CEO through the company's own authority TweakTown"
-      },
-      {
-        "title": "Anthropic's Claude down: Chatbot users report major outage - Latest news from Azerbaijan",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZFdDRXRLMFRKazRaZzFWTXliWjNCWnE3RERjQ2cwV2VScnc2akhMM1NNM01uOE94R196QW5KWVp1aHlRY2h6cnBoX0tyWFhnTHVKMWw3OU84dTN5SDBYTG9WR005VHZQd20zMUlGNnR4cUl2WXFNdXU0ZU1hNmZrdHBiWjc?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T08:45:23.000Z",
-        "summary": "Anthropic's Claude down: Chatbot users report major outage Latest news from Azerbaijan"
-      },
-      {
-        "title": "Anthropic restores Claude access after AI chatbot platform experiences brief outage - The Indian Express",
-        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPS1BTdzg2M055VC1nWGdYXzNxRjFXeURCcEhzLWdoOGItUEsydFJkV2V2NkszVGRDTHNBZks3b1ZGR3kxaDlPVDk5aks0NFRJbHFwbGg0ekZnT2dfbE1aT0stbE5WZGtSSi1BWkVTNlppSnM2VU4xWDlXeXcyWl84dFg4QTJESTJWXzhyeW1zeWg4Y01FTk9OR0hDSTlZLU1wVEtVeXFXQnk4MzlBRmpiRU1pbS1sWEVtQlUzd0xHT2dGbm9xUkk2Qi02ckZ2Z2NFT0RSUFZpQ1VVamhOeXFHRFJCN0hrRmJuNXVPN3M5Y0nSAfcBQVVfeXFMTUo4YWVuSVRaTWNmQ0RFcmxhQmJtb1E0UU9jSlNzOU1KbGtGQmMzX0ZkV2VSTUVITHBPTjVNUlRCb2N1X1NDQ3lWNEtjVkZNWlp1NFp1VzZwdFpJc1FxWFhONHFGRWdBM0h5WVhRam5nV2FFaF90cGxJNlFsUDd5ZVFFR2xETDNzUVJfYkhrRWxGMFlxcW1PeGFselU4SktfdzRVNXJNelJKZ19uUmhVd3E1YjBGU0pTVFREaER4SnU5Ql9XcWdjV2VRSWxROFJjR0xxblBCQTd6VFhwbGR3RHdjLW9BRmJtNkotTWhJODVRaHdoMk9HNA?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T08:44:14.000Z",
-        "summary": "Anthropic restores Claude access after AI chatbot platform experiences brief outage The Indian Express"
-      },
-      {
-        "title": "Anthropic Faces More Scrutiny Ahead Of IPO: JPMorgan Reportedly Follows Goldman In Cutting Claude Access For Hong Kong Staff - Stocktwits",
-        "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxNZ05DaERyVWR6TGxTUF9qWGVTT25tdEloVzRzRHVOMkN3cDdzVjBSeTE1a1NhQkV0RXpGejBSWHQ5OGZKS1hpM0Fjd0xIMGkteWRYR0FJYVN4NWdTazRlT25wSjdfdjZLUEdrMU1ERHRjNVEtX1JaSUh6TUFfaEg2UmZwUXROTlhRQzdVV0JyRUdNNnhZM3hQVzlUWFlqRVNLYXh5Q19qUFRXSWhwZ24tcXZWQVhjd0w2S3gydHRZZFAtVktVNXNQQ3llTlFpa1Vudk03MTlyX2I4ajhQVjBxZ2RYcUE3N1h4ZDg0VGtDSEZJTmV2QnEzb0pmQU5HblBFVnVMMXh3SWlsbk9wX2V5MkQyWUQ0ZVk?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T08:41:32.000Z",
-        "summary": "Anthropic Faces More Scrutiny Ahead Of IPO: JPMorgan Reportedly Follows Goldman In Cutting Claude Access For Hong Kong Staff Stocktwits"
-      },
-      {
-        "title": "'Working on a fix': What Anthropic said about Claude AI outage | World News - Hindustan Times",
-        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQZVN4eUtyc043SXpTSnlELTJpd3JDMHZ6blljU1ZkWUFUNkpTVGVod1d4RTRTLVFWZm5LdDJrNDhPTzBUdTRwLUczWmpIUWpETUFzNlJneUE1TEE0R183VWZwQWs3NG5namx4d1NfcmRtRDhWY0lkdUNZbXRYSmlpUUNXMldxRERhUGxsd0JvSjBWdGdXTmxtRno0ZFNxdzRIRzl1VmpqNl9ibTcySEJYQ0ZYS2F1eThZZGFKbHp2Y1JpWmRxa21fUkYzMHktbk0tZXJaUklzd9IB3AFBVV95cUxPcW5hQmdhQ2hwb2ctWHMtRU40QUFQV1MxNUtrRWxNUDJxNWNReEtKZGhzVXVXeThyTmxsTjdHX20ycHlQcVo1T080YWd5bVZ6U2xWbkRBMktvYmdNWXM4UDRqdDI5bjA3UFdNRF9XaXNMTlg0dHp3enhWQVNBWXg3bm9uM2RWaDZOa2pSVjJfTVJGVXJOZ0p5UzhiUFJOclJPLVAzZS1xNVc4VE1UTGZoNFgxbzVWU2NDeGVBQTRHLWJfZDhsSk1ZRUhmUHZoY2ZQV0wzSkNpWm5Yek5Z?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T08:19:29.000Z",
-        "summary": "'Working on a fix': What Anthropic said about Claude AI outage | World News Hindustan Times"
-      },
-      {
-        "title": "Claude AI down: Over 2,000 users report problems with Anthropic's chatbot, app and website - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOSnlQNnFxSzRuQktCTDlJSUxrTUNmVHZNbjUtXzQ2UmIxQ3BETS1uV0FlUVgyQXFMZkVLMEhKT3V3SUJWUkV2R21yRlZVY3FkQ3ZIZDVUSFlla2NaMmZiYmo5QmJjVkdFMGluWTFTREY5ckhRcUZtQ1d5R05BUkFJVFpQNnR4bC13M21vTXhLcXk3U2hnMU5jSFdTX0lQMHd1X1hEVUh4ZXBVeE4tT2x2WHFsTTBaTnpGWDVOUW85V0NJaFJQN3JfQ2dUWdIB0AFBVV95cUxPRkRLTEI2Q0xQT1BKZFVXbDNLUUNnWEJYZTFiRGhFQzhFcmdSalNTY0FqQ0hIZUczT193SmpJRHB4Rloxc01hYkJLeElnTVZ1MWE5NzcxOHN5WEQ5ankxTS0yTGl4SVU2MV83Z0VGVWtzajVfeTI3ZDl4M0VXaTZ4Z2pWWGs2YkJ6NHZEaC1fMVZmUVV6MG9wUk01aWt1elRpZDB4aFBKdG9LTWpWTjdkdGtNWjlfdVdiNm1ZczJlTzF0UUlHMFlYaTZBdHlBOFRE?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T07:55:27.000Z",
-        "summary": "Claude AI down: Over 2,000 users report problems with Anthropic's chatbot, app and website Firstpost"
-      },
-      {
-        "title": "US order forces Anthropic to disable two Claude models - BetaNews",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9FR0hiWEY5NVIxXzFMX3ZEY0RzclY2cjZpZ2FBcmVKYm44NG4yaVFJQU5KcDl3d3h6bDNOMEhtVDZWLU92NDBsUm91eFVOX2hzdmNMTFl4cDA1a3g3RXB1VXdka2h0bjVDY2NSSGtqT2RNOWJQVVVIdg?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T07:52:30.000Z",
-        "summary": "US order forces Anthropic to disable two Claude models BetaNews"
       },
       {
         "title": "I Turned Claude Into a Folder That Runs My Whole Business",
