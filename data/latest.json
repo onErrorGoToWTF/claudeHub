@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T13:25:28.638Z",
+  "generated_at": "2026-06-19T16:26:12.478Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,34 @@
     ],
     "news": [
       {
+        "title": "Is the US government’s Anthropic ban accidentally helping the brand?",
+        "url": "https://techcrunch.com/video/is-the-us-governments-anthropic-ban-accidentally-helping-the-brand/",
+        "source": "TechCrunch",
+        "published": "2026-06-19T16:08:17.000Z",
+        "summary": "Just as last week was ending, the US government forced Anthropic to pull its two newest models, Fable 5 and Mythos 5, citing national security concerns after Amazon researchers allegedly found a way…"
+      },
+      {
+        "title": "The US banned Anthropic’s Fable 5 release, but the numbers don’t seem to care",
+        "url": "https://techcrunch.com/podcast/the-us-banned-anthropics-fable-5-release-but-the-numbers-dont-seem-to-care/",
+        "source": "TechCrunch",
+        "published": "2026-06-19T16:01:03.000Z",
+        "summary": "Just as last week was ending, the US government forced Anthropic to pull its two newest models, Fable 5 and Mythos 5, citing national security concerns after Amazon researchers allegedly found a way…"
+      },
+      {
+        "title": "Anthropic Opens Its Seoul Office Even as a US Export Ban Cuts Korean Access to Its Top Models - Tech Times",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQRVB6RjAzZGlrdk5yeVRuRzZsLWVaSFBBMHV4Rk40MjRLTmlUT0VQdVltRFc1c2RUckhUVWFWUmZFX1IyamFUcTA3MEtLdnktNHRHOXBvY0E0dm5LcVFSZHBWNTllb205ZDNzeWlwaGxpQ2lTN3ZwY1RuaFRMcjV5NTNwNVdmNjcyT0V4UU1NZ0Rkd1FrelVMV3JuRndlY3BmVG4yTU9VMzBHX1lxVDE1SU1xU3ZyXzFmU0FLb09RMnJoZ1B6SXFyU2VySXh0Z3pZMWtScFRtRQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-19T14:32:03.000Z",
+        "summary": "Anthropic Opens Its Seoul Office Even as a US Export Ban Cuts Korean Access to Its Top Models Tech Times"
+      },
+      {
+        "title": "Anthropic updates Claude Design with code sync, brand controls - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOR295UXQxMmJWWThDX1k0ZHhfSmd0ZmZoWEY4Y0lISWpOWnhNdUhHaFQ0cHVsb0E1LXJJdE9fOVJONm0zYjlFZzkxdjVYRU1PUkZBaU5jZmc2bGxxOFNBelFJVGtKTHl1UFNCdk5wNkdfVnlBWVMxalYydXZLNkJGNFRTcjFFaXlZS0I0SVpUSTh3RUIxaHRFWHdjVm9EaUdXV2NMOQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-19T13:35:00.000Z",
+        "summary": "Anthropic updates Claude Design with code sync, brand controls Let's Data Science"
+      },
+      {
         "title": "Lutnick’s Anthropic Crackdown Claims New Power Over AI Models",
         "url": "https://www.bloomberg.com/news/articles/2026-06-19/lutnick-s-anthropic-crackdown-claims-new-power-over-ai-models",
         "source": "Bloomberg",
@@ -160,6 +188,13 @@
         "summary": "Lutnick’s Anthropic Crackdown Claims New Power Over AI Models Bloomberg.com"
       },
       {
+        "title": "Anthropic's most advanced AI models could be restored shortly following dramatic emergency freeze - Android Authority",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPLUpDVGdaUXI5cWZucHZMWTBnWllFclNwMHFaUnBPWUFodDFHUTVvcXRvTHd4a2FQSWdrX2FpeFozdXg5NE1xTVhESEhoRWcwa3gtR1Nyd2pONHBidUZyRXZSU0J3blE1RU9zMUVaOEZ5VGRBVWxsTFdObDlNU0FaaEsyWXJLUmJ2RDJ1akZFM2s?oc=5",
+        "source": "Google News",
+        "published": "2026-06-19T11:56:40.000Z",
+        "summary": "Anthropic's most advanced AI models could be restored shortly following dramatic emergency freeze Android Authority"
+      },
+      {
         "title": "Anthropic Brings Live, Shareable Artifacts to Claude Code - DevOps.com",
         "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMUVScU9DRXdsdjZvTVJwdUZmcUV3a1RvNl84Y1FWa2tYSGN5amZ6cUk2aURzRXVEMHpYZTNVdnRNWm15U0VMc2dGLXJHRnU5LTN3NHRGTkxtMlFZSFU2c3o0Q2g3S0RQWUM0cDctVGJiWEozd2RQUnY0M1V2Qm1pZXV3?oc=5",
         "source": "Google News",
@@ -167,18 +202,25 @@
         "summary": "Anthropic Brings Live, Shareable Artifacts to Claude Code DevOps.com"
       },
       {
-        "title": "How Anthropic’s AI Went From Golden Child to Problem Child Over a Weekend - inc.com",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNQlBtRl9WZWE1dGZaNWFZQXhxQ0xweG42a05CdGVobmhXRkJtNTU3c2JRZC1TSmw0NkxObWpYX1dSc1V2RWpYcHA5NHREMm1PV1k5cmswMmlvZndQQ0Exc3pncW9CVHl4WUVjZmJrOGZSeXFveGZXVUwzeTZ6Xzd5ZThhLWRpUlZRMVRodmh4ZVBSd28tLVRTSjJJTlNtZk5pNG9IMWR4OXRiYUI3ZGRGdkxqSm0?oc=5",
+        "title": "'Stop prompting, start delegating': Anthropic exec to banks - American Banker",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOWFJUN2NkSktmOG1vQS1BZEVJTDhPeTJjUFphRmI0Q01FNkkxekgyZzVMT3FGdTItRGswY2dReEFRaXR2RnJxS2ZKUENxaEN4UlZ0a2pyWlZPbTRLTS0ybU1pZXMwWnMyWW1FR1pEWk5LZ2p2VDZoRDg4NUtfeG43LVBDa2dyYXJjalB5NVc1RE5rOFRWNUE?oc=5",
         "source": "Google News",
-        "published": "2026-06-19T10:16:25.000Z",
-        "summary": "How Anthropic’s AI Went From Golden Child to Problem Child Over a Weekend inc.com"
+        "published": "2026-06-19T10:30:00.000Z",
+        "summary": "'Stop prompting, start delegating': Anthropic exec to banks American Banker"
       },
       {
-        "title": "US export ban on Anthropic shakes AI industry - DW.com",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQY1pyYUZJRzVZeXJNeTBoZncxMVMwTWtIUnk5M21hRnExZVJ4MkNWM21TZHIybFV3Ui1LVDV3XzFaczFiT3M4MEtKeVl3Mi1CYmVPMUxReExHR1dlV2hDSWYwM2w4YTdDYXVsYWpTMHNTekpRdDZ0Tng0ZmZudUV0RXZQcjV1dmtTSXRv?oc=5",
+        "title": "US curbs Anthropic AI access, raising global concerns - DW",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQY1pyYUZJRzVZeXJNeTBoZncxMVMwTWtIUnk5M21hRnExZVJ4MkNWM21TZHIybFV3Ui1LVDV3XzFaczFiT3M4MEtKeVl3Mi1CYmVPMUxReExHR1dlV2hDSWYwM2w4YTdDYXVsYWpTMHNTekpRdDZ0Tng0ZmZudUV0RXZQcjV1dmtTSXRv0gGLAUFVX3lxTFA2dDUtVWVvdkFtTEFucVN2RU84dGItdVBTakRSd3dDTFBubWExNVh6T3hFVGpsbzJXMlFqZEhnMEZZcTM1SU91OVVOLVBDOTBYVHQ4a3pVeXpuWE05UVk5Z3QySDZUc2NEa1EzUU0tSFZIUGJHWUJEcjRHaDYyclVOR05rVEoxSVNDZ1U?oc=5",
         "source": "Google News",
-        "published": "2026-06-19T09:22:52.000Z",
-        "summary": "US export ban on Anthropic shakes AI industry DW.com"
+        "published": "2026-06-19T09:25:24.000Z",
+        "summary": "US curbs Anthropic AI access, raising global concerns DW"
+      },
+      {
+        "title": "US export ban on Anthropic’s AI models further strains alliances - Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPdEJtVTVVV3R2ZlhyNXlsTVE5cm1XSFV2RzJfRnIzVmZ6MzQ3a05LM2paWjRYNU5FN1JnRC1RNjQyb2F6QmFIN0lGZV9wbE13OTc4eTMwdndLRER3Uks0LW5zTXZFNFBQakh6UDJHM0o5OTN4bUFpV25JZkpDWnFaVkRINTNiaW45QUktNUFlT3BJNXlHNm1tWVl3MzEtLTFoanZsbUQyNNIBrAFBVV95cUxOZ2RUT0lRR25lZzBGZDZGUGxlcnV1NFNCVmZCNEJfaGdWemhQT2FUVHYxVy1uOVdIZDhGWExaZDE1UUZGS2cwdE1SZ2VzbzZLYXdDZGR4al81OEx1NTVrczRBU2JFdjMzX0xGcWtabEtfNzFZcThPZ2RUSDQ3Z25BeUdMMDRBdThvemRpeGE4SXBYdmRLZzZ0ZmNZWUNMb3ZVN2cyYXV1LUNESlVC?oc=5",
+        "source": "Google News",
+        "published": "2026-06-19T09:08:58.000Z",
+        "summary": "US export ban on Anthropic’s AI models further strains alliances Al Jazeera"
       },
       {
         "title": "Why right now might be the best opportunity to get hired at Silicon Valley's most coveted employers - Business Insider",
@@ -209,11 +251,25 @@
         "summary": "The Machine and the Schoolhouse: Anthropic and the War on Iran CounterPunch.org"
       },
       {
+        "title": "After Goldman Sachs, JPMorgan Chase Blocks Anthropic Access For Hong Kong Employees - NDTV",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQkJ4eXpZMElWVkJmeFFIMWNVakxKak1ZLWs2Y3Jwa3d5UW14aVQwVlYwRUIwU0hOeXYtR01NWWNvX3RYVVhKR29aaFdMVk5XeTFlbnBrcGswVGFyak5ia0dJUlFYSXBpNEF6dGRrbGR5TWY1blhKakNGVHV0TTRONWduUXpuOW10ZlVzVEhBS2NMREhrRlhvRTJFRFI5X0s3Q3M3LVIwX0NsUmFZYTZYRU9YSTRtWG52V1VHbdIBxAFBVV95cUxQT2g1cWdzelVtSDVnb21GbDhDY0l4anhXX3FFX2p0dUw2SW9JRElsTkZJLVJRdUQwZUJ4dGd6cjNaZERjMHpzQ00tTXMyVk1VdmMyeTViSUVVcGxsNC11R0xnb3YzVU1FQl9MbWJyUEE4WjdxMG42WWtzRFYxYUN3X3FmTWl2YWRaa2U4bThxYXZhallXS0xrN05pLUcwbXBBWVowUEFCNGdCdHBLNVphbW40X3ZOUE5wWmFfcUlCMlpBMnA4?oc=5",
+        "source": "Google News",
+        "published": "2026-06-19T05:34:23.000Z",
+        "summary": "After Goldman Sachs, JPMorgan Chase Blocks Anthropic Access For Hong Kong Employees NDTV"
+      },
+      {
         "title": "Anthropic restores Claude access after AI chatbot platform experiences brief outage - The Indian Express",
         "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPS1BTdzg2M055VC1nWGdYXzNxRjFXeURCcEhzLWdoOGItUEsydFJkV2V2NkszVGRDTHNBZks3b1ZGR3kxaDlPVDk5aks0NFRJbHFwbGg0ekZnT2dfbE1aT0stbE5WZGtSSi1BWkVTNlppSnM2VU4xWDlXeXcyWl84dFg4QTJESTJWXzhyeW1zeWg4Y01FTk9OR0hDSTlZLU1wVEtVeXFXQnk4MzlBRmpiRU1pbS1sWEVtQlUzd0xHT2dGbm9xUkk2Qi02ckZ2Z2NFT0RSUFZpQ1VVamhOeXFHRFJCN0hrRmJuNXVPN3M5Y0nSAfcBQVVfeXFMTUo4YWVuSVRaTWNmQ0RFcmxhQmJtb1E0UU9jSlNzOU1KbGtGQmMzX0ZkV2VSTUVITHBPTjVNUlRCb2N1X1NDQ3lWNEtjVkZNWlp1NFp1VzZwdFpJc1FxWFhONHFGRWdBM0h5WVhRam5nV2FFaF90cGxJNlFsUDd5ZVFFR2xETDNzUVJfYkhrRWxGMFlxcW1PeGFselU4SktfdzRVNXJNelJKZ19uUmhVd3E1YjBGU0pTVFREaER4SnU5Ql9XcWdjV2VRSWxROFJjR0xxblBCQTd6VFhwbGR3RHdjLW9BRmJtNkotTWhJODVRaHdoMk9HNA?oc=5",
         "source": "Google News",
         "published": "2026-06-19T04:42:00.000Z",
         "summary": "Anthropic restores Claude access after AI chatbot platform experiences brief outage The Indian Express"
+      },
+      {
+        "title": "ALERT: AI Censorship Is Already Here. Anthropic AI Model Refuses Service to ‘Climate Deniers.’ - heartland.org",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQajJDWW1wbmFOcU5xQ19LOS12TTJBWS1Fc0hVcnM0RHl6cGZyR1NHdkxPSlJ1TUFhMm1ubzBOU3M4OXNfZ3g1WndKQUh3Z1ZOM0xVYzUxbGFoOXc3SDhGODBndUVzSXVEcU1zVkw2NHI0VkJtbUxyb0NMejcyanRyVmZNUkhkSnZaRjlpT2JtUVJuN2NjQlB3QlNKYUlEODdrMHgxc0NpbkZqU1B6SzdPT2ZFZkxKa3hSQktVcQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-19T04:17:45.000Z",
+        "summary": "ALERT: AI Censorship Is Already Here. Anthropic AI Model Refuses Service to ‘Climate Deniers.’ heartland.org"
       },
       {
         "title": "Early Users of Anthropic Mythos Still Have Access After US Order",
@@ -258,67 +314,11 @@
         "summary": "AI creation to activation with Claude Design and Adobe Adobe for Business"
       },
       {
-        "title": "White House Negotiates AI Security Rules with Anthropic - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOU1h1aW13LTBSblpUOHBsbkdNemVVOTdQMWo4bU5MaFBYYk5qWTdjTnAwdFVaVTFsd0pSVWtqZC12aTR1bzA5YkhiNlNVRm5mVnVfc3h2VURLcTZ3LTRIS212b1pESmUxMHVEcy04S2xUSUltaFc3LWQxeVZpck9FWWFHa3hYSkVZRFdfM1lra2JCWWhkaDVuRklhMUtWdw?oc=5",
+        "title": "Anthropic Adds Brand Controls, Code Sync to Claude Design - TechRepublic",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQcnFvbEpEUUhGX1ZVQWNHd1pQWkxYTU9yVjRPc2xOTzlXdXNhZmtrSC1aTnMzSlJkanlaemxMT1oyeE1jTXlmMS1XUURkNXhMcFoybHhnYlFNRVNCMWZYLXJTUm41SWU0YnVycklpdkZFZERJaWNfX2lNRkpGM0E1T253U1dGVGc3T1NfSFdzSjZNemU5Mkh3?oc=5",
         "source": "Google News",
-        "published": "2026-06-18T22:20:41.000Z",
-        "summary": "White House Negotiates AI Security Rules with Anthropic Let's Data Science"
-      },
-      {
-        "title": "Anthropic brings Artifacts to Claude Code, letting teams share live pages from coding sessions - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQVFRLdkdMYlcwakE2NmxLbGNSUmhUUVpvSXNuZndYUmNKbUFqVWdaOGlZWkswWWRhWDQzRjJ2OU9OendOZHdkMVVlZ0hta0xZaFFMZGR3a0dUc3RWMkpOVWdvbmktd09tS1FpWW1Yc1ZCaWpNWWF1aFhOV0RNcDZabE53SkdZOFdIYUk2M1JwdXFGRHhoNDZvbGp6UGh5cUs1R3RpMVBzaUdrTHJvbXNpOVg4cjNoc3NwdHc?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T19:08:36.000Z",
-        "summary": "Anthropic brings Artifacts to Claude Code, letting teams share live pages from coding sessions the-decoder.com"
-      },
-      {
-        "title": "Why Anthropic Is Sounding the Alarm on the Next Generation of AI - Council on Foreign Relations",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOSEFBZGphQ2loamYwOWhBQTAwLTNZa1pRQ1V6bmdEdjNOQlMyV1NiQUhHWHJ1Q0VCWG9RYmRvZkRFX1ZjMEhaNjVIeFBaWlZMeEM1MmhQdVk2WC02d1JrQnRYWWI3MEtLaElKMHMyY1IxUGQ0SFF4UkRoSnVFNWVuWk9jNmdEX0Q2M1hsWE8zSDlZY1JXRk5uUg?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T19:07:41.000Z",
-        "summary": "Why Anthropic Is Sounding the Alarm on the Next Generation of AI Council on Foreign Relations"
-      },
-      {
-        "title": "JPMorganChase blocks Hong Kong staff from using Claude - Asset Securitization Report",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZzYtYU8xSnM3S3V0aU93WTYyNkpzMzJKZHFDaEVzempDMldVT2I1cTg2Yno3cFF5UWh2R3lFZFVvZTAwaFdSbllPV1hwTDJ6aU4tcVgtRHk3bmpFbUtCemd2NDlPYmxoSXRwV0Z0Y29FUVNfaVlGcDdoVEhzUEhMMmRxRThTNVRMN1R3ck1leUFNZEVXakFpVHpIaw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T18:00:00.000Z",
-        "summary": "JPMorganChase blocks Hong Kong staff from using Claude Asset Securitization Report"
-      },
-      {
-        "title": "JPMorganChase blocks Hong Kong staff from using Claude - American Banker",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVUJhS0hlODdwR3FfNVgzQ09xSzFHV014aGkxQ3pjWkhjV1pHZUFnXy1pbFF0U3dyV2lYZUV2X3VYRzFiUWpnUnZEZGFVWmZVS3V0d2ZfMXFnS05SeHFMY21tdmlYdVNEZERhZjdVZm82ZDJhUk1DZ09SNDFwbE1fU3F4aFpPX1NYb3FNb2plMVZqaGVX?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T18:00:00.000Z",
-        "summary": "JPMorganChase blocks Hong Kong staff from using Claude American Banker"
-      },
-      {
-        "title": "JPMorgan Pulls Anthropic Claude Access in Hong Kong - GovInfoSecurity",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZ2N0MGZzN1hqR0t4NFM3UXZVRWtpUXl1X1p4TVZBYnI1bGU4TnZWSG1faDRRYXZTVnFqX1J3S2RVd2xiWi1YNzk5TkQxZHpPeGNxUGF4aWZHLWRyTnJrVVZWRm5OY0hybU4wcU13LW5UQUo1M0l0Q1hvbmVDMW0zcmpWanVnYzIzNkNJR3loaFFsa3B1Z0E?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T17:04:36.000Z",
-        "summary": "JPMorgan Pulls Anthropic Claude Access in Hong Kong GovInfoSecurity"
-      },
-      {
-        "title": "Bernie Sanders unveils $7 trillion plan to give Americans control of AI industry",
-        "url": "https://arstechnica.com/tech-policy/2026/06/bernie-sanders-unveils-7-trillion-plan-to-give-americans-control-of-ai-industry/",
-        "source": "Ars Technica",
-        "published": "2026-06-18T17:02:49.000Z",
-        "summary": "Bernie Sanders has unveiled an aggressive plan to transfer trillions from leading AI firms to the public, and, to the likely horror of AI firms, it goes even further than expected to give Americans…"
-      },
-      {
-        "title": "How Powerful is Claude Fable (Mythos) 5 for Coding? - Towards Data Science",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQemtmODFpbUd5V0g4OEVaaTItbWxNb3p4VGpFTElNeGVfcG1QV0xNU0lCT0RRd0RUNTBqc1RaZnRoMGdudERzMnBicy1qWE43UEFtaVRXdjRPMHlPdTktbk94cjVKY0ppNUxrMnJ1UnhTMm5Da2ZQVFR3aElENFUwRHU1amxnVmc?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T16:30:00.000Z",
-        "summary": "How Powerful is Claude Fable (Mythos) 5 for Coding? Towards Data Science"
-      },
-      {
-        "title": "Project Fetch: Phase two - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5TLWJxbE9YblE2Wk13TmJ2N0ZxekNHM2R1M01JUnQ0emxWWTBHczk0MzdCajhRSWd2N3l5NEFtQ2pyd1RPM29ncFdfWEdWbWFaOFk4cW13dTVkQWMzY2xYOXl6d3dJaUdlV0E?oc=5",
-        "source": "Google News",
-        "published": "2026-06-18T16:23:22.000Z",
-        "summary": "Project Fetch: Phase two Anthropic"
+        "published": "2026-06-18T19:32:51.000Z",
+        "summary": "Anthropic Adds Brand Controls, Code Sync to Claude Design TechRepublic"
       },
       {
         "title": "Codex vs Claude Code: What I Found After 30 Days",
