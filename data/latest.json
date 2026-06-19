@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T20:58:42.100Z",
+  "generated_at": "2026-06-19T22:41:44.207Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "Encryption, spyware, and now Mythos: History shows why cyber export control doesn’t work",
+        "url": "https://techcrunch.com/2026/06/19/encryption-spyware-and-now-mythos-history-shows-why-cyber-export-control-doesnt-work/",
+        "source": "TechCrunch",
+        "published": "2026-06-19T22:40:14.000Z",
+        "summary": "For the last 30 years, stopping the flow of cybersecurity-related software has proven to be ineffective. It's unclear why it would work now with Anthropic’s cybersecurity model Mythos."
+      },
+      {
         "title": "ICE execs detail AI cybersecurity efforts through Project Glasswing - HousingWire",
         "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE94OFpBOGpOM0pTZFdKemlaMlVVUlNWbU1zblJiNHF1X0F1LWdKM05FY3B0cEx1eUk3bks4NlFhVXU4WGVnZlR0R3Vpdldld3pGazZVYjVfbDVZR29lVEpRU2ZuYmVMVUxQeWZ4YmRqZHljVG1KbzJjQw?oc=5",
         "source": "Google News",
@@ -176,7 +183,7 @@
       {
         "title": "John Jumper to join Anthropic",
         "url": "https://twitter.com/JohnJumperSci/status/2068001285173834106",
-        "source": "HN · 40↑",
+        "source": "HN · 66↑",
         "hn_id": "48601162",
         "published": "2026-06-19T17:53:00.000Z",
         "summary": ""
@@ -241,7 +248,7 @@
         "title": "Anthropic's most advanced AI models could be restored shortly following dramatic emergency freeze - Android Authority",
         "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPLUpDVGdaUXI5cWZucHZMWTBnWllFclNwMHFaUnBPWUFodDFHUTVvcXRvTHd4a2FQSWdrX2FpeFozdXg5NE1xTVhESEhoRWcwa3gtR1Nyd2pONHBidUZyRXZSU0J3blE1RU9zMUVaOEZ5VGRBVWxsTFdObDlNU0FaaEsyWXJLUmJ2RDJ1akZFM2s?oc=5",
         "source": "Google News",
-        "published": "2026-06-19T11:26:51.000Z",
+        "published": "2026-06-19T11:28:17.000Z",
         "summary": "Anthropic's most advanced AI models could be restored shortly following dramatic emergency freeze Android Authority"
       },
       {
@@ -259,11 +266,11 @@
         "summary": "How Anthropic’s AI Went From Golden Child to Problem Child Over a Weekend inc.com"
       },
       {
-        "title": "US curbs Anthropic AI access, raising global concerns - dw.com",
+        "title": "US curbs Anthropic AI access, raising global concerns - DW.com",
         "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQY1pyYUZJRzVZeXJNeTBoZncxMVMwTWtIUnk5M21hRnExZVJ4MkNWM21TZHIybFV3Ui1LVDV3XzFaczFiT3M4MEtKeVl3Mi1CYmVPMUxReExHR1dlV2hDSWYwM2w4YTdDYXVsYWpTMHNTekpRdDZ0Tng0ZmZudUV0RXZQcjV1dmtTSXRv0gGLAUFVX3lxTFA2dDUtVWVvdkFtTEFucVN2RU84dGItdVBTakRSd3dDTFBubWExNVh6T3hFVGpsbzJXMlFqZEhnMEZZcTM1SU91OVVOLVBDOTBYVHQ4a3pVeXpuWE05UVk5Z3QySDZUc2NEa1EzUU0tSFZIUGJHWUJEcjRHaDYyclVOR05rVEoxSVNDZ1U?oc=5",
         "source": "Google News",
         "published": "2026-06-19T09:25:24.000Z",
-        "summary": "US curbs Anthropic AI access, raising global concerns dw.com"
+        "summary": "US curbs Anthropic AI access, raising global concerns DW.com"
       },
       {
         "title": "US export ban on Anthropic’s AI models further strains alliances - Al Jazeera",
@@ -306,13 +313,6 @@
         "source": "Google News",
         "published": "2026-06-19T05:34:23.000Z",
         "summary": "After Goldman Sachs, JPMorgan Chase Blocks Anthropic Access For Hong Kong Employees NDTV"
-      },
-      {
-        "title": "Anthropic restores Claude access after AI chatbot platform experiences brief outage - The Indian Express",
-        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPS1BTdzg2M055VC1nWGdYXzNxRjFXeURCcEhzLWdoOGItUEsydFJkV2V2NkszVGRDTHNBZks3b1ZGR3kxaDlPVDk5aks0NFRJbHFwbGg0ekZnT2dfbE1aT0stbE5WZGtSSi1BWkVTNlppSnM2VU4xWDlXeXcyWl84dFg4QTJESTJWXzhyeW1zeWg4Y01FTk9OR0hDSTlZLU1wVEtVeXFXQnk4MzlBRmpiRU1pbS1sWEVtQlUzd0xHT2dGbm9xUkk2Qi02ckZ2Z2NFT0RSUFZpQ1VVamhOeXFHRFJCN0hrRmJuNXVPN3M5Y0nSAfcBQVVfeXFMTUo4YWVuSVRaTWNmQ0RFcmxhQmJtb1E0UU9jSlNzOU1KbGtGQmMzX0ZkV2VSTUVITHBPTjVNUlRCb2N1X1NDQ3lWNEtjVkZNWlp1NFp1VzZwdFpJc1FxWFhONHFGRWdBM0h5WVhRam5nV2FFaF90cGxJNlFsUDd5ZVFFR2xETDNzUVJfYkhrRWxGMFlxcW1PeGFselU4SktfdzRVNXJNelJKZ19uUmhVd3E1YjBGU0pTVFREaER4SnU5Ql9XcWdjV2VRSWxROFJjR0xxblBCQTd6VFhwbGR3RHdjLW9BRmJtNkotTWhJODVRaHdoMk9HNA?oc=5",
-        "source": "Google News",
-        "published": "2026-06-19T04:42:00.000Z",
-        "summary": "Anthropic restores Claude access after AI chatbot platform experiences brief outage The Indian Express"
       },
       {
         "title": "ALERT: AI Censorship Is Already Here. Anthropic AI Model Refuses Service to ‘Climate Deniers.’ - heartland.org",
