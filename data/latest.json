@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T22:55:46.718Z",
+  "generated_at": "2026-06-21T02:15:30.956Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,14 @@
     ],
     "news": [
       {
+        "title": "Project Fetch: Phase Two",
+        "url": "https://www.anthropic.com/research/project-fetch-phase-two",
+        "source": "HN · 31↑",
+        "hn_id": "48614311",
+        "published": "2026-06-21T00:00:25.000Z",
+        "summary": ""
+      },
+      {
         "title": "Video | Anthropic Fable 5 Restricted: Why the AI Model Suddenly Disappeared - NDTV",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOQnZWenlQNmJMSW1rcUkwQ1ViODVOQnVhdEVlTTV1bG1ScjQ5V0dvbUVNZ2QxYUs2cEdoRHdpNmI0RnF5Zkk1Z254Q2ptaUQ1M1F0cHVsVDVUR2p6bWtDS3pXS3pXR3JVTWdraDRGbGhZTXlkR0tSX0hxV3UzVEU1Y1k2V2dtVmJDeUVKY0pfdlV4R3dWUGwxZ096ZWJBM2xmZVFz?oc=5",
         "source": "Google News",
@@ -169,7 +177,7 @@
       {
         "title": "US Scientist John Jumper to Leave Google DeepMind for Anthropic",
         "url": "https://www.reuters.com/technology/us-scientist-john-jumper-leave-google-deepmind-anthropic-2026-06-19/",
-        "source": "HN · 65↑",
+        "source": "HN · 70↑",
         "hn_id": "48609506",
         "published": "2026-06-20T14:32:15.000Z",
         "summary": ""
@@ -177,7 +185,7 @@
       {
         "title": "Ubisoft co-founder Claude Guillemot has died in a plane crash",
         "url": "https://www.reuters.com/world/ubisofts-co-founder-claude-guillemot-dies-plane-crash-2026-06-20/",
-        "source": "HN · 146↑",
+        "source": "HN · 155↑",
         "hn_id": "48609373",
         "published": "2026-06-20T14:12:50.000Z",
         "summary": "https:&#x2F;&#x2F;www.thegamer.com&#x2F;ubisoft-co-founder-claude-guillemot..."
@@ -185,7 +193,7 @@
       {
         "title": "Show HN: We post-trained a model that pen tests instead of refusing",
         "url": "https://www.argusred.com/cli",
-        "source": "HN · 59↑",
+        "source": "HN · 76↑",
         "hn_id": "48609231",
         "published": "2026-06-20T13:49:03.000Z",
         "summary": "Anthropic and OpenAI&#x27;s publicly available models are explicitly guard-railed so that they refuse offensive tasks. And their cyber-focussed models are gated for enterprises.…"
@@ -226,13 +234,6 @@
         "summary": "Bedrock Data Sharing Sends Fable 5 Inference Data to Anthropic Let's Data Science"
       },
       {
-        "title": "Trump makes major U-turn on Anthropic; says AI firm is no longer a national security threat - The News International",
-        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOOWI4dFVoMDVrYW9qU3hUZ196NXB4STRPNXlpUWxoVHJScnBIRjB4aXpzZThFUTJMcWIxaWdGMi00ZGo1QTR2ZmJ4OC0wMVNwUV9qVjI2WHhLV0d5YnhZbEtnRG4tbElIUmN1d2prWThvajI5X1I2ekRiME5lU2c3VVVtQVlqRy1xY0lhQ1YzZzlPWmdJLVFwUS1yOTNMLWVTeUk2U3A4Qm1NNFRycHUtRkpjaGtkbWI2amdUODR0OEllQ1Z1VXo1ZWVlbDY?oc=5",
-        "source": "Google News",
-        "published": "2026-06-20T06:01:00.000Z",
-        "summary": "Trump makes major U-turn on Anthropic; says AI firm is no longer a national security threat The News International"
-      },
-      {
         "title": "Trump Says Anthropic Was National Security Threat 'A Week Ago, Maybe' — Then Credits Claude Maker For Act - Benzinga",
         "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOWnAzbHBqdDd4OVhISzc5WXNHeV9mLU5PMHM3QlJXYzg1NjdtOW13cTdnSTEwUWJVTFhsX1J6UXlwY0dMSS0wRjc0ZjVDMThQQ004cHN4aUZmSzlLTTlxRU5yS0ppM21OV3h1SlFQakFaLXNIdE1nb1VGT09iaFRLNEh1OVBYM1F3ay11SjhxUWZWd0pRSmZpdlYtYXlMYjhHSmNPWFIzdVpGWXdfZnpuYlJTbVRRbFE?oc=5",
         "source": "Google News",
@@ -240,11 +241,11 @@
         "summary": "Trump Says Anthropic Was National Security Threat 'A Week Ago, Maybe' — Then Credits Claude Maker For Act Benzinga"
       },
       {
-        "title": "US curbs Anthropic AI access, raising global concerns - DW.com",
+        "title": "US curbs Anthropic AI access, raising global concerns - dw.com",
         "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQY1pyYUZJRzVZeXJNeTBoZncxMVMwTWtIUnk5M21hRnExZVJ4MkNWM21TZHIybFV3Ui1LVDV3XzFaczFiT3M4MEtKeVl3Mi1CYmVPMUxReExHR1dlV2hDSWYwM2w4YTdDYXVsYWpTMHNTekpRdDZ0Tng0ZmZudUV0RXZQcjV1dmtTSXRv0gGLAUFVX3lxTFA2dDUtVWVvdkFtTEFucVN2RU84dGItdVBTakRSd3dDTFBubWExNVh6T3hFVGpsbzJXMlFqZEhnMEZZcTM1SU91OVVOLVBDOTBYVHQ4a3pVeXpuWE05UVk5Z3QySDZUc2NEa1EzUU0tSFZIUGJHWUJEcjRHaDYyclVOR05rVEoxSVNDZ1U?oc=5",
         "source": "Google News",
         "published": "2026-06-20T04:29:10.000Z",
-        "summary": "US curbs Anthropic AI access, raising global concerns DW.com"
+        "summary": "US curbs Anthropic AI access, raising global concerns dw.com"
       },
       {
         "title": "From PGP to Mythos: a brief history of export controls that didn’t stop anyone",
@@ -270,7 +271,7 @@
       {
         "title": "John Jumper to join Anthropic",
         "url": "https://twitter.com/JohnJumperSci/status/2068001285173834106",
-        "source": "HN · 162↑",
+        "source": "HN · 165↑",
         "hn_id": "48601162",
         "published": "2026-06-19T17:53:00.000Z",
         "summary": ""
