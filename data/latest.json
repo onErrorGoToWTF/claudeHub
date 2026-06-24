@@ -1,8 +1,22 @@
 {
-  "generated_at": "2026-06-24T12:12:19.754Z",
+  "generated_at": "2026-06-24T16:04:59.950Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Nuclear Safeguards for Ai",
+        "url": "https://www.anthropic.com/research/nuclear-safeguards-for-ai",
+        "source": "Anthropic Research",
+        "published": "2026-06-24T14:21:03.000Z",
+        "summary": ""
+      },
+      {
+        "title": "81k Economics",
+        "url": "https://www.anthropic.com/research/81k-economics",
+        "source": "Anthropic Research",
+        "published": "2026-06-24T12:15:51.000Z",
+        "summary": ""
+      },
       {
         "title": "Introducing Claude Tag",
         "url": "https://www.anthropic.com/news/introducing-claude-tag",
@@ -57,13 +71,6 @@
         "url": "https://www.anthropic.com/research/mythos-preview",
         "source": "Anthropic Research",
         "published": "2026-06-17T16:59:28.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Nuclear Safeguards for Ai",
-        "url": "https://www.anthropic.com/research/nuclear-safeguards-for-ai",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T16:54:35.000Z",
         "summary": ""
       },
       {
@@ -135,16 +142,94 @@
         "source": "Anthropic",
         "published": "2026-06-17T16:48:41.000Z",
         "summary": ""
-      },
-      {
-        "title": "Cyber Toolkits",
-        "url": "https://www.anthropic.com/research/cyber-toolkits",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T16:48:19.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Claude may start asking for your ID. Here’s what Anthropic says about it - PCWorld",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNekM2Q1BlQk5wMjlCR2NNbXZmaTNZZHpNZjNFaTRieGZ2WFM2V2VGbzVaX3FvLWdwcDdVaDZGVjdBUjVCcThmZVBhQ3BOOU1nMU9XYlhGLVFVaEZuZGoyOTdoa1dtbDhRUjQ1WWlFVDFNNUp6bWVkSFB3Y19wb2ZrWVJzZGtpVFI3UExwZDRrbDVITEgtaE1OSVBRTjVnS1RkNjhZQ0F0dzRmNVRWMVZ6azktQkkzQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-24T15:39:00.000Z",
+        "summary": "Claude may start asking for your ID. Here’s what Anthropic says about it PCWorld"
+      },
+      {
+        "title": "Anthropic AI hack: Martinez, California man says fraudulent charges racked up in euros on Claude account - ABC7 Bay Area",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPTmg5NGdaVEhpVFdnT1JDYkVVdVRsd2kya1RHQk1ER0FvOGdZYmdUNnVtR0QtakFoZGFhQkJfc21mTUlYWjNLYTh1VTJLdXBleWt3SnFsWXB0Qy1NenlhVU5nUjl2amNRSDhGUHdkc1pkNVlESlhYZ0lVeUs4dHdTSDNhcUxKVjRCNkRkT0tRWktEdVFNXzV1RXdTWkRlajJYT29GWVA0clB4SmRrM2RQdVVzY092TTZ1cVJXWWJGSlhJSkJzSG9MRtIBzgFBVV95cUxOODJqMHFpb3RZWmlKWmVBcklUOUtudS0tUkctS1U3dTVfa0c5dlViWnBXVXQ2bDNRQnpKaEI5a2ptSk9Ba1d3WVZFZlQ4Y3NrRTZXbHlPbjIyQm15Z1R2a3dWWURNSVlFazRpM29RUlNZVExrQjVlRFpGWkU3MENhY21qTjVsbHIzSWlpN0F3M3p2dzVreTd1TWZwOXI1UDNmdWQ1VE5ycndoNXZhVXVSUjZCQXRKSXQ4UE9nZC03a1NxM1ZtQ25wMzdyd0g1Zw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-24T15:19:02.000Z",
+        "summary": "Anthropic AI hack: Martinez, California man says fraudulent charges racked up in euros on Claude account ABC7 Bay Area"
+      },
+      {
+        "title": "China's 360 Security claims AI vulnerability tool rivals Claude Mythos - qz.com",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNenlHUVhUVFBVYmx0SVUtNGVpWEE3VHNVelBYRWtabHJwSnAwWVdVdWNhT2FickJ1cGVYc1ctSkFYejlvYVJ2eUN3aFB2XzdhQTJ1MW1qanpucVI4aGFrWHc5NmFvUm1NcklmdFZ6R2c1U2F1TDZ5dVdIb3hzR1NGeVJkMklqdw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-24T15:09:31.000Z",
+        "summary": "China's 360 Security claims AI vulnerability tool rivals Claude Mythos qz.com"
+      },
+      {
+        "title": "Anthropic’s New Claude Tag Acts as an Agentic AI Coworker Within Slack - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOUTV0d0xPdGZOeFNoTHlSQ0MxeFdoSU4zUUptRkdkdldicjZpREk0NjRjR2ZGaXdwTnlUbW9qcFAwcnF5dktLUUVzdE5tQlkzM1hmU1Y3Yi02cFdzR3BqVEsySXZ1a2dOdVRsQXo3ZU9YdFRIOUtTRnB0UHVTMlBXd2REQTJCR3dRbngzTGE0Wjg2SU5W?oc=5",
+        "source": "Google News",
+        "published": "2026-06-24T14:49:30.000Z",
+        "summary": "Anthropic’s New Claude Tag Acts as an Agentic AI Coworker Within Slack Yahoo Tech"
+      },
+      {
+        "title": "Amateur Hacker Used Claude And OpenAI Agents To Hack 14 Companies - bgr.com",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOUy1rd0FqTk1EcF9qaDNtSjg0OUpLR1ZXWTZlM1hRU2xockRCMTF6U1FMZTFDZEw2UUxJTFlnZUpsVlFsa0tLZkRSUTlMRWJKVjhpNmhKNnVGSkp0Z1pNSlRBRDNrN2NYQ083a1NpeFVIMXVZLTVUSWc5blFZNHlJNg?oc=5",
+        "source": "Google News",
+        "published": "2026-06-24T14:47:00.000Z",
+        "summary": "Amateur Hacker Used Claude And OpenAI Agents To Hack 14 Companies bgr.com"
+      },
+      {
+        "title": "Lessons from Anthropic’s failed Fable 5 release - The Hill",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQakk0dWhnLVJwN09zUU1aeTBKeGl3VWpocVZUTTNnMGNqVXVVWnpES3NTOGh0eS05S203UjRPaThrSWJhQlNqaHRvUlZybU1rdE1HeVhkOWxmRDJzcGlIeVQzUWswOS1sUUg2SlI4NkQtQWdjRGx0VG5tQTFERFB0WDhNUUl6Wlc20gGOAUFVX3lxTFBrcU03bWxLZGRNX3BucGJnb2x6WHZjSUlZQ1hDZE1ZQmVJR3pGVnRSdnhtVmNfZlMwVmNlRU90dV9tZ2M0VjhuWWFHWTVYUUxQYVA4Y0FEZUNMZWJselJPSWF1OEF1YzBnc0c2MWhJZUU2XzFmV1QtMnhtUmNMaUYwXzRLdk00R0NJeGpncWc?oc=5",
+        "source": "Google News",
+        "published": "2026-06-24T14:00:00.000Z",
+        "summary": "Lessons from Anthropic’s failed Fable 5 release The Hill"
+      },
+      {
+        "title": "Anthropic’s Claude Tag gives AI agents independent identities - Help Net Security",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNTm9JLUNaLVBGZHphdmJwajJVVE5nR1JJWmExelNVQ3ZRSC1qdEQxSTlvVGlhcUxPOHZWUUJ3NmxvTFNLRHEwZVNSenZyVWVaNzlXZ1VlQUpxcUhaaE9MbUVxLTdkdjlwNVVCSzhxZ0Q4eEFERDAtc1luM2lCbmsxTUVoSnJ1ZXhheXZtbndn?oc=5",
+        "source": "Google News",
+        "published": "2026-06-24T13:56:02.000Z",
+        "summary": "Anthropic’s Claude Tag gives AI agents independent identities Help Net Security"
+      },
+      {
+        "title": "Claude Expresses Reservations About Military Targeting - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQTXFaUWd2bE95NGVuTkQ2cDg0bTIyN3lsLXpqQmV3WFpyU3JxenI5ZDhvY2hwb09CYmlXWHBpRVRYYmRXalBnYnI5dUczbFBtWDBvMXBwYTU5ZW40Vld6Mjczd0RieHdCZjJjVW1iUzhzTExManFTdlF2STBxb1ZxS2h6bjdMSHdrUWZ0c3luMWZJX2dYT2JXbV8zaVg?oc=5",
+        "source": "Google News",
+        "published": "2026-06-24T13:39:30.000Z",
+        "summary": "Claude Expresses Reservations About Military Targeting Let's Data Science"
+      },
+      {
+        "title": "Anthropic Unveils Claude Tag, a Powerful AI Teammate for Slack - SQ Magazine",
+        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE03QWFhRlRubEs0bnNoYXVnUFBOd1Q5RUt2TVJYSlQ5ZTl6YlY3b3QtUHJTRG9NV2NuZGhMOFJ6YjMzU2xSSlE2T0tNUEFRNDJRenpYVE9JcEMzT0QzY3RybEctenRXTjFhc01CUWY2TWZkUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-24T13:33:49.000Z",
+        "summary": "Anthropic Unveils Claude Tag, a Powerful AI Teammate for Slack SQ Magazine"
+      },
+      {
+        "title": "Anthropic Claude Tag is an AI colleague for Slack - Techzine Global",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPYTYtZXljYUoydTdYUGtxRXVwMm9rdVNTUFJISnNhNWdzMlRkanA1M0wtVDU2VUtEYzViZDlFdEhJSkZWUXg1Qmk3eEg5MkRnbjZvRVV0SkJRUW8zUlh3cUNXaF9EVGR2SVhJVE5EWmM2ZHYtRjVRNVBYUTNzczB6VUgwXzBYNGVkZ3VMdEtPeFp4RnFoXzVjag?oc=5",
+        "source": "Google News",
+        "published": "2026-06-24T13:25:59.000Z",
+        "summary": "Anthropic Claude Tag is an AI colleague for Slack Techzine Global"
+      },
+      {
+        "title": "Anthropic Unveils New Super AI - Yahoo News UK",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE01NnFPc2YwdExDaDY2VEFsdEY1cHVlUjNWRjJJZ05kSGNrZ0l1U1ljbDhaRUgxOUJ2RVpfTGNmaEViNVBxdGVENVNGeUd6czVvdXNJZlNoNzlCTDdLVGUwTnh6a3E5VFBPbWRJWXliRjBRbU9INEE?oc=5",
+        "source": "Google News",
+        "published": "2026-06-24T13:23:00.000Z",
+        "summary": "Anthropic Unveils New Super AI Yahoo News UK"
+      },
+      {
+        "title": "Reid Hoffman says SpaceX 'not an AI company', xAI 'complete train wreck'",
+        "url": "https://fortune.com/2026/06/24/reid-hoffman-spacex-musk-openai-anthropic-gen-z-mistake/",
+        "source": "HN · 189↑",
+        "hn_id": "48658647",
+        "published": "2026-06-24T12:23:59.000Z",
+        "summary": ""
+      },
       {
         "title": "Anthropic's New Privacy Policy Lets Claude Ask Users for Government ID, Face Scans - extremetech.com",
         "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPTjFzZ1RldG5ZMGZzbUtHZEFYak82c1VZaktVYnB3aDNOblB4dl9XdE5zOWpVMU82Rk1rWWxyYUg4ay12S05wS0ZjZVJVUmJoMVFoOE5WSDY4dDN5ZE5sSHBuOXBpMTBFYThBU09tYVhSeW4ydWtlM2FCel9YODRmcXFOYzVCeHQtdzhNRDk4X1dSQlNvMXVabUkxX3lSUEkybmFVUzVaWmh0MU9scXlBMg?oc=5",
@@ -160,11 +245,11 @@
         "summary": "Anthropic's best model ever was pulled from the internet — here's what actually happened MakeUseOf"
       },
       {
-        "title": "Claude Finds Its Role in Warfare ‘Troubling’ - The Atlantic",
+        "title": "Would Claude Refuse an Illegal Military Order? - The Atlantic",
         "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQWTYxdFNVdlI0QXdQMDhyTVg5c2pLQnNKU3dwZExNbzc1bnFJdUdoZ183UzNMeGNZRkcxbEliVHB5b1RDbGRGdWhoSmE2NUJTc2tENzVCSlNacnRaOXU2TzBYSUx3NXlUMjFOLW5kTTNybVRxRnc4V2RSb3BjRjhoWWExLW94VFdaVHVTRDJyQXZEemxjd1VCeUh1Z1Y?oc=5",
         "source": "Google News",
         "published": "2026-06-24T11:00:00.000Z",
-        "summary": "Claude Finds Its Role in Warfare ‘Troubling’ The Atlantic"
+        "summary": "Would Claude Refuse an Illegal Military Order? The Atlantic"
       },
       {
         "title": "Is Anthropic’s Claude Mythos Too Powerful For Washington To Ignore? - Yellow.com",
@@ -188,11 +273,18 @@
         "summary": "Meet Claude Tag, Anthropic’s new AI teammate that works in Slack IT Pro"
       },
       {
-        "title": "Anthropic introduced the AI assistant Claude Tag on Slack - Root-Nation.com",
+        "title": "A new level of teamwork: Anthropic introduces the AI assistant Claude Tag for Slack - Root-Nation.com",
         "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPaktNWnREYlMxSkdTV0FuaWFYTzJwNFYtVHY4cmU2c3lTeU1nM1EwWGdTOEtnU1daTGNVWmxHajFVU1dQaG9aeUdjNU4zdkZCNEEtOEJ5cThVeC1UMVVBR3lVdWxjcGtmOUxHdEdvei1OVVB5aFhhM3VETmJSemQtOWdnRWczU290eWNBTQ?oc=5",
         "source": "Google News",
         "published": "2026-06-24T10:07:32.000Z",
-        "summary": "Anthropic introduced the AI assistant Claude Tag on Slack Root-Nation.com"
+        "summary": "A new level of teamwork: Anthropic introduces the AI assistant Claude Tag for Slack Root-Nation.com"
+      },
+      {
+        "title": "The A.I.-Design Aesthetic That’s Taking Over the Internet - The New Yorker",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNT3lmMmUtbDljV1J5N18tdUhyNnEybGZXNE93SzliVWRiR0NEQnFFWEFpTjhZQ1NWU28xU0t2TEFlMjdQQUt4RGdWODhoejZYN1dUY21ibzFIOEdMVUJpLTNtTTRNNDJXcGlFcGV0WjhqU3MyRmUzbjFaN1JCSnhGcDRXT2dTdEU?oc=5",
+        "source": "Google News",
+        "published": "2026-06-24T10:00:00.000Z",
+        "summary": "The A.I.-Design Aesthetic That’s Taking Over the Internet The New Yorker"
       },
       {
         "title": "Anthropic signs supply agreement with Micron, following investment - Data Center Dynamics",
@@ -216,13 +308,6 @@
         "summary": "Claude Tag embeds Anthropic's AI in Slack, already writes 65 percent of internal code, company says The Decoder"
       },
       {
-        "title": "Fortune Tech: Tencent’s gaming exits, Meta’s $299 smart glasses, Anthropic’s AI agent for Slack - Fortune",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSmNGVG45NW43UVFUNlVHYUxKX2pKbFlUeUlhUVZkRFRiNWstNjZxWUM0U1JjVXVHV01qOFVTZndnQVJCSi1raGxVdFhqRDdJa0k4elR5TFJESkhJbld1bjZ3N1BqSk15a2oyczRObDFNRDhNcGFpaHVhNGlWWFphQUNBaGk?oc=5",
-        "source": "Google News",
-        "published": "2026-06-24T09:19:00.000Z",
-        "summary": "Fortune Tech: Tencent’s gaming exits, Meta’s $299 smart glasses, Anthropic’s AI agent for Slack Fortune"
-      },
-      {
         "title": "Meet your new Slack coworker — Claude - The Rundown AI",
         "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA2UEZVTkFOdVVNMnlab2E4dnJkZnFCWXRTSVRuWkN4M3RTNW92UHRqNU9wc3VrQ1l1dUlxVTBzblM0OTJQNk5BVTluRm5fZ3lUcUVYNS14RkJEWG83MVBnUzgzUEhyT2xJRGg5VXRqMGg?oc=5",
         "source": "Google News",
@@ -235,90 +320,6 @@
         "source": "Google News",
         "published": "2026-06-24T09:01:34.000Z",
         "summary": "Anthropic Drops ‘Workplace AI Agents’ Directly Inside Slack AI News"
-      },
-      {
-        "title": "Anthropic debuts Claude Tag in Slack, aims for broader rollout - verdict.co.uk",
-        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9fMUpPTU55M211ZnVpNndUTUwzTWF5bUhqcFJ0dnh3MVlVS0lBOFc0OUloMjlFQlRLdDk0c0piS0VrMXc4T2JoZzhCakhqcHRZUElsd2E2bGdMc09EbFRLd3NUQ2s?oc=5",
-        "source": "Google News",
-        "published": "2026-06-24T07:58:43.000Z",
-        "summary": "Anthropic debuts Claude Tag in Slack, aims for broader rollout verdict.co.uk"
-      },
-      {
-        "title": "Anthropic’s architect of Claude Code reveals what makes a great hire - Outsource Accelerator",
-        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1lNV9SN1Vrck4wQlJTVS1hVnI2cDR0T0IxbGRPNVJlTzhlSFlCTE1Ucm0yZTBuZEN2NDRXZWJFd1d6cG9rZUZqUGNxM0gxdElxMExKakhRNWZlQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-24T06:55:20.000Z",
-        "summary": "Anthropic’s architect of Claude Code reveals what makes a great hire Outsource Accelerator"
-      },
-      {
-        "title": "An AI startup is suing the US government for taking away Anthropic's new model - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQb01VTUVudnVCTXVVNVpGTHBQOGRJczFJVFg1MENGaDlBZ242Z2E5dFlCRGdkZkQ4QzJERjFZZmc0WE1NXzVycXdHVFFGXzZ2Y1ZNTmdpUjJldnJ2c2p5dTRrTlRtUjVWX3pEanFHeng2by1mOEh6enM0bjhETEhiSEw4azVJbGVfWmlrVENRZzZ2Z2RwUzE0YW5YN2ZPUTktbjhGY3hn?oc=5",
-        "source": "Google News",
-        "published": "2026-06-24T05:15:00.000Z",
-        "summary": "An AI startup is suing the US government for taking away Anthropic's new model Business Insider"
-      },
-      {
-        "title": "Anthropic Launches An Always-On AI Coworker - NDTV",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWktGTHY0QlVHZ0J6WHc3UHV0Y3I0V0EteGFfOE51RlpGN181am9BR0VBNk5tTjZwR1F1dVZJTjk0U1FqSklqRDN5ZTRONUtQTlo3VTdYMDZ2WGEyMXJ6WFJEVFhuM1ZiU1R1OFo4RzJFS2J0OWozUmZJUWNDamlWNFlvMWpocm15NnNSNTY2dkFRaEkyZjhHcVp2Tk04Z0sza1JGYmFSZEo5X3VVVkpQb0hlZldWcGRCMzlv0gHDAUFVX3lxTE1WU3RpUjdqbTRHcnpORFZiODhzVW1YVTBRbWZ5WUlUNXdvOUFHY1M2ODRwdk9mWk1ubDNQMHZiSU5IX0txc0l4RnlTaGQ5TG5pWEhDZGRBNGctRUl3MFIyM3d5LTdvTkxsSzZvOHgxbF9vWDg5TjFORU9LVXc4YjR4X3EzeHRtdUhHUHRyenZtVW5VMGVFTlJSVVlHMkZkWjhPajVuNS14cTlnTUhqODFJaGRXZGZ2Q0Z2dFlPMjExcTEzWQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-24T04:56:13.000Z",
-        "summary": "Anthropic Launches An Always-On AI Coworker NDTV"
-      },
-      {
-        "title": "Anthropic launches ‘Claude Tag’ for team-based AI collaboration on Slack - Storyboard18",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPNlh1TmFFYWx5UGNoa2wtX0QxdVViTzRvenVzNG9PMGk1dEF6d1VCQURVS1hzbzNtOUhwS3NsOVNUUmM0OVdCTGdtMzU5amxNYmdrVHBGOU9sNTB2OTdvTlFuTnhCTmM2QUxWWE9VdkMxbE51Q2JvTTY2OWZqemtWRy0zM3NjdFdVdWlCdDQ3MGI3SnZoNjRMM0ZuZ2FSdDQwSVBZcDdibjZpWVRNeUlpbjJrcVlHTXAtaUHSAb8BQVVfeXFMT1RlaHgtd2RuRjVQbndtUmQ1Q19velRhT1Z4d3UycFdSTGI3bXdrM1lHbTBzRUF2TDBtbmdzNzB3YW03YzAyRWpPQTN3OUpWN0hVaFVoempLbVRGMmQ3U0Z6ZFRPVlZBNWZuM20yeEJwb2haRktRZUw4T3hPZERJbWp5dFJ3Mm1PSjZFUTU5TWpUUDZDVERkQ0d1NnQ4Y1dXX09OeFFpaG1wZ2tUanNqS0NhRFZhS0N6MXdFSS0zUEk?oc=5",
-        "source": "Google News",
-        "published": "2026-06-24T04:35:57.000Z",
-        "summary": "Anthropic launches ‘Claude Tag’ for team-based AI collaboration on Slack Storyboard18"
-      },
-      {
-        "title": "Professor Exposes Astonishing Truth about Claude: Encrypted Thinking Process Inaccessible Even with Payment - 36 Kr",
-        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE8xTG9OV3NVWVdpbl9TS09XS1J1ckNoUmYwRXNxZTAxX2x2aTZJcTJ1YXNoU2ltUE5oM25WMll2UklCMTh2YV9UX0s0SUdjQ1c2UHlr?oc=5",
-        "source": "Google News",
-        "published": "2026-06-24T04:12:54.000Z",
-        "summary": "Professor Exposes Astonishing Truth about Claude: Encrypted Thinking Process Inaccessible Even with Payment 36 Kr"
-      },
-      {
-        "title": "Claude Tag Turns Slack Into Multiplayer AI: Anthropic Agent Writes 65% of Its Own Code - Tech Times",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZ0tac3VjSVFIYXNCNW5GMnJDTGpkZmFEVDBQMmZnRWVLRlBURlNIRmR1ZUFIM25FSENZVTk1RTFOU2V6MXhEclFhaGpFNFI5OW9OZUJQTm5aV0tRNmpNZVNRTG11Nk5PZ1hYYjZfYUZkckhhQi03UlY5aTN2NFg3WHhsZ1BNTEI3S0pqRXpTZG1jeUktNVd5NXVSQXVCbFQyejEyZ2FrOWZ4cmwtY2IyZEV1VVNJck5SR3dURlBiMFVtc1ljSUVPMlkyYw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-24T03:08:07.000Z",
-        "summary": "Claude Tag Turns Slack Into Multiplayer AI: Anthropic Agent Writes 65% of Its Own Code Tech Times"
-      },
-      {
-        "title": "Claude Tag: Anthropic Sends Claude to Slack as an AI Colleague - Basic Tutorials",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQYnZNak9mUXFJRy1Od1pyT1ZjTkhral9YX3BUc1duM0ZkSjhfNXBUX0RrVU9nZGtVTGpWdlU0eVQ0U0xjM29VeFhTVnVGN1dGR0Z1UnIyWlVSU1hTOWNwUWttZTQ3UUxzVHdkcUN1MHVUUXR6dGI2cVJwaFA5M1JjSlk5VkVDdXM2VDQ2bDVRcDdFRlFhb0JuUDFGbw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-24T02:58:46.000Z",
-        "summary": "Claude Tag: Anthropic Sends Claude to Slack as an AI Colleague Basic Tutorials"
-      },
-      {
-        "title": "Webpuppies Achieves Anthropic Claude Partner Network Certificatio - The National Law Review",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNS1RxanBiUkswU3pIZWp6UGljdFZHMXVqbldodjIxMW8tYjJNbWdnTGlUbW90RTZ2WFBXcVlWZ2FwMUo1Y3lJZUYtTk1PYnVka3BiNnZqRzhlZXZ0V0NXSnk3Tnl1bVplR2dPX1lIM2w1QnVpSWNuMVFqYkZObDM0NUpXTUNYSGdjY1JTcnN3ME55Q0NOR3VfUWNTWWZ1VzdKTk1yanZBTDdWUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-24T02:30:40.000Z",
-        "summary": "Webpuppies Achieves Anthropic Claude Partner Network Certificatio The National Law Review"
-      },
-      {
-        "title": "Micron And Anthropic Announce Strategic Agreement To Scale AI Infrastructure - Pulse 2.0",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPOE9aWGhLc0VJZTRnZ3J0NEZ2U21ob2xRUkFEMGh6Y3NvakRPOFY2WDZDRU9hcW9leGhmVUdFY1VHY1NIelllSzd0RjU2aU9RbVY4UTB4aVNTd0hzSHIxZ1hEMjB5MlF6N0xXVmtmU05VYzVWT0xzX0MxSjFjbE1iaXNyalFlcUZEdVBoYllnNHR4azBjNS1pMWpneVnSAaIBQVVfeXFMUGlFRHhkOFJ4Vl93cUdlMjFYV0pCZTJBb3hEVG1qYXp6Wk4wbTdLaDkwdE52T1NIMHdydmREc0lrTC1HS1hEckplMEJxQS1MNUhPT2dfelMyTXpLRWRHX0RCMV9KUGJFbzZ4QnktcE9pWVRfRDVpUEJfX2xIeG10eHRtVmZEd2RvTUdtN1BTZ0pqY0lEUTZBdVdWWHp0MzQ1S1VB?oc=5",
-        "source": "Google News",
-        "published": "2026-06-24T02:22:14.000Z",
-        "summary": "Micron And Anthropic Announce Strategic Agreement To Scale AI Infrastructure Pulse 2.0"
-      },
-      {
-        "title": "Anthropic debuts Claude Tag, a more capable AI teammate that lives within Slack - SiliconANGLE",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNUFNZZUdRd2RVQWRpb1hFT2l3cEl6NE5pYlM1cHoxbVVEVjdoaEdGU3h5cklyamk2LUdWSkx4OG1nd2ZHcFNMUXI2RFZwR1Zscmc1TkxhT1pQeFJ2X1RxNHFWNUtMaERlSHJkb0dSYjV1YllpalhLbmUtbXZQakxJd1o0cTdLa0FWNlg2ZDlsMkdOTldwcVJZNjNPZ3FVbTYtRW43QktR?oc=5",
-        "source": "Google News",
-        "published": "2026-06-24T01:25:21.000Z",
-        "summary": "Anthropic debuts Claude Tag, a more capable AI teammate that lives within Slack SiliconANGLE"
-      },
-      {
-        "title": "Claude Code Undergoes Major Upgrade: Karpathy Says It Marks Third Transformation of LLMs - 36 Kr",
-        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9tZXlFVUZOZnNBb1RPN25MV1ZvbUx6THBUaENUNEE2NENDM25oNkoyNWF6bWMzV2k1UjJ4X0JiOVpkaG5MdWR0U0tMSTJoRklBUzYw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-24T01:13:33.000Z",
-        "summary": "Claude Code Undergoes Major Upgrade: Karpathy Says It Marks Third Transformation of LLMs 36 Kr"
       },
       {
         "title": "AI Agents Just Changed Forever: GLM 5.2, Codex Skills, Claude & Cursor",
@@ -551,6 +552,13 @@
     ],
     "status": [
       {
+        "title": "Elevated error rate on Claude Opus 4.8",
+        "url": "https://status.claude.com/incidents/8b0rggdfh1hv",
+        "source": "Claude Status",
+        "published": "2026-06-24T14:56:21.000Z",
+        "summary": "Jun 24 , 14:56 UTC Resolved - This incident has been resolved. Jun 24 , 13:16 UTC Investigating - We are currently investigating this issue."
+      },
+      {
         "title": "Claude.ai is experiencing elevated error rates",
         "url": "https://status.claude.com/incidents/18bq2kw867g5",
         "source": "Claude Status",
@@ -626,13 +634,6 @@
         "source": "Claude Status",
         "published": "2026-06-18T08:19:22.000Z",
         "summary": "Jun 18 , 08:19 UTC Resolved - The issue affecting Claude services has been resolved. Impact occurred from 06:55 to 07:40 UTC. Jun 18 , 07:41 UTC Identified - We have identified the cause of the…"
-      },
-      {
-        "title": "Elevated errors for Claude Opus 4.8",
-        "url": "https://status.claude.com/incidents/s107yx224p9r",
-        "source": "Claude Status",
-        "published": "2026-06-17T16:28:10.000Z",
-        "summary": "Jun 17 , 16:28 UTC Resolved - This incident has been resolved. Jun 17 , 16:01 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jun 17 , 15:34 UTC Investigating - We are…"
       }
     ],
     "youtube": [
@@ -969,6 +970,14 @@
     ],
     "tutorials": [
       {
+        "title": "v2.1.190",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.190",
+        "source": "Claude Code Releases",
+        "published": "2026-06-24T15:53:56.000Z",
+        "summary": "What's changed Bug fixes and reliability improvements",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.187",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.187",
         "source": "Claude Code Releases",
@@ -1075,14 +1084,6 @@
         "published": "2026-06-12T15:30:28.000Z",
         "summary": "",
         "tutorial_kind": "video"
-      },
-      {
-        "title": "v2.1.175",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.175",
-        "source": "Claude Code Releases",
-        "published": "2026-06-12T04:23:51.000Z",
-        "summary": "What's changed Added enforceAvailableModels managed setting — when enabled, the availableModels allowlist also constrains the Default model (a Default that would resolve to a disallowed model now…",
-        "tutorial_kind": "official"
       },
       {
         "title": "Anthropic Just Released Its Best Model Ever (Mythos/Fable Deep Dive)",
@@ -1743,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.190",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.190",
+        "source": "Claude Code",
+        "published": "2026-06-24T15:53:56.000Z",
+        "summary": "What's changed Bug fixes and reliability improvements"
+      },
+      {
         "title": "v2.1.187",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.187",
         "source": "Claude Code",
@@ -1902,13 +1910,6 @@
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-06-12T15:30:28.000Z",
         "summary": ""
-      },
-      {
-        "title": "v2.1.175",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.175",
-        "source": "Claude Code",
-        "published": "2026-06-12T04:23:51.000Z",
-        "summary": "What's changed Added enforceAvailableModels managed setting — when enabled, the availableModels allowlist also constrains the Default model (a Default that would resolve to a disallowed model now falls back to the…"
       },
       {
         "title": "v2.0.0a1",
