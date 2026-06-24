@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-24T16:04:59.948Z",
+  "generated_at": "2026-06-24T19:23:11.280Z",
   "source": "Anthropic Academy",
   "base": "https://anthropic.skilljar.com",
   "courses": [
@@ -135,6 +135,13 @@
       "url": "https://anthropic.skilljar.com/ai-fluency-for-small-businesses",
       "summary": "This course empowers small businesses to develop AI fluency in order to increase organizational impact and efficiency while staying true to their mission and values.",
       "order": 18
+    },
+    {
+      "slug": "ai-fluency-for-builders",
+      "title": "AI Fluency for Builders",
+      "url": "https://anthropic.skilljar.com/ai-fluency-for-builders",
+      "summary": "This course empowers builders to develop AI fluency — increasing impact and efficiency while staying true to what it means to own the full arc from problem to shipped solution.",
+      "order": 19
     }
   ]
 }
