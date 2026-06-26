@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T19:25:19.970Z",
+  "generated_at": "2026-06-26T21:11:19.884Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "How People in China Keep Outsmarting Anthropic’s Geolocation Restrictions - WIRED",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQaHdjUkx2dklxMU9JN05EaWdTTnlWWE5OcFljdzNSbm5nUHZka2lKRFMwUjBLTFJqUTZuRjZMdnh1aXM1bWhtNGZURkRhMnUxNFhlZXdBR0xsakNveXE3N0xXVXBGSXNWeUlUb1RZM0FwWUN0MFhKRUEwOTU4X2s2bTl2WE5WdUM1WW1uSlVDTWxWNjRMb21rcllHSU02eHhKTGNV?oc=5",
+        "source": "Google News",
+        "published": "2026-06-26T21:02:00.000Z",
+        "summary": "How People in China Keep Outsmarting Anthropic’s Geolocation Restrictions WIRED"
+      },
+      {
         "title": "Micron And Anthropic Sign AI Infrastructure Supply Deal In 2026 - Memeburn",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQLUVUV08yMWZYY211cFFMYnFWVXpuZkY4OUdlN0Q3N0cwVXl5WmlMTWJSVzlGWmNuODZsMnVqWVZQaGloUEdLbnRCVkx4bFZkUXB6b0piR0xocUx2bFNQNVY0Y2tRU29rTVc2aVMwX2VKOFlDUHpWdndzR1JXUkJRMlM5UU1udHU5blVVWXhn?oc=5",
         "source": "Google News",
@@ -190,7 +197,7 @@
       {
         "title": "Show HN: Smart model routing directly in Claude, Codex and Cursor",
         "url": "https://github.com/workweave/router",
-        "source": "HN · 75↑",
+        "source": "HN · 105↑",
         "hn_id": "48688700",
         "published": "2026-06-26T16:40:11.000Z",
         "summary": "We built a model router that plugs into coding agents (e.g. Claude Code, Codex, Cursor, etc.) and intelligently sends requests to the best model to serve them. Here&#x27;s a…"
@@ -259,13 +266,6 @@
         "summary": "OpenAI is considering an initial public offering as soon as in 2027, according to people familiar with the matter, a timeline that would potentially see it go public after its artificial…"
       },
       {
-        "title": "Anthropic's Mythos Models Remain Offline After Ultimatum - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQN0dfc3JqNm1CZkh6cFUtbkk3RmxWYWU2V25qaUU0dWZVc2lwbGNCX2J6VHBjMDM2dkNrT1hZSHRvQmp3dHNSZURSd3RlUkNVNUZUUU9VMEsxZzNIb01hZlRYS1ZqZGhyRXFhbWVoQWpmeVdZR1hUNTQ3NGtuWFRXc2JVN09ScmViS1JGdHVqNWVpeVNsWV9nbkZ5NF9sZw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-26T14:17:51.000Z",
-        "summary": "Anthropic's Mythos Models Remain Offline After Ultimatum Let's Data Science"
-      },
-      {
         "title": "OpenAI’s Jalapeño chip is Big Tech’s spiciest move away from Nvidia",
         "url": "https://techcrunch.com/podcast/openais-jalapeno-chip-is-big-techs-spiciest-move-away-from-nvidia/",
         "source": "TechCrunch",
@@ -273,18 +273,18 @@
         "summary": "Nvidia has dominated the AI chip market for years, but the era of total dependence might be ending. OpenAI just shared its plans to spice things up with Jalapeño, its custom inference chip built…"
       },
       {
-        "title": "Enterprise AI customers are pulling back from OpenAI and Anthropic as costs spiral out of control - qz.com",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE55bXZLRUo2RUZhYUxzWlNwZlh6UzJLOVFOTW5PM01fb0lqR1JmYVFsX2dXc0NDX0YtWmo2bExFeVgxZk5oalh6dE10blNYUHEzRVd5WEExQkZ6WEdsOHY0VGtnUXY2dEEzUjhwMzYyVkg0X3lGYURUSjdtVnhSSms?oc=5",
-        "source": "Google News",
-        "published": "2026-06-26T13:52:26.000Z",
-        "summary": "Enterprise AI customers are pulling back from OpenAI and Anthropic as costs spiral out of control qz.com"
-      },
-      {
         "title": "Leaked screenshots hint that Claude Cowork is going mobile - Cybernews",
         "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1qZHZHb2M5T0QtUUFyblZrcFZBYWx2Y05PNXRWTXNhckxBdHdoSmthQ3c2SkhxUHUya2xFRFF2R1lzZ1RWMUlfeklHYUtmLTFMcXpXOGpuaUltZ1ZRLXhPWW40dzRYUnBBLVJWWA?oc=5",
         "source": "Google News",
         "published": "2026-06-26T13:46:21.000Z",
         "summary": "Leaked screenshots hint that Claude Cowork is going mobile Cybernews"
+      },
+      {
+        "title": "Enterprise AI customers are pulling back from OpenAI and Anthropic as costs spiral out of control - qz.com",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE55bXZLRUo2RUZhYUxzWlNwZlh6UzJLOVFOTW5PM01fb0lqR1JmYVFsX2dXc0NDX0YtWmo2bExFeVgxZk5oalh6dE10blNYUHEzRVd5WEExQkZ6WEdsOHY0VGtnUXY2dEEzUjhwMzYyVkg0X3lGYURUSjdtVnhSSms?oc=5",
+        "source": "Google News",
+        "published": "2026-06-26T13:22:26.000Z",
+        "summary": "Enterprise AI customers are pulling back from OpenAI and Anthropic as costs spiral out of control qz.com"
       },
       {
         "title": "Anthropic checks show coding improvements via Fable: Wells Fargo (ANTHRO:Private) - Seeking Alpha",
@@ -1630,24 +1630,8 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "Tool Use with Prompt Caching",
-        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching",
-        "source": "Anthropic Docs",
-        "published": null,
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "Server Tools",
         "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools",
-        "source": "Anthropic Docs",
-        "published": null,
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Troubleshooting Tool Use",
-        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use",
         "source": "Anthropic Docs",
         "published": null,
         "summary": "",
@@ -1686,6 +1670,14 @@
         "tutorial_kind": "official"
       },
       {
+        "title": "Tool Search Tool",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "Memory Tool",
         "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool",
         "source": "Anthropic Docs",
@@ -1702,6 +1694,14 @@
         "tutorial_kind": "official"
       },
       {
+        "title": "Text Editor Tool",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/text-editor-tool",
+        "source": "Anthropic Docs",
+        "published": null,
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "Computer Use Tool",
         "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool",
         "source": "Anthropic Docs",
@@ -1710,8 +1710,8 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "Text Editor Tool",
-        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/text-editor-tool",
+        "title": "Troubleshooting Tool Use",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use",
         "source": "Anthropic Docs",
         "published": null,
         "summary": "",
@@ -1758,6 +1758,13 @@
         "summary": "Third v2 alpha. Pre-releases are opt-in only; pip install mcp still resolves to the stable 1.x line. pip install mcp==2.0.0a3 # or uv add \" mcp==2.0.0a3 \" See the migration guide for the full list of breaking changes.…"
       },
       {
+        "title": "We've raised rate limits across the Claude API. Claude Sonnet and Claude Haiku rate limits now match Claude Opus at…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#june-26-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-06-26T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.193",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.193",
         "source": "Claude Code",
@@ -1776,6 +1783,13 @@
         "url": "https://www.youtube.com/watch?v=w1bZl8lhFGY",
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-06-25T17:16:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "We've deprecated fast mode for Claude Opus 4.7, with removal on July 24, 2026. After removal, requests to…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#june-25-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-06-25T00:00:00.000Z",
         "summary": ""
       },
       {
@@ -2218,20 +2232,6 @@
         "source": "MCP Inspector",
         "published": "2026-05-08T13:59:01.000Z",
         "summary": "What's Changed Fix decimal typing behavior for number inputs in tools form by @MumuTW in #1127 fix: ensure DCR always registers both redirect URIs by @asoorm in #1173 fix: add horizontal scrolling for long values in…"
-      },
-      {
-        "title": "Multi-agent sessions and Outcomes are now in public beta under the standard managed-agents-2026-04-01 beta header.",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#may-6-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-05-06T00:00:00.000Z",
-        "summary": "Claude Managed Agents vault credential background refresh is now supported for mcp_oauth credentials. See Authenticate with vaults . • Webhooks for Claude Managed Agents are now supported. Webhook event types include session and vault…"
-      },
-      {
-        "title": "Workload Identity Federation is now generally available. Authenticate workloads to the Claude API with short-lived…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#may-4-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-05-04T00:00:00.000Z",
-        "summary": ""
       }
     ]
   }
