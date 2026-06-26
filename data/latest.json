@@ -1,41 +1,132 @@
 {
-  "generated_at": "2026-06-26T10:40:58.464Z",
+  "generated_at": "2026-06-26T13:55:01.206Z",
   "version": 1,
   "sections": {
     "updates": [
       {
-        "title": "Nuclear Safeguards for Ai",
-        "url": "https://www.anthropic.com/research/nuclear-safeguards-for-ai",
+        "title": "Agents in Biology",
+        "url": "https://www.anthropic.com/research/agents-in-biology",
         "source": "Anthropic Research",
-        "published": "2026-06-24T14:21:03.000Z",
+        "published": "2026-06-26T12:35:41.000Z",
         "summary": ""
       },
       {
-        "title": "81k Economics",
-        "url": "https://www.anthropic.com/research/81k-economics",
+        "title": "Making Claude a Chemist",
+        "url": "https://www.anthropic.com/research/making-claude-a-chemist",
         "source": "Anthropic Research",
-        "published": "2026-06-24T12:15:51.000Z",
+        "published": "2026-06-26T12:35:06.000Z",
         "summary": ""
       },
       {
-        "title": "Introducing Claude Tag",
-        "url": "https://www.anthropic.com/news/introducing-claude-tag",
+        "title": "Core Views on Ai Safety",
+        "url": "https://www.anthropic.com/news/core-views-on-ai-safety",
         "source": "Anthropic",
-        "published": "2026-06-23T19:22:44.000Z",
+        "published": "2026-06-26T12:34:51.000Z",
         "summary": ""
       },
       {
-        "title": "Claude Code Expertise",
-        "url": "https://www.anthropic.com/research/claude-code-expertise",
+        "title": "Critical Infrastructure Defense",
+        "url": "https://www.anthropic.com/research/critical-infrastructure-defense",
         "source": "Anthropic Research",
-        "published": "2026-06-22T21:50:13.000Z",
+        "published": "2026-06-26T12:34:02.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Exploit",
+        "url": "https://www.anthropic.com/research/exploit",
+        "source": "Anthropic Research",
+        "published": "2026-06-26T12:33:25.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Corps",
+        "url": "https://www.anthropic.com/news/claude-corps",
+        "source": "Anthropic",
+        "published": "2026-06-26T12:32:44.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Dxc Anthropic Alliance",
+        "url": "https://www.anthropic.com/news/dxc-anthropic-alliance",
+        "source": "Anthropic",
+        "published": "2026-06-26T12:32:30.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Tcs Anthropic Partnership",
+        "url": "https://www.anthropic.com/news/tcs-anthropic-partnership",
+        "source": "Anthropic",
+        "published": "2026-06-26T12:30:44.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Exploit Evals",
+        "url": "https://www.anthropic.com/research/exploit-evals",
+        "source": "Anthropic Research",
+        "published": "2026-06-26T12:30:07.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Attack Navigator",
+        "url": "https://www.anthropic.com/research/attack-navigator",
+        "source": "Anthropic Research",
+        "published": "2026-06-26T12:29:48.000Z",
         "summary": ""
       },
       {
         "title": "Gates Foundation Partnership",
         "url": "https://www.anthropic.com/news/gates-foundation-partnership",
         "source": "Anthropic",
-        "published": "2026-06-22T12:56:39.000Z",
+        "published": "2026-06-26T12:29:18.000Z",
+        "summary": ""
+      },
+      {
+        "title": "81k Economics",
+        "url": "https://www.anthropic.com/research/81k-economics",
+        "source": "Anthropic Research",
+        "published": "2026-06-26T12:28:57.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Project Fetch Phase Two",
+        "url": "https://www.anthropic.com/research/project-fetch-phase-two",
+        "source": "Anthropic Research",
+        "published": "2026-06-26T12:28:05.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Mythos Preview",
+        "url": "https://www.anthropic.com/research/mythos-preview",
+        "source": "Anthropic Research",
+        "published": "2026-06-26T12:27:49.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Seoul Office Partnerships Korean Ai Ecosystem",
+        "url": "https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem",
+        "source": "Anthropic",
+        "published": "2026-06-26T12:27:32.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code Expertise",
+        "url": "https://www.anthropic.com/research/claude-code-expertise",
+        "source": "Anthropic Research",
+        "published": "2026-06-26T12:25:45.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Introducing Claude Tag",
+        "url": "https://www.anthropic.com/news/introducing-claude-tag",
+        "source": "Anthropic",
+        "published": "2026-06-26T12:23:43.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Nuclear Safeguards for Ai",
+        "url": "https://www.anthropic.com/research/nuclear-safeguards-for-ai",
+        "source": "Anthropic Research",
+        "published": "2026-06-24T14:21:03.000Z",
         "summary": ""
       },
       {
@@ -46,105 +137,70 @@
         "summary": ""
       },
       {
-        "title": "Project Fetch Phase Two",
-        "url": "https://www.anthropic.com/research/project-fetch-phase-two",
-        "source": "Anthropic Research",
-        "published": "2026-06-18T18:44:44.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Seoul Office Partnerships Korean Ai Ecosystem",
-        "url": "https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem",
-        "source": "Anthropic",
-        "published": "2026-06-18T03:57:50.000Z",
-        "summary": ""
-      },
-      {
         "title": "Team/frontier Red Team",
         "url": "https://www.anthropic.com/research/team/frontier-red-team",
         "source": "Anthropic Research",
         "published": "2026-06-17T17:03:48.000Z",
         "summary": ""
-      },
-      {
-        "title": "Mythos Preview",
-        "url": "https://www.anthropic.com/research/mythos-preview",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T16:59:28.000Z",
-        "summary": ""
-      },
-      {
-        "title": "N Days",
-        "url": "https://www.anthropic.com/research/n-days",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T16:51:58.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Attack Navigator",
-        "url": "https://www.anthropic.com/research/attack-navigator",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T16:51:10.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Exploit Evals",
-        "url": "https://www.anthropic.com/research/exploit-evals",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T16:50:51.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Exploit",
-        "url": "https://www.anthropic.com/research/exploit",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T16:50:37.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Zero Days",
-        "url": "https://www.anthropic.com/research/zero-days",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T16:50:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Property Based Testing",
-        "url": "https://www.anthropic.com/research/property-based-testing",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T16:50:01.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Cyber Toolkits Update",
-        "url": "https://www.anthropic.com/research/cyber-toolkits-update",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T16:49:52.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Critical Infrastructure Defense",
-        "url": "https://www.anthropic.com/research/critical-infrastructure-defense",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T16:49:31.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Smart Contracts",
-        "url": "https://www.anthropic.com/research/smart-contracts",
-        "source": "Anthropic Research",
-        "published": "2026-06-17T16:49:21.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Developing Nuclear Safeguards for Ai Through Public Private Partnership",
-        "url": "https://www.anthropic.com/news/developing-nuclear-safeguards-for-ai-through-public-private-partnership",
-        "source": "Anthropic",
-        "published": "2026-06-17T16:48:41.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic checks show coding improvements via Fable: Wells Fargo (ANTHRO:Private) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOdFF1Nlg0cmZ2QzBLSEtxTmlOZlFyQTJxR1ExOXRZVm8tLXZSRHNobE5yRzBIMXA3TEtxLVFMbzNjeF9seVRhRFA0X3dteXNiU09UWHEwMEFoZzRpVkduZGtVWGJFUDFNamQ0YVhqVkFjQlNvOGRGajk5MS1qVzVXX191UGJ3ZFpfd21JdUxhOENuc3lVLXU0MkJrVHJNRDFyMm00?oc=5",
+        "source": "Google News",
+        "published": "2026-06-26T13:16:22.000Z",
+        "summary": "Anthropic checks show coding improvements via Fable: Wells Fargo (ANTHRO:Private) Seeking Alpha"
+      },
+      {
+        "title": "Feud between Anthropic and Trump administration explained: What is going on? - WION",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNzFXVGUxUGFrUlNPd2dvZFB5VnlMT21mMFRCSFdmNGpLdmFLSlljTjZhZEJsUERqRjlNaVRqVHFLQTVSQkQzQWpjWjdfdG1yaGFHaDhEbXZiRkQ2RzVpVWxvX2JYUGJCLXNhSlp1VUNZYlhYdUM2OC1QZUlEMUVNTEtLUFpWLWtPaXNQSVhDWm5DNkp1amZrNzR2bDhObHM5Y2JPWA?oc=5",
+        "source": "Google News",
+        "published": "2026-06-26T13:08:00.000Z",
+        "summary": "Feud between Anthropic and Trump administration explained: What is going on? WION"
+      },
+      {
+        "title": "Enterprise AI customers are pulling back from OpenAI and Anthropic as costs spiral out of control - qz.com",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE55bXZLRUo2RUZhYUxzWlNwZlh6UzJLOVFOTW5PM01fb0lqR1JmYVFsX2dXc0NDX0YtWmo2bExFeVgxZk5oalh6dE10blNYUHEzRVd5WEExQkZ6WEdsOHY0VGtnUXY2dEEzUjhwMzYyVkg0X3lGYURUSjdtVnhSSms?oc=5",
+        "source": "Google News",
+        "published": "2026-06-26T12:52:26.000Z",
+        "summary": "Enterprise AI customers are pulling back from OpenAI and Anthropic as costs spiral out of control qz.com"
+      },
+      {
+        "title": "OpenAI and Anthropic face spending-driven growth slowdown - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOejJJaXhQV0VubS1EZGEzMnNqVzNNamkyTmVQd1lzWmFmMHFmckxRdW9MUUxWa3M2UVZ3UFdDYldxX3JLSncxQ0pLeUM0aEpVM0kya09zaDhpMURJU0djNTBVWlhJR2JfbDhranl3MzBnNlBYYVFzcVllWDlzZnIxV3BaTUJCT1lkd040WDlXTWJkbVhhRWVMWDZrQkhZcVkw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-26T12:10:01.000Z",
+        "summary": "OpenAI and Anthropic face spending-driven growth slowdown Let's Data Science"
+      },
+      {
+        "title": "OpenAI and Anthropic face new AI reality as companies shift from tokenmaxxing to efficiency - CNBC",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMF8taEF1Z1U2WElGXzIwUWt0LXpIUVNQSWhGblA4c1NGdmZDNjRqc2tnZ0pLYlYyMzdhVkplOG83b1FpRkFHRkJKMDR6WmtQQkoxVVRFc0hJRV84WGUwUjNFNFhYNk81aWR4MUpyNkdFcFRIbk9TSU0zNjJtaGZQdFowVW9IaGdlMG5vc0tIUTVaOVdEUkVvMi1aQXBiSEpSQ2xWQmRZVnpYd9IBrwFBVV95cUxOaC1qYUpwNng0bktoMjVCOG9qTTZOcW83SDNEY0hHX1cwdER0VElycDNnVFZSaXZ0ZDVMSm5PX1RQT3J0eEZHVFJBLXpZVG5oWmxtWWtFN3p5dXdvY2Nud09BSnlVVWktX1Z4MmV5TjdMZENMY2pRTVBVVFVnaC10NlZlRnVfWTI1TWpqNDVwbmk5WkEtREpzVTZuX0xkclFXS1Iyd1RsXzlPTy1aRFE4?oc=5",
+        "source": "Google News",
+        "published": "2026-06-26T12:00:01.000Z",
+        "summary": "OpenAI and Anthropic face new AI reality as companies shift from tokenmaxxing to efficiency CNBC"
+      },
+      {
+        "title": "‘AI Cannibalism’: Anthropic accuses Chinese tech giant Alibaba of 29 million adversarial distillation attacks. What is it? - WION",
+        "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNdnM2M0djajhYOGg3RnYzVFVEUkRWSU83U1FSV3I1bDMxcm1OYXNzWnFrNVlPaktlSnhKZEQwLUhsMjVMN0QzSl9HeU9DMC12M05HZDFjS2R0dmppc080ckpIRzJycmRodWhNaklRU191TjFaelVQb2R6NXIwUW9VSXlwZ1NCVmVGbk84c01qZUpKbUFXOHNFc29jWkVYM0psMTl3b3RZU2hIR09KeHljOW1ydGNqeUVJcW1jSWhtNThqWmw1WXFvZzMyQlFVd3hCSVNGX1UwMFVvRkhQMnpiZk41S1dqZXNQUlF0LTlaOUxoV3pVM1hF0gH8AUFVX3lxTFB0cmtHWEtfNHo3ZmstaTZmWFNrUzBDYnc0UG9vVnRYN204ay1mQlpRY0l2MTJqY1h0SXZDdURKMU9ORzBkSkx0dmlnVERTeXgtZE9XTFNsNDVqOEhxdUNkXzN5WE5SR01leFZXVUluYXExWS1XakRyNDFJdGk2TGFGMDZZbTB3NkRUT21mTEtOUG5tMGVXb3hsWWZtR1RMNEZfcTIzVGdxNmtlejdvcU5UM3lKQlF2MjJhbkJaaWpud3M2LUJLc3ZXTC00ZTl5VEhLd05YSHROc1hNQ0ptLVd6YmM3U2JnMTY1N29aQmFXNFBTTXRXVzY0WGJ6Sw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-26T11:27:00.000Z",
+        "summary": "‘AI Cannibalism’: Anthropic accuses Chinese tech giant Alibaba of 29 million adversarial distillation attacks. What is it? WION"
+      },
+      {
+        "title": "Rep. Anna Paulina Luna Uses AI in Defense Amendment - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQaU5NRzVNdWRmLUpxRGdhX3l2cjhXbV9JT29aNWh5c0N3OWlZUUs1T2xqQW9XV1dzM3ktMXdwUXliTVJ3ZDlCajRTT1dkSDFIMHR4bGRTb2UzTHJpb3JsQ1lKMVVTdWNqNDcxMXhHcjI2REx1SUQzZllRZ3RJOVI0TW1NdFRSVTFuamE5WWRrUmZnNk5sYVJz?oc=5",
+        "source": "Google News",
+        "published": "2026-06-26T10:57:34.000Z",
+        "summary": "Rep. Anna Paulina Luna Uses AI in Defense Amendment Let's Data Science"
+      },
+      {
+        "title": "Andrej Karpathy Criticizes X, Musk Calls Algorithm Overhaul - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOajdiOW1OdVRzclQzdFR6ZUZfRDRHZ05JY3hQVnRWSXRuQWpOYmY3Qk1sV3lmT1pWWWNIVlZGVlhfTVVQM0tRamNXT1FvV2YwZGpUT2l1eGFhU0oxWjJEaUpfSVhLM0Q0NGlqa1ZlU0VwX00zTWJEZnNDbEpqcWJKcmx0Ym4tU2tKMnExS0xjZms4UVRDMWJHMlo0MHJuVDd6Ync?oc=5",
+        "source": "Google News",
+        "published": "2026-06-26T10:41:28.000Z",
+        "summary": "Andrej Karpathy Criticizes X, Musk Calls Algorithm Overhaul Let's Data Science"
+      },
       {
         "title": "Washington’s Foreign Ban on Anthropic’s Top Models May Backfire",
         "url": "https://www.bloomberg.com/news/newsletters/2026-06-26/white-house-s-ban-on-anthropic-ai-access-may-boost-china-s-open-source-models",
@@ -165,6 +221,13 @@
         "source": "Google News",
         "published": "2026-06-26T09:28:12.000Z",
         "summary": "Claude Cowork to get a mobile client Techzine Global"
+      },
+      {
+        "title": "Anthropic Accuses Alibaba-Linked Operators of Distilling Claude - ForkLog",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxONmJTd3RYYUw5b2FzZS0zZ094VzZob01jQzR4MHBXempMVXJpMVRTZXMwa0ZhMkhtc044Ymc5SEs3OVE3VlNxaGNQdURXcUFSRWpJNlZnN3gzTnlXNG9HOWFtYUY0SmpoandsS1hsZlJTck5PT01VUG5CMFA2TzY2czhOZEhEVmZ2WGVaSWxaREU?oc=5",
+        "source": "Google News",
+        "published": "2026-06-26T09:19:00.000Z",
+        "summary": "Anthropic Accuses Alibaba-Linked Operators of Distilling Claude ForkLog"
       },
       {
         "title": "Anthropic could be about to release Claude Cowork for mobile - TechRadar",
@@ -202,11 +265,11 @@
         "summary": "Fellowship Placement Programs Trend Hunter"
       },
       {
-        "title": "Anthropic accuses Alibaba of stealing Claude AI model using 25,000 fake accounts in massive cyber attack - Swarajya",
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdTM0RmJzbFFoWmxENGpLMlZYZmhWWE1GcXAtRG9LMGRyNndWSmsxS3NLZFZVTVBLMWhDNjhkbEU5dXlzVDZGa0pSSGxoOWFyQWZzblBFMlItN3FJRmxsREEtNDVSbkc3QXFaSXh6V3hHaENnQW5xZ3M1bHZFU01XOTRGcXhiZVFKUXRNam1SdlpWb1Y0aEthdWZOWk9SS2xNWVdYMXNKcTBEZHl6U3pNU2NJaDZxWEkwVEc3SHZ4R1dVV0lLTjlTZ1N4LXUxZUh3T0FBY9IB5AFBVV95cUxNRnEwVXM5VnpWMkh5LUNFWjQ5a0JiVVFCOWY4Q193WHZjeThZRFltM0lEWmhwYWxYVEFRTDdaM3pRbF9WTi1VY0xmcnFXM1FvSkhmek12YXlrNWZ4TDRQS21vMW5GSkExM1lXTnNnUFJhSXVzbjc3RkZOLWk5Umg5UkR2TUhWZ0diQnFicm5uRkdOaGtfUjVyc0pjTnhtcVVHd1Q2dmh5RGItZml3OEFkRnJoS0tDal9qeG5fVlg4RkhjQUhjbjBsWGdOcWZIMng4c3hqR2RKZGc5LTA2aUdwZlRzcXg?oc=5",
+        "title": "Anthropic brings Claude Tag into Slack as an always-on AI teammate - YourStory.com",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE14dDVuc204WXFaUEp4enlrMlVmM3ZsMFhwVTNhZ1MwYlpKT2ZTaUlPNDN1aklteU5nU091SnN5S0l4Y25IbXZKU0ZNY2U2ZDBGbjc0YkFjM3FJMVVLTzZQWS1BOXFVSHltcVgyZGxaN0hhWkl1OEJVNw?oc=5",
         "source": "Google News",
-        "published": "2026-06-26T06:32:36.000Z",
-        "summary": "Anthropic accuses Alibaba of stealing Claude AI model using 25,000 fake accounts in massive cyber attack Swarajya"
+        "published": "2026-06-26T06:13:09.000Z",
+        "summary": "Anthropic brings Claude Tag into Slack as an always-on AI teammate YourStory.com"
       },
       {
         "title": "Alibaba Ran Largest Known AI Theft Campaign Against Claude, Anthropic Tells Senate - Tech Times",
@@ -221,13 +284,6 @@
         "source": "Google News",
         "published": "2026-06-26T02:18:19.000Z",
         "summary": "Anthropic Accuses Alibaba of AI Capability Theft via Fake Accounts 조선일보"
-      },
-      {
-        "title": "You can now tag Claude into your Slack chat and let AI do the work - - Happy Mag",
-        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE83NVNhalNJMWIwVzBWTzdFMmw4Wm1VZUJNRnplTFBPcHo3WEpRNDBKQWFiSWRCOE1RNEJnRGpOSE01OEpJaGQ0RzdhdmVaQ1I4OGlXNWhqLTJpbTlqVmFTYzhFejIyRksxMXpZ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-26T01:15:22.000Z",
-        "summary": "You can now tag Claude into your Slack chat and let AI do the work - Happy Mag"
       },
       {
         "title": "The White House is asking OpenAI to slow roll the release of its new model over safety concerns",
@@ -263,62 +319,6 @@
         "source": "Bloomberg",
         "published": "2026-06-25T22:00:54.000Z",
         "summary": "The Trump administration has asked OpenAI to stagger the release of an upcoming powerful artificial intelligence model, according to a person familiar with the matter, nearly two weeks after rival…"
-      },
-      {
-        "title": "Anthropic Accuses Alibaba of Stealing Claude AI Brain Power Via Distillation Campaign - Android Headlines",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPQXp3UU85UmxrU1dCMkpZeVd2OVVPSExTS2Y0ZDlodEFndks1Vkd1UXo0NVM0ejM2d0pULXRBVWJ1YmdDcEs0SmZGS09iWmhXMDlJSE9EVlZYVUxZeEM0dVhZY0Iwel9Nd2I2dTVGM3Rid05kYkFPa0lqRkVUMWQxZ0lHXzl2WnhOWDU2NUxya2Q4MFppRUJCbzRGcDF6NG5t?oc=5",
-        "source": "Google News",
-        "published": "2026-06-25T21:45:56.000Z",
-        "summary": "Anthropic Accuses Alibaba of Stealing Claude AI Brain Power Via Distillation Campaign Android Headlines"
-      },
-      {
-        "title": "Elon Musk backs Andrej Karpathy amid Claude AI debate - The American Bazaar",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQRUpNRGlod2EtQ3lSZkJRS2xNSDlLNEc1Ym1Ya19iMVZkcUY4OU9OcTI3SmM4MGFfSkMtTWh6ZUFHV0lTR2EzVVB2TlR2R0JvTDNJV1htcEFWdk5CYnFKMjBKV1BYQ05tcm1EU3ZhZjdFZWZ0UWZNblNUQ3B1Yks3WG5BWm95aFZseFRGLWJ4MUZNWmFjLWRYZmhNSnRueVc4RmxsdTJ1ZlY?oc=5",
-        "source": "Google News",
-        "published": "2026-06-25T20:46:37.000Z",
-        "summary": "Elon Musk backs Andrej Karpathy amid Claude AI debate The American Bazaar"
-      },
-      {
-        "title": "Anthropic Customers Find Errant Charges, Auditing Startup Says - The Information",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNQjFfZ01qdk1FOHJIaHIyNldvNVoxSWN2TEZBT28tZWY2Nnd5ZUFPQUlLVlVtQ3hubGpYdlpTQkpQT3h6TlN4TUlJRm4xLVBKSjlkUjRFcmI3YkhWbVF3OXFlSUJFVU5SVnFNUUpfUWdRNGUxQ2J0RmZBRzdwbC1nUDh6VEU3Zl9DTVA1Q0NrYzlJMUF1bGtpdTltX1hhTmxfSFRTcTVPR2NnVVdQMTFKdVpLRkVfdw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-25T19:31:00.000Z",
-        "summary": "Anthropic Customers Find Errant Charges, Auditing Startup Says The Information"
-      },
-      {
-        "title": "US restricts Anthropic’s Claude Fable 5 AI over security concerns - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPY1FLcUg4NHVvMFFIOVdjek9keEtUb195bXhqYTJEN21QdXFYcE1pemNfdWgtYlFXa3lFNkZvck16LWFCY2J6SlZlV05CODl3bVJETEhtUkRFZVhHTjhuMC1vYVZKV0QxUUxHTUxGa2EwSEIwenRxWjd0MWVxUnhPLU1GaURmN0pHcWJ6NHpGZi1mbTQtS0o0?oc=5",
-        "source": "Google News",
-        "published": "2026-06-25T19:15:26.000Z",
-        "summary": "US restricts Anthropic’s Claude Fable 5 AI over security concerns Crypto Briefing"
-      },
-      {
-        "title": "Anthropic Says Alibaba Ran a 44-Day Operation to Steal Claude’s Brain - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQSEFwbmxhQXdZTnlWaXc2Q1FsMnA0clVoWTZsYmZkdkhJazNvT0ZtYVR3X0U0LUhsX092M2xNRVhTLTFtcS1NdzN4SzRHXzFoUE55S3k3aS1famNzUVpNbVRlWE9MV09PN09xX25kQlVsODkwXy1mcnd0QS10RUVWUlhzMkhjUTVkRUUtN1dCNA?oc=5",
-        "source": "Google News",
-        "published": "2026-06-25T19:04:46.000Z",
-        "summary": "Anthropic Says Alibaba Ran a 44-Day Operation to Steal Claude’s Brain Yahoo Tech"
-      },
-      {
-        "title": "Anthropic's Claude is gaining ground on ChatGPT among paying users, and crypto should be paying attention - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0yc3pWbnhEeUxaN0JqSjZvNGhBT3hIV0xVWFNpMmFoazhrUzJHYVlSekFNRlczVTlpZnV4MkpjUTA5NGJmUTF1eU11SGlTNDZ4NUcxUkRDRFlNUmlJdGVwQmEySjQyckJRano3dGxZMGRxYzFwLVE?oc=5",
-        "source": "Google News",
-        "published": "2026-06-25T18:27:17.000Z",
-        "summary": "Anthropic's Claude is gaining ground on ChatGPT among paying users, and crypto should be paying attention Crypto Briefing"
-      },
-      {
-        "title": "Why OpenAI and Anthropic Are Betting on Channel Partners - Channel Insider",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBJNXBkalJ2NmV4Wk81RHR1Q2plVFFJeng3ZVlRdkk5MUFoQ1c4YjNkUF9TTzFTWjlhanYtZ19QN3hjdGNTZC1FV2IzcGlpd1NBcGdpbVIzQVF5V1QyYkRUNWFRdEdmODlTYnpvbkhtOWw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-25T18:25:38.000Z",
-        "summary": "Why OpenAI and Anthropic Are Betting on Channel Partners Channel Insider"
-      },
-      {
-        "title": "Anthropic Alleges That Alibaba Pilfered Claude Capabilities - AI Business",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxORllDb3pvRUdDNnhSaEFVYTU1ay1sMmdhcW1lUVd6VFpRYk5lNXB0X1I0YlUxWHA4VUVYWjNOaWNXRE5UMkE2M00zTDg5YXBWZHZiVXIzTFNUYnNQbnZSZ016Mk1xV2hnZ0U2eUU1dXRVMmZBYzFISTMxVktSa01zOF9zVFBkUmVod0hncEVnSXlDSzZ4dmc?oc=5",
-        "source": "Google News",
-        "published": "2026-06-25T18:21:44.000Z",
-        "summary": "Anthropic Alleges That Alibaba Pilfered Claude Capabilities AI Business"
       },
       {
         "title": "AI Agents Just Changed Forever: GLM 5.2, Codex Skills, Claude & Cursor",
@@ -1743,6 +1743,13 @@
     ],
     "claude_learning": [
       {
+        "title": "v1.28.1",
+        "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.28.1",
+        "source": "MCP Python SDK",
+        "published": "2026-06-26T12:32:57.000Z",
+        "summary": "What's Changed [v1.x] Buffer per-request StreamableHTTP streams; store priming event before dispatch by @maxisbey in #2948 [v1.x] Set Development Status classifier to Production/Stable by @maxisbey in #2976 [v1.x]…"
+      },
+      {
         "title": "v2.0.0a3",
         "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.0.0a3",
         "source": "MCP Python SDK",
@@ -2223,13 +2230,6 @@
         "url": "https://platform.claude.com/docs/en/release-notes/overview#may-4-2026",
         "source": "Claude API Release Notes",
         "published": "2026-05-04T00:00:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "We've retired the 1M token context window beta ( context-1m-2025-08-07 ) for Claude Sonnet 4.5 and Claude Sonnet 4.…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#april-30-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-04-30T00:00:00.000Z",
         "summary": ""
       }
     ]
