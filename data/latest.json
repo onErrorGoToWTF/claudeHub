@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T20:48:54.921Z",
+  "generated_at": "2026-06-28T22:51:16.329Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "China’s Z.ai claims it can match Mythos on cybersecurity",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/958804/chinas-z-ai-glm-52-mythos-cybersecurity",
+        "source": "The Verge",
+        "published": "2026-06-28T21:42:51.000Z",
+        "summary": "China's Zhipu AI (Z.ai) released its open-weight GLM-5.2, and some researchers have claimed that it matches Mythos in certain bug-finding and cybersecurity scenarios. While GLM lags behind models…"
+      },
+      {
         "title": "Claude Operon Just Shocked The World Paris Hilton (5vFLyIUhWp) - Fathom Journal",
         "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9IeXJsMUlydUVkbWg5UHFJSzNRS1owWlg2WEk1OVliRHJoemp5VFVxcEs5SFE4RllGN3VwaHUzdVBZbl9sdGc1emctZVJzaHd3SjR4R2d1bnBWbUIwQU82S1V0Snc?oc=5",
         "source": "Google News",
@@ -181,9 +188,9 @@
         "summary": "US lifts ban on Anthropic’s AI model Claude Fable 5 after security concerns Crypto Briefing"
       },
       {
-        "title": "Semgrep: GLM 5.2 beats Claude in our Cyber Benchmarks",
+        "title": "GLM 5.2 beats Claude in our benchmarks",
         "url": "https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/",
-        "source": "HN · 56↑",
+        "source": "HN · 254↑",
         "hn_id": "48709670",
         "published": "2026-06-28T17:50:47.000Z",
         "summary": ""
@@ -191,7 +198,7 @@
       {
         "title": "I used Claude Code to get a second opinion on my MRI",
         "url": "https://antoine.fi/mri-analysis-using-claude-code-opus",
-        "source": "HN · 205↑",
+        "source": "HN · 281↑",
         "hn_id": "48708941",
         "published": "2026-06-28T16:35:19.000Z",
         "summary": ""
@@ -260,25 +267,18 @@
         "summary": "Why Anthropic held back Claude Mythos, its most powerful AI model yet? Storyboard18"
       },
       {
-        "title": "Scoop: Powerful Anthropic model, Fable 5, on track to return soon - Axios",
-        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1meFRNUHVNUk94eW1najE5eHpMUGc0SXJKcDYtT0J0WUFzZUxUb0NqT3pHdUswR2JZTFNHdnpELVdDZGZGN0psNVhmbjQxZ1NuUjI0NzYtb1REc0VuTzhXVVZHV0RSVjc1R2wzbHluNA?oc=5",
-        "source": "Google News",
-        "published": "2026-06-28T08:09:06.000Z",
-        "summary": "Scoop: Powerful Anthropic model, Fable 5, on track to return soon Axios"
-      },
-      {
-        "title": "Karpathy CLAUDE.md Grows to Ten Rules: New Self-Check Protocol for AI Coding Loops - Tech Times",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOMm5kN3pKVUNrRTRLS3UwRm03S19rY2VFNlhMS1BEcUJRWGhqa0laNmdsZllFeU84ZjQ2c2Uxci0yWUVteGlHUlR0dGVKOGdXZ0w4eWhSYWdDdWpNZXIyb0xQc3dRV2pySVhHcVZvb0VCZUdUVXl0dGdmVnNyX01tbFFqYmJKbEo5NlYzemc1WUlVV0Z3UUVFUUVPakhLUzltbUh5RGVxTzExWTJUWm5pTFRfc2hVMmpZZUZILTBIeGx4RnBMZlc4?oc=5",
-        "source": "Google News",
-        "published": "2026-06-28T06:15:53.000Z",
-        "summary": "Karpathy CLAUDE.md Grows to Ten Rules: New Self-Check Protocol for AI Coding Loops Tech Times"
-      },
-      {
         "title": "Trump Admin: Anthropic Can Give Claude Mythos 5 Only to “Trusted Partners” - CXOToday.com",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOR2ZzTWpneGY0ZnZYaU9rM2FCdnFBcWRmNmRSR01IWk94SXB2MTMxeUNrMWY3U2pKdThRLXpOQVlGb0pQY0lrOW9xMGxadEYxZ0NLeTBHTjVJd2lpbEd2R09SMVk1eFRISk52S1NCQ1QyOWFmQ1NHZkVOaDhIWlJyT0MzaDA5N3ZKNHJnVjdXSjNDalpQclBYTmZHS19Yc0JIVGUw?oc=5",
         "source": "Google News",
         "published": "2026-06-28T06:03:51.000Z",
         "summary": "Trump Admin: Anthropic Can Give Claude Mythos 5 Only to “Trusted Partners” CXOToday.com"
+      },
+      {
+        "title": "OpenAI Eyes 2027 IPO Delay As Washington Clears Anthropic's Mythos 5 - Forbes",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOVXlobjR6ZFFkOWFvNWZfUHhTdFFzc0w0SVJCVHNtOUt4SkFETEstSWZuV1FfRHN0ZFk1YmxSSU1XaC1zQ2QxYzFRMlI4Y3ppRFFSeUVLVzdjLWY5MEhXX0hxanpBVVBqN2hWOXBYM2RVdDNyaFJLSWwyYkU1MUo3RmF4QU4zdV9PRUg3U3FRQnMzUFliMDJWY2hiZlZXU0l6U1VTdjJkNjJCdk84MWd6eXpyZGM4UHpFMF9vTw?oc=5",
+        "source": "Google News",
+        "published": "2026-06-28T04:12:09.000Z",
+        "summary": "OpenAI Eyes 2027 IPO Delay As Washington Clears Anthropic's Mythos 5 Forbes"
       },
       {
         "title": "China Has Matched Anthropic in Cybersecurity, Resetting AI Race - WSJ",
@@ -290,7 +290,7 @@
       {
         "title": "Show HN: Adrafinil – keep a lid-closed Mac awake only while agents work",
         "url": "https://github.com/kageroumado/adrafinil",
-        "source": "HN · 119↑",
+        "source": "HN · 120↑",
         "hn_id": "48701512",
         "published": "2026-06-27T20:34:53.000Z",
         "summary": "A month ago there was a wave of posts and tweets about engineers walking around cafes and parks with their MacBooks propped half-open, as fully closing the lid forces sleep that…"
@@ -301,13 +301,6 @@
         "source": "Google News",
         "published": "2026-06-27T20:31:17.000Z",
         "summary": "CI&T (CINT) Joins Anthropic’s Claude Partner Network Yahoo Finance"
-      },
-      {
-        "title": "Claude Code turned every engineer into three. Now companies need more product thinkers - Venturebeat",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYnlzM25tN1VEdzk3WW5hdVBYaXVUMG54X2pJaXZjSC1ObXUwelE0Y0FIQXFTQk1tZjF5X3BIcE9KajRUZ3VsQS1RWS1xQ1ktNEE3dm5QaXhrUFhVQUQwQmhmb29nSFg1QmlJbVJ1Rmd5bnNpZ0t5Z0ZvNzlKbldBbHoteEVBVTJNRV9mNDd6NmE2b19XVzFBMG1UdFRJYXktTnpOWVMtZTB3SUpzRE9xSVB0TUYwdHkxOG1wak5aMHBLZw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-27T19:30:09.000Z",
-        "summary": "Claude Code turned every engineer into three. Now companies need more product thinkers Venturebeat"
       },
       {
         "title": "Expect Claude Fable 5 to Be Turned Back on in a Matter of Days, Report Says - Gizmodo",
@@ -323,6 +316,13 @@
         "hn_id": "48699483",
         "published": "2026-06-27T16:16:20.000Z",
         "summary": ""
+      },
+      {
+        "title": "Half of Claude users say AI can already handle half their work according to Anthropic survey - the-decoder.com",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxObEZyZDR3SElUSzcybFd3NUpkTzhDSS1VTFBCTDZqbURUQjl6LVE1czN0U1J5aDV6bmN4Y3pIRlRncjdyanpBSjA5cGpMRzBQbFd4ODNNMS1Dd0JsWXRkY2lPdzBMejVYZmRqQ2ZjZktHRXhzRV9sRU1DaW1NejRkc1lNcWVSejlkWE82Tm5QSU4tWFJjc1pBSUQtdVE2MnJOUjdvV29EV1hISkwtbzc4NmIwZmx5ckdz?oc=5",
+        "source": "Google News",
+        "published": "2026-06-27T15:31:53.000Z",
+        "summary": "Half of Claude users say AI can already handle half their work according to Anthropic survey the-decoder.com"
       },
       {
         "title": "AI Agents Just Changed Forever: GLM 5.2, Codex Skills, Claude & Cursor",
