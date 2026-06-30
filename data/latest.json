@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-06-30T07:39:57.620Z",
+  "generated_at": "2026-06-30T10:46:20.895Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Team/frontier Red Team",
+        "url": "https://www.anthropic.com/research/team/frontier-red-team",
+        "source": "Anthropic Research",
+        "published": "2026-06-30T08:57:47.000Z",
+        "summary": ""
+      },
       {
         "title": "Economic Index June 2026 Report",
         "url": "https://www.anthropic.com/research/economic-index-june-2026-report",
@@ -135,16 +142,72 @@
         "source": "Anthropic Research",
         "published": "2026-06-24T14:21:03.000Z",
         "summary": ""
-      },
-      {
-        "title": "Evaluating Claude for Bioinformatics with Biomysterybench",
-        "url": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
-        "source": "Anthropic Research",
-        "published": "2026-06-18T18:56:26.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "California State Agencies Get 50% Off Anthropic Claude Under New Partnership - BeInCrypto",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9VeUZ4WkVMUGZJdDJYdklxSnc0LXRwR2c3aHNTRmhoNVlleXJxclBoY0Y2V1hxczgzWGFOUFFQanFibERMVklTZ0hHM2VVZzNJZFd2ZDZOUUNfZlB3bTdpeDUwdVRRdHMtNXpyY0psZHhaWkZ4?oc=5",
+        "source": "Google News",
+        "published": "2026-06-30T10:42:53.000Z",
+        "summary": "California State Agencies Get 50% Off Anthropic Claude Under New Partnership BeInCrypto"
+      },
+      {
+        "title": "Anthropic Claude models launch in Microsoft Foundry on Azure - Tech Wire Asia",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5yQnR0LW5Na2o5MExIaG5ob1FUT0x4bllyWHpiU0lPWHhGWE1sOFdJNWdBSmtvdjlkMnlsZUM2MnhmaDdCYlREQnV5blk5U2xVcVJiWmcwRDRqQlFzNTE0T3RfZzVwYnFUWk9fQlQteWdZMG1LZldleU80X201N28?oc=5",
+        "source": "Google News",
+        "published": "2026-06-30T10:01:41.000Z",
+        "summary": "Anthropic Claude models launch in Microsoft Foundry on Azure Tech Wire Asia"
+      },
+      {
+        "title": "How Okta & Anthropic Are Partnering on XAA, MCP & Glasswing - Cyber Magazine",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTjB1cWtzb3RFVVVLUGRyV2VLdkJZUXlXbVZZWkJKbDdubnQ3SjRLQUVkOUdLNWNFdG45RXA1eV9kQnNjeF9nMmxOcFJrRWdJNW1kd1g3MXAtUTFxQjBiQUNuek1WeE5aM3Q3dTNlZ3Y5cF9xdG9xYk90QzVlMjVrU0Fhc05OZXIzNjVqOXF3?oc=5",
+        "source": "Google News",
+        "published": "2026-06-30T09:44:44.000Z",
+        "summary": "How Okta & Anthropic Are Partnering on XAA, MCP & Glasswing Cyber Magazine"
+      },
+      {
+        "title": "Public First Action raises $80M for AI advocacy, with Anthropic as its biggest backer - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9xY0ducThNc195dk9CaWhrZFA5eTR2TFdSdmpIeHFqM3o2THVIMGwwVk9VVGFJWmZNaWotV3gweXNKLW0wc0RQbWZZOEJYUFFsYTV6czBOemE2cFAtZVIzQ1duR3BjdmZvT0h0cGdDRGo?oc=5",
+        "source": "Google News",
+        "published": "2026-06-30T09:40:41.000Z",
+        "summary": "Public First Action raises $80M for AI advocacy, with Anthropic as its biggest backer Crypto Briefing"
+      },
+      {
+        "title": "California to Provide State Agencies Access to Claude AI - ForkLog",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNQk1OdVpkZG1kTzlNSWlmOERwRGhzWk1Rai03Umh5Rkw0V2pxZExBdlBZVUQtdzI0TFhOcnVUcVo0cHo0cHFvVzVFNkRzWXZMTXgwSkZZRTVEU3lfRlphdkdXSUlETXVQQnV0SzJUd0EwTlp4b2licllQZTVGYWl6ampGMHlnOEU?oc=5",
+        "source": "Google News",
+        "published": "2026-06-30T09:30:00.000Z",
+        "summary": "California to Provide State Agencies Access to Claude AI ForkLog"
+      },
+      {
+        "title": "What the Saga Over Anthropic’s Mythos Tells Us About the Cyber Risks From AI",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-30/what-the-saga-over-anthropic-s-mythos-tells-us-about-the-cyber-risks-from-ai",
+        "source": "Bloomberg",
+        "published": "2026-06-30T08:52:40.000Z",
+        "summary": "Anthropic PBC has said its Mythos artificial intelligence model is so good at finding vulnerabilities in software and computer systems that it can’t be released to the general public. As of early…"
+      },
+      {
+        "title": "Anthropic to provide California government with AI tools - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPcVlXLVVsNWJNMU9md3EyVGpETUQ2MXJ0Xzh0eG5CSGVzWnFjZGxtVXNVX2poNXpKMHBDVG5aanVDQnEyaUhhX3VhQ3BET3ZMdjVLbElPeHg1ZzZMLWV6d3NfWkp4cjZla1dBS1hwVEhJZlVMYnJtTnVQQnVDMmFDazdRWklEUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-06-30T08:33:06.000Z",
+        "summary": "Anthropic to provide California government with AI tools Mashable"
+      },
+      {
+        "title": "NVIDIA GB300 Powers Anthropic’s Claude In Microsoft Foundry - Quantum Zeitgeist",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5FWFJROUpwNVNkeG02NVJ0cG10TTVjRHdBdHE3emtFLUNDVExESnZGUHBkQ2RsUzFJaWRZbWlPc0o2aWc4NUVkV2ktaEtGeWFBV2FCdHEzck1ET3RBWUtHVW5SNjRtenpUQ19RcC01THNkVkVFOHc?oc=5",
+        "source": "Google News",
+        "published": "2026-06-30T08:05:16.000Z",
+        "summary": "NVIDIA GB300 Powers Anthropic’s Claude In Microsoft Foundry Quantum Zeitgeist"
+      },
+      {
+        "title": "Austria proposes Anthropic move to strengthen EU AI - grafa.com",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdi1KMUdPUGdEcDB2T3d6NGdZTGVoUlJnQWZQcktVdVhQWEpqZFNwNHkxTzNsbWhtZDIxVEVRc2UzZHVJN0lKUml5Yy1CNWU2RmF0dXN5ZFZrenVBQk51RHVVZzFJWTNFTUZCbUN1OENUMU02UWktdExTRXI1OUFOTWtpbHJEV2VJOFRmdg?oc=5",
+        "source": "Google News",
+        "published": "2026-06-30T07:43:17.000Z",
+        "summary": "Austria proposes Anthropic move to strengthen EU AI grafa.com"
+      },
       {
         "title": "Amazon weighs OpenAI and Nova models as Anthropic raises costs - Techzine Global",
         "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPNlNKWGJGRDFiRGZpT2Fpb1JpV09vUTU4bFhXSTkwTmFNWmhYLWttZzlVXzZ6bXNpSWc3UXlXd1FPZzFtZXN2ejlLaHI4QUNUNnQ1Q3BwUW9ER1NEQzZlYkdrRm1uZUthanBOczNRYzJhdmpHZWplOU5yUGJfVktqYVpKS1c1T3I1SHJjMGpjc0Nwb0MwX01ic1NMa3BlX0JHSUVOdE1KejZ1T3EwVmU3NFh1bHE?oc=5",
@@ -190,17 +253,10 @@
       {
         "title": "Open Memory Protocol – One Memory Store for Claude, ChatGPT, Curso",
         "url": "https://github.com/SMJAI/open-memory-protocol",
-        "source": "HN · 30↑",
+        "source": "HN · 32↑",
         "hn_id": "48726966",
         "published": "2026-06-30T00:05:33.000Z",
         "summary": ""
-      },
-      {
-        "title": "China's AI Now Matches Anthropic Mythos in Cybersecurity - Memeburn",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOY1pxQjR6cjNpWUpvLVpPSVNiTm1GZEpnMGFZNDkzNFNjUF9hOWhpaWVJb2s3N1dmTGc3cHoybFhJRHprVHRrME15aW8wUVFwZ01BMXRMZ29tUWJaaGhvaUFudV9oYlhWWTh5QlBQQkZRcXZNckdYVlJ4b1NGMzhkdjY5RQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-29T23:08:19.000Z",
-        "summary": "China's AI Now Matches Anthropic Mythos in Cybersecurity Memeburn"
       },
       {
         "title": "Anthropic accelerates commercialization: Claude fully launched on Microsoft Azure, powered by NVIDIA Blackwell infrastructure - Moomoo",
@@ -226,7 +282,7 @@
       {
         "title": "You shouldn't copy-paste errors into Claude Code",
         "url": "https://home.robusta.dev/blog/you-really-shouldnt-copy-paste-errors-into-claude-code",
-        "source": "HN · 32↑",
+        "source": "HN · 34↑",
         "hn_id": "48725359",
         "published": "2026-06-29T21:16:58.000Z",
         "summary": ""
@@ -265,62 +321,6 @@
         "source": "Google News",
         "published": "2026-06-29T20:48:49.000Z",
         "summary": "Newsom Announces Anthropic Partnership for California Agencies Let's Data Science"
-      },
-      {
-        "title": "Anthropic partners with California to enhance AI use in government - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE44RVRxRzFUV1FfeGcyb19NYlRiSWo2UFpZNE05YV9HdDlpVzlkUmhMZENMNHRVM3hHVUJXZ2tPa2ZHb0M0NGx3NEQ0M3VObGZHbXFkYnktcHlnY1dmY2czS1RZX0I5R1p1b1YzbW1qVWphYmc2Z3NXSmppT0VWWHM?oc=5",
-        "source": "Google News",
-        "published": "2026-06-29T20:42:29.000Z",
-        "summary": "Anthropic partners with California to enhance AI use in government Crypto Briefing"
-      },
-      {
-        "title": "Is Anthropic’s Fable 5 Coming Back This Week? - Forbes",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNGlCUkc1cXpNdzRFZUhQWW5HSGRRUGlJQ3Z6RFQ2dlUzU0pYTFFrNnM5akNxSVhMSmVOWG9MMWJNektqeTdlNnFlaDRfc0pWcXRaRElLbVM1eEVleDRvd24zallvYkFqOHlUbWF5eXNSdS1CX3I3akVYWlR3bVp0Y0tLbFhQZDdiN3ZiMnUzcW1sOGRWVHlfQUFKOEZCUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-29T20:25:41.000Z",
-        "summary": "Is Anthropic’s Fable 5 Coming Back This Week? Forbes"
-      },
-      {
-        "title": "Is Anthropic’s Fable 5 Coming Back This Week? - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQeUdDWEV5eDJzbUVOUEN0aUQ5UkdWSllJUF9IS1o2aXNWV2lOWWI0Z1RQSGF5eFpBSV9oSVAwQVJQOTBCNTFKT2hmZGMzUVlYbXdOcjdFZW9vdnFhOVJnZGkzM21QNmxkUTNfeEN5UVBVQkJKWnpOblAzN0FPTm1uLXNZQWo3cGphTXBvR3VETQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-29T20:25:41.000Z",
-        "summary": "Is Anthropic’s Fable 5 Coming Back This Week? Yahoo Tech"
-      },
-      {
-        "title": "California agencies get access to Anthropic’s AI tools at half price - StateScoop",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObUdWbk8wZzZQTDVfcnhPTi1XZDVpbGcxaEtzVUF1Q05NcmlzUHkzSnc3N2FoZnFfLWZlbkR1eG9RRnlkOFU3OHNVM0lORHBwUGlkOWlsdHJleDBxUmwzVUZsUWJCeGVCeUJRdVZZM0tfREdYbTRQOHcxSHJWemhLa3lyZmJuTi1PRDNWWjMzdHpWdEUzcGc?oc=5",
-        "source": "Google News",
-        "published": "2026-06-29T19:16:45.000Z",
-        "summary": "California agencies get access to Anthropic’s AI tools at half price StateScoop"
-      },
-      {
-        "title": "Anthropic's Mythos and Fable: What Enterprise Teams Need to Know Right Now - MarketScale",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOczVRc3F2dTVmSnBEZ1pIT2JDMi1tNUFQTWJxcFFMY3FJZFRVbjFubkRhdjk4V0hXeF9aMXpFY0Z2R3ZDZXpGTVJTT1FQS1dQUGFLZk1SNmQ2OTVoY1lPMnRwSGVWZzJrZ3RxY1drSnVzUGpybUNOUmpQd3ludjQ4ZTROZTZvMTUzU2FJdVUyQ2JpSzgtNXVLX1U3dXlfWUphZThhemFqZTJmV2p5NXd4YW0wVzJBdTNjZEpBaFR3cWxqU2Jsd3g2aFlaaw?oc=5",
-        "source": "Google News",
-        "published": "2026-06-29T19:15:59.000Z",
-        "summary": "Anthropic's Mythos and Fable: What Enterprise Teams Need to Know Right Now MarketScale"
-      },
-      {
-        "title": "China’s GLM-5.2 Matches Anthropic’s Mythos Where Cyber Power Matters Most - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5DdVAwS0puQWt2cWxrX2szNkdTUDNUSlJldkJlX2xQTERpbHRRT29DcGNzS0pvZmlFYzdmNmZ3U2ZTWUV1eDFEY2t3cGVQbDZnVEVlcVRieVdRNDNWaFdsNmNFVGxYc29NNzlv?oc=5",
-        "source": "Google News",
-        "published": "2026-06-29T19:07:43.000Z",
-        "summary": "China’s GLM-5.2 Matches Anthropic’s Mythos Where Cyber Power Matters Most Yellow.com"
-      },
-      {
-        "title": "Anthropic Deploys Claude on NVIDIA GB300 in Microsoft Azure - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPODN2YWxmcWNCNzBRczFXRUpLb2tqWXJuZVZkV3lIUDhPVVFROEQxb3pUY2pENHR0cEhuWTlhMnVPazM1T3Z4djM3ejZ5SC13eVJIeDFraTNldklPMnEzdWttcUxoc0dXMDVzOWwtcWxvZVA2YkZYem5MNExKdDZqSzdqOUljU2l4RkxtTTFoU2NUS01FQ0ZTQ1diRjNMWm5tb1RV?oc=5",
-        "source": "Google News",
-        "published": "2026-06-29T19:05:28.000Z",
-        "summary": "Anthropic Deploys Claude on NVIDIA GB300 in Microsoft Azure Let's Data Science"
-      },
-      {
-        "title": "NVIDIA’s Blackwell Ultra GB300 Now Powers Anthropic’s Claude Models on Microsoft Azure, Targeting Autonomous Enterprise Agents - Wccftech",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOWXU5cmVDSGdWQXNVZG94YUpwdk9FOWEwOTE1dzZHcW5ZakhFVnJUWlpBNi1oTUF1N19DbU9heWtkNDJSbF9RSjl2dmNUa2s5Q3FzN2JOeU1pTmVlSmEwZTV6UnRJVFR4cmpPdUNqU3ZxOXRzVTZmeTVGZV9XRm9IaFBaWHdrMmN4OC16QjdndV9PdW1EQndKOVF30gGfAUFVX3lxTFBscFp2RVpnQmI2Rm1xd1ltc1lNMlY3SlpfQXhGNC1rbF9EQVVzUUZJQ1RscUhrOVY4TWRqWHlrX2Z0eXNSUWQ5SHgtN2M4Tlh1VmlCQW02ZkhDX2lmenMyTzlzQTR1cUJHLWFadmRiUEZiSi1kdklaT3ozQkZySG55d1poN1gtdWxLaHE5RkJXS1BoXzFlUkF1TkhfODlQTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-06-29T19:05:00.000Z",
-        "summary": "NVIDIA’s Blackwell Ultra GB300 Now Powers Anthropic’s Claude Models on Microsoft Azure, Targeting Autonomous Enterprise Agents Wccftech"
       },
       {
         "title": "AI Agents Just Changed Forever: GLM 5.2, Codex Skills, Claude & Cursor",
