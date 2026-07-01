@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-07-01T02:06:34.326Z",
+  "generated_at": "2026-07-01T08:00:23.729Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Redeploying Fable 5",
+        "url": "https://www.anthropic.com/news/redeploying-fable-5",
+        "source": "Anthropic",
+        "published": "2026-07-01T05:35:17.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Sonnet 5",
         "url": "https://www.anthropic.com/news/claude-sonnet-5",
@@ -135,60 +142,183 @@
         "source": "Anthropic",
         "published": "2026-06-26T12:27:32.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Code Expertise",
-        "url": "https://www.anthropic.com/research/claude-code-expertise",
-        "source": "Anthropic Research",
-        "published": "2026-06-26T12:25:45.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Anthropic’s long-sidelined Fable 5 is greenlit to return",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/958964/anthropic-claude-fable-5-is-back",
-        "source": "The Verge",
-        "published": "2026-07-01T00:03:55.000Z",
-        "summary": "After weeks of negotiating with the Trump administration, Anthropic is finally going to be able to bring Claude Fable 5 back online. In a post on X, Anthropic said it plans to begin restoring access…"
+        "title": "US government lifts restrictions on powerful AI models, Anthropic says - Euractiv",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSnpqc0tEdEFQNWhGU2xDQkNnV3JhUlRCcDhucl9IUmUtb2pndF91UDFjbm93RkNwdG5qbEV2cU5ka3VQM0tBWnNnWFliNGhjNTlLamVkRUV1cl9kMkEzTzczUlNYaVB1SEZZRDllN0NjbmsxaGpmaUJnQnpnNFdOSGlGYjJKZERDWW15SXZsM2lpRHdUSGR2elozN1pYWkxtUEE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T07:52:30.000Z",
+        "summary": "US government lifts restrictions on powerful AI models, Anthropic says Euractiv"
       },
       {
-        "title": "Claude Fable 5 export control lifted",
-        "url": "https://twitter.com/synthwavedd/status/2072103052635451559",
-        "source": "HN · 63↑",
-        "hn_id": "48740817",
-        "published": "2026-07-01T00:00:31.000Z",
-        "summary": ""
+        "title": "Anthropic is restoring Fable access today - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5YUjdaZktTUUxITUJ6OVhHakxwUDBLRjR0cnlxZ0tiaVpDVzRoeWlJQThtWDM2aGI0U25aUHE5LU5jOWZhU1ZCOFlCRFlFUEZmT0tNQXY1eExQdEZVVm5LVmdVaFd3bUk?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T07:48:55.000Z",
+        "summary": "Anthropic is restoring Fable access today Mashable"
       },
       {
-        "title": "Anthropic restoring access to Claude Fable 5 and Mythos 5 from tomorrow",
-        "url": "https://twitter.com/AnthropicAI/status/2072106151890809341",
-        "source": "HN · 47↑",
-        "hn_id": "48740805",
-        "published": "2026-06-30T23:59:17.000Z",
-        "summary": "https:&#x2F;&#x2F;xcancel.com&#x2F;AnthropicAI&#x2F;status&#x2F;2072106151890809341"
+        "title": "Anthropic's Fable 5 is back worldwide after a two-week government ban over a jailbreak - The Decoder",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNN3NJYnNxdTBlcjJkckU3d2NNSzBiQkd5aENhcVZVSjRVTGY3UllsWGUzS0I2WVF5dkR3b2lnZENCMWkzNEUzM3d3cUw3UTd6Tm5MTzJDNTVhV2xOaUl5U0paSmVaaHRHWW1yVHNWU0ZNUU5PR21mNUpNdWplc2tRSHdpN3FRQVZuQjJ2QkpmT3BOQUhMWkc2Vmc1OEdmV3czRWNsRFlEMVM1QTJndWhn?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T07:47:30.000Z",
+        "summary": "Anthropic's Fable 5 is back worldwide after a two-week government ban over a jailbreak The Decoder"
       },
       {
-        "title": "US Lifts Export Restrictions on Anthropic’s Fable 5 AI Model",
-        "url": "https://www.bloomberg.com/news/articles/2026-06-30/us-government-lifts-restrictions-on-anthropic-s-fable-5-model",
+        "title": "Claude Code Hid Proxy Fingerprints in System Prompts: Anthropic Promises Fix - Tech Times",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPckhUdFFLeWdab21JYldRcWJDbjBvSzV2YjVTMmhfcWRycWVJMG1FZUtWby10bERiX0tmaVBuU0RuZDREeHFva1h4amh2blRYYWx0aGdaMnlQVFNXN0ZzY3pjSU5Vc2hKRjRRNXExdWVadm5WdmJSQ1Fwd1p5dTJ3aUU4c1dXeDVkaXJaVGR6eElhQ1htcjdDLXdTUjNqbHVSR0xkWWlXSW1DRDhWMkVuZEJyZW5yaV9OWElhSHRYOExuamJYc3c?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T07:23:58.000Z",
+        "summary": "Claude Code Hid Proxy Fingerprints in System Prompts: Anthropic Promises Fix Tech Times"
+      },
+      {
+        "title": "Anthropic is restoring Fable access today - Mashable SEA",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZjk4SGkxOE5XWEpHRXo5NHh4TDRGYWNEMGo4MVJYZUd0bVZTQ09UczI0alpKR3RDaGtJdEJpdmVhd19LMWhaZWloNGtCQXBOVzM5U0NZRDFtbXBjVVN4ZERjMFFGb0N6RTZBcTloY0FTRkpIakZ1NU9jNFhSLXNUbGktVQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T07:22:35.000Z",
+        "summary": "Anthropic is restoring Fable access today Mashable SEA"
+      },
+      {
+        "title": "U.S. clears Anthropic to bring Claude Fable 5 back online - crypto.news",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOMHdlWkQwS1RxYjdxVS1WczBUM2o5OHc3OFJkYVRNZjlLZG53aWhIWXVfRXVyczJ5VUtjbW9OS05Sa1RaNWQ0ZXR0NlM5VGRJWk5Jd05RcXZfNzRaX2RPLTc5NUV4WmQ4YTRmQjNqZ09WY0tUQ25uUThyOE9XR2VrTGhUbw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T07:10:40.000Z",
+        "summary": "U.S. clears Anthropic to bring Claude Fable 5 back online crypto.news"
+      },
+      {
+        "title": "US lifts restrictions on Anthropic's advanced AI models - dw.com",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPOFVnT1psbk5SbmhMVDI0Y1E1UG9DTGlnYmtuUnh1OFZiM3pfWkIzXzBmcFg1bTN3N3JzTkFzT1VTSkUxdVhTLWRwRGVuU0pZd25iVi1LRTJHWmNZbHNHZUdXbzJhT0tTbmJCZ0QxU3htUlliZmR4YjZfcjJmNy1iNG5QTkJrSDhfR3NoSGJSVFhCTUQ0UUpGYkJRSGhaQdIBngFBVV95cUxNbk5wcXhsTzVrTHdDSzhWOFFWOTY1Q2ZkOVQ1bGFic0E3OHdzNGpkR3BtNVJTUHp5OEw5YmZWVjFLZFBMYl91WW5Fdi1TOF9yQzE4TmFBeThpZHluZ2JCdjN5b0JMSko2em9MTlEwdnEtUmRhZ2ZseGhxQno3dnRmUGRONms2QlBVSnY3TDFPUGdnMU5TWC1jMzBkUmJZZw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T07:06:08.000Z",
+        "summary": "US lifts restrictions on Anthropic's advanced AI models dw.com"
+      },
+      {
+        "title": "The US lifts restrictions on powerful AI models, Anthropic reported - Українські Національні Новини (УНН)",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNVGFSQktHUVNsc255WHhwTFY3cTViMDZCalAtcXk4WDBDc3Itb2xHTmQ4N2dycmVYbHl3ZS1odkRFR09SbXVaX1ZGOWh2NjV0d2UzMTd0OE1ibXh0N0VCSUhGZ2g3RDhvakJJbVFCQURiVEdRYU51ZlBUTHNmcndUcjVCaVktM2lDcl9FTV8wRDYtRDTSAZIBQVVfeXFMTWhUa3lnZTdkWmQtdE9FbU9YWDd6dWlINk5nSHRvaUswUFk3MXpjWFNRR3YyOGJLSFQ3QnZab0ctYWNlb1ZRc3lWUURpWEp1N2xLYVhZd2VqbEFha2puM0JGM2szR0s2UGdSdktRY0JkUllNajBWRmNfV29tN3Nqd2VyTG92NV96RjR4VG1UbEduWFE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T06:57:15.000Z",
+        "summary": "The US lifts restrictions on powerful AI models, Anthropic reported Українські Національні Новини (УНН)"
+      },
+      {
+        "title": "Anthropic restores AI models Fable, Mythos after the U.S. lifts export controls - CoinDesk",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOU3RqRmVkdjJOcmxzODMySTNSMkNzMUZPOVRhYXl0SV9sRlVKZ2VDWHVKQUdScV91emRwM1J4dUJGZ2lDYkRyV05acUZUTVRWdERxdktIM1FGMjYwYTdWb1FVcmxQQlgyWlh3X3NvanhuMEFFWnd3cmJ5cUh3elRoelhwSlBwZHNKbWYzN3lMeUZEcGRHWlg4V202Rkl1MVVWWFowQTZVUUYzWFc5b0JLOXdyRWRXN2MwdVE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T06:56:54.000Z",
+        "summary": "Anthropic restores AI models Fable, Mythos after the U.S. lifts export controls CoinDesk"
+      },
+      {
+        "title": "Claude Sonnet 5 Narrows the Opus Gap for AI Agents - Tech My Money",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOenNEZ3R2MmQ5OE5yVWFkY2NfMl9kSXJ2UHJzQnlOZF9aQ25qTG9sRy1SZVd2REhlbVM2VUpSNFI2TUdKM3dPaFFUZWUybWpVTUpwUk5wV1hXVXZoVldROV8zSHl6cjIzc1FoVmttWUZOclVGUVRtSXRUVXBnZkdZVHRrbVFMLWJJX05NZG51ONIBjwFBVV95cUxOenNEZ3R2MmQ5OE5yVWFkY2NfMl9kSXJ2UHJzQnlOZF9aQ25qTG9sRy1SZVd2REhlbVM2VUpSNFI2TUdKM3dPaFFUZWUybWpVTUpwUk5wV1hXVXZoVldROV8zSHl6cjIzc1FoVmttWUZOclVGUVRtSXRUVXBnZkdZVHRrbVFMLWJJX05NZG51OA?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T06:47:15.000Z",
+        "summary": "Claude Sonnet 5 Narrows the Opus Gap for AI Agents Tech My Money"
+      },
+      {
+        "title": "Anthropic Restores Claude Fable 5 After U.S. Lifts Jailbreak-Linked Export Controls - The Hacker News",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOWDlGSF8tX29xazBsTUdnUmRsQkdEMHZzY2lnc0xOX0czWXBnWHVGSW10RFlVMXJMcmJHbE1vMmtaMk9Uc1d3REctRE53S3FSdXBhejREa3pjRThjWWd6N1JUeTlCT29SUXJaNFhtQUVOaEF5MnVsVkFLeGFmRlFIZzIzWkw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T06:46:00.000Z",
+        "summary": "Anthropic Restores Claude Fable 5 After U.S. Lifts Jailbreak-Linked Export Controls The Hacker News"
+      },
+      {
+        "title": "US Government Allows Anthropic to Redeploy Its Mythos and Fable AI Models - Tech My Money",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQZjA2VERJeVJCNlFoYTBuWEdVd2E4MzlteVJfTTU5b3NtYnJzTXBQQWZ0Z0MyLU1ybTFGYnY1eFlCWUQ1aVdsZU84ZHM3OEtJc003UmN5RVloTmpEMHRLelVicThCRk1KN1ZTSTJHd19nU2h3UG1lVlVPWjk1OTRmYWxoZ21pamVYWDc2OVNBSWFrRF9KbDk4VjA3TWk2WmUxWDVOZ242QnVreWRZbnfSAa4BQVVfeXFMUGYwNlRESXlSQjZRaGEwblhHVXdhODM5bXlSX001OW9zbWJyc01wUEFmdGdDMi1Ncm0xRmJ2NXhZQllENWlXbGVPOGRzNzhLSXNNN1JjeUVZaE5qRDB0S3pVYnE4QkZNSjdWU0kyR3dfZ1Nod1BtZVZVT1o5NTk0ZmFsaGdtaWplWFg3NjlTQUlha0RfSmw5OFYwN01pNlplMVg1TmduNkJ1a3lkWW53?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T06:36:28.000Z",
+        "summary": "US Government Allows Anthropic to Redeploy Its Mythos and Fable AI Models Tech My Money"
+      },
+      {
+        "title": "Anthropic Allowed to Release Fable 5, Must Cooperate with U.S. Government - trendingtopics.eu",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOd0x1cWIyelV0MmNHdFNkdTlUTkc2THRnQVJHOHVkdVVqaUlHOERwTmtMTVloWUc4MFBYa0N5eGFCYVl0RDdkWUMwQTFZOURaelZmRHkyTjkwQ0RRaWp0NWw0OHdyYUVPUEkwLXh2eWtNU1pTMmdNaFg3X1FLWnE5X1BjVnllWE9EdURzMHhNMUp2ZDVyOFJrMjhyWjJCWTdaRTFsVw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T06:30:12.000Z",
+        "summary": "Anthropic Allowed to Release Fable 5, Must Cooperate with U.S. Government trendingtopics.eu"
+      },
+      {
+        "title": "Anthropic Says US Lifted Restrictions on Fable 5",
+        "url": "https://www.bloomberg.com/news/videos/2026-07-01/anthropic-says-us-lifted-restrictions-on-fable-5-video",
         "source": "Bloomberg",
-        "published": "2026-06-30T23:55:28.000Z",
-        "summary": "The US government removed foreign access restrictions on Anthropic PBC’s Fable 5 artificial intelligence model, clearing it for wider distribution after the startup resolved the Trump…"
+        "published": "2026-07-01T06:09:44.000Z",
+        "summary": "The US government removed foreign access restrictions on Anthropic's Fable 5 artificial intelligence model, clearing it for wider distribution. Anthropic said it had received notice that Commerce…"
       },
       {
-        "title": "Claude Code Just Got 5x More Expensive",
-        "url": "https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/",
-        "source": "HN · 43↑",
-        "hn_id": "48739168",
-        "published": "2026-06-30T21:03:56.000Z",
-        "summary": ""
+        "title": "Anthropic Says 'We're Grateful' as Trump Administration Lifts Export Controls on Claude Fable 5 and Mytho - Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQVXBXdnhnWENqSmM1Y3F0SThQV0YwZnRLeFFuczU0QzBuZ1pjVEhXMHluVzcteVVRRFJ1QjR3OE1SaW4tdURGcW5LMlNFUElvaDlKbnZzODYyZzNzZG9Mb09IeHI1TjF6MW02V1V0NjZjbmFkLVhySmhlRHgtNlpoTDR2UlpmOVBKTUlXVk93WFRWd3BqUmVlY2tydjMwc1Z4ZjdmQU1QZW1tUmluLS1vOXRfamQ1OEthWjBvcVgxakRJNXVwYlhHRHlOcnVSMnFabTgyc28zVG5xY2VzeElOMDJOaUhVN0ZnZUR0cFhEYw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T05:29:07.000Z",
+        "summary": "Anthropic Says 'We're Grateful' as Trump Administration Lifts Export Controls on Claude Fable 5 and Mytho Benzinga"
       },
       {
-        "title": "Claude Sonnet 5 – benchmark results",
-        "url": "https://artificialanalysis.ai/models/claude-sonnet-5",
-        "source": "HN · 39↑",
-        "hn_id": "48738528",
-        "published": "2026-06-30T20:09:25.000Z",
+        "title": "US lifts export controls on Anthropic's Claude Fable 5, Mythos 5 models - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSUFnWWpsa0xrZWt1RWJZQXNWMmgyQnE5X3pqZ2duV2ZRdC1XVnZTYkJpSm5RY3JqSElqTmdKYTdfRjM0UV93ZUNadGNsX1hHVmR0VV9aaEpva1NaU2lqQ0xtVUFXUFNCRkh5Y1lOUGczRDRmNXNNdnByS0VPOWx1S1VxOEY4Uy1EdG5EaWxRMEppdTZ4R2s4eS0xaG9RRHR6Z3JBekEzQVJqcGs?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T04:58:58.000Z",
+        "summary": "US lifts export controls on Anthropic's Claude Fable 5, Mythos 5 models Seeking Alpha"
+      },
+      {
+        "title": "As export controls on Claude Fable 5 and Mythos 5 lifted; Anthropic announces that it will give the US government access to ... - The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMirwJBVV95cUxOeXVVVFZiREtVV01SandGTHdUNktMcEcxVkhWZWxncWlMODRWSWRyTXVRN1JEekRlOG1SQ3NFOVF0SUwyRUxVWnM4RXQ1WGx4cVY2STlvd1JXR3NmTm1RTGg3aFNaZFM3bXB2RmNYa0hqUXNoWWxmVTdaMEotSWJCUWh4Z1lNSi10US1JUFZrOEJCWTRSV05CQ0NaUGFVZEd6bV9wamxaRzUxaFhPQWIyS0NJejgyeTJPaUdCLWVneHhfc1pyTm9QbXU5QXhUVkR1UVljOEZncWhuV3JqVU16Z1FzWkFYRHlUUGpxbkxfY2lsWjBZZG5Ec1FCZWVvcjFWaHdkSkpLVFJWZ3BFdjJrbURhbzVJUUdERzQyam1scTVzMlg1MnpKNmtiazFrb3c?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T04:49:00.000Z",
+        "summary": "As export controls on Claude Fable 5 and Mythos 5 lifted; Anthropic announces that it will give the US government access to ... The Times of India"
+      },
+      {
+        "title": "US lifts export controls on Anthropic's Fable, Mythos AI models - Anadolu Ajansı",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUGVvOG40bmpzdl9LZEpGNGJSdzRQWmdBbGYzalJLRUtjNV93QXEtUnUzb2xscllFUDVkVTlqaFJOSDkzQ3paaXAxb0gzRTc2aWxtUTUzZjN6dVIzX1lnZzZTZTdXN21UZjZEbEhlVXY5a0MyZDJ3NExIQmJQRVdTWDBqX2VwY2xDa2JfYVQ1YUFzWldIbm8wcjlwYjF0anJ2UHM1OQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T04:43:53.000Z",
+        "summary": "US lifts export controls on Anthropic's Fable, Mythos AI models Anadolu Ajansı"
+      },
+      {
+        "title": "Dramatic turnaround for Anthropic as US lifts Mythos, Fable export controls - Cybernews",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOanU2cE9BbUI0ck1KWFBxRndDV3QtTzBfMnhzdmFEc2F2RFctWXJnSlFhNVJSNV9fS0hLUlhvaTRuMmxJcy1nVENCdEtqd1d1OFFvMWwyTXNYWFEyUjRnQ3ctMHowd1dWMjlJZ0hYbnJyUjRpa0Nsb2xWUGNGaVVOZFMtaFpBMUVI?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T04:41:15.000Z",
+        "summary": "Dramatic turnaround for Anthropic as US lifts Mythos, Fable export controls Cybernews"
+      },
+      {
+        "title": "Anthropic Launches Claude Science to Court Pharma Ahead of IPO - MedCity News",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9GU1hISUJhTFc2ejM4X2FUcmVnWHRydUpfQkcweGVIbEVUNTdtdlVjYzBEOG5MSG8ybEsxSGtLYWk3YVdKZEZVeDFWOWNwNGxuUHg1bmpVdEszTk80RXRhNmNFMUFwUm9oakR6MA?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T04:35:02.000Z",
+        "summary": "Anthropic Launches Claude Science to Court Pharma Ahead of IPO MedCity News"
+      },
+      {
+        "title": "How Anthropic is bringing Fable 5 back — and when it’ll cost you - The New Stack",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE84OXZkSGltQU9hMUFrbWRrSHNjU01KaXRYcEo4NXlYRTU1VzFlYUNpYzMwdTRWQ3pGRXZsY1NjbzM4WUZwLVlTMWptWFRqbnRSQ2tKbEstNHVyMHpGWlBQbGtDUVZua0E2d09kajJ4Zw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T04:16:29.000Z",
+        "summary": "How Anthropic is bringing Fable 5 back — and when it’ll cost you The New Stack"
+      },
+      {
+        "title": "Anthropic Restores Claude Fable 5 with Tighter Safeguards - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUUdGWHNKa2lBTlB6Sk5jSVozTXN3YzFZWnAxRGc5RHRERVBENlBxX095MlN5dy1pcnFleXFLX2d1M290ZkdlN0lja2QteE1qUlNrSFZMWTk0OEVpZ0ZjZ3lTTkJubEY3OEVuVDh6aXdVMlRrdGZfU3ZNekh1c2xscENjbTl0LW4zSTUyOHkxRjAzRG1peHF5ZFJnWTNjQUhu?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T04:12:09.000Z",
+        "summary": "Anthropic Restores Claude Fable 5 with Tighter Safeguards Let's Data Science"
+      },
+      {
+        "title": "Anthropic penetrates Microsoft's core territory: Claude Tag integration into Teams marks the beginning of a reshaping of the enterprise software ecosystem - Moomoo",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbVpQQV9RVVRMTDFCVW1YLWNmdE5xaGtfdURhU2tHd2hTQ2g3MTZRYmduX2p6NlR2UHdfQlh5eXFDckFjdGtfbDRYRGFFS181cWtYbTdXcFhGb0lFT2FrNlNiVlZ2bWxZYnpaakU4eWw5YXNDMGRIaUltYk1VN2hLT3FQcTVTWFZIMEdLUk1iSXlfMXZtaE4tcXVrbTZMQ1RIeU9nWDRhbXg1Z2JYTl9WODhlU1FxNlMx?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T04:02:10.000Z",
+        "summary": "Anthropic penetrates Microsoft's core territory: Claude Tag integration into Teams marks the beginning of a reshaping of the enterprise software ecosystem Moomoo"
+      },
+      {
+        "title": "U.S. Lifts Restrictions on Anthropic’s Most Powerful A.I. Models - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPVFZkTWw1SDJBWVZnalNlVDJVQTNvckpuVm9uNkJRTm51ZVdOdy1RaGgtdWhWUnBxWHF3RlJJeDJOeDVKU3N1LWFlSnRCRUNOYWtTak9faTZES2NTRzVSME5oXzVFa0pBQmJydXE5RFNNSFIxSWk0S0d1SHh0R2ZWV0UxTzk3VlFReXc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-01T03:17:31.000Z",
+        "summary": "U.S. Lifts Restrictions on Anthropic’s Most Powerful A.I. Models The New York Times"
+      },
+      {
+        "title": "Redeploying Fable 5",
+        "url": "https://www.anthropic.com/news/redeploying-fable-5",
+        "source": "HN · 103↑",
+        "hn_id": "48741853",
+        "published": "2026-07-01T03:11:40.000Z",
         "summary": ""
       },
       {
@@ -216,67 +346,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Anthropic launches Claude Sonnet 5 as a cheaper way to run agents",
-        "url": "https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/",
-        "source": "TechCrunch",
-        "published": "2026-06-30T18:00:00.000Z",
-        "summary": "Anthropic’s Claude Sonnet 5 brings stronger agentic capabilities, lower pricing, and improved safety, positioning the model as a cheaper alternative to Opus, GPT-5.5, and Gemini Pro."
-      },
-      {
-        "title": "Claude Sonnet 5",
-        "url": "https://www.anthropic.com/news/claude-sonnet-5",
-        "source": "HN · 889↑",
-        "hn_id": "48736605",
-        "published": "2026-06-30T17:59:52.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Science",
-        "url": "https://claude.com/product/claude-science",
-        "source": "HN · 371↑",
-        "hn_id": "48735770",
-        "published": "2026-06-30T17:07:41.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Releases Claude Science for Automating Research",
-        "url": "https://www.bloomberg.com/news/articles/2026-06-30/anthropic-releases-claude-science-for-automating-research",
-        "source": "Bloomberg",
-        "published": "2026-06-30T17:00:15.000Z",
-        "summary": "Anthropic PBC is releasing new software aimed at helping scientists automate research, in the hopes of reducing some of the tedious aspects of their work."
-      },
-      {
-        "title": "Anthropic’s Claude Science bets on workflow, not a new model, to win over scientists",
-        "url": "https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/",
-        "source": "TechCrunch",
-        "published": "2026-06-30T17:00:00.000Z",
-        "summary": "Anthropic's Claude Science is a workbench that gives scientists one environment to do computational research, saving them from the need to bounce between databases, pipelines, and tools."
-      },
-      {
-        "title": "Anthropic has embedded hidden spyware-like code in Claude Code",
-        "url": "https://twitter.com/IntCyberDigest/status/2071971609183678544",
-        "source": "HN · 49↑",
-        "hn_id": "48735113",
-        "published": "2026-06-30T16:29:36.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Desktop is now available on Linux (in beta)",
-        "url": "https://code.claude.com/docs/en/desktop-linux",
-        "source": "HN · 44↑",
-        "hn_id": "48734754",
-        "published": "2026-06-30T16:09:10.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code is steganographically marking requests",
-        "url": "https://thereallo.dev/blog/claude-code-prompt-steganography",
-        "source": "HN · 1429↑",
-        "hn_id": "48734373",
-        "published": "2026-06-30T15:44:24.000Z",
-        "summary": ""
-      },
-      {
         "title": "Pi + Ollama I Replaced Claude Code With This FREE Local Agent",
         "url": "https://www.youtube.com/watch?v=cUwH8wxYDx8",
         "source": "Leon van Zyl",
@@ -287,91 +356,6 @@
         "published": "2026-06-30T12:51:26.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Open Memory Protocol – One Memory Store for Claude, ChatGPT, Curso",
-        "url": "https://github.com/SMJAI/open-memory-protocol",
-        "source": "HN · 33↑",
-        "hn_id": "48726966",
-        "published": "2026-06-30T00:05:33.000Z",
-        "summary": ""
-      },
-      {
-        "title": "You shouldn't copy-paste errors into Claude Code",
-        "url": "https://home.robusta.dev/blog/you-really-shouldnt-copy-paste-errors-into-claude-code",
-        "source": "HN · 35↑",
-        "hn_id": "48725359",
-        "published": "2026-06-29T21:16:58.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic and Gov. Newsom forge deal allowing California government to use Claude at half price",
-        "url": "https://techcrunch.com/2026/06/29/anthropic-and-gov-newsom-forge-deal-allowing-california-government-to-use-claude-at-half-price/",
-        "source": "TechCrunch",
-        "published": "2026-06-29T18:10:26.000Z",
-        "summary": "As Anthropic forges a closer relationship with the state of California, the federal government has made an enemy out of the OpenAI rival."
-      },
-      {
-        "title": "Anthropic CEO: Open-Source AI is getting dangerous (2023)",
-        "url": "https://xcancel.com/coinbureau/status/2071330294452666695",
-        "source": "HN · 56↑",
-        "hn_id": "48716750",
-        "published": "2026-06-29T09:11:33.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Show HN: NanoEuler – GPT-2 scale model in pure C/CUDA from scratch",
-        "url": "https://github.com/JustVugg/nanoeuler",
-        "source": "HN · 54↑",
-        "hn_id": "48710778",
-        "published": "2026-06-28T19:38:14.000Z",
-        "summary": "Hi everyone, I started working on nanoeuler after the ban of anthropic&#x27;s fable because my ambition and dream is to work in the AI   field in anthropic. The two interesting…"
-      },
-      {
-        "title": "GLM 5.2 beats Claude in our benchmarks",
-        "url": "https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/",
-        "source": "HN · 1097↑",
-        "hn_id": "48709670",
-        "published": "2026-06-28T17:50:47.000Z",
-        "summary": ""
-      },
-      {
-        "title": "I used Claude Code to get a second opinion on my MRI",
-        "url": "https://antoine.fi/mri-analysis-using-claude-code-opus",
-        "source": "HN · 559↑",
-        "hn_id": "48708941",
-        "published": "2026-06-28T16:35:19.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Austria Lobbies EU to Host Anthropic After US Access Curbs",
-        "url": "https://www.bloomberg.com/news/articles/2026-06-28/austria-lobbies-eu-to-host-anthropic-after-us-access-curbs",
-        "source": "HN · 116↑",
-        "hn_id": "48707146",
-        "published": "2026-06-28T13:34:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Show HN: Adrafinil – keep a lid-closed Mac awake only while agents work",
-        "url": "https://github.com/kageroumado/adrafinil",
-        "source": "HN · 124↑",
-        "hn_id": "48701512",
-        "published": "2026-06-27T20:34:53.000Z",
-        "summary": "A month ago there was a wave of posts and tweets about engineers walking around cafes and parks with their MacBooks propped half-open, as fully closing the lid forces sleep that…"
-      },
-      {
-        "title": "Asian AI startups launch Mythos-like models as Anthropic’s export ban drags on",
-        "url": "https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/",
-        "source": "TechCrunch",
-        "published": "2026-06-27T12:00:00.000Z",
-        "summary": "New models are launching in Asia that promise Mythos-like capabilities without fear of an export ban. U.S. AI labs may never recover this enormous market."
-      },
-      {
-        "title": "Trump administration releases Anthropic Mythos to be used by more than 100 US companies, agencies",
-        "url": "https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/",
-        "source": "TechCrunch",
-        "published": "2026-06-27T01:01:37.000Z",
-        "summary": "Over 100 companies and government agencies are reportedly authorized to use Mythos 5, including their non-American employees."
       },
       {
         "title": "AI Agents Just Changed Forever: GLM 5.2, Codex Skills, Claude & Cursor",
