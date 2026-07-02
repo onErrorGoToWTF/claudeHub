@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T19:04:51.856Z",
+  "generated_at": "2026-07-02T20:48:46.014Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,33 @@
     ],
     "news": [
       {
-        "title": "Anthropic's Fable and Mythos models are back. But U.S. AI policy is still a mess. - Fortune",
+        "title": "Anthropic's Claude wants to help Micron design better HBM, DRAM, and SSD for AI - TechRadar",
+        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQazNIbVpIREx1aHZpejVLZ1BHV3JoU2Y3QXA5UWJUY1RBS3BPZldabGczekdLRnZGbkQ3ajU5dXhQbU5leWx6MW5mcUtkVXBjSWtQR3doUXI0aWtodFU4S3ZFcTFfQTQzeXZXS1hncDV1ZHlYSjlZalVrQWVTS2xaVS1NT0h4SU5KNzc5MEEtNDFfM0gzMmdoUHZWbDlvOW5kQXhVOVdZQ25lSW1LVFdPM2pjSGNNdng0VmczRHZIYVlHeGgtVHhpaXZjcUtQNlQyanhxSEJXOE1yVUxCQzVtZzZtSVZidm84MmtjTGFoQ2hNVlNMTmlSNXhjQWFEZUZsYWc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-02T20:05:00.000Z",
+        "summary": "Anthropic's Claude wants to help Micron design better HBM, DRAM, and SSD for AI TechRadar"
+      },
+      {
+        "title": "Anthropic taps Samsung for custom AI chips in hardware race - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOdmVpbVZHN0E0TzltaGQwSGY4T1JtWjIwV1FkanBValhXdk13YTI5VXhnNWozVHRUdmgtbmZELXRBWlR2NTlJZTU2N3k2QVJzczRjMFo0dFBTZk8zZXNydTl3dEFMSC1CZ3hVWEcyTFVWSm9zN1JZUDEyaC1RVW5KdnBxaFh3WTFoNUVIQnZBeHRYWEtwUjRz?oc=5",
+        "source": "Google News",
+        "published": "2026-07-02T19:22:00.000Z",
+        "summary": "Anthropic taps Samsung for custom AI chips in hardware race The Tech Buzz"
+      },
+      {
+        "title": "Anthropic’s Fable model is back. But U.S. AI policy is still a mess - Fortune",
         "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNV2Q2UjNmTGlYeUNpMlA2MUxEZUdYQnVRR0RsM0Q2Vk1xdElWT0MwWFpWMWw1Q09UVnVNS0FpeXlXdnBYR2p5ZDR1cVY1eUNfTjRqSkwyODF6UUc4WlZaN1dsdG5kTk9BNDhNcE5RVmMwNXY3ejZuQjRBRzhQZGo4eUVmeDgxYm03NS1xRy1Od05ucVFUdjFad1ZaRXk2S3JVQXYtY3ctMA?oc=5",
         "source": "Google News",
         "published": "2026-07-02T18:47:00.000Z",
-        "summary": "Anthropic's Fable and Mythos models are back. But U.S. AI policy is still a mess. Fortune"
+        "summary": "Anthropic’s Fable model is back. But U.S. AI policy is still a mess Fortune"
+      },
+      {
+        "title": "Claude's AskUserQuestion: \"No response after 60s – continued without an answer\"",
+        "url": "https://github.com/anthropics/claude-code/issues/73125",
+        "source": "HN · 47↑",
+        "hn_id": "48765630",
+        "published": "2026-07-02T18:37:57.000Z",
+        "summary": ""
       },
       {
         "title": "Anthropic is discussing a new custom chip with Samsung",
@@ -179,6 +201,13 @@
         "source": "Google News",
         "published": "2026-07-02T16:11:00.000Z",
         "summary": "Artefact and Anthropic team up to accelerate Enterprise AI Adoption EIN Presswire"
+      },
+      {
+        "title": "AI Coding Group Flags Anthropic’s Claude Fable 5 Performance Collapse After Relaunch - the deep dive",
+        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9VTFFxWmhjWGJUSzItbUEyRjNBNFBNX1EyLVdXanZtU3ROZmZBS2tRYUxZcDlySWpQYktSbERVN1FmUVd4WEtURy1lSEY5TEtIek1vcklqQmhqd0JsdjMtVHdjTDZMZw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-02T16:09:18.000Z",
+        "summary": "AI Coding Group Flags Anthropic’s Claude Fable 5 Performance Collapse After Relaunch the deep dive"
       },
       {
         "title": "Anthropic launches Claude Science, States sue over Medicaid work requirements, Beeline Medicines raises $126.3 million - VatorNews",
@@ -239,7 +268,7 @@
       {
         "title": "Launch HN: Manufact (YC S25) – MCP Cloud",
         "url": "https://manufact.com",
-        "source": "HN · 76↑",
+        "source": "HN · 85↑",
         "hn_id": "48762862",
         "published": "2026-07-02T15:11:20.000Z",
         "summary": "Hi HN, we are Pietro and Luigi, cofounders of Manufact ( https:&#x2F;&#x2F;manufact.com ), a cloud for MCP apps and servers. We used to be called mcp-use, and still build open…"
@@ -299,39 +328,11 @@
         "summary": "Anthropic Launches Claude Sonnet 5 Pulse 2.0"
       },
       {
-        "title": "Trackian Brings Its Marketing Decision Engine to Claude: MCP Inte - The National Law Review",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZVl1Zm5Kdkl2clFUazV1bVFVR09YaVR1UUFvTnl6RmJmYkh1VFh5c0kzRVczc1FabTAxQmUtekdvXzJuZE9wdEtDRzRXZzZXMGJpdFdMU0QzZ1lUVnJGekhHVFY5MG5xVklNU2dJTFRZSC0yb3JfejY2allDNElzVlFXcFp1QlVudzJOeW9Sajhwdy1kQ1pHWmFYd09kdkxvWkZnRG44eDhkVUY2dm0xRDFn?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T12:09:57.000Z",
-        "summary": "Trackian Brings Its Marketing Decision Engine to Claude: MCP Inte The National Law Review"
-      },
-      {
         "title": "Why the US imposed export controls on Anthropic’s Fable and Mythos models – and why they’ve been lifted - IT Pro",
         "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNME9yQUFJRS1WeGptNXRBcWdvZmFzNlh3dWZwOTd5QkkyMGtrQno2Uno3WUdGMWU0Z2ttbFRERmVjdlBiczJyMGJxRG1xc243SDEzWW8wVV9ESWppelVBRXB1bkZ5cnc3VHZOWnd2UWZySTlxYnlMLWMyS1NDX3RyOS05SHNGX1RRT0dOOXVjcWZFeExtZWY0SkMxRjZqOUt4RHZLMkpmSXFiU0JUS0tTbzRubmlPWFBhQUprd3hKNHd2THNqRUIxQ0JENkJwWVl0ekVuTWxMVW90NDFlX0IzVTZ6dzFBSXFEaGxxdQ?oc=5",
         "source": "Google News",
         "published": "2026-07-02T10:53:04.000Z",
         "summary": "Why the US imposed export controls on Anthropic’s Fable and Mythos models – and why they’ve been lifted IT Pro"
-      },
-      {
-        "title": "Z.ai launches ZCode to challenge Cursor, Claude Code and GitHub Copilot in AI coding - Venturebeat",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNbGJkdWhUUHVBNm94Njl4NXpzQ0FfMnFsUWlGWnhwTWxZWGpHMU1DS1JnN0dtWWE0TEFacWdha3JKd2NEcDlUQXVlWHMtRG1veWJuVUl3Q1BUay1oTzhUSWFpV3k1dE45cjJBZlFnYmdtbEdqTGdoV0FkbGFXTDF4aW91M3dhNzNSd1ptTVAyZTZjcGtiR1lteFUxUzNRaC16MDVVWlNuNEQ1SjVEcXljYktiLWg4eTRHNXc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T10:00:00.000Z",
-        "summary": "Z.ai launches ZCode to challenge Cursor, Claude Code and GitHub Copilot in AI coding Venturebeat"
-      },
-      {
-        "title": "Globant announces an alliance with Anthropic to redefine enterprise AI delivery with Claude-powered AI pods - ZAWYA",
-        "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNVHQ0dG5pTVRkUUNkb1RERUFpZnBvMXo5YWhSQ0s5enBWSldhQXRFajl1S3RDcnVZNUdiT0U5ZHBFLXBiN2luaVpIOG12YzdVZC1HMGRQSGFiUjJ4S2xjSnVjVHU2bHVTTHh4T2w2UVhfaGJSYVZQUmdzOXRqeGh2WmZpQnVScnl6SGsxOEdXeE1kZ05wMXVqWmpsWHdXZWpVUW5OSXpMTk1QRUFsS1p3aVB2RnJOY2RzejBIOGN3cklxeS13TzhsYmtMQnJtQXNfNEVMN282ZzkwS2RDZ1BGdFAtc2pXek9rdjVIM0ExNVFKSDRZUGEwblhMNlBFMFE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T09:38:02.000Z",
-        "summary": "Globant announces an alliance with Anthropic to redefine enterprise AI delivery with Claude-powered AI pods ZAWYA"
-      },
-      {
-        "title": "A new, inexpensive Chinese AI model is catching up with Anthropic, OpenAI on their home turf - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPRHN2T0NPR3ZJMWZheVBDbUxxS1pBbHpfSjBmSTNseVFEU0FUcnc1OFJJNzNGZVB1M1ZIdExGb0NfTWpKYnhTSm8xRUhzbm14RWRNRWJyaWctbjVLWmdRM0d1UjFBalpyNDJoTDNwVldrRGxGN1U0aUtUcEp3a2t1aDYxdFpfRFMzZDZodUNNdEJpMkoyOWFYakZLb1NrZ0M4a01qQW9HTkFUQkltaGNjWk9CcXYxUGdndmNPclNEOVlxVFk?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T07:40:09.000Z",
-        "summary": "A new, inexpensive Chinese AI model is catching up with Anthropic, OpenAI on their home turf Reuters"
       },
       {
         "title": "I watched a folder run a piece of my business by itself 1080p #claudecode #anthropic",
