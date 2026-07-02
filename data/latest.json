@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-07-02T20:48:46.014Z",
+  "generated_at": "2026-07-02T22:53:49.538Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Claude Sonnet 5",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5",
+        "source": "Anthropic",
+        "published": "2026-07-02T21:43:49.000Z",
+        "summary": ""
+      },
       {
         "title": "Redeploying Fable 5",
         "url": "https://www.anthropic.com/news/redeploying-fable-5",
@@ -22,13 +29,6 @@
         "url": "https://www.anthropic.com/news/claude-science-ai-workbench",
         "source": "Anthropic",
         "published": "2026-07-01T17:37:46.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Sonnet 5",
-        "url": "https://www.anthropic.com/news/claude-sonnet-5",
-        "source": "Anthropic",
-        "published": "2026-06-30T21:20:30.000Z",
         "summary": ""
       },
       {
@@ -146,6 +146,27 @@
     ],
     "news": [
       {
+        "title": "Anthropic Claude helps Nobel laureate Giorgio Parisi prove 10-year jamming puzzle - 동아사이언스",
+        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1VbGc2NUQ2U2VobF9VemJWRTJDQ3ZkR2ZSSTczbTRvUWoxR1VPLVZXOHMzV0Ywb1pHX2ZLRDN0ZlVDS3p0bXdreHQwa3hFSFh4Q3FvVg?oc=5",
+        "source": "Google News",
+        "published": "2026-07-02T22:00:00.000Z",
+        "summary": "Anthropic Claude helps Nobel laureate Giorgio Parisi prove 10-year jamming puzzle 동아사이언스"
+      },
+      {
+        "title": "Anthropic Claude Goes GA in Microsoft Foundry - Redmondmag.com",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPVE1LWjhRQ29OT1dwVjdnZFRRQ29zOGFSeXYtaVM4NG9QdTRBLWVYTTlNQ3JzQWtoQ0dVZkoyWDFUTzRaLV90ZWNxVERwSFNvWDFabFdnR0toY0pIV0Z5MXpJMVZfZURuR0NWcE5zMmJBX25oQUtraUdFeWludjdmMU5lbnN6RFNKRWxmYndTd2xGQ3NkU1hZaQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-02T21:52:05.000Z",
+        "summary": "Anthropic Claude Goes GA in Microsoft Foundry Redmondmag.com"
+      },
+      {
+        "title": "Claude Fable 5 Backlash Grows as Users Say Anthropic ‘Caged’ Its Flagship AI - BeInCrypto",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBacTJwTS1XLVUwRVR0bi1qVlZrNDk1YVFoNS0tTkxIbnphaDU1VjFQTkhMUF9SSHotOTVUbUVBUGlhSGRuMkFKOS1BU1k3Mm02eWhjU1pOMlJFYjdYTXd2aEE2OWtrckhXZFE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-02T21:30:00.000Z",
+        "summary": "Claude Fable 5 Backlash Grows as Users Say Anthropic ‘Caged’ Its Flagship AI BeInCrypto"
+      },
+      {
         "title": "Anthropic's Claude wants to help Micron design better HBM, DRAM, and SSD for AI - TechRadar",
         "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQazNIbVpIREx1aHZpejVLZ1BHV3JoU2Y3QXA5UWJUY1RBS3BPZldabGczekdLRnZGbkQ3ajU5dXhQbU5leWx6MW5mcUtkVXBjSWtQR3doUXI0aWtodFU4S3ZFcTFfQTQzeXZXS1hncDV1ZHlYSjlZalVrQWVTS2xaVS1NT0h4SU5KNzc5MEEtNDFfM0gzMmdoUHZWbDlvOW5kQXhVOVdZQ25lSW1LVFdPM2pjSGNNdng0VmczRHZIYVlHeGgtVHhpaXZjcUtQNlQyanhxSEJXOE1yVUxCQzVtZzZtSVZidm84MmtjTGFoQ2hNVlNMTmlSNXhjQWFEZUZsYWc?oc=5",
         "source": "Google News",
@@ -160,6 +181,14 @@
         "summary": "Anthropic taps Samsung for custom AI chips in hardware race The Tech Buzz"
       },
       {
+        "title": "Claude-real-video － any LLM can watch a video",
+        "url": "https://github.com/HUANGCHIHHUNGLeo/claude-real-video",
+        "source": "HN · 48↑",
+        "hn_id": "48766005",
+        "published": "2026-07-02T19:10:12.000Z",
+        "summary": ""
+      },
+      {
         "title": "Anthropic’s Fable model is back. But U.S. AI policy is still a mess - Fortune",
         "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNV2Q2UjNmTGlYeUNpMlA2MUxEZUdYQnVRR0RsM0Q2Vk1xdElWT0MwWFpWMWw1Q09UVnVNS0FpeXlXdnBYR2p5ZDR1cVY1eUNfTjRqSkwyODF6UUc4WlZaN1dsdG5kTk9BNDhNcE5RVmMwNXY3ejZuQjRBRzhQZGo4eUVmeDgxYm03NS1xRy1Od05ucVFUdjFad1ZaRXk2S3JVQXYtY3ctMA?oc=5",
         "source": "Google News",
@@ -169,7 +198,7 @@
       {
         "title": "Claude's AskUserQuestion: \"No response after 60s – continued without an answer\"",
         "url": "https://github.com/anthropics/claude-code/issues/73125",
-        "source": "HN · 47↑",
+        "source": "HN · 53↑",
         "hn_id": "48765630",
         "published": "2026-07-02T18:37:57.000Z",
         "summary": ""
@@ -213,7 +242,7 @@
         "title": "Anthropic launches Claude Science, States sue over Medicaid work requirements, Beeline Medicines raises $126.3 million - VatorNews",
         "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOUTJ6cVQ1Y1FTaEI3MHpwc1FTdENPcElQeElMcHM0VXJrZWI5blFvbFAxVVdVUU1lTzdBeHFQMTJKR1JTQnUtZ1Z6TmFCQklfQlBXNi1LX2NfVUx0WG94a1BnYWNzQkZoMXRuREtEeHk0eWhzMkhOajNKRUd6RUkyUW5rWDNDWWVnbF9Kb3BvWkYxRnJjUENtZzRCc0RNX2VKd0R3bVl6QUM4ck9jcHRSQnVXM3V5RHNwQ1hnd0NMblJ6cnJVcDd4bGh3WVI1Zw?oc=5",
         "source": "Google News",
-        "published": "2026-07-02T16:05:40.000Z",
+        "published": "2026-07-02T16:05:36.000Z",
         "summary": "Anthropic launches Claude Science, States sue over Medicaid work requirements, Beeline Medicines raises $126.3 million VatorNews"
       },
       {
@@ -222,13 +251,6 @@
         "source": "Google News",
         "published": "2026-07-02T16:04:28.000Z",
         "summary": "How Trump’s Anthropic whiplash has helped China Fast Company"
-      },
-      {
-        "title": "Anthropic Claude Goes GA in Microsoft Foundry - Redmondmag.com",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPVE1LWjhRQ29OT1dwVjdnZFRRQ29zOGFSeXYtaVM4NG9QdTRBLWVYTTlNQ3JzQWtoQ0dVZkoyWDFUTzRaLV90ZWNxVERwSFNvWDFabFdnR0toY0pIV0Z5MXpJMVZfZURuR0NWcE5zMmJBX25oQUtraUdFeWludjdmMU5lbnN6RFNKRWxmYndTd2xGQ3NkU1hZaQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T16:02:05.000Z",
-        "summary": "Anthropic Claude Goes GA in Microsoft Foundry Redmondmag.com"
       },
       {
         "title": "Anthropic brings back powerful Claude Fable 5 AI model after U.S. export controls lifted - MacDailyNews",
@@ -245,13 +267,6 @@
         "summary": "Gemini 3.5 Pro Dominates Claude Fable 5 in Leak Let's Data Science"
       },
       {
-        "title": "Trump admin reportedly softening stance after row with AI giant - Read Lion",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQYlFEV3lyNGo2RXk5UEt6X0ZBUndRVjVfSi1mUHlUZjZvRUptSFgwajhieS1GS0tDaXA3bW00Z09TcGlWcGVkVU9Rb2ppbUZybElUT1YyZ0JEZGowQi05LWNHb0x2NGx5emhvT2NHZ1JTcDNVR3ZwbDhxM19TaTdPMVhkWDlCdC10a0xkRzVB?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T15:54:12.000Z",
-        "summary": "Trump admin reportedly softening stance after row with AI giant Read Lion"
-      },
-      {
         "title": "Court documents reveal tensions between Anthropic and the Pentagon over Claude AI use - Crypto Briefing",
         "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1IdDgzTlNIc3g0MkVvTTNyaVdPUExIdi1Zc1VYaV8xbldmRWdvZkJmalJBUlJlYnNBRnV2Um1JajByWGYtMUlKaXNHc3daUnFla1NKT2c0N3hMYjlnZHhLV1lsSlRnLU1VZXdLODhvZlhRTVJfQzRLVkZGRE1mdw?oc=5",
         "source": "Google News",
@@ -266,19 +281,19 @@
         "summary": "Anthropic Expands Enterprise Deployment Options for Claude Desktop THE Journal: Technological Horizons in Education"
       },
       {
+        "title": "Anthropic expands in Seattle, signs South Lake Union lease - The Seattle Times",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQbV9sOFJfRlo0VXRBMGs0NUwyTnU4OVVUaGlpNWpNVzdKLXd4VUxLbl9oYTVrUzg0MXZyUm44NDVENGtVenY2TG5fLUpBWHNid2UxLXhpX2tLVTRFR2djeVVyNGtFQU1jN0c3cS1ZQmJWLVU2XzVvS3R4dmg5dHR5WEdlSUVCUGhPQjU5ZkZFTDlsMEJ1RnRpSGI3bHI?oc=5",
+        "source": "Google News",
+        "published": "2026-07-02T15:40:19.000Z",
+        "summary": "Anthropic expands in Seattle, signs South Lake Union lease The Seattle Times"
+      },
+      {
         "title": "Launch HN: Manufact (YC S25) – MCP Cloud",
         "url": "https://manufact.com",
-        "source": "HN · 85↑",
+        "source": "HN · 96↑",
         "hn_id": "48762862",
         "published": "2026-07-02T15:11:20.000Z",
         "summary": "Hi HN, we are Pietro and Luigi, cofounders of Manufact ( https:&#x2F;&#x2F;manufact.com ), a cloud for MCP apps and servers. We used to be called mcp-use, and still build open…"
-      },
-      {
-        "title": "Researchers detail attack chain escaping Anthropic’s Claude Cowork sandbox - SC Media",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQRTktVTg1X2w2ZGl4OXpScTZGcjFiS0Qtd0JWZ2lKX0pEQUVyUndBa2hwQng5UEhfa0t2cDVlUnNNbHA0cnljTFVsUFE1aHkzX044R2dSS2hxVG1YQXI4czRaMHlERThXQ1liWEhNdmFJZy1UeVZEd000bURPay1sN0RGWGE2aG1hckhNbVhDaXVxcElXV2tLdjVxOVkzSWJzQk5Ud09B?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T14:49:00.000Z",
-        "summary": "Researchers detail attack chain escaping Anthropic’s Claude Cowork sandbox SC Media"
       },
       {
         "title": "NVIDIA BioNeMo accelerates Anthropic Claude Science - AI News",
@@ -288,6 +303,13 @@
         "summary": "NVIDIA BioNeMo accelerates Anthropic Claude Science AI News"
       },
       {
+        "title": "Revvity Expands Signals AI With Anthropic Claude Integration - Zacks Investment Research",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOX2xCeUNOVjRVOFBYcnZqc1dobU9TZmhnMTRSSHJVOU1aUDZwMkY5bEhuUC1Hc0FiYVF2Nm5KZnpMb01pSEZZbDN1eHlWYlVVd3IxUDFPWTVwZnBWNE96cVJtWGdWN3dQOTdyYzJNcVRHN2VYbVBXT2RJRVFjenVUZEx4eWxMWGE3UkFFY1pWTzl2WUUyaHZXR3R2V0VXdGxJU2RF?oc=5",
+        "source": "Google News",
+        "published": "2026-07-02T14:34:36.000Z",
+        "summary": "Revvity Expands Signals AI With Anthropic Claude Integration Zacks Investment Research"
+      },
+      {
         "title": "Anthropic in Talks With Samsung for Custom AI Chip: Information",
         "url": "https://www.bloomberg.com/news/articles/2026-07-02/anthropic-in-talks-with-samsung-for-custom-ai-chip-information-mr3l34t4",
         "source": "Bloomberg",
@@ -295,11 +317,11 @@
         "summary": "Anthropic PBC is in talks with Samsung Electronics Co. to be a manufacturing partner for a custom artificial intelligence chip, the Information said, citing people familiar with the plan."
       },
       {
-        "title": "Revvity Expands Signals AI With Anthropic Claude Integration - TradingView",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZHVoUmUxSHQ1YVd5RnI1RnlFUGlEdk0wY0Q1THA0SnFKQVJHZ1kwbi15X3BLbDdSa1F3aHQzX09RWDItZDdDazVnUC1ZUkJXdkZuWDhnS0cxT1pxdzVVcDlCMFEtd1VKOWpHVG03UkEySXhQSm5zUFNPdEdPRDBTQWh2RXJmb3Y1dmlYa2hjSXlzQWdiNzdoMzFCM2ZHQzlWYm1oOEVoYVVZU1Z5Q0lQU0pvMlFzZVU?oc=5",
+        "title": "Researchers detail attack chain escaping Anthropic’s Claude Cowork sandbox - SC Media",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQRTktVTg1X2w2ZGl4OXpScTZGcjFiS0Qtd0JWZ2lKX0pEQUVyUndBa2hwQng5UEhfa0t2cDVlUnNNbHA0cnljTFVsUFE1aHkzX044R2dSS2hxVG1YQXI4czRaMHlERThXQ1liWEhNdmFJZy1UeVZEd000bURPay1sN0RGWGE2aG1hckhNbVhDaXVxcElXV2tLdjVxOVkzSWJzQk5Ud09B?oc=5",
         "source": "Google News",
-        "published": "2026-07-02T13:57:00.000Z",
-        "summary": "Revvity Expands Signals AI With Anthropic Claude Integration TradingView"
+        "published": "2026-07-02T13:48:47.000Z",
+        "summary": "Researchers detail attack chain escaping Anthropic’s Claude Cowork sandbox SC Media"
       },
       {
         "title": "Learn 80% of Claude Code Skills in One Afternoon No Code",
@@ -312,27 +334,6 @@
         "published": "2026-07-02T13:00:31.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Anthropic's AI Finds Bugs. IBM Bets $5B It Can Fix Them. - Dark Reading",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOazdzQU1ZdkxpUi1XblE3RWhVZ1lVQ0daajI2R0xZOEN1MXZTdW1zTk40NnZIUUlBeXZWaThxVm1ESDVTdXYzVW1NREFSd1RMX2FrRGE1YVlfSHlZNDZfUUxaU3I3Vk1valNtSURZZkpDUzZQX3Q1ZnpUc3pWYTZ5QXlmSXZwS0lsU3BEMXlGSUtRNXUzMnlsVjNtTmViTW5QbTBDUkNjUGJQZw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T12:52:11.000Z",
-        "summary": "Anthropic's AI Finds Bugs. IBM Bets $5B It Can Fix Them. Dark Reading"
-      },
-      {
-        "title": "Anthropic Launches Claude Sonnet 5 - Pulse 2.0",
-        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5aODRoRWZrWG93bTh4YlZIcUJCNUc0YUtOb2N4bGNIZDNPR0hNQzczOWJSUDM4QmhDR1NMcllOQkxka2l2c3V0a1pZYnZlNGdnTlBKMjlGV0ZVVmlJcXFhckZmLWTSAWpBVV95cUxPVUVGbE00N09jUlgtQ2NUcThpbW16eHFhZFdGSkVnUUJPM0tEOXNfSXBKR3BnMEk1MjdlRkVrMzdmQWVQVTBSb3dXWExaS0J5NmRYX093cGNRRXpzVHQxZVFQcnNfdm5Dckxn?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T12:35:20.000Z",
-        "summary": "Anthropic Launches Claude Sonnet 5 Pulse 2.0"
-      },
-      {
-        "title": "Why the US imposed export controls on Anthropic’s Fable and Mythos models – and why they’ve been lifted - IT Pro",
-        "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNME9yQUFJRS1WeGptNXRBcWdvZmFzNlh3dWZwOTd5QkkyMGtrQno2Uno3WUdGMWU0Z2ttbFRERmVjdlBiczJyMGJxRG1xc243SDEzWW8wVV9ESWppelVBRXB1bkZ5cnc3VHZOWnd2UWZySTlxYnlMLWMyS1NDX3RyOS05SHNGX1RRT0dOOXVjcWZFeExtZWY0SkMxRjZqOUt4RHZLMkpmSXFiU0JUS0tTbzRubmlPWFBhQUprd3hKNHd2THNqRUIxQ0JENkJwWVl0ekVuTWxMVW90NDFlX0IzVTZ6dzFBSXFEaGxxdQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T10:53:04.000Z",
-        "summary": "Why the US imposed export controls on Anthropic’s Fable and Mythos models – and why they’ve been lifted IT Pro"
       },
       {
         "title": "I watched a folder run a piece of my business by itself 1080p #claudecode #anthropic",
