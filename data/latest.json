@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T22:53:49.538Z",
+  "generated_at": "2026-07-03T01:29:53.154Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -7,7 +7,14 @@
         "title": "Claude Sonnet 5",
         "url": "https://www.anthropic.com/news/claude-sonnet-5",
         "source": "Anthropic",
-        "published": "2026-07-02T21:43:49.000Z",
+        "published": "2026-07-03T01:20:09.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Fable Safeguards Jailbreak Framework",
+        "url": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
+        "source": "Anthropic",
+        "published": "2026-07-03T00:07:08.000Z",
         "summary": ""
       },
       {
@@ -135,16 +142,16 @@
         "source": "Anthropic Research",
         "published": "2026-06-26T12:28:05.000Z",
         "summary": ""
-      },
-      {
-        "title": "Mythos Preview",
-        "url": "https://www.anthropic.com/research/mythos-preview",
-        "source": "Anthropic Research",
-        "published": "2026-06-26T12:27:49.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Samsung seen in talks to manufacture custom AI chips for Anthropic - The Korea Economic Daily Global Edition",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1EVDdCRGtUUGlaVEVJVFdWd25Vd2haNzRNSE9VNHVTbUJuNEsxRmdrcjNPLU1NeUtaYUhUdVVoTWNScDBiRmRXNFlVWFdLSE9fNlVncEtlUERSM0pvdGp3MUZ4c19lUnpUa0tVdzAySEJUX25sbzhWenpiRkpOU2M?oc=5",
+        "source": "Google News",
+        "published": "2026-07-03T01:20:55.000Z",
+        "summary": "Samsung seen in talks to manufacture custom AI chips for Anthropic The Korea Economic Daily Global Edition"
+      },
       {
         "title": "Anthropic Claude helps Nobel laureate Giorgio Parisi prove 10-year jamming puzzle - 동아사이언스",
         "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1VbGc2NUQ2U2VobF9VemJWRTJDQ3ZkR2ZSSTczbTRvUWoxR1VPLVZXOHMzV0Ywb1pHX2ZLRDN0ZlVDS3p0bXdreHQwa3hFSFh4Q3FvVg?oc=5",
@@ -174,19 +181,19 @@
         "summary": "Anthropic's Claude wants to help Micron design better HBM, DRAM, and SSD for AI TechRadar"
       },
       {
-        "title": "Anthropic taps Samsung for custom AI chips in hardware race - The Tech Buzz",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOdmVpbVZHN0E0TzltaGQwSGY4T1JtWjIwV1FkanBValhXdk13YTI5VXhnNWozVHRUdmgtbmZELXRBWlR2NTlJZTU2N3k2QVJzczRjMFo0dFBTZk8zZXNydTl3dEFMSC1CZ3hVWEcyTFVWSm9zN1JZUDEyaC1RVW5KdnBxaFh3WTFoNUVIQnZBeHRYWEtwUjRz?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T19:22:00.000Z",
-        "summary": "Anthropic taps Samsung for custom AI chips in hardware race The Tech Buzz"
-      },
-      {
         "title": "Claude-real-video － any LLM can watch a video",
         "url": "https://github.com/HUANGCHIHHUNGLeo/claude-real-video",
-        "source": "HN · 48↑",
+        "source": "HN · 78↑",
         "hn_id": "48766005",
         "published": "2026-07-02T19:10:12.000Z",
         "summary": ""
+      },
+      {
+        "title": "CrowdStrike President on How Claude Mythos Rattles the Cybersecurity Industry - observer.com",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNeHJEVWg3eHQ2WnpYdnZNMl9KTFNMbUVQWE5YTUVfR2pqUlNpYkl6eDhOeVNTaFVQbkNrM1JPZlBUOW1nRnJFMEdUTDZQZnhIV1lIX2taYjVQel9HQUtJXzB5Yk1Yd1JQcnZqUExENXVBQlN0ZTVPMW55ZWdSTGtQU1RFY2RtNGdsTUR4bzhKMA?oc=5",
+        "source": "Google News",
+        "published": "2026-07-02T19:05:56.000Z",
+        "summary": "CrowdStrike President on How Claude Mythos Rattles the Cybersecurity Industry observer.com"
       },
       {
         "title": "Anthropic’s Fable model is back. But U.S. AI policy is still a mess - Fortune",
@@ -198,7 +205,7 @@
       {
         "title": "Claude's AskUserQuestion: \"No response after 60s – continued without an answer\"",
         "url": "https://github.com/anthropics/claude-code/issues/73125",
-        "source": "HN · 53↑",
+        "source": "HN · 54↑",
         "hn_id": "48765630",
         "published": "2026-07-02T18:37:57.000Z",
         "summary": ""
@@ -267,13 +274,6 @@
         "summary": "Gemini 3.5 Pro Dominates Claude Fable 5 in Leak Let's Data Science"
       },
       {
-        "title": "Court documents reveal tensions between Anthropic and the Pentagon over Claude AI use - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1IdDgzTlNIc3g0MkVvTTNyaVdPUExIdi1Zc1VYaV8xbldmRWdvZkJmalJBUlJlYnNBRnV2Um1JajByWGYtMUlKaXNHc3daUnFla1NKT2c0N3hMYjlnZHhLV1lsSlRnLU1VZXdLODhvZlhRTVJfQzRLVkZGRE1mdw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T15:52:16.000Z",
-        "summary": "Court documents reveal tensions between Anthropic and the Pentagon over Claude AI use Crypto Briefing"
-      },
-      {
         "title": "Anthropic Expands Enterprise Deployment Options for Claude Desktop - THE Journal: Technological Horizons in Education",
         "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNd2lvdTYtUHFlSnpIcnVGcDd1Y0I4ZXpsQlZlcktfZ3FVb19ZWENkSWdSWXZ4Yy1DOXlFcWpDYlU4d3k3eFRVNHZiM3BQUTdJYnFYcE4zRGxiRTlNQVA2bnBwTkxWYXB2V3FPc2ViM2RzUkFTNDJDc3NiUFlIZDZMR1dGTnN3MnpteG5feEU1UGtFVE9PWUpQMXFJUTdSRlV6cHJveHJDU2JsVm42aTd3cDJ1M2w?oc=5",
         "source": "Google News",
@@ -281,16 +281,9 @@
         "summary": "Anthropic Expands Enterprise Deployment Options for Claude Desktop THE Journal: Technological Horizons in Education"
       },
       {
-        "title": "Anthropic expands in Seattle, signs South Lake Union lease - The Seattle Times",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQbV9sOFJfRlo0VXRBMGs0NUwyTnU4OVVUaGlpNWpNVzdKLXd4VUxLbl9oYTVrUzg0MXZyUm44NDVENGtVenY2TG5fLUpBWHNid2UxLXhpX2tLVTRFR2djeVVyNGtFQU1jN0c3cS1ZQmJWLVU2XzVvS3R4dmg5dHR5WEdlSUVCUGhPQjU5ZkZFTDlsMEJ1RnRpSGI3bHI?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T15:40:19.000Z",
-        "summary": "Anthropic expands in Seattle, signs South Lake Union lease The Seattle Times"
-      },
-      {
         "title": "Launch HN: Manufact (YC S25) – MCP Cloud",
         "url": "https://manufact.com",
-        "source": "HN · 96↑",
+        "source": "HN · 98↑",
         "hn_id": "48762862",
         "published": "2026-07-02T15:11:20.000Z",
         "summary": "Hi HN, we are Pietro and Luigi, cofounders of Manufact ( https:&#x2F;&#x2F;manufact.com ), a cloud for MCP apps and servers. We used to be called mcp-use, and still build open…"
@@ -310,13 +303,6 @@
         "summary": "Revvity Expands Signals AI With Anthropic Claude Integration Zacks Investment Research"
       },
       {
-        "title": "Anthropic in Talks With Samsung for Custom AI Chip: Information",
-        "url": "https://www.bloomberg.com/news/articles/2026-07-02/anthropic-in-talks-with-samsung-for-custom-ai-chip-information-mr3l34t4",
-        "source": "Bloomberg",
-        "published": "2026-07-02T14:12:29.000Z",
-        "summary": "Anthropic PBC is in talks with Samsung Electronics Co. to be a manufacturing partner for a custom artificial intelligence chip, the Information said, citing people familiar with the plan."
-      },
-      {
         "title": "Researchers detail attack chain escaping Anthropic’s Claude Cowork sandbox - SC Media",
         "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQRTktVTg1X2w2ZGl4OXpScTZGcjFiS0Qtd0JWZ2lKX0pEQUVyUndBa2hwQng5UEhfa0t2cDVlUnNNbHA0cnljTFVsUFE1aHkzX044R2dSS2hxVG1YQXI4czRaMHlERThXQ1liWEhNdmFJZy1UeVZEd000bURPay1sN0RGWGE2aG1hckhNbVhDaXVxcElXV2tLdjVxOVkzSWJzQk5Ud09B?oc=5",
         "source": "Google News",
@@ -334,6 +320,20 @@
         "published": "2026-07-02T13:00:31.000Z",
         "summary": "",
         "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic's AI Finds Bugs. IBM Bets $5B It Can Fix Them. - Dark Reading",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOazdzQU1ZdkxpUi1XblE3RWhVZ1lVQ0daajI2R0xZOEN1MXZTdW1zTk40NnZIUUlBeXZWaThxVm1ESDVTdXYzVW1NREFSd1RMX2FrRGE1YVlfSHlZNDZfUUxaU3I3Vk1valNtSURZZkpDUzZQX3Q1ZnpUc3pWYTZ5QXlmSXZwS0lsU3BEMXlGSUtRNXUzMnlsVjNtTmViTW5QbTBDUkNjUGJQZw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-02T12:52:11.000Z",
+        "summary": "Anthropic's AI Finds Bugs. IBM Bets $5B It Can Fix Them. Dark Reading"
+      },
+      {
+        "title": "Anthropic Launches Claude Sonnet 5 - Pulse 2.0",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5aODRoRWZrWG93bTh4YlZIcUJCNUc0YUtOb2N4bGNIZDNPR0hNQzczOWJSUDM4QmhDR1NMcllOQkxka2l2c3V0a1pZYnZlNGdnTlBKMjlGV0ZVVmlJcXFhckZmLWTSAWpBVV95cUxPVUVGbE00N09jUlgtQ2NUcThpbW16eHFhZFdGSkVnUUJPM0tEOXNfSXBKR3BnMEk1MjdlRkVrMzdmQWVQVTBSb3dXWExaS0J5NmRYX093cGNRRXpzVHQxZVFQcnNfdm5Dckxn?oc=5",
+        "source": "Google News",
+        "published": "2026-07-02T12:35:20.000Z",
+        "summary": "Anthropic Launches Claude Sonnet 5 Pulse 2.0"
       },
       {
         "title": "I watched a folder run a piece of my business by itself 1080p #claudecode #anthropic",
@@ -972,19 +972,27 @@
     ],
     "tutorials": [
       {
-        "title": "fix(rag,classification): update rate-limit tier references to usage-t…",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/3393bdaedde4fb26b4944a14710471f07c204fc1",
-        "source": "Anthropic Cookbook",
-        "published": "2026-07-02T15:45:30.000Z",
-        "summary": "fix(rag,classification): update rate-limit tier references to usage-tier naming (#752)",
+        "title": "v2.1.199",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.199",
+        "source": "Claude Code Releases",
+        "published": "2026-07-02T23:35:18.000Z",
+        "summary": "What's changed Stacked slash-skill invocations like /skill-a /skill-b do XYZ now load all leading skills (up to 5), not just the first Fixed SSL certificate errors (TLS-inspecting proxies, missing…",
         "tutorial_kind": "official"
       },
       {
         "title": "v2.1.198",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.198",
         "source": "Claude Code Releases",
-        "published": "2026-07-01T20:45:36.000Z",
-        "summary": "What's changed Claude in Chrome is now generally available Added background agent notifications in claude agents — sessions that need input or finish now fire the Notification hook (…",
+        "published": "2026-07-02T22:55:04.000Z",
+        "summary": "What's changed Subagents now run in the background by default, so Claude keeps working while they run and is notified when they finish (previously a gradual rollout) Claude in Chrome is now…",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "fix(rag,classification): update rate-limit tier references to usage-t…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/3393bdaedde4fb26b4944a14710471f07c204fc1",
+        "source": "Anthropic Cookbook",
+        "published": "2026-07-02T15:45:30.000Z",
+        "summary": "fix(rag,classification): update rate-limit tier references to usage-tier naming (#752)",
         "tutorial_kind": "official"
       },
       {
@@ -1097,14 +1105,6 @@
         "source": "Claude Code Releases",
         "published": "2026-06-22T20:37:34.000Z",
         "summary": "What's changed Added claude mcp login and claude mcp logout to authenticate MCP servers from the CLI without opening the interactive /mcp menu, with --no-browser stdin redirect support for…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "v2.1.185",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.185",
-        "source": "Claude Code Releases",
-        "published": "2026-06-20T20:59:19.000Z",
-        "summary": "What's changed The stream-stall hint now reads \"Waiting for API response · will retry in …\" instead of \"No response from API · Retrying in …\", and triggers after 20s of silence instead of 10s",
         "tutorial_kind": "official"
       },
       {
@@ -1746,6 +1746,20 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.199",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.199",
+        "source": "Claude Code",
+        "published": "2026-07-02T23:35:18.000Z",
+        "summary": "What's changed Stacked slash-skill invocations like /skill-a /skill-b do XYZ now load all leading skills (up to 5), not just the first Fixed SSL certificate errors (TLS-inspecting proxies, missing NODE_EXTRA_CA_CERTS ,…"
+      },
+      {
+        "title": "v2.1.198",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.198",
+        "source": "Claude Code",
+        "published": "2026-07-02T22:55:04.000Z",
+        "summary": "What's changed Subagents now run in the background by default, so Claude keeps working while they run and is notified when they finish (previously a gradual rollout) Claude in Chrome is now generally available Added…"
+      },
+      {
         "title": "Learn 80% of Claude Code Skills in One Afternoon No Code",
         "url": "https://www.youtube.com/watch?v=G-8f9wWWDSo",
         "source": "YouTube · Pragati Kunwer",
@@ -1814,13 +1828,6 @@
         "source": "MCP TypeScript SDK",
         "published": "2026-07-02T12:27:52.000Z",
         "summary": "Patch Changes #2405 f172626 Thanks @mattzcarey ! - Ship CommonJS builds alongside ESM. Each package now emits both .mjs / .d.mts and .cjs / .d.cts (via tsdown format: ['esm', 'cjs'] ), and its exports map adds a…"
-      },
-      {
-        "title": "v2.1.198",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.198",
-        "source": "Claude Code",
-        "published": "2026-07-01T20:45:36.000Z",
-        "summary": "What's changed Claude in Chrome is now generally available Added background agent notifications in claude agents — sessions that need input or finish now fire the Notification hook ( agent_needs_input / agent_completed…"
       },
       {
         "title": "I watched a folder run a piece of my business by itself 1080p #claudecode #anthropic",
@@ -2003,13 +2010,6 @@
         "source": "YouTube · Leon van Zyl",
         "published": "2026-06-21T12:46:07.000Z",
         "summary": ""
-      },
-      {
-        "title": "v2.1.185",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.185",
-        "source": "Claude Code",
-        "published": "2026-06-20T20:59:19.000Z",
-        "summary": "What's changed The stream-stall hint now reads \"Waiting for API response · will retry in …\" instead of \"No response from API · Retrying in …\", and triggers after 20s of silence instead of 10s"
       },
       {
         "title": "Codex vs Claude Code: What I Found After 30 Days",
