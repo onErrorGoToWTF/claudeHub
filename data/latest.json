@@ -1,20 +1,34 @@
 {
-  "generated_at": "2026-07-03T08:43:32.715Z",
+  "generated_at": "2026-07-03T11:58:10.692Z",
   "version": 1,
   "sections": {
     "updates": [
       {
-        "title": "Claude Sonnet 5",
-        "url": "https://www.anthropic.com/news/claude-sonnet-5",
+        "title": "Visible Extended Thinking",
+        "url": "https://www.anthropic.com/news/visible-extended-thinking",
         "source": "Anthropic",
-        "published": "2026-07-03T01:20:09.000Z",
+        "published": "2026-07-03T10:15:42.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropics Responsible Scaling Policy",
+        "url": "https://www.anthropic.com/news/anthropics-responsible-scaling-policy",
+        "source": "Anthropic",
+        "published": "2026-07-03T10:15:38.000Z",
         "summary": ""
       },
       {
         "title": "Fable Safeguards Jailbreak Framework",
         "url": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
         "source": "Anthropic",
-        "published": "2026-07-03T00:07:08.000Z",
+        "published": "2026-07-03T10:14:45.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Sonnet 5",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5",
+        "source": "Anthropic",
+        "published": "2026-07-03T01:20:09.000Z",
         "summary": ""
       },
       {
@@ -128,23 +142,80 @@
         "source": "Anthropic",
         "published": "2026-06-26T12:29:18.000Z",
         "summary": ""
-      },
-      {
-        "title": "81k Economics",
-        "url": "https://www.anthropic.com/research/81k-economics",
-        "source": "Anthropic Research",
-        "published": "2026-06-26T12:28:57.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Project Fetch Phase Two",
-        "url": "https://www.anthropic.com/research/project-fetch-phase-two",
-        "source": "Anthropic Research",
-        "published": "2026-06-26T12:28:05.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Alibaba to ban Anthropic products over security concerns - ForkLog",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNZWtoM3ZZR09GTzRUcmhCUmpHZ0J5WUlRNW5Gel9fd1NYQmdvNWRQX2ViNUt6MjB0dUxHU0tNbnZfWmtGOFdDZS11a0NzUkM4MWFDSUF4SDUzUGUwRF9mS09OZEs2T2MtTEVmTG0zNWJ3bWRxME1xbGdvYXJncnY0WTREcjFkTWc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-03T10:34:19.000Z",
+        "summary": "Alibaba to ban Anthropic products over security concerns ForkLog"
+      },
+      {
+        "title": "Anthropic Moves to Block Chinese Firms Using Claude via Offshore Workarounds - BanklessTimes",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOMFdpYkdPMEhuNzI4RlN1WmY1TmhyYVRjOV85RHN3T0RuUkZSOEdmb3R5OU5HMnB1emw3U096djdzU2M3U0E1Y3FhLU4yU3ZPU3hwT2VkZ1N0cUl2aUNTdVJYNmYwcHZUNnlySkRjbVhzUFB2RUtGcG15ZjNIbElBN0pHRUIxWTlVMG5KRUdpUjJib3pqbGRCTTg3QXRVZTRIVEMyVW1OaVNqNGdIaGw1ZGkyMUZ3T0doano2RmVBeU9oREZVRXc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-03T10:03:56.000Z",
+        "summary": "Anthropic Moves to Block Chinese Firms Using Claude via Offshore Workarounds BanklessTimes"
+      },
+      {
+        "title": "Artefact and Anthropic team up to accelerate Enterprise AI Adoption - AiThority",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQZUV1bkxRNEdqWlFFYWl6U1NRMDFfTnZPeHRjS3pFWXRHdFNYNnBBMkJob1YwcUI2cFFESlJYWkw4cFVZRVBTZ2V2RkhoNjNuRWFfeGFCMFdCVGxhTWkzNHk1YVNJQnZoR3d0N1FfRi1tN1NhcmNEWEgxTnB6MkxkZnlFc0NZUFp2YzEteUtDRUduN29XbUpRQzRVbWFSdVZTVnRoS3c4RVpDTHM?oc=5",
+        "source": "Google News",
+        "published": "2026-07-03T09:56:18.000Z",
+        "summary": "Artefact and Anthropic team up to accelerate Enterprise AI Adoption AiThority"
+      },
+      {
+        "title": "Alibaba Bans Employees From Using Claude - The Information",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQZWFiTmtvQ0dyMkZLVVBvbm0tSmpoeUJ6VTlWdUgzR1FjZWswdFF2MTRId3RJRXRrYjNQQ21meGVqaE1ZR0JiMnE3d3NZcEoyRlJZVnZLOE5iQ0duc1VpejZVdWdfTzJPNi1mamZaY2NXRldXc2lFM254QlRrQWJoYWhB?oc=5",
+        "source": "Google News",
+        "published": "2026-07-03T09:30:15.000Z",
+        "summary": "Alibaba Bans Employees From Using Claude The Information"
+      },
+      {
+        "title": "One of China's biggest ecommerce company to employees: Starting July 10, you cannot use America's ... - The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNNWpZVDVsc2diRG91NGY5bmZFX3ZMTVZvUktYd1B6OEJ2dHhMMEdtNE5FVDNLY1J4Z0NRaXRNY2I0VWp3aEprRFllN1NUN1hmdTkzdmYxdV9hU0RzX3ZwQUczRXZvaUdOODhVNlcwc0FZM2ZjNVRlcU1CYm9tTEI4TEFPSHhSUUZmR0JjSTFDenFyUnV6bWktcHpucmJubDBMZW5FQmpYeEJPdGpBWEcxdjNlTWw1WkVRSmRkY29jR2Vjb2lWUTZBT0tXWWxJQWFNc3RQUlhLejlPeTRkaWRIRGxmVnFUbmdPcG1OVUIzS1pxNHlaQmNaZV9ybnBpOEk4SXpzTGRGQUnSAY4CQVVfeXFMTng0VGpJcDVUV3lCTkpkYlR2VldPNGpuMnJyYWUwNGt4eFphYTVhNFBhOUM0eFBIVFhGSzJ1ZXNIaDFxTFdOdFJvZWY2WWVlb2VZODB2N2xRTFZqWVFLcFlLNnhvcnVkNVVhR3VfYklXeDRuTXFDZlN5WEFzanZHdWtzMTd2V2hHUloxSEVFMU1SaVBFQjNUZzBKRWdGYlQxZkZKWC02TkQxRVdxT1lINGVjTjhlVEZtWWtUdkNncURvMjEwZ1pVdlJtaWVYbFl1aWJaZTVGQU9ja0tZNXdrcTRIMkxya2Q3QUR4eUVGdk9MZTRIaGs0VHl3MlJKcHktV0xhS2J3X3hOTC1ER3B3?oc=5",
+        "source": "Google News",
+        "published": "2026-07-03T09:21:00.000Z",
+        "summary": "One of China's biggest ecommerce company to employees: Starting July 10, you cannot use America's ... The Times of India"
+      },
+      {
+        "title": "Alibaba is banning Claude Code over backdoor claims: Here’s why - The News International",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQ2J0VHI1Y1VVTl9TUVhRQWU2WEU5bVM0dmQzbDhJdGM1ZTJTa0ptUlo2bElHX015RUlWM1JoWVphcnNjYUNlbU0xa2NMV0k3ZUY5ZTVEZV96WmZpaXdNTGRLN0RycnBSQW01cjNCMDNpenc5anBFN2oxaWthbTVVdk41UFU3NURfM3ZOeXZzOU9BN2RkN1p4M2NmSUhDRXNIVEZPMDF3?oc=5",
+        "source": "Google News",
+        "published": "2026-07-03T09:16:00.000Z",
+        "summary": "Alibaba is banning Claude Code over backdoor claims: Here’s why The News International"
+      },
+      {
+        "title": "Chinese engineers reportedly found secret routes to Claude, Anthropic is shutting them down - Firstpost",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxORW9VWEl0VUFwY3ZvOHBYM3d0djNsVk5Hb08taFBQNkIzSTlVUnFKazB4REtfWTRQZDhzbjdLWW9xLUtOeWU0ZUFkUjc1Q3djb1AyZ0k4TjUtSHB0cTRuQVVETjdCSUtURmEtNy1zOUVGYmFEd3dlNDE2ejFoTEFkLVJOd1l4TV9KcGhRQ2gyTC1RSDRNMXZycHBpeUlhellOTVhwS1RvZTVuRGhjZmpYZDBfSVc0T015LWhudmhlVF9IRTN0X0dPOHdpU2lFTF9Z0gHWAUFVX3lxTE5yWjhkYmJhN2hyQll0dTBHUkhLLWs4VGlJOUU4OEdXMnlqdlJSOWlXOElGcmN4cjBZSGlrbExBSEI0OW45SURKTFVtNjdWNEVsb2xQR0VhbWlmTXI4Mm1ONkVVaURERGthUEpyeTVMTVZoWWxVRnlZVEdsSk5rRWUzWEd4WW5pM0UxMkF5TDRieGFLSDhRVW81LTFnNGhQSTlwdWhMdF9ZRE9jeF82bTFmUEJreWZ4VXdwaEluS0xnZDNhUFJzQnU2WDdQUG5pUmdwT2NsMFE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-03T09:04:28.000Z",
+        "summary": "Chinese engineers reportedly found secret routes to Claude, Anthropic is shutting them down Firstpost"
+      },
+      {
+        "title": "Alibaba to ban employees from using Anthropic’s coding tool, source says - WTVB",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPY1RnWHFyRzBSRWhUcjlobENneHlmRXdXWGpheVY0V3VISkptVzZtcUI3OUwzYmo0UXhlNWdGeVIzQnNxcWN4YmlleEY1NFdDVGFtQndWX3lnS0drbVJpZEdmX0pNeGVLRVk3VTB2enZVZjRzMzlFY1BlRFR4bG5KTm82WlFRSlZBNGlPbnA4ZURoc0tEV2JUV3l0QVZ6ZTVlUWY3X292dTEwUjRUZS04?oc=5",
+        "source": "Google News",
+        "published": "2026-07-03T08:59:06.000Z",
+        "summary": "Alibaba to ban employees from using Anthropic’s coding tool, source says WTVB"
+      },
+      {
+        "title": "Anthropic weighing Samsung partnership to develop custom AI chips: U.S. media - Korea JoongAng Daily",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQQmExSDBNb1hGVGdvMW1nTGh1OEJENmxaMlU0MnQ2MHBqSXlaZ0swN3B2RW4tcDBfMlFpakZWQXY0RVVoNWl1TlY3N01ZLTkzak5URkZaZGxDM3dETk5iR3VTem9lcUtadnNzN3RVRkVSSS00d3lfMzBibmpxV0dBMjF0aFdtQmVFUm1Fek1TZk5PM1I5bmFJWm9qYVRXNHA3bG1XeHprWTdsUVVEck4xNHRHVnVyOHBBWVFfTWxZZkNERnk0Znc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-03T08:49:22.000Z",
+        "summary": "Anthropic weighing Samsung partnership to develop custom AI chips: U.S. media Korea JoongAng Daily"
+      },
+      {
+        "title": "Alibaba to ban Claude Code in workplace over alleged backdoor risks, source says",
+        "url": "https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/",
+        "source": "HN · 130↑",
+        "hn_id": "48772443",
+        "published": "2026-07-03T08:31:37.000Z",
+        "summary": ""
+      },
       {
         "title": "Alibaba Orders Employees to Remove All Anthropic Products, Ban Effective July 10 - Pandaily",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9qZHFhZjhUd0wyOVNvU0RaNy1BTGhuckVUMWFOb1gwMm9NbkNoeTYwNllMQmVfYlFnbWFzbzVGQXBkR0Z2UDRsaWROLWxsV25LdWpBdVNHeGtRZUxSVzllY0Zsa3RhWWlWRzFlNC1jdnRLVEFIUXc?oc=5",
@@ -195,6 +266,20 @@
         "summary": "Samsung seen in talks to manufacture custom AI chips for Anthropic The Korea Economic Daily Global Edition"
       },
       {
+        "title": "Alibaba to ban Claude Code in workplace over alleged backdoor risks, source says - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObmJCeUswWFNwa1VwYUFJSElvZHRfdUpJNTNvVDBUSUE4X3hJelVyUXF6RkhmenpJanQ1ay1nTXpLOFdTRzByMVNYdDV6aDhyZ3Nnb1hUNDZCS3lVb2lIS052M1RxcUtrcEVaem53dVhnYzkwTmM3WDJSZ3JqclpBRDUxRXBaOVpXajd3RUppWGdLVE9sMzN3SUMwUWRaZw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-03T06:50:29.000Z",
+        "summary": "Alibaba to ban Claude Code in workplace over alleged backdoor risks, source says Yahoo Finance"
+      },
+      {
+        "title": "Alibaba to ban employees from using Anthropic's coding tool, source says - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc1ozV1JIcjJDWWRCZGZZZEN0Z0p4dHVpMkw3eXBWMF9EMlJOemlKSEg1WVRjV2I5VklmMGFFT3FLblVuTEtKa3dYUXctSmpMS0tQdzJhbmhGTEVlRjhHSWdrUUlXZXJydTN2Q3JQTXRSWUVzVkh5TThmaEtVZURBMzdFTHFHaWI0UE43aUw1QS1vbXRoS3BmRUQ0bExHZ0hDQzRmc09kSkxlNUVDOGxNRXctN2dWWGwtX21DSnN3?oc=5",
+        "source": "Google News",
+        "published": "2026-07-03T06:50:00.000Z",
+        "summary": "Alibaba to ban employees from using Anthropic's coding tool, source says Reuters"
+      },
+      {
         "title": "CrowdStrike Warns Claude Mythos Could Speed Zero-Day Decisions - Yellow.com",
         "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9CNXp3QW5CNHhyWGpURG5VMTByLXBOb2JaWmhMVGtmQUZwN0JkRWxhNGpLV0ZkUXlkbl9JUzY3NWZ3UGJqWk1xUzNzV1lXbWJ1THFKTDNTY0RDaDNXUmNxZTNGNkZ3OHlnaUE?oc=5",
         "source": "Google News",
@@ -209,18 +294,18 @@
         "summary": "Claude Fable 5 is back after US ban. Here's what changed Gulf News"
       },
       {
-        "title": "I tried Anthropic's new Fable 5 with everyday prompts — these are the 5 worth stealing - Tom's Guide",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPSzMwakpQelpvUm9aMnJnbVNtc1ZSY0E1cjVpV0hPTlk0WXNCcmZfenZiZ3NiNV80NTh0dVNEVTBOejh4Q1REVEhhdDMyRk9OSkJUZzNGVU1TZ2dqWHR2cW1sOEhJWEw0amlScFpDclNKSkE1SDNZdjhQRHdFYWFyV09SVlkxX3NsWEVKQ1VrNjQtR2I3X0lRTnluZUs0ZmZmeHo4UXNBT0oxT0VKbENZXzN3?oc=5",
-        "source": "Google News",
-        "published": "2026-07-03T05:53:22.000Z",
-        "summary": "I tried Anthropic's new Fable 5 with everyday prompts — these are the 5 worth stealing Tom's Guide"
-      },
-      {
         "title": "Anthropic cracks down on Chinese workaround access to Claude, FT reports (ANTHRO:Private) - Seeking Alpha",
         "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdEZSSGl0Yk9ka0t3Yk4xNmoweGxRbnVwN3RzZWNnTW1XU1piM0JwT3lZYnVUb3drLV9WRUF0OEpqak96dzA4SHNWeURCbjdJV21pQmFtZ0ZYaHBnNWlhMUkwb3JYMVhOeHd1RVFvdjNvT2x6anhJVW95M0Q5bG53cFVYTVA3RlRpbUxwWUU5UnA2MWhtc3dsYVI1bnZKa1l0LTdKV0xURFRpbml0TGc?oc=5",
         "source": "Google News",
         "published": "2026-07-03T05:52:42.000Z",
         "summary": "Anthropic cracks down on Chinese workaround access to Claude, FT reports (ANTHRO:Private) Seeking Alpha"
+      },
+      {
+        "title": "I tried Anthropic's new Fable 5 with everyday prompts — these are the 5 worth stealing - Tom's Guide",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPSzMwakpQelpvUm9aMnJnbVNtc1ZSY0E1cjVpV0hPTlk0WXNCcmZfenZiZ3NiNV80NTh0dVNEVTBOejh4Q1REVEhhdDMyRk9OSkJUZzNGVU1TZ2dqWHR2cW1sOEhJWEw0amlScFpDclNKSkE1SDNZdjhQRHdFYWFyV09SVlkxX3NsWEVKQ1VrNjQtR2I3X0lRTnluZUs0ZmZmeHo4UXNBT0oxT0VKbENZXzN3?oc=5",
+        "source": "Google News",
+        "published": "2026-07-03T05:45:00.000Z",
+        "summary": "I tried Anthropic's new Fable 5 with everyday prompts — these are the 5 worth stealing Tom's Guide"
       },
       {
         "title": "Anthropic targets loopholes used by Chinese firms to access Claude, FT reports - Investing.com",
@@ -235,91 +320,6 @@
         "source": "Google News",
         "published": "2026-07-03T04:16:53.000Z",
         "summary": "Untitled SitePoint"
-      },
-      {
-        "title": "Anthropic Moves To Close Loopholes That Allow Chinese Access To Claude- FT - TradingView",
-        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNMjItVVJjM0h3TDNsTG5oVndwbHFqSlFuQl9lYk5wTjNENkR4VTdJbExsNVhock5pa0QzLVpNWlRoNnJXV1RkbXlCakFwX082SGdoVFpMTjMyeFVxNWxXRzNxTnFoUlZ3V0FEYXU5THFrMHYzQ1IwYk15MjZ2ZkdDcDRsUkRVbTEyYzRvNFQydlJYVm1PQjdmbnZxZk5aNGg3Slo0ZjZ5SmcyNHcwc1JXMlJzRGYyWXlCYkFoQlQ0U3hRT2R3UllaZVgwMThCRGlOaFRWYXZUekpvRmM?oc=5",
-        "source": "Google News",
-        "published": "2026-07-03T04:01:00.000Z",
-        "summary": "Anthropic Moves To Close Loopholes That Allow Chinese Access To Claude- FT TradingView"
-      },
-      {
-        "title": "Anthropic moves to close loopholes that allow Chinese access to Claude - Financial Times",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSU9qQVN5REsxUUQtTTBFSEhPbE0zeF9ZSFJ2UWJvRVBQb0oyMFBSX1gxaEF5RjVvV1ZPOTJVT1Jibkw2bVZFNG1lVEo1WUdRWE9OY0JYenhhZWFnVUhzRk1RM01POF9LMWhSa2pKWXltVFNsWm44REVRVHcxTkdMS0lmOEM?oc=5",
-        "source": "Google News",
-        "published": "2026-07-03T04:00:37.000Z",
-        "summary": "Anthropic moves to close loopholes that allow Chinese access to Claude Financial Times"
-      },
-      {
-        "title": "Anthropic in Talks With Samsung to Build Custom AI Chip, Aiming at 2nm Process - Tech Times",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNQjMwNDl1MWxYSG5zd05aTjJITFNXUHh0bWJSRDg1WlNxSWNVMDFBTDBoSHNGZ2FRNUY4NUhZTWxyQlJFSm8tM3BFUl9qRmxoY1VzNEZlVk5HN1lDWC16dFAtd193R3VwUk5WZUh6Sk9GaUJ1elhyWDBOeUpvcjQteXVJclZtcjFqZGZEYndudFZ3clIxWTJRbXpzSGQ2Q3lVUU5ySy0yQ0RicmppZFdpZlJtMnRZckl4SGc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-03T03:29:44.000Z",
-        "summary": "Anthropic in Talks With Samsung to Build Custom AI Chip, Aiming at 2nm Process Tech Times"
-      },
-      {
-        "title": "Claude Fable 5 isn’t permanently leaving subscriptions, Anthropic says - BleepingComputer",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPeXF0V2lTUTR3Vmx5bUpBakdDYmY0Zy1fbHRkSVZkbkMxN0U4OUQ3V3BMcS1iVDBMVVdzbG1QNVplc2VsVHlHQ05MaHl0VXQ1a0FueVRWTmZHTDFRdENXOWppUURUVzhCVUhhNnpEdXgtY3prS19pN29EcjEtZW9iREFfeDlzYnVzdXpvakRnaTU5UklCVm03SzVYZlVxSVdCZGVicnZ1cGlxQnRtcExKd0Q0R05XZmx3ZDJsV1dKdEdTMG9Gbkp0cWhjSdIB0AFBVV95cUxOcWxFWjNvOXA5YXlmcHd3cXp1aTR3UjBpV2VkOWUwTzRQMEhiR04wR1RURHA3S0RZVXNUUC15N0xLNVFXdDRjQ2Z6NUg5dGtINHQtYjVPU2xBVkpGaDZUTXFFMHRBVXZ6b2lFX1p1TVJ6bkIzYVYyVlAyUlB4LW0xN3B0Um13N1I4YnVvOV9zTXpRNTlseU1hQ0pOMkdxMXVFQWVObjUtcGlJaWhkQlp3WkliRV9ONXQxWFpRcDliQzBvTXFWb0ZMZEpoNGh2bURm?oc=5",
-        "source": "Google News",
-        "published": "2026-07-03T01:37:09.000Z",
-        "summary": "Claude Fable 5 isn’t permanently leaving subscriptions, Anthropic says BleepingComputer"
-      },
-      {
-        "title": "Anthropic details Claude Fable 5’s cybersecurity safeguards and AI jailbreak framework - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1VTTMzcF9yVXVXSHBVWC1rTFdTTUpUZkE1cktSWWRwMjVGeU1jNzBiMk9ieXBtOFBxSTg2VzVfcWh6d05zbFYtSWVuWWd6QmZFRjA5Vi1HblBYel9jMTYzYnJaMlEyQUpjZXpOX2RYcW9zTHEtVFl6NUhMM2g?oc=5",
-        "source": "Google News",
-        "published": "2026-07-03T00:38:38.000Z",
-        "summary": "Anthropic details Claude Fable 5’s cybersecurity safeguards and AI jailbreak framework Crypto Briefing"
-      },
-      {
-        "title": "AI Vendor Lock-in Reshapes Architecture and Operations - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPVHlCOFRlREpCanNlQkNvNkZhNjZHTFFTZ3BnZmtjdlBPVXQyNW83bkFnbkd2dGtISlZacVhFZGg1MlZsTnFlYkxKRV9DclVkYVN4RGRpZWZ0TE5kMDBiX0ZWYkhCRkJnVFVGU2trVk91UHRYM3NVQmo3ZWZZaENXX0pFSTZ6Mjg4SzU0cGxBc0tYZm1kVGFIT1JvcHU?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T22:01:01.000Z",
-        "summary": "AI Vendor Lock-in Reshapes Architecture and Operations Let's Data Science"
-      },
-      {
-        "title": "Anthropic Claude helps Nobel laureate Giorgio Parisi prove 10-year jamming puzzle - 동아사이언스",
-        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1VbGc2NUQ2U2VobF9VemJWRTJDQ3ZkR2ZSSTczbTRvUWoxR1VPLVZXOHMzV0Ywb1pHX2ZLRDN0ZlVDS3p0bXdreHQwa3hFSFh4Q3FvVg?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T22:00:00.000Z",
-        "summary": "Anthropic Claude helps Nobel laureate Giorgio Parisi prove 10-year jamming puzzle 동아사이언스"
-      },
-      {
-        "title": "Anthropic Claude Goes GA in Microsoft Foundry - Redmondmag.com",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPVE1LWjhRQ29OT1dwVjdnZFRRQ29zOGFSeXYtaVM4NG9QdTRBLWVYTTlNQ3JzQWtoQ0dVZkoyWDFUTzRaLV90ZWNxVERwSFNvWDFabFdnR0toY0pIV0Z5MXpJMVZfZURuR0NWcE5zMmJBX25oQUtraUdFeWludjdmMU5lbnN6RFNKRWxmYndTd2xGQ3NkU1hZaQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T21:52:05.000Z",
-        "summary": "Anthropic Claude Goes GA in Microsoft Foundry Redmondmag.com"
-      },
-      {
-        "title": "Claude Fable 5 Backlash Grows as Users Say Anthropic ‘Caged’ Its Flagship AI - BeInCrypto",
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBacTJwTS1XLVUwRVR0bi1qVlZrNDk1YVFoNS0tTkxIbnphaDU1VjFQTkhMUF9SSHotOTVUbUVBUGlhSGRuMkFKOS1BU1k3Mm02eWhjU1pOMlJFYjdYTXd2aEE2OWtrckhXZFE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T21:30:00.000Z",
-        "summary": "Claude Fable 5 Backlash Grows as Users Say Anthropic ‘Caged’ Its Flagship AI BeInCrypto"
-      },
-      {
-        "title": "Anthropic's Claude wants to help Micron design better HBM, DRAM, and SSD for AI - TechRadar",
-        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQazNIbVpIREx1aHZpejVLZ1BHV3JoU2Y3QXA5UWJUY1RBS3BPZldabGczekdLRnZGbkQ3ajU5dXhQbU5leWx6MW5mcUtkVXBjSWtQR3doUXI0aWtodFU4S3ZFcTFfQTQzeXZXS1hncDV1ZHlYSjlZalVrQWVTS2xaVS1NT0h4SU5KNzc5MEEtNDFfM0gzMmdoUHZWbDlvOW5kQXhVOVdZQ25lSW1LVFdPM2pjSGNNdng0VmczRHZIYVlHeGgtVHhpaXZjcUtQNlQyanhxSEJXOE1yVUxCQzVtZzZtSVZidm84MmtjTGFoQ2hNVlNMTmlSNXhjQWFEZUZsYWc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T20:05:00.000Z",
-        "summary": "Anthropic's Claude wants to help Micron design better HBM, DRAM, and SSD for AI TechRadar"
-      },
-      {
-        "title": "Claude-real-video － any LLM can watch a video",
-        "url": "https://github.com/HUANGCHIHHUNGLeo/claude-real-video",
-        "source": "HN · 131↑",
-        "hn_id": "48766005",
-        "published": "2026-07-02T19:10:12.000Z",
-        "summary": ""
-      },
-      {
-        "title": "CrowdStrike President on How Claude Mythos Rattles the Cybersecurity Industry - observer.com",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNeHJEVWg3eHQ2WnpYdnZNMl9KTFNMbUVQWE5YTUVfR2pqUlNpYkl6eDhOeVNTaFVQbkNrM1JPZlBUOW1nRnJFMEdUTDZQZnhIV1lIX2taYjVQel9HQUtJXzB5Yk1Yd1JQcnZqUExENXVBQlN0ZTVPMW55ZWdSTGtQU1RFY2RtNGdsTUR4bzhKMA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-02T19:05:56.000Z",
-        "summary": "CrowdStrike President on How Claude Mythos Rattles the Cybersecurity Industry observer.com"
       },
       {
         "title": "Learn 80% of Claude Code Skills in One Afternoon No Code",
