@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T18:50:43.304Z",
+  "generated_at": "2026-07-04T20:40:53.484Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "AI Week in Review 26.07.04 - Substack",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1OSmVpcFBPR2U5VlFsREwtcU11OERaejZOVEVwWDNialJ3NXJ2VmZCLTIwRHZsY21JV25KZVliSUN6aVlxXzVVTHI1Slc0eDVVWWhDSTBFWV80MzktbDBnVzFycW00T1ZmcmlUcTh3?oc=5",
+        "source": "Google News",
+        "published": "2026-07-04T20:26:24.000Z",
+        "summary": "AI Week in Review 26.07.04 Substack"
+      },
+      {
         "title": "Claude Sonnet 5 vs Opus: When Each One Actually Wins",
         "url": "https://www.youtube.com/watch?v=p_XzBzcH8fc",
         "source": "Pragati Kunwer",
@@ -221,6 +228,13 @@
         "summary": "Pentagon Blacklisted Anthropic Over Autonomous Weapons Limits: Emails Reveal \"Very Close\" Talks Tech Times"
       },
       {
+        "title": "Anthropic Launches Internal Drug Discovery Programs for Neglected Diseases Alongside Claude Science - MLQ.ai",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPVmRRdzJMX2N4VG5IQmEyeWlOMUw3TVBZaGlUdk5yUndiSWxWN0V3Nk5nQkZFQmtScS1KM1RsT0R5VWpVdDBRdEt5ejhSUDFjLUYwS3RDRVhmVE1TSDZDTDJucGJ0MjVfNEVQLWlseThWcHUzUTB3WFBsZi1FYjVEeWMzODAyRm1QeFFlTk04SlAxaDd5TnhvVE9yaE4tWG04Z283NmtaNXB3ZjBWXzAwNkFORDFPZ0tVNm1NVA?oc=5",
+        "source": "Google News",
+        "published": "2026-07-04T14:03:55.000Z",
+        "summary": "Anthropic Launches Internal Drug Discovery Programs for Neglected Diseases Alongside Claude Science MLQ.ai"
+      },
+      {
         "title": "Anthropic Claude Code reports potential session leakage - Let's Data Science",
         "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQa211M1JCRE1BMVJtYUNpbDliRzRQamtzU1FaSnNiZ0MxVDFNM3U0TkpUS3NKTDIzcTdpLVpiLW1RQkVlRnVSR1RRd1I5QmpTbUNYeWxfNDdFLUx3Q1B6cUFBNmdqa3JITUdRcFU4a3NaRU9VcWhOb05uRTBRUlFuZFhra1JoSlhFY0pnMnhfN0otOC1KQmJhc2lUQUFSQQ?oc=5",
         "source": "Google News",
@@ -230,7 +244,7 @@
       {
         "title": "Potential session/cache leakage between workspace instances or consumer accounts",
         "url": "https://github.com/anthropics/claude-code/issues/74066",
-        "source": "HN · 219↑",
+        "source": "HN · 240↑",
         "hn_id": "48785485",
         "published": "2026-07-04T14:03:40.000Z",
         "summary": ""
@@ -285,13 +299,6 @@
         "summary": "Anthropic finally brings back Claude Fable 5, but you’ll have to live with a temporary usage limit Yahoo Tech"
       },
       {
-        "title": "ANTHROPIC LAUNCHES CLAUDE SCIENCE FOR MAC TO BRING AI INTO THE LAB | Techlife News - technology - Magzter",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNanltdVJCLVp4NVhBcHBYaVN6amZvODhBeTVLRHZSa1Q5MnRLeTF4SVZXLTNlWUZ0Vkt4MGZzVl9jVkQzaW9URzZhUW5ZdVJfVWIzTEJUN1YwOGd0eEpFN1hYc2paOXFfbHRNYUVqN2ZHSE1VVWpXMDVzSlE4ckJoUS1EclVGTW1iT0JmbGRheldmTWh5MmNfZ3BLT3Q1eV9VR3h5OV83OTJ4RHUtNXd5YTNadTVvaGluUDNJeHZTNlY?oc=5",
-        "source": "Google News",
-        "published": "2026-07-04T04:18:56.000Z",
-        "summary": "ANTHROPIC LAUNCHES CLAUDE SCIENCE FOR MAC TO BRING AI INTO THE LAB | Techlife News - technology Magzter"
-      },
-      {
         "title": "Anthropic eyes South Korea's Samsung for custom AI chip - upi.com",
         "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZF9aSlNYNWJvblNUYm5SRnpnRkZWUk1UbEVIcW5LclBuc05PQ0lZMkdIb3JwWmNfNDJHcFhUaU9CTDVMNklDaDA1Y1Z4Q0xJRGx3NG9rX0ZvYzF4WUxHNktlQldMZnFfV29mV3VmRkZqeUMya2hBanE3bHBsMmJMX1BQcTFDUEtub3BvNnFrRUFTc29RQ1ppRXJIONIBoAFBVV95cUxNODNpSWktRTdVQlNWRVY1VDJudF84bXRVZm1SQU5aNFJ6R3R2RzZrcGJpQW55b1Y3Tm1PMWtBb2Vnd1BfaTZCVUFMUldGS1lSc25VTDhaM3REbXdyQXZxcUdUMkluTmQ1bXR2N28yTWs5bEZvdkNhX0hFcVNIcGJuZGFFMHFQa3NoOWNXYkswMFZrWFNSd2VNM3FIQmxyWFgz?oc=5",
         "source": "Google News",
@@ -326,13 +333,6 @@
         "hn_id": "48780056",
         "published": "2026-07-03T21:16:16.000Z",
         "summary": ""
-      },
-      {
-        "title": "U.S. lifts export controls on Anthropic's Claude Fable 5 and Mythos 5, ending 19-day shutdown - MarketScale",
-        "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQdUF3V1FfSGdCSFFDUC1ENFp0QVFIeTVjVy1jMVhvbTBDWVE4V05fMnR2Vms3TXpxOWtZcHhyd0NKYVhKN2JEX292RXo2M0F1MXBYbm96cUZWbld2MDBPUjBsVXBiRndJY0ZWWVZNbFFXM2dCdno3YWFnbTFMcDZ3cFp6cGdaSThPdW9ncl9LN3FrMF9OdWs0MFFrTE1hMFVmZEp1UHg1THkydTVseE9XZ181WXFQT1BpcUtEOFlIU05KUFd6MjlzWXZGVlFqS0g0c3M2enlKQzdTTUg5MWU3TWRUMDdCaTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-03T20:51:39.000Z",
-        "summary": "U.S. lifts export controls on Anthropic's Claude Fable 5 and Mythos 5, ending 19-day shutdown MarketScale"
       },
       {
         "title": "I watched a folder run a piece of my business by itself 1080p #claudecode #anthropic",
