@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T22:44:07.830Z",
+  "generated_at": "2026-07-05T01:46:02.636Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,27 @@
     ],
     "news": [
       {
+        "title": "MixRoute Confirms Claude Fable 5 Support, Giving Developers One-Key Access to Both Fable 5 and GPT-5.6 - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQTU5sYnIwVHRVcERGNXFZOUZvZTBzU1dHb2hTUmFNZTZpWkV2N0JBU2NJQUNXSnNDa1VkNkhHV0swTHdQMlpCTnhSU3FKVGVKYy1GUzRQWEJraWtVcjlLREpaaVpRcFktNlZyX0U2MkYtUzdZX1Jwb2VBLVkwR284THBvR2kxLXd0dGY5OFhvX2Z2aDJhYjVYMzdRaUU?oc=5",
+        "source": "Google News",
+        "published": "2026-07-05T00:14:00.000Z",
+        "summary": "MixRoute Confirms Claude Fable 5 Support, Giving Developers One-Key Access to Both Fable 5 and GPT-5.6 Yahoo Finance"
+      },
+      {
+        "title": "Untitled - SitePoint",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNS0FTcXNyaENPT0t0azFnMERXQ0V2c3I5MkNvNjZZSHdjeVZsNkJhekh6aVhzeHpKcG1vX0hrZEtkeEExSTFIc0dkMzBUNGVkRGlSUGNLTHRSZlltQmlFNEFYT2IzaHAycG5ZeUpuMDVkOFQ4N0RfNzl1U1N5OERuT2VzMGFNeW8?oc=5",
+        "source": "Google News",
+        "published": "2026-07-04T22:56:21.000Z",
+        "summary": "Untitled SitePoint"
+      },
+      {
+        "title": "MixRoute Confirms Claude Fable 5 Support, Giving Developers One-Key Access to Both Fable 5 and GPT-5.6 - Bluefield Daily Telegraph",
+        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQSFh0MlkwZ3RSbUpGdFNQdGpDdGJGV1NEbVJIRm9iZ1pERjJQV2VjOWE1TXJhQmVYeHlfd2VXV3pxUWFlclBkaDhGbFFNNkMyd1hweWpYd21rTkZ1c0daOFJmei0xUTJiT08yM25JS0luTl9Ob0FpTlNnMUQwZS11WHRSM0hIYldIWnMyMVl6LWN0UTdvY2RBYTgxUkJHS1hMM0YtQVd1UllseGdRSV91MElFTEdmZTVlTl95MGctWUVQZ2VaaV9BVGtCWDJ4VTVGQnFpRGM5ZlVpYWFGd3JvUmp3ZEhmcmMzWUIwbDhiT09MUWJjZW9jM3V6aFNOUkJ3TWc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-04T22:40:38.000Z",
+        "summary": "MixRoute Confirms Claude Fable 5 Support, Giving Developers One-Key Access to Both Fable 5 and GPT-5.6 Bluefield Daily Telegraph"
+      },
+      {
         "title": "Alibaba Bans Claude Code, Classifies Anthropic Tool as High-Risk Spyware - MLQ.ai",
         "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOcXlVaXk0WHZEd19GZkdPXzQxQjFVWkFnejc1SUU2SUc2WGUzSDB5a2JvbEgzOE1sMllNNnNkcUIwZ1kxV2FneThzZEtVTTRVanhtRk45RGZIbmRSQXJobzVFX1V5YW1pdzZWeDh4U05jalFuWnNBS3RVamlRbG9iUE5TMW45N1FYcDF5REhCd29zX0plLVpV?oc=5",
         "source": "Google News",
@@ -186,6 +207,13 @@
         "source": "Google News",
         "published": "2026-07-04T20:05:00.000Z",
         "summary": "Alibaba Imposes Full Ban on Claude Code, Migrating to In-House Tool Starting July 10 finance.biggo.com"
+      },
+      {
+        "title": "Anthropic launches Claude Science in public beta: a workbench for scientists - en.softonic.com",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPNmhISndvTWM5VURrR3VwZmlDZ3g5VG9HR1RUTjRyallhdGlaTUxRUWtjRGR1ZTQ1TUlQRkswZ3ViaGwtQmJBb0VJWDZHdHNkaGdkWTJfSEwxTkl6QVN6UmY0WTNPZmdaekFnM2otVENxMW5VTm00ZnZCMl9Na1lBaGZkei1PYkNYbWVkN0pjWHZ6YzhsMEtCamowOS1KTUNKLWhMVzBCak1rNmRL?oc=5",
+        "source": "Google News",
+        "published": "2026-07-04T18:22:39.000Z",
+        "summary": "Anthropic launches Claude Science in public beta: a workbench for scientists en.softonic.com"
       },
       {
         "title": "Claude Sonnet 5 vs Opus: When Each One Actually Wins",
@@ -279,7 +307,7 @@
       {
         "title": "Potential session/cache leakage between workspace instances or consumer accounts",
         "url": "https://github.com/anthropics/claude-code/issues/74066",
-        "source": "HN · 260↑",
+        "source": "HN · 271↑",
         "hn_id": "48785485",
         "published": "2026-07-04T14:03:40.000Z",
         "summary": ""
@@ -304,34 +332,6 @@
         "source": "The Verge",
         "published": "2026-07-04T12:00:00.000Z",
         "summary": "Over the past week, a new fanworks movement has kicked off, with the aim to root out authors using generative AI. But the detection methods being implemented are questionable, and any fanfic writer…"
-      },
-      {
-        "title": "Media: Alibaba Banned Employees from Using Claude Code - incrypted",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPWExCM0FQeUgyVExKa29GQjNWMDNIdVpfLW5aUmNfSW9tVjJ0ZVpzLWhueThyTm1Oblk5RzE0eHV6WGxTSnhpNml5RWdZZnFHOW1EakpVZUxyWTM0VnJyQkZwejJrR29MNDJya19pbFRmb01sLVMzVFdFNm1LREtNNUhtQkEtUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-04T11:10:22.000Z",
-        "summary": "Media: Alibaba Banned Employees from Using Claude Code incrypted"
-      },
-      {
-        "title": "Claude Fable 5 Returns After U.S. Lifts AI Export Controls - Memeburn",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOOEY5eU5QUDhZTEppN0o3ZjU4dDAtQVlnMGF1QXFWdVk1SDNIYk95NkdIMmstNjg3UUo0TWlOcGtCeWwtTF9kY3VYNHpkYTJ0d1g0eGFqa0NuVDVPVmROS3VuZU5ZUUhqWXE5YWllR0VQc3kyb1d1NVhOS3EtSUF3aUxEZE0xUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-04T09:37:29.000Z",
-        "summary": "Claude Fable 5 Returns After U.S. Lifts AI Export Controls Memeburn"
-      },
-      {
-        "title": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBoQkkwMnB2b0tyeFllX3Iwa2FrRXNZbW5Dem5ERGlLVzFkbGNycUN1UXVEMnhYVlVmaGNTNDZuSTVWZ3d3alpjN29LbkprZV9qTjg1QVFKdURnYk9FYlFTQWFReVRNdEJPaHdTWlhGUTM?oc=5",
-        "source": "Google News",
-        "published": "2026-07-04T09:00:00.000Z",
-        "summary": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety Mashable"
-      },
-      {
-        "title": "Anthropic launches its own drug discovery programs to tackle diseases Big Pharma considers unprofitable - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNcGFSU3o3RndTLUZEZ2U0cVpTbFE2WElSNUNCb2Z3OFpYZkFHd1puSEtJVHBhcm1wS0VzYk91N3ZUMnc0Si1NZ1pKcHF6bFoyWEs0SXBxVGhTUEVlWWZaNG1RWE5sRXVsOW81X19Vdk5KUG8xNG5JMWJWSGVCbGdaN0cxQ25EcnRJREUzc0hJR21EdzBjS04ybFRfWGk3OG9DOFRibXotM1hER3FKLUp3VlhsZ2k1bThPTC1XQ2dfcWpNM3JSZllV?oc=5",
-        "source": "Google News",
-        "published": "2026-07-04T08:17:05.000Z",
-        "summary": "Anthropic launches its own drug discovery programs to tackle diseases Big Pharma considers unprofitable the-decoder.com"
       },
       {
         "title": "I watched a folder run a piece of my business by itself 1080p #claudecode #anthropic",
@@ -1744,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Release 2026.7.4",
+        "url": "https://github.com/modelcontextprotocol/servers/releases/tag/2026.7.4",
+        "source": "MCP Servers",
+        "published": "2026-07-04T23:05:56.000Z",
+        "summary": "Release : v2026.7.4 Updated packages @modelcontextprotocol/server-everything@2026.7.4 @modelcontextprotocol/server-filesystem@2026.7.4 @modelcontextprotocol/server-sequential-thinking@2026.7.4…"
+      },
+      {
         "title": "Claude Sonnet 5 vs Opus: When Each One Actually Wins",
         "url": "https://www.youtube.com/watch?v=p_XzBzcH8fc",
         "source": "YouTube · Pragati Kunwer",
@@ -2183,13 +2190,6 @@
         "source": "Claude API Release Notes",
         "published": "2026-06-05T00:00:00.000Z",
         "summary": ""
-      },
-      {
-        "title": "0.22.0",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/0.22.0",
-        "source": "MCP Inspector",
-        "published": "2026-06-04T12:36:14.000Z",
-        "summary": "What's Changed ci: switch npm publish to OIDC trusted publishing by @pcarleton in #1199 Update package.json to contain repository.url in for npm trusted publisher setup by @cliffhall in #1201 fix: add repository field…"
       },
       {
         "title": "OpenCode + Ollama: I Replaced Claude Code With This (Full Setup)",
