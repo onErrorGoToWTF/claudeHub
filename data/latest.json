@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T16:51:46.116Z",
+  "generated_at": "2026-07-05T18:55:47.808Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -195,7 +195,7 @@
       {
         "title": "Show HN: KiCad in the Browser",
         "url": "https://demo.pcbjam.com/",
-        "source": "HN · 53↑",
+        "source": "HN · 75↑",
         "hn_id": "48793542",
         "published": "2026-07-05T12:06:57.000Z",
         "summary": "KiCad, a PCB EDA suite is now working in a browser, you can try it at the link, there&#x27;s a demo project or you can bring your own. Firefox is best, Chrome is good, Safari is…"
@@ -217,7 +217,7 @@
       {
         "title": "Claude Design System Prompt",
         "url": "https://github.com/Trystan-SA/claude-design-system-prompt",
-        "source": "HN · 104↑",
+        "source": "HN · 111↑",
         "hn_id": "48792399",
         "published": "2026-07-05T08:43:37.000Z",
         "summary": ""
@@ -225,7 +225,7 @@
       {
         "title": "sqlite-utils 4.0rc2, mostly written by Claude Fable (for about $149.25)",
         "url": "https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/",
-        "source": "HN · 62↑",
+        "source": "HN · 63↑",
         "hn_id": "48791708",
         "published": "2026-07-05T06:19:34.000Z",
         "summary": ""
@@ -294,20 +294,6 @@
         "summary": "Anthropic Splits Claude Into Fable and Mythos Deployments Let's Data Science"
       },
       {
-        "title": "AI Week in Review 26.07.04 - Substack",
-        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1OSmVpcFBPR2U5VlFsREwtcU11OERaejZOVEVwWDNialJ3NXJ2VmZCLTIwRHZsY21JV25KZVliSUN6aVlxXzVVTHI1Slc0eDVVWWhDSTBFWV80MzktbDBnVzFycW00T1ZmcmlUcTh3?oc=5",
-        "source": "Google News",
-        "published": "2026-07-04T20:26:24.000Z",
-        "summary": "AI Week in Review 26.07.04 Substack"
-      },
-      {
-        "title": "Anthropic Tops OpenAI With $965B Valuation As AI Funding Race Resets - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE02cVBCZkF5cGZpcTc1SUNiU2hFd2xFTHM4Z0tMMmxrRC1LMWhGRnNEckxmbVFrZ1BPN3dFZFdHT3VuMFJuLVVyVGhnbGxWSDNOLTVKZzlHc3dMNC1OSkNTNjBBVkJmY1N1bUE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-04T19:02:15.000Z",
-        "summary": "Anthropic Tops OpenAI With $965B Valuation As AI Funding Race Resets Yellow.com"
-      },
-      {
         "title": "Claude Sonnet 5 vs Opus: When Each One Actually Wins",
         "url": "https://www.youtube.com/watch?v=p_XzBzcH8fc",
         "source": "Pragati Kunwer",
@@ -343,10 +329,24 @@
       {
         "title": "Potential session/cache leakage between workspace instances or consumer accounts",
         "url": "https://github.com/anthropics/claude-code/issues/74066",
-        "source": "HN · 311↑",
+        "source": "HN · 313↑",
         "hn_id": "48785485",
         "published": "2026-07-04T14:03:40.000Z",
         "summary": ""
+      },
+      {
+        "title": "Anthropic developer shares prompting tips for Fable 5 that focus on finding your own blind spots first - the-decoder.com",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQckkxRDI4b0RLRkhNTVlKNUt2RUVpMWFkNFFFYVhpQnZ3WUFQQjNqYzM5NWpoMFQtd0tyN3BMUWdhTjllOFVXN0tiODB5SGJNYWVDVjhCWjkxTzdzMEpXbFhZX2NnZ19WMm5kVGRGQS1rTmNEeUZQUzdLSnpUOTdxU2lJUjI3SEZjd0lGNk1FNkR6RFhUQTRZOE9yZFRkb1phak9ITHhlQUxLTmR1aHEwLUlSN3dBUjVDUGRBWnNaVGRhdWJxa1E?oc=5",
+        "source": "Google News",
+        "published": "2026-07-04T12:38:19.000Z",
+        "summary": "Anthropic developer shares prompting tips for Fable 5 that focus on finding your own blind spots first the-decoder.com"
+      },
+      {
+        "title": "Anthropic eyes South Korea's Samsung for custom AI chip - upi.com",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZF9aSlNYNWJvblNUYm5SRnpnRkZWUk1UbEVIcW5LclBuc05PQ0lZMkdIb3JwWmNfNDJHcFhUaU9CTDVMNklDaDA1Y1Z4Q0xJRGx3NG9rX0ZvYzF4WUxHNktlQldMZnFfV29mV3VmRkZqeUMya2hBanE3bHBsMmJMX1BQcTFDUEtub3BvNnFrRUFTc29RQ1ppRXJIONIBoAFBVV95cUxNODNpSWktRTdVQlNWRVY1VDJudF84bXRVZm1SQU5aNFJ6R3R2RzZrcGJpQW55b1Y3Tm1PMWtBb2Vnd1BfaTZCVUFMUldGS1lSc25VTDhaM3REbXdyQXZxcUdUMkluTmQ1bXR2N28yTWs5bEZvdkNhX0hFcVNIcGJuZGFFMHFQa3NoOWNXYkswMFZrWFNSd2VNM3FIQmxyWFgz?oc=5",
+        "source": "Google News",
+        "published": "2026-07-04T01:51:40.000Z",
+        "summary": "Anthropic eyes South Korea's Samsung for custom AI chip upi.com"
       },
       {
         "title": "I watched a folder run a piece of my business by itself 1080p #claudecode #anthropic",
