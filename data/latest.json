@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T11:20:56.687Z",
+  "generated_at": "2026-07-05T13:01:51.339Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,20 @@
     ],
     "news": [
       {
+        "title": "Alibaba bans Anthropic's Claude Code after an alleged hidden China-detection backdoor is uncovered — employees told to switch to Qoder as the rift between the firms widens - Tom's Hardware",
+        "url": "https://news.google.com/rss/articles/CBMi1gJBVV95cUxQWEdVUUN6MVgwQlFIN1F4QTRBdkFyTFdtbEJEYUV4RGhtanJvYmIzQVF5bkJ1MlZwQjdLekQ1Mkc4SXpVbV9pZnhJT2U2Yjh3YUpsRTZHSW5sM3BBc2JTMk1LRzBOS2cxSDFiM0w0YTZrQ0hPNVQ5MllMcG5ZdkVmdTQtT1pSdXFRLURwNjlqUkxrR1NTZGJ2WEpTSDljOG9fZHFvaTh4ZldwU1hxWEN2R0dxOXREQmRVejdCUUlRSWJqblBoTHZCVVU3aklKLU5uZDhxWHNCLVMyR092Yk13NGI2RXUxRGREdE1aeWdkcnVRSGlBMm1lUUd4Q3RFTHA2Qk8zQURKanlQa1ZIb0pZbHhJYkhmUjA5Y3pFRnJ4WW1TRGNvUlhCTkF4OVlxTVBpM01mdXBnNkhjRjAwSkxpbGFfYzFLTG1XdWhZOVpIUVNWRzZFYkE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-05T12:20:00.000Z",
+        "summary": "Alibaba bans Anthropic's Claude Code after an alleged hidden China-detection backdoor is uncovered — employees told to switch to Qoder as the rift between the firms widens Tom's Hardware"
+      },
+      {
+        "title": "Advances in Claude’s autonomous AI capabilities - MSN",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOUTZERnlBb0locmNjVFZYRWVzUTdMSE5jSU40QmxXc29MRmRKNTFUYjNGczF2SzA4b254d2ZWWFBvSWdmN1haUVVHN2N1UjJPaTRJUldNaXQ0YnVWd1h0cDlfckRLY196QWNyUEVNTWlOdFl1M3BkS1VsZm1hWXp3TEZsRy0yZWx4VXNjbXk1S2F1emN5cy1sUFFyRk44dmczNVRB?oc=5",
+        "source": "Google News",
+        "published": "2026-07-05T11:36:56.000Z",
+        "summary": "Advances in Claude’s autonomous AI capabilities MSN"
+      },
+      {
         "title": "AI Got This Lawyer Away From His Desk: 'Dramatically More Efficient' - Business Insider",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNSG1Ra01LZkVqeEVpN3h6Uzd6WGYzUnAyYTRyQnFaSjQ1cElYOGFhOUJXZXJ3MTZrS1hFS05LeXJCV1JfUHNabndBakRjZWJCeHF2bXF4NFI1Q0pfYnFMYjlOTGdlZlZNOXJoVEM2bFRHOHVPQTJMbzcxYmtlMmdBbDI5RzdLRWw2SE12eXhoYl9Xa0M1bUdwRw?oc=5",
         "source": "Google News",
@@ -160,9 +174,17 @@
         "summary": "Alibaba to ban employees using Claude Code from July 10 as US-China AI rivalry escalates The Indian Express"
       },
       {
+        "title": "Claude Design System Prompt",
+        "url": "https://github.com/Trystan-SA/claude-design-system-prompt",
+        "source": "HN · 51↑",
+        "hn_id": "48792399",
+        "published": "2026-07-05T08:43:37.000Z",
+        "summary": ""
+      },
+      {
         "title": "sqlite-utils 4.0rc2, mostly written by Claude Fable (for about $149.25)",
         "url": "https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/",
-        "source": "HN · 53↑",
+        "source": "HN · 56↑",
         "hn_id": "48791708",
         "published": "2026-07-05T06:19:34.000Z",
         "summary": ""
@@ -308,31 +330,10 @@
       {
         "title": "Potential session/cache leakage between workspace instances or consumer accounts",
         "url": "https://github.com/anthropics/claude-code/issues/74066",
-        "source": "HN · 302↑",
+        "source": "HN · 307↑",
         "hn_id": "48785485",
         "published": "2026-07-04T14:03:40.000Z",
         "summary": ""
-      },
-      {
-        "title": "After Trump administration clears Anthropic’s Claude Fable 5 and Mythos 5, no Sam Altman’s OpenAI-like go - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNV0JLdDZsY0w5ZWxmeEFaRXdDc3FOajYyR0g5cW9DTFVzSmFlNUZack9xQngyc1NENGFXTXl4RHFRS0RrRm1oZ19QMHRRTWRNWDh3dUc4WFBLdmllTkJGMlVVQWFKRGZGUmFlZzFuNEFDUVNFaHV4cXQtM3RsRFVHWlNSSWVCWEtKdjNQNzVHSWlvTGZDMVNCcTlYVUd5X09HcjRDQkg2QnNXUm1ZTERNVUU0VDJ4Q05UUlctSXY3bHFQQmlLLURJYmxlQkVhUFpDclNISjd6VGhsVVpDZGNmbVBkSWt0cGJidUt0VF9iaE02cnJtd1lORmVTSFNhQ0x3TF9abWVHZlhvUy01RFlMako5MUZCQ0haRWxwcXhTMWE1cXVydmFMY0dLM2p1dWl6QXfSAbcCQVVfeXFMUHRnMG8xbVJvWU5JT2Y5RjFVWW9MUzBOVFJhTS1QeVRmQld0emlsaGJhOWtzd0JaclRxWWVnYVFJRGVvVUk3WlZsc1ZtU0hQZ2d4LXozMFJZQ2J6RmtJU3Izc2xINkNNa3JkbUJEYjNRQVQ1TWtkT0tLWUtId19XMVlDQjBXZmNYZmwxNmV1T2ktbVJUak1sVV9wbFp5b1A3OTY0WGxkWGhPSkh4UHNpbDdObHczbDVIblVHVGJneFNsWG5zOERoLWktekxqU3d2SEVnYkdqOUkxZ3RYSWhjNHgxclVRc2ZPRFpFUXg4bFFzOHZUc053WHh6ckxXUm9UUDNjNWhTbnRWNzlnVFMtT3FpZW1peUZGRXNMbDZoTjlNN2l0VmU1Umx2OGpNaklQSW91bEluOGc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-04T13:39:00.000Z",
-        "summary": "After Trump administration clears Anthropic’s Claude Fable 5 and Mythos 5, no Sam Altman’s OpenAI-like go The Times of India"
-      },
-      {
-        "title": "Anthropic developer shares prompting tips for Fable 5 that focus on finding your own blind spots first - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQckkxRDI4b0RLRkhNTVlKNUt2RUVpMWFkNFFFYVhpQnZ3WUFQQjNqYzM5NWpoMFQtd0tyN3BMUWdhTjllOFVXN0tiODB5SGJNYWVDVjhCWjkxTzdzMEpXbFhZX2NnZ19WMm5kVGRGQS1rTmNEeUZQUzdLSnpUOTdxU2lJUjI3SEZjd0lGNk1FNkR6RFhUQTRZOE9yZFRkb1phak9ITHhlQUxLTmR1aHEwLUlSN3dBUjVDUGRBWnNaVGRhdWJxa1E?oc=5",
-        "source": "Google News",
-        "published": "2026-07-04T12:38:19.000Z",
-        "summary": "Anthropic developer shares prompting tips for Fable 5 that focus on finding your own blind spots first the-decoder.com"
-      },
-      {
-        "title": "The fanfiction community is at war with AI — and itself",
-        "url": "https://www.theverge.com/tech/960854/ai-fanfiction-ao3-claude-detector",
-        "source": "The Verge",
-        "published": "2026-07-04T12:00:00.000Z",
-        "summary": "Over the past week, a new fanworks movement has kicked off, with the aim to root out authors using generative AI. But the detection methods being implemented are questionable, and any fanfic writer…"
       },
       {
         "title": "I watched a folder run a piece of my business by itself 1080p #claudecode #anthropic",
