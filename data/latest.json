@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T11:52:15.688Z",
+  "generated_at": "2026-07-06T14:50:44.287Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,77 @@
     ],
     "news": [
       {
+        "title": "UK regulator warns of \"arms race\" to keep up with AI use in financial services",
+        "url": "https://arstechnica.com/ai/2026/07/uk-regulator-warns-of-arms-race-to-keep-up-with-ai-use-in-financial-services/",
+        "source": "Ars Technica",
+        "published": "2026-07-06T14:17:42.000Z",
+        "summary": "Regulators are in an “arms race” to keep up with the use of artificial intelligence in financial services, a senior UK official has warned, with millions of people using the technology to help them…"
+      },
+      {
+        "title": "The covert U.S.-China battle to make chatbots leak their secrets - The Washington Post",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOUmZBQTlSQUxtV2sza2lTd1dTelc1OFRRNkhEOFhmNjRfVXRwRzlkUnI0ejRvazgtZDVoXzVENTZaT3FnUVo0UWU3WWYzZm1sdHozYW84Z2VMdmVUVjdaUjhKZXhtOFRzVWpWXy1hWEZpUDYyMnk3M0Jhc2tZUlVZVDRTSU1wbFRqM0Z6UW02cXlqYktKZEpTU1pwaHhMQVRBazh5R2ZJR3ZTRzh4bFpCXzdENGlyVHVUNVYtVTF1MnVYdUNucWZV?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T13:37:30.000Z",
+        "summary": "The covert U.S.-China battle to make chatbots leak their secrets The Washington Post"
+      },
+      {
+        "title": "Alibaba is banning employees from using Anthropic's Claude Code over alleged backdoor risks - qz.com",
+        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB6c1I4M2JDQ3Bfbi05bXdkY041RDBwVVRuQ3BuaHhwTWZ1NlBSTnlycFRZQUVlRE9uUTVST0E5WnNoN3RhVUNUSXpuOExHNlpTM056YTNXeUgzTk9SWlZEUjl3ZkdRcXk0dXMybU9sQUNSQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T13:21:36.000Z",
+        "summary": "Alibaba is banning employees from using Anthropic's Claude Code over alleged backdoor risks qz.com Alibaba bans Anthropic's Claude Code after an alleged hidden China-detection backdoor is uncovered…"
+      },
+      {
+        "title": "CloudMasonry Launches Claude Consulting Practice to Help Enterprises Put Anthropic's AI at the Core of Their Business - Morningstar",
+        "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQc21YTDRMMmwycjhyeHhaQzZXMFMzZUZiTlRMeUp3R0tSY0lST1NxRld6SjhfMXJEcXI5eXUteTBBSHByNnRXZFp4WU1RbVlZa29xSHNiQmZKeS1OSjZZSld2QzhMNDFoSUNLTndRYnRaRk5JNVprYnlZY0RqRWo5My1aZ1NXQmN4VVpaNlR0V1RPOG9BMmFJbHRSZ3pNVHlPN2FXZlBmXzhqamFHSExORlJFWm5OdGlVTDRuRkgtclZJTTJsdzFQd2s4NVBhUk5Ha3VWVFp6VG5fNEI3VTdEblJCWjZHNDlLR1BjVzdjZHBkQ2pQVHJITy13Y1F2bFBlZ1l2WWtqVmQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T13:15:00.000Z",
+        "summary": "CloudMasonry Launches Claude Consulting Practice to Help Enterprises Put Anthropic's AI at the Core of Their Business Morningstar"
+      },
+      {
+        "title": "CloudMasonry Launches Claude Consulting Practice to Help Enterprises Put Anthropic's AI at the Core of Their Business - PR Newswire",
+        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQR0lDYWg1X2Q0WTZtbGlMdUNTNXR2dmVSTUlfM1BRemVsdFR4NW5MUE1TWmFMTUt5U3hrRGdOaG1KNEVLN2tZNkY0bXFpTUpvUTRxQVZpRFc1MGZLSjlDamprTURxVnBrY19ZNVEwQnBmeWtMV1o3N21yU0dUWFBIMEM1clIxaElPdXhCdnhYUXRMSDFWRjFIZmZPZUt5RUdlZHhSSVY4c0dRQjRsN0ZudFNhVXltd2l1dDk5T3VqRkpQMmpsNzdYcWFFc3drbmtxN3paeHRTYUdNT2ZyelEwOXpaanJDWHR5TDBMSUZiY1o1RHZpVjd2bEZSSFVDSDVwN3c?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T13:15:00.000Z",
+        "summary": "CloudMasonry Launches Claude Consulting Practice to Help Enterprises Put Anthropic's AI at the Core of Their Business PR Newswire"
+      },
+      {
+        "title": "Anthropic's Claude Fable 5 Returns With Unexpected Limits - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOV29lT3l5cUhyZGpmVkRrRXFjWk9oTHh6ckd6MGZqR0Jsal9CbC1LVjlySUlwQ0JFcGUzOUJPd3lCZ3JQeDNETGVGX1RUa0hUeHl5UjNjaWxENmFZR0pPSDB0MlNLdlp0S05fMGFvRFNtLTZ2NXUzRG9WclVoZVVGMmhkWWpjaUMzTVBTc204MS13RV9j?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T13:14:00.000Z",
+        "summary": "Anthropic's Claude Fable 5 Returns With Unexpected Limits The Tech Buzz"
+      },
+      {
+        "title": "Alibaba Bans Claude Code After Anthropic's 'Theft' Allegations - outlookbusiness.com",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcjQ5UFdGWXAwUE5qZm1zNUcxT195Yk9ieGdMTlpOY1lsUTlsNmtaVDhpZTE4cWxhbjBWODBLc0FIbVlBM1dLZFYyZDVkSHpsYm5OVUMzdkF0N2NaSDMzWXdZNG9yVnNRMEQ2UTFubnVlWXlpS0FJcldXNHZEaFNCV0dwNE9OM0hDTkZCOEZQTURvZ2FqaE1sZ053Rlc3bW5tOWwxSktDVDZpazFEOFcxa2VuZWtDMlh5N3hoT3B0clVoZ9IBzwFBVV95cUxNenNWNGVieWdOamRBeGtGb3NzMk4yTHFxUjIzcXR1ZUxHMmZWME5kNkd3UUMxZGdQdWpZNnNVcmRHSkZPWWRFNnVicTMxUF92bXZpZkN1QzNhY3pyN3FHc1N1WHFRMHBFbXR1bUJZWUlDcFlkX3lhajI0WmZOUjFWRzQ1bE13anZCMUF2Unkya0E3OXBUdjZEVS1pRzliR2NzTVB5NmVYM3JES2pnMHViQXQxc0dqa1FVczY2bkRRNWNOWG4ybmt6MGpOTGU1QUE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T12:41:46.000Z",
+        "summary": "Alibaba Bans Claude Code After Anthropic's 'Theft' Allegations outlookbusiness.com"
+      },
+      {
+        "title": "Anthropic's Method to Losing Goodwill in a Few Easy Steps",
+        "url": "https://raheeljunaid.com/blog/anthropics-method-to-losing-goodwill-in-a-few-easy-steps/",
+        "source": "HN · 178↑",
+        "hn_id": "48803751",
+        "published": "2026-07-06T12:37:06.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I set up Claude Code the way Anthropic now recommends, and the sub-agents-spawning-sub-agents trick changed how I work - XDA",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNTHp1X3N4Z0o4bFZkQ2hSY1hiQ0p1dFdWQkYwaG1BOUdpVklVWHhCUlQ5R2RCWG1JeEJCVTBMbm1fNnlJb3d0QkVOeHJIWjVBS1hZU0xBWU5IVEg5VFVxdFBPZnFxZ1pnUHhmZ2tDMXZEeHlEdEVGV0tna2g5ZGpjQUJUQmtfVlM1XzNzQ0h3?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T12:30:22.000Z",
+        "summary": "I set up Claude Code the way Anthropic now recommends, and the sub-agents-spawning-sub-agents trick changed how I work XDA"
+      },
+      {
+        "title": "Claude Fable 5 is back, but I'm sticking with Opus 4.8 for daily work: 5 reasons why - ZDNET",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMEhSZXk4MWFKMVJseWh3cElhclpFdTlOTnJCdmZJUnJKN2hLeGQyNDZmNzlzc3htTmZudEJTREZfSkdmY1JCYnFSd0daRnpCNUxFWExTQ0pXUXo0X1l2UGwzWHZtLVlvNWNsQU1mUzRNeVVGTDVIaG1WQUp5M1hlV1lpTF9ZUE91UkFv?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T12:28:00.000Z",
+        "summary": "Claude Fable 5 is back, but I'm sticking with Opus 4.8 for daily work: 5 reasons why ZDNET"
+      },
+      {
         "title": "Alibaba 'bans' Anthropic in AI Cold War as cybersecurity regulation heats up in China - SDxCentral",
         "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQZmJSX1ZJNnhNVXprM0lRb1FHOTVmNUpOZHVzRmZiem5fcWhCYVNCcHZSc2xuYXVvbUhUV1FMekNheWY0SGtJR3lOd2xyQ0FJanEyZ2JjWFVxeHVPbE8zZGk1aFB3RV9hcnN0ajJhSVdwN1BKVy1KcDg1bTJ6TFNzc0xndmVhLUExWlNhTWJrM19KeXpOOTk5VFZfTEJMSUFDNUFucFBSOEdUQXhqTXpzOXpxZXpQS0U?oc=5",
         "source": "Google News",
@@ -167,13 +238,6 @@
         "summary": "News - Anthropic reversal signals AI security balancing act teiss"
       },
       {
-        "title": "The covert U.S.-China battle to make chatbots leak their secrets - The Washington Post",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOUmZBQTlSQUxtV2sza2lTd1dTelc1OFRRNkhEOFhmNjRfVXRwRzlkUnI0ejRvazgtZDVoXzVENTZaT3FnUVo0UWU3WWYzZm1sdHozYW84Z2VMdmVUVjdaUjhKZXhtOFRzVWpWXy1hWEZpUDYyMnk3M0Jhc2tZUlVZVDRTSU1wbFRqM0Z6UW02cXlqYktKZEpTU1pwaHhMQVRBazh5R2ZJR3ZTRzh4bFpCXzdENGlyVHVUNVYtVTF1MnVYdUNucWZV?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T10:33:55.000Z",
-        "summary": "The covert U.S.-China battle to make chatbots leak their secrets The Washington Post"
-      },
-      {
         "title": "Fable 5 Subscription Ends Tomorrow: Per-Token Costs and Who Gets Hit Hardest - Tech Times",
         "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQeVdHNVVkbDBBSERVb3AxWWNzRU83WllNbTkwR291MlpvbFd4REZ1bnluUmY3bVZ1WkV5QzRfUmxiRE5KdkFEbVlSd1JmMDh5ajl6b1ZTSlA1NE9RVlZCRVFKYzhMMDhrWWU5U0FTYk9oMWFCcHFuTkJCbUN4UkhPRjBwcHlXOUpxVUIxT2ZZMmZQdDRWZHFzN2JEWmIzWkljb2VJTzBvdEZ4WGhCb3Via2ljcmRiWGFHRURxMzBZQlY0NjYz?oc=5",
         "source": "Google News",
@@ -181,18 +245,18 @@
         "summary": "Fable 5 Subscription Ends Tomorrow: Per-Token Costs and Who Gets Hit Hardest Tech Times"
       },
       {
-        "title": "Booking.com Executive Uses AI for Competitive Analysis - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNVXlDaDJQbzJWX1JadnBmazBFRDRZY3JKT2pXUlZNMmNoUjlPRU94ZmFZVG1FN2FUYnhyX3RIcm9qUXFJWXVKbmthLTUyOW9wMjJVX055Y0FpdWwyakg0Rklzd3lyVXlVY0p2VVBhNmRlb01UaDlFWGtHeXFGQTNUdWJXZFF1Q3JZOUp1aWtIOXNxNFZEb191MHR4NA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T09:32:05.000Z",
-        "summary": "Booking.com Executive Uses AI for Competitive Analysis Let's Data Science"
-      },
-      {
         "title": "Users Treat Claude as Workflow Operating System - Let's Data Science",
         "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQRVViS005M0ZkMm1saWFpWGxkNm9ubDFOZ0Z0S3JZeURDLTRZcm5VMm5HNlh6dHNsUGQ5cjZPbEd2bzhBTEpacDlKTVBUTTk5S1ROZlBWZFN2M01OVkdiMTlHYkVLbW1HZC1LX2hPVHZvWWpNaVNPUGpGejRFSElfaG5oLVE5NFkxTFRUQVFJS1E0V3c?oc=5",
         "source": "Google News",
         "published": "2026-07-06T09:29:00.000Z",
         "summary": "Users Treat Claude as Workflow Operating System Let's Data Science"
+      },
+      {
+        "title": "Alibaba Bans Anthropic's Claude Code For Employees - Dataconomy",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVDB4dDRia0VJVnFhaUExbk5zMXkyTWFETlpDYl9sbXh1STZSYWVKN2tUNXJ5a3YtRnFvRHVtN1U3VElOWEE4MUg3QTVxM1pzeXo4SXNOWEF6VVJVZVFPZFlIa1dNQlBuclVMRUlQUS1rVkRQbGRNcjdkd2RLOXBjM0dqRUNveEhIS25wVUR6Z3VlS0s4?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T09:20:43.000Z",
+        "summary": "Alibaba Bans Anthropic's Claude Code For Employees Dataconomy"
       },
       {
         "title": "Anthropic’s Claude Becomes a Governed Workflow Agent Inside Google Workspace - AiThority",
@@ -212,7 +276,7 @@
         "title": "Anthropic Changes Its Rules To Adapt to New Features - Security Boulevard",
         "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQSlktanF1aDlKeTItOXJCSUVMaVhOOUlSZFFBYmRCVGdaY3plcDlFRnFXbklsU2RGMndyZkpsUHpWZFVnbF83c1VRYVNZbWdXd0RSUVBUY21nUkZZdE5peHFOSXVwZjRNSnFUYVpTSlNEUGFReTFHNXUxbzVBVTZhRzdXbE5pemtaN3hXZVE0Qm9YQ0dWdmc?oc=5",
         "source": "Google News",
-        "published": "2026-07-06T08:03:45.000Z",
+        "published": "2026-07-06T08:04:28.000Z",
         "summary": "Anthropic Changes Its Rules To Adapt to New Features Security Boulevard"
       },
       {
@@ -258,62 +322,6 @@
         "summary": "Alibaba reportedly bans Claude Code for employees, citing security concerns as China shifts toward domestic AI coding tools digitimes"
       },
       {
-        "title": "Anthropic Could Be a $1 Trillion IPO This Fall. These 2 Stocks Already Own a Piece. - The Motley Fool",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQXJTMHZWeFdSVVNjVGp6T09jNEYzX2M4UkRFZnVZdVNhTnZYS2dfcGZzLVZkNWtGRGpFUW1yY19tbTdMZ05RTDFMVWJTNTdRYXVtRkFwb1pOVU91ZlRiQVFCSWIydmlLOE5Ca0Rhc0dQU2hBbmZIS29oX1ExTUE2TERSZDdLdnB4b1M5SGR2SEI0TVJFRUNRag?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T00:36:00.000Z",
-        "summary": "Anthropic Could Be a $1 Trillion IPO This Fall. These 2 Stocks Already Own a Piece. The Motley Fool"
-      },
-      {
-        "title": "Anthropic, White House Have Not Discussed Government Stake in Firm - PYMNTS.com",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNa0tFeDdyUU1NanA2WF9DbTByS2FKa3didEg3TTkzMXg5aXZPYVBLaS1iN3BNWVZPU0NvVzk5S3dNUHFDUVlCYTNEM2tVQmt1NjJCSGhNdldIcGZBMmFqZUtVekliVkFEeE1xZ0V6Q2M5VUYtZk94MEJsblBSanFzTDBQM2ZRcTNTS2NQekI1MnhyYTE2c3I5cmZfWUw3bjRaVTd6cUR4Ym1ZLUlmRWg0Vkk2ejVObEoxZTZDTzJGa2s?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T00:34:45.000Z",
-        "summary": "Anthropic, White House Have Not Discussed Government Stake in Firm PYMNTS.com"
-      },
-      {
-        "title": "Meta Platforms restricts engineers from using Anthropic’s Claude and OpenAI’s Codex - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9jODJrQ1hpZUFHWHRTSDd5eXlFZGlpWnlWd0t2TG5scnZHZEtwUmVlZ1RURng5bTJhNUNDQUVJck1MeTRKVzg5NTl4czJtaFBFRERwZ05LajRpaTdveVF0eklFVElqRzZLRmxXdG9STXRQUDMyUE1NY3RVTlI?oc=5",
-        "source": "Google News",
-        "published": "2026-07-05T23:19:44.000Z",
-        "summary": "Meta Platforms restricts engineers from using Anthropic’s Claude and OpenAI’s Codex Crypto Briefing"
-      },
-      {
-        "title": "Anthropic’s Claude Available in Microsoft Corporation (MSFT) Foundry Powered by Nvidia GPUs - Insider Monkey",
-        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNNmtSSlRWNUZTdkRKQWxzRzdueDMwWFcwUjhsamhNaHczX2NnZF9lUEV2OXBOU0xvWi10enZZZE15aVZpejBNNGNlVEpIeGVZclA0RmZ1R3FQdElOM1JlNGdXRzZHM0ZMOGR3NnhLTG1ISmJrZTNfQ1JiYlBzRHMzVjhZdkEwUlcyZ2NfVzZKOUV3Y004NFFoaUF3WXg2bjZYN2FoczZZamhjbVdHQjVScUQtdm5rTXFqcHRUZm5mSnhhd3hzRkpYQ2kzN2bSAdQBQVVfeXFMTk50Ri1RYWlxZFNpUWFaclQ0dk94VlFUc1lKcTB0bnFJS3lPZVhFMGdqbGo0RDNuV0pSUExFdV9CNF9tdHduQTE3dWV0cXdseS1sTjNtdXIxZm9vdVczOTVkU3BPTHZBOHVYYk9zVEtOSjV5X1RNc21uT1NwLVJyOVZubnBYaXNZd0tYZWtXUmJ5RVJvWVIyX0hVX0xES3FKMXVwd0NuT2JDMmhDZ25pRFNTYUx1T3FRbTVFQXZHdG1nR25Zdk5lRWpQN0l6akEtZ0ZwZ0I?oc=5",
-        "source": "Google News",
-        "published": "2026-07-05T22:57:51.000Z",
-        "summary": "Anthropic’s Claude Available in Microsoft Corporation (MSFT) Foundry Powered by Nvidia GPUs Insider Monkey"
-      },
-      {
-        "title": "Here’s Why Meta Platforms, Inc. (META) is Restricting Engineers from Using Anthropic’s Claude - Insider Monkey",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNN0VZYVFIbWRieW0zM3ptSGVfendEU09wT3VrOFlrUkJQNVNjZTNONUJtNVV0azdFeUM0LV9hTHBUeXhUOTRpR1I5SjdaUElSdVhBVmtqY2VsRUQyd2tLeHVxcUtSb1luZXhtZWh1ZGFOX3pCb2tQX001NHYweEJTZjlHa3hnem5xS0dESWxvSnlPS0V2X3I4T2RqTXo2bWZYWElSUlRXRFl6dXp2NFFRcmFZMnM5ZGhzeU9FYXZtdkIyVUc3VHdJbzJDOA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-05T22:57:51.000Z",
-        "summary": "Here’s Why Meta Platforms, Inc. (META) is Restricting Engineers from Using Anthropic’s Claude Insider Monkey"
-      },
-      {
-        "title": "Anthropic’s Claude Available in Microsoft Corporation (MSFT) Foundry Powered by Nvidia GPUs - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ2VqN05jbmlqcy00Z3N0SEtoRW5qU2xVeW95V21DTDdPR2xuQXhtYkNoYXY4ZU5lZnlQUTJLR2RmT2N3MXVMbmp6a0Zva2pBbmxpWHZJaVBDWXJhVW1HOXEtODZEV2h1Nmc2Z3h5dFB5cHpJWWNaSGpmWWFna1VQcTVOUUVfZnZ4dUFtWFNkS1lHbHJxd3Y4d3BIZXBhYmFYbGlzUlFUcWk5bWE3MUhtcjdB?oc=5",
-        "source": "Google News",
-        "published": "2026-07-05T22:50:21.000Z",
-        "summary": "Anthropic’s Claude Available in Microsoft Corporation (MSFT) Foundry Powered by Nvidia GPUs Yahoo Finance"
-      },
-      {
-        "title": "Anthropic launches Claude Science for drug discovery - Let's Data Science",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPU1dKUlFvWlliSHFYVWVNU2E1andnWGNfdHJ0X1JCTFdPQkE4NTVPR0xzTzhYYXFYTGxjSXlYMGxFQU9NMWo5cGFLc2dSNUR4cTNMMllQNlJUbm85QVNsY2w4bHZxVXYwRnNuQU1JblRfRlN2WU90ZDFNSTNKRk5wSUhqNE9tLXZZNkU2VkloOGg3cGE0ekpGbW1B?oc=5",
-        "source": "Google News",
-        "published": "2026-07-05T21:29:44.000Z",
-        "summary": "Anthropic launches Claude Science for drug discovery Let's Data Science"
-      },
-      {
-        "title": "Walkway glow - Northeastern Global News",
-        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9PNHJESkREQkdTbjZFbWV1VENRU0ZleDFOQ1B5SnF4VHdOMVhWajRFSTBubVlxVzNjb3lsdGhRcGFOYWRoRzJVaEpiazJfaGJtWGQySnpJU1psMjNzN1FWQ0dCN3Q?oc=5",
-        "source": "Google News",
-        "published": "2026-07-05T18:29:46.000Z",
-        "summary": "Walkway glow Northeastern Global News"
-      },
-      {
         "title": "What a Claude Skill Actually Is, Shown in One Real Folder",
         "url": "https://www.youtube.com/shorts/tzkR0riE8x0",
         "source": "Pragati Kunwer",
@@ -324,13 +332,6 @@
         "published": "2026-07-05T15:05:59.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Anthropic Faces a New $75 Million Lawsuit for Pirating Books to Train Claude AI - BeInCrypto",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOcDlnbnhmeGJuendxZjh1WTdOWjRlQTJKTmpyWFZfbVFxV2xGZXY1ajM0LWVjRFVrWDUwVDFkVl90bzRvY3NGeGlmZEFEdm9CZHlVWXByUE1uRFJkVWp5Vmc5aEZGSUdod0FTdlVGX3FCQUU3VWhyVUk5c1hVbXV4N2tKYmg?oc=5",
-        "source": "Google News",
-        "published": "2026-07-05T14:53:00.000Z",
-        "summary": "Anthropic Faces a New $75 Million Lawsuit for Pirating Books to Train Claude AI BeInCrypto"
       },
       {
         "title": "Claude Sonnet 5 vs Opus: When Each One Actually Wins",
@@ -525,18 +526,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Claude Code Skills Run My Faceless YouTube Channel",
-        "url": "https://www.youtube.com/watch?v=L7VpsQwIeDc",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "L7VpsQwIeDc",
-        "thumbnail": "https://i.ytimg.com/vi/L7VpsQwIeDc/hqdefault.jpg",
-        "published": "2026-06-05T12:00:17.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
         "title": "Claude Opus 4.8: Everything You Need to Know",
         "url": "https://www.youtube.com/watch?v=84NkgiTcOdo",
         "source": "Riley Brown",
@@ -545,6 +534,18 @@
         "video_id": "84NkgiTcOdo",
         "thumbnail": "https://i.ytimg.com/vi/84NkgiTcOdo/hqdefault.jpg",
         "published": "2026-05-31T22:27:11.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Opus 4.8 is Here — Should You Switch?",
+        "url": "https://www.youtube.com/watch?v=4wYQUn9H5Q8",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "4wYQUn9H5Q8",
+        "thumbnail": "https://i.ytimg.com/vi/4wYQUn9H5Q8/hqdefault.jpg",
+        "published": "2026-05-28T19:27:31.000Z",
         "summary": "",
         "_kind": "news_video"
       }
@@ -901,17 +902,6 @@
         "summary": ""
       },
       {
-        "title": "Claude Code Skills Run My Faceless YouTube Channel",
-        "url": "https://www.youtube.com/watch?v=L7VpsQwIeDc",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "L7VpsQwIeDc",
-        "thumbnail": "https://i.ytimg.com/vi/L7VpsQwIeDc/hqdefault.jpg",
-        "published": "2026-06-05T12:00:17.000Z",
-        "summary": ""
-      },
-      {
         "title": "OpenCode + Ollama: I Replaced Claude Code With This (Full Setup)",
         "url": "https://www.youtube.com/watch?v=4r80bMX_kGg",
         "source": "Leon van Zyl",
@@ -964,6 +954,17 @@
         "video_id": "rA_UZS-EJpU",
         "thumbnail": "https://i.ytimg.com/vi/rA_UZS-EJpU/hqdefault.jpg",
         "published": "2026-05-29T18:28:38.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus 4.8 is Here — Should You Switch?",
+        "url": "https://www.youtube.com/watch?v=4wYQUn9H5Q8",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "4wYQUn9H5Q8",
+        "thumbnail": "https://i.ytimg.com/vi/4wYQUn9H5Q8/hqdefault.jpg",
+        "published": "2026-05-28T19:27:31.000Z",
         "summary": ""
       }
     ],
@@ -2184,13 +2185,6 @@
         "summary": ""
       },
       {
-        "title": "Claude Code Skills Run My Faceless YouTube Channel",
-        "url": "https://www.youtube.com/watch?v=L7VpsQwIeDc",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-06-05T12:00:17.000Z",
-        "summary": ""
-      },
-      {
         "title": "We announced the deprecation of the Claude Opus 4.1 model ( claude-opus-4-1-20250805 ), with retirement on the Claude…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#june-5-2026",
         "source": "Claude API Release Notes",
@@ -2230,6 +2224,13 @@
         "url": "https://www.youtube.com/watch?v=rA_UZS-EJpU",
         "source": "YouTube · Ryan & Matt Data Science",
         "published": "2026-05-29T18:28:38.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus 4.8 is Here — Should You Switch?",
+        "url": "https://www.youtube.com/watch?v=4wYQUn9H5Q8",
+        "source": "YouTube · Ryan & Matt Data Science",
+        "published": "2026-05-28T19:27:31.000Z",
         "summary": ""
       }
     ]
