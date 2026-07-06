@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-07-06T14:50:44.287Z",
+  "generated_at": "2026-07-06T18:01:57.159Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Global Workspace",
+        "url": "https://www.anthropic.com/research/global-workspace",
+        "source": "Anthropic Research",
+        "published": "2026-07-06T17:17:14.000Z",
+        "summary": ""
+      },
       {
         "title": "Visible Extended Thinking",
         "url": "https://www.anthropic.com/news/visible-extended-thinking",
@@ -135,43 +142,97 @@
         "source": "Anthropic Research",
         "published": "2026-06-26T12:29:48.000Z",
         "summary": ""
-      },
-      {
-        "title": "Gates Foundation Partnership",
-        "url": "https://www.anthropic.com/news/gates-foundation-partnership",
-        "source": "Anthropic",
-        "published": "2026-06-26T12:29:18.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "A global workspace in language models - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBNZzhNYnVQekYwQzlfQmt2Q2JWbXNXUmNqVk1JaWU4SkM2d1dORGE1eHdQdFdVQ1l1VDNUaExHMTZVRW5jS3pfanFHYWh5dzFmTmg2U0pMd2JfX2otLThTWA?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T17:19:26.000Z",
+        "summary": "A global workspace in language models Anthropic"
+      },
+      {
+        "title": "Claude Desktop Launches on Linux with Mixed Local AI Results - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNU0tWMjNNdXJkSk9ybG9BSWxMeEhYQzdvWUJFRHdFNDhJVlNUcFJKNXItYlpzWlZnUk5kamlxTjl0bEZOejh2NjQxaFRkVnJvb0ltVlQ0RzlMMmxUNmp1U01ldmptc3FmeWVlVzdnMHlQcDdHQVhlN1YtM3dOc0RMRnp6SXhfOF9IVVJjMUp1VmdVZ3UyQzZYSg?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T17:09:00.000Z",
+        "summary": "Claude Desktop Launches on Linux with Mixed Local AI Results The Tech Buzz"
+      },
+      {
+        "title": "Claude Desktop Hits Linux, But Local AI Remains a Challenge - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNaXJkV1JOU0dpYUNOXzJaZUo5QklBUTRsN2F6TUFRN2FWVXV5UkVMTFh4NzY2NGRpX3dMbktGbUNGUGpxMUs3QVQxUEx6VHBPMUJLeFlfVmhXZHU0YjQxLXJPbUhxZTMwSFNpRWZkM3UxR1BYcFdhVzk2eTEzcmY4SUV1MUFsX2RlcDN4Zlhxbko0MXJyWmc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T17:02:00.000Z",
+        "summary": "Claude Desktop Hits Linux, But Local AI Remains a Challenge The Tech Buzz"
+      },
+      {
+        "title": "What’s at the center of Claude’s mind?",
+        "url": "https://www.youtube.com/watch?v=rKV5JcALQoQ",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "rKV5JcALQoQ",
+        "thumbnail": "https://i.ytimg.com/vi/rKV5JcALQoQ/hqdefault.jpg",
+        "published": "2026-07-06T16:59:51.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Secret Claude tracker shocks users after Anthropic’s anti-surveillance stance",
+        "url": "https://arstechnica.com/tech-policy/2026/07/anthropic-outed-for-claude-tracker-that-secretly-monitored-chinese-users/",
+        "source": "Ars Technica",
+        "published": "2026-07-06T16:44:18.000Z",
+        "summary": "Anthropic quickly removed a tracker secretly monitoring Claude Code users in China after a security researcher exposed the hidden code and condemned the spyware-like tracking as a “serious breach of…"
+      },
+      {
+        "title": "Anthropic’s latest agent wants to be your new employee - HR Brew",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNY25GVmQ5cFZHZ01UQmhGbktYXzBDVHVtUFhKazhyVVljS1pLTnpJYl9YQkFYd0NCMmxLR0QzcnRRaGVodmM1SG9HOUNNb2ZrOE1kX0lsQUswY1pESDJRN3hGRWVfTjFXVGxldjU3MlBUa1dWLUJJR3NEa0psUHB3T2s5TFRJS2V4SEF0bWhn?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T16:40:36.000Z",
+        "summary": "Anthropic’s latest agent wants to be your new employee HR Brew"
+      },
+      {
+        "title": "AI company behind Claude signs $19 billion lease at this KY data center campus - Lexington Herald Leader",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBlYzhxbUkySkhMTUVQU3AxVTU3bHpDdUt0VFBpOVFMclNNanZvNWhwMldTN1E5T0xpR0E4WkVZeEtxYTJlWHE2VzhmSG1vazFZQ1R1d2N6TDczN0tuNVUyX3lsTGU0MFU2QWxPYtIBbEFVX3lxTE1WNlg0SGxFN3N4ejVnQzhXR1I5YlNJWXJndXh0RzRsTUVFTE9Cb2pxb0dwZWVyMXdlb2w5a0ZJUjVqRVBnejBWMFpjcmtudzFENkpmc1N5cHVTQ3NWNVFyeVZJY1NqZ0x3Nk5PTg?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T16:25:13.000Z",
+        "summary": "AI company behind Claude signs $19 billion lease at this KY data center campus Lexington Herald Leader"
+      },
+      {
+        "title": "Inside the secret AI war between Silicon Valley and China - The Washington Post",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOUmZBQTlSQUxtV2sza2lTd1dTelc1OFRRNkhEOFhmNjRfVXRwRzlkUnI0ejRvazgtZDVoXzVENTZaT3FnUVo0UWU3WWYzZm1sdHozYW84Z2VMdmVUVjdaUjhKZXhtOFRzVWpWXy1hWEZpUDYyMnk3M0Jhc2tZUlVZVDRTSU1wbFRqM0Z6UW02cXlqYktKZEpTU1pwaHhMQVRBazh5R2ZJR3ZTRzh4bFpCXzdENGlyVHVUNVYtVTF1MnVYdUNucWZV?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T16:00:00.000Z",
+        "summary": "Inside the secret AI war between Silicon Valley and China The Washington Post"
+      },
+      {
+        "title": "Claude Fable 5 is leaving subscriptions, but maybe not for good - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMlRQbmY4MUF3TWtNOE1qOFNvdGppeEZ1ZmZEdU85ejBLNjAwN0xNNlptMWx3aGwzYVhGZy04TVFwYnhvVS1MWWFQNkd4ZVU0dzJsaThhYlNFU09LRW1RbEdjeURkODl4THdibmlWNnVUTHMteVpvUnh4V0dtUU9Md0ViOXI0N0hXU2hyc3dmUlRTZk1Mbkp3Sw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T15:32:44.000Z",
+        "summary": "Claude Fable 5 is leaving subscriptions, but maybe not for good Yahoo Tech"
+      },
+      {
+        "title": "Alibaba Pushes Employees Away From Claude - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQQWYwOEFVekhXb09YR19Wb2RZekpkTlpDc2o2Nk1WcXNwUVFHcHJpRDFkeUNGZU92dUppaUJRS1o0dVFfRGdrdnl3dzdINXF4T1lLRDNLYXBVVUg4ZmR0bU0xYVRzRGdnaDdMaFVXQ3lGeElKTHp5UXBiZ1BESUZtQ18ydXZZTm5GdzRhcEh4UllMZU9odnRXZWZkZHAxd0VtVUE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T15:08:00.000Z",
+        "summary": "Alibaba Pushes Employees Away From Claude Yahoo Finance"
+      },
+      {
+        "title": "Alibaba is banning employees from using Anthropic's Claude Code over alleged backdoor risks - qz.com",
+        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB6c1I4M2JDQ3Bfbi05bXdkY041RDBwVVRuQ3BuaHhwTWZ1NlBSTnlycFRZQUVlRE9uUTVST0E5WnNoN3RhVUNUSXpuOExHNlpTM056YTNXeUgzTk9SWlZEUjl3ZkdRcXk0dXMybU9sQUNSQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T14:38:33.000Z",
+        "summary": "Alibaba is banning employees from using Anthropic's Claude Code over alleged backdoor risks qz.com"
+      },
       {
         "title": "UK regulator warns of \"arms race\" to keep up with AI use in financial services",
         "url": "https://arstechnica.com/ai/2026/07/uk-regulator-warns-of-arms-race-to-keep-up-with-ai-use-in-financial-services/",
         "source": "Ars Technica",
         "published": "2026-07-06T14:17:42.000Z",
         "summary": "Regulators are in an “arms race” to keep up with the use of artificial intelligence in financial services, a senior UK official has warned, with millions of people using the technology to help them…"
-      },
-      {
-        "title": "The covert U.S.-China battle to make chatbots leak their secrets - The Washington Post",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOUmZBQTlSQUxtV2sza2lTd1dTelc1OFRRNkhEOFhmNjRfVXRwRzlkUnI0ejRvazgtZDVoXzVENTZaT3FnUVo0UWU3WWYzZm1sdHozYW84Z2VMdmVUVjdaUjhKZXhtOFRzVWpWXy1hWEZpUDYyMnk3M0Jhc2tZUlVZVDRTSU1wbFRqM0Z6UW02cXlqYktKZEpTU1pwaHhMQVRBazh5R2ZJR3ZTRzh4bFpCXzdENGlyVHVUNVYtVTF1MnVYdUNucWZV?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T13:37:30.000Z",
-        "summary": "The covert U.S.-China battle to make chatbots leak their secrets The Washington Post"
-      },
-      {
-        "title": "Alibaba is banning employees from using Anthropic's Claude Code over alleged backdoor risks - qz.com",
-        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB6c1I4M2JDQ3Bfbi05bXdkY041RDBwVVRuQ3BuaHhwTWZ1NlBSTnlycFRZQUVlRE9uUTVST0E5WnNoN3RhVUNUSXpuOExHNlpTM056YTNXeUgzTk9SWlZEUjl3ZkdRcXk0dXMybU9sQUNSQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T13:21:36.000Z",
-        "summary": "Alibaba is banning employees from using Anthropic's Claude Code over alleged backdoor risks qz.com Alibaba bans Anthropic's Claude Code after an alleged hidden China-detection backdoor is uncovered…"
-      },
-      {
-        "title": "CloudMasonry Launches Claude Consulting Practice to Help Enterprises Put Anthropic's AI at the Core of Their Business - Morningstar",
-        "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQc21YTDRMMmwycjhyeHhaQzZXMFMzZUZiTlRMeUp3R0tSY0lST1NxRld6SjhfMXJEcXI5eXUteTBBSHByNnRXZFp4WU1RbVlZa29xSHNiQmZKeS1OSjZZSld2QzhMNDFoSUNLTndRYnRaRk5JNVprYnlZY0RqRWo5My1aZ1NXQmN4VVpaNlR0V1RPOG9BMmFJbHRSZ3pNVHlPN2FXZlBmXzhqamFHSExORlJFWm5OdGlVTDRuRkgtclZJTTJsdzFQd2s4NVBhUk5Ha3VWVFp6VG5fNEI3VTdEblJCWjZHNDlLR1BjVzdjZHBkQ2pQVHJITy13Y1F2bFBlZ1l2WWtqVmQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T13:15:00.000Z",
-        "summary": "CloudMasonry Launches Claude Consulting Practice to Help Enterprises Put Anthropic's AI at the Core of Their Business Morningstar"
       },
       {
         "title": "CloudMasonry Launches Claude Consulting Practice to Help Enterprises Put Anthropic's AI at the Core of Their Business - PR Newswire",
@@ -197,7 +258,7 @@
       {
         "title": "Anthropic's Method to Losing Goodwill in a Few Easy Steps",
         "url": "https://raheeljunaid.com/blog/anthropics-method-to-losing-goodwill-in-a-few-easy-steps/",
-        "source": "HN · 178↑",
+        "source": "HN · 231↑",
         "hn_id": "48803751",
         "published": "2026-07-06T12:37:06.000Z",
         "summary": ""
@@ -217,11 +278,25 @@
         "summary": "Claude Fable 5 is back, but I'm sticking with Opus 4.8 for daily work: 5 reasons why ZDNET"
       },
       {
-        "title": "Alibaba 'bans' Anthropic in AI Cold War as cybersecurity regulation heats up in China - SDxCentral",
+        "title": "Hidden spy code in Claude sparks war between Alibaba and Anthropic - Cointribune",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5RWktEQUJfQXFDWGxZMkVwMkRIS0R1NFhwM1VWYW9uSC1WU1NHalBvVVZuLTlsQTBoT1R6eElEOEpFNEt6UUp6X01OOXhPdGduR3czV3BCUFVBWm1YQUF1b3pfWFh5cHBkWDJqUUZ6S2ZzOFZRWFJxS29PdzhIdw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T11:35:00.000Z",
+        "summary": "Hidden spy code in Claude sparks war between Alibaba and Anthropic Cointribune"
+      },
+      {
+        "title": "Alibaba 'bans' Anthropic in AI cold war as cybersecurity regulation heats up in China - SDxCentral",
         "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQZmJSX1ZJNnhNVXprM0lRb1FHOTVmNUpOZHVzRmZiem5fcWhCYVNCcHZSc2xuYXVvbUhUV1FMekNheWY0SGtJR3lOd2xyQ0FJanEyZ2JjWFVxeHVPbE8zZGk1aFB3RV9hcnN0ajJhSVdwN1BKVy1KcDg1bTJ6TFNzc0xndmVhLUExWlNhTWJrM19KeXpOOTk5VFZfTEJMSUFDNUFucFBSOEdUQXhqTXpzOXpxZXpQS0U?oc=5",
         "source": "Google News",
         "published": "2026-07-06T11:28:06.000Z",
-        "summary": "Alibaba 'bans' Anthropic in AI Cold War as cybersecurity regulation heats up in China SDxCentral"
+        "summary": "Alibaba 'bans' Anthropic in AI cold war as cybersecurity regulation heats up in China SDxCentral"
+      },
+      {
+        "title": "News - Anthropic reversal signals AI security balancing act - teiss",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNY2Nyb0x3VUtnbXhnbE9QaFBuY1l0eTZUcDhRbjNqMWZNUjhrVHlGeS1kbDZ0dHk3S2NnRENDeG1Qc0Q4S25Nbk1kNXVqREtqczlKVk1VbmNLenJYdUtvWDc3YkFkTFZSUkZlZFBNWXRBRThVeWtrZ3R0NC00NkFlR1JQSWZTTkZIUXZycjJVeTE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T11:09:47.000Z",
+        "summary": "News - Anthropic reversal signals AI security balancing act teiss"
       },
       {
         "title": "Anthropic restores Claude Fable 5, signalling a new phase of AI governance - The Economic Times",
@@ -231,18 +306,18 @@
         "summary": "Anthropic restores Claude Fable 5, signalling a new phase of AI governance The Economic Times"
       },
       {
-        "title": "News - Anthropic reversal signals AI security balancing act - teiss",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNY2Nyb0x3VUtnbXhnbE9QaFBuY1l0eTZUcDhRbjNqMWZNUjhrVHlGeS1kbDZ0dHk3S2NnRENDeG1Qc0Q4S25Nbk1kNXVqREtqczlKVk1VbmNLenJYdUtvWDc3YkFkTFZSUkZlZFBNWXRBRThVeWtrZ3R0NC00NkFlR1JQSWZTTkZIUXZycjJVeTE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T11:03:56.000Z",
-        "summary": "News - Anthropic reversal signals AI security balancing act teiss"
-      },
-      {
         "title": "Fable 5 Subscription Ends Tomorrow: Per-Token Costs and Who Gets Hit Hardest - Tech Times",
         "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQeVdHNVVkbDBBSERVb3AxWWNzRU83WllNbTkwR291MlpvbFd4REZ1bnluUmY3bVZ1WkV5QzRfUmxiRE5KdkFEbVlSd1JmMDh5ajl6b1ZTSlA1NE9RVlZCRVFKYzhMMDhrWWU5U0FTYk9oMWFCcHFuTkJCbUN4UkhPRjBwcHlXOUpxVUIxT2ZZMmZQdDRWZHFzN2JEWmIzWkljb2VJTzBvdEZ4WGhCb3Via2ljcmRiWGFHRURxMzBZQlY0NjYz?oc=5",
         "source": "Google News",
         "published": "2026-07-06T09:58:49.000Z",
         "summary": "Fable 5 Subscription Ends Tomorrow: Per-Token Costs and Who Gets Hit Hardest Tech Times"
+      },
+      {
+        "title": "Alibaba Tells Employees to Stop Using Anthropic’s Claude Code - citybiz",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTUtZSFJ0R1IzempNekV4b01hNXFOdXp6NmVvRGEtbTdmZl9NOXBsVU8xV3BvN2VlMlB0azBWcVlLd2F2WEJ5czdpbG5JNTFmS1M1V2J1U0xIT2xjelpLRWNMc2dfWHZZM1ppczJoNjFzMWhZOXNQdjRabnlhbTBQTmRFVjgwZW4tOHp4a0doclNCY2JzMlRpTUV2LVFXVHg3?oc=5",
+        "source": "Google News",
+        "published": "2026-07-06T09:43:17.000Z",
+        "summary": "Alibaba Tells Employees to Stop Using Anthropic’s Claude Code citybiz"
       },
       {
         "title": "Users Treat Claude as Workflow Operating System - Let's Data Science",
@@ -252,74 +327,11 @@
         "summary": "Users Treat Claude as Workflow Operating System Let's Data Science"
       },
       {
-        "title": "Alibaba Bans Anthropic's Claude Code For Employees - Dataconomy",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVDB4dDRia0VJVnFhaUExbk5zMXkyTWFETlpDYl9sbXh1STZSYWVKN2tUNXJ5a3YtRnFvRHVtN1U3VElOWEE4MUg3QTVxM1pzeXo4SXNOWEF6VVJVZVFPZFlIa1dNQlBuclVMRUlQUS1rVkRQbGRNcjdkd2RLOXBjM0dqRUNveEhIS25wVUR6Z3VlS0s4?oc=5",
+        "title": "The 2026 AI Race, Explained: A Cheaper Claude, China's Bargain Model, and a Spy-Agency Warning - Lower Bucks Times",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNLUdCNkk1VnRxX1dLWFR2eVZ0aDY3aWE4UFMzbENKU3VXNWRfemZsSGV6UGlRRThGWE9INWdsemJ2RkFOZEJrZVh6SS1NRnBOYW5wS2R2Vnp4R1k0X0laQTRjbDIyY2JiLVplRDZDYjE5T2RGd3RBNnVIckZuX3ZZc0FpeldkbnQ4V2FoSklIYXZzWlFfUVhORmFoT0xMMHVoWWVkRk5vZ2RsT21zWGxCWnNjRGhhd2NFRko3WWRJbnlyRzZtUkp4ag?oc=5",
         "source": "Google News",
-        "published": "2026-07-06T09:20:43.000Z",
-        "summary": "Alibaba Bans Anthropic's Claude Code For Employees Dataconomy"
-      },
-      {
-        "title": "Anthropic’s Claude Becomes a Governed Workflow Agent Inside Google Workspace - AiThority",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQUkVxcEl4bkhWM0NLU1o4OG45VjFKTGhkRDRTNlBUaUhiTlcyb1BaSHZjeUFlR3N3VHppTld0LXVLcUN2NkNhV2xDb0ZhWjJPbkJHVXQ4bXR3azBrdDk3WTU3VFZ5SXZUVmVFdDNROUlLUjNpSy1XazdXdnIxY0NfWGR5RlJMN3RoNWQyRHc3NkkyQmN0b3hlNTJZY25QVkgwaHlUckpPMGtNNGpQYlFzZGNyWlNUWFU?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T08:36:02.000Z",
-        "summary": "Anthropic’s Claude Becomes a Governed Workflow Agent Inside Google Workspace AiThority"
-      },
-      {
-        "title": "I spoke to Anthropic’s CEO about how AI may affect biotech. Here’s what I learned - STAT",
-        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1VMGNMbDZSS3ppUkRBeWZjU3JjWkpxRk9ZR19uWXJFN3F6aW42V0xkUUR1SnFwb0xXMmRyaXRsbm8yX0ZBbDgyYzFuU3pwQXJZS3UzVkhjbFl1bkZqOVRzNER5ejlidW9fY0laNWNwSjNQdw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T08:33:59.000Z",
-        "summary": "I spoke to Anthropic’s CEO about how AI may affect biotech. Here’s what I learned STAT"
-      },
-      {
-        "title": "Anthropic Changes Its Rules To Adapt to New Features - Security Boulevard",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQSlktanF1aDlKeTItOXJCSUVMaVhOOUlSZFFBYmRCVGdaY3plcDlFRnFXbklsU2RGMndyZkpsUHpWZFVnbF83c1VRYVNZbWdXd0RSUVBUY21nUkZZdE5peHFOSXVwZjRNSnFUYVpTSlNEUGFReTFHNXUxbzVBVTZhRzdXbE5pemtaN3hXZVE0Qm9YQ0dWdmc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T08:04:28.000Z",
-        "summary": "Anthropic Changes Its Rules To Adapt to New Features Security Boulevard"
-      },
-      {
-        "title": "Did GPT-5.6 Sol Really Beat Fable 5, Or Just Win The Easier Crown? - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5MaXFCR0ZYcFVhYmppOVNlRm1hbDZCeEtaTVU1VXUzeF9lOUpMdWszR2diVG1XSjNVb0JpWVVRdUdwS2NZXzQtRzBKcldWbGI3RF81R1YwVHlkMElaT2VScGE2UW0xZw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T07:33:08.000Z",
-        "summary": "Did GPT-5.6 Sol Really Beat Fable 5, Or Just Win The Easier Crown? Yellow.com"
-      },
-      {
-        "title": "Alibaba to ban employees from using Claude Code: What happened? - India Today",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNN3lTUXVhamFyekUzSmJJcTUzSzNLYzNMcGVYUkhpd2hwMHRFM0VVWFRXMEpUUWFpZVBqNkRKR3lsRW5XcXM3MVlFRmJJbkxlYTVWYjk4VzFaei12R3RyNXprLUZ0Q21ZTUtUMS1HWEw0Y2JkQzhsb3MwNThCLXh3Zkw3cVBub0dJN3laUEJUalJXWWVLaGZlTDhpS2tGOUZCYmVlUDUtcDdrREFhQWd5dUp2c00?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T07:23:26.000Z",
-        "summary": "Alibaba to ban employees from using Claude Code: What happened? India Today"
-      },
-      {
-        "title": "Alibaba to ban employees using Claude Code from July 10 as US-China AI rivalry escalates - The Indian Express",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQODhEZE1TZWVydFl2TkJZSXh2X3dMZlJfODIxWXY3ZHFnQkwxWExLZmdlV0VjaHdubW5jbHhGekJhRHZsaDRKczBVVHZPS01SYWYxUkJ2bklvN09xMEUzUmVoRWNSeUlNLUI1V3FxdldBV0VmQzRWZU43QUF1ejIyUm5Udmsxc01rSElIT0VacEY1ajBtczNQUzZEaEpzYmgtV2Rja1VQLVo2Y1ZZV3VxMXhkdEfSAbsBQVVfeXFMUGsyMHdaN3o3cDZfMER5WmpzYUR0azhHV3FpQmd6eFYxcUlpQzU4NWdmMUQ3OWIxbG5EakhYamhEUVJUSno2LUNpSElnXzZXbjRlR3M2aW8xRXljLTdsanRLdWxXUW5GOThQZVpvOFVuWFBLdTZoYmNkQkp3Yl9Lc2JNN0V0cnNVeFVqLWEwWm9Raldrb1FGanhjbnQya0tqSzNjRGJUT0pzVDNyUXhITFozVHFPRm5icHZfbw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T03:38:00.000Z",
-        "summary": "Alibaba to ban employees using Claude Code from July 10 as US-China AI rivalry escalates The Indian Express"
-      },
-      {
-        "title": "Alibaba to block employees from using Anthropic's Claude Code as US-China AI rivalry deepens - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQd25ZdF9uR1hVRE1Gb1hCSGF4OHEwWmJkZDVTS2VlWVhWNlk1b1dXX1FZbndLZWRGWXFDUnpxZ2NCbHJMZW5MZ1FaeHRIc1hpa0daZTlDcmtyVUY1WndCU3hjTHM1cy0ySVZNQmxOOGgzcDFQQUlQcGlCeEV1MS0ybmFZVFVOaE5heDlWWHVvZUwydVRoUTVmdEQtZFl1LXlxVlNOVlBWZi1jRmJraGpKMVRUdDY4dUxISHMzNlNiUE1YRlA3Z3dNZVZNRGxkNGdNUHfSAdcBQVVfeXFMTVVXWTZjT3NLaFQ0bGFCaFJvN3ZreE9lWVBqRDVOLVY3T19JU1h1U0dXWGg2U3VXTEdzS2ppZUttSW03eE1BVUFTYXhnWENWMlk0Z1FPMlc0cjdUcW4zOHVoUlVDWnJqSEUxdEhVREpiVDZ2bWdYeXRJVjA2NThoMmR5Q01kMnJ2bElQcUl5RFpUYW1KRk5MOEpxaVFja014aWhpd29nVldPRkNscGE5VUM3VVZiSDVNSVlYNFBCQlc4Z2hWRmRpcnExektHSjZYaDBkekpuZ0E?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T02:25:51.000Z",
-        "summary": "Alibaba to block employees from using Anthropic's Claude Code as US-China AI rivalry deepens Firstpost"
-      },
-      {
-        "title": "Market Chatter: Alibaba Group Employees Banned From Using Anthropic's Claude Code, to Use Proprietary Coding Platform Qoder - 富途牛牛",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOME41c04xTTlLNHd1Tkp1S3lncm5hNHIzMVJ0aG9nMXpVTTAtN0NjbzE3LUt2OFpST1BfYnhzRkpwR2V1RnhUTXh6ZkdNSGdEVWZqdFlHRmhJRGdYeEphS3NyLTk5azRRREZFT2w3SGRaT0xiTEFPbXBmSkpnUTllNHhfVmRrNGRPeGE4emM4SWFvOXNub25HUEFJOUxuSkZKMFhnU3VqR2NPVXpKTEE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T01:59:41.000Z",
-        "summary": "Market Chatter: Alibaba Group Employees Banned From Using Anthropic's Claude Code, to Use Proprietary Coding Platform Qoder 富途牛牛"
-      },
-      {
-        "title": "Alibaba reportedly bans Claude Code for employees, citing security concerns as China shifts toward domestic AI coding tools - digitimes",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxORjBQWTAzWVhFbFd2d1MwWF9NUXVWWmZwS19vRXV2Z1E3WUJhUy1tZ3JHVVRQZ0dpMnQ1SHpTZnpXYndsVHZoQkpObDlKdEtMZ1hBVUZIXzJKN1loM0dqUlFLS2czVEZuZ2ozNWJGQ193QmZNRFByREttZmpRb2tKRFFNRGdwVDl3Z1ZJTDRKS2Y4TnN4SFE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-06T01:18:11.000Z",
-        "summary": "Alibaba reportedly bans Claude Code for employees, citing security concerns as China shifts toward domestic AI coding tools digitimes"
+        "published": "2026-07-06T09:21:51.000Z",
+        "summary": "The 2026 AI Race, Explained: A Cheaper Claude, China's Bargain Model, and a Spy-Agency Warning Lower Bucks Times"
       },
       {
         "title": "What a Claude Skill Actually Is, Shown in One Real Folder",
@@ -536,18 +548,6 @@
         "published": "2026-05-31T22:27:11.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Opus 4.8 is Here — Should You Switch?",
-        "url": "https://www.youtube.com/watch?v=4wYQUn9H5Q8",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "4wYQUn9H5Q8",
-        "thumbnail": "https://i.ytimg.com/vi/4wYQUn9H5Q8/hqdefault.jpg",
-        "published": "2026-05-28T19:27:31.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -637,6 +637,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "What’s at the center of Claude’s mind?",
+        "url": "https://www.youtube.com/watch?v=rKV5JcALQoQ",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "rKV5JcALQoQ",
+        "thumbnail": "https://i.ytimg.com/vi/rKV5JcALQoQ/hqdefault.jpg",
+        "published": "2026-07-06T16:59:51.000Z",
+        "summary": ""
+      },
       {
         "title": "What a Claude Skill Actually Is, Shown in One Real Folder",
         "url": "https://www.youtube.com/shorts/tzkR0riE8x0",
@@ -954,17 +965,6 @@
         "video_id": "rA_UZS-EJpU",
         "thumbnail": "https://i.ytimg.com/vi/rA_UZS-EJpU/hqdefault.jpg",
         "published": "2026-05-29T18:28:38.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 4.8 is Here — Should You Switch?",
-        "url": "https://www.youtube.com/watch?v=4wYQUn9H5Q8",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "4wYQUn9H5Q8",
-        "thumbnail": "https://i.ytimg.com/vi/4wYQUn9H5Q8/hqdefault.jpg",
-        "published": "2026-05-28T19:27:31.000Z",
         "summary": ""
       }
     ],
@@ -1744,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "What’s at the center of Claude’s mind?",
+        "url": "https://www.youtube.com/watch?v=rKV5JcALQoQ",
+        "source": "YouTube · Anthropic",
+        "published": "2026-07-06T16:59:51.000Z",
+        "summary": ""
+      },
+      {
         "title": "What a Claude Skill Actually Is, Shown in One Real Folder",
         "url": "https://www.youtube.com/shorts/tzkR0riE8x0",
         "source": "YouTube · Pragati Kunwer",
@@ -2224,13 +2231,6 @@
         "url": "https://www.youtube.com/watch?v=rA_UZS-EJpU",
         "source": "YouTube · Ryan & Matt Data Science",
         "published": "2026-05-29T18:28:38.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 4.8 is Here — Should You Switch?",
-        "url": "https://www.youtube.com/watch?v=4wYQUn9H5Q8",
-        "source": "YouTube · Ryan & Matt Data Science",
-        "published": "2026-05-28T19:27:31.000Z",
         "summary": ""
       }
     ]
