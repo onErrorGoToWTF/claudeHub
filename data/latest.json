@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T15:55:49.733Z",
+  "generated_at": "2026-07-08T17:17:20.728Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,41 @@
     ],
     "news": [
       {
+        "title": "Google updates Android Bench with new LLMs, but Gemini still lags behind",
+        "url": "https://arstechnica.com/google/2026/07/google-revamps-android-ai-dev-benchmark-adds-fable-5-and-other-agents/",
+        "source": "Ars Technica",
+        "published": "2026-07-08T16:39:48.000Z",
+        "summary": "Code generation is emerging as one of the most popular applications for large language models (LLMs), but not all agents are equally good at all development tasks. Google created a benchmark earlier…"
+      },
+      {
+        "title": "UST Partners with Anthropic to Bring Claude into UST's Platforms, Engineering, and Operations and Train 20,000 UST Employees Globally - marketscreener.com",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOMFh3eGVwU0VOamFFTEtqVmR3YldiOXFxWFJIN1ZrMEJkUTR6QXgtLWpZdHdnYnhvN0prRDdENlBVTWZfYU53Wi1KNnEzUVBzWUJJWlFTSkpUejFxdkRXUnQ5LUhNd1g1bVZfZUhYSU5vc2x0RjNyUWVzenBoZ3RrT1JFZTZTVkxvOFhzWkxpUlM2dm1NcXNZM2dCY0ExYTQ3Vkk1T3RWdm42MWFhZUNtUGppRFRsMFd4Y2hxNWVjX1VXLVExUTJPNkEtV1d4OTYtMzRvcHpfcEpXS3d3aHBRTlpaRTZtQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-08T16:36:10.000Z",
+        "summary": "UST Partners with Anthropic to Bring Claude into UST's Platforms, Engineering, and Operations and Train 20,000 UST Employees Globally marketscreener.com"
+      },
+      {
+        "title": "Anthropic's fix for Fable 5's high cost is turning it into a manager that delegates to Sonnet 5 - the-decoder.com",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNcVpiM3J4ZEVLZlpVb3B6WUJwZ1h5SEppd0lyRTdSV1IySzRNRk9NV3RTRlRnNGM3VEhNMHdmY0V0dnhWODJtaXJieHpqcDRwWDJmbXBhRFVzMG1wY0dORmRvSng5VUVCdnZvZjJjcE1jaDF3RU9CbFV6dmZlNjNIWmRJZ3h2Sy1pc29seWg2LUdCVnNWZXltaEFucEtpM3dCeGpKRzN5aUh3ZzJOeVJzLTBhbEU4N21iSXc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-08T16:29:31.000Z",
+        "summary": "Anthropic's fix for Fable 5's high cost is turning it into a manager that delegates to Sonnet 5 the-decoder.com"
+      },
+      {
+        "title": "Claude Cowork Outperforms Gemini on Email Research Tasks - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPQWt2eFNMYzFWVE1uZk5HVTFqNW9SNDJaV2JIei1WSUpMTzdxQmhhY0FSdXdla0VQZm5DV2pYa2xCWGNjQkh3d1R1dXp2UmJ4M3JkOS1WYWRuN1pUTVJuREV2emQwSXJfanNUR2VvcDRGdlJPbS1oVzE5WmFPN24zdWhJeWtJT0RNeEQ5VjRYa3VLS2M?oc=5",
+        "source": "Google News",
+        "published": "2026-07-08T16:16:00.000Z",
+        "summary": "Claude Cowork Outperforms Gemini on Email Research Tasks The Tech Buzz"
+      },
+      {
+        "title": "Anthropic's Claude Fable 5 dominates new industry benchmarks at a steep premium - the-decoder.com",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNmJPb2EwdWxHcGd3NDFVenBpVV9HajRfbDQ4clFKZ2tzRHV0T0pEQjFlVTVGMzFCZEpzU1AxRmZtTWZ4Zm5LQmdmdW9RX01XR01lM0dFdmJrdWNOS1RGOVh0ZzhMV2RvM3FTb2p0aFZOOV80OTRRdXNYaV91eFF1RUtQRnJaakdVeVNBT1NOUlBUay1SRnJOOVF5REZQTDYwVG9BTlpR?oc=5",
+        "source": "Google News",
+        "published": "2026-07-08T16:04:26.000Z",
+        "summary": "Anthropic's Claude Fable 5 dominates new industry benchmarks at a steep premium the-decoder.com"
+      },
+      {
         "title": "China warns of ‘security backdoor’ in Anthropic AI coding tool - Macau Business",
         "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVk8wMVZtY0hWOWU3M3cyLXV2TF9ucm1vSDl0OTJPelV1RUNZeHBJYUI3QTF6SktLV25HRG0zWkZXMVplT2o2S0JjU3llTnliV2dnR2owQ0pVVW15elB2aHVSWjFPS0piUWVMTlNHNkI2cHdpRmxnaXFyV3U3VWV1bjNhXzU2alFiaWhreTVXZTQ?oc=5",
         "source": "Google News",
@@ -184,13 +219,6 @@
         "published": "2026-07-08T14:29:10.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "China issues 'backdoor' security alert over Anthropic's Claude Code - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTmtuYVZDY0RoM0VTUW1Sa3poM1pYOHlYbVJwRk1lOXNPM1QwX25uMnlrdVUxUnlqSEhXZzlrWUxFQkRRa21HeEJWR1ZrY2UzeVUwdHBmcFR5bDR1OHNIQjRHNTZUYjd0NzJzZjNsQzdqNXRBUDZDdW1wekdXU1ZHcjNlbVVvM1NiSnJVQmppV2I3ZDNnSXIyZDBWMTZPQzhWTTRNUHo2WnZ0TG9RMzhmdjdBQnRzbUts?oc=5",
-        "source": "Google News",
-        "published": "2026-07-08T14:28:25.000Z",
-        "summary": "China issues 'backdoor' security alert over Anthropic's Claude Code Reuters"
       },
       {
         "title": "Anthropic Brings Claude Cowork to Phones for Max Subscribers - Technology Org",
@@ -289,6 +317,13 @@
         "summary": "Claude Cowork expands to mobile and web as Anthropic reveals what people actually use it for TechRadar"
       },
       {
+        "title": "China warns of \"security backdoor\" in Anthropic AI coding tool - CBS News",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQWHlvQ0t3R3I5NWtGdW1SZlpMVVdka2xtT1FtLXdPRXdSN3cxYzdleEllMGRWNXR6RnN1YUZuNFZLUkRhbWtqY0hjTFN1b2lzYV96OElSZi1tX2F6WGRsaE1BNVRVQmhzazY1TGcwTmJRV0ZUbkFtQzhzZTlYdHFsVWVJalY?oc=5",
+        "source": "Google News",
+        "published": "2026-07-08T11:10:14.000Z",
+        "summary": "China warns of \"security backdoor\" in Anthropic AI coding tool CBS News"
+      },
+      {
         "title": "China warns of security risks in Anthropic’s AI tool, impacting market confidence - Crypto Briefing",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNRVZFM0E0SFE2QmJqOXVYQnY2cXhtSFpJeDBHNFlCWkNBQVJnbmZWRndJNk9UR2k2X2tEUU9mUWJSS0lJdTM0cUF2VUlKMnVWc2JSYWd2cDNHZHY5alplUXRuOHdESmxZX2ZsRU1vb3JaSnVDeExOX0RBZTJxVDFwa2VRUkxjazRmd1hjSDR3ZW5xR18zSF9Id2Z4bGl3MXJpYVZvbk9nbURndDA?oc=5",
         "source": "Google News",
@@ -308,41 +343,6 @@
         "source": "Google News",
         "published": "2026-07-08T10:28:33.000Z",
         "summary": "China Says It Has Found Security Vulnerabilities in Anthropic’s Claude Code | Technology News (HT Tech) Hindustan Times"
-      },
-      {
-        "title": "China issues security alert on Anthropic's Claude Code, flags 'backdoor' risk that can leak your... - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOYWZaR183QklGSVVLM0ZFY1ZhUlF2Rnk2MUZtWHVtQ19pSHRyX203aHczWFVRbmYtcENsQTJfV0pzMTJGOXRXSnpfQklOanlESkxFMXFsWnk3bzFOalo3MFBJS3BUbl92Mjh5WVRUUEd6enhNMGpEOE95WGs3Z3p4a0p1OHJSU191LVFIZXR4VFVGOUVTczVNeU5xQ08xMlcwX0pCTnVxNVBIQWI2UXF4Zl9iY01hQjZzTHV1ZzFmQ1FJd0RJeDlqMUtfVFYxbnZIOUpFRW9RWDFzeUpSMXBOZS1kMnk4bC1nZENyeEtJTVd6RlA1aWdiQjZ1TUw1LWtmU29HZkVid9IBjAJBVV95cUxPQTNGOTZYVEpycVlBNW43dHd3cVBDeVY0U3dZYTRmdzJJWVlfemhCUGhGQUhnQkI1RUV1Nlk1alJkc1IwZDZZd3dfQVVVclBycFBOaFVJdkNWa2VuVzVHempzV1dRSHQ2M2xOOVlXb0F0dXRsYTEySkpPaFA0c0VXd2dOYU1MVDVGZ2xtWVdYZXVYaDRtdUFrV1dfMElTUUM2aDdoeFpzaTFPZHlsTjY1X0daVEEzRmVIQndNZnV3SEpQdjV3LTFDaE1qWW5aVU1vOExoNVN3clp0b0p1Qnh3aExFdlFtNWxzeFZldWJaalE0LTFUSUV2UEEtUEFvVlUtTlhRc0FXZGxHREhs?oc=5",
-        "source": "Google News",
-        "published": "2026-07-08T10:16:00.000Z",
-        "summary": "China issues security alert on Anthropic's Claude Code, flags 'backdoor' risk that can leak your... The Times of India"
-      },
-      {
-        "title": "China warns of alleged ‘backdoor’ risk in Anthropic's Claude Code - Storyboard18",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNckJuekJzVFpkYzJhU1YwLU9KR0dtLWxkcUFtSzhiWnBWekFUQkxXaUZMUW4yTnh2ZlNqYWhTb21KTV9Wc1ZDdFVxakRUbHJsWHJiR2dJVzZRTXlHYUk0a1FQb1ZRR1RvQXJ0T0VYcUplSk9JNWFmckdCcEg2M2M4aGNmdTgtR0hBc2Nqc05pckNsYjhaZUpSaHo2MkQ4eS16N0dOMnBFZFIySDJ1dmR4UWdtTTB0Z9IBuwFBVV95cUxPZXN0THdhd1o3elRWUmRlRUZsV3Fsa2JTX19hcS1OeE83QWUwdnJycVdWcjRtM2NVdHhDMnF3WDlncTJHdU9JTEJ6OWtsbDhWUlpGbHo2QXBDd0lITHhtWnZpZ05zU2ZGczNqQUtEUXhlOFp3TTNTamxUT24xYXREYU5FVFhHTER2VWwwQ1lpZXFYZE5ObjZaOWpXQ3FaV2JBMnMwTjBXOTU4VVJmUjh5LUZSajRhd3Q0T0Vj?oc=5",
-        "source": "Google News",
-        "published": "2026-07-08T09:38:31.000Z",
-        "summary": "China warns of alleged ‘backdoor’ risk in Anthropic's Claude Code Storyboard18"
-      },
-      {
-        "title": "Microsoft finds Claude too expensive and opts for its own in-house AI models - Techzine Global",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNUjdOM1p6ekg3VEFOS1hDZ2pWWk01ZVR2bThGVUV6S3Q3d1RpZWJfQW5GVzh1c2ctZUpGUE5XNktqOWFhNThFdFFiS05sRnlKOGprR05TeU1zeHhwNDNHYms2WnRBT0d6VkluOXFYOGJLX0k2a1dkUURSLXdRbmpXYWxYbzdfY3o4QTZsdGhMaEd0QVA0NTN2U2RseVVPcTROQVhSRVRDdElyTFlmdE53NjNlb0ZXV091SVZ1RWFLSEJ4cm56?oc=5",
-        "source": "Google News",
-        "published": "2026-07-08T09:28:30.000Z",
-        "summary": "Microsoft finds Claude too expensive and opts for its own in-house AI models Techzine Global"
-      },
-      {
-        "title": "China issues backdoor security risk over Anthropic's Claude Code - Seeking Alpha",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQOVpkbE5fY0xMMkVnMVZUZnpxQWxNMlI4WEtFb2VxVzBaX1ROcVdtZmo1V3pjckZneU5iZWg0UURNZjZlZmlOLXFRdS1pUVd3OWswQkRWT1ExQ2o3emlpemJlMVUzN0p4R2d6SUgtQ1Z2bWNyMm8zZHJTWUh2SG1mYnBsYnhiU2liWFFZWVlEXzlrenlFZFp5aVdUUTJJN2VkbUI0?oc=5",
-        "source": "Google News",
-        "published": "2026-07-08T09:07:35.000Z",
-        "summary": "China issues backdoor security risk over Anthropic's Claude Code Seeking Alpha"
-      },
-      {
-        "title": "China says Anthropic's AI coding tool secretly tracks users and sends data to remote servers - Cybernews",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQb0Q4REI1RVR4alB4aTNHVnN6cWI2eEp3NlA1dWc0dUlVQ1g0ZXhpMmNOaHdQa2lDVEYybEdZemtMSzFXVm5iejM5VzZ3OUpxMWpYdmFBbVB2UGd4Z2tLbHB3MU9DYmJxVFRVMDhPN1hpOTU1ZllIM2hZY0hUTnZCcUJmWFhiRXZOcFFz?oc=5",
-        "source": "Google News",
-        "published": "2026-07-08T09:01:46.000Z",
-        "summary": "China says Anthropic's AI coding tool secretly tracks users and sends data to remote servers Cybernews"
       },
       {
         "title": "Claude Fable 5 Just Changed Design Forever",
