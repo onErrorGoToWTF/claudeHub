@@ -1,8 +1,36 @@
 {
-  "generated_at": "2026-07-08T19:01:29.131Z",
+  "generated_at": "2026-07-08T20:52:53.408Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Assistant Axis",
+        "url": "https://www.anthropic.com/research/assistant-axis",
+        "source": "Anthropic Research",
+        "published": "2026-07-08T20:11:22.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Persona Selection Model",
+        "url": "https://www.anthropic.com/research/persona-selection-model",
+        "source": "Anthropic Research",
+        "published": "2026-07-08T20:10:45.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Emotion Concepts Function",
+        "url": "https://www.anthropic.com/research/emotion-concepts-function",
+        "source": "Anthropic Research",
+        "published": "2026-07-08T20:09:59.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Golden Gate Claude",
+        "url": "https://www.anthropic.com/news/golden-gate-claude",
+        "source": "Anthropic",
+        "published": "2026-07-08T20:08:28.000Z",
+        "summary": ""
+      },
       {
         "title": "Anthropic Interviewer",
         "url": "https://www.anthropic.com/research/anthropic-interviewer",
@@ -114,37 +142,23 @@
         "source": "Anthropic Research",
         "published": "2026-06-26T12:35:41.000Z",
         "summary": ""
-      },
-      {
-        "title": "Making Claude a Chemist",
-        "url": "https://www.anthropic.com/research/making-claude-a-chemist",
-        "source": "Anthropic Research",
-        "published": "2026-06-26T12:35:06.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Core Views on Ai Safety",
-        "url": "https://www.anthropic.com/news/core-views-on-ai-safety",
-        "source": "Anthropic",
-        "published": "2026-06-26T12:34:51.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Critical Infrastructure Defense",
-        "url": "https://www.anthropic.com/research/critical-infrastructure-defense",
-        "source": "Anthropic Research",
-        "published": "2026-06-26T12:34:02.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Exploit",
-        "url": "https://www.anthropic.com/research/exploit",
-        "source": "Anthropic Research",
-        "published": "2026-06-26T12:33:25.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic hits back after China warns of Claude Code ‘backdoor’ risks - South China Morning Post",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOellSU2ZVblNId0lhN2FnNXdkUjBkT2FhaUpEeUdNTkRHT0VjSC1IekFGVWtCVGpOTHRPYzZlYXZNMEVEZnZUSXBVMlluNHZVNGpwLVB4T3pQQWhmU3owZHdyWG16bkJ5OGNoQkZmRU1mSVp4NFFibnFCZEZ0MDdUNWpNTjhJRnh4Yk9TOE5ZZ2wwVkwwZ19vdTZoRGlvcmx0aVFKTVA3WTFTWXdaLTFCbF9n0gGyAUFVX3lxTFBsYk56aHEyeGRpdW9fbzBCSFl5dXNlTm9kSVF3c1k1aElJWVhWaDFFcE14M2ptVTBlbGpMdFdvOENxTmNQeThXeFhzb3llTjNkREl4YnQ3UkRPOFQtNk1yVzZlMzBVLUc1ZDhqZy1XU3ZCRnFJRnpjVWRNbnI0UTFZdlhBalhFRkpVWFlDNzh0QVVGVHdYYjBKb1F6c2hubkxBdUxQMWh2ZEVOblRfVFpiQXc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-08T20:41:55.000Z",
+        "summary": "Anthropic hits back after China warns of Claude Code ‘backdoor’ risks South China Morning Post"
+      },
+      {
+        "title": "China warned that Anthropic's Claude Code puts your data at risk. Is that true? - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSzh3RjljVWVKMzNkcVEyVV9Ga1p5bEstNW9URTN2dlkzTWZ3T1J3M0dxN0pGa1hNS05MeFh0cGJzM3NMdUdaeVYxdXRQOEFjTUdpOTdIam43eDVPRzUwTXVhdE84b0NmOWZLSlluWGJoM05iUTBEYjlMcGViR0lGUlN2Mms4WFNfelExUHRLOWthekx2dkNaLXhmandtUEpubmN4SkJKY20xb3dndXRRa29kejBaV2VZemYwQVBuRlc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-08T20:39:51.000Z",
+        "summary": "China warned that Anthropic's Claude Code puts your data at risk. Is that true? Yahoo Finance"
+      },
       {
         "title": "Lerer Hippeau Seeing Second Generation of AI Startups",
         "url": "https://www.bloomberg.com/news/videos/2026-07-08/lerer-hippeau-seeing-second-generation-of-ai-startups-video",
@@ -242,6 +256,13 @@
         "_kind": "news_video"
       },
       {
+        "title": "China issues 'backdoor' security alert over Anthropic's Claude Code - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTmtuYVZDY0RoM0VTUW1Sa3poM1pYOHlYbVJwRk1lOXNPM1QwX25uMnlrdVUxUnlqSEhXZzlrWUxFQkRRa21HeEJWR1ZrY2UzeVUwdHBmcFR5bDR1OHNIQjRHNTZUYjd0NzJzZjNsQzdqNXRBUDZDdW1wekdXU1ZHcjNlbVVvM1NiSnJVQmppV2I3ZDNnSXIyZDBWMTZPQzhWTTRNUHo2WnZ0TG9RMzhmdjdBQnRzbUts?oc=5",
+        "source": "Google News",
+        "published": "2026-07-08T14:28:25.000Z",
+        "summary": "China issues 'backdoor' security alert over Anthropic's Claude Code Reuters"
+      },
+      {
         "title": "Anthropic Brings Claude Cowork to Phones for Max Subscribers - Technology Org",
         "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9DRV8wR3g2ang2VElBVTdRaGtkRllmc0RjTW8tcVh5LWFIMmE0aE5IeFVqc1lyUHFVaE8xUHdydldocXo0YUlYZ0xKeW9waFZUeUNmOWlMQllIM3d6dEdXS0tRWHNNS2M2S0NqZDBfUXlSYmNjdGJMYlVn?oc=5",
         "source": "Google News",
@@ -270,11 +291,11 @@
         "summary": "China tells devs to ditch Claude Code over 'backdoor code' fears The Register"
       },
       {
-        "title": "Factbox-Major AI models at a glance - Yahoo! Finance Canada",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPdVhaZHZyRm5YSnZRS0dTdVpkMmFGTlJuREQ5cjkzbjZ5RmNsbnVfUU4tQk1yenNrYmhqeHMwTHI2WTY5ek9EcjkxWFFPMlJYY1dqeEZKby1Zb0N4c3NYZGJxdlpWVThzVXdCMF9meHJseExQQ2laeTlYc2ZWZUVha3lOa3pfdw?oc=5",
+        "title": "China Advises Developers to Remove Vulnerable Claude Code - Let's Data Science",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPaUMxSHlWYWdHU2ZFa0RSMnduN0xvbjFjUUs0SjZydUczNlNrczhYV0l3ZW40TDB2UFA2WnFEdGt4d0FoZDJaZjJSOW92WmFMOVBsbUdyLWFGdEI4anhZaXo0TVd3dTItbGk3eXY1VHlyTjBXcFUxeXJqbTJsbUZIdDlIeGFGQVI4NXgtQXE3UVBIeVJtLVYyekRUbGRJNmxB?oc=5",
         "source": "Google News",
-        "published": "2026-07-08T13:54:39.000Z",
-        "summary": "Factbox-Major AI models at a glance Yahoo! Finance Canada"
+        "published": "2026-07-08T13:58:07.000Z",
+        "summary": "China Advises Developers to Remove Vulnerable Claude Code Let's Data Science"
       },
       {
         "title": "Claude Fable Redesigned our App! (and we got blocked 😡)",
@@ -287,6 +308,13 @@
         "published": "2026-07-08T13:00:28.000Z",
         "summary": "",
         "_kind": "news_video"
+      },
+      {
+        "title": "UST Partners with Anthropic to Bring Claude into UST's Platforms, Engineering, and Operations and Train 20,000 UST Employees Globally - Morningstar",
+        "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxQSm5ZQ3dGMTU4d19nY0pYR2trQzRqS3dBd3U5Z2NvOGlTbEUyTTNRUXJ0eEdEVTc5TDJhZTM4emszdmhuYng0UUFmVDQyM0tNNGctVWtkQUFRdUMzNzFua2VVZ3dqNDhUUUtrRFNIREFYWVJzSl9SX2J6Y1RFOXA5YTNPQzdpMFpHMHA2X290QXpBVzlxcTF3MWpyT1F1M3NqZTQxaWpLZWxlcHdWWkFIaGhvdjV4dzNTdTc4Zl9aRHdzMU1QNy1HejZIa2prZFh2NmhES2NTZHRQVHBSRTlDMnpuNjJieDlMdVlnRklHc2tFbGlPLXA2ZjdjUUJYOUpPaUd5YmJFUFd2SVpSeXV0OTN4a0ZaYmVMa1E?oc=5",
+        "source": "Google News",
+        "published": "2026-07-08T13:00:00.000Z",
+        "summary": "UST Partners with Anthropic to Bring Claude into UST's Platforms, Engineering, and Operations and Train 20,000 UST Employees Globally Morningstar"
       },
       {
         "title": "The U.S. Government Is Now Using Anthropic’s AI to Hunt Bugs in Its Own Code - 24/7 Wall St.",
@@ -315,34 +343,6 @@
         "source": "Google News",
         "published": "2026-07-08T12:00:00.000Z",
         "summary": "Claude Cowork expands to mobile and web as Anthropic reveals what people actually use it for TechRadar"
-      },
-      {
-        "title": "China warns of \"security backdoor\" in Anthropic AI coding tool - CBS News",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQWHlvQ0t3R3I5NWtGdW1SZlpMVVdka2xtT1FtLXdPRXdSN3cxYzdleEllMGRWNXR6RnN1YUZuNFZLUkRhbWtqY0hjTFN1b2lzYV96OElSZi1tX2F6WGRsaE1BNVRVQmhzazY1TGcwTmJRV0ZUbkFtQzhzZTlYdHFsVWVJalY?oc=5",
-        "source": "Google News",
-        "published": "2026-07-08T11:10:14.000Z",
-        "summary": "China warns of \"security backdoor\" in Anthropic AI coding tool CBS News"
-      },
-      {
-        "title": "China warns of security risks in Anthropic’s AI tool, impacting market confidence - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNRVZFM0E0SFE2QmJqOXVYQnY2cXhtSFpJeDBHNFlCWkNBQVJnbmZWRndJNk9UR2k2X2tEUU9mUWJSS0lJdTM0cUF2VUlKMnVWc2JSYWd2cDNHZHY5alplUXRuOHdESmxZX2ZsRU1vb3JaSnVDeExOX0RBZTJxVDFwa2VRUkxjazRmd1hjSDR3ZW5xR18zSF9Id2Z4bGl3MXJpYVZvbk9nbURndDA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-08T11:06:34.000Z",
-        "summary": "China warns of security risks in Anthropic’s AI tool, impacting market confidence Crypto Briefing"
-      },
-      {
-        "title": "China Says It Has Found Security Vulnerabilities in Anthropic’s Claude Code | Technology News (HT Tech) - Hindustan Times",
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNRXRCb3drTUFPMlp6SkFPazV2aVRncTI3bGpNN1ZzSUNLbUVGdkdHSS1yeUlqaHNSemFjOVljMVlQTVVjMEdVbExFTjZPNjRQalNkTlluUWdpOU1RYm42Zl9NUVVVYW15S2NxRFVDOXhuaFd2V21LVElnTEZZMG9CV3ROWWllOGRUOVFfRHBrTnd2RG03MUFRajd6MmtrdGxUaHVHUXZnSHFHUjl4Y3IxNjMtaHRRamJYeHhCUjIteGs2SEJielpSdWRjNVZxM3NlMXJVSNIB2gFBVV95cUxNbnhoMS14T1J6dzBHd1lTOXlCMTZIQ0hJbXNKazVZS0RKdnJ4UGtDQmxpOGZ1ZzZCaFBHY2t0cU4zeF9wel9yWFhOcjktVk91b3A5V1ZLUG9KNFBvY0JKYTliLVVCdFpOdzNzMDU3U0NTaWZGTDAtU3psb3hvVTlfY0lnZ1pwOUJBUWZTRlNDdzFuNXhOLWd1SkhWc29VaGRGR0s4UmVVU3JsX0NlemU0cVdZQXd5QWdQeHE5R0F0dk9IWWtRY0lrdWlhU09qdGxrMnRzSkxrUWZldw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-08T10:28:33.000Z",
-        "summary": "China Says It Has Found Security Vulnerabilities in Anthropic’s Claude Code | Technology News (HT Tech) Hindustan Times"
-      },
-      {
-        "title": "China issues security alert on Anthropic's Claude Code, flags 'backdoor' risk that can leak your... - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOYWZaR183QklGSVVLM0ZFY1ZhUlF2Rnk2MUZtWHVtQ19pSHRyX203aHczWFVRbmYtcENsQTJfV0pzMTJGOXRXSnpfQklOanlESkxFMXFsWnk3bzFOalo3MFBJS3BUbl92Mjh5WVRUUEd6enhNMGpEOE95WGs3Z3p4a0p1OHJSU191LVFIZXR4VFVGOUVTczVNeU5xQ08xMlcwX0pCTnVxNVBIQWI2UXF4Zl9iY01hQjZzTHV1ZzFmQ1FJd0RJeDlqMUtfVFYxbnZIOUpFRW9RWDFzeUpSMXBOZS1kMnk4bC1nZENyeEtJTVd6RlA1aWdiQjZ1TUw1LWtmU29HZkVid9IBjAJBVV95cUxPQTNGOTZYVEpycVlBNW43dHd3cVBDeVY0U3dZYTRmdzJJWVlfemhCUGhGQUhnQkI1RUV1Nlk1alJkc1IwZDZZd3dfQVVVclBycFBOaFVJdkNWa2VuVzVHempzV1dRSHQ2M2xOOVlXb0F0dXRsYTEySkpPaFA0c0VXd2dOYU1MVDVGZ2xtWVdYZXVYaDRtdUFrV1dfMElTUUM2aDdoeFpzaTFPZHlsTjY1X0daVEEzRmVIQndNZnV3SEpQdjV3LTFDaE1qWW5aVU1vOExoNVN3clp0b0p1Qnh3aExFdlFtNWxzeFZldWJaalE0LTFUSUV2UEEtUEFvVlUtTlhRc0FXZGxHREhs?oc=5",
-        "source": "Google News",
-        "published": "2026-07-08T10:16:00.000Z",
-        "summary": "China issues security alert on Anthropic's Claude Code, flags 'backdoor' risk that can leak your... The Times of India"
       },
       {
         "title": "Claude Fable 5 Just Changed Design Forever",
@@ -563,11 +563,25 @@
     ],
     "status": [
       {
+        "title": "Degraded performance for Claude Code on the web, Cowork Remote, Claude Tag, and Claude Code Review sessions",
+        "url": "https://status.claude.com/incidents/rvb96c56gn6k",
+        "source": "Claude Status",
+        "published": "2026-07-08T19:41:28.000Z",
+        "summary": "Jul 8 , 19:41 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jul 8 , 19:07 UTC Investigating - We are currently investigating a performance issue affecting features…"
+      },
+      {
         "title": "Elevated errors on multiple models",
         "url": "https://status.claude.com/incidents/dcxc66flmxbd",
         "source": "Claude Status",
-        "published": "2026-07-08T18:28:14.000Z",
-        "summary": "Jul 8 , 18:28 UTC Identified - We have identified an issue causing elevated errors on requests to some models, and our team is working to resolve this issue as quickly as possible. We will provide…"
+        "published": "2026-07-08T19:29:46.000Z",
+        "summary": "Jul 8 , 19:29 UTC Identified - We are continuing to work to fully resolve errors impacting some requests, and will provide an additional update as soon as possible. Jul 8 , 19:05 UTC Monitoring - At…"
+      },
+      {
+        "title": "Issues authorizing to MCP Servers",
+        "url": "https://status.claude.com/incidents/4y9nybhbljfc",
+        "source": "Claude Status",
+        "published": "2026-07-08T19:00:00.000Z",
+        "summary": "Jul 8 , 19:00 UTC Resolved - Users are unable to send authorized requests to MCP servers."
       },
       {
         "title": "Elevated errors on Claude Sonnet 5",
@@ -631,20 +645,6 @@
         "source": "Claude Status",
         "published": "2026-07-02T01:19:36.000Z",
         "summary": "Jul 2 , 01:19 UTC Resolved - This incident has been resolved. Jul 2 , 00:58 UTC Identified - The issue has been identified and a fix is being implemented. Jul 2 , 00:38 UTC Investigating - We are…"
-      },
-      {
-        "title": "We’ve suspended access to Claude Mythos 5 and Claude Fable 5",
-        "url": "https://status.claude.com/incidents/s9w82lp9dcn9",
-        "source": "Claude Status",
-        "published": "2026-07-01T19:26:26.000Z",
-        "summary": "Jul 1 , 19:26 UTC Resolved - Learn more here: https://anthropic.com/news/redeploying-fable-5 Jun 13 , 00:50 UTC Monitoring - Learn more here: https://anthropic.com/news/fable-mythos-access"
-      },
-      {
-        "title": "Elevated error rates on Opus 4.8",
-        "url": "https://status.claude.com/incidents/7ykkywg6yln4",
-        "source": "Claude Status",
-        "published": "2026-06-30T15:28:26.000Z",
-        "summary": "Jun 30 , 15:28 UTC Resolved - This incident has been resolved. Jun 30 , 14:45 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jun 30 , 14:31 UTC Investigating - We are…"
       }
     ],
     "youtube": [
