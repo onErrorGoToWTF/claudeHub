@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-07-08T22:52:30.815Z",
+  "generated_at": "2026-07-09T01:29:00.476Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Off Switch Dual Use",
+        "url": "https://www.anthropic.com/research/off-switch-dual-use",
+        "source": "Anthropic Research",
+        "published": "2026-07-08T22:56:51.000Z",
+        "summary": ""
+      },
       {
         "title": "Strategic Warning for Ai Risk Progress and Insights From Our Frontier Red Team",
         "url": "https://www.anthropic.com/news/strategic-warning-for-ai-risk-progress-and-insights-from-our-frontier-red-team",
@@ -135,13 +142,6 @@
         "source": "Anthropic Research",
         "published": "2026-07-08T22:00:39.000Z",
         "summary": ""
-      },
-      {
-        "title": "Constitutional Classifiers",
-        "url": "https://www.anthropic.com/research/constitutional-classifiers",
-        "source": "Anthropic Research",
-        "published": "2026-07-08T21:59:48.000Z",
-        "summary": ""
       }
     ],
     "news": [
@@ -149,7 +149,7 @@
         "title": "China Warns of Backdoor in Anthropic’s Claude Code Amid Rising AI Geopolitics - Security Boulevard",
         "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOTkdFQ2tEa25pS19oZE82aHNMYnBPMUw1Y0lCR08zcURZUVZHZDc0eEV1V3c1YWp3SThoQzdfbmF4X01UdlpmdFdlUGZSWHJvX0d1X19NWUd6QnJCVWlfc0E2VWk2RnJjbURud09HUjVEZVctNEViZUctOUZFVUV2dHRObEZJUGdic3VvRTM2blZ5dUF6Tm0ySV80R0Z5Z0NXbm5uRTE5dmtoX0x5SnpvNkVkenVWdw?oc=5",
         "source": "Google News",
-        "published": "2026-07-08T22:42:43.000Z",
+        "published": "2026-07-08T22:50:08.000Z",
         "summary": "China Warns of Backdoor in Anthropic’s Claude Code Amid Rising AI Geopolitics Security Boulevard"
       },
       {
@@ -186,6 +186,20 @@
         "source": "Google News",
         "published": "2026-07-08T20:41:55.000Z",
         "summary": "Anthropic hits back after China warns of Claude Code ‘backdoor’ risks South China Morning Post"
+      },
+      {
+        "title": "China warned that Anthropic's Claude Code puts your data at risk. Is that true? - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSzh3RjljVWVKMzNkcVEyVV9Ga1p5bEstNW9URTN2dlkzTWZ3T1J3M0dxN0pGa1hNS05MeFh0cGJzM3NMdUdaeVYxdXRQOEFjTUdpOTdIam43eDVPRzUwTXVhdE84b0NmOWZLSlluWGJoM05iUTBEYjlMcGViR0lGUlN2Mms4WFNfelExUHRLOWthekx2dkNaLXhmandtUEpubmN4SkJKY20xb3dndXRRa29kejBaV2VZemYwQVBuRlc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-08T20:39:51.000Z",
+        "summary": "China warned that Anthropic's Claude Code puts your data at risk. Is that true? Yahoo Finance"
+      },
+      {
+        "title": "Anthropic Intros Lower-Cost Claude Sonnet 5 - THE Journal: Technological Horizons in Education",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOX2NkTlptUDVjeDdzblpJb1FLdWdsM1BlNktVYldYMS1maHdmdVV0MXZjQjZ3RHBXMC03bHhJQlduWnJIVXhqbFR6T1RJRk10a3lZbElTdWtoUkZ5WUUteWZfZi1QVGpxUmRaZjRKcXFaTjA5TTdCZEI2VllkZ1k3R1FpXzd3dmo4MEJaaVV6TFpzZldSV0E?oc=5",
+        "source": "Google News",
+        "published": "2026-07-08T20:11:46.000Z",
+        "summary": "Anthropic Intros Lower-Cost Claude Sonnet 5 THE Journal: Technological Horizons in Education"
       },
       {
         "title": "Introducing Claude apps gateway for AWS - Amazon Web Services (AWS)",
@@ -249,13 +263,6 @@
         "source": "Google News",
         "published": "2026-07-08T16:04:26.000Z",
         "summary": "Anthropic's Claude Fable 5 dominates new industry benchmarks at a steep premium the-decoder.com"
-      },
-      {
-        "title": "China warns of ‘security backdoor’ in Anthropic AI coding tool - Macau Business",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVk8wMVZtY0hWOWU3M3cyLXV2TF9ucm1vSDl0OTJPelV1RUNZeHBJYUI3QTF6SktLV25HRG0zWkZXMVplT2o2S0JjU3llTnliV2dnR2owQ0pVVW15elB2aHVSWjFPS0piUWVMTlNHNkI2cHdpRmxnaXFyV3U3VWV1bjNhXzU2alFiaWhreTVXZTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-08T15:50:04.000Z",
-        "summary": "China warns of ‘security backdoor’ in Anthropic AI coding tool Macau Business"
       },
       {
         "title": "Anthropic finally, officially launches Claude Sonnet 5 - Mashable",
@@ -324,13 +331,6 @@
         "source": "Google News",
         "published": "2026-07-08T14:01:12.000Z",
         "summary": "AI May Be Progressing Too Fast, Anthropic Suggests Technology Org"
-      },
-      {
-        "title": "China tells devs to ditch Claude Code over 'backdoor code' fears - The Register",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPcWNYdzFQeG80QXBFYTdWZ0FyM0V5U1VaSXdIc05Od1JMa2N2RUNJTUhuc2l0QV9MRlk4cTZaWVBheW5CQ29pLU1zRFBqRUpCY3c3c3pCUHFfMjRtWFdVd3BpVHBVZzkyeF9tUm9KdFdHUFljOUJBcE94OTJnVVlxYXNseVJYaUtNTTZEckxrbEh2TzRmSm5hYmkxZDJUdkcwX2lIRUZTNnN5QmJE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-08T13:58:07.000Z",
-        "summary": "China tells devs to ditch Claude Code over 'backdoor code' fears The Register"
       },
       {
         "title": "Claude Fable Redesigned our App! (and we got blocked 😡)",
