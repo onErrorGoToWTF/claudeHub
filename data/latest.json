@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-07-09T23:00:01.241Z",
+  "generated_at": "2026-07-10T01:26:40.322Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Ust Claude",
+        "url": "https://www.anthropic.com/news/ust-claude",
+        "source": "Anthropic",
+        "published": "2026-07-10T00:37:25.000Z",
+        "summary": ""
+      },
       {
         "title": "Golden Gate Claude",
         "url": "https://www.anthropic.com/news/golden-gate-claude",
@@ -135,22 +142,43 @@
         "source": "Anthropic Research",
         "published": "2026-07-08T22:08:50.000Z",
         "summary": ""
-      },
-      {
-        "title": "Estimating Productivity Gains",
-        "url": "https://www.anthropic.com/research/estimating-productivity-gains",
-        "source": "Anthropic Research",
-        "published": "2026-07-08T22:07:23.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "SpaceX Chief Elon Musk Says Anthropic Is ‘Clear AI Leader’ — Vows Not To Sabotage Compute Deal Despite Rivalry - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPWGF3bzVkSFR6RHpMZ2luUU5HNUY0MTBnVVlteU5qSzMtYWRxMGNUUDAzSFRtaWFSUjNDekFmZ3hEOGp0R3pMbVJOZmJ3dk9RNXdSZTRFWlJTYkJGZlJiajEwZVdrNGY0M2NKN3R2dGsyQjBrWTdWR2hzUDk1NjlyQVFLdHowQTNhdFpiQXBXQjlLZ0RmcFE?oc=5",
+        "title": "China Warns of “Backdoor” Security Risk in Anthropic’s Claude Code - Technology Org",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOdVFrbTBnNUdXbUt2UjNfMmtOSFJfR3RSSmVud2ZNTzVlNDhpQkpaZlpuU0FTRTUtU09VYV9PLTZ4S1VDekphaUR6TDJMdUNTb3JmUjdhMjVKSE5RZXM2aG1UZ3lSdHh2bDhqY0ZuNExLR1MzQjJvWTQ5ZGJzVEZDZXZoa1VyQko3R3hR?oc=5",
         "source": "Google News",
-        "published": "2026-07-09T22:06:46.000Z",
-        "summary": "SpaceX Chief Elon Musk Says Anthropic Is ‘Clear AI Leader’ — Vows Not To Sabotage Compute Deal Despite Rivalry Yahoo Finance"
+        "published": "2026-07-10T00:31:00.000Z",
+        "summary": "China Warns of “Backdoor” Security Risk in Anthropic’s Claude Code Technology Org"
+      },
+      {
+        "title": "Kristen Swanson to lead Anthropic Education Labs | ETIH EdTech News - EdTech Innovation Hub",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOLXZVX1lqMjl2bkhEUWdLZlBBOE9BTEZ3UG9TeEVtSk5udDA2c1NFd3hfd1lTQTkxUGt1MkZ4NlQ4NzltVG02WmJ1a2pTN2Zva1NDYW1FN0Z4V3Y1YmVzMnA1LU9EdFFna0o4cXhUQ3RWYnE4MEdXUS1IdGZWczZqSks0Rk5IdUVkYVZ1X09CYmphZE5NZG14Tk4tMVlFaF9P?oc=5",
+        "source": "Google News",
+        "published": "2026-07-10T00:30:26.000Z",
+        "summary": "Kristen Swanson to lead Anthropic Education Labs | ETIH EdTech News EdTech Innovation Hub"
+      },
+      {
+        "title": "OpenAI unveils long-awaited \"super app\" as rivalry with Anthropic intensifies - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1wemJKWTFORXd6YmVORDljMUFEUGZmMlllRmlfX0lSRGpicmFuRmQ2NFNwV0hNWnhrZmZsamZGMXYyM1JGemZ0ODBnaXo0anRwZk81RzA3ZmY2VkZMYnVld2dHQV9FUFNEYjd3Sy1HNmUtdnRIbkx6Mnc0ZDVfQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-09T23:08:18.000Z",
+        "summary": "OpenAI unveils long-awaited \"super app\" as rivalry with Anthropic intensifies Reuters"
+      },
+      {
+        "title": "Musk Vows Not to Cut Anthropic Access Despite $40B Stakes - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQUUxCUUhYd19uNDY5MlR0RDFfNGVHc1RCemEyZDdWcE5MQWNURmg4N2NzMnpJMDVrZGhiZ3lBT0d2SGRFOEs3YWYzTTYtb0plVkUyNnpRWko5RVN4bGdvSnBjcVAxdW1DcHhsaERSd2t4UkNCZmxxQVBsXzlFYjg2OHhsSFFQbXo4UlpZVnhHXzBGYXM?oc=5",
+        "source": "Google News",
+        "published": "2026-07-09T22:46:00.000Z",
+        "summary": "Musk Vows Not to Cut Anthropic Access Despite $40B Stakes The Tech Buzz"
+      },
+      {
+        "title": "SpaceX Chief Elon Musk Says Anthropic Is ‘Clear AI Leader’ — Vows Not To Sabotage Compute Deal Despite Rivalry - Stocktwits",
+        "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNd1liRk90N2lVNmFVcjFrQW90N2k1Y09xdFlaN3VZMXJBT2xoTW5yUEtQWEpla3VPNnNoRjVseDVpOUtmZm1zTVlCNWFJVnhKRWVJNU9RNTVES2JrYjI1b0E5QUVVODJqNXYxN0t3NS0wSmtDUFFDWEZnMjBBSVlFX1F0ZlRaNTQtekp0Wk51YnctSndfRmFfdGlIcjRTdnJINUVSRG9CN3lLdXZBX3BLUTVZYVhMUzE1RzJIcld2S241dzlSdVRiZmdFOFQzUGZGMXpsRi1ETFFNYXR4TW81SGUyYXVKMVBVWVVZRGM4aS1qVlJ5Um53QnNvc0JwUmM?oc=5",
+        "source": "Google News",
+        "published": "2026-07-09T22:08:33.000Z",
+        "summary": "SpaceX Chief Elon Musk Says Anthropic Is ‘Clear AI Leader’ — Vows Not To Sabotage Compute Deal Despite Rivalry Stocktwits"
       },
       {
         "title": "Elon Musk praises Mythos/Fable, promises not to ‘cut off’ Anthropic",
@@ -165,13 +193,6 @@
         "source": "Google News",
         "published": "2026-07-09T21:54:35.000Z",
         "summary": "Elon Musk says he was wrong about Anthropic, now calls the AI rival the 'leader' Business Insider"
-      },
-      {
-        "title": "Elon Musk admits rival Anthropic is AI front-runner: ‘I was clearly wrong’ - Washington Examiner",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOcDhTRENYWGhnWWtRajVZMnRDSWlsUEFnMURRM0VEZDRlTXp0Z2xHTHdxLXdwdU1ndmpvMzNuNHVzMVVVOVdUNHBqTmk0d1NQa2RPS3lia3FZMjRJelg2WG9LcFI0TGZpaWJ0V3U5cDFSZzRCbHFOaFhUMENoS3lObURSTk0ydS15Q0JqRkVVcDFKUEtoU012Q1ViZkZ0QQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-09T21:33:00.000Z",
-        "summary": "Elon Musk admits rival Anthropic is AI front-runner: ‘I was clearly wrong’ Washington Examiner"
       },
       {
         "title": "OpenAI launches GPT-5.6 and ChatGPT Work to challenge Anthropic - The Tech Buzz",
@@ -272,6 +293,13 @@
         "summary": "Anthropic Markets Itself on AI Safety. It Also Wants Your Passport and Your Face. Let's Data Science"
       },
       {
+        "title": "OpenAI Vs Anthropic IPO: How They Compare And What We Know - Forbes",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOUUt4VEJ2TW1WeWZaUlNIYWR4OE1xVUhQY0NDeVppOWNwVGF0TEpQdGUtT3JGT1hrMFJlcWJ6ck5TbllTdERMb2ZQamstcnZFVkFjTkxkbGQwZmM5Zmg1bnNaMlRZeWI2aEhraVFhX3MzRkRWdXQ5MHNJd3EtTlc0SU5IYk5DSTJGSU9tdWJ3?oc=5",
+        "source": "Google News",
+        "published": "2026-07-09T18:51:36.000Z",
+        "summary": "OpenAI Vs Anthropic IPO: How They Compare And What We Know Forbes"
+      },
+      {
         "title": "Anthropic Wants You to Pay Up for Claude Fable 5 - WIRED",
         "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRWFPUzFGbjVnQXpCQmh0d3BybFlmSnR1R0E0WUpLdXBVVTN6eENPajNoS25udGFHSmpITnptUWRScGlXb1o5NnNWMHNFY2pSRHpIS21hZGdpNi1PbHZ0NzJrVThQcDFNaVRSbGRJLVBSa21XX0RmTDBFOXNWRnhhWmdOVU1SV1Nsd1Z4N1BhRDFSSFVhWEdMM2ZaaVFDZlhGVkl6emp3?oc=5",
         "source": "Google News",
@@ -286,39 +314,11 @@
         "summary": "Inviting hard questions Anthropic"
       },
       {
-        "title": "Anthropic rejects China’s claims of backdoor security weakness - The Times",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQZU9ud1lNNkpfcE5zWGNoV09iXzFKYjhDRWtCendIQVljWHNJcWlzTjhaWmt3djBGZ3VTTEI4enFwQ0dTRTJ0UGtueHRtc0I4M193blNsRUNyRGhFVlBscXJqWVBZVzZIUmgtWjk2UXl3MTZ3Y3dMTVdjeDh3SEdWeVNPVVJhWHNzOEF1aWlUNG1BNUJmaUx5aA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-09T17:15:38.000Z",
-        "summary": "Anthropic rejects China’s claims of backdoor security weakness The Times"
-      },
-      {
         "title": "Anthropic Launches Claude Reflect Beta to Track AI Habits - SQ Magazine",
         "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBKWXJOODhiTGVVSHVxYml3SDJiTkFXd0RGSTZBQ2R2SVdPRTllQ1RoT0N4S05uQlF0Z3NxcFZnVFF2NG1OdXhBVA?oc=5",
         "source": "Google News",
         "published": "2026-07-09T17:05:09.000Z",
         "summary": "Anthropic Launches Claude Reflect Beta to Track AI Habits SQ Magazine"
-      },
-      {
-        "title": "Anthropic's new Claude Reflect is basically Spotify Wrapped crossed with Digital Wellbeing - Android Authority",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE40S3V4bW1JYjUtOXNVVkROdVVIZHRGam51eWhiMEZSS3BQeWNyajd5Q3VzLUwzNEc3bnFRZXpvdlp2REp1azFlRkJfRUhOdUtRUmJJNnkzTjBrLVFPbkZndERvMEh0dDA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-09T17:02:00.000Z",
-        "summary": "Anthropic's new Claude Reflect is basically Spotify Wrapped crossed with Digital Wellbeing Android Authority"
-      },
-      {
-        "title": "Former Fed Chairman Ben Bernanke Joins Anthropic Oversight Trust",
-        "url": "https://www.bloomberg.com/news/articles/2026-07-09/former-fed-chairman-ben-bernanke-joins-anthropic-oversight-trust",
-        "source": "Bloomberg",
-        "published": "2026-07-09T16:30:00.000Z",
-        "summary": "Former Federal Reserve Chairman Ben Bernanke has been appointed to Anthropic’s long-term benefit trust, an oversight body meant to keep the artificial intelligence company accountable to its public…"
-      },
-      {
-        "title": "Anthropic launches Reflect in Claude to visualize AI use and encourage mindful workflows - Межа. Новини України.",
-        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1HM0ZPUkgwUjBHRzRydkJRSUVpdnVUMmwzbFJ6Y0N3VmVzWGdPekN4aWNyQW5QRlNiVTdHb3hCMkhfZkE0eHJOUTdydkd1blg2RlA2dEd2eDhXeFB6bXN4VUhTWWdReUFKTlItWUpHTFlzUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-09T15:36:14.000Z",
-        "summary": "Anthropic launches Reflect in Claude to visualize AI use and encourage mindful workflows Межа. Новини України."
       },
       {
         "title": "What Skill Chaining Is, Two Claude Skills, One Hand-Off",
@@ -1848,6 +1848,13 @@
         "summary": "What's changed Fixed hook events not streaming during SessionStart hooks in headless sessions, which could cause remote workers to be idle-reaped mid-hook"
       },
       {
+        "title": "You can now set an expiration when you create an API key or an Admin API key in the Claude Console . Choose a preset,…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#july-8-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-07-08T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.203",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.203",
         "source": "Claude Code",
@@ -1958,6 +1965,13 @@
         "source": "MCP TypeScript SDK",
         "published": "2026-07-02T12:28:04.000Z",
         "summary": "Patch Changes #2405 f172626 Thanks @mattzcarey ! - Ship CommonJS builds alongside ESM. Each package now emits both .mjs / .d.mts and .cjs / .d.cts (via tsdown format: ['esm', 'cjs'] ), and its exports map adds a…"
+      },
+      {
+        "title": "We've added the agent-memory-2026-07-22 beta header, which changes how listing memories ( GET…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#july-2-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-07-02T00:00:00.000Z",
+        "summary": "The Python (0.116.0), TypeScript (0.110.0), Go (1.56.0), Java (2.48.0), Ruby (1.55.0), PHP (0.36.0), C# (12.35.0), and CLI (1.16.0) SDKs now send agent-memory-2026-07-22 on all memory store calls instead of managed-agents-2026-04-01 . If…"
       },
       {
         "title": "I watched a folder run a piece of my business by itself 1080p #claudecode #anthropic",
@@ -2216,20 +2230,6 @@
         "url": "https://www.youtube.com/watch?v=RwsUnvHYmyw",
         "source": "YouTube · Alex Finn",
         "published": "2026-06-09T20:08:12.000Z",
-        "summary": ""
-      },
-      {
-        "title": "We've launched Claude Fable 5 ( claude-fable-5 ), our most capable widely released model, alongside Claude Mythos 5 (…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#june-9-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-06-09T00:00:00.000Z",
-        "summary": "Claude Fable 5 and Claude Mythos 5 use the tokenizer introduced with Claude Opus 4.7. Compared to models before Claude Opus 4.7, the same text produces roughly 30% more tokens. The exact increase depends on the content and workload shape.…"
-      },
-      {
-        "title": "We announced the deprecation of the Claude Opus 4.1 model ( claude-opus-4-1-20250805 ), with retirement on the Claude…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#june-5-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-06-05T00:00:00.000Z",
         "summary": ""
       }
     ]
