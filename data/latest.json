@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T18:44:35.215Z",
+  "generated_at": "2026-07-12T20:33:05.447Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,33 @@
     ],
     "news": [
       {
-        "title": "Anthropic introduces Claude reflect to help you better understand your AI usage - Firstpost",
+        "title": "Claude Fable 5 stays free for paid users until July 19 as Anthropic buys more time - BleepingComputer",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQc0lsel93dHhiN0d2bXEwZmpDTk50SDZYTGtiX2tYMUUtUHo4TnZOVW9EaWJDMkVmcHdZT1g4V2w1ZDdKcDJjYTdUYUt2aXVJTHNJY3NDQmFCRWpaaVNqbFZUaEczRUFVMWFDUEFWNE5hUF9uYy03em1ETlpTRDc1MFpnVU1xNl9ORE81WTdXT3Q3STJjeTA5NGNtSU1YSmNCNXc4Skt1SUhaR0EtVVBBd1llLS0xRXNGRlFQT0NCdWdTNUc5UXljS1k4X2o0R3JxTTRKdi1pY21TUEx3bEHSAeMBQVVfeXFMTWJiT3RadlJ4blVGTWhPMUc4T01EV3RENWUxZUFvd3lsdW5MbUlHQmNDR1Jrd20tejB3enZoZllUVnZVWmlkUVhCU3VLWTNSTU04SjZrOGNGanJfbjdYSGd2SE44X1dFUHJGaTJ5LXI2OGRzd2NVajhxQzRIMFVOc0YtOVNNMFdJODdidHQwY3VUaFRiQTN0dVJOYkJ1QjNseF9qZFVsbzFsSUludWhBNHg0V2hmSVQ2TUE5cTZGcnF4SGUycmltQ2RIYlJ5azZrS2IwUExqX1cyMWE2WVJNZWVCa3c?oc=5",
+        "source": "Google News",
+        "published": "2026-07-12T19:39:12.000Z",
+        "summary": "Claude Fable 5 stays free for paid users until July 19 as Anthropic buys more time BleepingComputer"
+      },
+      {
+        "title": "Anthropic introduces Claude Reflect to help you understand your AI usage better - Firstpost",
         "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOaGFYQldVX1psWW50MjNYcXg0SmZvb1RmXzEwNjFldzR3RUlOZEFFZTRhYjdWaGJGc2xoYURUVUNMZmtGN2hPVmppajQwVWRwXzU4NnFkaHhIcENUR1lydTkzRFl0OGdmazFxUkF6TmpVNF9HS3NwcGxqc3lpTWVSMGhxOG1JVGkwbnFiSDc0R1hNelNJWFF1UUVvOF9MSE1YMFlGTW90cEd4dFpKUFBMVDUwQ0cyUVlHWU15cXRTRkNUUdIBxwFBVV95cUxQR2FnWU9HaWg1bDdheUlRSXRtb0k1VzFCNW84ZGFIZldBWTR0Y0RUbG5wQ0hYcGNLdW14X2pPSUdPaEF2ZS1UQ1FBN3p2ZWJ6NnRuX05zUGhMMFR4NjRFVnNsbEJudVRvRkJDTUM1a25SdWlhb1ZkTFNLUnRCS1pmZl9CS0lMZHhVZnp3Qk1vOUUzWVBSaHJaZWpKdmU0NkxMeVg5eTFsNWpQdHFtU0lBTHRlSlJxUnFEMmRXZ2htRDhMY2hjdnhV?oc=5",
         "source": "Google News",
-        "published": "2026-07-12T18:35:01.000Z",
-        "summary": "Anthropic introduces Claude reflect to help you better understand your AI usage Firstpost"
+        "published": "2026-07-12T19:38:56.000Z",
+        "summary": "Anthropic introduces Claude Reflect to help you understand your AI usage better Firstpost"
+      },
+      {
+        "title": "Anthropic extends Claude Fable 5 access through July 19 for paid subscribers - Firstpost",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSlluc2FzQnlQYjY1T0JLdnJ3MXFBQVhncy1kWEtoMkNmUkxMb19GTy1vd2thMGJROHBGRXEzaU84cGpKdDB4czQyblFTcnRmOEdDTGotN0l5RndUOElVdTQ1LW9wT05MODFhbTZtb0ZMQkEwSl81UWNRTEdFZFM1dDQtQ1RURFVwMXcxT3VERG5HZXRzLVVteWtWd0l2Ni1UX0M5d1I0dGlzLWM3X0F6VnNpbGNQc215Q2YzRlVB?oc=5",
+        "source": "Google News",
+        "published": "2026-07-12T19:11:53.000Z",
+        "summary": "Anthropic extends Claude Fable 5 access through July 19 for paid subscribers Firstpost"
+      },
+      {
+        "title": "Claude Code sends 33k tokens before reading the prompt; OpenCode sends 7k",
+        "url": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead",
+        "source": "HN · 229↑",
+        "hn_id": "48883275",
+        "published": "2026-07-12T18:25:51.000Z",
+        "summary": "This started based off of a hunch. We usually use OpenCode, but were &#x27;forced&#x27; to use Claude Code for a while due to issues with Meridian. In that time, we saw the usage…"
       },
       {
         "title": "Anthropic Adds Built-In Web Browser to Claude Code Desktop App - MLQ.ai",
@@ -160,24 +182,24 @@
         "summary": "Anthropic Adds Built-In Web Browser to Claude Code Desktop App MLQ.ai"
       },
       {
+        "title": "Anthropic extends Fable 5 access through July 19 - The Economic Times",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPZ0tDbHVxREZtTFZXVXAtdHdDejJHTVdZU1ZOR1pibWNLTjB3eUhrbm5rX1pwX243SV9NbVdCQ0phMUVnVU1KOHY0eEZQQTF0SnAzbHl1dFEtN2I4TkxRc05GQ0NxdFZJYUVRdG9va3JwOGM2QXN4b3RMQlVFYms3MzJFczVaay1pVThLbTF6UE5WLW5xV1pWRTh3eWxSY29DVWg3TkxoY2tVcXBfdU1TdFRTY0RfVW1UbWotc3Rwdk9JZzhocm1pamVuOA?oc=5",
+        "source": "Google News",
+        "published": "2026-07-12T18:08:02.000Z",
+        "summary": "Anthropic extends Fable 5 access through July 19 The Economic Times"
+      },
+      {
         "title": "Claude Code May–July 2026 weekly limits promotion",
         "url": "https://support.claude.com/en/articles/15910845-claude-code-may-july-2026-weekly-limits-promotion",
-        "source": "HN · 38↑",
+        "source": "HN · 40↑",
         "hn_id": "48883064",
         "published": "2026-07-12T18:01:29.000Z",
         "summary": ""
       },
       {
-        "title": "Ai Usage Dashboards - Trend Hunter",
-        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5qNU1SdmdfRXVoSjFEdy1mSEV6M3FEVlVRTktjZjZqT0JJcFVpZWloTGN2dDlPb0dKRDJrMTJTUlI4NXMxYkdrbVZTcnlOQU9JaEMwZlpuMFN6QkJsUThVM0h1MNIBaEFVX3lxTE9Mb3F6cVRQRlJzWWlmZXZmNExuWWUzcURFekNlek5UeVhhLW9xdXNRcW5UNmNoSC1XdzZncE9xTWZnSE1IMkJxbjJKUDRaaVh5LVZ1R3A3UklXZmdvbjk5Q3pQSE8tMzNl?oc=5",
-        "source": "Google News",
-        "published": "2026-07-12T17:22:01.000Z",
-        "summary": "Ai Usage Dashboards Trend Hunter"
-      },
-      {
         "title": "Fable extended until 19 July",
         "url": "https://twitter.com/claudeai/status/2076351399999557669",
-        "source": "HN · 31↑",
+        "source": "HN · 58↑",
         "hn_id": "48882730",
         "published": "2026-07-12T17:14:34.000Z",
         "summary": ""
@@ -209,13 +231,6 @@
         "source": "Google News",
         "published": "2026-07-12T14:55:28.000Z",
         "summary": "What Revvity (RVTY)'s Claude Integration Means For Its Software-Led R&D Platform Strategy simplywall.st"
-      },
-      {
-        "title": "Why AI models like Claude Fable and Mythos defy traditional export control frameworks - TyN Magazine",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQRExPS1hzMnpLWDN0dnp2cEJZb0tqNDdKOHRNVkUtZk05eTR1Z0IyQk90ZzlIdjhxQUIwYkZtVHpIb1NYWEFJR1pjRWJaZGx6UGdHMG5oT0V0ekp5cjRqQXZXRzRlbzVJOThsNVRScHNuUnBaaERuT2Zoa1gzcGFfZmw4YnlwcmxqVlMtb3BvTTQtS1haUzdSeWhyWGV6NzhIaEJCamFHTjItaFE4RFZj?oc=5",
-        "source": "Google News",
-        "published": "2026-07-12T13:26:24.000Z",
-        "summary": "Why AI models like Claude Fable and Mythos defy traditional export control frameworks TyN Magazine"
       },
       {
         "title": "Claude vs Gemini: Fable 5 Beats Opus 4.8 by 11 Points - tech-insider.org",
@@ -251,26 +266,12 @@
         "_kind": "news_video"
       },
       {
-        "title": "Mystery of Claude's \"Brain Fog\" Solved: Anthropic Admits It Accidentally Turned Down the Effort Dial, Not Model Degradation - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBwU1FrX2FEd1Y4OTAxbkJfWDZWTjdjeTJFMk9BV1c5U0g4RjF5a3dWbWJpY2NMVnJpVDZxNlduQXBsU0c3d21kMjIxV19KbU9QeW11UWlBamhnVzlxYUx6MmVqTjdRdFJpNGpCb2JNa2ZrZWVDTkE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-12T01:55:00.000Z",
-        "summary": "Mystery of Claude's \"Brain Fog\" Solved: Anthropic Admits It Accidentally Turned Down the Effort Dial, Not Model Degradation finance.biggo.com"
-      },
-      {
         "title": "The fine print that follows you out the door: non-compete clauses are spreading",
         "url": "https://oecdecoscope.blog/2026/07/07/the-fine-print-that-follows-you-out-the-door-non-compete-clauses-are-spreading-and-holding-back-growth/",
         "source": "HN · 34↑",
         "hn_id": "48876578",
         "published": "2026-07-11T22:48:00.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic builds personalized morning brief feature for Claude Cowork, and it's more relevant to crypto than you think - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1xRDdPSXp4RXo4VVY1QnZqM2Q0OWsyRGctOEY1YnRwZ2oyYXViU3R0OFQ3THMtWElZRGh1eTllajN3MTNDMjdxS2RJdlM3NWNUVHpOa2l0N29OdVY1emNwZFFBbUJCMmNkWDh5WHJxZTZlUzA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-11T20:43:22.000Z",
-        "summary": "Anthropic builds personalized morning brief feature for Claude Cowork, and it's more relevant to crypto than you think Crypto Briefing"
       },
       {
         "title": "I used to love Claude, but the latest models are slowly ruining it",
