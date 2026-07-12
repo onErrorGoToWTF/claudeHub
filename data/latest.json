@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T16:41:31.774Z",
+  "generated_at": "2026-07-12T18:44:35.215Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,50 @@
     ],
     "news": [
       {
+        "title": "Anthropic introduces Claude reflect to help you better understand your AI usage - Firstpost",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOaGFYQldVX1psWW50MjNYcXg0SmZvb1RmXzEwNjFldzR3RUlOZEFFZTRhYjdWaGJGc2xoYURUVUNMZmtGN2hPVmppajQwVWRwXzU4NnFkaHhIcENUR1lydTkzRFl0OGdmazFxUkF6TmpVNF9HS3NwcGxqc3lpTWVSMGhxOG1JVGkwbnFiSDc0R1hNelNJWFF1UUVvOF9MSE1YMFlGTW90cEd4dFpKUFBMVDUwQ0cyUVlHWU15cXRTRkNUUdIBxwFBVV95cUxQR2FnWU9HaWg1bDdheUlRSXRtb0k1VzFCNW84ZGFIZldBWTR0Y0RUbG5wQ0hYcGNLdW14X2pPSUdPaEF2ZS1UQ1FBN3p2ZWJ6NnRuX05zUGhMMFR4NjRFVnNsbEJudVRvRkJDTUM1a25SdWlhb1ZkTFNLUnRCS1pmZl9CS0lMZHhVZnp3Qk1vOUUzWVBSaHJaZWpKdmU0NkxMeVg5eTFsNWpQdHFtU0lBTHRlSlJxUnFEMmRXZ2htRDhMY2hjdnhV?oc=5",
+        "source": "Google News",
+        "published": "2026-07-12T18:35:01.000Z",
+        "summary": "Anthropic introduces Claude reflect to help you better understand your AI usage Firstpost"
+      },
+      {
+        "title": "Anthropic Adds Built-In Web Browser to Claude Code Desktop App - MLQ.ai",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNQzRIc25NUVRFejgxWlp6bU94SVdMX2JMdVl2VXVheUE4TlZYNEdnYlh4YkpMMUhfWkljd1lVa0hsODhzV1RLOTc5QU5nUU84UkFaX0lpZlBHWWhKc2g3dkt5ZXBpdGtUZXdWaGhVY2h0dnRaNTVHX0VIZU8tVHRBNzVpQlNjMUJweTJF?oc=5",
+        "source": "Google News",
+        "published": "2026-07-12T18:19:43.000Z",
+        "summary": "Anthropic Adds Built-In Web Browser to Claude Code Desktop App MLQ.ai"
+      },
+      {
+        "title": "Claude Code May–July 2026 weekly limits promotion",
+        "url": "https://support.claude.com/en/articles/15910845-claude-code-may-july-2026-weekly-limits-promotion",
+        "source": "HN · 38↑",
+        "hn_id": "48883064",
+        "published": "2026-07-12T18:01:29.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Ai Usage Dashboards - Trend Hunter",
+        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5qNU1SdmdfRXVoSjFEdy1mSEV6M3FEVlVRTktjZjZqT0JJcFVpZWloTGN2dDlPb0dKRDJrMTJTUlI4NXMxYkdrbVZTcnlOQU9JaEMwZlpuMFN6QkJsUThVM0h1MNIBaEFVX3lxTE9Mb3F6cVRQRlJzWWlmZXZmNExuWWUzcURFekNlek5UeVhhLW9xdXNRcW5UNmNoSC1XdzZncE9xTWZnSE1IMkJxbjJKUDRaaVh5LVZ1R3A3UklXZmdvbjk5Q3pQSE8tMzNl?oc=5",
+        "source": "Google News",
+        "published": "2026-07-12T17:22:01.000Z",
+        "summary": "Ai Usage Dashboards Trend Hunter"
+      },
+      {
+        "title": "Fable extended until 19 July",
+        "url": "https://twitter.com/claudeai/status/2076351399999557669",
+        "source": "HN · 31↑",
+        "hn_id": "48882730",
+        "published": "2026-07-12T17:14:34.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic's newest enterprise partner is training 20,000 people on Claude — here's the shift it signals - The New Stack",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1kVk16UUNiNnJYUlJzdUpDTTJ1R0ItRHhHajlXeFNjdjdjek45TTBsZ2QxSVZaa3BObDhJaDhVYmdfT3gtZ1otbVpuTUwwRG5TbkgzUU9BTmNXeWpKT05UYms0NUhqSUdV?oc=5",
+        "source": "Google News",
+        "published": "2026-07-12T17:02:50.000Z",
+        "summary": "Anthropic's newest enterprise partner is training 20,000 people on Claude — here's the shift it signals The New Stack"
+      },
+      {
         "title": "Claude Code now has a built-in browser that lets the AI read, click, and type on external websites - the-decoder.com",
         "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPemtJQ3lGSTdYY1MxTmxTdVl2R0dVZG1CUTgzd3h6bVVvNVNXZGVkZHBZVnZRR2dLSDVqTHFKUXNxWFNVZ19TOGc5M0ZvOGdrQnJxdWM3QXBldnBraGZQZXJlRlJtQXo5QmRxWnAtZF9EZzZ0UVFHSWNfV25zZS13aDVIVlBFaE05cjEzOEJQcFFlYk1QTnl0Q1AtNzl1MDdPQ2czZEFldFpnMV9TOGdKYnFyQUJLMXBXMmtLb1VR?oc=5",
         "source": "Google News",
@@ -167,6 +211,20 @@
         "summary": "What Revvity (RVTY)'s Claude Integration Means For Its Software-Led R&D Platform Strategy simplywall.st"
       },
       {
+        "title": "Why AI models like Claude Fable and Mythos defy traditional export control frameworks - TyN Magazine",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQRExPS1hzMnpLWDN0dnp2cEJZb0tqNDdKOHRNVkUtZk05eTR1Z0IyQk90ZzlIdjhxQUIwYkZtVHpIb1NYWEFJR1pjRWJaZGx6UGdHMG5oT0V0ekp5cjRqQXZXRzRlbzVJOThsNVRScHNuUnBaaERuT2Zoa1gzcGFfZmw4YnlwcmxqVlMtb3BvTTQtS1haUzdSeWhyWGV6NzhIaEJCamFHTjItaFE4RFZj?oc=5",
+        "source": "Google News",
+        "published": "2026-07-12T13:26:24.000Z",
+        "summary": "Why AI models like Claude Fable and Mythos defy traditional export control frameworks TyN Magazine"
+      },
+      {
+        "title": "Claude vs Gemini: Fable 5 Beats Opus 4.8 by 11 Points - tech-insider.org",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE81Zno3cU1POTJkZWxTVW92MGprNWF3WTM0a3RRaC1FRXR5NXpfcXlUUTJkZGhDanEweXRQY1dpczEtb0dzTXg1blFZYWNDU1FoanI0b2NSdGFiZU4zTk8yeEV5ak1vSXBf?oc=5",
+        "source": "Google News",
+        "published": "2026-07-12T12:26:41.000Z",
+        "summary": "Claude vs Gemini: Fable 5 Beats Opus 4.8 by 11 Points tech-insider.org"
+      },
+      {
         "title": "Claude Cowork's biggest use case is the mundane office work nobody wants to own, Anthropic says - the-decoder.com",
         "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdl9XYWMwRTdUcUJDa3lXQlRqMVhxbU5QSFA2cmFvUVU4U0tEVHE1ODhHQVhrMlFncGdnd29UelZvdHU4YW1GQlRNcXFsUHVRWjY3MkVGT1gyTkFaaFp2MUYxVkNXNXpTSllmOVFnTm5Od2Rsc1JkMTFaVzJ1TTcteWw5QzlibWtfdmNONkd5clMzUWZtaXFRRFItRjFZWHI1WmdpOXl3eTFWZE9SaVg3TW8xMFNkWnp5b1E?oc=5",
         "source": "Google News",
@@ -174,11 +232,11 @@
         "summary": "Claude Cowork's biggest use case is the mundane office work nobody wants to own, Anthropic says the-decoder.com"
       },
       {
-        "title": "Claude AI Performance Decline: User Complaints of Dumber Responses Addressed by Anthropic – It’s Not the Model That’s Underperforming - 36Kr",
+        "title": "Claude AI Performance Decline: User Complaints of Dumber Responses Addressed by Anthropic – It’s Not the Model That’s Underperforming - 36 Kr",
         "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9WWF91REpXLUNPVUZfOXNISU81c0JYQW1pdG1lZ2hnVEVZOUpSMHI1TXlTUFl3OG1ySlNXTDM3V1hTZXlYeUlUS093czZmRVk4N2xZ?oc=5",
         "source": "Google News",
         "published": "2026-07-12T06:02:44.000Z",
-        "summary": "Claude AI Performance Decline: User Complaints of Dumber Responses Addressed by Anthropic – It’s Not the Model That’s Underperforming 36Kr"
+        "summary": "Claude AI Performance Decline: User Complaints of Dumber Responses Addressed by Anthropic – It’s Not the Model That’s Underperforming 36 Kr"
       },
       {
         "title": "How One Folder of Claude Skills Replaced Six Paid Tools #claudecode",
@@ -230,13 +288,6 @@
         "summary": "Anthropic Rejects China's Claim About Claude Code Backdoor BankInfoSecurity"
       },
       {
-        "title": "Can UST and Claude Make Physical AI the Next Enterprise Standard? - The Futurum Group",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNcmJYbk1wSl9aRG5XOE51RFdndjg2dkJBZDNnRWRNNlI1U2I4Q1JwQ0tBZDJhQ1ctUV9NNllzN29fMVV2UnowOXhnY3RjTS1CWmRjUGdqYy03R19XWmFUTlZwdjNQcllfM19WSUdaQjBheHBnNGJwRnRRUXNaM2VzVGV1cVYzZDEtSWFjWXlfb3hXLWpqNHRYdFo5YVFwOEt5?oc=5",
-        "source": "Google News",
-        "published": "2026-07-11T16:17:36.000Z",
-        "summary": "Can UST and Claude Make Physical AI the Next Enterprise Standard? The Futurum Group"
-      },
-      {
         "title": "Elon Musk Admits He Was 'Clearly Wrong' About Anthropic— and Promises Not to Weaponize SpaceXAI's Compute Access Against the Claude Maker: 'Not My Style' - Yahoo Finance",
         "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNSzdjaWhlRlIxazNzdWppcUVBbjNnLTkzd1ItS1plN2h6QTYwUE9kRWRxbEl3eW9VcENST2pxdGhlRjlNd1BqQnU1UHFvVFUwVW9wb0NNdUNHTEdwNC04YmdIN2RiRkJfRFNkWU5YLU0zNWJreW5Rd2JxV3dvWmREVnRaMl8yTDFLdFV2eGtKbHFmRV9hYS10WHZ3?oc=5",
         "source": "Google News",
@@ -251,13 +302,6 @@
         "summary": "Beyond Claude Code: the Chinese AI tools poised to benefit after back-door alert South China Morning Post"
       },
       {
-        "title": "Anthropic Claude Sonnet 5 Powers Up Dev Tools - StartupHub.ai",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQbDZrcG5WTElhYnNEUm1xaEpjSERZZGxoOFkza2dfQWZWMjhiZ0EyRF9jcGc0emwxamRpTTJSellXYlhrOHRvaVhjZ1RJM2s3cHFObTdtckhTc3BMSm84RXBpYURfa0tNZzdKYUl0OUtCTGc5aV9rS05NRm9jTTlQZjhwOF9URFRzejh1SE1Ic3dVaWhrNXI5RXJqVQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-11T05:22:42.000Z",
-        "summary": "Anthropic Claude Sonnet 5 Powers Up Dev Tools StartupHub.ai"
-      },
-      {
         "title": "Claude Fable 5: 18 Days Offline on Export Rules [2026] - tech-insider.org",
         "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ya0Z0Z25ZbjEtbk8wanpIUmRCRGRwNWxkZFpRbUREakV5dE5oUkgxN3RkQi1JWC1iVnVpd296OTJKNkd4SXc3VlVtOFlYMDZPTE1OZlBCb3VlcnZ2cDl3NkRueGw2LXZqUkZOZTNXOGZrQQ?oc=5",
         "source": "Google News",
@@ -267,7 +311,7 @@
       {
         "title": "GPT-5.6, Grok 4.5, Claude, and Muse Spark build the same 4 apps",
         "url": "https://www.tryai.dev/blog/gpt-5.6-build-off-12-models",
-        "source": "HN · 156↑",
+        "source": "HN · 157↑",
         "hn_id": "48865093",
         "published": "2026-07-10T20:52:28.000Z",
         "summary": ""
@@ -292,48 +336,6 @@
         "source": "Google News",
         "published": "2026-07-10T16:48:16.000Z",
         "summary": "Anthropic Invites the Public's Toughest AI Questions in Claude Ad from Mother Little Black Book | LBBOnline"
-      },
-      {
-        "title": "Anthropic says it can read Claude's 'thoughts,' as detailed in new research paper — models observed to have a global workspace, revealing more of what makes LLMs tick - Tom's Hardware",
-        "url": "https://news.google.com/rss/articles/CBMiygJBVV95cUxNcHM3Y3hDMEJyYmstN19IVHNKUldZTjZFVTh6cFloamhQclJ4R3VYQVdzYUY4ejY1TjBwVkE4NXREV2tvdGRGTVBJMzdoWDBORnRRTzBkSlJrdTNYdUVPRmNUTUM0QzBHYTFkRW5SeTl1M2RrSzRMNmt1U0FjTFhiU0k1eDVsczRmWGhKM1J4c2xYaWNoOTJpdXZ3SFA4MGxaTlZiVzlNbGc2c0E4RHBRdDJERzRoTk1ndkdwSU1MQmZqeGljSXdoZjZVNnhSRWlMMnAyVjhEWm80S0VwNWlXU3hiVHk2U1NxQ0tWZnFFR1NVYUpNZXNGb0pPSmo5UVEyYjY0dWdHNW8yRkhsOElpQkJ2SGVQTDgtOEJ0aTRrcjZVczk5b3kyNHF4NV9nNXh3U3R2cC1Ma3JmZGFUOFU0d1Z4bHhyU2VBUlE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-10T16:44:12.000Z",
-        "summary": "Anthropic says it can read Claude's 'thoughts,' as detailed in new research paper — models observed to have a global workspace, revealing more of what makes LLMs tick Tom's Hardware"
-      },
-      {
-        "title": "U.S. Government publicly reactivates pilot for Anthropic's Claude - All-Source Intelligence | Jack Poulson",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBXcGxSY0VtNEx0Wm56eTBWUkZxY2lhcnFNak1FZ290MGlZRzRhMXdXdTlSeDVjX3NNajZCLUNubDEweDI2ci1SN2lYTTlRUzhETW1heUo4MmZKeGNKVUFTNlhmYzVvTlV3bDl3dGVoSnN2QkFsc001YQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-10T16:20:54.000Z",
-        "summary": "U.S. Government publicly reactivates pilot for Anthropic's Claude All-Source Intelligence | Jack Poulson"
-      },
-      {
-        "title": "Anthropic wants you to use AI to decide whether or not you should use AI. - The New Stack",
-        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE11NWZZZGZaWkxPZDYzRW5UYU1CS2NodUZ1dnlCaGlsNmhSMWl4dDRwTjg5OVdhZWdhc2MzcjJiWk1MQ3oyOWVUOHhISTRhUlhjMXNWRDdmSGlZaUJZSkVlcVpScw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-10T14:19:09.000Z",
-        "summary": "Anthropic wants you to use AI to decide whether or not you should use AI. The New Stack"
-      },
-      {
-        "title": "The ChatGPT \"Super App\" Sort of Super Sucks - spyglass.org",
-        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfNzM5NWdZTzRBZ1V5MkdhRW5mZFJoTmdDNjhDS2lxWEtVRHp3OGdFSEhmM29QWGVFQWV4UmFqMmZseXdvMU9FUm9wNlN1NVNIME94Xw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-10T13:08:45.000Z",
-        "summary": "The ChatGPT \"Super App\" Sort of Super Sucks spyglass.org"
-      },
-      {
-        "title": "The Download: Claude’s inner workings and OpenAI’s “super app” - MIT Technology Review",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQeUZWeW8tMUtzczNNc255VG5JX1ZKMktxei1xU2x4MFVkRk0xUUtRZ09hZFQtZFVXMFRickRNYVBEYllCR01VRXdQdXJSOUxQYVUtbUVYYnluSHJ4MWFRbGRqS25nNEo1NG1GYy1VZHJyNUxBUEVSNHhtNkRzZnVEVjZMa1RBVFNyT0hLM0tENG9TUi1RT0xnWWZUM1JiQnM2N0dhc1RsQ09oNjFqVWw2ak9B0gG3AUFVX3lxTE9RTjRPNDBiclpuQ01VQTlrYnJ3cVpveGhHdldiOHl5R1dhOXRKdVhlU1B1dTBKV0JWekRQUlU3MEdxeTFOeFFzNW5TNFhpMXhVM0dCMWpVWnRmcHl3bUtkRGo0NkY5Q0k5LS13QzNxYmR2MTYwZjZpUERvYmJaZW0yeGpOQ0NKazVTY2hYdFhzV1QwMjNGM2pHV0hJOXMxdEtUdy1DSk1iTWI1WVlHVXcxOWd1Yk9Qaw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-10T12:10:00.000Z",
-        "summary": "The Download: Claude’s inner workings and OpenAI’s “super app” MIT Technology Review"
-      },
-      {
-        "title": "Salesforce employees 'confused' as company promotes Anthropic's Claude inside Slack, the very platform it - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxQeTlhMjcyekZNRW8zdnhpdGFwLUVQYnljQUJiNFlJa0NrX3ZSRk5EREJ3a2x1TmswMVZyLTAtcTVGR0QwRnQ3aURZakUtaThZYWlvRGhxb01ZeUJITWdsVkNfOHBnXy1RTHEtRFlCbnFJblJ0TXRsRzNjVkNUWGJpeHJNeWk3WExQY0NXN1l1bzdVQ1JQQlRCUTQyQkdKeWFDeWhDM2lDb3dJSmtVNUVPc2NEemFabHA2Y2pDT2lsN2tjSWQxNHJSdVowY3pvUnUzOUxSVHMtNUgtLUVaMUZwQVJOa0J3b3hsSUJ1Tkg2MVdwN2ZZbm85dGhyamd6VnQ4ZHdCMUstZWVtdTMzd0l1WFE4dFdjM3dNZ3E4aU9QVFhEOHJuc0Ffd2FwdTlUcWZ2OGJFaXhGWVYxYUJFWlJJcjd30gHHAkFVX3lxTE9vdUxLdmhScjBwSlZmRHpIOTltTUdJaDlZb1N5emRJRV9tSE1fcVI1ZWYtc19PbjZZYXQwM1c1OVpINW16dDhNMnA4bG14cDlRaS1WUHdPZUNIa2lzenF2NDRuNXR1STg3V3Jlc3pEVGtjZ2FxMVFsVHdOcmF5dTBYLVhyckJTUGRCajZfczVSQWdwWGpmQzhHRTFCaFJnSHJiN05uSG9iWVFDbjV3UlJhX2lHWG5zdnFqa01DTUhXRTV2QTMyWjBrMG1HTE9ad0JzRjZhcS15WEtJVS0tT0FneTJVWk9rU2x4U1VWWjVobmJEVmVCcUZJWVRpYmFQckc1em16N3ltU2M3SE9fMjIzWHlaN25xWVNXcGZvbjNtbTdTaEFVMmhMdGZfeFRmQ2RwaW5MRkE2S09XaGFsaWdXNHlLbGc4UQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-10T04:43:00.000Z",
-        "summary": "Salesforce employees 'confused' as company promotes Anthropic's Claude inside Slack, the very platform it The Times of India"
       },
       {
         "title": "What Skill Chaining Is, Two Claude Skills, One Hand-Off",
