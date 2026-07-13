@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-07-13T20:46:13.025Z",
+  "generated_at": "2026-07-13T22:41:54.405Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Claude Values Models Languages",
+        "url": "https://www.anthropic.com/research/claude-values-models-languages",
+        "source": "Anthropic Research",
+        "published": "2026-07-13T21:10:45.000Z",
+        "summary": ""
+      },
       {
         "title": "Agentic Misalignment",
         "url": "https://www.anthropic.com/research/agentic-misalignment",
@@ -15,13 +22,6 @@
         "url": "https://www.anthropic.com/research/claude-plays-robotics",
         "source": "Anthropic Research",
         "published": "2026-07-13T17:54:21.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Values Models Languages",
-        "url": "https://www.anthropic.com/research/claude-values-models-languages",
-        "source": "Anthropic Research",
-        "published": "2026-07-13T17:14:16.000Z",
         "summary": ""
       },
       {
@@ -146,11 +146,47 @@
     ],
     "news": [
       {
-        "title": "Claude's Personality Changes Depending on the Model—And the Language You Speak - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVmpHX1ZyVFcyTUlldkh2VFQ0MGR3UUJHQXp4UVR3dGl5VFVGQjZnb2R0WXBoc2cwV3pLYk0yUzFjcnQySS1RaTVMWDFpcVNEVjhueVBQX3FjTWRPd2dsanpwRWttNXM1TmV5cnVJcERjQkxVc1QyNDNhMFNneWRzWFhKTTNYNWRNQnl1OTNpTk1mUXprdmtXUTRaTGRETW5Vbmc?oc=5",
+        "title": "Protesters March on OpenAI, Anthropic, and Google DeepMind Demanding AI Development Pause - Decrypt",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE14UHVHSm1mUWhRYUs5V3dybU9xdWx6a19tbzhMQ2FIdzNSYUFqVkd3VEFhMDd4bGIxb180b1gxNHhLejFWV012OTNNMHFHckVRY0ZWUEt1UlN6X2dFNUw5dy1CcWR5YUgtUmVGdjJIbjk5Z1JtZTdfVjNoY1NWa1HSAYcBQVVfeXFMT2lmRk4yUlV2SDlXNGVXZGNGcS1DQWxSWE9TOTlfRXdMdjV2VW1KcDI0SU9wWmZPQkk0dWRPYV9nazNCSDhfbFQtYkppWVNsNHoyMzFBQUFtZ2Q1WV90azduYS1YMVJZQXdiYUVHNE5fOHJKcV9ERVlTVXB6eWUtN0lPVkVuY2d3?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T22:11:05.000Z",
+        "summary": "Protesters March on OpenAI, Anthropic, and Google DeepMind Demanding AI Development Pause Decrypt"
+      },
+      {
+        "title": "Anthropic Just Gave Its AI Coding Tool a Built-In Browser—Here’s Why Users Will Love It - inc.com",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQbFBRU053WVRiX3NPQ0FBdHJzNUxJMk9xY19CMEJkUFZ3LVk5UjctQm9FM2tlSzAxMHo2WnBBdnJzVjRjWk1RemZGSk9SMDk2TWZLNmt4YkhRTDBhRDFGbjVjM1ViRmVHeVZ5cEc2WlhBNzQ1bmZnNDh3NXZBb0phUzg2UktJUW10ZWNHTHQ4a0xCUVN4NjJsSXNpRVctTHN2NWdkNTFndTRtZldhMXdlY3kyUk5YcTNsdEc1U3h4NGNhLWc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T22:04:36.000Z",
+        "summary": "Anthropic Just Gave Its AI Coding Tool a Built-In Browser—Here’s Why Users Will Love It inc.com"
+      },
+      {
+        "title": "Anthropic Measured Claude's Values Across Models and Languages — On Models It No Longer Sells - Brave New Coin",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOZXplYUctNTZMYzBpdURiSzdEWWlsZFZMd1FNbXVoVWFXa2VTZjNHUFJHV3BWbDJTY2QyX1FhOTJXcHp4T2RQNnNFSDZuYzlJdDk0eVRSZFR5dTk3cW85SXVhVTZxUUVBYmJfLVNsVTRlNkViLWtXekJfdjU1Zjg1cEpUck84WEprRmctUTNiU1BGME0zSWJsMndQdl9xN3ROTUc2QUcwcE12S05QN1FOMWVSSU5TbFp3Q2ZBUVlLa0Q4QQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T21:44:33.000Z",
+        "summary": "Anthropic Measured Claude's Values Across Models and Languages — On Models It No Longer Sells Brave New Coin"
+      },
+      {
+        "title": "Claude's Personality Changes Depending on the Model—And the Language You Speak - Decrypt",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNd0xEM29jaFZXdUlOakJLOW1hTnQ5VHQzbXFXdHZOeWVGalV0dDVtaExudWhIUEV5bUZxa0ltcC1KMjVyWTdlVEk4cFpvb052OVhCVFBpRXJ2OHFqQzR5M2d3cXNtQlp3dWRtbVBwY2pqV0d5a0RhZm1QUFBpczdOMDZoY9IBiwFBVV95cUxNNnVaV0pNUktOWjNNS2xVU0RXaU5SVTdkNzcxM0tqQ3ZuVFdmdEF1TGdveHA1VUo2U1NmclowZ21WblZQeEVnb0tkaVdMdl8wMWpYd2tuNkpmVXJsUy1lejhVRUlDVE1TRjlKc0cza1RReHpFS1VfRUNVb2xlWWE3Z0ZPNG84ak9BYzVV?oc=5",
         "source": "Google News",
         "published": "2026-07-13T20:39:53.000Z",
-        "summary": "Claude's Personality Changes Depending on the Model—And the Language You Speak Yahoo Tech"
+        "summary": "Claude's Personality Changes Depending on the Model—And the Language You Speak Decrypt"
+      },
+      {
+        "title": "EXCLUSIVE: Canada regulator cited Anthropic's Claude Mythos in warning to banks on cyber risks, email shows - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNVndVUlFjeXZyV1lrNVRsZzJEVXdIUTEwRmdBclIyMDJlRmVGcUNGREdVMVRIQ1l3NWpmNXM5UTdtV3RCZW01V2h5dk1VUy1OU3ZQSDk4b1I0Z0xybEQ2N0lkZUtOLWpvYnFEUWRNVEsyWnIydUtDZXY1cGN0T0RSM25oblAyVG1EaHR5WG9oUXVtRXFPWVR1M3NET1BMZ05mOE0yclA0eDFXTTBLS01wUEx2dG5qUGN4MWJtbWpB?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T20:34:35.000Z",
+        "summary": "EXCLUSIVE: Canada regulator cited Anthropic's Claude Mythos in warning to banks on cyber risks, email shows Reuters"
+      },
+      {
+        "title": "Show HN: YouTube Guitar Tab Parser",
+        "url": "https://github.com/marcelpanse/youtube-guitar-tab-parser",
+        "source": "HN · 41↑",
+        "hn_id": "48898154",
+        "published": "2026-07-13T20:13:14.000Z",
+        "summary": "I created a simple CLI that turns a YouTube guitar-lesson video into a PDF of the guitar tab. There are services that transcribe music from Youtube videos into tabs, but they…"
       },
       {
         "title": "Canadian regulator warns banks of cyber threats, citing Anthropic's Claude Mythos - The News International",
@@ -158,6 +194,14 @@
         "source": "Google News",
         "published": "2026-07-13T20:08:00.000Z",
         "summary": "Canadian regulator warns banks of cyber threats, citing Anthropic's Claude Mythos The News International"
+      },
+      {
+        "title": "Show HN: I implemented a neural network in SQL",
+        "url": "https://github.com/xqlsystems/xarray-sql/blob/claude/xarray-sql-mnist-demo/benchmarks/nn.py",
+        "source": "HN · 38↑",
+        "hn_id": "48897975",
+        "published": "2026-07-13T20:00:10.000Z",
+        "summary": "Two weeks ago I was on my babymoon in Corfu, Greece. While in transit, I was overseeing a GSoC intern submit an important feature to my array database library, Xarray-SQL. He…"
       },
       {
         "title": "Anthropic Claude Review: The Most Comprehensive AI Toolset - bgr.com",
@@ -174,13 +218,6 @@
         "summary": "Claude AI Values Variation: Insights from Anthropic Models The Cryptonomist"
       },
       {
-        "title": "EXCLUSIVE: Canada regulator cited Anthropic's Claude Mythos in warning to banks on cyber risks, email shows - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNVndVUlFjeXZyV1lrNVRsZzJEVXdIUTEwRmdBclIyMDJlRmVGcUNGREdVMVRIQ1l3NWpmNXM5UTdtV3RCZW01V2h5dk1VUy1OU3ZQSDk4b1I0Z0xybEQ2N0lkZUtOLWpvYnFEUWRNVEsyWnIydUtDZXY1cGN0T0RSM25oblAyVG1EaHR5WG9oUXVtRXFPWVR1M3NET1BMZ05mOE0yclA0eDFXTTBLS01wUEx2dG5qUGN4MWJtbWpB?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T19:05:44.000Z",
-        "summary": "EXCLUSIVE: Canada regulator cited Anthropic's Claude Mythos in warning to banks on cyber risks, email shows Reuters"
-      },
-      {
         "title": "Canadian regulator warns banks about Anthropic's Claude Mythos risks - report (TD:CA:TSX) - Seeking Alpha",
         "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNOXpIa1NOekt4cEN2VVdVRlZ0ekFxQVVoUnZMRHpFSXdKWFRZQTdrODRMSGJYNVA4OHFtU21Gb1l5TnY4SjRXcHlXYzFET25yQ0hoSkpTVC1LbXl5NTdDS3oyVF9BdEVLdktDVmY3NS1nNG00MXV0WmhDNEpDT1F2dVdjdnp4ZmN2ODBoQVBaTml5VktKRTBoR01LYnFtTmNtckgzMEtETEdlU0pORFZEMGRSS0s?oc=5",
         "source": "Google News",
@@ -190,17 +227,10 @@
       {
         "title": "A full body MRI earns you a year of smoking",
         "url": "https://entropicthoughts.com/full-body-mri-earns-you-a-base-jump",
-        "source": "HN · 42↑",
+        "source": "HN · 46↑",
         "hn_id": "48896658",
         "published": "2026-07-13T18:21:50.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic’s Claude Science app is coming for Kendall Square - The Boston Globe",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNT1A0dFdtek0xTjB4S0RsNW1jUUxtV0xXQWV0eVVGZHl4YjVqYjVCNDFqUFZzUVRLRTI1VHlJdk5Xc21HMWRHbV8yRm85MndZbk12SDA4N2l2NHcyR2FOR2xzczkyYmROT0dVSVU1dVotZWtjUEt5Y21pUTdCXzBXcU96VkI1SGVPUTNwOWd2RnVlalFLcGtiZ1RQNjQ1NExWM1J6cXhsb0xLS2pZ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T18:21:06.000Z",
-        "summary": "Anthropic’s Claude Science app is coming for Kendall Square The Boston Globe"
       },
       {
         "title": "Canada regulator cited Anthropic's Claude Mythos in warning to banks on cyber risks, email shows - CNA",
@@ -273,32 +303,11 @@
         "summary": "Anthropic technical staff uses Claude to make rack for Framework mainboards Yahoo Tech"
       },
       {
-        "title": "Anthropic targets $1.2T valuation by 2026 with AI research focus - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQRUd0V1RtbWpHLWh5aERMRHBLeFNpZ3A4V1hhZ1hnMlJhcDAta0NXeGJVeVZJbUp4Z0FZdjEyTVVVSVE2V2xZRzNMMjR4RktDQm5oX0FIQnZJZ1IwZ01Ma1ZkVlAwa2tJbjVXNnE5Qkkxd25DMlZrVGVhcEdTSG11bjNPSVhub1hoaTZjUHFUOGdEZGhH?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T15:28:33.000Z",
-        "summary": "Anthropic targets $1.2T valuation by 2026 with AI research focus Crypto Briefing"
-      },
-      {
-        "title": "Anthropic extends free access to Claude Fable 5 amid OpenAI's new GPT-5.6 launch. - Pluang",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOTTZuY292cHlLdkE1WkdQdDJMVVI2ejNqZk5YOHBKNDMtQjhoSkQzWFZqNEZ5bnFTbExBT2NEenNPTnpucTNDM01fOFdZcVZuT2tYZ1hNcFBtMFVDMy1ZZWNaNkcxV3dSaHI0YmNacjJ5WVJHb1dRYmFNTkdsc1k1dTJHSHlqS1hWT1F4MmZNQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T15:11:02.000Z",
-        "summary": "Anthropic extends free access to Claude Fable 5 amid OpenAI's new GPT-5.6 launch. Pluang"
-      },
-      {
         "title": "Here’s Why Anthropic Extended Access To Claude Fable 5 Extended—Again - Forbes",
         "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPSXc2RnNtV08tVUtmMmdOUE1DbVVqM1ppYUpKX2YwRmtxZ2gtZU1oN1ZkX0pKVFNSTW5hLWJMaHV5T2I2V1BnZWNsVzd3UW53SXhuZ0V1S0VraXQ5bC0weGZWaDRqbFpwOWZpS1VGWjZSQ3hfT2xwUk9CNlBld1pSZXhVaV9hUDdEd2pCeGFwbTZwUHB0SVZjVk5QUTM3TmR6UlhsTUFFRXhqeG5vRmFHTWZURjVNVmIzUzZTSjlsbkVHV1BVMmJj?oc=5",
         "source": "Google News",
         "published": "2026-07-13T14:48:33.000Z",
         "summary": "Here’s Why Anthropic Extended Access To Claude Fable 5 Extended—Again Forbes"
-      },
-      {
-        "title": "Claude Code Just Pulled The Browser Into The Coding Workflow - WeRSM",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNUDlEeGNiWl9aemN6cHk1cE5vcFllRnI4Vk5BMEdxMTVUUTNmWVVLMEdyOS1TcTVJdURfWGZTLTZMaUJGTmluejdMVG5IYkhfS3JZV1J5MWdXOThCQ2ZNdngycVJLaFRDdmVZZGl5N1pOaGdSTG5uM0lyanVKSjlqREZn?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T14:19:22.000Z",
-        "summary": "Claude Code Just Pulled The Browser Into The Coding Workflow WeRSM"
       },
       {
         "title": "Debunking Anthropic's Claude J-lens consciousness, global workspace LLMs, Kyle Fish, Henry Shevlin - Sedona.Biz",
@@ -313,13 +322,6 @@
         "source": "Google News",
         "published": "2026-07-13T13:25:13.000Z",
         "summary": "Musk Concedes Anthropic Leads AI Race, Bolstering Bull Case for Amazon and Alphabet NAI500"
-      },
-      {
-        "title": "Anthropic Extends Free Access to Claude Fable 5 Through July 19 - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5iOFE1d2x0YnluaFB1WHIwV1F4N1owelFNclU1bmJXZW5nN0toZEluVW92YmstQ1N5X3RLQTJPVnUyNFBRbHZOT1gzZzNuRk1BZnRjTlVPd1ZITjljM096bDU2Uk02TlZjUl80bUc1VHpTSzRjZlE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T12:35:00.000Z",
-        "summary": "Anthropic Extends Free Access to Claude Fable 5 Through July 19 finance.biggo.com"
       },
       {
         "title": "How One Folder of Claude Skills Replaced Six Paid Tools #claudecode",
