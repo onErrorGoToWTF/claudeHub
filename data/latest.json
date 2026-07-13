@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-07-13T08:40:54.460Z",
+  "generated_at": "2026-07-13T12:24:17.180Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Global Workspace",
+        "url": "https://www.anthropic.com/research/global-workspace",
+        "source": "Anthropic Research",
+        "published": "2026-07-13T12:08:40.000Z",
+        "summary": ""
+      },
       {
         "title": "Ust Claude",
         "url": "https://www.anthropic.com/news/ust-claude",
@@ -135,22 +142,100 @@
         "source": "Anthropic Research",
         "published": "2026-07-08T22:11:25.000Z",
         "summary": ""
-      },
-      {
-        "title": "Economic Index Primitives",
-        "url": "https://www.anthropic.com/research/economic-index-primitives",
-        "source": "Anthropic Research",
-        "published": "2026-07-08T22:08:50.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "LTM partners with Anthropic to drive enterprise adoption of Claude AI solutions - Mediabrief.com",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTHdqU0VrNkNkdk94OFY4c1gtcG9SZVFEWnU3OVBOU0tOSV80ZWdJSUtoVGItZGF1YVQ3NGVFbnQzVU80UDBzRHhQbU9jYUpZclI4X3FpUHVSeGRIMmczTTVWRFhDbURacURzTUI4Z1BoZXZzYzlIN21YOE1XTjdVRVRpekstbDNa?oc=5",
+        "title": "Anthropic Extends Claude Fable 5 Access Again Till 19th July - SQ Magazine",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE14aHdycjh0VERDMW9hYXl0TmVGckVNTmdoT01Tc05YaG9oSkdKaUg0Y3JjZS1pME9DZ21uU0liUGxReFd5YVU2QmVGX3k5ZjNBbXY5RXdKQUxwanlaZXFhV2ZvUFdOM3ZpeWc?oc=5",
         "source": "Google News",
-        "published": "2026-07-13T07:55:01.000Z",
-        "summary": "LTM partners with Anthropic to drive enterprise adoption of Claude AI solutions Mediabrief.com"
+        "published": "2026-07-13T12:20:31.000Z",
+        "summary": "Anthropic Extends Claude Fable 5 Access Again Till 19th July SQ Magazine"
+      },
+      {
+        "title": "Anthropic extends free access to Claude Fable 5 again - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbzI2LTY4TzJGdlJUSVpONlE2YjR6cVZrcTFBdEtldlVhZXVjVUFiZXRKMmJFM0xCd0hyU1doVVh3UTdrcGk3a3ZKd3RwWXZfSVZmT0JYaEllMDFiVjQ5b042ZzVFMF9oU2pnTk9hdTN5UVh3VE94bEhjeWlJLU8td2U4ZkQzb0lYQ0gza2RHNVIwVXB5Smc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T12:01:17.000Z",
+        "summary": "Anthropic extends free access to Claude Fable 5 again Seeking Alpha"
+      },
+      {
+        "title": "LTM Partners with Anthropic to Accelerate Claude Adoption and Expand Enterprise Delivery - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQcnRkUThTbUk5T2toQ1RPb05GREh4a3JvSU01blpDbHpDY3NDT3pzSkdZaWNiZEtKX1JrNk5LcmZxQ0pwT19DaFVDc2UwLS1ueUZERWk3c05mWmduUkdia2ZVQlZTeEZMTXpvZmxHQzlNNjdocFg2U29Tcy0zV1dMcGdBMllVaUZLZWhtTmxJcmlqQ2NMckhpcy1COEdSV2dOckVHLXBkRQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T11:30:00.000Z",
+        "summary": "LTM Partners with Anthropic to Accelerate Claude Adoption and Expand Enterprise Delivery Yahoo Finance"
+      },
+      {
+        "title": "Cursor builds AI agent 'Sand' to rival Anthropic's Claude Cowork - TweakTown",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNU09CamI2RWlHeVFhZHhkcENTeUxHY29SVFhYSm94UGxGajB5QThtdDc4cS1OT1lkSHo1a0tVbTJidTdnYkMwdC1fczUwempZdFRHZG9sc0ZRZDg3UzdEVXdveUZyYUdUU0ZVazlpSzMzdG82bDJhNUpWMmoyUkEzcGRGVEZ2dE9kRnhLdm8zekg3bVFSTnhUOUlBUVdTRmoySkFBTTcyU0xvbklFS2Vn?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T11:10:06.000Z",
+        "summary": "Cursor builds AI agent 'Sand' to rival Anthropic's Claude Cowork TweakTown"
+      },
+      {
+        "title": "Washington Is Looking to Keep China From Training Its AI on US Models",
+        "url": "https://www.bloomberg.com/news/articles/2026-07-13/anthropic-openai-warnings-prompt-distillation-debate-in-dc",
+        "source": "Bloomberg",
+        "published": "2026-07-13T11:00:21.000Z",
+        "summary": "Anthropic and OpenAI’s warnings about “adversarial distillation” are reinvigorating one of the oldest debates in Silicon Valley."
+      },
+      {
+        "title": "AI Isn’t Human. Stop Talking About It Like It Is. - The Free Press",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE14eUhUdFR4S1k0RWlLcE40Nk1pY2ZEVkdjYmhsY3JGc0N4dXlyc0t6cW5IcDliTXlhRTBJYzBxTmh0Zk5IMmo1ODhDZXZlZTB0U3R4cHQ0d3c0RU1kWDgzaWEtU1dpMThp?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T11:00:19.000Z",
+        "summary": "AI Isn’t Human. Stop Talking About It Like It Is. The Free Press"
+      },
+      {
+        "title": "LTM to Train 1,000 Claude Engineers Under Expanded Partnership With Anthropic - Analytics India Magazine",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPR0RqbHV0eENvZ3IwZ2ZqUUNyX3VHLVlXZmNmSENQR2x5TmRnWGd0YzJBVjhtREpPQ0NIS3BnNUdrOGdMZDJEdUI0RmlTWm5rcHlIM0JyR3NsVmdhVmpNbmJZQ3g1S2h3aW94Y0dzenVjWUJwaERkQ01XanR2YW5BcEtKdHBTTEMwOUdQd1R1VkNVV2V3UnBEZ1pxaHlLN2RPUG9KdEdkVGkwUWVDRERxZjVPZlM?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T10:52:30.000Z",
+        "summary": "LTM to Train 1,000 Claude Engineers Under Expanded Partnership With Anthropic Analytics India Magazine"
+      },
+      {
+        "title": "Anthropic is asking the public to send in questions about AI - The Daily Star",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTWFSM0lOaU1QeThZODdONVJrY1JVaV96MzJvdC00YU1fUkxGSXJKWHdRMzlxand0UHpZcGJneGxOSmlnaXRPdmQ0bzBseXRFdzUyVDktRkNURFJ5ZHVKaFEtTUpzeTdfMlhBeEU3TkVZRDEtRWJiaUU0WUQ1dDJ3aG5OVDI2b1BUWVZScDNKektNLTcwd3ktbjJNNVRyQmk1Q1E1OUowWkN3bUs0bmhndg?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T10:44:04.000Z",
+        "summary": "Anthropic is asking the public to send in questions about AI The Daily Star"
+      },
+      {
+        "title": "How China is ripping off cutting-edge AI from Anthropic, OpenAI — and threatening US national security - New York Post",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQTGFvcEc3bmw4aEl1eGZPc3JIR3JhVThCQXJMdXo3RnM5Q2ZId29JLXJlcnRqd0JIMi1xVFBZS2VNWVFFMExyNXNzdzkyX2phdWo5dHBZaXAtZzBPOTQyYlRuX2VpWFQxS1FkMFBjVDFRV05FTzZEV3VpMHR3LXBjX1A5Z3BoYlZfbnozOXl3bnk1bGk4eVRnS0FNZHhDLUstNnZCMk1fUEVtUjJsam5jWG1VTXRQUURtQnF0Si1sWG85Z2JOVzNTSThVOE9sdkRIQUlEZ3BB?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T10:00:00.000Z",
+        "summary": "How China is ripping off cutting-edge AI from Anthropic, OpenAI — and threatening US national security New York Post"
+      },
+      {
+        "title": "Claude Code users keep 50% higher limits until July 19 - Help Net Security",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNUkx5TVR0N0loXzVWeUh6bU9hdVJTUDlkTVdYaVM2dWJ4Yl8zN19GdU1tR3BTT2tFcHQ0eXg2eHZWd2FiRHN6aHZ5aU5PUzJ4RmVZeDlxZ2tBVzMwSVJ5aHcyaF8xLWNOeV9xbEs0VHlrWkdDQzJxd0JwendOOXRPN2RRZEUwZHgwVmR0OGw2YURtdw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T09:06:55.000Z",
+        "summary": "Claude Code users keep 50% higher limits until July 19 Help Net Security"
+      },
+      {
+        "title": "Zig Creator Calls Spade a Spade, Anthropic Blows Smoke",
+        "url": "https://raymyers.org/post/zed-creator-calls-spade-a-spade/",
+        "source": "HN · 529↑",
+        "hn_id": "48889637",
+        "published": "2026-07-13T08:39:39.000Z",
+        "summary": ""
+      },
+      {
+        "title": "LTM partners Anthropic to build enterprise delivery capabilities around Claude - CRN Asia",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSWIteEVVRzRjYnZxNE8xQ2Z1amlCYkNKNlRNM0NzdVktb1VCRGJkUlg0LWg0UkFTbEd4NU1qX3h1bU9HUlZ5cmxjWnBkV2REZjhOTlI1MG1KU2ZEdkpPTzcyWGpwREVyRE5JRnV3Nm94b3ljWDZ0STRPLThrX2VPeDY2Mm5xbFF6RGpqcHhfeHkwU2tZVWZxbWRJaEkzVkFrZWR5T1E3emRRMGVEWXZJajVnRlFVM1VCMmc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T07:49:35.000Z",
+        "summary": "LTM partners Anthropic to build enterprise delivery capabilities around Claude CRN Asia"
+      },
+      {
+        "title": "Claude AI pricing in India revealed: Here's how much Pro, Max and Team subscriptions for Anthropic's AI... - Moneycontrol.com",
+        "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNZk40N1NpT2I1cnNicWVRN3lGbnc2aUtIZW9PX3RSNFYzcXZhWG1yNjBVanRBVWVZS2NOM0FDZ0RoSU1nX1djYUo4MWEyNDJmbzJpMDRYRnhCRkJReHYzSkdfTXZvZlU2UHVPd2hlS25Tc2E0THZULUtSaUtDY3hseG96LU5mYlU0WUZvelpyUDlqM1B3X1NLcXBwX1F0T3JvNldSLVgwNmYwR0JBLXZ2Z2FiWXNyRkpVc0syZjVQODd3V1U1SDZSYVBhY3VpblNpSmlzOTBUcWlrMGhRVzF4YWdld2dlS0VoTGdseFlkX0RWazRkc2E4akp3NUXSAYICQVVfeXFMUDl1TVFjNWRZMlV3YUNmXzdQOGFfcWY5X0lxTEFDZ201Sk5KSzlEVkJwdGltYkhldm9ndDNLbjVNNnZBV0tjaVl5T2xZa2ttZmQ5ci1xZGlpZjlUbnlpblU4RVNHbktXOE5pSTlrcjZGcm5XTVdEY3FNRHM0NjZVMHhCaWJ1Q05MNGlJeUhhY0Rvb3JKUXo5enkzMFFyODFZS2VOTUY0UE9jdnpXUllnMmcyaldiQ2ZHTmhnSHZhaVlvTXZuYjVxd0NhYXBwQ096WXRGTExmQ2VBR2twd3laTnpmaWNXT0pQNkVYdG40QVZINndiaUczVDJ1XzlJbG9XMFVn?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T07:46:19.000Z",
+        "summary": "Claude AI pricing in India revealed: Here's how much Pro, Max and Team subscriptions for Anthropic's AI... Moneycontrol.com"
       },
       {
         "title": "Why Are Chinese AI Models So Much Cheaper Than OpenAI and Anthropic? - Intelligent Living",
@@ -158,6 +243,20 @@
         "source": "Google News",
         "published": "2026-07-13T07:36:01.000Z",
         "summary": "Why Are Chinese AI Models So Much Cheaper Than OpenAI and Anthropic? Intelligent Living"
+      },
+      {
+        "title": "Anthropic extends Claude Fable 5 access to paid subscribers until July 19: Here’s what changes later - The Indian Express",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVjh5ZFRwelVncmVycThXenNHVTR6ZDFkVmttUV9zN1poZi1XMEVZaHFIVFp4b0tfZEYybldINThtYVFZcFFrelduUmlzQlF2UDR0VHU4UjdoSnNvcVN5WXhGSHljcmJjZXRDUDVzRnQ5eHJGQlJMQnNSRVBIUHNrSkxKWGlfeE9kWEVubUdMQWtKUlBjaHlOdFJQMkZqOFJxR1pKbFJnVjFCMHFzUE5SQW1tTUJUclV4dmlkdHU4VG5aLWEtY3BHYktFcWMwVmZyd1FLT0RB0gHcAUFVX3lxTE03UDlja2VCMTcwXzlTQVFObWRjTVFjV01nTkI5UTlCZy01MndIbDhwMTg0am1KR0Yzb1RQSERXQ3MzcDZNdlpLdUo4c0ZBZ1A3aXNWeFRJNHlZc3lROWZyOXM4WEtnOXU4c2Z2eVc1SmVkU3hlWWxUUmVTUU5JN1RtZm1CZ1NRS2dWTGQxeV9SRWV6elJTN1ZHOXVnRTFWRmhHcWpNWU9rc3owcUZjUHJzNEVkV0o3VkRicXZFWXpuSWpfSkthLWtzaHVNeEpRQWszX1RvWXJXb0tFM2k?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T07:34:11.000Z",
+        "summary": "Anthropic extends Claude Fable 5 access to paid subscribers until July 19: Here’s what changes later The Indian Express"
+      },
+      {
+        "title": "Anthropic rolls out India specific pricing for Claude AI: Plans, prices, and other details - India Today",
+        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPUlVEM2NJelNOSkhQN1RINUl4NW1pS0xnTEl3ci0weHF2dnNxdGJXQnZHUEEtNEVOS3NzdlN3NWpUNUZmWlV1MExnVzdOb0x2cHp5dExpb3RsbzIwMWhKNVlHdC1hRTkzZDkxdElxLXZwaFh5NUdRblZRazUzZndCXzdfSkcwVmk1bTJaeHB1RFdka2RZSk1HX3F6Z0NMRkEzZmJqZlhMNGw0cXU0b2trQWpuVlJhT2VXRVRoZzJyVllaX0Z4NWhzaGNIUFE2T1VUdHVVcFVaLXQtaC1rWE44amUtaWIteWZURWfSAe8BQVVfeXFMTnlMTnFJM0FLNmo2ZlJiSFpuc3poUW9GSlpkMUJUR2RXMXhTaHpweF9zTFlNX3VDMGRaeTIyWGNIVlEtUVRnaURZNUtaTWhTSTdEZVpXaVBXYjlEb1hvbGpXYUY1aHN6Y19sUGozSzNoN0RWWFEyaHFvLWx3M0J6dFZSeUpEei1xOUljYWsxbUZyMkNXR1lhbHhqODgyZnc0RVpaVFU5YWJINTEySlh6Y29GSEtoSTVPZHJGUzVwQ1JOdlM0Ym9YckxoMXIta2RkR1cwRHY4NUFoS1BXX3lSQlhXTk1rcWlZbHV0WktmYW8?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T07:22:34.000Z",
+        "summary": "Anthropic rolls out India specific pricing for Claude AI: Plans, prices, and other details India Today"
       },
       {
         "title": "Ltm and Anthropic Partner to Accelerate Claude Adoption and Expand Enterprise Delivery - marketscreener.com",
@@ -174,11 +273,32 @@
         "summary": "LTM bets on Anthropic's Claude to drive enterprise AI transformation Business Standard"
       },
       {
+        "title": "Anthropic has kept *Claude Fable 5* available to paid subscribers for another week - Mezha",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBpMzhScUpjZFl5X2N1YmpSNm5QeW1oSnUwc1poYWptVDJfNDdMdUF3UXJoazJjcS00YVJTYU1WOGptZ0NTRTl4NHFIenZ3QWhXVWE0RjlMd2gyTWV6TFBiWG5GVmtZaWgz0gFuQVVfeXFMUHFNblZpSTN0dktrUWJfQjdtMkVBdF83R0dhVzdtU1EybC13c05uTWtEUkphTUZsMks1OExIR2p1R3RxYWFjRmJ1RXpFVEZfUllDZ1BGNml5WW00MlFMcTVUWWxKRm1sOFhUMk10Nmc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T06:38:00.000Z",
+        "summary": "Anthropic has kept *Claude Fable 5* available to paid subscribers for another week Mezha"
+      },
+      {
         "title": "LTM Partners With Anthropic To Boost Adoption Of Claude - NDTV Profit",
         "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQM2tiSElxOHVaU0hJcnZWWFFqZ21IZi1Na1g2eElNRWNxbFl0RTl3WDNKZXFIRVRpUHhKbjFXdHE1M0Y0dEQ4RlpiY1lJU29LbWZ3dXlCM3pieUxpOEFRYUx4TzItVHRCdmlac0tiTGRJR2NiQlVDcW1tQUtzZHMwdmxLaHhGU3l2Wk4xckZYRHQ2Z3pWdElwZmMweS1UVTFCeXl2V9IBrAFBVV95cUxPSWM4UmFGV3A0WUtDSXlfRUpGYkNrU2RwQXBiUkIwX3hrN292dHFVX0hLZDE3X20xT2xZRnpyV29wT3VIV1U5T2ROTUJqWmF1VHdVZzduYWU3dVNrMUJGeXNOUEdKWmV5RkUyLTZnQzZLOVpVdVptRlNONHZHUF84em8zNWNLUkswWGhxMmMxcklDVG9wM0hkanFibGg4V0ZGeVZMOXVuRUpTUGts?oc=5",
         "source": "Google News",
         "published": "2026-07-13T06:30:59.000Z",
         "summary": "LTM Partners With Anthropic To Boost Adoption Of Claude NDTV Profit"
+      },
+      {
+        "title": "LTM, Anthropic partner to accelerate enterprise adoption of Claude AI - ETEnterpriseai.com",
+        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNa2EzNWRtNE13cXZocngwWGo4Z3RJUXY4QXhEUHBKV19qbWduVm41TXhrM3lLd0hzbzVveTRBb0IxTHdEOWZZNjI4TXhycW9zblhuVkRiUXc5NzRyRi14M2lHazJ5bk5NUnp4TjNVV24tZ0hlTTV5RzBWNmRSSGZtQlQ2WkE4a0pOdnRtVUxENVgwb3BrV2JtS05XM2djWDJSdDAydzlMOVJkdWVDODI2SG9PQXc4MU5UWkM3Wnc0Tm55TktPal9mUVVQRmJYcWQ5VHVTVVhoNktET1REZ3F4MzRjVzdHQmVSYUHSAe8BQVVfeXFMTlp2RHZiOExiZnhqVFpUaTM3UGVheTRGZ1lQdXFKU0FmNU1FU0hHcWRjMHVIQWxRRDBDaGhHU0RqX3ZidE13eHIzbWs0b3VTdFJpT2R6SVd0OVlRcEp1SHlHMkFrUV9tQmR5cUE4M3VSTFpuODJjejNCallpZG1EMGVTTlNWNlVfUUplQ2pBOGhFRUlGLUY4VFM3VUc5LVZaNm1vOV9qbl9jVS1uVWFBNTFSZGQ3Ynpjd3NCMGxINE1INEdFOWo3czhodi03Z1lZeFloUDlodThnN3Q5LWVMOG1EUXFhNlJObl9lR3pnSWM?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T06:27:38.000Z",
+        "summary": "LTM, Anthropic partner to accelerate enterprise adoption of Claude AI ETEnterpriseai.com"
+      },
+      {
+        "title": "LTM Partners Anthropic; Shares Gain as AI Alliance Expands Claude Adoption - HDFC Sky",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUGh2SllKTUpsdWxMYlVLWjJEdmhvam8tTnFld3pYS2JYSkJjZHVyNUxuZ3NwdW5wN0dkb2s4U3UwWks5ejFZZjl3dWJBTzdkbFByTDg2bk1ZQTZWTXZBaVFOcHR6eWFtbFNmZGx2VS1Gbk44aldBWFJkN1ByQWVPZWNleGt2dXdLRkExY0laQlVGeFd5WVRjWnZIa3VPdy1lVnBITVkxSlpMenlQc1Fn?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T05:59:17.000Z",
+        "summary": "LTM Partners Anthropic; Shares Gain as AI Alliance Expands Claude Adoption HDFC Sky"
       },
       {
         "title": "Claude just delayed the Fable 5 paywall again, extending free access until this date - Android Authority",
@@ -200,129 +320,6 @@
         "source": "Google News",
         "published": "2026-07-13T04:37:38.000Z",
         "summary": "Anthropic is giving away Claude Fable 5 at no extra cost for a limited time Digital Trends"
-      },
-      {
-        "title": "Cursor’s ‘Sand’ Agent Eyes Claude Cowork Market Before SpaceX Rewrites Its Roadmap - Tech Times",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPcDdRUWYzZ21WcFBOTWtHUUxGSEpEMjFvQ2FQRHdKQ3paaUhaRHZEWHdQZW5XX1dJQ3pDaUdPeFlyeVhIV3RwTTBvWl9uNU1JUTR2eElMYTR0Nk1NT1Y1TV81bGwtbk4wWmNmR3NCM2UyazdLcE9wZnUzWXY3SldvSEhzS3N5X2RMRkptSThzSy1Hal9lYW9zeHcxeGZLOTZ3eEk4azRUektCSTM0c181eUZCajdYNjNPVlRhZUpIaVgzd1FUTmVsMjY2Nkx2ZHc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T04:37:38.000Z",
-        "summary": "Cursor’s ‘Sand’ Agent Eyes Claude Cowork Market Before SpaceX Rewrites Its Roadmap Tech Times"
-      },
-      {
-        "title": "Claude Fable 5 Extends To July 19. 7 Days, 7 Power Moves - Forbes",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSnlHZk5GTWlVYVNBTWJGZUdqbnE1bllJc29UNUFVandHdUhvcEhpNnRKdFdDSVNqOThFS2NTN2gwcFFodG12VTNJNHlJcndZU1EydDhSWmVMSWFXVkc1NGRMWWNnSGdKS2JUaDBDT3pnQzg1SzVOMUx2ay1OODlodU10Yk9zdEFacWFUVTVmak5HYjRKVHRtN21vNXN1T0ItZUpNZzhLYmcxeE0?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T04:21:18.000Z",
-        "summary": "Claude Fable 5 Extends To July 19. 7 Days, 7 Power Moves Forbes"
-      },
-      {
-        "title": "Anthropic Confirms $16.6M Billing Error as Auditors Find $1.7M in Enterprise Overcharges - Tech Times",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQTHpncEwwZEpIXzliS3V6ZXVNYzZDYW5HUnpoNm1SWFhxbUIwT00zcjZEd01vOEJWS1RiTTJldWttZ2R5MW1vREw3YWotQXNEbjVVTjFZUFBBN1p1Y3BxZVFXT3NOZHZuMFlzM05md3dWNEVKZVVIdDlXeFlYdWJaVHprV21sWjB6RnZsTjVtQVZTeFhza05HMWdsb3ExeXNDb0VtZmZ0WTFVSG42ZG1NV1I1TjhERG1JbzAwUk9lekJFLWQtNTBSVkFpWGdqQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T03:48:52.000Z",
-        "summary": "Anthropic Confirms $16.6M Billing Error as Auditors Find $1.7M in Enterprise Overcharges Tech Times"
-      },
-      {
-        "title": "Fable 5 Free Through July 19: Anthropic Blinks Again as Opus 5 Leak Surfaces in Cursor - Tech Times",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNVkdHalozNU9EeEpsOUlMLTVObEF4T2xVWGctQ2J4SW5hU2UzZ0swNFNGZGJzM29ScVlRSy1tdXptX3BzaXhxcFJvSFpDVlotUkZJa0pkZXJwckUzM0xnNFU2N1liU3U4TVRPcTlzLU8tUUhocEFNNFh1OEZOcXVLalhmVHlvT1BMb2IwOWlTbjByS0ZpOUZPZWtMQ2ZNUGhGMFh0azVxdmhwZzRGdXBobjEzcUR3bEZJVEREZ0xVYnIyeXBkT2RZX0Nhazl4LUU?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T03:48:11.000Z",
-        "summary": "Fable 5 Free Through July 19: Anthropic Blinks Again as Opus 5 Leak Surfaces in Cursor Tech Times"
-      },
-      {
-        "title": "Anthropic Extends Free Claude Fable 5 Access By Another Week - NDTV Profit",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQa3RLQURZNmdtUTVmcUNCNjM4aEhpS2laaEhwQ05kY0J1NHNvYjFzY3QyU2RRQm5reWo2dW1XNlFxLTdSTTczWGMyZl9oV3ZNeWxjdU5oZkxoZGpiWXdpNC1wSG4xeEpnSVJHbmtBTWx0VzhJM0lqNlh4MXh4cU1oLW13RmZxNUNXd2dZY3BVR1FFd3NlclhRZ25DVVUxN29LblHSAaoBQVVfeXFMTVppYWlfVVk5VnhGTXJEbmE3OVVVbjRRUWplY0lqQ25XSHByRlNuTUZBNDllekMydWs5bHhhQVhGbWZZZjY4WHBrYmFDUVMzdzg1akpOX2t0UjNaWk9UN2dtSlgxSDBzcGVZWmxKTklmWTlxZl80ejNZMFdpT21HR19WVVd2Smo0QUtkNkxzVV92bGtSaUtCZG5ZZ19CbTFwb1FkR0xyUGg5aWc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T03:40:47.000Z",
-        "summary": "Anthropic Extends Free Claude Fable 5 Access By Another Week NDTV Profit"
-      },
-      {
-        "title": "Anthropic lets Claude users see how they really use AI over time - EdTech Innovation Hub",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQM01pZnE2NUpSa0NGZF9Pbk9oNnc1Wm9keEU5aDlXNkhNM3BfeERrQk85dHk4S3huR3c0OFdCRXRORVBXVzZDUHVRYU5Ka1pURWpIbm1FZkNLT0NDMVByQzNJdUFuSVdzbzVNdWR5TmJfNW5nZVU5MWRjU012d3pvaFZUVFV4RFFTa1NnaFM3eGZKckt6LXFnYndHSnBlcExENWJiMXJoZ0c?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T00:15:14.000Z",
-        "summary": "Anthropic lets Claude users see how they really use AI over time EdTech Innovation Hub"
-      },
-      {
-        "title": "Claude Fable 5 stays free for paid users until July 19 as Anthropic buys more time - BleepingComputer",
-        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQc0lsel93dHhiN0d2bXEwZmpDTk50SDZYTGtiX2tYMUUtUHo4TnZOVW9EaWJDMkVmcHdZT1g4V2w1ZDdKcDJjYTdUYUt2aXVJTHNJY3NDQmFCRWpaaVNqbFZUaEczRUFVMWFDUEFWNE5hUF9uYy03em1ETlpTRDc1MFpnVU1xNl9ORE81WTdXT3Q3STJjeTA5NGNtSU1YSmNCNXc4Skt1SUhaR0EtVVBBd1llLS0xRXNGRlFQT0NCdWdTNUc5UXljS1k4X2o0R3JxTTRKdi1pY21TUEx3bEHSAeMBQVVfeXFMTWJiT3RadlJ4blVGTWhPMUc4T01EV3RENWUxZUFvd3lsdW5MbUlHQmNDR1Jrd20tejB3enZoZllUVnZVWmlkUVhCU3VLWTNSTU04SjZrOGNGanJfbjdYSGd2SE44X1dFUHJGaTJ5LXI2OGRzd2NVajhxQzRIMFVOc0YtOVNNMFdJODdidHQwY3VUaFRiQTN0dVJOYkJ1QjNseF9qZFVsbzFsSUludWhBNHg0V2hmSVQ2TUE5cTZGcnF4SGUycmltQ2RIYlJ5azZrS2IwUExqX1cyMWE2WVJNZWVCa3c?oc=5",
-        "source": "Google News",
-        "published": "2026-07-12T19:39:12.000Z",
-        "summary": "Claude Fable 5 stays free for paid users until July 19 as Anthropic buys more time BleepingComputer"
-      },
-      {
-        "title": "Anthropic introduces Claude Reflect to help you understand your AI usage better - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOaGFYQldVX1psWW50MjNYcXg0SmZvb1RmXzEwNjFldzR3RUlOZEFFZTRhYjdWaGJGc2xoYURUVUNMZmtGN2hPVmppajQwVWRwXzU4NnFkaHhIcENUR1lydTkzRFl0OGdmazFxUkF6TmpVNF9HS3NwcGxqc3lpTWVSMGhxOG1JVGkwbnFiSDc0R1hNelNJWFF1UUVvOF9MSE1YMFlGTW90cEd4dFpKUFBMVDUwQ0cyUVlHWU15cXRTRkNUUdIBxwFBVV95cUxQR2FnWU9HaWg1bDdheUlRSXRtb0k1VzFCNW84ZGFIZldBWTR0Y0RUbG5wQ0hYcGNLdW14X2pPSUdPaEF2ZS1UQ1FBN3p2ZWJ6NnRuX05zUGhMMFR4NjRFVnNsbEJudVRvRkJDTUM1a25SdWlhb1ZkTFNLUnRCS1pmZl9CS0lMZHhVZnp3Qk1vOUUzWVBSaHJaZWpKdmU0NkxMeVg5eTFsNWpQdHFtU0lBTHRlSlJxUnFEMmRXZ2htRDhMY2hjdnhV?oc=5",
-        "source": "Google News",
-        "published": "2026-07-12T19:38:56.000Z",
-        "summary": "Anthropic introduces Claude Reflect to help you understand your AI usage better Firstpost"
-      },
-      {
-        "title": "Anthropic extends Claude Fable 5 access through July 19 for paid subscribers - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSlluc2FzQnlQYjY1T0JLdnJ3MXFBQVhncy1kWEtoMkNmUkxMb19GTy1vd2thMGJROHBGRXEzaU84cGpKdDB4czQyblFTcnRmOEdDTGotN0l5RndUOElVdTQ1LW9wT05MODFhbTZtb0ZMQkEwSl81UWNRTEdFZFM1dDQtQ1RURFVwMXcxT3VERG5HZXRzLVVteWtWd0l2Ni1UX0M5d1I0dGlzLWM3X0F6VnNpbGNQc215Q2YzRlVB0gHDAUFVX3lxTE5MYXF1ZmYwdnA1c0hQeU5pSHlDY0pUTEVQTU1UWVdWb2tUY0daVkZRV2lrd05ZbTN4dEJPejBKQmZJbzJlYllBUWFkUmU1YTVrY01aczVObnhkS0hKYzZybkNFVHdabElTLWlwbk9PRmN6U2VyUDdpUkpSMTR0TTNlSkNMckJOc3B5d0ZhbVlCbTJKWmxZaHdmdkd6UXZvWkR2Wi1SamxBSmdTWEtvZkpPSGJjV0JXRzg3eGpMODFKNG9GTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-12T19:11:53.000Z",
-        "summary": "Anthropic extends Claude Fable 5 access through July 19 for paid subscribers Firstpost"
-      },
-      {
-        "title": "Claude Code sends 33k tokens before reading the prompt; OpenCode sends 7k",
-        "url": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead",
-        "source": "HN · 574↑",
-        "hn_id": "48883275",
-        "published": "2026-07-12T18:25:51.000Z",
-        "summary": "This started based off of a hunch. We usually use OpenCode, but were &#x27;forced&#x27; to use Claude Code for a while due to issues with Meridian. In that time, we saw the usage…"
-      },
-      {
-        "title": "Anthropic Adds Built-In Web Browser to Claude Code Desktop App - MLQ.ai",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNQzRIc25NUVRFejgxWlp6bU94SVdMX2JMdVl2VXVheUE4TlZYNEdnYlh4YkpMMUhfWkljd1lVa0hsODhzV1RLOTc5QU5nUU84UkFaX0lpZlBHWWhKc2g3dkt5ZXBpdGtUZXdWaGhVY2h0dnRaNTVHX0VIZU8tVHRBNzVpQlNjMUJweTJF?oc=5",
-        "source": "Google News",
-        "published": "2026-07-12T18:19:43.000Z",
-        "summary": "Anthropic Adds Built-In Web Browser to Claude Code Desktop App MLQ.ai"
-      },
-      {
-        "title": "Anthropic extends Fable 5 access through July 19 - The Economic Times",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPZ0tDbHVxREZtTFZXVXAtdHdDejJHTVdZU1ZOR1pibWNLTjB3eUhrbm5rX1pwX243SV9NbVdCQ0phMUVnVU1KOHY0eEZQQTF0SnAzbHl1dFEtN2I4TkxRc05GQ0NxdFZJYUVRdG9va3JwOGM2QXN4b3RMQlVFYms3MzJFczVaay1pVThLbTF6UE5WLW5xV1pWRTh3eWxSY29DVWg3TkxoY2tVcXBfdU1TdFRTY0RfVW1UbWotc3Rwdk9JZzhocm1pamVuOA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-12T18:08:02.000Z",
-        "summary": "Anthropic extends Fable 5 access through July 19 The Economic Times"
-      },
-      {
-        "title": "Claude Code May–July 2026 weekly limits promotion",
-        "url": "https://support.claude.com/en/articles/15910845-claude-code-may-july-2026-weekly-limits-promotion",
-        "source": "HN · 45↑",
-        "hn_id": "48883064",
-        "published": "2026-07-12T18:01:29.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Fable extended until 19 July",
-        "url": "https://twitter.com/claudeai/status/2076351399999557669",
-        "source": "HN · 87↑",
-        "hn_id": "48882730",
-        "published": "2026-07-12T17:14:34.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic's newest enterprise partner is training 20,000 people on Claude — here's the shift it signals - The New Stack",
-        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1kVk16UUNiNnJYUlJzdUpDTTJ1R0ItRHhHajlXeFNjdjdjek45TTBsZ2QxSVZaa3BObDhJaDhVYmdfT3gtZ1otbVpuTUwwRG5TbkgzUU9BTmNXeWpKT05UYms0NUhqSUdV?oc=5",
-        "source": "Google News",
-        "published": "2026-07-12T17:04:12.000Z",
-        "summary": "Anthropic's newest enterprise partner is training 20,000 people on Claude — here's the shift it signals The New Stack"
-      },
-      {
-        "title": "Autoresearch, Claude and Constrained Optimization",
-        "url": "https://www.elliotcsmith.com/autoresearch-claude-and-constrained-optimization/",
-        "source": "HN · 31↑",
-        "hn_id": "48881498",
-        "published": "2026-07-12T14:32:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude vs Gemini: Fable 5 Beats Opus 4.8 by 11 Points - tech-insider.org",
-        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE81Zno3cU1POTJkZWxTVW92MGprNWF3WTM0a3RRaC1FRXR5NXpfcXlUUTJkZGhDanEweXRQY1dpczEtb0dzTXg1blFZYWNDU1FoanI0b2NSdGFiZU4zTk8yeEV5ak1vSXBf?oc=5",
-        "source": "Google News",
-        "published": "2026-07-12T12:26:41.000Z",
-        "summary": "Claude vs Gemini: Fable 5 Beats Opus 4.8 by 11 Points tech-insider.org"
       },
       {
         "title": "How One Folder of Claude Skills Replaced Six Paid Tools #claudecode",
