@@ -1,8 +1,29 @@
 {
-  "generated_at": "2026-07-13T16:18:15.919Z",
+  "generated_at": "2026-07-13T19:07:33.244Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Agentic Misalignment",
+        "url": "https://www.anthropic.com/research/agentic-misalignment",
+        "source": "Anthropic Research",
+        "published": "2026-07-13T18:27:52.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Plays Robotics",
+        "url": "https://www.anthropic.com/research/claude-plays-robotics",
+        "source": "Anthropic Research",
+        "published": "2026-07-13T17:54:21.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Values Models Languages",
+        "url": "https://www.anthropic.com/research/claude-values-models-languages",
+        "source": "Anthropic Research",
+        "published": "2026-07-13T17:14:16.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude for Creative Work",
         "url": "https://www.anthropic.com/news/claude-for-creative-work",
@@ -22,13 +43,6 @@
         "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
         "source": "Anthropic",
         "published": "2026-07-13T15:41:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Plays Robotics",
-        "url": "https://www.anthropic.com/research/claude-plays-robotics",
-        "source": "Anthropic Research",
-        "published": "2026-07-13T13:57:54.000Z",
         "summary": ""
       },
       {
@@ -102,13 +116,6 @@
         "summary": ""
       },
       {
-        "title": "Agentic Misalignment",
-        "url": "https://www.anthropic.com/research/agentic-misalignment",
-        "source": "Anthropic Research",
-        "published": "2026-07-08T22:42:47.000Z",
-        "summary": ""
-      },
-      {
         "title": "Frontier Threats Red Teaming for Ai Safety",
         "url": "https://www.anthropic.com/news/frontier-threats-red-teaming-for-ai-safety",
         "source": "Anthropic",
@@ -135,16 +142,58 @@
         "source": "Anthropic",
         "published": "2026-07-08T22:23:46.000Z",
         "summary": ""
-      },
-      {
-        "title": "Tracing Thoughts Language Model",
-        "url": "https://www.anthropic.com/research/tracing-thoughts-language-model",
-        "source": "Anthropic Research",
-        "published": "2026-07-08T22:16:10.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Canadian regulator warns banks about Anthropic's Claude Mythos risks - report (TD:CA:TSX) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNOXpIa1NOekt4cEN2VVdVRlZ0ekFxQVVoUnZMRHpFSXdKWFRZQTdrODRMSGJYNVA4OHFtU21Gb1l5TnY4SjRXcHlXYzFET25yQ0hoSkpTVC1LbXl5NTdDS3oyVF9BdEVLdktDVmY3NS1nNG00MXV0WmhDNEpDT1F2dVdjdnp4ZmN2ODBoQVBaTml5VktKRTBoR01LYnFtTmNtckgzMEtETEdlU0pORFZEMGRSS0s?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T18:58:10.000Z",
+        "summary": "Canadian regulator warns banks about Anthropic's Claude Mythos risks - report (TD:CA:TSX) Seeking Alpha"
+      },
+      {
+        "title": "EXCLUSIVE: Canada regulator cited Anthropic's Claude Mythos in warning to banks on cyber risks, email shows - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNVndVUlFjeXZyV1lrNVRsZzJEVXdIUTEwRmdBclIyMDJlRmVGcUNGREdVMVRIQ1l3NWpmNXM5UTdtV3RCZW01V2h5dk1VUy1OU3ZQSDk4b1I0Z0xybEQ2N0lkZUtOLWpvYnFEUWRNVEsyWnIydUtDZXY1cGN0T0RSM25oblAyVG1EaHR5WG9oUXVtRXFPWVR1M3NET1BMZ05mOE0yclA0eDFXTTBLS01wUEx2dG5qUGN4MWJtbWpB?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T18:11:37.000Z",
+        "summary": "EXCLUSIVE: Canada regulator cited Anthropic's Claude Mythos in warning to banks on cyber risks, email shows Reuters"
+      },
+      {
+        "title": "Canada regulator cited Anthropic's Claude Mythos in warning to banks on cyber risks, email shows - CNA",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPMS1OQ1dhTzFpWTdRdzFjSlUzRUdRdDljenVPX0xYMVdzdGh1ZkJNcHI3NXpuVVF4NTBwV09mWk1fSkV6NlZ5ZkREWjNQajltV0w2X3hsb0pBUDlMUW15R1lsei1LU1VjZHd6UXFsYjNVcjd0ckJDNU1XQmNyWHRTZFRCOEtXeGRPZEttMjBaTXMxY3pEbHNFUFJpUTgwLWRrMXcxV2FIeDRLTm0xMlZWaDlMOTc5eEYyNGhOU0I5MW1TbUdua192d0VIaVNOa3h1ZEhR?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T18:07:24.000Z",
+        "summary": "Canada regulator cited Anthropic's Claude Mythos in warning to banks on cyber risks, email shows CNA"
+      },
+      {
+        "title": "Canada regulator cited Anthropic's Claude Mythos in warning to banks on cyber risks, email shows - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQRXcwVE02UWR3ZjNybl8zMldWRzItVS05bEI1UlNYMGlQUWR1MTZlTnYzWVlJRU9femg5UlQwaHE4UVd1Vy1tZkVfZlBmN3lwWllHQkJQU3RnZy1NS19FNXk0X3g5MDExLW8yendSSFIwS3QyVDhhRjFlX2FVTllNeWlDaHM2SEI3Skhrd3lDU25CS1cyX29YaldLeFgxWTdyalphQm56OWhxRDFqX1hiQnIzZGdUdF9fMjVJZW1MQ1NUOU5SYlQ2R1pCd0hUYUlsMmtzNTllb3BjdFI0NjY2eDlyYkJZamxSWEN4UXRlMWRxS2dLNmktOA?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T18:03:01.000Z",
+        "summary": "Canada regulator cited Anthropic's Claude Mythos in warning to banks on cyber risks, email shows TradingView"
+      },
+      {
+        "title": "Anthropic rolls out rupee pricing for Claude AI in India - The Economic Times",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNZ3pHVURzams4VzA3bGpQU3AzR2N0OXNFTGFBdlNwWjJjU2ZvN1AzNmxNajFSb2J1V0tzSnI4MG5HTlNRbFBIRldGbFdDcjJ3LThwSmpEYURRQnIzaHRzRWIxR2hPWHg5UE1XcldsS2dEaEtsTWVMcVQ0ZjFTNlRZQ2t1M1dKSDM0MFl2MFFEU0VzblNkelM3amVDZDd4Q1F6eWFXa0JMN2xBTWJRbWZ4R1A4dFA4VG1NM2dEZUhYYnJwOS1LX19CUmg4LWtEMlNwTTNuR1hB0gHbAUFVX3lxTE83VDkxa0haOG8wNGI4NTJhWkF5dTFZdmdYQnJqRWtObm9KbkUwWGpuOXpwdVdhV3c2V1NlLVBsX2tPeGMteU0xR01NM09aYmRjZWM4RmtxMXM2cTE3TVB0cGFkd1llRlpGUElFRzZQaXU4R0MxSGQ5VXhzSmxGTEUtZmdQSGp2bl9hbU5pY2pTM3VHWlVZWDNHLWszeVFCSkpHU2pOUjdqaGlWaGc1TTM4VTdLazVIeW8zMVNiT2c5aF8xT0VDUmJCdUdmeElBV0xnSDZ0UE9zeU1mTQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T17:50:30.000Z",
+        "summary": "Anthropic rolls out rupee pricing for Claude AI in India The Economic Times"
+      },
+      {
+        "title": "Anthropic’s Claude Science app is coming for Kendall Square - The Boston Globe",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNT1A0dFdtek0xTjB4S0RsNW1jUUxtV0xXQWV0eVVGZHl4YjVqYjVCNDFqUFZzUVRLRTI1VHlJdk5Xc21HMWRHbV8yRm85MndZbk12SDA4N2l2NHcyR2FOR2xzczkyYmROT0dVSVU1dVotZWtjUEt5Y21pUTdCXzBXcU96VkI1SGVPUTNwOWd2RnVlalFLcGtiZ1RQNjQ1NExWM1J6cXhsb0xLS2pZ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T17:26:15.000Z",
+        "summary": "Anthropic’s Claude Science app is coming for Kendall Square The Boston Globe"
+      },
+      {
+        "title": "Anthropic extends Fable 5 again — and won't talk about what developers found inside Cursor - The New Stack",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE8yNEJKTG8tWWgxb0czbE9iRW5qYWZDbFJNakN1Ykw0T1JGcklxNUNSbjdKMFZUYmJEYnJDY2lVRGtXWG05SWRSYjhZZWJKTkZFVVR3Y1paSlY3QQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T17:14:19.000Z",
+        "summary": "Anthropic extends Fable 5 again — and won't talk about what developers found inside Cursor The New Stack"
+      },
       {
         "title": "Want to try the latest ChatGPT and Claude models? Now’s your chance - PCWorld",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQa2x5UVBMclhoUDFEUjFlbEpiMzdDQWFpSEpoNEJUWjFqT01qanIyMTlBMXg5LU1Ca01NeWdkS1VjbW1mVGc3RHFLMzlWX2g5a1poeE9rMi1DS21tQWcwS20wT2J0alJqY2dTT3RFSWNTZmE1dmVTcUFyZk50ZWxudkw4NVhCaUw5UWRQczQ2OHZOZ3pzanp6RmVVdThfdnotRWNj?oc=5",
@@ -174,11 +223,11 @@
         "summary": "Anthropic starts localizing Claude pricing for India, its biggest market after the US TechCrunch"
       },
       {
-        "title": "Anthropic’s Claude Science app is coming for Kendall Square - The Boston Globe",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNT1A0dFdtek0xTjB4S0RsNW1jUUxtV0xXQWV0eVVGZHl4YjVqYjVCNDFqUFZzUVRLRTI1VHlJdk5Xc21HMWRHbV8yRm85MndZbk12SDA4N2l2NHcyR2FOR2xzczkyYmROT0dVSVU1dVotZWtjUEt5Y21pUTdCXzBXcU96VkI1SGVPUTNwOWd2RnVlalFLcGtiZ1RQNjQ1NExWM1J6cXhsb0xLS2pZ?oc=5",
+        "title": "Anthropic technical staff uses Claude to make rack for Framework mainboards - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZUZYUzFCUXRVRktkdkFaWTZCNkVrWDROZDQwUWp3VXJJN3h0OF9lQ25QNUlSU3pNYkZ2emZaSDBaWGFVaHZTOEFLZnhvcGVqMm82UHV6RmpZQlVUdkVLaThSMGlOS0tNVXZmWkkyd3R2YzhNMjVMeVJkcWRsYnk4ODZHZ1VQZ3BzNVhtTzJKai0tTmdqY0t1dDV3?oc=5",
         "source": "Google News",
-        "published": "2026-07-13T15:31:43.000Z",
-        "summary": "Anthropic’s Claude Science app is coming for Kendall Square The Boston Globe"
+        "published": "2026-07-13T15:33:14.000Z",
+        "summary": "Anthropic technical staff uses Claude to make rack for Framework mainboards Yahoo Tech"
       },
       {
         "title": "Anthropic targets $1.2T valuation by 2026 with AI research focus - Crypto Briefing",
@@ -199,7 +248,7 @@
         "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPSXc2RnNtV08tVUtmMmdOUE1DbVVqM1ppYUpKX2YwRmtxZ2gtZU1oN1ZkX0pKVFNSTW5hLWJMaHV5T2I2V1BnZWNsVzd3UW53SXhuZ0V1S0VraXQ5bC0weGZWaDRqbFpwOWZpS1VGWjZSQ3hfT2xwUk9CNlBld1pSZXhVaV9hUDdEd2pCeGFwbTZwUHB0SVZjVk5QUTM3TmR6UlhsTUFFRXhqeG5vRmFHTWZURjVNVmIzUzZTSjlsbkVHV1BVMmJj?oc=5",
         "source": "Google News",
         "published": "2026-07-13T14:48:33.000Z",
-        "summary": "Here’s Why Anthropic Extended Access To Claude Fable 5 Extended—Again Forbes"
+        "summary": "Here’s Why Anthropic Extended Access To Claude Fable 5 Extended—Again Forbes Anthropic Wants You to Pay Up for Claude Fable 5 WIRED Anthropic extends Fable 5 access through July 19 The Economic Times"
       },
       {
         "title": "Claude Code Just Pulled The Browser Into The Coding Workflow - WeRSM",
@@ -207,13 +256,6 @@
         "source": "Google News",
         "published": "2026-07-13T14:19:22.000Z",
         "summary": "Claude Code Just Pulled The Browser Into The Coding Workflow WeRSM"
-      },
-      {
-        "title": "AI Isn’t Human. Stop Talking About It Like It Is. - The Free Press",
-        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE14eUhUdFR4S1k0RWlLcE40Nk1pY2ZEVkdjYmhsY3JGc0N4dXlyc0t6cW5IcDliTXlhRTBJYzBxTmh0Zk5IMmo1ODhDZXZlZTB0U3R4cHQ0d3c0RU1kWDgzaWEtU1dpMThp?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T14:04:01.000Z",
-        "summary": "AI Isn’t Human. Stop Talking About It Like It Is. The Free Press"
       },
       {
         "title": "Debunking Anthropic's Claude J-lens consciousness, global workspace LLMs, Kyle Fish, Henry Shevlin - Sedona.Biz",
@@ -228,6 +270,13 @@
         "source": "Google News",
         "published": "2026-07-13T13:25:13.000Z",
         "summary": "Musk Concedes Anthropic Leads AI Race, Bolstering Bull Case for Amazon and Alphabet NAI500"
+      },
+      {
+        "title": "Anthropic Extends Free Access to Claude Fable 5 Through July 19 - finance.biggo.com",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5iOFE1d2x0YnluaFB1WHIwV1F4N1owelFNclU1bmJXZW5nN0toZEluVW92YmstQ1N5X3RLQTJPVnUyNFBRbHZOT1gzZzNuRk1BZnRjTlVPd1ZITjljM096bDU2Uk02TlZjUl80bUc1VHpTSzRjZlE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-13T12:35:00.000Z",
+        "summary": "Anthropic Extends Free Access to Claude Fable 5 Through July 19 finance.biggo.com"
       },
       {
         "title": "Anthropic Extends Claude Fable 5 Access Again Till 19th July - SQ Magazine",
@@ -270,56 +319,6 @@
         "source": "Google News",
         "published": "2026-07-13T11:10:06.000Z",
         "summary": "Cursor builds AI agent 'Sand' to rival Anthropic's Claude Cowork TweakTown"
-      },
-      {
-        "title": "Washington Is Looking to Keep China From Training Its AI on US Models",
-        "url": "https://www.bloomberg.com/news/articles/2026-07-13/anthropic-openai-warnings-prompt-distillation-debate-in-dc",
-        "source": "Bloomberg",
-        "published": "2026-07-13T11:00:21.000Z",
-        "summary": "Anthropic and OpenAI’s warnings about “adversarial distillation” are reinvigorating one of the oldest debates in Silicon Valley."
-      },
-      {
-        "title": "Anthropic expanding Claude Cowork to mobile and web, details here [U] - 9to5Mac",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSXUxbUtmNFlPNXN6dnRpUE5WTjNZeGJLSGcyUHhleWszc1JBeU1TbDNvWjBjLUxKaUdaUHNOYWN3WW90V2hvcFRIallHUHhVTXlOa1Y1a01PelhPVlRNRS1DaDFfZFh2cFlWWTZUcWFCbURCclU1SnZudG1iaHpvS2VpU01YQkZYTlRveWMyZGEteUxxSEpjbVV5T08?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T11:00:00.000Z",
-        "summary": "Anthropic expanding Claude Cowork to mobile and web, details here [U] 9to5Mac"
-      },
-      {
-        "title": "LTM to Train 1,000 Claude Engineers Under Expanded Partnership With Anthropic - Analytics India Magazine",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPR0RqbHV0eENvZ3IwZ2ZqUUNyX3VHLVlXZmNmSENQR2x5TmRnWGd0YzJBVjhtREpPQ0NIS3BnNUdrOGdMZDJEdUI0RmlTWm5rcHlIM0JyR3NsVmdhVmpNbmJZQ3g1S2h3aW94Y0dzenVjWUJwaERkQ01XanR2YW5BcEtKdHBTTEMwOUdQd1R1VkNVV2V3UnBEZ1pxaHlLN2RPUG9KdEdkVGkwUWVDRERxZjVPZlM?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T10:54:55.000Z",
-        "summary": "LTM to Train 1,000 Claude Engineers Under Expanded Partnership With Anthropic Analytics India Magazine"
-      },
-      {
-        "title": "Anthropic is asking the public to send in questions about AI - The Daily Star",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTWFSM0lOaU1QeThZODdONVJrY1JVaV96MzJvdC00YU1fUkxGSXJKWHdRMzlxand0UHpZcGJneGxOSmlnaXRPdmQ0bzBseXRFdzUyVDktRkNURFJ5ZHVKaFEtTUpzeTdfMlhBeEU3TkVZRDEtRWJiaUU0WUQ1dDJ3aG5OVDI2b1BUWVZScDNKektNLTcwd3ktbjJNNVRyQmk1Q1E1OUowWkN3bUs0bmhndg?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T10:44:04.000Z",
-        "summary": "Anthropic is asking the public to send in questions about AI The Daily Star"
-      },
-      {
-        "title": "How China is ripping off cutting-edge AI from Anthropic, OpenAI — and threatening US national security - New York Post",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQTGFvcEc3bmw4aEl1eGZPc3JIR3JhVThCQXJMdXo3RnM5Q2ZId29JLXJlcnRqd0JIMi1xVFBZS2VNWVFFMExyNXNzdzkyX2phdWo5dHBZaXAtZzBPOTQyYlRuX2VpWFQxS1FkMFBjVDFRV05FTzZEV3VpMHR3LXBjX1A5Z3BoYlZfbnozOXl3bnk1bGk4eVRnS0FNZHhDLUstNnZCMk1fUEVtUjJsam5jWG1VTXRQUURtQnF0Si1sWG85Z2JOVzNTSThVOE9sdkRIQUlEZ3BB?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T10:00:00.000Z",
-        "summary": "How China is ripping off cutting-edge AI from Anthropic, OpenAI — and threatening US national security New York Post"
-      },
-      {
-        "title": "Claude Code users keep 50% higher limits until July 19 - Help Net Security",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNUkx5TVR0N0loXzVWeUh6bU9hdVJTUDlkTVdYaVM2dWJ4Yl8zN19GdU1tR3BTT2tFcHQ0eXg2eHZWd2FiRHN6aHZ5aU5PUzJ4RmVZeDlxZ2tBVzMwSVJ5aHcyaF8xLWNOeV9xbEs0VHlrWkdDQzJxd0JwendOOXRPN2RRZEUwZHgwVmR0OGw2YURtdw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-13T09:06:55.000Z",
-        "summary": "Claude Code users keep 50% higher limits until July 19 Help Net Security"
-      },
-      {
-        "title": "Zig Creator Calls Spade a Spade, Anthropic Blows Smoke",
-        "url": "https://raymyers.org/post/zed-creator-calls-spade-a-spade/",
-        "source": "HN · 1114↑",
-        "hn_id": "48889637",
-        "published": "2026-07-13T08:39:39.000Z",
-        "summary": ""
       },
       {
         "title": "How One Folder of Claude Skills Replaced Six Paid Tools #claudecode",
@@ -1006,6 +1005,22 @@
     ],
     "tutorials": [
       {
+        "title": "Merge pull request #771 from anthropics/nikblanchet/fix-metaprompt-pr…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/67ce644d33e5933f0bcc0b6eb4113df41bbf3a8f",
+        "source": "Anthropic Cookbook",
+        "published": "2026-07-13T17:54:29.000Z",
+        "summary": "Merge pull request #771 from anthropics/nikblanchet/fix-metaprompt-prefill Fix metaprompt notebook: remove assistant prefill (400 on current models)",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Clean up metaprompt notebook: clear outputs, rename CLIENT to client",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/470dd66397222de71c1a9b8c7fb672edb0ca23af",
+        "source": "Anthropic Cookbook",
+        "published": "2026-07-13T17:29:43.000Z",
+        "summary": "Clean up metaprompt notebook: clear outputs, rename CLIENT to client Clear all cell outputs and execution metadata so the notebook ships clean, and rename CLIENT to client to follow Python naming…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.207",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.207",
         "source": "Claude Code Releases",
@@ -1014,11 +1029,27 @@
         "tutorial_kind": "official"
       },
       {
+        "title": "Address review findings: docs, robustness, and Colab fixes",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/218ccc7572e7f5b9b257d0b51a7b98332e0c1620",
+        "source": "Anthropic Cookbook",
+        "published": "2026-07-10T16:08:34.000Z",
+        "summary": "Address review findings: docs, robustness, and Colab fixes Follow-up to the prefill removal, applying findings from a multi-reviewer pass over the notebook and a live re-execution. Tutorial text and…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "CI: fail the notebook-tests job when a changed notebook fails to exec…",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/5772b37e8c6aaade3747d9028d3afc74a3a8c61a",
         "source": "Anthropic Cookbook",
         "published": "2026-07-10T15:32:47.000Z",
         "summary": "CI: fail the notebook-tests job when a changed notebook fails to execute (#772) The maintainer-gated execution step in notebook-tests.yml runs each CHANGED notebook against the live API and counts…",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Fix metaprompt notebook: remove assistant prefill (400 on current mod…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/5d5e2f481fe2a72f9a8f285a442a8135bc6f3d28",
+        "source": "Anthropic Cookbook",
+        "published": "2026-07-10T05:04:55.000Z",
+        "summary": "Fix metaprompt notebook: remove assistant prefill (400 on current models) The metaprompt (prompt generator) notebook has been broken for every user since #375 bumped its model from claude-sonnet-4-5…",
         "tutorial_kind": "official"
       },
       {
@@ -1162,22 +1193,6 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "Fix pre-existing verify-urls failures",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/e02f0311fe4b34eaa46179599e749ea761aac582",
-        "source": "Anthropic Cookbook",
-        "published": "2026-07-06T19:16:49.000Z",
-        "summary": "Fix pre-existing verify-urls failures registry.yaml: the fable_5_fallback_billing entry used 'Safeguards' and 'Billing', neither of which is in the registry schema's category enum - trimmed to…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Apply internal review fixes and add architecture diagram",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/5d6d633b6a746e9302946d3ef5b82b99e99a1966",
-        "source": "Anthropic Cookbook",
-        "published": "2026-07-06T18:57:44.000Z",
-        "summary": "Apply internal review fixes and add architecture diagram Review fixes (comments and prose only, recorded outputs untouched): a fourth honest caveat documenting that the committed run's own park list…",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "v2.1.201",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.201",
         "source": "Claude Code Releases",
@@ -1194,14 +1209,6 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "Add coordinator-pattern cost cookbook: big models plan, small models …",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/a485090d4c3af1a59f6071aa13d388d48e0c9bf3",
-        "source": "Anthropic Cookbook",
-        "published": "2026-07-03T00:25:17.000Z",
-        "summary": "Add coordinator-pattern cost cookbook: big models plan, small models execute New managed_agents notebook on the economics of the multiagent coordinator config: a frontier coordinator (Fable 5) plans…",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "v2.1.199",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.199",
         "source": "Claude Code Releases",
@@ -1215,14 +1222,6 @@
         "source": "Claude Code Releases",
         "published": "2026-07-02T22:55:04.000Z",
         "summary": "What's changed Subagents now run in the background by default, so Claude keeps working while they run and is notified when they finish (previously a gradual rollout) Claude in Chrome is now…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "fix(rag,classification): update rate-limit tier references to usage-t…",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/3393bdaedde4fb26b4944a14710471f07c204fc1",
-        "source": "Anthropic Cookbook",
-        "published": "2026-07-02T15:45:30.000Z",
-        "summary": "fix(rag,classification): update rate-limit tier references to usage-tier naming (#752)",
         "tutorial_kind": "official"
       },
       {
@@ -1744,6 +1743,69 @@
     ],
     "claude_learning": [
       {
+        "title": "@modelcontextprotocol/express@2.0.0-beta.4",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fexpress%402.0.0-beta.4",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-07-13T17:40:35.000Z",
+        "summary": "Patch Changes Updated dependencies [ 7c49b47 , e0a0ab7 , 8e1d2e9 , 3f07a32 ]: @modelcontextprotocol/server@2.0.0-beta.4"
+      },
+      {
+        "title": "@modelcontextprotocol/codemod@2.0.0-beta.4",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fcodemod%402.0.0-beta.4",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-07-13T17:40:32.000Z",
+        "summary": "Patch Changes #2486 ee8267a Thanks @felixweinberger ! - Version the codemod together with the core SDK packages, matching the migration guide's shared-version guarantee."
+      },
+      {
+        "title": "@modelcontextprotocol/node@2.0.0-beta.4",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fnode%402.0.0-beta.4",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-07-13T17:40:29.000Z",
+        "summary": "Patch Changes Updated dependencies [ 7c49b47 , e0a0ab7 , 8e1d2e9 , 3f07a32 ]: @modelcontextprotocol/server@2.0.0-beta.4"
+      },
+      {
+        "title": "@modelcontextprotocol/core@2.0.0-beta.4",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fcore%402.0.0-beta.4",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-07-13T17:40:26.000Z",
+        "summary": "Minor Changes #2477 8e1d2e9 Thanks @felixweinberger ! - Move the schema source modules (spec schemas, OAuth schemas, protocol constants) into @modelcontextprotocol/core and resolve them from there as a regular runtime…"
+      },
+      {
+        "title": "@modelcontextprotocol/server-legacy@2.0.0-beta.4",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver-legacy%402.0.0-beta.4",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-07-13T17:40:23.000Z",
+        "summary": "Minor Changes #2477 8e1d2e9 Thanks @felixweinberger ! - Move the schema source modules (spec schemas, OAuth schemas, protocol constants) into @modelcontextprotocol/core and resolve them from there as a regular runtime…"
+      },
+      {
+        "title": "@modelcontextprotocol/client@2.0.0-beta.4",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fclient%402.0.0-beta.4",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-07-13T17:40:20.000Z",
+        "summary": "Minor Changes #2468 5db6e38 Thanks @felixweinberger ! - The response cache now stores results as JSON-serialized documents (serialize on write, parse on read) instead of live object graphs isolated with structuredClone…"
+      },
+      {
+        "title": "@modelcontextprotocol/fastify@2.0.0-beta.4",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Ffastify%402.0.0-beta.4",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-07-13T17:40:17.000Z",
+        "summary": "Patch Changes Updated dependencies [ 7c49b47 , e0a0ab7 , 8e1d2e9 , 3f07a32 ]: @modelcontextprotocol/server@2.0.0-beta.4"
+      },
+      {
+        "title": "@modelcontextprotocol/server@2.0.0-beta.4",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver%402.0.0-beta.4",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-07-13T17:40:14.000Z",
+        "summary": "Minor Changes #2477 8e1d2e9 Thanks @felixweinberger ! - Move the schema source modules (spec schemas, OAuth schemas, protocol constants) into @modelcontextprotocol/core and resolve them from there as a regular runtime…"
+      },
+      {
+        "title": "@modelcontextprotocol/hono@2.0.0-beta.4",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fhono%402.0.0-beta.4",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-07-13T17:40:12.000Z",
+        "summary": "Patch Changes Updated dependencies [ 7c49b47 , e0a0ab7 , 8e1d2e9 , 3f07a32 ]: @modelcontextprotocol/server@2.0.0-beta.4"
+      },
+      {
         "title": "How One Folder of Claude Skills Replaced Six Paid Tools #claudecode",
         "url": "https://www.youtube.com/shorts/qtmwoebs5D4",
         "source": "YouTube · Pragati Kunwer",
@@ -1772,39 +1834,11 @@
         "summary": "What's changed Added directory path suggestions to /cd , matching /add-dir behavior Added a /doctor check that proposes trimming checked-in CLAUDE.md files by cutting content Claude could derive from the codebase…"
       },
       {
-        "title": "We've expanded the Access Transparency documentation of cmek_preserve events with a filter example, an example event…",
+        "title": "Dreams (research preview) now supports Claude Fable 5 and Claude Sonnet 5. See Supported models .",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#july-10-2026",
         "source": "Claude API Release Notes",
         "published": "2026-07-10T00:00:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "@modelcontextprotocol/codemod@2.0.0-beta.3",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fcodemod%402.0.0-beta.3",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-07-09T13:39:19.000Z",
-        "summary": "Patch Changes #2419 79dc162 Thanks @felixweinberger ! - Read the v2 package versions the codemod writes into migrated package.json files directly from the workspace manifests at build time, replacing the committed…"
-      },
-      {
-        "title": "@modelcontextprotocol/core@2.0.0-beta.3",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fcore%402.0.0-beta.3",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-07-09T13:39:16.000Z",
-        "summary": "Patch Changes #2456 44797d7 Thanks @felixweinberger ! - Restore the v1 parse tolerance for CallToolResult.content : an inbound legacy-era tools/call result without content defaults to [] instead of failing validation.…"
-      },
-      {
-        "title": "@modelcontextprotocol/express@2.0.0-beta.3",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fexpress%402.0.0-beta.3",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-07-09T13:39:13.000Z",
-        "summary": "Patch Changes #2420 7635115 Thanks @felixweinberger ! - Add runtime-neutral Bearer authentication to @modelcontextprotocol/server : requireBearerAuth gates web-standard fetch(request) hosts (Cloudflare Workers, Deno,…"
-      },
-      {
-        "title": "@modelcontextprotocol/fastify@2.0.0-beta.3",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Ffastify%402.0.0-beta.3",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-07-09T13:39:10.000Z",
-        "summary": "Patch Changes Updated dependencies [ 44797d7 , 1b90c96 , 561c6d8 , ce2f65d , 7e69735 , e8de519 , 0ab5d14 , 24be404 , 7635115 , 61866d7 ]: @modelcontextprotocol/server@2.0.0-beta.3"
+        "summary": "We've expanded the Access Transparency documentation of cmek_preserve events with a filter example, an example event payload, and two preservation reason codes ( policy_violation_investigation , csae_report ). The documentation now also…"
       },
       {
         "title": "@modelcontextprotocol/server@2.0.0-beta.3",
@@ -1812,27 +1846,6 @@
         "source": "MCP TypeScript SDK",
         "published": "2026-07-09T13:39:07.000Z",
         "summary": "Minor Changes #2369 24be404 Thanks @mattzcarey ! - Allow inputRequired.elicit() to accept a Standard Schema such as a Zod object for requestedSchema . The builder converts it to MCP's restricted form-elicitation JSON…"
-      },
-      {
-        "title": "@modelcontextprotocol/client@2.0.0-beta.3",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fclient%402.0.0-beta.3",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-07-09T13:39:04.000Z",
-        "summary": "Patch Changes #2456 44797d7 Thanks @felixweinberger ! - Restore the v1 parse tolerance for CallToolResult.content : an inbound legacy-era tools/call result without content defaults to [] instead of failing validation.…"
-      },
-      {
-        "title": "@modelcontextprotocol/node@2.0.0-beta.3",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fnode%402.0.0-beta.3",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-07-09T13:39:01.000Z",
-        "summary": "Patch Changes #2441 561c6d8 Thanks @felixweinberger ! - POSTs whose Content-Type media type is not application/json are now rejected with 415 Unsupported Media Type ; the header is parsed instead of substring-matched.…"
-      },
-      {
-        "title": "@modelcontextprotocol/hono@2.0.0-beta.3",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fhono%402.0.0-beta.3",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-07-09T13:38:58.000Z",
-        "summary": "Patch Changes #2441 561c6d8 Thanks @felixweinberger ! - POSTs whose Content-Type media type is not application/json are now rejected with 415 Unsupported Media Type ; the header is parsed instead of substring-matched.…"
       },
       {
         "title": "What Skill Chaining Is, Two Claude Skills, One Hand-Off",
@@ -1987,20 +2000,6 @@
         "source": "Claude Code",
         "published": "2026-07-02T22:55:04.000Z",
         "summary": "What's changed Subagents now run in the background by default, so Claude keeps working while they run and is notified when they finish (previously a gradual rollout) Claude in Chrome is now generally available Added…"
-      },
-      {
-        "title": "@modelcontextprotocol/server-legacy@2.0.0-beta.2",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver-legacy%402.0.0-beta.2",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-07-02T12:28:16.000Z",
-        "summary": "Patch Changes #2405 f172626 Thanks @mattzcarey ! - Ship CommonJS builds alongside ESM. Each package now emits both .mjs / .d.mts and .cjs / .d.cts (via tsdown format: ['esm', 'cjs'] ), and its exports map adds a…"
-      },
-      {
-        "title": "@modelcontextprotocol/server@2.0.0-beta.2",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver%402.0.0-beta.2",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-07-02T12:28:04.000Z",
-        "summary": "Patch Changes #2405 f172626 Thanks @mattzcarey ! - Ship CommonJS builds alongside ESM. Each package now emits both .mjs / .d.mts and .cjs / .d.cts (via tsdown format: ['esm', 'cjs'] ), and its exports map adds a…"
       },
       {
         "title": "We've added the agent-memory-2026-07-22 beta header, which changes how listing memories ( GET…",
