@@ -1,8 +1,22 @@
 {
-  "generated_at": "2026-07-15T20:46:25.430Z",
+  "generated_at": "2026-07-15T22:45:22.310Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Introducing Claude Tag",
+        "url": "https://www.anthropic.com/news/introducing-claude-tag",
+        "source": "Anthropic",
+        "published": "2026-07-15T22:12:10.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Finance Agents",
+        "url": "https://www.anthropic.com/news/finance-agents",
+        "source": "Anthropic",
+        "published": "2026-07-15T21:16:19.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude for Teachers",
         "url": "https://www.anthropic.com/news/claude-for-teachers",
@@ -128,29 +142,22 @@
         "source": "Anthropic",
         "published": "2026-07-08T22:43:38.000Z",
         "summary": ""
-      },
-      {
-        "title": "Economic Policy Responses",
-        "url": "https://www.anthropic.com/research/economic-policy-responses",
-        "source": "Anthropic Research",
-        "published": "2026-07-08T22:43:16.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Frontier Threats Red Teaming for Ai Safety",
-        "url": "https://www.anthropic.com/news/frontier-threats-red-teaming-for-ai-safety",
-        "source": "Anthropic",
-        "published": "2026-07-08T22:42:17.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Video Anthropic co-founder on new teaching tool Claude for Teachers - ABC News - Breaking News, Latest News and Videos",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQUHhucFBoRGVybEM5YmpFSGhfV29fSm1USjk1X1BVMExIYml2b0w4NEpwUDExY2t5eFd3QWZmREVmM0QwT1NxOGVOZFVMU0pYZm16MVBYRmVSdDJPc2laa1ZwSWZiV1AwT1lYWXJ0YXFTdF9IanhLOHBucjZoX0lIcDhlM04xdWZHTzBtWkZlY3AzMkpT?oc=5",
+        "title": "Claude for Teachers: Anthropic exec. explains why educators get a year for free - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPTllFUlFvczRlamJVTjRzdVV1YTU0eGpPYy1pdlJkWE9yU1ZxR3lfTEt1eEd6azVJVXVTYi1KSi1iNlNrbFFiZ1NYVDd4dG5BY0hvbjlxSlhVTElvWFVlbG9xUDdwRGJPVmpMV01QdVNfY0NjcW1LOWl6ZVhMTm1iUWJZR1FUZ0doRU04VGFQT2lIenIxLXo5MWlmR0YzaTJHUTVhajdSWnJCVGlYQmxaZnBfdWlDMFhNR1FzVmljMmRvQQ?oc=5",
         "source": "Google News",
-        "published": "2026-07-15T20:14:22.000Z",
-        "summary": "Video Anthropic co-founder on new teaching tool Claude for Teachers ABC News - Breaking News, Latest News and Videos"
+        "published": "2026-07-15T20:48:06.000Z",
+        "summary": "Claude for Teachers: Anthropic exec. explains why educators get a year for free Yahoo Finance"
+      },
+      {
+        "title": "Once again we are told AI may be conscious – I study consciousness, and I have my doubts | Anil Seth - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQeHdLaGJmaV9lWTBKZEJZTU8wTnp2Ry1tbVlVNUZFX1NXV2dJaVhCOVJqNDBYUHlJVURBcllUY1RkUUw2c2dTck5MZGpUMWx5VmItSENvSGlxR1hlajc4TEFUbW9XYlA5TS1kZkktRXZWaW5BN0hSNlJuOXR6bXBkTjVqaWZ3WG5XS004M0szcDZIX05zYzNjZFZIQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-15T20:09:00.000Z",
+        "summary": "Once again we are told AI may be conscious – I study consciousness, and I have my doubts | Anil Seth The Guardian"
       },
       {
         "title": "Doom for Sale: Anthropic's AI Horror-Movie Ad Is a Marketing Masterstroke - Substack",
@@ -158,6 +165,14 @@
         "source": "Google News",
         "published": "2026-07-15T19:52:57.000Z",
         "summary": "Doom for Sale: Anthropic's AI Horror-Movie Ad Is a Marketing Masterstroke Substack"
+      },
+      {
+        "title": "Brainless: Shadcn components that look like Claude Code, Codex and Grok",
+        "url": "https://brainless.swerdlow.dev",
+        "source": "HN · 63↑",
+        "hn_id": "48926085",
+        "published": "2026-07-15T19:42:53.000Z",
+        "summary": ""
       },
       {
         "title": "Anthropic, OpenAI Are Making Other AI Bets Feel Like Second Prize - Benzinga",
@@ -214,13 +229,6 @@
         "summary": "Anthropic’s Claude captures 9% of global generative AI traffic in June Crypto Briefing"
       },
       {
-        "title": "Once again we are told AI may be conscious – I study consciousness, and I have my doubts | Anil Seth - The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQeHdLaGJmaV9lWTBKZEJZTU8wTnp2Ry1tbVlVNUZFX1NXV2dJaVhCOVJqNDBYUHlJVURBcllUY1RkUUw2c2dTck5MZGpUMWx5VmItSENvSGlxR1hlajc4TEFUbW9XYlA5TS1kZkktRXZWaW5BN0hSNlJuOXR6bXBkTjVqaWZ3WG5XS004M0szcDZIX05zYzNjZFZIQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-15T17:31:00.000Z",
-        "summary": "Once again we are told AI may be conscious – I study consciousness, and I have my doubts | Anil Seth The Guardian"
-      },
-      {
         "title": "Anthropic Extends Claude Fable 5 Promotion Deadline - 조선일보",
         "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOaE9hRTgycXBFZXBoWW0xXzYyQmxjbzFMVlNmZmM2YnpINmh1bzd4TDEyaUZQN3dhaTNkWUlKVGJBbENYRTdkMl9TMU44QnQwbk5wTTNyXzBhLUJsakE4TWxsUUFMUTFSYUc4MHg2RVJ0YVNuVkx2T3ZFd0ZaYWh5eUFTOVJSaWpi?oc=5",
         "source": "Google News",
@@ -242,11 +250,32 @@
         "summary": "Anthropic Claude Traffic Skyrockets 500% to Outpace Smaller AI Rivals Benzinga"
       },
       {
+        "title": "Anthropic co-founder on new teaching tool Claude for Teachers - Yahoo",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQcDMwMnFkcFhldUZmNHd5SF9IU1JYellHVW0zUE1ES0pfNlpVNXdaRk5VMUJ4elJET3NHeGxjbUc0dU91VVdRaVFVVHZjMlhtSmRiYlJVc0ZCRWhtRGg2RENjVDNYS3NMa3prRFBKUzdVYWlVOV94T1lpdzR5YlQzUHF1OHJ0WXN3Z21Z?oc=5",
+        "source": "Google News",
+        "published": "2026-07-15T16:14:22.000Z",
+        "summary": "Anthropic co-founder on new teaching tool Claude for Teachers Yahoo"
+      },
+      {
         "title": "Anthropic planning IPO investor meetings ahead of listing: report (ANTHRO:Private) - Seeking Alpha",
         "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUjR6V29BdWk3WkplX2ZFNGNNcGxIMFVIaHZEOURzcU5tSmhEVURGSnRmNWUzV2kwT19zaE0zYl91TVFFTWV5MG5tdHdFdVlGb25zSFIxbUlLc3hWQ0FmYV9QVnV2Ukg5V01yMkFzRDNLdzZGTkVQT0FxNnkwWHk1dXI4ckN4b3REbUNsaVl2WjNyTEY4eTU1Mm1jMVdBd1RPQ3lRQQ?oc=5",
         "source": "Google News",
         "published": "2026-07-15T16:11:58.000Z",
         "summary": "Anthropic planning IPO investor meetings ahead of listing: report (ANTHRO:Private) Seeking Alpha"
+      },
+      {
+        "title": "Anthropic's Cat Wu & Thariq Shihipar on AI in Softw… - StartupHub.ai",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPNVhIcDFrQnV2UklSNlNHekcycnJveV9obThYX1hZUVIxZnRwMW9zc3cwRk1RLTM2NjRSdVdCbm90TjVhWXA5b0ZpaEV0czJLZUVBTFI2R0tKYTM3N1pFMm01VS12UHdaWEtTb0pTSUtySDg4WmRYUEd2STlycFFYQ0U0bGFDYTBrWE4yYldSUG5GSnVMbWVhY2F6SEJlVWYyM0VCYU9SanJQTXhvcHgwLXUxb0F3LWxtd2Jz?oc=5",
+        "source": "Google News",
+        "published": "2026-07-15T16:04:03.000Z",
+        "summary": "Anthropic's Cat Wu & Thariq Shihipar on AI in Softw… StartupHub.ai"
+      },
+      {
+        "title": "Claude Flaw Automatically Sends Malicious Prompts to AI Agents - Dark Reading",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNeXFzWVpWbkxGN3pRdWxIS0hXM0Q4WjhKcWFGNGgzZmJ4TE83R016anpiV016RTVGS0RZbHpuUllyUHU2TGp0cHA5YW5rOVdmV2JGNk1JY3VDaEs5d0RDeGdqTExjM0ozS01lWlBzVFQySlZiWUNBQTVCZl9wT2Vuc01GdXU1ZXdwclh0UXEwbUx6WU82UVE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-15T16:03:39.000Z",
+        "summary": "Claude Flaw Automatically Sends Malicious Prompts to AI Agents Dark Reading"
       },
       {
         "title": "Anthropic Reportedly Plans IPO Investor Meeting, Could List as Soon as This October - TradingKey",
@@ -263,11 +292,18 @@
         "summary": "Anthropic launches Ode, a $1.5B AI enterprise services firm backed by Blackstone and Goldman Sachs Crypto Briefing"
       },
       {
-        "title": "Anthropic Plans IPO Investor Meetings as Mega-Listing Nears - Bloomberg.com",
+        "title": "Anthropic Plans IPO Investor Meetings as Mega-Listing Nears",
+        "url": "https://www.bloomberg.com/news/articles/2026-07-15/anthropic-is-said-to-plan-ipo-investor-meetings-as-listing-nears",
+        "source": "Bloomberg",
+        "published": "2026-07-15T15:28:50.000Z",
+        "summary": "Anthropic PBC is seeking to meet with investors ahead of its potential mega-IPO, according to people familiar with the matter, as the company prepares to join the rush of artificial…"
+      },
+      {
+        "title": "Anthropic Is Said to Plan IPO Investor Meetings as Listing Nears - Bloomberg.com",
         "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUmoxVDhqZ1NBaXFHcUJtX3plQ0t6dDl4dGk2SXZjVk42RVJGR1BVbWJCei0zMWtVUzI3WTRxSGJYRk1jSTAyY0hRSjJBSGJIcG1BMlZkbmRVcFl5UVNFYXB6RW1vZlNJOV96YkhTVXl6SWlVZUhUVzBUVXFsQ1dwQmFzUGRqcWl3T0hoblpDR2ZiWmpHWkV3Z1RVVWQyWl9yQ280UDNaYm1rTzhGUDhBQ3Q1dHNDdw?oc=5",
         "source": "Google News",
         "published": "2026-07-15T15:28:50.000Z",
-        "summary": "Anthropic Plans IPO Investor Meetings as Mega-Listing Nears Bloomberg.com"
+        "summary": "Anthropic Is Said to Plan IPO Investor Meetings as Listing Nears Bloomberg.com"
       },
       {
         "title": "ChatGPT Work vs Claude Cowork: One AI Assistant Raises Red Flags - The Tech Buzz",
@@ -298,34 +334,6 @@
         "summary": "IBM stock plunges 11% as Anthropic’s Claude Code threatens its COBOL cash cow Crypto Briefing"
       },
       {
-        "title": "Anthropic Bets the Next Trillion Dollar Business Is Installing AI, Not Building It - Startup Fortune",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPUUFOUVRNR0M1UlRLeXJYRkRxZ2RrdlpFb1A4TXZQbUhyVS01eGJzM0lIUDVEOWM0VTAxTUlrNVd4NlUzSl9QYklYdG1iNnZqcTJXSW1MSjItOTByR0tMbmJDZ21FY1BKdm4yZUpLazBRcGdJdjlObkF5Nm1oYWpveGRDVnRhMzRMYXl1N2ltaERxSEZMTWM2MGNMeGY3Tk1HRjhyNHJEUkpQODFKRWc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-15T13:54:29.000Z",
-        "summary": "Anthropic Bets the Next Trillion Dollar Business Is Installing AI, Not Building It Startup Fortune"
-      },
-      {
-        "title": "SmartBear Expands AI-Powered Testing Across Developer Ecosystems with Integrations in Anthropic’s Claude, Atlassian, GitHub, and Kiro - AiThority",
-        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNMlUtWDRkQWJ5a3VZdUVPWHhwLW9GeDMtVU1Ld2VOUGY5bDMxemc4Sm9zOEgxM0JJVm10U2pvbHEwRG44LTVVNi1FRGcwVHBOYjdzbEpVU2xfRktCUzdPdjdaRzhVOHlRcFotU0RDRFNhYkFwZlJxNm5WR3dWaU5YTmVyNmlRcHRaOUpYSnB1eElBd2pBcVI5RERIMkpmNXlZXzQ5dC1Nb00zZHdqbk9XYkhWbHVfVUo1NU9vaDZlTnF5b1JoV0w0eW1SR0xXXzZxU2d3a3NKT0IzUVA5bDVqaTlGZXE2ZHhkTWZNbjhQanBKOVk3Vk90TUlqb0VNSXlBOFE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-15T13:37:07.000Z",
-        "summary": "SmartBear Expands AI-Powered Testing Across Developer Ecosystems with Integrations in Anthropic’s Claude, Atlassian, GitHub, and Kiro AiThority"
-      },
-      {
-        "title": "Claude Now Free for US Teachers: Agentic AI Learns Your State’s Curriculum - Tech Times",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPenNlYzljME1HSHFFYjlOSmhTYTUxUXF0XzJydHY1QjFLQ1V6ZTNaMTYyQ2VDbWh2b1NJVFVOMk9teEhsQWtKUDZjV1dDLW1IMGVFQ0NKa3M3emFNM3doZjVOVlFheENVc1ZsQ0xPWnBENzVjNldXZ1VhOWJCUnZ3ajJBMW9Ldk5PcmlkU1ZLSkV6d0lGYUlFalZiRXp3dER3OEdsSWVVNHdBbkltVy1qRWF2ekY5SWUyUDJpc090eWM?oc=5",
-        "source": "Google News",
-        "published": "2026-07-15T13:25:01.000Z",
-        "summary": "Claude Now Free for US Teachers: Agentic AI Learns Your State’s Curriculum Tech Times"
-      },
-      {
-        "title": "Anthropic, Blackstone bet the next trillion-dollar AI business is implementation, not just models",
-        "url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
-        "source": "TechCrunch",
-        "published": "2026-07-15T13:10:47.000Z",
-        "summary": "Anthropic-backed Ode launches as AI labs bet that embedding forward-deployed engineers inside enterprises is the key to accelerating enterprise AI adoption."
-      },
-      {
         "title": "Codex and Claude Shipped Browser Updates. This Changes Everything.",
         "url": "https://www.youtube.com/watch?v=juPDqb89dew",
         "source": "Riley Brown",
@@ -336,13 +344,6 @@
         "published": "2026-07-15T13:00:36.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude for Teachers: Here's everything new Anthropic's AI assistant brings to educators - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOcnJXLUxoeUFRTzd2YVA0Z2tncThXYVh3U1JrN3d2S3FWOEpIV092Tk5hNkJHN3NoRTEySGdwbzRJZmpOM01ZeVdVd0lMS1BSTkJ1bFM0bTR2NVdiLXFRNkZyZjhYR2JfWDdPM2JWYkc0NkgzM2FNeTZPM3p2NHpuTmRZU3V5TTFVdlVzZEdURjBaTnlmRGZFTnY5eTJaZ1dPenk5MlpXa2NjLVlLVVhsWldXSnRPbmFTNU1JRENLSUxrOG11WDM5d9IBzgFBVV95cUxPcFV3aWtOYWhjVHdWcnRwWWZha1VWcHQxdUMyWndDMDl2OGZIZExENGxTellEMk1CRFI1eUtzNWtLNDZlM0h6LUxvdWN5ZVBQTENWM0RvNEdfWkRWYkhuZFd3Znl1R21HdW9TS19Qc2ZkYjBuYURVV2llOUhELUpRZ09LYkxlbHRkcmxIbzlKUjJ5SFNQNVVUNXFUNVpzTEpGalFESXRBc3dUQ1NndHNsVEhFekhydDgwVThzZ19haTF6Q2FueE1oWDRRNjBCdw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-15T12:41:06.000Z",
-        "summary": "Claude for Teachers: Here's everything new Anthropic's AI assistant brings to educators Firstpost"
       },
       {
         "title": "How One Folder of Claude Skills Replaced Six Paid Tools #claudecode",
