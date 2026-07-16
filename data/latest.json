@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T11:24:10.846Z",
+  "generated_at": "2026-07-16T13:12:10.392Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,62 @@
     ],
     "news": [
       {
+        "title": "1Password brings secure credential access to Anthropic’s Claude - SiliconANGLE",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQOWtZalFKYmlrNENMa2dSUkxDSGkwb2x1WjlKNlhyUHBKN2ZYNXhRcjhvdEt4Q1dVQTYxUVhVNUR5TEVIcUxYb1B0Wml1WmtDNVFfa3RFUEpnUFYtZ0NEaGt0X3pRNWpmWWNPN1FMeU5LS3djdmRZOHdoUGxsSlR3X0IycEE0dnNSWW5SdFE4cnBiT2Fqa1dKeldLS0g?oc=5",
+        "source": "Google News",
+        "published": "2026-07-16T13:00:30.000Z",
+        "summary": "1Password brings secure credential access to Anthropic’s Claude SiliconANGLE"
+      },
+      {
+        "title": "Claude can now use your 1Password credentials for you - The Verge",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOU1hMbmFidXA0Mm50Nk1tTTY0b1NMaWthdHIzVXdNTWFqc1NFWnBaZEg3UDJsY2ttMi1GTnhtT3U0U3ZXVV85bXBvcDVWZnFLZkxENXk1eFF2cExscDUyeHktQTh3aUVoVGJaTEYzbzBuQVhxZzZjOVhLZkxvYWhZVFh5NnB4QS01eDhn?oc=5",
+        "source": "Google News",
+        "published": "2026-07-16T13:00:00.000Z",
+        "summary": "Claude can now use your 1Password credentials for you The Verge"
+      },
+      {
+        "title": "1Password and Anthropic Bring Secure Credential Access to Claude, Letting an AI Agent Use Approved Credentials Without Exposing the Secret to the Model - Business Wire",
+        "url": "https://news.google.com/rss/articles/CBMisAJBVV95cUxQQVctSThDZmhzZDlpM1dCOUE1MGNNVDVUb0d4QWhTZHdnVjMzeTBtN3lWaVZtZzA5TVFTSGpselpEMG9OejJlZ1o2ZkJlR0I3MWVlR2pTd0loYXVUTWhqNk9ERENEMlZGM3diM3Bfb2kzdWJHanRhaWJrdkw1RGxncWFNRkV1Zm40R3p2MS1uTklTMkVMMzdGMTFRSEplOWFnbXR6dDNKdlJ0bC1DV1NMdndqTzc4bGdfRm9YYjR4RGIxNVZzZ05YTUdId3dIM2h1LWk1WVdKVWdGb2VVN2hzTU5TcGIzeWpMNVc4OG42M0RycU81T25GbWpEdUU4OU0xYkJ5NW83azNlLWtrekhuMXNSbUptbkxIRElOWUtPbm5FclFNeEJiYlBSdTg4NVJD?oc=5",
+        "source": "Google News",
+        "published": "2026-07-16T13:00:00.000Z",
+        "summary": "1Password and Anthropic Bring Secure Credential Access to Claude, Letting an AI Agent Use Approved Credentials Without Exposing the Secret to the Model Business Wire"
+      },
+      {
+        "title": "1Password teams up with Anthropic to give Claude access to your credentials - IT Pro",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTXlDcVU0ZjRfODBJRmIxU3lSTTBBa25ndHZUSTQ3UUxXeHUtdEpIYVZTYmxFMUl5X2J2d3FCcE5qcjRnc0RqNU5ZaEs3ZVpSeFNiS3hJcVUwNUE3NjEtVlFzYWlZcVZSdllGRUwycmpiaDFFU2N4T09zWEM2YlI1NVNZcmRkSjlFNmkwN0tWVDVOLXNzV3NObHlfaklFRGlRMXdZOUdBazFBZw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-16T13:00:00.000Z",
+        "summary": "1Password teams up with Anthropic to give Claude access to your credentials IT Pro"
+      },
+      {
+        "title": "You Can Now Grant Claude Access To Your 1Password Credentials - Engadget",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1ZWV81QmdNLTIzM3hodEQzTHJWbjVvSnQ4WGh4ZFQ4UWJrenNzQWh6NXdZeXJyN0F0Tk9maGhOQTNVNXBUY2dBbmlkd0lJejVuQjJJUXFYUjhycm9vWjhIWldGNGlhYlV1NEp0Q3pLSHhaRjc5Tm5hME9HZ1k?oc=5",
+        "source": "Google News",
+        "published": "2026-07-16T13:00:00.000Z",
+        "summary": "You Can Now Grant Claude Access To Your 1Password Credentials Engadget"
+      },
+      {
+        "title": "1Password now lets Claude sign in to websites without seeing your passwords - 9to5Mac",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPX0hJM0U3NU5WNGNWbnUxSFJWNVhkMzlfa1hTR3lJa1VvSERnamR2SDZmNWhHbE12RXNjTXJJSHFYbldqZWNEdUczV2o5Z01iSVJWUmZFdUZPSGhCNmxMNUVwZDlZNmhOd0lXRlpNS2lKTUwtVVV4NDVZRjh5c1Nzck1DYUp4MG42YW5QYTcxZklVMVllSkN3LXVWZTIzWGRaNDRGaXRwNnNoWjQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-16T13:00:00.000Z",
+        "summary": "1Password now lets Claude sign in to websites without seeing your passwords 9to5Mac"
+      },
+      {
+        "title": "Microsoft trains sales teams to compete against OpenAI, Anthropic, and Google with its own AI models - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTGV5MUJPSFQ0MktMX3JLanhCQUR6dXIyMVJ4Y2xoTjVUWVViZlB4Y2hsMWtTRXV0N1ljYVF2bUVVQ2pqYzI5V1ZBOUtzTFcxbi03MGRoaEt4c0FyOEE4RVU0MHQ3MzIxdGRvRF9oR2xPT0dOY0NZZEtsbjdqY29Cank1THdWaFRs?oc=5",
+        "source": "Google News",
+        "published": "2026-07-16T12:21:18.000Z",
+        "summary": "Microsoft trains sales teams to compete against OpenAI, Anthropic, and Google with its own AI models Crypto Briefing"
+      },
+      {
+        "title": "Chinese AI firms gain traction as Anthropic and OpenAI restrict models - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBRa1U4a3ZjVFZsc2FjOUpEY3BxOVNYTmRoUzAyTTZKdHZ0UTFialBkUnhITTM4Z0JEMDR2TnJSaWJBbGx4N1lUOEN0TUI1VzhzdktuNF9uSHFHMHBrdkpnVnJ1ZHk1WUt6dE9ycHJYNTA2VkRxbFZUWjhZUG53Mm8?oc=5",
+        "source": "Google News",
+        "published": "2026-07-16T11:35:15.000Z",
+        "summary": "Chinese AI firms gain traction as Anthropic and OpenAI restrict models Crypto Briefing"
+      },
+      {
         "title": "China Is Sounding the Alarm on Western AI - The National Interest",
         "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTFVUTE1wUjhZNWpTX0lTTFVFM0steFROYVUtVEZsLXdiZnlFNEs3V0dtaUh0aGcyZ3otNFJrZ3F4azlPX1lXczFyVXBoajQ2eG1fMHI0c09YZGxRcVZPYUtHa1IyWG53UnZmdVYyZGNVdmVwMWxLeUhjY3lzREpiWlItNWRRRkRPODlwag?oc=5",
         "source": "Google News",
@@ -153,9 +209,23 @@
         "summary": "China Is Sounding the Alarm on Western AI The National Interest"
       },
       {
+        "title": "AI chatbots are at risk of spreading government restrictions on online speech, a new study says - Yahoo! Finance Canada",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZFZELXl0eXNmcGtYMjhwSXg0dmZubmRGcDhabloyMEJoS1lkU1VfdE1WN0xsajR0NFR4REpqTl9NUXNkY2NFRWhVQ25zSVd4OTlndFc5SFNUMGw0Q2syMHBod2Z6UDBLRXV5ZWlSdlVacE5MaDIxbk1UZXl4T2ZzMUw0YmVtSDRhSmoyWDdQcw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-16T10:36:50.000Z",
+        "summary": "AI chatbots are at risk of spreading government restrictions on online speech, a new study says Yahoo! Finance Canada"
+      },
+      {
+        "title": "Microsoft Wants Sales Team to Push Its Own AI Models Instead of Rivals OpenAI, Google and Anthropic: Report - Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOQmdFeUVTMWhoUlZGLVJIcnZhZER0MDlXcUV3RUhPS2MxbzU2czV3R3hLd2dfUmhBYWNncTk3emVmc3FHZ1UydVpxVHZoandhdFVMdW9VSXZiRTRobGk1VGprZWYwcWVsWjFYX01ncFh0bEFZaVNvT0F3R0RrOTVHRTBJSTBwNVRqWDU4WjBXanBsOUFJRlI5MmV2V0oyck5XY2h2eFFsS1d1dGJFZjBxMzN6bmV3R2xDdHlfaFNlakVNS3M2M2lWUHoxQktUNF9IZjhmbTRKSnNPcFFmQ3BXUndwMUFMY2VzeFRSSGxwQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-16T10:25:03.000Z",
+        "summary": "Microsoft Wants Sales Team to Push Its Own AI Models Instead of Rivals OpenAI, Google and Anthropic: Report Benzinga"
+      },
+      {
         "title": "Where are YC founders now? OpenAI and Anthropic, mostly",
         "url": "https://joinedanthropic.com",
-        "source": "HN · 70↑",
+        "source": "HN · 127↑",
         "hn_id": "48931588",
         "published": "2026-07-16T08:03:35.000Z",
         "summary": ""
@@ -175,20 +245,6 @@
         "summary": "Microsoft to sales team on how to make customers 'dump' OpenAI and Anthropic: Tell them everyone else is The Times of India"
       },
       {
-        "title": "Grok 4.5 claims second place on FrontierSWE leaderboard, beating Claude Opus 4.8 and GPT-5.5 - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBEUFRDNTAxbWdoYkhiUTFIYkp2OTJmWnBIUGtfVDFoTExHOHJoQTctUFlsNFBPSmVGOXY3SEVJemt1Uk43MXgybWVtXzNTWnBwZ3RmSTZQbUs3cWlGQTFka3VhMkQxdVpycm5BdmNseGtaY3NtNTRv?oc=5",
-        "source": "Google News",
-        "published": "2026-07-16T07:28:18.000Z",
-        "summary": "Grok 4.5 claims second place on FrontierSWE leaderboard, beating Claude Opus 4.8 and GPT-5.5 Crypto Briefing"
-      },
-      {
-        "title": "‘A real issue’: JPMorgan CEO Jamie Dimon raises concerns over Anthropic’s Mythos AI - The News International",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVFZleEd5TFItWTMyNTBUS0ZlMWU5M3NQT1dMUGxvYi1mdU5MRG9weVg4T1NGSW5kS0lhd01FMzJJckJ3NzZmckY0ZS1sTWhXekp5ZnJ3QW1idTFuV2E3V2NaWWVfLXM3d2ZtWXpZd2hSREJsZ2wzdnh0OTBjbC0taHJmdVVPY29FeUpZdzRwTXBMcjZYUjVtc3JDQmVsVGloR0kyckhZYWJwcnFIbjRfV19haDQ5NXNGel8zdXhR?oc=5",
-        "source": "Google News",
-        "published": "2026-07-16T06:50:13.000Z",
-        "summary": "‘A real issue’: JPMorgan CEO Jamie Dimon raises concerns over Anthropic’s Mythos AI The News International"
-      },
-      {
         "title": "Anthropic is giving away Claude Fable 5 at no extra cost for a limited time - Yahoo Tech",
         "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQMXJ0RENRclBpRjIyekVCOWJPUTYyQ0ExSHpIVmNicWN6VVdPMHlsc1ZySjlMdzlxbXdQdlhlZkU5Y3FjbV9BZ1Q3SlhQdFpsUHUxNTBId2V5SndNWGppUW1jcldUUncweGpiTmNxRm1meDdQelI3TXd1d1FnSGJCVGdaMHVPeGg5V0xSS1BzRjVLZG1xdlE?oc=5",
         "source": "Google News",
@@ -201,13 +257,6 @@
         "source": "Google News",
         "published": "2026-07-16T03:02:03.000Z",
         "summary": "Anthropic Follows SpaceX Playbook, Claude-Parent Reportedly Pursuing Multibillion-Dollar Credit Lines Ahead of IPO Benzinga"
-      },
-      {
-        "title": "Claude’s Workspace Is an Audit Surface, Not a Witness - techi.com",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFAyOUo3OFZuc3doRE1Ga1E4Y2pVcm5SMEhFWWhPUmFocDlGOFJqOVNma19LNlItUDVod1R5TWxkRm41dERWRFpObmdqN0tQS2lsTS1EY0pZQ3p0Y3MzVm1rQnRVQzI4T3g1ZEtXUW9DZzBuWUZXSmZXUHZibw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-16T02:37:59.000Z",
-        "summary": "Claude’s Workspace Is an Audit Surface, Not a Witness techi.com"
       },
       {
         "title": "Project Glasswing Explained: Anthropic's AI Cybersecurity Bet - Memeburn",
@@ -261,7 +310,7 @@
       {
         "title": "Agentty – A drop-in alternative to claude-code, written in C++26. 11.0 MB binary",
         "url": "https://github.com/1ay1/agentty",
-        "source": "HN · 38↑",
+        "source": "HN · 40↑",
         "hn_id": "48928002",
         "published": "2026-07-15T22:30:24.000Z",
         "summary": ""
@@ -274,42 +323,6 @@
         "summary": "Anthropic Accidentally Made the Perfect Commercial The Atlantic"
       },
       {
-        "title": "Claude for Teachers: Anthropic exec. explains why educators get a year for free - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPTllFUlFvczRlamJVTjRzdVV1YTU0eGpPYy1pdlJkWE9yU1ZxR3lfTEt1eEd6azVJVXVTYi1KSi1iNlNrbFFiZ1NYVDd4dG5BY0hvbjlxSlhVTElvWFVlbG9xUDdwRGJPVmpMV01QdVNfY0NjcW1LOWl6ZVhMTm1iUWJZR1FUZ0doRU04VGFQT2lIenIxLXo5MWlmR0YzaTJHUTVhajdSWnJCVGlYQmxaZnBfdWlDMFhNR1FzVmljMmRvQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-15T20:48:06.000Z",
-        "summary": "Claude for Teachers: Anthropic exec. explains why educators get a year for free Yahoo Finance"
-      },
-      {
-        "title": "Once again we are told AI may be conscious – I study consciousness, and I have my doubts | Anil Seth - The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQeHdLaGJmaV9lWTBKZEJZTU8wTnp2Ry1tbVlVNUZFX1NXV2dJaVhCOVJqNDBYUHlJVURBcllUY1RkUUw2c2dTck5MZGpUMWx5VmItSENvSGlxR1hlajc4TEFUbW9XYlA5TS1kZkktRXZWaW5BN0hSNlJuOXR6bXBkTjVqaWZ3WG5XS004M0szcDZIX05zYzNjZFZIQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-15T20:09:00.000Z",
-        "summary": "Once again we are told AI may be conscious – I study consciousness, and I have my doubts | Anil Seth The Guardian"
-      },
-      {
-        "title": "Doom for Sale: Anthropic's AI Horror-Movie Ad Is a Marketing Masterstroke - Substack",
-        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE8xdHlFcUlRWDBodllaMzRTY1hZV3k1Xy1WcU5zSTcxMUlLTy1WdWRRTGVsOFJDSE82ZjdxbDhkMWhwdTdqTERsMFU2RHJxcnlOWHkyNVlPR2RuUXRodUFXemUtVFN0bEhwc2pyT19oS2JYblE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-15T19:52:57.000Z",
-        "summary": "Doom for Sale: Anthropic's AI Horror-Movie Ad Is a Marketing Masterstroke Substack"
-      },
-      {
-        "title": "Brainless: Shadcn components that look like Claude Code, Codex and Grok",
-        "url": "https://brainless.swerdlow.dev",
-        "source": "HN · 123↑",
-        "hn_id": "48926085",
-        "published": "2026-07-15T19:42:53.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Inside Ode with Anthropic, the private equity-backed startup betting AI services are the future of enterprise",
-        "url": "https://techcrunch.com/podcast/inside-ode-with-anthropic-the-private-equity-backed-startup-betting-ai-services-are-the-future-of-enterprise/",
-        "source": "TechCrunch",
-        "published": "2026-07-15T17:55:22.000Z",
-        "summary": "Can a handful of engineers really do the work of an army of consultants? That’s the bet behind Ode with Anthropic — the joint venture dedicated to embedding forward-deployed engineers in enterprise…"
-      },
-      {
         "title": "Claude Skills: I Removed Myself From the Loop",
         "url": "https://www.youtube.com/shorts/OP1Uh8uYzoc",
         "source": "Pragati Kunwer",
@@ -320,20 +333,6 @@
         "published": "2026-07-15T17:53:39.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Blackstone, Anthropic, Hellman & Friedman Officially Launch AI Services Firm Ode with Anthropic - citybiz",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPU3ZyNzVGVmVpZGFkdHh4ZGtBOHdEZHFIbHVUU3MzV0VRRUdCWkFoak04RUZITDhiVkdCZkxMZkpRY0g5dEdDVWdqdExNSjI3Nnc5ZW9TQTJGbkJNN1NJYkpwNXQ4R0FRWEUxWTN4M010aHJsS3hpZTBaMVRUTHoyZDFVaF9RSGE4RFd4WEY0b1dacTd2UTdsRUxYNEs2NjVkSjZPd05HbnI0ZnZnQ2lUeE1jMWtWU3hmanN5Q3hETUs5TjZNN0tEOHRB?oc=5",
-        "source": "Google News",
-        "published": "2026-07-15T17:48:56.000Z",
-        "summary": "Blackstone, Anthropic, Hellman & Friedman Officially Launch AI Services Firm Ode with Anthropic citybiz"
-      },
-      {
-        "title": "Anthropic’s Claude captures 9% of global generative AI traffic in June - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVXYybmtOX0ZLc2RDS2Fodm1ZbDNvU2FZTjRxUjlJZVFNVUlWazJBTk51Ri1sQ2RTMVkxcjFhMlNjX1ZNalk5UGFxaTBfTi1qcFUxanMyZldNRkh5elpKX2tibzdTWkhCdDRXV0gtLXZTV3V1OThzV3gyVUpLQncwcThB?oc=5",
-        "source": "Google News",
-        "published": "2026-07-15T17:32:37.000Z",
-        "summary": "Anthropic’s Claude captures 9% of global generative AI traffic in June Crypto Briefing"
       },
       {
         "title": "Codex and Claude Shipped Browser Updates. This Changes Everything.",
