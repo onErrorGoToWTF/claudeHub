@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T16:59:21.342Z",
+  "generated_at": "2026-07-16T18:52:15.552Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -145,6 +145,32 @@
       }
     ],
     "news": [
+      {
+        "title": "The Monday Task I Dreaded? A Claude Skill Folder Does It Now",
+        "url": "https://www.youtube.com/shorts/YdcmMcjl7CM",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "YdcmMcjl7CM",
+        "thumbnail": "https://i.ytimg.com/vi/YdcmMcjl7CM/hqdefault.jpg",
+        "published": "2026-07-16T18:30:14.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "A Claude for Chrome flaw lets rogue extensions read your Gmail - Techlicious",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNZXZHdm1NRGJOMnoxZ3hidHgxY251NWJ3X1N2d09NTl8td1l4bnBDMklhLUxQU2NJbWFzR2hWS2hzdmFHNld4Y1hwQW9zeWcyN0Z6WU1XaS0xV0NfSmt6dzAzOVpMXzlJNmF1d1VhNUxDRXpmZ09nSHRuWnlnc1dqVWhTNi1FY1I4ck56TU9uODhkdw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-16T17:35:47.000Z",
+        "summary": "A Claude for Chrome flaw lets rogue extensions read your Gmail Techlicious"
+      },
+      {
+        "title": "Deloitte Launches Platform For Secure Software Powered By Anthropic's Claude Models - marketscreener.com",
+        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQaWFuTWt6dmxHWjdON2t0VWdnRWNick1qVUozb0hIVVJyUEVrdDNfWW5FYUJ5YUdpZThBZlBzMGtnYnZ4U3dVcjhBUk9hM0w2UEI5cnNTazN0dVJkTUoySTEySGd3Q0RDLUwyUGh6THNlTGNIMnhNdmRkNF9YdE5iMlhWS0h6S1pEcExBaEhKQVc2NGNreU00MjRFYVFhcjJYOHlsdjJMSW1DcGJOdWlGRnFmX0VuaC14TzR5dWdpajZtM3U1dzVQWS1HZlJmZlNQNFE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-16T17:20:46.000Z",
+        "summary": "Deloitte Launches Platform For Secure Software Powered By Anthropic's Claude Models marketscreener.com"
+      },
       {
         "title": "Claude for Chrome Flaw Puts Gmail at Risk From Rogue Extensions - TechRepublic",
         "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNZFBpRWR1Rm8ybkJtUmFWZVNFQkZfOEYwbDhrNWxEYUNvMm9UVFh1MHUwQ2E3QW5TcF9veUZlMV9MSXdWZDBMOTFSWFRBRlBCWlV2TnZHWGNLbHdoVkdWNUtxNGthRERDbjhpcmp1algxRVB5b3JJZXhSVmpNWXRTdEg2UGJWLTl1dS1xeg?oc=5",
@@ -317,20 +343,6 @@
         "source": "Google News",
         "published": "2026-07-16T13:00:00.000Z",
         "summary": "1Password now lets Claude sign in to websites without seeing your passwords 9to5Mac"
-      },
-      {
-        "title": "How Claude became one of AI’s biggest marketers - Ad Age",
-        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1HbW1Qc2JpVVlHa2hxaHc2c0xDQ1NlQWM5SUUtTVIyOEJyUXJnUEZGejNBOEgzN1p5bGg3NHNoSXJYRGQtbmhlX2I5Szc0N2w3WWhnN283UDdVSFRvZDByRWp5YkdmWkI0SkI3UjVDQ0F2dw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-16T13:00:00.000Z",
-        "summary": "How Claude became one of AI’s biggest marketers Ad Age"
-      },
-      {
-        "title": "Microsoft trains sales teams to compete against OpenAI, Anthropic, and Google with its own AI models - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTGV5MUJPSFQ0MktMX3JLanhCQUR6dXIyMVJ4Y2xoTjVUWVViZlB4Y2hsMWtTRXV0N1ljYVF2bUVVQ2pqYzI5V1ZBOUtzTFcxbi03MGRoaEt4c0FyOEE4RVU0MHQ3MzIxdGRvRF9oR2xPT0dOY0NZZEtsbjdqY29Cank1THdWaFRs?oc=5",
-        "source": "Google News",
-        "published": "2026-07-16T12:21:18.000Z",
-        "summary": "Microsoft trains sales teams to compete against OpenAI, Anthropic, and Google with its own AI models Crypto Briefing"
       },
       {
         "title": "Claude Skills: I Removed Myself From the Loop",
@@ -575,6 +587,13 @@
     ],
     "status": [
       {
+        "title": "Elevated errors for multiple models",
+        "url": "https://status.claude.com/incidents/kqbd7wm6hnnr",
+        "source": "Claude Status",
+        "published": "2026-07-16T18:36:58.000Z",
+        "summary": "Jul 16 , 18:36 UTC Investigating - We are investigating elevated errors on requests to multiple models. We will provide an update as soon as possible."
+      },
+      {
         "title": "Elevated errors for Claude Opus 4.7",
         "url": "https://status.claude.com/incidents/vjfp60ngq2zj",
         "source": "Claude Status",
@@ -650,16 +669,31 @@
         "source": "Claude Status",
         "published": "2026-07-08T21:04:18.000Z",
         "summary": "Jul 8 , 21:04 UTC Resolved - This issue has been resolved. Users saw elevated errors on requests to some models between 10:45am PT / 17:45 UTC and 12:40pm PT / 19:40 UTC. Jul 8 , 19:29 UTC…"
-      },
-      {
-        "title": "Issues authorizing to MCP Servers",
-        "url": "https://status.claude.com/incidents/4y9nybhbljfc",
-        "source": "Claude Status",
-        "published": "2026-07-08T19:00:00.000Z",
-        "summary": "Jul 8 , 19:00 UTC Resolved - Users are unable to send authorized requests to MCP servers."
       }
     ],
     "youtube": [
+      {
+        "title": "The Monday Task I Dreaded? A Claude Skill Folder Does It Now",
+        "url": "https://www.youtube.com/shorts/YdcmMcjl7CM",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "YdcmMcjl7CM",
+        "thumbnail": "https://i.ytimg.com/vi/YdcmMcjl7CM/hqdefault.jpg",
+        "published": "2026-07-16T18:30:14.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Devin AI: The Full Beginner’s Guide (Better Than Claude Code?)",
+        "url": "https://www.youtube.com/watch?v=Vyyrvna-hUY",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "Vyyrvna-hUY",
+        "thumbnail": "https://i.ytimg.com/vi/Vyyrvna-hUY/hqdefault.jpg",
+        "published": "2026-07-16T18:25:15.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Second Brain Runs While I'm Offline",
         "url": "https://www.youtube.com/shorts/ZXZWx0Pv9G0",
@@ -691,17 +725,6 @@
         "video_id": "juPDqb89dew",
         "thumbnail": "https://i.ytimg.com/vi/juPDqb89dew/hqdefault.jpg",
         "published": "2026-07-15T13:00:36.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Grok 4.5 in Cursor: Agentic Coding Just Got WAY Cheaper (Full Tutorial)",
-        "url": "https://www.youtube.com/watch?v=Rdxo4Drwh10",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "Rdxo4Drwh10",
-        "thumbnail": "https://i.ytimg.com/vi/Rdxo4Drwh10/hqdefault.jpg",
-        "published": "2026-07-14T12:15:44.000Z",
         "summary": ""
       },
       {
@@ -903,17 +926,6 @@
         "summary": ""
       },
       {
-        "title": "Build a Business With Claude Code Skills (No Code, Full Guide)",
-        "url": "https://www.youtube.com/watch?v=w1bZl8lhFGY",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "w1bZl8lhFGY",
-        "thumbnail": "https://i.ytimg.com/vi/w1bZl8lhFGY/hqdefault.jpg",
-        "published": "2026-06-25T17:16:00.000Z",
-        "summary": ""
-      },
-      {
         "title": "AI Agents Just Changed Forever: GLM 5.2, Codex Skills, Claude & Cursor",
         "url": "https://www.youtube.com/watch?v=Nbynj-mKcNI",
         "source": "Riley Brown",
@@ -993,6 +1005,18 @@
     ],
     "tutorials": [
       {
+        "title": "Devin AI: The Full Beginner’s Guide (Better Than Claude Code?)",
+        "url": "https://www.youtube.com/watch?v=Vyyrvna-hUY",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "Vyyrvna-hUY",
+        "thumbnail": "https://i.ytimg.com/vi/Vyyrvna-hUY/hqdefault.jpg",
+        "published": "2026-07-16T18:25:15.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
         "title": "v2.1.211",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.211",
         "source": "Claude Code Releases",
@@ -1007,18 +1031,6 @@
         "published": "2026-07-14T23:45:25.000Z",
         "summary": "What's changed Added a live elapsed-time counter to the collapsed tool summary line so long-running tool calls visibly tick instead of looking stuck Added a startup warning for Write(path) ,…",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "Grok 4.5 in Cursor: Agentic Coding Just Got WAY Cheaper (Full Tutorial)",
-        "url": "https://www.youtube.com/watch?v=Rdxo4Drwh10",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "Rdxo4Drwh10",
-        "thumbnail": "https://i.ytimg.com/vi/Rdxo4Drwh10/hqdefault.jpg",
-        "published": "2026-07-14T12:15:44.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "v2.1.209",
@@ -1245,18 +1257,6 @@
         "video_id": "6VG3ru_LCdQ",
         "thumbnail": "https://i.ytimg.com/vi/6VG3ru_LCdQ/hqdefault.jpg",
         "published": "2026-06-28T16:30:02.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
-      },
-      {
-        "title": "Build a Business With Claude Code Skills (No Code, Full Guide)",
-        "url": "https://www.youtube.com/watch?v=w1bZl8lhFGY",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "w1bZl8lhFGY",
-        "thumbnail": "https://i.ytimg.com/vi/w1bZl8lhFGY/hqdefault.jpg",
-        "published": "2026-06-25T17:16:00.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1743,6 +1743,20 @@
     ],
     "claude_learning": [
       {
+        "title": "The Monday Task I Dreaded? A Claude Skill Folder Does It Now",
+        "url": "https://www.youtube.com/shorts/YdcmMcjl7CM",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-07-16T18:30:14.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Devin AI: The Full Beginner’s Guide (Better Than Claude Code?)",
+        "url": "https://www.youtube.com/watch?v=Vyyrvna-hUY",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-07-16T18:25:15.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Second Brain Runs While I'm Offline",
         "url": "https://www.youtube.com/shorts/ZXZWx0Pv9G0",
         "source": "YouTube · Pragati Kunwer",
@@ -1771,6 +1785,13 @@
         "summary": ""
       },
       {
+        "title": "Mid-conversation system messages are available on Claude Fable 5, Claude Mythos 5, and Claude Opus 4.8, on the Claude…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#july-15-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-07-15T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.210",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.210",
         "source": "Claude Code",
@@ -1790,13 +1811,6 @@
         "source": "MCP Inspector",
         "published": "2026-07-14T15:23:47.000Z",
         "summary": "V2 Inspector at V1 parity, plus a little."
-      },
-      {
-        "title": "Grok 4.5 in Cursor: Agentic Coding Just Got WAY Cheaper (Full Tutorial)",
-        "url": "https://www.youtube.com/watch?v=Rdxo4Drwh10",
-        "source": "YouTube · Leon van Zyl",
-        "published": "2026-07-14T12:15:44.000Z",
-        "summary": ""
       },
       {
         "title": "v2.1.209",
@@ -2142,13 +2156,6 @@
         "summary": ""
       },
       {
-        "title": "Build a Business With Claude Code Skills (No Code, Full Guide)",
-        "url": "https://www.youtube.com/watch?v=w1bZl8lhFGY",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-06-25T17:16:00.000Z",
-        "summary": ""
-      },
-      {
         "title": "We've deprecated fast mode for Claude Opus 4.7, with removal on July 24, 2026. After removal, requests to…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#june-25-2026",
         "source": "Claude API Release Notes",
@@ -2196,13 +2203,6 @@
         "source": "MCP Python SDK",
         "published": "2026-06-16T21:56:55.000Z",
         "summary": "Second v2 alpha. Pre-releases are opt-in only; pip install mcp still resolves to the stable 1.x line. pip install mcp==2.0.0a2 # or uv add \" mcp==2.0.0a2 \" See the migration guide for the full list of breaking changes.…"
-      },
-      {
-        "title": "v1.28.0",
-        "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.28.0",
-        "source": "MCP Python SDK",
-        "published": "2026-06-16T21:30:35.000Z",
-        "summary": "Deprecations Two API surfaces now emit DeprecationWarning ahead of their removal in v2. Nothing is removed in 1.x, and the warnings fire only when the deprecated API is called - importing the modules stays silent.…"
       },
       {
         "title": "CLAUDE FABLE 5 BANNED. IT ACTUALLY HAPPENED...",
