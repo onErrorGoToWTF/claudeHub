@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T16:56:14.639Z",
+  "generated_at": "2026-07-17T18:48:45.058Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,58 @@
     ],
     "news": [
       {
-        "title": "Meta in Talks to Sell Computing Power to Anthropic, NYT Reports",
+        "title": "No Team, No Code. Claude Skills Run My Whole Business",
+        "url": "https://www.youtube.com/shorts/OoIWdtqLNkk",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "OoIWdtqLNkk",
+        "thumbnail": "https://i.ytimg.com/vi/OoIWdtqLNkk/hqdefault.jpg",
+        "published": "2026-07-17T18:30:00.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic introduces Claude for teachers - Fox News",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBvT3drWUhCMHpwNnpIemJGNXk1cUpDbUVBWE9DTFZtUEp6czVLeTdob2F1RmdnbXlGVVFHTW1hNmhlQUpOb3hHSTM2U0k5VWlQbzNDRU5B?oc=5",
+        "source": "Google News",
+        "published": "2026-07-17T18:15:11.000Z",
+        "summary": "Anthropic introduces Claude for teachers Fox News"
+      },
+      {
+        "title": "Meta Eyes Reported $10B AI Computing Deal With Anthropic - citybiz",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPWE9ZaG14TkVXeFJHNUFkeGpCcXlfLUFwbHZoaWs2Y2ptaFJiUkRDRURqSlpCTFA0bGxDVi1uQmU4blF1OS03dlMtWERzSGtfSTdBVFFlSW5XSE15SE5DeTNxRkZuaEN5bE94Zk5BWUY1SXBKd1p3Z3dpSnNPclk4UzFJM2xOVEI3UnloQi1YaW9LbmR1eU90TlB3?oc=5",
+        "source": "Google News",
+        "published": "2026-07-17T17:51:20.000Z",
+        "summary": "Meta Eyes Reported $10B AI Computing Deal With Anthropic citybiz"
+      },
+      {
+        "title": "New Chinese AI chatbot Kimi K3 rivals US leaders in the field - Washington Examiner",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQOUxYWmxJeURfLXhZOVRUWGI1Ym1jSnpSODJRSzlvclRwZG1fdDh6S2RJMVZfdmdyeVBHb0FoQThCeDM1cVBaaGJ5ejFkaGlpaU5ITDBJaGtiQkFvNFFOLTExNWlhOHFHSUpXRXpsd1o4aFNqVnd1dF9KSFFHWXpLWnlhSEgxWGtKVkdULWx5eVMzbDhJd01fT0NJdw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-17T17:34:00.000Z",
+        "summary": "New Chinese AI chatbot Kimi K3 rivals US leaders in the field Washington Examiner"
+      },
+      {
+        "title": "China's Moonshot AI claims Kimi K3 can rival OpenAI and Anthropic - BBC",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBRRWRCTzZXLWRlVV9jYTRzN3ktc1lFLWExbVlPa09HSVEwR0VyVWhxYkcxNG5mRUVHcDdGRVFaQ0hoOU95OHQ5ZmtRWkYxcnh6Z2dkYUowZ0FmQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-17T16:53:04.000Z",
+        "summary": "China's Moonshot AI claims Kimi K3 can rival OpenAI and Anthropic BBC"
+      },
+      {
+        "title": "ChatGPT for beginners, Claude for experts, AI competition continues: GenAI Fund - TNGlobal",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZzI4eUc5S3M0WDZnV1J1YktfY1NOTHF2ekF1YkZHSU9CbExEc3FpdmlQVjhJNnF0TjNWMEt2SlRxZlpqSTVScXNpemlvWmd1T1VXTFdLWXV6cEhDOVk4UEtrMzVSVjVuYTNsVjdFYWRkVmZiMnl3a2N5elBNZjNmSnM4MmNETkxQOG03WHpxOGxyRWVLdlV3TnZucG5DdWRGUnA0ZXBDZktKdldoTzM2TWVB?oc=5",
+        "source": "Google News",
+        "published": "2026-07-17T16:50:04.000Z",
+        "summary": "ChatGPT for beginners, Claude for experts, AI competition continues: GenAI Fund TNGlobal"
+      },
+      {
+        "title": "Meta in Talks to Sell Computing Power to Anthropic",
         "url": "https://www.bloomberg.com/news/articles/2026-07-17/meta-in-talks-to-sell-computing-power-to-anthropic-nyt-reports",
         "source": "Bloomberg",
         "published": "2026-07-17T16:40:15.000Z",
-        "summary": "Meta Platforms Inc. is in early discussions to lease computing power from its data centers to Anthropic PBC, an arrangement that could be worth as much as $10 billion over two years, according to…"
+        "summary": "Meta Platforms Inc. is in early discussions to lease computing power from its data centers to Anthropic PBC, according to people familiar with the matter, an opportunity for the social media giant…"
       },
       {
         "title": "Should You Try Kimi K3? Here’s How AI Model Compares With ChatGPT And Claude - Forbes",
@@ -181,13 +228,6 @@
         "summary": "China closes in on OpenAI, Anthropic with the release of Moonshot's latest AI model Yahoo Tech"
       },
       {
-        "title": "1Password launches Claude browser login for AI agents - IT Brief UK",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOODJfdVF4Tks1Znk2a195dVN2bWM3NDlfUGk3UzRrWU9ORTR1eVBuQ0s0V2JwREdJLUNPSm84NWN6R3BSUFpKRTRZWi1sLXI4a1NKamNsbWdVclNPakROdDByWUFJN05ZX0tYWFhJbW9CUkY0UFF3NW42VnpQaHFGbVMyNHg5bUpR?oc=5",
-        "source": "Google News",
-        "published": "2026-07-17T15:30:00.000Z",
-        "summary": "1Password launches Claude browser login for AI agents IT Brief UK"
-      },
-      {
         "title": "China’s Kimi K3 Identifies Itself As Anthropic’s Claude In At Least One Conversation, Betraying Its Distilled Origins - Wccftech",
         "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOeFZqbDJJWkpqYldMZzY0UmRTWHZOQzNnZUdNTFpQR19zSEt1UFF5cVRRWk5XVWctRi1pTGVNYnJFTkczVF9teHAxTl9YdjR6dG5ZWUk4SDd2Nkg1cW5xbVhGMUpzWWFRV3NHczJpdTFqV01DR0FKMWVrTTZ6RS0yRGR3d3ByT2lOSzNFYnk3aGZScmNIdjJUeXVzUUl0QU9rVTZlYkRQZEF2SWFnaWRHYUM2akpKcjE3R3pSdUs1MEI4aHlQSE01TUpEN09YRWdFRGfSAdcBQVVfeXFMTW10SkJaaTRjV1dyY0JXX0ZiSGVoVV9hRnhrN0ZQSnl3bVJqXzBuc2EzNWFiYXZ0V3Y2aVNOMVFnS05YTy1RRm5nN0REN2FaTWNndUhsQTRUTTJrUG1pay0xdFdnUXJFX2lFY2tmanRUYUtjTHhKWG5GNTd5Sk56bXF6WWY0LUlqMllPMHBsVUdRS25OcHBoRmVzaGtSanpRdnZOOVJfYWxYazBtcFRCTy05Y3BNNDAtd0NxczB4WVdxUG9CaUlBYlpSWmlCTU1BQUsyYTVDRms?oc=5",
         "source": "Google News",
@@ -197,7 +237,7 @@
       {
         "title": "Claude Code: Anatomy of a Misfeature",
         "url": "https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/",
-        "source": "HN · 96↑",
+        "source": "HN · 123↑",
         "hn_id": "48947776",
         "published": "2026-07-17T14:26:58.000Z",
         "summary": ""
@@ -245,20 +285,6 @@
         "summary": "Bitcoin faces fresh headwinds as China’s Kimi beats Claude, GPT in coding benchmark CoinDesk"
       },
       {
-        "title": "1Password for Claude: AI Signs In Without Passwords - Storyboard18",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNbkhnbkZYYUpKRVdZcnlRa0JWMXk5WmQ0NUg4MlpIVmpFeEFGajF5ZFUxXzBSTGFVQ2hlRVZKWjh5M2ZsdmhnZkpsc1I2X0lhN2lJUmE5OVBWcTNLTlBYQUpkd2NDLTdoN3FZSTZhSVlTV0hJMFl4MEVpVEROekV4YnE2M01MMzJVM2NMd1BUYmZ0VG43b1ZOSzliRXRaUkdISU5ocnpKNy1IUWtQRjJnU3Y1cG5XaEVmVFgyNdIBwgFBVV95cUxPR0ZaMmlUa3RSaVlJSS13V2MtQS1HdDRQNFRJUkhNeGlQcGFZbm85eHgtLTVGVDlhVzJIcGpvODNhbTdkbHZlU3M5M2g1YkVfSDF6SC1veUUyOEdXUVNYMUZuVTFXSFJ6Z2QwSXZWUENiS0dvRjltc1kwWHJfaXk1ZElaV2NMTnBGWng2Y0FIM1MyMEhSNnl6STdXdjQ1ZmtvWXZ0OFJmOTc3ekpWeGV6ekN1X1NqMUtGNUlwdWdBT2VBZw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-17T12:31:01.000Z",
-        "summary": "1Password for Claude: AI Signs In Without Passwords Storyboard18"
-      },
-      {
-        "title": "Moonshot AI Kimi K3 launch sends rival AI stocks lower - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOb1RGdHExZnZ6RExfTGZzLWRMQ0xGUFU1RFhScmtLbzAwZkkyUDN0VFpnd3BSTkV1RGtkbE5jaFloT2RTUlB4YjhPdnB5RWhLMTZ5UjFFa2JoeV9Ba0ZYNUNpNTBBajBQcUtGdlJBSllkQmdiY3d1bGN1c2RPVV9QRVJCNU9SQ0xMdzE3ejEzWnQyeGJM?oc=5",
-        "source": "Google News",
-        "published": "2026-07-17T12:28:26.000Z",
-        "summary": "Moonshot AI Kimi K3 launch sends rival AI stocks lower Yahoo Finance"
-      },
-      {
         "title": "What Is Kimi K3? The Chinese AI Model That Has Wall Street Talking - TradingView",
         "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPbXQtQmJBcTdhbFlFQm55aFE0RFBnd3dXV1hBRko4Ql9YNDlaSDg1SGFXdHgzRFRfNEplMWFpVHVMS2s5cFh1SHc2dWdCR2FVN2lPdm5pcmRmVVpGTnNJcEZaeDg0QmFGWVUyUXhlWG5UbkZKUVNLRTlaMXBYUVJ6Qi1TZGE1VFdzXy1PdUlOZlVWS1N0Y0RxM1djTXdCWFJxd2xwRjBaNnU0MEhoMm0wUWRoOGRUMi1NUUd3VXhkZjZPNFVx?oc=5",
         "source": "Google News",
@@ -273,6 +299,13 @@
         "summary": "Microsoft CEO criticizes Anthropic's Claude Fable AI restrictions qz.com"
       },
       {
+        "title": "Microsoft CEO criticizes Anthropic's Claude Fable AI restrictions - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbms2UlloSFZxb3VKUjJjLVhEZS1rTHg1NjdGMU5CNWpLZGF6LXdyRDFMejJ3TjN3QS1nOXlVbDRLY3o2Z28xY2JYUGFneFNIa3JfcDVLQ3A1VFVyRXhteVVNZFBIZlZTcmhiTHRib0trVF83dThPRENMRmo1RXdPTGc3VTVqaFUwSXp1TVFFZXlKNjQ4WGdmUzhuaWljdWVaaEFOVjNLaw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-17T12:14:00.000Z",
+        "summary": "Microsoft CEO criticizes Anthropic's Claude Fable AI restrictions Yahoo Finance"
+      },
+      {
         "title": "'I thought it was satire': Sam Altman mocks Anthropic's latest AI ad that's getting widely blasted for being 'dystopian marketing slop' - TechRadar",
         "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPakRCeFhLdWdZU0ZzT2FlVEtpUm1mMTgtaFN5RDBjelNITGswZ0RjaVl1b0paQlZRRVFTSllhcjJKN1ZpdFNra1lTWmZnRlhGblJOSkhZRGlBWVdfX0M4Y1VvZjlVc3Nmd3B2R3k4VXFfWlJrenlCUW05WE0yQ1NoSnNVbmVDT2NDa1I3U2dHd0FWRUJCV3QzXzRGZ19jWGQ5Y1FiTEU5dzY5T2szYWRPZWkxcUNOUDU3TncwN0F1d094Y2tORFFmUDFXaFllS2NwajBYdHo0VFpuVlAyNXBRdDMwUDlCYXEtdTg0WU9uQ1BOM2pueG5kUDVEVzkzYUU3cGhBUjNZZV8yWmRCa19KamN4TQ?oc=5",
         "source": "Google News",
@@ -280,46 +313,25 @@
         "summary": "'I thought it was satire': Sam Altman mocks Anthropic's latest AI ad that's getting widely blasted for being 'dystopian marketing slop' TechRadar"
       },
       {
+        "title": "7 Prompts To Get Expert-Level Results From Claude Fable - Forbes",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNb0lMeUw5eDlFZmNaYXBLbW1mYXZiUGVHaGE5Mkh0ZVE1LUtHakN4aEpRYzBNaHF1S0RkWU05WU8yelNaZWhtcGdlSEU0LVFzVWNqWGJyaXBzandpMGZFS1lGak5HbUFYYzloTFlSMS01S3h0RDNUa1E5WEdqekRna1RWTS1MdkV4cG1UQjZoaGQ0dEl6NUlDenRFLXRxWVhYQmk4TmtpbzlqQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-17T12:00:00.000Z",
+        "summary": "7 Prompts To Get Expert-Level Results From Claude Fable Forbes"
+      },
+      {
+        "title": "China's 2.8-trillion-parameter Kimi K3 beats Claude Fable 5 in Frontend Code Arena benchmark— Moonshot AI delivers largest open-weight AI model ever, as China works around U.S. compute limits - Tom's Hardware",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNT25TNFlXeVFQMmVqWFYtSS1oSkpEUl9WeExTZUpmZEtFb1RpQ3dRbGxGV1hVWjNpMkRxTlpaQk5NSXNfdzlmYmg1cW5MUGlmR3FpeHV2bmpzMDBXQW1mV1B0N3QzUmZOOFU5T0w1QWFqYldjWnZER0t0UmNzcGZBQll1dWZBNEYyWTV3dnZvMkRzTkhqNHBDak5TTXd4b080eUJGbExOSUVCeU5Cd1ZmUWVXUG1SUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-17T11:32:01.000Z",
+        "summary": "China's 2.8-trillion-parameter Kimi K3 beats Claude Fable 5 in Frontend Code Arena benchmark— Moonshot AI delivers largest open-weight AI model ever, as China works around U.S. compute limits Tom's…"
+      },
+      {
         "title": "Traders bet Anthropic will extend Claude Fable 5 access for a fourth time - Proactive financial news",
         "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOcHJUYkZ4eE1MOGJpYVRkVmo5OHRFM1BxVXZBc2JqbEpoaWNUNlNGS01uQ1A2anBqeTlJT0oyMTlHWUxNajVYQUdRb2oxWGpybGp0dUJtTVVZNGtyOE5hTUdQRm44LUF2SVY5ZHR3QV92bldTQTNQLUt2U21YVTBmekxMWkRidEN1b20yblY1RlVFR0NkMllOR0luV1BtaGpCWlpoQjFua3QxMHI1bGotZkVrcVNGdWZRY0VPLTZ5c2RtOHBOZFhINVVPUWhvTW9ZVnBrZEItdGN2ZS1G?oc=5",
         "source": "Google News",
         "published": "2026-07-17T10:00:26.000Z",
         "summary": "Traders bet Anthropic will extend Claude Fable 5 access for a fourth time Proactive financial news"
-      },
-      {
-        "title": "Satya Nadella questions Anthropic's Claude Fable limits, says restrictions 'don't make sense' - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQZ21kbUhXZjVRM3NCTno3VzdwRXoxN1FOX3dEWW1UWi1uNVFjM1BSclBWSHhvZW02a1c2Q1EyODk4UG1OV0k1VVlWeXEyVUJiaXhuVS1LRHBVY3JjS253TGQtdGVhc2piby1YbmpXVHJrR19SZWdmWk4tbDNTYXlTSm5Hajg5TF9SYl9kN29hRXlRbTAzTmdRNURMM1d0Tmd1Y0VoZjc5Q2NhT0p2dUJHR3phUkFILUU3RUZBNzJuTUJlQ2NTU0E3X0NPMzJzQdIB0wFBVV95cUxQNWdKQmpUYTV4NllFdFhsMzQyXzl6RkE3RTc0b2NMT3picHR5UkNPNG55ZU82cHA3aEdIRlQ4MFZRbnhGeTQ1MmdqQTdtUFFHYXJ2TEV2TUYxZ0dzbHF2aHdkZmFPZEdfTENIYUIwM25obE9DdlZLTjRlUFM3aGxJdzVHb0RjdlNaVVV4S3NXMi15aUg2aXMyN2dtUjdHc2VJRFF1U2hpOWtSZGdNUmxmdEdjVmxtQjl3NUZBNG4wcG43d3RELTlPWm1ZZ2VveURPMzFZ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-17T09:46:21.000Z",
-        "summary": "Satya Nadella questions Anthropic's Claude Fable limits, says restrictions 'don't make sense' Firstpost"
-      },
-      {
-        "title": "Claude can now sign into websites with 1Password without exposing your credentials - Help Net Security",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPX2lROGM2ZnpWLUJNOW9Wb3JWUFgwaVVOQnVsV3hEc1VxYmZUaWNKVUNjV2FYU2ZkSXRxSi1Felk5dHB1RTcxVHB4c2VsblBpb3pHM1JnNmZVbjNLekYwUnpmYVVJQ2NXNm1MTUVBSHVWOVNlY0dLQkkwbkg4d0xCZkpiUmI2MXdfY1E?oc=5",
-        "source": "Google News",
-        "published": "2026-07-17T09:17:44.000Z",
-        "summary": "Claude can now sign into websites with 1Password without exposing your credentials Help Net Security"
-      },
-      {
-        "title": "1Password lets Claude AI log into your accounts without ever seeing your passwords - Korben",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNYjlzdkZnWDNNMzJ0NnVBQnNJNW1aejltYTJSM1R2aENoNDRiLUR3Y2xKWWYxc1MyRmFKcDJCc2YxLW10blNuc3U2RUVGcEFfT1B1NXNFSUtLVjBJWVZ2OHNjdnQzMFNqSS05MWdYeERyel9WbVZIRFhEeUN5QXVwMlpjT0xzM2NOR0pGTnY5SGhGU1AyQzFmMDcwRQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-17T08:57:40.000Z",
-        "summary": "1Password lets Claude AI log into your accounts without ever seeing your passwords Korben"
-      },
-      {
-        "title": "Microsoft Readies AI Security Product to Challenge Anthropic's Claude Mitos - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB4T3FEWWZvQTFYMmhrM01tSDBSUXVuZDA2Rnd0UmFCa0VWdDFSZW91c2FRd1FXQlFmN3lob3BmY3RRdXZkV1k3b1ZMTTRZOG5QZGdIMXJUZ3BhbklTT1FoQVJ1bzltYUVDVERyck1EcG9yMDNKaWc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-17T08:56:00.000Z",
-        "summary": "Microsoft Readies AI Security Product to Challenge Anthropic's Claude Mitos finance.biggo.com"
-      },
-      {
-        "title": "Chinese startup Moonshot AI unveils Kimi model it says rivals OpenAI, Anthropic - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQa2gxRHB2VXl2NEdXWHowb0QtcEFsanhlQk5zTEQzWE03cjd5QWluNjV0VWtWUi1Ia2JIOFVQODdhYWloYTdxR0xWOU5MSHBXazJkeEo4SW1Db2I2Ul9CMjRjeVBLLUVFWS1objBHNy1Rb2NYYTFQT0pKWlZja0tVMThCWlJ3SkFVY3N6VmJB0gGTAUFVX3lxTE1sd0lHVWVmRHpwZ1FtV3BGV1E0TGpLRzhuWE14QTZ6ZUJjblBEdXVFYnhtbnJYR3BCcHhPVFFUcmxOS1cxU0NmMnc4VkwydVpIZVZPWUVQdUo4aDhRc3lEaWh1N0JWcy1iZTdHZldtZm1RN0c4WTNYQlV3REJtZVhjZjBVd0tuTzhnTmNLS1lHRl90NA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-17T08:38:30.000Z",
-        "summary": "Chinese startup Moonshot AI unveils Kimi model it says rivals OpenAI, Anthropic CNBC"
       },
       {
         "title": "Kimi K3 vs Claude vs GPT (Honest Compare)",
@@ -426,18 +438,6 @@
         "video_id": "rKV5JcALQoQ",
         "thumbnail": "https://i.ytimg.com/vi/rKV5JcALQoQ/hqdefault.jpg",
         "published": "2026-07-06T16:59:51.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "What a Claude Skill Actually Is, Shown in One Real Folder",
-        "url": "https://www.youtube.com/shorts/tzkR0riE8x0",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "tzkR0riE8x0",
-        "thumbnail": "https://i.ytimg.com/vi/tzkR0riE8x0/hqdefault.jpg",
-        "published": "2026-07-05T15:05:59.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -576,6 +576,20 @@
     ],
     "status": [
       {
+        "title": "Elevated errors across Fable 5",
+        "url": "https://status.claude.com/incidents/g613ntyj2pwf",
+        "source": "Claude Status",
+        "published": "2026-07-17T18:48:23.000Z",
+        "summary": "Jul 17 , 18:48 UTC Monitoring - We have applied a fix to resolve the erroneous requirement for usage credits on Fable 5, and are monitoring to ensure no further issues. You may need to relaunch…"
+      },
+      {
+        "title": "Elevated error rates for Sonnet 5",
+        "url": "https://status.claude.com/incidents/lj0khk5vd7v7",
+        "source": "Claude Status",
+        "published": "2026-07-17T18:27:33.000Z",
+        "summary": "Jul 17 , 18:27 UTC Resolved - This incident has been resolved. Jul 17 , 18:22 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jul 17 , 18:13 UTC Update - We are…"
+      },
+      {
         "title": "Elevated errors for Claude Opus 4.8",
         "url": "https://status.claude.com/incidents/bwz7ld34gcxt",
         "source": "Claude Status",
@@ -644,23 +658,20 @@
         "source": "Claude Status",
         "published": "2026-07-10T15:02:32.000Z",
         "summary": "Jul 10 , 15:02 UTC Resolved - This incident has been resolved. Jul 10 , 14:36 UTC Investigating - We are currently investigating this issue."
-      },
-      {
-        "title": "Elevated errors for Claude Opus 4.5 and Claude Sonnet 4.5",
-        "url": "https://status.claude.com/incidents/6djcn2k6v8kp",
-        "source": "Claude Status",
-        "published": "2026-07-10T13:00:00.000Z",
-        "summary": "Jul 10 , 13:00 UTC Resolved - Elevated errors for Claude Opus 4.5 and Claude Sonnet 4.5 between 6:00am PT / 1:00pm UTC and 8:15am PT / 3:15pm UTC."
-      },
-      {
-        "title": "Elevated errors for Claude Opus 4.8",
-        "url": "https://status.claude.com/incidents/t5kjpnysf4vp",
-        "source": "Claude Status",
-        "published": "2026-07-09T03:50:34.000Z",
-        "summary": "Jul 9 , 03:50 UTC Resolved - This issue has been resolved Jul 9 , 03:28 UTC Investigating - We are investigating elevated errors on requests to Claude Opus 4.8. We will provide an update as soon as…"
       }
     ],
     "youtube": [
+      {
+        "title": "No Team, No Code. Claude Skills Run My Whole Business",
+        "url": "https://www.youtube.com/shorts/OoIWdtqLNkk",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "OoIWdtqLNkk",
+        "thumbnail": "https://i.ytimg.com/vi/OoIWdtqLNkk/hqdefault.jpg",
+        "published": "2026-07-17T18:30:00.000Z",
+        "summary": ""
+      },
       {
         "title": "Kimi K3 vs Claude for Coding: Frontend Arena #1 Explained",
         "url": "https://www.youtube.com/shorts/85AxCkEWkOk",
@@ -846,17 +857,6 @@
         "video_id": "rKV5JcALQoQ",
         "thumbnail": "https://i.ytimg.com/vi/rKV5JcALQoQ/hqdefault.jpg",
         "published": "2026-07-06T16:59:51.000Z",
-        "summary": ""
-      },
-      {
-        "title": "What a Claude Skill Actually Is, Shown in One Real Folder",
-        "url": "https://www.youtube.com/shorts/tzkR0riE8x0",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "tzkR0riE8x0",
-        "thumbnail": "https://i.ytimg.com/vi/tzkR0riE8x0/hqdefault.jpg",
-        "published": "2026-07-05T15:05:59.000Z",
         "summary": ""
       },
       {
@@ -1744,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "No Team, No Code. Claude Skills Run My Whole Business",
+        "url": "https://www.youtube.com/shorts/OoIWdtqLNkk",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-07-17T18:30:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "Kimi K3 vs Claude for Coding: Frontend Arena #1 Explained",
         "url": "https://www.youtube.com/shorts/85AxCkEWkOk",
         "source": "YouTube · Pragati Kunwer",
@@ -2070,13 +2077,6 @@
         "url": "https://www.youtube.com/watch?v=rKV5JcALQoQ",
         "source": "YouTube · Anthropic",
         "published": "2026-07-06T16:59:51.000Z",
-        "summary": ""
-      },
-      {
-        "title": "What a Claude Skill Actually Is, Shown in One Real Folder",
-        "url": "https://www.youtube.com/shorts/tzkR0riE8x0",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-07-05T15:05:59.000Z",
         "summary": ""
       },
       {
