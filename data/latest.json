@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T18:44:30.862Z",
+  "generated_at": "2026-07-19T20:35:11.804Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "Microsoft Project Perception: AI Bug Hunter Set to Rival Mythos With Wider Access and Lower Cost - Tech Times",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPWGFacGVfbWZJOXRuV3JBdEtic3JmUlo2a1Exa1MzdVh4akgzSkpCQW5EeFFxZ0N5VmhYbDh5S0U4Q2N1YkdSajBJQXJ2Z3VHQTVSYTktRjJYajdRaG9JRlp2RTNoUGtNWDlLOFdYVVkzY3V2WjJrSmUyd3YyZ2tRTExYTmtwMG9WUkpMdUZVblBoSjRFZm9idS10RnRRTWhiNEVyVHppZFYxQndRQ2JBeEVvaVJLb2pLc044a2pkTHNiWlRfY01mQlBQXzZRMzZvZU1seQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-19T19:07:48.000Z",
+        "summary": "Microsoft Project Perception: AI Bug Hunter Set to Rival Mythos With Wider Access and Lower Cost Tech Times"
+      },
+      {
         "title": "How To Use Claude's Reflect Dashboard And Learn When It's Time To Touch Grass - Engadget",
         "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOLUl6STVtR1BXUXBjeVZVcDRLSnNDbnFuR0xEeVdqRk1BbkxMMlhWTEFoeHM3NHd1NWVscXQtWFJ4ZFhPdE9rSmRPeUgtN1JLOE5XMG5GN2ZXR0hLSmtpMzJCenBzbjZ6ZXNBam53WmxGRUR1d2M3YUZLUnZleG43Ug?oc=5",
         "source": "Google News",
@@ -165,6 +172,13 @@
         "source": "Google News",
         "published": "2026-07-19T14:39:14.000Z",
         "summary": "Anthropic in Early Talks to Lease $10B in Compute From Meta Over Two Years MLQ.ai"
+      },
+      {
+        "title": "How Claude's \"Personality\" Shifts by Model and Language: What Anthropic's Latest Research Reveals - quasa.io",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSnhlSXU0SnJxanBoTS1xc0g0M29jZ3I1UTlwQm54SmdudEZQUkswaUhwTjhsZFdkRGhwOU5pS1dEN2JCUVJvWmxEQVBQQV9oTWNZLWFPMjhLN293Rm9DdUNmMjk4UFMwUDBMZDR4bnJmNnU4RkdoTFFRdERTVkNDWE96UmFNRmZOTkZ3dnBMVGFVMUtDbUdiWW1DV1NNOTE5QUVkVUJIZFlFLWxKd2RJNFZyQ1FwRU5n?oc=5",
+        "source": "Google News",
+        "published": "2026-07-19T14:28:00.000Z",
+        "summary": "How Claude's \"Personality\" Shifts by Model and Language: What Anthropic's Latest Research Reveals quasa.io"
       },
       {
         "title": "Alibaba previews Qwen3.8, claiming its strength trails only Anthropic’s Fable 5 - South China Morning Post",
@@ -228,7 +242,7 @@
       {
         "title": "Claude Code uses Bun written in Rust now",
         "url": "https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/",
-        "source": "HN · 274↑",
+        "source": "HN · 319↑",
         "hn_id": "48966569",
         "published": "2026-07-19T10:03:23.000Z",
         "summary": ""
@@ -312,7 +326,7 @@
       {
         "title": "Setting up your spare Mac for Claude Code to control, a step-by-step guide",
         "url": "https://ykdojo.github.io/claude-controls-mac/",
-        "source": "HN · 240↑",
+        "source": "HN · 242↑",
         "hn_id": "48959392",
         "published": "2026-07-18T16:12:08.000Z",
         "summary": ""
@@ -344,21 +358,6 @@
         "source": "Google News",
         "published": "2026-07-18T07:21:40.000Z",
         "summary": "Anthropic Limits Claude Fable 5 Access as It Runs Out of Compute Startup Fortune"
-      },
-      {
-        "title": "Anthropic slashes Claude Fable 5 limits in Max and Team Premium and pushes Pro users toward API pricing - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPcmU0X0dGUjFxLXhmdkdfWk83WnMzQlYxcDdPODRvWUVyNzRtWU1lc2pJRFR5RjJYSFpKVlM3Rm9zOG4xelFYeGVkam1raGZacHQxT2VSMFNFRGRNZzZOYmdMTl9ST2Jna0JTbnRKTWhScW1yMWhyd3pNcXpfTmVrT2hJcUR2THgtOHpQMGVhZWhmc3FXSG5BQUpTR01mZVNCZ3JEU2RrSGloQmNaanN1ZUZmc2Z3ek9aM1M5UXdFb3lUYUppbUc0?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T07:19:52.000Z",
-        "summary": "Anthropic slashes Claude Fable 5 limits in Max and Team Premium and pushes Pro users toward API pricing the-decoder.com"
-      },
-      {
-        "title": "Beginning July 20, Claude Fable 5 will be included in all Max plans",
-        "url": "https://twitter.com/claudeai/status/2078302415804379218",
-        "source": "HN · 38↑",
-        "hn_id": "48954522",
-        "published": "2026-07-18T02:15:36.000Z",
-        "summary": ""
       },
       {
         "title": "Kimi K3 vs Claude Fable 5: Is It Actually Good? (Honest Full Review)",
@@ -887,7 +886,7 @@
         "summary": ""
       },
       {
-        "title": "Build Beautiful Websites with Claude Fable 5 (Full Guide)",
+        "title": "Build Amazing Websites with Claude Fable 5 (Full Guide)",
         "url": "https://www.youtube.com/watch?v=COh_cjrDOzc",
         "source": "Riley Brown",
         "channel": "Riley Brown",
@@ -1241,7 +1240,7 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "Build Beautiful Websites with Claude Fable 5 (Full Guide)",
+        "title": "Build Amazing Websites with Claude Fable 5 (Full Guide)",
         "url": "https://www.youtube.com/watch?v=COh_cjrDOzc",
         "source": "Riley Brown",
         "channel": "Riley Brown",
@@ -2118,7 +2117,7 @@
         "summary": ""
       },
       {
-        "title": "Build Beautiful Websites with Claude Fable 5 (Full Guide)",
+        "title": "Build Amazing Websites with Claude Fable 5 (Full Guide)",
         "url": "https://www.youtube.com/watch?v=COh_cjrDOzc",
         "source": "YouTube · Riley Brown",
         "published": "2026-07-06T17:37:45.000Z",
