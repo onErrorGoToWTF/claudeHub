@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T20:35:11.804Z",
+  "generated_at": "2026-07-19T22:38:34.017Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -242,17 +242,10 @@
       {
         "title": "Claude Code uses Bun written in Rust now",
         "url": "https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/",
-        "source": "HN · 319↑",
+        "source": "HN · 357↑",
         "hn_id": "48966569",
         "published": "2026-07-19T10:03:23.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude tests AI-assisted forecasting in World Cup prediction contest - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFAxNzZ1ZnQzZ3ZWUjVVZHNYQmgwTG1vZk9tOWV3cENqMGtMOHRqVGo2bTZvVmF3SVFKQS1kYjV1ejJDUThra201NFlWLWI5ampYYTZjNEVSUWU3WWJoLURaSGFSMERfaGJNcDhISXZNY2RRWGQ2?oc=5",
-        "source": "Google News",
-        "published": "2026-07-19T08:22:15.000Z",
-        "summary": "Claude tests AI-assisted forecasting in World Cup prediction contest Crypto Briefing"
       },
       {
         "title": "Anthropic Revises Fable 5 Pricing, Exempts Max Plan Subscribers - 조선일보",
@@ -358,6 +351,13 @@
         "source": "Google News",
         "published": "2026-07-18T07:21:40.000Z",
         "summary": "Anthropic Limits Claude Fable 5 Access as It Runs Out of Compute Startup Fortune"
+      },
+      {
+        "title": "Anthropic slashes Claude Fable 5 limits in Max and Team Premium and pushes Pro users toward API pricing - the-decoder.com",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPcmU0X0dGUjFxLXhmdkdfWk83WnMzQlYxcDdPODRvWUVyNzRtWU1lc2pJRFR5RjJYSFpKVlM3Rm9zOG4xelFYeGVkam1raGZacHQxT2VSMFNFRGRNZzZOYmdMTl9ST2Jna0JTbnRKTWhScW1yMWhyd3pNcXpfTmVrT2hJcUR2THgtOHpQMGVhZWhmc3FXSG5BQUpTR01mZVNCZ3JEU2RrSGloQmNaanN1ZUZmc2Z3ek9aM1M5UXdFb3lUYUppbUc0?oc=5",
+        "source": "Google News",
+        "published": "2026-07-18T07:19:52.000Z",
+        "summary": "Anthropic slashes Claude Fable 5 limits in Max and Team Premium and pushes Pro users toward API pricing the-decoder.com"
       },
       {
         "title": "Kimi K3 vs Claude Fable 5: Is It Actually Good? (Honest Full Review)",
@@ -1746,6 +1746,13 @@
     ],
     "claude_learning": [
       {
+        "title": "v2-alpha-9",
+        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/v2-alpha-9",
+        "source": "MCP Inspector",
+        "published": "2026-07-19T21:12:31.000Z",
+        "summary": "Logging: per-request log level on modern servers (era fork)"
+      },
+      {
         "title": "Qwen 3.8 Explained: Features, Pricing, and When to Use It vs Claude",
         "url": "https://www.youtube.com/watch?v=EvGAZS6hJ-E",
         "source": "YouTube · Pragati Kunwer",
@@ -2178,13 +2185,6 @@
         "source": "YouTube · Leon van Zyl",
         "published": "2026-06-30T12:51:26.000Z",
         "summary": ""
-      },
-      {
-        "title": "We've launched Claude Sonnet 5 ( claude-sonnet-5 ), the next generation of our Sonnet model family, at introductory…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#june-30-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-06-30T00:00:00.000Z",
-        "summary": "Claude Managed Agents session event streams now support event deltas . Opt in with the event_deltas[] query parameter on GET /v1/sessions/{session_id}/events/stream . The event_start and event_delta events preview an agent message's text…"
       },
       {
         "title": "AI Agents Just Changed Forever: GLM 5.2, Codex Skills, Claude & Cursor",
