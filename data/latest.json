@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T11:01:29.343Z",
+  "generated_at": "2026-07-19T12:44:56.384Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,25 @@
     ],
     "news": [
       {
+        "title": "Qwen 3.8 vs Claude: What Their Own Launch Post Admits",
+        "url": "https://www.youtube.com/shorts/5sTnlQqXBAs",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "5sTnlQqXBAs",
+        "thumbnail": "https://i.ytimg.com/vi/5sTnlQqXBAs/hqdefault.jpg",
+        "published": "2026-07-19T12:30:04.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Alibaba’s Qwen Unveils Preview of Flagship AI Model",
+        "url": "https://www.bloomberg.com/news/articles/2026-07-19/alibaba-s-qwen-unveils-preview-of-flagship-ai-model",
+        "source": "Bloomberg",
+        "published": "2026-07-19T11:02:09.000Z",
+        "summary": "Alibaba Group Holding Ltd. launched a preview version of its flagship Qwen3.8 Max model, which it described as comparable to leading frontier AI models and second only to Anthropic PBC’s Fable 5."
+      },
+      {
         "title": "Which AI Model Should You Use? Claude Code Skills Cheat Sheet",
         "url": "https://www.youtube.com/shorts/AAADwPaVZkw",
         "source": "Pragati Kunwer",
@@ -158,69 +177,12 @@
         "_kind": "news_video"
       },
       {
-        "title": "Claude poised to command S.Korea’s generative AI market on enterprise demand - KED Global",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1qVGRxV3NRUGUwYVRQWXUwbFdpQ045OXhDTHAtZmJydnh5M2IycHpiUVRkODI5TmtWLVZMY3l6d19pSWlRQXVfRUxaaFBIc25wT096d1llYmdUbzNZWnJGRzNWV3BWdkpfUlR3OW5adlV5THZxY2hZRjVLUF9zWDQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-19T10:21:00.000Z",
-        "summary": "Claude poised to command S.Korea’s generative AI market on enterprise demand KED Global"
-      },
-      {
         "title": "Claude Code uses Bun written in Rust now",
         "url": "https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/",
-        "source": "HN · 52↑",
+        "source": "HN · 116↑",
         "hn_id": "48966569",
         "published": "2026-07-19T10:03:23.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude tests AI-assisted forecasting in World Cup prediction contest - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFAxNzZ1ZnQzZ3ZWUjVVZHNYQmgwTG1vZk9tOWV3cENqMGtMOHRqVGo2bTZvVmF3SVFKQS1kYjV1ejJDUThra201NFlWLWI5ampYYTZjNEVSUWU3WWJoLURaSGFSMERfaGJNcDhISXZNY2RRWGQ2?oc=5",
-        "source": "Google News",
-        "published": "2026-07-19T08:22:15.000Z",
-        "summary": "Claude tests AI-assisted forecasting in World Cup prediction contest Crypto Briefing"
-      },
-      {
-        "title": "Anthropic Revises Fable 5 Pricing, Exempts Max Plan Subscribers - 조선일보",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZFFMQU5xSnNsb1ZUWEZRSmZyTjcxX1V6clpNQzljVDRfdWxUYW11NHdiN2ZvNlhVTDZESmp4VjVmbkFKOHZQOWFiREViUXBPQ3NvOFBUcXZWcER1bVZzNTV0N3dLaFEzOEQxaGZFOWowd1htSkp2M3hsWllFNFU1d09QdnNYQzVz?oc=5",
-        "source": "Google News",
-        "published": "2026-07-19T08:21:49.000Z",
-        "summary": "Anthropic Revises Fable 5 Pricing, Exempts Max Plan Subscribers 조선일보"
-      },
-      {
-        "title": "Anthropic’s Claude Fable 5 access plans change from July 20: Here’s what’s new - The Indian Express",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOZnhDak5scm5oXzdwUG5rbi1rYU42TE1CRnlGLVk0SF9YSk1NWGZRLXh0bkZtSnl0YzVNcTBNMjlzNVR0enhEeUtwQnVmdmc0SlFaQlc0TGZQTVFqb2NVNVFNT1pOaWY0M0JrRUJpSC10RDJ5UG9IZVpwOVhCX1EtYjRnTkZBc1dEZVdlQXVmSlFZWnJ0aXpKUXhrQ1U2NlZ5T2VNZWtfSkcyV1FBdWNZVTJLYjdtcnZoRDFzRUtjaWFIUF93VmfSAcwBQVVfeXFMT3gxTVJDT1F2N19ndTcwSWltdXJybG8xNVRLQ25rc1NGZ3lJMW1QZHlBRERYTzlnM0tGVnlkMm1mWlB6QXAzeXdUb0xXOEtjWXdFMnBWcWwzcGRTSk0yVWMzcHJnMmpQejN3cEVOdVBoRS16dTJoaW1xVXFucTZHMTlFRjZVaFViUW12blBNdUd4S0ZxV0Z2TElvMFpKMWpSOTRFMWdlNTBQR00zMEd5V0xMSTlMb0xvZUpJQXg1STNuUWY1TFBOdnZUZ1BS?oc=5",
-        "source": "Google News",
-        "published": "2026-07-19T05:37:08.000Z",
-        "summary": "Anthropic’s Claude Fable 5 access plans change from July 20: Here’s what’s new The Indian Express"
-      },
-      {
-        "title": "Anthropic adds Claude Fable 5 to premium plans - Tech in Asia",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOeURjVjg0V3RMdHVadFBLX0NtMjhXeTJYdGZGNVlpVlp2c3pwcXd3bEcwa2ZFdHdJVk9mYWFWOEZGM290M3NId2VmbUJsMkExN1huWm0zUV9OdjhYaXNpREFSRGZNRkxsd0FWYkVvV1F2TFB2S1R3ejh1bC0yYmlhUg?oc=5",
-        "source": "Google News",
-        "published": "2026-07-19T01:24:00.000Z",
-        "summary": "Anthropic adds Claude Fable 5 to premium plans Tech in Asia"
-      },
-      {
-        "title": "Anthropic's newest ad is creeping people out",
-        "url": "https://techcrunch.com/2026/07/14/anthropics-newest-ad-is-creeping-people-out/",
-        "source": "HN · 39↑",
-        "hn_id": "48963614",
-        "published": "2026-07-18T23:50:18.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic merges Chat and Cowork modes into unified Claude interface - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBtRG9vbXRSRlRGMjM1dVBwclNuVlBzbUFpcGs0OU1jNWVzeVNoREI4SFg4S1BrS19WQlNXRnpyeW5JVVZQMUlQdDVWVmV1UXE5eVZkNjNITkFDVlhBcy10N2xTYXZlSUw0RkVoVkR4SkU3VURDSWxKZGwxSmhqZw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T22:32:49.000Z",
-        "summary": "Anthropic merges Chat and Cowork modes into unified Claude interface Crypto Briefing"
-      },
-      {
-        "title": "Claude Cowork cuts Anthropic's weekly report build from 2 days to 2 hours - PPC Land",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNd3RaR0hfdmlZbXFqbk9VbURMdHZxTzFrOWZQdzYtZllxajhJMno1VTlGNWd0aEFORUNDUVVtYkZnUFRYQlFmT1V2cjJZclUwOTFLT1ZDRldPa3hpY21iYWxvSTl2Z2UwblZrUGNkQjlld09keERTUFJOaC1PWXF4RmRzRzNHOS1wYjc5TVZGVEJaRXdX?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T19:08:57.000Z",
-        "summary": "Claude Cowork cuts Anthropic's weekly report build from 2 days to 2 hours PPC Land"
       },
       {
         "title": "Kimi K3 vs Claude: One Benchmark Win, Now What",
@@ -235,82 +197,12 @@
         "_kind": "news_video"
       },
       {
-        "title": "Sol Or Fable 5: Which AI Model Wins The Creative Test - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1sNVNMXzZqdE1fdkUtUHFkOXJGWjN2QkNIT1B2QWozMDRCQnFVbjJIZUs5V3I2b05DbVJvUldhZGNZeFZlRFV5QTZyaWgxTnUxSF82WE1DY2R3NDhMTi1zcXAyRGdKZ2Q4?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T17:47:24.000Z",
-        "summary": "Sol Or Fable 5: Which AI Model Wins The Creative Test Yellow.com"
-      },
-      {
-        "title": "Anthropic Localises Claude Pricing for India as AI Demand Surges - Memeburn",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxORVQ1emd4RUNuZnppUEpjUVFzenVPQjNodldoSmk3OEJYVWtDaGsyVHFvZmExWDNPV2xnWHNiMlJQQThiUGEyMlRCWTNVeUlfOURIU0loSVl5ZVFHaDBkQ0V2R0xhanR3VGZXaFVhNGlsTktJaGpBMV9GN1FFQnEyNUhWWExIMW9ZSi1tWkZYYw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T17:22:46.000Z",
-        "summary": "Anthropic Localises Claude Pricing for India as AI Demand Surges Memeburn"
-      },
-      {
         "title": "Setting up your spare Mac for Claude Code to control, a step-by-step guide",
         "url": "https://ykdojo.github.io/claude-controls-mac/",
-        "source": "HN · 234↑",
+        "source": "HN · 235↑",
         "hn_id": "48959392",
         "published": "2026-07-18T16:12:08.000Z",
         "summary": ""
-      },
-      {
-        "title": "GPT-5.6 vs Fable 5 Review: Which One You Pick Depends on These Factors - Decrypt",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1Fd0JZSFhiU0EzZ013VUpVbmpTZnpiNWZyNjhJcER5SkJZS0xJdEtidXc2OEJYbnI2UFpkOVdOWlNpQXFZTW14akpZTThKWThtVFMxdmd4WjFMU2pCUUdOcnVNbC1pVk5PZjZCWmVacFRMZFdYdTVj?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T15:21:03.000Z",
-        "summary": "GPT-5.6 vs Fable 5 Review: Which One You Pick Depends on These Factors Decrypt"
-      },
-      {
-        "title": "A Chinese Pink Floyd fan is giving Claude and Chat their own DeepSeek moment — an AI model just as good and half the price - Fortune",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQbUE3enpQbGVMOUg4cTdCdExtREdKOUl3UEljTUpLY2g4b0VyZUtKa3FWX0YwakVtNFk0dXpFdW93UzZQSVVXTzFNbUlPblA0OHZLLTJNSjNfVHozOXpydEtLQ3o4aWcySkUxUDE3QmtNcnNYQWVkUllrSUNNMnBKWUtB?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T14:46:00.000Z",
-        "summary": "A Chinese Pink Floyd fan is giving Claude and Chat their own DeepSeek moment — an AI model just as good and half the price Fortune"
-      },
-      {
-        "title": "Claude Fable 5 Ends Subscription Limbo: Permanent for Max, Credits-Only for Pro - Tech Times",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOZ0pnQUJvcE51TUxiU2JEWXBQeFdSYllaMVd5bkoxOTRYWEM4MUJHRG5NZ29GMUV5bDZVVVpzLVA1ckJlZzdPVW9kMWplRjE2WVdFeWJfNzJUOFFsVkJlbGxVQWx2c1BFZS13azBEU0hfaTdFc00zcFlhVEx0bEdwRjRwUEh3QW9Ta1NNUUJpRUZidlVOSEUxU3hVM2lua0VjMWJLUldLNXdVY09pT3IyN3N2d0V0Tkp6SG5RNTk4OUJBUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T12:56:04.000Z",
-        "summary": "Claude Fable 5 Ends Subscription Limbo: Permanent for Max, Credits-Only for Pro Tech Times"
-      },
-      {
-        "title": "Anthropic to add Claude's Fable 5 model to Max, Team Premium plans at 50pc of usage limits - Dawn",
-        "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE53WFNCTm9NMTRGdzNMMHpQTEJVRTZ6NkJsM2N0Rzc4R0pYYy00Y2VrWGFtNGEwV3BET2ZNQ0pXTnBGMHpxcmFMNw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T12:50:08.000Z",
-        "summary": "Anthropic to add Claude's Fable 5 model to Max, Team Premium plans at 50pc of usage limits Dawn"
-      },
-      {
-        "title": "Just a day after Chinese President Xi Jinping almost warned against US placing its own security above eve - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMigwNBVV95cUxOY0dDdFVRUkh5VUkyU29STDMzNi11Z3ZQOHlzZFdlU1lHN3FFekRjSWpYbzQ4UFZXZlc1cXk5NURvNTdRMl8tSXlfVUJraTFVRkRhQjItek1ja1o3NzY5eS1WUEZtUUVWRW1yMG13cGlQX0o0ZzNzNUp1cnFxUHhHaEFZS2JXZTlBMVo4VDBIMGI5RE0tMHd0dGdwU1d5Uk01UXFxWUdmODZEN09CdUNUZmNtNGFQQnRoNDF0OC1FOUozWXJjVW5KQ3dQVTFlRnhGS2xMUmZ2WDBvWjVtUEJkNzc5aV82Ymo0eHR4R0pIRW9sSXh1eGdCQUQ1NFp4MVBLcXZkTkltRjhNUmVCSmRBWU9uOGg0SFZaQ3NHVkZGT0FZcy1QVm5iaWlXWTc5RUZleGdHZG9DR0RGeXlUNXJFbC1hbjlFcWkycmM1aXJXalBxZXB2S05jaTlrWnR4cGhQVi1JRGhsVTJYMzktZEhJMVlLTkRta0VlaHViYVk1c3FfYVHSAYgDQVVfeXFMTXpHd3NCTk1JWmllTGxUa0xKQVNOYzc3YTJpTFZicmQyUmVTajE2STloQnNYN2RGWFhraVhYZlNXRXhwOVZiaWc5ckpLZDAxYWxVRVRZVXZGX3V5THAxdGhFMmdRbmpldTluaF9KRjFqRnRLSWE5bUJWSW1OZDZSaUlERzBRcVoyYm5oLVpDZC1LWDJsUXdoZDdCd1NKNUJDeWtnWEZBYmlSdHoxeEpfd2pFYURJRjEwS0xiV2lGZzczVVMyZ2x1TmFfN2R2eV92VlFLUk5GOXVQRUlqWWZjZXBkODUyQUc1eHZ1SzJ4TzI1SzhTdHJhMkhvNGF4OHNSeTlxT1oyZ2FRVW9vS3ZqODZnbWFQU0xINWxCV3J6cHZJM0FtZTJYSG1Qdm9Tb1UwSkNrLUoybG5YSE9JdFJydW5GWWxKV2R2cnZXOXhVSlMwZnFCZ1lfUHROcjRNRTFheXktclEyVGFDYWJqdlJLeURVMVNabWR6OF9MSE4wdTJQTFNxTTRsY1A?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T12:32:00.000Z",
-        "summary": "Just a day after Chinese President Xi Jinping almost warned against US placing its own security above eve The Times of India"
-      },
-      {
-        "title": "Anthropic is offering $600,000 to someone to shape its Wall Street story as it gears up for a blockbuster IPO - Yahoo Finance Singapore",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQWl92WWxPU2d0aHRXcU9NQmRWLVFfV2M0cHU5Rk5TaWl0TkFUalZycWlSWTNBejdySUlWZ1VoUm11b2ZuSlBtTFVGMXA2dWJJcWJHUzQ2Z1hmYy10d1ZCY2lzQXVaUGpUSlM0a2lkaEM4MWNxZjhTcHhFcnVFdzNjRGlmUHBOV2JVUVpB?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T10:30:00.000Z",
-        "summary": "Anthropic is offering $600,000 to someone to shape its Wall Street story as it gears up for a blockbuster IPO Yahoo Finance Singapore"
-      },
-      {
-        "title": "Anthropic Limits Claude Fable 5 Access as It Runs Out of Compute - Startup Fortune",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUXQwTXRDbG04V2lsc3NQLU8tX2RpRTFkZ2VqR0w4UF9qXzJnd3hWTnU4aUZwdC1lQUNPYmZLc1k2M2VvZUNjNC1LRjloUVZDSnJPR2QwN1pWNjRxcFNMNlFQV2psdW1wLVJNUFRyNHRrRjFwajNEVE1DZVkydEpaY09JUmJlY0NPYkd1T0I0cEphbndYMjhV?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T07:21:40.000Z",
-        "summary": "Anthropic Limits Claude Fable 5 Access as It Runs Out of Compute Startup Fortune"
-      },
-      {
-        "title": "Anthropic slashes Claude Fable 5 limits in Max and Team Premium and pushes Pro users toward API pricing - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPcmU0X0dGUjFxLXhmdkdfWk83WnMzQlYxcDdPODRvWUVyNzRtWU1lc2pJRFR5RjJYSFpKVlM3Rm9zOG4xelFYeGVkam1raGZacHQxT2VSMFNFRGRNZzZOYmdMTl9ST2Jna0JTbnRKTWhScW1yMWhyd3pNcXpfTmVrT2hJcUR2THgtOHpQMGVhZWhmc3FXSG5BQUpTR01mZVNCZ3JEU2RrSGloQmNaanN1ZUZmc2Z3ek9aM1M5UXdFb3lUYUppbUc0?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T07:19:52.000Z",
-        "summary": "Anthropic slashes Claude Fable 5 limits in Max and Team Premium and pushes Pro users toward API pricing the-decoder.com"
       },
       {
         "title": "Beginning July 20, Claude Fable 5 will be included in all Max plans",
@@ -333,26 +225,12 @@
         "_kind": "news_video"
       },
       {
-        "title": "Claude Fable 5 Export Ban: 19 Days, 99% Fix [2026] - tech-insider.org",
-        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5Bck8yajlpblhoNUZpYnNiZFRXdEdYZ05ZUy1lczlmY0dZbk8xY2p4ZjBydmpEMUtSMC1PRWczek9iUzBOUl8zWEE4NzJReV9TVTZibUF4WUJFeW1qdGFlYnpnVDJxNDRRMDAw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T00:35:29.000Z",
-        "summary": "Claude Fable 5 Export Ban: 19 Days, 99% Fix [2026] tech-insider.org"
-      },
-      {
         "title": "Claude Code(Fable) refused my slow down instruction",
         "url": "https://qusaisuwan.github.io/cc-incident/index.html",
         "source": "HN · 31↑",
         "hn_id": "48953519",
         "published": "2026-07-17T23:39:56.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic Launches Claude for Teachers. Why Some Critics Are Concerned - Education Week",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOUlZYRGRMaDNOVzdLUG5BWS1MN3NubHg0d1d3MENPNkVTRzFjLWw0eHpuREpVaFUwdnpoTXgta2FCMjV2Sl9obWZoLWNaR3hpWld2NW50bjh5eDE3dGl0ajlIQ1pVNm5HeWFwNTB0M242T0UxbU9RZ0Z0LVZZUTg1bDVqY01ZbVFNRHoxYWVrWDlydXhPc3VYdHZJZmktSGh6TUwzWS1fY1VpTmJPWnlsRQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-17T20:15:07.000Z",
-        "summary": "Anthropic Launches Claude for Teachers. Why Some Critics Are Concerned Education Week"
       },
       {
         "title": "Do these 5 things in Claude Fable 5 NOW",
@@ -367,13 +245,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Anthropic Says Chatbots Have What May Be a Key Feature of Consciousness. Are They Right? - SingularityHub",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcmE3S21EY2Y1c3lkbUNvU1UtemlyNUxieFgxdUpGN29OOWZtcDhUeDRNdkFKVDVwbGJ0WnlQZFAtbWQ5VnZENXYwUnhTQXdFMy1zV2xxN0xGQjRCdFZ3aGNDT3BtRzJDVmhDVjRLaFkta25oRk1IdF9oQzNIRU1xYjZXOU1IMjBkU1MwWXVOTWQxOFl3Zk4wd1VteTZpQU9KcW92WnYwWHQxVEt5eHpieTJDLWpPNW9FTW04RlZuOC1BQnc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-17T19:57:06.000Z",
-        "summary": "Anthropic Says Chatbots Have What May Be a Key Feature of Consciousness. Are They Right? SingularityHub"
-      },
-      {
         "title": "No Team, No Code. Claude Skills Run My Whole Business",
         "url": "https://www.youtube.com/shorts/OoIWdtqLNkk",
         "source": "Pragati Kunwer",
@@ -386,6 +257,14 @@
         "_kind": "news_video"
       },
       {
+        "title": "Claude Code: Anatomy of a Misfeature",
+        "url": "https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/",
+        "source": "HN · 140↑",
+        "hn_id": "48947776",
+        "published": "2026-07-17T14:26:58.000Z",
+        "summary": ""
+      },
+      {
         "title": "Kimi K3 vs Claude vs GPT (Honest Compare)",
         "url": "https://www.youtube.com/shorts/iFxfQYMA1fw",
         "source": "Pragati Kunwer",
@@ -396,6 +275,14 @@
         "published": "2026-07-17T02:58:26.000Z",
         "summary": "",
         "_kind": "news_video"
+      },
+      {
+        "title": "$100 AI Music Video: Claude Fable 5 vs. GPT-5.6 Sol",
+        "url": "https://www.tryai.dev/blog/ai-music-video-arena-claude-vs-gpt-5.6",
+        "source": "HN · 396↑",
+        "hn_id": "48939524",
+        "published": "2026-07-16T20:03:23.000Z",
+        "summary": ""
       },
       {
         "title": "The Monday Task I Dreaded? A Claude Skill Folder Does It Now",
@@ -422,6 +309,58 @@
         "_kind": "news_video"
       },
       {
+        "title": "Moonshot’s upcoming Kimi 3 is expected to close the gap with Anthropic’s Opus 4.8",
+        "url": "https://techcrunch.com/2026/07/16/moonshots-upcoming-kimi-3-is-expected-to-close-the-gap-with-anthropics-opus-4-8/",
+        "source": "TechCrunch",
+        "published": "2026-07-16T14:26:29.000Z",
+        "summary": "The FT reports Kimi K3 will be the largest open AI model from China, with a parameter count between 2 trillion and 3 trillion."
+      },
+      {
+        "title": "At least 105 past YC founders have worked at OpenAI and Anthropic",
+        "url": "https://joinedanthropic.com",
+        "source": "HN · 302↑",
+        "hn_id": "48931588",
+        "published": "2026-07-16T08:03:35.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Why Greylock capped its new fund at $1.5B when it says it could have raised more",
+        "url": "https://techcrunch.com/2026/07/15/why-greylock-capped-its-new-fund-at-1-5b-when-it-says-it-could-have-raised-more/",
+        "source": "TechCrunch",
+        "published": "2026-07-16T00:20:42.000Z",
+        "summary": "By keeping the number of investments to about 25 per fund, Greylock aims to remain what it calls \"the most important partner\" to its founders."
+      },
+      {
+        "title": "Microsoft is reportedly training salespeople to talk down OpenAI and Anthropic",
+        "url": "https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/",
+        "source": "TechCrunch",
+        "published": "2026-07-15T23:59:44.000Z",
+        "summary": "Microsoft is looking to sell its in-house AI models as more efficient and cost-effective than its competitors' models."
+      },
+      {
+        "title": "Agentty – A drop-in alternative to claude-code, written in C++26. 11.0 MB binary",
+        "url": "https://github.com/1ay1/agentty",
+        "source": "HN · 48↑",
+        "hn_id": "48928002",
+        "published": "2026-07-15T22:30:24.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Brainless: Shadcn components that look like Claude Code, Codex and Grok",
+        "url": "https://brainless.swerdlow.dev",
+        "source": "HN · 127↑",
+        "hn_id": "48926085",
+        "published": "2026-07-15T19:42:53.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Inside Ode with Anthropic, the private equity-backed startup betting AI services are the future of enterprise",
+        "url": "https://techcrunch.com/podcast/inside-ode-with-anthropic-the-private-equity-backed-startup-betting-ai-services-are-the-future-of-enterprise/",
+        "source": "TechCrunch",
+        "published": "2026-07-15T17:55:22.000Z",
+        "summary": "Can a handful of engineers really do the work of an army of consultants? That’s the bet behind Ode with Anthropic — the joint venture dedicated to embedding forward-deployed engineers in enterprise…"
+      },
+      {
         "title": "Claude Skills: I Removed Myself From the Loop",
         "url": "https://www.youtube.com/shorts/OP1Uh8uYzoc",
         "source": "Pragati Kunwer",
@@ -434,6 +373,20 @@
         "_kind": "news_video"
       },
       {
+        "title": "Inside Ode with Anthropic, the startup betting AI services are the future of enterprise",
+        "url": "https://techcrunch.com/video/inside-ode-with-anthropic-the-startup-betting-ai-services-are-the-future-of-enterprise/",
+        "source": "TechCrunch",
+        "published": "2026-07-15T15:00:00.000Z",
+        "summary": "Can a handful of engineers really do the work of an army of consultants? That’s the bet behind Ode with Anthropic — the joint venture dedicated to embedding forward-deployed engineers in enterprise…"
+      },
+      {
+        "title": "Anthropic, Blackstone bet the next trillion-dollar AI business is implementation, not just models",
+        "url": "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+        "source": "TechCrunch",
+        "published": "2026-07-15T13:10:47.000Z",
+        "summary": "Anthropic-backed Ode launches as AI labs bet that embedding forward-deployed engineers inside enterprises is the key to accelerating enterprise AI adoption."
+      },
+      {
         "title": "Codex and Claude Shipped Browser Updates. This Changes Everything.",
         "url": "https://www.youtube.com/watch?v=juPDqb89dew",
         "source": "Riley Brown",
@@ -444,6 +397,77 @@
         "published": "2026-07-15T13:00:36.000Z",
         "summary": "",
         "_kind": "news_video"
+      },
+      {
+        "title": "Societal Impacts: Claude's values across models and languages",
+        "url": "https://www.anthropic.com/research/claude-values-models-languages",
+        "source": "HN · 32↑",
+        "hn_id": "48918956",
+        "published": "2026-07-15T10:56:33.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I tricked Claude into leaking your deepest, darkest secrets",
+        "url": "https://www.ayush.digital/blog/the-memory-heist",
+        "source": "HN · 667↑",
+        "hn_id": "48916975",
+        "published": "2026-07-15T06:28:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic’s newest ad is creeping people out",
+        "url": "https://techcrunch.com/2026/07/14/anthropics-newest-ad-is-creeping-people-out/",
+        "source": "TechCrunch",
+        "published": "2026-07-14T19:41:27.000Z",
+        "summary": "Anthropic has consistently attempted to depict itself as the ethical foil to other AI companies. This latest marketing stunt — which leans into criticism of AI as a way to make Anthropic seem aware…"
+      },
+      {
+        "title": "Launch HN: Agnost AI (YC S26) – Extract user feedback from agent conversations",
+        "url": "https://agnost.ai",
+        "source": "HN · 85↑",
+        "hn_id": "48908950",
+        "published": "2026-07-14T16:06:18.000Z",
+        "summary": "Hey HN, we’re Shubham &amp; Parth, childhood friends building Agnost AI ( https:&#x2F;&#x2F;agnost.ai ), product analytics for teams building chat and voice agents. We read…"
+      },
+      {
+        "title": "How to stop Claude from saying load-bearing",
+        "url": "https://jola.dev/posts/how-to-stop-claude-from-saying-load-bearing",
+        "source": "HN · 606↑",
+        "hn_id": "48905248",
+        "published": "2026-07-14T11:46:02.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Show HN: Sx 2.0 – Share AI skills with your team through a Dropbox folder",
+        "url": "https://sleuth-io.github.io/sx/2026/07/10/your-dropbox-is-now-a-skill-server.html",
+        "source": "HN · 44↑",
+        "hn_id": "48900319",
+        "published": "2026-07-13T23:26:52.000Z",
+        "summary": "Hi all, author here. SX started as a CLI to let developers share skills across AI clients without having to rely on git for storage. This allowed sharing at the…"
+      },
+      {
+        "title": "Claude Code plugin that plays a Mr. Meeseeks voice line whene Claude is waiting",
+        "url": "https://github.com/thephw/claude-meseeks",
+        "source": "HN · 131↑",
+        "hn_id": "48899529",
+        "published": "2026-07-13T22:03:54.000Z",
+        "summary": ""
+      },
+      {
+        "title": "$65K to work at Anthropic? Debate ensues amid IPO wave",
+        "url": "https://missionlocal.org/2026/07/anthropic-sf-affordability-ipo-housing-evictions-rent/",
+        "source": "HN · 30↑",
+        "hn_id": "48899454",
+        "published": "2026-07-13T21:56:52.000Z",
+        "summary": ""
+      },
+      {
+        "title": "A Study of Microsoft's Early 2026 Rollout of Claude Code and GitHub Copilot CLI",
+        "url": "https://arxiv.org/abs/2607.01418",
+        "source": "HN · 70↑",
+        "hn_id": "48899321",
+        "published": "2026-07-13T21:43:51.000Z",
+        "summary": ""
       },
       {
         "title": "ZCode + GLM 5.2 - Ship Real Apps Without Paying for Claude",
@@ -600,18 +624,6 @@
         "published": "2026-06-12T18:28:17.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Fable 5 just dropped and I'm speechless...",
-        "url": "https://www.youtube.com/watch?v=RwsUnvHYmyw",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "RwsUnvHYmyw",
-        "thumbnail": "https://i.ytimg.com/vi/RwsUnvHYmyw/hqdefault.jpg",
-        "published": "2026-06-09T20:08:12.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -701,6 +713,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Qwen 3.8 vs Claude: What Their Own Launch Post Admits",
+        "url": "https://www.youtube.com/shorts/5sTnlQqXBAs",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "5sTnlQqXBAs",
+        "thumbnail": "https://i.ytimg.com/vi/5sTnlQqXBAs/hqdefault.jpg",
+        "published": "2026-07-19T12:30:04.000Z",
+        "summary": ""
+      },
       {
         "title": "Which AI Model Should You Use? Claude Code Skills Cheat Sheet",
         "url": "https://www.youtube.com/shorts/AAADwPaVZkw",
@@ -1018,17 +1041,6 @@
         "video_id": "TtCWqjy3T5M",
         "thumbnail": "https://i.ytimg.com/vi/TtCWqjy3T5M/hqdefault.jpg",
         "published": "2026-06-09T22:03:25.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Fable 5 just dropped and I'm speechless...",
-        "url": "https://www.youtube.com/watch?v=RwsUnvHYmyw",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "RwsUnvHYmyw",
-        "thumbnail": "https://i.ytimg.com/vi/RwsUnvHYmyw/hqdefault.jpg",
-        "published": "2026-06-09T20:08:12.000Z",
         "summary": ""
       }
     ],
@@ -1748,6 +1760,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Qwen 3.8 vs Claude: What Their Own Launch Post Admits",
+        "url": "https://www.youtube.com/shorts/5sTnlQqXBAs",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-07-19T12:30:04.000Z",
+        "summary": ""
+      },
+      {
         "title": "Which AI Model Should You Use? Claude Code Skills Cheat Sheet",
         "url": "https://www.youtube.com/shorts/AAADwPaVZkw",
         "source": "YouTube · Pragati Kunwer",
@@ -2228,13 +2247,6 @@
         "url": "https://www.youtube.com/watch?v=TtCWqjy3T5M",
         "source": "YouTube · Ryan & Matt Data Science",
         "published": "2026-06-09T22:03:25.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Fable 5 just dropped and I'm speechless...",
-        "url": "https://www.youtube.com/watch?v=RwsUnvHYmyw",
-        "source": "YouTube · Alex Finn",
-        "published": "2026-06-09T20:08:12.000Z",
         "summary": ""
       }
     ]
