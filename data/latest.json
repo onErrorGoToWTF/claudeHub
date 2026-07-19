@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T01:19:46.208Z",
+  "generated_at": "2026-07-19T04:57:22.661Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,27 @@
     ],
     "news": [
       {
+        "title": "Kimi K3 writes H100 CUDA kernel 14.82x faster than PyTorch, intensifying US-China AI race - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA3WHZXd3RhVm82SHotTWpjT1dkWXlZVWdtUm1pWmFSZ2ZLaXRkRHFnRTNrUk1TQVFXSFc2a3lkSXNTb3Jkd3F4Nm0wbVJITDZqQlRwV09QdlR6MmZmcGxKdUt2cGZlUHBnbXpWSDlFMA?oc=5",
+        "source": "Google News",
+        "published": "2026-07-19T03:53:51.000Z",
+        "summary": "Kimi K3 writes H100 CUDA kernel 14.82x faster than PyTorch, intensifying US-China AI race Crypto Briefing"
+      },
+      {
+        "title": "Moonshot’s Kimi upends conventional wisdom on US lead over China - AFR",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNjltcUptb1E4cnVja2k3SFFLeFRHT05iaGN5TmtrdmVIdTAxVXZxdnZvNlpyQm9WLU5TUHVDU2dPWDBmOG5yUWJrQnZEaHFmLUlsVVgyTWpUcXFobEVBQTlKbDFYM0J1NGpxbVVEd20xVjh2aXN5WVZHbjRXVGdlakU3T3RDY3pVcE95TDR4ZzlRN0k3cmJYaVpWYnh0U25tZE9GVTg4b19vaFpEZlBYMg?oc=5",
+        "source": "Google News",
+        "published": "2026-07-19T02:02:00.000Z",
+        "summary": "Moonshot’s Kimi upends conventional wisdom on US lead over China AFR"
+      },
+      {
+        "title": "Anthropic adds Claude Fable 5 to premium plans - Tech in Asia",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOeURjVjg0V3RMdHVadFBLX0NtMjhXeTJYdGZGNVlpVlp2c3pwcXd3bEcwa2ZFdHdJVk9mYWFWOEZGM290M3NId2VmbUJsMkExN1huWm0zUV9OdjhYaXNpREFSRGZNRkxsd0FWYkVvV1F2TFB2S1R3ejh1bC0yYmlhUg?oc=5",
+        "source": "Google News",
+        "published": "2026-07-19T01:24:00.000Z",
+        "summary": "Anthropic adds Claude Fable 5 to premium plans Tech in Asia"
+      },
+      {
         "title": "Anthropic merges Chat and Cowork modes into unified Claude interface - Crypto Briefing",
         "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBtRG9vbXRSRlRGMjM1dVBwclNuVlBzbUFpcGs0OU1jNWVzeVNoREI4SFg4S1BrS19WQlNXRnpyeW5JVVZQMUlQdDVWVmV1UXE5eVZkNjNITkFDVlhBcy10N2xTYXZlSUw0RkVoVkR4SkU3VURDSWxKZGwxSmhqZw?oc=5",
         "source": "Google News",
@@ -181,7 +202,7 @@
       {
         "title": "Setting up your spare Mac for Claude Code to control, a step-by-step guide",
         "url": "https://ykdojo.github.io/claude-controls-mac/",
-        "source": "HN · 172↑",
+        "source": "HN · 206↑",
         "hn_id": "48959392",
         "published": "2026-07-18T16:12:08.000Z",
         "summary": ""
@@ -222,13 +243,6 @@
         "summary": "Claude Fable 5 Ends Subscription Limbo: Permanent for Max, Credits-Only for Pro Tech Times"
       },
       {
-        "title": "Anthropic to add Claude's Fable 5 model to Max, Team Premium plans at 50pc of usage limits - Dawn",
-        "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE53WFNCTm9NMTRGdzNMMHpQTEJVRTZ6NkJsM2N0Rzc4R0pYYy00Y2VrWGFtNGEwV3BET2ZNQ0pXTnBGMHpxcmFMNw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T12:50:08.000Z",
-        "summary": "Anthropic to add Claude's Fable 5 model to Max, Team Premium plans at 50pc of usage limits Dawn"
-      },
-      {
         "title": "Anthropic is offering $600,000 to someone to shape its Wall Street story as it gears up for a blockbuster IPO - Yahoo Finance Singapore",
         "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQWl92WWxPU2d0aHRXcU9NQmRWLVFfV2M0cHU5Rk5TaWl0TkFUalZycWlSWTNBejdySUlWZ1VoUm11b2ZuSlBtTFVGMXA2dWJJcWJHUzQ2Z1hmYy10d1ZCY2lzQXVaUGpUSlM0a2lkaEM4MWNxZjhTcHhFcnVFdzNjRGlmUHBOV2JVUVpB?oc=5",
         "source": "Google News",
@@ -250,27 +264,6 @@
         "summary": "Anthropic slashes Claude Fable 5 limits in Max and Team Premium and pushes Pro users toward API pricing the-decoder.com"
       },
       {
-        "title": "Trump Administration Seeks Control Over Who Gets OpenAI and Anthropic’s Most Powerful AI Models: Report - Benzinga",
-        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNMjhkem1QUU9JNFR1dEo3b0E1OGkwaWhtOGFPalJOWnF2UWhuVXlXN2NxV21oSDlvX3pNTlNLYWViR3hTS0FfZlJ1NVFlbHFDbk5BVV90eERWRldhajYzUC1NQXAzekZFTlRtZXpwTUI3UmtQcFROMTM0Y1RCRVBpTnBjVVViQkpNOGZPblRYcnFSTjRBd0ZTamFGcWR1OVJLZXFfRkNlYzBubHNQcFZ0SG5OOXZvS290Nm1iVlJmLTFDcU1JVmF5Q3BwTHFIV1NVWmg0RHN2cUE4cmJaN1h2MDFWSWpZRXhlNmc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T06:27:40.000Z",
-        "summary": "Trump Administration Seeks Control Over Who Gets OpenAI and Anthropic’s Most Powerful AI Models: Report Benzinga"
-      },
-      {
-        "title": "Satya Nadella says Anthropic’s Claude Fable restrictions ‘don’t make sense’ - The Indian Express",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNY2w2QTN2c09Rcngwc1NueVRaNC1DaWNHMl9abTd6Uk9rdDNTVnctcnFOTlI4RF9hdHVEN2hISzR3SkZRNnJaZ2t3VXBhYmQtcm9fMFZNWUdCUzAtZ3BvcEtOVzVLdlhmRzJZNGp1Sl9YeG9sT0FqS1NmS0NiX29xWFBnMUZYTC1yeE5oeUktOVk4M2RKUUU4ZWdxQVZseGlmUEhMYWZkQ255WmtMZnZXcnBEMUIwVUx6Z3BiNnJlamRYVm1OZFJv0gHOAUFVX3lxTE5tNXNvcUh0RHdhY2p3V19ZRjB6cVU3YTNmRmcwRHh3a2JVZmpxRHY4cUFSejZpcTlEb3B2anpGWThadTY5cllhRVZ6bXhMSEJpRkxmck5yc1RJc0RPLUFtSTBaMFFUdm5RM3czY3ZTRFJhQkw1M01iRnpUTGFKaWZuUHRLYjV0S042Vl90SjBUMEkyTjdESmFoU3FMVHJTSTZvMTF1TlRLcWp2MGtJOHpwVzE0RHZ4XzNTREQ5NTROSDVjZDROTTB4M3BKc2d3?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T03:57:00.000Z",
-        "summary": "Satya Nadella says Anthropic’s Claude Fable restrictions ‘don’t make sense’ The Indian Express"
-      },
-      {
-        "title": "China Dismisses Claim that It Illicitly Extracts Foreign AI Tech",
-        "url": "https://www.bloomberg.com/news/articles/2026-07-18/china-dismisses-claim-that-it-illicitly-extracts-foreign-ai-tech",
-        "source": "Bloomberg",
-        "published": "2026-07-18T02:59:20.000Z",
-        "summary": "China brushed off allegations that the country distills foreign technology, after US firms including Anthropic PBC said Chinese rivals illicitly extract results from top American models to advance…"
-      },
-      {
         "title": "Beginning July 20, Claude Fable 5 will be included in all Max plans",
         "url": "https://twitter.com/claudeai/status/2078302415804379218",
         "source": "HN · 34↑",
@@ -289,13 +282,6 @@
         "published": "2026-07-18T01:36:42.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "What is Anthropic? The AI safety company behind Claude explained - qz.com",
-        "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1BM290Y1M2d0E5MGNubk1QMUx4RzZWOHB1X2NPWlFhQ2lYSVFwQXpkaG5ZSVFWMm9vdndVZUFIZzV5ZEtWakkw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-18T01:01:45.000Z",
-        "summary": "What is Anthropic? The AI safety company behind Claude explained qz.com"
       },
       {
         "title": "Claude Fable 5 Export Ban: 19 Days, 99% Fix [2026] - tech-insider.org",
@@ -358,6 +344,13 @@
         "_kind": "news_video"
       },
       {
+        "title": "FIS Deploys Anthropic’s Mythos 5 to Strengthen Global Financial Infrastructure - PYMNTS.com",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQRUZHYWNtWE9BS2otaGgtclgtRy1mMzVEZ19zMVVic1NkT3pnMmdTamNVUVBZc0NMRE1XOW9jVEtRZVBhRFhQYTlaT0poWXA5ZnRpeDJfYUo3aXk2Q0FSWlJmbHo2d0dqTTFhWXVRN2xiRVl0UVhLNF83Z1VncnhXQS1GOUZQUGllR21Tb1RIZ2lYVWJuVjhXcm5RRFpTcEx4SzN5cTlHUmVXNWN3ZTY2UTBxWmRPbE8tRVR3RWVwV0UtWVNtTzZ5XzJEUWZHODdT?oc=5",
+        "source": "Google News",
+        "published": "2026-07-17T18:27:19.000Z",
+        "summary": "FIS Deploys Anthropic’s Mythos 5 to Strengthen Global Financial Infrastructure PYMNTS.com"
+      },
+      {
         "title": "Anthropic introduces Claude for teachers - Fox News",
         "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBvT3drWUhCMHpwNnpIemJGNXk1cUpDbUVBWE9DTFZtUEp6czVLeTdob2F1RmdnbXlGVVFHTW1hNmhlQUpOb3hHSTM2U0k5VWlQbzNDRU5B?oc=5",
         "source": "Google News",
@@ -370,6 +363,13 @@
         "source": "Google News",
         "published": "2026-07-17T16:27:42.000Z",
         "summary": "Should You Try Kimi K3? Here’s How AI Model Compares With ChatGPT And Claude Forbes"
+      },
+      {
+        "title": "Meta in Talks to Lease Computing Power to Anthropic in Potential $10 Billion Deal - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPZ0I2QWE2VG81R196RFJPdmpueDdyX05QbkxzbDhOVVBXZDRYVXpsU202RmVPNGtobW8yTVRSOFZaQ1hhYzBhWDVsaFByUklSOG1QWTFEcVNud0dhVE1RemJMa0EtSVJ1UzNXTHVRX1ZCaDBxbFhrSDM5TTdJZmRKdEdsMFZONUhWa0NXeQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-17T16:17:06.000Z",
+        "summary": "Meta in Talks to Lease Computing Power to Anthropic in Potential $10 Billion Deal The New York Times"
       },
       {
         "title": "Kimi K3 vs Claude vs GPT (Honest Compare)",
@@ -1032,6 +1032,14 @@
     ],
     "tutorials": [
       {
+        "title": "v2.1.215",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.215",
+        "source": "Claude Code Releases",
+        "published": "2026-07-19T02:56:01.000Z",
+        "summary": "What's changed Claude no longer runs the /verify and /code-review skills on its own; invoke them with /verify or /code-review when you want them",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "Master 95% of Claude Code in 22 Minutes (as a Beginner)",
         "url": "https://www.youtube.com/watch?v=ZW6d_2rwcdk",
         "source": "Leon van Zyl",
@@ -1177,14 +1185,6 @@
         "source": "Claude Code Releases",
         "published": "2026-07-08T21:22:06.000Z",
         "summary": "What's changed Added an auto mode rule that blocks tampering with session transcript files Fixed --json-schema silently producing unstructured output when the schema was invalid, and schemas using…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "v2.1.204",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.204",
-        "source": "Claude Code Releases",
-        "published": "2026-07-08T00:27:50.000Z",
-        "summary": "What's changed Fixed hook events not streaming during SessionStart hooks in headless sessions, which could cause remote workers to be idle-reaped mid-hook",
         "tutorial_kind": "official"
       },
       {
@@ -1746,6 +1746,13 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.215",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.215",
+        "source": "Claude Code",
+        "published": "2026-07-19T02:56:01.000Z",
+        "summary": "What's changed Claude no longer runs the /verify and /code-review skills on its own; invoke them with /verify or /code-review when you want them"
+      },
+      {
         "title": "v2-alpha-7",
         "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/v2-alpha-7",
         "source": "MCP Inspector",
@@ -2080,13 +2087,6 @@
         "source": "YouTube · Productive Dude",
         "published": "2026-07-08T13:00:28.000Z",
         "summary": ""
-      },
-      {
-        "title": "v2.1.204",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.204",
-        "source": "Claude Code",
-        "published": "2026-07-08T00:27:50.000Z",
-        "summary": "What's changed Fixed hook events not streaming during SessionStart hooks in headless sessions, which could cause remote workers to be idle-reaped mid-hook"
       },
       {
         "title": "You can now set an expiration when you create an API key or an Admin API key in the Claude Console . Choose a preset,…",
