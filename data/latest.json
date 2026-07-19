@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T09:41:04.235Z",
+  "generated_at": "2026-07-19T11:01:29.343Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,33 @@
     ],
     "news": [
       {
+        "title": "Which AI Model Should You Use? Claude Code Skills Cheat Sheet",
+        "url": "https://www.youtube.com/shorts/AAADwPaVZkw",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "AAADwPaVZkw",
+        "thumbnail": "https://i.ytimg.com/vi/AAADwPaVZkw/hqdefault.jpg",
+        "published": "2026-07-19T10:53:07.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude poised to command S.Korea’s generative AI market on enterprise demand - KED Global",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1qVGRxV3NRUGUwYVRQWXUwbFdpQ045OXhDTHAtZmJydnh5M2IycHpiUVRkODI5TmtWLVZMY3l6d19pSWlRQXVfRUxaaFBIc25wT096d1llYmdUbzNZWnJGRzNWV3BWdkpfUlR3OW5adlV5THZxY2hZRjVLUF9zWDQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-19T10:21:00.000Z",
+        "summary": "Claude poised to command S.Korea’s generative AI market on enterprise demand KED Global"
+      },
+      {
+        "title": "Claude Code uses Bun written in Rust now",
+        "url": "https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/",
+        "source": "HN · 52↑",
+        "hn_id": "48966569",
+        "published": "2026-07-19T10:03:23.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude tests AI-assisted forecasting in World Cup prediction contest - Crypto Briefing",
         "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFAxNzZ1ZnQzZ3ZWUjVVZHNYQmgwTG1vZk9tOWV3cENqMGtMOHRqVGo2bTZvVmF3SVFKQS1kYjV1ejJDUThra201NFlWLWI5ampYYTZjNEVSUWU3WWJoLURaSGFSMERfaGJNcDhISXZNY2RRWGQ2?oc=5",
         "source": "Google News",
@@ -160,25 +187,11 @@
         "summary": "Anthropic Revises Fable 5 Pricing, Exempts Max Plan Subscribers 조선일보"
       },
       {
-        "title": "Moonshot’s Kimi upends conventional wisdom on US lead over China - AFR",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNjltcUptb1E4cnVja2k3SFFLeFRHT05iaGN5TmtrdmVIdTAxVXZxdnZvNlpyQm9WLU5TUHVDU2dPWDBmOG5yUWJrQnZEaHFmLUlsVVgyTWpUcXFobEVBQTlKbDFYM0J1NGpxbVVEd20xVjh2aXN5WVZHbjRXVGdlakU3T3RDY3pVcE95TDR4ZzlRN0k3cmJYaVpWYnh0U25tZE9GVTg4b19vaFpEZlBYMg?oc=5",
-        "source": "Google News",
-        "published": "2026-07-19T06:20:00.000Z",
-        "summary": "Moonshot’s Kimi upends conventional wisdom on US lead over China AFR"
-      },
-      {
         "title": "Anthropic’s Claude Fable 5 access plans change from July 20: Here’s what’s new - The Indian Express",
         "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOZnhDak5scm5oXzdwUG5rbi1rYU42TE1CRnlGLVk0SF9YSk1NWGZRLXh0bkZtSnl0YzVNcTBNMjlzNVR0enhEeUtwQnVmdmc0SlFaQlc0TGZQTVFqb2NVNVFNT1pOaWY0M0JrRUJpSC10RDJ5UG9IZVpwOVhCX1EtYjRnTkZBc1dEZVdlQXVmSlFZWnJ0aXpKUXhrQ1U2NlZ5T2VNZWtfSkcyV1FBdWNZVTJLYjdtcnZoRDFzRUtjaWFIUF93VmfSAcwBQVVfeXFMT3gxTVJDT1F2N19ndTcwSWltdXJybG8xNVRLQ25rc1NGZ3lJMW1QZHlBRERYTzlnM0tGVnlkMm1mWlB6QXAzeXdUb0xXOEtjWXdFMnBWcWwzcGRTSk0yVWMzcHJnMmpQejN3cEVOdVBoRS16dTJoaW1xVXFucTZHMTlFRjZVaFViUW12blBNdUd4S0ZxV0Z2TElvMFpKMWpSOTRFMWdlNTBQR00zMEd5V0xMSTlMb0xvZUpJQXg1STNuUWY1TFBOdnZUZ1BS?oc=5",
         "source": "Google News",
         "published": "2026-07-19T05:37:08.000Z",
         "summary": "Anthropic’s Claude Fable 5 access plans change from July 20: Here’s what’s new The Indian Express"
-      },
-      {
-        "title": "Kimi K3 writes H100 CUDA kernel 14.82x faster than PyTorch, intensifying US-China AI race - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA3WHZXd3RhVm82SHotTWpjT1dkWXlZVWdtUm1pWmFSZ2ZLaXRkRHFnRTNrUk1TQVFXSFc2a3lkSXNTb3Jkd3F4Nm0wbVJITDZqQlRwV09QdlR6MmZmcGxKdUt2cGZlUHBnbXpWSDlFMA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-19T03:53:51.000Z",
-        "summary": "Kimi K3 writes H100 CUDA kernel 14.82x faster than PyTorch, intensifying US-China AI race Crypto Briefing"
       },
       {
         "title": "Anthropic adds Claude Fable 5 to premium plans - Tech in Asia",
@@ -190,7 +203,7 @@
       {
         "title": "Anthropic's newest ad is creeping people out",
         "url": "https://techcrunch.com/2026/07/14/anthropics-newest-ad-is-creeping-people-out/",
-        "source": "HN · 37↑",
+        "source": "HN · 39↑",
         "hn_id": "48963614",
         "published": "2026-07-18T23:50:18.000Z",
         "summary": ""
@@ -238,7 +251,7 @@
       {
         "title": "Setting up your spare Mac for Claude Code to control, a step-by-step guide",
         "url": "https://ykdojo.github.io/claude-controls-mac/",
-        "source": "HN · 232↑",
+        "source": "HN · 234↑",
         "hn_id": "48959392",
         "published": "2026-07-18T16:12:08.000Z",
         "summary": ""
@@ -272,6 +285,13 @@
         "summary": "Anthropic to add Claude's Fable 5 model to Max, Team Premium plans at 50pc of usage limits Dawn"
       },
       {
+        "title": "Just a day after Chinese President Xi Jinping almost warned against US placing its own security above eve - The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMigwNBVV95cUxOY0dDdFVRUkh5VUkyU29STDMzNi11Z3ZQOHlzZFdlU1lHN3FFekRjSWpYbzQ4UFZXZlc1cXk5NURvNTdRMl8tSXlfVUJraTFVRkRhQjItek1ja1o3NzY5eS1WUEZtUUVWRW1yMG13cGlQX0o0ZzNzNUp1cnFxUHhHaEFZS2JXZTlBMVo4VDBIMGI5RE0tMHd0dGdwU1d5Uk01UXFxWUdmODZEN09CdUNUZmNtNGFQQnRoNDF0OC1FOUozWXJjVW5KQ3dQVTFlRnhGS2xMUmZ2WDBvWjVtUEJkNzc5aV82Ymo0eHR4R0pIRW9sSXh1eGdCQUQ1NFp4MVBLcXZkTkltRjhNUmVCSmRBWU9uOGg0SFZaQ3NHVkZGT0FZcy1QVm5iaWlXWTc5RUZleGdHZG9DR0RGeXlUNXJFbC1hbjlFcWkycmM1aXJXalBxZXB2S05jaTlrWnR4cGhQVi1JRGhsVTJYMzktZEhJMVlLTkRta0VlaHViYVk1c3FfYVHSAYgDQVVfeXFMTXpHd3NCTk1JWmllTGxUa0xKQVNOYzc3YTJpTFZicmQyUmVTajE2STloQnNYN2RGWFhraVhYZlNXRXhwOVZiaWc5ckpLZDAxYWxVRVRZVXZGX3V5THAxdGhFMmdRbmpldTluaF9KRjFqRnRLSWE5bUJWSW1OZDZSaUlERzBRcVoyYm5oLVpDZC1LWDJsUXdoZDdCd1NKNUJDeWtnWEZBYmlSdHoxeEpfd2pFYURJRjEwS0xiV2lGZzczVVMyZ2x1TmFfN2R2eV92VlFLUk5GOXVQRUlqWWZjZXBkODUyQUc1eHZ1SzJ4TzI1SzhTdHJhMkhvNGF4OHNSeTlxT1oyZ2FRVW9vS3ZqODZnbWFQU0xINWxCV3J6cHZJM0FtZTJYSG1Qdm9Tb1UwSkNrLUoybG5YSE9JdFJydW5GWWxKV2R2cnZXOXhVSlMwZnFCZ1lfUHROcjRNRTFheXktclEyVGFDYWJqdlJLeURVMVNabWR6OF9MSE4wdTJQTFNxTTRsY1A?oc=5",
+        "source": "Google News",
+        "published": "2026-07-18T12:32:00.000Z",
+        "summary": "Just a day after Chinese President Xi Jinping almost warned against US placing its own security above eve The Times of India"
+      },
+      {
         "title": "Anthropic is offering $600,000 to someone to shape its Wall Street story as it gears up for a blockbuster IPO - Yahoo Finance Singapore",
         "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQWl92WWxPU2d0aHRXcU9NQmRWLVFfV2M0cHU5Rk5TaWl0TkFUalZycWlSWTNBejdySUlWZ1VoUm11b2ZuSlBtTFVGMXA2dWJJcWJHUzQ2Z1hmYy10d1ZCY2lzQXVaUGpUSlM0a2lkaEM4MWNxZjhTcHhFcnVFdzNjRGlmUHBOV2JVUVpB?oc=5",
         "source": "Google News",
@@ -295,7 +315,7 @@
       {
         "title": "Beginning July 20, Claude Fable 5 will be included in all Max plans",
         "url": "https://twitter.com/claudeai/status/2078302415804379218",
-        "source": "HN · 34↑",
+        "source": "HN · 37↑",
         "hn_id": "48954522",
         "published": "2026-07-18T02:15:36.000Z",
         "summary": ""
@@ -322,7 +342,7 @@
       {
         "title": "Claude Code(Fable) refused my slow down instruction",
         "url": "https://qusaisuwan.github.io/cc-incident/index.html",
-        "source": "HN · 30↑",
+        "source": "HN · 31↑",
         "hn_id": "48953519",
         "published": "2026-07-17T23:39:56.000Z",
         "summary": ""
@@ -364,13 +384,6 @@
         "published": "2026-07-17T18:30:00.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "FIS Deploys Anthropic’s Mythos 5 to Strengthen Global Financial Infrastructure - PYMNTS.com",
-        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQRUZHYWNtWE9BS2otaGgtclgtRy1mMzVEZ19zMVVic1NkT3pnMmdTamNVUVBZc0NMRE1XOW9jVEtRZVBhRFhQYTlaT0poWXA5ZnRpeDJfYUo3aXk2Q0FSWlJmbHo2d0dqTTFhWXVRN2xiRVl0UVhLNF83Z1VncnhXQS1GOUZQUGllR21Tb1RIZ2lYVWJuVjhXcm5RRFpTcEx4SzN5cTlHUmVXNWN3ZTY2UTBxWmRPbE8tRVR3RWVwV0UtWVNtTzZ5XzJEUWZHODdT?oc=5",
-        "source": "Google News",
-        "published": "2026-07-17T18:27:19.000Z",
-        "summary": "FIS Deploys Anthropic’s Mythos 5 to Strengthen Global Financial Infrastructure PYMNTS.com"
       },
       {
         "title": "Kimi K3 vs Claude vs GPT (Honest Compare)",
@@ -429,18 +442,6 @@
         "video_id": "juPDqb89dew",
         "thumbnail": "https://i.ytimg.com/vi/juPDqb89dew/hqdefault.jpg",
         "published": "2026-07-15T13:00:36.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "How One Folder of Claude Skills Replaced Six Paid Tools #claudecode",
-        "url": "https://www.youtube.com/shorts/qtmwoebs5D4",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "qtmwoebs5D4",
-        "thumbnail": "https://i.ytimg.com/vi/qtmwoebs5D4/hqdefault.jpg",
-        "published": "2026-07-12T03:55:46.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -701,6 +702,17 @@
     ],
     "youtube": [
       {
+        "title": "Which AI Model Should You Use? Claude Code Skills Cheat Sheet",
+        "url": "https://www.youtube.com/shorts/AAADwPaVZkw",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "AAADwPaVZkw",
+        "thumbnail": "https://i.ytimg.com/vi/AAADwPaVZkw/hqdefault.jpg",
+        "published": "2026-07-19T10:53:07.000Z",
+        "summary": ""
+      },
+      {
         "title": "Kimi K3 vs Claude: One Benchmark Win, Now What",
         "url": "https://www.youtube.com/shorts/roFXqG-i_zg",
         "source": "Pragati Kunwer",
@@ -830,17 +842,6 @@
         "video_id": "juPDqb89dew",
         "thumbnail": "https://i.ytimg.com/vi/juPDqb89dew/hqdefault.jpg",
         "published": "2026-07-15T13:00:36.000Z",
-        "summary": ""
-      },
-      {
-        "title": "How One Folder of Claude Skills Replaced Six Paid Tools #claudecode",
-        "url": "https://www.youtube.com/shorts/qtmwoebs5D4",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "qtmwoebs5D4",
-        "thumbnail": "https://i.ytimg.com/vi/qtmwoebs5D4/hqdefault.jpg",
-        "published": "2026-07-12T03:55:46.000Z",
         "summary": ""
       },
       {
@@ -1747,6 +1748,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Which AI Model Should You Use? Claude Code Skills Cheat Sheet",
+        "url": "https://www.youtube.com/shorts/AAADwPaVZkw",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-07-19T10:53:07.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2-alpha-8",
         "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/v2-alpha-8",
         "source": "MCP Inspector",
@@ -2025,13 +2033,6 @@
         "source": "MCP TypeScript SDK",
         "published": "2026-07-13T17:40:12.000Z",
         "summary": "Patch Changes Updated dependencies [ 7c49b47 , e0a0ab7 , 8e1d2e9 , 3f07a32 ]: @modelcontextprotocol/server@2.0.0-beta.4"
-      },
-      {
-        "title": "How One Folder of Claude Skills Replaced Six Paid Tools #claudecode",
-        "url": "https://www.youtube.com/shorts/qtmwoebs5D4",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-07-12T03:55:46.000Z",
-        "summary": ""
       },
       {
         "title": "v2.1.207",
