@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T20:57:37.688Z",
+  "generated_at": "2026-07-20T22:43:30.834Z",
   "source": "Anthropic Academy",
   "base": "https://anthropic.skilljar.com",
   "courses": [
@@ -35,7 +35,7 @@
       "slug": "claude-code-in-action",
       "title": "Claude Code in Action",
       "url": "https://anthropic.skilljar.com/claude-code-in-action",
-      "summary": "Integrate Claude Code into your development workflow",
+      "summary": "Run long, hands-off Claude Code sessions you can trust: steer, configure, automate, and verify",
       "order": 4
     },
     {
@@ -89,9 +89,9 @@
     },
     {
       "slug": "claude-with-google-vertex",
-      "title": "Claude with Google Cloud's Vertex AI",
+      "title": "Claude on Google Cloud",
       "url": "https://anthropic.skilljar.com/claude-with-google-vertex",
-      "summary": "This comprehensive course covers the full spectrum of working with Anthropic models through Google Cloud's Vertex AI.",
+      "summary": "This comprehensive course covers the full spectrum of working with Anthropic models on Google Cloud.",
       "order": 12
     },
     {
