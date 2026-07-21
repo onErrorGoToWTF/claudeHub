@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T18:59:40.833Z",
+  "generated_at": "2026-07-21T20:55:49.013Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -147,6 +147,43 @@
     "news": [
       {
         "title": "Why the University of Tennessee is suing Claude AI creator Anthropic - Knoxville News Sentinel",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQT1ExaFFEV0dsSXQyMnhUOG5tdE1yeTdORF9iWkV1VzFudEI5ck5zdVJCV29rVExjWjBoZ1daWDFSTHpkYUdpVjVnR0FsQ0xHb0Q5WFZTeVZzTHNCVGltVG05eTBRZE5zZERzRjhtQ0JxdUw1UHZGQXYxWW94aDNTSFB2VFo3dExiUTdqcEViRE81blhvX2JNS3JkRGlXUzhJejQzTWFrVnFMTzc3VnRNeExXZ25XYk9hcms1U215dWJ6RUQ5d1VUQm9sLU5jcmxJUGlkbzF1ZjA?oc=5",
+        "source": "Google News",
+        "published": "2026-07-21T20:31:46.000Z",
+        "summary": "Why the University of Tennessee is suing Claude AI creator Anthropic Knoxville News Sentinel"
+      },
+      {
+        "title": "Managed Claude on Google Cloud Shows the Model-Governance War Is Heating Up - ERP Today",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5BQjRVcHN5emhqa0NBVURLVktzT3F5eGlRdHU1R0lQWklSZUZLZEhrdTRRUDk1Q2k5SHRQLU5JNHB4aVdQQm5kRlNSWHJ0bTNhY0NOTDB5bFJQY0swTVp4ZzZ6S3NVRTl4MFB2WHZQOGhqMVlWZUV3d2NB?oc=5",
+        "source": "Google News",
+        "published": "2026-07-21T20:25:20.000Z",
+        "summary": "Managed Claude on Google Cloud Shows the Model-Governance War Is Heating Up ERP Today"
+      },
+      {
+        "title": "Anthropic sued for infringing neural network technology patents - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQTnlDeHFoNDBpUEtsN3NlR2h3OHY0cHhqUXo5bWRIdmtJT0JyajQwalEwX2I3MnpxUGdMZnJkOVFydy1BSHpzdm5hYmRqbG0wd0pLZXJDVl9sbE5FT0lhTHpSRGtSbDBmR3lhVU9mZDZtMFQzM1czRGt1S0VKMVhlMU8wQ2JOQlNMUUgwbUt1bU5LZzFUMzhWYTBLUGlZQ0F6d1ByNXJtNDUyWmZnTUxvUUw2cGR4U1BXM05B?oc=5",
+        "source": "Google News",
+        "published": "2026-07-21T20:06:26.000Z",
+        "summary": "Anthropic sued for infringing neural network technology patents Reuters"
+      },
+      {
+        "title": "Judge approves $1.5B Anthropic settlement for pirated books used to train Claude",
+        "url": "https://apnews.com/article/ai-anthropic-copyright-settlement-claude-books-bartz-74b140444023898aeba8579b6e9f0d63",
+        "source": "HN · 40↑",
+        "hn_id": "48996652",
+        "published": "2026-07-21T19:04:39.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Show HN: A self-running space economy SIM in Rust and Bevy",
+        "url": "https://github.com/Kalcode/spaceprojectsim",
+        "source": "HN · 45↑",
+        "hn_id": "48996187",
+        "published": "2026-07-21T18:29:57.000Z",
+        "summary": "I built this with Claude cause I always wanted to tinker with a simulation economoy and I love space themes. A space-economy sim where nothing is scripted. A few hundred…"
+      },
+      {
+        "title": "Why the University of Tennessee is suing Claude AI creator Anthropic - Knoxville News Sentinel",
         "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPeS1DVm5kbUlWZk45QV9Nd2gyQ25NN2NqZ1NBbFUwSGNObnJrbHRtVGN3eXh1bU4yZENPVDhGMjFmRzFxM2J6NnlWME9ackJqYTl1M2k4V2RDbXBDZTRLWUF0enIxWnZnNDgyN18zd0NuVmR2bU84VEJzaHQ3UDdjMWhrZGpHbi1aNWxMVW1YaDI4aUtUQTRDQ1RZWERPU0M3V1lNdkgwN1FCdGM4UVRyUGhoQ3ZWVkZkamdfMFF6a0owMklUS0NiV191UzhQaHZMRVp0VTJDTjN2dVd2R2ZRM1lpdWdjTVlyMmQzZDUwSlc1UUJZc0lvRg?oc=5",
         "source": "Google News",
         "published": "2026-07-21T18:28:00.000Z",
@@ -174,13 +211,6 @@
         "summary": "Anthropic Hit With Patent Suit Over Claude AI Neural Networks Bloomberg Law News"
       },
       {
-        "title": "Claude Opus 4.5 Defied Its CEO and Helped an Employee Blow the Whistle About Safety Concerns - Gadget Review",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOSWpmdEI0N2hKLWNFak9hbXlPOGJiVjc4UU8xZEhqaVFFc1d5WDBfLU1oSkp0SHlySHFoWUI1YkxONm9KWF9IUmxVWHF1ckdGTG03M2NYNEhsTENkWjRncUlSTF9wTGdsWXZwMkxMVFNSMEc1blR5N2lldGpQTVk0OGNxY0hqUUs5T3c1Y01Lczd2ZEVNUUUzWHhob0ZmNkMxM3h1elFDVnZEMlhMYlV0R0JUdmJkZzlmVG81cFVR?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T17:51:11.000Z",
-        "summary": "Claude Opus 4.5 Defied Its CEO and Helped an Employee Blow the Whistle About Safety Concerns Gadget Review"
-      },
-      {
         "title": "Anthropic’s $1.5B copyright settlement approved; only 350 authors opted out",
         "url": "https://arstechnica.com/tech-policy/2026/07/judge-approves-anthropics-1-5-billion-copyright-settlement-with-authors/",
         "source": "Ars Technica",
@@ -200,6 +230,13 @@
         "source": "Google News",
         "published": "2026-07-21T17:25:15.000Z",
         "summary": "Anthropic pays $1.5B to authors in Claude AI copyright settlement over pirated books AOL.com"
+      },
+      {
+        "title": "Claude Fable 5 Just Ended An 87-Year Math Standoff, And Bitcoin Cares - Yellow.com",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBITzc3Rzc2V05xNU9NRWlhdVc2V3J5cVQyeW9xcVpGQzh0ZGZldTZQS05BN2pWOThmUzZEdXdmRXp0MHNhdVJzNWRnaDFhSnc1dW1HTURydE9jWUh2Vk15Wm5QY0tuZnZT?oc=5",
+        "source": "Google News",
+        "published": "2026-07-21T17:24:32.000Z",
+        "summary": "Claude Fable 5 Just Ended An 87-Year Math Standoff, And Bitcoin Cares Yellow.com"
       },
       {
         "title": "Claude Cowork learns new skills through screen recordings and voice-over explanations - the-decoder.com",
@@ -230,18 +267,18 @@
         "summary": "Cisco security AI aces OpenAI – but Anthropic? That's a Mythos mystery SDxCentral"
       },
       {
-        "title": "University of Tennessee sues Anthropic over neural network technology - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQTnlDeHFoNDBpUEtsN3NlR2h3OHY0cHhqUXo5bWRIdmtJT0JyajQwalEwX2I3MnpxUGdMZnJkOVFydy1BSHpzdm5hYmRqbG0wd0pLZXJDVl9sbE5FT0lhTHpSRGtSbDBmR3lhVU9mZDZtMFQzM1czRGt1S0VKMVhlMU8wQ2JOQlNMUUgwbUt1bU5LZzFUMzhWYTBLUGlZQ0F6d1ByNXJtNDUyWmZnTUxvUUw2cGR4U1BXM05B?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T15:46:19.000Z",
-        "summary": "University of Tennessee sues Anthropic over neural network technology Reuters"
-      },
-      {
         "title": "Judge Approves Anthropic's $1.5 Billion Copyright Settlement for Authors - PCMag",
         "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQYkR6My1LNFRFcGpWMGdnVUpGX2dVRVhLaXlSVEd5WVVOQ2JOc01jdWZ5blVwNE1NMTFtb1d3TE8wOTVUelZOYXBFTVpyUXRTd1NXb0dCVmdmZWhoTzNwME0xVmlFZDR3Z2JiU05sQTJkSFFjOGFVRDh3cDdQMVpXRGREN0tKelJDcDlMU0R2MlBaTjdJWTEzdktjWVU?oc=5",
         "source": "Google News",
         "published": "2026-07-21T15:26:05.000Z",
         "summary": "Judge Approves Anthropic's $1.5 Billion Copyright Settlement for Authors PCMag"
+      },
+      {
+        "title": "Is AI Claude christian? - Rome Reports",
+        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1IdlVObkJsYlkwbnd5N21wMFRxeUVXUHR6R1lxX1FraV9paDI2YUhrdklkbnoyZ0J2NENMaTg5ZWlmNG9qdkZFckNCVFYwd2kwNFdtVUo3S0FEVzd0WXRyVlRjaVBDZ0VrbWZxUEtXT1NQZDQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-21T15:18:48.000Z",
+        "summary": "Is AI Claude christian? Rome Reports"
       },
       {
         "title": "Anthropic cracks Claude's black box open. Banks may benefit. - American Banker",
@@ -251,16 +288,9 @@
         "summary": "Anthropic cracks Claude's black box open. Banks may benefit. American Banker"
       },
       {
-        "title": "Google launches a cheaper alternative to large AI security models like Mythos",
-        "url": "https://www.theverge.com/tech/968572/google-gemini-flash-cyber-ai-security-model",
-        "source": "The Verge",
-        "published": "2026-07-21T15:00:00.000Z",
-        "summary": "Google is launching Gemini 3.6 Flash alongside a new security model dedicated to quickly finding and patching security vulnerabilities. In a blog post on Tuesday, Google describes Gemini 3.5 Flash…"
-      },
-      {
         "title": "Claude Is Not a Compiler",
         "url": "https://blog.exe.dev/claude-is-not-a-compiler",
-        "source": "HN · 130↑",
+        "source": "HN · 137↑",
         "hn_id": "48993059",
         "published": "2026-07-21T14:49:18.000Z",
         "summary": ""
@@ -287,39 +317,11 @@
         "summary": "Judge approves a $1.5B Anthropic settlement over pirated books used to train the Claude chatbot The Independent"
       },
       {
-        "title": "The U.S. is controlling global access to the world's most powerful AI - upi.com",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOemlNNXRmWERkdUdXQUw4VWpYaW1Ic1FFemM2NHJ1MTNPT1NjT0ZNa0dWcXhaMWdTN2lfUzlWZEFveUlabmtrX1lYRnpjanJnVmhyX3FySXc1VmRSeTRsYTBONjZOSkJfeWJmNHNvUkNERjMwUnd2MlBqcXBkYWcxdEZfTG1weTBfU3pCRTZXTTBINk9xS2p2cEhMMV9uRXVkZTAtN085WHBLd9IBrwFBVV95cUxNRHdqdW0tTEd3NVcycnVmVnUycUdxYWJoa01EOGFONVFBREpWbVI5aTZCQ1k3SHdTZi1oc082RmkzVmFwTGR4ZzQ5M05EVG5CWjh3OERfdkZuOFNZdElWaC0teGd4OV8xbVlkSFphNWZlOTc0N2R1Mk14UjF0Y0Q1VW50a0pqYm1PM3J3YXlKYnlBczA0S3hiX3lrSjI0bmZZMUFPMWZvem91TTBlU0lr?oc=5",
+        "title": "Anthropic’s $1.5 billion copyright settlement wins final approval: Reuters - Blockspace Media",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNeERVeS1QSG5raEFnbGNJanZ3Y1p2U0tFNFpEMVFEdWduanpaWjZVSkxFb3MwN1VYbm9oT2VVSVpFWnl1enhTbXctZld5TjlaMEpsbG1iNkVGamRyd2Rnel9mWEVwV2VwVDVnaDg5clZVOG1Zd1g4X0QtYUNEa09BU3NZMzk0anBUbi04TlFR?oc=5",
         "source": "Google News",
-        "published": "2026-07-21T14:07:46.000Z",
-        "summary": "The U.S. is controlling global access to the world's most powerful AI upi.com"
-      },
-      {
-        "title": "Anthropic’s $1.5 billion copyright settlement approved by US court in landmark AI case - The American Bazaar",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQS09xd3BZdHRvOEFuSk9sV1A3bjRVSDBzRXptcU4zdGh1VkdmRzdYMGtYbFZ0YVI5Ty1Od3V5NTRSbjRkcmZFbl9IcEptV0g5RVJ4R0dvZGI1U2w2OUEzb2RIb3Rtb25idENKMGxTeXdNRUdFLTVLcl9zT21OYy1yVlBDOC1HaFUzWDNQelZBSDEwd0lySFFBV1pseC00SjdFZlEzbVFBdXR5bHhHNFE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T13:51:14.000Z",
-        "summary": "Anthropic’s $1.5 billion copyright settlement approved by US court in landmark AI case The American Bazaar"
-      },
-      {
-        "title": "Arkham integrates with Claude for automated memecoin analysis - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1rZVZtRDJDRXh0Z0lyUkFnSk9ubzFBX3VRTk1weTAxS0diQnYwbS1WRVdPaVVvd3JoWXRYU1l2b3BjUjI5Unh4WVhTOEp1ZW1BNU5zTmpNdkhtY21iNlAzdTM2Y1dYUFdtLUZ4Y19NU085UXJKRzg3ekZpRQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T13:47:22.000Z",
-        "summary": "Arkham integrates with Claude for automated memecoin analysis Crypto Briefing"
-      },
-      {
-        "title": "Anthropic hit with largest-ever $1.5 billion penalty in copyright lawsuit — court says training AI on published material is fair use, but startup’s pirated library infringes on authors’ rights - Tom's Hardware",
-        "url": "https://news.google.com/rss/articles/CBMitwNBVV95cUxPb0VvX3AycjEtNV91a2JndklUQmVMN2xBME5pRWU2OWMyOUJMZmNlSnFlYjJqRUpFbkRhNUUtZm05VFE0TDdOejVjUHNrNFBiLWdMaUpRVDZtX09tZGZMa2szdWhiRnZVek1pTk1JWW96TjRGOEVCa0phT0NHeVQ2QzJLdlRKbzBva045UkNFMVdHaG13V1ZhVlZaMVFSRTNUX3dGNTllYU9vcWhjLWRyb2J6M1p2SndFdHZreVR0OFNlbjdGMEJkTVM0WE0tVEZ5UXRYa0Z2Y2RjT1lDMWZCY3JZSzVoTG1DSGF3eTQ2Njd5RkM4aG4tbHFVbTU4dkFOU3RzNThvUlRtMURBWThINVBQR21oSXl4NUZPRHd6TlZ2NzdwN0xNVjVfTG85X2NURDF2Z2VVc2JYYVFiQlJqSkFKanJGXzczaEs2LWsycnRkZVQtd0F3bG9mQTU5ZWNRS3hhQ3RFZGRsYUlWZTF3TUt6VGxTOWdSZXlZaFNnaGYxd0JWdkNVTjVmRkpNUWFGR1NlZDdneHd1SVNNYjh1NEFNX3pSeEtCMFFJQUVWQThMQXQ5MkFR?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T13:37:09.000Z",
-        "summary": "Anthropic hit with largest-ever $1.5 billion penalty in copyright lawsuit — court says training AI on published material is fair use, but startup’s pirated library infringes on authors’ rights Tom's…"
-      },
-      {
-        "title": "Why is Claude for Teachers? - Benjamin Riley | Substack",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1YejB6dVJOcElDYmZSUzhiSlA2YjVQeWtKLWtUSjIwaDhlNWgtVVFfY3lFcVgtbUhsVm02MlllVHZZWXNYX2hXc2d3SktHYVo5cjRCeGxnaml2T0tmUk10MGxRRXFvb3Bvb2IyWmVzVTNFbXNNQnRBdnlwM3FPZw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T13:18:06.000Z",
-        "summary": "Why is Claude for Teachers? Benjamin Riley | Substack"
+        "published": "2026-07-21T14:20:44.000Z",
+        "summary": "Anthropic’s $1.5 billion copyright settlement wins final approval: Reuters Blockspace Media"
       },
       {
         "title": "Qwen 3.8 vs Claude: What Their Own Launch Post Admits",
