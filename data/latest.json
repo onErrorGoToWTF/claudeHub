@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T15:27:04.614Z",
+  "generated_at": "2026-07-21T17:04:22.214Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,41 @@
     ],
     "news": [
       {
+        "title": "Anthropic’s $1.5 billion book piracy settlement approved by judge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/968724/anthropic-authors-settlement-ai-copyright-approved",
+        "source": "The Verge",
+        "published": "2026-07-21T16:53:37.000Z",
+        "summary": "A federal judge has signed off on Anthropic's $1.5 billion class action settlement with authors who accused the company of training its AI models on copyrighted books, as reported earlier by…"
+      },
+      {
+        "title": "Anthropic's Claude Cowork pushes AI into productivity territory that matters for crypto-adjacent tech bets - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBiUTdXV3BMMW9LXzk4anVLSlBfSUtjNGowM1dES3ZfbnBfclZGdWNIeGlkRFJOT1oxWkpYNFc3UEp5ZkRBLXFFTjBkVVJsMDREUlpoMlZCalVIcl9IOUw1NmFZYXE0YTBRWlZFOGdUSTBGQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-21T16:47:16.000Z",
+        "summary": "Anthropic's Claude Cowork pushes AI into productivity territory that matters for crypto-adjacent tech bets Crypto Briefing"
+      },
+      {
+        "title": "Cisco security AI aces OpenAI – but Anthropic? That's a Mythos mystery - SDxCentral",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPQll0bEt1ZlhHdkN4M2xUV3pQcEF4bWJuYkRHem5aRmdOdFBjWjlyeFl1SDhoQlUyc0NmbExrSk5zVTVmRlhybWYwXzhoYjVFUnBSMkx3Yy04d2xCNkNnc1BsY2RDWThyX2lXcmpyVy1mTTBSanJJcnY3aURMMHNpZ2Frbjh6clhFTXQ3VEZsVTFBMEhFSmRGTDl4Nmo0QnRf?oc=5",
+        "source": "Google News",
+        "published": "2026-07-21T16:02:22.000Z",
+        "summary": "Cisco security AI aces OpenAI – but Anthropic? That's a Mythos mystery SDxCentral"
+      },
+      {
+        "title": "University of Tennessee sues Anthropic over neural network technology - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQTnlDeHFoNDBpUEtsN3NlR2h3OHY0cHhqUXo5bWRIdmtJT0JyajQwalEwX2I3MnpxUGdMZnJkOVFydy1BSHpzdm5hYmRqbG0wd0pLZXJDVl9sbE5FT0lhTHpSRGtSbDBmR3lhVU9mZDZtMFQzM1czRGt1S0VKMVhlMU8wQ2JOQlNMUUgwbUt1bU5LZzFUMzhWYTBLUGlZQ0F6d1ByNXJtNDUyWmZnTUxvUUw2cGR4U1BXM05B?oc=5",
+        "source": "Google News",
+        "published": "2026-07-21T15:46:19.000Z",
+        "summary": "University of Tennessee sues Anthropic over neural network technology Reuters"
+      },
+      {
+        "title": "Judge Approves Anthropic's $1.5 Billion Copyright Settlement for Authors - PCMag",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQYkR6My1LNFRFcGpWMGdnVUpGX2dVRVhLaXlSVEd5WVVOQ2JOc01jdWZ5blVwNE1NMTFtb1d3TE8wOTVUelZOYXBFTVpyUXRTd1NXb0dCVmdmZWhoTzNwME0xVmlFZDR3Z2JiU05sQTJkSFFjOGFVRDh3cDdQMVpXRGREN0tKelJDcDlMU0R2MlBaTjdJWTEzdktjWVU?oc=5",
+        "source": "Google News",
+        "published": "2026-07-21T15:26:05.000Z",
+        "summary": "Judge Approves Anthropic's $1.5 Billion Copyright Settlement for Authors PCMag"
+      },
+      {
         "title": "Anthropic cracks Claude's black box open. Banks may benefit. - American Banker",
         "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSzFkYUJWRmdROVo3MWFyazFDTE80V19NWlR0MDNsU0JpSFVNemJYSnJfRDIzZHNta3M2ZFBuYTRMd3JTWDJHbnczblF4ZEVzZFhPTGxDbzBJYUpmODUta1prenIwT1ktVDlLWUZtOFpIY1BGcnFjQmFOY3hST1NvUTJkQ3NoWVprR3cyVG9KWTh4SFFV?oc=5",
         "source": "Google News",
@@ -162,10 +197,17 @@
       {
         "title": "Claude Is Not a Compiler",
         "url": "https://blog.exe.dev/claude-is-not-a-compiler",
-        "source": "HN · 32↑",
+        "source": "HN · 99↑",
         "hn_id": "48993059",
         "published": "2026-07-21T14:49:18.000Z",
         "summary": ""
+      },
+      {
+        "title": "Judge approves a $1.5B Anthropic settlement over pirated books used to train the Claude chatbot - The Seattle Times",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOWUtSYmZnRHlQS3paTGtKbE56YXlCREEwZWVKM1BfR3pzdHdlX3dwclB4Y2xtTjk1aTJzZkZ1VlVfUGg5Q0xGRjl1UjFENlY4VXBFLVExUlpHM0I2RTlZZnlmaUU0Z05HZ2s5NEwzUHNRSjRTQ3EzX1pMeDBiWEF5WHM5OVh2UERnRUdUWjdpMWZHRThxTFRGMThTcmFnS2JxZWZ6NUlqZTZGb3BTS3BzUDU0bTk5eEc4clh1NFdaakhLbVJBdUQ5ZG5JelFRZw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-21T14:42:12.000Z",
+        "summary": "Judge approves a $1.5B Anthropic settlement over pirated books used to train the Claude chatbot The Seattle Times"
       },
       {
         "title": "Judge approves a $1.5B Anthropic settlement over pirated books used to train the Claude chatbot - Ottumwa Courier",
@@ -189,11 +231,11 @@
         "summary": "Judge approves a $1.5B Anthropic settlement over pirated books used to train the Claude chatbot Temple Daily Telegram"
       },
       {
-        "title": "Judge Approves a $1.5B Anthropic Settlement Over Pirated Books Used to Train the Claude Chatbot - U.S. News & World Report",
-        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPVDdDOVBDa2ZCVklXTXdrdXVyZVotd295ZzVvdDRDSlViVnNBN3BqLXhDclluY0lQNklkVXhJLTVhOEZ6VDI3Y0N2bGFQSnhnakFqSkJlRmUzOWJ1Y0NVRFhqSFh5cVZXb0RBR0lzNTdrcnR0dkZvYy1GYWxSN3Z3c3h1WFVmeUNZbWtESGVfUUI2Y2Y5VG55d1d2NXBlZjRmcVh1dng5NFJZUExoVGpLZDBQck1lQmszX0phOExOSG9CdkQxN2hNRldwdXdQQ3BiVlkzMzM0U2ZJYXRmaHVxVHcxMDdldw?oc=5",
+        "title": "Judge approves a $1.5B Anthropic settlement over pirated books used to train the Claude chatbot - AP News",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPYTZ6VGQyajZtTWlFeVhiZkpmTnFLSG5jbU1Gb2llZndJZjByTC01SjVLS1R0Z1FTSTRmeDM4VUJ0X1VIby10bVBNU2QtRHpoZFE5MFlPMG43aURMUjNvMEN4WkZsUXBZdFRlci12MTlqbkRJX0VtcW9paUFuc3N1YTR5bXlIUldYcE9QWmR2TkFyTkV3aFFUQXZXMUxJYUptQmwxdEpmU2NtdDBELWsxTnhR?oc=5",
         "source": "Google News",
         "published": "2026-07-21T14:41:00.000Z",
-        "summary": "Judge Approves a $1.5B Anthropic Settlement Over Pirated Books Used to Train the Claude Chatbot U.S. News & World Report"
+        "summary": "Judge approves a $1.5B Anthropic settlement over pirated books used to train the Claude chatbot AP News"
       },
       {
         "title": "The U.S. is controlling global access to the world's most powerful AI - upi.com",
@@ -217,6 +259,13 @@
         "summary": "Arkham integrates with Claude for automated memecoin analysis Crypto Briefing"
       },
       {
+        "title": "Anthropic hit with largest-ever $1.5 billion penalty in copyright lawsuit — court says training AI on published material is fair use, but startup’s pirated library infringes on authors’ rights - Tom's Hardware",
+        "url": "https://news.google.com/rss/articles/CBMitwNBVV95cUxPb0VvX3AycjEtNV91a2JndklUQmVMN2xBME5pRWU2OWMyOUJMZmNlSnFlYjJqRUpFbkRhNUUtZm05VFE0TDdOejVjUHNrNFBiLWdMaUpRVDZtX09tZGZMa2szdWhiRnZVek1pTk1JWW96TjRGOEVCa0phT0NHeVQ2QzJLdlRKbzBva045UkNFMVdHaG13V1ZhVlZaMVFSRTNUX3dGNTllYU9vcWhjLWRyb2J6M1p2SndFdHZreVR0OFNlbjdGMEJkTVM0WE0tVEZ5UXRYa0Z2Y2RjT1lDMWZCY3JZSzVoTG1DSGF3eTQ2Njd5RkM4aG4tbHFVbTU4dkFOU3RzNThvUlRtMURBWThINVBQR21oSXl4NUZPRHd6TlZ2NzdwN0xNVjVfTG85X2NURDF2Z2VVc2JYYVFiQlJqSkFKanJGXzczaEs2LWsycnRkZVQtd0F3bG9mQTU5ZWNRS3hhQ3RFZGRsYUlWZTF3TUt6VGxTOWdSZXlZaFNnaGYxd0JWdkNVTjVmRkpNUWFGR1NlZDdneHd1SVNNYjh1NEFNX3pSeEtCMFFJQUVWQThMQXQ5MkFR?oc=5",
+        "source": "Google News",
+        "published": "2026-07-21T13:37:09.000Z",
+        "summary": "Anthropic hit with largest-ever $1.5 billion penalty in copyright lawsuit — court says training AI on published material is fair use, but startup’s pirated library infringes on authors’ rights Tom's…"
+      },
+      {
         "title": "Why is Claude for Teachers? - Benjamin Riley | Substack",
         "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1YejB6dVJOcElDYmZSUzhiSlA2YjVQeWtKLWtUSjIwaDhlNWgtVVFfY3lFcVgtbUhsVm02MlllVHZZWXNYX2hXc2d3SktHYVo5cjRCeGxnaml2T0tmUk10MGxRRXFvb3Bvb2IyWmVzVTNFbXNNQnRBdnlwM3FPZw?oc=5",
         "source": "Google News",
@@ -229,6 +278,13 @@
         "source": "Bloomberg",
         "published": "2026-07-21T12:55:00.000Z",
         "summary": "OpenAI has seen a sharp uptick in demand for its artificial intelligence agents since its recent release of ChatGPT Work, providing new momentum in its bid to keep pace with rival Anthropic PBC."
+      },
+      {
+        "title": "Anthropic AI copyright lawsuit: Update as judge approves massive settlement and payout for authors - Fast Company",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNTmxUSkt4M2pMdGROV3g4RnRTd0RwMUtGbjh1aVJoNFEyVkRUTk1qbHJkWnJVeVdqek5tZldJY1dtWWRrbEtJY2lDbl9abS1KR1RpOW93aHVQLWFmM0tCeDFTZHdfWHBpbXBVenRTUkh2UzVlSUFyUXo5bFF5Qno1UHRvM3BibUdZM1ZkeWpUWFZPQ3NhNE1KMTNB?oc=5",
+        "source": "Google News",
+        "published": "2026-07-21T12:49:35.000Z",
+        "summary": "Anthropic AI copyright lawsuit: Update as judge approves massive settlement and payout for authors Fast Company"
       },
       {
         "title": "Anthropic launches Claude Science AI workbench for researchers - Scientific Computing World",
@@ -264,62 +320,6 @@
         "source": "Google News",
         "published": "2026-07-21T09:32:51.000Z",
         "summary": "US judge approves Anthropic’s $1.5 billion copyright settlement bestmediainfo.com"
-      },
-      {
-        "title": "ChatGPT remains top AI assistant as Gemini, Claude narrow the gap - Storyboard18",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNS3F2VUNIeFcyZkdDallnbjBhdU5uQ3RsMHh1NTE1amF0VUV2blEyT1I5dU1vNEQwd2pwWjBuLWVFMVJNNzZsalBQNU8tb0IyWncxM3pSbm1YVjBGazlxS1MzMmFNVU1pTzM0ZGxqNnNuWW9FTDhzeDhZLVRRU1hnZzA0MFZpTFhxZDRwVC1OY3FHd2ZLY0xSYjJkUlrSAaIBQVVfeXFMTXkwUzloZloyYkk2dEx3Ql9BMmxZd0ZBRld5ZTBwVlo1MGU4ektsZW13RFNLM3VTeFNQVlVLWGlJWVVma0VKLUVLMHhKMkZncGFaWmhhcm4tTUtRejdKejkzdm1Gb0xBUmZNRGJXMGl4dVhya2E3QTg2T0lJVGQ3VF9JNFRjc1RsMTFIMGlKa19mSC1MWk1vSmIzcXNLZ3JDN21R?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T09:17:24.000Z",
-        "summary": "ChatGPT remains top AI assistant as Gemini, Claude narrow the gap Storyboard18"
-      },
-      {
-        "title": "Judge Approves Anthropic's Record-Breaking $1.5 Billion Settlement For AI Copyright Lawsuit - Engadget",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNbFZveFpoRGhfYUt6WXBKU3R3aFMwanRuV19BeExrUjlmWXJEV2ctSEdSYlRXbUtMX2JOZFFhcE5TZ2xXSXlpWTRvU2wxUTk0T3FpWmJhdy1uT3RQX053T3hvbXZJZlAzZVdJV0VXcXpOcmVnRjhBYXNsODFlWnhMRkgxWmg4ZTBnb2VQdUdpLWNkLTg?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T09:15:55.000Z",
-        "summary": "Judge Approves Anthropic's Record-Breaking $1.5 Billion Settlement For AI Copyright Lawsuit Engadget Anthropic AI copyright lawsuit: Update as judge approves massive settlement and payout for…"
-      },
-      {
-        "title": "Anthropic Settles Copyright Lawsuit for $1.5 Billion, Key IPO Legal Risks Largely Eliminated - TradingKey",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPY0gwUEx3eVl6b3U4YjJ0TEVUMVluNzlHSk16WTIxcTJtSjBrQlRiNUV6RGNBUGFpS0J3eGNRSDhZVXRUZngtMVk2c3dHQ3VVdE9WOGQ3dzlxS3ZfbnFtOWRkTFoteTEwZ1otaFlPWVlhR1EyR3VZWmJHN0tXMUdyX1pEck9vaFJGSnNWcVlxdEh6RHY2Q2VJTUx4UVZycFNoanZPYUY0OXk0VXY4aDFfZ2xrb1BEYkpQWTNubmFRWkFkUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T08:27:23.000Z",
-        "summary": "Anthropic Settles Copyright Lawsuit for $1.5 Billion, Key IPO Legal Risks Largely Eliminated TradingKey"
-      },
-      {
-        "title": "Anthropic Secures Final Approval for $1.5 Billion AI Copyright Settlement Despite Authors' Objections - Benzinga",
-        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOb3pGQUVVcGhFNmJmOEZoVnBKSVFpYkxRRXhYMmQxREdoRXktX2o1TlJreWhnakhiMzhmRHdMUXpMX0dRVTRQX0NYczQxZEp4SWItSUFUZi14Wm01cmhBcTVwSGF3cmlscmVhamw2MXR0V0xiVDBmNW9lZWdiWTNveUNsVEsydEZYclo3WUNVYWlXTjVfeUpiMmtnZTVMLWlTZ1RUNVhMdUN0alBSN3hVOUhZamZ3MEQ1bG5BMFNrdHpaNlhyd3hQb1Z0dFljeVNFcUlqYVhNcWRuVkdhT1duMm93clM?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T08:17:54.000Z",
-        "summary": "Anthropic Secures Final Approval for $1.5 Billion AI Copyright Settlement Despite Authors' Objections Benzinga"
-      },
-      {
-        "title": "Anthropic’s $1.5bn copyright lawsuit settlement gets approval - Silicon Republic",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVmdJRTFzZFJVcGh0NEpWdHBQR1FCQnJtdk1wR3ZhX0ppN3BlYXo2WExTR0EzVUxUNW00SE1uNDM4WHRvZkg4dEdkeXJNbUp6OXFrSEFMdjRGSnZNaFVKSERpYUpHNk45a1h4NmNad3hrSWZqbFMzR2dyZlVhbF9IUVFyZ05jeXlUWFlhemhvcjc0QXhmbDFRc0lVNkNxOTZXbnFr?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T08:12:27.000Z",
-        "summary": "Anthropic’s $1.5bn copyright lawsuit settlement gets approval Silicon Republic"
-      },
-      {
-        "title": "Anthropic Settles Copyright Class Action for $1.5 Billion; US Court Grants Final Approval - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1FdEJ2SFJRVkFUR2tuaG5Nd0JlQS0wX3RWNThNR1BHejR6cDBlb3pIQ3RrTUVBWHF6LUlVb2tLZ24zSmdMWmthUG5wQmlwdHpFeFR5OHJjTnBuMGpfUWFXUFlvaWFncDNzX2tNZk9peWVWRTFELWc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T07:37:00.000Z",
-        "summary": "Anthropic Settles Copyright Class Action for $1.5 Billion; US Court Grants Final Approval finance.biggo.com"
-      },
-      {
-        "title": "Anthropic Can Begin $1.5bn Copyright Payouts after U.S. Judge Approves Landmark Settlement - ITP.net",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNM3hsTzFOWDBwOE9ONU50d01VVkRaVWlwV1U3ZUl1UmkwYlRKbnJteDZXQlRHZ2liWEJuMklXV3EydmVwVXBaQmwtZlVFTTdTOUpTUXcwazd5UGlwV080ZmJRSmh1QURMWFhMVDRnVXBySUE2Tm5VX3gxUjNJZElDWUxJSWkxVzRRZmRLbUVPYnR3aGV0MXVlR2dEZVk0NlVtNVNCc1VNdm82SUlXdDgybWQ0YTBMUHkzdlZFOVVDVQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T07:36:02.000Z",
-        "summary": "Anthropic Can Begin $1.5bn Copyright Payouts after U.S. Judge Approves Landmark Settlement ITP.net"
-      },
-      {
-        "title": "Anthropic Pays $1.5 Billion: Highest Copyright Settlement of All Time - trendingtopics.eu",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdW1VX0xqalFPVXllLVp0bVNSdzlzXzNfOUZjOGtzdm9Qa3JjTHp5S1FwaUg3ZDRTOS1xNjlFeUU2UDRxYU1iUUV2WGM1aUJUV1U4S01hYmNOMGIyd3YxeDdEQlp2ZENUMGdxOVhkTl9yaEV4Z3hEbURaeXVDRXktQVhhSFVyLVNnM3psRS11MV9TZmFHNVhfQmVZeE5SaGs?oc=5",
-        "source": "Google News",
-        "published": "2026-07-21T06:25:10.000Z",
-        "summary": "Anthropic Pays $1.5 Billion: Highest Copyright Settlement of All Time trendingtopics.eu"
       },
       {
         "title": "Qwen 3.8 vs Claude: What Their Own Launch Post Admits",
@@ -603,8 +603,15 @@
         "title": "Elevated errors on Haiku 4.5",
         "url": "https://status.claude.com/incidents/j0y67nj6w93z",
         "source": "Claude Status",
-        "published": "2026-07-21T14:44:53.000Z",
-        "summary": "Jul 21 , 14:44 UTC Identified - The issue has been identified and a fix is being implemented. Jul 21 , 13:22 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jul 21 ,…"
+        "published": "2026-07-21T16:38:26.000Z",
+        "summary": "Jul 21 , 16:38 UTC Resolved - This incident has been resolved. Jul 21 , 15:30 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jul 21 , 14:44 UTC Identified - The issue…"
+      },
+      {
+        "title": "Elevated errors on several models",
+        "url": "https://status.claude.com/incidents/vcynh9cf33xp",
+        "source": "Claude Status",
+        "published": "2026-07-21T15:51:57.000Z",
+        "summary": "Jul 21 , 15:51 UTC Identified - The issue has been identified and a fix is being implemented. Jul 21 , 15:35 UTC Investigating - We are currently investigating this issue."
       },
       {
         "title": "Elevated errors across Fable 5",
@@ -675,13 +682,6 @@
         "source": "Claude Status",
         "published": "2026-07-17T15:33:15.000Z",
         "summary": "Jul 17 , 15:33 UTC Resolved - This incident has been resolved. Jul 17 , 15:27 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jul 17 , 14:57 UTC Identified - The issue…"
-      },
-      {
-        "title": "Elevated errors on Sonnet 5 and Haiku 4.5",
-        "url": "https://status.claude.com/incidents/7gpjd8n56rlq",
-        "source": "Claude Status",
-        "published": "2026-07-17T12:21:30.000Z",
-        "summary": "Jul 17 , 12:21 UTC Resolved - This incident has been resolved. Jul 17 , 07:10 UTC Identified - The issue has been identified and a fix is being implemented. Jul 17 , 07:03 UTC Monitoring - A fix has…"
       }
     ],
     "youtube": [
