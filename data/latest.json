@@ -1,8 +1,22 @@
 {
-  "generated_at": "2026-07-22T17:04:40.777Z",
+  "generated_at": "2026-07-22T18:53:06.032Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Anthropic Economic Index Connector",
+        "url": "https://www.anthropic.com/news/anthropic-economic-index-connector",
+        "source": "Anthropic",
+        "published": "2026-07-22T17:35:48.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Economic Futures Research Fund Agenda",
+        "url": "https://www.anthropic.com/news/economic-futures-research-fund-agenda",
+        "source": "Anthropic",
+        "published": "2026-07-22T17:35:00.000Z",
+        "summary": ""
+      },
       {
         "title": "Donation Public First Action",
         "url": "https://www.anthropic.com/news/donation-public-first-action",
@@ -128,29 +142,71 @@
         "source": "Anthropic Research",
         "published": "2026-07-14T16:33:01.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Values Models Languages",
-        "url": "https://www.anthropic.com/research/claude-values-models-languages",
-        "source": "Anthropic Research",
-        "published": "2026-07-13T21:10:45.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Agentic Misalignment",
-        "url": "https://www.anthropic.com/research/agentic-misalignment",
-        "source": "Anthropic Research",
-        "published": "2026-07-13T18:27:52.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Menlo Ventures’ Matt Murphy explains why Anthropic is winning (and it’s not the model)",
+        "url": "https://techcrunch.com/video/menlo-ventures-matt-murphy-explains-why-anthropic-is-winning-and-its-not-the-model/",
+        "source": "TechCrunch",
+        "published": "2026-07-22T18:02:57.000Z",
+        "summary": "Anthropic leaped to a $47 billion revenue run rate by May, compared to $9 billion in 2025. It’s the kind of growth that Menlo Ventures’ Matt Murphy says he’s never seen in 25 years of investing, not…"
+      },
+      {
+        "title": "AMD Investment Anthropic Drives Major AI Infrastructure Expansion - The Cryptonomist",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5PNFRHVlF4emtERlJma0lGZVNibE5tdVFtWWNuNG85dlIxVXU2MTRSRzJDRmlpOUlIZkFiRnBoTTFKaWJVdDNNWHZOV3ZxSkdISlV5N0E4M0tOclVsNmg0YVFTQWI1bU5OaVVNMEUtdWRkOTYx?oc=5",
+        "source": "Google News",
+        "published": "2026-07-22T18:02:18.000Z",
+        "summary": "AMD Investment Anthropic Drives Major AI Infrastructure Expansion The Cryptonomist"
+      },
+      {
+        "title": "Judge approves a $1.5B Anthropic settlement over books used to train Claude - Scripps News",
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNckJ0NldvWkEwMVkwdTRBd1IyM21PZklvNFdjY1RxeERFVDkzUkVSeE1HZEwzT0FkaUYxUkdsaHNfZmtDVjdyS2JhUVBXeV9TQlVCdXdRdFVBTW9VeWd4b0dWQ1BVc3RFWmNXS2NIQUlEZUdQWDduekZOcmJoQ3dsVXpzUGl4dGpiMzM2UmNFT0lmbTVjSnVRSnBBaTltTjRfLUpKaHVwYXZLSGlSellKYVRvY3h4QTJMcS0wUWRJdllfVVVEOUNIN01NRHo4WkZHWFhtaGlCTnczUFhMaThocnJhajU?oc=5",
+        "source": "Google News",
+        "published": "2026-07-22T17:58:34.000Z",
+        "summary": "Judge approves a $1.5B Anthropic settlement over books used to train Claude Scripps News"
+      },
+      {
+        "title": "Judge approves a $1.5B Anthropic settlement over books used to train Claude - KPAX News",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQUzVXUzZvUVhtcHZnbnNkU0NBUkJWczd0c0g1TVpDV3NfQUwybFN1Q1N5UHBZNGxOeUNlZWY3UjQ5elowcTNVdFg5V3l4dFlrM0c4b3BseUxwcDZrT3B4ZU56Sl9NTmlxaUNmYkpUWENRVTNqYWlTcWtBQmwtdG00WEFvd0xvSGtaeTh6VVFCalZuMGxOY19PR3lqWEdXUWFfakEzXzVtRWppWjF6?oc=5",
+        "source": "Google News",
+        "published": "2026-07-22T17:35:27.000Z",
+        "summary": "Judge approves a $1.5B Anthropic settlement over books used to train Claude KPAX News"
+      },
+      {
+        "title": "Judge approves a $1.5B Anthropic settlement over books used to train Claude - Tampa Bay 28",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPbzFabzBXcEEwOEk3OTdHZ0RzRkhZYmtXYTlHWkdGU2JDcjZTV1hfdmNmNGt0MWkxekJKVjJPNk1QRENpTWNpN0xoTW1vdWpuSHpKNXBCclZtdi0ySGJiSlpCcDlaY29KTlZ0MThlT3BfSFNlTGszeE5zeUtJNXZQMlFhMlg4ZXJWT00yY1dJSTlnMldVNWZKZ0hpS2k2N2hXWFM2ZDlfQXA4S1pZWHY0aEN2LVQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-22T17:35:27.000Z",
+        "summary": "Judge approves a $1.5B Anthropic settlement over books used to train Claude Tampa Bay 28"
+      },
+      {
+        "title": "AMD Commits Up to $5 Billion to Anthropic, Will Deploy 2GW of Instinct MI450 GPUs - MLQ.ai",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOUjFJbUhTYVhvR1ZQbzRCeFdscHBaTHRwTndEbEdHVFdKU0FudGhtS0hjbTZ5R2JVTWtkM1lDSTVxN09DdHBNUVVHMDJBTmZsdkdqZ09NREh1bUFBNHFlS0dPMjNJVHpUWHFiU01ETzBDaVlBM1JpQ3RPU1dTNW0xcGlfbmJyUkhnQTNFWm9aOHZGOG14WDhiZVU4Vkw0T2wtOUE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-22T17:34:54.000Z",
+        "summary": "AMD Commits Up to $5 Billion to Anthropic, Will Deploy 2GW of Instinct MI450 GPUs MLQ.ai"
+      },
+      {
+        "title": "OpenAI Models Breach Hugging Face, Sparking Cyber Alarms",
+        "url": "https://www.bloomberg.com/news/articles/2026-07-22/openai-models-breach-hugging-face-sparking-cyber-alarms",
+        "source": "Bloomberg",
+        "published": "2026-07-22T17:21:22.000Z",
+        "summary": "Since April, when Anthropic PBC unveiled its Mythos model, cyber and national security experts have warned that the internet has entered a new era full of artificial intelligence-powered risks."
+      },
       {
         "title": "Anthropic will deploy 2 gigawatts of AMD GPUs for Claude in a deal worth up to $5 billion - the-decoder.com",
         "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNeVdBXzdIbHRWb1RZMldkSHMza3JRRWlzTUFUaWJ3N3NINUZ1dndZWGZjYjg0SUhMNGFFX3EtRXgyNGMwZGdFMnF4MHlqd1d1bWh2V1JfMGloRXQ2RjhzNzkzZTB4NnpwWUN1ZmsyVHRMY1hoS0NFUTMtVTZUUHpPVEhWWGdNY3ZlWG44NmlGdmtabF8xdnh3VFc3ek1uVUR0ekZYUDR5QnUtei1wT0Vfelp0Zw?oc=5",
         "source": "Google News",
         "published": "2026-07-22T16:58:05.000Z",
         "summary": "Anthropic will deploy 2 gigawatts of AMD GPUs for Claude in a deal worth up to $5 billion the-decoder.com"
+      },
+      {
+        "title": "AMD plans to invest to up $5 billion into Anthropic as it seeks to cut into Nvidia’s dominance - MarketWatch",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOb3pWdXl0Q0p2cHVzcU5IUVMxdnNsYVRYQWZWM2NfWnJWMUMwYW1TRFhtdWtRenVPY2pLYlZWN3NkSmxZMDZXTU4xSTRuRTM1Y0hXWi1rbjczLWxQOFo0Uk9HTUM4TnJsOFd2UkNWU2NMbFVSdXM4X0Vic3lweVhpUkkzbWpmVko4TFpjX1B5bEV1QmdkYWtDMlNfdXZYNFFCMW45U0VadVNJWUoySjFELUFnVzREMXJGX2pUU18yQXRzMlFo?oc=5",
+        "source": "Google News",
+        "published": "2026-07-22T16:58:00.000Z",
+        "summary": "AMD plans to invest to up $5 billion into Anthropic as it seeks to cut into Nvidia’s dominance MarketWatch"
       },
       {
         "title": "US accuses China's Moonshot AI of distilling Anthropic Fable to build Kimi K3 - The News International",
@@ -174,6 +230,13 @@
         "summary": "US Accuses Moonshot AI of Distilling Anthropic’s Fable to Build Kimi K3 analyticsindiamag.com"
       },
       {
+        "title": "AMD to invest $5bn in Anthropic, with AI company to deploy 2GW of Instinct MI450 GPUs - Data Center Dynamics",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQNG1yaVU3WFIxdkZkOVltdGQ4Njk4Uk1DWi1BYU1uR1ZCRmVVMzNYcFVXelFOakt1cVVfdVk5MnUxbFQ1TTBhc2JnTDY5eE43bEtfQ1c1VlhlUVU1eGd3NVM4c1NkSVV4cUVuVmUydUdJZ28tOEtVblpTZVBwVnhsWjNBVV9SY0c0QkkzNnBiaEJGaUs4NG5KTVIxVW0zem1oZVN5ZXZiSUtYM010Y1djODI0UE5HYXpIX3IxZ1p3b1FrcEIxOVE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-22T15:59:05.000Z",
+        "summary": "AMD to invest $5bn in Anthropic, with AI company to deploy 2GW of Instinct MI450 GPUs Data Center Dynamics"
+      },
+      {
         "title": "AMD to supply Anthropic with 2 gigawatts of Instinct MI450 GPUs — will invest up to $5 billion in the Claude developer, which is already using MI355X GPUs - Tom's Hardware",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOY05mSXFxWHNSaDA0Mjd3TGwzUFNDWll2ajU2SnNTMzNNUVVVek9WWGVkTVRCajZ3UF82c3hRR2NSQ1o3SGdabW92eTNXa3NxS1ktVS1pM1V2dV94c2ltTEhYVjJRYmlrYmEyclkyMXBISG16dDVfcm1pWXNXQnIyc3NnU1VvRXZfLTM3VVlwQWh0UEN4RVU0N1pZemxxcmpJXzVJR3pfMzBEdw?oc=5",
         "source": "Google News",
@@ -195,9 +258,16 @@
         "summary": "Anthropic ordered to pay largest copyright class action settlement in history Mashable"
       },
       {
+        "title": "Harry Potter publisher to receive millions in Anthropic copyright settlement - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNVUF4d090UVZiZ1FLc3FNSFNHdGc3LVdUQUhrajVLVWp5eW9tVG03NllwSGtxUWZIaWU1YUxNZDRuaW5Sd0pHOGZlTmtMMUFpc2VvaEM1bG1iUUVXdXZ4eTJuNGVBWkJMT2s3azhpX21ieGFXeEhPOHpvcG4zZTBYcklRQmxnd052MEJwSUJ0azF3SEpOV0RaVE92bC1McnRNWTZWb1JLYkxqUlE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-22T15:22:00.000Z",
+        "summary": "Harry Potter publisher to receive millions in Anthropic copyright settlement The Guardian"
+      },
+      {
         "title": "Show HN: Bento - An entire PowerPoint in one HTML file (edit+view+data+collab)",
         "url": "https://bento.page/slides/",
-        "source": "HN · 188↑",
+        "source": "HN · 414↑",
         "hn_id": "49008211",
         "published": "2026-07-22T15:19:23.000Z",
         "summary": "Over the past few months, our team has been building more and more slidedecks using web frontend technologies with coding harnesses like Claude Code, but a common complaint is to…"
@@ -217,18 +287,18 @@
         "summary": "AMD to Invest Up to $5 Bn in Anthropic, Supply Up to 2 GW of MI450 GPUs analyticsindiamag.com"
       },
       {
-        "title": "AMD is investing $5 billion into Anthropic as it seeks to cut into Nvidia’s dominance - MarketWatch",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOb3pWdXl0Q0p2cHVzcU5IUVMxdnNsYVRYQWZWM2NfWnJWMUMwYW1TRFhtdWtRenVPY2pLYlZWN3NkSmxZMDZXTU4xSTRuRTM1Y0hXWi1rbjczLWxQOFo0Uk9HTUM4TnJsOFd2UkNWU2NMbFVSdXM4X0Vic3lweVhpUkkzbWpmVko4TFpjX1B5bEV1QmdkYWtDMlNfdXZYNFFCMW45U0VadVNJWUoySjFELUFnVzREMXJGX2pUU18yQXRzMlFo?oc=5",
-        "source": "Google News",
-        "published": "2026-07-22T15:04:00.000Z",
-        "summary": "AMD is investing $5 billion into Anthropic as it seeks to cut into Nvidia’s dominance MarketWatch"
-      },
-      {
         "title": "Judge approves $1.5B Anthropic settlement over pirated books used to train Claude chatbot - mynbc15.com",
         "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNdW45UWNCY00xdkVfUkZIN2p5RHoyTFpqd1NKZmNsTGJjSEN1ZHFmcVhHTmlmWjR5RmlHNVM1SEtTakxtYzJxWWxhcE5zM1dyRG1KR3JiLWVZcl9VTnBIdlFaQ0NzTm0wZHFkeGVMTzlmcHZHVTlZZWdZU1BqeXFGMnBjcF81YlVBamZMSEVKMF9uNi1KNGhwV2NNcy1TYXR3SlA2OWNSZWkxdGpvSzRVbC1rZm1fMzNqRWdyblRhOXhHTkE?oc=5",
         "source": "Google News",
         "published": "2026-07-22T15:03:55.000Z",
         "summary": "Judge approves $1.5B Anthropic settlement over pirated books used to train Claude chatbot mynbc15.com"
+      },
+      {
+        "title": "Why are OpenAI and Anthropic cheering on regulation in Australia? The answer has global reach - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZEFoRGs4RmIyb2U0c3ktNlBRdHJEcEVDQU4wTnpLOFQwcUJ0R0R1UmpJcDFzR3hpSjNfTFlCNk5aMVA5dlRPMGtDRTV2bk5TOHlJRVdWTlFTUWE1SHcwSTc5c3R3UHZGRTZsZVBTZ1RQbWRmRk5pcWdyTzJOOS14YnJlOTh0OUI4TlkyQ1l2OVo3NFRDeVE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-22T15:02:00.000Z",
+        "summary": "Why are OpenAI and Anthropic cheering on regulation in Australia? The answer has global reach The Guardian"
       },
       {
         "title": "AMD to invest up to 5 billion in Anthropic for Instinct GPUs - Techzine Global",
@@ -250,76 +320,6 @@
         "source": "The Verge",
         "published": "2026-07-22T14:44:27.000Z",
         "summary": "AMD says it's going to invest up to $5 billion in Anthropic, while helping to expand the AI company's computing power, according to an announcement on Wednesday. As part of the new partnership,…"
-      },
-      {
-        "title": "AMD commits up to $5 billion to Anthropic - The Verge",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNUGZIN2hHSEZzbTF6dV85V2E5WUpxZUZGZm5KTnRLTWZHbkFZdnpSVWc2QmJUWi1mZG1Uc3U4MjI2a1JQUmxjN0I0NHdDMVQ1alh5SndPLTNrOUJPZGYwNnQ4SC1RdzByVk5EVjRkVXk4bmVGWjM3NDBZZ2NPS0paWWJDQkRCUkUtQkhXUmxmSGhHVFVZWTJncWJrYw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-22T14:44:27.000Z",
-        "summary": "AMD commits up to $5 billion to Anthropic The Verge"
-      },
-      {
-        "title": "AMD Lands Anthropic In 2GW Instinct MI450 Deal, Backing It With A $5 Billion Equity Bet - Wccftech",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQc0MtMlVwTnd4alQ0dEUyWUVGemNtVzV5Q1NvLUYzUk9YdV9sOXhPajJfVjdYQkd1YWxOZEkwMG1BcExwb1R2ZVVUdkZ6UGx4cjR2eklBcUdWaE4ySGcta2huUFU4YjNlbVY0MXpac1lXMHRIRVJPNHVDbG1yM0VfZWFPWnFmZm03SGptbzFmM1BPMmZwb2FWY2JPZkRESFlzeGwzYkwzU3NLaHPSAbABQVVfeXFMTl9DYXpQZ213eHAwLXN3MDlQX3pNN2tTRmRHUW1mTGtEaThhTnFhNldFT1ktNVNsTHlIQWhlNEJibW5PdlctX0trNmRPVjhsZ1FtdmJRT2pPRHVYSmd2bHJvZk9tNjgxbWNWWnhPMDY3MFFiR0VTOEZDV3o2ZVRWRkYzUHYtcldlVF9kclltYWQ2dnlRR1hYc0VrR2lDc3JVVkpJMWFuOW15SVFmbjgtODU?oc=5",
-        "source": "Google News",
-        "published": "2026-07-22T14:40:11.000Z",
-        "summary": "AMD Lands Anthropic In 2GW Instinct MI450 Deal, Backing It With A $5 Billion Equity Bet Wccftech"
-      },
-      {
-        "title": "AMD to sell Anthropic tens of billions in AI servers, invest up to $5 billion in startup - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQRjQ4V2RqTUl4bWRtck5LZy1ST1VZNVBzcmswTUVyc3ZGcFNJeXlrRHpkUUIybkZSLUhoQXJtYUFKOHkzam15amh0dW5POHg2alBDMTRPRDQyWUUwUXBaX1czSWQtSGpXYlFvcGFRQ1p0WFZ3bndQYzlqdmZQSnN6NUhfbTdVYWZZNnBxYXZUYktkcVZu?oc=5",
-        "source": "Google News",
-        "published": "2026-07-22T14:29:29.000Z",
-        "summary": "AMD to sell Anthropic tens of billions in AI servers, invest up to $5 billion in startup Reuters"
-      },
-      {
-        "title": "AMD, Anthropic sign chip and investment deal worth billions (AMD:NASDAQ) - Seeking Alpha",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQT05DYXdUVU44Y2pZOGJySVRYU2JxMGpUdm04TEI0cjhBcWcxbGE2bHpmYThRd0E4a2o1OE1LMDd4TWJMMGpKV3RVTnZRTDh6MlZ4ZUNQX1E0Ul9DNW12OFY4b3JIY1JPUWFsa0Qzb0JYRnd3RDhNdVFWdjZIbWJEWHU5RWtHdWV1Yy1tNFlidlU3Zi1jdS1R?oc=5",
-        "source": "Google News",
-        "published": "2026-07-22T14:26:00.000Z",
-        "summary": "AMD, Anthropic sign chip and investment deal worth billions (AMD:NASDAQ) Seeking Alpha"
-      },
-      {
-        "title": "Anthropic tests Managed Projects feature for Claude, signaling AI's push into enterprise cloud workflows - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5WMEZrakhwNDVydW5ZUlZpQmd4WWE5NVZ4WXFucV9ZcVE4N3lEU0RNeFRvY2cxak9TQUctSEE2X3NwVHNGdFNGTzF0dHZDUFc2SkpWZVE4ZmdyN3R3UGFiQkpiTWRZM3FZdzA3MU9faFotR21tR1hodg?oc=5",
-        "source": "Google News",
-        "published": "2026-07-22T14:22:00.000Z",
-        "summary": "Anthropic tests Managed Projects feature for Claude, signaling AI's push into enterprise cloud workflows Crypto Briefing"
-      },
-      {
-        "title": "Agilisium Named Select Services Partner in the Claude Partner Network - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMm40TDlDeEZwSUN5ajNCVGptUFJGbGlYc1RiNS1hZHgtWklkSlFtVVNRRVhfSXJFeTdYa1ZIRUpOdURYa3BOa19GZjQyQlVRY1NjWDhiOXIwS0ViZ3lzWHBma2xhY0lMcXIzWG13SV8zdlkta1FCOHZFNTVwVTZ0NmdjNm5XTjFYc2FmeDdmaEcyQUF0bjBFWkpXUUc1VnVvZmFSbmZ3?oc=5",
-        "source": "Google News",
-        "published": "2026-07-22T14:08:00.000Z",
-        "summary": "Agilisium Named Select Services Partner in the Claude Partner Network Yahoo Finance"
-      },
-      {
-        "title": "Anthropic and AMD partner for 2GW AI chip deal - Silicon Republic",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOa3ZCcVZQRWpnUTdDU28weHZUYlp2MERaSWNoa1EwSENtWFdJNHhsVHpmbzBYTlJVUHdZckpsSkE2U1M0dTlCa204amJVNFZnckFDeUR1eVpUQTl3SnpHenk0R0ZSNHdMdk0zbExZakVESFhTRjdFYlVZQVNOcXZSN3g0M3I?oc=5",
-        "source": "Google News",
-        "published": "2026-07-22T14:05:53.000Z",
-        "summary": "Anthropic and AMD partner for 2GW AI chip deal Silicon Republic"
-      },
-      {
-        "title": "AMD Stock Gains After Committing Up To $5B To Anthropic In AI Partnership - TradingView",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNTEx4WmR5NGtlcTFqdEgwT1hQWmtnN1NRM2JvRzk3bkMtSG1TdE9SdW1GYk1SYXY0OFQxcno2aTc2X2hWVzVxUmNyV0NJYVZVMGw3a1hTNGlRdXJodEVaM1FKZkZIZFo4eEJfNEtpS2Q5UlV5akVNOVJJYlBJTlEzME9ObW8zUmVRclFBZU9aX2NndjByenI0VHlQeGprSnl1a0ZaS2UtV0Iybm45cGdfQVduT0NZSjFwUTVNRmJ4WUswSGttcktka0xzOUNmZw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-22T14:05:36.000Z",
-        "summary": "AMD Stock Gains After Committing Up To $5B To Anthropic In AI Partnership TradingView"
-      },
-      {
-        "title": "AMD Plans Anthropic AI Server Sales Worth Tens Of Billions - Finimize",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNTm40VzEtaThNM21RLTMzUmMwbDVndHU3VWxwdW9HRlRtRzE2TUFUa1Y2dWY1aWVXRmZ5VEhGcmluZ3d6ZWI1OGFIS3pxRElFb3pZQUFQRjE5U3NfcUFnT0lnUUVlbi1KdUFGWnhWc3NnLUlsaEdHeGFRTVE0ZVNKZHdFWHBsQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-22T14:03:36.000Z",
-        "summary": "AMD Plans Anthropic AI Server Sales Worth Tens Of Billions Finimize"
-      },
-      {
-        "title": "AMD to invest up to $5 billion in Anthropic; AI startup to buy up to 2 GW of chips - The Indian Express",
-        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNX1Z2bFUzejNFQVZvU0cyZC1udzdSai1nTDg1d3AtSlRVcjQ1RnNIQkJoUmpDdXhpOWp3c1JKZ1dnRDI5SWdzQi13amJMMi02c3Z5bFFHWXllN1JtV1R6TTFKSXVsMGVrdHZQa3NYb2RDVUtvdmV6RzZMMWJKUnpEYUtMaXFoRTdvNE9UQ1dXWm5odUk4Z2RNazlYZ0hOUDZSXzVXbnd4X1F2dmd2VThyakx5Ylh4engtbGVrTjk1Rmd1Q2RvTUFJODRDT1NIbWJNTF9HbHBoMkNLT0hfX0NWT3U5N0tEQmVLRC1fOUtzdHLSAfcBQVVfeXFMUFhDVWxHZ3dxQllrLWdDLVVpUGk0cG10cVhkTzFUQWROSXBSc3JrSFNJQjA3TlVNY2h2U05yaWMxaFhUOWxNRzBMTzFVNjhJRlFBRG16Z0t2MHFGRlc3b2doR0NzbDBJYzRia0YzQjhNbHFkTC03VVRib2lrSFBWVXh5VUI0T2p3VUVEcE9VbkxUY2I3X1drTTFyZmhfTTNiaUxkTjUxdFNDbEw0UUJKTjI0QUtaRDhwUjZTemZMcTFDR0NmWEk4Y2phYWtxa2JEdVFqUDNhT2psY2d4dmFwMXk4bkJOX2RJX21rY01YQlZNLXZLY1d3aw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-22T14:03:09.000Z",
-        "summary": "AMD to invest up to $5 billion in Anthropic; AI startup to buy up to 2 GW of chips The Indian Express"
       },
       {
         "title": "Qwen 3.8 vs Claude: What Their Own Launch Post Admits",
@@ -576,6 +576,20 @@
     ],
     "status": [
       {
+        "title": "Microsoft Office add-in availability",
+        "url": "https://status.claude.com/incidents/yc7mr2gvl914",
+        "source": "Claude Status",
+        "published": "2026-07-22T17:56:10.000Z",
+        "summary": "Jul 22 , 17:56 UTC Identified - Users who installed the following add-ins may experience issues accessing the add-in functionality: Claude by Anthropic for PowerPoint, Claude by Anthropic for Word,…"
+      },
+      {
+        "title": "Service disruption on Claude Services",
+        "url": "https://status.claude.com/incidents/ng5shnqxj1r7",
+        "source": "Claude Status",
+        "published": "2026-07-22T17:45:37.000Z",
+        "summary": "Jul 22 , 17:45 UTC Resolved - This incident has been resolved. Jul 22 , 17:28 UTC Identified - The issue has been identified and a fix is being implemented. Jul 22 , 17:27 UTC Investigating - We are…"
+      },
+      {
         "title": "Elevated error rates for Sonnet 5",
         "url": "https://status.claude.com/incidents/6h7589wl6l45",
         "source": "Claude Status",
@@ -644,20 +658,6 @@
         "source": "Claude Status",
         "published": "2026-07-20T16:16:00.000Z",
         "summary": "Jul 20 , 16:16 UTC Resolved - This incident has been resolved. Jul 20 , 16:07 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jul 20 , 15:09 UTC Identified - The issue…"
-      },
-      {
-        "title": "Elevated errors on Haiku 4.5",
-        "url": "https://status.claude.com/incidents/s39rkbp2xhpd",
-        "source": "Claude Status",
-        "published": "2026-07-20T15:41:03.000Z",
-        "summary": "Jul 20 , 15:41 UTC Resolved - This incident has been resolved. Jul 20 , 15:33 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jul 20 , 15:09 UTC Identified - The issue…"
-      },
-      {
-        "title": "Fable 5 requiring usage credits on Max plans",
-        "url": "https://status.claude.com/incidents/tnypgb2jbqnq",
-        "source": "Claude Status",
-        "published": "2026-07-20T15:35:33.000Z",
-        "summary": "Jul 20 , 15:35 UTC Resolved - This incident has been resolved. Jul 20 , 07:35 UTC Monitoring - Some Claude Code Max plan users were incorrectly prompted to use usage credits to access Fable 5, which…"
       }
     ],
     "youtube": [
@@ -994,6 +994,22 @@
     ],
     "tutorials": [
       {
+        "title": "Merge pull request #792 from anthropics/cj-ant/watch-subagents-live",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/995c3c880a6e0cf7a2e137ac6a373d53c87a9c8a",
+        "source": "Anthropic Cookbook",
+        "published": "2026-07-22T18:00:42.000Z",
+        "summary": "Merge pull request #792 from anthropics/cj-ant/watch-subagents-live feat(managed_agents): add subagent live-streaming cookbook",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "feat(managed_agents): add subagent live-streaming cookbook",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/c39be3a2e64d2cff678045233d7c56065b94f93e",
+        "source": "Anthropic Cookbook",
+        "published": "2026-07-22T15:00:32.000Z",
+        "summary": "feat(managed_agents): add subagent live-streaming cookbook New notebook that streams a coordinator and its subagents in real time. Covers per-thread event deltas, initial_events on session create,…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.217",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
         "source": "Claude Code Releases",
@@ -1207,22 +1223,6 @@
         "source": "Anthropic Cookbook",
         "published": "2026-07-06T19:36:36.000Z",
         "summary": "Make notebook cross-links checkable; document the temp_md artifact The check-links workflow converts changed notebooks into a flat temp_md/ dir, which breaks resolution of every relative file link -…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "lychee.toml: drop skip_code_blocks, also removed in lychee 0.23",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/dfc4861e531e29f362d0d5c9b32ca6c3fc972d64",
-        "source": "Anthropic Cookbook",
-        "published": "2026-07-06T19:24:48.000Z",
-        "summary": "lychee.toml: drop skip_code_blocks, also removed in lychee 0.23 Code blocks are already skipped by default (include_verbatim defaults to false), so the field just goes.",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Fix lychee.toml for lychee 0.23: headers field was renamed",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/f9c8ca52613cee0cdceb76a760d8102234e05c40",
-        "source": "Anthropic Cookbook",
-        "published": "2026-07-06T19:20:20.000Z",
-        "summary": "Fix lychee.toml for lychee 0.23: headers field was renamed The check-links workflow has been failing to parse the config (unknown field 'headers'), so links were never actually checked. The only…",
         "tutorial_kind": "official"
       },
       {
@@ -1744,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "You can now set an effort level on a Claude Managed Agents agent's model configuration. Pass effort inside the model…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#july-22-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-07-22T00:00:00.000Z",
+        "summary": "Webhooks for Claude Managed Agents now cover the environment and memory store lifecycle: four environment.* event types and three memory_store.* event types. You can react to environment and memory store lifecycle changes without polling.…"
+      },
+      {
         "title": "v2.1.217",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
         "source": "Claude Code",
@@ -2148,13 +2155,6 @@
         "source": "Claude API Release Notes",
         "published": "2026-07-02T00:00:00.000Z",
         "summary": "The Python (0.116.0), TypeScript (0.110.0), Go (1.56.0), Java (2.48.0), Ruby (1.55.0), PHP (0.36.0), C# (12.35.0), and CLI (1.16.0) SDKs now send agent-memory-2026-07-22 on all memory store calls instead of managed-agents-2026-04-01 . If…"
-      },
-      {
-        "title": "We've restored access to Claude Fable 5 and Claude Mythos 5. See our statement for more information.",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#july-1-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-07-01T00:00:00.000Z",
-        "summary": ""
       },
       {
         "title": "Claude Sonnet 5 Just Dropped (I have to be honest...)",
