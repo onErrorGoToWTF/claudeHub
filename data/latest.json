@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T20:48:36.990Z",
+  "generated_at": "2026-07-23T22:43:37.478Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,7 +146,26 @@
     ],
     "news": [
       {
-        "title": "AMD takes on Nvidia with its Helios AI rack scale system",
+        "title": "Chinese AI labs close gap with Anthropic after Claude Code leak - digitimes",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNSEdJN19sX2s0bEJWWlBHQllSb3hxaFRLSEVvSWlQNnJubDlLd0tqdU9veUtFZmVPcVVRVFFqU0NoSW1oTmRyZlRaOG9KTS1YVUVIQjNwcnlmaTgyMUhDQlJIREhocXJRWG5vLVdQeHkySHFaLUlQalpLUGszNHppUExGU3ZJM3lzczJLczIxS0s0dmFuX0h3?oc=5",
+        "source": "Google News",
+        "published": "2026-07-23T22:29:56.000Z",
+        "summary": "Chinese AI labs close gap with Anthropic after Claude Code leak digitimes"
+      },
+      {
+        "title": "Do not talk to Claude's new voice mode",
+        "url": "https://www.youtube.com/watch?v=ikxxjRWX0Yg",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "ikxxjRWX0Yg",
+        "thumbnail": "https://i.ytimg.com/vi/ikxxjRWX0Yg/hqdefault.jpg",
+        "published": "2026-07-23T21:13:42.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "AMD takes on Nvidia with its Helios AI rack-scale system",
         "url": "https://techcrunch.com/2026/07/23/amd-takes-on-nvidia-with-its-helios-ai-rack-scale-system/",
         "source": "TechCrunch",
         "published": "2026-07-23T20:33:02.000Z",
@@ -237,6 +256,13 @@
         "summary": "AMD to supply Anthropic with 2 gigawatts of AI capacity The Business Journals"
       },
       {
+        "title": "Anthropic calls for industry-wide AI safety standards to keep models from wreaking havoc - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxONkp1b2JGRlZhcEhKQ1FvTUlWUVNWemQyNUpnSldoUXRCWDlsNS1Ya01SQWZCLVNxbkRCdWdRXzFtNEJ6bEJibjlJcmVmQ2stdmlpdmJvbm5BQWJZYVhZTktCaWxDSFFfVWdrMnBEZ2lJNXlUejJvOUNXcHNRcHVGV0hoR256cHBXT04yNkZZNTRvRFk?oc=5",
+        "source": "Google News",
+        "published": "2026-07-23T18:19:21.000Z",
+        "summary": "Anthropic calls for industry-wide AI safety standards to keep models from wreaking havoc Yahoo Tech"
+      },
+      {
         "title": "Opus 4.9 Odds Hit 62% as Anthropic Reshapes Claude Plans - Memeburn",
         "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE44ckFDWmxvWVpaNWJweE9fREZabjNKM3pGMWVDNGFNR1NhN1NrQlZYZ1M3Y0FEUXdMLWNoNTZtZzhVU1phRkNwemZCQlNSVmh0WW53WnJBN05DYkRxbWt4ZDBJaUhWMmFVdXlDRTlUTUpfN0U?oc=5",
         "source": "Google News",
@@ -246,7 +272,7 @@
       {
         "title": "Show HN: Claude-thermos – keeps your Claude session warm for you",
         "url": "https://github.com/izeigerman/claude-thermos",
-        "source": "HN · 37↑",
+        "source": "HN · 51↑",
         "hn_id": "49024882",
         "published": "2026-07-23T17:06:22.000Z",
         "summary": ""
@@ -266,7 +292,7 @@
       {
         "title": "Show HN: OneCLI – OSS credential gateway that keeps secrets out of AI agents",
         "url": "https://github.com/onecli/onecli",
-        "source": "HN · 58↑",
+        "source": "HN · 65↑",
         "hn_id": "49023427",
         "published": "2026-07-23T15:42:40.000Z",
         "summary": "hey HN, Jonathan and Guy here, creators of OneCLI ( https:&#x2F;&#x2F;onecli.sh&#x2F; ). OneCLI is an open source vault for AI Agents. Traditional vaults are used to store your…"
@@ -288,7 +314,7 @@
       {
         "title": "Show HN: Palmier Pro – Open-source macOS video editor built for AI",
         "url": "https://github.com/palmier-io/palmier-pro",
-        "source": "HN · 71↑",
+        "source": "HN · 101↑",
         "hn_id": "49022911",
         "published": "2026-07-23T15:11:37.000Z",
         "summary": "Hi HN, we are Marcos and Harrison, cofounders of Palmier ( https:&#x2F;&#x2F;palmier.io ). We are building Palmier Pro, an open source macOS video editor, with built-in AI…"
@@ -320,20 +346,6 @@
         "source": "Google News",
         "published": "2026-07-23T14:37:43.000Z",
         "summary": "Anthropic leads in coding benchmarks while Google and OpenAI win on speed Crypto Briefing"
-      },
-      {
-        "title": "Judge approves a $1.5B Anthropic settlement over books used to train Claude - KSHB 41 Kansas City",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNNHFlN1RNWHdraGFqQ3cxMnotQkFRVnh3QXM0bU5USktWaFhwNTJnUm1USHhoaWJWdzYwMHVJQ2xjMjhUWGlsbHd0YUFkb0J5clZyNE5kUVJmZEE0MVNPVC1PMFRUWElQNm9hU3Zyc0wyVmRyVC1GVGFVVGFBSWtySlVTZUFTMHVlZk41b2pSTUJxaWJwamNNWGZTYWJmOWoteWpyd1JMQlgyVE40?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T14:00:04.000Z",
-        "summary": "Judge approves a $1.5B Anthropic settlement over books used to train Claude KSHB 41 Kansas City"
-      },
-      {
-        "title": "Claude Cowork Flaw Could Let AI Agent Escape Its VM and Access Mac Files - The Hacker News",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNM3FvNkRxdExRQ2JKaGM1VmRURUdUWF95OGVQZ1VhMFNmS1RoYzhYNTFZZ1RPTjJ1OU11SHFteVdISHNwRXdibUl1MVFBTmdxTEFHWkxNeVBERDk4TEdBMFNWemsta1psV29IeTU3N05lQWJ5VkxNZ1NwQ0JJNU9FMHRn?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T13:27:00.000Z",
-        "summary": "Claude Cowork Flaw Could Let AI Agent Escape Its VM and Access Mac Files The Hacker News"
       },
       {
         "title": "Qwen 3.8 vs Claude: What Their Own Launch Post Admits",
@@ -562,18 +574,6 @@
         "published": "2026-06-09T20:08:12.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "5 Advanced Tips to STOP Hitting Claude Cowork Limits",
-        "url": "https://www.youtube.com/watch?v=pwrYhbVoPNM",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "pwrYhbVoPNM",
-        "thumbnail": "https://i.ytimg.com/vi/pwrYhbVoPNM/hqdefault.jpg",
-        "published": "2026-06-08T14:19:57.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -663,6 +663,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Do not talk to Claude's new voice mode",
+        "url": "https://www.youtube.com/watch?v=ikxxjRWX0Yg",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "ikxxjRWX0Yg",
+        "thumbnail": "https://i.ytimg.com/vi/ikxxjRWX0Yg/hqdefault.jpg",
+        "published": "2026-07-23T21:13:42.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Opus 5",
         "url": "https://www.youtube.com/shorts/EovCEYtt0l8",
@@ -980,17 +991,6 @@
         "video_id": "Y9Wz2PV404E",
         "thumbnail": "https://i.ytimg.com/vi/Y9Wz2PV404E/hqdefault.jpg",
         "published": "2026-06-09T17:00:05.000Z",
-        "summary": ""
-      },
-      {
-        "title": "5 Advanced Tips to STOP Hitting Claude Cowork Limits",
-        "url": "https://www.youtube.com/watch?v=pwrYhbVoPNM",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "pwrYhbVoPNM",
-        "thumbnail": "https://i.ytimg.com/vi/pwrYhbVoPNM/hqdefault.jpg",
-        "published": "2026-06-08T14:19:57.000Z",
         "summary": ""
       }
     ],
@@ -1746,6 +1746,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Do not talk to Claude's new voice mode",
+        "url": "https://www.youtube.com/watch?v=ikxxjRWX0Yg",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-07-23T21:13:42.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Opus 5",
         "url": "https://www.youtube.com/shorts/EovCEYtt0l8",
         "source": "YouTube · Pragati Kunwer",
@@ -2226,13 +2233,6 @@
         "url": "https://www.youtube.com/watch?v=Y9Wz2PV404E",
         "source": "YouTube · Anthropic",
         "published": "2026-06-09T17:00:05.000Z",
-        "summary": ""
-      },
-      {
-        "title": "5 Advanced Tips to STOP Hitting Claude Cowork Limits",
-        "url": "https://www.youtube.com/watch?v=pwrYhbVoPNM",
-        "source": "YouTube · Ryan & Matt Data Science",
-        "published": "2026-06-08T14:19:57.000Z",
         "summary": ""
       }
     ]
