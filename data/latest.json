@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T18:55:15.058Z",
+  "generated_at": "2026-07-23T20:48:36.990Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -7,7 +7,7 @@
         "title": "Claude for Creative Work Dev",
         "url": "https://www.anthropic.com/news/claude-for-creative-work-dev",
         "source": "Anthropic",
-        "published": "2026-07-23T17:44:09.000Z",
+        "published": "2026-07-23T20:11:00.000Z",
         "summary": ""
       },
       {
@@ -146,6 +146,83 @@
     ],
     "news": [
       {
+        "title": "AMD takes on Nvidia with its Helios AI rack scale system",
+        "url": "https://techcrunch.com/2026/07/23/amd-takes-on-nvidia-with-its-helios-ai-rack-scale-system/",
+        "source": "TechCrunch",
+        "published": "2026-07-23T20:33:02.000Z",
+        "summary": "AMD is challenging its chipmaker rival with a new rack-scale system that will start shipping to customers later this year."
+      },
+      {
+        "title": "Anthropic Brings Opus and Sonnet to Claude Voice Mode - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQVmY4alcyNndNM3lGUWNqSzRKN3BzYlA3VFF2Zkx2WVd1R0N4Y0VHRDlQMkxGdXJKN19rdGRNYnRZR2NvT2ZUYlVvdkNpcTJmcTZ1dnpzSWYzMGZkcXRkX3JCdEVUM0lmRDcxaFhuODBFRXoxWjg0Z29kajJ5UF82Sw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-23T19:55:01.000Z",
+        "summary": "Anthropic Brings Opus and Sonnet to Claude Voice Mode Unite.AI"
+      },
+      {
+        "title": "Alphabet’s Anthropic Stake Jumps to Around $124 Billion",
+        "url": "https://www.bloomberg.com/news/articles/2026-07-23/alphabet-s-anthropic-stake-jumps-to-around-124-billion",
+        "source": "Bloomberg",
+        "published": "2026-07-23T19:53:35.000Z",
+        "summary": "The value of Alphabet Inc.’s stake in the artificial intelligence startup Anthropic PBC has soared to around $124 billion, making it one of the most lucrative bets in the company’s history."
+      },
+      {
+        "title": "Anthropic Achieves Full AMD Stack Compatibility in a Weekend: Uses Claude for Bootstrapping Instead of NVIDIA Hardware, Breaking CUDA’s 'Human Capital Barrier' - Moomoo",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObjdlMkswMHV2d0RIbUJtTFE0QVp2cVBsMjlCOGthX1RTeDlLQ0ozVXd6ZWlEdGNmSTA0VWJaNXBRS3VvX3cydWw4VFBab2UyaGNDbzR3UDBwU3BnQTZKbGcxYl9Kb05xbUlSWU1wem9ZdHpiTk0wNVE0WVY1QVdxZ1VpMWFVZ0Q2VFZjaHRDRXhWZ1Q1UTZKajYwN20wWUhQYlV3RFNLTmhEV2c?oc=5",
+        "source": "Google News",
+        "published": "2026-07-23T19:48:07.000Z",
+        "summary": "Anthropic Achieves Full AMD Stack Compatibility in a Weekend: Uses Claude for Bootstrapping Instead of NVIDIA Hardware, Breaking CUDA’s 'Human Capital Barrier' Moomoo"
+      },
+      {
+        "title": "Anthropic upgrades Claude voice with natural intonation and faster responses - Межа. Новини України.",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE95alpGWTRndDJqZUtmU0hBSDB6cnM2VF9ZNzF1WjgtZTdpaGYxWE45eFNMRWNjRVpmaFh6bmlWT3ZQTXlCNDY2czhvZl9ubVpudnBPc1A2MTNSQXROVkZralU2TmdHa0ZDV2owVlAwQlg?oc=5",
+        "source": "Google News",
+        "published": "2026-07-23T19:34:40.000Z",
+        "summary": "Anthropic upgrades Claude voice with natural intonation and faster responses Межа. Новини України."
+      },
+      {
+        "title": "Anthropic upgrades Claude voice mode with more powerful models - 9to5Mac",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZi1wWGxRMHF0dVJ2VFcxWVN0TS05RlpBcnQ4N3dobGp4TVBOU3k2TlphWVRQaWpEY09tazhxNG9Tc05tblVabmZZaFE2dmVXNjNvVE5ZVXk0ck8xUXNweEdBbVpuTS1sSFJKX3MwaWdVelRyRTVBdUEzR2RIZjl4eExmUXBYY2dYZ2wtNG5udDZobEVwdFgyLTB3?oc=5",
+        "source": "Google News",
+        "published": "2026-07-23T19:16:00.000Z",
+        "summary": "Anthropic upgrades Claude voice mode with more powerful models 9to5Mac"
+      },
+      {
+        "title": "Anthropic updates Claude voice mode with more capable models",
+        "url": "https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/",
+        "source": "TechCrunch",
+        "published": "2026-07-23T19:00:00.000Z",
+        "summary": "Claude's new voice model will let you reschedule your meeting or draft an email."
+      },
+      {
+        "title": "Claude’s voice mode is now available for Opus and Sonnet",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/970065/anthropic-voice-mode-claude-opus-sonnet-haiku-ai",
+        "source": "The Verge",
+        "published": "2026-07-23T19:00:00.000Z",
+        "summary": "Until now, voice mode has only been available on Claude Haiku, Anthropic's faster but less powerful model. Now the company is making its Opus and Sonnet models available in voice mode, and extending…"
+      },
+      {
+        "title": "Anthropic updates Claude voice mode with more capable models - TechCrunch",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPTlo0bXJZb1JaV0MteE1fQkhUNU1uRjlpN2lxcmd5aVM0eTZfbjMwYldQWXdxU2EzLWhOcXdnQkh5WnJmTzRoZEk1c3laczdESFpOQmUwRkl6SmJVTHhVYVdqS1AyTFpSVkhIdkNTMFNPQUJVNzJITU9hQzBrQnJ1cjY0cjZ0aG9VVEdCTVl6R0NjcmtSbFM0M3ZhWQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-23T19:00:00.000Z",
+        "summary": "Anthropic updates Claude voice mode with more capable models TechCrunch"
+      },
+      {
+        "title": "Claude’s voice mode is now available for Opus and Sonnet - The Verge",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQMloybkxVSTh1eldxMkdOa0M2LWJaejlqYThGMHB6Y28xdDN6RHpRcV85aG56Y3R3THowcFE5YUxROWFyWXk4ZldPci05eUV1Y2Q0R2RSWmdDNm9fdnBJclpuMnZiNk1ZLW90ZmJ4T0UwZDh3c3hXNHNyMDloUWJ5U2Nqd0lTUW9lT0l3d0JBMndXWlhIalFKV1UybE14LTJvbi1nclNETGVoV00?oc=5",
+        "source": "Google News",
+        "published": "2026-07-23T19:00:00.000Z",
+        "summary": "Claude’s voice mode is now available for Opus and Sonnet The Verge"
+      },
+      {
+        "title": "Claude's Voice Mode Just Got Smarter - Engadget",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE92XzdFXzdGamNKUWV2MHVxRnZiWm1EWlRBMnFUQm1Kb0JjQlJpRkNhZ2FnNEd2a3Q4LTFUaUc5X2NMdVJ1TDZOLWJ0eF9GQ2JocjJBejE0MHVHQWlHbnV2c1dnQktpVk9hYzNscDdUTGFZdW5LYnFR?oc=5",
+        "source": "Google News",
+        "published": "2026-07-23T19:00:00.000Z",
+        "summary": "Claude's Voice Mode Just Got Smarter Engadget"
+      },
+      {
         "title": "Music publishers file amended lyrics lawsuit against Anthropic – just as AI firm’s separate $1.5B piracy settlement with authors wins court approval - Music Business Worldwide",
         "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOU3NCSzZJbEJTZkdHajlRS1kwS2dGWnlDVVpwZUVNdU5tZlVXZnB5ZkxVRUpMejF6MUp2d2hmQ0NQRGVKeW8tVW1vWVk0d0RkVXZaMUhvbmNJVUVmcTBpUjdUbVBZS2JyelMxT3JoVXR4aU5sWmhfa3pkY0hNUm1SYWpoLTg4eG5wWlBSQktfNDVYQmdoWWZOLUh1OVkyN0VaczlWU01FdE9SNTdHeWtWX2pGb0pxRnlfd0JiN1lPY1ZnSFdNdE5ZSUNmNm5ZbUducjhlUEJ3WVM5WXp2RUI2NUlBd1ZrT1dHYmRXekdhM3dHUUtVcXg1M2RVVi1CVmRRNF9nQkhVRUJlU2hIRk1xZk1n?oc=5",
         "source": "Google News",
@@ -167,6 +244,14 @@
         "summary": "Opus 4.9 Odds Hit 62% as Anthropic Reshapes Claude Plans Memeburn"
       },
       {
+        "title": "Show HN: Claude-thermos – keeps your Claude session warm for you",
+        "url": "https://github.com/izeigerman/claude-thermos",
+        "source": "HN · 37↑",
+        "hn_id": "49024882",
+        "published": "2026-07-23T17:06:22.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Opus 5",
         "url": "https://www.youtube.com/shorts/EovCEYtt0l8",
         "source": "Pragati Kunwer",
@@ -181,7 +266,7 @@
       {
         "title": "Show HN: OneCLI – OSS credential gateway that keeps secrets out of AI agents",
         "url": "https://github.com/onecli/onecli",
-        "source": "HN · 37↑",
+        "source": "HN · 58↑",
         "hn_id": "49023427",
         "published": "2026-07-23T15:42:40.000Z",
         "summary": "hey HN, Jonathan and Guy here, creators of OneCLI ( https:&#x2F;&#x2F;onecli.sh&#x2F; ). OneCLI is an open source vault for AI Agents. Traditional vaults are used to store your…"
@@ -203,10 +288,24 @@
       {
         "title": "Show HN: Palmier Pro – Open-source macOS video editor built for AI",
         "url": "https://github.com/palmier-io/palmier-pro",
-        "source": "HN · 40↑",
+        "source": "HN · 71↑",
         "hn_id": "49022911",
         "published": "2026-07-23T15:11:37.000Z",
         "summary": "Hi HN, we are Marcos and Harrison, cofounders of Palmier ( https:&#x2F;&#x2F;palmier.io ). We are building Palmier Pro, an open source macOS video editor, with built-in AI…"
+      },
+      {
+        "title": "Brown & Brown selects Anthropic, McKinsey and Accenture to support AI transformation - Reinsurance News",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNOFotV3N2VTZCODd6eU1zWHY5ejBiVTUxNUR2N1hTZm05dXFKbW5nSUp6ajQ4R0Jtam1UdXJCdHhiNktmbm9OUlg4SGx0ckUzU0NkdU12aWRaNS12NkgyY2VXQ1F2VmZPcFVUNnI1SkttY0QwY0ZjYXpnSjJ1ME5QOW5VNE1TNjI4a1BiZmR5NXl1clpEbTFxNVBubDdVUkxEdDk2MHFmMjBPSGJYbmk3Uw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-23T15:04:36.000Z",
+        "summary": "Brown & Brown selects Anthropic, McKinsey and Accenture to support AI transformation Reinsurance News"
+      },
+      {
+        "title": "Antigravity vs Cursor vs Claude Code: Free vs $200 [2026] - tech-insider.org",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5Wd0JTUktyVXFWQ0lFNXZBSFlGa1k2bUtIUGRMTTN0OE9UUkNRWkgzN3J4eGFlLXVNOGxwN3RabWZvdUJDMXdaaVRlOXNpeFpnUEd0UlBIbGNWb1VaN19jbVIwTG56cldLVno5YXczX2JhejVqOUE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-23T14:52:01.000Z",
+        "summary": "Antigravity vs Cursor vs Claude Code: Free vs $200 [2026] tech-insider.org"
       },
       {
         "title": "AI arms race in line for a reckoning after OpenAI hacking incident",
@@ -230,110 +329,11 @@
         "summary": "Judge approves a $1.5B Anthropic settlement over books used to train Claude KSHB 41 Kansas City"
       },
       {
-        "title": "How attackers hosted a fake Claude download page on the claude.ai domain - Help Net Security",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQb1V6cEUtbTB0NlpJcmhTRnl0bDJlR05QdGdPOWMwNEZURHBQYUZhUGhLZWZNOUdrRmhFdUF5ME1IRVVkTi1kZnVpVkpxeWd3Qjlna3djdzRrcWFEYWhzcHhkSlZ5WUluQjBNd2lSZnlFZlZlcjdTTlRYTWNkajAyaThKVXVxTTVkbWRFaWZMaXo?oc=5",
+        "title": "Claude Cowork Flaw Could Let AI Agent Escape Its VM and Access Mac Files - The Hacker News",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNM3FvNkRxdExRQ2JKaGM1VmRURUdUWF95OGVQZ1VhMFNmS1RoYzhYNTFZZ1RPTjJ1OU11SHFteVdISHNwRXdibUl1MVFBTmdxTEFHWkxNeVBERDk4TEdBMFNWemsta1psV29IeTU3N05lQWJ5VkxNZ1NwQ0JJNU9FMHRn?oc=5",
         "source": "Google News",
-        "published": "2026-07-23T13:12:21.000Z",
-        "summary": "How attackers hosted a fake Claude download page on the claude.ai domain Help Net Security"
-      },
-      {
-        "title": "OpenAI and Anthropic unite against open-weight AI risks to their bottom line",
-        "url": "https://www.axios.com/2026/07/22/openai-anthropic-open-models-trump-china",
-        "source": "HN · 256↑",
-        "hn_id": "49020868",
-        "published": "2026-07-23T13:00:03.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic's top economist says AI won't replace workers yet. Mark Cuban says it trails humans in 2 key ways. - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPaThvVHZJVzRnclpNUVNMU0l4RS1OVGRyOUdQZDIzQjZUWnA4Q0pWbHlRZkVCVkhCV0dmVEtBYUJsbUM5c3lYOXp2ajQ2NUJjSTJLY3Z5MTU1RVNXa2JBRDJQZjdKaEx6eHAtQXRWbDQ1QU5SN2t1alB4a1dGeklCSEg5Z2lIYjdqRk5RdE5fUTBSNms?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T12:26:42.000Z",
-        "summary": "Anthropic's top economist says AI won't replace workers yet. Mark Cuban says it trails humans in 2 key ways. Yahoo Tech"
-      },
-      {
-        "title": "I use Anthropic's Claude AI tools for very different jobs: How to pick between models, Code, and Cowork - ZDNET",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE55UU8zYzdOWEdjOHUtMUszNmJLbEZVaFVEbzV1V2xmZXd0VUl4UGc3RFRRbHkzS0NRcUNLT1k4T3R1ellRVHhmWmRWLTh1MXc0WElJTWpFRm05V3JMVDJUdC1TNnBxLWlSaG4xeThxcTJ6S1JwY0F3UDdn?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T12:26:00.000Z",
-        "summary": "I use Anthropic's Claude AI tools for very different jobs: How to pick between models, Code, and Cowork ZDNET"
-      },
-      {
-        "title": "Anthropic's top economist and Mark Cuban weigh in on why AI isn't replacing workers yet - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQS3JrMmY5b09WeUZsTjMwWl9IMzJXaGtoU1FPTVNxZVZDZGNDWWxZQVhYVklaQm1BRk1lVXdTQVlxcnRLOVZYWi1SNWJKNjBDZmZ1WTZHLVlNQ2M1SFl1Mm1IaHBrclUwRlM0T0FQdWNhV2w3R0pfNjZtNEZnOW82SzR6MjFiM1FEd1huM0dGM0lNTFFGb0lPLXBrLUFrXzk0QVJMWVpjWFBMb2dpbkE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T12:26:00.000Z",
-        "summary": "Anthropic's top economist and Mark Cuban weigh in on why AI isn't replacing workers yet Business Insider"
-      },
-      {
-        "title": "Grok 4.3 vs Claude Opus 4.8: 10x Output Price Gap [2026] - tech-insider.org",
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9SVVhoYWszMHVtOGNaS1lGdTFHNmt5UFlNS0VsazlNek1FV2l2OTM1Z2Y0NklPa2ZfVk5CZGxtRHgwN0JhbkhELS1veXhrLUlmSDY1SXZlVUlsaDVCM3JTMEtmbnJteUtBRkE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T12:24:48.000Z",
-        "summary": "Grok 4.3 vs Claude Opus 4.8: 10x Output Price Gap [2026] tech-insider.org"
-      },
-      {
-        "title": "Brown & Brown partners with Anthropic, McKinsey and Accenture - Coverager",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQVG55MnI5LXVLQlhYRnJRSlhsN0NlUGp4VE82djdhRFZ4akpIWE5LYUVyR251YWoyRmozd2FzRGhkblBQbTZnNVRLTm41LVE2UFBIdUVRaTFtYkVsSHdTbGx2OW1MZnowUGMycVU3ZXg3eWVKdkxkNEUtTU5tbTEyaGpMTkhHZy1k?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T12:05:17.000Z",
-        "summary": "Brown & Brown partners with Anthropic, McKinsey and Accenture Coverager"
-      },
-      {
-        "title": "Moonshot could face US sanctions: Govt takes note of Chinese AI firm's distillation attacks against Anthropic to improve its Kimi model - WION",
-        "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNRG1BRE9tU3EtdTN3MmF0bDlhaUdoWXA2MURjVTltaDJvdVJPQ2lyaGJwcEw2UnJ2MVJad2E4aTBCazRqUEZaNGJBZzdxTl9lNXQ0UURldi15UU5sOC01VnlNNzZIcWdVSUVtbWtiNXFra01kTmI1TS1PY3BaVzdka05JclhTdmVyQ1hJaHVmSFpjd1ZWSHJZZndDOXgyMkpybk5RQUMzM2JCRGJQSzNtbXVCbklXdUt3NzlWNG9RZkc0UjE0YUU3UmI2OUNCUFBwV2FMblJiTXNOay1hOTN2czJXNzJRMGVXX1R0aDhPTzQ2RER0UTJPRnZoZW9sSk44M29nRzQ0TVExUdIBjwJBVV95cUxQS3ZIaGJlRWRfRlc4TTJuNmtyT1JsbWNfQk5rTFViWW1nb0U5dzJldVdvRVJ6SjhRUUQyRG5WS0thZzBOYjdURTdLYURvTG0wVkhMQ1RHTmtDeXd3eDFKeG9VNHE4VUtIWFVoNGxzVmJ4aFBsRllCM24tM2YxX0pPSmNuUmF6R2diNFFxZUlxV1BNMm9TNV91VzlLV2hlam1pR21BdnlsaVpVNlMyM2VwNEVIQ2pCRVZjSnBZTy1aY1hlRDhrZlUwbUNLVWVSMVMyR1VPU2xOOVI4WGlWaC10QTQzVEJYajN6OVFxaWswNXR4SFp1WHd6aV9TRHY1V0hPVnNLel9uSDdFLTNrdGt3?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T11:49:00.000Z",
-        "summary": "Moonshot could face US sanctions: Govt takes note of Chinese AI firm's distillation attacks against Anthropic to improve its Kimi model WION"
-      },
-      {
-        "title": "Brown & Brown Launches AI-First Strategy With Anthropic, McKinsey and Accenture - citybiz",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOZnY2TkE0d1hRcW0wMG13NWRjdDdxRExYOU52dUZuTlZZdjZfRWM3TnJtVHFFR1ZEWjA2a3FpemRNa1BGNWJ2UHBzYkJxcGM4Vy03VE5lVjJzQlpHcC1fUGcwbU9PVEVNM054OWwyVDFVRXAzdGVUcWd2NEJ2ckVLSlloZnhaWGFUR2h1M1BMRkRXSndKbXg4UVJhX0F3UnRadW1jTk5GRXhoQlROWTY3SXE3cDdFQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T11:14:25.000Z",
-        "summary": "Brown & Brown Launches AI-First Strategy With Anthropic, McKinsey and Accenture citybiz"
-      },
-      {
-        "title": "AMD and Anthropic partner on 2GW AI GPU deployment ... - eeNews Europe",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPZlVFNVlYMlRpdWEyMEZZWG1jUVkwUDN5cTdNa0duSnlrWTAySXhBbkxXTFJOdGt2UG1hdHhTVXdkRkR2LWdEUkExNnROWnhUUExxOE5KMWNvVldhR3BuR1kxYU9nTVdHSTQ5eHFnTUswdXpjRkVqbk9GNV9xWHZRUE5kZGt6UExsbVdB?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T11:01:50.000Z",
-        "summary": "AMD and Anthropic partner on 2GW AI GPU deployment ... eeNews Europe"
-      },
-      {
-        "title": "Anthropic joins UK FCA’s AI Sandbox testing programme - Retail Banker International",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxORWEyS0V4eFlfZjdULVJubmNHazRXVHg2Rld0YXVTTkNuOTdwN2pfVFVkR09vbVRHYmZCSjdjRkFkeC1zLXFkVXhCZ2dFQ3hrRmFaYTRqVFVHWkZRbFAzbk9MSXgtTHg0Z3Zac3pBRjVUaExNRmpFSGdJcnFudHhVWg?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T11:01:16.000Z",
-        "summary": "Anthropic joins UK FCA’s AI Sandbox testing programme Retail Banker International"
-      },
-      {
-        "title": "Experts say exploiting Anthropic’s Fable isn’t how Kimi K3 got so good",
-        "url": "https://techcrunch.com/2026/07/23/experts-say-exploiting-anthropics-fable-isnt-how-kimi-k3-got-so-good/",
-        "source": "TechCrunch",
-        "published": "2026-07-23T11:00:00.000Z",
-        "summary": "\"I don't think you get a model this strong and this quickly on the heels of Fable doing strictly distillation,\" one expert told TechCrunch."
-      },
-      {
-        "title": "Experts say exploiting Anthropic’s Fable isn’t how Kimi K3 got so good - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSzRUNk5MQkJISk5mRUtuWDJtQUh0ZUprdVBGdTVaLWlmcm84bUFkVDAwakQySEtlV2dRcktJSnhuV3JHM0lvWGVTeVF3MUhzdVQ3bnVZVXRaTzQ5TUFoMlcxZXFVZWFzamUxWVhnQzNEYkVpOUk3VjFDMjZzalJXMmZuUFBOclFGY2ZXbENETXd0cWdWb0Fna05DTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T11:00:00.000Z",
-        "summary": "Experts say exploiting Anthropic’s Fable isn’t how Kimi K3 got so good Yahoo Tech"
-      },
-      {
-        "title": "AMD partners with Claude creators Anthropic, investing up to $5 billion to deploy 2 gigawatts of data center GPUs - PC Guide",
-        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPeWhocU1aeEVONzRIeVJVeFdSQlV0RVFySWtRVVpuX25hXzZqM1ZWaWh6YmlWWnRLd09wdXVoaVYwY2t1WnN0RjVlUURxd0ZXLTdDT3FWamZHWTd2YzhZaG4xanI2NXhFUmhiMmtpMnRnQkQ3eHlZM01rNVFzMndOaHMtdEY3Yl9seEtOeklLRktCNzdvLVc3UDNUNFc5S1UzOVZVcmM3ZXk2OThZM2RrMUstV3NIeWFYZTBHdTA3a3JHZ3FGSFlFRWZOTVBZS3VLaks1NnY5OXdfYzNKY2NvMHNzRQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T10:49:29.000Z",
-        "summary": "AMD partners with Claude creators Anthropic, investing up to $5 billion to deploy 2 gigawatts of data center GPUs PC Guide"
-      },
-      {
-        "title": "Anthropic preparing for potential Claude Opus 5 rollout - TestingCatalog AI News",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQRWYtODJYNVFKWk5UUXlaN0UtdTl6c2tRMlBrR0IwQ0Y1Y1htUWowSWJ6N0o0d2k4aEdqdzRQM1dzZXZwT3FhNjQ5bDhxNHV4LVVpZVJyLWd0TjFtZFpkS3RCbzlHMVdjOUc4LTQzSkFSZENpd25JQTBfWmZBMk0yZFkwaW1HNEpHT3RaLTV0RDg?oc=5",
-        "source": "Google News",
-        "published": "2026-07-23T10:47:42.000Z",
-        "summary": "Anthropic preparing for potential Claude Opus 5 rollout TestingCatalog AI News"
+        "published": "2026-07-23T13:27:00.000Z",
+        "summary": "Claude Cowork Flaw Could Let AI Agent Escape Its VM and Access Mac Files The Hacker News"
       },
       {
         "title": "Qwen 3.8 vs Claude: What Their Own Launch Post Admits",
