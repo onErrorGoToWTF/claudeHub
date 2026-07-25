@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T20:38:04.057Z",
+  "generated_at": "2026-07-25T22:41:16.116Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,26 @@
     ],
     "news": [
       {
+        "title": "The new rules of context engineering for Claude 5 generation models",
+        "url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+        "source": "HN · 81↑",
+        "hn_id": "49051361",
+        "published": "2026-07-25T20:42:35.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Opus 5 + Claude Voice Released (It’s basically Jarvis)",
+        "url": "https://www.youtube.com/watch?v=Hv8YGUXZY1g",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "Hv8YGUXZY1g",
+        "thumbnail": "https://i.ytimg.com/vi/Hv8YGUXZY1g/hqdefault.jpg",
+        "published": "2026-07-25T20:28:01.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
         "title": "Anthropic Launches Claude Opus 5 - Pulse 2.0",
         "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE4zVnZoQnNJcFdrMksxbF9qaEV6T2VKUmd2T0NSZnRYcVczRE9RM1RwV1dWSHNhNGhMdzYzb214XzhjZHg2ajQyd2hGTGZsY1lkRDkxandNdnZJMTg0MXhaRFFB0gFnQVVfeXFMTUVVa0NVQzd3Yk1WWGhWbGlfYTRzRkthYjYxY3hORE1fdWVfRlVMMXpaVnR0Z1FyVC1aRlhJQVNJLTJZOHhtZm5DNmlTS2Z1SXZnSTMtTDRKWXRSTjlndUNyMWdvZC0ySQ?oc=5",
         "source": "Google News",
@@ -186,13 +206,6 @@
         "source": "Google News",
         "published": "2026-07-25T15:03:19.000Z",
         "summary": "Anthropic’s Claude Opus 5 is here and It Undercuts Its Own Flagship on Price H2S Media"
-      },
-      {
-        "title": "Anthropic's Newest AI Model Opus 5 Is Now Available - PCMag Australia",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPZkVfWWpoVXRXTk5FaHhEQmJnVFFpd0dIQi1Vd3lmYncwN21TNmlXS0dxREliU20xSjlfSVZQVHZhakZzdExoMzJKdXA2TTl2TzJ6ZEhtRjZOZWlrekh2QjZyb09MdlB5blRZbFpsd3ZFTlREcTd3Ml9xR04tbnlrTFZLNGoweUJ6?oc=5",
-        "source": "Google News",
-        "published": "2026-07-25T14:44:38.000Z",
-        "summary": "Anthropic's Newest AI Model Opus 5 Is Now Available PCMag Australia"
       },
       {
         "title": "Claude Opus 5: Anthropic gives you Fable 5 for half the price - Korben",
@@ -326,11 +339,11 @@
         "_kind": "news_video"
       },
       {
-        "title": "Claude Opus 5 is here, and Anthropic says it can rival Fable 5 in some tasks - Digital Trends",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQLTQ1SlBnLUtsNEs4OHZEQ0RCV2VNTDVHWGFtd28tSHZDRnIxWjc3d29OSzJnaHZmTlZYVWZHMUlmdHVnNWJpaGJXT2dsSnR3ejl0VXRmT1g3VERtdXVTWXpzdXZkR0ZXRDg2R2htR2phcEtZN3JHR3Z1RmEybU01cmtZUi1pUS1wQ2tKMzhxN25QMUZzblhWZlRXb2hUWTB4aGVZOWdNcUF4Q1ZMWktzZ0h4VGdyTU0?oc=5",
-        "source": "Google News",
-        "published": "2026-07-24T22:15:13.000Z",
-        "summary": "Claude Opus 5 is here, and Anthropic says it can rival Fable 5 in some tasks Digital Trends"
+        "title": "Anthropic's Opus 5 is about token efficiency, not a capability leap",
+        "url": "https://arstechnica.com/ai/2026/07/anthropics-opus-5-is-about-token-efficiency-not-a-capability-leap/",
+        "source": "Ars Technica",
+        "published": "2026-07-24T21:05:51.000Z",
+        "summary": "Today, Anthropic rolled out Opus 5 , the newest update for the model that has recently become a popular choice for coding and other software development tasks, among other things. While this is a…"
       },
       {
         "title": "Claude Opus 5 DESTROYS Fable 5",
@@ -561,18 +574,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Why the Government Just Killed Claude Fable 5",
-        "url": "https://www.youtube.com/watch?v=zeVuhlKWRfI",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "zeVuhlKWRfI",
-        "thumbnail": "https://i.ytimg.com/vi/zeVuhlKWRfI/hqdefault.jpg",
-        "published": "2026-06-13T03:50:57.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
         "title": "Claude Fable 5 just dropped and I'm speechless...",
         "url": "https://www.youtube.com/watch?v=RwsUnvHYmyw",
         "source": "Alex Finn",
@@ -586,6 +587,13 @@
       }
     ],
     "status": [
+      {
+        "title": "Elevated errors for Claude Fable 5, Claude Sonnet 5, Claude Haiku 4.5, and other models",
+        "url": "https://status.claude.com/incidents/j6gv862066n7",
+        "source": "Claude Status",
+        "published": "2026-07-25T22:08:41.000Z",
+        "summary": "Jul 25 , 22:08 UTC Resolved - This incident has been resolved. Jul 25 , 21:34 UTC Investigating - We are investigating elevated errors on requests to Claude Fable 5, Claude Sonnet 5, Claude Haiku…"
+      },
       {
         "title": "Elevated errors for Mythos 5, Fable 5, Opus 5 and Claude Haiku 4.5",
         "url": "https://status.claude.com/incidents/f1q2wvw4qj4j",
@@ -662,16 +670,20 @@
         "source": "Claude Status",
         "published": "2026-07-21T18:03:47.000Z",
         "summary": "Jul 21 , 18:03 UTC Resolved - This incident has been resolved. Jul 21 , 17:51 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jul 21 , 17:47 UTC Update - We are…"
-      },
-      {
-        "title": "Elevated errors on Haiku 4.5",
-        "url": "https://status.claude.com/incidents/j0y67nj6w93z",
-        "source": "Claude Status",
-        "published": "2026-07-21T16:38:26.000Z",
-        "summary": "Jul 21 , 16:38 UTC Resolved - This incident has been resolved. Jul 21 , 15:30 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jul 21 , 14:44 UTC Identified - The issue…"
       }
     ],
     "youtube": [
+      {
+        "title": "Opus 5 + Claude Voice Released (It’s basically Jarvis)",
+        "url": "https://www.youtube.com/watch?v=Hv8YGUXZY1g",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "Hv8YGUXZY1g",
+        "thumbnail": "https://i.ytimg.com/vi/Hv8YGUXZY1g/hqdefault.jpg",
+        "published": "2026-07-25T20:28:01.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Opus 5 Just Dropped (I have to be honest...)",
         "url": "https://www.youtube.com/watch?v=A8h8W5hf0ko",
@@ -967,17 +979,6 @@
         "video_id": "mm3Ybi-9cCw",
         "thumbnail": "https://i.ytimg.com/vi/mm3Ybi-9cCw/hqdefault.jpg",
         "published": "2026-06-13T05:53:28.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Why the Government Just Killed Claude Fable 5",
-        "url": "https://www.youtube.com/watch?v=zeVuhlKWRfI",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "zeVuhlKWRfI",
-        "thumbnail": "https://i.ytimg.com/vi/zeVuhlKWRfI/hqdefault.jpg",
-        "published": "2026-06-13T03:50:57.000Z",
         "summary": ""
       },
       {
@@ -1743,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Opus 5 + Claude Voice Released (It’s basically Jarvis)",
+        "url": "https://www.youtube.com/watch?v=Hv8YGUXZY1g",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-07-25T20:28:01.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2-alpha-15",
         "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/v2-alpha-15",
         "source": "MCP Inspector",
@@ -2209,13 +2217,6 @@
         "url": "https://www.youtube.com/watch?v=mm3Ybi-9cCw",
         "source": "YouTube · Alex Finn",
         "published": "2026-06-13T05:53:28.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Why the Government Just Killed Claude Fable 5",
-        "url": "https://www.youtube.com/watch?v=zeVuhlKWRfI",
-        "source": "YouTube · Riley Brown",
-        "published": "2026-06-13T03:50:57.000Z",
         "summary": ""
       },
       {
