@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-07-27T20:58:30.615Z",
+  "generated_at": "2026-07-27T22:47:34.549Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Position Open Weights Models",
+        "url": "https://www.anthropic.com/news/position-open-weights-models",
+        "source": "Anthropic",
+        "published": "2026-07-27T21:55:20.000Z",
+        "summary": ""
+      },
       {
         "title": "Cognizant Anthropic",
         "url": "https://www.anthropic.com/news/cognizant-anthropic",
@@ -135,22 +142,72 @@
         "source": "Anthropic",
         "published": "2026-07-20T17:36:28.000Z",
         "summary": ""
-      },
-      {
-        "title": "Introducing Claude Tag",
-        "url": "https://www.anthropic.com/news/introducing-claude-tag",
-        "source": "Anthropic",
-        "published": "2026-07-15T22:12:10.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Creator of Anthropic's Claude Code wants you to stop micromanaging your AI - Business Insider",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWE9HZ3gzNnZRMTEyWkc5RXVRT0RWMjB4MHcxZDZzX0lzMHVGbi15cU5HQUFteFpwdXBGUGFDQ3JhbmhLbVZ6VkZPU1lHR01PVzJhV0RRVW52ODQ0R3JrOFFmMmVuRWpXNmJjaHNLV1Z1ckxqWU10LUxfbThhVFB6TFV4ZkN6N0t0SDZjSFZ5WVVoR0ZlYWRYZ0NiTXgxcnlvcHViNHFHalI?oc=5",
+        "source": "Google News",
+        "published": "2026-07-27T22:08:10.000Z",
+        "summary": "Creator of Anthropic's Claude Code wants you to stop micromanaging your AI Business Insider"
+      },
+      {
+        "title": "Our position on open-weights models",
+        "url": "https://www.anthropic.com/news/position-open-weights-models",
+        "source": "HN · 149↑",
+        "hn_id": "49076057",
+        "published": "2026-07-27T22:03:49.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Chats Popped Up in Google Search Results. Who's to Blame? - PCMag",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOS29Hb0tzNEhib1F1M01VMnlWT2FRSy15U2drU3dTcnI4dEcweGhFLWZpWE9qSUozM0RDMmdmUThPM1luRmFPYUp4VWxCZXEwaDQwaUt1M29KNW5xMDhuRDI1bml1Wm1TektKc2hTRUFReF9KNGYzOE5zelpyYnZ5TzJoNHgtWjhhT1h6Z1JfRWd5Zw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-27T22:01:45.000Z",
+        "summary": "Claude Chats Popped Up in Google Search Results. Who's to Blame? PCMag"
+      },
+      {
+        "title": "Claude Shared Chats and Artifacts Indexed on Google Search After Anthropic Share Feature Error - NewsCord",
+        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNaDZxcjJSMFhxWmQySUZ6N0dfX0tZb0RkZGtiNld0VG8yV0Y1WXJGdnFocV9kNy1RbEdZTVc3NU9SSmk4YlBmMGk4Z0lPOXpHdFdpeFNWZTJzdWE1dk4yRU9XUTFEdHQ4Zlh1QjE3dmg4N1loRDNnWVFBQkVNWjUwNXd2eXNNcFBHcm1FWU5La3dhRHYxX2dFeTFLdHBwUWkyTFRhRHdQa3R4SUo3QTJMUkoxMVhhYUZzWjFraEhHMmJhSlU3RkpKU1k0TkF4NHN2Z3hnaHFnYUhHS3ZZRVVYMkZiREkzVDA5U1E?oc=5",
+        "source": "Google News",
+        "published": "2026-07-27T21:35:46.000Z",
+        "summary": "Claude Shared Chats and Artifacts Indexed on Google Search After Anthropic Share Feature Error NewsCord"
+      },
+      {
+        "title": "Ever shared a Claude chat? It may have appeared in Google Search - Android Authority",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNa0d6MWl0RFdWWjdRc3JZOFVWWU5hNVNsNVFVUVZaSUMyVkY2ZmpoSTF0QUNxTlZaY2p4Zl9xSlp3b1lIT1ZVclhSSzcxUnl4M3hIUjR5NThidzR4ZU9LN3J3WWZiRzhUNnE0MkQ0d0Zza1RQQWVRRTVNOU1OOGJOc0pDdmk?oc=5",
+        "source": "Google News",
+        "published": "2026-07-27T21:26:00.000Z",
+        "summary": "Ever shared a Claude chat? It may have appeared in Google Search Android Authority"
+      },
+      {
+        "title": "Shared a Claude conversation? Google may have seen it. - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE0zYkkxX3lCelN1bWhUTmtvQUNxbFBmTUhKa3lXdjIxSUhVSVFPbDlKSUNDczB6UC01RUctRFBuTklYa182U1hMbC1ZbHA0MXVmYjByU0R4MzlpemY2VGdReXJPb0c1RV9JZWd4Qm9pcGZIdWM1cXFr?oc=5",
+        "source": "Google News",
+        "published": "2026-07-27T21:09:34.000Z",
+        "summary": "Shared a Claude conversation? Google may have seen it. Mashable"
+      },
+      {
+        "title": "Exposed Claude analysis agrees with Ralph Rosado on Bayfront problems, but not his solution - Florida Politics",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPNGNKcnFHVHQ3RFlFWURWRHNxYUtPSGxUZ1FZTU9jemJJZ1F3dW9Qb0dEVFN0UjZubUdVQ2ItNzhTTHpTWUx4WEtyVktDcl92Y0dDSXl2OFRvbmQ0aHR1aHNvNGNSYmI0OU81TWhDdzZLOGFMajF6Z1F4WmE3VkxWRFI0QjBRMjFKMzBDMFVvd3dsVkdNeVNobDN0V0FIUndWX1pMLW0yUkRyenk4bDUyZWxBYWdZNk5KVnEzNlA3OS1XYlpxcm1DeVhRMHdGalE1?oc=5",
+        "source": "Google News",
+        "published": "2026-07-27T21:07:08.000Z",
+        "summary": "Exposed Claude analysis agrees with Ralph Rosado on Bayfront problems, but not his solution Florida Politics"
+      },
       {
         "title": "Impostor Chinese models pretend they're Claude - The Register",
         "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbmFvcFg2VjlNTEFhQ1hiNVBNY0dCc0MxVHA1US1FT0ExVy1RZW1ONzU4S3A2M3RPVUZPdTNlRXl3eGFFbmU5bkF4RFVlTVZ5UnZReTBnaGQ1MUtWeUxQV3ZSUXZXSS1uMXZhbTJFSnRjd0wtRU93RjkyU0w1Q045VkRGWUE4VVl3ZEF0ek1QdlhMbW01R2hLWkNPQnNpSkRYU1lGMQ?oc=5",
         "source": "Google News",
         "published": "2026-07-27T20:43:01.000Z",
         "summary": "Impostor Chinese models pretend they're Claude The Register"
+      },
+      {
+        "title": "Claude Shared Chats Exposed on Google Search in Privacy Breach - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOSWVRUUZjYjg1bmpMS1k5SUwyLV9FTzJzSVpkcWpfb2tWeTluMTlWd21uQ1hSckxhNjZ3ME1qakxvYVBaMm05WnVYRXZwNjBsc21WdDBwcENGV2g2X0NGNzZqZGQwd0pMYkxqVXBRVGUzcmZiZ2pzWHVnNnUtVEFOM2hhLWhxVDJ6QTQtQlVwOEwwQmdBZ3RtR2tDNA?oc=5",
+        "source": "Google News",
+        "published": "2026-07-27T20:42:00.000Z",
+        "summary": "Claude Shared Chats Exposed on Google Search in Privacy Breach The Tech Buzz"
       },
       {
         "title": "Private Claude Chats Exposed in Google, Bing Search Results - The Tech Buzz",
@@ -170,7 +227,7 @@
         "title": "Anthropic Exec Shares How She Uses AI to Help Manage Her Team - Business Insider",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOOEUyQS03Ry05NlF2Qll1VkJBVHRrOVlVbVE0UUVuREF5RFQ4ZjFpMm04cEZBcDRYT0ZGc1lBQlh2dGhwaEJreDVNSUllMGJqbnlwaXlXNS1xTk5rYlB5MVFkRUdMd3o2UVdrdFpjUUV5RDFyZERhY0hiWm5OQzBhb0V0YzROaU9Cbms5Mk1lX3ZrVzVJMWZ1VQ?oc=5",
         "source": "Google News",
-        "published": "2026-07-27T20:26:15.000Z",
+        "published": "2026-07-27T20:27:16.000Z",
         "summary": "Anthropic Exec Shares How She Uses AI to Help Manage Her Team Business Insider"
       },
       {
@@ -179,13 +236,6 @@
         "source": "TechCrunch",
         "published": "2026-07-27T20:19:42.000Z",
         "summary": "The issue appears to have originated from Claude’s “share chat” feature, which allows users to create links that enable anyone with the assigned URL view a conversation or project."
-      },
-      {
-        "title": "Shared a Claude conversation? Google may have seen it. - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE0zYkkxX3lCelN1bWhUTmtvQUNxbFBmTUhKa3lXdjIxSUhVSVFPbDlKSUNDczB6UC01RUctRFBuTklYa182U1hMbC1ZbHA0MXVmYjByU0R4MzlpemY2VGdReXJPb0c1RV9JZWd4Qm9pcGZIdWM1cXFr?oc=5",
-        "source": "Google News",
-        "published": "2026-07-27T19:41:44.000Z",
-        "summary": "Shared a Claude conversation? Google may have seen it. Mashable"
       },
       {
         "title": "Cognizant Deepens Anthropic Alliance to Scale Enterprise AI Adoption - HPCwire",
@@ -234,7 +284,7 @@
         "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPdmF0Z2hIVUJKTkp0Q09sT1RkUThycVdCczZHQU1SbVQwQW9ITlJEVURfRlJMRFNIMUhMbjJIejZqVHo1STFkZjgzM1dqemZ0cEttVTBLTm5iNUVfV29JNjhjMGhwaVVZZjVLYmt5c3F0M21qTnd5YWJ5NV9kOTB0LTJDYWlCdkVrdGZ2QVZqLWZYZTd4X0VMMmxjVXVhcHJyak1oVVR2VXdST040NWY0VWlKWmI5NkRfM01JMUFIb2ZfQW9wZWxEc0pCVnIydXRORW5tRm5LRDZVZHNTa3Q0bFlGaw?oc=5",
         "source": "Google News",
         "published": "2026-07-27T17:20:00.000Z",
-        "summary": "Users’ seemingly private conversations with Anthropic’s Claude showed up in Google search results Fortune"
+        "summary": "Users’ seemingly private conversations with Anthropic’s Claude showed up in Google search results Fortune A Whole Bunch of People's Claude Chats Are Publicly Accessible Online, and There's Some…"
       },
       {
         "title": "Claude Cowork Sandbox Escape Exposed 500,000 Mac Users - SQ Magazine",
@@ -251,11 +301,18 @@
         "summary": "Cognizant Expands Partnership with Anthropic to Embed Claude in Industry Platforms marketscreener.com"
       },
       {
-        "title": "A Whole Bunch of People's Claude Chats Are Publicly Accessible Online, and There's Some Wildly Private Stuff in There - Futurism",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQSzlMeGpBOXdJYWJkSmNwWXYxcllBSVVEWm84ekRMVGNZYTE5aXJwRkhKVjRySjBUbVppakRYb3RtYkFJUFVFTzdKTm8wc0kyVFZCVnJrMUtLdEdxejVub1ZfMElyVXd1c0RCcjI3aU9kN1FtWkthald6Rkk1bmppZzNOcw?oc=5",
+        "title": "$1.5B Anthropic settlement resolves AI training lawsuit - Top Class Actions",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZFhPSVZNaEI1dEFkUGk0VmdOVDhhNFJmel81TkctdTVBT293SEJTVlFSQnlBU2lrNjRlMDlobEZpeEVieTFBbGRnODNpRjBwNkpsSy1sSmU0d216eUtGd0YxX2RIdE9pWGs0TmoydnpyUEs4cVNNYU1mTXVBS1h1ejBkR0NjWlVYbFY0eHBkdDctNUNCRzRFUi1RSkJfUlN1V1dYTVJjMHpWN1VKRmZZNHl2S0ZNOXc?oc=5",
         "source": "Google News",
-        "published": "2026-07-27T15:10:17.000Z",
-        "summary": "A Whole Bunch of People's Claude Chats Are Publicly Accessible Online, and There's Some Wildly Private Stuff in There Futurism"
+        "published": "2026-07-27T16:04:39.000Z",
+        "summary": "$1.5B Anthropic settlement resolves AI training lawsuit Top Class Actions"
+      },
+      {
+        "title": "Tech industry giants say US must embrace openness, transparency in AI - Cybersecurity Dive",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQQ19MekhfRVFjV2xPOXdQcFQ2TWRzQW9rRmhaQjlEZXdyMlVYdWNQWktPQllxZURDdWZjTWp3bXRpYVN2ZWhrQkdMUHE1THlyVmNiVWtrY3d1MEZsWXIyTFo0SmY4VUJEYTh1WGNCSG1YeHFWUEZqTjBTV3RGT2ZoeFZsRXZJa0Z2eWhpRDVQRklLczU4VVE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-27T15:54:22.000Z",
+        "summary": "Tech industry giants say US must embrace openness, transparency in AI Cybersecurity Dive"
       },
       {
         "title": "Cognizant (CTSH) Expands Partnership with Anthropic in Claude Ne - GuruFocus",
@@ -263,62 +320,6 @@
         "source": "Google News",
         "published": "2026-07-27T15:05:40.000Z",
         "summary": "Cognizant (CTSH) Expands Partnership with Anthropic in Claude Ne GuruFocus"
-      },
-      {
-        "title": "Uh-oh: Some Claude shared conversations and Artifacts appear to be indexed and publicly accessible on Google Search - VentureBeat",
-        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQeUdIYUU3dXhjZ0l3NWEzS0VrdFpNdGdWOXFrbWtNWWdnbTJ5MEpvMFNpYjBDS0VvZVZ6bEpVczRNTWEyMTlsWmJNWDdXcHgyRE9POXZubWlxZGxpX2wtUGl3MG52NEp4d3JuNFlkaGo0RW9OSkxHMFVRWndDZUJxX0lYS0wweE96Nnl3UmpHQ3FNM1JpaWt4MmZTLXN4OTYzdWp4Ml83YnFZX0lwWVFmMGg2TVJnSDhtS2RMc01yZ1o3eGdZZFpwVnhuTlYtWFF6cFNMcE1MT0p0TGc5VTJtejhXOA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-27T15:02:00.000Z",
-        "summary": "Uh-oh: Some Claude shared conversations and Artifacts appear to be indexed and publicly accessible on Google Search VentureBeat"
-      },
-      {
-        "title": "Claude AI shared chats indexed by Google - see if your conversations were exposed - ZDNET",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9RT2MzVGxkb20xYVBKV25FM05TT0I1RV80eHc4Q2V1MVNSOHZOaGt1Ui1ENFhEOUh4OWYybFk5WlY1NkR3Y2Rtc2ZsWHN1T2MtcTBvZWVuRnFfT1ZQRmlGQ1l5ZjBKVzRyV1FqSGRVb0dVVndIUlEzVmhCbw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-27T14:58:00.000Z",
-        "summary": "Claude AI shared chats indexed by Google - see if your conversations were exposed ZDNET"
-      },
-      {
-        "title": "Anthropic Updates Claude Voice Mode, Launches Opus 5 With Fewer Restrictions - AI Insider",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNQjBrbmRfRFVhT3VuOUlpcXBaaFNORDQ2aWN1OHNmY1otdWlBcW5xRjEtdDBlaklQU1ozUmxoaVp0Zm1FbVpfSnFKaGxROTZ6UGhKRzFjdmR4VWJ3UXloenJKY182ODRMSUVMOTR3MExKM2c4b0ZhV1UtT3JRU3dncmsxeUtOVTBIckJwdEM2MUhzRkhISzZQeWJiTVc3Uk1fZXg1enZNV2p4M3BXVy1udGtqQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-27T14:39:48.000Z",
-        "summary": "Anthropic Updates Claude Voice Mode, Launches Opus 5 With Fewer Restrictions AI Insider"
-      },
-      {
-        "title": "America’s AI Export Controls Are Making Realists of Its Allies - The National Interest",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOTnNUWjhPRGpubjl4NzVJVDZMRmtrNkhEcVVQbkZxcGhKUkJxdzNTN0kwdWdlNWwydWl2UEFuVTBPVHBuVGdEcFBPNEZsUTdiaktrcWs5VmxWbU1LTFh3WUVab1lDRkVyRTViejZ1LWtvYWlzd0hkdFJMenZfTUJUQ3N6UjhfcUhnUm9feWRqeUM0VmlsWkdxdnlLdU91aXloOVQ3Z0NDSQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-27T14:02:04.000Z",
-        "summary": "America’s AI Export Controls Are Making Realists of Its Allies The National Interest"
-      },
-      {
-        "title": "Claude Cowork can escape its sandbox, rummage through all of your files - AppleInsider",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMnM5OFg5aGJOcjRSRzNyZFVPb0lYaENlWVpmSUh1VUZwbFdfankyRjRfRE9qVUhhbmRqdV9XZGQ1aEhGWTlyUDFwbnZ5algxZjhzZDFGTWYyd3lkdURuQVBSZFVsSG9ZX0tQWjh2czRNYmhUOXhxWVZjd2Q1R1M1WVJ5QklmYl9seTRaeEc5aDNDVktqcDZnS0JvVlVsY2Utd3BxdTJkRDNocFdoX3p2YzYxSQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-27T13:58:00.000Z",
-        "summary": "Claude Cowork can escape its sandbox, rummage through all of your files AppleInsider"
-      },
-      {
-        "title": "Cognizant to embed Claude in industry platforms with expanded Anthropic partnership - ROI-NJ",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOQ2tnYUpOa2NIekRWR2Jzdi1oMGQtSF9lZ2tPMVlYb1UtQWNWVHZIREZOcHkzY0Z6b01vRE1yTGMwTjBhRGJRVWpDdVdlWjlDVS1VOWRpM2VUdUZRV1NpLVhLZ2ZpM3Q1amJsTVVNUThRc3dQR20yMU05c2pqTUVKVDBhUmlIS2ZKQzZQWG5HOEN3UW1RY1FPSlZYTHFXdzlKY0pETGw2YlBveWpwa3lXME1sOUdZN3IwajJ3VjBueHc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-27T13:48:14.000Z",
-        "summary": "Cognizant to embed Claude in industry platforms with expanded Anthropic partnership ROI-NJ"
-      },
-      {
-        "title": "Claude chats and workspaces turn up on Google, revealing avoidable privacy flaw - Cybernews",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1Odlg3Wk44LWZPeXZtYTlnd21QS2NVWk1BNkNoTXNVWlhmbDZrNXFnYXotOHFiUk9Ya0Q2OVZTbTlSY0R6SExiejh1bm4xckM5MkF3VUhMWlpLRFF4TzBkOWNUaGtTNVdRdkNVdS1tQnNOc0JqS3pz?oc=5",
-        "source": "Google News",
-        "published": "2026-07-27T13:32:37.000Z",
-        "summary": "Claude chats and workspaces turn up on Google, revealing avoidable privacy flaw Cybernews"
-      },
-      {
-        "title": "Cognizant Reaches the Top Tier of Anthropic’s Claude Partner Network - Unite.AI",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxObTVRM2NYWXVBNXY0X0tLMlR3X0Q5WURTSGs3ZU1sQ2tNeExyREpvUThtdEhvRS1RLWluTzN1R3pEWGNCQXhtY2o4U1YyQ1hSQU9HQW1KVUFfX2N3b2Y5Z1VqTnc0cXJTWmdJd01lRXZrNGp2bmJXUVYtMnhuNE1EMkdyaC0tNXJIdnRaT0VleHlfb3M?oc=5",
-        "source": "Google News",
-        "published": "2026-07-27T13:30:01.000Z",
-        "summary": "Cognizant Reaches the Top Tier of Anthropic’s Claude Partner Network Unite.AI"
       },
       {
         "title": "I Built a Claude Code Skill That Starts Any App (CONTINUED)",
