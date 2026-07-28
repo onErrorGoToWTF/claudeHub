@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T20:55:24.671Z",
+  "generated_at": "2026-07-28T22:47:53.397Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,26 @@
     ],
     "news": [
       {
-        "title": "Claude Mythos Cracked Post-Quantum Cryptography That Humans Spent Years Failing to Break - Decrypt",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0zTnZkQ2NsOWxqd1Yxb0JGdldsOEFvQ1VMc2lxUFdaM0l0Znl0VEFHVnAyR0dzb3dzVW9CalhqNE1Nc19naE82ZllCNHc0blFEbTN3RkxvQ0lxcWp0TUEzclFhYms4ZmtXSkgwY3BjbGdkZ0JoaXQ1d21Ba1NIUQ?oc=5",
+        "title": "Your public Claude app may be searchable on Google - Axios",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOcF9VUzlkZHZNbWhNekdoMmtVQ3hfSEIzOFVXMy0xMHZCcklaT3liekJNeWI2Y0Ywd3ZJYVY0SW50Vi0wZFF1TmJjTkZ1eVVHQUZBSmJQTFRlNTl1Y3YyRTZjQjB2cVFRRmdJT0JuMXJxVmdnUE0wU2FBTDlxNGJKZ2l3?oc=5",
         "source": "Google News",
-        "published": "2026-07-28T20:45:38.000Z",
-        "summary": "Claude Mythos Cracked Post-Quantum Cryptography That Humans Spent Years Failing to Break Decrypt"
+        "published": "2026-07-28T21:41:25.000Z",
+        "summary": "Your public Claude app may be searchable on Google Axios"
+      },
+      {
+        "title": "Anthropic publishes a practical key-recovery attack on HAWK-256",
+        "url": "https://github.com/anthropics/cryptography-research-demo",
+        "source": "HN · 31↑",
+        "hn_id": "49090083",
+        "published": "2026-07-28T21:22:48.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Here’s what Anthropic found when it turned Mythos loose on encryption algorithms - CyberScoop",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOOXVNbXBHYTZxbnJLU0QyeFQ0cFNVemdaTGZDbFdRTHczZFY3SExOVlMxOUZUQ2c4UWJHWkJwcU1hN2hRcEd1Vk0yUjh5M2lTUnFraFZrWTAxWmRRejd6bkVfamJCemNEU21iZFpxWG04NS1rR3pZQk9HOHRwUE11UTZtYw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-28T20:55:42.000Z",
+        "summary": "Here’s what Anthropic found when it turned Mythos loose on encryption algorithms CyberScoop"
       },
       {
         "title": "AI leaders sign statement asking the government to do something about automated AI",
@@ -167,11 +182,11 @@
         "summary": "Anthropic finds new cracks in the tech meant to guard Bitcoin from 'Q-Day' thestreet.com"
       },
       {
-        "title": "Your public Claude app may be searchable on Google - Axios",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOcF9VUzlkZHZNbWhNekdoMmtVQ3hfSEIzOFVXMy0xMHZCcklaT3liekJNeWI2Y0Ywd3ZJYVY0SW50Vi0wZFF1TmJjTkZ1eVVHQUZBSmJQTFRlNTl1Y3YyRTZjQjB2cVFRRmdJT0JuMXJxVmdnUE0wU2FBTDlxNGJKZ2l3?oc=5",
+        "title": "Anthropic says its Mythos model found vulnerabilities in cryptographic algorithms that secure the internet - the-decoder.com",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQLXNXeHlJa29YZ25Nb2JaRW42SHdyRHRuZlp4b181WDhYemlDVWQyYW0zZGN3blNsWUE4STFDZHpLeEZac3BpVjBRYzlKR28zcFhYNWZodzhOY2FhdExJa2hhc2hVZXVMYlI1ME5EbjZJU2VTcXNmWnZpbGZxdGkzZXRCWHhtSXZ1ZURWVlQ0TEhQUjNFR3Y2cFJLOUQ3WnhTQjVnMlE0cVVXOTZzRUlRQ0pjWVFya3NCVzMtV3JqX1QyaFBUdG4wazNsOA?oc=5",
         "source": "Google News",
-        "published": "2026-07-28T19:23:17.000Z",
-        "summary": "Your public Claude app may be searchable on Google Axios"
+        "published": "2026-07-28T19:15:02.000Z",
+        "summary": "Anthropic says its Mythos model found vulnerabilities in cryptographic algorithms that secure the internet the-decoder.com"
       },
       {
         "title": "Anthropic's Claude Mythos cracks weakened AES, breaks HAWK in cryptography milestone - Firstpost",
@@ -225,7 +240,7 @@
       {
         "title": "Discovering Cryptographic Weaknesses with Claude",
         "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
-        "source": "HN · 107↑",
+        "source": "HN · 149↑",
         "hn_id": "49087091",
         "published": "2026-07-28T17:22:16.000Z",
         "summary": ""
@@ -236,6 +251,13 @@
         "source": "Google News",
         "published": "2026-07-28T17:17:10.000Z",
         "summary": "Discovering cryptographic weaknesses with Claude Anthropic"
+      },
+      {
+        "title": "Anthropic's Claude found real flaws in encryption used by billions of devices - Startup Fortune",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVTRzV3ZnSFFUenpvTDl1LVNaTXg2dWVGVjVwT2pHOVNFUzEwc0hUMVA2djVjWjlERW9uOVVmM1YtNXFQcGZtVS1mMFFfQ0wzVGV5NXI3Um05aV9Xa2NHd1E1cy11T0ZISDNRMXV4ZERUekV5Z0lsZloxMzlpb21HdjNOeTZzSndHOE4tSHJWMjhXMk1kN1U2dW9wTTQtZE9SakE5LTZVaw?oc=5",
+        "source": "Google News",
+        "published": "2026-07-28T17:12:55.000Z",
+        "summary": "Anthropic's Claude found real flaws in encryption used by billions of devices Startup Fortune"
       },
       {
         "title": "First ChatGPT, Now Claude: Frontier AI Models Are Escaping Their Sandboxes - Decrypt",
@@ -264,13 +286,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Workplaces look for cheaper AI as ‘tokenmaxxing’ fades as a corporate fad - Boston Herald",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPRWgxemtoMlBZdXdweFNRd0RIYlQ1a2NZRHJVY2Rfc3VqUlF4M3lLSnJURTRnMUpCWGdBSGJYUm0zcXBzZEZRbE0xWG12YmlpM09aREJFWHNUZW5tX2g3ZTZWX1RaZy13S1lwNk5CLVBLNWphekd0SWxQTmYzQ01JQg?oc=5",
-        "source": "Google News",
-        "published": "2026-07-28T16:39:22.000Z",
-        "summary": "Workplaces look for cheaper AI as ‘tokenmaxxing’ fades as a corporate fad Boston Herald"
-      },
-      {
         "title": "SonicWall Joins Anthropic's Project Glasswing And Tests Claude Mythos 5 For Defensive Cybersecurity Work - marketscreener.com",
         "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQOVk3TERiV1Zrb0diTDdQNFhBMk15STVqU2wybWhLcGpqUU92WEpuZDVjclE4cDRxOU1NWlZLRno1amV1X19iVk5NR1AxQXVOaW5JVXdYQktNLXdITkNYMkFlUjJ5ZHRxQ0w4b3ZKZXZMMGcyRFNJdmpCWUdyRGxvSVdKVmhxT1lJd0F4MkZoTGNvWmd3NFBBZkFyelNzSjB2dk1obGl4STZOcl9aeHRiR0w2UG1ZTkhtSU9MT2lNNUNCcFlmbzRsMzFmQXlLdVB4Y05uVVI2c2h2VWpudkplWGMtTzMwTVk?oc=5",
         "source": "Google News",
@@ -287,7 +302,7 @@
       {
         "title": "Anthropeum – Where in the world, and when, does this human artifact belong?",
         "url": "https://anthropeum.com/",
-        "source": "HN · 114↑",
+        "source": "HN · 128↑",
         "hn_id": "49084989",
         "published": "2026-07-28T15:01:15.000Z",
         "summary": ""
@@ -319,20 +334,6 @@
         "source": "Google News",
         "published": "2026-07-28T13:13:37.000Z",
         "summary": "Amex GBT Launches Egencia AI Connector in Anthropic’s Claude Business Travel Executive"
-      },
-      {
-        "title": "Cognizant and Anthropic Expand Deal to Embed Claude Across Enterprise Platforms - CXOToday.com",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPdTd4YWwtQUM4dTRDZVZzdDRtVGJEeWhwTUFpVEJCY3lpTWpxTWQ3Vy1fdGpGWXRZcVYtTWJMQzJmamlyWTRmTklfSkNoT2Z4NXY4M3QxWmRiUmh1LUpHVTE2bTdiVDgxUFkxWEVQWUZvN0NXeFRWbUJYMENWQndsQm5zUGF5alREWm1VZ3NVYlkzMzdJTFlYWFA4dzNDU2szbHpTaEpSRQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-28T13:08:31.000Z",
-        "summary": "Cognizant and Anthropic Expand Deal to Embed Claude Across Enterprise Platforms CXOToday.com"
-      },
-      {
-        "title": "Amex GBT and Anthropic: Claude AI Debuts in Business Travel - AI Magazine",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPc1ZPS2ZKUVRyR3pfMnlKam8tMHBTVXgtOTRROEZ5YkhkUVJOdTlZV1VFZmZrWkk1b2N4cldFbGtaM0xUd0ZsLVp4RF9GdUhmUGMzTjZzX3hrODd5OEo1dTJRcE5GTUN0Si13aWFwYzlsc0g0TGV0eGxReUtLVFlhc3R2ZkgtV0JtdDYzYVFTazFPdjRp?oc=5",
-        "source": "Google News",
-        "published": "2026-07-28T12:53:34.000Z",
-        "summary": "Amex GBT and Anthropic: Claude AI Debuts in Business Travel AI Magazine"
       },
       {
         "title": "I Built a Claude Code Skill That Starts Any App (CONTINUED)",
