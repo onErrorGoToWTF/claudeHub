@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-07-28T15:56:41.655Z",
+  "generated_at": "2026-07-28T17:19:10.397Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Discovering Cryptographic Weaknesses",
+        "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+        "source": "Anthropic Research",
+        "published": "2026-07-28T17:10:51.000Z",
+        "summary": ""
+      },
       {
         "title": "Position Open Weights Models",
         "url": "https://www.anthropic.com/news/position-open-weights-models",
@@ -135,16 +142,49 @@
         "source": "Anthropic",
         "published": "2026-07-21T23:43:25.000Z",
         "summary": ""
-      },
-      {
-        "title": "Rare Disease Research Grants",
-        "url": "https://www.anthropic.com/news/rare-disease-research-grants",
-        "source": "Anthropic",
-        "published": "2026-07-20T17:36:28.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "An Anthropic Claude AI Model Finds Flaws in Tough-to-Crack Encryption Algorithms - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMUZ6UGlFUVFUZk51VFBqdW9TcThwY21DVDRvVkhVRWJSNnM2LUtBQm52MC1TcVhyS1hXMWpmRVhNNkM0cVk4WFVsWG1nRVR0bVJnTHk4eWxMZU5SQUtVRVlzaHVPMHZ3bHlSLXRHRlFjSUQ1Ylo2V3JMOUlnNUh4b2dBVzhBOFFzN0RtcHJhdE1fUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-28T17:00:06.000Z",
+        "summary": "An Anthropic Claude AI Model Finds Flaws in Tough-to-Crack Encryption Algorithms The New York Times"
+      },
+      {
+        "title": "Claude Opus 5 Review: What It Actually Changed on a Real Job",
+        "url": "https://www.youtube.com/watch?v=Gr_QNYJ1mFU",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "Gr_QNYJ1mFU",
+        "thumbnail": "https://i.ytimg.com/vi/Gr_QNYJ1mFU/hqdefault.jpg",
+        "published": "2026-07-28T16:59:22.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "First ChatGPT, Now Claude: Frontier AI Models Are Escaping Their Sandboxes - Decrypt",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPMExJcjdQcFQxY3lZWDM1V1JpT0NtSzNYZTJNNWxaMVBkNUg5MnpMeWZrOHBKdS1vSmxtUm5yNHIwdm1XdU5JVDA5SDdTVEp5ZEJyLTFFTmlGMTBXTEJCbS1vQWpaSE41VEJfLURFU0xldlByX2N6LXpVZ1hWN1FvTWFR0gGKAUFVX3lxTE5UR1FvbGoydUljejR0cUU0WFotem5PNzNMYVd1a2p1T2xhLUphZnloSlVmUUswQkNMcTlBMFVQcUhZd1dOX1o4d2tnaXRzUkMxNUZESzB3aUZibllPTHFLU1hpZlJidGkzcmJmd0lpZ2EwSFNLZzVNWUdSODI3enFaXzRRR3BNa0NaUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-28T16:54:11.000Z",
+        "summary": "First ChatGPT, Now Claude: Frontier AI Models Are Escaping Their Sandboxes Decrypt"
+      },
+      {
+        "title": "First ChatGPT, Now Claude: Frontier AI Models Are Escaping Their Sandboxes - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPQ1BIdW9scG9tcTVzRlNYVFlySlJxa1ZlRWx2eVhlb2paNGc3c3RIMDBHZnA0a3BKUGxJb2daMTZHamJfZTFhTmV6V2RiclBzNDJvb3lsY1pza1J4emhMemRwODRpWEhOTVJnZXdnSnFkNUtWNHVaX3FPWmN4aWVlTGltal9BeWg4aDNGRExjWGxJcEFk?oc=5",
+        "source": "Google News",
+        "published": "2026-07-28T16:54:11.000Z",
+        "summary": "First ChatGPT, Now Claude: Frontier AI Models Are Escaping Their Sandboxes Yahoo Tech"
+      },
+      {
+        "title": "OpenAI, Anthropic Staff Share Letter Asking US to Help Pace AI Progress",
+        "url": "https://www.bloomberg.com/news/articles/2026-07-28/openai-anthropic-staff-share-letter-asking-us-to-help-pace-ai-progress",
+        "source": "Bloomberg",
+        "published": "2026-07-28T16:38:33.000Z",
+        "summary": "OpenAI and Anthropic PBC employees are circulating a petition that calls on the US government to support a mechanism that would help “deliberately pace” AI development to prevent the technology from…"
+      },
       {
         "title": "SonicWall Joins Anthropic's Project Glasswing And Tests Claude Mythos 5 For Defensive Cybersecurity Work - marketscreener.com",
         "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQOVk3TERiV1Zrb0diTDdQNFhBMk15STVqU2wybWhLcGpqUU92WEpuZDVjclE4cDRxOU1NWlZLRno1amV1X19iVk5NR1AxQXVOaW5JVXdYQktNLXdITkNYMkFlUjJ5ZHRxQ0w4b3ZKZXZMMGcyRFNJdmpCWUdyRGxvSVdKVmhxT1lJd0F4MkZoTGNvWmd3NFBBZkFyelNzSjB2dk1obGl4STZOcl9aeHRiR0w2UG1ZTkhtSU9MT2lNNUNCcFlmbzRsMzFmQXlLdVB4Y05uVVI2c2h2VWpudkplWGMtTzMwTVk?oc=5",
@@ -153,11 +193,26 @@
         "summary": "SonicWall Joins Anthropic's Project Glasswing And Tests Claude Mythos 5 For Defensive Cybersecurity Work marketscreener.com"
       },
       {
+        "title": "Your public Claude app may be searchable on Google - Axios",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOcF9VUzlkZHZNbWhNekdoMmtVQ3hfSEIzOFVXMy0xMHZCcklaT3liekJNeWI2Y0Ywd3ZJYVY0SW50Vi0wZFF1TmJjTkZ1eVVHQUZBSmJQTFRlNTl1Y3YyRTZjQjB2cVFRRmdJT0JuMXJxVmdnUE0wU2FBTDlxNGJKZ2l3?oc=5",
+        "source": "Google News",
+        "published": "2026-07-28T15:41:25.000Z",
+        "summary": "Your public Claude app may be searchable on Google Axios"
+      },
+      {
         "title": "Private Claude Chats Showed Up In Search Engine Results. A Missing Web Setting Is Drawing Scrutiny - International Business Times",
         "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOQ1IwVVoyclh2eVRYbkNSaWJSUm54b1NxT01sY1p4X21ETzZ3UllBWTFVa3F2cm9NNkRRZDZiS2EydV9CMjRodnNMWUROdzlkWFJPSm1BclZ4NklRYWcwTmR1MkJIR0JyWFZpQ0h2ZVBsNENucTBlOUtqcFMyakZlZ2ZwaUZLVThDTmZMTlcteUViZkNsX2JFUkFzWDVtUWthZjFQVlEzeVNWM2dpTENuZHlIQzlKYkdzSkE?oc=5",
         "source": "Google News",
         "published": "2026-07-28T15:32:20.000Z",
         "summary": "Private Claude Chats Showed Up In Search Engine Results. A Missing Web Setting Is Drawing Scrutiny International Business Times"
+      },
+      {
+        "title": "Anthropeum",
+        "url": "https://anthropeum.com/",
+        "source": "HN · 31↑",
+        "hn_id": "49084989",
+        "published": "2026-07-28T15:01:15.000Z",
+        "summary": ""
       },
       {
         "title": "Anthropic’s Claude Code Reigns Despite Rising Interest in Codex, Open-Source Models - The Information",
@@ -174,18 +229,18 @@
         "summary": "ICON Announces Multi-Year Anthropic Collaboration to Expand AI Across Clinical Trials Yahoo Finance"
       },
       {
+        "title": "Workplaces look for cheaper AI as ‘tokenmaxxing’ fades as a corporate fad - Rutland Herald",
+        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNRHk1Q29mZ000a0J2b0V1NmNFdTRxUGNkMVFUWDJOYkdRMWlwYWVHRk5zTllkX09pZ01xRF85UEVlV2diX3J0ZG9UU2dZdnVBMVp2YVpDSjloTXpFMFFGVzViQ04zcmF6RHY0dGNwS203eFl0N0JDZkp1RHh4ZGt4cHpQajlmSkNHUnRCWmNTdkxLb2dlcWZhbnJNZGVqY1NYQ09fOFdna0ZDVGszaExyaU4zdXBfT0Jod2RwQ2pBYWc3aUxuX2xPWUZOcS1jZ2NxbW1wQjMzamt3SXZuYkVNZjZ4VzZnajJNWnJrOERpWS1hLVVTcDJOTg?oc=5",
+        "source": "Google News",
+        "published": "2026-07-28T13:32:56.000Z",
+        "summary": "Workplaces look for cheaper AI as ‘tokenmaxxing’ fades as a corporate fad Rutland Herald"
+      },
+      {
         "title": "Claude AI Chats Appear In Google Search; Anthropic Clarifies Only 'Shared' Links Affected - NDTV Profit",
         "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPeE94RkxEN0ZkV2QwWWJvNk5ja1NQdkExVmotN2JHZklldzkwSnFncVdveGM3anJiSHpaZGdIXy1aTklhb3Q2a05VOG5idHUxMVF0N00tZDFFalBDZzlvQ3hieS1LY1k3YXhJRmNiOWJYeUljNG9fb1YyMlVXN1AyV3B1V0lsY3ZjM0Roc0l1aGh4UUx6WkFKbm05Yk5nTVpKcFVQakdGeGJOckVfRGRSWW9ZWWp5dFBWbllqTzV4RFVBME1aTlNoLVFHWG1qUdIB1gFBVV95cUxNVnV4Y3BqYXUwajhpbGdhQTlFNUtEdEZBdUVvRE1mT3paU081dUpDRnEtUDFOSFUtdmx6d25xMVZGd3pCbHhmSV82R3hvQkdiMldvY00xTDJVNk1pNmtZSWhfcy1HZHk1d1JBZTBVRTlaaTMySS1nLWwwMEJ0VFgtOTRtNGhKbGI5Nm5ON3ZhV1J1UUY1NlkyT1AtNnRDZnVTWUp0dS1xdHg4bVhRQXJIYlpSNXRXeFQxR3pUNUtYVjl6Q3otNnJyQVFKU1NrZFBYT2ZKcEp3?oc=5",
         "source": "Google News",
         "published": "2026-07-28T13:31:47.000Z",
         "summary": "Claude AI Chats Appear In Google Search; Anthropic Clarifies Only 'Shared' Links Affected NDTV Profit"
-      },
-      {
-        "title": "ICON to Deploy Claude AI Across Clinical Trial Lifecycle - Contract Pharma",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOeHdYOGxiMGg2c3BzY3pTZ3pWUzNvOHZRWUVkb1Z1QzV6SjBKWXN4bFZ6bS1ReFdjQ1FMQlRtemhVVC00X0VIWkQzREpfa1JzOTlaci1GWU5lMERmMnlfN3huVVpfLURPNzFpVFZlZW1sQW9nNVBkdmczMjNyTmdTSmhNRmJ4Skx5bnI1UTFVS1hjdXRpR3p2NzF0VHk5NGt3SHRyMw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-28T13:29:01.000Z",
-        "summary": "ICON to Deploy Claude AI Across Clinical Trial Lifecycle Contract Pharma"
       },
       {
         "title": "Amex GBT and Anthropic: Claude AI Debuts in Business Travel - AI Magazine",
@@ -223,11 +278,11 @@
         "summary": "ICON announces multi-year collaboration with Anthropic to bring frontier AI to clinical trials Business Wire"
       },
       {
-        "title": "Anthropic says Fable 5 extended - NeoTeo",
+        "title": "Anthropic says Claude Fable 5 stays until July 19 - NeoTeo",
         "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9HSlc1ckFVLXpQaHVfQVh6Zzg0UnoyQmMya1NDVW9BZVh5Z2RvcnFvTjlfS2ltcVl0MVRkN1JicFVsMEhHcjFhb09wYmdvVTA4cG94Z0VPQVd2VWFtY3N6NG9hc2h4dER3c0RJNw?oc=5",
         "source": "Google News",
         "published": "2026-07-28T10:23:09.000Z",
-        "summary": "Anthropic says Fable 5 extended NeoTeo"
+        "summary": "Anthropic says Claude Fable 5 stays until July 19 NeoTeo"
       },
       {
         "title": "How Anthropic ended up paying $1.5 bn for training Claude on pirated books - Business Standard",
@@ -272,53 +327,11 @@
         "summary": "Shared Claude chats found indexed in search results Resultsense"
       },
       {
-        "title": "Best AI at the End of 2026: It's Not ChatGPT by a Long Shot, According to Prediction Market Bettors - Benzinga",
-        "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQY216Uk1lV3N3cmMzMS1YSkE0N0NTNnVhUGtoM1hYLTh3UGJWd0F3RnVNNnJEVzhkUHhURVUzTG9wNm12dUstTkhLX1dRX0VSQmppLUNLZXVMN01lUGt0d3RwaXFxQ19TRU9nRXN3a2ZRdVVTMnByZGwtaGFXQ29PV1FERUl5M0FINzhMZ1RpRXZ6UkxYYlNKTV9vM3M3TlNIc0drbW1peGdxYkpMYk96bkRYeGZLYnlkaFJ2b2VYZWM4VkdwUW9COVZBbWowR1EwdHYxZGVHNmRzSXBNNXVBbU9aTmNadHR0UGVxN240b1YwbFFkMnc?oc=5",
+        "title": "Some people's chats with Claude AI found to be publicly available online - BBC",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9WbnpDZDliX05XS1E5bnBmZ201cHc0alFOb0Q4MXFsTXYwem9ySkg4R0luZDhIQmpaYXRzbnV2dno3cEN4NEZXZHBrWnlQMGpxLWdEbnB6Q2Z1dw?oc=5",
         "source": "Google News",
-        "published": "2026-07-28T06:06:50.000Z",
-        "summary": "Best AI at the End of 2026: It's Not ChatGPT by a Long Shot, According to Prediction Market Bettors Benzinga"
-      },
-      {
-        "title": "As users private chats with Claude appear on Google, Anthropic says: They are to blame as ... - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPNVlaWDhqX0dBNjNBbV9XTkc5b3BNZ3ZOMWlONkJXVmozNUx1OEFPQ1pfd3RibmVUVG1McExSTTZ2Y0NuYWgxZVBsa1k1am1Za3FDRVFzS3hsOFNWbTNkRlFRSF83cG1scXU1SUU5ZE9VMmV4MkFJNGY3bi14ek40NFBLbVdpMy1UMjVNM0NXNWI3NlI1eVpvN2dORlRLR3BrenBhanVUdl9xSFBKdTkzZ3ZoTkVhZDNQV0ZJRVZHRUVNUnFuUWVBMWtPa3RjdUZOd3FabTJiSzdFWVUyWmp4dmdhU1FpUFc5RFpuMURydTdiVUh3M3ZydHBMRGhJQTNp0gGGAkFVX3lxTE9qMjdrWk9KRXFSR0dMSldwdEd6QXoxWDJmYThSSEdtNU1mRVJDbTVXcWVfU1NfeUxQTTNGYmRlek0wV2ZLcUMwSXRWYjduSXpITldsTVhJNExpZjI4MEtOakl2S1locVNrTF90aFRBUXNzbG1Nd09yeHlQWjlpbkkxM2tUcjgyLVc1dExmSFZSMGpKbTBMYktsZGN5N1F1QTdqYllLVDhielBxNUNTakNHN0E4M3BYSUYycWhKNEtlVEJhcm9lWGxndlU1RzNpMUlwZXJqNDRiUm1ZQS13anNSaE1JOVlrN04xRlJ2bUtYQ2VTSVJIVXRtSjVDNjFoaTZqdDdLWWc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-28T06:04:00.000Z",
-        "summary": "As users private chats with Claude appear on Google, Anthropic says: They are to blame as ... The Times of India"
-      },
-      {
-        "title": "A flex in corporate America, AI ‘tokenmaxxing’ fades as workplaces look to cut tech spending - myMotherLode.com",
-        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOdHVRVUZFZmdGT09PYkRnNk5rT3YtRll6a1M2b0tvWlFDWVlhOFZHSVhWTnBQZlZZdFQyR2hQci04RDVZR01hb2RRWnpRLVBxUUZael9rekVuS0VsOUxXTnFuSzd5RldNb3M2UF9SdFduQUJqekJ2a3ZuN0hrZlRvbC0wMGZmejh4aENxMXJzTTctbnE0STU2eDV3WWZGeEprMGI5alFhQm5MeGU1X0RpbjZaN2M5Wld4MXNtVFM2LW1aVU1sMHZvZWthc2h3RDBzb09FZDlUMmZxd9IB3wFBVV95cUxQd3dCaXRNb0JUYW5YNEtmSzJaM3FiaHF3ZzlyU2VwUkZKaVphWmg3M2JxeGFxRUZ4Q2JVSmNUeC1PWThXSmo5TFlfVUM0aFhiTEQwTm4wb2MtX1VEMDMyNGluQy1hcVJqaXF3eE1QelRzSHpvTHBHcVB0RGgyU2x6UEdXdXp3VmFLYTlJdzFvUVR4aTBacXJ5SXpIaEQ1RE1uNjdPV2xfeXVlekU0dnZKSnJBbzZtZnI5SnFyMWZoX1EtNEZBWF9kcGxNRTR1VWVZS2xoZnYwZ0E3MGMxODNn?oc=5",
-        "source": "Google News",
-        "published": "2026-07-28T04:05:15.000Z",
-        "summary": "A flex in corporate America, AI ‘tokenmaxxing’ fades as workplaces look to cut tech spending myMotherLode.com"
-      },
-      {
-        "title": "Cognizant deepens Anthropic tie-up as Claude rollout grows - IT Brief Asia",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOWFlneklEQTFrZl9QZzM2Z2xScW8wbWNuZlI2cE0zRHZaZTdKang3NmJZNlNSNUVPRE04RkVpUklYTU9HamhkZHlYOHpaZEZvbmhFdkdpRC04LWtsMHFzbWZzbm5WUXl4V0JnQU9aazlqYUZ2YlBVXzdFbGIyLUdHRnZNS3l5VncxLTB3Sk1R?oc=5",
-        "source": "Google News",
-        "published": "2026-07-28T02:45:00.000Z",
-        "summary": "Cognizant deepens Anthropic tie-up as Claude rollout grows IT Brief Asia"
-      },
-      {
-        "title": "Claude Opus 5: Anthropic Launches New Flagship Model Across All Platforms - Basic Tutorials",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVUdLSTZNZllKQkYwNFAzXzBZME5lM19PWVVROGhWNkxzLXM4UW1fd2NvaE8zQjduUVpoaUVTSzZibnFRYzF0cjV3OGI2LS1YZjRMSzAycV9XaFJkT0NiQkNERFJxY2JpeVBCRTBwZV9BMmhPWUFxSlFqeE9rVm9wVWo2ODU2ek0tN3ZjTGJlelpuV21OakFjY1FET18zYWc0R2NXRGpybFVJQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-28T02:37:34.000Z",
-        "summary": "Claude Opus 5: Anthropic Launches New Flagship Model Across All Platforms Basic Tutorials"
-      },
-      {
-        "title": "Hitachi Slashes Cyber Verification to Hours Using Anthropic's Claude Mythos AI, Applied to Over 100 Social Infrastructure Systems - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8xRFNaMnRndFE2ZGphcDNoeUNDX1M5MWRSbU1wZU5IZHdJTm1nRWR5djFKYnpmcG1SSjFrOUZHT180MlA0MGNJS2ExSkR6QWNyaFcwTVVkMmlTUWwweTBDZzNVRnZTczJfemc5cUN5Zlc4b0hsZ3c?oc=5",
-        "source": "Google News",
-        "published": "2026-07-28T02:36:00.000Z",
-        "summary": "Hitachi Slashes Cyber Verification to Hours Using Anthropic's Claude Mythos AI, Applied to Over 100 Social Infrastructure Systems finance.biggo.com"
-      },
-      {
-        "title": "Anthropic's Claude AI shared chats appear in Google searches, raising privacy concerns - Notebookcheck",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQa29KeWlQbHBjemJfOXV5TUFIRzRiM2wyVTFIbWJZMXZGODdOWjExMmp2ZzE1S2pmbDRNeTBaMkJKV2g2alBCbFVUbl9CRFkycmlUMnhRZnNTbDRXNExGcHZNM1owTDQzaG5NOEptSmYzWGIxenlRS2lIMW1rRkhjc2tRb0U2Zk5rTlppZlFfZ0lOaUI2VmRERTVaTVplSFdCLTFvMFVOTXV6aXU4enhWbVFmdGJfb2F5UFZHOTV6enBZTThELVFLZGlR?oc=5",
-        "source": "Google News",
-        "published": "2026-07-28T02:07:00.000Z",
-        "summary": "Anthropic's Claude AI shared chats appear in Google searches, raising privacy concerns Notebookcheck"
+        "published": "2026-07-28T07:10:37.000Z",
+        "summary": "Some people's chats with Claude AI found to be publicly available online BBC Users’ seemingly private conversations with Anthropic’s Claude showed up in Google search results Fortune Claude Chats…"
       },
       {
         "title": "I Built a Claude Code Skill That Starts Any App (CONTINUED)",
@@ -685,6 +698,17 @@
     ],
     "youtube": [
       {
+        "title": "Claude Opus 5 Review: What It Actually Changed on a Real Job",
+        "url": "https://www.youtube.com/watch?v=Gr_QNYJ1mFU",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "Gr_QNYJ1mFU",
+        "thumbnail": "https://i.ytimg.com/vi/Gr_QNYJ1mFU/hqdefault.jpg",
+        "published": "2026-07-28T16:59:22.000Z",
+        "summary": ""
+      },
+      {
         "title": "I Built a Claude Code Skill That Starts Any App (CONTINUED)",
         "url": "https://www.youtube.com/watch?v=KY3DRceajYM",
         "source": "Leon van Zyl",
@@ -869,17 +893,6 @@
         "video_id": "OoIWdtqLNkk",
         "thumbnail": "https://i.ytimg.com/vi/OoIWdtqLNkk/hqdefault.jpg",
         "published": "2026-07-17T18:30:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Kimi K3 vs Claude for Coding: Frontend Arena #1 Explained",
-        "url": "https://www.youtube.com/shorts/85AxCkEWkOk",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "85AxCkEWkOk",
-        "thumbnail": "https://i.ytimg.com/vi/85AxCkEWkOk/hqdefault.jpg",
-        "published": "2026-07-17T11:14:17.000Z",
         "summary": ""
       },
       {
@@ -1163,18 +1176,6 @@
         "published": "2026-07-18T01:20:30.000Z",
         "summary": "What's changed Fixed single-segment dir/** allow rules like Edit(src/**) auto-approving writes to nested dir/ directories anywhere in the tree instead of only /dir Fixed a permission-check bypass…",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "Kimi K3 vs Claude for Coding: Frontend Arena #1 Explained",
-        "url": "https://www.youtube.com/shorts/85AxCkEWkOk",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "85AxCkEWkOk",
-        "thumbnail": "https://i.ytimg.com/vi/85AxCkEWkOk/hqdefault.jpg",
-        "published": "2026-07-17T11:14:17.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "v2.1.212",
@@ -1743,6 +1744,27 @@
     ],
     "claude_learning": [
       {
+        "title": "Claude Opus 5 Review: What It Actually Changed on a Real Job",
+        "url": "https://www.youtube.com/watch?v=Gr_QNYJ1mFU",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-07-28T16:59:22.000Z",
+        "summary": ""
+      },
+      {
+        "title": "2026-07-28 RC",
+        "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28-RC",
+        "source": "MCP Spec",
+        "published": "2026-07-28T16:48:26.000Z",
+        "summary": "This release marks the release candidate (RC) 2026-07-28 revision of the Model Context Protocol. The specification is available in draft form . For a detailed overview of changes, see 2026-07-28 draft changelog . Note…"
+      },
+      {
+        "title": "2026-07-28",
+        "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28",
+        "source": "MCP Spec",
+        "published": "2026-07-28T16:47:49.000Z",
+        "summary": "This release marks the stable release of the 2026-07-28 revision of the Model Context Protocol. The specification is available on the official Model Context Protocol website . For a detailed overview of changes, see…"
+      },
+      {
         "title": "v2.0.0",
         "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.0.0",
         "source": "MCP Python SDK",
@@ -2086,13 +2108,6 @@
         "summary": ""
       },
       {
-        "title": "Kimi K3 vs Claude for Coding: Frontend Arena #1 Explained",
-        "url": "https://www.youtube.com/shorts/85AxCkEWkOk",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-07-17T11:14:17.000Z",
-        "summary": ""
-      },
-      {
         "title": "v2.1.212",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.212",
         "source": "Claude Code",
@@ -2140,20 +2155,6 @@
         "source": "MCP Python SDK",
         "published": "2026-07-14T16:44:05.000Z",
         "summary": "Second v2 beta. Pre-releases are opt-in only; pip install mcp still resolves to the stable 1.x line. pip install mcp==2.0.0b2 # or uv add \" mcp==2.0.0b2 \" The documentation has the full tutorial and API reference, and…"
-      },
-      {
-        "title": "You can now manage the people in your Claude Enterprise (claude.ai) organization with the Admin API , in beta for all…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#july-14-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-07-14T00:00:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Release 2026.7.10",
-        "url": "https://github.com/modelcontextprotocol/servers/releases/tag/2026.7.10",
-        "source": "MCP Servers",
-        "published": "2026-07-10T03:39:07.000Z",
-        "summary": "Release : v2026.7.10 Updated packages @modelcontextprotocol/server-filesystem@2026.7.10 mcp-server-time@2026.7.10 mcp-server-fetch@2026.7.10 mcp-server-git@2026.7.10"
       },
       {
         "title": "ZCode + GLM 5.2 - Ship Real Apps Without Paying for Claude",
