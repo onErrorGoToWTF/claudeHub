@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T15:42:30.001Z",
+  "generated_at": "2026-07-29T17:00:47.187Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,20 @@
     ],
     "news": [
       {
+        "title": "OpenAI, Anthropic ask U.S. government to consider slowing down AI - The Washington Post",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQ1FRWDYxejU1Z3BFTVd4b1lKc0UzaEprOHpyU2pJTS1jamVvRVBLV1BIUW1sTGVfUktiZmNVenlqY0ljQlpKSUR4Z1FOeE5Hd2FlZmZlcUlDaUVxYlB6NGI1YXp6aUowa0o4TXJKeFNTMllEV25weHFRRE5pY29pMXE1WHRfUEc3M09BbHJCbGpjajJfbm9KdXVSM2N4Wm5oQ1dOT3k3SUpuNGEzQ3pCTA?oc=5",
+        "source": "Google News",
+        "published": "2026-07-29T16:32:58.000Z",
+        "summary": "OpenAI, Anthropic ask U.S. government to consider slowing down AI The Washington Post"
+      },
+      {
+        "title": "Anthropic is finding bugs faster than Microsoft can fix them",
+        "url": "https://arstechnica.com/security/2026/07/anthropic-is-finding-bugs-faster-than-microsoft-can-fix-them/",
+        "source": "Ars Technica",
+        "published": "2026-07-29T15:52:48.000Z",
+        "summary": "On an afternoon in mid-May, dozens of Microsoft engineers and their managers gathered online and in a conference room at the company’s Redmond, Washington, headquarters to discuss Project Glasswing.…"
+      },
+      {
         "title": "Enterprise AI's Biggest Opportunity",
         "url": "https://www.bloomberg.com/news/videos/2026-07-29/enterprise-ai-s-biggest-opportunity-video",
         "source": "Bloomberg",
@@ -153,11 +167,12 @@
         "summary": "Battery Ventures General Partner Dharmesh Thakker joins Bloomberg Open Interest to make the case for investing beyond AI hype. He explains why enterprise software companies that deliver measurable…"
       },
       {
-        "title": "OpenAI, Anthropic ask U.S. government to consider slowing down AI - The Washington Post",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQ1FRWDYxejU1Z3BFTVd4b1lKc0UzaEprOHpyU2pJTS1jamVvRVBLV1BIUW1sTGVfUktiZmNVenlqY0ljQlpKSUR4Z1FOeE5Hd2FlZmZlcUlDaUVxYlB6NGI1YXp6aUowa0o4TXJKeFNTMllEV25weHFRRE5pY29pMXE1WHRfUEc3M09BbHJCbGpjajJfbm9KdXVSM2N4Wm5oQ1dOT3k3SUpuNGEzQ3pCTA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-29T15:02:58.000Z",
-        "summary": "OpenAI, Anthropic ask U.S. government to consider slowing down AI The Washington Post"
+        "title": "GPT-5.6 vs. Claude Fable 5 for Physical AI, which performs best?",
+        "url": "https://juliahub.com/blog/frontier-models-physical-ai-evaluation",
+        "source": "HN · 30↑",
+        "hn_id": "49098388",
+        "published": "2026-07-29T14:56:28.000Z",
+        "summary": ""
       },
       {
         "title": "AI giants back employee-led push asking US government to ‘deliberately pace’ development - The Hill",
@@ -214,17 +229,10 @@
         "summary": "ICON partners with Anthropic to integrate Claude AI in clinical trials Clinical Trials Arena"
       },
       {
-        "title": "Anthropic’s Claude Mythos Preview Slashes Security of NIST Post-Quantum Candidate HAWK and Finds Faster AES Attack - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFByY0FqSnl6M0N2clVTNjdocVpDN3FvN3cxdUM3Qmx2eHpDdUg1R2ZLUTVianVmU21FVFIzUF9hR1BIVmE5amp0aS1QVWpDR0dJUGRKeGEyYmRsY0d5UnRyVHBXTDlZQTg1cU84UmRNcmo5N1hMUnc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-29T10:05:00.000Z",
-        "summary": "Anthropic’s Claude Mythos Preview Slashes Security of NIST Post-Quantum Candidate HAWK and Finds Faster AES Attack finance.biggo.com"
-      },
-      {
         "title": "Anthropic's lonely island - Axios",
         "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFAxQVhwcTk0YVQzU1BUeEwzX1d2RVJ4aVJydVY4eGxYbFlxMTVqdHd2UExnR01LYzZkWk1CNTEzR21PN0NJcFd1TWxid0Z0VmU1MnVxaEhwblpNaFZqa0VJUllNaWhLRHlvNWZlVVdSRjduZDlaU1NieXVlMA?oc=5",
         "source": "Google News",
-        "published": "2026-07-29T09:37:37.000Z",
+        "published": "2026-07-29T09:16:08.000Z",
         "summary": "Anthropic's lonely island Axios"
       },
       {
@@ -242,18 +250,11 @@
         "summary": "Claude Cowork Escaped Its Sandbox, And 500,000 Macs Were Within Reach Yellow.com"
       },
       {
-        "title": "AI Finds New Weaknesses in Cryptographic Algorithms, Anthropic Says - thequantuminsider.com",
+        "title": "AI Finds New Weaknesses in Cryptographic Algorithms, Anthropic Says - The Quantum Insider",
         "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNXzNybHF5cjgzQ0l0WEpFZnNZcWVnam5PdFZjS2V4ZU5GV2U1d0VsR0VLbmdQcE1OVjdLaURkNkd3NmFsbUk3NFVWSEZUQTd1OGYzeXpUa0VmYTNPV0VNY2tHMjdjVUdVTWx5cXhJNjFUektLeHdRTDBqUlhJemV5aUgzOXcxTUF2M3VwQkY4cDlqazBJRVJYdHpWRERENXZobDdVTnhrR2F1enJw?oc=5",
         "source": "Google News",
         "published": "2026-07-29T07:57:50.000Z",
-        "summary": "AI Finds New Weaknesses in Cryptographic Algorithms, Anthropic Says thequantuminsider.com"
-      },
-      {
-        "title": "Claude privacy guide: How to keep your chats and Google files safe - The News International",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObUV5cy15d29vS2NNVklxbFY1eXdzZ2tPSlFOcWNZWU1LVTV6cmZoRS1RSFdJSVplTndvMFk3Vy1JUFZNWF9oSU04eURwbnJSWVc1V1Etd09XLWZUaW5sNFFUanlfc05CbXRsVnF3R3pzcEd2NnViOFUtbmpBdS1aRzR6bnl4Z2tqSkstUnJPZGFPdDNjN1JEbHBTZXg4SjJWTmZraENGRC1CZ1U?oc=5",
-        "source": "Google News",
-        "published": "2026-07-29T07:51:00.000Z",
-        "summary": "Claude privacy guide: How to keep your chats and Google files safe The News International"
+        "summary": "AI Finds New Weaknesses in Cryptographic Algorithms, Anthropic Says The Quantum Insider"
       },
       {
         "title": "Apple iOS 26.6: Anthropic used Claude to find a Safari flaw - Notebookcheck",
@@ -291,18 +292,18 @@
         "summary": "As users' private chats with Claude appear on Google, Anthropic says: They are to blame as ... The Times of India"
       },
       {
-        "title": "I gave Claude Opus 5 and Kimi K3 15 impossible prompts — the winner surprised me - tomsguide.com",
+        "title": "I gave Claude Opus 5 and Kimi K3 15 impossible prompts — the winner surprised me - Tom's Guide",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPT0E5R0ZMVzNCMWxQVHo0QlZPQVc5RU9sRThQQ3RrV29jYm5VWnpUTGRIZFZHeG1ueUI0ZFFLc2d5RW5JajhvMG1UQVdpZjJieU9LeTJ4X1g1SHBDV3d0eXd5RF9ub1hZU1V2MlVtTi1vaFpYOVZOVXpTZzdxV2RNZEVrYUpFWGQzX0ZTam4xLTA5czlFMHIzWnJuLW5IOWxBdjVyc2JNVE96Wlk?oc=5",
         "source": "Google News",
-        "published": "2026-07-29T05:00:00.000Z",
-        "summary": "I gave Claude Opus 5 and Kimi K3 15 impossible prompts — the winner surprised me tomsguide.com"
+        "published": "2026-07-29T05:08:13.000Z",
+        "summary": "I gave Claude Opus 5 and Kimi K3 15 impossible prompts — the winner surprised me Tom's Guide"
       },
       {
-        "title": "OpenAI's Hugging Face Breach Just Got Worse As Anthropic's Claude Mythos Exposes Encryption Flaws - International Business Times",
+        "title": "OpenAI's Hugging Face Breach Just Got Worse As Anthropic's Claude Mythos Exposes Encryption Flaws - ibtimes.com",
         "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPYmFid2tOOU5rYWVXUmd6SkdfSTViMEdxdmttRGVLVTAtS3c0YXpiQXRSaGc1aFQ5emo3MFRMbmJkSHkyZlVycmFha3B0Y2E2RVZuZHp2NnZDOVpZNUxJbU9GT1pkRVE0X2xOX2tiaG1ZSTBla0VpaVhPREZZTXJZbm5na0RxRC1wVG9NMU9KanVzZ3QyR3ZZUk9zdlhsZXlacmJ2UEJRQQ?oc=5",
         "source": "Google News",
         "published": "2026-07-29T01:22:07.000Z",
-        "summary": "OpenAI's Hugging Face Breach Just Got Worse As Anthropic's Claude Mythos Exposes Encryption Flaws International Business Times"
+        "summary": "OpenAI's Hugging Face Breach Just Got Worse As Anthropic's Claude Mythos Exposes Encryption Flaws ibtimes.com"
       },
       {
         "title": "Visa used Mythos to hunt for bugs in its own payment network, then open-sourced the harness that made it possible - VentureBeat",
