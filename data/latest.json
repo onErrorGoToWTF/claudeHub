@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T19:05:19.759Z",
+  "generated_at": "2026-07-30T20:52:33.600Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,47 @@
     ],
     "news": [
       {
+        "title": "Judge says Trump admin still lacks evidence for Anthropic ‘supply chain risk’ label",
+        "url": "https://techcrunch.com/2026/07/30/judge-says-trump-admin-still-lacks-evidence-for-anthropic-supply-chain-risk-label/",
+        "source": "TechCrunch",
+        "published": "2026-07-30T20:26:38.000Z",
+        "summary": "A federal judge said the Trump administration has not presented enough evidence to justify labeling Anthropic a supply chain risk, casting doubt on the government's ban on its AI technology."
+      },
+      {
+        "title": "Claude’s Latest Upgrade Is Driving Some Users Crazy. These 3 Tweaks May Fix It - inc.com",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNNjFIRHJkai0ybkJVS2k2V3hSLUxEam92UXdNUUp1Q0pTUndlVlpuRDM5VnhTelp2UUtuSEVOMlN4RlV4a09RaF94MHhMQ2xJUTduWFppdFFUbGljNXQ5UDczdUFEYW84NUlKWEgtNjRra3BzTXVDN2NFUmtlSWxQc2p6NVhJX3pYQzNRUWV4dEVVbEl4Mnp2dWs5ZTBHZ1l3VEJ6OXV1R0U1My1iT1h5cXZwLV93UQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-30T20:26:10.000Z",
+        "summary": "Claude’s Latest Upgrade Is Driving Some Users Crazy. These 3 Tweaks May Fix It inc.com"
+      },
+      {
+        "title": "Anthropic Cut the Spines Off Millions of Books to Train Claude - DesignRush",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPQVZfNW8yNTR2T3V1eWpaQTJVUnRRNWRMdzhxVS0xV212QWdYRmpNZlllYVFCNC1wNUIxcVUtbWpMbXdwSEx2ckdKRmhWT1U2emgzRElNVkh3NnladTZmU0hBeTNIUFoyTURFUkdvSk5fOVhhanVjSGpxb0lGWi1IM0ZYOE94dmtSRUVQN1Fn?oc=5",
+        "source": "Google News",
+        "published": "2026-07-30T19:24:07.000Z",
+        "summary": "Anthropic Cut the Spines Off Millions of Books to Train Claude DesignRush"
+      },
+      {
+        "title": "Banks Line Up $15 Billion of Debt for Anthropic With Google Aid",
+        "url": "https://www.bloomberg.com/news/articles/2026-07-30/banks-line-up-15-billion-of-debt-for-anthropic-with-google-aid",
+        "source": "Bloomberg",
+        "published": "2026-07-30T19:20:22.000Z",
+        "summary": "Banks led by Morgan Stanley are in talks to line up $15 billion of debt for an Anthropic PBC data-center project in Texas, backstopped by Alphabet Inc.’s Google, according to people familiar with…"
+      },
+      {
         "title": "Claude's share links made private chats searchable on Google, and Anthropic says it's intended - The Cool Down",
         "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQX3E0YzNheXlBcGp2eFRrVmtqS01nZGZkU3JSWVVtNTRVN1lLWS1JTTdvV2dRRDc0UFo1UC1zckp4VzYyS2g0RWFmU0Nzd1UyS25OSnVablk4V0JOUTZYTXdQdVFSY3BmcWQxN0xoWktPT3BOX2JTZUpOZElYbklwLTNIZ1B3c3Rma0VN?oc=5",
         "source": "Google News",
         "published": "2026-07-30T18:27:00.000Z",
         "summary": "Claude's share links made private chats searchable on Google, and Anthropic says it's intended The Cool Down"
+      },
+      {
+        "title": "Show HN: Distilling DeepSeek into GPT-OSS doesn't transfer censorship. Try it",
+        "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
+        "source": "HN · 36↑",
+        "hn_id": "49113599",
+        "published": "2026-07-30T18:13:06.000Z",
+        "summary": "We recently used DeepSeek V4 Flash as a teacher for finance tasks with GPT-OSS-120B. Distillation works well on this problem. At a constrained 8k token budget, our self-distilled…"
       },
       {
         "title": "Judge Voices Doubt US Has Justified Its Ban on Anthropic AI",
@@ -160,11 +196,11 @@
         "summary": "A judge said the Trump administration has not presented enough evidence “really justifying” its decision to ban the federal government from using artificial intelligence technology from Anthropic…"
       },
       {
-        "title": "Codenotary Accepted into Anthropic's Claude for OSS Program to Accelerate Development of immudb - 01net.it",
+        "title": "Codenotary Accepted into Anthropic's Claude for OSS Program to Accelerate Development of immudb - 01net",
         "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNYnhhNnVJaXk2aVp5ZGJMNFRndTVQZEgxR1RfUC1jREpZa0VFRVd6WjFJRmhpaTZBemJwSUxFdkk5YTF5amk0RDdRZUNyVVdSRVNadTZ4TVNBQUpXOGUzVlpORTliWWJlVWpJRktMSjhwMk9yemJfUkV6S19seXVYbmRJU093YWJmRDBmZ2k2R0VnOEdaNHRSNmtiUFUxVTdTeEtGaWJDMjJ2SlpmanBKMlM3YmhLT0U?oc=5",
         "source": "Google News",
         "published": "2026-07-30T18:00:00.000Z",
-        "summary": "Codenotary Accepted into Anthropic's Claude for OSS Program to Accelerate Development of immudb 01net.it"
+        "summary": "Codenotary Accepted into Anthropic's Claude for OSS Program to Accelerate Development of immudb 01net"
       },
       {
         "title": "Claude’s AI Chats Made Public In Google Search Results, Raising Privacy Concerns - Black Enterprise",
@@ -174,11 +210,11 @@
         "summary": "Claude’s AI Chats Made Public In Google Search Results, Raising Privacy Concerns Black Enterprise"
       },
       {
-        "title": "Private Claude Conversations Have Been Indexed by Search Engines - CNET",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPMjVEc3M1VlhXSG5kTkQzc1VlOEt5VnYtazM3dW1adTR3eWlzYmx4Qm5kNFRiYkQwRWgtRjN0MUlyRVRwYkt3WktXR0JMaW1rWkx6aGJNWHk1anJLZGIwQnZadTRmVUF3Z0daS29KdXgxakExRU5PbWdkZ1lYRWxONDVteFR4U0NPNzhNcHFVb3JHNXVVSFBxeW1PSmlJLUdzbG1fLURza3o3bTVvUldlOFFWTQ?oc=5",
+        "title": "Claude Mythos — Hype vs. Reality: What Security Teams Need to Know - Dark Reading",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMHhaVkhuYmZ1ajFNZ3FWb1hveHFKdFV3RjFwcWFnRjBSUVo2RGFTT1hxbDVXRHJvNjBNS2k2c3QzQmlVSDVTMndObnh0cG9JVWRsdUU2OTZISmRlM0lPQy1DM0NHS2MtTEF2U1dfcWZxekF3Ni1zWTExemtOakFYSE94YXRmOU5GMkE?oc=5",
         "source": "Google News",
-        "published": "2026-07-30T17:03:00.000Z",
-        "summary": "Private Claude Conversations Have Been Indexed by Search Engines CNET"
+        "published": "2026-07-30T16:05:22.000Z",
+        "summary": "Claude Mythos — Hype vs. Reality: What Security Teams Need to Know Dark Reading"
       },
       {
         "title": "Codenotary Accepted into Anthropic's Claude for OSS Program to Accelerate Development of immudb - Business Wire",
@@ -186,6 +222,14 @@
         "source": "Google News",
         "published": "2026-07-30T15:00:00.000Z",
         "summary": "Codenotary Accepted into Anthropic's Claude for OSS Program to Accelerate Development of immudb Business Wire"
+      },
+      {
+        "title": "Show HN: Claude-account – switch Claude Code accounts without logging in again",
+        "url": "https://github.com/hamzarehmandeveloper/claude-account",
+        "source": "HN · 37↑",
+        "hn_id": "49111019",
+        "published": "2026-07-30T14:58:59.000Z",
+        "summary": "I use separate Claude Code accounts for work and personal projects. Having to log out and go through the login flow every time I switched accounts became annoying, so I built a…"
       },
       {
         "title": "New MCP specification addresses the main barrier to enterprise adoption",
@@ -202,18 +246,18 @@
         "summary": "Claude Makes Five AI Labs Publishing Private Chats To Google Forbes"
       },
       {
-        "title": "Head Of Anthropic’s Claude Code Says Prompt Engineering Not That Important - searchenginejournal.com",
+        "title": "Head Of Anthropic’s Claude Code Says Prompt Engineering Not That Important - Search Engine Journal",
         "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNREg2RVZEOC1CYUhWemhjUGtZSkxsLWdvcjJmTzhIV0Y1TnE1YUlaREpWTUdvVHIwS3Y2SUs5a0xnTVV1eHc0TURKTlVHS0hkRlVuSnFzWV9SWXFZYUk3US14Uzc4QmI3cnZOdWhqYmdLbVFTSHl4bzJoby1sSGFTenUyX2dlYmJvV0s4OWJRcDVOOVV5U29vcjY3NUpxdjZleVE2UmhlQ2ZnQXhwQWFvRV9wZkZPMWtf?oc=5",
         "source": "Google News",
         "published": "2026-07-30T12:30:07.000Z",
-        "summary": "Head Of Anthropic’s Claude Code Says Prompt Engineering Not That Important searchenginejournal.com"
+        "summary": "Head Of Anthropic’s Claude Code Says Prompt Engineering Not That Important Search Engine Journal"
       },
       {
-        "title": "Medical records and kids' phone numbers turned up in Google results - boingboing.net",
+        "title": "Medical records and kids' phone numbers turned up in Google results - Boing Boing",
         "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPS3k2N1h5eGQtYnZnU2pMc0ladG43Y2RlZ2JXQzdMTVBFUlhvcFhZTEVNTWp0eHlLaXNQQW05STdfVUJ0QjNKRTRxTDJwV2RmODRLS2ZQSER6Q0QtX3B3MjJ1NU90SGE0bE5nUDdnMVdXMFJOdHlRUWtjVkpNRnNaSVkwNU5jWEJ3bkZnVkpVUEJGRUNoT1RKVlk1UmhFOTFFbTJTZmpZbkzSAa4BQVVfeXFMTmVkYUZnOERuckJ0QmVXMVdYZG5KRXpUbFRRQ1pXTUcyekJLcWg2RkF4NDNaTFVqRXJvNUdpaUFUQUxOSzBaR085QzJSOUlON3MxN3hrbVkzLVhXR2NTWjU0T2cyMFFIUHhpQUNJZW4yR1R0a0VRZFlfUGo5SHhCY2hvaGxzLUpwa09sV09tdUhlUkl5RnBvcEtEbG1zWTBKTTRrakIwWm9MaUpKTmd3?oc=5",
         "source": "Google News",
         "published": "2026-07-30T12:00:00.000Z",
-        "summary": "Medical records and kids' phone numbers turned up in Google results boingboing.net"
+        "summary": "Medical records and kids' phone numbers turned up in Google results Boing Boing"
       },
       {
         "title": "Silicon Valley Turns Against Anthropic: Full Claude Product Lines Face Forced Ban, Contractors Rush Emergency Migration - 36 Kr",
@@ -237,33 +281,19 @@
         "summary": "Silicon Valley Turns Against Anthropic: Claude Banned Across the Board, Contractors Rush to Migrate finance.biggo.com"
       },
       {
-        "title": "Author says $1.5 billion Anthropic AI settlement wasn’t a true victory - moneywise.com",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObW9xQnU4bS1Cc3ZnaFZ3TlZuUi1mUWhKS0RPdEpaalJmYnJ6R281MmlPZnlDNU16MldLT0RPVktKS2N6elJJVXR4UE1GOXVTdFhQNk5QS3pMOGVhREQ1UzFUSi0xM1ppNlpEekVmT2E1Qlk4eXA0MVBNVGtIQzVHVmdEem8wRXE1WUNMSnBqdGwybzJvRGlxeDhQVmw0LS1Q?oc=5",
-        "source": "Google News",
-        "published": "2026-07-30T10:15:12.000Z",
-        "summary": "Author says $1.5 billion Anthropic AI settlement wasn’t a true victory moneywise.com"
-      },
-      {
         "title": "Agent-Manager: A Tmux TUI for Running Claude Code, Codex and OpenCode",
         "url": "https://github.com/YoanWai/agent-manager",
-        "source": "HN · 83↑",
+        "source": "HN · 86↑",
         "hn_id": "49107749",
         "published": "2026-07-30T09:34:27.000Z",
         "summary": ""
       },
       {
-        "title": "Claude Mythos AI finds bugs faster than Microsoft patches - BetaNews",
+        "title": "Claude Mythos AI finds bugs faster than Microsoft patches - betanews.com",
         "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5rUFNJTEZ0N3MzX1BSNzVZZDZxc1ItcFlWdHhXN3RkRmdiUWRRVnlmNTAwWjFHOHoteTJUanVSd2ZNcTJIN05pTHVkSk9ISjg4WExKMDVBTnJKeUE3TUpiMnFLa0x5SlRVQnY1ZHBfamFJWlBUN2cxSA?oc=5",
         "source": "Google News",
         "published": "2026-07-30T08:52:29.000Z",
-        "summary": "Claude Mythos AI finds bugs faster than Microsoft patches BetaNews"
-      },
-      {
-        "title": "Claude Mythos Cracked Quantum-Proof Algorithm HAWK In 60 Hours, Its Authors Quit - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBiZ09BMXBNQ0RrNFV6a1dLMXNEN0JxcUNyQVdaVUM5MmF1c1JRSGJCak1TbmJpRjRKdHZFcmtBS2dhNjY1ZXhremFPcDlBa2pYRUxfVGg3a1BuWjZWbUxEVVpHVmtnamc?oc=5",
-        "source": "Google News",
-        "published": "2026-07-30T08:12:25.000Z",
-        "summary": "Claude Mythos Cracked Quantum-Proof Algorithm HAWK In 60 Hours, Its Authors Quit Yellow.com"
+        "summary": "Claude Mythos AI finds bugs faster than Microsoft patches betanews.com"
       },
       {
         "title": "Anthropic reveals India is Claude AI's No. 2 market. But what are Indians actually using the AI for? | WION Decodes - WION",
@@ -292,35 +322,6 @@
         "source": "Google News",
         "published": "2026-07-30T01:08:28.000Z",
         "summary": "Alibaba Denies Claude Distillation as BABA Sinks 25% tech-insider.org"
-      },
-      {
-        "title": "Microsoft is openly competing with OpenAI, Anthropic more than ever",
-        "url": "https://techcrunch.com/2026/07/29/microsoft-is-openly-competing-with-openai-anthropic-more-than-ever/",
-        "source": "TechCrunch",
-        "published": "2026-07-30T00:21:06.000Z",
-        "summary": "Microsoft pitched its own homegrown AI models, harnesses, and even a Mythos competitor on Wednesday, telling Wall Street it plans for continued growth."
-      },
-      {
-        "title": "Show HN: A local merge queue for parallel Claude Code agents",
-        "url": "https://github.com/funador/claude-code-merge-queue",
-        "source": "HN · 40↑",
-        "hn_id": "49104747",
-        "published": "2026-07-30T00:20:16.000Z",
-        "summary": "I have been pushing up to 90 commits a day on a MacBook Air via 4-5 parallel agents. As you can imagine when all the agents try to build, test and run dev servers on an 8GB…"
-      },
-      {
-        "title": "Claude AI cracks post-quantum security test in under four hours - TweakTown",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNSlZDeTRlcjFEUmRhY05XcHppdGRITjJSOEpKRWJ1bkdjeV9MOUtNd2huejRWTDRNdjZZc0EtWXJMUjhoWFhWdEJiZG4wYXJORWdKSzRUMXVlalNGS1dMWE9rYVQwZHFVZDFXQ1JQeUk1aGFSOVFpMHRRUU53OUpRUU9MQm83cnhRR25kenBCbDNtYXRidXBfYm4ycnpHcEk4cHZNa2VkWXMzOGlNQ3ItSXpB?oc=5",
-        "source": "Google News",
-        "published": "2026-07-29T23:13:11.000Z",
-        "summary": "Claude AI cracks post-quantum security test in under four hours TweakTown"
-      },
-      {
-        "title": "Microsoft logs $3.2B from Anthropic investment, but OpenAI was a mixed bag",
-        "url": "https://techcrunch.com/2026/07/29/microsoft-logs-3-2b-from-anthropic-investment-but-openai-was-a-mixed-bag/",
-        "source": "TechCrunch",
-        "published": "2026-07-29T22:46:03.000Z",
-        "summary": "When Microsoft reported killer fourth-quarter earnings for its fiscal 2026 year (which ended June 30), it tucked in an interesting little tidbit about how its investments in the two biggest, and…"
       },
       {
         "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
