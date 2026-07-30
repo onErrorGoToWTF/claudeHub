@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T13:21:11.922Z",
+  "generated_at": "2026-07-30T15:44:22.614Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,27 @@
     ],
     "news": [
       {
+        "title": "Codenotary Accepted into Anthropic's Claude for OSS Program to Accelerate Development of immudb - businesswire.com",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPWXgwOS1wczY4V1Uxdms5NnlzbC01SEtuUm5vOU5zckdLdHBXWWhUVDY1VjUxRDhpeVRqNDVPb0s2OGViX2xGRjhoU2Mxb2V4V0dlcFlBWWRyanhOeHA5Zmg1SnQzZDNIUnBIcUUtMkVrZlJtaUFaZ0c4X2FnQkI5TDhra3BjMmRCY0hSWHZJSUgwMUVQVVNnTGQwSEMwN2tGZ1gwM3JhdFR3TmxmbzdaYWpFNnJPVWFUaUVjbWtOdjVRNkdBN1NmYkJkWjI5cV9wRVFQdEszQXVMQlBIVEE4ekdfc2J6UQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-30T15:00:00.000Z",
+        "summary": "Codenotary Accepted into Anthropic's Claude for OSS Program to Accelerate Development of immudb businesswire.com"
+      },
+      {
+        "title": "New MCP specification addresses the main barrier to enterprise adoption",
+        "url": "https://arstechnica.com/ai/2026/07/with-a-stateless-makeover-new-mcp-spec-targets-enterprise-scale/",
+        "source": "Ars Technica",
+        "published": "2026-07-30T14:53:07.000Z",
+        "summary": "This week, the Model Context Protocol (MCP) , an open source standard for how AI systems interact with external tools and data sources, saw its largest update since its introduction. Most notably,…"
+      },
+      {
+        "title": "Claude Makes Five AI Labs Publishing Private Chats To Google - Forbes",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNeGJyOHpvYzZEN3I1c21WMXhXX1RBbUZoOXdndW91TGg0VXVOZnc5aWh2MHBRbjFQeG9ybW83aFRNYjdET2xNc3prOUs5YkhfYkFxVnpqa3BaR21yTnlvQUVleGx4S0hRRWRCR1dNbGJ5cFVVaFpnNlBSbS1KRGR0UVpHOEhfZ0FfdXAtNDhhamJHOE5EeHVnVDh0cThjMV85aHRFYm92UkZyUUZxWjk0T0REaGhaTVZC?oc=5",
+        "source": "Google News",
+        "published": "2026-07-30T14:32:25.000Z",
+        "summary": "Claude Makes Five AI Labs Publishing Private Chats To Google Forbes"
+      },
+      {
         "title": "Head Of Anthropic’s Claude Code Says Prompt Engineering Not That Important - Search Engine Journal",
         "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNREg2RVZEOC1CYUhWemhjUGtZSkxsLWdvcjJmTzhIV0Y1TnE1YUlaREpWTUdvVHIwS3Y2SUs5a0xnTVV1eHc0TURKTlVHS0hkRlVuSnFzWV9SWXFZYUk3US14Uzc4QmI3cnZOdWhqYmdLbVFTSHl4bzJoby1sSGFTenUyX2dlYmJvV0s4OWJRcDVOOVV5U29vcjY3NUpxdjZleVE2UmhlQ2ZnQXhwQWFvRV9wZkZPMWtf?oc=5",
         "source": "Google News",
@@ -153,11 +174,11 @@
         "summary": "Head Of Anthropic’s Claude Code Says Prompt Engineering Not That Important Search Engine Journal"
       },
       {
-        "title": "Medical records and kids' phone numbers turned up in Google results - boingboing.net",
+        "title": "Medical records and kids' phone numbers turned up in Google results - Boing Boing",
         "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPS3k2N1h5eGQtYnZnU2pMc0ladG43Y2RlZ2JXQzdMTVBFUlhvcFhZTEVNTWp0eHlLaXNQQW05STdfVUJ0QjNKRTRxTDJwV2RmODRLS2ZQSER6Q0QtX3B3MjJ1NU90SGE0bE5nUDdnMVdXMFJOdHlRUWtjVkpNRnNaSVkwNU5jWEJ3bkZnVkpVUEJGRUNoT1RKVlk1UmhFOTFFbTJTZmpZbkzSAa4BQVVfeXFMTmVkYUZnOERuckJ0QmVXMVdYZG5KRXpUbFRRQ1pXTUcyekJLcWg2RkF4NDNaTFVqRXJvNUdpaUFUQUxOSzBaR085QzJSOUlON3MxN3hrbVkzLVhXR2NTWjU0T2cyMFFIUHhpQUNJZW4yR1R0a0VRZFlfUGo5SHhCY2hvaGxzLUpwa09sV09tdUhlUkl5RnBvcEtEbG1zWTBKTTRrakIwWm9MaUpKTmd3?oc=5",
         "source": "Google News",
         "published": "2026-07-30T12:00:00.000Z",
-        "summary": "Medical records and kids' phone numbers turned up in Google results boingboing.net"
+        "summary": "Medical records and kids' phone numbers turned up in Google results Boing Boing"
       },
       {
         "title": "Silicon Valley Turns Against Anthropic: Full Claude Product Lines Face Forced Ban, Contractors Rush Emergency Migration - 36 Kr",
@@ -183,7 +204,7 @@
       {
         "title": "Agent-Manager: A Tmux TUI for Running Claude Code, Codex and OpenCode",
         "url": "https://github.com/YoanWai/agent-manager",
-        "source": "HN · 45↑",
+        "source": "HN · 74↑",
         "hn_id": "49107749",
         "published": "2026-07-30T09:34:27.000Z",
         "summary": ""
@@ -217,13 +238,6 @@
         "summary": "Anthropic reveals India is Claude AI's No. 2 market. But what are Indians actually using the AI for? | WION Decodes WION"
       },
       {
-        "title": "Claude Mythos Preview Finds Weakness in Post-Quantum Encryption Candidate - CoinMarketCap",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPeXZqalJzc2k5UkMwUnU1cFNFRWxaMTNQNkdhQ3NKTDVWcHNXdkZzRHozVURZOHVpZXJCaGNTZUFILUhsX0hMRlBrUkxpRVpmS25TZE00VWtpa09SckVNajhCMGNkSlNwUzFqazVRdGtwcFAwNGVINV9zWVQ5OVVoV0duaHN3dDZjdHdSWkxPUUlBVGNVUVg2ejBWRzF6eDI1Z3FjZVpBZWNyMjdiOVdmaHlJa2tsQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-30T05:49:29.000Z",
-        "summary": "Claude Mythos Preview Finds Weakness in Post-Quantum Encryption Candidate CoinMarketCap"
-      },
-      {
         "title": "Anthropic Trained Claude on Donald Passman’s Music Industry Bible Without His Permission. His Payout? $5,000. - Digital Music News",
         "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTU1oUDkwQmhFZHZGUE5KeXJqVjVueWJMNFFpYXE3cDFXY1lmWWs0a2ZxX25BS1dhM2RVVFZuVVNsWVE1M1A1TjBZdU13ZDZzc3RyekotZHpjOUw4Q1ZJY2FkTmZ6SzZVNE9NeGNwQXFoVDduTDg0NktuTFY0MFBfZzM5VVQyMlZ5ZWVpUlJMTi15bWtobG5QbUZKRXhaZmEzNDNHRi0xWDY?oc=5",
         "source": "Google News",
@@ -238,6 +252,13 @@
         "summary": "Claude Mythos broke HAWK and the NIST post-quantum timeline may not survive it Startup Fortune"
       },
       {
+        "title": "Alibaba Denies Claude Distillation as BABA Sinks 25% - tech-insider.org",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1sRnVockphN3JUalpkYWl2eGtXRUFoVzhPYmpFOXNpVklpeFlrcGxuaVE0THg2Uy03TDUtWVNpaVpQLXFrUGVXdDBDdFd5bjM5ZThmMkNIbmI5VkRYc1FUYldOcGZkS3NXVlJLMVBRUkFEM1QzdWFKTDJWWQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-30T01:08:28.000Z",
+        "summary": "Alibaba Denies Claude Distillation as BABA Sinks 25% tech-insider.org"
+      },
+      {
         "title": "Anthropic Claude systems restored following global outage - Cyber Daily",
         "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPN0UwM2lzc2YwVkxyYTgzeFR1VmZvakdraTg2Um85d0l1ZVp0bHd2WmlwNWFBMFVzQlBKczlXYzhYTVRSYi1LM3d2a0tqOGlSR2RKY1dIODhWMnQxcmJkdHFhNzlPZl9LLXpHNmZqRVhnSUZ4bkRHcWxrUm80b1hhbERJR0ZiZG42aE10dXhJbkJ2aFIzQkJyQXI5SEgwQ1BZbHV5dEZzOEJoQzh6a01RSFB3?oc=5",
         "source": "Google News",
@@ -247,7 +268,7 @@
       {
         "title": "Show HN: A local merge queue for parallel Claude Code agents",
         "url": "https://github.com/funador/claude-code-merge-queue",
-        "source": "HN · 39↑",
+        "source": "HN · 40↑",
         "hn_id": "49104747",
         "published": "2026-07-30T00:20:16.000Z",
         "summary": "I have been pushing up to 90 commits a day on a MacBook Air via 4-5 parallel agents. As you can imagine when all the agents try to build, test and run dev servers on an 8GB…"
@@ -267,11 +288,11 @@
         "summary": "When Microsoft reported killer fourth-quarter earnings for its fiscal 2026 year (which ended June 30), it tucked in an interesting little tidbit about how its investments in the two biggest, and…"
       },
       {
-        "title": "Claude AI Recovering After Widespread Outage on Wednesday - CNET",
+        "title": "Claude AI Recovering After Widespread Outage on Wednesday - cnet.com",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZHYwWm83bVFiUjlheGVEckFfMlAzelRaQUJ5Q1NJdzVMU2FRUlRxTl82dEk1MWpBOThJY3pMRlJ4bzdsVnpUOE1Xb0ZuWDR1RzVoZXhTd2FLeTRibEJLVmVMbWw0TlJsdkhKaUk3UmtqNWUtcUtnS21vVGd6ZExEQ2xtVzJxTmRjUHh3SF9FbUFnLS03NmE2bjBBYVVZYjBjNlBvODE4eDlzUQ?oc=5",
         "source": "Google News",
         "published": "2026-07-29T22:44:00.000Z",
-        "summary": "Claude AI Recovering After Widespread Outage on Wednesday CNET"
+        "summary": "Claude AI Recovering After Widespread Outage on Wednesday cnet.com"
       },
       {
         "title": "Mythos attack on 3rd-round PQC algorithm candidate puts it out of commission",
@@ -281,25 +302,18 @@
         "summary": "A quantum-resistant cryptography algorithm that was under consideration as an official US standard has been taken out of the running after an Anthropic security model helped find a flaw that…"
       },
       {
-        "title": "BCS Technology Joins Anthropic's Claude Partner Network - EIN Presswire",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbnZQQXZmU2h2aUY0Y3FheHBzT0p3LURRNl9EVUFPekxpbllxYW5UWmpQVnR4ZUROdXJKRlFFT3ZGd0FXOUFUMWtiLUdtVnRFbm0yTnBEZ2tUZ2pvYzFxVDE5Z0gwTm5CakFwWlY4WW1WT1BNSVExTEJFSWZJdGRLS1Vmc3dKemhoc1BoXzhhbGJmUGt4VTdPNDdtemhrTlZ6ODFHbw?oc=5",
+        "title": "BCS Technology Joins Anthropic's Claude Partner Network - EIN News",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxONW5ZRDZYdTI2bGp4MFpEbTRuQ1ZZQVRiM1pCTVk1cGZmdHF2cGVDSUE4akxaQ0twX3VScmhTQ3NPV3FMNVdPbHNpZERseUtEUlh5OGI2YkJ0a1pwZm0xOU9YMEdLQm9xM2FiTGY5enZGbUY3NzRjSGVBMWlHRWsxUjYwSkJaeTJubVBDNnNJRTQ3OUQ5TmRIbklQQ0V0QQ?oc=5",
         "source": "Google News",
         "published": "2026-07-29T22:00:00.000Z",
-        "summary": "BCS Technology Joins Anthropic's Claude Partner Network EIN Presswire"
+        "summary": "BCS Technology Joins Anthropic's Claude Partner Network EIN News"
       },
       {
-        "title": "Anthropic Claude AI Predicts the Price of XRP by The End of 2026 - Cryptonews",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQc1pPVTY0dlRrdFdqYzJNVEdWOFFSYlQ3UWFsQXQtVzkyWmo1V25SRWZ1TVM2VTMyMmxaYkF3Y0NKVUZVaEkxcnJnUTR3ZGlMQjA5S3JiOHRiVW42cFVsVDRURzhWempLaFdUdWhJMEVpZm91UjFENkttZ2w4bHZ0a0Eyd3RfVnQxYXpPVlNEenFBTk10SkE?oc=5",
+        "title": "Anthropic's lonely island - Axios",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFAxQVhwcTk0YVQzU1BUeEwzX1d2RVJ4aVJydVY4eGxYbFlxMTVqdHd2UExnR01LYzZkWk1CNTEzR21PN0NJcFd1TWxid0Z0VmU1MnVxaEhwblpNaFZqa0VJUllNaWhLRHlvNWZlVVdSRjduZDlaU1NieXVlMA?oc=5",
         "source": "Google News",
-        "published": "2026-07-29T21:45:00.000Z",
-        "summary": "Anthropic Claude AI Predicts the Price of XRP by The End of 2026 Cryptonews"
-      },
-      {
-        "title": "OpenAI, Anthropic ask U.S. government to consider slowing down AI - The Washington Post",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQ1FRWDYxejU1Z3BFTVd4b1lKc0UzaEprOHpyU2pJTS1jamVvRVBLV1BIUW1sTGVfUktiZmNVenlqY0ljQlpKSUR4Z1FOeE5Hd2FlZmZlcUlDaUVxYlB6NGI1YXp6aUowa0o4TXJKeFNTMllEV25weHFRRE5pY29pMXE1WHRfUEc3M09BbHJCbGpjajJfbm9KdXVSM2N4Wm5oQ1dOT3k3SUpuNGEzQ3pCTA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-29T21:44:15.000Z",
-        "summary": "OpenAI, Anthropic ask U.S. government to consider slowing down AI The Washington Post"
+        "published": "2026-07-29T21:46:11.000Z",
+        "summary": "Anthropic's lonely island Axios"
       },
       {
         "title": "Claude Mythos Shows AI Can Outpace Human Cryptography Research - Security Affairs",
@@ -307,20 +321,6 @@
         "source": "Google News",
         "published": "2026-07-29T21:44:05.000Z",
         "summary": "Claude Mythos Shows AI Can Outpace Human Cryptography Research Security Affairs"
-      },
-      {
-        "title": "Anthropic confirms Claude is down worldwide - BleepingComputer",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSmRKWTF1ZEpWR21abVYyWDFndHR4dXpJTVlHcjZfRkZSR2xLTGJvWnJJZkxXenA2R09HQXRtRHZwXzI5TF9MMEFCR2lwOWxzRDR4NXJNRG41NlByZEYxOU5sTC1mNzRkc1dhdkFuT1gyRzRydnVMcmszTGxlREN4NVZzN0E0dThSNExFNDlVUmhaLWhpUWFiX0F0Y3BZMHZabmFPSC1PYkF2d9IBrwFBVV95cUxOR0VZbFZ2Z1h3UXRuTGMyMlRSR3g1Nk1OSTJTWE9aRi01bUNyaGFQbk0tdHRyUmhVZUVjVVZvVTMtU0hEMU1xSkFEb01MdEQtQzJUZUpCbk1QU0lsTjlNeGVwcDlJdmdJbWpSNlFmLWYzRnRYUzdLU1QxS0hpcEVIRURsSGxFWVFCdE8tTGtJY2lGUUhocjR1YWtmbVZnWkxabU4yeUNmSVYyd2gxSzlz?oc=5",
-        "source": "Google News",
-        "published": "2026-07-29T21:39:00.000Z",
-        "summary": "Anthropic confirms Claude is down worldwide BleepingComputer"
-      },
-      {
-        "title": "Users report issues with Claude: Is it down? - Newsweek",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPZXZGZm1WM1RCUHkxSjBnTWFfbVc0RVgtQW5MN0lrV3hxRnQ2ZjNjSENIRDF5dUN5NVRkOWc2MGc3ZFNFcVhKSU1KNU9rcjFMLUFwUzBYUTh1Z201bjRBdlQ4bndvTmdtWW01Z2NvRmZyLTZVUHI3ZWtzQnlUQmpTak5WWUJsNlo3eWFZZDBITFItc0xnQTdjZUd6SQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-29T21:07:00.000Z",
-        "summary": "Users report issues with Claude: Is it down? Newsweek"
       },
       {
         "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
@@ -589,6 +589,13 @@
     ],
     "status": [
       {
+        "title": "Degraded performance on Claude Opus 4.8",
+        "url": "https://status.claude.com/incidents/kqjy03gs895j",
+        "source": "Claude Status",
+        "published": "2026-07-30T14:24:12.000Z",
+        "summary": "Jul 30 , 14:24 UTC Resolved - This incident has been resolved. Jul 30 , 13:43 UTC Investigating - We are currently investigating this issue."
+      },
+      {
         "title": "Elevated errors across many models",
         "url": "https://status.claude.com/incidents/fsh2zzzl2c4l",
         "source": "Claude Status",
@@ -664,13 +671,6 @@
         "source": "Claude Status",
         "published": "2026-07-24T10:22:06.000Z",
         "summary": "Jul 24 , 10:22 UTC Resolved - This incident has been resolved. Jul 24 , 09:35 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jul 24 , 09:09 UTC Investigating - We are…"
-      },
-      {
-        "title": "Elevated errors on Haiku 4.5",
-        "url": "https://status.claude.com/incidents/db1mh1r2zrn5",
-        "source": "Claude Status",
-        "published": "2026-07-23T00:10:17.000Z",
-        "summary": "Jul 23 , 00:10 UTC Resolved - This incident has been resolved. Jul 22 , 23:52 UTC Investigating - We are currently investigating this issue."
       }
     ],
     "youtube": [
