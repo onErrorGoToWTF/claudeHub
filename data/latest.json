@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T19:02:32.279Z",
+  "generated_at": "2026-07-31T20:49:43.867Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,83 @@
     ],
     "news": [
       {
+        "title": "Claude published malicious code to the Internet and attacked 3 real companies",
+        "url": "https://arstechnica.com/security/2026/07/likely-illegally-claude-gained-access-to-3-networks-will-anthropic-be-held-to-account/",
+        "source": "Ars Technica",
+        "published": "2026-07-31T20:39:14.000Z",
+        "summary": "Anthropic said its Claude-based security models gained unauthorized access to the sensitive production environments of three outside organizations during internal testing designed to measure the…"
+      },
+      {
+        "title": "AI & Tech Brief: Anthropic’s rogue agents - The Washington Post",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOam9qRkxNMGFrS3liX1FLSGtOV1ZTZ2oxT3d4YnA4Qzh0LVNaX2RpZ3dvM1RYNkhDTUNweU1OYmpvbXhnSDJvV3JJV2lQd2hSNHJEOHhFVEdxNjhkZm42RmotU3B0aXhzdHo2R1Juc01CUnh3OWc0ZXdxNTByU3dkSWVoMzVhRHJkdzlLNXhsNFh5QldlX0N2RlZubThqdkpQd3ljRS1xLWQxUXVLNXpz?oc=5",
+        "source": "Google News",
+        "published": "2026-07-31T20:12:49.000Z",
+        "summary": "AI & Tech Brief: Anthropic’s rogue agents The Washington Post"
+      },
+      {
+        "title": "Anthropic Investigation Finds Claude Models Crossed Into Live Internet During Testing - Security Info Watch",
+        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQYkV0R2FyVGJvcUtXWkNwUHU0ejI2RUJiZ2hWU21Xb3FESU5GejFkMjZkaTVpcHRlRXM5ZmRiV25vOS13SWI2a1hHS25KNG1LdTh0NUNfckE3YkVkSzczbW84aDU4dG9HQ2dHT1J3dVROaklRLXFoQjBxaW94Q2NRb1M0bmJJVkZIRVdWLUJIMW5GZ293QkdNUGJsVkt3T29ZMnN4WjRGeDg5Z092MXBhSkpyTEt4aTg0bGszSnk0ZXBTQ25MdnFnUzh1TENhSEQ3VmZDWjRGaW1jU3R5czNyUHVrVXltS2h0QzNrTFBR?oc=5",
+        "source": "Google News",
+        "published": "2026-07-31T20:11:30.000Z",
+        "summary": "Anthropic Investigation Finds Claude Models Crossed Into Live Internet During Testing Security Info Watch"
+      },
+      {
+        "title": "Shocking, Anthropic’s Claude Is Also A Kleptomaniac - PC Perspective",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNRXY3bVJVVDB5M19LakJhNEoySVJ2RFhKbXc1Q1RCZWp0YkNhVDQzcDM2NWx2WjVLaklGTVQ3RjdhZ3o0aFpnYkZNV0MwRnR1MGUwdnR4REp1N193YjZ2b01aUzlXQnpYaEhmVjJReVkwS01NbFpESGZmTV9HZERWLVJB?oc=5",
+        "source": "Google News",
+        "published": "2026-07-31T20:04:46.000Z",
+        "summary": "Shocking, Anthropic’s Claude Is Also A Kleptomaniac PC Perspective"
+      },
+      {
+        "title": "Rise of the machines? The fallout from Anthropic and OpenAI hacks - USA Today",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTDZRMVVlc1JaV0ZvMjVHa3lqeF9tXzB0MGxZYUYxU3BuN0YyZjZpc1hFNTJoQ3B5QnJobXQ1X3RRVjRzNkxncEFwam5PSnRyaU9xVE94bElydGVFOUhMNFdBUTdqS0lhZVMyeXpsellqTkR0N29zX2ZGRFAxeVJteG4zOHlXbGFOM1JvWDBsanNMcU8xVDJLbXoyaHdEU01pejNqaGYzT1gzX0Vzbk41RQ?oc=5",
+        "source": "Google News",
+        "published": "2026-07-31T19:57:00.000Z",
+        "summary": "Rise of the machines? The fallout from Anthropic and OpenAI hacks USA Today"
+      },
+      {
+        "title": "Anthropic Reveals Claude Breached Three Organizations After Escaping Test Environment - LinkedIn",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZGV6WExCSERlcy1oSGVhNktWbzRhaGdFRml3dV8yaElSaXNmY3dyMVM1VFV4UWFPaGNWbVpfYTdLci03cGladzVoMV8zbUJUY2VHd2ZsY094YXBKcWtrT2xFeVpIaXgtYWIxQWpaLTkxa21nSnU3R2c1aUlnck9ILXBuVk1RbVdzeVJDZTkwNHlKX3B4?oc=5",
+        "source": "Google News",
+        "published": "2026-07-31T19:51:28.000Z",
+        "summary": "Anthropic Reveals Claude Breached Three Organizations After Escaping Test Environment LinkedIn"
+      },
+      {
+        "title": "Anthropic, OpenAI Cyber Failures Point to US Security Risks",
+        "url": "https://www.bloomberg.com/news/articles/2026-07-31/anthropic-openai-cyber-failures-point-to-us-security-risks",
+        "source": "Bloomberg",
+        "published": "2026-07-31T19:46:30.000Z",
+        "summary": "Cybersecurity experts are faulting Anthropic PBC and OpenAI for sloppy safeguards after their models broke into outside organizations — breaches they warned represent looming threats to national…"
+      },
+      {
+        "title": "Anthropic, OpenAI Cyber Failures Point to US Security Risks - Bloomberg",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOa0RRWm94MnZvTW44UkNVUVJwN0JodGVjRDQwc0FRRXJYM2xWcERZQWVobERUbEJOX1NUODB4T2JxTlZScEhqNGFCdHVQYk5WajJhRmZDcTRKbXlYNFhjZm1IbUZFM2FpbWlaQV9jN0NYdlR0a2tCMXhMWjNPWU1YbXlIdGhhUnBLY0x6NXlRcHFFMkVHNTVLMmo0bW91Mjl0aWFTX001YlUwU24yMUE?oc=5",
+        "source": "Google News",
+        "published": "2026-07-31T19:46:30.000Z",
+        "summary": "Anthropic, OpenAI Cyber Failures Point to US Security Risks Bloomberg"
+      },
+      {
+        "title": "Your CLAUDE.md is probably wrong, and here's how Anthropic's engineers actually structure theirs - XDA",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQcTNIN0NjMHI0SHhjRmlHcmo1Y05fSzJxckhmME1ZRkozQmpUamZJSDhoY0pQZndBTTZzX2xRUzIxSjVYNGFVSTR5enh1aFkzWWt4akI1OEpOZVFycmZyYVJiUkoxV0FTX2RsX2ZlRlBXZlR5eUtDaEV5bEZTekRmdmd6THZJcFNVY1VfVmUzbnZYa2xoVTJ5eUYxODgyRVo2?oc=5",
+        "source": "Google News",
+        "published": "2026-07-31T19:36:46.000Z",
+        "summary": "Your CLAUDE.md is probably wrong, and here's how Anthropic's engineers actually structure theirs XDA"
+      },
+      {
+        "title": "Another AI Jailbreak: Anthropic's Claude Escapes a Test and Hacks Outside Groups - cbn.com",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQMnBPMEFZMVUzXy1XbnVVX2NmYWE2dmJjQVg3RmJYSDQ1R0VpZWo4LVgzTndKZE5aUjZfSlc4dnVHQWxKaEhjeG1hamw3ZVVWODJNUEdveWxJYTRWc3NwVW9WWFExM0h5MDRMbktjallHNG9nOGhnVmNhSVNLSHhRYVpsYVBzbEVwc0JkQzUxY0lsSUVZaDNUc19paTJNV3pMWmc?oc=5",
+        "source": "Google News",
+        "published": "2026-07-31T19:17:47.000Z",
+        "summary": "Another AI Jailbreak: Anthropic's Claude Escapes a Test and Hacks Outside Groups cbn.com"
+      },
+      {
+        "title": "Apple's Stumble, Amazon's Surge and Anthropic's Hacks | Bloomberg Tech 7/31/2026",
+        "url": "https://www.bloomberg.com/news/videos/2026-07-31/bloomberg-tech-7-31-2026-video",
+        "source": "Bloomberg",
+        "published": "2026-07-31T19:11:09.000Z",
+        "summary": "Bloomberg’s Ed Ludlow breaks down Tim Cook's final Apple earnings call as CEO - a story of supply crunches, demand misreads and a tough outlook. Plus, Amazon's shares roar on AI progress, big…"
+      },
+      {
         "title": "The Next AI Boom Is in Health Care and Robotics, Says Lux Capital's Shakir",
         "url": "https://www.bloomberg.com/news/videos/2026-07-31/-ai-is-now-an-operating-system-says-lux-capital-video",
         "source": "Bloomberg",
@@ -153,18 +230,11 @@
         "summary": "Recent disclosures from Anthropic and OpenAI have shifted the AI conversation from model capabilities to real-world deployment and security. Lux Capital Partner Deena Shakir says the next wave of AI…"
       },
       {
-        "title": "Rise of the machines? The fallout from Anthropic and OpenAI hacks - USA Today",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTDZRMVVlc1JaV0ZvMjVHa3lqeF9tXzB0MGxZYUYxU3BuN0YyZjZpc1hFNTJoQ3B5QnJobXQ1X3RRVjRzNkxncEFwam5PSnRyaU9xVE94bElydGVFOUhMNFdBUTdqS0lhZVMyeXpsellqTkR0N29zX2ZGRFAxeVJteG4zOHlXbGFOM1JvWDBsanNMcU8xVDJLbXoyaHdEU01pejNqaGYzT1gzX0Vzbk41RQ?oc=5",
+        "title": "Anthropic says its AI models hacked 3 organizations on their own during tests - ABC News - Breaking News, Latest News and Videos",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQX3ZqRkZfWUw5X3dBbVVkUzh3NGVXTXdrOEIwOVRGUHdTeTRaaURSWS1DYVA3aXdUREVFeTM1ZnF0Mm91bzJTb0R6OWR3a0VwaFBPQmFqeVRuQjdrUFZSSFpmbjMzSGZEX2xCeE84c3A2Q3dpRnlEcVZ5MFhLVUE5b0lwUml2eWFacWZDVHJsaVh5VVJMZjZRdmlNSWlkQW1Wa2Rkb3Jn0gGrAUFVX3lxTE9RRnJFaXBvLVJUT0NMMXRtN0JscFBCQTIzRHlQUFdYMjJ2bnZkQ080WGZQYUtqTGNaZTZidWljbFhnNklKVGFaWXBLbXdtV0xkOTlYcnhFOUxMYU1vUnJMclpyR21nYTBLUDh5UURFTy1MbGRUQThiWXNLSVVMWkZJQlpwWTNJQUpGM3dyVGNHZmp6Y0E0R29FaWtkd25sczZ0RktJRTRXcGVkNA?oc=5",
         "source": "Google News",
-        "published": "2026-07-31T18:43:00.000Z",
-        "summary": "Rise of the machines? The fallout from Anthropic and OpenAI hacks USA Today"
-      },
-      {
-        "title": "AI & Tech Brief: Anthropic’s rogue agents - The Washington Post",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOam9qRkxNMGFrS3liX1FLSGtOV1ZTZ2oxT3d4YnA4Qzh0LVNaX2RpZ3dvM1RYNkhDTUNweU1OYmpvbXhnSDJvV3JJV2lQd2hSNHJEOHhFVEdxNjhkZm42RmotU3B0aXhzdHo2R1Juc01CUnh3OWc0ZXdxNTByU3dkSWVoMzVhRHJkdzlLNXhsNFh5QldlX0N2RlZubThqdkpQd3ljRS1xLWQxUXVLNXpz?oc=5",
-        "source": "Google News",
-        "published": "2026-07-31T18:42:49.000Z",
-        "summary": "AI & Tech Brief: Anthropic’s rogue agents The Washington Post"
+        "published": "2026-07-31T17:53:44.000Z",
+        "summary": "Anthropic says its AI models hacked 3 organizations on their own during tests ABC News - Breaking News, Latest News and Videos"
       },
       {
         "title": "Anthropic Discloses Claude Security Breaches as Judge Casts Doubt on Pentagon’s “Supply-Chain Risk” Ban - AI Insider",
@@ -237,11 +307,11 @@
         "summary": "Anthropic: Claude AI hacked 3 companies during cyber tests The Grand Island Independent"
       },
       {
-        "title": "Anthropic: Claude AI hacked 3 companies during cyber tests - nwitimes.com",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxORjRQNHo2Vnl1Z1JIVGxYVEtTNUY3em5RVlFIUEFkalBuZzM2anEtX1A1QUxmMFNEUWFoc0J0MzQ1bVp0d2Vta210cVU5TEw2WTlXVURqel9pc21uTnozTzJUWnRkXzBJWEthYndGLWw1QWIxMlo2SjR5bHJycnlhc3BJU0ZNYUlZa3B3M1RSbmhVektMUHpKZ1NNVlkwQQ?oc=5",
+        "title": "Anthropic: Claude AI hacked 3 companies during cyber tests - Herald-Review.com",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOS1J1NFg4S0I4RVpZWmZ6T0puVVcxdHBKeXY1NHlnNWJtdkZSLXpHajlxazJXUW9FdTRJTVpIeXBPSUxpZmlRWEZRaFhZa01rbHVEZHduVjdzVGlNYmx5b2NUZTJvZ1RyV1FuZllmUmpOSFNvRWw2cmlZV01iSi13bHJDOGJKc3dtQ2ZLeWNBY0pjczgwMVBiRHBQdUZYc3dvY1ZVVQ?oc=5",
         "source": "Google News",
         "published": "2026-07-31T16:30:00.000Z",
-        "summary": "Anthropic: Claude AI hacked 3 companies during cyber tests nwitimes.com"
+        "summary": "Anthropic: Claude AI hacked 3 companies during cyber tests Herald-Review.com"
       },
       {
         "title": "Anthropic: Claude AI hacked 3 companies during cyber tests - Tulsa World",
@@ -249,76 +319,6 @@
         "source": "Google News",
         "published": "2026-07-31T16:30:00.000Z",
         "summary": "Anthropic: Claude AI hacked 3 companies during cyber tests Tulsa World"
-      },
-      {
-        "title": "Anthropic: Claude AI hacked 3 companies during cyber tests - The Times and Democrat",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNb0xHTmEtU2F1Rk5BT2xJTTBsYlk0c01TcnYyNTBXSUZJRWZldzNIcDJhb3phd0lzQzJucTdhdjZ4b1BhSXhaeDNZcFZ6SUdVZGU3aUtaUThiYlJLODZ1SkMtZWR6ZnRwcjJpZ0dFY1N6QjdveE0xUmh3UktzTUJWR0pRbEcteDdXZ2VjY1FPTV9Eb3ZWSGNDSVVlNENGQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-31T16:30:00.000Z",
-        "summary": "Anthropic: Claude AI hacked 3 companies during cyber tests The Times and Democrat"
-      },
-      {
-        "title": "Anthropic: Claude AI hacked 3 companies during cyber tests - Fredericksburg.com",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOMzdJcUluMFpES1FqVmhHNzUxMklwTXA3a0Q4Wk9Sa2dvY3FRU1ZCalY3Q0JYejNIRjBJQ3ZabmxYWEFFSHBTSTlEdV8wTERZNEVHdk9KZ2RnakxIS1R6SDNQWlhlWWZjb0xSMXVqSmpkY2pSUnI0Sk1ZZmVZWERfOUEwckJNRmNEdjluSlFvektVZHRuVl9OR19JdnZFajFuNGk3enZn?oc=5",
-        "source": "Google News",
-        "published": "2026-07-31T16:30:00.000Z",
-        "summary": "Anthropic: Claude AI hacked 3 companies during cyber tests Fredericksburg.com"
-      },
-      {
-        "title": "Anthropic: Claude AI hacked 3 companies during cyber tests - heraldcourier.com",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNallPNkVBYm1HYWpsbEN1S1NMZy1sSU9qS1JTRzFCSmwxU2JRQUdRWXpTSnFlRU1mTzFoVVFZSW16M2ZzdkRRZUo5NVdrU21USFd1aFhGSjdSS21WUl96Y2ozOTJDUTBMMDZmQU5sTzNZT1hYMVpvWV83R0hSOHlTQndLUjNaTE9vNzNnZ0UzUVU0LWFHRl9Wenh1NnBQQ2c4d2xvbA?oc=5",
-        "source": "Google News",
-        "published": "2026-07-31T16:30:00.000Z",
-        "summary": "Anthropic: Claude AI hacked 3 companies during cyber tests heraldcourier.com"
-      },
-      {
-        "title": "Anthropic: Claude AI hacked 3 companies during cyber tests - Press of Atlantic City",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdzJoZ1NTR0dyQ3FHbEVYNlIzX0xMMnhBWWhVV2g2UXBrSmVRX3lZYWZ1eUhwMjQ1RGI4a2Z6WUYtNGF0aWJ3ODlvT1BvQ2QtX3NHUjBzSFJYTU42WFc4ZUZ3WnhDRWphbElrMk1EUklaYWh1SC01c2h1VUxHVTFHLTZWd1NlNjRsOGRDS3ZHbFAyb0pieHcwWnBWMloteEg1UmZiMEZ1T0hFa19r?oc=5",
-        "source": "Google News",
-        "published": "2026-07-31T16:30:00.000Z",
-        "summary": "Anthropic: Claude AI hacked 3 companies during cyber tests Press of Atlantic City"
-      },
-      {
-        "title": "Anthropic: Claude AI hacked 3 companies during cyber tests - Star-Herald",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZ3FyVzZybjJSTjR0ODNOeWgxUjZrX1BNcld2eHZrRmtRWXJoQlF5Y0pvODBqLW5FcFUtZG9VcEVmLUV5T2JnNVdsTmNtRXNhYTFSTkhocllvR1lUdHlEcTlxbHRCV1REQ2tmOW5jM3ltbkhpUGJjOGVQWmJRUFhrYllOVkJRRVZmR0x5N2NPUkVZcDBkdzhKMmNzNklHUGNz?oc=5",
-        "source": "Google News",
-        "published": "2026-07-31T16:30:00.000Z",
-        "summary": "Anthropic: Claude AI hacked 3 companies during cyber tests Star-Herald"
-      },
-      {
-        "title": "Anthropic says human error let Claude AI models escape test environment and hack third parties - Cybersecurity Dive",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQWmtMWmdtVmdWUjBRa1ZqcXpsOGpOUkJTQThkUzEtZnU5WW5qRnU0d2w0WHdwdHJkTF85OUJlX29hanhuNlNsR2g3WXhuU0xGbUpuU2lWRkI1bDlFeExfTWNDRWNRdlZoeDg5WFdtOGJ5TS1SUThvYjhfS292TEZ2MzcxRmJPZw?oc=5",
-        "source": "Google News",
-        "published": "2026-07-31T15:42:17.000Z",
-        "summary": "Anthropic says human error let Claude AI models escape test environment and hack third parties Cybersecurity Dive"
-      },
-      {
-        "title": "Anthropic says its Claude models ‘gained unauthorized access’ to other organizations’ systems - oodaloop.com",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPcEhwVUttQll2Z2xVZlpidjQ3czVJSXJvY3FqbEpjeEZNdXJ2TFA0eGZCc1RiRWpuZHdETDd3cC12c1hDSVpNdGs2S2lhbkhqaUgwLUg0alQzM1o3UGhWT3dqMkFFS3hrNmJPVUU3N29sMDRyX3NUN0ZRZ21kWUYzMGYzLWJ4OVIyUFM4Zi02NUZWNnBPWFVOcjNUQ0JVb3VTTTlNZmpSMzQ0SXdYRTA3cDQtamNRaHFqU25kdU9FSVVXMW1hbWdqSkln?oc=5",
-        "source": "Google News",
-        "published": "2026-07-31T15:34:06.000Z",
-        "summary": "Anthropic says its Claude models ‘gained unauthorized access’ to other organizations’ systems oodaloop.com"
-      },
-      {
-        "title": "Anthropic Reveals Claude AI Breached Three Companies - Mexico Business News",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQWWF5X3djTkZHajgzQzM5Z1R3M3gxMzJISWVPSUh6RzBPS1ZzMVFyR2pKanlsT3hMVVN5b1ZFbWlaSDhJNWxPMEdEVVRhTEJMcVpLMEZPdnZTc3ByeGsyYml1aWl2RzlnalRNcl9zRDBOS2FNTWNXOE93THpOeXlQSkQ2TDlEeXhoM0gxQnpWYXktZm5COVZyb0RVUkhTdmxl?oc=5",
-        "source": "Google News",
-        "published": "2026-07-31T15:30:00.000Z",
-        "summary": "Anthropic Reveals Claude AI Breached Three Companies Mexico Business News"
-      },
-      {
-        "title": "Anthropic says it discovered its AI broke into other companies' servers as well - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUlBnbWZZRGNXeDViekcyZFdORE43cDdLQlByMjRFal9QcldSNWYwUUFpZDFLcHFhRU1pNmdZazh6WnBFQWJYc1IxZ3RTOW1RLTc0eXlDZDhIYy1xY3NWdnpxQWFFSU1ZSXFWd3hRS1dXMzNfbVdKMC02ZUpIZC1oUzdhU21MTnBHUUw1VHR5N054UHBpLUk2dGZ1V2xxWXRCSzNULTZnV0NXWk9XNTdndUEwSXpRNy1keWNCQmg2VHF4TldkcDVZSGlBZXdaeVE?oc=5",
-        "source": "Google News",
-        "published": "2026-07-31T15:10:38.000Z",
-        "summary": "Anthropic says it discovered its AI broke into other companies' servers as well Yahoo Tech"
-      },
-      {
-        "title": "Anthropic’s Claude AI hacked other firms during tests, company says - The Week",
-        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBXbkVBUWJ6VzFETGtIQ0FVSTdONGhDYm9IZnZ2WHl0b1Rhc29PZllRUWVqQlVLWEt1WEF6Mk9KS2VkS0UxdHdsMXBQQkxCU0dRQVBVVjJPR3hVd1U4U0lFYzZidnBVNmtN?oc=5",
-        "source": "Google News",
-        "published": "2026-07-31T15:00:05.000Z",
-        "summary": "Anthropic’s Claude AI hacked other firms during tests, company says The Week"
       },
       {
         "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
