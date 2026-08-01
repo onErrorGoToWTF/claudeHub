@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T11:08:33.462Z",
+  "generated_at": "2026-08-01T12:49:03.196Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,20 @@
     ],
     "news": [
       {
+        "title": "Anthropic's Claude hacked three real-life companies during security capabilities test — test environment with internet access and unwitting targets' lax cybersecurity practices led to bots running rampant - Tom's Hardware",
+        "url": "https://news.google.com/rss/articles/CBMigANBVV95cUxPVnVkN1dfWUJjNjF0Nm5lcWVMRk5HTVV3R0s0VU9GMlJaR3dEQUNObnFHRElCWnVGbzg4eFI0ZzFqVmJZaFhYUE5IZkZKMm1vYTRpVlVVckowX3dCc0pTU0ZxYzZvbEh5U1lTdzU3dmNZNWw1SWo2eUZXSTkwekRQNEt5bmdUZjAxU3ZJaENKaDFFaWlPeHRiUGlLTnZlcHRJSGx0NUZBTGUyY29fUXROSGNsVFNYVDFvTTd2cXYzRkJQR1JSU3p1V3F5VXFQYmRtV1VuVzBIbktoc0RxOEsySE56WEN4aUVsemlPbkQ1UWw3OXV4VDUyWTQ4bEpyNGJkOFJ4RUNrM0M3QjJKb2NrWEluaVFpREVaUF93cndXaG1hSmNsUS1uakpDRXc1RXNncjhhWmtNeHU0WDZzeE5yYkVtSVo3WmpZRW9xYnZTalhSanRzVERScnJVM1ptaDZMMUF1MDRFd0NjTEpyQnN2MmR4X1prMGFYN2JSeUdXeG4?oc=5",
+        "source": "Google News",
+        "published": "2026-08-01T12:30:00.000Z",
+        "summary": "Anthropic's Claude hacked three real-life companies during security capabilities test — test environment with internet access and unwitting targets' lax cybersecurity practices led to bots running…"
+      },
+      {
+        "title": "Frontier AI models escaped testing safeguards as Trump weighs regulations - Straight Arrow",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQQlliQmlyY0lkamVGWnpxOGhpTVBOdHlzQkVNeTBYbnlTcFFMdEYtODZJejFpbllvbFRnSERKbjV3YzFPcmJoa3NhVGdHbHZhaFBJajZSS25PTUpIYVNiaGl6aU8tdmV4ME5GSGhHYVY4X0F0dFdUWGxFdHpnY1pkX0NCTW1UN3lZTHkxVndWWW9mQkhHa2JFeA?oc=5",
+        "source": "Google News",
+        "published": "2026-08-01T12:00:00.000Z",
+        "summary": "Frontier AI models escaped testing safeguards as Trump weighs regulations Straight Arrow"
+      },
+      {
         "title": "The Big Problem For AI Companies — They Don’t Have A Monopoly - CleanTechnica",
         "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQOUV1T1NTblVLNHFDbTJJR2tHSkdlYV9rM01TTVh1V3djSER3N0ktZGd1cGdfTnFCQUx2Y2h2NEpDQ1hFeGFIc2lPV0VwOTNJR2RFRF92N3NtbkFoUlFoaU5XSHVXWlJqTVgtVTJrZGFrdWtzcHppMk9FOEgzR0NIV0R5S0NtRmp1YkxHYkhPNDNRdVpsNmR6d1dFU2w?oc=5",
         "source": "Google News",
@@ -251,11 +265,11 @@
         "summary": "Anthropic Says Claude Models Hacked 3 Organizations During Cyber Tests Hackread"
       },
       {
-        "title": "Anthropic Reveals Claude Breached Three Organizations After Escaping Test Environment - LinkedIn",
+        "title": "Anthropic Reveals Claude Breached Three Organizations After Escaping Test Environment - linkedin.com",
         "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZGV6WExCSERlcy1oSGVhNktWbzRhaGdFRml3dV8yaElSaXNmY3dyMVM1VFV4UWFPaGNWbVpfYTdLci03cGladzVoMV8zbUJUY2VHd2ZsY094YXBKcWtrT2xFeVpIaXgtYWIxQWpaLTkxa21nSnU3R2c1aUlnck9ILXBuVk1RbVdzeVJDZTkwNHlKX3B4?oc=5",
         "source": "Google News",
         "published": "2026-07-31T19:51:28.000Z",
-        "summary": "Anthropic Reveals Claude Breached Three Organizations After Escaping Test Environment LinkedIn"
+        "summary": "Anthropic Reveals Claude Breached Three Organizations After Escaping Test Environment linkedin.com"
       },
       {
         "title": "Anthropic, OpenAI Cyber Failures Point to US Security Risks",
@@ -305,20 +319,6 @@
         "source": "Google News",
         "published": "2026-07-31T18:02:05.000Z",
         "summary": "Anthropic reveals Claude compromised real-world systems during AI security tests voz.us"
-      },
-      {
-        "title": "Anthropic Discloses Claude Security Breaches as Judge Casts Doubt on Pentagon’s “Supply-Chain Risk” Ban - AI Insider",
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOMFZJUzI5aWlrbEF0cmhkUjVZV2NyOHRmZFFLQkhQYkhiNnd5aG01SFUyWDI2MXZRM0RTbzJCaDc4M3Fqa2FEcGFNLTdGWXdDOWM4aWR6NGhQbHZvbDNFMTFydUVFQjBZRGhHbTk5QVByNmhKRU8xZ0lrZjdGZEFDVGl2YzR4VVZFUWFKdzFiNnZwZFdXUEdKb2F6ZldOTnExMTJINmRqSkJHTXZhUzFMbUpVaWhxaFktMElTYlpycElBQmZFelJWZEJzNWRoQk4tX21UdQ?oc=5",
-        "source": "Google News",
-        "published": "2026-07-31T17:35:48.000Z",
-        "summary": "Anthropic Discloses Claude Security Breaches as Judge Casts Doubt on Pentagon’s “Supply-Chain Risk” Ban AI Insider"
-      },
-      {
-        "title": "Sam Altman isn’t the only one who wants to pump the brakes on AI",
-        "url": "https://techcrunch.com/video/sam-altman-isnt-the-only-one-who-wants-to-pump-the-brakes-on-ai/",
-        "source": "TechCrunch",
-        "published": "2026-07-31T17:26:32.000Z",
-        "summary": "After years of pushing full speed ahead on AI, OpenAI CEO Sam Altman says maybe it’s time for the AI industry to “pace” itself. The comments came just days after one of OpenAI’s own models broke out…"
       },
       {
         "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
