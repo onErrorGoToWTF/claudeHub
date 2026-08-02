@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T11:09:04.377Z",
+  "generated_at": "2026-08-02T12:51:10.152Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "Anthropic’s Claude Kept Attacking After Recognizing Its Target Was Real — and That Changes the Story - forkast.news",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPOEg5NlF0bXE4VDMwVTU4LUgtUEF5ZDBOaUhxYm13Y1JyaE5scTk5T0llelluUGg1VExUWVcyOHlTQ3RrcFdyUUtrUWJXSk1EdTltUVdWd2t2Z090WU1jQXEtWkE2OEJpUFZobHMtYnpiMk5HZnN3MHBJb2p3Nk1IQmdPb0wxY3JTUnZtUEpPUnJwSnNiNkNkWVlBcF9IZjlLM0hzV1hpbXdNTll0bjFNamhiMC1oSWpWQ0tZ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-02T11:44:52.000Z",
+        "summary": "Anthropic’s Claude Kept Attacking After Recognizing Its Target Was Real — and That Changes the Story forkast.news"
+      },
+      {
         "title": "Anthropic says Claude models escaped test environment and hacked three organizations - Ynetnews",
         "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5yMmRWUHI1N0hYNWY2THl2c0xIZy0yQUxaaFctSjJlZGNud1liSEJzbHBMYjBkYkFJRFVRUlJNYTcwLVZwVHdMX2RiRUV2WDloQ00xdUNOakdvci1TMEpYRDFjZmhnQkVCLTc0bA?oc=5",
         "source": "Google News",
@@ -179,13 +186,6 @@
         "source": "Google News",
         "published": "2026-08-01T19:05:03.000Z",
         "summary": "Claude loses control, breaks into 3 more companies www.israelhayom.com"
-      },
-      {
-        "title": "OpenCode vs Claude Code: Free vs $20, 5.4x Downloads [2026] - tech-insider.org",
-        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBjUHJZWDJhQmt2aDdtcjhpTTM3SVppcFNoM2NaNGZXeXhqLWgxWVI0ODZxTF9wM3BoTVRQaDRuY2xzQlRnajM5enk0LVFxbUszZ2R2anozVzhOWkstTUw0NWNIUmo?oc=5",
-        "source": "Google News",
-        "published": "2026-08-01T14:53:05.000Z",
-        "summary": "OpenCode vs Claude Code: Free vs $20, 5.4x Downloads [2026] tech-insider.org"
       },
       {
         "title": "Anthropic's Claude hacked three real-life companies during security capabilities test — test environment with internet access and unwitting targets' lax cybersecurity practices led to bots running rampant - Tom's Hardware",
@@ -223,11 +223,11 @@
         "summary": "AI & Tech Brief: Anthropic’s rogue agents The Washington Post"
       },
       {
-        "title": "Anthropic Claude models compromised 3 companies during testing - scworld.com",
+        "title": "Anthropic Claude models compromised 3 companies during testing - SC Media",
         "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOWjVNdS1IOWR2YWNycnREMjZkVVNSdHNPbzlMZ2RtTVRsSUcyZ2gtOUVhYW04VnVtY3RyOHFBOUZKNWRhNkVsSnU5VlprZUNXQ3pTR01WaUZFM0dyM09ReWhZc2ZoUnZtZTdKbkVpdkNXcWNKMUxxUmNOcUlXdWhmbHRBTFVtMFQxLVhvaVNuYmEwcW50cHc?oc=5",
         "source": "Google News",
         "published": "2026-07-31T22:51:09.000Z",
-        "summary": "Anthropic Claude models compromised 3 companies during testing scworld.com"
+        "summary": "Anthropic Claude models compromised 3 companies during testing SC Media"
       },
       {
         "title": "Anthropic's Claude AI hacked three companies during testing - KCENTV.com",
@@ -300,11 +300,11 @@
         "summary": "Anthropic Reveals Claude Breached Three Organizations After Escaping Test Environment LinkedIn"
       },
       {
-        "title": "Your CLAUDE.md is probably wrong, and here's how Anthropic's engineers actually structure theirs - XDA",
+        "title": "Your CLAUDE.md is probably wrong, and here's how Anthropic's engineers actually structure theirs - xda-developers.com",
         "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQcTNIN0NjMHI0SHhjRmlHcmo1Y05fSzJxckhmME1ZRkozQmpUamZJSDhoY0pQZndBTTZzX2xRUzIxSjVYNGFVSTR5enh1aFkzWWt4akI1OEpOZVFycmZyYVJiUkoxV0FTX2RsX2ZlRlBXZlR5eUtDaEV5bEZTekRmdmd6THZJcFNVY1VfVmUzbnZYa2xoVTJ5eUYxODgyRVo2?oc=5",
         "source": "Google News",
         "published": "2026-07-31T19:36:46.000Z",
-        "summary": "Your CLAUDE.md is probably wrong, and here's how Anthropic's engineers actually structure theirs XDA"
+        "summary": "Your CLAUDE.md is probably wrong, and here's how Anthropic's engineers actually structure theirs xda-developers.com"
       },
       {
         "title": "Another AI Jailbreak: Anthropic's Claude Escapes a Test and Hacks Outside Groups - cbn.com",
@@ -706,7 +706,7 @@
         "summary": ""
       },
       {
-        "title": "Claude Code YOLO Mode Done Right: Docker Sandboxes Tutorial",
+        "title": "Claude Code in YOLO Mode - SECURE Setup Guide with Docker Sandboxes",
         "url": "https://www.youtube.com/watch?v=iUDuN9dyuTY",
         "source": "Leon van Zyl",
         "channel": "Leon van Zyl",
@@ -1005,7 +1005,7 @@
     ],
     "tutorials": [
       {
-        "title": "Claude Code YOLO Mode Done Right: Docker Sandboxes Tutorial",
+        "title": "Claude Code in YOLO Mode - SECURE Setup Guide with Docker Sandboxes",
         "url": "https://www.youtube.com/watch?v=iUDuN9dyuTY",
         "source": "Leon van Zyl",
         "channel": "Leon van Zyl",
@@ -1764,7 +1764,7 @@
         "summary": ""
       },
       {
-        "title": "Claude Code YOLO Mode Done Right: Docker Sandboxes Tutorial",
+        "title": "Claude Code in YOLO Mode - SECURE Setup Guide with Docker Sandboxes",
         "url": "https://www.youtube.com/watch?v=iUDuN9dyuTY",
         "source": "YouTube · Leon van Zyl",
         "published": "2026-07-29T12:00:15.000Z",
