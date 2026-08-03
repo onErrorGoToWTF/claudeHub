@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T19:14:18.471Z",
+  "generated_at": "2026-08-03T20:51:34.079Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "Who’s legally to blame for Anthropic and OpenAI’s autonomous AI hacks? It’s complicated",
+        "url": "https://techcrunch.com/2026/08/03/whos-legally-to-blame-for-anthropic-and-openais-autonomous-ai-hacks-its-complicated/",
+        "source": "TechCrunch",
+        "published": "2026-08-03T19:45:35.000Z",
+        "summary": "OpenAI and Anthropic admitted that their unreleased AI models escaped their sandboxes and hacked several companies in unprecedented cyberattacks. Who is legally to blame? Should prosecutors charge…"
+      },
+      {
         "title": "Anthropic reveals Claude AI model hacked three companies during tests — so how worried should we be? - TechRadar",
         "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPYkNiVjEwUi1aUUZXdFRPMXB4WE1RRFFCUTdpaTlRaGhyWEZlTzNiUTlEQlhqNVFOUDc4c0RJXzdlXzNucVR4bGJzVjdwRVJESDVweDZWQjE2REhaVDJjX1g5eXdwbFlwZ1JTZ0ZXMzF6NXJFY184bUpWRlI4V3B3N2tkNnRoSjc2UFJQT0Myb2NOTE9raEg2REh2NmFEM2ZzVHJfTTE1dFR5WGRnbzhEVGpBakdmWlJPejFBdC1GajFZREtfdnBiSXNfOUp6eU0yTVE?oc=5",
         "source": "Google News",
@@ -153,11 +160,26 @@
         "summary": "Anthropic reveals Claude AI model hacked three companies during tests — so how worried should we be? TechRadar"
       },
       {
+        "title": "Alibaba's New Model, Amazon's AI Win and Apple's Next Chapter | Bloomberg Tech 8/3/2026",
+        "url": "https://www.bloomberg.com/news/videos/2026-08-03/bloomberg-tech-8-3-2026-video",
+        "source": "Bloomberg",
+        "published": "2026-08-03T19:00:19.000Z",
+        "summary": "Bloomberg’s Ed Ludlow breaks down Alibaba's latest Qwen model, its biggest ever, claiming performance on par with Anthropic. Plus, AWS CEO Matt Garman joins after Amazon surpassed $3 trillion in…"
+      },
+      {
         "title": "Anthropic’s AI models accidentally hacked three companies - Computerworld",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNOFNiUXFuNkh4Y21wZ1F1d0pIb3FNZFppbVMtSGJicHZRcU5DSE5XMGdwWmdNWnIwVkhfNnBoMWpPVlFManBEM3hWSEJWSHVOb0ZzQmJ5RTlTT0hRNWhpRzZMYWpxNEkzX1hFazdGNHk0NWVIdDk5b2xHczExbmNzR2NUYlNfUmw4ODdnNmRqR1FidFplLTZRbG5lYmdYbUhLdVQ3TmxSTkloV2c?oc=5",
         "source": "Google News",
         "published": "2026-08-03T16:39:30.000Z",
         "summary": "Anthropic’s AI models accidentally hacked three companies Computerworld"
+      },
+      {
+        "title": "Launch HN: Hoplite (YC S26) – Effortlessly deploy cloud coding agents",
+        "url": "https://hoplite.sh",
+        "source": "HN · 30↑",
+        "hn_id": "49157997",
+        "published": "2026-08-03T16:32:06.000Z",
+        "summary": "Hi HN, we’re Bence and Ryan, founders of Hoplite ( https:&#x2F;&#x2F;hoplite.sh ). Hoplite lets you deploy coding agents in the cloud, with a suite of tools that makes it…"
       },
       {
         "title": "Anthropic launches in-country Claude inference and new partnerships in India - CXOToday.com",
@@ -216,11 +238,11 @@
         "summary": "Anthropic Confirms Claude AI Models In India To Be Available With In-Country Inference NDTV Profit"
       },
       {
-        "title": "Can AI Hack Bitcoin? BitGo CEO Dares Anthropic’s Claude to Crack 100 BTC Wallet - ccn.com",
+        "title": "Can AI Hack Bitcoin? BitGo CEO Dares Anthropic’s Claude to Crack 100 BTC Wallet - CCN.com",
         "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1GVmQyS3dGanpkWlBKU2dYaXQzUW83VGVFNlJtM2VLNWpDNUxrWUUxWjJ4TjZVbVREWW1SeDlEcTlPN0tNUDcxSGNVVS02R0VWSHZGSnNyQ1VPZGRNdkRCdExGU2dlalBFNmZUb3EwZU9TTjZGTnJlbmwwLVo?oc=5",
         "source": "Google News",
         "published": "2026-08-03T13:24:05.000Z",
-        "summary": "Can AI Hack Bitcoin? BitGo CEO Dares Anthropic’s Claude to Crack 100 BTC Wallet ccn.com"
+        "summary": "Can AI Hack Bitcoin? BitGo CEO Dares Anthropic’s Claude to Crack 100 BTC Wallet CCN.com"
       },
       {
         "title": "Anthropic Announces Expansion In India, AI Agent Claude Now More Accessible - NDTV",
@@ -228,13 +250,6 @@
         "source": "Google News",
         "published": "2026-08-03T12:55:43.000Z",
         "summary": "Anthropic Announces Expansion In India, AI Agent Claude Now More Accessible NDTV"
-      },
-      {
-        "title": "OpenAI’s models are going even more rogue, report claims - The Independent",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQS2RRNHVFUzNZclFVeEZQakJWWGQ5OGoxN1ZwUWZET2h3MUY5OUVLNkllenhTbnF5cGViTDJSVjFpMHNFaG4tX3prUDlKTms4empJYnRSazk2TWxZQjdMWFBmdHlicTZMVDFQNDVZN1o0by1Dc1lXUFJFWExzaVRmbUppaDg0NkM5ckJXX1JzQmJISmpCOHRmY1E5SHJ2dWQzOGZXOVVR?oc=5",
-        "source": "Google News",
-        "published": "2026-08-03T12:01:00.000Z",
-        "summary": "OpenAI’s models are going even more rogue, report claims The Independent"
       },
       {
         "title": "OpenAI, Now Anthropic: Claude Models Attacked Companies in Testing, Raising Trust Questions - UC Today",
@@ -279,25 +294,18 @@
         "summary": "Chat, what’s the public’s favorite AI lab? The Argument | Substack"
       },
       {
-        "title": "Alibaba unveils its largest AI model yet, DeepSeek’s latest model is ultra-low cost - WTVB",
+        "title": "Alibaba unveils its largest AI model yet, DeepSeek’s latest model is ultra-low cost - wtvbam.com",
         "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPcmd4U0RpYThyLS1ZUmhxRUE3YjBBUFNiM3NCdWpZdUlUUTJWN2NodFdCWmNxU1lkSVIyanFkQ0lFTE1wSWRZQi1FM3hSR0NMbnVkOHBpbmx3RXF3VkFMb2NPMXhfVWd3SDhjYm9Qc2ZlZm1DcjB3VTAxX05QTnUyZFc0Q0lWNXpYNDJOLUhRN0xwSG1wb1JCVkZ2SUNQand6VlBWTjYwV2J5eWtOZ0JUWGpWbw?oc=5",
         "source": "Google News",
         "published": "2026-08-03T08:36:07.000Z",
-        "summary": "Alibaba unveils its largest AI model yet, DeepSeek’s latest model is ultra-low cost WTVB"
+        "summary": "Alibaba unveils its largest AI model yet, DeepSeek’s latest model is ultra-low cost wtvbam.com"
       },
       {
-        "title": "Alibaba's new AI claims to match Claude, upping the US-China AI race - euronews.com",
+        "title": "Alibaba's new AI claims to match Claude, upping the US-China AI race - Euronews.com",
         "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQTjl0bmpiQ3MxWlZhT0VkaktyWGJOMWE3YXB5a0RuWTRuX0lxUWFWSUF4YldHQWdwa3hIRzFKQ2haM0dZME5TaEt1QUpBUmd4SkcydDlfVFkzSUxMMkZvcWZrVnVHSnl6akI0Z3N2RkFTRjVNdUJsNUwyUTRDQWVQUVM3OW9BNG42UXFFU1pDNGN4WlVSQWdQNE9yNFBGazBoT2J2dlRBVkduYmFqTVNOSWQ3VlMtTEFjRWRTMi1DZw?oc=5",
         "source": "Google News",
         "published": "2026-08-03T08:32:41.000Z",
-        "summary": "Alibaba's new AI claims to match Claude, upping the US-China AI race euronews.com"
-      },
-      {
-        "title": "BitGo CEO Puts 100 BTC on the Line to Test Claude's Hacking Claims - blockhead.co",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNS05UUFdkbU5teWV1eUdkcDVyQjFaNGF3RExiRlQ1bXVRSGtDNjhqUUVTcVRHVVBvTzFoRFpXb2xkaEJFYnFNX2poYzhFS3hXSUp0ZTdBSlV1anZtMmdra0hfWGxwNjJqNjViRndWeHFDYnRoeE5uQ1AyZkhtWnR5QWtyZXJFdG5JTkhBQ2pMOXN1Vm1hSnhUTmhrb3NqX0g0c3lyNQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-03T07:49:25.000Z",
-        "summary": "BitGo CEO Puts 100 BTC on the Line to Test Claude's Hacking Claims blockhead.co"
+        "summary": "Alibaba's new AI claims to match Claude, upping the US-China AI race Euronews.com"
       },
       {
         "title": "Chinese AI Firm Siphoned American AI Knowledge From Anthropic Claude By Using Millions Of Prompts - Forbes",
@@ -312,13 +320,6 @@
         "source": "Google News",
         "published": "2026-08-03T07:02:51.000Z",
         "summary": "Claude Outage Hits 5h 44m as Anthropic Tops $47B [2026] tech-insider.org"
-      },
-      {
-        "title": "DeepSeek's new AI model is by far the cheapest of well-known models to run, research firm says - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOTnd6ckhOVUhwcGJjRmxRdlhObS1ncXRhZm9OeVUwaEgwOTg5YmNBTGVWcHZsdXd4dXVrWWdlZGtsYkw0eDIyY1A3NjdSM0o0bFBGUEZRNDF2NjYwZEtCamNpeTFqN3ZaQVlTclNuQWYxNXh4ZVlqaWF3WkNNVk1fbmJXcTdISlBmUVVWS01STmFYZldLSGk5akJQZVB5X09OSzVoVWF4Wko4TEF4cGozQUlWM202dFJWMGxSRTdpcTNaaUp6bmNyZXpWbVRFb2JoSzdCVQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-03T05:41:00.000Z",
-        "summary": "DeepSeek's new AI model is by far the cheapest of well-known models to run, research firm says Reuters"
       },
       {
         "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
