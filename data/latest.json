@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-08-04T16:03:43.353Z",
+  "generated_at": "2026-08-04T19:15:24.433Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Tino Cuellar",
+        "url": "https://www.anthropic.com/news/tino-cuellar",
+        "source": "Anthropic",
+        "published": "2026-08-04T17:40:15.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude for Nonprofits",
         "url": "https://www.anthropic.com/news/claude-for-nonprofits",
@@ -135,37 +142,79 @@
         "source": "Anthropic",
         "published": "2026-07-22T00:59:47.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Opus 4 6",
-        "url": "https://www.anthropic.com/news/claude-opus-4-6",
-        "source": "Anthropic",
-        "published": "2026-07-22T00:06:14.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
+        "title": "ChatGPT Dominates Congressional AI Spending, Far Outpacing Anthropic’s Claude - AI Insider",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObWZCRzFtMVE1Nm9HQXIyeFJiX1BqLWZsS1B3Qjk5NW9rc3locU40Rl9hOEpqWGtweS1jaTA1d1A5eEg4Si04S0V4dEF5RGpFTkpfSEduQ3FHTVVjZG52MmR6VGdQZzN5VFVwcmFTR0Vvb19tUVZ6d205akFNXzd4bzJ3THFoVkhzeUpkbC0zc1ZlMHdWQXk5TW5CalBCZFFEdjdSMGlKRW9JRjJEMVBDa3Qzaw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-04T17:57:18.000Z",
+        "summary": "ChatGPT Dominates Congressional AI Spending, Far Outpacing Anthropic’s Claude AI Insider"
+      },
+      {
+        "title": "How Firms Like Coinbase Are Building Coding Agents to Complement Anthropic's Claude Code - The Information",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQRnVCMXZfOVRDQ0pkMWlYYWlxTWt2UmJDRWVONmpYc1ZxbFBjSThDTUNpczBEbi1lREdOZDgxcmVGMkRFVUdjbFgtVE91R2w4Q1M1NDE0UmJQVW5OZDREYVBORU1yYXlzd2k0aGE3ZWJzMlZ4dFZZTzVOb3NGQU5pYm5EaWdTdG5RUVhHNTJBbXgyUUtsWklKV2V6b1FBbnM5RHpwcWxva0U5M3N1UDV3SFZoUW5vSGdaVlZoLWU3d2ttcjd0Zy0tTWdn?oc=5",
+        "source": "Google News",
+        "published": "2026-08-04T17:06:30.000Z",
+        "summary": "How Firms Like Coinbase Are Building Coding Agents to Complement Anthropic's Claude Code The Information"
+      },
+      {
+        "title": "Wiener, backed by Anthropic PAC, uses Claude to skewer his SF rival - SFGATE",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQbTllbkhMM25tRlZZRElsLVp5WWkzemVtU29KU0ZOamJ4NlVnTGx0UTFLQjdkY2l2UVZXZUtVd19MQUtLYzU1bU00Um1DUDhTVklPRzUtU1VqdDR2bG5KMGxDQ1E0T19xdzJfSTd1dlY3RHdTNmNjeTI5MnpsalZNZlBOeHViT0hXc28wZFR3?oc=5",
+        "source": "Google News",
+        "published": "2026-08-04T16:49:29.000Z",
+        "summary": "Wiener, backed by Anthropic PAC, uses Claude to skewer his SF rival SFGATE"
+      },
+      {
+        "title": "Palantir Jumps After ‘Otherworldly’ Demand Lifts Outlook",
+        "url": "https://www.bloomberg.com/news/videos/2026-08-04/palantir-jumps-after-otherworldly-demand-lifts-outlook-video",
+        "source": "Bloomberg",
+        "published": "2026-08-04T16:33:56.000Z",
+        "summary": "Palantir Technologies jumped after the company boosted full-year revenue and income forecasts and described commercial demand for its data analytics tools as “otherworldly.” Bloomberg's Mandeep…"
+      },
+      {
+        "title": "Anthropic Clinches $10 Billion AI Compute Deal With Nvidia-Backed Startup - TipRanks",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOUDN3Z003WVNVTmt6cTV2Q3IxVlpBOWtzWDU3WlRoNFF2clhocngyVXY0M25XTTZ3RVFoRFYybFJSbkZOOG9fRUR6VTJMY203U09MZzZReXZaeVBFaE5mSS1GMkRCLXZjMGNSbXlHa2pKLUxfZEM3ajlXbFpDY1ljaUI3Qm1uVXQyaHY1Vmpta3FGamZCWnBGR1hzMW1DUnh6UmtjTw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-04T16:32:56.000Z",
+        "summary": "Anthropic Clinches $10 Billion AI Compute Deal With Nvidia-Backed Startup TipRanks"
+      },
+      {
+        "title": "A unified API for AI model routing - blog.google",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE45ajF2SnZGcndhTkIyOTJoS3Flc2xjM1c0ZWxwalhaN3ZEcWFzY0k0TElHS2hjYlJuUFNJQzgtdEFWTjZxSG9OcXg5NlRlcFQ5UHJiMzJVUTRKSE9CRzFzWXVkcjNrMlNEWTFHa21aQmFWX2docmpBdQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-04T16:06:02.000Z",
+        "summary": "A unified API for AI model routing blog.google"
+      },
+      {
+        "title": "Blackstone has pitched a mega-debt package for Anthropic chip deal - report (BX:NYSE) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZW5oRjF0SDRtZnY0SGlISlFhSElKUWNub3FMYmw2WWlrdkhsVTF3ckd5S2c2X2ZJNUV4d0FHVjVlbHNGdW16ZnlnRGNtbmsxN2RVZHBDZjdyeTFueU12M1dFaDl6ZWIyQkNKc196T0tSSDhDWS1yUFJ2dGhaSkRtQ3U2eTU3QTlpLWxwanVjSFg1aHdFLVZGRWViUUhVQzVfS1JHWm5nTHREY1RlVlctYkxDQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-04T16:00:33.000Z",
+        "summary": "Blackstone has pitched a mega-debt package for Anthropic chip deal - report (BX:NYSE) Seeking Alpha"
+      },
+      {
+        "title": "Millions of books are reportedly being destroyed — here’s what Anthropic has to say - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxONzlqcnczVml0MU9hODlCSk5FbjJPYWhrbXJSR2lwOXNtZjZhcTNFX3YwNElWNGh3RHZpcUN0YmU0dVdsc3ZDbjlPbXNhZzRTMGh4MnI4Vk9NTTdDdkRxVVF5elQ0c0tjaklHNU12NlJ4V3lWY1NKcGlYVlF1TTh2cXBxZi1oeFB2UldhRFdrSnB5Rm1NeDFYU0plVFRtNlE?oc=5",
+        "source": "Google News",
+        "published": "2026-08-04T15:40:41.000Z",
+        "summary": "Millions of books are reportedly being destroyed — here’s what Anthropic has to say Yahoo Tech"
+      },
+      {
+        "title": "Claude to run on Indian servers as Anthropic brings in-country inference through Amazon Bedrock - t2ONLINE",
+        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNMnV3cWszbmFRV1R2UXh5bkJwX3J3XzA2R2VCMzA1QnlRVmx2RjRHNkJkTEVzUWRtTnI0YnJWUWtMeGUwdUxqejF0c2ZqTUkzVXNaSG5hVlVnTk53LXQ5dUQ4VUVIeV9vVkxBNnZwc013Zlo0WjBvT3NqTHlCMVpxZzVvano5VDFDNTlDZnZIZkdRSXU3eVpEZXNpbHRoa3JjVzRrM2pLR01YcmlXRXN4V2sydGxVc29pMGM3WWp2UG5JZGdmRUs3ZXpDcU5BMzVwSDJIX0NSN0NuUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-04T15:13:00.000Z",
+        "summary": "Claude to run on Indian servers as Anthropic brings in-country inference through Amazon Bedrock t2ONLINE"
+      },
+      {
         "title": "Agent skills that bring team coding standards to Claude Code and Codex",
         "url": "https://github.com/tikalk/adlc-team-skills",
-        "source": "HN · 47↑",
+        "source": "HN · 72↑",
         "hn_id": "49169640",
         "published": "2026-08-04T14:38:31.000Z",
         "summary": ""
-      },
-      {
-        "title": "Blackstone Has Pitched Mega Debt Package for Anthropic Chip Deal",
-        "url": "https://www.bloomberg.com/news/articles/2026-08-04/blackstone-has-pitched-mega-debt-package-for-anthropic-chip-deal",
-        "source": "Bloomberg",
-        "published": "2026-08-04T14:20:54.000Z",
-        "summary": "Blackstone Inc. has held early discussions with investors to gauge interest in a second mega debt package to finance Anthropic PBC’s use of chips from Alphabet Inc.’s Google."
-      },
-      {
-        "title": "Anthropic Inks $10 Billion Computing Deal With Cloud Startup",
-        "url": "https://www.bloomberg.com/news/articles/2026-08-04/anthropic-inks-10-billion-computing-deal-with-new-cloud-startup",
-        "source": "Bloomberg",
-        "published": "2026-08-04T12:00:00.000Z",
-        "summary": "Anthropic PBC has struck a $10 billion deal for computing capacity from a months-old infrastructure startup, according to people familiar with the matter, marking the Claude maker’s latest effort to…"
       },
       {
         "title": "Anthropic Says Claude Hacked Three Companies During AI Tests - Memeburn",
@@ -175,13 +224,6 @@
         "summary": "Anthropic Says Claude Hacked Three Companies During AI Tests Memeburn"
       },
       {
-        "title": "Congress spends 88% of its AI budget on ChatGPT - thenextweb.com",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNdVZMWnp0Rk50YnFHdjlEZXJqX0pSdXdhbmc2cWZFZVNNek9Zc2NWOUZNMGd5cGh4bHJmaFlCLS1iWU53bWhlUXpLYi1LT3RMVVl2ZFNrM01jZDFrV1ZPd2FlYTZnTnhqa1BkNHNWbmlTR3ZYUUQzU3dUZzV5NlVLeDJZMktsZw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T11:15:38.000Z",
-        "summary": "Congress spends 88% of its AI budget on ChatGPT thenextweb.com"
-      },
-      {
         "title": "'I'd Be Petrified': Steve Eisman Says Cheap Chinese AI Models Could Wreck OpenAI and Anthropic's Valuations - 24/7 Wall St.",
         "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNODl0a2t4d3VUUWVzZ0E3Q2lQVGVaTllhRUwzWVNQcERRZjY5Q2pDZ3lKcklNUEV0R0lVbmwwMG9nU3pjb0stNkhObXBVc3diX3pRMlBlVVppcjdOOXpsMmVNalhBcVZva3I4cmp5NVNpczVmRTAxSDhfMUxBSkJWT2dZLUVuZFM4WDAydnZBOV9qV3VsbTJVMnh6RlJFRWl6SkVCXzQyUHlWTU1RTUl1TWVsREtnVFVvVUk2ZFFNODE2QlNkLTF3MzJ4TkM4UTFhV1paVDFWcWdjLVVNLXJZ?oc=5",
         "source": "Google News",
@@ -189,18 +231,11 @@
         "summary": "'I'd Be Petrified': Steve Eisman Says Cheap Chinese AI Models Could Wreck OpenAI and Anthropic's Valuations 24/7 Wall St."
       },
       {
-        "title": "Anthropic expands India strategy with local Claude inference and partner ecosystem investments - CRN Asia",
+        "title": "Anthropic expands India strategy with local Claude inference and partner ecosystem investments - crnasia.com",
         "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNQ2NrV2JhV1ZaOF8tTnRDcmdSQXlqVlVqbXN6SlhGZWg1TV9XLVBFa0d2a2ZNSU5VYkZIcGg0eE91UkNzbmQzQ3A4akdzeC1qeVpBX0ZzeXdDRVhGcjk3VG1NSUJDR1B5b3M2bW9zWWVoOV80SExHMy1HUDB1OVZlTS1GV1lmMk5ET3o0OGozdFkwVm5mRVRZZmpXQlM1cGZONm14MlVnXzh5VFFvS0NSX1REOHUxbnA3WXJJMHl3M0JFTEtXREljUFFOTFBTV1k?oc=5",
         "source": "Google News",
         "published": "2026-08-04T07:55:49.000Z",
-        "summary": "Anthropic expands India strategy with local Claude inference and partner ecosystem investments CRN Asia"
-      },
-      {
-        "title": "Anthropic Expands India Presence, Adds In-Country Inference For Claude - ETV Bharat",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNVW9peDVSazJzUVR6UTZibFBWU3ZqaDFMWk9ZZmVGbjE3MGJpSGtIM2g3dTAwNV9oQ0VyYVZzZ2s1Sm84SFp1dGs0bzMzby1JS0QtaGxuOW1FY3gyY21GeU1VclViS0hfTVZZbUl1V2xYWko3d3hhS1ZTdkk1bXZfN2c3S3RzUUFPeVBTZExLaHc0ZnJMUElWY2xxWWtvZUdKREg4ZU1uWjBmZzNEQ3lLa3ZJaHlaUUVvdmwtUUNNeE5wQdIBxwFBVV95cUxQYlI3enRvcTZyNlIycnRhWVl5VVB5R2IzWUdMSGliTHJkbVZJd3dWTktUWGt4a05SMFFjWmg2OGV0Y3pJVmluTXJ5bXkzWV9FU20tNTRCZVRtMVlFNDVNdTR4UDJSYU43Vm5nT19Wd0tlbVpqdlZUNk9rWWFieUVIRTA2YmJfc2RiTU5BajVxYU53YTJFMWFDaXQ0Umx5UmwzbGdKaEJBSWV5YkVRYXVXV3BndGlnaHBNU2hRRnR6ZmozUHZsMjFj?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T06:55:11.000Z",
-        "summary": "Anthropic Expands India Presence, Adds In-Country Inference For Claude ETV Bharat"
+        "summary": "Anthropic expands India strategy with local Claude inference and partner ecosystem investments crnasia.com"
       },
       {
         "title": "Anthropic Launches In-Country Claude Inference in India With Amazon Bedrock - analyticsindiamag.com",
@@ -285,43 +320,6 @@
         "source": "Google News",
         "published": "2026-08-03T16:39:30.000Z",
         "summary": "Anthropic’s AI models accidentally hacked three companies Computerworld"
-      },
-      {
-        "title": "Launch HN: Hoplite (YC S26) – Effortlessly deploy cloud coding agents",
-        "url": "https://hoplite.sh",
-        "source": "HN · 75↑",
-        "hn_id": "49157997",
-        "published": "2026-08-03T16:32:06.000Z",
-        "summary": "Hi HN, we’re Bence and Ryan, founders of Hoplite ( https:&#x2F;&#x2F;hoplite.sh ). Hoplite lets you deploy coding agents in the cloud, with a suite of tools that makes it…"
-      },
-      {
-        "title": "Show HN: Product analytics (and evals) for agent sessions on your MCP",
-        "url": "https://armature.tech/",
-        "source": "HN · 41↑",
-        "hn_id": "49157807",
-        "published": "2026-08-03T16:17:59.000Z",
-        "summary": "Hi HN! We’re Theodore and Louis, founders of Armature (YC P26). We reconstruct the entire session behind the MCP tool calls you receive, including what the user asked their agent…"
-      },
-      {
-        "title": "China-based hacker employs DeepSeek in autonomous threat campaign - Cybersecurity Dive",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOaHk2YzBweHZGbEwtYTJxUWI3cVJ3MXg5R0htbFF3cDA2S1NqVThZRVM3dzVZbGVoVmExeHFBOGVYa0F5UGEzVVBzWndNYlZJTVA4MGo2b1ktOGdVWjZmQV9tZWZMaVVBcEIyWkcyLUtyamdURzRuSGtpOG9NSXZudXlCU3c2YWVmRHRKelpB?oc=5",
-        "source": "Google News",
-        "published": "2026-08-03T15:37:23.000Z",
-        "summary": "China-based hacker employs DeepSeek in autonomous threat campaign Cybersecurity Dive"
-      },
-      {
-        "title": "Anthropic Brings Claude Inference To India As Sovereign AI Race Heats Up - Inc42",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPcG9ySUlzQ0pJQ3pRTF9xSWM5RXVZckRGQldaZzcydTlGMHRGWFF6QUM3RHpUSE9yYnVlNWtCa1EwWWdNWUlWMzdKekxEZ29OSE92d0h6YnpTOTNaZVpRZ2diblN1dTh1UzQxVFFXYnh0ZjVodEg5azRmUXJ4eS1iVURkbmJxLU0xQ3ZzckdjdXdUOEVQNkU5R0lNSTU?oc=5",
-        "source": "Google News",
-        "published": "2026-08-03T13:00:32.000Z",
-        "summary": "Anthropic Brings Claude Inference To India As Sovereign AI Race Heats Up Inc42"
-      },
-      {
-        "title": "Anthropic Announces Expansion In India, AI Agent Claude Now More Accessible - NDTV",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNY2NoSjhiSVNkUXVXWi1yRjlOeGFidVVHd1haQk05amNVRHBYcGVXYmRSNmsxaVBRckdaZktDelBxVkJtWFd1VjNwWHVMY3Q4eE5nZ0h1TjVMWU9ITEIwRTNEcEVrQVJsdS1EcXR3bXE1WWpQWEphR2F0X3VockdsWFVKTDNwcEtGSEZmd1NBYXhma2p2ZUUybVZPYWZvbnRxVUwtM0hxNHpNVUtrQ1g4eVR5ckVoQdIBvgFBVV95cUxPNktJNE1CNlljVFVMbUdVQ3RfQWcwNWxLZG1nT2JuR1NxQnhRbkV1TEpmXy0zdU1YWVdiSE83TXVHTzBkdVBvcl9pYlQya0V3cTJTeW5ZRnlsRUlmSC0xc2dfMW5OSzA3UXlBUHVoUVpCektILXY0cXJrZGtXcktnSm1yVXFIbW1Tc1NQWjBnTzJyWUszeC1GUVAzT0ExenBzM1dJS3VlLU1FaWZZMDdEN1FSSl82emxzb3JjdmNR?oc=5",
-        "source": "Google News",
-        "published": "2026-08-03T12:55:43.000Z",
-        "summary": "Anthropic Announces Expansion In India, AI Agent Claude Now More Accessible NDTV"
       },
       {
         "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
