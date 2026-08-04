@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T13:39:23.054Z",
+  "generated_at": "2026-08-04T16:03:43.353Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,21 @@
     ],
     "news": [
       {
+        "title": "Agent skills that bring team coding standards to Claude Code and Codex",
+        "url": "https://github.com/tikalk/adlc-team-skills",
+        "source": "HN · 47↑",
+        "hn_id": "49169640",
+        "published": "2026-08-04T14:38:31.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Blackstone Has Pitched Mega Debt Package for Anthropic Chip Deal",
+        "url": "https://www.bloomberg.com/news/articles/2026-08-04/blackstone-has-pitched-mega-debt-package-for-anthropic-chip-deal",
+        "source": "Bloomberg",
+        "published": "2026-08-04T14:20:54.000Z",
+        "summary": "Blackstone Inc. has held early discussions with investors to gauge interest in a second mega debt package to finance Anthropic PBC’s use of chips from Alphabet Inc.’s Google."
+      },
+      {
         "title": "Anthropic Inks $10 Billion Computing Deal With Cloud Startup",
         "url": "https://www.bloomberg.com/news/articles/2026-08-04/anthropic-inks-10-billion-computing-deal-with-new-cloud-startup",
         "source": "Bloomberg",
@@ -160,11 +175,18 @@
         "summary": "Anthropic Says Claude Hacked Three Companies During AI Tests Memeburn"
       },
       {
-        "title": "Congress spends 88% of its AI budget on ChatGPT - The Next Web",
+        "title": "Congress spends 88% of its AI budget on ChatGPT - thenextweb.com",
         "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNdVZMWnp0Rk50YnFHdjlEZXJqX0pSdXdhbmc2cWZFZVNNek9Zc2NWOUZNMGd5cGh4bHJmaFlCLS1iWU53bWhlUXpLYi1LT3RMVVl2ZFNrM01jZDFrV1ZPd2FlYTZnTnhqa1BkNHNWbmlTR3ZYUUQzU3dUZzV5NlVLeDJZMktsZw?oc=5",
         "source": "Google News",
         "published": "2026-08-04T11:15:38.000Z",
-        "summary": "Congress spends 88% of its AI budget on ChatGPT The Next Web"
+        "summary": "Congress spends 88% of its AI budget on ChatGPT thenextweb.com"
+      },
+      {
+        "title": "'I'd Be Petrified': Steve Eisman Says Cheap Chinese AI Models Could Wreck OpenAI and Anthropic's Valuations - 24/7 Wall St.",
+        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNODl0a2t4d3VUUWVzZ0E3Q2lQVGVaTllhRUwzWVNQcERRZjY5Q2pDZ3lKcklNUEV0R0lVbmwwMG9nU3pjb0stNkhObXBVc3diX3pRMlBlVVppcjdOOXpsMmVNalhBcVZva3I4cmp5NVNpczVmRTAxSDhfMUxBSkJWT2dZLUVuZFM4WDAydnZBOV9qV3VsbTJVMnh6RlJFRWl6SkVCXzQyUHlWTU1RTUl1TWVsREtnVFVvVUk2ZFFNODE2QlNkLTF3MzJ4TkM4UTFhV1paVDFWcWdjLVVNLXJZ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-04T10:08:20.000Z",
+        "summary": "'I'd Be Petrified': Steve Eisman Says Cheap Chinese AI Models Could Wreck OpenAI and Anthropic's Valuations 24/7 Wall St."
       },
       {
         "title": "Anthropic expands India strategy with local Claude inference and partner ecosystem investments - CRN Asia",
@@ -172,13 +194,6 @@
         "source": "Google News",
         "published": "2026-08-04T07:55:49.000Z",
         "summary": "Anthropic expands India strategy with local Claude inference and partner ecosystem investments CRN Asia"
-      },
-      {
-        "title": "Claude AI Gets India Data Residency - Rediff",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQT29UNXR1Y0QybkwwOUtWVTMwNEtISHFfajFjNTRFLWEzVk9sUVRHM3hja0drVVJOS0FxTEl3VVR4V1F2U2ZYU0hlTFA1Y0FRZXVCa214Qi1wZUxzcXpjUzl4QVk0MG1UbXBjdXMwY1hLR3hiXzA3bzhqR0RVOHRKTGlhdjZzYUJKV0s2RmZSOTbSAZMBQVVfeXFMUE9sS1d1UUJkeVZnQkRZaGVHWjJSdkU3TmJmZVlhSzh4NmJLOTNfN0VSMzMtNGtEM0c2MUxBYkpsTF82SHZSc2syWXFtWTV4cGNaajRmTWdYTmxxNHNISVNYdWFYVUw3d2NQb1VyUnFwMWd0NW9paTVVWURVRW11RkppWk1yUmFKSzVTM2JLVW1KQU5B?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T07:12:18.000Z",
-        "summary": "Claude AI Gets India Data Residency Rediff"
       },
       {
         "title": "Anthropic Expands India Presence, Adds In-Country Inference For Claude - ETV Bharat",
@@ -202,13 +217,6 @@
         "summary": "Metro Bank customer fights for £14,000 refund after AI-linked fraud The Guardian"
       },
       {
-        "title": "China is anxious about Mythos being used as an offensive weapon: Report - firstpost.com",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPY1o0TkFMMnVJMklfWmZHb1dzZnhLZWRZSDQwbm1wVDk3RHZSaFY4OXh1ZGthMjAtYTFsd2JYYmQ5OTRKREk3OE1OZDU0QUJJY2VTYWxNUHZHaHJQaWQtTXpXQ2tGUGVSam5jVWZiT3BEc0UtVDB4Nl9ybmRJenRSWnlpX3lITzRIQjluV210WjJBZHliZ3AtLXZaZU1kTk1mV0hNSGxiZTA3c2Y0MFVTT3BuRVRhcnfSAbwBQVVfeXFMTlVyZXlFdmQ1SWdfNHVOSC1VblRwMk9uemJ4YjVrRlE4aEYzSVVXRnJWTWxIUW82dW9vbGdXelg5TVlxVjN2MFRXWDJGNWt4a3E4a1pDLW9aSkZ0RnBxLVhnSk9OMXN5eF9ZOWxGNXNBeFFyd3htcEdVeGY4MW0xSEFmYnJGQWlNNmVwQkNyd3B2WWNvVHBTVUVManpJSWhGTkp3aUtwRkF3WHZaLWRYb1NlMy11cENZSV9yMjY?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T04:51:32.000Z",
-        "summary": "China is anxious about Mythos being used as an offensive weapon: Report firstpost.com"
-      },
-      {
         "title": "Claude Breached Three Companies During Cybersecurity Evaluations - Forbes",
         "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxORDB3eFZ1MzU5YzNrcXlOdnRHeFlvVFFyemd6SXMzdTVpQUtTY3djUmYzQWpCWGFqemxkOVdBc0xzbHV2eUdjVzFfR0hEVzZjVWwxVHpaeE1KQmI0SHdoTkktVkhpY3dveW1uUzdoV2Z5N3Fma1ltd1E5UkJMb2tJOVdFUzgxN09LMzUydENEcm96WHVQVE43Y0wxRW9kSGg5RW1nSzlBeEtxajR1SGVJRmpIZHFKZHI2Ymc?oc=5",
         "source": "Google News",
@@ -223,11 +231,11 @@
         "summary": "KnowBe4 Extends Agent Security to Anthropic's Claude With Agent Risk Manager iTWire"
       },
       {
-        "title": "AI’s Efficiency Era: Why Leaders Should Learn About Open Weight Models - Forbes",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPX01ZemxHd3ZaZ3hTNllfS0JMSHNkY3ppdHphRXlUM1ItVDJoR1phNGVVeWlNV1VHeXBnQTVwRWRaX0YwN3VVN1VwQU5aRW9lT01PcWR3WDc0d21ENGZRVnNYZHBFbXRQTERIdzFDcHVBNVB1YlNxNXh3Y2VlUUxaWHRWZ3UyZm8waWdsbHRfSWFyWTloanRHTjBhRVlJX1dCaTEycDNJRGdNbllLaFZPUnJLa3VNX0FfV2c5UW9TZ3U?oc=5",
+        "title": "Are AI companies scanning and destroying millions of books, including rare titles? - Snopes",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1TMElVYzYtMzFlbWFzeXVrOGRnR0JPZWt0YWNENHEtcDhGenRfV1VVa1ZzM25iZ284RG9KTDFNSl9DLWMxckRWZFJnLUJoOXZPbFRjb1NRcVZQYkhkYkE4OGstcld5Sk1HekZjNjNWeXl6VnNDVFpHWQ?oc=5",
         "source": "Google News",
-        "published": "2026-08-04T00:10:01.000Z",
-        "summary": "AI’s Efficiency Era: Why Leaders Should Learn About Open Weight Models Forbes"
+        "published": "2026-08-03T23:54:41.000Z",
+        "summary": "Are AI companies scanning and destroying millions of books, including rare titles? Snopes"
       },
       {
         "title": "Trusting in Claude (to a Point) - California Local",
@@ -300,13 +308,6 @@
         "source": "Google News",
         "published": "2026-08-03T15:37:23.000Z",
         "summary": "China-based hacker employs DeepSeek in autonomous threat campaign Cybersecurity Dive"
-      },
-      {
-        "title": "Anthropic Adds In-Country Claude Inference in India Through Amazon Bedrock - INDIA New England News",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPa1NfTzZZbjZmQVlLcmkwaUFKY2JhbWlfTjdRdlJ1YnpHZ1ZKRGNKeTBGMjdwTTBTckNwU0ZkUENIbzRPZjI0Q3lyWTl6MTBwYnctb2NxUE5SU2hrNjVhc1hTekpfR0xqd2JCZTdGd0QwQnFZYjl3UTVoM3V6VFNZQXJ0ZmtRV011WnBQaS1ibHBORWJYYnN1Mm9hMnF1M08xNXZkOXFR?oc=5",
-        "source": "Google News",
-        "published": "2026-08-03T14:53:48.000Z",
-        "summary": "Anthropic Adds In-Country Claude Inference in India Through Amazon Bedrock INDIA New England News"
       },
       {
         "title": "Anthropic Brings Claude Inference To India As Sovereign AI Race Heats Up - Inc42",
