@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T20:59:28.371Z",
+  "generated_at": "2026-08-04T22:50:24.251Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,18 @@
     ],
     "news": [
       {
-        "title": "Icon inks Anthropic partnership to deploy Claude into clinical trials - Fierce Biotech",
+        "title": "OpenAI, Anthropic AI Models Involved in More Security Incidents",
+        "url": "https://www.bloomberg.com/news/articles/2026-08-04/openai-says-models-breached-boundaries-during-outside-testing",
+        "source": "Bloomberg",
+        "published": "2026-08-04T21:31:27.000Z",
+        "summary": "Artificial intelligence models from OpenAI and Anthropic took unauthorized actions on the public Internet and, in some cases, attempted to add harmful code to online software, marking the latest in…"
+      },
+      {
+        "title": "Icon inks Anthropic deal to deploy Claude into clinical trials - Fierce Biotech",
         "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOaDN6QWoyTU5GZ3E3bUQ2Y3VXNHVqMEdWMno4WDJDbnpNTEhJeEJXM0tRaTl5ZHVPcHVYRUl0N3FvQWs4OUdJUU1iR18ydVo2Smh0OTl3MnBmTURqdWxNZXpodjlVNGV0LU92R3JOblh0ZXF1OUQ2NGtxTklGZUQtSkQwZnZ6RnU5SDhpb2RsT0FnX3JDVW50SXh2TQ?oc=5",
         "source": "Google News",
         "published": "2026-08-04T20:20:55.000Z",
-        "summary": "Icon inks Anthropic partnership to deploy Claude into clinical trials Fierce Biotech"
+        "summary": "Icon inks Anthropic deal to deploy Claude into clinical trials Fierce Biotech"
       },
       {
         "title": "Anthropic signs $10B deal with AI cloud startup Volta",
@@ -160,18 +167,18 @@
         "summary": "Anthropic has been on a cloud partnership spree in recent months, and its latest move is reportedly a $10 billion deal with AI cloud startup Volta."
       },
       {
-        "title": "Anthropic signs $10 billion deal with AI cloud startup Volta - TechCrunch",
+        "title": "Anthropic signs $10B deal with AI cloud startup Volta - TechCrunch",
         "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNQ2JyWl9wTHQ1RHBJZEp6a1NQOExuUEZyb1RieEdTSkJ6OVhlT1lIR2NteENWblYzNURiNlR5dDZZN0FtZWlMNDFoUEE5eV82WXloVU5qZHhKWE9LUlNZcUtzZWFEMTF0S3lMU25HTS05X05DQ3huWWl0UzJCV1U3WDhzczczWDZvUTZDQnFfVU5fQnV0eUFPdHdn?oc=5",
         "source": "Google News",
         "published": "2026-08-04T19:48:40.000Z",
-        "summary": "Anthropic signs $10 billion deal with AI cloud startup Volta TechCrunch"
+        "summary": "Anthropic signs $10B deal with AI cloud startup Volta TechCrunch"
       },
       {
-        "title": "ChatGPT Dominates Congressional AI Spending, Far Outpacing Anthropic’s Claude - theaiinsider.tech",
+        "title": "ChatGPT Dominates Congressional AI Spending, Far Outpacing Anthropic’s Claude - AI Insider",
         "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObWZCRzFtMVE1Nm9HQXIyeFJiX1BqLWZsS1B3Qjk5NW9rc3locU40Rl9hOEpqWGtweS1jaTA1d1A5eEg4Si04S0V4dEF5RGpFTkpfSEduQ3FHTVVjZG52MmR6VGdQZzN5VFVwcmFTR0Vvb19tUVZ6d205akFNXzd4bzJ3THFoVkhzeUpkbC0zc1ZlMHdWQXk5TW5CalBCZFFEdjdSMGlKRW9JRjJEMVBDa3Qzaw?oc=5",
         "source": "Google News",
         "published": "2026-08-04T17:57:18.000Z",
-        "summary": "ChatGPT Dominates Congressional AI Spending, Far Outpacing Anthropic’s Claude theaiinsider.tech"
+        "summary": "ChatGPT Dominates Congressional AI Spending, Far Outpacing Anthropic’s Claude AI Insider"
       },
       {
         "title": "How Firms Like Coinbase Are Building Coding Agents to Complement Anthropic's Claude Code - The Information",
@@ -193,13 +200,6 @@
         "source": "Google News",
         "published": "2026-08-04T16:32:56.000Z",
         "summary": "Anthropic Clinches $10 Billion AI Compute Deal With Nvidia-Backed Startup TipRanks"
-      },
-      {
-        "title": "A unified API for AI model routing - blog.google",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE45ajF2SnZGcndhTkIyOTJoS3Flc2xjM1c0ZWxwalhaN3ZEcWFzY0k0TElHS2hjYlJuUFNJQzgtdEFWTjZxSG9OcXg5NlRlcFQ5UHJiMzJVUTRKSE9CRzFzWXVkcjNrMlNEWTFHa21aQmFWX2docmpBdQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T16:06:02.000Z",
-        "summary": "A unified API for AI model routing blog.google"
       },
       {
         "title": "Blackstone has pitched a mega-debt package for Anthropic chip deal - report (BX:NYSE) - Seeking Alpha",
@@ -225,7 +225,7 @@
       {
         "title": "Agent skills that bring team coding standards to Claude Code and Codex",
         "url": "https://github.com/tikalk/adlc-team-skills",
-        "source": "HN · 72↑",
+        "source": "HN · 73↑",
         "hn_id": "49169640",
         "published": "2026-08-04T14:38:31.000Z",
         "summary": ""
@@ -252,32 +252,11 @@
         "summary": "Anthropic expands India strategy with local Claude inference and partner ecosystem investments CRN Asia"
       },
       {
-        "title": "Metro Bank customer fights for £14,000 refund after AI-linked fraud - The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwWHQxQnI0b1lQd2FQNHJBYVNnSFIydjFrMy1MSVlTNHhaVmtvOXhkN3BzV0NpbTZVNDIzNUtWdjVqSVMwVjN2WG5TdFo1ZUNja1g0ZnZVUVZqWDBoRW9xa2xNeUl1eWNIZU1lVUI2NWpYSFdZaExicHg2S28?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T06:00:00.000Z",
-        "summary": "Metro Bank customer fights for £14,000 refund after AI-linked fraud The Guardian"
-      },
-      {
-        "title": "Claude Breached Three Companies During Cybersecurity Evaluations - Forbes",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxORDB3eFZ1MzU5YzNrcXlOdnRHeFlvVFFyemd6SXMzdTVpQUtTY3djUmYzQWpCWGFqemxkOVdBc0xzbHV2eUdjVzFfR0hEVzZjVWwxVHpaeE1KQmI0SHdoTkktVkhpY3dveW1uUzdoV2Z5N3Fma1ltd1E5UkJMb2tJOVdFUzgxN09LMzUydENEcm96WHVQVE43Y0wxRW9kSGg5RW1nSzlBeEtxajR1SGVJRmpIZHFKZHI2Ymc?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T01:57:23.000Z",
-        "summary": "Claude Breached Three Companies During Cybersecurity Evaluations Forbes"
-      },
-      {
         "title": "KnowBe4 Extends Agent Security to Anthropic's Claude With Agent Risk Manager - iTWire",
         "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOanJEM1RyUGtEdlVJbkp0eVZyN0RUeG8zSDBydzRZRHdNaGFVcUtyd2MxanlwWUZiekV1WlplVU5MU2hGc0FXZE9rcThhUVhyZjktY0lVV1FPRk5tNkE1LTcwWnhEdnJZSmtEQ1Z6Y3c2TXJFSmkzSWZUVmlSbGp4MlZYVWZpdjBhb2l1S2RWQk8xU1JLdmZxZVlrbTUwUXYwOFlhaTUtaG41cmpGY3pFOHJaZzJfbm9BWGlFVQ?oc=5",
         "source": "Google News",
         "published": "2026-08-04T01:48:35.000Z",
         "summary": "KnowBe4 Extends Agent Security to Anthropic's Claude With Agent Risk Manager iTWire"
-      },
-      {
-        "title": "Are AI companies scanning and destroying millions of books, including rare titles? - Snopes",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1TMElVYzYtMzFlbWFzeXVrOGRnR0JPZWt0YWNENHEtcDhGenRfV1VVa1ZzM25iZ284RG9KTDFNSl9DLWMxckRWZFJnLUJoOXZPbFRjb1NRcVZQYkhkYkE4OGstcld5Sk1HekZjNjNWeXl6VnNDVFpHWQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-03T23:54:41.000Z",
-        "summary": "Are AI companies scanning and destroying millions of books, including rare titles? Snopes"
       },
       {
         "title": "Trusting in Claude (to a Point) - California Local",
@@ -320,6 +299,28 @@
         "source": "Google News",
         "published": "2026-08-03T19:05:00.000Z",
         "summary": "Anthropic reveals Claude AI model hacked three companies during tests — so how worried should we be? TechRadar"
+      },
+      {
+        "title": "Are AI companies scanning and destroying millions of books, including rare titles? - Snopes",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1TMElVYzYtMzFlbWFzeXVrOGRnR0JPZWt0YWNENHEtcDhGenRfV1VVa1ZzM25iZ284RG9KTDFNSl9DLWMxckRWZFJnLUJoOXZPbFRjb1NRcVZQYkhkYkE4OGstcld5Sk1HekZjNjNWeXl6VnNDVFpHWQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-03T17:55:13.000Z",
+        "summary": "Are AI companies scanning and destroying millions of books, including rare titles? Snopes"
+      },
+      {
+        "title": "Anthropic’s AI models accidentally hacked three companies - Computerworld",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNOFNiUXFuNkh4Y21wZ1F1d0pIb3FNZFppbVMtSGJicHZRcU5DSE5XMGdwWmdNWnIwVkhfNnBoMWpPVlFManBEM3hWSEJWSHVOb0ZzQmJ5RTlTT0hRNWhpRzZMYWpxNEkzX1hFazdGNHk0NWVIdDk5b2xHczExbmNzR2NUYlNfUmw4ODdnNmRqR1FidFplLTZRbG5lYmdYbUhLdVQ3TmxSTkloV2c?oc=5",
+        "source": "Google News",
+        "published": "2026-08-03T16:39:30.000Z",
+        "summary": "Anthropic’s AI models accidentally hacked three companies Computerworld"
+      },
+      {
+        "title": "Launch HN: Hoplite (YC S26) – Effortlessly deploy cloud coding agents",
+        "url": "https://hoplite.sh",
+        "source": "HN · 77↑",
+        "hn_id": "49157997",
+        "published": "2026-08-03T16:32:06.000Z",
+        "summary": "Hi HN, we’re Bence and Ryan, founders of Hoplite ( https:&#x2F;&#x2F;hoplite.sh ). Hoplite lets you deploy coding agents in the cloud, with a suite of tools that makes it…"
       },
       {
         "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
@@ -591,8 +592,8 @@
         "title": "Elevated errors across many models",
         "url": "https://status.claude.com/incidents/bdr3fq2rkchr",
         "source": "Claude Status",
-        "published": "2026-08-04T20:48:20.000Z",
-        "summary": "Aug 4 , 20:48 UTC Investigating - We are currently investigating this issue."
+        "published": "2026-08-04T21:59:29.000Z",
+        "summary": "Aug 4 , 21:59 UTC Resolved - This issue has been resolved. Aug 4 , 21:04 UTC Update - We have identified an issue which resulted in some users experiencing issues when attempting to log into…"
       },
       {
         "title": "Elevated errors on Claude Sonnet 5",
@@ -1006,6 +1007,14 @@
     ],
     "tutorials": [
       {
+        "title": "v2.1.222",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.222",
+        "source": "Claude Code Releases",
+        "published": "2026-08-04T22:39:55.000Z",
+        "summary": "What's changed Fixed worktree-isolated sessions and their subagents being able to run destructive git commands against the main checkout; isolation now applies to file edits and Bash in every…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.221",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.221",
         "source": "Claude Code Releases",
@@ -1212,14 +1221,6 @@
         "published": "2026-07-16T18:25:15.000Z",
         "summary": "",
         "tutorial_kind": "video"
-      },
-      {
-        "title": "v2.1.211",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.211",
-        "source": "Claude Code Releases",
-        "published": "2026-07-15T23:02:35.000Z",
-        "summary": "What's changed Added --forward-subagent-text flag and CLAUDE_CODE_FORWARD_SUBAGENT_TEXT environment variable to include subagent text and thinking in stream-json output Fixed permission previews…",
-        "tutorial_kind": "official"
       },
       {
         "title": "Merge pull request #771 from anthropics/nikblanchet/fix-metaprompt-pr…",
@@ -1744,6 +1745,13 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.222",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.222",
+        "source": "Claude Code",
+        "published": "2026-08-04T22:39:55.000Z",
+        "summary": "What's changed Fixed worktree-isolated sessions and their subagents being able to run destructive git commands against the main checkout; isolation now applies to file edits and Bash in every session type Fixed…"
+      },
+      {
         "title": "v2.1.221",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.221",
         "source": "Claude Code",
@@ -2162,13 +2170,6 @@
         "source": "YouTube · Riley Brown",
         "published": "2026-07-16T18:25:15.000Z",
         "summary": ""
-      },
-      {
-        "title": "v2.1.211",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.211",
-        "source": "Claude Code",
-        "published": "2026-07-15T23:02:35.000Z",
-        "summary": "What's changed Added --forward-subagent-text flag and CLAUDE_CODE_FORWARD_SUBAGENT_TEXT environment variable to include subagent text and thinking in stream-json output Fixed permission previews relayed to chat…"
       },
       {
         "title": "Mid-conversation system messages are available on Claude Fable 5, Claude Mythos 5, and Claude Opus 4.8, on the Claude…",
