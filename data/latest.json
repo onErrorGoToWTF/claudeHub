@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T19:08:47.151Z",
+  "generated_at": "2026-08-05T20:53:29.798Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,60 @@
     ],
     "news": [
       {
+        "title": "Anthropic’s AI used fake identities, malware in rogue attack on GitHub project",
+        "url": "https://arstechnica.com/security/2026/08/anthropics-ai-used-fake-identities-malware-in-rogue-attack-on-github-project/",
+        "source": "Ars Technica",
+        "published": "2026-08-05T20:47:11.000Z",
+        "summary": "Routine cybersecurity testing of frontier AI models sparked a series of unexpected security incidents—the most serious case arising when Anthropic’s Mythos 5 model attempted to insert malicious code…"
+      },
+      {
+        "title": "Meta Debuts AI Coding Agent in Race With OpenAI and Anthropic",
+        "url": "https://www.bloomberg.com/news/articles/2026-08-05/meta-debuts-ai-coding-agent-in-race-with-openai-and-anthropic",
+        "source": "Bloomberg",
+        "published": "2026-08-05T20:33:34.000Z",
+        "summary": "Meta Platforms Inc. Chief Executive Officer Mark Zuckerberg announced the release of the company’s first AI coding agent, known as Muse Code, stepping up competition with OpenAI and Anthropic PBC."
+      },
+      {
+        "title": "Anthropic Confirms In-House Chip Team: Co-Design Bet Could Cut Claude Inference Costs in Half - Tech Times",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUU4tSkppMHFPcHdDNTEwREt1ZG9JdHliZzJJTmtrQnNoZE40dE5YdExOcGhFcUVyS0w3R0tEZjVyM2s4WEZBanhfSXVZRWhKT1FDQ3JUTElPV1JBVjNqbzhVUGJSTmh3OS0xdVJ5ckd5ZmhINC0zVXk0ZWROaF90OUJLVmE3dnVqQTk3VXRYNW02Y0FIdUdvX0R2aV9KV0ItWC04UFV5VS1seW1zRkV4bGlTbFBVYm1jcWp5bV96RGdHZFdzODRibENpUDZzRXA2SVVoSXlacFI?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T20:32:23.000Z",
+        "summary": "Anthropic Confirms In-House Chip Team: Co-Design Bet Could Cut Claude Inference Costs in Half Tech Times"
+      },
+      {
+        "title": "Report: AI models targeted real people during security testing - Yahoo",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPb1NTZjY2YU91aEJiNU5EMHRBeWJRWDBEWktEV1FiWnJQTWI2SFhsdzItOVNKX3hSaTNXNXVmVXdiOXZsTUNuRnExSDA0U3kyWTlFRnE5N193bXBpeXJ5VW9oTnJYUDlQUE9VeHZWZUcwMVVHTjZPd3EydzNMUXBuUzhjRVNGZ01QYzBobWM3NzJNMGs?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T20:20:55.000Z",
+        "summary": "Report: AI models targeted real people during security testing Yahoo"
+      },
+      {
+        "title": "Meta unveils AI coding agent in challenge to Anthropic and OpenAI - Latest news from Azerbaijan",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPcHhsbzVaV1dLbG0tSHBoX1RFMVRMM1R4cU9talFlQl9QNmhyUTJYejRWb0t3QkcyYVQtdDJSekR3dXd3SUdBa0xxeVNCT1lvUWJvekp6TnJ1RzRLdkhJU1Q2NXpFOWdwS2hKNEQ1UlczQnNqLVJUZ1lkMUZielh0ak5NRE1URU1uZjk1aWR0TQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T19:51:06.000Z",
+        "summary": "Meta unveils AI coding agent in challenge to Anthropic and OpenAI Latest news from Azerbaijan"
+      },
+      {
+        "title": "Meta Launches Muse Code AI Agent to Challenge OpenAI, Anthropic - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNekdTVlBwYUNMaTk2TTdpTjNITmwzcTV0QWNEaDBJb1Q1aWMyZ0ItcU50X3NzdHl0aEZnaXAwRF9YaUxlMzcyM1V2TExoV2JIa0JKRlAzYjZvdk9HQkdONDVQUk9pTkNubUJNNlVCU3ZzUUx3YnNEN0tTS3UtRFNEVWU2NDZzSF9xeUdvenRUamZEcURSamc2enVoaw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T19:46:00.000Z",
+        "summary": "Meta Launches Muse Code AI Agent to Challenge OpenAI, Anthropic The Tech Buzz"
+      },
+      {
         "title": "Anthropic to Build In-House Chip Team to Power Claude AI Models - Android Headlines",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNeXhScHVXcWJBd3pXZ0V1di03dVdaZ1dmak5XYzBPNHEtNHowZWxycWo4dll5aGdiR05PdGtrdHJ0eU1DU0NSeTNxZ3UyV08teGV6b1BSbG9pbmJNTHpoakVELXJfcEJ4WlRFVVFLckd6MXhhVFViSVJQZGRyQUZwYzlJTWJ6ODBNUUVzeXVUZnF4ZU82dXFlbQ?oc=5",
         "source": "Google News",
         "published": "2026-08-05T19:05:15.000Z",
         "summary": "Anthropic to Build In-House Chip Team to Power Claude AI Models Android Headlines"
+      },
+      {
+        "title": "Meta debuts first AI coding agent to take on Anthropic and OpenAI - CNBC",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPcXpCdFJVQk9lTzZ1WFk5cENzSWRNa3hkYVRfMy1vZXMxekkzQXRja2xKX0E5dzRFQXVRUDgwWDFOSWEwRWJnQU55UjVQUms0b2NuOGl1NlpUT2FqUVFPMm9WWkRqZkhWX3lyQnIxck5vZDU0RE5zdXBUalY0THd1dm5qLS1VSG1FVzh4dWNFYWQ5SFlXM2fSAZsBQVVfeXFMUDRqYXFzVEpSNHM5N24zTDBlYmd6bDRlM0FmUnB2dldBNGRIMlo2cHd3Zm5kZXVaS1k4NVFZb1hUOXhuRnh4cFlabUFmQ0NDdmE2U0F0ZHBfdnJSajBWcXowZnE1a1RhMmsydzZ2YmoyMUpyYTdlRVRBSnBxX3haUkRWOVEzOFY5aDhmVUhYNzZJdDJjdWtaRXpJNUk?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T19:00:17.000Z",
+        "summary": "Meta debuts first AI coding agent to take on Anthropic and OpenAI CNBC"
       },
       {
         "title": "Anthropic’s Powerful Custom AI Chip Push for Claude - SQ Magazine",
@@ -160,11 +209,11 @@
         "summary": "Anthropic’s Powerful Custom AI Chip Push for Claude SQ Magazine"
       },
       {
-        "title": "Claude Mythos 5 made sock puppet accounts to socially engineer developers: what enterprises should know - Venturebeat",
+        "title": "Claude Mythos 5 made sock puppet accounts to socially engineer developers: here's what enterprises should know - Venturebeat",
         "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQMXJfVUt2RnRRejUwVEpNRFc4UnZBR0tCc1NsWGNrU1Q3c2dvOUJKbkczZHRqS3BIYXgzQVg1WVhCVGFoMVQtdFF4Q2tTWXBZM2JOdllpV1FYOURvVUFydm5NemZtbnFObmV4eUxUQzJJS0FpNTBUdFdmOFh6LW9kWWdBWlpFSzJPUkpQUVB0cTZxVlFHc2hfeDBfOWRZdXMwX0tGckJoSXFUbGlPN20xZjRhTWtnQ1BrM2g0cjNraTdUaHlNeFNLNXN2dlo2SC1QMkc2REJVRzU?oc=5",
         "source": "Google News",
         "published": "2026-08-05T18:00:02.000Z",
-        "summary": "Claude Mythos 5 made sock puppet accounts to socially engineer developers: what enterprises should know Venturebeat"
+        "summary": "Claude Mythos 5 made sock puppet accounts to socially engineer developers: here's what enterprises should know Venturebeat"
       },
       {
         "title": "Why is Anthropic destroying books? | Kathryn James - The Guardian",
@@ -202,6 +251,21 @@
         "summary": "Anthropic’s Mythos 5 Created Fake Devs to Slip Malware Past Real Ones Yahoo Tech"
       },
       {
+        "title": "China’s ByteDance Bans Employees From Distilling US AI Models, As Anthropic Confirms It’s Building A Custom Chip For Claude - Wccftech",
+        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQMlFTd2U1UFVrdjJoQUNENEtXWXMxQWtNRWctLVJneXcyQ3RFRHl0ZEtBMHd0RTBXNHBleHpWSThnSE9aWWtYdnFsR2pPNFd6ZGs5czQya0VkUVF2eTdDY1RwOTVITnZ2ZkQ1UEhnQVZSZy1YY3k4dzVmSkFlREVoVWVySHJDS0swN0JnVVUwYmpDcEd0WEZjcEpieEhSVTdwTlhuZUdaRmFOMzlnb0R0R1lxb0xDaWtKRXcxUEVpVklDV0R4cTgyTFN2Q2N1eXVLWUhQV3ZGVHRCUdIB3wFBVV95cUxPbDYxR0xtVEZBeGxmUGxEM1VmSEhDbEQ2UGM4aGE5NlpHUmFkSEF2dnZ3YmRjM0dOSnRTVFktM3MwS1dWQ1RwaWdCQmxVdDJrZFJxOXhjd1ZYVWJzenc5MVAxMHRzN3dqSDhNQ2UtUWQwVUpmdTVkYmc1OF96T1o1UjZfeDgwSkoycUhsd0d3YUZTa0hSOTF5YksyZWY1YXQ2YWMyR3FETTNjN2QzcGNJaGxJa2dNdnQ2a2IwWUZmQmpJUk93aFhrWTc5aGpRMWwxS0g3bTlRTDc0YUhyMm9F?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T17:03:15.000Z",
+        "summary": "China’s ByteDance Bans Employees From Distilling US AI Models, As Anthropic Confirms It’s Building A Custom Chip For Claude Wccftech"
+      },
+      {
+        "title": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
+        "url": "https://www.hyperprobe.co",
+        "source": "HN · 31↑",
+        "hn_id": "49185389",
+        "published": "2026-08-05T16:47:15.000Z",
+        "summary": "Hi HN, this is Shailendra and Karan here. We are building a fast and safe way for coding agents to debug issues live in production. When prod breaks, it lets Cursor, Claude, and…"
+      },
+      {
         "title": "Researchers watched OpenAI, Anthropic models take extreme measures in hacking test - Mashable",
         "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOMGdxMnViZzRydUJsTDNnUVJWdmRCUG9XRXQ1eTlDUUVhdE90MWdBWk9kRkxFNm9qSVlKQlBGMWg4MS12QzRDTkx5cUZJTmlnWnFCUmp5cnZHZjk4dTFXV2NCVEtDQnZaYWtubkZudmFYSGY0WldaTGUxVWU1QjBfbzRPdzhUdw?oc=5",
         "source": "Google News",
@@ -214,13 +278,6 @@
         "source": "Google News",
         "published": "2026-08-05T16:19:24.000Z",
         "summary": "Anthropic Reportedly Wants to Make Its Own AI Chips for Claude PCMag UK"
-      },
-      {
-        "title": "Cybersecurity Concerns After OpenAI, Anthropic Tests",
-        "url": "https://www.bloomberg.com/news/videos/2026-08-05/cybersecurity-concerns-after-openai-anthropic-tests-video",
-        "source": "Bloomberg",
-        "published": "2026-08-05T16:16:15.000Z",
-        "summary": "Evidence of OpenAI and Anthropic models using deception to carry out unsanctioned hacks has alarm bells ringing. Jordan Robertson explains why researchers shouldn't be surprised. (Source: Bloomberg)"
       },
       {
         "title": "Anthropic class action alleges Claude subscribers paid for degraded AI service - topclassactions.com",
@@ -263,62 +320,6 @@
         "source": "Google News",
         "published": "2026-08-05T15:28:00.000Z",
         "summary": "Anthropic Builds Custom Chip Team to Challenge Nvidia The Tech Buzz"
-      },
-      {
-        "title": "Claude Targeted Real People. The Enterprise Risk Is Access, Not Intent - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQeUVPMlk0cERNLWhnMkpxYWhZclZ5Ql9zNE5DWko3VlBYYVhwcXJIVGJ2YzNyTDI2cFdIanRFbmxSUkczSzF5TFc5cy13b2xTMVF4YXlJV1FIcm1iT2dPaUpqVDhaUjdlXzNhSVRoWTRVQ1pTVmYxVVhVUmFYUHBNcm9MVFNScWgwUHFycmlFYXJkMmZSZ1B5RjVMcw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T15:25:42.000Z",
-        "summary": "Claude Targeted Real People. The Enterprise Risk Is Access, Not Intent Yahoo Tech"
-      },
-      {
-        "title": "Rogue AI agents created fake online identities in another hacking attempt",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/975577/aisi-openai-anthropic-agent-hacking",
-        "source": "The Verge",
-        "published": "2026-08-05T15:14:57.000Z",
-        "summary": "Yet more rogue AI agents from OpenAI and Anthropic have been caught attempting to hack real targets online without permission. The discoveries add to a growing list of previously unknown incidents…"
-      },
-      {
-        "title": "Is Claude down? Latest AI updates on Wednesday, Aug. 5 - USA Today",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNaTNpWHVXbE1LQXpEV2thdm5RYXFoVHJoTFIzQ09DVlc1elNJdGh0NGpQS254Zk9uTE5yVGVBWXBubXNndXlmLTVvOTVtLVp6YjZYcEhGYkJhWWVjUmt3QUdGek5sTjczakU1YWVjTU85TGZGVUs0YWxoenZhYUZ4Z09RSW9yMHE5TzRZbzgtVmpiUEZTMWVRRWlQazBqZw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T15:10:00.000Z",
-        "summary": "Is Claude down? Latest AI updates on Wednesday, Aug. 5 USA Today"
-      },
-      {
-        "title": "Anthropic, OpenAI models attempt to fool humans - Semafor",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPYzBJMkJ2UTQyd2lTTHNNbUo2U1FJbmtfbmhNX0wwbm9zUGFSQkpjZU1mZVJFR1lNc1FLeGR6MThDanU2dzcyOThKN0Z4QWs5T0k2eG5fWGV0dHUwNWdueExiMTZuNlVQdU5ySHpfWjl0akNKQ0ZfRVRMUFI4cmM5d0NTRGxTNnhjUl9GTFhjbHlUSnM?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T14:50:00.000Z",
-        "summary": "Anthropic, OpenAI models attempt to fool humans Semafor"
-      },
-      {
-        "title": "Anthropic builds its own chip team for Claude - Techzine Global",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQOVNydG4xYjB3SU5ZZzlveTYwX1FzVVRsLV9zaklfQmtYMDl0b0kweU1nemZ1YlA2VzdiOXBEaUtnUWxMQm5BVE93Y1Z0STB2a285azFNOFExTHFIRlZzY3daWThYbGl3QVRxUnFfQ1ZPcHBHaFdWbURBa0diVmZPNWh4NWtGRW4zWnRjOXdraFByRGFZMVNz?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T14:45:04.000Z",
-        "summary": "Anthropic builds its own chip team for Claude Techzine Global"
-      },
-      {
-        "title": "Anthropic to build in-house chip design team for Claude, hire engineers - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPVWxwdXZrbVFwRlFONnozZzBTNzdmbU9LaWc3alMtUmFJUXVfaW1hR2J1QVlsLU9razNxemdDQ012Z2NCR19XNHk1VHFIbUNLNWs2b0FlSTZwZWV2WUlicnBuNnRRLVdNXzRFYnhRRkhQdjdfenRyRzNJLUVCc1hMRXhkYy1pR19yaS1vZXh2SUZlenNRSnFFLURzOTNFQWxIaFd2TjcwSFhYbS1w?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T14:15:43.000Z",
-        "summary": "Anthropic to build in-house chip design team for Claude, hire engineers Reuters"
-      },
-      {
-        "title": "Anthropic is hiring an AI chip design team",
-        "url": "https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/",
-        "source": "TechCrunch",
-        "published": "2026-08-05T14:13:18.000Z",
-        "summary": "Anthropic is building a team for designing its own custom AI chips. The Claude maker said it would co-design hardware and models to help its technology run faster and more efficiently."
-      },
-      {
-        "title": "Anthropic is hiring an AI chip design team - techcrunch.com",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPdFE0MWViYnRxZXNMWFdVYkxlQ2N0RE5BdEdDYldQRmtEdm91dWZicndyNTVOak5uOFJRajNKYWRfV0tzV2tOdVdsZ0JDOGZWTnc3Q1Z3aGhpZXdYT2IzYy0wTTlqTnVyczVyQWtvS2N4TWxPUE12aDdVa1E2STIybHpUQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T14:13:18.000Z",
-        "summary": "Anthropic is hiring an AI chip design team techcrunch.com"
       },
       {
         "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
@@ -1754,7 +1755,7 @@
         "url": "https://platform.claude.com/docs/en/release-notes/overview#august-5-2026",
         "source": "Claude API Release Notes",
         "published": "2026-08-05T00:00:00.000Z",
-        "summary": ""
+        "summary": "We've retired the Claude Opus 4.1 model ( claude-opus-4-1-20250805 ). All requests to this model will now return an error. We recommend upgrading to Claude Opus 5 . Researchers can request ongoing access through the External Researcher…"
       },
       {
         "title": "v2.1.222",
