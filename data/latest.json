@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T13:29:32.702Z",
+  "generated_at": "2026-08-05T15:52:04.157Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,145 @@
     ],
     "news": [
       {
+        "title": "Claude Goes Down Again: $71B Compute Deal Cannot Prevent Anthropic’s 164th Outage - Tech Times",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPeHJhQkNadUdFNDdrV1ZZVl9MMUZSeHVDMHI3ckJyVHJ4OWUzcDJMRUNVTEtQOW13SktSd3ROY2x4T1dzQk01bExvalNoVG9IMFlSY01ob2lLZm4tQzlTTkYwaGlvQWZhdV8tZFFySkVfYUFYanduV3hRMDA4a0xXZHBtd3Vmd3daVjYwa2RpV0wySk9ENURqNjg4a3R3ejdDemhuTFJPSFlIYlNKUXUzNzktSi1WaUk0NXI0SFFGaU9IMXdaSTd0czU5ZEhOZw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T15:28:04.000Z",
+        "summary": "Claude Goes Down Again: $71B Compute Deal Cannot Prevent Anthropic’s 164th Outage Tech Times"
+      },
+      {
+        "title": "Anthropic Builds Custom Chip Team to Challenge Nvidia - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOaVlCYnd1emZLd1Y5eTJ5ZHUzOFJFX0RUeHZxTTg0TWM2U2J3VnJPY21IT1dGOXBuUkN3YlJkelhCU1BXODVsVWR6bU5USHZZN21PeFVYSWtNdl9nSmVURUVlS09KVXVGaTFxMlBoZ3lSdDNfV19HaE5SZGhhZW5qamVWVERqcktzbG1HNDBTYw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T15:28:00.000Z",
+        "summary": "Anthropic Builds Custom Chip Team to Challenge Nvidia The Tech Buzz"
+      },
+      {
+        "title": "Claude Targeted Real People. The Enterprise Risk Is Access, Not Intent - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQeUVPMlk0cERNLWhnMkpxYWhZclZ5Ql9zNE5DWko3VlBYYVhwcXJIVGJ2YzNyTDI2cFdIanRFbmxSUkczSzF5TFc5cy13b2xTMVF4YXlJV1FIcm1iT2dPaUpqVDhaUjdlXzNhSVRoWTRVQ1pTVmYxVVhVUmFYUHBNcm9MVFNScWgwUHFycmlFYXJkMmZSZ1B5RjVMcw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T15:25:42.000Z",
+        "summary": "Claude Targeted Real People. The Enterprise Risk Is Access, Not Intent Yahoo Tech"
+      },
+      {
+        "title": "Rogue AI agents created fake online identities in another hacking attempt",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/975577/aisi-openai-anthropic-agent-hacking",
+        "source": "The Verge",
+        "published": "2026-08-05T15:14:57.000Z",
+        "summary": "Yet more rogue AI agents from OpenAI and Anthropic have been caught attempting to hack real targets online without permission. The discoveries add to a growing list of previously unknown incidents…"
+      },
+      {
+        "title": "Is Claude down? Latest AI updates on Wednesday, Aug. 5 - USA Today",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNaTNpWHVXbE1LQXpEV2thdm5RYXFoVHJoTFIzQ09DVlc1elNJdGh0NGpQS254Zk9uTE5yVGVBWXBubXNndXlmLTVvOTVtLVp6YjZYcEhGYkJhWWVjUmt3QUdGek5sTjczakU1YWVjTU85TGZGVUs0YWxoenZhYUZ4Z09RSW9yMHE5TzRZbzgtVmpiUEZTMWVRRWlQazBqZw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T15:10:00.000Z",
+        "summary": "Is Claude down? Latest AI updates on Wednesday, Aug. 5 USA Today"
+      },
+      {
+        "title": "Anthropic, OpenAI models attempt to fool humans - Semafor",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPYzBJMkJ2UTQyd2lTTHNNbUo2U1FJbmtfbmhNX0wwbm9zUGFSQkpjZU1mZVJFR1lNc1FLeGR6MThDanU2dzcyOThKN0Z4QWs5T0k2eG5fWGV0dHUwNWdueExiMTZuNlVQdU5ySHpfWjl0akNKQ0ZfRVRMUFI4cmM5d0NTRGxTNnhjUl9GTFhjbHlUSnM?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T14:50:00.000Z",
+        "summary": "Anthropic, OpenAI models attempt to fool humans Semafor"
+      },
+      {
+        "title": "Anthropic builds its own chip team for Claude - Techzine Global",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQOVNydG4xYjB3SU5ZZzlveTYwX1FzVVRsLV9zaklfQmtYMDl0b0kweU1nemZ1YlA2VzdiOXBEaUtnUWxMQm5BVE93Y1Z0STB2a285azFNOFExTHFIRlZzY3daWThYbGl3QVRxUnFfQ1ZPcHBHaFdWbURBa0diVmZPNWh4NWtGRW4zWnRjOXdraFByRGFZMVNz?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T14:45:04.000Z",
+        "summary": "Anthropic builds its own chip team for Claude Techzine Global"
+      },
+      {
+        "title": "Anthropic to build in-house chip design team for Claude, hire engineers - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPVWxwdXZrbVFwRlFONnozZzBTNzdmbU9LaWc3alMtUmFJUXVfaW1hR2J1QVlsLU9razNxemdDQ012Z2NCR19XNHk1VHFIbUNLNWs2b0FlSTZwZWV2WUlicnBuNnRRLVdNXzRFYnhRRkhQdjdfenRyRzNJLUVCc1hMRXhkYy1pR19yaS1vZXh2SUZlenNRSnFFLURzOTNFQWxIaFd2TjcwSFhYbS1w?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T14:15:43.000Z",
+        "summary": "Anthropic to build in-house chip design team for Claude, hire engineers Reuters"
+      },
+      {
+        "title": "Anthropic is hiring an AI chip design team",
+        "url": "https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/",
+        "source": "TechCrunch",
+        "published": "2026-08-05T14:13:18.000Z",
+        "summary": "Anthropic is building a team for designing its own custom AI chips. The Claude maker said it would co-design hardware and models to help its technology run faster and more efficiently."
+      },
+      {
+        "title": "Anthropic confirms in-house AI chip team for Claude - The News International",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOUjh1VUxFLUpURXQyUm9IYU10STQ0NHk3X0FmN0tnWWdLSkhpNXViUjVCTzM0Q1N4OHF4NFBDOVQtdUljcWNUNTc0VEx3YlhoanQ1a0prYjd1T2F4dFBrZFpnazgwSkpBbVRRSDZpQU81bW92UTBtNllfUVhSbk1LZ1owZ21MOUlLM3NFcGotZ2lLTWRiTW1FNg?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T14:05:02.000Z",
+        "summary": "Anthropic confirms in-house AI chip team for Claude The News International"
+      },
+      {
+        "title": "Anthropic Starts Designing Its Own AI Chips For Claude - Finimize",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQQkJmY25oLW1WalJIZGVCNmpXMnFqU0pvZ1lPRkE0N2dxaHpfVnlTRW9Ha2hZR0xnN182c3VTUTllSDViTmQyMDlKOGgzQVZTU2RiVXdweFlCbjEtdFBBalJOTFhYMGpyWUFlRXgyTzNabi1xYjcyVG5zb2lRbXkxVDJaMmZlMnV0aFZv?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T14:02:12.000Z",
+        "summary": "Anthropic Starts Designing Its Own AI Chips For Claude Finimize"
+      },
+      {
+        "title": "Anthropic’s greed is handing the AI race to China - Washington Examiner",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPTGw3dXl1VnFqSjhZcXI3WDljNi1EVWFfd2Q3MzV1RkZZdENTTWZPa1UwalVqakduV2RQNDhtZDZrM2pDT3kwaHNwMGFFNG53MFl1bGY5SWlZSXA5QWU1RFluYkRvWWI1dWRQMllJOEJkaUNGWGdoMGZhTzBLbW5FTGhiRnE4aW04dWtRQ1BmXzBPZw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T14:00:00.000Z",
+        "summary": "Anthropic’s greed is handing the AI race to China Washington Examiner"
+      },
+      {
+        "title": "Is Claude down for you? Here's what's going on - Android Authority",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE44UGVESy1qOXRpUEUxMG1IczdzMkxQWmRmVFFPVXhGbW1fMWpEeHJaRFdNbmFySm1tRDNCblBzRm44cWduWmxsRXdqOTFQV2V5LVIzVTl0Q2ZzOExzZld5ZW02Wjl5RDVIQ0h6SWxwLXVoRWhuVElXOA?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T13:58:00.000Z",
+        "summary": "Is Claude down for you? Here's what's going on Android Authority"
+      },
+      {
+        "title": "Anthropic Confirms It Is Building an In-House Silicon Team for Claude - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOSlNxTVJUYmlhZl85bTdUTDZKUDZzNEVMcWN3RmpSZVhZbThZajdTQTBFN3BOR09ZZGpWU2hzN2RIQzQyOWw3dmcyU0l3ZVVib2lkeE1TRWkza2Y3eVA2M0pKZDlZT0JIQU5IdFFqZUppMGxFRi01d01UZ3dlOVdPOEgyTHRlRkRILXZMMFMxdDRVRUIxcEE?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T13:42:01.000Z",
+        "summary": "Anthropic Confirms It Is Building an In-House Silicon Team for Claude Unite.AI"
+      },
+      {
+        "title": "Alibaba’s Qwen3.8-Max Prices Frontier AI At $2 Per Million Tokens - forbes.com",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOeW5RZmVuTDdPQ0E3cjI3S0lVbGxBakdxSENyQkJuSXBrSW9QZGloaXR6YVBxMXRhbmdNSmgxeENYSkxmejVVbTQ4bFhWNk51NnFlMTllaXRQSU9PaXl3YmpuQlpHaE1OQXpPZXBZenpkTXlPNzBuNlhBSFpmRDUtZU11VWdac3hPZExoT3J4TVdRRm1BQm1ENlA2YWlPQldTZFlRYWxWSWNSNk9iZGl0Q21zdVA?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T13:41:18.000Z",
+        "summary": "Alibaba’s Qwen3.8-Max Prices Frontier AI At $2 Per Million Tokens forbes.com"
+      },
+      {
+        "title": "Anthropic builds custom chip team for Claude - Breakingthenews.net",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQTjNIQzBoc0pDTnBvSlZyU0QzbmViRmhxVHhES0MxVGNDTjkxbWtEaGpqdDFsdU5JeDZZa2JuSXBBMWJJYUlnbDZjVzNPQ3R6SVFjTWVSR29nRkRFSlExVjRVX2ZMWklhTzF6LU42M2RmajNOTUJOekZLcFUzV19abTlMbURBcGZlckNyRXl3eTNFN2M?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T13:27:00.000Z",
+        "summary": "Anthropic builds custom chip team for Claude Breakingthenews.net"
+      },
+      {
+        "title": "Anthropic's Claude Mythos 5 'Targeted Real People' in UK Cyber Tests: AISI - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOVXRaeDd4Mm1kenVKUE1Sd0pYYm44MHRuVlhVSUhLYzkza2xHSHI4MzByZW44bmdXRTVkMHpsTl9uNTJtVmJPbTVaLUZLaUk0SWtEc292R09kOWUxUDBiY2JIajVjN2NEM3hLanRETlFnWVZ4VGxUTGFWLWRVMW1SUEF2dEhvOW5PTjVwRVJVeFhaQXFqSXFr?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T12:47:57.000Z",
+        "summary": "Anthropic's Claude Mythos 5 'Targeted Real People' in UK Cyber Tests: AISI Yahoo Tech"
+      },
+      {
         "title": "Anthropic Confirms It's Building an in-House Chip Team for Claude - Business Insider",
         "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNaG53MU9DNjhkQ0Z1X19kRl9qTUk0ZFgtR2dHZGtWbmdtMVhEX3pyZmJLMkNrRHJUWDUtaUZGRGZfb0dVbEgtZ29iTkQtdmJNQjRHTVVmbWJqODBZY1YwekFoWk9HUWVKNE9xSmxVQmNFS2xVQ3JOeWlfYWFEY0p1a3ktdTAzaVRKcmc?oc=5",
         "source": "Google News",
         "published": "2026-08-05T12:47:34.000Z",
         "summary": "Anthropic Confirms It's Building an in-House Chip Team for Claude Business Insider"
+      },
+      {
+        "title": "Why is Anthropic destroying books? | Kathryn James - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQeEVlRFRITW81TFBYNkJON2N0aGs4UXRmaG9qR0xaUG1HaVNlc0RGbEdPUlJXZjd0cHRDa1p1Mk1tTC16S3RBOWFuTHpCQmpTdzVVOW55cGNwOGk3clh2UGxhdnN4S09CTjUxbEk0anF5aXRjRGc2Q2VTSmQ1UmZvVlVwQWI0RkhNQVdV?oc=5",
+        "source": "Google News",
+        "published": "2026-08-05T12:25:00.000Z",
+        "summary": "Why is Anthropic destroying books? | Kathryn James The Guardian"
+      },
+      {
+        "title": "Anthropic AI created fake profiles and impersonated people in attempted hack",
+        "url": "https://www.bbc.co.uk/news/articles/c1w1lvn7d9go",
+        "source": "HN · 34↑",
+        "hn_id": "49181773",
+        "published": "2026-08-05T12:16:47.000Z",
+        "summary": ""
       },
       {
         "title": "Is Claude down? Anthropic says fix is on the way - The News International",
@@ -167,18 +301,11 @@
         "summary": "Artificial intelligence models developed by OpenAI and Anthropic PBC carried out “unsanctioned” actions — including hacking a website and attempting to inject harmful code into software during…"
       },
       {
-        "title": "Is Claude Down? Anthropic Says It's Working on a Fix After Users Report Widespread Issues - Benzinga",
+        "title": "Is Claude Down? Anthropic Says It's Working on a Fix After Users Report Widespread Issues - benzinga.com",
         "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOSDZqVFhFZm9GTkFGNUVGb1N0aGM0Y3pwTDU0V2RPOFRJVTdXYUFoa0JiNXliOEdRWWRzV19nM0xWLXEyamhHY3cxOTdWellodDR0VmR2bTJScmJfNkQ5OV9sU2hVQkZKamZUWWxJS3h4bTMxRmNkTDR0VlE4cnpvekt4SF9QcjB3OVkxa29ZQmNOYUlkOG1JQ05BYXBUdjc4NFpHTDRoRWhNU1l6QnNNOGhycnlUYTVFRjNaU1JFTGlzVHI4R2F3RzlyT1BtdzdEOWdub0p0MA?oc=5",
         "source": "Google News",
         "published": "2026-08-05T11:08:03.000Z",
-        "summary": "Is Claude Down? Anthropic Says It's Working on a Fix After Users Report Widespread Issues Benzinga"
-      },
-      {
-        "title": "Why is Anthropic destroying books? | Kathryn James - The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQeEVlRFRITW81TFBYNkJON2N0aGs4UXRmaG9qR0xaUG1HaVNlc0RGbEdPUlJXZjd0cHRDa1p1Mk1tTC16S3RBOWFuTHpCQmpTdzVVOW55cGNwOGk3clh2UGxhdnN4S09CTjUxbEk0anF5aXRjRGc2Q2VTSmQ1UmZvVlVwQWI0RkhNQVdV?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T11:00:00.000Z",
-        "summary": "Why is Anthropic destroying books? | Kathryn James The Guardian"
+        "summary": "Is Claude Down? Anthropic Says It's Working on a Fix After Users Report Widespread Issues benzinga.com"
       },
       {
         "title": "Anthropic AI created fake profiles and impersonated people in attempted hack - Yahoo Tech",
@@ -188,138 +315,11 @@
         "summary": "Anthropic AI created fake profiles and impersonated people in attempted hack Yahoo Tech"
       },
       {
-        "title": "Anthropic AI created fake profiles and impersonated people in attempted hack - BBC",
+        "title": "Anthropic AI used fake profiles to target people in hack then hid the evidence - BBC",
         "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE05cW1FRW5ELW1tV0ZySExSZG4zek5yT3BaZVBJMDdBYms0Wk4ySEQ1YjVNVnp6X2RGR29ERG9OakpRQlpRT1JvTXhtZVdMTWVIV1JxUFdUQU9GUQ?oc=5",
         "source": "Google News",
         "published": "2026-08-05T09:24:18.000Z",
-        "summary": "Anthropic AI created fake profiles and impersonated people in attempted hack BBC"
-      },
-      {
-        "title": "KnowBe4 extends agent security to Anthropic’s Claude with agent risk manager - TahawulTech.com",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNTlA2cUhIVU1UQ1NqQVRTTURab1BTMHpNUGliQmo2WVh5QlUtaDNraDNRWDRSZEo3cXBxbGJoR2VlemtGaU13dVpJTHg0NXk3NHhqVkpyMDJiOU9LN09DS0d3a2tNZk8wOGhLbkFaTUxGakNjTEFjZnphUktET1RneGdqQkttMjRLVUpYLUdwVnN0ZFI4WGl3cVpvblVBc0k1SE1LbzVCdkRxbjhLM2k0cVVza2RyUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T09:18:59.000Z",
-        "summary": "KnowBe4 extends agent security to Anthropic’s Claude with agent risk manager TahawulTech.com"
-      },
-      {
-        "title": "AI models shock UK testers by using stolen identities to trick developers - The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPZ3dmZ3FReWJ6X0p4TjQ1dEVrZ0JHd3BKdDl3VjJULW1NVGxCV2pDaktaZHVHQko0WVRoQV9lb2FUSC1RdG1YZVhPRUhQZHlKTGtqZUp0YkQzcHp6ODFfbURCR0M2LWJuUGo1cUd2RXA0Y0tOR1hwNnpvWEJldWVTWEVyV0w0TUtuSGNGT1dEVzRjT1RhQlBkak9wdlhWZnFfU1czNzNqcTk1UmFPRVZlSjNXbTVOLUpmNkZTZE5hNHlMc19u?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T08:40:00.000Z",
-        "summary": "AI models shock UK testers by using stolen identities to trick developers The Guardian"
-      },
-      {
-        "title": "AI models attempted ‘unsanctioned’ cyberattacks in tests, watchdog says - Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQaTZ1VllCdW1sOXBDMWhlS0VCRW92a2tpZVcwUFV5M0FIRU5qUktKM1lOcWpSVjA1S3RkcWJEYlk1c0NFWndaWTl3eGRPNUpydDR3YkZhWm1JWjZ0VFdabER3WDR1YWI3elV5Yjc2YUxZb283X2tRY0pKRFd3SkpyUXdpUllLY19qR204SUcyVFBIYUl2TDZHWEd5SldUZjVVZG10elZNSkZ0d1d1azV1aNIBtgFBVV95cUxOQy1IbTBYV0dvQU1QMFJSSEJqaFlyVGJrNzZOZXNYSzctTGRWWHBFcGowdXN3bEhlUWo2M01JcjF2dHo5b2FJUHFram9YN3Q1NVdtOG9sNTFzM1VLaEF1OEZwMGxZSlY0cll1ZzF4ekNBSU5zWlZTOGxDNk9EQ2pvNTd6YWtqNnJtRm80d0NnTTY4aGMzZU5DaWVuVVk5UDhneU9SSnlNcjl1S28yOWluZlZtM2pPQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T08:33:37.000Z",
-        "summary": "AI models attempted ‘unsanctioned’ cyberattacks in tests, watchdog says Al Jazeera"
-      },
-      {
-        "title": "Claude Mythos 5 Tried to Backdoor a Real Open-Source Project in Testing, Then Vouched for Itself - The Hacker News",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNY054M1BPLUdXYUJuUEpCVXZKZm9FSzRZMjhzS0V1YlJ5dDFYOWROSkZKN1I3V1FidUVQeldwcHJWU1ZVOV9sSlE0ajd4V0ZMci0zM3pLUVlpUFRLX2I3T2xXcmMwQjBPTFdJVXRCdnJOSFBkYk9QNjRtYnM1Zk1uSllKaw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T07:53:00.000Z",
-        "summary": "Claude Mythos 5 Tried to Backdoor a Real Open-Source Project in Testing, Then Vouched for Itself The Hacker News"
-      },
-      {
-        "title": "What ICON’s Claude Deal Actually Means for the Site Coordinator Running Your Trial - The Clinical Trial Vanguard",
-        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOejdMZko4cHdOZU5uUGg5b3ZrT1lqRUQ5S1JxR3ItMU9JbVB1OHhaQWlrVEp0bGwxZFUxTVFpLXRKVTZJSm11dmVMb1NLc3FqSVY1WHM5UUI2S1V4V25EX0IxYUVtbE9YN2tNMGZBdVlUUjRiRUZ0YUhVWFNiU2oxWFI5TUhySGdJT2k4bUQ0NDlzd0ZSWXlrbzVpR2JoYXNKWHJubmUtazNTRTNzYWhVeHJpYzA2Vi1zdmtEY0ZLLUktNFdaZk4zSE11U2dGS0ZUNm5QV0ZqZjZ2R0h6T1E?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T07:37:44.000Z",
-        "summary": "What ICON’s Claude Deal Actually Means for the Site Coordinator Running Your Trial The Clinical Trial Vanguard"
-      },
-      {
-        "title": "Chinese Military-Linked Researchers Used OpenAI and Anthropic Models to Train Defense Systems - gHacks",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPeEhjdzdNNTBOWF9oV1QwZXpfT3dFY1hFUlctSEdLX21YMkFScmRpVWJwNHRwNVpPSFVOT19NOVZIOFYwbFBzQlpHTko0NklESFFKQXJLQW13ZUNMTWRFSndxbHZYdXJqZXRpVzJYZDNqN1I4WTlzMkVDRWU2Sm5FR1J5ZmJSVFdRSWFncVV6WWhjMV91MkQwWFRneGlaRmk4UC03Z1dOWW02UUJscTMxUXVzZlUwczFlUVRPbzdNRVY0dTBfeUhz?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T06:22:11.000Z",
-        "summary": "Chinese Military-Linked Researchers Used OpenAI and Anthropic Models to Train Defense Systems gHacks"
-      },
-      {
-        "title": "AI agents fake identities, target real people in new security incident - CNN",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNRy1kMlN3OGN3MGJXWllocTc3MUFNNmpKRjd0MUVjcHNYbUtWWlNhMUp5ME5YNHZBVjVoaWJHWHlXaGlkcV9icFlvOHhKVVk1QzU3b2FVbW56dHNDOUI0U1NGRjd2U0UtTENzajdidWNjOHVuQmlmRzAtZlpsWmw5d3lXX2VQNFU?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T03:56:00.000Z",
-        "summary": "AI agents fake identities, target real people in new security incident CNN"
-      },
-      {
-        "title": "OpenAI, Anthropic models targeted people and organizations during test - bnonews.com",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMjlrUk5qQm56U1l6QXRaVXN4dFVBQ2NfcjFMVU1aaVV2Y1hlaFRla1htM0hfMENJa1YzYjQ5LWVtUUVvSjcxOEVodDZESjdseU1LUXNRVXFpVWRQeE9TSzJURGRpaEM2NjJrU2d3ZFRzbkk1TDhPamhHcDdHT3RMQjlHTVZWR0ZPSkFPSFdTVFVxbkE3UUVFbDB3NFNyWkgzeFdrNUxFMFNUeGJDMy1lQzd2SWVFSElSazNxQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-05T00:01:49.000Z",
-        "summary": "OpenAI, Anthropic models targeted people and organizations during test bnonews.com"
-      },
-      {
-        "title": "OpenAI, Anthropic AI agents targeted real people and systems in cyber tests - BleepingComputer",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOdF91czRsSXp3Umk5UnFTa1g3bE9XcEdWM3hHaW1KdTdUdUNzUU9VaEJZaUk3TS12NGQ0VWFGWEttYWFXSWFmOEJLaVVYS01GYVpfNXJub3lGT3ZGcUowbnFueXEwREhOREpEVTJ0MVR1LUVBNEVxNTBrUXhnZ1lrZnpEX0YxRGp3S29jdlctd0hRUVhZRWlmejRab1JkY3ZrakhqWTFqTTkwZEtYMmJYWDN1X1ZncUtUOUt6elhEc9IBxAFBVV95cUxObi1CeDhtZXE5a1BfSG84MjRnRXN2MlVVSlBBb1pyTWRyZkdKWlIxN0hJdnFvUWZvZm1UM0N4OVlNMC1vXzcwdU01OFdvY2ZRQXlXSC1VSWlvSFM4OVhaX2JGMFh6S3dzR1QzR282YlJ1Y0hjZ294TzQxNXFNc3d2amtsWTBpc2R1X0FubFVTTUJOM1owREJxZFlXY3dwZXVsN1FJOTcwbWk2N2VaYlNPUjFXTkhXWWpaNkdMRzI1dHFWSTlP?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T23:39:59.000Z",
-        "summary": "OpenAI, Anthropic AI agents targeted real people and systems in cyber tests BleepingComputer"
-      },
-      {
-        "title": "Icon inks Anthropic deal to deploy Claude into clinical trials - Fierce Biotech",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOaDN6QWoyTU5GZ3E3bUQ2Y3VXNHVqMEdWMno4WDJDbnpNTEhJeEJXM0tRaTl5ZHVPcHVYRUl0N3FvQWs4OUdJUU1iR18ydVo2Smh0OTl3MnBmTURqdWxNZXpodjlVNGV0LU92R3JOblh0ZXF1OUQ2NGtxTklGZUQtSkQwZnZ6RnU5SDhpb2RsT0FnX3JDVW50SXh2TQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T20:20:55.000Z",
-        "summary": "Icon inks Anthropic deal to deploy Claude into clinical trials Fierce Biotech"
-      },
-      {
-        "title": "Anthropic signs $10B deal with AI cloud startup Volta",
-        "url": "https://techcrunch.com/2026/08/04/anthropic-signs-10-billion-deal-with-ai-cloud-startup-volta/",
-        "source": "TechCrunch",
-        "published": "2026-08-04T19:48:40.000Z",
-        "summary": "Anthropic has been on a cloud partnership spree in recent months, and its latest move is reportedly a $10 billion deal with AI cloud startup Volta."
-      },
-      {
-        "title": "ChatGPT Dominates Congressional AI Spending, Far Outpacing Anthropic’s Claude - theaiinsider.tech",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObWZCRzFtMVE1Nm9HQXIyeFJiX1BqLWZsS1B3Qjk5NW9rc3locU40Rl9hOEpqWGtweS1jaTA1d1A5eEg4Si04S0V4dEF5RGpFTkpfSEduQ3FHTVVjZG52MmR6VGdQZzN5VFVwcmFTR0Vvb19tUVZ6d205akFNXzd4bzJ3THFoVkhzeUpkbC0zc1ZlMHdWQXk5TW5CalBCZFFEdjdSMGlKRW9JRjJEMVBDa3Qzaw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T17:57:18.000Z",
-        "summary": "ChatGPT Dominates Congressional AI Spending, Far Outpacing Anthropic’s Claude theaiinsider.tech"
-      },
-      {
-        "title": "How Firms Like Coinbase Are Building Coding Agents to Complement Anthropic's Claude Code - The Information",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQRnVCMXZfOVRDQ0pkMWlYYWlxTWt2UmJDRWVONmpYc1ZxbFBjSThDTUNpczBEbi1lREdOZDgxcmVGMkRFVUdjbFgtVE91R2w4Q1M1NDE0UmJQVW5OZDREYVBORU1yYXlzd2k0aGE3ZWJzMlZ4dFZZTzVOb3NGQU5pYm5EaWdTdG5RUVhHNTJBbXgyUUtsWklKV2V6b1FBbnM5RHpwcWxva0U5M3N1UDV3SFZoUW5vSGdaVlZoLWU3d2ttcjd0Zy0tTWdn?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T17:03:00.000Z",
-        "summary": "How Firms Like Coinbase Are Building Coding Agents to Complement Anthropic's Claude Code The Information"
-      },
-      {
-        "title": "Wiener, backed by Anthropic PAC, uses Claude to skewer his SF rival - SFGATE",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQbTllbkhMM25tRlZZRElsLVp5WWkzemVtU29KU0ZOamJ4NlVnTGx0UTFLQjdkY2l2UVZXZUtVd19MQUtLYzU1bU00Um1DUDhTVklPRzUtU1VqdDR2bG5KMGxDQ1E0T19xdzJfSTd1dlY3RHdTNmNjeTI5MnpsalZNZlBOeHViT0hXc28wZFR3?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T16:49:29.000Z",
-        "summary": "Wiener, backed by Anthropic PAC, uses Claude to skewer his SF rival SFGATE"
-      },
-      {
-        "title": "Anthropic Clinches $10 Billion AI Compute Deal With Nvidia-Backed Startup - TipRanks",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOUDN3Z003WVNVTmt6cTV2Q3IxVlpBOWtzWDU3WlRoNFF2clhocngyVXY0M25XTTZ3RVFoRFYybFJSbkZOOG9fRUR6VTJMY203U09MZzZReXZaeVBFaE5mSS1GMkRCLXZjMGNSbXlHa2pKLUxfZEM3ajlXbFpDY1ljaUI3Qm1uVXQyaHY1Vmpta3FGamZCWnBGR1hzMW1DUnh6UmtjTw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T16:32:56.000Z",
-        "summary": "Anthropic Clinches $10 Billion AI Compute Deal With Nvidia-Backed Startup TipRanks"
-      },
-      {
-        "title": "Blackstone has pitched a mega-debt package for Anthropic chip deal - report (BX:NYSE) - Seeking Alpha",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZW5oRjF0SDRtZnY0SGlISlFhSElKUWNub3FMYmw2WWlrdkhsVTF3ckd5S2c2X2ZJNUV4d0FHVjVlbHNGdW16ZnlnRGNtbmsxN2RVZHBDZjdyeTFueU12M1dFaDl6ZWIyQkNKc196T0tSSDhDWS1yUFJ2dGhaSkRtQ3U2eTU3QTlpLWxwanVjSFg1aHdFLVZGRWViUUhVQzVfS1JHWm5nTHREY1RlVlctYkxDQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T16:00:33.000Z",
-        "summary": "Blackstone has pitched a mega-debt package for Anthropic chip deal - report (BX:NYSE) Seeking Alpha"
-      },
-      {
-        "title": "Agent skills that bring team coding standards to Claude Code and Codex",
-        "url": "https://github.com/tikalk/adlc-team-skills",
-        "source": "HN · 75↑",
-        "hn_id": "49169640",
-        "published": "2026-08-04T14:38:31.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic expands India strategy with local Claude inference and partner ecosystem investments - CRN Asia",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNQ2NrV2JhV1ZaOF8tTnRDcmdSQXlqVlVqbXN6SlhGZWg1TV9XLVBFa0d2a2ZNSU5VYkZIcGg0eE91UkNzbmQzQ3A4akdzeC1qeVpBX0ZzeXdDRVhGcjk3VG1NSUJDR1B5b3M2bW9zWWVoOV80SExHMy1HUDB1OVZlTS1GV1lmMk5ET3o0OGozdFkwVm5mRVRZZmpXQlM1cGZONm14MlVnXzh5VFFvS0NSX1REOHUxbnA3WXJJMHl3M0JFTEtXREljUFFOTFBTV1k?oc=5",
-        "source": "Google News",
-        "published": "2026-08-04T07:22:16.000Z",
-        "summary": "Anthropic expands India strategy with local Claude inference and partner ecosystem investments CRN Asia"
+        "summary": "Anthropic AI used fake profiles to target people in hack then hid the evidence BBC"
       },
       {
         "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
@@ -588,11 +588,18 @@
     ],
     "status": [
       {
+        "title": "Degraded performance for Claude Opus 5",
+        "url": "https://status.claude.com/incidents/mgp99sn4ynd4",
+        "source": "Claude Status",
+        "published": "2026-08-05T14:34:15.000Z",
+        "summary": "Aug 5 , 14:34 UTC Resolved - This incident has been resolved. Aug 5 , 13:51 UTC Identified - We have identified the cause of elevated errors on requests to Claude Opus 5 and are working on a fix. We…"
+      },
+      {
         "title": "Degraded performance of multiple models",
         "url": "https://status.claude.com/incidents/f6gkkq6txl7z",
         "source": "Claude Status",
-        "published": "2026-08-05T13:08:34.000Z",
-        "summary": "Aug 5 , 13:08 UTC Monitoring - A fix has been deployed for the issue affecting Claude services and we are monitoring for recovery. Aug 5 , 09:13 UTC Update - We are continuing to work on a fix for…"
+        "published": "2026-08-05T14:14:36.000Z",
+        "summary": "Aug 5 , 14:14 UTC Resolved - This incident has been resolved. Aug 5 , 13:08 UTC Monitoring - A fix has been deployed for the issue affecting Claude services and we are monitoring for recovery. Aug 5…"
       },
       {
         "title": "Elevated errors across many models",
@@ -663,13 +670,6 @@
         "source": "Claude Status",
         "published": "2026-07-27T14:36:43.000Z",
         "summary": "Jul 27 , 14:36 UTC Resolved - As of 7:34 PST / 14:34 UTC the errors have returned to baseline. Jul 27 , 14:04 UTC Update - Haiku 4.5 is also returning errors. Jul 27 , 13:42 UTC Update - We are…"
-      },
-      {
-        "title": "Elevated errors on Claude Opus 5",
-        "url": "https://status.claude.com/incidents/mfdtrknpxghq",
-        "source": "Claude Status",
-        "published": "2026-07-27T12:30:22.000Z",
-        "summary": "Jul 27 , 12:30 UTC Resolved - As of 4:47 PST / 11:47 UTC the errors have returned to baseline. Jul 27 , 11:27 UTC Investigating - We are currently investigating this issue."
       }
     ],
     "youtube": [
@@ -1744,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "2.1.0",
+        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.1.0",
+        "source": "MCP Inspector",
+        "published": "2026-08-05T15:51:47.000Z",
+        "summary": "What's Changed docs: restore SECURITY.md, lost in the v2 tree swap by @cliffhall in #1843 fix(core): mirror SEP-2243 x-mcp-header args to Mcp-Param-* on tools/call by @SamMorrowDrums in #1847 docs: post-swap branch…"
+      },
+      {
         "title": "v2.1.222",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.222",
         "source": "Claude Code",
@@ -2057,13 +2064,6 @@
         "source": "Claude API Release Notes",
         "published": "2026-07-22T00:00:00.000Z",
         "summary": "Webhooks for Claude Managed Agents now cover the environment and memory store lifecycle: four environment.* event types and three memory_store.* event types. You can react to environment and memory store lifecycle changes without polling.…"
-      },
-      {
-        "title": "v2-alpha-11",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/v2-alpha-11",
-        "source": "MCP Inspector",
-        "published": "2026-07-21T23:18:40.000Z",
-        "summary": "Tasks: io.modelcontextprotocol/tasks extension on modern servers (era…"
       },
       {
         "title": "v2.1.217",
