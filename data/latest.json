@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T14:22:05.377Z",
+  "generated_at": "2026-08-09T16:18:47.382Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,33 @@
     ],
     "news": [
       {
+        "title": "Claude Code will default to auto mode despite an 11% test miss rate - techi.com",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5qZlNsODNGODJPY2ptUzZObWVWdjh2cHRBNXN1QUd4anAyZWVYQm5sMkhMQzNkQjg5UHJFdGpwVUpMVVlWN2haUVg0SnZzQlBpVm43Wjl2LXZFN2xQdC1qWnJuOEZrUmlPNGg0eTN1RmlVMWdhdml1eUdxNHV4Zw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-09T15:54:35.000Z",
+        "summary": "Claude Code will default to auto mode despite an 11% test miss rate techi.com"
+      },
+      {
+        "title": "The AI safety test is becoming a safety risk",
+        "url": "https://techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/",
+        "source": "TechCrunch",
+        "published": "2026-08-09T14:30:00.000Z",
+        "summary": "AI agents are escaping cybersecurity testing environments and reaching real-world systems, raising questions about whether safety infrastructure, industry standards and regulation can keep pace with…"
+      },
+      {
         "title": "Israeli startup was linked to rogue AI hacks at OpenAI, Anthropic and Meta",
         "url": "https://www.cnbc.com/2026/08/09/israeli-startup-irregular-linked-to-ai-hacks-openai-anthropic-meta.html",
-        "source": "HN · 43↑",
+        "source": "HN · 46↑",
         "hn_id": "49231022",
         "published": "2026-08-09T13:03:49.000Z",
+        "summary": ""
+      },
+      {
+        "title": "70% of AI revenue comes from OpenAI and Anthropic",
+        "url": "https://www.youtube.com/watch?v=68X8yEatepQ",
+        "source": "HN · 48↑",
+        "hn_id": "49230605",
+        "published": "2026-08-09T11:56:16.000Z",
         "summary": ""
       },
       {
@@ -159,13 +181,6 @@
         "source": "Google News",
         "published": "2026-08-08T22:48:44.000Z",
         "summary": "The Agent Report — Your AI Agent Weekly Digest 🚀 Buttondown"
-      },
-      {
-        "title": "Meta launches Muse Code AI agent to challenge OpenAI, Anthropic - Memeburn",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPZXd6QXZ5VTNhcmdxa2VvOGRnMEdFM05Xc19HZVl1MmFhdjA2SllDa28yTzZJZGZUelp6T3hNeUw4TG1FMXR3Q1c5UTlVTUNPQ3c4V0pNUmlnZDM3M2pRdTMzTXE0bXY4ZnZBM3FDNTctUHBhcnktaXZ0UmJNV2IxNjJYdjUxVWVKTGpDaw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-08T21:30:15.000Z",
-        "summary": "Meta launches Muse Code AI agent to challenge OpenAI, Anthropic Memeburn"
       },
       {
         "title": "Claude told me to buy my own app",
@@ -182,7 +197,7 @@
       {
         "title": "Message your other Claude Code sessions",
         "url": "https://code.claude.com/docs/en/cross-session-messaging",
-        "source": "HN · 138↑",
+        "source": "HN · 142↑",
         "hn_id": "49222824",
         "published": "2026-08-08T15:34:49.000Z",
         "summary": ""
@@ -207,16 +222,16 @@
         "_kind": "news_video"
       },
       {
-        "title": "After telling employees to stop using Claude Code, Microsoft's internal memo has more 'bad news' for Anth - The Times of India",
+        "title": "After telling employees to stop using Claude Code, Microsoft's internal memo has more 'bad news' for Anth - timesofindia.indiatimes.com",
         "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxNQ3N3RVJ3aVBDNWo5RHpwcExRUy0wU1FLbFVkdWxIdTZvcUlBV3Q5NGt4NFc0OHBkRmFub2Fsd0o2YXBlWWpyMTIxa3RiOUZrOWNiOXpSTUgwazFFczFObXBEMXB3UWRpaVVfdnBNZk5wRi0yZUtTdFZmNFBuZHVabmFHemRoeHRBMFJqeHdpeVIxOHQ2bGVDSTNxQ1RyejNiZmRieHY3V25WREsxSHM3Z1MtQkM4Z3NKcE1wSkRPRUxXbmJCbUZCd1l5X1hpX2RlTG5PMUhOREVLUGEtU1BCaF9wVVZxZjNfeW5oUER5QkVrOVJycUJySFUtWG9La190MG9ydDFpLWVwRGFhWFItMk1ZQXlUOS1D0gGeAkFVX3lxTE1VSTFESVUzMHBrcUQtVGlmNlQ0TVdvVU5rUHF4OUktZmVCYVJZaVVDZ25PMEtnT3gtZ01LRnVfbTk1cURwbmR1WE1wWEVDMFhrZFBHN3MySXJLTXFQUjI0LVFVWDItWC1XamJ4N1p0ZU1iNmhOblFnVHVsT0RPRGh1Y3lUUDJFazJNNEVCYVlUMjkyS1lVSUdhY3g1WjJHQ2RzTDZwZXZlZDZyVnE1RS1TcU51ZzBrMVFOd25yQ2dWVzdWb2xxYS1SRDJ0NURHZFplcU9YM1ZZSlg0QjZuVWQ3aTBybDdBRnVPcnlET1dKeW82d2VUaHM1V2lGOWE5QlF1TmFNTUNmcUZzZThvZ0hyQzhYMS1OMEhPWnREaHc?oc=5",
         "source": "Google News",
         "published": "2026-08-08T03:02:00.000Z",
-        "summary": "After telling employees to stop using Claude Code, Microsoft's internal memo has more 'bad news' for Anth The Times of India"
+        "summary": "After telling employees to stop using Claude Code, Microsoft's internal memo has more 'bad news' for Anth timesofindia.indiatimes.com"
       },
       {
         "title": "Lost my phone at the office. Claude suggested tracking Bluetooth signal strength",
         "url": "https://twitter.com/un1c0rnioz/status/2084686552299634805",
-        "source": "HN · 281↑",
+        "source": "HN · 284↑",
         "hn_id": "49215786",
         "published": "2026-08-07T20:25:04.000Z",
         "summary": "https:&#x2F;&#x2F;xcancel.com&#x2F;un1c0rnioz&#x2F;status&#x2F;2084686552299634805"
@@ -249,11 +264,11 @@
         "summary": ""
       },
       {
-        "title": "Anthropic hires Robert Mahari as head of Claude for Legal - Legal IT Insider",
+        "title": "Anthropic hires Robert Mahari as head of Claude for Legal - legaltechnology.com",
         "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQanRTWUFQQnJGTmViMHRjOEFISVpMXzcxQUwzV0hqb0lyYkQ1N0tmNGg5cXljLXZ0dExHWlVNTlI5REd4dU1vLXFIdjFQVXMyS3B6V1Nkb2h3Z29VckZuaUJjQ3ZyLTZxSGpzTFl3NFA0Y0lfck1WRk1sSHh5VzhTcmpHV1FOcUFMUE1lVUp6QQ?oc=5",
         "source": "Google News",
         "published": "2026-08-07T17:34:19.000Z",
-        "summary": "Anthropic hires Robert Mahari as head of Claude for Legal Legal IT Insider"
+        "summary": "Anthropic hires Robert Mahari as head of Claude for Legal legaltechnology.com"
       },
       {
         "title": "Anthropic Appoints Legal Tech Founder Robert Mahari as Head of Claude for Legal - Law.com",
@@ -360,20 +375,6 @@
         "summary": "Meta Launches Muse Code to Challenge OpenAI, Anthropic Mexico Business News"
       },
       {
-        "title": "AWS’ OpenAI And Anthropic Coding Integrations To Drive AI Wins Via Security, Partners Say - crn.com",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQM1ZuX3pPeGFFRUU0dENqZGkxVWZGX0wzQ1o3VzF6RzMyTWUwY085WEFjX3VXZUtyWG5WSDA1OUd2SzZtZ1BfaHNOMGYza1JKOTAtVnRNNzhNSkZXcWVaUGg2WGdNZWU2bnctU1R2ZThDd0pXYUgwZTF1bDA3cjVWeEhyczk4RDEzX1h2T3JBVlF0TW0zTW9nY3I3dnBoUW5HTGtQc2FNTHpYbEFnNDdRLUxwd0l1QThrT1N1ZQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-06T15:00:00.000Z",
-        "summary": "AWS’ OpenAI And Anthropic Coding Integrations To Drive AI Wins Via Security, Partners Say crn.com"
-      },
-      {
-        "title": "Anthropic Discloses Three Security Breaches By Its Own AI Models - ALM Corp",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOVklYNXkzOXhvV2FFOHV3NklPN2VTMnZqREZ0VXJUZHBwSlZfdlRCT0hILXpidHg3T1FYSHZWS3l5TGN4MlZUbXNzNDA0TUEyakdXNkNaTGxod1lOdHlfV09yUlJ2Um5JSGctTFRER09iWGJOMWtVWHhOVjk5U25oTjQ2WWpXaVR0OS1v?oc=5",
-        "source": "Google News",
-        "published": "2026-08-06T12:00:00.000Z",
-        "summary": "Anthropic Discloses Three Security Breaches By Its Own AI Models ALM Corp"
-      },
-      {
         "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
         "url": "https://www.youtube.com/watch?v=P1KpxzLVg7c",
         "source": "Riley Brown",
@@ -454,18 +455,6 @@
         "video_id": "Hv8YGUXZY1g",
         "thumbnail": "https://i.ytimg.com/vi/Hv8YGUXZY1g/hqdefault.jpg",
         "published": "2026-07-25T20:28:01.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Claude Opus 5 Just Dropped (I have to be honest...)",
-        "url": "https://www.youtube.com/watch?v=A8h8W5hf0ko",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "A8h8W5hf0ko",
-        "thumbnail": "https://i.ytimg.com/vi/A8h8W5hf0ko/hqdefault.jpg",
-        "published": "2026-07-24T22:50:20.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -809,17 +798,6 @@
         "summary": ""
       },
       {
-        "title": "Claude Opus 5 Just Dropped (I have to be honest...)",
-        "url": "https://www.youtube.com/watch?v=A8h8W5hf0ko",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "A8h8W5hf0ko",
-        "thumbnail": "https://i.ytimg.com/vi/A8h8W5hf0ko/hqdefault.jpg",
-        "published": "2026-07-24T22:50:20.000Z",
-        "summary": ""
-      },
-      {
         "title": "Claude Opus 5 DESTROYS Fable 5",
         "url": "https://www.youtube.com/watch?v=Vh1v2VSroes",
         "source": "Alex Finn",
@@ -993,6 +971,17 @@
         "video_id": "pwrYhbVoPNM",
         "thumbnail": "https://i.ytimg.com/vi/pwrYhbVoPNM/hqdefault.jpg",
         "published": "2026-06-08T14:19:57.000Z",
+        "summary": ""
+      },
+      {
+        "title": "5 Beginner Tips to STOP Hitting Claude Cowork Limits",
+        "url": "https://www.youtube.com/watch?v=jvy5rTh0ns0",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "jvy5rTh0ns0",
+        "thumbnail": "https://i.ytimg.com/vi/jvy5rTh0ns0/hqdefault.jpg",
+        "published": "2026-06-03T14:00:17.000Z",
         "summary": ""
       }
     ],
@@ -1272,6 +1261,18 @@
         "published": "2026-06-06T00:28:16.000Z",
         "summary": "",
         "tutorial_kind": "official"
+      },
+      {
+        "title": "5 Beginner Tips to STOP Hitting Claude Cowork Limits",
+        "url": "https://www.youtube.com/watch?v=jvy5rTh0ns0",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "jvy5rTh0ns0",
+        "thumbnail": "https://i.ytimg.com/vi/jvy5rTh0ns0/hqdefault.jpg",
+        "published": "2026-06-03T14:00:17.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
       },
       {
         "title": "Claude Code Auto Mode",
@@ -2070,13 +2071,6 @@
         "summary": "Headless browser smoke for web CI"
       },
       {
-        "title": "Claude Opus 5 Just Dropped (I have to be honest...)",
-        "url": "https://www.youtube.com/watch?v=A8h8W5hf0ko",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-07-24T22:50:20.000Z",
-        "summary": ""
-      },
-      {
         "title": "v2-alpha-13",
         "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/v2-alpha-13",
         "source": "MCP Inspector",
@@ -2235,6 +2229,13 @@
         "url": "https://www.youtube.com/watch?v=pwrYhbVoPNM",
         "source": "YouTube · Ryan & Matt Data Science",
         "published": "2026-06-08T14:19:57.000Z",
+        "summary": ""
+      },
+      {
+        "title": "5 Beginner Tips to STOP Hitting Claude Cowork Limits",
+        "url": "https://www.youtube.com/watch?v=jvy5rTh0ns0",
+        "source": "YouTube · Ryan & Matt Data Science",
+        "published": "2026-06-03T14:00:17.000Z",
         "summary": ""
       }
     ]
