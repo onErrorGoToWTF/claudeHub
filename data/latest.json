@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T10:19:55.571Z",
+  "generated_at": "2026-08-09T12:21:41.361Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "GPT 5.6 Sol vs Claude Fable 5: Coding, Agents & Cost Compared - Memeburn",
+        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5Wb3VOMGp5Qzl5a2FMY0pIVjNoWjBGdVNoaUxJQVA0aTZSQTVGVlZSVnJ6eVhtcmo0aEdfQXF4VUtEeHR0eElvZ085eWNyQkU4ME5FaHRQWV9SX2FuelhBbA?oc=5",
+        "source": "Google News",
+        "published": "2026-08-09T09:33:39.000Z",
+        "summary": "GPT 5.6 Sol vs Claude Fable 5: Coding, Agents & Cost Compared Memeburn"
+      },
+      {
         "title": "Claude Code Auto Mode Transforms AI Coding Safety - The Cryptonomist",
         "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBPVnR0M3g4WFdZQ0FuM0RQWG5mSDU2aWZNZ2JHX05nQ2wzc1UzNFJoQnNfbENMaEhxYUgweHUyZUlMUmNyTVlqMDNFTHUxU0xDV3NJT0c0TU41eDM1al9TQjZCTTdtRHFIemx6NQ?oc=5",
         "source": "Google News",
@@ -181,7 +188,7 @@
       {
         "title": "Message your other Claude Code sessions",
         "url": "https://code.claude.com/docs/en/cross-session-messaging",
-        "source": "HN · 131↑",
+        "source": "HN · 137↑",
         "hn_id": "49222824",
         "published": "2026-08-08T15:34:49.000Z",
         "summary": ""
@@ -220,16 +227,9 @@
         "summary": "After telling employees to stop using Claude Code, Microsoft's internal memo has more 'bad news' for Anth The Times of India"
       },
       {
-        "title": "Auto Mode will soon be the default in Claude Code — because humans can’t be trusted - The New Stack",
-        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE4ySFF6RTFpOG9yMkpxNUtvcXo0MmgtQWtKYWFqMVRoV1MzSGptdmxEZnJodEh2eVY0am1mVU50bUZEbG1GRnVMSkQ3RkUxaW96ZDFwRmQweWk?oc=5",
-        "source": "Google News",
-        "published": "2026-08-07T21:44:30.000Z",
-        "summary": "Auto Mode will soon be the default in Claude Code — because humans can’t be trusted The New Stack"
-      },
-      {
         "title": "Lost my phone at the office. Claude suggested tracking Bluetooth signal strength",
         "url": "https://twitter.com/un1c0rnioz/status/2084686552299634805",
-        "source": "HN · 273↑",
+        "source": "HN · 278↑",
         "hn_id": "49215786",
         "published": "2026-08-07T20:25:04.000Z",
         "summary": "https:&#x2F;&#x2F;xcancel.com&#x2F;un1c0rnioz&#x2F;status&#x2F;2084686552299634805"
@@ -541,18 +541,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Claude Fable Redesigned our App! (and we got blocked 😡)",
-        "url": "https://www.youtube.com/watch?v=DKHZS8lysr8",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "DKHZS8lysr8",
-        "thumbnail": "https://i.ytimg.com/vi/DKHZS8lysr8/hqdefault.jpg",
-        "published": "2026-07-08T13:00:28.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
         "title": "The different levels of how Claude thinks",
         "url": "https://www.youtube.com/watch?v=rKV5JcALQoQ",
         "source": "Anthropic",
@@ -573,6 +561,18 @@
         "video_id": "uU0RFxGv-Ks",
         "thumbnail": "https://i.ytimg.com/vi/uU0RFxGv-Ks/hqdefault.jpg",
         "published": "2026-06-30T19:39:15.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "5 Advanced Tips to STOP Hitting Claude Cowork Limits",
+        "url": "https://www.youtube.com/watch?v=pwrYhbVoPNM",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "pwrYhbVoPNM",
+        "thumbnail": "https://i.ytimg.com/vi/pwrYhbVoPNM/hqdefault.jpg",
+        "published": "2026-06-08T14:19:57.000Z",
         "summary": "",
         "_kind": "news_video"
       }
@@ -929,17 +929,6 @@
         "summary": ""
       },
       {
-        "title": "Claude Fable Redesigned our App! (and we got blocked 😡)",
-        "url": "https://www.youtube.com/watch?v=DKHZS8lysr8",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "DKHZS8lysr8",
-        "thumbnail": "https://i.ytimg.com/vi/DKHZS8lysr8/hqdefault.jpg",
-        "published": "2026-07-08T13:00:28.000Z",
-        "summary": ""
-      },
-      {
         "title": "Build Amazing Websites with Claude (Full Guide)",
         "url": "https://www.youtube.com/watch?v=COh_cjrDOzc",
         "source": "Riley Brown",
@@ -992,6 +981,17 @@
         "video_id": "Y9Wz2PV404E",
         "thumbnail": "https://i.ytimg.com/vi/Y9Wz2PV404E/hqdefault.jpg",
         "published": "2026-06-09T17:00:05.000Z",
+        "summary": ""
+      },
+      {
+        "title": "5 Advanced Tips to STOP Hitting Claude Cowork Limits",
+        "url": "https://www.youtube.com/watch?v=pwrYhbVoPNM",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "pwrYhbVoPNM",
+        "thumbnail": "https://i.ytimg.com/vi/pwrYhbVoPNM/hqdefault.jpg",
+        "published": "2026-06-08T14:19:57.000Z",
         "summary": ""
       }
     ],
@@ -2195,13 +2195,6 @@
         "summary": ""
       },
       {
-        "title": "Claude Fable Redesigned our App! (and we got blocked 😡)",
-        "url": "https://www.youtube.com/watch?v=DKHZS8lysr8",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-07-08T13:00:28.000Z",
-        "summary": ""
-      },
-      {
         "title": "Build Amazing Websites with Claude (Full Guide)",
         "url": "https://www.youtube.com/watch?v=COh_cjrDOzc",
         "source": "YouTube · Riley Brown",
@@ -2234,6 +2227,13 @@
         "url": "https://www.youtube.com/watch?v=Y9Wz2PV404E",
         "source": "YouTube · Anthropic",
         "published": "2026-06-09T17:00:05.000Z",
+        "summary": ""
+      },
+      {
+        "title": "5 Advanced Tips to STOP Hitting Claude Cowork Limits",
+        "url": "https://www.youtube.com/watch?v=pwrYhbVoPNM",
+        "source": "YouTube · Ryan & Matt Data Science",
+        "published": "2026-06-08T14:19:57.000Z",
         "summary": ""
       }
     ]
