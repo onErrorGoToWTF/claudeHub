@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T03:41:17.912Z",
+  "generated_at": "2026-08-10T05:12:59.791Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,21 @@
     ],
     "news": [
       {
+        "title": "Claude Code will soon need fewer developer approvals as Anthropic turns on Auto Mode by default - Firstpost",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOQjVNTk9TTVoxcVExRXJKWVM5ZUdUYm51TWw2V21XZWQzRUxObXJ2OEptcWJNSWxNSTQxMUlYTlJqX3kwNUR1a0d4OUJDQUl5NzNOcDMxUWJDLWtucEUtYTl1UTU2Zi1QMWtBMHNmMG9IYk5PQkl6SGxpTUp3d1dZc2NadDFsNmM2dG9vVzRvSGZ5eHhIbUxxWWZja1QtVHQtd3VhaTZBTjY2WGxWd2QybmhHemRuUzBac0dLdXBjVGpsTWhoVWRPYUFUSUtzZFBrN2ZCcVRJSdIB3AFBVV95cUxQQy04aFB5VWtZREdSRXhzUEdqc1NzTE9RcEstMnV6NHM1cTRiRlhvV09qU0lMb0dfclN6SkR6dzNmYnFZSXZXRmFtLTlwbnBHTzdBb3Bpcm9oQlJFUHNvSTBiTkcyVXVqVl9uZENkdnd2aEplNFBXOUVOLXVSQ1VJZmpxcm9xQUN0WElmbklqckRKQVRUdzRkTjNxaGpoQmNxRDE5alJBeEdvakd6N081R25hdUxReGF4aUlzRktIV1RLaWtQdnhMbFE0NTAxMTZRMEc1NDBNMkNlOF8w?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T04:21:16.000Z",
+        "summary": "Claude Code will soon need fewer developer approvals as Anthropic turns on Auto Mode by default Firstpost"
+      },
+      {
+        "title": "Auto mode is now the default in Claude Code",
+        "url": "https://claude.com/blog/auto-mode-default-in-claude-code",
+        "source": "HN · 53↑",
+        "hn_id": "49239021",
+        "published": "2026-08-10T03:50:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Code now works on auto mode by default, Anthropic says it is safer this way - India Today",
         "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNS21hSE9vdmtqckJHT3B2bFZWdlFBaEtFRTRXZFJ4cEVtaGFoQzF6MnlYdlNWSnJPSVdzbkVtc3E4SnlmMWxUREdoM1ZpRTZLeHFPRkJKVTd5RGhUc1R6cmtfVXlXektPbi1nUHRQRmRaUVN4bjR2VV9HNWdqMHNVUVM3U0dfTGFFdEpSZjFmTGRfVUxYUUFnRXVvcFJyWm1NeXVlMmRpTURjb2NFMlpxNENBUUhFOXJRbk5FOHlFdDBnQ003MHpLTGptamVxMjRFZ19Qamx2Z2xQRWxCV2hCQ01R0gHnAUFVX3lxTE1FR0RXaVhOZWZfeGczRFg3N096YnlBNVhlUmNvMlI5VUZfWkJ0TGZGMFdwTzBPcUU3THozb1BERkp5aDVXUzYtTE1WcUNLdldtN3d2cGE0QmhWOWJrQk5wU3dhWU8tWndTTm9aemJRVHBJZmU3bjYwbzFCVEZIb2hWdVlaUGVIV1hrTExlWHgtUXVDSlppdkZzOWJWT0Roek1vWW1MNkhLTTl1YnpVWE8wV2dpaWw2ZEZIZ1AtdEFwbWNoRllhTnh1TFlrNjVELTlUcXJFTjZZRG5hTkZLUHQ0V2hrUXVnYw?oc=5",
         "source": "Google News",
@@ -198,6 +213,13 @@
         "_kind": "news_video"
       },
       {
+        "title": "Anthropic AI agent created fake accounts to trick real people in security test, AISI says - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQy1zTlRpbnBBTWhHZ2h5cGtvMHBHb1hnMGM1cTZncERWR2RXX0QxanlYVGpoRTdzaU9KbnhKV2lfZnllZW9HaDA1alNXTE1QeXFrT3A5NHJoclNQMFR4RkM5em04YnZoT01wQ28yS3Yxc2JqdlJXZFlUUFFhZ3Q2RVFvcm5Wc0tPcDFoZk5IX0pIQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-09T22:53:46.000Z",
+        "summary": "Anthropic AI agent created fake accounts to trick real people in security test, AISI says Yahoo Tech"
+      },
+      {
         "title": "Anthropic will make Claude Code automatic mode default for paid plans - Межа. Новини України.",
         "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBxamt2MlpOc3o3M3VGMHdsbnJSM09MSWZvRXZmWVhjRmw5YzkwZVRuSG1nMVBGS2V2WWRFWlBGMUcwak8tdzg1dzJfaWhzZTV0Y3ZVZml0cUdldTJfcGxrWGEwUDdKR1E4?oc=5",
         "source": "Google News",
@@ -240,18 +262,11 @@
         "summary": "Claude Code turns Auto Mode on by default as Anthropic targets rubber-stamped approvals eGamers.io"
       },
       {
-        "title": "How To Use Claude's Voice Mode - Engadget",
+        "title": "How To Use Claude's Voice Mode - engadget.com",
         "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBVa0E2cmg1cThnMDZ1UUpWTG9KT1NiY01xQnhoYTBBeTU3eWJuVTFhSUk4SktOUXlXRllCZUZEUm01bGltQ1k3Y0dsRjdQSFRDSXF6VnhsUGV2MVRIMURJLXJjR3E5dGlVRC1aaVFPdw?oc=5",
         "source": "Google News",
         "published": "2026-08-09T18:30:00.000Z",
-        "summary": "How To Use Claude's Voice Mode Engadget"
-      },
-      {
-        "title": "Researchers watched OpenAI, Anthropic models take extreme measures in hacking test - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOMGdxMnViZzRydUJsTDNnUVJWdmRCUG9XRXQ1eTlDUUVhdE90MWdBWk9kRkxFNm9qSVlKQlBGMWg4MS12QzRDTkx5cUZJTmlnWnFCUmp5cnZHZjk4dTFXV2NCVEtDQnZaYWtubkZudmFYSGY0WldaTGUxVWU1QjBfbzRPdzhUdw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-09T18:26:12.000Z",
-        "summary": "Researchers watched OpenAI, Anthropic models take extreme measures in hacking test Mashable"
+        "summary": "How To Use Claude's Voice Mode engadget.com"
       },
       {
         "title": "Claude Code will default to auto mode despite an 11% test miss rate - techi.com",
@@ -270,7 +285,7 @@
       {
         "title": "Israeli startup was linked to rogue AI hacks at OpenAI, Anthropic and Meta",
         "url": "https://www.cnbc.com/2026/08/09/israeli-startup-irregular-linked-to-ai-hacks-openai-anthropic-meta.html",
-        "source": "HN · 50↑",
+        "source": "HN · 51↑",
         "hn_id": "49231022",
         "published": "2026-08-09T13:03:49.000Z",
         "summary": ""
@@ -298,7 +313,7 @@
       {
         "title": "Message your other Claude Code sessions",
         "url": "https://code.claude.com/docs/en/cross-session-messaging",
-        "source": "HN · 154↑",
+        "source": "HN · 157↑",
         "hn_id": "49222824",
         "published": "2026-08-08T15:34:49.000Z",
         "summary": ""
@@ -332,7 +347,7 @@
       {
         "title": "Lost my phone at the office. Claude suggested tracking Bluetooth signal strength",
         "url": "https://twitter.com/un1c0rnioz/status/2084686552299634805",
-        "source": "HN · 291↑",
+        "source": "HN · 292↑",
         "hn_id": "49215786",
         "published": "2026-08-07T20:25:04.000Z",
         "summary": "https:&#x2F;&#x2F;xcancel.com&#x2F;un1c0rnioz&#x2F;status&#x2F;2084686552299634805"
@@ -370,20 +385,6 @@
         "source": "Google News",
         "published": "2026-08-07T17:34:19.000Z",
         "summary": "Anthropic hires Robert Mahari as head of Claude for Legal Legal IT Insider"
-      },
-      {
-        "title": "Anthropic Appoints Legal Tech Founder Robert Mahari as Head of Claude for Legal - Law.com",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNQXpwcnUyU2o1dU53LW5WOFh3aFdkQVAtY2dzdG9ZdjNfNEJHVE9oRWxwczc0VDdyUGUtUWNxR3VKeU9rbGFkcFoyd082YzNsU3FJY3Y5NmdYTHZ0dXBsTEFIYjR4dnR3dDVlbnBDRlc1U1lNVk1Eb0h6X3NlUzN6OWFBLXpJUVdMZTd6QTduREU1SkhfZXVNWE1YRHRqWGdPamJncDEwanV1dXdxRVZSXzBKVEEyTGh1dEdwVWNWTzNTcXV0?oc=5",
-        "source": "Google News",
-        "published": "2026-08-07T15:15:00.000Z",
-        "summary": "Anthropic Appoints Legal Tech Founder Robert Mahari as Head of Claude for Legal Law.com"
-      },
-      {
-        "title": "Inside the Race to Make AI Build Itself - Time Magazine",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQYWVQUnNEbTExb2lFMkQ3Yzh3cHlYQTNYaGhwRk9zLXluVU9NbUQyNmhTTXZKQnZDeW10TW9qS3VQMUNzYnNMc0o0VmphemxyazlrNE1PRFhQaGtRbWZZZkZxRkhGT3NKSHAzOHMtOTV5djdTcEg2dnhLR1lha2hWeFhFaE14MUR5NUFn?oc=5",
-        "source": "Google News",
-        "published": "2026-08-07T14:09:26.000Z",
-        "summary": "Inside the Race to Make AI Build Itself Time Magazine"
       },
       {
         "title": "What is an Agentic Development Environment?",
