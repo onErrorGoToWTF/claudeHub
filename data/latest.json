@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T20:28:13.418Z",
+  "generated_at": "2026-08-10T22:23:28.857Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,47 @@
     ],
     "news": [
       {
+        "title": "With new open models, Meta pitches another reboot of its struggling AI strategy",
+        "url": "https://arstechnica.com/ai/2026/08/with-new-open-models-meta-pitches-another-reboot-of-its-struggling-ai-strategy/",
+        "source": "Ars Technica",
+        "published": "2026-08-10T22:13:03.000Z",
+        "summary": "Meta has announced its intention to focus on open-weight large language models. Additionally, the company announced the release of an open model called Muse Glimmer and a promise to open the weights…"
+      },
+      {
+        "title": "How Claude marks AI-generated content",
+        "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content",
+        "source": "HN · 33↑",
+        "hn_id": "49250109",
+        "published": "2026-08-10T21:36:56.000Z",
+        "summary": ""
+      },
+      {
+        "title": "AI Agent Hacks Gym Waitlist, Sparking Industry Alarm - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNd1hRNEdCSURCdHF2NUU4LXk4Y0trcVc3eHkxQTdpR05oYjB0RnZEYmhkZ3NhSE5sSzMwTXIzdV9HUEJYandLUkZlMTA1V2JIR0doelRiVGhra2szM0JWUUdEUG55amxiLWJGM3BNeU85N3V1aXNLYllHOGZ1WU1aQ1cyWHlmRzg3Z3Q0eQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T21:06:00.000Z",
+        "summary": "AI Agent Hacks Gym Waitlist, Sparking Industry Alarm The Tech Buzz"
+      },
+      {
+        "title": "Anthropic, Macquarie, GIC partner to build AI data centres - Capital Brief",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPRmlOVXJJeDh6REFCQk5lQk15LU9QNkNHZ2ZWRjdTWFR0eTl1SlI3QVdGal9FcWtLeXZ6anFMQk1TUnNYbG9MTEdlWEpWc0prcm1rSUo1bFNsc0VhTnNETmEzV3pYWGxuWGJRY1o0d0lwYWN5R2YzMmlPLXMwSHdoanVYMkhEMGhPYkxHNVludFZWajZHLTkzdTJlSGhSZm94V21mOUhrYmdLTUgxTTAzbldCQlFDMnFfMjFMSDVnU29WQmRNR3FJam00T19GWEE?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T20:45:00.000Z",
+        "summary": "Anthropic, Macquarie, GIC partner to build AI data centres Capital Brief"
+      },
+      {
+        "title": "Codex Is Winning... But Claude Has One HUGE Advantage",
+        "url": "https://www.youtube.com/watch?v=piOSL8Ms9mY",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "piOSL8Ms9mY",
+        "thumbnail": "https://i.ytimg.com/vi/piOSL8Ms9mY/hqdefault.jpg",
+        "published": "2026-08-10T20:29:40.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
         "title": "AWS Continuum integrates with OpenAI Codex and Anthropic Claude Code in major AI security push - VentureBeat",
         "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNWE9YZmluV0VTOEs0WlV1UDhfZGF4SXRKRkUyZWx5SVRqQ01ld2g5blVyYVo3ckdOUWhhcHNtVDE2OFBKQzZDOS14TnRVUk5qaUVQaHpSUEtKUW44bl8zdXNweTVNU1ZMNlV0bVR0QlUtMnNKZzhmVnBlQzdLdWt5Tkt0YzRBeVVPUTgtNW4zSXdJYUE3N0FtcThveTBXLVFZZWVKd0JhVHlOc2d5Sm1XVUxPaHpza0lmUnBIdThKVzd4eE5YTEE?oc=5",
         "source": "Google News",
@@ -167,16 +208,24 @@
         "summary": "Meta is escalating the debate over open versus closed AI with Muse Glimmer, a new downloadable model designed to run on a personal computer using a single GPU. The release, accompanied by a new…"
       },
       {
-        "title": "Learning more about Claude's mathematical capabilities - Anthropic",
+        "title": "Claude moves bound of the Riemann Hypothesis from 41.6% to 67.2%",
+        "url": "https://twitter.com/jarredsumner/status/2086869681785500011",
+        "source": "HN · 35↑",
+        "hn_id": "49247362",
+        "published": "2026-08-10T18:04:17.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Learning more about Claude's mathematical capabilities - anthropic.com",
         "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5hN2tYeFF6SEtkVVhzVURqcHVqZ0VPVExEUnlFX21BcmNLaFhqT1BEU25IVS15akdoYVZ3djRLc3B5OXIyRnNxZkcxQUd4TEhXaUlpZzNwZlhuUVk?oc=5",
         "source": "Google News",
         "published": "2026-08-10T17:52:56.000Z",
-        "summary": "Learning more about Claude's mathematical capabilities Anthropic"
+        "summary": "Learning more about Claude's mathematical capabilities anthropic.com"
       },
       {
         "title": "Learning more about Claude's mathematical capabilities",
         "url": "https://www.anthropic.com/research/riemann-zeta",
-        "source": "HN · 111↑",
+        "source": "HN · 141↑",
         "hn_id": "49247070",
         "published": "2026-08-10T17:41:13.000Z",
         "summary": ""
@@ -189,11 +238,11 @@
         "summary": "Anthropic Makes Claude Code's Auto Mode the Default, Betting Automation Beats Manual Review DevOps.com"
       },
       {
-        "title": "Claude Code’s auto mode will be on by default, Anthropic confirms - Mashable",
+        "title": "Claude Code’s auto mode will be on by default, Anthropic confirms - mashable.com",
         "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9vNklTVGFuNFNCVHF4NFFkWHdrTld6WEVuaEtBMjRoVnF0QzdVTnJqUjRuOENMVHZvbmQwQ2o5UkhndzZlUVB2T3ROMGNEc0w2dXZhR2YwaDlrQzJPRTdqXzF6X0tYZ0htbU5zNVkwRVJqdDhHNzJj?oc=5",
         "source": "Google News",
         "published": "2026-08-10T17:30:56.000Z",
-        "summary": "Claude Code’s auto mode will be on by default, Anthropic confirms Mashable"
+        "summary": "Claude Code’s auto mode will be on by default, Anthropic confirms mashable.com"
       },
       {
         "title": "Anthropic Strikes Data Center Development Deal With Macquarie, GIC - Bisnow",
@@ -210,6 +259,13 @@
         "summary": "D.C. Uses Claude More Per Capita Than California. Its Paperwork Economy Explains Why inc.com"
       },
       {
+        "title": "Claude Code Shifts Agent Security From Repeated Human Approval to Auto Mode - CyberSecurityNews",
+        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE82aGhDMFo3Nno4YmpZb0pTaHRucWJkdlhGSzhiRWhuSGM2d1FSMFlIUnZKSFllUkhWSGRsLXhyVFpqczdlNGZ0Slo0QkVDaE1Yd2hNcmJsMU5jNjhRSmM5cFQzamNQRlZ1MFljSU80OFdMQdIBxgJBVV95cUxQSUdySElPM0xSOThsZHYzUldrVGJSU0J2LXpPTnJJWmlMQjhkVlM1OFFwSjAyR2ZnV1M1U2QzQWlQcVI2RGV4LTdNdGxtb3FWZ1V1RFFhUU1MdVhCMFg4SUhSTjZxcVJ0MGQyVlNsX1EtWWFBcE1yWU9LRWFEeVpmUkJ2M1R5b3d5NjFjMHVseWdEMldJdmowRXNCdXRRNktCZGtqUTdwbGMyMndkWjVXNFgtOERNb3BGUGZTTHByd25RU2kyek9WMkZoSERfYkxaSHNRcThQa0ozb3RTNjhHTnZhdWZaUlA5RGM1NW5sc3pkZ3VPOVV2MXVfSkgtazFuanZDWlRBQ2d6b09KTTRPUnl3MUN5ZU8wNnlKWTN1bkxqWm1lUDMybGhvNWNaT0o4VVJ3cTdJS24yMmVBSWVMaTlkWExhQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T16:26:23.000Z",
+        "summary": "Claude Code Shifts Agent Security From Repeated Human Approval to Auto Mode CyberSecurityNews"
+      },
+      {
         "title": "Anthropic will now let Claude do things on your behalf by default - Yahoo Finance UK",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdk1oU2tkNHZsc0JITWNqWUVqODFhNGxJanBrcGl1ZnhVb1M3VDRscXZsZzBoNHVrQWx1cXpFUVVfQ3VaMjEwTmlsZjU4RERIRnVlcU4tYWJpbTdiWkN6VjlQNk0xNG43YlMxMWlYeFVCWnZVTzF5OHF6SWV1NmhHd1ZoUUN1RGc?oc=5",
         "source": "Google News",
@@ -224,14 +280,7 @@
         "summary": "KYND turns to Anthropic AI to test cyber risk FinTech Global"
       },
       {
-        "title": "OpenAI Says Its Next AI Model Astra May Be Too Dangerous, Pauses Development - Decrypt",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPY2RhdThsSVlwQTFmRG51WFNaS28tSlNLQ0dkSlJLcDAtZ3lnTnZGakpXcUdKQzlRMFpBdDVEQUZWZkpwSFpyY0F5X2UxV3FlY1VfVXU2b3owc2U0NnRQdy01a3NxVWVKS1FGeWtLZXFucEZrME9vcDJRWHEtMnJteWxhaGNLR2Vq0gGQAUFVX3lxTE5lQ3FVUkpUYXVlSFBpemxiYUhlNGhPY293ZWpBYzltV1RXRkFKNldReE1nWU41VjFOanlmcmRiZmhqUkpzbUszN1NZMXRqZDhMMDAzckRCaFhpN0cwZTk4T2xwelJzVE5sbTFxX1ByZWdITGxGQTBvNUJLbDlvSjk0ZDVVeHlTYjMxcGxGTHZsdA?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T15:03:07.000Z",
-        "summary": "OpenAI Says Its Next AI Model Astra May Be Too Dangerous, Pauses Development Decrypt"
-      },
-      {
-        "title": "Dispatches from Iceland",
+        "title": "How Icelanders are thinking about AI",
         "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
         "source": "Anthropic",
         "channel": "Anthropic",
@@ -252,7 +301,7 @@
       {
         "title": "Exploring Claude/GPT Knowledge Cutoffs and Pre-Training Timelines",
         "url": "https://blog.sshh.io/p/exploring-claudegpt-knowledge-cutoffs",
-        "source": "HN · 54↑",
+        "source": "HN · 81↑",
         "hn_id": "49244085",
         "published": "2026-08-10T14:20:41.000Z",
         "summary": ""
@@ -277,13 +326,6 @@
         "summary": "Anthropic Finds Enterprise Delivery Partner in Zaelab PR Newswire"
       },
       {
-        "title": "Anthropic’s Claude AI Agent Hacks Gym and Sabotages Member Without Being Ordered to - TipRanks",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNNmJFcHBTbkhQNEVUOTFsVHdZXzdQYVdtRWExNVlLdDZuWWM4eks2UjZfNjA5bE5wOGotM0VwMkI3VW9vTFhUeVh1bWxrWExLTE45d0hBU0UxdzhHdHZ0dWNjMUNSQmpadzNUN0c5VExCWU5MN05TRld4b2V0UXFoTHk1dkFPRDhlNTQ2ZHBSNkNVcGxmR3pyemRpSUpJaks1VUJyWnlRSGdVVFE?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T13:19:11.000Z",
-        "summary": "Anthropic’s Claude AI Agent Hacks Gym and Sabotages Member Without Being Ordered to TipRanks"
-      },
-      {
         "title": "Anthropic makes Claude Code's Auto Mode the default, reducing the need for user approvals - Storyboard18",
         "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNdkRLeGpZVXZLdDJrRnJsSmlCVnZMUmJReXlhTFZ1ZWcwYl9kbmt5SEh5VjBoWllRMFNyQWktNjRiVXdIMnhCV2RydEFYUllMbHE5U0hGWEdMdi1qUU96cGMybWt6OF95aEhEVmJ1M3dlMnJzM3AwRkZ2NE9HV21zX1ZPWVcyeHkydktXa2FkSWlPd0pobThqYk5Rcm1pcWgtZDZOeUhFZW9wWGR0VkFFZEFwVGp6aUpVRVE0RnlMXzVWd0wxMVRpZ0FVQnZzNERZ0gHWAUFVX3lxTE0zeFhzUy1mY19RcDNUdk9sRUpuMmxBOEdNc1VsSzJYM0VfUGkwUUlweXpXcE5Kdmw3WkFnYnFiMWR3NHpSTmZXc0J6bVJZUVl4UEdHM1VVd1VtVzdJTGpacHV5TVNqVy1MTUxSN1FmNXhESEs2c3V3UGdicUo1SWk0WF91Tzk1VVZ2djV1Yl9CSXdVUHJXZFRVcThQSVRnWXY5QTF3QUt1TDUteGU0cEU1dUhzTGx3dEZldzl4ZEI3SUk3dDdKSkJpTk1ta1lLcDhMQ0RmRGc?oc=5",
         "source": "Google News",
@@ -291,25 +333,11 @@
         "summary": "Anthropic makes Claude Code's Auto Mode the default, reducing the need for user approvals Storyboard18"
       },
       {
-        "title": "AI agents fake identities, target real people in new security incident - Egypt Independent",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSnJVTDNfeDl5a0pjUkdWRFBiR1FtOGdIbmdCWXo1UERCdjR3TVQzakFEQk9TSThkeGk4dHVLS2hXa1VqaTF1ekpTSWlXZ29iMWozZ2RVTWlBR2YzYWZvLW85WVJRZkF0V0tneEtPNGZ6bnVyUldxYlEzQ0lRTmdDVHliZlFiS0xGQkF2U0Q5T3diZkU3YVRNcjBLeDBDRlZLZjB4ZU9B?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T12:33:21.000Z",
-        "summary": "AI agents fake identities, target real people in new security incident Egypt Independent"
-      },
-      {
         "title": "Anthropic, Macquarie and GIC Form Venture for AI Data Centers - bloomberg.com",
         "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNc0Y5VVJWSkc1aEJOMEF4QlNaeGxsVDg0YklRUzluTE5rVTVKekh5ZnM5VWh4NUcxNXBvNXB3djlZbm1DbHkxNTJhMFI4anFvakJnSndGYTI1WktTS2hOSmhXcUE5c0hXS1lrTmhjTEY3aGNERmlKOWc5TER3MUQtOHk4VHg3T0FwU0NLQmlNR09FbnMwLV9FaE80VU5qWG9HMXg2TDFKVENTeHJ6d0E5Mg?oc=5",
         "source": "Google News",
         "published": "2026-08-10T12:31:17.000Z",
         "summary": "Anthropic, Macquarie and GIC Form Venture for AI Data Centers bloomberg.com"
-      },
-      {
-        "title": "Anthropic’s ‘Project PANAMA’ Exposes Gaps In Global AI Law - StratNews Global",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQd0lrVjZRSjdLc3lSQ0JfU0gyY3hTcjNHc2tsWk41cE5Mc05VUlAtN0tLOFVkOTBEb1I3NS1Fd2NYLVN2OEVSNUtoSkpxSnlVbWgtYXRQZGY3SXAwdkw1WEVNZ3RwakRvbWswYzRMUXJwOXBOOHRwYklaaFJxekdybWpBT2txVFlTWWVBeFc1dldnS2N0blNWa0lpdw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T12:30:49.000Z",
-        "summary": "Anthropic’s ‘Project PANAMA’ Exposes Gaps In Global AI Law StratNews Global"
       },
       {
         "title": "It’s Meta’s Turn for their AI to go Rogue - Mix93.3",
@@ -331,20 +359,6 @@
         "source": "Google News",
         "published": "2026-08-10T11:10:00.000Z",
         "summary": "Rogue AI models of Anthropic, OpenAI and Meta that went on hacking other companies had a common 'Israel l The Times of India"
-      },
-      {
-        "title": "Claude Code puts auto mode in the driver's seat - The Register",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcFRoeWFJVWJXWHRrbU1pMUNJdzFFRnM4RklGcU5nWkR4ek9RNmU2QnFRVFg0NTBBaEczVFMtLWRPR1pHeENCQmlVdFRQT1Utbzg4d0lQMy1PLURzaEQ3cm1JWE1CcTlXQ2NVZVNyYWJLT3o0Y25XLVdFSm1BT2cweGJYWXdoakttb2JTR1RjZm04RjFMdTlvQTdUWlBwczViYlQzb1ln?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T10:38:00.000Z",
-        "summary": "Claude Code puts auto mode in the driver's seat The Register"
-      },
-      {
-        "title": "Anthropic Makes Auto Mode The Default For Claude Code - Dataconomy",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1JVlBMTnhlaXYzR3FCelNGbFZRQkZZQWVRT0xVa2FfR0s4bzhydWQtdFRoQzdjQ0Y5SUFVX2ZlRDgzN0x2OTZ0ZXpTd0Z0MGxlMFNUeVZHVGlVTU03NTZfWnViemFHb1liN0JFem5NN0lqc2RBbUNFV0hqWGIxTms?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T10:12:52.000Z",
-        "summary": "Anthropic Makes Auto Mode The Default For Claude Code Dataconomy"
       },
       {
         "title": "What is Claude Code? Watch It Do a Real Job",
@@ -699,7 +713,18 @@
     ],
     "youtube": [
       {
-        "title": "Dispatches from Iceland",
+        "title": "Codex Is Winning... But Claude Has One HUGE Advantage",
+        "url": "https://www.youtube.com/watch?v=piOSL8Ms9mY",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "piOSL8Ms9mY",
+        "thumbnail": "https://i.ytimg.com/vi/piOSL8Ms9mY/hqdefault.jpg",
+        "published": "2026-08-10T20:29:40.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How Icelanders are thinking about AI",
         "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
         "source": "Anthropic",
         "channel": "Anthropic",
@@ -1016,17 +1041,6 @@
         "thumbnail": "https://i.ytimg.com/vi/uU0RFxGv-Ks/hqdefault.jpg",
         "published": "2026-06-30T19:39:15.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic Just Released Its Best Model Ever (Mythos/Fable Deep Dive)",
-        "url": "https://www.youtube.com/watch?v=TtCWqjy3T5M",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "TtCWqjy3T5M",
-        "thumbnail": "https://i.ytimg.com/vi/TtCWqjy3T5M/hqdefault.jpg",
-        "published": "2026-06-09T22:03:25.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
@@ -1247,18 +1261,6 @@
         "video_id": "COh_cjrDOzc",
         "thumbnail": "https://i.ytimg.com/vi/COh_cjrDOzc/hqdefault.jpg",
         "published": "2026-07-06T17:37:45.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
-      },
-      {
-        "title": "Anthropic Just Released Its Best Model Ever (Mythos/Fable Deep Dive)",
-        "url": "https://www.youtube.com/watch?v=TtCWqjy3T5M",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "TtCWqjy3T5M",
-        "thumbnail": "https://i.ytimg.com/vi/TtCWqjy3T5M/hqdefault.jpg",
-        "published": "2026-06-09T22:03:25.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1745,7 +1747,14 @@
     ],
     "claude_learning": [
       {
-        "title": "Dispatches from Iceland",
+        "title": "Codex Is Winning... But Claude Has One HUGE Advantage",
+        "url": "https://www.youtube.com/watch?v=piOSL8Ms9mY",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-08-10T20:29:40.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How Icelanders are thinking about AI",
         "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
         "source": "YouTube · Anthropic",
         "published": "2026-08-10T14:30:52.000Z",
@@ -2225,13 +2234,6 @@
         "url": "https://www.youtube.com/watch?v=uU0RFxGv-Ks",
         "source": "YouTube · Alex Finn",
         "published": "2026-06-30T19:39:15.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Just Released Its Best Model Ever (Mythos/Fable Deep Dive)",
-        "url": "https://www.youtube.com/watch?v=TtCWqjy3T5M",
-        "source": "YouTube · Ryan & Matt Data Science",
-        "published": "2026-06-09T22:03:25.000Z",
         "summary": ""
       }
     ]
