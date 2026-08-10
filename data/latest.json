@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T12:38:21.284Z",
+  "generated_at": "2026-08-10T14:47:55.463Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,51 @@
     ],
     "news": [
       {
+        "title": "Dispatches from Iceland",
+        "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "iF5IWjOWcA4",
+        "thumbnail": "https://i.ytimg.com/vi/iF5IWjOWcA4/hqdefault.jpg",
+        "published": "2026-08-10T14:30:52.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic Sets Claude Code’s Auto Mode as Default, Citing Improved Safety Over Manual Review - AI Insider",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQSGNXVzllX1VUVUxpSms4OUUtSHVlR1lObDVTUl9wbEhUaWpPUW0zQ2N3am1Ka1hDWGxwOUF3UHdkcWVRNExyVnZEaEJ6LWl1Q2xncmxucGxHdnlnZnlpOXV3Yl8xVjdZQmx1R2NUMVJoWmIta1pqUG9ySk1ZVkxaY0JkdEVhMjh3SkI0TXdTVVZMT05SV1hVVnNPMkRhcXRadldHYUh2OWctRGQzSWpHdm5qT3lqb1o3Z2hudnJuWlk5b3Fhb3Q4?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T14:22:25.000Z",
+        "summary": "Anthropic Sets Claude Code’s Auto Mode as Default, Citing Improved Safety Over Manual Review AI Insider"
+      },
+      {
+        "title": "Best CLI for AI Agents: Claude Code vs Codex vs Gemini CLI",
+        "url": "https://www.youtube.com/shorts/VJZqO--bV-s",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "VJZqO--bV-s",
+        "thumbnail": "https://i.ytimg.com/vi/VJZqO--bV-s/hqdefault.jpg",
+        "published": "2026-08-10T14:06:23.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic makes Claude Code's Auto Mode the default, reducing the need for user approvals - Storyboard18",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNdkRLeGpZVXZLdDJrRnJsSmlCVnZMUmJReXlhTFZ1ZWcwYl9kbmt5SEh5VjBoWllRMFNyQWktNjRiVXdIMnhCV2RydEFYUllMbHE5U0hGWEdMdi1qUU96cGMybWt6OF95aEhEVmJ1M3dlMnJzM3AwRkZ2NE9HV21zX1ZPWVcyeHkydktXa2FkSWlPd0pobThqYk5Rcm1pcWgtZDZOeUhFZW9wWGR0VkFFZEFwVGp6aUpVRVE0RnlMXzVWd0wxMVRpZ0FVQnZzNERZ0gHWAUFVX3lxTE0zeFhzUy1mY19RcDNUdk9sRUpuMmxBOEdNc1VsSzJYM0VfUGkwUUlweXpXcE5Kdmw3WkFnYnFiMWR3NHpSTmZXc0J6bVJZUVl4UEdHM1VVd1VtVzdJTGpacHV5TVNqVy1MTUxSN1FmNXhESEs2c3V3UGdicUo1SWk0WF91Tzk1VVZ2djV1Yl9CSXdVUHJXZFRVcThQSVRnWXY5QTF3QUt1TDUteGU0cEU1dUhzTGx3dEZldzl4ZEI3SUk3dDdKSkJpTk1ta1lLcDhMQ0RmRGc?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T12:46:01.000Z",
+        "summary": "Anthropic makes Claude Code's Auto Mode the default, reducing the need for user approvals Storyboard18"
+      },
+      {
+        "title": "AI agents fake identities, target real people in new security incident - Egypt Independent",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSnJVTDNfeDl5a0pjUkdWRFBiR1FtOGdIbmdCWXo1UERCdjR3TVQzakFEQk9TSThkeGk4dHVLS2hXa1VqaTF1ekpTSWlXZ29iMWozZ2RVTWlBR2YzYWZvLW85WVJRZkF0V0tneEtPNGZ6bnVyUldxYlEzQ0lRTmdDVHliZlFiS0xGQkF2U0Q5T3diZkU3YVRNcjBLeDBDRlZLZjB4ZU9B?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T12:33:21.000Z",
+        "summary": "AI agents fake identities, target real people in new security incident Egypt Independent"
+      },
+      {
         "title": "Anthropic, Macquarie and GIC Form Venture for AI Data Centers",
         "url": "https://www.bloomberg.com/news/articles/2026-08-10/anthropic-macquarie-and-gic-form-venture-for-ai-data-centers",
         "source": "Bloomberg",
@@ -160,11 +205,18 @@
         "summary": "Anthropic’s ‘Project PANAMA’ Exposes Gaps In Global AI Law StratNews Global"
       },
       {
-        "title": "Rogue AI models of Anthropic, OpenAI and Meta that went on hacking other companies had a common 'Israel l - The Times of India",
+        "title": "Claude Fable 5 addresses the issue of over-restricting biology questions, reducing false positives and cutting 'fallbacks' by approximately 85%. - GIGAZINE",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQdTJReUFBUG5xT215X0JHTXNoemZOWjF2NmxteUdQeEJWaWdCSVlhdEltdVhxUTB6cHVYS3pVRXU4OFpjZTVOcHNyWUZZWThRX09MbUVQb0RMUkZwUUtBaW9MZER2UktDWWpzTW11akc3VG9qVEJmejg5dTlLQVpVag?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T11:50:00.000Z",
+        "summary": "Claude Fable 5 addresses the issue of over-restricting biology questions, reducing false positives and cutting 'fallbacks' by approximately 85%. GIGAZINE"
+      },
+      {
+        "title": "Rogue AI models of Anthropic, OpenAI and Meta that went on hacking other companies had a common 'Israel l - timesofindia.indiatimes.com",
         "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQUDRDRVVodkFJMDVkanRweXZ6ME1fTWJmODNvQWJJSnVKT2tKS1VXQzR5WWM0aWxobUFtMjhlQVlRb2daVnNMS3RMV2dORGVqTHRzSnloMDZyTm9iWmc3Y0d6ZVdaTE04emttQkl4WTVRS2dLa2g3WHRzRUkwLVZJT1diUWJBbW5mdHJTT2pYdHk3ZGo5QlNLcHdidU04YXVEX0F0Z0VoYWducnBVV2NYVWFsa2cxMGp4a0xoeVFHS1BVX2kyRDA5cy1ETXhRZ1YzVWRVTTg2OGplcXZNQVFTSEFHbGVNUDhsNVpwRVdJdE1oZzNmVXhYNnFOVXNqSkhTZjlCMDgzOUU1MWdtaUxReE9SeFF6TGZ00gGeAkFVX3lxTE5TWlpscGx1LTljbjM1MGdjdzZ4UEdLVk1wbVVNV3BaRWtBVlR6VmdRVlVPWjRuUVkxSEhJaU5YWWZjdm5IRlgycmZWM2g0Y0kyTDJPZVF3Zk1PSUhaS3NRNm4tbTFIbTUyN01CVGZaYWJ6dW12T0llMjBTVFV1c2pZdlpXVjlpMl9hM2V3aTJ6dnNxSUhXY2lWeVdkdkxVcUtMTlB1dGJWVDh5RFc3aXBtdGJqM01janJ5cmd6WUdubk0yVUVCT2Vja3lVaTFpb1NkNTREa2d4QkVsY01ISktsUmVIdGhBclVfejZNMzh4bERUSUJPLWNsZkozTjJjV0gxWDhTVWIyQkY4aW5pVlBCVHJMa1VzcmZDbjhKSkE?oc=5",
         "source": "Google News",
         "published": "2026-08-10T11:10:00.000Z",
-        "summary": "Rogue AI models of Anthropic, OpenAI and Meta that went on hacking other companies had a common 'Israel l The Times of India"
+        "summary": "Rogue AI models of Anthropic, OpenAI and Meta that went on hacking other companies had a common 'Israel l timesofindia.indiatimes.com"
       },
       {
         "title": "Claude Code puts auto mode in the driver's seat - The Register",
@@ -223,11 +275,11 @@
         "summary": "The ICON-Anthropic Deal Will Reach Your Site Before You’re Ready for It The Clinical Trial Vanguard"
       },
       {
-        "title": "Anthropic has an important message for Claude users: Starting August 14, auto mode will be the default .. - The Times of India",
+        "title": "Anthropic has an important message for Claude users: Starting August 14, auto mode will be the default .. - timesofindia.indiatimes.com",
         "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPaEtsNV90TEhOZ1g2cHB2T3U2VlRXUFBLYXhFQWdxY19wTDFVbEFUMGhxcHBXaEdwcWtRRnlFdE5senh3bF9UQkZGa1FEQng1WGp4Sk9WT2t0MkxkWXoyZVl0ZmhXb3pfbVNkV1N4X2RfWmtseW1ISE1aOVdpRXJCRFBqbmw1M3o2R3hRQl9lYW5lcTctbkY4bHpwdXdRSUg4aFl4SG1OT0RmTkhFbGsxTkVmOUtIVWF2Umt4cWlIZm55WUZLb0pHb2M1d3F5eTFDT3hWSWpqak1nQXlmdnY1eXZXM3ltLWpEMU5iSG5Cc3VCaWVlemlVbDV0NjZmc2Zqc0FhQjY5VGlkckxtb05XcWhn0gGXAkFVX3lxTE9JMklmYWpEckRIX2dheXh6djhBU2tzNDZ2RmR1RzFOelRXRHFBN0RJZEp3bjZXN0lHMnA5dnAta3hwZDVVSjNoU2NtMVlOQlg2dTViRVpJUWZuWURkdlFWSk55YlZvcVQ2T0g1cldJRlRSZHlhWUhKTUstSFFVVV93b0g3UUoyR0t5M2RNa1pSbUs1R2ZwSzlGSUw4SmFLcE00MFp0S0E1dWhxYkRNcmtTeTFrNzFrVVEteWtJbHBKYXN1d0J5Sk95NFR4YllDQW10ejQ5cGwwbFRYTkFRU290MkZfNlA5MU03V2FVc182azRtUV9Zb3RvZi1TR3NHajZHTTZmU2lvS1JxcUZNMGVCT3ZqN2JORQ?oc=5",
         "source": "Google News",
         "published": "2026-08-10T07:40:00.000Z",
-        "summary": "Anthropic has an important message for Claude users: Starting August 14, auto mode will be the default .. The Times of India"
+        "summary": "Anthropic has an important message for Claude users: Starting August 14, auto mode will be the default .. timesofindia.indiatimes.com"
       },
       {
         "title": "Claude Code Auto Mode to Become Default for Pro, Max, and Team Plans; Anthropic Says It Is Safer - Gadgets 360",
@@ -253,7 +305,7 @@
       {
         "title": "Auto mode is now the default in Claude Code",
         "url": "https://claude.com/blog/auto-mode-default-in-claude-code",
-        "source": "HN · 244↑",
+        "source": "HN · 261↑",
         "hn_id": "49239021",
         "published": "2026-08-10T03:50:00.000Z",
         "summary": ""
@@ -292,13 +344,6 @@
         "summary": "Anthropic Makes Claude Code Auto Mode the Default, Replacing Constant Human Approval finance.biggo.com"
       },
       {
-        "title": "Claude voice mode, explained: the settings that stop it cutting you off - eGamers.io",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQN0tYRXo1TURPNC1WY0tReXFDT2swdVJRRTBfVVZJMFNFckdHUTJwZlB3em5IYWota19td2tYcmV0d3VKSU9SWC1WTktXSGVKQ3RjWUlRTk9NOHNfVUY0TFF3ZVd4TzllRWJFUVdzNEVEMmVQTjE2MFRnOWVVekt6Y09hdnVva2ZWRXBZSzBkbllfSUk?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T02:15:00.000Z",
-        "summary": "Claude voice mode, explained: the settings that stop it cutting you off eGamers.io"
-      },
-      {
         "title": "Anthropic to make Claude Code auto mode default - Tech in Asia",
         "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9BalRwRUF6MURkUUxsaHdEVW9rNWszM0ZJVURMUkktOW9IcV9QVkZYckwyeGg4R0gzVmJQR2kzUUlZd2g1UE1mc1R4NUVYZ2l5VDY3elg3cEN6NjhybGhaVHhiZ1dZMHAyOEktZWM2M3B0QTRZ?oc=5",
         "source": "Google News",
@@ -318,32 +363,11 @@
         "_kind": "news_video"
       },
       {
-        "title": "Anthropic AI agent created fake accounts to trick real people in security test, AISI says - tech.yahoo.com",
+        "title": "Anthropic AI agent created fake accounts to trick real people in security test, AISI says - Yahoo Tech",
         "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQy1zTlRpbnBBTWhHZ2h5cGtvMHBHb1hnMGM1cTZncERWR2RXX0QxanlYVGpoRTdzaU9KbnhKV2lfZnllZW9HaDA1alNXTE1QeXFrT3A5NHJoclNQMFR4RkM5em04YnZoT01wQ28yS3Yxc2JqdlJXZFlUUFFhZ3Q2RVFvcm5Wc0tPcDFoZk5IX0pIQQ?oc=5",
         "source": "Google News",
         "published": "2026-08-09T22:53:46.000Z",
-        "summary": "Anthropic AI agent created fake accounts to trick real people in security test, AISI says tech.yahoo.com"
-      },
-      {
-        "title": "Anthropic will make Claude Code automatic mode default for paid plans - Межа. Новини України.",
-        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBxamt2MlpOc3o3M3VGMHdsbnJSM09MSWZvRXZmWVhjRmw5YzkwZVRuSG1nMVBGS2V2WWRFWlBGMUcwak8tdzg1dzJfaWhzZTV0Y3ZVZml0cUdldTJfcGxrWGEwUDdKR1E4?oc=5",
-        "source": "Google News",
-        "published": "2026-08-09T20:12:08.000Z",
-        "summary": "Anthropic will make Claude Code automatic mode default for paid plans Межа. Новини України."
-      },
-      {
-        "title": "Anthropic Makes Claude Code Fully Autonomous by Default - The Tech Buzz",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOV2JlMW9HaC1pVy1pM0JGRl9qcnE3aDZQRW13QnB2NWR3SFZSTksyUy11bGp3a3I3NjdaZHdvalZ2LWw5OUtLY2lMT09tYndNd1ZrOEQ0VmZlbnpfdVhtTDV2TVp2djhRN1diSUZ1SVotSmQ0N3prMnk2cGpvaGN6M1NqOVE0SDB3N0NRMDh0YkdoQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-09T19:39:00.000Z",
-        "summary": "Anthropic Makes Claude Code Fully Autonomous by Default The Tech Buzz"
-      },
-      {
-        "title": "Anthropic is turning Claude Code’s auto mode on by default",
-        "url": "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/",
-        "source": "TechCrunch",
-        "published": "2026-08-09T19:20:32.000Z",
-        "summary": "Programming with Claude Code will soon require even less human oversight."
+        "summary": "Anthropic AI agent created fake accounts to trick real people in security test, AISI says Yahoo Tech"
       },
       {
         "title": "Claude told me to buy my own app",
@@ -572,18 +596,6 @@
         "published": "2026-06-30T19:39:15.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "5 Advanced Tips to STOP Hitting Claude Cowork Limits",
-        "url": "https://www.youtube.com/watch?v=pwrYhbVoPNM",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "pwrYhbVoPNM",
-        "thumbnail": "https://i.ytimg.com/vi/pwrYhbVoPNM/hqdefault.jpg",
-        "published": "2026-06-08T14:19:57.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -673,6 +685,28 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Dispatches from Iceland",
+        "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "iF5IWjOWcA4",
+        "thumbnail": "https://i.ytimg.com/vi/iF5IWjOWcA4/hqdefault.jpg",
+        "published": "2026-08-10T14:30:52.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Best CLI for AI Agents: Claude Code vs Codex vs Gemini CLI",
+        "url": "https://www.youtube.com/shorts/VJZqO--bV-s",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "VJZqO--bV-s",
+        "thumbnail": "https://i.ytimg.com/vi/VJZqO--bV-s/hqdefault.jpg",
+        "published": "2026-08-10T14:06:23.000Z",
+        "summary": ""
+      },
       {
         "title": "What is Claude Code? Watch It Do a Real Job",
         "url": "https://www.youtube.com/shorts/5NJpJAxygX8",
@@ -872,17 +906,6 @@
         "summary": ""
       },
       {
-        "title": "How to Use Qwen 3.8 With Claude Code (Same Folder, Same Skills, Cheaper Engine)",
-        "url": "https://www.youtube.com/watch?v=qIpCjFJuxoI",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "qIpCjFJuxoI",
-        "thumbnail": "https://i.ytimg.com/vi/qIpCjFJuxoI/hqdefault.jpg",
-        "published": "2026-07-21T18:48:36.000Z",
-        "summary": ""
-      },
-      {
         "title": "Master 95% of Claude Code in 22 Minutes (as a Beginner)",
         "url": "https://www.youtube.com/watch?v=ZW6d_2rwcdk",
         "source": "Leon van Zyl",
@@ -990,17 +1013,6 @@
         "video_id": "Y9Wz2PV404E",
         "thumbnail": "https://i.ytimg.com/vi/Y9Wz2PV404E/hqdefault.jpg",
         "published": "2026-06-09T17:00:05.000Z",
-        "summary": ""
-      },
-      {
-        "title": "5 Advanced Tips to STOP Hitting Claude Cowork Limits",
-        "url": "https://www.youtube.com/watch?v=pwrYhbVoPNM",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "pwrYhbVoPNM",
-        "thumbnail": "https://i.ytimg.com/vi/pwrYhbVoPNM/hqdefault.jpg",
-        "published": "2026-06-08T14:19:57.000Z",
         "summary": ""
       }
     ],
@@ -1188,18 +1200,6 @@
         "published": "2026-07-21T21:35:10.000Z",
         "summary": "What's changed Added emoji shortcode autocomplete in the prompt input: type :heart: to insert ❤️, or :hea for suggestions — disable with the emojiCompletionEnabled setting Added warnings when…",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "How to Use Qwen 3.8 With Claude Code (Same Folder, Same Skills, Cheaper Engine)",
-        "url": "https://www.youtube.com/watch?v=qIpCjFJuxoI",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "qIpCjFJuxoI",
-        "thumbnail": "https://i.ytimg.com/vi/qIpCjFJuxoI/hqdefault.jpg",
-        "published": "2026-07-21T18:48:36.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "Master 95% of Claude Code in 22 Minutes (as a Beginner)",
@@ -1744,6 +1744,20 @@
     ],
     "claude_learning": [
       {
+        "title": "Dispatches from Iceland",
+        "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
+        "source": "YouTube · Anthropic",
+        "published": "2026-08-10T14:30:52.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Best CLI for AI Agents: Claude Code vs Codex vs Gemini CLI",
+        "url": "https://www.youtube.com/shorts/VJZqO--bV-s",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-08-10T14:06:23.000Z",
+        "summary": ""
+      },
+      {
         "title": "What is Claude Code? Watch It Do a Real Job",
         "url": "https://www.youtube.com/shorts/5NJpJAxygX8",
         "source": "YouTube · Pragati Kunwer",
@@ -2150,13 +2164,6 @@
         "summary": "What's changed Added emoji shortcode autocomplete in the prompt input: type :heart: to insert ❤️, or :hea for suggestions — disable with the emojiCompletionEnabled setting Added warnings when transcript writes are…"
       },
       {
-        "title": "How to Use Qwen 3.8 With Claude Code (Same Folder, Same Skills, Cheaper Engine)",
-        "url": "https://www.youtube.com/watch?v=qIpCjFJuxoI",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-07-21T18:48:36.000Z",
-        "summary": ""
-      },
-      {
         "title": "Master 95% of Claude Code in 22 Minutes (as a Beginner)",
         "url": "https://www.youtube.com/watch?v=ZW6d_2rwcdk",
         "source": "YouTube · Leon van Zyl",
@@ -2224,13 +2231,6 @@
         "url": "https://www.youtube.com/watch?v=Y9Wz2PV404E",
         "source": "YouTube · Anthropic",
         "published": "2026-06-09T17:00:05.000Z",
-        "summary": ""
-      },
-      {
-        "title": "5 Advanced Tips to STOP Hitting Claude Cowork Limits",
-        "url": "https://www.youtube.com/watch?v=pwrYhbVoPNM",
-        "source": "YouTube · Ryan & Matt Data Science",
-        "published": "2026-06-08T14:19:57.000Z",
         "summary": ""
       }
     ]
