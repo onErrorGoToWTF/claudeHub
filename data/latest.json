@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-08-10T18:38:33.960Z",
+  "generated_at": "2026-08-10T20:28:13.418Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Claude Sonnet 5",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5",
+        "source": "Anthropic",
+        "published": "2026-08-10T19:00:15.000Z",
+        "summary": ""
+      },
       {
         "title": "Riemann Zeta",
         "url": "https://www.anthropic.com/research/riemann-zeta",
@@ -116,13 +123,6 @@
         "summary": ""
       },
       {
-        "title": "Claude Sonnet 5",
-        "url": "https://www.anthropic.com/news/claude-sonnet-5",
-        "source": "Anthropic",
-        "published": "2026-07-22T01:20:28.000Z",
-        "summary": ""
-      },
-      {
         "title": "Skills",
         "url": "https://www.anthropic.com/news/skills",
         "source": "Anthropic",
@@ -146,6 +146,20 @@
     ],
     "news": [
       {
+        "title": "AWS Continuum integrates with OpenAI Codex and Anthropic Claude Code in major AI security push - VentureBeat",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNWE9YZmluV0VTOEs0WlV1UDhfZGF4SXRKRkUyZWx5SVRqQ01ld2g5blVyYVo3ckdOUWhhcHNtVDE2OFBKQzZDOS14TnRVUk5qaUVQaHpSUEtKUW44bl8zdXNweTVNU1ZMNlV0bVR0QlUtMnNKZzhmVnBlQzdLdWt5Tkt0YzRBeVVPUTgtNW4zSXdJYUE3N0FtcThveTBXLVFZZWVKd0JhVHlOc2d5Sm1XVUxPaHpza0lmUnBIdThKVzd4eE5YTEE?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T20:00:00.000Z",
+        "summary": "AWS Continuum integrates with OpenAI Codex and Anthropic Claude Code in major AI security push VentureBeat"
+      },
+      {
+        "title": "Anthropic Will Launch an In-house Custom Silicon Chip - Memeburn",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBjeFFaLURmb0hsN2I1b1VwOExzSkVuOEYycjFvb3hFcXoyQS02Qnl1VjBkaUUxeHdpazJ2U0lmUzI2LUJzb3RDdWtnWXdOd2tlUksxRGthNWtPZW02RzcyTFBtbUVzSlVCUXNVQw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T19:51:45.000Z",
+        "summary": "Anthropic Will Launch an In-house Custom Silicon Chip Memeburn"
+      },
+      {
         "title": "Meta Brings Powerful AI to the Personal Computer",
         "url": "https://www.bloomberg.com/news/videos/2026-08-10/meta-brings-powerful-ai-to-the-personal-computer-video",
         "source": "Bloomberg",
@@ -162,7 +176,7 @@
       {
         "title": "Learning more about Claude's mathematical capabilities",
         "url": "https://www.anthropic.com/research/riemann-zeta",
-        "source": "HN · 51↑",
+        "source": "HN · 111↑",
         "hn_id": "49247070",
         "published": "2026-08-10T17:41:13.000Z",
         "summary": ""
@@ -217,13 +231,6 @@
         "summary": "OpenAI Says Its Next AI Model Astra May Be Too Dangerous, Pauses Development Decrypt"
       },
       {
-        "title": "Claude Opus 5 Most Resistant to Indirect Prompt Injection Attacks, With Just 2% Success Rate - gbhackers.com",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQM3hvanJBNHNrVFNhNUxmTzRJT3ZoN2pTemtmQlJQN0N1bkQ4SGNnYTlUR3JGZ0JkOHp0d2FiSjFYcjRobWVwSlJqSEROeXNTU2RmNmNQa0JuaGJGWmhJYW1Xd1k4dXVNLXRLT0pQRVFvMjRYRGtDSTRkb19oT1BEWlJDVUxFZWRoS29iS29DNFhBZ9IBlwFBVV95cUxONmZLaW1DN2d6TUIzX0N2WnYzZERyVVZBVlBOdmxHLUUzdHpFaHJfZmpDbENjM0pOMjNYbzBzTlZabi1Wekw4em9MUzcxS0FkTEc2NTd3QnBwVHprT2hzbzdLTWxUQ2xUd2xDWGVZNm5SYWlaZnJWTlFuSGRlN29LVnd3RHdna3VUXzQyOHJEWkI0SDBmQ2Vn?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T14:46:22.000Z",
-        "summary": "Claude Opus 5 Most Resistant to Indirect Prompt Injection Attacks, With Just 2% Success Rate gbhackers.com"
-      },
-      {
         "title": "Dispatches from Iceland",
         "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
         "source": "Anthropic",
@@ -245,7 +252,7 @@
       {
         "title": "Exploring Claude/GPT Knowledge Cutoffs and Pre-Training Timelines",
         "url": "https://blog.sshh.io/p/exploring-claudegpt-knowledge-cutoffs",
-        "source": "HN · 30↑",
+        "source": "HN · 54↑",
         "hn_id": "49244085",
         "published": "2026-08-10T14:20:41.000Z",
         "summary": ""
@@ -263,11 +270,18 @@
         "_kind": "news_video"
       },
       {
-        "title": "Anthropic’s Claude AI Agent Hacks Gym and Sabotages Member Without Being Asked - TipRanks",
+        "title": "Anthropic Finds Enterprise Delivery Partner in Zaelab - PR Newswire",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNWExuM2xweWNTX1BHOG5QdjF6Tm1IcXVRWHZ4c2NyaXpyekZ0Ujc3RkVyeHQyRUxMU3hicGtBSG1GcjREOW1mOVFzZFRvaWt2d0RLREMyRkFDUnV3MzFDLUZyREZUMVVWVlQyQmI3alp0UER2NDNuZk13WWRTb2hxYlNPT1JEZEdUMDdkVzV4RjM4RWpVZHZ4QVJqVEd6V0w1VFNRZW9lOUR4clRzWXc?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T14:00:00.000Z",
+        "summary": "Anthropic Finds Enterprise Delivery Partner in Zaelab PR Newswire"
+      },
+      {
+        "title": "Anthropic’s Claude AI Agent Hacks Gym and Sabotages Member Without Being Ordered to - TipRanks",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNNmJFcHBTbkhQNEVUOTFsVHdZXzdQYVdtRWExNVlLdDZuWWM4eks2UjZfNjA5bE5wOGotM0VwMkI3VW9vTFhUeVh1bWxrWExLTE45d0hBU0UxdzhHdHZ0dWNjMUNSQmpadzNUN0c5VExCWU5MN05TRld4b2V0UXFoTHk1dkFPRDhlNTQ2ZHBSNkNVcGxmR3pyemRpSUpJaks1VUJyWnlRSGdVVFE?oc=5",
         "source": "Google News",
         "published": "2026-08-10T13:19:11.000Z",
-        "summary": "Anthropic’s Claude AI Agent Hacks Gym and Sabotages Member Without Being Asked TipRanks"
+        "summary": "Anthropic’s Claude AI Agent Hacks Gym and Sabotages Member Without Being Ordered to TipRanks"
       },
       {
         "title": "Anthropic makes Claude Code's Auto Mode the default, reducing the need for user approvals - Storyboard18",
@@ -284,11 +298,11 @@
         "summary": "AI agents fake identities, target real people in new security incident Egypt Independent"
       },
       {
-        "title": "Anthropic, Macquarie and GIC Form Venture for AI Data Centers - Bloomberg.com",
+        "title": "Anthropic, Macquarie and GIC Form Venture for AI Data Centers - bloomberg.com",
         "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNc0Y5VVJWSkc1aEJOMEF4QlNaeGxsVDg0YklRUzluTE5rVTVKekh5ZnM5VWh4NUcxNXBvNXB3djlZbm1DbHkxNTJhMFI4anFvakJnSndGYTI1WktTS2hOSmhXcUE5c0hXS1lrTmhjTEY3aGNERmlKOWc5TER3MUQtOHk4VHg3T0FwU0NLQmlNR09FbnMwLV9FaE80VU5qWG9HMXg2TDFKVENTeHJ6d0E5Mg?oc=5",
         "source": "Google News",
         "published": "2026-08-10T12:31:17.000Z",
-        "summary": "Anthropic, Macquarie and GIC Form Venture for AI Data Centers Bloomberg.com"
+        "summary": "Anthropic, Macquarie and GIC Form Venture for AI Data Centers bloomberg.com"
       },
       {
         "title": "Anthropic’s ‘Project PANAMA’ Exposes Gaps In Global AI Law - StratNews Global",
@@ -296,6 +310,13 @@
         "source": "Google News",
         "published": "2026-08-10T12:30:49.000Z",
         "summary": "Anthropic’s ‘Project PANAMA’ Exposes Gaps In Global AI Law StratNews Global"
+      },
+      {
+        "title": "It’s Meta’s Turn for their AI to go Rogue - Mix93.3",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1Qa3FUQncwdDJweXA4a3lEdTN2cjBadFpiZm41ZHZYZjdpa0VXb0FhMHBQQmtldVBod0JpbVVUQlEzdF9CYy1oWVZSTUg5X0I0ZFdYRmt2ZDI3aE1rMlhSNHZyS21FVHFqSGZ2VUlhRm9acWpfWGItSnJKbw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T11:20:11.000Z",
+        "summary": "It’s Meta’s Turn for their AI to go Rogue Mix93.3"
       },
       {
         "title": "Anthropic will enable Auto Mode in Claude Code by default - Mezha",
@@ -324,27 +345,6 @@
         "source": "Google News",
         "published": "2026-08-10T10:12:52.000Z",
         "summary": "Anthropic Makes Auto Mode The Default For Claude Code Dataconomy"
-      },
-      {
-        "title": "S.Korea's Naver invests $7 mn in Anthropic to shift AI strategy, expand global alliance - KED Global",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBxM0dORFB5OVd6TFJhaXF5RG1faEMxQnBPUjd4NEk5LUNTNTZ6WmQ5cW85NTBrc0k5YzYxMjl0eF9YbXlNdFluWmZEeTFHQ1U1Ymd6ZWE2Q0JqV1dBYlJEc3RlZE1HRndRNk15RVYyOFg0VlBIRjJENzQ4dGpadUU?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T09:51:00.000Z",
-        "summary": "S.Korea's Naver invests $7 mn in Anthropic to shift AI strategy, expand global alliance KED Global"
-      },
-      {
-        "title": "😺 Claude hacked a gym website - The Neuron",
-        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9MNmsyVGszdUlPdWlnOTlnMDNTLUVsMFdpRzdERVNsUFpGQnN4T2JFMURtZzVjVzF1ZGNVOHIyZWM2bmV3V2l0TG1hRUMzVXVaaTRaQjZGMnhxczd0aE9jVXBNVTREUEJGbTVhaQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T09:47:04.000Z",
-        "summary": "😺 Claude hacked a gym website The Neuron"
-      },
-      {
-        "title": "Anthropic to put AI in charge of reviewing Claude Code actions by default - Help Net Security",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOemhYelZlbmhJajAxR1hUSHk3czgybWVvel9fVUg2VUs1RmtGWmh0VVRJRGFUay1pWVdwUkoyTnZqazJiZWZlOGU0NHhCZHNESExCNmZBNFEzSWtWcFlkZTNQRW5BNmJRU2c5QWRrenEtX0g3RlVsV3BfLW0tTEdVSw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T09:13:29.000Z",
-        "summary": "Anthropic to put AI in charge of reviewing Claude Code actions by default Help Net Security"
       },
       {
         "title": "What is Claude Code? Watch It Do a Real Job",
