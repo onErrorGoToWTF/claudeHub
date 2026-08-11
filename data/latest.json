@@ -1,20 +1,27 @@
 {
-  "generated_at": "2026-08-10T22:23:28.857Z",
+  "generated_at": "2026-08-11T00:44:36.183Z",
   "version": 1,
   "sections": {
     "updates": [
       {
-        "title": "Claude Sonnet 5",
-        "url": "https://www.anthropic.com/news/claude-sonnet-5",
-        "source": "Anthropic",
-        "published": "2026-08-10T19:00:15.000Z",
+        "title": "Building Effective Agents",
+        "url": "https://www.anthropic.com/engineering/building-effective-agents",
+        "source": "Anthropic Eng",
+        "published": "2026-08-10T22:57:30.000Z",
         "summary": ""
       },
       {
         "title": "Riemann Zeta",
         "url": "https://www.anthropic.com/research/riemann-zeta",
         "source": "Anthropic Research",
-        "published": "2026-08-10T18:32:06.000Z",
+        "published": "2026-08-10T22:34:13.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Sonnet 5",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5",
+        "source": "Anthropic",
+        "published": "2026-08-10T19:00:15.000Z",
         "summary": ""
       },
       {
@@ -135,16 +142,65 @@
         "source": "Anthropic",
         "published": "2026-07-22T01:13:43.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Haiku 4 5",
-        "url": "https://www.anthropic.com/news/claude-haiku-4-5",
-        "source": "Anthropic",
-        "published": "2026-07-22T01:05:15.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "D.A.D.: Claude Code Will Start Acting on Its Own by Default — 8/10 - buttondown.com",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNUtPazhxVlgxM05DaXJGLU5KZ0RNLWJHTm5GTXg2Qm03WTByaml5aUtyZllyR18zanBheHo5dlRBUnhPSHY0RTVSU0RLN21rMUV3N3NkeXlTaVloTVRmWFdmc3RHS3J6S3FYcFRfem9LSHNybGdRak9pNnBseFUzYTYtV0hGaEg5LUJxMWJKX29wVzNPTENkNA?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T00:40:32.000Z",
+        "summary": "D.A.D.: Claude Code Will Start Acting on Its Own by Default — 8/10 buttondown.com"
+      },
+      {
+        "title": "Anthropic pledges to embed watermarks to help discern AI slop in sop to EU - The Register",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOdldQVElvS0hkUGQxa0RUU05PMjhpcDF6N1ctNkdIMndla1RucExRNGN3UFY2QXQ4Wmd1cWhGZ1JnOWRpUnA3aU5RN1FueFZLcDIzVmpERDBqcVZpckNRSDM1RDN2eGI2TEI0ck90WWdwQjBBWWdmQzZFcU0zRm9aU3RHbC1ySVhMeXZyT0dUSXBsYnppdDNybFVHX0lnbHhxWmN6WmNuc25Kb2RXeTVQbU5aVlVqT1lmMWhUaUgtRHNWQVNOcmJlUWVvMA?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T00:27:37.000Z",
+        "summary": "Anthropic pledges to embed watermarks to help discern AI slop in sop to EU The Register"
+      },
+      {
+        "title": "Anthropic Strikes $9 Billion Cloud Deal With Riot Platforms",
+        "url": "https://www.bloomberg.com/news/articles/2026-08-11/anthropic-strikes-9-billion-deal-with-cloud-computing-firm-riot",
+        "source": "Bloomberg",
+        "published": "2026-08-11T00:00:59.000Z",
+        "summary": "Anthropic PBC has struck a $9.1 billion deal with Riot Platforms Inc., a Bitcoin mining company that recently began selling AI data center capacity, people familiar with the matter said,…"
+      },
+      {
+        "title": "As AI-led attacks multiply, OpenAI launches a new cyber model",
+        "url": "https://techcrunch.com/2026/08/10/as-ai-led-attacks-multiply-openai-launches-a-new-cyber-model/",
+        "source": "TechCrunch",
+        "published": "2026-08-10T23:56:15.000Z",
+        "summary": "OpenAI is expanding its AI cybersecurity defense program Daybreak, and rolling out a new cyber-trained AI model with it."
+      },
+      {
+        "title": "Copy-paste no more: Anthropic puts invisible watermarks on Claude text under EU rules - Interesting Engineering",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZWJzd21hc1YwNE9WdG0tLWxlNm9MVTZXQ1IwV0hWVE1Ob1VPQVRfUVNDZmptcjdzbXlCLU5sRUtiaXpwZFBPSkYxVjJZVXJIVzZKRENqZXJ2QkRYanR1M1RUdmxmSWtZUXRJaHpDTm45WkJJOHZBcTBKUEFrc0Z4YVBEdWQzd2c4WEwzY3pEX0dFNGM?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T23:48:00.000Z",
+        "summary": "Copy-paste no more: Anthropic puts invisible watermarks on Claude text under EU rules Interesting Engineering"
+      },
+      {
+        "title": "Pondero Brief: Claude Code auto mode blocks 89% of danger, humans 14% - buttondown.com",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPSHFjaEw0MWNiYnJFQ0g2MHplQnY5X3JTN1hjQnB2NVFsaUJuZ1FJX1VRUER0bnh6VWloSWpCQUs4YU1wZlFCX204QU1ESVI4eEUtV21BWnVkd3RCMmZvQ3NWRVdPZkNmbGxZc0thYm1OZWpDVHRCbUlCYU9kWVozS3BDb0VqZU9PczNjTWFacEtBcjJk?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T23:24:23.000Z",
+        "summary": "Pondero Brief: Claude Code auto mode blocks 89% of danger, humans 14% buttondown.com"
+      },
+      {
+        "title": "Claude Opus 5: Performance Benchmarks for Developers - SitePoint",
+        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBzby12ZHM1eTFXUUh3Sy1ESjJ0QnVNaW5CcDZOVk1LaXVhdG5iLUd3SFlwS21OQUdZMjRMaHVRUzdrZy1ITXJ6bnc4bjRKYkk2bDZjR0VCa3A0RU9qNThtdjRB?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T23:20:05.000Z",
+        "summary": "Claude Opus 5: Performance Benchmarks for Developers SitePoint"
+      },
+      {
+        "title": "Anthropic Locks In Sonnet 5 Pricing, Enables Claude Code Auto-Mode Ahead of IPO - finance.biggo.com",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0tLTBtWmhBOHpNSlM0UjFudzBUc19QbnZ4RzNpS2h4bmpnTHlEVlA2WC1pUXZmLWhlWGhrcVFlcTlNS1A4R2NvU2RaNlM4Y05KWjQyYTNxc3hodFJNcnJMQXBQdVFpcnQ1QV92NEZKMmdGMXNyYnc?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T22:35:00.000Z",
+        "summary": "Anthropic Locks In Sonnet 5 Pricing, Enables Claude Code Auto-Mode Ahead of IPO finance.biggo.com"
+      },
       {
         "title": "With new open models, Meta pitches another reboot of its struggling AI strategy",
         "url": "https://arstechnica.com/ai/2026/08/with-new-open-models-meta-pitches-another-reboot-of-its-struggling-ai-strategy/",
@@ -155,7 +211,7 @@
       {
         "title": "How Claude marks AI-generated content",
         "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content",
-        "source": "HN · 33↑",
+        "source": "HN · 74↑",
         "hn_id": "49250109",
         "published": "2026-08-10T21:36:56.000Z",
         "summary": ""
@@ -175,18 +231,6 @@
         "summary": "Anthropic, Macquarie, GIC partner to build AI data centres Capital Brief"
       },
       {
-        "title": "Codex Is Winning... But Claude Has One HUGE Advantage",
-        "url": "https://www.youtube.com/watch?v=piOSL8Ms9mY",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "piOSL8Ms9mY",
-        "thumbnail": "https://i.ytimg.com/vi/piOSL8Ms9mY/hqdefault.jpg",
-        "published": "2026-08-10T20:29:40.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
         "title": "AWS Continuum integrates with OpenAI Codex and Anthropic Claude Code in major AI security push - VentureBeat",
         "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNWE9YZmluV0VTOEs0WlV1UDhfZGF4SXRKRkUyZWx5SVRqQ01ld2g5blVyYVo3ckdOUWhhcHNtVDE2OFBKQzZDOS14TnRVUk5qaUVQaHpSUEtKUW44bl8zdXNweTVNU1ZMNlV0bVR0QlUtMnNKZzhmVnBlQzdLdWt5Tkt0YzRBeVVPUTgtNW4zSXdJYUE3N0FtcThveTBXLVFZZWVKd0JhVHlOc2d5Sm1XVUxPaHpza0lmUnBIdThKVzd4eE5YTEE?oc=5",
         "source": "Google News",
@@ -201,31 +245,24 @@
         "summary": "Anthropic Will Launch an In-house Custom Silicon Chip Memeburn"
       },
       {
-        "title": "Meta Brings Powerful AI to the Personal Computer",
-        "url": "https://www.bloomberg.com/news/videos/2026-08-10/meta-brings-powerful-ai-to-the-personal-computer-video",
-        "source": "Bloomberg",
-        "published": "2026-08-10T18:13:08.000Z",
-        "summary": "Meta is escalating the debate over open versus closed AI with Muse Glimmer, a new downloadable model designed to run on a personal computer using a single GPU. The release, accompanied by a new…"
-      },
-      {
         "title": "Claude moves bound of the Riemann Hypothesis from 41.6% to 67.2%",
         "url": "https://twitter.com/jarredsumner/status/2086869681785500011",
-        "source": "HN · 35↑",
+        "source": "HN · 42↑",
         "hn_id": "49247362",
         "published": "2026-08-10T18:04:17.000Z",
         "summary": ""
       },
       {
-        "title": "Learning more about Claude's mathematical capabilities - anthropic.com",
+        "title": "Learning more about Claude's mathematical capabilities - Anthropic",
         "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5hN2tYeFF6SEtkVVhzVURqcHVqZ0VPVExEUnlFX21BcmNLaFhqT1BEU25IVS15akdoYVZ3djRLc3B5OXIyRnNxZkcxQUd4TEhXaUlpZzNwZlhuUVk?oc=5",
         "source": "Google News",
         "published": "2026-08-10T17:52:56.000Z",
-        "summary": "Learning more about Claude's mathematical capabilities anthropic.com"
+        "summary": "Learning more about Claude's mathematical capabilities Anthropic"
       },
       {
         "title": "Learning more about Claude's mathematical capabilities",
         "url": "https://www.anthropic.com/research/riemann-zeta",
-        "source": "HN · 141↑",
+        "source": "HN · 157↑",
         "hn_id": "49247070",
         "published": "2026-08-10T17:41:13.000Z",
         "summary": ""
@@ -238,11 +275,11 @@
         "summary": "Anthropic Makes Claude Code's Auto Mode the Default, Betting Automation Beats Manual Review DevOps.com"
       },
       {
-        "title": "Claude Code’s auto mode will be on by default, Anthropic confirms - mashable.com",
+        "title": "Claude Code’s auto mode will be on by default, Anthropic confirms - Mashable",
         "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9vNklTVGFuNFNCVHF4NFFkWHdrTld6WEVuaEtBMjRoVnF0QzdVTnJqUjRuOENMVHZvbmQwQ2o5UkhndzZlUVB2T3ROMGNEc0w2dXZhR2YwaDlrQzJPRTdqXzF6X0tYZ0htbU5zNVkwRVJqdDhHNzJj?oc=5",
         "source": "Google News",
         "published": "2026-08-10T17:30:56.000Z",
-        "summary": "Claude Code’s auto mode will be on by default, Anthropic confirms mashable.com"
+        "summary": "Claude Code’s auto mode will be on by default, Anthropic confirms Mashable"
       },
       {
         "title": "Anthropic Strikes Data Center Development Deal With Macquarie, GIC - Bisnow",
@@ -266,11 +303,18 @@
         "summary": "Claude Code Shifts Agent Security From Repeated Human Approval to Auto Mode CyberSecurityNews"
       },
       {
-        "title": "Anthropic will now let Claude do things on your behalf by default - Yahoo Finance UK",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdk1oU2tkNHZsc0JITWNqWUVqODFhNGxJanBrcGl1ZnhVb1M3VDRscXZsZzBoNHVrQWx1cXpFUVVfQ3VaMjEwTmlsZjU4RERIRnVlcU4tYWJpbTdiWkN6VjlQNk0xNG43YlMxMWlYeFVCWnZVTzF5OHF6SWV1NmhHd1ZoUUN1RGc?oc=5",
+        "title": "Anthropic will now let Claude do things on your behalf by default - AOL.com",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOSkdnZ1JvejlPa20wUjhkN0V0d2dCN2ZVclNya0w5RzZaLUladjdwV3g5Vk1PcGVvQnlIVndaUGhiN3NxM0s5OVJUR3prV3dUSDVLWUN1NGhoSnRyU1ljeDFNNWpncmMwTE9fUWc3MmVrOEM5R3E4VTJoM01Fa3ptRw?oc=5",
         "source": "Google News",
         "published": "2026-08-10T16:18:37.000Z",
-        "summary": "Anthropic will now let Claude do things on your behalf by default Yahoo Finance UK"
+        "summary": "Anthropic will now let Claude do things on your behalf by default AOL.com"
+      },
+      {
+        "title": "Anthropic will now let Claude do things on your behalf by default - The Independent",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPNGFWbGxvNHljUFVQMHVlOWFkMlN0S2hkVXJMQm1IbS1vazdVQkpKYV9WS2k3aFdpVmlWX1dQS19FeGlHdHByR3UzRUdDSXR3LXZxbjQ4Qkx0R2RtdTFSckdCZkNORFEyQVY3a01wUzd1RUE0Wm5XYXJrSlo5SG9oZjBDZmVHc3prT1A4a1hITQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-10T16:18:00.000Z",
+        "summary": "Anthropic will now let Claude do things on your behalf by default The Independent"
       },
       {
         "title": "KYND turns to Anthropic AI to test cyber risk - FinTech Global",
@@ -292,21 +336,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Anthropic Sets Claude Code’s Auto Mode as Default, Citing Improved Safety Over Manual Review - AI Insider",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQSGNXVzllX1VUVUxpSms4OUUtSHVlR1lObDVTUl9wbEhUaWpPUW0zQ2N3am1Ka1hDWGxwOUF3UHdkcWVRNExyVnZEaEJ6LWl1Q2xncmxucGxHdnlnZnlpOXV3Yl8xVjdZQmx1R2NUMVJoWmIta1pqUG9ySk1ZVkxaY0JkdEVhMjh3SkI0TXdTVVZMT05SV1hVVnNPMkRhcXRadldHYUh2OWctRGQzSWpHdm5qT3lqb1o3Z2hudnJuWlk5b3Fhb3Q4?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T14:22:25.000Z",
-        "summary": "Anthropic Sets Claude Code’s Auto Mode as Default, Citing Improved Safety Over Manual Review AI Insider"
-      },
-      {
-        "title": "Exploring Claude/GPT Knowledge Cutoffs and Pre-Training Timelines",
-        "url": "https://blog.sshh.io/p/exploring-claudegpt-knowledge-cutoffs",
-        "source": "HN · 81↑",
-        "hn_id": "49244085",
-        "published": "2026-08-10T14:20:41.000Z",
-        "summary": ""
-      },
-      {
         "title": "Best CLI for AI Agents: Claude Code vs Codex vs Gemini CLI",
         "url": "https://www.youtube.com/shorts/VJZqO--bV-s",
         "source": "Pragati Kunwer",
@@ -317,48 +346,6 @@
         "published": "2026-08-10T14:06:23.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Anthropic Finds Enterprise Delivery Partner in Zaelab - PR Newswire",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNWExuM2xweWNTX1BHOG5QdjF6Tm1IcXVRWHZ4c2NyaXpyekZ0Ujc3RkVyeHQyRUxMU3hicGtBSG1GcjREOW1mOVFzZFRvaWt2d0RLREMyRkFDUnV3MzFDLUZyREZUMVVWVlQyQmI3alp0UER2NDNuZk13WWRTb2hxYlNPT1JEZEdUMDdkVzV4RjM4RWpVZHZ4QVJqVEd6V0w1VFNRZW9lOUR4clRzWXc?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T14:00:00.000Z",
-        "summary": "Anthropic Finds Enterprise Delivery Partner in Zaelab PR Newswire"
-      },
-      {
-        "title": "Anthropic makes Claude Code's Auto Mode the default, reducing the need for user approvals - Storyboard18",
-        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNdkRLeGpZVXZLdDJrRnJsSmlCVnZMUmJReXlhTFZ1ZWcwYl9kbmt5SEh5VjBoWllRMFNyQWktNjRiVXdIMnhCV2RydEFYUllMbHE5U0hGWEdMdi1qUU96cGMybWt6OF95aEhEVmJ1M3dlMnJzM3AwRkZ2NE9HV21zX1ZPWVcyeHkydktXa2FkSWlPd0pobThqYk5Rcm1pcWgtZDZOeUhFZW9wWGR0VkFFZEFwVGp6aUpVRVE0RnlMXzVWd0wxMVRpZ0FVQnZzNERZ0gHWAUFVX3lxTE0zeFhzUy1mY19RcDNUdk9sRUpuMmxBOEdNc1VsSzJYM0VfUGkwUUlweXpXcE5Kdmw3WkFnYnFiMWR3NHpSTmZXc0J6bVJZUVl4UEdHM1VVd1VtVzdJTGpacHV5TVNqVy1MTUxSN1FmNXhESEs2c3V3UGdicUo1SWk0WF91Tzk1VVZ2djV1Yl9CSXdVUHJXZFRVcThQSVRnWXY5QTF3QUt1TDUteGU0cEU1dUhzTGx3dEZldzl4ZEI3SUk3dDdKSkJpTk1ta1lLcDhMQ0RmRGc?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T12:46:01.000Z",
-        "summary": "Anthropic makes Claude Code's Auto Mode the default, reducing the need for user approvals Storyboard18"
-      },
-      {
-        "title": "Anthropic, Macquarie and GIC Form Venture for AI Data Centers - bloomberg.com",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNc0Y5VVJWSkc1aEJOMEF4QlNaeGxsVDg0YklRUzluTE5rVTVKekh5ZnM5VWh4NUcxNXBvNXB3djlZbm1DbHkxNTJhMFI4anFvakJnSndGYTI1WktTS2hOSmhXcUE5c0hXS1lrTmhjTEY3aGNERmlKOWc5TER3MUQtOHk4VHg3T0FwU0NLQmlNR09FbnMwLV9FaE80VU5qWG9HMXg2TDFKVENTeHJ6d0E5Mg?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T12:31:17.000Z",
-        "summary": "Anthropic, Macquarie and GIC Form Venture for AI Data Centers bloomberg.com"
-      },
-      {
-        "title": "It’s Meta’s Turn for their AI to go Rogue - Mix93.3",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1Qa3FUQncwdDJweXA4a3lEdTN2cjBadFpiZm41ZHZYZjdpa0VXb0FhMHBQQmtldVBod0JpbVVUQlEzdF9CYy1oWVZSTUg5X0I0ZFdYRmt2ZDI3aE1rMlhSNHZyS21FVHFqSGZ2VUlhRm9acWpfWGItSnJKbw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T11:20:11.000Z",
-        "summary": "It’s Meta’s Turn for their AI to go Rogue Mix93.3"
-      },
-      {
-        "title": "Anthropic will enable Auto Mode in Claude Code by default - Mezha",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQREJGREJiOF94UWllSVlZbzdNVUlkU2ZzZk5nUFRIVm9OOXdkRU1HNDU5ZUZIRWJHOHFyQUdpSHpzMjdtNjIzbEhOa1JEcUpnQ2hYQmlpc0djeUFXdEM2OXFkMXQ1QTItTGF2ZWhvZ3czWVVuUjZIUXhLM2ZUVDZYQ01lTFDSAYoBQVVfeXFMT1p2Wkw3RUIta0d4NHp6OWhLUVAwcGFRMUl6dlJQVS1wUEU1ZXBXU0RzMUpUTGNEcnMzbnlROHEwd2VxMm9lWVBnRV95WnpxeFZkaDBtOFM0WTFYTmpfX09JZUZvbjhLcjEtOFdyT2ptdHVkQjQ5ZkpudFhyYUtqRTVOcm9MN2FnRk9n?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T11:10:00.000Z",
-        "summary": "Anthropic will enable Auto Mode in Claude Code by default Mezha"
-      },
-      {
-        "title": "Rogue AI models of Anthropic, OpenAI and Meta that went on hacking other companies had a common 'Israel l - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQUDRDRVVodkFJMDVkanRweXZ6ME1fTWJmODNvQWJJSnVKT2tKS1VXQzR5WWM0aWxobUFtMjhlQVlRb2daVnNMS3RMV2dORGVqTHRzSnloMDZyTm9iWmc3Y0d6ZVdaTE04emttQkl4WTVRS2dLa2g3WHRzRUkwLVZJT1diUWJBbW5mdHJTT2pYdHk3ZGo5QlNLcHdidU04YXVEX0F0Z0VoYWducnBVV2NYVWFsa2cxMGp4a0xoeVFHS1BVX2kyRDA5cy1ETXhRZ1YzVWRVTTg2OGplcXZNQVFTSEFHbGVNUDhsNVpwRVdJdE1oZzNmVXhYNnFOVXNqSkhTZjlCMDgzOUU1MWdtaUxReE9SeFF6TGZ00gGeAkFVX3lxTE5TWlpscGx1LTljbjM1MGdjdzZ4UEdLVk1wbVVNV3BaRWtBVlR6VmdRVlVPWjRuUVkxSEhJaU5YWWZjdm5IRlgycmZWM2g0Y0kyTDJPZVF3Zk1PSUhaS3NRNm4tbTFIbTUyN01CVGZaYWJ6dW12T0llMjBTVFV1c2pZdlpXVjlpMl9hM2V3aTJ6dnNxSUhXY2lWeVdkdkxVcUtMTlB1dGJWVDh5RFc3aXBtdGJqM01janJ5cmd6WUdubk0yVUVCT2Vja3lVaTFpb1NkNTREa2d4QkVsY01ISktsUmVIdGhBclVfejZNMzh4bERUSUJPLWNsZkozTjJjV0gxWDhTVWIyQkY4aW5pVlBCVHJMa1VzcmZDbjhKSkE?oc=5",
-        "source": "Google News",
-        "published": "2026-08-10T11:10:00.000Z",
-        "summary": "Rogue AI models of Anthropic, OpenAI and Meta that went on hacking other companies had a common 'Israel l The Times of India"
       },
       {
         "title": "What is Claude Code? Watch It Do a Real Job",
@@ -713,17 +700,6 @@
     ],
     "youtube": [
       {
-        "title": "Codex Is Winning... But Claude Has One HUGE Advantage",
-        "url": "https://www.youtube.com/watch?v=piOSL8Ms9mY",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "piOSL8Ms9mY",
-        "thumbnail": "https://i.ytimg.com/vi/piOSL8Ms9mY/hqdefault.jpg",
-        "published": "2026-08-10T20:29:40.000Z",
-        "summary": ""
-      },
-      {
         "title": "How Icelanders are thinking about AI",
         "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
         "source": "Anthropic",
@@ -1041,9 +1017,36 @@
         "thumbnail": "https://i.ytimg.com/vi/uU0RFxGv-Ks/hqdefault.jpg",
         "published": "2026-06-30T19:39:15.000Z",
         "summary": ""
+      },
+      {
+        "title": "Anthropic Just Released Its Best Model Ever (Mythos/Fable Deep Dive)",
+        "url": "https://www.youtube.com/watch?v=TtCWqjy3T5M",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "TtCWqjy3T5M",
+        "thumbnail": "https://i.ytimg.com/vi/TtCWqjy3T5M/hqdefault.jpg",
+        "published": "2026-06-09T22:03:25.000Z",
+        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "Building Effective Agents",
+        "url": "https://www.anthropic.com/engineering/building-effective-agents",
+        "source": "Anthropic Eng",
+        "published": "2026-08-10T22:57:30.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "v2.1.227",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.227",
+        "source": "Claude Code Releases",
+        "published": "2026-08-10T22:56:53.000Z",
+        "summary": "What's changed Fixed feature flags being evaluated without the user's subscription tier when a session started with an expired login token, which could wrongly prompt Max plan users to enable usage…",
+        "tutorial_kind": "official"
+      },
       {
         "title": "v2.1.226",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.226",
@@ -1221,14 +1224,6 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "v2.1.217",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
-        "source": "Claude Code Releases",
-        "published": "2026-07-21T21:35:10.000Z",
-        "summary": "What's changed Added emoji shortcode autocomplete in the prompt input: type :heart: to insert ❤️, or :hea for suggestions — disable with the emojiCompletionEnabled setting Added warnings when…",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "Master 95% of Claude Code in 22 Minutes (as a Beginner)",
         "url": "https://www.youtube.com/watch?v=ZW6d_2rwcdk",
         "source": "Leon van Zyl",
@@ -1261,6 +1256,18 @@
         "video_id": "COh_cjrDOzc",
         "thumbnail": "https://i.ytimg.com/vi/COh_cjrDOzc/hqdefault.jpg",
         "published": "2026-07-06T17:37:45.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
+        "title": "Anthropic Just Released Its Best Model Ever (Mythos/Fable Deep Dive)",
+        "url": "https://www.youtube.com/watch?v=TtCWqjy3T5M",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "TtCWqjy3T5M",
+        "thumbnail": "https://i.ytimg.com/vi/TtCWqjy3T5M/hqdefault.jpg",
+        "published": "2026-06-09T22:03:25.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1309,14 +1316,6 @@
         "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
         "source": "Anthropic Eng",
         "published": "2026-04-15T14:39:01.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Building Effective Agents",
-        "url": "https://www.anthropic.com/engineering/building-effective-agents",
-        "source": "Anthropic Eng",
-        "published": "2026-04-13T17:46:47.000Z",
         "summary": "",
         "tutorial_kind": "official"
       },
@@ -1747,11 +1746,11 @@
     ],
     "claude_learning": [
       {
-        "title": "Codex Is Winning... But Claude Has One HUGE Advantage",
-        "url": "https://www.youtube.com/watch?v=piOSL8Ms9mY",
-        "source": "YouTube · Riley Brown",
-        "published": "2026-08-10T20:29:40.000Z",
-        "summary": ""
+        "title": "v2.1.227",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.227",
+        "source": "Claude Code",
+        "published": "2026-08-10T22:56:53.000Z",
+        "summary": "What's changed Fixed feature flags being evaluated without the user's subscription tier when a session started with an expired login token, which could wrongly prompt Max plan users to enable usage credits for Fable…"
       },
       {
         "title": "How Icelanders are thinking about AI",
@@ -2174,13 +2173,6 @@
         "summary": "Webhooks for Claude Managed Agents now cover the environment and memory store lifecycle: four environment.* event types and three memory_store.* event types. You can react to environment and memory store lifecycle changes without polling.…"
       },
       {
-        "title": "v2.1.217",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
-        "source": "Claude Code",
-        "published": "2026-07-21T21:35:10.000Z",
-        "summary": "What's changed Added emoji shortcode autocomplete in the prompt input: type :heart: to insert ❤️, or :hea for suggestions — disable with the emojiCompletionEnabled setting Added warnings when transcript writes are…"
-      },
-      {
         "title": "Master 95% of Claude Code in 22 Minutes (as a Beginner)",
         "url": "https://www.youtube.com/watch?v=ZW6d_2rwcdk",
         "source": "YouTube · Leon van Zyl",
@@ -2234,6 +2226,13 @@
         "url": "https://www.youtube.com/watch?v=uU0RFxGv-Ks",
         "source": "YouTube · Alex Finn",
         "published": "2026-06-30T19:39:15.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic Just Released Its Best Model Ever (Mythos/Fable Deep Dive)",
+        "url": "https://www.youtube.com/watch?v=TtCWqjy3T5M",
+        "source": "YouTube · Ryan & Matt Data Science",
+        "published": "2026-06-09T22:03:25.000Z",
         "summary": ""
       }
     ]
