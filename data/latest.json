@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T12:35:19.971Z",
+  "generated_at": "2026-08-11T14:47:20.463Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,159 @@
     ],
     "news": [
       {
-        "title": "Claude will apply invisible watermarks to AI text and images",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/977823/anthropic-claude-ai-watermarks-c2pa-text-images",
-        "source": "The Verge",
+        "title": "Claude Code is leaking real email address as a User-Agent string in curl command",
+        "url": "https://github.com/anthropics/claude-code/issues/78431",
+        "source": "HN · 32↑",
+        "hn_id": "49258881",
+        "published": "2026-08-11T14:21:47.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic Claude AI Agent Executes Australia's First Autonomous Cyberattack - The Cryptonomist",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQNEJNRWhGem9mM2FkVC1HZVZ0eWtKak1ZVTFIdU1SejdzR1JRN2NlZ3dUYVBDN1lNRUtrUHEyWmNjLVpoQ1Z3Z0N2dEQ5VDVBSjNZUk1ZelV3VVFEaGVDamxxemUtZGhNTDdPekFZVzJVUllFUVF4ZENwZ181WVYzc1d3?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T14:21:38.000Z",
+        "summary": "Anthropic Claude AI Agent Executes Australia's First Autonomous Cyberattack The Cryptonomist"
+      },
+      {
+        "title": "Live updates: Bitcoin holds $64,200; Anthropic to watermark Claude's AI content after EU regulations - CoinDesk",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONXR3dlAxb2poS0JHa1pNVnN0SjFpcFhDUU52VGh6Zy1rRnFJUk5BcVJ3TmxJdlVXUnNSSHlIelhmSDFqREZ6emJPWGtvaFNTOWpXaWh1aGRrNk40T0lfS09HMGNTYVFLRy1hWTlwdmxsN0ptcHluV0hSODRETVZ6X1g1MnJBc3NjY2V5VEQtSDladjRTdzJFNkNBWVkzelFFaFdVdFQxOFREdXM?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T14:06:19.000Z",
+        "summary": "Live updates: Bitcoin holds $64,200; Anthropic to watermark Claude's AI content after EU regulations CoinDesk"
+      },
+      {
+        "title": "Anthropic will embed invisible watermarks in all Claude AI text - Northeast Times",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNRmRPaFpYS25xUW9welVzaXU5NkpVaVUzbmpMNnRPY3R4ZnhOZ2lTLXlGWDNfaGY1dEdOb29XekR0QVdLUmxDeWxXM2lYTDJqRS1CRVM2RTQ1ZjBXYWlTOVhsYmdwYm1aYnBnRGViWVdDbzNxbjh4Qm1HV1ZEankzV3VKUGJON05OdzRnNmNLbHJBZmZqQnhKSWJUeDlKeDR6Nl9qQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T14:05:13.000Z",
+        "summary": "Anthropic will embed invisible watermarks in all Claude AI text Northeast Times"
+      },
+      {
+        "title": "GIC, Macquarie Set Up US Data Centre Platform for AI Chatbot Maker Anthropic - Mingtiandi",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOaDhsRzZhSUUzeGwwaVNGbEdBcmQ4MW9KTGpfNWUzR3RtTGhBdHBWbzZ6SlhJeGhKMmVtZWtTbUJabWZuOXc4XzNqQ0JYc2pOQi1rNGc3TGgwalNDNlBuMlp6X2VKaG1yUnlpOENpZW9ucjVMSHhLa1Nrcm5aM2dsT1UwenAyRFpWRW9KOG9TM0lsWnExUnBaRTVET09QVV9HckNSWUNLVGhabEwtdVFrRHBYc1ZzaUJuMi11QzlMZWFhanZPSDE0?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T14:02:14.000Z",
+        "summary": "GIC, Macquarie Set Up US Data Centre Platform for AI Chatbot Maker Anthropic Mingtiandi"
+      },
+      {
+        "title": "Anthropic to mark Claude output with hidden AI watermarks - Türkiye Today",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQUzVkQnRXQlVBXy1yX1lzQk5GTU5ZRHpJWGMwaDZXNHN3M2xWQThVUzNLTzI0OEJ5b0ctWWY0eHFFQmlNVHJnVlcyWWN0Y3FMSE1lUVlnU3lZNEUzWHMtNkIxRUM3SkNmdUdNa0ozUDFRYk96c09HeGxPLU1IUUpzcmJDRmRzQTdnQkZGWnBxMmZNNVBWV29PVk9MaVc0VEtqUlFrZUxn?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T13:59:09.000Z",
+        "summary": "Anthropic to mark Claude output with hidden AI watermarks Türkiye Today"
+      },
+      {
+        "title": "Watermarks used to stop AI cheating - Christian Action Research and Education",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBCZUhwZ3Z5Q3hGVXBhNjBqUDIxT21OTzNaX1FQN013cWRZdTA1Nk45TjRsZjlIOU9VYUo0NEloNGZvbnVpR3FnV1M3cmZqeGhXWDdwcF9iRWY1clpWUTlQTHdiUHdWUkpJTEFMMi1fTHVXOGp2V1BJ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T13:55:37.000Z",
+        "summary": "Watermarks used to stop AI cheating Christian Action Research and Education"
+      },
+      {
+        "title": "Anthropic rolls out watermarks to help identify Claude-created text - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxObGJ6VEt5dUxmOG85RHQ5ZXA1Um5OUkZuZGpKT21HdFNlRmVfUTB5N2hKVU5yeUFuRFBnSEFQd0UyQnNqd3lkWFFQWVVSY3lUdm9GODJta0hQd3FxdjdqX096alRRNEZfNGY3UWU1aHR0RVlGalNzb3R5dVNkcXVJSDR4NldNM2RpUEpRZlR0TmNENGY2dkxvRWE0T2lYWWVJTldINXpVblFuM1JIR1RiSWV5MUM4Yzg?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T13:55:29.000Z",
+        "summary": "Anthropic rolls out watermarks to help identify Claude-created text Yahoo Tech"
+      },
+      {
+        "title": "Claude to start watermarking AI-generated content - sea.mashable.com",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNUXNjZEdJVUxsSE9xTElhTjVOb3Y3YTFqeHdiQVlsbE9QbmJSd1hfQW1mUW42YnYzLTJob3A4eGJxQXhYcWtyWGVBaTVBSnBQVEdGOTlpLTlibW96X3dDaUhwUmlSZ3VwTWRxamc0LUZDOXNCQXR1NXBZVDU1eldSZk1jSzF0dXNfWHloSTZ3?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T13:48:19.000Z",
+        "summary": "Claude to start watermarking AI-generated content sea.mashable.com"
+      },
+      {
+        "title": "Anthropic pledges to watermark AI content in EU - siliconrepublic.com",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNTktMNU5zQVdNcUxka0hRVTh6bGVpaVY3ZGJCSE9GM2l3dFI2NnRtcnJjalNlOXo5RGFHM1ZQN2ZaLVg2Q052ZFBTWjRBM2Jrc0hhczhhVWdmVXp3bWJKYUQ4cW10WE13X2szTGozUTk4T3YwRmRKdXp1bzhiZ2FhXzNLcXlVWk5yaHduckNCX2Etdw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T13:46:06.000Z",
+        "summary": "Anthropic pledges to watermark AI content in EU siliconrepublic.com"
+      },
+      {
+        "title": "Anthropic Adds Watermarks In Claude Content As Deepfakes Run Amok - Inc42",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQbEFLbHpGSEdMTWVpTndFM1lYWmd2bkZMbzRqYkVqX25tcDF2a2FlSWpjMmZseW1xbmlBdU1Ha0NyNFJhN2hPMEl0MkxXRm9sWUNzOC1Tc2VqdV9yVjdNajVTb0F5cGFiZGJxUEJuZWxGMl9OLXl2OU5BSXoyTHBvRlBPTDZjZGtwS3BSejNxcjROdXFDSFRUTldocldfdTlRX01RRXR3?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T13:40:42.000Z",
+        "summary": "Anthropic Adds Watermarks In Claude Content As Deepfakes Run Amok Inc42"
+      },
+      {
+        "title": "Syncro Joins Anthropic's Claude Connector Ecosystem, Becoming the Most Extensible Unified IT Management Platform, Live Now for All Customers - AiThority",
+        "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPUEhobkhYWkYwYjRUelRNNnhFcTRVT0ZFS20zTmVlTGp6a0QtQlZIUHpkX2NIOGx3bTlnbTRScjF5Sm00OGNzZUhZSFdSNEM3SjZTbHdIcEswMTN0YzEzQnl2WXBUbkpLZEFRRnd6Yy1kZFhONTF4TE5Lb1ZGeElRX2FNa1lScmRxdDZ1WGh5SmFSbEl6RXBuOG9kZmlGR3U0LWhqazBwXzFQci1Oelk2MUszYWpONWFzR0s5R0xUbWt3bGRMcVQ3RkVjRXlvc19kMm1Ld0d6QThFR2NjQlUwRnlsUlZlSlQ4TFozMC1PdzduZ1VNTDVPT1pVUnItU0FwWmtMQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T13:34:14.000Z",
+        "summary": "Syncro Joins Anthropic's Claude Connector Ecosystem, Becoming the Most Extensible Unified IT Management Platform, Live Now for All Customers AiThority"
+      },
+      {
+        "title": "Why Anthropic is watermarking text generated by Claude AI, how it will work - The Indian Express",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOdFRSY3pBN2VMQmc2ZElNNU1uOTlqTzc3SGpVeFJobHBfNG9FTDY0VmNRQk0tZE51eElmRVhpQ3BQZ19xcnhVcTkzUnMzZDJ3eC1Ia2ZCZUIzaTVYbmJIZjRmR0ExV3dOczRrUGNCTl9WamFrV180SjdWLTdFU0Z2XzFhRWlheWx0MW9Pd0FaV3RpeW5nV1RVbUxQb05KOUhOYWR2NmMtcU5IaFRDZ2dkNDVxU0g0OHdHWUlHclRCanZXTTBUS3VzTE130gHQAUFVX3lxTFBpdXZlQ20wQ3RhV0tPaTZGd2JDYUoxUWg3V2xyV0ZrcFNXOXpQX0pfem0wQnZHQlVoUzY2R0pYd3BYOURwUmpRN3Z4MlhPRE9NOVd5VHVKUU5qenJTN3ZNTTl6QWN1WXJ0dEtHTHIwRjJRSC01aTlBMGtvNTh5VFBpZzFXUE9SVFVyVUxfZFhBRkpvLXlaZjVuejBqX3VHUmMyUEJod0xTUXBsOHBNXzV5YkRLRlI4bkRiMjZXanQxeWo3LTRXZ0xQdFBBaFFsSjc?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T13:25:41.000Z",
+        "summary": "Why Anthropic is watermarking text generated by Claude AI, how it will work The Indian Express"
+      },
+      {
+        "title": "Anthropic to embed hidden watermarks in Claude AI content to meet new EU transparency rules - Azərtac",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPUVRjQ2RPRUM3OWRVWXB5elN2VE8wdlAzdEJxZXJfcnBVTlpXcDNnY0dITDBkRE5hVWxjSklrN1Z6S0dYcDFJRnZob1lVczh1VjF6T3l1Rmg0Z0ljM2dVV3RhZEIyWXVRVm1QZl9hYy1NVENKYlAxc3RrRmJ4LWJrWlVVSWUtV053T2lfU1piOE0tWTVvdUlrZ05PVkRpQ21SbTF6bFpzNkRMQzJoX0RaRDdzN0pSRk1odVE0OU1rQkwyQ2x4WUE?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T13:13:00.000Z",
+        "summary": "Anthropic to embed hidden watermarks in Claude AI content to meet new EU transparency rules Azərtac"
+      },
+      {
+        "title": "Claude’s invisible watermark could expose AI-written work - The Independent",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPWVJfSHNNU3dpcFRLUlpPeERJcU1zWGJjZDlMSU5CRVkwcXBkTFRYTlk0QmoyTFcybWF3SjVObHRkbS1Td2tPbW1YdW9sWVdOREVLcjl6MFBSYVg0bkRrTE1FZjlSMHhkRzJ1aW9nUEh3Mk5VaWNOSWQ0ZW1BVU9WczRodE5qLXJvd1R3MDZGRFNKVGZhdDVILQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T13:10:00.000Z",
+        "summary": "Claude’s invisible watermark could expose AI-written work The Independent"
+      },
+      {
+        "title": "Anthropic Adds Watermarks to Claude Texts Under EU AI Act Rules - Межа. Новини України.",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1WSHExTWphalhzRWtaeDVYVXI4ZTAyWHo5YWJ3V3FIcVUyLVA0bnhXQzBKY3plRXZ6NWl1cHVSTHEyRm5xLVl3dHFkS0tucF9BME1RMWRDTlpBTm1xRTBIRDRvWjRqZHRLeVpWT0ZsVDU?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T13:04:31.000Z",
+        "summary": "Anthropic Adds Watermarks to Claude Texts Under EU AI Act Rules Межа. Новини України."
+      },
+      {
+        "title": "Claude AI-generated content will now come with an embedded watermark due to new EU regulations - PC Guide",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRDZKZG9RZjh6U3lSOFowaDMzV2o2dGx0dmFsNDRmSmxpcTM5SHgyUEhtZXBhOG5MUnk5dkxyU0J0RlBDNllxWnNzOVRrRkc5UE9UdFFmdzdkT3NRX3R1VGtmOGdPd0dCRk5NeHNmdzNCaEVTeEIwWkNkRThQR3JJY0R3N19kRjc2UjFHZkZIeEk4LUZxUVN2ZUEwUmVHaE5SNHY1X2x6RW12emQzT1E3eWQ2SVh6T0FUdmZjbENBRzB6WWplWndUVGE3RV8?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T12:55:53.000Z",
+        "summary": "Claude AI-generated content will now come with an embedded watermark due to new EU regulations PC Guide"
+      },
+      {
+        "title": "Anthropic makes Claude Code’s auto mode default for paid users - InfoWorld",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQkpOQlI3NlNCa3dpT2F4U3RkUXJPXzdiNHNGMEhWemhoNEo0dFNIaUhoVDVvV1VEX2VrbW1qMkFmV2hGSXlTQ3o3RDJ1MXU3QU52NTgxcUFhV3VkSjl6ZUwxYjVrV0E4Yi1mMm9mc005Wkw5Tkhxdjk1ZXNWYXhOZ25GQ1M5dF95MlAxaFFYRk9aZGtQdDlOU1dVZElJSEo5cXU3c19TSnByVzNm?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T12:34:16.000Z",
+        "summary": "Anthropic makes Claude Code’s auto mode default for paid users InfoWorld"
+      },
+      {
+        "title": "Anthropic Watermarks Claude Text Output to Meet EU Transparency Rules - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPR2YwOGp3bGZfQUlYelc5aU8tcHF2VmY1MnlFT3p0NHF6RHRUd3owNHFOaEdVZk1sa2VtamxFTE43SGtESDJHU2pOekhBbm14RHRNY013bU5rNmFRRWZibENadnUwUFFuNV93WVBCRjhjY2k1ZmtqZUpONU9tNjJhRk5BdVBSMXZoZzhiVjcwYmRfclRoTnc?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T12:34:02.000Z",
+        "summary": "Anthropic Watermarks Claude Text Output to Meet EU Transparency Rules Unite.AI"
+      },
+      {
+        "title": "Claude Now Watermarks Text Everywhere; Mark Proves Processing, Not Authorship - Tech Times",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQS3ZKVllpNmk3eklNT3dFWmh3Y3Fyc0g2Mm5kTWxrcFN2alFnVDF5ekNVckdQdnJYQjU2X0lDbjhEcjRJNG1Cb2VDWlpBcVU0NXNIUThWWUVOdFRTYlVqSnpNZGxRcEcxODRSajlBQUtDMzY1azFYMW9wekRfV1dRaHdaMHZzZnBOOTA3Mld3NjdHZUt2dkdyM2R6YXc5UzZ0djRrVUlmRWdTY0UyOWdaa25XQkIzV2tzVjR1emFkVEdkb2t3OVl1RXh3?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T12:31:20.000Z",
+        "summary": "Claude Now Watermarks Text Everywhere; Mark Proves Processing, Not Authorship Tech Times"
+      },
+      {
+        "title": "EU rules force Anthropic to expose AI writing worldwide - Euronews.com",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQXzVZZkhyRmNacGhLM0RTMWMtSTZIRFlSQjRHX3FsMHBDUGlESjZCR2paWlhkeWxmQUlHMmhEenotSGNUS3VFSkxCV1F1eFJjWUNxXzBGUzlaejB3NW1vVFFKd0NtMXo4R08weHQ1R2RTS0xvTTdnQ1ZDeDhNbTBoOW9PWnpuSWc3VjVlNUFXLU5xT3Bkekl3a2VxMFpxbDFKUV90WEtvRHFoLTJGUTZJNjFZeGI0ZjA5M3JxX2RR?oc=5",
+        "source": "Google News",
+        "published": "2026-08-11T12:30:44.000Z",
+        "summary": "EU rules force Anthropic to expose AI writing worldwide Euronews.com"
+      },
+      {
+        "title": "Claude will apply invisible watermarks to AI text and images - theverge.com",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSVlXWHJVOVhXbkRUbmdqZzhmY1BvOWNkelROTjhVaWlycnFlQmNqQ1g2UXJzdEM5MmlPd0N6UkZpa2JmVm5veE9uZnlCMWRGY0RMY2hZVFBpc1hFQVJVZVgtNFpvbnJXUGxaWkZwdi16d2g0M3lnc1Q4SzlKb1VGX1VVVkNuZlFpYWdtaHlJRVJZRmxRbVZ1YUNEcWFZUjh6TmdLTzhZU3k0QQ?oc=5",
+        "source": "Google News",
         "published": "2026-08-11T12:22:20.000Z",
-        "summary": "Anthropic has pledged to start marking Claude-generated text and images with machine-readable data, in an effort to comply with European rules for AI transparency. \"Generated text will carry…"
+        "summary": "Claude will apply invisible watermarks to AI text and images theverge.com Anthropic says it will watermark text generated by its AI models TechCrunch Anthropic just rolled out a tool that could…"
       },
       {
         "title": "Anthropic Says Claude Improved a Longstanding Bound Tied to the Riemann Hypothesis - AI Insider",
@@ -167,158 +315,11 @@
         "summary": "Anthropic will extend support for watermarking AI generations for older models as well."
       },
       {
-        "title": "Anthropic says it will watermark text generated by its AI models - TechCrunch",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOQ1phYk54dWNkRjNpSXdCaUNFYVg2MS1IeDlSNUJUak1DaFEtbVFjbmtaemRacG1RMWVRV1IyVTQtWFFXVzZTZjc2UGJDanJrT29GUlhsaTh0ak9DMXEwYkpRb2tnbUlBWVhSZHhtOGpOeXZZSThCMG1jWVRFV05hVWxfaUNiZXJ2ZnZwQ1VxSUhfWGtxYjBPMW1oZW40N0Jy?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T12:13:47.000Z",
-        "summary": "Anthropic says it will watermark text generated by its AI models TechCrunch"
-      },
-      {
-        "title": "Claude will now include invisible marks to show a text was made with AI, Anthropic announces - AOL.com",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQQzRYS1psVGNmQXlEdkd6TDF1S1BzNjlHbHlNSngtempSY2g1SDdUVEozczZxXzdnRVJSNnFoUjU1aTBVUTR0OXpDVHI2ZWZab1BsZm1jT2lTQVc2NkQ0QWY5a1FSanM4RnhZVDB2YTBIMkxKU2lOcGUydDhNRGVpZw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T12:10:04.000Z",
-        "summary": "Claude will now include invisible marks to show a text was made with AI, Anthropic announces AOL.com"
-      },
-      {
         "title": "Claude will now include invisible marks to show a text was made with AI, Anthropic announces - The Independent",
         "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQU04zT2ZCUHd1aWVNYlU4OWZuYkhBcndZbXBDV2p4T1VocjJ1NXJSRnlybUVMbDVvTDkzSHQ0eTVIVWlhOTZKNHZueWVhdDEtTmx3S3ZmSWprZzU5YU5fTk1VQ0hGRlBPeEZoY3VMNHhjSi1IcDE5N2ZocXVpYTROSFM5TVpfSDYxVkFuQ0VtYw?oc=5",
         "source": "Google News",
-        "published": "2026-08-11T12:05:00.000Z",
+        "published": "2026-08-11T12:10:00.000Z",
         "summary": "Claude will now include invisible marks to show a text was made with AI, Anthropic announces The Independent"
-      },
-      {
-        "title": "Anthropic to embed hidden watermarks in Claude AI content to meet new EU transparency rules - Anadolu Ajansı",
-        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPQnd6QmszdzhxMWNMNXdGdy1PRTQ4bHFFSFNJVVZxZHVYUVhmZDh1NGVCUFI1X2pOQXhvVkp3Umd5T2FKRjVmdFN2elNuVmxuLVdUdUR4UTJpQkdFTEFVeWpaTFVNSC02VDFVbk1wY0dWMlA1UkkycFpsNHFxZ1p6QUNhX25rOHVsWlVVd0Z0c0JUcFlFWjZXaW5MRWU2bFYzZTlTcWxuMWUtZDBNakZPTWdJc2dmN3JqbVdFNVcxUW9ENl8xWGgzN0ctRU1SY1F2aFNYbkZRbFNXUjA?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T12:04:41.000Z",
-        "summary": "Anthropic to embed hidden watermarks in Claude AI content to meet new EU transparency rules Anadolu Ajansı"
-      },
-      {
-        "title": "Anthropic Makes Claude AI Content More Traceable - TechRepublic",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAweUlLMmxLWmw1RVlSSkJBaU1iaThTd0QyYVM3WG9FM29POGVYZVRlMzhYSlk4SVF1elJHYm1SV2pvU3cwT3pmQkNGLTNPakpSdE95Nk9aNFRucy01eG00dHRyUk1VWlFjREhXVVpyNFg?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T11:32:28.000Z",
-        "summary": "Anthropic Makes Claude AI Content More Traceable TechRepublic"
-      },
-      {
-        "title": "Anthropic pledges to watermark AI content in EU - Silicon Republic",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPbU4zajJKR0hTOHdWV0lrRjdWSlhpRDJBbnlQa19QdmpnVUtnMENwN185UGJOMWxxb3ZyVXBfYjJMOGNodVNncUpqVV9Hbkg5ZVBqWTN2bVNXSkxZWEJGbUt1VXhiX1NZLUhnNC1oa3BCaUN6VElaMFpLMW9DNGxadFN4OVpmbUV3OElsaUk3TnY3dw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T11:29:38.000Z",
-        "summary": "Anthropic pledges to watermark AI content in EU Silicon Republic"
-      },
-      {
-        "title": "Researchers Crack Open AI Models, Expose Chinese Training Links - The Tech Buzz",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOY2h2VnhzTmxERHNKVmZNWlJJYmZpQWVkbkRoOFJaM1RUM0hxOXM2Undsa3pmSThDcUQ0R1JCV0FhazFESkxWWlk0NzRrNFZxNHJUOEczeUE1WTQyd0lIdWRSM2J3MW1iajhoZlBOTFdEYnU3NlRMLXNjTFhEWTNWbzd5UVVJYk9ucGtvdUMwYjM0aVlIUWdROWNUWQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T11:25:00.000Z",
-        "summary": "Researchers Crack Open AI Models, Expose Chinese Training Links The Tech Buzz"
-      },
-      {
-        "title": "Anthropic adds watermarks, C2PA metadata to Claude AI content - MediaNama",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNOXVycWdpSlFZSWtwTVNtcVpMT0ZxNW9DVHFxYVRKbDBWZDZjNzNIdGlCbWNnUVNuMGVsT2pubnBnanF4ajNMcFkzRXpJVG9hT1gzd3VXUi1qTVZob3hzalBFck9JQW85b2d0c2JHR01tckhTaHZHNnUxZjNMUkJWODJ0VHNLQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T11:15:18.000Z",
-        "summary": "Anthropic adds watermarks, C2PA metadata to Claude AI content MediaNama"
-      },
-      {
-        "title": "Anthropic to watermark Claude-generated content with hidden identifiers - Storyboard18",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcVZxR2F4NWszeFVkb3FYcHRXSzdYWURDRHBuUXdGUkZFajg3QndGS2dtZXJYRGJrZmN0dmRJWGpleEhORlZERHYyVVZvNTFFYXlMMGdXMU9kV3lDRWUwbGxfdUx1ZkQtQl9yTE9BenNOVDNsSWdEekQwQ3ppa1VMbDYzSWtjdVhYWWs2Q2p0dHhyQWlqTmJzdlQ4dTFnUWp0QXBnWGszelRwdTJZS0JZV3lfWndDT0ZjcllRWUttNjcxd9IBxwFBVV95cUxOMVJ6X3I1V1ZMbXFQWGFOeFRQYTFNcG9VYW1ENXFTaWFZaEVPMWNkaV83YklxQkNZX0hieXMtdWxoM2hXak02VnlBZWRwMllGZGVjbkRxOHFZQjJiSVZMOXhaWGY3NFo1YXlObXF4S0JfNXdFcHZQWjd1YzRYLUc3SGhLeS0ycDk4cEFFeE04VWlqb3lhcUIzVTFnRUNRZkppbnAtQ2dSR3lnVFZNbjFKOWlDMnZ4REdEMlVpZzlBUU1DUVhsNzk4?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T11:05:18.000Z",
-        "summary": "Anthropic to watermark Claude-generated content with hidden identifiers Storyboard18"
-      },
-      {
-        "title": "Claude is secretly watermarking your text, and it is almost impossible to remove - PhoneArena",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOaTdoMkNOU21uTG1YQjl4RzFKWVFkbFNEaWtySC1NZXhEYzRNT2N0b3MzMEVnaFNhSi1haE1CaXUzS3FLZ1JJYjlQekdXNHhkdUR6NjVEZEctQVpXeENqdXBPdzdidnN3NV9HNFR3WEVWSmlaRm1ZVzFTanF2eGpQZXQ0U253TC10eXBQeTQwajcwZnhiYldBSnQ5bDRsVkxDWTB0WmhvNEJVMWZ6YUU3VDM5S3JtTHdJdk5VQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T11:01:16.000Z",
-        "summary": "Claude is secretly watermarking your text, and it is almost impossible to remove PhoneArena"
-      },
-      {
-        "title": "Anthropic adding invisible watermarks to all new Claude text outputs - Audacy",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSXoxZmQzWlItSWFOVUNjcWJpNExmYUVOcHNsQXE3RC05cXpPdGhHdXRqZl9oM2t0U0FxOVZEeGZ5NV9XejJvbFNTeWFKbXVsbnA5aUlrZFprdElEaXhDSnc4ekJtY25yOF9QLXNLX1JUNkRDVk41Z1ZFOF9GMy1iUlgwUFZKY0dURHMtYjVqV0dVRUlNQWxON1VRNlpYX1QzT3dwYzdmVGd5eG8?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T10:20:00.000Z",
-        "summary": "Anthropic adding invisible watermarks to all new Claude text outputs Audacy"
-      },
-      {
-        "title": "Anthropic researcher thanks Claude for solving 87-year-old Math conjecture; says Jacobian conjecture is f - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMisAJBVV95cUxPckJBM0RfUS1aUm9aXzRKRkYtWHp0azVtclZIVGd0bEV6ei1DMm5QR1BjQ3BISWkxaXVsSEtObnVZRzEzZDdMTTFVVHFxY2VNRF85NE1CRDZTR2gteTlSczU4Yk9EbEFDOV90SjVuelRJbmwyMV9ObTlTa1RYQURhYnBONmV6Q0RBNlNINXJ4M0FKNEYyX2hGbE9YUzRqT2w1UWhnb2tVNDNlblVyMHFyTVBKX09xQVlQbmZqY3R5RVRWbXFGWGJSZFg5bVNPU0Vjc1RVMzRLc3QtTUJDamFkVTRxYVFKeHRlQThOSmVuRTI2TWNpTUJIdWRid29aNmpiZUVpemVaX2RZaF9oUEZNZ0NoRmtYQzVRdmdCNm93TXhiUzUwU3R6QUxXeE95d0NF0gG2AkFVX3lxTE85eHg5eFNqSHNYTk0wWFU5UFJHSWxGNTJaaWNJSU9hWGV2U04ycHhxOUdwQTNaRFY4SFpQZ3lqRERJWTYzLTZOOVFsR1pKdFZBQ09aUHdxZFVWT3J2Rk16ZTNDMTVnTHNEcG9zZm1TRXh2dUNYX2xKLXk4NDZVQ00yQVZyZElMVEJvOFp3YlluazlJUTNzSC1Bc2RvNmtPUFdPUGpfVWdqakE3X04yYVpTeEpJNUtUbERxMVYyR0dvczhRbG9xQ1hUTm9nLWlRUnFXQXEtbklsSWV2Z01wTnlpaUlTWWJyZmdfUm9kcDJZYi15SzdJX3FEY0NwY25SR3FWQlN4UVU2TkZIcTgzSUcwaDdLQ21XTVNBXzk5V2pFQzlNczZsbkxFN3NOQ2I2TUpkek92S1E?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T09:36:00.000Z",
-        "summary": "Anthropic researcher thanks Claude for solving 87-year-old Math conjecture; says Jacobian conjecture is f The Times of India"
-      },
-      {
-        "title": "Claude will hide a watermark in your AI-written text, and it’ll follow you around - androidauthority.com",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE56SktpMzA1OXBrZHcwWWVsZXVxeVZGLVMxRlRjRzZkU3RYODhFNWlYZVp2S1J2U0U3RWRVdVVZSG9OazhhR1UyTV94LVRmdWdiYVdIdkV2SW0tUzZ3cmhPdHFzTV9UU29Xd2o2MmFZWkJJZDZa?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T09:10:00.000Z",
-        "summary": "Claude will hide a watermark in your AI-written text, and it’ll follow you around androidauthority.com"
-      },
-      {
-        "title": "Anthropic Adds Invisible Watermarks To Claude-Generated Text, C2PA Metadata For Files - NDTV Profit",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOX0JHVVlUNU95WFRSbW5Ea0g0c09jdlVpZjloa21JWGNZNzBHaEEwcllTck80bVRTUUVoeTFlaTN5OWN2UHBOWkFNVnJHR25QZlRQdkdhR1puTUVxT19YZVdhcm9BSDBPVHRENjIzRHVudVZfaEtLQWtNMHhWQTZiSlRsLWUtdnRsQmNXbl83azQxdS1tOGdIYkhyUXA5QVdRdERCZ21IZ0M5OHYyd0k0a2pnWdIBuwFBVV95cUxNT0tiVVN1eEFZYXdzUFI0Y0lpbF94WVhmMVhjRHJtVklBTFQ5dnBwLUN3UFQxa1VtcjZtc2RpRWk1UHFsaTltVUJrOXlzRExVbVVCakgtbDhDRFNKRnFHb2dUekpiUk1Jdms2aXFPLWxaTXROZl9JSV9SVXhKVmlfaERFVk04WERPdng4eGYzMHhaamtscDdLaFF4MjNWQ1gtNnk2NldsYk0wTnB5aHpYbkRLSWl4WEJUMDBR?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T09:08:36.000Z",
-        "summary": "Anthropic Adds Invisible Watermarks To Claude-Generated Text, C2PA Metadata For Files NDTV Profit"
-      },
-      {
-        "title": "Anthropic watermarks all Claude outputs globally with marks that \"may persist through some editing\" - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPWHBmNkd2TlRlUGRfQjA4UWRrelU0OUdKd2tHZUtSdTU1LU1OYjVlNVQ1UXRPbjFUaWhlbVJNNzhIQnMzQ3l5TUk1UDdoQXY5NG1qV1B6c1ZXZ3JtTHBjb08wdUQ5c1VMT3pBZlB3eEMyRlJsRW1Ud0w0dXV3djVwSGtPNlFGQzRiaUs4eGpZZFBRMEVoSXJqUjFuM0NFNlp5V0taTk5xbjhsUk9MSGRDa0dmaHl2eTZ6ZU5mNE1mVQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T08:47:39.000Z",
-        "summary": "Anthropic watermarks all Claude outputs globally with marks that \"may persist through some editing\" the-decoder.com"
-      },
-      {
-        "title": "Claude invisible watermark tags every AI text — but paraphrasing erases it - The Cryptonomist",
-        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFAxcHA4Sld6UjRGNUp5THJtb0k3b0ItUHBwWjJhZ1FiTXdQcDYtSnNCandva1dXbHV4ZG8zdGUzcUVJU0FrTHo4TERuVlFxT1JxVDR6VTczeXlJOVNvUVFaQ0cyUS1OLWhXYTE4cXViWHdIZWM?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T08:32:53.000Z",
-        "summary": "Claude invisible watermark tags every AI text — but paraphrasing erases it The Cryptonomist"
-      },
-      {
-        "title": "Anthropic Adds Invisible Watermarks to Claude AI-Generated Text and Signed Metadata to Files - gbhackers.com",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPQ1JPSzlBMV9QZUpqdE9uN2tvbkNGcjd2WHU1dVYxcW5NbGM0SlBPa3ZqYXprMGFZaFM5X2NkWGdLZE5VTkFFZlhzMDB5aUs4RnpSdTJ2NkJ1Vm92cUY3WGZlb1BRT2RBWVRVU3RNc2FjNlBDZDMzSGk5RFFtQ1VJU0cyLTFLaEt1QlRhU09DONIBlAFBVV95cUxQN0FaYVhFT2lmYS1Lb2RLWjd5VVhOcWRCeWZLcWF6RWtXSHlIS2RiX2l3N1BhWmJ1LWZsbHo4aFVMTTdGY191MG9WbElLT0FjdnZzU1VsNVRmSkRDdDJYTnRXU25ONFlJNFFwQTIwOVl5cGg5Z3V0eWpkal9TZEVwTmozcUN4dnhXckxhdU9DVXktLXBW?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T08:14:24.000Z",
-        "summary": "Anthropic Adds Invisible Watermarks to Claude AI-Generated Text and Signed Metadata to Files gbhackers.com"
-      },
-      {
-        "title": "Can you spot AI-written text? Anthropic's Claude will now leave a hidden clue - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQVBETkVUeGRqenpEWVVEamN0VkppSTcyUWhkR0lvQ2NFaE1ieGxiNm1sdUJsc3FLMHlEMU5ONzk2Vk9na24xV1VRY0VZeUdyd0k0NmVDZFRvMmFIVkdxSTlNc3ptVThoUkdCT3NFOExVaTYwNldjZFZ4S3VhdVZpMWx3NlNKWkhMRVFxbENod1d6OUNHeE1odnQzTzNvay0xV0xvYy1tZUZERUF0NjVxUUxva0pTZDNvRGdHLdIBwgFBVV95cUxQRFZZdHZiYkZ2bnRrRkZJUWZBZ3FWN2w4M2tGbGV5eXJIOXQ0S3JPZUEzbzEzN21XNjBjY1NvcV9YR1MtYVZzRE8ydm9aWGI5UzJ4MmxoNnBjVTIwbHhLZ3lzdVQ3RXhpMEcwWHd5eFowRTdPYjM0cWFROVdOWGNMT2pTeTNvVE5HN0hiV2NhaE4yYW51ZmNHbFM3R0NKc0dUQkVfeklha05jRnI2X1RhamlxWmRlcW92YXM2VjF4YlpUdw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T08:08:30.000Z",
-        "summary": "Can you spot AI-written text? Anthropic's Claude will now leave a hidden clue Firstpost"
-      },
-      {
-        "title": "Anthropic Introduces Invisible Watermarks in Claude Output to Combat AI Cheating - KuCoin",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMWo1MF9tNFdXY3Zfbkh6ZmdQbmx6di1pamg1X1N1bXZQX1NMdVdQNGpYV0xKTVVtNFZiN2ZtQTBPXzFOYmpKX292SWx1MjV6Uy1aSTNNMmNtbWZXQXdHSjdYYU5mRDlkNzY5QllUc1J0c0JMb1lHVFJCVnI1NFpzUTd5cmN1NjRDRkY3ZzhfU1FPMGV4M3pjaGFTUTFZYlRHYnp6MVRoaFVxdnEzOEc3X0M2NTg?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T08:04:01.000Z",
-        "summary": "Anthropic Introduces Invisible Watermarks in Claude Output to Combat AI Cheating KuCoin"
-      },
-      {
-        "title": "Anthropic Introduces Invisible Watermarks To Identify AI Content - NDTV",
-        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOcE40MGNZSlJHN2wyTTB0UGxpU3Ezc0ZkbHI4cV81NGpFUDVFZWFoZnFKbExCelpRTG1NSFd0TlBLUHc5YXN3V0phT0I1OHh1ZWF1WTJsbVh4MFFpck9aeW54ZlZ2R1MtVFdxdWZ0RWtBaHF5M1lHaVl3dmRsUktwNVFVc2hIMUtVdW93REVqQ09NUi1OWGticnZzOFBobXNLZ0hiNm9Ib2M3Y0YtcmdpTUo1aGhGVk13TXdIaU5zVldfd25VT2FLS25EZ0hERExE0gHYAUFVX3lxTE5aaG9tNkJuZGNwMU1CbWNLR2VLc0JpQU5pQzdXTS1IMlhJMzFGcXRtT3gyeFlkOHVyQllIa2tvQ1ZLVjV6bUdLOE40blItQ1I0aFVsbXlqSXF2Y0ViNVVPaG9BM1BsWFFFYkl5emVOSW1ZQU9FWWZKZHBkcVNoSnJDM0tLbTJJVUZFQk5hSXZkZF81RUEtU1g5YVZNTm1BRkZMbzB5V0lkMzUxV0prd29OZk80bzZoQWtuSmxkbXFQdjR6UkRGZ2F5NkRnS1NKTjFsZnlJX1dDTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T07:50:45.000Z",
-        "summary": "Anthropic Introduces Invisible Watermarks To Identify AI Content NDTV"
-      },
-      {
-        "title": "Anthropic’s Claude to mark all AI content, including text - The Hindu",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOYlZVRlV3NkJVTVFLODlpalpWTDFVbzlaYW9HTTVuVUFQN0VnQjJQOXcxMDhFUU5sR3ZTN043OGFNcFpuSTlrR1E4RU5ydG5fRXZvckg4MlhtWk5RNUdMTTBGRGplRS1xbF9UUERReGV2VkZJeHV5Q0luazNNY2dwbTN1ZTJZbDJiUzZjOGVZYkZHUVNUNWI2YVRGZE5Fd0RmZ0lLZzdXQjF4dW5EaC16clNzM3pudTJMX2ZLd9IBwwFBVV95cUxONVZPN1V4NmZCdTN3VXlpbWg3ZlZyOXRuUnA2WjVId2xzckYxelk5TjBnZGFTRjZRRVlvdlN0RndXbkJVT3BDYzNLUFJpTU9BTDUxOThjakVxRVc1eURaRzl6NVRvT2w2X0hvdDZwVWpUYTB3ZTVqNnpQV1R1OFR3V2JqOG1HX2ViZHNMamdSV2RFcHFkRW9MaVNiT2c2Y1FpYlhWLU9GdXROOEMxOW80NnY4Sm85U0RkamptampaNy1xUjQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T07:26:04.000Z",
-        "summary": "Anthropic’s Claude to mark all AI content, including text The Hindu"
-      },
-      {
-        "title": "Claude can now leave an invisible mark on your writing, even if you wrote it yourself - Notebookcheck",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNQ2NWUGtWSnNEN3RRNGJTRU1lVVhQUGROelRnX01saU5TTzFTdVV6b21sUHlqbUdMOF9DUE55N0hEM3pVVGxRcjRZSG9Za1dmMDRmNEdmYVhkVWM1Q2FGd2JHYS1fQjhJN3BhenREQjhmUmtoQ1pIdmxiMEdUOThOc3BTUnpVVUg1eFJHaWtrZG4xSTRuMXZoZ0lDTWpZWVlERDhwd2Uxd1d3VjVMS0Zvem83TTdteUJNcXktNmRyTVlZR1pIMXRNRQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-11T07:05:00.000Z",
-        "summary": "Claude can now leave an invisible mark on your writing, even if you wrote it yourself Notebookcheck"
       },
       {
         "title": "How Icelanders are thinking about AI",
