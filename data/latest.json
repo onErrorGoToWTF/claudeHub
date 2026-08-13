@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T12:39:07.954Z",
+  "generated_at": "2026-08-13T14:48:34.473Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,60 @@
     ],
     "news": [
       {
+        "title": "Anthropic Will Watermark AI Content, A Win for Audiences? - tech.co",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE93OVVCcmxNOU9Gb0lDT3JxQXB6ZnMtMUxDajhUS1RTUjhpZldLN3ZjTGUwMm5MZ3pyVmI5LWRfLTJFT2RBeU9rQjB2RWhmaXh4U3lGX3pFczFSMFduV18xMDNtdjVTREU?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T14:04:11.000Z",
+        "summary": "Anthropic Will Watermark AI Content, A Win for Audiences? tech.co"
+      },
+      {
+        "title": "Anthropic could be worth $2 trillion when it goes public",
+        "url": "https://arstechnica.com/ai/2026/08/anthropic-could-be-worth-2-trillion-when-it-goes-public/",
+        "source": "Ars Technica",
+        "published": "2026-08-13T13:58:56.000Z",
+        "summary": "Anthropic investors expect the AI startup to float at a valuation of $2 trillion or more in October, a dizzying figure that would eclipse SpaceX and make the AI lab’s debut the largest-ever initial…"
+      },
+      {
+        "title": "FT: Investors eye $2trn Anthropic valuation in record IPO - Silicon Republic",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNZ2tQbEpBSXdKTDJKN3pza3JQQ3lpZDRNWUxtUUltNFNWTHZhdEc3VmxEMTdIbWZEMy0tMkxnSFlSLVNzTWIzd0FVbnh1bkZlWnQzWmItOUxFRHJlTTRPVDhZNXBxaXNHS3F0TlJ6VzBCSWNTR0ZwemNoZHVwOWlBcXkyZzBFQnRVN0diekFWQ21fZzZ5UHZINnc3Snk?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T13:52:30.000Z",
+        "summary": "FT: Investors eye $2trn Anthropic valuation in record IPO Silicon Republic"
+      },
+      {
+        "title": "Claude Just Broke A Math Record That Stood For 37 Years - Forbes",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQR3hpMVBXbml2T0JTczZDUmMtSXN4amlmaXpoeVVjSU9DQUFSRlk1Mm55RVo5VFFGYTBEb0ZnRzVXaUF3UmNucmNYMG9ZZkpwZmhoUDBEQWtfU0Q4Z2xwUnA3eUs1bzdhOEl6enozeDJQMXByd0daMG1mOUFWeXgwVmZvMjFhU2E2VGFJb2VWRUNuRFQzNGJJVVBVVTlpZUduU01DNHowS21Ua0k?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T13:41:08.000Z",
+        "summary": "Claude Just Broke A Math Record That Stood For 37 Years Forbes"
+      },
+      {
+        "title": "Anthropic’s Boris Cherny Says AI Coding Bugs Are Getting Harder: ‘Less Off-by-Ones,’ More System Design Problems - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOUkVTS0w2czZKZ0ZmcnhjX1B6LU0wNUpQaDZZUmwzMDE3TnN1N1pOVmF5bmJlWl9DVWNrMmJPZEk0Sl85bzJOOUdCWEZYQTROdWt4OVVTVHlQZVBoTl9ZcWtNLW5hMlF2QkItdkFNRmxKamRvV3dLbkI5QUVxQ2xla3o5Y3VGVml6bnNmTUlTeWE?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T13:31:02.000Z",
+        "summary": "Anthropic’s Boris Cherny Says AI Coding Bugs Are Getting Harder: ‘Less Off-by-Ones,’ More System Design Problems Yahoo Tech"
+      },
+      {
+        "title": "Claude Code Captures 75% of Developers in New Survey - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQa19IeDlVS3VfSm5rZV9MdWdpRTlRdVFJYUtZTE55anV5OWpaRGo0NFZuUjdRTFhuQ3drUjFZMm5OTHVpazY1azZNT2dhRHdrRjVDOFZXWEFZMVVNNW9SNkpfejZLQThQME9wWWQ1NG1uM3hnOEFhTVdJZkVZTUJKVXZtUHVNVWxPMVRLMQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T12:40:00.000Z",
+        "summary": "Claude Code Captures 75% of Developers in New Survey The Tech Buzz"
+      },
+      {
         "title": "Claude's Watermark Proves It Was Used, Not Who Wrote It - Forbes",
         "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNVWdFak5OTW92TzQ1cmp5bGh4UFVHQUFVSkpLd0NTR3EzckVYXzk2NkNLdlZJeGhxSUpRcWp3TDRZVlhJb0UzcEJGYzNadEY0YUNiM3YyUUFVeXJwXzU5MnUwWDdLclJ4ZW5Ua1dYRGRTUnBPTmk0enNLY0J6RTFoTlAwaUVOSEd0a0xRa01OcXlmRWptZE9YUzFRZEdtU2hpTTk4TmpmZ2RJR2J0UGc?oc=5",
         "source": "Google News",
         "published": "2026-08-13T12:35:23.000Z",
         "summary": "Claude's Watermark Proves It Was Used, Not Who Wrote It Forbes"
+      },
+      {
+        "title": "SpaceX Stock Slips After Surge as Grok Release Ramps Up AI War - Barron's",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPZndfNXBLckVYUDVORVU2SDN3cE9sWmxJMldPSklQSGpGT2xmWERYZEJMVDF1ZnAxRllONklYVGNqQVdVb3J5Sm1xZmNReDQtajY0VTd0UDZiXzVPenhCWUIxMGJRU3BTWm9FSDVOcjBEM0l5MlVqZmx1T2thaVFOaFdwd2NJQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T12:21:00.000Z",
+        "summary": "SpaceX Stock Slips After Surge as Grok Release Ramps Up AI War Barron's"
       },
       {
         "title": "Anthropic in talks to acquire Israeli AI startup Decart for $6 billion - qz.com",
@@ -160,13 +209,6 @@
         "summary": "Anthropic in talks to acquire Israeli AI startup Decart for $6 billion qz.com"
       },
       {
-        "title": "Anthropic in talks to buy Decart AI, source says - ETHRWorld.com",
-        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPV013bXRibjBlQzZLcl9rUEx0Smlna1NvNzI0anVORHBoQlBUZzk2NTh5RUswOExzSUJ2N2QxQk9WdWdyMVBIS2lDc2QtRUN2cjZYTWxzMEpLcE14MG51VFgwMHZWWWwzMHExRGFTeXpYXzkxYUFwNlJXdTBoMUlEZW53clJTNi1iUUtMT0lyVHhxYlU3Um9BanhHdV9VcTEwODZOYkhrR1h3X3JuYjNmZXJCMHZ4bmpTVXBEcTJNZmZlZS10X0hDUE9RdHNBUE1tb0phRnN0WER3SXVWdGltekUyYWV4WXNGVGFqZmhKamhydEJzRVR0ddIBtgFBVV95cUxOMWNncndDbkN4N2p0SXE4TnEyUTB3RFBqMkxWcGx4VTlrd0ZGWHl1SUtIR0RaYVBoVmN2Z09XaHFMMVU4cml5bUlGV2NIcFBUQUZXOW1PemlnZDBycUNTVk1iNm1NLVRSZHVLczdCSHNjZ3J6c25wTHB1V3kzQ1kwQ09vUkxER1N1RjM2NzJta1pWSEQwTWpHZlpIRE1BeTBaOUVjNTFxNzFWRGsyaTFkRTJMSlJzZw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T12:09:08.000Z",
-        "summary": "Anthropic in talks to buy Decart AI, source says ETHRWorld.com"
-      },
-      {
         "title": "Anthropic in talks to purchase Decart AI - Finextra Research",
         "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeUFLeXloRUtzQ19IQjd1YnR5R1lkbmJESWY0TVAtTEVLVHJLenYxT3lnTGFnbGhLT1RoQnd6X0U2MGJrVTM2NE1wT3VwR3BoVTFhQnc4Y2E0TUxMWmtnTEFKRUdkLUdOb3NqWkJhWmZ2ZjdMTDNySkQ2NTlYSVVXYUtDSXNGU1hfd1Zr?oc=5",
         "source": "Google News",
@@ -174,11 +216,11 @@
         "summary": "Anthropic in talks to purchase Decart AI Finextra Research"
       },
       {
-        "title": "Techies have concerns about Claude's hidden watermark. Anthropic has some answers. - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVnJ3dFoxSl9YdWhLa2lYaHg4Y3hNR1pjNFVfcnh5SE1XdVpSSmp2cTFGSkR2eDNQN3EtZXZOc09RTWhmZmVKcGtQOW5EUjZJT09zaWs5R0NoaVJHTHFzWG1xOC1aeHhwd1R5eGtfWVFCYWdablNPOUtpS2hxMEh0blVMWEpZdTd4bjFscHo2SXE4Z0gxb2RlZnVlMmp2NE9XV3RSbQ?oc=5",
+        "title": "Anthropic Will Embed Watermarks in AI Outputs - Artificial Lawyer",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQM2hzb1dVS01SVjRVME81X2tJQVRxWEZpb2k0U3RueFZqUktfZVhQZTJPaDZEeE1CNW5jMTlyNnVpcnRxbkNZUjdRYjJpM1dCblRJMU5FZDVKUERPTkZDMXZfc1Y2aDVpZlVabURjRjRGN3gzWVU2TVRjdzBTZEJScHRKWFFfX3RqeDB3MFQ1c1FGd3dm?oc=5",
         "source": "Google News",
-        "published": "2026-08-13T11:37:11.000Z",
-        "summary": "Techies have concerns about Claude's hidden watermark. Anthropic has some answers. Business Insider"
+        "published": "2026-08-13T11:37:08.000Z",
+        "summary": "Anthropic Will Embed Watermarks in AI Outputs Artificial Lawyer"
       },
       {
         "title": "Claude's new Scarlet Letter watermark is invisible—for now",
@@ -186,6 +228,13 @@
         "source": "Ars Technica",
         "published": "2026-08-13T11:10:18.000Z",
         "summary": "Anthropic has revealed that it will soon watermark content that is processed ( not just generated! ) by any of its models. In a support article , Anthropic explained that it was rolling out…"
+      },
+      {
+        "title": "Claude’s new Scarlet Letter watermark is invisible—for now - arstechnica.com",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOOU5IeV8wcUd4R0NQc05oaHFsb1E1ME11OXpwd2JaQVAzWnVQM2RpRzIxTW9peXJvM2dqazB1MHBuVlY4LUtKVnVuWU01WTBfYkh3OTdzdnk5aXpVRC0tSGpoT01EMzVUSHZZYXpta05pNS1iLXF0ZnJDRk9Ecnk4ZWI3WTJMXzhza3BUQkxVOVJDc2l2MXo1c1JuM1otZjBaeE1TaQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T11:10:18.000Z",
+        "summary": "Claude’s new Scarlet Letter watermark is invisible—for now arstechnica.com"
       },
       {
         "title": "FiscalNote Launches PolicyNote MCP in Anthropic's Claude Connectors Directory, Expanding Access to Its Policy Intelligence Amid Accelerating Enterprise Adoption - Yahoo Finance",
@@ -204,7 +253,7 @@
       {
         "title": "Claude users are mad that Anthropic's new watermarks will catch them using it",
         "url": "https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/",
-        "source": "HN · 50↑",
+        "source": "HN · 56↑",
         "hn_id": "49283891",
         "published": "2026-08-13T10:23:51.000Z",
         "summary": ""
@@ -217,11 +266,11 @@
         "summary": "Anthropic brings Claude Cowork to its Chrome extension, adding skills and plugins to the browser the-decoder.com"
       },
       {
-        "title": "Anthropic Eyes $2 Trillion IPO Valuation, Jim Cramer Says the Revenue Backs It Up - BeInCrypto",
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8wajlWZDZqaWtvVXBDX3dKcFV5MHplWnpnZGZRSlFKUnF4ei15SnpsUzlTOVFHa2VLYTdmXzUzYU54REExVEdPUzFOSy1La1pxeEZUQUZlekF3VWZRaURSa1pSanZCLVdqQkE?oc=5",
+        "title": "Anthropic Eyes $2 Trillion IPO Valuation, Jim Cramer Says the Revenue Backs It Up - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNNTR3cEZ1SlJKajFjYTUyeWxoWTM4eVBMd1pmNWYwVWtOTzlfVG0tTmVWQjN4Smd3N3ZieW12SkN2U0pzeEk5Zkc2cWEybUdhUGE2Q0Q3VExEcndhTzdqNDVsNURzd2YtUUFXcGZOb0ZESnFRZXY0YndvbW4wd0J5b3Flb2wzc0FyQUJrVVQ4MkVfcUFMMUxnMA?oc=5",
         "source": "Google News",
-        "published": "2026-08-13T10:02:00.000Z",
-        "summary": "Anthropic Eyes $2 Trillion IPO Valuation, Jim Cramer Says the Revenue Backs It Up BeInCrypto"
+        "published": "2026-08-13T10:02:26.000Z",
+        "summary": "Anthropic Eyes $2 Trillion IPO Valuation, Jim Cramer Says the Revenue Backs It Up Yahoo Finance"
       },
       {
         "title": "Can Anthropic Stage the Largest IPO in History at Over $2tn? - AI Magazine",
@@ -231,16 +280,9 @@
         "summary": "Can Anthropic Stage the Largest IPO in History at Over $2tn? AI Magazine"
       },
       {
-        "title": "FT: Investors eye $2trn Anthropic valuation in record IPO - Silicon Republic",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNZ2tQbEpBSXdKTDJKN3pza3JQQ3lpZDRNWUxtUUltNFNWTHZhdEc3VmxEMTdIbWZEMy0tMkxnSFlSLVNzTWIzd0FVbnh1bkZlWnQzWmItOUxFRHJlTTRPVDhZNXBxaXNHS3F0TlJ6VzBCSWNTR0ZwemNoZHVwOWlBcXkyZzBFQnRVN0diekFWQ21fZzZ5UHZINnc3Snk?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T09:35:25.000Z",
-        "summary": "FT: Investors eye $2trn Anthropic valuation in record IPO Silicon Republic"
-      },
-      {
         "title": "If I own Claude's outputs why can't I train my own model on them?",
         "url": "https://support.claude.com/en/articles/12326764-can-i-use-my-outputs-to-train-an-ai-model",
-        "source": "HN · 75↑",
+        "source": "HN · 80↑",
         "hn_id": "49283563",
         "published": "2026-08-13T09:34:13.000Z",
         "summary": ""
@@ -267,60 +309,18 @@
         "summary": "Anthropic rolls out global watermarking for Claude Computing UK"
       },
       {
-        "title": "Claude will embed an invisible watermark in all its generated text - Korben",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE50c1hOMUMzZWU5bnpWWEN4OEc2bUZnMUpIYllSb3pIQ1VETnBYSUY5cnBMQk9HU3ZwUEJlTVl1dDlIcl9vU19ER25IWEEtQUR3Y3lWTGt0a0RQMmFoTVYxNHU5bGhHZFpWM2RoZHVMZmdhYm1GVDFzcg?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T08:10:46.000Z",
-        "summary": "Claude will embed an invisible watermark in all its generated text Korben"
-      },
-      {
-        "title": "Anthropic is adding imperceptible, model-level watermarks to Claude's AI-generated text - TweakTown",
+        "title": "Anthropic is adding imperceptible, model-level watermarks to Claude's AI-generated text - tweaktown.com",
         "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQUWdTcElQb0NNOHNfUFJ3MUI5WUdXY0hSYXBRSnJPWmdSazlabnJVTkNoNjNJZzcwZ2hleHliWlhTMFZVU2JPNkFTTWQ1UExwcEtkdEhOd2lwbE9yQ0d1b2JnMHVwdjR3WHQ0X2h4b0laVjZ4cE5qZm1SSXl0NjlmcWEtOVpCM3NYYlBvcVhobXl2eW4tRFpuTlA1MFdGN2xGSTJYeDdKa0R4U2dlYlBrQTdNUXVOMW9WYW5XR29VWWhJTHo5aDlRN2FZUlQ4NDQ?oc=5",
         "source": "Google News",
         "published": "2026-08-13T08:03:07.000Z",
-        "summary": "Anthropic is adding imperceptible, model-level watermarks to Claude's AI-generated text TweakTown"
+        "summary": "Anthropic is adding imperceptible, model-level watermarks to Claude's AI-generated text tweaktown.com"
       },
       {
-        "title": "Anthropic launches watermarking in Claude AI te... - Pluang",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOTWh2eVl6YkN5TzdVdmd5Y21PWHpKSTF3SUpUTEF1cmNfckZ4aVZpSWZFR2tZNzhOVllDTjFHdnNEN1hnM0EtN0NmcklNZ0ktQkw2RjZpZ2llTlMxNlFRRWlLUGRubEdKa0hJQTdLSG80TDJlVVlvcWgtSkF2NXB1RVVMUzluUHdRQnllX1g3Z2hFRjYxQ2p5R3loekJMenY5QlJaNlpzcVdUZHRR?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T07:49:33.000Z",
-        "summary": "Anthropic launches watermarking in Claude AI te... Pluang"
-      },
-      {
-        "title": "Anthropic in talks to buy Israeli AI startup Decart for about $6bn - Yahoo Finance UK",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPNWZ3LXRfLWtvamFBdGNKM3lac2VtZ1BvXzVyRFJRdHY3bGhDS25ocUxuOVZfMU82cTIxV2g2MDRrZzFRZTdUV3FVS25QYzMycFlYMmhVM19GUzhXY0VqeDMxWDhXQ2hLVEp3MUFpUmx4S0JoMWE5Qng2MThUM21hRlE0SjVldw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T07:41:00.000Z",
-        "summary": "Anthropic in talks to buy Israeli AI startup Decart for about $6bn Yahoo Finance UK"
-      },
-      {
-        "title": "Explaining Anthropic’s New Watermarking Of Claude AI-Generated Outputs And What It Signifies For Society - Forbes",
-        "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPOENtMmd2M1ZfaUdiWU1reUdGM3pkVlJuTlo5XzkzT0hEYTlXSnZGdGFBSURDaXZ1bEJlTmlUNi1YX082MmJnSUx5T2RzS2JNT2ZPNHZyYTR1Q25GRWZlbTBzVndlSUpPR1lhLTVaWmV3QWloYng5MVB2bnh0YS1pc2F3akk4dE93YVdxbGNkT3FidWRmUHVFM0g3aU5LWkU4NzcyQnhKWG5xMkFFb0xMTlRzY0RiRV9vQUIxbGE4a2hkM1liMXVMN2Ftd2FjNUZSYjd4RWxVdUMwREV2RnFFVUExclFRWmZyTUZZ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T07:15:00.000Z",
-        "summary": "Explaining Anthropic’s New Watermarking Of Claude AI-Generated Outputs And What It Signifies For Society Forbes"
-      },
-      {
-        "title": "Anthropic In Negotiations To Acquire Israeli Decart AI For $6 Billion - Report - i24NEWS",
+        "title": "Anthropic in negotiations to acquire Israeli startup Decart AI for $6 billion - report - i24news.tv",
         "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNkh5Z21DelNXQ2FUVkhjUFc3YjFuU2pRcU50djBNcnR2NlVyRTNkVGZwdHdadnRFLVU4TXAxa3NibDdmblRFWUtIbTdhZFI0VnR0WU9LTXVoYjlsX2c2NWV6ZFhrSzlKOTBxT294QXRvbFQ0NVVUd0dTVWJaY01Ka2UtWWV0Qjl4c0dyYkh0Z1lzRVU4eW81MjJTSWVnNi03Mm5ndTlNQ2s3V1BuamZNLTVhUUl2MFBKdFVENXQ2VW93UQ?oc=5",
         "source": "Google News",
-        "published": "2026-08-13T07:02:22.000Z",
-        "summary": "Anthropic In Negotiations To Acquire Israeli Decart AI For $6 Billion - Report i24NEWS"
-      },
-      {
-        "title": "Anthropic is eyeing Decart and a major foothold in Israel - calcalistech.com",
-        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9jVlJKenBIbDVOOEF4YkZ1dUVmWlVOU3pnYUI3WWtRNklsajYwUFR6TTE3OXhDaVpwd0VLb3FIV055MVB6NnpKRWlRaURsZktHdmFtS2FyTV9MS01rWG5UMUpxb2hncGJQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T06:47:00.000Z",
-        "summary": "Anthropic is eyeing Decart and a major foothold in Israel calcalistech.com"
-      },
-      {
-        "title": "Anthropic aims to make compute more efficient through Decart - Techzine Global",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUkFNRzFZYjY1NHRiLWY1dGVxWFlUaWVPV1FObTlBNDR1X3dOMjZuc3VEMzJGcm5yTmlNdXY4WHBDdll4aHB1dmQ0YlZCakkyTnVtSmp0UHJySDRVczlYc2E1OW9sQ0NvSG5GVkY1dmt3ZDRUVTlHXzBPQnZGZHpMWGwyZVU4Tzh3MTNuMWtnb2RFbXhkMW9wTU9DWm43bEJiTmtUNTlrOWlIVWhOejh1VjJ3?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T06:43:00.000Z",
-        "summary": "Anthropic aims to make compute more efficient through Decart Techzine Global"
+        "published": "2026-08-13T07:29:22.000Z",
+        "summary": "Anthropic in negotiations to acquire Israeli startup Decart AI for $6 billion - report i24news.tv"
       },
       {
         "title": "Grok 4.6 is Claude Fable 5, but dirt cheap",
@@ -403,18 +403,6 @@
         "video_id": "5NJpJAxygX8",
         "thumbnail": "https://i.ytimg.com/vi/5NJpJAxygX8/hqdefault.jpg",
         "published": "2026-08-10T02:55:17.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Claude-isms belong on a shirt",
-        "url": "https://www.youtube.com/shorts/RpAtSQEYq0I",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "RpAtSQEYq0I",
-        "thumbnail": "https://i.ytimg.com/vi/RpAtSQEYq0I/hqdefault.jpg",
-        "published": "2026-08-09T23:30:42.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -625,6 +613,13 @@
     ],
     "status": [
       {
+        "title": "Elevated errors for Claude Mythos 5, Claude Fable 5, and Claude Sonnet 5",
+        "url": "https://status.claude.com/incidents/j160kkjmm2n1",
+        "source": "Claude Status",
+        "published": "2026-08-13T14:33:45.000Z",
+        "summary": "Aug 13 , 14:33 UTC Investigating - We are investigating elevated errors on requests to Claude Mythos 5, Claude Fable 5, and Claude Sonnet 5. We will provide an update as soon as possible."
+      },
+      {
         "title": "Degraded performance for multiple models",
         "url": "https://status.claude.com/incidents/rk6gkg2gwfny",
         "source": "Claude Status",
@@ -700,16 +695,20 @@
         "source": "Claude Status",
         "published": "2026-07-30T10:48:56.000Z",
         "summary": "Jul 30 , 10:48 UTC Resolved - This incident has been resolved. Jul 30 , 10:23 UTC Update - We are also investigating issues with Opus 4.7 and Opus 4.5. Jul 30 , 10:03 UTC Monitoring - As of 2:58 PT…"
-      },
-      {
-        "title": "Elevated errors across all models",
-        "url": "https://status.claude.com/incidents/q2kg8n613kr3",
-        "source": "Claude Status",
-        "published": "2026-07-29T22:36:20.000Z",
-        "summary": "Jul 29 , 22:36 UTC Resolved - This issue has been resolved. Jul 29 , 22:20 UTC Monitoring - From 12:45 PT / 19:45 UTC through to 1:26 PT / 21:26 UTC, we saw elevated rates of errors across Claude…"
       }
     ],
     "youtube": [
+      {
+        "title": "Claude Connectors - Full Tutorial (Custom MCP Server + OAuth)",
+        "url": "https://www.youtube.com/watch?v=N2Ogvx_U8uM",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "N2Ogvx_U8uM",
+        "thumbnail": "https://i.ytimg.com/vi/N2Ogvx_U8uM/hqdefault.jpg",
+        "published": "2026-08-13T13:00:05.000Z",
+        "summary": ""
+      },
       {
         "title": "Grok 4.6 is Claude Fable 5, but dirt cheap",
         "url": "https://www.youtube.com/watch?v=3-ahsHfFjwk",
@@ -785,17 +784,6 @@
         "video_id": "5NJpJAxygX8",
         "thumbnail": "https://i.ytimg.com/vi/5NJpJAxygX8/hqdefault.jpg",
         "published": "2026-08-10T02:55:17.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude-isms belong on a shirt",
-        "url": "https://www.youtube.com/shorts/RpAtSQEYq0I",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "RpAtSQEYq0I",
-        "thumbnail": "https://i.ytimg.com/vi/RpAtSQEYq0I/hqdefault.jpg",
-        "published": "2026-08-09T23:30:42.000Z",
         "summary": ""
       },
       {
@@ -1042,6 +1030,18 @@
       }
     ],
     "tutorials": [
+      {
+        "title": "Claude Connectors - Full Tutorial (Custom MCP Server + OAuth)",
+        "url": "https://www.youtube.com/watch?v=N2Ogvx_U8uM",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "N2Ogvx_U8uM",
+        "thumbnail": "https://i.ytimg.com/vi/N2Ogvx_U8uM/hqdefault.jpg",
+        "published": "2026-08-13T13:00:05.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
       {
         "title": "v2.1.231",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
@@ -1745,6 +1745,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Claude Connectors - Full Tutorial (Custom MCP Server + OAuth)",
+        "url": "https://www.youtube.com/watch?v=N2Ogvx_U8uM",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-08-13T13:00:05.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.231",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
         "source": "Claude Code",
@@ -1840,13 +1847,6 @@
         "url": "https://platform.claude.com/docs/en/release-notes/overview#august-10-2026",
         "source": "Claude API Release Notes",
         "published": "2026-08-10T00:00:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude-isms belong on a shirt",
-        "url": "https://www.youtube.com/shorts/RpAtSQEYq0I",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-08-09T23:30:42.000Z",
         "summary": ""
       },
       {
