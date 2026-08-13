@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T18:43:27.462Z",
+  "generated_at": "2026-08-13T20:27:07.682Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,44 @@
     ],
     "news": [
       {
+        "title": "OpenAI, Anthropic Tout New Metric to Better Gauge AI’s Cost",
+        "url": "https://www.bloomberg.com/news/newsletters/2026-08-13/openai-anthropic-tout-new-metric-to-better-gauge-ai-s-cost",
+        "source": "Bloomberg",
+        "published": "2026-08-13T20:07:19.000Z",
+        "summary": "The AI firms want customers to rethink the price of using their models."
+      },
+      {
+        "title": "MCP is completely backwards",
+        "url": "https://www.youtube.com/shorts/lEjcEDbMyWg",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "lEjcEDbMyWg",
+        "thumbnail": "https://i.ytimg.com/vi/lEjcEDbMyWg/hqdefault.jpg",
+        "published": "2026-08-13T20:00:30.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic's Claude Will Now Add Invisible Watermarks to Text, Image Outputs - PCMag",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQldRc1A5V2JwLWFyREsyWkt3d2JzN3pZZHY0eV9jYVc5WGZuY1RGd0lmNDQwaFRNcjBoZHpEQzZzNUhFVFZVa3VXME5fSVo4OS1fVXM1Zk0xZ1BvQlBHLVFiTng2RWVWcW1HSndEMm5JQ3B5eEtZelg1WERwWGhTQ0QyYkJ3TXlCNlYwTi1sQkxtdHB5a0ZJS3Y1aEhDZDVuaEE?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T19:45:45.000Z",
+        "summary": "Anthropic's Claude Will Now Add Invisible Watermarks to Text, Image Outputs PCMag"
+      },
+      {
+        "title": "OpenAI introduces ‘Ultrafast,’ a new mode that makes GPT-5.6 Sol work at 14x the speed",
+        "url": "https://techcrunch.com/2026/08/13/openai-introduces-ultrafast-a-new-mode-that-makes-gpt-5-6-sol-work-at-14x-the-speed/",
+        "source": "TechCrunch",
+        "published": "2026-08-13T19:22:40.000Z",
+        "summary": "OpenAI is launching a preview of a sped up version of its latest, most powerful model, in an effort to court enterprise users."
+      },
+      {
         "title": "Anthropic set AI agents loose on the same task. They started a turf war.",
         "url": "https://techcrunch.com/2026/08/13/anthropic-set-ai-agents-loose-on-the-same-task-they-started-a-turf-war/",
         "source": "TechCrunch",
         "published": "2026-08-13T18:28:14.000Z",
-        "summary": "Anthropic researchers found AI agents can clash, collude and coordinate in unexpected ways, raising new questions about whether today’s safety tests capture the risks of multi-agent systems."
+        "summary": "Anthropic researchers found AI agents can clash, collude, and coordinate in unexpected ways, raising new questions about whether today’s safety tests capture the risks of multi-agent systems."
       },
       {
         "title": "Anthropic's Claude tried to solve the Riemann hypothesis and found something new instead - TechSpot",
@@ -165,6 +198,13 @@
         "source": "Google News",
         "published": "2026-08-13T18:21:20.000Z",
         "summary": "Anthropic Has Filed For An IPO But Has Not Yet Discussed a Valuation: Report International Business Times"
+      },
+      {
+        "title": "Anthropic Will Watermark AI Content, A Win for Audiences? - tech.co",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE93OVVCcmxNOU9Gb0lDT3JxQXB6ZnMtMUxDajhUS1RTUjhpZldLN3ZjTGUwMm5MZ3pyVmI5LWRfLTJFT2RBeU9rQjB2RWhmaXh4U3lGX3pFczFSMFduV18xMDNtdjVTREU?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T18:17:28.000Z",
+        "summary": "Anthropic Will Watermark AI Content, A Win for Audiences? tech.co"
       },
       {
         "title": "Anthropic Targets $2 Trillion IPO Record; Export Control That Froze June Revenue Remains Active - Tech Times",
@@ -202,20 +242,6 @@
         "summary": "Anthropic PBC is in talks to buy the artificial intelligence startup Decart AI for about $6 billion, according to people familiar with the matter, in what would be the Claude maker’s largest known…"
       },
       {
-        "title": "Anthropic's Claude Will Now Add Invisible Watermarks to Text, Image Outputs - PCMag",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQldRc1A5V2JwLWFyREsyWkt3d2JzN3pZZHY0eV9jYVc5WGZuY1RGd0lmNDQwaFRNcjBoZHpEQzZzNUhFVFZVa3VXME5fSVo4OS1fVXM1Zk0xZ1BvQlBHLVFiTng2RWVWcW1HSndEMm5JQ3B5eEtZelg1WERwWGhTQ0QyYkJ3TXlCNlYwTi1sQkxtdHB5a0ZJS3Y1aEhDZDVuaEE?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T16:57:21.000Z",
-        "summary": "Anthropic's Claude Will Now Add Invisible Watermarks to Text, Image Outputs PCMag"
-      },
-      {
-        "title": "DeepSeek Harness launches as open source rival to Claude Code, alongside V4-Pro on API with higher prices - Venturebeat",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQeVA0OGxrdGxzcGV1VUtwei1fLVFhNUE4M3BNd0lLb1hpS2xoNXlWUzJzWU1YUDM4dElQVjIwcm1qQWsxeUdoOEF6ZGEta1lEaEJLd3g4bE5ITUtqLVpZSlp3X21LZDd5T3lPelI0cHhBaEdiOTBrYkdRbV9td1c4bWVCdUlUNGNjTmx1RTI2T19QMEtyTGZPWW42Z1BQVzRPdjZ6UkNyd3hfWFdQWVU1LTMtdEtpeE84S1FzbmdOLVZmWFRrVk5aLVJsbW5nSzdrU0RIRUNR?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T16:47:55.000Z",
-        "summary": "DeepSeek Harness launches as open source rival to Claude Code, alongside V4-Pro on API with higher prices Venturebeat"
-      },
-      {
         "title": "Anthropic Eyes $6 Billion Decart Deal | Open Interest 8/13/2026",
         "url": "https://www.bloomberg.com/news/videos/2026-08-13/open-interest-8-13-2026-video",
         "source": "Bloomberg",
@@ -230,18 +256,11 @@
         "summary": "Why Anthropic’s Claude Watermark May Be A New Text-Marking Method Search Engine Journal"
       },
       {
-        "title": "Claude users outraged by new Anthropic change - Yahoo Finance UK",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNR2wtOHlYbHlvYUJzNzdzSDNROTJqRkczOHQtTmFQRHM1ZlZZeThxejA0eXZmNlR1eFp5Y0tfamdMVHZORGpJaEJTQkpEUFpZSFQ3aGp6eGYxUTFxNXJoTjZqVmlkN1ZQeDQ2WEcyQ1Bvc1k5Ym5mQnBKQlFnU0o1d2Yxc28wcXFDSkNLNEZHcWs?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T15:19:27.000Z",
-        "summary": "Claude users outraged by new Anthropic change Yahoo Finance UK"
-      },
-      {
-        "title": "Claude users outraged by new change - The Independent",
+        "title": "Claude users outraged by new Anthropic change - The Independent",
         "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNNFpPZElXYkszZHhCS3BkT3hxVVRvY2JpLW1ncnh2ZFVoM1RfaWc3dkpGOWlvTFd6YnRtVEZwNE1fN1R2bDFLZl95cVR0VGZlWDBNcHFHdW4xa3JnZXB0TVRTcnhxdEw5RGxhamlkNG9jQ3FMOWhmTkZBS1ZaYlVNcG5IdC1iZ21vTnFSNjBvVQ?oc=5",
         "source": "Google News",
         "published": "2026-08-13T15:19:00.000Z",
-        "summary": "Claude users outraged by new change The Independent"
+        "summary": "Claude users outraged by new Anthropic change The Independent"
       },
       {
         "title": "Anthropic Reportedly Eyes $6 Billion Deal For Nvidia-Backed Decart AI Ahead Of Its IPO - International Business Times",
@@ -249,27 +268,6 @@
         "source": "Google News",
         "published": "2026-08-13T14:55:14.000Z",
         "summary": "Anthropic Reportedly Eyes $6 Billion Deal For Nvidia-Backed Decart AI Ahead Of Its IPO International Business Times"
-      },
-      {
-        "title": "Claude watermark marks more than the EU AI Act asks - The Next Web",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPdkZwVmx6RmNIZzhsUGp3T01BLU5KdFpsWTktMlhuYjdheGZfU2NNYzk5YXYxSGZHMUNVbmljVTNFLWpId0w1eDY0MXFkSl9Ua1hpVEN1QXdNRzIzbGdKeHYxV3UxWE1BOGJhLVVPNmZIb3ZwNWt3RmhFdWMtM3BqVjdaM3BDUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T14:41:20.000Z",
-        "summary": "Claude watermark marks more than the EU AI Act asks The Next Web"
-      },
-      {
-        "title": "Anthropic in Talks to Buy AI Startup Decart for $6 Billion - Bloomberg.com",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcndiYjc4YjFtVWFuSWFlRDlpRENlLTV6R1NscU5wS2tCZW1YU1RTQlFDczBmelUxaDJDVVk4SlRuZ2t4cEtNbEw4eVJ6cnBwVGNHOHhadTVKREx2c0QyazF0bF9qeDlVLTJkY21GNjdzdXhJaGVMb1R2UnQ2eDNpSTVqcENRRE1nVWNhNm1IMUVpX0VkRDNyZzVxTmhjc181c0QtbkNCWjVGeXVEeEFic254TQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T14:39:18.000Z",
-        "summary": "Anthropic in Talks to Buy AI Startup Decart for $6 Billion Bloomberg.com"
-      },
-      {
-        "title": "Anthropic Will Watermark AI Content, A Win for Audiences? - tech.co",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE93OVVCcmxNOU9Gb0lDT3JxQXB6ZnMtMUxDajhUS1RTUjhpZldLN3ZjTGUwMm5MZ3pyVmI5LWRfLTJFT2RBeU9rQjB2RWhmaXh4U3lGX3pFczFSMFduV18xMDNtdjVTREU?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T14:04:11.000Z",
-        "summary": "Anthropic Will Watermark AI Content, A Win for Audiences? tech.co"
       },
       {
         "title": "Anthropic could be worth $2 trillion when it goes public",
@@ -282,13 +280,13 @@
         "title": "FT: Investors eye $2trn Anthropic valuation in record IPO - Silicon Republic",
         "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNZ2tQbEpBSXdKTDJKN3pza3JQQ3lpZDRNWUxtUUltNFNWTHZhdEc3VmxEMTdIbWZEMy0tMkxnSFlSLVNzTWIzd0FVbnh1bkZlWnQzWmItOUxFRHJlTTRPVDhZNXBxaXNHS3F0TlJ6VzBCSWNTR0ZwemNoZHVwOWlBcXkyZzBFQnRVN0diekFWQ21fZzZ5UHZINnc3Snk?oc=5",
         "source": "Google News",
-        "published": "2026-08-13T13:52:30.000Z",
+        "published": "2026-08-13T13:54:19.000Z",
         "summary": "FT: Investors eye $2trn Anthropic valuation in record IPO Silicon Republic"
       },
       {
         "title": "Anthropic: Introducing The Conceptual Reasoning Index",
         "url": "https://alignment.anthropic.com/2026/conceptual-reasoning-index/",
-        "source": "HN · 64↑",
+        "source": "HN · 66↑",
         "hn_id": "49285909",
         "published": "2026-08-13T13:48:14.000Z",
         "summary": ""
@@ -308,11 +306,11 @@
         "summary": "Anthropic’s Boris Cherny Says AI Coding Bugs Are Getting Harder: ‘Less Off-by-Ones,’ More System Design Problems Yahoo Tech"
       },
       {
-        "title": "Anthropic Will Embed Watermarks in AI Outputs - artificiallawyer.com",
+        "title": "Anthropic Will Embed Watermarks in AI Outputs - Artificial Lawyer",
         "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQM2hzb1dVS01SVjRVME81X2tJQVRxWEZpb2k0U3RueFZqUktfZVhQZTJPaDZEeE1CNW5jMTlyNnVpcnRxbkNZUjdRYjJpM1dCblRJMU5FZDVKUERPTkZDMXZfc1Y2aDVpZlVabURjRjRGN3gzWVU2TVRjdzBTZEJScHRKWFFfX3RqeDB3MFQ1c1FGd3dm?oc=5",
         "source": "Google News",
         "published": "2026-08-13T13:02:10.000Z",
-        "summary": "Anthropic Will Embed Watermarks in AI Outputs artificiallawyer.com"
+        "summary": "Anthropic Will Embed Watermarks in AI Outputs Artificial Lawyer"
       },
       {
         "title": "Claude Can Use Your Apps Now",
@@ -327,11 +325,25 @@
         "_kind": "news_video"
       },
       {
-        "title": "It’s Official: Claude Code Doesn’t Need Your Human Meatbag Input - inc.com",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNmRrN0ZlcE1TMFFwQ2wtTXZSNllYM2lEVGlHakREVVJVaWRvMW9vNDZmX001Rkp1VzRaeU9uU3VuVHU5S1AzRXNnTXFqZVpyOVR4SE1rbXpFbFhnNWJvWTAyUGQ2LWUxbWZmTGFRbUlMMV95dnNreUZGQy1IMkdMZDlIb2hONXhONFlBa1ZwaG5pR0lsRTJXOExwMjdiMEJGN3BGRE5R?oc=5",
+        "title": "Anthropic in talks to purchase Decart AI - Finextra Research",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeUFLeXloRUtzQ19IQjd1YnR5R1lkbmJESWY0TVAtTEVLVHJLenYxT3lnTGFnbGhLT1RoQnd6X0U2MGJrVTM2NE1wT3VwR3BoVTFhQnc4Y2E0TUxMWmtnTEFKRUdkLUdOb3NqWkJhWmZ2ZjdMTDNySkQ2NTlYSVVXYUtDSXNGU1hfd1Zr?oc=5",
         "source": "Google News",
-        "published": "2026-08-13T12:58:29.000Z",
-        "summary": "It’s Official: Claude Code Doesn’t Need Your Human Meatbag Input inc.com"
+        "published": "2026-08-13T12:50:00.000Z",
+        "summary": "Anthropic in talks to purchase Decart AI Finextra Research"
+      },
+      {
+        "title": "Claude Code Captures 75% of Developers in New Survey - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQa19IeDlVS3VfSm5rZV9MdWdpRTlRdVFJYUtZTE55anV5OWpaRGo0NFZuUjdRTFhuQ3drUjFZMm5OTHVpazY1azZNT2dhRHdrRjVDOFZXWEFZMVVNNW9SNkpfejZLQThQME9wWWQ1NG1uM3hnOEFhTVdJZkVZTUJKVXZtUHVNVWxPMVRLMQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T12:40:00.000Z",
+        "summary": "Claude Code Captures 75% of Developers in New Survey The Tech Buzz"
+      },
+      {
+        "title": "Claude's Watermark Proves It Was Used, Not Who Wrote It - Forbes",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNVWdFak5OTW92TzQ1cmp5bGh4UFVHQUFVSkpLd0NTR3EzckVYXzk2NkNLdlZJeGhxSUpRcWp3TDRZVlhJb0UzcEJGYzNadEY0YUNiM3YyUUFVeXJwXzU5MnUwWDdLclJ4ZW5Ua1dYRGRTUnBPTmk0enNLY0J6RTFoTlAwaUVOSEd0a0xRa01OcXlmRWptZE9YUzFRZEdtU2hpTTk4TmpmZ2RJR2J0UGc?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T12:35:23.000Z",
+        "summary": "Claude's Watermark Proves It Was Used, Not Who Wrote It Forbes"
       },
       {
         "title": "Grok 4.6 is Claude Fable 5, but dirt cheap",
@@ -710,6 +722,17 @@
     ],
     "youtube": [
       {
+        "title": "MCP is completely backwards",
+        "url": "https://www.youtube.com/shorts/lEjcEDbMyWg",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "lEjcEDbMyWg",
+        "thumbnail": "https://i.ytimg.com/vi/lEjcEDbMyWg/hqdefault.jpg",
+        "published": "2026-08-13T20:00:30.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Can Use Your Apps Now",
         "url": "https://www.youtube.com/watch?v=N2Ogvx_U8uM",
         "source": "Leon van Zyl",
@@ -1027,17 +1050,6 @@
         "thumbnail": "https://i.ytimg.com/vi/uU0RFxGv-Ks/hqdefault.jpg",
         "published": "2026-06-30T19:39:15.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic Just Released Its Best Model Ever (Mythos/Fable Deep Dive)",
-        "url": "https://www.youtube.com/watch?v=TtCWqjy3T5M",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "TtCWqjy3T5M",
-        "thumbnail": "https://i.ytimg.com/vi/TtCWqjy3T5M/hqdefault.jpg",
-        "published": "2026-06-09T22:03:25.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
@@ -1254,18 +1266,6 @@
         "video_id": "Vyyrvna-hUY",
         "thumbnail": "https://i.ytimg.com/vi/Vyyrvna-hUY/hqdefault.jpg",
         "published": "2026-07-16T18:25:15.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
-      },
-      {
-        "title": "Anthropic Just Released Its Best Model Ever (Mythos/Fable Deep Dive)",
-        "url": "https://www.youtube.com/watch?v=TtCWqjy3T5M",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "TtCWqjy3T5M",
-        "thumbnail": "https://i.ytimg.com/vi/TtCWqjy3T5M/hqdefault.jpg",
-        "published": "2026-06-09T22:03:25.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1743,6 +1743,13 @@
       }
     ],
     "claude_learning": [
+      {
+        "title": "MCP is completely backwards",
+        "url": "https://www.youtube.com/shorts/lEjcEDbMyWg",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-08-13T20:00:30.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Can Use Your Apps Now",
         "url": "https://www.youtube.com/watch?v=N2Ogvx_U8uM",
@@ -2224,13 +2231,6 @@
         "url": "https://www.youtube.com/watch?v=uU0RFxGv-Ks",
         "source": "YouTube · Alex Finn",
         "published": "2026-06-30T19:39:15.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Just Released Its Best Model Ever (Mythos/Fable Deep Dive)",
-        "url": "https://www.youtube.com/watch?v=TtCWqjy3T5M",
-        "source": "YouTube · Ryan & Matt Data Science",
-        "published": "2026-06-09T22:03:25.000Z",
         "summary": ""
       }
     ]
