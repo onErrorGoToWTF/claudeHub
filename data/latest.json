@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-08-14T16:37:15.428Z",
+  "generated_at": "2026-08-14T18:37:01.314Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Reviewing the Evidence on Worker Retraining Programs",
+        "url": "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs",
+        "source": "Anthropic Research",
+        "published": "2026-08-14T17:26:28.000Z",
+        "summary": ""
+      },
       {
         "title": "Riemann Zeta",
         "url": "https://www.anthropic.com/research/riemann-zeta",
@@ -15,13 +22,6 @@
         "url": "https://www.anthropic.com/research/multiagent-systems",
         "source": "Anthropic Research",
         "published": "2026-08-13T01:33:05.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Reviewing the Evidence on Worker Retraining Programs",
-        "url": "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs",
-        "source": "Anthropic Research",
-        "published": "2026-08-12T20:17:11.000Z",
         "summary": ""
       },
       {
@@ -146,11 +146,62 @@
     ],
     "news": [
       {
+        "title": "Tech analyst Ben Thompson dismisses the 'clearly absurd' concept embedded in AI watermarking - Business Insider",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNWHdocHVvcTlZS0hLWEJzUkZmZjVNZ01HYUpWaUdfSTNieWVKRzFjYlJoVFdnbjNPQWpLVVB6QlVwZHJWeUJLMF80RkJzUDAyYWZkTlAxbUJ4UkwzUDdISHJPa24wZ1JJcy1fWWhoOTdlZUx2OHZLVmpobVc2M1dFbWVzYV85OWp4TG0wXw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T18:12:12.000Z",
+        "summary": "Tech analyst Ben Thompson dismisses the 'clearly absurd' concept embedded in AI watermarking Business Insider"
+      },
+      {
+        "title": "Claude agents fought each other with self-replicating malware in Anthropic test - CryptoRank",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZUJiSUJYWXdyOXlNQktoRGlqNkVPZ0ZyUGZYeGRqdnhsczNPX3VhUnh4MElrVUMzdUZOd0pValJmWVZyM2dRZFFVanF6ck1BWWFSbUNvM2pTNEN6UXFlRmpYaTdHU1JDNjVGd1FXWlN1X25JMzBWUHk3TU5Ha2locnFn?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T17:49:00.000Z",
+        "summary": "Claude agents fought each other with self-replicating malware in Anthropic test CryptoRank"
+      },
+      {
+        "title": "Anthropic Reportedly Eyes $6 Billion Decart Acquisition to Boost AI Efficiency - TechRepublic",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcnZZMThjV2RjM3pteDQtTUN1SHFNaVNrdndXc0lfZGFnV1NaVFlzMjlCZklSVXBWYjdQdExfN3pXZGxwTUo3SFhNeUJBVGJ6bFNxcmJhVDVCZ2l3SHNoLXpTZlo0VFpPZERNYzlqMGVjczg1RU1CdnNuNVVvdXVYTXp5a3lDaFhNaFJjeHE3RQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T17:39:26.000Z",
+        "summary": "Anthropic Reportedly Eyes $6 Billion Decart Acquisition to Boost AI Efficiency TechRepublic"
+      },
+      {
+        "title": "Anthropic’s AI systems start attacking each other in new experiment - independent.co.uk",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNU1QyYUM3emdSSW84SUcyeEo3QmNydEVYbFduRU50cWt2OUxUNWlYbEZBdmY1dmJhNjlfSzRuazRNTi1Gdy05TmdkRXg5QkM1RG1NN1F4ZXJqaGREcWNfaFpwa29yNFVUUVJKTUt1R0xNdE1CbUFqZ1lfazlXWmtuR1ZKbUE0d0RLdmZXWnVVWTFCSlY4NGs4?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T16:59:00.000Z",
+        "summary": "Anthropic’s AI systems start attacking each other in new experiment independent.co.uk"
+      },
+      {
+        "title": "Maximizing the value of your Claude Code sessions",
+        "url": "https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions",
+        "source": "HN · 43↑",
+        "hn_id": "49300800",
+        "published": "2026-08-14T16:15:21.000Z",
+        "summary": ""
+      },
+      {
         "title": "Does Mark Zuckerberg really believe AI is ‘for everyone’?",
         "url": "https://techcrunch.com/video/does-mark-zuckerberg-really-believe-ai-is-for-everyone/",
         "source": "TechCrunch",
         "published": "2026-08-14T15:43:28.000Z",
         "summary": "Meta released Glimmer this week, an open-weight AI model anyone can download and run on their own hardware — a contrast to Muse Spark, the company’s more powerful model that stays locked behind its…"
+      },
+      {
+        "title": "Show HN: Graft – Claude Code hooks that cut grep tokens by 42%",
+        "url": "https://github.com/NanoNets/Graft",
+        "source": "HN · 35↑",
+        "hn_id": "49299985",
+        "published": "2026-08-14T15:22:02.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic’s Biggest Acquisition Could Be a $6 Billion Bet on Making Claude Run Faster - inc.com",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTUxDeWhaYklmb1ZUY2lyc2dPaG9pSWo5bmZfWVE3WndudkZoUGd0bENrak15M2tQcUc5c0VjVVYzRmV2TVpFMmJ0YWdmZEpRbzkxU0xiYmlSWU5OQnEzdXp2Y1AxZlRjd1Bfd3A0R3plZi0xMDE5VHNxY3NFZlV4UHE5cVhpR05hc3h4XzNNc3FZQjFnc1JGXy1ud29QU19oYkpGZ3l2aHNCUkZ5c2tjd0g1WQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T15:19:22.000Z",
+        "summary": "Anthropic’s Biggest Acquisition Could Be a $6 Billion Bet on Making Claude Run Faster inc.com"
       },
       {
         "title": "AI Companies Work for Better Data, Not Better Models",
@@ -202,13 +253,6 @@
         "summary": "SpaceX has completed a $60 billion acquisition of artificial intelligence coding startup Cursor, a key part of Elon Musk’s bid to gain ground on rivals Anthropic PBC and OpenAI."
       },
       {
-        "title": "Anthropic’s Biggest Acquisition Could Be a $6 Billion Bet on Making Claude Run Faster - inc.com",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTUxDeWhaYklmb1ZUY2lyc2dPaG9pSWo5bmZfWVE3WndudkZoUGd0bENrak15M2tQcUc5c0VjVVYzRmV2TVpFMmJ0YWdmZEpRbzkxU0xiYmlSWU5OQnEzdXp2Y1AxZlRjd1Bfd3A0R3plZi0xMDE5VHNxY3NFZlV4UHE5cVhpR05hc3h4XzNNc3FZQjFnc1JGXy1ud29QU19oYkpGZ3l2aHNCUkZ5c2tjd0g1WQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T12:09:52.000Z",
-        "summary": "Anthropic’s Biggest Acquisition Could Be a $6 Billion Bet on Making Claude Run Faster inc.com"
-      },
-      {
         "title": "Anthropic's Claude watermarks can be broken by a grammar check, developer Theo says - finance.biggo.com",
         "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAzVFNNckxRay1SVDhlVnZSbjJHZE9rT3NqSEw3WklDdWRxN3g4YmlFcG9IbjZRQldhSmtsTkZkRDcwNTV5N0NmVXo3X1RfTzN6Tk4wRnZIWHBoSTg?oc=5",
         "source": "Google News",
@@ -221,13 +265,6 @@
         "source": "Google News",
         "published": "2026-08-14T11:47:44.000Z",
         "summary": "Claude Code now runs daily maintenance on Anthropic's software with a 46 percent merge rate the-decoder.com"
-      },
-      {
-        "title": "Anthropic Reportedly Eyes $6 Billion Decart Acquisition to Boost AI Efficiency - TechRepublic",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcnZZMThjV2RjM3pteDQtTUN1SHFNaVNrdndXc0lfZGFnV1NaVFlzMjlCZklSVXBWYjdQdExfN3pXZGxwTUo3SFhNeUJBVGJ6bFNxcmJhVDVCZ2l3SHNoLXpTZlo0VFpPZERNYzlqMGVjczg1RU1CdnNuNVVvdXVYTXp5a3lDaFhNaFJjeHE3RQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T10:36:50.000Z",
-        "summary": "Anthropic Reportedly Eyes $6 Billion Decart Acquisition to Boost AI Efficiency TechRepublic"
       },
       {
         "title": "How Musk’s toxic data empire is powering Anthropic’s ‘responsible’ AI - TBIJ",
@@ -244,11 +281,11 @@
         "summary": "Claude Is Now Leaving Fingerprints On Its Content 2oceansvibe News"
       },
       {
-        "title": "Claude Code returns blank thinking blocks, but reasoning still costs you - The Register",
+        "title": "Claude Code returns blank thinking blocks, but reasoning still costs you - theregister.com",
         "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVU9QRmVaMkpFUUFOeV9PVnZyVTlIeFNzczBOVk1BRUprZjhud3VCVDctckNDMXZxYkN0TXZnekxXZllGTFMwSk1kS2xKc0d2RDJ0RGRza2xMdFdQS2FuaVM5SnpNZUowUlJiVHRBWDQ0cFg5ekNSb2g4SkxIWV8ydDN0ZF9XX3huUFAyRzFwSG0yX1FzVjBkSmNSd2JKM3dlZmdYOXZwLVU2ZHRzOERmaGgtTk9qTC1FLVVkSFlsNGgtMGJhTnVJ?oc=5",
         "source": "Google News",
         "published": "2026-08-14T07:30:00.000Z",
-        "summary": "Claude Code returns blank thinking blocks, but reasoning still costs you The Register"
+        "summary": "Claude Code returns blank thinking blocks, but reasoning still costs you theregister.com"
       },
       {
         "title": "Anthropic to watermark Claude-generated content under EU AI Act - Social Samosa",
@@ -279,47 +316,11 @@
         "summary": "Claude Watermark: Anthropic Now Labels All AI-Generated Text; Users Are Divided Basic Tutorials"
       },
       {
-        "title": "Even Claude Is in the Dark About Dario Amodei's Wife",
-        "url": "https://www.wsj.com/tech/ai/claude-dario-amodei-wife-anthropic-e1eeda7d",
-        "source": "HN · 37↑",
-        "hn_id": "49294362",
-        "published": "2026-08-14T03:06:04.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Samsung Uses Claude AI to Slash Month-Long Chip Design Tasks to Just Days, But Humans Remain Key - Android Headlines",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSERLMjhhQ3NOYnVjSVMxSkhWRFF4NmdPeTVlMUM2UnlvRU0xeXJIdDJyZkEydHlXa01ZNHpncFVrX3puNGpUMm5PWkU0alFWcUZhQmYyQV9ERlkwekFQM3JhT3N3U0VfaThTeV9JdVdnMG5NNk9oZzlRMUZ3SEl3bi10cTJuQnRiX00xY0phNU9DZjlwZVY3MjIwZw?oc=5",
+        "title": "Anthropic's Claude Will Now Add Invisible Watermarks to Text, Image Outputs - PCMag",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQldRc1A5V2JwLWFyREsyWkt3d2JzN3pZZHY0eV9jYVc5WGZuY1RGd0lmNDQwaFRNcjBoZHpEQzZzNUhFVFZVa3VXME5fSVo4OS1fVXM1Zk0xZ1BvQlBHLVFiTng2RWVWcW1HSndEMm5JQ3B5eEtZelg1WERwWGhTQ0QyYkJ3TXlCNlYwTi1sQkxtdHB5a0ZJS3Y1aEhDZDVuaEE?oc=5",
         "source": "Google News",
-        "published": "2026-08-14T02:52:53.000Z",
-        "summary": "Samsung Uses Claude AI to Slash Month-Long Chip Design Tasks to Just Days, But Humans Remain Key Android Headlines"
-      },
-      {
-        "title": "Your Next Claude-Generated Drafts & Images Will Carry an Invisible Watermark: Here's Why - Android Headlines",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOMGl6TDlILUtZX1FEd2FLUFRMR0NmaHd3VWcwRWpOYjRHejZTRWthVExrZHFMQlR3UnllWUNKT0RuWm5NdTVrUERSMHFOUnJZLW9sTjJvdkJycGFxVjQ0YXhhakk2bnN0MFFOb3ZNR3VEZG02LWROWkI4Zno2WG5yWWU0cnA2VkpvVEpVUWdtOGt0ZG9WUWFqSXU3RldWWUR4cWs0UVV3?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T02:22:45.000Z",
-        "summary": "Your Next Claude-Generated Drafts & Images Will Carry an Invisible Watermark: Here's Why Android Headlines"
-      },
-      {
-        "title": "Claude Usage Statistics 2026 - Memeburn",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9WMHEyYy04RHgzLUlfZVI0bFpxdldpeFVwYWhIb1Y5N1JNMXhlQXdBU0dkbDFwZXpoQkNEcGJyMFlIREFVQVh3YzIxelBlQ1RWOXBUbGlBam9rUEdrd3pr?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T02:14:07.000Z",
-        "summary": "Claude Usage Statistics 2026 Memeburn"
-      },
-      {
-        "title": "Anthropic watermarking Claude AI content | Explained - The Hindu",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPU0lMY1ZHZDFjVlpGR2FIelBZOTBsQUtZUnFwTXJxOWQwTkFudU5reG9iZmw0ZDBFTno4ekNncjlXMVkzaHJxNXZNQTJicHRzTHRUNFdWLTkwOXgtaFB0STU1bVhDOWxjU255aUF4UnBqSHB1cmlZczNWR2JTdlFZUjJ2d3lYRFZVeWpKaWppcEpsaWNvMEx5aDQtNkFaX2NmRDVHdFdaQk4zM1U2Z2kweldYV3Bfd9IBvAFBVV95cUxQTzlodUF5QWhzMzBtQ0h4bm1UQUVtazM5eHF6SGttaU12Mm5PQXdkajdSWWxkTV9kZ01KaVRZUFVoVGdpaERCTTR3M01SN01mOUw5NDZwc2JZMllGSXVuTDJuRWJMa0ZqaUZObmdMMEE3X2kwMHM0VkpxN2VnX0RnTWtuMkpjVV9UOEozV1ZPYk5zbWNaMXdnbWw1bnZ0Vm1lVFRiZG5sVWpEY0ZoUk1lc2ZBRUR5WXc0bnRSSQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T02:04:00.000Z",
-        "summary": "Anthropic watermarking Claude AI content | Explained The Hindu"
-      },
-      {
-        "title": "Even Claude Is in the Dark About Dario Amodei’s Wife—and Her Influence at Anthropic - WSJ",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1UYy1LWi05N0I2b29XNnlQS2t0V21udE5XVi1KY3ZqR3YyTmtTaHBiNmZNOU1VZGw3OFFMdGxmOTA0ZE1JT0Jka1lEcnA2Ui1iU0pGV3pTTG9OVW9tbjR3TWc2YjJCeGx3dU1POC1ycWdCTkxGZHNGZFRsYw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T00:42:00.000Z",
-        "summary": "Even Claude Is in the Dark About Dario Amodei’s Wife—and Her Influence at Anthropic WSJ"
+        "published": "2026-08-14T03:06:33.000Z",
+        "summary": "Anthropic's Claude Will Now Add Invisible Watermarks to Text, Image Outputs PCMag"
       },
       {
         "title": "MCP is completely backwards",
@@ -1066,6 +1067,30 @@
     ],
     "tutorials": [
       {
+        "title": "Merge pull request #831 from anthropics/aravind-ant/content-moderatio…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/9148d36f5d1c3a8ec1a331a6b4ad63bb00789e45",
+        "source": "Anthropic Cookbook",
+        "published": "2026-08-14T18:03:50.000Z",
+        "summary": "Merge pull request #831 from anthropics/aravind-ant/content-moderation-cookbook feat(capabilities): add content moderation cookbook",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Address review: lazy client init, clearer error paths, type hints, uv…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/3743210cd995cec652742c6d5854e8d3962cf049",
+        "source": "Anthropic Cookbook",
+        "published": "2026-08-14T16:42:32.000Z",
+        "summary": "Address review: lazy client init, clearer error paths, type hints, uv install note",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Add content moderation cookbook",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/5a2576e211ba6bb6a2698cd14989d4091398f441",
+        "source": "Anthropic Cookbook",
+        "published": "2026-08-14T16:21:15.000Z",
+        "summary": "Add content moderation cookbook Compile a written content policy into deterministic JSON rules with Claude, extract typed fields from text and images, and produce auditable verdicts from a rule…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.232",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.232",
         "source": "Claude Code Releases",
@@ -1210,14 +1235,6 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "Add the dynamic workflows cookbook to the Agent SDK series (#806)",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/3291e01531b44bcf730ffe5ed62df60088087316",
-        "source": "Anthropic Cookbook",
-        "published": "2026-08-03T18:30:31.000Z",
-        "summary": "Add the dynamic workflows cookbook to the Agent SDK series (#806) Squash merge of 1 commit",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "Claude Code in YOLO Mode - SECURE Setup Guide with Docker Sandboxes",
         "url": "https://www.youtube.com/watch?v=iUDuN9dyuTY",
         "source": "Leon van Zyl",
@@ -1240,22 +1257,6 @@
         "published": "2026-07-27T23:23:11.000Z",
         "summary": "",
         "tutorial_kind": "video"
-      },
-      {
-        "title": "Merge pull request #793 from anthropics/cj-ant/crop-tool-zoom",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/85016cacf5b7923aa62aa2b514399325e9d159e9",
-        "source": "Anthropic Cookbook",
-        "published": "2026-07-23T17:32:40.000Z",
-        "summary": "Merge pull request #793 from anthropics/cj-ant/crop-tool-zoom Rewrite the crop-tool cookbook around a measured zoom tool",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Rewrite the crop-tool cookbook around a measured zoom tool",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/6c63a145b7136a610092dbd2c3ef412b055e003b",
-        "source": "Anthropic Cookbook",
-        "published": "2026-07-23T17:31:03.000Z",
-        "summary": "Rewrite the crop-tool cookbook around a measured zoom tool Replace the crop tool with a zoom tool that takes absolute pixel coordinates, crops from the full-resolution original, and returns the…",
-        "tutorial_kind": "official"
       },
       {
         "title": "Devin AI: The Full Beginner’s Guide (Better Than Claude Code?)",
