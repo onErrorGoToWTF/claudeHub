@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T14:42:50.057Z",
+  "generated_at": "2026-08-14T16:37:15.428Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,27 @@
     ],
     "news": [
       {
+        "title": "Does Mark Zuckerberg really believe AI is ‘for everyone’?",
+        "url": "https://techcrunch.com/video/does-mark-zuckerberg-really-believe-ai-is-for-everyone/",
+        "source": "TechCrunch",
+        "published": "2026-08-14T15:43:28.000Z",
+        "summary": "Meta released Glimmer this week, an open-weight AI model anyone can download and run on their own hardware — a contrast to Muse Spark, the company’s more powerful model that stays locked behind its…"
+      },
+      {
+        "title": "AI Companies Work for Better Data, Not Better Models",
+        "url": "https://www.bloomberg.com/news/videos/2026-08-14/ai-companies-work-for-better-data-not-better-models-video",
+        "source": "Bloomberg",
+        "published": "2026-08-14T15:16:15.000Z",
+        "summary": "Rudina Seseri, founder and managing partner of Glasswing Ventures, joins Businessweek to discuss latest AI-related headlines including reports that Anthropic is in talks to buy startup 'Decart' for…"
+      },
+      {
+        "title": "Anthropic says Claude will watermark AI-generated text worldwide - Memeburn",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNUGdZTi1QWFBpU1I5cG12UFpOQnJ3c040dmNSZzRpeERHRkN2RHA4Q2h0TlI2UDk0VGplampfODh1d282N2MzRlI3aUJEcm8yZUlFck1pLVBrWWR4emdxcVBMVUtSVGxEZEhNZjVGUHdXekd0OHg0bUwyVzlxZHlQREt5YThydzdSd040X1lqOA?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T15:03:27.000Z",
+        "summary": "Anthropic says Claude will watermark AI-generated text worldwide Memeburn"
+      },
+      {
         "title": "OpenAI and Anthropic in price war as Chinese AI rivals gain ground",
         "url": "https://arstechnica.com/ai/2026/08/openai-and-anthropic-in-price-war-as-chinese-ai-rivals-gain-ground/",
         "source": "Ars Technica",
@@ -160,11 +181,11 @@
         "summary": "Anthropic begins early IPO meetings as investors debate valuation above $2 trillion MLQ.ai"
       },
       {
-        "title": "US AI Labs Cut Prices 25% in 1 Month to Fend Off Chinese Rivals - PYMNTS.com",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNMGJWcnp4ODVwRklRelVlcGNKcmNQTzVmenRTWjNqWWxFYWxseGVyM0s4My1sSUNzbUthQ2JSZzRVWGdPeFZ4TXZZak5obEptQTk5WVI1ZHloSWVncHl2YkQyUzhxYVFHeWVKQlJGcGc2RUJseUNvUWRydDRNSlA2M0pmejBCTm5heWtuRk5pRDdsNGRYU1JWWXlrV3VyRUhNR180aTNrRXRnX2hnRnplOG9LSHJSVDh3SGxfMjNfbjJTMlFORXc?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T14:09:33.000Z",
-        "summary": "US AI Labs Cut Prices 25% in 1 Month to Fend Off Chinese Rivals PYMNTS.com"
+        "title": "Meta’s ‘open’ AI, and a $250M deal gone very wrong",
+        "url": "https://techcrunch.com/podcast/metas-open-ai-and-a-250m-deal-gone-very-wrong/",
+        "source": "TechCrunch",
+        "published": "2026-08-14T14:00:00.000Z",
+        "summary": "Meta released Glimmer this week, an open-weight AI model anyone can download and run on their own hardware — a contrast to Muse Spark, the company’s more powerful model that stays locked behind its…"
       },
       {
         "title": "Could Anthropic Watermarks Reverse AI Efficiency Gains? - AI Magazine",
@@ -209,6 +230,13 @@
         "summary": "Anthropic Reportedly Eyes $6 Billion Decart Acquisition to Boost AI Efficiency TechRepublic"
       },
       {
+        "title": "How Musk’s toxic data empire is powering Anthropic’s ‘responsible’ AI - TBIJ",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVzhqRkNrV0lPWnVrYmRjYUd3b1lnZks2ZmdfQTBTb2cyVEpjY3Zma2NTdzJzc2NMM2N0NnlYX0twaUtEN3NrVWxxMEdDekhUR2YxWHF1S1BOU2hkTXJYNUhhN1A2ZGpmR0taa0Z1RUNCa2NkRUJyYm5tbnhZenQxcXB3RG9KMjJTUi05UFlyS21mbFhNeGFjZ3lGbmk3RFEyTmFfbjRucw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T10:30:00.000Z",
+        "summary": "How Musk’s toxic data empire is powering Anthropic’s ‘responsible’ AI TBIJ"
+      },
+      {
         "title": "Claude Is Now Leaving Fingerprints On Its Content - 2oceansvibe News",
         "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQNUFIN1puWjNtSm5JUkJTcklDVEpMQXc1YzVtS1dGenh0QkM5MzZpNjZkR242QVd2Y25FZ29mVzFjd1dBQ2lqVEEzZS1uYmhlUFB5ZkpydDV1MUZJN2diN3V1cEFpbTdubjRJMG1EcmZ5YVB6aUNFM0dON1d1M3Y2cDFB?oc=5",
         "source": "Google News",
@@ -230,11 +258,11 @@
         "summary": "Anthropic to watermark Claude-generated content under EU AI Act Social Samosa"
       },
       {
-        "title": "Z.ai to Rival Anthropic, OpenAI in Coding With New AI Model",
-        "url": "https://www.bloomberg.com/news/articles/2026-08-14/z-ai-aims-to-catch-anthropic-openai-in-coding-with-new-ai-model",
-        "source": "Bloomberg",
-        "published": "2026-08-14T05:00:41.000Z",
-        "summary": "Z.AI Co. is set to upgrade its flagship AI model, joining a series of Chinese open-weight offerings seeking to outcompete Anthropic PBC and OpenAI."
+        "title": "AI agents tried to sabotage and disable each other when given the same task, Anthropic said - Business Insider",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQXJSdUhYcnVPN1JJRWIxY3dSWW5KVUxwMEJHUG1NUDRzMnlRbUpDTjhWUkxQWVdlNHJJTkJNRWZmNVhEcEJhRnRXbWdWQTlDNVRuTnJOdDVDRkFCeGdlVjdIaVU5dmtJQ2xfTkRtZXFwV3RJS2VBdTc2VDhkdzdJLXNyUmVtVHFBWDFtaXVNR00?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T05:54:00.000Z",
+        "summary": "AI agents tried to sabotage and disable each other when given the same task, Anthropic said Business Insider"
       },
       {
         "title": "OpenAI and Anthropic in price war as Chinese AI rivals gain ground - Financial Times",
@@ -253,7 +281,7 @@
       {
         "title": "Even Claude Is in the Dark About Dario Amodei's Wife",
         "url": "https://www.wsj.com/tech/ai/claude-dario-amodei-wife-anthropic-e1eeda7d",
-        "source": "HN · 35↑",
+        "source": "HN · 37↑",
         "hn_id": "49294362",
         "published": "2026-08-14T03:06:04.000Z",
         "summary": ""
@@ -292,34 +320,6 @@
         "source": "Google News",
         "published": "2026-08-14T00:42:00.000Z",
         "summary": "Even Claude Is in the Dark About Dario Amodei’s Wife—and Her Influence at Anthropic WSJ"
-      },
-      {
-        "title": "Grok 4.3 vs Claude Opus vs GPT-5.5: 8-Point Gap [2026] - tech-insider.org",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE44RW1BUUxPeVI1MXZCOFE0U2k4bXc2NjZycWVfWV9uYjFZeEc0QnFWR29fLTRjUGgtRmJnRmhOSmxpdmJseVhlQVBYWnpvRWtiZG4zWUltSFoyclFzMW1GVzg5cUtBb2YzY1kzLXB5ZnFuWktaNEl3?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T00:38:29.000Z",
-        "summary": "Grok 4.3 vs Claude Opus vs GPT-5.5: 8-Point Gap [2026] tech-insider.org"
-      },
-      {
-        "title": "Anthropic reportedly in talks to buy Israeli-founded AI startup at $6B valuation - The Times of Israel",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTzdxZ0xkVmVsbTdrc01Dei1wVzJWNUZadzM5Q21VRVFGMDRTTjcxZVU3UXBIdDltUHhIYVpBcWk3SzhLdENKelo4R2xNclVUX3BqbC1fQWNPMFBsdmNlZXI2a0txQUZCWjRkWlROZGNSUkVpQll5M2ZUdXVOYU5XZ0VFWGRzdzVFN2o2dnJVbGdIbTY5MnktVks0V2lnLV9ZRHFBa01NRE9hRnpjV0NV0gG0AUFVX3lxTFB2VjB1SU9weTdCTmg2YXFIOEJ0cThzWk9QZXV6RVY4Tjk5dU1vLVgzM3dPV3Fia0RaVG9tUDdrblh6LUlZbVEyNlRHMmdSN21pWXk2QzFZclBISmliRGh1RW5EZW9LeU9lR1hFUU1jUmQ3THhMNGx6czYzRWVKU0E5dHdobU1EcHJDbENHdXhSWFRyU3FmZV8xNDBmTHQ0VlRBZmZ0NzViUVhUWl9YME8zbm11RA?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T23:50:03.000Z",
-        "summary": "Anthropic reportedly in talks to buy Israeli-founded AI startup at $6B valuation The Times of Israel"
-      },
-      {
-        "title": "Anthropic Investors Think It’s Worth $2 Trillion - Gizmodo",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQWS1xbmFlM1hiY1hKQlQxWHNQWDlmYi1nTnFpSWJrMHNSTE8tUkprSW81OUVaRUZCTVZudlVGcExKTWRSRVo1S3lGZUdVU0ZUSDg5X04xSUpHelo1cVVjNHNpZm1CVFBVVkRXTlJsREFtMWszeFU5QUZ5bEMtM0dhZVFXVTk?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T23:05:12.000Z",
-        "summary": "Anthropic Investors Think It’s Worth $2 Trillion Gizmodo"
-      },
-      {
-        "title": "Market for AI watermark removal tools emerges after Anthropic’s Claude update - SC Media",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNQkxPREVfTVBCSkxWUlJWcVZTQ1JMNHN0eHF0YWVoc0NReGdTd2NPaEpmS0loaExNcXprMlk2SFBETjNWTnRDczVPcE1SaW9XMC01OGNIeDNRQlVLLVd3OXZDbVNYTmk5Z2hzYVZrZ3lGNUV6ZWZ3UjFScnE1QXBsanNnTDZBS3VRWElBYXZNZnJlVHdSUWdoazNyVnBaQ2hjYXo5X3QyNEpyQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T22:58:14.000Z",
-        "summary": "Market for AI watermark removal tools emerges after Anthropic’s Claude update SC Media"
       },
       {
         "title": "MCP is completely backwards",
