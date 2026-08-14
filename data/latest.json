@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-08-14T18:37:01.314Z",
+  "generated_at": "2026-08-14T20:19:10.240Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Claude Text Watermark",
+        "url": "https://www.anthropic.com/news/claude-text-watermark",
+        "source": "Anthropic",
+        "published": "2026-08-14T20:06:43.000Z",
+        "summary": ""
+      },
       {
         "title": "Reviewing the Evidence on Worker Retraining Programs",
         "url": "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs",
@@ -135,22 +142,57 @@
         "source": "Anthropic",
         "published": "2026-07-22T10:14:58.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Opus 4 8",
-        "url": "https://www.anthropic.com/news/claude-opus-4-8",
-        "source": "Anthropic",
-        "published": "2026-07-22T01:28:45.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
+        "title": "Anthropic’s Model 2 Beats Mythos 5, But the Public Will Not Get It - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNYkg3VW83WkxvUi1aUE42WHhfRVM5aVM1d0Z5d0VNSUJlblVQVXdmVm1WUGNnWEw2MmVkbEh5U2xrY0E2WUZnUjlhejBPakFFRXFrZF9nTURkdWhzLUdld0FHbkFENnFMRTZUdkQtRXdadjJGYVRUSW9SeXFreXRMa213NkFfS3lRblpqWTlpVVo?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T20:00:55.000Z",
+        "summary": "Anthropic’s Model 2 Beats Mythos 5, But the Public Will Not Get It Yahoo Tech"
+      },
+      {
+        "title": "Anthropic CEO's wife once asked Jeffrey Epstein to fund porn venture — now she helps steer the Claude AI empire - New York Post",
+        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOMnVWYWRVZjFIUWFlM2J1SWVXcnR5S2w2ZkZma0tuWGFqd0lCTDlBRjJ4c05wMU1ZWm9fMWN1RFNQVUMwa2IyU2toVFgzSEd1d2Vvdm1kVGY3ak82MmpiU0d4S3YxNWxvelFUTTFhckdsTDNNanJySjg1c1c1Y0R5NWRweUttRXJQTVByRGduMHBZeHZ0cnh0LXNwVlpfUUlpSGRQTmpzOGZOSFJsQzFlRFNuZWM1eTVYTWJNZUw4WE9kLXYwUER2dEo0cXR5NGJuVDFxLUpvNFNJNlVEeXRDbUxR?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T19:54:00.000Z",
+        "summary": "Anthropic CEO's wife once asked Jeffrey Epstein to fund porn venture — now she helps steer the Claude AI empire New York Post"
+      },
+      {
+        "title": "Anthropic Raises AI Risk Concerns as Claude Models Show Early Signs of R&D Acceleration - Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQNWRRajRnWENIaDRiWE5kcDZ0VnNmU1d1YjNyUDB3WHFicjMydDBWYWN3LW1BenBoSDBrRXBsVUJlbVYtUGNIaGFJNFlCUVNneWFfc3ptNXd1YzV6dGg2T1h0ei1RY0IwaGJmelZtZlZGaFZnLVd5ZG1mUmd2aFdwMGVELS1BS2xidzA5aVdKeUpldkY5aGtSZmpDTDVxQVQ5dE8tUk95OW5fQ1YzS2NPRjlYTVhGYzVpemRxRnQ5VkJ6ODluSjN6MFhlOVNWMTBMRkdVdTh1c0hLdFJRZzJIZ1hEVlY?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T19:38:26.000Z",
+        "summary": "Anthropic Raises AI Risk Concerns as Claude Models Show Early Signs of R&D Acceleration Benzinga"
+      },
+      {
+        "title": "Anthropic sees AI risks rising, no plan to release stronger \"Model 2\" - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNYVRSV2ExV3FsYkFEUEtHY0pCaUdaeFRacG9MdFZJTGpOZXpaZ2QxSkdYVDB6R3hHVGQ4TzJyWGlPUm5qUGNpMTJuVWRUVjFyVTdBd1FUZFgyNzNHQVR1cHpxUGI1ZGRRSnlwOWN4ZDkxR3ZEWENBUDRFVFVuQW9zWG5kcVY0cHRoS1YyaFpfOGs?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T19:14:01.000Z",
+        "summary": "Anthropic sees AI risks rising, no plan to release stronger \"Model 2\" Yahoo Tech"
+      },
+      {
+        "title": "What A Claude Watermark Can & Can’t Tell You About Authorship - Search Engine Journal",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxONDlEa2FjNHpHYjFpTVZsVkF5cUVYVFhkc1VZazZCZzZvNEZsTWQ2aVJ6TmJRTGlfeEVNYXRDMHVLUkViczk2eEE0NU02d3o0cVlwM0MwYXk2UW5rR1FrTlBueXRFM0JGZlpMaTNvc2FLMV9Fbi1rVUVXcGprM1BUZ1k2UzFGaDQ3ZkRad19LSWtDNDd6a1RUXzRGOXVkRzZmNmFmTw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T19:00:39.000Z",
+        "summary": "What A Claude Watermark Can & Can’t Tell You About Authorship Search Engine Journal"
+      },
+      {
         "title": "Tech analyst Ben Thompson dismisses the 'clearly absurd' concept embedded in AI watermarking - Business Insider",
         "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNWHdocHVvcTlZS0hLWEJzUkZmZjVNZ01HYUpWaUdfSTNieWVKRzFjYlJoVFdnbjNPQWpLVVB6QlVwZHJWeUJLMF80RkJzUDAyYWZkTlAxbUJ4UkwzUDdISHJPa24wZ1JJcy1fWWhoOTdlZUx2OHZLVmpobVc2M1dFbWVzYV85OWp4TG0wXw?oc=5",
         "source": "Google News",
-        "published": "2026-08-14T18:12:12.000Z",
+        "published": "2026-08-14T18:12:13.000Z",
         "summary": "Tech analyst Ben Thompson dismisses the 'clearly absurd' concept embedded in AI watermarking Business Insider"
+      },
+      {
+        "title": "PSA: Claude Code now enables auto mode as default, Anthropic says - 9to5Mac",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWlZ6V2R2YzEtOHRPRWR5bjlmcWdrcGtIblROSE1nb29PYmhRMnhYMGp5MkpYcVE2YXRNTlVITE9oS3Nwc1dvSUU2S1NnY3ptRC12ODNYSlJxaGZBTnFlODh6eHNDcGc3UjVoWGxUS0NNUVIyUkp1eDdSYzZ2OVlDV19xQ1hsYmllWFI4b3ZiVDVRdjZOTVU2Y0VkZVlZTDJaX3pBUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T18:00:00.000Z",
+        "summary": "PSA: Claude Code now enables auto mode as default, Anthropic says 9to5Mac"
       },
       {
         "title": "Claude agents fought each other with self-replicating malware in Anthropic test - CryptoRank",
@@ -167,16 +209,16 @@
         "summary": "Anthropic Reportedly Eyes $6 Billion Decart Acquisition to Boost AI Efficiency TechRepublic"
       },
       {
-        "title": "Anthropic’s AI systems start attacking each other in new experiment - independent.co.uk",
+        "title": "Anthropic’s AI systems start attacking each other in new experiment - The Independent",
         "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNU1QyYUM3emdSSW84SUcyeEo3QmNydEVYbFduRU50cWt2OUxUNWlYbEZBdmY1dmJhNjlfSzRuazRNTi1Gdy05TmdkRXg5QkM1RG1NN1F4ZXJqaGREcWNfaFpwa29yNFVUUVJKTUt1R0xNdE1CbUFqZ1lfazlXWmtuR1ZKbUE0d0RLdmZXWnVVWTFCSlY4NGs4?oc=5",
         "source": "Google News",
         "published": "2026-08-14T16:59:00.000Z",
-        "summary": "Anthropic’s AI systems start attacking each other in new experiment independent.co.uk"
+        "summary": "Anthropic’s AI systems start attacking each other in new experiment The Independent"
       },
       {
         "title": "Maximizing the value of your Claude Code sessions",
         "url": "https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions",
-        "source": "HN · 43↑",
+        "source": "HN · 82↑",
         "hn_id": "49300800",
         "published": "2026-08-14T16:15:21.000Z",
         "summary": ""
@@ -191,7 +233,7 @@
       {
         "title": "Show HN: Graft – Claude Code hooks that cut grep tokens by 42%",
         "url": "https://github.com/NanoNets/Graft",
-        "source": "HN · 35↑",
+        "source": "HN · 36↑",
         "hn_id": "49299985",
         "published": "2026-08-14T15:22:02.000Z",
         "summary": ""
@@ -242,7 +284,7 @@
         "title": "Could Anthropic Watermarks Reverse AI Efficiency Gains? - AI Magazine",
         "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVlNNOGRzd3BGbDgwRmI3eVgyMV9EbU9xWFJlU28zM1NQdVpkYUhzRDhfVzh2cTdQRXJPcVRvcjhZV0loRnF3QzJvNjAwdVJlX2FadnBLelRPVmVNV21NV19PYUxpRmRmdnZHaEhHNUd6WTk5ZEs5c01uX0NJajZCYXluRktWMDc3?oc=5",
         "source": "Google News",
-        "published": "2026-08-14T13:20:07.000Z",
+        "published": "2026-08-14T13:40:10.000Z",
         "summary": "Could Anthropic Watermarks Reverse AI Efficiency Gains? AI Magazine"
       },
       {
@@ -279,48 +321,6 @@
         "source": "Google News",
         "published": "2026-08-14T10:26:53.000Z",
         "summary": "Claude Is Now Leaving Fingerprints On Its Content 2oceansvibe News"
-      },
-      {
-        "title": "Claude Code returns blank thinking blocks, but reasoning still costs you - theregister.com",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVU9QRmVaMkpFUUFOeV9PVnZyVTlIeFNzczBOVk1BRUprZjhud3VCVDctckNDMXZxYkN0TXZnekxXZllGTFMwSk1kS2xKc0d2RDJ0RGRza2xMdFdQS2FuaVM5SnpNZUowUlJiVHRBWDQ0cFg5ekNSb2g4SkxIWV8ydDN0ZF9XX3huUFAyRzFwSG0yX1FzVjBkSmNSd2JKM3dlZmdYOXZwLVU2ZHRzOERmaGgtTk9qTC1FLVVkSFlsNGgtMGJhTnVJ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T07:30:00.000Z",
-        "summary": "Claude Code returns blank thinking blocks, but reasoning still costs you theregister.com"
-      },
-      {
-        "title": "Anthropic to watermark Claude-generated content under EU AI Act - Social Samosa",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMUl3UmdxRnJkU1hMaFV6RWtBS1RfaW1BSXM2Ri0wR0w4VzFmRnEwSTdUNUlsU3JvdXR0WGNMOXVUVnJ3U1VOcUNYak90NDR4Z0VJTTV0dFo5WEdGUGJDT1dFVThfeVVRRlNmUy03N1hJaDNQb2lqRFNGX2lGME4wR0VtUVl5ejBtb1JtNnAxejFBX3VhN3ZLVUVpdWw0ZUnSAZ8BQVVfeXFMTzFJd1JncUZyZFNYTGhVekVrQUtUX2ltQUlzNkYtMEdMOFcxZkZxMEk3VDVJbFNyb3V0dFhjTDl1VFZyd1NVTnFDWGpPdDQ0eGdFSU01dHRaOVhHRlBiQ09XRVU4X3lVUUZTZlMtNzdYSWgzUG9pakRTRl9pRjBOMEdFbVFZeXowbW9SbTZwMXoxQV91YTd2S1VFaXVsNGVJ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T06:01:19.000Z",
-        "summary": "Anthropic to watermark Claude-generated content under EU AI Act Social Samosa"
-      },
-      {
-        "title": "AI agents tried to sabotage and disable each other when given the same task, Anthropic said - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQXJSdUhYcnVPN1JJRWIxY3dSWW5KVUxwMEJHUG1NUDRzMnlRbUpDTjhWUkxQWVdlNHJJTkJNRWZmNVhEcEJhRnRXbWdWQTlDNVRuTnJOdDVDRkFCeGdlVjdIaVU5dmtJQ2xfTkRtZXFwV3RJS2VBdTc2VDhkdzdJLXNyUmVtVHFBWDFtaXVNR00?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T05:54:00.000Z",
-        "summary": "AI agents tried to sabotage and disable each other when given the same task, Anthropic said Business Insider"
-      },
-      {
-        "title": "OpenAI and Anthropic in price war as Chinese AI rivals gain ground - Financial Times",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQenJmNmtJVlBpd3MxYW1iN0hVSmlsT19lbHBQbTE1SnlsNG1zSm9QX2dFVWdKVnlKakE0SDVnQnRwYWxrdnd2UzJIZS12U0FMdlJYVEpab3NLNS03YzZweEI1Wkpmb1NxVVJYNXdGaDB6U0ZSTkxscm5ScURqeXlDZ0dGYlM?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T04:00:14.000Z",
-        "summary": "OpenAI and Anthropic in price war as Chinese AI rivals gain ground Financial Times"
-      },
-      {
-        "title": "Claude Watermark: Anthropic Now Labels All AI-Generated Text; Users Are Divided - Basic Tutorials",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSlJXYUhlODZ2S3hCNVkteWdqb05QbGJsM2I3X01KUFliazFqOHNGUU1DM1AyNDJPdzVBVnJfMkpMaFRORjJjblh1T3dDTEZ1ekFHTHJoYW1JWTdjUHJNZE84Sk1RdTZLRTR5cXlYQU1CWkQwcXgybkE3TnlIRDlQUWZXcHJKRnZBcVNxWk9BVzdKV1NnMGhkZktYbmxDRW0wMGdUdjExcTJ0bEhPOFFRRw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T03:12:43.000Z",
-        "summary": "Claude Watermark: Anthropic Now Labels All AI-Generated Text; Users Are Divided Basic Tutorials"
-      },
-      {
-        "title": "Anthropic's Claude Will Now Add Invisible Watermarks to Text, Image Outputs - PCMag",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQldRc1A5V2JwLWFyREsyWkt3d2JzN3pZZHY0eV9jYVc5WGZuY1RGd0lmNDQwaFRNcjBoZHpEQzZzNUhFVFZVa3VXME5fSVo4OS1fVXM1Zk0xZ1BvQlBHLVFiTng2RWVWcW1HSndEMm5JQ3B5eEtZelg1WERwWGhTQ0QyYkJ3TXlCNlYwTi1sQkxtdHB5a0ZJS3Y1aEhDZDVuaEE?oc=5",
-        "source": "Google News",
-        "published": "2026-08-14T03:06:33.000Z",
-        "summary": "Anthropic's Claude Will Now Add Invisible Watermarks to Text, Image Outputs PCMag"
       },
       {
         "title": "MCP is completely backwards",
@@ -367,18 +367,6 @@
         "video_id": "9W2qj_GR4s4",
         "thumbnail": "https://i.ytimg.com/vi/9W2qj_GR4s4/hqdefault.jpg",
         "published": "2026-08-12T02:41:57.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Claude is sabotaging my chess",
-        "url": "https://www.youtube.com/shorts/Ynt7kimkyFE",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "Ynt7kimkyFE",
-        "thumbnail": "https://i.ytimg.com/vi/Ynt7kimkyFE/hqdefault.jpg",
-        "published": "2026-08-12T02:00:33.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -779,17 +767,6 @@
         "summary": ""
       },
       {
-        "title": "Claude is sabotaging my chess",
-        "url": "https://www.youtube.com/shorts/Ynt7kimkyFE",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "Ynt7kimkyFE",
-        "thumbnail": "https://i.ytimg.com/vi/Ynt7kimkyFE/hqdefault.jpg",
-        "published": "2026-08-12T02:00:33.000Z",
-        "summary": ""
-      },
-      {
         "title": "Codex Is Winning… So Why Am I Still Paying for Claude?",
         "url": "https://www.youtube.com/watch?v=piOSL8Ms9mY",
         "source": "Riley Brown",
@@ -1063,9 +1040,52 @@
         "thumbnail": "https://i.ytimg.com/vi/uU0RFxGv-Ks/hqdefault.jpg",
         "published": "2026-06-30T19:39:15.000Z",
         "summary": ""
+      },
+      {
+        "title": "Anthropic Just Released Its Best Model Ever (Mythos/Fable Deep Dive)",
+        "url": "https://www.youtube.com/watch?v=TtCWqjy3T5M",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "TtCWqjy3T5M",
+        "thumbnail": "https://i.ytimg.com/vi/TtCWqjy3T5M/hqdefault.jpg",
+        "published": "2026-06-09T22:03:25.000Z",
+        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "Merge pull request #833 from anthropics/aravind-ant/fix-md-fences",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/7eca2b4f6f1b7849e4500d55ce65ae6ab8292173",
+        "source": "Anthropic Cookbook",
+        "published": "2026-08-14T20:11:57.000Z",
+        "summary": "Merge pull request #833 from anthropics/aravind-ant/fix-md-fences fix(content_moderation): make markdown code fences render on the cookbook site",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Fix markdown code fences for the cookbook site renderer",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/21b9fe1f9dfa671a0a6b273c02c7826c1f6cf468",
+        "source": "Anthropic Cookbook",
+        "published": "2026-08-14T19:52:19.000Z",
+        "summary": "Fix markdown code fences for the cookbook site renderer A leading comment line inside a fence gets promoted to a heading and breaks the fence, and the jsonc language tag is not recognized. Remove…",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Merge pull request #832 from anthropics/aravind-ant/fix-diagram-and-f…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/92a693802a54d8d1f36fb36e52fbf7a8efa74b6d",
+        "source": "Anthropic Cookbook",
+        "published": "2026-08-14T19:21:57.000Z",
+        "summary": "Merge pull request #832 from anthropics/aravind-ant/fix-diagram-and-format fix(content_moderation): render architecture diagram on the cookbook site",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Fix architecture diagram rendering on the cookbook site and align for…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/2dd4d9ea4ade391e8da8a130ccaea2a9460c6bc1",
+        "source": "Anthropic Cookbook",
+        "published": "2026-08-14T19:07:07.000Z",
+        "summary": "Fix architecture diagram rendering on the cookbook site and align formatting The diagram was embedded as a markdown cell attachment, which GitHub renders but the site's notebook converter does not.…",
+        "tutorial_kind": "official"
+      },
       {
         "title": "Merge pull request #831 from anthropics/aravind-ant/content-moderatio…",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/9148d36f5d1c3a8ec1a331a6b4ad63bb00789e45",
@@ -1139,22 +1159,6 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "feat(cost_optimization): add cost optimization cookbook",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/fa3aa15e7c62dca23021ba457f4f2a6b049114c1",
-        "source": "Anthropic Cookbook",
-        "published": "2026-08-12T18:11:24.000Z",
-        "summary": "feat(cost_optimization): add cost optimization cookbook Eval-driven walkthrough of the Claude API cost levers (prompt caching, input/output token management, agent-loop efficiency, batching, model…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Restore the Tools category on the agentic-search registry entry (#810)",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/057d96dbbfa730513f714c43e25bff1742b1e022",
-        "source": "Anthropic Cookbook",
-        "published": "2026-08-12T17:47:16.000Z",
-        "summary": "Restore the Tools category on the agentic-search registry entry (#810) Squash merge of 1 commit",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "v2.1.228",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.228",
         "source": "Claude Code Releases",
@@ -1195,27 +1199,11 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "Merge pull request #811 from anthropics/cj-ant/cma-budgets-advisor-co…",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/f65eb122a51e9710d4db3f4893016879c65c77d6",
-        "source": "Anthropic Cookbook",
-        "published": "2026-08-07T17:13:36.000Z",
-        "summary": "Merge pull request #811 from anthropics/cj-ant/cma-budgets-advisor-cookbooks Add Managed Agents cookbooks for budgets, advisor, repo skills, and inference geo",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "v2.1.224",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.224",
         "source": "Claude Code Releases",
         "published": "2026-08-07T04:00:59.000Z",
         "summary": "What's changed Added self-hosted environments: claude self-hosted-runner turns your own machines or containers into a place Claude Code web, mobile, and desktop sessions can run, on Team and…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Add Managed Agents cookbooks for budgets, advisor, repo skills, and i…",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/215d95722a18105cdcee2026f840eeae93f1330d",
-        "source": "Anthropic Cookbook",
-        "published": "2026-08-06T18:10:34.000Z",
-        "summary": "Add Managed Agents cookbooks for budgets, advisor, repo skills, and inference geo Four new notebooks: cap session spend with budgets, consult an advisor mid-session, use skills from a mounted GitHub…",
         "tutorial_kind": "official"
       },
       {
@@ -1267,6 +1255,18 @@
         "video_id": "Vyyrvna-hUY",
         "thumbnail": "https://i.ytimg.com/vi/Vyyrvna-hUY/hqdefault.jpg",
         "published": "2026-07-16T18:25:15.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
+        "title": "Anthropic Just Released Its Best Model Ever (Mythos/Fable Deep Dive)",
+        "url": "https://www.youtube.com/watch?v=TtCWqjy3T5M",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "TtCWqjy3T5M",
+        "thumbnail": "https://i.ytimg.com/vi/TtCWqjy3T5M/hqdefault.jpg",
+        "published": "2026-06-09T22:03:25.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1801,13 +1801,6 @@
         "summary": ""
       },
       {
-        "title": "Claude is sabotaging my chess",
-        "url": "https://www.youtube.com/shorts/Ynt7kimkyFE",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-08-12T02:00:33.000Z",
-        "summary": ""
-      },
-      {
         "title": "v2.1.228",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.228",
         "source": "Claude Code",
@@ -2232,6 +2225,13 @@
         "url": "https://www.youtube.com/watch?v=uU0RFxGv-Ks",
         "source": "YouTube · Alex Finn",
         "published": "2026-06-30T19:39:15.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic Just Released Its Best Model Ever (Mythos/Fable Deep Dive)",
+        "url": "https://www.youtube.com/watch?v=TtCWqjy3T5M",
+        "source": "YouTube · Ryan & Matt Data Science",
+        "published": "2026-06-09T22:03:25.000Z",
         "summary": ""
       }
     ]
