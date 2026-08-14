@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-08-13T22:28:12.561Z",
+  "generated_at": "2026-08-14T00:53:26.272Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Riemann Zeta",
+        "url": "https://www.anthropic.com/research/riemann-zeta",
+        "source": "Anthropic Research",
+        "published": "2026-08-13T23:32:23.000Z",
+        "summary": ""
+      },
       {
         "title": "Multiagent Systems",
         "url": "https://www.anthropic.com/research/multiagent-systems",
@@ -22,13 +29,6 @@
         "url": "https://www.anthropic.com/engineering/building-effective-agents",
         "source": "Anthropic Eng",
         "published": "2026-08-10T22:57:30.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Riemann Zeta",
-        "url": "https://www.anthropic.com/research/riemann-zeta",
-        "source": "Anthropic Research",
-        "published": "2026-08-10T22:34:13.000Z",
         "summary": ""
       },
       {
@@ -146,25 +146,53 @@
     ],
     "news": [
       {
-        "title": "Anthropic's AI Agents Started a Virtual War. The Quotes Are Unhinged - Decrypt",
+        "title": "Even Claude Is in the Dark About Dario Amodei’s Wife—and Her Influence at Anthropic - WSJ",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1UYy1LWi05N0I2b29XNnlQS2t0V21udE5XVi1KY3ZqR3YyTmtTaHBiNmZNOU1VZGw3OFFMdGxmOTA0ZE1JT0Jka1lEcnA2Ui1iU0pGV3pTTG9OVW9tbjR3TWc2YjJCeGx3dU1POC1ycWdCTkxGZHNGZFRsYw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-14T00:42:00.000Z",
+        "summary": "Even Claude Is in the Dark About Dario Amodei’s Wife—and Her Influence at Anthropic WSJ"
+      },
+      {
+        "title": "Anthropic reportedly in talks to buy Israeli-founded AI startup at $6B valuation - The Times of Israel",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTzdxZ0xkVmVsbTdrc01Dei1wVzJWNUZadzM5Q21VRVFGMDRTTjcxZVU3UXBIdDltUHhIYVpBcWk3SzhLdENKelo4R2xNclVUX3BqbC1fQWNPMFBsdmNlZXI2a0txQUZCWjRkWlROZGNSUkVpQll5M2ZUdXVOYU5XZ0VFWGRzdzVFN2o2dnJVbGdIbTY5MnktVks0V2lnLV9ZRHFBa01NRE9hRnpjV0NV0gG0AUFVX3lxTFB2VjB1SU9weTdCTmg2YXFIOEJ0cThzWk9QZXV6RVY4Tjk5dU1vLVgzM3dPV3Fia0RaVG9tUDdrblh6LUlZbVEyNlRHMmdSN21pWXk2QzFZclBISmliRGh1RW5EZW9LeU9lR1hFUU1jUmQ3THhMNGx6czYzRWVKU0E5dHdobU1EcHJDbENHdXhSWFRyU3FmZV8xNDBmTHQ0VlRBZmZ0NzViUVhUWl9YME8zbm11RA?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T23:48:45.000Z",
+        "summary": "Anthropic reportedly in talks to buy Israeli-founded AI startup at $6B valuation The Times of Israel"
+      },
+      {
+        "title": "Anthropic Investors Think It’s Worth $2 Trillion - Gizmodo",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQWS1xbmFlM1hiY1hKQlQxWHNQWDlmYi1nTnFpSWJrMHNSTE8tUkprSW81OUVaRUZCTVZudlVGcExKTWRSRVo1S3lGZUdVU0ZUSDg5X04xSUpHelo1cVVjNHNpZm1CVFBVVkRXTlJsREFtMWszeFU5QUZ5bEMtM0dhZVFXVTk?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T23:06:20.000Z",
+        "summary": "Anthropic Investors Think It’s Worth $2 Trillion Gizmodo"
+      },
+      {
+        "title": "Market for AI watermark removal tools emerges after Anthropic’s Claude update - SC Media",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNQkxPREVfTVBCSkxWUlJWcVZTQ1JMNHN0eHF0YWVoc0NReGdTd2NPaEpmS0loaExNcXprMlk2SFBETjNWTnRDczVPcE1SaW9XMC01OGNIeDNRQlVLLVd3OXZDbVNYTmk5Z2hzYVZrZ3lGNUV6ZWZ3UjFScnE1QXBsanNnTDZBS3VRWElBYXZNZnJlVHdSUWdoazNyVnBaQ2hjYXo5X3QyNEpyQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T22:58:14.000Z",
+        "summary": "Market for AI watermark removal tools emerges after Anthropic’s Claude update SC Media"
+      },
+      {
+        "title": "Anthropic's AI Agents Started a Virtual War. The Chat Logs Are Unhinged - Decrypt",
         "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9pYVhaZDBLMFNFUWpfRWFnQW5zU2h6QVp5S2RMNU10Nnl0MjNWM202RkRuVUFOS1dBaHRLdndGcjlIU1hrZm5CUmg5VzZTRjZKeldPUnBkT1c5T0pYSENTYzVPY0F4d0RJT2tteE56MXJTQ3pVSEdQdEtYTkw0UdIBhgFBVV95cUxNUnRET2ZGb0dZMXZROXVhR3hFNXp4allieGhKTE5BQy1FaE90a3BrRmJhNlh6a2tjbzJtMnU1Z0RPdm5VbFFTWFkzbzJ2VFFoMW1ZZUQydFhoNFJLRlFlbFRfQ2VrWDhjc0V5Z2hXcVdRdVd2YjI3WWN5Z2tlQUp2UDhFcE8zUQ?oc=5",
         "source": "Google News",
         "published": "2026-08-13T21:45:04.000Z",
-        "summary": "Anthropic's AI Agents Started a Virtual War. The Quotes Are Unhinged Decrypt"
+        "summary": "Anthropic's AI Agents Started a Virtual War. The Chat Logs Are Unhinged Decrypt"
       },
       {
-        "title": "Anthropic's AI Agents Started a Virtual War. The Quotes Are Unhinged - tech.yahoo.com",
+        "title": "Anthropic's AI Agents Started a Virtual War. The Quotes Are Unhinged - Yahoo Tech",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQYTk5OVo4V2hmMmR3eU1GdjkyYmM4Z0lTRTh2eDVRc0lIZDRSX1o1elhxWTJLMUVkZldYbldsMG5XWjN3VXBsZEZrQWRMV2FnYllpbDFLNVBDYlptU0ZndEpZSVdPazNCTGplajMyVGRjeE5nS0pZQUlYbC1rc0hDakRVaDlBb2JWZVdRV3FPTjlBXy1XcXF4WA?oc=5",
         "source": "Google News",
         "published": "2026-08-13T21:45:04.000Z",
-        "summary": "Anthropic's AI Agents Started a Virtual War. The Quotes Are Unhinged tech.yahoo.com"
+        "summary": "Anthropic's AI Agents Started a Virtual War. The Quotes Are Unhinged Yahoo Tech"
       },
       {
-        "title": "Anthropic adds watermarks to Claude AI content - Diya TV",
+        "title": "Anthropic adds watermarks to Claude AI content - diyatvusa.com",
         "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9VZTI1U0xsS1lZUXRNbnQ1THhvNE1BeWlQOTBMWUU2Ukh2X1dfNHhnOFAzY043Nno0ajV2VjdCWk44OGpiTmdfUWFHYWJfSE1oVFRRaEdhbWx6WHdCQTlCekwxSVJaMW1JSFF6MVZjQzdLOVpEVVZxRw?oc=5",
         "source": "Google News",
         "published": "2026-08-13T21:38:00.000Z",
-        "summary": "Anthropic adds watermarks to Claude AI content Diya TV"
+        "summary": "Anthropic adds watermarks to Claude AI content diyatvusa.com"
       },
       {
         "title": "Alibaba says its new model matches Anthropic's best and names it - WION",
@@ -179,6 +207,13 @@
         "source": "Google News",
         "published": "2026-08-13T20:30:24.000Z",
         "summary": "Anthropic Is Quietly Watermarking Every Claude AI Output. Builders Are Already Trying to Break It Decrypt"
+      },
+      {
+        "title": "Anthropic Is Quietly Watermarking Every Claude AI Output. Builders Are Already Trying to Break It - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOWjBIZW9FSm1lUGxSR241ek1rOGRvMW9RQjh4bkppdy1fcE5YSy0xNFB1azNxT2tlZnk3dGV2QkhJNWlhX0t1WUVudnB1bThIZDJQVVVHVzV3Q3Y4S0hmVmthc3VxNWlfTjJZQlQ3a2ZVd201bWZ3dnEwbTIteEhoTkVNNHoydzBiMzdwakxJN0UxMTdDQ093Tm92cXQxSXQ2d1E?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T20:30:24.000Z",
+        "summary": "Anthropic Is Quietly Watermarking Every Claude AI Output. Builders Are Already Trying to Break It Yahoo Tech"
       },
       {
         "title": "OpenAI, Anthropic Tout New Metric to Better Gauge AI’s Cost",
@@ -198,6 +233,13 @@
         "published": "2026-08-13T20:00:30.000Z",
         "summary": "",
         "_kind": "news_video"
+      },
+      {
+        "title": "'Multi-part case study on China’s media' finds that AI models can't hallucinate away Chinese censorship - Fortune",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE85REg5allORmprY3YwWC1VZkpjMVJROFg3VG9GVHZnUndWQ1lVTG5aNjRPczZZdmZpd2xJRkg2eVBkTGVYaGYxUVB4VFg0VkFMM3h0NEdOTDRqZEF3ZWFDVEUxSGhBUGoxenQtQklfM2xCMVQ0a1hsc2R0MA?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T19:59:00.000Z",
+        "summary": "'Multi-part case study on China’s media' finds that AI models can't hallucinate away Chinese censorship Fortune"
       },
       {
         "title": "FiscalNote Holdings, Inc. Publishes PolicyNote MCP In Anthropic's Claude Connectors Directory - marketscreener.com",
@@ -226,6 +268,13 @@
         "source": "TechCrunch",
         "published": "2026-08-13T18:28:14.000Z",
         "summary": "Anthropic researchers found AI agents can clash, collude, and coordinate in unexpected ways, raising new questions about whether today’s safety tests capture the risks of multi-agent systems."
+      },
+      {
+        "title": "Anthropic set AI agents loose on the same task. They started a turf war. - TechCrunch",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdGFDcUl1V3FOWEM4WmhQQVlwVElDbmdPcnIzb1otRVE2akVDbUJBRHoxVU83bXpEM0hkclloQ0ZvUkUzVGVHLU1zenBvUzIwWmt0WTA3WnVnV3dsVHhtVU1jNmN3bGphc05YT3pUR0I5eFU2SXltUjl3OThDNk8xaVFwQkE3Yk9PNk1aNDFXcXRnSFBrNTE0WUo4ZUpmNXhUTDNORXRib2w?oc=5",
+        "source": "Google News",
+        "published": "2026-08-13T18:28:14.000Z",
+        "summary": "Anthropic set AI agents loose on the same task. They started a turf war. TechCrunch"
       },
       {
         "title": "Anthropic's Claude tried to solve the Riemann hypothesis and found something new instead - TechSpot",
@@ -270,13 +319,6 @@
         "summary": "Anthropic CFO Krishna Rao is leading early IPO meetings with investors and has not discussed valuation, sources say CNBC"
       },
       {
-        "title": "Anthropic in Talks to Buy AI Startup Decart for $6 Billion",
-        "url": "https://www.bloomberg.com/news/videos/2026-08-13/anthropic-in-talks-to-buy-ai-startup-decart-for-6b-video",
-        "source": "Bloomberg",
-        "published": "2026-08-13T16:58:42.000Z",
-        "summary": "Anthropic PBC is in talks to buy the artificial intelligence startup Decart AI for about $6 billion, according to people familiar with the matter, in what would be the Claude maker’s largest known…"
-      },
-      {
         "title": "DeepSeek Harness launches as open source rival to Claude Code, alongside V4-Pro on API with higher prices - VentureBeat",
         "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQeVA0OGxrdGxzcGV1VUtwei1fLVFhNUE4M3BNd0lLb1hpS2xoNXlWUzJzWU1YUDM4dElQVjIwcm1qQWsxeUdoOEF6ZGEta1lEaEJLd3g4bE5ITUtqLVpZSlp3X21LZDd5T3lPelI0cHhBaEdiOTBrYkdRbV9td1c4bWVCdUlUNGNjTmx1RTI2T19QMEtyTGZPWW42Z1BQVzRPdjZ6UkNyd3hfWFdQWVU1LTMtdEtpeE84S1FzbmdOLVZmWFRrVk5aLVJsbW5nSzdrU0RIRUNR?oc=5",
         "source": "Google News",
@@ -284,54 +326,12 @@
         "summary": "DeepSeek Harness launches as open source rival to Claude Code, alongside V4-Pro on API with higher prices VentureBeat"
       },
       {
-        "title": "Anthropic Eyes $2 Trillion In October IPO, A Record-Breaking Debut - Forbes",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPMVBaQWVkaDkwRVFPb1NrX1BHM1JSNm5UeWFjX09JT2daQ3BNLW12NWNOS09vVXZjVFpQNER0WXBaUjdOWXdyMXJIQWR1akRENVhtZW5jSFVGZURZVm1rSFNqUlFxeXpucmpSQkdtQms5V3dHc0V0RlpTYkZhcWIzWDYyazZYZUJnbGYzdUZRU18wczc5NmQ5M0NrMkIwWW9nSHM0QzU3MmswWHc2TkR4cTdISmdHZmM?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T16:20:26.000Z",
-        "summary": "Anthropic Eyes $2 Trillion In October IPO, A Record-Breaking Debut Forbes"
-      },
-      {
         "title": "Samsung is using Claude to verify chip designs. It's not going smoothly",
         "url": "https://www.neowin.net/news/samsung-is-using-claude-to-verify-chip-designs-and-its-not-going-smoothly/",
-        "source": "HN · 30↑",
+        "source": "HN · 34↑",
         "hn_id": "49288051",
         "published": "2026-08-13T16:05:58.000Z",
         "summary": ""
-      },
-      {
-        "title": "Why Anthropic’s Claude Watermark May Be A New Text-Marking Method - Search Engine Journal",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMlUxNFA5RktZMzl2S09CNDdrOVdrTGIxcVRrQkRzd3ZKU1AwZEpqek4zYS0zNXRNQktzZHFJbU5Qbk1OZEpVOVhQc3BGTzJPUnMzV3pnenJwMnE1MDJwWTdLTTZneHF6MUp1V0RaNlBkaGZLelB4MzNyLXVyRzV0ZUNxX2RFSjlpdFBkcklzc1ZvV09hanlrYkFqbXZVUF9aNnVKTzdVNXdVSTJB?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T15:23:00.000Z",
-        "summary": "Why Anthropic’s Claude Watermark May Be A New Text-Marking Method Search Engine Journal"
-      },
-      {
-        "title": "Claude users outraged by new Anthropic change - AOL.com",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQWW1WNldFS3F3RGltOXJIc3A4U3RHWXB3XzZxWUwzbUpkMVVpcVJ4WXR2Y3lZNGJMT29mRG9KTi05TDVwSE80YndfTGVmV04tMzcxbXZuV0RyV2pfcmdoci1EU21JclhDX0UwekZiOG92WjVrbzBrQkZqbzZNUV9qcDJsM2luNEhWaFE?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T15:19:27.000Z",
-        "summary": "Claude users outraged by new Anthropic change AOL.com"
-      },
-      {
-        "title": "Claude users outraged by new change - The Independent",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNNFpPZElXYkszZHhCS3BkT3hxVVRvY2JpLW1ncnh2ZFVoM1RfaWc3dkpGOWlvTFd6YnRtVEZwNE1fN1R2bDFLZl95cVR0VGZlWDBNcHFHdW4xa3JnZXB0TVRTcnhxdEw5RGxhamlkNG9jQ3FMOWhmTkZBS1ZaYlVNcG5IdC1iZ21vTnFSNjBvVQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T15:19:00.000Z",
-        "summary": "Claude users outraged by new change The Independent"
-      },
-      {
-        "title": "Anthropic Reportedly Eyes $6 Billion Deal For Nvidia-Backed Decart AI Ahead Of Its IPO - International Business Times",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQSFc0T1VONXhmd2tidmpCOTdOQm85UDBkZm1HMklIVW1BZFVGNlF5OFJvSkNraHRDNV9HYXlaUXlaUzJqSUJIRjgyRFhObTVsTjN2LVo1aWZHaVQzMlhEX3hTcmVTTFNhRkZzVUdjNWZXVGxKX2pMaXg0QzYwTFRnbV94RDFQX0Q5UFMwWC1jcGxsTVhuYWNZTzlUM1pwQ0hiZXdxRy1DbU1ybklobmVN?oc=5",
-        "source": "Google News",
-        "published": "2026-08-13T14:55:14.000Z",
-        "summary": "Anthropic Reportedly Eyes $6 Billion Deal For Nvidia-Backed Decart AI Ahead Of Its IPO International Business Times"
-      },
-      {
-        "title": "Anthropic could be worth $2 trillion when it goes public",
-        "url": "https://arstechnica.com/ai/2026/08/anthropic-could-be-worth-2-trillion-when-it-goes-public/",
-        "source": "Ars Technica",
-        "published": "2026-08-13T13:58:56.000Z",
-        "summary": "Anthropic investors expect the AI startup to float at a valuation of $2 trillion or more in October, a dizzying figure that would eclipse SpaceX and make the AI lab’s debut the largest-ever initial…"
       },
       {
         "title": "Claude Can Use Your Apps Now",
@@ -636,6 +636,13 @@
     ],
     "status": [
       {
+        "title": "Service disruption on Claude Code on the web and related services",
+        "url": "https://status.claude.com/incidents/whnd2z49x3xf",
+        "source": "Claude Status",
+        "published": "2026-08-14T00:51:24.000Z",
+        "summary": "Aug 14 , 00:51 UTC Resolved - The issue affecting Claude services has been resolved. Impact occurred from 23:42 to 00:50 UTC. Aug 14 , 00:36 UTC Investigating - We are investigating degraded…"
+      },
+      {
         "title": "Elevated errors for Claude Mythos 5, Claude Fable 5, and Claude Sonnet 5",
         "url": "https://status.claude.com/incidents/j160kkjmm2n1",
         "source": "Claude Status",
@@ -711,13 +718,6 @@
         "source": "Claude Status",
         "published": "2026-07-30T14:24:12.000Z",
         "summary": "Jul 30 , 14:24 UTC Resolved - This incident has been resolved. Jul 30 , 13:43 UTC Investigating - We are currently investigating this issue."
-      },
-      {
-        "title": "Elevated errors across many models",
-        "url": "https://status.claude.com/incidents/fsh2zzzl2c4l",
-        "source": "Claude Status",
-        "published": "2026-07-30T10:48:56.000Z",
-        "summary": "Jul 30 , 10:48 UTC Resolved - This incident has been resolved. Jul 30 , 10:23 UTC Update - We are also investigating issues with Opus 4.7 and Opus 4.5. Jul 30 , 10:03 UTC Monitoring - As of 2:58 PT…"
       }
     ],
     "youtube": [
@@ -1054,6 +1054,14 @@
     ],
     "tutorials": [
       {
+        "title": "v2.1.232",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.232",
+        "source": "Claude Code Releases",
+        "published": "2026-08-13T23:29:59.000Z",
+        "summary": "What's changed Subagent forking is now on by default: a subagent_type: \"fork\" subagent inherits the full conversation and prompt cache, and non-teammate agent spawns in interactive sessions now run…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.231",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
         "source": "Claude Code Releases",
@@ -1187,14 +1195,6 @@
         "source": "Claude Code Releases",
         "published": "2026-08-04T22:39:55.000Z",
         "summary": "What's changed Fixed worktree-isolated sessions and their subagents being able to run destructive git commands against the main checkout; isolation now applies to file edits and Bash in every…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "v2.1.221",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.221",
-        "source": "Claude Code Releases",
-        "published": "2026-08-04T00:14:23.000Z",
-        "summary": "What's changed [VSCode] Added Focus view: a chat-menu toggle that hides tool activity behind an expandable per-turn summary with a live running-tool indicator, toggled with Ctrl+Alt+F or the \"Claude…",
         "tutorial_kind": "official"
       },
       {
@@ -1744,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.232",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.232",
+        "source": "Claude Code",
+        "published": "2026-08-13T23:29:59.000Z",
+        "summary": "What's changed Subagent forking is now on by default: a subagent_type: \"fork\" subagent inherits the full conversation and prompt cache, and non-teammate agent spawns in interactive sessions now run in the background by…"
+      },
+      {
         "title": "MCP is completely backwards",
         "url": "https://www.youtube.com/shorts/lEjcEDbMyWg",
         "source": "YouTube · Productive Dude",
@@ -1924,13 +1931,6 @@
         "source": "Claude Code",
         "published": "2026-08-04T22:39:55.000Z",
         "summary": "What's changed Fixed worktree-isolated sessions and their subagents being able to run destructive git commands against the main checkout; isolation now applies to file edits and Bash in every session type Fixed…"
-      },
-      {
-        "title": "v2.1.221",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.221",
-        "source": "Claude Code",
-        "published": "2026-08-04T00:14:23.000Z",
-        "summary": "What's changed [VSCode] Added Focus view: a chat-menu toggle that hides tool activity behind an expandable per-turn summary with a live running-tool indicator, toggled with Ctrl+Alt+F or the \"Claude Code: Toggle Focus…"
       },
       {
         "title": "The Compliance API now returns transcripts of Cowork sessions started on claude.ai web or mobile, in beta for Claude…",
