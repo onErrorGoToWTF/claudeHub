@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-08-18T22:09:16.560Z",
+  "generated_at": "2026-08-19T00:29:14.909Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Claude Accelerates Protein Design",
+        "url": "https://www.anthropic.com/research/Claude-accelerates-protein-design",
+        "source": "Anthropic Research",
+        "published": "2026-08-18T22:13:08.000Z",
+        "summary": ""
+      },
       {
         "title": "Multiagent Systems",
         "url": "https://www.anthropic.com/research/multiagent-systems",
@@ -135,16 +142,23 @@
         "source": "Anthropic",
         "published": "2026-07-22T17:35:48.000Z",
         "summary": ""
-      },
-      {
-        "title": "Donation Public First Action",
-        "url": "https://www.anthropic.com/news/donation-public-first-action",
-        "source": "Anthropic",
-        "published": "2026-07-22T10:14:58.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic Annualized Revenue Run Rate Seen Topping $65 Billion - thelec.net",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1QT2lmNWpYWTNHS043WjYzdWxTbGZzem1GZDNLT1FRWHZpTkgxLWRVeDEtSDJJV2dWS2tHQlRFd0ZGZ0JhV1JRMW1sbFlLamFxUXVNOURRclVZWFV6a05pcE9IcmxENGc?oc=5",
+        "source": "Google News",
+        "published": "2026-08-18T23:25:59.000Z",
+        "summary": "Anthropic Annualized Revenue Run Rate Seen Topping $65 Billion thelec.net"
+      },
+      {
+        "title": "What Claude's AI text watermark actually does - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFB3QXVSLWxia3VqbkVfbkgtbGVENU1ERjRqMnotR0w1bklDS2xXRHFzTG9JNFNsenBMRVpMb2t5aWVmR1VYNjduTTlfclRCdE5qZlhxRVFSTTNSd3V6dlN3NTdEOFlabjByZmRWZlpCekkxSmtOejN2Mw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-18T22:09:53.000Z",
+        "summary": "What Claude's AI text watermark actually does Mashable"
+      },
       {
         "title": "Claude can now send emails in Gmail, even without your approval - 9to5google.com",
         "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQam41bnpyQ0FIMnZ3ZkhLYXBhTkVUb3dpbk9JQkdBZEFzNmh6SkM5RUpNdFdCXzJUS0FQdVViZnB3Y0xFWVhhTW5qenpUZGlKellzelJGdklqT0xMZmZTSFNvLTQ2SjJfSkdjenRXVjdQbWNudVhuYloxUldjZVY4UU4zWmlkN19HaWdwTkJtdVVDN3N1RExFanRzZGl1QQ?oc=5",
@@ -155,7 +169,7 @@
       {
         "title": "Claude Code Teaching macOS to Natively Print to the HP Laser 1008a",
         "url": "https://cdn.kuber.studio/chat/hp-laser-1008a-driver",
-        "source": "HN · 53↑",
+        "source": "HN · 103↑",
         "hn_id": "49352806",
         "published": "2026-08-18T21:14:21.000Z",
         "summary": ""
@@ -168,32 +182,11 @@
         "summary": "Anthropic PBC plans to give Chief Executive Officer Dario Amodei and other co-founders shares with extra voting power as the firm prepares to make its Wall Street debut, The Information reported,…"
       },
       {
-        "title": "What Claude's AI text watermark actually does - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFB3QXVSLWxia3VqbkVfbkgtbGVENU1ERjRqMnotR0w1bklDS2xXRHFzTG9JNFNsenBMRVpMb2t5aWVmR1VYNjduTTlfclRCdE5qZlhxRVFSTTNSd3V6dlN3NTdEOFlabjByZmRWZlpCekkxSmtOejN2Mw?oc=5",
-        "source": "Google News",
-        "published": "2026-08-18T19:45:26.000Z",
-        "summary": "What Claude's AI text watermark actually does Mashable"
-      },
-      {
-        "title": "The push for AI watermarks is spawning a new wave of tools to remove them - businessinsider.com",
+        "title": "Anthropic wants AI text to be easier to spot. Developers are already building ways around it. - Business Insider",
         "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNU20ybUcweklNYUE3aGdBMF9hZHdDYXNZSVJxMkpfQzBiYWQ0TDdYMEVqOEZEVUVFc1lraTZfdWNSaEhfWWtTb2RzR1RMMzZzdGtXTWhpRWJKUkR1NUJVUzhfQzNSSmhoenF5bS1VWkFBS0Q5V0pSeGFTQVlfNG5ERA?oc=5",
         "source": "Google News",
-        "published": "2026-08-18T19:30:00.000Z",
-        "summary": "The push for AI watermarks is spawning a new wave of tools to remove them businessinsider.com"
-      },
-      {
-        "title": "AI Stress Tester: Models Have Crossed a ‘Threshold of Competency’",
-        "url": "https://www.bloomberg.com/news/videos/2026-08-18/when-ai-safety-tests-reach-the-real-world-video",
-        "source": "Bloomberg",
-        "published": "2026-08-18T18:52:47.000Z",
-        "summary": "After AI models from OpenAI, Anthropic and others broke out of controlled tests and accessed real-world systems, new questions were raised about how they should be assessed before deployment. Those…"
-      },
-      {
-        "title": "Anthropic’s $65 Billion Surge, OpenAI’s Teen Push | Bloomberg Tech 8/18/2026",
-        "url": "https://www.bloomberg.com/news/videos/2026-08-18/bloomberg-tech-8-18-2026-video",
-        "source": "Bloomberg",
-        "published": "2026-08-18T18:52:39.000Z",
-        "summary": "Bloomberg’s Ed Ludlow breaks down Anthropic’s annualized revenue topping $65 billion as the AI startup moves closer to a potential IPO. Plus, OpenAI launches ChatGPT for Teens, aimed at giving 13-…"
+        "published": "2026-08-18T19:32:14.000Z",
+        "summary": "Anthropic wants AI text to be easier to spot. Developers are already building ways around it. Business Insider"
       },
       {
         "title": "Anthropic Revenue Run Rate Hits $65 Billion. The Claude Maker Is Outpacing OpenAI Ahead of Its IPO. - International Business Times",
@@ -204,22 +197,22 @@
       },
       {
         "title": "Claude Down: Anthropic Investigates Multi-Model Errors - SQ Magazine",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPckR4S0wwNU9CMDR6Tnp5N1BUSllncWdMTmJ5VGw5OXR6RGUzalphZG9uYkpFd0NrTkhETWlyVEszRE5mYzhERzJDR0dqZWxSMmZId0lSaUNRUnRJYjQ4Q1ZDT0lUODVEYy1fNUlKa285SXl2OW5kQmNPMFV2NlQwY3QyLWlPZw?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFB4Y19sM3FlTndNT0pxV3YxRENxeGJEMl92UzVTVkJOZHhfTHBadmc5Y0lUSGNwZ1E4NC1vMFRMZzhDY3UyRVp5cw?oc=5",
         "source": "Google News",
         "published": "2026-08-18T17:34:16.000Z",
         "summary": "Claude Down: Anthropic Investigates Multi-Model Errors SQ Magazine"
       },
       {
-        "title": "Anthropic says Claude Cowork is now available on mobile for all paid plans - 9to5mac.com",
+        "title": "Anthropic says Claude Cowork is now available on mobile for all paid plans - 9to5Mac",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOa09haUhyRUpGQ0NRM2ZmRkd0bVQ3dWxkckM2RTFCYmRZUEhEWkVPdy1jMFZGTHBseTBkY1hQcWw2MmZOV3A1RGdLUTd5VEI4a0FrTkt6bERPbm9pOW1mb0lDR25uajd0eF9PNUUxZjltTU91QmdGV3dIaHA1ckYxeTZpUjBZdXFHU01sei1jeDRUQmxqcEljaDl4cDI3T3VaeWRPemcwZUdaQQ?oc=5",
         "source": "Google News",
         "published": "2026-08-18T17:09:00.000Z",
-        "summary": "Anthropic says Claude Cowork is now available on mobile for all paid plans 9to5mac.com"
+        "summary": "Anthropic says Claude Cowork is now available on mobile for all paid plans 9to5Mac"
       },
       {
         "title": "Claude Code May–August 2026 weekly limits promotion",
         "url": "https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion",
-        "source": "HN · 242↑",
+        "source": "HN · 254↑",
         "hn_id": "49348751",
         "published": "2026-08-18T17:02:15.000Z",
         "summary": ""
@@ -227,7 +220,7 @@
       {
         "title": "Degraded performance for multiple models",
         "url": "https://status.claude.com/incidents/q7txxvbsftgq",
-        "source": "HN · 145↑",
+        "source": "HN · 146↑",
         "hn_id": "49348163",
         "published": "2026-08-18T16:28:20.000Z",
         "summary": ""
@@ -235,7 +228,7 @@
       {
         "title": "Launch HN: machine0 (YC S26) – Persistent CPU and GPU VMs from the CLI",
         "url": "https://machine0.io",
-        "source": "HN · 49↑",
+        "source": "HN · 58↑",
         "hn_id": "49348136",
         "published": "2026-08-18T16:26:42.000Z",
         "summary": "Hi HN! I’m Barnaby, founder of machine0 ( https:&#x2F;&#x2F;machine0.io ). I’m building a CLI for long horizon agent compute: `machine0 new mybox` gives your agent a persistent…"
@@ -309,10 +302,17 @@
       {
         "title": "Claude writing a macOS driver for my obscure HP printer built only for Windows",
         "url": "https://twitter.com/kuberwastaken/status/2089377982536388964",
-        "source": "HN · 147↑",
+        "source": "HN · 151↑",
         "hn_id": "49344643",
         "published": "2026-08-18T12:22:58.000Z",
         "summary": ""
+      },
+      {
+        "title": "Claude Fable 5 vs Grok 4.6 vs DeepSeek V4 [2026] - tech-insider.org",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE0tZ2J6Xy13TG81ejQ3LTJ0Z1BHeWtLWlcwSEhwWVJvdTdFN2dDZnNvQUg2d2ZHSEZSSGY0UEU3T016SExEeTZYc2E5OExFVndXYUlfZEZITTk1NHpwRmo4VTNkV1MzZUhmaWN2djljWmV6RVlyNlVKNTl2dlo?oc=5",
+        "source": "Google News",
+        "published": "2026-08-18T12:13:22.000Z",
+        "summary": "Claude Fable 5 vs Grok 4.6 vs DeepSeek V4 [2026] tech-insider.org"
       },
       {
         "title": "Anthropic Doubles Claude Code Rolling Limits for Paid Plans - Geeky Gadgets",
@@ -336,18 +336,18 @@
         "summary": "Raoul Pal Says Claude Is ‘Utterly Unusable,’ Warns Anthropic Needs More Inference ‘Fast’ or It Could Lose Customers Benzinga"
       },
       {
-        "title": "Claude Code gets a /design command that lets developers create UI mockups right in the terminal - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNeGc2b0FkbTJXN1NwRElicmZoSV9MQzg0QnktYUxkSkEwNGtiNzlkVDN0eERTVTNCNUxEcUJoSVBLb2tjdlo1aEl0Q196SGRZUmNuMWpzU1poODQ2WXN5WHh1VnF2a3Zrd2pZZHAwRFhTcGsyN3p1MEdnV2dLVGZBcHBtRFlkTTBDeVlnc3FKcktJdmJFTWNDRnl1TzlDbFk1aVZkYnBoRnhrcUo3MVNfcU1GaW9YbjIxUkdZ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-18T10:08:10.000Z",
-        "summary": "Claude Code gets a /design command that lets developers create UI mockups right in the terminal the-decoder.com"
-      },
-      {
         "title": "We still don’t know how people are really using AI - MIT Technology Review",
         "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBWQkFLNWNOVndnMUZHN0ZiNHp2ODVoNUFRMDNSRGJuR1FiOE1qTTdQZFI1WEg0LWJ0TjJHaWtOdEVUSzdmZjRDSFN1QmxIeGdTZlJGNjlaZ3dpNGRuOE5xT1g3R1VXbURweThZRmtBSHhlR1lOR0Zaai1R0gF_QVVfeXFMUHRtMk1yNmFCRWVjb2o5MzZUQlZnNUFfLTZ2WkQ3eFdXa1RDLTFjaGE3UnJpX0hEbHN2NVZoQVpVOWROcUlMNVZaSG9DaXd2dkFEc3JQZWFsNDc0LWRSb09sdlAzSUpXNnpneWY5VWJvUWRkMHpZYmFpam1nXzJIWQ?oc=5",
         "source": "Google News",
         "published": "2026-08-18T10:06:43.000Z",
         "summary": "We still don’t know how people are really using AI MIT Technology Review"
+      },
+      {
+        "title": "Anthropic's IPO Valuation Looks to 2028 - Techerati",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQSmZmeW5XbWtJN2Y5UGZWc01aejRhc3Q3MUJkcTRLbElqQkh3Wk5vYXU1eGlBbWxuemx4cTd4Qkl6azgzVUVVaWhNSVdPUmtjRjV1OThQS0VOSFZTLUZubUZRTjQtT2tzY1BkdUdITnU0TG5GLVlXV3ZKUHhmTXFodlhLMFNjWmh3bTJqanB5cGFpTGpIR1M2dnA4S2V4MTJoeUZST0xPTEg?oc=5",
+        "source": "Google News",
+        "published": "2026-08-18T10:05:27.000Z",
+        "summary": "Anthropic's IPO Valuation Looks to 2028 Techerati"
       },
       {
         "title": "Day 15: Vibe Coding TWO Apps to 1m! (Using Claude Fable, Opus and Codex)",
@@ -1783,6 +1783,13 @@
         "summary": ""
       },
       {
+        "title": "Workbench is now Playground in the Claude Console. Playground supports every Messages API parameter and includes…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#august-18-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-08-18T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.234",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.234",
         "source": "Claude Code",
@@ -2187,13 +2194,6 @@
         "source": "YouTube · Riley Brown",
         "published": "2026-07-25T20:28:01.000Z",
         "summary": ""
-      },
-      {
-        "title": "v2-alpha-15",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/v2-alpha-15",
-        "source": "MCP Inspector",
-        "published": "2026-07-25T02:13:46.000Z",
-        "summary": "Consolidate the three GET /api/config hooks into one useInitialConfig"
       },
       {
         "title": "Claude Opus 5 DESTROYS Fable 5",
