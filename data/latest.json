@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T20:11:04.113Z",
+  "generated_at": "2026-08-21T22:10:38.264Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,44 @@
     ],
     "news": [
       {
+        "title": "Day 17: LIVE Vibe Coding Iterated.ai — with Claude, Codex and Grok",
+        "url": "https://www.youtube.com/watch?v=OxZPhDKp6uo",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "OxZPhDKp6uo",
+        "thumbnail": "https://i.ytimg.com/vi/OxZPhDKp6uo/hqdefault.jpg",
+        "published": "2026-08-21T21:53:31.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic Brings Claude Mythos 5 to Claude Security: Enterprise Teams Get Frontier Vulnerability Scanning Without Direct Model Access - MarkTechPost",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOSWZBQ1djTVQzRlBJNmxoOWFsbjM1Mnc1WFVBaE5sT01iNDBqVW9mYUQ3RjJ5Z0lFMzBORFJocjJWQzBoLWprREc0QlRNSC1GMDF2WDlwbzR4MF9NVk84dDUxR19KRVdBX1dVa05xV0NrX3E5VXBPXzZrTm5MeGRROUIwQm44NzZwWS1McW9ucmpadnJFdWU00gGcAUFVX3lxTFBMYXhJTC1vSUR1TWt0aDhXUWc3WldXb1h2UmxqQV9OSUNIMFB1Mzc0SmNrSmdUeE0wakg1LWZvNmV2b2dMcV9ISVNTLUN3a1NWWkRueWR1aXRyS0J0c2VSb2hYQjEwN3kyckZwM0hKV0dvOWhEdWc3bGtRenh4cF91OTFBeDhsbnk3Ymxwc0JLR3NaSXAxWUR3MmFyQw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-21T21:15:53.000Z",
+        "summary": "Anthropic Brings Claude Mythos 5 to Claude Security: Enterprise Teams Get Frontier Vulnerability Scanning Without Direct Model Access MarkTechPost"
+      },
+      {
+        "title": "Anthropic embeds Claude Mythos 5 in security tools, pledges $35M in credits - Dealroom",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQdW1oRnlQZE1SS0YzbUo3ajM5ZDZBSWp2ZThTeWhnQnkzTWJLVjM1MHVLcGR2S1dwQWlHMnZ0ekg3MGZVTFNxZVRsLVVncVA0eW1NeDlNNDZPNXNQcUQ1eUY3R1o5RC01UjZUcEk5ejZWendzZUctbE82LWxnUDZ2U0kxWFVPWmVON2FmU3RKeEZKMGNWQl9IYXM3TlAwcms2dUNQLWdDRzBoSkk?oc=5",
+        "source": "Google News",
+        "published": "2026-08-21T20:59:39.000Z",
+        "summary": "Anthropic embeds Claude Mythos 5 in security tools, pledges $35M in credits Dealroom"
+      },
+      {
+        "title": "Codex vs Claude vs Grokbot: Which AI Super App Is Best?",
+        "url": "https://www.youtube.com/watch?v=ETa6ZYqoIXo",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "ETa6ZYqoIXo",
+        "thumbnail": "https://i.ytimg.com/vi/ETa6ZYqoIXo/hqdefault.jpg",
+        "published": "2026-08-21T20:41:12.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
         "title": "Anthropic Taps Google Chip Veteran as Part of Push Into Hardware",
         "url": "https://www.bloomberg.com/news/articles/2026-08-21/anthropic-taps-google-chip-veteran-as-part-of-push-into-hardware",
         "source": "Bloomberg",
@@ -154,10 +192,18 @@
       },
       {
         "title": "Anthropic Taps Google Chip Veteran as Part of Push Into Hardware - Bloomberg.com",
-        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPWDh6UXAydkZwT09XRjNPbUdvQWhicGh4Ui15RkVWeTZMemY3NTU1QW1iREFpZ1V6T1JucWJoT0NrQi1aUjRDclloNHpDemp3VHdSZDMxbDloU2lmNXNVWWk4VjV0a2FQRVp6NjJiUExHNWRyQTE2V01paGszUElIbkRWRk52UzZOUUhXTDQtemREb1Z2d1NsY203UTVIa3BNeWdDSjBhX1lHQXJ1bGdkd0R2ckFkQnJFWVR6ZjNOWHZYc0l1NzFMR01NSXN4dlEydUE?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQTEtlVWN3QmU2bFF2QzRyZDBJTUliblExZnM3d1JqcjBLN1V3TDI3MXFnaFdfV1Z5Yl9xRDJ4SkViQVhabEpVQVB4a2tuQ2xDV1doS0ZwWDBBVTJpcXJoS1c2Sk1WQ3p2aDNKYklaYjJpbTZPSENmSzBTQTVodndSWDBWUkJPWml6djBXNWJIazI5dkUtNENLQXZmM0puMzlidExXZnp4aG43WXcwZGZIc3NOR1A0Zw?oc=5",
         "source": "Google News",
         "published": "2026-08-21T19:59:55.000Z",
         "summary": "Anthropic Taps Google Chip Veteran as Part of Push Into Hardware Bloomberg.com"
+      },
+      {
+        "title": "Quick impressions: A week of using Codex more than Claude",
+        "url": "https://allaboutcoding.ghinda.com/a-week-of-using-codex-more-than-claude/",
+        "source": "HN · 60↑",
+        "hn_id": "49393051",
+        "published": "2026-08-21T19:51:48.000Z",
+        "summary": ""
       },
       {
         "title": "Anthropic puts its most powerful model Claude Mythos 5 to work for cyber defense - the-decoder.com",
@@ -165,6 +211,13 @@
         "source": "Google News",
         "published": "2026-08-21T19:38:23.000Z",
         "summary": "Anthropic puts its most powerful model Claude Mythos 5 to work for cyber defense the-decoder.com"
+      },
+      {
+        "title": "Unit 42 Defends Organizations Against Next-Gen Frontier AI Risks with Anthropic’s Mythos 5 - Palo Alto Networks",
+        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNcTRremVZOVJpRVZkdG1Ickg4bXFIOG01cVlWbFVIeV9FVGZNYXo1ejlOOTE4NXVQc3RMVl9mZERNX3d3N1hySm5FRHR6b3RZc3hld0lXWTQ0NjlNU2VtVkV4VkIxMzMwNGRUbkJWc0dhVG8wZjVlTDdUQmFXdnBrODNPWXJjNDg2YlczQ193bUV5NUpHTWhzS1JZa2hhT1RiYmdPc0NHeDF1Ymc4Z1BTNUFJRm9VUk5ENGZkOVllUmtqU2VVQ1I5bWg3VVJlTHQ2Znc?oc=5",
+        "source": "Google News",
+        "published": "2026-08-21T19:22:33.000Z",
+        "summary": "Unit 42 Defends Organizations Against Next-Gen Frontier AI Risks with Anthropic’s Mythos 5 Palo Alto Networks"
       },
       {
         "title": "Wall Street Struggles to Absorb AI’s Debt Boom",
@@ -195,30 +248,26 @@
         "summary": "Anthropic is aiming for an IPO that could make history, expecting to match or even top SpaceX's record-setting debut, according to sources. The maker of Claude could file publicly by the end of this…"
       },
       {
+        "title": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+        "url": "https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders",
+        "source": "HN · 34↑",
+        "hn_id": "49392331",
+        "published": "2026-08-21T18:48:28.000Z",
+        "summary": ""
+      },
+      {
+        "title": "‘Pharma Bro’ Martin Shkreli Slams Anthropic’s Claude Drug-Discovery Claims: ‘This Is Not Impressive Work’ - Stocktwits",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSEFLOExITld4YkJIVU85dEpKM1RzbjBNYmx5dWxlY0RGOXFVRVpfNVZVdndxbUs4TTY5OUtiQW9LT0ExckE4TVVrOU5uLTBsYy1iUi1NNDBoZDRoc25rTjdZTUVaQy1VLUVMOU1XVk1fcTV3RDBRNzdxalFHYXREaDJKN3hSbWJ5eXpXRTd6dDRfYW1nX0loVGNfLXA1a2gxTzl4VUpjVklxUGoxX2pEYWFtZ28yTDhK?oc=5",
+        "source": "Google News",
+        "published": "2026-08-21T18:17:24.000Z",
+        "summary": "‘Pharma Bro’ Martin Shkreli Slams Anthropic’s Claude Drug-Discovery Claims: ‘This Is Not Impressive Work’ Stocktwits"
+      },
+      {
         "title": "Anthropic Deploys Claude Mythos 5 in Security Tools, $35M Open-Source Fund - Unite.AI",
         "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQMC11eE9YTEhoQmdLQmlvUlp0YkhaaUllc0FMNEJTVUUwcmRKTGl3RzdZOGVTa01aWVhMZmR0QU54R1hZRzRKMlpIbTJNMEZ0U25oN3gzU3NOa2FIZ2hfeVl1emJYR0Z3MDR3ekczRFB5V0V3UEE3djlhYjMxTFBfMU5DQ1VpRlBXNG9NclJPR2psTHNvajA3TEl3?oc=5",
         "source": "Google News",
         "published": "2026-08-21T17:48:01.000Z",
         "summary": "Anthropic Deploys Claude Mythos 5 in Security Tools, $35M Open-Source Fund Unite.AI"
-      },
-      {
-        "title": "Day 17: LIVE Vibe Coding Iterated.ai — with Claude, Codex and Grok",
-        "url": "https://www.youtube.com/watch?v=OxZPhDKp6uo",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "OxZPhDKp6uo",
-        "thumbnail": "https://i.ytimg.com/vi/OxZPhDKp6uo/hqdefault.jpg",
-        "published": "2026-08-21T17:10:26.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Anthropic’s new browser tool doesn’t actually run a browser - The New Stack",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9ESDVucDVtb3FwaF9sV3VfLTdZdjhEVUJxUmhpQzZJRmExdl80TGFsekprYnRocENGQ01DZjBiSnlpZUQxdGktWkUxNVpkTklReTBEZVZ3UFVHdm5vZ1pn?oc=5",
-        "source": "Google News",
-        "published": "2026-08-21T16:55:57.000Z",
-        "summary": "Anthropic’s new browser tool doesn’t actually run a browser The New Stack"
       },
       {
         "title": "Why is the DOJ investigating Andreessen Horowitz’s board seats?",
@@ -230,7 +279,7 @@
       {
         "title": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
         "url": "https://github.com/proliferate-ai/proliferate",
-        "source": "HN · 31↑",
+        "source": "HN · 34↑",
         "hn_id": "49390739",
         "published": "2026-08-21T16:47:15.000Z",
         "summary": "Hi HN- I&#x27;m Pablo, the founder of Proliferate (YC S25)! Proliferate ( https:&#x2F;&#x2F;github.com&#x2F;proliferate-ai&#x2F;proliferate ) is an open-source, self-hostable AI…"
@@ -243,13 +292,6 @@
         "summary": "Anthropic Claude Adds Watermarks. Implications For Business? Forbes"
       },
       {
-        "title": "DeepSeek unveils vision model challenging Anthropic’s Opus 4.8 performance - oodaloop.com",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNcEtPZVNfXzZ6LVhmSUJLbVBKQlNWVlZ2RVFOQTlzcS1vazgzbzViei1iUldLM0pkbjNpRnREWENNWmI2Rk9mVDA3cmM4Q2JWWFJ2TjY3RzFXT1ZycnFzUEVBN0Q4Q2I1SzRGc293MHJzTlVkQ09nclBobTlJbTNoQlBkSFdpN3VaTUNEWEJ3eVExcWpzbk9qdzc4RTZxU2NSS1hxczVmWWgySmppR3dYazZwUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-21T15:51:32.000Z",
-        "summary": "DeepSeek unveils vision model challenging Anthropic’s Opus 4.8 performance oodaloop.com"
-      },
-      {
         "title": "Claude’s New Watermarking Could Create A Bigger Problem For Educators - Forbes",
         "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRkh4OG56bk5vU1hsZDNORmRueVZWUndWdDF6QjNKakY2TGp5Q3A5TU1YeUpCVGhNdnMtaWljUmJkNUhseTIyWXI1X2ljcXphYnhicmRWNHA5OEFJdER5MnF6LXk3anJ2YzRVUUs3WTFTaUZqWElmby13VXV3aXBrY0hBM0ttaVV6cER5ZWhvSlZlazJMVGNaVkNVMzFKdHlDVDJCcE15b1lLTEZuVGxwRG9GLXNGVU9Mb2NQZDNyZ2VIQQ?oc=5",
         "source": "Google News",
@@ -260,7 +302,7 @@
         "title": "Why Anthropic's AI watermark for Claude text goes further than rivals — for now - Business Insider",
         "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQeEJ6TTlIZ0pHOUhVV0pKcHJpR2pTYTY0c0swNmlzR2k0LThTaVQzSWROVHJKX1NveEJpOWtEYXZlSkRvLVVDcFROZDA2SURkQXFlaGMtVDY1dllLQUZJb1RzUHZqdUkxVXVGc2gyUDF1NHA4VzBRbmVvd3p2YTNzY0gwSm5aalZXZW10NWpvOVBoMXdYRmc?oc=5",
         "source": "Google News",
-        "published": "2026-08-21T14:56:05.000Z",
+        "published": "2026-08-21T14:54:00.000Z",
         "summary": "Why Anthropic's AI watermark for Claude text goes further than rivals — for now Business Insider"
       },
       {
@@ -280,7 +322,7 @@
       {
         "title": "Claudette: Make Claude stop talking like a BuzzFeed article",
         "url": "https://github.com/adnanakil/nobuzz/blob/main/README.md",
-        "source": "HN · 115↑",
+        "source": "HN · 148↑",
         "hn_id": "49388752",
         "published": "2026-08-21T14:31:52.000Z",
         "summary": ""
@@ -307,13 +349,6 @@
         "summary": "Medialister Joins Anthropic’s Claude Connectors Directory for Media Planning citybiz"
       },
       {
-        "title": "Medialister Is Now Available in Anthropic’s Claude Connectors Directory - The Manila Times",
-        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQMUQ5UGdaWUVrckdYR09hQWxEcVUzcHNFSnpQNDZBeVJNdUlxaExxZWtvbkhhLVQtNUVsWjVNV3hhTXVMNzVINnhXVWY3VFZYazVuM3RpSGFVXzItaFIwTkljTG8xaWNGNDlWcm1EYkdYS0haQ0xTeXJENllRaHpMQzRnanpnQzdobWtoaXJlUXlJZnVBOFc0ZzFYNW1sa1F3LXBhd1Q1b0dUZTVDR0NiWGNCRWV0Ui1KMWRYNFVRdnFWX0U4a1FqNW1SNzhHWkFQNEhzUnpINV9Kamk10gHiAUFVX3lxTE11Tzd0QTMtaTRWaTdLbzgzeEJuWWJ6RVl4bm92aHBqcV93M3FGNG95bmVLRnJJZzhUVXl3VHdJa2lqWmo4d0I3b3hiaUs0NGJUOTY1UVdqOWRnTUNDZTNTdXp2anBFU3pOV3M3N3Z4RHRvN2FRSjBWYlpIVWRELXpULTFWUXNCMmNpVjFhSlRqZlpWVV95TTllU2J6Q0VGVm9ubnZUNzhTbmtJYllDMkNfdUF4aEJNbHIzZlRCc2ZJRGNRV3VIa1ZxMVdPUUcxVDNlM1pjU1lBLWZDaHpIRUVEUVE?oc=5",
-        "source": "Google News",
-        "published": "2026-08-21T12:50:08.000Z",
-        "summary": "Medialister Is Now Available in Anthropic’s Claude Connectors Directory The Manila Times"
-      },
-      {
         "title": "What is the TAM for agentic coding?",
         "url": "https://www.youtube.com/shorts/W6JXzg1rq_4",
         "source": "Productive Dude",
@@ -324,27 +359,6 @@
         "published": "2026-08-21T12:00:48.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "What retail investors need to know before jumping into Anthropic’s IPO - Financial Times",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQTTZEUzJKWjRsSnV4S1cwYzdnYWpjbmJ3VkZzTXJqRV94VHBFOHRhbGgxMWFGSGF4Y3FkR3Fkb1RCUENZbjVidTdKZlR1YUJGUUZVT0dhNnZ0S01RbUMzLVE0Q2NSOWNTbmJVV1Z3TG1PS3B6ZVFtR2dDNE1UemsxNFMyN00?oc=5",
-        "source": "Google News",
-        "published": "2026-08-21T11:00:06.000Z",
-        "summary": "What retail investors need to know before jumping into Anthropic’s IPO Financial Times"
-      },
-      {
-        "title": "Hundreds of private conversations with Anthropic's Claude AI turned out to be publicly readable online - OkDiario",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOeFBPWWRJVUhQWWszejhERkNsam50WGJVRThHYlJoc2R1NHhyVm1xNC0yS2F0TFloajhNREFZZFNlVkhlejRockJlbGpENUpfSzhYc2p4clp5T01ld0ZLdnBYb3pXUDBTeXF6WTJRdkxkY1FLR3FvYkhJVlFqY2V4ZDlqcHdZYXdFRl9Obm5ZRzJZX0VxQll3M0FmNWJFN2JzN29zTE05V1NxY19sMGpibUs3bVQ2YUtLQmtZME9MbXNaZzJfYjZfRW9WVGcxMWdQdGxv?oc=5",
-        "source": "Google News",
-        "published": "2026-08-21T11:00:00.000Z",
-        "summary": "Hundreds of private conversations with Anthropic's Claude AI turned out to be publicly readable online OkDiario"
-      },
-      {
-        "title": "Anthropic launches free official tutorial site \"Claude Academy\" covering five products - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1zUm9Nb2Y5MGp0ajR3R2x0RGV4RnRGRGFESGlsaHNkVVRZXzVZRnFxN3VwSXI4aWZvSnA5UWJrem5RZXVibFJHblhnOVdkSUU0eDFiWFEtMi1nMVJuR3dKR0R2VjZKQi1ORWhuRjVtNFpDb2h3OEE?oc=5",
-        "source": "Google News",
-        "published": "2026-08-21T03:56:00.000Z",
-        "summary": "Anthropic launches free official tutorial site \"Claude Academy\" covering five products finance.biggo.com"
       },
       {
         "title": "Day 16: Vibe Coding Iterated.ai — with Claude, Codex and Grok",
@@ -657,18 +671,6 @@
         "published": "2026-07-23T21:13:42.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Opus 5",
-        "url": "https://www.youtube.com/shorts/EovCEYtt0l8",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "EovCEYtt0l8",
-        "thumbnail": "https://i.ytimg.com/vi/EovCEYtt0l8/hqdefault.jpg",
-        "published": "2026-07-23T16:51:53.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -766,7 +768,18 @@
         "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
         "video_id": "OxZPhDKp6uo",
         "thumbnail": "https://i.ytimg.com/vi/OxZPhDKp6uo/hqdefault.jpg",
-        "published": "2026-08-21T17:10:26.000Z",
+        "published": "2026-08-21T21:53:31.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Codex vs Claude vs Grokbot: Which AI Super App Is Best?",
+        "url": "https://www.youtube.com/watch?v=ETa6ZYqoIXo",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "ETa6ZYqoIXo",
+        "thumbnail": "https://i.ytimg.com/vi/ETa6ZYqoIXo/hqdefault.jpg",
+        "published": "2026-08-21T20:41:12.000Z",
         "summary": ""
       },
       {
@@ -1075,17 +1088,6 @@
         "video_id": "ikxxjRWX0Yg",
         "thumbnail": "https://i.ytimg.com/vi/ikxxjRWX0Yg/hqdefault.jpg",
         "published": "2026-07-23T21:13:42.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 5",
-        "url": "https://www.youtube.com/shorts/EovCEYtt0l8",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "EovCEYtt0l8",
-        "thumbnail": "https://i.ytimg.com/vi/EovCEYtt0l8/hqdefault.jpg",
-        "published": "2026-07-23T16:51:53.000Z",
         "summary": ""
       }
     ],
@@ -1745,11 +1747,18 @@
     ],
     "claude_learning": [
       {
-        "title": "AI Fluency for Creative Work",
-        "url": "https://anthropic.skilljar.com/ai-fluency-for-creative-work",
-        "source": "Anthropic Academy",
-        "published": "2026-08-21T20:11:04.110Z",
-        "summary": "This course empowers creative professionals to develop AI fluency, making intentional, analysis-driven decisions about AI use in their creative practice while protecting what makes their work theirs."
+        "title": "Day 17: LIVE Vibe Coding Iterated.ai — with Claude, Codex and Grok",
+        "url": "https://www.youtube.com/watch?v=OxZPhDKp6uo",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-08-21T21:53:31.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Codex vs Claude vs Grokbot: Which AI Super App Is Best?",
+        "url": "https://www.youtube.com/watch?v=ETa6ZYqoIXo",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-08-21T20:41:12.000Z",
+        "summary": ""
       },
       {
         "title": "v2.1.239",
@@ -1757,13 +1766,6 @@
         "source": "Claude Code",
         "published": "2026-08-21T19:54:23.000Z",
         "summary": "What's changed Cost estimates ( /cost , status line, --max-budget-usd ) now include the 1.1× US-only-inference premium for data-residency workspaces Added the one-time fullscreen renderer offer on Bedrock, Vertex,…"
-      },
-      {
-        "title": "Day 17: LIVE Vibe Coding Iterated.ai — with Claude, Codex and Grok",
-        "url": "https://www.youtube.com/watch?v=OxZPhDKp6uo",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-08-21T17:10:26.000Z",
-        "summary": ""
       },
       {
         "title": "What is the TAM for agentic coding?",
@@ -2232,13 +2234,6 @@
         "url": "https://www.youtube.com/watch?v=ikxxjRWX0Yg",
         "source": "YouTube · Nick Saraev",
         "published": "2026-07-23T21:13:42.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 5",
-        "url": "https://www.youtube.com/shorts/EovCEYtt0l8",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-07-23T16:51:53.000Z",
         "summary": ""
       }
     ]
