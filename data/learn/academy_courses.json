@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T18:18:29.798Z",
+  "generated_at": "2026-08-21T20:11:04.112Z",
   "source": "Anthropic Academy",
   "base": "https://anthropic.skilljar.com",
   "courses": [
@@ -142,6 +142,13 @@
       "url": "https://anthropic.skilljar.com/ai-fluency-for-builders",
       "summary": "This course empowers builders to develop AI fluency — increasing impact and efficiency while staying true to what it means to own the full arc from problem to shipped solution.",
       "order": 19
+    },
+    {
+      "slug": "ai-fluency-for-creative-work",
+      "title": "AI Fluency for Creative Work",
+      "url": "https://anthropic.skilljar.com/ai-fluency-for-creative-work",
+      "summary": "This course empowers creative professionals to develop AI fluency, making intentional, analysis-driven decisions about AI use in their creative practice while protecting what makes their work theirs.",
+      "order": 20
     }
   ]
 }
