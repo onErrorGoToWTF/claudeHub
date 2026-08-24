@@ -1,13 +1,27 @@
 {
-  "generated_at": "2026-08-24T14:29:34.265Z",
+  "generated_at": "2026-08-24T16:21:05.180Z",
   "version": 1,
   "sections": {
     "updates": [
       {
+        "title": "Improving Fable 5 S Biology Safeguards",
+        "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+        "source": "Anthropic",
+        "published": "2026-08-24T15:42:06.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Text Watermark",
+        "url": "https://www.anthropic.com/news/claude-text-watermark",
+        "source": "Anthropic",
+        "published": "2026-08-24T15:41:58.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Accelerates Protein Design",
         "url": "https://www.anthropic.com/research/Claude-accelerates-protein-design",
         "source": "Anthropic Research",
-        "published": "2026-08-20T14:45:23.000Z",
+        "published": "2026-08-24T15:30:22.000Z",
         "summary": ""
       },
       {
@@ -15,13 +29,6 @@
         "url": "https://www.anthropic.com/research/multiagent-systems",
         "source": "Anthropic Research",
         "published": "2026-08-15T16:06:32.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Text Watermark",
-        "url": "https://www.anthropic.com/news/claude-text-watermark",
-        "source": "Anthropic",
-        "published": "2026-08-15T05:53:01.000Z",
         "summary": ""
       },
       {
@@ -50,13 +57,6 @@
         "url": "https://www.anthropic.com/news/claude-sonnet-5",
         "source": "Anthropic",
         "published": "2026-08-10T19:00:15.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Improving Fable 5 S Biology Safeguards",
-        "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
-        "source": "Anthropic",
-        "published": "2026-08-07T03:05:42.000Z",
         "summary": ""
       },
       {
@@ -146,6 +146,41 @@
     ],
     "news": [
       {
+        "title": "Carterra Enables Anthropic's Autonomous AI Protein Design Study via its HT-SPR Binding Platforms - 01net",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdjk4NWxwRVR6bzRWOFhkR0o5akhLcGpoeTJNUEtNdGpiR1JXNElDcERueE84ZENiNzk2cGdIcjQ5Y19CYWMtTzhwdV9rbEtpaVNKdlg2Z2VJMEstSEJNc3RQemNqdkdaOHI3TEZqdHY4Mll5UDAyU0hGaW02SjVNQWdhTkhfUzBWUkFuUUx5d2piT2RpQmdlaE1xeE1yS3k4MlpCbVRMN1ppQndXUTM4LXJRcTJEcnlo?oc=5",
+        "source": "Google News",
+        "published": "2026-08-24T16:00:00.000Z",
+        "summary": "Carterra Enables Anthropic's Autonomous AI Protein Design Study via its HT-SPR Binding Platforms 01net"
+      },
+      {
+        "title": "Older Claude Models Found Vulnerable To Jailbreak Producing Explicit Content, Testing Shows - AI Insider",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPcVJUNDEtRVBuLWR2WVlLcUc1VGsyREdjX1hXa3IzSFNnYnVqMlluRVBJazRJRnk0RzBqZW1fTzJ0N3hwX2o2WHJTbzJLaUQtN1RnYmgtVFp4enpJUERoMmJ1QVpLRjRHdDRJSnVFQmUwMHdDcklTWUdpc0QxSDl0SjBUOXlzTmozQVNVUk9XRVZyLVB2NUVIRUdBbVc0UGE3d2wyQmVGaG1DSGk5ZmlvcWh1azV2RXJYZGFrUXBISXNtSU5ZOEZn?oc=5",
+        "source": "Google News",
+        "published": "2026-08-24T15:49:21.000Z",
+        "summary": "Older Claude Models Found Vulnerable To Jailbreak Producing Explicit Content, Testing Shows AI Insider"
+      },
+      {
+        "title": "Companies Shun Top AI Models for Cost-Effective Options - 조선일보",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMk1KM3NUZzZYUUNvR0p3dFJvMFZzc0ZXMno4eVlLT3pERXZHVU80LU9ja25teXYxbXV3M18yN29LNkZrTm81ZkFKZE5tU2ZmSXJIM293MXlwdWRjai1yRFFHelhkNzFweUJwb0R0NUllekRPeXBRSU9SbGJBek9ISkpEWG1Ld096?oc=5",
+        "source": "Google News",
+        "published": "2026-08-24T15:39:15.000Z",
+        "summary": "Companies Shun Top AI Models for Cost-Effective Options 조선일보"
+      },
+      {
+        "title": "Anthropic Launches Claude Security With Mythos 5 For Vulnerability Scanning - Dataconomy",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPNEMtZUFGOWFWUUhLWHdrT013NXRLWkhyV1ZzdHRrTk90VGxBWWt1Q3hYVVdnSFFiakI3UVcyZTFHR0ozTjhaTkt2b1hNX20yanhtbmtnMi0tYUlkNWx2VDFuNENSQ25TTnhpeERnVjJveUJMajJUdF9SWDl4UFU1eDMxYWZjbEg1elg5aXBHc1I?oc=5",
+        "source": "Google News",
+        "published": "2026-08-24T15:08:24.000Z",
+        "summary": "Anthropic Launches Claude Security With Mythos 5 For Vulnerability Scanning Dataconomy"
+      },
+      {
+        "title": "Is Claude Down? Anthropic Says It Fixed the Latest AI Outage - PCMag",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQRTBkdnJrRXAzd1F2OGg3bk1BdEpCX3dtTmFIRlhiLUtTR3VwZ0haQS13bFVZSGdtQUh6XzYwZGN4VFU5RVM2cjNpLXB3d3pEcVBLX2NMdlJRZi05eWo3WTRJaTd1dDZYZTB6NFNGZC1uMzVXZnpoYlRRNTdKV0RPLWRtaWlmbm5mdTh4M2QtbnE?oc=5",
+        "source": "Google News",
+        "published": "2026-08-24T14:03:50.000Z",
+        "summary": "Is Claude Down? Anthropic Says It Fixed the Latest AI Outage PCMag"
+      },
+      {
         "title": "AI Weekly: Codex Growth Overtakes Claude Code; DeepSeek Quietly Launches Vision Model - finance.biggo.com",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE02dlFiYVh5emEzZjNBdlJZN3BqRWtraVJ3T2kwYXdVajJHZmh6MGszSk1ydmJmVDlaV254WjFlSjRlZHdGYkhvc0Mtd3pKV212Y1NQSk0xVURtM2VIbGFqamozaERCTVFNcm91RDZDMndzTEE1SUE?oc=5",
         "source": "Google News",
@@ -181,25 +216,11 @@
         "summary": "Anthropic says Australia is falling behind in Claude coding use The Malaysian Reserve"
       },
       {
-        "title": "Is Claude Down? Anthropic Says It Fixed the Latest AI Outage - PCMag",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQRTBkdnJrRXAzd1F2OGg3bk1BdEpCX3dtTmFIRlhiLUtTR3VwZ0haQS13bFVZSGdtQUh6XzYwZGN4VFU5RVM2cjNpLXB3d3pEcVBLX2NMdlJRZi05eWo3WTRJaTd1dDZYZTB6NFNGZC1uMzVXZnpoYlRRNTdKV0RPLWRtaWlmbm5mdTh4M2QtbnE?oc=5",
-        "source": "Google News",
-        "published": "2026-08-24T10:32:15.000Z",
-        "summary": "Is Claude Down? Anthropic Says It Fixed the Latest AI Outage PCMag"
-      },
-      {
         "title": "Claude Models Experience Elevated Errors and Outages - StartupHub.ai",
         "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxORnNEMzNvVmNmS3RqSkVRd3VKU0c1ZFF3alhFd2NrTndlR3V6NG85QUFUQTRadnlUVnNLMXF0T1pMejlaRHpDZXhyU21ULUNoMUtMQnJyY1ZkQWhQZ0JicllMZ1BlWDdzWnhvUGVqRWRpV3Z5MTI3QklRamQ2M2RJdFM3aXFBbV90YjNXaUxpSWhGem5PcnMxNERKaGIxSlR1TGt5SVk1X3lIbUdnQTdzbUZJczNwdw?oc=5",
         "source": "Google News",
         "published": "2026-08-24T10:31:51.000Z",
         "summary": "Claude Models Experience Elevated Errors and Outages StartupHub.ai"
-      },
-      {
-        "title": "Is Claude Down? Anthropic Says It Fixed the Latest AI Outage - PCMag Australia",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSmtqanI4ZERZSnZ6VlRPQXNCbnBhRTZYY016YVluUkU0QW11eTNKMmJtRHF0R3Z1NE1TTnZxM1dDWUpTcWJ0Z29Zc00wT3pMekFoRk16VmxMOWl0dXNodU04SFhLVjF0VE05Tm1TLURWRTNWN2NQSjFCcEIyVGt1a3lnSUxSVzJGUHBONDZtVWhodTJwcVE?oc=5",
-        "source": "Google News",
-        "published": "2026-08-24T10:20:50.000Z",
-        "summary": "Is Claude Down? Anthropic Says It Fixed the Latest AI Outage PCMag Australia"
       },
       {
         "title": "Claude Continues to Suffer Outages, Services Down for 3+ Hours - analyticsindiamag.com",
@@ -230,6 +251,13 @@
         "summary": "😺 Anthropic's IPO could top SpaceX's record The Neuron"
       },
       {
+        "title": "Anthropic Could Be Preparing for a Historic IPO — And Claude Is About to Become a Much Bigger Business Story - lnt.ma",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQQ1pBV2tBVkR5MEhpem5YVEIwZjJtbkZ2WC1Vc1d4ZEVUV0JVaDZDMGtvcXkyT3g5RFhLQWNzOEhyeVFvY1dpQTR4MTk3VzhZLThMNjhlSllkb2hzSktMeXJ6VUxpS2x5dTBUbExqRHFMSEd4WDY1cklueWxGWUtRcG5NbDhNZC1QY0Zfa2h3SHVVNnhxUjVOLUJJU1ZZMWtLcGdkVm0xN2ExYUxNZ0hvZWwyeWlFbS1UQzg2QUJCOA?oc=5",
+        "source": "Google News",
+        "published": "2026-08-24T09:31:37.000Z",
+        "summary": "Anthropic Could Be Preparing for a Historic IPO — And Claude Is About to Become a Much Bigger Business Story lnt.ma"
+      },
+      {
         "title": "You're not alone: Claude is down right now (Updated: Services restored) - Android Authority",
         "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5KazBUcWZfY2Y2S0k0blp0NUlTTFVyLS1vbDlRdXJVeUtSMTNxRW5wd2g4RlliN2ZrajRSanM0cF9ZaVBLTklLcjhmemNrUjRZOVBfbUEtWUpPYXNuUXJ5T3FWUWZCVlBEYUZOcmpKNjdIX0k?oc=5",
         "source": "Google News",
@@ -237,11 +265,25 @@
         "summary": "You're not alone: Claude is down right now (Updated: Services restored) Android Authority"
       },
       {
+        "title": "Opinion | Even Millions of Stolen Books Cannot Satisfy Ravenous A.I. Chatbots - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBmaERBUG5pOGNrSDh3VmxrTk1oLUE2YUV1MDlublNldWJwbUd3ZktXSzVMd0Y5eEtjVEFWZndiSnhkeHBkeng4bHdVLWF3ejRpMGZWVlRDWmdlam15TDdsWGpNSDVveEJTWHl1LUJyaHgtNmh5aXpuSkVQaw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-24T09:01:57.000Z",
+        "summary": "Opinion | Even Millions of Stolen Books Cannot Satisfy Ravenous A.I. Chatbots The New York Times"
+      },
+      {
         "title": "Anthropic: Issues on Claude models resolved - Breakingthenews.net",
         "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNcmNiampkaE5hWU52WmlfcHd2TmMxTV94YVdYb21OaUVCejhzeEZWem0wQjJ5X3J6M0dtMVVNM3U1Wmh4aERJOTd1a2ttb0RkRzBQc00tdkhJTXRmWGtEZWhDUEJ3Zmp5SFhHdjF6TFJvS2x2UXFBSWZvOC1udUlOem9QWEVtVWZqTnIzWTRrRFg1UQ?oc=5",
         "source": "Google News",
         "published": "2026-08-24T08:49:00.000Z",
         "summary": "Anthropic: Issues on Claude models resolved Breakingthenews.net"
+      },
+      {
+        "title": "Claude Down! Users Report Outage Across Chat, Code And API - outlookbusiness.com",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPQ2cySGRCYm13bW9yUHNqZGJfS3RMTWtvLVg3aWxtc1lVSVVoRWdTSlZCeWVmakFBT2dtSThRcWtfQ2VDREw4YWE1d0k4amZ3VFlfZmR4a3VVQnlzVWlkbm42VzZ0ZlJXTVYtSy0tRU9Hb2Q1S0F1MHYwWjFLQ1hMNTZBZ2E5SlRFTmtmdHlERkEtYUpJbnRZRTktSlNwZ9IBqwFBVV95cUxPMHJaMzZkNmZDbkphYmRvQlBkdnBEY0xfblJyT012OFExbVlQbjdNeU1Ub2Q2OFFEckFIUjNFVWRRcTlmdjZ2U1ZVSXZJaEFvMjB6a2NVdko0UUZPZmpLYmxGenFUUklVY3FUZTdKdjZ4QmRYNVlfNVF4LTVMNzZXOFh4VzUyaTBEbVNjZE9vS0h6NUh0OS1QbkhqQ3VNMHJ6QU53V0ZZcDcyZlU?oc=5",
+        "source": "Google News",
+        "published": "2026-08-24T08:47:02.000Z",
+        "summary": "Claude Down! Users Report Outage Across Chat, Code And API outlookbusiness.com"
       },
       {
         "title": "Claude Turns 2-Year Wi-Fi Headache Into 10-Minute Fix After Finding 3 Hidden Problems, Boosting Speeds Fr - Benzinga",
@@ -277,48 +319,6 @@
         "source": "Google News",
         "published": "2026-08-24T07:27:11.000Z",
         "summary": "Claude is down (Update: Resolved) Mashable"
-      },
-      {
-        "title": "Anthropic Expands Mythos 5 Access to More Defenders, Unveils $35M Open Source Fund - SecurityWeek",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQY1E3Um1LaDRvamd5R3M4TDFIdEpIQ1dSY09DV2tsM0FXOTMtUVkxcnlBZ2ZKeEdOcXhYOGtRdFNYQkhab1drZE9WZzhDeHBwbl9vQzlUV29vLXVfcG9WNU5RWDV1cEdHMDBDb0xBVjZiaE5UVDFmeG93OUhpRzRuQnJYOGswcHJwVkJrS1dBeTRSUk5LWXo1S01LVmhLMHZPZU9WWmNhOVRqZ3EwSjZv0gG0AUFVX3lxTE5qdktfNnExbm9jVUYxMlYtMHZ4WmpldE5Qbzg2Ujljdk12NUpTODFLSHNYMEVXUDNIc29lVmNJSGNvS2FuWVBBRW11UlBqTHFhbUhMNURHVEpqUWFSX2RpRlZvSTBzMXZkMjFFVkhXRW1EbjBUZm9QeFJibnZWR242VUhNa1AxN2xuMUxQUGxocGNEVjNVWlZiQjNrRjI4Z2lIOWRMOHNGN0RvZHJvdVkxZF9XLQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-24T07:18:58.000Z",
-        "summary": "Anthropic Expands Mythos 5 Access to More Defenders, Unveils $35M Open Source Fund SecurityWeek"
-      },
-      {
-        "title": "Anthropic confirms Claude is down - adigitalboom.com",
-        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9SOUdOMmRBN2NMNlhHWWJOczhiMDhwRzFwQlZuaUt0dWJ6aUdYWnA4Y0xKM3JrdnRTVU1DeHZ6N0szUmNnczF2VlBDVExxWlV1QldzcFE1MUF3Yl9RdGhTRTlOQ3pzWEhCamM1T0RfV0RIUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-24T07:18:54.000Z",
-        "summary": "Anthropic confirms Claude is down adigitalboom.com"
-      },
-      {
-        "title": "Claude is down - Mashable SEA",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE55cUI2WWJmNnV4ejQzTXdyTEVkbTlxYzN4LXN1bkwzbjhPOGdYNnJtdTNiWVE4cmtabDhTQ3RRZ3c2RHBIYVI0R2FYZ2Y4aUZrNXI2MTd4blNrTG1wOXRv?oc=5",
-        "source": "Google News",
-        "published": "2026-08-24T07:10:40.000Z",
-        "summary": "Claude is down Mashable SEA"
-      },
-      {
-        "title": "AI Firms Develop Chips, Chipmakers Build Models - 조선일보",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZC1Ja1dicnplRVVXV240ZUZUSjd4cjBESHhJLWI3ejI5UFVlWHl5S2FnM04ycXBYdjk3NUxvZm9QZFoxa2ZhM19FdFlWUHZyUmpMNl9aNFhyQzhhbmN1azBWVDdGZWotTkhMcXRIRTlHNzZ2cEFuOFc5WTIyZ21IUjRNc2pzWXk0?oc=5",
-        "source": "Google News",
-        "published": "2026-08-24T06:30:04.000Z",
-        "summary": "AI Firms Develop Chips, Chipmakers Build Models 조선일보"
-      },
-      {
-        "title": "Companies are in no hurry to pay for Anthropic's most powerful AI model - Mezha",
-        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1pOEpKTEFPaEl5TTgxUUNuMFFqY2FaWWtjMjlMbVdkaHcxdS14eTFMQ3hsSlRYUFJlZ251TGNGUVN0Vk01Um5sWmJaRjNNNkNhUVZVSW4zTzl3ZllDSktwVE9HUURXdW9jVHVIMtIBckFVX3lxTE4xSk9pRTM3QWtueHdGejJYcXVFczU2eWVRY1lrU05IZHVMOG1SZUw3SERMUWdWdmtGWG5oR1JPbmU2QzNvd1JXZVk3NHFYc0lCMjhwTW9TaG5CeEd6S1pYQTBBSUVHS19rLVF1SWhfRThBUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-24T06:03:00.000Z",
-        "summary": "Companies are in no hurry to pay for Anthropic's most powerful AI model Mezha"
-      },
-      {
-        "title": "Claude is Down : Anthropic Scrambles to Fix The Global Outage - SQ Magazine",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBXbk5yMy1GTW5QY0tFbEJ1bk0tUlp3X3ppd2JocmF1Zmg0RjVoWHJJUm0xQ0x6c3RSVmYwczlrMWVYNDE3cllZRmNjeUpMNTFlQlg0eThLSW5JVDM0emFzdHE5cC1oUHlsSVNCR2lRVlphNEdvMVhj?oc=5",
-        "source": "Google News",
-        "published": "2026-08-24T05:57:22.000Z",
-        "summary": "Claude is Down : Anthropic Scrambles to Fix The Global Outage SQ Magazine"
       },
       {
         "title": "Day 17: LIVE Vibe Coding Iterated.ai — with Claude, Codex and Grok",
