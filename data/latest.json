@@ -1,150 +1,164 @@
 {
-  "generated_at": "2026-08-26T16:39:42.717Z",
+  "generated_at": "2026-08-26T19:29:01.132Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Our Approach to Understanding and Addressing Ai Harms",
+        "url": "https://www.anthropic.com/news/our-approach-to-understanding-and-addressing-ai-harms",
+        "source": "Anthropic",
+        "published": "2026-08-26T18:31:47.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Crosscoder Model Diffing",
+        "url": "https://www.anthropic.com/research/crosscoder-model-diffing",
+        "source": "Anthropic Research",
+        "published": "2026-08-26T18:30:11.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Us Elections Readiness",
+        "url": "https://www.anthropic.com/news/us-elections-readiness",
+        "source": "Anthropic",
+        "published": "2026-08-26T18:26:16.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Challenges in Red Teaming Ai Systems",
+        "url": "https://www.anthropic.com/news/challenges-in-red-teaming-ai-systems",
+        "source": "Anthropic",
+        "published": "2026-08-26T18:24:13.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Measuring Model Persuasiveness",
+        "url": "https://www.anthropic.com/research/measuring-model-persuasiveness",
+        "source": "Anthropic Research",
+        "published": "2026-08-26T18:22:26.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Accenture Aws Anthropic",
+        "url": "https://www.anthropic.com/news/accenture-aws-anthropic",
+        "source": "Anthropic",
+        "published": "2026-08-26T18:21:30.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Skt Partnership Announcement",
+        "url": "https://www.anthropic.com/news/skt-partnership-announcement",
+        "source": "Anthropic",
+        "published": "2026-08-26T18:16:53.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Influence Functions",
+        "url": "https://www.anthropic.com/research/influence-functions",
+        "source": "Anthropic Research",
+        "published": "2026-08-26T18:16:30.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Frontier Model Security",
+        "url": "https://www.anthropic.com/news/frontier-model-security",
+        "source": "Anthropic",
+        "published": "2026-08-26T18:14:32.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Interpretability Dreams",
+        "url": "https://www.anthropic.com/research/interpretability-dreams",
+        "source": "Anthropic Research",
+        "published": "2026-08-26T18:13:29.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Zoom Partnership and Investment",
+        "url": "https://www.anthropic.com/news/zoom-partnership-and-investment",
+        "source": "Anthropic",
+        "published": "2026-08-26T18:12:03.000Z",
+        "summary": ""
+      },
+      {
+        "title": "100k Context Windows",
+        "url": "https://www.anthropic.com/news/100k-context-windows",
+        "source": "Anthropic",
+        "published": "2026-08-26T18:11:29.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic Partners with Google Cloud",
+        "url": "https://www.anthropic.com/news/anthropic-partners-with-google-cloud",
+        "source": "Anthropic",
+        "published": "2026-08-26T18:09:28.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Superposition Memorization and Double Descent",
+        "url": "https://www.anthropic.com/research/superposition-memorization-and-double-descent",
+        "source": "Anthropic Research",
+        "published": "2026-08-26T18:08:40.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Constitutional Ai Harmlessness From Ai Feedback",
+        "url": "https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback",
+        "source": "Anthropic Research",
+        "published": "2026-08-26T18:07:10.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Toy Models of Superposition",
+        "url": "https://www.anthropic.com/research/toy-models-of-superposition",
+        "source": "Anthropic Research",
+        "published": "2026-08-26T18:06:28.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Language Models Mostly Know What They Know",
+        "url": "https://www.anthropic.com/research/language-models-mostly-know-what-they-know",
+        "source": "Anthropic Research",
+        "published": "2026-08-26T18:04:23.000Z",
+        "summary": ""
+      },
+      {
+        "title": "In Context Learning and Induction Heads",
+        "url": "https://www.anthropic.com/research/in-context-learning-and-induction-heads",
+        "source": "Anthropic Research",
+        "published": "2026-08-26T18:03:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Enabling Independent Research",
+        "url": "https://www.anthropic.com/research/enabling-independent-research",
+        "source": "Anthropic Research",
+        "published": "2026-08-26T17:01:42.000Z",
+        "summary": ""
+      },
       {
         "title": "Team/societal Impacts",
         "url": "https://www.anthropic.com/research/team/societal-impacts",
         "source": "Anthropic Research",
         "published": "2026-08-26T09:21:53.000Z",
         "summary": ""
-      },
-      {
-        "title": "Team/frontier Red Team",
-        "url": "https://www.anthropic.com/research/team/frontier-red-team",
-        "source": "Anthropic Research",
-        "published": "2026-08-26T09:21:45.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Team/economics",
-        "url": "https://www.anthropic.com/research/team/economics",
-        "source": "Anthropic Research",
-        "published": "2026-08-26T09:21:35.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Clio",
-        "url": "https://www.anthropic.com/research/clio",
-        "source": "Anthropic Research",
-        "published": "2026-08-25T23:30:03.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Wellbeing Research Grants",
-        "url": "https://www.anthropic.com/news/wellbeing-research-grants",
-        "source": "Anthropic",
-        "published": "2026-08-25T16:20:57.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Economic Index Connector",
-        "url": "https://www.anthropic.com/news/anthropic-economic-index-connector",
-        "source": "Anthropic",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Economic Index Insights From Claude Sonnet 3 7",
-        "url": "https://www.anthropic.com/news/anthropic-economic-index-insights-from-claude-sonnet-3-7",
-        "source": "Anthropic",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Economic Futures Research Fund Agenda",
-        "url": "https://www.anthropic.com/news/economic-futures-research-fund-agenda",
-        "source": "Anthropic",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Economic Futures Uk Europe",
-        "url": "https://www.anthropic.com/news/economic-futures-uk-europe",
-        "source": "Anthropic",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "The Anthropic Economic Index",
-        "url": "https://www.anthropic.com/news/the-anthropic-economic-index",
-        "source": "Anthropic",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "81k Economics",
-        "url": "https://www.anthropic.com/research/81k-economics",
-        "source": "Anthropic Research",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Economic Index January 2026 Report",
-        "url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
-        "source": "Anthropic Research",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Economic Index September 2025 Report",
-        "url": "https://www.anthropic.com/research/anthropic-economic-index-september-2025-report",
-        "source": "Anthropic Research",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code Expertise",
-        "url": "https://www.anthropic.com/research/claude-code-expertise",
-        "source": "Anthropic Research",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Coding Agents Social Sciences",
-        "url": "https://www.anthropic.com/research/coding-agents-social-sciences",
-        "source": "Anthropic Research",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Economic Index Geography",
-        "url": "https://www.anthropic.com/research/economic-index-geography",
-        "source": "Anthropic Research",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Economic Index June 2026 Report",
-        "url": "https://www.anthropic.com/research/economic-index-june-2026-report",
-        "source": "Anthropic Research",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Economic Index March 2026 Report",
-        "url": "https://www.anthropic.com/research/economic-index-march-2026-report",
-        "source": "Anthropic Research",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Economic Index Primitives",
-        "url": "https://www.anthropic.com/research/economic-index-primitives",
-        "source": "Anthropic Research",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Economic Index Survey Announcement",
-        "url": "https://www.anthropic.com/research/economic-index-survey-announcement",
-        "source": "Anthropic Research",
-        "published": "2026-08-25T16:13:14.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic Unifies Claude’s Memory Across Chat and Cowork - AI Insider",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOc3RmckhaWkxFZkVZTk1RNW5MSm5nc0VGM191RWlfUGJkdGhFUmhPN0M2Tl9ZcGJtSkx3MzU1dzVxYzJMcVJUNUlEcDBFV1RTMzZsUGc3OHVfTFJ6OGRiVHo0V2hMSk8xWjRhYUNDWHZxaURVZEFRM0VnbGJ4NGtuR0xsZ2ZoMjVTaENmREhDcHdnU0plZjF2eA?oc=5",
+        "source": "Google News",
+        "published": "2026-08-26T17:32:40.000Z",
+        "summary": "Anthropic Unifies Claude’s Memory Across Chat and Cowork AI Insider"
+      },
+      {
+        "title": "Anthropic to Pay Nscale $45 Billion for AI Computing Power",
+        "url": "https://www.bloomberg.com/news/articles/2026-08-26/anthropic-to-pay-nscale-45-billion-for-ai-computing-power",
+        "source": "Bloomberg",
+        "published": "2026-08-26T17:02:32.000Z",
+        "summary": "Anthropic PBC has agreed to spend $45 billion to rent AI cloud computing power from Nscale’s flagship data center development in West Virginia, the latest move in an effort to secure capacity for…"
+      },
       {
         "title": "Claude unifies memory across Chat and Cowork - TestingCatalog AI News",
         "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPTU84UE90MWRCZ2V2dEIxOHUtN0F3NWhwd2xoc2hIRnk1cThpaHBzbTNwQkpoeFBjUDFnbjZkcWRfWGw1dmRxVmw4U1M0RVJDa3JQTjdXWjhvSlZkcTVBUzQ2SnB4TFhtWWFWM1BvUnZmTG1YV25qQlA4U0s2d3VrVjNR?oc=5",
@@ -162,10 +176,17 @@
       {
         "title": "A curmudgeon tries a language server",
         "url": "https://entropicthoughts.com/curmudgeon-tries-language-server",
-        "source": "HN · 60↑",
+        "source": "HN · 63↑",
         "hn_id": "49448150",
         "published": "2026-08-26T12:48:37.000Z",
         "summary": ""
+      },
+      {
+        "title": "Claude Opus 5 vs Mythos 5 vs Gemini 3.1 Pro: 5x Price Gap [2026] - tech-insider.org",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5yUEZNbGV6dnh3TDFGd3VoWUxfWXVxdVBxNXlmc1hIdmQxVGNTdE5ybFM5WTN0Nk44NkFOTEtBaXhRTkxwcWR6aVlCU193YUpBT0tQT1Z6Y3JCR1BpVjU4S1ZIcFV6dEpUbXpFNUlHeTJlWUpUc2tIQnQ5UnNZWEE?oc=5",
+        "source": "Google News",
+        "published": "2026-08-26T12:10:28.000Z",
+        "summary": "Claude Opus 5 vs Mythos 5 vs Gemini 3.1 Pro: 5x Price Gap [2026] tech-insider.org"
       },
       {
         "title": "Shopify CEO threatens to ditch Claude Code; Anthropic finally responds to AGENTS.md compatibility dispute - finance.biggo.com",
@@ -180,20 +201,6 @@
         "source": "Google News",
         "published": "2026-08-26T11:35:00.000Z",
         "summary": "Anthropic to add text watermarks to future Claude models IT Brief Australia"
-      },
-      {
-        "title": "Anthropic IPO can break SpaceX's Wall Street record: Here's how - The News International",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPa2EtTkQ2WmZac0FZMjJFaldlM09NTHNxcHdqUS1MNmxIcndGQlQ5dzdrSm1zVFBjTGZfcHZEWFNGR0xEakhOUmdHTGJ4VF91RDNVNjM0ZmxvOHE3bFlMZjVmYzRTU29FakhFSFUzTXFZZTNBVWVxLVRDeTZnRWlwMUdyNzBRRzlZLXJqczBORXUyNExWQU02UWtHcjhpUFlkNTFlZdIBoAFBVV95cUxONUZHcklXZnROLWlxdEJYOFI2T3dLSGxTd2cya0tKai1iVmFoa1dNcDZrUzZnQW1yVE9ZVXNuTHl2eDg3bnV5RXNKUW1zTlRnZGVHLVRTdHE5a19BN3p5bEctTzd6MS1HSUlQdnp2bDdwSEZyUC0wN3lmNFMwcFd3TFB2OTRyT2tIaVZkVUtKVkZyZXV4WDl1Sm1zOEF6cWJZ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-26T10:10:09.000Z",
-        "summary": "Anthropic IPO can break SpaceX's Wall Street record: Here's how The News International"
-      },
-      {
-        "title": "Claude Memory Now Works Across Chats And Cowork - Dataconomy",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBGWDRPSkZObFZwZVV2c1Jwd1JaQnE1NjNXTWNUTVFaZ0ZlZkZMQXhBeTYzaVRzWEx3b1VtbDhWMGJvaG5iWWdNVmpDTDQzc0NEaXlMNjJXUU16RnR6Ym9MaElkb0dQNVo4RFMwU3htZVU1TDhSanlualZBOG4?oc=5",
-        "source": "Google News",
-        "published": "2026-08-26T10:08:44.000Z",
-        "summary": "Claude Memory Now Works Across Chats And Cowork Dataconomy"
       },
       {
         "title": "Claude Code Sparks Developer Backlash Over AGENTS.md Ban: Anthropic's Controversial Industry Standard Rejection & Official Response That Enraged the Dev Community - 36 Kr",
@@ -240,7 +247,7 @@
       {
         "title": "I miss the old Claude Code",
         "url": "https://alexkras.com/focus-is-the-main-feature-why-i-miss-the-old-claude-code/",
-        "source": "HN · 33↑",
+        "source": "HN · 34↑",
         "hn_id": "49444863",
         "published": "2026-08-26T06:34:35.000Z",
         "summary": ""
@@ -320,20 +327,6 @@
         "summary": "Anthropic puts persistent memory into Claude Cowork SD Times"
       },
       {
-        "title": "Sergei Edunov: Anthropic's Claude Binder Discovery Was Orchestration, Not Science - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE94YlZLanFfdVBMVUZ2WlpWQ2ItY2tVQ25XdUJYdEdBTmVHdEQxYTc4a2hhZnc2aHRENXhnb0J4aUhmT0RDY0poVkZSZ1hfSk5tQzJHOWRNZ2VDUDg?oc=5",
-        "source": "Google News",
-        "published": "2026-08-25T20:08:00.000Z",
-        "summary": "Sergei Edunov: Anthropic's Claude Binder Discovery Was Orchestration, Not Science finance.biggo.com"
-      },
-      {
-        "title": "Claude Cowork will now remember your conversations with chat - Android Authority",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNOVBfZHVlRnc2N1daekxlanlmZTZaLURLdVhqWEhZZm40T1A4SngxQWtrWmR2Y01QUEJ4X0ZEaVFxQy1TSFZ2dE5Hcmh0TG85TGFrUVA2Wkl3eXpIUTlQdm9NcFZIcXpxejdRY3d3QURmUXIwMVNPWjhiOTc3ZF85MDU0TU5MUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-25T20:04:00.000Z",
-        "summary": "Claude Cowork will now remember your conversations with chat Android Authority"
-      },
-      {
         "title": "Claude and Cowork now share what they know about you - The Register",
         "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNNUNwMUZYN0h3aVFDcmV2UFdrQkVib0NRVkVKOElMNzF2QmVDbWstMHgzSUZHei02RUpleE9sM1RndVh4dE1JNVU1S0g1bVh1d3F4eEJiQmJqSkxidUVBemJ4Q3lOTmZ1c0lmcWZ3SUdpVWdTN3MxbTRBTUp5QkpJUExsYkRnMWgyMnpxM3FxakgwUjZCaklqcV9iT3Vsa0szelZzV3Z4ZUVmSzhFaWc?oc=5",
         "source": "Google News",
@@ -346,6 +339,13 @@
         "source": "Google News",
         "published": "2026-08-25T19:42:10.000Z",
         "summary": "Shopify's CEO threatened to ban Claude Code. Anthropic had already closed the feature request. The New Stack"
+      },
+      {
+        "title": "Claude Cowork finally remembers what you told the app in chat",
+        "url": "https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/",
+        "source": "TechCrunch",
+        "published": "2026-08-25T17:50:33.000Z",
+        "summary": "Anthropic is giving Claude a shared memory across chat and Cowork, so users no longer have to repeatedly brief the AI on projects, preferences, and other context."
       },
       {
         "title": "Codex vs Claude vs Grokbot: What's The Best Super App?",
@@ -1746,6 +1746,20 @@
     ],
     "claude_learning": [
       {
+        "title": "1.0.2",
+        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/1.0.2",
+        "source": "MCP Inspector",
+        "published": "2026-08-26T17:42:46.000Z",
+        "summary": "What's Changed v1.x security and publishing fixes chore: pin v1 publishes to the v1 dist-tag by @cliffhall in #1828 fix: v1 dist-tag must be v1-latest — npm rejects v1 by @cliffhall in #1829 ci(v1): pin workflow branch…"
+      },
+      {
+        "title": "2.4.0",
+        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.4.0",
+        "source": "MCP Inspector",
+        "published": "2026-08-26T17:40:12.000Z",
+        "summary": "What's Changed ci: drop the redundant PR-head checkout from claude.yml by @cliffhall in #2070 feat(apps): negotiated app-rendered form elicitations by @cliffhall in #2083 feat(auth): file-backed and in-memory…"
+      },
+      {
         "title": "v2.0.1",
         "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.0.1",
         "source": "MCP Python SDK",
@@ -1814,13 +1828,6 @@
         "source": "MCP Python SDK",
         "published": "2026-08-24T18:24:41.000Z",
         "summary": "What's Changed [v1.x] Complete the FastMCP Settings model at import time by @maxisbey in #3352 [v1.x] Apply the request body limit to the SSE and OAuth endpoints by @maxisbey in #3344 [v1.x] Give recursive tool return…"
-      },
-      {
-        "title": "1.0.2",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/1.0.2",
-        "source": "MCP Inspector",
-        "published": "2026-08-24T04:16:12.000Z",
-        "summary": "What's Changed chore: pin v1 publishes to the v1 dist-tag by @cliffhall in #1828 fix: v1 dist-tag must be v1-latest — npm rejects v1 by @cliffhall in #1829 ci(v1): pin workflow branch filters to v1/main, re-enabling…"
       },
       {
         "title": "v2.1.241",
@@ -2178,13 +2185,6 @@
         "source": "MCP TypeScript SDK",
         "published": "2026-07-27T23:55:50.000Z",
         "summary": "Patch Changes #2402 a400259 Thanks @felixweinberger ! - First beta release of SDK v2 with support for the MCP 2026-07-28 specification revision. See the migration guides for upgrading from v1 (…"
-      },
-      {
-        "title": "@modelcontextprotocol/server-legacy@2.0.0",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver-legacy%402.0.0",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-07-27T23:55:47.000Z",
-        "summary": "Minor Changes #2477 8e1d2e9 Thanks @felixweinberger ! - Move the schema source modules (spec schemas, OAuth schemas, protocol constants) into @modelcontextprotocol/core and resolve them from there as a regular runtime…"
       },
       {
         "title": "Master Claude for Excel in 20 Minutes (Full Guide)",
