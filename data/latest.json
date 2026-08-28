@@ -1,8 +1,22 @@
 {
-  "generated_at": "2026-08-28T13:26:49.092Z",
+  "generated_at": "2026-08-28T23:14:46.168Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Automated Researchers Mitigate Alignment Failures",
+        "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
+        "source": "Anthropic Research",
+        "published": "2026-08-28T17:02:17.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude for Teachers",
+        "url": "https://www.anthropic.com/news/claude-for-teachers",
+        "source": "Anthropic",
+        "published": "2026-08-28T15:01:10.000Z",
+        "summary": ""
+      },
       {
         "title": "Expanding Support for Scientists",
         "url": "https://www.anthropic.com/news/expanding-support-for-scientists",
@@ -128,198 +142,183 @@
         "source": "Anthropic",
         "published": "2026-08-27T15:08:16.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude for Teachers",
-        "url": "https://www.anthropic.com/news/claude-for-teachers",
-        "source": "Anthropic",
-        "published": "2026-08-27T15:07:49.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Plays Robotics",
-        "url": "https://www.anthropic.com/research/claude-plays-robotics",
-        "source": "Anthropic Research",
-        "published": "2026-08-26T21:22:31.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Anthropic gets its first court win over the Pentagon’s supply chain risk label",
-        "url": "https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/",
+        "title": "Anthropic Says Claude Reduced Alignment Failures In Automated Tests - Yellow.com",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5MSlkyX0xKdFB4MmpyRVFQNGpxanJEMjlodFFjTndZUkJtVmxYSkxoZFAwaUs0QUhaNmh5ZlJwc3NvSUU4dlRoTmdpOGpnT0g0bE8zRXhOejVXT0toWkdlOVBsam50NlpVSjFR?oc=5",
+        "source": "Google News",
+        "published": "2026-08-28T22:26:06.000Z",
+        "summary": "Anthropic Says Claude Reduced Alignment Failures In Automated Tests Yellow.com"
+      },
+      {
+        "title": "Opinion | The Pentagon loses a battle in its unnecessary war with Anthropic - The Washington Post",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRVpaX1RfSmRzNzNYODhTLU5mRzFUYWNuT09yeFNSeUNzQlN5azlQRlhDa0JSdlRyN0ZkUmlJYXVWQjZnbTh4a2xWbHU3dWdJcnJQN0Nlazk4OG1pS1ZJTUE1MHZBSkctdlVVdktvZ2JCaFptem5BX2g5WFlzckZNQ29kV2tHbkhINU9jdFdjVWxrbVpJVkp1RFZoMEZoU1FYREdyaGFQQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-28T22:25:35.000Z",
+        "summary": "Opinion | The Pentagon loses a battle in its unnecessary war with Anthropic The Washington Post"
+      },
+      {
+        "title": "Anthropic wins major court battle over Pentagon’s ‘supply chain risk’ label - The American Bazaar",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQVzRfY3VCWm1XZkpvV3FYeFZTNnhVTWgzM2RIanpOZlhMcHZZdG9PYkhraGJQYTVDTjVLdlJXMUpTS3lBY01kVVNYUUhucldvV25weWNJSi00N2dYbWppOEI4S1FkVnNpbFRZWllpM1NqMGJ0dVR1NzBKR3J4VGFPVWF2amdfejdRQXFFMU9qcXNwdlkzRE9aQjg5OGNKeGQtdlIwYV92aGoyVXdiN3ZLd01HUWdJQjhzR3dWaFlxZlpaZw?oc=5",
+        "source": "Google News",
+        "published": "2026-08-28T22:14:36.000Z",
+        "summary": "Anthropic wins major court battle over Pentagon’s ‘supply chain risk’ label The American Bazaar"
+      },
+      {
+        "title": "Judge blocks Anthropic blacklisting - ABC Columbia",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPU1lraC1fRzZfWFJYVWQxUFpvQy1kQlBqYXRkUERRd1R2N2tVSG9zTkdkQ01IZGZKQXdlWjVwOFdmSGt5clFselh2dW1yS3pvVE9hTmFyWXZFWlNCUDMxYy1DUkYwM0RGOE83bnlMbko1MmxnaFpMZGFkTDFGblFSOA?oc=5",
+        "source": "Google News",
+        "published": "2026-08-28T21:44:25.000Z",
+        "summary": "Judge blocks Anthropic blacklisting ABC Columbia"
+      },
+      {
+        "title": "Anthropic’s Pentagon blacklist struck down: How the conflict unfolded - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPdEE5dlpOenBnWFhOMW9iOXBBOHJBbTQxSURnRVdfUWhVWHVlYUdNVWtjN2gwUUFpQWZ3cFF0NklQcEVsTXlMVW5xTFhxS1hxbFhYQmZxSDdxazBScm42MUg4QktMY2JiMXBFaTNQOGpzb2xabVRveE4tNGtHTWR3Vk52N2Z0bDdOVndYZk96WHFWWVkzZHZkdmFoWE55aVF2Z0Fj?oc=5",
+        "source": "Google News",
+        "published": "2026-08-28T21:11:56.000Z",
+        "summary": "Anthropic’s Pentagon blacklist struck down: How the conflict unfolded Reuters"
+      },
+      {
+        "title": "Trump administration attempts to punish, ban Anthropic were unlawful, judge rules - FedScoop",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBIcEZmeXAxNFgzNnMwX0FhQmk1VWpjalNmOUt3djNiVTB3U2F1a2RsUk5EekFRUVRmWmlTT0VLekltT0lBYXcyR0RZTkl2dmxPM0RsaEZNc0NDNm9fYzM5aE1BQ3FCZm1yWkpj?oc=5",
+        "source": "Google News",
+        "published": "2026-08-28T21:07:08.000Z",
+        "summary": "Trump administration attempts to punish, ban Anthropic were unlawful, judge rules FedScoop"
+      },
+      {
+        "title": "Court rules Pentagon can’t ban Anthropic’s AI models - SiliconANGLE",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPckc0N2h0QWphVmVYU3RhWTRiT0VSYnBvWms1SEJiUzdnazlRMS1QaVgzRDB5b0U4S2k3MjNmZHBDTm5iMmFwZUdOckF6NEV0UlBMcVJ2c0NZemZWVTgzdVkyckJaWVdQLXUyYXJNdTFxTDFlZVdKMTl3NDdlRHhRcDIyTkVCRS1hcWhCUGx4Z28?oc=5",
+        "source": "Google News",
+        "published": "2026-08-28T20:54:00.000Z",
+        "summary": "Court rules Pentagon can’t ban Anthropic’s AI models SiliconANGLE"
+      },
+      {
+        "title": "Anthropic Wins as Judge Bars Pentagon From Punishing AI Ethics Policies - Tech Times",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQVmxhSGZ5MElHYXlwQ1ZmX2c2Uzg2QzJ1Rm9oa1VCN0lVVDlmZkFoWlpCV2NaaWlRcHJDd1RKLU9fWUlzc3FOSElIZEszdWIwaW5LRFV1RVFiaW5ZUFFXZHRfazFSZ0xRZGJOMmhtUDFCdVBBZHFaZlRfaXQ2aGtDbVMwR1ExOHNEaWZwNmxZQ2VLN3FZcG4wY01aLUdjX2djVXF5SXNPcDlFbWgxRHgwMXpOUmZaWmMwQnc?oc=5",
+        "source": "Google News",
+        "published": "2026-08-28T20:40:20.000Z",
+        "summary": "Anthropic Wins as Judge Bars Pentagon From Punishing AI Ethics Policies Tech Times"
+      },
+      {
+        "title": "Anthropic Opens Free Claude to Scientists; Biology Frontier Goes Through Washington - Tech Times",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPTGVTVXQzWDZ2SnFCVlJSN2FNanBXZVlOMDdyZHd2TDNQaTg0ZjJKczVsc3JPRC1JeUV6V2YtRUNTalViSk9QV0ZKcEVuVUltU19UcHdqWTJpdzhCdVRJOENjOGlXUkE0MVJDME1qUUtqS3VESTZyRlpFX2RGdnItaDFwcU42bEdmUElHVGVtUFBEc3M2elRSVWtzS1U0aFBQQ0ktQTRfdDhCQkxOS2RhcUc5WGlJRUFQV0pkelRfWF94S3dGUFdEWUlBWWV4aW8?oc=5",
+        "source": "Google News",
+        "published": "2026-08-28T20:18:29.000Z",
+        "summary": "Anthropic Opens Free Claude to Scientists; Biology Frontier Goes Through Washington Tech Times"
+      },
+      {
+        "title": "Jim Cramer Says Salesforce’s (CRM) Anthropic Partnership Silences AI Disruption Fears - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQejY3VGVOMFdYa3ZmY1BGeS1IYWNXZjdyVlcwLWVYTW1Zb1B3UkhpdnEtdGdjQUZUUEpFbUN4LW8tVTBCMGh5OExPU01xRVdkM1NaYmNCU1NhVmJqazB5NG5ZQUlsUFhBenZUN29GRENVR0JGVmJycXVZbFlDSzhrY0Y2SXVpUkFfV2VIdGdUTHBOVkw4N1ZVNVRR?oc=5",
+        "source": "Google News",
+        "published": "2026-08-28T20:15:35.000Z",
+        "summary": "Jim Cramer Says Salesforce’s (CRM) Anthropic Partnership Silences AI Disruption Fears Yahoo Finance"
+      },
+      {
+        "title": "Anthropic Reports Claude Agents Mitigated Ten Alignment Failures - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPd19aSGp2UmZNa0RCa1JpcWJCaHZ5T0NtMGZXdjA2Vjdyc2d5Ri1QWlFHZmR3MGxRQl9FZmVhbXJSWDdLekJVUXZvSlJkRWRlaXQyUGhsXzFyT3JXNWRMUEE4Yk9yTWctV0ZibUxreGdiRk5QUDNrZFY1MUhjVTFYODRmUFk2NmdhOHhxTjlpSQ?oc=5",
+        "source": "Google News",
+        "published": "2026-08-28T20:02:01.000Z",
+        "summary": "Anthropic Reports Claude Agents Mitigated Ten Alignment Failures Unite.AI"
+      },
+      {
+        "title": "An Anthropic researcher just gave us a peek at self-improving AI",
+        "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/",
         "source": "TechCrunch",
-        "published": "2026-08-28T12:46:12.000Z",
-        "summary": "A federal judge ruled the Trump administration illegally labeled Anthropic a supply chain risk, handing the AI company a victory as its second Pentagon lawsuit continues in Washington."
+        "published": "2026-08-28T19:30:38.000Z",
+        "summary": "Given 10 benchmarks for specific misaligned behaviors, the automated systems were able to improve performance on every single one without degrading overall performance."
       },
       {
-        "title": "Claude Memory Now Follows You Into Cowork — Here’s How to Turn It Off - TechRepublic",
-        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5pb25JdW9QaDl4Y2syTzJRZzJqR2wteXY1U0k0NldVZFNYRUhMZVdGdVlNSUZaNlJzSkwtcS1Kck1iV0Vnb0Y5R3RadmwyNTZHSGduNUlnMkkwVHB5TkVDemJ5TkRnaW1zaWpwMm1lZHhFbXM?oc=5",
+        "title": "An Anthropic researcher just gave us a peek at self-improving AI - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNbkd4RUFwVFJvS3VQeldZcDNGanN2a0dkcGVadGowZzhGbVZsNkJ6RFlsZ3BZTW1XNmdRNTI0MlpiOWxrbHFfNlo4d2M2V0w2a01jWFVlQWRRR1N3SHp2V1dFbGZabm1NU3hIYTBHTUpQdWpCZXZMU05OYjlwT19NYVhmTkkxYkVma0JjcHR4U2JkYUd6?oc=5",
         "source": "Google News",
-        "published": "2026-08-28T12:45:00.000Z",
-        "summary": "Claude Memory Now Follows You Into Cowork — Here’s How to Turn It Off TechRepublic"
+        "published": "2026-08-28T19:30:38.000Z",
+        "summary": "An Anthropic researcher just gave us a peek at self-improving AI Yahoo Tech"
       },
       {
-        "title": "Pentagon blacklisted Anthropic over Claude powers it didn't have - The Register",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPS2VuajY2UHhkRnZZUnZ0OHNnT3drYUljQVFDckxYSjJwU0ZJMEN3ZmhEbkxuaW1qQXdCZ1Q0T0dWUjNsUnZiLTdZbVJKd2NJRzdiTUl6LXltaVlLdXNRT2N6aWNRZjBpeUk2Uk9vRnEzRU1aZnhXUlZZQnlPTDZXekdXV3NMeWVQWElhTjQycmI3ZmswZ3FzdEFWWjBkRXB3ejB0RXZrTVNzQmYteXdHSENzOGdydzVBTTdQag?oc=5",
+        "title": "Salesforce Unveils 'Claudeforce' with Anthropic, Targeting the AI Agent Market - finance.biggo.com",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9NSnFPbEIwbFU0ZGd0dE85UjhSMHVGcFNQN2kwZlFfcEVfTEU1VmRDU295cTlkazVfTGQ2LVlyaDBNLTRpTDNTanVKb0FpV3FLRm5HMGMtZjI0ekRvcW5jMmJKTDdQM0lUUDNRNVQ4WlRUd0ZGV2c?oc=5",
         "source": "Google News",
-        "published": "2026-08-28T12:31:51.000Z",
-        "summary": "Pentagon blacklisted Anthropic over Claude powers it didn't have The Register"
+        "published": "2026-08-28T18:54:00.000Z",
+        "summary": "Salesforce Unveils 'Claudeforce' with Anthropic, Targeting the AI Agent Market finance.biggo.com"
       },
       {
-        "title": "Anthropic partnership makes Salesforce’s interface optional - MarTech",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPVFppU3lsLW56STBJdDk2M1NnZVpWLTFtU3dIUEtEZXJ0Q2pkLW5ra0RqUVFFckttWGhueUE3elZhRVpycWZPdGQ3UWstclhDQTV3aU9WN2FWYnl1VFEzOFRIRmV0cFdtMXpOOVQ3VEVRdmZsaTZqQjRJdllyVzJMX080Z3ZxUQ?oc=5",
+        "title": "Trump blacklisting of \"woke\" Anthropic deemed illegal by federal judge",
+        "url": "https://arstechnica.com/tech-policy/2026/08/trump-blacklisting-of-woke-anthropic-deemed-illegal-by-federal-judge/",
+        "source": "Ars Technica",
+        "published": "2026-08-28T18:07:55.000Z",
+        "summary": "The Trump administration's blacklisting of Anthropic was illegal, a federal judge ruled in an order vacating government directives against the use of the firm's AI technology. The government…"
+      },
+      {
+        "title": "Anthropic Reportedly Explored $7 Billion MatX Acquisition As AI Lab Accelerates Custom Chip Push - Pulse 2.0",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPb19vUk5BeFZEbGlpM1ZwRWNQZDJWVGVzdjFaemNlNjJRMXlSTmc4OVVOV0lRZGJnOGZhcHJySktxemxVTDlKR1hhbDBVUXo3RnVkdVBJVjNNZGxfRFBFUk9UMndvRmY0QUZhUVRuUk5hTEFqa1RGckFKaWlYWFA3MmZxcEJ3Skxyc1drLTdVcGlUSDdtbUFUYjFBcmh1VlczOFZTZGh1cER5RVVBT096ak1aekQ3d9IBuwFBVV95cUxQaThDX3NIOEhRd3Fsc0d2MjJnYm5lSEhsZTRKaUpBbUFib1c0bXFtR3dhdmJUcW5qVl8xVU1CcHZNQ1JoQmZwNGVjYy1Tc0Nsd1p1YURoaV9xZHIzTjZZM2ZXdm5hdWxVTFNEYnZQVjM3bmctbHlkMDZxeHpQQXhlWHYwYVBfLW5IQkZxOG5QTHlPell4U3NiZU13ZmM0SUxSSS1KNFh2YUF4NnBadGhNMWdmaGs4ajl6R0Rz?oc=5",
         "source": "Google News",
-        "published": "2026-08-28T12:30:04.000Z",
-        "summary": "Anthropic partnership makes Salesforce’s interface optional MarTech"
+        "published": "2026-08-28T18:06:06.000Z",
+        "summary": "Anthropic Reportedly Explored $7 Billion MatX Acquisition As AI Lab Accelerates Custom Chip Push Pulse 2.0"
       },
       {
-        "title": "Judge rules Trump administration illegally punished AI firm Anthropic - CBS News",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQWjhTUHM2dVhOTEFzb1p3elhvSHhZTGFFLWhVZWhnbWVGRmdFMllwbGViYUE5RDl4WmUzbW1vXzUyZXUyVnJOWGd5ZkF2dlJqRWtYZWxtZHlCUVplZnVYemJrdUVOWHdFZWFxZnEtdktraDJUS1IxZFd3ckNPUXJxY1NwOVY4NXpGcmNhdHVPWWhVNmoxMXB2azZPZ1lwRUhF?oc=5",
+        "title": "Jackson Hole, Anthropic’s Court Win and PayPal Deal Collapse | Bloomberg Tech 8/28/2026",
+        "url": "https://www.bloomberg.com/news/videos/2026-08-28/bloomberg-tech-8-28-2026-video",
+        "source": "Bloomberg",
+        "published": "2026-08-28T17:52:43.000Z",
+        "summary": "Bloomberg’s Tim Stenovec zeroes in on Jackson Hole after Federal Reserve Chairman Kevin Warsh delivered his first address at the Symposium. Plus, a US judge rules that the Trump administration must…"
+      },
+      {
+        "title": "Pentagon’s blacklisting of Anthropic was unlawful, US judge rules - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPSlJhNzBFNUxUMW8xOWpySlkza2EyMENZSjBEQmJGc1Rrc2wtaXg0c0E0dGhqN092LXNqVHRRX0tyWUdHYi1rWmE5eGo2bWUtMS1KRmx0TUhxZ2JWdkUxNEVEaFdwUnJWN19hWkY1dmUzX0xsTm1CcjdvT2U5VGFmY3JJVUFGX2JEcHdNTVhMbnB0NVhEaEJRaEotaVBtQzJvbTJqa3lvcTVucGpjX1BQaGJ3?oc=5",
         "source": "Google News",
-        "published": "2026-08-28T12:20:11.000Z",
-        "summary": "Judge rules Trump administration illegally punished AI firm Anthropic CBS News"
+        "published": "2026-08-28T17:35:00.000Z",
+        "summary": "Pentagon’s blacklisting of Anthropic was unlawful, US judge rules The Guardian"
       },
       {
-        "title": "Anthropic Model Hardware Standard connects AI to lab equipment - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOVjA3SnJTbzR3Z0JuN1pmYmJGeTZNTUF2bXlhNTZrdF82REJwQzNVQ3lKYUdlblVHS0hUNWNOUktVamRscTF5QV9aMmMxaV84NmVLRWh1RXdqVGZZOXNJTHRZS2tURThiZjd5eG5QNF9LdVM0Wnc3bDV5cUlqOGNmSkhTMHZ3bFdKTHhWQmFsbWhJSlVobWRqVkZFRkxNTWVS?oc=5",
+        "title": "Automated researchers can reliably mitigate alignment failures - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMm12QTFLek9sVlhENXNNaFlpUHlnbEl5dDRNZTBCbG1iSUtndjBhaUQ3UGl6N2VOWFppR19kbGhHWjlGaWRnby1BcHNlM0lNLUFaZXVrWV9MTFFOcjg0dmpFcWc0cHkyUTd1d2Z3bjNjaU9FeUQzUnpKbFloc1lRVDRPNjBHQ2JRVDh6cg?oc=5",
         "source": "Google News",
-        "published": "2026-08-28T12:19:26.000Z",
-        "summary": "Anthropic Model Hardware Standard connects AI to lab equipment Yahoo Tech"
+        "published": "2026-08-28T17:03:08.000Z",
+        "summary": "Automated researchers can reliably mitigate alignment failures Anthropic"
       },
       {
-        "title": "Every machine is about to speak Claude - The Rundown AI",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1JdWJlbTN0cEVhZ24wd2stYnFueGU0Skh6RTNaRXc4d1RKV1ZFbThPdHhCaDhDRExtV1RscmlMWWtfVU1WQ1BPVnM4bDJFMV9YLUdyWGpGVG9FZFppdFYxM1RFMVI1TkhjUlBmZUpzWGZONDRDRzZjVDJ0NG42QQ?oc=5",
+        "title": "Dario Amodei Says Anthropic Is 'Not Interested in Destroying Anyone' - Business Insider",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeVBkTWk1R2dsdEpLODZObWllTjlrdlVIX3dybGRta1pZbFcxMTRNNlVNcEVCMFFpOElIY3N3WjU3SUpYd28xQ3ZqcjF4X2gwQkZCc3lBX3ppMHdVUmRyQnB0X0M3Mk03OEhWX0lCYnhkWTA0dlJUVTY0RXFlNEpNLVQtQS05T3BK?oc=5",
         "source": "Google News",
-        "published": "2026-08-28T12:03:19.000Z",
-        "summary": "Every machine is about to speak Claude The Rundown AI"
+        "published": "2026-08-28T16:49:00.000Z",
+        "summary": "Dario Amodei Says Anthropic Is 'Not Interested in Destroying Anyone' Business Insider"
       },
       {
-        "title": "Anthropic Launches New Standard to Link AI to Scientific, Industrial Equipment - Fana News -",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPemNJM19BWG8xbUdSSGtBaGVaTUZtWVp3cGZSX185ck53eWNIVUJmM2hsLTlBZGo0NFdmTHFacFowUl9NcXJrSWd6cWNZUENlQ0JtdndyQzl4eGZyX1FmbU1NLWozZjZaTm9WV2hISm9fZXNnbEVnMzFocUdtN0xrNHVqVWZ6bkRMNzhuTGZ1bW5zVWJjT2VFUWxaY250M291eXpTNnV1Vy1wT1dGN2xZeTA1dFUyZw?oc=5",
+        "title": "QuEra Uses Anthropic’s Claude to Automate Quantum Computer Laser Recovery - HPCwire",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQUGJBbExFX1BfdGVHRHV4aUNuSFFfV0Z4enIxZWJtVUhYQ1c0RXdnaHRpaW5raGtmR3MwaU4xX3hibWlfQ0xjeHZaNmYwZmZpVFBIelYydUVLWnFYVUNyVk56WmVUMGZ3SEpBYWowWVdlaXRrc01VYlpsekVzX09yT2NlcmxFZ0F4YW5mMF8waWJlRkVxUWk5d0lyeUZSdHowdldhd3l1MXExNUZSR1p3?oc=5",
         "source": "Google News",
-        "published": "2026-08-28T11:38:11.000Z",
-        "summary": "Anthropic Launches New Standard to Link AI to Scientific, Industrial Equipment Fana News -"
+        "published": "2026-08-28T15:34:21.000Z",
+        "summary": "QuEra Uses Anthropic’s Claude to Automate Quantum Computer Laser Recovery HPCwire"
       },
       {
-        "title": "Pentagon's blacklisting of Anthropic was unlawful, US judge rules",
-        "url": "https://www.reuters.com/legal/government/us-judge-blocks-pentagons-anthropic-blacklisting-2026-08-28/",
-        "source": "HN · 122↑",
-        "hn_id": "49477055",
-        "published": "2026-08-28T11:25:30.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic AI tool conducts physical scientific experiments - pharmaphorum",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQZV83Q1lBRzd4UVppcm5CVEpWcmh4NUc0UE5iUEZTQXhENTdtSDRYTzlIajlqZlJBTHpIY1Y1OHlIQ2pVeGFtS3otaktfSTFNNjFuaG84WUpITlJsdUFVWldma2lqQ215VWNFYkFpd0pQbFp0TThIQ0RyR1lRbjRhcWIybVRyckxtUUpuUTRKdGJkZw?oc=5",
+        "title": "Anthropic Brings Claude for Teachers to Schools and Districts - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOallZUXpjUnFVaDZUajU1bjJiOWd4QmozV0ZDRWk5UWx6SEVvNE1BbktCb3pwX0RGOG9IVVRUZG9EOHpxdU5sR2N2Y3BjYmtSS2ZDN2FYdHVVaFRzcXNpRm1GNUQ1MXZYaFdhMGlncnhGbENDUUF5SmtvZG12RVF1dXJlZk1Ea1JJRzNN?oc=5",
         "source": "Google News",
-        "published": "2026-08-28T10:50:49.000Z",
-        "summary": "Anthropic AI tool conducts physical scientific experiments pharmaphorum"
+        "published": "2026-08-28T15:11:01.000Z",
+        "summary": "Anthropic Brings Claude for Teachers to Schools and Districts Unite.AI"
       },
       {
-        "title": "Salesforce’s Claudeforce Deal With Anthropic Signals the End of Model-Agnostic Enterprise AI - forkast.news",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQYzlaRDF6MEVlM2hiR0oxVnYzZ2tmazlIaW9VTFpOUEpxMHluNW9kMkJFX1BoRXFrcWZOMnprYmo1anZUWEwxRkhwdGtDVDF0aTN3WkRlS2lpeU8xeGdjTW5KdUM5d2hXa1dXamxQcGduamVxNVNOMGdXUjdpV015R2NCTDhlVnAwTkVxT0hEVGFmd3FUWVVtZEwxX2o4NWRTSy01cTJpbXI2NHFKbDBTQm44SQ?oc=5",
+        "title": "Claude vs. Kimi - China-US Focus",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE0tNXV0b1hUOENaQ2paMUxrRUlPVEExbmRCN2JIS1dYQ3duXzZZZFlXNHlxMjBSandnOFdYRjFON2htcF9wU2lLZ21YWHM2OTdVZi1BZ3QxVE5YOFUxZTFyWHVIakNsbEJ2bFFB?oc=5",
         "source": "Google News",
-        "published": "2026-08-28T10:28:59.000Z",
-        "summary": "Salesforce’s Claudeforce Deal With Anthropic Signals the End of Model-Agnostic Enterprise AI forkast.news"
+        "published": "2026-08-28T14:57:06.000Z",
+        "summary": "Claude vs. Kimi China-US Focus"
       },
       {
-        "title": "US court rules Pentagon ban of Anthropic unlawful - Bangladesh Sangbad Sangstha (BSS)",
-        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5jWVBLZ0pDZkNyelpTcEVnRlZudGl6ZW9XR1RNcUZkZ1g4SlowaGRFTjZsclF5aVBHM3ZCUDMyTU1YN09uTG5hTXRaQ0tZblE1NkhmNmNiRQ?oc=5",
+        "title": "Claude Code runs malware despite “Auto Mode” security, tries to fix it, gets denied - Cybernews",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOa3NyX2NkT2ZteThBZllzOXJTMGMycmRrajNPQ1o3N3c3X2VYMlhHRm1pRG56NG1MWWo3aHlvdTlydk1XczdGMTVwSVdIQ0UzUzhPbGFzek9PSjQ1emFuTmpOVzFlTzZUTjNQTmpVVTgxTVpfMl9aREs2b211WnJ0Zw?oc=5",
         "source": "Google News",
-        "published": "2026-08-28T10:26:25.000Z",
-        "summary": "US court rules Pentagon ban of Anthropic unlawful Bangladesh Sangbad Sangstha (BSS)"
+        "published": "2026-08-28T14:16:07.000Z",
+        "summary": "Claude Code runs malware despite “Auto Mode” security, tries to fix it, gets denied Cybernews"
       },
       {
-        "title": "Anthropic Opens AI Standard for Physical Machines - Technology Org",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxONEQ5dGgxS0lrR1dLUTFZM2k0S2NNUTh0dWlYNGQwUzhsODlFV2Y5dGluUThYS2x2RlJaTWJqbDFud3hfc00zOXNHaGVrY1R0WjRUOGdpMDRMM3pTY0FDNTlPeHFNT1ZxNFZHeHJEZC1VdmlMbHpLQTVoZmg5b21uVVZaN2ZLbmlkZWxnMUZNMVYzNFE?oc=5",
+        "title": "Anthropic Just Beat The Pentagon In Court. A Judge Said National Security Was Used To Punish Its AI Rules. - International Business Times",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQMXoxWjRNR0FjTGZITkJpOUpDc2cyeGtZblR6WXRINkFRQ1pGRTRsd1ZNb3Bna0V3LXU1NUF0d1hDRkE1eTFkZlExMVhVdW1keGFacFFzUUdZRFppbHBNb0l5cmRZMmtVUmJHX05OaTU0cF8waWJEQ2VkN21kYUQ0RzNRUkVsSU13Mm82Y3lSc1VFbmQwX0dCYWJDWF9nVF82b0VWSlFPWFFZY0I5UEVXYUM2VVdNNzFoU1ZqU0dEVjIzQQ?oc=5",
         "source": "Google News",
-        "published": "2026-08-28T10:11:44.000Z",
-        "summary": "Anthropic Opens AI Standard for Physical Machines Technology Org"
-      },
-      {
-        "title": "Judge Rules Trump Administration Illegally Retaliated Against Anthropic Over AI Red Lines - Yahoo",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOTnZTY3lCS2pCZTR1OVNmNHNGZjYwWEUtSDBVaDdwaWFvQnhiaXVDT3hCeFVhdzZDSnd0UHh3cGpTNmhfc0hPdHNGVWprT1RvMzJIalIwYml2Xy1kaDJ2ZUIwdExlUlZOamZWNjZsWUdOcXByWTlDRlVldXBWZmNOQjdjUWdmeXNuTGNTU2QyeFZnNFlfa0dkc283LTBNWmZGYW94cA?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T10:11:34.000Z",
-        "summary": "Judge Rules Trump Administration Illegally Retaliated Against Anthropic Over AI Red Lines Yahoo"
-      },
-      {
-        "title": "Meta Once Projected Up to $10 Billion Annual Spend on Anthropic Services; Cost-Cutting Pivot Could Weigh on the Latter's IPO - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5FeFFJRUFtSWE0dG9SeXY2Qy1CQmg3ODA1UE5LdHFJdzJxcThLbDJFVFNiRGcyUVlHYlItMTJZY1BMdXRjYTZDQWNnRl95TVRyX1hBTG1Kb0lzTmdZVVZwRXQxcnc3LWJyRGJWZjZZdzdrU18tWGc?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T09:55:00.000Z",
-        "summary": "Meta Once Projected Up to $10 Billion Annual Spend on Anthropic Services; Cost-Cutting Pivot Could Weigh on the Latter's IPO finance.biggo.com"
-      },
-      {
-        "title": "Claude nukes a developer's 700 GB home directory while testing deletion safeguards; automatic model safety downgrade may have contributed to the screw-up — Anthropic safety harness downgraded model to Opus 4.8 before fatal variable collision - Tom's Hardware",
-        "url": "https://news.google.com/rss/articles/CBMiywJBVV95cUxNTlNWSFhIQmlpck5MTWRUc3RCVFdUOWVtdXMxSGd1SXV1MzBIcUN3ay1ac1l5a29KWnZWV09nR3dwbk9QenFBZ25WcHVUTVozYTBIekUxRGZnSHZObGJwZnduXzB6N21HVklCMGUtWUxySDkwSGtxc0JVcTI3aXZoZUNFa0NlM181ZWsyV0lscHM1OVdWakozTmJLeHN6cV9mSEF1b1JPRG1XQ3RES0FuTnRuVFpSdUFSOUU2TkZwZTZPUW8ycGNzYVdjM2dzOGp6REo2SGp2dWxSRFRTdkwtaGlYYWxJVWltVjlRT0JBcGprWGI0cUJWQVNHdEVUVTdJelpwenZDOC05TUhGem9XQkxKdUM0bW9fZlVhUHJxV3FQckQtNjlvQ3UyRG9MempJS3hQbk8xeS1sQzA4d2VSYVNiSDdOTWVBVVln?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T09:30:00.000Z",
-        "summary": "Claude nukes a developer's 700 GB home directory while testing deletion safeguards; automatic model safety downgrade may have contributed to the screw-up — Anthropic safety harness downgraded model…"
-      },
-      {
-        "title": "QuEra Uses Anthropic AI Agent to Automate Critical Quantum Computer Process - The Quantum Insider",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZ2pTT1p2OE5xbE44WEl4T1U4NmQwTmJJZnp3VXhnVi1QVFlOU3RXTllOeWVsV2RPcDRyaEpabG5rYzlqMm1SSk9waTRBSXA5OURKbzZoN3hVSTBZZTBnS2EwLVp3bEhxcHFvM0ZHd0xna3F6LVJQcE5iTV9wenA5cFdIVXpYRkRaUVVjSWFld1VaekszM3BUT3I3b0lxeVhDVlFkZ0pxQTJsQ2UyWjRVMDlKelFVQk9G?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T09:13:13.000Z",
-        "summary": "QuEra Uses Anthropic AI Agent to Automate Critical Quantum Computer Process The Quantum Insider"
-      },
-      {
-        "title": "US judge strikes down Pentagon blacklist of Anthropic as illegal retaliation - The Next Web",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOeXJuVjFCWm4tbGVGcTNySmZKSVdZVk9ZTDRTNFF1Rm1nLXJBN2VSYVRnYTRNbXg0YTN4bWlieFVzbHNvT0t6WHp4YTkyYUhSMTd1T2dGeUx2WFV4VVBDQXBjMnZHZERYQ2J5ejJwZnpUSWZBUUliZXl6ZjRhS2Naeg?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T07:49:19.000Z",
-        "summary": "US judge strikes down Pentagon blacklist of Anthropic as illegal retaliation The Next Web"
-      },
-      {
-        "title": "Anthropic's Pentagon Blacklist Designation Ruled \"Unlawful\" by U.S. District Court - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBxRVVTMlpSemVxRTA2X0lBZDNSaGZJLTNGbXo1bmc2ODRnaWs3UUVvb0Z1WjY4SDRzRVJ5eVhvR09qTVpsendZQjJvUGRrZlNHOWNvazQ2Q0d4cUxnOV9ZMld0UWNBMHB4eDhyc1VuRkNvVnBPQ3c?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T07:36:00.000Z",
-        "summary": "Anthropic's Pentagon Blacklist Designation Ruled \"Unlawful\" by U.S. District Court finance.biggo.com"
-      },
-      {
-        "title": "US judge rules Trump sanctions on Anthropic illegal - Türkiye Today",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQa2FqYWRPR2pwZlktNEZsS0V1ckk4RnZzem8tUFotX29zZGlxVDkxYURuemlYbmxuY042MEFWdTZPYmtQZFlaYjVfTy1CYUhkMEVjT2NHNDJGVUczNk1HNTFWRkJjXzZFSlE3NDhPbHdLUFF5bVNFTUthdnFXX2praTZlWjBkcE5XemxpVE5mZTBxeDh2MTN0UkF3?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T07:22:59.000Z",
-        "summary": "US judge rules Trump sanctions on Anthropic illegal Türkiye Today"
-      },
-      {
-        "title": "US judge blocks Pentagon blacklisting of AI firm Anthropic - Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNQTNzNk5XaHlld1A2T1NvbXM0SU5WclJhOXRPWGxRMXQyTjQzV1hhdFItZXZCYmFEWHBGWEdMU0N1bFRMVjFFMFZzOTdGWkhsd2ZvdjVuSGV6M2VFZnE5VnNWS0lhZ2ZNekZ0TWpPSUtCaHplc1ZWdFlBT08zd0I2ZElXOERnaGtLb2dldlY3NlFRVHU0OEI3LTdEWHlNekY40gGmAUFVX3lxTE5fZFRGc3ZiMmRGTlA5dHpnVmVvTm9pdU81Nk1QaEx4RUVqMnJLV1ZNeFJhcW5jcXhzTERCcFlURjBqZWdxTHRXcVhnbjdzVkN5RnNBMXg5eEE2TkFPSHhMQmhLdFlGRng4ZWVqVWhwVEg2R1FKaHhpNnpUTjh4ZFEzUHh1bl90S0Jjbm5BYnVPNHVud21yWm5KOXlOYjJvR0Q1clhTcHc?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T07:06:54.000Z",
-        "summary": "US judge blocks Pentagon blacklisting of AI firm Anthropic Al Jazeera"
-      },
-      {
-        "title": "Anthropic Opens 10,000 Free and Discounted Claude Seats for Scientists - Unite.AI",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQYmtONUY0dm81M0ZST21ONkN0SW1TZzR3WFBmbG55VlpzR3FpRFlpeG5yUEplRk5CZ2JwUUN6bkVXZGUyZ0dvUHNycWh2S3RyMmk3MW1nQlhOUGgza3lRSy1SaEUxTXBMU091VmtLRVR6My1qLV94SmJPVVZwd2hCTEMxaUNOZmVSbVg3WWlxalowaEFyWGc?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T07:06:02.000Z",
-        "summary": "Anthropic Opens 10,000 Free and Discounted Claude Seats for Scientists Unite.AI"
-      },
-      {
-        "title": "US judge rules Pentagon blacklisting of Anthropic unlawful - New York Post",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQVW5aN29oZlZBbXVtZklMMXhrOVNPT0JIT2xsSERTc0twVkFhUjgweHRLeWl5ZnR2M0JjeDR4aGZOMjF4VDB2cGMtRnRXT0w1ZEhiUlhQQ05EZno5c3NKNlVUaTlHckpLOVpXWTdkdU1CM01XT1JXOEpZTXczU3c1MmVxbkhILV8wSXc?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T06:10:00.000Z",
-        "summary": "US judge rules Pentagon blacklisting of Anthropic unlawful New York Post"
-      },
-      {
-        "title": "AI firm Anthropic wins case challenging Pentagon blacklisting - The Washington Post",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTjFwTklMVzhyeW5nOUdzUUVpN01kQ2hzcmpFT2FrOUNWRXNueDF1SzN5aG95QmtSOWsyaVdTMjJzdkZ6eU15STYybUtZdWtJdWhlQmFxNjFDWWo3b3FnMHVPak1RdENMZHM1ZUk5Y2ZXdUx3NUd4RExQQ0hocGxXWVBxbTVhdDRPR0JrUU1NWl9qQi1JRW5tTnRJOHV2c0RITUgxVU9aOFJCYlVXdGk5T3ZfalJyd01DWldMYjdR?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T05:30:00.000Z",
-        "summary": "AI firm Anthropic wins case challenging Pentagon blacklisting The Washington Post"
-      },
-      {
-        "title": "US court to Pentagon: You are 'wrong' in banning Anthropic and labelling it supply chain risk - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOcXpRLXprNG5MYmRwQ3F4SXdmT1o4Umc3RUc5djlvdURuOWF5OG5mSWFhenFlbjdXMnlvYzFncWxsYlBtSzZtc3dMdkxRV1ZPZVpGLXBwTjFhQXA5Q3VhT1RLQV94QmZLNDdRRFFObThjQWptOUg0LTRWU3NEdjlOWmg5MENzZTVCLXkwaVFNRUVVOFpPWE9UM2w4NElmUUpNMVlBSWs2MDN6UVFjaGpOcXVlSnNFX3FZblpTT0dyNmVWN2JkMWZFMF9FV2pkaHppNEVTb0xMM2lEWGNXSkNKdDVZSTh0bHhWY0VYSFFvdnVUbVZGV3d6bkZYbXNrVnVhbHg40gGIAkFVX3lxTE5DLVdIYkN6TE9qZHpOTUppQVVydFFiT1BiU0liV3YzUmMzeDJhNkhiaExSdmppdWdZMjdFbWtrS1FIT2haaDl5dlhsaDVZYVlrMHN0R2x0TURxaUhvOFpOdlNPMlFXa3VXME0tX0t2ZjlfaF9iOVp1YmFHYzdaMUFoVnhDQ3h2VkRsanMyaVE5bEQ2akFmeU1qWkRmaU1pRlBqaFdwalNRMU9NamQ0YV9kNjl3SWo3SnRWX3FLRjJfN3JmaFczYlJLRHl4ZHhacklZNkkyY1lDUE1WTmFBdHlqMnp4WDBVRWhLRVFENFQ1WjNkODhVSmxPZzMtV1FBdHBPeHQzc1p6dQ?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T04:58:00.000Z",
-        "summary": "US court to Pentagon: You are 'wrong' in banning Anthropic and labelling it supply chain risk The Times of India"
+        "published": "2026-08-28T13:49:39.000Z",
+        "summary": "Anthropic Just Beat The Pentagon In Court. A Judge Said National Security Was Used To Punish Its AI Rules. International Business Times"
       },
       {
         "title": "Model Hardware Standard: AI operating physical equipment",
@@ -660,6 +659,13 @@
     ],
     "status": [
       {
+        "title": "Elevated errors on Claude Code and Claude Cowork",
+        "url": "https://status.claude.com/incidents/vr9tpk8w7zr8",
+        "source": "Claude Status",
+        "published": "2026-08-28T20:21:18.000Z",
+        "summary": "Aug 28 , 20:21 UTC Resolved - The issue affecting Claude Cowork and Claude Code on the web has been resolved. Aug 28 , 18:21 UTC Monitoring - A mitigation has been applied for the issue affecting…"
+      },
+      {
         "title": "Issues logging into Claude.ai",
         "url": "https://status.claude.com/incidents/n0rlp126qf8g",
         "source": "Claude Status",
@@ -735,13 +741,6 @@
         "source": "Claude Status",
         "published": "2026-08-14T21:58:12.000Z",
         "summary": "Aug 14 , 21:58 UTC Resolved - The issue affecting the Claude API, Claude Code, and Claude Cowork has been resolved. Impact occurred from 20:14 to 20:38 UTC. Aug 14 , 20:44 UTC Monitoring - A fix has…"
-      },
-      {
-        "title": "Issues reaching status.claude.com",
-        "url": "https://status.claude.com/incidents/kmbpgrsszf72",
-        "source": "Claude Status",
-        "published": "2026-08-14T10:53:22.000Z",
-        "summary": "Aug 14 , 10:53 UTC Resolved - The issue resulting in users being unable to reach status.claude.com has been resolved. Aug 14 , 07:58 UTC Investigating - We are aware of issues with reaching…"
       }
     ],
     "youtube": [
@@ -1078,6 +1077,22 @@
     ],
     "tutorials": [
       {
+        "title": "docs(managed_agents): remove cost and latency ratios from CMA_plan_bi…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/bbfab1bbbe5d4c353241a6df4e7d9a112a1ba356",
+        "source": "Anthropic Cookbook",
+        "published": "2026-08-28T21:53:42.000Z",
+        "summary": "docs(managed_agents): remove cost and latency ratios from CMA_plan_big_execute_small (#851) Drop the \"roughly 2.5x cheaper and 3x faster\" figures from the intro and the results discussion, and…",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "v2.1.251",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.251",
+        "source": "Claude Code Releases",
+        "published": "2026-08-28T18:19:32.000Z",
+        "summary": "What's changed Added PreModelSwitch and PostModelSwitch hook events (block, confirm, or annotate a model switch); SessionStart resume hooks now receive session staleness and the estimated re-cache…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.250",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.250",
         "source": "Claude Code Releases",
@@ -1162,14 +1177,6 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "v2.1.238",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.238",
-        "source": "Claude Code Releases",
-        "published": "2026-08-20T20:33:51.000Z",
-        "summary": "What's changed Added a keybindingFlavor setting: set it to \"readline\" to make Ctrl+W in the prompt delete back to the previous whitespace, as in Bash; the default ( \"classic\" ) is unchanged Plugin…",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "Merge pull request #834 from anthropics/aravind-ant/fix-mdx-compile",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/35f2eec7e44897c537e44441b7dff2f0ecbfb804",
         "source": "Anthropic Cookbook",
@@ -1239,14 +1246,6 @@
         "source": "Anthropic Cookbook",
         "published": "2026-08-14T16:21:15.000Z",
         "summary": "Add content moderation cookbook Compile a written content policy into deterministic JSON rules with Claude, extract typed fields from text and images, and produce auditable verdicts from a rule…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Merge pull request #825 from anthropics/benlehrburger/cost-optimizati…",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/93ea00c906248f67074a32d69cc3b560af020bf0",
-        "source": "Anthropic Cookbook",
-        "published": "2026-08-12T19:10:40.000Z",
-        "summary": "Merge pull request #825 from anthropics/benlehrburger/cost-optimization-description docs(cost_optimization): shorten registry description",
         "tutorial_kind": "official"
       },
       {
@@ -1744,6 +1743,13 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.251",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.251",
+        "source": "Claude Code",
+        "published": "2026-08-28T18:19:32.000Z",
+        "summary": "What's changed Added PreModelSwitch and PostModelSwitch hook events (block, confirm, or annotate a model switch); SessionStart resume hooks now receive session staleness and the estimated re-cache cost Added live…"
+      },
+      {
         "title": "v2.1.250",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.250",
         "source": "Claude Code",
@@ -1896,13 +1902,6 @@
         "source": "Claude Code",
         "published": "2026-08-21T19:54:23.000Z",
         "summary": "What's changed Cost estimates ( /cost , status line, --max-budget-usd ) now include the 1.1× US-only-inference premium for data-residency workspaces Added the one-time fullscreen renderer offer on Bedrock, Vertex,…"
-      },
-      {
-        "title": "v2.1.238",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.238",
-        "source": "Claude Code",
-        "published": "2026-08-20T20:33:51.000Z",
-        "summary": "What's changed Added a keybindingFlavor setting: set it to \"readline\" to make Ctrl+W in the prompt delete back to the previous whitespace, as in Bash; the default ( \"classic\" ) is unchanged Plugin marketplaces:…"
       },
       {
         "title": "We've released v1.0 of the Python SDK . The SDK's HTTP layer moves from httpx to httpx2 , a maintained, API-compatible…",
