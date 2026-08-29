@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-08-29T04:29:39.428Z",
+  "generated_at": "2026-08-29T11:51:03.815Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Model Hardware Standard Research Preview",
+        "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+        "source": "Anthropic",
+        "published": "2026-08-29T10:57:56.000Z",
+        "summary": ""
+      },
       {
         "title": "Automated Researchers Mitigate Alignment Failures",
         "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
@@ -22,13 +29,6 @@
         "url": "https://www.anthropic.com/news/expanding-support-for-scientists",
         "source": "Anthropic",
         "published": "2026-08-28T10:42:34.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Model Hardware Standard Research Preview",
-        "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
-        "source": "Anthropic",
-        "published": "2026-08-28T10:41:54.000Z",
         "summary": ""
       },
       {
@@ -146,18 +146,67 @@
     ],
     "news": [
       {
+        "title": "Sony Music Publishing and Warner Chappell sue Anthropic in multi-billion dollar lawsuit - Music Business Worldwide",
+        "url": "https://news.google.com/rss/articles/CBMivwJBVV95cUxONzV0ZEROLUxEM0gwRHJMc2VlMnh3N0R1c09wbFcta2tsV2JpbnA5UE1TR0Vrd0hwQnN0MHV4bmVYaGg4aVo0TXhKeUxCN3dNZXprQkU0dVM0MXhDZ2pURGQxREdxS0paSkZwaGxpWS1GRUVrS3k2OUU1V2ZFb1JodE8tVlJVSmdnRnZsZmhTUnNaLUprR2l2eEk4QVFTVHh4a3A5SjdqWk01YjdoV2tvTEh5b2oxaWRPcDBkUzZQR0o4VDBLWURJWFdNOHFJZUZZaE0yZU0xYzFjbW93cDNqVE1OZXRwWkhwZWhsdC1Lb29vR1JBMTFlOHBPSFhSS0xNZW5UTEV1NW9CclJhb3lVRDRybjhZSllxNnZ1ekRsaUFSTGFseHl2WjNTaFM2WDB2d3J2cEVXVm5YOEIzVzRR?oc=5",
+        "source": "Google News",
+        "published": "2026-08-29T10:51:27.000Z",
+        "summary": "Sony Music Publishing and Warner Chappell sue Anthropic in multi-billion dollar lawsuit Music Business Worldwide"
+      },
+      {
+        "title": "US judge blocks Pentagon’s Anthropic blacklisting - Indian Television Dot Com",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQODBzWWlZSldydHJJek9BSmdvTkxlMmJwVHVNcGJyUHlBME0xY1ZBZEszYWxmTFRyNWUtMFhYQjlnYVVDNTJWLTVVSlFpUGYyOTMzN1BxVTRUMTN6bjFZZDRTbzhScnJOTlp6SGEzd042a3lwQ3dJdlBWbkRSLVhXQUxhQkFxaWRuYWc?oc=5",
+        "source": "Google News",
+        "published": "2026-08-29T10:04:44.000Z",
+        "summary": "US judge blocks Pentagon’s Anthropic blacklisting Indian Television Dot Com"
+      },
+      {
+        "title": "Anthropic Wins Permanent Pentagon Blacklist Block in $200 Million AI Contract Fight - TechStock²",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOTFdTbnU3eF90cV9Ha1V6Z1RmQmJmM2RuUUNDWVYtQzlVUDNncEJVX2lUbFVUV2JhUXhHaXlhRnpkRnpLdk1kLU01eDJWN3VVYUk0MURrZEFpMTFuUGl4UXBpOEY3U3QwNEpDUThGd2RUODVVTzF4RDVEM1BmRWVBQUZpcjBPNkFIdE5Lc1Q2TjVOMi1HZXRSNi11dXpyaFlUQlBGbDdR?oc=5",
+        "source": "Google News",
+        "published": "2026-08-29T10:02:44.000Z",
+        "summary": "Anthropic Wins Permanent Pentagon Blacklist Block in $200 Million AI Contract Fight TechStock²"
+      },
+      {
+        "title": "Explaining ClaudeBot - PPC Land",
+        "url": "https://news.google.com/rss/articles/CBMiQEFVX3lxTE1UdUpsRDNFMXljZWNDSjdBc1NsV3ZYQkZBalE2bXR3dkZyX3kxbjZEZXBVZW0tVXNDQ3g3cXQ4T3o?oc=5",
+        "source": "Google News",
+        "published": "2026-08-29T09:47:16.000Z",
+        "summary": "Explaining ClaudeBot PPC Land"
+      },
+      {
+        "title": "Anthropic wants to do for physical hardware what its Model Context Protocol did for software - the-decoder.com",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZ3B3UjZ2MTdadnU4bTc2aGFFT25NZGF5Q3R2ZURjQmlheGpKR0lhTlR6OTFpVmtndjdjZlZEQUw5MW5QN2RBeWVaaGZZTEJFenZrZFJBanNwbFJ5UERWdDFaMnVSR08wbTVpY2RMeGlxaDllOTJUdHlGbzBIWmVzMzJlZGZ1U0FuZkxydEpGLUs2djdKYWR5bzNteFI3RnZCMTJwN0NnLXRucUwzNjYwNVVHLVFLaDg4?oc=5",
+        "source": "Google News",
+        "published": "2026-08-29T09:19:09.000Z",
+        "summary": "Anthropic wants to do for physical hardware what its Model Context Protocol did for software the-decoder.com"
+      },
+      {
+        "title": "This creator got 'micro-canceled' for promoting Claude. She says AI use is becoming a social taboo. - Business Insider",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPUU9JWUlzbmh4STU5a3BHWEo1TlRPVEJCM2JhR3d1bEZabXA5OXRUUjJfY0ZsUU1XTVhjNU5KM3V5anRadlhPM0Zsc0dwZDcwT1F5ejVJamhTXzhLc2JzczQ4YUU5aUhTdG5jVzhJR2dpZ3poZG03a0FpS21jT1Rsbg?oc=5",
+        "source": "Google News",
+        "published": "2026-08-29T08:37:12.000Z",
+        "summary": "This creator got 'micro-canceled' for promoting Claude. She says AI use is becoming a social taboo. Business Insider"
+      },
+      {
+        "title": "US Court Rejects Pentagon Blacklisting of Anthropic - اسلام تايمز",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcW9mbDFOcm5BZGFHOGR1akpJN29qbkM5VENnell1di1BUTNjcy1vZmxocXB0bDVPQXprMTgwWi1fZ05NR2ZkWFZadXB2UmVFZWFrNFdGSEdaSV9mWkwyMVVfZTVDc1N3T2U4YmV4VzlLajIwaS1nTVdRa2IxLVd4UkJnOHFQZmRseDBZRWItS196U0d0OE4yNWpB?oc=5",
+        "source": "Google News",
+        "published": "2026-08-29T06:54:37.000Z",
+        "summary": "US Court Rejects Pentagon Blacklisting of Anthropic اسلام تايمز"
+      },
+      {
         "title": "Opinion | The Pentagon loses a battle in its unnecessary war with Anthropic - The Washington Post",
         "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRVpaX1RfSmRzNzNYODhTLU5mRzFUYWNuT09yeFNSeUNzQlN5azlQRlhDa0JSdlRyN0ZkUmlJYXVWQjZnbTh4a2xWbHU3dWdJcnJQN0Nlazk4OG1pS1ZJTUE1MHZBSkctdlVVdktvZ2JCaFptem5BX2g5WFlzckZNQ29kV2tHbkhINU9jdFdjVWxrbVpJVkp1RFZoMEZoU1FYREdyaGFQQQ?oc=5",
         "source": "Google News",
-        "published": "2026-08-29T04:22:43.000Z",
+        "published": "2026-08-29T05:20:11.000Z",
         "summary": "Opinion | The Pentagon loses a battle in its unnecessary war with Anthropic The Washington Post"
       },
       {
-        "title": "Salesforce Launches Claudeforce as Anthropic Stock Gains Drive Its Earnings - XenoSpectrum",
-        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9MM0hrY2YzTGlCTFpKYVl6RmpQUkRicmFVUWc3ZVEzVmVkNEIwcnlscDMxUE1QQ3pobzQ2OVd2VGFINXFzSVg4T0JJSHk3cTRyTlBrQmdkQzY5Mng2TWJqcnJYZVJmaHJybmdOSjF3?oc=5",
+        "title": "Pentagon’s blacklisting of Anthropic was unlawful, US judge rules - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPSlJhNzBFNUxUMW8xOWpySlkza2EyMENZSjBEQmJGc1Rrc2wtaXg0c0E0dGhqN092LXNqVHRRX0tyWUdHYi1rWmE5eGo2bWUtMS1KRmx0TUhxZ2JWdkUxNEVEaFdwUnJWN19hWkY1dmUzX0xsTm1CcjdvT2U5VGFmY3JJVUFGX2JEcHdNTVhMbnB0NVhEaEJRaEotaVBtQzJvbTJqa3lvcTVucGpjX1BQaGJ3?oc=5",
         "source": "Google News",
-        "published": "2026-08-29T03:19:29.000Z",
-        "summary": "Salesforce Launches Claudeforce as Anthropic Stock Gains Drive Its Earnings XenoSpectrum"
+        "published": "2026-08-29T03:19:00.000Z",
+        "summary": "Pentagon’s blacklisting of Anthropic was unlawful, US judge rules The Guardian"
       },
       {
         "title": "Anthropic Trains Claude AI at $4 Hourly Cost, Outperforming $150/Hour Human Researchers - 36 Kr",
@@ -172,13 +221,6 @@
         "source": "Google News",
         "published": "2026-08-28T23:33:54.000Z",
         "summary": "Anthropic wants Claude to run life sciences R&D. Now it is wiring AI agents into the lab. R&D World"
-      },
-      {
-        "title": "Justin Sun's \"Confrontation\" with Claude: How Far Can AI Go in Making Life Decisions? - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9SRkpnd1lLVmFRYzFnNlhsWHBqV1NnZEJmdzlCcmNyT1FUZ2NZc1g1d3ZBTjl1aFdqSkZlNzdMRURSVENsU0d6U0hQSzlOaWdXY0NwMkJnd21zbHFFRzlybThTUmhFUHkwSHRLdEtDa3l2WUd2OVE?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T23:25:00.000Z",
-        "summary": "Justin Sun's \"Confrontation\" with Claude: How Far Can AI Go in Making Life Decisions? finance.biggo.com"
       },
       {
         "title": "Judge rules Trump administration illegally punished Anthropic - CBS News",
@@ -207,13 +249,6 @@
         "source": "Google News",
         "published": "2026-08-28T21:52:11.000Z",
         "summary": "Anthropic Says Claude Is Showing Early Signs of Self-Improvement Startup Fortune"
-      },
-      {
-        "title": "Judge blocks Anthropic blacklisting - ABC Columbia",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPU1lraC1fRzZfWFJYVWQxUFpvQy1kQlBqYXRkUERRd1R2N2tVSG9zTkdkQ01IZGZKQXdlWjVwOFdmSGt5clFselh2dW1yS3pvVE9hTmFyWXZFWlNCUDMxYy1DUkYwM0RGOE83bnlMbko1MmxnaFpMZGFkTDFGblFSOA?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T21:44:25.000Z",
-        "summary": "Judge blocks Anthropic blacklisting ABC Columbia"
       },
       {
         "title": "Trump administration attempts to punish, ban Anthropic were unlawful, judge rules - FedScoop",
@@ -265,13 +300,6 @@
         "summary": "Given 10 benchmarks for specific misaligned behaviors, the automated systems were able to improve performance on every single one without degrading overall performance."
       },
       {
-        "title": "An Anthropic researcher just gave us a peek at self-improving AI - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNbkd4RUFwVFJvS3VQeldZcDNGanN2a0dkcGVadGowZzhGbVZsNkJ6RFlsZ3BZTW1XNmdRNTI0MlpiOWxrbHFfNlo4d2M2V0w2a01jWFVlQWRRR1N3SHp2V1dFbGZabm1NU3hIYTBHTUpQdWpCZXZMU05OYjlwT19NYVhmTkkxYkVma0JjcHR4U2JkYUd6?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T19:30:38.000Z",
-        "summary": "An Anthropic researcher just gave us a peek at self-improving AI Yahoo Tech"
-      },
-      {
         "title": "Salesforce Unveils 'Claudeforce' with Anthropic, Targeting the AI Agent Market - finance.biggo.com",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9NSnFPbEIwbFU0ZGd0dE85UjhSMHVGcFNQN2kwZlFfcEVfTEU1VmRDU295cTlkazVfTGQ2LVlyaDBNLTRpTDNTanVKb0FpV3FLRm5HMGMtZjI0ekRvcW5jMmJKTDdQM0lUUDNRNVQ4WlRUd0ZGV2c?oc=5",
         "source": "Google News",
@@ -291,34 +319,6 @@
         "source": "Google News",
         "published": "2026-08-28T18:06:06.000Z",
         "summary": "Anthropic Reportedly Explored $7 Billion MatX Acquisition As AI Lab Accelerates Custom Chip Push Pulse 2.0"
-      },
-      {
-        "title": "Salesforce Shares Surge 23% After Anthropic Tie-Up Eases AI Disruption Fears - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1nS2ZCX0FvZDlqcUMzOUQxaU9DUzhXNVc3MmlPeVFuc09jZXBheldZbjZIRm9UcEFlaTBpUl95X1FNUUNKcjFlNUY5LXUzTXJyc3p4S1U4ZmNDZXFiVjlHRWR1NzdScU0tUEY4NGgxZnZPYWpuUkE?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T18:06:00.000Z",
-        "summary": "Salesforce Shares Surge 23% After Anthropic Tie-Up Eases AI Disruption Fears finance.biggo.com"
-      },
-      {
-        "title": "Jackson Hole, Anthropic’s Court Win and PayPal Deal Collapse | Bloomberg Tech 8/28/2026",
-        "url": "https://www.bloomberg.com/news/videos/2026-08-28/bloomberg-tech-8-28-2026-video",
-        "source": "Bloomberg",
-        "published": "2026-08-28T17:52:43.000Z",
-        "summary": "Bloomberg’s Tim Stenovec zeroes in on Jackson Hole after Federal Reserve Chairman Kevin Warsh delivered his first address at the Symposium. Plus, a US judge rules that the Trump administration must…"
-      },
-      {
-        "title": "Pentagon’s blacklisting of Anthropic was unlawful, US judge rules - The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPSlJhNzBFNUxUMW8xOWpySlkza2EyMENZSjBEQmJGc1Rrc2wtaXg0c0E0dGhqN092LXNqVHRRX0tyWUdHYi1rWmE5eGo2bWUtMS1KRmx0TUhxZ2JWdkUxNEVEaFdwUnJWN19hWkY1dmUzX0xsTm1CcjdvT2U5VGFmY3JJVUFGX2JEcHdNTVhMbnB0NVhEaEJRaEotaVBtQzJvbTJqa3lvcTVucGpjX1BQaGJ3?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T17:35:00.000Z",
-        "summary": "Pentagon’s blacklisting of Anthropic was unlawful, US judge rules The Guardian"
-      },
-      {
-        "title": "Automated researchers can reliably mitigate alignment failures - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMm12QTFLek9sVlhENXNNaFlpUHlnbEl5dDRNZTBCbG1iSUtndjBhaUQ3UGl6N2VOWFppR19kbGhHWjlGaWRnby1BcHNlM0lNLUFaZXVrWV9MTFFOcjg0dmpFcWc0cHkyUTd1d2Z3bjNjaU9FeUQzUnpKbFloc1lRVDRPNjBHQ2JRVDh6cg?oc=5",
-        "source": "Google News",
-        "published": "2026-08-28T17:03:08.000Z",
-        "summary": "Automated researchers can reliably mitigate alignment failures Anthropic"
       },
       {
         "title": "Model Hardware Standard: AI operating physical equipment",
@@ -345,6 +345,126 @@
         "_kind": "news_video"
       },
       {
+        "title": "I Built the Ultimate Claude Code App Builder (steal this)",
+        "url": "https://www.youtube.com/watch?v=tqi4cTZZWzQ",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "tqi4cTZZWzQ",
+        "thumbnail": "https://i.ytimg.com/vi/tqi4cTZZWzQ/hqdefault.jpg",
+        "published": "2026-08-27T13:00:36.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Vibe Coding LIVE with Claude Code!",
+        "url": "https://www.youtube.com/watch?v=dUGw-BFvMLw",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "dUGw-BFvMLw",
+        "thumbnail": "https://i.ytimg.com/vi/dUGw-BFvMLw/hqdefault.jpg",
+        "published": "2026-08-26T05:01:08.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Codex vs Claude vs Grokbot: What's The Best Super App?",
+        "url": "https://www.youtube.com/watch?v=ETa6ZYqoIXo",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "ETa6ZYqoIXo",
+        "thumbnail": "https://i.ytimg.com/vi/ETa6ZYqoIXo/hqdefault.jpg",
+        "published": "2026-08-21T20:41:12.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "I Built a Claude Humanizer Skill That Actually Works",
+        "url": "https://www.youtube.com/watch?v=2Tert-KpIfY",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "2Tert-KpIfY",
+        "thumbnail": "https://i.ytimg.com/vi/2Tert-KpIfY/hqdefault.jpg",
+        "published": "2026-08-18T14:39:28.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "This Is Why Your AI Agents Feel Like Toys (Claude Agent SDK Fixes It)",
+        "url": "https://www.youtube.com/watch?v=epGDGyTZs5Y",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "epGDGyTZs5Y",
+        "thumbnail": "https://i.ytimg.com/vi/epGDGyTZs5Y/hqdefault.jpg",
+        "published": "2026-08-18T13:00:20.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Grok 4.6 is Actually Good… And Claude Keeps Getting Better",
+        "url": "https://www.youtube.com/watch?v=VWDnptnvFrA",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "VWDnptnvFrA",
+        "thumbnail": "https://i.ytimg.com/vi/VWDnptnvFrA/hqdefault.jpg",
+        "published": "2026-08-15T14:03:52.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "I Gave Claude Full Access to My App. Here's How.",
+        "url": "https://www.youtube.com/watch?v=N2Ogvx_U8uM",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "N2Ogvx_U8uM",
+        "thumbnail": "https://i.ytimg.com/vi/N2Ogvx_U8uM/hqdefault.jpg",
+        "published": "2026-08-13T13:00:05.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Grok 4.6 is Claude Fable 5, but dirt cheap",
+        "url": "https://www.youtube.com/watch?v=3-ahsHfFjwk",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "3-ahsHfFjwk",
+        "thumbnail": "https://i.ytimg.com/vi/3-ahsHfFjwk/hqdefault.jpg",
+        "published": "2026-08-13T00:35:24.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude vs ChatGPT: Which Is Better for Agent Work?",
+        "url": "https://www.youtube.com/shorts/9W2qj_GR4s4",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "9W2qj_GR4s4",
+        "thumbnail": "https://i.ytimg.com/vi/9W2qj_GR4s4/hqdefault.jpg",
+        "published": "2026-08-12T02:41:57.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Codex Is Winning… So Why Am I Still Paying for Claude?",
+        "url": "https://www.youtube.com/watch?v=piOSL8Ms9mY",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "piOSL8Ms9mY",
+        "thumbnail": "https://i.ytimg.com/vi/piOSL8Ms9mY/hqdefault.jpg",
+        "published": "2026-08-10T20:29:40.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
         "title": "How Icelanders are thinking about AI",
         "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
         "source": "Anthropic",
@@ -357,98 +477,182 @@
         "_kind": "news_video"
       },
       {
-        "title": "The different levels of how Claude thinks",
-        "url": "https://www.youtube.com/watch?v=rKV5JcALQoQ",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "rKV5JcALQoQ",
-        "thumbnail": "https://i.ytimg.com/vi/rKV5JcALQoQ/hqdefault.jpg",
-        "published": "2026-07-06T16:59:51.000Z",
+        "title": "Best CLI for AI Agents: Claude Code vs Codex vs Gemini CLI",
+        "url": "https://www.youtube.com/shorts/VJZqO--bV-s",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "VJZqO--bV-s",
+        "thumbnail": "https://i.ytimg.com/vi/VJZqO--bV-s/hqdefault.jpg",
+        "published": "2026-08-10T14:06:23.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "Translating Claude’s thoughts into language",
-        "url": "https://www.youtube.com/watch?v=j2knrqAzYVY",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "j2knrqAzYVY",
-        "thumbnail": "https://i.ytimg.com/vi/j2knrqAzYVY/hqdefault.jpg",
-        "published": "2026-05-07T17:01:21.000Z",
+        "title": "What is Claude Code? Watch It Do a Real Job",
+        "url": "https://www.youtube.com/shorts/5NJpJAxygX8",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "5NJpJAxygX8",
+        "thumbnail": "https://i.ytimg.com/vi/5NJpJAxygX8/hqdefault.jpg",
+        "published": "2026-08-10T02:55:17.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "An initiative to secure the world's software | Project Glasswing",
-        "url": "https://www.youtube.com/watch?v=INGOC6-LLv0",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "INGOC6-LLv0",
-        "thumbnail": "https://i.ytimg.com/vi/INGOC6-LLv0/hqdefault.jpg",
-        "published": "2026-04-07T18:03:51.000Z",
+        "title": "CLAUDE CODE MARKETING FULL COURSE (6 HOURS)",
+        "url": "https://www.youtube.com/watch?v=yulWjh3rq28",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "yulWjh3rq28",
+        "thumbnail": "https://i.ytimg.com/vi/yulWjh3rq28/hqdefault.jpg",
+        "published": "2026-08-08T14:15:23.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "When AIs act emotional",
-        "url": "https://www.youtube.com/watch?v=D4XTefP3Lsc",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "D4XTefP3Lsc",
-        "thumbnail": "https://i.ytimg.com/vi/D4XTefP3Lsc/hqdefault.jpg",
-        "published": "2026-04-02T16:06:59.000Z",
+        "title": "Claude Opus 5",
+        "url": "https://www.youtube.com/shorts/lLOSB2Px7cI",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "lLOSB2Px7cI",
+        "thumbnail": "https://i.ytimg.com/vi/lLOSB2Px7cI/hqdefault.jpg",
+        "published": "2026-08-07T18:30:34.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "Claude on Mars",
-        "url": "https://www.youtube.com/shorts/kYJO0y8fVTA",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "kYJO0y8fVTA",
-        "thumbnail": "https://i.ytimg.com/vi/kYJO0y8fVTA/hqdefault.jpg",
-        "published": "2026-01-30T19:09:11.000Z",
+        "title": "Jack Dorsey's Buzz Puts Claude Code + Codex on One Team",
+        "url": "https://www.youtube.com/watch?v=xJEFjE88wdw",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "xJEFjE88wdw",
+        "thumbnail": "https://i.ytimg.com/vi/xJEFjE88wdw/hqdefault.jpg",
+        "published": "2026-08-06T13:00:21.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "Your tools are now interactive in Claude",
-        "url": "https://www.youtube.com/watch?v=bluAmTHoEow",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "bluAmTHoEow",
-        "thumbnail": "https://i.ytimg.com/vi/bluAmTHoEow/hqdefault.jpg",
-        "published": "2026-01-26T19:06:25.000Z",
+        "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
+        "url": "https://www.youtube.com/watch?v=P1KpxzLVg7c",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "P1KpxzLVg7c",
+        "thumbnail": "https://i.ytimg.com/vi/P1KpxzLVg7c/hqdefault.jpg",
+        "published": "2026-07-29T20:54:33.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "AI on campus",
-        "url": "https://www.youtube.com/watch?v=N5yJJA0NCU0",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "N5yJJA0NCU0",
-        "thumbnail": "https://i.ytimg.com/vi/N5yJJA0NCU0/hqdefault.jpg",
-        "published": "2026-01-12T22:41:27.000Z",
+        "title": "Which Claude Model Is Best for Coding?",
+        "url": "https://www.youtube.com/shorts/JBQvtT3A10E",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "JBQvtT3A10E",
+        "thumbnail": "https://i.ytimg.com/vi/JBQvtT3A10E/hqdefault.jpg",
+        "published": "2026-07-29T18:30:20.000Z",
         "summary": "",
         "_kind": "news_video"
       },
       {
-        "title": "AI's limited self-knowledge",
-        "url": "https://www.youtube.com/shorts/mM9TY91FECI",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "mM9TY91FECI",
-        "thumbnail": "https://i.ytimg.com/vi/mM9TY91FECI/hqdefault.jpg",
-        "published": "2026-01-08T16:07:44.000Z",
+        "title": "Claude Opus 5 vs Sonnet 5: Which Should You Use?",
+        "url": "https://www.youtube.com/shorts/9vKYKvzqQF0",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "9vKYKvzqQF0",
+        "thumbnail": "https://i.ytimg.com/vi/9vKYKvzqQF0/hqdefault.jpg",
+        "published": "2026-07-29T12:31:09.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "I Let Claude Code Run Unsupervised on a Real Repo (Here's What Happened)",
+        "url": "https://www.youtube.com/watch?v=iUDuN9dyuTY",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "iUDuN9dyuTY",
+        "thumbnail": "https://i.ytimg.com/vi/iUDuN9dyuTY/hqdefault.jpg",
+        "published": "2026-07-29T12:00:15.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Opus 5 Review: What It Actually Changed on a Real Job",
+        "url": "https://www.youtube.com/watch?v=Gr_QNYJ1mFU",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "Gr_QNYJ1mFU",
+        "thumbnail": "https://i.ytimg.com/vi/Gr_QNYJ1mFU/hqdefault.jpg",
+        "published": "2026-07-28T16:59:22.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "I Built a Claude Code Skill That Starts Any App (CONTINUED)",
+        "url": "https://www.youtube.com/watch?v=KY3DRceajYM",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "KY3DRceajYM",
+        "thumbnail": "https://i.ytimg.com/vi/KY3DRceajYM/hqdefault.jpg",
+        "published": "2026-07-28T01:57:47.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "I Built a Claude Code Skill That Starts Any App (Free)",
+        "url": "https://www.youtube.com/watch?v=g3K88xLCtfQ",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "g3K88xLCtfQ",
+        "thumbnail": "https://i.ytimg.com/vi/g3K88xLCtfQ/hqdefault.jpg",
+        "published": "2026-07-28T00:19:01.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Opus 5 Is Here… But NEW Claude Voice Is Even Bigger",
+        "url": "https://www.youtube.com/watch?v=Hv8YGUXZY1g",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "Hv8YGUXZY1g",
+        "thumbnail": "https://i.ytimg.com/vi/Hv8YGUXZY1g/hqdefault.jpg",
+        "published": "2026-07-25T20:28:01.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Opus 5 DESTROYS Fable 5",
+        "url": "https://www.youtube.com/watch?v=Vh1v2VSroes",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "Vh1v2VSroes",
+        "thumbnail": "https://i.ytimg.com/vi/Vh1v2VSroes/hqdefault.jpg",
+        "published": "2026-07-24T19:40:51.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Do not talk to Claude's new voice mode",
+        "url": "https://www.youtube.com/watch?v=ikxxjRWX0Yg",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "ikxxjRWX0Yg",
+        "thumbnail": "https://i.ytimg.com/vi/ikxxjRWX0Yg/hqdefault.jpg",
+        "published": "2026-07-23T21:13:42.000Z",
         "summary": "",
         "_kind": "news_video"
       }
@@ -574,6 +778,116 @@
         "summary": ""
       },
       {
+        "title": "I Built the Ultimate Claude Code App Builder (steal this)",
+        "url": "https://www.youtube.com/watch?v=tqi4cTZZWzQ",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "tqi4cTZZWzQ",
+        "thumbnail": "https://i.ytimg.com/vi/tqi4cTZZWzQ/hqdefault.jpg",
+        "published": "2026-08-27T13:00:36.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Vibe Coding LIVE with Claude Code!",
+        "url": "https://www.youtube.com/watch?v=dUGw-BFvMLw",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "dUGw-BFvMLw",
+        "thumbnail": "https://i.ytimg.com/vi/dUGw-BFvMLw/hqdefault.jpg",
+        "published": "2026-08-26T05:01:08.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Codex vs Claude vs Grokbot: What's The Best Super App?",
+        "url": "https://www.youtube.com/watch?v=ETa6ZYqoIXo",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "ETa6ZYqoIXo",
+        "thumbnail": "https://i.ytimg.com/vi/ETa6ZYqoIXo/hqdefault.jpg",
+        "published": "2026-08-21T20:41:12.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I Built a Claude Humanizer Skill That Actually Works",
+        "url": "https://www.youtube.com/watch?v=2Tert-KpIfY",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "2Tert-KpIfY",
+        "thumbnail": "https://i.ytimg.com/vi/2Tert-KpIfY/hqdefault.jpg",
+        "published": "2026-08-18T14:39:28.000Z",
+        "summary": ""
+      },
+      {
+        "title": "This Is Why Your AI Agents Feel Like Toys (Claude Agent SDK Fixes It)",
+        "url": "https://www.youtube.com/watch?v=epGDGyTZs5Y",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "epGDGyTZs5Y",
+        "thumbnail": "https://i.ytimg.com/vi/epGDGyTZs5Y/hqdefault.jpg",
+        "published": "2026-08-18T13:00:20.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Grok 4.6 is Actually Good… And Claude Keeps Getting Better",
+        "url": "https://www.youtube.com/watch?v=VWDnptnvFrA",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "VWDnptnvFrA",
+        "thumbnail": "https://i.ytimg.com/vi/VWDnptnvFrA/hqdefault.jpg",
+        "published": "2026-08-15T14:03:52.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I Gave Claude Full Access to My App. Here's How.",
+        "url": "https://www.youtube.com/watch?v=N2Ogvx_U8uM",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "N2Ogvx_U8uM",
+        "thumbnail": "https://i.ytimg.com/vi/N2Ogvx_U8uM/hqdefault.jpg",
+        "published": "2026-08-13T13:00:05.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Grok 4.6 is Claude Fable 5, but dirt cheap",
+        "url": "https://www.youtube.com/watch?v=3-ahsHfFjwk",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "3-ahsHfFjwk",
+        "thumbnail": "https://i.ytimg.com/vi/3-ahsHfFjwk/hqdefault.jpg",
+        "published": "2026-08-13T00:35:24.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude vs ChatGPT: Which Is Better for Agent Work?",
+        "url": "https://www.youtube.com/shorts/9W2qj_GR4s4",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "9W2qj_GR4s4",
+        "thumbnail": "https://i.ytimg.com/vi/9W2qj_GR4s4/hqdefault.jpg",
+        "published": "2026-08-12T02:41:57.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Codex Is Winning… So Why Am I Still Paying for Claude?",
+        "url": "https://www.youtube.com/watch?v=piOSL8Ms9mY",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "piOSL8Ms9mY",
+        "thumbnail": "https://i.ytimg.com/vi/piOSL8Ms9mY/hqdefault.jpg",
+        "published": "2026-08-10T20:29:40.000Z",
+        "summary": ""
+      },
+      {
         "title": "How Icelanders are thinking about AI",
         "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
         "source": "Anthropic",
@@ -585,124 +899,179 @@
         "summary": ""
       },
       {
-        "title": "The different levels of how Claude thinks",
-        "url": "https://www.youtube.com/watch?v=rKV5JcALQoQ",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "rKV5JcALQoQ",
-        "thumbnail": "https://i.ytimg.com/vi/rKV5JcALQoQ/hqdefault.jpg",
-        "published": "2026-07-06T16:59:51.000Z",
+        "title": "Best CLI for AI Agents: Claude Code vs Codex vs Gemini CLI",
+        "url": "https://www.youtube.com/shorts/VJZqO--bV-s",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "VJZqO--bV-s",
+        "thumbnail": "https://i.ytimg.com/vi/VJZqO--bV-s/hqdefault.jpg",
+        "published": "2026-08-10T14:06:23.000Z",
         "summary": ""
       },
       {
-        "title": "Introducing Claude Fable 5",
-        "url": "https://www.youtube.com/watch?v=Y9Wz2PV404E",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "Y9Wz2PV404E",
-        "thumbnail": "https://i.ytimg.com/vi/Y9Wz2PV404E/hqdefault.jpg",
-        "published": "2026-06-09T17:00:05.000Z",
+        "title": "What is Claude Code? Watch It Do a Real Job",
+        "url": "https://www.youtube.com/shorts/5NJpJAxygX8",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "5NJpJAxygX8",
+        "thumbnail": "https://i.ytimg.com/vi/5NJpJAxygX8/hqdefault.jpg",
+        "published": "2026-08-10T02:55:17.000Z",
         "summary": ""
       },
       {
-        "title": "Translating Claude’s thoughts into language",
-        "url": "https://www.youtube.com/watch?v=j2knrqAzYVY",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "j2knrqAzYVY",
-        "thumbnail": "https://i.ytimg.com/vi/j2knrqAzYVY/hqdefault.jpg",
-        "published": "2026-05-07T17:01:21.000Z",
+        "title": "CLAUDE CODE MARKETING FULL COURSE (6 HOURS)",
+        "url": "https://www.youtube.com/watch?v=yulWjh3rq28",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "yulWjh3rq28",
+        "thumbnail": "https://i.ytimg.com/vi/yulWjh3rq28/hqdefault.jpg",
+        "published": "2026-08-08T14:15:23.000Z",
         "summary": ""
       },
       {
-        "title": "An initiative to secure the world's software | Project Glasswing",
-        "url": "https://www.youtube.com/watch?v=INGOC6-LLv0",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "INGOC6-LLv0",
-        "thumbnail": "https://i.ytimg.com/vi/INGOC6-LLv0/hqdefault.jpg",
-        "published": "2026-04-07T18:03:51.000Z",
+        "title": "Claude Opus 5",
+        "url": "https://www.youtube.com/shorts/lLOSB2Px7cI",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "lLOSB2Px7cI",
+        "thumbnail": "https://i.ytimg.com/vi/lLOSB2Px7cI/hqdefault.jpg",
+        "published": "2026-08-07T18:30:34.000Z",
         "summary": ""
       },
       {
-        "title": "When AIs act emotional",
-        "url": "https://www.youtube.com/watch?v=D4XTefP3Lsc",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "D4XTefP3Lsc",
-        "thumbnail": "https://i.ytimg.com/vi/D4XTefP3Lsc/hqdefault.jpg",
-        "published": "2026-04-02T16:06:59.000Z",
+        "title": "Jack Dorsey's Buzz Puts Claude Code + Codex on One Team",
+        "url": "https://www.youtube.com/watch?v=xJEFjE88wdw",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "xJEFjE88wdw",
+        "thumbnail": "https://i.ytimg.com/vi/xJEFjE88wdw/hqdefault.jpg",
+        "published": "2026-08-06T13:00:21.000Z",
         "summary": ""
       },
       {
-        "title": "Introducing Claude Opus 4.6",
-        "url": "https://www.youtube.com/watch?v=dPn3GBI8lII",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "dPn3GBI8lII",
-        "thumbnail": "https://i.ytimg.com/vi/dPn3GBI8lII/hqdefault.jpg",
-        "published": "2026-02-05T17:45:22.000Z",
+        "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
+        "url": "https://www.youtube.com/watch?v=P1KpxzLVg7c",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "P1KpxzLVg7c",
+        "thumbnail": "https://i.ytimg.com/vi/P1KpxzLVg7c/hqdefault.jpg",
+        "published": "2026-07-29T20:54:33.000Z",
         "summary": ""
       },
       {
-        "title": "Claude on Mars",
-        "url": "https://www.youtube.com/shorts/kYJO0y8fVTA",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "kYJO0y8fVTA",
-        "thumbnail": "https://i.ytimg.com/vi/kYJO0y8fVTA/hqdefault.jpg",
-        "published": "2026-01-30T19:09:11.000Z",
+        "title": "Which Claude Model Is Best for Coding?",
+        "url": "https://www.youtube.com/shorts/JBQvtT3A10E",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "JBQvtT3A10E",
+        "thumbnail": "https://i.ytimg.com/vi/JBQvtT3A10E/hqdefault.jpg",
+        "published": "2026-07-29T18:30:20.000Z",
         "summary": ""
       },
       {
-        "title": "Your tools are now interactive in Claude",
-        "url": "https://www.youtube.com/watch?v=bluAmTHoEow",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "bluAmTHoEow",
-        "thumbnail": "https://i.ytimg.com/vi/bluAmTHoEow/hqdefault.jpg",
-        "published": "2026-01-26T19:06:25.000Z",
+        "title": "Claude Opus 5 vs Sonnet 5: Which Should You Use?",
+        "url": "https://www.youtube.com/shorts/9vKYKvzqQF0",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "9vKYKvzqQF0",
+        "thumbnail": "https://i.ytimg.com/vi/9vKYKvzqQF0/hqdefault.jpg",
+        "published": "2026-07-29T12:31:09.000Z",
         "summary": ""
       },
       {
-        "title": "AI on campus",
-        "url": "https://www.youtube.com/watch?v=N5yJJA0NCU0",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "N5yJJA0NCU0",
-        "thumbnail": "https://i.ytimg.com/vi/N5yJJA0NCU0/hqdefault.jpg",
-        "published": "2026-01-12T22:41:27.000Z",
+        "title": "I Let Claude Code Run Unsupervised on a Real Repo (Here's What Happened)",
+        "url": "https://www.youtube.com/watch?v=iUDuN9dyuTY",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "iUDuN9dyuTY",
+        "thumbnail": "https://i.ytimg.com/vi/iUDuN9dyuTY/hqdefault.jpg",
+        "published": "2026-07-29T12:00:15.000Z",
         "summary": ""
       },
       {
-        "title": "Introducing Cowork: Claude Code for the rest of your work",
-        "url": "https://www.youtube.com/watch?v=UAmKyyZ-b9E",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "UAmKyyZ-b9E",
-        "thumbnail": "https://i.ytimg.com/vi/UAmKyyZ-b9E/hqdefault.jpg",
-        "published": "2026-01-12T20:02:22.000Z",
+        "title": "Claude Opus 5 Review: What It Actually Changed on a Real Job",
+        "url": "https://www.youtube.com/watch?v=Gr_QNYJ1mFU",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "Gr_QNYJ1mFU",
+        "thumbnail": "https://i.ytimg.com/vi/Gr_QNYJ1mFU/hqdefault.jpg",
+        "published": "2026-07-28T16:59:22.000Z",
         "summary": ""
       },
       {
-        "title": "AI's limited self-knowledge",
-        "url": "https://www.youtube.com/shorts/mM9TY91FECI",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "mM9TY91FECI",
-        "thumbnail": "https://i.ytimg.com/vi/mM9TY91FECI/hqdefault.jpg",
-        "published": "2026-01-08T16:07:44.000Z",
+        "title": "I Built a Claude Code Skill That Starts Any App (CONTINUED)",
+        "url": "https://www.youtube.com/watch?v=KY3DRceajYM",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "KY3DRceajYM",
+        "thumbnail": "https://i.ytimg.com/vi/KY3DRceajYM/hqdefault.jpg",
+        "published": "2026-07-28T01:57:47.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I Built a Claude Code Skill That Starts Any App (Free)",
+        "url": "https://www.youtube.com/watch?v=g3K88xLCtfQ",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "g3K88xLCtfQ",
+        "thumbnail": "https://i.ytimg.com/vi/g3K88xLCtfQ/hqdefault.jpg",
+        "published": "2026-07-28T00:19:01.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Master Claude for Excel in 20 Minutes (Full Guide)",
+        "url": "https://www.youtube.com/watch?v=fZ1Kmuafzzk",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "fZ1Kmuafzzk",
+        "thumbnail": "https://i.ytimg.com/vi/fZ1Kmuafzzk/hqdefault.jpg",
+        "published": "2026-07-27T23:23:11.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Opus 5 Is Here… But NEW Claude Voice Is Even Bigger",
+        "url": "https://www.youtube.com/watch?v=Hv8YGUXZY1g",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "Hv8YGUXZY1g",
+        "thumbnail": "https://i.ytimg.com/vi/Hv8YGUXZY1g/hqdefault.jpg",
+        "published": "2026-07-25T20:28:01.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus 5 DESTROYS Fable 5",
+        "url": "https://www.youtube.com/watch?v=Vh1v2VSroes",
+        "source": "Alex Finn",
+        "channel": "Alex Finn",
+        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
+        "video_id": "Vh1v2VSroes",
+        "thumbnail": "https://i.ytimg.com/vi/Vh1v2VSroes/hqdefault.jpg",
+        "published": "2026-07-24T19:40:51.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Do not talk to Claude's new voice mode",
+        "url": "https://www.youtube.com/watch?v=ikxxjRWX0Yg",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "ikxxjRWX0Yg",
+        "thumbnail": "https://i.ytimg.com/vi/ikxxjRWX0Yg/hqdefault.jpg",
+        "published": "2026-07-23T21:13:42.000Z",
         "summary": ""
       }
     ],
@@ -888,14 +1257,14 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "Introducing Claude Fable 5",
-        "url": "https://www.youtube.com/watch?v=Y9Wz2PV404E",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "Y9Wz2PV404E",
-        "thumbnail": "https://i.ytimg.com/vi/Y9Wz2PV404E/hqdefault.jpg",
-        "published": "2026-06-09T17:00:05.000Z",
+        "title": "Master Claude for Excel in 20 Minutes (Full Guide)",
+        "url": "https://www.youtube.com/watch?v=fZ1Kmuafzzk",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "fZ1Kmuafzzk",
+        "thumbnail": "https://i.ytimg.com/vi/fZ1Kmuafzzk/hqdefault.jpg",
+        "published": "2026-07-27T23:23:11.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1012,18 +1381,6 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "Introducing Claude Opus 4.6",
-        "url": "https://www.youtube.com/watch?v=dPn3GBI8lII",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "dPn3GBI8lII",
-        "thumbnail": "https://i.ytimg.com/vi/dPn3GBI8lII/hqdefault.jpg",
-        "published": "2026-02-05T17:45:22.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
-      },
-      {
         "title": "Claude Code Best Practices",
         "url": "https://www.anthropic.com/engineering/claude-code-best-practices",
         "source": "Anthropic Eng",
@@ -1038,18 +1395,6 @@
         "published": "2026-01-22T01:16:20.000Z",
         "summary": "",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "Introducing Cowork: Claude Code for the rest of your work",
-        "url": "https://www.youtube.com/watch?v=UAmKyyZ-b9E",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "UAmKyyZ-b9E",
-        "thumbnail": "https://i.ytimg.com/vi/UAmKyyZ-b9E/hqdefault.jpg",
-        "published": "2026-01-12T20:02:22.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "Contextual Retrieval",
@@ -1440,6 +1785,13 @@
         "summary": ""
       },
       {
+        "title": "I Built the Ultimate Claude Code App Builder (steal this)",
+        "url": "https://www.youtube.com/watch?v=tqi4cTZZWzQ",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-08-27T13:00:36.000Z",
+        "summary": ""
+      },
+      {
         "title": "In Python SDK 1.2.0, TypeScript SDK 0.122.0, Go SDK 1.68.0, Java SDK 2.59.0, Ruby SDK 1.67.0, and C# SDK 12.44.0,…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#august-27-2026",
         "source": "Claude API Release Notes",
@@ -1473,6 +1825,13 @@
         "source": "MCP Python SDK",
         "published": "2026-08-26T10:42:44.000Z",
         "summary": "One off backport of the FastMCP import warning for 2.0.x , this is due to a lot of people running into this error and making issues on other repos about it. Ideally either pin mcp or upgrade to 2. What's Changed…"
+      },
+      {
+        "title": "Vibe Coding LIVE with Claude Code!",
+        "url": "https://www.youtube.com/watch?v=dUGw-BFvMLw",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-08-26T05:01:08.000Z",
+        "summary": ""
       },
       {
         "title": "The Compliance API session endpoints are out of beta for Cowork and Claude Code sessions. See Retrieve session…",
@@ -1538,6 +1897,13 @@
         "summary": "What's changed Bug fixes and reliability improvements"
       },
       {
+        "title": "Codex vs Claude vs Grokbot: What's The Best Super App?",
+        "url": "https://www.youtube.com/watch?v=ETa6ZYqoIXo",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-08-21T20:41:12.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.239",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.239",
         "source": "Claude Code",
@@ -1573,10 +1939,45 @@
         "summary": "Release : v2026.8.18 Updated packages @modelcontextprotocol/server-everything@2026.8.18 mcp-server-time@2026.8.18 mcp-server-fetch@2026.8.18 mcp-server-git@2026.8.18"
       },
       {
+        "title": "I Built a Claude Humanizer Skill That Actually Works",
+        "url": "https://www.youtube.com/watch?v=2Tert-KpIfY",
+        "source": "YouTube · Ryan & Matt Data Science",
+        "published": "2026-08-18T14:39:28.000Z",
+        "summary": ""
+      },
+      {
+        "title": "This Is Why Your AI Agents Feel Like Toys (Claude Agent SDK Fixes It)",
+        "url": "https://www.youtube.com/watch?v=epGDGyTZs5Y",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-08-18T13:00:20.000Z",
+        "summary": ""
+      },
+      {
         "title": "Workbench is now playground in the Claude Console. Playground supports every Messages API parameter and includes…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#august-18-2026",
         "source": "Claude API Release Notes",
         "published": "2026-08-18T00:00:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Grok 4.6 is Actually Good… And Claude Keeps Getting Better",
+        "url": "https://www.youtube.com/watch?v=VWDnptnvFrA",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-08-15T14:03:52.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I Gave Claude Full Access to My App. Here's How.",
+        "url": "https://www.youtube.com/watch?v=N2Ogvx_U8uM",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-08-13T13:00:05.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Grok 4.6 is Claude Fable 5, but dirt cheap",
+        "url": "https://www.youtube.com/watch?v=3-ahsHfFjwk",
+        "source": "YouTube · Alex Finn",
+        "published": "2026-08-13T00:35:24.000Z",
         "summary": ""
       },
       {
@@ -1587,6 +1988,13 @@
         "summary": "What's Changed ci: sync the release workflow on v2/main with main's verbatim by @cliffhall in #1904 fix: ship clients/web/static so the MCP Apps sandbox proxy loads by @cliffhall in #1934 fix: surface list-fetch…"
       },
       {
+        "title": "Claude vs ChatGPT: Which Is Better for Agent Work?",
+        "url": "https://www.youtube.com/shorts/9W2qj_GR4s4",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-08-12T02:41:57.000Z",
+        "summary": ""
+      },
+      {
         "title": "The Compliance API now returns transcripts of Cowork and Claude Code sessions that run on your users' machines, in…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#august-11-2026",
         "source": "Claude API Release Notes",
@@ -1594,10 +2002,31 @@
         "summary": "We've added the anthropic-workspace-id response header to the Claude API. It carries the wrkspc_ -prefixed ID of the workspace that the request's API key or access token resolved to, including your organization's Default Workspace. See…"
       },
       {
+        "title": "Codex Is Winning… So Why Am I Still Paying for Claude?",
+        "url": "https://www.youtube.com/watch?v=piOSL8Ms9mY",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-08-10T20:29:40.000Z",
+        "summary": ""
+      },
+      {
         "title": "How Icelanders are thinking about AI",
         "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
         "source": "YouTube · Anthropic",
         "published": "2026-08-10T14:30:52.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Best CLI for AI Agents: Claude Code vs Codex vs Gemini CLI",
+        "url": "https://www.youtube.com/shorts/VJZqO--bV-s",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-08-10T14:06:23.000Z",
+        "summary": ""
+      },
+      {
+        "title": "What is Claude Code? Watch It Do a Real Job",
+        "url": "https://www.youtube.com/shorts/5NJpJAxygX8",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-08-10T02:55:17.000Z",
         "summary": ""
       },
       {
@@ -1608,11 +2037,32 @@
         "summary": ""
       },
       {
+        "title": "CLAUDE CODE MARKETING FULL COURSE (6 HOURS)",
+        "url": "https://www.youtube.com/watch?v=yulWjh3rq28",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-08-08T14:15:23.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus 5",
+        "url": "https://www.youtube.com/shorts/lLOSB2Px7cI",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-08-07T18:30:34.000Z",
+        "summary": ""
+      },
+      {
         "title": "You can now set a budget on a Claude Managed Agents session: a hard cap on the session's spend, priced at public list…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#august-7-2026",
         "source": "Claude API Release Notes",
         "published": "2026-08-07T00:00:00.000Z",
         "summary": "You can now give a Claude Managed Agents session an advisor: a model at least as capable as the agent's own that the session's primary thread can consult mid-turn for strategic guidance. Configure it as a {\"type\": \"advisor\"} entry in the…"
+      },
+      {
+        "title": "Jack Dorsey's Buzz Puts Claude Code + Codex on One Team",
+        "url": "https://www.youtube.com/watch?v=xJEFjE88wdw",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-08-06T13:00:21.000Z",
+        "summary": ""
       },
       {
         "title": "2.1.0",
@@ -1640,6 +2090,41 @@
         "url": "https://platform.claude.com/docs/en/release-notes/overview#august-1-2026",
         "source": "Claude API Release Notes",
         "published": "2026-08-01T00:00:00.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
+        "url": "https://www.youtube.com/watch?v=P1KpxzLVg7c",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-07-29T20:54:33.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Which Claude Model Is Best for Coding?",
+        "url": "https://www.youtube.com/shorts/JBQvtT3A10E",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-07-29T18:30:20.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus 5 vs Sonnet 5: Which Should You Use?",
+        "url": "https://www.youtube.com/shorts/9vKYKvzqQF0",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-07-29T12:31:09.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I Let Claude Code Run Unsupervised on a Real Repo (Here's What Happened)",
+        "url": "https://www.youtube.com/watch?v=iUDuN9dyuTY",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-07-29T12:00:15.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus 5 Review: What It Actually Changed on a Real Job",
+        "url": "https://www.youtube.com/watch?v=Gr_QNYJ1mFU",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-07-28T16:59:22.000Z",
         "summary": ""
       },
       {
@@ -1699,6 +2184,13 @@
         "summary": "Release candidate for 2.0.0. Published under the next dist-tag — latest remains on 1.0.1. Install: npx @modelcontextprotocol/inspector@next Prerelease for validating the publish pipeline ( #1818 ). Not for general use."
       },
       {
+        "title": "I Built a Claude Code Skill That Starts Any App (CONTINUED)",
+        "url": "https://www.youtube.com/watch?v=KY3DRceajYM",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-07-28T01:57:47.000Z",
+        "summary": ""
+      },
+      {
         "title": "1.0.1 — v1 deprecated",
         "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/1.0.1",
         "source": "MCP Inspector",
@@ -1706,80 +2198,38 @@
         "summary": "v1 is deprecated. Use @modelcontextprotocol/inspector@latest (v2). v1 receives security fixes only."
       },
       {
-        "title": "The different levels of how Claude thinks",
-        "url": "https://www.youtube.com/watch?v=rKV5JcALQoQ",
-        "source": "YouTube · Anthropic",
-        "published": "2026-07-06T16:59:51.000Z",
+        "title": "I Built a Claude Code Skill That Starts Any App (Free)",
+        "url": "https://www.youtube.com/watch?v=g3K88xLCtfQ",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-07-28T00:19:01.000Z",
         "summary": ""
       },
       {
-        "title": "Introducing Claude Fable 5",
-        "url": "https://www.youtube.com/watch?v=Y9Wz2PV404E",
-        "source": "YouTube · Anthropic",
-        "published": "2026-06-09T17:00:05.000Z",
+        "title": "Master Claude for Excel in 20 Minutes (Full Guide)",
+        "url": "https://www.youtube.com/watch?v=fZ1Kmuafzzk",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-07-27T23:23:11.000Z",
         "summary": ""
       },
       {
-        "title": "Translating Claude’s thoughts into language",
-        "url": "https://www.youtube.com/watch?v=j2knrqAzYVY",
-        "source": "YouTube · Anthropic",
-        "published": "2026-05-07T17:01:21.000Z",
+        "title": "Opus 5 Is Here… But NEW Claude Voice Is Even Bigger",
+        "url": "https://www.youtube.com/watch?v=Hv8YGUXZY1g",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-07-25T20:28:01.000Z",
         "summary": ""
       },
       {
-        "title": "An initiative to secure the world's software | Project Glasswing",
-        "url": "https://www.youtube.com/watch?v=INGOC6-LLv0",
-        "source": "YouTube · Anthropic",
-        "published": "2026-04-07T18:03:51.000Z",
+        "title": "Claude Opus 5 DESTROYS Fable 5",
+        "url": "https://www.youtube.com/watch?v=Vh1v2VSroes",
+        "source": "YouTube · Alex Finn",
+        "published": "2026-07-24T19:40:51.000Z",
         "summary": ""
       },
       {
-        "title": "When AIs act emotional",
-        "url": "https://www.youtube.com/watch?v=D4XTefP3Lsc",
-        "source": "YouTube · Anthropic",
-        "published": "2026-04-02T16:06:59.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Introducing Claude Opus 4.6",
-        "url": "https://www.youtube.com/watch?v=dPn3GBI8lII",
-        "source": "YouTube · Anthropic",
-        "published": "2026-02-05T17:45:22.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude on Mars",
-        "url": "https://www.youtube.com/shorts/kYJO0y8fVTA",
-        "source": "YouTube · Anthropic",
-        "published": "2026-01-30T19:09:11.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Your tools are now interactive in Claude",
-        "url": "https://www.youtube.com/watch?v=bluAmTHoEow",
-        "source": "YouTube · Anthropic",
-        "published": "2026-01-26T19:06:25.000Z",
-        "summary": ""
-      },
-      {
-        "title": "AI on campus",
-        "url": "https://www.youtube.com/watch?v=N5yJJA0NCU0",
-        "source": "YouTube · Anthropic",
-        "published": "2026-01-12T22:41:27.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Introducing Cowork: Claude Code for the rest of your work",
-        "url": "https://www.youtube.com/watch?v=UAmKyyZ-b9E",
-        "source": "YouTube · Anthropic",
-        "published": "2026-01-12T20:02:22.000Z",
-        "summary": ""
-      },
-      {
-        "title": "AI's limited self-knowledge",
-        "url": "https://www.youtube.com/shorts/mM9TY91FECI",
-        "source": "YouTube · Anthropic",
-        "published": "2026-01-08T16:07:44.000Z",
+        "title": "Do not talk to Claude's new voice mode",
+        "url": "https://www.youtube.com/watch?v=ikxxjRWX0Yg",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-07-23T21:13:42.000Z",
         "summary": ""
       }
     ]
