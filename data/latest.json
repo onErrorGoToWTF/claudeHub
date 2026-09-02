@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-09-02T17:27:53.944Z",
+  "generated_at": "2026-09-02T20:11:37.124Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Enterprise Frontier Safeguards",
+        "url": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
+        "source": "Anthropic",
+        "published": "2026-09-02T19:11:21.000Z",
+        "summary": ""
+      },
       {
         "title": "Reviewing the Evidence on Worker Retraining Programs",
         "url": "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs",
         "source": "Anthropic Research",
         "published": "2026-09-02T15:29:47.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Enterprise Frontier Safeguards",
-        "url": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
-        "source": "Anthropic",
-        "published": "2026-09-01T19:11:41.000Z",
         "summary": ""
       },
       {
@@ -146,11 +146,46 @@
     ],
     "news": [
       {
+        "title": "Anthropic upgrades Claude’s computer use to run in the background on Mac - 9to5Mac",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPYzk4S0dwcE1fakhpUU94TFRwVzBfdHBWRlF2VW1yX1A5WXNmWE5sWWlmYjR4WHBkNFNXYTFEa2Vmb2NQT2N1cTR0SWlnc1R0LW9udEE0bnpibURDd2xoMER2bUFiTlkyOEdCcHJuUEZ3QUhuaUxDZkEyMG1kOFRaSUVHVHgwSU9YZ0xDamd5QzVWOXlSZW85YUEtOWdxRHB2TlNyMTNnQjJvdHJU?oc=5",
+        "source": "Google News",
+        "published": "2026-09-02T19:14:00.000Z",
+        "summary": "Anthropic upgrades Claude’s computer use to run in the background on Mac 9to5Mac"
+      },
+      {
+        "title": "Google, Anthropic, and OpenAI Unveil Cyber AI Models, Safeguards, and Access Programs - The Hacker News",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE42YzZVZWJvNVN5MnFiNl9zVXVadzBVTi1xaHVId0Q5SnJfck5NVG9RS3RsWmJvaWlheWdmUV9QeFRqV0lWTnFTYTVhM3U2NU0xV1AtZ2R3NWRkVVlQOW9vZ3R4anpONVNhUnQ5ZFM0LXpqNEJEQXFsdjNWWEU2Zw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-02T18:27:00.000Z",
+        "summary": "Google, Anthropic, and OpenAI Unveil Cyber AI Models, Safeguards, and Access Programs The Hacker News"
+      },
+      {
+        "title": "Anthropic's Claude Models Breached Three Real Organizations – Admits AI Isn't 'Perfectly Aligned' - Gadget Review",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOaXZ2SW56SGZEakJSTUF1cXVNNjRFdWFlWVhxamI2WXpHNGRVNXBsYmRfcmxmQ0c1SWVpbnlxZnp2ejIxUTVfMjFIOWhUOVA4TmpMT2pWUjlJTDktMmRrUWFQdzRidVNtUnVQSUo5MHRpS3pBQUU4TTNMWEh4blJNNnROUUpTeTV1TVlmMkZCRElITC1ESVRja185a2lkcHJmU1RQRnN1UXpiSlFkTDV5U0xISzMxUDFHWnBsUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-02T18:04:00.000Z",
+        "summary": "Anthropic's Claude Models Breached Three Real Organizations – Admits AI Isn't 'Perfectly Aligned' Gadget Review"
+      },
+      {
+        "title": "Trump may be forced to reveal secret rules feds use for AI safety testing",
+        "url": "https://arstechnica.com/tech-policy/2026/09/trump-may-be-forced-to-reveal-secret-rules-feds-use-for-ai-safety-testing/",
+        "source": "Ars Technica",
+        "published": "2026-09-02T17:58:33.000Z",
+        "summary": "Four federal agencies have been sued amid calls to release information about the secret framework that the Trump administration uses to conduct safety reviews of frontier AI models prior to release.…"
+      },
+      {
         "title": "OpenAI, Anthropic, Google Launch Advanced AI; Astra Sparks Monitoring Concerns - Rediff",
         "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOdU5tMVNfeFBycVJrVV9KX0RGMkNnZVVTUTZidGxUTF80dDloRS1vTV9lSTlXTHE1UGljZFRIT0MxeEpwMXpOa09HNmIwS0ZUMGlLdkZyQmZLZkVBT1R4QTFzM28ySGoyNG15U19HTTBndG4yLV93eHYweGEwT2lPU0RsRm9yYmdDRUlmQm5heHplZG5PRmNyRVNtRTBuaTQ?oc=5",
         "source": "Google News",
         "published": "2026-09-02T16:55:50.000Z",
         "summary": "OpenAI, Anthropic, Google Launch Advanced AI; Astra Sparks Monitoring Concerns Rediff"
+      },
+      {
+        "title": "Anthropic Rolls Out AI Shopping Agents for Retailers Ahead of Holiday Rush - finance.biggo.com",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE96M1NwTTdHTk5JWVF5YnN5NF9VeVBudUxoTTZZYm9QOE16QTRHZlBqQTQ0dDVKNy01d012WDNNQW8teHhkRHBHWEVRMVNLWUxkWXQzck5yQWtYWG1lWUZIVFR3d1BQOFlVbmh0S0ZHNUttSlVTeGc?oc=5",
+        "source": "Google News",
+        "published": "2026-09-02T16:35:00.000Z",
+        "summary": "Anthropic Rolls Out AI Shopping Agents for Retailers Ahead of Holiday Rush finance.biggo.com"
       },
       {
         "title": "NYSE Used Anthropic’s Project Glasswing to Find Cyber Flaws",
@@ -167,11 +202,11 @@
         "summary": "Anthropic Hands Retailers Claude Blueprints For Shopping Agents Finimize"
       },
       {
-        "title": "Anthropic Unveils Enhanced AI Model 'Claude Fable 5.1' with Key Improvements - 조선일보",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMWl4S2FTOUw0NnlaRzJKcUpwcWtfWUx4MGVQckhJYkdaWlV6T3Z6TkdtMXJSOGY4YVRaZktjcWYxbHNCRVU4dG9KdTZHT0FLbUQ2emZ0WXhNYzJaNUZLZkU4d2s0M1ctWUpoU2NKb3hmWUNiWklMeHJZZ28ySmtwMFNoeUpicnNf?oc=5",
+        "title": "OpenAI and Anthropic are launching new, more powerful updates amid panic over ‘rogue’ AI systems - independent.co.uk",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNTnJSODlzd2hsa3VudHVuNF9IYnQ3Qjc3U2U3NmFMRTliaXF1UlRHVVp1X1ZjbGQ4d2xaWFkyRVBwM0NUMmZxMHdwTVRKd1pna0xqMWMyMHhTaXJqODZXZjRab3FtaXZ3ZXZ6dEYzQmtnWHVud243bHJQbC1jRnNvNXhBbW91d0RETm5tQTVoLXN4WnpQ?oc=5",
         "source": "Google News",
-        "published": "2026-09-02T15:37:00.000Z",
-        "summary": "Anthropic Unveils Enhanced AI Model 'Claude Fable 5.1' with Key Improvements 조선일보"
+        "published": "2026-09-02T15:40:00.000Z",
+        "summary": "OpenAI and Anthropic are launching new, more powerful updates amid panic over ‘rogue’ AI systems independent.co.uk"
       },
       {
         "title": "Anthropic releases Claude Fable 5.1 and Mythos 5.1 - SD Times",
@@ -221,22 +256,29 @@
       {
         "title": "Six curl CVEs after OpenAI and Anthropic came back with zero",
         "url": "https://aisle.com/blog/aisle-discovered-six-curl-cves-after-openai-and-anthropic-found-zero",
-        "source": "HN · 114↑",
+        "source": "HN · 142↑",
         "hn_id": "49536114",
         "published": "2026-09-02T13:43:14.000Z",
         "summary": ""
       },
       {
-        "title": "Anthropic replaces data retention policy with Enterprise Frontier Safeguards - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNHBuR0RjdnlEU2h3aHhneGFBMGJ0MUU2S0RsRHluUkVxYko2anNlTlZGZjRBcm0zY1VuZlNPOE41YXJWNVF6a2NjV1RJTjdDdXpCcUtxN3F4ZUNSMDl2Vkl1UTA0VUJEeFpMRU83bGxlc2o1VDNjZGdDMVBsdndfNDRwTm04MS16WGxBZ2MteE5wVXdYNnRGZ2pVdVBTQQ?oc=5",
+        "title": "Anthropic replaces data retention policy with Enterprise Frontier Safeguards - qz.com",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNUlhLY1IzSzNTcWhMR2N1ajJrLXdTSm9UWmszX2FiU1pnQ1RQVGx6SU9PZ2p0VWtxSzRDTEVqT1dPYk16cVNSb1hnMXFWZEo2N3RjZFdydWZZZjVLaWxoTU5wTnZiRlJLTEdqZTFUb3lVMzhGdUdmUElVZnJiMTY4RzNJbw?oc=5",
         "source": "Google News",
-        "published": "2026-09-02T13:07:19.000Z",
-        "summary": "Anthropic replaces data retention policy with Enterprise Frontier Safeguards Yahoo Tech"
+        "published": "2026-09-02T13:07:36.000Z",
+        "summary": "Anthropic replaces data retention policy with Enterprise Frontier Safeguards qz.com"
+      },
+      {
+        "title": "Anthropic to roll out Claude Fable 5.1, Mythos 5.1 with lower costs (ANTHRO:Private) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUmZnd2VkUlUzeDNtX2xxZkpSSjZqOXZvQTJmYVFHVkN3M185SF82STVNOGFaTDk3ejkxcjdvNmc3NHhBR3dhR3FRTDdadTR0RFRKQm5iTFR6eHgwZjVXTnZLZ3F3cUVhSXFGTG83UXBsWmpZR2wtQUZ6azdGNGxEQURFclpsRk1YbjRiTE9wUXVUSHZ0MUtrVVVXTG1aM1VTWTBZMg?oc=5",
+        "source": "Google News",
+        "published": "2026-09-02T12:45:46.000Z",
+        "summary": "Anthropic to roll out Claude Fable 5.1, Mythos 5.1 with lower costs (ANTHRO:Private) Seeking Alpha"
       },
       {
         "title": "Check if a file was made with Claude",
         "url": "https://claude.com/check-content",
-        "source": "HN · 94↑",
+        "source": "HN · 134↑",
         "hn_id": "49535201",
         "published": "2026-09-02T12:23:20.000Z",
         "summary": ""
@@ -247,6 +289,13 @@
         "source": "Google News",
         "published": "2026-09-02T11:48:31.000Z",
         "summary": "Anthropic Details Response to Security Incidents, Unveils Enterprise Safeguards SecurityWeek"
+      },
+      {
+        "title": "Anthropic Fable 5.1 AI model is cheaper and better at coding - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQYjVfWnBFWkltZHl1UU5TTGhRVVkyLU1SeXZObXlXM0NOTXNJS1VxNUh2Qi1jei1SSHZJWHhYdnBQUkxFWmhJNkpsN1RCUHlfVUdDSTd0WklEcWc5Sy1PWHFCMG5oZ05fUzdzLWt1aFJhYm5sYU5uR01hcEFyeUZXM3FlckRhUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-02T11:21:11.000Z",
+        "summary": "Anthropic Fable 5.1 AI model is cheaper and better at coding Yahoo Tech"
       },
       {
         "title": "Fable 5.1 Just Built a Better Claude Code for Local Models",
@@ -266,6 +315,13 @@
         "source": "Google News",
         "published": "2026-09-02T11:13:11.000Z",
         "summary": "Claude Fable 5.1 Cracked In 44 Minutes A Cipher That Beat Scholars For Centuries Yellow.com"
+      },
+      {
+        "title": "Anthropic launches Claude Fable 5.1 and Mythos 5.1 - Silicon Republic",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOeDJUUDllaFJpYjVRcUdITjRINkZVTnJDQk5WWG42N1R3YWtvOXFPRjNDdnFWNW1JcTUzMkt0TTE1RndsWWEta3FyWk9DX2N3RHlGb3N6QURkZ2hNUEREOFl1Q3VsOW94a0o5bXlwUThPVHgxNk1YU2x1VFcwVHdqMzUxR2RURm56T3prZDhkZ0hjZDNHclE?oc=5",
+        "source": "Google News",
+        "published": "2026-09-02T09:44:46.000Z",
+        "summary": "Anthropic launches Claude Fable 5.1 and Mythos 5.1 Silicon Republic"
       },
       {
         "title": "😺Anthropic launched Fable 5.1: and now, the agents cost less - The Neuron",
@@ -289,13 +345,6 @@
         "summary": "Anthropic launches Claude Fable 5.1 and Mythos 5.1, claims major leap in coding and AI research WION"
       },
       {
-        "title": "Anthropic heats up low-cost AI war with Claude Fable 5.1 and Mythos 5.1 launch - India Today",
-        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQQUpFVFBTb0VsNjhLSzZRTWJHR1dyVnhlY2ctWnI2OWhGU0xHNFREcl8zLW5teDJnZ3R0M1NHU0xEa1MyT1pBX1M1S2kzRkxGNDV5cjJaRml4cF9KVXpudkhDejdsVmJvTzBvNFlVaFg4WFowczFmS25DSHhBa2FZV1BRaEhWZW1PRjhaVkY2Mk52bVhVNl9tR0ZoelRORkpmSXEtUndkb0tFdnVmN2RKbUJUYjFtQXpHVUhObnAtWnVzanpmd2c2cUROeGdLZjdNeVNYS2ZnZFgzLU3SAeABQVVfeXFMTWp0MHppME5HSXA5d1hsNW5RcFFKUHIzSUNEZFFtU3gtOGZBX0ZfamRCZ0dHbUtHNDFFRk9LRzJxVDl1OU1HYnR3OVpqQ2VjTFJFTzFJMzdrZzdrMjBCX0xXV2w3RGtKVVBUbTFYazVYMV9JWU1JVjJRRXNKTVpzclU0NHFHRFFQa3BvT2NHbFV0eHZTRnRGVnlfczI5S2dQSzFUNFVMTm1DVWhtMXp1YW5acVJHaUJzRlREWFhYYTBjTFhaOGNEX1g2ZFpHYW9XUE5OR290RENPR01VZXVldUE?oc=5",
-        "source": "Google News",
-        "published": "2026-09-02T07:42:53.000Z",
-        "summary": "Anthropic heats up low-cost AI war with Claude Fable 5.1 and Mythos 5.1 launch India Today"
-      },
-      {
         "title": "Anthropic Introduces Enterprise Frontier Safeguards (EFS): Zero-Data-Retention Privacy Plus Cross-Session Misuse Detection - MarkTechPost",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZ3FqZnczc19ZZXhjaHBjSVFvd1FLWG5aRXBqaF9LTG1GX1lWMDB2VFc3V0JfVVpESGpoOG5wQk9JdWdLNnZyYWFKTVJ3LTdQZkhQR21iQXBrN1hucDNRVmNUd2IyX2R3a2R4U3QwbW9aTlY1TUZ5VWdzSEtGUDBSRktjbEdHQ0NmYkFxVkNn0gGTAUFVX3lxTE1Tb2lKUXZENmszeU9HdUxnZkFwNGlGSG92UzdwRFRQZUpuSFhzX1lHSTByTnFuYUIyUWJ1OEdXYV9YUF9NVG5SVUFrZklnTFd1Q3RRNVVweENnX0REdmtzNEhTTW9GVmFIemFZZWJsTDVEYXBRNFR0aUJ0RzVDSjVuS1YyOEVBRlB4cUlLdHFPMi1uNA?oc=5",
         "source": "Google News",
@@ -303,60 +352,11 @@
         "summary": "Anthropic Introduces Enterprise Frontier Safeguards (EFS): Zero-Data-Retention Privacy Plus Cross-Session Misuse Detection MarkTechPost"
       },
       {
-        "title": "Claude Fable 5.1: The dawn of a new AI reality - Techzine Global",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNb1JldHRtQ1haWkRMNm9UNG5VNTZrbzdNTUdzXzZDbjI5dlVqNW13Y01VSTZOTl81TnlaSVF6ekttZEZCemozR1hiTXFPb2hpVUlxam1uOVk1MnJSS0lCUWl4d05mdW5FWFZKUmlBRWhKZm40b1V5VnZXUDBWbWxuY0szY0UxYmdNczBkTHhxZnpHNHpxeXRvZFREZ2k?oc=5",
-        "source": "Google News",
-        "published": "2026-09-02T07:06:05.000Z",
-        "summary": "Claude Fable 5.1: The dawn of a new AI reality Techzine Global"
-      },
-      {
-        "title": "Anthropic Releases Claude Fable 5.1 and Mythos 5.1, Outperforming Predecessors on Multiple Metrics and Cutting Cache Read Fees by 75% - TradingKey",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxORXkwZGNtcmwxU19Sd3pnRXRmWTE1XzlUbmNVWlV6T0xwdlBlenh1Y19naTcwRnNmRnVjM2pHTG9BOGZ0Mi0yLXFTU1MwRy1KV3U2Q2pzcUVCRnBmdFJNRm5hRURYNVNLTDBvZEZxYl8yaTBXcnAxcHN3a3Bnblh0dUk0dUxLNm5oUDNyNjEyU3h3X1RDOTBIT0d1NGN5ODVVU2U3dDFHUnRRMTVfMWFtYkhUeWNCck1DNlJST3ptSWV6NE1xMTBoNmpXUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-02T06:54:31.000Z",
-        "summary": "Anthropic Releases Claude Fable 5.1 and Mythos 5.1, Outperforming Predecessors on Multiple Metrics and Cutting Cache Read Fees by 75% TradingKey"
-      },
-      {
-        "title": "Claude Fable 5.1 Arrives With $0.25 Cache Reads And Anti-Copy Controls - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5jbWRNYTR5SG5PTGVxUXcwOXg0and5QXAwLUhpVDJzeF92TWt4Ty1JUDJNX01Yc2pvZ0w1TlZFM1NXb1FSNGdyNi02TUs5ZGdlMDlxc3Zia1V5Ykh5NEZnT2hFV09Bdw?oc=5",
-        "source": "Google News",
-        "published": "2026-09-02T06:31:15.000Z",
-        "summary": "Claude Fable 5.1 Arrives With $0.25 Cache Reads And Anti-Copy Controls Yellow.com"
-      },
-      {
-        "title": "Anthropic Launches Claude Fable and Mythos 5.1 for Advanced Coding and Research - CyberSecurityNews",
+        "title": "Anthropic Launches Claude Fable and Mythos 5.1 for Advanced Coding and Research - cybersecuritynews.com",
         "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1xUzA4eWNTcnVDVTNzWWE3RGdsYkMxMVVaME93YVJ6UWwxd2pEanozcHV5Y25WUjk4cDcxWFdRUjBzemx0dHVBQm03OXNDWnZWZlNLRWN2V1QxN2gweUVKZFI0dXhXeW1KNF9PR3lfcVZtMC1vX0lUZXNR0gF_QVVfeXFMUHUxek1BQjFoOFU5c3F2R3F1RkNndVdJbWRtWUJSb0N1Y3dFX25MZ1ZmLTNDdHhBNXFOUGdsb3RwcjFER2hRcjhBNFc0cERMRjZYNGNZdjdqY0p2V0gyQlh4WTh4MnU0M1QySERXNHpjY3RMWXl2QUdELTZ1SkV1OA?oc=5",
         "source": "Google News",
         "published": "2026-09-02T05:47:33.000Z",
-        "summary": "Anthropic Launches Claude Fable and Mythos 5.1 for Advanced Coding and Research CyberSecurityNews"
-      },
-      {
-        "title": "Anthropic Launches Claude Fable 5.1 and Mythos 5.1 With Advanced Coding and Cybersecurity - cyberpress.org",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1ZdFRINmpiOG0takl2ZUJSaTNBZWE2XzdCZ2Z2TXNnd0pudkFiby1fTm9tTE92eHNpcFZCS0doLTZCWlRMdTZ5R1VEYXQ0SGhMMl9OZzVHMWhsRjc0VFVzajZfYWNXbXFjVkVwZXktWWZBNTFRTlVqLUZ1dUFIdnfSAX9BVV95cUxNWXRUSDZqYjhtLWpJdmVCUmkzQWVhNl83Qmdmdk1zZ3dKbnZBYm8tX05vbUxPdnhzaXBWQktHaC02QlpUTHU2eUdVRGF0NEhoTDJfTmc1RzFobEY3NFRVc2o2X2FjV21xY1ZFcGV5LVlmQTUxUU5Vai1GdXVBSHZ3?oc=5",
-        "source": "Google News",
-        "published": "2026-09-02T05:12:02.000Z",
-        "summary": "Anthropic Launches Claude Fable 5.1 and Mythos 5.1 With Advanced Coding and Cybersecurity cyberpress.org"
-      },
-      {
-        "title": "Anthropic launches Claude Fable 5.1 and Mythos 5.1 models claimed to be ‘world’s most advanced models for - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMitwJBVV95cUxNOHNTa1l4TE52Q1R4dXlyd2FsUnEwOExYTTZDYl9oU2lra1FSS09ZZkxzcVJIVmJqb1hEZmx6Uk0xSWtVYk5lay1aak1jbFVWMW1NR2VhZUU0bnROM2QtanVXeURWNEQzTzBHMXR1R2tpZFl2MVJGMUZiTjdBSGZTTzVqX0Z4ODNqSkQ4Z3g2Mm8zd0YwU3U2MDVXeUtOMUZPbWhHeXo0MXNSNXU4eGZVYWJjNzVRZVN1dWotNjgtSkhRemxlNWp2U3BSXzFhS1NfUWpDQUF3aG55RXpnNGs4WmUtU0ZUaDdiRmZqbUdNb3U0SzdnTHI0anBWdThMdXMtc3N0cERXMm9LVUgtX2ZBeFEyU3FBV3E5d090amEwcTdUSEhsdWlnckRlWWNTRkhZZWlaYTlBSdIBvAJBVV95cUxObmZid3Z5UURkVzRGMWdqOUpMcUJFQTQwSGZWcVlQZ1J2cllQRUJJYnkzTFdnejI2ZWt1U3Y5ZWlwaDlZREFFaEhMTk1RbTBaeUozcW1yeFp1ZlBBdVRNekJkYWkzZHdwZDk4WlV4aHJ6cFFPTDVCQXpkekdiMC1fdmZOemU2TFR4MWNXRGo5ekl3TEVXY1VDTjZ2dS1BMng5MG01OExWckhMblBOeFRGOTZaeWtqbTlTbnlVYmRHdEprSXpyUkJJcEpfUEdGN3k0ZlNpcGpLdDItZlctaVNhZVJzTXJMZzJzYklnSHd6Sy1qV3ZoNFVqQzhheG1abGtUdU5YOGNKTVptSVRhOXdGMjdBT0p0SkZPR3BzREltMlNEdVU0OE1ORnZsSTVraVY1YjJMT2JmekVVel9V?oc=5",
-        "source": "Google News",
-        "published": "2026-09-02T04:57:00.000Z",
-        "summary": "Anthropic launches Claude Fable 5.1 and Mythos 5.1 models claimed to be ‘world’s most advanced models for The Times of India"
-      },
-      {
-        "title": "Claude Desktop \"Secret Swap\": Kimi K3 Running on Opus 5 Slot – Does Local Ollama Proxy Bypass Anthropic's Walled Garden? - 36 Kr",
-        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1uV0t3NU1uZEpxS0JUTVBiQk5hdGtndTZtM3VvOUozaktqQVlhRmdWSDl1MEhXbWRwejNLQTRBVGZyWHlDNGpOU21sT1E2VGIwVjhn?oc=5",
-        "source": "Google News",
-        "published": "2026-09-02T04:22:13.000Z",
-        "summary": "Claude Desktop \"Secret Swap\": Kimi K3 Running on Opus 5 Slot – Does Local Ollama Proxy Bypass Anthropic's Walled Garden? 36 Kr"
-      },
-      {
-        "title": "Anthropic Slashes Cache Pricing 75% to Make Claude Fable 5.1 Viable for Long-Running Agents - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBpZUdzOE9uNXZyenRtbWw0Ti1tM2czcEZlVDZubXRSUjVIb2ZDNkNyLWFUd3ZWWkotVVNhN0JrMXhkUWl3eVlmY0FZU3FLWUFWbFVhdjZBQ2c5bG1oMUcyMjJ4eXNXeXdPUFM4MF9ZbmVfUVkxVkE?oc=5",
-        "source": "Google News",
-        "published": "2026-09-02T03:08:15.000Z",
-        "summary": "Anthropic Slashes Cache Pricing 75% to Make Claude Fable 5.1 Viable for Long-Running Agents finance.biggo.com"
+        "summary": "Anthropic Launches Claude Fable and Mythos 5.1 for Advanced Coding and Research cybersecuritynews.com"
       },
       {
         "title": "Claude Fable 5.1 is HERE! (Vibe Coding Live)",
