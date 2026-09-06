@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T23:25:09.030Z",
+  "generated_at": "2026-09-06T01:32:27.912Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,13 +146,6 @@
     ],
     "news": [
       {
-        "title": "ChatGPT, Claude and Grok’s Overlapping Outages - quasa.io",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPUVFoMHlPd1pnaGlPalNjcmFnRHRZeGZqWnNpNzR4b3h2djhDLVBSa21uQkxKTWJ5bmtmZ2xObWwtTVAzdkRXMnppczZPNjc0MFNXUldQc1VrSWZsejhxRmw2c2ZYNEVRay1vWU9PY1NnRjh0Vy1iZVRxWTVHY1VicDFPdXFpN3FTRlFvVWotdEhYUU96RHBuN1JfOA?oc=5",
-        "source": "Google News",
-        "published": "2026-09-05T20:12:00.000Z",
-        "summary": "ChatGPT, Claude and Grok’s Overlapping Outages quasa.io"
-      },
-      {
         "title": "GPT-6 Astra Launches at $10/$50 as 4 AI Labs Ship [2026] - tech-insider.org",
         "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBqcEM1dDJsTzVnc2p5SUVjdFZ5RWxQQmpYSTBMOXdCSDh5ckVGMFJxUi01TUtIR1kxMmRpYUZBZnV2WldnSVFBd2Y4OU5TUVU1UzBQeHB4a3BEZXFSZ0xkUkFwN1lSbzFCVmVVZzFyYmo2YVl1Ukdjb0Nqd20?oc=5",
         "source": "Google News",
@@ -227,7 +220,7 @@
       {
         "title": "Show HN: Moadim.io – A scheduler for agents",
         "url": "https://moadim.io/",
-        "source": "HN · 31↑",
+        "source": "HN · 32↑",
         "hn_id": "49571537",
         "published": "2026-09-04T23:50:29.000Z",
         "summary": "Why can&#x27;t we get an agent scheduler that supports all of the following: - git compatible - agent agnostic - 100% open source - os and system-agnostic - multi-runner support…"
@@ -235,7 +228,7 @@
       {
         "title": "Portal by Spotify cut my Claude Code token usage by 90%",
         "url": "https://engineering.atspotify.com/2026/9/portal-by-spotify-cut-my-claude-code-token-usage-by-90",
-        "source": "HN · 243↑",
+        "source": "HN · 246↑",
         "hn_id": "49571465",
         "published": "2026-09-04T23:38:50.000Z",
         "summary": ""
@@ -309,7 +302,7 @@
       {
         "title": "Formalizing Fermat's Last Theorem",
         "url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
-        "source": "HN · 740↑",
+        "source": "HN · 747↑",
         "hn_id": "49568506",
         "published": "2026-09-04T18:42:56.000Z",
         "summary": "https:&#x2F;&#x2F;xenaproject.wordpress.com&#x2F;2026&#x2F;09&#x2F;04&#x2F;flt-anthropic-h..."
@@ -324,10 +317,17 @@
       {
         "title": "Nobody is saying why OpenAI and Anthropic had outages",
         "url": "https://www.wired.com/story/nobody-is-saying-why-openai-and-anthropic-had-outages-today/",
-        "source": "HN · 202↑",
+        "source": "HN · 203↑",
         "hn_id": "49567594",
         "published": "2026-09-04T17:29:22.000Z",
         "summary": "https:&#x2F;&#x2F;archive.ph&#x2F;3zcMG"
+      },
+      {
+        "title": "Anthropic’s $2 trillion IPO puts powerful external trustees in spotlight",
+        "url": "https://arstechnica.com/ai/2026/09/anthropics-2-trillion-ipo-puts-powerful-external-trustees-in-spotlight/",
+        "source": "Ars Technica",
+        "published": "2026-09-04T16:22:18.000Z",
+        "summary": "Anthropic’s prospective public-market investors must reckon with an external group of trustees that control the majority of the AI company’s board, as its planned blockbuster initial public offering…"
       },
       {
         "title": "Claude Fable 5.1 is HERE! (Vibe Coding Live)",
@@ -570,6 +570,18 @@
         "_kind": "news_video"
       },
       {
+        "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
+        "url": "https://www.youtube.com/watch?v=P1KpxzLVg7c",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "P1KpxzLVg7c",
+        "thumbnail": "https://i.ytimg.com/vi/P1KpxzLVg7c/hqdefault.jpg",
+        "published": "2026-07-29T20:54:33.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
         "title": "Which Claude Model Is Best for Coding?",
         "url": "https://www.youtube.com/shorts/JBQvtT3A10E",
         "source": "Pragati Kunwer",
@@ -626,18 +638,6 @@
         "video_id": "KY3DRceajYM",
         "thumbnail": "https://i.ytimg.com/vi/KY3DRceajYM/hqdefault.jpg",
         "published": "2026-07-28T01:57:47.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "I Built a Claude Code Skill That Starts Any App (Free)",
-        "url": "https://www.youtube.com/watch?v=g3K88xLCtfQ",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "g3K88xLCtfQ",
-        "thumbnail": "https://i.ytimg.com/vi/g3K88xLCtfQ/hqdefault.jpg",
-        "published": "2026-07-28T00:19:01.000Z",
         "summary": "",
         "_kind": "news_video"
       }
@@ -994,6 +994,17 @@
         "summary": ""
       },
       {
+        "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
+        "url": "https://www.youtube.com/watch?v=P1KpxzLVg7c",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "P1KpxzLVg7c",
+        "thumbnail": "https://i.ytimg.com/vi/P1KpxzLVg7c/hqdefault.jpg",
+        "published": "2026-07-29T20:54:33.000Z",
+        "summary": ""
+      },
+      {
         "title": "Which Claude Model Is Best for Coding?",
         "url": "https://www.youtube.com/shorts/JBQvtT3A10E",
         "source": "Pragati Kunwer",
@@ -1046,17 +1057,6 @@
         "video_id": "KY3DRceajYM",
         "thumbnail": "https://i.ytimg.com/vi/KY3DRceajYM/hqdefault.jpg",
         "published": "2026-07-28T01:57:47.000Z",
-        "summary": ""
-      },
-      {
-        "title": "I Built a Claude Code Skill That Starts Any App (Free)",
-        "url": "https://www.youtube.com/watch?v=g3K88xLCtfQ",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "g3K88xLCtfQ",
-        "thumbnail": "https://i.ytimg.com/vi/g3K88xLCtfQ/hqdefault.jpg",
-        "published": "2026-07-28T00:19:01.000Z",
         "summary": ""
       }
     ],
@@ -2165,6 +2165,13 @@
         "summary": ""
       },
       {
+        "title": "Claude Code + Codex Can FINALLY Work Together (Buzz AI)",
+        "url": "https://www.youtube.com/watch?v=P1KpxzLVg7c",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-07-29T20:54:33.000Z",
+        "summary": ""
+      },
+      {
         "title": "Which Claude Model Is Best for Coding?",
         "url": "https://www.youtube.com/shorts/JBQvtT3A10E",
         "source": "YouTube · Pragati Kunwer",
@@ -2232,13 +2239,6 @@
         "url": "https://www.youtube.com/watch?v=KY3DRceajYM",
         "source": "YouTube · Leon van Zyl",
         "published": "2026-07-28T01:57:47.000Z",
-        "summary": ""
-      },
-      {
-        "title": "I Built a Claude Code Skill That Starts Any App (Free)",
-        "url": "https://www.youtube.com/watch?v=g3K88xLCtfQ",
-        "source": "YouTube · Leon van Zyl",
-        "published": "2026-07-28T00:19:01.000Z",
         "summary": ""
       }
     ]
