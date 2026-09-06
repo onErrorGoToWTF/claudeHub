@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T14:29:31.547Z",
+  "generated_at": "2026-09-06T17:49:09.599Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "New AI Designed to Replace CEOs - Futurism",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB2aEd0QmZhVllaTGQ4aG5ZdmZ1Mi00T1BTVktuR2c3bG9CQWtiR2psM0pIWG90UVhHRUhYSjFnWlRMT01GbGhaM2JTYTlyODYwQ3RNbVNBMk9oUXZrSHFFMklQX1FoRG01V3FWQWZCR2ZjdXZqa1BVd2dNWUJrQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-06T15:01:00.000Z",
+        "summary": "New AI Designed to Replace CEOs Futurism"
+      },
+      {
         "title": "ChatGPT, Claude and Grok outages overlapped—but no common cause was confirmed - NeoTeo",
         "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOYkxKNGtKaFFySktUTHF1ajU2TjhVX3Z5SDh0MnRpY04xamRUbk5Fb1I2bzdENTBYU3lPYXMwVjE4TVlDTFdlNFVUX1dVemNFQWZFNDNNREtEek84MFhpY1JNamVJVGc1dTdVT0x6NklNcVZSOVI4SVNnQ2ZrajJHOFNMQXZSUURwYjZQN1lzRV8zOEYzSVFsbXZvNGF2cXY4VXZvag?oc=5",
         "source": "Google News",
@@ -210,6 +217,13 @@
         "summary": "Anthropic's IPO Could Value It at 30 Times Revenue. Here's Why I'm Still Interested Anyway. Yahoo Finance"
       },
       {
+        "title": "AI Just Solved a 350-Year-Old Math Problem By Writing the Longest Proof Ever - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPaVRPZEM1cHRZZ0FYMHdfN3NxMFNjUGhvclNQOEFCTFVnNnJSS2RvTjFnNmpJd2xpUGNrMExKWllyand6RTFRTkZYLVJwZkhkQVBfcDIwWHJReHVXZF9QbVlmMWxPUmp5Zmh6Vi1nSmY5X19kc04yXzlTU1Jrd3FaU0dGYUZqUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-05T13:01:03.000Z",
+        "summary": "AI Just Solved a 350-Year-Old Math Problem By Writing the Longest Proof Ever Yahoo Tech"
+      },
+      {
         "title": "Anthropic Launches Claude Fable 5.1 and Restricted Mythos 5.1 for Advanced Coding, Cybersecurity and Scientific Research - LinkedIn",
         "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOczZLQWhJUjZVdEs0cnFXVmktX2JTaDFVVEFVX3hQLU8zcmtTQjJzd1Y1cHZVVmNsenBIWDRIOW4zbndpZGZMaEJWVlJQN1FBeWNMck9ObDlEQW5GSmVBSU4zRTIyRWdDSUhiMDV3aGUxd1BGcXRRajJLUldMOWlJOUtEUDBzTjBQRko2MEFyVjNKcDA?oc=5",
         "source": "Google News",
@@ -234,7 +248,7 @@
       {
         "title": "Anthropic & friends caught paying religious NGO's 3.3M for propaganda",
         "url": "https://www.effort.news/revelation",
-        "source": "HN · 52↑",
+        "source": "HN · 56↑",
         "hn_id": "49573677",
         "published": "2026-09-05T06:31:31.000Z",
         "summary": ""
@@ -249,7 +263,7 @@
       {
         "title": "Show HN: Moadim.io – A scheduler for agents",
         "url": "https://moadim.io/",
-        "source": "HN · 33↑",
+        "source": "HN · 34↑",
         "hn_id": "49571537",
         "published": "2026-09-04T23:50:29.000Z",
         "summary": "Why can&#x27;t we get an agent scheduler that supports all of the following: - git compatible - agent agnostic - 100% open source - os and system-agnostic - multi-runner support…"
@@ -257,7 +271,7 @@
       {
         "title": "Portal by Spotify cut my Claude Code token usage by 90%",
         "url": "https://engineering.atspotify.com/2026/9/portal-by-spotify-cut-my-claude-code-token-usage-by-90",
-        "source": "HN · 261↑",
+        "source": "HN · 263↑",
         "hn_id": "49571465",
         "published": "2026-09-04T23:38:50.000Z",
         "summary": ""
@@ -265,7 +279,7 @@
       {
         "title": "Claude Code skills for advanced context engineering techniques and patterns",
         "url": "https://github.com/NeoLabHQ/context-engineering-kit",
-        "source": "HN · 40↑",
+        "source": "HN · 41↑",
         "hn_id": "49571131",
         "published": "2026-09-04T22:52:14.000Z",
         "summary": ""
@@ -312,34 +326,6 @@
         "source": "Google News",
         "published": "2026-09-04T19:08:33.000Z",
         "summary": "Anthropic’s Claude Can Now Autonomously Run Science Experiments With Lab Equipment SingularityHub"
-      },
-      {
-        "title": "Fermat's Last Theorem in Lean 4",
-        "url": "https://github.com/anthropics/fermats-last-theorem",
-        "source": "HN · 145↑",
-        "hn_id": "49568697",
-        "published": "2026-09-04T18:57:32.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Formalizing Fermat's Last Theorem",
-        "url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
-        "source": "HN · 759↑",
-        "hn_id": "49568506",
-        "published": "2026-09-04T18:42:56.000Z",
-        "summary": "https:&#x2F;&#x2F;xenaproject.wordpress.com&#x2F;2026&#x2F;09&#x2F;04&#x2F;flt-anthropic-h..."
-      },
-      {
-        "title": "Claude Fable 5.1 is HERE! (Vibe Coding Live)",
-        "url": "https://www.youtube.com/watch?v=QIxcESNJcKY",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "QIxcESNJcKY",
-        "thumbnail": "https://i.ytimg.com/vi/QIxcESNJcKY/hqdefault.jpg",
-        "published": "2026-09-02T14:12:44.000Z",
-        "summary": "",
-        "_kind": "news_video"
       },
       {
         "title": "Claude Fable 5.1 just dropped and I can't believe it...",
@@ -640,6 +626,18 @@
         "published": "2026-07-28T01:57:47.000Z",
         "summary": "",
         "_kind": "news_video"
+      },
+      {
+        "title": "I Built a Claude Code Skill That Starts Any App (Free)",
+        "url": "https://www.youtube.com/watch?v=g3K88xLCtfQ",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "g3K88xLCtfQ",
+        "thumbnail": "https://i.ytimg.com/vi/g3K88xLCtfQ/hqdefault.jpg",
+        "published": "2026-07-28T00:19:01.000Z",
+        "summary": "",
+        "_kind": "news_video"
       }
     ],
     "status": [
@@ -738,17 +736,6 @@
         "video_id": "z9pyWJDgesU",
         "thumbnail": "https://i.ytimg.com/vi/z9pyWJDgesU/hqdefault.jpg",
         "published": "2026-09-02T22:30:39.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Fable 5.1 is HERE! (Vibe Coding Live)",
-        "url": "https://www.youtube.com/watch?v=QIxcESNJcKY",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "QIxcESNJcKY",
-        "thumbnail": "https://i.ytimg.com/vi/QIxcESNJcKY/hqdefault.jpg",
-        "published": "2026-09-02T14:12:44.000Z",
         "summary": ""
       },
       {
@@ -1057,6 +1044,17 @@
         "video_id": "KY3DRceajYM",
         "thumbnail": "https://i.ytimg.com/vi/KY3DRceajYM/hqdefault.jpg",
         "published": "2026-07-28T01:57:47.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I Built a Claude Code Skill That Starts Any App (Free)",
+        "url": "https://www.youtube.com/watch?v=g3K88xLCtfQ",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "g3K88xLCtfQ",
+        "thumbnail": "https://i.ytimg.com/vi/g3K88xLCtfQ/hqdefault.jpg",
+        "published": "2026-07-28T00:19:01.000Z",
         "summary": ""
       }
     ],
@@ -1801,13 +1799,6 @@
         "summary": "What's Changed test(smoke): run the headless web smokes in Firefox via the pre-push gate by @cliffhall in #2133 fix: render tool schemas with root-level anyOf/oneOf composition by @cliffhall in #2137 chore(web): move…"
       },
       {
-        "title": "Claude Fable 5.1 is HERE! (Vibe Coding Live)",
-        "url": "https://www.youtube.com/watch?v=QIxcESNJcKY",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-09-02T14:12:44.000Z",
-        "summary": ""
-      },
-      {
         "title": "v2.1.258",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.258",
         "source": "Claude Code",
@@ -2239,6 +2230,13 @@
         "url": "https://www.youtube.com/watch?v=KY3DRceajYM",
         "source": "YouTube · Leon van Zyl",
         "published": "2026-07-28T01:57:47.000Z",
+        "summary": ""
+      },
+      {
+        "title": "I Built a Claude Code Skill That Starts Any App (Free)",
+        "url": "https://www.youtube.com/watch?v=g3K88xLCtfQ",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-07-28T00:19:01.000Z",
         "summary": ""
       }
     ]
