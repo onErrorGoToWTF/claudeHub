@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T06:42:12.632Z",
+  "generated_at": "2026-09-07T13:43:49.304Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -7,7 +7,14 @@
         "title": "Formalizing Fermats Last Theorem",
         "url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
         "source": "Anthropic Research",
-        "published": "2026-09-04T18:21:03.000Z",
+        "published": "2026-09-07T11:07:52.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Improving Alignment Security Efforts",
+        "url": "https://www.anthropic.com/news/improving-alignment-security-efforts",
+        "source": "Anthropic",
+        "published": "2026-09-07T09:43:45.000Z",
         "summary": ""
       },
       {
@@ -43,13 +50,6 @@
         "url": "https://www.anthropic.com/news/claude-text-watermark",
         "source": "Anthropic",
         "published": "2026-09-01T18:01:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Improving Alignment Security Efforts",
-        "url": "https://www.anthropic.com/news/improving-alignment-security-efforts",
-        "source": "Anthropic",
-        "published": "2026-09-01T12:43:20.000Z",
         "summary": ""
       },
       {
@@ -146,32 +146,82 @@
     ],
     "news": [
       {
-        "title": "ChatGPT, Claude and Grok Stopped Working. Here’s Why - Memeburn",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE4tVXh3QUl4NEl1c3BJMHUtNU5yLWpEaE9mNVNPWGRPQUhLUV9xZHh4X0JNMFk3RnJqRURHMy12ZHVwT2dROUgtRnVoVHplMHkxMlJGa3BJT3pVSVlmMmhPUk5Ja01iMnZMOWp3NjNkQjltZGZ4LUtlT0w5OA?oc=5",
+        "title": "Claude Formalized Fermat's Last Theorem In 11 Days On 6B Output Tokens - Forbes",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTk5UelU1MGo1MmdGM1E0T0x3ZXhGVWhzNHBfajhZZ3hUaUM2aGhaSnhkbWN4dEVhMk11bEN5Q1V5ZE4zR3BjZVdqYW1aeS1LbmV4dFB2ZG8ta1VjQ2hINVpCZTVlN1hGelFvTTd0cWJ1WjdKWWRELXpQa005bWZkakJhUjVuZW5LWDcwbE5hN21PNzJYRUpxZmpSZDdmd2lLTFYyc0JQRjhvSkF4Ykg1cGQ3UzBtb3FLam1qU2t3?oc=5",
         "source": "Google News",
-        "published": "2026-09-07T06:09:09.000Z",
-        "summary": "ChatGPT, Claude and Grok Stopped Working. Here’s Why Memeburn"
+        "published": "2026-09-07T13:35:56.000Z",
+        "summary": "Claude Formalized Fermat's Last Theorem In 11 Days On 6B Output Tokens Forbes"
       },
       {
-        "title": "Anthropic Launches Agentic AI Commerce Blueprint for Claude - Fintech Singapore",
+        "title": "The complex corporate web behind a $3.2 billion AI data center",
+        "url": "https://arstechnica.com/ai/2026/09/the-ai-data-center-boom-is-causing-new-accountability-problems/",
+        "source": "Ars Technica",
+        "published": "2026-09-07T11:00:03.000Z",
+        "summary": "In early June, a fire broke out in a still-unfinished building at the Lake Mariner data center in Somerset, New York, exposing just how little the local fire department knew about what it was…"
+      },
+      {
+        "title": "AI Cyberattack Capabilities Reach 'Critical' Level… OpenAI and Anthropic Restrict Access, While South Korea Moves at a 'Snail's Pace' - finance.biggo.com",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9meDA5aHZaM2VENjhvNGVUVkU0TnZaTmRsdl82aEhhOVUtY000NW1oQXpuV3drc3hKeW50SWRzbUJTUFJIaTBIQVNLMkJwSUhGWGcycWM0My1yZGdQSU05TWIzNjNnQjE1Tk1JZkhJOUhiOUtuU3c?oc=5",
+        "source": "Google News",
+        "published": "2026-09-07T10:05:00.000Z",
+        "summary": "AI Cyberattack Capabilities Reach 'Critical' Level… OpenAI and Anthropic Restrict Access, While South Korea Moves at a 'Snail's Pace' finance.biggo.com"
+      },
+      {
+        "title": "PicPay Integrates With Anthropic’s Claude to Expand Conversational AI Financial Services - FF News",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZXYtc0FJWG4ySUdFN3JZRi1PdkJmX2tPY2UzVy03d3R6RktnOW5BLTVCMV96WHNVaHNYdEs5Zk9ub1lDcktzTW1iT1BvYXVVVV9VUlpXWXY4dzRqcW90bmJGb2pSbE40YzFlQ3dEdVBKRXJaOVlfaEJnNDhWUUI1Nl90WmpIaUtyLXRYRXhlZ1JhZ0UzRjYtamxtVVNVTHdwREJVYW5FMnVGX0VhRWhoTWY2Yw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-07T09:18:30.000Z",
+        "summary": "PicPay Integrates With Anthropic’s Claude to Expand Conversational AI Financial Services FF News"
+      },
+      {
+        "title": "How a tiny Anthropic team became a surprisingly productive hit factory - Business Insider",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNbzk3QzRtOWRqVXV5VEJHVU9FUzdoQjhqWEVfdGRMNU1XX2NjSTVHUXQySktINUNWYWVUdXpsNzkyMFBmZmsxTHZpc2pLRUV6ZThwZDZPdG1ncGJDSEJNVG1DNVVTQjVFaVRfMHYzNFR3SFBHa0U3a1pmeUV0RzNYbHRR?oc=5",
+        "source": "Google News",
+        "published": "2026-09-07T09:00:00.000Z",
+        "summary": "How a tiny Anthropic team became a surprisingly productive hit factory Business Insider"
+      },
+      {
+        "title": "Anthropic brings Claude to Apple CarPlay - varindia.com",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9xMEdVVHdmYVRJUnJVSlllcHVrRDNyYV9UUVFScGRUbTgyX1RiYV9mVHF1NUpJSXpPZXBwbFNfOWRrbXN3a1puTE45WXJPN1ZzVE1IWEhxRUJ0emdaMUVSNzZseEcyeXd3d1h2aTAtdmxrZVRTVFBDUzZB?oc=5",
+        "source": "Google News",
+        "published": "2026-09-07T08:46:23.000Z",
+        "summary": "Anthropic brings Claude to Apple CarPlay varindia.com"
+      },
+      {
+        "title": "Why Authors And Publishers Are Fighting Over Anthropic's $1.5 Billion Payout - NDTV",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUGpYWVdDeDNmbHFPQm16QzBwcTdZcW5vZElGNVdJMWpFbTM5WjdnYlNrODBlSl9raC1hWTl3YjhEYUZ4aFo3WUtVQkdTLVhsR000TS02OEFqZzJsUklMZ2Nxa3QyYUtmWHVhZVhlWXNlamM5ZXZ4anBFTVVDNmFRekxQNW5SdDdkS2VWUHR1M3NnbjVwVmpaUnk2cENqRmVMM0hLLWRwZ3JZUDRaYmROd3lIMUdsd9IBvgFBVV95cUxPdUl6T1Axc1ZURk1VSzZDN2QzWHNpTWVIS0JwcFVuSWZuS21pcUxHd1ZjVmFtaHpEUE1FZkdtakNKaDNaWGlvQ3pwMjVjU1dpMkt4dzR4NktnNlVpdk5vYlFCc0NpZ196UUFlTnY4Sk9MSExGbDJ6MWJqMHlWNHVnNzVBXzJzUm1sMHJtcjZlVUhKV0t6UXNvWnkyc2FqbHNKeVhMekIxSmFlck9ab2FVZU5Qbk9jWk84TTRud3pn?oc=5",
+        "source": "Google News",
+        "published": "2026-09-07T08:11:40.000Z",
+        "summary": "Why Authors And Publishers Are Fighting Over Anthropic's $1.5 Billion Payout NDTV"
+      },
+      {
+        "title": "Grok 4.5: $2/$6 Pricing Beats GPT-5 & Claude [2026] - shattered.io",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1hT091aVZEN2xLOVBOOVRRbmc4WHNfQnNjeTNjMGQ2NndmR2Q5RHRmaElNckp1Vi1vRFh1cjFhWkhXWE5pMDM4c0FNNW1SWGxXclBxOTV0c3AtX3R4LVdYNTVnbmpQOU0?oc=5",
+        "source": "Google News",
+        "published": "2026-09-07T05:44:03.000Z",
+        "summary": "Grok 4.5: $2/$6 Pricing Beats GPT-5 & Claude [2026] shattered.io"
+      },
+      {
+        "title": "Anthropic Launches Agentic AI Commerce Blueprint for Claude - fintechnews.sg",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOT1Jvd01oeV9uS2ZGUktwZFRuOVNHR2pSUmlXeE9ueFg1Rlo1SkJkTTJPVGhnczVWNXhNaUJmYnVWVGtrS1Q2MkdzMWtubEtuY3FkUHduTjVKRFBOYjNhUWlZaUZJbTFYQno0cTQxWEJLTzEyRUg5cHBQQkJVUWVwTVdDd1VWb3M?oc=5",
         "source": "Google News",
         "published": "2026-09-07T04:48:34.000Z",
-        "summary": "Anthropic Launches Agentic AI Commerce Blueprint for Claude Fintech Singapore"
+        "summary": "Anthropic Launches Agentic AI Commerce Blueprint for Claude fintechnews.sg"
       },
       {
-        "title": "Pondero Brief: Claude Code ships /diff, plus a bill to ban superintelligence - Buttondown",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNWDdnNkdoM25sZ09tck12aURTMUdxTzI2Z1JqM21FRzFQRzdnQ1NXOGh6N0Z1bzhjTWRwLU9oQjJzRnlaT2M3UEhSLVhUdmxGczNRX283UnhrTG9YeHdzYzZLQ0dVWk5oNENFTV9mWTVRdURKczBhNnNId3NSMElrR0dWc0UtWTRVM21zWXNGdzhlTVFf?oc=5",
-        "source": "Google News",
-        "published": "2026-09-07T03:30:01.000Z",
-        "summary": "Pondero Brief: Claude Code ships /diff, plus a bill to ban superintelligence Buttondown"
+        "title": "Coop – Isolated VM Environments for Running Claude Code and Codex",
+        "url": "https://github.com/trailofbits/coop",
+        "source": "HN · 33↑",
+        "hn_id": "49593842",
+        "published": "2026-09-07T04:18:28.000Z",
+        "summary": ""
       },
       {
-        "title": "AI ‘thinking’ words it never says: What this tells us about consciousness - indianexpress.com",
+        "title": "AI ‘thinking’ words it never says: What this tells us about consciousness - The Indian Express",
         "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQMUNjMm4zMTFYbmd1THBaVTdyM2ZCWExLWExhVkIyRFIxNmlVcTRzWWtoYmFvbnpqU3dGN0ZIRnFIX3ozekhRbzZSbHdUZklNSW9paDNZUW1GN05NZWhuVU5HOU1jeE01ZTA4OEh1U3YwUHFPbFp3bzVsYm1mSzU2cFpaVlhvb0o3R2VfeUhuNnF5ZEhVcmlLVVV6c0dDSnFQNVdXeWZLMlNaWFNRUFczSVN5Mmc5dTRq0gG_AUFVX3lxTE5JQUl6enRaakhjdHhybGY1cVR2R1ZraFdSQTdEN2RVU0ZNR05LeHNMaWhqNmdBOXlvcDE0MTdHZDVENkRjdHNHVVFfSjVVYTJWVEJ1cWN2UFE0UWdfaFRnajlJREtZOEFKZTItdUIxenNDUlFZcExFZlRybi1uLTBlNDdPckNHUmtNc003dTRBb2dvdFhUVEdUVDJJQ00zdTd0c00td0dqYXdGQ2s2UEtvVHV6YW1oT1VqRjczeS1r?oc=5",
         "source": "Google News",
         "published": "2026-09-07T01:06:37.000Z",
-        "summary": "AI ‘thinking’ words it never says: What this tells us about consciousness indianexpress.com"
+        "summary": "AI ‘thinking’ words it never says: What this tells us about consciousness The Indian Express"
       },
       {
         "title": "Anthropic opens real Claude usage data to outside researchers for first time - EdTech Innovation Hub",
@@ -191,7 +241,7 @@
         "title": "Social Media Rumor Claims Anthropic's Claude Cracked Millennium Prize Math Problem - finance.biggo.com",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1UUW5hcVNmVHVMcTlza1l1QkVXRXZKdzBaemFBVGd3djBCMF9SNGs5eXRZU0lyWndzcUFUM0pYQmYzR256NkRWM0Fra0hRMW1OU0ZCbTZxUk5wbGFudnR2RENzVzFtc1VWM0piWVdvZmJkY1Y2Unc?oc=5",
         "source": "Google News",
-        "published": "2026-09-06T18:26:10.000Z",
+        "published": "2026-09-06T18:16:00.000Z",
         "summary": "Social Media Rumor Claims Anthropic's Claude Cracked Millennium Prize Math Problem finance.biggo.com"
       },
       {
@@ -200,6 +250,13 @@
         "source": "Google News",
         "published": "2026-09-06T04:16:02.000Z",
         "summary": "Rumors claim Anthropic's Claude has solved the Navier-Stokes Millennium Problem; Terence Tao clarifies. KuCoin"
+      },
+      {
+        "title": "Did Claude Solve the Millennium Prize Problems? Terence Tao: I Never Said That - 36 Kr",
+        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5POXp1NlUyRmc2MTJyYXUyOHZQdEpzQmhVN2dycFFPMTliZzZhSHg1ZmJXNjNfbVhTWkxXQ01tSncxT1VKcmkyVUxoR1FTU1V4a0FB?oc=5",
+        "source": "Google News",
+        "published": "2026-09-06T04:02:42.000Z",
+        "summary": "Did Claude Solve the Millennium Prize Problems? Terence Tao: I Never Said That 36 Kr"
       },
       {
         "title": "Anthropic's Claude Agents Formalized Fermat's Last Theorem in 11 Days - Startup Fortune",
@@ -217,25 +274,11 @@
         "summary": ""
       },
       {
-        "title": "Anthropic's IPO Could Value It at 30 Times Revenue. Here's Why I'm Still Interested Anyway. - The Motley Fool",
-        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQdEdLWFlpNHVkVmRMUDM1a1lidkdPZzF6b3VZVFJ0bmE0ODc3bzgwbXVEWU8zX3FwdWQ2UGtuTXN4ejcyaVZzTFNfMF9VUWtnQVVMbFh2d1FuaXVMcEdfZHNsektNVUJVS2ttX0w3ZWtmTDVCSWhSN1ZvMzZVaXJ0TTVhZHk4aGxWT1JZWFJTYlJTNVJGVFFSNGxwVHhRcnJtcUYzNk9sV2JLaDl2QjNpVlh0dm54WFpnR2d6ZUV5cjhUNGRicXpWdWEybE4?oc=5",
-        "source": "Google News",
-        "published": "2026-09-05T15:00:00.000Z",
-        "summary": "Anthropic's IPO Could Value It at 30 Times Revenue. Here's Why I'm Still Interested Anyway. The Motley Fool"
-      },
-      {
         "title": "Anthropic's IPO Could Value It at 30 Times Revenue. Here's Why I'm Still Interested Anyway. - Yahoo Finance",
         "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPWHZOdV9tdXRibVdTUFUwRmVmUkczdHRLckdwSjZZSkRKTGdPT0RyWXp2ZkM3OTl3V0RSUWlKemw0R09paGdCaC1nc2JoZmJSMDQyTXR1TjVVUnVZQW9JTVJFVmtsc29UWmxRRFBiZnRhMkZTUDR5dUZES29GZFY0ZGJfcVRSby16aC1obG1ObVlvRnZtcU5IYzNn?oc=5",
         "source": "Google News",
         "published": "2026-09-05T14:20:01.000Z",
         "summary": "Anthropic's IPO Could Value It at 30 Times Revenue. Here's Why I'm Still Interested Anyway. Yahoo Finance"
-      },
-      {
-        "title": "AI Just Solved a 350-Year-Old Math Problem By Writing the Longest Proof Ever - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPaVRPZEM1cHRZZ0FYMHdfN3NxMFNjUGhvclNQOEFCTFVnNnJSS2RvTjFnNmpJd2xpUGNrMExKWllyand6RTFRTkZYLVJwZkhkQVBfcDIwWHJReHVXZF9QbVlmMWxPUmp5Zmh6Vi1nSmY5X19kc04yXzlTU1Jrd3FaU0dGYUZqUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-05T13:01:03.000Z",
-        "summary": "AI Just Solved a 350-Year-Old Math Problem By Writing the Longest Proof Ever Yahoo Tech"
       },
       {
         "title": "Anthropic Launches Claude Fable 5.1 and Restricted Mythos 5.1 for Advanced Coding, Cybersecurity and Scientific Research - LinkedIn",
@@ -277,55 +320,10 @@
       {
         "title": "Show HN: Moadim.io – A scheduler for agents",
         "url": "https://moadim.io/",
-        "source": "HN · 35↑",
+        "source": "HN · 36↑",
         "hn_id": "49571537",
         "published": "2026-09-04T23:50:29.000Z",
         "summary": "Why can&#x27;t we get an agent scheduler that supports all of the following: - git compatible - agent agnostic - 100% open source - os and system-agnostic - multi-runner support…"
-      },
-      {
-        "title": "Portal by Spotify cut my Claude Code token usage by 90%",
-        "url": "https://engineering.atspotify.com/2026/9/portal-by-spotify-cut-my-claude-code-token-usage-by-90",
-        "source": "HN · 269↑",
-        "hn_id": "49571465",
-        "published": "2026-09-04T23:38:50.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Code skills for advanced context engineering techniques and patterns",
-        "url": "https://github.com/NeoLabHQ/context-engineering-kit",
-        "source": "HN · 43↑",
-        "hn_id": "49571131",
-        "published": "2026-09-04T22:52:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "CarPlay now works with five major chatbot apps - 9to5Mac",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPQzB2d2tKYjVkZEE1M0puNjNGaFdMZVBLaTZGOHFxNWRzWWZjMmFXMUM5Z0drZUJUdmg3WndhRzBucExWWWVMMS1NNlNxVm9VMVhiSHpfUDJpYlBweDN5X3hoMHZDaFlLTlk2QnNybXBNanFvNkhQbEMxemRHSy1OS3MycnI?oc=5",
-        "source": "Google News",
-        "published": "2026-09-04T21:17:00.000Z",
-        "summary": "CarPlay now works with five major chatbot apps 9to5Mac"
-      },
-      {
-        "title": "Anthropic faces different government responses as Pentagon battle continues - FedScoop",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOeVduMWh4anMzWHN4VUZkWlM1VEZMaE9EZUlHOHU3blhfTjZCaW9pczFPVzFUNWpfd1hNam1JNUdEMFV2SzZDcHB0QkU1dVN2Mi1lTk83OGpjSkZUc1c4YmJhcm5yQldtY3o1M0dmS0lTZ0V3bE0tcERkbV94STA4RnFJemVMdm9Zd0lUR0h3?oc=5",
-        "source": "Google News",
-        "published": "2026-09-04T21:15:25.000Z",
-        "summary": "Anthropic faces different government responses as Pentagon battle continues FedScoop"
-      },
-      {
-        "title": "Fermat's Last Theorem: Anthropic has beaten me to it",
-        "url": "https://xenaproject.wordpress.com/2026/09/04/flt-anthropic-has-beaten-me-to-it/",
-        "source": "HN · 41↑",
-        "hn_id": "49570133",
-        "published": "2026-09-04T21:00:02.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic called SFPD over threat against CEO. Claude user says it was a misunderstanding - The San Francisco Standard",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1DY0E3Y1ZLcnJQamRtLUl3c19Za0Q1RmJzZDVSR3pMb3V2QjltWnJkR2FYeVBzQlhYdXhjUVFxOGNHb2xPWHpuV0hRS0JQZFA0RHp3bjB6bHpNV1lFM1VwWnREZGotdFBQY2lLT3hEOGE?oc=5",
-        "source": "Google News",
-        "published": "2026-09-04T20:55:26.000Z",
-        "summary": "Anthropic called SFPD over threat against CEO. Claude user says it was a misunderstanding The San Francisco Standard"
       },
       {
         "title": "Claude Fable 5.1 just dropped and I can't believe it...",
