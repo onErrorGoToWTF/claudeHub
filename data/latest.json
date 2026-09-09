@@ -1,150 +1,213 @@
 {
-  "generated_at": "2026-09-09T20:07:03.625Z",
+  "generated_at": "2026-09-09T23:35:49.744Z",
   "version": 1,
   "sections": {
     "updates": [
       {
-        "title": "Releasing Claude Instant 1 2",
-        "url": "https://www.anthropic.com/news/releasing-claude-instant-1-2",
-        "source": "Anthropic",
-        "published": "2026-09-09T20:02:21.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Influence Functions",
-        "url": "https://www.anthropic.com/research/influence-functions",
+        "title": "Bloom",
+        "url": "https://www.anthropic.com/research/bloom",
         "source": "Anthropic Research",
-        "published": "2026-09-09T20:01:19.000Z",
+        "published": "2026-09-09T21:55:31.000Z",
         "summary": ""
       },
       {
-        "title": "Studying Large Language Model Generalization with Influence Functions",
-        "url": "https://www.anthropic.com/research/studying-large-language-model-generalization-with-influence-functions",
+        "title": "Compliance Framework Sb53",
+        "url": "https://www.anthropic.com/news/compliance-framework-SB53",
+        "source": "Anthropic",
+        "published": "2026-09-09T21:54:48.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Critical Infrastructure Defense",
+        "url": "https://www.anthropic.com/research/critical-infrastructure-defense",
         "source": "Anthropic Research",
-        "published": "2026-09-09T20:00:28.000Z",
+        "published": "2026-09-09T21:53:55.000Z",
         "summary": ""
       },
       {
-        "title": "Frontier Threats Red Teaming for Ai Safety",
-        "url": "https://www.anthropic.com/news/frontier-threats-red-teaming-for-ai-safety",
-        "source": "Anthropic",
-        "published": "2026-09-09T19:59:08.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Frontier Model Security",
-        "url": "https://www.anthropic.com/news/frontier-model-security",
-        "source": "Anthropic",
-        "published": "2026-09-09T19:57:29.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Measuring Faithfulness in Chain of Thought Reasoning",
-        "url": "https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning",
+        "title": "Next Generation Constitutional Classifiers",
+        "url": "https://www.anthropic.com/research/next-generation-constitutional-classifiers",
         "source": "Anthropic Research",
-        "published": "2026-09-09T19:56:50.000Z",
+        "published": "2026-09-09T21:53:20.000Z",
         "summary": ""
       },
       {
-        "title": "Question Decomposition Improves the Faithfulness of Model Generated Reasoning",
-        "url": "https://www.anthropic.com/research/question-decomposition-improves-the-faithfulness-of-model-generated-reasoning",
+        "title": "Introducing Anthropic Labs",
+        "url": "https://www.anthropic.com/news/introducing-anthropic-labs",
+        "source": "Anthropic",
+        "published": "2026-09-09T21:51:07.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Property Based Testing",
+        "url": "https://www.anthropic.com/research/property-based-testing",
         "source": "Anthropic Research",
-        "published": "2026-09-09T19:54:49.000Z",
+        "published": "2026-09-09T21:50:18.000Z",
         "summary": ""
       },
       {
-        "title": "Claude 2",
-        "url": "https://www.anthropic.com/news/claude-2",
-        "source": "Anthropic",
-        "published": "2026-09-09T19:53:12.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Towards Measuring the Representation of Subjective Global Opinions in Language Models",
-        "url": "https://www.anthropic.com/research/towards-measuring-the-representation-of-subjective-global-opinions-in-language-models",
+        "title": "Economic Index Primitives",
+        "url": "https://www.anthropic.com/research/economic-index-primitives",
         "source": "Anthropic Research",
-        "published": "2026-09-09T19:51:23.000Z",
+        "published": "2026-09-09T21:49:08.000Z",
         "summary": ""
       },
       {
-        "title": "Charting a Path to Ai Accountability",
-        "url": "https://www.anthropic.com/news/charting-a-path-to-ai-accountability",
-        "source": "Anthropic",
-        "published": "2026-09-09T19:49:43.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Alignment Assessment Cybersecurity Incidents",
-        "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+        "title": "Anthropic Economic Index January 2026 Report",
+        "url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
         "source": "Anthropic Research",
-        "published": "2026-09-09T19:49:12.000Z",
+        "published": "2026-09-09T21:47:42.000Z",
         "summary": ""
       },
       {
-        "title": "Circuits Updates May 2023",
-        "url": "https://www.anthropic.com/research/circuits-updates-may-2023",
+        "title": "Accelerating Scientific Research",
+        "url": "https://www.anthropic.com/news/accelerating-scientific-research",
+        "source": "Anthropic",
+        "published": "2026-09-09T21:45:55.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Cyber Toolkits Update",
+        "url": "https://www.anthropic.com/research/cyber-toolkits-update",
         "source": "Anthropic Research",
-        "published": "2026-09-09T19:48:40.000Z",
+        "published": "2026-09-09T21:44:37.000Z",
         "summary": ""
       },
       {
-        "title": "Interpretability Dreams",
-        "url": "https://www.anthropic.com/research/interpretability-dreams",
+        "title": "Anthropic Appoints Irina Ghose as Managing Director of India",
+        "url": "https://www.anthropic.com/news/anthropic-appoints-irina-ghose-as-managing-director-of-india",
+        "source": "Anthropic",
+        "published": "2026-09-09T21:44:01.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Mariano Florentino Long Term Benefit Trust",
+        "url": "https://www.anthropic.com/news/mariano-florentino-long-term-benefit-trust",
+        "source": "Anthropic",
+        "published": "2026-09-09T21:43:11.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic Teach for All",
+        "url": "https://www.anthropic.com/news/anthropic-teach-for-all",
+        "source": "Anthropic",
+        "published": "2026-09-09T21:41:24.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Gov Uk Partnership",
+        "url": "https://www.anthropic.com/news/gov-UK-partnership",
+        "source": "Anthropic",
+        "published": "2026-09-09T21:38:02.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Disempowerment Patterns",
+        "url": "https://www.anthropic.com/research/disempowerment-patterns",
         "source": "Anthropic Research",
-        "published": "2026-09-09T19:45:56.000Z",
+        "published": "2026-09-09T21:37:15.000Z",
         "summary": ""
       },
       {
-        "title": "Anthropic Series C",
-        "url": "https://www.anthropic.com/news/anthropic-series-c",
+        "title": "Servicenow Anthropic Claude",
+        "url": "https://www.anthropic.com/news/servicenow-anthropic-claude",
         "source": "Anthropic",
-        "published": "2026-09-09T19:45:17.000Z",
+        "published": "2026-09-09T21:36:33.000Z",
         "summary": ""
       },
       {
-        "title": "Zoom Partnership and Investment",
-        "url": "https://www.anthropic.com/news/zoom-partnership-and-investment",
-        "source": "Anthropic",
-        "published": "2026-09-09T19:43:41.000Z",
-        "summary": ""
-      },
-      {
-        "title": "100k Context Windows",
-        "url": "https://www.anthropic.com/news/100k-context-windows",
-        "source": "Anthropic",
-        "published": "2026-09-09T19:42:51.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claudes Constitution",
-        "url": "https://www.anthropic.com/news/claudes-constitution",
-        "source": "Anthropic",
-        "published": "2026-09-09T19:42:15.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Distributed Representations Composition Superposition",
-        "url": "https://www.anthropic.com/research/distributed-representations-composition-superposition",
+        "title": "Ai Assistance Coding Skills",
+        "url": "https://www.anthropic.com/research/AI-assistance-coding-skills",
         "source": "Anthropic Research",
-        "published": "2026-09-09T19:38:49.000Z",
+        "published": "2026-09-09T21:35:43.000Z",
         "summary": ""
       },
       {
-        "title": "Partnering with Scale",
-        "url": "https://www.anthropic.com/news/partnering-with-scale",
+        "title": "Anthropic Partners with Allen Institute and Howard Hughes Medical Institute",
+        "url": "https://www.anthropic.com/news/anthropic-partners-with-allen-institute-and-howard-hughes-medical-institute",
         "source": "Anthropic",
-        "published": "2026-09-09T19:37:38.000Z",
+        "published": "2026-09-09T21:34:03.000Z",
         "summary": ""
       },
       {
-        "title": "An Ai Policy Tool for Today Ambitiously Invest in Nist",
-        "url": "https://www.anthropic.com/news/an-ai-policy-tool-for-today-ambitiously-invest-in-nist",
+        "title": "Apple Xcode Claude Agent Sdk",
+        "url": "https://www.anthropic.com/news/apple-xcode-claude-agent-sdk",
         "source": "Anthropic",
-        "published": "2026-09-09T19:36:11.000Z",
+        "published": "2026-09-09T21:33:07.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Is a Space to Think",
+        "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+        "source": "Anthropic",
+        "published": "2026-09-09T21:31:05.000Z",
         "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic reveals fourth likely crime committed by its AI - The Register",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQN05SUFB5RDNzZk9uaTNycmgtODJXWE9DNkZTdm9PMEVxM0lvcERsX3dnY1hOYU1QWWFvTmxuQmRTQlpWNjEyN3lYRmJTalJXSlVfNDltRG92M2Excld6MjhsNzVGck16Q2hwNk5kcVFtbmk2U2ctd0FVWGxBZ1NGWmdaeTB1dm9ia1FKZGtHYWlNZ05mUmlDVWY0TUVpN0tyMVZEeEdabTViUmVoRUZaa0dxX0k?oc=5",
+        "source": "Google News",
+        "published": "2026-09-09T23:20:59.000Z",
+        "summary": "Anthropic reveals fourth likely crime committed by its AI The Register"
+      },
+      {
+        "title": "Anthropic discloses fourth AI hacking incident missed in earlier review - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOaU1ZZ0ZRWnBaSnRlakoxVTU1SE9aZTEySkNZU2N2eU5XWG9remJKT29feUVoNlhhQVpfWnNFd1NKZ0xnb3lobTExTXE5dXZud0tCbGVLMzR4Y0NFRkRRUUlnWUllbjVTcXBWeHJzMDJVamFBQjJveC1PNThKSGUzNlRfUlVEVkJPbHhtendZdXdsSmdva0RvT3NidFdSb3BWSmd6R1lFb1NxYXdjR0xKeVVnZWY4c3JlbHlycFhkcXlmQ1Jv?oc=5",
+        "source": "Google News",
+        "published": "2026-09-09T22:18:17.000Z",
+        "summary": "Anthropic discloses fourth AI hacking incident missed in earlier review Reuters"
+      },
+      {
+        "title": "He Quit a Major Tech Company Because He Thinks It’s Risking Human Extinction. We Should at Least Hear Him Out, Right? - Slate",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPOUx3TENaMjUwOUdEaXQwUXlLaTZydFQ5bmZsTHBLOXhYQnpQenQzQlJMQ2xyajdtN0c0VW5odGQ2bnhOdEVBSVVxS1JwcVRCbkVLUl9EN0hGcDA1MmM2UkRGbDJsWHlKRHFMRkViYngyN3BqR1E0T1c5NDNVb0FRSEdiWnpiRi1VbW4xU0FvbjZLZ1Q0dy1jamdOTUFwMDVIeEpKTlNHbk1NQzJKTVl6UGhZNG1NUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-09T22:18:00.000Z",
+        "summary": "He Quit a Major Tech Company Because He Thinks It’s Risking Human Extinction. We Should at Least Hear Him Out, Right? Slate"
+      },
+      {
+        "title": "Anthropic reports fourth cybersecurity incident with early version of Claude - WTVB",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNOXZ2Q2lWcGVSQ2xlZmEtLUhaOXpSWFo4VGViZjhTbnR3SkdpV2lwdTJmcl85OTFtbUd5YV91UEhBS2wxd01MSGRVYTlHeXRVNjRNWjd4RHlOZEE1SFgxRlBjYWdTWk1QUUhna0NsNHg5VDY4eGtXaEhiZTNMWHB6QVpEMkJ1Y2tyQUdYdXItY3Y5QV9QNUloWnQ1TmJJb0RvSFNzZWdWOHhZQ1U?oc=5",
+        "source": "Google News",
+        "published": "2026-09-09T20:57:20.000Z",
+        "summary": "Anthropic reports fourth cybersecurity incident with early version of Claude WTVB"
+      },
+      {
+        "title": "Anthropic researcher quits, calls AI an existential threat to humanity - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE8tengyUVFUb0w0X2lha3NqWXhWWGM3bGpfMENGY1NOU3UzREtoOXJvbXBjLXc3VmJLUlMxSWF1a0VOWXRpRFZoaVJEbVBZUGg2bHNjTmVGRTB2SEVSd3Y1Qkt3VkFSaUdOX3psdjVUOXNVc3ZSZmpJ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-09T20:48:45.000Z",
+        "summary": "Anthropic researcher quits, calls AI an existential threat to humanity Mashable"
+      },
+      {
+        "title": "Anthropic reports fourth cybersecurity incident with early version of Claude By Reuters - Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQWmFIb0tXNWJtSjBvSm0wLU5ZaUdXQzNiRk9nM3pQVW5mWWxOdlh5dURpcWluc1U2ejlDb1FFTThCcUh3YnliNnpuWlp1Rndjd01lZ283S21mTzJiNGVlT0l1RGF1T3ZCVDU1WldxZC1KTnNzUGdzMVA0V0l3Mmw0cXJFM3JIUzVQQW9ESHFja1MyZG1rNDFsVUpwMnVjRWpQZlBkRVZpekhDU043dFc3RkJlU3dsUy1abDNPZ28talU5aWd3WjhVU2pvNGxSdw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-09T20:36:43.000Z",
+        "summary": "Anthropic reports fourth cybersecurity incident with early version of Claude By Reuters Investing.com"
+      },
+      {
+        "title": "He Helped Build Powerful AI at OpenAI and Anthropic. Now He's Afraid It Could Kill Us - Time Magazine",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE0temJ5Q1lqZzdnLXdGOU9GcjdyTWdxcEtUM0QtNTcwQjR6aXBvRzVyTVRobkdGZmhXWDNQMXlabGVxbktEa0lyUm9CaVEwTXU2eVphbkRuUG1CWFl2VEFSaGdQck1EVDFSaHJrN0FOZ2pnc1AwNmpB?oc=5",
+        "source": "Google News",
+        "published": "2026-09-09T20:21:30.000Z",
+        "summary": "He Helped Build Powerful AI at OpenAI and Anthropic. Now He's Afraid It Could Kill Us Time Magazine"
+      },
+      {
+        "title": "Six Chinese AI firms accused of aggressively copying US frontier models",
+        "url": "https://arstechnica.com/tech-policy/2026/09/six-chinese-ai-firms-accused-of-aggressively-copying-us-frontier-models/",
+        "source": "Ars Technica",
+        "published": "2026-09-09T20:06:28.000Z",
+        "summary": "The United States has now named six Chinese AI firms accused of waging industrial-scale attacks distilling US frontier AI model capabilities and perhaps sparing billions in Chinese development…"
+      },
+      {
+        "title": "Anthropic reports fourth cybersecurity incident with early version of Claude - Yahoo! Finance Canada",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNVDNYS0lWQ0xGQUhzdWxVSnM0U0ZqYWZMMnBWVHpxZEpBQWNhYWJMd3FQSzR1clZQRHFDRFhhc3dJYW1GYmRoZk5vbnp5b3hIUGRzaTNrdUhzVVhTWnVpYTE3cVctZmZyMk51cnpRZ0xLVjZPZmVSalFhQkY1TVljaDJFTElLSWpNSlRuR1FmYWNIaXlGdXJ1bVk4OUk?oc=5",
+        "source": "Google News",
+        "published": "2026-09-09T19:48:42.000Z",
+        "summary": "Anthropic reports fourth cybersecurity incident with early version of Claude Yahoo! Finance Canada"
+      },
       {
         "title": "Anthropic adds Fable 5.1 to Claude for Government - FedScoop",
         "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBkcWtJeGJXQkgxQTVXbE14SXdZV0haQzM1UUNkZzN5MjlxSVYtMC1NZnAzbk5PVDdtWlZXVjJjVk03ZDd3N2l6a2JfTDhlZW9Bak56YU9MMTZ0UTZpWDFaWEh1WDhEZTdiVDhkT1ZVSTV4MmRQd2I3RmhTNnI?oc=5",
@@ -153,11 +216,11 @@
         "summary": "Anthropic adds Fable 5.1 to Claude for Government FedScoop"
       },
       {
-        "title": "Anthropic reports fourth cybersecurity incident with early version of Claude - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQV05ubGR6VFp0NkwxUm1wV3YzWWY5VU5fU3U3azdOMU5UbGg5TVpVSzl1YnQtdFViZ2RkYjF1R2NTYUFnRnF3a3dCOVhrdzVHajFyYTdndW42SWs0THEyOGhKTGJsV1pPd3RPMnlmTWUyZkM1TmxHdW9lSXJiNTY0Z29EVnRINXQ4Y0w4UWpFYlN3clpuUHprMm1zRkk3cGNTWTJoNmpOYw?oc=5",
+        "title": "Anthropic discloses fourth AI hacking incident missed in earlier review - CNA",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNVNaVkFSbVBPYU45TjV2Z3hGRjIweFJDOXNQTERndWNTZWZTNVlBb2hDa3ozMGdCem1SNVJzU1ViaXBWQ0NCSHl4UjhJOEZIa0xWQ3drbUw3bTgtTG93UU00elBiQktDYjVyWFVyOWl4Nkpac0pDeDl6X055b2dLLUl5bWJ6VWhzdnNBREFGclRXWkZQTVNLaGtoSi1JNXJVbTJsbG55TGhZcnMwbl94NWZrWmpydy01alJ1Tg?oc=5",
         "source": "Google News",
         "published": "2026-09-09T19:40:11.000Z",
-        "summary": "Anthropic reports fourth cybersecurity incident with early version of Claude Yahoo Tech"
+        "summary": "Anthropic discloses fourth AI hacking incident missed in earlier review CNA"
       },
       {
         "title": "Anthropic reports fourth cybersecurity incident with early version of Claude - TradingView",
@@ -167,18 +230,18 @@
         "summary": "Anthropic reports fourth cybersecurity incident with early version of Claude TradingView"
       },
       {
-        "title": "Wave of AI-Driven IPOs Expected to Accompany Anthropic’s Listing",
+        "title": "Anthropic Researcher Resigned Because AI Could Kill Us All. Can It Really? - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPd0UxT2lHQUdxX1NTRnJ4d09nY0Znczg5TFNoVDN6S21pOGlHTDdOdGVFSlhUQWt0WVdzZzJtdHIyTXFaem95QkhsN1d2YmtZanl6aTUxbnhGLUctRTRMY19IcGpkc2g2dG9TT01PLW5LYWVEYzVKdE9WTTVyTUlzamZhdkJDT05VOWo1Q1J3Uno0Q25Zc0cwRURfYWhVZw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-09T19:37:59.000Z",
+        "summary": "Anthropic Researcher Resigned Because AI Could Kill Us All. Can It Really? Yahoo Tech"
+      },
+      {
+        "title": "AI-Driven IPO Wave Set to Accompany Anthropic Listing",
         "url": "https://www.bloomberg.com/news/articles/2026-09-09/wave-of-ai-driven-ipos-expected-to-accompany-anthropic-s-listing",
         "source": "Bloomberg",
         "published": "2026-09-09T19:35:04.000Z",
         "summary": "With the Labor Day holiday — and summer in the US — now officially over, the traditional push to the end of the year in the market for initial public offerings is on."
-      },
-      {
-        "title": "Anthropic researcher quits, calls AI an existential threat to humanity - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE8tengyUVFUb0w0X2lha3NqWXhWWGM3bGpfMENGY1NOU3UzREtoOXJvbXBjLXc3VmJLUlMxSWF1a0VOWXRpRFZoaVJEbVBZUGg2bHNjTmVGRTB2SEVSd3Y1Qkt3VkFSaUdOX3psdjVUOXNVc3ZSZmpJ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-09T19:26:17.000Z",
-        "summary": "Anthropic researcher quits, calls AI an existential threat to humanity Mashable"
       },
       {
         "title": "Anthropic discloses fourth security incident with Claude AI model By Investing.com - Investing.com India",
@@ -202,11 +265,18 @@
         "summary": "Anthropic reports fourth cybersecurity incident with Claude AI model marketscreener.com"
       },
       {
-        "title": "California launches AI assistant to help residents navigate state services - StateScoop",
+        "title": "An alignment assessment of recent cybersecurity incidents - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQOFZuQXh2LWp1d0NoNDQ2cHdrTktoZ0dIdDUyeEVrSGVyWDBzT3dsV3lhelR6RXhtYy03MTNSYVlya2hSZm1MMHVkZVFMeEt4RDFJM0Z2TW9SRlFDYTM5eGhxU2YzTWNJOU8yWWktWjU5Y0FUeDdLV0lfdnJ2SW9uZE0zOFFXZw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-09T19:13:44.000Z",
+        "summary": "An alignment assessment of recent cybersecurity incidents Anthropic"
+      },
+      {
+        "title": "California launches AI assistant to help residents navigate state services - statescoop.com",
         "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPQVJINlNLQVhKdXlmWFhoSzZ4c3p0TzZmN0gweXRrMVdxR0pOaXpJbVBEdmh5Uzl0V3FDV0pKYng3TnBQM2ZISEhzam5ZWHZzTWEwS1pCWXcwWlVWa2hHR1gwSUhaTVZWcVgzQWs3TDJUUjI5dC1XVHZYenIwdUw2MXpwbHE4T1BCa3V2RDJuZ1FLbFhTUURVa2ZuUEV4ZzQ?oc=5",
         "source": "Google News",
         "published": "2026-09-09T19:03:45.000Z",
-        "summary": "California launches AI assistant to help residents navigate state services StateScoop"
+        "summary": "California launches AI assistant to help residents navigate state services statescoop.com"
       },
       {
         "title": "Awaiting Anthropic IPO, Chime Makes 'Strides,' Bugatti Deal | Bloomberg Deals 9/9/2026",
@@ -223,6 +293,21 @@
         "summary": "Anthropic Warns Stolen Logins Are Draining Paid Claude Subscriptions Yellow.com"
       },
       {
+        "title": "An Anthropic safety researcher resigned with a warning about AI to co-workers on Slack - NBC News",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPcl9NLU1IYjdjTDk1VDM1blJFMkRuMnJSSlFqbkowZUtFVjNyMzZ3SjBGSTVqR2gzSWYzR0daNms4OG84aGNmU3Y2d0ZvS2ZSRnU5WkQwdkxJaTVtUWl4Y1JmSEJybEkwWk5ybWoxb0VMTEFObFFVdGs5NExkYkJaeFFPaHpuTnJESWFCRW1lMGVhX29jZGlpeFRYTzFqNURKbzM3Q2lRR1I5VmI4d0duMkVWbDduaDMwdlJMTw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-09T18:18:22.000Z",
+        "summary": "An Anthropic safety researcher resigned with a warning about AI to co-workers on Slack NBC News"
+      },
+      {
+        "title": "Show HN: Self-hosted company OS, Claude Code and Codex agents in departments",
+        "url": "https://github.com/OtoDock/oto-dock",
+        "source": "HN · 35↑",
+        "hn_id": "49630606",
+        "published": "2026-09-09T17:57:55.000Z",
+        "summary": "Hi HN, I am Dimitris. \nThis is a company OS that I built and use to run my business and anyone can install it and self host it for free. Think of it as Claude Code, Cowork and…"
+      },
+      {
         "title": "Anthropic Employee Quits with Warning That AI Could ‘Kill Us All’ - People.com",
         "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNVUJ5TW05NXd2ajNrUjA1US1IVFZ6R0FjajZNQWk1NmVTbEl2aklreXJHM1dtS19oWlVHbFdyWmVfcHZhYkFjeTlMUjIzdnFWRURUSEtxMlV4Z3dnSW1uU2pYTk9yRTROTlNFNEtJRllhMnloXzdQX3VDcFI0S1NDN3BhXzlXeFZKVzV6ZWQ5Mzh0Q21jcjJtTDdOMWswY1U0NS1vdmEzN3Q3eUh4Nl9RS09Ha1I2OWwzOXVMOWM2Uk1PUVlWSS1SZ0NPMUpmOWtVOFRYM1ltTQ?oc=5",
         "source": "Google News",
@@ -230,98 +315,11 @@
         "summary": "Anthropic Employee Quits with Warning That AI Could ‘Kill Us All’ People.com"
       },
       {
-        "title": "Could AI wipe out humanity? Anthropic researcher says the risk is greater than 10% - TheGrio",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPcy05NVctX2F2UjN1LTNPeER6X2xxYWo3Z3BzR2NJUmlzNnJya0tjcmtBY2pHOTlVXzhGU004LXVXci1vNktLdDFOeGhPQlc1R0VlNTNyMnlrUF9GSzQzTEtBbXQ0dWVQMGh4N1dxcmN2Qmc5bDY4cF94UGhTb2xzTjR2MFg?oc=5",
-        "source": "Google News",
-        "published": "2026-09-09T17:32:19.000Z",
-        "summary": "Could AI wipe out humanity? Anthropic researcher says the risk is greater than 10% TheGrio"
-      },
-      {
         "title": "Exclusive | Anthropic Researcher Quits Over ‘Out-of-Control’ AI Fears - WSJ",
         "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNNkJNMUhyUzQ3M1FsRFZMcUhKMGFFeFpsdnJaVzM4T2duWVVFYTk4ZUpXN0dRemFMUjZ3bC1CZ29ETjF4dWlScEQ5UVZDYVhLOUt0YVVmV1JfdjVoZWVpcXVyTFhDdjNTN0NIc2h6bXdRbkZDek5RX3poR0JkRE5XdG55ZFFJRGNqRWllSzllQk56LWJHYURn?oc=5",
         "source": "Google News",
-        "published": "2026-09-09T17:27:27.000Z",
+        "published": "2026-09-09T17:37:00.000Z",
         "summary": "Exclusive | Anthropic Researcher Quits Over ‘Out-of-Control’ AI Fears WSJ"
-      },
-      {
-        "title": "Anthropic researcher quits with a warning: Self-improving AI could \"kill us all\"",
-        "url": "https://arstechnica.com/ai/2026/09/anthropic-researcher-quits-with-a-warning-self-improving-ai-could-kill-us-all/",
-        "source": "Ars Technica",
-        "published": "2026-09-09T16:59:40.000Z",
-        "summary": "When a prominent researcher quits a job at a frontier AI lab these days, it's often to pursue a new startup or protest a new business model . But AI researcher Jacob Coxon is using his departure…"
-      },
-      {
-        "title": "AI researcher accuses former employers Anthropic and OpenAI of 'gambling with our lives' - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdjBXd2VOLXRXZUZHdHJSODNYRTcwN2VTS1lLcTlZWkJZY1RnSXU1SHpZV09NMzAyYnJOcXYxSUV1TUlRRmI1UWVJSnQya3ZMLXhqVnk3SGdGR283M3BBUFBBVkdkQmlJd1Zjb3Y1SmxSdm5JLU5qclFwRzIxN0EzVHlSZkpQM3R5YzlWbUs1Sl9nMUItNHpBbkJSNA?oc=5",
-        "source": "Google News",
-        "published": "2026-09-09T16:24:42.000Z",
-        "summary": "AI researcher accuses former employers Anthropic and OpenAI of 'gambling with our lives' Yahoo Tech"
-      },
-      {
-        "title": "Anthropic Is Building a Predictive Surveillance System to Monitor Activists",
-        "url": "https://prospect.org/2026/09/09/anthropic-artificial-intelligence-surveillance-system-monitor-activists/",
-        "source": "HN · 244↑",
-        "hn_id": "49628704",
-        "published": "2026-09-09T16:01:41.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Ex-Anthropic researcher’s exit ignites fresh alarm over AI dangers - TribLIVE.com",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPQW9oSDYzcUhVRENqRE9iQXVSajJQa3ZRUFU1enM4bGFYTFY1OGVBM0x4WWc4dVl5WUxHRUVpbzA5cjZSSWdONE9IWjFSS3I2QmlETUZLdXBERXJuZ09hcW9ZMVh2ZDNrbmxQYzZfSUJuNUhibHVMYTJjN0c5aC1peHcxUDdMU3dzOWxUczkyM04zWmUxWE9wY3pUN3RuWTFQVURvLVVXVTJtZWc?oc=5",
-        "source": "Google News",
-        "published": "2026-09-09T15:58:12.000Z",
-        "summary": "Ex-Anthropic researcher’s exit ignites fresh alarm over AI dangers TribLIVE.com"
-      },
-      {
-        "title": "Better AI code comment detector",
-        "url": "https://entropicthoughts.com/better-ai-comment-classifier",
-        "source": "HN · 35↑",
-        "hn_id": "49628454",
-        "published": "2026-09-09T15:45:43.000Z",
-        "summary": ""
-      },
-      {
-        "title": "LoanPro and AllCloud Launch Claude-Powered AI to Slash Loan Servicing Call Times by 15% - ffnews.com",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSFFXa2s5WHZTX19nNUZBR0t0d1NQS3BDalowcUgtV3hxVWhCUEpHbXEtZ3VUU2JlekphV0hwc2pKamVtazJFZVQyWkV2dURXTDNXMWhkNElCS1o2VEZtYzA5OU9pcVRmTGJCOGhOVkgyTjBfUjZZa0dHY2Zwamp6TUtYalp6cFd1bkh5WVp3aF96Rld1cU8zWWl6cFJwY0dPc0FySXRPSU8yLUFHNjBiODY0QQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-09T15:34:58.000Z",
-        "summary": "LoanPro and AllCloud Launch Claude-Powered AI to Slash Loan Servicing Call Times by 15% ffnews.com"
-      },
-      {
-        "title": "Anthropic researcher believes more than 10% chance AI 'could kill all humans' - BBC",
-        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB6WDZoOFRnTjQ5WW5vMUJKeThhbUUyUTlaeXdKbUhoNE5WNDhnVjhmM080N3p3ZFJfSm9ncUZtblZDRm1YU1hYbjBZZ3ZXNkRjSmNBUmdTa0tCZw?oc=5",
-        "source": "Google News",
-        "published": "2026-09-09T15:34:09.000Z",
-        "summary": "Anthropic researcher believes more than 10% chance AI 'could kill all humans' BBC"
-      },
-      {
-        "title": "What Exactly Was Anthropic’s AI Breakthrough in Hard Math? - mindmatters.ai",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPaEhHd2tpYmNOUzJIS0VlZVVteDVmbW1rdlJaSktUZ0IyRVo4czFUQkFNQVk0VV8zU21JMUZqamtOQk9IWTAzYWc4aUxVcVBOdjB0WmlwOU1XOVpZT3BZeEtRSS1RSzlURHlBNlNPekx6aHhZX2o5XzdoS3Q4Z1pNMC1HdHJVc21CVHp6Z3RUQVZWQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-09T15:18:12.000Z",
-        "summary": "What Exactly Was Anthropic’s AI Breakthrough in Hard Math? mindmatters.ai"
-      },
-      {
-        "title": "Anthropic researcher says more than 10% chance AI \"could kill all humans\"",
-        "url": "https://www.cbsnews.com/news/ai-kill-humans-anthropic-researcher-more-than-ten-percent-chance/",
-        "source": "HN · 42↑",
-        "hn_id": "49627887",
-        "published": "2026-09-09T15:10:39.000Z",
-        "summary": ""
-      },
-      {
-        "title": "‘Gambling with our lives’: Anthropic researcher quits, warns against self-improving AI",
-        "url": "https://techcrunch.com/2026/09/09/gambling-with-our-lives-anthropic-researcher-quits-warns-against-self-improving-ai/",
-        "source": "TechCrunch",
-        "published": "2026-09-09T15:02:47.000Z",
-        "summary": "Anthropic researcher Jacob Coxon resigned over AI extinction fears, calling for pacing agreements between labs."
-      },
-      {
-        "title": "‘Gambling with our lives’: Anthropic researcher quits, warns against self-improving AI - TechCrunch",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPSno0NFM4UmFYa1FUdWpYUWRwdlZuWXFGUEU5dHBNYWFnZkZvZ2FUclVNQXU5ZDFDVzZXQVFCQnJSZjRUZW5ZcHRGV2dIZUlldkZ2WE5iRFNMRWRFOThvMjNTS2VhQUxpTGJEd2MwLTU0bVN6T3ZNOGFtbVltVEZzajcyZXpfenRrMTQwSWNqZDdpd2FXbVBveWFJT1NfMjBSTzlZdi1YNkswZzdxY0VTVlY3eHJ1U0c2?oc=5",
-        "source": "Google News",
-        "published": "2026-09-09T15:02:47.000Z",
-        "summary": "‘Gambling with our lives’: Anthropic researcher quits, warns against self-improving AI TechCrunch"
       },
       {
         "title": "Claude Fable 5.1 just dropped and I can't believe it...",
