@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T19:55:44.679Z",
+  "generated_at": "2026-09-13T21:53:40.704Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,14 @@
     ],
     "news": [
       {
+        "title": "Claude Fable 5.1 Solves the Cyphral Distich, a 370-year-old cipher",
+        "url": "https://www.vals.ai/blogs/fable-solves-cyphral-distich",
+        "source": "HN · 52↑",
+        "hn_id": "49688695",
+        "published": "2026-09-13T21:06:13.000Z",
+        "summary": ""
+      },
+      {
         "title": "Trump and Mike Johnson think the AI industry is overreacting",
         "url": "https://www.theverge.com/ai-artificial-intelligence/994441/trump-mike-johnson-ai-industry-overreacting",
         "source": "The Verge",
@@ -176,17 +184,17 @@
       {
         "title": "David Sacks: OpenAI and Anthropic Don't Need Regulations to Pace Frontier Models",
         "url": "https://twitter.com/DavidSacks/status/2098973625252708460",
-        "source": "HN · 142↑",
+        "source": "HN · 203↑",
         "hn_id": "49685991",
         "published": "2026-09-13T16:52:33.000Z",
         "summary": ""
       },
       {
-        "title": "DeepSeek And Moonshot Passed Off Claude Answers As Their Own, Anthropic Says - yellow.com",
+        "title": "DeepSeek And Moonshot Passed Off Claude Answers As Their Own, Anthropic Says - Yellow.com",
         "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1DcTFqVlowYkp0V1ZvS05lWEM0V3JIUW0tOWtyU3RHcXRVWEVQVHZFSnpVUEU3SlRyWnNhWGZBQVB1OEVYaHBYWm44cUdZdXZ5YlBHYUFHVGV4b0hYRnpqMUxjX0RtcWs?oc=5",
         "source": "Google News",
         "published": "2026-09-13T15:15:21.000Z",
-        "summary": "DeepSeek And Moonshot Passed Off Claude Answers As Their Own, Anthropic Says yellow.com"
+        "summary": "DeepSeek And Moonshot Passed Off Claude Answers As Their Own, Anthropic Says Yellow.com"
       },
       {
         "title": "A famous 129-page proof became 13 million lines of code — thanks to Claude - TechRadar",
@@ -196,6 +204,13 @@
         "summary": "A famous 129-page proof became 13 million lines of code — thanks to Claude TechRadar"
       },
       {
+        "title": "Anthropic blocks Claude accounts over potential biological weapons risks - The Daily Star",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPQU5JVTRadE5ON2JkSWJZNEROV2RvVnFfMDY5a21WTmpQRnhXUEtaTlNIMnU0c2tPWVhtbGVnT2lWSVdaX1FzYlZtanVoUjdZZjd3WUdJZW9UMXA5V3dCcVFDTGp4WmIxSGQtRzNXZVNvZ2dGSUs0SVJVZkZqRzE0Y0lraUM5MHB4U3NnU1ZqcmRJYWtFUzgyYWRfQ25EWmF2NFlkZHBuYWtudWlWcVNndmwyMGt0alRZZ0dmSzhKRU05UDdEa1h3OWVn?oc=5",
+        "source": "Google News",
+        "published": "2026-09-13T15:04:54.000Z",
+        "summary": "Anthropic blocks Claude accounts over potential biological weapons risks The Daily Star"
+      },
+      {
         "title": "Russian SVR Hackers Used Claude AI in Cyber Strikes - Kyiv Post",
         "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1Fdmpqa3BjR0xpOC1yQ1FNanhwWGVJRWo1SUw4NFJCNE56SDFFVU9LUExNM1V4LVlrbE1XbjEwN0RIcTRrOG4wMWtMVQ?oc=5",
         "source": "Google News",
@@ -203,26 +218,12 @@
         "summary": "Russian SVR Hackers Used Claude AI in Cyber Strikes Kyiv Post"
       },
       {
-        "title": "Anthropic blocks Claude accounts over potential biological weapons risks - The Daily Star",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPQU5JVTRadE5ON2JkSWJZNEROV2RvVnFfMDY5a21WTmpQRnhXUEtaTlNIMnU0c2tPWVhtbGVnT2lWSVdaX1FzYlZtanVoUjdZZjd3WUdJZW9UMXA5V3dCcVFDTGp4WmIxSGQtRzNXZVNvZ2dGSUs0SVJVZkZqRzE0Y0lraUM5MHB4U3NnU1ZqcmRJYWtFUzgyYWRfQ25EWmF2NFlkZHBuYWtudWlWcVNndmwyMGt0alRZZ0dmSzhKRU05UDdEa1h3OWVn?oc=5",
-        "source": "Google News",
-        "published": "2026-09-13T14:56:15.000Z",
-        "summary": "Anthropic blocks Claude accounts over potential biological weapons risks The Daily Star"
-      },
-      {
         "title": "Houthis used Claude Code to develop missile guidance software: Anthropic",
         "url": "https://clashreport.com/world/articles/houthis-used-claude-code-to-develop-missile-guidance-software-anthropic-s52mnx4pwpo",
-        "source": "HN · 85↑",
+        "source": "HN · 89↑",
         "hn_id": "49684266",
         "published": "2026-09-13T14:15:40.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic’s demand for AI slowdown is dubious at best - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPamJUeGVmUnNoRjFDLURiMktyQlh1UW15bXp1N09tOGw3X2h2alViamp6WmxsZmhKVXZKSmUxTnlNSFNMNUcxRkVvV2JLSW9vVGNrS3poU3oyYnMwZ3NtNzR5TXJ2WFE2V2RtUGxtWm5BM25OT0xqbjhxa3pTXzl4VXA2SktQQmZWNG9XeWxxR2J5SU9McmZVQw?oc=5",
-        "source": "Google News",
-        "published": "2026-09-13T12:49:28.000Z",
-        "summary": "Anthropic’s demand for AI slowdown is dubious at best Yahoo Tech"
       },
       {
         "title": "5 Reasons Why Users Ditch Claude - bgr.com",
@@ -274,11 +275,11 @@
         "summary": "Anthropic Reveals 4th Claude Cyber Breach [2026] shattered.io"
       },
       {
-        "title": "Iran-linked groups used Claude to target US Navy, run propaganda: Report - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNNWFNNHB0bzBsTzdCZmZTTnlRSkdsZjRIOXB6MG9UdFVPNWxDdzRDUkVCcl8tU2RiemNoY3p2VXNWNWxDOG9lV3BsT3RaajhMbEJDdWlCQ2RUVzRSMHhqTjI0czQtbHFwVzNHb3lkbVBlRmNZU1JVWUpnQ2VPQVdmSGdfWUdDQ1I2U2g4QU1HRHRlcV9aMC1oSFJyc3V2YUM0UEdsNFFpTnh1SFVFZkdESGdjV2pMbnEwX3l1MEdPVDVrdzlObnQxZ2R3OUZIVzBSenBZaFJiTkx6SUVncUJvbEp0NmLSAeoBQVVfeXFMTU9WSlVHWFQ5Zm52TjJjZ2JnTDdsS0pvT21iOW1iZ1Q3dVFJd1ljWm9EdzE0SThlWmEtM1g4eFQxV0hVcEtraklDNjMtT0ZxeGNNblNSMzc0VHRnWC1FOVhFa2ZyRFBvbXo5bGkxYjRHT096a1RLZ1J3bEhUMXMyYkNxdmRib29iaXhpOVJCWktXSm9kTEJtamNZSzhBYVhlYW01RGQxY3JxRDJkMVZlQ05pbUpJX0lva1NQa1I0MUsxNVd5bEN5cnpUdGt0R2Q1MTBFUzlXcjdKNmVRb3BXOWlOaDhVVW9OLWhB?oc=5",
+        "title": "Anthropic report: 5 ways Claude was exploited for war, spying and repression - Axios",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPN3UtUzlPZk9tWHZsV21qVFBnN1Y1dlhrM25jZl9sMmdPcWRMd1RTT2ctYzJ6NTl3MmVfWElNclhRYXVOWG02ZDdzVzJLZXBXbHNBclY1Vkt4ckJYVjVuTnNWRDdGMEt5dVdaa254U0FfX2M0LWJ5T2Jkd1dBWHhWN3piVQ?oc=5",
         "source": "Google News",
-        "published": "2026-09-13T08:58:00.000Z",
-        "summary": "Iran-linked groups used Claude to target US Navy, run propaganda: Report The Times of India"
+        "published": "2026-09-13T08:00:30.000Z",
+        "summary": "Anthropic report: 5 ways Claude was exploited for war, spying and repression Axios How Anthropic says Claude was used for weapons, spying and cyber operations reuters.com Anthropic Says Yemeni Cell…"
       },
       {
         "title": "Anthropic’s AI Warning May Weigh on Chips, But Trade Seen Intact",
@@ -286,13 +287,6 @@
         "source": "Bloomberg",
         "published": "2026-09-13T08:00:00.000Z",
         "summary": "AI executives’ calls to slow development of the technology are likely to weigh on chipmaker and supply-chain stocks in the near term, but will probably have limited long-term impact as spending on…"
-      },
-      {
-        "title": "EXCLUSIVE: Nvidia in talks to invest in Anthropic’s mega IPO, sources say - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPbmduYjZNYlh4TmVDd3dMTzZmU21ud1Q5WVVaYXBOM2hUQ201U2tjeDhoWHd6ZjhlQzdtUWxiNmFibkRpc2VlcmxjbWMzTWljZ0ZZSkF6VHFPWnJVUFQwc2g4RDNtb1FCWjN1R3BBcFRzUHkyTXJiRXZpa0NxV29IWFc1LV9lUXh0bXc3TWNrSHZhT0lPTVU2dEswYWhSVUw2SzFkRkVmSHU0S3c?oc=5",
-        "source": "Google News",
-        "published": "2026-09-13T04:38:18.000Z",
-        "summary": "EXCLUSIVE: Nvidia in talks to invest in Anthropic’s mega IPO, sources say Reuters"
       },
       {
         "title": "Iran regime used Claude to expand surveillance of dissidents, Anthropic says - Iran International",
@@ -304,7 +298,7 @@
       {
         "title": "Anthropic CEO says AI swarm could 'take over the Internet' in 6-12 months",
         "url": "https://venturebeat.com/security/anthropic-ceo-says-ai-swarm-could-take-over-the-entire-internet-in-6-12-months-commits-to-ai-slowdown-plan",
-        "source": "HN · 45↑",
+        "source": "HN · 46↑",
         "hn_id": "49679685",
         "published": "2026-09-13T03:25:32.000Z",
         "summary": ""
@@ -322,6 +316,13 @@
         "source": "Google News",
         "published": "2026-09-13T00:54:28.000Z",
         "summary": "Russia Used Claude AI to Build Kill Drones [2026] shattered.io"
+      },
+      {
+        "title": "Anthropic C.E.O. Dario Amodei Calls for A.I. Slowdown - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQOE1BV1Q4UUYxLVRfaDNJVXVRbnNaQmdUMjBzbWJWRWtTcjlROWZqUjAtVGlob2NHVlB1NHVfRU5FY1dWT1UxR3RHakpVUTdzSGdvRmR2UFR2dzZxdHJ0ZXlMb0NsMVd1MDM1aUZ2VlpPeG9zSDZxRFpFWjNhQ0psM2RVYW8tM0ZKdTdDdG93?oc=5",
+        "source": "Google News",
+        "published": "2026-09-13T00:15:54.000Z",
+        "summary": "Anthropic C.E.O. Dario Amodei Calls for A.I. Slowdown The New York Times"
       },
       {
         "title": "Claude Fable 5.1 just dropped and I can't believe it...",
