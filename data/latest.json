@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T17:06:13.607Z",
+  "generated_at": "2026-09-13T19:55:44.679Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,49 @@
     ],
     "news": [
       {
+        "title": "Trump and Mike Johnson think the AI industry is overreacting",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/994441/trump-mike-johnson-ai-industry-overreacting",
+        "source": "The Verge",
+        "published": "2026-09-13T19:41:48.000Z",
+        "summary": "Yesterday, Anthropic CEO Dario Amodei published a lengthy open letter saying it was time to \"pace the frontier\" and slow down AI development. OpenAI's Sam Altman and Elon Musk both agreed, publicly…"
+      },
+      {
+        "title": "What’s behind the AI industry’s latest warnings of doom?",
+        "url": "https://techcrunch.com/2026/09/13/whats-behind-the-ai-industrys-latest-warnings-of-doom/",
+        "source": "TechCrunch",
+        "published": "2026-09-13T19:40:15.000Z",
+        "summary": "On Equity, we discussed the AI industry's latest debate about whether it poses an existential threat to humanity."
+      },
+      {
+        "title": "Anthropic Said to Choose Nasdaq for Much-Anticipated IPO",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-13/anthropic-said-to-choose-nasdaq-for-much-anticipated-ipo-listing",
+        "source": "Bloomberg",
+        "published": "2026-09-13T18:03:59.000Z",
+        "summary": "Anthropic PBC has picked Nasdaq as its listing venue ahead of a potential record-setting initial public offering, according to a person familiar with the matter."
+      },
+      {
+        "title": "Ex-Anthropic Employee Who Issued Dire Warning Likens AI To An Alien Species - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQcWktMHpQY25faUR2NTB5cndqSktRS3lhRjFqeVFzZHhiNUpPQjhhZ1BMdl9SZUZ4RGE5Ny1VUkRYMmt6N0lndk42N0dWN0FTTU1BQkZYQUR3UUtlZEF6QmVpeUFvTmJzSVpZSWRXbjEwcmszR0pOMlhqZ3N3TXAtdWJfMUR5WGI2cmpkbW5JRzZOLWZD?oc=5",
+        "source": "Google News",
+        "published": "2026-09-13T17:55:47.000Z",
+        "summary": "Ex-Anthropic Employee Who Issued Dire Warning Likens AI To An Alien Species Yahoo Tech"
+      },
+      {
+        "title": "David Sacks: OpenAI and Anthropic Don't Need Regulations to Pace Frontier Models",
+        "url": "https://twitter.com/DavidSacks/status/2098973625252708460",
+        "source": "HN · 142↑",
+        "hn_id": "49685991",
+        "published": "2026-09-13T16:52:33.000Z",
+        "summary": ""
+      },
+      {
+        "title": "DeepSeek And Moonshot Passed Off Claude Answers As Their Own, Anthropic Says - yellow.com",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1DcTFqVlowYkp0V1ZvS05lWEM0V3JIUW0tOWtyU3RHcXRVWEVQVHZFSnpVUEU3SlRyWnNhWGZBQVB1OEVYaHBYWm44cUdZdXZ5YlBHYUFHVGV4b0hYRnpqMUxjX0RtcWs?oc=5",
+        "source": "Google News",
+        "published": "2026-09-13T15:15:21.000Z",
+        "summary": "DeepSeek And Moonshot Passed Off Claude Answers As Their Own, Anthropic Says yellow.com"
+      },
+      {
         "title": "A famous 129-page proof became 13 million lines of code — thanks to Claude - TechRadar",
         "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQNkoybFVIRHRMQU9pa1dtcUd4OGJMX3h3bEN1Q3BYOHdjWnpSNWR2eXoyNmdCSmRsNzdBNzdwckM0dHVGTHQ4enhmLXFjNUZvYlZLS0pnbkdGbzI3Wjl1NGQ5NDlEQkZhRXI3dTY0TUdKN0VzXzJHWnJDNDRZNnVDbEp2WXh5cXFUOHdFMFR4eVVMNklBZi16UGFXU2F4TlNxZFAwZWpZR0VpSzhHUUdyZ2tJWHV4RUZBQk1sc1AwY3BfdkVHd0k2c0NqTTRxS1lVNC16ckNJb08?oc=5",
         "source": "Google News",
@@ -167,12 +210,19 @@
         "summary": "Anthropic blocks Claude accounts over potential biological weapons risks The Daily Star"
       },
       {
-        "title": "Houthis Used Claude Code to Develop Missile Guidance Software: Anthropic",
+        "title": "Houthis used Claude Code to develop missile guidance software: Anthropic",
         "url": "https://clashreport.com/world/articles/houthis-used-claude-code-to-develop-missile-guidance-software-anthropic-s52mnx4pwpo",
-        "source": "HN · 71↑",
+        "source": "HN · 85↑",
         "hn_id": "49684266",
         "published": "2026-09-13T14:15:40.000Z",
         "summary": ""
+      },
+      {
+        "title": "Anthropic’s demand for AI slowdown is dubious at best - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPamJUeGVmUnNoRjFDLURiMktyQlh1UW15bXp1N09tOGw3X2h2alViamp6WmxsZmhKVXZKSmUxTnlNSFNMNUcxRkVvV2JLSW9vVGNrS3poU3oyYnMwZ3NtNzR5TXJ2WFE2V2RtUGxtWm5BM25OT0xqbjhxa3pTXzl4VXA2SktQQmZWNG9XeWxxR2J5SU9McmZVQw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-13T12:49:28.000Z",
+        "summary": "Anthropic’s demand for AI slowdown is dubious at best Yahoo Tech"
       },
       {
         "title": "5 Reasons Why Users Ditch Claude - bgr.com",
@@ -194,13 +244,6 @@
         "source": "Google News",
         "published": "2026-09-13T10:53:19.000Z",
         "summary": "Chinese Kimi K3 Brought Moonshot AI $1B in Revenue, but Anthropic Claimed Claude Was Used Covertly Incrypted"
-      },
-      {
-        "title": "Explosive report reveals new AI nightmare - News.com.au",
-        "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOZUZhR1ZlTTFFY2hTeFRQRkxjZnJqUTlYYjg1d2RVV0F5TzdJVVd0VGxEZjY4cVlRbk5Xa1Zxc0pBU21uTDVjeG0zdGZiNDRJazJUeXBKajRnLVpxSjNhTTQzSFRnbGJXcU5zcHBJdTh3cnktam9uVEFyVGxIU0hwa3poVlpxa0w1VHBDVlE0X2Y5MjBKdHJxRzdDd0NIeEI4ZlJHRGdPUGpHVXJFbjZDNTBseUQ1aW9hRkVVdzFLbVNnQ3lMTUFzc1RhcWFiLWlQWjdxWGxMamk0R0k3YkZFNlAtdTRqbzlTRzZJbGpxS1ZaODlhMG50VWplR1NBaEpvR0FscG9ZcWJaLVJHT2FmUtIBlgJBVV95cUxOSmdRNlBveTdHaVEwNEpTcUpTQ1lZRVgyRENqcWhQMlRqa3RZUDk0NHpVS0ItZmNtbDhpSTdqYzY1MHQ4TndldWZfUXdIbzhaUzEtS2Z2UDhGZVJyOXBFWnRNWENJd1RCVHlRTjliMGVGblMxWnhWMDJIaWFYdHFOTWY5UDhBTUExMzAtMkx5TllFcWtKLUtuSnRuaEVFbE0tM3BlSmdwbmVUeGZlLXBUM3h2UXA1aC14NUZUZUN2MEdxZTRKTlZ0cjhhTHR5R0xzTVhLMS1rQS0tSk15Nno2V0R2WURoVFhXWnMxQ1cyVDZZa2pnc29PNG5iTDlXRW9DR3U4bmNaUVk0WWJJR3ZWLVJJWFVRZw?oc=5",
-        "source": "Google News",
-        "published": "2026-09-13T10:34:28.000Z",
-        "summary": "Explosive report reveals new AI nightmare News.com.au"
       },
       {
         "title": "Anthropic wants everyone to take a chill pill at cooking worryingly powerful AI models - Digital Trends",
@@ -245,11 +288,11 @@
         "summary": "AI executives’ calls to slow development of the technology are likely to weigh on chipmaker and supply-chain stocks in the near term, but will probably have limited long-term impact as spending on…"
       },
       {
-        "title": "Anthropic’s Seven Misuse Areas—and Why Cases Were Not Typical - quasa.io",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRFU3cFZpVW5tVE1HemNESGw2eC04Mko1UzYxQW9RR3d5ZXA5Mk9fSUxCZ2M1cmlZYy02czB1blRRYUZ0TzhTU0NzRkZWRmxycnZFZzFnR01FRHZLTHUydlBEcnFGbk0za1JzMTl1RUNwbGw2ZWFzQmtWTVVlSjgwQ0pBOEJrbDZIUFN3aG5TUndENzJqRnRB?oc=5",
+        "title": "EXCLUSIVE: Nvidia in talks to invest in Anthropic’s mega IPO, sources say - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPbmduYjZNYlh4TmVDd3dMTzZmU21ud1Q5WVVaYXBOM2hUQ201U2tjeDhoWHd6ZjhlQzdtUWxiNmFibkRpc2VlcmxjbWMzTWljZ0ZZSkF6VHFPWnJVUFQwc2g4RDNtb1FCWjN1R3BBcFRzUHkyTXJiRXZpa0NxV29IWFc1LV9lUXh0bXc3TWNrSHZhT0lPTVU2dEswYWhSVUw2SzFkRkVmSHU0S3c?oc=5",
         "source": "Google News",
-        "published": "2026-09-13T03:54:43.000Z",
-        "summary": "Anthropic’s Seven Misuse Areas—and Why Cases Were Not Typical quasa.io"
+        "published": "2026-09-13T04:38:18.000Z",
+        "summary": "EXCLUSIVE: Nvidia in talks to invest in Anthropic’s mega IPO, sources say Reuters"
       },
       {
         "title": "Iran regime used Claude to expand surveillance of dissidents, Anthropic says - Iran International",
@@ -261,7 +304,7 @@
       {
         "title": "Anthropic CEO says AI swarm could 'take over the Internet' in 6-12 months",
         "url": "https://venturebeat.com/security/anthropic-ceo-says-ai-swarm-could-take-over-the-entire-internet-in-6-12-months-commits-to-ai-slowdown-plan",
-        "source": "HN · 43↑",
+        "source": "HN · 45↑",
         "hn_id": "49679685",
         "published": "2026-09-13T03:25:32.000Z",
         "summary": ""
@@ -279,49 +322,6 @@
         "source": "Google News",
         "published": "2026-09-13T00:54:28.000Z",
         "summary": "Russia Used Claude AI to Build Kill Drones [2026] shattered.io"
-      },
-      {
-        "title": "Anthropic Details Blocked Claude Biological Research Cases - findarticles.com",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNV2xlcVdGVGhiZDVMQTctNnRxZEdLd1dqSE9uZkxJQnFoeWg3RDlGNUVWNXVBa1FTdW8tX09tU0xqaExhS1NQM0hJVkM1Z2VJREVTRmtDeTJXSktqSjZncE4wZlRPcHRYRTMtRlpiYUFsUmtjRHZMUHVuYVpwa2h3a3NQY3ZUaGvSAY8BQVVfeXFMTXpfdWxwOWdmeS1LVFE5TUMtN0s1a1dXaVkzNjUwSE1Lb1RYVUtkbmZfT2hvaUIzaVZtOXM0RWRhUlhJUWZQeHh3dnFlZmJXMm5jOWhzakQ2U2thdlp3LWx1LW5mQVRRVGVvVHpPdWZmYlVnSC1GY3NYczRBTElGd3JJMlRKNDlMNGJyamFpb00?oc=5",
-        "source": "Google News",
-        "published": "2026-09-13T00:31:21.000Z",
-        "summary": "Anthropic Details Blocked Claude Biological Research Cases findarticles.com"
-      },
-      {
-        "title": "Anthropic CEO Dario Amodei says AI industry needs to give safety measures time to catch up - Boston Herald",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNQUFvSkdiWE02d015Slg5a0FYakJKZ0s3Y0IzLXhNQTBnMURXUzhKeG9xZU0tT0MzclNsdzlJNmN1ZExwZUwtSEpFNU8zSl96RW9qM3FmSnFCZ3dOLWNpVFU2a0ZLMFZpd3NhUER1QnV4d2NMZDltNkxaajFWZWpVOHJLNHl1TE43aktmRE43TkpXX1o3NjlRbzFkS3p4S3BSdVY4THlLR0hpS21wRDBqN1JFY0xELUMyLXlWeUtNNk9DOW5FYUJRYXpZaw?oc=5",
-        "source": "Google News",
-        "published": "2026-09-12T19:37:03.000Z",
-        "summary": "Anthropic CEO Dario Amodei says AI industry needs to give safety measures time to catch up Boston Herald"
-      },
-      {
-        "title": "Anthropic CEO outlines plan to slow AI development",
-        "url": "https://techcrunch.com/2026/09/12/anthropic-ceo-outlines-plan-to-pace-the-frontier/",
-        "source": "TechCrunch",
-        "published": "2026-09-12T19:34:44.000Z",
-        "summary": "Anthropic's Dario Amodei and OpenAI's Sam Altman seem to agree that it's time to \"pace the frontier.\" What would that actually look like?"
-      },
-      {
-        "title": "'Dario is right': Musk and Altman back Anthropic CEO on slowing AI down - Yahoo",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPMjk4TTdkdmFaRHVDUHBMXzJtZ25FWWJtVnRPYm15VlhFVmFydDRKZ2luM1loZEVoVjJEVHgyVk52bTZUVDA5ZkF2OS14M0g2WkNBZ2tqVDB6MGRFczZpN0V5WVladEMyT3FyeGRpUlN3dE9DRVZaamd3cXFQdFhuVmp3eGltRGwteF9YT2VsZ1FHWWFfM01TS1lzLVo2c1VIbDVNX1o0bG9STXdQSkd3b0l6YURLbGRxSmJMeUJR?oc=5",
-        "source": "Google News",
-        "published": "2026-09-12T18:21:44.000Z",
-        "summary": "'Dario is right': Musk and Altman back Anthropic CEO on slowing AI down Yahoo"
-      },
-      {
-        "title": "Anthropic CEO Says It's Time to Slow AI Model Advances",
-        "url": "https://www.bloomberg.com/news/articles/2026-09-12/anthropic-ceo-says-it-s-time-to-slow-pace-of-improving-ai-models",
-        "source": "HN · 48↑",
-        "hn_id": "49675247",
-        "published": "2026-09-12T18:07:07.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic says Iran-linked group used Claude to target U.S. Navy ships - Interesting Engineering",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQSk5rR0tjLXJubjZFcmUtSUd2NHR2V01TUUVnX21NaUc4MExyUU40RGdMbEFudUlnZlZYcFp6ZDdYbWNkV3djMl9NNmlOUTdXRndBQXo3Q0RHQUlPT3dJY05GYUZHMnhPMW1yQzN4TTctdU51dnREV3B3YURWcVZrODA4LVo4UDQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-12T17:56:00.000Z",
-        "summary": "Anthropic says Iran-linked group used Claude to target U.S. Navy ships Interesting Engineering"
       },
       {
         "title": "Claude Fable 5.1 just dropped and I can't believe it...",
