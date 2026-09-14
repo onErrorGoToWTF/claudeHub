@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T14:29:56.654Z",
+  "generated_at": "2026-09-14T19:58:22.767Z",
   "source": "Anthropic Academy",
   "base": "https://anthropic.skilljar.com",
   "courses": [
@@ -149,6 +149,13 @@
       "url": "https://anthropic.skilljar.com/ai-fluency-for-creative-work",
       "summary": "This course empowers creative professionals to develop AI fluency, making intentional, analysis-driven decisions about AI use in their creative practice while protecting what makes their work theirs.",
       "order": 20
+    },
+    {
+      "slug": "deploying-claude-enterprise-with-confidence",
+      "title": "Deploying Claude Enterprise with Confidence: The five decisions that shape your rollout",
+      "url": "https://anthropic.skilljar.com/deploying-claude-enterprise-with-confidence",
+      "summary": "Make the five decisions that shape how Claude works for your organization — Structure & Identity, Access, Governance, Spend, Visibility — and record them in the rollout plan you keep.",
+      "order": 21
     }
   ]
 }
