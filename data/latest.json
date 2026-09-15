@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T19:19:24.063Z",
+  "generated_at": "2026-09-15T22:29:33.857Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,18 +146,60 @@
     ],
     "news": [
       {
+        "title": "Trump Advisers Lutnick, Michael Meet With Anthropic Executive Over AI Safety",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-15/trump-advisers-lutnick-michael-meet-with-anthropic-executive-over-ai-safety",
+        "source": "Bloomberg",
+        "published": "2026-09-15T22:05:35.000Z",
+        "summary": "Senior Trump administration officials met Tuesday with Anthropic PBC’s top Washington executive to discuss artificial intelligence safety risks."
+      },
+      {
+        "title": "Anthropic Just Put Claude Inside Schwab and BlackRock. The AI Agent War Has Reached Wealth Management - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQc0xOSXo1enNVYTJheU9Yb2tORjZGTng4bmdDTDJFbmNwOG9QVWFqTi1RSVF3TVRKQXZFeHJqVmx3NllTTXFhd3pIcEVBQV9tcTZlVkljVTdUZEFaNm5iYUJZM2lIeFV5dEw5VDFNV25ZMmlheWFOeGZSRWQ4QVZwQVJBMjI3VVVNNFlqcjM1RnJfejNDNlBjZlhjaXY?oc=5",
+        "source": "Google News",
+        "published": "2026-09-15T21:59:57.000Z",
+        "summary": "Anthropic Just Put Claude Inside Schwab and BlackRock. The AI Agent War Has Reached Wealth Management Yahoo Finance"
+      },
+      {
+        "title": "Schwab deal with Anthropic limits Claude to read-only access - Citywire",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQZzJ1cUZJR3c3MHdLQWZMaWhLWUdkNlFRUDUtS09FUFQtTTJlbVhHV0VnME1mVmtoRFlEQkVaZURyYTNHREhQMVRONldCRHFwa2tRZmpOOWhnTHI0YjZtSjFydVBMRUR5TmNwZ1FkOUhNR3dHMVBXUGhWeWpRZ3RVMXR4M2FxVm1pckc4cE03TUdPeEVuQkcwYjVwMmdFVG4xSGF3N0xaSk8?oc=5",
+        "source": "Google News",
+        "published": "2026-09-15T21:50:22.000Z",
+        "summary": "Schwab deal with Anthropic limits Claude to read-only access Citywire"
+      },
+      {
+        "title": "Three weeks after Claude deal, Salesforce builds own AI model - Techzine Global",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOSXdVT0dYZFdnY05ETXZ4UEsxRGVQemVObHhZYWtzeGFhbHdnajBVN1dnMTJudmhHYTE1aE5jUXFMZ2FOejh0UlpXbDdWai1MWmtSMmQ4c3F0Tzc4dlE3OXM2UXIwX0JQVTlvVzdER21nWnJBbHUxb2hhb2d5WUZZRjNOeVBxTXpXdmJiaW9zMkRZQk8xVUQ1QXB1Z0VxaFlhaGtyWlY1cEp6V0Fi?oc=5",
+        "source": "Google News",
+        "published": "2026-09-15T21:39:06.000Z",
+        "summary": "Three weeks after Claude deal, Salesforce builds own AI model Techzine Global"
+      },
+      {
+        "title": "Anthropic, OpenAI Safety Push Risks ‘Regulatory Wall’ for Rivals",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-15/anthropic-openai-safety-push-risks-regulatory-wall-for-rivals",
+        "source": "Bloomberg",
+        "published": "2026-09-15T20:36:16.000Z",
+        "summary": "A new push by top artificial intelligence firms to coordinate with one another and the US government on AI safeguards threatens to make it harder for smaller companies to compete in the lucrative…"
+      },
+      {
+        "title": "Charles Schwab And Anthropic Bring Claude AI To More Than 16,000 Independent Registered Investment Advisors - Pulse 2.0",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0wUElJSS16a1d0UHg3R3ZuS3RjN3lxaGt3QVkwZXJ1ajZ5eTJmVzlGQ210bG5fR19IQWRTMnBWOEZrSDg3WVpWVVBjR2xwSi0welRWR0FjSWUtWkxGQWF0clBUbGFtYUZCaEYzTldLeVQxUVJmTDFvSHh6LWdDR1XSAYQBQVVfeXFMT09ZUVBiNWpYVUxYb0VZMXV0ZjNsd3lVT2x2RllzTWRId285RWdrbEQxcm92TmV6ekZrNUZENDVGejgxUU5POVhVNWtWVHZVSnBOcENWNzZOZ3hldGdTd1lDcjFyMlFqS1B6b015ZjBkaU9fX1FqclBnT1R4MzRLV3hKTE5Q?oc=5",
+        "source": "Google News",
+        "published": "2026-09-15T20:23:42.000Z",
+        "summary": "Charles Schwab And Anthropic Bring Claude AI To More Than 16,000 Independent Registered Investment Advisors Pulse 2.0"
+      },
+      {
+        "title": "Worried About AI Ending Humanity, Anthropic Is Hiring Someone to Help Dictate Terms of the End of Humanity - Gizmodo",
+        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPYXdaZnZnX3UyalJ0RjdaeXB3NFZ3N3NwanlRaG83aUxvdDJuWDlkandWQ0llZGZMcmJseUFLUlhlU3NGOGxUMTh5aE1sLTJadTdJNndYLUlNd1dJYjctRjNyaXl6Zllhc2diU2J0dHBfMmhtUVRCMWhjRjI0VWI4RTM2a0M4Qll6dzMyc0tpSnUtWmJrUk9Ga1VjWUxpUGZUSExYbVBlRG5EMGh0T3RQeDVUa0JoRUprNmhlZGtCWDBTdHlPWldmYnRuWG9uOHpQdXc?oc=5",
+        "source": "Google News",
+        "published": "2026-09-15T20:15:45.000Z",
+        "summary": "Worried About AI Ending Humanity, Anthropic Is Hiring Someone to Help Dictate Terms of the End of Humanity Gizmodo"
+      },
+      {
         "title": "Middle East confronts AI risks - Al-Monitor",
         "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPWWcwc2ctcGUzUnJodUEwTGsxSXdxb29VRm9PaS1UMGIzbjlVYUFtTC12bEFRUlF6UUExbFRrd1I2Q0g1WEJzS0FqY25zZTNtd3V6LWFxc0tMTE1PN3pzZ0hrZW4yRFNKbzd3QTgwOThTMTdIenlvRUlwSkhEdGNGNmNGeHdUZw?oc=5",
         "source": "Google News",
         "published": "2026-09-15T19:11:21.000Z",
         "summary": "Middle East confronts AI risks Al-Monitor"
-      },
-      {
-        "title": "Schwab deal with Anthropic limits Claude to read-only accesss - Citywire",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQX3MxQ3pBRUw4NjhYU051aUIyMkV4OGJZQ2pVd2hPRzNHektjMDRNb2lGTEthc1B1bnE3ZU1zelBjanp2U1JqaHRXZVEyczh6QzFqWGRTNDZKSUNhdi1jaWNWSTNab2FoclpDVDJXVWltUGVKVDBwQWl3YmxKMXIzUjlua1VBMWdUdnd5S2tmcTZ3MW5veUhXV1VfdTBPMDdpWnc?oc=5",
-        "source": "Google News",
-        "published": "2026-09-15T19:09:09.000Z",
-        "summary": "Schwab deal with Anthropic limits Claude to read-only accesss Citywire"
       },
       {
         "title": "Anthropic’s Tough Balancing Act Between AI Doom Talk and IPO",
@@ -167,11 +209,18 @@
         "summary": "The Claude maker faces a unique challenge, partly of its own making."
       },
       {
-        "title": "Anthropic, Salesforce CEOs Say Companies Need More Help Using AI",
+        "title": "Anthropic, Salesforce CEOs Say Companies Need Help Using AI",
         "url": "https://www.bloomberg.com/news/articles/2026-09-15/anthropic-salesforce-ceos-say-companies-need-more-help-using-ai",
         "source": "Bloomberg",
         "published": "2026-09-15T18:57:08.000Z",
         "summary": "Anthropic PBC Chief Executive Officer Dario Amodei and Salesforce Inc. CEO Marc Benioff said companies have just begun taking advantage of artificial intelligence tools and need more help to gain…"
+      },
+      {
+        "title": "Anthropic's CEO thinks AI agents could hack the internet. Experts aren't so sure. - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOdUQtQWIzcHN0Uy1fbjVONHBEQm1MbkFESFN4TnhFV3VnUnNmWmpHLVlUNGkzcmo0dVJ5V09tVGo3dU9DS2VvNkVlWWhRU2tyb2kybk9iX3RqRGhrdzJyME4ySVA3U0RRV3J0WlhKeFRIVGdkcy16Y2JqZ2tQNEUwaWg5dUt4d2gyVG9jY3FhWERWQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-15T18:50:14.000Z",
+        "summary": "Anthropic's CEO thinks AI agents could hack the internet. Experts aren't so sure. Yahoo Tech"
       },
       {
         "title": "Expensify Announces Integration With Anthropic For Claude For Small Business - TradingView",
@@ -186,6 +235,13 @@
         "source": "Google News",
         "published": "2026-09-15T17:25:00.000Z",
         "summary": "Rubrik Unveils Rubrik Code Guardian, Harnessing Anthropic’s Claude Mythos 5 to Red-Team Code and Prioritize Cyber Risks 01net"
+      },
+      {
+        "title": "Anthropic is in an all-out blitz to sell Claude to small businesses - Business Insider",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOWVE1Nmt3bng5ODJOVEdLTEl4QzRlMGN2OV85M0o1QkRzVDRHMGY0NlREaWtOeWhaYzlxejh5alBCVEtaRFNmaGgwbFg1WVVabXJHM2cyYmtMSjQwOHlTSXlLX2dMVHkxTFNxNi02X0Z0QmxfOHNiV0lyMUlZdVZkeDV0WXJLUEtqUWVORmxn?oc=5",
+        "source": "Google News",
+        "published": "2026-09-15T17:01:00.000Z",
+        "summary": "Anthropic is in an all-out blitz to sell Claude to small businesses Business Insider"
       },
       {
         "title": "Anthropic Puts Claude On Small Business Sales After 900,000 Installs - Forbes",
@@ -207,6 +263,13 @@
         "source": "Google News",
         "published": "2026-09-15T16:27:02.000Z",
         "summary": "Anthropic Adds 43 Workflows, 27 Integrations to Claude for Small Business Unite.AI"
+      },
+      {
+        "title": "Small businesses can now ask AI where their money went. Expensify supplies the data. - Stock Titan",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNY29qOWtvaUlYRXBseVpiejdheE1mTC1ORld3US16U1NkVUtqRlRjd3p1T2haZFpZY1JmWTVNWkpIeC1uUjlYU2lxTXctVEt4a2RRQl9oY1hCTHV6cXB6LThybmpwU2pQSG9kWUNvVEN0clFNRkN1SVB1N09MeEU3NHhlTUtOdW5sTU1GdW9YMVdrQjBqdEZLblE0aW1IZ3ZEOHdLOG84ZjlYSFF1Q3FOOGFvS3M?oc=5",
+        "source": "Google News",
+        "published": "2026-09-15T16:15:00.000Z",
+        "summary": "Small businesses can now ask AI where their money went. Expensify supplies the data. Stock Titan"
       },
       {
         "title": "What's really behind OpenAI, Anthropic's push to slow down AI? - The Jerusalem Post",
@@ -251,75 +314,11 @@
         "summary": "Anthropic Releases Salesforce in Claude Plugin With 37 Sales Skills Unite.AI"
       },
       {
-        "title": "Zocks links client data platform to Claude for advisers - CFOtech Asia",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQMmxtTzctLUQ3ajZXRmdrc1hiS1RpVmE4SGMtbXZUZzV0WTN2MDlBb0tpbGxPVzhhcGtXdWYwZXlwS1dQV01Kbkh0VXBwa1NHNC1FNzVCZFZDOHQ1M2NSbkU2YndERmJuYjFpU1lqQnJtR3hDMnJTTlJfR3RId3U1dWVlc1l6OGFld1E?oc=5",
-        "source": "Google News",
-        "published": "2026-09-15T15:15:00.000Z",
-        "summary": "Zocks links client data platform to Claude for advisers CFOtech Asia"
-      },
-      {
-        "title": "Anthropic's Claude for Financial Advisors Sparks Debate - Wealth Management",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNMXE3RG54blFlVXN4T3dxT0I1UmJSZzlLckVUMmpvTVR4WnVnb1FxMEh4TUNuU05paTdxNE02ZTFDVEhBWmU5Xy1iSU9Ocm1hQ1BEN0lnb0laWm4wRXhZYlE2MnlVT0NzWTB5T2oyNkZyOF9uazFnQTI4bHVJRkdFTWloVFdXZVhiRUtKdzdGbHpUZF9jcHhtUVpWcWFGY2g1N0pn?oc=5",
-        "source": "Google News",
-        "published": "2026-09-15T14:33:49.000Z",
-        "summary": "Anthropic's Claude for Financial Advisors Sparks Debate Wealth Management"
-      },
-      {
-        "title": "Rubrik Unveils Rubrik Code Guardian, Harnessing Anthropic’s Claude Mythos 5 to Red-Team Code and Prioritize Cyber Risks - marketscreener.com",
-        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOZG1EZ1ZsOU9KOEdYVFprY2gzQWp4cC11dHhPV1Q1dmJULVVrb1NJZmZ3aS1xZFlJMFVDX3JodXlWWlRyaEgyem44QjhmU1N4SnVJLWVhdU5jOGVzeVplbmpFTW0wdlN2TUFhTmkyQjlRRjZlYi15Tm9LbWNWOFdVak0yOHd2OUFVUTBhNldiQTcta0pEOTVkYmEyM3J5bGFYMllSWXBrLWRoa0VtdnZJd21FUG5nU3NWUU9naGZIZnBqa0J0WkJfSHJPaklDMlV4c0lLd2NMOWRqSjVyOHJud2VHQ2g1UQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-15T14:26:05.000Z",
-        "summary": "Rubrik Unveils Rubrik Code Guardian, Harnessing Anthropic’s Claude Mythos 5 to Red-Team Code and Prioritize Cyber Risks marketscreener.com"
-      },
-      {
-        "title": "OpenAI Says It’s Working With Anthropic, Google on AI Safety",
-        "url": "https://www.bloomberg.com/news/articles/2026-09-15/openai-says-it-s-working-with-anthropic-google-on-ai-safety",
-        "source": "Bloomberg",
-        "published": "2026-09-15T14:18:33.000Z",
-        "summary": "OpenAI is working on steps to address artificial intelligence safety issues with its top competitors Anthropic PBC and Google DeepMind, escalating industry efforts to respond to a groundswell of…"
-      },
-      {
-        "title": "Anthropic rolls out Claude for US financial advisers - Professional Adviser",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQRjJSYUNOeFpZRjFnTjFGa2dlMkVUb2w2RGYwMllIcUNzbDlVNWRaS1VPSGhJYW5FZWp5OWVma0tjZkcxRWdPWXFZYWM1dEZqODJ6VUFXVGVGVlpERkRkbktuTDVOVHljSUd5QVFXN2x0WmtYR3o5azZuSkh3ZEtOb05DbklSTXZiQmFSM3hvcHhKM3RsdXU1bQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-15T14:02:40.000Z",
-        "summary": "Anthropic rolls out Claude for US financial advisers Professional Adviser"
-      },
-      {
-        "title": "Developers Find Ways to Use Claude Code Without Anthropic Models - The Information",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTEJqWWx4bUduSXRtaGpIZEJuODMwLUpjT2Q0c2gycW1yU3NiR1dib3hndlFpVEc2bzdKSk5zRnJmQkRSOUFock92QTZpaEZHRWZzRTBRYmthVkJqMmJtYnBpMTF5X25hYXhHaEZxLUxiVzRKbVE0OUZsSS1lOE5LRXRCWGs0R01TblR4RVdTdkU5MExyMlpONWxQRTFGaUdZNE1TWVdmLVV0eVQ0THJwbmduVjc?oc=5",
-        "source": "Google News",
-        "published": "2026-09-15T14:00:00.000Z",
-        "summary": "Developers Find Ways to Use Claude Code Without Anthropic Models The Information"
-      },
-      {
-        "title": "AI 'kill switch' may need to be mandatory, Anthropic co-founder tells BBC",
-        "url": "https://www.bbc.com/news/articles/cqgk5e2j0gg8o",
-        "source": "HN · 31↑",
-        "hn_id": "49712409",
-        "published": "2026-09-15T13:41:28.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Launches Claude for Financial Advisors to Automate Wealth Management Workflows - FF News",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1yRFNlV1pTYzZDeC0xMndKNE85MEc4cE12S0VxaEJaMFVYMWlrZS10M2VNUnMxRUs0ZjBPS1FmS0xvOGZidTU0QkM1V3d1VGphcGhmZ29vSWdodlBESlQyaHJ4T2l0VFltY3BKcjdtVlJfWXhoWWtwbA?oc=5",
-        "source": "Google News",
-        "published": "2026-09-15T13:38:57.000Z",
-        "summary": "Anthropic Launches Claude for Financial Advisors to Automate Wealth Management Workflows FF News"
-      },
-      {
         "title": "Anthropic Releases Claude for Financial Advisors - ThinkAdvisor",
         "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQcnh3V2VoaW1PeWNqakxfdVloaWJZSmMyeEN0WFRValRXU2FPRTQwUkwwaS1WdmFEOWxQR3o0WlR6TTVBUEJQNi1XRzAxMkVpYXhNeGNMVEtsbHFRSkRMeEZkS2hnOXdpVjhfdWdHdWNQMnNQRzNEeG9kRkd0SURQb01KYkRwXy1PRHU3N3JrRVY1Mjg?oc=5",
         "source": "Google News",
-        "published": "2026-09-15T13:29:46.000Z",
+        "published": "2026-09-15T15:04:31.000Z",
         "summary": "Anthropic Releases Claude for Financial Advisors ThinkAdvisor"
-      },
-      {
-        "title": "Coder Brings Claude Code to Agent Relay, Unlocking Agentic Development for the World’s Most Regulated Enterprises - GlobeNewswire",
-        "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNbFZKRkgzUGwwQ3g5M2xjeExnN2ZVZWdjMGN6NTd6TlN0OXlrQW9nTnU2ZW1mZVY0YXlxRVFlcVoyQS1MUnZGSFg3T0I1ZGpYUG9oZUpiZ0dYclJZUVJWbGdPUHdDRXdfak5ROHVkaGJOSy1HWWtIZmJJaEpxZHEwTFVzTTMwOVJnNmVkV0pfdEJ1ZDZsRVVDZk56bkNvdU54NHplRER6ZFdkRk4ySDFZWjRTdWJsWVhwYnNqN1U3cUFfQUlSeng0MmdxOVIxbkVhdUdROG5HZThlaGFFVmdqTDhWR1dNMjVjcm5YTmc5TV9icFRMWWg2QkpJbjZTY0lzS2VjRWN0R0ZsVi0xbG0tVzJ3?oc=5",
-        "source": "Google News",
-        "published": "2026-09-15T13:05:00.000Z",
-        "summary": "Coder Brings Claude Code to Agent Relay, Unlocking Agentic Development for the World’s Most Regulated Enterprises GlobeNewswire"
       },
       {
         "title": "The Harness That Runs Claude Code and Codex Together",
@@ -1054,6 +1053,14 @@
     ],
     "tutorials": [
       {
+        "title": "v2.1.273",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.273",
+        "source": "Claude Code Releases",
+        "published": "2026-09-15T20:23:03.000Z",
+        "summary": "What's changed Added x-claude-code-request-class , x-claude-code-agent-type , x-claude-code-prev-tool-durations , x-claude-code-compaction and x-claude-code-context-compacted request headers for LLM…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.272",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.272",
         "source": "Claude Code Releases",
@@ -1135,14 +1142,6 @@
         "source": "Claude Code Releases",
         "published": "2026-09-06T02:54:20.000Z",
         "summary": "What's changed Bug fixes and reliability improvements",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "v2.1.261",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.261",
-        "source": "Claude Code Releases",
-        "published": "2026-09-04T19:58:10.000Z",
-        "summary": "What's changed Added an \"Organization policy\" line to /status and claude doctor that says why your organization's policy could not be loaded, such as a proxy not passing the endpoint through Added…",
         "tutorial_kind": "official"
       },
       {
@@ -1744,6 +1743,13 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.273",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.273",
+        "source": "Claude Code",
+        "published": "2026-09-15T20:23:03.000Z",
+        "summary": "What's changed Added x-claude-code-request-class , x-claude-code-agent-type , x-claude-code-prev-tool-durations , x-claude-code-compaction and x-claude-code-context-compacted request headers for LLM gateways; opt in…"
+      },
+      {
         "title": "v2.1.272",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.272",
         "source": "Claude Code",
@@ -1854,13 +1860,6 @@
         "source": "Claude Code",
         "published": "2026-09-06T02:54:20.000Z",
         "summary": "What's changed Bug fixes and reliability improvements"
-      },
-      {
-        "title": "v2.1.261",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.261",
-        "source": "Claude Code",
-        "published": "2026-09-04T19:58:10.000Z",
-        "summary": "What's changed Added an \"Organization policy\" line to /status and claude doctor that says why your organization's policy could not be loaded, such as a proxy not passing the endpoint through Added bashOutputMaxChars…"
       },
       {
         "title": "Version 1.30.0 of the ant CLI adds ant apply , which creates and updates agents, environments, skills, memory stores,…",
