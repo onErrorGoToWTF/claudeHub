@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T22:29:32.770Z",
+  "generated_at": "2026-09-18T01:48:36.762Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -7,7 +7,14 @@
         "title": "Claude Uplifts Biomolecular Modeling",
         "url": "https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling",
         "source": "Anthropic Research",
-        "published": "2026-09-17T22:26:51.000Z",
+        "published": "2026-09-17T23:55:18.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Alignment Assessment Cybersecurity Incidents",
+        "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+        "source": "Anthropic Research",
+        "published": "2026-09-17T23:46:13.000Z",
         "summary": ""
       },
       {
@@ -116,13 +123,6 @@
         "summary": ""
       },
       {
-        "title": "Alignment Assessment Cybersecurity Incidents",
-        "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
-        "source": "Anthropic Research",
-        "published": "2026-09-10T21:55:41.000Z",
-        "summary": ""
-      },
-      {
         "title": "Nuclear Safeguards for Ai",
         "url": "https://www.anthropic.com/research/nuclear-safeguards-for-ai",
         "source": "Anthropic Research",
@@ -146,11 +146,74 @@
     ],
     "news": [
       {
-        "title": "Anthropic says Claude now leads a quarter of work building its next AI models - marketscreener.com",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQZl9iVzFyRUwxT2gwMTBNRVJoTTV5aHdDZDZoTVNLMGVwa3lKM1pUMUZia2tPMmxmcWpZVTN2bWNxTEdXdXBaMlctWmxsT182TUp3Z3praHloZ2xqM1J6Ylg2bDUtZU5DX2x6Q0pqbUxVVkVpZlpXSHBHd2I0U0FONVJibk93b3pwWWhNMTF6X2h5ZnBMNThNZVJ4SWc0Q2E0ZGEyWEtQSUdsTUIyRnY2ckhaVklrcS1jeEJwS1BveHNBTVZqWFVRWEtR?oc=5",
+        "title": "Anthropic says its chatbot Claude is taking over the work of building its own successor - washingtonpost.com",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOM2lTT1pubVg3a2k2VUUzWmJEUUd4STN4UkZCLXRjb1hwcmNEUlRQYWdFQmkxeWkyR25FUEFwWXBWQWlwSUt1TldyVW1ncHhhNGpfRXhRVk9hZkk4YTBmV0RJcUpHb0dTLUZYRlF2TDRIUmd6OFpZdUpyMXlna2FGai1nNl83RDBxR1RIdjNGNnk1ZU5QSWNyUmgzREpLTTU4aU9KMkpQTXZpa3E0RjE1SEhsSk5oQmd3bEFNMkx3eVA4dXI1VDZkc3B5ZjhsbkU?oc=5",
         "source": "Google News",
-        "published": "2026-09-17T22:09:14.000Z",
-        "summary": "Anthropic says Claude now leads a quarter of work building its next AI models marketscreener.com"
+        "published": "2026-09-18T01:00:22.000Z",
+        "summary": "Anthropic says its chatbot Claude is taking over the work of building its own successor washingtonpost.com"
+      },
+      {
+        "title": "Exclusive | Hackers Used Anthropic’s Claude to Break Into OpenAI - WSJ",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQmNxc081M1NZa0l1MDZtRG16czdBY2M3X09PVUNCcFUzdS14ZEk1dEdDS0diT2toWlY4VmtMMkNaU1pVVDRaOEpDY0tMRi0zc3dweFpEMWZQOFpPQklqTUcwelZXelBDVXJQWE1GM25BYXgxbHc3ZHBBTk1xV3ViUzloX2s2d0tCd0RLS3lKZmFNdw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-18T01:00:00.000Z",
+        "summary": "Exclusive | Hackers Used Anthropic’s Claude to Break Into OpenAI WSJ"
+      },
+      {
+        "title": "Anthropic says Claude now leads a quarter of work building its next AI models - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPOTlkTk8zR3FVNjBtYTRfeEZQWU9zWHhWUE00dUhyMDhMUHZDRF90dlhuUDhYS3QweW9ZejB1U0tNQ0dFQjIxZ1lFLXhfdEliaHN3MzJZV0JYRnJMc0pyU2k4dmdyX2tPR1VOX0RRdmVJUkZ1bWZCcVJ5czg4XzlXQmRXaXpVYzB1a0QwRGdzUkFVbGtVY3ZJVEpKSEwzUXdMT0NaV0F1cTVQOEFhSzRTR0ZURUlzM3NL?oc=5",
+        "source": "Google News",
+        "published": "2026-09-17T23:59:43.000Z",
+        "summary": "Anthropic says Claude now leads a quarter of work building its next AI models Reuters"
+      },
+      {
+        "title": "Anthropic Says Claude Leads 26% of Its AI Research and Development - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUnZtLXJ4cDY5THVfeGJ1MFE3S0tSQm13d0p3X3ktMk1MS0dNd3lIRk9MbXg5UTQ2cWJaTjZ6WkVHR0tkaEdvRy1YZlBaN1l1RkxNSXF3Ykt2TGxxbVdzN3pMTVhYM1hWWmU3MHd0M1o0c2hNWHNYOWd2NGR4QkxCLXNVZ0FLak9RMUI3RlpFeGQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-17T22:49:01.000Z",
+        "summary": "Anthropic Says Claude Leads 26% of Its AI Research and Development Unite.AI"
+      },
+      {
+        "title": "Anthropic Claude AI Predicts an Explosive Finish to 2026 for XRP - Cryptonews",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPRjlxVUJHbXhoQXFvMUoxRncyT0RRd0VPLUlFS0ZyLXJScFFOeEdoN1BsY2M5Tll0N1hrVjdjSkh3YzYtc3dMaVQ1Y2FvbFhULXFYaUNjUkNpTGN3VVkyc1RLS0o2aFNBajFhbG03d25QbDU1MjNWVkN0dDFEWURwWENaaVpnNmhF?oc=5",
+        "source": "Google News",
+        "published": "2026-09-17T22:44:00.000Z",
+        "summary": "Anthropic Claude AI Predicts an Explosive Finish to 2026 for XRP Cryptonews"
+      },
+      {
+        "title": "Anthropic Says Claude 'Leads' 26 Percent Of Its AI R&D Work - Engadget",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQNEJhRkRfM1lWc3JObDRnU1piOVBtU2Rpd1NRNmNZVDR0R0JrakhWdjlfQ3VSR1NBQ0Q3dTlRWXBIY09HeEViQTd1M0RVWDdTa0I5aWtqN05CZ2IzRmk1Rm11TjNVcUhlWGd1alR6aTNRc200ZkJCNjVnT2dYeldxWUs0ZVBEWURCZlZpbTNFMWJseUtDREYwWTFIZW04QklsQ0xJY0dQdFNjMjg?oc=5",
+        "source": "Google News",
+        "published": "2026-09-17T22:30:01.000Z",
+        "summary": "Anthropic Says Claude 'Leads' 26 Percent Of Its AI R&D Work Engadget"
+      },
+      {
+        "title": "Anthropic Brings Parallel Coding Workflows to Claude Projects - DevOps.com",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcUdJUkk3VVF4QUw0em5kSXg0eWVEZi1XUFoya3BfVk9Ld1JCekRoMlc1VG1BMUpqQnlkdGxKMFd5QkJpbUlMNGFTUEJrRV8zZnZodGlISmpGMmpPamJRdk5USUVYNjNySU1xanpEdEdYQmJzWk5WSXk2QmRwU21LUTRxM3UtSllK?oc=5",
+        "source": "Google News",
+        "published": "2026-09-17T22:15:15.000Z",
+        "summary": "Anthropic Brings Parallel Coding Workflows to Claude Projects DevOps.com"
+      },
+      {
+        "title": "Anthropic says Claude now leads a quarter of work building its next AI models - CNA",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOdThSMG9MTkJ0WkN4eUMxWFYwRVd5UVNZZFhiNjdKRjN2TTNqaFZoMzVjODk2clNKWUpiSEV4S19VblVQQTFBMzBZeTEyM0d3TE1PYklCcmZBZmlfWV9ZaG1ySTMyTU83aTBtcHU0VlE2T1JLZ1VQcElfQzRkYW5GbEVfQmZKU0FPbW5aNG53S005SWJVWmNvQXBjTkxHTXhxV0Jjb3hOQWcwcGJIeXVZZDQxWWgtd0dtRVZ0Zk1R?oc=5",
+        "source": "Google News",
+        "published": "2026-09-17T22:10:19.000Z",
+        "summary": "Anthropic says Claude now leads a quarter of work building its next AI models CNA"
+      },
+      {
+        "title": "Anthropic says Claude now leads a quarter of work building its next AI models - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNRGVDeU5Qc3h0eVprLUVtSXJhbEUyWUtrRC0yNmROSWtsYmR0ckhSYXYydENLSjhBRGFPbDl0MjBOelQ5Z1MxQjZ2dEp6OFN0MVdjbDFHaUxGNzFoOEZ5MUxnclBJdjhKYkRFX2N1cGJDcXNLbFBaT3ZUaG1BamwtMThubzZjcVJZRXltZlVsbGRuT05lbjhqaW0tVUJfN0RidlVPREtDNy1vUU9TMUV1VlMyNElmaUVHbjFPbGtaei1vWUROc29iYjE2SUVsQ1l2dTdyVU9waDN0MGIwVkNGaQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-17T22:07:51.000Z",
+        "summary": "Anthropic says Claude now leads a quarter of work building its next AI models TradingView"
+      },
+      {
+        "title": "Anthropic Says Claude Is Helping Build Its Next AI - finimize.com",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPZWJFX2pyNUt4M1AtdW9jQTFMNW5oMmIwajhRYzVPOTJHazdrNm9iZEo3ZzZFWkJkVHNyaGEzaHNlRXVqLWgza1BzY3JIYjVpT2hXd1N4eE5mb00wTHYteUY4RVBCb2VXTDNlT0JRbmNjWkNqblRuWVplME9NSjJTQUR2R0RkQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-17T22:04:29.000Z",
+        "summary": "Anthropic Says Claude Is Helping Build Its Next AI finimize.com"
       },
       {
         "title": "Anthropic Says Claude Drives 26% of Its Research and Development",
@@ -167,6 +230,13 @@
         "summary": "Anthropic Says Claude Drives 26% of Its Research and Development Bloomberg.com"
       },
       {
+        "title": "Anthropic | History, Controversies, & Claude AI | Britannica Money - Britannica",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE41Q1h2QkF0SGRpMFZSMVN5al9RNkhQLTR4MDc0cHJNbndmdndTbHE5cGswRFk4SS1JbVhmXzdWNm5KRDlJa3FiUkt6T01MZUNiTjhON2R6cFJtQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-17T21:19:43.000Z",
+        "summary": "Anthropic | History, Controversies, & Claude AI | Britannica Money Britannica"
+      },
+      {
         "title": "Anthropic Folds Cowork Into Claude, Adds Document and Slide Tools - TechRepublic",
         "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPcHJrYXpuM1FJNWdxT1BMSU9ZYUk5YU9HeU1ENGFQYXF2ZEF6a1piaklBRTJIZzBQQ3o1Mlg4aDdyMlJETTdxRUFEYlFaZndmVkdqX1RzeUx5Y0tpUTRmU3N5OGpsaXlqR3JPUlh3M3Rnd3JFWGdlajJVb25YWlFBWUJRMVU?oc=5",
         "source": "Google News",
@@ -174,11 +244,18 @@
         "summary": "Anthropic Folds Cowork Into Claude, Adds Document and Slide Tools TechRepublic"
       },
       {
-        "title": "Anthropic Launches Claude Code Projects in Beta: Parallel Cloud Sessions That Keep Running After You Close Your Laptop - marktechpost.com",
+        "title": "AI safety debate expected to put more pressure on CFOs - CFO Dive",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPTkRlSHJ3N0ZZWjR2WnBZS1E0bFBJcHZyRUR2LVZsTmtFcjNRczBuN0lyeHFZZlMwZGJfWWlUUEJxc2t2eW41N0pYT3ZpY2FsSFM2NUN3MDRkZW41VWhkdWlXLUJGX3Y2Umg2VDZVd3ZzYU55V0dmMUJGa0lEbE9hclQ1TDd0dVE?oc=5",
+        "source": "Google News",
+        "published": "2026-09-17T20:51:28.000Z",
+        "summary": "AI safety debate expected to put more pressure on CFOs CFO Dive"
+      },
+      {
+        "title": "Anthropic Launches Claude Code Projects in Beta: Parallel Cloud Sessions That Keep Running After You Close Your Laptop - MarkTechPost",
         "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPVkRDWENsX2daLXRENUFaNDVhQ1JHNnVra2x6ZzFnSU5kT2pncVZ5T1V5QTBUaDVKLVVKb2tHNzZKakNJMzdEdmJDUExGRUtGVFh4NXNsdkJ5cTJrd1o5ZWk1QUktd08zR0VFNVBNRlhjSWVnMHIya1d0TlBlLUprTVozanowT0pFRjNxNmd0cHRvdkQ1OUpLb2k1b0VRUFRkYVF3cGVYQnItbjBEdGEyejFkMmJ5VzlUbUtWcFJDMnhDbjZxbUVqbV9GN2R2ejBxQmN3NGJROHBKeVNCYWdmQTc0eDd5SkE0Sl9aamZwUdIB9AFBVV95cUxOYldva1B5YU0tUlE3RjJsem9SajUzNnF6Rm1peEgyWW1qUDQ2by16SW52cEZHU0pBT0YwMWdfd1FVUXN1cm93S2Vlb2R0NkJNMlBKVkhmWExWTmVCQWV4U05Ed0NMVDdMdzdLY3ZabjNjbEI0MDlEaEdvN0VHaElkQ1lXb2RMTmIwSjhNM295b05VUk1jSHBhQzEtT0hqRlhSU3g5NmlxUTNnVS1yczhld2dpN2xMcExReGs4VFNyUWlSUzJCTTcyaUFLZFNwbDRaUy1yZmE5a1JZRHVfa2FyU3REV1NHZzhjYTdLX3ZxaG1qVTdR?oc=5",
         "source": "Google News",
         "published": "2026-09-17T20:45:04.000Z",
-        "summary": "Anthropic Launches Claude Code Projects in Beta: Parallel Cloud Sessions That Keep Running After You Close Your Laptop marktechpost.com"
+        "summary": "Anthropic Launches Claude Code Projects in Beta: Parallel Cloud Sessions That Keep Running After You Close Your Laptop MarkTechPost"
       },
       {
         "title": "Is the AI safety debate about safety or control?",
@@ -209,11 +286,11 @@
         "summary": "How Claude is uplifting biomolecular modeling Anthropic"
       },
       {
-        "title": "Anthropic’s IPO Will Be AI’s Next Moment of Crisis - barrons.com",
+        "title": "Anthropic’s IPO Will Be AI’s Next Moment of Crisis - Barron's",
         "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5QWWdpS3U1OVJyc0w4a0FFdFI3R0J3UUhibmdmWWZRSVB1SXg3Q2tvU3VUZDU2bWc4dEJxdFRTeEU1Zl9qazl2aHRZZzFoVTNaYnlOZzRGRGM2UkU5ZWRXNUNYN3F0V2RjS0E?oc=5",
         "source": "Google News",
         "published": "2026-09-17T19:25:00.000Z",
-        "summary": "Anthropic’s IPO Will Be AI’s Next Moment of Crisis barrons.com"
+        "summary": "Anthropic’s IPO Will Be AI’s Next Moment of Crisis Barron's"
       },
       {
         "title": "Anthropic Redesigns Claude Code Projects to Coordinate Agent Threads - Unite.AI",
@@ -237,88 +314,11 @@
         "summary": "The revamped projects feature in Claude Code allows users to run multiple agents under the same roof, with a shared memory, goals, and library of files and artifacts. Similar to Grok Bot and other…"
       },
       {
-        "title": "Anthropic keeps pushing Claude Code toward autonomous coding with new parallel agent workflows - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPcnI1YWpKTHpxZ3hkSkdJakMzSFZSZmJycHkxUzZHVmdMTUpaZHliUm5yZ2U5WENzN0t5XzN4QURxbFpJdnJRV2hRV0xXVlZrNnV0ZHJFN2xSTlBHczVlaVpCSXlUQ3M1R2tiWlRZaWdHdGM5bVlBWWNUTVVoY0RxSU5SVGNOTkNvZ1poS1BIMzBzN2NKcVU4d2ZUb3dNYlU1ZXlyWnEyb2RRTUIyT0ozMlgycDVVdVAtUndv?oc=5",
+        "title": "Claude Code relaunches Projects to manage multiple AI agents in the cloud - The Verge",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZUxTNjFoWnlrU0x5ektWaF93WEJ4U0RxbTBRMV9MVVlmQ19pS3ZnYnBsV1lLVkN4YXI4UmlrcktOMmRmRkV1cTFSUk56SkJWaWgwT2dEZ1FTeHdhUlUyVndiWWxvZ0VQZTVueE1PVWtya2ZiZ2dnUlRUUHVVbmotaUNqMExwQ1JCdWZQQWpoanRsQWc?oc=5",
         "source": "Google News",
-        "published": "2026-09-17T18:39:28.000Z",
-        "summary": "Anthropic keeps pushing Claude Code toward autonomous coding with new parallel agent workflows the-decoder.com"
-      },
-      {
-        "title": "Anthropic launches Claude Code Projects, an ‘always-on’ conversation that remembers and delegates your long-running dev work - VentureBeat",
-        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPbzFBR1I0TUFsdkpnMFY2amNCMzJuRFlxS2tCZ1JiWEFhOVl0WkJBU1pBSkZha0hHWEdMYTFGc201QmtVUGFFU2VnQUh2UW9ucHp5V1Y2Uk10WlBWbjdvYTBjX0JfTDB2MUJDMnFRNkstUG9iNU1hQnV0TXJDcHhhbkdKenEyMVREQ3BVMzdEdnlEN1VKLXpGQXRMRTJGMHlLSzY1TUZSeWEyU0pqMy1SX20wRHJIVTgwZXpqWHVLY184Y09GS0M1M2VCU29ZN1JjYWNGelUya0NmOGxkdVRubnVGM21SM0t1OTJNUmZLbFI?oc=5",
-        "source": "Google News",
-        "published": "2026-09-17T18:33:58.000Z",
-        "summary": "Anthropic launches Claude Code Projects, an ‘always-on’ conversation that remembers and delegates your long-running dev work VentureBeat"
-      },
-      {
-        "title": "LLMs respond differently to harmful prompts when AI watermarking is used",
-        "url": "https://arstechnica.com/security/2026/09/ai-text-watermarking-can-make-models-more-vulnerable-to-adversarial-prompts/",
-        "source": "Ars Technica",
-        "published": "2026-09-17T18:33:13.000Z",
-        "summary": "In response to a new European Union law, AI platforms are implementing new schemes for watermarking the content they generate. Anthropic recently disclosed its future Claude models will use…"
-      },
-      {
-        "title": "Anthropic extends $1 per user OneGov deal by a month - Nextgov/FCW",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPNXZrYXQtd3Yyd1RjYXFhRzZHNHBVQ0E2QkJWZ1I1N1Q5SHRoQ05oa3VhWVM1MEs2WWI2NlNQbXpTUGJUcERnblRKcUFUOHZTMTVxMXJXU1dyS3lHNHlSTWptTllSN2MtdzNuYzlja1pfNUp1S1p1R1BjOVVhQm1yQWFRTDN3Y1ZVU09xOFFyQ0w0Z0dHOFI0cHR3?oc=5",
-        "source": "Google News",
-        "published": "2026-09-17T18:19:00.000Z",
-        "summary": "Anthropic extends $1 per user OneGov deal by a month Nextgov/FCW"
-      },
-      {
-        "title": "Anthropic's Warning of Existential Risk Hijacks Larger AI Debate",
-        "url": "https://www.bloomberg.com/news/articles/2026-09-17/existential-angst-dominates-debate-over-tech-from-anthropic-openai",
-        "source": "Bloomberg",
-        "published": "2026-09-17T18:11:05.000Z",
-        "summary": "Some experts worry that heated rhetoric makes it hard to hold companies accountable, and sets back attempts to deal with environmental impact and job loss"
-      },
-      {
-        "title": "Claude Money: Anthropic's AI Finance Tool Changes the Game - Memeburn",
-        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBqc0stdEJVTmdFd1hKMVlETWxPaVJyUFB0TkI3VWhUdzN6clZGQ2VJYm4tTHBrZ2ppOXFZc3MxVEN3UUZjWTREMkNNV3NHY0ZnYmlVcVZKTHU1NGNZTUU4RDVtUEM0ZWhsb1hJM3pB?oc=5",
-        "source": "Google News",
-        "published": "2026-09-17T17:55:44.000Z",
-        "summary": "Claude Money: Anthropic's AI Finance Tool Changes the Game Memeburn"
-      },
-      {
-        "title": "AI Wealth Boom and Silicon Valley's Jobless Tech Workers",
-        "url": "https://www.bloomberg.com/news/videos/2026-09-17/ai-wealth-boom-and-silicon-valley-s-jobless-tech-workers-video",
-        "source": "Bloomberg",
-        "published": "2026-09-17T17:55:06.000Z",
-        "summary": "As the global AI debate heats up, another major AI-related discussion is roiling the US tech capital: Who is reaping the financial benefits of the AI boom, and who is missing out? As the coming IPOs…"
-      },
-      {
-        "title": "Novo vows to 'supercharge R&D' with Anthropic collaboration - The Pharma Letter",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOZTlsT2hNUi01TVFfOTM2NmNuSlQwdEQzeTluMFJRRnRRRUNINVV5TFBpQ3JGbThHNEl2TVp5S1Z4bWhrbmdyU1dEUkc2Ri01LW5oNzJnNnVVWnVqclJUellzbmNmVmlnS0pDdkRfLWliWUdCdWRXLXdqbzJoVG90UG1heGtuR0FZTW1IanJzM0FiNEJ3SDRiNHVLX0Z0akd6ejVF?oc=5",
-        "source": "Google News",
-        "published": "2026-09-17T17:37:02.000Z",
-        "summary": "Novo vows to 'supercharge R&D' with Anthropic collaboration The Pharma Letter"
-      },
-      {
-        "title": "Introducing the Life Sciences Verification Program - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1tdEtSOC1PRVFaSWU5TmlaMEtiZjRMdDdJLWg1bVIyUzlUTUV0UHZVa1Z3Y2JYeVVVLVEyeGZIQnVHR01tdC04X2x5Vk5LNDRKa3VyWnB2Vks0U3JpZDNNemZxczNDOFBNeGxrQnViOFNJQVU?oc=5",
-        "source": "Google News",
-        "published": "2026-09-17T17:34:30.000Z",
-        "summary": "Introducing the Life Sciences Verification Program Anthropic"
-      },
-      {
-        "title": "Anthropic Is Testing \"Claude Money,\" a Feature to Connect Bank Accounts and Analyze Finances - gHacks",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNTTJIWFcxTV9XRmVOeEF1aEZweXJiTHFhUEFNb1JWMnZvZVFiUi00X0NUdUd6ZW9pOVV0QThuYnJJQnN0TEJyLXl5Y0pEenhpZ2MtS1JJanFVTzFReDFZVG9hQUJjcm1ZR3hYakZSOGgxOG5NVW1jd05pR3FPYmlHejN2MndEaE45ZmNiTXZLZ2RDbjd1Z1o0V3BSbEhtTVBwOGxyTmFmVjRIN3pIdnZTajY3cnlBTmRyMGM1V2s3VEhJdw?oc=5",
-        "source": "Google News",
-        "published": "2026-09-17T17:07:17.000Z",
-        "summary": "Anthropic Is Testing \"Claude Money,\" a Feature to Connect Bank Accounts and Analyze Finances gHacks"
-      },
-      {
-        "title": "Anthropic’s new Claude Code feature could drain your plan before lunch - The New Stack",
-        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE0xMkdGYnpZQ0E5SU1yelZSVVM5d3dqV0g0aWVzNUw1WVItbjBnNFF6dG85TlZNc09rQ3IzZnR0bjUzbmhSNXBjdWdTTWNwQTdTU2Jjbm5Fa1I5V2tCZDc4ZXFkRQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-17T17:01:28.000Z",
-        "summary": "Anthropic’s new Claude Code feature could drain your plan before lunch The New Stack"
-      },
-      {
-        "title": "Anthropic extends its GSA OneGov deal for Claude by one month - FedScoop",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPYjJfT3FPWVJxR0JzQlpkaGxzVFlGdTRsdHo1dEYtR3ZKdUs2UVNyazkyWGJHZmRFV2I0c3VPMkd4cEppcV82TGNaaEpkb1V0cjhBazhWOXl0YU1qVGttWGFVR2pMS19faDVYa0V1ZFlxa0xTYTE2R25SanExcXJPNzdtS1lCdw?oc=5",
-        "source": "Google News",
-        "published": "2026-09-17T16:49:07.000Z",
-        "summary": "Anthropic extends its GSA OneGov deal for Claude by one month FedScoop"
+        "published": "2026-09-17T18:58:05.000Z",
+        "summary": "Claude Code relaunches Projects to manage multiple AI agents in the cloud The Verge"
       },
       {
         "title": "The Harness That Runs Claude Code and Codex Together",
@@ -1053,6 +1053,14 @@
     ],
     "tutorials": [
       {
+        "title": "v2.1.275",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.275",
+        "source": "Claude Code Releases",
+        "published": "2026-09-17T22:33:17.000Z",
+        "summary": "What's changed Added the signed-in account to Claude apps gateway sign-in: when the gateway names it, you confirm it before the credential is saved, and /status shows it Added a send-now key…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.274",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.274",
         "source": "Claude Code Releases",
@@ -1150,14 +1158,6 @@
         "source": "Claude Code Releases",
         "published": "2026-09-08T23:55:14.000Z",
         "summary": "What's changed Fixed a 2.1.265 regression affecting LLM-gateway and proxy setups: the undocumented CLAUDE_CODE_USE_GATEWAY environment variable, previously ignored unless ANTHROPIC_BASE_URL and…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "v2.1.265",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.265",
-        "source": "Claude Code Releases",
-        "published": "2026-09-08T20:37:31.000Z",
-        "summary": "What's changed Added user.email and user.groups to the telemetry Claude Desktop and Cowork send through a Claude apps gateway, matching terminal sessions Added support for pointing --plugin-dir at a…",
         "tutorial_kind": "official"
       },
       {
@@ -1750,6 +1750,13 @@
         "summary": ""
       },
       {
+        "title": "v2.1.275",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.275",
+        "source": "Claude Code",
+        "published": "2026-09-17T22:33:17.000Z",
+        "summary": "What's changed Added the signed-in account to Claude apps gateway sign-in: when the gateway names it, you confirm it before the credential is saved, and /status shows it Added a send-now key (ctrl+enter, or ctrl+x…"
+      },
+      {
         "title": "v2.1.274",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.274",
         "source": "Claude Code",
@@ -1853,13 +1860,6 @@
         "source": "Claude Code",
         "published": "2026-09-08T23:55:14.000Z",
         "summary": "What's changed Fixed a 2.1.265 regression affecting LLM-gateway and proxy setups: the undocumented CLAUDE_CODE_USE_GATEWAY environment variable, previously ignored unless ANTHROPIC_BASE_URL and ANTHROPIC_AUTH_TOKEN…"
-      },
-      {
-        "title": "v2.1.265",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.265",
-        "source": "Claude Code",
-        "published": "2026-09-08T20:37:31.000Z",
-        "summary": "What's changed Added user.email and user.groups to the telemetry Claude Desktop and Cowork send through a Claude apps gateway, matching terminal sessions Added support for pointing --plugin-dir at a folder of plugins:…"
       },
       {
         "title": "v2.2.0",
