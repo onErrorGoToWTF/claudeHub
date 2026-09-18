@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-09-18T20:03:49.947Z",
+  "generated_at": "2026-09-18T23:41:47.451Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Accenture Embedded Evaluation",
+        "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
+        "source": "Anthropic",
+        "published": "2026-09-18T20:02:00.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Uplifts Biomolecular Modeling",
         "url": "https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling",
@@ -135,16 +142,87 @@
         "source": "Anthropic",
         "published": "2026-09-10T20:11:55.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic Higher Education Initiatives",
-        "url": "https://www.anthropic.com/news/anthropic-higher-education-initiatives",
-        "source": "Anthropic",
-        "published": "2026-09-10T20:10:33.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic is operating a lab that conducts biology experiments",
+        "url": "https://techcrunch.com/2026/09/18/anthropic-is-operating-a-lab-that-conducts-biology-experiments/",
+        "source": "TechCrunch",
+        "published": "2026-09-18T23:13:31.000Z",
+        "summary": "AI leaders have been promising that AI is the key to curing human disease. Anthropic researchers have also been warning that AI might kill us all."
+      },
+      {
+        "title": "Google Joins OpenAI, Anthropic, Meta in Disclosing AI Hacks",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-18/google-s-gemini-ai-system-hacked-three-systems-in-safety-tests",
+        "source": "Bloomberg",
+        "published": "2026-09-18T22:45:15.000Z",
+        "summary": "Google’s Gemini artificial intelligence model inadvertently hacked into three company systems in May during cybersecurity testing, adding to a string of breaches by AI agents that have alarmed…"
+      },
+      {
+        "title": "Anthropic Pursues IPO Despite Its A.I. Safety Warnings - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBzNk1Xck9GUE41UTZPc1p6elBuenQyZnA3bEg0WFEyeHNLNXBfNXZmZUNIOUtodnVSaWFXRGtueDFzenhuMS1xYVBvSjIwM0RQM25fSWtoVUszVmJCZEg5Q2RFb1llLVNlOEN4VjR1eDg0dWJyc09tN0QxNnZQeWc?oc=5",
+        "source": "Google News",
+        "published": "2026-09-18T22:32:05.000Z",
+        "summary": "Anthropic Pursues IPO Despite Its A.I. Safety Warnings The New York Times"
+      },
+      {
+        "title": "OpenAI hacked ‘ethically’ with Anthropic’s Claude chatbot - Global News",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZEtWekNrbkx3aC03MkEyZ2lTVTBGRFVTZDFDSDEyTmJQejJpOWRSQndSdEIxc3JPc2hNbjNrb3l1a21XOTIwTDlXcVJEMlRXcC1iS2V5cWF4ckZGUTJOZmhwelBBWE94WFdCVTd6ZDBCYUF6aERJQnZhTmNfZFNZRThncWE0UV8zVzY3ZFcwWkZSM1RSY1Bj?oc=5",
+        "source": "Google News",
+        "published": "2026-09-18T22:10:49.000Z",
+        "summary": "OpenAI hacked ‘ethically’ with Anthropic’s Claude chatbot Global News"
+      },
+      {
+        "title": "Anthropic’s first embedded evaluator is … Accenture?",
+        "url": "https://techcrunch.com/2026/09/18/anthropics-first-embedded-evaluator-is-accenture/",
+        "source": "TechCrunch",
+        "published": "2026-09-18T21:44:33.000Z",
+        "summary": "Accenture is about to take on its most high-risk consulting engagement ever."
+      },
+      {
+        "title": "Anthropic decides to support OpenAI's markdown instructions spec - The Register",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQQXpMVWpJXzU3TldDNVNUZWhqMzNsbEpodXNSQzhQb3NpRDByWVNOZDNwNVJCOXgtUm1IU0N6NG16S0VIbEd6TzJmWjdqLVIyWEMtYjlWRU90UjFVRXk4MU1TcDhkSmp6eURKMXhSWF9SVW56WXRHeFdOVUMtMWlUX3BGWm5maEdORVFuWkFRX01tT2hac3hOZG1nR19uWHRiWG1ZSmVTaWtuekxfSElLRkdtMXl6aUlkQndkeQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-18T21:33:16.000Z",
+        "summary": "Anthropic decides to support OpenAI's markdown instructions spec The Register"
+      },
+      {
+        "title": "Claude Code now reads AGENTS.md if there is no Claude.md",
+        "url": "https://code.claude.com/docs/en/changelog",
+        "source": "HN · 390↑",
+        "hn_id": "49760187",
+        "published": "2026-09-18T21:00:32.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic to Embed Accenture Evaluators to Test AI Safety",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-18/anthropic-to-embed-evaluators-from-accenture-to-test-ai-safety",
+        "source": "Bloomberg",
+        "published": "2026-09-18T20:49:12.000Z",
+        "summary": "Anthropic PBC is partnering with Accenture Plc, a management and technology consulting company, to test the safety of its advanced artificial intelligence models by embedding evaluators from the…"
+      },
+      {
+        "title": "Anthropic Sales Near $100 Billion Before November IPO, NYT Says",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-18/anthropic-s-annualized-revenue-to-top-100-billion-in-2026-nyt",
+        "source": "Bloomberg",
+        "published": "2026-09-18T20:33:40.000Z",
+        "summary": "Anthropic PBC is expected to generate more than $100 billion in annualized revenue this year as it continues to prepare for a trading debut as soon as November, according to the New York Times,…"
+      },
+      {
+        "title": "While Issuing Warnings About AI-Made Bioweapons, Anthropic Quietly Set Up an AI-Run, Robot-Operated Biology Lab Here in the US - Gizmodo",
+        "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNM1V6dXdtN29MbWFGOW1jV1prb3RyczRiRjZxRDM2LXQ1ZmI3aXFRQ2NwVmhGb3BjcGRnOG9kcWd1STFqdVhkWXpkM1oxVUJiZXlMeVFDdjNQWWJJM2xQLWthY19HdkFyWE1yUk5kQVBWQjc5UkdtbGdaRUxjbWhFclNYVnNEakFGUlB3OW15VkhFblJ5TzctUXhvYm9icVpUcjJacTBST3kwSW1KUEozYjJhWXBRbTk5ZzdHbk9GNTNraS10bGV4OU9kOGRDR3VhendNWXJRMnRKeUExaHEwRE9pR0Q5cC1EYU5J?oc=5",
+        "source": "Google News",
+        "published": "2026-09-18T20:30:24.000Z",
+        "summary": "While Issuing Warnings About AI-Made Bioweapons, Anthropic Quietly Set Up an AI-Run, Robot-Operated Biology Lab Here in the US Gizmodo"
+      },
+      {
+        "title": "OpenAI vs. Anthropic: the agent platform gap - VentureBeat",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQRDhMdkFHeFBtcjltVnA2Y013Y01FLWY0M3NRSzctbjI5LUpESFFHQUZldXk0SW5tM1FxS1Y0bzc5ME5KWnBuZXYtVlVKV1VOZ21sT0dCTjQxN3V6SVByNk8yaFJzczZTSzlDVjNOUnVzRjl0X0padExFbk56N0s3eXhGbWZNWEU4Z2M0ZkYwWTBiMERTaWxrQ1FTclpyVkZ1THFzV0NoUUJsMFhTZDBlUUowajc0a0N4RnpEdXg2S19Zc0QtMFNfVWxtamNaYTAzVWY1dHJWa0xvTkw2NkE?oc=5",
+        "source": "Google News",
+        "published": "2026-09-18T20:27:23.000Z",
+        "summary": "OpenAI vs. Anthropic: the agent platform gap VentureBeat"
+      },
       {
         "title": "Anthropic Investor Franklin: AI Safety Concerns Won't Slow Spending",
         "url": "https://www.bloomberg.com/news/videos/2026-09-18/ai-safety-concerns-won-t-slow-spending-video",
@@ -174,11 +252,11 @@
         "summary": "Bloomberg’s Ed Ludlow breaks down Anthropic's finding that its Claude chatbot is leading 26% of its AI research and development, even as the global debate around AI heats up. Plus, SoftBank is…"
       },
       {
-        "title": "Claude now leads 26% of Anthropic's AI R&D work - BetaNews",
+        "title": "Anthropic says Claude now leads 26% of its AI research and development - BetaNews",
         "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFB4RFBpOWxoYWd4MFFQZi15cVhVODNhVkdITTkxMnpyYUtpSGhOcFBqYWRLdzlaYzNuS29Vb29DOXFpNmNHaEQ4dTZ5cXhyamJLejhfdjlaeFFUa1Nab1NIeEFwU0E?oc=5",
         "source": "Google News",
         "published": "2026-09-18T19:27:22.000Z",
-        "summary": "Claude now leads 26% of Anthropic's AI R&D work BetaNews"
+        "summary": "Anthropic says Claude now leads 26% of its AI research and development BetaNews"
       },
       {
         "title": "Researchers used Claude AI to hack into OpenAI systems - qz.com",
@@ -195,6 +273,13 @@
         "summary": "Anthropic Shares Prompt Upgrades for Better AI Results ALM Corp"
       },
       {
+        "title": "Security Researchers Hacked OpenAI Using Anthropic's Claude - PCMag",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQS2pyd2g5d09pbWR2OHlfc24wMjQwSUVpRzlsVmxUMW9SSXE0Uk56d1d1UmhNakhBVk1kWUhkWGttR1lEeVBUZlNjakRrUEtrNnFSVmNnR215YjVlX1BwUFd6dmIwOG9senh3SjBQMzVGeVMwM0NxRms5czBNdkpxLWpFYzJMOW1HTnJGN3dR?oc=5",
+        "source": "Google News",
+        "published": "2026-09-18T18:43:57.000Z",
+        "summary": "Security Researchers Hacked OpenAI Using Anthropic's Claude PCMag"
+      },
+      {
         "title": "Hackers Used Anthropic's Claude to Break Into OpenAI. They Reached the ChatGPT Maker's Private Code. - International Business Times",
         "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPRkJYTVc5MWYyNS01aTMzRmYtSGRSLXZlVjBBbVRLNlVUeHJIemhfam0zTUpGTmRNbGYxMGtCczktbUlJaGFVUVhISmxQTy0xQUhPMXY0X3ZDN3Vla3BUZ3BkeXh6RnBjVEd1bnlBU2ktTnFXeHlZb3BqaThkclJoUWJvZnpvZHY5OEFNTldJcVZzRVNVRzJhT3V5ZVo2bGVUOEV1WF85S21uaVlCa1RPU0xKSzFMalU?oc=5",
         "source": "Google News",
@@ -209,11 +294,19 @@
         "summary": "Anthropic Warns AI Could Soon Start Building Its Own Successors Morocco World News"
       },
       {
-        "title": "Anthropic: AI model Claude helping build next version of it - thehill.com",
+        "title": "Anthropic finally adds AGENTS.md support to Claude Code",
+        "url": "https://twitter.com/trq212/status/2101009392611278961",
+        "source": "HN · 42↑",
+        "hn_id": "49758250",
+        "published": "2026-09-18T18:26:34.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic: AI model Claude helping build next version of it - The Hill",
         "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQSHoxemhKVmppRHBIV0dMLWJMeGlDc20wWVRNNWxDYnJ0bDVQa0dMTTF0R1lqbFc1dkZ1dW1yc1FfangzZVFYNU4tSERIREhkQlU3WDBVM3Z0dnp0TVlfaWxRcnNtWnhLMVZvZmwwZkpwWm40cDdELXRKYXAtQUNRemhZZXRGVUVSQjRmSdIBkgFBVV95cUxPcF84cVk5cjh6MmVnUG1zZm1YYkFnOTJ3b3V2SDVpbmVTOHJMTDdqY3dFOUZFRjJmVW5ld1VOUFJiUldvMFZXbF9EUjVWYjdZcVF0ZTJZNHhVaWFCbnBEaEFzc0w1RU8wSXJqZlFKZTdKMHdycVN2SUdqWTJOWG9rTG9CSGtmV1BUSnc5YnV0a0lGZw?oc=5",
         "source": "Google News",
         "published": "2026-09-18T18:23:00.000Z",
-        "summary": "Anthropic: AI model Claude helping build next version of it thehill.com"
+        "summary": "Anthropic: AI model Claude helping build next version of it The Hill"
       },
       {
         "title": "AI News: Anthropic’s Claude Reportedly Used in OpenAI Breach - The Coin Republic",
@@ -223,102 +316,11 @@
         "summary": "AI News: Anthropic’s Claude Reportedly Used in OpenAI Breach The Coin Republic"
       },
       {
-        "title": "Security Researchers Hacked OpenAI Using Anthropic's Claude - PCMag",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQS2pyd2g5d09pbWR2OHlfc24wMjQwSUVpRzlsVmxUMW9SSXE0Uk56d1d1UmhNakhBVk1kWUhkWGttR1lEeVBUZlNjakRrUEtrNnFSVmNnR215YjVlX1BwUFd6dmIwOG9senh3SjBQMzVGeVMwM0NxRms5czBNdkpxLWpFYzJMOW1HTnJGN3dR?oc=5",
-        "source": "Google News",
-        "published": "2026-09-18T17:59:43.000Z",
-        "summary": "Security Researchers Hacked OpenAI Using Anthropic's Claude PCMag"
-      },
-      {
         "title": "Hacktron AI Used Anthropic’s Claude to Breach OpenAI Systems - Yahoo Tech",
         "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNczVwc2pSRm9GY0hfVTIxcTlhZmJaV3p0YWtnZkRLTVVqSmJURHhSUWtJdVozaUppbVVYNThJTmdjMW85REZGQlo5b01vbFZQRnFacmVlaHlBblhaXzdmc2w2S3d5cFhZU3dLYTk2bUsxREJ4dGNRQnQxZmdzVG9TUmE3eTJ4WE5DUlVQS3JMalUxZmJY?oc=5",
         "source": "Google News",
         "published": "2026-09-18T17:41:43.000Z",
         "summary": "Hacktron AI Used Anthropic’s Claude to Breach OpenAI Systems Yahoo Tech"
-      },
-      {
-        "title": "Novo Nordisk taps Anthropic's Claude to speed drug discovery - Drug Discovery News",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxONm0yX19DbUQ4bUNsYXM1Y0RkYmhwejBDZXpaY2hINnpndnVyNHVTcTZ5TWJ3V0R4X0RBRTNqZTFPUG5BVm9xNThDb3RnM19veUxUWE84VG1EN3cwcDRzdjJUMXhHZnJpNWxJSXFFTlNJTFVfT0dNcERqMkJwUW9ZYkpFblhsLS1iSkxVZkJPcGM1UFNvZE5ld0xCeFdBX1lnakE?oc=5",
-        "source": "Google News",
-        "published": "2026-09-18T17:29:37.000Z",
-        "summary": "Novo Nordisk taps Anthropic's Claude to speed drug discovery Drug Discovery News"
-      },
-      {
-        "title": "Security researchers used Anthropic's Claude to hack OpenAI's internal systems in under 72 hours - the-decoder.com",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOQ0FYWDdCVzJpOTF3S25tMkhkVWZMdHQ4U0NYY0pybk1GT2FjTFNYOHV1NWlNck1ydWl3Q0ZIQ0s2Q1BTM0pVTjZzYXluOUlmSzAxOEhIbWxXcUg4ODAzR2xGZ004OFE0WDk5MHpVVWh6TFlTbkZGVlRWVUhUSHh0LVMxRnAzUEJ6UndZQjNUYlFVemItSXZucHpYOVVCaFIxNE5aNUREbmZGamtsTHl0SjB2VFVoTkxlcEZr?oc=5",
-        "source": "Google News",
-        "published": "2026-09-18T17:24:02.000Z",
-        "summary": "Security researchers used Anthropic's Claude to hack OpenAI's internal systems in under 72 hours the-decoder.com"
-      },
-      {
-        "title": "EXCLUSIVE: Anthropic quietly sets up biology lab as it ramps AI drug program - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPMnNocmF2MC1saXA1bW95QU5PcXUyNHZrZUdaZUFKNXVnYk1Yejg4UTlqa242RmJGMnBlZ1pkeC1KdERaazR1TGtSTHkwMFFLNTZQa3VBdHJzcWlWR0hldTYtVm5RQ3hQZDE2LXFfZ3gzeHVqQ3pNR1pEUmpHbnpUMlB1UkYtTHpfeURTVU9Kb082R3ZrbnA1VVZmcEJlcnZBUlEySmtkUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-18T17:18:30.000Z",
-        "summary": "EXCLUSIVE: Anthropic quietly sets up biology lab as it ramps AI drug program Reuters"
-      },
-      {
-        "title": "Dario Amodei and other AI leaders want to ‘Pace the Frontier’ but…how?",
-        "url": "https://techcrunch.com/video/dario-amodei-and-other-ai-leaders-want-to-pace-the-frontier-buthow/",
-        "source": "TechCrunch",
-        "published": "2026-09-18T17:09:56.000Z",
-        "summary": "A week after an Anthropic researcher’s doomsday warning rattled the AI world, the company’s CEO Dario Amodei has outlined his plan to “pace the frontier” of AI development. The proposal leans on…"
-      },
-      {
-        "title": "Automattic’s 33-Hour Coup, and can AI labs police themselves?",
-        "url": "https://techcrunch.com/podcast/automattics-33-hour-coup-and-can-ai-labs-police-themselves/",
-        "source": "TechCrunch",
-        "published": "2026-09-18T17:06:32.000Z",
-        "summary": "A week after an Anthropic researcher’s doomsday warning rattled the AI world, the company’s CEO Dario Amodei has outlined his plan to “pace the frontier” of AI development. The proposal leans on…"
-      },
-      {
-        "title": "Anthropic's Claud Hacks OpenAI, Researchers Say. What You Need To Know - September 18 - Central Oregon Daily",
-        "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxNZ2JHSmxWRVU4LWxHXzlYSzUzeF9uTjA4Ty1MTF9DY0xseWxTSXpWOFhlam51TkdncmxDWXBMTkM0UVhLMWU1OFZlcnUtaFUwckNqTGxCcS10dDVaVVBIaERGdjBtUzRzUF84M2g4RFA3NjFLSFFJVmhlQkZMQlRWYk1fNVc3TVRpM3gtcFJVOUxRcjB5bEctVUxoZGUtenVueTdXR1k4RUI2dlUtdmlkckF0Q0FLQUVrY3NZbDJ3MW1Lb3VYSjF2RnVEYXpvWElTX3NkQV83czBmNnZidWhMZjBoVTQwWmI0R1Rud2tTTzloYlBjbjlZR0dtaEpkSjhoRWJINU1BUUdDWG8yZXpTTg?oc=5",
-        "source": "Google News",
-        "published": "2026-09-18T16:34:55.000Z",
-        "summary": "Anthropic's Claud Hacks OpenAI, Researchers Say. What You Need To Know - September 18 Central Oregon Daily"
-      },
-      {
-        "title": "Researchers Earned $6,500 Breaching OpenAI With Anthropic's Claude - BeInCrypto",
-        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBJWmtkeVpOY2ItZFJKR3BwYmJxRUpWeTdkd0I0S1ZjMkdCejBDSFN4Z2xkZ0o4dFVzNmk1T2RjdGtLQ2loZkRPTml6b21kTFc3T3B2d2xwX0FxRFQ1ckh5VVk3djZXYlh6WklnTFJR?oc=5",
-        "source": "Google News",
-        "published": "2026-09-18T16:29:00.000Z",
-        "summary": "Researchers Earned $6,500 Breaching OpenAI With Anthropic's Claude BeInCrypto"
-      },
-      {
-        "title": "Anthropic Wet Lab Confirmed: Claude Maker Now Runs Physical Biology Experiments - Tech My Money",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQVmNRZEhPMUxaWUxtUzZJck5RclhNZGFGaTJlbnFHc1pMaWJoU2ZGa0NXTzFocTZLcGo5U09ra1IzclRKTjVvN2lCVTA3cXoyRjhDVUdqSjJkZFQxTlVsd29ZTWR0RGF1bFJGTEtIRmEyZzFqMnFTMjBfSWs3ZFZrWlZvbDl2Y29veHcwV0ttYURiYkRvZ1Vpa09BR3RxaERxMFQwdUVuTmM4YlVxY00wX3Y1V2rSAbQBQVVfeXFMUFZjUWRITzFMWllMbVM2SXJOUXJYTWRhRmkyZW5xR3NaTGliaFNmRmtDV08xaHE2S3BqOVNPa2tSM3JUSk41bzdpQlUwN3F6MkY4Q1VHakoyZGRUMU5VbHdvWU1kdERhdWxSRkxLSEZhMmcxajJxUzIwX0lrN2RWa1pWb2w5dmNvb3h3MFdLbWFEYmJEb2dVaWtPQUd0cWhEcTBUMHVFbk5jOGJVcWNNMF92NVdq?oc=5",
-        "source": "Google News",
-        "published": "2026-09-18T16:21:40.000Z",
-        "summary": "Anthropic Wet Lab Confirmed: Claude Maker Now Runs Physical Biology Experiments Tech My Money"
-      },
-      {
-        "title": "Claude Is Helping Build Its Own Successor. Anthropic Says AI Now Leads 26% Of Its R&D. - International Business Times",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNbGZZY002b3EwUnN3RXJrUGlndzNFeURCQlZzci0wZ3FIa2hpMmp5Qm95RkpUaWRVN2lyOEh1ZWtWWnAyTmtpdnpTYTdzQ3JZdXMwOW9uZ1ZRb3hjLWotMzNZLTJxa3JJRFFCYktlUVl0UDkzZWRxZF93ZkxkUHVnSjBIbmdUa1ptN2gwQ3NWNl8wLU5TTHFpSDdWMmc0Zi04ZlFEV1p0UWVsdEtD?oc=5",
-        "source": "Google News",
-        "published": "2026-09-18T15:46:08.000Z",
-        "summary": "Claude Is Helping Build Its Own Successor. Anthropic Says AI Now Leads 26% Of Its R&D. International Business Times"
-      },
-      {
-        "title": "Security Researchers Use Anthropic’s Claude to Penetrate OpenAI’s Private Software Cache - PYMNTS.com",
-        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNbmt6c2g0S0VhOVNWLVZ5aHpQRTZ1c05IZlhIcmxaQWVhc3p1dmViUDNHM1RGSnlxamdIRl90SHdJd1hEd1Y3d2UxRTVHdktQRHU0MGtNbWxlMGVtUkQ1LVp1WTlfMGU3T2JlVkdJc3hONkE5WXZqTlNpamZiSzRValY1Rl9JVGR2UmNyT1R2UXYxWnN5LTBBMDhoUEhHVF90UFZvYS1rM21uNER0WjE5XzV3NUYtUFVubUdOOVBWRk5ZUGZmemhIcTFqdXB0VjNRTm9ZLS1SWHRzUVdv?oc=5",
-        "source": "Google News",
-        "published": "2026-09-18T15:36:17.000Z",
-        "summary": "Security Researchers Use Anthropic’s Claude to Penetrate OpenAI’s Private Software Cache PYMNTS.com"
-      },
-      {
-        "title": "AI security experts say they used Claude to hack ChatGPT - CBS News",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBNeUo4TFlnSHFTVTg5MlhVZC1lM2FkZER1MHZDWEJQaHp1YVdCVExBTE5EdUF6Tk1ZTmpzQjc3c3JWU3RDV04zWTN0VFNZN0MyUndHcTFZNFh0cFVQMndIMkRlaE8yTWY3WHBIYUk3RjFSWWxv?oc=5",
-        "source": "Google News",
-        "published": "2026-09-18T15:31:32.000Z",
-        "summary": "AI security experts say they used Claude to hack ChatGPT CBS News"
-      },
-      {
-        "title": "Security researchers used Claude to help them hack into OpenAI",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/997444/openai-hack-claude-heif-heist",
-        "source": "The Verge",
-        "published": "2026-09-18T15:30:16.000Z",
-        "summary": "A team of three independent security researchers at Hacktron says it took less than 72 hours for them to hack into OpenAI employee accounts using Anthropic's Claude Opus 4.8 and 5, The Wall Street…"
       },
       {
         "title": "I Built Smol Coder, the Best Free Claude Code",
