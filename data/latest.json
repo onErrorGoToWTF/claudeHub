@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-09-23T14:28:50.429Z",
+  "generated_at": "2026-09-23T19:16:17.263Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Claude Discovers Novel Enzyme System",
+        "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+        "source": "Anthropic",
+        "published": "2026-09-23T18:24:45.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Uplifts Biomolecular Modeling",
         "url": "https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling",
@@ -135,16 +142,174 @@
         "source": "Anthropic Research",
         "published": "2026-09-10T20:19:24.000Z",
         "summary": ""
-      },
-      {
-        "title": "Developing Nuclear Safeguards for Ai Through Public Private Partnership",
-        "url": "https://www.anthropic.com/news/developing-nuclear-safeguards-for-ai-through-public-private-partnership",
-        "source": "Anthropic",
-        "published": "2026-09-10T20:11:55.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Claude Opus 5.5: Anthropic cuts price 20%, tests safety - BetaNews",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB4aS1TNmpMemxLSUxpeGRsaEVwU19tNV9tMlhpUGJZcmxQQThyU3RWdTZmcEdkMFYzYkRQREdMd0wtSzdIVTRZR3JzenV1Q0M2Ylo1WHUxU1Q2NThLbmx1SXB1a1dRcmdaV1VBcF9JQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T19:06:56.000Z",
+        "summary": "Claude Opus 5.5: Anthropic cuts price 20%, tests safety BetaNews"
+      },
+      {
+        "title": "Measurements for understanding the pace of AI development inside frontier labs - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1hSlNaZU5CMXdjOERiMTltcEVxMXduUXVrT1UtSExlUGlUUHFCc2huOVM0NEY0cmhCMVF6X0o2QjMwUUZOQkhuSGlHVjFlaWdKelR3ZTEzUV9SRzRIdkxhV3RfQ0N2OUI5U214a0RqZjh3c2MxUktr?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T18:54:31.000Z",
+        "summary": "Measurements for understanding the pace of AI development inside frontier labs Anthropic"
+      },
+      {
+        "title": "Claude's #1 Use Case Isn't What You Think",
+        "url": "https://www.youtube.com/watch?v=V8iJgEpujbo",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "V8iJgEpujbo",
+        "thumbnail": "https://i.ytimg.com/vi/V8iJgEpujbo/hqdefault.jpg",
+        "published": "2026-09-23T18:45:20.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic Announces Claude Discovery Of Novel Enzyme System With CRISPR-Like DNA Repeats - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPQl84SVk1NlpMSmNrUGZqaGM3Z05hNlJ3QlJMcVBaLW9nT3lZNk91YjlkczUzbGhsdzYwbk5JWG12OHVKOVNFckx1MUJ0Ti1FOUdlckVZb3J5bU43ZE50dGpRTEFNbTYyOFZ3OC1Nd1lsekgtLTVuSHhhUEpPSktRQmNWNUl5VG53bnFyVGdma2dIZFNCQ1IwUHJSOGJodlB0Mld4X0twckJJM2dJZkFHb2NfZVZNN2RPNnlvZTVJa0JrYmRsQkYzQl84MmZBRHgzM2xVUlBlQjl4MDdzT2ZaZ0FuN3Vwa2RTZzRqQWJFOA?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T18:27:07.000Z",
+        "summary": "Anthropic Announces Claude Discovery Of Novel Enzyme System With CRISPR-Like DNA Repeats TradingView"
+      },
+      {
+        "title": "Anthropic’s Claude finds new enzyme system - Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNTy1TSDBoeVpLcUhpRHF4Z1VJM01VMFZxRmdsMTA4bWV2c01PUTAwTFpGZVVHZWZ1MzhRUzcxYUpKcl8wYWRqU19RbVBhUkZFYjJXUlF6TVZvdGtQOHdxb3djUGNQZ2g0dGh0M3RhSlJ4TU96ZnlrLU14LTdNVERyRFRvbnVzVmJEdkVUWlNzMmRNdkljcDd2WHZ2OVRZZkU?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T18:20:52.000Z",
+        "summary": "Anthropic’s Claude finds new enzyme system Investing.com"
+      },
+      {
+        "title": "Anthropic Says Claude Discovered a New Enzyme System Resembling CRISPR - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQNjhLSUZSQUg1cVRtVl9ZTW9Vdnl2Sk9TZDQ0cXFqUlZDSFRSLWE3dVFZRjYtUjNKVDFqaERETmV4QUtieGdDR0xSd1AwV1lTSFQ5MHdTTkQ3OTJ6bUR3aE9iZDdOWjdsQ1Iwa2R6ckpaTzBFaWJTUjZSVmc3MThoMl8zTVVKeDFDSEtYSjIzaDNscG1uTnFJ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T18:17:01.000Z",
+        "summary": "Anthropic Says Claude Discovered a New Enzyme System Resembling CRISPR Unite.AI"
+      },
+      {
+        "title": "Iran-Linked Actor Leveraged Claude AI to Target U.S. Navy Data - Data Portuaria",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQYUlHMFdzTDlZaW43aE12RzNKUFViMDhZN2xjaUxOTVZ4enRLUFhzV0hmclAxOWpaTXVMSjRrajFSUGZkQ1A0OUhweUxUR1ZWZ2EwaVVkQmlkNl9IMXVnS09XOFA3OVhLVWxOdUkyV2NiYzkyd1FlMzVkUTJ4TFgwXzdrZFVaeFhUUDZyeEs1MEV2TUgzM2FWckNYcWxaZUFMU283RENzbXhQWmRrMmdhOGtn?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T18:15:11.000Z",
+        "summary": "Iran-Linked Actor Leveraged Claude AI to Target U.S. Navy Data Data Portuaria"
+      },
+      {
+        "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
+        "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+        "source": "HN · 80↑",
+        "hn_id": "49820134",
+        "published": "2026-09-23T18:06:47.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Inside Anthropic's molecular biology lab",
+        "url": "https://www.youtube.com/watch?v=DdCEmlAydcw",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "DdCEmlAydcw",
+        "thumbnail": "https://i.ytimg.com/vi/DdCEmlAydcw/hqdefault.jpg",
+        "published": "2026-09-23T18:01:32.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic’s biolab made a discovery it’s comparing to Crispr",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/999470/anthropic-biolab-claude-crispr",
+        "source": "The Verge",
+        "published": "2026-09-23T18:00:00.000Z",
+        "summary": "Anthropic says its AI Claude has \"autonomously discovered\" a new enzyme system similar to machinery behind the powerful gene-editing tool Crispr. It's the first result from Anthropic's…"
+      },
+      {
+        "title": "Anthropic’s biolab made a discovery it’s comparing to Crispr - theverge.com",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQT2loeHU3b3JGVFhMUEhJb0Qyd2RBaGpmbHFPdW1xVVNfRmF6TWxiNjhkR1NPMGJTT3Z2NW9tblY1YnJrRWtlSFF6c25JMjRQS1RwN1I0QTFKRl9ybDNZaFpZdjlTbTctdkpmVkM4TTRaa2h1OUc1U2NibENyZ2I5MXlEbG15WDdfTDFoUVBwdVhpNXc?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T18:00:00.000Z",
+        "summary": "Anthropic’s biolab made a discovery it’s comparing to Crispr theverge.com"
+      },
+      {
+        "title": "Claude Opus 5.5: Free Plan Excluded, Pro Gets It [2026] - shattered.io",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1KVzFFeHpwWHI4NkljdnA1OEI0VmZCZUFPZnVxR2loVk5SdDUzTWx2YzlPZ1YzNzROLWEtYkwxZUxuemgtcG5Tc3ktU05WWFlkTXRUU205TW1vX2hTU0xwSnJtbDI5SHNFVnBfWUFn?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T17:22:46.000Z",
+        "summary": "Claude Opus 5.5: Free Plan Excluded, Pro Gets It [2026] shattered.io"
+      },
+      {
+        "title": "Alphabet's Slips 2.8% as Claude Gets Cheaper - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOYWMzcUdXQVAtTW0tQmNxeEZGY1VYU01SQm4wUkhPcExkMEpvb3QteUJqeTB3ZktydHY1WGNEZnpiMWh3RXJkZVMxZ19vRVhSTTZmakRmVkdLNFBnV0tqcGN4ZmxpNU15REYyRW1Yem5EUk5vSDcxMFhwN1N5R2lJNWoxRTRNUmh3MmlJc0lLOG9oazBGd2VZS3prTDcwMDFRY2JFTldB?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T17:21:54.000Z",
+        "summary": "Alphabet's Slips 2.8% as Claude Gets Cheaper TradingView"
+      },
+      {
+        "title": "Anthropic launches Claude Opus 5.5 with expanded biology capabilities - MobiHealthNews",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPTkZ3WlVySXByWW1fX1hNaXZYZnMzazZqZ1htQ1lGRWhmQWpFRzY4NUVqMzlUaEJxVDhiTDk1SjRzWXJ5YmlJUnppVWRiMjk4UHBXTXcxMWo0UVZzdjg3bUVCX08xakI3NXJUdlozdUJFZkR6WkZoMzR5OUpERXB6YVdiU0ZJWm0xVnRaMGtEdGUxWHhpS1JCZmp1V0IwejV4?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T17:06:19.000Z",
+        "summary": "Anthropic launches Claude Opus 5.5 with expanded biology capabilities MobiHealthNews"
+      },
+      {
+        "title": "Anthropic Launches Faster, Safer, and Cheaper Claude Opus 5.5 - extremetech.com",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOY0VqZkk0S0VpZFY4bE1BYXdqd1ltb1h3cmJfRDNQNnpxMTd0WWtSa3NXNkVCb2F6cHBQeE9xeGV3RlFUTjJyeXJDdFVSZmJJbW85U3V1R2x6TnFOT18wQWZnem1tb0ZMbG1iVGJyMlVYVUEwTThUa2Q4QmV2YjlBeEo4ZFQzN0dEV1ZjOVNpVHQzMjdhTTBWdzBFWGI?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T16:30:10.000Z",
+        "summary": "Anthropic Launches Faster, Safer, and Cheaper Claude Opus 5.5 extremetech.com"
+      },
+      {
+        "title": "Anthropic Unveils Cheaper Claude Opus 5.5 Ahead of Expected IPO",
+        "url": "https://www.bloomberg.com/news/videos/2026-09-23/anthropic-unveils-cheaper-claude-opus-5-5-ahead-of-ipo-video",
+        "source": "Bloomberg",
+        "published": "2026-09-23T16:19:12.000Z",
+        "summary": "Anthropic PBC is releasing a new artificial intelligence model called Claude Opus 5.5 that is similar to Fable 5.1. Anthropic says this model is faster and costs less to use. The Claude maker is…"
+      },
+      {
+        "title": "Anthropic launches new update to Claude – after telling the world to slow down AI - Yahoo Finance UK",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOTmVKeWVncjhWVGtYcHN5TlUzOEx1cXJUa09aeUdvUVZzd29wc2MxNlB2MUZkaTZmOXY0N2IxcWdoQ1YtZTczMy1kemNOTGJDZGlxTUdpbWRlX1lzSF9JbmJLclF5NHozWUFMbVMxMk5POWlZRllwQUwxczBHdVRxbGlrcEhuMXBFUzQwNlV3M0hPUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T16:09:28.000Z",
+        "summary": "Anthropic launches new update to Claude – after telling the world to slow down AI Yahoo Finance UK"
+      },
+      {
+        "title": "OpenAI, Anthropic cut AI model costs as price-performance race intensifies - InfoWorld",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPY2RlWU5NcWZIT0ZrM2FRandNMEtzZVFiekcyNXo4WHl4TXNyZThjV09HWE5DXzR3eGVSNE1NMFhvS1dMdUtiVTRQNi1Md1QwNXUxRHc2Q0NBVVRYQlBmNjZzb2NMOHBCSTJJMzBNRFJQb1RXWU5lSzFNYTRobFB2N2pDcy1ramktd21RLWUta2o3Z2Y1ZmJKUUNwdWtaN3VjRDlRNEtFSGR2aWFLeWFGU3hWWGpMWmNyelkybw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T15:22:56.000Z",
+        "summary": "OpenAI, Anthropic cut AI model costs as price-performance race intensifies InfoWorld"
+      },
+      {
+        "title": "Claude Opus 5.5 Launch: Pricing, Specs vs GPT-6 Sol - shattered.io",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFB4RV9RYXFYRmdVUU1ZY0NfVVlMcXZja0hjeXFXYnlRS2w3aFRzekRJVU5ZRFRha0ZneDEwRHRtVG5ya0V3d2ptcVN0YTVyMVVlS0x4NVJwTHFnVUdaYzlKOUQ2RHhBTU9z?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T15:22:44.000Z",
+        "summary": "Claude Opus 5.5 Launch: Pricing, Specs vs GPT-6 Sol shattered.io"
+      },
+      {
+        "title": "Amazon Seller Assistant plugin brings seller data to Claude - thenextweb.com",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFB2SjlGUW1sYjM4QWFtN2QxVVJKcl8zQUMtU3ZRMXpEcFZKWENDeXhmTV8yR0xhMVV4UkM3OGlHYjNwcUlGb19zSHRjNWNheWpZYXU1REN3N3l3ZWZLT1hZRUxBVjJidDFBYS1LVTJPaUxuaEQ3Mkp5aXJYZw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T15:22:08.000Z",
+        "summary": "Amazon Seller Assistant plugin brings seller data to Claude thenextweb.com"
+      },
+      {
+        "title": "Anthropic engineer explains why Claude's writing got worse although the model got smarter - the-decoder.com",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPV2dpX081ZEJ6NlhmT2ZXbEhUaFhVNEZLTE1USVYyZXlFZ29WMjhQdmZMZFkzQUM0bWN6ZUJhd2FZa1hjT0lGQXNVVmcwY2pXN3UxdTNjSUdlTTRueFBzVHkzS3dqUTEwdU8zUjAwSG5WRzl4UWdlSFdkalJkcUtnR1hPdEdGcnJxSS1BZVpaakZ5RGRXTzdkcklQS1lHeWU5SnNHZGxBWm43akVEaHNxa0x0MA?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T15:17:12.000Z",
+        "summary": "Anthropic engineer explains why Claude's writing got worse although the model got smarter the-decoder.com"
+      },
+      {
+        "title": "Everything Claude Opus 5.5 Actually Ships With - KDnuggets",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE41cWtkWUpaT0pvTl9LQ2oxazFfQkx6WG41dm9WV3VhR0JPZjF4dHp0QkxsQUxCendrUWg5VlpFMHc3SWZiSDNnY3RXcmg0ZG05WnZNTGdGanI0M2R2MENEakMzeXpTd0E5OVpwV29JaVNVUjhIQldGSnlvZjk?oc=5",
+        "source": "Google News",
+        "published": "2026-09-23T15:14:51.000Z",
+        "summary": "Everything Claude Opus 5.5 Actually Ships With KDnuggets"
+      },
       {
         "title": "Amazon opens its seller tools to outside AI agents, starting with Anthropic’s Claude - GeekWire",
         "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOQ1pVeHhockdFWjl1eXJoYlJKZmZHT2JTOXlLalRYeHBKalY1RnNNdXBNY0ZIUmVSZnNCckVDMDJyLVI1LWFXLWxyTXB3Q1JWYnRmZXhjOFBfbkdLb3Jzcy1QUGhXaFA2Wm9pOUs1eHRWLURHeFFlVDJCbmE5bXRhRU5HbjVVMThHbXJNSTZTTnlQaTJwWWFtWWRha1RZRktWSG4xMi0ydFhHbUVNV2lDMHE4NA?oc=5",
@@ -158,13 +323,6 @@
         "source": "Google News",
         "published": "2026-09-23T14:03:29.000Z",
         "summary": "New Phishing Attack Promises Claude Max, but Steals Your Google Credentials Instead CNET"
-      },
-      {
-        "title": "Measurements for understanding the pace of AI development inside frontier labs - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1hSlNaZU5CMXdjOERiMTltcEVxMXduUXVrT1UtSExlUGlUUHFCc2huOVM0NEY0cmhCMVF6X0o2QjMwUUZOQkhuSGlHVjFlaWdKelR3ZTEzUV9SRzRIdkxhV3RfQ0N2OUI5U214a0RqZjh3c2MxUktr?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T13:42:15.000Z",
-        "summary": "Measurements for understanding the pace of AI development inside frontier labs Anthropic"
       },
       {
         "title": "China probes DeepSeek, Moonshot over alleged user data transfers to Anthropic’s Claude - Ynetnews",
@@ -181,158 +339,11 @@
         "summary": "Anthropic's ClaudeAI Predicts a Wild 2026 Price Target for LINK Cryptonews"
       },
       {
-        "title": "Amazon gives sellers an even smarter Seller Assistant and a new plugin for Amazon Quick and Anthropic’s Claude - aboutamazon.com",
+        "title": "Amazon gives sellers an even smarter Seller Assistant and a new plugin for Amazon Quick and Anthropic’s Claude - About Amazon",
         "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQaUJEMEhNVjVhWlBoRXNvX0FlWEtZMUxyRGZXekdwR2NVcjhTSWZYd0phakF5N3N3Q3FuN2F3UV91SW9McFY3c1REZmhpTmE0NVR0RkFVT1FJSFNBWFNEX0FJV2czQ0VvOWkxY2J3U0RVUjBSV3NzQzA5eUxXTTJ3SjdBQWNwQ2dJbklNWlkwV2N6SUJfSzhwTWdaU2p3Zw?oc=5",
         "source": "Google News",
         "published": "2026-09-23T13:05:47.000Z",
-        "summary": "Amazon gives sellers an even smarter Seller Assistant and a new plugin for Amazon Quick and Anthropic’s Claude aboutamazon.com"
-      },
-      {
-        "title": "CBTS Unveils Blueprint for 100% Agentic Delivery After Scaling Anthropic Company-Wide, Giving Mid-Market Companies a Proven Path to AI-Fueled Growth - AOL.com",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOMzNwcE8xeUd1VUZibFR1MGRpeW0ySnVVVlgzYzk0b3ByaUlVZFhWaVlXTjNCV2ttUjFobFd2NE56eUpualUyRVNRbDJlZ2oxRFE2bWxHd2NLX2lwTjB2UWFnUDhOc2FQaWpqNDAteHVCM2gwemFNUnZxYUo1aVlybGxiUlM?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T13:03:42.000Z",
-        "summary": "CBTS Unveils Blueprint for 100% Agentic Delivery After Scaling Anthropic Company-Wide, Giving Mid-Market Companies a Proven Path to AI-Fueled Growth AOL.com"
-      },
-      {
-        "title": "CBTS Unveils Blueprint for 100% Agentic Delivery After Scaling Anthropic Company-Wide, Giving Mid-Market Companies a Proven Path to AI-Fueled Growth - businesswire.com",
-        "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxPdFRkX293em1NMjl5N1d3aUxieXRxZHRvVzBiQWZzM1ZlOXVERi00bmRDcG1UYmVzLUViMlBoQ1BGTXEyNlhibXpMakhBMEJDME5xWEY5RUJReEtUenFfNkZfdUFURDN6STRyMHV3Z0FQcnFrUUxWU24yRkRpUUw1SFN5NFJDYm5aTnhMb1ZMS2t6ZVZRSll5S1hpVUdwQkJPdm43aWYxTmdEZmlNenhjRWlNZ3djRjRNLWpJUHpPYU1MbmpmYXNQVjR3c1JHOU5mVzVHYjF5ODJBNVpKdEU0MExDMWQtMjdvZmJCbWRQcnA3OFFzQmhfczJ4aXB0V1RnX1YyQ00zYVlPMGFLSW1WdGlhS1RHdzJ6S2hXc09sYVdpWHhjbWI5YmRlbw?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T13:00:00.000Z",
-        "summary": "CBTS Unveils Blueprint for 100% Agentic Delivery After Scaling Anthropic Company-Wide, Giving Mid-Market Companies a Proven Path to AI-Fueled Growth businesswire.com"
-      },
-      {
-        "title": "Claude Code reads AGENTS.md only when telemetry is on",
-        "url": "https://blog.szypowi.cz/p/claude-code-reads-agents.md-only-when-telemetry-is-on/",
-        "source": "HN · 249↑",
-        "hn_id": "49814947",
-        "published": "2026-09-23T12:15:33.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic and OpenAI Models Still Attempt Restricted Actions in Safety Tests - The Hacker News",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4zbEpUVHQwVDl3TENaSC1aRlR6em8xYlo2TVIwVUpaenB6T0xyUFNaakdmZks4cV9oVDl3cFdjSi16Q1k4QU04bUF0bXMwWGZmY3Zya0xkZl9NRE9EZjhVVTR4ZHA0UWdscm84eFV4azFqcXdNdEd4WjhILWo?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T11:47:00.000Z",
-        "summary": "Anthropic and OpenAI Models Still Attempt Restricted Actions in Safety Tests The Hacker News"
-      },
-      {
-        "title": "OpenAI and Anthropic Reveal Cheaper AI Models - tech.co",
-        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9NNzJMd3pPU1JIUE5Kem0yWTZReG5xLXZIX3J2ZnZXalVDZEJxMi0wNUhXd3NnWTVsNEV6TTJjd3Q4R0o4cGJxaXFJUmlkcy1ONWxEaWhaWVd5cXB0bENPUW5RaGNCdw?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T10:35:15.000Z",
-        "summary": "OpenAI and Anthropic Reveal Cheaper AI Models tech.co"
-      },
-      {
-        "title": "Anthropic Disrupted Xiaomi’s Industrial-Scale Distillation Campaign – and the Open-Weight Ecosystem Should Pay Attention - forkast.news",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNWl9JVEhXYkZvU0NWV0tleEUzT0liRnpwQTJIWUQweXFCTENUV3otaUtpODNzR0tZWHYweVdWNlZTN3B3UldHWUd0WUlkUHhkcWZWQ1pfcGttU1hteDBYYXk2Ykd1TzBoeHdva3dqZVppRWNRc0dXTGpCZVhZYVdRQ195b3o0ZldlN1hWNGk5Z09ORmIteC1RUDNJM09xdnVBSlFSa1oyTUw4ODRQVkFCLUFPc0JuLVR3Z3hxcnZRdkkyZWduVXdaZTNzVGNEOGYwcTdIVF93?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T09:48:56.000Z",
-        "summary": "Anthropic Disrupted Xiaomi’s Industrial-Scale Distillation Campaign – and the Open-Weight Ecosystem Should Pay Attention forkast.news"
-      },
-      {
-        "title": "Claude Opus 5.5 cuts costs and adds safeguards for autonomous AI - helpnetsecurity.com",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1oU3NKNTVfanRWUVFOakZZM3V2bzRENjVhTVhhQkk3QUVUc1ZHZ2E3VmUtckpqY3dLZUh2TnJBc2FYeWpJUzBvR0NzbGpxOEFRdFZ4elNBSWNlZnI4VGg4QkpoXy1UMUlaTjIyb0ZQLUhWd3ZHN01aNw?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T08:30:52.000Z",
-        "summary": "Claude Opus 5.5 cuts costs and adds safeguards for autonomous AI helpnetsecurity.com"
-      },
-      {
-        "title": "Anthropic Unveils Opus 5.5, Its \"Safest\" AI Model Yet - iHeart",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPNUZycUpaUzJiajBwak12VGpuOGtaQ1JOb21xNV9Zb2xOV3lWT3lQT1NEbThWdlUxQ1B4LWI1WGhXbDZuSmhXUmxsNGZKb1M3RU1qQ1YtV2JfY05VcXcwUWNSVmpwTThfQVoyT3ZWWjFESGFjX2l0Yl9odnB3aTNrekhFX19iejE4Ym4tOU5PUmlRQmFvU2Nfa2pqbERmUkdBclE?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T08:26:00.000Z",
-        "summary": "Anthropic Unveils Opus 5.5, Its \"Safest\" AI Model Yet iHeart"
-      },
-      {
-        "title": "Anthropic Claude Opus 5.5 Cuts Costs and Boosts Performance - The Cryptonomist",
-        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ZTHJPYS03N2hRRkI3bW5sWGxBQzVJTjFrMExVWkVTZC1KZ2l0YUlfdXZFRGFHUkdTcTJzRVNpSjRIMjFoREVNZm9USTdMdk9FY0pNSXdFR3F1bnljMVJJUzhrR2VlSEpfS3lxWFk3ZVdEUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T08:14:44.000Z",
-        "summary": "Anthropic Claude Opus 5.5 Cuts Costs and Boosts Performance The Cryptonomist"
-      },
-      {
-        "title": "Claude Opus 5.5 Isn't Just Cheaper - Anthropic Is Adding Stronger Controls for Powerful AI Agents - Techgenyz",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1XdVczRm90Q01JQlN2QUlPTmdZcUJPNE9XMmx2SW9oNDRGNlFCVEwwTDNvVnVtYjVBLXNvVk1yeFJHY3Y3eExuMEtvQXVWQmUwMUgzMlE3QkdBWUx6Nk1ZWVFuWU5LTUtRTEh1N2NPRWE1RGdD?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T08:07:25.000Z",
-        "summary": "Claude Opus 5.5 Isn't Just Cheaper - Anthropic Is Adding Stronger Controls for Powerful AI Agents Techgenyz"
-      },
-      {
-        "title": "Pre-release Opus 5.5 wrote secret-stealing commands after a copying slip, says Anthropic - MIXED Reality News",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNU3B3RkRaeTREa05oMmZ3bEhvZExMd202Q0QxVG93SmZxWW1JbDl6bElyNnhKMDl1c3hfeGNQWWlCVlloRkw4T0FkZmN1OE1SX1JEalliMkc2Snlnc2pzM0JQellsM0haVVJ0UmowWmMzNGRPMUY5ZGN0SWFCaXEzc3phN29ZZnN1ZU1TZFVnX05Yd0FPMnpSSFpHTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T08:04:25.000Z",
-        "summary": "Pre-release Opus 5.5 wrote secret-stealing commands after a copying slip, says Anthropic MIXED Reality News"
-      },
-      {
-        "title": "I am done with this shit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm5c21/i_am_done_with_this_shit/",
-        "source": "HN · 199↑",
-        "hn_id": "49812975",
-        "published": "2026-09-23T07:59:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 5.5 makes safety and cost a product decision - contentgrip.com",
-        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5OZlo5dlJLR2pVN2lzZnhkNlNOMV9fcm9vSWhSX29ISVNRcWY5a2xnR2o1ZUV0U284R2VpN21YWHRUeG94SFFLTGNYa2lQaVhlUDBLbmhiS1M5ZU4tQnl5dzJB?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T07:49:42.000Z",
-        "summary": "Claude Opus 5.5 makes safety and cost a product decision contentgrip.com"
-      },
-      {
-        "title": "Claude Opus 5.5 Launches at 40% Lower Cost - Technology Org",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNWDR1bGxwVTAxY1VXVk5DSlozWmFPc0NnSjVNT3Znd09wTjdMMmJGR0Fic0g1NFloSUk1Z3JHbTMwVEFiWUZCVlg1bEVPZU9nS0xVSmx4VWV2YzJKZkNGY3hlY05yYlg3Z0ZYUHY5Y3AySDlEbTlVOEIydVRxR090OTNGdVJ6VzJRYVltZ1VXd2NwYVZn?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T07:46:04.000Z",
-        "summary": "Claude Opus 5.5 Launches at 40% Lower Cost Technology Org"
-      },
-      {
-        "title": "OpenAI, Anthropic Release Cheaper AI Models Days After Calling For 'Slowdown' - NDTV",
-        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNdkhRZnBMd2hmY0RLTEdackdOcE1PUjVmR3k1MUVySGFZc0FSYlV1d005UjhwWmlPNDZybEpKeWE4UnZOVWc0VGE4bG9RZVhWQ0IzellqMzRKRVpiUENBZVVZTHNnSktxRk1SbXdvaW5vM1kzN1RIQ2ljUUZlT2JYaGd5MHM0dlMxR0NubTVNN1NrTmZxenZtNFUxaVB2X2Q4dndPb3g3QVpuM2sxQTk2eDljZDNYekptS05rNi1Wd3lGZ1VsS2xj0gHPAUFVX3lxTE1scDNNRDBycENISjY4MzZ5Q2FOUzVVRnVtVjZNOGxQZkVZVnhoa2JYcDZjX0RfRVVRbXkxSXhTYWN2NF9QSExiOGJtd185ckY4UU56ejAyWHU1R1F6Z3Y1ZHRXQ2dqVmRSRTlhMDBSV0g4TUFROTRKUWlHVFhyYUFTeDFGVE1tUmozVGRIZ1ZGM1NsQWNCek5JUTlCYWc5UFMzREliNmZUUkZNT2hVTHNLeWI5N3VZSUJPS0hVRGw1R19EczJ2dFdtdTJlLWgxTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T07:41:19.000Z",
-        "summary": "OpenAI, Anthropic Release Cheaper AI Models Days After Calling For 'Slowdown' NDTV"
-      },
-      {
-        "title": "Anthropic Launches Claude Opus 5.5, More Powerful and Less Costly - marketscreener.com",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZ3BLU2ttWmdiNXpVNkRwakFUN3hIR045NmtyenVmX3BOMEp0SUdMQmVhc0xvZnkxWGRJR04zVDZycXRLeGVEcnp5MjBONGpNcGtXLTFkUFFTWTlUNl9hSEhZekNhVUU0Rm9CRlRGNk9nZkNLd3phenI2TVNHV2I4RFl6WXJRS3lGdnRUaWc3MFRZUTN0dzRubTdvQjl4SlZTZE94REo5OVU3OWs4SjNQN2VHSWthVGtp?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T07:20:05.000Z",
-        "summary": "Anthropic Launches Claude Opus 5.5, More Powerful and Less Costly marketscreener.com"
-      },
-      {
-        "title": "Claude Opus 5.5 Cuts Typical Costs 40% With Faster Coding Performance - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBudUlFLXpFcHR4ZC05bEFfZGV3eF9fa1ladC12UEZ2eVA1cUJuNnM5dUdsNk1QeGhQYzBnbnM1X1VWT2hIMjl1OVJPeG1WMFJjQ19zWWhadVNrUEVW?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T04:13:18.000Z",
-        "summary": "Claude Opus 5.5 Cuts Typical Costs 40% With Faster Coding Performance Yellow.com"
-      },
-      {
-        "title": "Anthropic’s Claude Opus 5.5 is faster, cheaper and matches Fable 5.1 on most work - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQTHlUTkNSV2hub3NwdmQ0b09TWV9hYWZ1MTdkeFlmTFdEYWhlMmhoV0I4ZWtfNFM0NnBGOV9FbkhPOU9DS0VOMUJMLW9RT3hxUmxCLXkwSkJjbzM1SnQ5NGJRUmgwUWRnTl9WNlZVOEQyNTRYSzBRWTJrbFJ4cTZuVkl6cVdoaVJYek5nYmtHLTZ1a09iMjR6NWhmdE9nRjhNSjFTbWVQeFUyX2k2VnlYMlk1eU1VQml3MjJlLWdpdnE3TzZJVjN4a2ZHc3R5d3FGQlRCU1UwVV9telNBcUUwUnJ6ZGVfX0x1WGFZcmdSYmphZkFT0gH6AUFVX3lxTFBFdzl5X3kyWTUwZ2VNUU11VmRvLTN6N29qa2c2QTZ3T3lYbkVPaFV1aWJDZnBfdlFxUmNmRS1GS3QwSFE3SlFDM3I5X2JmRkJXa0hlTklBSmhpbTVzUjlIZzF6QWxod0lLQ2lSTTN1Vk9ESkx0UDVXRVl3aFoxekVyb0xfa0R6X1JZcVdpVjdZbGtpTlpzYkV0NWp3azVfSnk4Si1MRmp6UjB3bmlqdlktbkFEQ0ljRDB3NFNxOWY3blQxR0NET1oxcEVfYW1GTGhId2xTenhEcldBNUVySFEwbVQ4VVVQeERCYTJpNnVTYjVkalR2Wk9DY1E?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T03:59:00.000Z",
-        "summary": "Anthropic’s Claude Opus 5.5 is faster, cheaper and matches Fable 5.1 on most work The Times of India"
-      },
-      {
-        "title": "Claude Opus 5.5: Anthropic Launches Faster AI Model at a Competitive Price - Basic Tutorials",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRkd1aFV4NW1PX2J4U0Vlb1NWWnBwdG5ybi1VbUhROGtFeS0xLVZGRkQ1MldVMmI4X1N0ZUlDVDRIT3ZjZ2p5RmZ2WFZ1Y0d5SmhqbDB6RHozVG1ib25xSjczeHY4bGRZSGJjeV9nbnh5R0ZsZi1QNlhIMlZ5WUlyT2tDVDN4N01MV09BMkYzRUxIbU4yZXVsZTVDdm55Tks1cXB0bzZLWnVaa1E?oc=5",
-        "source": "Google News",
-        "published": "2026-09-23T03:02:27.000Z",
-        "summary": "Claude Opus 5.5: Anthropic Launches Faster AI Model at a Competitive Price Basic Tutorials"
-      },
-      {
-        "title": "NEW Claude Projects Changes Everything (with Opus 5.5)",
-        "url": "https://www.youtube.com/watch?v=NDTbUObZTlM",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "NDTbUObZTlM",
-        "thumbnail": "https://i.ytimg.com/vi/NDTbUObZTlM/hqdefault.jpg",
-        "published": "2026-09-21T17:57:08.000Z",
-        "summary": "",
-        "_kind": "news_video"
+        "summary": "Amazon gives sellers an even smarter Seller Assistant and a new plugin for Amazon Quick and Anthropic’s Claude About Amazon"
       },
       {
         "title": "I Built the Best Free Claude Code for Local AI",
@@ -431,18 +442,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Codex vs Claude vs Grokbot: What's The Best Super App?",
-        "url": "https://www.youtube.com/watch?v=ETa6ZYqoIXo",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "ETa6ZYqoIXo",
-        "thumbnail": "https://i.ytimg.com/vi/ETa6ZYqoIXo/hqdefault.jpg",
-        "published": "2026-08-21T20:41:12.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
         "title": "I Built a Claude Humanizer Skill That Actually Works",
         "url": "https://www.youtube.com/watch?v=2Tert-KpIfY",
         "source": "Ryan & Matt Data Science",
@@ -451,18 +450,6 @@
         "video_id": "2Tert-KpIfY",
         "thumbnail": "https://i.ytimg.com/vi/2Tert-KpIfY/hqdefault.jpg",
         "published": "2026-08-18T14:39:28.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Grok 4.6 is Actually Good… And Claude Keeps Getting Better",
-        "url": "https://www.youtube.com/watch?v=VWDnptnvFrA",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "VWDnptnvFrA",
-        "thumbnail": "https://i.ytimg.com/vi/VWDnptnvFrA/hqdefault.jpg",
-        "published": "2026-08-15T14:03:52.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -633,6 +620,30 @@
         "published": "2026-07-28T00:19:01.000Z",
         "summary": "",
         "_kind": "news_video"
+      },
+      {
+        "title": "Do not talk to Claude's new voice mode",
+        "url": "https://www.youtube.com/watch?v=ikxxjRWX0Yg",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "ikxxjRWX0Yg",
+        "thumbnail": "https://i.ytimg.com/vi/ikxxjRWX0Yg/hqdefault.jpg",
+        "published": "2026-07-23T21:13:42.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Opus 5",
+        "url": "https://www.youtube.com/shorts/EovCEYtt0l8",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "EovCEYtt0l8",
+        "thumbnail": "https://i.ytimg.com/vi/EovCEYtt0l8/hqdefault.jpg",
+        "published": "2026-07-23T16:51:53.000Z",
+        "summary": "",
+        "_kind": "news_video"
       }
     ],
     "status": [
@@ -723,14 +734,25 @@
     ],
     "youtube": [
       {
-        "title": "NEW Claude Projects Changes Everything (with Opus 5.5)",
-        "url": "https://www.youtube.com/watch?v=NDTbUObZTlM",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "NDTbUObZTlM",
-        "thumbnail": "https://i.ytimg.com/vi/NDTbUObZTlM/hqdefault.jpg",
-        "published": "2026-09-21T17:57:08.000Z",
+        "title": "Claude's #1 Use Case Isn't What You Think",
+        "url": "https://www.youtube.com/watch?v=V8iJgEpujbo",
+        "source": "Ryan & Matt Data Science",
+        "channel": "Ryan & Matt Data Science",
+        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
+        "video_id": "V8iJgEpujbo",
+        "thumbnail": "https://i.ytimg.com/vi/V8iJgEpujbo/hqdefault.jpg",
+        "published": "2026-09-23T18:45:20.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Inside Anthropic's molecular biology lab",
+        "url": "https://www.youtube.com/watch?v=DdCEmlAydcw",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "DdCEmlAydcw",
+        "thumbnail": "https://i.ytimg.com/vi/DdCEmlAydcw/hqdefault.jpg",
+        "published": "2026-09-23T18:01:32.000Z",
         "summary": ""
       },
       {
@@ -753,17 +775,6 @@
         "video_id": "gYtQ1LKSgXY",
         "thumbnail": "https://i.ytimg.com/vi/gYtQ1LKSgXY/hqdefault.jpg",
         "published": "2026-09-14T13:00:04.000Z",
-        "summary": ""
-      },
-      {
-        "title": "How To Use Claude To Build Anything (That Actually Works)",
-        "url": "https://www.youtube.com/watch?v=3cYTWLdHgAE",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "3cYTWLdHgAE",
-        "thumbnail": "https://i.ytimg.com/vi/3cYTWLdHgAE/hqdefault.jpg",
-        "published": "2026-09-09T19:48:49.000Z",
         "summary": ""
       },
       {
@@ -866,17 +877,6 @@
         "summary": ""
       },
       {
-        "title": "Codex vs Claude vs Grokbot: What's The Best Super App?",
-        "url": "https://www.youtube.com/watch?v=ETa6ZYqoIXo",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "ETa6ZYqoIXo",
-        "thumbnail": "https://i.ytimg.com/vi/ETa6ZYqoIXo/hqdefault.jpg",
-        "published": "2026-08-21T20:41:12.000Z",
-        "summary": ""
-      },
-      {
         "title": "I Built a Claude Humanizer Skill That Actually Works",
         "url": "https://www.youtube.com/watch?v=2Tert-KpIfY",
         "source": "Ryan & Matt Data Science",
@@ -885,17 +885,6 @@
         "video_id": "2Tert-KpIfY",
         "thumbnail": "https://i.ytimg.com/vi/2Tert-KpIfY/hqdefault.jpg",
         "published": "2026-08-18T14:39:28.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Grok 4.6 is Actually Good… And Claude Keeps Getting Better",
-        "url": "https://www.youtube.com/watch?v=VWDnptnvFrA",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "VWDnptnvFrA",
-        "thumbnail": "https://i.ytimg.com/vi/VWDnptnvFrA/hqdefault.jpg",
-        "published": "2026-08-15T14:03:52.000Z",
         "summary": ""
       },
       {
@@ -1050,6 +1039,28 @@
         "video_id": "g3K88xLCtfQ",
         "thumbnail": "https://i.ytimg.com/vi/g3K88xLCtfQ/hqdefault.jpg",
         "published": "2026-07-28T00:19:01.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Do not talk to Claude's new voice mode",
+        "url": "https://www.youtube.com/watch?v=ikxxjRWX0Yg",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "ikxxjRWX0Yg",
+        "thumbnail": "https://i.ytimg.com/vi/ikxxjRWX0Yg/hqdefault.jpg",
+        "published": "2026-07-23T21:13:42.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus 5",
+        "url": "https://www.youtube.com/shorts/EovCEYtt0l8",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "EovCEYtt0l8",
+        "thumbnail": "https://i.ytimg.com/vi/EovCEYtt0l8/hqdefault.jpg",
+        "published": "2026-07-23T16:51:53.000Z",
         "summary": ""
       }
     ],
@@ -1173,18 +1184,6 @@
         "published": "2026-09-12T19:45:44.000Z",
         "summary": "What's changed Fixed read-only git commands in Bash unexpectedly asking for permission after a session had been running for a while (regression in 2.1.269)",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "How To Use Claude To Build Anything (That Actually Works)",
-        "url": "https://www.youtube.com/watch?v=3cYTWLdHgAE",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "3cYTWLdHgAE",
-        "thumbnail": "https://i.ytimg.com/vi/3cYTWLdHgAE/hqdefault.jpg",
-        "published": "2026-09-09T19:48:49.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "feat(claude_agent_sdk): add scheduled repository reviewer recipe (#860)",
@@ -1745,6 +1744,90 @@
     ],
     "claude_learning": [
       {
+        "title": "Claude's #1 Use Case Isn't What You Think",
+        "url": "https://www.youtube.com/watch?v=V8iJgEpujbo",
+        "source": "YouTube · Ryan & Matt Data Science",
+        "published": "2026-09-23T18:45:20.000Z",
+        "summary": ""
+      },
+      {
+        "title": "2.8.0",
+        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.8.0",
+        "source": "MCP Inspector",
+        "published": "2026-09-23T18:16:18.000Z",
+        "summary": "What's Changed fix(web): only DANGEROUSLY_OMIT_AUTH=true/1 disables /api auth by @cliffhall in #2390 fix: stamp Mcp-Method on modern-era notification POSTs by @cliffhall in #2392 fix: detach the OIDC compat's…"
+      },
+      {
+        "title": "Inside Anthropic's molecular biology lab",
+        "url": "https://www.youtube.com/watch?v=DdCEmlAydcw",
+        "source": "YouTube · Anthropic",
+        "published": "2026-09-23T18:01:32.000Z",
+        "summary": ""
+      },
+      {
+        "title": "1.30.1",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/1.30.1",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-09-23T15:59:38.000Z",
+        "summary": "What's Changed [v1.x] fix(server): read HTTP request bodies with a size limit and bound JSON-RPC batch length by @maxisbey in #2717 fix(auth): preserve resource URI without trailing slash ( #1968 ) by @MukundaKatta in…"
+      },
+      {
+        "title": "@modelcontextprotocol/server-legacy@2.1.0",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver-legacy%402.1.0",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-09-23T15:43:20.000Z",
+        "summary": "Patch Changes Updated dependencies [ dcc0102 ]: @modelcontextprotocol/core@2.1.0"
+      },
+      {
+        "title": "@modelcontextprotocol/node@2.1.0",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fnode%402.1.0",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-09-23T15:43:17.000Z",
+        "summary": "Minor Changes #1624 6032170 Thanks @SamMorrowDrums ! - Add request-time OAuth scope challenges for tools, resources, resource templates, and prompts. Each primitive's scopeChallenge callback receives the parsed request…"
+      },
+      {
+        "title": "@modelcontextprotocol/codemod@2.1.0",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fcodemod%402.1.0",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-09-23T15:43:14.000Z",
+        "summary": "Patch Changes #2765 5ecc791 Thanks @claude ! - Project-type inference no longer counts bare SDK paths that appear only in ordinary string data. The v1→v2 codemod's source scanner matched any quoted…"
+      },
+      {
+        "title": "@modelcontextprotocol/server@2.1.0",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver%402.1.0",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-09-23T15:43:11.000Z",
+        "summary": "Minor Changes #1624 6032170 Thanks @SamMorrowDrums ! - Add request-time OAuth scope challenges for tools, resources, resource templates, and prompts. Each primitive's scopeChallenge callback receives the parsed request…"
+      },
+      {
+        "title": "@modelcontextprotocol/core@2.1.0",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fcore%402.1.0",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-09-23T15:43:08.000Z",
+        "summary": "Minor Changes #2629 dcc0102 Thanks @gbshankar ! - Add DPoP (RFC 9449 / SEP-1932) sender-constrained access token support to the client. Opt in by implementing OAuthClientProvider.dpop() returning a DpopSession (new,…"
+      },
+      {
+        "title": "@modelcontextprotocol/client@2.1.0",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fclient%402.1.0",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-09-23T15:43:05.000Z",
+        "summary": "Minor Changes #2629 dcc0102 Thanks @gbshankar ! - Add DPoP (RFC 9449 / SEP-1932) sender-constrained access token support to the client. Opt in by implementing OAuthClientProvider.dpop() returning a DpopSession (new,…"
+      },
+      {
+        "title": "@modelcontextprotocol/express@2.0.1",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fexpress%402.0.1",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-09-23T15:43:02.000Z",
+        "summary": "Patch Changes #2698 7b781ed Thanks @maxisbey ! - Read Streamable HTTP request bodies with a size limit. Every SDK-owned body read — WebStandardStreamableHTTPServerTransport (and the Node transport built on it),…"
+      },
+      {
+        "title": "@modelcontextprotocol/hono@2.0.1",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fhono%402.0.1",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-09-23T15:42:59.000Z",
+        "summary": "Patch Changes #2698 7b781ed Thanks @maxisbey ! - Read Streamable HTTP request bodies with a size limit. Every SDK-owned body read — WebStandardStreamableHTTPServerTransport (and the Node transport built on it),…"
+      },
+      {
         "title": "v2.1.280",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.280",
         "source": "Claude Code",
@@ -1757,13 +1840,6 @@
         "source": "Claude API Release Notes",
         "published": "2026-09-22T00:00:00.000Z",
         "summary": "On Claude Opus 5.5, thinking can't be disabled: thinking: {\"type\": \"disabled\"} and thinking: {\"type\": \"enabled\", ...} return a 400 error. Omit the thinking field and control thinking depth with the effort parameter . tool_choice types any…"
-      },
-      {
-        "title": "NEW Claude Projects Changes Everything (with Opus 5.5)",
-        "url": "https://www.youtube.com/watch?v=NDTbUObZTlM",
-        "source": "YouTube · Riley Brown",
-        "published": "2026-09-21T17:57:08.000Z",
-        "summary": ""
       },
       {
         "title": "v2.1.278",
@@ -1869,13 +1945,6 @@
         "source": "Claude API Release Notes",
         "published": "2026-09-10T00:00:00.000Z",
         "summary": "Version 1.32.0 of the ant CLI adds ant beta:sessions connect , which attaches your terminal to a Claude Managed Agents session. You can follow the session live, send messages, and allow or deny tool calls that are waiting for approval.…"
-      },
-      {
-        "title": "How To Use Claude To Build Anything (That Actually Works)",
-        "url": "https://www.youtube.com/watch?v=3cYTWLdHgAE",
-        "source": "YouTube · Riley Brown",
-        "published": "2026-09-09T19:48:49.000Z",
-        "summary": ""
       },
       {
         "title": "2.6.0",
@@ -2046,59 +2115,10 @@
         "summary": "What's Changed [v1.x] Complete the FastMCP Settings model at import time by @maxisbey in #3352 [v1.x] Apply the request body limit to the SSE and OAuth endpoints by @maxisbey in #3344 [v1.x] Give recursive tool return…"
       },
       {
-        "title": "Codex vs Claude vs Grokbot: What's The Best Super App?",
-        "url": "https://www.youtube.com/watch?v=ETa6ZYqoIXo",
-        "source": "YouTube · Riley Brown",
-        "published": "2026-08-21T20:41:12.000Z",
-        "summary": ""
-      },
-      {
-        "title": "We've released v1.0 of the Python SDK . The SDK's HTTP layer moves from httpx to httpx2 , a maintained, API-compatible…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#august-20-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-08-20T00:00:00.000Z",
-        "summary": "The computer use and browser use toolsets ( computer_toolset_20260801 and browser_toolset_20260801 ) are now available on Google Cloud for Claude Fable 5, Claude Mythos 5, Claude Opus 5, Claude Sonnet 5, and Claude Opus 4.8. Requests use…"
-      },
-      {
-        "title": "2.3.0",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.3.0",
-        "source": "MCP Inspector",
-        "published": "2026-08-19T15:05:32.000Z",
-        "summary": "What's Changed fix: bind loopback by address and pin the sandbox port for containers by @cliffhall in #2009 chore: sync v2/main to 2.2.0 + guidance to bump on v2/main before the milestone merge by @cliffhall in #2011…"
-      },
-      {
-        "title": "The computer use tool is out of beta on the Claude API as the computer_toolset_20260801 toolset: no beta header, batch…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#august-19-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-08-19T00:00:00.000Z",
-        "summary": "We've launched the browser use tool ( browser_toolset_20260801 ), a client toolset for driving a browser that your application hosts. It works inside a browser viewport rather than a whole desktop, reading the page itself (its…"
-      },
-      {
-        "title": "Release 2026.8.18",
-        "url": "https://github.com/modelcontextprotocol/servers/releases/tag/2026.8.18",
-        "source": "MCP Servers",
-        "published": "2026-08-18T16:16:12.000Z",
-        "summary": "Release : v2026.8.18 Updated packages @modelcontextprotocol/server-everything@2026.8.18 mcp-server-time@2026.8.18 mcp-server-fetch@2026.8.18 mcp-server-git@2026.8.18"
-      },
-      {
         "title": "I Built a Claude Humanizer Skill That Actually Works",
         "url": "https://www.youtube.com/watch?v=2Tert-KpIfY",
         "source": "YouTube · Ryan & Matt Data Science",
         "published": "2026-08-18T14:39:28.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Workbench is now playground in the Claude Console. Playground supports every Messages API parameter and includes…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#august-18-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-08-18T00:00:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Grok 4.6 is Actually Good… And Claude Keeps Getting Better",
-        "url": "https://www.youtube.com/watch?v=VWDnptnvFrA",
-        "source": "YouTube · Riley Brown",
-        "published": "2026-08-15T14:03:52.000Z",
         "summary": ""
       },
       {
@@ -2109,25 +2129,11 @@
         "summary": ""
       },
       {
-        "title": "2.2.0",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.2.0",
-        "source": "MCP Inspector",
-        "published": "2026-08-12T16:46:50.000Z",
-        "summary": "What's Changed ci: sync the release workflow on v2/main with main's verbatim by @cliffhall in #1904 fix: ship clients/web/static so the MCP Apps sandbox proxy loads by @cliffhall in #1934 fix: surface list-fetch…"
-      },
-      {
         "title": "Claude vs ChatGPT: Which Is Better for Agent Work?",
         "url": "https://www.youtube.com/shorts/9W2qj_GR4s4",
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-08-12T02:41:57.000Z",
         "summary": ""
-      },
-      {
-        "title": "The Compliance API now returns transcripts of Cowork and Claude Code sessions that run on your users' machines, in…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#august-11-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-08-11T00:00:00.000Z",
-        "summary": "We've added the anthropic-workspace-id response header to the Claude API. It carries the wrkspc_ -prefixed ID of the workspace that the request's API key or access token resolved to, including your organization's Default Workspace. See…"
       },
       {
         "title": "How Icelanders are thinking about AI",
@@ -2151,13 +2157,6 @@
         "summary": ""
       },
       {
-        "title": "The introductory pricing for Claude Sonnet 5 ($2 / $10 per MTok) is now the standard price: the previously scheduled…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#august-10-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-08-10T00:00:00.000Z",
-        "summary": ""
-      },
-      {
         "title": "CLAUDE CODE MARKETING FULL COURSE (6 HOURS)",
         "url": "https://www.youtube.com/watch?v=yulWjh3rq28",
         "source": "YouTube · Nick Saraev",
@@ -2172,25 +2171,11 @@
         "summary": ""
       },
       {
-        "title": "You can now set a budget on a Claude Managed Agents session: a hard cap on the session's spend, priced at public list…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#august-7-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-08-07T00:00:00.000Z",
-        "summary": "You can now give a Claude Managed Agents session an advisor: a model at least as capable as the agent's own that the session's primary thread can consult mid-turn for strategic guidance. Configure it as a {\"type\": \"advisor\"} entry in the…"
-      },
-      {
         "title": "Claude Code + Codex My Whole AI Team in One Chat",
         "url": "https://www.youtube.com/watch?v=xJEFjE88wdw",
         "source": "YouTube · Leon van Zyl",
         "published": "2026-08-06T13:00:21.000Z",
         "summary": ""
-      },
-      {
-        "title": "2.1.0",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.1.0",
-        "source": "MCP Inspector",
-        "published": "2026-08-05T15:51:47.000Z",
-        "summary": "What's Changed docs: restore SECURITY.md, lost in the v2 tree swap by @cliffhall in #1843 fix(core): mirror SEP-2243 x-mcp-header args to Mcp-Param-* on tools/call by @SamMorrowDrums in #1847 docs: post-swap branch…"
       },
       {
         "title": "Which Claude Model Is Best for Coding?",
@@ -2232,6 +2217,20 @@
         "url": "https://www.youtube.com/watch?v=g3K88xLCtfQ",
         "source": "YouTube · Leon van Zyl",
         "published": "2026-07-28T00:19:01.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Do not talk to Claude's new voice mode",
+        "url": "https://www.youtube.com/watch?v=ikxxjRWX0Yg",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-07-23T21:13:42.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus 5",
+        "url": "https://www.youtube.com/shorts/EovCEYtt0l8",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-07-23T16:51:53.000Z",
         "summary": ""
       }
     ]
