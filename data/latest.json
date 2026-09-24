@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T12:57:10.769Z",
+  "generated_at": "2026-09-24T18:00:49.375Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,25 +146,131 @@
     ],
     "news": [
       {
+        "title": "Show HN: Whiteboard (YC W26) – An open-source IDE for thoughtful software design",
+        "url": "https://github.com/devdotfast/whiteboard",
+        "source": "HN · 40↑",
+        "hn_id": "49833867",
+        "published": "2026-09-24T17:21:36.000Z",
+        "summary": "Hello! We’re Sid, Alex, Ketan, and Milan. We’re building Whiteboard, an open-source desktop app where humans and agents can architect software together in a common workspace.…"
+      },
+      {
+        "title": "Anthropic’s Claude discovers novel enzyme system with CRISPR-like properties - BusinessLine",
+        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOMTJucHVmaU55NzlCeEdOZ3VLTW9pWTZqVHJUZEw3S0dOQy10a05UZWNzcmpMa1h6eFo2WEdTWHpBYWpnU0tZZ1laQ0JaV3J5b1lxNGdsTlVyM2VvYWZuMV84ZGFmX1FHakpGV3lDVnpxb180TndPN0ExTTRYVkZpYVE5YTJlTXNZZWdkbllXVDcxdVJzUnp0aUFLYjRINVJJMDIxMk96WG83ZEo0RTBnaS1MbXNGZzJncnhyTmlaVHF2VzY0ejc4bDhOMU9uclA0N1pVY1BNVFZBRnVZY29Xd1k0UdIB6gFBVV95cUxOOEVwaHVQOWVjV0JkM0V3U2tacFdkSkY4RXNxTG1YV214OE9MMG10SlVoT19EUmN1UnJyUWx3QzI1Wk5RNU1wYm9vampySGlaUmNPc0dqWmVaa0ZPcTV6WGZDWUtJaVptWDhqX0JzOEdSMDFoSi1fUDZ3T0dnZG5tdnpOVHZCX1hKNGh5anA5b3ZvN3dLZTlsMU9wY18tWWNpXzRCNHhWVWdCckJ1X1ZUY2x0VVF6Z3BTQnJ6dVlEZ1gtM0E0ekdlbHh1bkxsTUktc01QT1dsbzM4Vkx2S1Nrekc3M1RBTVJlTUE?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T17:02:22.000Z",
+        "summary": "Anthropic’s Claude discovers novel enzyme system with CRISPR-like properties BusinessLine"
+      },
+      {
+        "title": "Anthropic Ties Claude Opus 5.5 Pricing to Longer Coding Sessions - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOdDVuUW5pb3hCbU9fS0J4M2QzNE5Uc3lSak9nZmpHUFVJbktvbW96QXFXSHRJZmRmaG5ieUZpSzR2QUpuaXBZS2gwWDYtT0tkM1FFSWl1VjRGZlhBUlE2X2MwQzdEWk1XcXBZclBITEt0QVVTdlZiNnF0eURDUVltZzFwZUhmWnFHdDhmOEZEMA?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T16:51:01.000Z",
+        "summary": "Anthropic Ties Claude Opus 5.5 Pricing to Longer Coding Sessions Unite.AI"
+      },
+      {
+        "title": "Measurements for understanding the pace of AI development inside frontier labs - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1hSlNaZU5CMXdjOERiMTltcEVxMXduUXVrT1UtSExlUGlUUHFCc2huOVM0NEY0cmhCMVF6X0o2QjMwUUZOQkhuSGlHVjFlaWdKelR3ZTEzUV9SRzRIdkxhV3RfQ0N2OUI5U214a0RqZjh3c2MxUktr?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T16:12:04.000Z",
+        "summary": "Measurements for understanding the pace of AI development inside frontier labs Anthropic"
+      },
+      {
+        "title": "Anthropic says Claude discovers novel enzyme system with CRISPR-like characteristics in 21 hours - Digital Watch Observatory",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBSaG5na1lQWjF1RUVQQ0pfcnFQNGlYeFFFanV2VzBpZ2MzWWZWVmxBWUlVaXZaYm1QSGVuMnF5cGZvZW45ZWhTUEEwYWZ3OTBZcThqVXVQeFpmU3hHYk1RTXZBTWdRLXp0dzJqekpYU1ZGR2l5aEMyNnFtNHA?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T16:11:01.000Z",
+        "summary": "Anthropic says Claude discovers novel enzyme system with CRISPR-like characteristics in 21 hours Digital Watch Observatory"
+      },
+      {
+        "title": "Anthropic Uses 950 Claude AI Agents to Discover Uncharacterized Enzyme System - TechRepublic",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOSlRNdjZrYVVTOXR3TFRqM1h4cV9QelVmUm1mV0hmeGV3MGR5WUhyZ2hRUExpNjZQWXhBQS1hbTdWaDRCUDJpSGVaR0F6b0tMd3dMdHRrV0VUMmtEYlNwMWN0aGVGeHZIeUdUT05ETlBOdk1PT1VGLXdJUzlCTTZYc2tmczRTcmoxbmhRb0MwYw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T16:09:07.000Z",
+        "summary": "Anthropic Uses 950 Claude AI Agents to Discover Uncharacterized Enzyme System TechRepublic"
+      },
+      {
+        "title": "Anthropic says Claude discovered a new enzyme system, but CRISPR researchers call it routine genome mining - The Decoder",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOTTU3UHVvN0ctUC16ZnpLMzdwSTdfY0pBcVY1b09XZTdtandTWDVNOC1DYk9iV0hJVWU1YzI3VkowZkJpSm1GNkR0cHVaQVlNX1NDcG5ma2hTZnNpYjJwR1BYdTJQVVExRzhXaHQtb3NwcGtKaFZGemJFWnFieUszWXVRMGkzYTRPWWUxNWtZTUZKaDhhMUdpV2pZbTZYUUVBRGEyUjQxSGVEZ2tyMzRwLUNZRS1oeXpMUnlkUDhfcGhuT0RiSnZ2NDhB?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T16:07:46.000Z",
+        "summary": "Anthropic says Claude discovered a new enzyme system, but CRISPR researchers call it routine genome mining The Decoder"
+      },
+      {
+        "title": "Anthropic Launches Claude Opus 5.5 With Lower Prices and Faster Output - TechRepublic",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQV1JLV3pVQmtwWEkzUGhJWl9MbTZ3WE9OU1NJZUpfeGxqREJVZHVnTHZzeDlrN2NDbWxUMFhEOG05NmtVcnVRN09oaVpzblBIdzBJWmlCd2RCUlBqYVgzdTlsdncxbVBhOS1vM1RmMDVEdXJqR3pWeEZoVlJUSld4NnotN0dSSy03TGJfMkk0M0VFdw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T14:48:13.000Z",
+        "summary": "Anthropic Launches Claude Opus 5.5 With Lower Prices and Faster Output TechRepublic"
+      },
+      {
+        "title": "AI Model Claude Flags Unexplained DNA Enzyme, Company Admits It Doesn't Know What It Does - Northeast Times",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQVHJXMi16NGp1MEd2RVhwTUNnN2YxUTFrZi1oZUNVeklUSlAtY1NzNzFfUmpSZXFYWGprVDB1OG1EUDVzRnB2TnZuVVpPb1p0M1BhWDBzZnhyTzhxLXFPSTJ2bFdVemVBZEg4dkRXTjBsVkVCc2VJa3RXcXNfVEtNX2VHNkdqWk5SMW0zcTBqTDZZaDhDWkJrR0pGQzdVa3FoeTlNRXdHNGlYYWlxWVNBbkNRekg?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T14:36:09.000Z",
+        "summary": "AI Model Claude Flags Unexplained DNA Enzyme, Company Admits It Doesn't Know What It Does Northeast Times"
+      },
+      {
+        "title": "Claude AI Helped Made An RTX-Accelerated Path Tracer From Start To Finish In Just An Hour, Highlighting The Beginning Of Autonomous System-Level Engineering - Wccftech",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNUTlFTkVHWnJOYk9LWVNYQmF5YzlHQzVIUjJlOThGQk1Od3REV1U1Wm0tMEk0OHFxTDRtSjZ2REptaWw3LVdMN0tTZWY0V3VLRWxIaTVZLVdzZG9TcG44MGRCU0IydkJtOHl6Y1JSTWtvcDZONGRSS2ppNFAyVjlrNkZpRdIBiAFBVV95cUxOT2ZTekotdjZ2MTBqRzFsT2R3azB3N3k3eW94ZDdsVnUxVmN6V0x1YkVMUnhIdVg3Ukk1c3FRUUhIY1lsekhidlNzZmpDSV9qazZ6bE5YMmpGNnZQX3RqZUlsNjlQMDJzVm1xV0hOdVJJTDlxbUhUUExRVkM1MkNfelZwak5yX3FC?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T13:47:27.000Z",
+        "summary": "Claude AI Helped Made An RTX-Accelerated Path Tracer From Start To Finish In Just An Hour, Highlighting The Beginning Of Autonomous System-Level Engineering Wccftech"
+      },
+      {
+        "title": "Anthropic AI Discovery Gene-Editing Stocks Falling - GuruFocus",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSnQ2Ymp0a2JwRFpTWkZ6NHBjT2EyVm9sRG9fWl9xSXNtODR0VS1HVklCa0VBQV9UMEU0NDlkWnoyS2RjMHlKbVdiZ3VZaEtwemhLaHg3ZlgtNTl0d3l1aWxBNC1Za2VPRnRaZHlyNWNCb1AzQTltWllpaHE1c1lRN0RyREVUWjFCRExvaGdXRmFWQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T13:24:12.000Z",
+        "summary": "Anthropic AI Discovery Gene-Editing Stocks Falling GuruFocus"
+      },
+      {
+        "title": "Anthropic discovers an unknown genetic system with Claude - Korben",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPSXJjejlMaEVvRi1vdjZUVWk5R3VQcC0zOHR5a3c2aUpZT3YzWU9IR0pDNDI4dldwaDg3T3Z0OUNDNmVWdHFQTWplSnZGMVJreDhoU3JKMmxrUVh4d04tV0dYTkJfeGRBUlBIYU1OaFYwUWFpSmxJejZvWUpieUJCclpZVDlJNTYweHc?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T13:23:26.000Z",
+        "summary": "Anthropic discovers an unknown genetic system with Claude Korben"
+      },
+      {
+        "title": "Anthropic Says Claude Found CRISPR-like Enzyme System In 21 Hours - Dataconomy",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNmhia2FoUlBwTnJWTFZrWTlkZ194UG52NmtYbWlyT2xvTVVHQzItSU9vVlhkRGhmaXhyYjZRNm1KUzhlOExEVVdhZ3JYYlpCdUVkZTZidXViM2tJNlpWaE5meHpTRUU5VF9aTzNVakFGUzV0V2w2U0JxZUlRWlNsXzNKdHl5aTdz?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T13:16:26.000Z",
+        "summary": "Anthropic Says Claude Found CRISPR-like Enzyme System In 21 Hours Dataconomy"
+      },
+      {
         "title": "Anthropic's Claude AI discovers CRISPR-like enzyme system - qz.com",
         "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNUlcwOGVmQi1xT3NwWDE3amNoZ0E5X0R2SURjSDl1M0g2SURhYkF2WklDNFJkSHNnR0QyWXViVEVrdUc5SGJ6V1FTbGVDaDcwMW1EVTFvdlI4UU9MWUlUVHZTRmJwRkg3WWlONGE0aE9NcGVKb3czTW1IVVF4UmlGc2FGZVY?oc=5",
         "source": "Google News",
-        "published": "2026-09-24T12:48:47.000Z",
+        "published": "2026-09-24T12:51:51.000Z",
         "summary": "Anthropic's Claude AI discovers CRISPR-like enzyme system qz.com"
       },
       {
-        "title": "Anthropic says Claude spotted a novel CRISPR-like enzyme system in bacterial viruses - varindia",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNN0xIbWZxcFlSQkJNUlQzWDJpUzNwNGtWN2I2SHZQN3BmbWJXanE3UHRtSmJ1TjVjeU9lVUVqT3hBUllYUnNrbFhxeVhNWXY3MExCZ3RENHpld01OVElESXZ2T2JVX09lLURPZ1dyTlg2c0hzSFZUT2g0OW0yUi1aM0FhVkFBRnhUUHAtaGp1R090dDdwQlBpa29jTURZb2V1QUF5SUtnbVc5TTBEZ3VRU3JLNlI?oc=5",
+        "title": "Anthropic AI Discovery Gene-Editing Stocks Falling - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPTFJNQWtaQ2l3aGhKbW1vaFBYN21UNzRFOXpjNkRfaFpoa1lVdGRaZDJLTVZuOHFMQVp1QTlYcnJfM1M1WUFPR2JSamxfVG0tdGlPSFdUNEdadXJwOVZsZWxSS2h1N0xBOG95RjVZYW9YQmxHS0FqN0JmanIwbVBZQ3NoT0dEU05XbTM3UUYxS3NNTlppWFhrNVd4TXNpRzMzdXNFT0xRbVpZUU10cHlN?oc=5",
         "source": "Google News",
-        "published": "2026-09-24T12:31:06.000Z",
-        "summary": "Anthropic says Claude spotted a novel CRISPR-like enzyme system in bacterial viruses varindia"
+        "published": "2026-09-24T12:46:44.000Z",
+        "summary": "Anthropic AI Discovery Gene-Editing Stocks Falling TradingView"
+      },
+      {
+        "title": "Amazon Opens Seller Tools To Anthropic Agent, Supports Ads 09/24/2026 - mediapost.com",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOaF9HclJ5Qy1rTVpGMzA0Qk5seDdBSHg5bmJ2S0p6YTNVX1BaUEh5U0xwVUUzeVpWUTZ4bU9lVkJHcDFWTDhUYTlQTDdBNXBuYlBFOXp0eUdDdG8wSVhHbk9OakRYN1NIVXRuN21ranFncHFla0VaTWpITXExeEYxM3JJYTNZRzNIQW5ZbWpCN2RkcXdPNFg4NVJpMTNkeC1Xbmo3ZXNuZWdwX3VQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T12:16:44.000Z",
+        "summary": "Amazon Opens Seller Tools To Anthropic Agent, Supports Ads 09/24/2026 mediapost.com"
       },
       {
         "title": "Anthropic's AI biology lab makes its first find - The Rundown AI",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOTWk0N0FzQ2hWd3lfU3FYRFpyV21sTG9tSGN5NE1iUUg0UGFIMkZfSUFkMDdsNFNoRWJxZGlKdUtYakV3NzdVMlc2RklDZ0d5YlVaSUQyZ2dXOXRKQkhRUGxRMG9RWWs0eGYzWDBaNXJZc2FtMVdhZWlLMUt5a19vRFBEaWgxd2M?oc=5",
         "source": "Google News",
-        "published": "2026-09-24T12:03:08.000Z",
+        "published": "2026-09-24T12:07:46.000Z",
         "summary": "Anthropic's AI biology lab makes its first find The Rundown AI"
+      },
+      {
+        "title": "Anthropic Makes Claude 3x Faster on Web & Desktop - analyticsindiamag.com",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQamRGeUYzTjlzalZEZkc1UUlvdnlqSjcyY2ZmdEotWG0yaG85a2tuTFAtTF93U1VacnduRklLNHhFc0lWZDZNcEViSndYeHlqaWN0WlNHUHdRN3h0T1o4dlhZUkllY1JRWG9UbUgtUHdONU9TREc0Z2txQjltN3pWWmg1SlZ6UlBsTHVhT1JR?oc=5",
+        "source": "Google News",
+        "published": "2026-09-24T11:27:31.000Z",
+        "summary": "Anthropic Makes Claude 3x Faster on Web & Desktop analyticsindiamag.com"
       },
       {
         "title": "CBTS Unveils Blueprint for 100% Agentic Delivery After Scaling Anthropic Company-Wide, Giving Mid-Market Companies a Proven Path to AI-Fueled Growth - AiThority",
@@ -174,25 +280,25 @@
         "summary": "CBTS Unveils Blueprint for 100% Agentic Delivery After Scaling Anthropic Company-Wide, Giving Mid-Market Companies a Proven Path to AI-Fueled Growth AiThority"
       },
       {
-        "title": "Anthropic says Claude discovered novel enzyme system - Anadolu Ajansı",
+        "title": "Anthropic says Claude discovered novel enzyme system - aa.com.tr",
         "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbmtheWR1aHM3NndWSVpUN3hobktXd016WnJZNlVDemlfbm5WcWs2bWpWZmZhX3lRNFlad1NFOE5FdS1DQjViTmdwWFI2MnpXb0lKbld3STNjVm5VWlFGTzgzclBpTTE5dFd4Z2Q2OWNsR3JuS0dZQ2ZrNWZqQXNxMzhtbUNoZFYwZlE3ZE1PSjJuMXZ5RkNqU1l2RUVNRV9WM0xhQU9rdw?oc=5",
         "source": "Google News",
         "published": "2026-09-24T10:25:18.000Z",
-        "summary": "Anthropic says Claude discovered novel enzyme system Anadolu Ajansı"
+        "summary": "Anthropic says Claude discovered novel enzyme system aa.com.tr"
       },
       {
-        "title": "Anthropic says Claude has found something potentially transformative in our bodies - Yahoo Finance UK",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQU3I0QTlndTQtZE1vUjJURURXdVNlZjVJbmV2R1NzamY4dzRLZGVaVDJDRGtQU2tmVkZsOXBrTzM0eFZweWNxUDl3Y0Q3Z2dKLVBUWVBuV2VycHNWSUw2RldHQ3VMMHIwYUhsMGVFamtoR3AxX1RZWkZGeFlZeWtDVHBKdlZ1bjc1Ym5ZR1d3Zw?oc=5",
+        "title": "Anthropic says Claude has found something potentially transformative in our bodies - AOL.com",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxObXZlY29zY0FEYlVEd3hSWUo2ZEgzX255eXRTXzNzZmdJSkJ5VXFiZk8xRUJLRzI2M25MTlNtT3dHYTJVcExTdXdhSnVPLS1ta3lGa0pacmdhZVgyYmIxSmpBaDc3aHRMdDNiVnBEZHNyZmVxeW95VHNaWUxRRUVSa1c3Vzlmcmwt?oc=5",
         "source": "Google News",
         "published": "2026-09-24T09:13:42.000Z",
-        "summary": "Anthropic says Claude has found something potentially transformative in our bodies Yahoo Finance UK"
+        "summary": "Anthropic says Claude has found something potentially transformative in our bodies AOL.com"
       },
       {
-        "title": "Claude Finds Mysterious CRISPR-Like System Hidden In Viral DNA - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFB4MWQ3ZzNNZDVYWmRONEZrbXNaTGdISjV4TE5lNnB3NV9xTmFYU1dTbGY5RUYxZ2V3b1BUSGk1VmtTaG1XVTFEYVpfazZLOFplQWRHeXluaDZmUTZNeGRnemN3?oc=5",
+        "title": "Anthropic says Claude has found something potentially transformative in our bodies - The Independent",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOU3FLUGZmNnB2MUMyd2hJVC1zYXF1Z191UDJLbFFSQTZQWWJaWm5hYUhxVVJSVXNmUnlfS3gxRm50YWJLU2hwa2FmQUxOX2dZRUs1YkJZR0lyQTYxZnZiQ1VaaTNSTzZkS0tUUHh6QXdkSEpseTV1ay1LSXkyaXNLdjQtTGNIQ0tqd1JLcA?oc=5",
         "source": "Google News",
-        "published": "2026-09-24T09:07:03.000Z",
-        "summary": "Claude Finds Mysterious CRISPR-Like System Hidden In Viral DNA Yellow.com"
+        "published": "2026-09-24T09:13:00.000Z",
+        "summary": "Anthropic says Claude has found something potentially transformative in our bodies The Independent"
       },
       {
         "title": "China probes DeepSeek, Moonshot over possible data transfers to Anthropic's Claude - MLex",
@@ -202,123 +308,18 @@
         "summary": "China probes DeepSeek, Moonshot over possible data transfers to Anthropic's Claude MLex"
       },
       {
-        "title": "Claude Opus 5.5 is here: Anthropic claims it can finish a 680,000-line code migration in less than a day - WION",
-        "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOcTdIeGZsNHRZTHByM2pvWEJIQVFuZTBZbzE3QkFMY01mRG4xdGM3anZQT01sYVpXZ1R6ZERESHNwckVtcmc3XzBKRjRTQXpGalVSaUtkYi1BVUE0bWNrNDRaLXVWc3ZTSnBjeEtMTWt1SmQ0MDBqVXZaOTFSTVhnRkhhdlhzTDFTSDdkUUdFX21IQV9zN083YkpfcTI0OERIOU9mWG1POU82d1lpNUJlVTFkNVRyUTRaY255b0FET21hUlZXWlEzclNtcWM2Ykw1X1BkRXpRSEdkQWEzNUJONEFCb04tWnPSAewBQVVfeXFMT2RtZzdIMnREcDhtbmtWSUhibEViN0lHWUx5YzMtb0VKa3lCUUQzbVByNmdKLTN2SlZjWHI1anlOWURmeVVOVHp2ckxsZ043QmRzMzFnYXlYekNBY3VFS0FsdnNsV1RIYl9uTWVjSEh4X3hseTFFNHpxSDVVcnNDam1lbTAyeS0tMlpjNEF5b3BFQ1oyWXc5U3RZMUtoYm5IdUljTmhrRUJjQlNCd0MwVEszdWFVWEtQMXRsLWg2ZTU3c1h0Z2szbWZpbkN5TVdIN3VJT2l0Qk1wS1lhcHRXSW9xdk56NEI4VnNYMUk?oc=5",
+        "title": "Anthropic touts AI-led biology discovery - Phys.org",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5HUDZWVm9yNzNkczg4NEkyN0ptb0dUcFhHelFzdmhTNFdNczB5Q1c1alk4ejJQY2pSZC1tbmthWG1QUkI3a3pYQk14amxMTUhheDlpMGFZTFEzTGlDYWpSaVdXQmNTMUQzblBHOHozRTVJWU5CNkFQZXZPZw?oc=5",
         "source": "Google News",
-        "published": "2026-09-24T07:20:00.000Z",
-        "summary": "Claude Opus 5.5 is here: Anthropic claims it can finish a 680,000-line code migration in less than a day WION"
+        "published": "2026-09-24T08:40:01.000Z",
+        "summary": "Anthropic touts AI-led biology discovery Phys.org"
       },
       {
-        "title": "Anthropic reveals how Claude AI helped discover novel CRISPR-like enzyme - The News International",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOVUZBSEdSRFUwWmhBZlg0eFhrUGlXOWhFNjlhdW9TdkJESnFWQURmTThrTUhiOG5pR3o0R1F5RWJKX3oxNWs2YVJEbzA4YzdVU2NHV0tuSi1nbS1XazdjSkhJcUgtQnlIcWgzeEx0czd3SUZVYldXaWtkVnctX2NUWTc4Z2RrendzUXc1SXFMMUFMNmd0N1o3RVhiYTlTenMtNFhveEllTEI0OHVwUFo1dExEVTnSAbABQVVfeXFMUFBDVUJDRUhLbTZvOXc4UnZyMlVwQVAyZGdiRHk2cXFMekdCaWJmSjh4MEU5VHZ2WWhyNEkyNHJsazJGX3BmVUdJam1vRzJwLUVRMzVESS1jS0JHU2YzeUhPVU8tZUhiTHlwbC1ScHJqTmRqUHpSREpXQzZRSHd6eHZMZW5FU2xyUDg0cFVQWXZ0eDBTVWs2c0hjdkJJaWoyWjJKaW55NWgwZjdyRUtQczg?oc=5",
+        "title": "Claude.ai is about 3x faster after 3,000+ changes - Help Net Security",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5kajNUckJ3NnNXdXZTR2xiTVVXblVMWjFib3ZBejdKcEF1Z0QxLXFZZDJiOXlUZ3Nvb2NEd3R3ZExJczMxbWMycFhIYjZXQXBtNVVpWHgyRzVqVnFtZXJpckoycl9peDBHd3NfMUhtRG5fS1EzbzJudGZB?oc=5",
         "source": "Google News",
-        "published": "2026-09-24T06:37:00.000Z",
-        "summary": "Anthropic reveals how Claude AI helped discover novel CRISPR-like enzyme The News International"
-      },
-      {
-        "title": "Anthropic launches Claude Code cloud sessions and hands out up to $250 in credit - Pasquale Pillitteri",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUXdYYWZEdlR2eVNXVlp0UkZUUDRza3B4RExWM0EtUE81cTNTVUZDMUkwbGllRm9kSE5TQXZJNmpUWjVPdWJ5TDRJVXQ0MmMyOHpwNXVFRTRYOVNhblB5eTZqWC03Rko0dHV5dTh1RHJqWDNVcXl5ckkyUHl3dWRKeGVnajdpWUZFdUlRMVNpekowRkE?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T06:20:09.000Z",
-        "summary": "Anthropic launches Claude Code cloud sessions and hands out up to $250 in credit Pasquale Pillitteri"
-      },
-      {
-        "title": "An AI model has found a new ‘CRISPR-like’ biological system. Here’s what it means for science - The Conversation",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQQm9vX1NVX3lpWW5fY3B3d2NqaW12cmdWV3lpbFhNdVBpLUtVTmZSRVhsZjRFck9BOVM1WWZjSlhpNjVUR2pmTDBoT3Y1RmJkTXltbVRXUVpEc2RscUs1Q0ozQjgxRC1ldzREVzdJZFVNRjlLOFVZLTlYdGpGTktZbWg4ZGZfU1l0dVhXZG55eFVpSUxqRkpZZEtLeXRTRXFYUk5CaTRSTFdEU3p0VmwtMHIycXZOWVdOd2FRWTdwUzlFdw?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T06:19:31.000Z",
-        "summary": "An AI model has found a new ‘CRISPR-like’ biological system. Here’s what it means for science The Conversation"
-      },
-      {
-        "title": "Claude Discovers CRISPR-Like Enzyme System as Anthropic Expands Into Wet-Lab Biology - analyticsindiamag.com",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNdzhjdUFmTmpndUotdEZHWW9KaWtMbU1PT3JXWVo2U1BGNFJIdDdsLTRRMVgxMXNWckJ0RWRFYTVkb0t2WEdYSVRqUmJYcHhVSXU3a3NEcktvb3NrZ1ZQemJMSEdPaHYwVUJ1eWxVT0x2cFZUOW9wN09RTVdCaVdvdDVoTVc5UGxiNEVYUkhVeFhEMnZJTkxEUG5UZmFWcnVYSmNLU3VrNnZ1T2JfdTlKY3ZETGwzZldEZVVsZk9Ycw?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T06:01:14.000Z",
-        "summary": "Claude Discovers CRISPR-Like Enzyme System as Anthropic Expands Into Wet-Lab Biology analyticsindiamag.com"
-      },
-      {
-        "title": "Claude Opus 5.5: Cyber Tasks Rerouted, Escapes Cut 85% - shattered.io",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9naHhLUmZrLVhrX291TzMzVG5KaGRnR2ZQQXdmNEZ2TUhURlJrUjdTNjljcV9YdUJlV2JvcG4wZXdURmNtX1ZXaTFyd1JtNW04M092YWo1Rk1YNVZ6dUY1TEdhYm5kcFo1bGpHblRUX09rcFhPby1saUpDWnZfUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T05:49:01.000Z",
-        "summary": "Claude Opus 5.5: Cyber Tasks Rerouted, Escapes Cut 85% shattered.io"
-      },
-      {
-        "title": "Anthropic Says Claude Found a New CRISPR-Like Enzyme System in Phages - technology.org",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPYjNCQTE1UlpWRDhCUl83UVB1dGdvOWpSOUpuUnowSTlYN0F5YUVaNHdMQjBNSGJCei1fN0dfY0ZPTlU5QmlRZFREeldUZ2czQmNaT1RiTWVOTHRyUjdncGJXZG5OUzlqU1JJeFNrRHdlZk5Iby00NDJhYVE3VF9OZUhqMFJsUlU5SWdRYmVn?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T05:28:30.000Z",
-        "summary": "Anthropic Says Claude Found a New CRISPR-Like Enzyme System in Phages technology.org"
-      },
-      {
-        "title": "Anthropic unveils discovery of new enzyme system spotted by Claude model | World News - Hindustan Times",
-        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOR0VrZ2VpN0dBd3NwMkdBX0VKc2g1UF83QzlhS0drNFdhWmctNW0zdGRwZ3ExdFdQRmEzb3c4b3FUUlhnc0N0QTFUTWRDcFlmUk1KY0xETVVYT29NWk1yY1doOGVUM0hvazZ2NlVyRGhLMUwzNlNpZGYwckY3ZmNhMzNYTlNaejF4SlE3ZHR6LU9VX3Rjal9wRlR2b215cE1KLWUxWWRoYmJoQnZPS0hvLTE5VHl0WDlxb0k2U2RUaWgzLXE0NmNObkhYSm9BVlZfVDBuNjVVQWQxYkRzeF9ZNkxn0gHnAUFVX3lxTE9iX21lREJMMGgxeGx3YWJTY01CeWlXd2RkTnNVR2I0d1lXd0VadmZrQTNqM3FCUnhLXzJlMlJMOXhRLUhiM0hlaGpkN1RIalA2ZzhHeTVpclJnaWpXUy0tc0FiNzJwOERGaW8xRE1rcnJiTlR5VWl6d3NweHNoTk9KTUl0RDZicTdXTTJoSUpldERSelhvMGRuR1d5cmJtZG5ZOVJsNlB4OGNlOUUxTmlKY1Y1enV6RWFpMGg1aC13WGJHdXBzMzVCcFRaY2lDN19JOGVaT2JhajRnSERiZHNDR3NNRG9fWQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T05:01:01.000Z",
-        "summary": "Anthropic unveils discovery of new enzyme system spotted by Claude model | World News Hindustan Times"
-      },
-      {
-        "title": "AI model Claude discovers CRISPR-like enzyme system, Anthropic says - Al Jazeera",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNMENUOHhWSmdxQTlHcUtqOTVmSVhWOS01ZGg1NHY4ajVaUk03ZXJPcVVIaDk2SFl5UzBsYXZVZzVFMERsNlUwdlk1ZlVrbnFEVEJLdkNweVpaZFdfY0V5SjZUZXVPS2JlQ3dPcmp0d1UxNWcyYTI5enNvT3lJQ3BOSkRfLTgzeVRmcHVWNXlTLVZ3WEVLdkJpeTAyV0FfOE80bHV0emgwUFJsajB5X3Y00gG0AUFVX3lxTE5JcnNCQ0IxUUMxdndVQmZobFd0V1czbUQ4bEk5ekVGZGJ2ejdzQlBDVTRzT3R1QVFjXzZXS0pfSTcwMnZSZjdHd3NkSVMxUW1iOC03V2tJVDdVM0RmTXRkZDJhUmlEWnlnVjlLT0VHeVE1TllRM1p0UWR1d2JFekkwdHVHWjNOREotQlZYNnNUWkxITTFCN3lRd0NMQVZUT2dtYVhMQlAtRUoyUGRhTzVsbzNvZQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T04:34:53.000Z",
-        "summary": "AI model Claude discovers CRISPR-like enzyme system, Anthropic says Al Jazeera"
-      },
-      {
-        "title": "Amazon Opens AI Seller Tools To Anthropic Agent, Supports Advertising 09/24/2026 - MediaPost",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOaF9HclJ5Qy1rTVpGMzA0Qk5seDdBSHg5bmJ2S0p6YTNVX1BaUEh5U0xwVUUzeVpWUTZ4bU9lVkJHcDFWTDhUYTlQTDdBNXBuYlBFOXp0eUdDdG8wSVhHbk9OakRYN1NIVXRuN21ranFncHFla0VaTWpITXExeEYxM3JJYTNZRzNIQW5ZbWpCN2RkcXdPNFg4NVJpMTNkeC1Xbmo3ZXNuZWdwX3VQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T04:05:09.000Z",
-        "summary": "Amazon Opens AI Seller Tools To Anthropic Agent, Supports Advertising 09/24/2026 MediaPost"
-      },
-      {
-        "title": "Anthropic claims Claude discovered new DNA-editing system in bacterial viruses - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPc3ljNGV6UjM4SWJIVFRnWi1PSjBfR2pxT3NYV3RFejFVWWpGbjdKZlJTUVdEeEQ4T2VDWlRzQUMydmdaOGdranFsREV5VG84U2JwR3hXVHhUX1VBNkhFZG1Wdl8tMzdaYi1kNHJ1TjcyN3E3SFhldGMwSC1LUTNNdTE4bmU2aU9QUXlZWVpvalNfU1JENHBvUlJXR1VIQmV2S3Y2dWk0a1lsYWQxeW5fMkJpN3RCSGZCb1J3bnhWOFLSAcYBQVVfeXFMTlA3cjJVTkE2ZFBtY3JfaF8yeFVielZZbDBxZ3ozbHhiUTRDTXI2SGprRklnVnB6WWRtUm5taWw4alFkOW5FUEY4aXdOREFhZFp0d2xsQjd4QlNoVnVrMEpTMk15VVlzakVESlFfY2wtbWxBOVBMV2txWUFxMTh6WU41U25MeDJnWjJ4RTFVTm1pR0ctSl9CbGkyNGF0ZE8za245VWYyamF3YmNpeHNUbi1WemRGbFg1ZUtDU3REclI3Y3hlb2hn?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T03:43:19.000Z",
-        "summary": "Anthropic claims Claude discovered new DNA-editing system in bacterial viruses Firstpost"
-      },
-      {
-        "title": "Anthropic’s Claude AI discovers new enzyme system in bacteria-infecting viruses; Dario Amodei says: We be - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMixAJBVV95cUxNaVU5aHEwcXNyZWZ0Szd5bTU2VHhrMFpZZ3hvY1NfQ2JpZ0pCRDFmdEk4ckloU3Fja3kzY1RmOUFXTnZaVG9TSUtIczhjZ0FVdFNaT1NmbDhzcGRoa0liZ2N0TWNFLWpOb2M5ZmNBNFpCbXhGMkpRNmJnSGJXNUNQOUJ6Y2VHUmRGNmNRRFNRSDhQTHFyZGp2bUItTUpGMDM4Z3hEWS1pc2lQY1pBTnEyVE5HYlNMYkpMTjhOY0oyUGgtTjJOWlBjNms2YXdqQ0szVWU5UUwzemFfeWtVbmtUNXQ0REE0b1h0aDNkY1IwN0VlTDRiQ3ZLWUVLWDhLY0V5bUtmQmhPMFJTZzc3aF9xUkJVcWNMMEtvdjN0WnBjelY0dHRhclVlVXAyNktNLTUyNG56NlVKWFg0SmZPTEhtUm9LVWrSAcoCQVVfeXFMUG5LZUkzeWdoRjkybWxTdzRfT0xQSUMzRG5XVERIR0FDRVpvY1dndml4bzBLbEhscFB0U1ZsR2drbk5ZRE9OeEx1ZE00YkQxZEVqbWNmX2R3QWFDbFMyZDNiQVY4ZXZKTzBSelAxX3RiVGxnREs3MWpSalJMakROTEZvTmxINFZhS0JfQWFSUWhWLXlVaDh3eFJkcWt2ZUI4eHBtcU94UWdzN1ZaWmZTek55M1JLMi1sMlNZRDJrU0MzcDU1OU1WSEtDU1lVQlhhcEFtYmt0NGFKcERPM3dFc3pQWHRMeDJGYW12ajg0RWlLUlBVY1VxUlBIZVpmbXJOTUJUSzNPdXJXVFVwSTUzdEt6ZmpYall3WXZYeEN2Q3VJbWxRaldyQlRxWGRpUzZ4TkFGNm1ESk9sYzZmMnpiR2pEUDh4YVRxY2hn?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T03:12:00.000Z",
-        "summary": "Anthropic’s Claude AI discovers new enzyme system in bacteria-infecting viruses; Dario Amodei says: We be The Times of India"
-      },
-      {
-        "title": "Anthropic’s Claude Finds Unknown ART Enzymatic System In Bacteriophage DNA After 21 Hours - NewsCord",
-        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPVnBtZV9kZmR4bXZoNk1tZzNyLTMyd2d2aUtPOFpwcW9iQXU3bC1pRUwyM2NpbEJabE1iZEFBU24tU1RaX1o3YU4tSG92S0o3R0FCVHZuZHBWUXJFSG1Sd1ZYakp0YTRaXzljODFta3A5bjZ3LVFKWHN0Ty1tMi1udE5SZXpXX05nQThTUnZsX2VZVm5KQkdGeW1fQ2k0TVowLVBJRVdHZzVGdzA5SVdOZGJCbjE4UWRxOTlxUWlSVHM4XzdyOXc3OWh6X0ZUaHZMT0cyb0hKMkFBdnMzRHJnVEs3UlVTMEJm?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T01:56:09.000Z",
-        "summary": "Anthropic’s Claude Finds Unknown ART Enzymatic System In Bacteriophage DNA After 21 Hours NewsCord"
-      },
-      {
-        "title": "Anthropic's AI finds an overlooked enzyme system hiding in phage DNA - FirstWord",
-        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9lQ0VQbDllbmZEMFBSMk1ESkNLeDVLamdRWUNIa1REbUhUTUJZQjVxc2J3eG1PeFNIMTRDZTJnNE9qd0pzbUFidFhyMHFMcjJPMmg4?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T01:41:19.000Z",
-        "summary": "Anthropic's AI finds an overlooked enzyme system hiding in phage DNA FirstWord"
-      },
-      {
-        "title": "Anthropic Explains Claude Code’s Quality Drop: 3% Hit [2026] - shattered.io",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1FbFRybmtOZm9paW1XaEJ5Q1lpZ1gxMExWUDF2Q2N2X0FEakZKUkdBWXVBcjF1bWFfVnlzNnY2WFd1akVZa3VNZmJ2T0REV0UwUlpXdUhjdGlWYlF1M25iMmpvLWNQVUNLeC1feWJDNjI2Y3BfNGRoc1VFVQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T00:52:49.000Z",
-        "summary": "Anthropic Explains Claude Code’s Quality Drop: 3% Hit [2026] shattered.io"
-      },
-      {
-        "title": "Anthropic Engineer Explains Why Claude Writing Got Worse [2026] - tech-insider.org",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPYnpTRGFzS1Y3TDV1YjlHYlk5dU5wS0pTeDNqcUhjQ2lHSVktNkI5dTl3aE55OWJ1Wm1pYW5lYUw5cVcwbDRfVmJCanlBT0ktRk9oNkN6blZFNHRGZWFka2JOWWtqOEx0VF9hMF8tUnlNWmt5UHZVanVGaEMyM0lGSmU0R2Y?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T00:10:18.000Z",
-        "summary": "Anthropic Engineer Explains Why Claude Writing Got Worse [2026] tech-insider.org"
-      },
-      {
-        "title": "Anthropic Claims Claude Uncovered a Brand-New Enzyme System Inside Virus DNA - Android Headlines",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNYmdCdmZkWkVaS3VyR0hKaHVDdTFtRGRtZjB6a3hSbGV2TFJyOThtS1o0R013dFBOZXRfT05LZk51VjBmdGlIN3NrVDMyV1hZUUh2T1E1bWR2WEZXREFZWGFfZ3d2NHh0cEwwaDV2MHF3a2xwSDdXZEs0TEhmbDNNWFZfQXlVNmdjS2J0UlVkdVRYd2xwSmFr?oc=5",
-        "source": "Google News",
-        "published": "2026-09-24T00:05:55.000Z",
-        "summary": "Anthropic Claims Claude Uncovered a Brand-New Enzyme System Inside Virus DNA Android Headlines"
+        "published": "2026-09-24T08:01:04.000Z",
+        "summary": "Claude.ai is about 3x faster after 3,000+ changes Help Net Security"
       },
       {
         "title": "Claude Opus 5.5 is the greatest AI model ever released",
@@ -1053,6 +1054,14 @@
     ],
     "tutorials": [
       {
+        "title": "docs(fable_5_fallback_billing): update billing text for pre-stream re…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/c5ff1dc523e28d9b8fbd5c6ecd63204e20b8a0ed",
+        "source": "Anthropic Cookbook",
+        "published": "2026-09-24T17:05:05.000Z",
+        "summary": "docs(fable_5_fallback_billing): update billing text for pre-stream refusal billing (#890) Squash merge of 1 commit",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.281",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.281",
         "source": "Claude Code Releases",
@@ -1250,14 +1259,6 @@
         "source": "Anthropic Cookbook",
         "published": "2026-08-14T20:50:15.000Z",
         "summary": "Merge pull request #834 from anthropics/aravind-ant/fix-mdx-compile fix(content_moderation): replace bare token that fails the site's MDX compile",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Replace bare token that fails the site's MDX compile",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/2a3204e9f784da1c3d2352dfa2c236b9c9abb2ba",
-        "source": "Anthropic Cookbook",
-        "published": "2026-08-14T20:46:37.000Z",
-        "summary": "Replace bare token that fails the site's MDX compile A literal in one prose sentence parses as an unclosed tag in the site's MDX pipeline, failing the rich compile for the whole page and degrading…",
         "tutorial_kind": "official"
       },
       {
@@ -1743,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "We're expanding which refusals are billed to include refusals that arrive before any output when stop_details.category…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#september-24-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-09-24T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Opus 5.5 is the greatest AI model ever released",
         "url": "https://www.youtube.com/watch?v=mesHJAGiaUg",
         "source": "YouTube · Alex Finn",
@@ -1841,6 +1849,13 @@
         "summary": "Patch Changes #2698 7b781ed Thanks @maxisbey ! - Read Streamable HTTP request bodies with a size limit. Every SDK-owned body read — WebStandardStreamableHTTPServerTransport (and the Node transport built on it),…"
       },
       {
+        "title": "Cache diagnostics is out of beta on the Claude API and no longer requires the cache-diagnosis-2026-04-07 beta header.…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#september-23-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-09-23T00:00:00.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.280",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.280",
         "source": "Claude Code",
@@ -1890,11 +1905,11 @@
         "summary": "What's changed Fixed every request failing with 400 … Input tag 'advisor_20260301' when ANTHROPIC_BASE_URL points at a proxy or gateway (2.1.275 regression)"
       },
       {
-        "title": "The Compliance API local session endpoints now also return transcripts of Claude in Chrome sessions ( product_surface…",
+        "title": "For cache diagnostics , a response to a request that sends the cache-diagnosis-2026-04-07 beta header now always…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#september-18-2026",
         "source": "Claude API Release Notes",
         "published": "2026-09-18T00:00:00.000Z",
-        "summary": ""
+        "summary": "The Compliance API local session endpoints now also return transcripts of Claude in Chrome sessions ( product_surface value claude_in_chrome ), in beta for Claude Enterprise organizations, with your existing Compliance Access Key and the…"
       },
       {
         "title": "v2.1.275",
@@ -1972,6 +1987,13 @@
         "source": "MCP Inspector",
         "published": "2026-09-09T16:07:28.000Z",
         "summary": "What's Changed fix(web): reset pending OAuth slots during render, not in an effect by @cliffhall in #2237 fix: terminate the OAuth connection-details refresh promise chain by @cliffhall in #2236 fix: key the OAuth…"
+      },
+      {
+        "title": "For cache diagnostics , the API now stores a request's fingerprint only when the request includes the diagnostics…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#september-9-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-09-09T00:00:00.000Z",
+        "summary": ""
       },
       {
         "title": "v2.2.0",
@@ -2112,27 +2134,6 @@
         "source": "Claude API Release Notes",
         "published": "2026-08-26T00:00:00.000Z",
         "summary": "The Compliance API local session endpoints now also return transcripts of Claude Science sessions ( product_surface value claude_science ) and Claude for Microsoft 365 sessions in Excel, PowerPoint, Word, and Outlook ( product_surface…"
-      },
-      {
-        "title": "v2.1.1",
-        "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.1.1",
-        "source": "MCP Python SDK",
-        "published": "2026-08-25T15:58:21.000Z",
-        "summary": "What's Changed Point imports of mcp.server.fastmcp at the migration guide by @maxisbey in #3388 Full Changelog : v2.1.0...v2.1.1"
-      },
-      {
-        "title": "v2.1.0",
-        "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.1.0",
-        "source": "MCP Python SDK",
-        "published": "2026-08-24T19:00:24.000Z",
-        "summary": "Highlights Client accepts StdioServerParameters directly: Client(StdioServerParameters(command=\"uv\", args=[\"run\", \"server.py\"])) ( #3321 ). Prompt messages accept Image and Audio , prompt functions may return bare…"
-      },
-      {
-        "title": "v1.29.1",
-        "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v1.29.1",
-        "source": "MCP Python SDK",
-        "published": "2026-08-24T18:24:41.000Z",
-        "summary": "What's Changed [v1.x] Complete the FastMCP Settings model at import time by @maxisbey in #3352 [v1.x] Apply the request body limit to the SSE and OAuth endpoints by @maxisbey in #3344 [v1.x] Give recursive tool return…"
       },
       {
         "title": "Codex vs Claude vs Grokbot: What's The Best Super App?",
