@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T17:27:28.520Z",
+  "generated_at": "2026-09-26T20:16:01.718Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,167 @@
     ],
     "news": [
       {
+        "title": "Show HN: Reladraw – A diagram language where you decide where to place things",
+        "url": "https://github.com/reladraw/reladraw",
+        "source": "HN · 42↑",
+        "hn_id": "49858513",
+        "published": "2026-09-26T17:10:40.000Z",
+        "summary": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don&#x27;t let me decide how the…"
+      },
+      {
+        "title": "Show HN: A Claude Code skill to analyze your chess games",
+        "url": "https://github.com/brumar/chess-postmortem-skills",
+        "source": "HN · 66↑",
+        "hn_id": "49857528",
+        "published": "2026-09-26T15:34:53.000Z",
+        "summary": "Hello HN, It started as an experiment: can Claude play chess properly if it uses vision instead of PGN notation? Somehow it can. The next experiment was to see whether Claude +…"
+      },
+      {
+        "title": "Anthropic Pentagon AI Ban: 5 Critical Risks in the Court’s Security Ruling - telesurenglish.net",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9wZ1d0VUszaWtQZThqWTV6MVBhQnJUc3FGWVhQeU9IS09VaUhLV2JwUnJsOWxqNHdMLW9GVG1TV0M1d0taV0RjMlV5NlZXOUVhY1lrcGM3Q3BnekpnZU5ia3k1azA3SlRw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-26T15:19:53.000Z",
+        "summary": "Anthropic Pentagon AI Ban: 5 Critical Risks in the Court’s Security Ruling telesurenglish.net"
+      },
+      {
+        "title": "Anthropic Faces Fresh Setback As US Court Upholds Pentagon Blacklist - Arise News",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNdXJRWWFLTkhNM2ZmRUdVSHhUVDJJWUE2OTV2TTh1Sk9zTzg2MUxQQWlKdGMtbXFvYkpDNkpqVnI1WFhJbHBzenNVZzM3bUVUVjNNNU9ndXZja2o0alY5RzNSd0lEWVpWelo1TmhWM2lHd1NMSUpQY04xZmtsaEtsbHhITUlUcVN5OUFnMHRZak42UGQ0?oc=5",
+        "source": "Google News",
+        "published": "2026-09-26T13:36:29.000Z",
+        "summary": "Anthropic Faces Fresh Setback As US Court Upholds Pentagon Blacklist Arise News"
+      },
+      {
+        "title": "The AI price war heats up as Anthropic unveils cheaper Claude model - Moneycontrol.com",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT3pFX3hVU3BNTUIwY1NpU24zVk1QMmZ6dDJvYkpVSldicklrT2QwZ25TRmFxYWtqMWNJX1ZUUjlxalZ2YjVJNjM4WXBBMy1JdnREeWJqQlpPUE5PdVlMbnRjZFZ1Y1lEZGtZSW5adV9ZVnVwRWxNdDd1Ym9iSm0zZ1VwSzJwY2hqY04xcjdmY0NUc3VBc284dkFRbzMtcHV5b0FvekVKMEpxUUZJWDBIYWdMTE9kWmIxZ0RicVotZndPZ9IBxwFBVV95cUxOWFhqUWpKcGVSNU04X0JtbEhvaFVWZjVsekVfY2MteUR1TG0xa09RZ0ZmX2x1dlhHRTdTWFBDS0E1WXMtMXoybEdHWFNxMWdJZVd2dWhHc3otUDYzNG5WdTVGaFdmUUx4WlMtTUR5Y3dpS1QtbEtETkZFWHpGTTVyNzJlbnBoLXBmMHdaRENYM2FWLU1ITjJDaC1RZXJvNWpxUGpGanRJWTU5M3lVUjFlVHBxS2hHT0M0X04xdmRmN2NkODRKUHVB?oc=5",
+        "source": "Google News",
+        "published": "2026-09-26T13:09:02.000Z",
+        "summary": "The AI price war heats up as Anthropic unveils cheaper Claude model Moneycontrol.com"
+      },
+      {
+        "title": "Court upholds Pentagon’s supply-chain risk label on Anthropic’s Claude AI - The Cryptonomist",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9EMmJiaW9ySmdmaDJlRXF0M0dRQU5UNnc4T3J4NGVTQ2hyVDFpajJ0eGozcVF3SExhNi1rTnBod1RwM1hqRnVhRTdIQUVqdzRYR1hhUE9ZQWtHejl2VjFuZ3JBd2hPNUU2bnlibHJFcVBYaWpaWGFHVzd3?oc=5",
+        "source": "Google News",
+        "published": "2026-09-26T12:39:09.000Z",
+        "summary": "Court upholds Pentagon’s supply-chain risk label on Anthropic’s Claude AI The Cryptonomist"
+      },
+      {
+        "title": "US court sides with Pentagon in Anthropic AI ban - The Standard (HK)",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNekoyRUhvblNBbG9ScFF4WGNBU1M4Z3hyZGI1MnFMMDFIRUY2Mm9xbVB0MUVSSHVKXzlzWmFGNHdCMEJUY0N3TjVPa2hZOXlZRDE1eW5oVm9UZHVMNUZqdVdyVndRTUFpQUY3MmRKQldwc1NJQTAzeFpqdlVYdXBGQXplMHU3SzV2aGs0T0lLZm9qNG9ZaDNZLU5vMXZNV2QtUFE?oc=5",
+        "source": "Google News",
+        "published": "2026-09-26T10:08:55.000Z",
+        "summary": "US court sides with Pentagon in Anthropic AI ban The Standard (HK)"
+      },
+      {
+        "title": "Anthropic | History, Controversies, & Claude AI - Britannica",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE41Q1h2QkF0SGRpMFZSMVN5al9RNkhQLTR4MDc0cHJNbndmdndTbHE5cGswRFk4SS1JbVhmXzdWNm5KRDlJa3FiUkt6T01MZUNiTjhON2R6cFJtQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-26T09:33:59.000Z",
+        "summary": "Anthropic | History, Controversies, & Claude AI Britannica"
+      },
+      {
+        "title": "AI Shatters Three-Year Theoretical Physics Record: Claude Independently Completes Nine-Loop Scattering Amplitude Calculation - finance.biggo.com",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5kSWNpSlluTmpyS2VERXZxN2pRRkpoMkVWNGpzTlI3TmdqWENpcTY0QmZyMEMwUElPM3RvR0J2eFJrRnNnWUdaQTJiV00tU01RMnpnM0hTVWxSTjRQQVZydy0xQXBzUkk4UG5kcXVOMjA3S1cwcmc?oc=5",
+        "source": "Google News",
+        "published": "2026-09-26T07:35:00.000Z",
+        "summary": "AI Shatters Three-Year Theoretical Physics Record: Claude Independently Completes Nine-Loop Scattering Amplitude Calculation finance.biggo.com"
+      },
+      {
+        "title": "Federal appeals court agrees with Pentagon: Anthropic is a 'national security risk' for America - timesofindia.indiatimes.com",
+        "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPRkhTM3RoNXp3ZWxqSkgzV0ExRlNST2tZSDgzeUVDa291M25SdWRXNUFfMFJLbGFFTkpuYjduS1ZkZ0h3Mm9UckJNTU5mM21QS3Uzbk9EQmk0ZW9WcEFZSGMxNUFlaUdmQ1B1UXZKcDF6RlhTZ0dSeEYzRWRJNG1sRFM1RXRtYVVQM2d3X2doRGdhUF9PSFgtZ1JTQ1llQlc3YkNNbUZPdXJpc2I5S2VmTGx0Q1NDRVJEOTI5S0tVVTYydkV3cGhBejY0ZVczV2V1X2pROThDNmdILTQ1cXIyN2tnWnNkcWNFWDJrcmRDTXYzdVlvc1hmanJDZktUOF9JRDFRWXVR0gGLAkFVX3lxTE4zVmE0VUR5ZzRETEJOdjBmNGxEbFVhZ0pXcGFzNjRCX0RSazFSal92TGxZd045Wmp5a0VobnRWbmR0ZVFQV2Q1TnVJbDBneEw4TDBxZDA2N01qVExrUzBFeXl1NkJsYU1BVnoxN2NXcVZSanFMQkp3NUhkUE5sWVhLaWRIb1o5REltcmMwYWM2ZmFWenEzQWtscTU3aUQwampIMnJNYkhQUjY4LUZCdVdMVW1PcUt6TDN3ZUdHVHhnaEVfMF91RUpIbVM0aE1fRFFNVC1PQUZwRlJDM3QxbHFrQVAxeTZadlRNZF85cU9OZTg0SWwxS3RsRFJ5RHp2Vlc0WmtFeEliNV9Hdw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-26T04:41:00.000Z",
+        "summary": "Federal appeals court agrees with Pentagon: Anthropic is a 'national security risk' for America timesofindia.indiatimes.com"
+      },
+      {
+        "title": "Anthropic IPO 2026: What Investors Need To Know And How To Get Exposure Today With AI ETF AGIX - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPSFBCTHQyVEhlbEFONExfTUg3anB0VWhLeW04OHEyQ24wWEdVNnZLTi1NN0VjYkpDUmhUTHBNZVBOOU9yV2cxR0xxeFlITVl6bzJhbVhDcF9WOXlIcTBXQVRmRVU3ZFYzWkw1QXhzanBTNGp4blB0bGU1RTBNVmwxd2d4UU1xb25iWWxzSTJneDNOUDZPSVlkSXBsaEZrS25DWHdYak9hZ1JIQnkxY1lQQ2lMNHFkTkl5OTJsX3drY3k1UHJ1WTltNHVB?oc=5",
+        "source": "Google News",
+        "published": "2026-09-26T04:30:00.000Z",
+        "summary": "Anthropic IPO 2026: What Investors Need To Know And How To Get Exposure Today With AI ETF AGIX Seeking Alpha"
+      },
+      {
+        "title": "Anthropic Loses Pentagon Supply-Chain Case in Split Appeals Court Ruling - Kingy AI",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBRMjlJUlVRckY3NF9GVGdXWGs2czRTcDFMWjJsR2NETGstVmN0WFBJdG4yXzZwd1pvNjRrWXFPc3hXaF9OTmE1b2F0RGxydm54SXVHSlQyanNwM2ttOFNtSVVpNV8xbWNMRTdteVB3?oc=5",
+        "source": "Google News",
+        "published": "2026-09-26T04:07:30.000Z",
+        "summary": "Anthropic Loses Pentagon Supply-Chain Case in Split Appeals Court Ruling Kingy AI"
+      },
+      {
+        "title": "Google lets engineers use Anthropic's Claude for coding work - Bangkok Post",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxORFh5dmlCSGo1WWp5SkVsVkNtOVhROUJkYm5JVkEzOW9LdUZFNzFuRHowSDZsaTc2d1JqV0ZQMkRTSmdBUEpBaHdDbzE4dGE4Y2hwei1vNGd4WlpqbTZ6blJTanpBdGk0UXR3ZVZHVDlkS1IyZ0dDYWR5Qi1OSnRxSXVwQVFjQWFRWnc5SjI1VnNoWms1WnRVLVZqR21wS1VIeFZhMEh3WXE?oc=5",
+        "source": "Google News",
+        "published": "2026-09-26T02:39:00.000Z",
+        "summary": "Google lets engineers use Anthropic's Claude for coding work Bangkok Post"
+      },
+      {
+        "title": "Federal court says Pentagon can label Anthropic a supply chain risk - Scranton Times-Tribune",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPYTJpYl9BWlpKWVhPaTRsaVVILW1GN3VsR2syczEzdFZVS0tGMHJ5UG5vMUpqYnA1c3RTV2RIeF9RcFFkNTN2LTRfbEdIZDVlQWdTT0ZTTUg0czg2NS1Ta1lSaW1KMTVLOExyNnVrY0IyTXFlbko2RzM2U0xaQjdBYXBBM2tuYUs4Mmw2TzRsTC1wLTY1U1ZNX05lY0Fudw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-25T22:52:25.000Z",
+        "summary": "Federal court says Pentagon can label Anthropic a supply chain risk Scranton Times-Tribune"
+      },
+      {
+        "title": "Anthropic Loses Appeals Court Bid to Overturn Pentagon ‘Supply Chain Risk’ Label - Law Commentary",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPZkZJSmJTd2tlbEJlc1EtTGMyV0tHRjdIaG5RTzlvVk9OZGxHbVhmYkJ3R25rS2xYa192bzFJbUVxUVA2QWNtWWpaWGs3QzhYaWRnVjVJM3FoOTRxX1U5UkR1UmZfY0czczlTTDVkcnk1b0dQYW5uQVdhOThmMElOM2ZJWEdXR3hlSnIwSFJPa1I5QQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-25T22:49:47.000Z",
+        "summary": "Anthropic Loses Appeals Court Bid to Overturn Pentagon ‘Supply Chain Risk’ Label Law Commentary"
+      },
+      {
+        "title": "Anthropic's Pentagon blacklist upheld in US appeals court: How the conflict unfolded - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPV0dwR09RSHU0MGFKSHFQS3ZkeUwzUmM1T3VhV1J5NDFUUzBQaHMzUXgtYkpOMzdWRVZTRDIyUXFaMHAzT2pRRjkzbUVldjdkeU1rc2RRNzFqY3JfNXFzeUktRXM0bXNrUVU0Vmd3eTlJNW1Ta0FkMkw3Qm43dUhOYUNXMlBUTDlpNFV3NjNUeHN3SmozdXB1ZGxjSlhQYUhoWUpj?oc=5",
+        "source": "Google News",
+        "published": "2026-09-25T21:57:31.000Z",
+        "summary": "Anthropic's Pentagon blacklist upheld in US appeals court: How the conflict unfolded Reuters"
+      },
+      {
+        "title": "US court backs Pentagon's decision to exclude Anthropic over Claude AI restrictions - WION",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQdjQ5dEdEdUVVUFBZcnNiTGwxU1RDN1lFWldTY0dSX043bjBQRmJtbjhJdWZIbFh6cjhYOFphdFlhcmgxLTlXSEh1VmZBbTMzY0w5TUcyLXpBb19jOWxUeUF6VWZybFBvRnRIQUJ0dmFudUpyR1c4eGhSM3dJNWlPamphVnZTZVkxS29IQmhmNGNZam1tRmZ5YWVVcTlhVTBpYm9yRlRsNFhud3F4ZjFKOGk0UWloblFtdVJ6bUR6cUR2UmZHdnfSAcsBQVVfeXFMTzRuSWd6WDJrS1lYOWxqMUtMSDlGZ0pHcnpTMmhseHRqSjVUM1QxcXVUc2Q4SndWM3M4Y2t3MzZ2SjZENU1lUWs2eVdRcHg4WmdVYlk1dTNNUGpSNjNQd01uanVYVG5MNlNrU05wWEZWa2VlOVk4MTVhdnFRSEg2NnhDWkY0VU40cURZZUxWWm5LX1Y4bXM4RTI4Y2FmbHoycktCZExzWmcwc3ZGUkVRZzU3bkFISlUwcjRES3ItenczbXdESGFlalBVNUE?oc=5",
+        "source": "Google News",
+        "published": "2026-09-25T21:44:00.000Z",
+        "summary": "US court backs Pentagon's decision to exclude Anthropic over Claude AI restrictions WION"
+      },
+      {
         "title": "Court rules Pentagon can blacklist Anthropic for refusing to enable Claude features",
         "url": "https://arstechnica.com/tech-policy/2026/09/court-rules-trump-can-blacklist-anthropic-for-refusing-to-enable-claude-features/",
         "source": "Ars Technica",
         "published": "2026-09-25T21:36:20.000Z",
         "summary": "A US appeals court today approved the Department of Defense's blacklisting of Anthropic technology. Judges decided the Trump administration had authority to blacklist Anthropic for withholding…"
+      },
+      {
+        "title": "Court rules Pentagon can blacklist Anthropic for refusing to enable Claude features - Ars Technica",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNQUVqRzQwNW9SN1pNeThVT1lWblh2YUJBSElLVE5sTXJzZGVpUk1MMG1JX1AwUWZyRGxRUlZyNS1YcnNjS2hzVllkTVEwUlhZTHN0NXZoSWdCVjBUVEZBOFFVdUQ4dWJOTjdqaFdOUGZVQnQ3LWRpalZFdG1CbmYwWkFSbU11b3FQUlpJX0FacDcwMFBkNzBpUDhYeTN5U1FWVDcyWnplVkV4Y2J3amhMcXpvWEh0bk1aUVRQeUtsU08xeGc?oc=5",
+        "source": "Google News",
+        "published": "2026-09-25T21:36:20.000Z",
+        "summary": "Court rules Pentagon can blacklist Anthropic for refusing to enable Claude features Ars Technica"
+      },
+      {
+        "title": "Federal appeals court rules Pentagon’s blacklist of Anthropic was legal - CNN",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5RajNPU0VTeE5CeTZlZEtEY2Z0SEw4TmNPdG81bjRpYmVOMnQ1UWhjTHBtOG1jVEc0UFdwaHl0N2d4T0x5cWpPQ3pfS3VsMDB4a3ptSGlXUV82QUJXbEdBdC1jdUx5d3RZQk5iaVF3RGpSbWI5WjhwczdfOVctd2s?oc=5",
+        "source": "Google News",
+        "published": "2026-09-25T21:02:39.000Z",
+        "summary": "Federal appeals court rules Pentagon’s blacklist of Anthropic was legal CNN"
+      },
+      {
+        "title": "D.C. Circuit upholds Pentagon ban on Anthropic’s Claude over national security risk - Florida’s Voice",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNdDFqME1qRmpZckk5SjFadUo2V0xwZHBVWU8yVHNwZnBkVnV1eXltVGlRcE9zeWN5WTNqVHNPVUpkb0wyaTdmVldtbmZoaTlIOE9OTDU5ZGxwWUpER080dWUyZ3hSUHdSbUFRNG5md29HLWR3MXUtOGgyRU5lUms5bHVjQUhOZGFjLXN0OEF5U2xaLXotMGxORXY0ZjR3QmRyajdud01ySHpwUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-25T20:55:00.000Z",
+        "summary": "D.C. Circuit upholds Pentagon ban on Anthropic’s Claude over national security risk Florida’s Voice"
+      },
+      {
+        "title": "Pentagon Can Keep Anthropic Out Of Its AI Supply Chain, Appeals Court Rules As It Rejects Claude Maker's Challenge - International Business Times",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZGEzQUtwVzhreWdZSWR0TENCN001VXdyamtaRUxrR3UwdlNkODJOYVdHQi15clVCcUxCc2VGZXRsLUE1WGJMMU80MHNrZk5ETlpYV1o1OXB6V2hHNFFtSGFYUE5wbXA1OVlLd2VZaVA4R1ZFMGJjcWV2MDJFeThnSVBLWVBMbHlKUGpkS3JHV0NKNl84M1MtTEdjdmFwTkRqZzV4LVlzZ1B2S25zNlNoTW5nWjNsTHo3TDIxZ2JR?oc=5",
+        "source": "Google News",
+        "published": "2026-09-25T19:42:47.000Z",
+        "summary": "Pentagon Can Keep Anthropic Out Of Its AI Supply Chain, Appeals Court Rules As It Rejects Claude Maker's Challenge International Business Times"
+      },
+      {
+        "title": "Appeals court says US government can label Anthropic a supply chain risk - The Hill",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQUE8yQVlyTGdvS29Gd291VDFPRkVoMFZvWFNGQ25SYXgwVm9jUXgtU0JXRUR1eVZtTFB4cmVJMlpLQ0JuRnBQR2Y1U2FpRmQ0VGRPS3A1T0kwc2RMdEstY1hsc05jckNsTUpybmRPa2lEX3c1TE0xU2lOUTNKLXRlclVYTTVCVk1GbzltV2ZnMHdfcDAzUHhMbXZ0QVI0bDd1TzI2WVVjYUFNTG4x?oc=5",
+        "source": "Google News",
+        "published": "2026-09-25T19:21:00.000Z",
+        "summary": "Appeals court says US government can label Anthropic a supply chain risk The Hill"
       },
       {
         "title": "Anthropic to pay Akamai $11.6 billion over seven years in cloud deal",
@@ -162,46 +318,10 @@
       {
         "title": "Alan Kay: Shannon gave us a way of dealing with noisy channels [video]",
         "url": "https://www.youtube.com/watch?v=Cjntrqhn8pk",
-        "source": "HN · 141↑",
+        "source": "HN · 143↑",
         "hn_id": "49848295",
         "published": "2026-09-25T18:37:05.000Z",
         "summary": "The following explanation is taken from  https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=49622607 : Alan Kay performs an improvisational avant garde layered audio feedback…"
-      },
-      {
-        "title": "Meta’s Muse just stole the AI spotlight from OpenAI and Anthropic",
-        "url": "https://techcrunch.com/podcast/metas-muse-just-stole-the-ai-spotlight-from-openai-and-anthropic/",
-        "source": "TechCrunch",
-        "published": "2026-09-25T18:22:47.000Z",
-        "summary": "When AI leaders at OpenAI and Anthropic started talking about “pacing the frontier,” maybe someone should have asked: what pace? Now it’s turned into model drop week for both companies as Anthropic…"
-      },
-      {
-        "title": "Yes, Claude can do nine loops",
-        "url": "https://www.anthropic.com/research/yes-claude-can-do-nine-loops",
-        "source": "HN · 103↑",
-        "hn_id": "49848033",
-        "published": "2026-09-25T18:11:48.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Accel Sees AI Opportunity Shifting to Applications",
-        "url": "https://www.bloomberg.com/news/videos/2026-09-25/accel-sees-ai-opportunity-shifting-to-applications-video",
-        "source": "Bloomberg",
-        "published": "2026-09-25T18:05:19.000Z",
-        "summary": "The AI spending boom is showing no signs of slowing down, but as billions pour into models, chips and data centers, investors are asking where the biggest returns will actually be. Accel Partner…"
-      },
-      {
-        "title": "Anthropic Goes Big on Compute, Microsoft Rethinks AI",
-        "url": "https://www.bloomberg.com/news/videos/2026-09-25/bloomberg-tech-9-25-2026-video",
-        "source": "Bloomberg",
-        "published": "2026-09-25T18:04:06.000Z",
-        "summary": "Bloomberg’s Tim Stenovec breaks down Anthropic's $11.6 billion contract with Akamai for AI computing power, the largest deal in Akamai's history. Plus, President Donald Trump calls his meeting with…"
-      },
-      {
-        "title": "Astra and Opus just passed Turing’s other test",
-        "url": "https://techcrunch.com/2026/09/25/astra-and-opus-just-passed-turings-other-test/",
-        "source": "TechCrunch",
-        "published": "2026-09-25T17:24:36.000Z",
-        "summary": "Frontier AI models are finishing Alan Turing's World War II codebreaking work."
       },
       {
         "title": "Claude Opus 5.5 Is Insane… But Muse is EVEN Bigger",
@@ -216,29 +336,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Jevmem – automatic project memory for Claude Code, built on Jev",
-        "url": "https://github.com/Avinash-jetwani/jevmem",
-        "source": "HN · 61↑",
-        "hn_id": "49846391",
-        "published": "2026-09-25T16:04:04.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic’s founders seek voting control ahead of IPO",
-        "url": "https://techcrunch.com/2026/09/25/anthropics-founders-seek-voting-control-ahead-of-ipo/",
-        "source": "TechCrunch",
-        "published": "2026-09-25T15:40:03.000Z",
-        "summary": "Anthropic is asking its shareholders to approve a structure that would give its seven co-founders a combined 50.1% of the vote on most corporate matters."
-      },
-      {
-        "title": "U.S. appeals court upholds designation of Anthropic as supply chain risk",
-        "url": "https://www.cnbc.com/2026/09/25/pentagon-anthropic-ai-risk-appeals-court.html",
-        "source": "HN · 475↑",
-        "hn_id": "49845977",
-        "published": "2026-09-25T15:29:25.000Z",
-        "summary": ""
-      },
-      {
         "title": "I Spent $31,141 & 1,000 Hours On Claude Code To Learn This",
         "url": "https://www.youtube.com/watch?v=45K3zHckCnQ",
         "source": "Nick Saraev",
@@ -249,21 +346,6 @@
         "published": "2026-09-25T06:42:57.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Show HN: Whiteboard (YC W26) – An open-source IDE for thoughtful software design",
-        "url": "https://github.com/devdotfast/whiteboard",
-        "source": "HN · 407↑",
-        "hn_id": "49833867",
-        "published": "2026-09-24T17:21:36.000Z",
-        "summary": "Hello! We’re Sid, Alex, Ketan, and Milan. We’re building Whiteboard ( https:&#x2F;&#x2F;whiteboard.dev.fast&#x2F; ), an open-source desktop app where humans and agents can…"
-      },
-      {
-        "title": "Anthropic says its biology lab has already found something big",
-        "url": "https://techcrunch.com/2026/09/23/anthropic-says-its-biology-lab-has-already-found-something-big/",
-        "source": "TechCrunch",
-        "published": "2026-09-23T22:17:39.000Z",
-        "summary": "But maybe the biggest reveal is that Anthropic has not let Claude run loose in its biology lab. Humans are still, so far, in the loop."
       },
       {
         "title": "Claude Opus 5.5 is the greatest AI model ever released",
@@ -278,22 +360,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Claude's Load-Bearing Seams",
-        "url": "https://madradavid.com/claudes-load-bearing-seams/",
-        "source": "HN · 120↑",
-        "hn_id": "49822864",
-        "published": "2026-09-23T21:31:04.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Once Claude can measure something, it can make it faster",
-        "url": "https://claude.dev/blog/how-we-made-claude-ai-faster/",
-        "source": "HN · 225↑",
-        "hn_id": "49821196",
-        "published": "2026-09-23T19:23:40.000Z",
-        "summary": ""
-      },
-      {
         "title": "Claude's #1 Use Case Isn't What You Think",
         "url": "https://www.youtube.com/watch?v=V8iJgEpujbo",
         "source": "Ryan & Matt Data Science",
@@ -306,14 +372,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
-        "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
-        "source": "HN · 775↑",
-        "hn_id": "49820134",
-        "published": "2026-09-23T18:06:47.000Z",
-        "summary": ""
-      },
-      {
         "title": "Inside Anthropic's molecular biology lab",
         "url": "https://www.youtube.com/watch?v=DdCEmlAydcw",
         "source": "Anthropic",
@@ -324,75 +382,6 @@
         "published": "2026-09-23T18:01:32.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Code reads AGENTS.md only when telemetry is on [fixed]",
-        "url": "https://blog.szypowi.cz/p/claude-code-reads-agents.md-only-when-telemetry-is-on/",
-        "source": "HN · 484↑",
-        "hn_id": "49814947",
-        "published": "2026-09-23T12:15:33.000Z",
-        "summary": ""
-      },
-      {
-        "title": "I am done with this shit",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm5c21/i_am_done_with_this_shit/",
-        "source": "HN · 256↑",
-        "hn_id": "49812975",
-        "published": "2026-09-23T07:59:14.000Z",
-        "summary": ""
-      },
-      {
-        "title": "New Anthropic, OpenAI models make same promise: A little more for a lot less money",
-        "url": "https://arstechnica.com/ai/2026/09/new-anthropic-openai-models-make-same-promise-a-little-more-for-a-lot-less-money/",
-        "source": "Ars Technica",
-        "published": "2026-09-22T21:25:18.000Z",
-        "summary": "OpenAI and Anthropic both recently released new models aimed at lowering costs. Anthropic announced Opus 5.5, the latest version of its main mass-market workhorse model, used for tasks like coding…"
-      },
-      {
-        "title": "Claude Opus 5.5 Intelligence, Performance and Price Analysis (Max)",
-        "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
-        "source": "HN · 332↑",
-        "hn_id": "49804316",
-        "published": "2026-09-22T16:51:31.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic releases Opus 5.5 with lower prices and Fable-level performance",
-        "url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/",
-        "source": "TechCrunch",
-        "published": "2026-09-22T16:30:07.000Z",
-        "summary": "Anthropic called it \"the strongest-performing model we've tested to date.\""
-      },
-      {
-        "title": "Claude Opus 5.5",
-        "url": "https://www.anthropic.com/claude-opus-5-5",
-        "source": "HN · 1798↑",
-        "hn_id": "49803892",
-        "published": "2026-09-22T16:29:05.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Show HN: AI·rete·RAG – a Rete rule engine decides, RAG explains why",
-        "url": "https://ai-rete-rag.com/",
-        "source": "HN · 44↑",
-        "hn_id": "49803683",
-        "published": "2026-09-22T16:15:06.000Z",
-        "summary": "Hi HN, I built ai·rete·rag because I kept seeing teams put an LLM in charge of decisions that need to be auditable (lending, fraud, clinical triage), then bolt on…"
-      },
-      {
-        "title": "Five AI safety sessions every founder should have on their TechCrunch Disrupt 2026 agenda",
-        "url": "https://techcrunch.com/2026/09/22/five-ai-safety-sessions-every-founder-should-have-on-their-techcrunch-disrupt-2026-agenda/",
-        "source": "TechCrunch",
-        "published": "2026-09-22T15:00:00.000Z",
-        "summary": "At TechCrunch Disrupt 2026, five sessions across the AI Stage and Real World AI Stage cover AI safety, featuring leaders from Anthropic, Nvidia, AWS, Waabi, and more. Register before September 25 to…"
-      },
-      {
-        "title": "Show HN: Training a model to identify AI web content from structure alone",
-        "url": "https://arxiv.org/abs/2609.15369",
-        "source": "HN · 72↑",
-        "hn_id": "49800566",
-        "published": "2026-09-22T13:00:49.000Z",
-        "summary": "Hey HN! We’re Vincent and Jochen from Sitefire ( https:&#x2F;&#x2F;sitefire.ai ). We have been working together for years, with backgrounds in RL&#x2F;optimization at Stanford…"
       },
       {
         "title": "NEW Claude Projects Changes Everything (with Opus 5.5)",
