@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-09-28T10:13:46.932Z",
+  "generated_at": "2026-09-28T18:50:00.260Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Project Swap",
+        "url": "https://www.anthropic.com/research/project-swap",
+        "source": "Anthropic Research",
+        "published": "2026-09-28T13:18:19.000Z",
+        "summary": ""
+      },
       {
         "title": "Anthropic Infosys",
         "url": "https://www.anthropic.com/news/anthropic-infosys",
@@ -22,13 +29,6 @@
         "url": "https://www.anthropic.com/research/yes-claude-can-do-nine-loops",
         "source": "Anthropic Research",
         "published": "2026-09-25T21:38:13.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Project Swap",
-        "url": "https://www.anthropic.com/research/project-swap",
-        "source": "Anthropic Research",
-        "published": "2026-09-25T18:52:10.000Z",
         "summary": ""
       },
       {
@@ -146,139 +146,180 @@
     ],
     "news": [
       {
-        "title": "Anthropic Says Claude AI Solved Nine-loop Particle Physics Challenge - Dataconomy",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTjlSUmVkeU5jb05EQjJ6bnItOXh1bXhnUDZKcFpfeENqX0Jjek9FcHNaQXNIaVdOeVduQVVhT0JyeWlQSTY3cDJVUmlFUDFnNkpGN1BYaFNGbm8tSURLS2pocHo5TWlFSHljZDB1YW56LXlEM25fUVdNX2ZpU2taVmtuOWtFNG9C?oc=5",
+        "title": "Claude’s nine-loop result is public, but “verified” has four different meanings - OpenTools",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB1MHkwcERMVWEwMUNZU3JORzR1V2hVRVBlSmFGLTFJbjIyd19Ec3pyU29VMHUwclVGVThlTGdRbXJVS1BEY3EyTGRneFhjcDYxcHZsSU1jeFM0R2NybEdZblB0bTgtU051N3FlRkhqalIxNzFkU29EYnFn?oc=5",
         "source": "Google News",
-        "published": "2026-09-28T09:22:40.000Z",
-        "summary": "Anthropic Says Claude AI Solved Nine-loop Particle Physics Challenge Dataconomy"
+        "published": "2026-09-28T18:24:57.000Z",
+        "summary": "Claude’s nine-loop result is public, but “verified” has four different meanings OpenTools"
       },
       {
-        "title": "Claude Code Introduces Wrap-Up Allowance to Enhance Developer Experience - KuCoin",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOaFVNRk5BSGt4T0RFOTg3aTJNYjVJVjRremJUbWxLY1B2ekZpcHdaaGF3Z2x6N1QwYnNwWU04SEs3RmEtb3h0SlFkRjNnUnlRZnJJcFZ3aWtQUWJUVDhnZXBvZm5aRHRqNzRzamhpLWU2eW95SHN3OGlnZGtyeXVTdng2QWZyMmVPVEhIZkNpTExSWDRCelpOZkU5eDdsN0J0aEU2MUNsRjFUZw?oc=5",
+        "title": "Anthropic Releases Claude Sonnet 5.5 at Unchanged Sonnet 5 Pricing - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQcUtqbW5lYjZ4ejZveExQTmluZ1JlSWEyTFpKU1hJS2Ita1prUFFPbEUyeTZ6RWlsSlpHTklBaEVNbERsMXZDZnY5enRVRi1KNnUwU0pydmpoNmpZUFpRNkctcnhUT2tHU1RSZzdHNlEzSTdaaWsxU3ZaN1pHMFZKRDhqS1NFVTN3VVB2a2VYR1ZMdw?oc=5",
         "source": "Google News",
-        "published": "2026-09-28T08:59:23.000Z",
-        "summary": "Claude Code Introduces Wrap-Up Allowance to Enhance Developer Experience KuCoin"
+        "published": "2026-09-28T18:19:01.000Z",
+        "summary": "Anthropic Releases Claude Sonnet 5.5 at Unchanged Sonnet 5 Pricing Unite.AI"
       },
       {
-        "title": "Prompting Claude Opus 5.5",
-        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
-        "source": "HN · 88↑",
-        "hn_id": "49874728",
-        "published": "2026-09-28T07:33:29.000Z",
+        "title": "Anthropic unveils Claude Sonnet 5.5 - Breakingthenews.net",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPWUtwX3F3UlBxbm5fWkdZUnVlNmxndFVCNU1yRjVtT0Z0VDJLbUl3MUVueXZRRXdSMkxITzN6bXF2RGt5UVRfYnF3UkJNeF9aODRxZFFtMmNCMjlNNERtUnZQTDZ2VWlxTVlPTU1uRG9zTXhLbU9fQnlMN2NVUVJqcjJ1MGpqWGc?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T18:18:00.000Z",
+        "summary": "Anthropic unveils Claude Sonnet 5.5 Breakingthenews.net"
+      },
+      {
+        "title": "Did Anthropic’s A.I. Really Make a Scientific Discovery on Its Own? - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQREYyMjZVV2F2QllnOVpLTnc4WWR3OGphX3A5WlJRTjhUTEROU0FIb2h0Wkgzb0h1VWRqNnhaUFlkdHRQb0dpXzFVeFlrZVVBcjQ5RzRPVW00MXNmdEV2LVNnRE00TkVZSTdaenhyNE9BOE9GdjlyTUZfeVlMa1JhYlZmNkxIUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T18:15:00.000Z",
+        "summary": "Did Anthropic’s A.I. Really Make a Scientific Discovery on Its Own? The New York Times"
+      },
+      {
+        "title": "Anthropic Adds Claude Sonnet 5.5 Ahead Of An IPO - Finimize",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQaVpROFM2eW1PUzZQZEszSERSTnZ0azQybEpjbnREVFI1QnJBRnpqRy1SbjlHZTJmbjg1aFlLTFVNVjJHd21LalB2ckZFRWdZLWlrQ21CQXNabkZFVEZmOEl4YUNhTVptVUh2UXZvdXVJQUJxdS1yV0hFdVVwTV9iTGln?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T18:05:44.000Z",
+        "summary": "Anthropic Adds Claude Sonnet 5.5 Ahead Of An IPO Finimize"
+      },
+      {
+        "title": "Anthropic rolls out second Claude 5.5 model as it builds toward IPO - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUm1rcklHNVRzQnFIS2t3RnNGNDBwU25RUzJIcnFNN0FIbDNOU3VTNEhVVGprOEhNOVZISGVlWHo1NkFZX3doLUNkOU16cmlMdWotdnljUUowc19DcXJXbzFjRTI1QVFKNGtJSWNBMGdUSExIVlB3NmpVZWQ2TnBFNFpjckY1NEhOOS1BMWw1MktacnlrbFpBMDd5X2tZb0xpbVRxRlREYlRGWWE4elFr?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T18:03:43.000Z",
+        "summary": "Anthropic rolls out second Claude 5.5 model as it builds toward IPO Reuters"
+      },
+      {
+        "title": "Anthropic's Claude Sonnet 5.5 nearly matches Opus 5.5 on benchmarks while costing up to 30 percent less per task - The Decoder",
+        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOcGViMlMwVm8zLVU4MHlwTUMyMlRReFVRTVlTQWJwc2hZMkRwQzdCeTdpNkl2YnYwZFNnX3EtZkI3SUstVk9yN0VpZ2tidTRpYkt2NWhHTVZVd2Fkc0cyZHR0MjhVTFUxTFBDNUtrTGU3VnNGUURUN2gzaHVTM1N4Sk55cFRqZlRQTHVIOXNPaDRoSTJ2eUlrM2llQ1NTS1Q1MFBRcUJfQkF4Y1FxSXNSbnVZdEZpX3VZMWFBQ2tvREg0OVktMUU0RTlZTmMteE9qV3c?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T18:03:31.000Z",
+        "summary": "Anthropic's Claude Sonnet 5.5 nearly matches Opus 5.5 on benchmarks while costing up to 30 percent less per task The Decoder"
+      },
+      {
+        "title": "Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner",
+        "url": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner/",
+        "source": "TechCrunch",
+        "published": "2026-09-28T18:00:00.000Z",
+        "summary": "Anthropic has released the newest version of its mid-range model, boasting faster response times and less token burn."
+      },
+      {
+        "title": "Anthropic debuts Claude Sonnet 5.5 running 30% faster than the previous-generation AI model - SiliconANGLE",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQOEZHRldHN1lwUzlvZDdRV25iQTBKT1BKWEc4LVVrRzIzUHJJTC1XWTBtbi0wQzhzbTVucTlDYkF6aHdtYmtsdDZZSHZjZThtampicFZVNTRBSkJXcmR2aGxCU3JESUZjSkRSWGRxMXRRYlBPVk1zemNMYXRYWElaMThyV3Jia24xNHNvalNQZkRDU2huRWpNUzZSTnFSZlJCVC1Ma0N4cEt5bEgxTFB1TmlPZ1RkUWN1eHNvVUxzT00wWTRMemc?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T18:00:00.000Z",
+        "summary": "Anthropic debuts Claude Sonnet 5.5 running 30% faster than the previous-generation AI model SiliconANGLE"
+      },
+      {
+        "title": "Anthropic launches Claude Sonnet 5.5 with 30% cost reduction per-task due to faster speeds and fewer tool calls - venturebeat.com",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxObWtGY0Q3OEZkcHlLU0w0clBFNzJuN0dpakxXQllCVUw0NXZDMklhb2ppUDViQUViNjBzUE1LY2R1anNTaW82TzBxQTQ0RHFyaUJzbVFoUS0zWV9sdVdhWFIzQjRCdXFTanVCVkgyVHhpVDk3eTh3Xy1peTBzWVZjQk5JckxIMW1SRGNLOGI5dkFLX2s5SVA1a0NWalNfVm10R1B4dEhkdkFhN2VBa1FvY0p3cmNFd0tsX2xTcFUxZGRELW5TeVR2Zkl1cFE2RjhrUmlKNXBmUG9kQ0N1N1E?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T18:00:00.000Z",
+        "summary": "Anthropic launches Claude Sonnet 5.5 with 30% cost reduction per-task due to faster speeds and fewer tool calls venturebeat.com"
+      },
+      {
+        "title": "Anthropic rolls out second Claude 5.5 model as it builds toward IPO - tradingview.com",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOU2xsOWJ5cFdacXFaTEJNQkxDeTNZTFJmQ2lFU3dXZDRxaUZqd1o1S3dnaWc2Zmt5SEIzQ2h3M0hnTmhBN2NObUw0QUVHcmJ0a2NTa08tNFAzUVJmUnB3akRnOHEtQ3NHX2E0NXdkSDE3RnlHa1hZM0RUSld1UUdXZjJuX3JXQXhYYTJ0WlJlalR4ZExtYU9YLUp1NVN4eFlvc1hrUDItMEVwM2VrUElSNEJyTEp0eC1qejVTcm9Jai15MENidWVMS0FodDF1UVEwSXlB?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T18:00:00.000Z",
+        "summary": "Anthropic rolls out second Claude 5.5 model as it builds toward IPO tradingview.com"
+      },
+      {
+        "title": "Claude Sonnet 5.5",
+        "url": "https://www.anthropic.com/claude-sonnet-5-5",
+        "source": "HN · 167↑",
+        "hn_id": "49881850",
+        "published": "2026-09-28T17:58:11.000Z",
         "summary": ""
       },
       {
-        "title": "Trump plans dinner with Anthropic CEO amid mounting AI debate - Sowetan",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQV2dXQVVpWk93WVZVWWRrcFNjSnZHRnV5RThiRUIzaUhkM19najhSQ0VSYTdaLTZILUxBQVdEVVBtN1czd3FWei1DYmdGNm9FanM2LTN2cUk2M0M2YnpMcnRvSnRfYUVLUXlPd1pUSTgwcjdJT3I0UlZLSWlDaC1LUFdXclB2ZFdTWjFjVUhqRXhHRk1hWmdESXBTU1E2MFFJZ3A2aDlscXBmYl96MDZj?oc=5",
-        "source": "Google News",
-        "published": "2026-09-28T06:47:17.000Z",
-        "summary": "Trump plans dinner with Anthropic CEO amid mounting AI debate Sowetan"
-      },
-      {
-        "title": "Trump said he would dine with Anthropic CEO amid mounting AI debate - ABC News - Breaking News, Latest News and Videos",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOa3BxZzBmSmFfLXJTQVEtSnZvUWw5OHcwLWowWjZEbHM4aW9EWGFQTl91dzh1OU80Njg5T215RjcxUEFhTFlJb3h4c2hGQkNDbExuejJRaG1KVmJRMzR2MV9LdTFCVGc1ZFZWa1ZkNEI2aVRDWFBTMVhLZUszekNJXzdRMGwzcE4tRXNXWlQwem5LckJSc3I3Si0wcFlmMUVO0gGmAUFVX3lxTFB2YXJhT2hrbDlmd0xwU0lzNm8wVzZZcnlwR0IyTHB2MVFpZ0NkNkp4aDM1NXhvYkhtSkJ3aDdPWDgyaFNaSU1LamQ0elNwbnI2bmZGUUZQZHZmSVBrbjZHaFBEZWV4TnlacVNjemozcW5aYVdsV0FFMEZDYTRDZEZZOUdOWUVRQ3Y3cUtycHdWdTNaYWJFOF84c0dNdm4zbDk2dGNzTHc?oc=5",
-        "source": "Google News",
-        "published": "2026-09-28T06:26:49.000Z",
-        "summary": "Trump said he would dine with Anthropic CEO amid mounting AI debate ABC News - Breaking News, Latest News and Videos"
-      },
-      {
-        "title": "After months of AI tensions, Trump dines with Anthropic CEO Dario Amodei - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNUVY3bnY2TWJTc21yaS1iMnpTNXNCTEM2Q0M2Z2FZcDh3eXRYYTBPVkpGLThRek9uMXVSaU1MbWg3cVFtVnFBMHdXTk9DQkRsRXlsdFIxSXp4RnFLemN2VC1MZ1lZNXhEUUZpOS1sejVZZThvWTJLM1RGbW5rUDVjM2V6RUJUSDh0MDc5QVdfeDZZcHJfbTM2cjB4UTJjRjNYUVNYMzAyN3JBV09mZUhIeDJiNHBXMUc4UTBhSHpTVlpWTVItU0xtdjZmUW55V1l2MkdESjlUNUN2ODJLU1BfSVp2WFhQdkIxNFHSAe8BQVVfeXFMTUdLSnItNjVLb1BpbGFhdXQ3STlPR3laS29tbVJCMVdsekZKdndBd2xtb2QxQlNTaEQ3SWJpampQYndXSVNIVk15WDJxM3VnMDlNOGpwV3BlOVIwNmg5WFBHRGotanZpaUYtX3M2RmdKTHZKR0V6VlRKSGxiem9naGtySlJqQVBoeDJ1a1RjVnJlVHdCaFNDQ1JkVFJyc2ZoYkFGMV9QOFp6QVRWUXR3MXJRdWxfUlJmRlNmRGh1R2ZNR1hwZVhoaU1RaXYwYlFOUE9wREwtdHMySW03em00WGRxV3IwakZBaDhlXzJKU28?oc=5",
-        "source": "Google News",
-        "published": "2026-09-28T05:55:00.000Z",
-        "summary": "After months of AI tensions, Trump dines with Anthropic CEO Dario Amodei The Times of India"
-      },
-      {
-        "title": "Claude Opus 5.5 Beats GPT-5.6 Sol at Third the Cost [2026] - shattered.io",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1ITk5Ob0ZmZEc3XzM0WGswdi12SEE2LUpDYllXWnNrVHFlT1o4NjRLM2lvbkNjVW9uT0J4TWpuZ2dDS3lieGRtOC1jVzg1UUxWdnVLWTlaWjVZTnRZczJadmViMVdwMVJqLW1GZ1FPWkpWbWFDa0RUYkZn?oc=5",
-        "source": "Google News",
-        "published": "2026-09-28T05:47:28.000Z",
-        "summary": "Claude Opus 5.5 Beats GPT-5.6 Sol at Third the Cost [2026] shattered.io"
-      },
-      {
-        "title": "Anthropic Reportedly A/B Testing Sonnet 5.5 — $2 Per Million Input Tokens - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE40cmZod1N4QXJVT1lGWlZ0cWg4c2lreHdJOGszZFJEZUtCLTlFbzJUZ0J6WmR0ZzBTOXA4NXRwdk0wMXVxY25lclZNbVQ5TlJTZTBOQ19nUVBLbXVvSlhaSkVPVlozZGlFUXk4Nm9uWmtPZlpPcVE?oc=5",
-        "source": "Google News",
-        "published": "2026-09-28T04:25:00.000Z",
-        "summary": "Anthropic Reportedly A/B Testing Sonnet 5.5 — $2 Per Million Input Tokens finance.biggo.com"
-      },
-      {
-        "title": "Shark Tank judge Anupam Mittal says Elon Musk’s Grok is faster and cheaper than Anthropic’s Claude: 'I fe - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQdFl0TVlkZl8wb2pCbzk1MkliWWNNYXdFeHZ5MEJ4blFVcHI2SldKc2NWOXowMWI4TGkzWElQWUNPMURIdFJUb3lxMG0zemNVZkU4aTFDNktnWktMMlRkSnNON01hSVJNSzg0YkwyNWlITFJKdFZUeGxmZ0I3Wkt1ZDhKSzg4Sm0xbkUwdnY0M2tPRkstZjk5ekt3amViX1N0WGpnT3ZlYV9rY3c2WDZwWWllVkZMSWR3am1XSmItNFJLek9sWTdRTERWSnAtVnN4VW9DeDNBcnhvVzFLakJyLUFYWmV4NHpvczNyM0hjNWUxdjg4OS1uR2NKaUJOREhOSmY0TEhKdDdRTEJIWTlXUFphM3FCQdIBmwJBVV95cUxOT1FRVzRZbUVqVTh4eGpZU0YzYkdvcWdNelRwUHE2LVBWQ0k1cUJnMVQyekVMdEFJcmswa1B4VE5ibjdGM0VlYTBjOUNxaXFrQmoxQm1GMzBsWjBER3dXenNkSlRaY3Rqdlo0dlJ2TFM1c3RqcERtTTVXQWNOT1dFckwzMjh4TXJaVWNEeTRyckRRT2RxME9sQlRnZTZhSDFDTWl2Y24weFhOVEFmQlk3OTRNck92MkNlSFJIWDJNSm5Qa3BHQlFUUjJFTllxUWRPSnFrbjNGanpCczQ4T1NIVlJXaGMwX3pXQzBEQTNfT0c1NElEOUh0MmdGT3RZLWhjeUJldEhwcmFqcTI3NkZETktaeTR1YWEwQnFn?oc=5",
-        "source": "Google News",
-        "published": "2026-09-28T04:23:00.000Z",
-        "summary": "Shark Tank judge Anupam Mittal says Elon Musk’s Grok is faster and cheaper than Anthropic’s Claude: 'I fe The Times of India"
-      },
-      {
-        "title": "AI Breaches Add to Safety Fears as Trump Meets Anthropic Chief",
-        "url": "https://www.bloomberg.com/news/articles/2026-09-27/ai-breaches-add-to-safety-fears-as-trump-meets-anthropic-chief",
+        "title": "Oil Surges, Nvidia Unleashes a Record $150B Buyback",
+        "url": "https://www.bloomberg.com/news/videos/2026-09-28/open-interest-9-28-2026-video",
         "source": "Bloomberg",
-        "published": "2026-09-27T23:27:32.000Z",
-        "summary": "Global anxiety over artificial intelligence risks has intensified following fresh disclosures about a far wider range of breaches by advanced AI models, setting the stage for a high-stakes meeting…"
+        "published": "2026-09-28T17:39:08.000Z",
+        "summary": "Get a jump start on the US trading day with Dani Burger on \"Bloomberg Open Interest.\" Oil surges as President Trump rejects Iran’s Hormuz proposa. Meanwhile, Nvidia makes a record $150 billion bet…"
       },
       {
-        "title": "Anthropic may release Claude Sonnet 5.5 within days - TestingCatalog AI News",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQZzNJRkZUdEJ2S1AzSEQ2NlVCT2JwNl9ZLU5reFVZT19CVEIxa1JLY3Fud2NaVEg4b3RYbnFJd2VIdmhGamxUSzd5WHFMTUlaVDV5VURvbUxHVDFSa215U1ZlYjRIYkdiUXpxQjNkdHNNQWhyeG12RXZzQm9ySnczYWdpdGo?oc=5",
-        "source": "Google News",
-        "published": "2026-09-27T21:49:40.000Z",
-        "summary": "Anthropic may release Claude Sonnet 5.5 within days TestingCatalog AI News"
-      },
-      {
-        "title": "Anthropic’s CEO is about to have dinner with President Trump",
-        "url": "https://techcrunch.com/2026/09/27/anthropics-ceo-is-about-to-have-dinner-with-president-trump/",
-        "source": "TechCrunch",
-        "published": "2026-09-27T20:34:28.000Z",
-        "summary": "This will be the first one-on-one meeting between Dario Amodei and Donald Trump"
-      },
-      {
-        "title": "Anthropic Launches Claude Marketplace With More Than 2,000 Connectors and Plugins - gHacks",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOREhld3dVT09MRzRiR3pseXl2d1JNOW5yWlBUVzhtVlRHZUFzZGswY29IbGlSU1d3aU1XWF9ZLTBJZ3dCeDdDQy11b1dJTTJfVW5jWC1ta2d1bmd0dWtXZVZGTWFuRFp3QUYxU1djd3BXVVFIVVdYQ1BnOFlrWFpySXJLVUEzLTE1czAwLWdmU1B3c0NiWWh3TGFlLURxWHpPdVQ4Y2tyNlNuOVB1VDlpWjRpRXFLZw?oc=5",
-        "source": "Google News",
-        "published": "2026-09-27T19:46:30.000Z",
-        "summary": "Anthropic Launches Claude Marketplace With More Than 2,000 Connectors and Plugins gHacks"
-      },
-      {
-        "title": "Anthropic CEO Amodei to Meet Trump as AI Safety Fears Rise",
-        "url": "https://www.bloomberg.com/news/articles/2026-09-27/anthropic-s-amodei-to-meet-trump-with-ai-safety-concerns-rising",
+        "title": "Trump, Anthropic CEO Take AI Safety Debate to Dinner",
+        "url": "https://www.bloomberg.com/news/videos/2026-09-28/trump-anthropic-ceo-take-ai-safety-debate-to-dinner-video",
         "source": "Bloomberg",
-        "published": "2026-09-27T18:48:09.000Z",
-        "summary": "Anthropic PBC Chief Executive Officer Dario Amodei is set to have dinner with President Donald Trump on Sunday night, with the meeting bringing together two men at opposite ends of the artificial…"
+        "published": "2026-09-28T17:24:48.000Z",
+        "summary": "President Donald Trump and Anthropic CEO Dario Amodei met for dinner as their opposing views on AI safety increasingly shape the debate over how quickly the technology should advance. Amodei has…"
       },
       {
-        "title": "SNL Weekend Update: Anthropic CEO Dario Amodei on A.I.'S Threat to Humanity [video]",
-        "url": "https://www.youtube.com/watch?v=-Nvne3LzBls",
-        "source": "HN · 184↑",
-        "hn_id": "49868831",
-        "published": "2026-09-27T17:32:02.000Z",
-        "summary": ""
+        "title": "Fabric Joins Anthropic’s Claude Partner Network - EIN News",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUXJIUm84OU9OTWRRa3JpTEJLUUhPQmVMSU45UnhmdE92cE83VGZWRElJcEhfQi1wMk1rSUh4czJlTUVmYVh5VFFNM2I0cG9GREM1SGZya1JoeENHa3d0UmpnaElKX0lmNkwtOTVnREhrb2VyZmp3STlOcFFrSU9GWkR4V3RKeWF4a1J0bFlOYlc5WlVX?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T16:09:14.000Z",
+        "summary": "Fabric Joins Anthropic’s Claude Partner Network EIN News"
       },
       {
-        "title": "Anthropic’s Dario Amodei gets the SNL treatment",
-        "url": "https://techcrunch.com/2026/09/27/anthropics-dario-amodei-gets-the-snl-treatment/",
+        "title": "Anthropic, Gamma and Clay to discuss AI deployment at Disrupt 2026 in San Francisco — TechCrunch - UA.NEWS",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQajV1WDY2V1ZCVmtNY2NoYW9jQ0M5Y0dTXzZuTWo0UHVBYWI2QVZPa1hleUx4NUdjd0plTFN5VXpSR0RzcXh4cUlpMUVzak5sTnd5ZHdWZGlBdnZnMmpLbXkyM3ZBX0htRW1vcmNzNC04T3lWZkRZY2h1LVBZMXdlRkFacExES3YzbWh4anpIQm56Y1FqcExvVUxjVzNIeEFwaXlVNGZvLW4zSk9fR2VOV1ZKX3BESWhkelh0MU9TNWl6UmJSeGdn?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T15:52:40.000Z",
+        "summary": "Anthropic, Gamma and Clay to discuss AI deployment at Disrupt 2026 in San Francisco — TechCrunch UA.NEWS"
+      },
+      {
+        "title": "Anthropic, OpenAI Executives Urge Oversight of Self-Improving AI",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-28/anthropic-openai-executives-urge-oversight-of-self-improving-ai",
+        "source": "Bloomberg",
+        "published": "2026-09-28T15:38:17.000Z",
+        "summary": "Top executives from Anthropic PBC, OpenAI, Meta Platforms Inc. and Microsoft Corp. are urging policymakers to scrutinize the extent that artificial intelligence systems are improving themselves and…"
+      },
+      {
+        "title": "Anthropic, Gamma, and Clay share what happens when enterprises actually deploy AI at TechCrunch Disrupt 2026",
+        "url": "https://techcrunch.com/2026/09/28/anthropic-gamma-and-clay-share-what-happens-when-enterprises-actually-deploy-ai-at-techcrunch-disrupt-2026/",
         "source": "TechCrunch",
-        "published": "2026-09-27T16:30:00.000Z",
-        "summary": "\"AI is the devil and I its maker.\""
+        "published": "2026-09-28T15:30:00.000Z",
+        "summary": "Anthropic, Clay, and Gamma on what it takes for an AI product to go beyond the demo at the AI Stage at TechCrunchDisrupt 2026. Register to join and get 50% off a second pass."
       },
       {
-        "title": "Claude Code Stops Cutting You Off Mid-Task at the 5-Hour Limit - Pasquale Pillitteri",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOdHltOFhmSEgzelNmdDJzVUprYWVWRTlDN0x4NFdCUmxvMWluMW5rRndyYUxzb0xDUzJoYVV4VTN4TGxYUWJKUnNSMzJGLUFidHpIcGlaek9zelVNQ2ZTek91MW5DdUpyNzNOSUJQbXBXVDdNWEJubmZ1ZG9TWG5yMDVXU1ZDcC1fWWc?oc=5",
+        "title": "Anthropic, Gamma, and Clay talk AI at Disrupt 2026 - TechCrunch",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQYVBBdnhuTnN6d1I4TmI1emoyLTA2ci02eVE0bF9leHJDbW8wd3I5LU1Ydm5JREFUWEVFNFprbjYwb01yOHYyaFRmQ2dta2tCNG1IU3NaTmtlN2tPdk5aenhxWTYzTTQtbUZ4dzV5ZWVXRjBZYjdzYXB3eWFSbGJPV056eE10NTdqLW1GQ3hvQkhCTWxPWERNZlhwUVI1ci13VWZHdmFhdEdmcnRsTW1CZkhQeURZd3VEX2FPVEllRDRiaXo4MndWcnkxSmRqR2t2WFNWc2tINGY?oc=5",
         "source": "Google News",
-        "published": "2026-09-27T15:40:38.000Z",
-        "summary": "Claude Code Stops Cutting You Off Mid-Task at the 5-Hour Limit Pasquale Pillitteri"
+        "published": "2026-09-28T15:30:00.000Z",
+        "summary": "Anthropic, Gamma, and Clay talk AI at Disrupt 2026 TechCrunch"
       },
       {
-        "title": "Microsoft just sent a strong message to Anthropic - thestreet.com",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQT0V6WFFZbm1LYmdPUW1ZWjZxcjdUV255X3pnUlRCQmNLRzRjVVVpX1FLR3Q2YklvaExLQ0pJcHdCdzN3WlcySXZXLVgzbG1MejdQbDVpN3Z1RHlfczQ0X3JraC1TNWJjbVRRb0xfVUdpREdYZVJhWFBpLUlnMVFUWERQbEpRZVp0cGVTUGlHR1VZRjduWXdUbG9VaXJfU0xNVHVfSnZiLW5vT0N2eHpCc1FzVktzbkFJbno4Ug?oc=5",
+        "title": "Trump dines with Anthropic CEO Dario Amodei after months of bitter AI feud - New York Post",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNeFZRWUluVVg0Q1ZoWnRkWF85dUNCdm5hZnZPUDNPWmZYOHlmX1FFZndoRTlYbEJ6WUQtb3E5ZnZDNjF4U1k5aFZyRm1POHI5dFJSRHNTZ2Rqb2YtNXN2eEpjekJpNkVPVmlJM3FJOVlOanVpMUJ5T1VMY1FiQXo5TDVsNzVwLUpoc1hicEVVS1ZLaGlsYlpNelJTVEY5SE9QUDhGZkJWRzhyc2ZiMlVwUFJmR0Q?oc=5",
         "source": "Google News",
-        "published": "2026-09-27T14:17:00.000Z",
-        "summary": "Microsoft just sent a strong message to Anthropic thestreet.com"
+        "published": "2026-09-28T14:47:00.000Z",
+        "summary": "Trump dines with Anthropic CEO Dario Amodei after months of bitter AI feud New York Post"
       },
       {
-        "title": "Anthropic turns Claude into an AI marketplace with 2,000+ plugins and connectors - BleepingComputer",
-        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOVnRqLTRpNnpkWHRHSUNSUW02UktpWjNRVXc2UVN6V2FjX2Q1cVBSMl9UUmFla3BYcVNOTS1vS2ItTVJUcjRYRFlEQTI3a1Q4T2hxY1J0bkhLWk9HcG9BaFo1cFF3WWRQWGp0aDZMVk9wcUJoUXlJM1RjYkdPVFY3YXU2SW1pbUJkTVpzR0xWUWZVUTdyV1BVZ1NmcGNlUVZaeHdWZGtuY3F2ZEQxakRmUzh4U1M0dmtSd19NLV9TYUFkYV9GdHAzVkRTN3p1OWJzMGc2emQ2Tzh4UUhxSkZWRtIB5gFBVV95cUxOU0FncnRFblBBNFktbE1CeHR4Y1lNYndMaTlKZFdnWmxMaW8yMDIzYWFZZVZYSURVeXhxZHB1TER3NXdBQ1lVb2Y0NmF0cGtjUmwyLUx4dkhXd1VQY2FyS3g4RGkzcGpRUU1XVmEzVFkxRm85TXdWRlVmRlFlbXhLdzBlNDl3WTBsOVVITVFId1JQcWVVRHZyb1Z6WHVLVzdncHI3ZS15NDdidFc5bERTclRWeTVRbnY2dEdQUFpweks1c3dGUkZMMUpLR0tQWU9mYV9JZ1MzcHhrRkdIbjlrb1NlTG1nZw?oc=5",
+        "title": "Anthropic loses Pentagon blacklist appeal over Claude’s safeguards - The Rundown AI",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMHF3OFJ5T2NVdy1CNEhvQWZ4bHA0U1poMXloM3BXSG9wem5ZTGNEa0NMQkx3VDM0N05veEZZOTR3T01tUDRhQmZ5bHVlb1NYNkYybVFHYkowcVlCeE5mUTNtdVNBaDN6UGpDYWVPVkxJZVhhWF83WFZMSlRqRnVpaktrck01NUZyMHV2Uw?oc=5",
         "source": "Google News",
-        "published": "2026-09-27T13:38:40.000Z",
-        "summary": "Anthropic turns Claude into an AI marketplace with 2,000+ plugins and connectors BleepingComputer"
+        "published": "2026-09-28T14:01:39.000Z",
+        "summary": "Anthropic loses Pentagon blacklist appeal over Claude’s safeguards The Rundown AI"
+      },
+      {
+        "title": "Anthropic Claude’s Claimed Breakthrough in Biology Faces a Major Question — Scientist Says He Had Already - Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMipAJBVV95cUxPNThJeTVTZUMzOGxid3NPQUU2R2wtQ1FmN0ZkTzB4ckhYN0QzUUpLODVtQVRiVzhXcXlWQ1NMUE5sMjFwM1pLQ3gwcWFtaFlGRHdFWHE4WnZZOTdWS1hHS0JpWVktalRLUnlicW5LOV9EM3VpQjFhNG5qYmF2TXlPZmhzMTBCeEdfbFozSks4ODNkb0NyVnBUQnpmX3dtWFpaWDl1di15Z2RpYUpvOWFOWGZ1WWVnODcwNVNWOTJIbDkzQ01fandud09TcUMwTTZyTklVajAxVkU2Qm1aWkdkU0V2RWl1cXJucTYwRmlDVGNkdXdNbDd1SW92SXRPZ1VTXzRFRFVoNnppMENBdl9vYkZucmhEWGZ1V1FFWW91dzdjUC1r?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T13:55:39.000Z",
+        "summary": "Anthropic Claude’s Claimed Breakthrough in Biology Faces a Major Question — Scientist Says He Had Already Benzinga"
+      },
+      {
+        "title": "Trump meets Anthropic CEO after Pentagon clash over AI safety - KRXI2",
+        "url": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxQcG1rMmpFWEtFRmJaeWcyVUxzbnE1Wlpjd19hTURUU2dmX0swTmtCNTNzbEVpS0RsR1lSeV9YX0dyNF81by12M1Q1ZEtnejZ0NzhSWXFxQndxNzV1bzlhY256ZHFMd3BBZlVyc09sZjBldGx0OTR2WU5GVEo5ME44VkstcTgybE1mZmwweVBRekFTNGctQWdTU1dhSzVoZWVWR004WEVqcDY5Smk1cjBSZjVQUHRKZG1DaklmZklybThETW1qcFpJUmlfMXdDX2FJZVZqeE5hTVE1T0YzQXVBUWx5ZldlXzBIVHIycnRlRDJlcFJyWTBFdnpNUUNJbVNuM18xbVhLelhXLVloQjZyU3FVZjEtcWQ0LWpvcGE5b09iOXhRYi04SmxIQWVqMHBNZ1c2dVJZbVNMSmlVdEIwX0tScWQta2FvYUhob1pQYWlhLXIwc3ZGQ3p3?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T13:00:19.000Z",
+        "summary": "Trump meets Anthropic CEO after Pentagon clash over AI safety KRXI2"
+      },
+      {
+        "title": "Anthropic Owns Claude, But Who Owns Anthropic? - bgr.com",
+        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9NcmcxcVA0YTNKcWEyNWlUUnUyVC1GdHZ6LVYtWGV1VmFuanlEMTFidjdMMjc5dTZPaHZncUZVZ1JnSkR3ZExLcjFrM3pwbkNXYUY5WkZHTlNYcFJIbldDNVgzR2JRSWpxMG8wa0lJWGlLZw?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T12:17:00.000Z",
+        "summary": "Anthropic Owns Claude, But Who Owns Anthropic? bgr.com"
+      },
+      {
+        "title": "Anthropic expands AI hiring in India after Claude Opus 5.5 launch - dqindia.com",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNeUIxa25nd2RnbzBFUmdtVmNJV21INExhdDlNMVl6YTZSaGUwOXpRclA0VmFVNzhWSzRKczN5a2d1ZTdkRm94enl4WVVJZUV2M0ctTm5uSWN6bGZCblozU3QxbG9lenBubUVxTlA0REJOSFhHWkVBQ0NyREU0LWpwTDZ5dzZKY1RKb3VHa3E0czF2TVZZSGJUMFRrQ2zSAZwBQVVfeXFMTXlCMWtuZ3dkZ28wRVJnbVZjSVdtSDRMYXQ5TTFZemE2UmhlMDl6UXJQNFZhVTc4Vks0SnMzeWtndWU3ZEZveHp5eFlVSWVFdjNHLU5ubkljemxmQm5aM1N0MWxvZXpwbm1FcU5QNERCTkhYR1pFQUNDckRFNC1qcEw2eXc2SmNUSm91R2txNHMxdk1WWUhiVDBUa0Ns?oc=5",
+        "source": "Google News",
+        "published": "2026-09-28T12:01:37.000Z",
+        "summary": "Anthropic expands AI hiring in India after Claude Opus 5.5 launch dqindia.com"
       },
       {
         "title": "Jev Is 70x Cheaper Than Claude for This One Job",
@@ -291,49 +332,6 @@
         "published": "2026-09-27T12:00:37.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Anthropic now bills for refused Claude API requests, in three of five categories - MIXED Reality News",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPOTBQdVhFMDNLc2dqZWVvdEpMTlNrYzhXc1BrVXNmQ0FZZm8wNkwwUFFuUlFlZnFhWG1pUjhCaXNpeFhBNk5EQlBhZlRYajl1SkFHd0lXaDFZTTA2a0ZNQlR6S0F5Y2FLMXAyZHBuUFFiUFh5c3pVdm40NjhucHhBZlRaTmxHcDl2SmlFMFNCM1M?oc=5",
-        "source": "Google News",
-        "published": "2026-09-27T09:24:33.000Z",
-        "summary": "Anthropic now bills for refused Claude API requests, in three of five categories MIXED Reality News"
-      },
-      {
-        "title": "UK’s AISI Refutes US Freeze on Claude Mythos 5.1 [2026] - shattered.io",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE8yVXlPUVQwZ2NQZjVtREMwNGg3V1lfNnpnNnMwb3p1QWVaRFB2d1dTbDc0ZXhHVk9BbUpwY0w5dERtNWtGVVhmTU5tMWFiZ3lIWFhLYklkNmVwLS1oZDk2R1JXY2k4T012aXFjRDNTQUhFTTZUb3NySU9n?oc=5",
-        "source": "Google News",
-        "published": "2026-09-27T05:45:05.000Z",
-        "summary": "UK’s AISI Refutes US Freeze on Claude Mythos 5.1 [2026] shattered.io"
-      },
-      {
-        "title": "Anthropic says Claude found a new gene-editing enzyme but science isn't confirmed - WION",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNZjBjRVJMNDhuVFBpYUhWaXEtVmZxQmhJbTBpcWplUnBIYTQxR01zWVJMNXpLdzVHMFJHc0U4bE1sRUNQT2xVMGtydXBpOEpnRzFTY0QycXNsMjkta2VleGx1WlBwOWJGbTliU1g4Mm4xZnlWWHJtLTlhTXVlcUJrNF8zUkdVb0FSU3g5RG1iSVZjQ05PRjUxV2pOcnpycERSYUNBT29RNFZTSnVjZldSazFRVWVRX056cC1PMTJLUFFVZGvSAcgBQVVfeXFMTWR0b2FzQXhZWU0zQXVUa09iVmVjVUJFb1p0U2NxX29zOE0xVUNwRUQ1NkhEejhGaFdqNnE5VWR2dmFsc29abnpyYU5ONFp6aU5FSDVCNHg2ak1MT1MtNTVxcnFlV1ltZlRORUNqZEdGTXNoS1I2RzZJUjJ6aFluQmpvbEpSSU5GdWtjOGtVVU9UR0xhVXpHcExrZEl3Q1E5SEppeDdxMW03WUhfLW9kUzBVWWdySVFLa2Y2TXVkMUNvMkdfMEpVdlM?oc=5",
-        "source": "Google News",
-        "published": "2026-09-26T21:11:21.000Z",
-        "summary": "Anthropic says Claude found a new gene-editing enzyme but science isn't confirmed WION"
-      },
-      {
-        "title": "Anthropic Offers Up to $250 in Free Claude Code Cloud Credits to Pro and Max Subscribers - gHacks",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQcjl4WGw3RGpBenhGOFh4dDZ3ajFJeThrNmtfUWhJZ21TUG1yWGx0TWZGYkdrRW8tVHREWTlEM2pCZ1dWUTFwb3VESURaTTRzUElUemR0dDd2TnhwcDVpOHp0b3FKQTlPYnlnUS1XWHlobTdadEVOamN3X3MyWTJsMi1VQ2Q1UHd1MlJIUlVQZ09UeExJUDd2ZkZlUWl2UEpRRG5JSUVSWXVuSW93WWVPQmFsMnlvcDlnRk94aWwxQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-09-26T21:06:08.000Z",
-        "summary": "Anthropic Offers Up to $250 in Free Claude Code Cloud Credits to Pro and Max Subscribers gHacks"
-      },
-      {
-        "title": "White House Blocks 2 AI Labs From UK Testers [2026] - shattered.io",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1DZ19nRWhmdk1hejROV3FrNmF4enRQeE5yMXpmZ1U0UFBzNjg0MjhoQk0xeVYzbFhpUTU4cjVIS2dZWFBZM2lLMjUzYzNKVDlTRl84ZlVPbGw0QVNmU2FVOE9qODdITzA3Z0VzTTd6QmtZUnU1?oc=5",
-        "source": "Google News",
-        "published": "2026-09-26T20:32:25.000Z",
-        "summary": "White House Blocks 2 AI Labs From UK Testers [2026] shattered.io"
-      },
-      {
-        "title": "Show HN: Reladraw – A diagram language where you decide where to place things",
-        "url": "https://github.com/reladraw/reladraw",
-        "source": "HN · 396↑",
-        "hn_id": "49858513",
-        "published": "2026-09-26T17:10:40.000Z",
-        "summary": "I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don&#x27;t let me decide how the…"
       },
       {
         "title": "Claude Opus 5.5 Is Insane… But Muse is EVEN Bigger",
@@ -1056,6 +1054,30 @@
     ],
     "tutorials": [
       {
+        "title": "v2.1.284",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.284",
+        "source": "Claude Code Releases",
+        "published": "2026-09-28T18:02:03.000Z",
+        "summary": "What's changed Added Claude Sonnet 5.5 ( claude-sonnet-5-5 ), now the default Sonnet model on the Anthropic API — 1M context, $2/$10 per Mtok with $0.20/Mtok cache reads Added a \"Yes, but ask again…",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Merge pull request #898 from anthropics/benlehrburger/cost-optimizati…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/d7265d6ae994ccd8429db0594b000073b2f9ad43",
+        "source": "Anthropic Cookbook",
+        "published": "2026-09-28T16:56:35.000Z",
+        "summary": "Merge pull request #898 from anthropics/benlehrburger/cost-optimization-model-agnostic-caveats docs(cost_optimization): add model-agnostic caveats for preserved thinking, cache reads and effort",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "docs(cost_optimization): add model-agnostic caveats for preserved thi…",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/bf24d45f2b5facc35f60452ac1ad5c0b054ea680",
+        "source": "Anthropic Cookbook",
+        "published": "2026-09-28T16:47:00.000Z",
+        "summary": "docs(cost_optimization): add model-agnostic caveats for preserved thinking, cache reads and effort",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.283",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
         "source": "Claude Code Releases",
@@ -1184,14 +1206,6 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "v2.1.273",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.273",
-        "source": "Claude Code Releases",
-        "published": "2026-09-15T20:23:03.000Z",
-        "summary": "What's changed Added x-claude-code-request-class , x-claude-code-agent-type , x-claude-code-prev-tool-durations , x-claude-code-compaction and x-claude-code-context-compacted request headers for LLM…",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "Build Anything With Claude (That’s Actually Good)",
         "url": "https://www.youtube.com/watch?v=3cYTWLdHgAE",
         "source": "Riley Brown",
@@ -1209,14 +1223,6 @@
         "source": "Anthropic Cookbook",
         "published": "2026-09-03T22:18:29.000Z",
         "summary": "feat(claude_agent_sdk): add scheduled repository reviewer recipe (#860) Squash merge of 1 commit",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Retire claude-opus-4-1 across cookbooks; align validator model mappin…",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/26b5cdce81d357596f5df7f44f50908a80be40cf",
-        "source": "Anthropic Cookbook",
-        "published": "2026-09-02T13:40:24.000Z",
-        "summary": "Retire claude-opus-4-1 across cookbooks; align validator model mappings to CLAUDE.md; !pip -> %pip (#807)",
         "tutorial_kind": "official"
       },
       {
@@ -1242,14 +1248,6 @@
         "published": "2026-09-01T18:02:31.000Z",
         "summary": "",
         "tutorial_kind": "video"
-      },
-      {
-        "title": "docs(managed_agents): remove cost and latency ratios from CMA_plan_bi…",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/bbfab1bbbe5d4c353241a6df4e7d9a112a1ba356",
-        "source": "Anthropic Cookbook",
-        "published": "2026-08-28T21:53:42.000Z",
-        "summary": "docs(managed_agents): remove cost and latency ratios from CMA_plan_big_execute_small (#851) Drop the \"roughly 2.5x cheaper and 3x faster\" figures from the intro and the results discussion, and…",
-        "tutorial_kind": "official"
       },
       {
         "title": "We're building a way for AI models to connect to any device and run real experiments.",
@@ -1746,6 +1744,20 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.284",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.284",
+        "source": "Claude Code",
+        "published": "2026-09-28T18:02:03.000Z",
+        "summary": "What's changed Added Claude Sonnet 5.5 ( claude-sonnet-5-5 ), now the default Sonnet model on the Anthropic API — 1M context, $2/$10 per Mtok with $0.20/Mtok cache reads Added a \"Yes, but ask again next time\" answer to…"
+      },
+      {
+        "title": "We've launched Claude Sonnet 5.5 ( claude-sonnet-5-5 ). It's available on the Claude API, Claude in Amazon Bedrock ,…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#september-28-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-09-28T00:00:00.000Z",
+        "summary": "Code written for Claude Sonnet 5 can break on Claude Sonnet 5.5 in five ways. To turn off up-front thinking, send thinking: {\"type\": \"between_tools\"} instead of \"disabled\" , at high effort or below. Forced tool use ( tool_choice types any…"
+      },
+      {
         "title": "Jev Is 70x Cheaper Than Claude for This One Job",
         "url": "https://www.youtube.com/watch?v=iyIAdmeKeMM",
         "source": "YouTube · Leon van Zyl",
@@ -1970,13 +1982,6 @@
         "summary": "What's Changed chore: bump the vitest trio to 4.1.11 past GHSA-82fw-gwwq-j7x9 by @cliffhall in #2315 feat(test-servers): a CIMD showcase fixture that serves its own client metadata document by @cliffhall in #2307…"
       },
       {
-        "title": "v2.1.273",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.273",
-        "source": "Claude Code",
-        "published": "2026-09-15T20:23:03.000Z",
-        "summary": "What's changed Added x-claude-code-request-class , x-claude-code-agent-type , x-claude-code-prev-tool-durations , x-claude-code-compaction and x-claude-code-context-compacted request headers for LLM gateways; opt in…"
-      },
-      {
         "title": "The Harness That Runs Claude Code and Codex Together",
         "url": "https://www.youtube.com/watch?v=gYtQ1LKSgXY",
         "source": "YouTube · Leon van Zyl",
@@ -2150,13 +2155,6 @@
         "source": "MCP Python SDK",
         "published": "2026-08-26T10:42:44.000Z",
         "summary": "One off backport of the FastMCP import warning for 2.0.x , this is due to a lot of people running into this error and making issues on other repos about it. Ideally either pin mcp or upgrade to 2. What's Changed…"
-      },
-      {
-        "title": "The Compliance API session endpoints are out of beta for Cowork and Claude Code sessions. See Retrieve session…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#august-26-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-08-26T00:00:00.000Z",
-        "summary": "The Compliance API local session endpoints now also return transcripts of Claude Science sessions ( product_surface value claude_science ) and Claude for Microsoft 365 sessions in Excel, PowerPoint, Word, and Outlook ( product_surface…"
       },
       {
         "title": "Codex vs Claude vs Grokbot: What's The Best Super App?",
