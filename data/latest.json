@@ -1,8 +1,36 @@
 {
-  "generated_at": "2026-10-08T17:01:10.202Z",
+  "generated_at": "2026-10-08T22:32:51.330Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "The Missing Map of the Sky",
+        "url": "https://www.anthropic.com/research/the-missing-map-of-the-sky",
+        "source": "Anthropic Research",
+        "published": "2026-10-08T20:03:07.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Launching Opt in Vuln Finding Service for Open Source",
+        "url": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source",
+        "source": "Anthropic Research",
+        "published": "2026-10-08T19:01:09.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic Cyber Mission",
+        "url": "https://www.anthropic.com/news/anthropic-cyber-mission",
+        "source": "Anthropic",
+        "published": "2026-10-08T19:00:45.000Z",
+        "summary": ""
+      },
+      {
+        "title": "2026 Usage Policy Update",
+        "url": "https://www.anthropic.com/news/2026-usage-policy-update",
+        "source": "Anthropic",
+        "published": "2026-10-08T17:00:30.000Z",
+        "summary": ""
+      },
       {
         "title": "Genesis Mission Commitment",
         "url": "https://www.anthropic.com/news/genesis-mission-commitment",
@@ -114,141 +142,184 @@
         "source": "Anthropic",
         "published": "2026-09-18T20:02:00.000Z",
         "summary": ""
-      },
-      {
-        "title": "Alignment Assessment Cybersecurity Incidents",
-        "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
-        "source": "Anthropic Research",
-        "published": "2026-09-17T23:46:13.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Values Models Languages",
-        "url": "https://www.anthropic.com/research/claude-values-models-languages",
-        "source": "Anthropic Research",
-        "published": "2026-09-11T16:58:57.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Enabling Independent Research",
-        "url": "https://www.anthropic.com/research/enabling-independent-research",
-        "source": "Anthropic Research",
-        "published": "2026-09-11T16:57:50.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Many Shot Jailbreaking",
-        "url": "https://www.anthropic.com/research/many-shot-jailbreaking",
-        "source": "Anthropic Research",
-        "published": "2026-09-11T12:13:44.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Anthropic bans ‘abusive or cruel behavior’ towards Claude",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude",
+        "title": "Anthropic to users: be nice to Claude AI — new policy bars ‘abusive or cruel behavior’ to tech - New York Post",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNZ0NrbkNIaXFUOUdjTElxYmthZktoTnR2UXFScTZZdmtVSDZ5dFV0STl6SHc5eXJzaFh0MHRLeTBCdEo3Q000cHFyaV9xdWtUSUx0ZXZGMkw4Mk1KaFhneG9ZTjFkVlEtdDEzQnp2VUxBcGRDU3lxV1pNZEVEcUJwd1prbzZiUDZpNDR0ZkYyTkYzaWlmZGJwR3BlRWc0ZEk5X1VTNnoyc0s5UHlvb3BYa3ZER3ZWSTMyQ0FFV3c2WnQ3ZGZrVHEyZw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-08T22:29:00.000Z",
+        "summary": "Anthropic to users: be nice to Claude AI — new policy bars ‘abusive or cruel behavior’ to tech New York Post"
+      },
+      {
+        "title": "Anthropic launches free AI security scans for open-source projects",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner",
         "source": "The Verge",
-        "published": "2026-10-08T17:00:00.000Z",
-        "summary": "Anthropic is making changes to its usage policy for the first time in over a year to reflect new and high-risk cases of misuse - including election interference, weapons development, surveillance,…"
+        "published": "2026-10-08T21:53:51.000Z",
+        "summary": "Anthropic's offering to help open-source projects track down security vulnerabilities with a new service called OSS Scanner. It says open-source projects that opt-in will get \"thorough, periodic…"
       },
       {
-        "title": "Aditi Consulting Achieves Anthropic Select Tier After Putting Claude Into Production Across Its Business and Client Environments - DevOps.com",
-        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQSWpOVzZyNnRYS2puaDdpVXE1VW55eV9zczJQcHY4eVlhZFA1eGlfd2pZTWJ5MmFSQjYzaVd5emFIUldWZHB1U0d6aXhGQWpDX1k3TTBFbzZUVU9Kb1dOa2dvdWhBdTlZV1I3T1U4X0preFRJNUVZQ190QUJ3NXJ5Rm05YTZMQ1hsemg0REZ1VFg1S3I0Y01CNXlGWjN3eEZ6X2tfVWVOYXBiTzZ0eTA1V2JqWnBoNXEyUTdKVFBpRmF4MmhLdHA1bWdfRFVHWXg3ZFl0bkNid0lObEdYSHRySEpn?oc=5",
+        "title": "Anthropic Says Users Can't Be Needlessly Cruel to Claude - MacRumors",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBjUV9jWjkzTmtVRjJiZExSYUtGN3hIVzNIQzlYRVFERnRXYlZVMUNlQlY5azBNd2RfWktRb05vN1FQMjlXZWxKQnp5WGdRQVpLSW5UNzk5X0I0TEluWkFEU21CYndRVGMzaFVsdjBxbWs4cTllUFY0VA?oc=5",
         "source": "Google News",
-        "published": "2026-10-08T16:36:18.000Z",
-        "summary": "Aditi Consulting Achieves Anthropic Select Tier After Putting Claude Into Production Across Its Business and Client Environments DevOps.com"
+        "published": "2026-10-08T21:53:08.000Z",
+        "summary": "Anthropic Says Users Can't Be Needlessly Cruel to Claude MacRumors"
       },
       {
-        "title": "Anthropic expands cybersecurity verification tools, invites hospitals to apply - Healthcare IT News",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNWVRDY0dncklTdloxNlZlNnFsWDJlWVNDTUdySzh6V0Q3SWR5OXhjaVB3RThRb3g0cjhwTkFCMlRXNkdzb2hXSXpzcDJDUVh3NFNubjNTQ0NCQ1dhekFzZU5vX0FraVZlM1ljaklBYTVuaDNqcERMcUc4THVQRHh0SlY5Z2twb1gyc0VjVmtvdkg0SE56UGVoaGxrU2NNajd4QjRKNGNESHVTOXQ4X2hkMDNn?oc=5",
+        "title": "Anthropic, Google and Mistral Unveil Their Latest AI Models: What’s New and Why It Matters - CNET",
+        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPWjFGcW95UVB1MjgxX09fd2xwSkU0NlVMdGtCTm13ZWFTbnYxdGlLRVhaQ24wdUY0LTVzWG1COHJQNmJtQndhX0oybUtTczNQeXFacVVqWWw5MF9HQ2tmWFJJVU1XUmpaZVJXcFkwOTF4REt3bkNsRVVLNkdyZ3Z3QjNCZGRaX0FQeVhlN3RUR19DUC1XMnVfTGd3VXp1cGIwa3hESVFLOGxqYXplcENLdE1ESlRQaE1uVnl6c0dRcXB5bXlodklsVHFiVmZ0cWg0N3JaNDViQUFjUQ?oc=5",
         "source": "Google News",
-        "published": "2026-10-08T15:58:40.000Z",
-        "summary": "Anthropic expands cybersecurity verification tools, invites hospitals to apply Healthcare IT News"
+        "published": "2026-10-08T21:11:11.000Z",
+        "summary": "Anthropic, Google and Mistral Unveil Their Latest AI Models: What’s New and Why It Matters CNET"
       },
       {
-        "title": "Anthropic’s ‘Claude-led’ CRISPR-like discovery is sparking controversy - WCPO 9 News",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQWR1U3dqNEkwS25Yb3NhQ0N2b1dUanBIdkhIQkVkUXhPSHEzMHIyVEU3dnVvX1FteU8tdjBzT3JscGVNV25TYzBLTTdEZVZLZUdxdWV4MFg0akpvV0syeHlSNnlubUlJU2NEXzkzSzFzVllRWVVhUEQtb0d5N2ZhY1AxeUFzcFVfNVhFR3h5NjNwekt6cVM2d0JXbG5FSUlqbEJxOFd2U1V4OTZCaXpUMkpoZ3JpWEpsUHAxOGFJSFNSYXFJT0hoTg?oc=5",
+        "title": "Anthropic Bans Being Cruel to Claude - Newser",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOaHpiaVdURjl6eXhkU01yd1hQdFBGRzVNcjI2UzJKTF9lQU42RmtaQ0ZqWEc4UHFWNmRxeTBiZnFrMW1sak5EaUR0T3JHU0RpR09vaTMybTlHQVRxSXh5bUZZeFBWS21idnFWeEZpa3ZUVHFwWW1ySG1fb2VNeUFRMXlTZw?oc=5",
         "source": "Google News",
-        "published": "2026-10-08T15:33:17.000Z",
-        "summary": "Anthropic’s ‘Claude-led’ CRISPR-like discovery is sparking controversy WCPO 9 News"
+        "published": "2026-10-08T20:50:00.000Z",
+        "summary": "Anthropic Bans Being Cruel to Claude Newser"
       },
       {
-        "title": "Anthropic commits $150M to U.S. AI science initiative - TradingView",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQdHdZVGd2blAwdlJ6dHdjeDhaYWVqSW96a0F0d3lCMGJYWjlpTHhfU2hnNzBWaWltZGQ4aTNiTWgxaEpkQUhwcG1UcTFxZXpBRHVzbDVzNjJyUENBblNrclBXaHhweW5xaTZrUjhDMHhrYnVCN2l1Y2JncDZUQjA3UVJ2RlRMR1VpM3k3UUQxRjRlNDJRQVBLRkN3ZlRJSl82WFI3VUt6bjR1MFZDbmlLX3lDbDI?oc=5",
+        "title": "Anthropic Moves Us One Step Closer to Making ‘Clanker’ a Slur - Gizmodo",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQbl9MUzN2Q0lIT2lvV1ZtWGxUeS1iV21HUmJhSzR2N1dLNlJMVGpMdzJZZ1ZYLUpscWhFbW0td3pjdlAtZ0t1UW9WQnhjZzBFUVlVUVZaQjFTcEtzT25USE14LTI2SF9CdXBjXzhZTDYzb1dONlJjc20zNVhCYmdnbzF3TWxyQ0JDMU05c3pGOGpad3Qw?oc=5",
         "source": "Google News",
-        "published": "2026-10-08T15:29:16.000Z",
-        "summary": "Anthropic commits $150M to U.S. AI science initiative TradingView"
+        "published": "2026-10-08T20:40:39.000Z",
+        "summary": "Anthropic Moves Us One Step Closer to Making ‘Clanker’ a Slur Gizmodo"
       },
       {
-        "title": "Anthropic Commits Three-Year Claude Support to the DOE Genesis Mission - Unite.AI",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMzdlTk9YcnhRQUpGNnl0SkhvXzRTLV9FdkJTMDBaUzhlNTB1LXZ2Q1pVZ1kzZ2tRbWo0aUtGNkxxalRWX3pVZDJXYkZLTk5hYkFjTUV0aFNTRkxmREZoRHlLLVg0S2pUY01VSjJRazBwY2pUc21jNy1ZVW96VG82T2NKVW80SjJVak5iZWJneWpLbFRwc1dv?oc=5",
+        "title": "Source Meridian joins Anthropic’s Claude Partner Network as Select partner - 150sec",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPWHZpdnI3Ym1VZ3BCTVM5TXlmczdTbkdOLU8tRTh3QnBjbWo4cVNJQUV6NGc3aXZUbmItUXRrb01XM19OWm9seUg3QWtsNm52NnFlUkh3VVZ0X3k5U0RPX1VPV0g5dDBzaXVIYnNsVkhua185R1RUSEJ1Umk1VW44M0did19Nbno4ZEQzYkNjdXItRWpzdGJDWg?oc=5",
         "source": "Google News",
-        "published": "2026-10-08T15:23:01.000Z",
-        "summary": "Anthropic Commits Three-Year Claude Support to the DOE Genesis Mission Unite.AI"
+        "published": "2026-10-08T20:05:20.000Z",
+        "summary": "Source Meridian joins Anthropic’s Claude Partner Network as Select partner 150sec"
       },
       {
-        "title": "Anthropic Launches Claude Haiku 5.5, Its Fastest Model, At 75% Lower Cost - ETV Bharat",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdk5SVmE0Wi1mT19NREgwUnZ3TU9kTnF2U20xaGdLQUs0LVFZbVptUXVvb3cxczVncUtZRm94SVZBeEY5LVc4Y0poWmNDRHZNMlhJTjdkVXZrRW1mWTNpU0tIMkplTTNiRlVDUUlySWllckNtenptTVdtVGxNcGl3UHd5V3Fxc0dQTEh0YVVvSUJwTl9QZUQ4MlRCYlIwU2Y3NjJEMUpZNGY0c1hHSE52Ulg2VXRrcW90OUEyRkU0R1bSAcYBQVVfeXFMTVFOZWNNZlRTMVRvQkhiVC1sc3JReWltRmZXanhRZ1VXWXBieXZIVm5za1o5UGFvZUFzLUJwLUpxSWNoVUxRR0FEVzl3Y01HZVpRS2lab3cwSGY2TXdFa0NJTXE2NjY0c3kwMVJnNGN0NGZ3WkpnRXREbTI1WkQ5SHBzd1B3U09oeGxxNjFlWHktcWxXaVMwVUJ4ZkEzb1RyWTBxR291dnVkRlV3T2dLRjBTaWM2UV9zRXl3NHZub3NQMng0NERn?oc=5",
+        "title": "Anthropic Adds Claude Dashboards and Motion Tools for Workplace Productivity - News and Statistics - IndexBox",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNQnd6TmxURzJWSFBVNnVoSE0zSWduZWdMRDloNjkzaW8zVzBlX1BXUWtzVUJFeE85bHZBS3ZGT1VNOUJ6RG04UmRJSjhNNXBxVVFFRUJuMFd4VllyU3RZNWZCRWUwUVZ4c0JJcHR5cEVTbC13T2piQkdtRzAzWHRjS3g5blJsQm1TenRWOGNheDNKdmQwUno5aDB2OWp2WVNrSVExMmthVGw2WGtSSXdhTXJYQl8?oc=5",
         "source": "Google News",
-        "published": "2026-10-08T15:05:12.000Z",
-        "summary": "Anthropic Launches Claude Haiku 5.5, Its Fastest Model, At 75% Lower Cost ETV Bharat"
+        "published": "2026-10-08T20:01:32.000Z",
+        "summary": "Anthropic Adds Claude Dashboards and Motion Tools for Workplace Productivity - News and Statistics IndexBox"
       },
       {
-        "title": "Gemini Agent Runs On Claude Too As Google Says Nearly 80% Of Clients Use Its AI - Yellow.com",
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9GNFQzT1B2Qm5aS05OdVctSm5DdkZ0bGM0QXVOTDRNTkxjYVdSQmNZTFZGcDZQN0NsdnNWNzVQYVhRdnJCcXBDczJSdVJqajdhTDVmS2JPazVIMmRjd2hjc01WRjhDcE1Henc?oc=5",
+        "title": "Anthropic Backs U.S. Genesis Mission With $150 Million to Expand Claude AI - CoinGape",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRkxGNE1HeG9vcGtaQzZGZHczWEZNbE8wWHlpMVBFV2pfblkzeVR4c0VLM1J1eWt5bmlDZC1NWXlJMVMwSTB6SEFuMENOeVNSQmxJeV9QTzI1Wm5lVHJ2WlhHajQ4YmFveEc5LTltelk4ZWVRT1EyVE9VN1hMVmdSeW9IdHdHWjdSbEZYVWQzSXRHN1d0SjFWYnBR?oc=5",
         "source": "Google News",
-        "published": "2026-10-08T14:36:47.000Z",
-        "summary": "Gemini Agent Runs On Claude Too As Google Says Nearly 80% Of Clients Use Its AI Yellow.com"
+        "published": "2026-10-08T19:42:54.000Z",
+        "summary": "Anthropic Backs U.S. Genesis Mission With $150 Million to Expand Claude AI CoinGape"
       },
       {
-        "title": "Broadcom in Early Financing Talks for OpenAI Chips",
-        "url": "https://www.bloomberg.com/news/videos/2026-10-08/broadcom-in-early-financing-talks-for-openai-chips-video",
-        "source": "Bloomberg",
-        "published": "2026-10-08T14:05:33.000Z",
-        "summary": "Broadcom is planning its next blockbuster deal after launching a $60 billion debt financing to help fund Anthropic PBC's artificial intelligence build-out. Sarah Frier has more on \"Bloomberg Open…"
-      },
-      {
-        "title": "Origin Digital Named a Select Tier Partner by Anthropic - StreetInsider",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNWHFmTU13S3ZLaUtRQWVISW9QZ0h0UElKLWNiSXI2WlpfalBDenhzRF9yLWNJSEFUdTVjZW4zM2hsWGpTMWlmdGpGQmFhS3d4SjBwQVIxTFRubll0SGVoZmgwV2lGRTJzYmhPRnhoQklGTzU4d3hNdzZQOHUwTFNXQnRXQVZEOGJjdFNfS3VPeTJHNUFKWmUzNm90dmUwb0ppX3VLVi10N2VET3dqS09B?oc=5",
+        "title": "Anthropic Adds Dashboards and Video Generation to Claude, Refreshes Small Model Lineup - BigGo Finance",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9JMXVSc1RObk5rNzBCeWgzUkpxVWEyRGliOWN5LWdDZlBVazZGTjM5aTRFZHhsdkU2WERLNVJaOXlpSnVYd2t4VjRHY29YOUd0NTc2NmwyRUdSSXUtZThiUWtVWlU5ZFU3bzZad21wQmdGdS11Wmc?oc=5",
         "source": "Google News",
-        "published": "2026-10-08T14:00:49.000Z",
-        "summary": "Origin Digital Named a Select Tier Partner by Anthropic StreetInsider"
+        "published": "2026-10-08T19:35:00.000Z",
+        "summary": "Anthropic Adds Dashboards and Video Generation to Claude, Refreshes Small Model Lineup BigGo Finance"
       },
       {
-        "title": "What to know about Anthropic’s ‘Claude-led’ biological discovery — and why scientists aren’t convinced - CNN",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBzUzRFekFCZGVRTWVpRExUVWJkYTVGeFYxekkxMkpmYnRJSF9sNXdOd3BGd0NZVnhzakp0eWwxR3hTX2tqdUdOZXd3WjVZRlhZaDFkOHpoVElnanRZZXhwaEdweDRCTlVPVHEzRmxUWUpPVTU5Y0NTRHpJam5zZw?oc=5",
+        "title": "Being mean to Claude can now get your account suspended under Anthropic's new TOS - The Decoder",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbjUxcHlFV1NPMUtXZEtXV2xIcnFKMk96dzM3OHp3THp3UWJVemRzMDhjUDlESmZWMWhOdTFZNU5VTDNYdkVaRjVKSFNoNVNhOERNSUFCZ2JQRlh5dWpiNnlPeVZ4amM2N09SSGJkbFJpSUpNeTZSaU5oeG96b1VmbU91aDFxa3hrLW5mQ1UzT3VhT2VoUVpMck5UN005QWpFTUoyZktkd18?oc=5",
         "source": "Google News",
-        "published": "2026-10-08T13:58:07.000Z",
-        "summary": "What to know about Anthropic’s ‘Claude-led’ biological discovery — and why scientists aren’t convinced CNN"
+        "published": "2026-10-08T19:31:02.000Z",
+        "summary": "Being mean to Claude can now get your account suspended under Anthropic's new TOS The Decoder"
       },
       {
-        "title": "Multi-Year Anthropic Deal Makes Hexaware a Claude Preferred Partner - Unite.AI",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPTUtGRFJIdHN5ZUZZc2ZkdG1Bem1ROXlJc1ptOVFCbEkzal9sRllWN0t1RUd3SUZJdEJkLWU0QkM1U1pZazkwQlh4bWVvdHM4ME00Ukhsbnl6MGtvZTR6b0IwRGFIYlhVd0pfZmZaZ1JQUnFmalJvNW5tV2dXZTZiNTZMeURpT3VUNE5PUHRIS0w4VUk?oc=5",
+        "title": "Anthropic launches dashboard, animation tools for Claude By Reuters - Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWlN4SkU3UG1qTC1rVVF4Z1l0bnd0UlNCemVycERzdkFESlhQT2JIZUp6WDdZOERpcmpHeWhIMmlEcXIxVWhFYkVNSXlsT3pSdzN1SVd1dXY2MG9nUVFHbWJOd25PMnlMVEpQdnVsWnkxb0JndHRvMVpCOEF2LUZ1czZIekhheUVQa3Z6SWN2VzdaN2ZuQl9IdV9EVGpJX0tPSGRvUEhtNzFmUVFteXNCeFVB?oc=5",
         "source": "Google News",
-        "published": "2026-10-08T13:42:01.000Z",
-        "summary": "Multi-Year Anthropic Deal Makes Hexaware a Claude Preferred Partner Unite.AI"
+        "published": "2026-10-08T19:20:49.000Z",
+        "summary": "Anthropic launches dashboard, animation tools for Claude By Reuters Investing.com"
       },
       {
-        "title": "Google Launches Workplace AI Agent That Acts Like Colleague",
-        "url": "https://www.bloomberg.com/news/articles/2026-10-08/google-launches-universal-gemini-ai-agent-for-workplace",
-        "source": "Bloomberg",
-        "published": "2026-10-08T13:25:05.000Z",
-        "summary": "Alphabet Inc.’s Google announced a Gemini agent for the workplace, ramping up competition with OpenAI, Anthropic PBC and Microsoft Corp. for corporate customers."
-      },
-      {
-        "title": "Hexaware Becomes an Anthropic Preferred Partner, Bringing Claude to the Core of Its AI-native Platforms - PR Newswire",
-        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQNUVNeVdzcmJJMWhSd3Y3Y05nd3hpSTlYN3ExN0taT2ZOa3A0M2RxMDl3RU9kemR1Rm5ZTlM5aGFxdnNIa3pmcFFrTURfMnltNDdCd2ZRZEhyRVdPN1cwZnJxZUM4VzZOdzBLNzZvTS1KV0pkVU52bmN1Si1ZOGVSV2hvLXBhdzQ0aENhbGtQT09nUEprOFNHa1BGV1k2cUVqZ3NpWktVN0FXSTM5RThJTklNTkRjb0FIeFdvdi1ZTjNRYW5nMVNsM0R4dDhnb3A0WWNUUjhSVEJYOTNEYkZBNm4tUnI4bEJoWXFlY0h0UQ?oc=5",
+        "title": "Anthropic launches dashboard, animation tools for Claude - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbHVwaVJjdGlQNnJKRlNkNUdmMG9SSlZPRVVGd0pqcFJkMHY5Q0xTcEd1RDJtUWl0N1dXSHFvTVpDYk9DN2xqd3cwa1BMa0Qta2EwSm9pQ1Z0WmFyRmxyT1F4eERULWtaOVVyd3NrXzZSam1wdzlSWUFTcmNLNUQzYmZzeW9VRW44dE05Z0JYQS1KQTQ0ZDRWelktQWZOQ0k?oc=5",
         "source": "Google News",
-        "published": "2026-10-08T13:12:00.000Z",
-        "summary": "Hexaware Becomes an Anthropic Preferred Partner, Bringing Claude to the Core of Its AI-native Platforms PR Newswire"
+        "published": "2026-10-08T19:08:01.000Z",
+        "summary": "Anthropic launches dashboard, animation tools for Claude Reuters"
       },
       {
-        "title": "Hexaware Becomes an Anthropic Preferred Partner, Bringing Claude to the Core of Its AI-native Platforms - TradingView",
-        "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOWlN3M0hvdjd1ZTZNU2IzMFdSdHdlYUEyUWhfQ1lYNE1yWXdfbW1BR2JQc3JuZU9maDdGQlFtcFd6bDU4YzIyc21XYk5oLU1mb2RPbGx2OEF2SndULTE3OV9WOGF4eTFTYl9oWXlHU3phZWZfcUhjMGdLT0xST1Q4OUxTajk1ZjYtemI5dWVuVU9ueFV5UGcxVW05c1d4bDhMVy1fMVM4T3llaUVfYmNMazFtTnZMeEpFSGpWSUpROXhNdlVnZE5Cc0FsUE1sNUdSY05fV1R3Q0ktc1o0UFhLOE5aTE5KNkRIbTNScWw3TE5GYV9NaWc?oc=5",
+        "title": "Anthropic launches dashboard, animation tools for Claude - Yahoo! Finance Canada",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNVG5jY2lmamEybE9jajZUaXA4Z3Jra3kwemlvNEtMQ1dQTzlJazg3QnBLRXVlTWpoRDBURldsRndBNmgtNVdjemoxZWNzTFNXYVJSTkhGZGdFUnZYUWZwWURleE9PTmhZblFlZ1M4Qmt6Zzg5alFOV1d4UThiUTVwdkpwSmdGbGVQbVRheF9VdzZMRW9uVGtCaQ?oc=5",
         "source": "Google News",
-        "published": "2026-10-08T13:12:00.000Z",
-        "summary": "Hexaware Becomes an Anthropic Preferred Partner, Bringing Claude to the Core of Its AI-native Platforms TradingView"
+        "published": "2026-10-08T19:07:47.000Z",
+        "summary": "Anthropic launches dashboard, animation tools for Claude Yahoo! Finance Canada"
+      },
+      {
+        "title": "Google overtakes Anthropic in prediction markets to lead 2026 AI race (GOOGL:NASDAQ) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZzlWRE92UGUtNGNGc1RwNFpQUGFIalEtTXZSc2ZNNWFsYVpUMzBVRUJOaGw3RDFuTWduWGpwSjM0SkVTZ0xQVHR6MU5qTGI2ZWZpWGQtbFgzdHBEZjVUcWcwQnZOUHlQbUZ3TW9sSklLVE45aDRiazQyNThmOFRTNUhVTzNzQkg1eXA2M3JBUWdXUXc2SUNIbzdoeXVJRlR3c1pxSHZzSENEemc?oc=5",
+        "source": "Google News",
+        "published": "2026-10-08T19:04:50.000Z",
+        "summary": "Google overtakes Anthropic in prediction markets to lead 2026 AI race (GOOGL:NASDAQ) Seeking Alpha"
+      },
+      {
+        "title": "Anthropic launches dashboard, animation tools for Claude - marketscreener.com",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOdE5oZWZOWjQ1THNieElkN1VjMk1yR2paYVpDOVdVUFhGTjRPanVQU0lXTFhsRGk2Q3ZmLUhCZDlJelJUS0FIWDFDUjN6SjNKakY4SF94WDRFWXE1SjJfOEFrMmFiNzlmVjBmV3BlMllTdUFpTUdQQ01kY2FxQWdQSzVzeXA2N0paNzZ2b0pPX1M3bWF1TU1PcERjNERXd2xteUFRSEhBNS1CT0xK?oc=5",
+        "source": "Google News",
+        "published": "2026-10-08T19:01:22.000Z",
+        "summary": "Anthropic launches dashboard, animation tools for Claude marketscreener.com"
+      },
+      {
+        "title": "LGTM (Looks Good to Me) – Claude Opus 5.5 Music Video",
+        "url": "https://www.youtube.com/watch?v=3TNpOD6bov8",
+        "source": "HN · 34↑",
+        "hn_id": "50010330",
+        "published": "2026-10-08T18:55:18.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic bans abusive behavior toward Claude in usage policy update - Quartz",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNaW45ZnBBbUZqb0p4bmwwci1JREhnYVotVUdEUGp3OXV0blg0bTV5cV9tc0tiVUlsRWJVV2pNbXBTbnZzUFMwSmtwZlpmcXNuallHYTNOX0J0RUprQjhiN1ZkUE9kd3V0RVpmMTBxQVBNZlZuTy04QVJpSFR1V0RsVnFodmJWUEVV?oc=5",
+        "source": "Google News",
+        "published": "2026-10-08T18:54:41.000Z",
+        "summary": "Anthropic bans abusive behavior toward Claude in usage policy update Quartz"
+      },
+      {
+        "title": "Anthropic bans prolonged verbal abuse of Claude — TechCrunch - UA.NEWS",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQdWY3VDF1T3VwVGJNQ1E5ckpVMnNIdkRWNzc0VG5NRzk2ekx4cjB4NEpiMEczRzZSd3JhTElKNFN1aEc4Z0txMDFMSE5ydTNmXzY2Yk44RS1zMVd4WmNxWkI2LWpJMmlOS1ZBZ1I3YW10aXhqa2NZV1Z1NWh4Ykk0QVFWUkxjczY2aFVvb2U1dkl2c1FuTmdybFJB?oc=5",
+        "source": "Google News",
+        "published": "2026-10-08T18:54:22.000Z",
+        "summary": "Anthropic bans prolonged verbal abuse of Claude — TechCrunch UA.NEWS"
+      },
+      {
+        "title": "Claude Sonnet 5.5 halves cache-read prices. Migration can still change your bill - OpenTools",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9xRG9IOHllb2htZXpBX0FLemc0WlpfQmJhV3ZmeHZDaU9JVmFXcVZIUFg5VEVkSUdlTlNfTnFvYUl0SDFPeGozd28zMEpBTzF4NlNWbWdKMktnQWFaZG9NYmFNVEMtWGZkUXd3T1N4VEQwMEgwMXM1ZXAySQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-08T18:50:50.000Z",
+        "summary": "Claude Sonnet 5.5 halves cache-read prices. Migration can still change your bill OpenTools"
+      },
+      {
+        "title": "Anthropic cuts Claude Haiku 5.5 prices by up to 90% - Quartz",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBxNEdDdXdNZFZiSlZPUUdPRXNtNEVmczRVQzc5NkdQU2h6dW5hLUFLelEwcDVvYlBIdGM5bFlDMUwtdTRxdDQyaEVrWXVOLUpFdklNSjJIWXBMSEpMcE9IbXlROG90bGto?oc=5",
+        "source": "Google News",
+        "published": "2026-10-08T18:44:41.000Z",
+        "summary": "Anthropic cuts Claude Haiku 5.5 prices by up to 90% Quartz"
+      },
+      {
+        "title": "Being abusive to Claude could mean losing AI assistance as Anthropic updates usage policy - Firstpost",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQSF9adlVwQUNZRTA3R0c3SnMtamozZHNqeUhEajN0U1ZHSkRoT0FOM1F1UEgxbUpQMTU4SVp0Vnc5RlItNUJ3RW9MaVVlUEpsUnBaX05qdG8tWXBvTXg1THI4Z2ViaHcwa09HaXF2amFjUTE3TndYNkt1dmY3NTlMN3YtckFQc1ptTnVjNTdzQlVlNkxnMFNiMHNhYU9ZcVNBTC1Gc3hhQXdRQmFudWwwV0xfZVdRM1lOTzN2a1g4WmJ0V2R2WmVMM3RMU0JrUDjSAdQBQVVfeXFMTnZ6eVYxQlRiWVU2RGFUblEzRGRtYXJneHZpZUlfRkYtc1k5TkpIYk5BNXE4bndORVoxOWxZVWFRWWNydkVQUXpiNVI1eXhaX0dfbnFRUGFhdWFnRFpUbm95R0NCeUdaM0o0SjFBell2OHFrclZBOVNsTGQ0bTZRWmF3dEw5eUJoeE1ZV05CMFprSXFlV3BPa3ZIYWItUFpOM1V1TUZhejFtMkJhZkdrcTIzS09ZeHoxbnY4a3F5NmRHOEtRTDVJNUlvWmptU050TEdpcmg?oc=5",
+        "source": "Google News",
+        "published": "2026-10-08T18:28:58.000Z",
+        "summary": "Being abusive to Claude could mean losing AI assistance as Anthropic updates usage policy Firstpost"
+      },
+      {
+        "title": "OpenAI’s revenue is reportedly $20 billion less than previously projected",
+        "url": "https://techcrunch.com/2026/10/08/openais-revenue-is-reportedly-20-billion-less-than-previously-projected/",
+        "source": "TechCrunch",
+        "published": "2026-10-08T18:19:42.000Z",
+        "summary": "It had previously been reported that the AI lab's annualized revenue was some $70 billion, but a new report claims it's a whole lot less than that."
+      },
+      {
+        "title": "Anthropic changes usage policy to ban model abuse and election interference",
+        "url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/",
+        "source": "TechCrunch",
+        "published": "2026-10-08T18:16:24.000Z",
+        "summary": "Anthropic's updated usage policy explicitly prohibits users from repeatedly abusing Claude in extreme cases, though ordinary frustration and criticism are still allowed. The new rules also address…"
+      },
+      {
+        "title": "Anthropic changes usage policy to ban model abuse and election interference - TechCrunch",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNY2twUlZwTmdvdVBobFlHazd4UnRGZ0Rqam1GQm15S184aDJ2ZzVUaWJXSElGNHFzSGFGU1R3X0d2T0ZmV0V0UXdlTUVwb28zeldaYzVNeWoxT19GTnpmUEl4eXB4UWlETElkNDZ5dGJqTWJSMWZIbHFwZ2FzMzBBTy1qcUIxZ2lGNFJ4NFo5c19HRDRUWXk0X2YyRUJXeHU5Z0Y0QXczY0plaUdtT0NF?oc=5",
+        "source": "Google News",
+        "published": "2026-10-08T18:16:24.000Z",
+        "summary": "Anthropic changes usage policy to ban model abuse and election interference TechCrunch"
       },
       {
         "title": "Stop Using Claude for Everything (Do This Instead)",
@@ -261,76 +332,6 @@
         "published": "2026-10-08T13:00:06.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Anthropic Revenue and Valuation Statistics (October 2026) - Exploding Topics",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1VV09mY3FENzVFMnFBam9ZMGpmdVpVQjBYejdZV082ajU0QmMtYmtLOE43Tjk5VGZGQU5KSTV0d012Um8wNTcxN3oxMzV2Zm81d3pGRkE3M2hPRkZ5TWlZ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-08T12:24:45.000Z",
-        "summary": "Anthropic Revenue and Valuation Statistics (October 2026) Exploding Topics"
-      },
-      {
-        "title": "Hexaware Technologies Enters Multi-Year Partnership With Anthropic to Integrate Claude AI - Sahi",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOeVpmTFBSWlVuLWNKNF9BLWppdi1ZcWVEUGo4MWxFMEpxbktOdVhteWxjRXJEVmlhdDRpZ1dKbmdHZFZ6cV8wU0o4SEcyVFBYWTNuUXJNQmpuNHlBa3hzVTYzZy1nbEtjanduLXpGM0hyQmprZUw0YXM4WVJTdmdJbThVNlNmMF9wMjI2VW5ldlZkY0llX0c3U09UbWtUQTJIWHo2MEhvcjAtdFBYTmx0UlpqX3owUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-08T12:21:38.000Z",
-        "summary": "Hexaware Technologies Enters Multi-Year Partnership With Anthropic to Integrate Claude AI Sahi"
-      },
-      {
-        "title": "Anthropic launches Claude Haiku 5.5 - Adgully.com",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9MQzR6ZE9wclNDdDIxVTk2U0JuOUVPc2gzbVNGTWhSYjhYVUpNNjZXWk5kakJ0NnBCY1lEaEhBcEY4emhBYmRVQUZoOUsweG10ZUMwZkR6M0RmNHR3TF9wTVVDdFpLTFpfamIzZktKYzdaaDdWTy14eQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-08T11:36:00.000Z",
-        "summary": "Anthropic launches Claude Haiku 5.5 Adgully.com"
-      },
-      {
-        "title": "Claude Haiku 5.5: 75% Cheaper and It Beats GPT-6 Luna - Intelligent Living",
-        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5ubHQ0a0VVQlpzS0tHbXBUM3J2bU9jSlVUTjdvMFhYM0Q4Ykx6OV9EWlItWW5CSUVPdGJsczZsalgzNXJJTVNSZURPWFd2akpvVUpWemtzNXZYQzk2UGFfTE9GdFlsd0Z6N2I1WlhB?oc=5",
-        "source": "Google News",
-        "published": "2026-10-08T10:30:43.000Z",
-        "summary": "Claude Haiku 5.5: 75% Cheaper and It Beats GPT-6 Luna Intelligent Living"
-      },
-      {
-        "title": "Anthropic's New Claude Haiku 5.5 Cuts AI Token Prices Up to 90%; Beats OpenAI's GPT-6 Luna - WinBuzzer",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPeC1jWVptaUpfMmVZb29YZ0V0OFBBTTFzeXdzMndLanBMckpoM2Z6blVpVGF6YTU0Z1lYZFdDTkxFREVQVmxOZzNfRlZkSjVXTmM3Q0IzbDE2bUhXVWlGVkJSM0dHVUhJOG16Vy1iWVByLXp6RWFPVHdtQTdpeW9aenBCMUlOM0JPYzM5Nlh0OXA?oc=5",
-        "source": "Google News",
-        "published": "2026-10-08T09:50:15.000Z",
-        "summary": "Anthropic's New Claude Haiku 5.5 Cuts AI Token Prices Up to 90%; Beats OpenAI's GPT-6 Luna WinBuzzer"
-      },
-      {
-        "title": "Anthropic & Godel: What is the AI-Powered Godel Factory? - AI Magazine",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOMlpKU3JDWktWNngxeUt0emxrOGdrcGFXUTE5LVFjYUJPbVJ2WkFGSkpBdHplTjY5VVQxcndFTzFISm5SOEFlMWluZHgtdVBUWjVtRFkxRzhUdUxYUFpLOERPQ0tyNkxwNXlFaGFBbkdFTlJlaUU0UTJoTTdTNmpBUGo4RnZrS3c?oc=5",
-        "source": "Google News",
-        "published": "2026-10-08T09:45:46.000Z",
-        "summary": "Anthropic & Godel: What is the AI-Powered Godel Factory? AI Magazine"
-      },
-      {
-        "title": "CrowdStrike Says Suspected Chinese Hacker Used Anthropic's Claude, AI Agent to Steal South Korean Bank Data - Benzinga",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQcUw2bmsxdHlrQzExbzJvX1BaT05xSmVwMDlUa2VMVldfOW5paWtGLUJjaTIwby1PUldNUVhXME0yUWpTQ3UxRXlEY21CQXotVWdJTFJDS2NzT0l0TFk2UkpCM2xwVy1UYUxUTVZ3Q2RndUs5X3N5Z0NyOFVqVk4yRTlEQkxpcy1FSXZwWDdjYmsyanR6aExNMU0xYTRpN3BKWlBiVkdGTzNoT0k?oc=5",
-        "source": "Google News",
-        "published": "2026-10-08T09:13:11.000Z",
-        "summary": "CrowdStrike Says Suspected Chinese Hacker Used Anthropic's Claude, AI Agent to Steal South Korean Bank Data Benzinga"
-      },
-      {
-        "title": "Anthropic unveils Haiku 5.5, its third AI model in a month ahead of planned IPO - The Indian Express",
-        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOY1dPaGJXQ1k0R015Uk5IQW5HNXFtNFhndE5laW1kUjNZY1pWXzlxT1FJYmF5M1kybnZQd01nY2R1Z015THlKcGZFbHMzT1hnMXg4RXpBWFZyU0tKbm9wdndocExmVkFjTUczeHJ6ZmdTaXc5VXFVbHU2dmVmUXFPNEVHRE5rQUhqZEdSSFJCWWhiODlIZ3VZLU02QUNnbWRjVlNEVWFhOXpwcTVha25mVjRBamNiQmM5UENET2VWMm1DOE1ZVXc5NXU4LVdLVFRrM1J0WjhIZjJzZ9IB4AFBVV95cUxOSk9pcFUzYVNIQmFITkFJNGlENi1fMndoZVZLRWJpeE4xOVFQY2VPa0VCcm0zanFmSXlqSW1lRGxIbjZnXzNMN1pObTEtTE9nWVFLVm53aVhwU1hSQ3dEYzVEX3dVOFpSb1Z1VDRjcW1JWVp4T045WGFuZmpEd0VuMHEzQ3BucEdlNmRkUExYbjYwTlJSSlktMk9EZUo1M1plQ3o0V0FrMmluQ3RXUk4xRHlNRnRJa1R1WVoyVllWNnZUTjVydnRTWV84WjJYREZHeS11MW1MQ0ZxcExRLUZsZg?oc=5",
-        "source": "Google News",
-        "published": "2026-10-08T08:34:10.000Z",
-        "summary": "Anthropic unveils Haiku 5.5, its third AI model in a month ahead of planned IPO The Indian Express"
-      },
-      {
-        "title": "Anthropic Launches Claude Haiku 5.5 as Faster, Cheaper Model for High-Volume AI Tasks - Gadgets 360",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQaWg2TktJNjZKdlZFN29EZmtIYTl3TURkV2NiQXZzU3o2N3ZNZ05ndktIVDgySEtOVjJsbC1YcEZfb2NzancwbTU1VGtGaWRGMEQtck9nS1RVT21xeHhxVUtuR0RLQU1QcUtDdWtoNkJDUzdLel84RU5ZcVdGOWZnYmJ0ZHZ5dDNwaHFkY2tvWDVJRU45ck1lelZlYmlkV05odU9vZWhn0gGrAUFVX3lxTE1GbThBNmUtMENTR295a2dTMGw4bl9hc2laNVNEU3BUOW0yYVVnODFPV1o2R19OdG9HRmNlYnNiNUVHaGZfZW45T2tUYnFGc2lpMllsUDlhck1jMXBZeXdaQnRhQy16LTc4VjFMY3lhZnFKMXU4YVlTZk91cW81UFQtaGdqUmJwb0FQd2VHX2VJbGVLRkpiT2JZcGFITVJCd21menVodEV5UXByWQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-08T08:27:48.000Z",
-        "summary": "Anthropic Launches Claude Haiku 5.5 as Faster, Cheaper Model for High-Volume AI Tasks Gadgets 360"
-      },
-      {
-        "title": "Anthropic's Claude Gets 75% Cheaper. Its $2 Trillion IPO Gets Called “Ridiculous” - BeInCrypto",
-        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5CcUQtc3pqdHJQc2kzV1RLSkREekQ3cGVocE9ldENxam9XNENIRGZoOGlKU1lJY3pXYWNwaXZVTDF4ZlltR3ZwTFlmR2JCek9kYTRpNWdHOExlYW41Nms3X21paUM?oc=5",
-        "source": "Google News",
-        "published": "2026-10-08T08:25:00.000Z",
-        "summary": "Anthropic's Claude Gets 75% Cheaper. Its $2 Trillion IPO Gets Called “Ridiculous” BeInCrypto"
       },
       {
         "title": "Claude Cowork has a MASSIVE Change",
@@ -619,18 +620,6 @@
         "published": "2026-07-29T12:31:09.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Opus 5 Review: What It Actually Changed on a Real Job",
-        "url": "https://www.youtube.com/watch?v=Gr_QNYJ1mFU",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "Gr_QNYJ1mFU",
-        "thumbnail": "https://i.ytimg.com/vi/Gr_QNYJ1mFU/hqdefault.jpg",
-        "published": "2026-07-28T16:59:22.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -720,6 +709,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Build a Lead Generation Website with Claude! (Claude Tutorial)",
+        "url": "https://www.youtube.com/watch?v=qV6Oo_ZlC2E",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "qV6Oo_ZlC2E",
+        "thumbnail": "https://i.ytimg.com/vi/qV6Oo_ZlC2E/hqdefault.jpg",
+        "published": "2026-10-08T18:53:40.000Z",
+        "summary": ""
+      },
       {
         "title": "Stop Using Claude for Everything (Do This Instead)",
         "url": "https://www.youtube.com/shorts/wx3pj13dL2o",
@@ -1038,20 +1038,29 @@
         "thumbnail": "https://i.ytimg.com/vi/9vKYKvzqQF0/hqdefault.jpg",
         "published": "2026-07-29T12:31:09.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Opus 5 Review: What It Actually Changed on a Real Job",
-        "url": "https://www.youtube.com/watch?v=Gr_QNYJ1mFU",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "Gr_QNYJ1mFU",
-        "thumbnail": "https://i.ytimg.com/vi/Gr_QNYJ1mFU/hqdefault.jpg",
-        "published": "2026-07-28T16:59:22.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "v2.1.295",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.295",
+        "source": "Claude Code Releases",
+        "published": "2026-10-08T19:48:38.000Z",
+        "summary": "What's changed Added onFailure: \"block\" for command and HTTP hooks: a hook that can't start, times out, or exits with an unexpected code blocks the action instead of letting it through Added Program…",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "Build a Lead Generation Website with Claude! (Claude Tutorial)",
+        "url": "https://www.youtube.com/watch?v=qV6Oo_ZlC2E",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "qV6Oo_ZlC2E",
+        "thumbnail": "https://i.ytimg.com/vi/qV6Oo_ZlC2E/hqdefault.jpg",
+        "published": "2026-10-08T18:53:40.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
       {
         "title": "v2.1.294",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.294",
@@ -1134,14 +1143,6 @@
         "source": "Claude Code Releases",
         "published": "2026-09-30T19:10:13.000Z",
         "summary": "What's changed Added a count such as \"2 of 5\" to the permission prompt when several permission requests stack up Added mouse support for the \"N more\" rows of lists in fullscreen mode: click one to…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "v2.1.285",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.285",
-        "source": "Claude Code Releases",
-        "published": "2026-09-29T19:27:30.000Z",
-        "summary": "What's changed Added CLAUDE_CODE_DISABLE_WEB_FETCH environment variable to turn off the WebFetch tool Added claude --desktop to open the Claude desktop app on the current directory, or on a session…",
         "tutorial_kind": "official"
       },
       {
@@ -1743,6 +1744,20 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.295",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.295",
+        "source": "Claude Code",
+        "published": "2026-10-08T19:48:38.000Z",
+        "summary": "What's changed Added onFailure: \"block\" for command and HTTP hooks: a hook that can't start, times out, or exits with an unexpected code blocks the action instead of letting it through Added Program Status Protocol…"
+      },
+      {
+        "title": "Build a Lead Generation Website with Claude! (Claude Tutorial)",
+        "url": "https://www.youtube.com/watch?v=qV6Oo_ZlC2E",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-10-08T18:53:40.000Z",
+        "summary": ""
+      },
+      {
         "title": "Stop Using Claude for Everything (Do This Instead)",
         "url": "https://www.youtube.com/shorts/wx3pj13dL2o",
         "source": "YouTube · Leon van Zyl",
@@ -2037,13 +2052,6 @@
         "summary": "We announced the deprecation of the Claude Sonnet 4.5 model ( claude-sonnet-4-5-20250929 ), with retirement on the Claude API scheduled for November 30, 2026. We recommend migrating to Claude Sonnet 5.5 . Read more in Model deprecations ."
       },
       {
-        "title": "v2.1.285",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.285",
-        "source": "Claude Code",
-        "published": "2026-09-29T19:27:30.000Z",
-        "summary": "What's changed Added CLAUDE_CODE_DISABLE_WEB_FETCH environment variable to turn off the WebFetch tool Added claude --desktop to open the Claude desktop app on the current directory, or on a session with --continue /…"
-      },
-      {
         "title": "We've launched Claude Sonnet 5.5 ( claude-sonnet-5-5 ). It's available on the Claude API, Claude in Amazon Bedrock ,…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#september-28-2026",
         "source": "Claude API Release Notes",
@@ -2223,13 +2231,6 @@
         "url": "https://www.youtube.com/shorts/9vKYKvzqQF0",
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-07-29T12:31:09.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 5 Review: What It Actually Changed on a Real Job",
-        "url": "https://www.youtube.com/watch?v=Gr_QNYJ1mFU",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-07-28T16:59:22.000Z",
         "summary": ""
       }
     ]
