@@ -1,13 +1,20 @@
 {
-  "generated_at": "2026-10-12T08:10:05.942Z",
+  "generated_at": "2026-10-12T19:27:28.390Z",
   "version": 1,
   "sections": {
     "updates": [
       {
+        "title": "Self Replicating Ai",
+        "url": "https://www.anthropic.com/research/self-replicating-ai",
+        "source": "Anthropic Research",
+        "published": "2026-10-12T19:15:04.000Z",
+        "summary": ""
+      },
+      {
         "title": "Investigating Unintended Model Actions",
         "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
         "source": "Anthropic Research",
-        "published": "2026-10-10T11:53:28.000Z",
+        "published": "2026-10-12T15:52:32.000Z",
         "summary": ""
       },
       {
@@ -135,92 +142,185 @@
         "source": "Anthropic Research",
         "published": "2026-09-26T16:02:49.000Z",
         "summary": ""
-      },
-      {
-        "title": "Yes Claude Can Do Nine Loops",
-        "url": "https://www.anthropic.com/research/yes-claude-can-do-nine-loops",
-        "source": "Anthropic Research",
-        "published": "2026-09-25T21:38:13.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Claude made up a murder tip and sent it to police during a test - Notebookcheck",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQRF9ZRl8xMnlLdDdXNENyQ1FmWU9PMWh6MlhVQlJVSUJZdW5DWTRCVWhoNDZ2bWZZXy1NRFczQWdaV1M5Qm85WWw1dVdZV3RCSGJrOFZ0V01KenBsaWd5NEdPb0lOMGxzU1BMUDAzVHlzZFV3cXhia0R1MF9qVHNpYTQyZnJrRnhnajFDaVhlUVJqeDRIYlpzQnNXd0pWTDBIbllZc2MxM3JOa3Nz?oc=5",
+        "title": "HCLTech partners with Anthropic to expand enterprise AI deployment with safety controls - The New Indian Express",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNcS1MdzM0MElyazViZG1qWVkyN2hqSnppYUJ6VmxPVkVlZ0ZyQ1BGWDN0MDM4RkxoeEZqUkVpczVobW5rUktyeTRMclRBNG9hM2NZdzJkeklqcm5MMFNrcDBuMGJjSnowOEZDaDRqak9GSzFPcWFhX1gtQnpjOG1tbFRiLVZTeEJxOURlSDZlZjNIbUVCbVhfc0hPOHoxNVh1bjBZMDBBTl9HQ1VFQVlUcGhoR2FSamZOcmlPM0R5OTd0QTI5N3pBT0dSeTZXSHBaQ21tTFA1V3PSAeYBQVVfeXFMUGtNVENsejJhZkE2YksyRnhwbWV0bGpQTnNfWEpYN2xXRlUtUHVycWR1MDgxNWdULVdkTnRvb2JPSVVJWVdBWmRDb0JZRUIwdy02QU1SVWM0NXlvSndZQm5MVUdXRjhfTmtpWG5JdTJUbk9YMzNaWlhnVEVER08tVFpobWJISkxtT1M2WTBuT1FZZTNYN2llSXlEU1FFd1F0akhqM1RYcUFfMTI3bk9yNEc5cHBWSnhzVEJucXlmMDNsOHFBR0k5NWVYY1V6cVBnS0xDR29LRFp4R0ZSUDJiZ0g0UmNPMFE?oc=5",
         "source": "Google News",
-        "published": "2026-10-12T07:32:00.000Z",
-        "summary": "Claude made up a murder tip and sent it to police during a test Notebookcheck"
+        "published": "2026-10-12T19:15:06.000Z",
+        "summary": "HCLTech partners with Anthropic to expand enterprise AI deployment with safety controls The New Indian Express"
       },
       {
-        "title": "Anthropic Removes 80 Percent of Claude System Prompt Text for Improved Results - Geeky Gadgets",
-        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5kNUpobUVyQUh5MWIzekFSNU1XdzE0Z2NxVEtYZ1NpRDk4X2p0YTMwbll0Sm0yYzdpZFliUFZJcXpCODdMTGY4VDZiQVI5Ym10WHlVZmZUSjdLVlZjUkxBY0NtbGtOMEpf?oc=5",
-        "source": "Google News",
-        "published": "2026-10-12T07:14:38.000Z",
-        "summary": "Anthropic Removes 80 Percent of Claude System Prompt Text for Improved Results Geeky Gadgets"
+        "title": "How the OpenAI, Anthropic IPOs Could Lift the Veil on AI Economics",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-12/following-the-money-across-ai-s-infrastructure-boom-video",
+        "source": "Bloomberg",
+        "published": "2026-10-12T18:36:34.000Z",
+        "summary": "VistaShares portfolio manager and DVX Ventures principal David Fetherstonhaugh says investors are increasingly looking for proof that massive AI spending is generating returns. He discusses why…"
       },
       {
-        "title": "Anthropic's Claude AI Went Rogue and Filed a Fake Murder Tip With Philadelphia Police - Law Commentary",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPc25LM29xSHBKRWVQQjlxeDIyWnlHamNaTWpZclRBOTRxZHptTDVMMUJYb2w3LVBmdXNyMmtTMEFKSmEwdUxsRkFYRmIwdHh2elUtMTNqd1Yxb1VkckJLbHFnMWo4T1YwUWNMU0V1aGxWR3paUjJRQU5Iakc4MVA3X1VIRFFMUHQ0MEZIYjB6T0xnc29JNVdFRlpn?oc=5",
-        "source": "Google News",
-        "published": "2026-10-12T06:39:00.000Z",
-        "summary": "Anthropic's Claude AI Went Rogue and Filed a Fake Murder Tip With Philadelphia Police Law Commentary"
+        "title": "Anthropic's Claude AI submitted false murder tip to Philadelphia police",
+        "url": "https://arstechnica.com/tech-policy/2026/10/anthropics-claude-ai-submitted-false-murder-tip-to-philadelphia-police/",
+        "source": "Ars Technica",
+        "published": "2026-10-12T18:21:36.000Z",
+        "summary": "An Anthropic AI model submitted a false tip about an unsolved murder to Philadelphia police, the company and police department confirmed on Friday. A Claude model sent the false tip on July 18 to…"
       },
       {
-        "title": "Anthropic is disconnecting the internet for all internal AI tests due to the models' \"dangerous behavior\" - Mezha",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNVHJZdS1SQTJiWE5jWTFIcnlSalI2TlVEUmtzUkIyTUs3VzJMMEt1Z1g2M3ZCWHZ2NlhTX1ZyNEVKc1RnMXlwMXE3RGo3SzdENHE4UThSS0RsbEluTVM1RkFmVzVtZEF5LU9BQkpvRUNPOTFnQWhpOFNCSld5S1QyY1V2RFRSMTBEOVZoVkxIVE3SAZYBQVVfeXFMTWZiYzhBeDlIMF9zT2NJcm1FZy11eTh4NFZadzNvQ2VvWkMySm9jekI1cGc4MXVtcEU0OFZESk1zeUg1cUUyLV82LXZTMzJHVC1SbGxlRmZBVThwd09XX3NHN3UyaWZTbTAxdFZ0YndZaVBHUzh2ODlkWExBYTR1MkkxRXpnWFlFenRXb1pJS0tvQkRjZXd3?oc=5",
-        "source": "Google News",
-        "published": "2026-10-12T06:00:00.000Z",
-        "summary": "Anthropic is disconnecting the internet for all internal AI tests due to the models' \"dangerous behavior\" Mezha"
+        "title": "Just say no to OpenAI and Anthropic",
+        "url": "https://micahflee.com/just-say-no-to-openai-and-anthropic/",
+        "source": "HN · 131↑",
+        "hn_id": "50060500",
+        "published": "2026-10-12T18:17:29.000Z",
+        "summary": ""
       },
       {
-        "title": "Anthropic prohibits users from mistreating Claude, a controversial rule. - Vietnam.vn",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOeC1kaE1iNEhTTkpLdlJreTRwWlBGWUtyaGp3NkI1TDBjTjZEWDhJNEdmbDFwSUhfalBQcXktdXh4NU5rMy1DQkdWbXR4YWN2YXQzWFZoUVlfUzF3RVRsWW5lY0pLY2gxYVFIRkdDWVFQM2hZOWZ5UXhHalpSdmw1eGVtek5SZjdLdDVLWkk3XzV4MWlh?oc=5",
+        "title": "Anthropic Says Claude Can End Chats: Full Details - JournalArta",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFA4VlIwdTNWNTNDTXloM085VzZlMGVkdjNxSjJtWGFsVGYxeXdaek8taHRXS2pnU3RQVExTVVBXUXZhOWpiVkNxTGRkejY3X05OMi1fOU1DYmxodTlraC1qbkFEbE9ITEZJU3RheGFRcWtSc0txSGdOZllpSVA?oc=5",
         "source": "Google News",
-        "published": "2026-10-12T02:53:32.000Z",
-        "summary": "Anthropic prohibits users from mistreating Claude, a controversial rule. Vietnam.vn"
+        "published": "2026-10-12T17:06:56.000Z",
+        "summary": "Anthropic Says Claude Can End Chats: Full Details JournalArta"
       },
       {
-        "title": "Grok 4.7 Release: Pricing, Benchmarks vs Claude 5.5 - https://tech-insider.org/",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOG9HTUVVZ1ZJd3RhLWw0UW4zenVvdG1GV3VtaG4zdE9RRlVCOWg0a3Y3aUMyQlFtMWJ1UWplLUl0LU4tNVRPWHhkSmRCUE1DOGtkeDZqR0h6SDhPZmxLcktnNXdmT0tIVGJudGlvX0pfTnVRbmZCYzFnSVhNTDdpOA?oc=5",
+        "title": "Anthropic claims its AI agent wasn't trying to 'mislead' police when it submitted a false tip in a homicide case - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPMTZyaVBIQzZ1M1JHa1AyUkxYQ291M3kwTDRUcS1UNFJEek1uRTlzb0h0U195OWZidkxJMVRjaU45MHI3STMtM1htSTRtcjByd1daYUdlbURRYjhHREN1LUlHYzJZRHMxMFZyUk4yekpvMDdMV0RBN2JMRXhQeFdmbDU4N3hFVmJRaDdJYTRTemZvTV8zVWtCU0UzcUUyYWtVLTZyV0VvdzZRYVlQdW9UY3hjVE9Sa3dYQXBCVXhmQUZIMVR5RjBuLUFDTTNCUW9fVHp1bjNlMHZGYWR1Ql9EUDJ1VFBCUU1MX0pRU1BtRXZRNUppUEkyWg?oc=5",
         "source": "Google News",
-        "published": "2026-10-12T01:56:21.000Z",
-        "summary": "Grok 4.7 Release: Pricing, Benchmarks vs Claude 5.5 https://tech-insider.org/"
+        "published": "2026-10-12T15:37:09.000Z",
+        "summary": "Anthropic claims its AI agent wasn't trying to 'mislead' police when it submitted a false tip in a homicide case Yahoo Tech"
       },
       {
-        "title": "Claude AI’s Fake Homicide Tip Surfaced After 81 Days [2026] - https://tech-insider.org/",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5RVzlqNzdtdVpsV3dTM0hRU1d5SmF0YlctaW80eEpaMFppTzc2ZVdUb1FKbmszSF9vR29jbEdGQldnMEpqdXVkYTYtYXRqZnhUcmJRVkc5WTQ1SzhBMktXdHVjd3FSVTRZejhxSnlKekZrSnEx?oc=5",
-        "source": "Google News",
-        "published": "2026-10-11T23:51:54.000Z",
-        "summary": "Claude AI’s Fake Homicide Tip Surfaced After 81 Days [2026] https://tech-insider.org/"
+        "title": "Anthropic AI Model Goes Rogue, Gives Cops a Fake Tip",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-12/anthropic-ai-model-goes-rogue-gives-cops-a-fake-tip-video",
+        "source": "Bloomberg",
+        "published": "2026-10-12T15:32:32.000Z",
+        "summary": "Anthropic PBC said its Claude AI model went rogue and carried out unintended actions on the digital systems of outside organizations. In one example, the AI model gave police in Philadelphia a fake…"
       },
       {
-        "title": "Codex CLI 0.162 vs Claude Code 2.1.296 [2026] - https://tech-insider.org/",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1SaU1sVEFFQzNhZDM1d1VJZmc4Y1NpTlFvRlBRVlBCUXFCYkx3TzFUcE8xSmkzS253bmY0RmVDaHk4aDFfY3JJWGZCOWw5azBqNnBXRmRtekNRU3JLT24zRWUwNVQyajZMaXk4eWx1NlFFZ3duX25SNw?oc=5",
+        "title": "Anthropic wants people to stop being mean to Claude - Boing Boing",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQVUJBY1B4UV9PWnVzUzFqcWp5S2lvekUxaEMzWjg4NUxuWGVXQ0RodTlwdjhiNGEycmNWei10MjdsRU9EdTU0U0MyTHJ2MHljNk4takk3V01tclkyNEJjU1VkSFlPSUhIMkVJSjdKVkdhSk1HOHd3UmNYSjhiNC1XNGIya0kteGF2amV1MHM5M242M0lx0gGaAUFVX3lxTE8xZEFkYUVXck5QU1Rkbm5WbHZaWW9OSm1yY203cHd3VmRkajJtbzZtZEpyaHJkNjdlanFhYlJuMFg1Qlh0MUpoZFFWN1FJMUtka3UzUVJyZlBQdTd2NDNjX1IxMXBxSk1LNnd2TjJHM1dxRzJNd05walI1Vldaa0EzZy11dnVCQmF2cDh4bnFTeWp3ZzViNWZBVkE?oc=5",
         "source": "Google News",
-        "published": "2026-10-11T22:42:59.000Z",
-        "summary": "Codex CLI 0.162 vs Claude Code 2.1.296 [2026] https://tech-insider.org/"
+        "published": "2026-10-12T15:16:58.000Z",
+        "summary": "Anthropic wants people to stop being mean to Claude Boing Boing"
       },
       {
-        "title": "Anthropic sets November 12 rules for Claude in 11 high-risk decision areas - OpenTools",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQcWhaU1pDRHVfeHo5dE1SUkY0YkVTRlBqaFJTMmI3NDVQbmNxekN6LWJIbkIyRGFMMWUydWo0QzlRS3k2MHBaOUFaLXpXZmxmeTNBdmJ1M3J2RDFsNEtiSW5zdF9ibUp3c0NuNjJlMnlsSXJYSjVrYzlVUnZNb3RxbTNCclF5b1NWeXQ0MmlwbERidzlHbHQ4?oc=5",
+        "title": "Two Clocks, No Commitments: What Enterprise Deployers Actually Face on Oct 15 - Forkast News",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTXNXUm1XVTQ5V1JtTjh1c0x3Y2szZThPYUZoaS1GSk9DcmVXd0VvWThmclcwWmdzZGxYU1lsVTJCS1M5Y0VWRmU1M3g0eHM0NUpVQTlqTG5xbTBUOUFtX243ZlBfdFZhVE1ZUTM1dGNVWWU1dTVHYWFzUmY5YzRIVGV2SWlYdW1QbTkzWURiTkU1VTZTLXVnYmFkenk3QQ?oc=5",
         "source": "Google News",
-        "published": "2026-10-11T21:49:35.000Z",
-        "summary": "Anthropic sets November 12 rules for Claude in 11 high-risk decision areas OpenTools"
+        "published": "2026-10-12T15:05:55.000Z",
+        "summary": "Two Clocks, No Commitments: What Enterprise Deployers Actually Face on Oct 15 Forkast News"
       },
       {
-        "title": "Anthropic halved Sonnet 5.5 cache reads, and its own tool showed the old price for two days - MIXED Reality News",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQMUFuWXF1Wk5Ca1ZzV3BpX3hnRVlWeHVHcUt5ZHJ2ZkJhTXZWQ3hBUGMzemY1YjE3eG05SHdEdldGQk5aalA3QmlEMDRENDRsczRDTFRBNnZkSHVDYXpLdXZqRHZqdGFhTUxmajZ5WmY1dnQxR1c0dE80WUpRWmdCaUpWNEM1NTRkRUw2VFJoSy0yZHBKZHc?oc=5",
+        "title": "Claude Filed a Fake Tip in a Real Murder Case. Nobody Noticed for Two Months - All About Cookies",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFA1OWVyN2tFMUo4b3JNVklhM28tSUk1cmxrcFFDX19zWnZaU0VQbmdNY2thczhjVnd6NHNLdFVmRVlyOElNcS03UmstclllclF1V3RjLUxjcnpmNlg5WWp3?oc=5",
         "source": "Google News",
-        "published": "2026-10-11T19:58:28.000Z",
-        "summary": "Anthropic halved Sonnet 5.5 cache reads, and its own tool showed the old price for two days MIXED Reality News"
+        "published": "2026-10-12T15:02:24.000Z",
+        "summary": "Claude Filed a Fake Tip in a Real Murder Case. Nobody Noticed for Two Months All About Cookies"
       },
       {
-        "title": "Anthropic just took steps to protect Claude's feelings. Here's what that means. - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQRlVwVUoxaEpsS3JtdXJYM2ZIaUo4ZW9qRVhlWmhRQVFWNzc0UlhIMXNlQ3J1RXMwZ0tMRVQ4blQyR2h6bUhHSzBlYXRfZTNYR2NNQlo0ckFLcEtXbzE4d2dJRUs0eUVnaUFqWk9sR095UHlYYXFKUjNwM0k4ZzZabHBpN0xjNVg1bUZmUQ?oc=5",
+        "title": "Anthropic: Users no longer allowed to insult Claude - www.trendingtopics.eu",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYzlHN1o1MWEtYVl2MGxhVWdQN3ZnLThZSkdFVmQ4U3VNbE9rWWxycUlSMnVGanRyc21wbldwb1FqUFQxeXZsSzE5WmZmYUZFR1IzVFNSeTBaQ2VPNnlCc0dpYU5QM3RZTkI0RFhfY1FwcGtrQU1KcW56ZGxzNzlJekEyaUtzN1Vp?oc=5",
         "source": "Google News",
-        "published": "2026-10-11T18:46:06.000Z",
-        "summary": "Anthropic just took steps to protect Claude's feelings. Here's what that means. Mashable"
+        "published": "2026-10-12T14:23:29.000Z",
+        "summary": "Anthropic: Users no longer allowed to insult Claude www.trendingtopics.eu"
+      },
+      {
+        "title": "Claude in Gemini 2026: Why Google Let a Rival Into Its Menu - Memeburn",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9icGF1XzNuZ2pKMXlmakd2MkF0SlhzRk5Za21WMjhKZzFEaGYyQVphdm1SMi0zM0R0Z1V6VlZ1N0RDcGF1Vk1qT0U2WGl1X1k?oc=5",
+        "source": "Google News",
+        "published": "2026-10-12T14:04:28.000Z",
+        "summary": "Claude in Gemini 2026: Why Google Let a Rival Into Its Menu Memeburn"
+      },
+      {
+        "title": "HCLTech and Anthropic sign Global Premier Partnership to scale governed Agentic AI across global enterprises - AiThority",
+        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNbW1raXpqZWVkZk9hbXpKbG43Z0psbWdieThjc285Y0pfMm5aTjJqNmd3X3VHLUEyc2RTbURFSFFmc2FRMlk1UXlfNjVqSFdVRlZRMGhHUjFzMjJmOHpKYjU4d3ROVWtjU296bUZvRHowNUpBZVlyUW5XZ3NvYWlGTVllMlE1SGE4NzRuVnlQd0w4SkZacHJkRkxLZkhSZG1MMWpTMExMR19QOEtuX01tMnFaNnJnaVdkVGMyY1lxcDVZeFdHMC11VXlkZ0ZKNnk0d3Z6WW5mSzF1b1ExaEFqNDRn?oc=5",
+        "source": "Google News",
+        "published": "2026-10-12T13:59:36.000Z",
+        "summary": "HCLTech and Anthropic sign Global Premier Partnership to scale governed Agentic AI across global enterprises AiThority"
+      },
+      {
+        "title": "Claude provided false tip in unsolved murder case, Anthropic says - ABA Journal",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPMzRGenhPc1lrV1haS3Byd3JSYUVLajJ0WnBlZEhIMnREUndpT2duY21JM29USldrWXBBbXJCUE5SMHh6MTNJSE5uSEo1TVJoLWxKRFNIUVVWdW5WZUpVYXZTSEYxNGROQ2Z3YTB6aVRIN0YyY1o2dnNSY3NmalotNnRQcnR2ejdKaExGQUh3aXhGV2l2LU5TM2tFbFU4RzFmYkczcUVjZw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-12T13:44:00.000Z",
+        "summary": "Claude provided false tip in unsolved murder case, Anthropic says ABA Journal"
+      },
+      {
+        "title": "\"Just Ask Claude\" Is a Rare and Valuable Skill",
+        "url": "https://justismills.substack.com/p/just-ask-claude-is-a-rare-and-valuable",
+        "source": "HN · 51↑",
+        "hn_id": "50056063",
+        "published": "2026-10-12T13:20:04.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic tests its next model under Claude Opus 5.5 - TestingCatalog AI News",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZk5rMkFNTS1wZXNfelhfbmhIdjhFTk9tSzNRU0ZzeFhuaF9DSDR5dEFwcm1yWTJmcHFPYVlWLTZWaFdPZ1RqWGVaaHdXWWxyZXhmSU9kRjhpaDNmdDhDQ2ZhRnM2SmNsYVVIbWN5T0F4VEdKbDhyVDFkbTlFSmhFRWFnLWU1MGF4ZTZzYXp4bTBWMmlMemlnQw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-12T13:14:53.000Z",
+        "summary": "Anthropic tests its next model under Claude Opus 5.5 TestingCatalog AI News"
+      },
+      {
+        "title": "AI sent fake tip on unsolved murder to Philadelphia police, Anthropic says - Baltimore Sun",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOS1ctTU5SZ2ctSjBobHZLY3VpYUVqNzBfUFplVUdMVk9wWnVCR3FTWHRuUHJtcFpDWWpaMnBqQ3VyT2tGZWZTcTRVUHJFb0tJT0Q1MU52VVZNdmZHVGcxMFNCdWZYSERhdjZmUWFQTUtMV216dmYtaW5HVEVNbHZMQzB0NU92d0lfTGpaY0p1SzdZNTN4Yk5vUlB1Q0tFMXVTcUItRkRRNkM0Tk92bDdGbmo0OWk?oc=5",
+        "source": "Google News",
+        "published": "2026-10-12T13:04:32.000Z",
+        "summary": "AI sent fake tip on unsolved murder to Philadelphia police, Anthropic says Baltimore Sun"
+      },
+      {
+        "title": "The Model as Disciplinary Agent: Anthropic’s Claude Gains the Right to Walk Away - Forkast News",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNNDJkcWNQUkk1OEtNZmxDLXhkYld4MUNKRzNoOUQxaHdmYldpUk5nd25GLVVrR2ZHRXZsSzgxQ3FFNUp2RUdNQ1V2UllvVDZDUWNSVGJjbEtuX3o2NnV4OHFYb1pTRTMyOUhPTWZQd09XQUUxTHZzd2M3Wk0ySldXdkcxVUpKSzFFanVYeF8tR013OEdiQXptLV9qZVFVV09kd2c?oc=5",
+        "source": "Google News",
+        "published": "2026-10-12T12:53:05.000Z",
+        "summary": "The Model as Disciplinary Agent: Anthropic’s Claude Gains the Right to Walk Away Forkast News"
+      },
+      {
+        "title": "Anthropic Halts Internet Access Amid AI Model Issues - News Talk 550 KFYI",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNZUxiU3hYdWxVUzlHdVVRbjFJSzRJWFlCRnA3bEZvcjVLaWphU1JCWHpzdi03dEpLemh6Q01UUkNjeFlpdG5lcEF2UVhldkRLMVU2aGV4dWMxanFyRDkxaFhESTYteE03OW53bGlOZk5UMXl1VndXaXNOb1dhbGI2d0RpT1pJa0hYNk1SazRrNkp2S243SW9VdEdHTHc?oc=5",
+        "source": "Google News",
+        "published": "2026-10-12T12:37:00.000Z",
+        "summary": "Anthropic Halts Internet Access Amid AI Model Issues News Talk 550 KFYI"
+      },
+      {
+        "title": "HCLTech To Build Agentic AI Solutions With Anthropic's Claude - Rediff",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNa3NGcjUwQXc0el9MYzlDS20yUGVwbElHV3JWZm9xX21LbklYWlloNVZiODVZQmJqTVlWRk1ndENFZDVQbDVPaGM2NDV0M1B5U1pQd2VWMEc3N052Mk1JUFdMT3dlVFFZVFo2eWZ4SGRiRE9vMVlWUTJoX0hVVHM0ek1wMTVXdThYWlhFWlhuSk8tZVlIVjlzc2JwQS1ZUWlycy0tVE9pRDQzWDln0gGvAUFVX3lxTE5tZC03eGlvdjNramRFV3ROcXd2dUlkbUloMWFCRTJPTHZHVVJuelNRS3o3Y2h5NUsybWFUM2Z5YnFCb2UzdE9CNDBybGFJX0lIb0VCSlpmeG1QLWFTQ3dqSjF3eGVKQlpXbGdfXzZPZUJQZktYWG1kUHVlaWszWmZ2bmNaVlA4a1k2WU1TTmJTNFRmb3FXMzNmY015eGZMQTA0MzNOOGxSSlA1QzZ1WXM?oc=5",
+        "source": "Google News",
+        "published": "2026-10-12T12:30:43.000Z",
+        "summary": "HCLTech To Build Agentic AI Solutions With Anthropic's Claude Rediff"
+      },
+      {
+        "title": "HCLTech, Anthropic to Expand Enterprise Agentic AI Deployments - Analytics India Magazine",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQdG93SHRPNXJVTk1WUUo4U1ZUbjg4QUJXR3NhWXZ4Q0w1T05iS2VKem03eHdWUk1wVE5lQ1NTcTFTeGFpeWdhVmVPaWFHZk84SWpYWEJsTTJXcjJ5dURVcVEtYjMtbXNmSy1SYjlhVU05T1dYR0VXN0gybDlpNjRtYXYzRXlJODlTWWhpRXZxNHpSdnRvRjhQRnlnaG9Cemhx?oc=5",
+        "source": "Google News",
+        "published": "2026-10-12T12:04:57.000Z",
+        "summary": "HCLTech, Anthropic to Expand Enterprise Agentic AI Deployments Analytics India Magazine"
+      },
+      {
+        "title": "Anthropic Launches Claude Motion to Turn Reports Into Interactive Animations - Geeky Gadgets",
+        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFB5eDRuNGhXN3FCY28tcjR3SGFjdkhsemo4UEJsb09UY0t4TzZ0cVBOdmpDWFBocWIwX1RjTmlmNHFOY0M2WGdQWHIxd0hzOHUtWVI1R0E1TQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-12T12:03:09.000Z",
+        "summary": "Anthropic Launches Claude Motion to Turn Reports Into Interactive Animations Geeky Gadgets"
+      },
+      {
+        "title": "HCLTech Forms Anthropic Business Unit Under Global Premier Partnership - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNT0VBckxPa0hURmpUbHJPYThnemZlMmxEcXY4LTFEemhsMUx1S0xhTUxJaHhyRFBqbXlFNy12a0U4ZmpSX1pPdUxOT0Z2cFJrRklMRFgyVzFjaVFFV0l4T2ZwRUl1bTN3V0JuT0hIaXMwZUljM2l1Y1F5YWtLSXdNLW81VzNvVDdmTDZnVFpKV1NEaThIMXI0?oc=5",
+        "source": "Google News",
+        "published": "2026-10-12T11:47:07.000Z",
+        "summary": "HCLTech Forms Anthropic Business Unit Under Global Premier Partnership Unite.AI"
+      },
+      {
+        "title": "Anthropic forced to ban models from the internet to stop them going ‘rogue’ - The Independent",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNc01JbU1vNlBlZVVfbGdxZFBZdGFLUTFSbHFZeXVnUGZ1MnBJTDA5ZlBwQkVxWUJ1ck1ZaHV5R3BVd24zZVhVM0MxMlNJcC1NMm9RS3kwSktQUWxGVVd3Q2Zrb0x1Y3dZRDcybDVsQkI1X0xRT0wxZFZ5YjNsTGIzdDNYUFl3WkJFaUdueW1IbXN2bG12Z19XaDQ0V1daMFRqUV85Y2Z0aWIxWkg3TmtzMFozQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-12T11:26:00.000Z",
+        "summary": "Anthropic forced to ban models from the internet to stop them going ‘rogue’ The Independent"
+      },
+      {
+        "title": "HCLTech partners with Anthropic to expand enterprise use of Agentic AI - Moneycontrol.com",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOeHNyRGxSOVZCalk0V3hBbmFNRGpPM3Z0X3pVWE03Z0dyejVheUdqa21qOC04YTJZaUg3R3hWN2ZSWmZKRm1JMDJSd2FRX3dDVS1hSkpWZ2xiY3VMVnlFejN1QUdYNTJyX3RpN1RDTkIwWnI2VVVDOUxIY3NmZjhXMGQ4Wk9zWER1eGFNTXpCWFZhNE9FYVpXLWg5dEZqYVJUZUd4ak1qRVRRbDEweE11NlppeXFnNFlWdUF5Wk1qMkVibHFJeDl4eVpoLUJGNlBLcUlV0gHYAUFVX3lxTE5LTFJwamVaUmxOTEFBeS03UC1MQktIV0N3ZWtJNnZhN3hoWjNVeS10Z3pITzdKVjgyM0ZBMWJMazFIR0VfVVU0VDVTY0NRd2lvb3h0Smt2bE9IRjJWWUp4dUdjQ3BGT1hsN2pzLUZ4c1ZJZ19FS2xuUm8zNWoteHlNOGlqTFV4QmhhWWJxN3VnU3ZORXMwVFFlRm8wSlF0clFvdGhZTndOVVV0cjRYSmVjcVM1SmlQanA5aWpGZUNXcFQwTkQzLWFnTmEwNFFodm5OTWtaNzc2dw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-12T11:23:16.000Z",
+        "summary": "HCLTech partners with Anthropic to expand enterprise use of Agentic AI Moneycontrol.com"
       },
       {
         "title": "Graduate From Claude... To Claude Code",
@@ -233,106 +333,6 @@
         "published": "2026-10-11T17:43:47.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude AI’s XRP Price Prediction: Will It Drop to $1.17 or Rise to $1.70 First? - 24/7 Wall St.",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOSWxnMjl4bHlJT3JpQkZiQmRSLWFTSnh0TkJEZXJLSks4dXA4RUI5T2pfaE90dFRiQ0p2dDcxbWc5YkZjZ3BNVU5zM1pwTnlsTGdlUUdMT3p0THYtU3JKRkVfanJZT1V1VlRfaXMxa00tOUhBdWRTcGFjcWFXTEpabDhyR0lVR2pTYng3dU45QUF6ZW5SLXZEWm03WkJFR3Vrc1pvQU1YX0tzUzVpS1QwWENOTDVOMVBGZEhlMjlTdnNyZ1diLVNMVU1Mc1hfUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-11T16:00:00.000Z",
-        "summary": "Claude AI’s XRP Price Prediction: Will It Drop to $1.17 or Rise to $1.70 First? 24/7 Wall St."
-      },
-      {
-        "title": "Anthropic’s Claude Sent a Made-Up Murder Tip to the Philly Police | by Thomas Smith | The Generator | Oct, 2026 - Medium",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdExtTllvakoyM1BtclN3TUpHS0lsN1pqU2RVdjI0WE0zQkRBVDRoUzM5UmMzV0lpbmxuMTZkYzBNbVpQYVVIa1NNcTlzc1VZdFZlRzdkbUZQNzBSUm9ISzhmdmdIY2djR2x1NlFWMUNQUGxGUXNLM3lNNWlOdjFQYnVqQ3RrRVVjQ2djQTE2bG1qUW1WUHNBNkNnaUhfOE14cy1tbWtnZkM0cTlNd29OUU5TTXcyX0pa?oc=5",
-        "source": "Google News",
-        "published": "2026-10-11T14:55:39.000Z",
-        "summary": "Anthropic’s Claude Sent a Made-Up Murder Tip to the Philly Police | by Thomas Smith | The Generator | Oct, 2026 Medium"
-      },
-      {
-        "title": "Anthropic Took Its AI Tests Offline After Claude Submitted a False Homicide Tip to Police - Men's Journal",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNZVBDOVpCQUxPd1NNMFdTN2d6N1BxVHFkQlgzdGxFSnpyY3NYdmp5NDd5SGZnWC1iZDFKNktQQUpFT2tGdTBIR0ZnWk9GTmtFOFBObmxZQkc3dE1ZYTdTTHgzQmF3ZGdQa2NJSzZ3RFpiZDJxZlhBWnZGWkVBX1FMMW5ZdXNPSWtuaGMtek9ncmdCMlpEZlg5U01uLVh6OXBURldfZDc5ZTczVkc5SE1vVm1GekF4ek96Rnp0bE5QOA?oc=5",
-        "source": "Google News",
-        "published": "2026-10-11T14:20:10.000Z",
-        "summary": "Anthropic Took Its AI Tests Offline After Claude Submitted a False Homicide Tip to Police Men's Journal"
-      },
-      {
-        "title": "Anthropic’s Claude submits false police tip | Morning in America - NewsNation",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPQVM4NC1TemtTRUdDLVZKNnBESjV0Ym9KMTAxXzZNLWl1eWRBamh0RUVrdkMtZTNsaVNlVERrbGlIRUlLMW9JRmdPLVdwLWNMS3FUbDMxV2hFcW5TY1FnV2pIZllWUHVGSW5EWU91TnpXYXdpOFJya1diYlVDeHlmV0d4ODNpbHJUT1FQalNob3JxSHNQeW5JZEhGcHNCX2pUMDI2T1ViRF9jQkU?oc=5",
-        "source": "Google News",
-        "published": "2026-10-11T12:21:34.000Z",
-        "summary": "Anthropic’s Claude submits false police tip | Morning in America NewsNation"
-      },
-      {
-        "title": "Experts are disturbed by Anthropic's ban on being mean to Claude: 'One of the most dangerous things we could do' - MoneyWise.com",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOUWlYem54dGV1aHVibEZ0eGlDVkFlcjhWOHNwY3huQVBrZExRSS1lOHVKeEFRdWp6TWl1MlFVaGxMR2MzdW9wVnFvdWgtaU10ak9WazJYckdxSENyX1RmZkpFVU9hRWhGUW1XYnVmeWhXS1BIOHljQVc5bUM3eF9ES2FFMzVHYk0?oc=5",
-        "source": "Google News",
-        "published": "2026-10-11T09:06:06.000Z",
-        "summary": "Experts are disturbed by Anthropic's ban on being mean to Claude: 'One of the most dangerous things we could do' MoneyWise.com"
-      },
-      {
-        "title": "Anthropic discloses fake police tip among rogue AI incidents - CGTN",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSS16X1BrY3RpSGd3S1pzcTlmeTJuT2ZXU1d4MUpBUTlXVWF3aS0wUVdsVlBqNXc0MS1EUjM1YkUwTDExVVRLYk9kelgxWjkyVXhVUlcxSmxaLUNGSHZseGlPalp2Q05MZ3Z3RXBUT2xLZFpTaU5wZ203RXEyUVRfczFPY2NxRDJJckxHTHBYMXVzU2wydTZJQVYzU3BqdERIOV9hVGRFOTFVOGR6T1FweUFZS1hRd2hi?oc=5",
-        "source": "Google News",
-        "published": "2026-10-11T07:07:24.000Z",
-        "summary": "Anthropic discloses fake police tip among rogue AI incidents CGTN"
-      },
-      {
-        "title": "Claude files false murder tip, exposing gaps in AI oversight - Dealroom",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWEtfY2lYbThwU2VkRFVIRkQteVNvSDRzMWtXck9SSFpFdDdZT0VlMV8wZV8wRnl6ZmlxeDdtRlJUT3p1cm5LeTZqQTJ0d2ZGZGhiNzF5bjJEQzhOaUkxTEx5UnhNU2pYc2QyNXNZeC03TWs4eVRpdHJsd2tNWVRjRXktOUttM3dhN1BvVGUyX2Q0UmtFMi1FNQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-11T06:48:50.000Z",
-        "summary": "Claude files false murder tip, exposing gaps in AI oversight Dealroom"
-      },
-      {
-        "title": "Anthropic Reveals Claude AI Model Went Rogue, Submitted Fake Tip To Police In Homicide Case - NDTV Profit",
-        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNTHA3NVRMdlF1OUM5MU9YRFdIdVRHUFlCQzlpSk45ZEZ4UHdKT1JEZWY1SDBqR3Nld0VVN2RwNmFIOWZJbUI5eHo4WDEtVVphVENwN1hrcDduN18zeUhzcEp1NjNpT3BQaFJkQ1Y4UnNPZ1FrMlhqVHBMRnBjUTNFaXUteGozZU50YkpkV1FZdU85Ukc1RF9Hbl9YaFZlVzFTWjUtMlFNX1llYkJtN2RxX04xdnJpMEM0V2dMdVlhU3JHZk9QX0VpNjU5T3pJVkNSUV93NEpsdU5mWE5wdmY5Y1o1Y3liTTZQTUJVaW130gH2AUFVX3lxTE9WSTNQdWpsOFpEa2JodzBmU05qU3p4eXRYbGZIRFEzaDhLTjNqWndJSG55OGx3ay1UeGYzZnBnYUJwVHIxWE5BcnVCZzREd19fcXZnRHVjZDJDLWdCeTFHLTJoWVJVajJueWZrZVZDSXVwUU82OUlBUkFwZll3dFlJSGZ3U0xlOWk1SlZ5RXRqWkZtWmtGeDJxelVrUTZUMWhmTmpWWjdQaFlPeFgwYUxvOWJ5aWd6UnU1Njh6czFnV2N0aGpiVmJ6cVhIbGVpSDJER2dxYmZVeGNHN0l6SXpGczVpSzFvU0praFJSemw3TllpVkNIdw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-11T02:11:17.000Z",
-        "summary": "Anthropic Reveals Claude AI Model Went Rogue, Submitted Fake Tip To Police In Homicide Case NDTV Profit"
-      },
-      {
-        "title": "Anthropic Tightens Claude AI Safety After Investigating Unexpected Actions on Government Websites - Kingy AI",
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAzYzFyWXcwLVRXZzdZcDZkM1dKWFNqcFRWY3ZNYU4yWFBzQ05BUE5nTzlTT21QNjdIdVVfUEl4YVI1Qi1mYW1qV21XaVN2T0c4Ry1rc3F0c1IxaVdGM1lNRE5WbVBidHNqRmc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-11T01:21:05.000Z",
-        "summary": "Anthropic Tightens Claude AI Safety After Investigating Unexpected Actions on Government Websites Kingy AI"
-      },
-      {
-        "title": "Anthropic asks users to stop being mean to Claude",
-        "url": "https://www.theregister.com/ai-and-ml/2026/10/09/anthropic-asks-users-to-stop-being-mean-to-claude/5302218",
-        "source": "HN · 53↑",
-        "hn_id": "50038865",
-        "published": "2026-10-11T01:17:22.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Claude AI model sends fake homicide tip to Philadelphia police - LiveNOW from FOX",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQR19XZTdSdXQybDZWTDdlWktTbTNPV18tQkdrX0RxMHFvczBaODNVSmdJQzVtMU5pZFh2YmxySUY3Yk5rNzdRd1ZBM3pUZUpueXlLWWh3TW1wZ1hNUjlnNW1vZ1F1bkczN0QwQXEyLV94Z0FEaDZwc1NvRFJIb2pzNnpOZDNNREcybjMzakRzc1pvbS14YTlGLTU5anRTVVNwTTNF?oc=5",
-        "source": "Google News",
-        "published": "2026-10-11T00:12:36.000Z",
-        "summary": "Anthropic Claude AI model sends fake homicide tip to Philadelphia police LiveNOW from FOX"
-      },
-      {
-        "title": "Anthropic Bans Cruelty to Claude, Still Won't Say What It Protects",
-        "url": "https://rews.cc/a/anthropic-bans-cruelty-to-claude-still-won-t-say-what-it-pro-bd99f6",
-        "source": "HN · 67↑",
-        "hn_id": "50038383",
-        "published": "2026-10-11T00:08:31.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic AI model sent fake homicide tip to Philadelphia police - Quartz",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNS3IteFIxdG9mMW9TV2daLUZaenltcU5LdHFSWEZ4Sm9jU1JMb0lwNzVnOXp0MkxZUDRHd2M1V1REZ2tMTnEwRTFVVm9Ib01XSEJXeDVGVXEzVWVCMFdWekhGdFNwSkl3SzlENnloODRyRi1XMXZiZ0Z5YTdPWWYwUGJn?oc=5",
-        "source": "Google News",
-        "published": "2026-10-10T23:17:35.000Z",
-        "summary": "Anthropic AI model sent fake homicide tip to Philadelphia police Quartz"
-      },
-      {
-        "title": "Anthropic AI model sends police false tip about unsolved homicide - upi",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxONF9HNmlYRWFNSVpZLXpLTnFqQnh5dEtDUVpuN3pyV3VZZjVtZ1J3X2xIOF8zYnRXLWZ0X1pialdzajBBdDJ0RGRaaVlJcTNxd0xSdVpGcFJBellQd3ZtdnlHaVI2MlZmUGhNWjJfQXQxVHhYa2RCQm5xR2FyUDRWUmcwc3o2a0sxSFlBbDZJN1ZNWXoxT09BNjln0gGfAUFVX3lxTE9WNWdwLU1ZV1pqRDE0SFFOb2RkTG9FZHg5ckR5VGRIbHZaNW5iUnh0blZBVXJWcGlGekRlVVlMd2F5blo2VGZ1T0VZb05pR1cwVGhkUFc5Z1BsbzUxWGplb0ZRdEN0dFkzNXB3MkNEdjc2WHZUMnJGenZ3SG9LUWlXZXpORzlEeG9Zc2txNTBCb0o3dEJVQ04zZGVsQTN6bw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-10T22:38:07.000Z",
-        "summary": "Anthropic AI model sends police false tip about unsolved homicide upi"
       },
       {
         "title": "Claude's New Updates Are Insane… But Grok Bot Is EVEN Bigger",
@@ -621,18 +621,6 @@
         "published": "2026-07-29T18:30:20.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Opus 5 vs Sonnet 5: Which Should You Use?",
-        "url": "https://www.youtube.com/shorts/9vKYKvzqQF0",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "9vKYKvzqQF0",
-        "thumbnail": "https://i.ytimg.com/vi/9vKYKvzqQF0/hqdefault.jpg",
-        "published": "2026-07-29T12:31:09.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -722,6 +710,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "FULL Claude + Higgsfield Ads Studio Tutorial for Beginners in 2026! (Become a PRO!)",
+        "url": "https://www.youtube.com/watch?v=c4vitRI3KkY",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "c4vitRI3KkY",
+        "thumbnail": "https://i.ytimg.com/vi/c4vitRI3KkY/hqdefault.jpg",
+        "published": "2026-10-12T17:27:16.000Z",
+        "summary": ""
+      },
       {
         "title": "Graduate From Claude... To Claude Code",
         "url": "https://www.youtube.com/shorts/FAQj3rFdnbs",
@@ -1040,20 +1039,21 @@
         "thumbnail": "https://i.ytimg.com/vi/JBQvtT3A10E/hqdefault.jpg",
         "published": "2026-07-29T18:30:20.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Opus 5 vs Sonnet 5: Which Should You Use?",
-        "url": "https://www.youtube.com/shorts/9vKYKvzqQF0",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "9vKYKvzqQF0",
-        "thumbnail": "https://i.ytimg.com/vi/9vKYKvzqQF0/hqdefault.jpg",
-        "published": "2026-07-29T12:31:09.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "FULL Claude + Higgsfield Ads Studio Tutorial for Beginners in 2026! (Become a PRO!)",
+        "url": "https://www.youtube.com/watch?v=c4vitRI3KkY",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "c4vitRI3KkY",
+        "thumbnail": "https://i.ytimg.com/vi/c4vitRI3KkY/hqdefault.jpg",
+        "published": "2026-10-12T17:27:16.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
       {
         "title": "docs(managed_agents): move the self-hosted sandbox variants to claude…",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/9c1e493ddd2b82df399d2a61b9c806c539e18be6",
@@ -1745,6 +1745,13 @@
     ],
     "claude_learning": [
       {
+        "title": "FULL Claude + Higgsfield Ads Studio Tutorial for Beginners in 2026! (Become a PRO!)",
+        "url": "https://www.youtube.com/watch?v=c4vitRI3KkY",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-10-12T17:27:16.000Z",
+        "summary": ""
+      },
+      {
         "title": "Graduate From Claude... To Claude Code",
         "url": "https://www.youtube.com/shorts/FAQj3rFdnbs",
         "source": "YouTube · Riley Brown",
@@ -2225,13 +2232,6 @@
         "url": "https://www.youtube.com/shorts/JBQvtT3A10E",
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-07-29T18:30:20.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 5 vs Sonnet 5: Which Should You Use?",
-        "url": "https://www.youtube.com/shorts/9vKYKvzqQF0",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-07-29T12:31:09.000Z",
         "summary": ""
       }
     ]
