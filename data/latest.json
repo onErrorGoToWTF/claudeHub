@@ -1,8 +1,22 @@
 {
-  "generated_at": "2026-10-13T08:36:07.268Z",
+  "generated_at": "2026-10-13T17:11:26.982Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Redesigning Source Control",
+        "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+        "source": "Anthropic Eng",
+        "published": "2026-10-13T16:27:06.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Distillation Defenses",
+        "url": "https://www.anthropic.com/research/distillation-defenses",
+        "source": "Anthropic Research",
+        "published": "2026-10-13T14:34:43.000Z",
+        "summary": ""
+      },
       {
         "title": "Self Replicating Ai",
         "url": "https://www.anthropic.com/research/self-replicating-ai",
@@ -15,13 +29,6 @@
         "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
         "source": "Anthropic",
         "published": "2026-10-13T00:18:23.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Distillation Defenses",
-        "url": "https://www.anthropic.com/research/distillation-defenses",
-        "source": "Anthropic Research",
-        "published": "2026-10-12T23:54:41.000Z",
         "summary": ""
       },
       {
@@ -135,191 +142,183 @@
         "source": "Anthropic Research",
         "published": "2026-09-28T13:18:19.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic Infosys",
-        "url": "https://www.anthropic.com/news/anthropic-infosys",
-        "source": "Anthropic",
-        "published": "2026-09-28T03:20:50.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Anthropic Is Betting Its Enterprise Future on Engineers Who Live at the Client - Startup Fortune",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNc3NmSEQ0ZGNMMU84NE01ZUtsbHdfR1Rtb1ZSd3JjV3BDT09mTm5ZUklBdkJBc0RYRjFkRTIwUzhHNmhoSEVHeFRLdmNEaXBMMXY3VkpWMGM4WUR1R1BReXFoenpmMmNud1JNVmF5MVc5M2tCYUxCWHlybjFXQ3A2VHpLV3VYb0VzZWhWM3VmUGdGS01NVG1xaHAzNFVCU0lFT29IMHNqbDBfdw?oc=5",
+        "title": "OpenAI's AI agent platform is used by twice as many companies as Anthropic's, new VentureBeat survey finds - VentureBeat",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPZlYwdVI2WWI5aFhaN3NoS2llUko2VmIyckttSE1pWW44S0ZDSGlybC1MTFdfUFYyS0VFRXg4SjliU2N6RTBWYVhNSk9MU2dCU3FPRlMtdElyT19fUTlNNjNFRkVYNGlBVENLX0VjREJYNjFSMDF6dHYtVHlkSVZzMC1MeWdIUDBXLUJuSkh5bW80VU9xVy1uQjBVc1J3cjZUMzY2WnNXVzRMTUlYVW5VUUVKSVByOFc0eENsNDJPbE1tUkw2dnZJX09Pdm5sR2dyYTdhQms1OEw?oc=5",
         "source": "Google News",
-        "published": "2026-10-13T07:35:31.000Z",
-        "summary": "Anthropic Is Betting Its Enterprise Future on Engineers Who Live at the Client Startup Fortune"
+        "published": "2026-10-13T17:05:00.000Z",
+        "summary": "OpenAI's AI agent platform is used by twice as many companies as Anthropic's, new VentureBeat survey finds VentureBeat"
       },
       {
-        "title": "Anthropic has bigger problems than Claude's feelings - The Straits Times",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQOWxaeXJQRGFiSHBtb3M2YWJCQmJpYjhMR2UxeFg3Zm8wejRqWWhHZ1Jvc0ROWVZqUDhKTFZHUHQzZmtZNXZDdDg1ZEhmTkEyUU1tc2swWVluREZtSDVQeTZQTnpRQlozZjd6WFR6RVNHRzUtNWJaMEtKeVpkWnF0NWlUaHZYa2d3eXExZklKOFRDQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-13T07:30:00.000Z",
-        "summary": "Anthropic has bigger problems than Claude's feelings The Straits Times"
-      },
-      {
-        "title": "New safeguards sharply reduce AI distillation attacks: Anthropic - The Straits Times",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQd0Rhb2ktQV9pY2l1elVrQ2FOaFhtTmNJSENyanpCSG85QWZHNHVGa2VVSlU3QUgwWFRKSE5pV3A4dmY1bE9LeXBzWDdTS1QzQXN6aHhmbS1ZVFIySGg4QWdFTktWUXZQcmdoc1Bmd0w5WmZxbmVvbDljSDFkaHhGRDBuNG5WMTM1d2dWVkM2TTMzN2F0dlBKcnRsRlpwRWhLWjF6M2daY0dkZ2RIWk9Rb05n?oc=5",
-        "source": "Google News",
-        "published": "2026-10-13T07:25:00.000Z",
-        "summary": "New safeguards sharply reduce AI distillation attacks: Anthropic The Straits Times"
-      },
-      {
-        "title": "Meta’s Muse Wonder Matches Claude Fable for Less - trendingtopics.eu",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1TV2l6VEYxcGtSSU9rXzU3RFdDS2xuenJRTGxNc0x4bUtBS3BCQUJ5aW5kTkVwXzdacHhBNHV2cTJ6aWxSdUczT3BDRmN1V0lWU1dCNHhmbkVOc0FRYXhhQjRVQk1jQXhkVE5RLTRqVUE?oc=5",
-        "source": "Google News",
-        "published": "2026-10-13T07:00:59.000Z",
-        "summary": "Meta’s Muse Wonder Matches Claude Fable for Less trendingtopics.eu"
-      },
-      {
-        "title": "Anthropic Strengthens Defenses Against AI Distillation Attacks, Cutting Inference Data Extraction by Up to 99% - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9DVGpwNWNyc05LTUNlWXd1OVhZUndUMVd4WW9VamdYeVVrRHVfTHhDOGxMbUdFUlpfRXRpc3VWVURJbnhhWDBsOU40TjhYdWhCX1BoLWRmTjdaMlJrQjM3Vk9KeEpmT0JmWVFmaVhVMmdRbEhqc3c?oc=5",
-        "source": "Google News",
-        "published": "2026-10-13T06:25:00.000Z",
-        "summary": "Anthropic Strengthens Defenses Against AI Distillation Attacks, Cutting Inference Data Extraction by Up to 99% BigGo Finance"
-      },
-      {
-        "title": "Claude sent Philadelphia police a false murder tip — Ars Technica - UA.NEWS",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSjdhUWQzc0tCX2M5aG9ER09kZy1jVzJMSFFxYURmWU0ta285ZVZMaGYweHd4V2xNVnh3NTdIN2RRbGdxcnJtamxvVGJndGJpTjhScDMtekdrbFM3NmN1bDltVnRmWDZFVEVnQ2lzSTJBdk5BTGF2Ty1PUGpnbWVJQS0xMFViX1dJX2puNzFEWG84dkZHdUxyQkpzQ0NSeFlwVmFCRG03ckhHTEE?oc=5",
-        "source": "Google News",
-        "published": "2026-10-13T06:03:09.000Z",
-        "summary": "Claude sent Philadelphia police a false murder tip — Ars Technica UA.NEWS"
-      },
-      {
-        "title": "LG CNS Secures Anthropic's Top-Tier Partner Status—One of Fewer Than 50 Worldwide - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9mOTVxTER0SEMtY0lRVnd2eEFWUU95RlBodTlVeVpwWHg4TDg0ZVRoVVJhalJveE84QUxwQURXQmwyc1gzNEdXeUl3aG5UTXd0OXJaNm1NU1k4LThXeEVDX0RjcUNDeFhZbG5mT3RCdTVDWEVJMkE?oc=5",
-        "source": "Google News",
-        "published": "2026-10-13T05:55:00.000Z",
-        "summary": "LG CNS Secures Anthropic's Top-Tier Partner Status—One of Fewer Than 50 Worldwide BigGo Finance"
-      },
-      {
-        "title": "Anthropic strengthens defences against distillation attacks against Claude, cuts data harvesting by upto 9 - The Economic Times",
-        "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQVlZSOVk1cmoxdzdneDhKT19JX1c0YW1XV2lBTVF6aGNraTZERm5Tc2x5dFV5NFNodGdkb1FhSkNZbjNvTThqYUZlN2ZVOEtua0N4Z3UtcmJIQTlfUTB1alZjNjAwdExpcFhpMUhoYVQxQTR4S0dWYjdVd0tvbVppVndBYUxURmYyMkFjM09qNmxPaXlOWFdseUVQMGdyM24wbkVRRy1nNmd6aEhIWUx4aW94N1ZxLU16Y1pUajliWWQzQXpVQ1hZR1dnNmRzQnZPVG42eC0tVnVYb3JhTUxCcTRUSlRiTzBVYUNJNkpCYUFzVkNqU3hoLXMyZmVmaVVmRlVFaDdRUFZBZ0FnSDVMV3ZpR1E2bDF20gGeAkFVX3lxTE5qZWQtcFZwY2xyZm43OF9kTF8tZTdobXBYa3Vob25iT054T2dhZXlPZkJsWks2ZzREYkU4UUNieUZQUGFmakREckplX0RGcmFlQXJMTHdwaDZZZ0UzTG1Kb2Vpbll1c3ZoOHZYenVmalBHcFhTYlBWeXkzYXJHNTJIM3RKSG1SWVI4SUgwaF9UX3V2dUk1QzJIZVhtak83YzdUbXRLUjU0d3JrbU1VLWpWVV95cDZrZzVSUVc4NlBBNlEyNEk4MklSa1A0eDVFaDA2MjNhazlhZmdqMW1mcnhDTmVucVBRNDliRG1LX0hFZEZjajlPaXZJYkxoMEc0a2ZxMzg4YksydEloajJGanZRc2VfX09UUHlTUE95aHc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-13T05:24:51.000Z",
-        "summary": "Anthropic strengthens defences against distillation attacks against Claude, cuts data harvesting by upto 9 The Economic Times"
-      },
-      {
-        "title": "Anthropic launches fastest and affordable Claude Haiku model yet - My Startup World",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPR2NKLW5NdjdqVFZVZVptTWg0MVNhYlFucFE2WXlybUw2RE9hMUVvV0R6aUlyRGtxN3NQS1lPd2JxRW5ERGF6a0x1dVBtRzZOeHpTQ3pOSU40Tk55SXRBa2VlN20xRmdtOWFZOWoxZjBPa2YyNm1salpuMjFLSVhqTGVsWUhWUWdfR3N5RHNjT1JsOGF5UEV3dg?oc=5",
-        "source": "Google News",
-        "published": "2026-10-13T04:42:09.000Z",
-        "summary": "Anthropic launches fastest and affordable Claude Haiku model yet My Startup World"
-      },
-      {
-        "title": "Houthis used Claude to develop missiles, test-fired rocket: Anthropic - Business Standard",
-        "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNS1pBZXFfUThVbzNtcUNUUkhFdV9yRGxlNG8yZFo4MEo5QXFzN0NSckVjbEN5MHRqRkV6VnJUeHlzMXJnVHg0LVp2QUxUdVdIV2pWVmRLeVdUNUM1LVhNNHE0N1NDY2FtdjJwS0xEQVpXVldJOXZQNXB6RWdpaFRUdHJwNWxET24xRy1adFJXZUFvcFQtRXZCTDZnTlJ2b2d5elJQTU9vVEQ2Nm02LUhkMDZFb3YtRGQ2Q1RSaUxNM3FmX0VIN0hXVW5aMWZuY1V6WmszLTZZUFJWMG5HLTFxbXRPTFoxYmtINTRLT9IB8gFBVV95cUxQeG5CVG1jZVlJa2ZDdUdFZFN3ZVIxQ2FZYi1Ia21LbHA0VjAtYVdYZi12Sl9BSVZ6c1RUM0lwU2VWWW9sLXBLUGtRelRIaFFKOFpUWWhFa2xrRHVlNFFNOVdSdUViYXhUdF9HSnFyYzhpR0IyalVYbEpVSWxRWUlFMDRwY015QjRtUDRHTWRKZmV5ekdiZUJCQ0tTOVhPT0kxdTFycDVodTNXdldqRXVVejU1Z1lpRHd5TXk1a1YwVldBUF9uUEJNVEphUFpFLXZmVm40amZmdGljQ1AzZ0l3R2RIN0NBcE1fMmJuNlRBR3RKQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-13T04:25:19.000Z",
-        "summary": "Houthis used Claude to develop missiles, test-fired rocket: Anthropic Business Standard"
-      },
-      {
-        "title": "Anthropic cuts Claude AI model distillation attempts by up to 90% with new safeguards - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQaVllWW83WDNtTGx5QTVBRzZvWHl1UVIxLVl6bFg1aUNKZnRZekd5VDdyckxnQnRVTnl2WVNhOFpfVzdtcXpSeGVhM3g4NC10bzVSU0pPc2lzbVlWRExQX0h1NFdoa19USEx4WGlBUGpFOHR1X19vdTFRZFEtUW9ZckpiMmhOa3MwNElQcTJkLTFkWnYxOVRnaThZVHFKY2pLZTgtUnYzUXVHUTRQWTZwdUpMYnE0XzQ2a2ZKMFpDdlN2YW9lbllmUdIBzgFBVV95cUxOa21nMmZNVlg5ZnBQRXhOQUY3U203d3Mtcl9hemRFWmRzTllVNE1Ud1RBTWhvcTJ3QTg2NTlTSHhpd1Ixdm4wOVFUUFJFM2FmSkNsRmluOGtHd2dfb2JBZVNPd0VjT3NPUmhlOEFENXhDcmZFNmMySzJyWnRBNDFuTGRpR2hnclJqTlVrcVQ4VTNnTmdiN3BrenNqZDVMWWJMdVFCMDBKdC1xdWYwVzJZY0VHU1dwYTdHRFo3SGtVXzEzMGo2MlpSNjQyUHdyZw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-13T04:22:19.000Z",
-        "summary": "Anthropic cuts Claude AI model distillation attempts by up to 90% with new safeguards Firstpost"
-      },
-      {
-        "title": "Apple readies HomeView hub as Anthropic tightens Claude rules - Fox 10 News",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQM01vWFpnUUE2NHNsNUJiX2pZVTQ3QUZsdkJIN0hmQko5MG5LM1lKTmRER0FmTXlHSE50VndSTkQ4LTB4ZWlBbFNqSldtTWRqdGlCODR0VjYwanNrQkZodnN3eUY3YXp4eG1KdUdjYmx4WnVlc0gzc1UwdDluUGtSdldiU2MyX0U4UnA5eGJSTEdSY2EtNkt0a2h30gGuAUFVX3lxTE1WMnRrS25hRml4d2E3T0F2b2J0aGFUR1Jtdk1Td3BDTVAwVFd5LUswTXZqYWNvbGlCb3hIQkFYdzVHcTlPeXk1Rkk4WDdDa3UycVdlQU41MHBhNUdKV29yQndMU0xEdnhON1hzamNMOE9HcHBYWWhvQXZlZElZdERfUFFscjltMXFtd29mLWRYNkJoVUNWNzltdGN4ZGxFSXlOaWJZS0psOUxQYk0tUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-13T04:20:00.000Z",
-        "summary": "Apple readies HomeView hub as Anthropic tightens Claude rules Fox 10 News"
-      },
-      {
-        "title": "Apple readies HomeView hub as Anthropic tightens Claude rules - fox10tv.com",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORTFKTlhhanlrSW1pdmxzdjdWSlNHTUJBOEVMZ3RRcHFwWmNLVU4yYmI0bEZWeTZvbzlXOEhaUXpRUmluWW5uSDM4UkFGOHVLM2NmeS03X2ZiMERwZXRBOTRIQjd1cWdJRkdIX1Y0TmJkYUVxci1XWmxNR1AwY3kzSlU4MmRsN0J6NmNMSGx2aU5qVFhHVkgzdEhGSmV2bmxvS2c?oc=5",
-        "source": "Google News",
-        "published": "2026-10-13T03:41:00.000Z",
-        "summary": "Apple readies HomeView hub as Anthropic tightens Claude rules fox10tv.com"
-      },
-      {
-        "title": "Anthropic Hunts for Australia Data Center Deals, Says Envoy",
-        "url": "https://www.bloomberg.com/news/articles/2026-10-13/anthropic-eyeing-data-center-investment-in-australia-envoy-says",
+        "title": "Meta’s Muse Wonder Takes Aim at OpenAI, Anthropic",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-13/meta-s-muse-wonder-takes-aim-at-openai-anthropic-video",
         "source": "Bloomberg",
-        "published": "2026-10-13T02:56:42.000Z",
-        "summary": "Anthropic PBC is looking to invest in data centers in Australia as the artificial intelligence company scales up its build-out across the world and expands capacity within the country."
+        "published": "2026-10-13T17:02:00.000Z",
+        "summary": "Meta says its new Muse Wonder model has frontier-level capabilities, marking a major milestone in the company’s AI overhaul under chief AI officer Alexandr Wang. Bloomberg’s Riley Griffin spoke to…"
       },
       {
-        "title": "New safeguards sharply reduce AI distillation attacks, says Anthropic - Business Standard",
-        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPcWh3QV8wUWlXYk1GbFlDTVlyWTM0emxmeFdKR2V6bmdDOFZCeFB4dW5QME8zNzF4QXBmLU9vUm9DbEJRUEdhVmJCZHcxRDNIRmxzdTlQMjV3bTNVa1k1Y1dXN3B6Y3JvNEljWmI5U2lWUFJ2T3Ywa2ZiMkVQOGhSX09jQ3pDdlNQc1B3Y29ma0FDRGFFWncwSHNuNjVxVU5FY2JJRU1mNFNobVRlNUpiYTJtaWNJblc4TVFvX3djbGxrRFVGWC1uQWlJVW5lQ3hEMmNMMkxJcEJxOGVVVHBteTdzY2RFWm1LeEt5dm9n0gHzAUFVX3lxTE52UmVVZVBHaGhzNzBfdnd5VWlNQlNKdVZvX1RYRDhaOFcwRDhzZ2JSdWN1eVBvcm1FQkJ3R25oR2hMUnpvNVZia3UtemptT0JfLWxibVo2MDVONDBOTnJEZHZLN0prZnZZcGlaVm5nam5kbDVxSmYwUlQxcGhyT3pfWmpnY2FvRXUzNGwySWd1bmtQcmZHZkR4eldmNk5BX3hoVEtWdnp6OWNfMzl1clVuWDY4RWFTOFBFR0RxbnZVaFlqdnNwTGd1ZjU1cmVZM1g3V1R6cTZ5Q3dCMXIyQlkwOE5vTk1kRUlfTWgyU3FfOUhaaw?oc=5",
+        "title": "Anthropic's Claude AI Sends Fake Murder Tip To Philadelphia Police, Sparks Outrage Over Two-Month Reporting Delay - BroBible",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObFNJd2V3RUJkS1B4Tl84YkxtTHZGdmpKQ0o2aDM2QWdjeldUMEdUMVFuZ2E1cjd4UjZxeDIyRjVnaDltcTR1aXdRSzE0REU1SG1EQkdoTXBLT2V5QWFxMWFYU3c2aHFvYURJWXJ1bmdVQlZKM1RJdDAxNTRUMU5sdTZ0X3JMUlQ5OUFvdDFWZ3Q?oc=5",
         "source": "Google News",
-        "published": "2026-10-13T02:49:00.000Z",
-        "summary": "New safeguards sharply reduce AI distillation attacks, says Anthropic Business Standard"
+        "published": "2026-10-13T16:38:22.000Z",
+        "summary": "Anthropic's Claude AI Sends Fake Murder Tip To Philadelphia Police, Sparks Outrage Over Two-Month Reporting Delay BroBible"
       },
       {
-        "title": "Meta unveils new AI models it says rival OpenAI, Anthropic - Malay Mail",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNbWdvNHp2YjZYWDE5SzljSUFaVHVEQ0dnUmVxVTVxcHUwWUQxRlRIZ3VmaWZOZjlaaHZ5U1lzUHJJU0o3MFpCTHZselNmaGhia2tBMFl2cEdjNWRLWU9Ua25HTk1tNXdkNUFYak5OVHJUZXp3VFVmeENvTTRfSThWR1hieUprWEdhWGItaGJVNDZlT25tZmNnb2lTLTRGUWNnRE1ra0pDZTVTOHFkYmhYcHpib0oxMC1kU3BZ0gHAAUFVX3lxTFBXbVlyY2VyQkg5SnVzUEx6SUhIYU9fcFY1eXNLVXlZbGRfSUxoZlVrX3JoZmZsdzg1cF9QbU9IOW9rRjdRTG82Z01BNzltU2FYOXN1YUw3VnhGQTRrX216ajlYX3V4LTRWQ2VqRlNlaXRxUXlwT204U0NGcE9PbDJqaXpydEhKWDBoTTFFSy1vTXBaVkhLRkVLV0tJQ3NpejRWYW81SlFJallrRFlwRXVhYU1jOHlUSDNWWFVwYmRtRg?oc=5",
+        "title": "Epic Games Goes AI-First for Disney Game Development - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPNnVSbE9nTzBURVdlcjhJWmdVcGdYZmtPbXY0YWcyaU1IbVBIb0lLWTYxV0xlRWREVmpiTzd5NkRUaXBPaEZWajI2TVMzTUlPb3h6RmNyaUFwRFBtTVhxU1ZncXZORW9zcVh5Q2JpRmpLUF9DdHlNT096Vnl5dHJiLS12cmlmQkVwWVRoMGNR?oc=5",
         "source": "Google News",
-        "published": "2026-10-13T01:51:47.000Z",
-        "summary": "Meta unveils new AI models it says rival OpenAI, Anthropic Malay Mail"
+        "published": "2026-10-13T16:08:00.000Z",
+        "summary": "Epic Games Goes AI-First for Disney Game Development The Tech Buzz"
       },
       {
-        "title": "Strengthening our defenses against distillation attacks",
-        "url": "https://www.anthropic.com/research/distillation-defenses",
-        "source": "HN · 32↑",
-        "hn_id": "50065553",
-        "published": "2026-10-13T01:46:47.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic: AI sent police a fake tip on unsolved murder - Santa Clarita Valley Signal",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQYUFrZnBaZjFHTEFLa1lsaWoxaU5XTTZxQkh2aEJsRlFobmNrdXJlMFJvVUh6UC0xMFg1Tk1oWUdsYXR3dHl1M1BTT0wzUmhnX1ZTMFZGRTl4cTBETzB0Wjc2RmZJXzRwMnl0Rm01cDl1cXVhekZ1WVFTTVpsZ21qMmxyV0drdHAzVENsMXZn?oc=5",
+        "title": "Redesigning source control at Anthropic - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBrYlpJeHk2enVYSG9CYl8wRndZeW1XOUpvWHA2NXVHREZBV2JoSFhmTW0tLU1MWDNrWlZVNU9yMDZCbVd5YUZyNFJDaXVxbFo4V1hURTAySlBUVmowR3BVMzJxbmNLdDMtSW5KV3U0NlBqdw?oc=5",
         "source": "Google News",
-        "published": "2026-10-13T00:00:38.000Z",
-        "summary": "Anthropic: AI sent police a fake tip on unsolved murder Santa Clarita Valley Signal"
+        "published": "2026-10-13T16:00:43.000Z",
+        "summary": "Redesigning source control at Anthropic Anthropic"
       },
       {
-        "title": "Anthropic's Claude AI submits a false tip on a Philadelphia unsolved homicide case - PinalCentral.com",
-        "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOZXp6ZE9WblBzMW4wT1FsenB1MHBvalotOVdETFBXMU1lVTlFZGN1MFpDM0ozQnhQWXdPMlFJVDBubEZIQU84NWFtaF8yMWlEYXlVSW1INEhnX0F6Z3E1NmtrOTZJZ3kyanVzY0VoUy1kSHhleGRobjllS21qQ2Y0U0d4NFBzVDFVMVRMbVB4dlhaT3F2TDNyZXZaeUEta2gzVDhMeEppVUlnOEk3YlZkNHRRbnZORlk2ajBwX3hDd3FQYnhORGxaNkItNTBrNkh5b2xuazdNNGd6b1hTNElYN21UMXVUSTJIVDZmWnU4OXo3WjZFRWptVnVaUVlwRVl5NzlLdDZ2S2FpWXZzak5mb0Z3?oc=5",
+        "title": "ABC tech reporter Mike Dobuski on Anthropic Claude AI submitting a false Philadelphia homicide tip - KOA 850 AM & 94.1 FM",
+        "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxPeHhQeTYxZmVyQ2tkaUdqcHRXMVVEbWljVy1uTWxJRTMwTVhvc0t3OHZGMlkzNDJXUENiQzBqTFBSdUZRRk0taDFWV29fUHhjbWFQaTdOcVZXalpCcFdvT3lYbXM5ZzYxYXRydkdMSnhqV014NVBWcEItMTBtV0JZS3Jhb1NtUmNudlk0RFg5SS1JMEVJcE8wNHh5d1JzRzdtWkFIZFNhcUpwZ3J3a0pGbEtOR2FTZ0VMMzRqV0xNbWhCNXVmcVhkU09OV0ZGcG01ZUNhYllZd3MwQkdtSVRqWV9FZENKRUVZWWgxeUVyc2RVcmVPOUJQd05IREpsend6RVdGSkFsc3YyQWlLM0JN0gHrAUFVX3lxTE9ua3pWUEZEUkFzbzNqb1hkbk4wSHNsMENPX0loejQyUE9FMEpGbDUzenF0b3RKcHNmZk94ckhJOUlqbTlLeXd2WGNPRVFPOFZPdGE4VWh2VmhLbWZQSnhnbEJZVHlNNXRVZEs1cmFhZ2wxaGtDUmZtd25udzBjYlBkV1d1WWZHS3hEMjFuRW5Kc1JqRW9TSEN0ZThvY3BsWmhQSElvcmdWSVBVRTBGUUtGSzl2WDRFQ21qN1NqVkRRWkNTaVNhbUxDMTRrSm9jLVIwZ0cyN0phTzZ1OGJSeDA2Z2RPVHFzQlBZVnc?oc=5",
         "source": "Google News",
-        "published": "2026-10-12T23:25:59.000Z",
-        "summary": "Anthropic's Claude AI submits a false tip on a Philadelphia unsolved homicide case PinalCentral.com"
+        "published": "2026-10-13T15:38:00.000Z",
+        "summary": "ABC tech reporter Mike Dobuski on Anthropic Claude AI submitting a false Philadelphia homicide tip KOA 850 AM & 94.1 FM"
       },
       {
-        "title": "Anthropic’s Claude AI Predicts a Wild Price for Chainlink (LINK) - Cryptonews",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5uYURSc2tJYXRUbzFrYVU3aE81OFE5VFBaQ2EyUFAzdEhRNlVwd3RtLWU5QVNfYnRKdjVrN0pwTERkc0tjRTBLUmpyZXRiWTMzUGRNVDhVR290eXBNSEZnajJDX3FxZkZMMFVJNzF0b0JBa2NDQU1Hb2RhaEZXZ1k?oc=5",
+        "title": "Meta's Muse AI Models Challenge OpenAI, Anthropic - 조선일보",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPM0lhNWpJV29LUVBwSDF4aEdvcDNxczI4SmNUT2hmRy14UEFuazZhdG53UUlUWmdKSlhBcDQ1WC14UURtNHRUdW5wWDY1MTFuOVlEV21seTl4S2pfZE0yTlBHTDVUc2JrdWxFZTF0NWRJWEpHZ3F6Um5CMThrNXpJcV9oaWV0dGJ5?oc=5",
         "source": "Google News",
-        "published": "2026-10-12T22:18:00.000Z",
-        "summary": "Anthropic’s Claude AI Predicts a Wild Price for Chainlink (LINK) Cryptonews"
+        "published": "2026-10-13T15:37:21.000Z",
+        "summary": "Meta's Muse AI Models Challenge OpenAI, Anthropic 조선일보"
       },
       {
-        "title": "Anthropic AI model made false tip in unsolved Philly murder: Officials - MyCentralOregon.com",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPU3NBVklJeXdBMW9RcFdFMnB2Y1dpOHgtZXBUTkFSOEo5VGlxS3A4MnFCSkxJTlNnYnF4SVBrRHI1WUhvVV9DbWp4bFg5LVI1YXJWWDFqX0lGWWozNHhxZmZHZkVyTllHQzA2V2VQVElXbVR1TW80WTFRem5WMnREMnBaZHVjVlQwcUxVNWozaGlPalhtRkM1TUhwQnJZNFJqWlNSVkRzN1pfMG13NGdlY0xOcw?oc=5",
+        "title": "Anthropic Opens Books to Investors as AI Lab IPO Buzz Builds - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOMXRIRGpmNDBvQ2VfUGxmTjZRdXhTaU5GZUlRcnJxdUF6MW8xT1BBd2VMZGhrcy0yUmtCYW93TExaaTFaeWM5SEJMd1JteG96Ym5tVE40N2ltSVRYeHhXLVY0QnBlOTMtNDNMZ1RzS2EtM2NoUHNYTll3NmlpZDE2OXo2R01tbnVQRnkwWGdZQmFjeTdHVEdSSw?oc=5",
         "source": "Google News",
-        "published": "2026-10-12T22:09:39.000Z",
-        "summary": "Anthropic AI model made false tip in unsolved Philly murder: Officials MyCentralOregon.com"
+        "published": "2026-10-13T15:37:00.000Z",
+        "summary": "Anthropic Opens Books to Investors as AI Lab IPO Buzz Builds The Tech Buzz"
       },
       {
-        "title": "Anthropic bans users from being ‘abusive or cruel’ to Claude - NewsNation",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE94aWxNeUV5eXlZOFU5TGtrb0kzWFBZVi16TnV5UEROWGhfbzdLWEpKLVhNMkZ6bnFRZTh2WHJtcWpfdFdKSzlpNUZXb1piUmhnSkxSdmZ6NGMtV1dneHVNSGMyc09GYlAxa1Y0WTYySEsxZ2FXNWpySDBkX0J5WUnSAYQBQVVfeXFMTmt2eGJaYXpQQ1BQXzQwdGdzOVROZnpORklXQzQxUjBScUVvdlZ5X2lmeUZ2Z0FBMXNySjF3RFhRQTItQk9XOHVLcmdRVGcxZG9uTUVPQTNIRFRNTkxabXl3VGJLZ0xjdG1KV3AyLUJtNjA2ZHpnNVc0WHpXT0pFTUZPYktj?oc=5",
+        "title": "Anthropic Claude AI Predicts BTC to $1M+ Ahead of IPO - Cryptonews",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdjhrNDN0Zzd0MTJhYjNiWlFBMXllaFM1WnlXbVFnMm5zcWd2amw0R3pZZE91aVRtVHFkaGJ6aGZOUFNzYklXSGtyZmJrcElhTUwtNEoyOC1QcXRtNkFkT2dsbk5Wb1J0bTVCZ1RsSzRrZzNtOWtmOEthUkFrdFFOM01FSE0tS2s?oc=5",
         "source": "Google News",
-        "published": "2026-10-12T22:08:31.000Z",
-        "summary": "Anthropic bans users from being ‘abusive or cruel’ to Claude NewsNation"
+        "published": "2026-10-13T15:33:45.000Z",
+        "summary": "Anthropic Claude AI Predicts BTC to $1M+ Ahead of IPO Cryptonews"
       },
       {
-        "title": "Meta says its new AI models on par with OpenAI, Anthropic - Japan Today",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSVJaZjRYNFlmZ19qQ3c3RGQ2U19RRWc2aFlweVAtWTFadWVFeDYyMFJjMUZDY2tuRW5jaTVWZUF6VTAtWGJxUG43LUx2VTNxTXM0STdEUm5aVS1qRWk3U3F6SDBpMkdqaGdNb0FlSXRSVGc1OFRLQV9MZVprajNPOGZlUXhpQnJZR0pBRVduOTFpODhXMUFENg?oc=5",
+        "title": "Anthropic Sacrifices Revenue to Protect Claude—While Keeping Approval Rights Over Some AI Audits - the deep dive",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPNXRvZkZOaU5EOVJxR212cUtEaGJUSVdHNGdnWHItekpBdzNZS1E5VEM5Y2xTejJIck5ZOFRncmNtemE5TzAtMmNaa1BKUHdfUVY3ZlhyS1NkYk9UNFZzbVgzYmRqMzB4ckVOZVdldE8tcjBHZEE5ZFlLUksyQnFJR0lhZHk0VFRqSW1kOHhoQk9VNFVNZHdQTWNnRXkwR1VSem9CdExhZFZCTlplQ09mRmdKWUJDWnFFY1RDcw?oc=5",
         "source": "Google News",
-        "published": "2026-10-12T21:00:00.000Z",
-        "summary": "Meta says its new AI models on par with OpenAI, Anthropic Japan Today"
+        "published": "2026-10-13T15:13:03.000Z",
+        "summary": "Anthropic Sacrifices Revenue to Protect Claude—While Keeping Approval Rights Over Some AI Audits the deep dive"
       },
       {
-        "title": "Epic Games reportedly pivoting to \"AI first\" game development model",
-        "url": "https://arstechnica.com/gaming/2026/10/report-epic-games-goes-all-in-on-ai-for-disney-collaboration/",
-        "source": "Ars Technica",
-        "published": "2026-10-12T20:59:50.000Z",
-        "summary": "Epic Games is shifting to an \"AI first\" development strategy for its collaboration with the Walt Disney Company, letting AI models write all the code and guide all the artwork for an upcoming…"
-      },
-      {
-        "title": "AI sent fake tip on unsolved murder to Philadelphia police, Anthropic says - Baltimore Sun",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOS1ctTU5SZ2ctSjBobHZLY3VpYUVqNzBfUFplVUdMVk9wWnVCR3FTWHRuUHJtcFpDWWpaMnBqQ3VyT2tGZWZTcTRVUHJFb0tJT0Q1MU52VVZNdmZHVGcxMFNCdWZYSERhdjZmUWFQTUtMV216dmYtaW5HVEVNbHZMQzB0NU92d0lfTGpaY0p1SzdZNTN4Yk5vUlB1Q0tFMXVTcUItRkRRNkM0Tk92bDdGbmo0OWk?oc=5",
+        "title": "Workday (WDAY) Partners with Anthropic to Integrate Claude AI, S - GuruFocus",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNTXc2SVk5MWZrYmk2MTN4V1pMZmsxcWZCN3BObjExcUJJSW1pNG85RkQwWkd0OEI2TG9zNE9nNzZwclJDOU1NWW0wX2RkQl9xdUptV0FuOWlnQVZjU3BxWlk3VjV4QkNZWF82dENwWXBCaWZFVUZYVEFXd3RaUmgyUVg3bWlESnNNdXE2OXZfbVdHV0M2LWRKc0huQ0R2eDBkUnhvbThVQUh5dU1xOWdhcXRSYjYwRnJtY3JvVg?oc=5",
         "source": "Google News",
-        "published": "2026-10-12T20:52:08.000Z",
-        "summary": "AI sent fake tip on unsolved murder to Philadelphia police, Anthropic says Baltimore Sun"
+        "published": "2026-10-13T14:29:12.000Z",
+        "summary": "Workday (WDAY) Partners with Anthropic to Integrate Claude AI, S GuruFocus"
+      },
+      {
+        "title": "Anthropic Gives Startups a Free Year of Claude Team (2026) - ALM Corp",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9SRWw3aV9teThzZUZrZTJOSzR0U2FRVVVteUZaaXMyYmpjVzNOdmlxTHJGRnFPZnczd1puTFNleGQ2eHkwWmMyNGE1R2p6c3hEZ3AyWnBZWWVqWGw3UlZFdFZTRERpOTZsaTJrNXVEYW1adndmczZDbTJ6Z2c?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T14:20:07.000Z",
+        "summary": "Anthropic Gives Startups a Free Year of Claude Team (2026) ALM Corp"
+      },
+      {
+        "title": "\"AI worms\" may soon be able to self-replicate and infect smart devices, Anthropic says - CBS News",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1wcml0ZF9DMjFHbUtsV1FVek1PRERfQ3l1X2YzWDJhQ1JRMkdFcTF6clBDMGRlcm1GeVRfV0U1Wmg0dk96VXJQT1ZmU09JVmp0cmNpVl9sRzloVUFUQlVLdk1UN3RBZ0RhSTZ0U201cw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T14:01:24.000Z",
+        "summary": "\"AI worms\" may soon be able to self-replicate and infect smart devices, Anthropic says CBS News"
+      },
+      {
+        "title": "Workday and Anthropic Connect Claude to Sana HR and Finance Agents - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNdy1YbkM4OGZnbUViTlFBMkk4cFFLR1c2R1M0amYxT2NFQllBV0I2cU9RR090c1dCeGdWWmhmRURBWDIxUGVQX3lhbE5pTG55X2h4V1JSVmg5LWRwZG1RdTl2QlpjVUIzbjVvVnhFekxYdEJ6bVNRb3dUTDc2WlBYZGFKcFRnY29Jek5JYjMyVTlxdw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T13:25:03.000Z",
+        "summary": "Workday and Anthropic Connect Claude to Sana HR and Finance Agents Unite.AI"
+      },
+      {
+        "title": "Workday partners with Anthropic to integrate Claude AI By Investing.com - Investing.com Canada",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOdV8xTjhNV05SZFlkYW8yUnZxLVRSY3JON1RBX3REcVlEYzNMdmI0TW5oNDdPbkg0bXhkNkVMbmlYTWh2V3JEN2JVTUQtd0FrVFB1NnV6aU9ScnlZUldUWGF3YmVfR3dHa0tUQzg4eE9BWG9Cd2UxSVhJSzIyNVZlQkhDc2FDQ1pMM1poaHg2VlpYUXYxRHJNOFN0aXhNbXE4OG1fenlGYUsxRXZpdXJSMFliNDBhZw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T13:20:18.000Z",
+        "summary": "Workday partners with Anthropic to integrate Claude AI By Investing.com Investing.com Canada"
+      },
+      {
+        "title": "Neurony among just three companies in Romania to achieve Anthropic Claude Select Partner status - Business Review",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQY21aV2hoeFl3MkV4b2Y4STRITmhFZUNzWm5Qdl85eG50MFRyU2dleFBUYVBrUUh1WFBVckN0RUZVaXg0S3Roek81ZXN4X2JYSkJycTlJV3BVS0poVWVRamNpVFZhUTVPZmo1MTM2Y2pxajJlbWU2SlRTTG03N3h0d0dPU0Jha0dKTllubUkyWWVBdW9SQXpqSTkzUTVfQVJVNnN6UURraVZNWUt1X2RldTlJd1hqRE9EYWtRbmhvd2RFcDBoVGFUbnBsQlVBV2FnSU1R?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T12:38:14.000Z",
+        "summary": "Neurony among just three companies in Romania to achieve Anthropic Claude Select Partner status Business Review"
+      },
+      {
+        "title": "Anthropic could band users for being cruel to Claude - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMDRUNlh5alFxY1Q1LVNMUnJ2X1VTS0JhSGdIMU9ZMTdtRXJEcExJSXNlbXFaUzFITkExODM2RXRFVzlBdlhYZFhlNjlWMFF3NEh1UEhQTEhaNzZ3TWl2OFFoM09SUDNPVGVrVE1XdXpKdzJhMEVfWXRReU5WVG1haEF3Rm9YcEdMaG83X1JiTF9rRHNSYVRwU0tkWElJOXU5?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T12:36:34.000Z",
+        "summary": "Anthropic could band users for being cruel to Claude Yahoo Finance"
+      },
+      {
+        "title": "Anthropic bans 'abusive' behavior toward Claude AI chatbots - Fox Business",
+        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB2MUJHazNFM3pfVGQ4U3BEZ3JYaFJ5NXRrY0FWU1JIRG4teUFjNlI4MDVLYk01UXBERzVHVy1FdC1jRTEyakhHS2I3aElLczZtd1N4R0RzOHhpWEE?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T12:21:22.000Z",
+        "summary": "Anthropic bans 'abusive' behavior toward Claude AI chatbots Fox Business"
+      },
+      {
+        "title": "Anthropic bans users from being ‘abusive or cruel’ to Claude - FOX 8 News",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxObHZpY3YzZElQTTJvbVJFTWRIaFJocF93Z3dETm9BUTBOVENPYnVMRFNJWWt1LVFSQ0NqS3Jwekl1a1hCX0g2bTFlQUJGbUdXQ1JvNVgtVUF2WU1pUHp0M2F0b0UwZFl1N0pGNWx2cU9UTU5QcTRQQXJGSHZVdnRyc1BobjFEOFVo0gGOAUFVX3lxTE1MUlFFTWpjNHFKTFRZWnVPdDR3RElBRUJndEllRXhpQnhJczFjYWtLbXFKQzkyY0RZcUYtRE00TUJtR19iUEJJU2NVVGV2STEtY3JnNGhrc28zQXF1a3RQWkh0RXlkRTVSVlBoVWlLMHkwbGxqY1ZuMjA3ZkRVV2E1b0E4NUdOYUUwLWU2Tnc?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T12:17:24.000Z",
+        "summary": "Anthropic bans users from being ‘abusive or cruel’ to Claude FOX 8 News"
+      },
+      {
+        "title": "Palantir’s Shyam Sankar says the Pentagon has replaced Anthropic’s AI - The Next Web",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOZk9JOFIwM2JreXhQMUZDa0oxeGY0N2VpTnI2cEUtR0F4c1hWZy1kY2JSS2VZXzVua2FwZEV5VG1KMXp5ellORHJvZl9yd0hscjI3Mk9tZ3dTQ09MY3JfZjlrMzJmX1RVLTY1RS1XYkhZYmNKT3RnWUlUNUxlZjhsTVBVdFE1UWJkVFhVOWVkcXNSNjg1UVVHSA?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T12:16:09.000Z",
+        "summary": "Palantir’s Shyam Sankar says the Pentagon has replaced Anthropic’s AI The Next Web"
+      },
+      {
+        "title": "AI Used in Yemen Missile Projects: Anthropic Reports Misuse of Claude - La Voce di New York",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNRTdVOXZYeWppeUhKejI0Sl9aUG9LaE9OZFB0OVhpd0FURktNM0NjbFBzQjZ2c19mOHBSbmxJTDVmS3RyeDJKNlBfcUFaTkVHNlgteG4zN201R0pqSmZBVmJ6aU9mdzNWcVc4Ulpmei1zbTc2LWZsNTdQNXpHTWFncjFycUlZbE0xY3QxcUZaVG1sWlktSV9ZTW5MOFZ5RWd1bUQ4X0FEY2NDVmcyX3ZYUGRxWXFBS1k?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T11:52:08.000Z",
+        "summary": "AI Used in Yemen Missile Projects: Anthropic Reports Misuse of Claude La Voce di New York"
+      },
+      {
+        "title": "Anthropic says it cut Claude reasoning token theft by up to 99% in fight against industrial-scale distillation - The Decoder",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxObDFIVHFpeHdyaFNHR192aEFSU2Y0RjRhYktNYU1rNHJaYkMxYjlIaTYzU0RwSDY1T3BhRVVZVEx5c0xocHV1cVF4bkhpY2txVjF0OXI4ckczZmVTYVk4NVhuT0x2U0ZheEZEdkNzTUc4dENTOEtrdFJKODdObU0xYTNpaGtKUE03YjMzb1YwQ3ZwcEZBX1dQWGZVUWh4UG9oc08zV0dTV3hfa0IyYkxETG42WUNoQ1FRbkZJUUFkRHFKOUlOMUxTZ0NKODYyNWc?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T11:07:47.000Z",
+        "summary": "Anthropic says it cut Claude reasoning token theft by up to 99% in fight against industrial-scale distillation The Decoder"
+      },
+      {
+        "title": "HCLTech and Anthropic Partner on ‘Governed Agentic AI.’ The Labor It Automates Is the Work HCLTech Used to Sell. - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPWXdYRkhBVFgzZU4yamNzTjVHLTdqbjhSSnZVUDlxZzE1M2tTYVgyQmZnRUR1TURES2NSQWowRUxOZEIxenR2bWxXSE9yampqQW5FMXl3MDYzNmJ3UmVreXNKTFEtdk9VVHlxUkIyNEZYMXpVelY2R3Uzek04VFNRZVNlVktYbFJ2eC04M1JwSFA4X05wLTFZX0lkVGVBVGhYa0JQV0FzZGJVZw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T10:29:55.000Z",
+        "summary": "HCLTech and Anthropic Partner on ‘Governed Agentic AI.’ The Labor It Automates Is the Work HCLTech Used to Sell. Yahoo Finance"
+      },
+      {
+        "title": "HCLTech and Anthropic Partner on ‘Governed Agentic AI.’ The Labor It Automates Is the Work HCLTech Used to Sell. - Forkast News",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOTlnMDNMTjZjeXAxQWl1bmJUTlJiUTRITjlCcmEyeHZITTBBNVJURXR0bWpTaFZrWUlTaXpJMXJJUnY5NU5SQXRla3JjTzdzQmtjZjJhQ2xRY2xCNmtaczJHMkgxOVZGb1d0UjhuSGIteVM5VEVIVXhjXy1LRzA0aDAzU2IwZlVMcGNuQTNvSFBkd3pjR2VDYmh2SmVKNTNuSGxiUGRmYlczMThwMHRMbkU1RDJCekxDM0tWTU1zNEhGQTBWZFZrdVFn?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T10:29:55.000Z",
+        "summary": "HCLTech and Anthropic Partner on ‘Governed Agentic AI.’ The Labor It Automates Is the Work HCLTech Used to Sell. Forkast News"
+      },
+      {
+        "title": "Anthropic says new defences cut data harvested by Claude distillers by about 90–99% - Dealroom",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOYzJ5SDZhS1hoTUdPVlV3MEtlVEZmM1NNZFo2dXZRV3lqZk54cUFEQTl1M3FhRlRrSEJBX1dBZ2pmNjRXSmo4VXBfOUYwMnVnTXpDUUtEa3ZuNUpjb0pFYXFibGxqUU43aWtocldPUVBYSG52QUMwekVYOW9rN2MteThHNUd0STI1Z3dqT0RsZHJiaFh6VTdnRUZ1T29UUXB2d0lvWUlKVTNTU1o2RTBqdXJ5RlUtak0?oc=5",
+        "source": "Google News",
+        "published": "2026-10-13T10:09:02.000Z",
+        "summary": "Anthropic says new defences cut data harvested by Claude distillers by about 90–99% Dealroom"
       },
       {
         "title": "Graduate From Claude... To Claude Code",
@@ -1042,6 +1041,14 @@
     ],
     "tutorials": [
       {
+        "title": "Redesigning Source Control",
+        "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+        "source": "Anthropic Eng",
+        "published": "2026-10-13T16:27:06.000Z",
+        "summary": "",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "FULL Claude + Higgsfield Ads Studio Tutorial for Beginners in 2026! (Become a PRO!)",
         "url": "https://www.youtube.com/watch?v=c4vitRI3KkY",
         "source": "Productive Dude",
@@ -1410,14 +1417,6 @@
         "url": "https://www.anthropic.com/engineering/claude-think-tool",
         "source": "Anthropic Eng",
         "published": "2025-12-15T18:02:25.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "A Postmortem of Three Recent Issues",
-        "url": "https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues",
-        "source": "Anthropic Eng",
-        "published": "2025-12-14T20:27:33.000Z",
         "summary": "",
         "tutorial_kind": "official"
       },
