@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-10-14T14:44:26.831Z",
+  "generated_at": "2026-10-14T19:46:50.339Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "2026 Us Midterms",
+        "url": "https://www.anthropic.com/news/2026-us-midterms",
+        "source": "Anthropic",
+        "published": "2026-10-14T19:32:27.000Z",
+        "summary": ""
+      },
       {
         "title": "Singapore Office Opening",
         "url": "https://www.anthropic.com/news/singapore-office-opening",
@@ -135,16 +142,51 @@
         "source": "Anthropic",
         "published": "2026-09-30T22:54:30.000Z",
         "summary": ""
-      },
-      {
-        "title": "Glm 5 3 and the Spread of Advanced Cyber Capabilities",
-        "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
-        "source": "Anthropic Research",
-        "published": "2026-09-30T08:46:41.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "The AI race is back on",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1011311/the-ai-race-is-back-on",
+        "source": "The Verge",
+        "published": "2026-10-14T19:06:03.000Z",
+        "summary": "Last week, Anthropic and OpenAI looked like they had the AI race to themselves, pulling ahead with increasingly powerful models that left their rivals in the dust. Google seemed hopelessly far…"
+      },
+      {
+        "title": "Anthropic Adds OpenTelemetry Trace Export to the Claude Platform - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPNURXaXYyZE1uTmQxTWRyY0hmYmlaT1lLZS11akFpRjJTN0FkazRQd0d5cWVBUEI5R1Y2bnVicjBiOWk4YXQta01rbGJ4NjJXeVlCVmllLVFwc0txUUd5R0lmbEhkSklvLVoxM1VUVllvdXdCQlo4X285N2dvVzhsZWo0ZTlwUl9EZW5IMlgyaw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-14T17:36:08.000Z",
+        "summary": "Anthropic Adds OpenTelemetry Trace Export to the Claude Platform Unite.AI"
+      },
+      {
+        "title": "Anthropic’s Claude AI Submits a False Tip - God's World News",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPRzZGaDBMWU0tZHpqa2JtMUhJTG9FZ2I0VHB1VkU0em5mdTRNQU0zMGM4Q2J1N2trcElvN1ltTDFHVEo0TFpTaTFRVDhmNTdrUVh5TzhkMm85aVNlaDg4VWx2QmFCVDJfN3ViNnBVYnNuLUZsVkdXaXdTc3Z2VlAtRw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-14T17:30:00.000Z",
+        "summary": "Anthropic’s Claude AI Submits a False Tip God's World News"
+      },
+      {
+        "title": "Anthropic warns AI could soon self-replicate across everyday smart devices — here’s why it matters - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQ0xTbFJrcVdPdzN6WS1TdnlMNGtfYXNWZWM0ekdta05IbEVDQU5kc0ZWRkMtb2VwbEgxLVE3Wm1WTms4cW0wSTZIQW9DendkTlJSM2RmMXBnZTBPaF9kUFczUHA2N3JVLU9pSTNUemJLMUZDdktLbXItSUxXbFc1dkdVN1hnWW8xVjEwdF9RUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-14T16:07:24.000Z",
+        "summary": "Anthropic warns AI could soon self-replicate across everyday smart devices — here’s why it matters Yahoo Tech"
+      },
+      {
+        "title": "ZS Joins Anthropic's Claude Partner Network As A Select Partner To Help Enterprises Put AI Into Production - www.marketscreener.com",
+        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNZUJiQmRuMlF0cHZZZmI3eF91d19CSWZMR0JtZm13ZWlZMVN5Q3dUNjdkMHRFRE9PV1lPYTRyQzAxRG5rNW9WTGJGbXp1b2hhSFBwUFE0YUtWZ0wydXhvbTNvejBIN1lrNldlU3pEWnJpMnh6YWZLb1FRd0dXbGNVaWx4SGNNUl8wMXNBZFpqUkdEMG93WnFvWFFRS2g1b1R5bU9ocXNuYTQ5NkFrdkl6OGhJZ2dpYnl1T3lKM0o3cHpnY09SOC0zQkNzNVpOUldVOUZob3J5Y1BGWHk5S1RNbjlaSVc5NUNk?oc=5",
+        "source": "Google News",
+        "published": "2026-10-14T15:41:17.000Z",
+        "summary": "ZS Joins Anthropic's Claude Partner Network As A Select Partner To Help Enterprises Put AI Into Production www.marketscreener.com"
+      },
+      {
+        "title": "Houtis Used Claude AI Model to Develop Missiles: Anthropic Report - Defensemirror.com",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUzJ4YkNRSTBPZnN2SlNONzJNN3M5NF9PbkM0WE0ya3IxRGJPZENvMVkxd21FOWhOOVRDbG1oT0RUOTRqUjZCY2VtU0FKazY3eFlQT0RIcEoxTHdiQTBjRkhnbXZzVHFVV0c0UXhpRFZhRnRJbnllZmFsd3BQX1llRVFoRWJCa1N6MVA1ZGVPQVRteThBYjl2dHlhSmhIanJiM1dDTQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-14T14:16:18.000Z",
+        "summary": "Houtis Used Claude AI Model to Develop Missiles: Anthropic Report Defensemirror.com"
+      },
       {
         "title": "Your Firm’s Data & Claude for Financial Advisors: Why Anthropic’s Announcement Raises AI Governance Questions - Advisor Perspectives",
         "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQRFF5amlfamVLWjliRzFTd0xkaWtqM2dvYnBrbG9OY1l2cmswWEZwMnFKZVJuZ3pfOWI3aERHVlJlUTdTSlByVjdsUTVrWVNfdnVxYjFoT1ZPNzFKVnpDcmMwT2pDam5zZHBDTTU1RkRxMWxYQUpxNGdHWFluVU1pTmVDOThndDJ6ZWlITjVBNXJUVGdSa2hHemlNY3Q2N2o0aTV1Z3R3?oc=5",
@@ -160,25 +202,11 @@
         "summary": "AI company Anthropic is warning that advances in small AI models could soon usher in a new era of self-replicating malware that’s capable of infecting smart fridges, vacuum cleaners, and a wide…"
       },
       {
-        "title": "OpenAI CFO Says Firms Using Chinese AI Models Are Risking Safety",
-        "url": "https://www.bloomberg.com/news/articles/2026-10-14/openai-cfo-says-firms-using-chinese-ai-models-are-risking-safety",
-        "source": "Bloomberg",
-        "published": "2026-10-14T12:54:15.000Z",
-        "summary": "Businesses opting to use low-cost Chinese artificial intelligence models are taking a cybersecurity risk, said OpenAI Chief Financial Officer Sarah Friar, echoing concerns from rival Anthropic PBC."
-      },
-      {
         "title": "Omega Point's MCP Is Now Anthropic Verified in Claude's Marketplace, Built To Compute - PR Newswire",
         "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOcE81R0UxRHhmcF9yTXFBdFh1NUR2djFJZnZRa1Q4MlhkeEFrZ3FCTGNDSXNxSENnUmM5dmRxeDlCY1NZRTl1SXhMcjRLWFUzcXpXYi1lY0VCYjZHTUVnaGNnREdqcm5ndGlmR3lJcG5FQWFqRVlKUDB2V1RDcWZKbEVPT2pMMTA1akR0VVRMSHdWaWxuVW9HOV9TVERqS2IzOHhNWXpnaXZOZ0g2S29DZ1dZd3ZlN0dtNTBUekE0WnZQZ1VQVlFjajRhcWdSbFdwSFdLUA?oc=5",
         "source": "Google News",
         "published": "2026-10-14T12:52:00.000Z",
         "summary": "Omega Point's MCP Is Now Anthropic Verified in Claude's Marketplace, Built To Compute PR Newswire"
-      },
-      {
-        "title": "Anthropic's Princen on AI Impact on Businesses, Startups",
-        "url": "https://www.bloomberg.com/news/videos/2026-10-14/anthropic-s-princen-on-ai-impact-on-businesses-startups-video",
-        "source": "Bloomberg",
-        "published": "2026-10-14T12:18:25.000Z",
-        "summary": "Guillaume Princen, Anthropic Head of International Startups & Digital Native, joins Bloomberg's Tom Mackenzie on \"The Opening Trade\" to discuss how artificial intelligence will impact businesses,…"
       },
       {
         "title": "Anthropic May Launch Opus 6 Next Week to Rival OpenAI Bell - Geeky Gadgets",
@@ -188,18 +216,11 @@
         "summary": "Anthropic May Launch Opus 6 Next Week to Rival OpenAI Bell Geeky Gadgets"
       },
       {
-        "title": "Anthropic seeks rehearing in Pentagon blacklist appeals case - Quartz",
+        "title": "Anthropic is asking a federal appeals court to rehear its Pentagon blacklist fight - Quartz",
         "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9oY3AxLU1ISUg2OXExanhkYzdiVHVyV2ZPZ2t5T3hrNDYwb0dxd2ZzbmloV21waklLLUpjaDJ0V3ZyZk40UTJVTDRpWFg5R3VObWloLTIwazE5a0xpTHlqS29TNFZWY3FnU1o5Yi1KSVRGTGdOUDhQVkstajRUaTA?oc=5",
         "source": "Google News",
         "published": "2026-10-14T11:55:05.000Z",
-        "summary": "Anthropic seeks rehearing in Pentagon blacklist appeals case Quartz"
-      },
-      {
-        "title": "DeepL CEO on Voice AI Growth and Competition",
-        "url": "https://www.bloomberg.com/news/videos/2026-10-14/deepl-ceo-on-voice-ai-growth-and-competition-video",
-        "source": "Bloomberg",
-        "published": "2026-10-14T11:42:25.000Z",
-        "summary": "DeepL CEO Jarek Kutylowski discusses surging demand for voice-to-voice translation and how AI is transforming global business. He also addresses competition with OpenAI and Anthropic, DeepL’s AWS…"
+        "summary": "Anthropic is asking a federal appeals court to rehear its Pentagon blacklist fight Quartz"
       },
       {
         "title": "Yemen Cell Used Claude for Missile Guidance Software - MiGFlug",
@@ -237,11 +258,11 @@
         "summary": "Anthropic's Claude agents pushed code merges to 30,000 a day in September Startup Fortune"
       },
       {
-        "title": "Can you sin against a chatbot? - wng.org",
+        "title": "Can you sin against a chatbot? - WORLD News Group",
         "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9SMDJCVjN4ZEtKZnFXaklnVUh0cE9lTjB6NVFhQnJua18zX2FOZ08taGRRZjl3eGZXbFQtenlyMldRM0Z3MUdReU5jQ0tmMF9hRGhUOUMyNTdmQ2doVDV1aVhiLWlSb0FhM2UzTGxHU01BcVU?oc=5",
         "source": "Google News",
-        "published": "2026-10-14T09:23:05.000Z",
-        "summary": "Can you sin against a chatbot? wng.org"
+        "published": "2026-10-14T09:22:00.000Z",
+        "summary": "Can you sin against a chatbot? WORLD News Group"
       },
       {
         "title": "LG CNS named preferred Korean partner for Anthropic, beefs up ties with Japan’s KDDI - KED Global",
@@ -267,17 +288,10 @@
       {
         "title": "Anthropic conjures threat that doesn't exist yet to stoke fears of AI apocalypse",
         "url": "https://www.theregister.com/ai-and-ml/2026/10/13/anthropic-conjures-another-threat-that-doesnt-exist-yet-to-stoke-fears-of-ai-apocalypse/5302866",
-        "source": "HN · 66↑",
+        "source": "HN · 72↑",
         "hn_id": "50082962",
         "published": "2026-10-14T05:53:36.000Z",
         "summary": ""
-      },
-      {
-        "title": "HCLTech signs Anthropic partnership for enterprise AI - IT Brief Australia",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPSmRrLUJFVU1JdTdLUVlNX19KYllfX2liV094b0k4UE52MjFWVGVSWTJvV1dvVHI3RmhqeWUwTVRQS0QyNnBNWDk0RWtmMUpDYk1KZW5fY3dfR2wyZVk4dnl5dlpSUkttM0xtSlNyTnJpN2VoQklOSk1tN1B0QVdRYXBNWXhFcGV3T2c?oc=5",
-        "source": "Google News",
-        "published": "2026-10-14T05:12:00.000Z",
-        "summary": "HCLTech signs Anthropic partnership for enterprise AI IT Brief Australia"
       },
       {
         "title": "Yemen’s Houthis used Anthropic AI to develop ballistic missiles - Asia News Network",
@@ -294,32 +308,18 @@
         "summary": "Anthropic asks full appeals court to rehear its Pentagon blacklist case Startup Fortune"
       },
       {
+        "title": "Claude maker Anthropic warns AI models can replicate themselves by 2026 end | Hindustan Times - Hindustan Times",
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOMjZUNTY1VFhXRHhJVkp0bDl1RDZXVkE0NWctQ2c4U3Fua1RnOWcyREhVUWNaWkh4amxJVVRhYWwxOGlBXzJZclJQdFJQREpSZGFDTGxiR3lQbnJjdTl0QXBaWHFvTzZnWkZYZjJzUEdnbi1aSEthaDJEcTBwU19YQV9pbktWcF9hMlVoUmZWaWd3MUdaOTBMREdxbmNoRm9HNDR6YjktZG5XRlQ2bjZfU1ZpaGFWUkFWemdRNUNNeUFpME9WMWlNUXNUM09tSU8tVUY5Zml1Sm8xdDlsdVhyZEFsbUfSAeQBQVVfeXFMTjI2VDU2NVRYV0R4SVZKdGw5dUQ2V1ZBNDVnLUNnOFNxbmtUZzlnMkRIVVFjWlpIeGpsSVVUYWFsMThpQV8yWXJSUHRSUERKUmRhQ0xsYkd5UG5yY3U5dEFwWlhxb082Z1pGWGYyc1BHZ24tWkhLYWgyRHEwcFNfWEFfaW5LVnBfYTJVaFJmVmlndzFHWjkwTERHcW5jaEZvRzQ0emI5LWRuV0ZUNm42X1NWaWhhVlJBVnpnUTVDTXlBaTBPVjFpTVFzVDNPbUlPLVVGOWZpdUpvMXQ5bHVYcmRBbG1H?oc=5",
+        "source": "Google News",
+        "published": "2026-10-14T01:52:50.000Z",
+        "summary": "Claude maker Anthropic warns AI models can replicate themselves by 2026 end | Hindustan Times Hindustan Times"
+      },
+      {
         "title": "Anthropic Challenges 2-1 Pentagon Risk Ruling [2026] - https://tech-insider.org/",
         "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5fb3pzeW1PaVBFMHRfLWpfLU51VEZGZ0d0NGU4Qm90MUFTY2xFWlZaWVRYLU9RSGx5dUxrTmxEYWJaOWFxZXg4aGZFbXdXV1NmSm9yMkpNY0pqTzdsOExJSkVFUjQ0bGVOSm1LY0JJM3hIaWhSZzRKTFhB?oc=5",
         "source": "Google News",
         "published": "2026-10-14T01:51:06.000Z",
         "summary": "Anthropic Challenges 2-1 Pentagon Risk Ruling [2026] https://tech-insider.org/"
-      },
-      {
-        "title": "Anthropic Presses D.C. Circuit to Reconsider Pentagon 'Supply Chain Risk' Designation - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5DSGllaklwUEgwNTdQbEpPdVNyamFVVnNFNkctekRDaDlqVEdxUnNXTkNYd0RPZl9SVGF0UVIycU5DZWdqaDIwTUJwOVFDRFdXb1VCeXlBb3NkTUkwazdpT1ZGWDdfc1Rob05RajdFR0g0VEpqNWc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-14T01:05:00.000Z",
-        "summary": "Anthropic Presses D.C. Circuit to Reconsider Pentagon 'Supply Chain Risk' Designation BigGo Finance"
-      },
-      {
-        "title": "Anthropic’s Scion Hits 30,000 Code Merges a Day [2026] - https://tech-insider.org/",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5GbXpfbXVDNkszbFFua0JjTmpVZUhTamJnU3lmekNpb0g5bXlzdmliaEtTZGFOUTN0VUk4bkdfaXFiMHJyWHZleDBWeWZBYUNCY0Q4ZEtJY3ppa2dVQXl2YWdySE5sdVAxbFBra3NINlZXbkI2QXBFUnlRV3dQdHc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-14T00:05:54.000Z",
-        "summary": "Anthropic’s Scion Hits 30,000 Code Merges a Day [2026] https://tech-insider.org/"
-      },
-      {
-        "title": "Anthropic Appeals Pentagon AI Blacklist in Federal Court - The Tech Buzz",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQbTlORFVRb2U4YkNOVm9sT1FiV2Vic2NoZ21Xd1lHN0hjb3NIWC04YmhGa3BYNHdqX3dFcGR6OHZiLThIZlVoc1Q5dzE1NTQtcXh4NUtad2t4MXBPXzFHOFhIaXNRcXlvZ1NSdnl4ZEMyOTcxRVllbnhtbzR4WEFvZWppamoza0FkeGw2N1oxQ1pmbTQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-13T23:08:00.000Z",
-        "summary": "Anthropic Appeals Pentagon AI Blacklist in Federal Court The Tech Buzz"
       },
       {
         "title": "I Let Claude Code Run My $1M/Year Business for a Whole Week",
@@ -1042,6 +1042,22 @@
     ],
     "tutorials": [
       {
+        "title": "v2.1.300",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.300",
+        "source": "Claude Code Releases",
+        "published": "2026-10-14T18:24:25.000Z",
+        "summary": "What's changed Added virtualText to a mod's prompt decorations: text drawn in the prompt box that never enters the draft or the submitted prompt Added cache_creation_5m_tokens and…",
+        "tutorial_kind": "official"
+      },
+      {
+        "title": "feat(observability): add OpenTelemetry tracing cookbook (#922)",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/b2b0aa1ff7d8980b005b225d3802969c87bedad5",
+        "source": "Anthropic Cookbook",
+        "published": "2026-10-14T17:15:24.000Z",
+        "summary": "feat(observability): add OpenTelemetry tracing cookbook (#922) New notebook showing how the Python SDK and the Claude API emit OpenTelemetry spans and how the traceparent header joins them into one…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "feat(managed_agents): move plan-big-execute-small to multiagent_20261…",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/39cd5a7a3a29a73e7391e17b7644c51f34a6aaa1",
         "source": "Anthropic Cookbook",
@@ -1174,14 +1190,6 @@
         "tutorial_kind": "video"
       },
       {
-        "title": "v2.1.288",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.288",
-        "source": "Claude Code Releases",
-        "published": "2026-10-02T20:19:57.000Z",
-        "summary": "What's changed Added $.ui.selection() for mods: returns the text you last selected in fullscreen mode and, when the selection lies within one transcript row, that row Added a built-in gh api to…",
-        "tutorial_kind": "official"
-      },
-      {
         "title": "Merge pull request #898 from anthropics/benlehrburger/cost-optimizati…",
         "url": "https://github.com/anthropics/claude-cookbooks/commit/d7265d6ae994ccd8429db0594b000073b2f9ad43",
         "source": "Anthropic Cookbook",
@@ -1235,14 +1243,6 @@
         "source": "Anthropic Cookbook",
         "published": "2026-09-18T19:07:32.000Z",
         "summary": "feat(misc): add Admin API organization management cookbook (#881) A notebook that manages a Claude Console organization from Python with client.beta.organization: invites and roles, workspaces and…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Merge pull request #879 from anthropics/cj-ant/move-slack-sentry-apps…",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/c245d39f91e5bbc0bf88f6a66a9af5e15f5c3462",
-        "source": "Anthropic Cookbook",
-        "published": "2026-09-16T16:50:30.000Z",
-        "summary": "Merge pull request #879 from anthropics/cj-ant/move-slack-sentry-apps-to-quickstarts docs(managed_agents): move the Slack and Sentry apps to claude-quickstarts",
         "tutorial_kind": "official"
       },
       {
@@ -1744,6 +1744,13 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.300",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.300",
+        "source": "Claude Code",
+        "published": "2026-10-14T18:24:25.000Z",
+        "summary": "What's changed Added virtualText to a mod's prompt decorations: text drawn in the prompt box that never enters the draft or the submitted prompt Added cache_creation_5m_tokens and cache_creation_1h_tokens to the…"
+      },
+      {
         "title": "2.11.0",
         "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.11.0",
         "source": "MCP Inspector",
@@ -1756,6 +1763,13 @@
         "source": "Claude Code",
         "published": "2026-10-14T02:49:42.000Z",
         "summary": "What's changed Added CLAUDE_CODE_DISABLE_FILE_MENTIONS environment variable: Claude gets the paths of @ file mentions to read with its file tools, not the files' contents Added idle compaction in the terminal: a 200K+…"
+      },
+      {
+        "title": "We've launched OpenTelemetry export in beta, so you can trace Messages API requests and Claude Managed Agents sessions…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#october-14-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-10-14T00:00:00.000Z",
+        "summary": ""
       },
       {
         "title": "I Let Claude Code Run My $1M/Year Business for a Whole Week",
@@ -1989,13 +2003,6 @@
         "summary": "pip install -U mcp . Docs: https://py.sdk.modelcontextprotocol.io/ Mostly fixes, plus three new options. A few things behave differently, so skim these first: Behaviour changes httpx2>=2.10.0 is now required ( #3600 )…"
       },
       {
-        "title": "v2.1.288",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.288",
-        "source": "Claude Code",
-        "published": "2026-10-02T20:19:57.000Z",
-        "summary": "What's changed Added $.ui.selection() for mods: returns the text you last selected in fullscreen mode and, when the selection lies within one transcript row, that row Added a built-in gh api to cloud sessions whose…"
-      },
-      {
         "title": "2.3.0",
         "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.3.0",
         "source": "MCP TypeScript SDK",
@@ -2099,13 +2106,6 @@
         "source": "YouTube · Nick Saraev",
         "published": "2026-09-25T06:42:57.000Z",
         "summary": ""
-      },
-      {
-        "title": "We're resuming billing for refusals that arrive before any output when stop_details.category is \"bio\" , \"frontier_llm\"…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#september-24-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-09-24T00:00:00.000Z",
-        "summary": "The Compliance API local session endpoints are out of beta for Claude for Microsoft 365 sessions in Excel, PowerPoint, Word, and Outlook ( product_surface values beginning with office_agents ). See Sessions on users' machines . • The…"
       },
       {
         "title": "Claude Opus 5.5 is the greatest AI model ever released",
