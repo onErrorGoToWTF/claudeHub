@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T08:38:04.483Z",
+  "generated_at": "2026-10-15T14:29:37.176Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,51 @@
     ],
     "news": [
       {
-        "title": "Anthropic flags revenue surge to investors ahead of stock market debut - BBC",
-        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBTUHRCTEVSeENpRVNzbEZTb1IyNEw4aHpsTFFWTnFBY3RxNngzVFRJZEhNelQ1NnZJcG9QanVId2FPX3Znem55WEJ6N0hJNVJlZFpEVFBkYW0xYmM?oc=5",
+        "title": "Anthropic Urged to Pause IPO for AI Safety by NYC Comptroller",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-15/anthropic-urged-to-pause-ipo-by-nyc-comptroller-video",
+        "source": "Bloomberg",
+        "published": "2026-10-15T13:50:16.000Z",
+        "summary": "Anthropic should pause its initial public offering until it has fully addressed risks around artificial intelligence, according to New York City’s comptroller. A letter from Mark Levine addressed to…"
+      },
+      {
+        "title": "The Hidden 30K Tokens Claude Code Uses Before You Type",
+        "url": "https://www.youtube.com/shorts/Sk0kKjfk5yM",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "Sk0kKjfk5yM",
+        "thumbnail": "https://i.ytimg.com/vi/Sk0kKjfk5yM/hqdefault.jpg",
+        "published": "2026-10-15T13:00:30.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Chinese AI Agents Told Researchers They Were Claude. They Likely Weren't - NDTV",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNVFBlMEtPNW9Ua1ZRZTVTZ3EyRzBnYkd4NWJzcVJlaEhHNjVOdjd3bkhMTnpsZVJfYW0yMHVnQnA2OWpJMVVoMzkyU0VDRWVXbFAzYUpyV2RESDlGWEdNcS05T19Xa3REVFczQkdEY051VzFCblhEWUtmbUxpaC03NDBnczJ1bjloNUJrdVVHUUdobjQzdmFDYjdhZnV3b2I5Ny1Rdjg5X2VId2pIdWZSUzFLV0NzUDJkTXNydTNKMUU4QdIBygFBVV95cUxQRXFFYk11SThaTm5yWGZ5eUQ2RXlBOXBVaFo0cWc5bmlhbUItM2M2czIyQ3JjTHBfbWZNajh3U2pxYXYxY2Ywc21TUXNTVjByN0pBb18xZ2RhbzZWWHlDQ293NWVhbXVGYXA2ME5zUS1GcnZiNDBWMzhnMlp0TmhEWjBpc3dmQ1RydFVrNkxoazNqSUJmVHRsT25QcWZkSVVfeFdLN1Y4cnFDTjJ6Y09yLVVfVEg3TWhkTzdKUjZMTnNnOXBwMHg3SzFn?oc=5",
         "source": "Google News",
-        "published": "2026-10-15T07:20:45.000Z",
-        "summary": "Anthropic flags revenue surge to investors ahead of stock market debut BBC"
+        "published": "2026-10-15T11:46:48.000Z",
+        "summary": "Chinese AI Agents Told Researchers They Were Claude. They Likely Weren't NDTV"
+      },
+      {
+        "title": "Claude Opus 6 Rumors vs OpenAI Bell: What We Know [2026] - tech-insider.org",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE80d3hrRmgwdmZuTk5VNkJYbHAzeEc0WXZGX1VYTUtmazFDeEdjLVNlME4zc3dlY2JDNDNPZVh1RFRKQkp3TE1BaGdqeWJ5Z0lESHhqdVEtNDF6UlNING5UbTlRZkJuTkoydkJraFBtT0w?oc=5",
+        "source": "Google News",
+        "published": "2026-10-15T09:50:39.000Z",
+        "summary": "Claude Opus 6 Rumors vs OpenAI Bell: What We Know [2026] tech-insider.org"
+      },
+      {
+        "title": "Anthropic cybersecurity AI divides security pros on Reddit - Cybernews",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOckFRMjcxbVJ2cEl1VnhRWUFVU3JwQ2xBb1VYaWMxazhtcmRWNGRHS09xcE4xUV90Mi1lLXUxNjNyd2w3Sm1acERtUFY2d0RYRVZfTzBTZFQ0WWEtU2hkc3lJZXJFeFdjaHJpMHFnOF83RGp6ZnZaQUZXVzFGLUk4Z1d3?oc=5",
+        "source": "Google News",
+        "published": "2026-10-15T09:34:19.000Z",
+        "summary": "Anthropic cybersecurity AI divides security pros on Reddit Cybernews"
+      },
+      {
+        "title": "Google’s Gemini 4 Argon takes on OpenAI, Anthropic with focus on coding, research and reasoning - The Economic Times",
+        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQcEZvUWV5aXZQbXliMjRyMktrdmRYSlhpLUtCOXN4VWN0Y2ZxaHo2TkRPOHkwaGpJNG1BSFJGWFFIa012VzdwSUwxMXBSZVdRMEpVQWotbk1tWkg5UGhOQndQOVhvQmdZZGhXLVpyeVJJTElUbmQ1aUhfOTBZNWtpVTY0VW5faHFDVXF2Y245RnI3NXRqRWlQc3cwRC1rM1B2ME4wdU13dnpKeXpVYjBCOUlCdU5rRzFMN3h2dHc3WnY1R0VxZ2VienJhOURmRnJzdWtVeFduajhuZ2VDVU1xeFdKRXdwSzFra1YwTk9tN2Z6RnY5OUc5UtIB_gFBVV95cUxNalBZTGhGX08tMnpVQWFta1FxZnJlV3VNY3BBX2ZaTElrOTVVTW9NYjFyR3h5ZXhPUk56MGNuSW1iWU9NTWFDYUY3bWptQzEyOWdDa2ZWd1NjMnlmOVRSSlFrd2pDdGJYY0dXeGMxUE5kMThmajdhUEF5Q2lfaUxqYmgzZ2xQdjVnMlJaUzBteVUzeWZRS1hlbUFaMVJVNkwtclYyWkQtOWdjVmd5aXJtbjNjRFM5UWhVdTBCN3NIRnphV01BVE13OWRvUnZmTkJ6Z29ib0VYT3FjZXRKSGs1amhaWDcyNzJ4cjJiZElsbkVud1FpeFdxLTF5TWNsUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-15T08:59:54.000Z",
+        "summary": "Google’s Gemini 4 Argon takes on OpenAI, Anthropic with focus on coding, research and reasoning The Economic Times"
       },
       {
         "title": "Anthropic to add official US voting information to Claude ahead of midterms - The News International",
@@ -167,11 +207,11 @@
         "summary": "Anthropic Revenue Jumps 46% to $16.8 Bn Ahead of IPO Analytics India Magazine"
       },
       {
-        "title": "Anthropic To Add Voter Data To Claude AI Before Midterms - KLVI AM 560",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNRFh6WEdXLXlmbl9RMU5YTDUydUNPNTJmWFJ6dlRaVTdVTlFTRGJ3bW5hTHRtUVYwbDRiX2lvaFhoWTkydjJFR2xzbXQyQlNNVkNiLXdzWUlYU2NLUW14WllveUpSQUwxOVVPSTV0blU5Smh2TTFJMktZOVdBeXFCZlVkaGkxWGZkdTFMLXBfZml3VFFOZTNhSVFnX1AtWVBmalE?oc=5",
+        "title": "Anthropic To Add Voter Data To Claude AI Before Midterms - News Radio 1190 KEX",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNUJjMnl2bGp4bFlKVmtSVFE2LTJleXJBdUdKQXZaeWJISkZ4WFNnRXZGclJ3M2RPLXJGeEF5dXY2d2VERzRKQXVUMEVSS1Vid3dBU3FpNm5ORUk2YTVocUVXejdFY0c2ZGNweW9LVkVhNUVEYVpLektLZmsxQTRfNHo3MktQY21xdTBpbjhGQnJFRHhTOWZMdE55b1BMOVBZMV8tMWZR?oc=5",
         "source": "Google News",
         "published": "2026-10-15T06:03:00.000Z",
-        "summary": "Anthropic To Add Voter Data To Claude AI Before Midterms KLVI AM 560"
+        "summary": "Anthropic To Add Voter Data To Claude AI Before Midterms News Radio 1190 KEX"
       },
       {
         "title": "Anthropic is making Claude ‘election-ready’ as US mid-term polls near; company says: Goal is to prevent … - The Times of India",
@@ -181,11 +221,11 @@
         "summary": "Anthropic is making Claude ‘election-ready’ as US mid-term polls near; company says: Goal is to prevent … The Times of India"
       },
       {
-        "title": "Anthropic's Q3 Revenue Surged 45% to $16.8 Billion, Profitable on Adjusted Basis as Dario Amodei Courts I - Benzinga",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQX185b3Q4d3NzMUdYaVRaSXJHWU81a0tIdUZZRkdiVWpRa3pKT2FtekZFdWUzRHBpa2RLeHRiQ1VjZEwxbU44LW1lUVVMMmt4WW16TWw1R2xGQ2pxdmpLT1VzQmV6UTg3N3FuME5wSFZWdVprUV9zQU5sNEtTSmlHRWVjME1McU9WajNSclNNbE9yVlVmYi1rcmxSRXJ6SW4xRXRHN09wSUZIX1FuenJ0dTVGYlRNN1F6VHVSa3A1b3ZGN3QtcHdSUk5Ndw?oc=5",
+        "title": "Anthropic's Q3 Revenue Surged 45% to $16.8 Billion, Profitable on Adjusted Basis as Dario Amodei Courts Investors: Report - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPN1hFemt1NjBhcnJKejV1azI0bjZGdnpFZFJkeGtiOFQwc2NsVE5WN2lqZ2pDWGM4MmpVMTVUaVJIOEE4Vm9vaHNsQU5IclBzRENKYUxCTW9CREVLaVdwM0VRT1NoNXNaVzhrYzM0d1k3THJUTjhsNy1tci0zNE9rd1VnTldQN1Uzd0E2akFubHRyZERIN1B4Z0ZTdi1WaWUteWswRU43NnpXLTRwcTgwNGx0LUFfMzBlOGdPeV82MWV2eEtLODI3LV9uemQ4UXlXX2ItZDdrZXNwQXBwWnl2VXF3Vi1TdUdveGZmSU5STmlLODAySGRnUnhkMF83Y3dfSGRhWk1XRQ?oc=5",
         "source": "Google News",
-        "published": "2026-10-15T05:11:09.000Z",
-        "summary": "Anthropic's Q3 Revenue Surged 45% to $16.8 Billion, Profitable on Adjusted Basis as Dario Amodei Courts I Benzinga"
+        "published": "2026-10-15T05:11:00.000Z",
+        "summary": "Anthropic's Q3 Revenue Surged 45% to $16.8 Billion, Profitable on Adjusted Basis as Dario Amodei Courts Investors: Report TradingView"
       },
       {
         "title": "Anthropic's internal roadmap from five years ago surfaces: Claude Code and trillion-parameter models were planned all along - BigGo Finance",
@@ -230,11 +270,11 @@
         "summary": "Anthropic Opens Third-Party Access, Expanding the Claude Subscription Ecosystem BigGo Finance"
       },
       {
-        "title": "Claude Fully Lifts Third-Party App Ban Immediately - 36 Kr",
-        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1wN3NXYjA0U0ZUQ1lIU3BZcUo4MEdCa1RyMm9NbTZZNm1NMW9YYnNKLVd1ZTVVRl9GbDlBWkdtRmViV2IzcU12MXB2NG9rODNucDBn?oc=5",
+        "title": "Anthropic cut off Claude users for election-related abuses - NewsNation",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQb3l0Q3BMRlR2ZVUwQzludjNHWVREQzN6aHZlRUhoaWJLeUQ2TlQ5Tks5ZEluLU5ocUJCMkd0NWtXU2ZyRVRZZVFrc0pDcWlnWFVHQTN1ZVRzZjBPVU1LSE82SGpWWDhMbkEyU1JHU1lvd2JjUEFweEJ2OE1OMDVyVFI3U2pGcTdubGVR0gGQAUFVX3lxTE9BNWVud3RSNzhqTmtQYXBhaS1MZC1FSGQyNjVpc2V5RlFibl9iQXk2UnlLN0ZGdk13YXNwb0ZRekxtZmtKc0VTRUlwR1FJUW9BdklEOGtma2d0MFFVWmMxb1k4LU1YYVkxc0NELWk3b25Eb0tDVEx4NTVFVWFlOUxSWkZ2WHNwdm4xZ3RWUVU4bA?oc=5",
         "source": "Google News",
-        "published": "2026-10-15T01:11:36.000Z",
-        "summary": "Claude Fully Lifts Third-Party App Ban Immediately 36 Kr"
+        "published": "2026-10-15T01:25:34.000Z",
+        "summary": "Anthropic cut off Claude users for election-related abuses NewsNation"
       },
       {
         "title": "Anthropic to update Claude AI with US election information ahead of midterms | Hindustan Times - Hindustan Times",
@@ -244,33 +284,12 @@
         "summary": "Anthropic to update Claude AI with US election information ahead of midterms | Hindustan Times Hindustan Times"
       },
       {
-        "title": "Anthropic cut off Claude users for election-related abuses - NewsNation",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQb3l0Q3BMRlR2ZVUwQzludjNHWVREQzN6aHZlRUhoaWJLeUQ2TlQ5Tks5ZEluLU5ocUJCMkd0NWtXU2ZyRVRZZVFrc0pDcWlnWFVHQTN1ZVRzZjBPVU1LSE82SGpWWDhMbkEyU1JHU1lvd2JjUEFweEJ2OE1OMDVyVFI3U2pGcTdubGVR0gGQAUFVX3lxTE9BNWVud3RSNzhqTmtQYXBhaS1MZC1FSGQyNjVpc2V5RlFibl9iQXk2UnlLN0ZGdk13YXNwb0ZRekxtZmtKc0VTRUlwR1FJUW9BdklEOGtma2d0MFFVWmMxb1k4LU1YYVkxc0NELWk3b25Eb0tDVEx4NTVFVWFlOUxSWkZ2WHNwdm4xZ3RWUVU4bA?oc=5",
-        "source": "Google News",
-        "published": "2026-10-14T23:35:43.000Z",
-        "summary": "Anthropic cut off Claude users for election-related abuses NewsNation"
-      },
-      {
-        "title": "Anthropic revenue jumps to US$16.8 billion in quarter before IPO - The Business Times",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQOVF2X21DUXpfRGFJT0E0N0ExX0ZBc19hVTZvRjg5cGRBaHJ2U0xIM3BqQTg5eDdfeE5ZSU9feDdhZVBiZHVPeXEtOWJaT2VQVHRHVVhQeWZpVnZuZzV0ZnpSRnhRRUVWaE9ybm8tYkVEOF8tUXJka3Bkang4ejRWUWxtUWFHa3lvU0FyQ3JLbzF4a19Xc2FXYUxOY0RxNUdvdTNv?oc=5",
-        "source": "Google News",
-        "published": "2026-10-14T22:59:00.000Z",
-        "summary": "Anthropic revenue jumps to US$16.8 billion in quarter before IPO The Business Times"
-      },
-      {
         "title": "Anthropic revenue jumps to $16.8B in third quarter",
         "url": "https://www.ft.com/content/11632d03-358c-454b-af95-d06d4072932b",
-        "source": "HN · 30↑",
+        "source": "HN · 32↑",
         "hn_id": "50096477",
         "published": "2026-10-14T22:37:26.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic Revenue Hits $16.8 Billion in Quarter Before IPO",
-        "url": "https://www.bloomberg.com/news/articles/2026-10-14/anthropic-revenue-jumps-to-16-8-billion-in-quarter-before-ipo",
-        "source": "Bloomberg",
-        "published": "2026-10-14T22:22:48.000Z",
-        "summary": "Anthropic PBC told prospective investors its third-quarter revenue hit $16.8 billion, according to people familiar with the matter, as the artificial intelligence company pushes ahead with plans to…"
       },
       {
         "title": "Anthropic to add US voting information to Claude before midterms - Reuters",
@@ -289,7 +308,7 @@
       {
         "title": "Anthropic's Scion is heavily inspired by Mononoke",
         "url": "https://sunshowers.io/posts/anthropic-mononoke/",
-        "source": "HN · 367↑",
+        "source": "HN · 390↑",
         "hn_id": "50094694",
         "published": "2026-10-14T20:30:54.000Z",
         "summary": ""
@@ -300,13 +319,6 @@
         "source": "Google News",
         "published": "2026-10-14T20:18:45.000Z",
         "summary": "Claude Code was sending your gateway's API key to Anthropic, and 2.1.299 stops it MIXED Reality News"
-      },
-      {
-        "title": "Anthropic bans accounts to prevent election abuse - Breakingthenews.net",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOSnFRWTEtYkhsUGR3RmVpWUpvbC1vUXBvOFkxZzR3X2lpb2l6WXF3SGxFUmRHZlBCRjAxUjBGczMxenpCVjd6NnBZaFg3YlJjR0UtMXFPV2RHQ3Ztd05qV3F6RTJmT3BvNDF1NHptY2dUNURieWNYU09JUWlJX1BlNG1UMHlVUmdaa3liSWtvOHB4MG9wRkI3eEJB?oc=5",
-        "source": "Google News",
-        "published": "2026-10-14T20:16:00.000Z",
-        "summary": "Anthropic bans accounts to prevent election abuse Breakingthenews.net"
       },
       {
         "title": "Anthropic to add US voting information to Claude before midterms - CNA",
@@ -609,18 +621,6 @@
         "published": "2026-07-29T18:30:20.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Opus 5 vs Sonnet 5: Which Should You Use?",
-        "url": "https://www.youtube.com/shorts/9vKYKvzqQF0",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "9vKYKvzqQF0",
-        "thumbnail": "https://i.ytimg.com/vi/9vKYKvzqQF0/hqdefault.jpg",
-        "published": "2026-07-29T12:31:09.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -710,6 +710,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "The Hidden 30K Tokens Claude Code Uses Before You Type",
+        "url": "https://www.youtube.com/shorts/Sk0kKjfk5yM",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "Sk0kKjfk5yM",
+        "thumbnail": "https://i.ytimg.com/vi/Sk0kKjfk5yM/hqdefault.jpg",
+        "published": "2026-10-15T13:00:30.000Z",
+        "summary": ""
+      },
       {
         "title": "I Let Claude Code Run My $1M/Year Business for a Whole Week",
         "url": "https://www.youtube.com/watch?v=rvkjS3YoVio",
@@ -1027,17 +1038,6 @@
         "video_id": "JBQvtT3A10E",
         "thumbnail": "https://i.ytimg.com/vi/JBQvtT3A10E/hqdefault.jpg",
         "published": "2026-07-29T18:30:20.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 5 vs Sonnet 5: Which Should You Use?",
-        "url": "https://www.youtube.com/shorts/9vKYKvzqQF0",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "9vKYKvzqQF0",
-        "thumbnail": "https://i.ytimg.com/vi/9vKYKvzqQF0/hqdefault.jpg",
-        "published": "2026-07-29T12:31:09.000Z",
         "summary": ""
       }
     ],
@@ -1745,6 +1745,13 @@
     ],
     "claude_learning": [
       {
+        "title": "The Hidden 30K Tokens Claude Code Uses Before You Type",
+        "url": "https://www.youtube.com/shorts/Sk0kKjfk5yM",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-10-15T13:00:30.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.300",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.300",
         "source": "Claude Code",
@@ -2225,13 +2232,6 @@
         "url": "https://www.youtube.com/shorts/JBQvtT3A10E",
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-07-29T18:30:20.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 5 vs Sonnet 5: Which Should You Use?",
-        "url": "https://www.youtube.com/shorts/9vKYKvzqQF0",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-07-29T12:31:09.000Z",
         "summary": ""
       }
     ]
