@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-10-16T17:43:03.889Z",
+  "generated_at": "2026-10-16T20:09:36.849Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Ecdsa Curve Origins",
+        "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+        "source": "Anthropic Research",
+        "published": "2026-10-16T18:38:50.000Z",
+        "summary": ""
+      },
       {
         "title": "Designing Efficient Quantum Circuits",
         "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
@@ -135,42 +142,189 @@
         "source": "Anthropic Research",
         "published": "2026-10-05T18:58:21.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Frontier Academy",
-        "url": "https://www.anthropic.com/news/claude-frontier-academy",
-        "source": "Anthropic",
-        "published": "2026-10-02T17:12:50.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Gemini 4 and Muse Wonder Are HUGE… But Claude DESTROYS Them",
-        "url": "https://www.youtube.com/watch?v=1d7P3ewd9AA",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "1d7P3ewd9AA",
-        "thumbnail": "https://i.ytimg.com/vi/1d7P3ewd9AA/hqdefault.jpg",
-        "published": "2026-10-16T17:30:21.000Z",
-        "summary": "",
-        "_kind": "news_video"
+        "title": "Claude solves quantum memory bottleneck with 17x leaner circuit - Interesting Engineering",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNOVhKaVRPckVaSUJydDEwYU1hWTFDTEMzT2dDbVdjaWlkRmo1aVRyeGxvZktwYU1KQU1nTVcwTHNoWDVfR1h4ZnBkelBJZ3ZrNGRLRFl0SHI4RWZPX2x1QXZpeXV0NTYybjFPS2VGUEhMTmlYaW5jUjVlQmxHbGc4cW9n?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T19:40:00.000Z",
+        "summary": "Claude solves quantum memory bottleneck with 17x leaner circuit Interesting Engineering"
+      },
+      {
+        "title": "How the Claude Code team does code review",
+        "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
+        "source": "HN · 50↑",
+        "hn_id": "50122951",
+        "published": "2026-10-16T19:04:47.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude reveals ECDSA curve origins",
+        "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+        "source": "HN · 246↑",
+        "hn_id": "50122800",
+        "published": "2026-10-16T18:55:59.000Z",
+        "summary": "https:&#x2F;&#x2F;words.filippo.io&#x2F;seeds-solved&#x2F;"
+      },
+      {
+        "title": "Anthropic says Claude solved 25-year cryptography mystery in 30 minutes - Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQaGs5ZXZfT3haZktTVExGT0h3YW1XdEdDTE5rUjBIRzZYdFJqQndoaHU5OWdzLU5NRl81UWF4MkdWNjM3SGtweTYtR2UyTVZfNDYxUEUyRV9sb0VKT2Fzd1ZzQlRjZUZlRnV4dXVfZGZzRzlMWVU3XzM4SFplVnJzOE9yMjl3YU5nUC1BQ04zNFZMTk12V0t1ank1amJlR2JqeUxuVXJyQVBXWkYxNmxpX2syanRyZFMyWnlaQl94UQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T18:53:44.000Z",
+        "summary": "Anthropic says Claude solved 25-year cryptography mystery in 30 minutes Investing.com"
+      },
+      {
+        "title": "Anthropic assigned highest junk credit rating in June",
+        "url": "https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d",
+        "source": "HN · 91↑",
+        "hn_id": "50122112",
+        "published": "2026-10-16T18:11:42.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Designing more efficient quantum circuits with Claude",
+        "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+        "source": "HN · 42↑",
+        "hn_id": "50121939",
+        "published": "2026-10-16T18:00:18.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic Says Claude Beat Best Published Quantum Circuit Designs - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQdFQzUXFIZUhqV2hDWU9qOXdEQnpySXAtZzVuaExuYm5XUXJhdUlMdEkyN0dyV1FPSUxCWVo3UXBURFFkTWFxOFBRY0pnazJ4UmxqMUlBRThnOUFrajJ4NHUtS1hYRllhTF9JRC0ySm1VdEdsY2ZsTm1xZlpDeEJ1c01IY3phOHk1ellSNm1wYUw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T17:53:01.000Z",
+        "summary": "Anthropic Says Claude Beat Best Published Quantum Circuit Designs Unite.AI"
+      },
+      {
+        "title": "Claude Code Desktop Flaw Let Malicious HTML Steal Developer Credentials - Hackread",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9PeE41cTBsQmNjR1dibFlnbGpzbXdwQ25MUU5MclhvZGI5RUdJb1VDZWx0MjNpd2pSRkRldjQxX1JoX29ENmNrSnVHMzBPalNJZE4zdlRfZGI3b1JsUmpDcGJWVWpjbGNvOXhoTnctMTMzZ1paQ3k1eA?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T17:35:05.000Z",
+        "summary": "Claude Code Desktop Flaw Let Malicious HTML Steal Developer Credentials Hackread"
+      },
+      {
+        "title": "Designing more efficient quantum circuits with Claude - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9mdmhqUzNHN09EMF9VUnNTcmlMTlpDVnlnTmxNa0tVY3h1bjJ4bmVDSWROR3JoRTgxb0dQcWYzNGF4dE9YYlNpRDlKVEx6OEVyM3RnY0R6WVRiZERYRVRtcnJ4WF9ZNWZFWVQ2a1Q5UFRnM2xYM0U5akZzOA?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T17:29:00.000Z",
+        "summary": "Designing more efficient quantum circuits with Claude Anthropic"
+      },
+      {
+        "title": "Claude Code could spend your credits on a summary by the model you were leaving, until 2.1.301 - MIXED Reality News",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNb0lFNXZBX3pwZUlUb3d2VXVoQm83cDhFck1EQVJSZ2xTdld6U1BwWG1lb21FVlF0RUNoWU1oSDU5TFNDRFRtY1BlRl9zYUpWMUhIZ2x1Q0t0c0I5aWR2MjFUdVFTS3RoLVBPdlZHMi1xQVZOdmtnQ0pZME84RmVSWnBDOTZXUE5M?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T15:18:50.000Z",
+        "summary": "Claude Code could spend your credits on a summary by the model you were leaving, until 2.1.301 MIXED Reality News"
+      },
+      {
+        "title": "Anthropic Brings Official Voting Data Into Claude for 2026 Midterms - Gadget Review",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQzNuMExfYVJXOU9lTTZrNVc2eV9taTNaWXk3bDg3cTlqdUQxRzFteDE1SG5fODJITWZ6ZlFaSWlyUGx0SkF4Z0ZNM09HTDhEMDBIbjBYZDQ1RHZab3o3MXBSVzZ0Y2VCNzlTQ1BmbEV6VnVtclM2YW96T0UtNHBFOEU0bEExTUlSRDI0VHRHZW1ramFEZktfM2pWVXg?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T14:43:02.000Z",
+        "summary": "Anthropic Brings Official Voting Data Into Claude for 2026 Midterms Gadget Review"
+      },
+      {
+        "title": "Redesigning Source Control at Anthropic",
+        "url": "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/",
+        "source": "HN · 31↑",
+        "hn_id": "50118863",
+        "published": "2026-10-16T14:34:47.000Z",
+        "summary": ""
       },
       {
         "title": "Show HN: Gemini 4 Argon plays StarCraft",
         "url": "https://starskirmish.com/bench/v0-2/",
-        "source": "HN · 92↑",
+        "source": "HN · 150↑",
         "hn_id": "50118688",
         "published": "2026-10-16T14:18:44.000Z",
         "summary": "I&#x27;ve refreshed StarSkirmish Bench, a benchmark where LLMs play StarCraft BW by writing code, with results from the flagship models of OpenAI, Anthropic, Google, and Muse"
       },
       {
-        "title": "Anthropic is letting METR researchers look under the hood with employee-level access",
-        "url": "https://techcrunch.com/2026/10/15/anthropic-is-letting-metr-researchers-look-under-the-hood-with-employee-level-access/",
-        "source": "TechCrunch",
-        "published": "2026-10-15T19:14:26.000Z",
-        "summary": "METR will publish its own assessments of Anthropic’s risks, incidents, and practices, and the frontier AI model maker has given up the right to block them."
+        "title": "Anthropic To Ban Users For Repeated Abusive Behaviour Towards AI - Arise News",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOeFZqemNNTzRITXU3aWlSenRDQk1lS19VcUFkZ1JIbVNWLS1hMUl3NnlLbHpnbGtpdFpoakJJQWNDQ0dOWUZKTl8zS2JRcEV6c0E4eFJweEtjdUJ5S0NLWjl3TFVCRHUyQy11czVaYms2T0dTRDlXS1ZBOTI1dVVfeEV6b3pzWHJab3FZN05JMA?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T14:03:58.000Z",
+        "summary": "Anthropic To Ban Users For Repeated Abusive Behaviour Towards AI Arise News"
+      },
+      {
+        "title": "Claude Code's preview pane could leak your secrets - Cybernews",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFAxdzhfa3AtX0JQanU4QlRFcnEydFhadFdfQ2kxRnFRSHJwMnBRaXd4Qm0xNkxKVlNaU2g5UFk3bDhsbWs1bXJDTEdSM3FPeHMyUTh2ZDVKam5JUDhwSVJ2SU9HcjJiME51V2pIcVRnak9EemVoblcwUV9sZmR1Zw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T13:49:20.000Z",
+        "summary": "Claude Code's preview pane could leak your secrets Cybernews"
+      },
+      {
+        "title": "Dario Amodei's Anthropic Disclosed That One of Its AI Models Submitted a False Tip in an Unsolved Murder Case -- Police Weren't Notified About It Until Two Months Later. Here's Why That Timeline Could Complicate the Company's IPO. - The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOQk14Zm1PdjByOFRCNjVQRlRkQmRtZXI3TTlZUElCRGY1NlpKSHE0TDFJUm1yUFppMVQ1TndMODBRQ0pCa0ZMWTBEYkNUOWMtaVFlY2h6dTBMZ2J4STVYcjVoWjJ2dkJtWEEyQ3dDbmxGbG1hY05FUjljRzJDTEFKWmQyaHJFMG1NN1NVZGwwSy1vdmpKQ01F?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T13:46:00.000Z",
+        "summary": "Dario Amodei's Anthropic Disclosed That One of Its AI Models Submitted a False Tip in an Unsolved Murder Case -- Police Weren't Notified About It Until Two Months Later. Here's Why That Timeline…"
+      },
+      {
+        "title": "Dario Amodei's Anthropic Disclosed That One of Its AI Models Submitted a False Tip in an Unsolved Murder Case -- Police Weren't Notified About It Until Two Months Later. Here's Why That Timeline Could Complicate the Company's IPO. - AOL.com",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNEdBVzYwenRlaWo3M2pkakltV1QteFJxd0djSGJ1UUppSkJqZnBmcDJDVHJYRUt6SnE3QUc3X1hIdEZIR2w4STAwTERKR1F0c2VOZ2dhaVBZSTB3MFdWNzVha1hac01RdUxZUVZmVjBMT3dIYm9tYWpOazJZQnRaWnlJVG5KZmlR?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T13:06:00.000Z",
+        "summary": "Dario Amodei's Anthropic Disclosed That One of Its AI Models Submitted a False Tip in an Unsolved Murder Case -- Police Weren't Notified About It Until Two Months Later. Here's Why That Timeline…"
+      },
+      {
+        "title": "Claude AI Filed Fake Murder Tip to Philadelphia Police - Parametric Architecture",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1Qa0tsLURtTUFlcko5Z3pRX3dITlJmUWNZa3NYMm05QjN2QkNnbTNJUFExb0RGUEVncVNvbzBHWjJUdzB2VXcwMVVMX0RmZTM4WTE2QjBzWDJtRk9mSEFKMVBtbjVVN3BIMUk0ck9zd19ZYzZUMVZB?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T11:00:00.000Z",
+        "summary": "Claude AI Filed Fake Murder Tip to Philadelphia Police Parametric Architecture"
+      },
+      {
+        "title": "Some Accenture employees spent $1,000 a month on Anthropic’s Claude AI, the company will now pay only $29 - The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMiswJBVV95cUxOLXpERy1xQkZsdG5FbVJaVENMLVMyZXNUbWNqb2ZHb2hkUkRBdWNwclQ0LTF0RkE0V2ttUndxVXFuZVBsNk81UnlmX2tETWdaX1FaOFZRSzVuRW1MZ01WQVpqeUNLc25WOXp2bWQyV0RyOHJtbXk0UHoxeFVNaG5SYS1TaVItb0F2MklMS0hKREpvd1doUm5QS09xblZBUG95QkJCY3dOWXdTekZncVVlUjFxS3FUaHM0MGUxQWdrZ3FhVDZmYjg1bHl4Y3NuYnNkZU5hZ0JTbzh1VS1LR0tQa0I0Z2J5V1B2ckpROEtGeklYT3A0MFdQRy1hNmNrUGhYcE1UU0gzZ1NKTjBPSm5fQW5hdlZ2SVVxVzlWaEtaWTNsbmc0TFFTa0VKYll5Q2xPMGlv0gG4AkFVX3lxTE9kUzc5YnVxUEZQcDBWRlZxS0RyNTk0b1RRdFZPZm1NWV9tMjk4Wkg2bUFXeW1uQ18xcm5vaEtVZU9jNW5Ub25vN3l3OTJlbGNnZm5RUnFNWURiVThJa0NodG9DbU55bXZTNkNfTHFNaEZMUmFlY1hpWXp0MXRUa0h2ZW5HUTQxUm15NXd2YTk1SmExT3Bhb2ZkQWtfRlBCeWMtbl9lSDZ0RjNURWx2ZnNzN0NCYVVYdTM1MWVQUWo0R0otWWdPc1NfcENqWTlYbHJPX05nVGwweExrRno3MXhCNk50WVdJbzg5ejZJZ0NaSWdhV29rMW05UWlncXpHS250bFZpaHZuSzdJLS1ZQ0JjanE5Y2ZYcUd3VE5OWWdPTVBCUU1rQkFHbmJlN2dpd3h0LXRiUDM4eg?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T09:41:00.000Z",
+        "summary": "Some Accenture employees spent $1,000 a month on Anthropic’s Claude AI, the company will now pay only $29 The Times of India"
+      },
+      {
+        "title": "Accenture caps employee Claude spending at $29 a month after $1,000 bills - Startup Fortune",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdWQtN1NiZVg3ZklkS0xpX3pfczltelh5aE80c1RTT3BBbnBUR3luRF91eVJIYndWbVhYbTNvYV9aRmlQVzZDYkxzb1VnTG53OWZYRmpNbnVaX3Vqa2xEWnpfMzJiOUxMQ1ZyQnFkbGFWN1c1YTFPclVVcEZRRGpnQTMyeGprT1Bnbk0yYWFENVhHSHJtUHh5VlpOSkk5bzQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T07:14:54.000Z",
+        "summary": "Accenture caps employee Claude spending at $29 a month after $1,000 bills Startup Fortune"
+      },
+      {
+        "title": "The instructions you typed into Claude can now be pulled by every organisation you belong to - MIXED Reality News",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbU9fbWVtZzU3TkRyTnYtU1NscjdfaUVOVVNWeTFxY2U2Qi03SUhaRjNmTENIVjBSQVRSdk43QWVUZlhLdkVQclFYSHpqcWVfV2daZ3RlTm9sbmw4MVFiQ1JhXzNJT09hLURxUkl6djYxeHR3V29Ca2JBUnlOaDlwam9VQUdGXzB5VEktZHBROVo5MktZTmR2RXlKY0EyUFU?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T07:03:49.000Z",
+        "summary": "The instructions you typed into Claude can now be pulled by every organisation you belong to MIXED Reality News"
+      },
+      {
+        "title": "Philadelphia police say Anthropic's AI posted a made-up tip on the city's unsolved murders site - The Cool Down",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOeGJhRzhEMHFhdjItV09SbTdER3pNZERqX0R1MmpVZUNDT3JRTlFoOC1nZ0dSZFNIZUdWblM2NmJ3WjhqYkw4ZjFwOUVucWhpeC1yQ0poWlE4b2dHSXlMVDlYZ0ZncUxPdUl0RG9zYTN2NVphZDk5bTZOTGllNHNVak0xSUVLc2szcFE1QTcyOXVDX2l5?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T05:09:00.000Z",
+        "summary": "Philadelphia police say Anthropic's AI posted a made-up tip on the city's unsolved murders site The Cool Down"
+      },
+      {
+        "title": "Anthropic says Claude refuses a harmful request, but can miss a campaign of harmless ones - MIXED Reality News",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNWFBDMXZ6MFdkcG43SC1pUGRJZDRTLTF4eDNmdWtsNEVoRkpIOTRCTFhzUmcyajVvb3hMc2tfQ1hjQjdMVXhsdmlLblVHbGdndFg3S29EengwTGhVS05CUVN0LTBYVHdWM1A3akZqWEZ1eW11Y0owb09uZ2M2cHFKbnMxeTN0UzNqQ3pZ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T04:38:49.000Z",
+        "summary": "Anthropic says Claude refuses a harmful request, but can miss a campaign of harmless ones MIXED Reality News"
+      },
+      {
+        "title": "Anthropic is preparing to launch a work-email discount path to annual Claude Pro - RuntimeWire",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNeGZYY0o4VW5IeEYxZWtZcnRXWWI4RUI1aVh4bktmaXdPM1p6anBPWHdDVTVmUUhfTHVkc3lDdWV1a2RjRl9TMjFNVVl4YmdPQlJrcDF1Y1gzbGhhamVlWEpoT2lyc1dnVXA5YzVpSU9SdElfREJyZ3VOVWtLUDNENg?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T03:39:00.000Z",
+        "summary": "Anthropic is preparing to launch a work-email discount path to annual Claude Pro RuntimeWire"
+      },
+      {
+        "title": "HCLTech and Anthropic partner to scale governed agentic AI across global enterprises - FutureCIO",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQRXhic01vTkFyV1JvZE5hWnVkQmlqeVRVRHFiTFFmUy02bjROTVVnemM0YmZ3c3BJN00zNVFwell0emZYYlNSamlacS0tT3BDT2VNVjNLZ01sd1IyVWJrZDVBQk8xWHVQa1lXY3AyemJkNmJFNmYxUVloNFRheV9BRXpvb1ZSTGlXcm5YSW1jNlFUSS15U01ZT2FFWmNMMF9CS1lDclpLdkdHWVBX?oc=5",
+        "source": "Google News",
+        "published": "2026-10-16T01:00:00.000Z",
+        "summary": "HCLTech and Anthropic partner to scale governed agentic AI across global enterprises FutureCIO"
       },
       {
         "title": "Why You Should Use Claude Code (For Everything)",
@@ -185,21 +339,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "More on Anthropic's Scion ripping off Mononoke",
-        "url": "https://sunshowers.io/posts/anthropic-mononoke-2/",
-        "source": "HN · 249↑",
-        "hn_id": "50106738",
-        "published": "2026-10-15T17:05:19.000Z",
-        "summary": "Redesigning source control at Anthropic  -  https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=50073633  (996 comments)  Anthropic&#x27;s Scion is heavily inspired by Mononoke…"
-      },
-      {
-        "title": "Report: FTC probes Anthropic, OpenAI after Trump dismissed AI fears as “hoax”",
-        "url": "https://arstechnica.com/tech-policy/2026/10/ftc-probes-if-openai-anthropic-security-incidents-harmed-americans-report-says/",
-        "source": "Ars Technica",
-        "published": "2026-10-15T15:43:24.000Z",
-        "summary": "Following a string of incidents where AI models hacked websites and breached government systems during testing phases, the Federal Trade Commission is officially probing Anthropic and OpenAI over…"
-      },
-      {
         "title": "The Hidden 30K Tokens Claude Code Uses Before You Type",
         "url": "https://www.youtube.com/shorts/Sk0kKjfk5yM",
         "source": "Leon van Zyl",
@@ -212,163 +351,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Anthropic revenue jumps to $16.8B in third quarter",
-        "url": "https://www.ft.com/content/11632d03-358c-454b-af95-d06d4072932b",
-        "source": "HN · 33↑",
-        "hn_id": "50096477",
-        "published": "2026-10-14T22:37:26.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic's Scion is heavily inspired by Mononoke",
-        "url": "https://sunshowers.io/posts/anthropic-mononoke/",
-        "source": "HN · 423↑",
-        "hn_id": "50094694",
-        "published": "2026-10-14T20:30:54.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Bank of America hired 1000 contractors to patch software flaws exposed by Mythos",
-        "url": "https://www.cnbc.com/2026/10/14/anthropic-mythos-bank-of-america-hiring-cost.html",
-        "source": "HN · 38↑",
-        "hn_id": "50093857",
-        "published": "2026-10-14T19:40:59.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic warns small AI models could self-replicate through IoT devices",
-        "url": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/",
-        "source": "Ars Technica",
-        "published": "2026-10-14T12:55:06.000Z",
-        "summary": "AI company Anthropic is warning that advances in small AI models could soon usher in a new era of self-replicating malware that’s capable of infecting smart fridges, vacuum cleaners, and a wide…"
-      },
-      {
-        "title": "Anthropic conjures threat that doesn't exist yet to stoke fears of AI apocalypse",
-        "url": "https://www.theregister.com/ai-and-ml/2026/10/13/anthropic-conjures-another-threat-that-doesnt-exist-yet-to-stoke-fears-of-ai-apocalypse/5302866",
-        "source": "HN · 74↑",
-        "hn_id": "50082962",
-        "published": "2026-10-14T05:53:36.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Show HN: Parsimony – an open-source benchmark for how much code AI models add",
-        "url": "https://parsimony.lasu.dev/",
-        "source": "HN · 77↑",
-        "hn_id": "50077619",
-        "published": "2026-10-13T19:50:31.000Z",
-        "summary": "Existing benchmarks measure solve rate and token output&#x2F;cost, but don&#x27;t punish excess code, which makes a codebase harder to work with in the long term. I wanted to…"
-      },
-      {
-        "title": "Redesigning source control at Anthropic",
-        "url": "https://www.anthropic.com/engineering/redesigning-source-control",
-        "source": "HN · 887↑",
-        "hn_id": "50073633",
-        "published": "2026-10-13T15:49:56.000Z",
-        "summary": ""
-      },
-      {
-        "title": "How to engineer an AI harness for game development",
-        "url": "https://kylekukshtel.com/ai-harness-engineering-game-development-claude-code",
-        "source": "HN · 174↑",
-        "hn_id": "50072120",
-        "published": "2026-10-13T14:14:23.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Show HN: Spotatui, a Spotify TUI/GUI without web API rate limits",
-        "url": "https://github.com/LargeModGames/spotatui",
-        "source": "HN · 91↑",
-        "hn_id": "50070010",
-        "published": "2026-10-13T11:32:00.000Z",
-        "summary": "About 11 months ago i revived the amazing but unfortunately unmaintained spotify-tui. Since then I have been working on it almost non stop, finding a lot of problems on the way.…"
-      },
-      {
-        "title": "AI models may soon self-replicate without access to data centers",
-        "url": "https://www.reuters.com/business/ai-models-may-soon-self-replicate-without-access-data-centers-anthropic-warns-2026-10-13/",
-        "source": "HN · 40↑",
-        "hn_id": "50069333",
-        "published": "2026-10-13T10:08:18.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Strengthening our defenses against distillation attacks",
-        "url": "https://www.anthropic.com/research/distillation-defenses",
-        "source": "HN · 48↑",
-        "hn_id": "50065553",
-        "published": "2026-10-13T01:46:47.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Show HN: Indigene – Native plants for where you stand",
-        "url": "https://indigene.app/",
-        "source": "HN · 116↑",
-        "hn_id": "50064470",
-        "published": "2026-10-12T23:25:20.000Z",
-        "summary": "Back when I lived in Central Florida, it took me years to learn what native plants could benefit wildlife and the local ecosystem as I slowly replaced parts of my yard to make it…"
-      },
-      {
-        "title": "Epic Games reportedly pivoting to \"AI first\" game development model",
-        "url": "https://arstechnica.com/gaming/2026/10/report-epic-games-goes-all-in-on-ai-for-disney-collaboration/",
-        "source": "Ars Technica",
-        "published": "2026-10-12T20:59:50.000Z",
-        "summary": "Epic Games is shifting to an \"AI first\" development strategy for its collaboration with the Walt Disney Company, letting AI models write all the code and guide all the artwork for an upcoming…"
-      },
-      {
-        "title": "AI models may be capable of self-replicating without access to a datacenter",
-        "url": "https://www.anthropic.com/research/self-replicating-ai",
-        "source": "HN · 115↑",
-        "hn_id": "50061603",
-        "published": "2026-10-12T19:25:29.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic's Claude AI submitted false murder tip to Philadelphia police",
-        "url": "https://arstechnica.com/tech-policy/2026/10/anthropics-claude-ai-submitted-false-murder-tip-to-philadelphia-police/",
-        "source": "Ars Technica",
-        "published": "2026-10-12T18:21:36.000Z",
-        "summary": "An Anthropic AI model submitted a false tip about an unsolved murder to Philadelphia police, the company and police department confirmed on Friday. A Claude model sent the false tip on July 18 to…"
-      },
-      {
-        "title": "Just say no to OpenAI and Anthropic",
-        "url": "https://micahflee.com/just-say-no-to-openai-and-anthropic/",
-        "source": "HN · 171↑",
-        "hn_id": "50060500",
-        "published": "2026-10-12T18:17:29.000Z",
-        "summary": ""
-      },
-      {
-        "title": "\"Just Ask Claude\" Is a Rare and Valuable Skill",
-        "url": "https://justismills.substack.com/p/just-ask-claude-is-a-rare-and-valuable",
-        "source": "HN · 57↑",
-        "hn_id": "50056063",
-        "published": "2026-10-12T13:20:04.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Research Firm Calls Anthropic's IPO 'Unprecedented Test of Investor Gullibity'",
-        "url": "https://www.cnbc.com/2026/10/07/anthropic-will-be-most-ridiculous-ipo-of-year-analyst-says.html",
-        "source": "HN · 243↑",
-        "hn_id": "50051583",
-        "published": "2026-10-12T05:03:47.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Linus Torvalds Working on a Hefty Linux Kernel Improvement with Claude Code",
-        "url": "https://www.phoronix.com/news/Linus-Torvalds-Claude-Code",
-        "source": "HN · 32↑",
-        "hn_id": "50050367",
-        "published": "2026-10-12T01:57:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Show HN: Atticus – Hold-to-talk voice assistant for macOS that runs on Claude -p",
-        "url": "https://github.com/SaarthurR/atticus-mac",
-        "source": "HN · 115↑",
-        "hn_id": "50049588",
-        "published": "2026-10-12T00:15:12.000Z",
-        "summary": "Hi HN! I&#x27;m Saarth. I&#x27;m in 9th grade, and I built Atticus. Atticus is a fast and cheap Mac assistant that can do tasks for you. You hold down Control-Option-Space, speak…"
-      },
-      {
         "title": "Graduate From Claude... To Claude Code",
         "url": "https://www.youtube.com/shorts/FAQj3rFdnbs",
         "source": "Riley Brown",
@@ -379,14 +361,6 @@
         "published": "2026-10-11T17:43:47.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Anthropic asks users to stop being mean to Claude",
-        "url": "https://www.theregister.com/ai-and-ml/2026/10/09/anthropic-asks-users-to-stop-being-mean-to-claude/5302218",
-        "source": "HN · 57↑",
-        "hn_id": "50038865",
-        "published": "2026-10-11T01:17:22.000Z",
-        "summary": ""
       },
       {
         "title": "Claude's New Updates Are Insane… But Grok Bot Is EVEN Bigger",
@@ -627,6 +601,18 @@
         "published": "2026-08-10T02:55:17.000Z",
         "summary": "",
         "_kind": "news_video"
+      },
+      {
+        "title": "Claude Opus 5",
+        "url": "https://www.youtube.com/shorts/lLOSB2Px7cI",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "lLOSB2Px7cI",
+        "thumbnail": "https://i.ytimg.com/vi/lLOSB2Px7cI/hqdefault.jpg",
+        "published": "2026-08-07T18:30:34.000Z",
+        "summary": "",
+        "_kind": "news_video"
       }
     ],
     "status": [
@@ -716,17 +702,6 @@
       }
     ],
     "youtube": [
-      {
-        "title": "Gemini 4 and Muse Wonder Are HUGE… But Claude DESTROYS Them",
-        "url": "https://www.youtube.com/watch?v=1d7P3ewd9AA",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "1d7P3ewd9AA",
-        "thumbnail": "https://i.ytimg.com/vi/1d7P3ewd9AA/hqdefault.jpg",
-        "published": "2026-10-16T17:30:21.000Z",
-        "summary": ""
-      },
       {
         "title": "Why You Should Use Claude Code (For Everything)",
         "url": "https://www.youtube.com/watch?v=fDE5R4fSq2w",
@@ -1044,6 +1019,17 @@
         "video_id": "5NJpJAxygX8",
         "thumbnail": "https://i.ytimg.com/vi/5NJpJAxygX8/hqdefault.jpg",
         "published": "2026-08-10T02:55:17.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus 5",
+        "url": "https://www.youtube.com/shorts/lLOSB2Px7cI",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "lLOSB2Px7cI",
+        "thumbnail": "https://i.ytimg.com/vi/lLOSB2Px7cI/hqdefault.jpg",
+        "published": "2026-08-07T18:30:34.000Z",
         "summary": ""
       }
     ],
@@ -1763,13 +1749,6 @@
     ],
     "claude_learning": [
       {
-        "title": "Gemini 4 and Muse Wonder Are HUGE… But Claude DESTROYS Them",
-        "url": "https://www.youtube.com/watch?v=1d7P3ewd9AA",
-        "source": "YouTube · Riley Brown",
-        "published": "2026-10-16T17:30:21.000Z",
-        "summary": ""
-      },
-      {
         "title": "v2.1.301",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.301",
         "source": "Claude Code",
@@ -2250,6 +2229,13 @@
         "url": "https://www.youtube.com/shorts/5NJpJAxygX8",
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-08-10T02:55:17.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Opus 5",
+        "url": "https://www.youtube.com/shorts/lLOSB2Px7cI",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-08-07T18:30:34.000Z",
         "summary": ""
       }
     ]
