@@ -1,34 +1,41 @@
 {
-  "generated_at": "2026-10-17T13:18:48.593Z",
+  "generated_at": "2026-10-17T16:42:26.142Z",
   "version": 1,
   "sections": {
     "updates": [
       {
-        "title": "Ecdsa Curve Origins",
-        "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+        "title": "Expectations for the Future",
+        "url": "https://www.anthropic.com/research/expectations-for-the-future",
         "source": "Anthropic Research",
-        "published": "2026-10-16T22:38:50.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Ai Expectations Gap",
-        "url": "https://www.anthropic.com/research/ai-expectations-gap",
-        "source": "Anthropic Research",
-        "published": "2026-10-16T21:14:38.000Z",
+        "published": "2026-10-17T14:25:22.000Z",
         "summary": ""
       },
       {
         "title": "Employment at Anthropic",
         "url": "https://www.anthropic.com/research/employment-at-anthropic",
         "source": "Anthropic Research",
-        "published": "2026-10-16T21:14:21.000Z",
+        "published": "2026-10-17T14:24:53.000Z",
         "summary": ""
       },
       {
-        "title": "Expectations for the Future",
-        "url": "https://www.anthropic.com/research/expectations-for-the-future",
+        "title": "Ai Expectations Gap",
+        "url": "https://www.anthropic.com/research/ai-expectations-gap",
         "source": "Anthropic Research",
-        "published": "2026-10-16T20:41:59.000Z",
+        "published": "2026-10-17T14:22:35.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Ecdsa Curve Origins",
+        "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+        "source": "Anthropic Research",
+        "published": "2026-10-17T14:19:47.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Designing Efficient Quantum Circuits",
+        "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+        "source": "Anthropic Research",
+        "published": "2026-10-17T14:17:25.000Z",
         "summary": ""
       },
       {
@@ -36,13 +43,6 @@
         "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
         "source": "Anthropic",
         "published": "2026-10-16T20:30:25.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Designing Efficient Quantum Circuits",
-        "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
-        "source": "Anthropic Research",
-        "published": "2026-10-16T17:32:09.000Z",
         "summary": ""
       },
       {
@@ -146,6 +146,20 @@
     ],
     "news": [
       {
+        "title": "Anthropic's Claude Improves Quantum Optimization Designs - Quantum Zeitgeist",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNQndneXNOQV9MclRCTzNYLU8wang0VVJ6S25yNk5GN0t0RThPRGdrUmQ3NHRnZFNRaVotR09WSTdldUNsVEhDdnNYVFY1UkdacXVHRF9hUlpmR0V3NFliandVME1VSXdKNGxxR0FjOFhMeWpBYzlUdWZZREJPT1FqdlJYQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-17T15:22:30.000Z",
+        "summary": "Anthropic's Claude Improves Quantum Optimization Designs Quantum Zeitgeist"
+      },
+      {
+        "title": "DeepSeek Pushes Out Updated AI Model It Says Is Faster, Leaner",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-17/deepseek-pushes-out-updated-ai-model-it-says-is-faster-leaner",
+        "source": "Bloomberg",
+        "published": "2026-10-17T13:47:14.000Z",
+        "summary": "DeepSeek released an update of its AI model this weekend that it says is faster and leaner, ramping up the Chinese company’s challenge to Silicon Valley rivals Anthropic PBC and OpenAI as well as…"
+      },
+      {
         "title": "Anthropic prepares to release Claude Fable 5.5 next week - TestingCatalog AI News",
         "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNTTdoZzVvZTJnVmNMLXF3cWFycWlnbHNPQ1VEamVCaHZqY1dmVXl2M182ZkRnNktmU0QxN0UxMDEtT2ZZbENuMTZqSkk3NmtSdHF5WWd0MEVZX1dVOERONk52XzhqdU5rOW93dGZITHhLU3ZRdGRxNGFRaU1GMHN0LU03T1dQUk00eVdfWnoweFQ4blR2?oc=5",
         "source": "Google News",
@@ -153,11 +167,11 @@
         "summary": "Anthropic prepares to release Claude Fable 5.5 next week TestingCatalog AI News"
       },
       {
-        "title": "Anthropic's Claude Improves Quantum Optimization Designs - Quantum Zeitgeist",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNQndneXNOQV9MclRCTzNYLU8wang0VVJ6S25yNk5GN0t0RThPRGdrUmQ3NHRnZFNRaVotR09WSTdldUNsVEhDdnNYVFY1UkdacXVHRF9hUlpmR0V3NFliandVME1VSXdKNGxxR0FjOFhMeWpBYzlUdWZZREJPT1FqdlJYQQ?oc=5",
+        "title": "Inside the Anthropic HQ Employees are fluent in memes and abstractions - UnHerd",
+        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9tVzRhYk00UVd6M1RPMzVheW4xbUFuQkNLY1VOZkxnMmtDVGl2S25lcXRqb3RuVGRVNHZ2SVhiOERZLTJzY1dYOU45eHpJMWl1OEx3QnNPVE5mQ2d5VE1Kdw?oc=5",
         "source": "Google News",
-        "published": "2026-10-17T09:18:57.000Z",
-        "summary": "Anthropic's Claude Improves Quantum Optimization Designs Quantum Zeitgeist"
+        "published": "2026-10-17T08:44:46.000Z",
+        "summary": "Inside the Anthropic HQ Employees are fluent in memes and abstractions UnHerd"
       },
       {
         "title": "Anthropic’s Claude Designs Leaner Quantum Circuits, Reducing Resources Needed for Key Calculations - The Quantum Insider",
@@ -167,11 +181,11 @@
         "summary": "Anthropic’s Claude Designs Leaner Quantum Circuits, Reducing Resources Needed for Key Calculations The Quantum Insider"
       },
       {
-        "title": "Claude Haiku 4.5 leaves the model selector on October 29 - Notebookcheck",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNNnB4NVZnTXE2Y0V3M200blJaNHdGMkVYQlo5dnpZYzlfcWpZVDZlX2dVMnBPT0JFTEVZUHp2eVowYkVOVU1JaEF3bzZkUk1WSEJnRkwzN1VhQ1lLX3AweXlScnl6WXdockFwQ216NTl4ZTJnVEwwcGFjSGFmUDJ3VXVZZjNqVUtGYWRSV1FUaHpHMExSbzNEYmhtbFZIYlpXRDYw?oc=5",
+        "title": "Some Accenture employees spent $1,000 a month on Anthropic’s Claude AI, company will now centrally fund $ - The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMiswJBVV95cUxOLXpERy1xQkZsdG5FbVJaVENMLVMyZXNUbWNqb2ZHb2hkUkRBdWNwclQ0LTF0RkE0V2ttUndxVXFuZVBsNk81UnlmX2tETWdaX1FaOFZRSzVuRW1MZ01WQVpqeUNLc25WOXp2bWQyV0RyOHJtbXk0UHoxeFVNaG5SYS1TaVItb0F2MklMS0hKREpvd1doUm5QS09xblZBUG95QkJCY3dOWXdTekZncVVlUjFxS3FUaHM0MGUxQWdrZ3FhVDZmYjg1bHl4Y3NuYnNkZU5hZ0JTbzh1VS1LR0tQa0I0Z2J5V1B2ckpROEtGeklYT3A0MFdQRy1hNmNrUGhYcE1UU0gzZ1NKTjBPSm5fQW5hdlZ2SVVxVzlWaEtaWTNsbmc0TFFTa0VKYll5Q2xPMGlv0gG4AkFVX3lxTE9kUzc5YnVxUEZQcDBWRlZxS0RyNTk0b1RRdFZPZm1NWV9tMjk4Wkg2bUFXeW1uQ18xcm5vaEtVZU9jNW5Ub25vN3l3OTJlbGNnZm5RUnFNWURiVThJa0NodG9DbU55bXZTNkNfTHFNaEZMUmFlY1hpWXp0MXRUa0h2ZW5HUTQxUm15NXd2YTk1SmExT3Bhb2ZkQWtfRlBCeWMtbl9lSDZ0RjNURWx2ZnNzN0NCYVVYdTM1MWVQUWo0R0otWWdPc1NfcENqWTlYbHJPX05nVGwweExrRno3MXhCNk50WVdJbzg5ejZJZ0NaSWdhV29rMW05UWlncXpHS250bFZpaHZuSzdJLS1ZQ0JjanE5Y2ZYcUd3VE5OWWdPTVBCUU1rQkFHbmJlN2dpd3h0LXRiUDM4eg?oc=5",
         "source": "Google News",
-        "published": "2026-10-17T07:10:00.000Z",
-        "summary": "Claude Haiku 4.5 leaves the model selector on October 29 Notebookcheck"
+        "published": "2026-10-17T08:12:00.000Z",
+        "summary": "Some Accenture employees spent $1,000 a month on Anthropic’s Claude AI, company will now centrally fund $ The Times of India"
       },
       {
         "title": "‘Wow, it’s a real discovery’: Claude cracks a 25-year NSA number mystery - CoinDesk",
@@ -214,13 +228,6 @@
         "source": "Google News",
         "published": "2026-10-16T23:43:50.000Z",
         "summary": "Claude Opus 5.5 fast mode needs no access request, but falling back costs the cache MIXED Reality News"
-      },
-      {
-        "title": "Nova Scotia to host massive data centre to power Anthropic's AI assistant Claude - CBC",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPWnVIOG51MWpiWDNTOTl0Zk5BNXVPV2dQdmJpVFp0SEZIOFZBOGhyMnpYZGFETkdYUWxNdWlXbVpXZ0ltcTJteU56bE5OM1JjZFAwOWQyQ2RiZ2dGR3JmYThGY3oyNGI0QUpWc1RHSGFjYThvQ3ZLYW01NEdsbEY4U0xQMm42d2xLN3U4TnI0VGhKcUtFYnR0dlRWZmlKZk5DcURDdTlLU2YyYTJnOXRkM2stY2pMRmdTQ0FNYUVIc2JUa1NwazhSWTRsZHNoUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-16T22:28:05.000Z",
-        "summary": "Nova Scotia to host massive data centre to power Anthropic's AI assistant Claude CBC"
       },
       {
         "title": "Anthropic Pitches AI Safety Bill to Lawmakers",
@@ -295,7 +302,7 @@
       {
         "title": "How the Claude Code team does code review",
         "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
-        "source": "HN · 389↑",
+        "source": "HN · 430↑",
         "hn_id": "50122951",
         "published": "2026-10-16T19:04:47.000Z",
         "summary": ""
@@ -303,24 +310,18 @@
       {
         "title": "Claude reveals ECDSA curve origins",
         "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
-        "source": "HN · 919↑",
+        "source": "HN · 973↑",
         "hn_id": "50122800",
         "published": "2026-10-16T18:55:59.000Z",
         "summary": "https:&#x2F;&#x2F;words.filippo.io&#x2F;seeds-solved&#x2F;"
       },
       {
-        "title": "Anthropic says Claude solved 25-year cryptography mystery in 30 minutes - Investing.com",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQaGs5ZXZfT3haZktTVExGT0h3YW1XdEdDTE5rUjBIRzZYdFJqQndoaHU5OWdzLU5NRl81UWF4MkdWNjM3SGtweTYtR2UyTVZfNDYxUEUyRV9sb0VKT2Fzd1ZzQlRjZUZlRnV4dXVfZGZzRzlMWVU3XzM4SFplVnJzOE9yMjl3YU5nUC1BQ04zNFZMTk12V0t1ank1amJlR2JqeUxuVXJyQVBXWkYxNmxpX2syanRyZFMyWnlaQl94UQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-16T18:53:44.000Z",
-        "summary": "Anthropic says Claude solved 25-year cryptography mystery in 30 minutes Investing.com"
-      },
-      {
-        "title": "Anthropic’s Claude Cuts a Quantum Decoder’s Gates by 12x - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQd2hrRjllaUZPTHRNYWxjcENZMmwxdkxlc1MwV3hiVVpqdHN1WnRJOFhvcVFrT1NzaDVqNW1PczRmUi1id2lBU2RfYXI4RzJfNjByNU1OTUdEcWRsTkE3OXFvdnlySUJSN1gxYjlPNEhFZTVUVjhzOVJ2MkFuaTBCMl9ySVRRTDhRdEE?oc=5",
-        "source": "Google News",
-        "published": "2026-10-16T18:36:25.000Z",
-        "summary": "Anthropic’s Claude Cuts a Quantum Decoder’s Gates by 12x FourWeekMBA"
+        "title": "Show HN: Stoke Money – Personal finance app built around a cash flow forecast",
+        "url": "https://stoke.money",
+        "source": "HN · 31↑",
+        "hn_id": "50122776",
+        "published": "2026-10-16T18:54:47.000Z",
+        "summary": "Hi HN, I&#x27;ve been through many finance tracking apps, starting with Personal Capital, then Monarch, and most recently Copilot. None of them have worked perfectly for my…"
       },
       {
         "title": "Why You Should Use Claude Code (For Everything)",
