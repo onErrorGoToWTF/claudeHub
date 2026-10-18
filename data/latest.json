@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-10-18T16:58:37.644Z",
+  "generated_at": "2026-10-18T19:45:21.814Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Public Benefit Fund",
+        "url": "https://www.anthropic.com/news/public-benefit-fund",
+        "source": "Anthropic",
+        "published": "2026-10-18T18:05:05.000Z",
+        "summary": ""
+      },
       {
         "title": "Expectations for the Future",
         "url": "https://www.anthropic.com/research/expectations-for-the-future",
@@ -135,16 +142,16 @@
         "source": "Anthropic",
         "published": "2026-10-08T17:00:30.000Z",
         "summary": ""
-      },
-      {
-        "title": "Genesis Mission Commitment",
-        "url": "https://www.anthropic.com/news/genesis-mission-commitment",
-        "source": "Anthropic",
-        "published": "2026-10-08T15:49:10.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic Plans to Shift Some Shares Into New ‘Public Good’ Fund",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-18/anthropic-plans-to-shift-some-shares-into-new-public-good-fund",
+        "source": "Bloomberg",
+        "published": "2026-10-18T18:03:03.000Z",
+        "summary": "Anthropic PBC said it plans to put 5% of its shares into a new fund that the artificial intelligence company says will enable it to make donations that can address “the public good,” including…"
+      },
       {
         "title": "Anthropic gives outside AI watchdog “employee-like” access",
         "url": "https://arstechnica.com/ai/2026/10/anthropic-gives-outside-ai-watchdog-employee-like-access/",
@@ -155,7 +162,7 @@
       {
         "title": "Anthropic's proposed AI safety bill only kicks in if 50 deaths or $1B in damages",
         "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-proposed-ai-safety-bill-only-kicks-in-if-50-deaths-or-usd1-billion-in-damages-are-on-the-line-proposal-would-effectively-make-the-commerce-department-the-only-agency-capable-of-stopping-an-ai-model",
-        "source": "HN · 102↑",
+        "source": "HN · 140↑",
         "hn_id": "50141429",
         "published": "2026-10-18T14:30:27.000Z",
         "summary": ""
@@ -175,7 +182,7 @@
       {
         "title": "Show HN: The Zelda timeline to catch up before the Ocarina of Time remake",
         "url": "https://legendofhyrule.com/",
-        "source": "HN · 78↑",
+        "source": "HN · 121↑",
         "hn_id": "50140769",
         "published": "2026-10-18T13:06:54.000Z",
         "summary": "I made this ahead of the Ocarina of Time remake which comes out in 17 days. I remember the feeling of playing it as a kid but I hadn’t kept up with the story so I built a…"
@@ -190,7 +197,7 @@
       {
         "title": "How employment is changing at Anthropic",
         "url": "https://www.anthropic.com/research/employment-at-anthropic",
-        "source": "HN · 91↑",
+        "source": "HN · 99↑",
         "hn_id": "50139873",
         "published": "2026-10-18T10:49:26.000Z",
         "summary": ""
@@ -226,7 +233,7 @@
       {
         "title": "Show HN: 500 clocks in one 6.3 MB HTML file by Opus 5.5",
         "url": "https://tkgally.github.io/500-clocks/",
-        "source": "HN · 58↑",
+        "source": "HN · 59↑",
         "hn_id": "50137820",
         "published": "2026-10-18T04:04:58.000Z",
         "summary": "Lately I&#x27;ve been testing frontier models by having them create self-contained web pages that display clocks--sort of my personal version of Simon Willison’s…"
@@ -329,25 +336,6 @@
         "source": "Google News",
         "published": "2026-10-16T21:45:00.000Z",
         "summary": "Anthropic quietly pitches its own AI safety bill to lawmakers Politico"
-      },
-      {
-        "title": "Anthropic expands footprint in South Lake Union - The Business Journals",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQOUFadTVwNlJqeV9VczRidVk1T0xhOUlQQ0lIdjgwMDBocDdZazR0Q2t1c2pnYWFBdEw2c29CSEt6cUdGZm1IQTE0NnY5N0h6WUVyNEgyZTVOYlMyT2JLcTNib0VvMndrckhHVHdDdGxLVkFCdXAzQmgzSlltYXZqR0hEdklGdXJBUnZyOHdkelhQcXRCOUMtcHRpNkZhZEJGNDNVR2VKbw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-16T21:42:00.000Z",
-        "summary": "Anthropic expands footprint in South Lake Union The Business Journals"
-      },
-      {
-        "title": "Why You Should Use Claude Code (For Everything)",
-        "url": "https://www.youtube.com/watch?v=fDE5R4fSq2w",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "fDE5R4fSq2w",
-        "thumbnail": "https://i.ytimg.com/vi/fDE5R4fSq2w/hqdefault.jpg",
-        "published": "2026-10-15T18:24:45.000Z",
-        "summary": "",
-        "_kind": "news_video"
       },
       {
         "title": "The Hidden 30K Tokens Claude Code Uses Before You Type",
@@ -713,7 +701,7 @@
         "summary": ""
       },
       {
-        "title": "Why You Should Use Claude Code (For Everything)",
+        "title": "How To Use Claude Code For EVERYTHING",
         "url": "https://www.youtube.com/watch?v=fDE5R4fSq2w",
         "source": "Riley Brown",
         "channel": "Riley Brown",
@@ -1056,6 +1044,18 @@
         "published": "2026-10-15T19:22:06.000Z",
         "summary": "What's changed Added CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS so unattended retry mode ( CLAUDE_CODE_RETRY_WATCHDOG ) ends a request at a usage limit that resets too far away instead of…",
         "tutorial_kind": "official"
+      },
+      {
+        "title": "How To Use Claude Code For EVERYTHING",
+        "url": "https://www.youtube.com/watch?v=fDE5R4fSq2w",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "fDE5R4fSq2w",
+        "thumbnail": "https://i.ytimg.com/vi/fDE5R4fSq2w/hqdefault.jpg",
+        "published": "2026-10-15T18:24:45.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
       },
       {
         "title": "Redesigning Source Control",
@@ -1769,7 +1769,7 @@
         "summary": "What's changed Added CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS so unattended retry mode ( CLAUDE_CODE_RETRY_WATCHDOG ) ends a request at a usage limit that resets too far away instead of waiting Added…"
       },
       {
-        "title": "Why You Should Use Claude Code (For Everything)",
+        "title": "How To Use Claude Code For EVERYTHING",
         "url": "https://www.youtube.com/watch?v=fDE5R4fSq2w",
         "source": "YouTube · Riley Brown",
         "published": "2026-10-15T18:24:45.000Z",
