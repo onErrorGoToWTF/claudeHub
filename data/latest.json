@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T12:13:00.116Z",
+  "generated_at": "2026-10-18T16:58:37.644Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,9 +146,51 @@
     ],
     "news": [
       {
+        "title": "Anthropic gives outside AI watchdog “employee-like” access",
+        "url": "https://arstechnica.com/ai/2026/10/anthropic-gives-outside-ai-watchdog-employee-like-access/",
+        "source": "Ars Technica",
+        "published": "2026-10-18T16:25:19.000Z",
+        "summary": "Anthropic has granted external evaluators “employee-like access” to assess the risks of its models, following through on a commitment to increase safeguards over concerns the technology could run…"
+      },
+      {
+        "title": "Anthropic's proposed AI safety bill only kicks in if 50 deaths or $1B in damages",
+        "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-proposed-ai-safety-bill-only-kicks-in-if-50-deaths-or-usd1-billion-in-damages-are-on-the-line-proposal-would-effectively-make-the-commerce-department-the-only-agency-capable-of-stopping-an-ai-model",
+        "source": "HN · 102↑",
+        "hn_id": "50141429",
+        "published": "2026-10-18T14:30:27.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Reverse Engineer Anything + Claude: Modding an Offline MMO",
+        "url": "https://www.youtube.com/watch?v=erRoMmb5Gkg",
+        "source": "Stefan Rows",
+        "channel": "Stefan Rows",
+        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
+        "video_id": "erRoMmb5Gkg",
+        "thumbnail": "https://i.ytimg.com/vi/erRoMmb5Gkg/hqdefault.jpg",
+        "published": "2026-10-18T14:08:04.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Show HN: The Zelda timeline to catch up before the Ocarina of Time remake",
+        "url": "https://legendofhyrule.com/",
+        "source": "HN · 78↑",
+        "hn_id": "50140769",
+        "published": "2026-10-18T13:06:54.000Z",
+        "summary": "I made this ahead of the Ocarina of Time remake which comes out in 17 days. I remember the feeling of playing it as a kid but I hadn’t kept up with the story so I built a…"
+      },
+      {
+        "title": "19-Year-Old Claims Claude Code Helped Turn $68 Into $750,000. Here's How - NDTV Profit",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNV25LU0xobEk4YzEtT3JsZnFhVUZuX3hZVWFPdlBsRXdmM1dsX245S19uaTBWb3lFd1dkeVZ0cEtMNWViVXMtUFZZZ2lnSk1fY3lnN210ZkdRclFJc2NFX2QtUTlRWDZpRldiZGNldHFTUVJtM3o5ZVZxVlZlSXVQb1UwMWdhNGhxZXdyeHZnRmpDRjRvQXRqYkpPRHRsMDFpOHFkNXlDUUNJMGdHNHNr0gG3AUFVX3lxTFBLZk1sdlJUYjFPWHBWaF9rWUNhaWZlSENrLTR0QlZUMW8yOEJvVzZqRVA3dVo4NHdpazhGcUNtMEE2cGtKVE9ST1VpbXg2eWVmTFVXb09pcE9CamJRVnRtUFlQNG1HODRaSU5EblRaSGJ3bXR2cFNBNUFDVEhYd1lRdEN1N19IMHN4ZXhPQ3l4UTJma3Y3MzdVaVRsQ1djXzhGVlNOUHdkcDdBMnIxWmI5aXB2WlUtZw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-18T12:25:01.000Z",
+        "summary": "19-Year-Old Claims Claude Code Helped Turn $68 Into $750,000. Here's How NDTV Profit"
+      },
+      {
         "title": "How employment is changing at Anthropic",
         "url": "https://www.anthropic.com/research/employment-at-anthropic",
-        "source": "HN · 56↑",
+        "source": "HN · 91↑",
         "hn_id": "50139873",
         "published": "2026-10-18T10:49:26.000Z",
         "summary": ""
@@ -157,7 +199,7 @@
         "title": "Anthropic signs onto a 420 MW Nova Scotia data-centre plan - OpenTools",
         "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQWEZNWWlDZlh5Z2NpNk9reV8wRWNQMWM5WEZRWVR1UWZ4bnNtaGhfazJndnByMTFkdkNjZFc1NzFveGdacmVGdTIwVlF0RUZaeEJockZwcHdlUlBhUVFrZVE0S2dhM1NUYlltTHg0MkNNcGN1SDFnQ3p0R1Bja1dYZWpfX1A?oc=5",
         "source": "Google News",
-        "published": "2026-10-18T10:36:03.000Z",
+        "published": "2026-10-18T10:40:54.000Z",
         "summary": "Anthropic signs onto a 420 MW Nova Scotia data-centre plan OpenTools"
       },
       {
@@ -184,7 +226,7 @@
       {
         "title": "Show HN: 500 clocks in one 6.3 MB HTML file by Opus 5.5",
         "url": "https://tkgally.github.io/500-clocks/",
-        "source": "HN · 53↑",
+        "source": "HN · 58↑",
         "hn_id": "50137820",
         "published": "2026-10-18T04:04:58.000Z",
         "summary": "Lately I&#x27;ve been testing frontier models by having them create self-contained web pages that display clocks--sort of my personal version of Simon Willison’s…"
@@ -218,27 +260,6 @@
         "summary": "Over the weekend, Masad clarified that OpenAI would replace Anthropic as its default model provider. Claude will still be available to customers on the platform."
       },
       {
-        "title": "Replit makes OpenAI its default over Anthropic, CEO says - TechCrunch",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOUFoxYWFYWWFqQTRraXdReXZYYmo5S0ZabG04MmlMbnp5R1VoMUsyLWpIMVg0bUhnOUNqMmxZV05BWm1DRVg4QlhONW9qbUo5UktELXhFMmc4VXhKMzhPbGxuZ2l0cjhGdE1MaEtPU0hBNzdqbTZPaEFHRENkVU9hcG9ieFhDalBPSUNZSEJGRQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-17T18:48:08.000Z",
-        "summary": "Replit makes OpenAI its default over Anthropic, CEO says TechCrunch"
-      },
-      {
-        "title": "Anthropic Says Claude Cracked a 25-Year NSA Cryptography Seed Mystery in 30 Minutes - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE16YUdJX2RaZmpDNlFMRm15ZTY2eWR3cE9sVDJLWEhmZTdvajUwX2IxR1Itblg0WVREdE92RUczaFl6TVZjRmptVUtvc3h0cEVveVUzOVZHT0V4QlNBSEN4MklrR1ExeDVZT1JlNkJMS3VISTlvUkE?oc=5",
-        "source": "Google News",
-        "published": "2026-10-17T18:05:00.000Z",
-        "summary": "Anthropic Says Claude Cracked a 25-Year NSA Cryptography Seed Mystery in 30 Minutes BigGo Finance"
-      },
-      {
-        "title": "Claude Fable 5 Ends 87-Year Math Feud; BTC Reacts [2026] - shattered.io",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5uNW14aXVBSktmRDZXTXNSck5HX3ZOWmVnMzVBOWdhZGIyT2JlVFFSTTBTeDhQOUZqTW1YTXVGdXBwc0phZlQ2X0NuZVVZZW5lVy1pRHdsbnBKUVZ4M3AwUkdGSndKWTk1M2IzQlhfamFqNkdfenc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-17T15:55:21.000Z",
-        "summary": "Claude Fable 5 Ends 87-Year Math Feud; BTC Reacts [2026] shattered.io"
-      },
-      {
         "title": "Anthropic's Claude Improves Quantum Optimization Designs - Quantum Zeitgeist",
         "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNQndneXNOQV9MclRCTzNYLU8wang0VVJ6S25yNk5GN0t0RThPRGdrUmQ3NHRnZFNRaVotR09WSTdldUNsVEhDdnNYVFY1UkdacXVHRF9hUlpmR0V3NFliandVME1VSXdKNGxxR0FjOFhMeWpBYzlUdWZZREJPT1FqdlJYQQ?oc=5",
         "source": "Google News",
@@ -251,13 +272,6 @@
         "source": "Google News",
         "published": "2026-10-17T14:43:40.000Z",
         "summary": "Anthropics' Claude cracks a 25-year-old NSA cryptography mystery in under 30 minutes The Decoder"
-      },
-      {
-        "title": "DeepSeek Pushes Out Updated AI Model It Says Is Faster, Leaner",
-        "url": "https://www.bloomberg.com/news/articles/2026-10-17/deepseek-pushes-out-updated-ai-model-it-says-is-faster-leaner",
-        "source": "Bloomberg",
-        "published": "2026-10-17T13:47:14.000Z",
-        "summary": "DeepSeek released an update of its AI model this weekend that it says is faster and leaner, ramping up the Chinese company’s challenge to Silicon Valley rivals Anthropic PBC and OpenAI as well as…"
       },
       {
         "title": "Anthropic prepares to release Claude Fable 5.5 next week - TestingCatalog AI News",
@@ -304,7 +318,7 @@
       {
         "title": "Show HN: Things to Do API",
         "url": "https://thingstodoapi.com/",
-        "source": "HN · 48↑",
+        "source": "HN · 53↑",
         "hn_id": "50126384",
         "published": "2026-10-16T23:58:34.000Z",
         "summary": "I built an api&#x2F;mcp for local events: pop-ups, one-off events, concerts, etc. currently covering the SF bay area. I&#x27;ve been building a bunch of consumer apps lately…"
@@ -598,18 +612,6 @@
         "published": "2026-08-10T02:55:17.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Opus 5",
-        "url": "https://www.youtube.com/shorts/lLOSB2Px7cI",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "lLOSB2Px7cI",
-        "thumbnail": "https://i.ytimg.com/vi/lLOSB2Px7cI/hqdefault.jpg",
-        "published": "2026-08-07T18:30:34.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -699,6 +701,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Reverse Engineer Anything + Claude: Modding an Offline MMO",
+        "url": "https://www.youtube.com/watch?v=erRoMmb5Gkg",
+        "source": "Stefan Rows",
+        "channel": "Stefan Rows",
+        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
+        "video_id": "erRoMmb5Gkg",
+        "thumbnail": "https://i.ytimg.com/vi/erRoMmb5Gkg/hqdefault.jpg",
+        "published": "2026-10-18T14:08:04.000Z",
+        "summary": ""
+      },
       {
         "title": "Why You Should Use Claude Code (For Everything)",
         "url": "https://www.youtube.com/watch?v=fDE5R4fSq2w",
@@ -1016,17 +1029,6 @@
         "video_id": "5NJpJAxygX8",
         "thumbnail": "https://i.ytimg.com/vi/5NJpJAxygX8/hqdefault.jpg",
         "published": "2026-08-10T02:55:17.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 5",
-        "url": "https://www.youtube.com/shorts/lLOSB2Px7cI",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "lLOSB2Px7cI",
-        "thumbnail": "https://i.ytimg.com/vi/lLOSB2Px7cI/hqdefault.jpg",
-        "published": "2026-08-07T18:30:34.000Z",
         "summary": ""
       }
     ],
@@ -1746,6 +1748,13 @@
     ],
     "claude_learning": [
       {
+        "title": "Reverse Engineer Anything + Claude: Modding an Offline MMO",
+        "url": "https://www.youtube.com/watch?v=erRoMmb5Gkg",
+        "source": "YouTube · Stefan Rows",
+        "published": "2026-10-18T14:08:04.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.302",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302",
         "source": "Claude Code",
@@ -2226,13 +2235,6 @@
         "url": "https://www.youtube.com/shorts/5NJpJAxygX8",
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-08-10T02:55:17.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 5",
-        "url": "https://www.youtube.com/shorts/lLOSB2Px7cI",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-08-07T18:30:34.000Z",
         "summary": ""
       }
     ]
