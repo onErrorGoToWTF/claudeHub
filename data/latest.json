@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T01:45:56.938Z",
+  "generated_at": "2026-10-18T06:42:38.285Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,14 @@
     ],
     "news": [
       {
+        "title": "Show HN: 500 clocks in one 6.3 MB HTML file by Opus 5.5",
+        "url": "https://tkgally.github.io/500-clocks/",
+        "source": "HN · 31↑",
+        "hn_id": "50137820",
+        "published": "2026-10-18T04:04:58.000Z",
+        "summary": "Lately I&#x27;ve been testing frontier models by having them create self-contained web pages that display clocks--sort of my personal version of Simon Willison’s…"
+      },
+      {
         "title": "Pentagon Escalates Anthropic Dispute Over Claude Military Safeguards - FindArticles",
         "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORVhET2E2R0VoU2gzYW41ZVB6eE5VRnB3ZE15clVlOXMwR1pqUFk3dlY3Q3ljeVM4ZHVQZFg2VXA2SEVWcTN3eVB6UU9LOUNZWFhiWll5eXdlTUxlT0NNUENpOWhsYTZEd1dUNXM1TDV5Rk82bHlrUkUzN3F6NVhiZzVqR3RVNGVlRVlv0gGTAUFVX3lxTE80RVlxX1IyWHNaeVVscWFnQ01IRFc1b282Rms4eE1abkRURV8ycGpuS25pdVdjcWd3VDQyYUx0VmY2dXZNTXZfOEtSLTZrdzMtajNDVmVLS1JhTTFqaHJLcElUeE5PNzZuSVZJT2p6NU5fblRwbmsxaGJyZHVXbUowUjdBVklEMENPcHI4UURlOUw0NA?oc=5",
         "source": "Google News",
@@ -230,6 +238,13 @@
         "summary": "Anthropic prepares to release Claude Fable 5.5 next week TestingCatalog AI News"
       },
       {
+        "title": "Anthropic’s Claude slashes gates 17x in elliptic-curve quantum circuit - ForkLog",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPd0x2S0pjd040V3pDeHByUnVZZ2hyWUhIZ1FXNEFBQ1pXNWdDZlBzbFZrZjdTUE1JS3BNLTZPVmI4WXNJQzlGX0FIZ3A1T1Zvbnk5WGtGQ05iVHQ3OGlQMHlPeDFLWVNxZ3ctVTduUklLUXd4OVRJR01UUzFZdjAyYnd4QXhWR29wU0E5OXVrNldqX0ZXamR1ag?oc=5",
+        "source": "Google News",
+        "published": "2026-10-17T10:00:00.000Z",
+        "summary": "Anthropic’s Claude slashes gates 17x in elliptic-curve quantum circuit ForkLog"
+      },
+      {
         "title": "Anthropic’s Claude Designs Leaner Quantum Circuits, Reducing Resources Needed for Key Calculations - The Quantum Insider",
         "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPYURjUkQ4Wk91LUpUaXNlYmdUS0Q3UmNFTUFvSEN5c1pYRUx2NXgwTmhUQS16MV9oLW9ZNmJJR2laeGwxRFlxMmtxZUVkaGR3dHlocUlYMFpKYVkzbzNHYUJ2WFUtcnNQVDhuSHQxTTdkUi1vYXR3SVZQOXJkVmhXeVB4Z1BlSDZVRE9XaWZ6YWt0TWFiQmlieklTMnZDdGJLbDdXTzNKc3VnSEhwRW5IaUxFeUdtQ2R1NS0wSVdHNHA2bmNTWUgxTmF6Y1lmc0t4a0gxcg?oc=5",
         "source": "Google News",
@@ -251,13 +266,6 @@
         "summary": "‘Wow, it’s a real discovery’: Claude cracks a 25-year NSA number mystery CoinDesk"
       },
       {
-        "title": "AI: Anthropic’s IPO Show and Tell, OpenAI Ads, Meta’s Wonder & More. AI-RTZ #1242 - AI: Reset to Zero",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxObUI1ZGMtZEF4VGR5U3VPVmdSWXc0dV81UERMRjdNa3FJNklKYV9YNW1BNlZTMnlnMHdNT09XRUREekduWlZjOGVDSlJ3WklxSlp5VV9fMlVCZEhUZEJYZVhKS1NwelFnRFRJMFY1cEZPejBwUDFvaV80ME1NMUw2Yg?oc=5",
-        "source": "Google News",
-        "published": "2026-10-17T05:02:33.000Z",
-        "summary": "AI: Anthropic’s IPO Show and Tell, OpenAI Ads, Meta’s Wonder & More. AI-RTZ #1242 AI: Reset to Zero"
-      },
-      {
         "title": "Anthropic Quietly Pushes AI Safety Bill That Would Limit Government Power to Block Dangerous Models - Law Commentary",
         "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUUpETGxDdXo5QzRMMEdKUko5cWxsQzJSeDhRUUVZYV94Q2RKc1FjV2JaT1hmTUxBanF2WGN5bGFObkdXVTExVV80WFVpY2NfenEzOWFOUnFGbDRkbHBPcjRvcmJkbk5TYVRTV1U5NXNZajRlYVE5TTRKak1zYXNQNjlIUzNmVEw3?oc=5",
         "source": "Google News",
@@ -267,17 +275,10 @@
       {
         "title": "Show HN: Things to Do API",
         "url": "https://thingstodoapi.com/",
-        "source": "HN · 33↑",
+        "source": "HN · 42↑",
         "hn_id": "50126384",
         "published": "2026-10-16T23:58:34.000Z",
         "summary": "I built an api&#x2F;mcp for local events: pop-ups, one-off events, concerts, etc. currently covering the SF bay area. I&#x27;ve been building a bunch of consumer apps lately…"
-      },
-      {
-        "title": "Claude Opus 5.5 fast mode needs no access request, but falling back costs the cache - MIXED Reality News",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNUGcwOTdPc2J5TGNGRnZZdmJHZ3M2YTFoa1ZaRXZkVTNMQmtUS2lrR3NBZ3JmY1JXUUJQdDdoaVV4N19ncC1lb1Y5VDNCODlSRjFsWVFpeWtaaDhOdzdLcVItZ21QTVlhUE5pU3B6czNNTFh1STBvWjlKOWtKLTdaeWVhbVpjM2VwaVhUb3ZHYzc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-16T23:43:50.000Z",
-        "summary": "Claude Opus 5.5 fast mode needs no access request, but falling back costs the cache MIXED Reality News"
       },
       {
         "title": "Anthropic Says Claude Traced NIST Curve Seeds to 1990s Timestamps - The Defiant",
@@ -301,13 +302,6 @@
         "summary": "Anthropic expands footprint in South Lake Union The Business Journals"
       },
       {
-        "title": "Claude’s fake tip about a real murder isn’t doomsday, but it’s got some spooked - Straight Arrow",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbkpJc3lQN1R2TTZmR0w5QlFwcndQOG9sZjJ4RnRjeUhuelFNaGltc2Jyb2drM2FkeGtoS3htRl9OV3ROVzg3ekFLRUlXVmZnRFk1Mmstb1lTemNRTDhnbFNyWDdGOXNGaVZmZnZncDFHR1pxNXg1V2RFMVlXZkt2QzJSRmdJNlIzVTZCdXVnMTdzb3BzQTdtcm9TZw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-16T20:57:14.000Z",
-        "summary": "Claude’s fake tip about a real murder isn’t doomsday, but it’s got some spooked Straight Arrow"
-      },
-      {
         "title": "Claude solves quantum memory bottleneck with 17x leaner circuit - Interesting Engineering",
         "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNOVhKaVRPckVaSUJydDEwYU1hWTFDTEMzT2dDbVdjaWlkRmo1aVRyeGxvZktwYU1KQU1nTVcwTHNoWDVfR1h4ZnBkelBJZ3ZrNGRLRFl0SHI4RWZPX2x1QXZpeXV0NTYybjFPS2VGUEhMTmlYaW5jUjVlQmxHbGc4cW9n?oc=5",
         "source": "Google News",
@@ -320,6 +314,14 @@
         "source": "Google News",
         "published": "2026-10-16T19:07:01.000Z",
         "summary": "Anthropic Says Claude Traced NIST ECDSA Curve Seeds to a 1990S RNG Unite.AI"
+      },
+      {
+        "title": "How the Claude Code team does code review",
+        "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
+        "source": "HN · 457↑",
+        "hn_id": "50122951",
+        "published": "2026-10-16T19:04:47.000Z",
+        "summary": ""
       },
       {
         "title": "Inside Anthropic's molecular biology lab",
