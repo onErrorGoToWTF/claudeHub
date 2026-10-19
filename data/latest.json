@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-10-19T16:39:52.591Z",
+  "generated_at": "2026-10-19T21:46:57.527Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Ai Expectations Gap",
+        "url": "https://www.anthropic.com/research/ai-expectations-gap",
+        "source": "Anthropic Research",
+        "published": "2026-10-19T20:17:56.000Z",
+        "summary": ""
+      },
       {
         "title": "An Update on Independent Evaluators",
         "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
@@ -29,13 +36,6 @@
         "url": "https://www.anthropic.com/research/employment-at-anthropic",
         "source": "Anthropic Research",
         "published": "2026-10-17T14:24:53.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Ai Expectations Gap",
-        "url": "https://www.anthropic.com/research/ai-expectations-gap",
-        "source": "Anthropic Research",
-        "published": "2026-10-17T14:22:35.000Z",
         "summary": ""
       },
       {
@@ -146,11 +146,88 @@
     ],
     "news": [
       {
+        "title": "Eric Schmidt’s 1% Anthropic Stake Set to Pay Massive Windfall",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-19/eric-schmidt-s-1-anthropic-stake-set-to-pay-massive-windfall",
+        "source": "Bloomberg",
+        "published": "2026-10-19T21:18:00.000Z",
+        "summary": "Former Google Chief Executive Officer Eric Schmidt owns around 1% of Anthropic PBC thanks to his early investment in the startup, according to people familiar with the matter, setting him up for one…"
+      },
+      {
+        "title": "Replit’s Anthropic Breakup Claim Folds in 24 Hours [2026] - https://tech-insider.org/",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9jZTVJTXg5M09RNDNBdlVGaXVuQkg3TjFZWFJJSnRkRURMTzF2a0E4OEdWbHdjZ2trT1UteHNZR1ZELXAyY0IwRFB3NW9MSFh3NThpVndaNjFZcmlFQmtJNzVBaUV0VzNKb2Nfd0lUTHc?oc=5",
+        "source": "Google News",
+        "published": "2026-10-19T20:25:39.000Z",
+        "summary": "Replit’s Anthropic Breakup Claim Folds in 24 Hours [2026] https://tech-insider.org/"
+      },
+      {
+        "title": "Anthropic sued by major Canadian news publishers for copyright claims in Ontario court - CBC",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNRlBzRzJOclVTWWVNQVd5VFVYRkVOQVB3MUxfNFZTTEZ4ZkU1QkxjMUtQS19YRlhLLWx4c1hjTHBVSW9jQ3FvbWJldkRtODR2SG9sMjhWVENudlB0YWZBcmg5MHZzcUc2M0syc2t1Y1ZITE9qRWNVZzRkUW9rZWx6VHpHWTkyNlRMUzAwX3RTWHRYVHc0RWI5NG1DMy1UanhQVG5tc2M3bzRkcnRiMHc?oc=5",
+        "source": "Google News",
+        "published": "2026-10-19T19:44:41.000Z",
+        "summary": "Anthropic sued by major Canadian news publishers for copyright claims in Ontario court CBC"
+      },
+      {
+        "title": "Nscale, Anthropic in Talks for $45 Billion Cloud Computing Deal",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-19/nscale-anthropic-in-talks-for-45-billion-cloud-computing-deal",
+        "source": "Bloomberg",
+        "published": "2026-10-19T19:24:06.000Z",
+        "summary": "Nscale Ltd., the AI cloud computing firm, is in talks to sell computing power to Anthropic PBC in a deal that could be worth about $45 billion, according to people familiar with the negotiations."
+      },
+      {
+        "title": "Anthropic is pitching Congress its own AI safety bill, report says - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE15NjVPYUtCV2RwQTJVZ0MtcDFJdV9INE9mOUpFdmUxQXg0bXI3WkJhVHNyN2ExOGFJRXAyZmpwWjY5SnMxYW05R2UtVVJzRHJGdldDcEdaU3RlcE1DdGFqT19CXzgwZnNUdk4zNEY1cUJXSWpsVVFn?oc=5",
+        "source": "Google News",
+        "published": "2026-10-19T19:18:45.000Z",
+        "summary": "Anthropic is pitching Congress its own AI safety bill, report says Mashable"
+      },
+      {
+        "title": "Anthropic Bug-Scope Leak: What the Report Actually Says - OrcaRouter",
+        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBjdnlJNWEwaFZhQ3B5X3N1Y0dreGpxUmFMSHBNRThwYURCR2dPX1p1UjFzUDBta01QTEJ5ZXlybS0xZHpEaWgzTlhWam93VE9JeEVTQkFRYWsxbDhvdHpWUFlJZ0sxZw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-19T19:13:58.000Z",
+        "summary": "Anthropic Bug-Scope Leak: What the Report Actually Says OrcaRouter"
+      },
+      {
+        "title": "Claude Code stops prompt suggestions spending your credits, and stable has neither fix - MIXED Reality News",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRTYtWkFweV9VMFBYR1dYX0dxNXZ0b1pPSmM5MWRLdUxReUt5cEIxZ2xyWnFYRTJTb0NlZUhHcnRvU1B0UE9WU1hXMWFlODBSWDBBM0RuYmtBaGRXMDlnV2V6TnBxcEZZWlUxeEZtMVhNREpIQTJIZkhuaG5qdzVicEk1QXZkNkFLRlV1LWhKTzNQbE9xa1RUeEhR?oc=5",
+        "source": "Google News",
+        "published": "2026-10-19T18:33:57.000Z",
+        "summary": "Claude Code stops prompt suggestions spending your credits, and stable has neither fix MIXED Reality News"
+      },
+      {
+        "title": "Hamilton Lane: AI’s Biggest Returns Have Been Private",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-19/hamilton-lane-ai-s-biggest-returns-have-been-private-video",
+        "source": "Bloomberg",
+        "published": "2026-10-19T18:10:25.000Z",
+        "summary": "Hamilton Lane Executive Co-Chairman Erik Hirsch says much of the wealth created by the AI boom has so far accrued in the private markets, as companies stay private longer and tap increasingly deep…"
+      },
+      {
+        "title": "Anthropic, Musk Offer Competing Visions for Sharing AI Wealth",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-19/anthropic-and-musk-on-ai-wealth-sharing-video",
+        "source": "Bloomberg",
+        "published": "2026-10-19T18:07:49.000Z",
+        "summary": "Anthropic plans to dedicate 5% of its shares to a public benefit fund, offering its own approach to sharing the potential wealth created by AI as concerns grow about AI-driven labor disruption.…"
+      },
+      {
+        "title": "Nscale’s $30B IPO Ambition Meets Investor Pushback",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-19/bloomberg-tech-10-19-2026-video",
+        "source": "Bloomberg",
+        "published": "2026-10-19T17:59:07.000Z",
+        "summary": "Bloomberg’s Ed Ludlow looks at why Nscale is facing pushback to its $30 billion IPO valuation target, with some investors suggesting $16 to $19 billion instead. Plus, Anthropic plans to put 5% of…"
+      },
+      {
         "title": "Anthropic’s Claude Designs More Efficient Quantum Circuits With Automated Feedback - AI Insider",
         "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNeHFBUkZQT2VhTnRJOHNkT3Z0R1Z6STI5LURLd0ZfRk9aR2lTN3RiejFjVXhtNTVfYUE2Y1pSOUZ1Y04wWEZhTDc4X1luRC01SHJLWXJ3WXRhdHB6bGw3dFRRdnk3d2JfQzQwc01uSnNmXzN0VDh6UW5hcVZfWDZ2LWJvMkxDd29HNUZlOFJyM3F0N2FHZER6T1dyTUFkRzczbW1hZ01fbzE5N1dpNFZac2xCUS1OYVFkbkxB?oc=5",
         "source": "Google News",
         "published": "2026-10-19T16:27:04.000Z",
         "summary": "Anthropic’s Claude Designs More Efficient Quantum Circuits With Automated Feedback AI Insider"
+      },
+      {
+        "title": "Claude Haiku 5.5: What’s New and How to Use It for Fast, Cheap AI Workflows - KDnuggets",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQLW9KaWpQLURhY2ptbDNnQlZIT0Rfdm5MOWRSOWVrdE4zMVliS09LRmZ1RTJGUmdNR0w1NnQ3bmVfd04tdUI4OVZVUXZmLUJ2THZVdGI0WUJLdDlOOHVmVEd5MTZRZHVtbnNVU0RvNHkxQmhpMW52bkNPT3gyQktubGdiU1N1cy1tVVJqbUpxTkE0TnFEVkFvaVBVWE4xYk0?oc=5",
+        "source": "Google News",
+        "published": "2026-10-19T16:17:48.000Z",
+        "summary": "Claude Haiku 5.5: What’s New and How to Use It for Fast, Cheap AI Workflows KDnuggets"
       },
       {
         "title": "Anthropic AI sends fake murder tip to Philadelphia police - Fox News",
@@ -169,17 +246,18 @@
       {
         "title": "Show HN: KiviDB, a faster Redis-compatible memory database and vector cache",
         "url": "https://github.com/kividbio/kividb",
-        "source": "HN · 38↑",
+        "source": "HN · 60↑",
         "hn_id": "50152541",
         "published": "2026-10-19T13:53:52.000Z",
         "summary": "Hi all, So I have been working on this project KiviDB from February 2026. It started as a project for me to understand rust, having a product with no GC pauses, memory blow up…"
       },
       {
-        "title": "Anthropic May Put Some Shares in 'Public Good' Fund",
-        "url": "https://www.bloomberg.com/news/videos/2026-10-19/anthropic-may-put-some-shares-in-public-good-fund-video",
-        "source": "Bloomberg",
-        "published": "2026-10-19T13:51:15.000Z",
-        "summary": "Anthropic PBC says it plans on depositing 5% of its shares in a new fund for \"the public good.\" The money could be used to offset AI's impact on the job market. The artificial intelligence startup…"
+        "title": "Maxwell: A new kind of model that sits between code and hardware",
+        "url": "https://heymaxwell.ai/",
+        "source": "HN · 38↑",
+        "hn_id": "50152466",
+        "published": "2026-10-19T13:47:56.000Z",
+        "summary": "Hi HN, I&#x27;m Gal from doubleAI. We&#x27;ve built Maxwell, a new kind of frontier model we call a Code Execution Model. It sits between your code and the hardware. No humans in…"
       },
       {
         "title": "Anthropic commits 5% of its shares to a public-benefit fund - MLQ.ai",
@@ -187,6 +265,14 @@
         "source": "Google News",
         "published": "2026-10-19T13:22:49.000Z",
         "summary": "Anthropic commits 5% of its shares to a public-benefit fund MLQ.ai"
+      },
+      {
+        "title": "Show HN: I built a task system to handle the drudgery so I could focus on tasks",
+        "url": "https://3anddoneapp.com/try",
+        "source": "HN · 43↑",
+        "hn_id": "50151980",
+        "published": "2026-10-19T13:07:07.000Z",
+        "summary": "I&#x27;m a software engineer from the east coast (who has lived in Boston, NY, the bay area, UK, France), and I built a task system called 3 &amp; Done.  It&#x27;s the place you…"
       },
       {
         "title": "Anthropic says its workforce has been getting older, but is also spending more time in meetings - Yahoo Tech",
@@ -215,6 +301,14 @@
         "summary": "Anthropic Public Benefit Fund to target ‘public good’ Silicon Republic"
       },
       {
+        "title": "The obscure trust looming over Anthropic's IPO",
+        "url": "https://www.wsj.com/tech/ai/anthropic-ipo-private-trust-188f41f7?st=RtdGHg&reflink=desktopwebshare_permalink",
+        "source": "HN · 119↑",
+        "hn_id": "50151376",
+        "published": "2026-10-19T12:06:03.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude Traces NIST P-256 Seed to a 1997 Timestamp - Technology Org",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNMnBnb1BvazQ4Y2V1V1E4Ukl0M1hVN1NabWR3Yk9SR05vSmktQncyVVJ5dUNSNTlqRmtwWjN4d0laVmdCZnVVeExTOWZYZEJpUW5ZQzhCRFJWQk5ablY3eTdab2U0dUFKc3oyRjRjWXA3VURRSmNWWEdyLU9UR0g5eFdIYzBCOWR2ZlZPMVl3?oc=5",
         "source": "Google News",
@@ -222,25 +316,11 @@
         "summary": "Claude Traces NIST P-256 Seed to a 1997 Timestamp Technology Org"
       },
       {
-        "title": "Musk Pledges SpaceX Shares to ‘Every Kid in America’",
-        "url": "https://www.bloomberg.com/news/videos/2026-10-19/musk-pledges-spacex-shares-to-every-kid-in-america-video",
-        "source": "Bloomberg",
-        "published": "2026-10-19T10:43:20.000Z",
-        "summary": "Elon Musk says he will gift a share of SpaceX to each American child, in a post on X, the social media platform he owns. The move comes just hours after artificial intelligence competitor Anthropic…"
-      },
-      {
         "title": "Anthropic Shares How AI Changed Its Own Workplace Over the Past Year - CXOToday.com",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTVZsbXh1MG81S283QmdsZ3dHNjNIVnJINFpwMDhkanpZVWlxaGV3Y2VZX3JPWlEzNHhoTUNLVThIdnNBbHJFc0NoYTA3Y1M0Y2JYd01ZSTBlRUxnck1mbDJsaGJseEZKNnoyUUVBRlJudU1xbzhsa1M4czY5TXVBNzA4dDc3aTZqVG5wTTZUc3p0Z0dHdnI1OQ?oc=5",
         "source": "Google News",
         "published": "2026-10-19T10:32:01.000Z",
         "summary": "Anthropic Shares How AI Changed Its Own Workplace Over the Past Year CXOToday.com"
-      },
-      {
-        "title": "Anthropic: Claude, Enterprise AI Agents and $965bn Valuation - AI Magazine",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQX094N1RhQldFWjZOUkwzUGVGUUVNNDlobGlRLTZGMUxvVXB0WGJXUjE2Zl8tRGt1b2hwZDNaWkcxTEFCU2QwNUpPdmJzaGhjMUp0WkFwdUctVkI2cklEWF9zNmNkS1ppaXZKck9CX0ZqT0hnVkJvajhHUmc3UGZYcE0wenBxaU9PYmk5TVFB?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T09:41:57.000Z",
-        "summary": "Anthropic: Claude, Enterprise AI Agents and $965bn Valuation AI Magazine"
       },
       {
         "title": "‘I Don’t Think Morality Is Objective’: Meet the AI Ethicists Shaping Claude’s Conscience - freebeacon.com",
@@ -257,70 +337,6 @@
         "summary": "Anthropic Commits 5% Stake to Public Benefit Fund Technology Org"
       },
       {
-        "title": "What Anthropic’s new Claude tool could mean for advisors in Canada - The Globe and Mail",
-        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOX2lRaW1qSkVIcjRid2M0RTJ4b01yZXRsOUNGNGNLQlM4Z1ltUUVEb09qanM5WUpMMkdlcHlyOTIwWXlUY0s2QWRySFptMTBHLUI0cHc1eFVLb0xYS2pFbTZUZnBtYi1VVEpudTFfYlJIc2JONUh3Z2hkU1g0elZaRVpKZ3BHOEtwYlh5ck5YbVppV0VnOGdpYUxVR3kzXzJJd1BjMzA0STgyaHFYcnNJTXhCZHBVYlcwbFBXZFRrNXpENW1Ta2VreHJEX1JmSktvczlxWHBWT3RSU2M?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T08:45:00.000Z",
-        "summary": "What Anthropic’s new Claude tool could mean for advisors in Canada The Globe and Mail"
-      },
-      {
-        "title": "Anthropic's Claude AI 'fixes' Oblivion Remastered on PC by creating a mod that boosts performance by 40% - TweakTown",
-        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPY21YNlFUaFBzS0s2LWVkUnNoWUFWbU0td0FtYVlyeGtvb2V3MC1hMTNCaGNfSWtRZE1seXRGa2JQWmMyOFVPNlQtYmZlTE9zWE1WbDhpRjVwMlJrcDFIREV4WkpFSVE5VjR1Q1BCUHRmZEl3bjRWYUtlWmJ5N2NxRzVjcmNsSkFSMzhHTnpjalEzRko1b042aHNhTHFuYjhtTEFfMVdHbTZsOUJKb1N0MFRvdng3UkxxcEpsR2FmSGQtX2pqblBKekwxRGp5UGxfVURCT1l3S2tiWDQ0N1dhNkVuNDlSN1RHd3NFM25n?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T07:56:02.000Z",
-        "summary": "Anthropic's Claude AI 'fixes' Oblivion Remastered on PC by creating a mod that boosts performance by 40% TweakTown"
-      },
-      {
-        "title": "Anthropic is pitching Congress its own AI safety bill, report says - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE15NjVPYUtCV2RwQTJVZ0MtcDFJdV9INE9mOUpFdmUxQXg0bXI3WkJhVHNyN2ExOGFJRXAyZmpwWjY5SnMxYW05R2UtVVJzRHJGdldDcEdaU3RlcE1DdGFqT19CXzgwZnNUdk4zNEY1cUJXSWpsVVFn?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T07:44:20.000Z",
-        "summary": "Anthropic is pitching Congress its own AI safety bill, report says Mashable"
-      },
-      {
-        "title": "Tmux and Claude Code: Sessions, Send-Keys, and the Ceiling",
-        "url": "https://crystl.dev/guides/tmux-for-ai-agents/",
-        "source": "HN · 120↑",
-        "hn_id": "50148855",
-        "published": "2026-10-19T05:55:31.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Replit picks OpenAI over Anthropic as primary AI provider, says ChatGPT is better now - India Today",
-        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOQ195dHNLcXc0NFNDYnAzc2s1QnhseGJpMGE5RDM1enl5TDNXX2NiZWtDVTQ0MnNWSkxqekdPVVdZS09zRTY2UGFXU1BTX3lIYVpNMmcweHhjeExHRzU5bnREOFluWHhGckRpZkYxVFdRX1hmZnNiLUhPNXFDM25JaVNpVXVkcF9mTXVLY0xTM2lLUEIxcE9WdkxISkpVaUtkVGlOV1RKX0FKOW1XWUhGZldSYU53U0hBd0R4ajR1X1ktc3FhRWQyOHFxZWM0M3JxLTZXZW1tcVVQYmZxaDZFeENYbTh5QdIB6wFBVV95cUxQOFV5U3N3TDVlWmJyS295U2IyeGQ2UzhJVk9KeFU1T0dFUHRKWnV2R1dKWjhucnQ1S0k0bHhFemVtck1NS1BiT2cwaUEwN05xV09QOWEwT0VTYTVOQ0tVQmtSVE5RSXhOckJiMVpDMlZJNXg1NHo3NFVZWkNpVlU0M2t2ZjRJZ1ExcmpmTmFLcWljSGMzeGtGdGJ1Q19sdnZibExhNU00LXJoSzg5UmtLNVY2ZF9WbmYzbzZoQ21uOTlzMTlpSnlvLTFtU1J3QklvelZVUWRyWW9MV0JabWtyWXBhb25venpmSkJ3?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T05:47:45.000Z",
-        "summary": "Replit picks OpenAI over Anthropic as primary AI provider, says ChatGPT is better now India Today"
-      },
-      {
-        "title": "Claude Writes Code So Fast Git Can't Keep Up: Anthropic Built a New Version Control System With Only 7 People in 5 Months - 36Kr",
-        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9jRmRmdldGbXMyMl9JY0M0SUFHemw3LWdWcGp5cGJiRFdlSFh4Tm5VeFBGeXlPMDZrdkRJSDZzZ0RfRHVqcC1DTTRmdi1PVkJ2NDFF?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T05:12:41.000Z",
-        "summary": "Claude Writes Code So Fast Git Can't Keep Up: Anthropic Built a New Version Control System With Only 7 People in 5 Months 36Kr"
-      },
-      {
-        "title": "Anthropic Unveils Next-Gen Multi-Agent Orchestration Architecture: Claude Now Generates Self-Written Programs to Manage AI Agents - 36Kr",
-        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5Mc3F2cFc2OHlDdkJaTjZRblFMcTJqeUpIT29BcXhXYVduUWctSE1ydXpha1pXU1kxZWNHcDVVRGpRZmUyZjRwSW5PUjdrOHZPczRR?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T05:12:41.000Z",
-        "summary": "Anthropic Unveils Next-Gen Multi-Agent Orchestration Architecture: Claude Now Generates Self-Written Programs to Manage AI Agents 36Kr"
-      },
-      {
-        "title": "Anthropic Says Claude Traced NIST Curve Seeds to 1990s Timestamps - The Defiant",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNOUNfYzRWb3Fpb1hqWnZZX1V1X29iaXBXdE8wQVVHNkVRM2tSczV4OHIyWjRNdzlJekRvUFQ2X2ltbVU1Y0NwR1RTT2JQUzNPTVdxRm9UYWIwMG9FLXJ2Rnc3TjMyQnR0UWRTeWNwNXBPbThadkpFaEh6QkdLQUFiTVlVU3VTTko5eDgyY1I3ZWNrdzBCWVRHUENVYU5fSGdJTWYw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T03:18:49.000Z",
-        "summary": "Anthropic Says Claude Traced NIST Curve Seeds to 1990s Timestamps The Defiant"
-      },
-      {
-        "title": "Anthropic to commit 5% stake to new ‘public benefit fund’ - The Japan Times",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQa0JBd2lhSnltTl92Ri1hVXNjWHl2Y0tHV253NDFxNlpFanN2RDRlaGtFV2hHaXVoLVlWc2luWmlkTmxFLXc0SUMwZDZoSEFNYVlvS29LWnY2d053bF94cG9YNlBqaE1jVWRGSG9ycHBvX1BlSWpaSnZVTzlMREFaNTlKRmNjeDl2R1E?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T01:14:00.000Z",
-        "summary": "Anthropic to commit 5% stake to new ‘public benefit fund’ The Japan Times"
-      },
-      {
         "title": "Anthropic Just Announced the End of Capitalism.",
         "url": "https://www.youtube.com/watch?v=wJu9-KDM41o",
         "source": "Nick Saraev",
@@ -333,21 +349,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Meta blames Anthropic's Claude for wrongly suspending No Kings Instagram - Startup Fortune",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNbzE3Y1l2ai02VGx4ZGQxWVdwUGNoZW41WnVrazJmSlZocWJhMmNFQ1BBRmZGZk5HWlpKemIzSjE5S19hY3o1ajZqVTlkTTZ2N21yZDc3SlhxNUNtRGo5ZmZ3RkpFLTN5Vm9wdXFFZ2s4VmNVSnR1RGtxbjlXQktXYkJVZ0dKYWZUUzRwUnZVSUdoT3BUWHk3QWo3SEc0TjIt?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T00:49:53.000Z",
-        "summary": "Meta blames Anthropic's Claude for wrongly suspending No Kings Instagram Startup Fortune"
-      },
-      {
-        "title": "Show HN: WhatsApp MCP running free on Cloudflare",
-        "url": "https://github.com/finereli/whatsapp-mcp",
-        "source": "HN · 143↑",
-        "hn_id": "50145715",
-        "published": "2026-10-18T21:36:10.000Z",
-        "summary": "I wanted my humble Claude on mobile to access my WhatsApp messages but the only options I could find either required WhatsApp Business or an actual server to run Baileys on. I…"
-      },
-      {
         "title": "Reverse Engineer Anything + Claude: Modding an Offline MMO",
         "url": "https://www.youtube.com/watch?v=erRoMmb5Gkg",
         "source": "Stefan Rows",
@@ -356,6 +357,18 @@
         "video_id": "erRoMmb5Gkg",
         "thumbnail": "https://i.ytimg.com/vi/erRoMmb5Gkg/hqdefault.jpg",
         "published": "2026-10-18T14:08:04.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Start Using Claude Code For EVERYTHING (Trust Me)",
+        "url": "https://www.youtube.com/watch?v=fDE5R4fSq2w",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "fDE5R4fSq2w",
+        "thumbnail": "https://i.ytimg.com/vi/fDE5R4fSq2w/hqdefault.jpg",
+        "published": "2026-10-15T18:24:45.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -720,7 +733,7 @@
         "summary": ""
       },
       {
-        "title": "How To Use Claude Code For EVERYTHING",
+        "title": "Start Using Claude Code For EVERYTHING (Trust Me)",
         "url": "https://www.youtube.com/watch?v=fDE5R4fSq2w",
         "source": "Riley Brown",
         "channel": "Riley Brown",
@@ -1008,6 +1021,14 @@
     ],
     "tutorials": [
       {
+        "title": "v2.1.304",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.304",
+        "source": "Claude Code Releases",
+        "published": "2026-10-19T21:34:39.000Z",
+        "summary": "What's changed Added a transcript line when a plugin that runs first skips one of your mod's hooks, naming the event and the plugin Added decider: \"person\" to a mod's tool.check answer: only the…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "Claude Code Made My Best Game Ever (Full Guide)",
         "url": "https://www.youtube.com/watch?v=HaEZgh2RadQ",
         "source": "Leon van Zyl",
@@ -1050,18 +1071,6 @@
         "published": "2026-10-15T19:22:06.000Z",
         "summary": "What's changed Added CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS so unattended retry mode ( CLAUDE_CODE_RETRY_WATCHDOG ) ends a request at a usage limit that resets too far away instead of…",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "How To Use Claude Code For EVERYTHING",
-        "url": "https://www.youtube.com/watch?v=fDE5R4fSq2w",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "fDE5R4fSq2w",
-        "thumbnail": "https://i.ytimg.com/vi/fDE5R4fSq2w/hqdefault.jpg",
-        "published": "2026-10-15T18:24:45.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "Redesigning Source Control",
@@ -1177,14 +1186,6 @@
         "source": "Claude Code Releases",
         "published": "2026-10-07T18:10:20.000Z",
         "summary": "What's changed Added Claude Haiku 5.5 ( claude-haiku-5-5 ), now the default Haiku model on the Anthropic API — 1M context, $0.10/$0.50 per Mtok ($0.50/$2.50 for prompts over 100K) Added agentType to…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "v2.1.292",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.292",
-        "source": "Claude Code Releases",
-        "published": "2026-10-06T18:59:30.000Z",
-        "summary": "What's changed Added --marketplace to claude plugin install : adds the marketplace if needed, under the same policy checks as claude plugin marketplace add , then installs the plugin from it Added…",
         "tutorial_kind": "official"
       },
       {
@@ -1746,6 +1747,13 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.304",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.304",
+        "source": "Claude Code",
+        "published": "2026-10-19T21:34:39.000Z",
+        "summary": "What's changed Added a transcript line when a plugin that runs first skips one of your mod's hooks, naming the event and the plugin Added decider: \"person\" to a mod's tool.check answer: only the permission dialog or a…"
+      },
+      {
         "title": "This Insane Horror Game Was Built with Claude Code",
         "url": "https://www.youtube.com/shorts/Y_inPdnVN9w",
         "source": "YouTube · Leon van Zyl",
@@ -1809,7 +1817,7 @@
         "summary": "What's changed Added CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS so unattended retry mode ( CLAUDE_CODE_RETRY_WATCHDOG ) ends a request at a usage limit that resets too far away instead of waiting Added…"
       },
       {
-        "title": "How To Use Claude Code For EVERYTHING",
+        "title": "Start Using Claude Code For EVERYTHING (Trust Me)",
         "url": "https://www.youtube.com/watch?v=fDE5R4fSq2w",
         "source": "YouTube · Riley Brown",
         "published": "2026-10-15T18:24:45.000Z",
@@ -1961,13 +1969,6 @@
         "source": "Claude API Release Notes",
         "published": "2026-10-07T00:00:00.000Z",
         "summary": "We've launched Claude Haiku 5.5 ( claude-haiku-5-5 ), our most capable model tuned for high-volume and latency-sensitive work. It has a 1M token context window , 128k max output tokens, and adaptive thinking with the effort parameter .…"
-      },
-      {
-        "title": "v2.1.292",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.292",
-        "source": "Claude Code",
-        "published": "2026-10-06T18:59:30.000Z",
-        "summary": "What's changed Added --marketplace to claude plugin install : adds the marketplace if needed, under the same policy checks as claude plugin marketplace add , then installs the plugin from it Added an effort parameter…"
       },
       {
         "title": "We've added capabilities.server_tools to the Models API . GET /v1/models and GET /v1/models/{model_id} now report…",
