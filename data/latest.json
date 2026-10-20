@@ -1,150 +1,265 @@
 {
-  "generated_at": "2026-10-20T13:05:20.201Z",
+  "generated_at": "2026-10-20T18:09:14.776Z",
   "version": 1,
   "sections": {
     "updates": [
       {
-        "title": "Ai Expectations Gap",
-        "url": "https://www.anthropic.com/research/ai-expectations-gap",
+        "title": "Claude Scorpion Toxin Binder Design",
+        "url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design",
         "source": "Anthropic Research",
-        "published": "2026-10-19T20:17:56.000Z",
+        "published": "2026-10-20T16:04:01.000Z",
         "summary": ""
       },
       {
-        "title": "An Update on Independent Evaluators",
-        "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
-        "source": "Anthropic",
-        "published": "2026-10-19T13:19:29.000Z",
+        "title": "Evaluating and Mitigating Discrimination in Language Model Decisions",
+        "url": "https://www.anthropic.com/research/evaluating-and-mitigating-discrimination-in-language-model-decisions",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T15:27:10.000Z",
         "summary": ""
       },
       {
-        "title": "Public Benefit Fund",
-        "url": "https://www.anthropic.com/news/public-benefit-fund",
-        "source": "Anthropic",
-        "published": "2026-10-18T18:05:05.000Z",
+        "title": "Teaching Claude Why",
+        "url": "https://www.anthropic.com/research/teaching-claude-why",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T15:26:54.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Ai Assistance Coding Skills",
+        "url": "https://www.anthropic.com/research/AI-assistance-coding-skills",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T15:26:46.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Tracing Thoughts Language Model",
+        "url": "https://www.anthropic.com/research/tracing-thoughts-language-model",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T15:26:42.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Small Samples Poison",
+        "url": "https://www.anthropic.com/research/small-samples-poison",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T15:26:33.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Auditing Hidden Objectives",
+        "url": "https://www.anthropic.com/research/auditing-hidden-objectives",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T15:26:24.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Circuits Updates August 2024",
+        "url": "https://www.anthropic.com/research/circuits-updates-august-2024",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T15:26:19.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Circuits Updates Sept 2024",
+        "url": "https://www.anthropic.com/research/circuits-updates-sept-2024",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T15:26:16.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Circuits Updates June 2024",
+        "url": "https://www.anthropic.com/research/circuits-updates-june-2024",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T15:26:12.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Circuits Updates July 2024",
+        "url": "https://www.anthropic.com/research/circuits-updates-july-2024",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T15:26:07.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Transformer Circuits",
+        "url": "https://www.anthropic.com/research/transformer-circuits",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T15:26:02.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Circuits Updates April 2024",
+        "url": "https://www.anthropic.com/research/circuits-updates-april-2024",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T15:25:58.000Z",
+        "summary": ""
+      },
+      {
+        "title": "81k Economics",
+        "url": "https://www.anthropic.com/research/81k-economics",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T15:25:54.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Discovers Novel Enzyme System",
+        "url": "https://www.anthropic.com/research/claude-discovers-novel-enzyme-system",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T03:32:16.000Z",
         "summary": ""
       },
       {
         "title": "Expectations for the Future",
         "url": "https://www.anthropic.com/research/expectations-for-the-future",
         "source": "Anthropic Research",
-        "published": "2026-10-17T14:25:22.000Z",
+        "published": "2026-10-20T03:29:35.000Z",
         "summary": ""
       },
       {
-        "title": "Employment at Anthropic",
-        "url": "https://www.anthropic.com/research/employment-at-anthropic",
-        "source": "Anthropic Research",
-        "published": "2026-10-17T14:24:53.000Z",
+        "title": "An Update on Independent Evaluators",
+        "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+        "source": "Anthropic",
+        "published": "2026-10-20T03:29:34.000Z",
         "summary": ""
       },
       {
         "title": "Ecdsa Curve Origins",
         "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
         "source": "Anthropic Research",
-        "published": "2026-10-17T14:19:47.000Z",
+        "published": "2026-10-20T03:29:34.000Z",
         "summary": ""
       },
       {
-        "title": "Designing Efficient Quantum Circuits",
-        "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+        "title": "Ai Expectations Gap",
+        "url": "https://www.anthropic.com/research/ai-expectations-gap",
         "source": "Anthropic Research",
-        "published": "2026-10-17T14:17:25.000Z",
+        "published": "2026-10-20T03:29:33.000Z",
         "summary": ""
       },
       {
-        "title": "Offering Expanded Claude Access Across All Three Branches of Government",
-        "url": "https://www.anthropic.com/news/offering-expanded-claude-access-across-all-three-branches-of-government",
-        "source": "Anthropic",
-        "published": "2026-10-15T22:05:58.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Redesigning Source Control",
-        "url": "https://www.anthropic.com/engineering/redesigning-source-control",
-        "source": "Anthropic Eng",
-        "published": "2026-10-15T18:21:28.000Z",
-        "summary": ""
-      },
-      {
-        "title": "2026 Us Midterms",
-        "url": "https://www.anthropic.com/news/2026-us-midterms",
-        "source": "Anthropic",
-        "published": "2026-10-14T21:01:13.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Singapore Office Opening",
-        "url": "https://www.anthropic.com/news/singapore-office-opening",
-        "source": "Anthropic",
-        "published": "2026-10-14T08:31:43.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Distillation Defenses",
-        "url": "https://www.anthropic.com/research/distillation-defenses",
+        "title": "Employment at Anthropic",
+        "url": "https://www.anthropic.com/research/employment-at-anthropic",
         "source": "Anthropic Research",
-        "published": "2026-10-13T14:34:43.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Self Replicating Ai",
-        "url": "https://www.anthropic.com/research/self-replicating-ai",
-        "source": "Anthropic Research",
-        "published": "2026-10-13T00:44:16.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Discovers Novel Enzyme System",
-        "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
-        "source": "Anthropic",
-        "published": "2026-10-13T00:18:23.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Investigating Unintended Model Actions",
-        "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
-        "source": "Anthropic Research",
-        "published": "2026-10-12T15:52:32.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Corps",
-        "url": "https://www.anthropic.com/news/claude-corps",
-        "source": "Anthropic",
-        "published": "2026-10-09T17:48:00.000Z",
-        "summary": ""
-      },
-      {
-        "title": "The Missing Map of the Sky",
-        "url": "https://www.anthropic.com/research/the-missing-map-of-the-sky",
-        "source": "Anthropic Research",
-        "published": "2026-10-09T09:29:17.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Launching Opt in Vuln Finding Service for Open Source",
-        "url": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source",
-        "source": "Anthropic Research",
-        "published": "2026-10-09T08:48:01.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Cyber Mission",
-        "url": "https://www.anthropic.com/news/anthropic-cyber-mission",
-        "source": "Anthropic",
-        "published": "2026-10-08T19:00:45.000Z",
-        "summary": ""
-      },
-      {
-        "title": "2026 Usage Policy Update",
-        "url": "https://www.anthropic.com/news/2026-usage-policy-update",
-        "source": "Anthropic",
-        "published": "2026-10-08T17:00:30.000Z",
+        "published": "2026-10-20T03:29:33.000Z",
         "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Eric Schmidt reportedly owns about half as much of Anthropic as CEO Dario Amodei",
+        "url": "https://techcrunch.com/2026/10/20/eric-schmidt-reportedly-owns-about-half-as-much-of-anthropic-as-ceo-dario-amodei/",
+        "source": "TechCrunch",
+        "published": "2026-10-20T17:55:12.000Z",
+        "summary": "The former Google CEO owns about 1% stake in the leading AI lab, Bloomberg reported."
+      },
+      {
+        "title": "AI Fears Roar Back After Elice IPO Flop",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-20/bloomberg-tech-10-20-2026-video",
+        "source": "Bloomberg",
+        "published": "2026-10-20T17:21:39.000Z",
+        "summary": "Bloomberg’s Ed Ludlow breaks down why fears about the AI trade are resurfacing after South Korean data center firm Elice plunged 32% in its market debut. Plus, Anthropic is in talks with Nscale for…"
+      },
+      {
+        "title": "Eric Schmidt’s Early Anthropic Bet Set to Pay Huge Windfall",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-20/eric-schmidt-s-early-anthropic-bet-to-pay-huge-windfall-video",
+        "source": "Bloomberg",
+        "published": "2026-10-20T17:20:13.000Z",
+        "summary": "Former Google CEO Eric Schmidt owns around 1% of Anthropic thanks to his early investment in the startup, setting him up for one of the largest individual windfalls from the company’s imminent…"
+      },
+      {
+        "title": "NScale, Anthropic in Talks for $45B AI Computing Deal",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-20/nscale-anthropic-in-talks-for-45b-ai-computing-deal-video",
+        "source": "Bloomberg",
+        "published": "2026-10-20T17:14:43.000Z",
+        "summary": "Anthropic is in talks with Nscale for a massive new computing deal that could be worth as much as $45 billion. The deal would be for a second facility at Nscale's Monarch data center campus in West…"
+      },
+      {
+        "title": "Ex-Google CEO Eric Schmidt’s early Anthropic bet could balloon to $20B in blockbuster IPO - New York Post",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbWlIdEJPSmtwOUVEVUJxSmJqSmNzZTc1NU9vOE9RUGRjc2o4NlA2X0QxX09CZVZRaTVHRlYtNVlQZU9OWjItV0E1YXgzQ0RHTzRIWXhfSFM4MFp5VGNLemVMaDdGQTVJaHZGV1VpQjhWVlhaS2dsME9fcnIwWWM0T3cyczFPWUp2eGNKMzk2YVF5Tm9MWDhvblZtTkwzZmtSWVRvZFJLVUlDcmlETGktc2NDY3RXMmh3YWFscnYwRnVkSmg5NWhn?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T16:40:00.000Z",
+        "summary": "Ex-Google CEO Eric Schmidt’s early Anthropic bet could balloon to $20B in blockbuster IPO New York Post"
+      },
+      {
+        "title": "Amazon Bedrock adds schema-enforced outputs for Claude across both API surfaces - OpenTools",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQVXRITFJYeU11STZCcEY1MVZCLWVLc3ZiNFN1YnBIMExwZXRYRzhrUElXWUh6ekEtRXN2RmUzOTZHTXdIVFJKZWVxT09haTg0em82dXdtXzhEczctampJMDhtcHR3N3lXYkV1TWZXZ3NhZHJ3emNVeEVJb1NlTWtoa3dWbDNUN3Z2WkE?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T16:38:37.000Z",
+        "summary": "Amazon Bedrock adds schema-enforced outputs for Claude across both API surfaces OpenTools"
+      },
+      {
+        "title": "The Gospel according to Peter (Thiel)",
+        "url": "https://www.theverge.com/tech/1014252/peter-thiel-antichrist-lectures-analysis",
+        "source": "The Verge",
+        "published": "2026-10-20T15:45:00.000Z",
+        "summary": "It's a time of apocalyptic worldviews in Silicon Valley. The latest AI doom cycle is driven by effective altruism (EA), a philosophy that has lurked around the fringes for years but recently burst…"
+      },
+      {
+        "title": "SpaceX IPO vs upcoming Anthropic IPO: Will Claude maker beat Elon Musk's $75 bn record? - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNZ0tuYlZRRTRhdUdvY3NNZFY0WFh3a1ZpWGhmRE9WejEyMGdJVU1yRWpJelVjYkpaSE1yTTROVWl3SEZoTi05QkNvNEU0dlA1RVJGMElQVHE0ZmNucWRjTUc2YjBjUU9DdGxNeHFYYk94bjBhYWpRZV8tVDVSSk5pR1FVNjl3LTFUcFhUbXNHaUYxUHVxZTQtMWJoTjRjVFd6ZmVNT2QwNXFUTXI3YnZDdklKeXdVbklPbGVWejRXdGZkamdiempkSFV4Umpvb2FzRU91ck5Ldmc?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T15:18:36.000Z",
+        "summary": "SpaceX IPO vs upcoming Anthropic IPO: Will Claude maker beat Elon Musk's $75 bn record? TradingView"
+      },
+      {
+        "title": "Show HN: Jev Cards, Can you beat a vision model at a picture quiz?",
+        "url": "https://jevcards.com",
+        "source": "HN · 43↑",
+        "hn_id": "50167617",
+        "published": "2026-10-20T15:11:56.000Z",
+        "summary": "I built a quiz game around TypeSafe&#x27;s new Jev model, which has vision capabilities. Jev looks at a picture and a question and picks an answer (or taps a place) in about a…"
+      },
+      {
+        "title": "Show HN: Penmentor – Claude marks up your handwritten math like a teacher",
+        "url": "https://github.com/AbdullahAlhariri/penmentor",
+        "source": "HN · 33↑",
+        "hn_id": "50167604",
+        "published": "2026-10-20T15:10:54.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic names Gorilla Logic as Claude services partner - ChannelLife New Zealand",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQk53SmFwZXRfaUV3LXhrOXBmTmlTbG9PQVRCcnl6NTRkUG0tUmc4SGI4SDlCVzNSUkducE1HZ3cwa3YxQUlzREw3VEJ3UUY3NmZaaTR6cjFWYjBPVkRRaXpfT09YdUZJS3hpLW1NUVhibU8zYVNzNDdKaVJYWkVELUJoalRMeEotMGhzamx5VXJLZw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T15:00:00.000Z",
+        "summary": "Anthropic names Gorilla Logic as Claude services partner ChannelLife New Zealand"
+      },
+      {
+        "title": "Citrini Research is backing life sciences stocks after using Claude to design proteins - Quartz",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNN3E2YkxXZFhGcy1kaWFuTFRZeENWa29qaW56Y3VjWWt6TEJSdzZJVEJWOTBpNDJnaWlPRGdqZXptU2JLenZpYW1jYkhlS0Y2bVFYSllNN2V5eUtIQnZpU1BQNFZrRUFfTmpPbEMyR1pDaThraEpUcG9Tc3dTR1UzQy1icGlTRW1F?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T14:02:17.000Z",
+        "summary": "Citrini Research is backing life sciences stocks after using Claude to design proteins Quartz"
+      },
+      {
+        "title": "A $400 million superyacht would be expensive even for a billionaire, but not for Eric Schmidt, who smartly bet early on Claude maker Anthropic and is in line for an eye-watering windfall of $20 billion+ making his secret explorer yacht a rounding error - Luxurylaunches",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQZmlNSi1PZjVheTNBNkVLU01ObGhYR25hc1hTMXhGaFBjaGNubUlKYThhSFRFVy1UM3RMck52NE5aQlkyQ2NERUJVY21zTXA1Z3lrbTBTaUxVNmNveV9BSW9IMy1zWDZWX0tuNDUxYWE4WUI4aGQtbnJpTGoxNDBCTkhyMFFIU0RHUTNqTk9ydFo?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T13:36:05.000Z",
+        "summary": "A $400 million superyacht would be expensive even for a billionaire, but not for Eric Schmidt, who smartly bet early on Claude maker Anthropic and is in line for an eye-watering windfall of $20…"
+      },
+      {
+        "title": "How Claude designed protein binders against scorpion neurotoxins - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9VNkRtQVc2UUZVVmgyWUJOQU5RSjdCMjQ0V1JuczVKVmxoME1pQ295LWZ5a3J1M21SWk1yWUtGQ01pbTN3bFVldVVmc01QLXNYYlBqRi04UnZ4VWR5NzU1dTZuYzFxRVA5enZObVVFeE1sVURIVFp1NGVn?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T13:01:21.000Z",
+        "summary": "How Claude designed protein binders against scorpion neurotoxins Anthropic"
+      },
+      {
+        "title": "NixOS is making me less afraid",
+        "url": "https://entropicthoughts.com/nixos-is-making-me-less-afraid",
+        "source": "HN · 119↑",
+        "hn_id": "50165484",
+        "published": "2026-10-20T12:43:05.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic co-founder says the singularity is underway - The Rundown AI",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPS3RsWXUtemFFcDFwbUhDRWNrMER3dnJybXR2MGYxNmlCNzNhbmdGQjc5eEJUVVRpdjJ3NjZtUXJJSVpjYlpablRPVVl3LUJjRDg3SzJyV2ZPYktnd3pFWVQ1dml4WXRTMHpiajh0M01uYU1MMDNpMVdvNGFYLV85SUplODRzcnFzMm9VSGYzdzlyQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T12:03:03.000Z",
+        "summary": "Anthropic co-founder says the singularity is underway The Rundown AI"
+      },
       {
         "title": "Reading all of Claude's output would take half an Anthropic worker's week - MIXED Reality News",
         "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQaFI3YUQ2YWxvcVQ0bkJCbHF5Zl9vU3pkdElRbWRfa0xBTXU2a3NlWUxTbUlJcUItOW1uNGxPYUx4bDVjbDRFRXctdjdxbG5EcThIOXRMZzdIYWVVMUVVZGFvOXBXbFRLOEI5WGZpVGEtdmJ3dkxBMEZ0X19DRHVLbw?oc=5",
@@ -167,13 +282,6 @@
         "summary": "Microsoft Copilot Adds OpenAI GPT 6.1 and Anthropic Claude Opus 5.5 Geeky Gadgets"
       },
       {
-        "title": "Anthropic pitches a bill to block AI only over $1 billion in damage or 50 deaths - Pasquale Pillitteri",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPLVRCUEJTWFlqOVNHWU9iX2NNWWM5VzdOcjlzXzFpd1VabzB0RDN4VmM3T2VQbFpmcjBEZGw3NC1WbkxTY2pyU05RUG85UEZ1NXBoSUFncnB0Z1BDNXJTc0pFcVhCUk5nWEZpdFlpRWFiMHhFLTB6TTFBU2s5dnlzaXRFT0JDV1o1V3B2UFRaSHJzRjhwU1QxbQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-20T07:03:44.000Z",
-        "summary": "Anthropic pitches a bill to block AI only over $1 billion in damage or 50 deaths Pasquale Pillitteri"
-      },
-      {
         "title": "The Hidden Reason Claude Can't Play Your Game",
         "url": "https://www.youtube.com/shorts/qzMoFT-6X60",
         "source": "Leon van Zyl",
@@ -188,7 +296,7 @@
       {
         "title": "Show HN: Death Plan Switch, a self-hosted dead man's switch for solo devs",
         "url": "https://deathplanswitch.com/",
-        "source": "HN · 77↑",
+        "source": "HN · 86↑",
         "hn_id": "50161408",
         "published": "2026-10-20T04:37:43.000Z",
         "summary": "Hi HN, I&#x27;m Peter Bishop and I&#x27;ve been working in graphics and web tech for over 25yrs. I&#x27;ve recently launched Death Plan Switch to solve a major problem in my…"
@@ -201,11 +309,11 @@
         "summary": "If the deal goes through, it would be the latest in a long string of giant compute deals Anthropic has struck over the past year."
       },
       {
-        "title": "Structured outputs for Anthropic Claude models on Amazon Bedrock - Amazon Web Services (AWS)",
+        "title": "Structured outputs for Anthropic Claude models on Amazon Bedrock | Artificial Intelligence - Amazon Web Services (AWS)",
         "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQeGtQZ3VDNTRrRVNBTDA4ak5mUlBKUG1kdWpwWDJxQUx2UWxFMGw3Sk85MllYN1gyTENSZEcxa0RwZ2RXLTk5WlE0ejZPZWU0UzI5RVRmUnlLdXgwcjZBUUhEUnI5enprM2NPZVlhbXl6ZUhTVU4wZEpwMjc0SHlQME54Ri1NMk40UmF5bDBReHdEV0V6OWxXVnJVSl9nUkpsTGFQejBtU2tFeEliQXpvZw?oc=5",
         "source": "Google News",
         "published": "2026-10-19T23:32:19.000Z",
-        "summary": "Structured outputs for Anthropic Claude models on Amazon Bedrock Amazon Web Services (AWS)"
+        "summary": "Structured outputs for Anthropic Claude models on Amazon Bedrock | Artificial Intelligence Amazon Web Services (AWS)"
       },
       {
         "title": "Nvidia-backed Nscale, Anthropic in talks for new $45 billion AI cloud deal, source says - Reuters",
@@ -227,114 +335,6 @@
         "source": "Google News",
         "published": "2026-10-19T20:43:14.000Z",
         "summary": "Shots Fired: Meta Is Developers on Outside AI Tools “in Half”. That’s a Big Problem for Anthropic Yahoo Finance"
-      },
-      {
-        "title": "Replit’s Anthropic Breakup Claim Folds in 24 Hours [2026] - https://tech-insider.org/",
-        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9jZTVJTXg5M09RNDNBdlVGaXVuQkg3TjFZWFJJSnRkRURMTzF2a0E4OEdWbHdjZ2trT1UteHNZR1ZELXAyY0IwRFB3NW9MSFh3NThpVndaNjFZcmlFQmtJNzVBaUV0VzNKb2Nfd0lUTHc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T20:25:39.000Z",
-        "summary": "Replit’s Anthropic Breakup Claim Folds in 24 Hours [2026] https://tech-insider.org/"
-      },
-      {
-        "title": "Anthropic sued by major Canadian news publishers for copyright claims in Ontario court - CBC",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNRlBzRzJOclVTWWVNQVd5VFVYRkVOQVB3MUxfNFZTTEZ4ZkU1QkxjMUtQS19YRlhLLWx4c1hjTHBVSW9jQ3FvbWJldkRtODR2SG9sMjhWVENudlB0YWZBcmg5MHZzcUc2M0syc2t1Y1ZITE9qRWNVZzRkUW9rZWx6VHpHWTkyNlRMUzAwX3RTWHRYVHc0RWI5NG1DMy1UanhQVG5tc2M3bzRkcnRiMHc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T19:44:41.000Z",
-        "summary": "Anthropic sued by major Canadian news publishers for copyright claims in Ontario court CBC"
-      },
-      {
-        "title": "Claude AI now available to Emory University community - Emory University",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPcmdDc2hZWjl5c3N0X3FuX1doZHNxT1NTMm9MdzFzOGx0QUk3Y3dJX2tuTFJyM0N3WnZXUFBzbnNIY3VtOW9pRV9qaHYxelhGczl6ZE1MVVVWYms1ZlJ0dk85T2laUnVzUThGMFRFa2NOdGVWUmtpSTFCS1U0Znp4MVhTWVhKNWVrbjlySFRB?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T19:35:45.000Z",
-        "summary": "Claude AI now available to Emory University community Emory University"
-      },
-      {
-        "title": "Nscale, Anthropic in Talks for $45 Billion AI Computing Deal",
-        "url": "https://www.bloomberg.com/news/articles/2026-10-19/nscale-anthropic-in-talks-for-45-billion-cloud-computing-deal",
-        "source": "Bloomberg",
-        "published": "2026-10-19T19:24:06.000Z",
-        "summary": "Nscale Ltd., the AI cloud computing firm, is in talks to sell computing power to Anthropic PBC in a deal that could be worth about $45 billion, according to people familiar with the negotiations."
-      },
-      {
-        "title": "Claude Code stops prompt suggestions spending your credits, and stable has neither fix - MIXED Reality News",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRTYtWkFweV9VMFBYR1dYX0dxNXZ0b1pPSmM5MWRLdUxReUt5cEIxZ2xyWnFYRTJTb0NlZUhHcnRvU1B0UE9WU1hXMWFlODBSWDBBM0RuYmtBaGRXMDlnV2V6TnBxcEZZWlUxeEZtMVhNREpIQTJIZkhuaG5qdzVicEk1QXZkNkFLRlV1LWhKTzNQbE9xa1RUeEhR?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T18:33:57.000Z",
-        "summary": "Claude Code stops prompt suggestions spending your credits, and stable has neither fix MIXED Reality News"
-      },
-      {
-        "title": "‘An army of Claudes, with every one asking for my attention’: Anthropic calls human attention the bottleneck in the botsitting world to come - Fortune",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQbl9PcUp2RThiUVVvSVgxQnJ0bEtHaTVpUVRIX3JHbkVCbW5GUkxjYWhnXzBTeV84SVdESHJuVmFMLU1DM1NSZV9pREVsUS1DanFqelQ5ck5aSHk3MFEyZnk2aHpkNmI0NlA2Zl9oSk1aZmF4TUNPSDBxZjN4eW42N0M2bWxyN2VlNUE?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T18:10:00.000Z",
-        "summary": "‘An army of Claudes, with every one asking for my attention’: Anthropic calls human attention the bottleneck in the botsitting world to come Fortune"
-      },
-      {
-        "title": "Anthropic’s Claude Designs More Efficient Quantum Circuits With Automated Feedback - AI Insider",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNeHFBUkZQT2VhTnRJOHNkT3Z0R1Z6STI5LURLd0ZfRk9aR2lTN3RiejFjVXhtNTVfYUE2Y1pSOUZ1Y04wWEZhTDc4X1luRC01SHJLWXJ3WXRhdHB6bGw3dFRRdnk3d2JfQzQwc01uSnNmXzN0VDh6UW5hcVZfWDZ2LWJvMkxDd29HNUZlOFJyM3F0N2FHZER6T1dyTUFkRzczbW1hZ01fbzE5N1dpNFZac2xCUS1OYVFkbkxB?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T16:27:04.000Z",
-        "summary": "Anthropic’s Claude Designs More Efficient Quantum Circuits With Automated Feedback AI Insider"
-      },
-      {
-        "title": "Anthropic AI sends fake murder tip to Philadelphia police - Fox News",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPcndJRnB1WjM2MEVNMVRVbDFncnpSODloZTFTLTNfcW5QX2drOVgzYzhGTVkyb3RkS2ZGOGdGRUl3TVBXR3JQbUtWTlJnalk0dkdhcGtVYmpzSWRnMzlELVp0MlV3cV9rTnNTTDdYZXlYcEZIWG5qalE3V3BPVnNqU0thTDBFY1RHbTQw0gGQAUFVX3lxTE9zcGdjdkhmTWVPSlZmaWxHMVJtQmxqRU9KTHdmSkdCUnB1SklEejdCbkJHTk14R2JkaXdHMVNhR2ZtbmpPS1pIUS1Qczd3UUpWZ3RJcjVCMXA1cTRraHZ1N0pVYV9lcGlUSDFTNjlnNVQ2c0lodWNuWEhWYmlIZjZqT2NQUWxvWU4yRjIxcmZSOA?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T16:00:40.000Z",
-        "summary": "Anthropic AI sends fake murder tip to Philadelphia police Fox News"
-      },
-      {
-        "title": "Making Sense reaches select tier in Anthropic’s Claude Partner Network - Techli",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxON3Z6bktvUVRlblZKemhzM1FPWmpFNGZ2QXZwQmpWalpwVEpQMV9DWDRkd1A0dWRpQVVOMi1vcVpURW9RQUNnc2oxcWUxc1hPYW5KaE5ZcFBYYXBhaWp6RUpua2FSdjB6dXJJSHVCMENlbEwwU1UzZVNuQjRrenluUTlxY2F3Nm5RRVh1YXZBY05lczdtUHJDSktlOA?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T15:04:38.000Z",
-        "summary": "Making Sense reaches select tier in Anthropic’s Claude Partner Network Techli"
-      },
-      {
-        "title": "Show HN: KiviDB, a faster Redis-compatible memory database and vector cache",
-        "url": "https://github.com/kividbio/kividb",
-        "source": "HN · 68↑",
-        "hn_id": "50152541",
-        "published": "2026-10-19T13:53:52.000Z",
-        "summary": "Hi all, So I have been working on this project KiviDB from February 2026. It started as a project for me to understand rust, having a product with no GC pauses, memory blow up…"
-      },
-      {
-        "title": "Maxwell: A new kind of model that sits between code and hardware",
-        "url": "https://heymaxwell.ai/",
-        "source": "HN · 102↑",
-        "hn_id": "50152466",
-        "published": "2026-10-19T13:47:56.000Z",
-        "summary": "Hi HN, I&#x27;m Gal from doubleAI. We&#x27;ve built Maxwell, a new kind of frontier model we call a Code Execution Model. It sits between your code and the hardware. No humans in…"
-      },
-      {
-        "title": "Anthropic commits 5% of its shares to a public-benefit fund - MLQ.ai",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPdFpuQ0FZX08wWndmaWZycXU0bVJZbl85dzdRSGcyR1FEa0dkRmFVZTZFdE15YkVlQno5ZFQ5NGJmVVdSbGxnUnVqTWxNcUdmZGVJZHlvYW5vSnBEZC0taExSMEl1TmxHNmxLZTVibXlzYldMNDFKZjZRWVZmWjdleTl1SG5lUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T13:22:49.000Z",
-        "summary": "Anthropic commits 5% of its shares to a public-benefit fund MLQ.ai"
-      },
-      {
-        "title": "Show HN: I built a task system to handle the drudgery so I could focus on tasks",
-        "url": "https://3anddoneapp.com/try",
-        "source": "HN · 56↑",
-        "hn_id": "50151980",
-        "published": "2026-10-19T13:07:07.000Z",
-        "summary": "I&#x27;m a software engineer from the east coast (who has lived in Boston, NY, the bay area, UK, France), and I built a task system called 3 &amp; Done.  It&#x27;s the place you…"
-      },
-      {
-        "title": "Anthropic says its workforce has been getting older, but is also spending more time in meetings - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPWGg5Z1FzWDNVME5rcGFHLUJTankxdVRoS3FvSzBZd211THNteG0ydDNOV2tEUkQzeXpNQnV4aE9abVFGNHRkNElhaU1pX3BlYkhYS1JLbjlzTUlIVXhWZHMxbHhfLVdSZ3dmSjU2cHhZZ0w1U1FHeVJKeVR0SV85cXQydk14RFVqVnZEeUppSk5SWnZiWUlWT2N6dw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T13:05:00.000Z",
-        "summary": "Anthropic says its workforce has been getting older, but is also spending more time in meetings Yahoo Tech"
-      },
-      {
-        "title": "Why Tech Firms like Accenture are Capping Staff AI Spending - Technology Magazine",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPbXhnTy1BTzBfZkU0OTdPUnlsWm1Ha29mUXlqYzI3cUlpOFVTbFBxVnJVSFZncHM0OEE4UXQ4bmxkZkpSWDRzY0hfb2MtdW03YXU2Z0JiQ1k5VmUxbFRoRmw4M0plcEVMTG5HLTBzQ20zX0JSSUJYc0kwR0s2OTB4aDFOQVBtb1BPTkpfZDg3bVQ2MDhzb2xCNHVFMA?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T13:00:35.000Z",
-        "summary": "Why Tech Firms like Accenture are Capping Staff AI Spending Technology Magazine"
       },
       {
         "title": "This Insane Horror Game Was Built with Claude Code",
@@ -587,18 +587,6 @@
         "published": "2026-08-12T02:41:57.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "How Icelanders are thinking about AI",
-        "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "iF5IWjOWcA4",
-        "thumbnail": "https://i.ytimg.com/vi/iF5IWjOWcA4/hqdefault.jpg",
-        "published": "2026-08-10T14:30:52.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -688,6 +676,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "A Guide to Becoming a Solopreneur w/ Claude in 2027",
+        "url": "https://www.youtube.com/watch?v=wNyge-SHo1o",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "wNyge-SHo1o",
+        "thumbnail": "https://i.ytimg.com/vi/wNyge-SHo1o/hqdefault.jpg",
+        "published": "2026-10-20T15:46:58.000Z",
+        "summary": ""
+      },
       {
         "title": "The Hidden Reason Claude Can't Play Your Game",
         "url": "https://www.youtube.com/shorts/qzMoFT-6X60",
@@ -1006,20 +1005,21 @@
         "thumbnail": "https://i.ytimg.com/vi/9W2qj_GR4s4/hqdefault.jpg",
         "published": "2026-08-12T02:41:57.000Z",
         "summary": ""
-      },
-      {
-        "title": "How Icelanders are thinking about AI",
-        "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "iF5IWjOWcA4",
-        "thumbnail": "https://i.ytimg.com/vi/iF5IWjOWcA4/hqdefault.jpg",
-        "published": "2026-08-10T14:30:52.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "A Guide to Becoming a Solopreneur w/ Claude in 2027",
+        "url": "https://www.youtube.com/watch?v=wNyge-SHo1o",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "wNyge-SHo1o",
+        "thumbnail": "https://i.ytimg.com/vi/wNyge-SHo1o/hqdefault.jpg",
+        "published": "2026-10-20T15:46:58.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
       {
         "title": "v2.1.304",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.304",
@@ -1070,14 +1070,6 @@
         "source": "Claude Code Releases",
         "published": "2026-10-15T19:22:06.000Z",
         "summary": "What's changed Added CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS so unattended retry mode ( CLAUDE_CODE_RETRY_WATCHDOG ) ends a request at a usage limit that resets too far away instead of…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Redesigning Source Control",
-        "url": "https://www.anthropic.com/engineering/redesigning-source-control",
-        "source": "Anthropic Eng",
-        "published": "2026-10-15T18:21:28.000Z",
-        "summary": "",
         "tutorial_kind": "official"
       },
       {
@@ -1273,155 +1265,83 @@
         "tutorial_kind": "video"
       },
       {
-        "title": "Building Effective Agents",
-        "url": "https://www.anthropic.com/engineering/building-effective-agents",
-        "source": "Anthropic Eng",
-        "published": "2026-08-10T22:57:30.000Z",
-        "summary": "",
+        "title": "Merge pull request #45 from emmanuel-ferdman/master",
+        "url": "https://github.com/anthropics/courses/commit/f4dbb137d7b02dddaf3cc73e32e20a702d3b5e77",
+        "source": "Anthropic Courses",
+        "published": "2025-11-13T20:40:50.000Z",
+        "summary": "Merge pull request #45 from emmanuel-ferdman/master update structured outputs notebook reference",
         "tutorial_kind": "official"
       },
       {
-        "title": "How We Contain Claude",
-        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
-        "source": "Anthropic Eng",
-        "published": "2026-06-06T00:28:16.000Z",
-        "summary": "",
+        "title": "Merge pull request #97 from jennarbates/patch-1",
+        "url": "https://github.com/anthropics/courses/commit/8523fca1beeae9c1db390393f1a48e8767e967ec",
+        "source": "Anthropic Courses",
+        "published": "2025-10-09T18:04:20.000Z",
+        "summary": "Merge pull request #97 from jennarbates/patch-1 Update 01_prompting_recap.ipynb - fixed broken link",
         "tutorial_kind": "official"
       },
       {
-        "title": "Claude Code Auto Mode",
-        "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
-        "source": "Anthropic Eng",
-        "published": "2026-05-27T11:44:48.000Z",
-        "summary": "",
+        "title": "Merge pull request #101 from padickinson/patch-1",
+        "url": "https://github.com/anthropics/courses/commit/458eeda6048bd184a40d57ff66279c406f213635",
+        "source": "Anthropic Courses",
+        "published": "2025-10-09T18:02:53.000Z",
+        "summary": "Merge pull request #101 from padickinson/patch-1 Update 02_messages_format.ipynb",
         "tutorial_kind": "official"
       },
       {
-        "title": "April 23 Postmortem",
-        "url": "https://www.anthropic.com/engineering/april-23-postmortem",
-        "source": "Anthropic Eng",
-        "published": "2026-04-30T21:34:23.000Z",
-        "summary": "",
+        "title": "Update 02_messages_format.ipynb",
+        "url": "https://github.com/anthropics/courses/commit/6541de94cb325fcb0d97b839cc187f760c3bc03d",
+        "source": "Anthropic Courses",
+        "published": "2025-09-27T19:27:02.000Z",
+        "summary": "Update 02_messages_format.ipynb fix typo in intro",
         "tutorial_kind": "official"
       },
       {
-        "title": "Infrastructure Noise",
-        "url": "https://www.anthropic.com/engineering/infrastructure-noise",
-        "source": "Anthropic Eng",
-        "published": "2026-04-24T14:21:28.000Z",
-        "summary": "",
+        "title": "Update 01_prompting_recap.ipynb -fixed broken link",
+        "url": "https://github.com/anthropics/courses/commit/f8c420f78029ea17b315ca62d9e04b4123def426",
+        "source": "Anthropic Courses",
+        "published": "2025-07-20T00:41:41.000Z",
+        "summary": "Update 01_prompting_recap.ipynb -fixed broken link fixed broken link to prompt_engineering_interactive_tutorial/README.md",
         "tutorial_kind": "official"
       },
       {
-        "title": "Managed Agents",
-        "url": "https://www.anthropic.com/engineering/managed-agents",
-        "source": "Anthropic Eng",
-        "published": "2026-04-24T14:19:43.000Z",
-        "summary": "",
+        "title": "update structured outputs notebook reference",
+        "url": "https://github.com/anthropics/courses/commit/f65a90f8200e388f7b186de4f1fdcd1adf3a1bc0",
+        "source": "Anthropic Courses",
+        "published": "2024-09-19T09:16:37.000Z",
+        "summary": "update structured outputs notebook reference Signed-off-by: Emmanuel Ferdman",
         "tutorial_kind": "official"
       },
       {
-        "title": "Equipping Agents for the Real World with Agent Skills",
-        "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
-        "source": "Anthropic Eng",
-        "published": "2026-04-15T14:39:01.000Z",
-        "summary": "",
+        "title": "Merge pull request #36 from rainlee/tommy",
+        "url": "https://github.com/anthropics/courses/commit/b4f26aedef55e06ad5eead5de83985249d1fab2f",
+        "source": "Anthropic Courses",
+        "published": "2024-09-18T19:33:21.000Z",
+        "summary": "Merge pull request #36 from rainlee/tommy FIX: fix typo",
         "tutorial_kind": "official"
       },
       {
-        "title": "Harness Design Long Running Apps",
-        "url": "https://www.anthropic.com/engineering/harness-design-long-running-apps",
-        "source": "Anthropic Eng",
-        "published": "2026-03-24T16:23:08.000Z",
-        "summary": "",
+        "title": "FIX: fix typo",
+        "url": "https://github.com/anthropics/courses/commit/c77af04312c652f4221d1b96fa8fdf52aefbc8e9",
+        "source": "Anthropic Courses",
+        "published": "2024-09-18T07:45:08.000Z",
+        "summary": "FIX: fix typo",
         "tutorial_kind": "official"
       },
       {
-        "title": "Eval Awareness Browsecomp",
-        "url": "https://www.anthropic.com/engineering/eval-awareness-browsecomp",
-        "source": "Anthropic Eng",
-        "published": "2026-03-18T20:16:12.000Z",
-        "summary": "",
+        "title": "FIX: miss f-string",
+        "url": "https://github.com/anthropics/courses/commit/37826bf9d854a2b05c25f48867cb8a648c859ee6",
+        "source": "Anthropic Courses",
+        "published": "2024-09-18T07:45:03.000Z",
+        "summary": "FIX: miss f-string",
         "tutorial_kind": "official"
       },
       {
-        "title": "Demystifying Evals for AI Agents",
-        "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
-        "source": "Anthropic Eng",
-        "published": "2026-03-18T18:48:35.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Advanced Tool Use",
-        "url": "https://www.anthropic.com/engineering/advanced-tool-use",
-        "source": "Anthropic Eng",
-        "published": "2026-03-16T16:09:03.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Building C Compiler",
-        "url": "https://www.anthropic.com/engineering/building-c-compiler",
-        "source": "Anthropic Eng",
-        "published": "2026-02-05T19:38:29.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Claude Code Best Practices",
-        "url": "https://www.anthropic.com/engineering/claude-code-best-practices",
-        "source": "Anthropic Eng",
-        "published": "2026-01-26T23:24:56.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "AI Resistant Technical Evaluations",
-        "url": "https://www.anthropic.com/engineering/AI-resistant-technical-evaluations",
-        "source": "Anthropic Eng",
-        "published": "2026-01-22T01:16:20.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Contextual Retrieval",
-        "url": "https://www.anthropic.com/engineering/contextual-retrieval",
-        "source": "Anthropic Eng",
-        "published": "2026-01-07T15:00:44.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Effective Context Engineering for AI Agents",
-        "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
-        "source": "Anthropic Eng",
-        "published": "2026-01-06T15:31:12.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Multi Agent Research System",
-        "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
-        "source": "Anthropic Eng",
-        "published": "2026-01-06T15:09:32.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Writing Tools for Agents",
-        "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
-        "source": "Anthropic Eng",
-        "published": "2026-01-06T15:05:23.000Z",
-        "summary": "",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "Claude Think Tool",
-        "url": "https://www.anthropic.com/engineering/claude-think-tool",
-        "source": "Anthropic Eng",
-        "published": "2025-12-15T18:02:25.000Z",
-        "summary": "",
+        "title": "FIX: fix typo",
+        "url": "https://github.com/anthropics/courses/commit/77b69879069ae353cd9b1dcd5b483010db79ea35",
+        "source": "Anthropic Courses",
+        "published": "2024-09-18T07:44:57.000Z",
+        "summary": "FIX: fix typo",
         "tutorial_kind": "official"
       },
       {
@@ -1746,6 +1666,13 @@
       }
     ],
     "claude_learning": [
+      {
+        "title": "A Guide to Becoming a Solopreneur w/ Claude in 2027",
+        "url": "https://www.youtube.com/watch?v=wNyge-SHo1o",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-10-20T15:46:58.000Z",
+        "summary": ""
+      },
       {
         "title": "The Hidden Reason Claude Can't Play Your Game",
         "url": "https://www.youtube.com/shorts/qzMoFT-6X60",
@@ -2227,13 +2154,6 @@
         "url": "https://www.youtube.com/shorts/9W2qj_GR4s4",
         "source": "YouTube · Pragati Kunwer",
         "published": "2026-08-12T02:41:57.000Z",
-        "summary": ""
-      },
-      {
-        "title": "How Icelanders are thinking about AI",
-        "url": "https://www.youtube.com/watch?v=iF5IWjOWcA4",
-        "source": "YouTube · Anthropic",
-        "published": "2026-08-10T14:30:52.000Z",
         "summary": ""
       }
     ]
