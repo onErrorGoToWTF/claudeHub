@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-10-20T18:09:14.776Z",
+  "generated_at": "2026-10-20T22:44:53.743Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Attack Surface Reduction",
+        "url": "https://www.anthropic.com/research/attack-surface-reduction",
+        "source": "Anthropic Research",
+        "published": "2026-10-20T22:16:43.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Scorpion Toxin Binder Design",
         "url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design",
@@ -135,16 +142,66 @@
         "source": "Anthropic Research",
         "published": "2026-10-20T03:29:33.000Z",
         "summary": ""
-      },
-      {
-        "title": "Employment at Anthropic",
-        "url": "https://www.anthropic.com/research/employment-at-anthropic",
-        "source": "Anthropic Research",
-        "published": "2026-10-20T03:29:33.000Z",
-        "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Inside Anthropic, Every Employee Now Manages Agents - TLNT",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQaFNFR1pjX1NTQ1Ria1E1U1UyZU9hME1TNnRlbkFxdTBBdW5WbkF3U2FpOWpsX1B0Z0RPNW9xWGR3U3pwNDNRTFBXdXBkOW04SjM5U1drRjNjU2xyeUV0dk5zX3NfNlFrZlFmb0w4WV9WX25pY3ZFejFpVWFBbkEyNElCeHhxdw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T22:39:11.000Z",
+        "summary": "Inside Anthropic, Every Employee Now Manages Agents TLNT"
+      },
+      {
+        "title": "Anthropic Lost $80 Billion in Six Months as AI Spending Soars, Draft IPO Filing Shows - Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOblhoaEJYNXh4UGxublJzZk9SbE9MWFNYcUlaaW1BU3JBWTFxZXR2U3pNa2trUHpsS2ZCTXhyeWE3V1pPblFyTkdjVkRxUnpkMUdlYzZZaVRISFhhVXM0N1VsYzVPMlNMT1Y0TFZiQjM0c0RKdlFzNTgxYmVGbjVxMk9zUkw0ek9VcWxET3RUWjhabVNTajVyc2s4d3F1bDBXdHRXZG5MMzgtMkUyaE55Zk5vN1VyU1lsU2lvekNNNHBPNlFVbHZhOFZ0SnlRTzh5eU9ldGZlU25jbTl2YnEtNw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T21:52:39.000Z",
+        "summary": "Anthropic Lost $80 Billion in Six Months as AI Spending Soars, Draft IPO Filing Shows Benzinga"
+      },
+      {
+        "title": "Anthropic’s cloud partnerships are getting messy",
+        "url": "https://techcrunch.com/2026/10/20/anthropics-cloud-partnerships-are-getting-messy/",
+        "source": "TechCrunch",
+        "published": "2026-10-20T21:25:22.000Z",
+        "summary": "Anthropic is reportedly struggling to secure enough compute from cloud providers that increasingly view it as a competitor, even as its infrastructure spending balloons ahead of a planned November…"
+      },
+      {
+        "title": "Anthropic’s Claude Designed Hundreds Of Thousands Of Proteins In 64 Hours To Target Scorpion Venom - Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPbVAza3ZoTWZjSFpKc3c1OE1IN1BNUDMxdVpHZ2pfc1NNZ2xtOWtocjZEWEYtZ0lFQXlpcnNhbHpTeXd4UzN4OWVqZnhPaWlYSEMzUzltNXpVZ0pPb01pdm14UTFseGVFc1ZrYjBrU2sxa0RtcjZIUHB2a1FxLWctTDROS19QOHJWeWZWNndNVnFHZnRiZU04UHdfa055LTFxSWFTWWprTTRXZkFpak1UdnFGVk1uRF9nS3hPSGF6T2g3NkhzVDlleXRCWHJoSU1qcDJlNkVaeUhzWVR6RzVubHRUSVBmUG1XTHMtaUd1bkw5czA?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T20:39:14.000Z",
+        "summary": "Anthropic’s Claude Designed Hundreds Of Thousands Of Proteins In 64 Hours To Target Scorpion Venom Benzinga"
+      },
+      {
+        "title": "Anthropic S1 Shows $80 Billion Loss This Year, WSJ Reports",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-20/anthropic-s1-shows-billions-in-losses-wsj-reports-video",
+        "source": "Bloomberg",
+        "published": "2026-10-20T20:16:28.000Z",
+        "summary": "Anthropic PBC could spend $750 billion on additional computing power in the coming years and it lost $80.7 billion in the first half of this year, according to the Wall Street Journal. The media…"
+      },
+      {
+        "title": "Anthropic logged net loss of over $80B in first half of 2026",
+        "url": "https://www.reuters.com/business/anthropic-recorded-net-loss-over-80-billion-first-half-this-year-wsj-reports-2026-10-20/",
+        "source": "HN · 67↑",
+        "hn_id": "50171966",
+        "published": "2026-10-20T20:09:46.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic May Spend $750 Billion on Computing Costs, WSJ Reports",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-20/anthropic-could-spend-750-billion-on-computing-costs-wsj-says",
+        "source": "Bloomberg",
+        "published": "2026-10-20T20:04:21.000Z",
+        "summary": "Anthropic PBC could spend $750 billion on additional computing power in the coming years, according to a Wall Street Journal report, as the company prepares for an initial public offering."
+      },
+      {
+        "title": "Claude Opus 5.5 vs GPT-6 Astra- Anthropic’s New AI Model Explained - TechRepublic",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQZHhXSnIxaFQ4THRBalAtckI4TUpRSkdzQzdIT0I4c2JxRElGMHJySXdoR1puTlhUSXNEakNkRXVnZ3p3TDg5V29vakNUMUU5S213V1dyWWRfMldTTVl5cV9XUktuVXlENlZ6SXB3U0YydEJldFhnUGNEWG9vRTJZMG5oNlN4ek1iSTRpQ2Vhd2FTY1I5QkMzbkNRd3k3bmFja3JB?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T19:57:52.000Z",
+        "summary": "Claude Opus 5.5 vs GPT-6 Astra- Anthropic’s New AI Model Explained TechRepublic"
+      },
       {
         "title": "Eric Schmidt reportedly owns about half as much of Anthropic as CEO Dario Amodei",
         "url": "https://techcrunch.com/2026/10/20/eric-schmidt-reportedly-owns-about-half-as-much-of-anthropic-as-ceo-dario-amodei/",
@@ -153,25 +210,19 @@
         "summary": "The former Google CEO owns about 1% stake in the leading AI lab, Bloomberg reported."
       },
       {
-        "title": "AI Fears Roar Back After Elice IPO Flop",
-        "url": "https://www.bloomberg.com/news/videos/2026-10-20/bloomberg-tech-10-20-2026-video",
-        "source": "Bloomberg",
-        "published": "2026-10-20T17:21:39.000Z",
-        "summary": "Bloomberg’s Ed Ludlow breaks down why fears about the AI trade are resurfacing after South Korean data center firm Elice plunged 32% in its market debut. Plus, Anthropic is in talks with Nscale for…"
+        "title": "Claude designed protein binders against scorpion neurotoxins",
+        "url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design",
+        "source": "HN · 70↑",
+        "hn_id": "50170021",
+        "published": "2026-10-20T17:48:29.000Z",
+        "summary": ""
       },
       {
-        "title": "Eric Schmidt’s Early Anthropic Bet Set to Pay Huge Windfall",
-        "url": "https://www.bloomberg.com/news/videos/2026-10-20/eric-schmidt-s-early-anthropic-bet-to-pay-huge-windfall-video",
-        "source": "Bloomberg",
-        "published": "2026-10-20T17:20:13.000Z",
-        "summary": "Former Google CEO Eric Schmidt owns around 1% of Anthropic thanks to his early investment in the startup, setting him up for one of the largest individual windfalls from the company’s imminent…"
-      },
-      {
-        "title": "NScale, Anthropic in Talks for $45B AI Computing Deal",
-        "url": "https://www.bloomberg.com/news/videos/2026-10-20/nscale-anthropic-in-talks-for-45b-ai-computing-deal-video",
-        "source": "Bloomberg",
-        "published": "2026-10-20T17:14:43.000Z",
-        "summary": "Anthropic is in talks with Nscale for a massive new computing deal that could be worth as much as $45 billion. The deal would be for a second facility at Nscale's Monarch data center campus in West…"
+        "title": "How Claude designed protein binders against scorpion neurotoxins - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9VNkRtQVc2UUZVVmgyWUJOQU5RSjdCMjQ0V1JuczVKVmxoME1pQ295LWZ5a3J1M21SWk1yWUtGQ01pbTN3bFVldVVmc01QLXNYYlBqRi04UnZ4VWR5NzU1dTZuYzFxRVA5enZObVVFeE1sVURIVFp1NGVn?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T17:03:55.000Z",
+        "summary": "How Claude designed protein binders against scorpion neurotoxins Anthropic"
       },
       {
         "title": "Ex-Google CEO Eric Schmidt’s early Anthropic bet could balloon to $20B in blockbuster IPO - New York Post",
@@ -184,15 +235,8 @@
         "title": "Amazon Bedrock adds schema-enforced outputs for Claude across both API surfaces - OpenTools",
         "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQVXRITFJYeU11STZCcEY1MVZCLWVLc3ZiNFN1YnBIMExwZXRYRzhrUElXWUh6ekEtRXN2RmUzOTZHTXdIVFJKZWVxT09haTg0em82dXdtXzhEczctampJMDhtcHR3N3lXYkV1TWZXZ3NhZHJ3emNVeEVJb1NlTWtoa3dWbDNUN3Z2WkE?oc=5",
         "source": "Google News",
-        "published": "2026-10-20T16:38:37.000Z",
+        "published": "2026-10-20T16:37:52.000Z",
         "summary": "Amazon Bedrock adds schema-enforced outputs for Claude across both API surfaces OpenTools"
-      },
-      {
-        "title": "The Gospel according to Peter (Thiel)",
-        "url": "https://www.theverge.com/tech/1014252/peter-thiel-antichrist-lectures-analysis",
-        "source": "The Verge",
-        "published": "2026-10-20T15:45:00.000Z",
-        "summary": "It's a time of apocalyptic worldviews in Silicon Valley. The latest AI doom cycle is driven by effective altruism (EA), a philosophy that has lurked around the fringes for years but recently burst…"
       },
       {
         "title": "SpaceX IPO vs upcoming Anthropic IPO: Will Claude maker beat Elon Musk's $75 bn record? - TradingView",
@@ -204,7 +248,7 @@
       {
         "title": "Show HN: Jev Cards, Can you beat a vision model at a picture quiz?",
         "url": "https://jevcards.com",
-        "source": "HN · 43↑",
+        "source": "HN · 55↑",
         "hn_id": "50167617",
         "published": "2026-10-20T15:11:56.000Z",
         "summary": "I built a quiz game around TypeSafe&#x27;s new Jev model, which has vision capabilities. Jev looks at a picture and a question and picks an answer (or taps a place) in about a…"
@@ -212,7 +256,7 @@
       {
         "title": "Show HN: Penmentor – Claude marks up your handwritten math like a teacher",
         "url": "https://github.com/AbdullahAlhariri/penmentor",
-        "source": "HN · 33↑",
+        "source": "HN · 49↑",
         "hn_id": "50167604",
         "published": "2026-10-20T15:10:54.000Z",
         "summary": ""
@@ -239,16 +283,23 @@
         "summary": "A $400 million superyacht would be expensive even for a billionaire, but not for Eric Schmidt, who smartly bet early on Claude maker Anthropic and is in line for an eye-watering windfall of $20…"
       },
       {
-        "title": "How Claude designed protein binders against scorpion neurotoxins - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9VNkRtQVc2UUZVVmgyWUJOQU5RSjdCMjQ0V1JuczVKVmxoME1pQ295LWZ5a3J1M21SWk1yWUtGQ01pbTN3bFVldVVmc01QLXNYYlBqRi04UnZ4VWR5NzU1dTZuYzFxRVA5enZObVVFeE1sVURIVFp1NGVn?oc=5",
+        "title": "Citrini Bets on Life Sciences After Claude AI Drug Study - Bloomberg.com",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMkw2eGEtVG9TbkIyMHZ1NGpvODQtNTVJc0U5N0dNQVpDTUFYWk5LM3YwcDNZeU45dW5WMGg0dE1LZGxPRk1ZbjhQbjdRSl9EZFpZZTNlUVVFMGR1SmY1Q2lmS3NJaExvMzUxY0ZFTGtnV1M5Q1IzUUcxZ0F4d0ViNURzUnQ5UlR2Q3ZRU2FPOHZ2dHI3NmpEbWdtWkU1cUVOM0w3TmJmcmpVNnNCSEktMS01c0k?oc=5",
         "source": "Google News",
-        "published": "2026-10-20T13:01:21.000Z",
-        "summary": "How Claude designed protein binders against scorpion neurotoxins Anthropic"
+        "published": "2026-10-20T13:00:15.000Z",
+        "summary": "Citrini Bets on Life Sciences After Claude AI Drug Study Bloomberg.com"
+      },
+      {
+        "title": "Citrini Therapeutics - Citrini Research | Substack",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5aRTRLNk9PbV9CVy1rT05WQ05FSE1JcEFPNUdKaFVsV2FrQ1R4aXFVMkxkUHJ0RWgzRmVmVFhDUl9neUwzZV9DOUx3RHdaUzU0b0V0SzZRWlhMX3N0Z0R5QS1OWEE?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T12:59:27.000Z",
+        "summary": "Citrini Therapeutics Citrini Research | Substack"
       },
       {
         "title": "NixOS is making me less afraid",
         "url": "https://entropicthoughts.com/nixos-is-making-me-less-afraid",
-        "source": "HN · 119↑",
+        "source": "HN · 159↑",
         "hn_id": "50165484",
         "published": "2026-10-20T12:43:05.000Z",
         "summary": ""
@@ -268,18 +319,11 @@
         "summary": "Reading all of Claude's output would take half an Anthropic worker's week MIXED Reality News"
       },
       {
-        "title": "Waters: Integrating Anthropic AI Into Laboratory Workflows - Healthcare Digital",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNkM3dm04cmRnejVxRzhGTHhOSmlyTWVhQzhaSnRWWTlnMHpuVjkzdEQwMHgweDEwTFdlMkM5RkMweUFkM0lBUVV2MzVYZzRMcUtQNlYzTWVkNmFVVDhCMVk2NnZzRnduTjJsSklkWE05YkdwT1Y5Z2c2cktkX3NGVEJQaDdSOG1ic2hKRk8zNXFTRlhnQ1ZadQ?oc=5",
+        "title": "Anthropic | History, Controversies, & Claude AI - Britannica",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE41Q1h2QkF0SGRpMFZSMVN5al9RNkhQLTR4MDc0cHJNbndmdndTbHE5cGswRFk4SS1JbVhmXzdWNm5KRDlJa3FiUkt6T01MZUNiTjhON2R6cFJtQQ?oc=5",
         "source": "Google News",
-        "published": "2026-10-20T10:00:46.000Z",
-        "summary": "Waters: Integrating Anthropic AI Into Laboratory Workflows Healthcare Digital"
-      },
-      {
-        "title": "Microsoft Copilot Adds OpenAI GPT 6.1 and Anthropic Claude Opus 5.5 - Geeky Gadgets",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBkRkM4ajFVQjFDVXRqSFBfLUxFNFRhMm5OU0prU0JlQmloREdiazNuRjFleHlVWlR3cXRuc0M0akRycENZeks2bXROa0NwOTVUa0dicTY1M3Q0WHhnYUNKY2UyMUVZMUg0TlZobFZfeV9Lb2dWRVdxeg?oc=5",
-        "source": "Google News",
-        "published": "2026-10-20T08:32:22.000Z",
-        "summary": "Microsoft Copilot Adds OpenAI GPT 6.1 and Anthropic Claude Opus 5.5 Geeky Gadgets"
+        "published": "2026-10-20T10:20:40.000Z",
+        "summary": "Anthropic | History, Controversies, & Claude AI Britannica"
       },
       {
         "title": "The Hidden Reason Claude Can't Play Your Game",
@@ -292,49 +336,6 @@
         "published": "2026-10-20T05:21:19.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Show HN: Death Plan Switch, a self-hosted dead man's switch for solo devs",
-        "url": "https://deathplanswitch.com/",
-        "source": "HN · 86↑",
-        "hn_id": "50161408",
-        "published": "2026-10-20T04:37:43.000Z",
-        "summary": "Hi HN, I&#x27;m Peter Bishop and I&#x27;ve been working in graphics and web tech for over 25yrs. I&#x27;ve recently launched Death Plan Switch to solve a major problem in my…"
-      },
-      {
-        "title": "Nscale and Anthropic are reportedly in talks for yet another $45B compute deal",
-        "url": "https://techcrunch.com/2026/10/19/nscale-and-anthropic-are-reportedly-in-talks-for-yet-another-45-billion-compute-deal/",
-        "source": "TechCrunch",
-        "published": "2026-10-19T23:39:38.000Z",
-        "summary": "If the deal goes through, it would be the latest in a long string of giant compute deals Anthropic has struck over the past year."
-      },
-      {
-        "title": "Structured outputs for Anthropic Claude models on Amazon Bedrock | Artificial Intelligence - Amazon Web Services (AWS)",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQeGtQZ3VDNTRrRVNBTDA4ak5mUlBKUG1kdWpwWDJxQUx2UWxFMGw3Sk85MllYN1gyTENSZEcxa0RwZ2RXLTk5WlE0ejZPZWU0UzI5RVRmUnlLdXgwcjZBUUhEUnI5enprM2NPZVlhbXl6ZUhTVU4wZEpwMjc0SHlQME54Ri1NMk40UmF5bDBReHdEV0V6OWxXVnJVSl9nUkpsTGFQejBtU2tFeEliQXpvZw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T23:32:19.000Z",
-        "summary": "Structured outputs for Anthropic Claude models on Amazon Bedrock | Artificial Intelligence Amazon Web Services (AWS)"
-      },
-      {
-        "title": "Nvidia-backed Nscale, Anthropic in talks for new $45 billion AI cloud deal, source says - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPcGMyclR5X0JrXzBKem90Uk1sZnBQNkcyRnlyc3ZnWTM4Q0ZoUWtKUzRrd1Y3aHlqaDRjT1pfaFdmV0pHYUFROFI3TFhTWVhtczJsM01PSF8tSEtXejB4emlhVjZGMmQzeWh0RXJoaS0tNDQ1SDhlZDRJZU5hZG5ibE85N3dxU21DS2ZKYm1NV2pVUUF4ZjF3XzQ1ZncwaHVMdXlWZ2FsWjRtQ1d0eFN2YUVQc2x4cTd6YjNwSTVuVUFQZw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T23:21:01.000Z",
-        "summary": "Nvidia-backed Nscale, Anthropic in talks for new $45 billion AI cloud deal, source says Reuters"
-      },
-      {
-        "title": "Anthropic opens Women in AI Hackathon applications | ETIH EdTech News - EdTech Innovation Hub",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQbE5HZmExREdKSjJwdURnaGdQRVE1QW5ZV2p4RVVVOXFkVm1mcUFJX2VDeWxzNGNwbXZBeDByTm52WEt3eG5VblFjbXRscEFSem1sVENVbmpNb25CR0h2SlhsM0FldWF1VU5XNk5hQ3d4TllJN0Q1bGc0emFXb3FqOEMxM0hYRGhUYkcyUC14eTVFQ3RPLU80eVVsbFpSLU8xdHdJVjloVHZGbTc4OXIzREwxZ1dHR3g2OFhwWlB3?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T23:01:22.000Z",
-        "summary": "Anthropic opens Women in AI Hackathon applications | ETIH EdTech News EdTech Innovation Hub"
-      },
-      {
-        "title": "Shots Fired: Meta Is Developers on Outside AI Tools “in Half”. That’s a Big Problem for Anthropic - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOM0RIcGs4OU5qT3lUVE9qMWlwaUJKNGQxcF95dUttUXNuM1VsNGJXMHUyMGpTeTNsUXpHejFuVWNTa293a3M5UUpDdWxOZ1RVRllsNW1jZXlBeGF3a2ZJRjNRVnZTNi1lRDZSa2NSeUh3VVNaUXJfMDBmV2NOS2ZZQk04X1F4U3VXQlR4c01UU1Z1NFdpT0s4Y19td0RyUDJ2?oc=5",
-        "source": "Google News",
-        "published": "2026-10-19T20:43:14.000Z",
-        "summary": "Shots Fired: Meta Is Developers on Outside AI Tools “in Half”. That’s a Big Problem for Anthropic Yahoo Finance"
       },
       {
         "title": "This Insane Horror Game Was Built with Claude Code",
@@ -1009,6 +1010,14 @@
     ],
     "tutorials": [
       {
+        "title": "v2.1.305",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.305",
+        "source": "Claude Code Releases",
+        "published": "2026-10-20T20:46:50.000Z",
+        "summary": "What's changed Added sandbox.allowNestedUserNamespaces so sandboxed commands on Linux can create user namespaces (Chromium, rootless podman); this lets them get around the sandbox's file protections…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "A Guide to Becoming a Solopreneur w/ Claude in 2027",
         "url": "https://www.youtube.com/watch?v=wNyge-SHo1o",
         "source": "Nick Saraev",
@@ -1170,14 +1179,6 @@
         "source": "Claude Code Releases",
         "published": "2026-10-08T05:03:54.000Z",
         "summary": "What's changed Fixed prompt and agent hooks written as instructions (such as \"Block commands that...\") allowing what they should block Improved how prompt hooks on Stop and SubagentStop written as…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "v2.1.293",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.293",
-        "source": "Claude Code Releases",
-        "published": "2026-10-07T18:10:20.000Z",
-        "summary": "What's changed Added Claude Haiku 5.5 ( claude-haiku-5-5 ), now the default Haiku model on the Anthropic API — 1M context, $0.10/$0.50 per Mtok ($0.50/$2.50 for prompts over 100K) Added agentType to…",
         "tutorial_kind": "official"
       },
       {
@@ -1667,6 +1668,13 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.305",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.305",
+        "source": "Claude Code",
+        "published": "2026-10-20T20:46:50.000Z",
+        "summary": "What's changed Added sandbox.allowNestedUserNamespaces so sandboxed commands on Linux can create user namespaces (Chromium, rootless podman); this lets them get around the sandbox's file protections Added…"
+      },
+      {
         "title": "A Guide to Becoming a Solopreneur w/ Claude in 2027",
         "url": "https://www.youtube.com/watch?v=wNyge-SHo1o",
         "source": "YouTube · Nick Saraev",
@@ -1889,13 +1897,6 @@
         "source": "MCP Inspector",
         "published": "2026-10-07T23:20:32.000Z",
         "summary": "What's Changed docs(release): add the release-notes step and the re-cut procedure by @cliffhall in #2555 Scope secret-store entries by a per-state-file namespace by @BobDickinson in #2556 Promote recurring…"
-      },
-      {
-        "title": "v2.1.293",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.293",
-        "source": "Claude Code",
-        "published": "2026-10-07T18:10:20.000Z",
-        "summary": "What's changed Added Claude Haiku 5.5 ( claude-haiku-5-5 ), now the default Haiku model on the Anthropic API — 1M context, $0.10/$0.50 per Mtok ($0.50/$2.50 for prompts over 100K) Added agentType to the…"
       },
       {
         "title": "We've lowered the price of prompt cache reads on Claude Sonnet 5.5 from $0.20 USD to $0.10 USD per million tokens:…",
