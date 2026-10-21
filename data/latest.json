@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-10-21T02:13:06.253Z",
+  "generated_at": "2026-10-21T08:55:40.577Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Public Benefit Fund",
+        "url": "https://www.anthropic.com/news/public-benefit-fund",
+        "source": "Anthropic",
+        "published": "2026-10-21T04:27:07.000Z",
+        "summary": ""
+      },
       {
         "title": "Attack Surface Reduction",
         "url": "https://www.anthropic.com/research/attack-surface-reduction",
@@ -135,22 +142,58 @@
         "source": "Anthropic Research",
         "published": "2026-10-20T03:29:34.000Z",
         "summary": ""
-      },
-      {
-        "title": "Ai Expectations Gap",
-        "url": "https://www.anthropic.com/research/ai-expectations-gap",
-        "source": "Anthropic Research",
-        "published": "2026-10-20T03:29:33.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Claude Cautious, GPT Daring: AI Risk Tendencies Vary by Task - 조선일보",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUVY5ZTFGTlRCSDRja0g5SnpYT2p2NHpGNDhOa25xTDhxd2ZmUkFBNEVDLUdFSDR1UFVTbkpFYzRWTmRaQWdLSlhTRnFfQkxaQVpKU1ZETmZRck03czVxNHdWcnJjQU13aUw1STJnZVhoUV8xWHdYZjdGNmNKZHlnNWUyTGVXVTdn?oc=5",
+        "title": "Anthropic is struggling to get compute from AWS, Google and Microsoft - India Today",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOUXd1bVpiYnYtdHpFb0RSN0pITHVLRmxYVy0zcG9GaVhDZ0Y4c2ZyY216N2d3em1QRVRIUWRYOFlGb2ZQTVhrWTN0NW5KVFNGZmhUTWdrd3dLVGl0NWJSb0h1WVB4LWlCLWltYzJZTzhJel9ZS016LWRXNy1zNWxzUHViQWVaMWpkaXI3ajNob1ladm1DdlRDQzNqdHFMQ0ZSVVBNcEN1aHBiTkVuS1Z1bGFfb2x0WlRJODg4QktsQjRKT1JwNV94bHJxMDVBc1U50gHWAUFVX3lxTE9Gd0loeG9jdzlxOEV0dGF2SEY5LXJxd3BhSnBmRUJxajJ0bGF2Ym14dkNCazlkN0xtaHZ0ZS1DcmlvLXRxRVFTcUZfRFhvZkpvOEk1WkYwblI5MnNxOTEwTlcwZEwza1R1a2piRERoUTZqN28yMU1mQzU4N2MwMUxfWFVpUGE3OGFJYmY1c0tSZFdUY0tqUDdObl9MUEtSUlpSLU9rN090TWFWWlpIZURLWmtKQ1ItMHJPTXpSYXRpcnl6QWF6RS1BTS1pdFQzRWcwY1dZUGc?oc=5",
         "source": "Google News",
-        "published": "2026-10-21T01:54:10.000Z",
-        "summary": "Claude Cautious, GPT Daring: AI Risk Tendencies Vary by Task 조선일보"
+        "published": "2026-10-21T07:36:31.000Z",
+        "summary": "Anthropic is struggling to get compute from AWS, Google and Microsoft India Today"
+      },
+      {
+        "title": "Anthropic’s $80.7 billion loss puts its IPO ambitions under scrutiny - CTech",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1EUkF6M3hXbVJzT1VlVHhTdzJrWXN2eGRaY3c2NFFqM0Zfd0YyVlpzVkNwQ1pSQnhCeEZ4d004cXl6UWZGNk13ODVTSVgxMUlpTm9oQkY0b0pzU0dxNUo4Y1Ryc21OZWc?oc=5",
+        "source": "Google News",
+        "published": "2026-10-21T06:28:00.000Z",
+        "summary": "Anthropic’s $80.7 billion loss puts its IPO ambitions under scrutiny CTech"
+      },
+      {
+        "title": "Who is Eric Schmidt? His education, career journey from Google CEO to Anthropic AI investor - Education Times",
+        "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPWl9vNk50MktWWHczVHZSUzRza0FxZHFhVmN2OXByQlh5NHF2RmxLTEZ3VGwzUTVheFRVMWJBMlA0cTZBRDlkcW5Ec3E2ZG42dUFUUE9vNFMzaExoNldRUk5ZLU0zMGRUdEt5TDBYc0sxM2piSmtMck9JX0JfeVRrTEVrc0NYQjB2a21IM0dGZTJGem5KcUc3Q0g3YkxxckdDQnJUWnFpb2QzVXl4V2pyclQ1NUNNYzJ1cUF5cU92OHRKMm9lSkpVaWRCRUZsZ3ptWmNHZDRVNlNtUWhLdVc5eDRONGVmMUd6UUh3?oc=5",
+        "source": "Google News",
+        "published": "2026-10-21T05:07:00.000Z",
+        "summary": "Who is Eric Schmidt? His education, career journey from Google CEO to Anthropic AI investor Education Times"
+      },
+      {
+        "title": "Claude Code found on servers used in AI-linked cyberattacks - 朝日新聞",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9RQl85RzBFX1k4N2o5cERPd0ozTG11cWdSR200ZXYxX1lXQzFyZDM2OUZHVmpLRTFFUk1Gc1Y3ZzRTUGlnNG1SMG5TcWJGVjI4RWRNdF9n?oc=5",
+        "source": "Google News",
+        "published": "2026-10-21T04:04:00.000Z",
+        "summary": "Claude Code found on servers used in AI-linked cyberattacks 朝日新聞"
+      },
+      {
+        "title": "Using Claude to reduce the attack surface of code",
+        "url": "https://www.anthropic.com/research/attack-surface-reduction",
+        "source": "HN · 34↑",
+        "hn_id": "50175779",
+        "published": "2026-10-21T03:36:43.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic’s Claude Yields 17 Scorpion Toxin Binders in Lab Tests - www.tokenpost.com",
+        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5hQnNHaURmMWVicVRuMWRGUGRmaXhBblhPdlZPeGw4ZC1nZjdyVHppZmZ5d1VENDA3Nkp1bzlGaGh6Q3NLQ2xJOV9zZTh1bG1STHR3NW1aM1g1bG8?oc=5",
+        "source": "Google News",
+        "published": "2026-10-21T01:57:00.000Z",
+        "summary": "Anthropic’s Claude Yields 17 Scorpion Toxin Binders in Lab Tests www.tokenpost.com"
+      },
+      {
+        "title": "Why Anthropic has a major China problem ahead of its blockbuster IPO - South China Morning Post",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPQktyclo0MGstUGtwSVpxdzljVzVHSG9JNF91VnBQVUZMZ3UtN2d2d2g2NDNqWDJsZUxxNkpJNUtrbFVLV2VHelBBYmdrSzAwTXB4YnRMSG5FZXpkdGV6dTdWOGplUWdCX0RpNUNmQnAxdFgxRzFCMDRMWW9rb1BWMUNkSDczSHlCcEJ1TUdpYWxKUmlHbVROdnZNcjlYWXU3c3FoZG9fYmNPNDZxVVBjb09Vck_SAbQBQVVfeXFMTUlUVDFyUkstQ2R1OFhZUTBqNTVPeGRacmJZekUxdGZoc3BEMW9lZC05TlRFWFlDNlBoMkFLOUZUeHhRbXdvcDQ0Vk9QRXVDTWx6bTFXYTFOTkFNQ3U1NHo5OEpvY29DMGg4RmZ5bXphTG93aFNNbHVrc05FSG83SUIyaWM4X01Oa0t0MzZTY2xqLWhNUFBkbHpFOXlzLUhfYVdoZGR5eS1tcWNDamdPejNTa1Uw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-21T00:00:15.000Z",
+        "summary": "Why Anthropic has a major China problem ahead of its blockbuster IPO South China Morning Post"
       },
       {
         "title": "HHS to make sole-source award to Anthropic ahead of broader AI competition - FedScoop",
@@ -164,7 +207,7 @@
         "url": "https://techcrunch.com/2026/10/20/anthropic-pitches-ai-safety-bill-that-may-block-a-model-if-50-people-could-be-killed/",
         "source": "TechCrunch",
         "published": "2026-10-20T23:01:23.000Z",
-        "summary": "The proposed policy seems to offer protections against AI run amok but actually forbids federal agencies from blocking a model's release without the permission of a judge."
+        "summary": "The proposed policy seems to offer protections against AI running amok but actually forbids federal agencies from blocking a model's release without the permission of a judge."
       },
       {
         "title": "Inside Anthropic, Every Employee Now Manages Agents - TLNT",
@@ -172,6 +215,21 @@
         "source": "Google News",
         "published": "2026-10-20T22:39:11.000Z",
         "summary": "Inside Anthropic, Every Employee Now Manages Agents TLNT"
+      },
+      {
+        "title": "Anthropic recorded a staggering $80B net loss in the first half of 2026",
+        "url": "https://twitter.com/Polymarket/status/2112634886070919426",
+        "source": "HN · 34↑",
+        "hn_id": "50173557",
+        "published": "2026-10-20T22:27:07.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic's Cloud Partners Turn Rivals Ahead of IPO - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQcXRwMUltWkdBM3NTWFNCcjJKVTc0bC1HNWl3LUMycC00SVNJYWFlSkhOVFo0QzVPUF9wNUlocVJOT1ZHcXdOZ0xpcmo4SlZsLW1ScmVCZ2c0dHlJNDI2V2hybVFvcnpTM2d0NzNqLTZYSk40Vlkxc3daNzV5RkNiVWlld0hob002M1J0Sg?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T22:06:00.000Z",
+        "summary": "Anthropic's Cloud Partners Turn Rivals Ahead of IPO The Tech Buzz"
       },
       {
         "title": "Anthropic Lost $80 Billion in Six Months as AI Spending Soars, Draft IPO Filing Shows - Benzinga",
@@ -188,6 +246,20 @@
         "summary": "Anthropic is reportedly struggling to secure enough compute from cloud providers that increasingly view it as a competitor, even as its infrastructure spending balloons ahead of a planned November…"
       },
       {
+        "title": "Workday & Anthropic link AI tools for HR & finance - IT Brief Australia",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNd2lJSUtDd085UndEblpYTjVXR3BYZERNakhQM2pMVTN5LWRZQk5EWURsZ0QtenBMRjZzaGhqVzlnSU80ampua0JWMklrZnlKb1lIWW13Ump5MW56eVJVSzJRZ2NZNXhwbURWcDgzNUZ4YjRyZTh4U043TEFjMDRFRg?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T21:15:00.000Z",
+        "summary": "Workday & Anthropic link AI tools for HR & finance IT Brief Australia"
+      },
+      {
+        "title": "Anthropic's draft S-1 filing shows revenue growth, customer concentration, risks: report (ANTHRO:Private) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZFo5TDFlNDhiMjh2Ml8zQVZiSlpMUE5YcUNtUTBQcDVhWlVULWlWT1R2NjF4dE1HZkh2Q0hJU05uZ2Q3YzNMV0Rra2hkcGNzS0R2cTF4MFlid2diWjVVS3FCd05DXzZYbkJEMWlBNGJoN3JHRDB1VmR2c0R0dkMzRGhtZGRQc3MwTjJxM19Lc0cxaE5mZnBtMV82c0I1RzE3MXFUR1pMUExabzNpcXlGbGpTVUNQbW5JRmo4NXQ4aw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T20:50:35.000Z",
+        "summary": "Anthropic's draft S-1 filing shows revenue growth, customer concentration, risks: report (ANTHRO:Private) Seeking Alpha"
+      },
+      {
         "title": "Anthropic’s Claude Designed Hundreds Of Thousands Of Proteins In 64 Hours To Target Scorpion Venom - Benzinga",
         "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPbVAza3ZoTWZjSFpKc3c1OE1IN1BNUDMxdVpHZ2pfc1NNZ2xtOWtocjZEWEYtZ0lFQXlpcnNhbHpTeXd4UzN4OWVqZnhPaWlYSEMzUzltNXpVZ0pPb01pdm14UTFseGVFc1ZrYjBrU2sxa0RtcjZIUHB2a1FxLWctTDROS19QOHJWeWZWNndNVnFHZnRiZU04UHdfa055LTFxSWFTWWprTTRXZkFpak1UdnFGVk1uRF9nS3hPSGF6T2g3NkhzVDlleXRCWHJoSU1qcDJlNkVaeUhzWVR6RzVubHRUSVBmUG1XTHMtaUd1bkw5czA?oc=5",
         "source": "Google News",
@@ -197,10 +269,17 @@
       {
         "title": "Anthropic logged net loss of over $80B in first half of 2026",
         "url": "https://www.reuters.com/business/anthropic-recorded-net-loss-over-80-billion-first-half-this-year-wsj-reports-2026-10-20/",
-        "source": "HN · 112↑",
+        "source": "HN · 146↑",
         "hn_id": "50171966",
         "published": "2026-10-20T20:09:46.000Z",
         "summary": ""
+      },
+      {
+        "title": "Anthropic May Spend $750 Billion on Computing Costs, WSJ Reports",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-20/anthropic-could-spend-750-billion-on-computing-costs-wsj-says",
+        "source": "Bloomberg",
+        "published": "2026-10-20T20:04:21.000Z",
+        "summary": "Anthropic PBC could spend $750 billion on additional computing power in the coming years, according to a Wall Street Journal report, as the company prepares for an initial public offering."
       },
       {
         "title": "Claude Opus 5.5 vs GPT-6 Astra- Anthropic’s New AI Model Explained - TechRepublic",
@@ -214,12 +293,12 @@
         "url": "https://techcrunch.com/2026/10/20/eric-schmidt-reportedly-owns-about-half-as-much-of-anthropic-as-ceo-dario-amodei/",
         "source": "TechCrunch",
         "published": "2026-10-20T17:55:12.000Z",
-        "summary": "The former Google CEO owns about 1% stake in the leading AI lab, Bloomberg reported."
+        "summary": "Eric Schmidt’s fortune is about to get even bigger."
       },
       {
         "title": "Claude designed protein binders against scorpion neurotoxins",
         "url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design",
-        "source": "HN · 95↑",
+        "source": "HN · 106↑",
         "hn_id": "50170021",
         "published": "2026-10-20T17:48:29.000Z",
         "summary": ""
@@ -239,91 +318,11 @@
         "summary": "Ex-Google CEO Eric Schmidt’s early Anthropic bet could balloon to $20B in blockbuster IPO New York Post"
       },
       {
-        "title": "Amazon Bedrock adds schema-enforced outputs for Claude across both API surfaces - OpenTools",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQVXRITFJYeU11STZCcEY1MVZCLWVLc3ZiNFN1YnBIMExwZXRYRzhrUElXWUh6ekEtRXN2RmUzOTZHTXdIVFJKZWVxT09haTg0em82dXdtXzhEczctampJMDhtcHR3N3lXYkV1TWZXZ3NhZHJ3emNVeEVJb1NlTWtoa3dWbDNUN3Z2WkE?oc=5",
-        "source": "Google News",
-        "published": "2026-10-20T16:37:52.000Z",
-        "summary": "Amazon Bedrock adds schema-enforced outputs for Claude across both API surfaces OpenTools"
-      },
-      {
         "title": "SpaceX IPO vs upcoming Anthropic IPO: Will Claude maker beat Elon Musk's $75 bn record? - TradingView",
         "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNZ0tuYlZRRTRhdUdvY3NNZFY0WFh3a1ZpWGhmRE9WejEyMGdJVU1yRWpJelVjYkpaSE1yTTROVWl3SEZoTi05QkNvNEU0dlA1RVJGMElQVHE0ZmNucWRjTUc2YjBjUU9DdGxNeHFYYk94bjBhYWpRZV8tVDVSSk5pR1FVNjl3LTFUcFhUbXNHaUYxUHVxZTQtMWJoTjRjVFd6ZmVNT2QwNXFUTXI3YnZDdklKeXdVbklPbGVWejRXdGZkamdiempkSFV4Umpvb2FzRU91ck5Ldmc?oc=5",
         "source": "Google News",
         "published": "2026-10-20T15:18:36.000Z",
         "summary": "SpaceX IPO vs upcoming Anthropic IPO: Will Claude maker beat Elon Musk's $75 bn record? TradingView"
-      },
-      {
-        "title": "Show HN: Jev Cards, Can you beat a vision model at a picture quiz?",
-        "url": "https://jevcards.com",
-        "source": "HN · 57↑",
-        "hn_id": "50167617",
-        "published": "2026-10-20T15:11:56.000Z",
-        "summary": "I built a quiz game around TypeSafe&#x27;s new Jev model, which has vision capabilities. Jev looks at a picture and a question and picks an answer (or taps a place) in about a…"
-      },
-      {
-        "title": "Show HN: Penmentor – Claude marks up your handwritten math like a teacher",
-        "url": "https://github.com/AbdullahAlhariri/penmentor",
-        "source": "HN · 54↑",
-        "hn_id": "50167604",
-        "published": "2026-10-20T15:10:54.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic names Gorilla Logic as Claude services partner - ChannelLife New Zealand",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQk53SmFwZXRfaUV3LXhrOXBmTmlTbG9PQVRCcnl6NTRkUG0tUmc4SGI4SDlCVzNSUkducE1HZ3cwa3YxQUlzREw3VEJ3UUY3NmZaaTR6cjFWYjBPVkRRaXpfT09YdUZJS3hpLW1NUVhibU8zYVNzNDdKaVJYWkVELUJoalRMeEotMGhzamx5VXJLZw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-20T15:00:00.000Z",
-        "summary": "Anthropic names Gorilla Logic as Claude services partner ChannelLife New Zealand"
-      },
-      {
-        "title": "Claude Unshackled: AI Designs Experimental Antivenom - Hunterbrook",
-        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1tYVhkZmNHQnhCMHpaTnVRNmlNN0JVa2otQVN6WkhWN2hoYjRkMGNhWkxRa1Nra2tHUVEyLVZ5M25tVDRraUFZdDRIeDNjakFvamhMNHMtbw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-20T14:16:00.000Z",
-        "summary": "Claude Unshackled: AI Designs Experimental Antivenom Hunterbrook"
-      },
-      {
-        "title": "Citrini Research is backing life sciences stocks after using Claude to design proteins - Quartz",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNN3E2YkxXZFhGcy1kaWFuTFRZeENWa29qaW56Y3VjWWt6TEJSdzZJVEJWOTBpNDJnaWlPRGdqZXptU2JLenZpYW1jYkhlS0Y2bVFYSllNN2V5eUtIQnZpU1BQNFZrRUFfTmpPbEMyR1pDaThraEpUcG9Tc3dTR1UzQy1icGlTRW1F?oc=5",
-        "source": "Google News",
-        "published": "2026-10-20T14:02:17.000Z",
-        "summary": "Citrini Research is backing life sciences stocks after using Claude to design proteins Quartz"
-      },
-      {
-        "title": "A $400 million superyacht would be expensive even for a billionaire, but not for Eric Schmidt, who smartly bet early on Claude maker Anthropic and is in line for an eye-watering windfall of $20 billion+ making his secret explorer yacht a rounding error - Luxurylaunches",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQZmlNSi1PZjVheTNBNkVLU01ObGhYR25hc1hTMXhGaFBjaGNubUlKYThhSFRFVy1UM3RMck52NE5aQlkyQ2NERUJVY21zTXA1Z3lrbTBTaUxVNmNveV9BSW9IMy1zWDZWX0tuNDUxYWE4WUI4aGQtbnJpTGoxNDBCTkhyMFFIU0RHUTNqTk9ydFo?oc=5",
-        "source": "Google News",
-        "published": "2026-10-20T13:36:05.000Z",
-        "summary": "A $400 million superyacht would be expensive even for a billionaire, but not for Eric Schmidt, who smartly bet early on Claude maker Anthropic and is in line for an eye-watering windfall of $20…"
-      },
-      {
-        "title": "Citrini Bets on Life Sciences After Claude AI Drug Study - Bloomberg.com",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMkw2eGEtVG9TbkIyMHZ1NGpvODQtNTVJc0U5N0dNQVpDTUFYWk5LM3YwcDNZeU45dW5WMGg0dE1LZGxPRk1ZbjhQbjdRSl9EZFpZZTNlUVVFMGR1SmY1Q2lmS3NJaExvMzUxY0ZFTGtnV1M5Q1IzUUcxZ0F4d0ViNURzUnQ5UlR2Q3ZRU2FPOHZ2dHI3NmpEbWdtWkU1cUVOM0w3TmJmcmpVNnNCSEktMS01c0k?oc=5",
-        "source": "Google News",
-        "published": "2026-10-20T13:00:15.000Z",
-        "summary": "Citrini Bets on Life Sciences After Claude AI Drug Study Bloomberg.com"
-      },
-      {
-        "title": "NixOS is making me less afraid",
-        "url": "https://entropicthoughts.com/nixos-is-making-me-less-afraid",
-        "source": "HN · 169↑",
-        "hn_id": "50165484",
-        "published": "2026-10-20T12:43:05.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic co-founder says the singularity is underway - The Rundown AI",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPS3RsWXUtemFFcDFwbUhDRWNrMER3dnJybXR2MGYxNmlCNzNhbmdGQjc5eEJUVVRpdjJ3NjZtUXJJSVpjYlpablRPVVl3LUJjRDg3SzJyV2ZPYktnd3pFWVQ1dml4WXRTMHpiajh0M01uYU1MMDNpMVdvNGFYLV85SUplODRzcnFzMm9VSGYzdzlyQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-20T12:03:03.000Z",
-        "summary": "Anthropic co-founder says the singularity is underway The Rundown AI"
-      },
-      {
-        "title": "Reading all of Claude's output would take half an Anthropic worker's week - MIXED Reality News",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQaFI3YUQ2YWxvcVQ0bkJCbHF5Zl9vU3pkdElRbWRfa0xBTXU2a3NlWUxTbUlJcUItOW1uNGxPYUx4bDVjbDRFRXctdjdxbG5EcThIOXRMZzdIYWVVMUVVZGFvOXBXbFRLOEI5WGZpVGEtdmJ3dkxBMEZ0X19DRHVLbw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-20T11:58:57.000Z",
-        "summary": "Reading all of Claude's output would take half an Anthropic worker's week MIXED Reality News"
       },
       {
         "title": "The Hidden Reason Claude Can't Play Your Game",
@@ -576,18 +575,6 @@
         "published": "2026-08-18T14:39:28.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude vs ChatGPT: Which Is Better for Agent Work?",
-        "url": "https://www.youtube.com/shorts/9W2qj_GR4s4",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "9W2qj_GR4s4",
-        "thumbnail": "https://i.ytimg.com/vi/9W2qj_GR4s4/hqdefault.jpg",
-        "published": "2026-08-12T02:41:57.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -733,6 +720,17 @@
         "summary": ""
       },
       {
+        "title": "Build a Second Brain w/ Claude: The Updated 2027 Guide",
+        "url": "https://www.youtube.com/watch?v=LP7bfT4vOlo",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "LP7bfT4vOlo",
+        "thumbnail": "https://i.ytimg.com/vi/LP7bfT4vOlo/hqdefault.jpg",
+        "published": "2026-10-18T15:21:27.000Z",
+        "summary": ""
+      },
+      {
         "title": "Reverse Engineer Anything + Claude: Modding an Offline MMO",
         "url": "https://www.youtube.com/watch?v=erRoMmb5Gkg",
         "source": "Stefan Rows",
@@ -766,7 +764,7 @@
         "summary": ""
       },
       {
-        "title": "How To Actually Automate Your Company w Claude (Seriously)",
+        "title": "How to Actually Automate Your Company w/ Claude (Seriously)",
         "url": "https://www.youtube.com/watch?v=rvkjS3YoVio",
         "source": "Nick Saraev",
         "channel": "Nick Saraev",
@@ -995,20 +993,17 @@
         "thumbnail": "https://i.ytimg.com/vi/2Tert-KpIfY/hqdefault.jpg",
         "published": "2026-08-18T14:39:28.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude vs ChatGPT: Which Is Better for Agent Work?",
-        "url": "https://www.youtube.com/shorts/9W2qj_GR4s4",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "9W2qj_GR4s4",
-        "thumbnail": "https://i.ytimg.com/vi/9W2qj_GR4s4/hqdefault.jpg",
-        "published": "2026-08-12T02:41:57.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "v2.1.306",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.306",
+        "source": "Claude Code Releases",
+        "published": "2026-10-21T03:16:31.000Z",
+        "summary": "What's changed Fixed claude -p inside cloud sessions reporting \"Not logged in\" when started without the session's environment variables Fixed an API error being replaced by \"prompt is too long\", and…",
+        "tutorial_kind": "official"
+      },
       {
         "title": "v2.1.305",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.305",
@@ -1056,6 +1051,18 @@
         "published": "2026-10-18T22:26:54.000Z",
         "summary": "What's changed Bug fixes and reliability improvements",
         "tutorial_kind": "official"
+      },
+      {
+        "title": "Build a Second Brain w/ Claude: The Updated 2027 Guide",
+        "url": "https://www.youtube.com/watch?v=LP7bfT4vOlo",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "LP7bfT4vOlo",
+        "thumbnail": "https://i.ytimg.com/vi/LP7bfT4vOlo/hqdefault.jpg",
+        "published": "2026-10-18T15:21:27.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
       },
       {
         "title": "feat(managed_agents): add agent security review cookbook (#926)",
@@ -1114,7 +1121,7 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "How To Actually Automate Your Company w Claude (Seriously)",
+        "title": "How to Actually Automate Your Company w/ Claude (Seriously)",
         "url": "https://www.youtube.com/watch?v=rvkjS3YoVio",
         "source": "Nick Saraev",
         "channel": "Nick Saraev",
@@ -1172,14 +1179,6 @@
         "published": "2026-10-08T18:53:40.000Z",
         "summary": "",
         "tutorial_kind": "video"
-      },
-      {
-        "title": "v2.1.294",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.294",
-        "source": "Claude Code Releases",
-        "published": "2026-10-08T05:03:54.000Z",
-        "summary": "What's changed Fixed prompt and agent hooks written as instructions (such as \"Block commands that...\") allowing what they should block Improved how prompt hooks on Stop and SubagentStop written as…",
-        "tutorial_kind": "official"
       },
       {
         "title": "Can Claude build a cross-platform AI app?",
@@ -1668,6 +1667,20 @@
     ],
     "claude_learning": [
       {
+        "title": "1.0.3",
+        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/1.0.3",
+        "source": "MCP Inspector",
+        "published": "2026-10-21T06:12:21.000Z",
+        "summary": "What's Changed v1.x security fixes 1.0.3 is a security release for the deprecated v1 line. Upgrade with npx @modelcontextprotocol/inspector@v1-latest , or move to v2 ( @latest ). Proxy rejects browser requests without…"
+      },
+      {
+        "title": "v2.1.306",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.306",
+        "source": "Claude Code",
+        "published": "2026-10-21T03:16:31.000Z",
+        "summary": "What's changed Fixed claude -p inside cloud sessions reporting \"Not logged in\" when started without the session's environment variables Fixed an API error being replaced by \"prompt is too long\", and an unneeded…"
+      },
+      {
         "title": "v2.1.305",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.305",
         "source": "Claude Code",
@@ -1738,6 +1751,13 @@
         "summary": "What's changed Bug fixes and reliability improvements"
       },
       {
+        "title": "Build a Second Brain w/ Claude: The Updated 2027 Guide",
+        "url": "https://www.youtube.com/watch?v=LP7bfT4vOlo",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-10-18T15:21:27.000Z",
+        "summary": ""
+      },
+      {
         "title": "Reverse Engineer Anything + Claude: Modding an Offline MMO",
         "url": "https://www.youtube.com/watch?v=erRoMmb5Gkg",
         "source": "YouTube · Stefan Rows",
@@ -1801,7 +1821,7 @@
         "summary": "Claude Managed Agents scheduled deployments are now available on Claude Platform on AWS ."
       },
       {
-        "title": "How To Actually Automate Your Company w Claude (Seriously)",
+        "title": "How to Actually Automate Your Company w/ Claude (Seriously)",
         "url": "https://www.youtube.com/watch?v=rvkjS3YoVio",
         "source": "YouTube · Nick Saraev",
         "published": "2026-10-13T17:47:41.000Z",
@@ -1876,13 +1896,6 @@
         "source": "MCP Inspector",
         "published": "2026-10-08T05:12:32.000Z",
         "summary": "Why The Patch? The addition of the new mcpdo client threw a curveball into the default npx @modelcontextprotocol/inspector@latest method of running the inspector, because there were now two binaries to run, the…"
-      },
-      {
-        "title": "v2.1.294",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.294",
-        "source": "Claude Code",
-        "published": "2026-10-08T05:03:54.000Z",
-        "summary": "What's changed Fixed prompt and agent hooks written as instructions (such as \"Block commands that...\") allowing what they should block Improved how prompt hooks on Stop and SubagentStop written as instructions (such as…"
       },
       {
         "title": "The Compliance API chat endpoints now also return chats from the unified Claude experience, in beta for Claude…",
@@ -2067,13 +2080,6 @@
         "summary": ""
       },
       {
-        "title": "In Python SDK 1.10.0, TypeScript SDK 0.130.0, C# SDK 12.52.0, Go SDK 1.77.0, Java SDK 2.67.0, PHP SDK 0.53.0, Ruby SDK…",
-        "url": "https://platform.claude.com/docs/en/release-notes/overview#september-30-2026",
-        "source": "Claude API Release Notes",
-        "published": "2026-09-30T00:00:00.000Z",
-        "summary": "We announced the deprecation of the Claude Sonnet 4.5 model ( claude-sonnet-4-5-20250929 ), with retirement on the Claude API scheduled for November 30, 2026. We recommend migrating to Claude Sonnet 5.5 . Read more in Model deprecations ."
-      },
-      {
         "title": "Claude Opus 5.5 Is Insane… But Muse is EVEN Bigger",
         "url": "https://www.youtube.com/watch?v=_NRuT_d1PZE",
         "source": "YouTube · Riley Brown",
@@ -2148,13 +2154,6 @@
         "url": "https://www.youtube.com/watch?v=2Tert-KpIfY",
         "source": "YouTube · Ryan & Matt Data Science",
         "published": "2026-08-18T14:39:28.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude vs ChatGPT: Which Is Better for Agent Work?",
-        "url": "https://www.youtube.com/shorts/9W2qj_GR4s4",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-08-12T02:41:57.000Z",
         "summary": ""
       }
     ]
