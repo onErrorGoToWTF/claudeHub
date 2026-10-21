@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T22:44:53.743Z",
+  "generated_at": "2026-10-21T02:13:06.253Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,27 @@
     ],
     "news": [
       {
+        "title": "Claude Cautious, GPT Daring: AI Risk Tendencies Vary by Task - 조선일보",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUVY5ZTFGTlRCSDRja0g5SnpYT2p2NHpGNDhOa25xTDhxd2ZmUkFBNEVDLUdFSDR1UFVTbkpFYzRWTmRaQWdLSlhTRnFfQkxaQVpKU1ZETmZRck03czVxNHdWcnJjQU13aUw1STJnZVhoUV8xWHdYZjdGNmNKZHlnNWUyTGVXVTdn?oc=5",
+        "source": "Google News",
+        "published": "2026-10-21T01:54:10.000Z",
+        "summary": "Claude Cautious, GPT Daring: AI Risk Tendencies Vary by Task 조선일보"
+      },
+      {
+        "title": "HHS to make sole-source award to Anthropic ahead of broader AI competition - FedScoop",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9sUW41dkF1aFFTbHotcmJualhBVnlNWmhfY2oxMnpVNFYwTFlXa2MtWmp5N3BydWVDb2owRmliTVpSU3hiYVhVdF96TWtZSm1KQkUtWnlhRUVPWnhmWUlUSlpKYUtsUy1TZ3JHYXF3czc?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T23:12:13.000Z",
+        "summary": "HHS to make sole-source award to Anthropic ahead of broader AI competition FedScoop"
+      },
+      {
+        "title": "Anthropic pitches AI safety bill that may block a model if 50+ people could be killed",
+        "url": "https://techcrunch.com/2026/10/20/anthropic-pitches-ai-safety-bill-that-may-block-a-model-if-50-people-could-be-killed/",
+        "source": "TechCrunch",
+        "published": "2026-10-20T23:01:23.000Z",
+        "summary": "The proposed policy seems to offer protections against AI run amok but actually forbids federal agencies from blocking a model's release without the permission of a judge."
+      },
+      {
         "title": "Inside Anthropic, Every Employee Now Manages Agents - TLNT",
         "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQaFNFR1pjX1NTQ1Ria1E1U1UyZU9hME1TNnRlbkFxdTBBdW5WbkF3U2FpOWpsX1B0Z0RPNW9xWGR3U3pwNDNRTFBXdXBkOW04SjM5U1drRjNjU2xyeUV0dk5zX3NfNlFrZlFmb0w4WV9WX25pY3ZFejFpVWFBbkEyNElCeHhxdw?oc=5",
         "source": "Google News",
@@ -174,26 +195,12 @@
         "summary": "Anthropic’s Claude Designed Hundreds Of Thousands Of Proteins In 64 Hours To Target Scorpion Venom Benzinga"
       },
       {
-        "title": "Anthropic S1 Shows $80 Billion Loss This Year, WSJ Reports",
-        "url": "https://www.bloomberg.com/news/videos/2026-10-20/anthropic-s1-shows-billions-in-losses-wsj-reports-video",
-        "source": "Bloomberg",
-        "published": "2026-10-20T20:16:28.000Z",
-        "summary": "Anthropic PBC could spend $750 billion on additional computing power in the coming years and it lost $80.7 billion in the first half of this year, according to the Wall Street Journal. The media…"
-      },
-      {
         "title": "Anthropic logged net loss of over $80B in first half of 2026",
         "url": "https://www.reuters.com/business/anthropic-recorded-net-loss-over-80-billion-first-half-this-year-wsj-reports-2026-10-20/",
-        "source": "HN · 67↑",
+        "source": "HN · 112↑",
         "hn_id": "50171966",
         "published": "2026-10-20T20:09:46.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic May Spend $750 Billion on Computing Costs, WSJ Reports",
-        "url": "https://www.bloomberg.com/news/articles/2026-10-20/anthropic-could-spend-750-billion-on-computing-costs-wsj-says",
-        "source": "Bloomberg",
-        "published": "2026-10-20T20:04:21.000Z",
-        "summary": "Anthropic PBC could spend $750 billion on additional computing power in the coming years, according to a Wall Street Journal report, as the company prepares for an initial public offering."
       },
       {
         "title": "Claude Opus 5.5 vs GPT-6 Astra- Anthropic’s New AI Model Explained - TechRepublic",
@@ -212,7 +219,7 @@
       {
         "title": "Claude designed protein binders against scorpion neurotoxins",
         "url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design",
-        "source": "HN · 70↑",
+        "source": "HN · 95↑",
         "hn_id": "50170021",
         "published": "2026-10-20T17:48:29.000Z",
         "summary": ""
@@ -248,7 +255,7 @@
       {
         "title": "Show HN: Jev Cards, Can you beat a vision model at a picture quiz?",
         "url": "https://jevcards.com",
-        "source": "HN · 55↑",
+        "source": "HN · 57↑",
         "hn_id": "50167617",
         "published": "2026-10-20T15:11:56.000Z",
         "summary": "I built a quiz game around TypeSafe&#x27;s new Jev model, which has vision capabilities. Jev looks at a picture and a question and picks an answer (or taps a place) in about a…"
@@ -256,7 +263,7 @@
       {
         "title": "Show HN: Penmentor – Claude marks up your handwritten math like a teacher",
         "url": "https://github.com/AbdullahAlhariri/penmentor",
-        "source": "HN · 49↑",
+        "source": "HN · 54↑",
         "hn_id": "50167604",
         "published": "2026-10-20T15:10:54.000Z",
         "summary": ""
@@ -267,6 +274,13 @@
         "source": "Google News",
         "published": "2026-10-20T15:00:00.000Z",
         "summary": "Anthropic names Gorilla Logic as Claude services partner ChannelLife New Zealand"
+      },
+      {
+        "title": "Claude Unshackled: AI Designs Experimental Antivenom - Hunterbrook",
+        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1tYVhkZmNHQnhCMHpaTnVRNmlNN0JVa2otQVN6WkhWN2hoYjRkMGNhWkxRa1Nra2tHUVEyLVZ5M25tVDRraUFZdDRIeDNjakFvamhMNHMtbw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-20T14:16:00.000Z",
+        "summary": "Claude Unshackled: AI Designs Experimental Antivenom Hunterbrook"
       },
       {
         "title": "Citrini Research is backing life sciences stocks after using Claude to design proteins - Quartz",
@@ -290,16 +304,9 @@
         "summary": "Citrini Bets on Life Sciences After Claude AI Drug Study Bloomberg.com"
       },
       {
-        "title": "Citrini Therapeutics - Citrini Research | Substack",
-        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5aRTRLNk9PbV9CVy1rT05WQ05FSE1JcEFPNUdKaFVsV2FrQ1R4aXFVMkxkUHJ0RWgzRmVmVFhDUl9neUwzZV9DOUx3RHdaUzU0b0V0SzZRWlhMX3N0Z0R5QS1OWEE?oc=5",
-        "source": "Google News",
-        "published": "2026-10-20T12:59:27.000Z",
-        "summary": "Citrini Therapeutics Citrini Research | Substack"
-      },
-      {
         "title": "NixOS is making me less afraid",
         "url": "https://entropicthoughts.com/nixos-is-making-me-less-afraid",
-        "source": "HN · 159↑",
+        "source": "HN · 169↑",
         "hn_id": "50165484",
         "published": "2026-10-20T12:43:05.000Z",
         "summary": ""
@@ -317,13 +324,6 @@
         "source": "Google News",
         "published": "2026-10-20T11:58:57.000Z",
         "summary": "Reading all of Claude's output would take half an Anthropic worker's week MIXED Reality News"
-      },
-      {
-        "title": "Anthropic | History, Controversies, & Claude AI - Britannica",
-        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE41Q1h2QkF0SGRpMFZSMVN5al9RNkhQLTR4MDc0cHJNbndmdndTbHE5cGswRFk4SS1JbVhmXzdWNm5KRDlJa3FiUkt6T01MZUNiTjhON2R6cFJtQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-20T10:20:40.000Z",
-        "summary": "Anthropic | History, Controversies, & Claude AI Britannica"
       },
       {
         "title": "The Hidden Reason Claude Can't Play Your Game",
