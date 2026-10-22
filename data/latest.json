@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-10-22T08:57:51.895Z",
+  "generated_at": "2026-10-22T14:43:17.457Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Exploring Model Welfare",
+        "url": "https://www.anthropic.com/research/exploring-model-welfare",
+        "source": "Anthropic Research",
+        "published": "2026-10-22T08:59:33.000Z",
+        "summary": ""
+      },
       {
         "title": "Enterprise Frontier Safeguards",
         "url": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
@@ -135,22 +142,169 @@
         "source": "Anthropic Research",
         "published": "2026-10-20T15:26:16.000Z",
         "summary": ""
-      },
-      {
-        "title": "Circuits Updates June 2024",
-        "url": "https://www.anthropic.com/research/circuits-updates-june-2024",
-        "source": "Anthropic Research",
-        "published": "2026-10-20T15:26:12.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Anthropic’s Claude Duet wants to do your job while you’re offline - Android Central",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPWUVuNU5CaUh5dVIzM1ZFdkIwbmgtWFdwQVVOMkZJMUVQeFRwVThPR2xjcXNCT2pGaHZDdTlPUk1XRzAyOUpzRGpGQXJ0b0h0UHBEdFhJNHlXaV9jTWsyNjBDREcxZFZ0NVpFblFDZy13QTZyWkFUNTk1aF9tNERzcnZyQ3VOcVVWRzNuOUl2c0pfSTdjNGZOamxreHJfNllCbVdqR2xGdzBoLXhkT2R2Rg?oc=5",
+        "title": "Who Owns Claude AI? Anthropic, Investors and Control - HowStuffWorks",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5rLTZKdEFMbHpUUFVSajA0eGIwbmI2OUtwTV9pRVItb0FEOHdGdkkxS3JEaTNUYWVKdU9tQ0pQNnpKVGhxbURxNkFLc2YtMmlnZ2QteXhGMzdLeVV4WkpZU01oMHk?oc=5",
         "source": "Google News",
-        "published": "2026-10-22T08:54:41.000Z",
-        "summary": "Anthropic’s Claude Duet wants to do your job while you’re offline Android Central"
+        "published": "2026-10-22T14:12:01.000Z",
+        "summary": "Who Owns Claude AI? Anthropic, Investors and Control HowStuffWorks"
+      },
+      {
+        "title": "Claude Duet app is Anthropic’s bet on agents",
+        "url": "https://techcrunch.com/2026/10/22/claude-duet-app-is-anthropics-bet-on-agents/",
+        "source": "TechCrunch",
+        "published": "2026-10-22T13:53:26.000Z",
+        "summary": "Claude Duet is available through waitlist for Pro and Max plan users"
+      },
+      {
+        "title": "Claude Duet app is Anthropic’s bet on agents - TechCrunch",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUmgyb1ZobDFPVTdQcnNCbTIwR2EzODI3TmRwUGEyWl92eDY3OV83UVh3LXVfekJpNldLdlBXSW1oQlN0Z0MyRTNvUG1NSHRnTGg0NzBhSUFXbm41NFRIQjNObVNCV0xQS2xxWi1YaHpxN1dEOWtLZnUxRzBNMlJCc3lSTXI?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T13:53:26.000Z",
+        "summary": "Claude Duet app is Anthropic’s bet on agents TechCrunch"
+      },
+      {
+        "title": "Anthropic unveils Claude Duet AI agent app (Oct 21) - marketscreener.com",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVGo1blFKR09hOVFQaGJtRENVWXlPRWJ3RzVndlQ4SkJHQTFGaEtWSzJoOE1VRVpXb1Q3WVUxdzBNb0JhOUstZzIwQ0NHRHF3VXNCaU56MmY4bmhmVHE3N0M5a2ZCcnFSRGg5Y3JYRVhSQ1dpd1RZazM2Z1J2T3BNU05iSzZPTlVHZGhLcVFfU01FUUl1WkRuLUxHNWtBeC1WT1FLcg?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T12:57:14.000Z",
+        "summary": "Anthropic unveils Claude Duet AI agent app (Oct 21) marketscreener.com"
+      },
+      {
+        "title": "Claude's Scorpion Antivenom Experiment Exposes AI Drug Limits - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPY2oxb1pnMkhYT3F2UmZJcEpSYmhMSnByZkNGLUVsMjRrTU1xbVVtVV9OMmdjUXNnMHNKN1NhaVdUVUE4bWQ2Tk1OUzVBamFNeXViS1B3RlhTZktFZlJqZXNPdkdrYkhtUnpLU3NxUlI2N05Ld2JKbldxcUZWNGhLbEliZTJvcGpoY3hFS1NCNzBtYXE1NU9IdGFn?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T12:36:00.000Z",
+        "summary": "Claude's Scorpion Antivenom Experiment Exposes AI Drug Limits The Tech Buzz"
+      },
+      {
+        "title": "Claude did not invent scorpion antivenom - The Verge",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUDJ0SkZfUUhOVmNLVkY0TkFrSFduTFlnZ2JWQ3l3VWlwLUtEeVBfbVctWlpPa1dDaVhvaGFSTllkWl9PaTFqaEdseHRTdnJmbTRNMkgxNGV5T3BmRUU3UWlpVHd1RUNNSzgxckZOaThOOWVIRlVTQ1FkdGJrd3hLN1ZxT3J1c3pFVTlrSjA0SVlUY1dhR1Nhajg3aF9fcTlQMk1OT1VWLTB1R1JDbUFpMU50aUY?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T12:21:07.000Z",
+        "summary": "Claude did not invent scorpion antivenom The Verge"
+      },
+      {
+        "title": "Anthropic is unveiling a workplace AI agent to rival Meta Muse and OpenAI Dots - Quartz",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE4weXI0QVdqNEdJSmR3Z2RvUl9feHFyMzdkSV90S2hhNlFadVd1TjZiUmpURVJtei00QnJQajBCaFJ1LXN2YktJN3o1S3hhNC1SV3RJNlA3RVhCeHNHZFFuMW5rc2x2WjY5VDZLaVZ0dkFqMmx0alJIcUliZEE1LVU?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T12:16:35.000Z",
+        "summary": "Anthropic is unveiling a workplace AI agent to rival Meta Muse and OpenAI Dots Quartz"
+      },
+      {
+        "title": "Anthropic launches Claude Duet AI agent to compete with META, OpenAI in consumer market - شبكة تواصل الإخبارية",
+        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5HMW9sV3pYVWpPME9DQU14MG9JTzdLQm1vSlJCdEVKVUNNOFlfaVRtWnFOdmJacEs2eDE3anc4M2Myb3M2eFlJeDVRLURnNUdRUnpv?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T12:10:53.000Z",
+        "summary": "Anthropic launches Claude Duet AI agent to compete with META, OpenAI in consumer market شبكة تواصل الإخبارية"
+      },
+      {
+        "title": "Anthropic launches Claude Duet AI agent to compete with META, OpenAI in consumer market - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPMFBMSll3bFplNmgtSU9pVUpZMTZnOHFMZjgxbzlCQ3NkZGRIN3BuckEtTWhWZW1xUkdiTzNtdVhFaXZsSE9idUhFSTIyTE8tc1F0VVVoTnRUZzZqQU9QZWRIZmQyUHpWa0F4aXVHb041bzdzaHJpeGN3SmJnTXNQN0F2WThSaFdDdDNZUS01QTJ1ZldUaENuVVhQT2stdw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T11:55:50.000Z",
+        "summary": "Anthropic launches Claude Duet AI agent to compete with META, OpenAI in consumer market Yahoo Finance"
+      },
+      {
+        "title": "CZ Reacts to Anthropic’s New Claude Duet AI Agent: ‘Now, It Controls Us’ - Cryptonews.net",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAyQlVSODBLTWlPNDdQeTdiS0pWNEhjeHNHZXpXZWJNQUlCYkNJTTU0azhSOVU3ZVRVdDhzNzZVblpIa2Z4aVRBYm9laFB4clBDRk4zZjh3?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T11:14:56.000Z",
+        "summary": "CZ Reacts to Anthropic’s New Claude Duet AI Agent: ‘Now, It Controls Us’ Cryptonews.net"
+      },
+      {
+        "title": "Meet Claude Duet, the latest AI agent intended to lighten your workload - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBsa3ZVM2JtaGdBajhfZEFDWVJaVHlvbkxYcGR5ODFBdjlEeFNON3FfcG0tYzR0aHIyazRjanhUTWRyX1phZ3JLQTNVTmZTMXlBajQ5SmxUZUFVZms5eGxRbVJrZ04xZDYw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T11:13:35.000Z",
+        "summary": "Meet Claude Duet, the latest AI agent intended to lighten your workload Mashable"
+      },
+      {
+        "title": "Anthropic IPO: Here's What a $5,000 Investment Could Be Worth in 5 Years - The Globe and Mail",
+        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPRFoyTlBOcW5ITmFjT2EtLWdzNDV6cHNPUUJjYzFfNWhZR2NTQ3ItNm1uN1loTmJqTmxqaFFWb21RbHplQ291MDhXbDFPMzNJQnF5NENoT1c5Ri1MeHpSSDQtQjFkRjlRZTRwdl9wQUNHd01SSVlOX0tsUE15NjVCcjRZNW5yZW5WRW5IR0k3MzdWNG4tWk11OFNhMkNnWDdrdXdTQkUtYmVhcVJCOVpGUVJSZTVaZG5aYlVhU1VOSmlXenRZRFM0VldNbnM2ZGxpQmlZWFAyWE1mVUY4LXVwUVF3NA?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T10:54:57.000Z",
+        "summary": "Anthropic IPO: Here's What a $5,000 Investment Could Be Worth in 5 Years The Globe and Mail"
+      },
+      {
+        "title": "Anthropic introduces personal AI agent Claude Duet - Root-Nation.com",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNaDUyYWhTWmFBb2ZrZlphY1F3TzJYdWJBSWVPZ2pFVHhjYVRBTGdyTXRtVXllMXRWNkd4YmxCQXJuUnFtN2U3VURWLUpNSktDd2w0VGNtVExxT0lMcDBucEY1WWltUVZ3NmU2MHdCVW5DSEkzWGpSSzRHSkFPNF9oNV9YdFlxa0JTMDFlbVJWZ1lSUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T10:52:33.000Z",
+        "summary": "Anthropic introduces personal AI agent Claude Duet Root-Nation.com"
+      },
+      {
+        "title": "Anthropic launches Claude Duet: A smart AI agent that works in the background - India Today",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPOU8tUUtmZWRydVNOMlYwOWd2bUtHX0Itd0hyY2cyN2NXRVFoUmw5ckZ3clJGSFRKUTlwcWxibkNfLWV2SjZuYUNYcWs1ZE9mYk0wYzlnd1czNDN6UDd2WDJRek1WYUVKMzV6M1hiLWhVSDkzcExkLU84cUs2S2hPR0pab0ZveTZ1YlJZZWpfX2Q5NUE5UWhLNUdRSG50alYzTGtNdUxNVm8zMzdfMGVWWG55Z0NUbkVzV2RRUGY5ajBMSjJNdUxsQzBucU5fb0FwbEd4N21B0gHbAUFVX3lxTE44Y3YtelQ3RE9OZTVfZ2NIS0hXUVRwU1NPYzlTeUd1cXJmT0RCRlVpMC1jQUE3MzQyUkIyak1ndFkwa0dDWTdXRmtOTFpVaFVvU3Q1OGV0RUtnREZsZGxQLTB5aVgxYS01UlcwUmJOTG1HUlRFdlZsVzBVWmtCYjZseTZHeUVQdklDR0RyRGZHRThVb3BKbmdxWUVPR2J4VmJYSWd6c3g4VEpoenRoeHlqeHJrV1RHd0JCdXZuR1M1NUZ5dkZkRExzaXIwWUlLR1NCckF6a0ttSTNDNA?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T10:36:42.000Z",
+        "summary": "Anthropic launches Claude Duet: A smart AI agent that works in the background India Today"
+      },
+      {
+        "title": "Claude Duet App: What It Does and How to Join the Waitlist - Techloy",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE10Z0pLTXRTdllyYVBDTkZlS3NRRjNZWU45cWVRRlYtUHh4Zy1ZQjRpbmhOR29PVUZONDJ1bENtWktRRGF2emtkMkNjLUY2R04wY0trNmRZNlNOYUhoTF9uMFBLdTdWYVhTUHc?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T10:27:17.000Z",
+        "summary": "Claude Duet App: What It Does and How to Join the Waitlist Techloy"
+      },
+      {
+        "title": "Anthropic's Claude Duet Agent Joins Muse, Dots in Personal AI Race - PCMag",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPQVQyby1UT21FZDFBcTUzTzNVYUE2WVk4X1JTRFYxTy1heG9VTWU4RS1PVnpLOTdHMHhDb19FV3pCTnp1MTFfVjNhUGlNazNTLUtFWFlrYTlNVjdTY21tNUF4NHdSUy05dmxmWklLTVdOSk45cXRhejhXaVpJTGhvRnR5bVVsUEVzZllMazVycTVUaWc1b3c?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T10:05:06.000Z",
+        "summary": "Anthropic's Claude Duet Agent Joins Muse, Dots in Personal AI Race PCMag"
+      },
+      {
+        "title": "Anthropic’s New Claude Duet Agent Takes On Meta’s Muse by Focusing on Work Instead of Personal Errands - Thought Catalog",
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQV1JwU2ZRcmgwSG4tRWNpWWVmRFljclRKWS11bUVzNVpORDVoSElvb1ljb1ZsLTE5bDJVWTVGU1Z6T0JyOW8xeEt4WnpRZWJwSzlpbkt2cElBWGlJZlJVRld4M3Z3d1J0U201aHlmSTRFQzFCYTJiaEJqMmZQeVE3TXdGckhiam9iQkFHSVBnRmZBTXJrOXVTTG0yRjhKSjVLYm55NVE5anFRMm5DSm1QemUxMU5Mb012SS1WcWVZbUlUMVhiVi0xenRvVk5GZ3hvSmtfOUlTdXlpcG1ZTzlqamRJLU0?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T09:56:00.000Z",
+        "summary": "Anthropic’s New Claude Duet Agent Takes On Meta’s Muse by Focusing on Work Instead of Personal Errands Thought Catalog"
+      },
+      {
+        "title": "Anthropic plans ‘additional waves’ of Claude for financial advisers - Spear's Magazine",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOa3NYWkpjbzZ2Nm9CYWZPS3lNWUtjeTlPZHF5TXJYSG94cEJsQl9MV0pOR1E3d1pMTklxVW1oOTU5M2ZjR0hNM0tMUU95RWgtS0QwUldmUnhpaWt4ZDl3c2xSWkdQeU9tamg2eTJyU0hRYmpvQUtrZng3ZWxKaTByaUtkSlR4OTJNUEtqNEl1WV9LcG5aWFNKUFFwQmFER1djenJ4US1rSl9TalBPZGRBTHI1OA?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T09:45:45.000Z",
+        "summary": "Anthropic plans ‘additional waves’ of Claude for financial advisers Spear's Magazine"
+      },
+      {
+        "title": "😺 New Claude Duet works while your phone's off - The Neuron",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOeEloYlZCMkJxSVgwLThnbXpTT1ZRWWl1OXItZzhKdGxpYmp5dkJsRldzT1AzdVFGNTd1NlU0R0hwRUIyb1N1bWQyMG1iWWVETW8zM0FSbmZaUzJSaE1TTTl1emRWS2tWbEpoWFVvRU5XSm5ZSUhJcDhIcEdBMzVqbngxQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T09:31:31.000Z",
+        "summary": "😺 New Claude Duet works while your phone's off The Neuron"
+      },
+      {
+        "title": "Anthropic finds 94 cases where open-source projects drop security controls without warning - Help Net Security",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQYmpXdjBTUFNXMktmVldPYUM3dFdnZXRXbVJScjNka192dHpmeUNHUTE2NEF2cU8wbC0xTlo3anpPNHJNTkZNWmxBb3o2YnMxYUh3aks4bUNvYzdFSTI5Y29DTVAySmFTTk1XMXFuel9nTDBodVNTWEVZTUdTd2ZIMFFSc0d3Z2FyblVkOHNWX1FNcjVv?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T09:10:55.000Z",
+        "summary": "Anthropic finds 94 cases where open-source projects drop security controls without warning Help Net Security"
+      },
+      {
+        "title": "Anthropic’s Ambitions in Legal Technology Get a Reality Check - Bloomberg Law News",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNUDlBRzg1WmpzWGRzT2NFdnR3RzF1OGJtOXZfbk1tMDhEQXlMSXZKY0dzTDRaOTNMdndXNDFnV0ZfQ0dJa3M3TzRZT3VkeURoa2Nzd0VJUUViV3NMUjJZTXRReU9GX0J5d2RMdlhJZjhJaHRDc2Zzc2xLeG9nTWI1Qk55Ymd3ZURmS2luN2tWbm83cnRzTmxQckJsZS1ZYk5HRHl5ajJPczViNm91aFE?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T09:01:00.000Z",
+        "summary": "Anthropic’s Ambitions in Legal Technology Get a Reality Check Bloomberg Law News"
+      },
+      {
+        "title": "Anthropic's top engineer reveals just how far her team has gone with AI coding - Business Insider",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZ1ozdXdwU0xrLW9uTW9US0NpV3hOMWNrcVdXREw1a3hvUkxqUERlTkl3M1NGd0JQcTJ4RnlaNE5ZNWd6MGlCbjVzbmtqbElPZ1VVSENRSTRzMVIxY0dFbEg4TUF3SVFtREY1Uk9kTTczcG9OVjVUWUpJck5Nai1PMmhJX2o0bUxaQ3dqQm52S014TjRYZU5Mb0JPeVZBNDg?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T09:00:00.000Z",
+        "summary": "Anthropic's top engineer reveals just how far her team has gone with AI coding Business Insider"
+      },
+      {
+        "title": "‘We are machines, don’t worry about how we feel’: Anthropic’s Claude told Hindu monk | Trending - Hindustan Times",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNOWxyQ1ZjOVNLcld3Q2NFQ25wMUhtOV9GaHpJYUtfQXQzZTQzYVd4QTRLdExNQkt0SjZNT21ITTlfckl1TnJ5NzVPanZqa0d1cG8wZDNXUnYyOV9ia0JYSWdYR190RVJQd3RIN1VidFNudFJMeXY1UU0yblRzdTl2TFRrdTFnOFdEN2ZmQ0ZKUTRnUHl4T3hfMWpILV91VVI3blNrNmJaUVBDYl9MZ2NfQmloUkpSa3dCSUJvYUZLaUx5ckdwMWhsX0tpVEZTUERjSFg0V01WcHjSAd4BQVVfeXFMTUt3Q3UtZkhmdTlYM1gwZ3J3bTg3aGN6QzdKcTFQRW1fZ29OREQ1RDFVZ2hCZGpHM3RoalN3THZHR3k5ZDFRVllLWDh1UlFmUFNXenV6OXpCZXFJRTZSTUFmd2dhbUxVbTZtUUJ5MVVHSWdCdjBDX1FtOHVoU1hWQTVMbVlpcnVSZXNGRmpOSHdMYzlDWjRMUTdidGhqUDFLZjBmZjVjQ2RjbHVUQ29sbVkyR2kxUjNkUGRxRk9KRU9YQURHcnRleFNKa2xBUVpEeXBQSDRFMkI2alhuendR?oc=5",
+        "source": "Google News",
+        "published": "2026-10-22T08:44:01.000Z",
+        "summary": "‘We are machines, don’t worry about how we feel’: Anthropic’s Claude told Hindu monk | Trending Hindustan Times"
       },
       {
         "title": "Claude Duet: Anthropic Announces Personal AI Agent To Compete With Meta's Muse & OpenAI's Dots - ETV Bharat",
@@ -160,166 +314,11 @@
         "summary": "Claude Duet: Anthropic Announces Personal AI Agent To Compete With Meta's Muse & OpenAI's Dots ETV Bharat"
       },
       {
-        "title": "Anthropic takes on Grok Bot, Meta's Muse, and OpenAI's Dots with its always-on agent \"Claude Duet\" - the-decoder.com",
+        "title": "Anthropic takes on Grok Bot, Meta's Muse, and OpenAI's Dots with its always-on agent \"Claude Duet\" - The Decoder",
         "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRG9HZVRLSE1uRXNxWURQMkxmYlN3N050MmMwanJhUUc5QTN5b1VMYnNRc1ZWSlhENEluZ25EZkpQcnB0U2hTRFJRT2RQbFNIS0NzbnlDcF9jZHJJSEdsc1pwMWw2enloVDhjMW5PZHR0ZFZYa0ZrZ2dKWlhMSFQ2dGtDdktUaGZpc19TWDBfTlhpYTkxWlozVXdrZ0EySk1CRjdoUEk3NXBZTF9obVdiSW9DV29rNVhJ?oc=5",
         "source": "Google News",
-        "published": "2026-10-22T08:39:58.000Z",
-        "summary": "Anthropic takes on Grok Bot, Meta's Muse, and OpenAI's Dots with its always-on agent \"Claude Duet\" the-decoder.com"
-      },
-      {
-        "title": "CZ Reacts to Anthropic’s New Claude Duet AI Agent: ‘Now, It Controls Us’ - BeInCrypto",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBJTE9FeVZQZ0U0UHFYM3lQVmhyb0ZJR1Z3ZHhobGFKdFRfc2VfZHJXd3lSSndRRXFXendOa3ZObmtSVVBQWmdqUEV5QVdZRzgxZkVTVWxrbTUzczA4dTNvZHFveHBiRm8?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T07:23:00.000Z",
-        "summary": "CZ Reacts to Anthropic’s New Claude Duet AI Agent: ‘Now, It Controls Us’ BeInCrypto"
-      },
-      {
-        "title": "Anthropic Launch Week Oct 2026: What Actually Shipped - OrcaRouter",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNYU8zUDNDbENBN3l5dTJtYlFVeExwNUQ3UjlBZ21nWl9HNldjX2pwcDRjc2o0TlRoNVhaaWFrVTlUQWs0amFTQWxOMDlwSkltY29id2dYeW5KLWVhQ3RXWl84aHpDVnltY2ttWWRpU0tWODlNOGNfYjR5QzRoOU9Uc3lnTzU?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T07:10:40.000Z",
-        "summary": "Anthropic Launch Week Oct 2026: What Actually Shipped OrcaRouter"
-      },
-      {
-        "title": "Anthropic IPO Faces New Hurdle As NYC Comptroller Urges Delay: Claude Parent's Market Debut Odds Slide - Benzinga",
-        "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNR2EtZGczd1JieHJydUxoUFA4VF9IX25vZTEydmNsTEpldnFZN2psYktxc2Z3R3lDMWhIc3ZQWkQwaGhZYTNEbFNvMXh3Rk9BZFh4cFpRZlNTNmlPclRKYjJIMElVUGdTOWZEd096V3c5ajNhS185a2g0bk9xRHhfVkZVRVF3NzlRaHBiQmZ3cUpaZUFQQXh3M0lQS0NmNC11SmFlT1BxWEpocXppODRYbGlKcTJ3dFRoMlVrejctNjZmcFRJdEJTaXFpSllLQWxXS2Z4Z05HVXdxWWlOaU9CcS0wNmJlZ0o5Nmd1OGRGckFiY3I3OHYycGhhUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T07:07:58.000Z",
-        "summary": "Anthropic IPO Faces New Hurdle As NYC Comptroller Urges Delay: Claude Parent's Market Debut Odds Slide Benzinga"
-      },
-      {
-        "title": "Claude Duet Pricing and Usage Limits: What's Missing - OrcaRouter",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9kcERsWmdLdnRWLTN6amQ0LWRzVXpKWklsSTktQWktbHppVWhKTktiMXFMcUVrZjFMbDBmaUpETV9VZTFCbUZOa0hXMUFfMFlGQnlFUXhfUmEzamF3bWRYRzVuSHVOY3R5b0F1WmtWczMzQksyMHc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T06:58:15.000Z",
-        "summary": "Claude Duet Pricing and Usage Limits: What's Missing OrcaRouter"
-      },
-      {
-        "title": "Anthropic's Claude Duet Can Work While You're Away and Message You First - ThePCEnthusiast",
-        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9WM0lqbzl3eXFwVEx2MlVyZDVQTFhxZFdiT0V3TW1vY1RjSmNnNFJkQmN4b1pMaGxsemhFQkZVaWtzVlc2WU5TdjJJVVdHS05zcW9abFVCVkZuX1hyWFNQXzc0M3c1U0RsZ0pF?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T06:57:50.000Z",
-        "summary": "Anthropic's Claude Duet Can Work While You're Away and Message You First ThePCEnthusiast"
-      },
-      {
-        "title": "Claude Duet Download: What You Can Get Today, and What You Cannot - OrcaRouter",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNOVFjMld2WmRoRVEwR3JaN2VLVEJGclllaFd2b2hQdk1kajFBdE1URzZwY3ZtTkR0dnhPaFZDTEk4MmJWaHN3cEtMZTZnbzFob21iZFRTcEozQll1N1pxaERqMzIwcVpQS1pIOFFCSUVSLWRFV0lTc0J1TGNGMVg5cmhvWEhxdTJJeFRR?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T06:55:23.000Z",
-        "summary": "Claude Duet Download: What You Can Get Today, and What You Cannot OrcaRouter"
-      },
-      {
-        "title": "Claude Duet: What Anthropic's Proactive Agent Actually Does - OrcaRouter",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOSW10emMtZDNDOWNvanhFS2VvUzhvTGZfNkhpOHB2d0g1X05yT1hmN25RVlpXX0JaeEJZRGVBZ3RDV0JmX3lnY2paOEhSTjQ1TExQY0N2RHQ4UzFCajljaEI0Vk1JQ0hIQURnZ0pLZ0xaak94QlNZRE00dHU3eWVrb3lyRkY?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T06:45:15.000Z",
-        "summary": "Claude Duet: What Anthropic's Proactive Agent Actually Does OrcaRouter"
-      },
-      {
-        "title": "NDTV World Summit - \"You've Got A Long Day At Anthropic\": Monk Swami Sarvapriyananda On \"Spooky\" Chat With Claude - شبكة تواصل الإخبارية",
-        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9nWHAtUlV1SWM4SVA5emVvM0wxakMwX0RvUEM0U1ZmY1NqYkJuSlhmX0dOVFR4N1c4cmhyRmd0WFFvVUZiVnRxZHJ0ak90enpXTjRr?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T06:35:10.000Z",
-        "summary": "NDTV World Summit - \"You've Got A Long Day At Anthropic\": Monk Swami Sarvapriyananda On \"Spooky\" Chat With Claude شبكة تواصل الإخبارية"
-      },
-      {
-        "title": "NDTV World Summit - \"You've Got A Long Day At Anthropic\": Monk Swami Sarvapriyananda On \"Spooky\" Chat With Claude - NDTV",
-        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPMEhqajhsYmRKV3FJbE5fRkxQNEpKM2k2X1Y2b0c2blRjX3JITWR6S1pZM014QVVSRmIwZE5helY1QVZEQnFDcTFHY2lRUm5OYUxLWkN4c1djQm9XeTVuMmc2NUF3NU42QVhlTXZOOXg2UmZnQldYNGdOckQ5QVhxSHVrY2xTX2VTeTZSUkZCRHhsZnNvLUFvSldtdUxZZkNMY1FDQVZNUkVBbjVBbU5aUmtmYmdjclFSbTFtamtrWnY4UkZUalNTcjZwcVNiazl0OEN2cmJOS2VOZEhTcE9v0gHnAUFVX3lxTE52ZnBTb29OekRjS1VNNWFCVnU2VHhTSFhpNk5Ycl81OHRvYks4UG4zMnQ3T0hid0dNck9lQWhTWnp4YkNxUUZCQ1lCSzJycm9MMjZybF83aDlTM3BsRUctdGVaQXZUcEFOdG1WWGYwZ0dEZTJhLUMxXzZONG82Y0Z4OXcwMk1ZbmI2a3BuQUtkT2xsMWNla08wVU1mOHR2TGtHSjBJZkhOWWZBRC1KcVNtX0N3bldnSnJOVUY5TVhlbDM2b0JhYUVvS21hY3F1a1RIbEwyYlJCZGdMaWVXdWpkekNaS2s5bw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T06:13:47.000Z",
-        "summary": "NDTV World Summit - \"You've Got A Long Day At Anthropic\": Monk Swami Sarvapriyananda On \"Spooky\" Chat With Claude NDTV"
-      },
-      {
-        "title": "Anthropic Takes On OpenAI, Meta With New Proactive AI Agent Claude Duet - Inc42",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPN3VicjFtRU9CVHFXRW9LZWgxQnhuUWxUaXlmeEkxbGprQm92RlpyQ0JZdlBzYVVIbXFQc0R1YzZ3NDZCYnNFLW9KYkpzbHBuWXFwbEoxdWNCZ3FFeUYxVmFHTExOVXgydnZ5Qm1TQmVVQ0JTdWVCcGswTEtXNmxaYjY0ZmZxZUNsbEk5NUxWdnNCRzRfa0lPbDhR?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T06:06:13.000Z",
-        "summary": "Anthropic Takes On OpenAI, Meta With New Proactive AI Agent Claude Duet Inc42"
-      },
-      {
-        "title": "Anthropic launches Claude Duet, a proactive agent app taking on Meta's Muse and OpenAI's Dots - Dealroom",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOd3VjNGVCeWJQUjctZklVSzRpUVp4YldjSzFTaHhGSHdEZVBxeHM2OGJ1Szd6RzlVR25sREdmd1h0dE9tbFJxd2xJeWdROG9iSHNUT0lsSmRyVkYzT1VSNXdKZTVOQnNUUnNBTWx2Z2tkRzcwcmRURjdyc0ZJcExGUXdqUFpicWcwVERYYzNBU09XcHltd0tqVER3Z2JMRFM3YzRwbjVhRS0zY2wwZG81ZGllSEpyVkNWTzhfRDYtRUNrWTVl?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T06:06:07.000Z",
-        "summary": "Anthropic launches Claude Duet, a proactive agent app taking on Meta's Muse and OpenAI's Dots Dealroom"
-      },
-      {
-        "title": "Anthropic Claude Duet with daily briefs, background task handling launched; included in Pro and Max plans - Moneycontrol.com",
-        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQSjR4dHhMekJ6SHhVX0huckJiVHo1Z19ULWZRbFVXRExCQlZjUS1uTDA5S2tpVFV4bExRTVhSTHRnZHBfTEdpWTBTYXNwcFZqSEtYS0pmZFpUQ2hUMWhZazZYTFVGZlZhdUExOGVibFNSdURLUWNCQ3puWDBXT3JEREJScGdOYWJRV1B6VUpuSTJMUWlpUFdpQ0dnSEpyT3FZZjl1X1JPT2lHelRnUzhQWUlsZEdtSnJPSnZHcUJybmpMbXltenlpSFF1NjJUci1pSjBrakZoQUZBQUNtdmcteXFRT1BaN1ZpQ2EyWVFLa2JGUk9xOVVwdNIB_gFBVV95cUxPWnloNjhJWW5VZlNYUTJGdER4NUxaWDdVZERYb3lHWDlqVG56ZG1lWE1ib19nTUFwTzRRS2lOS2Q3TW5NdGJmWUFKdXBRcVNERm5HZHREREduOW01SmZ5MU05VjhHR2o5OEZBM1k1d0dsRHlNQ01waHFvWUVNN2tzdy05X0d3RV9ZbDFDeEoyck5WNExrTGhGX0UwRTZSN2VGalJRTHBGODlxSXRpTW1zOEdYRU8zdXpsOGhLY2ljclJuQnJPaE05eUtRaXU2NWE0X2tyLS1TMWhDLV9FSnd1bFVSNGd1SXBZZFFYY2Y0TDZaMi1iRVo1RFhGcFZ5dw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T05:54:02.000Z",
-        "summary": "Anthropic Claude Duet with daily briefs, background task handling launched; included in Pro and Max plans Moneycontrol.com"
-      },
-      {
-        "title": "Anthropic Launches Claude Duet To Manage Workplace Tasks Across Apps - APAC Media",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxORkM5WmpKeU1VRlB2eGlMSU9RZ1VBSXFKdkpUZkhMTzdEZ2xOQmFpTUNoR2RZVGRkNVAtemw5NmNUcnplNmg0NW5yV0NCOVlVMXNiZ0wtdVFpMDdDUW45RDQ0R1JVUVdBYW9MTm9xMkVIdy1aaVo2VFNkZFNxbGN6ZHl2T2twcUl5SU5OWl9PbVZiQ2R1M1p3aG5VT1FLTWFhbWM0MkpPN2w?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T04:12:14.000Z",
-        "summary": "Anthropic Launches Claude Duet To Manage Workplace Tasks Across Apps APAC Media"
-      },
-      {
-        "title": "Anthropic introduces Claude Duet AI agent app for professionals: Features, availability and more - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxONUNmYi1XbU5tdzFERWRjS29WVjBoMHJsMWRHektfNXlWakNlbjdsZEs5SGVUa1VuNUVNX3JqU0hHd3hEVmdlejBaSVlUX05KUHE2WmszV3Qza2J1Y2dQbUpVT0M1OGtYeVlvMkdzR3VWb3lhOXdTVzZRV0lWbUZ5d3d4TmdZZjdENVAzS2h4NGM2aElrWUpoQ3NSVkt6QXBIQ19YX2RWaWpSTFlCMDBWVVBaNWlIV1dJX0g0SGp5c3ZJRFdsdFQ0dVlJTGYzR1hCX1Q0UVF5T1BzOVZnSUdVZVZHb0xoSG93OHJkcXc0VFdLWlRsZC11MzBhS2tNbk56TmJMbkxDUWzSAY4CQVVfeXFMT1ViWkZUY1JsQ3ZaNzNMNTQyTU1hS08tMnVyNnF5VWYyNVJLMVdpQkwtQUlrNUtrY2EwZmkwWkJia1RrV3I3NlRaTmF4Wmg2TG9NUENHdVhPRUJyakxpUG1RY3ZmdXgxeG9CUEZaUEJNRWRxMUJZN1BzTUx1Y1R2SmZPZ2JOWVE4dG1zb0RBbEdnS1M5RHhudG9NSTFyWTFJTHZTbDRJQWNhcmhMTXFZNE5KMlY2T2lXRTBWbUs1UlZfbUF4SVBJRGdaeEIzbU9EbHhjbkg2QkYtc0hNdWJweWlkOVlsbk9QRGwzdUV3SkpoQllmc0w5NmJBcjNFRDNuUHJ5SWRZaFNsM0QydGxn?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T03:59:00.000Z",
-        "summary": "Anthropic introduces Claude Duet AI agent app for professionals: Features, availability and more The Times of India"
-      },
-      {
-        "title": "Claude Duet is Anthropic’s always-on AI agent, but it’s US-only for now - Tbreak UAE",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBIT3dPeVh1OUE2d054Rk84cFVUTm1pcXZldjV5TlJ5MnZGMXhvUlVfMEFJUXVrc25na1F4Q2NERDZoaVpPWWpQaW1GT3ZLb0wyUy16MnM4eG1LSGRzMEJv?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T03:19:05.000Z",
-        "summary": "Claude Duet is Anthropic’s always-on AI agent, but it’s US-only for now Tbreak UAE"
-      },
-      {
-        "title": "Claude Duet: The Leak, the Thread, and the Stripe Link Flow - OrcaRouter",
-        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFAtZEN0aUc4V1FkV1hDR3lQZktaTXdDeUxySXdRcHpqT2JCMFVlOExfdDdnQy1KR3JmWXl5Q1J0WmlHNWxxUTdqNk16WjBneDNJNXFnMzZHSDZMNGJjQjNaTi13SDJmQ0dEeUZV?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T02:39:41.000Z",
-        "summary": "Claude Duet: The Leak, the Thread, and the Stripe Link Flow OrcaRouter"
-      },
-      {
-        "title": "Claude Duet: Anthropic’s new AI agent wants to manage your workday, what can it actually do? - Firstpost",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQamdTT3JQOGFYNXNwT1dXTmF0aHBMaHFiR2FWSDIydmJiMnQ2Z0N6YzNDaEFVQ0FmY0oxQVZXaUY4N3FhZk5iTS1DUG1EVmU1NGdmQ19ULVJfN3hHVmZ4SHU1bnpPZzUtVE1WNTJHUEpXZ0lCbHJjQjk1RWxRTXZLOVk3Q3NPZmxYSXYtcmpFVVEzRDlINzZpZlBIdWoxSTFGeDRETXNfVWhidzZyT3dTRTdvQUpYc09qOHZ3R2tWMXY1NURxSnl5emZaclZ5d9IB0wFBVV95cUxNV3pTZldNZ3k2eGZhOWpIYlZibHZZSXI2UHByZFVTdW1CM0hCeGFhUkhRaW56QnllTnVqTHh4WWtJWmV1WVBTcURzZ05jUDhXMlc3NFpiNVI5N2RObW1RRGw2Q0hwcExQcmt6eUp2dU16U012RXVWbGdDdDBBQUtsa0JIMDF3T0EyclJLcFUwRWdUV3VoX0Z4cEdiQ3NHZVJwVHBkTlNIUGZVRURrNVJvLXFjSy1TR0p5TElDRHZsTlRRcHhfWmFfa1Z5bjBsaDhrVVpr?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T02:37:13.000Z",
-        "summary": "Claude Duet: Anthropic’s new AI agent wants to manage your workday, what can it actually do? Firstpost"
-      },
-      {
-        "title": "Claude Now Works with Google Docs, Sheets, and Slides",
-        "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
-        "source": "HN · 41↑",
-        "hn_id": "50190357",
-        "published": "2026-10-22T02:17:58.000Z",
-        "summary": ""
-      },
-      {
-        "title": "DeepSeek Raises $15 Billion in Challenge to Leading US Labs",
-        "url": "https://www.bloomberg.com/news/articles/2026-10-22/deepseek-raises-15-billion-in-challenge-to-leading-us-labs",
-        "source": "Bloomberg",
-        "published": "2026-10-22T02:17:34.000Z",
-        "summary": "The Chinese AI pioneer DeepSeek has raised about 100 billion yuan ($15 billion) in its latest fundraising round, one of the country’s largest ever and a sign of the startup’s ambitions to compete…"
-      },
-      {
-        "title": "US judge takes up Anthropic's fair use defense in music copyright dispute - MLex",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPTllVQnhJWExMaDhuTl8xeDFGY2hhdFBIVEJXYzJsX3J1Q1BRejJhd1JzdUw2Qlphc0g4TDg5V2l3QjlqejhSUC1UY0JBbFBKXzhGVFNnbE9QUXo5Q081dVVKaHdMY0xtRWlGWG9MQUZndkY2MnozbWxtaGYtaE5lbUhtcThhZTVTZzRwemtmcnk0M3MzNzV0VWxQREhyTURQdzNKclE0Z1BHVnNIWGI2OVZNckFidDTSAVpBVV95cUxQSmpHdjhub0h1b2NoNjBXYmtkMnBSQ0h4Y1o1a005ZmppUWQ2ck0xRldiclFBZ2tTdmZMdnJNYkhlZEtNV2hmMW1MTXROQkRqWUV1QkN4WTVkZEE?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T01:11:00.000Z",
-        "summary": "US judge takes up Anthropic's fair use defense in music copyright dispute MLex"
-      },
-      {
-        "title": "Anthropic’s New AI Agent Purchases Business Supplies - PYMNTS.com",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQWjdMOWV2Z1JpdUNIN05TWE53U2JJRW1obFBKT05xQVQtc05ZUm9iM3JSaWxsdFpFSTB5UldmbnZqVlZ0bHZhaHZiNkFUMFp3NlpxTUZYOTBWc3RhZWZjSjhseGhOVlBVbE9scnRTLWhZS0lEU2JNTmc2UUwxSHI3ZS1lWXMyc3hFUkk4N2dvZGp2Q2w3amxVUHRiVkRHeHNGT2RrbF9mWHRfa3hrMmc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T01:05:09.000Z",
-        "summary": "Anthropic’s New AI Agent Purchases Business Supplies PYMNTS.com"
-      },
-      {
-        "title": "Surprise Debut of Claude Personal Intelligent Agents: Proactive Briefing Outreach and Unexpected Raid on Muse and Dot - eu.36kr.com",
-        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE81THdDY2NWaElxRW5sQUE1NGl1b1RfRVNRM2xzWVBMcGwtSHE4TnI3dDN2cER1Y0R3YXlQR2ZHMURlTzNMUGdoS0w1cFNYaW1NQ3lj?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T00:31:19.000Z",
-        "summary": "Surprise Debut of Claude Personal Intelligent Agents: Proactive Briefing Outreach and Unexpected Raid on Muse and Dot eu.36kr.com"
+        "published": "2026-10-22T08:39:50.000Z",
+        "summary": "Anthropic takes on Grok Bot, Meta's Muse, and OpenAI's Dots with its always-on agent \"Claude Duet\" The Decoder"
       },
       {
         "title": "The Secret to Claude Keeping Your Game's Art Style",
@@ -354,6 +353,18 @@
         "video_id": "Y_inPdnVN9w",
         "thumbnail": "https://i.ytimg.com/vi/Y_inPdnVN9w/hqdefault.jpg",
         "published": "2026-10-19T13:00:13.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "The Easiest Way to Make a Real Game With Claude Code",
+        "url": "https://www.youtube.com/watch?v=HaEZgh2RadQ",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "HaEZgh2RadQ",
+        "thumbnail": "https://i.ytimg.com/vi/HaEZgh2RadQ/hqdefault.jpg",
+        "published": "2026-10-19T07:51:03.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -438,18 +449,6 @@
         "video_id": "LD0NxqDcDiY",
         "thumbnail": "https://i.ytimg.com/vi/LD0NxqDcDiY/hqdefault.jpg",
         "published": "2026-10-09T15:02:34.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Stop Using Claude for Everything (Do This Instead)",
-        "url": "https://www.youtube.com/shorts/wx3pj13dL2o",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "wx3pj13dL2o",
-        "thumbnail": "https://i.ytimg.com/vi/wx3pj13dL2o/hqdefault.jpg",
-        "published": "2026-10-08T13:00:06.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -558,6 +557,18 @@
         "video_id": "UxJZrCFzTHY",
         "thumbnail": "https://i.ytimg.com/vi/UxJZrCFzTHY/hqdefault.jpg",
         "published": "2026-08-28T00:40:16.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "AI models can now help run physical science experiments",
+        "url": "https://www.youtube.com/watch?v=P1zBiAQU1IA",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "P1zBiAQU1IA",
+        "thumbnail": "https://i.ytimg.com/vi/P1zBiAQU1IA/hqdefault.jpg",
+        "published": "2026-08-27T17:54:32.000Z",
         "summary": "",
         "_kind": "news_video"
       }
@@ -705,7 +716,7 @@
         "summary": ""
       },
       {
-        "title": "Claude Code Made My Best Game Ever (Full Guide)",
+        "title": "The Easiest Way to Make a Real Game With Claude Code",
         "url": "https://www.youtube.com/watch?v=HaEZgh2RadQ",
         "source": "Leon van Zyl",
         "channel": "Leon van Zyl",
@@ -834,17 +845,6 @@
         "video_id": "qV6Oo_ZlC2E",
         "thumbnail": "https://i.ytimg.com/vi/qV6Oo_ZlC2E/hqdefault.jpg",
         "published": "2026-10-08T18:53:40.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Stop Using Claude for Everything (Do This Instead)",
-        "url": "https://www.youtube.com/shorts/wx3pj13dL2o",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "wx3pj13dL2o",
-        "thumbnail": "https://i.ytimg.com/vi/wx3pj13dL2o/hqdefault.jpg",
-        "published": "2026-10-08T13:00:06.000Z",
         "summary": ""
       },
       {
@@ -978,6 +978,17 @@
         "thumbnail": "https://i.ytimg.com/vi/djVUCj5i4sw/hqdefault.jpg",
         "published": "2026-08-27T19:42:35.000Z",
         "summary": ""
+      },
+      {
+        "title": "AI models can now help run physical science experiments",
+        "url": "https://www.youtube.com/watch?v=P1zBiAQU1IA",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "P1zBiAQU1IA",
+        "thumbnail": "https://i.ytimg.com/vi/P1zBiAQU1IA/hqdefault.jpg",
+        "published": "2026-08-27T17:54:32.000Z",
+        "summary": ""
       }
     ],
     "tutorials": [
@@ -1044,18 +1055,6 @@
         "published": "2026-10-19T21:34:39.000Z",
         "summary": "What's changed Added a transcript line when a plugin that runs first skips one of your mod's hooks, naming the event and the plugin Added decider: \"person\" to a mod's tool.check answer: only the…",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "Claude Code Made My Best Game Ever (Full Guide)",
-        "url": "https://www.youtube.com/watch?v=HaEZgh2RadQ",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "HaEZgh2RadQ",
-        "thumbnail": "https://i.ytimg.com/vi/HaEZgh2RadQ/hqdefault.jpg",
-        "published": "2026-10-19T07:51:03.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "v2.1.303",
@@ -1755,7 +1754,7 @@
         "summary": ""
       },
       {
-        "title": "Claude Code Made My Best Game Ever (Full Guide)",
+        "title": "The Easiest Way to Make a Real Game With Claude Code",
         "url": "https://www.youtube.com/watch?v=HaEZgh2RadQ",
         "source": "YouTube · Leon van Zyl",
         "published": "2026-10-19T07:51:03.000Z",
@@ -1906,13 +1905,6 @@
         "url": "https://www.youtube.com/watch?v=qV6Oo_ZlC2E",
         "source": "YouTube · Productive Dude",
         "published": "2026-10-08T18:53:40.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Stop Using Claude for Everything (Do This Instead)",
-        "url": "https://www.youtube.com/shorts/wx3pj13dL2o",
-        "source": "YouTube · Leon van Zyl",
-        "published": "2026-10-08T13:00:06.000Z",
         "summary": ""
       },
       {
@@ -2151,6 +2143,13 @@
         "url": "https://www.youtube.com/shorts/djVUCj5i4sw",
         "source": "YouTube · Anthropic",
         "published": "2026-08-27T19:42:35.000Z",
+        "summary": ""
+      },
+      {
+        "title": "AI models can now help run physical science experiments",
+        "url": "https://www.youtube.com/watch?v=P1zBiAQU1IA",
+        "source": "YouTube · Anthropic",
+        "published": "2026-08-27T17:54:32.000Z",
         "summary": ""
       }
     ]
