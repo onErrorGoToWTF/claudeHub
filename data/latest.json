@@ -1,20 +1,34 @@
 {
-  "generated_at": "2026-10-23T14:29:45.079Z",
+  "generated_at": "2026-10-23T19:35:30.936Z",
   "version": 1,
   "sections": {
     "updates": [
       {
-        "title": "Alignment Assessment Ukaisi",
-        "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+        "title": "Glm 5 3 and the Spread of Advanced Cyber Capabilities",
+        "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
         "source": "Anthropic Research",
-        "published": "2026-10-23T13:23:32.000Z",
+        "published": "2026-10-23T17:11:06.000Z",
         "summary": ""
       },
       {
         "title": "Formal Verification",
         "url": "https://www.anthropic.com/research/formal-verification",
         "source": "Anthropic Research",
-        "published": "2026-10-22T22:13:27.000Z",
+        "published": "2026-10-23T17:10:27.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Multiagent Systems",
+        "url": "https://www.anthropic.com/research/multiagent-systems",
+        "source": "Anthropic Research",
+        "published": "2026-10-23T15:24:25.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Alignment Assessment Ukaisi",
+        "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+        "source": "Anthropic Research",
+        "published": "2026-10-23T14:51:41.000Z",
         "summary": ""
       },
       {
@@ -64,13 +78,6 @@
         "url": "https://www.anthropic.com/research/yes-claude-can-do-nine-loops",
         "source": "Anthropic Research",
         "published": "2026-10-21T17:14:17.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Glm 5 3 and the Spread of Advanced Cyber Capabilities",
-        "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
-        "source": "Anthropic Research",
-        "published": "2026-10-21T17:13:53.000Z",
         "summary": ""
       },
       {
@@ -135,22 +142,85 @@
         "source": "Anthropic Research",
         "published": "2026-10-20T15:26:46.000Z",
         "summary": ""
-      },
-      {
-        "title": "Tracing Thoughts Language Model",
-        "url": "https://www.anthropic.com/research/tracing-thoughts-language-model",
-        "source": "Anthropic Research",
-        "published": "2026-10-20T15:26:42.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Artizent Achieves Select Partner Tier in Anthropic's Claude Partner Network Services Track PR Newswire - Chinook Observer",
-        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPc3hxNjY3b0gwQWh4OTZkVHV4cVNia0JVSnU3QlNzRDlKMG1yY0FXSVhDdm5ET2FSQ2hXcEpucmVSVTdZTmRqN0Zjd2N6dnIxSW9jdXpUUlpUejd1c0xZZl9zRUExMXp4LWZ0MDBIUnhpN0IzdVNzUzlldThDaHVLOEMybjhsOU16LUJEX24wd1ZqM2hVem5ScmlVR01KV0FPd1RjR19EUlZEZ2dpMWdDeUY5d1RFOEw0YUtGYjVJQnUzUWI0UUM5bXVDbTE0RkJDR1Zma1JzWG5oR1RsTV8yOGdmVDBiQ1Jz?oc=5",
+        "title": "Anthropic unifies Claude Chat and Cowork for enterprise plans - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQeVExQ216RG1VZTN3LVpmS05ib19Gc05ENlJwbDkwVnc0ZnJRazYwcVVoWXNaUnN5bkNGQ0dRMzMxcDdvNTlFOEZTU2cyalR3WnlvQUd0V1RuV2pNb2ljVzBjMTBGLVF6dHFnZElFcG85QUxOckgtLWZhTkxlU1liSUVCUHEwUnhEVVhYeWlPaWNDMDhUTGpJV1FOclVFbjd1?oc=5",
         "source": "Google News",
-        "published": "2026-10-23T14:20:31.000Z",
-        "summary": "Artizent Achieves Select Partner Tier in Anthropic's Claude Partner Network Services Track PR Newswire Chinook Observer"
+        "published": "2026-10-23T19:14:23.000Z",
+        "summary": "Anthropic unifies Claude Chat and Cowork for enterprise plans Seeking Alpha"
+      },
+      {
+        "title": "Chinese AI model Kimi K3.1 Pro is closing in on Anthropic's Claude Opus 5.5 - The Decoder",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPZ3hIVEJReWhldnNyNVRzeGhuZjdJNHh6X1dkSG9CbkliWXducy14dlhrdk0yM09mLTJNcmtRak5JRTlCSW5oVm1vVnY0ZDJod0ZZZmxCd2JScllXdHVvLXlLR1BsOFNuLXBsWGhWWjNoMm1tY0FoN3BaM2F4LUpLZjFVNTI4VmNySFBneWNCWFMxSFRDNUhiWW1WVzhITUIy?oc=5",
+        "source": "Google News",
+        "published": "2026-10-23T19:03:11.000Z",
+        "summary": "Chinese AI model Kimi K3.1 Pro is closing in on Anthropic's Claude Opus 5.5 The Decoder"
+      },
+      {
+        "title": "OpenAI Moves Toward a $1.25 Trillion Value",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-23/bloomberg-tech-10-23-2026-video",
+        "source": "Bloomberg",
+        "published": "2026-10-23T17:56:21.000Z",
+        "summary": "Bloomberg’s Ed Ludlow takes a look at OpenAI's potential fundraising at a staggering $1.25 trillion valuation. Plus, Anthropic's looming IPO could deliver blockbuster gains for some of its biggest…"
+      },
+      {
+        "title": "Big Paydays Ahead for Anthropic's Early Backers",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-23/big-paydays-ahead-for-anthropic-s-early-backers-video",
+        "source": "Bloomberg",
+        "published": "2026-10-23T17:49:42.000Z",
+        "summary": "Anthropic’s upcoming public listing is poised to create multibillion-dollar gains for top venture capital firms, tech companies and independent investors that have backed the company. Bloomberg’s…"
+      },
+      {
+        "title": "Anthropic joins Meta and OpenAI’s personal AI assistant race with Duet - Fortune",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPR0Y0UXFkbWVlcjN3VHZKcEFPQzNkNWdvbGM2TWxHdGd4bXREaFJpQUU5cndXZHZLa2FkeDFEb282VTRkRGVQdnJTbzBlX21uNGl1MmlsOGJXbVRzVkQtME9SeUtaenN0MEhlV2ZnejlmWlhKc3cxTXFUeE9HS1dIUWRlaFI0V0F6VjRCeFlOU2o1MTFiLWVYSnFHbG95YUdMdUJZ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-23T16:51:00.000Z",
+        "summary": "Anthropic joins Meta and OpenAI’s personal AI assistant race with Duet Fortune"
+      },
+      {
+        "title": "Alloy joins Anthropic's Claude Partner Network - The Manila Times",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPTE8yV3hFU3d3NWhIYzMyQVNCb0h6S3F1WU9WUDhvQzhybnN0c011Yzh5elVCcUljTzg0a2tSVUs1VW9TN3RmUUlodlNOd05HZHF1SWtUb0Z0TWlrNWJENW5pNjBUSmVKS0I2ZFdqVHFRVGh0QThRb1EtTHdpWVVXRHR3Mmczb3NzVENPRXpQc2FKOEotWDBGZmY0eTAzLTZpNE5QaTVJeDVndnBVa2I2cXJtcmxLZkFIZU9N0gHAAUFVX3lxTFBNTlBnQ1JkRGNUOHdiNVBfeFpXdTJ0LU8tUFJOZDZIZ1JFaDZEcUVSX0l1ZURTZHlJVGZnNDdSN3g4QUtLcnlPVTlONV9WNXl2SV9VQ3YyNVIxZTR2a2pnaENWYlAwb2U1aGY0YjZ5cFhPQ3IteWJlYVlvLUp2RkhydjlfaW5uTWZ1RWdZWEpGWkxnb1VIX2c4QTM3RDhzN1F1eTNEVDV2QVFMTnZaNzJjblRNT0x5Wk9lZlVlS3BiYw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-23T16:03:49.000Z",
+        "summary": "Alloy joins Anthropic's Claude Partner Network The Manila Times"
+      },
+      {
+        "title": "What some of Anthropic’s backers are reportedly worth before its IPO",
+        "url": "https://techcrunch.com/2026/10/23/what-some-of-anthropics-backers-are-reportedly-worth-before-its-ipo/",
+        "source": "TechCrunch",
+        "published": "2026-10-23T16:02:43.000Z",
+        "summary": "Early-stage and follow-on investors in the AI lab are already sitting on major paper returns."
+      },
+      {
+        "title": "Engineering company Artizent gains Select partner status in Anthropic's Claude Partner Network Services Track - ROI-NJ",
+        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOS3h5UkJ2N3NGdjlURXBHbmRiZVZINFdGZ1MzQUhMUllQT1dKTlV0YmZvOVVNUWNTSWFCQ05sQjl4d2d0dVRwY0xiWmR3alJFTEVVRzhMemtJRXVpZmN0aTU5UFk3WnhrUmlvSUxJNXRIWWZMVndTQ1lobVdjUUJNcjFxQjczTU5GWXdlazBvREpmdW9xbnVBd0ZNb1NiQ2tOZm1JN1RxcUwxSE9tb2FCX3lzTF9QWUxzS3ZieHAtRjBSV2RJTGJUcFZDM1FlbzEzbGlpYWZJU0pyTXpjSjd5SUxn?oc=5",
+        "source": "Google News",
+        "published": "2026-10-23T15:36:28.000Z",
+        "summary": "Engineering company Artizent gains Select partner status in Anthropic's Claude Partner Network Services Track ROI-NJ"
+      },
+      {
+        "title": "Anthropic's Claude Duet AI agent can manage your work across thousands of connected apps — here’s how it works - Tom's Guide",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQRWRVV2xqbWZNLVBLWDNGN2lSamcxZ0k5YzdCZ1puYUZPY0hWMVN4QzZ2MnZweDc4aE5IQmZWaHl6WnFwa3UyS2lId1h2SzBHeXZTUFJYdFNFX0FrQWlpYVlMVDF4NUhXVjdNM05OS0NaWmhYWjhlVVNKVm9sb3Y3czc4MHNwVWFWQW9waHJoVUdoOXFfQ3NXX29oeVczY2xCLTByRHFJT2RoVHFrMm5JOEdSNmJjREJaSkZrUGxQOFJ2a3lSc3h2QWo1SGdYSmto?oc=5",
+        "source": "Google News",
+        "published": "2026-10-23T15:30:31.000Z",
+        "summary": "Anthropic's Claude Duet AI agent can manage your work across thousands of connected apps — here’s how it works Tom's Guide"
+      },
+      {
+        "title": "Claude News: Seven Anthropic Announcements in October 2026 - OrcaRouter",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOXzlQY0s2d1hsVXZUUnpQdW5oR2dZQ1drY00tMHBzamlheW04dFp1NWpTUi1Rd3E2cTEzSnhVOXgxTV95YlduV052WURfX2hWSnFEeEI1NGZOT05XVjVOekFKNUdETE1xb3VMQnZHR0ZqM01QbXhUakVDX1dYeGNhcVI5MlBFY1pE?oc=5",
+        "source": "Google News",
+        "published": "2026-10-23T14:59:34.000Z",
+        "summary": "Claude News: Seven Anthropic Announcements in October 2026 OrcaRouter"
+      },
+      {
+        "title": "Artizent Achieves Select Partner Tier in Anthropic's Claude Partner Network Services Track - PR Newswire",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOTDMyTEYzR094TU1velVpSU0zWEJ3UC00blkya3FpYWhlR0VhZE9xa0JTbzU4NFUzbjJpR1k1MU5uMlczRjNiOG5WejVJc2JkVEpwTmU3Y3lZUzlKTWZYM3VoWERfWHJ3Tkl0RFNGMkw1cHNhZHZfTGdyX2lVUE9BeUNXVHd3Tk9JWjVXVVRhQWtlSFFzVm9tQ29GTHgtWlhSTDlESk5xREhkeXg4eE01Y291czBlbktnUW5vVHFzbnhOLTRNMGRUZjdKNENnV0FvQmlULTQ0aERrOFdENkE?oc=5",
+        "source": "Google News",
+        "published": "2026-10-23T14:00:00.000Z",
+        "summary": "Artizent Achieves Select Partner Tier in Anthropic's Claude Partner Network Services Track PR Newswire"
       },
       {
         "title": "Anthropic: Claude used deception in cyber test - Breakingthenews.net",
@@ -160,13 +230,6 @@
         "summary": "Anthropic: Claude used deception in cyber test Breakingthenews.net"
       },
       {
-        "title": "AI Ushers In Era of Rapid-Fire Software Vulnerabilities",
-        "url": "https://www.bloomberg.com/news/articles/2026-10-23/ai-ushers-in-era-of-rapid-fire-software-vulnerabilities",
-        "source": "Bloomberg",
-        "published": "2026-10-23T13:35:30.000Z",
-        "summary": "Mass cybersecurity disruptions, such as this week’s scramble by governments and companies to patch two critical software flaws, are about to “get a lot worse before they get better,” a top executive…"
-      },
-      {
         "title": "AI Ushers In Era of Rapid-Fire Software Vulnerabilities - Bloomberg.com",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNajlfbFF1THRiZldFMzVuTVNGTmNxaVJsTUNmQmNFTzlHSUtuM2d3enlzYV9CV3MydXk3OUVFbThyV1hjOUpfUkJpOVdhOEtqenRZY0czVXhTN01wWXlPZTJUWDJ5dzJiTTZfUWNpOHpUS211eHNVT2tQV1hEalR0cnJCNWV5cnJwQ1FVTUpjTmdILW1QclFXVEZGQXBrTmEyNnZFS3NMbHlOQQ?oc=5",
         "source": "Google News",
@@ -174,16 +237,16 @@
         "summary": "AI Ushers In Era of Rapid-Fire Software Vulnerabilities Bloomberg.com"
       },
       {
-        "title": "AI And The US Midterms: How Anthropic Is Approaching Political Bias And Election Integrity - News18",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQb1BiY2FPY0VMS2dqVEcyZkNHTFZURGVxTGxCOUt2Wlc3UkFMNXN4RlJVOS15WTY0RDAxSFhCSktPblJBWmRQd1dic0oyeU50T2VBemNYUHpOTUVRaW05OUFOVWxqZjVuWFF5VWhCQnJqdHhkcl9rRVZ6RUxudVNhS3dMV0haN204d04zczBCNmpjc1JIbXd5SzVEYktKWUlPRVlMR3pkeWdEVlk0NzRhVGNwSm9feHJDSVFnNkRwMHdnTEll0gHKAUFVX3lxTFBqcVVNVG9tSV9XNXlLMEhNd1AwTHR2QjFVZnBNMUEwUXZtUDE4V2JrZ091V1QzYk9RWEduOEhYWTZ0Ri1UZjZxQUlkdDU5ZGlxX0dEYzZjZnBZbHFFbF9kX0M2SDJzQnd2Y1ZURnpzNTRfMzg1ZGJRRktobTBBLVNWblliQ2RZRnQwZ3ExaDFrR01PWGNiYm1LQ29SOUFFXzlqX3VXVzNjdkYwWk5LSHB4LTVLTlhNdllpcVdSSnNjNXYtSEtzbDBHU3c?oc=5",
+        "title": "An alignment assessment of the UK AISI cybertesting incident - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9hcjNRbVFacnhzLWNNYnRkSTlVM2FkMnotYTd0MEpwTmlsQ2N1NlVPdjJjdXJhNG9FbC14d3FIR3pVaEh0SEdIamRWWmNTazRXVGNxbFg3dEFZN0RQT0tVcWpWZlpGTlZYb29uTW9PQQ?oc=5",
         "source": "Google News",
-        "published": "2026-10-23T13:22:39.000Z",
-        "summary": "AI And The US Midterms: How Anthropic Is Approaching Political Bias And Election Integrity News18"
+        "published": "2026-10-23T13:29:39.000Z",
+        "summary": "An alignment assessment of the UK AISI cybertesting incident Anthropic"
       },
       {
         "title": "Swedish government offices to ban ChatGPT and Claude",
         "url": "https://www.sverigesradio.se/artikel/chat-gpt-och-claude-forbjuder-regeringskansliet",
-        "source": "HN · 196↑",
+        "source": "HN · 308↑",
         "hn_id": "50207405",
         "published": "2026-10-23T11:39:54.000Z",
         "summary": ""
@@ -224,20 +287,6 @@
         "summary": "Anthropic will pay a human writer $345,000 to help its executives find the right words CTech"
       },
       {
-        "title": "What Is a Claude Bot: Three Things the Phrase Can Mean, and How to Tell Them Apart - OrcaRouter",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5VSi16OC1oRjlZRjZrd2pVOTI0N2NzZGNjdnZNdm1fTS1YZ1lnUUZyNWFpVHpxcGV5anV4MHZ1bEhLR2phZWpFMkR5OXFiUXpLY3FwY2FtX2xJWFd1WTdGeFYwWmRld2Y0R0M0Vk5BRG1Tb0hYZW5Z?oc=5",
-        "source": "Google News",
-        "published": "2026-10-23T10:14:50.000Z",
-        "summary": "What Is a Claude Bot: Three Things the Phrase Can Mean, and How to Tell Them Apart OrcaRouter"
-      },
-      {
-        "title": "Claude Muse Is Not a Thing: What Meta Muse Really Is - OrcaRouter",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNNnY3cWt1X0Q5SDFYajAtV001bnpGRlZTR000Z0VpdmZjLXhFNTZRdjRwVmRPV05QZ0phMlVHWGFsT0d0UDhfN3NFOUVBalJLbXEtQXFLQ0pjSlZjU3RidkJyX05yNzUwSFdjQk1hbEJhZUttU2lHRkZPdHVVc3gyUzVYQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-23T10:14:17.000Z",
-        "summary": "Claude Muse Is Not a Thing: What Meta Muse Really Is OrcaRouter"
-      },
-      {
         "title": "Who Owns Claude? Anthropic's Structure Explained Plainly - OrcaRouter",
         "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQcWkxQjdtNWRZUmU3azFsRUlXbk1fX293SjI0VHpaVVdIYVpCRW5tTnNzOVdwaFNua1RzcmtnQVVub3QyS1lyWTZvbm1ZOXI4cXh3T2dKdGVTem1ac3ktdFl3SmNpa19yTWFHLWtrbThiWjduZVRWSXRSdlJzbVo0SDRB?oc=5",
         "source": "Google News",
@@ -271,56 +320,6 @@
         "source": "Google News",
         "published": "2026-10-23T04:35:00.000Z",
         "summary": "Anthropic Uses Claude to Deliver \"Bug-Free Proofs,\" Machine-Verifies 180 Million Lines BigGo Finance"
-      },
-      {
-        "title": "Anthropic publishes Public Benefit Report, detailing AI progress and gaps in measuring impact - EdTech Innovation Hub",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxObGdHcVgwRk5YcWdMdGFjOGUyOGozak02TzNHdWJVUXI5NEt6VWx4VzJfdXNCSy1Vc0xHdWRRX3VGeG5od2xnVXdQVEJWLW5tdnVEbVNRLTdUWVl0UWlTOFdWejA3UXkzWjQzQVhlLUVlY08tWFJDeFVnYk80Um9BTDlsOFhGdThaeW84VllKc3BtS0lUdm9Ja1dON2pHUWV2V2FhOVNFaktwOEpvS1Q0TVV3YzdhVkFfbVN3MGdRNWFTcjZiUk5oVjRrZnVrZw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-23T00:15:16.000Z",
-        "summary": "Anthropic publishes Public Benefit Report, detailing AI progress and gaps in measuring impact EdTech Innovation Hub"
-      },
-      {
-        "title": "LLMs are making formal software verification feasible at a much larger scale",
-        "url": "https://www.anthropic.com/research/formal-verification",
-        "source": "HN · 383↑",
-        "hn_id": "50202217",
-        "published": "2026-10-22T22:54:43.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic’s new AI agent Claude Duet can work while users are away - The American Bazaar",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNVnktb0xleG9fM3otRmJHbHlZTkttRUJQVE9UeXU2bTFQWXBPUWZpMG9oRDlmdlVmdS0wVnBhcHFjNXllT1JNNVBCbTNIaWk4MUZwWWNVMXpFU3RGby1XYW5VYmZKOUJFLTlmVVBGbGhmZUtFZEdhRFNJcjhJcXJFTnpZWVlEdzVtLVQ0cWJ5RTM3RVdldFB1QlVIQm1MaktWSnpIdDBCeko1R2Q4ZVZJWFZISkpITWs1?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T22:48:43.000Z",
-        "summary": "Anthropic’s new AI agent Claude Duet can work while users are away The American Bazaar"
-      },
-      {
-        "title": "Anthropic Says Claude Proved Security Properties Across 123 Libraries - Unite.AI",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZDVvZE5EeDFjX0JUMXU4LW1Hc0Z2a3hXb2gxZjJLWkhjVExocXdnbFl3VDYzQjVMSS05bmRSQ3Q4bG9qc2VSbzJRZFFGSXdxeTU5aERkcENNMmZweVctS1NiMHpGR3Z0aFNVdHdFREdadUxkTVhZNEtPZGVZMml2UWItcUYyQzRMQkduT0R3ZlVWUkltYlE?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T22:19:08.000Z",
-        "summary": "Anthropic Says Claude Proved Security Properties Across 123 Libraries Unite.AI"
-      },
-      {
-        "title": "Anthropic Formal Verification: Claude’s Proofs and Their Limits - Kingy AI",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE52TW9vVDBBWXNtZTkydkdqLVBMd1JnQTA4c0N0WDhTQ01rek5TRGd6UTJtSkpZNmZyOGxVckNIX29rZ0dXUlVoa1IydzUybmRGZkV0UDgxTDBSTnNtb3RiTzdBZHBUMU1Ea0pUeWhyY0ZUUjBm?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T22:17:28.000Z",
-        "summary": "Anthropic Formal Verification: Claude’s Proofs and Their Limits Kingy AI"
-      },
-      {
-        "title": "Open call for guest investigators in the life sciences - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE93eS1EdWp1NUVXZG1jYXF5OHRWZjgtakZ2WXh6WmY3OHRfWndmTEZlVmRaZGJjSExGdGZvZDZjSEgwbDVKNmZ4WlZxVUliWGdRdE82VzdzVFF6OE0xNEtDeXdaaFJlUXNzdDRNNzJic2lSeHhKWHhKZ3l5MkVGaWc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T22:03:06.000Z",
-        "summary": "Open call for guest investigators in the life sciences Anthropic"
-      },
-      {
-        "title": "LLMs are making formal software verification feasible at a much larger scale - Anthropic",
-        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1Ba1lXTGVFWUJQTVA5UUJMdDJfRVNyU0E1cmlUMXJLSkV2X3RaUnFtbmhpT1IzOUxsNlh1LTA3SGxXd2E5MEM0TnFxZ1B1T1drRUNvQXhodk9nVkFSbUlORXRNNXQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-22T21:58:06.000Z",
-        "summary": "LLMs are making formal software verification feasible at a much larger scale Anthropic"
       },
       {
         "title": "Did Claude Duet just kill Grok Bot?",
@@ -1665,6 +1664,62 @@
     ],
     "claude_learning": [
       {
+        "title": "2.4.0",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.4.0",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-10-23T18:32:25.000Z",
+        "summary": "Package Version @modelcontextprotocol/client 2.4.0 @modelcontextprotocol/server 2.4.0 @modelcontextprotocol/core 2.4.0 @modelcontextprotocol/server-legacy 2.4.0 @modelcontextprotocol/codemod 2.4.0…"
+      },
+      {
+        "title": "@modelcontextprotocol/server-legacy@2.4.0",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver-legacy%402.4.0",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-10-23T18:19:17.000Z",
+        "summary": "Patch Changes Updated dependencies [ 46d9c99 ]: @modelcontextprotocol/core@2.4.0"
+      },
+      {
+        "title": "@modelcontextprotocol/server@2.4.0",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver%402.4.0",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-10-23T18:19:14.000Z",
+        "summary": "Minor Changes #3057 c05225a Thanks @steipete ! - ServerEvent takes optional params , which the subscriptions/listen router delivers with its own subscription ID, so a gateway can forward change notifications with their…"
+      },
+      {
+        "title": "@modelcontextprotocol/node@2.1.2",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fnode%402.1.2",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-10-23T18:19:11.000Z",
+        "summary": "Patch Changes #3084 10c26b0 Thanks @claude ! - The @hono/node-server dependency range widens from ^1.19.9 to ^1.19.9 || ^2.1.3 , so a new install resolves to 2.x and an install that cannot get 2.x keeps 1.x. Updated…"
+      },
+      {
+        "title": "@modelcontextprotocol/codemod@2.4.0",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fcodemod%402.4.0",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-10-23T18:19:08.000Z",
+        "summary": "No content."
+      },
+      {
+        "title": "@modelcontextprotocol/client@2.4.0",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fclient%402.4.0",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-10-23T18:19:05.000Z",
+        "summary": "Minor Changes #3085 a633756 Thanks @claude ! - Add an opt-in for sending scope on refresh-token requests, for authorization servers that reject a refresh without it (Microsoft Entra ID answers AADSTS90009 when the…"
+      },
+      {
+        "title": "@modelcontextprotocol/core@2.4.0",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fcore%402.4.0",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-10-23T18:19:02.000Z",
+        "summary": "Minor Changes #3047 46d9c99 Thanks @KKonstantinov , @tobi-oye , @mattzcarey ! - Add the Skills extension (SEP-2640), reachable through new ext/skills subpaths; package root exports are unchanged.…"
+      },
+      {
+        "title": "1.32.2",
+        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/1.32.2",
+        "source": "MCP TypeScript SDK",
+        "published": "2026-10-23T18:06:24.000Z",
+        "summary": "What's Changed fix: add explicit | undefined to Transport optional properties (v1.x backport of #1766 ) by @kishormorol in #2814 [v1.x] fix: allow registering after connect() when the capability was declared by @claude…"
+      },
+      {
         "title": "v2.1.309",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.309",
         "source": "Claude Code",
@@ -1761,6 +1816,13 @@
         "source": "YouTube · Leon van Zyl",
         "published": "2026-10-20T05:21:19.000Z",
         "summary": ""
+      },
+      {
+        "title": "The Claude Tag API is available in beta for Claude Enterprise organizations with the…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#october-20-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-10-20T00:00:00.000Z",
+        "summary": "Inference hooks are out of beta for Claude Enterprise organizations. • We've launched user profiles , so you can tell Anthropic which of your end customers each API request is for. If you operate a platform or gateway, or resell API…"
       },
       {
         "title": "v2.1.304",
@@ -1973,41 +2035,6 @@
         "summary": "Package Version @modelcontextprotocol/client 2.3.1 @modelcontextprotocol/server 2.3.1 @modelcontextprotocol/core 2.3.1 @modelcontextprotocol/server-legacy 2.3.1 @modelcontextprotocol/codemod 2.3.1…"
       },
       {
-        "title": "@modelcontextprotocol/core@2.3.1",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fcore%402.3.1",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-10-05T11:49:43.000Z",
-        "summary": "No content."
-      },
-      {
-        "title": "@modelcontextprotocol/server-legacy@2.3.1",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver-legacy%402.3.1",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-10-05T11:49:40.000Z",
-        "summary": "Patch Changes #2952 5a18673 Thanks @claude ! - requireBearerAuth in @modelcontextprotocol/server-legacy takes the optional expectedResource that @modelcontextprotocol/server 2.3.0 and @modelcontextprotocol/sdk 1.32.0…"
-      },
-      {
-        "title": "@modelcontextprotocol/codemod@2.3.1",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fcodemod%402.3.1",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-10-05T11:49:37.000Z",
-        "summary": "No content."
-      },
-      {
-        "title": "@modelcontextprotocol/server@2.3.1",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver%402.3.1",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-10-05T11:49:34.000Z",
-        "summary": "Patch Changes Updated dependencies []: @modelcontextprotocol/core@2.3.1"
-      },
-      {
-        "title": "@modelcontextprotocol/client@2.3.1",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fclient%402.3.1",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-10-05T11:49:31.000Z",
-        "summary": "Patch Changes Updated dependencies []: @modelcontextprotocol/core@2.3.1"
-      },
-      {
         "title": "1.32.1",
         "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/1.32.1",
         "source": "MCP TypeScript SDK",
@@ -2036,27 +2063,6 @@
         "summary": "pip install -U mcp . Docs: https://py.sdk.modelcontextprotocol.io/ Mostly fixes, plus three new options. A few things behave differently, so skim these first: Behaviour changes httpx2>=2.10.0 is now required ( #3600 )…"
       },
       {
-        "title": "2.3.0",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.3.0",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-10-02T17:55:03.000Z",
-        "summary": "Package Version @modelcontextprotocol/client 2.3.0 @modelcontextprotocol/server 2.3.0 @modelcontextprotocol/core 2.3.0 @modelcontextprotocol/server-legacy 2.3.0 @modelcontextprotocol/codemod 2.3.0…"
-      },
-      {
-        "title": "@modelcontextprotocol/server-legacy@2.3.0",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/%40modelcontextprotocol%2Fserver-legacy%402.3.0",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-10-02T17:43:30.000Z",
-        "summary": "Patch Changes #2908 633dd3e Thanks @claude ! - The license field of the package manifests is now Apache-2.0 ; the LICENSE file shipped in each package carries the full terms, including the MIT text for earlier…"
-      },
-      {
-        "title": "1.32.0",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/1.32.0",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-10-02T17:35:12.000Z",
-        "summary": "Upgrade notes Redirects: the HTTP client transports now follow a redirect only when it stays on the same origin (same scheme, host and port; http to https on the same host is allowed). A deployment whose endpoint…"
-      },
-      {
         "title": "We've added a line field to the Models API . GET /v1/models and GET /v1/models/{model_id} now return the model line…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#october-1-2026",
         "source": "Claude API Release Notes",
@@ -2076,13 +2082,6 @@
         "source": "MCP Inspector",
         "published": "2026-09-30T21:38:59.000Z",
         "summary": "What's Changed fix(web): only DANGEROUSLY_OMIT_AUTH=true/1 disables /api auth by @cliffhall in #2390 fix: stamp Mcp-Method on modern-era notification POSTs by @cliffhall in #2392 fix: detach the OIDC compat's…"
-      },
-      {
-        "title": "2.7.0",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.7.0",
-        "source": "MCP Inspector",
-        "published": "2026-09-30T21:38:56.000Z",
-        "summary": "What's Changed chore: bump the vitest trio to 4.1.11 past GHSA-82fw-gwwq-j7x9 by @cliffhall in #2315 feat(test-servers): a CIMD showcase fixture that serves its own client metadata document by @cliffhall in #2307…"
       },
       {
         "title": "Anthropic 5.5 Models are Officially HERE & It Changes EVERYTHING",
