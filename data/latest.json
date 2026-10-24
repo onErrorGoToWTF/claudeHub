@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T08:26:37.364Z",
+  "generated_at": "2026-10-24T13:40:44.431Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,11 +146,25 @@
     ],
     "news": [
       {
+        "title": "Running Kimi K3.1 Pro in Claude Code and Codex: The Config, the Silent Failures, and the One-Line Switch - OrcaRouter",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5MWmw1S2hudk1mWGs5dXFGTUdEREhESVk5RmRkY1BFbDNya3lKX1duVGNGUDZtelJrMGhXYmg4UHYwQmVXUHZrWGR2dUNIb2ZoTXpvbXJoWV9iSUxoSkdFYjhkLUVFeTlxMzNCMWxvd0lNWmRJ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-24T10:53:33.000Z",
+        "summary": "Running Kimi K3.1 Pro in Claude Code and Codex: The Config, the Silent Failures, and the One-Line Switch OrcaRouter"
+      },
+      {
         "title": "Claude Duet runs on its own virtual machine so it keeps working when your laptop is off, and Anthropic has opened a waitlist for US Pro and Max subscribers. - Make Tech Easier",
         "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9tZkM5YnJDUlg0WHFEaDBQYUl5MkJiZUc0ZmxTQmYxelhaMWdMRHR2TnJQa1BwSlFTY21tdXd0TkJXazVvSml0Y1hnUWF2LXo3VzZhRmc5SWduc1Nqd0dEaTBkQ2FFNXc?oc=5",
         "source": "Google News",
         "published": "2026-10-24T07:33:00.000Z",
         "summary": "Claude Duet runs on its own virtual machine so it keeps working when your laptop is off, and Anthropic has opened a waitlist for US Pro and Max subscribers. Make Tech Easier"
+      },
+      {
+        "title": "Anthropic's Claude Mythos 5 AI Agent Tried to Inject Malicious Code and Trick Real Developers - CyberSecurityNews",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1sVkxLV3kzQks4c1pKd01waTFQUkJLOE9ZZ2txNVUwMmM3cTZtX2NMNy1yeDRLZmgyX082ZnFaU1lCZy1ZVlhqNFg5VFJLUEJzS2l6YmVTU29pMFA4VmIxV1JIREFycHZubVZnT1Roc0tXNXFnY3pZ0gF8QVVfeXFMT1Z3Q25tQXdPbUJnUDNuM2M2b25KOUEzQnl5ZnkzSWQxU2FoUEpxakdJZkFrZERRMWgtOGtTMjQ0TjZxdTNkU2dBdFREbkE2QmhwNzFmUFV1bnJISHd3Q1VOdElVejBkOW9DNExORVo4RjFXYlUyZVg3b253Vg?oc=5",
+        "source": "Google News",
+        "published": "2026-10-24T07:26:19.000Z",
+        "summary": "Anthropic's Claude Mythos 5 AI Agent Tried to Inject Malicious Code and Trick Real Developers CyberSecurityNews"
       },
       {
         "title": "Claude vs GPT: Opus 5.5 vs Sol, 40% vs 50% Cuts [2026] - shattered.io",
@@ -230,7 +244,7 @@
       {
         "title": "Show HN: Corgi, a helpful {agent, terminal} multiplexer",
         "url": "https://corgi.computer/",
-        "source": "HN · 77↑",
+        "source": "HN · 102↑",
         "hn_id": "50214373",
         "published": "2026-10-23T19:46:38.000Z",
         "summary": "Hey everyone, Inspired by Herdr, I&#x27;ve built an agent multiplexer that I&#x27;ve been using as my daily driver for a few weeks now. I think I improved on the concept in a few…"
@@ -285,13 +299,6 @@
         "summary": "Anthropic's Claude Duet AI agent can manage your work across thousands of connected apps — here’s how it works Tom's Guide"
       },
       {
-        "title": "Claude News: Seven Anthropic Announcements in October 2026 - OrcaRouter",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOXzlQY0s2d1hsVXZUUnpQdW5oR2dZQ1drY00tMHBzamlheW04dFp1NWpTUi1Rd3E2cTEzSnhVOXgxTV95YlduV052WURfX2hWSnFEeEI1NGZOT05XVjVOekFKNUdETE1xb3VMQnZHR0ZqM01QbXhUakVDX1dYeGNhcVI5MlBFY1pE?oc=5",
-        "source": "Google News",
-        "published": "2026-10-23T14:59:34.000Z",
-        "summary": "Claude News: Seven Anthropic Announcements in October 2026 OrcaRouter"
-      },
-      {
         "title": "Anthropic debuts Claude Duet personal AI agent. Here's what to know. - CBS News",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQS3M2TXpYVGJXT2txOW5uaVExTzJPRmhDVG1UZ1hWWUEwSmRMV3JFZklxeHBCRDd3bkNocVhSZXlQc1M0VXJvdjhiYnNyaVgwdmJ2c1o4R2oxaFd5MGZFY181d2VjbFJuYU5IcTJzUU1fa0l1RmdNd2lOZ0ZkdUN0VUpaNFBnS0k?oc=5",
         "source": "Google News",
@@ -299,11 +306,18 @@
         "summary": "Anthropic debuts Claude Duet personal AI agent. Here's what to know. CBS News"
       },
       {
-        "title": "AI Ushers In Era of Rapid-Fire Software Vulnerabilities - Bloomberg.com",
+        "title": "Anthropic: Claude used deception in cyber test - Breakingthenews.net",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNWnA4bE1YS04yRE1WbWI4R3N1RXZDV0FqNGgtZHFlVFA0NXRDTnNlck1TeWJIUGp3c01QVFRJa2tBYjRPRTRUblJHTmdmZU1jMldFQ1V2cEtwLWtfZDJ1T3RGbG9idGY2YjBwMUJpNmVwc3RoTTc1VXlwUWlXOExLNVU5YkdmaENJQUNpVUdyN19oMGtTVXc?oc=5",
+        "source": "Google News",
+        "published": "2026-10-23T13:52:00.000Z",
+        "summary": "Anthropic: Claude used deception in cyber test Breakingthenews.net"
+      },
+      {
+        "title": "AI Ushers In Era of Rapid-Fire Software Vulnerabilities - Bloomberg",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNajlfbFF1THRiZldFMzVuTVNGTmNxaVJsTUNmQmNFTzlHSUtuM2d3enlzYV9CV3MydXk3OUVFbThyV1hjOUpfUkJpOVdhOEtqenRZY0czVXhTN01wWXlPZTJUWDJ5dzJiTTZfUWNpOHpUS211eHNVT2tQV1hEalR0cnJCNWV5cnJwQ1FVTUpjTmdILW1QclFXVEZGQXBrTmEyNnZFS3NMbHlOQQ?oc=5",
         "source": "Google News",
         "published": "2026-10-23T13:35:30.000Z",
-        "summary": "AI Ushers In Era of Rapid-Fire Software Vulnerabilities Bloomberg.com"
+        "summary": "AI Ushers In Era of Rapid-Fire Software Vulnerabilities Bloomberg"
       },
       {
         "title": "An alignment assessment of the UK AISI cybertesting incident - Anthropic",
@@ -313,26 +327,12 @@
         "summary": "An alignment assessment of the UK AISI cybertesting incident Anthropic"
       },
       {
-        "title": "GU Finalizing Claude Partnership - The Hoya",
-        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5MT29zVW56Z0EtZDA2RHZqUWxCdXhadVFCaTNvTlVTX1pWS1lzR0ZJQWxXbTYyT3QzNzFZb1NnblAzNlZkY0V6M0FmMlJuQzZtVk9JMGxBTTlyZkU2bDN3ZXZoMkc1MVdOT1E?oc=5",
-        "source": "Google News",
-        "published": "2026-10-23T13:19:10.000Z",
-        "summary": "GU Finalizing Claude Partnership The Hoya"
-      },
-      {
         "title": "Swedish government offices to ban ChatGPT and Claude",
         "url": "https://www.sverigesradio.se/artikel/chat-gpt-och-claude-forbjuder-regeringskansliet",
-        "source": "HN · 317↑",
+        "source": "HN · 321↑",
         "hn_id": "50207405",
         "published": "2026-10-23T11:39:54.000Z",
         "summary": ""
-      },
-      {
-        "title": "Anthropic's Claude now writes code and proves it safe automatically - The Decoder",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOQWdjb3ROVHcwOVVEQ2RXd2U4dTVjYTN4TUNyTlA1U0pXTDRXNTBaWFhWNmYyaWJiMHdMWXJFZHVGam5MMjR4TVRSNUV0c3hHV1JVb2JHTzJYYzNqZ0ZFY1ppdi1RRUU1ZUJ3SjJ4WmZkYlNXSWhBWEU1eEl4X2E3VFhlaVZfQmpmNTFGQW1YRkowQlNlakE?oc=5",
-        "source": "Google News",
-        "published": "2026-10-23T11:38:06.000Z",
-        "summary": "Anthropic's Claude now writes code and proves it safe automatically The Decoder"
       },
       {
         "title": "If you use AI, download Claude Duet immediately",
