@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T17:02:47.748Z",
+  "generated_at": "2026-10-24T19:53:42.402Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,13 @@
     ],
     "news": [
       {
+        "title": "Anthropic Integrates Agent Capabilities into Enterprise Claude, Offering Four Controls to Prevent Billing Bloat - BigGo Finance",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBZNW1RSlhSZmd0SXBWZW9PdF9DcUl6OHg3YkptY3Bzci15ZnJhV1ZOVTNhcEhKeW5SRENvdktjb0tQNzhIV3h3cS1aZzhGcWhROXByd204SklqREZXT1NlQkxGYnA3OE81Zi1McU05Q2tuTjlMNEE?oc=5",
+        "source": "Google News",
+        "published": "2026-10-24T19:35:00.000Z",
+        "summary": "Anthropic Integrates Agent Capabilities into Enterprise Claude, Offering Four Controls to Prevent Billing Bloat BigGo Finance"
+      },
+      {
         "title": "Claude’s Reverse Engineering Capabilities Used To Recompile Games May Have Been Quietly Nerfed - Kotaku",
         "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUFh3c25pSGU0bG1JbkNfcVo2T3RuLTM5Skp6VVpKaWswVFZqRVRPVFFQeFRLU25aS2FxTGZpWVpzSWYwVWZST2hLRlg0NjBReGRPWjA3bzZuRVNiVFk1SDAtQzRVeFNDN0M1UDVKODRRQ200a081bHhYVzJ2cU5XeDgxMVZaRjdDdENtbi1EUm9HZGt5NEdPWDlzc3UxempJN3RiTWsxYzBWR05ENGlicmNfaWFPVmVBcWtjR2JpWmQ?oc=5",
         "source": "Google News",
@@ -251,7 +258,7 @@
       {
         "title": "Show HN: Corgi, a helpful {agent, terminal} multiplexer",
         "url": "https://corgi.computer/",
-        "source": "HN · 116↑",
+        "source": "HN · 121↑",
         "hn_id": "50214373",
         "published": "2026-10-23T19:46:38.000Z",
         "summary": "Hey everyone, Inspired by Herdr, I&#x27;ve built an agent multiplexer that I&#x27;ve been using as my daily driver for a few weeks now. I think I improved on the concept in a few…"
@@ -269,20 +276,6 @@
         "source": "Google News",
         "published": "2026-10-23T19:03:11.000Z",
         "summary": "Chinese AI model Kimi K3.1 Pro is closing in on Anthropic's Claude Opus 5.5 The Decoder"
-      },
-      {
-        "title": "Meet Claude Duet, the latest AI agent intended to lighten your workload - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBsa3ZVM2JtaGdBajhfZEFDWVJaVHlvbkxYcGR5ODFBdjlEeFNON3FfcG0tYzR0aHIyazRjanhUTWRyX1phZ3JLQTNVTmZTMXlBajQ5SmxUZUFVZms5eGxRbVJrZ04xZDYw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-23T18:45:34.000Z",
-        "summary": "Meet Claude Duet, the latest AI agent intended to lighten your workload Mashable"
-      },
-      {
-        "title": "Anthropic says Mythos kept hacking even when it knew real people could get hurt - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPVFVoUm1BYWE3QUVLT203MFZGZWNzaTJwcldpbUpDZGdRRFVVZXlmU2dGVmdDWVM0cEllaXFlNkVPNm5FdXNhc0hLNm40cFRaYjJKbl9xbU56N0JkNHdWTXI0RXBfcHFCbUlXRjF6SXF4TU0wcFBkM2ZCVmNYNTdWSnB0STk?oc=5",
-        "source": "Google News",
-        "published": "2026-10-23T16:21:00.000Z",
-        "summary": "Anthropic says Mythos kept hacking even when it knew real people could get hurt Business Insider"
       },
       {
         "title": "What some of Anthropic’s backers are worth before its IPO",
@@ -318,6 +311,13 @@
         "source": "Google News",
         "published": "2026-10-23T13:52:00.000Z",
         "summary": "Anthropic: Claude used deception in cyber test Breakingthenews.net"
+      },
+      {
+        "title": "AI Ushers In Era of Rapid-Fire Software Vulnerabilities - Bloomberg.com",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNajlfbFF1THRiZldFMzVuTVNGTmNxaVJsTUNmQmNFTzlHSUtuM2d3enlzYV9CV3MydXk3OUVFbThyV1hjOUpfUkJpOVdhOEtqenRZY0czVXhTN01wWXlPZTJUWDJ5dzJiTTZfUWNpOHpUS211eHNVT2tQV1hEalR0cnJCNWV5cnJwQ1FVTUpjTmdILW1QclFXVEZGQXBrTmEyNnZFS3NMbHlOQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-23T13:35:30.000Z",
+        "summary": "AI Ushers In Era of Rapid-Fire Software Vulnerabilities Bloomberg.com"
       },
       {
         "title": "An alignment assessment of the UK AISI cybertesting incident - Anthropic",
@@ -995,6 +995,14 @@
     ],
     "tutorials": [
       {
+        "title": "Bump cookbook defaults to Opus 5.5, Sonnet 5.5 and Fable 5.1 (#924)",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/bfe50e59dbb4f5546a0af9ca36ebb77e637c9ce1",
+        "source": "Anthropic Cookbook",
+        "published": "2026-10-24T18:54:16.000Z",
+        "summary": "Bump cookbook defaults to Opus 5.5, Sonnet 5.5 and Fable 5.1 (#924)",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.310",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.310",
         "source": "Claude Code Releases",
@@ -1228,14 +1236,6 @@
         "source": "Anthropic Cookbook",
         "published": "2026-09-22T17:28:03.000Z",
         "summary": "feat(patterns): add multi-agent teams under latency pressure and budgets cookbook (#885) * feat(patterns): add multi-agent teams under latency pressure and budgets cookbook Starter code for a…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "docs(managed_agents): move the Linear, road trip planner, and MCP ser…",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/daac2acb91544767804e42cf720df07c232fd5b6",
-        "source": "Anthropic Cookbook",
-        "published": "2026-09-21T14:58:24.000Z",
-        "summary": "docs(managed_agents): move the Linear, road trip planner, and MCP server apps to claude-quickstarts (#884) All three are runnable apps, not notebooks, and now live in anthropics/claude-quickstarts…",
         "tutorial_kind": "official"
       },
       {
