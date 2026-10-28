@@ -1,8 +1,22 @@
 {
-  "generated_at": "2026-10-28T17:29:48.752Z",
+  "generated_at": "2026-10-28T21:56:21.136Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Early Progress Drug Development",
+        "url": "https://www.anthropic.com/research/early-progress-drug-development",
+        "source": "Anthropic Research",
+        "published": "2026-10-28T17:16:58.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Discovering Vulnerabilities with Claude",
+        "url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
+        "source": "Anthropic Research",
+        "published": "2026-10-28T15:31:36.000Z",
+        "summary": ""
+      },
       {
         "title": "Coding Agents Social Sciences",
         "url": "https://www.anthropic.com/research/coding-agents-social-sciences",
@@ -32,24 +46,10 @@
         "summary": ""
       },
       {
-        "title": "Early Progress Drug Development",
-        "url": "https://www.anthropic.com/research/early-progress-drug-development",
-        "source": "Anthropic Research",
-        "published": "2026-10-27T20:26:09.000Z",
-        "summary": ""
-      },
-      {
         "title": "Agents Judgment Calls",
         "url": "https://www.anthropic.com/research/agents-judgment-calls",
         "source": "Anthropic Research",
         "published": "2026-10-27T19:17:23.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Discovering Vulnerabilities with Claude",
-        "url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
-        "source": "Anthropic Research",
-        "published": "2026-10-27T18:15:30.000Z",
         "summary": ""
       },
       {
@@ -146,11 +146,128 @@
     ],
     "news": [
       {
+        "title": "Charles Schwab Integrating AI Tools and Financial Planning",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-28/charles-schwab-integrating-ai-with-financial-planning-video",
+        "source": "Bloomberg",
+        "published": "2026-10-28T21:47:10.000Z",
+        "summary": "Charles Schwab is expanding its push into artificial intelligence, bringing Anthropic’s Claude for Financial Advisors directly into Schwab Advisor Center. The company says it is the first RIA…"
+      },
+      {
+        "title": "Enveda and Anthropic Cut Drug Batch Review Time by 89% Using Claude AI - BioPharma APAC",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNaEN6UW5HY203R2x1cTRsVnVoR3UwRDVjdzBmZzRvTkZENG9ZczktSmRqc2ptTzhqSlBNekJ6d0ZpSmdSMFpYR2QxT182OWFIa3FoWUdrQ1R0d3pWa3lldzR2eHpmNXNYdzhJcjllY3hYZkdmbDRTMnlrWEdRUU52NHNNems1dWd1NncxQ1pXNUZxeEVZQ1N0R1NuMjF6WFlldFNSVFRlWDN3M3N5NkJmU2xtVQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-28T21:33:45.000Z",
+        "summary": "Enveda and Anthropic Cut Drug Batch Review Time by 89% Using Claude AI BioPharma APAC"
+      },
+      {
+        "title": "GSA Expands Anthropic OneGov Deal With 40-Percent Claude Token Discount - ExecutiveGov",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE56X2lqb0JtRDhTZ19hUmN6MEF3dVJkNTdGSGp1MGZRV04zRHN0R0tqU1l1SklfamlyUzhXU0g1YmJtRWRWbHdMVDJHengzeTVaNzFVN09nVWRhQTdya2s0WDRFdnoxcEw5ZHdUMHNZOWVjMm0zbktVZF9VNEVNRFU?oc=5",
+        "source": "Google News",
+        "published": "2026-10-28T21:24:49.000Z",
+        "summary": "GSA Expands Anthropic OneGov Deal With 40-Percent Claude Token Discount ExecutiveGov"
+      },
+      {
+        "title": "Anthropic: Early Progress on Accelerating Drug Development with Claude - HPCwire",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOdS1JRUI0MWlpbzFROWM1QXJ5eVpoeXBoNHZwOFlFLXVLVElmY08tcVl6Q3NoU3RQampWSTRDb1pSUE80V2t2UV82N3BZcG5PMEVYVXNzR0stM08waWNJUlJoZ2RtRkNkdlljZVhNVGFSbEJPWkFyUmVobEhsZmFCelZrd3RlSmxaaDNsUElfdW5RU1QwcU9VekNQOEJiZG5aUnVmNWozZVh5emdjSS0yOUpB?oc=5",
+        "source": "Google News",
+        "published": "2026-10-28T20:38:59.000Z",
+        "summary": "Anthropic: Early Progress on Accelerating Drug Development with Claude HPCwire"
+      },
+      {
+        "title": "Four Unanswered Questions From Anthropic’s IPO Filing",
+        "url": "https://www.bloomberg.com/news/newsletters/2026-10-28/four-unanswered-questions-from-anthropic-s-ipo-filing",
+        "source": "Bloomberg",
+        "published": "2026-10-28T20:35:08.000Z",
+        "summary": "Unpacking the company’s 300-plus page prospectus"
+      },
+      {
+        "title": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
+        "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
+        "source": "The Verge",
+        "published": "2026-10-28T20:03:00.000Z",
+        "summary": "Google has released its latest frontier model, Gemini 4 Carbon, offering \"significant gains\" in coding, agentic tasks, and cybersecurity. In an announcement on Wednesday, Google highlights Carbon's…"
+      },
+      {
+        "title": "Anthropic Adds Smart Reports, Surveys, Pooled Budgets to Claude Enterprise - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNVklzNUhMRnZkWXc3blFqN2N4MmFzREdBU1FWMDdZNGY5OVFpVjlCMmRLbmoweUtoZ1BJS0otSi1QdEdLQXliVnAxak1SSmt3T181clR0RXpEWm1DNU5HUXFvRFo2MDlwWTlGYWNJcGpIUjluU0k0ZmNKeW1reXJWMVVFUC1ETENlMXFMZkNrUWQ2cDZUWEZYa0tR?oc=5",
+        "source": "Google News",
+        "published": "2026-10-28T19:41:13.000Z",
+        "summary": "Anthropic Adds Smart Reports, Surveys, Pooled Budgets to Claude Enterprise Unite.AI"
+      },
+      {
+        "title": "Anthropic Expands Claude For Legal With Ease Of Use Tools - Law360",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNaW9GY1JOektFcWozX2JUaGxEaGVTN2tGeUtpWUVLZGFZTjRZMUVDS2ZKTlJ1bVp3YXYtVElsTnE5SExVc3g0Y0kwRXkzQ1dfdmNiMTExR1Q5MF9HRHJfdjdlWEh1clVnWFFuQVZnckF1cjZOdWJXZ2s5SUhfLVhFRjViTTV5Z0JLblJLajZmY3VHWUxpTE9yeUI5VjNfUdIBXkFVX3lxTE9MRXA4OTZTT3Z1dTZPWnR0Y0xpZExuNWpRLXpKX3oyUDl2MDJmd3BpWXhwRm5yUmVYNnBydFJEVHlPNVRTTHctcEZJa2VWLTRHbkt5M0VUM29kTHFsUVE?oc=5",
+        "source": "Google News",
+        "published": "2026-10-28T19:35:55.000Z",
+        "summary": "Anthropic Expands Claude For Legal With Ease Of Use Tools Law360"
+      },
+      {
+        "title": "Anthropic just launched tools to show companies what their AI spending is buying",
+        "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/",
+        "source": "TechCrunch",
+        "published": "2026-10-28T19:19:58.000Z",
+        "summary": "The frontier lab is lifting the curtain on how users spend money on its models ahead of a planned IPO."
+      },
+      {
+        "title": "Anthropic filed to go public—what retail investors should weigh before its IPO - CNBC",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9Vc2N5SUR3WmY1a1l1cWJRbFM1RXVLakdBUGc1YWZ0dWRjLVhfN2ZZX2lHUG9pcU1HVno0cnMyY096UWp5b1lmYmlSRTN6SnI5ZFhGTGE2NGtUWkM0cUhCazlDM0l1LTh6ZkNYWFlwbGZuQ3pDdUZjLUc2bU9JZ9IBgwFBVV95cUxPbnp1REdiQWJ3c1Vic0N1cEtITFRkbDlraEY0VzJhTVhLdmd5RHYweHVCWllTNlJsajJ3d3gxa2RhV0ZWRjZJNkRZYjFjQm0zZWJkTTRPSlBrRjZnQmk1RFlsUXpjc3NiakxuVlZfckNxcC1lbHUwMTZNQnJOR2FNbzMyRQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-28T19:11:25.000Z",
+        "summary": "Anthropic filed to go public—what retail investors should weigh before its IPO CNBC"
+      },
+      {
+        "title": "Anthropic manager drops coding interviews because Claude is better at them - The Next Web",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZXUwR01fOU9rSUpHVDVrLTA1MmFfTW5DUnhwZ21rWGRueXhfZ1BkRFNYVGJmcENSenNyajNXa0dUSTVMRWhEd1lmSGgtcFVhUHNsc1lGTFZDUjZzaG9NcjFRTEVTUV9qclU2ZGpLTGVBVU1ibk1Cal9QU01WcXRmQU5RVQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-28T18:08:58.000Z",
+        "summary": "Anthropic manager drops coding interviews because Claude is better at them The Next Web"
+      },
+      {
+        "title": "A Biotech Used Anthropic’s Claude to Design Better CAR T Signaling Domain - GenomeWeb",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWVNRVVR4Y1lWYXF5bm9nU1VOTlk1d3VPdkhuejZyNHBINDMtQ2tFWng4WHhEa1F1UjQzNmFaR1pUVDJlaGVlVGFNSk92TzBOSDVURk5WVlRPMlRSQzNPUzkwWkVCVXgzdEdjSVREcEFyNHJxZmp1dkRUYjRsVnpyZDd2WWJvdl9xWVQ0RkZYeFlqVlZqUHNOMA?oc=5",
+        "source": "Google News",
+        "published": "2026-10-28T18:03:00.000Z",
+        "summary": "A Biotech Used Anthropic’s Claude to Design Better CAR T Signaling Domain GenomeWeb"
+      },
+      {
+        "title": "We need to talk about Anthropic’s IPO",
+        "url": "https://www.youtube.com/watch?v=Lxkb4gd041I",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "Lxkb4gd041I",
+        "thumbnail": "https://i.ytimg.com/vi/Lxkb4gd041I/hqdefault.jpg",
+        "published": "2026-10-28T18:01:27.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "These Claude Enterprise features let you track AI ROI – what’s new - ZDNET",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPLXM2RndxNG5Zc3oxYXc3MjRCeE5nQmpaU0twMWZ5Z256TjVITkFzc1N2QnpYelNqcm9Pd0x5d29ma3lIR3J0MWN1aUI1ZEhnTDNFZGhvR2Q0MzEyV2VvS3pzLXZ1NEF4WndZMnlzYTNhVF83M2NGRmI4VjdXblVHOTBR?oc=5",
+        "source": "Google News",
+        "published": "2026-10-28T18:00:00.000Z",
+        "summary": "These Claude Enterprise features let you track AI ROI – what’s new ZDNET"
+      },
+      {
         "title": "Invesco looks to drive advisor performance and growth with Anthropic deal - InvestmentNews",
         "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNVmVJQlNPODVRT0ZkTmJWQTkyZkk1azdjSVNQSF9lamhqeXA5WnpKNHc0TkRwQnhRY0tUZVl0WG4yemNIRF9EWF9udUpTRVMwT0d1TlFoQXo3T1NzMW52MjRSLWVBR3FWSkxfTWFzTEh4UTZPd1U2UGJHaTZINVdQNGgwSy1aMFlibGRmWGxwcDZ2dE5CLWlSai11dGo0ZWpsTWpoVG5Bb3dQR2FjbERSakFXR3lxYTF1emhFOWdGUlBSdjBxeFZkV2FTalc5eHVPQTJz?oc=5",
         "source": "Google News",
         "published": "2026-10-28T17:24:11.000Z",
         "summary": "Invesco looks to drive advisor performance and growth with Anthropic deal InvestmentNews"
+      },
+      {
+        "title": "Anthropic Is Said to Plan UK Share Offering Via RetailBook - Bloomberg.com",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQWjRYLVhlLVlmcUNLMWllM1Fuc1VzdW10djk3eF93aXhMOEpRdFlLTDJGeklZQS1rS2FZcHpXQUJvS1RPMVhsNnZ3Y2tJY3NST2ZJbFVzSjFYUFYwdDlnZnlhTWhaV3BLNGxGMFE3Rk9ZX2JxdEEzQ3VBZGVhQk4wTm1RdzFZZkk5aklHUUlaLVRPbmNPdWMwRkF0SFBFdEZnV2VtSVJzbjh1QlVXNEE?oc=5",
+        "source": "Google News",
+        "published": "2026-10-28T17:24:05.000Z",
+        "summary": "Anthropic Is Said to Plan UK Share Offering Via RetailBook Bloomberg.com"
+      },
+      {
+        "title": "HHS seeks temporary sole-source contract for Anthropic’s AI - Planet Biometrics",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbjYwNjhmSDBsSlhrWmRMclc5bTBfOU5NZDJUMzNQQmVyTGFwZW9vVzJCQ01YdXN3LWxzTzRSVG5OMVVydVpyNVRYLWx6dmh1dmk3TzRsaEJIN3ljc094akxNZ3VxTXZMcGh4bG9xWm5ObU83VE1XNFhmRVFvenlCeG4yLUh1X2o1a0ZwdQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-28T16:52:16.000Z",
+        "summary": "HHS seeks temporary sole-source contract for Anthropic’s AI Planet Biometrics"
       },
       {
         "title": "Anthropic unveils additional Claude tools for lawyers - Reuters",
@@ -177,7 +294,7 @@
         "title": "Claude going public: Anthropic files for historic IPO - BioXconomy",
         "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPbFZMNTNQM2J2NTZQamxTZTlUX2tlTXpVTkFHUFp3UXkyTVpjeXp4X0JKX1BoUHIyYUhXR3VxUXRGcGxaNTEyNlpzanhaekR3emNnNVplcmNtR3lhaFYzRXlmTDVSWTdxOFVxLXB4eGpxMHp1YW9HQk9wT0ZLZkxSc1JtZGljYmZlczBUeFRnc3RCSElC?oc=5",
         "source": "Google News",
-        "published": "2026-10-28T15:40:22.000Z",
+        "published": "2026-10-28T15:43:27.000Z",
         "summary": "Claude going public: Anthropic files for historic IPO BioXconomy"
       },
       {
@@ -195,11 +312,18 @@
         "summary": "Anthropic IPO filing flags legal risks as Claude advisor offering expands InvestmentNews"
       },
       {
-        "title": "HHS seeks temporary sole-source contract for Anthropic’s AI - identityweek.net",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbjYwNjhmSDBsSlhrWmRMclc5bTBfOU5NZDJUMzNQQmVyTGFwZW9vVzJCQ01YdXN3LWxzTzRSVG5OMVVydVpyNVRYLWx6dmh1dmk3TzRsaEJIN3ljc094akxNZ3VxTXZMcGh4bG9xWm5ObU83VE1XNFhmRVFvenlCeG4yLUh1X2o1a0ZwdQ?oc=5",
+        "title": "Anthropic's record IPO faces some big questions - thenational.co.za",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQMTRLdldiYlYtZGRrclZCWUFiU1BYNDgzMU8xQWJxVUlFMHo4QnVycWp4X0tMTENiWEUxcjNxdWFkOVVSRjNqYjEyLVlyNGRZdjV0TUN1RUh1anhTcUx5VnpwTDE0bnlIeURkeng4ZElxQ1dXT0pETlp2cmM2VDlvaEdkOG1Ra05FX1lULVZVcVZleTBu?oc=5",
         "source": "Google News",
-        "published": "2026-10-28T13:32:58.000Z",
-        "summary": "HHS seeks temporary sole-source contract for Anthropic’s AI identityweek.net"
+        "published": "2026-10-28T14:00:00.000Z",
+        "summary": "Anthropic's record IPO faces some big questions thenational.co.za"
+      },
+      {
+        "title": "The Anthropic IPO: A Window Into the Future of AI - ETF Database",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPU3RyNGd3a3plckJyN2pneXB0N215ekdTWlhjdEppOHJqazdmRlpaMGtWRERTV0tIdlpUUnM2Z0NDcE9odzAtdENkWTM0TlR3RXlKNnM5emdLcEhsZHFKbm9ZRGVZaFpLVHN3Y3FRcWxZU0xNMHpPZVpRUEVRMTY0bjZ5amdCQU4xTkcteWpB?oc=5",
+        "source": "Google News",
+        "published": "2026-10-28T13:26:35.000Z",
+        "summary": "The Anthropic IPO: A Window Into the Future of AI ETF Database"
       },
       {
         "title": "AI Constitutions Need Administrative Lawyers - Yale Journal on Regulation",
@@ -207,118 +331,6 @@
         "source": "Google News",
         "published": "2026-10-28T13:05:23.000Z",
         "summary": "AI Constitutions Need Administrative Lawyers Yale Journal on Regulation"
-      },
-      {
-        "title": "How Anthropic is using Claude to fast-track drug development - YourStory.com",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPYlUtNFdEM0Q1VXgzSDZSOTlUeld1blJ6OHpJLVB6TGVUVzdZR3BGN0pwWERXMUlrTlRIOG5XNmJpQkdRc1Mxc0NsMktJREg2TlU4VWFtVkdrQjdQLUFhWUVEb2ZlajhONlFuYTYyTFFvNk51SWNEN21ab2JXVzU5OQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T12:58:59.000Z",
-        "summary": "How Anthropic is using Claude to fast-track drug development YourStory.com"
-      },
-      {
-        "title": "Is Zuckerberg pulling the rug out from under Anthropic? - Investing.com",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPSHhOR29GeVNYSmQzU3BnWDZoQ293M2xnbGNqMm40blFscDZ4U1dobm85d0M5S2pzM1JodDlSMWZ0NkRNMGZCUS1qa3RHZGNzdU9kUHdBbnFmQ1QwdVVwVUZDa2wtRE4tMzhLUVdWSktuelF2WGh2NkQ4SUU4bmRkNTQtTGx3TVhZZkIzelk2d1hCd25xRDROd1JlemRfQVg1SE9LUWpEZnd5cFJsU3FOUw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T12:48:18.000Z",
-        "summary": "Is Zuckerberg pulling the rug out from under Anthropic? Investing.com"
-      },
-      {
-        "title": "Anthropic’s Tensions With Trump Laid Bare Ahead of Landmark IPO",
-        "url": "https://www.bloomberg.com/news/articles/2026-10-28/anthropic-s-tensions-with-trump-laid-bare-ahead-of-landmark-ipo",
-        "source": "Bloomberg",
-        "published": "2026-10-28T12:45:00.000Z",
-        "summary": "Anthropic PBC is cautioning investors that its outspoken advocacy for artificial intelligence safety could make the company the target of government retaliation, highlighting the unusual degree of…"
-      },
-      {
-        "title": "Dayforce brings HR, pay and scheduling data into Anthropic’s Claude - The Next Web",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE0xM2VmYlFOSE05eWpTY2J2Q013NTVnT0MzZmFvQmIzUkpkQVBMTTQ2QnBJelY0YjI5MHJvakF1M0NtMG5BdnFDY084VldNa0ktNUFndzhHUjkzNWRRbWp2ek9FdFMzLV90MTVSQjFyRk5uRUZlblptYWF1WQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T12:04:14.000Z",
-        "summary": "Dayforce brings HR, pay and scheduling data into Anthropic’s Claude The Next Web"
-      },
-      {
-        "title": "Anthropic Expands Government Partnership, Offers 40% Discount on Claude - citybiz",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPYkEteGpMeWJVM2JfT21TWDcxN3pVcUxrc09FMldZNXphNXl4aWtGeUVJUURhWVNRUzNiVG1WZ1ZOc0Q2a1ZKWGhGTVM5aVk3WWlGOE12V0N6U2R0eGJEYW5wZnBMR2R4SG5rY1lDcTJyVGZwQmhUSnVKa2JxclQ1UTRFSk84V0ZFUllmOFZGMDI4SjRYWFU3MXo3SVdxOUlEVThzcm4wdXdQRzBT?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T11:57:55.000Z",
-        "summary": "Anthropic Expands Government Partnership, Offers 40% Discount on Claude citybiz"
-      },
-      {
-        "title": "Anthropic manager says the 'coding interview is dead' — here's his advice for junior developers - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNblo5NXRfeFc1dWFZVks0QmFUbmRVaDd1RVM0ZHNLRTRtTjJma0lhNndpT09lZy1UWEVrbUcydTVDMzh3aGgwTl9mb0xfS0FnV3Jxb3E0enNLdjdHR3pvLVlMTjdHd2ltczZsX053aWt1QUEyVzlTRHJnWDlUc3RORlFpRm1neDVVNEE5WUROU0JhcjBTMUFYQ0RNUDZUSWlfRHc3Mnh1X0owQ3JiMGVF?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T11:56:00.000Z",
-        "summary": "Anthropic manager says the 'coding interview is dead' — here's his advice for junior developers Business Insider"
-      },
-      {
-        "title": "Anthropic signs deal to expand Claude usage in US governments (ANT:Pending) - Seeking Alpha",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNbmtKU3dGdFRoYldvTkF0bUlzd1ZVdjl1ZWdCS3dmN2NiQXQ1WUZxRE1zXzVRbEVOSHJtTnRGS1hjWFkzMldBOTB2S1ZOVkV4YTA3c2FDVU94OG5fUGc3VDhtU21Ea2t5LUlsTGVqa25sQ2dVS2NXdzUtZlFseEZoU2t1ako4a3RnSHF2NkFPR1NOSENsemJJbmdvamxDbFZo?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T11:24:41.000Z",
-        "summary": "Anthropic signs deal to expand Claude usage in US governments (ANT:Pending) Seeking Alpha"
-      },
-      {
-        "title": "Anthropics’s Claude AI Helped Boosting Cancer-Fighting Cells in Lab Tests - WinBuzzer",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPTlh3NGk4bUVRUVNOQ1F5aEc0ZHdfZWU3M2swRUdPSlhpVkRzRFN2dFBWT2U1eTlKWlhfc1JXNnVTSTJiWldKMFhNQkRYVWtYZnZhR2JBaUxSekJOSVZwYmpzak5rd1MxeTJDYnp0a2J2YUt4c00xRGMzejJOeDFYUzluTnR3cll5T2o0TmhnQVRGUkM3M3hna3ZZQWtvaGZoQjVwaE9n?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T10:15:56.000Z",
-        "summary": "Anthropics’s Claude AI Helped Boosting Cancer-Fighting Cells in Lab Tests WinBuzzer"
-      },
-      {
-        "title": "The tech reporter who could become a $28 billion Anthropic billionaire - CTech",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1nRnV6cF9sNWtBR2dFS1RZZFR6bkstdUxoam1pRGFkWGFrVU1qVmFmWk5PN05LVjFzd29zY2l6b2U2bWdMRWhxNEVDRDlxNW5BMVh4Q0NhZVZlQWpLR2lPVDBPS2NYYmc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T10:11:00.000Z",
-        "summary": "The tech reporter who could become a $28 billion Anthropic billionaire CTech"
-      },
-      {
-        "title": "Anthropic Says Claude Helped Generate 35,000 Drug Designs, Cut Drug Development Workloads - marketscreener.com",
-        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOYXJsQm1udW9xVmNhOEtJaHhXWTQzZi1McEh2WTh2YkplY0pOZE5rVmZ1ZmY3NUNxSHNaMzdSZERPLUNlSzhrcGJXZDkyM3B0MjYtZnRITmI3LXRuRXJpZFhNVlpuMU9YdXJMZkJ4c3dSdVdGbU12Q3NYQnBaRTI3TExGdWhkR0tuc0FSTzdOR3BEbU16UHZpR1lZb2JBMzVobE9WN1JOUnk5SDN1QTBBTGJtb3liS29KNlRSeC1LVnp4MnpGWUtBN2pCaGZiZUpLbXNPS1k2ems?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T09:47:03.000Z",
-        "summary": "Anthropic Says Claude Helped Generate 35,000 Drug Designs, Cut Drug Development Workloads marketscreener.com"
-      },
-      {
-        "title": "Anthropic's Claude cut Enveda's drug records' review time by 89% - The Economic Times",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOVG80NU5yQkk3Wkl0Z1RoSHB2LVlyd2Z3dTR3VWQ4RHU5eWRJR3Rydkdmbk1Qdk43cWExeFRKUnFja3lHT3pybjBacE5KLXktNzFGbG9hSlBEbW1BNGdyaE9qMkc1Y3VkSzhZck9kWU1mUmhvbXJWTXZpcTRlZnJqemhNOFoxNmtaU09Da2QwbE1HdTI2X3JmN0FpNHY2RXV3djJoX0NCN1pLMkQ3YXpqcHJFM1FGNTdVcFZYTXRvaHBZazE4bmNmR9IBzgFBVV95cUxObXJIdFpCbmNDa2JBNWZuX0dTSkRncXNlRTJUODlGcWdIWmljZ3pkQUlFOWZVMUU5MDJsSV96UUVjUjVBSnJBQ29TMjhjNzhFT1J2QTBNUjdFWjRpWW54aGJHdmk1Q05yZ0Y4bkRNZ0UtSGkzbHhuc3lMRS1Xb2w2ZHdyRVRxR05CcldQUmg2UUQwUWRhLTc1blNsUldtdTVDeHgtNFIyU1MzcGt2dFBBWlRDSXp2VmNBN1BrWUlSOVlLTUU2NF9zMlMxTmpFZw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T09:28:13.000Z",
-        "summary": "Anthropic's Claude cut Enveda's drug records' review time by 89% The Economic Times"
-      },
-      {
-        "title": "Valued at $2 trillion: Anthropic prepares for largest IPO in history - The Jerusalem Post",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPVy1yazIzczVUekVsaTdaNWxCNGxOdjZ3Y0RzMHAtZFU3RVUyZ3hkX3RsQ3dPZmZucDlTZWFTWk9kU2dfQnJuWW5nU0V5Vk1kcTRDVnZuVHBGMkdoNVNaaE9DZ1F3bG1QVzNFbVNNcnI4SHdSMmRWVFFiS3pvWFU5NFJUcUR4dw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T09:15:00.000Z",
-        "summary": "Valued at $2 trillion: Anthropic prepares for largest IPO in history The Jerusalem Post"
-      },
-      {
-        "title": "Qlik Expands Enterprise AI Access Through Anthropic’s Claude - MyChesCo",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNRGVpVmVXZmZlVFhEeS11aWZMamd0SmoyRW5vSzg4UjE2M0FoS3c4RlFBemd2dndXSDZNSXZrekNGNmNtSnR0RkpxR2VzYjZ6TGM3LWNSVVpwM0V6aHFKSlN3V2J5X1pZeElhdjZOaGtqaG44SzBWOUdmVG1pRURMUG94U3RRbFZiM3hZcjdkVzRpVzh6QklXalBqb0N0a3pzS3I4?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T09:09:30.000Z",
-        "summary": "Qlik Expands Enterprise AI Access Through Anthropic’s Claude MyChesCo"
-      },
-      {
-        "title": "Anthropic Investors Aren’t Just Buying a Chatbot—Here’s How the Company Behind Claude Makes Money - Investopedia",
-        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQR3FOTWhTbXZ6MG1oU3huaUFvUS1VaVVaRFZTelhheklPcEtHbWh3SkZOUVNfc25OTlZDS05fQzAzYzJkd3ZZM2JOZ1NubjcwMWRwZTREekZ5MUU2LUlkRXhJdjQ4MUdySWZvWEFWMTJ0RmN2TWVzZGoyLXlOMFZmX3hZWlhnOTIwYkRkMUc2QnFWVVdfZnNxSjZWZzdxOWFrNUVKNEVKdE5kVk5mQWxWdDBLYmM3NFUzazJYYUpMSGduT2Y2c0ZLWmZfV3p0N3Ruc2pzV01qR1dKdw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T09:00:00.000Z",
-        "summary": "Anthropic Investors Aren’t Just Buying a Chatbot—Here’s How the Company Behind Claude Makes Money Investopedia"
-      },
-      {
-        "title": "Anthropic's Unreleased AI Model Chains Flaws Into Working Chrome, Safari, Windows and Linux Exploits - The Hacker News",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQbzh3WHRfc1NZQVJFS1ZaWURuVmhrV0hhS3d0UEpYeTQ5WE5pYVFLa3RrcWNaTmVmT0ZMaXBZWHE4cERGVmg4OFdRZzVtTnFFWFotNWRhb2hhYTloOXlpV3pSYnlBU1pVQnFfc1J6WE45WUFPSjZkRWZvRm9VTzZOUExn?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T08:15:00.000Z",
-        "summary": "Anthropic's Unreleased AI Model Chains Flaws Into Working Chrome, Safari, Windows and Linux Exploits The Hacker News"
-      },
-      {
-        "title": "Anthropic sued for allegedly training Claude on Elvis Presley's music - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1aM0VCcEtCcW8wb2VSYU8zM2ducWdqTGtXbTVSQlVFenFITHdISHUzVllRRXdSNGtBcHVWcjYyd1VJTk9BcWRjeVdCYVFkVkJtWlE4cEp4eHMwUE4zakZGUlE4QnVHbUpnbVRUSTNYU0QzQkxiamRkdlB2OWsxVlU?oc=5",
-        "source": "Google News",
-        "published": "2026-10-28T08:03:45.000Z",
-        "summary": "Anthropic sued for allegedly training Claude on Elvis Presley's music Mashable"
       },
       {
         "title": "I Tested China's New Model vs Claude Opus 5.5 (Kimi K3.1)",
@@ -477,18 +489,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "HOLY SH*T.. Claude just built me AOT x Minecraft video game",
-        "url": "https://www.youtube.com/watch?v=LD0NxqDcDiY",
-        "source": "Nick Saraev",
-        "channel": "Nick Saraev",
-        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
-        "video_id": "LD0NxqDcDiY",
-        "thumbnail": "https://i.ytimg.com/vi/LD0NxqDcDiY/hqdefault.jpg",
-        "published": "2026-10-09T15:02:34.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
         "title": "Claude Cowork has a MASSIVE Change",
         "url": "https://www.youtube.com/watch?v=tSwd-Fxgq5c",
         "source": "Ryan & Matt Data Science",
@@ -509,18 +509,6 @@
         "video_id": "BWcp3gdlMQc",
         "thumbnail": "https://i.ytimg.com/vi/BWcp3gdlMQc/hqdefault.jpg",
         "published": "2026-09-30T14:00:29.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Claude Opus 5.5 is the greatest AI model ever released",
-        "url": "https://www.youtube.com/watch?v=mesHJAGiaUg",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "mesHJAGiaUg",
-        "thumbnail": "https://i.ytimg.com/vi/mesHJAGiaUg/hqdefault.jpg",
-        "published": "2026-09-23T22:15:44.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -590,8 +578,8 @@
         "title": "Elevated errors affecting the Google Calendar connector",
         "url": "https://status.claude.com/incidents/phg1y2yh07n2",
         "source": "Claude Status",
-        "published": "2026-10-28T16:19:10.000Z",
-        "summary": "Oct 28 , 16:19 UTC Investigating - We are investigating elevated errors affecting the Google Calendar connector. Some requests to list or search calendar events have been failing since October 26.…"
+        "published": "2026-10-28T20:05:18.000Z",
+        "summary": "Oct 28 , 20:05 UTC Resolved - The issue affecting the Google Calendar connector on claude.ai, Claude Code, and Claude Cowork has been resolved. Impact occurred from 04:07 PT / 11:07 UTC on October…"
       },
       {
         "title": "Elevated errors affecting the Gmail connector",
@@ -672,6 +660,17 @@
       }
     ],
     "youtube": [
+      {
+        "title": "We need to talk about Anthropic’s IPO",
+        "url": "https://www.youtube.com/watch?v=Lxkb4gd041I",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "Lxkb4gd041I",
+        "thumbnail": "https://i.ytimg.com/vi/Lxkb4gd041I/hqdefault.jpg",
+        "published": "2026-10-28T18:01:27.000Z",
+        "summary": ""
+      },
       {
         "title": "I Tested China's New Model vs Claude Opus 5.5 (Kimi K3.1)",
         "url": "https://www.youtube.com/watch?v=OBzWl3Bw1JY",
@@ -871,17 +870,6 @@
         "summary": ""
       },
       {
-        "title": "HOLY SH*T.. Claude just built me AOT x Minecraft video game",
-        "url": "https://www.youtube.com/watch?v=LD0NxqDcDiY",
-        "source": "Nick Saraev",
-        "channel": "Nick Saraev",
-        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
-        "video_id": "LD0NxqDcDiY",
-        "thumbnail": "https://i.ytimg.com/vi/LD0NxqDcDiY/hqdefault.jpg",
-        "published": "2026-10-09T15:02:34.000Z",
-        "summary": ""
-      },
-      {
         "title": "Build a Lead Generation Website with Claude! (Claude Tutorial)",
         "url": "https://www.youtube.com/watch?v=qV6Oo_ZlC2E",
         "source": "Productive Dude",
@@ -923,17 +911,6 @@
         "video_id": "BWcp3gdlMQc",
         "thumbnail": "https://i.ytimg.com/vi/BWcp3gdlMQc/hqdefault.jpg",
         "published": "2026-09-30T14:00:29.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 5.5 is the greatest AI model ever released",
-        "url": "https://www.youtube.com/watch?v=mesHJAGiaUg",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "mesHJAGiaUg",
-        "thumbnail": "https://i.ytimg.com/vi/mesHJAGiaUg/hqdefault.jpg",
-        "published": "2026-09-23T22:15:44.000Z",
         "summary": ""
       },
       {
@@ -1000,6 +977,17 @@
         "video_id": "UxJZrCFzTHY",
         "thumbnail": "https://i.ytimg.com/vi/UxJZrCFzTHY/hqdefault.jpg",
         "published": "2026-08-28T00:40:16.000Z",
+        "summary": ""
+      },
+      {
+        "title": "We're building a way for AI models to connect to any device and run real experiments.",
+        "url": "https://www.youtube.com/shorts/djVUCj5i4sw",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "djVUCj5i4sw",
+        "thumbnail": "https://i.ytimg.com/vi/djVUCj5i4sw/hqdefault.jpg",
+        "published": "2026-08-27T19:42:35.000Z",
         "summary": ""
       }
     ],
@@ -1257,6 +1245,18 @@
         "video_id": "ROF2Nv_KjOM",
         "thumbnail": "https://i.ytimg.com/vi/ROF2Nv_KjOM/hqdefault.jpg",
         "published": "2026-09-01T18:02:31.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
+        "title": "We're building a way for AI models to connect to any device and run real experiments.",
+        "url": "https://www.youtube.com/shorts/djVUCj5i4sw",
+        "source": "Anthropic",
+        "channel": "Anthropic",
+        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
+        "video_id": "djVUCj5i4sw",
+        "thumbnail": "https://i.ytimg.com/vi/djVUCj5i4sw/hqdefault.jpg",
+        "published": "2026-08-27T19:42:35.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1663,6 +1663,27 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.2.0",
+        "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.2.0",
+        "source": "MCP Servers",
+        "published": "2026-10-28T20:57:13.000Z",
+        "summary": "Security: Node.js runtime and CA certificate updates (October 2026) On October 20, 2026, eMudhra disclosed that the private keys for eight of its intermediate CA certificates could be recovered from the public…"
+      },
+      {
+        "title": "2.13.0",
+        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.13.0",
+        "source": "MCP Inspector",
+        "published": "2026-10-28T19:30:54.000Z",
+        "summary": "Security: Node.js runtime advisories (October 2026) On October 20, 2026, eMudhra disclosed that the private keys for eight of its intermediate CA certificates could be recovered from the public certificates. On October…"
+      },
+      {
+        "title": "We need to talk about Anthropic’s IPO",
+        "url": "https://www.youtube.com/watch?v=Lxkb4gd041I",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-10-28T18:01:27.000Z",
+        "summary": ""
+      },
+      {
         "title": "I Tested China's New Model vs Claude Opus 5.5 (Kimi K3.1)",
         "url": "https://www.youtube.com/watch?v=OBzWl3Bw1JY",
         "source": "YouTube · Nick Saraev",
@@ -1978,13 +1999,6 @@
         "summary": ""
       },
       {
-        "title": "HOLY SH*T.. Claude just built me AOT x Minecraft video game",
-        "url": "https://www.youtube.com/watch?v=LD0NxqDcDiY",
-        "source": "YouTube · Nick Saraev",
-        "published": "2026-10-09T15:02:34.000Z",
-        "summary": ""
-      },
-      {
         "title": "You can now let a Claude Managed Agents agent use dynamic workflows , in beta with the managed-agents-2026-04-01 beta…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#october-9-2026",
         "source": "Claude API Release Notes",
@@ -2083,31 +2097,10 @@
         "summary": "Dreams (research preview) now supports Claude Opus 5.5, Claude Fable 5.1, and Claude Sonnet 5.5. See Supported models ."
       },
       {
-        "title": "2.9.0",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.9.0",
-        "source": "MCP Inspector",
-        "published": "2026-09-30T22:23:56.000Z",
-        "summary": "What's Changed docs(pr-flow): make an exhaustive Copilot review loop the step after opening a PR by @cliffhall in #2466 docs(pr-flow): assign the issue to yourself when work starts by @cliffhall in #2468 fix(skills):…"
-      },
-      {
-        "title": "2.8.0",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.8.0",
-        "source": "MCP Inspector",
-        "published": "2026-09-30T21:38:59.000Z",
-        "summary": "What's Changed fix(web): only DANGEROUSLY_OMIT_AUTH=true/1 disables /api auth by @cliffhall in #2390 fix: stamp Mcp-Method on modern-era notification POSTs by @cliffhall in #2392 fix: detach the OIDC compat's…"
-      },
-      {
         "title": "Anthropic 5.5 Models are Officially HERE & It Changes EVERYTHING",
         "url": "https://www.youtube.com/watch?v=BWcp3gdlMQc",
         "source": "YouTube · Ryan & Matt Data Science",
         "published": "2026-09-30T14:00:29.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Opus 5.5 is the greatest AI model ever released",
-        "url": "https://www.youtube.com/watch?v=mesHJAGiaUg",
-        "source": "YouTube · Alex Finn",
-        "published": "2026-09-23T22:15:44.000Z",
         "summary": ""
       },
       {
@@ -2150,6 +2143,13 @@
         "url": "https://www.youtube.com/watch?v=UxJZrCFzTHY",
         "source": "YouTube · Anthropic",
         "published": "2026-08-28T00:40:16.000Z",
+        "summary": ""
+      },
+      {
+        "title": "We're building a way for AI models to connect to any device and run real experiments.",
+        "url": "https://www.youtube.com/shorts/djVUCj5i4sw",
+        "source": "YouTube · Anthropic",
+        "published": "2026-08-27T19:42:35.000Z",
         "summary": ""
       }
     ]
