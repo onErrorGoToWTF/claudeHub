@@ -1,20 +1,27 @@
 {
-  "generated_at": "2026-10-30T14:38:25.518Z",
+  "generated_at": "2026-10-30T20:13:53.117Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Managed Agents",
+        "url": "https://www.anthropic.com/research/managed-agents",
+        "source": "Anthropic Research",
+        "published": "2026-10-30T15:51:07.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Discovering Vulnerabilities with Claude",
+        "url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
+        "source": "Anthropic Research",
+        "published": "2026-10-30T15:24:16.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Code Best Practices",
         "url": "https://www.anthropic.com/research/claude-code-best-practices",
         "source": "Anthropic Research",
         "published": "2026-10-29T17:35:57.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Managed Agents",
-        "url": "https://www.anthropic.com/research/managed-agents",
-        "source": "Anthropic Research",
-        "published": "2026-10-29T17:33:31.695Z",
         "summary": ""
       },
       {
@@ -36,13 +43,6 @@
         "url": "https://www.anthropic.com/research/early-progress-drug-development",
         "source": "Anthropic Research",
         "published": "2026-10-28T17:16:58.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Discovering Vulnerabilities with Claude",
-        "url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
-        "source": "Anthropic Research",
-        "published": "2026-10-28T15:31:36.000Z",
         "summary": ""
       },
       {
@@ -146,6 +146,158 @@
     ],
     "news": [
       {
+        "title": "Anthropic and Carahsoft Expand Access to Claude Across U.S. Government Through GSA OneGov Agreement - The Manila Times",
+        "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQaHU0dFprLUFzVVh2OC1JZDBtQW5Od0M5YzdCR0hlX0JjbU4teFNqN3cyd2lXR1huUFgyOFZlOUxaUkx5WlJPVG56TUZWckVhNndYQmVhWFlNY0Q5RTR1MXViV3dLUkJQOWFrNWFxdTJXMkRWT3JVbXhPZk4yT2pnaVZsdHZVXzlXNWMtVjFidmM0UnkwUVpPZFFaeTBqU0ZkRVViWkNKRDFyT3hja1RycGJnN1VfME9ZQ1cwQWJYT21qWnB3VFMzR29HcFdLSUVNakJadUxVS0o4VTNNcUJIT2pEdEdGWGtjWExDWnloSUN4RHhJSF9XZ24tT2Y5TjZ20gGGAkFVX3lxTE15eUtuODF6Wm1Cc3l1VmFOc2NrcDljNWQxZk0yOHBqelRRVHRwT25oUk5KQ0NzQlhycGJVUHB2TWV1aUJMei1qUDhIOTZ2VmhMQnpOYmNCOGdTcm9SbWxfQk9ZcWtQVHVzazdZY2tCRzdfV0ZrODFVUWZ4ZjRtLTM4UEFwTTlhRnVWVVZrWDVnU3Z4ZkNVQk5pSXdrUmJRUjlMcXVaS2RHemNFOEZIM2hoaEEwU2FndFNIQmZPUTZEVlBqNmRMWnZDbGtsa2k3UGZrQkF3MnhrcDNIZnc3NHVJX0pHUENMbUlldGQybGFvcEdrTUxwMUpkWWxwS252Y2RKVDBzNXc?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T19:47:54.000Z",
+        "summary": "Anthropic and Carahsoft Expand Access to Claude Across U.S. Government Through GSA OneGov Agreement The Manila Times"
+      },
+      {
+        "title": "Cursor Confirms Anthropic Claude Code Extension Compromised - BankInfoSecurity",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxObjJqYTE0ZGVsdGk1cklsaDg2R2wxa2pvU3BtdnEzSkIxNFNqRGgzcVZrOGVBd09vUW1ubEdMQWFURUNPU3dyRjJ4RlhhbWx5Vkp5R2thMkhCVmRnQkZvZTNyTG1hZkFYN1lkQWNlU0lMRlpHTkJSZ2c0enUxQUFCZVhHWlUzZElsOFZFWS1SMUYzRXhmcndnemg1ZXRtbERNdVE?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T19:11:09.000Z",
+        "summary": "Cursor Confirms Anthropic Claude Code Extension Compromised BankInfoSecurity"
+      },
+      {
+        "title": "Anthropic's Claude AI found a critical Linux flaw that could give hackers root access - How-To Geek",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOYUM5ajlQY185WllyenBmQ012U2RHbWdmQUtHQ25aekJiQ3VUX0xKcjd4alBuMUxwUk9IdkJ5WGRsTXhidjNJaHI2c0gxZlk3anR1TVpIaUhMUnpGQjlQRWs3Wm5jZi0wUTg0OW9qbGkzN1l4TDRTVDQxTWNOODZTdFI4TGY5bVBNcDk4MWpmbjhDRGV5Qm9SV194NHFEdnE5a2ZfZDFSd3FaNE5MSjdyRA?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T18:55:22.000Z",
+        "summary": "Anthropic's Claude AI found a critical Linux flaw that could give hackers root access How-To Geek"
+      },
+      {
+        "title": "AI startup founded by ex-DOGE staffers gets inside Anthropic. Here’s how - Cleveland.com",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUjFqckpVRnpFTnplekhhSk05N0Z0eFAxTG1WR1VWT0VOWHpmZFJJa2NIRjJUVjRGMmg5WkFiX0NDdzVCT2x4MHYxVTBxN1NGMnJxSWNoQ3hRVVBxbnhsYUFPbk1UTmJtSG5TWU1Pc3Z0ZHVIYURlMEtBUzBNS0hXUWFhMW9Sc3hVOEVkU1RCRFN1Zkh5RE96S25WWTAxb2cyMkMzbzRLcDI4RmNubl9RMlhvOFbSAcgBQVVfeXFMT3hkYWtOeTRpbUdhazNqQ2JxaU9UQUkwbHItNGdtMkpaX2U1NzcwVjZIOW5iSzVLaVJzZnAxNUlicjc0WkJsbnB0cVFTcktwR3Y1RWVydnpBTGNxV1hQWkdSNjVTVWdZcUd4NkJfR0E2R2xLbmRLWDlSVzA1SXltZzdmVko0M0h0ckVlaGtRTUtwaXhXamQ1OEJqS3pkRHFOYkFzUm1OT3A5d3p1V0NTMnV0eUZNTF9qeFFrSEVBTWFqYWxqSlBZSDQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T18:38:00.000Z",
+        "summary": "AI startup founded by ex-DOGE staffers gets inside Anthropic. Here’s how Cleveland.com"
+      },
+      {
+        "title": "Anthropic in talks to lease massive data centre campus outside Edmonton, sources say - The Globe and Mail",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPR001NWhYTlJTVTN3SjNobHN4bFF6eHkyMzJubWRjWHpjeTc2d29TV25FUWdVekh0VzVCTmJFM0g4MDFfM1JKYVN1NjJJZ1JXbnpGcXNmV09zTmR2WGk5dXNBOVNTMGFFSXVZS1NBcE0xWlJtYzhIX0psZXB6YjhsclpxUm9wTWdVNlU2Wm5odGZBQ3BXdk1XdTkwckVBaEU3QzNValRTd2ljY05OSnZIb1poN21ELWpsR1NIaWo4MzQ3M1Vu?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T18:37:06.000Z",
+        "summary": "Anthropic in talks to lease massive data centre campus outside Edmonton, sources say The Globe and Mail"
+      },
+      {
+        "title": "Advisors Say Take It Slow on Anthropic IPO Hype - Wealth Management",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxObWxmaDYzUXVxQmFvRW9PRmJPQ3VpNmJYaWJTLTBueDBpdklpaU5JS1hmQ0Zxdi00SGF4LU9FaVpHbmh3bkpNNzNGLWF3ZjBSZFREUGZaeE44T0NuWmF2S3R4SzE4emVPSzV5Y1lOamxBb1dNaTJoYXhUbHAwV1BueDZFalNBSDZOekNENThoZ0I5bi1ZYkJGd1RFblpVRkZLc0E?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T17:36:46.000Z",
+        "summary": "Advisors Say Take It Slow on Anthropic IPO Hype Wealth Management"
+      },
+      {
+        "title": "Anthropic Says Claude Built Five Exploit Chains Across Major Software - eWeek",
+        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBkNTBGTUJFVU1YeGlGMW9yZUJ2d1pncGI4bkxvM0pUTExzZGJoaWRhT2NhdUZZZllycm1PODhUOXBvQTlyUTl0MUZPVklfU0RBRzBBZ3JPelItN3RGRzV2UzQwOThDVm00N0k0T1I3a2Q1UQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T17:30:17.000Z",
+        "summary": "Anthropic Says Claude Built Five Exploit Chains Across Major Software eWeek"
+      },
+      {
+        "title": "Anthropic may not secure investment-grade rating after IPO, Blackstone says",
+        "url": "https://www.ft.com/content/59383c7f-8d82-493f-bf01-d2e862a1018f",
+        "source": "HN · 149↑",
+        "hn_id": "50307219",
+        "published": "2026-10-30T17:27:25.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Why Anthropic’s AI Edge Appeals to Long-Term Investors",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-30/why-anthropic-s-ai-edge-appeals-to-long-term-investors-video",
+        "source": "Bloomberg",
+        "published": "2026-10-30T17:24:32.000Z",
+        "summary": "Anthropic’s technical expertise, innovation and efficient use of compute set it apart in the AI landscape, says Peter Singlehurst, head of the Private Companies Team at Baillie Gifford. Singlehurst…"
+      },
+      {
+        "title": "Claude's new smart reports tell bosses when workers are 'off-topic' - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNSHNYSEJlZEQtclhFUk1CZjRKWkFhVk1SM1pmcEJkajl5LWgtSHVfaDNkWUtKazRRUUh2YjZ1UVB0M1owMEdOdnlLc0FOdmdDbWdQanZqUjdELS1lVHFHMktfcHVXbXRaZmUtcXdaTncyTlBrdU5MVEN3NURjR1c4Mg?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T17:23:28.000Z",
+        "summary": "Claude's new smart reports tell bosses when workers are 'off-topic' Mashable"
+      },
+      {
+        "title": "Anthropic may not secure investment-grade rating after IPO, Blackstone tells investors - Financial Times",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPcjg3X1I0NkVyZEpOZEh0cmZLdFpJYVFOOTJwdm9nNTBJSGJwcEF6T25KRFBBeDBpLWZtOWNKMjdKeHhxZF9zOUVyUmVjT2pSQm01YmgwS0dnZWFXa3ZVc2tfSW5aUE5sSFJtc2lUVUlQUjROZjRxU0M3MFBKVWg1alAyZUU?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T16:45:48.000Z",
+        "summary": "Anthropic may not secure investment-grade rating after IPO, Blackstone tells investors Financial Times"
+      },
+      {
+        "title": "Anthropic: That Claude Code extension compromise… couldn't be us - The Register",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOV2FaNjdkR0JjU3Itc3RRakQ1UkdSLXdnZG1KVUhhSFdZRERLU2QwVFliWmNMXzdhMHJBMGZKWHlURWJNZ0MwTnA3YnI3VjV2UWNwYmJJYTdCMUIwYUhrbWdwaDMxNDlaMms3eVNfYWJVb3dJbzAtLWFRaE5GQ2JqQ0JxLWJzcEd2Z3FMdklvWWg3aXhka2V5U01ZeEE0MEhTVFRsRkphOFV5VjdGdnNFenR2OEpLMnlMcEROVA?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T16:27:00.000Z",
+        "summary": "Anthropic: That Claude Code extension compromise… couldn't be us The Register"
+      },
+      {
+        "title": "Malicious Claude Code extension in Cursor installs SSH backdoor - Techzine Global",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOckRlQ1RiS0VLX2xXSVZYSlBpVTZrbzdUSEpCTnFfZXRzdWhxM1JwTXkzZ1d5eVBKcERFY2pSSjVHc0VDT1UtUC1pNU92R2ZaZjlET2lodjlfLVRFMmFfb2pMUW9SVzJ0a2tGT2VzdUZjTUwxSXlEalVMeE5oMm5SR0xtWUNocVFxZmo3aUFwSU4ycEl6X0NJZXFJV25jX0lPMVFQZi1Cb19YMzVjWEE?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T16:26:55.000Z",
+        "summary": "Malicious Claude Code extension in Cursor installs SSH backdoor Techzine Global"
+      },
+      {
+        "title": "Anthropic's S1 | Google's AI Problem | The Rundown",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-30/anthropic-s-s1-google-s-ai-problem-the-rundown-video",
+        "source": "Bloomberg",
+        "published": "2026-10-30T16:14:17.000Z",
+        "summary": "We finally got the S1 filing from Anthropic and Google had a pretty bad week. Ed Ludlow has \"The Rundown\" from Bloomberg Tech. (Source: Bloomberg)"
+      },
+      {
+        "title": "Stop Letting Claude Review Its Own Code",
+        "url": "https://www.youtube.com/shorts/Frg36pG_eYg",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "Frg36pG_eYg",
+        "thumbnail": "https://i.ytimg.com/vi/Frg36pG_eYg/hqdefault.jpg",
+        "published": "2026-10-30T15:00:26.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Never Let Claude Code Merge Without These Checks",
+        "url": "https://www.youtube.com/shorts/DTEDvbmTZ1U",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "DTEDvbmTZ1U",
+        "thumbnail": "https://i.ytimg.com/vi/DTEDvbmTZ1U/hqdefault.jpg",
+        "published": "2026-10-30T15:00:17.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "AI Monolith Anthropic Supports New Commissions at Seoul’s Centre Pompidou - Ocula",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZTF6NFVSS2hNbG9KWmdjWE9mVjROZ3gyM0lYZEQ0WWY5cC1hdUl2RHpjcnBFVU9SVjkwNnpESFRJWkY5VmdYUDJGb2tmTGROSjBDTGh3YVVFR0l2VDFMd2w1RmhpcWhkOF8tWWNUYkJkRlZFbkNrMnJqSHJiQUYyT0d3dW5zM3RuQThB?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T14:54:37.000Z",
+        "summary": "AI Monolith Anthropic Supports New Commissions at Seoul’s Centre Pompidou Ocula"
+      },
+      {
+        "title": "Malicious Claude Code extension on Cursor planted SSH backdoors - BleepingComputer",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVkNudmY1OHJOWFJ0b1lLZFhWS0RGOGI0LTlEclVpcWFuNTBtbUY4Y3J6dWs5eWpsUkNWSkRLQjZ6Tk92LVJwdTlXVTJjMzF3NVlyWE1Kb3czTmdiR2ZtZUFJcVZIQUk0REVZX3A2ZUo5ZUpiYm9sQ2JOZFZBYkFNcjVFWWNfcXI4OHhQRUNzbmpyLVlxR3RlcmNWZXdTMEdLRDhta1JKc04tZ3RJMDJ3Sw?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T14:36:54.000Z",
+        "summary": "Malicious Claude Code extension on Cursor planted SSH backdoors BleepingComputer"
+      },
+      {
+        "title": "Malicious Claude Code extension distributed through Cursor marketplace - Sophos",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQWV5czdyUDJ4VEtJS1B2aGs4cHBzT1RyNEpXZGhWdGE4RGl3Sm9zX2Myem9SeDJBbS12S2xYX0V6ZWNlZWp4R1A1UGNSc21QbDY5TmJjRkN5UE9CdUtvRkpnRTQ5RGdtUzhXeTRuSXpHR01FOGIwUTNwM2pJQlRLWWdEZThoR05wRlhzMGROMWp1cEdnMkk0T21qaEZxLWNhZFZGeUxUVQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T14:31:27.000Z",
+        "summary": "Malicious Claude Code extension distributed through Cursor marketplace Sophos"
+      },
+      {
+        "title": "Anthropic Cracking Down on Video Game Rewrites",
+        "url": "https://twitter.com/chasmmmmmmmmmmm/status/2116062991686721968",
+        "source": "HN · 88↑",
+        "hn_id": "50304358",
+        "published": "2026-10-30T14:22:52.000Z",
+        "summary": ""
+      },
+      {
         "title": "Anthropic’s historic IPO; Akeso’s big clinical showing - Pharma Voice",
         "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQMGFSQVBQNTNTTFdmMWtDdDF6R1YxMUNrQUNlV0ltUUFWRkJwUktKcVBWTDNRblhmYlR1Y3RGUnh2bzdxNEd1RFU0OENRZlZ0Z2hfRWhONWN3Nlp3YUhVVE9yZUJkMmdDN1hJQ2o2TkwzOEpsNXdmX1hvWWt6OGhqTFNTMUtiNUdXTVg1amJRaHk?oc=5",
         "source": "Google News",
@@ -160,11 +312,32 @@
         "summary": "tkxel Named Select Partner by Both Anthropic and OpenAI AiThority"
       },
       {
-        "title": "Anthropic manager drops coding interviews after realizing Claude is better at them than most applicants - TechSpot",
+        "title": "Anthropic manager stops coding interviews because Claude beats most candidates - TechSpot",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOU1qcDBtWXFCaXU3SFA5a0JyQU1seDVlQ3Ezd0VWYjJaNWRqX2V3ZWRUNG40MjNrTFFRUHo1aV9CN2VlNVlUdG42QTRvYVFmVVI5SE5xaWt4OGxwYnJ4WnhWZEEyWnF1NWlQWnVadjV6WUwzVU5GMzMyZ0Z0ajN1dF9wd2ZkMGNxYzVKWTZqVmk1T3BwOTFRVWdrYmhRVEtzY0YzeDdSMy16UQ?oc=5",
         "source": "Google News",
         "published": "2026-10-30T13:41:00.000Z",
-        "summary": "Anthropic manager drops coding interviews after realizing Claude is better at them than most applicants TechSpot"
+        "summary": "Anthropic manager stops coding interviews because Claude beats most candidates TechSpot"
+      },
+      {
+        "title": "Q&A: Anthropic's drug R&D chief talks catching Prof. Oak, the limits of Claude's taste and cures vs. QALYs - Endpoints News",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNSGNkS09TbVBOUjNhSDB3VWRXRDFrMDlQZy1tQ1VBWWZsM1F2dldtVV9YQVJ2Nnl0aXNjMHhCQ3VvZjFLTnNxTVA4S2pHT1VtVjNObllLc1hsNmliVkliYk5DX2tHTk5mNmlNSDczTVhlMGc3MEdRaHRrXzdjRDkwWEZxWnBHdW9uMlFZSA?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T13:00:00.000Z",
+        "summary": "Q&A: Anthropic's drug R&D chief talks catching Prof. Oak, the limits of Claude's taste and cures vs. QALYs Endpoints News"
+      },
+      {
+        "title": "Anthropic AI model finds Linux kernel bug that leads to remote root access - CSO Online",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNV0I1UVQxSWpUXzlZWGNaZ19IZEEweHYzQUdhNUhBdENhUWRsNGdBcmI3NlFGbmI0N2hEU2toOU50ZEZ0aTBwN1hvdEdqX3F1dFFJbTJZUUFDRzBESjBwamJ2SzZQVDVrZUt6SXRXSjZqZUJvRUc4c1lzamFTQXVIdTQxbGlRWWozLUVFMjVPM2dBYW9URC1kbTdGYjBLSDRrMENTV3NuQkZCNUxWSTFhdDRoQlRVRzZmOGZodTFn?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T12:29:06.000Z",
+        "summary": "Anthropic AI model finds Linux kernel bug that leads to remote root access CSO Online"
+      },
+      {
+        "title": "Claude can now flag your chats to Anthropic if it detects indecent behavior - The Indian Panorama",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMDJRQTJNYnViVldfRFpmQXNLMmRNYl84NW9feTFTekxpbmFTNl9XUF9QZUxCdlhlaGpMU1V3MWNuSXBJcEgzY2pUSURDbGhFTW9SRUc5Sm1kSjNQUzlueFM4aTh0bDVnX2JSRW9XaE1TUHp1RHVQWFdHYXdLN3pLM0Job3J5UndxU1kyY0o3M1BxZkNyX05rb2dkSFBzZVVUSTVlSVRJYXFHZjBTT2Z3SQ?oc=5",
+        "source": "Google News",
+        "published": "2026-10-30T12:15:38.000Z",
+        "summary": "Claude can now flag your chats to Anthropic if it detects indecent behavior The Indian Panorama"
       },
       {
         "title": "Experts follow their AI agent 86% of the time and rarely say so - Pasquale Pillitteri",
@@ -172,156 +345,6 @@
         "source": "Google News",
         "published": "2026-10-30T11:41:20.000Z",
         "summary": "Experts follow their AI agent 86% of the time and rarely say so Pasquale Pillitteri"
-      },
-      {
-        "title": "Anthropic president Daniela Amodei did not agree with Sam Altman signing deal with Pentagon just hours af - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMigANBVV95cUxQSktoUFdHSjdXbUNUUW95Q3hjbWwwVzRtSnZWX1lqbThuNEYzWS1lNGhhVkxrUGZvR3k4MVo3Um9ob2Yzb2RjYzBRSl9ob3JudktUU0M3MnoyYi1WUjNnalhXaXpyTXdtNnpYdG9Ma0pHX09xNUhaWHJhcE81UnhCSEIxSDZSVGxzVktBNXRfdzlPVkpYS1hpdFdjbnZnRVJSc01wREZMbmw0UVVQbzlmZGxvM3B4ektOR2NIZmNHZzNQYklTSGZDMkN1VkNid0ZnYmJGYzRFbWdXUXhkS2xMRzJIaVNZaVJMLUJueVZUR2dBZlBpb2dTOER1Y3dUTGcxcTJkN1BTcjNvci1ZN282VWZ6QkhhazhPNlFrQ1E5V2FqRXN5T25ZaGgyOG1CUjkxa3ZLaElKMHVocnllQW05MUNzcmR0MUZPQlNQVW5DdnZNSE96R25lbGltSTYwc0hOZ09BclY2YnJONzh1SFF1RXBYTzB0cDVzNURwUDdQUHHSAYYDQVVfeXFMTzRQUVRZNkFsODlROVJPXzBsRWN0SkhKUDFCWnp0dmJjOXFhMVlWZDJjaGJUWHdKWGhXMGNTclZET1VSZkNjT2Z5SU5pZ1B4SW5Bb3BsRllaMFFQbDRkUVBOaVRuOERxbno3cUFVZXNOc1RKMFBrRXN6SGpQeHBsY2RYbDVXY1pFWmlEaG4yQTB1eTM4NGlsTGVHdFE5a0VDeWtwSC1rdGdYMFFmaVl4TTM4U3FRUTc5X0tqU1FzSUFiYVRRX0Y1UzAtdzJZZmcxUW82SHpYcVZfRUJ0eDRPNk81aDMwVEU1cnl1NlR2YjA4UW8wNEFXZlV4UjJvOTVGak1ET3N2NV8wOG1EUFZQbzBlREpJY1JEbXFzcFlXTkxZeVRkcEpWVjBEcTJ0akx4MTBWczBaVnBlVVg1UUVJY2JSQVZYZVNBN2lpNUZkSExEMXIwbjZQUVZsXzRqMHRlakxCODZOdzdLZWhKck9YN3Q1ZVV3U0FkTWQ1UWhPM2d4N1ZEWFJ3?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T11:40:00.000Z",
-        "summary": "Anthropic president Daniela Amodei did not agree with Sam Altman signing deal with Pentagon just hours af The Times of India"
-      },
-      {
-        "title": "Cursor: 5,000 Users Hit by Tampered Claude Code [2026] - https://tech-insider.org/",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNdVA4YXJPS0JJMXRZSUFBTTc4Z2JwWGpaX2EtQ2c3VjJqYjNLVWhwcXJWb3NhRFFyX2NCWG12VzhwNGlNX1NwVmh3MUczbkJCQms1a0Z4OFgzek5PTll4ajRJS0Npc2hEdmtsNEFBSnRyTEZDaFd6QWdqTnBKa2FKYzRobGtwdw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T11:37:39.000Z",
-        "summary": "Cursor: 5,000 Users Hit by Tampered Claude Code [2026] https://tech-insider.org/"
-      },
-      {
-        "title": "Tampered Claude Code Extension: 5,000 Cursor Users [2026] - shattered.io",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOdnVVUDhWYTZ2WjgtVmZpMzhaYzlWcGpXemVHaFpTMWdnaGxvU3lEQW96VnNhb2Q1UjlBZmpPcmNxUlpMdVNncFA0RC1mLTFNRDktYTlrNGlMRHFDLVNwTnMtbWhHMk10TjlxaHAxTzRkVmU3NW5vT1d0eUpuWWJQYg?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T11:36:09.000Z",
-        "summary": "Tampered Claude Code Extension: 5,000 Cursor Users [2026] shattered.io"
-      },
-      {
-        "title": "Cursor Says Tampered Claude Code Extension Reached Up to 5,000 Users - Technology Org",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOd0RoZEdVX05GUER3ZV9kSkUxcVVQblZobTh0ZmdLNnlHTFhMdmpYenN6dER2Qy1IeWpNYUhSUlBuREd3bC1ZZUlRdTRTMmtjdEJVYkpnWndjOGNYQmdGWmw2dVJXUmFHeTRRd0oxZUNqMFR6SnZiNHBjX2JlUzgzWHlHYUxNcjZwblNTa0J2bzU?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T11:25:00.000Z",
-        "summary": "Cursor Says Tampered Claude Code Extension Reached Up to 5,000 Users Technology Org"
-      },
-      {
-        "title": "Claude Code extension poisoned with persistent SSH backdoor - Help Net Security",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOVnQ4Ylo3R2N1ekJRbGFaYko3RF9FN2hsdzlncVA1U1Y1TWxLcTdnUEhyR3NYMmtYaUJYRXBsSlQ0bzZKX3ZVTEdkaFc0eWZYbVFLVXZVbnNxcHROU3NHQkhGQWRHNGc0MnNNaXo5VnktTEZILU9PUTltS0liN2lVUUdaWEU?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T11:15:26.000Z",
-        "summary": "Claude Code extension poisoned with persistent SSH backdoor Help Net Security"
-      },
-      {
-        "title": "Backdoors in official Claude Code extensions",
-        "url": "https://cyberplace.social/@GossiTheDog/117528831681803563",
-        "source": "HN · 637↑",
-        "hn_id": "50302334",
-        "published": "2026-10-30T11:05:53.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Weaponized Claude Code Extension Gives Hackers Persistent Remote Access to Developer Systems - CyberSecurityNews",
-        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5PeVlzdldiSmVTV0g5cUFZYUZNUmYwMjVBRjlUUWpwalBfbWFtVHhYM1dQT3pTU1BnVE5FWi1ac0hnWTFpQl9EZExWbkFIa3ZFWmxaQTRjdFYxdGtqMFBSS3YwWHotZURmN0lGdFkzUdIBdEFVX3lxTE1ROWFWX21DTFFzVktUcHdQVWdQX0ZwMW1xVmEtMm5MeGdQaklYcVVXYnpIcGFVUmxJY2x4amI1dEtBQ1ZXQ0FtWVNDd3Iwb1B1LXpMVjJnTVo3czlndUN6Z0JxV0FpWU1aUmJ4c0RiNlltZXRp?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T10:44:57.000Z",
-        "summary": "Weaponized Claude Code Extension Gives Hackers Persistent Remote Access to Developer Systems CyberSecurityNews"
-      },
-      {
-        "title": "Claude Code VS Code extension with backdoor released on Cursor marketplace",
-        "url": "https://doublepulsar.com/anthropic-hacked-to-deliver-remote-access-trojan-to-claude-developer-laptops-worldwide-1148a92baae2",
-        "source": "HN · 384↑",
-        "hn_id": "50301983",
-        "published": "2026-10-30T10:22:51.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Says Claude Flagged More Than 100,000 Potential Child Exploitation Cases for a Single Customer - www.techtimes.co.uk",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOZHlEVXdpQWlteDFEOExTbTRLNU1JLU55MG5TZFBmbnVSYzJVTWhManlmdFVlYTFsQTI5Z3RDSXh2X25MblJYZHpzWUR5T05qcjlDTzY2VUFwT1pVV0l1MDZ2WWM1Ymo3R2lRSTJ6dnVDQWFxZEtYT3Utcm5fU2t2cHRVaWNNLXc1bnEzX1NqNFhIVWNRUTJ6Ug?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T10:21:29.000Z",
-        "summary": "Anthropic Says Claude Flagged More Than 100,000 Potential Child Exploitation Cases for a Single Customer www.techtimes.co.uk"
-      },
-      {
-        "title": "Anthropic Claude AI Predicts an Unbelievable XRP Q4 Move - Cryptonews",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQUTJWbl8xRnpKMVk1QnJobGF3OWtqVVhKNmRnQlpQSHU0d1ktVmJrVEZvQThybi1CZkZmNTQ1Vk9qOHI2alBSaU90T0JPWVFZTzR0VHJzd3A3SDg5eWRCczZ1Y3JtY01IamtXMDQ2UTVyMjFlYTdJeEJGWUl3NUx4NzFfVlZKUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T09:25:00.000Z",
-        "summary": "Anthropic Claude AI Predicts an Unbelievable XRP Q4 Move Cryptonews"
-      },
-      {
-        "title": "Trojanized Claude Code Extension Delivered Persistent SSH Backdoor to Developer Machines - Step Security",
-        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5QN1Q5bXI1WXMzZlpOLWIxaDJEVGhuTWZxcXRwTWdaXzlETHZYd0pIcGhpdnR3R1dsQXUzWGFoZHUyZUd2UldGMHotYVFHNHFQZjdCWERJektwVXZVMWw5dGc4WldHQktiLXFYVnBST19Ecmc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T09:23:05.000Z",
-        "summary": "Trojanized Claude Code Extension Delivered Persistent SSH Backdoor to Developer Machines Step Security"
-      },
-      {
-        "title": "‘You're still a slave owner’: Israeli rabbi challenges Anthropic on Claude's consciousness - Ynetnews",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE93aHBMRlBKNHVPMnhJV01PY0JKbEdISTZGa19Wa0NPRjNfU2V0WHVSenR3b29zTWlhNFZUazJqaTdWNVJvVDQ2N2l0cGgxZ0YyLTltWWtLT2RycWxqbFp0c2tIWlZFQkU?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T09:15:21.000Z",
-        "summary": "‘You're still a slave owner’: Israeli rabbi challenges Anthropic on Claude's consciousness Ynetnews"
-      },
-      {
-        "title": "Official Claude Code Extension on Cursor Marketplace Trojanized with Persistent SSH Backdoor - The Hacker News",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPS2hyRVBYNEpLVEQ2V2IwYk9aZmhtUm9veEV5RE4tZVVONXpIM1Y5Q1hxSWprYjFDR1NXNGF2MjlyeUpod2p6NFNydVltcmpudHoxU2wtUWJxSUdrWUhhanRiTUo3ZzdGNXViN0NyRUdTcHFiVEJfT2Z0VklGczNiOGhzYw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T08:55:00.000Z",
-        "summary": "Official Claude Code Extension on Cursor Marketplace Trojanized with Persistent SSH Backdoor The Hacker News"
-      },
-      {
-        "title": "Cursor says up to 5,000 users affected by tampered Claude Code extension - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOSE5Sd2ZzblVoTHk3cWowdjBHOUlGQ25obHhuSkoyell3S2JWTUxqeXFFRnBMbTVaOENobjFKVFJXT0VhQi1VSzVBX0dSM3N5SGJ4N2VWSjhnX3NCQlJsSmdTX1RmSlpEeHN0NFFXVll0MzZRV1lfbUpkcDZ1dk9xQXpSWHBVUVJiMDJCYXgtMmlxMnQ1a2dxcmxBZlFBcTY0SUZMYXZyeHNZX3o1ejRUbkxmN3JqRlYtSnNCRnFiZkswLWx4S2c?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T08:33:43.000Z",
-        "summary": "Cursor says up to 5,000 users affected by tampered Claude Code extension Reuters"
-      },
-      {
-        "title": "Trojanized Claude Code Extension 2.1.313 in Cursor Marketplace Plants SSH Backdoor - Rescana",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNdDNoVkx3Mmpqa0JHVUJkdjl6RTEyX1RpU0p2eHF3eGxWNm52aEd1NDUxY3ZZLU12QTk0WC1OZkNCR2J6azRkTEd6QVliX1B0V0NzT21RRWRYUTBwQngyNFR4dFNrMmxyeGhwSzE1a1VJdWZ4X0hkcWxlWHgtWFVJcGRSSjczWm04RXJCVHJ5ZGkzQlRmTHJYbVhFQ3FyS0ViLTEw?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T08:31:30.000Z",
-        "summary": "Trojanized Claude Code Extension 2.1.313 in Cursor Marketplace Plants SSH Backdoor Rescana"
-      },
-      {
-        "title": "Researcher Uses Claude AI to Extract Internal Anthropic Binary and Recover Google Cloud Token - CyberSecurityNews",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5jcWQyRF8zUXJqazNBR0xfRzJIbkRWSkNfN09rVVExYzFEX0JZdC1oZnc2dktsTWNzbkJwQmI3eFJmc25YeU1ZeUMxM3M4TGhaYWNEc2lBa3dUbTFOZHhoWEJ3VEktMjDSAWxBVV95cUxQSEdReUpQcTBKRDhoMVAtbjczX3pIcDRUTVZZOEJxU3ZHb3FPVDlEaDZmaWtOX2NTNlFpLXFmaXJkYjR1WkNMNmZWRF9RXzcyY2tVNEdnbjRocWlpbENiLTNLb2dtRkxHTEpLdzc?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T08:29:54.000Z",
-        "summary": "Researcher Uses Claude AI to Extract Internal Anthropic Binary and Recover Google Cloud Token CyberSecurityNews"
-      },
-      {
-        "title": "phData Adds 300+ Experts as Anthropic Joins Round [2026] - https://tech-insider.org/",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOQTJCQlJVTnNzNGFVX09YWVJFS214eHJqeWtNZHFOMWJ2ODhoS252dTE3V21JWWZjdkFRcjkwTV96U3RSaV9qRHJVc09OX1l1cS1Gc2VtYmh5MjlVVDA2cGg1NEFXU0ZWeVB4TVd1WTcwblRpb2FWVkNSTUV2NkRWZ3BvcXlEamJRREE?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T07:53:32.000Z",
-        "summary": "phData Adds 300+ Experts as Anthropic Joins Round [2026] https://tech-insider.org/"
-      },
-      {
-        "title": "phData Funding [2026]: 300+ Experts, Anthropic Backs Round - shattered.io",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPUWl6cTVpUlktNS0xbWhpTldtWUctVWEtdnRaZXk5dGowcEV3TFktYk1HQlFYakdGYzgzTzVnNmpfZVJnRlFhMVpvc2VCN1JwLU1ROUcybEJtb1hHWm5tSklfa1VjSWZnQ3lKZURrQnVERjgtQm1WVVRRVFJyTWVrTjFLMlM?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T07:50:07.000Z",
-        "summary": "phData Funding [2026]: 300+ Experts, Anthropic Backs Round shattered.io"
-      },
-      {
-        "title": "Anthropic explains how Claude flags conversations that may involve harmful activity - Business Today",
-        "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQdllXdkh0VGV5MVJDZlJmSm9iRkNFU0hjS0VPbFN5TVJFNjFCTWdVSkVBLUo1SFZFZGJuTDBvWmtkUnFJNjRYcU4tajRqSHJjSEdkaHYydGdxU1B6NVVLUjNZQTlHNk8zUkMyMm45TVFYbFB0b3RxdzM4QnF0WFZNM3ZDc3ZidUlYSzhyclJ3MTBRMkFBb3VjTUZkM1NsYl9Za2dOY3pqa0JIMERZQ09yYlctdm5kQXJoVGw2X3lYclROMmlXSkMwRU94UGNsMy1mTVFfVFBLYXFhaGZ3aGQ5M2ZPSmpDbzjSAewBQVVfeXFMUFpXd1FrWm5ydkotcjNpLUdia3p5TnBPMlZyN1R2MjZyZ3lpNWdnemZZMUZVbGd1TFZDM0hyeElVNUtjbXFreV83SW9sMGxTTTlfaC0zWFBYdjZxSUVLV1V2X2RRY2Z2WjNLamZZLVdnbGJTNFJ3dnFvc1ZCMnYyMV9pNlhyWmNxMW1lSlpYTkJmX214REtlWmQzeVpCdU9zczZtRHpKVVF1VU5BZ08zd3J4YTUtY3UwZHMxWkQ2ZEJkbXdQQ1lZUkRkVkt5NXFXUnl6azBCWTI0YUp6LVN1TXlBYlV2T2lzZERrZHQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T07:30:05.000Z",
-        "summary": "Anthropic explains how Claude flags conversations that may involve harmful activity Business Today"
-      },
-      {
-        "title": "Official Claude Code extension compromise",
-        "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/",
-        "source": "HN · 57↑",
-        "hn_id": "50300683",
-        "published": "2026-10-30T07:09:12.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Is a Revolutionary Business, but Its IPO Is Still an Enormous Gamble - Barron's",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE0zblNkSjA1M2N3Q0hrc0ZQWC1UMEluYXJrbXRUSnlSWENfTWdkUkZ0R3dCX3NhbTFFajZkQi1UdHZsdk1aZ3k2YTVmOTlfQlRWQ2pnT3VBMVIxcldpOE9TSFRHeGMwRFNRQ0QwTXZGUzZWMXk1RTQ5MEZ0SQ?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T07:00:00.000Z",
-        "summary": "Anthropic Is a Revolutionary Business, but Its IPO Is Still an Enormous Gamble Barron's"
       },
       {
         "title": "The Secret Discipline Behind My Claude Code Projects",
@@ -574,18 +597,6 @@
         "published": "2026-08-28T00:40:16.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "AI models can now help run physical science experiments",
-        "url": "https://www.youtube.com/watch?v=P1zBiAQU1IA",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "P1zBiAQU1IA",
-        "thumbnail": "https://i.ytimg.com/vi/P1zBiAQU1IA/hqdefault.jpg",
-        "published": "2026-08-27T17:54:32.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -675,6 +686,28 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Stop Letting Claude Review Its Own Code",
+        "url": "https://www.youtube.com/shorts/Frg36pG_eYg",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "Frg36pG_eYg",
+        "thumbnail": "https://i.ytimg.com/vi/Frg36pG_eYg/hqdefault.jpg",
+        "published": "2026-10-30T15:00:26.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Never Let Claude Code Merge Without These Checks",
+        "url": "https://www.youtube.com/shorts/DTEDvbmTZ1U",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "DTEDvbmTZ1U",
+        "thumbnail": "https://i.ytimg.com/vi/DTEDvbmTZ1U/hqdefault.jpg",
+        "published": "2026-10-30T15:00:17.000Z",
+        "summary": ""
+      },
       {
         "title": "The Secret Discipline Behind My Claude Code Projects",
         "url": "https://www.youtube.com/shorts/HfydZ1RwCsw",
@@ -981,28 +1014,6 @@
         "video_id": "UxJZrCFzTHY",
         "thumbnail": "https://i.ytimg.com/vi/UxJZrCFzTHY/hqdefault.jpg",
         "published": "2026-08-28T00:40:16.000Z",
-        "summary": ""
-      },
-      {
-        "title": "We're building a way for AI models to connect to any device and run real experiments.",
-        "url": "https://www.youtube.com/shorts/djVUCj5i4sw",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "djVUCj5i4sw",
-        "thumbnail": "https://i.ytimg.com/vi/djVUCj5i4sw/hqdefault.jpg",
-        "published": "2026-08-27T19:42:35.000Z",
-        "summary": ""
-      },
-      {
-        "title": "AI models can now help run physical science experiments",
-        "url": "https://www.youtube.com/watch?v=P1zBiAQU1IA",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "P1zBiAQU1IA",
-        "thumbnail": "https://i.ytimg.com/vi/P1zBiAQU1IA/hqdefault.jpg",
-        "published": "2026-08-27T17:54:32.000Z",
         "summary": ""
       }
     ],
@@ -1248,18 +1259,6 @@
         "video_id": "ROF2Nv_KjOM",
         "thumbnail": "https://i.ytimg.com/vi/ROF2Nv_KjOM/hqdefault.jpg",
         "published": "2026-09-01T18:02:31.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
-      },
-      {
-        "title": "We're building a way for AI models to connect to any device and run real experiments.",
-        "url": "https://www.youtube.com/shorts/djVUCj5i4sw",
-        "source": "Anthropic",
-        "channel": "Anthropic",
-        "channel_id": "UCrDwWp7EBBv4NwvScIpBDOA",
-        "video_id": "djVUCj5i4sw",
-        "thumbnail": "https://i.ytimg.com/vi/djVUCj5i4sw/hqdefault.jpg",
-        "published": "2026-08-27T19:42:35.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1665,6 +1664,20 @@
       }
     ],
     "claude_learning": [
+      {
+        "title": "Stop Letting Claude Review Its Own Code",
+        "url": "https://www.youtube.com/shorts/Frg36pG_eYg",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-10-30T15:00:26.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Never Let Claude Code Merge Without These Checks",
+        "url": "https://www.youtube.com/shorts/DTEDvbmTZ1U",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-10-30T15:00:17.000Z",
+        "summary": ""
+      },
       {
         "title": "v2.1.314",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.314",
@@ -2139,20 +2152,6 @@
         "url": "https://www.youtube.com/watch?v=UxJZrCFzTHY",
         "source": "YouTube · Anthropic",
         "published": "2026-08-28T00:40:16.000Z",
-        "summary": ""
-      },
-      {
-        "title": "We're building a way for AI models to connect to any device and run real experiments.",
-        "url": "https://www.youtube.com/shorts/djVUCj5i4sw",
-        "source": "YouTube · Anthropic",
-        "published": "2026-08-27T19:42:35.000Z",
-        "summary": ""
-      },
-      {
-        "title": "AI models can now help run physical science experiments",
-        "url": "https://www.youtube.com/watch?v=P1zBiAQU1IA",
-        "source": "YouTube · Anthropic",
-        "published": "2026-08-27T17:54:32.000Z",
         "summary": ""
       }
     ]
