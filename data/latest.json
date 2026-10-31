@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-10-31T01:08:51.914Z",
+  "generated_at": "2026-10-31T07:37:32.128Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Enabling Independent Research",
+        "url": "https://www.anthropic.com/research/enabling-independent-research",
+        "source": "Anthropic Research",
+        "published": "2026-10-31T02:38:41.000Z",
+        "summary": ""
+      },
       {
         "title": "Managed Agents",
         "url": "https://www.anthropic.com/research/managed-agents",
@@ -135,22 +142,22 @@
         "source": "Anthropic Research",
         "published": "2026-10-23T20:56:36.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude 4 Cyber",
-        "url": "https://www.anthropic.com/research/claude-4-cyber",
-        "source": "Anthropic Research",
-        "published": "2026-10-23T20:56:36.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Claude Code Game Rule: Osmani Cites 2 Sentences [2026] - shattered.io",
+        "title": "OpenAI Funding Target Cut by $10 Billion as AI Slumps, FT Says",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-31/openai-funding-goal-cut-by-10-billion-as-ai-stocks-dip-ft-says",
+        "source": "Bloomberg",
+        "published": "2026-10-31T04:00:40.000Z",
+        "summary": "OpenAI has cut its fundraising target by $10 billion as an AI stock selloff and rival Anthropic PBC’s impending public listing complicate its efforts to secure investor commitments, the Financial…"
+      },
+      {
+        "title": "Osmani Says Claude’s Game Rule Is 2 Sentences [2026] - shattered.io",
         "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMWNkUm1CRTJJT0FTYjBQYzVrTG5PYy15bmRJQmd4US1BZElxY2tCOF90V2Q3N2VlMENiNHJUUUotLW9fSWVxd09HRUVwUlg3N0xLUHRLS3dlNUthQ29QZ0dOaDBwcFVDWXVWd3ZUaDVodWFvZlM2RjZtbkVoT21WaUgwbnRUQW5WclZ3eU1QZEUtbWc?oc=5",
         "source": "Google News",
         "published": "2026-10-31T00:56:11.000Z",
-        "summary": "Claude Code Game Rule: Osmani Cites 2 Sentences [2026] shattered.io"
+        "summary": "Osmani Says Claude’s Game Rule Is 2 Sentences [2026] shattered.io"
       },
       {
         "title": "Cursor Marketplace Trojanized Anthropic Claude Code Extension 2.1.313 With Persistent SSH Backdoor - NewsCord",
@@ -165,13 +172,6 @@
         "source": "Google News",
         "published": "2026-10-30T22:21:36.000Z",
         "summary": "Anthropic orders AI tool Claude to stop remaking video games Game Developer"
-      },
-      {
-        "title": "Claude's new smart reports tell bosses when workers are 'off-topic' - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNSHNYSEJlZEQtclhFUk1CZjRKWkFhVk1SM1pmcEJkajl5LWgtSHVfaDNkWUtKazRRUUh2YjZ1UVB0M1owMEdOdnlLc0FOdmdDbWdQanZqUjdELS1lVHFHMktfcHVXbXRaZmUtcXdaTncyTlBrdU5MVEN3NURjR1c4Mg?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T22:21:32.000Z",
-        "summary": "Claude's new smart reports tell bosses when workers are 'off-topic' Mashable"
       },
       {
         "title": "Cursor says up to 5,000 users affected by tampered Claude Code extension - Reuters",
@@ -279,13 +279,6 @@
         "summary": "Anthropic orders AI tool Claude to stop remaking video games GameDev.net"
       },
       {
-        "title": "Update: Anthropic orders AI tool Claude to stop remaking video games - GameDev.net",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQd2FPZUdqb3hoUWNudkU5V2ZyRGRIR3hlQ09EYlJYSnNCQm5OZXVRd1VFSWhSd3ZKMEF2eHg4bV9JWS0tQkdROEE0ZHI4MGQ1T2VBUjloYk4yU0UzMU1kQkZocXgyUUxRVjNVSTlqeEFISHNKck1fQjBmRzF3Z1J5eGtiekRtOEktQnNTSXlOcFFFMDVlb2ZvTDVobkRsOTQ5?oc=5",
-        "source": "Google News",
-        "published": "2026-10-30T19:00:02.000Z",
-        "summary": "Update: Anthropic orders AI tool Claude to stop remaking video games GameDev.net"
-      },
-      {
         "title": "Anthropic's Claude AI found a critical Linux flaw that could give hackers root access - How-To Geek",
         "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOYUM5ajlQY185WllyenBmQ012U2RHbWdmQUtHQ25aekJiQ3VUX0xKcjd4alBuMUxwUk9IdkJ5WGRsTXhidjNJaHI2c0gxZlk3anR1TVpIaUhMUnpGQjlQRWs3Wm5jZi0wUTg0OW9qbGkzN1l4TDRTVDQxTWNOODZTdFI4TGY5bVBNcDk4MWpmbjhDRGV5Qm9SV194NHFEdnE5a2ZfZDFSd3FaNE5MSjdyRA?oc=5",
         "source": "Google News",
@@ -319,6 +312,14 @@
         "source": "Google News",
         "published": "2026-10-30T17:30:17.000Z",
         "summary": "Anthropic Says Claude Built Five Exploit Chains Across Major Software eWeek"
+      },
+      {
+        "title": "Anthropic may not secure investment-grade rating after IPO, Blackstone says",
+        "url": "https://www.ft.com/content/59383c7f-8d82-493f-bf01-d2e862a1018f",
+        "source": "HN · 305↑",
+        "hn_id": "50307219",
+        "published": "2026-10-30T17:27:25.000Z",
+        "summary": ""
       },
       {
         "title": "Stop Letting Claude Review Its Own Code",
