@@ -1,8 +1,29 @@
 {
-  "generated_at": "2026-11-02T08:29:43.501Z",
+  "generated_at": "2026-11-02T19:51:11.254Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Vibe Physics",
+        "url": "https://www.anthropic.com/research/vibe-physics",
+        "source": "Anthropic Research",
+        "published": "2026-11-02T10:12:52.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Shaped Science",
+        "url": "https://www.anthropic.com/research/claude-shaped-science",
+        "source": "Anthropic Research",
+        "published": "2026-11-02T10:11:59.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Accelerates Protein Design",
+        "url": "https://www.anthropic.com/research/Claude-accelerates-protein-design",
+        "source": "Anthropic Research",
+        "published": "2026-11-02T10:11:06.000Z",
+        "summary": ""
+      },
       {
         "title": "Enabling Independent Research",
         "url": "https://www.anthropic.com/research/enabling-independent-research",
@@ -121,141 +142,222 @@
         "source": "Anthropic Research",
         "published": "2026-10-23T20:56:37.000Z",
         "summary": ""
-      },
-      {
-        "title": "Cyber Toolkits Update",
-        "url": "https://www.anthropic.com/research/cyber-toolkits-update",
-        "source": "Anthropic Research",
-        "published": "2026-10-23T20:56:37.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Exploit",
-        "url": "https://www.anthropic.com/research/exploit",
-        "source": "Anthropic Research",
-        "published": "2026-10-23T20:56:37.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Biorisk",
-        "url": "https://www.anthropic.com/research/biorisk",
-        "source": "Anthropic Research",
-        "published": "2026-10-23T20:56:36.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Anthropic orders AI tool Claude to stop remaking video games - Game Developer",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbkRTbnBaVVk2ZEkzamZJZXpfMWlpWDJuRXJLa3RnUEI2SGJvYVJrd3dhUWhsRUh0Qi1NS0x1ZnJDTUNsY0FpUkVOaGpraTRzXy1ZV2g1bFhMemdEeWUwZzI1QkxRNExMSmxKUzYyeEEtUzJqTG1nS1NrcGRrWTRuMHhrcHJQQ1B6OFlwbXVjVXoxQjYzUTdJb0NCRFF4Q0lfUmRrd2ZMSXdtS25YR25HVjN2OU52SEp3Sncw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-02T08:02:59.000Z",
-        "summary": "Anthropic orders AI tool Claude to stop remaking video games Game Developer"
+        "title": "Anthropic to Spend $895 Billion in the Years Ahead",
+        "url": "https://www.bloomberg.com/news/videos/2026-11-02/anthropic-to-spend-895-billion-in-the-years-ahead-video",
+        "source": "Bloomberg",
+        "published": "2026-11-02T19:34:06.000Z",
+        "summary": "Ahead of its blockbuster public market debut, Anthropic revealed it plans to spend more than $895 billion in the years ahead. The Claude chatbot maker also disclosed that its quarterly revenue rose…"
       },
       {
-        "title": "OpenCode brings Claude subscriptions back, ten months after Anthropic shut third-party harnesses out - Dealroom",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNUWppS1ZXb1JackhDVjg4MkNHWXlVOXpnSEVkRHZwdVBIa21odzNJOVJtZEtjdnh6ZVJtd0JSVVlBMXdLZ1dEdWVaS2czVURnWjhmV1U0cEk3ZUFBc2V1RURhUzIydXFKOGtHdUJNWkpUanA5N1cwcHR2V05PZUtjZGNvU29wRnNVcFp3NU5kbk1HQzV5cnBnSm5IZGV3WVR0Z2g3NTRnTDVTeFpIVklQVXpfMnhPWmdFLUI5a3hob0h2RDdkQUlEXzlmYmV1dw?oc=5",
+        "title": "Software Is Dead—Unless Anthropic Says Otherwise - Gizmodo",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxON0Z6eC1COGxtZXExWXRmU2JGemZqXzZzcGQwbWc5RC1lSkVNUFdYNkhXa09acHZTWElnMmR4ZS11aE1IazlWOGdGTlAzakNjYkVTb0FSWG5ERERNN0FYZTNyYjZEY0lwazlzWUNHTUxkeERTeUdYYTJxMk1RNXQzU190eVdjQQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-02T07:13:35.000Z",
-        "summary": "OpenCode brings Claude subscriptions back, ten months after Anthropic shut third-party harnesses out Dealroom"
+        "published": "2026-11-02T19:25:12.000Z",
+        "summary": "Software Is Dead—Unless Anthropic Says Otherwise Gizmodo"
       },
       {
-        "title": "Claude Code will build you a game, but no longer a copy of someone else’s - Martin Cid Magazine",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNN1l2QVZ0WWRBQVpQS2ZkQ3dITV9uM2ZrMkY0b2VQR0YzZFNadThMZ3BfTHVnRmM4Mk9STjZBelhMT1NqV0xQamRxOUtUZy01SjJiVVdhWHQyU3NyNHp5QlFnNFkxVkdoZzVEd29kSERFbElHZ2wxcUt6RHhfNmFuY2U5ajcxeGpBRUt4RW5Ob1A?oc=5",
+        "title": "SentinelOne to add runtime security inside Anthropic's Claude Cowork VM - StreetInsider",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQWVV0T1FWQm96RjBzMlFuTGQyLTAtTGFDZDZTVjZyMTNDdXJHMXJBOHl3SzZISHJSUTlsR0FEZVNhTzdzNnJjcHFFaTJZWjVxV0xDVUFydkF6eE9uUkhqRURJX29oUUpvM0Nka01GT2JDUXpPNkpPZWYzaFZrdmNIdE5aNG16UTVBVGV6S2hjc1JaSjZfdnZmOXduOWZSUGpMRFQ2ZE9Vb1lDY1RtVm5feFo3WkJtelZzZTBxbFlYLW5FT1Q0a3FFYw?oc=5",
         "source": "Google News",
-        "published": "2026-11-02T07:08:04.000Z",
-        "summary": "Claude Code will build you a game, but no longer a copy of someone else’s Martin Cid Magazine"
+        "published": "2026-11-02T19:20:47.000Z",
+        "summary": "SentinelOne to add runtime security inside Anthropic's Claude Cowork VM StreetInsider"
       },
       {
-        "title": "Anthropic IPO: Claude maker targets up to $3.5 billion from Japanese investors in US listing - Moneycontrol.com",
-        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPRWZRMi1IN0tCdTktdzRfamFvWjNFSnpocGphQU5EX2ZtRVl1azlDaUFOeWlyQ3VLU2xydjN3NVdCUU9idzVvRFdnQ3paSTVONGpvR3NKWUdUNXJGemd5TWVSaGMwaENObXVWVHRfVkxKaDQtUVM1ZVNMVkVxeDF0VFFvb0NvREdxNC1QLVpPV3VLcE8zMTRpdGFaUU93QUV4RmxnekM3aC1sSWVvM0NRTFYzWHNCZXBKVWkzZ0NBdTZsbDFKNV9yTGtCMHBheWdseUJaV0wyUm15QVkzM3d5YzdEVE5VQdIB6wFBVV95cUxOYXhPamhvNW5SWV9Bel82WVV3YlQ1ZFdWU251SjB0aUFKbjc3OWZ6TllHc2huSmtwbFEyM29jZHBwcTRTazNKYTUzdjNjVzNpWlE2amNLVmtOWnVJZTd4THc4eW5GTndnWG1SeXNMZHBJVHN6REo1U1FPcmZUb1Nma3FyX0tWVnM0OXFmSUhvVFBfZmhXTGR2VkxJdnVDTEtRNkQ1RWs4eUNDdGFzUWZiWlhKNmJsZDdmM1JMbmMtR0pCUXVlQ2IyNG1LQWxLMzR4ZjRrcV8tVFlzcmVyWjZZeG41TEJxbkVjMzRJ?oc=5",
+        "title": "Anthropic reveals its internal Claude use is worth more than payroll - Pasquale Pillitteri",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOd1BZVW5CdEFxNjdaaFdxZzRiR0tBZmZxbmVYb0xPTm9KYmJnV1E3ZHhXQ1ctZmplX0lhcDhWNXdjZE9ZenZ3U0VBWUl2LWVyNG56ZWROQ3QxeEo0aTRSUm5rM1ZlamYzT2VscnNET1pqa3M4RE81Zy03ellzMy1tZW53WF9pT2d5Y3Bsb2w2LTBYMElhamROWnhkMHMzdw?oc=5",
         "source": "Google News",
-        "published": "2026-11-02T06:55:35.000Z",
-        "summary": "Anthropic IPO: Claude maker targets up to $3.5 billion from Japanese investors in US listing Moneycontrol.com"
+        "published": "2026-11-02T19:02:08.000Z",
+        "summary": "Anthropic reveals its internal Claude use is worth more than payroll Pasquale Pillitteri"
       },
       {
-        "title": "Anthropic Internal Analysis: AI Led 26% of Next-Generation Claude Development - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBwSWV1VUtBSmVHM0JFTGVCaS1PT3VENG1nSTFBOTFMamtnYTNRQXRGbVp0eFZvVExhclVkZ01mLUpVU0EwYnJIbk1rd0ttQ0QwVVNOQVZVVmc3NUxRMDVGbFhUc3F0TnNkSEh2WDBTejJPbTktSXc?oc=5",
-        "source": "Google News",
-        "published": "2026-11-02T06:26:00.000Z",
-        "summary": "Anthropic Internal Analysis: AI Led 26% of Next-Generation Claude Development BigGo Finance"
+        "title": "Anthropic clamps down on Claude’s AI video game clones",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones",
+        "source": "The Verge",
+        "published": "2026-11-02T18:56:02.000Z",
+        "summary": "Anthropic has updated Claude Code's system prompt to prevent the AI tool from being used to recreate existing video games, as reported by Tom's Hardware. Retro gaming is currently being overrun with…"
       },
       {
-        "title": "Anthropic’s Claude AI found ways to hack Chrome, Android, Windows and Linux - MediaNama",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNTVh4b2dsV3hkeld1Zld3czAwUFNlNkdYVk1RQ2NlQl9NNTA2MnR4aTJlMTJ2TE5tZVAwNmd1aEdWTkpqTElqcXZ0SlY4TXpoSjl4T3hvZ3VKdGhBdkNrSlZUQUN3Ri0wcTlDVU1FejRKZmRFekVsaU5reUthWjVyY1h1cXE5YWZGRm9zV0ZFZVFQT2VqSm12aw?oc=5",
+        "title": "Anthropic clamps down on Claude’s AI video game clones - The Verge",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQMkIzZ1JjSFM3QmlOMXk0MGFDb0I5MGZiWTVCLUtyU1pSTFYyamdERkM3b3RoLVRfUGlESUlmNUtFVUtfb1kzemJZcHNxekhNdTQ3U0s1MmY2SE9BZVdlZ01BeVEwTXJMU25nRVN3MWJmemozSnpSQXdUSjMzVWhpb1BCNHdFcng3MDBPQm1iNnJCbUFJQ3hQSjN0aDlPUQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-02T06:03:40.000Z",
-        "summary": "Anthropic’s Claude AI found ways to hack Chrome, Android, Windows and Linux MediaNama"
+        "published": "2026-11-02T18:56:02.000Z",
+        "summary": "Anthropic clamps down on Claude’s AI video game clones The Verge"
       },
       {
-        "title": "Anthropic cracks down on video game cloning with new Claude restrictions - Digital Trends",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZGc0bDhvTV9SWEdqQnpUc1JxZEx0MFVNdzROUFkxWkxlYXVxVXI1YzdxM0JWbDI4OFpwYjVDVWFMbXRsY1ZzQmxNdnY4bjB0VHZfTUR2ZWdWZkVLM1lnM0FZSmNUV29VeGYwOWloc2JaRmpaRklsQk9rTVFnZnNNZEhhdGFWblhSRnRfdk56UThxSUF0SnV2dVhPaS1hdkJ0ZWRick5jdGZtWGxvOGVwQ1RVdw?oc=5",
+        "title": "Anthropic Builds World's Tiniest Dam Against AI Clone Game Flood - Aftermath",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFA1akEtS2NtM3NiOG9LcFF0TGtKSzNzZWZkbEZFZkhRVjVZUGFuanR0YmV3dXotenc0R28wOUp2S0pCU1c5Ry1tSVF5SmdoOXl6OVVrd1dyMVVadG5ZemhuRlBvWk9HZ29YY2Q2ZA?oc=5",
         "source": "Google News",
-        "published": "2026-11-02T06:00:04.000Z",
-        "summary": "Anthropic cracks down on video game cloning with new Claude restrictions Digital Trends"
+        "published": "2026-11-02T18:49:53.000Z",
+        "summary": "Anthropic Builds World's Tiniest Dam Against AI Clone Game Flood Aftermath"
       },
       {
-        "title": "Anthropic’s Claude can now secretly flag harmful chats for review: How its new AI safety feature works - WION",
-        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNOXJkdzFOQXNISGlIanhaRXFMejdKNFFGdDA0MUhTYUNpR1Jmc21PcndibmtKUi1sWmRTMmpHMzhlTzhiSVdpMWo1RW9GajdqMmtURFhnNkRaNThlSXh1ZUhIMzNsc01FeXNoVXlPbVFGWXc1Rzl0aFBQaGZVb204Z05Yb2NmWUpfSnk4bi1Ual9TWTh6eDBsQ3J3cVBmR253R1ZIa2V1Q0QxY29HMFBvMGJjLVRtYndjVWs4bTlCbFg2VlhYa3hRck15VHNXS2RLUlNLMF83dndLb0ViRzdaX1YzWTbSAeoBQVVfeXFMTzlnR2Y1MHZlV3NudjlRc204X01aVWkxU3h1OHU2SmFnSWlXZGNyNjliY3dpYjJCc1RaSWVvWC1VSm92TkM4TF9fRUtOb2I4ZHhvN0ppM1ZLeEFRTlpYX0g2OC0yb1BpenRyNWJwRWFsREc0YllaT0VnMHA3eTkzdU5lZHJ0ZnhyOHV4YS10Q3oyWXBpSUtmeHdDUEoxY2thOW5tVzRtNDZJZDYxcWdET2RsS3pyMmlsYV9hRFUtRElCQTgxTEp3NjVHQTI4SlJBb0Y2a3FGUEpkbHVNM21jQUZRYkhpalUwaXFB?oc=5",
+        "title": "Anthropic implements a regulation to prevent Claude Code from replicating existing games - WN Hub",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1Oem15YXhUNlFLdlBIZUpxOXRDMmNpUUFOSzVmUk5WQ2RwRFFTcGNXSUJGYTFTNHpONjFqcHdXankxUW04cmVNTzVGcjE5SVE?oc=5",
         "source": "Google News",
-        "published": "2026-11-02T04:58:00.000Z",
-        "summary": "Anthropic’s Claude can now secretly flag harmful chats for review: How its new AI safety feature works WION"
+        "published": "2026-11-02T18:05:53.000Z",
+        "summary": "Anthropic implements a regulation to prevent Claude Code from replicating existing games WN Hub"
       },
       {
-        "title": "Anthropic has a new rule for Claude, it can no longer recreate games for you - India Today",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQM2kwUWRRay0zRkFZblFaVFhnNllYWTM2ejdHTzBZU1lvR3R6S08yQmFraGtOc3ZRY3lmZDRtTVl6aWQ3bTdpV3llUVdLSXp1ckxvelRfNTNaRkZXekl6eEJnWURmY1p5amxORGtSTV9DdW42d0NqdXo4UGYtd0pXVUlIRFVSVkpMMUxLd3hqZUxaMlRFTUNWcDNFcmF4cHV6bWdkZHVaOGRtSFJlaGdmdlR0bUdIZDZ0QllxYzFWR014Nl9kVTlmVjFn0gHPAUFVX3lxTE5ucUw3cS04YWdsdUxjMFBINjc2aUZDNTVib0RTQUNuSFNYX2NaYlBVNEMxVWJlWEF5eXFmRm91a3VIb3hzMlM2b0RPR0pneUZ6dUtESk5PcmxnaS0tUTJ2c0xlZXdGX2kteFo0M3QyTkJTUERqUk9CTkFmS1k1X3pkNWY4eEd1cndILXFHLXhmMklwOEFRZUVpck1sWXFVeUFhNU9CTUJXSmpsX1VYek5sdnJ0OTVGVXVHMmxQcDcyV0VNNTlUeEMxZUV2WnVDVQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-02T04:54:47.000Z",
-        "summary": "Anthropic has a new rule for Claude, it can no longer recreate games for you India Today"
+        "title": "Claude’s new rules against game cloning won’t stop the AI copying boom",
+        "url": "https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/",
+        "source": "Ars Technica",
+        "published": "2026-11-02T18:05:31.000Z",
+        "summary": "Last week, Anthropic introduced a new system prompt designed to stop its Claude models from re-creating specific, existing video games. While that move could help shield Anthropic from some…"
       },
       {
-        "title": "Claude: Stop Using Me to Recreate Games - PCMag Middle East",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE14Q290N0xSMW40U2pSZTFvOHdTZkFaOEl5Mi0tdHVXTEpwbU9CN0V3T1g0Y0IzTXlKVHl2RUE3VkYwQjBjLVdKaFp4a3JON3dJalIwd040ZU1zTExQOERIQWVaYjFYSkVGSjF4SFlOdkVKT3VZbVVrRURJWQ?oc=5",
+        "title": "Anthropic Braces for Pre-IPO Election Impact as AI Debate Rages - Bloomberg.com",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOdHl6bTlzTEs0Zkt0UkQ5NGhDUXozSEtSbHFhek0xRDlPZUZ5X2JwUmpMcDl2dk5BQVF3QVhOTDhTTTZaU0FRcGJOSWNja1VrOEFzdHZzb2c5WlFodU9sRHJhWmhudDlYRXM3YmkwcG5tbU16b3RVMW1IM1k5cko1dG9YTElTSUZ3MmEwX1lqb21VVXhXX3BOTXNpcEl2S2xvajY5REtQT3YtYnp3VDJuTTloTlg?oc=5",
         "source": "Google News",
-        "published": "2026-11-02T04:30:17.000Z",
-        "summary": "Claude: Stop Using Me to Recreate Games PCMag Middle East"
+        "published": "2026-11-02T18:03:06.000Z",
+        "summary": "Anthropic Braces for Pre-IPO Election Impact as AI Debate Rages Bloomberg.com"
       },
       {
-        "title": "Anthropic Adds a Claude Code Rule on Opus 5.5 That Blocks Recreations of Existing Games - gHacks",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNWkNxMDNfalU3VTgxanZGTVFFZVI0OTZ3VEhsWnNpWHBTUXREWXJZcU1xaWRDM1hhNzlRUkh4NVpGMVlrZXcxTUJ3XzlIMnpqQ0hrcU43a1h0ZjFMVVZhUVdxeWRTVFF5OFU5VmtZUE5fYnV1RnVpM0MyNlNJb3ktc2tpSWM2WmtGZ2xuM0ZPYWRrVlhuVk9JWVhLeWNzQ2w2RU82bmY0dzR1UUlYRUZxeC1LdE05Wld6eEdjakVpRQ?oc=5",
+        "title": "Anthropic Claude AI Predicts a Historic Move for Bitcoin Cash: How High Can It Go? - Cryptonews",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxObnF6ZFlLNkFfekdRaWRJSklrNGdURTJSb2VTN2RvQ0RjMU1Xd0xEamh4b2ZWSFJRRldHS0tTWmtXMGluSndoZlh5QVk3bEVUNlJObVFKR2Zybk1vUHlvSzQxdWRsYzg1MHc4ZWRPcFRYanNIaUhGeDhOemZ2QVRoYmhqVQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-02T04:05:16.000Z",
-        "summary": "Anthropic Adds a Claude Code Rule on Opus 5.5 That Blocks Recreations of Existing Games gHacks"
+        "published": "2026-11-02T17:55:52.000Z",
+        "summary": "Anthropic Claude AI Predicts a Historic Move for Bitcoin Cash: How High Can It Go? Cryptonews"
       },
       {
-        "title": "DeepSeek launches Super-Agent AI to challenge Anthropic's Claude Code - India Today",
-        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPRlRuOWlfeC0tRV81RUFsWnRoU08tZUNiWGhmd0p0WUJvRjBDVHFEZE85bW4zenNSRUt5YV9FejFXclpNeFN3WWZLNFRqTF9WN0hVSnhURkRzZXlmVV9UWFhMRlpvRkFzbDNkU0Q4NUNLbEw2Wkg3T2VaZTVpbUs4dW1ZMTlTSXFMZl9IcTZzVzBQSHJ0M1V6MjUzMnZ4QmRPai1WS3JFZ3BhdWRQTkZ2Z09hLXM2NE0ydVFDZVNFR1dsSDR1WTBhSGUwZGcxM0FM0gHWAUFVX3lxTFBXYVpaS2UxWXVNLTZadkh1RC1UUHlwdjdsMkVoLVlNQnI5YndnV25STmhWTjFobTFtdjRxNEVza3JQckVwbGsxRFBmNVExNjk1X1l6T3ZnWS1pUHJtMTNZN045QXdhYUZkTjRQSm43RDVfemdEcVd0cmcycHJVdkZQTndrdmYtaVRHV2ZrYy1wYlJ3OGt6UGdWcG5aTU8wQ2t2ZVhpMzdEaE9kc1BrVHJKaFZsREE2VjN1ZUE5N0tCblQzOTQtNUR3cThYZ3ZmZzNWQ0pxOGc?oc=5",
+        "title": "Claude blocks AI-assisted video game reverse engineering and cloning - Shacknews",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOcVRiZ1ROZGdLNy0xVDQ5VWxsN2kzVWxxT3RqWGNidVY0QmxvMFE0dk9ORzk1YmxJWVFSU2RLUjhMeWV4ZmphcVVtVDFZMnJIcGdDRERNY0ZiXzQzVXh0d0NQY1dQZGs0ZTI3ZFpKZ3I0TVN5eFQxZzdwZmtIQTMteFdB?oc=5",
         "source": "Google News",
-        "published": "2026-11-02T03:53:29.000Z",
-        "summary": "DeepSeek launches Super-Agent AI to challenge Anthropic's Claude Code India Today"
+        "published": "2026-11-02T17:46:00.000Z",
+        "summary": "Claude blocks AI-assisted video game reverse engineering and cloning Shacknews"
       },
       {
-        "title": "Anthropic Extends Invisible Text Watermarks to Older Claude Models Starting November 3 - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE55UUFGMl85ZFZUdDg3UVdINnZLdGtSVnB3bkNObTkwUVZjbW0yNlI3Mk5GUERjVndJQ3NFVnAyZVRHMXoyMll1UFBvT0RZVVptem9QWHo2ZVkwdmNyY2hBbkpOSlk3NEdjZnBDdVJvR016QmhIeVE?oc=5",
+        "title": "Athenahealth patients can ask Claude about their medical records now - ZDNET",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBISUQtZjRMM2pvaG1UNUk2N2dEQ3hwM1FjMmIzSmpNWE1wZFJLMEJLdU5QYnBYZHBrMHVHYVVvbUMwc3Y2blJOSWNqSFMzUmtUV3JlS1Jiay1FY2NQWVctNXc5bHhXNVNJZmhoM2ItRTJ5SXVscDlteElSaWE?oc=5",
         "source": "Google News",
-        "published": "2026-11-02T02:55:00.000Z",
-        "summary": "Anthropic Extends Invisible Text Watermarks to Older Claude Models Starting November 3 BigGo Finance"
+        "published": "2026-11-02T17:30:47.000Z",
+        "summary": "Athenahealth patients can ask Claude about their medical records now ZDNET"
       },
       {
-        "title": "Anthropic expands Claude’s role in drug development - Mezha.net",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNQ0VURjIyek55X25Da3FvSURHRHlpVFQxZXBiUEJBMFQzZWhjcVNlcnZnQ21sNlVGSXZfbGVaOEJBUjJQdTBuUWxwX1JWT2d4enVJRzVEc2dybUhLcVBmcm9SUGdnanNLcl82Q1NtSFJEVEtJRGxnVzAzSnJhSUg1d3g2RnQ3Vks4WFJOSFhB?oc=5",
-        "source": "Google News",
-        "published": "2026-11-02T02:42:26.000Z",
-        "summary": "Anthropic expands Claude’s role in drug development Mezha.net"
+        "title": "Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app",
+        "url": "https://momentic.ai/",
+        "source": "HN · 71↑",
+        "hn_id": "50339913",
+        "published": "2026-11-02T17:05:25.000Z",
+        "summary": "Hey HN, we’re Wei-Wei and Jeff. We’re building Momentic, QA agents that autonomously plan, explore, and bug-bash controls and user flows in your web, iOS, Android, and (soon)…"
       },
       {
-        "title": "Anthropic’s Claude slashes pharmaceutical document review times by 89% - TechRadar",
-        "url": "https://news.google.com/rss/articles/CBMiuAJBVV95cUxNbnhoR3JwTHdGNnRUSE9VWnA5MF8tSUcwNDZsVkhMYkFhTDZ6UXRhVGd2X2RZT1luRTEtS1cybW55WGNYbUg0emRXU0J2eWpFaDl5aXlxOHl2Z2lBNE9vOGNwcS1QVXJad3JERXFzVFZQNE51MDZDS3NZVzZiMS03eHpWdE1qeWNVMUlSNTl2UXZpSWxQWmxJMmR2cXNFV2E3dTF4QjB2TWxtM0o5OUR5ZWdueTNzcFFRcTZHbEZQYnJzOTdjLVhaY0FmYk9ZLTRQb1pNVlMtV2ZFTU9CalVzZllpQ2F6TFVtQThVTDJiREpRWkhMbG5iQlpqQjBjaHRMaXlhTTExZ2VFQjB1dUJXLVZWWjc1NWE2SEVWRXc5enFaMVB6Z09yTTAzYmhKbW9jbVhaZTNiWXY?oc=5",
-        "source": "Google News",
-        "published": "2026-11-02T02:15:00.000Z",
-        "summary": "Anthropic’s Claude slashes pharmaceutical document review times by 89% TechRadar"
+        "title": "NYC Comptroller Steps Up Criticism of Anthropic After IPO Filing",
+        "url": "https://www.bloomberg.com/news/articles/2026-11-02/nyc-comptroller-steps-up-criticism-of-anthropic-after-ipo-filing",
+        "source": "Bloomberg",
+        "published": "2026-11-02T17:00:00.000Z",
+        "summary": "Anthropic PBC’s approach to its planned initial public offering threatens to disempower shareholders and prevent ordinary people from reining in a potentially dangerous form of technology, according…"
       },
       {
-        "title": "Blackstone’s About Turn: Now Predicts High “Junk” Rating for Anthropic IPO - CXOToday.com",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZEJnd09TbWtJUXAtNVRMRFNtVW90VU5vaUdJQjlkdGQ2TGRTakI1anhKYXVsSkV6SDhLTWlVSUJ5bGJWSXQ2M3VheXZ5MlpMWm9RNnF2RGZ4cFZzdDRMOWNKOXlrTk1EWVItODNpc1RLTWhaa2dHZG5ScVo0Q2dkTHh2SU85UnIza19abDdwNEs2SmNHRUY2dm5XMA?oc=5",
+        "title": "Fewer genAI clones of \"someone else's specific game\" should flood the net going forwards, as Anthropic tell Claude to stop messing with some stuff other people own - Rock Paper Shotgun",
+        "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxOTFZRTThMVTJXWmNvNVhkSnNNckFnckIyZzlmcU1SWklqZGJJU1FYSjFqZXM1bTR6WFZocHRZV0J2eTl1Y09iVWdMQ0xxREkybVI2aC1FUmFraVh5Vk43Um9CZHdvYVpsRTB1Vm9LWng3dVJIc2U5LTcxQ19WRjU4eDlNQm9ubHpiS3JjVklvb1BGMk1EQy1CVk1FM1pvQU9Nc3JqdkVSdnVCUUMyR2poYm5CSjU0bHNzejBOZGF6YUdtcE94OFNSOEttRkRoS1JNd2RxRi1rYjJtMTRMMjFsbnJuZnpySzRCYUFPRXpENlpKYWR4c2hmY0J3bW9rRVJHX3VoQW8wQVRlb2ExMFFmTm9kcm9TdW03N2hHQQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-02T02:00:56.000Z",
-        "summary": "Blackstone’s About Turn: Now Predicts High “Junk” Rating for Anthropic IPO CXOToday.com"
+        "published": "2026-11-02T16:51:17.000Z",
+        "summary": "Fewer genAI clones of \"someone else's specific game\" should flood the net going forwards, as Anthropic tell Claude to stop messing with some stuff other people own Rock Paper Shotgun"
+      },
+      {
+        "title": "Claude code will no longer recreate existing video games under Anthropic’s new AI guidelines - Diario AS",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOQjBCTXdzb3ZOTFRUSldDaFFZUE9qNmFEd1A2Yjlzd2xyRVh3Q3lsUl9ocnhlM3gxeUhsNElnM1R5LUZ1MDF6a3lNWm9FZ3BiZ1NSSDJtcFp2cmhhR2NaOXFUR3oxQmpia0dhdXNBWUUycmdmTmVxQ3BScFZoMjZUWFVvYjNLQmZEU0gwZkxXeW9kZ2hkM0YtVm1NdXFubC1aOVFnaHM5ZGJ3aExuYzRJc0hiV3VUQ0lBekYzU0JHdjdwczRqVWswclpVbHFvb1Q5bnM40gHnAUFVX3lxTE55d3QxSkZhWFNKcnl2c3hlb0xpY2RxMVpMWjBWV2RQS1Fha0xlWUJnTjR5VC0xOC1mbVNzM0xySzkzc2pRQUVvSlFvLXBKQUhMVS1qZFBocGIxZ29XS0E4TzN5aWdaR1Q4eTJocjlZbmlGTmo3eGtqeWdNemp3c0JUQUlBVGJ5ekZ5ZVFsUlJwekZPRFVoM29OSHdDUlBnVDRuaDZXVXlPUTd6cjJoVTlzNEdWOExuT0xSUDFZMjZXUS0zSEtpS29MbmdBa3FFRmhrdTV0QWFZZTJJd3hVcm80VWs4S1ZUNA?oc=5",
+        "source": "Google News",
+        "published": "2026-11-02T16:50:50.000Z",
+        "summary": "Claude code will no longer recreate existing video games under Anthropic’s new AI guidelines Diario AS"
+      },
+      {
+        "title": "Anthropic's internal AI use, at retail prices, now exceeds its employee pay",
+        "url": "https://www.businessinsider.com/anthropic-claude-internal-ai-use-exceeds-employee-pay-tokens-2026-11",
+        "source": "HN · 188↑",
+        "hn_id": "50339494",
+        "published": "2026-11-02T16:40:29.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic reveals $900bn AI spending commitments ahead of IPO - Financial Times",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeHIxTTNxemhYRmRhV2dJOXlhc1ZBdW05MVp2MkFWdy02SVhIdzZqaWplcXl4SHQ0eGc4RFlaRlNwVWw2d2NQUjJucnFseEJ6ZUdpOUloSG9HOXczOGxmRGhuRk9XZ2VYTFNVUHJPQXltZ0d4S3pVTnZMOElUS0lXcGxBT3M?oc=5",
+        "source": "Google News",
+        "published": "2026-11-02T16:31:21.000Z",
+        "summary": "Anthropic reveals $900bn AI spending commitments ahead of IPO Financial Times"
+      },
+      {
+        "title": "Claude Opus 5.5 Can Draw Permit-Level Architectural Drawings",
+        "url": "https://stephenjgallagher.substack.com/p/ai-can-draw-blueprints-now",
+        "source": "HN · 48↑",
+        "hn_id": "50339224",
+        "published": "2026-11-02T16:25:33.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude maker Anthropic reports $17 billion revenue ahead of Nasdaq listing - Latest news from Azerbaijan",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPWGF4X3pLRmZUUmw5aTd6cnIxZHdSOWZVTmU1SG9OYVRfQUhqeE9mOGNweGdrTG01TWhqVTdqU2N3RHNlQkwzc1Y5UndDWlEzOHNEcU9mUm13RU9Tdmp4TzFTWGFXUDNTX3RpQTZSN2ozZXNSVk11TFZDb0NIcEdPbjJvbTdST2VfTEtybVVNY3AwQlM0MnlSVk9R?oc=5",
+        "source": "Google News",
+        "published": "2026-11-02T16:12:37.000Z",
+        "summary": "Claude maker Anthropic reports $17 billion revenue ahead of Nasdaq listing Latest news from Azerbaijan"
+      },
+      {
+        "title": "Being rude to this AI chatbot could get you banned. Here’s the surprising reason why - NJ.com",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxORXRnSHJrMi1jTUxaWGt5eUtINGhuaXJnLUgyazBpZ3dTb1BVWHc4dnppejl0czdlaGZqQU1NMnA3TUZOWEJZQU1CZVlac2x4RkJNZGEyanphdkllZGh1QTl3bVk0c2Eyck01NXhMQ1FSYnFGQ2hGRTNvUDgzVkU5Y3RNSDVfWmpNXzUxZVhGOWRHX2JqQnNfZktySlpEUFdxSERnb1VNWTg5dE5EUmJyUlZZQ25CUF9CM2Y40gHPAUFVX3lxTE1Dem9rY3kyS1pUNmdkVzhYY01kZFEtRXFCTmd5UUV1MERESm1GUEFGRlpfQ2JOaVpjMEUtN1YyR1JsV0hOT1VXMjhPM1Q4NzNYNWgxaHRiS3pqMWNmVGlHbFVSbUV2azk0RE5IbUthUEpWNFNEM2U3cThCajlLOGZtYko0TTF6ajEwTmpzdTN3RThiaDVBZXRaTjBDdzdUM1hYcmYwa0ZsUHNPZkdEdzN1YUdlMkluNmdDcmF2TmVQNEVOOXpqeEYyUk9PYUxVbw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-02T16:12:00.000Z",
+        "summary": "Being rude to this AI chatbot could get you banned. Here’s the surprising reason why NJ.com"
+      },
+      {
+        "title": "Anthropic Restricts AI Bot Claude's Ability to Clone or Decompile 'Specific Existing Games' - Time Extension",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPaEhneV9sbS1VU0NmYkNRMTNRYmxfRVBhenExcFkwLVdrV3lvMlFRNmVNdkVpMVVJbjBGWVpxeGdZWGlmYW1nZXNGRnVMeHljV3oyMEpWTGZKMnVSX1FWM0hzQkJab2x0TDJPUnJjUDk0QmN0T0MxWTRFQzBsQjRfbXNVZWFTSWYwMGQtTERJMTdCdkw0dDcxeGZrMzQ1RUJUUWV4RHZKYlp3RU9wQjlhRmtvNFUtQXZEcnhLTEZhTHdvMDZsX1MzaWFvMA?oc=5",
+        "source": "Google News",
+        "published": "2026-11-02T16:00:00.000Z",
+        "summary": "Anthropic Restricts AI Bot Claude's Ability to Clone or Decompile 'Specific Existing Games' Time Extension"
+      },
+      {
+        "title": "Anthropic Revenue Hits Nearly $17 Billion Before Mega-IPO",
+        "url": "https://www.bloomberg.com/news/videos/2026-11-02/anthropic-revenue-hits-nearly-17b-before-mega-ipo-video",
+        "source": "Bloomberg",
+        "published": "2026-11-02T15:56:11.000Z",
+        "summary": "Anthropic PBC reported third-quarter revenue of nearly $17 billion as of Sept. 30, a twelve-fold increase versus the same period a year ago that’s set to stoke anticipation for the artificial…"
+      },
+      {
+        "title": "Anthropic Steers Claude Code Away From Cloning Video Games - FourWeekMBA",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPM1hFNlQ5dlVoQWpSeV9fOUp5eERaU0w1RzZHSC1VT3lFY0pzN0JhS3A2MHN3TlpwSFhiT2dvQ3VYc3ZfOUkxUWN3YktDVEN0bWEtVVJVUVAxeWNLQWRIc2tXbWpkYWFKeUh0NHpEUnlXS3hwRmI3UGpjc2pqODdvaEZ1dGlGckIzMWhrTThjcw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-02T15:37:55.000Z",
+        "summary": "Anthropic Steers Claude Code Away From Cloning Video Games FourWeekMBA"
+      },
+      {
+        "title": "Stop Running Claude Code Agents on Your Own PC",
+        "url": "https://www.youtube.com/shorts/ka0_21X6pus",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "ka0_21X6pus",
+        "thumbnail": "https://i.ytimg.com/vi/ka0_21X6pus/hqdefault.jpg",
+        "published": "2026-11-02T15:00:37.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Finally, My Claude Code Agents Work With My PC Off",
+        "url": "https://www.youtube.com/shorts/SuTnn7l53vc",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "SuTnn7l53vc",
+        "thumbnail": "https://i.ytimg.com/vi/SuTnn7l53vc/hqdefault.jpg",
+        "published": "2026-11-02T15:00:17.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Vibe Coding a Whole Shop With Claude: Here's the Catch",
+        "url": "https://www.youtube.com/watch?v=LwGpZ34wsR4",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "LwGpZ34wsR4",
+        "thumbnail": "https://i.ytimg.com/vi/LwGpZ34wsR4/hqdefault.jpg",
+        "published": "2026-11-02T14:30:16.000Z",
+        "summary": "",
+        "_kind": "news_video"
       },
       {
         "title": "THE world's shortest Claude Code course (5 mins)",
@@ -268,69 +370,6 @@
         "published": "2026-11-01T21:43:00.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Anthropic Updates Claude To Stop It From Recreating Existing Video Games - Engadget",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPRWdaMk1uTzMzRnFaWXdrRVVBTWZHNGp0WDAxR010U0pxM0owYjNzeWd2dHRlLWdEOWZRRjh6YWhkWEtpYjg5cWt6SXBqSGtrU0VhUi1uZzY2eXZqVkpmT04wZXhjWHRBS1NDZDJhbTBrVTJLREoyREhfZXIycjhyUVNmOURIMmMxaXhSSXIyOWlwR0ctOW5oRzZjZEdTV3J0UW9CTUlhdW5UUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-01T21:08:32.000Z",
-        "summary": "Anthropic Updates Claude To Stop It From Recreating Existing Video Games Engadget"
-      },
-      {
-        "title": "New AI-driven Windows malware feeds stolen data to Claude to rank victims’ assets by value, then deletes itself — payload builds custom target assessment, can switch models if one refuses, or skip the AI step entirely - Tom's Hardware",
-        "url": "https://news.google.com/rss/articles/CBMigwNBVV95cUxQajlHZ0gxVlhoUUJEcWo0Ukh3aFNjYndRbDloS0liQlV2M3JPSVlrTnlqTG1VNkNPZW9MSUEwNUlONXdPWkFOdU56OVEyR0RsR2t0ZnJtWlRHZEhmSThlM09EdGd4Yi1QV2ROUHl4MVk0LTYzLVZqZTVFdVlub1ZnLUpxNXFTd3hHMXoxMVBJbjFlOHBxMjZJcG1zOUpfd2kzREZFNmJTenE4SmIwTkJKSVVaSGpvRnpGYmF1VVJ1dWxmZjlNWC14b1E2eUNyd2pOb1RKallwUm16ZmxzaGhKQ1A5eFlKTVRVVEtEckNDVlVXdGh2Y2xvSGNEX2tXaDg5OE5CeG44WTdoQ3FGZGd5UnFhZGZwZUNOamFOX0ZpYnd1Q0phVDJWdFpyN2ZpQVU0Vnk0SnY0RUZLV1VJeHRYVUQ4b0V5azV0YW9hNmhlQ1Uza2tkdDNtdFpHeG95clA2THRDcWFiYUlXWmw0WnJvaFRtdmRFSXJxNUgzZUdzcmxTLTg?oc=5",
-        "source": "Google News",
-        "published": "2026-11-01T21:00:00.000Z",
-        "summary": "New AI-driven Windows malware feeds stolen data to Claude to rank victims’ assets by value, then deletes itself — payload builds custom target assessment, can switch models if one refuses, or skip…"
-      },
-      {
-        "title": "Anthropic prepares to release Claude Mythos 5.5 model - TestingCatalog AI News",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNczIyQkU5ZzFYU2RPU0dZODhTNzNFd3ZfNTV4eTlJYzR6akVTVmhUM21sbzFQQnNaOVZBd2RhUnlOZXA1UFJ0X0NUbnEwWnNjX3lzUFN5WDJueE44MkJodVZRRHlncHBrQ2E2cGl0bmQyMzhKRW1nb3lMaDRxUnNXYlA4LUw1RWlSbHNEZmxn?oc=5",
-        "source": "Google News",
-        "published": "2026-11-01T20:49:32.000Z",
-        "summary": "Anthropic prepares to release Claude Mythos 5.5 model TestingCatalog AI News"
-      },
-      {
-        "title": "Anthropic Blocks Claude AI from Recreating Existing Video Games - X",
-        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBlYmtMUVEwY1JRTzB5LXF1d1k5anJEWlpOR0djYVVJMDROeV9HRmRtYzVacm52UU9RV0EyT1FJSnZ4ck0xN0NXZU4tTTFfRE1qcXFPN2piWQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-01T19:49:09.000Z",
-        "summary": "Anthropic Blocks Claude AI from Recreating Existing Video Games X"
-      },
-      {
-        "title": "Screenshot Shows Claude Mythos 5.5 in Anthropic Site Code - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPM3JVT3lYbWdta1NBRk5CZDhlbFczWkM4d1JNSVZFekI4NmdNR29vdHI4YnNhOVBoRllIN0RmT3drcUVabUU2RVF2M0VPQy14LUt1LWNCa0NHTTBwN0hJZUEtSkpWdVJ1MVZVMjJqeFJqVXpCRGVIelpjWmt1TlpmdFoxcW80SUtLWkdpN0d3?oc=5",
-        "source": "Google News",
-        "published": "2026-11-01T17:42:32.000Z",
-        "summary": "Screenshot Shows Claude Mythos 5.5 in Anthropic Site Code FourWeekMBA"
-      },
-      {
-        "title": "Anthropic is stopping Claude from copying existing video games: Here’s why - The News International",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMDdyZXBQUmQ5S1FCZGM4dDVwOW9saFM4dHZRYWFmLWh2WVEzSmdPVmRMM1VQU0hFaUtzMGt6NVBRNDM1VXJLVGRWY1BXOVptVHJXaUo0UV84R0RyRUJ5eUt4N1lsT2F1cXNGV0dUbzVTYU41UXFBY3puYS1vYWZ5RFR5d3d0eU94SkxCOUxmeUFwckNHZFN2T3JxWmRrMExMWHM4WU1jdUNhNWVuNmxSdUhJcE3SAbABQVVfeXFMTy1LZlFXMFZRQ3F6eF9vSnNEZFJ0RWY1X3k5SllGRGJMZld6SzVYMVZ6UlZmN2dDWmFkZEpyUlloNkxBZ2dyMHF0Vkx2dlRwdUZILUxVR0RUeVpPZW8wRFUzZWs4UVU2dXEwU2FYcjREeDVCZ05DMnQ1ekhTVy00Ym9YTzUxdTduMURuM3plV09tbDhLc203dTRIX3BzY0FKc1pJZ0FhejhGYmcyUHBpcDQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-01T17:42:20.000Z",
-        "summary": "Anthropic is stopping Claude from copying existing video games: Here’s why The News International"
-      },
-      {
-        "title": "“Steer it away”: Anthropic tells Claude Code not to recreate someone else’s game - MIXED News",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBmZExLZnExQlcwYVMzOF9xaUstUl9rZ1Z3eG5FeXVZWVRtVlhkWkJaWHFyaml6U3JrVjZOdEZOU3JUb0UyUUhpdmdyVWFFdEFlOU9lN2VuRndxVWpnQTRYUEk1NTVzVlVTbjRRSFM3bU9vazA3SDQ5Wm9Jbw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-01T17:39:48.000Z",
-        "summary": "“Steer it away”: Anthropic tells Claude Code not to recreate someone else’s game MIXED News"
-      },
-      {
-        "title": "Anthropic says you can’t be mean to Claude. It’s not about feelings - CNN",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE01ZU5qTkttUWgxLW5mbWVCb3lVVWZrQjRJLU5nbXozRjRhMDhmSGswckNlZGpMMWZwQlZHT3g5Mm1KM2JMaWQzcGFoRWg1d2N0dTlDQkhWR0RPa1puRWRfUlZXWXh6YmxOZDRKdEdWV2VFbXAwV3hzZnNzckptQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-01T17:00:16.000Z",
-        "summary": "Anthropic says you can’t be mean to Claude. It’s not about feelings CNN"
-      },
-      {
-        "title": "Anthropic expands text watermarking to older Claude versions beginning November 3 - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQUEM4THdHaktsdExGbnVyMWxVLWhuRmx4S3hYSEMwWFIxcjIydjA2TVl6bkZidU10QmYyWEZWYkNsM0NXdTBHc2pIY0tXU1ZiMTdYbDZvYVNUUDduTDB2eU1DRU0yVERyS3ppRFpHWjZ5OUFxdXU5ZTRCbk5hSG9UNkgxQTJmX1BKWlJkOXAtNA?oc=5",
-        "source": "Google News",
-        "published": "2026-11-01T16:59:47.000Z",
-        "summary": "Anthropic expands text watermarking to older Claude versions beginning November 3 Mashable"
       },
       {
         "title": "The Secret Life of My Claude Code Agents",
@@ -559,30 +598,6 @@
         "published": "2026-10-05T17:45:57.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Anthropic 5.5 Models are Officially HERE & It Changes EVERYTHING",
-        "url": "https://www.youtube.com/watch?v=BWcp3gdlMQc",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "BWcp3gdlMQc",
-        "thumbnail": "https://i.ytimg.com/vi/BWcp3gdlMQc/hqdefault.jpg",
-        "published": "2026-09-30T14:00:29.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Claude's #1 Use Case Isn't What You Think",
-        "url": "https://www.youtube.com/watch?v=V8iJgEpujbo",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "V8iJgEpujbo",
-        "thumbnail": "https://i.ytimg.com/vi/V8iJgEpujbo/hqdefault.jpg",
-        "published": "2026-09-23T18:45:20.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -672,6 +687,39 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Stop Running Claude Code Agents on Your Own PC",
+        "url": "https://www.youtube.com/shorts/ka0_21X6pus",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "ka0_21X6pus",
+        "thumbnail": "https://i.ytimg.com/vi/ka0_21X6pus/hqdefault.jpg",
+        "published": "2026-11-02T15:00:37.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Finally, My Claude Code Agents Work With My PC Off",
+        "url": "https://www.youtube.com/shorts/SuTnn7l53vc",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "SuTnn7l53vc",
+        "thumbnail": "https://i.ytimg.com/vi/SuTnn7l53vc/hqdefault.jpg",
+        "published": "2026-11-02T15:00:17.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Vibe Coding a Whole Shop With Claude: Here's the Catch",
+        "url": "https://www.youtube.com/watch?v=LwGpZ34wsR4",
+        "source": "Pragati Kunwer",
+        "channel": "Pragati Kunwer",
+        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
+        "video_id": "LwGpZ34wsR4",
+        "thumbnail": "https://i.ytimg.com/vi/LwGpZ34wsR4/hqdefault.jpg",
+        "published": "2026-11-02T14:30:16.000Z",
+        "summary": ""
+      },
       {
         "title": "THE world's shortest Claude Code course (5 mins)",
         "url": "https://www.youtube.com/watch?v=8c6JZ18W0Bo",
@@ -967,39 +1015,6 @@
         "video_id": "tSwd-Fxgq5c",
         "thumbnail": "https://i.ytimg.com/vi/tSwd-Fxgq5c/hqdefault.jpg",
         "published": "2026-10-05T17:45:57.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Can Claude build a cross-platform AI app?",
-        "url": "https://www.youtube.com/shorts/IEYzYopNGVQ",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "IEYzYopNGVQ",
-        "thumbnail": "https://i.ytimg.com/vi/IEYzYopNGVQ/hqdefault.jpg",
-        "published": "2026-10-02T23:46:57.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic 5.5 Models are Officially HERE & It Changes EVERYTHING",
-        "url": "https://www.youtube.com/watch?v=BWcp3gdlMQc",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "BWcp3gdlMQc",
-        "thumbnail": "https://i.ytimg.com/vi/BWcp3gdlMQc/hqdefault.jpg",
-        "published": "2026-09-30T14:00:29.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude's #1 Use Case Isn't What You Think",
-        "url": "https://www.youtube.com/watch?v=V8iJgEpujbo",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "V8iJgEpujbo",
-        "thumbnail": "https://i.ytimg.com/vi/V8iJgEpujbo/hqdefault.jpg",
-        "published": "2026-09-23T18:45:20.000Z",
         "summary": ""
       }
     ],
@@ -1213,18 +1228,6 @@
         "video_id": "qV6Oo_ZlC2E",
         "thumbnail": "https://i.ytimg.com/vi/qV6Oo_ZlC2E/hqdefault.jpg",
         "published": "2026-10-08T18:53:40.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
-      },
-      {
-        "title": "Can Claude build a cross-platform AI app?",
-        "url": "https://www.youtube.com/shorts/IEYzYopNGVQ",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "IEYzYopNGVQ",
-        "thumbnail": "https://i.ytimg.com/vi/IEYzYopNGVQ/hqdefault.jpg",
-        "published": "2026-10-02T23:46:57.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1662,6 +1665,34 @@
       }
     ],
     "claude_learning": [
+      {
+        "title": "Stop Running Claude Code Agents on Your Own PC",
+        "url": "https://www.youtube.com/shorts/ka0_21X6pus",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-11-02T15:00:37.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Finally, My Claude Code Agents Work With My PC Off",
+        "url": "https://www.youtube.com/shorts/SuTnn7l53vc",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-11-02T15:00:17.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Vibe Coding a Whole Shop With Claude: Here's the Catch",
+        "url": "https://www.youtube.com/watch?v=LwGpZ34wsR4",
+        "source": "YouTube · Pragati Kunwer",
+        "published": "2026-11-02T14:30:16.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Long conversations and agent loops on the Messages API can now send smaller requests and get a lower time to first…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#november-2-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-11-02T00:00:00.000Z",
+        "summary": ""
+      },
       {
         "title": "THE world's shortest Claude Code course (5 mins)",
         "url": "https://www.youtube.com/watch?v=8c6JZ18W0Bo",
@@ -2123,34 +2154,6 @@
         "source": "MCP TypeScript SDK",
         "published": "2026-10-05T11:54:56.000Z",
         "summary": "Package Version @modelcontextprotocol/client 2.3.1 @modelcontextprotocol/server 2.3.1 @modelcontextprotocol/core 2.3.1 @modelcontextprotocol/server-legacy 2.3.1 @modelcontextprotocol/codemod 2.3.1…"
-      },
-      {
-        "title": "1.32.1",
-        "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/1.32.1",
-        "source": "MCP TypeScript SDK",
-        "published": "2026-10-05T11:42:59.000Z",
-        "summary": "What's Changed [v1.x] docs: state the principles in CLAUDE.md by @claude [bot] in #2939 [v1.x] docs: point the README at v2 and say what v1.x supports by @claude [bot] in #2942 chore: bump version to 1.32.1 by @claude…"
-      },
-      {
-        "title": "Can Claude build a cross-platform AI app?",
-        "url": "https://www.youtube.com/shorts/IEYzYopNGVQ",
-        "source": "YouTube · Riley Brown",
-        "published": "2026-10-02T23:46:57.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic 5.5 Models are Officially HERE & It Changes EVERYTHING",
-        "url": "https://www.youtube.com/watch?v=BWcp3gdlMQc",
-        "source": "YouTube · Ryan & Matt Data Science",
-        "published": "2026-09-30T14:00:29.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude's #1 Use Case Isn't What You Think",
-        "url": "https://www.youtube.com/watch?v=V8iJgEpujbo",
-        "source": "YouTube · Ryan & Matt Data Science",
-        "published": "2026-09-23T18:45:20.000Z",
-        "summary": ""
       }
     ]
   }
