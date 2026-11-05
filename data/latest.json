@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T17:42:50.887Z",
+  "generated_at": "2026-11-05T22:57:36.235Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -7,7 +7,28 @@
         "title": "Investigating Vault Particles with Claude",
         "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
         "source": "Anthropic Research",
-        "published": "2026-11-04T19:51:49.000Z",
+        "published": "2026-11-05T18:59:13.000Z",
+        "summary": ""
+      },
+      {
+        "title": "How Researchers Use Claude",
+        "url": "https://www.anthropic.com/research/how-researchers-use-claude",
+        "source": "Anthropic Research",
+        "published": "2026-11-05T16:54:05.000Z",
+        "summary": ""
+      },
+      {
+        "title": "The Long Term Benefit Trust",
+        "url": "https://www.anthropic.com/news/the-long-term-benefit-trust",
+        "source": "Anthropic",
+        "published": "2026-11-05T15:44:46.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Alignment Assessment Ukaisi",
+        "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+        "source": "Anthropic Research",
+        "published": "2026-11-05T14:10:48.000Z",
         "summary": ""
       },
       {
@@ -121,36 +142,184 @@
         "source": "Anthropic Research",
         "published": "2026-10-23T20:56:39.000Z",
         "summary": ""
-      },
-      {
-        "title": "Nuclear Safeguards for Ai",
-        "url": "https://www.anthropic.com/research/nuclear-safeguards-for-ai",
-        "source": "Anthropic Research",
-        "published": "2026-10-23T20:56:38.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Project Vend 2",
-        "url": "https://www.anthropic.com/research/project-vend-2",
-        "source": "Anthropic Research",
-        "published": "2026-10-23T20:56:38.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Property Based Testing",
-        "url": "https://www.anthropic.com/research/property-based-testing",
-        "source": "Anthropic Research",
-        "published": "2026-10-23T20:56:38.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Claude Rollout Led a CEO to Curb Workslop; 5 Firms Set Rules - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPWHdnMVBnWFhlWmhrNXhkNm5JZmhZX3F1aFNfNjlUVURsMnc5QTFCMnZrM2QtTGY0Q181ZEpkeVczalN1b0RNU3pLZDNCbFR5ODIyaDNyY1BzdmFLLVh0dDFpdXpXWUhzNkNVcGpjTFlwSlhjRTJaQjZQOTkwaFc3WWd6Z2ZXM29SWXFCb3RySUk?oc=5",
+        "title": "Claude adds Personal Finance with read-only bank access - TestingCatalog AI News",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPMzhHSzNvTTk3TnY0d3FaaDNZS2NVaXpEdHBGdHNCMW0zTFRZcFppd2NiaU0wZ2FZTlNOOGJRR3FJMG1zYl83RC1Na1dQdEFlanJCSlBiNDltQW9Cc1NldFN3NXhfem9oQ3RLZFVWLVZId3dBZ2QyNDM3U3hQYjhSbUphaUNkR0tBNms1Nl9OLWg?oc=5",
         "source": "Google News",
-        "published": "2026-11-05T17:04:41.000Z",
-        "summary": "Claude Rollout Led a CEO to Curb Workslop; 5 Firms Set Rules FourWeekMBA"
+        "published": "2026-11-05T22:50:36.000Z",
+        "summary": "Claude adds Personal Finance with read-only bank access TestingCatalog AI News"
+      },
+      {
+        "title": "Perplexity launches its own take on AI agents for work",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work",
+        "source": "The Verge",
+        "published": "2026-11-05T22:26:50.000Z",
+        "summary": "Perplexity is taking on OpenAI and Anthropic with its own work-focused AI agents. The startup's new always-on \"Teammates\" can take on multiple roles within a workspace, while pulling existing…"
+      },
+      {
+        "title": "Claude Code sends your email address to websites",
+        "url": "https://github.com/anthropics/claude-code/issues/107757",
+        "source": "HN · 85↑",
+        "hn_id": "50385272",
+        "published": "2026-11-05T22:17:15.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Anthropic Invites Banks to Help Shape New Personal Finance Offerings - PYMNTS.com",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQRXE2T1lpc196dDRRRzF4aDJBazMwSXVxQkcwWFVmU0FvRFZZcGx1ZWxtdDlMVERvejNGQXM3Uy1CdU44M3h0MEo4V1YzUUdaYjlqYUZTcUhaNzdxaXBNUU9sbHFLd1BsSjhfUnBCalVCQUdlNUJsZlBLQXpfV1R5NHY2dWtETmY5UldZYTZ2MmtxVl9LNGgwVUhEd1FOOW1wVXItTUJxRHFUckhEcXZkY2RuOTE?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T22:17:02.000Z",
+        "summary": "Anthropic Invites Banks to Help Shape New Personal Finance Offerings PYMNTS.com"
+      },
+      {
+        "title": "The best thing in Anthropic’s S1 is my friend’s restaurant - Expedite | Kristen Hawley",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5rSXVUQkwtMnFPUThEa2RXengtNkNHdXAtV2wteVdRSi1VSFQtYmtReXdac1c0ck13dDI5QVlOVHlUcnVFNlQwTE9HUUthRlNaSHhVb01zd1lGSlhYQWtaZEZvUl9qRzNMNGJMaU9qUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T21:34:36.000Z",
+        "summary": "The best thing in Anthropic’s S1 is my friend’s restaurant Expedite | Kristen Hawley"
+      },
+      {
+        "title": "McGraw Hill integrates curriculum into Anthropic’s Claude for Teachers - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUHF1UWd0eldxdXFWLUhWN2FZLXRoTVZBaW1HanlndDljc3VxR0hZQXpQS1ZWVkNYT0Fhd3Rhc2EtNGxxQTNsMlltUWVIalYyblNyem5kVzFqemdiR3duaUUtS0hOR0NLTTZXZ0xIOTJLR0ZQNGpwNjNZTm0zZzJOdWl0YVNPTm9tNTF0dW9nU0hTNGFzSVlWYnYtRFRwRGY2Z2xYWmpOVEtQWUk?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T21:27:12.000Z",
+        "summary": "McGraw Hill integrates curriculum into Anthropic’s Claude for Teachers Yahoo Finance"
+      },
+      {
+        "title": "Anthropic Launches Personal Finance Feature for Claude - The Information",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQYThsUDl2NzYtMlRXSmx3RU9XYjV5QXVkSmJ4NFFCRU16SmZKLThmUzA1YXBvR3ItMHd5Q0xiVXBta0pUZGhRUF9aS0RaajlZcFZ4cGxNazJFak5ESmw0MlVaX2oxbUE4d3BIbHAxRENlZl82VmhQSlVPQ0FsVDRvTkdyOEVlQU9XRmg4cXpXLXFTNDIzc1E?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T21:20:00.000Z",
+        "summary": "Anthropic Launches Personal Finance Feature for Claude The Information"
+      },
+      {
+        "title": "Anthropic is rapidly accelerating AI development amid slowdown calls, outside research group says - AP News",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQeU5MeHUxWDhnY0d4UE9OUFVjSWpLVnd1UEw4a1ZiY2EzaU85b2Q0NHFlRkFGMk9OakM1VjVVTzB1NnktZ3RKaW9MQ3ZlOTItV21ZcUd6WU9zQVRyZmRvN0FPYXRFbEZ6aDBCdENjZHRoV3pFWUJoelZEN2xaNkFKZUYxVXFhUWtjTjEtbTdKMnBxRVBUMFUwMmo3Q0ZhZw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T20:19:00.000Z",
+        "summary": "Anthropic is rapidly accelerating AI development amid slowdown calls, outside research group says AP News"
+      },
+      {
+        "title": "Anthropic Bullish on Ripple: Claude AI Predicts Euphoric Move - Cryptonews",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1YSU1odXZOb0lWd0ZEMnZkMTl2U0thYWdGY0F6YVIxR0VHeTg4YklZeWtycFJYQl9iQmFNMF80dHV2alBLSnBqQkdna0NmRHh4MF9qa1lGbWU1Uml1VHRSREVfNXd4M3VhcFdpTjdPNTFZUTRNOHp6UnBXVQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T20:05:00.000Z",
+        "summary": "Anthropic Bullish on Ripple: Claude AI Predicts Euphoric Move Cryptonews"
+      },
+      {
+        "title": "Anthropic adds personal finance feature to Claude - Latest news from Azerbaijan",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBVUzdSeWZVRV9NTm1OUmhYTG9MalladDRuenlCR3lhWVgwMkN3OC14aEhFbVk2TklIUUUwWVVHVnZhb2FZeDZSUGN3UzNUbmNYRWs3cXhranR5Q2NxTEJEX1pZdU4taXhnTzdlUWR1Rk43RGtrc0F6SXRR?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T19:53:25.000Z",
+        "summary": "Anthropic adds personal finance feature to Claude Latest news from Azerbaijan"
+      },
+      {
+        "title": "Anthropic rolls out Claude Personal Finance with spending analysis and bill tracking - Android Authority",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5hcE9pajFOUFBBMk10aUZfVENXQXZ4YU83UmMxdDJiOGprODJWSnR6TWM1MEs5cUpoQXVfRVd3S0ZlclROamNXTUNIWVMwdndVdTBFZUxKNXI5WTAzdVhYN0hlTkhzQzdicFhVN2l1aENOdThNZnp2Uk5wMmc?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T19:49:00.000Z",
+        "summary": "Anthropic rolls out Claude Personal Finance with spending analysis and bill tracking Android Authority"
+      },
+      {
+        "title": "OpenAI Poaches Anthropic’s Claude Code Product Leader Cat Wu - WinBuzzer",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQalhyNnA0ZTBXdkpaWlc1THNEbDZSRWhEZ28xMTZTWXctdHhTRzdabzVWdnkzQ3dqMVBGMU9DSWpiSVR0Rk9taFcxdk1taEhRajl6eUg1MW9ZSkkzTVFEZUlyVHZKSlRHNzhydnhBZWZsMWpIeWUwZFNKT0FXRTg5TG5nTmtPbk5XY19iVmxKUW1zMmE2cEczX19vdUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T19:41:24.000Z",
+        "summary": "OpenAI Poaches Anthropic’s Claude Code Product Leader Cat Wu WinBuzzer"
+      },
+      {
+        "title": "Anthropic's Claude gets tool to analyze personal finances (ANT:Pending) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxObms2NENGYk51UEVIWVJ3WEZTVU5CR0dIVjM1TElIYUhlTFVoWmJCNkRiZXdjUVB0cG45MTg0Q0pIMUpiVXd1U2ZXVURCMXBrcDNheUxuM3JkcG5VY1d2QlV2bUYyODZZN0hERnctT3k1V3JHS245NkRoTEJDOWNZMm44Z21ZMHVPcERJT3I4M1JEMjNfS1h5dzln?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T19:36:18.000Z",
+        "summary": "Anthropic's Claude gets tool to analyze personal finances (ANT:Pending) Seeking Alpha"
+      },
+      {
+        "title": "Everything you need to know ahead of Anthropic's IPO - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUkN1VHFrREJneU9DdUV5UVBuT29PM1hOdXN5aU5udTZqc21yV1VMS0VySEJqa1NrLWlhcTdYdVM1Nmo3MDdJWWtEc2JRWDVrVXBKX2tJS0t4TTg0eG4zLVJqWFBNNUlCd1hDR3YxeHlvUmFqdks1cHFQUGk5U2RaX2JuYnl5REFlN0pRX25DdU9SX2s?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T19:30:11.000Z",
+        "summary": "Everything you need to know ahead of Anthropic's IPO Yahoo Finance"
+      },
+      {
+        "title": "Anthropic Relaxes Claude Code Curbs After Game-Dev Backlash - BigGo Finance",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1YU05QemlfaUdJVnh1TWdmQUdINzhKX0FwNmRDWEZQRjJrNjJNbWFTaHk4QnR6VVZuRGJBZk9Dazdmdi1mUzBGZHRVRzhoSk9TQjlZbDRScXBSWVN1WlR3aWdYZVcwQUs1SGtUM0VVdmQ2aGo3N2c?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T19:28:41.000Z",
+        "summary": "Anthropic Relaxes Claude Code Curbs After Game-Dev Backlash BigGo Finance"
+      },
+      {
+        "title": "Anthropic is testing a Claude feature that reads your bank accounts - Startup Fortune",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNUnlhZUpUc3YtQ3dBdXhid0lQYjRhUE5WRGdsQXptSVFiNGVGRVZMX1UxaFRCZ1F4TC1iSWVienRzS3RuaGJrZHJtS1JyRjd1ZlBjdUJuQVdDVWdBeEVKZHNVT2M3SUpycnJVaVd3eXdoelpnVmVtTGMzZ05CdGw3OHktcFlPdkg2MFphcy15bEZ0ZzJkN0JWTldmcw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T18:57:04.000Z",
+        "summary": "Anthropic is testing a Claude feature that reads your bank accounts Startup Fortune"
+      },
+      {
+        "title": "Anthropic partners with Plaid for AI financial advice tool - Yahoo Finance UK",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxORTNWNnJLRjczYlBRM21rajVXLTNTc21BMjNmMW1QMEFXOU1TcGd2ZElNLUZGSGRNVTRRelRUekdnYVJZQmdWenRQV2RFb3lMeElzdnZHbGRCS01vb2JxN1FpajhQMmRZd01uUG55bThrSl9ISWs3N1NvSkFIMDJQeUdTMUJKYV92VjJoTW1OMA?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T18:52:11.000Z",
+        "summary": "Anthropic partners with Plaid for AI financial advice tool Yahoo Finance UK"
+      },
+      {
+        "title": "Anthropic begins beta rollout of Personal Finance in Claude in the US — TechCrunch - UA.NEWS",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLVdhdTNBLVZwdnduNnhRZThseGtoRjVKcW8wZWliQTVwNmVrRTlBeDJoSXhvR2VFbnJNMEpsZHh2aWJsWWxKbDU5cmNoQnFRQWVjYWZwRHhhb2ZTbElfTXZQT0RWUjh4azdvS2Z5eDdjbE85Mm54eG03Y212RF9TWXF1TE4taEhuUTFmOElZdF9PeWI4WWwwcHdBbVJrM055aks0LVJwNy13UGdD?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T18:35:42.000Z",
+        "summary": "Anthropic begins beta rollout of Personal Finance in Claude in the US — TechCrunch UA.NEWS"
+      },
+      {
+        "title": "Anthropic Ties Claude to Plaid, Opening Read-Only Access to 12,000 Banks - BigGo Finance",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1hekVISmdPa0p4WTB2OWIwNlFBSWtLN0NqeVF2WVdoWS1NWHZZOXJXNV84dHlDVFRsUGZFVUItNTBfY3VXOURqVW95TlVLN0Z5ZFNTUXRSZ2tlZ1AzMFk1MXJJd3NnT2tlM2hqSmtpOW5yOUx6REE?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T18:35:00.000Z",
+        "summary": "Anthropic Ties Claude to Plaid, Opening Read-Only Access to 12,000 Banks BigGo Finance"
+      },
+      {
+        "title": "Michael Burry says Anthropic is 'betting its entire existence' on optimism, and he has no plans to own the stock - Business Insider",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZXp4cWdBWFlyY3VBQ29WWTZhaXZsYklEbGxkOEM2czYzYTRsaVZHX2ZUR1lLYlEtQS1nMjhLTkhwaC12WFBPSW5kWkw4RUtWdS0wZ3ZxSWN0YS13NmxmM3A4QzVyYjFuQzF6OW9QZUZDdS1VZjlpOE04aDFfRlBTd05SY1c5ajNTS182U2F1cURFUlU?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T18:26:00.000Z",
+        "summary": "Michael Burry says Anthropic is 'betting its entire existence' on optimism, and he has no plans to own the stock Business Insider"
+      },
+      {
+        "title": "Anthropic launches personal finance in Claude - Breakingthenews.net",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNSGhQQllLMWVqLWxNbEExX21BSU1BZHRLbm1fc04tSE1HOEl4WHEtaEZMNVNKeklIcThxUmJHWFhJbmRTRkMzWDFTQVUyOW85RFZJcGZCOGdGTWl0alljRm5HbW9rSU5ENVhscDZQaWFHOWU4cFp5MWQ1Y2xiRjZ0MktLenozYmRVYlNyT0twTXBKalVo?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T18:23:00.000Z",
+        "summary": "Anthropic launches personal finance in Claude Breakingthenews.net"
+      },
+      {
+        "title": "Anthropic Introduces Read-Only Personal Finance Beta in Claude - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVUYzZzF2NmgtQldiQk9PQ3BfQnZGQTFnanZjNEdHeUk2THRTRmt5cERpTHJwZ3hwM3dBZGdyVmZlNHA4RDJlTkxnQXUwWFR4d19sMjhJMko1c0hIWkdoS2xSNzFrNGhVbGxibzVJT1g0c2Z5S0ZkQzg2TTZrMlVoNDdDSjNHSkNDVFpuQg?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T18:17:02.000Z",
+        "summary": "Anthropic Introduces Read-Only Personal Finance Beta in Claude Unite.AI"
+      },
+      {
+        "title": "Claude Launches Personal Finance via Plaid, From $17 a Month - FourWeekMBA",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQV8wbnFDZllSVlZTZHN0WXhXRU1zZHBWZWVWWE5nYm9xaVlfQW04ZUN3WTZDUmt3VTVPd0VTdFJxZ0ZFaU9XUmdpdzJ5ZFlxcWpXVUdBaU1RcFBPZDJjWjBiMU1weG53YlpjdmdCYUJKYVlIRGZHUm9SUmVZRk0zWVNPdFItQ200MVRrcTVfRQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T18:15:29.000Z",
+        "summary": "Claude Launches Personal Finance via Plaid, From $17 a Month FourWeekMBA"
+      },
+      {
+        "title": "Anthropic’s new Personal Finance feature connects Claude to your bank account to help with your money - XDA",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNZnNFS2V1RVJLNlc2UVpRY1E4TWVoQjgtQlZwblRzblJLaVotWGc5eGN1d05oRzBPNUdiVFZzRmQtZDB5bGdGdlFMS1ZPYWRRQUllRTg4NDAtWkpFTXowTTE1ZkRmTUtTS0xLWW8yckN1eDBJMEhSV1VBc0JzQXBiUXpRcE1meGhtLS1fLUN0U0lxazBYVkhRaUJLYjFHOE1rdXF5a1liaVYtakhr?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T18:14:44.000Z",
+        "summary": "Anthropic’s new Personal Finance feature connects Claude to your bank account to help with your money XDA"
+      },
+      {
+        "title": "Anthropic upgrades Claude with new Personal Finance feature - 9to5Mac",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQLUZJbk5NTDd3ZnF6NTVTS3p5eENzUFE0Tk93bnprTWF2WmdBRm5rcFZTN0UzVVNpcnU0UjdRT1V0eUgzV2dXVDFNOEF0Z3Y4VXpzTVA5UmoxdHlHVXdJZXVQSUJlQVdIc1Y3MmQtQ2dIa1NiSkR2UVFBRnd5Q2VJejZoTW5WbGIzUGEtRTNZS1g4WU9VZnc?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T18:14:00.000Z",
+        "summary": "Anthropic upgrades Claude with new Personal Finance feature 9to5Mac"
       },
       {
         "title": "4 Claude Code agents, 4 worktrees, one Herdr",
@@ -165,49 +334,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Claude Sonnet 5.5 Extra: Is It a New Model at All? - OrcaRouter",
-        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5senJ0M3dvTFdQaVI5cFZLR1kwOUg5V3hDWUxnS0tMaWFfcGg2S3JCem9lQlNKbkFaeDlIV2R6V3g0cFJUVVd3OFBVZldMTHFjNzF0WnRNTzFITmtXcHhrR0ktWWhvQXdWREFn?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T16:59:28.000Z",
-        "summary": "Claude Sonnet 5.5 Extra: Is It a New Model at All? OrcaRouter"
-      },
-      {
-        "title": "Anthropic allows managers to monitor employees’ Claude usage; company says: It will report on ... - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxNQzZnTnhoaVhvaXhSbmxYcFFQN0hLdDduWmJMNjhzUEhCRV9CcVBhOVJyQnc1LTI0X2JqSTRpSkdvbmdwSTJHT0hNLUlOcGpSckU3TTVOYmE4WHNQbnR2RFNmU29GWjVrUlRkSzlnTDhROVNSVEllUUVfY1ctSTdydTdXLWVCdUFRSUpGU3VkRERzRjl5Ri1sYzNoOV95TVBMMUFHVGJLWGFCcllwMzI5b3pBaUdEM3pHQ0pkb0FSMy1lbU9DMkp0TExHbEJSZDFodFhQRHB6aU9hdGFPODN3dzE4QWZmNUYtRk1WWDVPTlMzcUdkLXpBbmJuekV5c2FBNTAtVdIBigJBVV95cUxONDVXRGl4WDBTMWtTb1pTTzBWcnZxX1B1MGNkVFRhS1k5SWtlV2RDMnQza3FNNU1kU2VVVll2bXM5WmExN0FvNmlNX3FheHd1MVMxR09ucG5QMi01VkstZk4zR25jQko4WEtITVFyX2dvdFVOTmhnN3M3eDVzUDFwVHhKV2ZSb1F6WDBiODFNaUY3SmxCUHRLbVJUOW52eDQwMTJSQkhhNDFUM1Jqa3k3WnlNc1NpU1JfWV84ekxQVFo0eUFMTWE4R21HTGVxN0FJb25wUnlPNW15MmJVTEc3anJlUmlwVGNfa2ZiMTZLdW1zLWZ2d183ZXJ1Z1JvWk82YnRpUDktWUozQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T16:41:00.000Z",
-        "summary": "Anthropic allows managers to monitor employees’ Claude usage; company says: It will report on ... The Times of India"
-      },
-      {
-        "title": "My psychophysics as a bilateral cochlear implant user",
-        "url": "https://claude.ai/artifact/L8qsMc3SorytGW3LA81nYf",
-        "source": "HN · 55↑",
-        "hn_id": "50381033",
-        "published": "2026-11-05T16:21:12.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic Just Paid a News Publisher for the First Time, and It Was AP - 24/7 Wall St.",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOVXk1U21PYmFieE5rV1UxOWxkN1JDZVh6SE9mT2JjM000YUprazhzQ1FYaWd4WHlQQ3hWalZuc19JSGRzcnRjRzhHOUpfSEQ5d25FMEJnMU1saXFudGNXMjJrbXJVRlRYZzNZNjFaVUdmckV2VW11UlRjRDQwa0p3Q014cG9YSUNES1J5ajVZaUk3azR1M0lLbXpPdTZPTzUyYTVhbkVZVUFJVEV0Sl8xemgyVQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T15:42:00.000Z",
-        "summary": "Anthropic Just Paid a News Publisher for the First Time, and It Was AP 24/7 Wall St."
-      },
-      {
-        "title": "Anthropic Studied 207,049 Science Sessions; Data Work Leads - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOaEZ3Qmg5eVdyTWpCTUtUZnhGeEs0ZzAyOE9jYWdoVHlfSXFqY0gwRzNjeFZDQmM3ZVV2S05RV2x3OFpjMFBLSVNEYlh3MVpyOWRtSUpxd05TZEM2bjBGbm1zRm44R3RqdW9xQTlFZUpERlg4LXFsNnhNbHo0bnpnY1Yta1ItTnlhNlhCWnhR?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T15:15:15.000Z",
-        "summary": "Anthropic Studied 207,049 Science Sessions; Data Work Leads FourWeekMBA"
-      },
-      {
-        "title": "Anthropic's Agent Autonomy Report Argues Against Mandates - OrcaRouter",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNZUk1NHAtdGNoSl9XYUVsLVVrR0d1MS01ZERELUxFTG1PRXNZVGVfOXppSEV1QVhOVmVtV2t5XzQtVWd4S1F2YUFGcENudmRhNUp0V3N4YjlrSktjbF83N1dEUlQ5dllleHNwbGU1YkNCOFh1R1Q0eHA0YWdyY2dNMDl3?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T15:09:21.000Z",
-        "summary": "Anthropic's Agent Autonomy Report Argues Against Mandates OrcaRouter"
-      },
-      {
         "title": "Hacked App? Brutal Truth: You Can't Blame Claude Code",
         "url": "https://www.youtube.com/shorts/BBW8faPkJnQ",
         "source": "Leon van Zyl",
@@ -218,132 +344,6 @@
         "published": "2026-11-05T15:00:35.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Opus 4.6's 500 Zero-Days: What Three Patches Show - OrcaRouter",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE4zUjlmYUZBbG11bUJkbVY1eklObkFWaFE5bXFlaDc4U2o4eG1CWkFNQkpfSGplT0xsUHotUEk4elA0MTJzeS0zRUlyLWNEOTVTdENlcDNHZXpOdWNWZFN4ZWhrQ05aWG84anBjX3ZrMGJBN0J3SG5R?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T14:09:47.000Z",
-        "summary": "Claude Opus 4.6's 500 Zero-Days: What Three Patches Show OrcaRouter"
-      },
-      {
-        "title": "Witten’s Physics Paper Credits Claude Opus 5.5 in 3 Places - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQZ2tDMHRWTUdKVUxyeXNmcG9mdlJKN1NCcHYwQ0U5YXRKYlJyWjB1MGtqNVlGOEFxWE5mOUJWeVg1dUxJcENDbXlGcWlKYXdJaDNNR1BLc2RHUkYxODBHVUxnMWRDaC1IUkVVT3J4T0tFRkN6NkRPbHpIaUZ1OGVZblRLVzN6TlVuT2ZMTHFn?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T13:57:20.000Z",
-        "summary": "Witten’s Physics Paper Credits Claude Opus 5.5 in 3 Places FourWeekMBA"
-      },
-      {
-        "title": "Claude Dispatch Flaw Report: 3 Plans, Fix Unconfirmed [2026] - https://tech-insider.org/",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNUm5WaHhtdVNxVzhuRjVKaTg4U3pMdXJVRmJsQUFuU21wYVVFZWFoTDZjOTFZNG1seHBTY3VOeFZQVDZGaDhjRUlzbFV4OGVXT3BGWndlSEdoTDJUSGZEbjNnQWcyNGYwV0ZITi15RW9VMjFHLXRIRHlsVDdSZEVTcHpiaFhCMFd2Slpybw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T13:22:17.000Z",
-        "summary": "Claude Dispatch Flaw Report: 3 Plans, Fix Unconfirmed [2026] https://tech-insider.org/"
-      },
-      {
-        "title": "Claude Cut a 3-Day Step to 90 Min as AI Stalled on 5 Puzzles - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVXlqdklrSmtENDZxQmpBdi1TVlB2dURPU1lvS3R1WHF4VTBQVm1hck8zcXJGVHZiMWQzWk5qSU95Zlc4X2RtdFQ4bWJ6aFBQQ1JVSVpsTGFrZ3BtTU16clhWSlAxbThyMG1GWkw0V1RyUjhHV0kxUEhxcUVQTFR4ME5yWE1HRkNzczY3MG5PU09XQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T13:20:54.000Z",
-        "summary": "Claude Cut a 3-Day Step to 90 Min as AI Stalled on 5 Puzzles FourWeekMBA"
-      },
-      {
-        "title": "Fake AI Clone Threats Scare Small Game Makers As Anthropic Changes Claude Rules - ETV Bharat",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQc1lPcno2RFdxWGt2dTRIVndhUTlJR2FiRnUwMzZYYjAzLWFMaE9kZ1BPeC1TaTlvYjIwdGlSNkgxVXREWWxycXFRV3B5N3FfMkVpdUZvRmJ6OV8xVEtXcm5jTGlOUG10MTdoYy0xUXhxd013MmhjRldsNVJTc1lDT05qT1cwNVEwNl9tTmxGWkFfYXh1MVdmQkVQRzlETy1jVlZBcnJNeEdPZlg0cW9ZeXN4dmZsX2PSAbwBQVVfeXFMTk1Ta2hJMXBvajF3cE5FZ1ZyRHZwZG9LSG54NHE4NWdoMFFMT0xpeW5xaU5ndnhPQlNCbWdoRXBYbk9uX2poOW1VazNvbkE3MWNsWDMycUdYZVBPSmJGU0kzOHpQYlJNaG4xeDJ4ckxnZDBkWDJYNmY2WEIwaXRZSXU0bkFxSGpVVkhINjFqdktfbzF6MG9jQTJ4Zlh4a2o3R3BjU0pTNmItR1h0TGNweG1iMThEdkNUb1N6RGE?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T13:19:48.000Z",
-        "summary": "Fake AI Clone Threats Scare Small Game Makers As Anthropic Changes Claude Rules ETV Bharat"
-      },
-      {
-        "title": "Anthropic won't fix a Claude Dispatch flaw that could let attackers execute remote commands across corporate boundaries - The Register",
-        "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOWmNYRUNBVGRtakc4aTBFX3c2VXpUQzVuUGJtdjNzNHp0a3VVNG0xMXpUUVBzb053T19yeThmeXl0U1lYeGd4LWY4aF9jMmdHR3lERmN6MVBWai1ZTks5SW5CTEE3NnRSYVljWmpSVGRUMzJ3TnpRS2FEYXQtUnpUeC01eVNBdUM5WmJZakxGUzZvVXJocVBwUWhLWHJudDRIa05rT25udmFMWnhVX201MUJ2NjdWSFJVeVJvSjVDR2k3VE5KNm9iVVJwZnhDMzV3QmVzLUZxZ3ZIQkF2YzdDOGIzNW9UVFU1WDFHcmIzbFFkYm5QMjVXZXFHVGx1cDlkX0JQQw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T13:00:00.000Z",
-        "summary": "Anthropic won't fix a Claude Dispatch flaw that could let attackers execute remote commands across corporate boundaries The Register"
-      },
-      {
-        "title": "Addgene Integrates Plasmid and Viral Prep Catalog into Anthropic’s Claude for Life Sciences - The Manila Times",
-        "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQN0RUb2ozcHhlTnY1R0N6Z2lUSzllMm50Q3pMdmJhenJfSi1GX182RFU2eFJOZGk0SFRYUmlNNk1iVHhNbTVBZDhkUnZxTXRJTXQ1SktoUmtFYXdxeHBYUVlRSWlyYWJDNEZuYWpMZ0RoYnZEM0dMMXQ5WFk1R0xZSVZlNk04Y0FEdXN5Y29ITkhKQXV3dHNYMHhvZzZKN1RlbFlLbkZCRXE4SnpURW9VVWl0QzBlaV80ek5kTzkweDVrLVJiNU83cmgzMmZQaUlkWTBBTkowckN6anN4NEV1V2VKRlRNRk1wUHBJb2RJZVc0ZENic0RF0gH8AUFVX3lxTFAyeDk1RUx5dUNFX2VScmlCWWhqbGxEMzgxSGplRlIxSTMtRmJySDA4THVBZVcwRkl0T0xoX1AtRm0yNXN6UzF0Wm02dl82RndYM1JvOE90QWR2TTF2bm4zYlVNZ01pUDR1cy10cTJRSURndVRrelI2U0dzX2V1bGp2QjlQamtsb1Z2OWlLeUZsU3EwSzhTY2tuSEFMMDdyVTYtT0xJa2ktbW9aZFIyMjZjX25QQ1BwblIyTjN3VmRsQ0o2ZEVicmFoS2EwSk1raHlReEluclAtTW1GSTdrbGdpclJUc0ZsVE92NlJBbGpjUUdFeG03cDZtdnhQRw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T12:25:49.000Z",
-        "summary": "Addgene Integrates Plasmid and Viral Prep Catalog into Anthropic’s Claude for Life Sciences The Manila Times"
-      },
-      {
-        "title": "McGraw Hill partners with Anthropic to bring K-12 content to Claude - StreetInsider",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQaVhqTTBYRzR2cGpEUExreDhaRUZMVGoyNmNjSngxV19kS2IxNDE0V3ZKdVd4YXYwUXJrM0lDVzNLemIwX2NWbDB4SEt1c1FoYmI0dGpibk80Z2liQ3lOUlQxZUJ1TF9DZzFiRDJQSXhoNm1yc2FNeUdQOHliUWwwT0RPNHZReGxDa29XQ01ib2VtU1lSRTVSMWY4T1ZmLWhxWlo5c2wxOXVfdkE3WF9xWEl1T3U5Mnl1QUxCSi0wZ1F0ekRS?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T12:23:43.000Z",
-        "summary": "McGraw Hill partners with Anthropic to bring K-12 content to Claude StreetInsider"
-      },
-      {
-        "title": "Anthropic loses product lead Catherine Wu behind Claude Code to OpenAI - The Decoder",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQkxfUXV5QlJwOWNFTmRTdW9peVZWeFg5SzBIUGd0SUMzSGdSTVpCTlp2amcyVG1RQ1IxX1oyMzVVNGRKRGdiRGlvUE8xMkxHTE5xRlJwLVFsdk1LVGM5M0QtYjhYRkl5Y3lOVkt2MjdrMGhFc3VfZ3pDbmJzeC1GcUY2UG5SZkViZjgzSUVNN0kzNGRrVEtlbE1iRQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T12:23:01.000Z",
-        "summary": "Anthropic loses product lead Catherine Wu behind Claude Code to OpenAI The Decoder"
-      },
-      {
-        "title": "McGraw Hill Integrates Trusted K-12 Curriculum into Anthropic’s Claude for Teachers - Cadillac News",
-        "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQM1dVaVVVUFFjbWkwNTRtQ0dwN2JYdVNPckVsc1laMVRIN2NHOEpNWG03R2FDdlJfdF8yVkEzZGY5MG1RZTJVSVVMY3lTYjBGMFF2ZXFvQnZZN05Id3hFU2dfazJleHZEN1hxN0NXM2ZtSHFoYkpFV0tPM2JZRC1rLVB2Umc4MTNxcVpJbV9EY2xlSzNNRG1LRU1oMDBpQjRlM2cxbmlXTFV5ZlJJYjBMVTFtYVNRNk9nMl9TSVhucmNTYW9YalZZa1RvRGppVC1xSFlIRmxBVUZERFlzQ1ctUm1uSEtwTGY0V093TkxTNEZjZWwtV3BEeDRHVmtiRkdTSHRSMw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T12:20:06.000Z",
-        "summary": "McGraw Hill Integrates Trusted K-12 Curriculum into Anthropic’s Claude for Teachers Cadillac News"
-      },
-      {
-        "title": "McGraw Hill Integrates Trusted K-12 Curriculum into Anthropic’s Claude for Teachers - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOVjRaVG0tWlFNa3UzekNOMDBORVNtXzBCRGx4Rk1fSklSTGkzSm80TG9QSkhmeF9qeUNuTVplSTh2QWNTVEJxZzYyUkhGZlpNMlk5S09NdDIyYVJiZUpsMDNpQ1JTV3FLUUx0Q1BhREpvWTlkT25xOERUbEtfSDAyNXVqbXF3YklaTVdvYXdzMFNZQ3RaZUVSWDkxdGc?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T12:19:00.000Z",
-        "summary": "McGraw Hill Integrates Trusted K-12 Curriculum into Anthropic’s Claude for Teachers Yahoo Finance"
-      },
-      {
-        "title": "Anthropic updates Claude’s rule on copying games - Mezha.net",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQREZaTGJSdTMxQzBQYURBM2FpcDlVODhOd0UybWo4SDhFX3JjTFA5SVB5R2thdExJV08tTEVxeUZoWEtjdFVJMzVneGFRM0IzRWlfUFJCVXdaSkw3WmF4aGlhUWpvQ1d1eU5DUFlKaDFQbDNDYjJwZHhYVHQ4bG91bm9OMG1nLWg3Z1RtN19B?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T11:48:28.000Z",
-        "summary": "Anthropic updates Claude’s rule on copying games Mezha.net"
-      },
-      {
-        "title": "Anthropic loosens Claude's game cloning ban — AI will now offer to build original games in the requested genre - Tom's Hardware",
-        "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxQRjZtdTRhY2hIeDlfYkV1ZEFWQThWNUZBczNJYUdTd0xHSUM1aU5CZ2VkNGpfWU9Lb1hsOV9hM2VjNEtYdGZUZklkYWJZZkNsZmNWQUtsTnhzTERKTktMR1RfZzQ2RjJEVnl6ZFJObzVQVzNnRzVsM0w2N1Q2MEloM0xzTnJWcTRZc1BHRmpoZ0RIY2k4OWJOdlV2Zll3bm5oaXNtTUdpTExLWjcxSkpaTUNvYjNNRHJKQ000RzBfRk96bzJTZjROb1ZfcldCYjNoUk1GeGltVXFWdi0tbkVhd0pzcGRPUU1fUTFKYW1TMzJOQ2V4WmVjQ1RnSUVUMUtRNjNrLUtrZmZYZw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T11:00:00.000Z",
-        "summary": "Anthropic loosens Claude's game cloning ban — AI will now offer to build original games in the requested genre Tom's Hardware"
-      },
-      {
-        "title": "Addgene partners with Anthropic to integrate plasmid catalog into Claude - The Business Journals",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPSUYtTno4SXVsVUZhWDFNOFBIOTh0N054TjhDbzRlM0pnSVE5dnF2SFJsQXc0NGw4aTIzaGNXZjdTX29IUGJEM0RlakxHLVBkUTItbHI0UEhGWDFYTUliMHN4Mm5YX2NNTXhORHNnS3doVm53a1NVOU53ZnBKbW1XS01QMFo?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T11:00:00.000Z",
-        "summary": "Addgene partners with Anthropic to integrate plasmid catalog into Claude The Business Journals"
-      },
-      {
-        "title": "Anthropic Signs First Content Licensing Deal With Associated Press - Dataconomy",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNT0xaUjBNR3FpS3F1aEZ5V1FRQXA5MTJoeDZuSUFkVFRUdTFGeXRyU3VqN2d3b29vazhwR0tVQkxCaUl6S01faTFUWjRkUUxlQzRUaWgtOXpvTFR6ZUF1MUxYaFEtQmMyNXNTT3BWRHljQ0pSczBVVXREaHBranpfODhPS25GM0VKYlhvQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T10:37:08.000Z",
-        "summary": "Anthropic Signs First Content Licensing Deal With Associated Press Dataconomy"
-      },
-      {
-        "title": "4 Reasons I Won't Be Touching the Anthropic IPO With a 10-Foot Pole - The Globe and Mail",
-        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQOVd5Z0E2eFhEMXpYYzNoaEhCWTQ5TmM1TVVRcHBvZDVyT2VSeTAyTmpNaDR1akVIRXNJTUlUQzVTeHVWYlJPVjBNdXBFeDN4S0RjUms3UEhrQ1VuOXB1YXpOYUw5VmYwVy1EdDNaWjNMQlF1VkFfNGNqcXBkYVFDcHJqRlQ4MnlZd3FPZjhtaVRXdHpaZHdjd2lPdTNxU0k3VUw2TmNwWVFnSVFxQWpLWlFqZDVxSzdLQnZRTjF6R0ZyU253Z3VHQnA3NUltSkxFSW04RzY0Z0JVTFppY1Fv?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T10:35:20.000Z",
-        "summary": "4 Reasons I Won't Be Touching the Anthropic IPO With a 10-Foot Pole The Globe and Mail"
-      },
-      {
-        "title": "Anthropic Admits Claude Code Background Subagents Repeatedly Re-Read Context; Cost Per Status Update Plummets 99% - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5oUFl6YVg3cjNHMzRhdlptZnd0WEF4V21kRnVja2lrWFF2Q184QUxFbllGekE2NkRzTWtrRmpXeDZYbnI5enExckpzYzFDRE1Mcjg5TERvUEFUOEVVT2k1MmJBZ0dVT0NLSWFQNkJsZ2o0YWt3SVE?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T10:26:00.000Z",
-        "summary": "Anthropic Admits Claude Code Background Subagents Repeatedly Re-Read Context; Cost Per Status Update Plummets 99% BigGo Finance"
-      },
-      {
-        "title": "Anthropic’s IPO Eve Looked Like a Victory Lap. Then Claude Code’s Core Team Started Leaving. - Vocal",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSzFvSGdQNjFLbFRMSGtSZXc3V2kybGR1bXR6NWQyZ040TnhEc2VVck9ka04tcUJJVFdMTGtpSFF4QmtCa0s2VUJsUVE0OWFwNEc5S01nZnJwcllFOTRUU2NUZWV5QVhraUQ2TnROeW5OMzhRNUxtdldoMVZpQWtyYkU4MFBJMUxvcFdaMzFPcDMwcnpGLTlXTGVWUW53Zm11VUVuckNvVkNnZ0t5RDZfQWtxZTd4UQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T10:06:59.000Z",
-        "summary": "Anthropic’s IPO Eve Looked Like a Victory Lap. Then Claude Code’s Core Team Started Leaving. Vocal"
       },
       {
         "title": "31 Life-Changing Ways to Use Claude in 2027",
