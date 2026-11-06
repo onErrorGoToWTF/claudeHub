@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T22:57:36.235Z",
+  "generated_at": "2026-11-06T03:52:47.390Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -7,7 +7,21 @@
         "title": "Investigating Vault Particles with Claude",
         "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
         "source": "Anthropic Research",
-        "published": "2026-11-05T18:59:13.000Z",
+        "published": "2026-11-06T01:53:44.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Early Progress Drug Development",
+        "url": "https://www.anthropic.com/research/early-progress-drug-development",
+        "source": "Anthropic Research",
+        "published": "2026-11-06T00:33:28.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Open Call Guest Investigators Life Sciences",
+        "url": "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences",
+        "source": "Anthropic",
+        "published": "2026-11-06T00:32:57.000Z",
         "summary": ""
       },
       {
@@ -102,13 +116,6 @@
         "summary": ""
       },
       {
-        "title": "Early Progress Drug Development",
-        "url": "https://www.anthropic.com/research/early-progress-drug-development",
-        "source": "Anthropic Research",
-        "published": "2026-10-28T17:16:58.000Z",
-        "summary": ""
-      },
-      {
         "title": "Coding Agents Social Sciences",
         "url": "https://www.anthropic.com/research/coding-agents-social-sciences",
         "source": "Anthropic Research",
@@ -135,22 +142,93 @@
         "source": "Anthropic Research",
         "published": "2026-10-27T19:17:23.000Z",
         "summary": ""
-      },
-      {
-        "title": "Zero Days",
-        "url": "https://www.anthropic.com/research/zero-days",
-        "source": "Anthropic Research",
-        "published": "2026-10-23T20:56:39.000Z",
-        "summary": ""
       }
     ],
     "news": [
       {
+        "title": "Claude's personal finance tool analyzes accounts and spending patterns - Interesting Engineering",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOLW1MZVo2ZHdSYXdHWXcwdVM2MmFiVW1GSnowb0dxbWJmZnJ4c3VDb0piWFYtSWdHeU9MNjlNVzAwekpqTG5tRGNtQUxDZHdhVEg1NUd1VEdiU2Z6eExzUnlBZlVUbUstUUJzZXpYSVlEamRFd0pxeWpVRE5mYm1fMndfVnFtN3VwTk91a1BEYUV3OUh1N2djQW1VV3lTRU9YQzhiRw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-06T03:29:00.000Z",
+        "summary": "Claude's personal finance tool analyzes accounts and spending patterns Interesting Engineering"
+      },
+      {
+        "title": "Anthropic Claude can now analyse your spending, but its access to money is 'read-only' - Firstpost",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOZFNja3hJcV9heUJDbmZMZDA0QWVsbGxDMEQxWEh1dFNmcUJkSWF3VHJYVTM5TVZtcTNjYy1wbUtxcTRUSDhnWkRDN1BTWmg5Vm5QYnU3VkxYcW9nclNjTEFaRjhWcGZ5ajktTTF5WThDU3dfeEExUGZ5VENmbHRENGROcy00VHppYkxhZlVXalg0MjBkR3EwR2tYQVNkS3dPUzdrbjZmaDRScm1IdlQ3SDAyNjhwM3M5Nl92MEZ1NlNKVVVwTkJR?oc=5",
+        "source": "Google News",
+        "published": "2026-11-06T02:36:15.000Z",
+        "summary": "Anthropic Claude can now analyse your spending, but its access to money is 'read-only' Firstpost"
+      },
+      {
+        "title": "Anthropic may need to cut IPO ambitions as investors balk: report - Gulf News",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUnZsWmx0RTd4b2lwZVBGSTFZbk9wRHhiM1QyVmhTdFA5RmhoU3pUQ3R2OERWMWFPMXBqcmg2Zng0MnhvbEtKZGtzVXhRZjdzems5LUZLQjZ0VmlQNGI5ZDdsYnREWWZmU0xiOW1HWFBLRDVtMzF3WEtCXzNVeXhtN2xVWl9yWDZydmtfYjhjeU1NRk1MWDR4MFlrb3NfcWxVTTVBa00tRHAtMEtJ0gG8AUFVX3lxTE5tREdIZjgwOFl4Mlc0cXpxN1hLbEItLTNOdmtrLW56OHlGVmRaX3dmQWVYVFk4WFZiLUZfN2ZHRkVNSzJITmhDNi0ySEV4S0d3dDBFeGp2UVJLYmhUVThZWkw2T2JnaDlwb3JtcHhRSncwbUItM0xXYUhOQ3JrWVNURVBHRXZqZWF6cW9pbm5LRUlQczM2dDNmOTZlaUVDRm1hRHdOUGQ4OGx4MlpFaXQwTUZ6aW9IbW1ubUxq?oc=5",
+        "source": "Google News",
+        "published": "2026-11-06T00:57:48.000Z",
+        "summary": "Anthropic may need to cut IPO ambitions as investors balk: report Gulf News"
+      },
+      {
+        "title": "Anthropic Launches Personal Finance Beta for Claude, Crypto Investor Pompliano Accuses of Copying Silvia - KuCoin",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNd1JMMndtS1kxRmtmZzBWajl3aWhKTjZLTEJGOE9pdm9EeEpaYzRlVEtlT3J5YjZDWlhtRTZlUlhvZWQzVmQxTm5iM29XTWNDS2l6dHNiU29vRl9HcXc1SXR6UzhIZjVwbTJRd3JSRnJ3emwxT2ZpU1pXNTlXNS03OUFSYTdqNHk1MzhBV2pwM0EyejN5bm90TFhjYjFDMExZT0Q5dzIwc2hJOGpZNHNYenIxT0d2SjhlYU5SUjZRaVVIOVM4NDdKc0hETmlKdl9rcEhJ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-06T00:56:57.000Z",
+        "summary": "Anthropic Launches Personal Finance Beta for Claude, Crypto Investor Pompliano Accuses of Copying Silvia KuCoin"
+      },
+      {
+        "title": "Pompliano Accuses Anthropic; Silvia’s Filing Flagged Rivals - FourWeekMBA",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPTDZzRS0weDlJMjNYdGFxVTZzNGUzYktXeHpqSHRJN21MbWlIUjYySGJKemxnblRtT3ZickVyN3h1WV80MHVBdksxYVV2U2tZbjBaOUxLWk8tcVEycHNVRGlEenRtSDJKVFlMMHNaRWh0eHRqSDVlRzEzWnI3bUVaZUpMTnJFZHI3aWY1Rk9R?oc=5",
+        "source": "Google News",
+        "published": "2026-11-06T00:39:19.000Z",
+        "summary": "Pompliano Accuses Anthropic; Silvia’s Filing Flagged Rivals FourWeekMBA"
+      },
+      {
+        "title": "Major Investors Are Skeptical Anthropic IPO Can Achieve $1.5T Valuation",
+        "url": "https://www.wsj.com/finance/major-investors-are-skeptical-anthropic-ipo-can-achieve-1-5-trillion-valuation-ca965d8b’",
+        "source": "HN · 67↑",
+        "hn_id": "50386597",
+        "published": "2026-11-06T00:31:11.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Agents Read the Grader in 60% of Default Snorkel Runs - FourWeekMBA",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOYlp0cVlEMWJKa0xyYkVLMUx6LS1nMEdDOG96RFZBVm1GTU13MFY3SVd2cDctZE9yRWRpWjdFREo0MjJpRHBCc3hjendIM09xYlgwblBReUktY0RfTERTYVBXc09zcnpuUzZPVS1pRlJHdzgzU2JydDJPVHdwa1JsYkxoSmdfYWVxSndDUkg3S3Y?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T23:42:21.000Z",
+        "summary": "Claude Agents Read the Grader in 60% of Default Snorkel Runs FourWeekMBA"
+      },
+      {
+        "title": "Perplexity Launches Teammates AI Agents to Battle OpenAI - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQX3ZlZ1gxTk8xTmJhVUI4ak8wajN4MlptQUJnU0QzV1AwUm9NVGdfa0pPZmRLc19wU1ZHSU4xcl9xVWo3RE1tTF9BYk02MDNFTE5VS3FWRHRyaUoxV0dyTmV6dGZwdkRHTGd1MG9YcE4xXzAtbUtMQVVldmtzNmFiRGYyZGdnSE4tbE9TOWtuVF9YWUU?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T23:07:06.000Z",
+        "summary": "Perplexity Launches Teammates AI Agents to Battle OpenAI The Tech Buzz"
+      },
+      {
+        "title": "Claude Gets Personal Finance—Anthony Pompliano Accuses Anthropic of Copying His Startup - Decrypt",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPTmJGZmxUQ05rczF1cG1vdm9JWjNvQ3MyODU4N1lOSE81MFU5V191WXYtMmxNLVlhLTFoa0xsaTk5OUlQQTZEaE5FWEphRktVS0ozenVrZWtSektqcGlCdENYakFITC1QOW11Sjhib0xVNF81bllVQlNVX2JWajhGSnhZNA?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T23:06:02.000Z",
+        "summary": "Claude Gets Personal Finance—Anthony Pompliano Accuses Anthropic of Copying His Startup Decrypt"
+      },
+      {
+        "title": "Claude Gets Personal Finance—Anthony Pompliano Accuses Anthropic of Copying His Startup - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQeWVadFJaQWpRTnJ5MmUzVVN0ZXp2V2NySks1Q3ZvR25YTUd6X3BHQ3JBemxfX2s2ZVQ2elRHVkpkWEtVZHFFZUZzOGY2Rk9vSk9OTXNlOTFfb3VqTFliM0pvZTZESVc4SDhFZVhaQVVFNlZfNU9yZkIxYVNLNFU2X3VsdUxkS0dncUViTndKbk5fRXY1eWlyeQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T23:06:02.000Z",
+        "summary": "Claude Gets Personal Finance—Anthony Pompliano Accuses Anthropic of Copying His Startup Yahoo Tech"
+      },
+      {
         "title": "Claude adds Personal Finance with read-only bank access - TestingCatalog AI News",
         "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPMzhHSzNvTTk3TnY0d3FaaDNZS2NVaXpEdHBGdHNCMW0zTFRZcFppd2NiaU0wZ2FZTlNOOGJRR3FJMG1zYl83RC1Na1dQdEFlanJCSlBiNDltQW9Cc1NldFN3NXhfem9oQ3RLZFVWLVZId3dBZ2QyNDM3U3hQYjhSbUphaUNkR0tBNms1Nl9OLWg?oc=5",
         "source": "Google News",
-        "published": "2026-11-05T22:50:36.000Z",
+        "published": "2026-11-05T22:54:51.000Z",
         "summary": "Claude adds Personal Finance with read-only bank access TestingCatalog AI News"
+      },
+      {
+        "title": "Anthropic AI development doubles speed despite CEO safety warnings - The Independent",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPU2F3akpFT0Z1bDdIX2hBakxrMUhjcDBWNlh2dFFjR0JFeUVnUWlpTHdlNF83ejVDeFJueUxzQ0xrS083RDlZY2JhdGZTOHF2bDVlZTIxZTdiUGlrMU1aeXQtT21zblE5VGtTT09kWkxmZEdnanZPczJodVdhaDFfQkV1ZGFLWW0zbnB5ampuV0E3WjVTSUtJdjNHOHJkRENO?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T22:32:00.000Z",
+        "summary": "Anthropic AI development doubles speed despite CEO safety warnings The Independent"
       },
       {
         "title": "Perplexity launches its own take on AI agents for work",
@@ -162,7 +240,7 @@
       {
         "title": "Claude Code sends your email address to websites",
         "url": "https://github.com/anthropics/claude-code/issues/107757",
-        "source": "HN · 85↑",
+        "source": "HN · 668↑",
         "hn_id": "50385272",
         "published": "2026-11-05T22:17:15.000Z",
         "summary": ""
@@ -173,6 +251,13 @@
         "source": "Google News",
         "published": "2026-11-05T22:17:02.000Z",
         "summary": "Anthropic Invites Banks to Help Shape New Personal Finance Offerings PYMNTS.com"
+      },
+      {
+        "title": "Anthropic is rapidly accelerating AI development amid slowdown calls, outside research group says - AP News",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQeU5MeHUxWDhnY0d4UE9OUFVjSWpLVnd1UEw4a1ZiY2EzaU85b2Q0NHFlRkFGMk9OakM1VjVVTzB1NnktZ3RKaW9MQ3ZlOTItV21ZcUd6WU9zQVRyZmRvN0FPYXRFbEZ6aDBCdENjZHRoV3pFWUJoelZEN2xaNkFKZUYxVXFhUWtjTjEtbTdKMnBxRVBUMFUwMmo3Q0ZhZw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-05T21:50:00.000Z",
+        "summary": "Anthropic is rapidly accelerating AI development amid slowdown calls, outside research group says AP News"
       },
       {
         "title": "The best thing in Anthropic’s S1 is my friend’s restaurant - Expedite | Kristen Hawley",
@@ -194,13 +279,6 @@
         "source": "Google News",
         "published": "2026-11-05T21:20:00.000Z",
         "summary": "Anthropic Launches Personal Finance Feature for Claude The Information"
-      },
-      {
-        "title": "Anthropic is rapidly accelerating AI development amid slowdown calls, outside research group says - AP News",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQeU5MeHUxWDhnY0d4UE9OUFVjSWpLVnd1UEw4a1ZiY2EzaU85b2Q0NHFlRkFGMk9OakM1VjVVTzB1NnktZ3RKaW9MQ3ZlOTItV21ZcUd6WU9zQVRyZmRvN0FPYXRFbEZ6aDBCdENjZHRoV3pFWUJoelZEN2xaNkFKZUYxVXFhUWtjTjEtbTdKMnBxRVBUMFUwMmo3Q0ZhZw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T20:19:00.000Z",
-        "summary": "Anthropic is rapidly accelerating AI development amid slowdown calls, outside research group says AP News"
       },
       {
         "title": "Anthropic Bullish on Ripple: Claude AI Predicts Euphoric Move - Cryptonews",
@@ -238,88 +316,11 @@
         "summary": "Anthropic's Claude gets tool to analyze personal finances (ANT:Pending) Seeking Alpha"
       },
       {
-        "title": "Everything you need to know ahead of Anthropic's IPO - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUkN1VHFrREJneU9DdUV5UVBuT29PM1hOdXN5aU5udTZqc21yV1VMS0VySEJqa1NrLWlhcTdYdVM1Nmo3MDdJWWtEc2JRWDVrVXBKX2tJS0t4TTg0eG4zLVJqWFBNNUlCd1hDR3YxeHlvUmFqdks1cHFQUGk5U2RaX2JuYnl5REFlN0pRX25DdU9SX2s?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T19:30:11.000Z",
-        "summary": "Everything you need to know ahead of Anthropic's IPO Yahoo Finance"
-      },
-      {
         "title": "Anthropic Relaxes Claude Code Curbs After Game-Dev Backlash - BigGo Finance",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1YU05QemlfaUdJVnh1TWdmQUdINzhKX0FwNmRDWEZQRjJrNjJNbWFTaHk4QnR6VVZuRGJBZk9Dazdmdi1mUzBGZHRVRzhoSk9TQjlZbDRScXBSWVN1WlR3aWdYZVcwQUs1SGtUM0VVdmQ2aGo3N2c?oc=5",
         "source": "Google News",
         "published": "2026-11-05T19:28:41.000Z",
         "summary": "Anthropic Relaxes Claude Code Curbs After Game-Dev Backlash BigGo Finance"
-      },
-      {
-        "title": "Anthropic is testing a Claude feature that reads your bank accounts - Startup Fortune",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNUnlhZUpUc3YtQ3dBdXhid0lQYjRhUE5WRGdsQXptSVFiNGVGRVZMX1UxaFRCZ1F4TC1iSWVienRzS3RuaGJrZHJtS1JyRjd1ZlBjdUJuQVdDVWdBeEVKZHNVT2M3SUpycnJVaVd3eXdoelpnVmVtTGMzZ05CdGw3OHktcFlPdkg2MFphcy15bEZ0ZzJkN0JWTldmcw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T18:57:04.000Z",
-        "summary": "Anthropic is testing a Claude feature that reads your bank accounts Startup Fortune"
-      },
-      {
-        "title": "Anthropic partners with Plaid for AI financial advice tool - Yahoo Finance UK",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxORTNWNnJLRjczYlBRM21rajVXLTNTc21BMjNmMW1QMEFXOU1TcGd2ZElNLUZGSGRNVTRRelRUekdnYVJZQmdWenRQV2RFb3lMeElzdnZHbGRCS01vb2JxN1FpajhQMmRZd01uUG55bThrSl9ISWs3N1NvSkFIMDJQeUdTMUJKYV92VjJoTW1OMA?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T18:52:11.000Z",
-        "summary": "Anthropic partners with Plaid for AI financial advice tool Yahoo Finance UK"
-      },
-      {
-        "title": "Anthropic begins beta rollout of Personal Finance in Claude in the US — TechCrunch - UA.NEWS",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLVdhdTNBLVZwdnduNnhRZThseGtoRjVKcW8wZWliQTVwNmVrRTlBeDJoSXhvR2VFbnJNMEpsZHh2aWJsWWxKbDU5cmNoQnFRQWVjYWZwRHhhb2ZTbElfTXZQT0RWUjh4azdvS2Z5eDdjbE85Mm54eG03Y212RF9TWXF1TE4taEhuUTFmOElZdF9PeWI4WWwwcHdBbVJrM055aks0LVJwNy13UGdD?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T18:35:42.000Z",
-        "summary": "Anthropic begins beta rollout of Personal Finance in Claude in the US — TechCrunch UA.NEWS"
-      },
-      {
-        "title": "Anthropic Ties Claude to Plaid, Opening Read-Only Access to 12,000 Banks - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1hekVISmdPa0p4WTB2OWIwNlFBSWtLN0NqeVF2WVdoWS1NWHZZOXJXNV84dHlDVFRsUGZFVUItNTBfY3VXOURqVW95TlVLN0Z5ZFNTUXRSZ2tlZ1AzMFk1MXJJd3NnT2tlM2hqSmtpOW5yOUx6REE?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T18:35:00.000Z",
-        "summary": "Anthropic Ties Claude to Plaid, Opening Read-Only Access to 12,000 Banks BigGo Finance"
-      },
-      {
-        "title": "Michael Burry says Anthropic is 'betting its entire existence' on optimism, and he has no plans to own the stock - Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZXp4cWdBWFlyY3VBQ29WWTZhaXZsYklEbGxkOEM2czYzYTRsaVZHX2ZUR1lLYlEtQS1nMjhLTkhwaC12WFBPSW5kWkw4RUtWdS0wZ3ZxSWN0YS13NmxmM3A4QzVyYjFuQzF6OW9QZUZDdS1VZjlpOE04aDFfRlBTd05SY1c5ajNTS182U2F1cURFUlU?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T18:26:00.000Z",
-        "summary": "Michael Burry says Anthropic is 'betting its entire existence' on optimism, and he has no plans to own the stock Business Insider"
-      },
-      {
-        "title": "Anthropic launches personal finance in Claude - Breakingthenews.net",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNSGhQQllLMWVqLWxNbEExX21BSU1BZHRLbm1fc04tSE1HOEl4WHEtaEZMNVNKeklIcThxUmJHWFhJbmRTRkMzWDFTQVUyOW85RFZJcGZCOGdGTWl0alljRm5HbW9rSU5ENVhscDZQaWFHOWU4cFp5MWQ1Y2xiRjZ0MktLenozYmRVYlNyT0twTXBKalVo?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T18:23:00.000Z",
-        "summary": "Anthropic launches personal finance in Claude Breakingthenews.net"
-      },
-      {
-        "title": "Anthropic Introduces Read-Only Personal Finance Beta in Claude - Unite.AI",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVUYzZzF2NmgtQldiQk9PQ3BfQnZGQTFnanZjNEdHeUk2THRTRmt5cERpTHJwZ3hwM3dBZGdyVmZlNHA4RDJlTkxnQXUwWFR4d19sMjhJMko1c0hIWkdoS2xSNzFrNGhVbGxibzVJT1g0c2Z5S0ZkQzg2TTZrMlVoNDdDSjNHSkNDVFpuQg?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T18:17:02.000Z",
-        "summary": "Anthropic Introduces Read-Only Personal Finance Beta in Claude Unite.AI"
-      },
-      {
-        "title": "Claude Launches Personal Finance via Plaid, From $17 a Month - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQV8wbnFDZllSVlZTZHN0WXhXRU1zZHBWZWVWWE5nYm9xaVlfQW04ZUN3WTZDUmt3VTVPd0VTdFJxZ0ZFaU9XUmdpdzJ5ZFlxcWpXVUdBaU1RcFBPZDJjWjBiMU1weG53YlpjdmdCYUJKYVlIRGZHUm9SUmVZRk0zWVNPdFItQ200MVRrcTVfRQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T18:15:29.000Z",
-        "summary": "Claude Launches Personal Finance via Plaid, From $17 a Month FourWeekMBA"
-      },
-      {
-        "title": "Anthropic’s new Personal Finance feature connects Claude to your bank account to help with your money - XDA",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNZnNFS2V1RVJLNlc2UVpRY1E4TWVoQjgtQlZwblRzblJLaVotWGc5eGN1d05oRzBPNUdiVFZzRmQtZDB5bGdGdlFMS1ZPYWRRQUllRTg4NDAtWkpFTXowTTE1ZkRmTUtTS0xLWW8yckN1eDBJMEhSV1VBc0JzQXBiUXpRcE1meGhtLS1fLUN0U0lxazBYVkhRaUJLYjFHOE1rdXF5a1liaVYtakhr?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T18:14:44.000Z",
-        "summary": "Anthropic’s new Personal Finance feature connects Claude to your bank account to help with your money XDA"
-      },
-      {
-        "title": "Anthropic upgrades Claude with new Personal Finance feature - 9to5Mac",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQLUZJbk5NTDd3ZnF6NTVTS3p5eENzUFE0Tk93bnprTWF2WmdBRm5rcFZTN0UzVVNpcnU0UjdRT1V0eUgzV2dXVDFNOEF0Z3Y4VXpzTVA5UmoxdHlHVXdJZXVQSUJlQVdIc1Y3MmQtQ2dIa1NiSkR2UVFBRnd5Q2VJejZoTW5WbGIzUGEtRTNZS1g4WU9VZnc?oc=5",
-        "source": "Google News",
-        "published": "2026-11-05T18:14:00.000Z",
-        "summary": "Anthropic upgrades Claude with new Personal Finance feature 9to5Mac"
       },
       {
         "title": "4 Claude Code agents, 4 worktrees, one Herdr",
