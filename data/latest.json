@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T16:24:47.565Z",
+  "generated_at": "2026-11-08T21:24:45.973Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,6 +146,66 @@
     ],
     "news": [
       {
+        "title": "Claude Duet Just Became the Best Agent Ever (And No One Noticed)",
+        "url": "https://www.youtube.com/watch?v=zU0jqYKTgMs",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "zU0jqYKTgMs",
+        "thumbnail": "https://i.ytimg.com/vi/zU0jqYKTgMs/hqdefault.jpg",
+        "published": "2026-11-08T21:01:20.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "\"Don't ask again\" in Anthropic's Claude Code leaks developer secrets - iTnews",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVEdHMU9IS3lrWHF1YjBVYkxoZjFsWFB1V2Y0MHZwOTBkSDRnX1VtbG5YSTlfenJBbGpyVFNQNm1qcDh3UkV3RkdrckZ6QUtjRkFUS0phVkk5bHRSUXJnS0lvV2J1NDM3QVpWVG1nOHBvUEtnWnRtSUVoWV9hdG9nZmRad0ZjTl9rUV9KZTdOUUFTX2Q5c3dWbzVRUEJrbVNlYVJLcA?oc=5",
+        "source": "Google News",
+        "published": "2026-11-08T19:40:00.000Z",
+        "summary": "\"Don't ask again\" in Anthropic's Claude Code leaks developer secrets iTnews"
+      },
+      {
+        "title": "Claude can now read your bank transactions, but disconnecting the account leaves a trail - MIXED News",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPQVpvRndaYkhCVGtzMHlmUUs3WUlaWGFWdHFaOE5hWlRiM0N6Q3hPZzV2RU5DUmdUc3AzbzVuZWIzaV9jeDZzWE9UMTFwczAwa0pnM2cwVmNEeWUxeWthY1owMzhEMXJGY1R6dWktUW40Zm8xUktPTVA2YmpkN3dWYWVpYUVPQmlW?oc=5",
+        "source": "Google News",
+        "published": "2026-11-08T19:34:58.000Z",
+        "summary": "Claude can now read your bank transactions, but disconnecting the account leaves a trail MIXED News"
+      },
+      {
+        "title": "Goldman Sachs Is Pulling Claude Code from Its Bankers and Traders",
+        "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
+        "source": "HN · 399↑",
+        "hn_id": "50415628",
+        "published": "2026-11-08T18:16:07.000Z",
+        "summary": ""
+      },
+      {
+        "title": "DeepSeek’s AI Agent Platform Hits 1.54 Million Daily Users",
+        "url": "https://www.bloomberg.com/news/articles/2026-11-08/deepseek-s-ai-agent-platform-hits-1-54-million-daily-users",
+        "source": "Bloomberg",
+        "published": "2026-11-08T18:01:43.000Z",
+        "summary": "DeepSeek, the Chinese AI disruptor, released striking adoption numbers for its AI agent infrastructure as it continues to challenge Anthropic PBC and OpenAI with an entire swath of applications…"
+      },
+      {
+        "title": "Claude Code Plan Mode vs One-Shot: Real Costs Measured",
+        "url": "https://www.youtube.com/watch?v=zDG4ry2vDuQ",
+        "source": "Stefan Rows",
+        "channel": "Stefan Rows",
+        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
+        "video_id": "zDG4ry2vDuQ",
+        "thumbnail": "https://i.ytimg.com/vi/zDG4ry2vDuQ/hqdefault.jpg",
+        "published": "2026-11-08T18:00:32.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Anthropic secures $3.4 billion power deal for data centers - Latest news from Azerbaijan",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOWk9xdlUwNzUwMFdTbHFjSkQ0Vm1ST3U3VTRXTy1KRzY2VTVEWVdCUFFnc3NVaE5YUHgzdWloSU15Y3hmTXNROWY0YlliVDVyS1RjcmstaGwyZUtGTUdHamZ3SXFyNHRkRWxoRXVLRTdpSWxTN09JS1VKaWd4UzBkUFpXNA?oc=5",
+        "source": "Google News",
+        "published": "2026-11-08T15:38:24.000Z",
+        "summary": "Anthropic secures $3.4 billion power deal for data centers Latest news from Azerbaijan"
+      },
+      {
         "title": "Chatbots might be coming to Apple’s HomeView",
         "url": "https://www.theverge.com/tech/1029526/chatbots-might-be-coming-to-apples-homeview",
         "source": "The Verge",
@@ -153,11 +213,11 @@
         "summary": "Code in the iOS 27.3 beta suggests that Apple could add support for chatbots to its smart home hub. There's a flag listed for a \"Conversational Apps\" category. While there are no details about what…"
       },
       {
-        "title": "Anthropic strikes $3.4B generator deal to secure data center power: FT (ANT:Pending) - Seeking Alpha",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOZ1hyX1Y2cFM5Mi1oNjRnVUR4QzcwUThFeGJIUUwzZnVkOGpqNmJvZEQ3cWpIWlNLNjBka2tia0tyN1VMRFNEdlN2UDlWTFAzS2FBQ0xxQU50dTE5VjBETDNvblVIbzdBNzFLZTdSSUNqRFRjcnpKT1FUUUZodnFybGVvMjV6SldXcnEwWEdwUktId2w2dHhvUGtVbEJoRm1GSzNnM3FUdkRfUQ?oc=5",
+        "title": "Anthropic Launches Personal Finance In Claude To Connect Bank Accounts And Analyze Spending - Pulse 2.0",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPX2kxcWdHUDg0cmRNdnBQWXdxQU1MbWdMSnU3Mlpad1hmUkkxLWI2Uk5DY3g4QndBWm1mTmFvQ2d2cHN2MXhEcGVFV2hzU2c3QlFfSlllRXBYeWVUdU5yYXM1SVdsNTl5aTlYcFdIS1pmcFYwTVR2SnZhQ1ZIOEpkc3pJcDRoeDliaGl6QXNzdFdZUEhGaEpWSDJLYWk0Y1hhVU5PQklKd004S3k3M3JsUw?oc=5",
         "source": "Google News",
-        "published": "2026-11-08T14:53:00.000Z",
-        "summary": "Anthropic strikes $3.4B generator deal to secure data center power: FT (ANT:Pending) Seeking Alpha"
+        "published": "2026-11-08T14:26:12.000Z",
+        "summary": "Anthropic Launches Personal Finance In Claude To Connect Bank Accounts And Analyze Spending Pulse 2.0"
       },
       {
         "title": "Anthropic secures $3.4 billion generator deal for AI data centers, FT reports - Reuters",
@@ -170,8 +230,23 @@
         "title": "Anthropic: Claude ‘Dreams’ Took Wiki Scores From 13% to 48% - FourWeekMBA",
         "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPZUJVbk02T2lMM2dxMzNtNWVDQUlITThqeVZlcTBhS3hLTDdfQmRiRWdGNWR4M2ExcE5UemVIUVJsU0xGUGdCdkpPOFZVcXhTV0xzMXlMbE81bkt5Z08xVFdvdExHaUNfSks0cHBkcjJZaGNyaXRMdXo2c2FZejl4aVllSzR2aXdNdmc?oc=5",
         "source": "Google News",
-        "published": "2026-11-08T12:42:24.000Z",
+        "published": "2026-11-08T12:47:49.000Z",
         "summary": "Anthropic: Claude ‘Dreams’ Took Wiki Scores From 13% to 48% FourWeekMBA"
+      },
+      {
+        "title": "Claude vs GPT Since 2024: 42.8 Points vs 40.2, Now 0.7 Apart - FourWeekMBA",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNakQxOWFWY3ozOWJ0YU90V0hnclRSZzdFQ29yTUJ3QW15Vmt1Rms1WG0tQlVmaHdLcUZfUDMtNldOQ2ZaZEVkU0RxWEZXQ0t4eU1MSDNsMDZyLXYxTzlra0xNZWtoTlhOT2FVeDFCbXV1UGI3cU8wR194eFNPQ0g0dEVMSU15cEVyVXdvLTJJcw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-08T12:41:29.000Z",
+        "summary": "Claude vs GPT Since 2024: 42.8 Points vs 40.2, Now 0.7 Apart FourWeekMBA"
+      },
+      {
+        "title": "Anthropic strikes $3.4B deal to generate gas-fired power for data centres",
+        "url": "https://www.ft.com/content/41bf5c6a-9735-4f1a-a8e3-2bcccad58ba0",
+        "source": "HN · 37↑",
+        "hn_id": "50412760",
+        "published": "2026-11-08T12:41:25.000Z",
+        "summary": ""
       },
       {
         "title": "Anthropic Buys Power for AI Data Centers in $3.4B Deal, FT Says",
@@ -179,13 +254,6 @@
         "source": "Bloomberg",
         "published": "2026-11-08T11:48:21.000Z",
         "summary": "Anthropic PBC has agreed to pay $3.4 billion for gas-fired generators for data centers, the FT reported, in what it described as the largest known single purchase of power-generation equipment by an…"
-      },
-      {
-        "title": "Claude vs GPT Since 2024: 42.8 Points vs 40.2, Now 0.7 Apart - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNakQxOWFWY3ozOWJ0YU90V0hnclRSZzdFQ29yTUJ3QW15Vmt1Rms1WG0tQlVmaHdLcUZfUDMtNldOQ2ZaZEVkU0RxWEZXQ0t4eU1MSDNsMDZyLXYxTzlra0xNZWtoTlhOT2FVeDFCbXV1UGI3cU8wR194eFNPQ0g0dEVMSU15cEVyVXdvLTJJcw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T10:21:00.000Z",
-        "summary": "Claude vs GPT Since 2024: 42.8 Points vs 40.2, Now 0.7 Apart FourWeekMBA"
       },
       {
         "title": "Anthropic: CLAUDE.md Rules Are Requests; Hooks Are Enforced - FourWeekMBA",
@@ -216,13 +284,6 @@
         "summary": "Anthropic Says Claude Wrote About 90% of Claude Code's Code, Discloses Six-Layer Review System BigGo Finance"
       },
       {
-        "title": "Claude’s Korea App Users Rose 15x to 2.1M; ChatGPT Hit 18.8M - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxORG0zWFRPVjY1SHR5eDdCdEhHcnB3NGNrdEplbTBQWEhaOHljUHFNOExsYnJhVGdBbWxjQ3hJRXRJVzBwemwyMjQ3Vl9aZGt4X2l1djNLUXplZE5oSTZnRXZhdjBwcDN0bXlGWXlLcENqQ3RCallEMm1PU0VnRnplODFMS0pEUzVoTDVkSkYwUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T06:22:49.000Z",
-        "summary": "Claude’s Korea App Users Rose 15x to 2.1M; ChatGPT Hit 18.8M FourWeekMBA"
-      },
-      {
         "title": "Game Changer: Anthropic clamps down on Claude’s AI video game clones - Open Magazine",
         "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNTFRCNWVQbllsU0RCcWk4NWlOZ293clhVd2pWZFc3QnppMGJIWHFXTXhTLVpDRmFtMVhHX3hIcXBUaUl5ZDhKZ0lCMnBPUkVfV0pxTnNPYmVUdFFYYWNjOGtodXBEaWN0WDZ2OTZtY3FrYzd2NGR5Nmw5WGNrX3hjWnIxRzZ2MlFtdzVxMXZsTWhkLV9WWE5RWE5FOTIzMER5LXozallVRng?oc=5",
         "source": "Google News",
@@ -239,17 +300,10 @@
       {
         "title": "Goodbye Claude, hello Pi",
         "url": "https://caleb.software/posts/claude-to-pi.html",
-        "source": "HN · 526↑",
+        "source": "HN · 635↑",
         "hn_id": "50410107",
         "published": "2026-11-08T03:11:48.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude Code's Don't Ask Again option left passwords in public GitHub files - Startup Fortune",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQmZyY2ZLS3FEMWtCUEhYN2QySERoRF9QZ3RkSGFmVW53M2xjS2NiVURxdW1yN3FUc2xUNmMtWWFPRHI5MHQyM0F5RHVWeGdCdEtOUUx5Q20zTlp3bDVacnBweWcxcjhlb1JDaGRNRWY4Y3pzVHpsak05ek56UElYZ3kwM2ZIYVBvMGRQRmVybE5xalkwdkk3WF9QY1lLcDA0NHc?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T02:06:21.000Z",
-        "summary": "Claude Code's Don't Ask Again option left passwords in public GitHub files Startup Fortune"
       },
       {
         "title": "Judge Lets Claude Max ’20x More Usage’ Ad Claims Go Ahead - FourWeekMBA",
@@ -257,13 +311,6 @@
         "source": "Google News",
         "published": "2026-11-08T01:27:49.000Z",
         "summary": "Judge Lets Claude Max ’20x More Usage’ Ad Claims Go Ahead FourWeekMBA"
-      },
-      {
-        "title": "Claude vs ChatGPT Pricing Canada: US$20 to US$500 [2026] - tech-insider.org",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBLRUdzRFhRM3pTWU9WWk1BNlRQV1lhMlF3WXhiMmNQTHVTMHg2RWF1U0Y1by12eVFUNy1rLV9TN3RxMkFjY2ctTG15aDBPX2xEWmk4Q3QwU3lMa183NVFQZURrZ0s4SnlPRXhrZUJHa0pVamVaenV5U2RQZXk?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T01:14:10.000Z",
-        "summary": "Claude vs ChatGPT Pricing Canada: US$20 to US$500 [2026] tech-insider.org"
       },
       {
         "title": "Claude Personal Finance Vs. ChatGPT Finances: What Sets Them Apart? - Engadget",
@@ -275,7 +322,7 @@
       {
         "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
         "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
-        "source": "HN · 494↑",
+        "source": "HN · 548↑",
         "hn_id": "50407882",
         "published": "2026-11-07T20:45:32.000Z",
         "summary": ""
@@ -300,28 +347,6 @@
         "source": "Google News",
         "published": "2026-11-07T12:30:05.000Z",
         "summary": "Anthropic's Claude Can Now Link Bank Accounts and Analyze Transactions But Won't Offer Investment Advice Yahoo Finance"
-      },
-      {
-        "title": "Key facts: Anthropic Files S-1, $16.3B Revenue; Claude 354 Binders - TradingView",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOd2tqczJEa2xmTjlZODRrQ18wbzFxM0JuQzFFajA5d25qTGhBSGtiU1BGSngxMTIxNlhGYUV6NE54UnllVDU3d3pQNzRpRDA3YUhtdlRLdmJfZnlNM2RLeTB5UGpRQlh2eFNiSk5TLTRNNzc3RUo2MUl3d0htdDJhbnZuWmVaX21rWW5WaW9tMHdlWVVWbEE0aVJ3MTl5N1VOOE0wclRsa2g4REFZenNXVUpNVE13aFhOTkxGYk1vVkRadw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-07T08:00:00.000Z",
-        "summary": "Key facts: Anthropic Files S-1, $16.3B Revenue; Claude 354 Binders TradingView"
-      },
-      {
-        "title": "The Components of Agent Memory",
-        "url": "https://www.anthropic.com/research/components-of-agent-memory",
-        "source": "HN · 162↑",
-        "hn_id": "50402212",
-        "published": "2026-11-07T06:39:04.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic must face claims its Claude Max pitch misled users - Courthouse News",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQbVRmUWVLWlVpRHdBa0xvdndPZ3EtZjRKd0RCUmREd1BqcTFmcS1NdDZPQzFWR29oQnJiOUtYXy1NSFZiaUs2em1qS0d0b0lCYnlWMmMzT2xCUThCNGJNeG5zdl9FZU5vNFdPYnZvZExObmhRN19vUlU4ZlU5Y1BPaW5BWVRWN0RqVGplSTJiZjJFMEdyT2c?oc=5",
-        "source": "Google News",
-        "published": "2026-11-07T04:11:33.000Z",
-        "summary": "Anthropic must face claims its Claude Max pitch misled users Courthouse News"
       },
       {
         "title": "4 Claude Code agents, 4 worktrees, one Herdr",
@@ -586,18 +611,6 @@
         "published": "2026-10-11T17:43:47.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Cowork has a MASSIVE Change",
-        "url": "https://www.youtube.com/watch?v=tSwd-Fxgq5c",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "tSwd-Fxgq5c",
-        "thumbnail": "https://i.ytimg.com/vi/tSwd-Fxgq5c/hqdefault.jpg",
-        "published": "2026-10-05T17:45:57.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -687,6 +700,28 @@
       }
     ],
     "youtube": [
+      {
+        "title": "Claude Duet Just Became the Best Agent Ever (And No One Noticed)",
+        "url": "https://www.youtube.com/watch?v=zU0jqYKTgMs",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "zU0jqYKTgMs",
+        "thumbnail": "https://i.ytimg.com/vi/zU0jqYKTgMs/hqdefault.jpg",
+        "published": "2026-11-08T21:01:20.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code Plan Mode vs One-Shot: Real Costs Measured",
+        "url": "https://www.youtube.com/watch?v=zDG4ry2vDuQ",
+        "source": "Stefan Rows",
+        "channel": "Stefan Rows",
+        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
+        "video_id": "zDG4ry2vDuQ",
+        "thumbnail": "https://i.ytimg.com/vi/zDG4ry2vDuQ/hqdefault.jpg",
+        "published": "2026-11-08T18:00:32.000Z",
+        "summary": ""
+      },
       {
         "title": "4 Claude Code agents, 4 worktrees, one Herdr",
         "url": "https://www.youtube.com/shorts/ptjtgQuQuM8",
@@ -993,28 +1028,6 @@
         "video_id": "UFa8pXW9A3k",
         "thumbnail": "https://i.ytimg.com/vi/UFa8pXW9A3k/hqdefault.jpg",
         "published": "2026-10-10T20:03:25.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Build a Lead Generation Website with Claude! (Claude Tutorial)",
-        "url": "https://www.youtube.com/watch?v=qV6Oo_ZlC2E",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "qV6Oo_ZlC2E",
-        "thumbnail": "https://i.ytimg.com/vi/qV6Oo_ZlC2E/hqdefault.jpg",
-        "published": "2026-10-08T18:53:40.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Cowork has a MASSIVE Change",
-        "url": "https://www.youtube.com/watch?v=tSwd-Fxgq5c",
-        "source": "Ryan & Matt Data Science",
-        "channel": "Ryan & Matt Data Science",
-        "channel_id": "UCKq-lHnyradGRmFClX_ACMw",
-        "video_id": "tSwd-Fxgq5c",
-        "thumbnail": "https://i.ytimg.com/vi/tSwd-Fxgq5c/hqdefault.jpg",
-        "published": "2026-10-05T17:45:57.000Z",
         "summary": ""
       }
     ],
@@ -1250,18 +1263,6 @@
         "published": "2026-10-10T09:24:54.000Z",
         "summary": "docs(managed_agents): move the self-hosted sandbox variants to claude-quickstarts (#888)",
         "tutorial_kind": "official"
-      },
-      {
-        "title": "Build a Lead Generation Website with Claude! (Claude Tutorial)",
-        "url": "https://www.youtube.com/watch?v=qV6Oo_ZlC2E",
-        "source": "Productive Dude",
-        "channel": "Productive Dude",
-        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
-        "video_id": "qV6Oo_ZlC2E",
-        "thumbnail": "https://i.ytimg.com/vi/qV6Oo_ZlC2E/hqdefault.jpg",
-        "published": "2026-10-08T18:53:40.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
       },
       {
         "title": "Merge pull request #45 from emmanuel-ferdman/master",
@@ -1665,6 +1666,20 @@
       }
     ],
     "claude_learning": [
+      {
+        "title": "Claude Duet Just Became the Best Agent Ever (And No One Noticed)",
+        "url": "https://www.youtube.com/watch?v=zU0jqYKTgMs",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-11-08T21:01:20.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Code Plan Mode vs One-Shot: Real Costs Measured",
+        "url": "https://www.youtube.com/watch?v=zDG4ry2vDuQ",
+        "source": "YouTube · Stefan Rows",
+        "published": "2026-11-08T18:00:32.000Z",
+        "summary": ""
+      },
       {
         "title": "v2.1.319",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.319",
@@ -2135,25 +2150,11 @@
         "summary": ""
       },
       {
-        "title": "Build a Lead Generation Website with Claude! (Claude Tutorial)",
-        "url": "https://www.youtube.com/watch?v=qV6Oo_ZlC2E",
-        "source": "YouTube · Productive Dude",
-        "published": "2026-10-08T18:53:40.000Z",
-        "summary": ""
-      },
-      {
         "title": "2.10.1",
         "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.10.1",
         "source": "MCP Inspector",
         "published": "2026-10-08T05:12:32.000Z",
         "summary": "Why The Patch? The addition of the new mcpdo client threw a curveball into the default npx @modelcontextprotocol/inspector@latest method of running the inspector, because there were now two binaries to run, the…"
-      },
-      {
-        "title": "Claude Cowork has a MASSIVE Change",
-        "url": "https://www.youtube.com/watch?v=tSwd-Fxgq5c",
-        "source": "YouTube · Ryan & Matt Data Science",
-        "published": "2026-10-05T17:45:57.000Z",
-        "summary": ""
       }
     ]
   }
