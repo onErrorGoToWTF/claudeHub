@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T08:10:06.108Z",
+  "generated_at": "2026-11-08T16:24:47.565Z",
   "version": 1,
   "sections": {
     "updates": [
@@ -146,10 +146,80 @@
     ],
     "news": [
       {
+        "title": "Chatbots might be coming to Apple’s HomeView",
+        "url": "https://www.theverge.com/tech/1029526/chatbots-might-be-coming-to-apples-homeview",
+        "source": "The Verge",
+        "published": "2026-11-08T15:00:30.000Z",
+        "summary": "Code in the iOS 27.3 beta suggests that Apple could add support for chatbots to its smart home hub. There's a flag listed for a \"Conversational Apps\" category. While there are no details about what…"
+      },
+      {
+        "title": "Anthropic strikes $3.4B generator deal to secure data center power: FT (ANT:Pending) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOZ1hyX1Y2cFM5Mi1oNjRnVUR4QzcwUThFeGJIUUwzZnVkOGpqNmJvZEQ3cWpIWlNLNjBka2tia0tyN1VMRFNEdlN2UDlWTFAzS2FBQ0xxQU50dTE5VjBETDNvblVIbzdBNzFLZTdSSUNqRFRjcnpKT1FUUUZodnFybGVvMjV6SldXcnEwWEdwUktId2w2dHhvUGtVbEJoRm1GSzNnM3FUdkRfUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-08T14:53:00.000Z",
+        "summary": "Anthropic strikes $3.4B generator deal to secure data center power: FT (ANT:Pending) Seeking Alpha"
+      },
+      {
+        "title": "Anthropic secures $3.4 billion generator deal for AI data centers, FT reports - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNTUktcGxpNENhQ1llV2F3a3V5RUZya0dDc0ZLeFVTZmFqclBqSVhuYkNiSFpSTkkwVnZ2NkFVVEVjQjZPLTJzMGMyU0dnaFg0X1pPd2pMV0ZCWWtMWlpSdTNvckRlaGxLcWs1SnljenEwcUs0N0doWG0yRDdET2o4YlZMVWl6c2lpYWJ1emstVFI1S3VyUXdIdG1xdmZpS3k3ZW5LVUpibUZ0SWxmZUNLNXN0SDBMZE5nWFJZdDlQSQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-08T12:54:10.000Z",
+        "summary": "Anthropic secures $3.4 billion generator deal for AI data centers, FT reports Reuters"
+      },
+      {
+        "title": "Anthropic: Claude ‘Dreams’ Took Wiki Scores From 13% to 48% - FourWeekMBA",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPZUJVbk02T2lMM2dxMzNtNWVDQUlITThqeVZlcTBhS3hLTDdfQmRiRWdGNWR4M2ExcE5UemVIUVJsU0xGUGdCdkpPOFZVcXhTV0xzMXlMbE81bkt5Z08xVFdvdExHaUNfSks0cHBkcjJZaGNyaXRMdXo2c2FZejl4aVllSzR2aXdNdmc?oc=5",
+        "source": "Google News",
+        "published": "2026-11-08T12:42:24.000Z",
+        "summary": "Anthropic: Claude ‘Dreams’ Took Wiki Scores From 13% to 48% FourWeekMBA"
+      },
+      {
+        "title": "Anthropic Buys Power for AI Data Centers in $3.4B Deal, FT Says",
+        "url": "https://www.bloomberg.com/news/articles/2026-11-08/anthropic-buys-power-for-ai-data-centres-in-3-4b-deal-ft-says",
+        "source": "Bloomberg",
+        "published": "2026-11-08T11:48:21.000Z",
+        "summary": "Anthropic PBC has agreed to pay $3.4 billion for gas-fired generators for data centers, the FT reported, in what it described as the largest known single purchase of power-generation equipment by an…"
+      },
+      {
+        "title": "Claude vs GPT Since 2024: 42.8 Points vs 40.2, Now 0.7 Apart - FourWeekMBA",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNakQxOWFWY3ozOWJ0YU90V0hnclRSZzdFQ29yTUJ3QW15Vmt1Rms1WG0tQlVmaHdLcUZfUDMtNldOQ2ZaZEVkU0RxWEZXQ0t4eU1MSDNsMDZyLXYxTzlra0xNZWtoTlhOT2FVeDFCbXV1UGI3cU8wR194eFNPQ0g0dEVMSU15cEVyVXdvLTJJcw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-08T10:21:00.000Z",
+        "summary": "Claude vs GPT Since 2024: 42.8 Points vs 40.2, Now 0.7 Apart FourWeekMBA"
+      },
+      {
+        "title": "Anthropic: CLAUDE.md Rules Are Requests; Hooks Are Enforced - FourWeekMBA",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPaGh3bGExVzQ0NDE2eG11QXBNT3E4ZjI0NEVWd1RWVWdUbnZwM3hQeG1meWJJeENJYkpzbEx5N2NObmF2dnlIUnRlMmh0OTNDOEpkNF96X3FnTmF5TlpPbXRZclRJckdfRDhXVndtTi1CTWZkZXZFai1jWjZtN1lQY1ZMekhHMkFWRWx0OTJB?oc=5",
+        "source": "Google News",
+        "published": "2026-11-08T10:12:49.000Z",
+        "summary": "Anthropic: CLAUDE.md Rules Are Requests; Hooks Are Enforced FourWeekMBA"
+      },
+      {
+        "title": "Anthropic IPO: ANT Ticker, $16.3B Revenue, Control [2026] - https://tech-insider.org/",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMjU1VC1wRkJ4eDNDVmpFV1NfekRMVHdKV2RuSTdOc25LdWpaaks2TWJINkh3M3pLaklkZ2FHOVlGYnBjWEpRcWpPb1N2MmZ6MExDME9VM0pRTXJYM3JrbEl6UnF6VGhYMHdJNkdzMnV1Q255MjZIZ0I3SUp5RGFSaGdEUWJlODZPTTlwTkdFY1dDQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-08T08:20:37.000Z",
+        "summary": "Anthropic IPO: ANT Ticker, $16.3B Revenue, Control [2026] https://tech-insider.org/"
+      },
+      {
+        "title": "Anthropic S-1: Loss Narrows to $1.3B From $5.2B [2026] - shattered.io",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZ1p5cnJDbnhoTElxN3ZodFpWRE52RmNSS01fNE90WTNYbHF2X3B5bDJET0RTTWRWRndUTEM0TkRBclhJVnVSVXM1ZG1yMXNaMmFGRmJhSmpLVGw1RXRpd2Vva2gyOU1rOEt6eE5zRVhaVmFZVFdrNGJ4MXcyRFZkQ09XRVE?oc=5",
+        "source": "Google News",
+        "published": "2026-11-08T08:13:53.000Z",
+        "summary": "Anthropic S-1: Loss Narrows to $1.3B From $5.2B [2026] shattered.io"
+      },
+      {
+        "title": "Anthropic Says Claude Wrote About 90% of Claude Code's Code, Discloses Six-Layer Review System - BigGo Finance",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4zRnZSbk1QNi1IRmJabGEzc2pNU1BnbTBfQmdiYk9ibGJYQXc2bDlKOXlWTmY5MUdaeVhCSlZoSGQ2YXNsR3dCUjgwaEIzc28xUVVKTlJZd0JSOC1zRFBqazR4QlBmUVlTdjJOYThkbDllLXNSM3c?oc=5",
+        "source": "Google News",
+        "published": "2026-11-08T07:35:00.000Z",
+        "summary": "Anthropic Says Claude Wrote About 90% of Claude Code's Code, Discloses Six-Layer Review System BigGo Finance"
+      },
+      {
         "title": "Claude’s Korea App Users Rose 15x to 2.1M; ChatGPT Hit 18.8M - FourWeekMBA",
         "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxORG0zWFRPVjY1SHR5eDdCdEhHcnB3NGNrdEplbTBQWEhaOHljUHFNOExsYnJhVGdBbWxjQ3hJRXRJVzBwemwyMjQ3Vl9aZGt4X2l1djNLUXplZE5oSTZnRXZhdjBwcDN0bXlGWXlLcENqQ3RCallEMm1PU0VnRnplODFMS0pEUzVoTDVkSkYwUQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-08T06:22:47.000Z",
+        "published": "2026-11-08T06:22:49.000Z",
         "summary": "Claude’s Korea App Users Rose 15x to 2.1M; ChatGPT Hit 18.8M FourWeekMBA"
       },
       {
@@ -167,19 +237,12 @@
         "summary": "Anthropic Engineer’s 3 Habits vs Cognitive Surrender [2026] shattered.io"
       },
       {
-        "title": "Goodbye Claude, Hello Pi",
+        "title": "Goodbye Claude, hello Pi",
         "url": "https://caleb.software/posts/claude-to-pi.html",
-        "source": "HN · 209↑",
+        "source": "HN · 526↑",
         "hn_id": "50410107",
         "published": "2026-11-08T03:11:48.000Z",
         "summary": ""
-      },
-      {
-        "title": "​Anthropic Faces Privacy Scrutiny Over Alleged Claude Code Email Leaks - The 420.in",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPUlM1ckVYUG91cmV1NUJGd0U3UEs5MnZyNzV4UlJDLTEydmJuMms4c2U5aEFYMEl3U2xwMkVuM3FneU1VLU1IM1F5TWg1cS01czFYeU1rV3E5U3J1bUw0UUlRODh3c01MQS1fZzV2TkExUnQ3cXFzN05Lc0huWHkwMHA0MWJ0TjhCTnFiMnlmWjJ3dw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T02:53:52.000Z",
-        "summary": "​Anthropic Faces Privacy Scrutiny Over Alleged Claude Code Email Leaks The 420.in"
       },
       {
         "title": "Claude Code's Don't Ask Again option left passwords in public GitHub files - Startup Fortune",
@@ -210,16 +273,9 @@
         "summary": "Claude Personal Finance Vs. ChatGPT Finances: What Sets Them Apart? Engadget"
       },
       {
-        "title": "Claude Deleted a Law Professor’s Notes; Dropbox Had Copies - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPeGw5RC1vYXNfR3ZlcVB2YTJwYVZXVzZxQW1wVVRwS0NSU1RWMmJZQTNFVkV4Z2tjdmdmelE5S19nZ1hza0NxbE9vbkhnU0lQWm1HdTZXcEx1Y2t6ZXh0S3NvMGZhdnQwaU12LTEwUnhSUTMwdzlVQzVzVXI4Sm9xbldaNnZyUHVQYmRIUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-07T22:42:49.000Z",
-        "summary": "Claude Deleted a Law Professor’s Notes; Dropbox Had Copies FourWeekMBA"
-      },
-      {
         "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
         "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
-        "source": "HN · 348↑",
+        "source": "HN · 494↑",
         "hn_id": "50407882",
         "published": "2026-11-07T20:45:32.000Z",
         "summary": ""
@@ -232,39 +288,11 @@
         "summary": "Leading Anthropic dev says 'a human has to take responsibility' with AI code projects, as some skills get lost Yahoo Tech"
       },
       {
-        "title": "AI Safety Advocates Make Gains After $110 Million Midterm Fight",
-        "url": "https://www.bloomberg.com/news/articles/2026-11-07/ai-safety-advocates-make-gains-after-110-million-midterm-fight",
-        "source": "Bloomberg",
-        "published": "2026-11-07T14:30:00.000Z",
-        "summary": "Candidates who favor stricter oversight of artificial intelligence racked up wins in key congressional races, aided by a pro-regulation political funding group backed in part by Anthropic PBC at a…"
-      },
-      {
-        "title": "Anthropic plants secret saboteur AI agents in EVE Frontier to test Claude - eGamers.io",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZFlWSDRnNTJsOGJBaVB3REhZMTJwOEN1VkJ2enE5ejR6M1F6M3FCdGgzc2g2OFhMMlhFSWkyTUpvc2tmX3ZpRkY0cjliTjhnYkRtV2JNZ1d3M1huc0IxSVVLaXJOc3g2NVVUM2lXaE83Q0E1ZW1FN1pKQkZ2YldLc1ltdzVST3IwaEU1cFFPNzdZSVUxSmdNRA?oc=5",
-        "source": "Google News",
-        "published": "2026-11-07T13:58:59.000Z",
-        "summary": "Anthropic plants secret saboteur AI agents in EVE Frontier to test Claude eGamers.io"
-      },
-      {
-        "title": "Better IPO to Buy: Anthropic vs. SpaceX - The Globe and Mail",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQWHVSZzhfcUNLTUxKR1ptZWR1T1NDSGhiQTIxVDNaMnJYcTd5bkZNMUtrd0RVMTl3UndEVWpzRkdPMGFRNlFFalZGRW9BdVZLeXFCcGc2VTFJbHF3UmxrcWVVV1p6cnNtaDVtM3dMN2QzaGw2RHRwUkF3dTdiYkE5MUhQMEl0NV96THZUZW5lVVNKdzVMN0hFaGpXUDBySVI5ZlNHZTBnMV9kWXFYdzJWR1ZNUVN6ekFGaHVwWXRiUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-07T13:30:38.000Z",
-        "summary": "Better IPO to Buy: Anthropic vs. SpaceX The Globe and Mail"
-      },
-      {
         "title": "Anthropic IPO to move forward despite tech selloff: FT - Seeking Alpha",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPSG44NXNtN3I0alUwQkRkVnRiTW1kYVVsOVh6NlJTTkVuUFROWV92c250eW44NnpyYjgydmVpS2pOOGtKVy1rVnRPazA1RVRBWEtwODhVWHQ0NWVOeEU3eXdEamFyYzFqR3VSUzdOcXc1WlJMeUZXbU1xSnpPUzJNcGNaUU02Y2c?oc=5",
         "source": "Google News",
-        "published": "2026-11-07T12:57:02.000Z",
+        "published": "2026-11-07T12:57:00.000Z",
         "summary": "Anthropic IPO to move forward despite tech selloff: FT Seeking Alpha"
-      },
-      {
-        "title": "AI Trade Faces a Post-Election Reality Check",
-        "url": "https://www.bloomberg.com/news/videos/2026-11-07/ai-trade-faces-a-post-election-reality-check-video",
-        "source": "Bloomberg",
-        "published": "2026-11-07T12:50:00.000Z",
-        "summary": "On Bloomberg This Weekend, Yorkville Ives & Co. partner Dan Ives and Bloomberg US equities reporter Natalia Kniazhevich examine the sharp post-election technology selloff, as investors weigh…"
       },
       {
         "title": "Anthropic's Claude Can Now Link Bank Accounts and Analyze Transactions But Won't Offer Investment Advice - Yahoo Finance",
@@ -272,13 +300,6 @@
         "source": "Google News",
         "published": "2026-11-07T12:30:05.000Z",
         "summary": "Anthropic's Claude Can Now Link Bank Accounts and Analyze Transactions But Won't Offer Investment Advice Yahoo Finance"
-      },
-      {
-        "title": "Why a new report on Anthropic automating AI development is alarming researchers",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development",
-        "source": "The Verge",
-        "published": "2026-11-07T12:30:00.000Z",
-        "summary": "Anthropic is using AI to build more powerful AI. And it appears to be working remarkably well, with the company's models improving roughly twice as quickly as a year ago, with little indication of…"
       },
       {
         "title": "Key facts: Anthropic Files S-1, $16.3B Revenue; Claude 354 Binders - TradingView",
@@ -290,7 +311,7 @@
       {
         "title": "The Components of Agent Memory",
         "url": "https://www.anthropic.com/research/components-of-agent-memory",
-        "source": "HN · 159↑",
+        "source": "HN · 162↑",
         "hn_id": "50402212",
         "published": "2026-11-07T06:39:04.000Z",
         "summary": ""
@@ -301,27 +322,6 @@
         "source": "Google News",
         "published": "2026-11-07T04:11:33.000Z",
         "summary": "Anthropic must face claims its Claude Max pitch misled users Courthouse News"
-      },
-      {
-        "title": "Can Claude dream now? Anthropic explores human-like machine memory - Interesting Engineering",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPLW9QUXo1Zktyc2dQVzZmUlo0aUxnUTJiRWpsSm1fMkptWkJpdXVjNkk3U3VTMnRXQ2RrOGtJSmY4RlF5TWRvRVBjTDE4TTUzQk1iTXBBUEpsVGx0bk90LVNVazJhcExwYXJmMmtES0x6RktDeHRmOTRuWkxPVHlfWnYtQUc5UHBZazVic2hVYnhKUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-07T03:21:00.000Z",
-        "summary": "Can Claude dream now? Anthropic explores human-like machine memory Interesting Engineering"
-      },
-      {
-        "title": "OpenAI valued at $1.25 trillion, as rival Anthropic nears its IPO",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation",
-        "source": "The Verge",
-        "published": "2026-11-06T23:46:18.000Z",
-        "summary": "OpenAI is now valued at $1.25 trillion in a new round of funding that has raised another $11 billion, according to Bloomberg. That would make it one of the world's most valuable companies, not long…"
-      },
-      {
-        "title": "Anthropic: Claude Teams Almost Never Caught an EVE Saboteur - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdGc1Y2NGMlFaOEg2VmdMOGw5WHJoZXdTMmJwZG1sQTVET3BQLUpPOXJkSTZGcmF0Q3dxdzRZSzh2RVZpNnJxWmpvdXJwSzNWMlBwVVUzUTlRbkNiQXc5RGFWa2hLX1VnUWJVZmh6OFh6dG1KZnhiNGdmbUV4bURFOW8yOVJkMlFYakdBRFFtQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-06T22:55:03.000Z",
-        "summary": "Anthropic: Claude Teams Almost Never Caught an EVE Saboteur FourWeekMBA"
       },
       {
         "title": "4 Claude Code agents, 4 worktrees, one Herdr",
@@ -602,6 +602,13 @@
     ],
     "status": [
       {
+        "title": "Degraded performance for Claude Fable 5.1",
+        "url": "https://status.claude.com/incidents/kw2lxj1th04c",
+        "source": "Claude Status",
+        "published": "2026-11-08T08:54:43.000Z",
+        "summary": "Nov 8 , 08:54 UTC Resolved - The issue affecting claude.ai, the Claude API, Claude Code, and Claude Cowork has been resolved. Impact occurred from 00:18 PT / 08:18 UTC on Nov 8 to 00:32 PT / 08:32…"
+      },
+      {
         "title": "Elevated errors affecting the Google Calendar connector",
         "url": "https://status.claude.com/incidents/phg1y2yh07n2",
         "source": "Claude Status",
@@ -677,13 +684,6 @@
         "source": "Claude Status",
         "published": "2026-10-21T20:29:17.000Z",
         "summary": "Oct 21 , 20:29 UTC Resolved - The issue affecting other Claude models has been resolved. Oct 21 , 19:49 UTC Investigating - We are investigating elevated errors on requests to Claude Fable 5. We…"
-      },
-      {
-        "title": "Elevated errors on platform.claude.com",
-        "url": "https://status.claude.com/incidents/978mjkgw6mh7",
-        "source": "Claude Status",
-        "published": "2026-10-13T18:00:04.000Z",
-        "summary": "Oct 13 , 18:00 UTC Resolved - This issue has been resolved. Oct 7 , 21:44 UTC Monitoring - We&apos;ve mitigated the errors loading usage data on platform.claude.com and in the Admin API usage…"
       }
     ],
     "youtube": [
