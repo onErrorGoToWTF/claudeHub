@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-11-09T08:46:18.566Z",
+  "generated_at": "2026-11-09T20:13:49.413Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Provable Inference",
+        "url": "https://www.anthropic.com/research/provable-inference",
+        "source": "Anthropic Research",
+        "published": "2026-11-09T09:39:55.000Z",
+        "summary": ""
+      },
       {
         "title": "Teaching Ai to Build Scientific Models",
         "url": "https://www.anthropic.com/research/teaching-ai-to-build-scientific-models",
@@ -74,13 +81,6 @@
         "summary": ""
       },
       {
-        "title": "Provable Inference",
-        "url": "https://www.anthropic.com/research/provable-inference",
-        "source": "Anthropic Research",
-        "published": "2026-11-03T19:10:19.000Z",
-        "summary": ""
-      },
-      {
         "title": "Vibe Physics",
         "url": "https://www.anthropic.com/research/vibe-physics",
         "source": "Anthropic Research",
@@ -146,39 +146,179 @@
     ],
     "news": [
       {
-        "title": "AI 'Don’t Ask Again' Feature Exposes 2,539 Passwords on GitHub - 조선일보",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNWWgwOVpfOVl5b1BDNUM3QVYxRU1ueXJ3cmVES3hLMkRJUXBqTU11TDFaTy0xSXFkeEpNU25YX2UxSEU5T3h0UGlybVhQeHAwOERXZVlIQWhQNElnalNGUFQ3R09scjZOTEg3WDAxbUlseWpSVmxRRjBtQk5uVFBhdWY0eVMtMGFT?oc=5",
+        "title": "Anthropic ships Claude Fable 5.2 days before $1T-plus IPO - Dealroom",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQSWZPSTBVNWE1eFpjeG95Y0tSMzNMMEQ2UDJSZjVuM3dKZ3hxWW5fZFB4NFFvek51djVSMjlHOEhzSVZiU3VDVXhDT1hvRDVueHBiWG9NeU9sNDZRdEc4YVpvcnprLXpEVDN1VGd0VVViWnBUbTJHWGNfLXNOS2EwaWYwUjI1bENTOGFnSzFCZTlnYlhW?oc=5",
         "source": "Google News",
-        "published": "2026-11-09T06:46:49.000Z",
-        "summary": "AI 'Don’t Ask Again' Feature Exposes 2,539 Passwords on GitHub 조선일보"
+        "published": "2026-11-09T20:11:39.000Z",
+        "summary": "Anthropic ships Claude Fable 5.2 days before $1T-plus IPO Dealroom"
       },
       {
-        "title": "Anthropic Usage Policy Takes Effect Thursday: Claude-Driven Machines Must Stop When Connection Drops - Tech Times",
-        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOLURyZmgxelI5RFNnZlZ4aXNwbzNCY21yeGV3Qi1fRHVkRUJleGgwMmlwckplOUhKT0hPaS1Db290amg0WlpKU3R5VkNub1FDWXR0VFRta2ZzMTZ3Q1lYX1lRTzRiV0NKRmxfNVI4VWdaWTNmdVUxT0RYWVB2bnl4NEZtNlQzNEdrd3MteWl6SU5Zd2ZLTUdPZmdiVW1SV3N3a3NQVHhaU1h6cGxVNnowVU5GQk4zOGYtUFJxNFhJTDdaTTB4Tmc0Z1NBSHg1VUF4SmktUEplWmJsbU5HX0N5ZjNMdGVjSGxlMFE?oc=5",
+        "title": "Anthropic Ships Mythos and Fable Models Days Before IPO - The Tech Buzz",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOelYxZlZJVWl4amFBYnc4Zk9PTFZVY1RFWFNaR1ZRX09kQXQxMzViQ19fNnJaS1B2VFYzb004dTlqbjk1MGY1OFVsb2V4V1dqT3FLNnRIbWM4WS1lMjZXaGZlSHA5WFB1b210cjBCZm5SNHh3RTl5R1l2TENlX3VwTEh6XzB3WDVCZWFIZzFfQnJmdw?oc=5",
         "source": "Google News",
-        "published": "2026-11-09T06:35:55.000Z",
-        "summary": "Anthropic Usage Policy Takes Effect Thursday: Claude-Driven Machines Must Stop When Connection Drops Tech Times"
+        "published": "2026-11-09T20:08:20.000Z",
+        "summary": "Anthropic Ships Mythos and Fable Models Days Before IPO The Tech Buzz"
       },
       {
-        "title": "Anthropic Bets Its Smartest Model Will Set Claude Duet Apart - The New York Sun",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMXJWcnctdVVTTzhZc2ZBNndtZ3lPR3A3UTFndWhkSWQ1cmZMTnJTaTN3ZmxjdHBHMHkzS0ZvelROWEViaWZmTmlSUk1SV1lXZlFfOFdGY2ViRkg0cWE3cGtkQWE5TndZRzFfdzREc2lIM1RFUGJXYW11V1dvNk03ZEVlYlZOWmFpUG5vRVgxSmNCc0E3?oc=5",
+        "title": "Cisco AI Defense to Add Anthropic’s Claude Mythos for AI Red Teaming - Cisco Blogs",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVHRrczdESHBGSFFjdElKV2pWODJEQ0xrbENTX2gyMUJMa1BIYWVBeHJsbWhMTjEzeTk0Z3d2WWpnYkxxcXp2TmVhbUNNZjQ1bUp4Vlg0T01meVZnQVB0TU9fdF85Z2VoN1pjVTBjZWQ3QllpTFBqUVVEbkVMb01fZ3JFbFF1RC1hWnpucFB5d3Z4LVZaY3hhVHJ3?oc=5",
         "source": "Google News",
-        "published": "2026-11-09T03:31:00.000Z",
-        "summary": "Anthropic Bets Its Smartest Model Will Set Claude Duet Apart The New York Sun"
+        "published": "2026-11-09T20:04:20.000Z",
+        "summary": "Cisco AI Defense to Add Anthropic’s Claude Mythos for AI Red Teaming Cisco Blogs"
       },
       {
-        "title": "Claude AI Accidentally Deletes Law Professor's Entire Syllabus and One Year of Lecture Notes - CyberSecurityNews",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSjBXa0dxa1dkcEt2eU5UcVdYZmF2RGVFaUJSR3NOeGtXUTE0aTdadjdUUGFJYl9KNi03WTJuak9NdHAxb0dET1NVbTFIeXkwVzNsQWF5NHdYLS1pYzVESWozM3Y4VnZSUnVBZmctS2puQ3JTX0VlYVlTdk5fLW4yc1hyMlo0Z9IBiwFBVV95cUxNS2lqZzVFSW9MTlNPbWJJcEhYd29ESy1veHplaTJQbGFFYkpiTTdDZDJNWnF0aXEzSVNlWmpMY2xzX1hueWgySUZMS0FkZ1VxZUgzOGNmb3FmMlU3T1UzNnpWR090eDJBTXBmMUVoR0RIazJCMzZ4RzZKTFVHRDMwWnZiem9USm1Pc25r?oc=5",
+        "title": "Opinion | Does Claude have a soul? Ask God, not Anthropic. - The Washington Post",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ0hhX1U4aHV4OTRSb3JZRDZPQ1NEYWtzVDRVYU5jX2tUMVNpU2NZakVrN0hjRTV1Qy1vb2k1cElOOUxXZi1GeEdXX1B2WlhRMEZXUHMwWXlfNWs1TlpaR1FhLWliZEZpN3JIaHd4bWFmcmRTdGFFRTQyZWJsTjQ2TVE3bGNyMTY4dnFHVlk5Y0pIOGFLUExRVnFZTE52bkJncHJ1YUFTZG9RQk1RXzJBZDJn?oc=5",
         "source": "Google News",
-        "published": "2026-11-09T03:11:42.000Z",
-        "summary": "Claude AI Accidentally Deletes Law Professor's Entire Syllabus and One Year of Lecture Notes CyberSecurityNews"
+        "published": "2026-11-09T20:02:16.000Z",
+        "summary": "Opinion | Does Claude have a soul? Ask God, not Anthropic. The Washington Post"
       },
       {
-        "title": "Claude Code Don't Ask Again: 1,379 Secrets [2026] - tech-insider.org",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPT3lOd0JmTjZSUjdzc0lqVnpmTVJzMkxMa2J2RHhUMXZZOEpiNUxTY1UwTnF1NDhVT09NWTFQbEVycVNQWXpPak45TEpFTElTN2RQUTlwRV83alllMW52VEk5YkxwSGU0MDVLT2RqR2gxclExemxxblh1bHFCT01tSkx0cGFEZmd5RGc?oc=5",
+        "title": "Anthropic launches new AI models, Claude Fable 5.2 and Mythos 5.2, ahead of IPO | Business News - Hindustan Times",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNMzdDVTBjcFc5ak1kSWRNZjdyUlR2NXlMTHgtekJRSUpNMlhnaTd6cW54NW04MlRwN0Z0T1FDYXFBd3FjZUY3Q2g5Y1g5T3Z3aFk5VHJQUmNsZ2hjaDY1RWlfVEQxUDNXU2I1czFFRTdCUmhucGhsd09lbk45UTBEUnp0QzZOVVBEdW1Sa1VkRk5BRmRkMklxM0laZGdvNUhGTVY0RVlXc1dYOXlPY0wzaWQtUGFjLWdjQkVWcmtYRnM2YlE5bGZuU2FXV3NCY3AtcjZJWdIB2gFBVV95cUxQSUIzN3NVb09SVFVyZVNXSzZPX0wwUUlGaTJ5YnFQTlVicWY0QVh3LUZEWlZlcUI3bUhncmhjTmk0SWRFZWdLZ0N5eGEyNmZfbFF5S1B3djZ6QnAxT1RYekFmdkEtdXNURF9QTUJQd3FrS1VNS2VZT0oxOG84eFoweWlYVjJScXp3LXY0R3dLRERZcHRuYTE4ek11VFBOR1NPa0pzR18zZnZuMXRlSGxyemFPdXFXRHJoeHh3ODFwM0JBM0t1R2g3R3lNcXZZZVBRS19kdG9YU29yQQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-08T22:59:49.000Z",
-        "summary": "Claude Code Don't Ask Again: 1,379 Secrets [2026] tech-insider.org"
+        "published": "2026-11-09T20:01:15.000Z",
+        "summary": "Anthropic launches new AI models, Claude Fable 5.2 and Mythos 5.2, ahead of IPO | Business News Hindustan Times"
+      },
+      {
+        "title": "Claude Code leaks thousands of secrets on GitHub - Notebookcheck",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTGJ4cmt5ZDBfTWpPN3I4UmtNM0dnVnowbUJyXzExWm9aLXZEdWFLSEQ2NU0zdTdyeDk2VTBkdzJrZy1Dd1BiczBpQUJOVGZXNXVGNTZIMVVUN1RyWkVsNTQwMnRkTkUwcDZMS0dKVjYwYnlHaXhGNWcxdENzZFU5SmFoSFBncHJ0dFV6UnhHRGtsa21lRFluWg?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T20:01:00.000Z",
+        "summary": "Claude Code leaks thousands of secrets on GitHub Notebookcheck"
+      },
+      {
+        "title": "Anthropic releases Claude Fable 5.2 and Mythos 5.2, pairing new, record-high benchmarks with 20% API cost reduction - VentureBeat",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPN0VKa1ZLaWtOam8yMHotUVNoUE84dmVtYmJ4dW1XbFZZY1MxcmRhNU5jUHV5dkVINE5ERVdNdzE0TmlDdEJhcjhxZEw2TmtpUWRuVU1yb0M0cjhTQjBQaGRQUHplUjZyZDBrSUtQOWhWc1B4aTBqUlVUNUhsaUpfaXg1M1ptc1d6aTJxcEVPaFlMaDZBWnBLZzFCc1JNX2NlU2J2TWFiNXZ5M3lzSmVLRDJuXy0zUzAwLU1scGdjUFpjd3RqLTZPS3I1UmxpOWhmRURuYUhKN2tIR2czVWY2Zg?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:55:04.000Z",
+        "summary": "Anthropic releases Claude Fable 5.2 and Mythos 5.2, pairing new, record-high benchmarks with 20% API cost reduction VentureBeat"
+      },
+      {
+        "title": "Claude Fable 5.2 Knocks Gemini Off the A.I. Throne - trendingtopics.eu",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBmb0N4Vm10ZURBY2V5dnQwajJ6U242TDh3ZmdlbFBBVEpDTjB1Nk9pZGZ6RHc2SkJZTXlHZExKVTZsZERHc1JwNnkwVVZoUVlIdGFGWkZocFVhdXJjLVlrXzkybmpVc0Mza2FkY19iZlQ3RFRBSEE?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:53:55.000Z",
+        "summary": "Claude Fable 5.2 Knocks Gemini Off the A.I. Throne trendingtopics.eu"
+      },
+      {
+        "title": "Anthropic launches powerful Fable 5.2 and Mythos 5.2 AI models ahead of Wall Street debut - TRT World",
+        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9qcUZGTl82NWtwX1hZQXQyQWdMOU9ZbE9yNjVoTGhHdVdjcFFHekM0WDkxcFZ6TXdtWnVlUlAwRUFnUkM0cVQ2Tm1reTdnYndMcGVDNnNMZzU?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:47:33.000Z",
+        "summary": "Anthropic launches powerful Fable 5.2 and Mythos 5.2 AI models ahead of Wall Street debut TRT World"
+      },
+      {
+        "title": "Anthropic’s Says Its New AI Model Can Solve Black Hole Mysteries. What Could Go Wrong? - AOL.com",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9QYnZDV3BXeTR1UHdQaE9SeUlBaGE4UFctRGpMSFhzMzVWMlNWVURtOE1FR0hoSjVBaGxURkR1dTBHQV90ejJvelV3N3lHN0RzZC14NG1zbDVlYU8wdDZWd2ZkcE1HUlRERnZveVhBUWgtSzBlRG15cnIzMU5EQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:44:20.000Z",
+        "summary": "Anthropic’s Says Its New AI Model Can Solve Black Hole Mysteries. What Could Go Wrong? AOL.com"
+      },
+      {
+        "title": "Anthropic launches Claude Fable 5.2 and Mythos 5.2 at a 20% lower price - Pasquale Pillitteri",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdmdhZTF0R2pMTExrRzBsR1dnZUhwWG5vTEZWNktreGMweUVreWtzTUI1RW5CR0FyNXRWYWhzNkE4cFYzc2UzNjNneGFOVkdFUDlKcVRxdUhpZTJEMGx1cjVaVGp2RVlNUU53MU14MFR4dG5BSVpoMlVKOXR4VG1MYzJrQXk1MDdMMl9KcQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:42:41.000Z",
+        "summary": "Anthropic launches Claude Fable 5.2 and Mythos 5.2 at a 20% lower price Pasquale Pillitteri"
+      },
+      {
+        "title": "Tutor Has GPT-6, Claude Agents Build Its Robot Training Sims - FourWeekMBA",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQbUV1aFA1Yk9UNjlZVUxHbEo3RDk1ZjdhRFVxMXh6YlVFNXhXMWl2ZlNsTVhNcW4xcERraFg2VndQb0R4Y0lNZXd0eWhuenVab2tWYlUzd1ZtMG1PQkhVTGdUbzRhbUVoSVVITnhVVVcyMGdTdndCRktBN3E2Vk4zenFSUXpJUUNCQ1VOUVAwYjE?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:41:04.000Z",
+        "summary": "Tutor Has GPT-6, Claude Agents Build Its Robot Training Sims FourWeekMBA"
+      },
+      {
+        "title": "Anthropic must face lawsuit over Claude subscription marketing - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQd1ZtZzZWNUh2ejlBRmZIQ2prdlNzWnlNTFFkOFZXRWJCaXpBdzVtaUk3cDBXZG1uUXdEaEdqZHNtSWF5N2o4Ni1xdjkzVHp0azBKQTFZb0k0ZVpDYU5id2l3ZTdtNlltZVJyNUhRZjIxWDluWHd4TW5YLXhCcHNlejNyamFlZjZUbWJsaS1yb0VGZDJFQnJXZUhaNmNoUEJjM2s3TWltbFREMmNMVkdDbkNLaXNJQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:38:42.000Z",
+        "summary": "Anthropic must face lawsuit over Claude subscription marketing Reuters"
+      },
+      {
+        "title": "Anthropic Launches Claude Fable 5.2 and Mythos 5.2 - MacRumors",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFA4bERid0NXUDIzNk4zUHZYX3JvWGRqSWZ2Q1J0cUVBZXJNalAwX2xib0VuTm1pQVVaUGRxNExYR2ZYd2kxbWhHcEE3WlVzd0JZRFJucERiU1Vxc2E4SmpPY1dhUDhsQzkxUGllQ25Ub0IxRzhqbktTRGc1T0tjdw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:38:35.000Z",
+        "summary": "Anthropic Launches Claude Fable 5.2 and Mythos 5.2 MacRumors"
+      },
+      {
+        "title": "Anthropic launches Fable 5.2 and Mythos 5.2 AI models ahead of IPO - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOa1VhX3JiZEstX0xxWUp2Q1JEc09sRmtEQ0VtX0pYcG9DQ2prUWludkt4TldqY0hicTJKTlVFSTNObmdpRUtILUVvbEVsbjNXNzliaThkMm1wUHdMbmxXajVsZkswd2hXVDBWX01OZkVZUGk2d2VfYUNmbHZJWFpURjhjRVJnSlJuNDluTlFwak9kZmdkSmww?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:36:09.000Z",
+        "summary": "Anthropic launches Fable 5.2 and Mythos 5.2 AI models ahead of IPO Yahoo Finance"
+      },
+      {
+        "title": "Anthropic releases two new Claude models and cuts prices 20% - Quartz",
+        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE01NDJDcTRySFdTOUUxTnNXOXF1YU95ZFV6S2NLNEZTbFgwUEtGdFQ5bmtNZEF1MFRGU1NyczZGcFBiRDgtSWxoVmJsUV9acjQ0Yjl3SFN6OFhwaFpDbmk3aUVBZG1PZVZWdG5PSFVXWndEWnM?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:35:35.000Z",
+        "summary": "Anthropic releases two new Claude models and cuts prices 20% Quartz"
+      },
+      {
+        "title": "Anthropic launches Claude Fable 5.2 and Mythos 5.2 with a 20% price cut as its IPO nears - MLQ.ai",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxORGhDeGJnZ2NGNzJnQmNZREI3VmU0S2g4dEFXZnFpdHIzcEZ3ckUyWEhjeDdiZUh3YWZQX04zWUFYc3FPdXhiOWtVVHBfVXFhMHcwSTVFUzJ1OF9iRWdQUUt5NjRFTGt6blNUQWJ2ZXVIZ0Fwc0VaZmVobjFNSXA0X3dlcFl4RE5pM1hjWWxMdUhRNVRiYkF0bkRfQ0RNS1dXWnVGSWNYN3JUMnJu?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:31:45.000Z",
+        "summary": "Anthropic launches Claude Fable 5.2 and Mythos 5.2 with a 20% price cut as its IPO nears MLQ.ai"
+      },
+      {
+        "title": "Anthropic Rolls Out Fable 5.2 and Mythos 5.2 at Lower Token Prices Ahead of IPO - BigGo Finance",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5RNDNrYUhrZzVqZmNtcW9seGhkNXBaSnRLdmQ0cDVld1ItR0xTS0MyeDF4MnMxN2Z4M3R3NFJQdGZxaXNZeFRjWk9uUG1haTdVNWxwMWJPelVSVlc4X3hhQjdHcXVIY0dRb0pwc1NONnVfbkFaNVE?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:29:07.000Z",
+        "summary": "Anthropic Rolls Out Fable 5.2 and Mythos 5.2 at Lower Token Prices Ahead of IPO BigGo Finance"
+      },
+      {
+        "title": "Anthropic Unleashes Fable 5.2, Keeps Mythos Restricted - SQ Magazine",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5ramV1MURLdHVXa0pGTXdBSGc0anRVRXRING1xSmlaQVdZTGQ1cWNXUUxoZ0pKUWd4OEVJMjJtMUFDUlhKS1lfWmNTOWYtUnRfRXJXbGVWN0lURFVLcUgxQnRib0hyMFJORTJFSFNHejZGcjFaUFRV?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:29:02.000Z",
+        "summary": "Anthropic Unleashes Fable 5.2, Keeps Mythos Restricted SQ Magazine"
+      },
+      {
+        "title": "Anthropic’s Fable 5.2 Pairs 1M-Token Context With Faster Output - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNa2pqUlJWQmdSR0IzMjJUYndYbFkxVUQ1OGdObktsMzI1aWZ5UnlMdnltM2gwVjNwRHMwczRKSjFHa0I4aFROenA5VjNVVzQtLXh5bjQ0eFR3czBzUHljVWNRYjJDS2JaQ3BNdE9DR0ZqVUtLaHFkYWZ6UG9yd2pFLUhNYUdNZ0pjSFlPMw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:27:03.000Z",
+        "summary": "Anthropic’s Fable 5.2 Pairs 1M-Token Context With Faster Output Unite.AI"
+      },
+      {
+        "title": "Anthropic releases upgraded versions of Fable, Mythos ahead of IPO - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPUjdQVVNMQUIwZGRNTWZKTER1cEMwbFkweEJMM2pDcDAzQ1dpa1hkbmwyMDh5ZVM3QVJzUnRFOVVYNVZiNXBtNUpmdzdZNHdTREZ4dFl3VHZqU2lGVFlSamIwb0RWVXFLY2lhN2p0Z2d0cENpczdxTjZhVlFNbkhtTDBlc3dDSG1qZnJzZ2lLMkVPSHpiTklKS05tZ0V0b2hrRzFlZERn?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:27:00.000Z",
+        "summary": "Anthropic releases upgraded versions of Fable, Mythos ahead of IPO Seeking Alpha"
+      },
+      {
+        "title": "You can now use Claude Fable 5.2 on a paid plan, and it comes with extra usage - XDA",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE81d2tyc0NIYVc5bHFEdXhxTVk2RVdSTHBEQ053dG92M0tFZ1ZBVzgtWi1mTEU4cG1Nckx1eXVnX2JlVmtXS3dlcXc4OVpoSi1ZMlRNMzR3M05tUzN1WlV1b3BnTlV3UU0?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:25:38.000Z",
+        "summary": "You can now use Claude Fable 5.2 on a paid plan, and it comes with extra usage XDA"
+      },
+      {
+        "title": "Anthropic releases new Mythos and Fable models amid RSI concerns",
+        "url": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/",
+        "source": "TechCrunch",
+        "published": "2026-11-09T19:24:51.000Z",
+        "summary": "Anthropic says the new models \"show improvements in areas like coding, reasoning, and vision,\" as well as in communicating more clearly with users."
+      },
+      {
+        "title": "Anthropic Launches Claude Fable 5.2, 20% Cheaper Than 5.1 - FourWeekMBA",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZGNjRnN0dnhvUjJZQ2M1ejQwcjBuZ3lwamxBSENwRmlhcVYzVDYxSE9id1pqUHhyMjBwVGI1VFBVS3prcG4tRjhidlNTaC1oOXRUYUhYQkdJVzZKQmlXZW9TUXl4S1FWR09kams2c1RTLXlKVjd6YzNKUTZKNU1hbEx6VjItRUhwNG04?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:19:46.000Z",
+        "summary": "Anthropic Launches Claude Fable 5.2, 20% Cheaper Than 5.1 FourWeekMBA"
+      },
+      {
+        "title": "Anthropic Lawsuit: Claude Max 5x, 20x Claims Proceed [2026] - shattered.io",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPRl9aS3B0LWJTclBvcEx5ZFlsWUpGTVlQVDhfRGpRNWYxZFF4dVo2UFdnNkFmd24yWTAtT0ZTMFR3MWFqYkYySEJubGdsT1JhTEV2Sm1TWVJEOWE1bTFoWGlzNkt4QlFTNkRoc2JyQ25lcDN6UndUYkUwTHhub0dhR3hSdXBTUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-09T19:13:53.000Z",
+        "summary": "Anthropic Lawsuit: Claude Max 5x, 20x Claims Proceed [2026] shattered.io"
       },
       {
         "title": "This NEW Claude Update Changes EVERYTHING (Claude Code From Your Phone)",
@@ -193,28 +333,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "\"Don't ask again\" in Anthropic's Claude Code leaks developer secrets - iTnews",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVEdHMU9IS3lrWHF1YjBVYkxoZjFsWFB1V2Y0MHZwOTBkSDRnX1VtbG5YSTlfenJBbGpyVFNQNm1qcDh3UkV3RkdrckZ6QUtjRkFUS0phVkk5bHRSUXJnS0lvV2J1NDM3QVpWVG1nOHBvUEtnWnRtSUVoWV9hdG9nZmRad0ZjTl9rUV9KZTdOUUFTX2Q5c3dWbzVRUEJrbVNlYVJLcA?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T19:40:00.000Z",
-        "summary": "\"Don't ask again\" in Anthropic's Claude Code leaks developer secrets iTnews"
-      },
-      {
-        "title": "Claude can now read your bank transactions, but disconnecting the account leaves a trail - MIXED News",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPQVpvRndaYkhCVGtzMHlmUUs3WUlaWGFWdHFaOE5hWlRiM0N6Q3hPZzV2RU5DUmdUc3AzbzVuZWIzaV9jeDZzWE9UMTFwczAwa0pnM2cwVmNEeWUxeWthY1owMzhEMXJGY1R6dWktUW40Zm8xUktPTVA2YmpkN3dWYWVpYUVPQmlW?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T19:34:58.000Z",
-        "summary": "Claude can now read your bank transactions, but disconnecting the account leaves a trail MIXED News"
-      },
-      {
-        "title": "Goldman Sachs is pulling Claude Code from its bankers and traders",
-        "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
-        "source": "HN · 754↑",
-        "hn_id": "50415628",
-        "published": "2026-11-08T18:16:07.000Z",
-        "summary": ""
-      },
-      {
         "title": "Claude Code Plan Mode vs One-Shot: Real Costs Measured",
         "url": "https://www.youtube.com/watch?v=zDG4ry2vDuQ",
         "source": "Stefan Rows",
@@ -225,128 +343,6 @@
         "published": "2026-11-08T18:00:32.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Anthropic secures major generator deal for AI data centers: What to know - The News International",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOQUl6b1FZaVRuYi1QNzg3NEVlUEFkRDhoRzFFWTBpTVRMbHdHMmZVWUhXd1ZZay04WE1LNmlqYlJ1UVRQOU1QWnZIQUktSm51TWM5UFAxMXdGb05LSk1LSXBUeUl3Ulh4aWRQVGpab2Y4Q0I2Nks3QldEZnR2WnVZTFF5RXJzS1RxMHNhNExTTFZCdVBTR3ZKUFloMUpiN0tfY3lDVW5GS2IyQU1aRDQ2cXdwb9IBrwFBVV95cUxPZXJuUXJIRjhaSkFiVHJrYW1VYzdHZThHOU5lSk9DSGo2el93cjVpREZQaGcweGFWaElXNFJzNV9fSVVyaUdoVldHcG5mYWx6OTlWRFZtZVFmbUNUbTQ0b1ZYYl9IRHlJem1xdG1YTXF2dmpVajlhSTBkaGdtTVBuLUhpTUZTZ0h3RGdBTEktaTRjVThfQk1qNk5fX3lCT2J2U1hGMTlRUzRuQ2N3LTRr?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T16:07:00.000Z",
-        "summary": "Anthropic secures major generator deal for AI data centers: What to know The News International"
-      },
-      {
-        "title": "Anthropic secures $3.4 billion power deal for data centers - Latest news from Azerbaijan",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOWk9xdlUwNzUwMFdTbHFjSkQ0Vm1ST3U3VTRXTy1KRzY2VTVEWVdCUFFnc3NVaE5YUHgzdWloSU15Y3hmTXNROWY0YlliVDVyS1RjcmstaGwyZUtGTUdHamZ3SXFyNHRkRWxoRXVLRTdpSWxTN09JS1VKaWd4UzBkUFpXNA?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T15:40:25.000Z",
-        "summary": "Anthropic secures $3.4 billion power deal for data centers Latest news from Azerbaijan"
-      },
-      {
-        "title": "Chatbots might be coming to Apple’s HomeView",
-        "url": "https://www.theverge.com/tech/1029526/chatbots-might-be-coming-to-apples-homeview",
-        "source": "The Verge",
-        "published": "2026-11-08T15:00:30.000Z",
-        "summary": "Code in the iOS 27.3 beta suggests that Apple could add support for chatbots to its smart home hub. There's a flag listed for a \"Conversational Apps\" category. While there are no details about what…"
-      },
-      {
-        "title": "Anthropic secures $3.4 billion generator deal for AI data centers, FT reports - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNTUktcGxpNENhQ1llV2F3a3V5RUZya0dDc0ZLeFVTZmFqclBqSVhuYkNiSFpSTkkwVnZ2NkFVVEVjQjZPLTJzMGMyU0dnaFg0X1pPd2pMV0ZCWWtMWlpSdTNvckRlaGxLcWs1SnljenEwcUs0N0doWG0yRDdET2o4YlZMVWl6c2lpYWJ1emstVFI1S3VyUXdIdG1xdmZpS3k3ZW5LVUpibUZ0SWxmZUNLNXN0SDBMZE5nWFJZdDlQSQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T12:54:10.000Z",
-        "summary": "Anthropic secures $3.4 billion generator deal for AI data centers, FT reports Reuters"
-      },
-      {
-        "title": "Anthropic: Claude ‘Dreams’ Took Wiki Scores From 13% to 48% - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPZUJVbk02T2lMM2dxMzNtNWVDQUlITThqeVZlcTBhS3hLTDdfQmRiRWdGNWR4M2ExcE5UemVIUVJsU0xGUGdCdkpPOFZVcXhTV0xzMXlMbE81bkt5Z08xVFdvdExHaUNfSks0cHBkcjJZaGNyaXRMdXo2c2FZejl4aVllSzR2aXdNdmc?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T12:47:49.000Z",
-        "summary": "Anthropic: Claude ‘Dreams’ Took Wiki Scores From 13% to 48% FourWeekMBA"
-      },
-      {
-        "title": "Anthropic strikes $3.4B deal to generate gas-fired power for data centres",
-        "url": "https://www.ft.com/content/41bf5c6a-9735-4f1a-a8e3-2bcccad58ba0",
-        "source": "HN · 41↑",
-        "hn_id": "50412760",
-        "published": "2026-11-08T12:41:25.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Anthropic: CLAUDE.md Rules Are Requests; Hooks Are Enforced - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPaGh3bGExVzQ0NDE2eG11QXBNT3E4ZjI0NEVWd1RWVWdUbnZwM3hQeG1meWJJeENJYkpzbEx5N2NObmF2dnlIUnRlMmh0OTNDOEpkNF96X3FnTmF5TlpPbXRZclRJckdfRDhXVndtTi1CTWZkZXZFai1jWjZtN1lQY1ZMekhHMkFWRWx0OTJB?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T10:12:49.000Z",
-        "summary": "Anthropic: CLAUDE.md Rules Are Requests; Hooks Are Enforced FourWeekMBA"
-      },
-      {
-        "title": "Anthropic IPO: ANT Ticker, $16.3B Revenue, Control [2026] - https://tech-insider.org/",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMjU1VC1wRkJ4eDNDVmpFV1NfekRMVHdKV2RuSTdOc25LdWpaaks2TWJINkh3M3pLaklkZ2FHOVlGYnBjWEpRcWpPb1N2MmZ6MExDME9VM0pRTXJYM3JrbEl6UnF6VGhYMHdJNkdzMnV1Q255MjZIZ0I3SUp5RGFSaGdEUWJlODZPTTlwTkdFY1dDQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T08:20:37.000Z",
-        "summary": "Anthropic IPO: ANT Ticker, $16.3B Revenue, Control [2026] https://tech-insider.org/"
-      },
-      {
-        "title": "Anthropic S-1: Loss Narrows to $1.3B From $5.2B [2026] - shattered.io",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZ1p5cnJDbnhoTElxN3ZodFpWRE52RmNSS01fNE90WTNYbHF2X3B5bDJET0RTTWRWRndUTEM0TkRBclhJVnVSVXM1ZG1yMXNaMmFGRmJhSmpLVGw1RXRpd2Vva2gyOU1rOEt6eE5zRVhaVmFZVFdrNGJ4MXcyRFZkQ09XRVE?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T08:13:53.000Z",
-        "summary": "Anthropic S-1: Loss Narrows to $1.3B From $5.2B [2026] shattered.io"
-      },
-      {
-        "title": "Anthropic Says Claude Wrote About 90% of Claude Code's Code, Discloses Six-Layer Review System - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4zRnZSbk1QNi1IRmJabGEzc2pNU1BnbTBfQmdiYk9ibGJYQXc2bDlKOXlWTmY5MUdaeVhCSlZoSGQ2YXNsR3dCUjgwaEIzc28xUVVKTlJZd0JSOC1zRFBqazR4QlBmUVlTdjJOYThkbDllLXNSM3c?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T07:35:00.000Z",
-        "summary": "Anthropic Says Claude Wrote About 90% of Claude Code's Code, Discloses Six-Layer Review System BigGo Finance"
-      },
-      {
-        "title": "Anthropic Engineer’s 3 Habits vs Cognitive Surrender [2026] - shattered.io",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPdEdIM3VCOEVrdkQ3Uk1GNmoyUXVHcGd2WFZ2Z1ZhbUdTLVFSZlp6MUN5SjdMZGptcjNGWEx6YzF2R1c2OEowcldQVVl1RmRHVURDdmJpZ1FiaE9jWGtJdGdJOVJKWlRHZjlEMlVFWUhjMUp1dFBRWnNLdGFoWXA3VDBhbHhHNE91a2lKQkktTGE5aU1B?oc=5",
-        "source": "Google News",
-        "published": "2026-11-08T03:33:53.000Z",
-        "summary": "Anthropic Engineer’s 3 Habits vs Cognitive Surrender [2026] shattered.io"
-      },
-      {
-        "title": "Goodbye Claude, hello Pi",
-        "url": "https://caleb.software/posts/claude-to-pi.html",
-        "source": "HN · 754↑",
-        "hn_id": "50410107",
-        "published": "2026-11-08T03:11:48.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Personal Finance Vs. ChatGPT Finances: What Sets Them Apart? - Engadget",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxORGNUWG9XV2JUWGNmcFAxa2V1VWp1TVVnVnd5SUh2cFFZMjg4YUFZT0NtNUh3WlR2dXVYeFpuTHlsWVpDdjN5LVVxdkpIVjl5dXppOFl3MEhXdnprdkF2YzdVTWtvX1NZdzRLWUpSSXZpTGxuejlxNjF5TDJsUHh4bmtzYkdTQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-07T23:10:20.000Z",
-        "summary": "Claude Personal Finance Vs. ChatGPT Finances: What Sets Them Apart? Engadget"
-      },
-      {
-        "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
-        "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
-        "source": "HN · 600↑",
-        "hn_id": "50407882",
-        "published": "2026-11-07T20:45:32.000Z",
-        "summary": ""
-      },
-      {
-        "title": "When is the Anthropic IPO? What we know about the date, the ANT ticker and the valuation - Nacionale",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOdFcta3VjZFZQMDV0TWRXSFVUWXc2MmxfX1BOckx1ckU4X04zNlIzV0Ewdk80dHV3bHlWWENSdkx4aEdqZVpFVDRtNEtOR3BBdzJ4Q2VncVpOelpzXy1SM25QQ3dDbHdkLWR5cVYtN1BWZEtmTjZublo4U3ozbDJBZTlnbF9vVlRacTFRZkhtSXUteWh0ZVNkaUIxY3J0bkpkalJ3?oc=5",
-        "source": "Google News",
-        "published": "2026-11-07T17:22:44.000Z",
-        "summary": "When is the Anthropic IPO? What we know about the date, the ANT ticker and the valuation Nacionale"
-      },
-      {
-        "title": "Leading Anthropic dev says 'a human has to take responsibility' with AI code projects, as some skills get lost - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZVd3MGJvdnVEU0xQWWdBR19XMXItTmhDaFNQTVp0TFZnMnp2bUJlVlI1OVhEU1ZKeDRIdTkwdGJBTW5IRnQ1YndfdEROUFpjT1lWREQ2cXg2cjJ4dl93QVlmM05KMDJHTUJVbzRETGtZNC1FU1dpeFpXN01zLTFFX19YNmhYdUVrUWh2YU0ydncwTTA?oc=5",
-        "source": "Google News",
-        "published": "2026-11-07T15:30:00.000Z",
-        "summary": "Leading Anthropic dev says 'a human has to take responsibility' with AI code projects, as some skills get lost Yahoo Tech"
-      },
-      {
-        "title": "Anthropic's Claude Can Now Link Bank Accounts and Analyze Transactions But Won't Offer Investment Advice - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOSWtHTk1YYll3THp6bDdfZHRickJwTWtPcGpmZ0I2c3hhZ0g3MVFMbGxCaUxIYlp2Y2FMN0FfNWI0bXRPelZmX2l4dWUxRUR5cmV6eU44SWVuTG5xRlVlc2ZkbmNDRHU2VVhWNnhLRWZlQWJ4WUYwc0ttYmxmU2NwSjZFZ01rcVViak9iQXNWLTd3ZGlxZndiNEFrZGhvc25j?oc=5",
-        "source": "Google News",
-        "published": "2026-11-07T12:30:05.000Z",
-        "summary": "Anthropic's Claude Can Now Link Bank Accounts and Analyze Transactions But Won't Offer Investment Advice Yahoo Finance"
       },
       {
         "title": "4 Claude Code agents, 4 worktrees, one Herdr",
@@ -1033,6 +1029,14 @@
     ],
     "tutorials": [
       {
+        "title": "v2.1.321",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.321",
+        "source": "Claude Code Releases",
+        "published": "2026-11-09T19:22:30.000Z",
+        "summary": "What's changed Added Claude Fable 5.2 ( claude-fable-5-2 ), now the default Fable model — 1M context, $8/$40 per Mtok with $0.20/Mtok cache reads Added --settings to claude remote-control , which…",
+        "tutorial_kind": "official"
+      },
+      {
         "title": "v2.1.319",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.319",
         "source": "Claude Code Releases",
@@ -1186,14 +1190,6 @@
         "source": "Claude Code Releases",
         "published": "2026-10-22T22:18:57.000Z",
         "summary": "What's changed Fixed sandboxed Bash commands on macOS and Linux running the shell's startup files outside the sandbox before each command Fixed macOS sandbox denyWrite glob patterns not applying at…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "v2.1.308",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.308",
-        "source": "Claude Code Releases",
-        "published": "2026-10-22T04:34:55.000Z",
-        "summary": "What's changed Bug fixes and reliability improvements",
         "tutorial_kind": "official"
       },
       {
@@ -1667,6 +1663,20 @@
     ],
     "claude_learning": [
       {
+        "title": "v2.1.321",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.321",
+        "source": "Claude Code",
+        "published": "2026-11-09T19:22:30.000Z",
+        "summary": "What's changed Added Claude Fable 5.2 ( claude-fable-5-2 ), now the default Fable model — 1M context, $8/$40 per Mtok with $0.20/Mtok cache reads Added --settings to claude remote-control , which applies a settings…"
+      },
+      {
+        "title": "We’ve launched Claude Fable 5.2 ( claude-fable-5-2 ), built for demanding reasoning and long-horizon agentic work.…",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview#november-9-2026",
+        "source": "Claude API Release Notes",
+        "published": "2026-11-09T00:00:00.000Z",
+        "summary": "Claude Fable 5.2 and Claude Mythos 5.2 enforce the prefix check for every account, whatever its age. Claude Fable 5.1 returns the error by default on accounts created on or after August 31, 2026 (see When prefix_mismatch_behavior is unset…"
+      },
+      {
         "title": "This NEW Claude Update Changes EVERYTHING (Claude Code From Your Phone)",
         "url": "https://www.youtube.com/watch?v=zU0jqYKTgMs",
         "source": "YouTube · Riley Brown",
@@ -2045,13 +2055,6 @@
         "summary": ""
       },
       {
-        "title": "v2.1.308",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.308",
-        "source": "Claude Code",
-        "published": "2026-10-22T04:34:55.000Z",
-        "summary": "What's changed Bug fixes and reliability improvements"
-      },
-      {
         "title": "We’ve launched Claude Models on Google Cloud (Anthropic managed) , the Claude API operated by Anthropic and reached…",
         "url": "https://platform.claude.com/docs/en/release-notes/overview#october-22-2026",
         "source": "Claude API Release Notes",
@@ -2148,13 +2151,6 @@
         "source": "Claude API Release Notes",
         "published": "2026-10-09T00:00:00.000Z",
         "summary": ""
-      },
-      {
-        "title": "2.10.1",
-        "url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.10.1",
-        "source": "MCP Inspector",
-        "published": "2026-10-08T05:12:32.000Z",
-        "summary": "Why The Patch? The addition of the new mcpdo client threw a curveball into the default npx @modelcontextprotocol/inspector@latest method of running the inspector, because there were now two binaries to run, the…"
       }
     ]
   }
