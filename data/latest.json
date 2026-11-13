@@ -1,150 +1,305 @@
 {
-  "generated_at": "2026-11-13T11:39:19.005Z",
+  "generated_at": "2026-11-13T18:51:01.302Z",
   "version": 1,
   "sections": {
     "updates": [
       {
-        "title": "Claude 4",
-        "url": "https://www.anthropic.com/news/claude-4",
+        "title": "Building Strong Safety Evaluations",
+        "url": "https://www.anthropic.com/research/building-strong-safety-evaluations",
+        "source": "Anthropic Research",
+        "published": "2026-11-13T18:39:33.493Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Text Watermark",
+        "url": "https://www.anthropic.com/news/claude-text-watermark",
         "source": "Anthropic",
-        "published": "2026-11-12T21:02:17.838Z",
+        "published": "2026-11-13T18:29:31.569Z",
         "summary": ""
       },
       {
-        "title": "S1 Sec",
-        "url": "https://www.anthropic.com/news/s1-sec",
+        "title": "Claude 3 Family",
+        "url": "https://www.anthropic.com/news/claude-3-family",
         "source": "Anthropic",
-        "published": "2026-11-12T16:11:50.000Z",
+        "published": "2026-11-13T17:02:43.449Z",
         "summary": ""
       },
       {
-        "title": "Roadshow Launch",
-        "url": "https://www.anthropic.com/news/roadshow-launch",
+        "title": "2026 Us Midterms",
+        "url": "https://www.anthropic.com/news/2026-us-midterms",
         "source": "Anthropic",
-        "published": "2026-11-10T11:32:16.000Z",
+        "published": "2026-11-13T17:02:43.448Z",
         "summary": ""
       },
       {
-        "title": "Claude Electronics Design",
-        "url": "https://www.anthropic.com/research/claude-electronics-design",
+        "title": "Economic Index June 2026 Report",
+        "url": "https://www.anthropic.com/research/economic-index-june-2026-report",
         "source": "Anthropic Research",
-        "published": "2026-11-09T18:51:01.000Z",
+        "published": "2026-11-13T17:02:43.447Z",
         "summary": ""
       },
       {
-        "title": "Provable Inference",
-        "url": "https://www.anthropic.com/research/provable-inference",
+        "title": "Measuring Agent Autonomy",
+        "url": "https://www.anthropic.com/research/measuring-agent-autonomy",
         "source": "Anthropic Research",
-        "published": "2026-11-09T09:39:55.000Z",
+        "published": "2026-11-13T17:02:43.445Z",
         "summary": ""
       },
       {
-        "title": "Teaching Ai to Build Scientific Models",
-        "url": "https://www.anthropic.com/research/teaching-ai-to-build-scientific-models",
+        "title": "81k Economics",
+        "url": "https://www.anthropic.com/research/81k-economics",
         "source": "Anthropic Research",
-        "published": "2026-11-07T23:12:43.000Z",
+        "published": "2026-11-13T17:02:43.443Z",
         "summary": ""
       },
       {
-        "title": "Components of Agent Memory",
-        "url": "https://www.anthropic.com/research/components-of-agent-memory",
+        "title": "Claude Code Expertise",
+        "url": "https://www.anthropic.com/research/claude-code-expertise",
         "source": "Anthropic Research",
-        "published": "2026-11-06T21:15:32.000Z",
+        "published": "2026-11-13T17:02:43.442Z",
         "summary": ""
       },
       {
-        "title": "Project Eve Claude Plays Mmorpgs",
-        "url": "https://www.anthropic.com/research/project-eve-claude-plays-mmorpgs",
+        "title": "Alignment Assessment Cybersecurity Incidents",
+        "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
         "source": "Anthropic Research",
-        "published": "2026-11-06T17:09:29.000Z",
+        "published": "2026-11-13T17:02:43.440Z",
         "summary": ""
       },
       {
-        "title": "How Researchers Use Claude",
-        "url": "https://www.anthropic.com/research/how-researchers-use-claude",
-        "source": "Anthropic Research",
-        "published": "2026-11-06T15:55:34.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Accelerating Scientific Research",
-        "url": "https://www.anthropic.com/research/accelerating-scientific-research",
-        "source": "Anthropic Research",
-        "published": "2026-11-06T10:23:12.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Open Call Guest Investigators Life Sciences",
-        "url": "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences",
+        "title": "Detecting and Countering Malicious Uses of Claude March 2025",
+        "url": "https://www.anthropic.com/news/detecting-and-countering-malicious-uses-of-claude-march-2025",
         "source": "Anthropic",
-        "published": "2026-11-06T10:22:49.000Z",
+        "published": "2026-11-13T17:02:43.437Z",
         "summary": ""
       },
       {
-        "title": "Investigating Vault Particles with Claude",
-        "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
-        "source": "Anthropic Research",
-        "published": "2026-11-06T01:53:44.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Early Progress Drug Development",
-        "url": "https://www.anthropic.com/research/early-progress-drug-development",
-        "source": "Anthropic Research",
-        "published": "2026-11-06T00:33:28.000Z",
-        "summary": ""
-      },
-      {
-        "title": "The Long Term Benefit Trust",
-        "url": "https://www.anthropic.com/news/the-long-term-benefit-trust",
+        "title": "Claude Brazil",
+        "url": "https://www.anthropic.com/news/claude-brazil",
         "source": "Anthropic",
-        "published": "2026-11-05T15:44:46.000Z",
+        "published": "2026-11-13T17:02:43.436Z",
         "summary": ""
       },
       {
-        "title": "Alignment Assessment Ukaisi",
-        "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
-        "source": "Anthropic Research",
-        "published": "2026-11-05T14:10:48.000Z",
+        "title": "Claude New Constitution",
+        "url": "https://www.anthropic.com/news/claude-new-constitution",
+        "source": "Anthropic",
+        "published": "2026-11-13T17:02:43.436Z",
         "summary": ""
       },
       {
-        "title": "Vibe Physics",
-        "url": "https://www.anthropic.com/research/vibe-physics",
-        "source": "Anthropic Research",
-        "published": "2026-11-02T10:12:52.000Z",
+        "title": "Claude Europe",
+        "url": "https://www.anthropic.com/news/claude-europe",
+        "source": "Anthropic",
+        "published": "2026-11-13T17:02:43.435Z",
         "summary": ""
       },
       {
-        "title": "Claude Shaped Science",
-        "url": "https://www.anthropic.com/research/claude-shaped-science",
+        "title": "Claude Values Models Languages",
+        "url": "https://www.anthropic.com/research/claude-values-models-languages",
         "source": "Anthropic Research",
-        "published": "2026-11-02T10:11:59.000Z",
+        "published": "2026-11-13T17:02:43.435Z",
         "summary": ""
       },
       {
-        "title": "Claude Accelerates Protein Design",
-        "url": "https://www.anthropic.com/research/Claude-accelerates-protein-design",
+        "title": "Improving Fable 5 S Biology Safeguards",
+        "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+        "source": "Anthropic",
+        "published": "2026-11-13T17:02:43.433Z",
+        "summary": ""
+      },
+      {
+        "title": "Reflections on Our Responsible Scaling Policy",
+        "url": "https://www.anthropic.com/news/reflections-on-our-responsible-scaling-policy",
+        "source": "Anthropic",
+        "published": "2026-11-13T17:02:43.432Z",
+        "summary": ""
+      },
+      {
+        "title": "How We Contain Claude",
+        "url": "https://www.anthropic.com/research/how-we-contain-claude",
         "source": "Anthropic Research",
-        "published": "2026-11-02T10:11:06.000Z",
+        "published": "2026-11-13T17:02:43.432Z",
+        "summary": ""
+      },
+      {
+        "title": "What Work Can Robots Do",
+        "url": "https://www.anthropic.com/research/what-work-can-robots-do",
+        "source": "Anthropic Research",
+        "published": "2026-11-13T17:02:43.430Z",
         "summary": ""
       },
       {
         "title": "Enabling Independent Research",
         "url": "https://www.anthropic.com/research/enabling-independent-research",
         "source": "Anthropic Research",
-        "published": "2026-10-31T02:38:41.000Z",
+        "published": "2026-11-13T17:02:43.426Z",
         "summary": ""
       },
       {
-        "title": "Managed Agents",
-        "url": "https://www.anthropic.com/research/managed-agents",
+        "title": "Claude Personal Guidance",
+        "url": "https://www.anthropic.com/research/claude-personal-guidance",
         "source": "Anthropic Research",
-        "published": "2026-10-30T15:51:07.000Z",
+        "published": "2026-11-13T17:02:43.425Z",
         "summary": ""
       }
     ],
     "news": [
+      {
+        "title": "Anthropic CEO Calls Computing Power ‘Deepest Business Dilemma’",
+        "url": "https://www.bloomberg.com/news/articles/2026-11-13/anthropic-ceo-calls-computing-power-deepest-business-dilemma",
+        "source": "Bloomberg",
+        "published": "2026-11-13T18:46:29.000Z",
+        "summary": "Anthropic PBC Chief Executive Officer Dario Amodei named sourcing computing power as one of the artificial intelligence company’s biggest challenges, in a briefing ahead of its hotly anticipated…"
+      },
+      {
+        "title": "Anthropic Debuts Claude for Manufacturing - Advanced Manufacturing",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOeVdsM0hiRENUa1gtLVB0N19HSGVrNXFqYTlHT2p6a2gzQk11VVppcXQ5dno4V1A1czlDd09Rbk1hMTBuVzlzNW0tbG90dmRTYS10WDdtRzdYWGZacmJJb3ZYNVE1RlVmWll1Vk42ZEtRNEVMQmNGc2xnS09iN1dHRVhvX2RmTG9XTUxxcnhIaW9TTGhyUkF6VHROT0FLcTcza2VIV3pMLWs3SGF6bTJueWpPOFlwNkE4a3ZvYUoyOEhqVGM3aEx1bWt5UFc3UmNKTnRwTm9B?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T18:30:00.000Z",
+        "summary": "Anthropic Debuts Claude for Manufacturing Advanced Manufacturing"
+      },
+      {
+        "title": "Nvidia Fallout, Microsoft Outage and Anthropic’s IPO Push",
+        "url": "https://www.bloomberg.com/news/videos/2026-11-13/bloomberg-tech-11-13-2026-video",
+        "source": "Bloomberg",
+        "published": "2026-11-13T18:19:27.000Z",
+        "summary": "Bloomberg’s Ed Ludlow breaks down the fallout from Jensen Huang's resignation from Nvidia as more details are revealed. Plus, Microsoft races to restore services after a global outage impacted…"
+      },
+      {
+        "title": "Anthropic’s Amodei says AI coding market is maturing - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE05TnI5MFBZM1JDUFIxQ09RYTJOTnBWQmxsV3RGbHZWMHgtN0NnenpDWGhNMFlqT3hEb2NtMXpWWWJ1bTJRTkMzVzhsRXpVQ1hYSmVmWk41MDFNR3piaENlVVZwOGxsLXlmODhmWTBXUHdOd1dESkttaGJR?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T17:36:42.000Z",
+        "summary": "Anthropic’s Amodei says AI coding market is maturing Crypto Briefing"
+      },
+      {
+        "title": "Anthropic Claude down: Why it said it was unable to authenticate code - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOcDBjX2hrQXlxUEV2Q3pZVUlzVUpPcTU1TFpiaGY4bEtualhpY2FWemdBQnlpclpESjlVSkxobHJ1NDJyZU9FZlJSQW9odU1zUmdvazJqUXV6YmxPYmRDc19HWnNBTDRwRHVGcWJLc1VGZDd4RWxHUTF0Z0lKd05vOA?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T17:11:02.000Z",
+        "summary": "Anthropic Claude down: Why it said it was unable to authenticate code Mashable"
+      },
+      {
+        "title": "Nvidia Crisis Fuels US and China Chip Showdown",
+        "url": "https://www.bloomberg.com/news/videos/2026-11-13/open-interest-11-13-2026-video",
+        "source": "Bloomberg",
+        "published": "2026-11-13T17:09:57.000Z",
+        "summary": "Get a jump start on the US trading day on \"Bloomberg Open Interest.\"Microsoft races to recover from a global outage disrupting users worldwide. Plus, Nvidia’s crisis turns into a US, China chip…"
+      },
+      {
+        "title": "Wall Street Braces for Anthropic’s Spending - The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPTVpSYzU1cWtsQ0gxRXJPRUdXZlVmc1c5T1V4SlcySnEtd051UUIweW52UzhGOExhNTNrNklaaS1vTmFWZnozN3dic0dVcTZFMVdpRzFYY0FEX3pteHVjSTBmTEZiTjBVWlRKd0FzeFpGazN3Q2NXY1V0SmMxUWxxaW1UOXhDUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T16:28:46.000Z",
+        "summary": "Wall Street Braces for Anthropic’s Spending The New York Times"
+      },
+      {
+        "title": "What Is Claude for Manufacturing? Skills, Price, Partners - FourWeekMBA",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNdldGV2lpSkJDT0ZhMjFxTmt2NDZCMm1Dd1MyMVdoaWEtdktteVh0Vlh1amE0dTBSZDNpb012ZVh6UDM2Z2NIclJvcks3bGFKMTBZLUtzYUFFemYtdHVTdzA3Y3NIUEFXQUliQTM3STR1Z2tOakZORFBKRzNRZWtWeGYwRVZ0SFZsRGc?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T16:11:56.000Z",
+        "summary": "What Is Claude for Manufacturing? Skills, Price, Partners FourWeekMBA"
+      },
+      {
+        "title": "Claude gets manufacturing plugin to read plant records and diagnoses breakdowns - Putman Media",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQ1otY2RFbjJ5Z1lfRGJ2a1lzdXB6YzNubnM1X2RocGNqbzZ0MS1UR0MzTEJNazM5bjVfX2dfbE1oLVV6dEpTQlBicWFnbnVkQWlSU2Q4MUgwNVZHMHVDLWpWSzdjU3o0LXFmYlBGMkdNcmlFSEJNV0pwSTQ5andMc0E0aHFsMjUxV3lTVzh3aGpwUklBQUhld1pna2RKR0VJZGlGSjMtYnJIZlZkaWdMT19yQlNyZGgxSEN4dWM1bGRodUF0M05sWmhQX2U?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T16:01:28.000Z",
+        "summary": "Claude gets manufacturing plugin to read plant records and diagnoses breakdowns Putman Media"
+      },
+      {
+        "title": "Anthropic's Gross Margin Battle Begins, Claude's Enterprise Penetration Becomes Key Bargaining Chip - BigGo Finance",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1na3dEdUNCbHRHQWoxa0F2QzBLcmJFNnNxeE5xUzJLME8td1VJekVTTzBxLWZhZ25XN1R1dDBQY2ctQ3V2bTBkUmNValpaMU5tVTl5a2hqWVc4c2dyUGRla1M3bm9sZU5QZklKTVI2VU53by0tZXc?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T15:55:00.000Z",
+        "summary": "Anthropic's Gross Margin Battle Begins, Claude's Enterprise Penetration Becomes Key Bargaining Chip BigGo Finance"
+      },
+      {
+        "title": "Infor and Anthropic Bring Claude to Manufacturing - - Enterprise Times",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOTUM3czd3eFM5ODdVdG5sd1FyZDlPcHNaeDhYbWx6b05KbV8yLWJDUTB4ZEZVMEVaNmgzYjF5MTdSQVBuWVdrdHpMck12ZEJ3Zlo2a0MzWUdUdmRJS3dNaFd6MG9BMTdVUmlVRElIYXB5YzE2VTg1VnM3X3E4S2luQkxYQVZrYktRTTVVMlN6ZkpGXzh4cm9TMzJCQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T15:51:54.000Z",
+        "summary": "Infor and Anthropic Bring Claude to Manufacturing - Enterprise Times"
+      },
+      {
+        "title": "Anthropic IPO: AI’s $1.4T Test",
+        "url": "https://www.bloomberg.com/news/videos/2026-11-13/anthropic-ipo-ai-s-1-4t-test-video",
+        "source": "Bloomberg",
+        "published": "2026-11-13T15:51:38.000Z",
+        "summary": "Anthropic’s potential IPO is drawing extraordinary investor demand, with a reported target valuation of $1.4 trillion. Bloomberg’s Bailey Lipschultz joins Bloomberg Open Interest to explain why…"
+      },
+      {
+        "title": "Anthropic Is the AI Leader But It Faces Many Challengers - Barron's",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNN21XLVB2SnNoUGFGQ0VkZHRLQV9Vc2FXTGpMUjJkZ0FXVHp3dlBHbjB6MXNBMXQ0S2Zmb3U2QnllcGhpU3VyZTNYbHY4Sjc4LXNBRjNUeDFCcUtNOVY0bW9WU1RpWmpoRkFSdzRybnBvbHFxT1paQlExRWVGaF9NekZkSktlZGRLWWRRaFExaV9TMEpNbDlnVm1fdExHUWw1eE9oNkF3?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T15:21:00.000Z",
+        "summary": "Anthropic Is the AI Leader But It Faces Many Challengers Barron's"
+      },
+      {
+        "title": "Amodei Says AI Will Cure Cancer in a Decade. Doctors Are Skeptical",
+        "url": "https://www.businessinsider.com/dario-amodei-anthropic-cancer-cure-ipo-roadshow-backlash-doctors-2026-11",
+        "source": "HN · 30↑",
+        "hn_id": "50484110",
+        "published": "2026-11-13T14:34:13.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude Suffers Major Outage as Microsoft Struggles to Restore Outlook - Men's Journal",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPTGVPWTYwMG9mbXhRenFfcXZFR2xsMFFRMmxMc2x6akJWYlN6cFFkdXc3WnQzOWIxd1p1M1Q5OUZTZVlzSWllT2tfS1BIZXlWZEhUOWlsNDhxU3E4dEtTd0Z5aHA5azNRcVFacWg2WDlzSkl2Ylk3SS1uQ1NKdm9YS2VlTm9rM1g1azNXUG9nalU4cjE4S3B2MlAzQm9GYkJ3MF81Ug?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T14:28:34.000Z",
+        "summary": "Claude Suffers Major Outage as Microsoft Struggles to Restore Outlook Men's Journal"
+      },
+      {
+        "title": "Claude Goes Down as Microsoft 365 Outage Drags On (Update) - www.trendingtopics.eu",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNa19sTHRMRk1WYVg3OE1xWW93V0ptb0Z1MmFBQ2lMcWtzcUpMMnpSX21pM2xNZl91bGtYZWFkek00Vks4d0FkWEliZkE4TkNqUENzREdodWhpM29sSUdhcElXbmV4cW9oSmxtc1d2eTdBMHVmUHJTd096cWNqYk11U0Y0VGVfVEU?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T13:36:54.000Z",
+        "summary": "Claude Goes Down as Microsoft 365 Outage Drags On (Update) www.trendingtopics.eu"
+      },
+      {
+        "title": "Anthropic IPO Draws Six Times Available Shares as AI Company Targets $1.4 Trillion Valuation - citybiz",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOQk1Nd2kzZTlyNXBVUzJrSDJOXzhrekFyRkl3RndESm5UUGVKT3k1aVVsYnYwSWh1SUtqSXFmSmhERzBSc1dOVXhQRDFPSzRhaGxvNG5HRzA0b0NRSmdYTkxwNnJUemIzYTI5SmlMaEFlZzZZdEJKeWZnM2JYTXAwV1JFRmEzX3UzVVZldEhBUDlSay1sVlotajRic1ZkRVQ0M3JIU0czaXgyOXJtcEFXVzdyNHo3a0hXYml3RmVVMFE1dVp3RXFVNDFB?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T13:32:06.000Z",
+        "summary": "Anthropic IPO Draws Six Times Available Shares as AI Company Targets $1.4 Trillion Valuation citybiz"
+      },
+      {
+        "title": "Microsoft 365 outage hits Claude’s Outlook and workplace integrations - Gulf Business",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRUJFWkxNaUJ3X213cGpaemRjVjdjWFdXOXIwQ0dFWEtORHBpUE5nVGZBR3VSa1hfS3QtMUVJbnMwV1BZNER0RFVHYUluelhkb25iTXFmN1lFQ2QxWkF5eWNQYWJ4VDRKaDl2UkNFOXdkdC1qRnY1TGhmLWdCcjJrYU1Rang0dUVrZEtlRTZ1MmpQSU44ZVl3aFlCa1FhM1F4T082eVd2WTk1cFU?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T13:26:14.000Z",
+        "summary": "Microsoft 365 outage hits Claude’s Outlook and workplace integrations Gulf Business"
+      },
+      {
+        "title": "Anthropic IPO Reportedly Six Times Oversubscribed as $1.4T Valuation Faces Nvidia Crisis - Coinpaper",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZGx0YXEzaUxfY3ZQNVhYa0VEZ1hVYTFXeXRSeW1NOFNXR0RwZ0hXNXg5QWthWnJXWm9vYnlRWGRPLVdJcTd0NVU4VG56U0ZBbW04ZXhRdkNsdTh6OW1QLUoxYWdmd2xaLXFOUjN3VzYwNUdxY0pYWVFqcjJ6bzhZT1M5OGozdld4Mm9mMVJ5S0VKcGIwVFYyWGxaQ29uUUpabUE2MEhfN3RYZzk1NzRIZHJ0NnoteE0?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T12:48:02.000Z",
+        "summary": "Anthropic IPO Reportedly Six Times Oversubscribed as $1.4T Valuation Faces Nvidia Crisis Coinpaper"
+      },
+      {
+        "title": "Claude Login Errors Hit 4 Anthropic Services in IPO Week - FourWeekMBA",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNM1Fqak1QZ2F4VjJ3Y0otVHRxNUVEUlRhNHlFNU5WY0lMdDRfR3cwZ2t2My16cTl6aVZ2QzBTY2ptTDB1NVU4NXZReXl4WENlR285Xy13UnVVT1JLZ2VxNGl2UXlFei0yQmw0dHRzeHJ0VW52RW53ZDRDYWljTks4VnFVRVA1Q2s0UDJnVg?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T12:48:01.000Z",
+        "summary": "Claude Login Errors Hit 4 Anthropic Services in IPO Week FourWeekMBA"
+      },
+      {
+        "title": "Anthropic Tightens Claude Access Rules for China - Technology Org",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPcEZ5eFZMZ1hBT19kbjdTa01fYlVCX1Z0NXNsRnlpanZaMDZVWElZTjdZSkNQUlFVUm8xUWxoNEhsVmI1dFI1OGEyS1dJdlhxNmZEdjlnUUdFSTBUZkRUSkZtN2ZyQ1FCWk9paUVLaDkxWmVSRXdqbVJucTZtcmVXaThLMFFXVXQ0MVp1VnZVYk9tRlFKSmVzVjMyLThRZkJUYV9yNXp3UXRxZw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T12:35:00.000Z",
+        "summary": "Anthropic Tightens Claude Access Rules for China Technology Org"
+      },
+      {
+        "title": "Anthropic has launched Claude Meetings for video calls - UkrMedia News",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQ0xUc0NqNWZIY2tkYkt3VVBPU0JqMXZSRW5KcjFhSDJzVlBBM1hFZWQwdGYzZXQ3clBUczJZNThjbEpaeXhmb3RMZkRIei03MEpRaE9fYmoxdWJfUTNzNGEwaTJia19qdEhIa0FXcHVQSWFzd3lqWlRKeVByNWxlcFVn?oc=5",
+        "source": "Google News",
+        "published": "2026-11-13T11:54:37.000Z",
+        "summary": "Anthropic has launched Claude Meetings for video calls UkrMedia News"
+      },
       {
         "title": "Howard Marks asks Claude to grade AI predictability, and frontier labs score 2 out of 10 - Crypto Briefing",
         "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE85eS1CZHJFZTBsU2FOcEg3QmYzdW9Tbk9aSUh5WlRHc0NhcmZqb2hUdHlVZmhhRUY5Q296Zm1OVEluak5jRlk4c25Ka0l5bWNLT2tIeEhqcVVFNFVmakxtSzQ3Rl8tTGt3SGxjc0tzWGlBeDRNcDlkbGN3?oc=5",
@@ -165,162 +320,6 @@
         "source": "Google News",
         "published": "2026-11-13T11:18:31.000Z",
         "summary": "Infor and Anthropic Announce Partnership That Turns Insights into Actions for Manufacturing Operations AiThority"
-      },
-      {
-        "title": "Is Claude down? Login errors hit claude.ai on Friday, and Anthropic says a fix is in - Nacionale",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPdkxDUVFOcDZ1NnplbURfOUJKNkRwbFozNWZpUXlfaEJJMDdxMi1Jek9WV0NSeURHWWgydkZoT2FQbFA5OEhScU1YM2dMM0pJTDlTc0JWSFlydFphUVcyV3lmNEdoYzZfTDk0N1lkNjJXWVdwdE1qWnpCWnZTcEFyYjdGdldwWGRHaGRBVU82QUlpU2ZQQWcyamxqeG9IN2VrMllv?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T11:10:36.000Z",
-        "summary": "Is Claude down? Login errors hit claude.ai on Friday, and Anthropic says a fix is in Nacionale"
-      },
-      {
-        "title": "Anthropic's Claude Hit by Widespread Login Failures Across Chat, Code and Console - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE41eTMzNVR2ZzBKYWxZSjNrN25VZF85SDMxdU9UbE1QSnNnbXc4M0dYR2lqRHhITGd0a0lnT2YzWFJRVVhGZUF3bFJZZGhpaFVsb0NjVF83MTVBZVFXbVByOUtKbFhGQlVZNmYwejM3ekFWZ2U2WFE?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T11:05:00.000Z",
-        "summary": "Anthropic's Claude Hit by Widespread Login Failures Across Chat, Code and Console BigGo Finance"
-      },
-      {
-        "title": "Anthropic Claude down: Why it said it was unable to authenticate code - Mashable",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOcDBjX2hrQXlxUEV2Q3pZVUlzVUpPcTU1TFpiaGY4bEtualhpY2FWemdBQnlpclpESjlVSkxobHJ1NDJyZU9FZlJSQW9odU1zUmdvazJqUXV6YmxPYmRDc19HWnNBTDRwRHVGcWJLc1VGZDd4RWxHUTF0Z0lKd05vOA?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T10:46:05.000Z",
-        "summary": "Anthropic Claude down: Why it said it was unable to authenticate code Mashable"
-      },
-      {
-        "title": "Anthropic Claude down: Why it said it was unable to authenticate code - Mashable SEA",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVmExdGlIWGY2aldDaXA5b2J4a29xdU5jdTFYY0JnZUt5N1hSQVhCVUN4aHAzTUppU0t6Nk1RWFduZ3RFLXlJQ0tsa0RDMndyTE11XzJxcHFJandjRWE3RUNZeXRKdmJsSEVMM0JuVl93Q3hDdjRtR1dPWXhUd0M0WjNJelNqOFgybHB3WXVaaUlXT2lJS0dpRW95UlhTV1BkNk1hcVpNdw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T10:46:05.000Z",
-        "summary": "Anthropic Claude down: Why it said it was unable to authenticate code Mashable SEA"
-      },
-      {
-        "title": "Anthropic investigates authentication errors hitting Claude AI and Claude Code - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPSTc0Y2Jhc2RjbHZqbG56SG5NbkVfTGU2bGQ4ejVUUENSbGZQZUhzR2NSRDVuc08yTmRjb1BtbEo0RjYwUWJSNl9kTERlV09vV2FtWHp6cW95SkZHYWVyNzRUU0ljSC1Ia3RWYko5UGp1QWtXMVZia0YzQTF5NEM2dGNmYnExdw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T10:34:46.000Z",
-        "summary": "Anthropic investigates authentication errors hitting Claude AI and Claude Code Crypto Briefing"
-      },
-      {
-        "title": "Claude Is Down",
-        "url": "https://status.claude.com/history",
-        "source": "HN · 101↑",
-        "hn_id": "50481220",
-        "published": "2026-11-13T10:20:09.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
-        "url": "https://status.claude.com/incidents/nn11wk485zfn",
-        "source": "HN · 200↑",
-        "hn_id": "50481187",
-        "published": "2026-11-13T10:18:13.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Goes Down as Microsoft’s Global Outage Drags Into a Second Day - SNJ Today",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5fT2ZHYjZGRUZIWlhDTGg3U3ZEa1VpOU5BV2gxeU9MMW9VWjZKTnlDdGNVbkUtWUxtbjlYdFNOYzRlb2dRODQ0OEhBLUNiYUYzcTZYS3hwbFlpVXdIbF9j?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T10:09:47.000Z",
-        "summary": "Claude Goes Down as Microsoft’s Global Outage Drags Into a Second Day SNJ Today"
-      },
-      {
-        "title": "Microsoft outage hits AI tools of Anthropic and OpenAI, companies’ Status Page give details - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNQkx5ME15eWN2eU90Z0J5VEpuU2ZLU042ZXZXOFFEMDg3TFduQWczZ0VDSnJWWW9SaU5vY2Y1VGJ5OTByV0FOblU1dUZnWXR6QUZyT09VZEFmZm9WYWx2LURIdTdmUWt2SElxdmFxd0tQY280YnloMTdEbWJXRkZUV1JoTDloOG9DNmFFSng0VlpwblhwMGoxM3ZnQU5hMEpHeE9uSHFPTm1EeGRuNXh6eV80LXJ1RThVenR2MmdZUG5aZmlqR0tXbFgzRzRKTUI3OUlnLWN2dWV6cTdfSkdYMHMyUVVSWjRCRkFlQS1oT29uVmliNmhVa3d0eXVGOWN6TVHSAYcCQVVfeXFMTUpJN3NmazhSb09VZlhmVFdGQWZGT2xoUHNBQjhiX29GR2JSekhULUkxR0dWeGE0am5xNnFvQzVieU9KZFVSTG9uVGdzMTk4Zm9oTEVnR0p3SGRGN3ZCaHFYTUxTa0tlNXh5WkozV01mLUNUdkxPcEQtWVNqb1RVMTRWN2VVYjR5VGRIWXZwSllBOFZHTlV1RVhDTEFCLXFhVjJPVF8yU3pockRhZWwtOVBXUEhMYUkyU1BUdTlJekc2X3NGTEdfdU9ITVVMYUN1bXFraVQ1Tm1DNFpCRXJMTGxURDZhX1hPbERLN0I3NWp6cFBTQ0MtT1JwbFJrZG85RHVaeWEwYjA?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T09:28:00.000Z",
-        "summary": "Microsoft outage hits AI tools of Anthropic and OpenAI, companies’ Status Page give details The Times of India"
-      },
-      {
-        "title": "Anthropic Ships 4 Office Tools to Rival Microsoft [2026] - shattered.io",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQQ0t5bGxIX2NKV2Q0ckN1cXU3US13N1l5RXhOUVRTQ2RiSFZHb0JxYnRuZ3BUYmlwcUdqQ1REQlJFcW9jalgwQkk3UUhDd2F4dmt6QXlQYzVvTjJSY2c1YWJTSTB1d2pqakI4Mno4R0I4VjZSdjBJRXEyV2pFa3U4SF9jWTE5RlFJbEc0NDdTZGVyVlViemllcg?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T09:25:36.000Z",
-        "summary": "Anthropic Ships 4 Office Tools to Rival Microsoft [2026] shattered.io"
-      },
-      {
-        "title": "Anthropic Brings Claude Meetings To Google Meet In Beta - Dataconomy",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPSnY5MWd0OHhqcGx0WVIwNHpVY1NWS3VkYmg5RjNZcEhndU1vNzc3STZuYTlJcEwxZ3p0VVA4dzRiVmp0MWdUNVp5YjA5WEtwZmlVbVZMTkVYV09WNkN2bTk2OVpVQXl0THVibEk2UG9oV1p5ZTl2RHJua2pSemU5SVFGT1hfbTlmTFpJSE1SWWw3R0Nj?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T07:37:37.000Z",
-        "summary": "Anthropic Brings Claude Meetings To Google Meet In Beta Dataconomy"
-      },
-      {
-        "title": "Claude Meetings: When Did You Last Create a Deck in PowerPoint? - UC Today",
-        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1SOW9BczVqQ1NOcnJpNHJGdkFtdjVJTGxHQW1jNlpuQ21GSGw4OGIzNGFOX2pfUjlwZkw4WTNOQzExREl4MTJ6MFhZWFdpbE5sOXZ4dVhsb1BzS09INHlGQ3FCT2E0azlsWW5UMQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T07:09:04.000Z",
-        "summary": "Claude Meetings: When Did You Last Create a Deck in PowerPoint? UC Today"
-      },
-      {
-        "title": "Anthropic IPO Said to Be Six Times Oversubscribed",
-        "url": "https://www.bloomberg.com/news/videos/2026-11-13/anthropic-ipo-said-to-be-six-times-oversubscribed-video",
-        "source": "Bloomberg",
-        "published": "2026-11-13T06:54:57.000Z",
-        "summary": "Anthropic's initial public offering has drawn about six times the orders for the shares available, according to people familiar with the matter, as interest increases for potentially the biggest…"
-      },
-      {
-        "title": "Xlence prepares for Anthropic’s anticipated IPO - investingLive",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNOWpZNzl0eE1FcF9rdURfSDBnQlNDdDlpVFU5ZjhSVFVJX2ZXdmdyTWlOYTRrZXJnLURaU01ldlJRN0Ztb2hxNklTZTM1N1luaDJLSUtNRkxPUXhnMngzeFptdkhkVnN4MS1JT3IwVVN1Zi1WTjIwdzVjTzRWVm5MTHVldTcwdGdQUHFiTA?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T06:44:58.000Z",
-        "summary": "Xlence prepares for Anthropic’s anticipated IPO investingLive"
-      },
-      {
-        "title": "Anthropic's AI 'Claude' Joins Meetings, Aiming to Create Documents Alongside Minutes - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE40cUpPNnlJRG5aUnVDbFJkWjJwVDNKeGNkWTFMYVRYWTZMaUJ3dk1EeHZncDJGTk9GMkhKTW02cTYzTzM4Q2ZfSWhSaDdxZUE2Qm5YcU1kaG50U0Y5TWM2Vm1DMzdIRFZDSmxJUHpGT0pQMGZHNnc?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T06:26:00.000Z",
-        "summary": "Anthropic's AI 'Claude' Joins Meetings, Aiming to Create Documents Alongside Minutes BigGo Finance"
-      },
-      {
-        "title": "Anthropic cuts CUDA migration costs, challenging Nvidia's platform moat - digitimes",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPcG5PWjcxLUg4aWRFUHhPVzhLYjJFaFVKd1RKRG9OYUg2YUowdVZuemZjM3BVbG41QzdZTy1zbjEwSmZoOUNRZWFqVGp2OUFiaDM3OVB6bm02MlJRdC1xMHBOajFFandNVnBfUUl5M0hBb3dBREM4aWlMc0FicTEzRDR5akFiV081UFRXWlhkWQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T04:11:15.000Z",
-        "summary": "Anthropic cuts CUDA migration costs, challenging Nvidia's platform moat digitimes"
-      },
-      {
-        "title": "Anthropic’s Claude Tops AI Rankings as OpenAI Limits Cyber Model - PYMNTS.com",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNYlczWW5CYUlhR3h6QzBPcDk2aEZyMjhHZWMtYjJSTWtESjlQRmJBRUJvR0hrc2NfZGxDRDFrWjhaN0llbkhWVkdCdlU5WFhoVmhHUF9sX0U4WW1abWxrd2Rya25XRVdiaGFqZ0VodmhWWWZDMWZpYzBVdXAzbktKejlpQS05S1pYRjJfc3FaaGtxYk9XTzIwV3hlemFOX3hvclhsamFGNFdpM2FBLXczclZseDVpQnppOUNVd0tR?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T01:14:49.000Z",
-        "summary": "Anthropic’s Claude Tops AI Rankings as OpenAI Limits Cyber Model PYMNTS.com"
-      },
-      {
-        "title": "Anthropic Launches Claude for Manufacturing Mid-IPO Roadshow - FourWeekMBA",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQanNaSGVGVmNvTVYtWGZlZ2J3bWtpRmc1VE01U1lkUjBMcmV0UUNueU1JdW1UaDU0S2JHTGRyalVZVTBGdFNyQXZPRXY0UVdfd3BVM1RpYS1FYUk4TkM3cWlHdWM2SXhfbUQ5SVVxdTUwQ0cwYWYtelNXc1NRVFZPenM0QUN6ZHhVZXpEUw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T00:59:46.000Z",
-        "summary": "Anthropic Launches Claude for Manufacturing Mid-IPO Roadshow FourWeekMBA"
-      },
-      {
-        "title": "Anthropic Pushes Claude Onto the Factory Floor With 17-Skill Manufacturing Plugin - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB1anRZSHZpTEFfVHlUVTlQWldTdHdDSjUxUGJhSTVMY2h2d3pHY2k4T0gzR2xmQUdrcmt1TXo4ME1LTVlIaWRsQUZvR053TUxzcGxBcnBXZUVFYmw5NDNfTkZ4Mm9TNzJSekpSSnp3eU1ObU50WWc?oc=5",
-        "source": "Google News",
-        "published": "2026-11-13T00:35:00.000Z",
-        "summary": "Anthropic Pushes Claude Onto the Factory Floor With 17-Skill Manufacturing Plugin BigGo Finance"
-      },
-      {
-        "title": "Jim Cramer has three lingering questions about Anthropic ahead of its historic IPO - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOQnlTTmVFZXFUUnAyZTUwM056dW9MeUdWRVdzQ2lQa2dsRnJEN19FRVp6eENzbV9JU1NBMHEyX3FwX3ZYbTljT3JBSXhRU1FNSWJhSUVMbUItTEpXeWhSZnNPQjdQYmoyaERsTFZycnJpaWkxUzliSEFRZFRTQnRBZFNiempKYXdsUXfSAY8BQVVfeXFMTTAxRG1oeTU5a2VlaWdvQXJST2wxZU9WM0hFemc5TzBqMEtXOS1DbFZUU3JEb25WcGVEakRCbjJkQWJUZTlmZ0xjVEZ6RkV0TF9BYXlZaUZUYTl3Q3ZjNlFnNlluNjF0eUxuckhlNG1BYnJKWUplOFZNQmg4TFMwTTVPX3lqSE5CRkNvWGx2NG8?oc=5",
-        "source": "Google News",
-        "published": "2026-11-12T23:45:00.000Z",
-        "summary": "Jim Cramer has three lingering questions about Anthropic ahead of its historic IPO CNBC"
-      },
-      {
-        "title": "Anthropic sets IPO price that surprises some, and traders don't have much time before public date - MARCA",
-        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPQXhWcnhValpnU3Z6MWJkVzNxeVQwams1N2FaTTFtQXh4aEhGekFMMWpMalVESEphUTJZTFRURkxxZDZ3UHpTU3k5MnFzRXB5d0dOTGU2N0JvQVpSTi1vN3ZmYTA5T1d3dGd0SG9CaGp3OXk0R2RVaXMyQjEyVFptaHlyaVk4MXdWczNIRnVVdVFPSnBWcERNa0VhVUtLRk1QY0NfOE5FYjNNMXU5ZFNlbHVkTWJSVDZWVnZNdGg3clNqQUJmQ0VwRWpkZXpReWk1dkFmOVZSTjJVdFotRkxveHJCb01EV1lYVXRoWlNDVW5xdmNVeWZCd0xONlVELThiWWfSAYICQVVfeXFMUGhnV1NtOTRJSW02UjQtZHhhdExCNXdMRXZWcFIta3ppLXNuZVJ1bG1VRDhUakM0c1VIckl1Z0wzdTZPajJOT1Blcy1NZTVNaVBJa0lFWURxQ1hlZ25sZ3JoUjB0eXhtbmZGeUxBeHdTVVpLamxHUEM3OWstR1JyeDE5OGQwdHF1Wmk3ZTlxU0dKWC1YUk9Id3NkdjhJMUNrTE1QYlNRU0NtT0FwSkEwZzIwVDBFM3p3M3ZlTHV0cGZYODh1di1BYkRHQUQ0Ty11c2FFMktUYzFPcnQ4T1JlMUYzb01WNnlFVlVVdmsxVjhqVTI3bnRwcTRSVVdYWWx5aVVB?oc=5",
-        "source": "Google News",
-        "published": "2026-11-12T23:09:33.000Z",
-        "summary": "Anthropic sets IPO price that surprises some, and traders don't have much time before public date MARCA"
-      },
-      {
-        "title": "Anthropic integrates Claude into Google Meet for document drafting, whiteboards - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTGVWaHJlTDUwSDNWMEtZRkNxMWRoOWN5OUZSb0RYTlo3cnBFVVlveGl5d1hySHZLZ1g4ZFdLVmRZY3ZuVzR0a1JZN3VtRGxzdXpJRExLZ2NIaG5uTFdybUNFYjNUMFp5WkdZalFVd0cycmhZQng4Y3V0ejNvTVJ4cldRUFhadWxGV05XMUF2WWFwa0d3UnNFMmJTaXp1ZHVQNzd0ZlFRT01rUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-12T22:58:41.000Z",
-        "summary": "Anthropic integrates Claude into Google Meet for document drafting, whiteboards Crypto Briefing"
       },
       {
         "title": "5 HIDDEN Details in the Claude Fable 5.2 Release",
@@ -575,18 +574,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Claude Code Video Editing: AI B-Roll with Higgsfield MCP",
-        "url": "https://www.youtube.com/watch?v=jeocZRuxaAM",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "jeocZRuxaAM",
-        "thumbnail": "https://i.ytimg.com/vi/jeocZRuxaAM/hqdefault.jpg",
-        "published": "2026-10-25T14:10:44.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
         "title": "Claude on the iPhone Duo might be the best designed AI app ever #ai #aiagents #iphoneduo",
         "url": "https://www.youtube.com/shorts/DOCR_7Tk4PY",
         "source": "Alex Finn",
@@ -637,18 +624,25 @@
     ],
     "status": [
       {
-        "title": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
-        "url": "https://status.claude.com/incidents/nn11wk485zfn",
-        "source": "Claude Status",
-        "published": "2026-11-13T11:05:23.000Z",
-        "summary": "Nov 13 , 11:05 UTC Monitoring - A fix has been deployed for the issue affecting Claude services and we are monitoring for recovery. Nov 13 , 09:58 UTC Investigating - We are investigating an issue…"
-      },
-      {
         "title": "Elevated errors affecting the Microsoft 365 connector",
         "url": "https://status.claude.com/incidents/sqn3fg1l96dl",
         "source": "Claude Status",
-        "published": "2026-11-12T23:54:26.000Z",
-        "summary": "Nov 12 , 22:23 UTC Update - This issue is caused by a Microsoft 365 service incident, and mail, calendar and search tools in the Microsoft 365 connector are still failing for most requests. Claude…"
+        "published": "2026-11-13T15:40:53.000Z",
+        "summary": "Nov 13 , 15:40 UTC Monitoring - We&apos;re seeing signs of recovery for the Microsoft 365 connector. Claude for Outlook is also recovering. Some SharePoint search requests are still returning…"
+      },
+      {
+        "title": "Elevated errors on claude.ai, the Claude API, and Claude Code",
+        "url": "https://status.claude.com/incidents/34wq7gxnxvvm",
+        "source": "Claude Status",
+        "published": "2026-11-13T15:38:49.000Z",
+        "summary": "Nov 13 , 15:38 UTC Resolved - The issue affecting multiple surfaces has been resolved. Nov 13 , 15:33 UTC Monitoring - Errors on claude.ai, including the mobile apps, the Claude API and Claude Code…"
+      },
+      {
+        "title": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
+        "url": "https://status.claude.com/incidents/nn11wk485zfn",
+        "source": "Claude Status",
+        "published": "2026-11-13T11:58:45.000Z",
+        "summary": "Nov 13 , 11:58 UTC Resolved - The issue affecting claude.ai and Claude Cowork has been resolved. Nov 13 , 11:05 UTC Monitoring - A fix has been deployed for the issue affecting Claude services and…"
       },
       {
         "title": "Elevated errors on Fable 52 and Mythos 52",
@@ -712,18 +706,11 @@
         "source": "Claude Status",
         "published": "2026-10-24T05:53:30.000Z",
         "summary": "Oct 24 , 05:53 UTC Resolved - The issue affecting Claude services has been resolved. Impact occurred from 22:00 PT on October 23 / 05:00 UTC on October 24 to 22:35 PT on October 23 / 05:35 UTC on…"
-      },
-      {
-        "title": "Elevated errors for Claude Opus 5.5",
-        "url": "https://status.claude.com/incidents/3cqf3pmlnr96",
-        "source": "Claude Status",
-        "published": "2026-10-24T00:37:17.000Z",
-        "summary": "Oct 24 , 00:37 UTC Resolved - The issue affecting Claude Opus 5.5 has been resolved. Impact occurred from 17:23 PT on October 23 / 00:23 UTC on October 24 to 17:34 PT on October 23 / 00:34 UTC on…"
       }
     ],
     "youtube": [
       {
-        "title": "You NEED to Try Claude Projects From Your Phone (Building A Full App)",
+        "title": "Claude Code Projects is INSANE for Building Apps (From Your Phone)",
         "url": "https://www.youtube.com/watch?v=VnJiHSS5Pjk",
         "source": "Riley Brown",
         "channel": "Riley Brown",
@@ -998,17 +985,6 @@
         "summary": ""
       },
       {
-        "title": "Claude Code Video Editing: AI B-Roll with Higgsfield MCP",
-        "url": "https://www.youtube.com/watch?v=jeocZRuxaAM",
-        "source": "Stefan Rows",
-        "channel": "Stefan Rows",
-        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
-        "video_id": "jeocZRuxaAM",
-        "thumbnail": "https://i.ytimg.com/vi/jeocZRuxaAM/hqdefault.jpg",
-        "published": "2026-10-25T14:10:44.000Z",
-        "summary": ""
-      },
-      {
         "title": "Claude on the iPhone Duo might be the best designed AI app ever #ai #aiagents #iphoneduo",
         "url": "https://www.youtube.com/shorts/DOCR_7Tk4PY",
         "source": "Alex Finn",
@@ -1051,6 +1027,17 @@
         "thumbnail": "https://i.ytimg.com/vi/fDE5R4fSq2w/hqdefault.jpg",
         "published": "2026-10-15T18:24:45.000Z",
         "summary": ""
+      },
+      {
+        "title": "FULL Claude + Higgsfield Ads Studio Tutorial for Beginners in 2026! (Become a PRO!)",
+        "url": "https://www.youtube.com/watch?v=c4vitRI3KkY",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "c4vitRI3KkY",
+        "thumbnail": "https://i.ytimg.com/vi/c4vitRI3KkY/hqdefault.jpg",
+        "published": "2026-10-12T17:27:16.000Z",
+        "summary": ""
       }
     ],
     "tutorials": [
@@ -1063,7 +1050,7 @@
         "tutorial_kind": "official"
       },
       {
-        "title": "You NEED to Try Claude Projects From Your Phone (Building A Full App)",
+        "title": "Claude Code Projects is INSANE for Building Apps (From Your Phone)",
         "url": "https://www.youtube.com/watch?v=VnJiHSS5Pjk",
         "source": "Riley Brown",
         "channel": "Riley Brown",
@@ -1253,6 +1240,18 @@
         "published": "2026-10-14T02:56:52.000Z",
         "summary": "feat(managed_agents): move plan-big-execute-small to multiagent_20261001 (#915) The recipe now sets the multiagent_20261001 type. The small-model worker is listed under subagents.predefined_agents,…",
         "tutorial_kind": "official"
+      },
+      {
+        "title": "FULL Claude + Higgsfield Ads Studio Tutorial for Beginners in 2026! (Become a PRO!)",
+        "url": "https://www.youtube.com/watch?v=c4vitRI3KkY",
+        "source": "Productive Dude",
+        "channel": "Productive Dude",
+        "channel_id": "UC3LCokV1C_1HGI4W5rftmvQ",
+        "video_id": "c4vitRI3KkY",
+        "thumbnail": "https://i.ytimg.com/vi/c4vitRI3KkY/hqdefault.jpg",
+        "published": "2026-10-12T17:27:16.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
       },
       {
         "title": "docs(managed_agents): move the self-hosted sandbox variants to claude…",
@@ -1672,7 +1671,7 @@
         "summary": "What's changed Added Code Mode, an experimental opt-in in which Claude writes JavaScript to call its tools; see https://code.claude.com/docs/en/code-mode to turn it on, or to turn it off for an organization Added…"
       },
       {
-        "title": "You NEED to Try Claude Projects From Your Phone (Building A Full App)",
+        "title": "Claude Code Projects is INSANE for Building Apps (From Your Phone)",
         "url": "https://www.youtube.com/watch?v=VnJiHSS5Pjk",
         "source": "YouTube · Riley Brown",
         "published": "2026-11-12T19:49:16.000Z",
@@ -2022,13 +2021,6 @@
         "summary": "What's changed Added --hold-idle-file and --max-hold-min to self-hosted-runner , to keep an idle session while your host reports processes it left running Added a tip for the Explanatory output style, shown when you…"
       },
       {
-        "title": "Claude Code Video Editing: AI B-Roll with Higgsfield MCP",
-        "url": "https://www.youtube.com/watch?v=jeocZRuxaAM",
-        "source": "YouTube · Stefan Rows",
-        "published": "2026-10-25T14:10:44.000Z",
-        "summary": ""
-      },
-      {
         "title": "v2.0.0",
         "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.0.0",
         "source": "MCP Servers",
@@ -2152,6 +2144,13 @@
         "url": "https://www.youtube.com/watch?v=fDE5R4fSq2w",
         "source": "YouTube · Riley Brown",
         "published": "2026-10-15T18:24:45.000Z",
+        "summary": ""
+      },
+      {
+        "title": "FULL Claude + Higgsfield Ads Studio Tutorial for Beginners in 2026! (Become a PRO!)",
+        "url": "https://www.youtube.com/watch?v=c4vitRI3KkY",
+        "source": "YouTube · Productive Dude",
+        "published": "2026-10-12T17:27:16.000Z",
         "summary": ""
       }
     ]
