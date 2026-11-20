@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-11-20T14:28:30.493Z",
+  "generated_at": "2026-11-20T22:24:23.562Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Formal Verification",
+        "url": "https://www.anthropic.com/research/formal-verification",
+        "source": "Anthropic Research",
+        "published": "2026-11-20T18:45:25.849Z",
+        "summary": ""
+      },
       {
         "title": "Ipo Close",
         "url": "https://www.anthropic.com/news/ipo-close",
         "source": "Anthropic",
         "published": "2026-11-20T12:41:01.161Z",
-        "summary": ""
-      },
-      {
-        "title": "Formal Verification",
-        "url": "https://www.anthropic.com/research/formal-verification",
-        "source": "Anthropic Research",
-        "published": "2026-11-19T13:21:45.531Z",
         "summary": ""
       },
       {
@@ -146,179 +146,203 @@
     ],
     "news": [
       {
-        "title": "Anthropic's $81.3B IPO Gives Agencies a Quarterly Vendor Check - DesignRush",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1DOS15LXJwUmJDMnNlUF8wdGFMRHF3V2h1RHgtLU9OaVh6Vm45ZzRYUkpaWU54NUhGSnBBb1haOWllQUQ1c1dkaDcwVTdHYWJ0QWVJUDNZOTJnMWRCU1pPRHlJWTJSZUxFLWJSeGVFdzVfdnl2WmNEN3FGT0E3QQ?oc=5",
+        "title": "Using AI, mathematician claims to have solved one of math’s great mysteries - The Washington Post",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQWnR2Ny1uWG1YVUdRQmI2QlEyUkFoalhFZFp3Rng1ZWVlRVR4SHVzaHFnRnZuNWFfRmM5YkpVNFJCSmNHWFk2WDJia1lfOG1mYVY5MHZjY2F1d05XMlhHRUVlVklvc2RiWUR4aURGLWh4MGJMZWFsOW1Obm0taDVHek54Tk1GckZpYl80QXRncVNIbmxLdHlWUkZqMGJfSktFQ0hFV1VJWVQzZDZjbHN6Z3I0LS1aVGNJTElMZ2QzWHo2QQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-20T14:20:43.000Z",
-        "summary": "Anthropic's $81.3B IPO Gives Agencies a Quarterly Vendor Check DesignRush"
+        "published": "2026-11-20T21:48:21.000Z",
+        "summary": "Using AI, mathematician claims to have solved one of math’s great mysteries The Washington Post"
       },
       {
-        "title": "Anthropic Tumbles Near IPO Price in Second Day of Trading",
-        "url": "https://www.bloomberg.com/news/videos/2026-11-20/anthropic-slides-near-ipo-price-in-second-day-of-trading-video",
+        "title": "Gemini Neon Just Caught Up To Claude (And It’s HALF the Price)",
+        "url": "https://www.youtube.com/watch?v=LNIrmrZ_0gY",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "LNIrmrZ_0gY",
+        "thumbnail": "https://i.ytimg.com/vi/LNIrmrZ_0gY/hqdefault.jpg",
+        "published": "2026-11-20T21:41:40.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Claude Claims Historic Math Breakthrough One Day After Anthropic IPO - Decrypt",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5BcUpoNWJPdGpzVUl6bXA1TW0zMFdycGxueDM3aEd1c2c4TmFWeGNHMzh5TGtHVkE1RGw0UXZZd2NiUmZUN2htVVZncHlZbFZ6OFV3c2lYUUdyQmlIbnVmbWtreHB3LTB6WFp5dFk4OVFmX1l1Z1IxMGp2RlNRZw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T21:36:02.000Z",
+        "summary": "Claude Claims Historic Math Breakthrough One Day After Anthropic IPO Decrypt"
+      },
+      {
+        "title": "Claude Claims Historic Math Breakthrough One Day After Anthropic IPO - Yahoo Tech",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOSTNzRC14RkdVNk9rR1NROF9ERmxoTXNVLW9NMWlyRVdqZ0diTGhlb3NMaVhOd2k3VjUta0dlZjlfb2tfYzhTQ3lfQXpCZWZfaDRIcHJLOEFqd3ItZUI0WlNXZ3NTNG1aVDN3Y0N5aFRWbUE2UXBUck1oaFU0V3ZZbHhWbm5XazctNGlfQzlodjBfX0c2bld1NFR0MVZIdw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T21:36:02.000Z",
+        "summary": "Claude Claims Historic Math Breakthrough One Day After Anthropic IPO Yahoo Tech"
+      },
+      {
+        "title": "Anthropic Researcher Claims AI Has Solved Math’s White Whale - Gizmodo",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQT0tWdWs1Z04zbnI3OHkyWkRoQ3dYZDNiQVhhMXpNUmllUjhFQ1Q3M09qTWR3T0hfMUh0S3F1ZjNackRSeHY3eWRNa01ONFE0Q1h6R3ZpWjEzT29fRGIwVXdwZm84ekZjeTc1Yks0cll2YzVJSnZjd3JiNlJVT3RoRF9XaXRnRkY4SG1BN09sRHdXVmdXODJUWUV1OA?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T21:35:30.000Z",
+        "summary": "Anthropic Researcher Claims AI Has Solved Math’s White Whale Gizmodo"
+      },
+      {
+        "title": "Take-Two Interactive vs. Anthropic: Which Market-Moving Stock Is the Better Buy? - The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQS1hlSGswVU5JSFdqNEhpR2pHMGFqZHlYYmlOVVZPSWdiREFYNjY0dnV1MTVEUElva0Jqby1GMndFbktGTDM1VXNyNFRKSTVEekYtNHR5a1Jka2NFU2lMVkhubnZfSFd4M3g5d3JjMkxTMUNzODJ4el80ZG5EUkZ4c05aLWItOXlORTBYSTcwZUZIZ05UZXRodlNlZGlGbUNTSUJpeDdxMy1GdTZJX3loT0Y1Si1nUDhZRVpnYw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T21:33:01.000Z",
+        "summary": "Take-Two Interactive vs. Anthropic: Which Market-Moving Stock Is the Better Buy? The Motley Fool"
+      },
+      {
+        "title": "Anthropic researcher claims to have proven Riemann hypothesis using Claude - SiliconANGLE",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOa3djZGxrMkxtN253TUtiMXU0VU9qZDllb0dvOVVuUXNGRGhsVTZ5WmM3WktBcERoVkJvMXBKVlp2UEFuMmoybzRseHprQlE1Ym1aaTNLenFUX0U4MUljcUkyLVdlMjE2MUg0WkV4bVBjMEt4Y1p4QVR4aTQyY1VlSlk5TEhGT0k5UFVKX0p3bVYzQUp2ajg4cUs1MVZieTZsVUNDSFpORk90cFNyQWd0Xw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T21:28:00.000Z",
+        "summary": "Anthropic researcher claims to have proven Riemann hypothesis using Claude SiliconANGLE"
+      },
+      {
+        "title": "Anthropic researcher claims Claude cracked legendary $1M math problem — and left him struggling to keep up - New York Post",
+        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNTHI3UFc1dlE1d1ZVWnRxellsaGtXcllPVXRfbDliNjRjNHhBQnpBMENWMnZocG9fbnpmLVd0YmNsX1dkRTNWdm9EOWZRMHlsTjJoSEswcjdoeWE3V1dMd0RPR01veENPSHh6RkhieHBlOGNFS3JISnR1VWlZM0ZuUWkydXJxdUZXLWpHWHFuV0ZRbEZLSmhwVFZ0UUk0RzBLSDNUN2lPTjZRZ0pfQ0hTVVFWRld2cE1nWGl4VElLcjFSMTVRNnFzNHZYdXJVLUotWlowUkozSlpiLVE?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T21:06:00.000Z",
+        "summary": "Anthropic researcher claims Claude cracked legendary $1M math problem — and left him struggling to keep up New York Post"
+      },
+      {
+        "title": "Riemann hypothesis proof claimed by Anthropic mathematician using Claude - finchannel",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOdFRrdU9NYTQ5TGNzVjJJejJqRHJjZG1NaWZMbjNweW5lbV9aYy1PRDNMeWtZYTE2TVFDMmZkY29KZzRNSjBVOGhZZzdYSmM3VWdXdERHbzU0ZXczcGVVTlhSNzY3Z2lqR2xhUjhrMjJ1MXlEME1vejl4YU50MGFCMjlEQ0NUQklTcnl0cWRFVVhrRmJ1NU8yOGwwSFFNYk12TEEyVnlveHZDNEZWRTJWMWZfRnA?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T21:04:49.000Z",
+        "summary": "Riemann hypothesis proof claimed by Anthropic mathematician using Claude finchannel"
+      },
+      {
+        "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
+        "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
+        "source": "Ars Technica",
+        "published": "2026-11-20T20:59:08.000Z",
+        "summary": "Researchers planted 2 million digital tripwires in requests sent through a sprawling network of AI services to find out what happened to sensitive information entrusted to them. What they discovered…"
+      },
+      {
+        "title": "Anthropic claims Claude solved 2 enduring mysteries about black holes - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBBYkVUNFdNUHY4TGo2TnhfOGpReDNjLWNydjluX2ZVd19uclJKU2NlUXhOd1F6RTBpQmRFTUFaYXlVUWt4Rnd1U0JveWFJdmtFQmdBT0oxaFVXRzRDVlozUjIzQ0tONF9xc1hMcElsNy1mZEN6eWc?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T20:46:49.000Z",
+        "summary": "Anthropic claims Claude solved 2 enduring mysteries about black holes Mashable"
+      },
+      {
+        "title": "Anthropic mathematician claims AI helped solve a 167-year-old math mystery - IBM",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOdVkzQlNDalFhcHRTSENWWER3cHp5NDBSZGYxbnVkWUZGN0tDSndSSVFEU21lQ3N4N3htZGtZS3o5RlJzRVVCQXNRX2Npc2VGZmp5TWpQSXVhcFNQVEJsRXFpa3hMSHhac0xzbkRnUllnNlJtY3VjWFBkYnFVZU9vbVhCQQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T20:41:23.000Z",
+        "summary": "Anthropic mathematician claims AI helped solve a 167-year-old math mystery IBM"
+      },
+      {
+        "title": "Anthropic is betting AI can help conquer disease and generate big bucks in the bargain - CBS News",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE81UkNkV1FqUGFLWWU4NEp1R000MjhvVkppcTQ3UXRKMFh3d2hXbmpaUVoyT2t4SkFqNEMyNFRBcXRhLVYyX0o5eHRFQ180NUFrWnZkRzJKckVCRVFyYzA1MTFjX2RxdDNnY3VJQ3Rwdmp0VW5QVnRxVWNacHVMdw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T20:37:16.000Z",
+        "summary": "Anthropic is betting AI can help conquer disease and generate big bucks in the bargain CBS News"
+      },
+      {
+        "title": "Is Claude creator Anthropic really worth $1.3 trillion? - The Latest - The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQR2k1MHotX0Zkam5USm9jZmJ0NGU5Ym82RUNGVjlkRndWSnVMc1Iyc0RSaDg0OURqX1RyaEwzZmx3ZG16Rk1heVlrc0lTSlUzay00UVlNdmhKcWt5UnNyazd5emdVLUo5WGN5X3l4UHVrNVM0TDlyNkpYZjNqQkhkeGM0MUdfUUxnRl9nMEF1SEE0NmhGbHU4LWEwRDFDbnZRamVLQlJxdnl0Q0tLc3lwWUxOdVE?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T20:11:00.000Z",
+        "summary": "Is Claude creator Anthropic really worth $1.3 trillion? - The Latest The Guardian"
+      },
+      {
+        "title": "Opinion | Anthropic warned investors what could go wrong. Educators and parents should listen. - Star Tribune",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNTllnS3pCM1VKYVA2cTNyeGZJeWh6MWtvRFo1dnhoSV8xclo1bkpyNkphVW43Y1A0NC0wQnhfbFdWZmRqYl9VWHUzc0xrekZmempFVUR5N0lJZ1hHZzZ2Nlp2ZFdXbk9XY2lqQUwxb0FZWUlWVE5wNE5QVXBCZkIxbkN6NzhGUUJTVW54SE1CVzIzRi1FZG10M0VBa05LNU11Tnc?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T20:08:32.000Z",
+        "summary": "Opinion | Anthropic warned investors what could go wrong. Educators and parents should listen. Star Tribune"
+      },
+      {
+        "title": "Anthropic mathematician says he used AI to solve the Riemann hypothesis - Business Insider",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOMWN0cGwxa2RJY0tiMk5sdjNWeHZzbXhfbEVGamdHaDdaT3diaWhpdlBYd2dzQThqVXpKZlg2VjZWOWlYNUlwS2NPRjBtbjEwXzYzTVVsUktBcmtfbXBqYkJ4OEh1cFJNSWdjb3hLUWlOT29zd1hYV1B3VFhnTGVwTDVvN2kwaHF5XzRycTNEM2JkNHVPQmFTZ3dyNVdWMG01em5BYk1OT1lWZw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T19:34:00.000Z",
+        "summary": "Anthropic mathematician says he used AI to solve the Riemann hypothesis Business Insider"
+      },
+      {
+        "title": "AI claimed a solution to the 167-year-old Riemann Hypothesis — and a human did, too",
+        "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+        "source": "TechCrunch",
+        "published": "2026-11-20T19:32:08.000Z",
+        "summary": "Mathematicians are having their minds blown by the latest AI-driven result — and there's a competing human solution, too."
+      },
+      {
+        "title": "Anthropic's Levent Alpöge says Claude helped prove Riemann hypothesis - Quartz",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE51R2pQQjgwWG0xMmE0SElIcEtUQS1tNWlLcVRNc1FORWhia21aUE1JRFJRQzlMU25wRXpjYnN6QWxTblRPMnQ1X05VOW5EUDItVzU5UW9fSExNQ0EweFhlUWJyNENaUEZQQWhhaWUxNF83aGZxbWpuVWpn?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T19:22:42.000Z",
+        "summary": "Anthropic's Levent Alpöge says Claude helped prove Riemann hypothesis Quartz"
+      },
+      {
+        "title": "Anthropic mathematician claims to have solved 167-year-old Riemann Hypothesis using Claude AI - The Indian Express",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPeTEyN0p4ay1QckFwOTZ4TXJaZWxkekdaYnFEWjdaNFZBNll1X0NIOHpCbWlGNTM1UHk1blQ5Qnk4TUV1clpsVVYxVk5udnVwVW9hU191NHNQNkxJODd3ZHQ0VU1aNUhrTl9GMjN4NGNJMWw2UGVUN1hjdWl1ZXg1djB6QjJrWFBhNjltY1VrXzBGTlVGclBJWnI0UWlrdHZSY040N3pOV08xX2Ix0gGzAUFVX3lxTE1fZWY3R3NfalhndTBncDNnMzhlQlNLUkhhb1V5QUxSQjAyQXkydmw3aFZZYk42X2dTdFVoSGZyMXJUVWNmMkkxSDRTSmpEMEFMZ1NxcE44UThMYVg3YWEyYnN1d0pCY1dDYkpXbGxtS2JldGd0aFlod2V2SHlkSXpydTlKRXJfU3F5T0hOWFJEMWh2WDc0ODl3a3hyMlJxeG10ZFBlUzExYS1UWjc4X0JreUl3?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T19:15:38.000Z",
+        "summary": "Anthropic mathematician claims to have solved 167-year-old Riemann Hypothesis using Claude AI The Indian Express"
+      },
+      {
+        "title": "Anthropic Mathematician Claims He’s Solved the Riemann Hypothesis Using Claude - Futurism",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9Bd1UxMkFyTWtISnY1MlZTdm9acHNucEx3dm9WcmdYOExMb0tPYXBPS2oxWW1vX080NUxVZG1PNjFtRi1PZ1B3dGtPVThTNnFpWmdxWnF4QS1vVTRjc2lmV0JVOEtRQUFsMnlMam50dnhCeVFYTkJJa21xNXZLUQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T19:08:30.000Z",
+        "summary": "Anthropic Mathematician Claims He’s Solved the Riemann Hypothesis Using Claude Futurism"
+      },
+      {
+        "title": "Anthropic mathematician claims AI-assisted proof of the Riemann hypothesis - New Scientist",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPYnhwd1IyUERONU1RclBYRDZQQi1fSXg5Z1BwWENSVG9jZzZPWjRJZFlQQVlpZkFIYUlDbkljRU9VYkpWOWo1dTdqQ0lIMzBSY0laZ3hhUVFPRDIwcTRiclNjUDgxZmxZTHpjV0J0Q3IwSnpES0Q4cHR1QlBLS0pkLUVyM0luSTFYM1JDRVRRZmxpdXJiRFdELVN0R3VmUE9qTWtyenpaVjcySmJEMmttdEJUMkstMEhRQTBILQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T18:47:23.000Z",
+        "summary": "Anthropic mathematician claims AI-assisted proof of the Riemann hypothesis New Scientist"
+      },
+      {
+        "title": "Claude helps Anthropic mathematician solve a 'sacred object in mathematics' — the 167-year-old Riemann hypothesis may have been solved in breakthrough that could win $1 million prize - TechRadar",
+        "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxQOFBFOUwwa3RvZzY0YzNMN0p5M3o3SUVWbm1vcXR0R3ZHZVFkV3Z4LWhrTmFOYldvNmIwV2IyeC1hSHA1aHJuX3NEcGRZVWdwMTZPdFZacld4emFGTTdLbENaSHRBMEJydGg3UG8xSzR1My01R3JvbDlHbWhoaDEyNDhDdWNDdndOSFlWR09LMmI4WlRJcnlTSmIwZWVpRGdpUTNFRUVhNXd6eWMwZktqQmh6WldiTGg3M2JyaXBaYWVrRW83bW1IR3oycVpVZy1fZXdRZTRJdUJuU3NfQTA5aWVzZ0JEOFo0UjFnZms2VjJLTW5EekRhTnA0aUo0dGFoV2w4YXItTUFZclk1VzBpNjVSZXZ6MEp5OUdiNXlQeVBobUhIM1drdUpyalJTY3A4UHUwT05rX2h3dGEzVzVEMQ?oc=5",
+        "source": "Google News",
+        "published": "2026-11-20T18:42:11.000Z",
+        "summary": "Claude helps Anthropic mathematician solve a 'sacred object in mathematics' — the 167-year-old Riemann hypothesis may have been solved in breakthrough that could win $1 million prize TechRadar"
+      },
+      {
+        "title": "Anthropic Falls After Blockbuster Debut as Tech Sells Off",
+        "url": "https://www.bloomberg.com/news/videos/2026-11-20/anthropic-falls-after-blockbuster-debut-as-tech-sell-off-video",
         "source": "Bloomberg",
-        "published": "2026-11-20T14:12:32.000Z",
-        "summary": "Anthropic shares fell on their second day of trading, coming close to the stock’s IPO price. The Claude chatbot maker’s shares tumbled more than 10% in premarket trading in New York earlier Friday.…"
+        "published": "2026-11-20T18:42:06.000Z",
+        "summary": "Anthropic shares erased much of their first-day surge as the record-breaking listing faces its first test from public investors. Bloomberg's Shirin Ghaffary discusses what's ahead for the company…"
       },
       {
-        "title": "'We don’t want to die': protesters slam Claude creator Anthropic after IPO - Yahoo",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQNldzV3dDemNjOWhaLWw4c3BOVXVNZnVaWkw1M2R6MjVwUXo1YlBWV3pGRWx2ZWdhbXMtbkxPNWtQdzh2djVOWTBraWFtQllJeDBwdWVjbEIzU3RsN2xxdThMMHU5N3RLVFh2cUdJeVBscTl5RDZpMU5xVkxGQ1RpQXpxRVlrdw?oc=5",
+        "title": "Anthropic mathematician says Claude helped solve the 'biggest problem in math' - Business Insider Africa",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPdWVMWWtHTEt1bElIWUZ4MnN5d2psX3JkTHoxOHlBemVUSGtGeTZOZld6Y1E3d2FUR2U3WDRFR1JtQXlCdDJ4YzdxNDJyWldYZzN5YktFWDB4eThSSFRJWG5MZ2JSQ0R4T0wyd2dhWUtGWEMzZ1ZlMWE5VjZUOTl2dFVNdlVqZ1NBd0dpMm0xUENmSjVYWWt1Q2d5N0Y2RWZfdkE0YURwWEx5NzFncFRzenJhYjlMaUZiNW5iLXVpVl9XUQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-20T14:09:40.000Z",
-        "summary": "'We don’t want to die': protesters slam Claude creator Anthropic after IPO Yahoo"
+        "published": "2026-11-20T18:37:16.000Z",
+        "summary": "Anthropic mathematician says Claude helped solve the 'biggest problem in math' Business Insider Africa"
       },
       {
-        "title": "US Stock Futures Dip as Anthropic Premiere Disappoints Investors",
-        "url": "https://www.bloomberg.com/news/articles/2026-11-20/us-stock-futures-dip-as-anthropic-premiere-disappoints-investors",
+        "title": "Anthropic Slides as AI Selloff Deepens",
+        "url": "https://www.bloomberg.com/news/videos/2026-11-20/bloomberg-tech-11-20-2026-video",
         "source": "Bloomberg",
-        "published": "2026-11-20T13:26:57.000Z",
-        "summary": "US equities are trading lower before the bell on Friday as a momentous week — characterized by the arrival of the long-awaited Anthropic PBC IPO — appears to have done little to appease concerns…"
+        "published": "2026-11-20T18:36:42.000Z",
+        "summary": "Bloomberg’s Ed Ludlow takes a look at Anthropic shares falling after its blockbuster stock market debut, as part of a wider global tech selloff hitting the AI trade. And: Grand Theft Auto 6 has…"
       },
       {
-        "title": "Anthropic shares fall as investors question AI valuations - www.calcalistech.com",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5sRFFRWWtoYWdNdFh4YmhXS2JTRnRaVkFhSDQ5TUE4ZVJFTjBEd21PQU9heEx1cUx0a0hXdWJGbGRvbkJHak9lSk8zSUFsaEhBb1lnWGZXa3hYLXBmMUFpNW4zenp6T28?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T13:09:00.000Z",
-        "summary": "Anthropic shares fall as investors question AI valuations www.calcalistech.com"
-      },
-      {
-        "title": "Anthropic shares fall over 6% in US premarket trading after Nasdaq debut - Anadolu Ajansı",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQVEFSWVduME9MWGJGc2F1QnhmYzA4OXg1TzM3SC15c1Y3UEFKRkR3X0RxUnQ4YURBYTdmemZUeFJidS1wdXhqWkhQVDM5LXMtUmtfTndFNVZoVXJkdWhNZkZMdG95RWQtZVdITm5FbWx2TnA2NDUtOXQ3RWQ0RXhHb3J0Y1ViaGxrQ2VTV2gtQ0J6VEd2OTUyc21oclM2RV8wdEVvU2ZhOGxTaGtKbnVEbFZ3?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T12:24:34.000Z",
-        "summary": "Anthropic shares fall over 6% in US premarket trading after Nasdaq debut Anadolu Ajansı"
-      },
-      {
-        "title": "Anthropic Slumps as AI Selloff Deepens",
-        "url": "https://www.bloomberg.com/news/videos/2026-11-20/the-pulse-with-francine-lacqua-11-20-2026-video",
+        "title": "Anthropic Investor Sees Huge Runway Beyond Coding",
+        "url": "https://www.bloomberg.com/news/videos/2026-11-20/anthropic-investor-sees-huge-runway-beyond-coding-video",
         "source": "Bloomberg",
-        "published": "2026-11-20T11:29:50.000Z",
-        "summary": "Anthropic shares fell in premarket trading as a broad market selloff and doubts about the AI trade overshadowed the optimism that had fueled a rally on its record-setting debut. Apple is developing…"
+        "published": "2026-11-20T18:36:26.000Z",
+        "summary": "Anthropic shares are retreating after their blockbuster debut, but T. Rowe Price’s Emma Norchet says the volatility doesn’t change the firm’s long-term outlook. One of Anthropic’s largest private…"
       },
       {
-        "title": "Anthropic’s Record IPO Isn’t Enough to Save the AI Trade",
-        "url": "https://www.bloomberg.com/news/newsletters/2026-11-20/anthropic-s-record-ipo-isn-t-enough-to-save-the-ai-trade",
-        "source": "Bloomberg",
-        "published": "2026-11-20T11:28:01.000Z",
-        "summary": "Investors are still worried after the first public market debut of a frontier AI lab"
-      },
-      {
-        "title": "Who are Anthropic’s 7 co-founders? Meet the former OpenAI colleagues now worth billions - The Indian Express",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPMGhfMzRSSU9POVhWUFVnSFdMallpbU8zazJJdTk0VzBOODlURDJKbTZGT0FoYWpPcDcwdmhBMkJpQkRnX2gyT09ORkpJQVd6N1N5ZHFiZmtsN0RJUG0zc3hxcFRKN2ZvU3V0YkdSQXNfUjBCYjdIOTdOTktGV0xRbUZjNExCRlJvYldPUkF0XzN2VjFucEVsazNVdklDQdIBpAFBVV95cUxOaV8zWXA2ZTkzLTZjVE5fY0F6Nkw3QkFYLWtxR3JkdE1Qa2lMbmNGNGVkVkQwcElHeGFhTml6dzZuMEM4bE51U215LXFnWFFwLUFsZlZNOGhUNG9HT1cxV3k0QmpGNUZRU1NhbEJncmJORWVfQXBrWWhnaEViZFZVSEw5ZlI1VjVrX1hhRXl3UXc3SGI5Q2tROG9sRHlEWWlmT2d5SQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T11:10:31.000Z",
-        "summary": "Who are Anthropic’s 7 co-founders? Meet the former OpenAI colleagues now worth billions The Indian Express"
-      },
-      {
-        "title": "Anthropic’s record IPO nets huge windfall for L.A. investors - Los Angeles Times",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSmk1ZWdiMllsSWZhREx6MGhMSXpxUUNuZktQWnVyTmpSODRUVWJXeFJCbmlmamQ5S2VDcEV1Wm4zYW0zUm4zdEpRZjhHZk1TelpBVjJYeWlGTWZLeU5NZE1BUXpKNExRSUdfcjhqNmVhZE1GT2dNOXo3ZmdfSE9mUUZmTUctZVZwVEJUWkNIaFBJeVZXd3E1S0Q4aTFwR1pMMDVZOGJqZVl1TE0?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T11:00:00.000Z",
-        "summary": "Anthropic’s record IPO nets huge windfall for L.A. investors Los Angeles Times"
-      },
-      {
-        "title": "Anthropic's revenue hits $17B as it discounts to defend ~$1.5T value - Dealroom",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPMWFBWnQ3dTJkOWdfWlRKdnk3U1UyWlN5eTJTNTU2bV9UcjZTd0VMZjdLcFoxbk5iLVV3OWVnY2N2d21mLXpMeXZUcnN5OVZFTURWbU1Oa1Uxay1MWHljTU91bHRiY213YjU2NDVMcjZlRFJSVG1BTTlnSmVyTzM1V19md29TYXVia0Q1Vld5dnlQdXRwQkMtLW51WnZTdWRs?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T10:05:48.000Z",
-        "summary": "Anthropic's revenue hits $17B as it discounts to defend ~$1.5T value Dealroom"
-      },
-      {
-        "title": "Anthropic soars in record Wall Street debut - Tech Xplore",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPREQ4d3A0alpDS2dLR1JLUGEzY0FFLURVNWI1cFBxVHdha2dDek5xQ2pxVjhHa05BXzdSNjFCbkV4RGFGMnpVSFIzYW5WZjJsT1luWkNBOEp6QnBUMXpGck9QMlgyZHFlTnNKeTIwcUNHRlVJR1BraTB6bk0wRWR3Y2N3?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T09:20:01.000Z",
-        "summary": "Anthropic soars in record Wall Street debut Tech Xplore"
-      },
-      {
-        "title": "Anthropic IPO Raises $81.3 Billion as Shares Jump 34 per cent on Nasdaq Debut - ITP.net",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNRzdPSjZXdTVCb01jZF9TLUZ6akFoU0ppMWlFNnc3ckVydHNXOW9tNEQ3VVNnY0xzV1pDdlNaWDJ3dm5VVlpXTUdzZlR4MXRIOVl3UjFIX3oxZ2ppVHlhX05LNlg5aHBqLXlYV2gyLV9obDdLMktzbHNFaXY2OW5FeXBiazY1ZE1SWGI4WG93UnFobzducEphZmxnb19MZXBNa1VUUVhfRlJvZExiWUNn?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T07:52:03.000Z",
-        "summary": "Anthropic IPO Raises $81.3 Billion as Shares Jump 34 per cent on Nasdaq Debut ITP.net"
-      },
-      {
-        "title": "Anthropic Leaders Discuss Claude Adoption at Nasdaq IPO Ceremony - Securities.io",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQRURybmNNNkRXNGxCRWhtNjhEUDZjcW9MWWV2SFBydGZMXzg3SzRHeWNfcGVCS3RxYjR2RnZ1ejVJTEZ1SnVBTy1kWWJSZjV3THl5OEo4YTRSMDVmV1o4bHE1bm9kcVFqT3lKRE10OUFQUVowd1pDSzIzYXZSMTdtWnRqdU9oUHhfbi1GMTBUaTV5dHJIY0E?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T07:19:43.000Z",
-        "summary": "Anthropic Leaders Discuss Claude Adoption at Nasdaq IPO Ceremony Securities.io"
-      },
-      {
-        "title": "How Anthropic doubled business customers for Claude - Marketing Week",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9NcDZFOGNFU3NTSUYxVlktSUVIUFdGeVV6bmVzbTJMWlFoZVdCYlNEaVp4RXlWQWxBQ2dENGZVaDR2V3ZxLXVPdmNQQ1FlN0wwZ1RZVG44NnZ4NE44NklzOHpBVWFfdlJ1SWtXZWRVLUNVWUgy?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T07:08:14.000Z",
-        "summary": "How Anthropic doubled business customers for Claude Marketing Week"
-      },
-      {
-        "title": "How Anthropic increased downloads of Claude by 300% in seven days - Marketing Week",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBMMW1lWUJkVlZkYUhIVDc0MHpONWM3Qmx0Z3Rvc2JSM0hXVzQzNGpNMXRlTXpzdllGNnhFeXVMSm5EV3BUTjFlb0RVcjh6TUUyZGF3cnExazFWUkJNSFQzMXVIZThMT1ppVkxkbENra0xMb0RkQ2c?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T07:02:09.000Z",
-        "summary": "How Anthropic increased downloads of Claude by 300% in seven days Marketing Week"
-      },
-      {
-        "title": "Why Anthropic's Claude Turned to Blackmail in AI Safety Tests - HackerNoon",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNdjdITnVuaFc3b21OSkdCN0UxeXJRWHBOT3hVZndLeDgyNEhaR1VyM05QQVRhS0M0aGlaMFhOMkg2U1BKOGN2M28ydFpjMkE2ZWF0UWpTM2FYYVhhUW9OV0JsWU5SLXJTR1lGdFdlRl9XQVFwb3l2WFhLZmZMTkRjWXVzWjRQaGFQNUpR?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T06:22:15.000Z",
-        "summary": "Why Anthropic's Claude Turned to Blackmail in AI Safety Tests HackerNoon"
-      },
-      {
-        "title": "Anthropic opens 34% above IPO price after $81.34bn offering - Gulf Business",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNZWZqQzVSZGhiWlZwYXl6dXM1alpHWFlHU0g2a3BDU3E5WmZfWTU4bC13cTV4UkFMV001X1JzbUstbC1NV21wOHdxcERpSWpEY3MteEhJRlRvNjBYeUFkRmtYMGRqTTM0SmdybnhibTloX3JWZUItS3N5dTFsLThOeFBPcWw4ek9KYnJrdW05UFlOMjZ3RGVFelI2WEM?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T06:01:48.000Z",
-        "summary": "Anthropic opens 34% above IPO price after $81.34bn offering Gulf Business"
-      },
-      {
-        "title": "Anthropic | History, Controversies, & Claude AI - Britannica",
-        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE41Q1h2QkF0SGRpMFZSMVN5al9RNkhQLTR4MDc0cHJNbndmdndTbHE5cGswRFk4SS1JbVhmXzdWNm5KRDlJa3FiUkt6T01MZUNiTjhON2R6cFJtQQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T05:41:00.000Z",
-        "summary": "Anthropic | History, Controversies, & Claude AI Britannica"
-      },
-      {
-        "title": "No invite for China at Anthropic IPO: After SpaceX, Claude parent too shuts Chinese investors out - The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPcXEtVm83eEo0VVpHUEV5U0t5dmlPMUExUmttYWtMODdqdEZYUUprQnlBMWJuNzFXelI1aGE4eUkwQXNQaGR1RVlzVHFZblRMWXM2UGpJQnpOcFNPRi1PbGZwZkhhVlhoN2h3dF9KbmZpeUQwYTd1Mzh2VzJPMVpEMjFHVVJVdG85Q2FSdzVtWjVQZV94ZkIzM05PNmNremVPNmJxZXNDX09ZRlhUWjd1S2sxRGNnSE85OXZqU3VwNVBNc0Q5M0RCT2ZUUTEwWFQ3X3g4dzVUajdrSVdwR3JsOGt5YlR5N0UtRTZjUm51VGRfYkVORzA5d3dXTlRPSzAxRXJQbFR6Mk9ZaDFpNnhPVjhmcWdnOElt0gGeAkFVX3lxTE90d2tveTl2VThWbG1ZdFZnN3Rnd1JGZU1ueTR2TVJmbVJaRnQxRmR5VWJaLXg2ZEtpUlU3eHVGdTN2QVZuSXROaE40Zk9nOTdIOHRqN3NBN3RRUjFHdDNzMVBZNGtCckNBQ1FQOFF1b2E5VDJGV3pGOWhteUkyRGlRTHZpd01yQUR0QUQ2ZnpINzhVM2ZiUGFab2N3UFlxZ1FTM1pZVklqU0FlelZOVVMtcU1FY0ZtUWt4Q3pTeTBZd0E0dUgzMkt0b1BVRTAzSDlPRlQzNUoxaVNIdVFwWmN2RThkRjlxamw4QVJMM1hVMnhScFpCT2RlU2pmMHRiXzJXWXAzNXhvZFQ4ZGNqNFQtc3NuMlhsRkpYTUhleHc?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T05:41:00.000Z",
-        "summary": "No invite for China at Anthropic IPO: After SpaceX, Claude parent too shuts Chinese investors out The Times of India"
-      },
-      {
-        "title": "Was Anthropic’s record US$81 billion listing a vote of confidence in AI – and what’s next? - The Conversation",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQamRTcG5lYW4yUGFZLVJsRDdKM0dJbjNId180bUZHbDY2UWg0MXgxWVlJSjdVWjBZd0xMWGJydXd5dnNKZmJMaVVlSjBrUU5xdklmVTNQd3g2RldnRXVCYVlhdXBTOGt0a2ptRWJZMENXRkU3eGY0MXdRVTFOUFBteHdfUW42ZEN1YTkta0hzRlFWR2VEUVRBX1BRQTYyZXBKU2FwYmZfcGZHQi1qTlh6VHEzSmVHQUtZT3NEUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T04:53:00.000Z",
-        "summary": "Was Anthropic’s record US$81 billion listing a vote of confidence in AI – and what’s next? The Conversation"
-      },
-      {
-        "title": "Anthropic shares slide 13% as fears over AI boom dominate - Financial Times",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOeFI2NEJCRHRJS3oxQnpSc2hUclVhRzQ4TGQxRVFYbEhRWS1tdGdHMlUtR1JtWDRtdERaTEo4M1F5c2kxOUZQODJMUHdUbVNIV2wxX0ZHR2ltVkVRcW83MVVzSXpoYV9wS3I2RkdUOGtITm9lNDBjRkJlakZ0ektISDNHZzY?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T03:52:05.000Z",
-        "summary": "Anthropic shares slide 13% as fears over AI boom dominate Financial Times"
-      },
-      {
-        "title": "Dario Amodei Takes Anthropic to Wall Street in Record $81 Billion IPO - Observer",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOM3o1NFFBeXBqWXBxajhfNktsQ00zdy01a2FSUWpfVGxhcEIwYVZJbEpmaVlnRUlpRkVtdXZyRGVYWXRjQVB5WWxhOHNJYWs2WElvZWdDSEpnbFgxZjdJZVI4eVkwU0drdTdKSHU2YXhXN0lmTGJ6TTlaTEhmYkdKMTJicUwyWTNxVk85Wm1pRnplVnJETENCd3I3TjFCLXc?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T03:26:21.000Z",
-        "summary": "Dario Amodei Takes Anthropic to Wall Street in Record $81 Billion IPO Observer"
-      },
-      {
-        "title": "Claude maker Anthropic prices record $81.3 billion IPO ahead of Nasdaq debut - EdTech Innovation Hub",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSmc4ZVZZOFpWbGFtUnlkU1JyZTN0dTNTOGtORUplejhLTHdVU01HWnYyRUc0UnlXN3NfMW1MMThFTEowYWo4TC1YYm5VYlJpeEpGa1ExMkVQeVpYbnk5TUxZbEctRk5ZS2Q2alJnRHh3LWRBdzh2Rm9sM2lJcmNCOFViR2laaFFHVTRZVHZ4cDRYWmlWTjZMVmJZZEJhcndCdzVOUXI2MjlsNzRMMlhGZ09oVjhYUQ?oc=5",
-        "source": "Google News",
-        "published": "2026-11-20T02:53:45.000Z",
-        "summary": "Claude maker Anthropic prices record $81.3 billion IPO ahead of Nasdaq debut EdTech Innovation Hub"
-      },
-      {
-        "title": "Global AI Trade Buckles as Anthropic Slides Following Record IPO",
-        "url": "https://www.bloomberg.com/news/articles/2026-11-20/asian-chip-stocks-slide-as-anthropic-ipo-fails-to-dispel-ai-woes",
-        "source": "Bloomberg",
-        "published": "2026-11-20T01:49:55.000Z",
-        "summary": "Anthropic PBC’s blockbuster initial public offering is becoming a catalyst for a savage selloff across artificial intelligence stocks across the world."
+        "title": "My Claude Code status bar shows what every session costs",
+        "url": "https://www.youtube.com/shorts/axRrXd50lUo",
+        "source": "Stefan Rows",
+        "channel": "Stefan Rows",
+        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
+        "video_id": "axRrXd50lUo",
+        "thumbnail": "https://i.ytimg.com/vi/axRrXd50lUo/hqdefault.jpg",
+        "published": "2026-11-20T17:00:31.000Z",
+        "summary": "",
+        "_kind": "news_video"
       },
       {
         "title": "Claude is Eating The World",
@@ -365,18 +389,6 @@
         "video_id": "2u3zp6M8-wE",
         "thumbnail": "https://i.ytimg.com/vi/2u3zp6M8-wE/hqdefault.jpg",
         "published": "2026-11-19T15:00:15.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Claude Artifacts Change Everything (Here's How I Use Them)",
-        "url": "https://www.youtube.com/watch?v=7N1AE5Y87GU",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "7N1AE5Y87GU",
-        "thumbnail": "https://i.ytimg.com/vi/7N1AE5Y87GU/hqdefault.jpg",
-        "published": "2026-11-18T19:35:33.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -437,18 +449,6 @@
         "video_id": "PJtDSfZKNmQ",
         "thumbnail": "https://i.ytimg.com/vi/PJtDSfZKNmQ/hqdefault.jpg",
         "published": "2026-11-16T15:00:08.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Claude Just Changed EVERYTHING…",
-        "url": "https://www.youtube.com/watch?v=j5BDkyEcML4",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "j5BDkyEcML4",
-        "thumbnail": "https://i.ytimg.com/vi/j5BDkyEcML4/hqdefault.jpg",
-        "published": "2026-11-14T19:50:15.000Z",
         "summary": "",
         "_kind": "news_video"
       },
@@ -571,30 +571,6 @@
         "published": "2026-11-01T21:43:00.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude in 15 Minutes: 5 Levels, From Your First Chat to Work That Runs Without You",
-        "url": "https://www.youtube.com/watch?v=5kHbQzyO1cU",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "5kHbQzyO1cU",
-        "thumbnail": "https://i.ytimg.com/vi/5kHbQzyO1cU/hqdefault.jpg",
-        "published": "2026-10-27T14:30:34.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
-        "title": "Claude on the iPhone Duo might be the best designed AI app ever #ai #aiagents #iphoneduo",
-        "url": "https://www.youtube.com/shorts/DOCR_7Tk4PY",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "DOCR_7Tk4PY",
-        "thumbnail": "https://i.ytimg.com/vi/DOCR_7Tk4PY/hqdefault.jpg",
-        "published": "2026-10-25T00:33:11.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
@@ -685,6 +661,28 @@
     ],
     "youtube": [
       {
+        "title": "Gemini Neon Just Caught Up To Claude (And It’s HALF the Price)",
+        "url": "https://www.youtube.com/watch?v=LNIrmrZ_0gY",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "LNIrmrZ_0gY",
+        "thumbnail": "https://i.ytimg.com/vi/LNIrmrZ_0gY/hqdefault.jpg",
+        "published": "2026-11-20T21:41:40.000Z",
+        "summary": ""
+      },
+      {
+        "title": "My Claude Code status bar shows what every session costs",
+        "url": "https://www.youtube.com/shorts/axRrXd50lUo",
+        "source": "Stefan Rows",
+        "channel": "Stefan Rows",
+        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
+        "video_id": "axRrXd50lUo",
+        "thumbnail": "https://i.ytimg.com/vi/axRrXd50lUo/hqdefault.jpg",
+        "published": "2026-11-20T17:00:31.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude is Eating The World",
         "url": "https://www.youtube.com/watch?v=4TnNitqm8uM",
         "source": "Nick Saraev",
@@ -740,7 +738,7 @@
         "summary": ""
       },
       {
-        "title": "Claude Artifacts Change Everything (Here's How I Use Them)",
+        "title": "How the Top 1% Are Using Claude (Full Artifacts Guide)",
         "url": "https://www.youtube.com/watch?v=7N1AE5Y87GU",
         "source": "Riley Brown",
         "channel": "Riley Brown",
@@ -817,7 +815,7 @@
         "summary": ""
       },
       {
-        "title": "Claude Just Changed EVERYTHING…",
+        "title": "Claude Can Do WAY More Than You Think (New Features)",
         "url": "https://www.youtube.com/watch?v=j5BDkyEcML4",
         "source": "Riley Brown",
         "channel": "Riley Brown",
@@ -991,31 +989,17 @@
         "thumbnail": "https://i.ytimg.com/vi/8c6JZ18W0Bo/hqdefault.jpg",
         "published": "2026-11-01T21:43:00.000Z",
         "summary": ""
-      },
-      {
-        "title": "Claude in 15 Minutes: 5 Levels, From Your First Chat to Work That Runs Without You",
-        "url": "https://www.youtube.com/watch?v=5kHbQzyO1cU",
-        "source": "Pragati Kunwer",
-        "channel": "Pragati Kunwer",
-        "channel_id": "UCe4eqh2Rs4bkjDRrjZQWkZw",
-        "video_id": "5kHbQzyO1cU",
-        "thumbnail": "https://i.ytimg.com/vi/5kHbQzyO1cU/hqdefault.jpg",
-        "published": "2026-10-27T14:30:34.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude on the iPhone Duo might be the best designed AI app ever #ai #aiagents #iphoneduo",
-        "url": "https://www.youtube.com/shorts/DOCR_7Tk4PY",
-        "source": "Alex Finn",
-        "channel": "Alex Finn",
-        "channel_id": "UCfQNB91qRP_5ILeu_S_bSkg",
-        "video_id": "DOCR_7Tk4PY",
-        "thumbnail": "https://i.ytimg.com/vi/DOCR_7Tk4PY/hqdefault.jpg",
-        "published": "2026-10-25T00:33:11.000Z",
-        "summary": ""
       }
     ],
     "tutorials": [
+      {
+        "title": "ci: use claude-code-action v1 (#979)",
+        "url": "https://github.com/anthropics/claude-cookbooks/commit/8ad5de647d4f0f50c95d74aabc8aa20a3f70cdd3",
+        "source": "Anthropic Cookbook",
+        "published": "2026-11-20T22:16:45.000Z",
+        "summary": "ci: use claude-code-action v1 (#979) Move the six workflow steps from a commit of v1.0.132 to the v1 tag, so that they get new releases. Set the model and permission mode, whose defaults changed…",
+        "tutorial_kind": "official"
+      },
       {
         "title": "v2.1.329",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.329",
@@ -1045,6 +1029,18 @@
         "tutorial_kind": "official"
       },
       {
+        "title": "How the Top 1% Are Using Claude (Full Artifacts Guide)",
+        "url": "https://www.youtube.com/watch?v=7N1AE5Y87GU",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "7N1AE5Y87GU",
+        "thumbnail": "https://i.ytimg.com/vi/7N1AE5Y87GU/hqdefault.jpg",
+        "published": "2026-11-18T19:35:33.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
         "title": "v2.1.327",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.327",
         "source": "Claude Code Releases",
@@ -1069,6 +1065,18 @@
         "video_id": "KRSi2HvlGMk",
         "thumbnail": "https://i.ytimg.com/vi/KRSi2HvlGMk/hqdefault.jpg",
         "published": "2026-11-16T16:21:40.000Z",
+        "summary": "",
+        "tutorial_kind": "video"
+      },
+      {
+        "title": "Claude Can Do WAY More Than You Think (New Features)",
+        "url": "https://www.youtube.com/watch?v=j5BDkyEcML4",
+        "source": "Riley Brown",
+        "channel": "Riley Brown",
+        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
+        "video_id": "j5BDkyEcML4",
+        "thumbnail": "https://i.ytimg.com/vi/j5BDkyEcML4/hqdefault.jpg",
+        "published": "2026-11-14T19:50:15.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1250,14 +1258,6 @@
         "source": "Anthropic Cookbook",
         "published": "2026-10-14T02:56:52.000Z",
         "summary": "feat(managed_agents): move plan-big-execute-small to multiagent_20261001 (#915) The recipe now sets the multiagent_20261001 type. The small-model worker is listed under subagents.predefined_agents,…",
-        "tutorial_kind": "official"
-      },
-      {
-        "title": "docs(managed_agents): move the self-hosted sandbox variants to claude…",
-        "url": "https://github.com/anthropics/claude-cookbooks/commit/9c1e493ddd2b82df399d2a61b9c806c539e18be6",
-        "source": "Anthropic Cookbook",
-        "published": "2026-10-10T09:24:54.000Z",
-        "summary": "docs(managed_agents): move the self-hosted sandbox variants to claude-quickstarts (#888)",
         "tutorial_kind": "official"
       },
       {
@@ -1663,6 +1663,20 @@
     ],
     "claude_learning": [
       {
+        "title": "Gemini Neon Just Caught Up To Claude (And It’s HALF the Price)",
+        "url": "https://www.youtube.com/watch?v=LNIrmrZ_0gY",
+        "source": "YouTube · Riley Brown",
+        "published": "2026-11-20T21:41:40.000Z",
+        "summary": ""
+      },
+      {
+        "title": "My Claude Code status bar shows what every session costs",
+        "url": "https://www.youtube.com/shorts/axRrXd50lUo",
+        "source": "YouTube · Stefan Rows",
+        "published": "2026-11-20T17:00:31.000Z",
+        "summary": ""
+      },
+      {
         "title": "Claude is Eating The World",
         "url": "https://www.youtube.com/watch?v=4TnNitqm8uM",
         "source": "YouTube · Nick Saraev",
@@ -1712,7 +1726,7 @@
         "summary": "What's changed Added auto mode for Claude Opus 4.6 and Sonnet 4.6 on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry and Claude apps gateway; interactive sessions with no permission mode start in it…"
       },
       {
-        "title": "Claude Artifacts Change Everything (Here's How I Use Them)",
+        "title": "How the Top 1% Are Using Claude (Full Artifacts Guide)",
         "url": "https://www.youtube.com/watch?v=7N1AE5Y87GU",
         "source": "YouTube · Riley Brown",
         "published": "2026-11-18T19:35:33.000Z",
@@ -1866,7 +1880,7 @@
         "summary": ""
       },
       {
-        "title": "Claude Just Changed EVERYTHING…",
+        "title": "Claude Can Do WAY More Than You Think (New Features)",
         "url": "https://www.youtube.com/watch?v=j5BDkyEcML4",
         "source": "YouTube · Riley Brown",
         "published": "2026-11-14T19:50:15.000Z",
@@ -2097,25 +2111,11 @@
         "summary": ""
       },
       {
-        "title": "Claude in 15 Minutes: 5 Levels, From Your First Chat to Work That Runs Without You",
-        "url": "https://www.youtube.com/watch?v=5kHbQzyO1cU",
-        "source": "YouTube · Pragati Kunwer",
-        "published": "2026-10-27T14:30:34.000Z",
-        "summary": ""
-      },
-      {
         "title": "v2.0.0",
         "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.0.0",
         "source": "MCP Servers",
         "published": "2026-10-25T06:00:36.000Z",
         "summary": "Servers refactored to modern era This release refactors all the servers to support the modern era spec, while still answering legacy era clients as expected. Packages Package Version Registry In this release…"
-      },
-      {
-        "title": "Claude on the iPhone Duo might be the best designed AI app ever #ai #aiagents #iphoneduo",
-        "url": "https://www.youtube.com/shorts/DOCR_7Tk4PY",
-        "source": "YouTube · Alex Finn",
-        "published": "2026-10-25T00:33:11.000Z",
-        "summary": ""
       },
       {
         "title": "v2.1.0",
