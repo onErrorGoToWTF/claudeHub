@@ -1,8 +1,15 @@
 {
-  "generated_at": "2026-11-25T10:36:00.822Z",
+  "generated_at": "2026-11-25T20:45:15.672Z",
   "version": 1,
   "sections": {
     "updates": [
+      {
+        "title": "Migrating Api to Rust",
+        "url": "https://www.anthropic.com/research/migrating-api-to-rust",
+        "source": "Anthropic Research",
+        "published": "2026-11-25T16:27:43.869Z",
+        "summary": ""
+      },
       {
         "title": "Team/alignment",
         "url": "https://www.anthropic.com/research/team/alignment",
@@ -135,191 +142,220 @@
         "source": "Anthropic",
         "published": "2026-11-16T20:50:34.490Z",
         "summary": ""
-      },
-      {
-        "title": "Singapore Office Opening",
-        "url": "https://www.anthropic.com/news/singapore-office-opening",
-        "source": "Anthropic",
-        "published": "2026-11-16T20:50:09.800Z",
-        "summary": ""
       }
     ],
     "news": [
       {
-        "title": "Rival AI leaders push back against Anthropic vision of surrendering human agency to AI - Yahoo Tech",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQblExenp1OERUd0lRTzdCVHdpNk1ZMWEzRWlpNUpkLWdrZy1wRC00NzJuTzVfNEJvelRkTzhxNnBTck1Ia1pHa29lSFk2Y19MUzEwZWVib1dOR0xVM1ZORU1qOEZ3VlF4bXNhY0Y4RkZ5aWRONFZyblpPUkt0M2JRcTk4UWNaTnNGeWVR?oc=5",
-        "source": "Google News",
-        "published": "2026-11-25T10:01:09.000Z",
-        "summary": "Rival AI leaders push back against Anthropic vision of surrendering human agency to AI Yahoo Tech"
+        "title": "Franklin Templeton's Araghi Sees AI Selloff as Market Reset",
+        "url": "https://www.bloomberg.com/news/videos/2026-11-25/franklin-templeton-s-araghi-sees-ai-selloff-as-market-reset",
+        "source": "Bloomberg",
+        "published": "2026-11-25T19:52:31.000Z",
+        "summary": "Franklin Templeton portfolio manager Sara Araghi says the sharp tech selloff reflects an unwinding of earlier AI euphoria rather than a fundamental deterioration in demand. She discusses why AI…"
       },
       {
-        "title": "Anthropic Rolls Out Claude Artifacts That Helps Create New Apps Using AI on Windows, Mac - Tech Times",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQaXpTNXg4Y1U1aXZxSVB2NFU5ZDJWRUpLNnMzN0pFQzM2dlZrSDMtdlNUWDdlakczYjdoWkp3aDc3Wkxfd0RsZlJkamRyODZ3UklUQzViOGtCTzhIZHF6RlM3ZGRQQTNVSnUxNTRZZ01aaThMQjdKdy1IUWRVanNoSThLZE5yMGtzbEJ3QVQ3UEZsaGFmUHRncDRraFdOdXN2eVBQeW9lVkxuYXl3MndmWlFya1AwcklnWkFBOE5MYk9yajY1SnFiRjBLTm5ZSTFKSTliSXVR?oc=5",
+        "title": "Anthropic set more than 1,700 traps for Claude — what it found is both reassuring and unsettling - The New Stack",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5pMGFiVTVTTEM5QWh0VEhCcUc4RFRYcGFlMFROamdYOF9oR3V5SHFaZmk3bUxTem5rMTZYWWZXZUNfTGZJQW1UTVRyUXZUR1FMUThkMV83VDFoeEg0N3R0WXgyaWc?oc=5",
         "source": "Google News",
-        "published": "2026-11-25T09:55:32.000Z",
-        "summary": "Anthropic Rolls Out Claude Artifacts That Helps Create New Apps Using AI on Windows, Mac Tech Times"
+        "published": "2026-11-25T19:49:16.000Z",
+        "summary": "Anthropic set more than 1,700 traps for Claude — what it found is both reassuring and unsettling The New Stack"
       },
       {
-        "title": "Anthropic’s brand investment—why AI companies need more than better models - Ad Age",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSl9heUk0UWljUXl2WTBhMVZZblI3S2ZDa3Jmd3pvcUNvSG4yR256VXEwRWtNNmIzSTY3eExOOUl3OFBhRjNxcVk1Z2xnMjBIV1NnUkFFMjNLLTFUUTROa1hrWFVVRVN4V3FxTHlKalZqMTZkUi01SDFYeWYzbGRTVTRZYXBVd2wtVm9KZFlsWGc1UQ?oc=5",
+        "title": "Anthropic Claude AI Predicts a Mindblowing BTC Reversal - Cryptonews",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPX2ZIdUpYVWR6MlNiUGZmUFBCelpDbXR0Nk5WQzc2MFRFbktJVld0RHJ1QWxlbWg3RTlGYzVfUGdNQWJRcU9tcENIMjBSOVJXQXBlUHNjVVNsXzhHSE1tWDdFaHAyM3RwMnRTLUNOQVNKT2VYQjdtVHV4RVppNFhuc1FEWi1MNTIwRmc?oc=5",
         "source": "Google News",
-        "published": "2026-11-25T09:55:00.000Z",
-        "summary": "Anthropic’s brand investment—why AI companies need more than better models Ad Age"
+        "published": "2026-11-25T19:45:00.000Z",
+        "summary": "Anthropic Claude AI Predicts a Mindblowing BTC Reversal Cryptonews"
       },
       {
-        "title": "The Most Famous Problem in Math Was Just Solved by AI—and This Human - WSJ",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQZ0x4ejFTYkxaVjZTM3hTS0o5b2IteVFjczV3UHlJa0pzZjg5bmlGY1k3UXU5My1zamU5VnNBUXdtOWJ3aHBReFMtNDJhQktiVTJpMFBjN1daM1lMMGRGTzItRi12T0VxaTAxV3ZocUhRUG00RWxWc0k5S05qYmtJT1ZvMlNjWjZiNndZTA?oc=5",
-        "source": "Google News",
-        "published": "2026-11-25T09:30:58.000Z",
-        "summary": "The Most Famous Problem in Math Was Just Solved by AI—and This Human WSJ"
+        "title": "Anthropic’s Dario Amodei calls accusations of surrendering human control to AI ‘absurd’",
+        "url": "https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/",
+        "source": "TechCrunch",
+        "published": "2026-11-25T19:44:24.000Z",
+        "summary": "Anthropic CEO Dario Amodei pushes back against rivals’ accusations that he favors surrendering human agency to AI, even as leading AI companies increasingly automate their own research and model…"
       },
       {
-        "title": "Anthropic wants to catch rogue AI activity without retaining your data - Help Net Security",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQcmVLMGZSUkFCbW5ZdFZUclA1NjQ5Y25OOUtiOHR1WjlOaVdXMXoxeFN6bnlWSWQxeUNNR0VCVEhteG9VOEhOa1ozMlpXRUNxV3NzaHYwcEhWNlFkZGYwdW5hZXhlR1V4b1B6bDllX2lUeGZKVnMxWXpaTHRZUko5U1ZYVEVOc3R6c0paS0xra3N2Z081azVfTndGZ2o?oc=5",
+        "title": "Osaic's Shannon Reid warns against sharing bank data with ChatGPT - InvestmentNews",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPUi00LXVmVkdFVVd4RERXeWVlMnVIWlpDU19qanQ4SE5jZ01qcFhnbzRDLUllVy1Ndk45Ui1sRG93U0VSVXIxRTYtTV84VTUzRGpHeDhWUXZ5VXZkbG5kSmdOLUFKNXY2OVc3OWV3M2pSU1ZrQk5mdS0tUHppSEZ3MVl0VFQ3NHc3eDBhOHUtbEx6cGx3YmFDX0hJX1VqZ2dFNGhXRVFpRnhLb0ZNUG9rdzU2TWQ3VTJV?oc=5",
         "source": "Google News",
-        "published": "2026-11-25T09:20:14.000Z",
-        "summary": "Anthropic wants to catch rogue AI activity without retaining your data Help Net Security"
+        "published": "2026-11-25T19:10:42.000Z",
+        "summary": "Osaic's Shannon Reid warns against sharing bank data with ChatGPT InvestmentNews"
       },
       {
-        "title": "Anthropic’s Claude Ship AI Agent Reviews PRs, Fixes Bugs and Approves Code - Brave New Coin",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSjlyUmFZY0hZbE1tS0RfenRkOVNuT0J0QUFyU0lCUXV3R25MMXVjV0RiYWs1OVU4SlpzTEh0VG5WdG11TFptQ2V1a2twRE1JeWNCVG5XbXBXQVNQN2UyVmwzMmN2bzllV0tHNkk4OXR6QnlCdDhQbnE5WW5Ub0tLZkxldnRaNWIzbXhCVG9LNzhTNGlEV2lXQTluQWE5TjNOTmhWaENKMWlEdw?oc=5",
+        "title": "Anthropic's Claude Can Now Turn Your Workflows Into Desktop Apps. Here’s How to Get Started - Inc.com",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxONWprSmNQa2c3ckpWZTA3eU50VklIMnRaaDFWeHA4N2RlVlo3WjhVYkt0dXJ2aGllSDFSVUxfeG1kd2VlS0Iwel9VZTNLYkdaSGZVc2VTaWxXbDBFS3NpNHd5RnlQMDRqckxOTHlpYUllcFpLWExnb0ZzUXJGYTZ2OHlwSnZ1M2p3VEo1RlUybFdPQQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-25T09:03:00.000Z",
-        "summary": "Anthropic’s Claude Ship AI Agent Reviews PRs, Fixes Bugs and Approves Code Brave New Coin"
+        "published": "2026-11-25T18:54:50.000Z",
+        "summary": "Anthropic's Claude Can Now Turn Your Workflows Into Desktop Apps. Here’s How to Get Started Inc.com"
       },
       {
-        "title": "Anthropic expands Claude Duet research preview to India, opens access across Pro, Team and Enterprise Plans - MediaNews4U",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNQVBxQ3d2UFJ2OGNJeXdhdXlCMFZGbkZxb0lieW84Z1ZDYm9URVhvUlU2by10WEFuNElvNGlJeTRrNHh6U3RoZlE0UWZTWUtfWVk0cnEwVHZoRkRsQzEzb3djRVhRY0I1U3c5Nk9Ra2xtVXBON1o1cUFJWVlPOVFHUWVkYmJvNHNBQUVlQlNpTDdpQThlTHhycTJZQjdnZ3ZEbG4xTF9neFBHX2dmVHljMHNUT3ZpelhfNUdkdjRlU1VhLXZBc294eG0zaGFsc2s?oc=5",
+        "title": "You can turn Claude artifacts into Windows and Mac apps now – here’s how - ZDNET",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQdVN0ck1jSHMyZFl3X1Y4aDBRMGZLaTJQMEYyUlZkbE5iazE5cTBfcFhpWjM2cTFYNWctRWFMaV84a2NEazNSelhRYkloeHFkWFg5TDg3bVQtOXBCWEJWLTFRU2dWOXVkbGl6WVFlTHhkdllGRmFlVVRpakMtMjN0Qw?oc=5",
         "source": "Google News",
-        "published": "2026-11-25T08:52:08.000Z",
-        "summary": "Anthropic expands Claude Duet research preview to India, opens access across Pro, Team and Enterprise Plans MediaNews4U"
+        "published": "2026-11-25T18:54:05.000Z",
+        "summary": "You can turn Claude artifacts into Windows and Mac apps now – here’s how ZDNET"
       },
       {
-        "title": "Anthropic Breaks IPO Price Within Five Days, Falling Over 8%; Three Core Claude Code Members Jump to OpenAI - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE14MGE0dGNHNUlTWVRDaVMtVVFEcnZnMXljMDBiYUdOb1VXc1hNVmN1UER3cGVjOWhxa1IxSmZHZURKSnNVeVk3Q1FPQnVWZ25sbTI1X09QcE54RHA4SC0xNjdWbkhjT01Rb01HQ0FOblpabk8tOXc?oc=5",
+        "title": "Anthropic rewrites Claude's API in Rust, cutting CPU per request 70% - MLQ.ai",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOaExBWHpZNEp6Um16cmZhbGdSMWlUNUtmUGd1eE10UUJDbThUaUNtNEt2eDZ3alBJSjE1Q3o3VDhsLVNjbXdkT3lvOV9oNXZOVDRLQkNMajRPUnhNaUh1d0I3dDBQU1VIUUx3M0VSS0FvWWVZbGwxaktVNW0tVFpBRWlzYUJkV0NreGF6eXhyYw?oc=5",
         "source": "Google News",
-        "published": "2026-11-25T08:05:00.000Z",
-        "summary": "Anthropic Breaks IPO Price Within Five Days, Falling Over 8%; Three Core Claude Code Members Jump to OpenAI BigGo Finance"
+        "published": "2026-11-25T18:28:37.000Z",
+        "summary": "Anthropic rewrites Claude's API in Rust, cutting CPU per request 70% MLQ.ai"
       },
       {
-        "title": "Wall Street calls Anthropic ‘a steal’ and ‘generational opportunity’ as stock slips below its IPO price - Fortune",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOektPLXJMckFNYmxjODRTeG1GZVpnaUt2WEExV001WGZiUWNFaHNUNENmem8xUWswWXF0OTljVEtZX1FIOW9WT2QwX3NyS0FsNXpOWXppWFdLbDVDVFlzUHNxV0NkRVFyLWdHXzN5MmE0eTJFU3hQaWRhcXBPd3Y2MUxMYXlibG5XZ3BVdlR6cFZQS25lSXRUd25GZmFxTzh3Q2ttbWMtVnE5dw?oc=5",
-        "source": "Google News",
-        "published": "2026-11-25T08:00:00.000Z",
-        "summary": "Wall Street calls Anthropic ‘a steal’ and ‘generational opportunity’ as stock slips below its IPO price Fortune"
+        "title": "This NEW Claude Update Literally Changed Everything",
+        "url": "https://www.youtube.com/watch?v=F7QcpCl0Lg4",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "F7QcpCl0Lg4",
+        "thumbnail": "https://i.ytimg.com/vi/F7QcpCl0Lg4/hqdefault.jpg",
+        "published": "2026-11-25T18:27:23.000Z",
+        "summary": "",
+        "_kind": "news_video"
       },
       {
-        "title": "Anthropic's New Model \"Opus 5.6\" Reportedly in Secret Testing; Observed Being Rolled Out to Some Users First - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9OZVlRenlPV0lKOG0yXzRlMlMzaEpvaThqTGxBWm1uUGczSDlSMWhCUkxvd0wtZkllUEJwbEhTWl9vTnRLclBYRlE2Y0xaek9ZMGU2VDZPQXQxN3FCU21HZFJDMTFBajQ4X2FUa3lNN0w3SkFwekE?oc=5",
+        "title": "Anthropic Details Claude-Assisted Rust Migration of Messages API - Unite.AI",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdHJEemF5NDZDbnJBeGxsMWRrT2J4RlRIMGU2aW9PY1o0VjgybmNhQWU4LTBMbkp0WVo0aW01QkVYQTlzbVpreTRfSUd6Sl85QWZIVF9lSGdJRUxjVERab2ZOUjRqMDVNYkJDSXNvdXR5cGt0YWNrQVIwUHJxWUVDcEpkWHhjYnJDYW1kZnJwWQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-25T03:35:00.000Z",
-        "summary": "Anthropic's New Model \"Opus 5.6\" Reportedly in Secret Testing; Observed Being Rolled Out to Some Users First BigGo Finance"
+        "published": "2026-11-25T17:19:06.000Z",
+        "summary": "Anthropic Details Claude-Assisted Rust Migration of Messages API Unite.AI"
       },
       {
-        "title": "Anthropic is trying to kill traditional desktop apps with Claude-generated desktop apps - SiliconANGLE",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNak95N3VGUTZral9OeUxMdTFPTmE5TWJ2VThkMmFOWDU4YzhGNDJYSEdFNHhyS1daTl9kVXB5S3hoMXpjdXhWM3Z6UzFydzBRWEYxYlE4QjJ0U2VDUGlGOERKdkcweDBUSlVSX2hvZEtnUExFU1owdC1MbUFUVF9CTnB1OGNRazFHTlg2bEFmQzhKSjlSVUFEemhpNjVNVWxVSDRGQW4xR0ZfQU1FLWZlNU5NTUZRT2J1MnJLU1otYXlTUQ?oc=5",
+        "title": "Migrating our Messages API to Rust - Anthropic",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE91blh2eENvd0hsR25fTlhrSkktUlc3djUxb3NYdGo2dm1maGJfZlhvU3NhSS1rWk45WDczZnpiUzVrOEFWVVA1aDRfSXo3YkpfY0RuSzdESDVlU1FqN1VBV1N3Mm5ZdTQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-25T02:36:00.000Z",
-        "summary": "Anthropic is trying to kill traditional desktop apps with Claude-generated desktop apps SiliconANGLE"
+        "published": "2026-11-25T17:15:45.000Z",
+        "summary": "Migrating our Messages API to Rust Anthropic"
       },
       {
-        "title": "Anthropic finds Claude agents bypass weakened sandbox limits in up to 32% of tests - Interesting Engineering",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOalpUOW9aM25NblMxbzVNRHhYVWc3ZDdXZjlsU3NTRnV3bWxlUXNzSHQxNnBQSHItN2Vlb0VCdmxuYmYwTWtNdU5ncmlKUzJCRzZQZUI2YjZVRUZfVUlYd0tRUEFCZl9hcXBvM0xnd2dhaUJQM1h0cGRxMDdvNk56aGxnaXlaWVA5M1R6NjFIYVpYMzRG?oc=5",
+        "title": "Anthropic lets users build custom apps using Claude on Mac & Windows - Inshorts",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNaGZTVklxUGd4SDhlVktWSDhXNzI5VzJMZXpUOWNKTDJjUjNZRV9sTmlCc0VrQ2xJdWRYNUloSWVCNGVQSXNfRUtEM1EzUmZhZm11cl9zdURUUXVNVXplQzlYcV9HY1JTbEdWT2E1SGx3YXRvdU5WVUJOX2RsZ1F1U1pkcjM4RWZjSmRCdEtuUHFxR3JjZGh3U0FLdkpSMXBLRThwYTAtbmIxbFY0VHhYYQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-25T02:16:00.000Z",
-        "summary": "Anthropic finds Claude agents bypass weakened sandbox limits in up to 32% of tests Interesting Engineering"
+        "published": "2026-11-25T17:14:59.000Z",
+        "summary": "Anthropic lets users build custom apps using Claude on Mac & Windows Inshorts"
       },
       {
-        "title": "Claude Adds MCP Skills and Long-Running Task Support - The Defiant",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNR2l4NmxOb1M4QWVrMEh6REhNSGxVMUZadktxak5fLXM5aU9yTVN5WXduNjVGbEJxOGtZMXJRVzNWZ21sWUpjcmVMQ25xUkFOMXJEVjl6b0V6d3VCRlhzZzFyR0tDTUtjLUNJQ0pqckRmLWZub05PR2hJVGFzM1ZPczV0SEJMMzU2clpYUmlmaw?oc=5",
+        "title": "Anthropic reportedly testing next Opus model inside Claude Code - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1JTUxjMm1uVTZwcGl6VnpKSVF6b3pRb0dGSVBKbnlhODBtTklGbXVkRUdaSnhoWVJNT2ctbHM4ZTBGN0FkUjRGM2x1Qi1HX2J3UmVGdHNtVTFHQm9wMzE3ak00bmxPLWlienlWTWk2bW9HTXJz?oc=5",
         "source": "Google News",
-        "published": "2026-11-25T01:30:39.000Z",
-        "summary": "Claude Adds MCP Skills and Long-Running Task Support The Defiant"
+        "published": "2026-11-25T16:59:06.000Z",
+        "summary": "Anthropic reportedly testing next Opus model inside Claude Code Crypto Briefing"
       },
       {
-        "title": "Anthropic’s Claude Ship tackles the pull request bottleneck created by AI coding agents - The New Stack",
-        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1ORnM2QXFuaDQ5RFo4ZldrWHJOWG9XTnR1a0tIc1FPa3JhN20tUWJNbGtWUWlSakdMTVMzYTFZeXg3QUJyaDJyNUduY1B3MVRhRWNwUm5CaXNhbXJiajVpbnNQNGhVdw?oc=5",
+        "title": "Early outputs: Anthropic is A/B testing Claude Opus 5.6 - TestingCatalog AI News",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPUmhSTTlBS1NQRjBhTm9pZ0NndVg0RlFDcjBPU05qN0FieGI5R0hYVUR1VWEwejVnaG8yVEc1LTVsTnctYmZSRWlMWkd1Y2FHNVVXUC1nSnJsUTd6Y1ZrdlBRQy1Fdlk1ZDlUTTRBM2JwdE9HRHhSZjR0VUtnMUtsQWlaNDk3dWNZTnVQTg?oc=5",
         "source": "Google News",
-        "published": "2026-11-25T00:52:45.000Z",
-        "summary": "Anthropic’s Claude Ship tackles the pull request bottleneck created by AI coding agents The New Stack"
+        "published": "2026-11-25T16:35:43.000Z",
+        "summary": "Early outputs: Anthropic is A/B testing Claude Opus 5.6 TestingCatalog AI News"
       },
       {
-        "title": "Anthropic rolls out “Install as app” on Mac and PC for Claude’s mini-app Artifacts. - The Verge",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNU0xZQzZCR0pyRUpraGZFLWVNWk5TOEc0R1pTNnZQNXBKWk9GRFBBTTFpQnhIUGFyWTZRVG00ZmVTU2RDZTloRFc2S000MWNFN2xCN0JHTDdfSV9NM0NFWEdjT3BWWHR3VnM3elJPc0dobnRMdnZ1UF9jRlA2VU50ak1TYkd2Q1JVbi1sc1lyQnRvai10NlBFV3FmWFp3eFVIclk0MWdn?oc=5",
+        "title": "Anthropic moves its Messages API from Python to Rust with help from Claude - Crypto Briefing",
+        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1JNGxjcmhiZXB5bHhvbUhvYXllTjVLSXFGSEFiSzJ4QTdXcUh4RmRaWEFPalp1Rjl0WnJqN0k4YjJsSy1xVDQ0dGpzTXkwZ180aVI0MFd3RWxLWUtXVXdHOHpadGdUNGtLZnJsSDZoWDUxSGs?oc=5",
         "source": "Google News",
-        "published": "2026-11-24T23:04:09.000Z",
-        "summary": "Anthropic rolls out “Install as app” on Mac and PC for Claude’s mini-app Artifacts. The Verge"
+        "published": "2026-11-25T16:30:20.000Z",
+        "summary": "Anthropic moves its Messages API from Python to Rust with help from Claude Crypto Briefing"
       },
       {
-        "title": "Anthropic’s Siren tests whether Claude models will break out of an insecure sandbox - SiliconANGLE",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPUFlGbnVuVnBtSFJ4d1hzaTd3anYzS3kyQzVmU1JYRVBjUndkODBGMGdmXzc4YnpqWWFOU2xUbnZYOE9jUFV1Y2pFTWY5VS1oOXpxN2gtZ0FvR1pRQnB3U3lPTm1URzA5aE95YkFfdmRUX3hLRjlNcEhGZVRxZ1hxQjhYZkpLZ0N5T0M0SnVOaG1Ra0tra0RlX2ZQNHFacUNZTXFTbG5YVExXWUdhT1laczJlMzV0bFVqWVNn?oc=5",
+        "title": "Anthropic says Claude helped rewrite its Messages API in Rust. Passing tests wasn’t enough. - Digg",
+        "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE50ZF9fY1pYV0JLZDNxNE90Ry1kd1FuaV9ZSnRZbVdfeEhCZDZha1d1OUVlbzFUVGVVQTFNb1J2SDMtUQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-24T22:56:00.000Z",
-        "summary": "Anthropic’s Siren tests whether Claude models will break out of an insecure sandbox SiliconANGLE"
+        "published": "2026-11-25T16:26:00.000Z",
+        "summary": "Anthropic says Claude helped rewrite its Messages API in Rust. Passing tests wasn’t enough. Digg"
       },
       {
-        "title": "AI Cracks 47-Year-Old Math Problem: Anthropic and OpenAI Claim Same-Day Proof of \"Algebraic P≠NP\" - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5lN0xDdzBkbEh0c1ZaUTF6X0N4Nm1TakJWN0RCbmxfM1dZV2paUXdiWXBQQ3FtMDdpd1RwZ2FUeXJ0ajBlc3l2c1RjN0RnZTZJaGRDODcyUUpod0sxVW9LV1dqUmd0Ukk3V1Uxak96NXBERWYtc1E?oc=5",
+        "title": "Anthropic says Claude helped rewrite its Messages API in Rust. The tests weren’t enough. - Digg",
+        "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1TdW5SREM2NzZ5Z2sxSFZyWlplMXZGdkpqSFFGcTdCZFFHWGxNVmZOZVU1ZEtvT1dRV0dmUWZmNHFFRUVy?oc=5",
         "source": "Google News",
-        "published": "2026-11-24T22:55:00.000Z",
-        "summary": "AI Cracks 47-Year-Old Math Problem: Anthropic and OpenAI Claim Same-Day Proof of \"Algebraic P≠NP\" BigGo Finance"
+        "published": "2026-11-25T16:26:00.000Z",
+        "summary": "Anthropic says Claude helped rewrite its Messages API in Rust. The tests weren’t enough. Digg"
       },
       {
-        "title": "Anthropic CEO Dario Amodei and Sister Daniela Sold $561M in Stock During IPO",
-        "url": "https://www.forbes.com/sites/siladityaray/2026/11/24/anthropic-ceo-dario-amodei-sold-280-million-in-shares-as-part-of-record-ipo/",
-        "source": "HN · 46↑",
-        "hn_id": "50635706",
-        "published": "2026-11-24T22:27:19.000Z",
+        "title": "Anthropic lets you install Claude ‘artifacts’ as Mac apps - Computerworld",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNTluN3NCeXBFdnNtdk9RUE0zN0xScVY3enlWaUl6ZFViRENLTWptMEFXblpoT2REdDZjUF9kQlgwdzJ0RDczTlBDYWQtS1ZHa3AxZkRnMk8zYkdOcTlwcVlHWHZQTmtHT1NBM0h0YmU2SEJna3pSNm41X3g5am4wSVhKWUo0TVgtRDBjdGFuaVk3bmJnMGdpSzRERzJkWUpzUHZJOFpFMnlQdw?oc=5",
+        "source": "Google News",
+        "published": "2026-11-25T16:25:36.000Z",
+        "summary": "Anthropic lets you install Claude ‘artifacts’ as Mac apps Computerworld"
+      },
+      {
+        "title": "Claude artifacts are real desktop apps now (I tried it)",
+        "url": "https://www.youtube.com/watch?v=Fj9PLiubcfk",
+        "source": "Stefan Rows",
+        "channel": "Stefan Rows",
+        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
+        "video_id": "Fj9PLiubcfk",
+        "thumbnail": "https://i.ytimg.com/vi/Fj9PLiubcfk/hqdefault.jpg",
+        "published": "2026-11-25T16:17:57.000Z",
+        "summary": "",
+        "_kind": "news_video"
+      },
+      {
+        "title": "Deere Down on Earnings; Dell Lower Despite Server Sales | Stock Movers",
+        "url": "https://www.bloomberg.com/news/videos/2026-11-25/deere-down-on-earnings-dell-lower-despite-server-sales-video",
+        "source": "Bloomberg",
+        "published": "2026-11-25T16:06:51.000Z",
+        "summary": "On this episode of Stock Movers: - Deere (DE) shares are lower as it reports earnings this morning, with the focus of investors being on the farm economy and whether it will emerge from a prolonged…"
+      },
+      {
+        "title": "Endava Becomes Anthropic Select Partner to Accelerate AI-Native Engineering and Business AI Value - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNjRNRmRFZjNqT2hQUjgwdDRqdldla3VTcTIzVmpFTW1rT3FsWmVsalEzdmNPd01KQ2RULVJBY0tpQU95eXVhS1U3UW1nZzZRUFg1SDh2WmxxS2hBTnFqdm5BUV9WcEY4YzRIUXYtOG5RMXlnYWxxVUFWQ0FRcWdkWHVZMExFTk85M01EaFhNOVNqeEFaTU5OY2FRM3kwMVNnQy1OWXVn?oc=5",
+        "source": "Google News",
+        "published": "2026-11-25T15:52:00.000Z",
+        "summary": "Endava Becomes Anthropic Select Partner to Accelerate AI-Native Engineering and Business AI Value Yahoo Finance"
+      },
+      {
+        "title": "Anthropic Introduces Claude Ship With Agents That Can Sign Off GitHub Pull Requests - WinBuzzer",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNRXBXajVycG5vV2xMM3o2Q19XYTAxS0RjOXptak1vbGt2SG1tR25nTmhlNm1vYlhQU3FEaDhtM2JNRUF4WXJKOXotc3BqV0dIcEN1c2ZOV2NYUG1vZlRPT3lLR3F1REdwdk9ERGpyejU4TGhuQUhJa2tHNGZZQlFpNWFrWGViY3lTaWVvU0FfV0FoUGdsRFpYLXYxeU8wMFhJOVo0?oc=5",
+        "source": "Google News",
+        "published": "2026-11-25T15:48:06.000Z",
+        "summary": "Anthropic Introduces Claude Ship With Agents That Can Sign Off GitHub Pull Requests WinBuzzer"
+      },
+      {
+        "title": "Rumors swirling that labs might have cracked Factoring in P",
+        "url": "https://www.reddit.com/r/singularity/comments/1y59ef1/rumor_that_openai_or_anthropic_found_a_way_to/",
+        "source": "HN · 380↑",
+        "hn_id": "50643065",
+        "published": "2026-11-25T15:08:44.000Z",
         "summary": ""
       },
       {
-        "title": "Anthropic launches Claude Ship for AI-driven code management with GitHub integration - Crypto Briefing",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNNWh4MGxXOWNSZWJXaTBSa0NUXzBMbWMwY2ZGT1d2NG5rWV9mc29xOFRXN2tFb0k3eDJJTldWYzFaRTh4WVpaZXNQNFJOeU5yOGhKNzNiWFFtdUs2Mm9qMm92YlVCQWdINVFHdERfc05TNHpDZGR4R05XVEJ2UUlwR1VGaGk3WEZMV0t4VnhHa2YxcGJhdWtrRU54cnhCTXZwUmc?oc=5",
-        "source": "Google News",
-        "published": "2026-11-24T21:48:56.000Z",
-        "summary": "Anthropic launches Claude Ship for AI-driven code management with GitHub integration Crypto Briefing"
+        "title": "The Secret Test: Let Claude Code Break Your App",
+        "url": "https://www.youtube.com/shorts/OVCciEedcUQ",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "OVCciEedcUQ",
+        "thumbnail": "https://i.ytimg.com/vi/OVCciEedcUQ/hqdefault.jpg",
+        "published": "2026-11-25T15:00:01.000Z",
+        "summary": "",
+        "_kind": "news_video"
       },
       {
-        "title": "Anthropic’s Claude Ship Lets AI Write, Review and Approve Its Own Code - Decrypt",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPQnJkYjV3SVM2d3J1VEtRcFpxbkQtUzZybjhiLVhnQW9qMm14YklTTGNFbnhfRnJ4dWJjN0lqTXFNNFAtZXhPcmFCSDd5MURmWlFUeHRtWVpSZHJWZWY3RloxZ2c5al9VckhJSU95dUc4Ykh3OVBYRDVaMjNJWG5pSVMwQ0I4d2c?oc=5",
+        "title": "Google Is Turning AI Performance Into a Price War Anthropic Can’t Ignore - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMmgyNExoUENocGJVY0k4NzZHdFk3dUNRZnFPS2N2WVRRRVI0NEx4RC15U0FEaUQzYUxSLUdWa25hT0UyUVg2dG1QSGRwazZsNWdsT1IzbjdfMDUxTEdTMmR1Q21aRHF4MzZYX2RmVTFCaTE4VmtkdEhzR01LYlVmRDZaRF80ZDVqdzlJb25xQzI4cEtWRTBENXk4eU9LT0NhMlA3VXVyZ1IzcDVNd0hGUHRiUlk4ZWY4RWNmVy1lRzBmV0FoWWt4QTdISQ?oc=5",
         "source": "Google News",
-        "published": "2026-11-24T21:46:02.000Z",
-        "summary": "Anthropic’s Claude Ship Lets AI Write, Review and Approve Its Own Code Decrypt"
+        "published": "2026-11-25T14:38:22.000Z",
+        "summary": "Google Is Turning AI Performance Into a Price War Anthropic Can’t Ignore TradingView"
       },
       {
-        "title": "Anthropic IPO: Here's What a $5,000 Investment Could Look Like in 5 Years - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUTdWRzdvQzFaSDRuZUVKLTVxNWxOamVjRVlzSDFTWGZwaE8yNl9MN2N6YkFuT21LU1lZcHJDaXdLUy1iTGVMSUdhRDZOT0RYdFM0TURnUHByWEFMVFI0SGZQMUZfZWtCTHBucnhxeGQ2VThQa2dBTHJ3UjJTNHRUdHBVRF9xMmVtdFpBeERVN3J0WnI2?oc=5",
+        "title": "Anthropic Launches Claude Ship For AI Code Reviews And Approvals - Dataconomy",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNQ3h3NFdiOGRYQXEzaWU3SXYyRzVjMHNWc1Z0R0lBRFEwcENKdDhFYkN0c21yQW1oY0ZZQjBuakR6bkc3WllqMGxOVFFVSW9PcXQxM0ZqVkEtR0tWQWF4eFVVTWxBNENvaERUVElQVlY5OW9WN0tJdDliUFRyVDVsNzJvaUJWdXlpQXlYcG9vcU1tY0U?oc=5",
         "source": "Google News",
-        "published": "2026-11-24T21:37:02.000Z",
-        "summary": "Anthropic IPO: Here's What a $5,000 Investment Could Look Like in 5 Years Yahoo Finance"
+        "published": "2026-11-25T14:30:59.000Z",
+        "summary": "Anthropic Launches Claude Ship For AI Code Reviews And Approvals Dataconomy"
       },
       {
-        "title": "Even the best AI agents struggle with everyday life",
-        "url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/",
-        "source": "TechCrunch",
-        "published": "2026-11-24T21:33:29.000Z",
-        "summary": "As millions embrace personal AI assistants, a new benchmark reveals that even the most advanced AI models struggle to complete everyday tasks reliably and safely without introducing potential new…"
+        "title": "Anthropic’s Claude Output Can Be Installed as Software - WSJ",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNLUJxLW9ZUWtVc0pTOVo1N3NOOExIUU5SQXJmQ2tsMEJOek4zdmFjWHFLM25FWW1scWRSaThpYkFhSjBaYVRYUmFzWFUwcW8tck1hellEMDRvTGN4TFlLemFCZ1FLellGRDZhSlFHWU1zUXQtdmw5SWI5UmlEcTJRVUpISENrMHVZZExSalJSLVBMMTdONk9yeGtB?oc=5",
+        "source": "Google News",
+        "published": "2026-11-25T14:26:00.000Z",
+        "summary": "Anthropic’s Claude Output Can Be Installed as Software WSJ"
       },
       {
-        "title": "More art, less artificial: Seattle Art Museum billboards troll tech ads and tell people to look up - GeekWire",
-        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNYmU0UUd0WWxUVEtkRWp6RWR0RUJtdEp4Tm9xQ0NaeHppaHBsUjNxUE5nQnpNT0pZNDQ2OGpETzloOXB2U1lRbkVRWVR2X3JfaEphUVRMU1dxYjRWT3VzYXBsSm5TTk1ZTVBSS3JyYjJsbmdCZ2lhN2pjVnpza2M1ZUNpdUZhd1NxWkRpQVZhWDB2azc2VkF3NTJSZUI2akhwSUxNeS03VWpJY25ReTM1aWZQeW43b3Y3TFd6dHg5elRlenN5RGc?oc=5",
+        "title": "What Anthropic's Report Says About How Claude Was Misused | BOOM - BOOM Fact Check",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNYVdDV183QVd3NkJtbnFWakJyaGFXVjdQRjZLNnZCY2tvYmVCR0pUNlNHT29JM05oMVFRTHdsM1VBYng5RlQyZXJ4NFR5dTc3QzVCS21MVHMtQkNkQXNINHdTcnpyS2hBQ29VUy1iaVVuQ3BUdFZMVHUtRTlyYTNPYm1zcGtFVDktTlBPY2loWUTSAZYBQVVfeXFMTTNkR09YNENaYmtVeHFFNFVRYTlaQTVDQ085NlN1alBMWURmTkk2S0xJZ3pkODFVYWxKVUg4RGdWS0w3Q0lxUzZvWGNZMGZ6VEctdndvRUQ0RGtUVjRYdmR6cUtDT1lWZlFOZ1RaYTFRQlBNd2M1TUFhcUhjU205bVo0VlRZTTkwdGJuRnhCeWxyV2hxQmxB?oc=5",
         "source": "Google News",
-        "published": "2026-11-24T21:27:29.000Z",
-        "summary": "More art, less artificial: Seattle Art Museum billboards troll tech ads and tell people to look up GeekWire"
-      },
-      {
-        "title": "Claude can now turn artifacts into semi-independent Mac apps - AppleInsider",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOT2VaSUlmV0VvY0JWMURIb2JUQlpqRUw3bkhvVTZxSTlQdWlmWmhrNWpnU1dRMC1xZ1NsS2g0bmgwSTlvcEYzcUE5b0xoMlRWTnFrc2lnai00aXdUM0NvcXZmeFJad2lXWkFNMkRVclpFZnFjd0tmTEtYb09PRmd3TVJuSHlFMWVHVjlPZWFDNmJkT0pKTEJtbEJwYnU3WHdLZXhBWmln?oc=5",
-        "source": "Google News",
-        "published": "2026-11-24T21:27:00.000Z",
-        "summary": "Claude can now turn artifacts into semi-independent Mac apps AppleInsider"
-      },
-      {
-        "title": "Anthropic IPO: Here's What a $5,000 Investment Could Look Like in 5 Years - The Motley Fool",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUTdfcDZyZDN5UC1ocDgtWFhQMlhYUklwdGVJWmdYSTlteWtEWVlfY1dDekVuOHo0OVN0bjk1OEhZYWdQaUxOdzIxTmpRT1daZzVhNDgxbXpKZ0FZLXNJOHBYODhBOWo2TEtXY19Ndm11Szl5SFBWUFRyYUJzZGhJdzUtSmNfMVJzLWhUQUpTQXFmc3diekJmcHd5cm5zX0tlRUdFbmp6VFItT040alZ4UURHdElSQjMx?oc=5",
-        "source": "Google News",
-        "published": "2026-11-24T21:17:02.000Z",
-        "summary": "Anthropic IPO: Here's What a $5,000 Investment Could Look Like in 5 Years The Motley Fool"
+        "published": "2026-11-25T13:31:56.000Z",
+        "summary": "What Anthropic's Report Says About How Claude Was Misused | BOOM BOOM Fact Check"
       },
       {
         "title": "Claude Code Effort Levels: $0.15 vs $1.23 on the Same Job",
@@ -502,18 +538,6 @@
         "_kind": "news_video"
       },
       {
-        "title": "Claude Built My n8n Workflow by Itself (Insane)",
-        "url": "https://www.youtube.com/shorts/cqqQM5BIrzE",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "cqqQM5BIrzE",
-        "thumbnail": "https://i.ytimg.com/vi/cqqQM5BIrzE/hqdefault.jpg",
-        "published": "2026-11-17T16:00:39.000Z",
-        "summary": "",
-        "_kind": "news_video"
-      },
-      {
         "title": "Claude in 15 Minutes: 5 Levels, From Your First Chat to Work That Runs Without You",
         "url": "https://www.youtube.com/watch?v=-WxaMZpEWXk",
         "source": "Pragati Kunwer",
@@ -572,21 +596,16 @@
         "published": "2026-11-11T13:33:18.000Z",
         "summary": "",
         "_kind": "news_video"
-      },
-      {
-        "title": "Claude Fable 5.2 is distubingly good with Blender",
-        "url": "https://www.youtube.com/shorts/TGqnAY2KWe8",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "TGqnAY2KWe8",
-        "thumbnail": "https://i.ytimg.com/vi/TGqnAY2KWe8/hqdefault.jpg",
-        "published": "2026-11-10T02:02:42.000Z",
-        "summary": "",
-        "_kind": "news_video"
       }
     ],
     "status": [
+      {
+        "title": "Claude for Microsoft 365 add-in missing for some users",
+        "url": "https://status.claude.com/incidents/3vbyqgnswwxq",
+        "source": "Claude Status",
+        "published": "2026-11-25T20:21:12.000Z",
+        "summary": "Nov 25 , 20:21 UTC Identified - We have identified an issue with an upstream provider that is causing the Claude add-in to disappear from Excel, Word, and PowerPoint on Mac for users signed in to…"
+      },
       {
         "title": "Elevated errors for multiple models",
         "url": "https://status.claude.com/incidents/yl30wkjblcm6",
@@ -600,13 +619,6 @@
         "source": "Claude Status",
         "published": "2026-11-24T17:50:42.000Z",
         "summary": "Nov 24 , 17:50 UTC Resolved - The issue affecting Claude services has been resolved. Impact occurred from 09:09 PT / 17:09 UTC to 09:27 PT / 17:27 UTC. Nov 24 , 17:27 UTC Monitoring - A fix has been…"
-      },
-      {
-        "title": "Claude for Microsoft 365 add-in missing for some users",
-        "url": "https://status.claude.com/incidents/3vbyqgnswwxq",
-        "source": "Claude Status",
-        "published": "2026-11-24T17:19:32.000Z",
-        "summary": "Nov 24 , 01:31 UTC Update - We are continuing to investigate an issue causing the Claude add-in to disappear from Excel, Word, and PowerPoint on Mac for users signed in to Microsoft Office with a…"
       },
       {
         "title": "Elevated errors for multiple models",
@@ -673,6 +685,39 @@
       }
     ],
     "youtube": [
+      {
+        "title": "This NEW Claude Update Literally Changed Everything",
+        "url": "https://www.youtube.com/watch?v=F7QcpCl0Lg4",
+        "source": "Nick Saraev",
+        "channel": "Nick Saraev",
+        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
+        "video_id": "F7QcpCl0Lg4",
+        "thumbnail": "https://i.ytimg.com/vi/F7QcpCl0Lg4/hqdefault.jpg",
+        "published": "2026-11-25T18:27:23.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude artifacts are real desktop apps now (I tried it)",
+        "url": "https://www.youtube.com/watch?v=Fj9PLiubcfk",
+        "source": "Stefan Rows",
+        "channel": "Stefan Rows",
+        "channel_id": "UCDqZyVCTwg9UyRWKgQ7Gizg",
+        "video_id": "Fj9PLiubcfk",
+        "thumbnail": "https://i.ytimg.com/vi/Fj9PLiubcfk/hqdefault.jpg",
+        "published": "2026-11-25T16:17:57.000Z",
+        "summary": ""
+      },
+      {
+        "title": "The Secret Test: Let Claude Code Break Your App",
+        "url": "https://www.youtube.com/shorts/OVCciEedcUQ",
+        "source": "Leon van Zyl",
+        "channel": "Leon van Zyl",
+        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
+        "video_id": "OVCciEedcUQ",
+        "thumbnail": "https://i.ytimg.com/vi/OVCciEedcUQ/hqdefault.jpg",
+        "published": "2026-11-25T15:00:01.000Z",
+        "summary": ""
+      },
       {
         "title": "Claude Code Effort Levels: $0.15 vs $1.23 on the Same Job",
         "url": "https://www.youtube.com/shorts/qvcpkr1h-BU",
@@ -872,17 +917,6 @@
         "summary": ""
       },
       {
-        "title": "Claude Built My n8n Workflow by Itself (Insane)",
-        "url": "https://www.youtube.com/shorts/cqqQM5BIrzE",
-        "source": "Leon van Zyl",
-        "channel": "Leon van Zyl",
-        "channel_id": "UCtevzRsHEKhs-RK8pAqwSyQ",
-        "video_id": "cqqQM5BIrzE",
-        "thumbnail": "https://i.ytimg.com/vi/cqqQM5BIrzE/hqdefault.jpg",
-        "published": "2026-11-17T16:00:39.000Z",
-        "summary": ""
-      },
-      {
         "title": "Claude in 15 Minutes: 5 Levels, From Your First Chat to Work That Runs Without You",
         "url": "https://www.youtube.com/watch?v=-WxaMZpEWXk",
         "source": "Pragati Kunwer",
@@ -979,28 +1013,6 @@
         "video_id": "XQfbNtp67OE",
         "thumbnail": "https://i.ytimg.com/vi/XQfbNtp67OE/hqdefault.jpg",
         "published": "2026-11-11T13:33:18.000Z",
-        "summary": ""
-      },
-      {
-        "title": "13 INSANE Things You Can Build w/ Claude Fable 5.2",
-        "url": "https://www.youtube.com/watch?v=5mA9Hab09Do",
-        "source": "Nick Saraev",
-        "channel": "Nick Saraev",
-        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
-        "video_id": "5mA9Hab09Do",
-        "thumbnail": "https://i.ytimg.com/vi/5mA9Hab09Do/hqdefault.jpg",
-        "published": "2026-11-10T23:08:45.000Z",
-        "summary": ""
-      },
-      {
-        "title": "Claude Fable 5.2 is distubingly good with Blender",
-        "url": "https://www.youtube.com/shorts/TGqnAY2KWe8",
-        "source": "Riley Brown",
-        "channel": "Riley Brown",
-        "channel_id": "UCMcoud_ZW7cfxeIugBflSBw",
-        "video_id": "TGqnAY2KWe8",
-        "thumbnail": "https://i.ytimg.com/vi/TGqnAY2KWe8/hqdefault.jpg",
-        "published": "2026-11-10T02:02:42.000Z",
         "summary": ""
       }
     ],
@@ -1166,18 +1178,6 @@
         "video_id": "TtIIuBbhCuk",
         "thumbnail": "https://i.ytimg.com/vi/TtIIuBbhCuk/hqdefault.jpg",
         "published": "2026-11-11T14:30:19.000Z",
-        "summary": "",
-        "tutorial_kind": "video"
-      },
-      {
-        "title": "13 INSANE Things You Can Build w/ Claude Fable 5.2",
-        "url": "https://www.youtube.com/watch?v=5mA9Hab09Do",
-        "source": "Nick Saraev",
-        "channel": "Nick Saraev",
-        "channel_id": "UCbo-KbSjJDG6JWQ_MTZ_rNA",
-        "video_id": "5mA9Hab09Do",
-        "thumbnail": "https://i.ytimg.com/vi/5mA9Hab09Do/hqdefault.jpg",
-        "published": "2026-11-10T23:08:45.000Z",
         "summary": "",
         "tutorial_kind": "video"
       },
@@ -1664,6 +1664,27 @@
     ],
     "claude_learning": [
       {
+        "title": "This NEW Claude Update Literally Changed Everything",
+        "url": "https://www.youtube.com/watch?v=F7QcpCl0Lg4",
+        "source": "YouTube · Nick Saraev",
+        "published": "2026-11-25T18:27:23.000Z",
+        "summary": ""
+      },
+      {
+        "title": "Claude artifacts are real desktop apps now (I tried it)",
+        "url": "https://www.youtube.com/watch?v=Fj9PLiubcfk",
+        "source": "YouTube · Stefan Rows",
+        "published": "2026-11-25T16:17:57.000Z",
+        "summary": ""
+      },
+      {
+        "title": "The Secret Test: Let Claude Code Break Your App",
+        "url": "https://www.youtube.com/shorts/OVCciEedcUQ",
+        "source": "YouTube · Leon van Zyl",
+        "published": "2026-11-25T15:00:01.000Z",
+        "summary": ""
+      },
+      {
         "title": "v2.1.332",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.332",
         "source": "Claude Code",
@@ -1923,13 +1944,6 @@
         "summary": "What's changed Added a confirmation before /install-github-app changes a repository Added claude mcp add-json - to read the server's JSON from stdin, so tokens can stay off the command line; not available inside a…"
       },
       {
-        "title": "Claude Built My n8n Workflow by Itself (Insane)",
-        "url": "https://www.youtube.com/shorts/cqqQM5BIrzE",
-        "source": "YouTube · Leon van Zyl",
-        "published": "2026-11-17T16:00:39.000Z",
-        "summary": ""
-      },
-      {
         "title": "Claude in 15 Minutes: 5 Levels, From Your First Chat to Work That Runs Without You",
         "url": "https://www.youtube.com/watch?v=-WxaMZpEWXk",
         "source": "YouTube · Pragati Kunwer",
@@ -2042,25 +2056,11 @@
         "summary": "Security fixes v2.4.0 fixes six vulnerabilities in three servers. Upgrade @modelcontextprotocol/server-filesystem to 2.3.0, and mcp-server-git and mcp-server-fetch to 2026.11.11. Package Affected Fixed in…"
       },
       {
-        "title": "13 INSANE Things You Can Build w/ Claude Fable 5.2",
-        "url": "https://www.youtube.com/watch?v=5mA9Hab09Do",
-        "source": "YouTube · Nick Saraev",
-        "published": "2026-11-10T23:08:45.000Z",
-        "summary": ""
-      },
-      {
         "title": "v2.1.322",
         "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.322",
         "source": "Claude Code",
         "published": "2026-11-10T02:29:43.000Z",
         "summary": "What's changed Added fast mode on Vertex in the global, us and eu regions, falling back to standard speed if Vertex refuses it"
-      },
-      {
-        "title": "Claude Fable 5.2 is distubingly good with Blender",
-        "url": "https://www.youtube.com/shorts/TGqnAY2KWe8",
-        "source": "YouTube · Riley Brown",
-        "published": "2026-11-10T02:02:42.000Z",
-        "summary": ""
       },
       {
         "title": "We’ve launched Claude Fable 5.2 ( claude-fable-5-2 ), built for demanding reasoning and long-horizon agentic work.…",
